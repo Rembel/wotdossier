@@ -1,0 +1,132 @@
+﻿<Window x:Class="WotDossier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
+            <MenuItem Header="Настройки" Click="MenuItem_Click"></MenuItem>
+        </Menu>
+        <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
+            <TabItem TabIndex="0" Header="XP" Name="tabXP">
+                <Grid >
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Icon" Binding="{Binding Icon}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TotalXP" Binding="{Binding TotalXP}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MaximumXP" Binding="{Binding MaximumXP}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="AverageXP" Binding="{Binding AverageXP}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="1" Header="Battles" Name="tabBattles">
+                <Grid >
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Icon" Binding="{Binding Icon}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Won" Binding="{Binding Won}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="WonPercent" Binding="{Binding WonPercent}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Lost" Binding="{Binding Lost}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="LostPercent" Binding="{Binding LostPercent}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Draws" Binding="{Binding Draws}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DrawsPercent" Binding="{Binding DrawsPercent}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Survived" Binding="{Binding Survived}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivedPercent" Binding="{Binding SurvivedPercent}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivedAndWon" Binding="{Binding SurvivedAndWon}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivedAndWonPercent" Binding="{Binding SurvivedAndWonPercent}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="2" Header="Frags" Name="tabFrags">
+                <Grid >
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Icon" Binding="{Binding Icon}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Frags" Binding="{Binding Frags}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MaxFrags" Binding="{Binding MaxFrags}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="FragsPerBattle" Binding="{Binding FragsPerBattle}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="KillDeathRatio" Binding="{Binding KillDeathRatio}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tier8Frags" Binding="{Binding Tier8Frags}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BeastFrags" Binding="{Binding BeastFrags}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SinaiFrags" Binding="{Binding SinaiFrags}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="3" Header="Damage" Name="tabDamage">
+                <Grid>
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Icon" Binding="{Binding Icon}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamageDealt" Binding="{Binding DamageDealt}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamageTaken" Binding="{Binding DamageTaken}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamageRatio" Binding="{Binding DamageRatio}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="AverageDamageDealt" Binding="{Binding AverageDamageDealt}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamagePerHit" Binding="{Binding DamagePerHit}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="4" Header="Battle awards" Name="tabBattleAwards">
+                <Grid>
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Icon" Binding="{Binding Icon}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BattleHero" Binding="{Binding BattleHero}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TopGun" Binding="{Binding TopGun}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Invader" Binding="{Binding Invader}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Sniper" Binding="{Binding Sniper}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Defender" Binding="{Binding Defender}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SteelWall" Binding="{Binding SteelWall}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Confederate" Binding="{Binding Confederate}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Scout" Binding="{Binding Scout}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="PatrolDuty" Binding="{Binding PatrolDuty}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BrothersInArms" Binding="{Binding BrothersInArms}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="CrucialContribution" Binding="{Binding CrucialContribution}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="5" Header="Special awards" Name="tabSpecialAwards">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="6" Header="Series" Name="tabSeries">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="7" Header="Medals" Name="tabMedals">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="8" Header="Ratings" Name="tabRatings">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="9" Header="Performance" Name="tabPerformance">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="10" Header="Frag counts" Name="tabFragCounts">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="11" Header="MasterTanker" Name="tabMasterTanker">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="12" Header="Epics" Name="tabEpics">
+                <Grid />
+            </TabItem>
+            <TabItem TabIndex="13" Header="Time" Name="tabTime">
+                <Grid />
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

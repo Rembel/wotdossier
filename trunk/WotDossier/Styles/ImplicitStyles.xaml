@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ExplicitStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{StaticResource office2007SilverButton}" />
+    <!--<Style x:Key="{x:Type Calendar}" TargetType="{x:Type Calendar}" BasedOn="{StaticResource office2007SilverButton}" />-->
+    <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource office2007SilverCheckBox}" />
+    <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource office2007SilverComboBox}" />
+    <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}" BasedOn="{StaticResource office2007SilverComboBoxItem}" />
+    <!--<Style x:Key="{x:Type ContextMenu}" TargetType="{x:Type ContextMenu}" BasedOn="{StaticResource office2007SilverContextMenu}" />-->
+    <Style x:Key="{x:Type DataGrid}" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource office2007SilverDataGrid}" />
+    <!--<Style x:Key="{x:Type DatePicker}" TargetType="{x:Type DatePicker}" BasedOn="{StaticResource office2007SilverDatePicker}" />-->
+    <Style x:Key="{x:Type Expander}" TargetType="{x:Type Expander}" BasedOn="{StaticResource office2007SilverExpander}" />
+    <!--<Style x:Key="{x:Type GridSplitter}" TargetType="{x:Type GridSplitter}" BasedOn="{StaticResource office2007SilverGridSplitter}" />-->
+    <!--<Style x:Key="{x:Type GridViewColumnHeader}" TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource office2007SilverGridViewColumnHeader}" />-->
+    <!--<Style x:Key="{x:Type GroupBox}" TargetType="{x:Type GroupBox}" BasedOn="{StaticResource office2007SilverGroupBox}" />-->
+    <!--<Style x:Key="{x:Type Label}" TargetType="{x:Type Label}" BasedOn="{StaticResource office2007SilverLabel}" />-->
+    <Style x:Key="{x:Type ListBox}" TargetType="{x:Type ListBox}" BasedOn="{StaticResource office2007SilverListBox}" />
+    <Style x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource office2007SilverListBoxItem}" />
+    <!--<Style x:Key="{x:Type ListView}" TargetType="{x:Type ListView}" BasedOn="{StaticResource office2007SilverListView}" />-->
+    <!--<Style x:Key="{x:Type ListViewItem}" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource office2007SilverListViewItem}" />-->
+    <Style x:Key="{x:Type Menu}" TargetType="{x:Type Menu}" BasedOn="{StaticResource office2007SilverMenu}" />
+    <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource office2007SilverMenuItem}" />
+    <!--<Style x:Key="{x:Type Page}" TargetType="{x:Type Page}" BasedOn="{StaticResource office2007SilverPage}" />-->
+    <Style x:Key="{x:Type PasswordBox}" TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource office2007SilverPasswordBox}" />
+    <Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}" BasedOn="{StaticResource office2007SilverProgressBar}" />
+    <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource office2007SilverRadioButton}" />
+    <!--<Style x:Key="{x:Type RepeatButton}" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource office2007SilverRepeatButton}" />-->
+    <!--<Style x:Key="{x:Type ResizeGrip}" TargetType="{x:Type ResizeGrip}" BasedOn="{StaticResource office2007SilverResizeGrip}" />-->
+    <!--<Style x:Key="{x:Type RichTextBox}" TargetType="{x:Type RichTextBox}" BasedOn="{StaticResource office2007SilverRichTextBox}" />-->
+    <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource office2007SilverScrollBar}" />
+    <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource office2007SilverScrollViewer}" />
+    <!--<Style x:Key="{x:Type Slider}" TargetType="{x:Type Slider}" BasedOn="{StaticResource office2007SilverSlider}" />-->
+    <!--<Style x:Key="{x:Type StatusBar}" TargetType="{x:Type StatusBar}" BasedOn="{StaticResource office2007SilverStatusBar}" />-->
+    <Style x:Key="{x:Type TabControl}" TargetType="{x:Type TabControl}" BasedOn="{StaticResource office2007SilverTabControl}" />
+    <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}" BasedOn="{StaticResource office2007SilverTabItem}" />
+    <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource office2007SilverTextBox}" />
+    <!--<Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource office2007SilverToggleButton}" />-->
+    <!--<Style x:Key="{x:Type ToolBar}" TargetType="{x:Type ToolBar}" BasedOn="{StaticResource office2007SilverToolBar}" />-->
+    <!--<Style x:Key="{x:Type ToolTip}" TargetType="{x:Type ToolTip}" BasedOn="{StaticResource office2007SilverToolTip}" />-->
+    <!--<Style x:Key="{x:Type TreeView}" TargetType="{x:Type TreeView}" BasedOn="{StaticResource office2007SilverTreeView}" />-->
+    <!--<Style x:Key="{x:Type TreeViewItem}" TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource office2007SilverTreeViewItem}" />-->
+    <Style x:Key="{x:Type Window}" TargetType="{x:Type Window}" BasedOn="{StaticResource office2007SilverWindow}" />
+</ResourceDictionary>

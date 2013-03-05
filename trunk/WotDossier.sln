@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WotDossier", "WotDossier\WotDossier.csproj", "{A4EF480B-49B6-42C4-8ACE-6127B15699F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WotDossier.Domain", "WotDossier.Domain\WotDossier.Domain.csproj", "{BEF5308C-9E64-4369-B012-81600FDD97A3}"
@@ -8,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WotDossier.Applications", "WotDossier.Applications\WotDossier.Applications.csproj", "{BE01E7C1-5EE5-4EB6-AC4D-79ECBD42B75C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{68CB3F69-460B-4624-9284-70C200448BAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WotDossier.Common", "WotDossier.Common\WotDossier.Common.csproj", "{1268B707-A866-4723-89C7-2E9BD92E6AA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,16 @@ Global
 		{BE01E7C1-5EE5-4EB6-AC4D-79ECBD42B75C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BE01E7C1-5EE5-4EB6-AC4D-79ECBD42B75C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BE01E7C1-5EE5-4EB6-AC4D-79ECBD42B75C}.Release|x86.ActiveCfg = Release|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1268B707-A866-4723-89C7-2E9BD92E6AA6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

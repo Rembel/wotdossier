@@ -28,6 +28,10 @@ def = dropped_capture_points / bc (среднее количество очко�
 +(6-MIN(TIER,6))*-60
      */
 
+    /// <summary>
+    /// http://wot-news.com/main/post/02172013/1/Izmenenija-v-kalakuljatore
+    /// http://armor.kiev.ua/wot/rating/
+    /// </summary>
     public class TankRowRatings
     {
         private int _tier;
@@ -131,11 +135,11 @@ def = dropped_capture_points / bc (среднее количество очко�
 
             double value = _averageDamage * (10.0 / (_tier + 2.0)) * (0.23 + 2.0 * _tier / 100.0) + avgFrags * 250.0 + avgSpot * 150.0 + (Math.Log(avgCap + 1, 1.732)) * 150.0 + avgDef * 150.0;
 
-            _newEffRating = (int) value;
+            _newEffRating = (int)value;
             value = (1240 - 1040 / Math.Pow((Math.Min(_tier, 6)), 0.164)) * avgFrags + _averageDamage * 530 / (184 * Math.Pow(Math.E, (0.24 * _tier)) + 130)
                 + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Pow(Math.E, ((_winrate - 35) * -0.134)))) - 500) * 0.45 + (6 - Math.Min(_tier, 6)) * -60;
             _wn6 = (int)value;
-            _damageRatingRev1 = 0;
+            _damageRatingRev1 = (int)(tank.Tankdata.damageDealt / (double)tank.Tankdata.damageReceived * 100);
             _kievArmorRating = 0;
             _markOfMastery = tank.Special.markOfMastery;
         }

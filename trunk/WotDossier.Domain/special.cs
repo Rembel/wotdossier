@@ -16,5 +16,14 @@ namespace WotDossier.Domain
         public int sinai;
         public int tankExpertStrg;
         public int titleSniper;
+
+        public int bombardier;
+        public int huntsman;
+        public int alaric;
+        public int sturdy;
+        public int ironMan;
+        public int luckyDevil;
+        public int pattonValley;
+        public int fragsPatton;
     }
 }

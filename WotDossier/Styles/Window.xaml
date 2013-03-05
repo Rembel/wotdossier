@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="office2007SilverWindow" TargetType="{x:Type Window}">
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="Background" Value="{StaticResource applicationBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource DefaultForeground}" />
+    </Style>
+
+    <!--<Style x:Key="{x:Type Forms:WpfMessageBox}" TargetType="{x:Type Forms:WpfMessageBox}">
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="Background" Value="{StaticResource applicationBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource DefaultForeground}" />
+    </Style>-->
+</ResourceDictionary>

@@ -9,15 +9,15 @@ namespace WotDossier.Domain.Rows
     {
         private int _battles;
         private int _won;
-        private int _wonPercent;
+        private double _wonPercent;
         private int _lost;
-        private int _lostPercent;
+        private double _lostPercent;
         private int _draws;
-        private int _drawsPercent;
+        private double _drawsPercent;
         private int _survived;
-        private int _survivedPercent;
+        private double _survivedPercent;
         private int _survivedAndWon;
-        private int _survivedAndWonPercent;
+        private double _survivedAndWonPercent;
 
         public TankRowBattles(Tank tank)
         {
@@ -26,15 +26,15 @@ namespace WotDossier.Domain.Rows
             Icon = tank.TankContour;
             _battles = tank.Tankdata.battlesCount;
             _won = tank.Tankdata.wins;
-            _wonPercent = (int) (_won / (double)_battles * 100.0);
+            _wonPercent = _won / (double)_battles * 100.0;
             _lost = tank.Tankdata.losses;
-            _lostPercent = (int)(_lost / (double)_battles * 100.0);
+            _lostPercent = _lost / (double)_battles * 100.0;
             _draws = _battles - _won - _lost;
-            _drawsPercent = (int)(_draws / (double)_battles * 100.0);
+            _drawsPercent = _draws / (double)_battles * 100.0;
             _survived = tank.Tankdata.survivedBattles;
-            _survivedPercent = (int)(_survived / (double)_battles * 100.0);
+            _survivedPercent = _survived / (double)_battles * 100.0;
             _survivedAndWon = tank.Tankdata.winAndSurvived;
-            _survivedAndWonPercent = (int)(_survivedAndWon / (double)_battles * 100.0);
+            _survivedAndWonPercent = _survivedAndWon / (double)_battles * 100.0;
         }
 
         public int Battles
@@ -49,7 +49,7 @@ namespace WotDossier.Domain.Rows
             set { _won = value; }
         }
 
-        public int WonPercent
+        public double WonPercent
         {
             get { return _wonPercent; }
             set { _wonPercent = value; }
@@ -61,7 +61,7 @@ namespace WotDossier.Domain.Rows
             set { _lost = value; }
         }
 
-        public int LostPercent
+        public double LostPercent
         {
             get { return _lostPercent; }
             set { _lostPercent = value; }
@@ -73,7 +73,7 @@ namespace WotDossier.Domain.Rows
             set { _draws = value; }
         }
 
-        public int DrawsPercent
+        public double DrawsPercent
         {
             get { return _drawsPercent; }
             set { _drawsPercent = value; }
@@ -85,7 +85,7 @@ namespace WotDossier.Domain.Rows
             set { _survived = value; }
         }
 
-        public int SurvivedPercent
+        public double SurvivedPercent
         {
             get { return _survivedPercent; }
             set { _survivedPercent = value; }
@@ -97,7 +97,7 @@ namespace WotDossier.Domain.Rows
             set { _survivedAndWon = value; }
         }
 
-        public int SurvivedAndWonPercent
+        public double SurvivedAndWonPercent
         {
             get { return _survivedAndWonPercent; }
             set { _survivedAndWonPercent = value; }

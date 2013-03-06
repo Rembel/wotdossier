@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
-    <s:Double x:Key="DefaultFontSize">12</s:Double>
+    <s:Double x:Key="DefaultFontSize">14</s:Double>
     <FontFamily x:Key="DefaultFontFamily">Calibri</FontFamily>
 </ResourceDictionary>

@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
@@ -33,27 +32,23 @@ namespace WotDossier.Converters
             switch (mark)
             {
                 case 1:
-                    rect = new Int32Rect(0, 0, 20, 20);
+                    rect = new Int32Rect(101, 456, 30, 34);
                     break;
                 case 2:
-                    rect = new Int32Rect(0, 0, 20, 20);
+                    rect = new Int32Rect(135, 456, 30, 34);
                     break;
                 case 3:
-                    rect = new Int32Rect(0, 0, 20, 20);
+                    rect = new Int32Rect(169, 455, 30, 34);
                     break;
                 case 4:
-                    rect = new Int32Rect(0, 0, 20, 20);
+                    rect = new Int32Rect(203, 459, 30, 34);
+                    break;
+                default:
+                    rect = new Int32Rect(0, 0, 1, 1);
                     break;
             }
-            // Create an Image element.
-            Image croppedImage = new Image();
-
-            // Create a CroppedBitmap based off of a xaml defined resource.
-            //CroppedBitmap cb = new CroppedBitmap(new BitmapImage(new Uri("pack://application:,,,/WotDossier;component/Resources/Images/award-images.png")), rect);       //select region rect
-
             CroppedBitmap cb = new CroppedBitmap(ToBitmapSource(Resources.Resources.award_images), rect);       //select region rect
-            croppedImage.Source = cb;
-            return croppedImage;
+            return cb;
         }
 
         /// <summary>

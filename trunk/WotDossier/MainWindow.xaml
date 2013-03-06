@@ -20,11 +20,11 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="TotalXP" Binding="{Binding TotalXP}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MaximumXP" Binding="{Binding MaximumXP}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="AverageXP" Binding="{Binding AverageXP}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TotalXP" Binding="{Binding TotalXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MaximumXP" Binding="{Binding MaximumXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="AverageXP" Binding="{Binding AverageXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -34,19 +34,19 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Won" Binding="{Binding Won}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="WonPercent" Binding="{Binding WonPercent}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Lost" Binding="{Binding Lost}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="LostPercent" Binding="{Binding LostPercent}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Draws" Binding="{Binding Draws}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DrawsPercent" Binding="{Binding DrawsPercent}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Survived" Binding="{Binding Survived}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivedPercent" Binding="{Binding SurvivedPercent}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivedAndWon" Binding="{Binding SurvivedAndWon}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivedAndWonPercent" Binding="{Binding SurvivedAndWonPercent}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Won" Binding="{Binding Won}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="WonPercent" Binding="{Binding WonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Lost" Binding="{Binding Lost}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="LostPercent" Binding="{Binding LostPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Draws" Binding="{Binding Draws}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DrawsPercent" Binding="{Binding DrawsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Survived" Binding="{Binding Survived}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivedPercent" Binding="{Binding SurvivedPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivedAndWon" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivedAndWonPercent" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -56,16 +56,16 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Frags" Binding="{Binding Frags}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MaxFrags" Binding="{Binding MaxFrags}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="FragsPerBattle" Binding="{Binding FragsPerBattle}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="KillDeathRatio" Binding="{Binding KillDeathRatio}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Tier8Frags" Binding="{Binding Tier8Frags}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BeastFrags" Binding="{Binding BeastFrags}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SinaiFrags" Binding="{Binding SinaiFrags}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Frags" Binding="{Binding Frags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MaxFrags" Binding="{Binding MaxFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="FragsPerBattle" Binding="{Binding FragsPerBattle, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="KillDeathRatio" Binding="{Binding KillDeathRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tier8Frags" Binding="{Binding Tier8Frags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BeastFrags" Binding="{Binding BeastFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SinaiFrags" Binding="{Binding SinaiFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -75,13 +75,13 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DamageDealt" Binding="{Binding DamageDealt}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DamageTaken" Binding="{Binding DamageTaken}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DamageRatio" Binding="{Binding DamageRatio}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="AverageDamageDealt" Binding="{Binding AverageDamageDealt}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DamagePerHit" Binding="{Binding DamagePerHit}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamageDealt" Binding="{Binding DamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamageTaken" Binding="{Binding DamageTaken}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamageRatio" Binding="{Binding DamageRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="AverageDamageDealt" Binding="{Binding AverageDamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamagePerHit" Binding="{Binding DamagePerHit}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -91,19 +91,19 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BattleHero" Binding="{Binding BattleHero}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="TopGun" Binding="{Binding TopGun}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Invader" Binding="{Binding Invader}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Sniper" Binding="{Binding Sniper}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Defender" Binding="{Binding Defender}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SteelWall" Binding="{Binding SteelWall}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Confederate" Binding="{Binding Confederate}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Scout" Binding="{Binding Scout}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="PatrolDuty" Binding="{Binding PatrolDuty}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BrothersInArms" Binding="{Binding BrothersInArms}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="CrucialContribution" Binding="{Binding CrucialContribution}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BattleHero" Binding="{Binding BattleHero}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TopGun" Binding="{Binding TopGun}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Invader" Binding="{Binding Invader}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Sniper" Binding="{Binding Sniper}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Defender" Binding="{Binding Defender}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SteelWall" Binding="{Binding SteelWall}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Confederate" Binding="{Binding Confederate}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Scout" Binding="{Binding Scout}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="PatrolDuty" Binding="{Binding PatrolDuty}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BrothersInArms" Binding="{Binding BrothersInArms}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="CrucialContribution" Binding="{Binding CrucialContribution}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -113,18 +113,18 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Kamikaze" Binding="{Binding Kamikaze}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Raider" Binding="{Binding Raider}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Bombardier" Binding="{Binding Bombardier}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Reaper" Binding="{Binding Reaper}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Sharpshooter" Binding="{Binding Sharpshooter}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Invincible" Binding="{Binding Invincible}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Survivor" Binding="{Binding Survivor}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MouseTrap" Binding="{Binding MouseTrap}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Hunter" Binding="{Binding Hunter}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Sinai" Binding="{Binding Sinai}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kamikaze" Binding="{Binding Kamikaze}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Raider" Binding="{Binding Raider}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Bombardier" Binding="{Binding Bombardier}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Reaper" Binding="{Binding Reaper}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Sharpshooter" Binding="{Binding Sharpshooter}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Invincible" Binding="{Binding Invincible}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Survivor" Binding="{Binding Survivor}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MouseTrap" Binding="{Binding MouseTrap}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Hunter" Binding="{Binding Hunter}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Sinai" Binding="{Binding Sinai}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -134,18 +134,18 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="ReaperLongest" Binding="{Binding ReaperLongest}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="ReaperProgress" Binding="{Binding ReaperProgress}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SharpshooterLongest" Binding="{Binding SharpshooterLongest}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SharpshooterProgress" Binding="{Binding SharpshooterProgress}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MasterGunnerLongest" Binding="{Binding MasterGunnerLongest}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MasterGunnerProgress" Binding="{Binding MasterGunnerProgress}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="InvincibleLongest" Binding="{Binding InvincibleLongest}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="InvincibleProgress" Binding="{Binding InvincibleProgress}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivorLongest" Binding="{Binding SurvivorLongest}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivorProgress" Binding="{Binding SurvivorProgress}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="ReaperLongest" Binding="{Binding ReaperLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="ReaperProgress" Binding="{Binding ReaperProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SharpshooterLongest" Binding="{Binding SharpshooterLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SharpshooterProgress" Binding="{Binding SharpshooterProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MasterGunnerLongest" Binding="{Binding MasterGunnerLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MasterGunnerProgress" Binding="{Binding MasterGunnerProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="InvincibleLongest" Binding="{Binding InvincibleLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="InvincibleProgress" Binding="{Binding InvincibleProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivorLongest" Binding="{Binding SurvivorLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivorProgress" Binding="{Binding SurvivorProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -155,16 +155,16 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Kay" Binding="{Binding Kay}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Carius" Binding="{Binding Carius}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Knispel" Binding="{Binding Knispel}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Poppel" Binding="{Binding Poppel}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Abrams" Binding="{Binding Abrams}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Leclerk" Binding="{Binding Leclerk}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Lavrinenko" Binding="{Binding Lavrinenko}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Ekins" Binding="{Binding Ekins}" Width="1*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kay" Binding="{Binding Kay}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Carius" Binding="{Binding Carius}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Knispel" Binding="{Binding Knispel}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Poppel" Binding="{Binding Poppel}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Abrams" Binding="{Binding Abrams}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Leclerk" Binding="{Binding Leclerk}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Lavrinenko" Binding="{Binding Lavrinenko}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Ekins" Binding="{Binding Ekins}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -174,17 +174,17 @@
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="AverageDamage" Binding="{Binding AverageDamage}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="KillDeathRatio" Binding="{Binding KillDeathRatio}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="NewEffRating" Binding="{Binding NewEffRating}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="WN6" Binding="{Binding WN6}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DamageRatingRev1" Binding="{Binding DamageRatingRev1}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="KievArmorRating" Binding="{Binding KievArmorRating}" Width="1*"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="MarkOfMastery"  CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="AverageDamage" Binding="{Binding AverageDamage}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="KillDeathRatio" Binding="{Binding KillDeathRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="NewEffRating" CellStyle="{StaticResource DataGridCellEffStyle}" Binding="{Binding NewEffRating}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="WN6" CellStyle="{StaticResource DataGridCellWn6Style}" Binding="{Binding WN6}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DamageRatingRev1" Binding="{Binding DamageRatingRev1}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="KievArmorRating" Binding="{Binding KievArmorRating}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="MarkOfMastery" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

@@ -59,6 +59,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\PercentToColorConverter.cs" />
+    <Compile Include="Converters\WN6ToColorConverter.cs" />
+    <Compile Include="Converters\EffectivityToColorConverter.cs" />
+    <Compile Include="Converters\Double2Formater.cs" />
     <Compile Include="Converters\TankIconImageConverter.cs" />
     <Compile Include="Resources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

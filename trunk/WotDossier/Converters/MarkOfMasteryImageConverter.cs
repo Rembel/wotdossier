@@ -32,16 +32,16 @@ namespace WotDossier.Converters
             switch (mark)
             {
                 case 1:
-                    rect = new Int32Rect(101, 454, 34, 34);
+                    rect = new Int32Rect(101, 454, 34, 30);
                     break;
                 case 2:
-                    rect = new Int32Rect(135, 454, 34, 34);
+                    rect = new Int32Rect(135, 454, 34, 30);
                     break;
                 case 3:
-                    rect = new Int32Rect(169, 453, 34, 34);
+                    rect = new Int32Rect(169, 453, 34, 30);
                     break;
                 case 4:
-                    rect = new Int32Rect(203, 457, 34, 34);
+                    rect = new Int32Rect(203, 457, 34, 30);
                     break;
                 default:
                     rect = new Int32Rect(0, 0, 1, 1);

@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WotDossier.Domain.Rows
+﻿namespace WotDossier.Domain.Rows
 {
-    public class TankRowSeries
+    public class TankRowSeries : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
         private int _reaperLongest;
         private int _reaperProgress;
         private int _sharpshooterLongest;
@@ -20,24 +12,6 @@ namespace WotDossier.Domain.Rows
         private int _invincibleProgress;
         private int _survivorLongest;
         private int _survivorProgress;
-
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
 
         public int ReaperLongest
         {
@@ -101,8 +75,9 @@ namespace WotDossier.Domain.Rows
 
         public TankRowSeries(Tank tank)
         {
-            _tier = tank.Common.tier;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _reaperLongest = tank.Series.maxKillingSeries;
             _reaperProgress = tank.Series.killingSeries;
             _sharpshooterLongest = tank.Series.maxSniperSeries;

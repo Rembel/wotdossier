@@ -5,11 +5,8 @@ using System.Text;
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowFrags
+    public class TankRowFrags : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
         private int _battles;
         private int _frags;
         private int _maxFrags;
@@ -18,24 +15,6 @@ namespace WotDossier.Domain.Rows
         private int _tier8Frags;
         private int _beastFrags;
         private int _sinaiFrags;
-
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
 
         public int Battles
         {
@@ -87,8 +66,9 @@ namespace WotDossier.Domain.Rows
 
         public TankRowFrags(Tank tank)
         {
-            _tier = tank.Common.tier;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _battles = tank.Tankdata.battlesCount;
             _frags = tank.Tankdata.frags;
             _maxFrags = tank.Tankdata.maxFrags;

@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WotDossier.Domain.Rows
+﻿namespace WotDossier.Domain.Rows
 {
-    public class TankRowBattleAwards
+    public class TankRowBattleAwards : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
         private int _battleHero;
         private int _topGun;
         private int _invader;
@@ -21,24 +13,6 @@ namespace WotDossier.Domain.Rows
         private int _patrolDuty;
         private int _brothersInArms;
         private int _crucialContribution;
-
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
 
         public int BattleHero
         {
@@ -108,8 +82,9 @@ namespace WotDossier.Domain.Rows
 
         public TankRowBattleAwards(Tank tank)
         {
-            _tier = tank.Common.tier;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _battleHero = tank.Battle.battleHeroes;
             _topGun = tank.Battle.warrior;
             _invader = tank.Battle.invader;

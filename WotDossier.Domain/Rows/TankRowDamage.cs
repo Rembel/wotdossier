@@ -5,30 +5,8 @@ using System.Text;
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowDamage
+    public class TankRowDamage : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
-
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
-
         public int DamageDealt
         {
             get { return _damageDealt; }
@@ -67,8 +45,9 @@ namespace WotDossier.Domain.Rows
 
         public TankRowDamage(Tank tank)
         {
-            _tier = tank.Common.tier;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _damageDealt = tank.Tankdata.damageDealt;
             _damageTaken = tank.Tankdata.damageReceived;
             _damageRatio = DamageDealt/ (double)DamageTaken;

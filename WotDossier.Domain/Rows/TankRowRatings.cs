@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace WotDossier.Domain.Rows
 {
@@ -32,30 +29,8 @@ def = dropped_capture_points / bc (среднее количество очко�
     /// http://wot-news.com/main/post/02172013/1/Izmenenija-v-kalakuljatore
     /// http://armor.kiev.ua/wot/rating/
     /// </summary>
-    public class TankRowRatings
+    public class TankRowRatings : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
-
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
-
         public int Battles
         {
             get { return _battles; }
@@ -122,8 +97,9 @@ def = dropped_capture_points / bc (среднее количество очко�
 
         public TankRowRatings(Tank tank)
         {
-            _tier = tank.Common.tier;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _battles = tank.Tankdata.battlesCount;
             _winrate = tank.Tankdata.wins/(double)tank.Tankdata.battlesCount*100.0;
             _averageDamage = tank.Tankdata.damageDealt/tank.Tankdata.battlesCount;
@@ -133,11 +109,11 @@ def = dropped_capture_points / bc (среднее количество очко�
             double avgCap = tank.Tankdata.capturePoints/(double)_battles;
             double avgDef = tank.Tankdata.droppedCapturePoints / (double)_battles;
 
-            double value = _averageDamage * (10.0 / (_tier + 2.0)) * (0.23 + 2.0 * _tier / 100.0) + avgFrags * 250.0 + avgSpot * 150.0 + (Math.Log(avgCap + 1, 1.732)) * 150.0 + avgDef * 150.0;
+            double value = _averageDamage * (10.0 / (Tier + 2.0)) * (0.23 + 2.0 * Tier / 100.0) + avgFrags * 250.0 + avgSpot * 150.0 + (Math.Log(avgCap + 1, 1.732)) * 150.0 + avgDef * 150.0;
 
             _newEffRating = (int)value;
-            value = (1240 - 1040 / Math.Pow((Math.Min(_tier, 6)), 0.164)) * avgFrags + _averageDamage * 530 / (184 * Math.Pow(Math.E, (0.24 * _tier)) + 130)
-                + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Pow(Math.E, ((_winrate - 35) * -0.134)))) - 500) * 0.45 + (6 - Math.Min(_tier, 6)) * -60;
+            value = (1240 - 1040 / Math.Pow((Math.Min(Tier, 6)), 0.164)) * avgFrags + _averageDamage * 530 / (184 * Math.Pow(Math.E, (0.24 * Tier)) + 130)
+                + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Pow(Math.E, ((_winrate - 35) * -0.134)))) - 500) * 0.45 + (6 - Math.Min(Tier, 6)) * -60;
             _wn6 = (int)value;
             _damageRatingRev1 = (int)(tank.Tankdata.damageDealt / (double)tank.Tankdata.damageReceived * 100);
             _kievArmorRating = 0;

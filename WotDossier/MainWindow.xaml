@@ -3,16 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:WotDossier.Converters"
         Title="MainWindow" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <DockPanel>
-        <!--<Image.Source>
-                        SourceRect="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryConverter.Default}}"
-        <CroppedBitmap 
-                            SourceRect="101 456 30 34" 
-                            Source="..\Resources\Images\award-images.png"></CroppedBitmap>
-        </Image.Source> -->
         <DockPanel.Resources>
             <DataTemplate x:Key="MasterTemplate" >
-                <Image Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" >
-                </Image>
+                <Image Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" />
             </DataTemplate>
         </DockPanel.Resources>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
@@ -188,7 +181,6 @@
                             <DataGridTextColumn Header="WN6" Binding="{Binding WN6}" Width="1*"></DataGridTextColumn>
                             <DataGridTextColumn Header="DamageRatingRev1" Binding="{Binding DamageRatingRev1}" Width="1*"></DataGridTextColumn>
                             <DataGridTextColumn Header="KievArmorRating" Binding="{Binding KievArmorRating}" Width="1*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MarkOfMastery" Binding="{Binding MarkOfMastery}" Width="1*"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="MarkOfMastery"  CellTemplate="{StaticResource MasterTemplate}"  />
                         </DataGrid.Columns>
                     </DataGrid>

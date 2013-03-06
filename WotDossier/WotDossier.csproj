@@ -76,9 +76,6 @@
     <Compile Include="Converters\DateTimeToDateConverter.cs" />
     <Compile Include="Converters\DateTimeToLocalDateTimeConverter.cs" />
     <Compile Include="Converters\DateTimeToTimeConverter.cs" />
-    <Compile Include="Converters\MarkOfMasteryConverter.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Converters\MilisecondsToMinutesConverter.cs" />
     <Compile Include="Converters\PercentFormater.cs" />
     <Compile Include="Converters\TrimConverter.cs" />

@@ -5,11 +5,8 @@ using System.Text;
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowBattles
+    public class TankRowBattles : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
         private int _battles;
         private int _won;
         private int _wonPercent;
@@ -24,9 +21,9 @@ namespace WotDossier.Domain.Rows
 
         public TankRowBattles(Tank tank)
         {
-            _tier = tank.Common.tier;
-            //Icon = tank.;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _battles = tank.Tankdata.battlesCount;
             _won = tank.Tankdata.wins;
             _wonPercent = (int) (_won / (double)_battles * 100.0);
@@ -38,24 +35,6 @@ namespace WotDossier.Domain.Rows
             _survivedPercent = (int)(_survived / (double)_battles * 100.0);
             _survivedAndWon = tank.Tankdata.winAndSurvived;
             _survivedAndWonPercent = (int)(_survivedAndWon / (double)_battles * 100.0);
-        }
-
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
         }
 
         public int Battles

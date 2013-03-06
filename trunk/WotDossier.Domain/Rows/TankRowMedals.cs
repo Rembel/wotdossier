@@ -5,11 +5,8 @@ using System.Text;
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowMedals
+    public class TankRowMedals : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
         private int _kay;
         private int _carius;
         private int _knispel;
@@ -18,24 +15,6 @@ namespace WotDossier.Domain.Rows
         private int _leclerk;
         private int _lavrinenko;
         private int _ekins;
-
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
 
         public int Kay
         {
@@ -87,8 +66,9 @@ namespace WotDossier.Domain.Rows
         
         public TankRowMedals(Tank tank)
         {
-            _tier = tank.Common.tier;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _kay = tank.Major.Kay;
             _carius = tank.Major.Carius;
             _knispel = tank.Major.Knispel;

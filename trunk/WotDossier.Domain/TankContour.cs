@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace WotDossier.Domain
+{
+    public class TankContour
+    {
+        public static TankContour Empty = new TankContour{iconid = string.Empty, x = 0, y = 0, height = 0, width = 0};
+
+        public string iconid;
+        public int x;
+        public int y;
+        public int height;
+        public int width;
+    }
+}

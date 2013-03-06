@@ -5,15 +5,16 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using WotDossier.Domain;
 
 namespace WotDossier.Converters
 {
     [ValueConversion(typeof(int), typeof(Int32Rect))]
-    public class MarkOfMasteryImageConverter : IValueConverter
+    public class TankIconImageConverter : IValueConverter
     {
-        private static MarkOfMasteryImageConverter _default = new MarkOfMasteryImageConverter();
+        private static readonly TankIconImageConverter _default = new TankIconImageConverter();
 
-        public static MarkOfMasteryImageConverter Default
+        public static TankIconImageConverter Default
         {
             get { return _default; }
         }
@@ -27,27 +28,9 @@ namespace WotDossier.Converters
         /// <param name="value">The value produced by the binding source.</param><param name="targetType">The type of the binding target property.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int mark = (int)value;
-            Int32Rect rect = Int32Rect.Empty;
-            switch (mark)
-            {
-                case 1:
-                    rect = new Int32Rect(101, 454, 34, 34);
-                    break;
-                case 2:
-                    rect = new Int32Rect(135, 454, 34, 34);
-                    break;
-                case 3:
-                    rect = new Int32Rect(169, 453, 34, 34);
-                    break;
-                case 4:
-                    rect = new Int32Rect(203, 457, 34, 34);
-                    break;
-                default:
-                    rect = new Int32Rect(0, 0, 1, 1);
-                    break;
-            }
-            CroppedBitmap cb = new CroppedBitmap(ToBitmapSource(Resources.Resources.award_images), rect);       //select region rect
+            TankContour contour = (TankContour)value;
+            Int32Rect rect = new Int32Rect(contour.x, contour.y, contour.width, contour.height);
+            CroppedBitmap cb = new CroppedBitmap(ToBitmapSource(Resources.Resources.contour), rect);       //select region rect
             return cb;
         }
 

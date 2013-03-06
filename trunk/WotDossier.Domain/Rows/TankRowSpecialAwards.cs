@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WotDossier.Domain.Rows
+﻿namespace WotDossier.Domain.Rows
 {
-    public class TankRowSpecialAwards
+    public class TankRowSpecialAwards : TankRowBase
     {
-        private int _tier;
-        private int _icon;
-        private string _tank;
         private int _kamikaze;
         private int _raider;
         private int _bombardier;
@@ -21,24 +13,6 @@ namespace WotDossier.Domain.Rows
         private int _hunter;
         private int _sinai;
         
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
-
-        public int Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
-
         public int Kamikaze
         {
             get { return _kamikaze; }
@@ -101,8 +75,9 @@ namespace WotDossier.Domain.Rows
 
         public TankRowSpecialAwards(Tank tank)
         {
-            _tier = tank.Common.tier;
-            _tank = tank.Name;
+            Tier = tank.Common.tier;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
             _kamikaze = tank.Special.kamikaze;
             _raider	 = tank.Special.raider;
             _bombardier	 = tank.Special.bombardier;

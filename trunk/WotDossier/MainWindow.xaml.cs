@@ -74,9 +74,7 @@ namespace WotDossier
             {
                 Environment.CurrentDirectory = _curDirTemp;
 
-                Read read = new Read();
-
-                List<Tank> tanks = read.Start(_last.FullName.Replace(".dat", ".json"));
+                List<Tank> tanks = Read.ReadTanks(_last.FullName.Replace(".dat", ".json"));
 
                 IEnumerable<TankRowBattles> battles = tanks.Select(x => new TankRowBattles(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
                 IEnumerable<TankRowXP> xp = tanks.Select(x => new TankRowXP(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);

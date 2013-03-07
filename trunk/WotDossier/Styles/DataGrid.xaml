@@ -141,7 +141,7 @@
             <Trigger Property="IsSelected" Value="true">
                 <Setter Property="Background" Value="#A7B0C9" />
             </Trigger>
-            <DataTrigger Binding="{Binding Path=HideFlag}" Value="true">
+            <!--<DataTrigger Binding="{Binding Path=HideFlag}" Value="true">
                 <Setter Property="Foreground" Value="Gray"></Setter>
             </DataTrigger>
             <Trigger Property="Validation.HasError" Value="true">
@@ -150,10 +150,10 @@
                 <Setter Property="ToolTip"
               Value="{Binding RelativeSource={RelativeSource Self},
                      Path=(Validation.Errors)[0].ErrorContent}"/>
-            </Trigger>
+            </Trigger>-->
         </Style.Triggers>
         <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <!--<Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />-->
         <Setter Property="MinHeight" Value="22" />
         <!--<Setter Property="ValidationErrorTemplate">
             <Setter.Value>

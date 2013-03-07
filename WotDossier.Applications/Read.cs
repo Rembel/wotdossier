@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Domain;
 using System.Linq;
+using WotDossier.Domain.Rows;
 
 namespace WotDossier.Applications
 {
@@ -13,12 +15,12 @@ namespace WotDossier.Applications
         private static readonly object _syncObject = new object();
         private static volatile Read _instance = new Read();
 
-        private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> _dictionary;
+        private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> tankDictionary;
         private static readonly Dictionary<string, TankContour> _contoursDictionary;
 
-        public static Dictionary<KeyValuePair<int, int>, TankInfo> Dictionary
+        public static Dictionary<KeyValuePair<int, int>, TankInfo> TankDictionary
         {
-            get { return _dictionary; }
+            get { return tankDictionary; }
         }
 
         public static Dictionary<string, TankContour> ContoursDictionary
@@ -31,7 +33,7 @@ namespace WotDossier.Applications
         /// </summary>
         static Read()
         {
-            _dictionary = ReadTanksLibrary();
+            tankDictionary = ReadTanksLibrary();
             _contoursDictionary = ReadTankContours();
         }
 
@@ -70,18 +72,32 @@ namespace WotDossier.Applications
                     JProperty property = (JProperty)jToken;
                     Tank tank = JsonConvert.DeserializeObject<Tank>(property.Value.ToString());
                     tank.Name = tank.Common.tanktitle;
-                    tank.Info = _dictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
-                    tank.Info.countryCode = GetCountryNameCode(tank.Common.countryid);
+                    tank.Info = tankDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
                     tank.TankContour = GetTankContour(tank);
+                    tank.Frags =
+                        tank.Kills.Select(
+                            x =>
+                            new Frag
+                                {
+                                    CountryId = Convert.ToInt32(x[0]),
+                                    TankId = Convert.ToInt32(x[1]),
+                                    Count = Convert.ToInt32(x[2]),
+                                    Name = x[3]
+                                });
                     tanks.Add(tank);
                 }
             }
             return tanks;
         }
 
-        private static TankContour GetTankContour(Tank tank)
+        public static TankContour GetTankContour(Tank tank)
         {
-            string key = string.Format("{0}_{1}", tank.Info.countryCode, tank.Info.icon.ToLowerInvariant());
+            return GetTankContour(tank.Info);
+        }
+
+        public static TankContour GetTankContour(TankInfo tank)
+        {
+            string key = string.Format("{0}_{1}", tank.countryCode, tank.icon.ToLowerInvariant());
             if (_contoursDictionary.ContainsKey(key))
             {
                 return _contoursDictionary[key];
@@ -120,6 +136,7 @@ namespace WotDossier.Applications
                 foreach (JToken jToken in parsedData)
                 {
                     TankInfo tank = JsonConvert.DeserializeObject<TankInfo>(jToken.ToString());
+                    tank.countryCode = GetCountryNameCode(tank.countryid);
                     tanks.Add(tank);
                 }
             }

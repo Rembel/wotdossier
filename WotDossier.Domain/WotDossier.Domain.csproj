@@ -46,6 +46,9 @@
     <Compile Include="company.cs" />
     <Compile Include="epic.cs" />
     <Compile Include="major.cs" />
+    <Compile Include="Rows\TankRowMasterTanker.cs" />
+    <Compile Include="Rows\TankRowPerformance.cs" />
+    <Compile Include="Rows\Frag.cs" />
     <Compile Include="Rows\TankRowBase.cs" />
     <Compile Include="Rows\TankRowRatings.cs" />
     <Compile Include="Rows\TankRowMedals.cs" />

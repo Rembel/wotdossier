@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using WotDossier.Domain.Rows;
 
 namespace WotDossier.Domain
 {
@@ -17,6 +16,7 @@ namespace WotDossier.Domain
         public series Series { get; set; }
         public major Major { get; set; }
         public IList<IList<string>> Kills { get; set; }
+        public IEnumerable<Frag> Frags { get; set; }
         public Dictionary<int, string> Rawdata { get; set; }
         public special Special { get; set; }
         public tankdata Tankdata { get; set; }

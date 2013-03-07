@@ -190,13 +190,36 @@
                 </Grid>
             </TabItem>
             <TabItem TabIndex="9" Header="Performance" Name="tabPerformance">
-                <Grid />
+                <Grid>
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgPerformance" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Shots" Binding="{Binding Shots}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Hits" Binding="{Binding Hits}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="HitRatio" Binding="{Binding HitRatio, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="CapturePoints" Binding="{Binding CapturePoints}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DefencePoints" Binding="{Binding DefencePoints}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TanksSpotted" Binding="{Binding TanksSpotted}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </TabItem>
             <TabItem TabIndex="10" Header="Frag counts" Name="tabFragCounts">
                 <Grid />
             </TabItem>
             <TabItem TabIndex="11" Header="MasterTanker" Name="tabMasterTanker">
-                <Grid />
+                <Grid>
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgMasterTanker" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridCheckBoxColumn Header="IsPremium" Binding="{Binding IsPremium}" Width="1*"></DataGridCheckBoxColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </TabItem>
             <TabItem TabIndex="12" Header="Epics" Name="tabEpics">
                 <Grid />

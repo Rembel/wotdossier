@@ -45,7 +45,6 @@
             _kolobanov = tank.Epic.Kolobanov;
             _fadin = tank.Epic.Fadin;
             _heroesOfRaseiniai = tank.Special.heroesOfRassenay;
-            //TODO: fix DeLanglade medal load
             _deLanglade = tank.Epic.DeLanglade;
         }
 

@@ -12,7 +12,9 @@
         private int _mouseTrap;
         private int _hunter;
         private int _sinai;
-        
+        private int _pattonValley;
+        private int _ranger;
+
         public int Kamikaze
         {
             get { return _kamikaze; }
@@ -73,6 +75,18 @@
             set { _sinai = value; }
         }
 
+        public int PattonValley
+        {
+            get { return _pattonValley; }
+            set { _pattonValley = value; }
+        }
+
+        public int Ranger
+        {
+            get { return _ranger; }
+            set { _ranger = value; }
+        }
+
         public TankRowSpecialAwards(Tank tank)
         {
             Tier = tank.Common.tier;
@@ -88,6 +102,8 @@
             _mouseTrap	 = tank.Special.mousebane;
             _hunter	 = tank.Special.beasthunter;
             _sinai = tank.Special.sinai;
+            _pattonValley = tank.Special.pattonValley;
+            _ranger = tank.Special.lumberjack;
         }
     }
 }

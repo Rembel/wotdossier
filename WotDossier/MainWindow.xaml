@@ -92,18 +92,21 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BattleHero" Binding="{Binding BattleHero}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="TopGun" Binding="{Binding TopGun}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Invader" Binding="{Binding Invader}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Sniper" Binding="{Binding Sniper}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Defender" Binding="{Binding Defender}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SteelWall" Binding="{Binding SteelWall}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Confederate" Binding="{Binding Confederate}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Scout" Binding="{Binding Scout}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="PatrolDuty" Binding="{Binding PatrolDuty}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BrothersInArms" Binding="{Binding BrothersInArms}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="CrucialContribution" Binding="{Binding CrucialContribution}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BattleHero" HeaderTemplate="{StaticResource BattleHeroColumnHeaderTemplate}" Binding="{Binding BattleHero}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TopGun" HeaderTemplate="{StaticResource TopGunColumnHeaderTemplate}" Binding="{Binding TopGun}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Invader" HeaderTemplate="{StaticResource InvaderColumnHeaderTemplate}" Binding="{Binding Invader}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Sniper" HeaderTemplate="{StaticResource SniperColumnHeaderTemplate}" Binding="{Binding Sniper}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Defender" HeaderTemplate="{StaticResource DefenderColumnHeaderTemplate}" Binding="{Binding Defender}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SteelWall" HeaderTemplate="{StaticResource SteelWallColumnHeaderTemplate}" Binding="{Binding SteelWall}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Confederate" HeaderTemplate="{StaticResource ConfederateColumnHeaderTemplate}" Binding="{Binding Confederate}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Scout" HeaderTemplate="{StaticResource ScoutColumnHeaderTemplate}" Binding="{Binding Scout}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="PatrolDuty" HeaderTemplate="{StaticResource PatrolDutyColumnHeaderTemplate}" Binding="{Binding PatrolDuty}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BrothersInArms" HeaderTemplate="{StaticResource BrothersInArmsColumnHeaderTemplate}" Binding="{Binding BrothersInArms}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="CrucialContribution" HeaderTemplate="{StaticResource CrucialContributionColumnHeaderTemplate}" Binding="{Binding CrucialContribution}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="CoolHeaded" HeaderTemplate="{StaticResource CoolHeadedColumnHeaderTemplate}" Binding="{Binding CoolHeaded}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="LuckyDevil" HeaderTemplate="{StaticResource LuckyDevilColumnHeaderTemplate}" Binding="{Binding LuckyDevil}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Spartan" HeaderTemplate="{StaticResource SpartanColumnHeaderTemplate}" Binding="{Binding Spartan}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -114,17 +117,19 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Kamikaze" Binding="{Binding Kamikaze}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Raider" Binding="{Binding Raider}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Bombardier" Binding="{Binding Bombardier}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Reaper" Binding="{Binding Reaper}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Sharpshooter" Binding="{Binding Sharpshooter}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Invincible" Binding="{Binding Invincible}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Survivor" Binding="{Binding Survivor}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MouseTrap" Binding="{Binding MouseTrap}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Hunter" Binding="{Binding Hunter}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Sinai" Binding="{Binding Sinai}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kamikaze" HeaderTemplate="{StaticResource KamikazeColumnHeaderTemplate}" Binding="{Binding Kamikaze}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Raider" HeaderTemplate="{StaticResource RaiderColumnHeaderTemplate}" Binding="{Binding Raider}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Bombardier" HeaderTemplate="{StaticResource BombardierColumnHeaderTemplate}" Binding="{Binding Bombardier}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Reaper" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding Reaper}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Sharpshooter" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding Sharpshooter}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Invincible" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding Invincible}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Survivor" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding Survivor}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MouseTrap" HeaderTemplate="{StaticResource MouseTrapColumnHeaderTemplate}" Binding="{Binding MouseTrap}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Hunter" HeaderTemplate="{StaticResource HunterColumnHeaderTemplate}" Binding="{Binding Hunter}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Sinai" HeaderTemplate="{StaticResource SinaiColumnHeaderTemplate}" Binding="{Binding Sinai}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="PattonValley" HeaderTemplate="{StaticResource PattonValleyColumnHeaderTemplate}" Binding="{Binding PattonValley}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Ranger" HeaderTemplate="{StaticResource RangerColumnHeaderTemplate}" Binding="{Binding Ranger}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -135,17 +140,17 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="ReaperLongest" Binding="{Binding ReaperLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="ReaperProgress" Binding="{Binding ReaperProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SharpshooterLongest" Binding="{Binding SharpshooterLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SharpshooterProgress" Binding="{Binding SharpshooterProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MasterGunnerLongest" Binding="{Binding MasterGunnerLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MasterGunnerProgress" Binding="{Binding MasterGunnerProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="InvincibleLongest" Binding="{Binding InvincibleLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="InvincibleProgress" Binding="{Binding InvincibleProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivorLongest" Binding="{Binding SurvivorLongest}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivorProgress" Binding="{Binding SurvivorProgress}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="ReaperLongest" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="ReaperProgress" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SharpshooterLongest" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SharpshooterProgress" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MasterGunnerLongest" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="MasterGunnerProgress" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="InvincibleLongest" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="InvincibleProgress" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivorLongest" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="SurvivorProgress" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -156,15 +161,15 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Kay" Binding="{Binding Kay}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Carius" Binding="{Binding Carius}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Knispel" Binding="{Binding Knispel}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Poppel" Binding="{Binding Poppel}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Abrams" Binding="{Binding Abrams}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Leclerk" Binding="{Binding Leclerk}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Lavrinenko" Binding="{Binding Lavrinenko}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Ekins" Binding="{Binding Ekins}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kay" HeaderTemplate="{StaticResource KayColumnHeaderTemplate}" Binding="{Binding Kay}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Carius" HeaderTemplate="{StaticResource CariusColumnHeaderTemplate}" Binding="{Binding Carius}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Knispel" HeaderTemplate="{StaticResource KnispelColumnHeaderTemplate}" Binding="{Binding Knispel}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Poppel" HeaderTemplate="{StaticResource PoppelColumnHeaderTemplate}" Binding="{Binding Poppel}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Abrams" HeaderTemplate="{StaticResource AbramsColumnHeaderTemplate}" Binding="{Binding Abrams}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Leclerk" HeaderTemplate="{StaticResource LeclerkColumnHeaderTemplate}" Binding="{Binding Leclerk}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Lavrinenko" HeaderTemplate="{StaticResource LavrinenkoColumnHeaderTemplate}" Binding="{Binding Lavrinenko}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Ekins" HeaderTemplate="{StaticResource EkinsColumnHeaderTemplate}" Binding="{Binding Ekins}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

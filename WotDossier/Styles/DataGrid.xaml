@@ -394,6 +394,402 @@
         </StackPanel>
     </DataTemplate>
 
+    <DataTemplate x:Key="KayColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="0 250 58 66"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CariusColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="377 131 61 62"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="KnispelColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="443 68 61 62"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PoppelColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="254 189 61 66"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AbramsColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="64 195 62 59"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LeclerkColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="320 66 62 63"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LavrinenkoColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="258 66 62 65"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="EkinsColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="0 183 64 67"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="KamikazeColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="272 324 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="RaiderColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="323 324 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BombardierColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="315 393 51 68"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ReaperColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="264 393 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SharpshooterColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="436 247 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="InvincibleColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="332 255 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SurvivorColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="374 324 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MouseTrapColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="383 255 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HunterColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="109 387 52 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SinaiColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="220 322 52 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PattonValleyColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="280 255 52 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="RangerColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="0 378 55 62"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BattleHeroColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="377 193 59 62"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TopGunColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="116 254 57 70"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="InvaderColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="329 0 62 65"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SniperColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="67 68 65 60"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DefenderColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="58 313 55 66"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SteelWallColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="161 387 52 68"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ConfederateColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="267 0 62 66"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ScoutColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="204 0 63 65"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PatrolDutyColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="195 65 63 64"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BrothersInArmsColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="315 195 61 57"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CrucialContributionColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="0 0 73 53"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CoolHeadedColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="438 188 59 59"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LuckyDevilColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="187 201 55 59"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SpartanColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="113 324 54 63"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MasterGunnerColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="213 390 51 69"></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <!--<DataTemplate x:Key="ColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image>
+                <Image.Source>
+                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect=""></CroppedBitmap>
+                </Image.Source>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>-->
+
     <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="true">

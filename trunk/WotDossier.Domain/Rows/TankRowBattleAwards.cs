@@ -13,6 +13,9 @@
         private int _patrolDuty;
         private int _brothersInArms;
         private int _crucialContribution;
+        private int _coolHeaded;
+        private int _luckyDevil;
+        private int _spartan;
 
         public int BattleHero
         {
@@ -80,6 +83,24 @@
             set { _crucialContribution = value; }
         }
 
+        public int CoolHeaded
+        {
+            get { return _coolHeaded; }
+            set { _coolHeaded = value; }
+        }
+
+        public int LuckyDevil
+        {
+            get { return _luckyDevil; }
+            set { _luckyDevil = value; }
+        }
+
+        public int Spartan
+        {
+            get { return _spartan; }
+            set { _spartan = value; }
+        }
+
         public TankRowBattleAwards(Tank tank)
         {
             Tier = tank.Common.tier;
@@ -94,8 +115,11 @@
             _confederate = tank.Battle.supporter;
             _scout = tank.Battle.scout;
             _patrolDuty = tank.Battle.evileye;
-            _brothersInArms = tank.Epic.BrothersInArms == 0 ? tank.Epic.medalBrothersInArms : tank.Epic.BrothersInArms;
-            _crucialContribution = tank.Epic.CrucialContribution == 0 ? tank.Epic.medalCrucialContribution : tank.Epic.CrucialContribution;
+            _brothersInArms = tank.Epic.BrothersInArms;
+            _crucialContribution = tank.Epic.CrucialContribution;
+            _coolHeaded = tank.Special.alaric;
+            _luckyDevil = tank.Special.luckyDevil;
+            _spartan = tank.Special.sturdy;
         }
     }
 }

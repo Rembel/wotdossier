@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="WotDossier.Tabs.CommonTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ImageBrush x:Key="bcolor" ImageSource="..\Resources\Images\back.jpg" />
+    </UserControl.Resources>
+    <Grid  Background="{StaticResource bcolor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Width="Auto" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Overall Results"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="Battle Performance"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Text="Experience"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="0" Text="Battles Participated: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Text="{Binding data.summary.Battles_count}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="Victories:"></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="1" Text="{Binding data.summary.Wins}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="0" Text="Defeats:"></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="1" Text="{Binding data.summary.Losses}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="Battles Survived:"></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="1" Text="{Binding data.summary.Survived_battles}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="2" Text="Destroyed: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="3" Text="{Binding data.battles.Frags}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="2" Text="Detected: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="3" Text="{Binding data.battles.Spotted}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="2" Text="Hit Ratio: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="3" Text="{Binding data.battles.Hits_percents}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="2" Text="Damage Caused: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="3" Text="{Binding data.battles.Damage_dealt}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="2" Text="Capture Points: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="5" Grid.Column="3" Text="{Binding data.battles.Capture_points}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="2" Text="Defense Points: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="3" Text="{Binding data.battles.Dropped_capture_points}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="4" Text="Total Experience: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="5" Text="{Binding data.experience.Xp}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="4" Text="Average Experience per Battle: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="5" Text="{Binding data.experience.Battle_avg_xp}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="4" Text="Maximum Experience per Battle: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="5" Text="{Binding data.experience.Max_xp}"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="2" Width="Auto" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Rating"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Text="Value"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Text="Place"></TextBlock>
+            <!--GR-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="0" Text="GR"></TextBlock>
+            <Image Grid.Row="1" Grid.Column="1" Source="..\Resources/Images/gr.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="2" Text="Global Rating"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="3" Text="{Binding data.ratings.Integrated_rating.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="4" Text="{Binding data.ratings.Integrated_rating.Place}"></TextBlock>
+            <!--W/B-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="W/B"></TextBlock>
+            <Image Grid.Row="2" Grid.Column="1" Source="..\Resources/Images/wb.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="2" Text="Victories/Battles"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="3" Text="{Binding data.ratings.Battle_avg_performance.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="4" Text="{Binding data.ratings.Battle_avg_performance.Place}"></TextBlock>
+            <!--E/B-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="0" Text="E/B"></TextBlock>
+            <Image Grid.Row="3" Grid.Column="1" Source="..\Resources/Images/eb.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="2" Text="Average Experience per Battle"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="3" Text="{Binding data.ratings.Battle_avg_xp.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="4" Text="{Binding data.ratings.Battle_avg_xp.Place}"></TextBlock>
+            <!--WIN-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="WIN"></TextBlock>
+            <Image Grid.Row="4" Grid.Column="1" Source="..\Resources/Images/win.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="2" Text="Victories"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="3" Text="{Binding data.ratings.Battle_wins.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="4" Text="{Binding data.ratings.Battle_wins.Place}"></TextBlock>
+            <!--GPL-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="0" Text="GPL"></TextBlock>
+            <Image Grid.Row="5" Grid.Column="1" Source="..\Resources/Images/gpl.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="2" Text="Battles Participated"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="3" Text="{Binding data.ratings.Battles.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="4" Text="{Binding data.ratings.Battles.Place}"></TextBlock>
+            <!--CPT-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="0" Text="CPT"></TextBlock>
+            <Image Grid.Row="6" Grid.Column="1" Source="..\Resources/Images/cpt.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="2" Text="Capture Points"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="3" Text="{Binding data.ratings.Ctf_points.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="4" Text="{Binding data.ratings.Ctf_points.Place}"></TextBlock>
+            <!--DMG-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="DMG"></TextBlock>
+            <Image Grid.Row="7" Grid.Column="1" Source="..\Resources/Images/dmg.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="2" Text="Damage Caused"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="3" Text="{Binding data.ratings.Damage_dealt.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="4" Text="{Binding data.ratings.Damage_dealt.Place}"></TextBlock>
+            <!--DPT-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="DPT"></TextBlock>
+            <Image Grid.Row="8" Grid.Column="1" Source="..\Resources/Images/dpt.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="2" Text="Defense Points"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="3" Text="{Binding data.ratings.Dropped_ctf_points.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="4" Text="{Binding data.ratings.Dropped_ctf_points.Place}"></TextBlock>
+            <!--FRG-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="0" Text="FRG"></TextBlock>
+            <Image Grid.Row="9" Grid.Column="1" Source="..\Resources/Images/frg.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="2" Text="Targets Destroyed"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="3" Text="{Binding data.ratings.Frags.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="4" Text="{Binding data.ratings.Frags.Place}"></TextBlock>
+            <!--SPT-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="0" Text="SPT"></TextBlock>
+            <Image Grid.Row="10" Grid.Column="1" Source="..\Resources/Images/spt.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="2" Text="Targets Detected"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="3" Text="{Binding data.ratings.Spotted.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="4" Text="{Binding data.ratings.Spotted.Place}"></TextBlock>
+            <!--EXP-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="0" Text="EXP"></TextBlock>
+            <Image Grid.Row="11" Grid.Column="1" Source="..\Resources/Images/exp.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="2" Text="Total Experience"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="3" Text="{Binding data.ratings.Xp.Value}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="4" Text="{Binding data.ratings.Xp.Place}"></TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

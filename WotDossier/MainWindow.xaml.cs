@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications;
+using WotDossier.Applications.View;
 using WotDossier.Domain;
 using WotDossier.Domain.Rows;
 using Common.Logging;
@@ -16,7 +17,7 @@ namespace WotDossier
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IShellView
     {
         private string _curDirTemp;
         private FileInfo _last = null;
@@ -31,7 +32,21 @@ namespace WotDossier
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string[] files = Directory.GetFiles(appDataPath + @"\Wargaming.net\WorldOfTanks\dossier_cache", "*.dat");
+            string[] files = new string[0];
+
+            try
+            {
+                files = Directory.GetFiles(appDataPath + @"\Wargaming.net\WorldOfTanks\dossier_cache", "*.dat");
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                _log.Error("Путь к файлам кэша не найден", ex);
+            }
+
+            if (files.Count() == 0)
+            {
+                return;
+            }
 
             foreach (string file in files)
             {

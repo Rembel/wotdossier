@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Domain;
 using System.Linq;
+using WotDossier.Domain.Player;
 using WotDossier.Domain.Rows;
 
 namespace WotDossier.Applications
@@ -160,6 +162,49 @@ namespace WotDossier.Applications
             }
 
             return tanks.ToDictionary(x => x.iconid.ToLowerInvariant());
+        }
+
+        /// <summary>
+        /// https://gist.github.com/bartku/2419852
+        /// </summary>
+        /// <param name="playerName"></param>
+        /// <returns></returns>
+        public static PlayerStat LoadPlayerStat(string playerName)
+        {
+            long playerId = GetPlayerId(playerName);
+            string api = "1.9";
+            string source_token = "WG-WoT_Assistant-1.3.2";
+            //string url = string.Format(@"http://worldoftanks.ru/community/accounts/{0}/api/{1}/?source_token={2}", playerId, api, source_token);
+            //WebRequest request = HttpWebRequest.Create(url);
+            //WebResponse response = request.GetResponse();
+            //using (Stream stream = response.GetResponseStream())
+            using (StreamReader streamReader = new StreamReader(@"stat.json"))
+            {
+                //StreamReader streamReader = new StreamReader(stream);
+                JsonTextReader reader = new JsonTextReader(streamReader);
+                JsonSerializer se = new JsonSerializer();
+                return se.Deserialize<PlayerStat>(reader);
+            }
+        }
+
+        private static long GetPlayerId(string playerName)
+        {
+            return 10800699;
+            string api = "1.1";
+            string source_token = "WG-WoT_Assistant-1.3.2";
+            string url =
+                string.Format(
+                    "http://worldoftanks.ru/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1", playerName, api, source_token);
+            WebRequest request = HttpWebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            using (Stream stream = response.GetResponseStream())
+            {
+                StreamReader streamReader = new StreamReader(stream);
+                JsonTextReader reader = new JsonTextReader(streamReader);
+                JsonSerializer se = new JsonSerializer();
+                JObject parsedData = (JObject)se.Deserialize(reader);
+                return (long)((JValue)parsedData["data"]["items"][0].Last.First).Value;
+            }
         }
     }
 }

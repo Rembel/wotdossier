@@ -1,7 +1,8 @@
 ﻿<Window x:Class="WotDossier.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:WotDossier.Converters"
-        Title="MainWindow" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png">
+        xmlns:tabs="clr-namespace:WotDossier.Tabs"
+        Title="MainWindow" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png"        >
     <DockPanel>
         <DockPanel.Resources>
             <DataTemplate x:Key="MasterTemplate" >
@@ -15,6 +16,9 @@
             <MenuItem Header="Загрузить" Click="MenuItem_Click"></MenuItem>
         </Menu>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
+            <TabItem TabIndex="0" Header="Common" Name="tabCommon">
+                <tabs:CommonTab HorizontalAlignment="Stretch"></tabs:CommonTab>
+            </TabItem>
             <TabItem TabIndex="0" Header="XP" Name="tabXP">
                 <Grid >
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
@@ -232,26 +236,26 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Boelter" HeaderTemplate="{StaticResource BoelterColumnHeaderTemplate}" Binding="{Binding Boelter}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="RadleyWalters" HeaderTemplate="{StaticResource RadleyWaltersColumnHeaderTemplate}" Binding="{Binding RadleyWalters}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="LafayettePool" HeaderTemplate="{StaticResource LafayettePoolColumnHeaderTemplate}" Binding="{Binding LafayettePool}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Orlik" HeaderTemplate="{StaticResource OrlikColumnHeaderTemplate}" Binding="{Binding Orlik}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Oskin" HeaderTemplate="{StaticResource OskinColumnHeaderTemplate}" Binding="{Binding Oskin}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Lehvaslaiho" HeaderTemplate="{StaticResource LehvaslaihoColumnHeaderTemplate}" Binding="{Binding Lehvaslaiho}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Nikolas" HeaderTemplate="{StaticResource NikolasColumnHeaderTemplate}" Binding="{Binding Nikolas}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Halonen" HeaderTemplate="{StaticResource HalonenColumnHeaderTemplate}" Binding="{Binding Halonen}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Burda" HeaderTemplate="{StaticResource BurdaColumnHeaderTemplate}" Binding="{Binding Burda}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Pascucci" HeaderTemplate="{StaticResource PascucciColumnHeaderTemplate}" Binding="{Binding Pascucci}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Dumitru" HeaderTemplate="{StaticResource DumitruColumnHeaderTemplate}" Binding="{Binding Dumitru}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="TamadaYoshio" HeaderTemplate="{StaticResource TamadaYoshioColumnHeaderTemplate}" Binding="{Binding TamadaYoshio}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Billotte" HeaderTemplate="{StaticResource BillotteColumnHeaderTemplate}" Binding="{Binding Billotte}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BrunoPietro" HeaderTemplate="{StaticResource BrunoPietroColumnHeaderTemplate}" Binding="{Binding BrunoPietro}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Tarczay" HeaderTemplate="{StaticResource TarczayColumnHeaderTemplate}" Binding="{Binding Tarczay}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Kolobanov" HeaderTemplate="{StaticResource KolobanovColumnHeaderTemplate}" Binding="{Binding Kolobanov}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Fadin" HeaderTemplate="{StaticResource FadinColumnHeaderTemplate}" Binding="{Binding Fadin}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="HeroesOfRaseiniai" HeaderTemplate="{StaticResource HeroesOfRaseiniaiColumnHeaderTemplate}" Binding="{Binding HeroesOfRaseiniai}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DeLanglade" HeaderTemplate="{StaticResource DeLangladeColumnHeaderTemplate}" Binding="{Binding DeLanglade}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Boelter" HeaderTemplate="{StaticResource BoelterColumnHeaderTemplate}" Binding="{Binding Boelter}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="RadleyWalters" HeaderTemplate="{StaticResource RadleyWaltersColumnHeaderTemplate}" Binding="{Binding RadleyWalters}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="LafayettePool" HeaderTemplate="{StaticResource LafayettePoolColumnHeaderTemplate}" Binding="{Binding LafayettePool}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Orlik" HeaderTemplate="{StaticResource OrlikColumnHeaderTemplate}" Binding="{Binding Orlik}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Oskin" HeaderTemplate="{StaticResource OskinColumnHeaderTemplate}" Binding="{Binding Oskin}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Lehvaslaiho" HeaderTemplate="{StaticResource LehvaslaihoColumnHeaderTemplate}" Binding="{Binding Lehvaslaiho}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nikolas" HeaderTemplate="{StaticResource NikolasColumnHeaderTemplate}" Binding="{Binding Nikolas}"  ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Halonen" HeaderTemplate="{StaticResource HalonenColumnHeaderTemplate}" Binding="{Binding Halonen}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Burda" HeaderTemplate="{StaticResource BurdaColumnHeaderTemplate}" Binding="{Binding Burda}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Pascucci" HeaderTemplate="{StaticResource PascucciColumnHeaderTemplate}" Binding="{Binding Pascucci}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Dumitru" HeaderTemplate="{StaticResource DumitruColumnHeaderTemplate}" Binding="{Binding Dumitru}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TamadaYoshio" HeaderTemplate="{StaticResource TamadaYoshioColumnHeaderTemplate}" Binding="{Binding TamadaYoshio}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Billotte" HeaderTemplate="{StaticResource BillotteColumnHeaderTemplate}" Binding="{Binding Billotte}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="BrunoPietro" HeaderTemplate="{StaticResource BrunoPietroColumnHeaderTemplate}" Binding="{Binding BrunoPietro}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tarczay" HeaderTemplate="{StaticResource TarczayColumnHeaderTemplate}" Binding="{Binding Tarczay}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kolobanov" HeaderTemplate="{StaticResource KolobanovColumnHeaderTemplate}" Binding="{Binding Kolobanov}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Fadin" HeaderTemplate="{StaticResource FadinColumnHeaderTemplate}" Binding="{Binding Fadin}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="HeroesOfRaseiniai" HeaderTemplate="{StaticResource HeroesOfRaseiniaiColumnHeaderTemplate}" Binding="{Binding HeroesOfRaseiniai}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DeLanglade" HeaderTemplate="{StaticResource DeLangladeColumnHeaderTemplate}" Binding="{Binding DeLanglade}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

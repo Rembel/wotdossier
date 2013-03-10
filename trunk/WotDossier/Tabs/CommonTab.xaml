@@ -23,19 +23,19 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="25"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
                 <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="25"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
                 <ColumnDefinition Width="50"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Overall Results"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="Battle Performance"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Text="Experience"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="0" Text="Battles Participated: "></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Text="{Binding data.summary.Battles_count}"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="Victories:"></TextBlock>
@@ -44,24 +44,28 @@
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="1" Text="{Binding data.summary.Losses}"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="Battles Survived:"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="1" Text="{Binding data.summary.Survived_battles}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="2" Text="Destroyed: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="3" Text="{Binding data.battles.Frags}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="2" Text="Detected: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="3" Text="{Binding data.battles.Spotted}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="2" Text="Hit Ratio: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="3" Text="{Binding data.battles.Hits_percents}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="2" Text="Damage Caused: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="3" Text="{Binding data.battles.Damage_dealt}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="2" Text="Capture Points: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="5" Grid.Column="3" Text="{Binding data.battles.Capture_points}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="2" Text="Defense Points: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="3" Text="{Binding data.battles.Dropped_capture_points}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="4" Text="Total Experience: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="5" Text="{Binding data.experience.Xp}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="4" Text="Average Experience per Battle: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="5" Text="{Binding data.experience.Battle_avg_xp}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="4" Text="Maximum Experience per Battle: "></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="5" Text="{Binding data.experience.Max_xp}"></TextBlock>
+
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Experience"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="0" Text="Total Experience: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="1" Text="{Binding data.experience.Xp}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="Average Experience per Battle: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="7" Grid.Column="1" Text="{Binding data.experience.Battle_avg_xp}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="Maximum Experience per Battle: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="8" Grid.Column="1" Text="{Binding data.experience.Max_xp}"></TextBlock>
+            
+            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Text="Battle Performance"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="3" Text="Destroyed: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="4" Text="{Binding data.battles.Frags}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="3" Text="Detected: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="4" Text="{Binding data.battles.Spotted}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="3" Text="Hit Ratio: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="4" Text="{Binding data.battles.Hits_percents}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="3" Text="Damage Caused: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="4" Text="{Binding data.battles.Damage_dealt}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="3" Text="Capture Points: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="5" Grid.Column="4" Text="{Binding data.battles.Capture_points}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="3" Text="Defense Points: "></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="4" Text="{Binding data.battles.Dropped_capture_points}"></TextBlock>
         </Grid>
         <Grid Grid.Row="2" Width="Auto" HorizontalAlignment="Center">
             <Grid.RowDefinitions>

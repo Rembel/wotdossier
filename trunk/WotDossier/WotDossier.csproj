@@ -271,6 +271,10 @@
       <Project>{BEF5308C-9E64-4369-B012-81600FDD97A3}</Project>
       <Name>WotDossier.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Framework\WotDossier.Framework.csproj">
+      <Project>{27b67dfe-0bf1-4435-b036-e4c083eaea03}</Project>
+      <Name>WotDossier.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Configs\Log4Net.xml">

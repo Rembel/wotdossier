@@ -1,0 +1,21 @@
+﻿<Window x:Class="WotDossier.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="300" Width="500" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="6 6 6 6" Grid.Column="0" Text="Player Id or Name"></TextBlock>
+        <TextBox Margin="6 6 6 6" Grid.Column="1" Text="{Binding AppSettings.PlayerId}"></TextBox>
+        <ComboBox Margin="6 6 6 6" Grid.Column="2" ItemsSource="{Binding Servers}" SelectedValue="{Binding AppSettings.Server}" />
+        <Button Margin="6 6 6 6" Grid.Column="2" Grid.Row="3" Content="Save" Command="{Binding SaveCommand}" ></Button>
+    </Grid>
+</Window>

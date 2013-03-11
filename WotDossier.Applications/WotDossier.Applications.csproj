@@ -39,6 +39,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -52,13 +53,21 @@
     <Compile Include="ApplicationController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Read.cs" />
+    <Compile Include="SettingsReader.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ShellViewModel.cs" />
+    <Compile Include="View\ISettingsView.cs" />
     <Compile Include="View\IShellView.cs" />
+    <Compile Include="WotApiSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">
+      <Project>{1268b707-a866-4723-89c7-2e9bd92e6aa6}</Project>
+      <Name>WotDossier.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WotDossier.Domain\WotDossier.Domain.csproj">
       <Project>{BEF5308C-9E64-4369-B012-81600FDD97A3}</Project>
       <Name>WotDossier.Domain</Name>

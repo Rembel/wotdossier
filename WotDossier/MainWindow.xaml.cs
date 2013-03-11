@@ -7,6 +7,7 @@ using System.Threading;
 using System.Windows;
 using WotDossier.Applications;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Domain;
 using WotDossier.Domain.Rows;
 using Common.Logging;
@@ -21,6 +22,7 @@ namespace WotDossier
     {
         private string _curDirTemp;
         private FileInfo _last = null;
+        SettingsReader _reader = new SettingsReader(WotDossierSettings.SettingsPath);
 
         protected static readonly ILog _log = LogManager.GetLogger("log");
 
@@ -29,7 +31,7 @@ namespace WotDossier
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItemLoad_Click(object sender, RoutedEventArgs e)
         {
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string[] files = new string[0];
@@ -83,7 +85,7 @@ namespace WotDossier
             {
                 Environment.CurrentDirectory = _curDirTemp;
 
-                tabCommon.DataContext = Read.LoadPlayerStat("_rembel_");
+                tabCommon.DataContext = Read.LoadPlayerStat(_reader.Read());
 
                 List<Tank> tanks = Read.ReadTanks(_last.FullName.Replace(".dat", ".json"));
 
@@ -122,6 +124,12 @@ namespace WotDossier
         private bool IsExistedtank(TankInfo tankInfo)
         {
             return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
+        }
+
+        private void MenuItemSettings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsViewModel model = new SettingsViewModel(new Settings());
+            model.Show();
         }
     }
 }

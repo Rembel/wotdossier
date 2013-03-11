@@ -35,7 +35,7 @@
                 <ColumnDefinition Width="250"></ColumnDefinition>
                 <ColumnDefinition Width="50"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Overall Results"></TextBlock>
+            <TextBlock Foreground="#FFA759" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Overall Results" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="0" Text="Battles Participated: "></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Text="{Binding data.summary.Battles_count}"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="Victories:"></TextBlock>
@@ -45,15 +45,15 @@
             <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="Battles Survived:"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="1" Text="{Binding data.summary.Survived_battles}"></TextBlock>
 
-            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Experience"></TextBlock>
+            <TextBlock Foreground="#FFA759" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Experience" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="0" Text="Total Experience: "></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="1" Text="{Binding data.experience.Xp}"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="Average Experience per Battle: "></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="7" Grid.Column="1" Text="{Binding data.experience.Battle_avg_xp}"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="Maximum Experience per Battle: "></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="8" Grid.Column="1" Text="{Binding data.experience.Max_xp}"></TextBlock>
-            
-            <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Text="Battle Performance"></TextBlock>
+
+            <TextBlock Foreground="#FFA759" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Text="Battle Performance" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="3" Text="Destroyed: "></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="4" Text="{Binding data.battles.Frags}"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="3" Text="Detected: "></TextBlock>

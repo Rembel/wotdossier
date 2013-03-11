@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -13,8 +14,27 @@
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Width="Auto" HorizontalAlignment="Center">
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Foreground="White" FontSize="32" FontFamily="Arial Narrow" Grid.Row="0" Grid.Column="0" Text="{Binding data.name}" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="0" Grid.Column="2" Text="Дата регистрации: " HorizontalAlignment="Right"></TextBlock>
+            <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="0" Grid.Column="3" Text="{Binding data.created_at, Converter={x:Static Converters:DoubleToDateConverter.Default}}" HorizontalAlignment="Right"></TextBlock>
+            <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="1" Grid.Column="0" Text="Данные по состоянию на " HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="1" Grid.Column="1" Text="{Binding data.updated_at, Converter={x:Static Converters:DoubleToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="2" Width="Auto" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -67,7 +87,7 @@
             <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="3" Text="Defense Points: "></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="4" Text="{Binding data.battles.Dropped_capture_points}"></TextBlock>
         </Grid>
-        <Grid Grid.Row="2" Width="Auto" HorizontalAlignment="Center">
+        <Grid Grid.Row="3" Width="Auto" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>

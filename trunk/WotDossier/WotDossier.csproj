@@ -70,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\DoubleToDateConverter.cs" />
     <Compile Include="Converters\PercentToColorConverter.cs" />
     <Compile Include="Converters\SubtractValueConverter.cs" />
     <Compile Include="Converters\WN6ToColorConverter.cs" />
@@ -301,6 +302,7 @@
     <Content Include="External\wotdc2j.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\Images\Tools.png" />
     <Resource Include="Resources\Images\back.jpg" />
     <Resource Include="Resources\Images\cpt.png" />
     <Resource Include="Resources\Images\dmg.png" />

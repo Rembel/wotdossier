@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Windows;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Domain;
@@ -183,7 +184,18 @@ namespace WotDossier.Applications
             long playerId = GetPlayerId(settings);
             string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
-            WebResponse response = request.GetResponse();
+            WebResponse response;
+            
+            try
+            {
+                response = request.GetResponse();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Can't get player info from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return null;
+            }
+            
             Stream stream = response.GetResponseStream();
 
             if (stream == null)

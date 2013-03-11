@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    >
+                    xmlns:Converters="clr-namespace:WotDossier.Converters">
 
-    <!--<Style x:Key="TextBoxInComboBoxStyle"  TargetType="{x:Type TextBox}">
+    <Style x:Key="TextBoxInComboBoxStyle"  TargetType="{x:Type TextBox}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="AllowDrop" Value="true" />
         <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType=Grid}, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged, Converter={x:Static Converters:SubtractValueConverter.Default}, ConverterParameter=3}" />
@@ -22,7 +22,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
+    </Style>
     
     <ControlTemplate x:Key="toggleButtonTemplate" TargetType="{x:Type ToggleButton}">
         <Grid>

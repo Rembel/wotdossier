@@ -14,15 +14,18 @@ namespace WotDossier.Applications
 
     public class Read
     {
+        private const string URL_GET_PLAYER_INFO = @"http://worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
+        private const string URL_SEARCH_PLAYER = "http://worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
+
         private static readonly object _syncObject = new object();
         private static volatile Read _instance = new Read();
 
-        private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> tankDictionary;
+        private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> _tankDictionary;
         private static readonly Dictionary<string, TankContour> _contoursDictionary;
-
+        
         public static Dictionary<KeyValuePair<int, int>, TankInfo> TankDictionary
         {
-            get { return tankDictionary; }
+            get { return _tankDictionary; }
         }
 
         public static Dictionary<string, TankContour> ContoursDictionary
@@ -35,7 +38,7 @@ namespace WotDossier.Applications
         /// </summary>
         static Read()
         {
-            tankDictionary = ReadTanksLibrary();
+            _tankDictionary = ReadTanksLibrary();
             _contoursDictionary = ReadTankContours();
         }
 
@@ -74,7 +77,7 @@ namespace WotDossier.Applications
                     JProperty property = (JProperty)jToken;
                     Tank tank = JsonConvert.DeserializeObject<Tank>(property.Value.ToString());
                     tank.Name = tank.Common.tanktitle;
-                    tank.Info = tankDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
+                    tank.Info = _tankDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
                     tank.TankContour = GetTankContour(tank);
                     tank.Frags =
                         tank.Kills.Select(
@@ -167,34 +170,40 @@ namespace WotDossier.Applications
         /// <summary>
         /// https://gist.github.com/bartku/2419852
         /// </summary>
-        /// <param name="playerName"></param>
         /// <returns></returns>
-        public static PlayerStat LoadPlayerStat(string playerName)
+        public static PlayerStat LoadPlayerStat(AppSettings settings)
         {
-            long playerId = GetPlayerId(playerName);
-            string api = "1.9";
-            string source_token = "WG-WoT_Assistant-1.3.2";
-            //string url = string.Format(@"http://worldoftanks.ru/community/accounts/{0}/api/{1}/?source_token={2}", playerId, api, source_token);
-            //WebRequest request = HttpWebRequest.Create(url);
-            //WebResponse response = request.GetResponse();
-            //using (Stream stream = response.GetResponseStream())
-            using (StreamReader streamReader = new StreamReader(@"stat.json"))
+            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
-                //StreamReader streamReader = new StreamReader(stream);
+                return null;
+            }
+#if DEBUG
+            using (StreamReader streamReader = new StreamReader(@"stat.json"))
+#else
+            long playerId = GetPlayerId(settings);
+            string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
+            WebRequest request = HttpWebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+
+            if (stream == null)
+            {
+                return null;
+            }
+
+            using (StreamReader streamReader = new StreamReader(stream))
+#endif
+            {
                 JsonTextReader reader = new JsonTextReader(streamReader);
                 JsonSerializer se = new JsonSerializer();
                 return se.Deserialize<PlayerStat>(reader);
             }
         }
 
-        private static long GetPlayerId(string playerName)
+        private static long GetPlayerId(AppSettings settings)
         {
             return 10800699;
-            string api = "1.1";
-            string source_token = "WG-WoT_Assistant-1.3.2";
-            string url =
-                string.Format(
-                    "http://worldoftanks.ru/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1", playerName, api, source_token);
+            string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream stream = response.GetResponseStream())

@@ -13,7 +13,8 @@
             </DataTemplate>
         </DockPanel.Resources>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
-            <MenuItem Header="Загрузить" Click="MenuItem_Click"></MenuItem>
+            <MenuItem Header="Load" Click="MenuItemLoad_Click"></MenuItem>
+            <MenuItem Header="Settings" Click="MenuItemSettings_Click"></MenuItem>
         </Menu>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <TabItem TabIndex="0" Header="Common" Name="tabCommon">

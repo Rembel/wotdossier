@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSettings.cs" />
     <Compile Include="battle.cs" />
     <Compile Include="clan.cs" />
     <Compile Include="common.cs" />

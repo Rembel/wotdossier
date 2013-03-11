@@ -71,6 +71,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\PercentToColorConverter.cs" />
+    <Compile Include="Converters\SubtractValueConverter.cs" />
     <Compile Include="Converters\WN6ToColorConverter.cs" />
     <Compile Include="Converters\EffectivityToColorConverter.cs" />
     <Compile Include="Converters\Double2Formater.cs" />
@@ -79,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\CommonTab.xaml.cs">
       <DependentUpon>CommonTab.xaml</DependentUpon>
@@ -105,6 +109,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\ApplicationStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

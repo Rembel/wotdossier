@@ -22,7 +22,7 @@ namespace WotDossier
     {
         private string _curDirTemp;
         private FileInfo _last = null;
-        SettingsReader _reader = new SettingsReader(WotDossierSettings.SettingsPath);
+        private readonly SettingsReader _reader = new SettingsReader(WotDossierSettings.SettingsPath);
 
         protected static readonly ILog _log = LogManager.GetLogger("log");
 
@@ -33,6 +33,8 @@ namespace WotDossier
 
         private void MenuItemLoad_Click(object sender, RoutedEventArgs e)
         {
+            tabCommon.DataContext = Read.LoadPlayerStat(_reader.Read());
+
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string[] files = new string[0];
 
@@ -45,7 +47,7 @@ namespace WotDossier
                 _log.Error("Путь к файлам кэша не найден", ex);
             }
 
-            if (files.Count() == 0)
+            if (!files.Any())
             {
                 return;
             }
@@ -84,8 +86,6 @@ namespace WotDossier
             Action act = () =>
             {
                 Environment.CurrentDirectory = _curDirTemp;
-
-                tabCommon.DataContext = Read.LoadPlayerStat(_reader.Read());
 
                 List<Tank> tanks = Read.ReadTanks(_last.FullName.Replace(".dat", ".json"));
 

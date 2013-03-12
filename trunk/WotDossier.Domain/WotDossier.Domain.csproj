@@ -44,6 +44,8 @@
     <Compile Include="battle.cs" />
     <Compile Include="clan.cs" />
     <Compile Include="common.cs" />
+    <Compile Include="Common\CommonStatGroup.cs" />
+    <Compile Include="Common\CommonStatRow.cs" />
     <Compile Include="company.cs" />
     <Compile Include="epic.cs" />
     <Compile Include="major.cs" />

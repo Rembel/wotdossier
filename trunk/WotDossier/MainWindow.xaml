@@ -13,16 +13,16 @@
             </DataTemplate>
         </DockPanel.Resources>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
-            <MenuItem Header="Load" Click="MenuItemLoad_Click"></MenuItem>
+            <MenuItem Header="Load" Command="{Binding LoadCommand}"></MenuItem>
             <MenuItem Header="Settings" Click="MenuItemSettings_Click"></MenuItem>
         </Menu>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <TabItem TabIndex="0" Header="Common" Name="tabCommon">
-                <tabs:CommonTab HorizontalAlignment="Stretch"></tabs:CommonTab>
+                <tabs:CommonTab HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTab>
             </TabItem>
             <TabItem TabIndex="0" Header="XP" Name="tabXP">
                 <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Xp}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -36,7 +36,7 @@
             </TabItem>
             <TabItem TabIndex="1" Header="Battles" Name="tabBattles">
                 <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Battles}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -58,7 +58,7 @@
             </TabItem>
             <TabItem TabIndex="2" Header="Frags" Name="tabFrags">
                 <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Frags}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -77,7 +77,7 @@
             </TabItem>
             <TabItem TabIndex="3" Header="Damage" Name="tabDamage">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Damage}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -93,7 +93,7 @@
             </TabItem>
             <TabItem TabIndex="4" Header="Battle awards" Name="tabBattleAwards">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding BattleAwards}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -118,7 +118,7 @@
             </TabItem>
             <TabItem TabIndex="5" Header="Special awards" Name="tabSpecialAwards">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding SpecialAwards}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -141,7 +141,7 @@
             </TabItem>
             <TabItem TabIndex="6" Header="Series" Name="tabSeries">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Series}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -162,7 +162,7 @@
             </TabItem>
             <TabItem TabIndex="7" Header="Medals" Name="tabMedals">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Medals}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -181,7 +181,7 @@
             </TabItem>
             <TabItem TabIndex="8" Header="Ratings" Name="tabRatings">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Ratings}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -201,7 +201,7 @@
             </TabItem>
             <TabItem TabIndex="9" Header="Performance" Name="tabPerformance">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgPerformance" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Performance}" VerticalAlignment="Stretch" Name="dgPerformance" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -221,7 +221,7 @@
             </TabItem>
             <TabItem TabIndex="11" Header="MasterTanker" Name="tabMasterTanker">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgMasterTanker" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding MasterTanker}" VerticalAlignment="Stretch" Name="dgMasterTanker" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -233,7 +233,7 @@
             </TabItem>
             <TabItem TabIndex="12" Header="Epics" Name="tabEpics">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding}" VerticalAlignment="Stretch" Name="dgEpics" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Epics}" VerticalAlignment="Stretch" Name="dgEpics" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

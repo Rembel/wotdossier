@@ -16,7 +16,7 @@ namespace WotDossier.Applications
     public class Read
     {
         private const string URL_GET_PLAYER_INFO = @"http://worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
-        private const string URL_SEARCH_PLAYER = "http://worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
+        private const string URL_SEARCH_PLAYER = @"http://worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
 
         private static readonly object _syncObject = new object();
         private static volatile Read _instance = new Read();
@@ -214,7 +214,9 @@ namespace WotDossier.Applications
 
         private static long GetPlayerId(AppSettings settings)
         {
+#if DEBUG
             return 10800699;
+#else
             string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -226,6 +228,7 @@ namespace WotDossier.Applications
                 JObject parsedData = (JObject)se.Deserialize(reader);
                 return (long)((JValue)parsedData["data"]["items"][0].Last.First).Value;
             }
+#endif
         }
     }
 }

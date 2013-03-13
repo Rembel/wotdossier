@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="DataFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeHelper.cs" />
+    <Compile Include="TypeHelper.generic.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="XmlSerializer.cs" />
   </ItemGroup>

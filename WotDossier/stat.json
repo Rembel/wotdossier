@@ -26,7 +26,7 @@
       }, 
       "defender": 7, 
       "medalLeClerc": 2, 
-      "supporter": 8, 
+      "supporter": 9, 
       "medalTamadaYoshio": 0, 
       "steelwall": 30, 
       "bombardier": 0, 
@@ -41,7 +41,7 @@
       "handOfDeath": 1, 
       "medalTarczay": 0, 
       "sinai": 2, 
-      "sniper": 70, 
+      "sniper": 72, 
       "warrior": 11, 
       "titleSniper": 1, 
       "maxInvincibleSeries": 4, 
@@ -52,7 +52,7 @@
       "medalBurda": 0, 
       "maxPiercingSeries": 23, 
       "scout": 0, 
-      "beasthunter": 1, 
+      "beasthunter": 2, 
       "kamikaze": 2, 
       "medalRadleyWalters": 0, 
       "raider": 0, 
@@ -84,48 +84,48 @@
     }, 
     "ratings": {
       "spotted": {
-        "place": 2301058, 
-        "value": 2128
+        "place": 2274751, 
+        "value": 2171
       }, 
       "dropped_ctf_points": {
-        "place": 1674835, 
+        "place": 1692709, 
         "value": 2436
       }, 
       "battle_avg_xp": {
-        "place": 107630, 
-        "value": 607
+        "place": 102951, 
+        "value": 609
       }, 
       "xp": {
-        "place": 1468950, 
-        "value": 1669204
+        "place": 1455318, 
+        "value": 1692658
       }, 
       "battles": {
-        "place": 2276540, 
-        "value": 2748
+        "place": 2269149, 
+        "value": 2778
       }, 
       "damage_dealt": {
-        "place": 1412813, 
-        "value": 2569919
+        "place": 1396714, 
+        "value": 2612904
       }, 
       "ctf_points": {
-        "place": 1911711, 
-        "value": 4605
+        "place": 1929999, 
+        "value": 4611
       }, 
       "integrated_rating": {
-        "place": 317333, 
-        "value": 9
+        "place": 308256, 
+        "value": 10
       }, 
       "battle_avg_performance": {
-        "place": 274353, 
+        "place": 275728, 
         "value": 53
       }, 
       "frags": {
-        "place": 1715468, 
-        "value": 2538
+        "place": 1710134, 
+        "value": 2566
       }, 
       "battle_wins": {
-        "place": 2139358, 
-        "value": 1460
+        "place": 2130377, 
+        "value": 1479
       }
     }, 
     "name": "_Rembel_", 
@@ -138,11 +138,11 @@
         "level": 8, 
         "damageDealt": 796618, 
         "survivedBattles": 183, 
-        "battle_count": 864, 
+        "battle_count": 878, 
         "nation": "ussr", 
         "image_url": "/static/2.2.0/encyclopedia/tankopedia/vehicle/small/ussr-is-3.png", 
         "frags": 600, 
-        "win_count": 490, 
+        "win_count": 500, 
         "class": "heavyTank"
       }, 
       {
@@ -306,11 +306,11 @@
         "level": 7, 
         "damageDealt": 0, 
         "survivedBattles": 0, 
-        "battle_count": 47, 
+        "battle_count": 53, 
         "nation": "ussr", 
         "image_url": "/static/2.2.0/encyclopedia/tankopedia/vehicle/small/ussr-su-152.png", 
         "frags": 0, 
-        "win_count": 23, 
+        "win_count": 26, 
         "class": "AT-SPG"
       }, 
       {
@@ -328,6 +328,20 @@
         "class": "mediumTank"
       }, 
       {
+        "spotted": 0, 
+        "localized_name": "ИС-7", 
+        "name": "IS-7", 
+        "level": 10, 
+        "damageDealt": 0, 
+        "survivedBattles": 0, 
+        "battle_count": 39, 
+        "nation": "ussr", 
+        "image_url": "/static/2.2.0/encyclopedia/tankopedia/vehicle/small/ussr-is-7.png", 
+        "frags": 0, 
+        "win_count": 19, 
+        "class": "heavyTank"
+      }, 
+      {
         "spotted": 14, 
         "localized_name": "АТ-1", 
         "name": "AT-1", 
@@ -340,20 +354,6 @@
         "frags": 19, 
         "win_count": 16, 
         "class": "AT-SPG"
-      }, 
-      {
-        "spotted": 0, 
-        "localized_name": "ИС-7", 
-        "name": "IS-7", 
-        "level": 10, 
-        "damageDealt": 0, 
-        "survivedBattles": 0, 
-        "battle_count": 36, 
-        "nation": "ussr", 
-        "image_url": "/static/2.2.0/encyclopedia/tankopedia/vehicle/small/ussr-is-7.png", 
-        "frags": 0, 
-        "win_count": 17, 
-        "class": "heavyTank"
       }, 
       {
         "spotted": 28, 
@@ -384,6 +384,20 @@
         "class": "lightTank"
       }, 
       {
+        "spotted": 0, 
+        "localized_name": "Т-44", 
+        "name": "T-44", 
+        "level": 8, 
+        "damageDealt": 0, 
+        "survivedBattles": 0, 
+        "battle_count": 24, 
+        "nation": "ussr", 
+        "image_url": "/static/2.2.0/encyclopedia/tankopedia/vehicle/small/ussr-t-44.png", 
+        "frags": 0, 
+        "win_count": 12, 
+        "class": "mediumTank"
+      }, 
+      {
         "spotted": 11, 
         "localized_name": "БТ-7", 
         "name": "BT-7", 
@@ -410,20 +424,6 @@
         "frags": 15, 
         "win_count": 11, 
         "class": "heavyTank"
-      }, 
-      {
-        "spotted": 0, 
-        "localized_name": "Т-44", 
-        "name": "T-44", 
-        "level": 8, 
-        "damageDealt": 0, 
-        "survivedBattles": 0, 
-        "battle_count": 17, 
-        "nation": "ussr", 
-        "image_url": "/static/2.2.0/encyclopedia/tankopedia/vehicle/small/ussr-t-44.png", 
-        "frags": 0, 
-        "win_count": 8, 
-        "class": "mediumTank"
       }, 
       {
         "spotted": 14, 
@@ -622,24 +622,24 @@
         "class": "lightTank"
       }
     ], 
-    "updated_at": 1362868607.00, 
+    "updated_at": 1363121719.00, 
     "battles": {
-      "spotted": 2128, 
+      "spotted": 2171, 
       "hits_percents": 70, 
-      "capture_points": 4605, 
-      "damage_dealt": 2569919, 
-      "frags": 2538, 
+      "capture_points": 4611, 
+      "damage_dealt": 2612904, 
+      "frags": 2566, 
       "dropped_capture_points": 2436
     }, 
     "summary": {
-      "wins": 1460, 
-      "losses": 1244, 
-      "battles_count": 2748, 
-      "survived_battles": 818
+      "wins": 1479, 
+      "losses": 1254, 
+      "battles_count": 2778, 
+      "survived_battles": 826
     }, 
     "experience": {
-      "xp": 1669204, 
-      "battle_avg_xp": 607, 
+      "xp": 1692658, 
+      "battle_avg_xp": 609, 
       "max_xp": 2236
     }, 
     "clan": {

@@ -70,6 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\ValueDeltaFormater.cs" />
+    <Compile Include="Converters\ValueDeltaPercentFormater.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ValuePercentFormater.cs" />
+    <Compile Include="Converters\DeltaToColorConverter.cs" />
     <Compile Include="Converters\DoubleToDateConverter.cs" />
     <Compile Include="Converters\PercentToColorConverter.cs" />
     <Compile Include="Converters\SubtractValueConverter.cs" />
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="stat_prev.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -80,7 +80,9 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnLoad()
         {
-            PlayerStatistic = new CommonPlayerStatistic(Read.LoadPlayerStat(_reader.Read()));
+            AppSettings appSettings = _reader.Read();
+
+            PlayerStatistic = new CommonPlayerStatistic(Read.LoadPlayerStat(appSettings), new List<CommonPlayerStatistic>{new CommonPlayerStatistic(Read.LoadPrevPlayerStat(appSettings))});
 
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string[] files = new string[0];

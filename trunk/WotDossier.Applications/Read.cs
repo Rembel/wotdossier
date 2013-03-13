@@ -212,6 +212,27 @@ namespace WotDossier.Applications
             }
         }
 
+//#if DEBUG
+        /// <summary>
+        /// https://gist.github.com/bartku/2419852
+        /// </summary>
+        /// <returns></returns>
+        public static PlayerStat LoadPrevPlayerStat(AppSettings settings)
+        {
+            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
+            {
+                return null;
+            }
+
+            using (StreamReader streamReader = new StreamReader(@"stat_prev.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(streamReader);
+                JsonSerializer se = new JsonSerializer();
+                return se.Deserialize<PlayerStat>(reader);
+            }
+        }
+//#endif
+
         private static long GetPlayerId(AppSettings settings)
         {
 #if DEBUG

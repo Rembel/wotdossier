@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BEF5308C-9E64-4369-B012-81600FDD97A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WotDossier.Domain</RootNamespace>
+    <AssemblyName>WotDossier.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="battle.cs" />
+    <Compile Include="clan.cs" />
+    <Compile Include="common.cs" />
+    <Compile Include="Common\CommonStatGroup.cs" />
+    <Compile Include="Common\CommonStatRow.cs" />
+    <Compile Include="company.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\PlayerEntity.cs" />
+    <Compile Include="Entities\PlayerStatisticEntity.cs" />
+    <Compile Include="epic.cs" />
+    <Compile Include="major.cs" />
+    <Compile Include="Player\Achievements.cs" />
+    <Compile Include="Player\Battles.cs" />
+    <Compile Include="Player\Experience.cs" />
+    <Compile Include="Player\MechanicEngineers.cs" />
+    <Compile Include="Player\PlayerSearch.cs" />
+    <Compile Include="Player\PlayerStat.cs" />
+    <Compile Include="Player\PlayerStatData.cs" />
+    <Compile Include="Player\Rating.cs" />
+    <Compile Include="Player\Ratings.cs" />
+    <Compile Include="Player\Summary.cs" />
+    <Compile Include="Player\TankExperts.cs" />
+    <Compile Include="Player\Vehicle.cs" />
+    <Compile Include="Rows\TankRowEpic.cs" />
+    <Compile Include="Rows\TankRowMasterTanker.cs" />
+    <Compile Include="Rows\TankRowPerformance.cs" />
+    <Compile Include="Rows\Frag.cs" />
+    <Compile Include="Rows\TankRowBase.cs" />
+    <Compile Include="Rows\TankRowRatings.cs" />
+    <Compile Include="Rows\TankRowMedals.cs" />
+    <Compile Include="Rows\TankRowSeries.cs" />
+    <Compile Include="Rows\TankRowSpecialAwards.cs" />
+    <Compile Include="Rows\TankRowBattleAwards.cs" />
+    <Compile Include="Rows\TankRowDamage.cs" />
+    <Compile Include="Rows\TankRowBattles.cs" />
+    <Compile Include="Rows\TankRowXP.cs" />
+    <Compile Include="Rows\TankRowFrags.cs" />
+    <Compile Include="series.cs" />
+    <Compile Include="special.cs" />
+    <Compile Include="Tank.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TankContour.cs" />
+    <Compile Include="tankdata.cs" />
+    <Compile Include="TankInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">
+      <Project>{1268b707-a866-4723-89c7-2e9bd92e6aa6}</Project>
+      <Name>WotDossier.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

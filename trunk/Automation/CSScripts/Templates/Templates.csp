@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <variables>
+    <add key="ConnectionString1" value="Data Source=(local);Initial Catalog=AwsCC;Integrated Security=True;" />
+  </variables>
+  <propertySets>
+    <propertySet name="Templates.cs" output="Templates.cs" template="D:\Projects\aws\trunk\Automation\CSScripts\Templates\Templates.cst">
+      <property name="SourceDatabase">
+        <connectionString>$(ConnectionString1)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+      <property name="OutputDirectory">c:\CodeSmith</property>
+      <property name="Namespace">Croc.Aws.Domain.Entities</property>
+      <property name="Assembly">Croc.Aws.Domain</property>
+      <property name="CoreNamespace">Croc.Aws.Domain.Entities</property>
+      <property name="CoreAssembly">Croc.Aws.Domain</property>
+      <property name="EntityBase">EntityBase</property>
+      <property name="BaseEntityPath">Base</property>
+      <property name="EntityPath">Entities</property>
+      <property name="ProxyPath">Proxy</property>
+      <property name="MappingPath">Mapping</property>
+      <property name="FullTextIndexPath">Index</property>
+      <property name="CurrentSchema">All</property>
+    </propertySet>
+  </propertySets>
+</codeSmith>

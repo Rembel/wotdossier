@@ -1,0 +1,52 @@
+<%@ CodeTemplate Src="BaseData.cs" Inherits="Templates.Data.BaseDataCodeTemplate" Language="C#" Debug="true" TargetLanguage="C#" ResponseEncoding="windows-1251" Description="Generates a C# class for use with NHibnate" %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Table that the mapping file is based on" %>
+<%@ Property Name="Namespace" Type="System.String" Default="Namespace.Entities" Category="Object" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="Assembly.Entities" Category="Object" Description="The assembly that the class will be used in" %>
+<%@ Property Name="EntityBase" Type="System.String" Default="EntityBase" Category="Object" Description="" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+<%@ Import Namespace="Templates.Data" %>
+<%
+	NamespaceSchema.SetCurrent(Namespace, Assembly);
+	ClassSchema cs = NamespaceSchema.Current.GetClassSchema(SourceTable);
+	string cn=cs.Name+"Entity";
+%>
+using WotDossier.Domain.Entities;
+
+namespace WotDossier.Dal.Mappings
+{
+	/// <summary>
+    /// Represents map class for <see cref="<%=cn%>"/>.
+    /// </summary>
+    public class <%=cs.Name%>Mapping : ClassMapBase<<%=cn%>>
+    {
+        public <%=cs.Name%>Mapping()
+        {
+		<% foreach(PropertySchema property in cs.Properties) {%>
+			Map(v => v.<%=PropPropertyName(property)%>, "<%=property.Name%>");
+		<% } %>
+		<% foreach(ReferenceSchema reference in cs.References) {%>
+			Map(v=>v.<%=RefPropertyName(reference)%>, "<%=reference.ColumnName%>");
+		<% } %>
+		
+		<% foreach(ReferenceSchema reference in cs.References) {%>
+			References(v => v.<%=RefObjectPropertyName(reference)%>).Column(Column(v => v.<%=RefPropertyName(reference)%>)).Cascade.All();
+		<% } %>
+
+		<% foreach(CollectionSchema coll in cs.Collections ) {	
+			string type=String.Concat(coll.ItemType,"Entity"); 
+			string field=ToPrivate(StringUtil.ToPlural(type));
+                        string rn=coll.Class.Name+"Entity";
+		%>
+			HasMany(v => v.<%= StringUtil.ToPlural(type)%>).KeyColumn(Column<<%=rn%>>(v => v.<%=coll.ColumnName%>));
+		<%}%>
+		<% if(cs.HasVersion) {%>		
+
+			Version(v => v.<%= cs.Version.Name %>);
+		<% } %>
+        }
+    }
+}

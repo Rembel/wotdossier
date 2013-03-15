@@ -1,0 +1,251 @@
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="This Template Generates C# domain objects for NHibernate" Debug="true" %>
+
+<%@ Property Name="Namespace" Type="System.String" Default="Qulix.Core.Entities" Category="Core" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="Qulix.Core.Entities" Category="Core" Description="The assembly that the class will be used in" %>
+
+<%@ Property Name="CoreNamespace" Type="System.String" Default="Qulix.Core.Entities" Category="Core" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="CoreAssembly" Type="System.String" Default="Qulix.Core.Entities" Category="Core" Description="The assembly that the class will be used in" %>
+
+<%@ Property Name="EntityBase" Type="System.String" Default="EntityBase" Category="Object" Description="" %>
+<%@ Property Name="BaseEntityPath" Type="System.String" Default="Base" Category="Path" Description="" %>
+<%@ Property Name="EntityPath" Type="System.String" Default="Entities" Category="Path" Description="" %>
+<%@ Property Name="ProxyPath" Type="System.String" Default="Proxy" Category="Path" Description="" %>
+<%@ Property Name="MappingPath" Type="System.String" Default="Mapping" Category="Path" Description="" %>
+<%@ Property Name="FullTextIndexPath" Type="System.String" Default="Index" Category="Path" Description="" %>
+
+<%@ Property Name="CurrentSchema" Type="System.String" Default="All" Category="Path" Description="" %>
+
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Import Namespace="System.Windows.Forms.Design" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+
+<script runat="template">
+
+	private DatabaseSchema _sourceDatabase;
+	private string _outputDirectory;
+    private bool _implementNotification = true;
+
+	private CodeTemplate _entityTemplate;
+	private CodeTemplate _entityMappingTemplate;
+	
+    [Category("Database")]
+    [Description("Database that the mapping file should be based on.")]
+    public DatabaseSchema SourceDatabase {
+        get { return _sourceDatabase; }
+        set { _sourceDatabase = value; }
+    }
+
+	[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
+	[Category("General")]
+    [Description("The folder to save the generated class files.")]
+	public string OutputDirectory
+	{
+		get {return _outputDirectory;}
+		set {_outputDirectory= value;}
+	}
+
+	[Browsable(false)]
+	public CodeTemplate ClassTemplate
+	{
+		get
+		{
+			if (_entityTemplate == null)
+				_entityTemplate = CompileTemplate(CodeTemplateInfo.DirectoryName + @"Entity.cst");
+
+			return _entityTemplate;
+		}
+	}
+    
+    
+	[Browsable(false)]
+	public CodeTemplate MappingTemplate
+	{
+		get
+		{
+			if (_entityMappingTemplate == null)
+				_entityMappingTemplate = CompileTemplate(CodeTemplateInfo.DirectoryName + @"EntityMapping.cst");
+
+			return _entityMappingTemplate;
+		}
+	}
+	
+	public CodeTemplate CompileTemplate(string templateName)
+	{
+		CodeTemplateCompiler compiler = new CodeTemplateCompiler(templateName);
+		compiler.Compile();
+
+		if (compiler.Errors.Count == 0)
+		{
+			return compiler.CreateInstance();
+		}
+		else
+		{
+			for (int i = 0; i < compiler.Errors.Count; i++)
+			{
+				Console.WriteLine(compiler.Errors[i].ToString());
+			}
+			return null;
+		}
+
+	}
+	
+	public string GetAssembly(string tableName)
+	{
+		return CoreAssembly;
+		
+	}
+	public string GetNamespace(string tableName)
+	{
+		return CoreNamespace;
+		
+	}
+
+	public void Generate()
+	{
+		
+		Console.WriteLine("CoreNamespace={0}",CoreNamespace);
+		Console.WriteLine("CoreAssembly={0}",CoreAssembly);
+				
+		foreach(TableSchema sourceTable in SourceDatabase.Tables)
+		{
+			Console.WriteLine(string.Format("Processing Table {0} ... ", sourceTable.Name));
+			
+			if (!sourceTable.HasPrimaryKey)
+			{
+				Console.WriteLine("skipped, no primary key");
+			}
+			else
+			{
+				try
+				{
+
+				string classFileName = sourceTable.Name+"Entity.cs";
+				classFileName = Path.Combine(Path.Combine(OutputDirectory,EntityPath), classFileName);
+				
+				this.ClassTemplate.SetProperty("SourceTable", sourceTable);
+				this.ClassTemplate.SetProperty("Namespace",GetNamespace(sourceTable.Name));
+				this.ClassTemplate.SetProperty("Assembly", GetAssembly(sourceTable.Name));
+				this.ClassTemplate.SetProperty("EntityBase", EntityBase);
+				
+				this.ClassTemplate.RenderToFile(classFileName, true);
+
+				Console.WriteLine(string.Format("{0} ", classFileName));
+                
+                string mappingFileName = sourceTable.Name+"EntityMapping.cs";
+				mappingFileName = Path.Combine(Path.Combine(OutputDirectory,MappingPath), mappingFileName);
+				
+				this.MappingTemplate.SetProperty("SourceTable", sourceTable);
+				this.MappingTemplate.SetProperty("Namespace",GetNamespace(sourceTable.Name));
+				this.MappingTemplate.SetProperty("Assembly", GetAssembly(sourceTable.Name));
+				this.MappingTemplate.SetProperty("EntityBase", EntityBase);
+				
+				this.MappingTemplate.RenderToFile(mappingFileName, true);
+
+				Console.WriteLine(string.Format("{0} ", mappingFileName));                
+				
+				}
+				catch (Exception ex)
+				{
+					Response.WriteLine(ex.Message,ex);
+					Console.WriteLine(ex.Message,ex);
+				}
+				
+			}
+		}
+	}
+</script>
+<script runat="template">
+private Regex cleanRegEx = new Regex(@"\s+|_|-|\.", RegexOptions.Compiled);
+private Regex cleanID = new Regex(@"(_ID|_id|_Id|\.ID|\.id|\.Id|ID|Id)", RegexOptions.Compiled);
+
+public string CleanName(string name)
+{
+	return cleanRegEx.Replace(name, "");
+}
+
+public string CamelCase(string name)
+{
+	string output = CleanName(name);
+	return char.ToLower(output[0]) + output.Substring(1);
+}
+
+public string PascalCase(string name)
+{
+	string output = CleanName(name);
+	return char.ToUpper(output[0]) + output.Substring(1);
+}
+
+public string MakePlural(string name)
+{
+	Regex plural1 = new Regex("(?<keep>[^aeiou])y$");
+	Regex plural2 = new Regex("(?<keep>[aeiou]y)$");
+	Regex plural3 = new Regex("(?<keep>[sxzh])$");
+	Regex plural4 = new Regex("(?<keep>[^sxzhy])$");
+
+	if(plural1.IsMatch(name))
+		return plural1.Replace(name, "${keep}ies");
+	else if(plural2.IsMatch(name))
+		return plural2.Replace(name, "${keep}s");
+	else if(plural3.IsMatch(name))
+		return plural3.Replace(name, "${keep}es");
+	else if(plural4.IsMatch(name))
+		return plural4.Replace(name, "${keep}s");
+
+	return name;
+}
+
+public string MakeSingle(string name)
+{
+	Regex plural1 = new Regex("(?<keep>[^aeiou])ies$");
+	Regex plural2 = new Regex("(?<keep>[aeiou]y)s$");
+	Regex plural3 = new Regex("(?<keep>[sxzh])es$");
+	Regex plural4 = new Regex("(?<keep>[^sxzhyu])s$");
+
+	if(plural1.IsMatch(name))
+		return plural1.Replace(name, "${keep}y");
+	else if(plural2.IsMatch(name))
+		return plural2.Replace(name, "${keep}");
+	else if(plural3.IsMatch(name))
+		return plural3.Replace(name, "${keep}");
+	else if(plural4.IsMatch(name))
+		return plural4.Replace(name, "${keep}");
+
+	return name;
+}
+
+public bool IsManyToManyTable(TableSchema table)
+{
+	if (table.Columns.Count == 2 && table.PrimaryKey != null && table.PrimaryKey.MemberColumns.Count == 2 && table.ForeignKeys.Count == 2)
+		return true;
+	else
+		return false;
+}
+
+public bool IsSubClassTable(TableSchema sourceTable)
+{
+	int count = 0;
+	foreach(TableKeySchema foreignKey in sourceTable.ForeignKeys)
+	{
+		if (foreignKey.ForeignKeyMemberColumns[0].IsPrimaryKeyMember)
+		{
+			//Console.WriteLine(String.Format(" {0}:", foreignKey.PrimaryKeyTable.Name));
+			foreach(TableKeySchema primaryKey in foreignKey.PrimaryKeyTable.PrimaryKeys)
+			{
+				//Console.WriteLine(String.Format(" {0} ", primaryKey.ForeignKeyTable.Name ));
+				if (primaryKey.ForeignKeyMemberColumns[0].IsPrimaryKeyMember && primaryKey.ForeignKeyTable.PrimaryKey.MemberColumns.Count == 1)
+					count++;
+			}
+		}
+	}
+	if (count > 1)
+		return true;
+
+	return false;
+}
+</script>
+<% this.Generate();  %>

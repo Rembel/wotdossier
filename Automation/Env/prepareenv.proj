@@ -1,0 +1,64 @@
+<Project
+  DefaultTargets="Run"
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+>
+
+  <PropertyGroup>
+    <AutomationFolder>..</AutomationFolder>
+    <SourceFolder>..\..\Sources</SourceFolder>
+    <ReferencesPath>..\..\References</ReferencesPath>
+    <ToolPath>..\..\Tools</ToolPath>
+    <MachineName>localhost</MachineName>
+    <WebSiteName>Default Web Site</WebSiteName>
+  </PropertyGroup>
+
+  <UsingTask TaskName="UnZip" AssemblyFile="$(ReferencesPath)\MSBuild\MSBuild.Community.Tasks.dll " />
+  <UsingTask TaskName="Web.WebSite.AddMimeType" AssemblyFile="$(ReferencesPath)\MSBuild\Microsoft.Sdc.Tasks.dll" />
+  <UsingTask TaskName="Web.WebSite.Exists" AssemblyFile="$(ReferencesPath)\MSBuild\Microsoft.Sdc.Tasks.dll"/>
+  
+  <Target Name="Run" >
+    <CallTarget Targets="RenameAutomationTemplates"/>
+    <CallTarget Targets="RenameSourceTemplates"/>
+    <CallTarget Targets="UnzipNant"/>
+    <CallTarget Targets="AddMimeTypes"/>
+  </Target>
+
+  <Target Name="RenameAutomationTemplates"  >
+
+    <CreateItem Include="$(AutomationFolder)\**\*.template" >
+      <Output TaskParameter="Include" ItemName="AutomationTemplateFiles"/>
+    </CreateItem>
+
+    <Copy SourceFiles="@(AutomationTemplateFiles)" DestinationFiles="@(AutomationTemplateFiles->'$(AutomationFolder)\%(RecursiveDir)%(filename)')" />
+
+  </Target>
+
+  <Target Name="RenameSourceTemplates"  >
+
+    <CreateItem Include="$(SourceFolder)\**\*.template" >
+      <Output TaskParameter="Include" ItemName="SourceTemplateFiles"/>
+    </CreateItem>
+
+    <Copy SourceFiles="@(SourceTemplateFiles)" DestinationFiles="@(SourceTemplateFiles->'$(SourceFolder)\%(RecursiveDir)%(filename)')" />
+
+  </Target>
+
+  <Target Name="UnzipNant">
+    <Unzip ZipFileName="$(ToolPath)\nant.zip"
+           TargetDirectory="$(ToolPath)\nant"/>
+  </Target>
+
+  <Target Name="AddMimeTypes">
+
+    <Web.WebSite.Exists Description="$(WebSiteName)">
+      <Output TaskParameter="DoesExist" PropertyName="WebSiteExists" />
+    </Web.WebSite.Exists>
+    <Message Text="Is website exists? - $(WebSiteExists)" />
+
+    <Web.WebSite.AddMimeType Condition="$(WebSiteExists) == true" Description="$(WebSiteName)" MachineName="$(MachineName)" FileExtension=".xap" MimeType="application/x-silverlight-app"/>
+    <Web.WebSite.AddMimeType Condition="$(WebSiteExists) == true" Description="$(WebSiteName)" MachineName="$(MachineName)" FileExtension=".xaml" MimeType="application/xaml+xml"/>
+    <Web.WebSite.AddMimeType Condition="$(WebSiteExists) == true" Description="$(WebSiteName)" MachineName="$(MachineName)" FileExtension=".xbap" MimeType="application/x-ms-xbap"/>
+  </Target>
+
+
+</Project>

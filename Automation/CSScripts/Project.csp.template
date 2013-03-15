@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <variables>
+    <add key="ConnectionString" value="Data Source=(local);Initial Catalog=AwsCC;Integrated Security=True;" />
+  </variables>
+  <propertySets>
+    <propertySet template="Templates\Templates.cst">
+      <property name="CoreNamespace">Croc.Aws.Domain.Entities</property>
+      <property name="CoreAssembly">Croc.Aws.Domain</property>
+      <property name="EntityBase">EntityBase</property>
+      <property name="BaseEntityPath">Base</property>
+      <property name="EntityPath">Entities</property>
+      <property name="MappingPath">Mappings</property>
+      <property name="CurrentSchema">All</property>
+      <property name="OutputDirectory">..\Output.All</property>
+      <property name="SourceDatabase">
+        <connectionString>$(ConnectionString)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+    </propertySet>
+  </propertySets>
+</codeSmith>

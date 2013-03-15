@@ -1,0 +1,91 @@
+<%@ CodeTemplate Src="BaseData.cs" Inherits="Templates.Data.BaseDataCodeTemplate" Language="C#" Debug="true" TargetLanguage="C#" ResponseEncoding="windows-1251" Description="Generates a C# class for use with NHibnate" %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Table that the mapping file is based on" %>
+<%@ Property Name="Namespace" Type="System.String" Default="PayPerVisit.Entities" Category="Object" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="Assembly.Entities" Category="Object" Description="The assembly that the class will be used in" %>
+<%@ Property Name="EntityBase" Type="System.String" Default="EntityBase" Category="Object" Description="" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+<%@ Import Namespace="Templates.Data" %>
+<%
+	NamespaceSchema.SetCurrent(Namespace, Assembly);
+	ClassSchema cs = NamespaceSchema.Current.GetClassSchema(SourceTable);
+	string cn=cs.Name+"Entity";
+%>
+using System;
+using System.Collections.Generic;
+using WotDossier.Common;
+
+namespace <%= Namespace %>
+{
+	/// <summary>
+	/// <%= (SourceTable.Description != "" ? SourceTable.Description : "Object representation for table '" + SourceTable.Name + "'.")%>
+	/// </summary>
+	[Serializable]
+	public class <%= cn %> : <%= (cs.IsSubClass ?  cs.ParentName+"Entity" :  this.EntityBase)%>
+	{	
+		#region Property names
+		
+		<% foreach(PropertySchema property in cs.Properties) {%>
+		public static readonly string Prop<%= PropPropertyName(property) %> = TypeHelper<<%= cn %>>.PropertyName(v => v.<%= PropPropertyName(property) %>);
+		<%}%>
+		<% foreach(ReferenceSchema reference in cs.References) {%>
+		public static readonly string Prop<%= RefPropertyName(reference) %> = TypeHelper<<%= cn %>>.PropertyName(v => v.<%= RefPropertyName(reference) %>);
+		<%}%>		
+		
+		#endregion
+
+		<% if(cs.HasId && cs.Id.Name!="Id") {%>
+		/// <summary>
+		/// Gets/Sets the Identity field .
+		/// </summary>
+		public virtual <%= CSharpType(cs.Id.Type,"true") %> <%= StringUtil.ToCamelCase(cs.Id.Name) %>	{ get; set; }
+		<%}%>
+		<% foreach(PropertySchema property in cs.Properties) {%>
+		/// <summary>
+		/// Gets/Sets the field "<%= !String.IsNullOrEmpty(property.Description) ? property.Description : property.Name %>".
+		/// </summary>
+		public virtual <%= CSharpType(property.Type,property.NotNull) %> <%= PropPropertyName(property) %>	{get; set; }
+		
+		<% } %>
+		<% foreach(ReferenceSchema reference in cs.References) {%>
+		/// <summary>
+		/// Gets/Sets the field "<%= !String.IsNullOrEmpty(reference.Description) ? reference.Description : reference.ColumnName %>".
+		/// </summary>
+		public virtual <%= CSharpType(reference.Class.Id.Type,reference.NotNull) %> <%= RefPropertyName(reference) %> { get; set; }
+		
+		/// <summary>
+		/// Gets/Sets the <see cref="<%=reference.Class.Name %>Entity"/> object.
+		/// </summary>
+		public virtual <%= reference.Class.Name %>Entity <%= RefObjectPropertyName(reference) %> { get; set; }
+
+		<% } %>
+		<%if(cs.Collections!=null &&cs.Collections.Count>0){ %>
+		#region Collections
+		
+		<% foreach(CollectionSchema coll in cs.Collections ) {	
+			string type=String.Concat(coll.ItemType,"Entity"); 
+			string field=ToPrivate(StringUtil.ToPlural(type));
+		%>
+		private IList<<%= type %>> <%= field %>;
+		/// <summary>
+		/// Gets/Sets the <see cref="<%=type %>"/> collection.
+		/// </summary>
+        public virtual IList<<%= type %>> <%= StringUtil.ToPlural(type)%>
+        {
+            get
+            {
+                return <% = field %> ?? (<% = field %> = new List<<%= type %>>());
+            }
+            set { <% = field %> = value; }
+        }
+		
+		<%}%>
+		#endregion Collections
+		<% } %>
+		
+	}
+}
+

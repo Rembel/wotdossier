@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using WotDossier.Common;
+using WotDossier.Domain.Player;
+using System.Linq;
 
 namespace WotDossier.Domain.Entities
 {
@@ -242,7 +244,83 @@ namespace WotDossier.Domain.Entities
 		/// </summary>
 		public virtual PlayerEntity PlayerIdObject { get; set; }
 
-		
+        /// <summary>
+        /// Gets/Sets the AvgLevel object.
+        /// </summary>
+        public virtual double AvgLevel { get; set; }
+
+	    public virtual void Update(PlayerStat stat)
+	    {
+            #region Common init
+
+            BattlesCount = stat.data.summary.Battles_count;
+            Wins = stat.data.summary.Wins;
+            Losses = stat.data.summary.Losses;
+            SurvivedBattles = stat.data.summary.Survived_battles;
+            Xp = stat.data.experience.Xp;
+            BattleAvgXp = stat.data.experience.Battle_avg_xp;
+            MaxXp = stat.data.experience.Max_xp;
+            Frags = stat.data.battles.Frags;
+            Spotted = stat.data.battles.Spotted;
+            HitsPercents = stat.data.battles.Hits_percents;
+            DamageDealt = stat.data.battles.Damage_dealt;
+            CapturePoints = stat.data.battles.Capture_points;
+            DroppedCapturePoints = stat.data.battles.Dropped_capture_points;
+            Updated = Utils.UnixDateToDateTime((long)stat.data.updated_at);
+
+            #endregion
+
+            #region Ratings init
+
+            //GR-->
+            //Global Rating
+            RatingIntegratedValue = stat.data.ratings.Integrated_rating.Value;
+            RatingIntegratedPlace = stat.data.ratings.Integrated_rating.Place;
+            //W/B-->
+            //Victories/Battles
+            RatingBattleAvgPerformanceValue = stat.data.ratings.Battle_avg_performance.Value;
+            RatingBattleAvgPerformancePlace = stat.data.ratings.Battle_avg_performance.Place;
+            //E/B-->
+            //Average Experience per Battle
+            RatingBattleAvgXpValue = stat.data.ratings.Battle_avg_xp.Value;
+            RatingBattleAvgXpPlace = stat.data.ratings.Battle_avg_xp.Place;
+            //WIN-->
+            //Victories
+            RatingBattleWinsValue = stat.data.ratings.Battle_wins.Value;
+            RatingBattleWinsPlace = stat.data.ratings.Battle_wins.Place;
+            //GPL-->
+            //Battles Participated
+            RatingBattlesValue = stat.data.ratings.Battles.Value;
+            RatingBattlesPlace = stat.data.ratings.Battles.Place;
+            //CPT-->
+            //Capture Points
+            RatingCapturedPointsValue = stat.data.ratings.Ctf_points.Value;
+            RatingCapturedPointsPlace = stat.data.ratings.Ctf_points.Place;
+            //DMG-->
+            //Damage Caused
+            RatingDamageDealtValue = stat.data.ratings.Damage_dealt.Value;
+            RatingDamageDealtPlace = stat.data.ratings.Damage_dealt.Place;
+            //DPT-->
+            //Defense Points
+            RatingDroppedPointsValue = stat.data.ratings.Dropped_ctf_points.Value;
+            RatingDroppedPointsPlace = stat.data.ratings.Dropped_ctf_points.Place;
+            //FRG-->
+            //Targets Destroyed
+            RatingFragsValue = stat.data.ratings.Frags.Value;
+            RatingFragsPlace = stat.data.ratings.Frags.Place;
+            //SPT-->
+            //Targets Detected
+            RatingSpottedValue = stat.data.ratings.Spotted.Value;
+            RatingSpottedPlace = stat.data.ratings.Spotted.Place;
+            //EXP-->
+            //Total Experience
+            RatingXpValue = stat.data.ratings.Xp.Value;
+            RatingXpPlace = stat.data.ratings.Xp.Place;
+
+            #endregion
+
+	        AvgLevel = stat.data.vehicles.Sum(x => x.level*x.battle_count)/(double) stat.data.summary.Battles_count;
+	    }
 	}
 }
 

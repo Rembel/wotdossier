@@ -37,7 +37,7 @@ namespace WotDossier.Applications.ViewModel
         {
             SaveCommand = new DelegateCommand(OnSave);
             _reader = new SettingsReader(WotDossierSettings.SettingsPath);
-            _appSettings = _reader.Read();
+            _appSettings = _reader.Get();
         }
 
         private void OnSave()

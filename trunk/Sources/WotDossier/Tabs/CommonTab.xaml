@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -12,6 +13,7 @@
     <Grid  Background="{StaticResource bcolor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -159,6 +161,17 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -187,59 +200,82 @@
             <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="3" Text="{Binding Rating_BattleAvgPerformancePlace}"></TextBlock>
             <TextBlock Foreground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="4" Grid.Column="3" Text="{Binding Rating_BattleAvgPerformancePlaceDelta}"></TextBlock>
             <!--E/B-->
-            <!--<TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="0" Text="E/B"></TextBlock>
-            <Image Grid.Row="3" Grid.Column="1" Source="..\Resources/Images/eb.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="2" Text="Average Experience per Battle"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="3" Text="{Binding Rating_BattleAvgXpValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="4" Text="{Binding Rating_BattleAvgXpPlace}"></TextBlock>-->
+            <Image Grid.Row="5" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/eb.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="1" Text="E/B"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="1" Text="Average Experience per Battle"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="2" Text="{Binding Rating_BattleAvgXpValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="6" Grid.Column="2" Text="{Binding Rating_BattleAvgXpValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="3" Text="{Binding Rating_BattleAvgXpPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="6" Grid.Column="3" Text="{Binding Rating_BattleAvgXpPlaceDelta}"></TextBlock>
             <!--WIN-->
-            <!--<TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="WIN"></TextBlock>
-            <Image Grid.Row="4" Grid.Column="1" Source="..\Resources/Images/win.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="2" Text="Victories"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="3" Text="{Binding Rating_BattleWinsValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="4" Text="{Binding Rating_BattleWinsPlace}"></TextBlock>-->
+            <Image Grid.Row="7" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/win.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="1" Text="WIN"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="1" Text="Victories"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="2" Text="{Binding Rating_BattleWinsValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="8" Grid.Column="2" Text="{Binding Rating_BattleWinsValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="3" Text="{Binding Rating_BattleWinsPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="8" Grid.Column="3" Text="{Binding Rating_BattleWinsPlaceDelta}"></TextBlock>
             <!--GPL-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="0" Text="GPL"></TextBlock>
-            <Image Grid.Row="5" Grid.Column="1" Source="..\Resources/Images/gpl.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="2" Text="Battles Participated"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="3" Text="{Binding Rating_BattlesValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="4" Text="{Binding Rating_BattlesPlace}"></TextBlock>
+            <Image Grid.Row="9" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/gpl.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="1" Text="GPL"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="1" Text="Battles Participated"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="2" Text="{Binding Rating_BattlesValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_BattlesValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="10" Grid.Column="2" Text="{Binding Rating_BattlesValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="3" Text="{Binding Rating_BattlesPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="10" Grid.Column="3" Text="{Binding Rating_BattlesPlaceDelta}"></TextBlock>
             <!--CPT-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="0" Text="CPT"></TextBlock>
-            <Image Grid.Row="6" Grid.Column="1" Source="..\Resources/Images/cpt.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="2" Text="Capture Points"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="3" Text="{Binding Rating_CapturedPointsValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="4" Text="{Binding Rating_CapturedPointsPlace}"></TextBlock>
+            <Image Grid.Row="11" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/cpt.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="1" Text="CPT"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="12" Grid.Column="1" Text="Capture Points"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="2" Text="{Binding Rating_CapturedPointsValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_CapturedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="12" Grid.Column="2" Text="{Binding Rating_CapturedPointsValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="3" Text="{Binding Rating_CapturedPointsPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_CapturedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="12" Grid.Column="3" Text="{Binding Rating_CapturedPointsPlaceDelta}"></TextBlock>
             <!--DMG-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="DMG"></TextBlock>
-            <Image Grid.Row="7" Grid.Column="1" Source="..\Resources/Images/dmg.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="2" Text="Damage Caused"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="3" Text="{Binding Rating_DamageDealtValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="4" Text="{Binding Rating_DamageDealtPlace}"></TextBlock>
+            <Image Grid.Row="13" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/dmg.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="1" Text="DMG"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="14" Grid.Column="1" Text="Damage Caused"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="2" Text="{Binding Rating_DamageDealtValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_DamageDealtValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="14" Grid.Column="2" Text="{Binding Rating_DamageDealtValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="3" Text="{Binding Rating_DamageDealtPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="14" Grid.Column="3" Text="{Binding Rating_DamageDealtPlaceDelta}"></TextBlock>
             <!--DPT-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="DPT"></TextBlock>
-            <Image Grid.Row="8" Grid.Column="1" Source="..\Resources/Images/dpt.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="2" Text="Defense Points"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="3" Text="{Binding Rating_DroppedPointsValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="4" Text="{Binding Rating_DroppedPointsPlace}"></TextBlock>
+            <Image Grid.Row="15" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/dpt.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="1" Text="DPT"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="16" Grid.Column="1" Text="Defense Points"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="2" Text="{Binding Rating_DroppedPointsValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_DroppedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="16" Grid.Column="2" Text="{Binding Rating_DroppedPointsValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="3" Text="{Binding Rating_DroppedPointsPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_DroppedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="16" Grid.Column="3" Text="{Binding Rating_DroppedPointsPlaceDelta}"></TextBlock>
             <!--FRG-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="0" Text="FRG"></TextBlock>
-            <Image Grid.Row="9" Grid.Column="1" Source="..\Resources/Images/frg.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="2" Text="Targets Destroyed"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="3" Text="{Binding Rating_FragsValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="4" Text="{Binding Rating_FragsPlace}"></TextBlock>
+            <Image Grid.Row="17" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/frg.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="1" Text="FRG"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="18" Grid.Column="1" Text="Targets Destroyed"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="2" Text="{Binding Rating_FragsValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_FragsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="18" Grid.Column="2" Text="{Binding Rating_FragsValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="3" Text="{Binding Rating_FragsPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_FragsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="18" Grid.Column="3" Text="{Binding Rating_FragsPlaceDelta}"></TextBlock>
             <!--SPT-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="0" Text="SPT"></TextBlock>
-            <Image Grid.Row="10" Grid.Column="1" Source="..\Resources/Images/spt.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="2" Text="Targets Detected"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="3" Text="{Binding Rating_SpottedValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="4" Text="{Binding Rating_SpottedPlace}"></TextBlock>
+            <Image Grid.Row="19" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/spt.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="1" Text="SPT"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="20" Grid.Column="1" Text="Targets Detected"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="2" Text="{Binding Rating_SpottedValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_SpottedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="20" Grid.Column="2" Text="{Binding Rating_SpottedValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="3" Text="{Binding Rating_SpottedPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="20" Grid.Column="3" Text="{Binding Rating_SpottedPlaceDelta}"></TextBlock>
             <!--EXP-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="0" Text="EXP"></TextBlock>
-            <Image Grid.Row="11" Grid.Column="1" Source="..\Resources/Images/exp.png" Stretch="None"></Image>
-            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="2" Text="Total Experience"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="3" Text="{Binding Rating_XpValue}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="4" Text="{Binding Rating_XpPlace}"></TextBlock>
+            <Image Grid.Row="21" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/exp.png" Stretch="None"></Image>
+            <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="1" Text="EXP"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="22" Grid.Column="1" Text="Total Experience"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="2" Text="{Binding Rating_XpValue}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_XpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="22" Grid.Column="2" Text="{Binding Rating_XpValueDelta}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="3" Text="{Binding Rating_XpPlace}"></TextBlock>
+            <TextBlock Foreground="{Binding Rating_XpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="22" Grid.Column="3" Text="{Binding Rating_XpPlaceDelta}"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="4">
+            <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="300" Width="300" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                              Margin="10,10,0,10">
+            </d3:ChartPlotter>
         </Grid>
     </Grid>
 </UserControl>

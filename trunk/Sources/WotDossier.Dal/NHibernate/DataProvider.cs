@@ -57,7 +57,7 @@ namespace WotDossier.Dal.NHibernate
         private static IEnumerable<Assembly> GetDomainAssemblies()
         {
             string currentDirectory = AssemblyDirectory();
-            string[] strings = Directory.GetFiles(currentDirectory, "*Domain*.dll");
+            string[] strings = Directory.GetFiles(currentDirectory, "*Dal*.dll");
 
             List<Assembly> list = new List<Assembly>();
 

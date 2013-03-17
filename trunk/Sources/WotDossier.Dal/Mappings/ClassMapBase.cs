@@ -17,7 +17,7 @@ namespace WotDossier.Dal.Mappings
         public ClassMapBase()
         {
             Table(typeof(T).Name.Replace("Entity", String.Empty));
-            Id(v => v.Id).GeneratedBy.Increment();
+            Id(v => v.Id).GeneratedBy.Identity();
         }
 
         protected string Column(Expression<Func<T,object>> expression)

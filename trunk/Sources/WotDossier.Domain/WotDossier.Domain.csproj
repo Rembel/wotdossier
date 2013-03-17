@@ -64,6 +64,7 @@
     <Compile Include="Player\Summary.cs" />
     <Compile Include="Player\TankExperts.cs" />
     <Compile Include="Player\Vehicle.cs" />
+    <Compile Include="Rows\TankRowTime.cs" />
     <Compile Include="Rows\TankRowEpic.cs" />
     <Compile Include="Rows\TankRowMasterTanker.cs" />
     <Compile Include="Rows\TankRowPerformance.cs" />

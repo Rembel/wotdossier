@@ -15,8 +15,8 @@ namespace WotDossier.Applications
 
     public class Read
     {
-        private const string URL_GET_PLAYER_INFO = @"http://worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
-        private const string URL_SEARCH_PLAYER = @"http://worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
+        private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
+        private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
 
         private static readonly object _syncObject = new object();
         private static volatile Read _instance = new Read();
@@ -178,10 +178,11 @@ namespace WotDossier.Applications
             {
                 return null;
             }
+
+            long playerId = GetPlayerId(settings);
 #if DEBUG
             using (StreamReader streamReader = new StreamReader(@"stat.json"))
 #else
-            long playerId = GetPlayerId(settings);
             string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response;
@@ -208,7 +209,9 @@ namespace WotDossier.Applications
             {
                 JsonTextReader reader = new JsonTextReader(streamReader);
                 JsonSerializer se = new JsonSerializer();
-                return se.Deserialize<PlayerStat>(reader);
+                PlayerStat loadPlayerStat = se.Deserialize<PlayerStat>(reader);
+                loadPlayerStat.data.id = (int)playerId;
+                return loadPlayerStat;
             }
         }
 

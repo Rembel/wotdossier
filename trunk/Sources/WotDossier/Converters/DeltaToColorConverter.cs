@@ -26,7 +26,8 @@ namespace WotDossier.Converters
             if (Math.Abs(delta - 0.0) < 0.001)
                 return new SolidColorBrush(Color.FromRgb(186, 191, 186));
             bool negativBetter = parameter != null ? bool.Parse(parameter.ToString()) : false;
-            if (delta > 0.0 || negativBetter)
+            if ((delta > 0.0 && !negativBetter)
+                || (delta < 0.0 && negativBetter))
                 return Brushes.LimeGreen;
             return Brushes.Red;
         }

@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -72,6 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">
+      <Project>{1268b707-a866-4723-89c7-2e9bd92e6aa6}</Project>
+      <Name>WotDossier.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WotDossier.Domain\WotDossier.Domain.csproj">
       <Project>{bef5308c-9e64-4369-b012-81600fdd97a3}</Project>
       <Name>WotDossier.Domain</Name>

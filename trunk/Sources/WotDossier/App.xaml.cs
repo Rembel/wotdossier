@@ -32,7 +32,15 @@ namespace WotDossier
 
             // start application
             _controller = new ApplicationController();
-            _controller.Run(new MainWindow());
+            try
+            {
+                _controller.Run(new MainWindow());
+            }
+            catch (Exception exception)
+            {
+                HandleException(exception, false);
+                Shutdown();
+            }
 
             base.OnStartup(e);
         }

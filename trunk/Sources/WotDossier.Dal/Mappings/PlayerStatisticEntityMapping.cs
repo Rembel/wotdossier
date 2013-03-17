@@ -45,10 +45,10 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.RatingSpottedPlace, "Rating_SpottedPlace");
 			Map(v => v.RatingXpValue, "Rating_XpValue");
 			Map(v => v.RatingXpPlace, "Rating_XpPlace");
-			Map(v=>v.PlayerId, "PlayerId");
+            Map(v => v.AvgLevel, "AvgLevel");
+			Map(v=>v.PlayerId, "PlayerId").Insert();
 		
-			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).Cascade.All();
-
+			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).ReadOnly();
         }
     }
 }

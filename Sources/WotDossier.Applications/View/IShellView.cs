@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Framework.Applications;
 
 namespace WotDossier.Applications.View
@@ -15,5 +16,6 @@ namespace WotDossier.Applications.View
         void Close();
 
         Window Owner { set; get; }
+        ChartPlotter Chart { get; }
     }
 }

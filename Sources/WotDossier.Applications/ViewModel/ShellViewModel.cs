@@ -1,21 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using System.Windows;
+using System.Windows.Media;
+using Microsoft.Research.DynamicDataDisplay;
+using Microsoft.Research.DynamicDataDisplay.DataSources;
+using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
-using WotDossier.Dal.NHibernate;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Player;
 using WotDossier.Domain.Rows;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using Common.Logging;
-using Path = System.IO.Path;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -24,6 +29,7 @@ namespace WotDossier.Applications.ViewModel
     /// </summary>
     public class ShellViewModel : ViewModel<IShellView>
     {
+        private const string BATTLES_RATING_MARKER_TOOLTIP_FORMAT = "Battles: {0}\nRating: {1:0.00}";
         private readonly DossierRepository _dossierRepository;
         private string _curDirTemp;
         private FileInfo _last = null;
@@ -43,7 +49,8 @@ namespace WotDossier.Applications.ViewModel
         private IEnumerable<TankRowPerformance> _performance;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
         private IEnumerable<TankRowEpic> _epics;
-
+        private IEnumerable<TankRowTime> _time;
+        
         public PlayerStatisticViewModel PlayerStatistic
         {
             get { return _playerStatistic; }
@@ -54,6 +61,11 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public ChartPlotter Chart
+        {
+            get { return ViewTyped.Chart; }
+        }
+        
         public DelegateCommand LoadCommand { get; set; }
 
         #region Constructors
@@ -137,15 +149,65 @@ namespace WotDossier.Applications.ViewModel
 
         private PlayerStatisticViewModel GetPlayerStatistic()
         {
-            AppSettings settings = _reader.Read();
+            AppSettings settings = _reader.Get();
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
                 return null;
             }
 
-            var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId);
+            PlayerStat loadPlayerStat = Read.LoadPlayerStat(settings);
 
-            return new PlayerStatisticViewModel(Read.LoadPlayerStat(settings), new List<PlayerStatisticViewModel> { new PlayerStatisticViewModel(Read.LoadPrevPlayerStat(settings)) });
+            PlayerEntity player;
+
+            if (loadPlayerStat != null)
+            {
+                player = _dossierRepository.GetOrCreatePlayer(settings.PlayerId, loadPlayerStat);
+
+                var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
+
+                PlayerStatisticEntity currentStatistic = playerEntities.OrderByDescending(x => x.Updated).First();
+                IEnumerable<PlayerStatisticViewModel> statisticViewModels = playerEntities.Where(x => x.Id != currentStatistic.Id)
+                    .Select(x => new PlayerStatisticViewModel(x));
+
+                IEnumerable<PlayerStatisticViewModel> viewModels = playerEntities.Select(x => new PlayerStatisticViewModel(x));
+
+                InitChart(viewModels);
+
+                PlayerStatisticViewModel playerStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, statisticViewModels);
+                playerStatisticViewModel.Name = player.Name;
+                playerStatisticViewModel.Created = player.Creaded;
+                return playerStatisticViewModel;
+            }
+            return null;
+        }
+
+        private void InitChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
+        {
+            DataRect dataRect = DataRect.Create(0, 0, 100000, 2500);
+            Chart.Viewport.Domain = dataRect;
+            Chart.Viewport.Visible = dataRect;
+
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) {XMapping = x => x.X, YMapping = y => y.Y};
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            SolidColorBrush brush = new SolidColorBrush {Color = Colors.Blue};
+            Pen lineThickness = new Pen(brush, 2);
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker {Size = 7, Fill = brush, Brush = brush};
+            LineAndMarker<ElementMarkerPointsGraph> lineGraph = Chart.AddLineGraph(dataSource, lineThickness, circlePointMarker,
+                                                                                   new PenDescription("РЭ"));
+
+            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
+            dataSource = new EnumerableDataSource<DataPoint>(wn6Points) {XMapping = x => x.X, YMapping = y => y.Y};
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            brush = new SolidColorBrush {Color = Colors.Green};
+            lineThickness = new Pen(brush, 2);
+            circlePointMarker = new CircleElementPointMarker() {Size = 7, Fill = brush, Brush = brush};
+            LineAndMarker<ElementMarkerPointsGraph> lineGraph1 = Chart.AddLineGraph(dataSource, lineThickness, circlePointMarker,
+                                                                                    new PenDescription("WN6"));
+
+            Chart.FitToView();
         }
 
         private void ProcOnExited(object sender, EventArgs eventArgs)
@@ -167,6 +229,7 @@ namespace WotDossier.Applications.ViewModel
                 IEnumerable<TankRowRatings> ratings = tanks.Select(x => new TankRowRatings(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
                 IEnumerable<TankRowPerformance> performance = tanks.Select(x => new TankRowPerformance(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
                 IEnumerable<TankRowEpic> epic = tanks.Select(x => new TankRowEpic(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowTime> time = tanks.Select(x => new TankRowTime(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
 
                 IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
                 IEnumerable<TankRowMasterTanker> masterTanker = Read.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value)).Select(x => new TankRowMasterTanker(x.Value, Read.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
@@ -183,9 +246,20 @@ namespace WotDossier.Applications.ViewModel
                 Performance= performance;
                 MasterTanker= masterTanker;
                 Epics= epic;
+                Time = time;
             };
 
             System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
+        }
+
+        public IEnumerable<TankRowTime> Time
+        {
+            get { return _time; }
+            set
+            {
+                _time = value;
+                RaisePropertyChanged("Time");
+            }
         }
 
         public IEnumerable<TankRowEpic> Epics
@@ -347,5 +421,23 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Close();
         }
 
+    }
+
+    public interface IDataPoint
+    {
+        double X { get; }
+        double Y { get; }
+    }
+
+    public class DataPoint : IDataPoint
+    {
+        public double X { get; set; }
+        public double Y { get; set; }
+
+        public DataPoint(double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }

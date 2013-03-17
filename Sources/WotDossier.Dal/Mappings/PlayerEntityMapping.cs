@@ -9,7 +9,7 @@ namespace WotDossier.Dal.Mappings
     {
         public PlayerMapping()
         {
-			Map(v => v.Name, "Name");
+            Map(v => v.Name, "Name");
 			Map(v => v.Creaded, "Creaded");
 			Map(v => v.PlayerId, "PlayerId");
 		

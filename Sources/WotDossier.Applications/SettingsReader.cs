@@ -26,7 +26,7 @@ namespace WotDossier.Applications
         /// Reads this instance.
         /// </summary>
         /// <returns></returns>
-        public AppSettings Read()
+        public AppSettings Get()
         {
             var filePath = GetFilePath();
 

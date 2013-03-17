@@ -18,7 +18,9 @@
         </Menu>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <TabItem TabIndex="0" Header="Common" Name="tabCommon">
-                <tabs:CommonTab HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTab>
+                <ScrollViewer>
+                    <tabs:CommonTab x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTab>
+                </ScrollViewer>
             </TabItem>
             <TabItem TabIndex="0" Header="XP" Name="tabXP">
                 <Grid >
@@ -262,7 +264,18 @@
                 </Grid>
             </TabItem>
             <TabItem TabIndex="13" Header="Time" Name="tabTime">
-                <Grid />
+                <Grid>
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Time}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="LastBattle" Binding="{Binding LastBattle}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="PlayTime" Binding="{Binding PlayTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="AverageBattleTime" Binding="{Binding AverageBattleTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </TabItem>
         </TabControl>
     </DockPanel>

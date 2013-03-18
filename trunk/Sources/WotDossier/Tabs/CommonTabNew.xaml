@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:wotDossier="clr-namespace:WotDossier"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -166,119 +166,146 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="300"></ColumnDefinition>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Rating"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Text="Value"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Text="Place"></TextBlock>
+                <Grid Background="Black" Grid.Row="0" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="300"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="#BABFBA" FontFamily="sans-serif" FontSize="17" Grid.Column="1" Text="Rating"></TextBlock>
+                    <TextBlock Foreground="#BABFBA" FontFamily="sans-serif" FontSize="17" Grid.Column="2" Text="Value"></TextBlock>
+                    <TextBlock Foreground="#BABFBA" FontFamily="sans-serif" FontSize="17" Grid.Column="3" Text="Place"></TextBlock>
+                </Grid>
                 <!--GR-->
-                <Image Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/gr.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="1" Text="GR"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="1" Text="Global Rating"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="2" Text="{Binding Rating_IntegratedValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_IntegratedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="2" Grid.Column="2" Text="{Binding Rating_IntegratedValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="3" Text="{Binding Rating_IntegratedPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="2" Grid.Column="3" Text="{Binding Rating_IntegratedPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/gr.png" Grid.Row="1"
+                                      ShortName="GR" FullName="Global Rating" 
+                                      Value="{Binding Rating_IntegratedValue}" 
+                                      Place="{Binding Rating_IntegratedPlace}" 
+                                      ValueDelta="{Binding Rating_IntegratedValueDelta}" 
+                                      PlaceDelta="{Binding Rating_IntegratedPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_IntegratedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--W/B-->
-                <Image Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/wb.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="1" Text="W/B"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="1" Text="Victories/Battles"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="2" Text="{Binding Rating_BattleAvgPerformanceValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattleAvgPerformanceValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="4" Grid.Column="2" Text="{Binding Rating_BattleAvgPerformanceValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="3" Text="{Binding Rating_BattleAvgPerformancePlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="4" Grid.Column="3" Text="{Binding Rating_BattleAvgPerformancePlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/wb.png" Grid.Row="2"
+                                      ShortName="W/B" FullName="Victories/Battles" 
+                                      Value="{Binding Rating_BattleAvgPerformanceValue}" 
+                                      Place="{Binding Rating_BattleAvgPerformancePlace}" 
+                                      ValueDelta="{Binding Rating_BattleAvgPerformanceValueDelta}" 
+                                      PlaceDelta="{Binding Rating_BattleAvgPerformancePlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_BattleAvgPerformanceValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--E/B-->
-                <Image Grid.Row="5" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/eb.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="1" Text="E/B"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="1" Text="Average Experience per Battle"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="2" Text="{Binding Rating_BattleAvgXpValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="6" Grid.Column="2" Text="{Binding Rating_BattleAvgXpValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="5" Grid.Column="3" Text="{Binding Rating_BattleAvgXpPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="6" Grid.Column="3" Text="{Binding Rating_BattleAvgXpPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/eb.png" Grid.Row="3"
+                                      ShortName="E/B" FullName="Average Experience per Battle" 
+                                      Value="{Binding Rating_BattleAvgXpValue}" 
+                                      Place="{Binding Rating_BattleAvgXpPlace}" 
+                                      ValueDelta="{Binding Rating_BattleAvgXpValueDelta}" 
+                                      PlaceDelta="{Binding Rating_BattleAvgXpPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--WIN-->
-                <Image Grid.Row="7" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/win.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="1" Text="WIN"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="1" Text="Victories"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="2" Text="{Binding Rating_BattleWinsValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="8" Grid.Column="2" Text="{Binding Rating_BattleWinsValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="3" Text="{Binding Rating_BattleWinsPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="8" Grid.Column="3" Text="{Binding Rating_BattleWinsPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/win.png" Grid.Row="4"
+                                      ShortName="WIN" FullName="Victories" 
+                                      Value="{Binding Rating_BattleWinsValue}" 
+                                      Place="{Binding Rating_BattleWinsPlace}" 
+                                      ValueDelta="{Binding Rating_BattleWinsValueDelta}" 
+                                      PlaceDelta="{Binding Rating_BattleWinsPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--GPL-->
-                <Image Grid.Row="9" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/gpl.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="1" Text="GPL"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="1" Text="Battles Participated"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="2" Text="{Binding Rating_BattlesValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattlesValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="10" Grid.Column="2" Text="{Binding Rating_BattlesValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="9" Grid.Column="3" Text="{Binding Rating_BattlesPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="10" Grid.Column="3" Text="{Binding Rating_BattlesPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/gpl.png" Grid.Row="5"
+                                      ShortName="GPL" FullName="Battles Participated" 
+                                      Value="{Binding Rating_BattlesValue}" 
+                                      Place="{Binding Rating_BattlesPlace}" 
+                                      ValueDelta="{Binding Rating_BattlesValueDelta}" 
+                                      PlaceDelta="{Binding Rating_BattlesPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_BattlesValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--CPT-->
-                <Image Grid.Row="11" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/cpt.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="1" Text="CPT"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="12" Grid.Column="1" Text="Capture Points"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="2" Text="{Binding Rating_CapturedPointsValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_CapturedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="12" Grid.Column="2" Text="{Binding Rating_CapturedPointsValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="3" Text="{Binding Rating_CapturedPointsPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_CapturedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="12" Grid.Column="3" Text="{Binding Rating_CapturedPointsPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/cpt.png" Grid.Row="6"
+                                      ShortName="CPT" FullName="Capture Points" 
+                                      Value="{Binding Rating_CapturedPointsValue}" 
+                                      Place="{Binding Rating_CapturedPointsPlace}" 
+                                      ValueDelta="{Binding Rating_CapturedPointsValueDelta}" 
+                                      PlaceDelta="{Binding Rating_CapturedPointsPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_CapturedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_CapturedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--DMG-->
-                <Image Grid.Row="13" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/dmg.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="1" Text="DMG"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="14" Grid.Column="1" Text="Damage Caused"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="2" Text="{Binding Rating_DamageDealtValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_DamageDealtValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="14" Grid.Column="2" Text="{Binding Rating_DamageDealtValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="3" Text="{Binding Rating_DamageDealtPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="14" Grid.Column="3" Text="{Binding Rating_DamageDealtPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/dmg.png" Grid.Row="7"
+                                      ShortName="DMG" FullName="Damage Caused" 
+                                      Value="{Binding Rating_DamageDealtValue}" 
+                                      Place="{Binding Rating_DamageDealtPlace}" 
+                                      ValueDelta="{Binding Rating_DamageDealtValueDelta}" 
+                                      PlaceDelta="{Binding Rating_DamageDealtPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_DamageDealtValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--DPT-->
-                <Image Grid.Row="15" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/dpt.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="1" Text="DPT"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="16" Grid.Column="1" Text="Defense Points"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="2" Text="{Binding Rating_DroppedPointsValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_DroppedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="16" Grid.Column="2" Text="{Binding Rating_DroppedPointsValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="3" Text="{Binding Rating_DroppedPointsPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_DroppedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="16" Grid.Column="3" Text="{Binding Rating_DroppedPointsPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/dpt.png" Grid.Row="8"
+                                      ShortName="DPT" FullName="Defense Points" 
+                                      Value="{Binding Rating_DroppedPointsValue}" 
+                                      Place="{Binding Rating_DroppedPointsPlace}" 
+                                      ValueDelta="{Binding Rating_DroppedPointsValueDelta}" 
+                                      PlaceDelta="{Binding Rating_DroppedPointsPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_DroppedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_DroppedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--FRG-->
-                <Image Grid.Row="17" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/frg.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="1" Text="FRG"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="18" Grid.Column="1" Text="Targets Destroyed"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="2" Text="{Binding Rating_FragsValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_FragsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="18" Grid.Column="2" Text="{Binding Rating_FragsValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="3" Text="{Binding Rating_FragsPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_FragsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="18" Grid.Column="3" Text="{Binding Rating_FragsPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/frg.png" Grid.Row="9"
+                                      ShortName="FRG" FullName="Targets Destroyed" 
+                                      Value="{Binding Rating_FragsValue}" 
+                                      Place="{Binding Rating_FragsPlace}" 
+                                      ValueDelta="{Binding Rating_FragsValueDelta}" 
+                                      PlaceDelta="{Binding Rating_FragsPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_FragsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_FragsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--SPT-->
-                <Image Grid.Row="19" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/spt.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="1" Text="SPT"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="20" Grid.Column="1" Text="Targets Detected"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="2" Text="{Binding Rating_SpottedValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_SpottedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="20" Grid.Column="2" Text="{Binding Rating_SpottedValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="3" Text="{Binding Rating_SpottedPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="20" Grid.Column="3" Text="{Binding Rating_SpottedPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/spt.png" Grid.Row="10"
+                                      ShortName="SPT" FullName="Targets Detected" 
+                                      Value="{Binding Rating_SpottedValue}" 
+                                      Place="{Binding Rating_SpottedPlace}" 
+                                      ValueDelta="{Binding Rating_SpottedValueDelta}" 
+                                      PlaceDelta="{Binding Rating_SpottedPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_SpottedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
                 <!--EXP-->
-                <Image Grid.Row="21" Grid.RowSpan="2" Grid.Column="0" Source="..\Resources/Images/exp.png" Stretch="None"></Image>
-                <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="1" Text="EXP"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="22" Grid.Column="1" Text="Total Experience"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="2" Text="{Binding Rating_XpValue}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_XpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" Grid.Row="22" Grid.Column="2" Text="{Binding Rating_XpValueDelta}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="3" Text="{Binding Rating_XpPlace}"></TextBlock>
-                <TextBlock Foreground="{Binding Rating_XpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}" Grid.Row="22" Grid.Column="3" Text="{Binding Rating_XpPlaceDelta}"></TextBlock>
+                <wotDossier:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
+                                      ShortName="EXP" FullName="Total Experience" 
+                                      Value="{Binding Rating_XpValue}" 
+                                      Place="{Binding Rating_XpPlace}" 
+                                      ValueDelta="{Binding Rating_XpValueDelta}" 
+                                      PlaceDelta="{Binding Rating_XpPlaceDelta}"
+                                      ValueDeltaForeground="{Binding Rating_XpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" 
+                                      PlaceDeltaForeground="{Binding Rating_XpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}"
+                                      >
+                </wotDossier:RatingRow>
             </Grid>
             <Grid>
                 <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="300" Width="300" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
                               Margin="10,10,0,10">
                 </d3:ChartPlotter>
             </Grid>
+            
         </StackPanel>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
     </Grid>

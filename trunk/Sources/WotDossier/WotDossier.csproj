@@ -119,6 +119,9 @@
     <Compile Include="Converters\EffectivityToColorConverter.cs" />
     <Compile Include="Converters\Double2Formater.cs" />
     <Compile Include="Converters\TankIconImageConverter.cs" />
+    <Compile Include="RatingRow.xaml.cs">
+      <DependentUpon>RatingRow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +158,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RatingRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

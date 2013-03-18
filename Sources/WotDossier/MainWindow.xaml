@@ -19,7 +19,7 @@
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <TabItem TabIndex="0" Header="Common" Name="tabCommon">
                 <ScrollViewer>
-                    <tabs:CommonTab x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTab>
+                    <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
                 </ScrollViewer>
             </TabItem>
             <TabItem TabIndex="0" Header="XP" Name="tabXP">

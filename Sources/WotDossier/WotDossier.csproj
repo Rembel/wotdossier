@@ -130,6 +130,9 @@
     <Compile Include="Tabs\CommonTab.xaml.cs">
       <DependentUpon>CommonTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\CommonTabNew.xaml.cs">
+      <DependentUpon>CommonTabNew.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -225,6 +228,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\CommonTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\CommonTabNew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -382,6 +389,10 @@
     <Content Include="External\wotdc2j.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\Images\center_back.png" />
+    <Resource Include="Resources\Images\left_back.png" />
+    <Resource Include="Resources\Images\right_back.png" />
+    <Resource Include="Resources\Images\ui-bg-top.jpg" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

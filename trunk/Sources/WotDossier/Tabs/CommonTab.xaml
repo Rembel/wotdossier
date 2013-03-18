@@ -6,7 +6,7 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters"
              xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="600">
     <UserControl.Resources>
         <ImageBrush x:Key="bcolor" ImageSource="..\Resources\Images\back.jpg" />
     </UserControl.Resources>

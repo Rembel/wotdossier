@@ -473,7 +473,7 @@ namespace WotDossier.Applications.ViewModel
             _effRating = RatingHelper.CalcER(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgCap, avgDef);
             _wn6Rating = RatingHelper.CalcWN6(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgDef, winrate);
 
-            _prevPlayerStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated) ?? this;
+            _prevPlayerStatistic = _list.Where(x => x.Updated <= Updated).OrderByDescending(x => x.Updated).FirstOrDefault() ?? this;
             _previousDate = Updated;
         }
 

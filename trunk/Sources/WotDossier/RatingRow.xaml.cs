@@ -65,20 +65,20 @@ namespace WotDossier
         }
 
         public static readonly DependencyProperty ValueDeltaProperty =
-            DependencyProperty.Register("ValueDelta", typeof (string), typeof (RatingRow), new PropertyMetadata(default(string)));
+            DependencyProperty.Register("ValueDelta", typeof(int), typeof(RatingRow), new PropertyMetadata(default(int)));
 
-        public string ValueDelta
+        public int ValueDelta
         {
-            get { return (string) GetValue(ValueDeltaProperty); }
+            get { return (int)GetValue(ValueDeltaProperty); }
             set { SetValue(ValueDeltaProperty, value); }
         }
 
         public static readonly DependencyProperty PlaceDeltaProperty =
-            DependencyProperty.Register("PlaceDelta", typeof (string), typeof (RatingRow), new PropertyMetadata(default(string)));
+            DependencyProperty.Register("PlaceDelta", typeof(int), typeof(RatingRow), new PropertyMetadata(default(int)));
 
-        public string PlaceDelta
+        public int PlaceDelta
         {
-            get { return (string) GetValue(PlaceDeltaProperty); }
+            get { return (int)GetValue(PlaceDeltaProperty); }
             set { SetValue(PlaceDeltaProperty, value); }
         }
 

@@ -360,6 +360,8 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        public PlayerStatisticClanViewModel Clan { get; set; }
+
         public void SetPreviousDate(DateTime date)
         {
             _previousDate = date;

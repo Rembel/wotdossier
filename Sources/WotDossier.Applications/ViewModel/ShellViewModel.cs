@@ -155,13 +155,13 @@ namespace WotDossier.Applications.ViewModel
                 return null;
             }
 
-            PlayerStat loadPlayerStat = Read.LoadPlayerStat(settings);
+            PlayerStat playerStat = Read.LoadPlayerStat(settings);
 
             PlayerEntity player;
 
-            if (loadPlayerStat != null)
+            if (playerStat != null)
             {
-                player = _dossierRepository.GetOrCreatePlayer(settings.PlayerId, loadPlayerStat);
+                player = _dossierRepository.GetOrCreatePlayer(settings.PlayerId, playerStat);
 
                 var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
 
@@ -176,6 +176,12 @@ namespace WotDossier.Applications.ViewModel
                 PlayerStatisticViewModel playerStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, statisticViewModels);
                 playerStatisticViewModel.Name = player.Name;
                 playerStatisticViewModel.Created = player.Creaded;
+
+                if (playerStat.data.clan != null)
+                {
+                    playerStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
+                }
+
                 return playerStatisticViewModel;
             }
             return null;

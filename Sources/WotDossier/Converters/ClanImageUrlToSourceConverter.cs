@@ -33,27 +33,17 @@ namespace WotDossier.Converters
                 string path = dir + fileName;
                 if (!File.Exists(path))
                 {
-                    if (!Directory.Exists(dir))
+                    try
                     {
-                        try
+                        if (!Directory.Exists(dir))
                         {
                             Directory.CreateDirectory(dir);
                         }
-                        catch (Exception e)
-                        {
-                            //TODO: log
-                            return null;
-                        }
-                    }
 
-                    SettingsReader reader = new SettingsReader(WotDossierSettings.SettingsPath);
-                    AppSettings appSettings = reader.Get();
-
-                    WebRequest request = HttpWebRequest.Create(string.Format("http://worldoftanks.ru{0}", url));
-                    
-                    WebResponse response;
-                    try
-                    {
+                        SettingsReader reader = new SettingsReader(WotDossierSettings.SettingsPath);
+                        AppSettings appSettings = reader.Get();
+                        WebRequest request = HttpWebRequest.Create(string.Format("http://worldoftanks.{1}{0}", url, appSettings.Server));
+                        WebResponse response;
                         response = request.GetResponse();
                         Stream responseStream = response.GetResponseStream();
 
@@ -71,7 +61,7 @@ namespace WotDossier.Converters
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show("Can't get player clan icon from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Can't get or save player clan icon from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         return null;
                     }
                 }

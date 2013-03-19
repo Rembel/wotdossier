@@ -43,6 +43,10 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="battle.cs" />
     <Compile Include="clan.cs" />
+    <Compile Include="Player\ClanCommonInfo.cs" />
+    <Compile Include="Player\ClanEmblems.cs" />
+    <Compile Include="Player\ClanExt.cs" />
+    <Compile Include="Player\ClanInfo.cs" />
     <Compile Include="common.cs" />
     <Compile Include="Common\CommonStatGroup.cs" />
     <Compile Include="Common\CommonStatRow.cs" />
@@ -54,6 +58,7 @@
     <Compile Include="major.cs" />
     <Compile Include="Player\Achievements.cs" />
     <Compile Include="Player\Battles.cs" />
+    <Compile Include="Player\ClanMemberInfo.cs" />
     <Compile Include="Player\Experience.cs" />
     <Compile Include="Player\MechanicEngineers.cs" />
     <Compile Include="Player\PlayerSearch.cs" />

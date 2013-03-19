@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:wotDossier="clr-namespace:WotDossier"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -20,24 +21,27 @@
             </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
         <StackPanel Grid.Column="1" Background="{StaticResource bcolorCenter}" Orientation="Vertical">
-            <Grid HorizontalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Foreground="White" FontSize="32" FontFamily="Arial Narrow" Grid.Row="0" Grid.Column="0" Text="{Binding Name}" HorizontalAlignment="Left"></TextBlock>
-                <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="0" Grid.Column="2" Text="Дата регистрации: " HorizontalAlignment="Right"></TextBlock>
-                <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="0" Grid.Column="3" Text="{Binding Created}" HorizontalAlignment="Right"></TextBlock>
-                <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="1" Grid.Column="0" Text="Данные по состоянию на " HorizontalAlignment="Left"></TextBlock>
-                <TextBlock Foreground="#606061" FontSize="12" FontFamily="Arial" Grid.Row="1" Grid.Column="1" Text="{Binding Updated}" HorizontalAlignment="Left"></TextBlock>
-            </Grid>
+            <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
+                <TextBlock Foreground="White" FontSize="32" FontFamily="Arial Narrow" Text="{Binding Name}" HorizontalAlignment="Center"></TextBlock>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="Дата регистрации: " HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Created, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="Данные по состоянию на: " HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
+                </Grid>
+                <controls:ClanView Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}"
+                                   ClanImageSource="{Binding Clan.large, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                    Days="{Binding Clan.Days}" Position="{Binding Clan.role}" Date="{Binding Clan.since}" Abbreviation="{Binding Clan.abbreviation}" ClanName="{Binding Clan.name}">
+                </controls:ClanView>
+            </StackPanel>
             <Grid Width="Auto" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>

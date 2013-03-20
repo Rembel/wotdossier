@@ -16,6 +16,9 @@ namespace WotDossier.Applications.View
         void Close();
 
         Window Owner { set; get; }
-        ChartPlotter Chart { get; }
+
+        ChartPlotter ChartRating { get; }
+        ChartPlotter ChartWinPercent { get; }
+        ChartPlotter ChartAvgDamage { get; }
     }
 }

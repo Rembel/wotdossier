@@ -74,10 +74,8 @@
         }
 
         public TankRowSeries(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _reaperLongest = tank.Series.maxKillingSeries;
             _reaperProgress = tank.Series.killingSeries;
             _sharpshooterLongest = tank.Series.maxSniperSeries;

@@ -65,10 +65,8 @@ namespace WotDossier.Domain.Rows
         }
 
         public TankRowFrags(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _battles = tank.Tankdata.battlesCount;
             _frags = tank.Tankdata.frags;
             _maxFrags = tank.Tankdata.maxFrags;

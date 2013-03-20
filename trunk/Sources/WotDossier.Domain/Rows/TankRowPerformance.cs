@@ -10,10 +10,8 @@
         private int _tanksSpotted;
 
         public TankRowPerformance(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _shots = tank.Tankdata.shots;
             _hits = tank.Tankdata.hits;
             _hitRatio = _hits/(double) _shots*100.0;

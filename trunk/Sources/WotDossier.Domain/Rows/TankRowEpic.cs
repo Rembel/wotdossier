@@ -23,10 +23,8 @@
         private int _deLanglade;
 
         public TankRowEpic(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _boelter = tank.Epic.Boelter;
             _radleyWalters = tank.Epic.RadleyWalters;
             _lafayettePool = tank.Epic.LafayettePool;

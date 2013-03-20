@@ -43,6 +43,7 @@ namespace WotDossier.Applications.ViewModel
         private void OnSave()
         {
             _reader.Save(_appSettings);
+            ViewTyped.Close();
         }
 
         /// <summary>

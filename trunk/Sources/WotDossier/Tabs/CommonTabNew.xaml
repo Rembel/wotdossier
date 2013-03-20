@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:wotDossier="clr-namespace:WotDossier"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
@@ -14,11 +13,11 @@
         <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="None" />
     </UserControl.Resources>
     <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="1000px"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1000px"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
         <StackPanel Grid.Column="1" Background="{StaticResource bcolorCenter}" Orientation="Vertical">
             <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
@@ -39,7 +38,7 @@
                 </Grid>
                 <controls:ClanView Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}"
                                    ClanImageSource="{Binding Clan.large, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
-                    Days="{Binding Clan.Days}" Position="{Binding Clan.role}" Date="{Binding Clan.since}" Abbreviation="{Binding Clan.abbreviation}" ClanName="{Binding Clan.name}">
+                                   Days="{Binding Clan.Days}" Position="{Binding Clan.role}" Date="{Binding Clan.since}" Abbreviation="{Binding Clan.abbreviation}" ClanName="{Binding Clan.name}">
                 </controls:ClanView>
             </StackPanel>
             <Grid Width="Auto" HorizontalAlignment="Center">
@@ -304,13 +303,8 @@
                                       >
                 </wotDossier:RatingRow>
             </Grid>
-            <Grid>
-                <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="300" Width="300" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                              Margin="10,10,0,10">
-                </d3:ChartPlotter>
-            </Grid>
-            
         </StackPanel>
+
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
     </Grid>
 </UserControl>

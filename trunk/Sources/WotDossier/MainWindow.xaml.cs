@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
@@ -22,12 +21,19 @@ namespace WotDossier
             model.Show();
         }
 
-        public ChartPlotter Chart
+        public ChartPlotter ChartRating
         {
-            get
-            {
-                return CommonTab.Chart;
-            }
+            get { return Chart; }
+        }
+
+        public ChartPlotter ChartWinPercent
+        {
+            get { return Chart2; }
+        }
+
+        public ChartPlotter ChartAvgDamage
+        {
+            get { return Chart3; }
         }
     }
 }

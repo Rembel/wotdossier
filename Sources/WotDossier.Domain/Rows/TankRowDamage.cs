@@ -44,10 +44,8 @@ namespace WotDossier.Domain.Rows
         private int _damagePerHit;
 
         public TankRowDamage(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _damageDealt = tank.Tankdata.damageDealt;
             _damageTaken = tank.Tankdata.damageReceived;
             _damageRatio = DamageDealt/ (double)DamageTaken;

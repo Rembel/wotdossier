@@ -101,11 +101,8 @@
             set { _spartan = value; }
         }
 
-        public TankRowBattleAwards(Tank tank)
+        public TankRowBattleAwards(Tank tank) : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _battleHero = tank.Battle.battleHeroes;
             _topGun = tank.Battle.warrior;
             _invader = tank.Battle.invader;

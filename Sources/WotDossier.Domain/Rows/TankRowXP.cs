@@ -25,10 +25,8 @@
         }
 
         public TankRowXP(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _totalXP = tank.Tankdata.xp;
             _maximumXp = tank.Tankdata.maxXP;
             _averageXp = _totalXP / tank.Tankdata.battlesCount;

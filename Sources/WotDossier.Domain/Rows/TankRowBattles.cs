@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WotDossier.Domain.Rows
+﻿namespace WotDossier.Domain.Rows
 {
     public class TankRowBattles : TankRowBase
     {
@@ -19,11 +14,8 @@ namespace WotDossier.Domain.Rows
         private int _survivedAndWon;
         private double _survivedAndWonPercent;
 
-        public TankRowBattles(Tank tank)
+        public TankRowBattles(Tank tank) : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _battles = tank.Tankdata.battlesCount;
             _won = tank.Tankdata.wins;
             _wonPercent = _won / (double)_battles * 100.0;

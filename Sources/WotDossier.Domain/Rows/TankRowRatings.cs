@@ -69,10 +69,8 @@ namespace WotDossier.Domain.Rows
         private int _markOfMastery;
 
         public TankRowRatings(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _battles = tank.Tankdata.battlesCount;
             _winrate = tank.Tankdata.wins/(double)tank.Tankdata.battlesCount*100.0;
             _averageDamage = tank.Tankdata.damageDealt/tank.Tankdata.battlesCount;

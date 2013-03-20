@@ -88,10 +88,8 @@
         }
 
         public TankRowSpecialAwards(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _kamikaze = tank.Special.kamikaze;
             _raider	 = tank.Special.raider;
             _bombardier	 = tank.Special.bombardier;

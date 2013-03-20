@@ -10,7 +10,10 @@
                 <Image Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" />
             </DataTemplate>
             <DataTemplate x:Key="TankIconTemplate" >
-                <Image Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter.Default}}" />
+                <Grid>
+                    <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
+                    <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
+                </Grid>
             </DataTemplate>
         </DockPanel.Resources>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">

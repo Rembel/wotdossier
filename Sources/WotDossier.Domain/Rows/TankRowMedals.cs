@@ -63,12 +63,10 @@ namespace WotDossier.Domain.Rows
             get { return _ekins; }
             set { _ekins = value; }
         }
-        
+
         public TankRowMedals(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _kay = tank.Major.Kay;
             _carius = tank.Major.Carius;
             _knispel = tank.Major.Knispel;

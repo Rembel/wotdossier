@@ -5,18 +5,18 @@
         private bool _isPremium;
 
         public TankRowMasterTanker(Tank tank)
+            : base(tank)
         {
-            Tier = tank.Common.tier;
-            Tank = tank.Name;
-            Icon = tank.TankContour;
             _isPremium = tank.Common.premium == 1;
         }
 
         public TankRowMasterTanker(TankInfo tank, TankContour contour)
         {
             Tier = tank.tier;
+            TankType = tank.type;
             Tank = tank.title;
             Icon = contour;
+            CountryId = tank.countryid;
             _isPremium = tank.premium == 1;
         }
 

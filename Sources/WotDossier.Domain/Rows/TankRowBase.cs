@@ -5,6 +5,8 @@
         private int _tier;
         private TankContour _icon;
         private string _tank;
+        private int _tankType;
+        private int _countryId;
 
         public int Tier
         {
@@ -22,6 +24,37 @@
         {
             get { return _tank; }
             set { _tank = value; }
+        }
+
+        public int TankType
+        {
+            get { return _tankType; }
+            set { _tankType = value; }
+        }
+
+        public int CountryId
+        {
+            get { return _countryId; }
+            set { _countryId = value; }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        protected TankRowBase()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public TankRowBase(Tank tank)
+        {
+            Tier = tank.Common.tier;
+            TankType = tank.Common.type;
+            Tank = tank.Name;
+            Icon = tank.TankContour;
+            CountryId = tank.Common.countryid;
         }
 
         /// <summary>

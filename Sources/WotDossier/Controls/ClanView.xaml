@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:View="clr-namespace:WotDossier.Controls"
+             xmlns:Resources="clr-namespace:WotDossier.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -31,7 +32,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Foreground="#979899" FontSize="12" FontFamily="Arial" Grid.Column="0" Text="Position: "></TextBlock>
+            <TextBlock Foreground="#979899" FontSize="12" FontFamily="Arial" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Clan_Position}"></TextBlock>
             <TextBlock Foreground="#979899" FontSize="12" FontFamily="Arial" Grid.Column="1" Text="{Binding Position, RelativeSource={RelativeSource FindAncestor, AncestorType=View:ClanView}}"></TextBlock>
         </Grid>
         <Grid Grid.Row="2" Grid.Column="1">
@@ -39,7 +40,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Foreground="#606061" FontSize="11" FontFamily="Arial" Grid.Column="0" Text="Days in clan: "></TextBlock>
+            <TextBlock Foreground="#606061" FontSize="11" FontFamily="Arial" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Clan_DaysInClan}"></TextBlock>
             <TextBlock Foreground="#BABCBF" FontSize="11" FontFamily="Arial" Grid.Column="1" Text="{Binding Days, RelativeSource={RelativeSource FindAncestor, AncestorType=View:ClanView}}"></TextBlock>
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1">
@@ -47,7 +48,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Foreground="#606061" FontSize="11" FontFamily="Arial" Grid.Column="0" Text="Enrolled: "></TextBlock>
+            <TextBlock Foreground="#606061" FontSize="11" FontFamily="Arial" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Clan_Enrolled}"></TextBlock>
             <TextBlock Foreground="#BABCBF" FontSize="11" FontFamily="Arial" Grid.Column="1" Text="{Binding Date, RelativeSource={RelativeSource FindAncestor, AncestorType=View:ClanView}, Converter={x:Static Converters:DateTimeToDateConverter.Default}}"></TextBlock>
         </Grid>
     </Grid>

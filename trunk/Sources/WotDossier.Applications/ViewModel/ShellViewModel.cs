@@ -189,7 +189,7 @@ namespace WotDossier.Applications.ViewModel
                 playerStatisticViewModel.Name = player.Name;
                 playerStatisticViewModel.Created = player.Creaded;
 
-                if (playerStat.data.clan != null)
+                if (playerStat.data.clan.clan != null)
                 {
                     playerStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
                 }

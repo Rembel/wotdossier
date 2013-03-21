@@ -7,10 +7,10 @@ namespace WotDossier.Domain.Player
 {
     public class Rating
     {
-        private int place;
+        private int? place;
         private int value;
 
-        public int Place
+        public int? Place
         {
             get { return place; }
             set { place = value; }

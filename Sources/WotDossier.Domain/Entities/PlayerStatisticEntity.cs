@@ -275,47 +275,47 @@ namespace WotDossier.Domain.Entities
             //GR-->
             //Global Rating
             RatingIntegratedValue = stat.data.ratings.Integrated_rating.Value;
-            RatingIntegratedPlace = stat.data.ratings.Integrated_rating.Place;
+            RatingIntegratedPlace = stat.data.ratings.Integrated_rating.Place ?? 0;
             //W/B-->
             //Victories/Battles
             RatingBattleAvgPerformanceValue = stat.data.ratings.Battle_avg_performance.Value;
-            RatingBattleAvgPerformancePlace = stat.data.ratings.Battle_avg_performance.Place;
+            RatingBattleAvgPerformancePlace = stat.data.ratings.Battle_avg_performance.Place ?? 0;
             //E/B-->
             //Average Experience per Battle
             RatingBattleAvgXpValue = stat.data.ratings.Battle_avg_xp.Value;
-            RatingBattleAvgXpPlace = stat.data.ratings.Battle_avg_xp.Place;
+            RatingBattleAvgXpPlace = stat.data.ratings.Battle_avg_xp.Place ?? 0;
             //WIN-->
             //Victories
             RatingBattleWinsValue = stat.data.ratings.Battle_wins.Value;
-            RatingBattleWinsPlace = stat.data.ratings.Battle_wins.Place;
+            RatingBattleWinsPlace = stat.data.ratings.Battle_wins.Place ?? 0;
             //GPL-->
             //Battles Participated
             RatingBattlesValue = stat.data.ratings.Battles.Value;
-            RatingBattlesPlace = stat.data.ratings.Battles.Place;
+            RatingBattlesPlace = stat.data.ratings.Battles.Place ?? 0;
             //CPT-->
             //Capture Points
             RatingCapturedPointsValue = stat.data.ratings.Ctf_points.Value;
-            RatingCapturedPointsPlace = stat.data.ratings.Ctf_points.Place;
+            RatingCapturedPointsPlace = stat.data.ratings.Ctf_points.Place ?? 0;
             //DMG-->
             //Damage Caused
             RatingDamageDealtValue = stat.data.ratings.Damage_dealt.Value;
-            RatingDamageDealtPlace = stat.data.ratings.Damage_dealt.Place;
+            RatingDamageDealtPlace = stat.data.ratings.Damage_dealt.Place ?? 0;
             //DPT-->
             //Defense Points
             RatingDroppedPointsValue = stat.data.ratings.Dropped_ctf_points.Value;
-            RatingDroppedPointsPlace = stat.data.ratings.Dropped_ctf_points.Place;
+            RatingDroppedPointsPlace = stat.data.ratings.Dropped_ctf_points.Place ?? 0;
             //FRG-->
             //Targets Destroyed
             RatingFragsValue = stat.data.ratings.Frags.Value;
-            RatingFragsPlace = stat.data.ratings.Frags.Place;
+            RatingFragsPlace = stat.data.ratings.Frags.Place ?? 0;
             //SPT-->
             //Targets Detected
             RatingSpottedValue = stat.data.ratings.Spotted.Value;
-            RatingSpottedPlace = stat.data.ratings.Spotted.Place;
+            RatingSpottedPlace = stat.data.ratings.Spotted.Place ?? 0;
             //EXP-->
             //Total Experience
             RatingXpValue = stat.data.ratings.Xp.Value;
-            RatingXpPlace = stat.data.ratings.Xp.Place;
+            RatingXpPlace = stat.data.ratings.Xp.Place ?? 0;
 
             #endregion
 

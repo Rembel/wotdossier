@@ -124,4 +124,254 @@
   <data name="contour" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\contour.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MenuItem_Header_Load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="MenuItem_Header_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Column_Header_Tier" xml:space="preserve">
+    <value>Tier</value>
+  </data>
+  <data name="Column_Header_Icon" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="Column_Header_Tank" xml:space="preserve">
+    <value>Tank</value>
+  </data>
+  <data name="Tab_Header_Common" xml:space="preserve">
+    <value>Common</value>
+  </data>
+  <data name="Tab_Header_Chart" xml:space="preserve">
+    <value>Charts</value>
+  </data>
+  <data name="Tab_Header_XP" xml:space="preserve">
+    <value>XP</value>
+  </data>
+  <data name="Tab_Header_Battles" xml:space="preserve">
+    <value>Battles</value>
+  </data>
+  <data name="Tab_Header_Frags" xml:space="preserve">
+    <value>Frags</value>
+  </data>
+  <data name="Tab_Header_Damage" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="Tab_Header_BattleAwards" xml:space="preserve">
+    <value>Battle awards</value>
+  </data>
+  <data name="Tab_Header_SpecialAwards" xml:space="preserve">
+    <value>Special awards</value>
+  </data>
+  <data name="Tab_Header_Series" xml:space="preserve">
+    <value>Series</value>
+  </data>
+  <data name="Tab_Header_Medals" xml:space="preserve">
+    <value>Medals</value>
+  </data>
+  <data name="Tab_Header_Ratings" xml:space="preserve">
+    <value>Ratings</value>
+  </data>
+  <data name="Tab_Header_Performance" xml:space="preserve">
+    <value>Performance</value>
+  </data>
+  <data name="Tab_Header_FragCounts" xml:space="preserve">
+    <value>Frag counts</value>
+  </data>
+  <data name="Tab_Header_MasterTanker" xml:space="preserve">
+    <value>MasterTanker</value>
+  </data>
+  <data name="Tab_Header_Epics" xml:space="preserve">
+    <value>Epics</value>
+  </data>
+  <data name="Tab_Header_Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Common_RegisterDate" xml:space="preserve">
+    <value>Registered: </value>
+  </data>
+  <data name="Common_DataUpdate" xml:space="preserve">
+    <value>Data as of: </value>
+  </data>
+  <data name="Common_OverallResults" xml:space="preserve">
+    <value>Overall Results</value>
+  </data>
+  <data name="Common_BattlesParticipated" xml:space="preserve">
+    <value>Battles Participated: </value>
+  </data>
+  <data name="Common_Victories" xml:space="preserve">
+    <value>Victories:</value>
+  </data>
+  <data name="Common_Defeats" xml:space="preserve">
+    <value>Defeats:</value>
+  </data>
+  <data name="Common_BattlesSurvived" xml:space="preserve">
+    <value>Battles Survived:</value>
+  </data>
+  <data name="Common_TotalExperience" xml:space="preserve">
+    <value>Total Experience: </value>
+  </data>
+  <data name="Common_Experience" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="Common_AvgExperience" xml:space="preserve">
+    <value>Average Experience per Battle: </value>
+  </data>
+  <data name="Common_MaxExperience" xml:space="preserve">
+    <value>Maximum Experience per Battle: </value>
+  </data>
+  <data name="Common_BattlePerformance" xml:space="preserve">
+    <value>Battle Performance</value>
+  </data>
+  <data name="Common_Destroyed" xml:space="preserve">
+    <value>Destroyed: </value>
+  </data>
+  <data name="Common_Detected" xml:space="preserve">
+    <value>Detected: </value>
+  </data>
+  <data name="Common_HitRatio" xml:space="preserve">
+    <value>Hit Ratio: </value>
+  </data>
+  <data name="Common_DamageCaused" xml:space="preserve">
+    <value>Damage Caused: </value>
+  </data>
+  <data name="Common_CapturePoints" xml:space="preserve">
+    <value>Capture Points: </value>
+  </data>
+  <data name="Common_DefensePoints" xml:space="preserve">
+    <value>Defense Points: </value>
+  </data>
+  <data name="Common_Rating_GlobalRating" xml:space="preserve">
+    <value>Global Rating</value>
+  </data>
+  <data name="Common_Rating_VictoriesBattles" xml:space="preserve">
+    <value>Victories/Battles</value>
+  </data>
+  <data name="Common_Rating_AvgExperience" xml:space="preserve">
+    <value>Average Experience per Battle</value>
+  </data>
+  <data name="Common_Rating_Victories" xml:space="preserve">
+    <value>Victories</value>
+  </data>
+  <data name="Common_Rating_BattlesParticipated" xml:space="preserve">
+    <value>Battles Participated</value>
+  </data>
+  <data name="Common_Rating_CapturePoints" xml:space="preserve">
+    <value>Capture Points</value>
+  </data>
+  <data name="Common_Rating_DamageCaused" xml:space="preserve">
+    <value>Damage Caused</value>
+  </data>
+  <data name="Common_Rating_DefensePoints" xml:space="preserve">
+    <value>Defense Points</value>
+  </data>
+  <data name="Common_Rating_TargetsDestroyed" xml:space="preserve">
+    <value>Targets Destroyed</value>
+  </data>
+  <data name="Common_Rating_TargetsDetected" xml:space="preserve">
+    <value>Targets Detected</value>
+  </data>
+  <data name="Common_Rating_TotalExperience" xml:space="preserve">
+    <value>Total Experience</value>
+  </data>
+  <data name="Common_RatingHeader_Rating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="Common_RatingHeader_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="Common_RatingHeader_Place" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="Common_Clan_Position" xml:space="preserve">
+    <value>Position: </value>
+  </data>
+  <data name="Common_Clan_DaysInClan" xml:space="preserve">
+    <value>Days in clan: </value>
+  </data>
+  <data name="Common_Clan_Enrolled" xml:space="preserve">
+    <value>Enrolled: </value>
+  </data>
+  <data name="Column_XP_TotalXP" xml:space="preserve">
+    <value>Total XP</value>
+  </data>
+  <data name="Column_XP_MaximumXP" xml:space="preserve">
+    <value>Maximum XP</value>
+  </data>
+  <data name="Column_XP_AverageXP" xml:space="preserve">
+    <value>Average XP</value>
+  </data>
+  <data name="Column_Battles_Battles" xml:space="preserve">
+    <value>Battles</value>
+  </data>
+  <data name="Column_Battles_Won" xml:space="preserve">
+    <value>Won</value>
+  </data>
+  <data name="Column_Battles_WonPercent" xml:space="preserve">
+    <value>WonPercent</value>
+  </data>
+  <data name="Column_Battles_Lost" xml:space="preserve">
+    <value>Lost</value>
+  </data>
+  <data name="Column_Battles_LostPercent" xml:space="preserve">
+    <value>LostPercent</value>
+  </data>
+  <data name="Column_Battles_Draws" xml:space="preserve">
+    <value>Draws</value>
+  </data>
+  <data name="Column_Battles_DrawsPercent" xml:space="preserve">
+    <value>DrawsPercent</value>
+  </data>
+  <data name="Column_Battles_Survived" xml:space="preserve">
+    <value>Survived</value>
+  </data>
+  <data name="Column_Battles_SurvivedPercent" xml:space="preserve">
+    <value>SurvivedPercent</value>
+  </data>
+  <data name="Column_Battles_SurvivedAndWon" xml:space="preserve">
+    <value>SurvivedAndWon</value>
+  </data>
+  <data name="Column_Battles_SurvivedAndWonPercent" xml:space="preserve">
+    <value>SurvivedAndWonPercent</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Warrior" xml:space="preserve">
+    <value>Destroy more enemy vehicles than any other player in your team during the battle (at least 6).
+If two or more players have destroyed equal amount vehicles, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_BrothersInArms" xml:space="preserve">
+    <value>Awarded to a platoon in which all platoon members destroy at least 3 enemy vehicles and survive in battle. Each platoon participant receive this title.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Confederate" xml:space="preserve">
+    <value>Hit more enemy vehicles than any other player on your team (at least 6), which are subsequently destroyed by another player.
+If two or more players have equal amount of hits, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_CrucialContribution" xml:space="preserve">
+    <value>Awarded to a platoon which destroyed at least 12 enemy vehicles in one battle. Each platoon participant receive this title.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Defender" xml:space="preserve">
+    <value>Reduce the amount of enemy capture points on a friendly base by 70 or more.
+If two or more players have reduced equal amount of capture points, the achievement is granted to the player who has earned more XP in the battle (including additional XP provided to Premium account users). If the amount of XP is equal as well, the achievement is not awarded.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Invader" xml:space="preserve">
+    <value>Capture the maximum number of points from the enemy base, but not less than 80.
+The achievement is granted on successful base capture, including only the points that were part of the base capture. If the battle ends in a draw, the achievement is granted to the first player to receive 80 or more capture points.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_PatrolDuty" xml:space="preserve">
+    <value>Awarded to the player who helps the team damage at least six enemy vehicles by highlighting them. The tanks must be highlighted only by you when they take damage.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Scout" xml:space="preserve">
+    <value>Detect most enemy tanks and self-propelled guns than anyone else on your team (at least nine). The achievement is granted to the winning team only.
+If two or more players have detected equal number of enemy vehicles, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Sniper" xml:space="preserve">
+    <value>Achieve at least 85% hits out of a minimum of ten shots fired with the potential damage of 1,000 HP and more. Non-penetrating hits are included, but hits on friendly units are not included.
+If two or more players have an equal hit ratio, the achievement is granted to the player with the highest potential damage. If two or more players have an equal amount of potential damage, the achievement is granted to the player who earned more XP for the battle, including additional XP provided to Premium Account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_SteelWall" xml:space="preserve">
+    <value>Receive the most hits (at least 11) of any player on your team, with potential damage of at least 1,000 HP, and survive.
+If two or more players have equal amount of hits, the achievement is granted to the player with the highest potential damage. If two or more players have equal amount of potential damage, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_BattleHero" xml:space="preserve">
+    <value>Awarded for individual battles if all of the requirements are met.</value>
+  </data>
 </root>

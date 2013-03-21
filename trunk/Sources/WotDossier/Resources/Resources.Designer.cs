@@ -71,12 +71,748 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battles.
+        /// </summary>
+        public static string Column_Battles_Battles {
+            get {
+                return ResourceManager.GetString("Column_Battles_Battles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Draws.
+        /// </summary>
+        public static string Column_Battles_Draws {
+            get {
+                return ResourceManager.GetString("Column_Battles_Draws", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DrawsPercent.
+        /// </summary>
+        public static string Column_Battles_DrawsPercent {
+            get {
+                return ResourceManager.GetString("Column_Battles_DrawsPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lost.
+        /// </summary>
+        public static string Column_Battles_Lost {
+            get {
+                return ResourceManager.GetString("Column_Battles_Lost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LostPercent.
+        /// </summary>
+        public static string Column_Battles_LostPercent {
+            get {
+                return ResourceManager.GetString("Column_Battles_LostPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survived.
+        /// </summary>
+        public static string Column_Battles_Survived {
+            get {
+                return ResourceManager.GetString("Column_Battles_Survived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SurvivedAndWon.
+        /// </summary>
+        public static string Column_Battles_SurvivedAndWon {
+            get {
+                return ResourceManager.GetString("Column_Battles_SurvivedAndWon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SurvivedAndWonPercent.
+        /// </summary>
+        public static string Column_Battles_SurvivedAndWonPercent {
+            get {
+                return ResourceManager.GetString("Column_Battles_SurvivedAndWonPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SurvivedPercent.
+        /// </summary>
+        public static string Column_Battles_SurvivedPercent {
+            get {
+                return ResourceManager.GetString("Column_Battles_SurvivedPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Won.
+        /// </summary>
+        public static string Column_Battles_Won {
+            get {
+                return ResourceManager.GetString("Column_Battles_Won", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WonPercent.
+        /// </summary>
+        public static string Column_Battles_WonPercent {
+            get {
+                return ResourceManager.GetString("Column_Battles_WonPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icon.
+        /// </summary>
+        public static string Column_Header_Icon {
+            get {
+                return ResourceManager.GetString("Column_Header_Icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tank.
+        /// </summary>
+        public static string Column_Header_Tank {
+            get {
+                return ResourceManager.GetString("Column_Header_Tank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tier.
+        /// </summary>
+        public static string Column_Header_Tier {
+            get {
+                return ResourceManager.GetString("Column_Header_Tier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average XP.
+        /// </summary>
+        public static string Column_XP_AverageXP {
+            get {
+                return ResourceManager.GetString("Column_XP_AverageXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum XP.
+        /// </summary>
+        public static string Column_XP_MaximumXP {
+            get {
+                return ResourceManager.GetString("Column_XP_MaximumXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total XP.
+        /// </summary>
+        public static string Column_XP_TotalXP {
+            get {
+                return ResourceManager.GetString("Column_XP_TotalXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Experience per Battle: .
+        /// </summary>
+        public static string Common_AvgExperience {
+            get {
+                return ResourceManager.GetString("Common_AvgExperience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle Performance.
+        /// </summary>
+        public static string Common_BattlePerformance {
+            get {
+                return ResourceManager.GetString("Common_BattlePerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles Participated: .
+        /// </summary>
+        public static string Common_BattlesParticipated {
+            get {
+                return ResourceManager.GetString("Common_BattlesParticipated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles Survived:.
+        /// </summary>
+        public static string Common_BattlesSurvived {
+            get {
+                return ResourceManager.GetString("Common_BattlesSurvived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture Points: .
+        /// </summary>
+        public static string Common_CapturePoints {
+            get {
+                return ResourceManager.GetString("Common_CapturePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days in clan: .
+        /// </summary>
+        public static string Common_Clan_DaysInClan {
+            get {
+                return ResourceManager.GetString("Common_Clan_DaysInClan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enrolled: .
+        /// </summary>
+        public static string Common_Clan_Enrolled {
+            get {
+                return ResourceManager.GetString("Common_Clan_Enrolled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position: .
+        /// </summary>
+        public static string Common_Clan_Position {
+            get {
+                return ResourceManager.GetString("Common_Clan_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Caused: .
+        /// </summary>
+        public static string Common_DamageCaused {
+            get {
+                return ResourceManager.GetString("Common_DamageCaused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data as of: .
+        /// </summary>
+        public static string Common_DataUpdate {
+            get {
+                return ResourceManager.GetString("Common_DataUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defeats:.
+        /// </summary>
+        public static string Common_Defeats {
+            get {
+                return ResourceManager.GetString("Common_Defeats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defense Points: .
+        /// </summary>
+        public static string Common_DefensePoints {
+            get {
+                return ResourceManager.GetString("Common_DefensePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroyed: .
+        /// </summary>
+        public static string Common_Destroyed {
+            get {
+                return ResourceManager.GetString("Common_Destroyed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detected: .
+        /// </summary>
+        public static string Common_Detected {
+            get {
+                return ResourceManager.GetString("Common_Detected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Experience.
+        /// </summary>
+        public static string Common_Experience {
+            get {
+                return ResourceManager.GetString("Common_Experience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hit Ratio: .
+        /// </summary>
+        public static string Common_HitRatio {
+            get {
+                return ResourceManager.GetString("Common_HitRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum Experience per Battle: .
+        /// </summary>
+        public static string Common_MaxExperience {
+            get {
+                return ResourceManager.GetString("Common_MaxExperience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overall Results.
+        /// </summary>
+        public static string Common_OverallResults {
+            get {
+                return ResourceManager.GetString("Common_OverallResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Experience per Battle.
+        /// </summary>
+        public static string Common_Rating_AvgExperience {
+            get {
+                return ResourceManager.GetString("Common_Rating_AvgExperience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles Participated.
+        /// </summary>
+        public static string Common_Rating_BattlesParticipated {
+            get {
+                return ResourceManager.GetString("Common_Rating_BattlesParticipated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture Points.
+        /// </summary>
+        public static string Common_Rating_CapturePoints {
+            get {
+                return ResourceManager.GetString("Common_Rating_CapturePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Caused.
+        /// </summary>
+        public static string Common_Rating_DamageCaused {
+            get {
+                return ResourceManager.GetString("Common_Rating_DamageCaused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defense Points.
+        /// </summary>
+        public static string Common_Rating_DefensePoints {
+            get {
+                return ResourceManager.GetString("Common_Rating_DefensePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global Rating.
+        /// </summary>
+        public static string Common_Rating_GlobalRating {
+            get {
+                return ResourceManager.GetString("Common_Rating_GlobalRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Targets Destroyed.
+        /// </summary>
+        public static string Common_Rating_TargetsDestroyed {
+            get {
+                return ResourceManager.GetString("Common_Rating_TargetsDestroyed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Targets Detected.
+        /// </summary>
+        public static string Common_Rating_TargetsDetected {
+            get {
+                return ResourceManager.GetString("Common_Rating_TargetsDetected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Experience.
+        /// </summary>
+        public static string Common_Rating_TotalExperience {
+            get {
+                return ResourceManager.GetString("Common_Rating_TotalExperience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victories.
+        /// </summary>
+        public static string Common_Rating_Victories {
+            get {
+                return ResourceManager.GetString("Common_Rating_Victories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victories/Battles.
+        /// </summary>
+        public static string Common_Rating_VictoriesBattles {
+            get {
+                return ResourceManager.GetString("Common_Rating_VictoriesBattles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place.
+        /// </summary>
+        public static string Common_RatingHeader_Place {
+            get {
+                return ResourceManager.GetString("Common_RatingHeader_Place", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rating.
+        /// </summary>
+        public static string Common_RatingHeader_Rating {
+            get {
+                return ResourceManager.GetString("Common_RatingHeader_Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Common_RatingHeader_Value {
+            get {
+                return ResourceManager.GetString("Common_RatingHeader_Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered: .
+        /// </summary>
+        public static string Common_RegisterDate {
+            get {
+                return ResourceManager.GetString("Common_RegisterDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Experience: .
+        /// </summary>
+        public static string Common_TotalExperience {
+            get {
+                return ResourceManager.GetString("Common_TotalExperience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victories:.
+        /// </summary>
+        public static string Common_Victories {
+            get {
+                return ResourceManager.GetString("Common_Victories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap contour {
             get {
                 object obj = ResourceManager.GetObject("contour", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load.
+        /// </summary>
+        public static string MenuItem_Header_Load {
+            get {
+                return ResourceManager.GetString("MenuItem_Header_Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string MenuItem_Header_Settings {
+            get {
+                return ResourceManager.GetString("MenuItem_Header_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle awards.
+        /// </summary>
+        public static string Tab_Header_BattleAwards {
+            get {
+                return ResourceManager.GetString("Tab_Header_BattleAwards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles.
+        /// </summary>
+        public static string Tab_Header_Battles {
+            get {
+                return ResourceManager.GetString("Tab_Header_Battles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charts.
+        /// </summary>
+        public static string Tab_Header_Chart {
+            get {
+                return ResourceManager.GetString("Tab_Header_Chart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common.
+        /// </summary>
+        public static string Tab_Header_Common {
+            get {
+                return ResourceManager.GetString("Tab_Header_Common", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage.
+        /// </summary>
+        public static string Tab_Header_Damage {
+            get {
+                return ResourceManager.GetString("Tab_Header_Damage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Epics.
+        /// </summary>
+        public static string Tab_Header_Epics {
+            get {
+                return ResourceManager.GetString("Tab_Header_Epics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frag counts.
+        /// </summary>
+        public static string Tab_Header_FragCounts {
+            get {
+                return ResourceManager.GetString("Tab_Header_FragCounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frags.
+        /// </summary>
+        public static string Tab_Header_Frags {
+            get {
+                return ResourceManager.GetString("Tab_Header_Frags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MasterTanker.
+        /// </summary>
+        public static string Tab_Header_MasterTanker {
+            get {
+                return ResourceManager.GetString("Tab_Header_MasterTanker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medals.
+        /// </summary>
+        public static string Tab_Header_Medals {
+            get {
+                return ResourceManager.GetString("Tab_Header_Medals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performance.
+        /// </summary>
+        public static string Tab_Header_Performance {
+            get {
+                return ResourceManager.GetString("Tab_Header_Performance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ratings.
+        /// </summary>
+        public static string Tab_Header_Ratings {
+            get {
+                return ResourceManager.GetString("Tab_Header_Ratings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Series.
+        /// </summary>
+        public static string Tab_Header_Series {
+            get {
+                return ResourceManager.GetString("Tab_Header_Series", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special awards.
+        /// </summary>
+        public static string Tab_Header_SpecialAwards {
+            get {
+                return ResourceManager.GetString("Tab_Header_SpecialAwards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time.
+        /// </summary>
+        public static string Tab_Header_Time {
+            get {
+                return ResourceManager.GetString("Tab_Header_Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XP.
+        /// </summary>
+        public static string Tab_Header_XP {
+            get {
+                return ResourceManager.GetString("Tab_Header_XP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for individual battles if all of the requirements are met..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_BattleHero {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_BattleHero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to a platoon in which all platoon members destroy at least 3 enemy vehicles and survive in battle. Each platoon participant receive this title..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_BrothersInArms {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_BrothersInArms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hit more enemy vehicles than any other player on your team (at least 6), which are subsequently destroyed by another player.
+        ///If two or more players have equal amount of hits, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_Confederate {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Confederate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to a platoon which destroyed at least 12 enemy vehicles in one battle. Each platoon participant receive this title..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_CrucialContribution {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_CrucialContribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reduce the amount of enemy capture points on a friendly base by 70 or more.
+        ///If two or more players have reduced equal amount of capture points, the achievement is granted to the player who has earned more XP in the battle (including additional XP provided to Premium account users). If the amount of XP is equal as well, the achievement is not awarded..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_Defender {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Defender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture the maximum number of points from the enemy base, but not less than 80.
+        ///The achievement is granted on successful base capture, including only the points that were part of the base capture. If the battle ends in a draw, the achievement is granted to the first player to receive 80 or more capture points..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_Invader {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Invader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to the player who helps the team damage at least six enemy vehicles by highlighting them. The tanks must be highlighted only by you when they take damage..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_PatrolDuty {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_PatrolDuty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detect most enemy tanks and self-propelled guns than anyone else on your team (at least nine). The achievement is granted to the winning team only.
+        ///If two or more players have detected equal number of enemy vehicles, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_Scout {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Scout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Achieve at least 85% hits out of a minimum of ten shots fired with the potential damage of 1,000 HP and more. Non-penetrating hits are included, but hits on friendly units are not included.
+        ///If two or more players have an equal hit ratio, the achievement is granted to the player with the highest potential damage. If two or more players have an equal amount of potential damage, the achievement is granted to the player who earned more XP for the battle, including additional XP provided to Premium Account user [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_Sniper {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Sniper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receive the most hits (at least 11) of any player on your team, with potential damage of at least 1,000 HP, and survive.
+        ///If two or more players have equal amount of hits, the achievement is granted to the player with the highest potential damage. If two or more players have equal amount of potential damage, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_SteelWall {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_SteelWall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy more enemy vehicles than any other player in your team during the battle (at least 6).
+        ///If two or more players have destroyed equal amount vehicles, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted..
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_Warrior {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Warrior", resourceCulture);
             }
         }
     }

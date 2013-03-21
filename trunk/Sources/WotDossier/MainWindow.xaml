@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
+        xmlns:Resources="clr-namespace:WotDossier.Resources"
         Title="MainWindow" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png"        >
     <DockPanel>
         <DockPanel.Resources>
@@ -17,16 +18,18 @@
             </DataTemplate>
         </DockPanel.Resources>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
-            <MenuItem Header="Load" Command="{Binding LoadCommand}"></MenuItem>
-            <MenuItem Header="Settings" Click="MenuItemSettings_Click"></MenuItem>
+            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>
+            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Click="MenuItemSettings_Click"></MenuItem>
         </Menu>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
-            <TabItem TabIndex="0" Header="Common" Name="tabCommon">
+            <!--Common tab-->
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabCommon">
                 <ScrollViewer>
                     <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
                 </ScrollViewer>
             </TabItem>
-            <TabItem TabIndex="0" Header="Charts" Name="tabChart">
+            <!--Charts-->
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
                 <ScrollViewer>
                     <StackPanel>
                         <Grid>
@@ -48,49 +51,52 @@
                 </ScrollViewer>
                 
             </TabItem>
-            <TabItem TabIndex="0" Header="XP" Name="tabXP">
+            <!--XP-->
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_XP}" Name="tabXP">
                 <Grid >
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Xp}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="TotalXP" Binding="{Binding TotalXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MaximumXP" Binding="{Binding MaximumXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="AverageXP" Binding="{Binding AverageXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_TotalXP}" Binding="{Binding TotalXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_MaximumXP}" Binding="{Binding MaximumXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_AverageXP}" Binding="{Binding AverageXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="1" Header="Battles" Name="tabBattles">
+            <!--Battles-->
+            <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Battles}" Name="tabBattles">
                 <Grid >
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Battles}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Won" Binding="{Binding Won}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="WonPercent" Binding="{Binding WonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Lost" Binding="{Binding Lost}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="LostPercent" Binding="{Binding LostPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Draws" Binding="{Binding Draws}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DrawsPercent" Binding="{Binding DrawsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Survived" Binding="{Binding Survived}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivedPercent" Binding="{Binding SurvivedPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivedAndWon" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="SurvivedAndWonPercent" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Battles}" Binding="{Binding Battles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Won}" Binding="{Binding Won}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_WonPercent}" Binding="{Binding WonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Lost}" Binding="{Binding Lost}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_LostPercent}" Binding="{Binding LostPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Draws}" Binding="{Binding Draws}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_DrawsPercent}" Binding="{Binding DrawsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Survived}" Binding="{Binding Survived}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedPercent}" Binding="{Binding SurvivedPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedAndWon}" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedAndWonPercent}" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="2" Header="Frags" Name="tabFrags">
+            <!--Frags-->
+            <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_Frags}" Name="tabFrags">
                 <Grid >
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Frags}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Frags" Binding="{Binding Frags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="MaxFrags" Binding="{Binding MaxFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -103,13 +109,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="3" Header="Damage" Name="tabDamage">
+            <!--Damage-->
+            <TabItem TabIndex="3" Header="{x:Static Resources:Resources.Tab_Header_Damage}" Name="tabDamage">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Damage}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="DamageDealt" Binding="{Binding DamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="DamageTaken" Binding="{Binding DamageTaken}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="DamageRatio" Binding="{Binding DamageRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -119,13 +126,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="4" Header="Battle awards" Name="tabBattleAwards">
+            <!--Battle awards-->
+            <TabItem TabIndex="4" Header="{x:Static Resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding BattleAwards}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="BattleHero" HeaderTemplate="{StaticResource BattleHeroColumnHeaderTemplate}" Binding="{Binding BattleHero}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="TopGun" HeaderTemplate="{StaticResource TopGunColumnHeaderTemplate}" Binding="{Binding TopGun}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Invader" HeaderTemplate="{StaticResource InvaderColumnHeaderTemplate}" Binding="{Binding Invader}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -144,13 +152,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="5" Header="Special awards" Name="tabSpecialAwards">
+            <!--Special awards-->
+            <TabItem TabIndex="5" Header="{x:Static Resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding SpecialAwards}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Kamikaze" HeaderTemplate="{StaticResource KamikazeColumnHeaderTemplate}" Binding="{Binding Kamikaze}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Raider" HeaderTemplate="{StaticResource RaiderColumnHeaderTemplate}" Binding="{Binding Raider}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Bombardier" HeaderTemplate="{StaticResource BombardierColumnHeaderTemplate}" Binding="{Binding Bombardier}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -167,13 +176,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="6" Header="Series" Name="tabSeries">
+            <!--Series-->
+            <TabItem TabIndex="6" Header="{x:Static Resources:Resources.Tab_Header_Series}" Name="tabSeries">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Series}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="ReaperLongest" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="ReaperProgress" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="SharpshooterLongest" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -188,13 +198,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="7" Header="Medals" Name="tabMedals">
+            <!--Medals-->
+            <TabItem TabIndex="7" Header="{x:Static Resources:Resources.Tab_Header_Medals}" Name="tabMedals">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Medals}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Kay" HeaderTemplate="{StaticResource KayColumnHeaderTemplate}" Binding="{Binding Kay}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Carius" HeaderTemplate="{StaticResource CariusColumnHeaderTemplate}" Binding="{Binding Carius}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Knispel" HeaderTemplate="{StaticResource KnispelColumnHeaderTemplate}" Binding="{Binding Knispel}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -207,13 +218,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="8" Header="Ratings" Name="tabRatings">
+            <!--Ratings-->
+            <TabItem TabIndex="8" Header="{x:Static Resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Ratings}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Battles" Binding="{Binding Battles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="AverageDamage" Binding="{Binding AverageDamage}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -227,13 +239,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="9" Header="Performance" Name="tabPerformance">
+            <!--Performance-->
+            <TabItem TabIndex="9" Header="{x:Static Resources:Resources.Tab_Header_Performance}" Name="tabPerformance">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Performance}" VerticalAlignment="Stretch" Name="dgPerformance" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Shots" Binding="{Binding Shots}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Hits" Binding="{Binding Hits}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="HitRatio" Binding="{Binding HitRatio, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -244,28 +257,31 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="10" Header="Frag counts" Name="tabFragCounts">
+            <!--Frags count-->
+            <TabItem TabIndex="10" Header="{x:Static Resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts">
                 <Grid />
             </TabItem>
-            <TabItem TabIndex="11" Header="MasterTanker" Name="tabMasterTanker">
+            <!--Master tanker-->
+            <TabItem TabIndex="11" Header="{x:Static Resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding MasterTanker}" VerticalAlignment="Stretch" Name="dgMasterTanker" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridCheckBoxColumn Header="IsPremium" Binding="{Binding IsPremium}" Width="1*"></DataGridCheckBoxColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="12" Header="Epics" Name="tabEpics">
+            <!--Epics-->
+            <TabItem TabIndex="12" Header="{x:Static Resources:Resources.Tab_Header_Epics}" Name="tabEpics">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Epics}" VerticalAlignment="Stretch" Name="dgEpics" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Boelter" HeaderTemplate="{StaticResource BoelterColumnHeaderTemplate}" Binding="{Binding Boelter}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="RadleyWalters" HeaderTemplate="{StaticResource RadleyWaltersColumnHeaderTemplate}" Binding="{Binding RadleyWalters}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="LafayettePool" HeaderTemplate="{StaticResource LafayettePoolColumnHeaderTemplate}" Binding="{Binding LafayettePool}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -289,13 +305,14 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="13" Header="Time" Name="tabTime">
+            <!--Time-->
+            <TabItem TabIndex="13" Header="{x:Static Resources:Resources.Tab_Header_Time}" Name="tabTime">
                 <Grid>
                     <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Time}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Tier" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Icon" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="Tank" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="LastBattle" Binding="{Binding LastBattle}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="PlayTime" Binding="{Binding PlayTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="AverageBattleTime" Binding="{Binding AverageBattleTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>

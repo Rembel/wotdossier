@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
@@ -19,9 +21,11 @@ namespace WotDossier
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            List<bool> list = new List<bool>{true, true, false, true};
-
-            var orderBy = list.OrderBy(x => x);
+            SettingsReader reader = new SettingsReader(WotDossierSettings.SettingsPath);
+            //set app lang
+            var culture = new CultureInfo(reader.Get().Language);
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
 
 #if (DEBUG != true)
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't

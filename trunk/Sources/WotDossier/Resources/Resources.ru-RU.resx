@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Column_Battles_Battles" xml:space="preserve">
+    <value>Боев</value>
+  </data>
+  <data name="Column_Battles_Draws" xml:space="preserve">
+    <value>Ничьих</value>
+  </data>
+  <data name="Column_Battles_DrawsPercent" xml:space="preserve">
+    <value>Ничьих %</value>
+  </data>
+  <data name="Column_Battles_Lost" xml:space="preserve">
+    <value>Поражений</value>
+  </data>
+  <data name="Column_Battles_LostPercent" xml:space="preserve">
+    <value>Поражений %</value>
+  </data>
+  <data name="Column_Battles_Survived" xml:space="preserve">
+    <value>Выжил в боях</value>
+  </data>
+  <data name="Column_Battles_SurvivedAndWon" xml:space="preserve">
+    <value>Выжил в победных боях</value>
+  </data>
+  <data name="Column_Battles_SurvivedAndWonPercent" xml:space="preserve">
+    <value>Выжил в победных боях %</value>
+  </data>
+  <data name="Column_Battles_SurvivedPercent" xml:space="preserve">
+    <value>Выжил в боях %</value>
+  </data>
+  <data name="Column_Battles_Won" xml:space="preserve">
+    <value>Побед</value>
+  </data>
+  <data name="Column_Battles_WonPercent" xml:space="preserve">
+    <value>Побед %</value>
+  </data>
+  <data name="Column_Header_Icon" xml:space="preserve">
+    <value>Иконка</value>
+  </data>
+  <data name="Column_Header_Tank" xml:space="preserve">
+    <value>Танк</value>
+  </data>
+  <data name="Column_Header_Tier" xml:space="preserve">
+    <value>Уровень</value>
+  </data>
+  <data name="Column_XP_AverageXP" xml:space="preserve">
+    <value>Средний опыт за бой</value>
+  </data>
+  <data name="Column_XP_MaximumXP" xml:space="preserve">
+    <value>Максимальный опыт за бой</value>
+  </data>
+  <data name="Column_XP_TotalXP" xml:space="preserve">
+    <value>Суммарный опыт</value>
+  </data>
+  <data name="Common_AvgExperience" xml:space="preserve">
+    <value>Средний опыт за бой: </value>
+  </data>
+  <data name="Common_BattlePerformance" xml:space="preserve">
+    <value>Боевая эффективность</value>
+  </data>
+  <data name="Common_BattlesParticipated" xml:space="preserve">
+    <value>Проведено боёв: </value>
+  </data>
+  <data name="Common_BattlesSurvived" xml:space="preserve">
+    <value>Выжил в боях:</value>
+  </data>
+  <data name="Common_CapturePoints" xml:space="preserve">
+    <value>Очки захвата базы: </value>
+  </data>
+  <data name="Common_Clan_DaysInClan" xml:space="preserve">
+    <value>Количество дней в клане: </value>
+  </data>
+  <data name="Common_Clan_Enrolled" xml:space="preserve">
+    <value>Дата вступления: </value>
+  </data>
+  <data name="Common_Clan_Position" xml:space="preserve">
+    <value>Должность: </value>
+  </data>
+  <data name="Common_DamageCaused" xml:space="preserve">
+    <value>Нанесённые повреждения: </value>
+  </data>
+  <data name="Common_DataUpdate" xml:space="preserve">
+    <value>Данные по состоянию на: </value>
+  </data>
+  <data name="Common_Defeats" xml:space="preserve">
+    <value>Поражений:</value>
+  </data>
+  <data name="Common_DefensePoints" xml:space="preserve">
+    <value>Очки защиты базы: </value>
+  </data>
+  <data name="Common_Destroyed" xml:space="preserve">
+    <value>Танков уничтожено: </value>
+  </data>
+  <data name="Common_Detected" xml:space="preserve">
+    <value>Танков обнаружено: </value>
+  </data>
+  <data name="Common_Experience" xml:space="preserve">
+    <value>Опыт</value>
+  </data>
+  <data name="Common_HitRatio" xml:space="preserve">
+    <value>Процент попадания: </value>
+  </data>
+  <data name="Common_MaxExperience" xml:space="preserve">
+    <value>Максимальный опыт за бой: </value>
+  </data>
+  <data name="Common_OverallResults" xml:space="preserve">
+    <value>Общие результаты</value>
+  </data>
+  <data name="Common_RatingHeader_Place" xml:space="preserve">
+    <value>Место</value>
+  </data>
+  <data name="Common_RatingHeader_Rating" xml:space="preserve">
+    <value>Рейтинг</value>
+  </data>
+  <data name="Common_RatingHeader_Value" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="Common_Rating_AvgExperience" xml:space="preserve">
+    <value>Средний опыт</value>
+  </data>
+  <data name="Common_Rating_BattlesParticipated" xml:space="preserve">
+    <value>Проведено боёв</value>
+  </data>
+  <data name="Common_Rating_CapturePoints" xml:space="preserve">
+    <value>Захват базы</value>
+  </data>
+  <data name="Common_Rating_DamageCaused" xml:space="preserve">
+    <value>Нанесённые повреждения</value>
+  </data>
+  <data name="Common_Rating_DefensePoints" xml:space="preserve">
+    <value>Защита базы</value>
+  </data>
+  <data name="Common_Rating_GlobalRating" xml:space="preserve">
+    <value>Общий рейтинг</value>
+  </data>
+  <data name="Common_Rating_TargetsDestroyed" xml:space="preserve">
+    <value>Уничтожено врагов</value>
+  </data>
+  <data name="Common_Rating_TargetsDetected" xml:space="preserve">
+    <value>Обнаружено врагов</value>
+  </data>
+  <data name="Common_Rating_TotalExperience" xml:space="preserve">
+    <value>Общий опыт</value>
+  </data>
+  <data name="Common_Rating_Victories" xml:space="preserve">
+    <value>Победы</value>
+  </data>
+  <data name="Common_Rating_VictoriesBattles" xml:space="preserve">
+    <value>Процент побед</value>
+  </data>
+  <data name="Common_RegisterDate" xml:space="preserve">
+    <value>Дата регистрации: </value>
+  </data>
+  <data name="Common_TotalExperience" xml:space="preserve">
+    <value>Суммарный опыт: </value>
+  </data>
+  <data name="Common_Victories" xml:space="preserve">
+    <value>Побед:</value>
+  </data>
+  <data name="MenuItem_Header_Load" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="MenuItem_Header_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Tab_Header_BattleAwards" xml:space="preserve">
+    <value>Боевые награды</value>
+  </data>
+  <data name="Tab_Header_Battles" xml:space="preserve">
+    <value>Бои</value>
+  </data>
+  <data name="Tab_Header_Chart" xml:space="preserve">
+    <value>Графики</value>
+  </data>
+  <data name="Tab_Header_Common" xml:space="preserve">
+    <value>Общая информация</value>
+  </data>
+  <data name="Tab_Header_Damage" xml:space="preserve">
+    <value>Урон</value>
+  </data>
+  <data name="Tab_Header_Epics" xml:space="preserve">
+    <value>Эпические достижения</value>
+  </data>
+  <data name="Tab_Header_FragCounts" xml:space="preserve">
+    <value>Уничтоженные танки</value>
+  </data>
+  <data name="Tab_Header_Frags" xml:space="preserve">
+    <value>Фраги</value>
+  </data>
+  <data name="Tab_Header_MasterTanker" xml:space="preserve">
+    <value>Эксперт</value>
+  </data>
+  <data name="Tab_Header_Medals" xml:space="preserve">
+    <value>Медали</value>
+  </data>
+  <data name="Tab_Header_Performance" xml:space="preserve">
+    <value>Эффективность</value>
+  </data>
+  <data name="Tab_Header_Ratings" xml:space="preserve">
+    <value>Рэйтинг</value>
+  </data>
+  <data name="Tab_Header_Series" xml:space="preserve">
+    <value>Серии</value>
+  </data>
+  <data name="Tab_Header_SpecialAwards" xml:space="preserve">
+    <value>Специальные награды</value>
+  </data>
+  <data name="Tab_Header_Time" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="Tab_Header_XP" xml:space="preserve">
+    <value>Опыт</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_BattleHero" xml:space="preserve">
+    <value>Награды этой категории выдаются исключительно по результатам боя. Награду каждой номинации по результатам боя может получить только один игрок.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_BrothersInArms" xml:space="preserve">
+    <value>Выдаётся всем взводным игрокам при условии, 
+    что взвод уничтожил 12 и более машин противника.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Confederate" xml:space="preserve">
+    <value>Присуждается игроку, который произвёл наибольшее количество попаданий (не менее 6) 
+    по различным противникам, которые впоследствии были уничтожены другими членами команды или самоуничтожились. 
+    При равном количестве попаданий выдаётся игроку, получившему больше очков опыта за бой 
+    с учётом премиум аккаунта. При равном опыте за бой — не выдается никому.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_CrucialContribution" xml:space="preserve">
+    <value>Выдаётся всем взводным игрокам при условии, что все члены взвода 
+    выжили и уничтожили не менее чем по 3 машины противника.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Defender" xml:space="preserve">
+    <value>Присуждается игроку, сбившему наибольший процент захвата дружественной базы (70 % и более). 
+    При равном количестве сбитых очков награда присуждается тому, кто в данном бою заработал 
+    наибольшее количество очков опыта с учетом премиум аккаунта.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Invader" xml:space="preserve">
+    <value>Присуждается игроку, получившему наибольшее количество очков захвата базы, 
+    но не менее 80. Выдаётся после состоявшегося захвата без учета того, 
+    что бой мог быть закончен уничтожением всех противников. 
+    В случае одновременного захвата базы обоими командами, 
+    присваивается игроку, получившему наибольшее количество опыта.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_PatrolDuty" xml:space="preserve">
+    <value>Награждается игрок, если по его индивидуальной засветке 
+    (он один засвечивал танк в момент повреждения) было повреждено 6 и более танков. 
+    В случае равного количества повреждённых танков при засвете, который реализован разными игроками, 
+    приоритет у того, кто получил больше опыта. 
+    При равном количестве полученного опыта звание не присваивается.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Scout" xml:space="preserve">
+    <value>Присваивается игроку победившей команды, обнаружившему 
+    наибольшее число танков и САУ противника (девять и более).</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Sniper" xml:space="preserve">
+    <value>Присуждается игроку, который, не нанося своим огнём урона союзникам, 
+    произвёл не менее 85% попаданий по противнику, сделав не менее 10-ти выстрелов 
+    с потенциальным уроном от 1000 единиц. Непробитие засчитывается. 
+    При равном проценте попаданий присуждается игроку, сделавшему больше попаданий. 
+    При равном проценте и количестве попаданий, присуждается игроку, нанёсшему больший потенциальный урон. 
+    При равном показателе потенциального урона, выдаётся игроку, 
+    набравшему больше очков опыта за бой с учётом премиум аккаунта. 
+    При равном опыте не присуждается никому.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_SteelWall" xml:space="preserve">
+    <value>Присваивается игроку, чей танк получил наибольшее количество попаданий (11 и более) 
+    с общим потенциальным уроном не менее 1000 единиц. Снаряды, не пробившие броню танка, 
+    также идут в зачет попаданий. Присваивается только выжившим. Если по итогам боя двое 
+    или более игроков имеют равное количество попаданий, то звание присваивается игроку, 
+    получившему большее количество очков урона; в случае равенства полученных очков урона, 
+    звание присваивается игроку, получившему за бой большее количество очков опыта, 
+    с учетом наличия/отсутствия премиум аккаунта. При равном опыте за бой - не выдается никому.</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_Warrior" xml:space="preserve">
+    <value>Присваивается игроку, уничтожившему наибольшее количество машин противника (не менее шести). 
+    Присваивается как выжившему игроку, так и посмертно. Если по итогам боя двое или более игроков 
+    лидируют по этому показателю при одинаковом количестве уничтоженных единиц техники, 
+    то звание присваивается игроку, получившему за бой большее количество очков опыта 
+    с учетом наличия/отсутствия премиум-аккаунта, а при равном опыте не выдаётся никому.</value>
+  </data>
+</root>

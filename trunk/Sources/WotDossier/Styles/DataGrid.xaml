@@ -616,7 +616,7 @@
 
     <DataTemplate x:Key="BattleHeroColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image  ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BattleHero}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="377 193 59 62"></CroppedBitmap>
                 </Image.Source>
@@ -627,7 +627,7 @@
 
     <DataTemplate x:Key="TopGunColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="116 254 57 70"></CroppedBitmap>
                 </Image.Source>
@@ -638,7 +638,7 @@
 
     <DataTemplate x:Key="InvaderColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="329 0 62 65"></CroppedBitmap>
                 </Image.Source>
@@ -649,7 +649,7 @@
 
     <DataTemplate x:Key="SniperColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="67 68 65 60"></CroppedBitmap>
                 </Image.Source>
@@ -660,7 +660,7 @@
 
     <DataTemplate x:Key="DefenderColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="58 313 55 66"></CroppedBitmap>
                 </Image.Source>
@@ -671,7 +671,7 @@
 
     <DataTemplate x:Key="SteelWallColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="161 387 52 68"></CroppedBitmap>
                 </Image.Source>
@@ -682,7 +682,7 @@
 
     <DataTemplate x:Key="ConfederateColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="267 0 62 66"></CroppedBitmap>
                 </Image.Source>
@@ -693,7 +693,7 @@
 
     <DataTemplate x:Key="ScoutColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="204 0 63 65"></CroppedBitmap>
                 </Image.Source>
@@ -704,7 +704,7 @@
 
     <DataTemplate x:Key="PatrolDutyColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_PatrolDuty}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="195 65 63 64"></CroppedBitmap>
                 </Image.Source>
@@ -715,7 +715,7 @@
 
     <DataTemplate x:Key="BrothersInArmsColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="315 195 61 57"></CroppedBitmap>
                 </Image.Source>
@@ -726,7 +726,7 @@
 
     <DataTemplate x:Key="CrucialContributionColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}">
                 <Image.Source>
                     <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="0 0 73 53"></CroppedBitmap>
                 </Image.Source>

@@ -11,6 +11,7 @@ namespace WotDossier.Applications.ViewModel
         private SettingsReader _reader;
         private AppSettings _appSettings;
         private List<string> _servers = new List<string>{"ru", "eu"};
+        private List<string> _languages = new List<string>{"ru-RU", "en-US"};
         public DelegateCommand SaveCommand { get; set; }
 
         public AppSettings AppSettings
@@ -22,6 +23,12 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return _servers; }
             set { _servers = value; }
+        }
+
+        public List<string> Languages
+        {
+            get { return _languages; }
+            set { _languages = value; }
         }
 
         public SettingsViewModel()

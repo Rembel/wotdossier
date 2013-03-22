@@ -32,6 +32,14 @@ def = dropped_capture_points / bc (среднее количество очко�
 +(6-MIN(TIER,6))*-60
 */
 
+        private const double K_AvgWonBattles = 2.0;
+        private const double K_AvgFrags = 0.9;
+        private const double K_AvgSpotted = 0.5;
+        private const double K_AvgCapPoints = 0.5;
+        private const double K_AvgDefPoints = 0.5;
+        private const double khp = 1;
+
+
         public static double CalcWN6(double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
         {
             return (1240 - 1040 / Math.Pow((Math.Min(tier, 6)), 0.164)) * avgFrags + avgDamage * 530 / (184 * Math.Pow(Math.E, (0.24 * tier)) + 130)
@@ -41,6 +49,13 @@ def = dropped_capture_points / bc (среднее количество очко�
         public static double CalcER(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {
             return avgDamage * (10.0 / (tier + 2.0)) * (0.23 + 2.0 * tier / 100.0) + avgFrags * 250.0 + avgSpot * 150.0 + (Math.Log(avgCap + 1, 1.732)) * 150.0 + avgDef * 150.0;
+        }
+
+        public static double CalcKievArmorRating(double battles, double avgXP, double avgDamage, double avgWonBattles, double avgFrags, double avgSpot, double avgCap, double avgDef)
+        {
+            double log10 = Math.Log(battles) / 10;
+            double d = (avgWonBattles*K_AvgWonBattles) + (avgFrags*K_AvgFrags) + (avgSpot*K_AvgSpotted) + (avgCap*K_AvgCapPoints) + (avgDef*K_AvgDefPoints);
+            return log10 * (avgXP * khp + avgDamage * d);
         }
     }
 }

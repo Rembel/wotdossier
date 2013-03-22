@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
@@ -9,6 +10,8 @@ namespace WotDossier.Dal
 {
     public class DossierRepository
     {
+        protected static readonly ILog _log = LogManager.GetLogger("DossierRepository");
+
         private DataProvider _dataProvider;
         public DataProvider DataProvider
         {
@@ -34,16 +37,19 @@ namespace WotDossier.Dal
             try
             {
                 list = _dataProvider.QueryOver(() => statistic)
-                             .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                             .Where(x => player.Name == playerName).List<PlayerStatisticEntity>();
+                                    .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
+                                    .Where(x => player.Name == playerName).List<PlayerStatisticEntity>();
                 _dataProvider.CommitTransaction();
             }
             catch (Exception e)
             {
+                _log.Error(e);
                 _dataProvider.RollbackTransaction();
             }
-            
-            _dataProvider.CloseSession();
+            finally
+            {
+                _dataProvider.CloseSession();    
+            }
             return list;
         }
 
@@ -54,7 +60,11 @@ namespace WotDossier.Dal
             PlayerEntity playerEntity = null;
             try
             {
-                playerEntity = _dataProvider.QueryOver<PlayerEntity>().Where(x => x.Name == playerId).Take(1).SingleOrDefault<PlayerEntity>();
+                playerEntity =
+                    _dataProvider.QueryOver<PlayerEntity>()
+                                 .Where(x => x.Name == playerId)
+                                 .Take(1)
+                                 .SingleOrDefault<PlayerEntity>();
 
                 PlayerStatisticEntity statisticEntity;
                 if (playerEntity == null)
@@ -64,9 +74,9 @@ namespace WotDossier.Dal
                     playerEntity.Name = stat.data.name;
                     playerEntity.PlayerId = stat.data.id;
                     playerEntity.Creaded = Utils.UnixDateToDateTime((long) stat.data.created_at);
-                    
+
                     _dataProvider.Save(playerEntity);
-                        
+
                     statisticEntity.PlayerId = playerEntity.Id;
                     statisticEntity.Update(stat);
                     _dataProvider.Save(statisticEntity);
@@ -74,11 +84,12 @@ namespace WotDossier.Dal
                 else
                 {
                     statisticEntity = _dataProvider.QueryOver<PlayerStatisticEntity>()
-                                     .OrderBy(x => x.Updated)
-                                     .Desc.Take(1)
-                                     .SingleOrDefault<PlayerStatisticEntity>();
+                                                   .OrderBy(x => x.Updated)
+                                                   .Desc.Take(1)
+                                                   .SingleOrDefault<PlayerStatisticEntity>();
                     DateTime updated = Utils.UnixDateToDateTime((long) stat.data.updated_at).Date;
-                    if (statisticEntity == null || (statisticEntity.Updated.Date != updated.Date && statisticEntity.Updated < updated))
+                    if (statisticEntity == null ||
+                        (statisticEntity.Updated.Date != updated.Date && statisticEntity.Updated < updated))
                     {
                         statisticEntity = new PlayerStatisticEntity();
                         statisticEntity.PlayerId = playerEntity.Id;
@@ -91,11 +102,14 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
+                _log.Error(e);
                 _dataProvider.RollbackTransaction();
             }
-            
-            _dataProvider.ClearCache();
-            _dataProvider.CloseSession();
+            finally
+            {
+                _dataProvider.ClearCache();
+                _dataProvider.CloseSession();
+            }
 
             return playerEntity;
         }

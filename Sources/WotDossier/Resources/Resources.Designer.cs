@@ -71,6 +71,132 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle Hero.
+        /// </summary>
+        public static string Column_BattleAwards_BattleHero {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_BattleHero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brothers In Arms.
+        /// </summary>
+        public static string Column_BattleAwards_BrothersInArms {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_BrothersInArms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confederate.
+        /// </summary>
+        public static string Column_BattleAwards_Confederate {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Confederate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cool Headed.
+        /// </summary>
+        public static string Column_BattleAwards_CoolHeaded {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_CoolHeaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crucial Contribution.
+        /// </summary>
+        public static string Column_BattleAwards_CrucialContribution {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_CrucialContribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defender.
+        /// </summary>
+        public static string Column_BattleAwards_Defender {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Defender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invader.
+        /// </summary>
+        public static string Column_BattleAwards_Invader {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Invader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lucky Devil.
+        /// </summary>
+        public static string Column_BattleAwards_LuckyDevil {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_LuckyDevil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patrol Duty.
+        /// </summary>
+        public static string Column_BattleAwards_PatrolDuty {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_PatrolDuty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scout.
+        /// </summary>
+        public static string Column_BattleAwards_Scout {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Scout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sniper.
+        /// </summary>
+        public static string Column_BattleAwards_Sniper {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Sniper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spartan.
+        /// </summary>
+        public static string Column_BattleAwards_Spartan {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Spartan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Steel Wall.
+        /// </summary>
+        public static string Column_BattleAwards_SteelWall {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_SteelWall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Gun.
+        /// </summary>
+        public static string Column_BattleAwards_TopGun {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_TopGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battles.
         /// </summary>
         public static string Column_Battles_Battles {
@@ -89,7 +215,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DrawsPercent.
+        ///   Looks up a localized string similar to Draws %.
         /// </summary>
         public static string Column_Battles_DrawsPercent {
             get {
@@ -107,7 +233,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LostPercent.
+        ///   Looks up a localized string similar to Lost %.
         /// </summary>
         public static string Column_Battles_LostPercent {
             get {
@@ -125,7 +251,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SurvivedAndWon.
+        ///   Looks up a localized string similar to Survived And Won.
         /// </summary>
         public static string Column_Battles_SurvivedAndWon {
             get {
@@ -134,7 +260,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SurvivedAndWonPercent.
+        ///   Looks up a localized string similar to Survived And Won %.
         /// </summary>
         public static string Column_Battles_SurvivedAndWonPercent {
             get {
@@ -143,7 +269,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SurvivedPercent.
+        ///   Looks up a localized string similar to Survived %.
         /// </summary>
         public static string Column_Battles_SurvivedPercent {
             get {
@@ -166,6 +292,294 @@ namespace WotDossier.Resources {
         public static string Column_Battles_WonPercent {
             get {
                 return ResourceManager.GetString("Column_Battles_WonPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Damage Dealt.
+        /// </summary>
+        public static string Column_Damage_AverageDamageDealt {
+            get {
+                return ResourceManager.GetString("Column_Damage_AverageDamageDealt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Dealt.
+        /// </summary>
+        public static string Column_Damage_DamageDealt {
+            get {
+                return ResourceManager.GetString("Column_Damage_DamageDealt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Per Hit.
+        /// </summary>
+        public static string Column_Damage_DamagePerHit {
+            get {
+                return ResourceManager.GetString("Column_Damage_DamagePerHit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Ratio.
+        /// </summary>
+        public static string Column_Damage_DamageRatio {
+            get {
+                return ResourceManager.GetString("Column_Damage_DamageRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Taken.
+        /// </summary>
+        public static string Column_Damage_DamageTaken {
+            get {
+                return ResourceManager.GetString("Column_Damage_DamageTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Billotte.
+        /// </summary>
+        public static string Column_Epics_Billotte {
+            get {
+                return ResourceManager.GetString("Column_Epics_Billotte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boelter.
+        /// </summary>
+        public static string Column_Epics_Boelter {
+            get {
+                return ResourceManager.GetString("Column_Epics_Boelter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BrunoPietro.
+        /// </summary>
+        public static string Column_Epics_BrunoPietro {
+            get {
+                return ResourceManager.GetString("Column_Epics_BrunoPietro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Burda.
+        /// </summary>
+        public static string Column_Epics_Burda {
+            get {
+                return ResourceManager.GetString("Column_Epics_Burda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to De Langlade.
+        /// </summary>
+        public static string Column_Epics_DeLanglade {
+            get {
+                return ResourceManager.GetString("Column_Epics_DeLanglade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dumitru.
+        /// </summary>
+        public static string Column_Epics_Dumitru {
+            get {
+                return ResourceManager.GetString("Column_Epics_Dumitru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fadin.
+        /// </summary>
+        public static string Column_Epics_Fadin {
+            get {
+                return ResourceManager.GetString("Column_Epics_Fadin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Halonen.
+        /// </summary>
+        public static string Column_Epics_Halonen {
+            get {
+                return ResourceManager.GetString("Column_Epics_Halonen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes Of Raseiniai.
+        /// </summary>
+        public static string Column_Epics_HeroesOfRaseiniai {
+            get {
+                return ResourceManager.GetString("Column_Epics_HeroesOfRaseiniai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kolobanov.
+        /// </summary>
+        public static string Column_Epics_Kolobanov {
+            get {
+                return ResourceManager.GetString("Column_Epics_Kolobanov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lafayette-Pool.
+        /// </summary>
+        public static string Column_Epics_LafayettePool {
+            get {
+                return ResourceManager.GetString("Column_Epics_LafayettePool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lehvaslaiho.
+        /// </summary>
+        public static string Column_Epics_Lehvaslaiho {
+            get {
+                return ResourceManager.GetString("Column_Epics_Lehvaslaiho", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nikolas.
+        /// </summary>
+        public static string Column_Epics_Nikolas {
+            get {
+                return ResourceManager.GetString("Column_Epics_Nikolas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orlik.
+        /// </summary>
+        public static string Column_Epics_Orlik {
+            get {
+                return ResourceManager.GetString("Column_Epics_Orlik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oskin.
+        /// </summary>
+        public static string Column_Epics_Oskin {
+            get {
+                return ResourceManager.GetString("Column_Epics_Oskin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pascucci.
+        /// </summary>
+        public static string Column_Epics_Pascucci {
+            get {
+                return ResourceManager.GetString("Column_Epics_Pascucci", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radley-Walters.
+        /// </summary>
+        public static string Column_Epics_RadleyWalters {
+            get {
+                return ResourceManager.GetString("Column_Epics_RadleyWalters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tamada Yoshio.
+        /// </summary>
+        public static string Column_Epics_TamadaYoshio {
+            get {
+                return ResourceManager.GetString("Column_Epics_TamadaYoshio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarczay.
+        /// </summary>
+        public static string Column_Epics_Tarczay {
+            get {
+                return ResourceManager.GetString("Column_Epics_Tarczay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles.
+        /// </summary>
+        public static string Column_Frags_Battles {
+            get {
+                return ResourceManager.GetString("Column_Frags_Battles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BeastFrags.
+        /// </summary>
+        public static string Column_Frags_BeastFrags {
+            get {
+                return ResourceManager.GetString("Column_Frags_BeastFrags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frags.
+        /// </summary>
+        public static string Column_Frags_Frags {
+            get {
+                return ResourceManager.GetString("Column_Frags_Frags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FragsPerBattle.
+        /// </summary>
+        public static string Column_Frags_FragsPerBattle {
+            get {
+                return ResourceManager.GetString("Column_Frags_FragsPerBattle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KillDeathRatio.
+        /// </summary>
+        public static string Column_Frags_KillDeathRatio {
+            get {
+                return ResourceManager.GetString("Column_Frags_KillDeathRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max Frags.
+        /// </summary>
+        public static string Column_Frags_MaxFrags {
+            get {
+                return ResourceManager.GetString("Column_Frags_MaxFrags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SinaiFrags.
+        /// </summary>
+        public static string Column_Frags_SinaiFrags {
+            get {
+                return ResourceManager.GetString("Column_Frags_SinaiFrags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tier8Frags.
+        /// </summary>
+        public static string Column_Frags_Tier8Frags {
+            get {
+                return ResourceManager.GetString("Column_Frags_Tier8Frags", resourceCulture);
             }
         }
         
@@ -193,6 +607,447 @@ namespace WotDossier.Resources {
         public static string Column_Header_Tier {
             get {
                 return ResourceManager.GetString("Column_Header_Tier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is premium tank.
+        /// </summary>
+        public static string Column_MasterTanker_IsPremium {
+            get {
+                return ResourceManager.GetString("Column_MasterTanker_IsPremium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abrams.
+        /// </summary>
+        public static string Column_Medals_Abrams {
+            get {
+                return ResourceManager.GetString("Column_Medals_Abrams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carius.
+        /// </summary>
+        public static string Column_Medals_Carius {
+            get {
+                return ResourceManager.GetString("Column_Medals_Carius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ekins.
+        /// </summary>
+        public static string Column_Medals_Ekins {
+            get {
+                return ResourceManager.GetString("Column_Medals_Ekins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kay.
+        /// </summary>
+        public static string Column_Medals_Kay {
+            get {
+                return ResourceManager.GetString("Column_Medals_Kay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Knispel.
+        /// </summary>
+        public static string Column_Medals_Knispel {
+            get {
+                return ResourceManager.GetString("Column_Medals_Knispel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lavrinenko.
+        /// </summary>
+        public static string Column_Medals_Lavrinenko {
+            get {
+                return ResourceManager.GetString("Column_Medals_Lavrinenko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leclerk.
+        /// </summary>
+        public static string Column_Medals_Leclerk {
+            get {
+                return ResourceManager.GetString("Column_Medals_Leclerk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poppel.
+        /// </summary>
+        public static string Column_Medals_Poppel {
+            get {
+                return ResourceManager.GetString("Column_Medals_Poppel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture Points.
+        /// </summary>
+        public static string Column_Performance_CapturePoints {
+            get {
+                return ResourceManager.GetString("Column_Performance_CapturePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defence Points.
+        /// </summary>
+        public static string Column_Performance_DefencePoints {
+            get {
+                return ResourceManager.GetString("Column_Performance_DefencePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hit Ratio.
+        /// </summary>
+        public static string Column_Performance_HitRatio {
+            get {
+                return ResourceManager.GetString("Column_Performance_HitRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hits.
+        /// </summary>
+        public static string Column_Performance_Hits {
+            get {
+                return ResourceManager.GetString("Column_Performance_Hits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shots.
+        /// </summary>
+        public static string Column_Performance_Shots {
+            get {
+                return ResourceManager.GetString("Column_Performance_Shots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tanks Spotted.
+        /// </summary>
+        public static string Column_Performance_TanksSpotted {
+            get {
+                return ResourceManager.GetString("Column_Performance_TanksSpotted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Damage.
+        /// </summary>
+        public static string Column_Ratings_AverageDamage {
+            get {
+                return ResourceManager.GetString("Column_Ratings_AverageDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles.
+        /// </summary>
+        public static string Column_Ratings_Battles {
+            get {
+                return ResourceManager.GetString("Column_Ratings_Battles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Rating Rev1.
+        /// </summary>
+        public static string Column_Ratings_DamageRatingRev1 {
+            get {
+                return ResourceManager.GetString("Column_Ratings_DamageRatingRev1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eff Rating.
+        /// </summary>
+        public static string Column_Ratings_EffRating {
+            get {
+                return ResourceManager.GetString("Column_Ratings_EffRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kiev Armor Rating.
+        /// </summary>
+        public static string Column_Ratings_KievArmorRating {
+            get {
+                return ResourceManager.GetString("Column_Ratings_KievArmorRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KillDeathRatio.
+        /// </summary>
+        public static string Column_Ratings_KillDeathRatio {
+            get {
+                return ResourceManager.GetString("Column_Ratings_KillDeathRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mark Of Mastery.
+        /// </summary>
+        public static string Column_Ratings_MarkOfMastery {
+            get {
+                return ResourceManager.GetString("Column_Ratings_MarkOfMastery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winrate.
+        /// </summary>
+        public static string Column_Ratings_Winrate {
+            get {
+                return ResourceManager.GetString("Column_Ratings_Winrate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WN6.
+        /// </summary>
+        public static string Column_Ratings_WN6 {
+            get {
+                return ResourceManager.GetString("Column_Ratings_WN6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invincible Longest.
+        /// </summary>
+        public static string Column_Series_InvincibleLongest {
+            get {
+                return ResourceManager.GetString("Column_Series_InvincibleLongest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invincible Progress.
+        /// </summary>
+        public static string Column_Series_InvincibleProgress {
+            get {
+                return ResourceManager.GetString("Column_Series_InvincibleProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master Gunner Longest.
+        /// </summary>
+        public static string Column_Series_MasterGunnerLongest {
+            get {
+                return ResourceManager.GetString("Column_Series_MasterGunnerLongest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master Gunner Progress.
+        /// </summary>
+        public static string Column_Series_MasterGunnerProgress {
+            get {
+                return ResourceManager.GetString("Column_Series_MasterGunnerProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reaper Longest.
+        /// </summary>
+        public static string Column_Series_ReaperLongest {
+            get {
+                return ResourceManager.GetString("Column_Series_ReaperLongest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reaper Progress.
+        /// </summary>
+        public static string Column_Series_ReaperProgress {
+            get {
+                return ResourceManager.GetString("Column_Series_ReaperProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharpshooter Longest.
+        /// </summary>
+        public static string Column_Series_SharpshooterLongest {
+            get {
+                return ResourceManager.GetString("Column_Series_SharpshooterLongest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharpshooter Progress.
+        /// </summary>
+        public static string Column_Series_SharpshooterProgress {
+            get {
+                return ResourceManager.GetString("Column_Series_SharpshooterProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survivor Longest.
+        /// </summary>
+        public static string Column_Series_SurvivorLongest {
+            get {
+                return ResourceManager.GetString("Column_Series_SurvivorLongest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survivor Progress.
+        /// </summary>
+        public static string Column_Series_SurvivorProgress {
+            get {
+                return ResourceManager.GetString("Column_Series_SurvivorProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bombardier.
+        /// </summary>
+        public static string Column_SpecialAwards_Bombardier {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Bombardier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunter.
+        /// </summary>
+        public static string Column_SpecialAwards_Hunter {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invincible.
+        /// </summary>
+        public static string Column_SpecialAwards_Invincible {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Invincible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kamikaze.
+        /// </summary>
+        public static string Column_SpecialAwards_Kamikaze {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Kamikaze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MouseTrap.
+        /// </summary>
+        public static string Column_SpecialAwards_MouseTrap {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_MouseTrap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PattonValley.
+        /// </summary>
+        public static string Column_SpecialAwards_PattonValley {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_PattonValley", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raider.
+        /// </summary>
+        public static string Column_SpecialAwards_Raider {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Raider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ranger.
+        /// </summary>
+        public static string Column_SpecialAwards_Ranger {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Ranger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reaper.
+        /// </summary>
+        public static string Column_SpecialAwards_Reaper {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Reaper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharpshooter.
+        /// </summary>
+        public static string Column_SpecialAwards_Sharpshooter {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Sharpshooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sinai.
+        /// </summary>
+        public static string Column_SpecialAwards_Sinai {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Sinai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survivor.
+        /// </summary>
+        public static string Column_SpecialAwards_Survivor {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Survivor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Battle Time.
+        /// </summary>
+        public static string Column_Time_AverageBattleTime {
+            get {
+                return ResourceManager.GetString("Column_Time_AverageBattleTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Battle.
+        /// </summary>
+        public static string Column_Time_LastBattle {
+            get {
+                return ResourceManager.GetString("Column_Time_LastBattle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play Time.
+        /// </summary>
+        public static string Column_Time_PlayTime {
+            get {
+                return ResourceManager.GetString("Column_Time_PlayTime", resourceCulture);
             }
         }
         
@@ -563,6 +1418,33 @@ namespace WotDossier.Resources {
         public static string MenuItem_Header_Settings {
             get {
                 return ResourceManager.GetString("MenuItem_Header_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Settings_Language {
+            get {
+                return ResourceManager.GetString("Settings_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Name.
+        /// </summary>
+        public static string Settings_PlayerName {
+            get {
+                return ResourceManager.GetString("Settings_PlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Settings_Save {
+            get {
+                return ResourceManager.GetString("Settings_Save", resourceCulture);
             }
         }
         

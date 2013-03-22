@@ -188,6 +188,7 @@ namespace WotDossier.Applications.ViewModel
                 PlayerStatisticViewModel playerStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, statisticViewModels);
                 playerStatisticViewModel.Name = player.Name;
                 playerStatisticViewModel.Created = player.Creaded;
+                playerStatisticViewModel.BattlesPerDay = playerStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
 
                 if (playerStat.data.clan.clan != null)
                 {

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Windows;
 using System.Windows.Data;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Common.Logging;
 using WotDossier.Applications;
 using WotDossier.Domain;
 
@@ -17,6 +14,8 @@ namespace WotDossier.Converters
 {
     public class ClanImageUrlToSourceConverter : IValueConverter
     {
+        protected static readonly ILog _log = LogManager.GetLogger("ClanImageUrlToSourceConverter");
+
         private static readonly ClanImageUrlToSourceConverter _defaultInstance = new ClanImageUrlToSourceConverter();
 
         public static ClanImageUrlToSourceConverter Default { get { return _defaultInstance; } }
@@ -62,6 +61,7 @@ namespace WotDossier.Converters
                     catch (Exception e)
                     {
                         MessageBox.Show("Can't get or save player clan icon from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        _log.Error("Error on clan icon load", e);
                         return null;
                     }
                 }

@@ -79,6 +79,7 @@ namespace WotDossier.Domain.Rows
             double avgSpot = tank.Tankdata.spotted/(double)_battles;
             double avgCap = tank.Tankdata.capturePoints/(double)_battles;
             double avgDef = tank.Tankdata.droppedCapturePoints / (double)_battles;
+            double avgXP = tank.Tankdata.xp / (double)_battles;
 
             double value = RatingHelper.CalcER(_averageDamage, Tier, avgFrags, avgSpot, avgCap, avgDef);
 
@@ -86,7 +87,8 @@ namespace WotDossier.Domain.Rows
             value = RatingHelper.CalcWN6(_averageDamage, Tier, avgFrags, avgSpot, avgDef, _winrate);
             _wn6 = (int)value;
             _damageRatingRev1 = (int)(tank.Tankdata.damageDealt / (double)tank.Tankdata.damageReceived * 100);
-            _kievArmorRating = 0;
+            value = RatingHelper.CalcKievArmorRating(_battles, avgXP, _averageDamage, _winrate / 100, avgFrags, avgSpot, avgCap, avgDef);
+            _kievArmorRating = (int) value;
             _markOfMastery = tank.Special.markOfMastery;
         }
 

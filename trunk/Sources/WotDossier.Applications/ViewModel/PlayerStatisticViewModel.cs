@@ -37,6 +37,8 @@ namespace WotDossier.Applications.ViewModel
         private PlayerStatisticViewModel _prevPlayerStatistic;
         private double _effRating;
         private double _wn6Rating;
+        private double _kievArmorRating;
+        private int _battlesPerDay;
 
         #endregion
 
@@ -409,8 +411,7 @@ namespace WotDossier.Applications.ViewModel
             DroppedCapturePoints = stat.DroppedCapturePoints;
             //Created = stat.PlayerIdObject.Creaded);
             Updated = stat.Updated;
-            //Name = stat.name;
-
+            
             #endregion
 
             #region Ratings init
@@ -472,6 +473,7 @@ namespace WotDossier.Applications.ViewModel
 
             _effRating = RatingHelper.CalcER(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgCap, avgDef);
             _wn6Rating = RatingHelper.CalcWN6(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgDef, winrate);
+            _kievArmorRating = RatingHelper.CalcKievArmorRating(battles, Rating_BattleAvgXpValue, averageDamage, winrate / 100.0, avgFrags, avgSpot, avgCap, avgDef);
 
             _prevPlayerStatistic = _list.Where(x => x.Updated <= Updated).OrderByDescending(x => x.Updated).FirstOrDefault() ?? this;
             _previousDate = Updated;
@@ -485,6 +487,17 @@ namespace WotDossier.Applications.ViewModel
         public double EffRating
         {
             get { return _effRating; }
+        }
+
+        public double KievArmorRating
+        {
+            get { return _kievArmorRating; }
+        }
+
+        public int BattlesPerDay
+        {
+            get { return _battlesPerDay; }
+            set { _battlesPerDay = value; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -314,25 +314,25 @@
     <value>Lost</value>
   </data>
   <data name="Column_Battles_LostPercent" xml:space="preserve">
-    <value>LostPercent</value>
+    <value>Lost %</value>
   </data>
   <data name="Column_Battles_Draws" xml:space="preserve">
     <value>Draws</value>
   </data>
   <data name="Column_Battles_DrawsPercent" xml:space="preserve">
-    <value>DrawsPercent</value>
+    <value>Draws %</value>
   </data>
   <data name="Column_Battles_Survived" xml:space="preserve">
     <value>Survived</value>
   </data>
   <data name="Column_Battles_SurvivedPercent" xml:space="preserve">
-    <value>SurvivedPercent</value>
+    <value>Survived %</value>
   </data>
   <data name="Column_Battles_SurvivedAndWon" xml:space="preserve">
-    <value>SurvivedAndWon</value>
+    <value>Survived And Won</value>
   </data>
   <data name="Column_Battles_SurvivedAndWonPercent" xml:space="preserve">
-    <value>SurvivedAndWonPercent</value>
+    <value>Survived And Won %</value>
   </data>
   <data name="Tooltip_BattleHeroAchievements_Warrior" xml:space="preserve">
     <value>Destroy more enemy vehicles than any other player in your team during the battle (at least 6).
@@ -373,5 +373,299 @@ If two or more players have equal amount of hits, the achievement is granted to 
   </data>
   <data name="Tooltip_BattleHeroAchievements_BattleHero" xml:space="preserve">
     <value>Awarded for individual battles if all of the requirements are met.</value>
+  </data>
+  <data name="Column_BattleAwards_BattleHero" xml:space="preserve">
+    <value>Battle Hero</value>
+  </data>
+  <data name="Column_BattleAwards_TopGun" xml:space="preserve">
+    <value>Top Gun</value>
+  </data>
+  <data name="Column_BattleAwards_Invader" xml:space="preserve">
+    <value>Invader</value>
+  </data>
+  <data name="Column_BattleAwards_Sniper" xml:space="preserve">
+    <value>Sniper</value>
+  </data>
+  <data name="Column_BattleAwards_Defender" xml:space="preserve">
+    <value>Defender</value>
+  </data>
+  <data name="Column_BattleAwards_SteelWall" xml:space="preserve">
+    <value>Steel Wall</value>
+  </data>
+  <data name="Column_BattleAwards_Confederate" xml:space="preserve">
+    <value>Confederate</value>
+  </data>
+  <data name="Column_BattleAwards_Scout" xml:space="preserve">
+    <value>Scout</value>
+  </data>
+  <data name="Column_BattleAwards_PatrolDuty" xml:space="preserve">
+    <value>Patrol Duty</value>
+  </data>
+  <data name="Column_BattleAwards_BrothersInArms" xml:space="preserve">
+    <value>Brothers In Arms</value>
+  </data>
+  <data name="Column_BattleAwards_CrucialContribution" xml:space="preserve">
+    <value>Crucial Contribution</value>
+  </data>
+  <data name="Column_BattleAwards_CoolHeaded" xml:space="preserve">
+    <value>Cool Headed</value>
+  </data>
+  <data name="Column_BattleAwards_LuckyDevil" xml:space="preserve">
+    <value>Lucky Devil</value>
+  </data>
+  <data name="Column_BattleAwards_Spartan" xml:space="preserve">
+    <value>Spartan</value>
+  </data>
+  <data name="Column_Damage_DamageDealt" xml:space="preserve">
+    <value>Damage Dealt</value>
+  </data>
+  <data name="Column_Damage_DamageTaken" xml:space="preserve">
+    <value>Damage Taken</value>
+  </data>
+  <data name="Column_Damage_DamageRatio" xml:space="preserve">
+    <value>Damage Ratio</value>
+  </data>
+  <data name="Column_Damage_AverageDamageDealt" xml:space="preserve">
+    <value>Average Damage Dealt</value>
+  </data>
+  <data name="Column_Damage_DamagePerHit" xml:space="preserve">
+    <value>Damage Per Hit</value>
+  </data>
+  <data name="Column_MasterTanker_IsPremium" xml:space="preserve">
+    <value>Is premium tank</value>
+  </data>
+  <data name="Settings_PlayerName" xml:space="preserve">
+    <value>Player Name</value>
+  </data>
+  <data name="Settings_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Column_Time_LastBattle" xml:space="preserve">
+    <value>Last Battle</value>
+  </data>
+  <data name="Column_Time_PlayTime" xml:space="preserve">
+    <value>Play Time</value>
+  </data>
+  <data name="Column_Time_AverageBattleTime" xml:space="preserve">
+    <value>Average Battle Time</value>
+  </data>
+  <data name="Column_SpecialAwards_Kamikaze" xml:space="preserve">
+    <value>Kamikaze</value>
+  </data>
+  <data name="Column_SpecialAwards_Raider" xml:space="preserve">
+    <value>Raider</value>
+  </data>
+  <data name="Column_SpecialAwards_Bombardier" xml:space="preserve">
+    <value>Bombardier</value>
+  </data>
+  <data name="Column_SpecialAwards_Reaper" xml:space="preserve">
+    <value>Reaper</value>
+  </data>
+  <data name="Column_SpecialAwards_Sharpshooter" xml:space="preserve">
+    <value>Sharpshooter</value>
+  </data>
+  <data name="Column_SpecialAwards_Invincible" xml:space="preserve">
+    <value>Invincible</value>
+  </data>
+  <data name="Column_SpecialAwards_Survivor" xml:space="preserve">
+    <value>Survivor</value>
+  </data>
+  <data name="Column_SpecialAwards_MouseTrap" xml:space="preserve">
+    <value>MouseTrap</value>
+  </data>
+  <data name="Column_SpecialAwards_Hunter" xml:space="preserve">
+    <value>Hunter</value>
+  </data>
+  <data name="Column_SpecialAwards_Sinai" xml:space="preserve">
+    <value>Sinai</value>
+  </data>
+  <data name="Column_SpecialAwards_PattonValley" xml:space="preserve">
+    <value>PattonValley</value>
+  </data>
+  <data name="Column_SpecialAwards_Ranger" xml:space="preserve">
+    <value>Ranger</value>
+  </data>
+  <data name="Column_Frags_Battles" xml:space="preserve">
+    <value>Battles</value>
+  </data>
+  <data name="Column_Frags_Frags" xml:space="preserve">
+    <value>Frags</value>
+  </data>
+  <data name="Column_Frags_MaxFrags" xml:space="preserve">
+    <value>Max Frags</value>
+  </data>
+  <data name="Column_Frags_FragsPerBattle" xml:space="preserve">
+    <value>FragsPerBattle</value>
+  </data>
+  <data name="Column_Frags_KillDeathRatio" xml:space="preserve">
+    <value>KillDeathRatio</value>
+  </data>
+  <data name="Column_Frags_Tier8Frags" xml:space="preserve">
+    <value>Tier8Frags</value>
+  </data>
+  <data name="Column_Frags_SinaiFrags" xml:space="preserve">
+    <value>SinaiFrags</value>
+  </data>
+  <data name="Column_Frags_BeastFrags" xml:space="preserve">
+    <value>BeastFrags</value>
+  </data>
+  <data name="Column_Medals_Kay" xml:space="preserve">
+    <value>Kay</value>
+  </data>
+  <data name="Column_Medals_Carius" xml:space="preserve">
+    <value>Carius</value>
+  </data>
+  <data name="Column_Medals_Knispel" xml:space="preserve">
+    <value>Knispel</value>
+  </data>
+  <data name="Column_Medals_Poppel" xml:space="preserve">
+    <value>Poppel</value>
+  </data>
+  <data name="Column_Medals_Abrams" xml:space="preserve">
+    <value>Abrams</value>
+  </data>
+  <data name="Column_Medals_Leclerk" xml:space="preserve">
+    <value>Leclerk</value>
+  </data>
+  <data name="Column_Medals_Lavrinenko" xml:space="preserve">
+    <value>Lavrinenko</value>
+  </data>
+  <data name="Column_Medals_Ekins" xml:space="preserve">
+    <value>Ekins</value>
+  </data>
+  <data name="Column_Epics_Boelter" xml:space="preserve">
+    <value>Boelter</value>
+  </data>
+  <data name="Column_Epics_RadleyWalters" xml:space="preserve">
+    <value>Radley-Walters</value>
+  </data>
+  <data name="Column_Epics_LafayettePool" xml:space="preserve">
+    <value>Lafayette-Pool</value>
+  </data>
+  <data name="Column_Epics_Orlik" xml:space="preserve">
+    <value>Orlik</value>
+  </data>
+  <data name="Column_Epics_Oskin" xml:space="preserve">
+    <value>Oskin</value>
+  </data>
+  <data name="Column_Epics_Lehvaslaiho" xml:space="preserve">
+    <value>Lehvaslaiho</value>
+  </data>
+  <data name="Column_Epics_Nikolas" xml:space="preserve">
+    <value>Nikolas</value>
+  </data>
+  <data name="Column_Epics_Halonen" xml:space="preserve">
+    <value>Halonen</value>
+  </data>
+  <data name="Column_Epics_Burda" xml:space="preserve">
+    <value>Burda</value>
+  </data>
+  <data name="Column_Epics_Pascucci" xml:space="preserve">
+    <value>Pascucci</value>
+  </data>
+  <data name="Column_Epics_Dumitru" xml:space="preserve">
+    <value>Dumitru</value>
+  </data>
+  <data name="Column_Epics_TamadaYoshio" xml:space="preserve">
+    <value>Tamada Yoshio</value>
+  </data>
+  <data name="Column_Epics_Billotte" xml:space="preserve">
+    <value>Billotte</value>
+  </data>
+  <data name="Column_Epics_BrunoPietro" xml:space="preserve">
+    <value>BrunoPietro</value>
+  </data>
+  <data name="Column_Epics_Tarczay" xml:space="preserve">
+    <value>Tarczay</value>
+  </data>
+  <data name="Column_Epics_Kolobanov" xml:space="preserve">
+    <value>Kolobanov</value>
+  </data>
+  <data name="Column_Epics_Fadin" xml:space="preserve">
+    <value>Fadin</value>
+  </data>
+  <data name="Column_Epics_HeroesOfRaseiniai" xml:space="preserve">
+    <value>Heroes Of Raseiniai</value>
+  </data>
+  <data name="Column_Epics_DeLanglade" xml:space="preserve">
+    <value>De Langlade</value>
+  </data>
+  <data name="Column_Series_ReaperLongest" xml:space="preserve">
+    <value>Reaper Longest</value>
+  </data>
+  <data name="Column_Series_ReaperProgress" xml:space="preserve">
+    <value>Reaper Progress</value>
+  </data>
+  <data name="Column_Series_SharpshooterLongest" xml:space="preserve">
+    <value>Sharpshooter Longest</value>
+  </data>
+  <data name="Column_Series_SharpshooterProgress" xml:space="preserve">
+    <value>Sharpshooter Progress</value>
+  </data>
+  <data name="Column_Series_MasterGunnerLongest" xml:space="preserve">
+    <value>Master Gunner Longest</value>
+  </data>
+  <data name="Column_Series_MasterGunnerProgress" xml:space="preserve">
+    <value>Master Gunner Progress</value>
+  </data>
+  <data name="Column_Series_InvincibleLongest" xml:space="preserve">
+    <value>Invincible Longest</value>
+  </data>
+  <data name="Column_Series_InvincibleProgress" xml:space="preserve">
+    <value>Invincible Progress</value>
+  </data>
+  <data name="Column_Series_SurvivorLongest" xml:space="preserve">
+    <value>Survivor Longest</value>
+  </data>
+  <data name="Column_Series_SurvivorProgress" xml:space="preserve">
+    <value>Survivor Progress</value>
+  </data>
+  <data name="Column_Performance_Shots" xml:space="preserve">
+    <value>Shots</value>
+  </data>
+  <data name="Column_Performance_Hits" xml:space="preserve">
+    <value>Hits</value>
+  </data>
+  <data name="Column_Performance_HitRatio" xml:space="preserve">
+    <value>Hit Ratio</value>
+  </data>
+  <data name="Column_Performance_CapturePoints" xml:space="preserve">
+    <value>Capture Points</value>
+  </data>
+  <data name="Column_Performance_DefencePoints" xml:space="preserve">
+    <value>Defence Points</value>
+  </data>
+  <data name="Column_Performance_TanksSpotted" xml:space="preserve">
+    <value>Tanks Spotted</value>
+  </data>
+  <data name="Column_Ratings_Battles" xml:space="preserve">
+    <value>Battles</value>
+  </data>
+  <data name="Column_Ratings_Winrate" xml:space="preserve">
+    <value>Winrate</value>
+  </data>
+  <data name="Column_Ratings_AverageDamage" xml:space="preserve">
+    <value>Average Damage</value>
+  </data>
+  <data name="Column_Ratings_KillDeathRatio" xml:space="preserve">
+    <value>KillDeathRatio</value>
+  </data>
+  <data name="Column_Ratings_EffRating" xml:space="preserve">
+    <value>Eff Rating</value>
+  </data>
+  <data name="Column_Ratings_WN6" xml:space="preserve">
+    <value>WN6</value>
+  </data>
+  <data name="Column_Ratings_DamageRatingRev1" xml:space="preserve">
+    <value>Damage Rating Rev1</value>
+  </data>
+  <data name="Column_Ratings_KievArmorRating" xml:space="preserve">
+    <value>Kiev Armor Rating</value>
+  </data>
+  <data name="Column_Ratings_MarkOfMastery" xml:space="preserve">
+    <value>Mark Of Mastery</value>
   </data>
 </root>

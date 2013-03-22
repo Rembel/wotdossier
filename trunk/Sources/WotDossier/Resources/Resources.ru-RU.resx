@@ -313,7 +313,7 @@
     <value>Эффективность</value>
   </data>
   <data name="Tab_Header_Ratings" xml:space="preserve">
-    <value>Рэйтинг</value>
+    <value>Рейтинг</value>
   </data>
   <data name="Tab_Header_Series" xml:space="preserve">
     <value>Серии</value>
@@ -392,5 +392,299 @@
     лидируют по этому показателю при одинаковом количестве уничтоженных единиц техники, 
     то звание присваивается игроку, получившему за бой большее количество очков опыта 
     с учетом наличия/отсутствия премиум-аккаунта, а при равном опыте не выдаётся никому.</value>
+  </data>
+  <data name="Column_BattleAwards_BattleHero" xml:space="preserve">
+    <value>Герой битвы</value>
+  </data>
+  <data name="Column_BattleAwards_TopGun" xml:space="preserve">
+    <value>Воин</value>
+  </data>
+  <data name="Column_BattleAwards_Invader" xml:space="preserve">
+    <value>Захватчик</value>
+  </data>
+  <data name="Column_BattleAwards_Sniper" xml:space="preserve">
+    <value>Снайпер</value>
+  </data>
+  <data name="Column_BattleAwards_Defender" xml:space="preserve">
+    <value>Защитник</value>
+  </data>
+  <data name="Column_BattleAwards_SteelWall" xml:space="preserve">
+    <value>Стальная стена</value>
+  </data>
+  <data name="Column_BattleAwards_Confederate" xml:space="preserve">
+    <value>Поддержка</value>
+  </data>
+  <data name="Column_BattleAwards_Scout" xml:space="preserve">
+    <value>Разведчик</value>
+  </data>
+  <data name="Column_BattleAwards_PatrolDuty" xml:space="preserve">
+    <value>Дозорный</value>
+  </data>
+  <data name="Column_BattleAwards_BrothersInArms" xml:space="preserve">
+    <value>Братья по оружию</value>
+  </data>
+  <data name="Column_BattleAwards_CrucialContribution" xml:space="preserve">
+    <value>Решающий вклад</value>
+  </data>
+  <data name="Column_BattleAwards_CoolHeaded" xml:space="preserve">
+    <value>Невозмутимый</value>
+  </data>
+  <data name="Column_BattleAwards_LuckyDevil" xml:space="preserve">
+    <value>Счастливчик</value>
+  </data>
+  <data name="Column_BattleAwards_Spartan" xml:space="preserve">
+    <value>Спартанец</value>
+  </data>
+  <data name="Column_Damage_DamageDealt" xml:space="preserve">
+    <value>Нанесено урона</value>
+  </data>
+  <data name="Column_Damage_DamageTaken" xml:space="preserve">
+    <value>Получено урона</value>
+  </data>
+  <data name="Column_Damage_DamageRatio" xml:space="preserve">
+    <value>Отношение нанесенного урона к полученному</value>
+  </data>
+  <data name="Column_Damage_AverageDamageDealt" xml:space="preserve">
+    <value>Средний урон</value>
+  </data>
+  <data name="Column_Damage_DamagePerHit" xml:space="preserve">
+    <value>Урон за выстрел</value>
+  </data>
+  <data name="Column_MasterTanker_IsPremium" xml:space="preserve">
+    <value>Премиумный танк</value>
+  </data>
+  <data name="Column_Frags_Battles" xml:space="preserve">
+    <value>Бои</value>
+  </data>
+  <data name="Column_Frags_BeastFrags" xml:space="preserve">
+    <value>Фрагов "Зверобой"</value>
+  </data>
+  <data name="Column_Frags_Frags" xml:space="preserve">
+    <value>Фраги</value>
+  </data>
+  <data name="Column_Frags_FragsPerBattle" xml:space="preserve">
+    <value>Фрагов за бой</value>
+  </data>
+  <data name="Column_Frags_KillDeathRatio" xml:space="preserve">
+    <value>Отношение убил/умер</value>
+  </data>
+  <data name="Column_Frags_MaxFrags" xml:space="preserve">
+    <value>Макс. фрагов</value>
+  </data>
+  <data name="Column_Frags_SinaiFrags" xml:space="preserve">
+    <value>Фрагов "Лев синая"</value>
+  </data>
+  <data name="Column_Frags_Tier8Frags" xml:space="preserve">
+    <value>Фрагов 8 уровня</value>
+  </data>
+  <data name="Column_SpecialAwards_Bombardier" xml:space="preserve">
+    <value>Бомбардир</value>
+  </data>
+  <data name="Column_SpecialAwards_Hunter" xml:space="preserve">
+    <value>Зверобой</value>
+  </data>
+  <data name="Column_SpecialAwards_Invincible" xml:space="preserve">
+    <value>Неуязвимый</value>
+  </data>
+  <data name="Column_SpecialAwards_Kamikaze" xml:space="preserve">
+    <value>Камикадзе</value>
+  </data>
+  <data name="Column_SpecialAwards_MouseTrap" xml:space="preserve">
+    <value>Гроза мышей</value>
+  </data>
+  <data name="Column_SpecialAwards_PattonValley" xml:space="preserve">
+    <value>Долина Паттонов</value>
+  </data>
+  <data name="Column_SpecialAwards_Raider" xml:space="preserve">
+    <value>Рейдер</value>
+  </data>
+  <data name="Column_SpecialAwards_Ranger" xml:space="preserve">
+    <value>Егерь</value>
+  </data>
+  <data name="Column_SpecialAwards_Reaper" xml:space="preserve">
+    <value>Коса Смерти</value>
+  </data>
+  <data name="Column_SpecialAwards_Sharpshooter" xml:space="preserve">
+    <value>Стрелок</value>
+  </data>
+  <data name="Column_SpecialAwards_Sinai" xml:space="preserve">
+    <value>Лев Синая</value>
+  </data>
+  <data name="Column_SpecialAwards_Survivor" xml:space="preserve">
+    <value>Живучий</value>
+  </data>
+  <data name="Column_Time_AverageBattleTime" xml:space="preserve">
+    <value>Среднее время боя</value>
+  </data>
+  <data name="Column_Time_LastBattle" xml:space="preserve">
+    <value>Последний бой</value>
+  </data>
+  <data name="Column_Time_PlayTime" xml:space="preserve">
+    <value>Суммарное время</value>
+  </data>
+  <data name="Settings_PlayerName" xml:space="preserve">
+    <value>Имя игрока</value>
+  </data>
+  <data name="Settings_Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Column_Medals_Kay" xml:space="preserve">
+    <value>Медаль Кея</value>
+  </data>
+  <data name="Column_Medals_Carius" xml:space="preserve">
+    <value>Медаль Кариуса</value>
+  </data>
+  <data name="Column_Medals_Knispel" xml:space="preserve">
+    <value>Медаль Книспеля</value>
+  </data>
+  <data name="Column_Medals_Poppel" xml:space="preserve">
+    <value>Медаль Попеля</value>
+  </data>
+  <data name="Column_Medals_Abrams" xml:space="preserve">
+    <value>Медаль Абрамса</value>
+  </data>
+  <data name="Column_Medals_Leclerk" xml:space="preserve">
+    <value>Медаль Леклерка</value>
+  </data>
+  <data name="Column_Medals_Lavrinenko" xml:space="preserve">
+    <value>Медаль Лавриненко</value>
+  </data>
+  <data name="Column_Medals_Ekins" xml:space="preserve">
+    <value>Медаль Экинса</value>
+  </data>
+  <data name="Column_Epics_Billotte" xml:space="preserve">
+    <value>Бийота</value>
+  </data>
+  <data name="Column_Epics_Boelter" xml:space="preserve">
+    <value>Бёльтера</value>
+  </data>
+  <data name="Column_Epics_BrunoPietro" xml:space="preserve">
+    <value>Бруно</value>
+  </data>
+  <data name="Column_Epics_Burda" xml:space="preserve">
+    <value>Бурды</value>
+  </data>
+  <data name="Column_Epics_DeLanglade" xml:space="preserve">
+    <value>де Ланглада</value>
+  </data>
+  <data name="Column_Epics_Dumitru" xml:space="preserve">
+    <value>Думитру</value>
+  </data>
+  <data name="Column_Epics_Fadin" xml:space="preserve">
+    <value>Фадина</value>
+  </data>
+  <data name="Column_Epics_Halonen" xml:space="preserve">
+    <value>Халонена</value>
+  </data>
+  <data name="Column_Epics_HeroesOfRaseiniai" xml:space="preserve">
+    <value>Героев Расейняя</value>
+  </data>
+  <data name="Column_Epics_Kolobanov" xml:space="preserve">
+    <value>Колобанов</value>
+  </data>
+  <data name="Column_Epics_LafayettePool" xml:space="preserve">
+    <value>Пула</value>
+  </data>
+  <data name="Column_Epics_Lehvaslaiho" xml:space="preserve">
+    <value>Лехвеслайхо</value>
+  </data>
+  <data name="Column_Epics_Nikolas" xml:space="preserve">
+    <value>Николса</value>
+  </data>
+  <data name="Column_Epics_Orlik" xml:space="preserve">
+    <value>Орлика</value>
+  </data>
+  <data name="Column_Epics_Oskin" xml:space="preserve">
+    <value>Оськина</value>
+  </data>
+  <data name="Column_Epics_Pascucci" xml:space="preserve">
+    <value>Паскуччи</value>
+  </data>
+  <data name="Column_Epics_RadleyWalters" xml:space="preserve">
+    <value>Рэдли-Уолтерса</value>
+  </data>
+  <data name="Column_Epics_TamadaYoshio" xml:space="preserve">
+    <value>Тамада Йошио</value>
+  </data>
+  <data name="Column_Epics_Tarczay" xml:space="preserve">
+    <value>Тарцая</value>
+  </data>
+  <data name="Column_Performance_CapturePoints" xml:space="preserve">
+    <value>Очки захвата</value>
+  </data>
+  <data name="Column_Performance_DefencePoints" xml:space="preserve">
+    <value>Очки защиты</value>
+  </data>
+  <data name="Column_Performance_HitRatio" xml:space="preserve">
+    <value>% попаданий</value>
+  </data>
+  <data name="Column_Performance_Hits" xml:space="preserve">
+    <value>Выстрелов</value>
+  </data>
+  <data name="Column_Performance_Shots" xml:space="preserve">
+    <value>Попаданий</value>
+  </data>
+  <data name="Column_Performance_TanksSpotted" xml:space="preserve">
+    <value>Обнаружено танков</value>
+  </data>
+  <data name="Column_Ratings_AverageDamage" xml:space="preserve">
+    <value>Средний урон</value>
+  </data>
+  <data name="Column_Ratings_Battles" xml:space="preserve">
+    <value>Бои</value>
+  </data>
+  <data name="Column_Ratings_DamageRatingRev1" xml:space="preserve">
+    <value>Рейтинг урона Rev1</value>
+  </data>
+  <data name="Column_Ratings_EffRating" xml:space="preserve">
+    <value>РЭ</value>
+  </data>
+  <data name="Column_Ratings_KievArmorRating" xml:space="preserve">
+    <value>Рейтинг Броне-сайта</value>
+  </data>
+  <data name="Column_Ratings_KillDeathRatio" xml:space="preserve">
+    <value>Отношение убил/умер</value>
+  </data>
+  <data name="Column_Ratings_MarkOfMastery" xml:space="preserve">
+    <value>Знак классности</value>
+  </data>
+  <data name="Column_Ratings_Winrate" xml:space="preserve">
+    <value>% побед</value>
+  </data>
+  <data name="Column_Ratings_WN6" xml:space="preserve">
+    <value>WN6</value>
+  </data>
+  <data name="Column_Series_InvincibleLongest" xml:space="preserve">
+    <value>Неуязвимый макс.</value>
+  </data>
+  <data name="Column_Series_InvincibleProgress" xml:space="preserve">
+    <value>Неуязвимый текущая</value>
+  </data>
+  <data name="Column_Series_MasterGunnerLongest" xml:space="preserve">
+    <value>Бронебойщий макс.</value>
+  </data>
+  <data name="Column_Series_MasterGunnerProgress" xml:space="preserve">
+    <value>Бронебойщик текущая</value>
+  </data>
+  <data name="Column_Series_ReaperLongest" xml:space="preserve">
+    <value>Коса Смерти макс.</value>
+  </data>
+  <data name="Column_Series_ReaperProgress" xml:space="preserve">
+    <value>Коса Смерти текущая</value>
+  </data>
+  <data name="Column_Series_SharpshooterLongest" xml:space="preserve">
+    <value>Стрелок макс.</value>
+  </data>
+  <data name="Column_Series_SharpshooterProgress" xml:space="preserve">
+    <value>Стрелок текущая</value>
+  </data>
+  <data name="Column_Series_SurvivorLongest" xml:space="preserve">
+    <value>Живучий макс.</value>
+  </data>
+  <data name="Column_Series_SurvivorProgress" xml:space="preserve">
+    <value>Живучий текущая</value>
   </data>
 </root>

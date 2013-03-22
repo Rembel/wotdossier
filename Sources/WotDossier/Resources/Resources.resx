@@ -668,4 +668,16 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Column_Ratings_MarkOfMastery" xml:space="preserve">
     <value>Mark Of Mastery</value>
   </data>
+  <data name="Tooltip_MarkOfMastery_1" xml:space="preserve">
+    <value>Earn more experience in a single battle than the average highest experience of 50% of all players in the same tank within the last seven days.</value>
+  </data>
+  <data name="Tooltip_MarkOfMastery_2" xml:space="preserve">
+    <value>Earn more experience in a single battle than the average highest experience of 80% of all players in the same tank within the last seven days.</value>
+  </data>
+  <data name="Tooltip_MarkOfMastery_3" xml:space="preserve">
+    <value>Earn more experience in a single battle than the average highest experience of 95% of all players in the same tank within the last seven days.</value>
+  </data>
+  <data name="Tooltip_MarkOfMastery_4" xml:space="preserve">
+    <value>Earn more experience in a single battle than the average highest experience of 99% of all players in the same tank within the last seven days.</value>
+  </data>
 </root>

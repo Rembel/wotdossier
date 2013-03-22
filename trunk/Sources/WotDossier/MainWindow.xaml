@@ -8,7 +8,9 @@
     <DockPanel>
         <DockPanel.Resources>
             <DataTemplate x:Key="MasterTemplate" >
-                <Image Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" />
+                <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       ToolTip="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToTooltipConverter.Default}}" 
+                       Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" />
             </DataTemplate>
             <DataTemplate x:Key="TankIconTemplate" >
                 <Grid>

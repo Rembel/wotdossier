@@ -1697,5 +1697,41 @@ namespace WotDossier.Resources {
                 return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Warrior", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earn more experience in a single battle than the average highest experience of 50% of all players in the same tank within the last seven days..
+        /// </summary>
+        public static string Tooltip_MarkOfMastery_1 {
+            get {
+                return ResourceManager.GetString("Tooltip_MarkOfMastery_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earn more experience in a single battle than the average highest experience of 80% of all players in the same tank within the last seven days..
+        /// </summary>
+        public static string Tooltip_MarkOfMastery_2 {
+            get {
+                return ResourceManager.GetString("Tooltip_MarkOfMastery_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earn more experience in a single battle than the average highest experience of 95% of all players in the same tank within the last seven days..
+        /// </summary>
+        public static string Tooltip_MarkOfMastery_3 {
+            get {
+                return ResourceManager.GetString("Tooltip_MarkOfMastery_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earn more experience in a single battle than the average highest experience of 99% of all players in the same tank within the last seven days..
+        /// </summary>
+        public static string Tooltip_MarkOfMastery_4 {
+            get {
+                return ResourceManager.GetString("Tooltip_MarkOfMastery_4", resourceCulture);
+            }
+        }
     }
 }

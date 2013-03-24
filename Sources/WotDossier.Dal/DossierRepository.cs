@@ -88,11 +88,18 @@ namespace WotDossier.Dal
                                                    .Desc.Take(1)
                                                    .SingleOrDefault<PlayerStatisticEntity>();
                     DateTime updated = Utils.UnixDateToDateTime((long) stat.data.updated_at).Date;
+                    //create new record
                     if (statisticEntity == null ||
                         (statisticEntity.Updated.Date != updated.Date && statisticEntity.Updated < updated))
                     {
                         statisticEntity = new PlayerStatisticEntity();
                         statisticEntity.PlayerId = playerEntity.Id;
+                        statisticEntity.Update(stat);
+                        _dataProvider.Save(statisticEntity);
+                    }
+                    //update current date record
+                    else if (statisticEntity.Updated.Date == updated.Date)
+                    {
                         statisticEntity.Update(stat);
                         _dataProvider.Save(statisticEntity);
                     }

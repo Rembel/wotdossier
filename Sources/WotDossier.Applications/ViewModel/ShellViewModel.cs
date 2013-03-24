@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
-using System.Windows;
 using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
@@ -29,15 +26,14 @@ namespace WotDossier.Applications.ViewModel
     /// </summary>
     public class ShellViewModel : ViewModel<IShellView>
     {
+        private static readonly ILog _log = LogManager.GetLogger("ShellViewModel");
+
         private const string BATTLES_RATING_MARKER_TOOLTIP_FORMAT = "Battles: {0}\nRating: {1:0.00}";
         private const string BATTLES_WIN_PERCENT_MARKER_TOOLTIP_FORMAT = "Battles: {0}\nWin percent: {1:0.00}";
         private const string BATTLES_AVG_DAMAGE_MARKER_TOOLTIP_FORMAT = "Battles: {0}\nAvg Damage: {1:0.00}";
         private readonly DossierRepository _dossierRepository;
-        private string _curDirTemp;
-        private FileInfo _last = null;
         private readonly SettingsReader _reader = new SettingsReader(WotDossierSettings.SettingsPath);
 
-        protected static readonly ILog _log = LogManager.GetLogger("log");
         private PlayerStatisticViewModel _playerStatistic;
         private IEnumerable<TankRowBattles> _battles;
         private IEnumerable<TankRowXP> _xp;
@@ -52,16 +48,8 @@ namespace WotDossier.Applications.ViewModel
         private IEnumerable<TankRowMasterTanker> _masterTanker;
         private IEnumerable<TankRowEpic> _epics;
         private IEnumerable<TankRowTime> _time;
-        
-        public PlayerStatisticViewModel PlayerStatistic
-        {
-            get { return _playerStatistic; }
-            set
-            {
-                _playerStatistic = value;
-                RaisePropertyChanged("PlayerStatistic");
-            }
-        }
+
+        #region [ Properties ]
 
         public ChartPlotter ChartRating
         {
@@ -80,231 +68,14 @@ namespace WotDossier.Applications.ViewModel
         
         public DelegateCommand LoadCommand { get; set; }
 
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
-        /// </summary>
-        /// <param name="view">The view.</param>
-        /// <param name="dossierRepository"></param>
-        public ShellViewModel(IShellView view, DossierRepository dossierRepository)
-            : this(view, false)
+        public PlayerStatisticViewModel PlayerStatistic
         {
-            _dossierRepository = dossierRepository;
-            LoadCommand = new DelegateCommand(OnLoad);
-
-            WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
-                h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
-        /// </summary>
-        /// <param name="view">The view.</param>
-        /// <param name="isChild">if set to <c>true</c> [is child].</param>
-        public ShellViewModel(IShellView view, bool isChild)
-            : base(view, isChild)
-        {
-        }
-
-        #endregion
-
-        private void OnLoad()
-        {
-            PlayerStatistic = GetPlayerStatistic();
-
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string[] files = new string[0];
-
-            try
+            get { return _playerStatistic; }
+            set
             {
-                files = Directory.GetFiles(appDataPath + @"\Wargaming.net\WorldOfTanks\dossier_cache", "*.dat");
+                _playerStatistic = value;
+                RaisePropertyChanged("PlayerStatistic");
             }
-            catch (DirectoryNotFoundException ex)
-            {
-                _log.Error("Путь к файлам кэша не найден", ex);
-            }
-
-            if (!files.Any())
-            {
-                return;
-            }
-
-            foreach (string file in files)
-            {
-                FileInfo info = new FileInfo(file);
-
-                if (_last == null)
-                {
-                    _last = info;
-                }
-                else if (_last.LastWriteTime < info.LastWriteTime)
-                {
-                    _last = info;
-                }
-            }
-
-            _curDirTemp = Environment.CurrentDirectory;
-
-            string directoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            Environment.CurrentDirectory = directoryName + @"\External";
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = directoryName + @"\External\wotdc2j.exe";
-            proc.StartInfo.Arguments = string.Format("{0} -f -r", _last.FullName);
-            proc.Start();
-
-            Thread.Sleep(1000);
-
-            ProcOnExited(null, null);
-        }
-
-        private PlayerStatisticViewModel GetPlayerStatistic()
-        {
-            AppSettings settings = _reader.Get();
-            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
-            {
-                return null;
-            }
-
-            PlayerStat playerStat = Read.LoadPlayerStat(settings);
-
-            PlayerEntity player;
-
-            if (playerStat != null)
-            {
-                player = _dossierRepository.GetOrCreatePlayer(settings.PlayerId, playerStat);
-
-                var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
-
-                PlayerStatisticEntity currentStatistic = playerEntities.OrderByDescending(x => x.Updated).First();
-                IEnumerable<PlayerStatisticViewModel> statisticViewModels = playerEntities.Where(x => x.Id != currentStatistic.Id)
-                    .Select(x => new PlayerStatisticViewModel(x)).ToList();
-
-                IEnumerable<PlayerStatisticViewModel> viewModels = playerEntities.Select(x => new PlayerStatisticViewModel(x));
-
-                InitChart(viewModels);
-
-                PlayerStatisticViewModel playerStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, statisticViewModels);
-                playerStatisticViewModel.Name = player.Name;
-                playerStatisticViewModel.Created = player.Creaded;
-                playerStatisticViewModel.BattlesPerDay = playerStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
-
-                if (playerStat.data.clan.clan != null)
-                {
-                    playerStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
-                }
-
-                return playerStatisticViewModel;
-            }
-            return null;
-        }
-
-        private void InitChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
-        {
-            InitRatingChart(statisticViewModels);
-            InitWinPercentChart(statisticViewModels);
-            InitAvgDamageChart(statisticViewModels);
-        }
-
-        private void InitRatingChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
-        {
-            DataRect dataRect = DataRect.Create(0, 0, 100000, 2500);
-            ChartRating.Viewport.Domain = dataRect;
-            ChartRating.Viewport.Visible = dataRect;
-
-            ChartRating.RemoveUserElements();
-
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) {XMapping = x => x.X, YMapping = y => y.Y};
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
-            SolidColorBrush brush = new SolidColorBrush {Color = Colors.Blue};
-            Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker {Size = 7, Fill = brush, Brush = brush};
-            LineAndMarker<ElementMarkerPointsGraph> effGraph = ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("РЭ"));
-
-            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
-            dataSource = new EnumerableDataSource<DataPoint>(wn6Points) {XMapping = x => x.X, YMapping = y => y.Y};
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                  point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
-            brush = new SolidColorBrush {Color = Colors.Green};
-            lineThickness = new Pen(brush, 2);
-            circlePointMarker = new CircleElementPointMarker() {Size = 7, Fill = brush, Brush = brush};
-            LineAndMarker<ElementMarkerPointsGraph> wn6Graph = ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("WN6"));
-
-            ChartRating.FitToView();
-        }
-
-        private void InitWinPercentChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
-        {
-            ChartWinPercent.RemoveUserElements();
-
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_WIN_PERCENT_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
-            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
-            Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            LineAndMarker<ElementMarkerPointsGraph> effGraph = ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("Win %"));
-
-            ChartWinPercent.FitToView();
-        }
-
-        private void InitAvgDamageChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
-        {
-            ChartAvgDamage.RemoveUserElements();
-
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_AVG_DAMAGE_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
-            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
-            Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            LineAndMarker<ElementMarkerPointsGraph> effGraph = ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("Avg damage"));
-
-            ChartAvgDamage.FitToView();
-        }
-
-        private void ProcOnExited(object sender, EventArgs eventArgs)
-        {
-            Action act = () =>
-            {
-                Environment.CurrentDirectory = _curDirTemp;
-
-                List<Tank> tanks = Read.ReadTanks(_last.FullName.Replace(".dat", ".json"));
-
-                IEnumerable<TankRowBattles> battles = tanks.Select(x => new TankRowBattles(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowXP> xp = tanks.Select(x => new TankRowXP(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowFrags> frags = tanks.Select(x => new TankRowFrags(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowDamage> damage = tanks.Select(x => new TankRowDamage(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowBattleAwards> battleAwards = tanks.Select(x => new TankRowBattleAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowSpecialAwards> specialAwards = tanks.Select(x => new TankRowSpecialAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowSeries> series = tanks.Select(x => new TankRowSeries(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowMedals> medals = tanks.Select(x => new TankRowMedals(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowRatings> ratings = tanks.Select(x => new TankRowRatings(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowPerformance> performance = tanks.Select(x => new TankRowPerformance(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowEpic> epic = tanks.Select(x => new TankRowEpic(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowTime> time = tanks.Select(x => new TankRowTime(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-
-                IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
-                IEnumerable<TankRowMasterTanker> masterTanker = Read.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value)).Select(x => new TankRowMasterTanker(x.Value, Read.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
-
-                Battles= battles;
-                Xp= xp;
-                Frags= frags;
-                Damage= damage;
-                BattleAwards= battleAwards;
-                SpecialAwards= specialAwards;
-                Series= series;
-                Medals= medals;
-                Ratings= ratings;
-                Performance= performance;
-                MasterTanker= masterTanker;
-                Epics= epic;
-                Time = time;
-            };
-
-            System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
         }
 
         public IEnumerable<TankRowTime> Time
@@ -437,6 +208,199 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
+        /// </summary>
+        /// <param name="view">The view.</param>
+        /// <param name="dossierRepository"></param>
+        public ShellViewModel(IShellView view, DossierRepository dossierRepository)
+            : this(view, false)
+        {
+            _dossierRepository = dossierRepository;
+            LoadCommand = new DelegateCommand(OnLoad);
+
+            WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
+                h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
+        /// </summary>
+        /// <param name="view">The view.</param>
+        /// <param name="isChild">if set to <c>true</c> [is child].</param>
+        public ShellViewModel(IShellView view, bool isChild)
+            : base(view, isChild)
+        {
+        }
+
+        #endregion
+
+        private void OnLoad()
+        {
+            PlayerStatistic = GetPlayerStatistic();
+
+            FileInfo cacheFile = CacheHelper.GetCacheFile();
+
+            if (cacheFile != null)
+            {
+                CacheHelper.BinaryCacheToJson(cacheFile);
+
+                Thread.Sleep(1000);
+             
+                InitTanksStatistic(cacheFile);
+            }
+        }
+
+        private PlayerStatisticViewModel GetPlayerStatistic()
+        {
+            AppSettings settings = _reader.Get();
+            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
+            {
+                return null;
+            }
+
+            PlayerStat playerStat = Read.LoadPlayerStat(settings);
+
+            PlayerEntity player;
+
+            if (playerStat != null)
+            {
+                player = _dossierRepository.GetOrCreatePlayer(settings.PlayerId, playerStat);
+
+                var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
+
+                PlayerStatisticEntity currentStatistic = playerEntities.OrderByDescending(x => x.Updated).First();
+                IEnumerable<PlayerStatisticViewModel> statisticViewModels = playerEntities.Where(x => x.Id != currentStatistic.Id)
+                    .Select(x => new PlayerStatisticViewModel(x)).ToList();
+
+                IEnumerable<PlayerStatisticViewModel> viewModels = playerEntities.Select(x => new PlayerStatisticViewModel(x));
+
+                InitChart(viewModels);
+
+                PlayerStatisticViewModel playerStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, statisticViewModels);
+                playerStatisticViewModel.Name = player.Name;
+                playerStatisticViewModel.Created = player.Creaded;
+                playerStatisticViewModel.BattlesPerDay = playerStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
+
+                if (playerStat.data.clan.clan != null)
+                {
+                    playerStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
+                }
+
+                return playerStatisticViewModel;
+            }
+            return null;
+        }
+
+        private void InitChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
+        {
+            InitRatingChart(statisticViewModels);
+            InitWinPercentChart(statisticViewModels);
+            InitAvgDamageChart(statisticViewModels);
+        }
+
+        private void InitRatingChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
+        {
+            DataRect dataRect = DataRect.Create(0, 0, 100000, 2500);
+            ChartRating.Viewport.Domain = dataRect;
+            ChartRating.Viewport.Visible = dataRect;
+
+            ChartRating.RemoveUserElements();
+
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) {XMapping = x => x.X, YMapping = y => y.Y};
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            SolidColorBrush brush = new SolidColorBrush {Color = Colors.Blue};
+            Pen lineThickness = new Pen(brush, 2);
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker {Size = 7, Fill = brush, Brush = brush};
+            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("РЭ"));
+
+            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
+            dataSource = new EnumerableDataSource<DataPoint>(wn6Points) {XMapping = x => x.X, YMapping = y => y.Y};
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            brush = new SolidColorBrush {Color = Colors.Green};
+            lineThickness = new Pen(brush, 2);
+            circlePointMarker = new CircleElementPointMarker {Size = 7, Fill = brush, Brush = brush};
+            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("WN6"));
+
+            ChartRating.FitToView();
+        }
+
+        private void InitWinPercentChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
+        {
+            ChartWinPercent.RemoveUserElements();
+
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_WIN_PERCENT_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
+            Pen lineThickness = new Pen(brush, 2);
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("Win %"));
+
+            ChartWinPercent.FitToView();
+        }
+
+        private void InitAvgDamageChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
+        {
+            ChartAvgDamage.RemoveUserElements();
+
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_AVG_DAMAGE_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
+            Pen lineThickness = new Pen(brush, 2);
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("Avg damage"));
+
+            ChartAvgDamage.FitToView();
+        }
+
+        private void InitTanksStatistic(FileInfo cacheFile)
+        {
+            Action act = () =>
+            {
+                List<Tank> tanks = Read.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+
+                IEnumerable<TankRowBattles> battles = tanks.Select(x => new TankRowBattles(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowXP> xp = tanks.Select(x => new TankRowXP(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowFrags> frags = tanks.Select(x => new TankRowFrags(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowDamage> damage = tanks.Select(x => new TankRowDamage(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowBattleAwards> battleAwards = tanks.Select(x => new TankRowBattleAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowSpecialAwards> specialAwards = tanks.Select(x => new TankRowSpecialAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowSeries> series = tanks.Select(x => new TankRowSeries(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowMedals> medals = tanks.Select(x => new TankRowMedals(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowRatings> ratings = tanks.Select(x => new TankRowRatings(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowPerformance> performance = tanks.Select(x => new TankRowPerformance(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowEpic> epic = tanks.Select(x => new TankRowEpic(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRowTime> time = tanks.Select(x => new TankRowTime(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+
+                IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
+                IEnumerable<TankRowMasterTanker> masterTanker = Read.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value)).Select(x => new TankRowMasterTanker(x.Value, Read.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
+
+                Battles= battles;
+                Xp= xp;
+                Frags= frags;
+                Damage= damage;
+                BattleAwards= battleAwards;
+                SpecialAwards= specialAwards;
+                Series= series;
+                Medals= medals;
+                Ratings= ratings;
+                Performance= performance;
+                MasterTanker= masterTanker;
+                Epics= epic;
+                Time = time;
+            };
+
+            System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
+        }
+
         private bool IsExistedtank(TankInfo tankInfo)
         {
             return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
@@ -476,23 +440,5 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Close();
         }
 
-    }
-
-    public interface IDataPoint
-    {
-        double X { get; }
-        double Y { get; }
-    }
-
-    public class DataPoint : IDataPoint
-    {
-        public double X { get; set; }
-        public double Y { get; set; }
-
-        public DataPoint(double x, double y)
-        {
-            X = x;
-            Y = y;
-        }
     }
 }

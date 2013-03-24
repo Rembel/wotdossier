@@ -41,21 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
-    <Compile Include="battle.cs" />
-    <Compile Include="clan.cs" />
     <Compile Include="Player\ClanCommonInfo.cs" />
     <Compile Include="Player\ClanEmblems.cs" />
     <Compile Include="Player\ClanExt.cs" />
     <Compile Include="Player\ClanInfo.cs" />
-    <Compile Include="common.cs" />
     <Compile Include="Common\CommonStatGroup.cs" />
     <Compile Include="Common\CommonStatRow.cs" />
-    <Compile Include="company.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\PlayerEntity.cs" />
     <Compile Include="Entities\PlayerStatisticEntity.cs" />
-    <Compile Include="epic.cs" />
-    <Compile Include="major.cs" />
     <Compile Include="Player\Achievements.cs" />
     <Compile Include="Player\Battles.cs" />
     <Compile Include="Player\ClanMemberInfo.cs" />
@@ -84,13 +78,19 @@
     <Compile Include="Rows\TankRowBattles.cs" />
     <Compile Include="Rows\TankRowXP.cs" />
     <Compile Include="Rows\TankRowFrags.cs" />
-    <Compile Include="series.cs" />
-    <Compile Include="special.cs" />
-    <Compile Include="Tank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TankContour.cs" />
-    <Compile Include="tankdata.cs" />
-    <Compile Include="TankInfo.cs" />
+    <Compile Include="Tank\battle.cs" />
+    <Compile Include="Tank\clan.cs" />
+    <Compile Include="Tank\common.cs" />
+    <Compile Include="Tank\company.cs" />
+    <Compile Include="Tank\epic.cs" />
+    <Compile Include="Tank\major.cs" />
+    <Compile Include="Tank\series.cs" />
+    <Compile Include="Tank\special.cs" />
+    <Compile Include="Tank\Tank.cs" />
+    <Compile Include="Tank\TankContour.cs" />
+    <Compile Include="Tank\tankdata.cs" />
+    <Compile Include="Tank\TankInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">

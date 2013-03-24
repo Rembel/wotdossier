@@ -9,6 +9,7 @@ using WotDossier.Domain;
 using System.Linq;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Rows;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications
 {
@@ -61,9 +62,9 @@ namespace WotDossier.Applications
             }
         }
 
-        public static List<Tank> ReadTanks(string json)
+        public static List<TankJson> ReadTanks(string json)
         {
-            List<Tank> tanks = new List<Tank>();
+            List<TankJson> tanks = new List<TankJson>();
 
             using (StreamReader re = new StreamReader(json))
             {
@@ -77,14 +78,14 @@ namespace WotDossier.Applications
                 {
                     JProperty property = (JProperty)jToken;
                     string raw = property.Value.ToString();
-                    Tank tank = JsonConvert.DeserializeObject<Tank>(raw);
+                    TankJson tank = JsonConvert.DeserializeObject<TankJson>(raw);
                     tank.Name = tank.Common.tanktitle;
                     tank.Info = _tankDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
                     tank.TankContour = GetTankContour(tank);
                     tank.Frags =
                         tank.Kills.Select(
                             x =>
-                            new Frag
+                            new FragsJson
                                 {
                                     CountryId = Convert.ToInt32(x[0]),
                                     TankId = Convert.ToInt32(x[1]),
@@ -98,7 +99,7 @@ namespace WotDossier.Applications
             return tanks;
         }
 
-        public static TankContour GetTankContour(Tank tank)
+        public static TankContour GetTankContour(TankJson tank)
         {
             return GetTankContour(tank.Info);
         }

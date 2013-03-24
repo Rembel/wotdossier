@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowSeries : TankRowBase
     {
@@ -73,7 +75,7 @@
             set { _survivorProgress = value; }
         }
 
-        public TankRowSeries(Tank tank)
+        public TankRowSeries(TankJson tank)
             : base(tank)
         {
             _reaperLongest = tank.Series.maxKillingSeries;

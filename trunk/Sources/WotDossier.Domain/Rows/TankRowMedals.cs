@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Rows
 {
@@ -64,7 +61,7 @@ namespace WotDossier.Domain.Rows
             set { _ekins = value; }
         }
 
-        public TankRowMedals(Tank tank)
+        public TankRowMedals(TankJson tank)
             : base(tank)
         {
             _kay = tank.Major.Kay;

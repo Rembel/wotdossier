@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowSpecialAwards : TankRowBase
     {
@@ -87,7 +89,7 @@
             set { _ranger = value; }
         }
 
-        public TankRowSpecialAwards(Tank tank)
+        public TankRowSpecialAwards(TankJson tank)
             : base(tank)
         {
             _kamikaze = tank.Special.kamikaze;

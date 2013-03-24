@@ -14,6 +14,7 @@ using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Rows;
+using WotDossier.Domain.Tank;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
@@ -365,7 +366,7 @@ namespace WotDossier.Applications.ViewModel
         {
             Action act = () =>
             {
-                List<Tank> tanks = Read.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+                List<TankJson> tanks = Read.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
 
                 IEnumerable<TankRowBattles> battles = tanks.Select(x => new TankRowBattles(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
                 IEnumerable<TankRowXP> xp = tanks.Select(x => new TankRowXP(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);

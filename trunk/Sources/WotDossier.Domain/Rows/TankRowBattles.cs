@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowBattles : TankRowBase
     {
@@ -14,7 +16,7 @@
         private int _survivedAndWon;
         private double _survivedAndWonPercent;
 
-        public TankRowBattles(Tank tank) : base(tank)
+        public TankRowBattles(TankJson tank) : base(tank)
         {
             _battles = tank.Tankdata.battlesCount;
             _won = tank.Tankdata.wins;

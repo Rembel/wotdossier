@@ -1,6 +1,6 @@
-namespace WotDossier.Domain
+namespace WotDossier.Domain.Tank
 {
-    public class special
+    public class SpecialJson
     {
         public int armorPiercer;
         public int beasthunter;

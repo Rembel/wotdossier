@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowXP : TankRowBase
     {
@@ -24,7 +26,7 @@
             set { _averageXp = value; }
         }
 
-        public TankRowXP(Tank tank)
+        public TankRowXP(TankJson tank)
             : base(tank)
         {
             _totalXP = tank.Tankdata.xp;

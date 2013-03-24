@@ -1,8 +1,8 @@
 using System;
 
-namespace WotDossier.Domain
+namespace WotDossier.Domain.Tank
 {
-    public class common
+    public class CommonJson
     {
         public int basedonversion;
         public int countryid;

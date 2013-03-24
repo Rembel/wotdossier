@@ -1,5 +1,6 @@
 ﻿using System;
 using WotDossier.Common;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Rows
 {
@@ -9,7 +10,7 @@ namespace WotDossier.Domain.Rows
          public TimeSpan PlayTime { get; set; }
          public TimeSpan AverageBattleTime { get; set; }
 
-         public TankRowTime(Tank tank)
+         public TankRowTime(TankJson tank)
              : base(tank)
         {
             LastBattle = Utils.UnixDateToDateTime(tank.Tankdata.lastBattleTime);

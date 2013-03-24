@@ -1,11 +1,8 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Globalization;
-using System.Runtime.InteropServices;
-using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using WotDossier.Domain;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Converters
 {

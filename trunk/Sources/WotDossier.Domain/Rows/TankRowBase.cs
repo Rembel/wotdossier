@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowBase
     {
@@ -48,7 +50,7 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankRowBase(Tank tank)
+        public TankRowBase(TankJson tank)
         {
             Tier = tank.Common.tier;
             TankType = tank.Common.type;

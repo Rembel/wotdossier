@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowPerformance : TankRowBase
     {
@@ -9,7 +11,7 @@
         private int _defencePoints;
         private int _tanksSpotted;
 
-        public TankRowPerformance(Tank tank)
+        public TankRowPerformance(TankJson tank)
             : base(tank)
         {
             _shots = tank.Tankdata.shots;

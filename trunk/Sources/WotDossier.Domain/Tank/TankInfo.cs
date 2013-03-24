@@ -1,4 +1,4 @@
-﻿namespace WotDossier.Domain
+﻿namespace WotDossier.Domain.Tank
 {
     public class TankInfo
     {

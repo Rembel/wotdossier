@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Rows
 {
@@ -43,7 +44,7 @@ namespace WotDossier.Domain.Rows
         private int _averageDamageDealt;
         private int _damagePerHit;
 
-        public TankRowDamage(Tank tank)
+        public TankRowDamage(TankJson tank)
             : base(tank)
         {
             _damageDealt = tank.Tankdata.damageDealt;

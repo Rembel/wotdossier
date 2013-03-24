@@ -67,7 +67,7 @@
     <Compile Include="Rows\TankRowEpic.cs" />
     <Compile Include="Rows\TankRowMasterTanker.cs" />
     <Compile Include="Rows\TankRowPerformance.cs" />
-    <Compile Include="Rows\Frag.cs" />
+    <Compile Include="Tank\FragsJson.cs" />
     <Compile Include="Rows\TankRowBase.cs" />
     <Compile Include="Rows\TankRowRatings.cs" />
     <Compile Include="Rows\TankRowMedals.cs" />
@@ -79,17 +79,17 @@
     <Compile Include="Rows\TankRowXP.cs" />
     <Compile Include="Rows\TankRowFrags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tank\battle.cs" />
-    <Compile Include="Tank\clan.cs" />
-    <Compile Include="Tank\common.cs" />
-    <Compile Include="Tank\company.cs" />
-    <Compile Include="Tank\epic.cs" />
-    <Compile Include="Tank\major.cs" />
-    <Compile Include="Tank\series.cs" />
-    <Compile Include="Tank\special.cs" />
-    <Compile Include="Tank\Tank.cs" />
+    <Compile Include="Tank\BattleJson.cs" />
+    <Compile Include="Tank\ClanJson.cs" />
+    <Compile Include="Tank\CommonJson.cs" />
+    <Compile Include="Tank\CompanyJson.cs" />
+    <Compile Include="Tank\EpicJson.cs" />
+    <Compile Include="Tank\MajorJson.cs" />
+    <Compile Include="Tank\SeriesJson.cs" />
+    <Compile Include="Tank\SpecialJson.cs" />
+    <Compile Include="Tank\TankJson.cs" />
     <Compile Include="Tank\TankContour.cs" />
-    <Compile Include="Tank\tankdata.cs" />
+    <Compile Include="Tank\TankDataJson.cs" />
     <Compile Include="Tank\TankInfo.cs" />
   </ItemGroup>
   <ItemGroup>

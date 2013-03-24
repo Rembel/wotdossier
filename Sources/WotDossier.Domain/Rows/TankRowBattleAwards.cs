@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowBattleAwards : TankRowBase
     {
@@ -101,7 +103,7 @@
             set { _spartan = value; }
         }
 
-        public TankRowBattleAwards(Tank tank) : base(tank)
+        public TankRowBattleAwards(TankJson tank) : base(tank)
         {
             _battleHero = tank.Battle.battleHeroes;
             _topGun = tank.Battle.warrior;

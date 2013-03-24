@@ -1,4 +1,5 @@
 ﻿using WotDossier.Common;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Rows
 {
@@ -68,7 +69,7 @@ namespace WotDossier.Domain.Rows
         private int _kievArmorRating;
         private int _markOfMastery;
 
-        public TankRowRatings(Tank tank)
+        public TankRowRatings(TankJson tank)
             : base(tank)
         {
             _battles = tank.Tankdata.battlesCount;

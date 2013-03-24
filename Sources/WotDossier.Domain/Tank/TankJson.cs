@@ -1,25 +1,24 @@
 ﻿using System.Collections.Generic;
-using WotDossier.Domain.Rows;
 
-namespace WotDossier.Domain
+namespace WotDossier.Domain.Tank
 {
-    public class Tank
+    public class TankJson
     {
         public string Name;
         private TankInfo _info;
         private TankContour _tankContour;
-        public battle Battle { get; set; }
-        public clan Clan { get; set; }
-        public common Common { get; set; }
-        public company Company { get; set; }
-        public epic Epic { get; set; }
-        public series Series { get; set; }
-        public major Major { get; set; }
+        public BattleJson Battle { get; set; }
+        public ClanJson Clan { get; set; }
+        public CommonJson Common { get; set; }
+        public CompanyJson Company { get; set; }
+        public EpicJson Epic { get; set; }
+        public SeriesJson Series { get; set; }
+        public MajorJson Major { get; set; }
         public IList<IList<string>> Kills { get; set; }
-        public IEnumerable<Frag> Frags { get; set; }
+        public IEnumerable<FragsJson> Frags { get; set; }
         //public Dictionary<int, string> Rawdata { get; set; }
-        public special Special { get; set; }
-        public tankdata Tankdata { get; set; }
+        public SpecialJson Special { get; set; }
+        public TankDataJson Tankdata { get; set; }
 
         public TankInfo Info
         {

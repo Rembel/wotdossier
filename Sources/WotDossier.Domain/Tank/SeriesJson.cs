@@ -1,6 +1,6 @@
-namespace WotDossier.Domain
+namespace WotDossier.Domain.Tank
 {
-    public class series
+    public class SeriesJson
     {
         public int diehardSeries;
         public int invincibleSeries;

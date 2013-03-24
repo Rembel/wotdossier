@@ -251,7 +251,7 @@ namespace WotDossier.Domain.Entities
 
 	    public virtual void Update(PlayerStat stat)
 	    {
-            #region Common init
+            #region CommonJson init
 
             BattlesCount = stat.data.summary.Battles_count;
             Wins = stat.data.summary.Wins;
@@ -281,7 +281,7 @@ namespace WotDossier.Domain.Entities
             RatingBattleAvgPerformanceValue = stat.data.ratings.Battle_avg_performance.Value;
             RatingBattleAvgPerformancePlace = stat.data.ratings.Battle_avg_performance.Place ?? 0;
             //E/B-->
-            //Average Experience per Battle
+            //Average Experience per BattleJson
             RatingBattleAvgXpValue = stat.data.ratings.Battle_avg_xp.Value;
             RatingBattleAvgXpPlace = stat.data.ratings.Battle_avg_xp.Place ?? 0;
             //WIN-->

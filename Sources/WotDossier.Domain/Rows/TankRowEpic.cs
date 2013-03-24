@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿using WotDossier.Domain.Tank;
+
+namespace WotDossier.Domain.Rows
 {
     public class TankRowEpic : TankRowBase
     {
@@ -22,7 +24,7 @@
         private int _heroesOfRaseiniai;
         private int _deLanglade;
 
-        public TankRowEpic(Tank tank)
+        public TankRowEpic(TankJson tank)
             : base(tank)
         {
             _boelter = tank.Epic.Boelter;

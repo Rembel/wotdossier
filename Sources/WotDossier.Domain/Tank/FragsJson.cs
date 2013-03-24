@@ -1,6 +1,6 @@
-﻿namespace WotDossier.Domain.Rows
+﻿namespace WotDossier.Domain.Tank
 {
-    public class Frag
+    public class FragsJson
     {
         public int CountryId;
         public int TankId;

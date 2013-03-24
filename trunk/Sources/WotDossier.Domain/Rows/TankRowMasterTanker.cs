@@ -2,9 +2,15 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowMasterTanker : TankRowBase
+    public class TankRowMasterTanker : TankRowBase, ITankRowMasterTanker
     {
         private bool _isPremium;
+
+        public bool IsPremium
+        {
+            get { return _isPremium; }
+            set { _isPremium = value; }
+        }
 
         public TankRowMasterTanker(TankJson tank)
             : base(tank)
@@ -20,12 +26,6 @@ namespace WotDossier.Domain.Rows
             Icon = contour;
             CountryId = tank.countryid;
             _isPremium = tank.premium == 1;
-        }
-
-        public bool IsPremium
-        {
-            get { return _isPremium; }
-            set { _isPremium = value; }
         }
     }
 }

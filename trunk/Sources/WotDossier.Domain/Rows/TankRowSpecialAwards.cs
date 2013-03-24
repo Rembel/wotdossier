@@ -2,7 +2,7 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowSpecialAwards : TankRowBase
+    public class TankRowSpecialAwards : TankRowBase, ITankRowSpecialAwards
     {
         private int _kamikaze;
         private int _raider;

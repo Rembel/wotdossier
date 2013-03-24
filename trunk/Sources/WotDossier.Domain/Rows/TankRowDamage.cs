@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using WotDossier.Domain.Tank;
+﻿using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowDamage : TankRowBase
+    public class TankRowDamage : TankRowBase, ITankRowDamage
     {
         public int DamageDealt
         {

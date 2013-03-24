@@ -2,7 +2,7 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowBase
+    public class TankRowBase : ITankRowBase
     {
         private int _tier;
         private TankContour _icon;

@@ -2,7 +2,7 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowPerformance : TankRowBase
+    public class TankRowPerformance : TankRowBase, ITankRowPerformance
     {
         private int _shots;
         private int _hits;
@@ -10,17 +10,6 @@ namespace WotDossier.Domain.Rows
         private int _capturePoints;
         private int _defencePoints;
         private int _tanksSpotted;
-
-        public TankRowPerformance(TankJson tank)
-            : base(tank)
-        {
-            _shots = tank.Tankdata.shots;
-            _hits = tank.Tankdata.hits;
-            _hitRatio = _hits/(double) _shots*100.0;
-            _capturePoints = tank.Tankdata.capturePoints;
-            _defencePoints = tank.Tankdata.droppedCapturePoints;
-            _tanksSpotted = tank.Tankdata.spotted;
-        }
 
         public int Shots
         {
@@ -56,6 +45,17 @@ namespace WotDossier.Domain.Rows
         {
             get { return _tanksSpotted; }
             set { _tanksSpotted = value; }
+        }
+
+        public TankRowPerformance(TankJson tank)
+            : base(tank)
+        {
+            _shots = tank.Tankdata.shots;
+            _hits = tank.Tankdata.hits;
+            _hitRatio = _hits / (double)_shots * 100.0;
+            _capturePoints = tank.Tankdata.capturePoints;
+            _defencePoints = tank.Tankdata.droppedCapturePoints;
+            _tanksSpotted = tank.Tankdata.spotted;
         }
     }
 }

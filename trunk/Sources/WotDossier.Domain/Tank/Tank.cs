@@ -17,7 +17,7 @@ namespace WotDossier.Domain
         public major Major { get; set; }
         public IList<IList<string>> Kills { get; set; }
         public IEnumerable<Frag> Frags { get; set; }
-        public Dictionary<int, string> Rawdata { get; set; }
+        //public Dictionary<int, string> Rawdata { get; set; }
         public special Special { get; set; }
         public tankdata Tankdata { get; set; }
 
@@ -32,5 +32,7 @@ namespace WotDossier.Domain
             get { return _tankContour; }
             set { _tankContour = value; }
         }
+
+        public byte[] Raw { get; set; }
     }
 }

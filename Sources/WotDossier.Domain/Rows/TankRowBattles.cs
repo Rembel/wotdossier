@@ -2,7 +2,7 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowBattles : TankRowBase
+    public class TankRowBattles : TankRowBase, ITankRowBattles
     {
         private int _battles;
         private int _won;
@@ -15,21 +15,6 @@ namespace WotDossier.Domain.Rows
         private double _survivedPercent;
         private int _survivedAndWon;
         private double _survivedAndWonPercent;
-
-        public TankRowBattles(TankJson tank) : base(tank)
-        {
-            _battles = tank.Tankdata.battlesCount;
-            _won = tank.Tankdata.wins;
-            _wonPercent = _won / (double)_battles * 100.0;
-            _lost = tank.Tankdata.losses;
-            _lostPercent = _lost / (double)_battles * 100.0;
-            _draws = _battles - _won - _lost;
-            _drawsPercent = _draws / (double)_battles * 100.0;
-            _survived = tank.Tankdata.survivedBattles;
-            _survivedPercent = _survived / (double)_battles * 100.0;
-            _survivedAndWon = tank.Tankdata.winAndSurvived;
-            _survivedAndWonPercent = _survivedAndWon / (double)_battles * 100.0;
-        }
 
         public int Battles
         {
@@ -95,6 +80,21 @@ namespace WotDossier.Domain.Rows
         {
             get { return _survivedAndWonPercent; }
             set { _survivedAndWonPercent = value; }
+        }
+
+        public TankRowBattles(TankJson tank) : base(tank)
+        {
+            _battles = tank.Tankdata.battlesCount;
+            _won = tank.Tankdata.wins;
+            _wonPercent = _won / (double)_battles * 100.0;
+            _lost = tank.Tankdata.losses;
+            _lostPercent = _lost / (double)_battles * 100.0;
+            _draws = _battles - _won - _lost;
+            _drawsPercent = _draws / (double)_battles * 100.0;
+            _survived = tank.Tankdata.survivedBattles;
+            _survivedPercent = _survived / (double)_battles * 100.0;
+            _survivedAndWon = tank.Tankdata.winAndSurvived;
+            _survivedAndWonPercent = _survivedAndWon / (double)_battles * 100.0;
         }
     }
 }

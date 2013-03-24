@@ -3,8 +3,18 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowRatings : TankRowBase
+    public class TankRowRatings : TankRowBase, ITankRowRatings
     {
+        private int _battles;
+        private double _winrate;
+        private int _averageDamage;
+        private double _killDeathRatio;
+        private int _newEffRating;
+        private int _wn6;
+        private int _damageRatingRev1;
+        private int _kievArmorRating;
+        private int _markOfMastery;
+
         public int Battles
         {
             get { return _battles; }
@@ -58,16 +68,6 @@ namespace WotDossier.Domain.Rows
             get { return _markOfMastery; }
             set { _markOfMastery = value; }
         }
-
-        private int _battles;
-        private double _winrate;
-        private int _averageDamage;
-        private double _killDeathRatio;
-        private int _newEffRating;
-        private int _wn6;
-        private int _damageRatingRev1;
-        private int _kievArmorRating;
-        private int _markOfMastery;
 
         public TankRowRatings(TankJson tank)
             : base(tank)

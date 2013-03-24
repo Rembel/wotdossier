@@ -2,7 +2,7 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowXP : TankRowBase
+    public class TankRowXP : TankRowBase, ITankRowXP
     {
         private int _totalXP;
         private int _maximumXp;

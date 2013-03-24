@@ -4,7 +4,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowTime : TankRowBase
+    public class TankRowTime : TankRowBase, ITankRowTime
     {
          public DateTime LastBattle { get; set; }
          public TimeSpan PlayTime { get; set; }

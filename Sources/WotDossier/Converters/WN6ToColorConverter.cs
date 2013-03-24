@@ -15,7 +15,7 @@ namespace WotDossier.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            TankRowRatings eff = (TankRowRatings)value;
+            ITankRowRatings eff = (ITankRowRatings)value;
             if (eff.WN6 >= 1880) 
                 return Brushes.Purple;
             if (eff.WN6 >= 1585)

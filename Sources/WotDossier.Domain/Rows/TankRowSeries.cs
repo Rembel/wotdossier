@@ -2,7 +2,7 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowSeries : TankRowBase
+    public class TankRowSeries : TankRowBase, ITankRowSeries
     {
         private int _reaperLongest;
         private int _reaperProgress;

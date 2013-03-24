@@ -36,19 +36,19 @@ namespace WotDossier.Applications.ViewModel
         private readonly SettingsReader _reader = new SettingsReader(WotDossierSettings.SettingsPath);
 
         private PlayerStatisticViewModel _playerStatistic;
-        private IEnumerable<TankRowBattles> _battles;
-        private IEnumerable<TankRowXP> _xp;
-        private IEnumerable<TankRowFrags> _frags;
-        private IEnumerable<TankRowDamage> _damage;
-        private IEnumerable<TankRowBattleAwards> _battleAwards;
-        private IEnumerable<TankRowSpecialAwards> _specialAwards;
-        private IEnumerable<TankRowSeries> _series;
-        private IEnumerable<TankRowMedals> _medals;
-        private IEnumerable<TankRowRatings> _ratings;
-        private IEnumerable<TankRowPerformance> _performance;
+        private IEnumerable<TankRow> _battles;
+        private IEnumerable<TankRow> _xp;
+        private IEnumerable<TankRow> _frags;
+        private IEnumerable<TankRow> _damage;
+        private IEnumerable<TankRow> _battleAwards;
+        private IEnumerable<TankRow> _specialAwards;
+        private IEnumerable<TankRow> _series;
+        private IEnumerable<TankRow> _medals;
+        private IEnumerable<TankRow> _ratings;
+        private IEnumerable<TankRow> _performance;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
-        private IEnumerable<TankRowEpic> _epics;
-        private IEnumerable<TankRowTime> _time;
+        private IEnumerable<TankRow> _epics;
+        private IEnumerable<TankRow> _time;
 
         #region [ Properties ]
 
@@ -79,7 +79,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowTime> Time
+        public IEnumerable<TankRow> Time
         {
             get { return _time; }
             set
@@ -89,7 +89,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowEpic> Epics
+        public IEnumerable<TankRow> Epics
         {
             get { return _epics; }
             set
@@ -109,7 +109,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowPerformance> Performance
+        public IEnumerable<TankRow> Performance
         {
             get { return _performance; }
             set
@@ -119,7 +119,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowRatings> Ratings
+        public IEnumerable<TankRow> Ratings
         {
             get { return _ratings; }
             set
@@ -129,7 +129,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowMedals> Medals
+        public IEnumerable<TankRow> Medals
         {
             get { return _medals; }
             set
@@ -139,7 +139,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowSeries> Series
+        public IEnumerable<TankRow> Series
         {
             get { return _series; }
             set
@@ -149,7 +149,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowSpecialAwards> SpecialAwards
+        public IEnumerable<TankRow> SpecialAwards
         {
             get { return _specialAwards; }
             set
@@ -159,7 +159,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowBattleAwards> BattleAwards
+        public IEnumerable<TankRow> BattleAwards
         {
             get { return _battleAwards; }
             set
@@ -169,7 +169,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowDamage> Damage
+        public IEnumerable<TankRow> Damage
         {
             get { return _damage; }
             set
@@ -179,7 +179,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowFrags> Frags
+        public IEnumerable<TankRow> Frags
         {
             get { return _frags; }
             set
@@ -189,7 +189,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowXP> Xp
+        public IEnumerable<TankRow> Xp
         {
             get { return _xp; }
             set
@@ -199,7 +199,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowBattles> Battles
+        public IEnumerable<TankRow> Battles
         {
             get { return _battles; }
             set
@@ -368,35 +368,37 @@ namespace WotDossier.Applications.ViewModel
             {
                 List<TankJson> tanks = Read.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
 
-                IEnumerable<TankRowBattles> battles = tanks.Select(x => new TankRowBattles(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowXP> xp = tanks.Select(x => new TankRowXP(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowFrags> frags = tanks.Select(x => new TankRowFrags(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowDamage> damage = tanks.Select(x => new TankRowDamage(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowBattleAwards> battleAwards = tanks.Select(x => new TankRowBattleAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowSpecialAwards> specialAwards = tanks.Select(x => new TankRowSpecialAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowSeries> series = tanks.Select(x => new TankRowSeries(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowMedals> medals = tanks.Select(x => new TankRowMedals(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowRatings> ratings = tanks.Select(x => new TankRowRatings(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowPerformance> performance = tanks.Select(x => new TankRowPerformance(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowEpic> epic = tanks.Select(x => new TankRowEpic(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
-                IEnumerable<TankRowTime> time = tanks.Select(x => new TankRowTime(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                IEnumerable<TankRow> tankRows = tanks.Select(x => new TankRow(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+
+                //IEnumerable<TankRowBattles> battles = tanks.Select(x => new TankRowBattles(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowXP> xp = tanks.Select(x => new TankRowXP(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowFrags> frags = tanks.Select(x => new TankRowFrags(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowDamage> damage = tanks.Select(x => new TankRowDamage(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowBattleAwards> battleAwards = tanks.Select(x => new TankRowBattleAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowSpecialAwards> specialAwards = tanks.Select(x => new TankRowSpecialAwards(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowSeries> series = tanks.Select(x => new TankRowSeries(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowMedals> medals = tanks.Select(x => new TankRowMedals(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowRatings> ratings = tanks.Select(x => new TankRowRatings(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowPerformance> performance = tanks.Select(x => new TankRowPerformance(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowEpic> epic = tanks.Select(x => new TankRowEpic(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                //IEnumerable<TankRowTime> time = tanks.Select(x => new TankRowTime(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
 
                 IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
                 IEnumerable<TankRowMasterTanker> masterTanker = Read.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value)).Select(x => new TankRowMasterTanker(x.Value, Read.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
 
-                Battles= battles;
-                Xp= xp;
-                Frags= frags;
-                Damage= damage;
-                BattleAwards= battleAwards;
-                SpecialAwards= specialAwards;
-                Series= series;
-                Medals= medals;
-                Ratings= ratings;
-                Performance= performance;
+                Battles = tankRows;
+                Xp = tankRows;
+                Frags = tankRows;
+                Damage = tankRows;
+                BattleAwards = tankRows;
+                SpecialAwards = tankRows;
+                Series = tankRows;
+                Medals = tankRows;
+                Ratings = tankRows;
+                Performance = tankRows;
                 MasterTanker= masterTanker;
-                Epics= epic;
-                Time = time;
+                Epics = tankRows;
+                Time = tankRows;
             };
 
             System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);

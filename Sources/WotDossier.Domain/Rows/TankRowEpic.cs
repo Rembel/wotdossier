@@ -2,7 +2,7 @@
 
 namespace WotDossier.Domain.Rows
 {
-    public class TankRowEpic : TankRowBase
+    public class TankRowEpic : TankRowBase, ITankRowEpic
     {
         private int _boelter;
         private int _radleyWalters;
@@ -23,30 +23,6 @@ namespace WotDossier.Domain.Rows
         private int _fadin;
         private int _heroesOfRaseiniai;
         private int _deLanglade;
-
-        public TankRowEpic(TankJson tank)
-            : base(tank)
-        {
-            _boelter = tank.Epic.Boelter;
-            _radleyWalters = tank.Epic.RadleyWalters;
-            _lafayettePool = tank.Epic.LafayettePool;
-            _orlik = tank.Epic.Orlik;
-            _oskin = tank.Epic.Oskin;
-            _lehvaslaiho = tank.Epic.Lehvaslaiho;
-            _nikolas = tank.Epic.Nikolas;
-            _halonen = tank.Epic.Halonen;
-            _burda = tank.Epic.Burda;
-            _pascucci = tank.Epic.Pascucci;
-            _dumitru = tank.Epic.Dumitru;
-            _tamadaYoshio = tank.Epic.TamadaYoshio;
-            _billotte = tank.Epic.Billotte;
-            _brunoPietro = tank.Epic.BrunoPietro;
-            _tarczay = tank.Epic.Tarczay;
-            _kolobanov = tank.Epic.Kolobanov;
-            _fadin = tank.Epic.Fadin;
-            _heroesOfRaseiniai = tank.Special.heroesOfRassenay;
-            _deLanglade = tank.Epic.DeLanglade;
-        }
 
         public int Boelter
         {
@@ -160,6 +136,30 @@ namespace WotDossier.Domain.Rows
         {
             get { return _deLanglade; }
             set { _deLanglade = value; }
+        }
+
+        public TankRowEpic(TankJson tank)
+            : base(tank)
+        {
+            _boelter = tank.Epic.Boelter;
+            _radleyWalters = tank.Epic.RadleyWalters;
+            _lafayettePool = tank.Epic.LafayettePool;
+            _orlik = tank.Epic.Orlik;
+            _oskin = tank.Epic.Oskin;
+            _lehvaslaiho = tank.Epic.Lehvaslaiho;
+            _nikolas = tank.Epic.Nikolas;
+            _halonen = tank.Epic.Halonen;
+            _burda = tank.Epic.Burda;
+            _pascucci = tank.Epic.Pascucci;
+            _dumitru = tank.Epic.Dumitru;
+            _tamadaYoshio = tank.Epic.TamadaYoshio;
+            _billotte = tank.Epic.Billotte;
+            _brunoPietro = tank.Epic.BrunoPietro;
+            _tarczay = tank.Epic.Tarczay;
+            _kolobanov = tank.Epic.Kolobanov;
+            _fadin = tank.Epic.Fadin;
+            _heroesOfRaseiniai = tank.Special.heroesOfRassenay;
+            _deLanglade = tank.Epic.DeLanglade;
         }
     }
 }

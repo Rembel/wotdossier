@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using WotDossier.Applications.View;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -244,14 +246,22 @@ namespace WotDossier.Applications.ViewModel
         private void InitTanksStatistic(FileInfo cacheFile)
         {
             Action act = () =>
-            {
-                List<TankJson> tanks = Read.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+                {
+                    Base32Encoder encoder = new Base32Encoder();
+                    
+                    string str = cacheFile.Name.Replace(cacheFile.Extension, string.Empty);
+                    byte[] decodedFileNameBytes = encoder.Decode(str.ToLowerInvariant());
+                    string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
 
-                Tanks = tanks.Select(x => new TankRow(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                    string playerName = decodedFileName.Split(';')[1];
 
-                IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
-                IEnumerable<TankRowMasterTanker> masterTanker = Read.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value)).Select(x => new TankRowMasterTanker(x.Value, Read.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
-                MasterTanker = masterTanker;
+                    List<TankJson> tanks = Read.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+
+                    Tanks = tanks.Select(x => new TankRow(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+
+                    IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
+                    IEnumerable<TankRowMasterTanker> masterTanker = Read.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value)).Select(x => new TankRowMasterTanker(x.Value, Read.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
+                    MasterTanker = masterTanker;
             };
 
             System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);

@@ -50,6 +50,7 @@ namespace WotDossier.Domain.Entities
 		public static readonly string PropRatingSpottedPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingSpottedPlace);
 		public static readonly string PropRatingXpValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingXpValue);
 		public static readonly string PropRatingXpPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingXpPlace);
+		public static readonly string PropAvgLevel = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.AvgLevel);
 		public static readonly string PropPlayerId = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.PlayerId);
 		
 		#endregion
@@ -267,7 +268,7 @@ namespace WotDossier.Domain.Entities
             CapturePoints = stat.data.battles.Capture_points;
             DroppedCapturePoints = stat.data.battles.Dropped_capture_points;
             Updated = Utils.UnixDateToDateTime((long)stat.data.updated_at);
-
+		
             #endregion
 
             #region Ratings init

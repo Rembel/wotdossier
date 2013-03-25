@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="Entities\DbVersionEntity.cs" />
+    <Compile Include="Entities\TankEntity.cs" />
+    <Compile Include="Entities\TankStatisticEntity.cs" />
     <Compile Include="Player\ClanCommonInfo.cs" />
     <Compile Include="Player\ClanEmblems.cs" />
     <Compile Include="Player\ClanExt.cs" />

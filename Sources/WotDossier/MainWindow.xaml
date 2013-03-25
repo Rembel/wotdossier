@@ -56,7 +56,7 @@
             <!--XP-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_XP}" Name="tabXP">
                 <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Xp}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -71,7 +71,7 @@
             <!--Battles-->
             <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Battles}" Name="tabBattles">
                 <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Battles}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -94,7 +94,7 @@
             <!--Frags-->
             <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_Frags}" Name="tabFrags">
                 <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Frags}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -114,7 +114,7 @@
             <!--Damage-->
             <TabItem TabIndex="3" Header="{x:Static Resources:Resources.Tab_Header_Damage}" Name="tabDamage">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Damage}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -131,7 +131,7 @@
             <!--Battle awards-->
             <TabItem TabIndex="4" Header="{x:Static Resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding BattleAwards}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -157,7 +157,7 @@
             <!--Special awards-->
             <TabItem TabIndex="5" Header="{x:Static Resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding SpecialAwards}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -181,7 +181,7 @@
             <!--Series-->
             <TabItem TabIndex="6" Header="{x:Static Resources:Resources.Tab_Header_Series}" Name="tabSeries">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Series}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -203,7 +203,7 @@
             <!--Medals-->
             <TabItem TabIndex="7" Header="{x:Static Resources:Resources.Tab_Header_Medals}" Name="tabMedals">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Medals}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -223,7 +223,7 @@
             <!--Ratings-->
             <TabItem TabIndex="8" Header="{x:Static Resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Ratings}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -244,7 +244,7 @@
             <!--Performance-->
             <TabItem TabIndex="9" Header="{x:Static Resources:Resources.Tab_Header_Performance}" Name="tabPerformance">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Performance}" VerticalAlignment="Stretch" Name="dgPerformance" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgPerformance" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -279,7 +279,7 @@
             <!--Epics-->
             <TabItem TabIndex="12" Header="{x:Static Resources:Resources.Tab_Header_Epics}" Name="tabEpics">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Epics}" VerticalAlignment="Stretch" Name="dgEpics" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgEpics" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -310,7 +310,7 @@
             <!--Time-->
             <TabItem TabIndex="13" Header="{x:Static Resources:Resources.Tab_Header_Time}" Name="tabTime">
                 <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Time}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

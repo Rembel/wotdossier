@@ -83,7 +83,7 @@ namespace WotDossier.Dal
                     statisticEntity.Update(stat);
                     _dataProvider.Save(statisticEntity);
                 }
-                    //update current date record
+                //update current date record
                 else if (statisticEntity.Updated.Date == updated.Date)
                 {
                     statisticEntity.Update(stat);
@@ -156,8 +156,39 @@ namespace WotDossier.Dal
                         entity.Name = tank.Common.tanktitle;
                         entity.TankType = tank.Common.type;
                         entity.Tier = tank.Common.tier;
-
+                        TankStatisticEntity statisticEntity = new TankStatisticEntity();
+                        statisticEntity.TankIdObject = entity;
+                        statisticEntity.Updated = tank.Common.lastBattleTimeR;
+                        statisticEntity.Raw = tank.Raw;
+                        entity.TankStatisticEntities.Add(statisticEntity);
                         _dataProvider.Save(entity);
+                    }
+                    else
+                    {
+                        TankEntity tankAlias = null;
+                        TankStatisticEntity statisticEntity = _dataProvider.QueryOver<TankStatisticEntity>()
+                            .JoinAlias( x => x.TankIdObject, () => tankAlias)
+                            .Where(x => 
+                                tankAlias.PlayerId == playerEntity.Id 
+                                && tankAlias.TankId == tank.Common.tankid 
+                                && tankAlias.CountryId == tank.Common.countryid)
+                            .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<TankStatisticEntity>();
+                        DateTime updated = tank.Common.lastBattleTimeR;
+                        //create new record
+                        if (statisticEntity == null || statisticEntity.Updated < updated.Date)
+                        {
+                            statisticEntity = new TankStatisticEntity();
+                            statisticEntity.TankIdObject = tankEntity;
+                            statisticEntity.Updated = tank.Common.lastBattleTimeR;
+                            statisticEntity.Raw = tank.Raw;
+                            _dataProvider.Save(statisticEntity);
+                        }
+                        //update current date record
+                        else if (statisticEntity.Updated.Date == updated.Date)
+                        {
+                            statisticEntity.Update(tank);
+                            _dataProvider.Save(statisticEntity);
+                        }
                     }
                 }
 

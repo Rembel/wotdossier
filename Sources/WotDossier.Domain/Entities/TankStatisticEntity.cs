@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using WotDossier.Common;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Entities
 {
@@ -38,7 +38,12 @@ namespace WotDossier.Domain.Entities
 		/// </summary>
 		public virtual TankEntity TankIdObject { get; set; }
 
-		
+
+	    public virtual void Update(TankJson tank)
+	    {
+            Updated = Utils.UnixDateToDateTime(tank.Common.updated);
+            Raw = tank.Raw;
+	    }
 	}
 }
 

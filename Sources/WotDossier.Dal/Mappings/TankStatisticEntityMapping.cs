@@ -10,10 +10,10 @@ namespace WotDossier.Dal.Mappings
         public TankStatisticMapping()
         {
 			Map(v => v.Updated, "Updated");
-			Map(v => v.Raw, "Raw");
-			Map(v=>v.TankId, "TankId");
+            Map(v => v.Raw, "Raw").CustomSqlType("BinaryBlob");
+			Map(v=>v.TankId, "TankId").ReadOnly();
 		
-			References(v => v.TankIdObject).Column(Column(v => v.TankId)).Cascade.All();
+			References(v => v.TankIdObject).Column(Column(v => v.TankId)).Insert();
 
 
 			Version(v => v.Version);

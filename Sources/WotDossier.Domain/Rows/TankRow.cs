@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using WotDossier.Common;
 using WotDossier.Domain.Tank;
 
@@ -773,16 +775,19 @@ namespace WotDossier.Domain.Rows
         #endregion
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// Stat updated
         /// </summary>
-        protected TankRow()
+        public DateTime Updated { get; set; }
+
+        public TankRow(TankJson tank)
+            : this(tank, new List<TankJson>())
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankRow(TankJson tank)
+        public TankRow(TankJson tank, IEnumerable<TankJson> list)
         {
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
@@ -947,6 +952,21 @@ namespace WotDossier.Domain.Rows
             _maximumXp = tank.Tankdata.maxXP;
             _averageXp = _totalXP / tank.Tankdata.battlesCount;
             #endregion
+
+            Updated = Utils.UnixDateToDateTime(tank.Common.updated);
+            _list = list.Select(x => new TankRow(x));
+            _prevPlayerStatistic = _list.Where(x => x.Updated <= Updated).OrderByDescending(x => x.Updated).FirstOrDefault() ?? this;
+            _previousDate = Updated;
+        }
+
+        private readonly IEnumerable<TankRow> _list;
+        private DateTime _previousDate;
+        private TankRow _prevPlayerStatistic;
+
+        public void SetPreviousDate(DateTime date)
+        {
+            _previousDate = date;
+            _prevPlayerStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= date) ?? this;
         }
     }
 }

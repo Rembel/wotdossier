@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
+using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
+using WotDossier.Domain.Tank;
+using System.Linq;
 
 namespace WotDossier.Dal
 {
@@ -53,56 +56,38 @@ namespace WotDossier.Dal
             return list;
         }
 
-        public PlayerEntity GetOrCreatePlayer(string playerId, PlayerStat stat)
+        public PlayerEntity UpdatePlayerStatistic(string playerId, PlayerStat stat)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
             PlayerEntity playerEntity = null;
             try
             {
-                playerEntity =
-                    _dataProvider.QueryOver<PlayerEntity>()
-                                 .Where(x => x.Name == playerId)
-                                 .Take(1)
-                                 .SingleOrDefault<PlayerEntity>();
+                string name = stat.data.name;
+                int id = stat.data.id;
+                DateTime creaded = Utils.UnixDateToDateTime((long)stat.data.created_at);
 
-                PlayerStatisticEntity statisticEntity;
-                if (playerEntity == null)
+                playerEntity = GetOrCreatePlayer(playerId, name, id, creaded);
+
+                PlayerStatisticEntity statisticEntity = _dataProvider.QueryOver<PlayerStatisticEntity>()
+                                               .OrderBy(x => x.Updated)
+                                               .Desc.Take(1)
+                                               .SingleOrDefault<PlayerStatisticEntity>();
+                DateTime updated = Utils.UnixDateToDateTime((long) stat.data.updated_at).Date;
+                //create new record
+                if (statisticEntity == null ||
+                    (statisticEntity.Updated.Date != updated.Date && statisticEntity.Updated < updated))
                 {
                     statisticEntity = new PlayerStatisticEntity();
-                    playerEntity = new PlayerEntity();
-                    playerEntity.Name = stat.data.name;
-                    playerEntity.PlayerId = stat.data.id;
-                    playerEntity.Creaded = Utils.UnixDateToDateTime((long) stat.data.created_at);
-
-                    _dataProvider.Save(playerEntity);
-
                     statisticEntity.PlayerId = playerEntity.Id;
                     statisticEntity.Update(stat);
                     _dataProvider.Save(statisticEntity);
                 }
-                else
-                {
-                    statisticEntity = _dataProvider.QueryOver<PlayerStatisticEntity>()
-                                                   .OrderBy(x => x.Updated)
-                                                   .Desc.Take(1)
-                                                   .SingleOrDefault<PlayerStatisticEntity>();
-                    DateTime updated = Utils.UnixDateToDateTime((long) stat.data.updated_at).Date;
-                    //create new record
-                    if (statisticEntity == null ||
-                        (statisticEntity.Updated.Date != updated.Date && statisticEntity.Updated < updated))
-                    {
-                        statisticEntity = new PlayerStatisticEntity();
-                        statisticEntity.PlayerId = playerEntity.Id;
-                        statisticEntity.Update(stat);
-                        _dataProvider.Save(statisticEntity);
-                    }
                     //update current date record
-                    else if (statisticEntity.Updated.Date == updated.Date)
-                    {
-                        statisticEntity.Update(stat);
-                        _dataProvider.Save(statisticEntity);
-                    }
+                else if (statisticEntity.Updated.Date == updated.Date)
+                {
+                    statisticEntity.Update(stat);
+                    _dataProvider.Save(statisticEntity);
                 }
 
                 _dataProvider.CommitTransaction();
@@ -119,6 +104,75 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
+        }
+
+        public PlayerEntity GetOrCreatePlayer(string playerId, string name, int id, DateTime creaded)
+        {
+            PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>()
+                                        .Where(x => x.Name == playerId)
+                                        .Take(1)
+                                        .SingleOrDefault<PlayerEntity>();
+
+            if (playerEntity == null)
+            {
+                playerEntity = new PlayerEntity();
+                playerEntity.Name = name;
+                playerEntity.PlayerId = id;
+                playerEntity.Creaded = creaded;
+
+                _dataProvider.Save(playerEntity);
+            }
+            return playerEntity;
+        }
+
+        public void UpdateTankStatistic(string playerName, List<TankJson> tanks)
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+            PlayerSearchJson player = WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "ru" }) ?? 
+                WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "eu" });
+
+            string name = player.name;
+            int id = player.id;
+            DateTime creaded = Utils.UnixDateToDateTime((long)player.created_at);
+            try
+            {
+                PlayerEntity playerEntity = GetOrCreatePlayer(playerName, name, id, creaded);
+
+                IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
+
+                foreach (TankJson tank in tanks)
+                {
+                    TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tank.Common.tankid && x.CountryId == tank.Common.countryid);
+                    if (tankEntity == null)
+                    {
+                        TankEntity entity = new TankEntity();
+                        entity.CountryId = tank.Common.countryid;
+                        entity.CountryCode = WotApiHelper.GetCountryNameCode(tank.Common.countryid);
+                        entity.TankId = tank.Common.tankid;
+                        entity.Icon = tank.TankContour.iconid;
+                        entity.PlayerId = playerEntity.Id;
+                        entity.IsPremium = tank.Common.premium == 1;
+                        entity.Name = tank.Common.tanktitle;
+                        entity.TankType = tank.Common.type;
+                        entity.Tier = tank.Common.tier;
+
+                        _dataProvider.Save(entity);
+                    }
+                }
+
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                _log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.ClearCache();
+                _dataProvider.CloseSession();
+            }
         }
     }
 }

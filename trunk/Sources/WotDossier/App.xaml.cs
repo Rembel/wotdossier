@@ -7,6 +7,7 @@ using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
 using System.Linq;
+using WotDossier.Dal;
 
 namespace WotDossier
 {

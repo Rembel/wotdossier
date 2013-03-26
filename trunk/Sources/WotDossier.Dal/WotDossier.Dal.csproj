@@ -70,6 +70,7 @@
     <Compile Include="Mappings\TankStatisticEntityMapping.cs" />
     <Compile Include="NHibernate\ConcurrencyException.cs" />
     <Compile Include="NHibernate\DataProvider.cs" />
+    <Compile Include="NHibernate\ExSqlServerCeDriver.cs" />
     <Compile Include="NHibernate\FlushEntityEventListener.cs" />
     <Compile Include="NHibernate\ISessionStorage.cs" />
     <Compile Include="NHibernate\NHibernateSessionStorage.cs" />

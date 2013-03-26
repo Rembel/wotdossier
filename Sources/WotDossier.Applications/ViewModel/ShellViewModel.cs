@@ -145,13 +145,11 @@ namespace WotDossier.Applications.ViewModel
                 return null;
             }
 
-            PlayerStat playerStat = Read.LoadPlayerStat(settings);
-
-            PlayerEntity player;
+            PlayerStat playerStat = WotApiClient.Instance.LoadPlayerStat(settings);
 
             if (playerStat != null)
             {
-                player = _dossierRepository.GetOrCreatePlayer(settings.PlayerId, playerStat);
+                PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(settings.PlayerId, playerStat);
 
                 var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
 
@@ -255,12 +253,15 @@ namespace WotDossier.Applications.ViewModel
 
                     string playerName = decodedFileName.Split(';')[1];
 
-                    List<TankJson> tanks = Read.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+                    List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+
+                    _dossierRepository.UpdateTankStatistic(playerName, tanks);
 
                     Tanks = tanks.Select(x => new TankRow(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
 
                     IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
-                    IEnumerable<TankRowMasterTanker> masterTanker = Read.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value)).Select(x => new TankRowMasterTanker(x.Value, Read.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
+                    IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
+                        .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
                     MasterTanker = masterTanker;
             };
 

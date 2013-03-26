@@ -8,6 +8,7 @@ using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using Common.Logging;
 using WotDossier.Applications;
+using WotDossier.Dal;
 using WotDossier.Domain;
 
 namespace WotDossier.Converters

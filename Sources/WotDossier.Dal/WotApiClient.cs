@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Windows;
+using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Domain;
 using System.Linq;
 using WotDossier.Domain.Player;
-using WotDossier.Domain.Rows;
 using WotDossier.Domain.Tank;
 
-namespace WotDossier.Applications
+namespace WotDossier.Dal
 {
-
-    public class Read
+    public class WotApiClient
     {
+        protected static readonly ILog _log = LogManager.GetLogger("WotApiClient");
+
         private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
         private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
 
         private static readonly object _syncObject = new object();
-        private static volatile Read _instance = new Read();
+        private static volatile WotApiClient _instance = new WotApiClient();
 
         private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> _tankDictionary;
         private static readonly Dictionary<string, TankContour> _contoursDictionary;
@@ -38,13 +38,13 @@ namespace WotDossier.Applications
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        static Read()
+        static WotApiClient()
         {
             _tankDictionary = ReadTanksLibrary();
             _contoursDictionary = ReadTankContours();
         }
 
-        public static Read Instance
+        public static WotApiClient Instance
         {
             get
             {
@@ -54,7 +54,7 @@ namespace WotDossier.Applications
                     {
                         if (_instance == null)
                         {
-                            _instance = new Read();
+                            _instance = new WotApiClient();
                         }
                     }
                 }
@@ -62,7 +62,7 @@ namespace WotDossier.Applications
             }
         }
 
-        public static List<TankJson> ReadTanks(string json)
+        public List<TankJson> ReadTanks(string json)
         {
             List<TankJson> tanks = new List<TankJson>();
 
@@ -99,12 +99,12 @@ namespace WotDossier.Applications
             return tanks;
         }
 
-        public static TankContour GetTankContour(TankJson tank)
+        public TankContour GetTankContour(TankJson tank)
         {
             return GetTankContour(tank.Info);
         }
 
-        public static TankContour GetTankContour(TankInfo tank)
+        public TankContour GetTankContour(TankInfo tank)
         {
             string key = string.Format("{0}_{1}", tank.countryCode, tank.icon.ToLowerInvariant());
             if (_contoursDictionary.ContainsKey(key))
@@ -112,26 +112,6 @@ namespace WotDossier.Applications
                 return _contoursDictionary[key];
             }
             return TankContour.Empty;
-        }
-
-        private static string GetCountryNameCode(int countryid)
-        {
-            switch (countryid)
-            {
-                case 0:
-                    return "ussr";
-                case 1:
-                    return "germany";
-                case 2:
-                    return "usa";
-                case 3:
-                    return "china";
-                case 4:
-                    return "france";
-                case 5:
-                    return "uk";
-            }
-            return string.Empty;
         }
 
         private static Dictionary<KeyValuePair<int, int>, TankInfo> ReadTanksLibrary()
@@ -145,7 +125,7 @@ namespace WotDossier.Applications
                 foreach (JToken jToken in parsedData)
                 {
                     TankInfo tank = JsonConvert.DeserializeObject<TankInfo>(jToken.ToString());
-                    tank.countryCode = GetCountryNameCode(tank.countryid);
+                    tank.countryCode = WotApiHelper.GetCountryNameCode(tank.countryid);
                     tanks.Add(tank);
                 }
             }
@@ -175,18 +155,25 @@ namespace WotDossier.Applications
         /// https://gist.github.com/bartku/2419852
         /// </summary>
         /// <returns></returns>
-        public static PlayerStat LoadPlayerStat(AppSettings settings)
+        public PlayerStat LoadPlayerStat(AppSettings settings)
         {
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
                 return null;
             }
             
-#if DEBUG
+#if !DEBUG
             long playerId = 10800699;
             using (StreamReader streamReader = new StreamReader(@"stat.json"))
 #else
-            long playerId = GetPlayerId(settings);
+            var player = GetPlayerServerData(settings);
+
+            if (player == null)
+            {
+                return null;
+            }
+
+            long playerId = player.id;
             string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response;
@@ -197,7 +184,7 @@ namespace WotDossier.Applications
             }
             catch (Exception e)
             {
-                MessageBox.Show("Can't get player info from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                _log.Error("Can't get player info from server", e);
                 return null;
             }
             
@@ -224,7 +211,7 @@ namespace WotDossier.Applications
         /// https://gist.github.com/bartku/2419852
         /// </summary>
         /// <returns></returns>
-        public static PlayerStat LoadPrevPlayerStat(AppSettings settings)
+        public PlayerStat LoadPrevPlayerStat(AppSettings settings)
         {
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
@@ -240,7 +227,7 @@ namespace WotDossier.Applications
         }
 //#endif
 
-        public static long GetPlayerId(AppSettings settings)
+        public PlayerSearchJson GetPlayerServerData(AppSettings settings)
         {
             string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
@@ -251,7 +238,12 @@ namespace WotDossier.Applications
                 JsonTextReader reader = new JsonTextReader(streamReader);
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = (JObject)se.Deserialize(reader);
-                return (long)((JValue)parsedData["data"]["items"][0].Last.First).Value;
+
+                if (parsedData["data"]["items"].Any())
+                {
+                    return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"]["items"][0].ToString());
+                }
+                return null;
             }
         }
 
@@ -297,7 +289,7 @@ namespace WotDossier.Applications
 
             //Transform byte[] unzip data to string
             System.Text.StringBuilder sB = new System.Text.StringBuilder(rByte);
-            //Read the number of bytes GZipStream red and do not a for each bytes in
+            //WotApiClient the number of bytes GZipStream red and do not a for each bytes in
             //resultByteArray;
             for (int i = 0; i < rByte; i++)
             {

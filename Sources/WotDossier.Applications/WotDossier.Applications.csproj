@@ -40,9 +40,6 @@
     <Reference Include="DynamicDataDisplay">
       <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -60,7 +57,6 @@
     <Compile Include="ApplicationController.cs" />
     <Compile Include="CacheHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Read.cs" />
     <Compile Include="SettingsReader.cs" />
     <Compile Include="ViewModel\DataPoint.cs" />
     <Compile Include="ViewModel\IDataPoint.cs" />
@@ -70,7 +66,6 @@
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="View\ISettingsView.cs" />
     <Compile Include="View\IShellView.cs" />
-    <Compile Include="WotApiSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

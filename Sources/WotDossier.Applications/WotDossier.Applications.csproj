@@ -77,24 +77,18 @@
     <Compile Include="ViewModel\Rows\ITankRowSpecialAwards.cs" />
     <Compile Include="ViewModel\Rows\ITankRowTime.cs" />
     <Compile Include="ViewModel\Rows\ITankRowXP.cs" />
-    <Compile Include="ViewModel\Rows\TankRow.cs" />
-    <Compile Include="ViewModel\Rows\TankRowBase.cs" />
-    <Compile Include="ViewModel\Rows\TankRowBattleAwards.cs" />
-    <Compile Include="ViewModel\Rows\TankRowBattles.cs" />
-    <Compile Include="ViewModel\Rows\TankRowDamage.cs" />
-    <Compile Include="ViewModel\Rows\TankRowEpic.cs" />
-    <Compile Include="ViewModel\Rows\TankRowFrags.cs" />
-    <Compile Include="ViewModel\Rows\TankRowMasterTanker.cs" />
-    <Compile Include="ViewModel\Rows\TankRowMedals.cs" />
-    <Compile Include="ViewModel\Rows\TankRowPerformance.cs" />
-    <Compile Include="ViewModel\Rows\TankRowRatings.cs" />
-    <Compile Include="ViewModel\Rows\TankRowSeries.cs" />
-    <Compile Include="ViewModel\Rows\TankRowSpecialAwards.cs" />
-    <Compile Include="ViewModel\Rows\TankRowTime.cs" />
-    <Compile Include="ViewModel\Rows\TankRowXP.cs" />
+    <Compile Include="ViewModel\Rows\TankRowBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\Rows\TankRowMasterTanker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\Rows\TankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModelBase.cs" />
+    <Compile Include="ViewModel\TankStatisticViewModel.cs" />
+    <Compile Include="View\ITankStatisticView.cs" />
     <Compile Include="View\ISettingsView.cs" />
     <Compile Include="View\IShellView.cs" />
   </ItemGroup>

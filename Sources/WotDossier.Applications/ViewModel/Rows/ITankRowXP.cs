@@ -2,8 +2,8 @@
 {
     public interface ITankRowXP
     {
-        int TotalXP { get; set; }
-        int MaximumXP { get; set; }
-        int AverageXP { get; set; }
+        int Xp { get; set; }
+        int MaxXp { get; set; }
+        int BattleAvgXp { get; set; }
     }
 }

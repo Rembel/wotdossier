@@ -16,15 +16,15 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             ITankRowRatings eff = (ITankRowRatings)value;
-            if (eff.NewEffRating >= 1725) 
+            if (eff.EffRating >= 1725) 
                 return Brushes.Purple;
-            if (eff.NewEffRating >= 1465)
+            if (eff.EffRating >= 1465)
                 return Brushes.CornflowerBlue;
-            if (eff.NewEffRating >= 1150)
+            if (eff.EffRating >= 1150)
                 return Brushes.Lime;
-            if (eff.NewEffRating >= 870)
+            if (eff.EffRating >= 870)
                 return Brushes.Yellow;
-            if (eff.NewEffRating >= 645)
+            if (eff.EffRating >= 645)
                 return Brushes.DarkOrange;
             return Brushes.Red;
         }

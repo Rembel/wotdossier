@@ -39,7 +39,7 @@ namespace WotDossier.Applications.ViewModel
 
         private PlayerStatisticViewModel _playerStatistic;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
-        private IEnumerable<TankRow> _tanks;
+        private IEnumerable<TankStatisticRowViewModel> _tanks;
 
         #region [ Properties ]
 
@@ -80,7 +80,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRow> Tanks
+        public IEnumerable<TankStatisticRowViewModel> Tanks
         {
             get { return _tanks; }
             set
@@ -257,12 +257,13 @@ namespace WotDossier.Applications.ViewModel
 
                     _dossierRepository.UpdateTankStatistic(playerName, tanks);
 
-                    Tanks = tanks.Select(x => new TankRow(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                    Tanks = tanks.Select(x => new TankStatisticRowViewModel(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
 
                     IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
                     IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                         .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
                     MasterTanker = masterTanker;
+                    EventAggregatorFactory.EventAggregator.GetEvent<OpenTankStatisticEvent>().Publish(Tanks.FirstOrDefault());
             };
 
             System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
@@ -307,5 +308,9 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Close();
         }
 
+    }
+
+    public class OpenTankStatisticEvent : BaseEvent<TankStatisticRowViewModel>
+    {
     }
 }

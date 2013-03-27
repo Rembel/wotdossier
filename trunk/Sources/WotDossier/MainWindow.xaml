@@ -22,6 +22,7 @@
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
             <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>
             <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Click="MenuItemSettings_Click"></MenuItem>
+            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
         </Menu>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--Common tab-->

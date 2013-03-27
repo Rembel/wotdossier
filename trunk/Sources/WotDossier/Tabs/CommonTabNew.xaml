@@ -62,8 +62,8 @@
                     <RowDefinition Height="25"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"></ColumnDefinition>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
                     <ColumnDefinition Width="150"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Foreground="#FFA759" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
@@ -73,7 +73,7 @@
                 <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Victories}"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="1" DataContext="{Binding}">
                     <TextBlock.Text>
-                        <MultiBinding Converter="{x:Static Converters:ValuePercentFormater.Default}" >
+                        <MultiBinding Converter="{x:Static Converters:ValueNearestPercentFormater.Default}" >
                             <Binding Path="Wins" />
                             <Binding Path="WinsPercent" />
                         </MultiBinding>
@@ -107,7 +107,7 @@
                 <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="{x:Static Resources:Resources.Common_BattlesSurvived}"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="1">
                     <TextBlock.Text>
-                        <MultiBinding Converter="{x:Static Converters:ValuePercentFormater.Default}" >
+                        <MultiBinding Converter="{x:Static Converters:ValueNearestPercentFormater.Default}" >
                             <Binding Path="SurvivedBattles" />
                             <Binding Path="SurvivedBattlesPercent" />
                         </MultiBinding>

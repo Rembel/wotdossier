@@ -680,4 +680,19 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Tooltip_MarkOfMastery_4" xml:space="preserve">
     <value>Earn more experience in a single battle than the average highest experience of 99% of all players in the same tank within the last seven days.</value>
   </data>
+  <data name="ButtonOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ButtonSysInfo" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="WindowTitle_AboutWindow" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MenuItem_Header_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
 </root>

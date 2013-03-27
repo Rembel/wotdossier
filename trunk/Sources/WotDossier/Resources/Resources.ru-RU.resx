@@ -699,4 +699,19 @@
   <data name="Tooltip_MarkOfMastery_4" xml:space="preserve">
     <value>Присваивается игроку за мастерство владения боевой машиной. Для получения награды необходимо заработать больше опыта за бой, чем средний максимальный опыт за неделю у 99% игроков на данной технике. Не выдается в клановых войнах.</value>
   </data>
+  <data name="ButtonOk" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="ButtonSysInfo" xml:space="preserve">
+    <value>Системная информация</value>
+  </data>
+  <data name="WindowTitle_AboutWindow" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="MenuItem_Header_About" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Версия</value>
+  </data>
 </root>

@@ -106,10 +106,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\ValueNearestPercentFormater.cs" />
     <Compile Include="Converters\MarkOfMasteryToTooltipConverter.cs" />
     <Compile Include="Converters\TankClassToImageConverter.cs" />
     <Compile Include="Converters\TankIconImageConverter2.cs" />
@@ -138,12 +142,16 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\CommonTab.xaml.cs">
-      <DependentUpon>CommonTab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\CommonTabNew.xaml.cs">
       <DependentUpon>CommonTabNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\TankStatisticWindow.xaml.cs">
+      <DependentUpon>TankStatisticWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\ClanView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,11 +254,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tabs\CommonTab.xaml">
+    <Page Include="Tabs\CommonTabNew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tabs\CommonTabNew.xaml">
+    <Page Include="Tabs\TankStatisticWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

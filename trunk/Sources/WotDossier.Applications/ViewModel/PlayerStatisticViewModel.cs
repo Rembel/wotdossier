@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using WotDossier.Common;
 using WotDossier.Domain.Entities;
-using System.Linq;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public class PlayerStatisticViewModel : INotifyPropertyChanged
+    public class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
     {
         #region Constants
 
@@ -30,18 +28,6 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        #region Fields
-
-        private readonly IEnumerable<PlayerStatisticViewModel> _list;
-        private DateTime _previousDate;
-        private PlayerStatisticViewModel _prevPlayerStatistic;
-        private double _effRating;
-        private double _wn6Rating;
-        private double _kievArmorRating;
-        private int _battlesPerDay;
-
-        #endregion
-
         #region Common
 
         public string Name { get; set; }
@@ -50,131 +36,6 @@ namespace WotDossier.Applications.ViewModel
         /// Player account created
         /// </summary>
         public DateTime Created { get; set; }
-
-        /// <summary>
-        /// Stat updated
-        /// </summary>
-        public DateTime Updated { get; set; }
-
-        public int BattlesCount { get; set; }
-
-        public int Wins { get; set; }
-
-        public int Losses { get; set; }
-
-        public int SurvivedBattles { get; set; }
-
-        public int Xp { get; set; }
-
-        public int BattleAvgXp { get; set; }
-
-        public int MaxXp { get; set; }
-
-        public int Frags { get; set; }
-
-        public int Spotted { get; set; }
-
-        public int HitsPercents { get; set; }
-
-        public int DamageDealt { get; set; }
-
-        public int CapturePoints { get; set; }
-
-        public int DroppedCapturePoints { get; set; }
-
-        #endregion
-
-        #region Percents
-
-        public double WinsPercent { get; set; }
-
-        public double LossesPercent { get; set; }
-
-        public double SurvivedBattlesPercent { get; set; }
-
-        #endregion
-
-        #region Common delta
-
-        public int BattlesCountDelta
-        {
-            get { return BattlesCount - _prevPlayerStatistic.BattlesCount; }
-        }
-
-        public int WinsDelta
-        {
-            get { return Wins - _prevPlayerStatistic.Wins; }
-        }
-
-        public double WinsPercentDelta
-        {
-            get { return WinsPercent - _prevPlayerStatistic.WinsPercent; }
-        }
-
-        public int LossesDelta
-        {
-            get { return Losses - _prevPlayerStatistic.Losses; }
-        }
-
-        public double LossesPercentDelta
-        {
-            get { return LossesPercent - _prevPlayerStatistic.LossesPercent; }
-        }
-
-        public int SurvivedBattlesDelta
-        {
-            get { return SurvivedBattles - _prevPlayerStatistic.SurvivedBattles; }
-        }
-
-        public double SurvivedBattlesPercentDelta
-        {
-            get { return SurvivedBattlesPercent - _prevPlayerStatistic.SurvivedBattlesPercent; }
-        }
-
-        public int XpDelta
-        {
-            get { return Xp - _prevPlayerStatistic.Xp; }
-        }
-
-        public int BattleAvgXpDelta
-        {
-            get { return BattleAvgXp - _prevPlayerStatistic.BattleAvgXp; }
-        }
-
-        public int MaxXpDelta
-        {
-            get { return MaxXp - _prevPlayerStatistic.MaxXp; }
-        }
-
-        public int FragsDelta
-        {
-            get { return Frags - _prevPlayerStatistic.Frags; }
-        }
-
-        public int SpottedDelta
-        {
-            get { return Spotted - _prevPlayerStatistic.Spotted; }
-        }
-
-        public int HitsPercentsDelta
-        {
-            get { return HitsPercents - _prevPlayerStatistic.HitsPercents; }
-        }
-
-        public int DamageDealtDelta
-        {
-            get { return DamageDealt - _prevPlayerStatistic.DamageDealt; }
-        }
-
-        public int CapturePointsDelta
-        {
-            get { return CapturePoints - _prevPlayerStatistic.CapturePoints; }
-        }
-
-        public int DroppedCapturePointsDelta
-        {
-            get { return DroppedCapturePoints - _prevPlayerStatistic.DroppedCapturePoints; }
-        }
 
         #endregion
 
@@ -252,145 +113,125 @@ namespace WotDossier.Applications.ViewModel
 
         public int Rating_IntegratedValueDelta
         {
-            get { return Rating_IntegratedValue - _prevPlayerStatistic.Rating_IntegratedValue; }
+            get { return Rating_IntegratedValue - PrevPlayerStatistic.Rating_IntegratedValue; }
         }
 
         public int Rating_IntegratedPlaceDelta
         {
-            get { return Rating_IntegratedPlace - _prevPlayerStatistic.Rating_IntegratedPlace; }
+            get { return Rating_IntegratedPlace - PrevPlayerStatistic.Rating_IntegratedPlace; }
         }
 
         public int Rating_BattleAvgPerformanceValueDelta
         {
-            get { return Rating_BattleAvgPerformanceValue - _prevPlayerStatistic.Rating_BattleAvgPerformanceValue; }
+            get { return Rating_BattleAvgPerformanceValue - PrevPlayerStatistic.Rating_BattleAvgPerformanceValue; }
         }
 
         public int Rating_BattleAvgPerformancePlaceDelta
         {
-            get { return Rating_BattleAvgPerformancePlace - _prevPlayerStatistic.Rating_BattleAvgPerformancePlace; }
+            get { return Rating_BattleAvgPerformancePlace - PrevPlayerStatistic.Rating_BattleAvgPerformancePlace; }
         }
 
         public int Rating_BattleAvgXpValueDelta
         {
-            get { return Rating_BattleAvgXpValue - _prevPlayerStatistic.Rating_BattleAvgXpValue; }
+            get { return Rating_BattleAvgXpValue - PrevPlayerStatistic.Rating_BattleAvgXpValue; }
         }
 
         public int Rating_BattleAvgXpPlaceDelta
         {
-            get { return Rating_BattleAvgXpPlace - _prevPlayerStatistic.Rating_BattleAvgXpPlace; }
+            get { return Rating_BattleAvgXpPlace - PrevPlayerStatistic.Rating_BattleAvgXpPlace; }
         }
 
         public int Rating_BattleWinsValueDelta
         {
-            get { return Rating_BattleWinsValue - _prevPlayerStatistic.Rating_BattleWinsValue; }
+            get { return Rating_BattleWinsValue - PrevPlayerStatistic.Rating_BattleWinsValue; }
         }
 
         public int Rating_BattleWinsPlaceDelta
         {
-            get { return Rating_BattleWinsPlace - _prevPlayerStatistic.Rating_BattleWinsPlace; }
+            get { return Rating_BattleWinsPlace - PrevPlayerStatistic.Rating_BattleWinsPlace; }
         }
 
         public int Rating_BattlesValueDelta
         {
-            get { return Rating_BattlesValue - _prevPlayerStatistic.Rating_BattlesValue; }
+            get { return Rating_BattlesValue - PrevPlayerStatistic.Rating_BattlesValue; }
         }
 
         public int Rating_BattlesPlaceDelta
         {
-            get { return Rating_BattlesPlace - _prevPlayerStatistic.Rating_BattlesPlace; }
+            get { return Rating_BattlesPlace - PrevPlayerStatistic.Rating_BattlesPlace; }
         }
 
         public int Rating_CapturedPointsValueDelta
         {
-            get { return Rating_CapturedPointsValue - _prevPlayerStatistic.Rating_CapturedPointsValue; }
+            get { return Rating_CapturedPointsValue - PrevPlayerStatistic.Rating_CapturedPointsValue; }
         }
 
         public int Rating_CapturedPointsPlaceDelta
         {
-            get { return Rating_CapturedPointsPlace - _prevPlayerStatistic.Rating_CapturedPointsPlace; }
+            get { return Rating_CapturedPointsPlace - PrevPlayerStatistic.Rating_CapturedPointsPlace; }
         }
 
         public int Rating_DamageDealtValueDelta
         {
-            get { return Rating_DamageDealtValue - _prevPlayerStatistic.Rating_DamageDealtValue; }
+            get { return Rating_DamageDealtValue - PrevPlayerStatistic.Rating_DamageDealtValue; }
         }
 
         public int Rating_DamageDealtPlaceDelta
         {
-            get { return Rating_DamageDealtPlace - _prevPlayerStatistic.Rating_DamageDealtPlace; }
+            get { return Rating_DamageDealtPlace - PrevPlayerStatistic.Rating_DamageDealtPlace; }
         }
 
         public int Rating_DroppedPointsValueDelta
         {
-            get { return Rating_DroppedPointsValue - _prevPlayerStatistic.Rating_DroppedPointsValue; }
+            get { return Rating_DroppedPointsValue - PrevPlayerStatistic.Rating_DroppedPointsValue; }
         }
 
         public int Rating_DroppedPointsPlaceDelta
         {
-            get { return Rating_DroppedPointsPlace - _prevPlayerStatistic.Rating_DroppedPointsPlace; }
+            get { return Rating_DroppedPointsPlace - PrevPlayerStatistic.Rating_DroppedPointsPlace; }
         }
 
         public int Rating_FragsValueDelta
         {
-            get { return Rating_FragsValue - _prevPlayerStatistic.Rating_FragsValue; }
+            get { return Rating_FragsValue - PrevPlayerStatistic.Rating_FragsValue; }
         }
 
         public int Rating_FragsPlaceDelta
         {
-            get { return Rating_FragsPlace - _prevPlayerStatistic.Rating_FragsPlace; }
+            get { return Rating_FragsPlace - PrevPlayerStatistic.Rating_FragsPlace; }
         }
 
         public int Rating_SpottedValueDelta
         {
-            get { return Rating_SpottedValue - _prevPlayerStatistic.Rating_SpottedValue; }
+            get { return Rating_SpottedValue - PrevPlayerStatistic.Rating_SpottedValue; }
         }
 
         public int Rating_SpottedPlaceDelta
         {
-            get { return Rating_SpottedPlace - _prevPlayerStatistic.Rating_SpottedPlace; }
+            get { return Rating_SpottedPlace - PrevPlayerStatistic.Rating_SpottedPlace; }
         }
 
         public int Rating_XpValueDelta
         {
-            get { return Rating_XpValue - _prevPlayerStatistic.Rating_XpValue; }
+            get { return Rating_XpValue - PrevPlayerStatistic.Rating_XpValue; }
         }
 
         public int Rating_XpPlaceDelta
         {
-            get { return Rating_XpPlace - _prevPlayerStatistic.Rating_XpPlace; }
+            get { return Rating_XpPlace - PrevPlayerStatistic.Rating_XpPlace; }
         }
 
         #endregion
 
         public PlayerStatisticClanViewModel Clan { get; set; }
 
-        public void SetPreviousDate(DateTime date)
-        {
-            _previousDate = date;
-            _prevPlayerStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= date) ?? this;
-            OnPropertyChanged(PropBattlesCountDelta);
-            OnPropertyChanged(PropWinsDelta);
-            OnPropertyChanged(PropLossesDelta);
-            OnPropertyChanged(PropSurvivedBattlesDelta);
-            OnPropertyChanged(PropXpDelta);
-            OnPropertyChanged(PropBattleAvgXpDelta);
-            OnPropertyChanged(PropMaxXpDelta);
-            OnPropertyChanged(PropFragsDelta);
-            OnPropertyChanged(PropSpottedDelta);
-            OnPropertyChanged(PropHitsPercentsDelta);
-            OnPropertyChanged(PropDamageDealtDelta);
-            OnPropertyChanged(PropCapturePointsDelta);
-            OnPropertyChanged(PropDroppedCapturePointsDelta);
-        }
-
         public PlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
         {
         }
 
         public PlayerStatisticViewModel(PlayerStatisticEntity stat, IEnumerable<PlayerStatisticViewModel> list)
+            : base(stat.Updated, list)
         {
-            _list = list;
-
             #region Common init
 
             BattlesCount = stat.BattlesCount;
@@ -411,6 +252,18 @@ namespace WotDossier.Applications.ViewModel
             DroppedCapturePoints = stat.DroppedCapturePoints;
             //Created = stat.PlayerIdObject.Creaded);
             Updated = stat.Updated;
+
+            double battles = BattlesCount;
+            double winrate = WinsPercent;
+            double averageDamage = DamageDealt / battles;
+            double avgFrags = Frags / battles;
+            double avgSpot = Spotted / battles;
+            double avgCap = CapturePoints / battles;
+            double avgDef = DroppedCapturePoints / battles;
+
+            EffRating = RatingHelper.CalcER(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgCap, avgDef);
+            WN6Rating = RatingHelper.CalcWN6(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgDef, winrate);
+            KievArmorRating = RatingHelper.CalcKievArmorRating(battles, stat.BattleAvgXp, averageDamage, winrate / 100.0, avgFrags, avgSpot, avgCap, avgDef);
             
             #endregion
 
@@ -462,51 +315,6 @@ namespace WotDossier.Applications.ViewModel
             Rating_XpPlace = stat.RatingXpPlace;
 
             #endregion
-
-            double battles = BattlesCount;
-            double winrate = WinsPercent;
-            double averageDamage = DamageDealt / battles;
-            double avgFrags = Frags / battles;
-            double avgSpot = Spotted / battles;
-            double avgCap = CapturePoints/ battles;
-            double avgDef = DroppedCapturePoints/ battles;
-
-            _effRating = RatingHelper.CalcER(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgCap, avgDef);
-            _wn6Rating = RatingHelper.CalcWN6(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgDef, winrate);
-            _kievArmorRating = RatingHelper.CalcKievArmorRating(battles, Rating_BattleAvgXpValue, averageDamage, winrate / 100.0, avgFrags, avgSpot, avgCap, avgDef);
-
-            _prevPlayerStatistic = _list.Where(x => x.Updated <= Updated).OrderByDescending(x => x.Updated).FirstOrDefault() ?? this;
-            _previousDate = Updated;
-        }
-
-        public double WN6Rating
-        {
-            get { return _wn6Rating; }
-        }
-
-        public double EffRating
-        {
-            get { return _effRating; }
-        }
-
-        public double KievArmorRating
-        {
-            get { return _kievArmorRating; }
-        }
-
-        public int BattlesPerDay
-        {
-            get { return _battlesPerDay; }
-            set { _battlesPerDay = value; }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        //[NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

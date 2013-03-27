@@ -17,7 +17,7 @@ namespace WotDossier.Applications.ViewModel
         public int MaxXp { get; set; }
         public int Frags { get; set; }
         public int Spotted { get; set; }
-        public int HitsPercents { get; set; }
+        public double HitsPercents { get; set; }
         public int DamageDealt { get; set; }
         public int CapturePoints { get; set; }
         public int DroppedCapturePoints { get; set; }

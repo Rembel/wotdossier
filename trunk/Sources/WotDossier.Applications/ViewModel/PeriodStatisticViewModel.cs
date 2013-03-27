@@ -2,11 +2,33 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
     public abstract class PeriodStatisticViewModel<T> : StatisticViewModelBase, INotifyPropertyChanged where T : StatisticViewModelBase
     {
+        #region Constants
+
+        public static readonly string PropBattlesCountDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BattlesCountDelta);
+        public static readonly string PropWinsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WinsDelta);
+        public static readonly string PropWinsPercentDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WinsPercentDelta);
+        public static readonly string PropLossesDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LossesDelta);
+        public static readonly string PropLossesPercentDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LossesPercentDelta);
+        public static readonly string PropSurvivedBattlesDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesPercentDelta);
+        public static readonly string PropSurvivedBattlesPercentDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesDelta);
+        public static readonly string PropXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.XpDelta);
+        public static readonly string PropBattleAvgXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BattleAvgXpDelta);
+        public static readonly string PropMaxXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.MaxXpDelta);
+        public static readonly string PropFragsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.FragsDelta);
+        public static readonly string PropSpottedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SpottedDelta);
+        public static readonly string PropHitsPercentsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HitsPercentsDelta);
+        public static readonly string PropDamageDealtDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DamageDealtDelta);
+        public static readonly string PropCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.CapturePointsDelta);
+        public static readonly string PropDroppedCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DroppedCapturePointsDelta);
+
+        #endregion
+
         #region Fields
 
         private readonly IEnumerable<T> _list;
@@ -75,7 +97,7 @@ namespace WotDossier.Applications.ViewModel
             get { return Spotted - PrevPlayerStatistic.Spotted; }
         }
 
-        public int HitsPercentsDelta
+        public double HitsPercentsDelta
         {
             get { return HitsPercents - PrevPlayerStatistic.HitsPercents; }
         }
@@ -115,19 +137,19 @@ namespace WotDossier.Applications.ViewModel
             PreviousDate = date;
             T prevPlayerStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= date);
             PrevPlayerStatistic = (T)((object)prevPlayerStatistic ?? this);
-            //OnPropertyChanged(PropBattlesCountDelta);
-            //OnPropertyChanged(PropWinsDelta);
-            //OnPropertyChanged(PropLossesDelta);
-            //OnPropertyChanged(PropSurvivedBattlesDelta);
-            //OnPropertyChanged(PropXpDelta);
-            //OnPropertyChanged(PropBattleAvgXpDelta);
-            //OnPropertyChanged(PropMaxXpDelta);
-            //OnPropertyChanged(PropFragsDelta);
-            //OnPropertyChanged(PropSpottedDelta);
-            //OnPropertyChanged(PropHitsPercentsDelta);
-            //OnPropertyChanged(PropDamageDealtDelta);
-            //OnPropertyChanged(PropCapturePointsDelta);
-            //OnPropertyChanged(PropDroppedCapturePointsDelta);
+            OnPropertyChanged(PropBattlesCountDelta);
+            OnPropertyChanged(PropWinsDelta);
+            OnPropertyChanged(PropLossesDelta);
+            OnPropertyChanged(PropSurvivedBattlesDelta);
+            OnPropertyChanged(PropXpDelta);
+            OnPropertyChanged(PropBattleAvgXpDelta);
+            OnPropertyChanged(PropMaxXpDelta);
+            OnPropertyChanged(PropFragsDelta);
+            OnPropertyChanged(PropSpottedDelta);
+            OnPropertyChanged(PropHitsPercentsDelta);
+            OnPropertyChanged(PropDamageDealtDelta);
+            OnPropertyChanged(PropCapturePointsDelta);
+            OnPropertyChanged(PropDroppedCapturePointsDelta);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

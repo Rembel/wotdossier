@@ -7,27 +7,6 @@ namespace WotDossier.Applications.ViewModel
 {
     public class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
     {
-        #region Constants
-
-        public static readonly string PropBattlesCountDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.BattlesCountDelta);
-        public static readonly string PropWinsDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.WinsDelta);
-        public static readonly string PropWinsPercentDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.WinsPercentDelta);
-        public static readonly string PropLossesDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.LossesDelta);
-        public static readonly string PropLossesPercentDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.LossesPercentDelta);
-        public static readonly string PropSurvivedBattlesDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.SurvivedBattlesPercentDelta);
-        public static readonly string PropSurvivedBattlesPercentDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.SurvivedBattlesDelta);
-        public static readonly string PropXpDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.XpDelta);
-        public static readonly string PropBattleAvgXpDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.BattleAvgXpDelta);
-        public static readonly string PropMaxXpDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.MaxXpDelta);
-        public static readonly string PropFragsDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.FragsDelta);
-        public static readonly string PropSpottedDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.SpottedDelta);
-        public static readonly string PropHitsPercentsDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.HitsPercentsDelta);
-        public static readonly string PropDamageDealtDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.DamageDealtDelta);
-        public static readonly string PropCapturePointsDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.CapturePointsDelta);
-        public static readonly string PropDroppedCapturePointsDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.DroppedCapturePointsDelta);
-
-        #endregion
-
         #region Common
 
         public string Name { get; set; }

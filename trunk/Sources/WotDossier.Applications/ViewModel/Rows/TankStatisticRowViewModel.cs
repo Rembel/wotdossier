@@ -6,7 +6,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TankRow : PeriodStatisticViewModel<TankRow>, ITankRowBattleAwards, ITankRowBattles, ITankRowDamage, ITankRowEpic, 
+    public class TankStatisticRowViewModel : PeriodStatisticViewModel<TankStatisticRowViewModel>, ITankRowBattleAwards, ITankRowBattles, ITankRowDamage, ITankRowEpic, 
                            ITankRowFrags, ITankRowMasterTanker, ITankRowMedals, ITankRowPerformance, ITankRowRatings, ITankRowSeries, 
                            ITankRowSpecialAwards, ITankRowTime, ITankRowXP
     {
@@ -58,23 +58,9 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #region [ ITankRowBattles ]
 
-        public int Battles { get; set; }
-
-        public int Won { get; set; }
-
-        public double WonPercent { get; set; }
-
-        public int Lost { get; set; }
-
-        public double LostPercent { get; set; }
-
         public int Draws { get; set; }
 
         public double DrawsPercent { get; set; }
-
-        public int Survived { get; set; }
-
-        public double SurvivedPercent { get; set; }
 
         public int SurvivedAndWon { get; set; }
 
@@ -184,11 +170,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public int Hits { get; set; }
 
-        public double HitRatio { get; set; }
-
         public int DefencePoints { get; set; }
-
-        public int TanksSpotted { get; set; }
 
         #endregion
 
@@ -197,10 +179,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         public double Winrate { get; set; }
 
         public int AverageDamage { get; set; }
-
-        public int NewEffRating { get; set; }
-
-        public int WN6 { get; set; }
 
         public int DamageRatingRev1 { get; set; }
 
@@ -266,17 +244,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         public TimeSpan AverageBattleTime { get; set; }
         #endregion
 
-        #region [ ITankRowXP ]
-
-        public int TotalXP { get; set; }
-
-        public int MaximumXP { get; set; }
-
-        public int AverageXP { get; set; }
-
-        #endregion
-
-        public TankRow(TankJson tank)
+        public TankStatisticRowViewModel(TankJson tank)
             : this(tank, new List<TankJson>())
         {
         }
@@ -284,7 +252,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankRow(TankJson tank, IEnumerable<TankJson> list) : base(Utils.UnixDateToDateTime(tank.Common.updated), list.Select(x => new TankRow(x)))
+        public TankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list) : base(Utils.UnixDateToDateTime(tank.Common.updated), list.Select(x => new TankStatisticRowViewModel(x)))
         {
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
@@ -310,17 +278,17 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             #region [ ITankRowBattles ]
-            Battles = tank.Tankdata.battlesCount;
-            Won = tank.Tankdata.wins;
-            WonPercent = Won / (double)Battles * 100.0;
-            Lost = tank.Tankdata.losses;
-            LostPercent = Lost / (double)Battles * 100.0;
-            Draws = Battles - Won - Lost;
-            DrawsPercent = Draws / (double)Battles * 100.0;
-            Survived = tank.Tankdata.survivedBattles;
-            SurvivedPercent = Survived / (double)Battles * 100.0;
+            BattlesCount = tank.Tankdata.battlesCount;
+            Wins = tank.Tankdata.wins;
+            WinsPercent = Wins / (double)BattlesCount * 100.0;
+            Losses = tank.Tankdata.losses;
+            LossesPercent = Losses / (double)BattlesCount * 100.0;
+            Draws = BattlesCount - Wins - Losses;
+            DrawsPercent = Draws / (double)BattlesCount * 100.0;
+            SurvivedBattles = tank.Tankdata.survivedBattles;
+            SurvivedBattlesPercent = SurvivedBattles / (double)BattlesCount * 100.0;
             SurvivedAndWon = tank.Tankdata.winAndSurvived;
-            SurvivedAndWonPercent = SurvivedAndWon / (double)Battles * 100.0;
+            SurvivedAndWonPercent = SurvivedAndWon / (double)BattlesCount * 100.0;
             #endregion
 
             #region [ ITankRowDamage ]
@@ -354,11 +322,11 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             #region [ ITankRowFrags ]
-            Battles = tank.Tankdata.battlesCount;
+            BattlesCount = tank.Tankdata.battlesCount;
             Frags = tank.Tankdata.frags;
             MaxFrags = tank.Tankdata.maxFrags;
-            FragsPerBattle = Frags / (double)Battles;
-            KillDeathRatio = Frags / (double)(Battles - tank.Tankdata.survivedBattles);
+            FragsPerBattle = Frags / (double)BattlesCount;
+            KillDeathRatio = Frags / (double)(BattlesCount - tank.Tankdata.survivedBattles);
             Tier8Frags = tank.Tankdata.frags8p;
             BeastFrags = tank.Tankdata.fragsBeast;
             SinaiFrags = tank.Battle.fragsSinai;
@@ -382,30 +350,30 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowPerformance ]
             Shots = tank.Tankdata.shots;
             Hits = tank.Tankdata.hits;
-            HitRatio = Hits / (double)Shots * 100.0;
+            HitsPercents = Hits / (double)Shots * 100.0;
             CapturePoints = tank.Tankdata.capturePoints;
             DefencePoints = tank.Tankdata.droppedCapturePoints;
-            TanksSpotted = tank.Tankdata.spotted;
+            Spotted = tank.Tankdata.spotted;
             #endregion
 
             #region [ ITankRowRatings ]
-            Battles = tank.Tankdata.battlesCount;
+            BattlesCount = tank.Tankdata.battlesCount;
             Winrate = tank.Tankdata.wins / (double)tank.Tankdata.battlesCount * 100.0;
             AverageDamage = tank.Tankdata.damageDealt / tank.Tankdata.battlesCount;
-            KillDeathRatio = tank.Tankdata.frags / (double)(Battles - tank.Tankdata.survivedBattles);
-            double avgFrags = tank.Tankdata.frags / (double)Battles;
-            double avgSpot = tank.Tankdata.spotted / (double)Battles;
-            double avgCap = tank.Tankdata.capturePoints / (double)Battles;
-            double avgDef = tank.Tankdata.droppedCapturePoints / (double)Battles;
-            double avgXP = tank.Tankdata.xp / (double)Battles;
+            KillDeathRatio = tank.Tankdata.frags / (double)(BattlesCount - tank.Tankdata.survivedBattles);
+            double avgFrags = tank.Tankdata.frags / (double)BattlesCount;
+            double avgSpot = tank.Tankdata.spotted / (double)BattlesCount;
+            double avgCap = tank.Tankdata.capturePoints / (double)BattlesCount;
+            double avgDef = tank.Tankdata.droppedCapturePoints / (double)BattlesCount;
+            double avgXP = tank.Tankdata.xp / (double)BattlesCount;
 
             double value = RatingHelper.CalcER(AverageDamage, Tier, avgFrags, avgSpot, avgCap, avgDef);
 
-            NewEffRating = (int)value;
+            EffRating = (int)value;
             value = RatingHelper.CalcWN6(AverageDamage, Tier, avgFrags, avgSpot, avgDef, Winrate);
-            WN6 = (int)value;
+            WN6Rating = (int)value;
             DamageRatingRev1 = (int)(tank.Tankdata.damageDealt / (double)tank.Tankdata.damageReceived * 100);
-            value = RatingHelper.CalcKievArmorRating(Battles, avgXP, AverageDamage, Winrate / 100, avgFrags, avgSpot, avgCap, avgDef);
+            value = RatingHelper.CalcKievArmorRating(BattlesCount, avgXP, AverageDamage, Winrate / 100, avgFrags, avgSpot, avgCap, avgDef);
             KievArmorRating = (int)value;
             MarkOfMastery = tank.Special.markOfMastery;
             #endregion
@@ -445,9 +413,9 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             #region [ ITankRowXP ]
-            TotalXP = tank.Tankdata.xp;
-            MaximumXP = tank.Tankdata.maxXP;
-            AverageXP = TotalXP / tank.Tankdata.battlesCount;
+            Xp = tank.Tankdata.xp;
+            MaxXp = tank.Tankdata.maxXP;
+            BattleAvgXp = Xp / tank.Tankdata.battlesCount;
             #endregion
 
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);

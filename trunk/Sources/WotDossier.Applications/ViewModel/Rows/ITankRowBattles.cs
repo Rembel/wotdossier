@@ -2,15 +2,15 @@
 {
     public interface ITankRowBattles
     {
-        int Battles { get; set; }
-        int Won { get; set; }
-        double WonPercent { get; set; }
-        int Lost { get; set; }
-        double LostPercent { get; set; }
+        int BattlesCount { get; set; }
+        int Wins { get; set; }
+        double WinsPercent { get; set; }
+        int Losses { get; set; }
+        double LossesPercent { get; set; }
         int Draws { get; set; }
         double DrawsPercent { get; set; }
-        int Survived { get; set; }
-        double SurvivedPercent { get; set; }
+        int SurvivedBattles { get; set; }
+        double SurvivedBattlesPercent { get; set; }
         int SurvivedAndWon { get; set; }
         double SurvivedAndWonPercent { get; set; }
     }

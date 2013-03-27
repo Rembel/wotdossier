@@ -145,7 +145,7 @@
     <Compile Include="Tabs\CommonTabNew.xaml.cs">
       <DependentUpon>CommonTabNew.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\TankStatisticWindow.xaml.cs">
+    <Compile Include="TankStatisticWindow.xaml.cs">
       <DependentUpon>TankStatisticWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AboutWindow.xaml">
@@ -258,7 +258,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tabs\TankStatisticWindow.xaml">
+    <Page Include="TankStatisticWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

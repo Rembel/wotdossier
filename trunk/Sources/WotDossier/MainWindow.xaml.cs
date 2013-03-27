@@ -2,6 +2,8 @@
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
+using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier
 {
@@ -13,6 +15,15 @@ namespace WotDossier
         public MainWindow()
         {
             InitializeComponent();
+            EventAggregatorFactory.EventAggregator.GetEvent<OpenTankStatisticEvent>().Subscribe(OnOpenTankStatistic);
+        }
+
+        
+        private void OnOpenTankStatistic(TankStatisticRowViewModel obj)
+        {
+            TankStatisticViewModel tankStatisticViewModel = new TankStatisticViewModel(new TankStatisticWindow(), obj);
+            tankStatisticViewModel.Show();
+
         }
 
         private void MenuItemSettings_Click(object sender, RoutedEventArgs e)

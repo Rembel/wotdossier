@@ -1,9 +1,11 @@
 ﻿using System;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Framework.Applications;
+using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications
@@ -24,6 +26,7 @@ namespace WotDossier.Applications
         public ApplicationController()
         {
             _exitCommand = new DelegateCommand(Close);
+            
         }
 
         private void InitShellViewModel(ShellViewModel shellViewModel)

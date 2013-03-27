@@ -90,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationRouteCommands.cs" />
-    <Compile Include="Applications\ApplicationInfo.cs" />
     <Compile Include="Applications\CollectionChangedEventListener.cs" />
     <Compile Include="Applications\Controller.cs" />
     <Compile Include="Applications\DispatcherHelper.cs" />
@@ -140,6 +139,7 @@
     <Compile Include="Localization\TranslateExtension.cs" />
     <Compile Include="Localization\TranslationData.cs" />
     <Compile Include="Localization\TranslationManager.cs" />
+    <Compile Include="Presentation\Services\ApplicationInfo.cs" />
     <Compile Include="Presentation\Services\FileDialogService.cs" />
     <Compile Include="Presentation\Services\MessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

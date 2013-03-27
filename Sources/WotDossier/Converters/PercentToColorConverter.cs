@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
-using WotDossier.Domain.Rows;
+using WotDossier.Applications.ViewModel.Rows;
 
 namespace WotDossier.Converters
 {

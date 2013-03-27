@@ -35,5 +35,12 @@ namespace WotDossier
         {
             get { return Chart3; }
         }
+
+        private void MenuItemAbout_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow aboutWindow = new AboutWindow();
+            aboutWindow.Owner = this;
+            aboutWindow.ShowDialog();
+        }
     }
 }

@@ -71,6 +71,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        public static string ButtonOk {
+            get {
+                return ResourceManager.GetString("ButtonOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Info.
+        /// </summary>
+        public static string ButtonSysInfo {
+            get {
+                return ResourceManager.GetString("ButtonSysInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle Hero.
         /// </summary>
         public static string Column_BattleAwards_BattleHero {
@@ -1404,6 +1422,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string MenuItem_Header_About {
+            get {
+                return ResourceManager.GetString("MenuItem_Header_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Load.
         /// </summary>
         public static string MenuItem_Header_Load {
@@ -1731,6 +1758,24 @@ namespace WotDossier.Resources {
         public static string Tooltip_MarkOfMastery_4 {
             get {
                 return ResourceManager.GetString("Tooltip_MarkOfMastery_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        public static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string WindowTitle_AboutWindow {
+            get {
+                return ResourceManager.GetString("WindowTitle_AboutWindow", resourceCulture);
             }
         }
     }

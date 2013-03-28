@@ -3,8 +3,6 @@ using System.Windows;
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
-using WotDossier.Applications.ViewModel.Rows;
-using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier
 {

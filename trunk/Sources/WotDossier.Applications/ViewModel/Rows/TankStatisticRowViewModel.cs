@@ -170,8 +170,6 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public int Hits { get; set; }
 
-        public int DefencePoints { get; set; }
-
         #endregion
 
         #region [ ITankRowRatings ]
@@ -256,7 +254,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         {
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
-            Tank = tank.Name;
+            Tank = tank.Common.tanktitle;
             Icon = tank.TankContour;
             CountryId = tank.Common.countryid;
 
@@ -352,7 +350,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Hits = tank.Tankdata.hits;
             HitsPercents = Hits / (double)Shots * 100.0;
             CapturePoints = tank.Tankdata.capturePoints;
-            DefencePoints = tank.Tankdata.droppedCapturePoints;
+            DroppedCapturePoints = tank.Tankdata.droppedCapturePoints;
             Spotted = tank.Tankdata.spotted;
             #endregion
 

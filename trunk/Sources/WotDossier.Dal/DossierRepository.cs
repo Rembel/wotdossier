@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
@@ -11,6 +12,7 @@ using System.Linq;
 
 namespace WotDossier.Dal
 {
+    [Export]
     public class DossierRepository
     {
         protected static readonly ILog _log = LogManager.GetLogger("DossierRepository");
@@ -25,7 +27,8 @@ namespace WotDossier.Dal
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public DossierRepository(DataProvider dataProvider)
+        [ImportingConstructor]
+        public DossierRepository([Import(typeof(DataProvider))]DataProvider dataProvider)
         {
             _dataProvider = dataProvider;
         }
@@ -125,7 +128,7 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        public void UpdateTankStatistic(string playerName, List<TankJson> tanks)
+        public PlayerEntity UpdateTankStatistic(string playerName, List<TankJson> tanks)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -135,10 +138,10 @@ namespace WotDossier.Dal
             string name = player.name;
             int id = player.id;
             DateTime creaded = Utils.UnixDateToDateTime((long)player.created_at);
+            PlayerEntity playerEntity = GetOrCreatePlayer(playerName, name, id, creaded);
+
             try
             {
-                PlayerEntity playerEntity = GetOrCreatePlayer(playerName, name, id, creaded);
-
                 IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
 
                 foreach (TankJson tank in tanks)
@@ -146,22 +149,23 @@ namespace WotDossier.Dal
                     TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tank.Common.tankid && x.CountryId == tank.Common.countryid);
                     if (tankEntity == null)
                     {
-                        TankEntity entity = new TankEntity();
-                        entity.CountryId = tank.Common.countryid;
-                        entity.CountryCode = WotApiHelper.GetCountryNameCode(tank.Common.countryid);
-                        entity.TankId = tank.Common.tankid;
-                        entity.Icon = tank.TankContour.iconid;
-                        entity.PlayerId = playerEntity.Id;
-                        entity.IsPremium = tank.Common.premium == 1;
-                        entity.Name = tank.Common.tanktitle;
-                        entity.TankType = tank.Common.type;
-                        entity.Tier = tank.Common.tier;
+                        tankEntity = new TankEntity();
+                        tankEntity.CountryId = tank.Common.countryid;
+                        tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(tank.Common.countryid);
+                        tankEntity.TankId = tank.Common.tankid;
+                        tankEntity.Icon = tank.TankContour.iconid;
+                        tankEntity.PlayerId = playerEntity.Id;
+                        tankEntity.IsPremium = tank.Common.premium == 1;
+                        tankEntity.Name = tank.Common.tanktitle;
+                        tankEntity.TankType = tank.Common.type;
+                        tankEntity.Tier = tank.Common.tier;
                         TankStatisticEntity statisticEntity = new TankStatisticEntity();
-                        statisticEntity.TankIdObject = entity;
+                        statisticEntity.TankIdObject = tankEntity;
                         statisticEntity.Updated = tank.Common.lastBattleTimeR;
                         statisticEntity.Raw = tank.Raw;
-                        entity.TankStatisticEntities.Add(statisticEntity);
-                        _dataProvider.Save(entity);
+                        statisticEntity.Version = tank.Common.basedonversion;
+                        tankEntity.TankStatisticEntities.Add(statisticEntity);
+                        _dataProvider.Save(tankEntity);
                     }
                     else
                     {
@@ -173,18 +177,19 @@ namespace WotDossier.Dal
                                 && tankAlias.TankId == tank.Common.tankid 
                                 && tankAlias.CountryId == tank.Common.countryid)
                             .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<TankStatisticEntity>();
-                        DateTime updated = tank.Common.lastBattleTimeR;
+                        DateTime updated = tank.Common.lastBattleTimeR.Date;
                         //create new record
-                        if (statisticEntity == null || statisticEntity.Updated < updated.Date)
+                        if (statisticEntity == null || statisticEntity.Updated < updated)
                         {
                             statisticEntity = new TankStatisticEntity();
                             statisticEntity.TankIdObject = tankEntity;
                             statisticEntity.Updated = tank.Common.lastBattleTimeR;
                             statisticEntity.Raw = tank.Raw;
+                            statisticEntity.Version = tank.Common.basedonversion;
                             _dataProvider.Save(statisticEntity);
                         }
                         //update current date record
-                        else if (statisticEntity.Updated.Date == updated.Date)
+                        else if (statisticEntity.Updated.Date == updated)
                         {
                             statisticEntity.Update(tank);
                             _dataProvider.Save(statisticEntity);
@@ -193,6 +198,8 @@ namespace WotDossier.Dal
                 }
 
                 _dataProvider.CommitTransaction();
+
+                return playerEntity;
             }
             catch (Exception e)
             {
@@ -204,6 +211,18 @@ namespace WotDossier.Dal
                 _dataProvider.ClearCache();
                 _dataProvider.CloseSession();
             }
+
+            return playerEntity;
+        }
+
+        public IEnumerable<TankStatisticEntity> GetTanksStatistic(PlayerEntity player)
+        {
+            _dataProvider.OpenSession();
+            TankEntity tankAlias = null;
+            IList<TankStatisticEntity> tankStatisticEntities = _dataProvider.QueryOver<TankStatisticEntity>()
+                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == player.Id).List<TankStatisticEntity>();
+            _dataProvider.CloseSession();
+            return tankStatisticEntities;
         }
     }
 }

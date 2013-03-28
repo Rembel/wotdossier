@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq.Expressions;
 using System.Reflection;
 using Common.Logging;
-using Croc.Aws.DataAccess;
 using Croc.Aws.DataAccess.NHibernate;
 using FluentNHibernate.Cfg;
 using NHibernate;
@@ -18,6 +18,7 @@ namespace WotDossier.Dal.NHibernate
     /// <summary>
     /// 	Represents provider class for working with database.
     /// </summary>
+    [Export]
     public class DataProvider: IDataProvider
     {
         protected static readonly ILog Log = LogManager.GetLogger("DataProvider");
@@ -28,7 +29,8 @@ namespace WotDossier.Dal.NHibernate
         /// <summary>
         /// 	Creates new instance of <see cref = "DataProvider" />.
         /// </summary>
-        public DataProvider(ISessionStorage storage)
+        [ImportingConstructor]
+        public DataProvider([Import(typeof(ISessionStorage))]ISessionStorage storage)
         {
             _storage = storage;
 

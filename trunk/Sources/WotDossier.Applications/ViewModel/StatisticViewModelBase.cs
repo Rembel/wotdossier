@@ -4,8 +4,6 @@ namespace WotDossier.Applications.ViewModel
 {
     public abstract class StatisticViewModelBase
     {
-        private int _battlesPerDay;
-
         #region Percents
     
         public int BattlesCount { get; set; }
@@ -42,10 +40,6 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         public DateTime Updated { get; set; }
 
-        public int BattlesPerDay
-        {
-            get { return _battlesPerDay; }
-            set { _battlesPerDay = value; }
-        }
+        public int BattlesPerDay { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel.Composition;
+using System.Windows;
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
@@ -10,20 +11,12 @@ namespace WotDossier
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    [Export(typeof(IShellView))]
     public partial class MainWindow : Window, IShellView
     {
         public MainWindow()
         {
             InitializeComponent();
-            EventAggregatorFactory.EventAggregator.GetEvent<OpenTankStatisticEvent>().Subscribe(OnOpenTankStatistic);
-        }
-
-        
-        private void OnOpenTankStatistic(TankStatisticRowViewModel obj)
-        {
-            TankStatisticViewModel tankStatisticViewModel = new TankStatisticViewModel(new TankStatisticWindow(), obj);
-            tankStatisticViewModel.Show();
-
         }
 
         private void MenuItemSettings_Click(object sender, RoutedEventArgs e)

@@ -42,6 +42,7 @@ namespace WotDossier.Domain.Entities
 	    public virtual void Update(TankJson tank)
 	    {
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);
+            Version = tank.Common.basedonversion;
             Raw = tank.Raw;
 	    }
 	}

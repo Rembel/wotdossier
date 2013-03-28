@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Windows.Input;
 using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
@@ -17,6 +20,7 @@ using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Tank;
+using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
@@ -27,6 +31,7 @@ namespace WotDossier.Applications.ViewModel
     /// <summary>
     /// The ViewModel for the application's main window.
     /// </summary>
+    [Export(typeof(ShellViewModel))]
     public class ShellViewModel : ViewModel<IShellView>
     {
         private static readonly ILog _log = LogManager.GetLogger("ShellViewModel");
@@ -59,6 +64,8 @@ namespace WotDossier.Applications.ViewModel
         }
         
         public DelegateCommand LoadCommand { get; set; }
+
+        public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -99,14 +106,28 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         /// <param name="view">The view.</param>
         /// <param name="dossierRepository"></param>
-        public ShellViewModel(IShellView view, DossierRepository dossierRepository)
+        [ImportingConstructor]
+        public ShellViewModel([Import(typeof(IShellView))]IShellView view, [Import]DossierRepository dossierRepository)
             : this(view, false)
         {
             _dossierRepository = dossierRepository;
             LoadCommand = new DelegateCommand(OnLoad);
+            OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick); 
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
+        }
+
+        private void OnRowDoubleClick(object rowData)
+        {
+            TankStatisticRowViewModel tankStatisticRowViewModel = rowData as TankStatisticRowViewModel;
+
+            if (tankStatisticRowViewModel != null)
+            {
+                TankStatisticViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<TankStatisticViewModel>().Value;
+                viewModel.TankStatistic = tankStatisticRowViewModel;
+                viewModel.Show();
+            }
         }
 
         /// <summary>
@@ -255,18 +276,39 @@ namespace WotDossier.Applications.ViewModel
 
                     List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
 
-                    _dossierRepository.UpdateTankStatistic(playerName, tanks);
+                    PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(playerName, tanks);
 
-                    Tanks = tanks.Select(x => new TankStatisticRowViewModel(x)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                    List<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity).ToList();
+
+                    Tanks = GetViewModels(entities); 
 
                     IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
                     IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                         .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
                     MasterTanker = masterTanker;
-                    EventAggregatorFactory.EventAggregator.GetEvent<OpenTankStatisticEvent>().Publish(Tanks.FirstOrDefault());
             };
 
             System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
+        }
+
+        private IEnumerable<TankStatisticRowViewModel> GetViewModels(List<TankStatisticEntity> entities)
+        {
+            return entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+        }
+
+        private TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
+        {
+            TankStatisticEntity currentStatistic = tankStatisticEntities.OrderByDescending(x => x.Updated).First();
+            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Where(x => x.Id != currentStatistic.Id)
+                .Select(x => UnZipObject(x.Raw)).ToList();
+            return new TankStatisticRowViewModel(UnZipObject(currentStatistic.Raw), statisticViewModels);
+        }
+
+        private static TankJson UnZipObject(byte[] x)
+        {
+            TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(x);
+            WotApiClient.Instance.ExtendPropertiesData(tankJson);
+            return tankJson;
         }
 
         private bool IsExistedtank(TankInfo tankInfo)

@@ -152,6 +152,14 @@ namespace WotDossier.Applications.ViewModel
             OnPropertyChanged(PropDroppedCapturePointsDelta);
         }
 
+        public List<StatisticViewModelBase> GetAll()
+        {
+            List<StatisticViewModelBase> list = new List<StatisticViewModelBase>();
+            list.AddRange(_list);
+            list.Add(this);
+            return list;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         //[NotifyPropertyChangedInvocator]

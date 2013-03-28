@@ -54,7 +54,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         {
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
-            Tank = tank.Name;
+            Tank = tank.Common.tanktitle;
             Icon = tank.TankContour;
             CountryId = tank.Common.countryid;
         }

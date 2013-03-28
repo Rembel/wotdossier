@@ -82,6 +82,9 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\References\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase">
@@ -92,7 +95,9 @@
     <Compile Include="ApplicationRouteCommands.cs" />
     <Compile Include="Applications\CollectionChangedEventListener.cs" />
     <Compile Include="Applications\Controller.cs" />
+    <Compile Include="Applications\DataGridRowDoubleClickEventToCommand.cs" />
     <Compile Include="Applications\DispatcherHelper.cs" />
+    <Compile Include="Applications\EventToCommand.cs" />
     <Compile Include="Applications\IView.cs" />
     <Compile Include="Applications\PropertyChangedEventListener.cs" />
     <Compile Include="Applications\Services\FileDialogResult.cs" />
@@ -107,6 +112,7 @@
     <Compile Include="Controls\MultiSelector\IListItemConverter.cs" />
     <Compile Include="Controls\MultiSelector\MultiSelectorBehaviours.cs" />
     <Compile Include="Controls\MultiSelector\TwoListSynchronizer.cs" />
+    <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="EventAggregator\BaseEvent.cs" />
     <Compile Include="EventAggregator\BaseEvent.Generic.cs" />
     <Compile Include="EventAggregator\DelegateReference.cs" />

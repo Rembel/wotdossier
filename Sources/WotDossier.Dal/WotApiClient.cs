@@ -79,24 +79,28 @@ namespace WotDossier.Dal
                     JProperty property = (JProperty)jToken;
                     string raw = property.Value.ToString();
                     TankJson tank = JsonConvert.DeserializeObject<TankJson>(raw);
-                    tank.Name = tank.Common.tanktitle;
-                    tank.Info = _tankDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
-                    tank.TankContour = GetTankContour(tank);
-                    tank.Frags =
-                        tank.Kills.Select(
-                            x =>
-                            new FragsJson
-                                {
-                                    CountryId = Convert.ToInt32(x[0]),
-                                    TankId = Convert.ToInt32(x[1]),
-                                    Count = Convert.ToInt32(x[2]),
-                                    Name = x[3]
-                                });
-                    tank.Raw = Zip(raw);
+                    tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                    ExtendPropertiesData(tank);
                     tanks.Add(tank);
                 }
             }
             return tanks;
+        }
+
+        public void ExtendPropertiesData(TankJson tank)
+        {
+            tank.Info = _tankDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
+            tank.TankContour = GetTankContour(tank);
+            tank.Frags =
+                tank.Kills.Select(
+                    x =>
+                    new FragsJson
+                        {
+                            CountryId = Convert.ToInt32(x[0]),
+                            TankId = Convert.ToInt32(x[1]),
+                            Count = Convert.ToInt32(x[2]),
+                            Name = x[3]
+                        });
         }
 
         public TankContour GetTankContour(TankJson tank)
@@ -245,61 +249,6 @@ namespace WotDossier.Dal
                 }
                 return null;
             }
-        }
-
-        public static byte[] Zip(string value)
-        {
-            //Transform string into byte[]  
-            byte[] byteArray = new byte[value.Length];
-            int index = 0;
-            foreach (char item in value)
-            {
-                byteArray[index++] = (byte)item;
-            }
-
-            //Prepare for compress
-            MemoryStream ms = new MemoryStream();
-            System.IO.Compression.GZipStream sw = new System.IO.Compression.GZipStream(ms,
-                System.IO.Compression.CompressionMode.Compress);
-
-            //Compress
-            sw.Write(byteArray, 0, byteArray.Length);
-            //Close, DO NOT FLUSH cause bytes will go missing...
-            sw.Close();
-
-            byteArray = ms.ToArray();
-            ms.Close();
-            sw.Dispose();
-            ms.Dispose();
-            return byteArray;
-        }
-
-        public static string UnZip(byte[] byteArray)
-        {
-            //Prepare for decompress
-            MemoryStream ms = new MemoryStream(byteArray);
-            System.IO.Compression.GZipStream sr = new System.IO.Compression.GZipStream(ms,
-                System.IO.Compression.CompressionMode.Decompress);
-
-            //Reset variable to collect uncompressed result
-            byteArray = new byte[byteArray.Length];
-
-            //Decompress
-            int rByte = sr.Read(byteArray, 0, byteArray.Length);
-
-            //Transform byte[] unzip data to string
-            System.Text.StringBuilder sB = new System.Text.StringBuilder(rByte);
-            //WotApiClient the number of bytes GZipStream red and do not a for each bytes in
-            //resultByteArray;
-            for (int i = 0; i < rByte; i++)
-            {
-                sB.Append((char)byteArray[i]);
-            }
-            sr.Close();
-            ms.Close();
-            sr.Dispose();
-            ms.Dispose();
-            return sB.ToString();
         }
     }
 }

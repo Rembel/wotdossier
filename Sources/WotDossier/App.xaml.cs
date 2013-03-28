@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Globalization;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
-using System.Linq;
 using WotDossier.Dal;
+using WotDossier.Framework;
 
 namespace WotDossier
 {
@@ -19,9 +19,18 @@ namespace WotDossier
         private static readonly ILog _log = LogManager.GetLogger("App");
 
         private ApplicationController _controller;
+        
+        [Import]
+        public ApplicationController Controller
+        {
+            get { return _controller; }
+            set { _controller = value; }
+        }
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
+            
             SettingsReader reader = new SettingsReader(WotDossierSettings.SettingsPath);
             //set app lang
             var culture = new CultureInfo(reader.Get().Language);
@@ -36,10 +45,9 @@ namespace WotDossier
 #endif
 
             // start application
-            _controller = new ApplicationController();
             try
             {
-                _controller.Run(new MainWindow());
+                Controller.Run();
             }
             catch (Exception exception)
             {
@@ -85,9 +93,10 @@ namespace WotDossier
 
         protected override void OnExit(ExitEventArgs e)
         {
-            if (_controller != null)
+            if (Controller != null)
             {
-                _controller.Dispose();
+                CompositionContainerFactory.Instance.Container.Dispose();
+                Controller.Dispose();
             }
             base.OnExit(e);
         }

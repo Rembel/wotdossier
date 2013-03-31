@@ -39,87 +39,102 @@ namespace WotDossier.Applications.ViewModel
 
         public int BattlesCountDelta
         {
-            get { return BattlesCount - PrevPlayerStatistic.BattlesCount; }
+            get { return BattlesCount - PrevStatistic.BattlesCount; }
         }
 
         public int WinsDelta
         {
-            get { return Wins - PrevPlayerStatistic.Wins; }
+            get { return Wins - PrevStatistic.Wins; }
         }
 
         public double WinsPercentDelta
         {
-            get { return WinsPercent - PrevPlayerStatistic.WinsPercent; }
+            get { return WinsPercent - PrevStatistic.WinsPercent; }
         }
 
         public int LossesDelta
         {
-            get { return Losses - PrevPlayerStatistic.Losses; }
+            get { return Losses - PrevStatistic.Losses; }
         }
 
         public double LossesPercentDelta
         {
-            get { return LossesPercent - PrevPlayerStatistic.LossesPercent; }
+            get { return LossesPercent - PrevStatistic.LossesPercent; }
         }
 
         public int SurvivedBattlesDelta
         {
-            get { return SurvivedBattles - PrevPlayerStatistic.SurvivedBattles; }
+            get { return SurvivedBattles - PrevStatistic.SurvivedBattles; }
         }
 
         public double SurvivedBattlesPercentDelta
         {
-            get { return SurvivedBattlesPercent - PrevPlayerStatistic.SurvivedBattlesPercent; }
+            get { return SurvivedBattlesPercent - PrevStatistic.SurvivedBattlesPercent; }
         }
 
         public int XpDelta
         {
-            get { return Xp - PrevPlayerStatistic.Xp; }
+            get { return Xp - PrevStatistic.Xp; }
         }
 
         public int BattleAvgXpDelta
         {
-            get { return BattleAvgXp - PrevPlayerStatistic.BattleAvgXp; }
+            get { return BattleAvgXp - PrevStatistic.BattleAvgXp; }
         }
 
         public int MaxXpDelta
         {
-            get { return MaxXp - PrevPlayerStatistic.MaxXp; }
+            get { return MaxXp - PrevStatistic.MaxXp; }
         }
 
         public int FragsDelta
         {
-            get { return Frags - PrevPlayerStatistic.Frags; }
+            get { return Frags - PrevStatistic.Frags; }
         }
 
         public int SpottedDelta
         {
-            get { return Spotted - PrevPlayerStatistic.Spotted; }
+            get { return Spotted - PrevStatistic.Spotted; }
         }
 
         public double HitsPercentsDelta
         {
-            get { return HitsPercents - PrevPlayerStatistic.HitsPercents; }
+            get { return HitsPercents - PrevStatistic.HitsPercents; }
         }
 
         public int DamageDealtDelta
         {
-            get { return DamageDealt - PrevPlayerStatistic.DamageDealt; }
+            get { return DamageDealt - PrevStatistic.DamageDealt; }
         }
 
         public int CapturePointsDelta
         {
-            get { return CapturePoints - PrevPlayerStatistic.CapturePoints; }
+            get { return CapturePoints - PrevStatistic.CapturePoints; }
         }
 
         public int DroppedCapturePointsDelta
         {
-            get { return DroppedCapturePoints - PrevPlayerStatistic.DroppedCapturePoints; }
+            get { return DroppedCapturePoints - PrevStatistic.DroppedCapturePoints; }
+        }
+
+        public double WN6RatingDelta
+        {
+            get { return WN6Rating - PrevStatistic.WN6Rating; }
+        }
+
+        public double EffRatingDelta
+        {
+            get { return EffRating - PrevStatistic.EffRating; }
+        }
+
+        public double KievArmorRatingDelta
+        {
+            get { return KievArmorRating - PrevStatistic.KievArmorRating; }
         }
 
         #endregion
 
-        public T PrevPlayerStatistic { get; protected set; }
+        public T PrevStatistic { get; protected set; }
 
         public DateTime PreviousDate { get; protected set; }
 
@@ -128,7 +143,7 @@ namespace WotDossier.Applications.ViewModel
             _list = list;
             Updated = updated;
             T prevPlayerStatistic = _list.Where(x => x.Updated <= Updated).OrderByDescending(x => x.Updated).FirstOrDefault();
-            PrevPlayerStatistic = (T)((object)prevPlayerStatistic ?? this);
+            PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
             PreviousDate = Updated;
         }
 
@@ -136,7 +151,7 @@ namespace WotDossier.Applications.ViewModel
         {
             PreviousDate = date;
             T prevPlayerStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= date);
-            PrevPlayerStatistic = (T)((object)prevPlayerStatistic ?? this);
+            PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
             OnPropertyChanged(PropBattlesCountDelta);
             OnPropertyChanged(PropWinsDelta);
             OnPropertyChanged(PropLossesDelta);

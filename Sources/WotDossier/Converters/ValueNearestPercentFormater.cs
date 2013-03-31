@@ -50,6 +50,7 @@ namespace WotDossier.Converters
         private double GetPercentNearestValue(double percent)
         {
             double nearest = (int)percent;
+            nearest = nearest + 0.5;
             if (nearest < percent)
             {
                 nearest = nearest + 0.5;

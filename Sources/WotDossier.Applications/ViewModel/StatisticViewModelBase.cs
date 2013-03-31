@@ -22,6 +22,7 @@ namespace WotDossier.Applications.ViewModel
         public double WinsPercent { get; set; }
         public double LossesPercent { get; set; }
         public double SurvivedBattlesPercent { get; set; }
+        public double Tier { get; set; }
         
         #endregion
 
@@ -32,7 +33,7 @@ namespace WotDossier.Applications.ViewModel
         public double EffRating { get; set; }
 
         public double KievArmorRating { get; set; }
-        
+
         #endregion
         
         /// <summary>

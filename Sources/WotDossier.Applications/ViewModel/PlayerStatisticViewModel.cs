@@ -92,115 +92,123 @@ namespace WotDossier.Applications.ViewModel
 
         public int Rating_IntegratedValueDelta
         {
-            get { return Rating_IntegratedValue - PrevPlayerStatistic.Rating_IntegratedValue; }
+            get { return Rating_IntegratedValue - PrevStatistic.Rating_IntegratedValue; }
         }
 
         public int Rating_IntegratedPlaceDelta
         {
-            get { return Rating_IntegratedPlace - PrevPlayerStatistic.Rating_IntegratedPlace; }
+            get { return Rating_IntegratedPlace - PrevStatistic.Rating_IntegratedPlace; }
         }
 
         public int Rating_BattleAvgPerformanceValueDelta
         {
-            get { return Rating_BattleAvgPerformanceValue - PrevPlayerStatistic.Rating_BattleAvgPerformanceValue; }
+            get { return Rating_BattleAvgPerformanceValue - PrevStatistic.Rating_BattleAvgPerformanceValue; }
         }
 
         public int Rating_BattleAvgPerformancePlaceDelta
         {
-            get { return Rating_BattleAvgPerformancePlace - PrevPlayerStatistic.Rating_BattleAvgPerformancePlace; }
+            get { return Rating_BattleAvgPerformancePlace - PrevStatistic.Rating_BattleAvgPerformancePlace; }
         }
 
         public int Rating_BattleAvgXpValueDelta
         {
-            get { return Rating_BattleAvgXpValue - PrevPlayerStatistic.Rating_BattleAvgXpValue; }
+            get { return Rating_BattleAvgXpValue - PrevStatistic.Rating_BattleAvgXpValue; }
         }
 
         public int Rating_BattleAvgXpPlaceDelta
         {
-            get { return Rating_BattleAvgXpPlace - PrevPlayerStatistic.Rating_BattleAvgXpPlace; }
+            get { return Rating_BattleAvgXpPlace - PrevStatistic.Rating_BattleAvgXpPlace; }
         }
 
         public int Rating_BattleWinsValueDelta
         {
-            get { return Rating_BattleWinsValue - PrevPlayerStatistic.Rating_BattleWinsValue; }
+            get { return Rating_BattleWinsValue - PrevStatistic.Rating_BattleWinsValue; }
         }
 
         public int Rating_BattleWinsPlaceDelta
         {
-            get { return Rating_BattleWinsPlace - PrevPlayerStatistic.Rating_BattleWinsPlace; }
+            get { return Rating_BattleWinsPlace - PrevStatistic.Rating_BattleWinsPlace; }
         }
 
         public int Rating_BattlesValueDelta
         {
-            get { return Rating_BattlesValue - PrevPlayerStatistic.Rating_BattlesValue; }
+            get { return Rating_BattlesValue - PrevStatistic.Rating_BattlesValue; }
         }
 
         public int Rating_BattlesPlaceDelta
         {
-            get { return Rating_BattlesPlace - PrevPlayerStatistic.Rating_BattlesPlace; }
+            get { return Rating_BattlesPlace - PrevStatistic.Rating_BattlesPlace; }
         }
 
         public int Rating_CapturedPointsValueDelta
         {
-            get { return Rating_CapturedPointsValue - PrevPlayerStatistic.Rating_CapturedPointsValue; }
+            get { return Rating_CapturedPointsValue - PrevStatistic.Rating_CapturedPointsValue; }
         }
 
         public int Rating_CapturedPointsPlaceDelta
         {
-            get { return Rating_CapturedPointsPlace - PrevPlayerStatistic.Rating_CapturedPointsPlace; }
+            get { return Rating_CapturedPointsPlace - PrevStatistic.Rating_CapturedPointsPlace; }
         }
 
         public int Rating_DamageDealtValueDelta
         {
-            get { return Rating_DamageDealtValue - PrevPlayerStatistic.Rating_DamageDealtValue; }
+            get { return Rating_DamageDealtValue - PrevStatistic.Rating_DamageDealtValue; }
         }
 
         public int Rating_DamageDealtPlaceDelta
         {
-            get { return Rating_DamageDealtPlace - PrevPlayerStatistic.Rating_DamageDealtPlace; }
+            get { return Rating_DamageDealtPlace - PrevStatistic.Rating_DamageDealtPlace; }
         }
 
         public int Rating_DroppedPointsValueDelta
         {
-            get { return Rating_DroppedPointsValue - PrevPlayerStatistic.Rating_DroppedPointsValue; }
+            get { return Rating_DroppedPointsValue - PrevStatistic.Rating_DroppedPointsValue; }
         }
 
         public int Rating_DroppedPointsPlaceDelta
         {
-            get { return Rating_DroppedPointsPlace - PrevPlayerStatistic.Rating_DroppedPointsPlace; }
+            get { return Rating_DroppedPointsPlace - PrevStatistic.Rating_DroppedPointsPlace; }
         }
 
         public int Rating_FragsValueDelta
         {
-            get { return Rating_FragsValue - PrevPlayerStatistic.Rating_FragsValue; }
+            get { return Rating_FragsValue - PrevStatistic.Rating_FragsValue; }
         }
 
         public int Rating_FragsPlaceDelta
         {
-            get { return Rating_FragsPlace - PrevPlayerStatistic.Rating_FragsPlace; }
+            get { return Rating_FragsPlace - PrevStatistic.Rating_FragsPlace; }
         }
 
         public int Rating_SpottedValueDelta
         {
-            get { return Rating_SpottedValue - PrevPlayerStatistic.Rating_SpottedValue; }
+            get { return Rating_SpottedValue - PrevStatistic.Rating_SpottedValue; }
         }
 
         public int Rating_SpottedPlaceDelta
         {
-            get { return Rating_SpottedPlace - PrevPlayerStatistic.Rating_SpottedPlace; }
+            get { return Rating_SpottedPlace - PrevStatistic.Rating_SpottedPlace; }
         }
 
         public int Rating_XpValueDelta
         {
-            get { return Rating_XpValue - PrevPlayerStatistic.Rating_XpValue; }
+            get { return Rating_XpValue - PrevStatistic.Rating_XpValue; }
         }
 
         public int Rating_XpPlaceDelta
         {
-            get { return Rating_XpPlace - PrevPlayerStatistic.Rating_XpPlace; }
+            get { return Rating_XpPlace - PrevStatistic.Rating_XpPlace; }
         }
 
         #endregion
+
+        public double TierForInterval
+        {
+            get
+            {
+                return (Tier * BattlesCount - PrevStatistic.Tier * PrevStatistic.BattlesCount) / BattlesCountDelta;
+            }
+        }
 
         public PlayerStatisticClanViewModel Clan { get; set; }
 
@@ -231,6 +239,7 @@ namespace WotDossier.Applications.ViewModel
             DroppedCapturePoints = stat.DroppedCapturePoints;
             //Created = stat.PlayerIdObject.Creaded);
             Updated = stat.Updated;
+            Tier = stat.AvgLevel;
 
             double battles = BattlesCount;
             double winrate = WinsPercent;

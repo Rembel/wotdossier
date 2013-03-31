@@ -695,4 +695,13 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="Common_EffectivityRating" xml:space="preserve">
+    <value>Effectivity Rating</value>
+  </data>
+  <data name="Common_KievArmorRating" xml:space="preserve">
+    <value>Kiev Armor Rating</value>
+  </data>
+  <data name="Common_Wn6Rating" xml:space="preserve">
+    <value>WN6 Rating</value>
+  </data>
 </root>

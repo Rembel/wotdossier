@@ -12,8 +12,6 @@ namespace WotDossier.Applications.ViewModel.Rows
     {
         #region Common
 
-        public int Tier { get; set; }
-
         public TankContour Icon { get; set; }
 
         public string Tank { get; set; }
@@ -292,9 +290,18 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowDamage ]
             DamageDealt = tank.Tankdata.damageDealt;
             DamageTaken = tank.Tankdata.damageReceived;
-            DamageRatio = DamageDealt / (double)DamageTaken;
-            AverageDamageDealt = DamageDealt / tank.Tankdata.battlesCount;
-            DamagePerHit = DamageDealt / tank.Tankdata.hits;
+            if (DamageTaken > 0)
+            {
+                DamageRatio = DamageDealt/(double) DamageTaken;
+            }
+            if (tank.Tankdata.battlesCount > 0)
+            {
+                AverageDamageDealt = DamageDealt/tank.Tankdata.battlesCount;
+            }
+            if (tank.Tankdata.hits > 0)
+            {
+                DamagePerHit = DamageDealt/tank.Tankdata.hits;
+            }
             #endregion
 
             #region [ ITankRowEpic ]
@@ -354,28 +361,35 @@ namespace WotDossier.Applications.ViewModel.Rows
             Spotted = tank.Tankdata.spotted;
             #endregion
 
-            #region [ ITankRowRatings ]
-            BattlesCount = tank.Tankdata.battlesCount;
-            Winrate = tank.Tankdata.wins / (double)tank.Tankdata.battlesCount * 100.0;
-            AverageDamage = tank.Tankdata.damageDealt / tank.Tankdata.battlesCount;
-            KillDeathRatio = tank.Tankdata.frags / (double)(BattlesCount - tank.Tankdata.survivedBattles);
-            double avgFrags = tank.Tankdata.frags / (double)BattlesCount;
-            double avgSpot = tank.Tankdata.spotted / (double)BattlesCount;
-            double avgCap = tank.Tankdata.capturePoints / (double)BattlesCount;
-            double avgDef = tank.Tankdata.droppedCapturePoints / (double)BattlesCount;
-            double avgXP = tank.Tankdata.xp / (double)BattlesCount;
+            if (tank.Tankdata.battlesCount > 0)
+            {
+                #region [ ITankRowRatings ]
 
-            double value = RatingHelper.CalcER(AverageDamage, Tier, avgFrags, avgSpot, avgCap, avgDef);
+                BattlesCount = tank.Tankdata.battlesCount;
+                Winrate = tank.Tankdata.wins/(double) tank.Tankdata.battlesCount*100.0;
 
-            EffRating = (int)value;
-            value = RatingHelper.CalcWN6(AverageDamage, Tier, avgFrags, avgSpot, avgDef, Winrate);
-            WN6Rating = (int)value;
-            DamageRatingRev1 = (int)(tank.Tankdata.damageDealt / (double)tank.Tankdata.damageReceived * 100);
-            value = RatingHelper.CalcKievArmorRating(BattlesCount, avgXP, AverageDamage, Winrate / 100, avgFrags, avgSpot, avgCap, avgDef);
-            KievArmorRating = (int)value;
-            MarkOfMastery = tank.Special.markOfMastery;
-            #endregion
+                AverageDamage = tank.Tankdata.damageDealt/tank.Tankdata.battlesCount;
 
+                KillDeathRatio = tank.Tankdata.frags/(double) (BattlesCount - tank.Tankdata.survivedBattles);
+                double avgFrags = tank.Tankdata.frags/(double) BattlesCount;
+                double avgSpot = tank.Tankdata.spotted/(double) BattlesCount;
+                double avgCap = tank.Tankdata.capturePoints/(double) BattlesCount;
+                double avgDef = tank.Tankdata.droppedCapturePoints/(double) BattlesCount;
+                double avgXP = tank.Tankdata.xp/(double) BattlesCount;
+
+                double value = RatingHelper.CalcER(AverageDamage, Tier, avgFrags, avgSpot, avgCap, avgDef);
+
+                EffRating = (int) value;
+                value = RatingHelper.CalcWN6(AverageDamage, Tier, avgFrags, avgSpot, avgDef, Winrate);
+                WN6Rating = (int) value;
+                DamageRatingRev1 = (int) (tank.Tankdata.damageDealt/(double) tank.Tankdata.damageReceived*100);
+                value = RatingHelper.CalcKievArmorRating(BattlesCount, avgXP, AverageDamage, Winrate/100, avgFrags,
+                                                         avgSpot, avgCap, avgDef);
+                KievArmorRating = (int) value;
+                MarkOfMastery = tank.Special.markOfMastery;
+
+                #endregion
+            }
             #region [ ITankRowSeries ]
             ReaperLongest = tank.Series.maxKillingSeries;
             ReaperProgress = tank.Series.killingSeries;
@@ -407,13 +421,19 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowTime ]
             LastBattle = Utils.UnixDateToDateTime(tank.Tankdata.lastBattleTime);
             PlayTime = new TimeSpan(0, 0, 0, tank.Tankdata.battleLifeTime);
-            AverageBattleTime = new TimeSpan(0, 0, 0, tank.Tankdata.battleLifeTime / tank.Tankdata.battlesCount);
+            if (tank.Tankdata.battlesCount > 0)
+            {
+                AverageBattleTime = new TimeSpan(0, 0, 0, tank.Tankdata.battleLifeTime/tank.Tankdata.battlesCount);
+            }
             #endregion
 
             #region [ ITankRowXP ]
             Xp = tank.Tankdata.xp;
             MaxXp = tank.Tankdata.maxXP;
-            BattleAvgXp = Xp / tank.Tankdata.battlesCount;
+            if (tank.Tankdata.battlesCount > 0)
+            {
+                BattleAvgXp = Xp/tank.Tankdata.battlesCount;
+            }
             #endregion
 
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);

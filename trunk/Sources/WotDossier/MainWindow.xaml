@@ -33,6 +33,11 @@
                     <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
                 </ScrollViewer>
             </TabItem>
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabPeriod">
+                <ScrollViewer>
+                    <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:PeriodTab>
+                </ScrollViewer>
+            </TabItem>
             <!--Charts-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
                 <ScrollViewer>

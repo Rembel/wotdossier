@@ -137,6 +137,38 @@ namespace WotDossier.Applications.ViewModel
         public T PrevStatistic { get; protected set; }
 
         public DateTime PreviousDate { get; protected set; }
+        public int BattleAvgXpForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return XpDelta / BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+        public double WinsPercentForPeriod
+        {
+            get
+            {
+                return WinsDelta / (double)BattlesCountDelta * 100.0;
+            }
+        }
+        public double LossesPercentForPeriod
+        {
+            get
+            {
+                return LossesDelta / (double)BattlesCountDelta * 100.0;
+            }
+        }
+        public double SurvivedBattlesPercentForPeriod
+        {
+            get
+            {
+                return SurvivedBattlesDelta / (double)BattlesCountDelta * 100.0;
+            }
+        }
 
         protected PeriodStatisticViewModel(DateTime updated, IEnumerable<T> list)
         {

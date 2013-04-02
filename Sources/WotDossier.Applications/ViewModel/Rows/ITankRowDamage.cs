@@ -4,8 +4,8 @@
     {
         int DamageDealt { get; set; }
         int DamageTaken { get; set; }
-        double DamageRatio { get; set; }
-        int AverageDamageDealt { get; set; }
-        int DamagePerHit { get; set; }
+        double DamageRatio { get; }
+        double AvgDamageDealt { get; }
+        int DamagePerHit { get; }
     }
 }

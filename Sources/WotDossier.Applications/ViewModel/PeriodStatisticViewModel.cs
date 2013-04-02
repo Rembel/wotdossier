@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using WotDossier.Common;
+using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -18,7 +19,6 @@ namespace WotDossier.Applications.ViewModel
         public static readonly string PropSurvivedBattlesDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesPercentDelta);
         public static readonly string PropSurvivedBattlesPercentDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesDelta);
         public static readonly string PropXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.XpDelta);
-        public static readonly string PropBattleAvgXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BattleAvgXpDelta);
         public static readonly string PropMaxXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.MaxXpDelta);
         public static readonly string PropFragsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.FragsDelta);
         public static readonly string PropSpottedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SpottedDelta);
@@ -26,6 +26,30 @@ namespace WotDossier.Applications.ViewModel
         public static readonly string PropDamageDealtDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DamageDealtDelta);
         public static readonly string PropCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.CapturePointsDelta);
         public static readonly string PropDroppedCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DroppedCapturePointsDelta);
+
+        public static readonly string PropEffRatingDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.EffRatingDelta);
+        public static readonly string PropKievArmorRatingDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KievArmorRatingDelta);
+        public static readonly string PropWN6RatingDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WN6RatingDelta);
+
+        public static readonly string PropAvgCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgCapturePointsDelta);
+        public static readonly string PropAvgDamageDealtDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDamageDealtDelta);
+        public static readonly string PropAvgDroppedCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDroppedCapturePointsDelta);
+        public static readonly string PropAvgFragsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgFragsDelta);
+        public static readonly string PropAvgSpottedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgSpottedDelta);
+        public static readonly string PropAvgXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgXpDelta);
+
+        public static readonly string PropAvgCapturePointsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgCapturePointsForPeriod);
+        public static readonly string PropAvgDamageDealtForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDamageDealtForPeriod);
+        public static readonly string PropAvgDroppedCapturePointsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDroppedCapturePointsForPeriod);
+        public static readonly string PropAvgFragsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgFragsForPeriod);
+        public static readonly string PropAvgSpottedForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgSpottedForPeriod);
+        public static readonly string PropAvgXpForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgXpForPeriod);
+
+        public static readonly string PropWN6RatingForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WN6RatingForPeriod);
+        public static readonly string PropEffRatingForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.EffRatingForPeriod);
+        public static readonly string PropKievArmorRatingForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KievArmorRatingForPeriod);
+
+        public static readonly string PropPreviousDate = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PreviousDate);
 
         #endregion
 
@@ -75,11 +99,6 @@ namespace WotDossier.Applications.ViewModel
         public int XpDelta
         {
             get { return Xp - PrevStatistic.Xp; }
-        }
-
-        public int BattleAvgXpDelta
-        {
-            get { return BattleAvgXp - PrevStatistic.BattleAvgXp; }
         }
 
         public int MaxXpDelta
@@ -134,62 +153,275 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        #region Average values
+
+        public double AvgXpDelta
+        {
+            get
+            {
+                return AvgXp - PrevStatistic.AvgXp;
+            }
+        }
+
+        public double AvgFragsDelta
+        {
+            get
+            {
+                return AvgFrags - PrevStatistic.AvgFrags;
+            }
+        }
+
+        public double AvgSpottedDelta
+        {
+            get
+            {
+                return AvgSpotted - PrevStatistic.AvgSpotted;
+            }
+        }
+
+        public double AvgDamageDealtDelta
+        {
+            get
+            {
+                return AvgDamageDealt - PrevStatistic.AvgDamageDealt;
+            }
+        }
+
+        public double AvgCapturePointsDelta
+        {
+            get
+            {
+                return AvgCapturePoints - PrevStatistic.AvgCapturePoints;
+            }
+        }
+
+        public double AvgDroppedCapturePointsDelta
+        {
+            get
+            {
+                return AvgDroppedCapturePoints - PrevStatistic.AvgDroppedCapturePoints;
+            }
+        }
+
+        #endregion
+
         public T PrevStatistic { get; protected set; }
 
-        public DateTime PreviousDate { get; protected set; }
-        public int BattleAvgXpForPeriod
+        public DateTime PreviousDate
+        {
+            get { return PrevStatistic.Updated; }
+        }
+
+        #region Statistic For Period
+
+        public double WinsPercentForPeriod
         {
             get
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return XpDelta / BattlesCountDelta;
+                    return WinsDelta/(double) BattlesCountDelta*100.0;
                 }
                 return 0;
             }
         }
-        public double WinsPercentForPeriod
-        {
-            get
-            {
-                return WinsDelta / (double)BattlesCountDelta * 100.0;
-            }
-        }
+
         public double LossesPercentForPeriod
         {
             get
             {
-                return LossesDelta / (double)BattlesCountDelta * 100.0;
+                if (BattlesCountDelta > 0)
+                {
+                    return LossesDelta/(double) BattlesCountDelta*100.0;
+                }
+                return 0;
             }
         }
+
         public double SurvivedBattlesPercentForPeriod
         {
             get
             {
-                return SurvivedBattlesDelta / (double)BattlesCountDelta * 100.0;
+                if (BattlesCountDelta > 0)
+                {
+                    return SurvivedBattlesDelta/(double) BattlesCountDelta*100.0;
+                }
+                return 0;
             }
         }
 
-        protected PeriodStatisticViewModel(DateTime updated, IEnumerable<T> list)
+        public double HitsPercentForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    //TODO
+                    return 0;
+                }
+                return 0;
+            }
+        }
+
+        public double EffRatingForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    double tier = (BattlesCount*Tier - PrevStatistic.BattlesCount*PrevStatistic.Tier)/BattlesCountDelta;
+                    return RatingHelper.CalcER(AvgDamageDealtForPeriod, tier, AvgFragsForPeriod, AvgSpottedForPeriod,
+                                               AvgCapturePointsForPeriod, AvgDroppedCapturePointsForPeriod);
+                }
+                return 0;
+            }
+        }
+
+        public double WN6RatingForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    double tier = (BattlesCount*Tier - PrevStatistic.BattlesCount*PrevStatistic.Tier)/BattlesCountDelta;
+                    return RatingHelper.CalcWN6(AvgDamageDealtForPeriod, tier, AvgFragsForPeriod, AvgSpottedForPeriod,
+                                                AvgDroppedCapturePointsForPeriod, WinsPercentForPeriod);
+                }
+                return 0;
+            }
+        }
+
+        public double KievArmorRatingForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return RatingHelper.CalcKievArmorRating(BattlesCountDelta, AvgXpForPeriod, AvgDamageDealtForPeriod,
+                                                            WinsPercentForPeriod/100.0,
+                                                            AvgFragsForPeriod, AvgSpottedForPeriod,
+                                                            AvgCapturePointsForPeriod, AvgDroppedCapturePointsForPeriod);
+                }
+                return 0;
+            }
+        }
+
+        public double AvgXpForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return XpDelta/(double) BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgFragsForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return FragsDelta/(double) BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgSpottedForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return SpottedDelta/(double) BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgDamageDealtForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return DamageDealtDelta/(double) BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgCapturePointsForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return CapturePointsDelta/(double) BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgDroppedCapturePointsForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return DroppedCapturePointsDelta/(double) BattlesCountDelta;
+                }
+                return 0;
+            }
+        }
+
+        #endregion
+
+        protected PeriodStatisticViewModel(DateTime updated, List<T> list)
         {
             _list = list;
             Updated = updated;
             T prevPlayerStatistic = _list.Where(x => x.Updated <= Updated).OrderByDescending(x => x.Updated).FirstOrDefault();
             PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
-            PreviousDate = Updated;
+
+            if (_list.Any())
+            {
+                EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
+            }
         }
 
-        public void SetPreviousDate(DateTime date)
+        private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent eventArgs)
         {
-            PreviousDate = date;
-            T prevPlayerStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= date);
+            T prevStatistic = null;
+            switch (eventArgs.StatisticPeriod)
+            {
+                    case StatisticPeriod.Recent:
+                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
+                    break;
+
+                    case StatisticPeriod.LastWeek:
+                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
+                    break;
+
+                    case StatisticPeriod.AllObservationPeriod:
+                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault();
+                    break;
+            } 
+            SetPreviousStatistic(prevStatistic);
+        }
+
+        protected virtual void SetPreviousStatistic(T prevPlayerStatistic)
+        {
             PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
+
             OnPropertyChanged(PropBattlesCountDelta);
             OnPropertyChanged(PropWinsDelta);
             OnPropertyChanged(PropLossesDelta);
             OnPropertyChanged(PropSurvivedBattlesDelta);
             OnPropertyChanged(PropXpDelta);
-            OnPropertyChanged(PropBattleAvgXpDelta);
             OnPropertyChanged(PropMaxXpDelta);
             OnPropertyChanged(PropFragsDelta);
             OnPropertyChanged(PropSpottedDelta);
@@ -197,6 +429,33 @@ namespace WotDossier.Applications.ViewModel
             OnPropertyChanged(PropDamageDealtDelta);
             OnPropertyChanged(PropCapturePointsDelta);
             OnPropertyChanged(PropDroppedCapturePointsDelta);
+            OnPropertyChanged(PropWinsPercentDelta);
+            OnPropertyChanged(PropLossesPercentDelta);
+            OnPropertyChanged(PropSurvivedBattlesPercentDelta);
+
+            OnPropertyChanged(PropAvgCapturePointsDelta);
+            OnPropertyChanged(PropAvgDamageDealtDelta);
+            OnPropertyChanged(PropAvgDroppedCapturePointsDelta);
+            OnPropertyChanged(PropAvgFragsDelta);
+            OnPropertyChanged(PropAvgSpottedDelta);
+            OnPropertyChanged(PropAvgXpDelta);
+
+            OnPropertyChanged(PropEffRatingDelta);
+            OnPropertyChanged(PropKievArmorRatingDelta);
+            OnPropertyChanged(PropWN6RatingDelta);
+
+            OnPropertyChanged(PropAvgCapturePointsForPeriod);
+            OnPropertyChanged(PropAvgDamageDealtForPeriod);
+            OnPropertyChanged(PropAvgDroppedCapturePointsForPeriod);
+            OnPropertyChanged(PropAvgFragsForPeriod);
+            OnPropertyChanged(PropAvgSpottedForPeriod);
+            OnPropertyChanged(PropAvgXpForPeriod);
+
+            OnPropertyChanged(PropWN6RatingForPeriod);
+            OnPropertyChanged(PropEffRatingForPeriod);
+            OnPropertyChanged(PropKievArmorRatingForPeriod);
+
+            OnPropertyChanged(PropPreviousDate);
         }
 
         public List<StatisticViewModelBase> GetAll()
@@ -215,5 +474,27 @@ namespace WotDossier.Applications.ViewModel
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+    public class StatisticPeriodChangedEvent : BaseEvent<StatisticPeriodChangedEvent>
+    {
+        public StatisticPeriod StatisticPeriod { get; set; }
+
+        public StatisticPeriodChangedEvent()
+        {
+        }
+
+        public StatisticPeriodChangedEvent(StatisticPeriod statisticPeriod)
+        {
+            StatisticPeriod = statisticPeriod;
+        }
+    }
+
+    public enum StatisticPeriod
+    {
+        Recent,
+        LastWeek,
+        AllObservationPeriod,
+        //Custom
     }
 }

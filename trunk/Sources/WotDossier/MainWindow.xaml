@@ -28,12 +28,12 @@
         </Menu>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--Common tab-->
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabCommon">
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Overall}" Name="tabCommon">
                 <ScrollViewer>
                     <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
                 </ScrollViewer>
             </TabItem>
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabPeriod">
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod">
                 <ScrollViewer>
                     <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:PeriodTab>
                 </ScrollViewer>
@@ -72,7 +72,7 @@
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_TotalXP}" Binding="{Binding Xp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_MaximumXP}" Binding="{Binding MaxXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_AverageXP}" Binding="{Binding BattleAvgXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_AverageXP}" Binding="{Binding AvgXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="MouseDoubleClick">
@@ -146,7 +146,7 @@
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageDealt}" Binding="{Binding DamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageTaken}" Binding="{Binding DamageTaken}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageRatio}" Binding="{Binding DamageRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AverageDamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AvgDamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamagePerHit}" Binding="{Binding DamagePerHit}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                         <i:Interaction.Triggers>
@@ -278,7 +278,7 @@
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Winrate}" Binding="{Binding Winrate, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AverageDamage}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KillDeathRatio}" Binding="{Binding KillDeathRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" CellStyle="{StaticResource DataGridCellEffStyle}" Binding="{Binding EffRating}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>

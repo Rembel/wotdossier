@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using WotDossier.Common;
 using WotDossier.Domain.Entities;
 
 namespace WotDossier.Applications.ViewModel
@@ -216,20 +215,16 @@ namespace WotDossier.Applications.ViewModel
         {
         }
 
-        public PlayerStatisticViewModel(PlayerStatisticEntity stat, IEnumerable<PlayerStatisticViewModel> list)
+        public PlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
             : base(stat.Updated, list)
         {
             #region Common init
 
             BattlesCount = stat.BattlesCount;
             Wins = stat.Wins;
-            WinsPercent = Wins/(double) BattlesCount*100.0;
             Losses = stat.Losses;
-            LossesPercent = Losses/(double) BattlesCount*100.0;
             SurvivedBattles = stat.SurvivedBattles;
-            SurvivedBattlesPercent = SurvivedBattles/(double) BattlesCount*100.0;
             Xp = stat.Xp;
-            BattleAvgXp = stat.BattleAvgXp;
             MaxXp = stat.MaxXp;
             Frags = stat.Frags;
             Spotted = stat.Spotted;
@@ -241,18 +236,6 @@ namespace WotDossier.Applications.ViewModel
             Updated = stat.Updated;
             Tier = stat.AvgLevel;
 
-            double battles = BattlesCount;
-            double winrate = WinsPercent;
-            double averageDamage = DamageDealt / battles;
-            double avgFrags = Frags / battles;
-            double avgSpot = Spotted / battles;
-            double avgCap = CapturePoints / battles;
-            double avgDef = DroppedCapturePoints / battles;
-
-            EffRating = RatingHelper.CalcER(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgCap, avgDef);
-            WN6Rating = RatingHelper.CalcWN6(averageDamage, stat.AvgLevel, avgFrags, avgSpot, avgDef, winrate);
-            KievArmorRating = RatingHelper.CalcKievArmorRating(battles, stat.BattleAvgXp, averageDamage, winrate / 100.0, avgFrags, avgSpot, avgCap, avgDef);
-            
             #endregion
 
             #region Ratings init

@@ -56,13 +56,36 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #region [ ITankRowBattles ]
 
-        public int Draws { get; set; }
+        public int Draws
+        {
+            get { return BattlesCount - Wins - Losses; }
+        }
 
-        public double DrawsPercent { get; set; }
+        public double DrawsPercent
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Draws/(double) BattlesCount*100.0;
+                }
+                return 0;
+            }
+        }
 
         public int SurvivedAndWon { get; set; }
 
-        public double SurvivedAndWonPercent { get; set; }
+        public double SurvivedAndWonPercent
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return SurvivedAndWon/(double) BattlesCount*100.0;
+                }
+                return 0;
+            }
+        }
 
         #endregion
 
@@ -70,11 +93,29 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public int DamageTaken { get; set; }
 
-        public double DamageRatio { get; set; }
+        public double DamageRatio
+        {
+            get
+            {
+                if (DamageTaken > 0)
+                {
+                    return DamageDealt/(double) DamageTaken; 
+                }
+                return 0;
+            }
+        }
 
-        public int AverageDamageDealt { get; set; }
-
-        public int DamagePerHit { get; set; }
+        public int DamagePerHit
+        {
+            get
+            {
+                if (Hits > 0)
+                {
+                    return DamageDealt/Hits;
+                }
+                return 0;
+            }
+        }
 
         #endregion
 
@@ -124,9 +165,29 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public int MaxFrags { get; set; }
 
-        public double FragsPerBattle { get; set; }
+        public double FragsPerBattle
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Frags/(double) BattlesCount;
+                }
+                return 0;
+            }
+        }
 
-        public double KillDeathRatio { get; set; }
+        public double KillDeathRatio
+        {
+            get
+            {
+                if (BattlesCount - SurvivedBattles > 0)
+                {
+                    return Frags/(double) (BattlesCount - SurvivedBattles);
+                }
+                return 0;
+            }
+        }
 
         public int Tier8Frags { get; set; }
 
@@ -172,11 +233,17 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #region [ ITankRowRatings ]
 
-        public double Winrate { get; set; }
-
-        public int AverageDamage { get; set; }
-
-        public int DamageRatingRev1 { get; set; }
+        public int DamageRatingRev1
+        {
+            get
+            {
+                if (DamageTaken > 0)
+                {
+                    return (int) (DamageDealt/(double) DamageTaken*100);
+                }
+                return 0;
+            }
+        }
 
         public int MarkOfMastery { get; set; }
 
@@ -248,7 +315,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list) : base(Utils.UnixDateToDateTime(tank.Common.updated), list.Select(x => new TankStatisticRowViewModel(x)))
+        public TankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list) : base(Utils.UnixDateToDateTime(tank.Common.updated), list.Select(x => new TankStatisticRowViewModel(x)).ToList())
         {
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
@@ -276,32 +343,14 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowBattles ]
             BattlesCount = tank.Tankdata.battlesCount;
             Wins = tank.Tankdata.wins;
-            WinsPercent = Wins / (double)BattlesCount * 100.0;
             Losses = tank.Tankdata.losses;
-            LossesPercent = Losses / (double)BattlesCount * 100.0;
-            Draws = BattlesCount - Wins - Losses;
-            DrawsPercent = Draws / (double)BattlesCount * 100.0;
             SurvivedBattles = tank.Tankdata.survivedBattles;
-            SurvivedBattlesPercent = SurvivedBattles / (double)BattlesCount * 100.0;
             SurvivedAndWon = tank.Tankdata.winAndSurvived;
-            SurvivedAndWonPercent = SurvivedAndWon / (double)BattlesCount * 100.0;
             #endregion
 
             #region [ ITankRowDamage ]
             DamageDealt = tank.Tankdata.damageDealt;
             DamageTaken = tank.Tankdata.damageReceived;
-            if (DamageTaken > 0)
-            {
-                DamageRatio = DamageDealt/(double) DamageTaken;
-            }
-            if (tank.Tankdata.battlesCount > 0)
-            {
-                AverageDamageDealt = DamageDealt/tank.Tankdata.battlesCount;
-            }
-            if (tank.Tankdata.hits > 0)
-            {
-                DamagePerHit = DamageDealt/tank.Tankdata.hits;
-            }
             #endregion
 
             #region [ ITankRowEpic ]
@@ -327,11 +376,8 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             #region [ ITankRowFrags ]
-            BattlesCount = tank.Tankdata.battlesCount;
             Frags = tank.Tankdata.frags;
             MaxFrags = tank.Tankdata.maxFrags;
-            FragsPerBattle = Frags / (double)BattlesCount;
-            KillDeathRatio = Frags / (double)(BattlesCount - tank.Tankdata.survivedBattles);
             Tier8Frags = tank.Tankdata.frags8p;
             BeastFrags = tank.Tankdata.fragsBeast;
             SinaiFrags = tank.Battle.fragsSinai;
@@ -355,41 +401,15 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowPerformance ]
             Shots = tank.Tankdata.shots;
             Hits = tank.Tankdata.hits;
-            HitsPercents = Hits / (double)Shots * 100.0;
+            if (Shots > 0)
+            {
+                HitsPercents = Hits/(double) Shots*100.0;
+            }
             CapturePoints = tank.Tankdata.capturePoints;
             DroppedCapturePoints = tank.Tankdata.droppedCapturePoints;
             Spotted = tank.Tankdata.spotted;
             #endregion
 
-            if (tank.Tankdata.battlesCount > 0)
-            {
-                #region [ ITankRowRatings ]
-
-                BattlesCount = tank.Tankdata.battlesCount;
-                Winrate = tank.Tankdata.wins/(double) tank.Tankdata.battlesCount*100.0;
-
-                AverageDamage = tank.Tankdata.damageDealt/tank.Tankdata.battlesCount;
-
-                KillDeathRatio = tank.Tankdata.frags/(double) (BattlesCount - tank.Tankdata.survivedBattles);
-                double avgFrags = tank.Tankdata.frags/(double) BattlesCount;
-                double avgSpot = tank.Tankdata.spotted/(double) BattlesCount;
-                double avgCap = tank.Tankdata.capturePoints/(double) BattlesCount;
-                double avgDef = tank.Tankdata.droppedCapturePoints/(double) BattlesCount;
-                double avgXP = tank.Tankdata.xp/(double) BattlesCount;
-
-                double value = RatingHelper.CalcER(AverageDamage, Tier, avgFrags, avgSpot, avgCap, avgDef);
-
-                EffRating = (int) value;
-                value = RatingHelper.CalcWN6(AverageDamage, Tier, avgFrags, avgSpot, avgDef, Winrate);
-                WN6Rating = (int) value;
-                DamageRatingRev1 = (int) (tank.Tankdata.damageDealt/(double) tank.Tankdata.damageReceived*100);
-                value = RatingHelper.CalcKievArmorRating(BattlesCount, avgXP, AverageDamage, Winrate/100, avgFrags,
-                                                         avgSpot, avgCap, avgDef);
-                KievArmorRating = (int) value;
-                MarkOfMastery = tank.Special.markOfMastery;
-
-                #endregion
-            }
             #region [ ITankRowSeries ]
             ReaperLongest = tank.Series.maxKillingSeries;
             ReaperProgress = tank.Series.killingSeries;
@@ -430,10 +450,12 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowXP ]
             Xp = tank.Tankdata.xp;
             MaxXp = tank.Tankdata.maxXP;
-            if (tank.Tankdata.battlesCount > 0)
-            {
-                BattleAvgXp = Xp/tank.Tankdata.battlesCount;
-            }
+            #endregion
+
+            #region [ ITankRowRatings ]
+
+            MarkOfMastery = tank.Special.markOfMastery;
+
             #endregion
 
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);

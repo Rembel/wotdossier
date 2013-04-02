@@ -704,4 +704,25 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Common_Wn6Rating" xml:space="preserve">
     <value>WN6 Rating</value>
   </data>
+  <data name="Tab_Header_Overall" xml:space="preserve">
+    <value>Overall</value>
+  </data>
+  <data name="Tab_Header_Recent" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+  <data name="Common_AvgCapturePoints" xml:space="preserve">
+    <value>Average Capture Points:</value>
+  </data>
+  <data name="Common_AvgDamageCaused" xml:space="preserve">
+    <value>Average Damage Caused:</value>
+  </data>
+  <data name="Common_AvgDefensePoints" xml:space="preserve">
+    <value>Average Defense Points:</value>
+  </data>
+  <data name="Common_AvgDestroyed" xml:space="preserve">
+    <value>Average Destroyed:</value>
+  </data>
+  <data name="Common_AvgDetected" xml:space="preserve">
+    <value>Average Detected:</value>
+  </data>
 </root>

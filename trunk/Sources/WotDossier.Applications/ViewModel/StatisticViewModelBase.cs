@@ -1,38 +1,181 @@
 ﻿using System;
+using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
     public abstract class StatisticViewModelBase
     {
-        #region Percents
-    
         public int BattlesCount { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int SurvivedBattles { get; set; }
         public int Xp { get; set; }
-        public int BattleAvgXp { get; set; }
+
         public int MaxXp { get; set; }
         public int Frags { get; set; }
         public int Spotted { get; set; }
-        public double HitsPercents { get; set; }
+
         public int DamageDealt { get; set; }
         public int CapturePoints { get; set; }
         public int DroppedCapturePoints { get; set; }
-        public double WinsPercent { get; set; }
-        public double LossesPercent { get; set; }
-        public double SurvivedBattlesPercent { get; set; }
+
         public double Tier { get; set; }
-        
+
+        #region Percents
+
+        public double HitsPercents { get; set; }
+
+        public double WinsPercent
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Wins/(double) BattlesCount*100.0;
+                }
+                return 0;
+            }
+        }
+        public double LossesPercent
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Losses/(double) BattlesCount*100.0;
+                }
+                return 0;
+            }
+        }
+        public double SurvivedBattlesPercent
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return SurvivedBattles/(double) BattlesCount*100.0;
+                }
+                return 0;
+            }
+        }
+
+        #endregion
+
+        #region Average values
+
+        public double AvgXp
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Xp/(double) BattlesCount;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgFrags
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Frags/(double) BattlesCount;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgSpotted
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Spotted / (double)BattlesCount;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgDamageDealt
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return DamageDealt / (double)BattlesCount;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgCapturePoints
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return CapturePoints / (double)BattlesCount;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgDroppedCapturePoints
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return DroppedCapturePoints / (double)BattlesCount;
+                }
+                return 0;
+            }
+        }
+
         #endregion
 
         #region Unofficial ratings
         
-        public double WN6Rating { get; set; }
+        public double WN6Rating
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return RatingHelper.CalcWN6(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgDroppedCapturePoints, WinsPercent);
+                }
+                return 0;
+            }
+        }
 
-        public double EffRating { get; set; }
+        public double EffRating
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return RatingHelper.CalcER(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
+                }
+                return 0;
+            }
+        }
 
-        public double KievArmorRating { get; set; }
+        public double KievArmorRating
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return RatingHelper.CalcKievArmorRating(BattlesCount, AvgXp, AvgDamageDealt, WinsPercent/100.0,
+                                                            AvgFrags, AvgSpotted, AvgCapturePoints,
+                                                            AvgDroppedCapturePoints);
+                }
+                return 0;
+            }
+        }
 
         #endregion
         

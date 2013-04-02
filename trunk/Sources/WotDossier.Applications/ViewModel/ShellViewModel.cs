@@ -175,7 +175,7 @@ namespace WotDossier.Applications.ViewModel
                 var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
 
                 PlayerStatisticEntity currentStatistic = playerEntities.OrderByDescending(x => x.Updated).First();
-                IEnumerable<PlayerStatisticViewModel> statisticViewModels = playerEntities.Where(x => x.Id != currentStatistic.Id)
+                List<PlayerStatisticViewModel> statisticViewModels = playerEntities.Where(x => x.Id != currentStatistic.Id)
                     .Select(x => new PlayerStatisticViewModel(x)).ToList();
 
                 IEnumerable<PlayerStatisticViewModel> viewModels = playerEntities.Select(x => new PlayerStatisticViewModel(x));

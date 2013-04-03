@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using WotDossier.Common;
+using WotDossier.Domain;
 using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier.Applications.ViewModel
@@ -399,11 +400,11 @@ namespace WotDossier.Applications.ViewModel
             switch (eventArgs.StatisticPeriod)
             {
                     case StatisticPeriod.Recent:
-                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
+                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
                     break;
 
                     case StatisticPeriod.LastWeek:
-                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
+                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated >= DateTime.Now.AddDays(-7));
                     break;
 
                     case StatisticPeriod.AllObservationPeriod:
@@ -488,13 +489,5 @@ namespace WotDossier.Applications.ViewModel
         {
             StatisticPeriod = statisticPeriod;
         }
-    }
-
-    public enum StatisticPeriod
-    {
-        Recent,
-        LastWeek,
-        AllObservationPeriod,
-        //Custom
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Documents;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.Applications;
+using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
@@ -13,6 +15,7 @@ namespace WotDossier.Applications.ViewModel
         private AppSettings _appSettings;
         private List<string> _servers = new List<string>{"ru", "eu"};
         private List<string> _languages = new List<string>{"ru-RU", "en-US"};
+        private List<StatisticPeriod> _periods = new List<StatisticPeriod>{StatisticPeriod.Recent, StatisticPeriod.LastWeek, StatisticPeriod.AllObservationPeriod};
         public DelegateCommand SaveCommand { get; set; }
 
         public AppSettings AppSettings
@@ -30,6 +33,21 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return _languages; }
             set { _languages = value; }
+        }
+
+        public List<StatisticPeriod> Periods
+        {
+            get { return _periods; }
+            set { _periods = value; }
+        }
+
+        public StatisticPeriod Period
+        {
+            get { return AppSettings.Period; }
+            set
+            {
+                AppSettings.Period = value;
+            }
         }
 
         public SettingsViewModel()
@@ -51,6 +69,7 @@ namespace WotDossier.Applications.ViewModel
         private void OnSave()
         {
             _reader.Save(_appSettings);
+            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period));
             ViewTyped.Close();
         }
 

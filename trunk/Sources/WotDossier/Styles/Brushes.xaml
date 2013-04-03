@@ -78,10 +78,13 @@
         <GradientStop Color="#BDBFC1" Offset="0" />
         <GradientStop Color="#858585" Offset="1" />
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="tabControlDefaultBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+    <!--<LinearGradientBrush x:Key="tabControlDefaultBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
         <GradientStop Color="#F2F4F8" Offset="0.282" />
         <GradientStop Color="#E0E3E9" Offset="1" />
-    </LinearGradientBrush>
+    </LinearGradientBrush>-->
+
+    <SolidColorBrush x:Key="tabControlDefaultBackgroundBrush" Color="Transparent">
+    </SolidColorBrush>
 
     <SolidColorBrush x:Key="lightBackgroundBrush" Color="White" />
     <SolidColorBrush x:Key="DarkBackgroundBrush" Color="#444" />

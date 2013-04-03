@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
+        xmlns:tabs="clr-namespace:WotDossier.Tabs"
         Title="{Binding TankStatistic.Tank}" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png">
     <Window.Resources>
         <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="None" />
-        <!--<ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" />-->
+        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" />
         <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="None" />
     </Window.Resources>
     <Grid>
@@ -16,16 +17,18 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
-        <Grid Grid.Column="1" HorizontalAlignment="Stretch">
-            <StackPanel>
+        <StackPanel Background="{StaticResource bcolorCenter}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
                 <Grid>
-                    <TextBlock HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
+                <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
                 </Grid>
-                <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
+                <TabControl Name="tabControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <!--Common tab-->
                     <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabCommon">
                         <Grid HorizontalAlignment="Center" DataContext="{Binding TankStatistic}" Background="Transparent">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -135,24 +138,39 @@
                             <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DefensePoints}"></TextBlock>
                             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="15" Grid.Column="1" Text="{Binding DroppedCapturePoints, StringFormat='### ### ### ###'}"></TextBlock>
                             <TextBlock Foreground="{Binding DroppedCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="15" Grid.Column="2" Text="{Binding DroppedCapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                        </Grid>
+                        <!--EffectivityRating-->
+                        <TextBlock Foreground="#BABFBA" Grid.Row="16" Grid.Column="0" Text="{x:Static Resources:Resources.Common_EffectivityRating}"></TextBlock>
+                        <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="16" Grid.Column="1" Text="{Binding EffRating, StringFormat='### ### ### ###'}"></TextBlock>
+                        <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="16" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+                        <!--Wn6Rating-->
+                        <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Wn6Rating}"></TextBlock>
+                        <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="17" Grid.Column="1" Text="{Binding WN6Rating, StringFormat='### ### ### ###'}"></TextBlock>
+                        <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="17" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+                        <!--KievArmorRating-->
+                        <TextBlock Foreground="#BABFBA" Grid.Row="18" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
+                        <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="18" Grid.Column="1" Text="{Binding KievArmorRating, StringFormat='### ### ### ###'}"></TextBlock>
+                        <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="18" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+                    </Grid>
+                    </TabItem>
+                    <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod" VerticalAlignment="Stretch">
+                        <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
                     </TabItem>
                     <!--Charts-->
-                    <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
+                    <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
                         <ScrollViewer>
                             <StackPanel>
                                 <Grid>
-                                    <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                    <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
                                       Margin="10,10,0,10">
                                     </d3:ChartPlotter>
                                 </Grid>
                                 <Grid>
-                                    <d3:ChartPlotter Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                    <d3:ChartPlotter Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
                                       Margin="10,10,0,10">
                                     </d3:ChartPlotter>
                                 </Grid>
                                 <Grid>
-                                    <d3:ChartPlotter Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                    <d3:ChartPlotter Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
                                       Margin="10,10,0,10">
                                     </d3:ChartPlotter>
                                 </Grid>
@@ -161,7 +179,6 @@
                     </TabItem>
                 </TabControl>
             </StackPanel>
-        </Grid>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
     </Grid>
 </Window>

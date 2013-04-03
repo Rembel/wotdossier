@@ -66,6 +66,7 @@
     <Compile Include="Player\Summary.cs" />
     <Compile Include="Player\TankExperts.cs" />
     <Compile Include="Player\Vehicle.cs" />
+    <Compile Include="StatisticPeriod.cs" />
     <Compile Include="Tank\FragsJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tank\BattleJson.cs" />

@@ -117,6 +117,7 @@
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\StatisticPeriodToStringConverter.cs" />
     <Compile Include="Converters\ValueNearestPercentFormater.cs" />
     <Compile Include="Converters\MarkOfMasteryToTooltipConverter.cs" />
     <Compile Include="Converters\TankClassToImageConverter.cs" />

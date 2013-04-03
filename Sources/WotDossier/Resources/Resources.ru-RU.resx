@@ -714,4 +714,34 @@
   <data name="Version" xml:space="preserve">
     <value>Версия</value>
   </data>
+  <data name="Common_EffectivityRating" xml:space="preserve">
+    <value>Рейтинг эффективности</value>
+  </data>
+  <data name="Common_KievArmorRating" xml:space="preserve">
+    <value>Рейтинг Бронесайта</value>
+  </data>
+  <data name="Common_Wn6Rating" xml:space="preserve">
+    <value>WN6 рейтинг</value>
+  </data>
+  <data name="Tab_Header_Overall" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+  <data name="Tab_Header_Recent" xml:space="preserve">
+    <value>Недавние</value>
+  </data>
+  <data name="Common_AvgCapturePoints" xml:space="preserve">
+    <value>В среднем очков захвата базы:</value>
+  </data>
+  <data name="Common_AvgDamageCaused" xml:space="preserve">
+    <value>В среднем урона:</value>
+  </data>
+  <data name="Common_AvgDefensePoints" xml:space="preserve">
+    <value>В среднем очков защиты базы:</value>
+  </data>
+  <data name="Common_AvgDestroyed" xml:space="preserve">
+    <value>В среднем уничтожено за бой:</value>
+  </data>
+  <data name="Common_AvgDetected" xml:space="preserve">
+    <value>В среднем обнаружено за бой:</value>
+  </data>
 </root>

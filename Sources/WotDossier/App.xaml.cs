@@ -29,13 +29,13 @@ namespace WotDossier
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
-            
             SettingsReader reader = new SettingsReader(WotDossierSettings.SettingsPath);
             //set app lang
             var culture = new CultureInfo(reader.Get().Language);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
+
+            CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
 
 #if (DEBUG != true)
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't

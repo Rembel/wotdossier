@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Windows.Input;
 using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
@@ -45,7 +44,7 @@ namespace WotDossier.Applications.ViewModel
         private PlayerStatisticViewModel _playerStatistic;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
         private IEnumerable<TankStatisticRowViewModel> _tanks;
-
+        
         #region [ Properties ]
 
         public ChartPlotter ChartRating
@@ -97,6 +96,43 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
+        public ObservableCollection<SellInfo> LastUsedTanks
+        {
+            get { return _lastUsedTanks; }
+            set { _lastUsedTanks = value; }
+        }
+
+        public sealed class SellInfo : INotifyPropertyChanged
+        {
+            private double _winPercent;
+            public double WinPercent
+            {
+                get { return _winPercent; }
+                set { _winPercent = value; PropertyChanged.Raise(this, "WinPercent"); }
+            }
+
+            private string _tankName;
+            public string TankName
+            {
+                get { return _tankName; }
+                set { _tankName = value; PropertyChanged.Raise(this, "TankName"); }
+            }
+
+            private int _battles;
+            public int Battles
+            {
+                get { return _battles; }
+                set { _battles = value; PropertyChanged.Raise(this, "Battles"); }
+            }
+
+            #region INotifyPropertyChanged Members
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            #endregion
+        }
+
         #endregion
 
         #region Constructors
@@ -144,6 +180,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnLoad()
         {
+            AppSettings settings = _reader.Get();
+
             PlayerStatistic = GetPlayerStatistic();
 
             FileInfo cacheFile = CacheHelper.GetCacheFile();
@@ -286,7 +324,14 @@ namespace WotDossier.Applications.ViewModel
                     IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                         .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
                     MasterTanker = masterTanker;
-            };
+
+                    if (PlayerStatistic != null)
+                    {
+                        IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle >= PlayerStatistic.PreviousDate);
+                        IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
+                        LastUsedTanks.AddMany(items);
+                    }
+                };
 
             System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
         }

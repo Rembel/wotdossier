@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
-        xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
@@ -57,9 +57,41 @@
                                       Margin="10,10,0,10">
                             </d3:ChartPlotter>
                         </Grid>
+                        <Grid>
+                            <d3:ChartPlotter Grid.Row="0" Name="Chart4" Width="500" Height="500">
+                                <d3:ViewportUIContainer>
+                                    <d3:PieChart Name="PieChart" Width="400" Height="400" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanks}" 
+							                Canvas.Left="10" Canvas.Top="10" StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
+                                        <d3:PieChart.Resources>
+                                            <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:PieChart.Resources>
+
+                                        <d3:PieChart.MarkerTemplate>
+                                            <DataTemplate>
+                                                <d3:PieChartItem>
+                                                    <d3:LiveToolTipService.ToolTip>
+                                                        <d3:LiveToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
+											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock>
+											                    <Bold>Tank:</Bold> <TextBlock Text="{Binding TankName}"/>
+                                                                <LineBreak/>
+											                    <Bold>Battles:</Bold> <TextBlock Text="{Binding Battles}"/>
+											                    <LineBreak/>
+											                    <Bold>Win %:</Bold> <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
+										                    </TextBlock>
+                                                        </d3:LiveToolTip>
+                                                    </d3:LiveToolTipService.ToolTip>
+                                                </d3:PieChartItem>
+                                            </DataTemplate>
+                                        </d3:PieChart.MarkerTemplate>
+                                    </d3:PieChart>
+                                </d3:ViewportUIContainer>
+                            </d3:ChartPlotter>
+                        </Grid>
                     </StackPanel>
                 </ScrollViewer>
-                
+
             </TabItem>
             <!--XP-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_XP}" Name="tabXP">

@@ -79,7 +79,7 @@ namespace WotDossier.Dal
                 DateTime updated = Utils.UnixDateToDateTime((long) stat.data.updated_at).Date;
                 //create new record
                 if (statisticEntity == null ||
-                    (statisticEntity.Updated.Date != updated.Date && statisticEntity.Updated < updated))
+                    (statisticEntity.Updated.Date != updated.Date && statisticEntity.BattlesCount < stat.data.summary.Battles_count))
                 {
                     statisticEntity = new PlayerStatisticEntity();
                     statisticEntity.PlayerId = playerEntity.Id;
@@ -161,9 +161,7 @@ namespace WotDossier.Dal
                         tankEntity.Tier = tank.Common.tier;
                         TankStatisticEntity statisticEntity = new TankStatisticEntity();
                         statisticEntity.TankIdObject = tankEntity;
-                        statisticEntity.Updated = tank.Common.lastBattleTimeR;
-                        statisticEntity.Raw = tank.Raw;
-                        statisticEntity.Version = tank.Common.basedonversion;
+                        statisticEntity.Update(tank);
                         tankEntity.TankStatisticEntities.Add(statisticEntity);
                         _dataProvider.Save(tankEntity);
                     }
@@ -183,9 +181,7 @@ namespace WotDossier.Dal
                         {
                             statisticEntity = new TankStatisticEntity();
                             statisticEntity.TankIdObject = tankEntity;
-                            statisticEntity.Updated = tank.Common.lastBattleTimeR;
-                            statisticEntity.Raw = tank.Raw;
-                            statisticEntity.Version = tank.Common.basedonversion;
+                            statisticEntity.Update(tank);
                             _dataProvider.Save(statisticEntity);
                         }
                         //update current date record

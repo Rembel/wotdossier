@@ -327,7 +327,7 @@ namespace WotDossier.Applications.ViewModel
 
                     if (PlayerStatistic != null)
                     {
-                        IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle >= PlayerStatistic.PreviousDate);
+                        IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle >= PlayerStatistic.PreviousDate.Date);
                         IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
                         LastUsedTanks.AddMany(items);
                     }
@@ -343,10 +343,11 @@ namespace WotDossier.Applications.ViewModel
 
         private TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
         {
-            TankStatisticEntity currentStatistic = tankStatisticEntities.OrderByDescending(x => x.Updated).First();
-            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Where(x => x.Id != currentStatistic.Id)
-                .Select(x => UnZipObject(x.Raw)).ToList();
-            return new TankStatisticRowViewModel(UnZipObject(currentStatistic.Raw), statisticViewModels);
+            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
+            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.Tankdata.battlesCount).First();
+            IEnumerable<TankJson> prevStatisticViewModels =
+                statisticViewModels.Where(x => x.Tankdata.battlesCount != currentStatistic.Tankdata.battlesCount);
+            return new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
         }
 
         private static TankJson UnZipObject(byte[] x)

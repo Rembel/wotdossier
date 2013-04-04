@@ -10,6 +10,8 @@ namespace WotDossier.Applications.ViewModel.Rows
                            ITankRowFrags, ITankRowMasterTanker, ITankRowMedals, ITankRowPerformance, ITankRowRatings, ITankRowSeries, 
                            ITankRowSpecialAwards, ITankRowTime, ITankRowXP
     {
+        private DateTime _lastBattle;
+
         #region Common
 
         public TankContour Icon { get; set; }
@@ -302,7 +304,12 @@ namespace WotDossier.Applications.ViewModel.Rows
         #endregion
 
         #region [ ITankRowTime ]
-        public DateTime LastBattle { get; set; }
+        public DateTime LastBattle
+        {
+            get { return _lastBattle.ToLocalTime(); }
+            set { _lastBattle = value; }
+        }
+
         public TimeSpan PlayTime { get; set; }
         public TimeSpan AverageBattleTime { get; set; }
         #endregion

@@ -41,24 +41,25 @@
             <!--Charts-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
                 <ScrollViewer>
-                    <StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Grid>
-                            <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <d3:ChartPlotter Grid.Row="0" Name="Chart" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="10,10,0,10">
+                            </d3:ChartPlotter>
+                            <d3:ChartPlotter Grid.Row="1" Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="10,10,0,10">
+                            </d3:ChartPlotter>
+                            <d3:ChartPlotter Grid.Row="2" Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="10,10,0,10">
                             </d3:ChartPlotter>
                         </Grid>
                         <Grid>
-                            <d3:ChartPlotter Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="10,10,0,10">
-                            </d3:ChartPlotter>
-                        </Grid>
-                        <Grid>
-                            <d3:ChartPlotter Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="10,10,0,10">
-                            </d3:ChartPlotter>
-                        </Grid>
-                        <Grid>
-                            <d3:ChartPlotter Grid.Row="0" Name="Chart4" Width="500" Height="500">
+                            <d3:ChartPlotter Grid.Row="0" Name="Chart4" Width="500" Height="500" Margin="50, 0, 50, 0" HorizontalAlignment="Center">
                                 <d3:ViewportUIContainer>
                                     <d3:PieChart Name="PieChart" Width="400" Height="400" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanks}" 
 							                Canvas.Left="10" Canvas.Top="10" StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">

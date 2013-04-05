@@ -75,6 +75,7 @@
     <Compile Include="NHibernate\FlushEntityEventListener.cs" />
     <Compile Include="NHibernate\ISessionStorage.cs" />
     <Compile Include="NHibernate\NHibernateSessionStorage.cs" />
+    <Compile Include="PlayerInfoLoadException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WotApiClient.cs" />
     <Compile Include="WotApiHelper.cs" />

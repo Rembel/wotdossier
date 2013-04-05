@@ -132,8 +132,18 @@ namespace WotDossier.Dal
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
-            PlayerSearchJson player = WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "ru" }) ?? 
-                WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "eu" });
+
+            PlayerSearchJson player;
+            try
+            {
+                player = WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "ru" }) ?? 
+                         WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "eu" });
+            }
+            catch (Exception e)
+            {
+                _log.Error("Can't get player info from server", e);
+                return null;
+            }
 
             string name = player.name;
             int id = player.id;

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Windows;
 using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
@@ -204,7 +205,16 @@ namespace WotDossier.Applications.ViewModel
                 return null;
             }
 
-            PlayerStat playerStat = WotApiClient.Instance.LoadPlayerStat(settings);
+            PlayerStat playerStat = null;
+
+            try
+            {
+                playerStat = WotApiClient.Instance.LoadPlayerStat(settings);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error on getting player data from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
             if (playerStat != null)
             {
@@ -316,6 +326,12 @@ namespace WotDossier.Applications.ViewModel
 
                     PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(playerName, tanks);
 
+                    if (playerEntity == null)
+                    {
+                        MessageBox.Show("Can't get player info from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
                     List<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity).ToList();
 
                     Tanks = GetViewModels(entities); 
@@ -327,7 +343,7 @@ namespace WotDossier.Applications.ViewModel
 
                     if (PlayerStatistic != null)
                     {
-                        IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle >= PlayerStatistic.PreviousDate.Date);
+                        IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle.Date > PlayerStatistic.PreviousDate.Date);
                         IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
                         LastUsedTanks.AddMany(items);
                     }

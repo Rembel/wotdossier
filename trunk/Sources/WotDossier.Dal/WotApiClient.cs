@@ -159,6 +159,7 @@ namespace WotDossier.Dal
         /// https://gist.github.com/bartku/2419852
         /// </summary>
         /// <returns></returns>
+        /// <exception cref="PlayerInfoLoadException"></exception>
         public PlayerStat LoadPlayerStat(AppSettings settings)
         {
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
@@ -170,29 +171,38 @@ namespace WotDossier.Dal
             long playerId = 10800699;
             using (StreamReader streamReader = new StreamReader(@"stat.json"))
 #else
-            var player = GetPlayerServerData(settings);
+            PlayerSearchJson player = null;
+
+            try
+            {
+                player = GetPlayerServerData(settings);
+            }
+            catch (Exception e)
+            {
+                _log.Error("Can't get player id from server", e);
+                throw new PlayerInfoLoadException("Error on getting player data from server", e);
+            }
 
             if (player == null)
             {
                 return null;
             }
 
+            Stream stream = null;
             long playerId = player.id;
-            string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
-            WebRequest request = HttpWebRequest.Create(url);
-            WebResponse response;
-            
+
             try
             {
-                response = request.GetResponse();
+                string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                stream = response.GetResponseStream();
             }
             catch (Exception e)
             {
                 _log.Error("Can't get player info from server", e);
-                return null;
+                throw new PlayerInfoLoadException("Error on getting player data from server", e);
             }
-            
-            Stream stream = response.GetResponseStream();
 
             if (stream == null)
             {

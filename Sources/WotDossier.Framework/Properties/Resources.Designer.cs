@@ -61,15 +61,6 @@ namespace WotDossier.Framework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Load.
-        /// </summary>
-        public static string MenuItem_Header {
-            get {
-                return ResourceManager.GetString("MenuItem.Header", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string WPFMessageBox_Button_Cancel {

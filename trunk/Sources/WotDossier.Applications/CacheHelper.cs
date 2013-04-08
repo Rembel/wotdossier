@@ -3,7 +3,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using Common.Logging;
+using WotDossier.Common;
 
 namespace WotDossier.Applications
 {
@@ -11,7 +13,12 @@ namespace WotDossier.Applications
     {
         private static readonly ILog _log = LogManager.GetLogger("DossierRepository");
 
-        public static FileInfo GetCacheFile()
+        /// <summary>
+        /// Gets the cache file.
+        /// </summary>
+        /// <param name="playerId">The player id.</param>
+        /// <returns>null if there is no any dossier cache file for specified player</returns>
+        public static FileInfo GetCacheFile(string playerId)
         {
             FileInfo cacheFile = null;
 
@@ -25,7 +32,7 @@ namespace WotDossier.Applications
             }
             catch (DirectoryNotFoundException ex)
             {
-                _log.Error("Путь к файлам кэша не найден", ex);
+                _log.Error("Cann't find dossier cache files", ex);
             }
 
             if (!files.Any())
@@ -37,18 +44,25 @@ namespace WotDossier.Applications
             {
                 FileInfo info = new FileInfo(file);
 
-                if (cacheFile == null)
+                if (GetPlayerName(info).Equals(playerId, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    cacheFile = info;
-                }
-                else if (cacheFile.LastWriteTime < info.LastWriteTime)
-                {
-                    cacheFile = info;
+                    if (cacheFile == null)
+                    {
+                        cacheFile = info;
+                    }
+                    else if (cacheFile.LastWriteTime < info.LastWriteTime)
+                    {
+                        cacheFile = info;
+                    }
                 }
             }
             return cacheFile;
         }
 
+        /// <summary>
+        /// Binary dossier cache to plain json.
+        /// </summary>
+        /// <param name="cacheFile">The cache file.</param>
         public static void BinaryCacheToJson(FileInfo cacheFile)
         {
             string temp = Environment.CurrentDirectory;
@@ -62,6 +76,21 @@ namespace WotDossier.Applications
             proc.Start();
 
             Environment.CurrentDirectory = temp;
+        }
+
+        /// <summary>
+        /// Gets the name of the player from name of dossier cache file.
+        /// </summary>
+        /// <param name="cacheFile">The cache file in base32 format. Example of decoded filename - login-ct-p1.worldoftanks.com:20015;_Rembel__RU</param>
+        /// <returns></returns>
+        public static string GetPlayerName(FileInfo cacheFile)
+        {
+            Base32Encoder encoder = new Base32Encoder();
+            string str = cacheFile.Name.Replace(cacheFile.Extension, string.Empty);
+            byte[] decodedFileNameBytes = encoder.Decode(str.ToLowerInvariant());
+            string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
+            string playerName = decodedFileName.Split(';')[1];
+            return playerName;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Documents;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain;

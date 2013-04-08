@@ -145,11 +145,38 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t find player data in dossier cache.
+        /// </summary>
+        internal static string WarningMsg_CanntFindPlayerDataInDossierCache {
+            get {
+                return ResourceManager.GetString("WarningMsg_CanntFindPlayerDataInDossierCache", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify player name before.
+        /// </summary>
+        internal static string WarningMsg_SpecifyPlayerName {
+            get {
+                return ResourceManager.GetString("WarningMsg_SpecifyPlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string WindowCaption_Error {
             get {
                 return ResourceManager.GetString("WindowCaption_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string WindowCaption_Warning {
+            get {
+                return ResourceManager.GetString("WindowCaption_Warning", resourceCulture);
             }
         }
     }

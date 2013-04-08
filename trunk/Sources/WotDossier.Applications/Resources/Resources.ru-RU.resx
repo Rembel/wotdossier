@@ -150,4 +150,13 @@
   <data name="ChartLegend_AvgDamage" xml:space="preserve">
     <value>Средний урон</value>
   </data>
+  <data name="WarningMsg_CanntFindPlayerDataInDossierCache" xml:space="preserve">
+    <value>Для указанного игрока не найдено данных по танкам в локальном кэше игры</value>
+  </data>
+  <data name="WindowCaption_Warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="WarningMsg_SpecifyPlayerName" xml:space="preserve">
+    <value>Укажите имя игрока в настройках приложения</value>
+  </data>
 </root>

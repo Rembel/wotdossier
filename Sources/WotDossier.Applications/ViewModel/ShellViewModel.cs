@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Media;
@@ -14,7 +13,6 @@ using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
-using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -41,7 +39,7 @@ namespace WotDossier.Applications.ViewModel
 
         private PlayerStatisticViewModel _playerStatistic;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
-        private IEnumerable<TankStatisticRowViewModel> _tanks;
+        private IEnumerable<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
         
         #region [ Properties ]
 
@@ -180,16 +178,34 @@ namespace WotDossier.Applications.ViewModel
         {
             PlayerStatistic = GetPlayerStatistic();
 
-            FileInfo cacheFile = CacheHelper.GetCacheFile();
-
-            if (cacheFile != null)
+            if (PlayerStatistic != null)
             {
-                CacheHelper.BinaryCacheToJson(cacheFile);
+                InitChart();
 
-                Thread.Sleep(1000);
-             
-                InitTanksStatistic(cacheFile);
+                FileInfo cacheFile = CacheHelper.GetCacheFile(PlayerStatistic.Name);
+
+                if (cacheFile != null)
+                {
+                    //convert dossier cache file to json
+                    CacheHelper.BinaryCacheToJson(cacheFile);
+                    Thread.Sleep(1000);
+                    InitTanksStatistic(cacheFile);
+                    InitLastUsedTanksChart();
+                }
+                else
+                {
+                    MessageBox.Show("Для указанного игрока не найдено данных по танкам в локальном кэше игры", "Warning",
+                                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
+        }
+
+        private void InitLastUsedTanksChart()
+        {
+            LastUsedTanks.Clear();
+            IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle.Date > PlayerStatistic.PreviousDate.Date);
+            IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
+            LastUsedTanks.AddMany(items);
         }
 
         private PlayerStatisticViewModel GetPlayerStatistic()
@@ -197,6 +213,8 @@ namespace WotDossier.Applications.ViewModel
             AppSettings settings = _reader.Get();
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
+                MessageBox.Show("Please specify player name before", "Configuration", MessageBoxButton.OK,
+                                MessageBoxImage.Warning);
                 return null;
             }
 
@@ -212,111 +230,36 @@ namespace WotDossier.Applications.ViewModel
                 MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            if (playerStat != null)
+            if (playerStat != null && playerStat.data.name.Equals(settings.PlayerId, StringComparison.InvariantCultureIgnoreCase))
             {
                 PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(settings.PlayerId, playerStat);
 
-                var playerEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
+                var statisticEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
 
-                PlayerStatisticEntity currentStatistic = playerEntities.OrderByDescending(x => x.Updated).First();
-                List<PlayerStatisticViewModel> statisticViewModels = playerEntities.Where(x => x.Id != currentStatistic.Id)
+                PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+                List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
                     .Select(x => new PlayerStatisticViewModel(x)).ToList();
 
-                List<PlayerStatisticViewModel> viewModels = playerEntities.Select(x => new PlayerStatisticViewModel(x)).ToList();
-
-                InitChart(viewModels);
-
-                PlayerStatisticViewModel playerStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, statisticViewModels);
-                playerStatisticViewModel.Name = player.Name;
-                playerStatisticViewModel.Created = player.Creaded;
-                playerStatisticViewModel.BattlesPerDay = playerStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
+                PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
+                currentStatisticViewModel.Name = player.Name;
+                currentStatisticViewModel.Created = player.Creaded;
+                currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
 
                 if (playerStat.data.clan.clan != null)
                 {
-                    playerStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
+                    currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
                 }
 
-                return playerStatisticViewModel;
+                return currentStatisticViewModel;
             }
             return null;
         }
 
-        private void InitChart(List<PlayerStatisticViewModel> statisticViewModels)
-        {
-            InitRatingChart(statisticViewModels);
-            InitWinPercentChart(statisticViewModels);
-            InitAvgDamageChart(statisticViewModels);
-        }
-
-        private void InitRatingChart(List<PlayerStatisticViewModel> statisticViewModels)
-        {
-            DataRect dataRect = DataRect.Create(0, 0, 100000, 2500);
-            ChartRating.Viewport.Domain = dataRect;
-            ChartRating.Viewport.Visible = dataRect;
-
-            ChartRating.RemoveUserElements();
-
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) {XMapping = x => x.X, YMapping = y => y.Y};
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
-            SolidColorBrush brush = new SolidColorBrush {Color = Colors.Blue};
-            Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker {Size = 7, Fill = brush, Brush = brush};
-            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_ER));
-
-            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
-            dataSource = new EnumerableDataSource<DataPoint>(wn6Points) {XMapping = x => x.X, YMapping = y => y.Y};
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                  point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
-            brush = new SolidColorBrush {Color = Colors.Green};
-            lineThickness = new Pen(brush, 2);
-            circlePointMarker = new CircleElementPointMarker {Size = 7, Fill = brush, Brush = brush};
-            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_WN6Rating));
-
-            ChartRating.FitToView();
-        }
-
-        private void InitWinPercentChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
-        {
-            ChartWinPercent.RemoveUserElements();
-
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
-            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
-            Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_WinPercent));
-
-            ChartWinPercent.FitToView();
-        }
-
-        private void InitAvgDamageChart(IEnumerable<PlayerStatisticViewModel> statisticViewModels)
-        {
-            ChartAvgDamage.RemoveUserElements();
-
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
-            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
-            Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_AvgDamage));
-
-            ChartAvgDamage.FitToView();
-        }
-
         private void InitTanksStatistic(FileInfo cacheFile)
         {
-            Action act = () =>
+           // Action act = () =>
                 {
-                    Base32Encoder encoder = new Base32Encoder();
-                    
-                    string str = cacheFile.Name.Replace(cacheFile.Extension, string.Empty);
-                    byte[] decodedFileNameBytes = encoder.Decode(str.ToLowerInvariant());
-                    string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
-
-                    string playerName = decodedFileName.Split(';')[1];
+                    var playerName = CacheHelper.GetPlayerName(cacheFile);
 
                     List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
 
@@ -328,30 +271,31 @@ namespace WotDossier.Applications.ViewModel
                         return;
                     }
 
-                    List<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity).ToList();
+                    IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity);
 
-                    Tanks = GetViewModels(entities); 
+                    Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
 
-                    IEnumerable<KeyValuePair<int, int>> killed = tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
-                    IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TankDictionary.Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
-                        .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankContour(x.Value))).OrderBy(x => x.IsPremium).ThenBy(x => x.Tier);
-                    MasterTanker = masterTanker;
-
-                    if (PlayerStatistic != null)
-                    {
-                        LastUsedTanks.Clear();
-                        IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle.Date > PlayerStatistic.PreviousDate.Date);
-                        IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
-                        LastUsedTanks.AddMany(items);
-                    }
+                    InitMasterTankerList(tanks);
                 };
 
-            System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
+            //System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
         }
 
-        private IEnumerable<TankStatisticRowViewModel> GetViewModels(List<TankStatisticEntity> entities)
+        private void InitMasterTankerList(List<TankJson> tanks)
         {
-            return entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+            IEnumerable<KeyValuePair<int, int>> killed =
+                tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
+            IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TankDictionary.Where(
+                x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
+                                                                        .Select(
+                                                                            x =>
+                                                                            new TankRowMasterTanker(x.Value,
+                                                                                                    WotApiClient.Instance
+                                                                                                                .GetTankContour(
+                                                                                                                    x.Value)))
+                                                                        .OrderBy(x => x.IsPremium)
+                                                                        .ThenBy(x => x.Tier);
+            MasterTanker = masterTanker;
         }
 
         private TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
@@ -374,6 +318,93 @@ namespace WotDossier.Applications.ViewModel
         {
             return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
         }
+
+        #region [ Charts initialization ]
+
+        private void InitChart()
+        {
+            if (PlayerStatistic != null)
+            {
+                List<PlayerStatisticViewModel> statisticViewModels = PlayerStatistic.GetAll();
+                InitRatingChart(statisticViewModels);
+                InitWinPercentChart(statisticViewModels);
+                InitAvgDamageChart(statisticViewModels);
+            }
+        }
+
+        private void InitRatingChart(List<PlayerStatisticViewModel> statisticViewModels)
+        {
+            DataRect dataRect = DataRect.Create(0, 0, 100000, 2500);
+            ChartRating.Viewport.Domain = dataRect;
+            ChartRating.Viewport.Visible = dataRect;
+
+            ChartRating.RemoveUserElements();
+
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point =>
+                                  String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
+            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
+            Pen lineThickness = new Pen(brush, 2);
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker,
+                                     new PenDescription(Resources.Resources.ChartLegend_ER));
+
+            IEnumerable<DataPoint> wn6Points =
+                statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
+            dataSource = new EnumerableDataSource<DataPoint>(wn6Points) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point =>
+                                  String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
+            brush = new SolidColorBrush { Color = Colors.Green };
+            lineThickness = new Pen(brush, 2);
+            circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker,
+                                     new PenDescription(Resources.Resources.ChartLegend_WN6Rating));
+
+            ChartRating.FitToView();
+        }
+
+        private void InitWinPercentChart(List<PlayerStatisticViewModel> statisticViewModels)
+        {
+            ChartWinPercent.RemoveUserElements();
+
+            IEnumerable<DataPoint> erPoints =
+                statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point =>
+                                  String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
+            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
+            Pen lineThickness = new Pen(brush, 2);
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker,
+                                         new PenDescription(Resources.Resources.ChartLegend_WinPercent));
+
+            ChartWinPercent.FitToView();
+        }
+
+        private void InitAvgDamageChart(List<PlayerStatisticViewModel> statisticViewModels)
+        {
+            ChartAvgDamage.RemoveUserElements();
+
+            IEnumerable<DataPoint> erPoints =
+                statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point =>
+                                  String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
+            SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
+            Pen lineThickness = new Pen(brush, 2);
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker,
+                                        new PenDescription(Resources.Resources.ChartLegend_AvgDamage));
+
+            ChartAvgDamage.FitToView();
+        }
+
+        #endregion
 
         public virtual void Show()
         {

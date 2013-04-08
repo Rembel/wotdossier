@@ -72,7 +72,7 @@ namespace WotDossier.Dal
 
                 playerEntity = GetOrCreatePlayer(playerId, name, id, creaded);
 
-                PlayerStatisticEntity statisticEntity = _dataProvider.QueryOver<PlayerStatisticEntity>()
+                PlayerStatisticEntity statisticEntity = _dataProvider.QueryOver<PlayerStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
                                                .Desc.Take(1)
                                                .SingleOrDefault<PlayerStatisticEntity>();

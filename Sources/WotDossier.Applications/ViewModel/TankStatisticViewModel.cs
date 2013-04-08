@@ -16,10 +16,6 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(TankStatisticViewModel))]
     public class TankStatisticViewModel : ViewModel<ITankStatisticView>
     {
-        private const string BATTLES_RATING_MARKER_TOOLTIP_FORMAT = "Battles: {0}\nRating: {1:0.00}";
-        private const string BATTLES_WIN_PERCENT_MARKER_TOOLTIP_FORMAT = "Battles: {0}\nWin percent: {1:0.00}";
-        private const string BATTLES_AVG_DAMAGE_MARKER_TOOLTIP_FORMAT = "Battles: {0}\nAvg Damage: {1:0.00}";
-
         private TankStatisticRowViewModel _tankStatistic;
 
         public TankStatisticRowViewModel TankStatistic
@@ -81,20 +77,20 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
             Pen lineThickness = new Pen(brush, 2);
             ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("РЭ"));
+            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_ER));
 
             IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
             dataSource = new EnumerableDataSource<DataPoint>(wn6Points) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                  point => String.Format(BATTLES_RATING_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+                                  point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
             brush = new SolidColorBrush { Color = Colors.Green };
             lineThickness = new Pen(brush, 2);
             circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("WN6"));
+            ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_WN6Rating));
 
             ChartRating.FitToView();
         }
@@ -105,11 +101,11 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_WIN_PERCENT_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
             Pen lineThickness = new Pen(brush, 2);
             ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("Win %"));
+            ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_WinPercent));
 
             ChartWinPercent.FitToView();
         }
@@ -120,11 +116,11 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(BATTLES_AVG_DAMAGE_MARKER_TOOLTIP_FORMAT, point.X, point.Y));
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
             Pen lineThickness = new Pen(brush, 2);
             ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
-            ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription("Avg damage"));
+            ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_AvgDamage));
 
             ChartAvgDamage.FitToView();
         }

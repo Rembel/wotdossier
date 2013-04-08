@@ -150,4 +150,13 @@ Win percent: {1:0.00}</value>
   <data name="ChartLegend_AvgDamage" xml:space="preserve">
     <value>Avg damage</value>
   </data>
+  <data name="WindowCaption_Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="WarningMsg_SpecifyPlayerName" xml:space="preserve">
+    <value>Please specify player name before</value>
+  </data>
+  <data name="WarningMsg_CanntFindPlayerDataInDossierCache" xml:space="preserve">
+    <value>Can't find player data in dossier cache</value>
+  </data>
 </root>

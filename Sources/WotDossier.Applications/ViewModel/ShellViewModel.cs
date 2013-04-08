@@ -194,7 +194,7 @@ namespace WotDossier.Applications.ViewModel
                 }
                 else
                 {
-                    MessageBox.Show("Для указанного игрока не найдено данных по танкам в локальном кэше игры", "Warning",
+                    MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
@@ -213,7 +213,7 @@ namespace WotDossier.Applications.ViewModel
             AppSettings settings = _reader.Get();
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
-                MessageBox.Show("Please specify player name before", "Configuration", MessageBoxButton.OK,
+                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK,
                                 MessageBoxImage.Warning);
                 return null;
             }

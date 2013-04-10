@@ -67,7 +67,7 @@ namespace WotDossier.Applications
         {
             string temp = Environment.CurrentDirectory;
 
-            string directoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string directoryName = temp;
             Environment.CurrentDirectory = directoryName + @"\External";
             Process proc = new Process();
             proc.EnableRaisingEvents = false;

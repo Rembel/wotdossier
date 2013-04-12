@@ -6,7 +6,7 @@ namespace WotDossier.Domain.Tank
     {
         public byte[] Raw { get; set; }
         public TankInfo Info { get; set; }
-        public TankContour TankContour { get; set; }
+        public TankIcon Icon { get; set; }
         public IEnumerable<FragsJson> Frags { get; set; }
 
         public BattleJson Battle { get; set; }

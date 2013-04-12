@@ -203,7 +203,7 @@ namespace WotDossier.Applications.ViewModel
         private void InitLastUsedTanksChart()
         {
             LastUsedTanks.Clear();
-            IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle.Date > PlayerStatistic.PreviousDate.Date);
+            IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate);
             IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
             LastUsedTanks.AddMany(items);
         }
@@ -285,13 +285,13 @@ namespace WotDossier.Applications.ViewModel
         {
             IEnumerable<KeyValuePair<int, int>> killed =
                 tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
-            IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TankDictionary.Where(
+            IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TanksDictionary.Where(
                 x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                                                                         .Select(
                                                                             x =>
                                                                             new TankRowMasterTanker(x.Value,
                                                                                                     WotApiClient.Instance
-                                                                                                                .GetTankContour(
+                                                                                                                .GetTankIcon(
                                                                                                                     x.Value)))
                                                                         .OrderBy(x => x.IsPremium)
                                                                         .ThenBy(x => x.Tier);

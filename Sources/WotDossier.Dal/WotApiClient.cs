@@ -12,6 +12,10 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Dal
 {
+    /// <summary>
+    /// Web Client for WoT web api
+    /// https://gist.github.com/bartku/2419852
+    /// </summary>
     public class WotApiClient
     {
         protected static readonly ILog _log = LogManager.GetLogger("WotApiClient");
@@ -22,17 +26,17 @@ namespace WotDossier.Dal
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
 
-        private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> _tankDictionary;
-        private static readonly Dictionary<string, TankContour> _contoursDictionary;
+        private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> _tanksDictionary;
+        private static readonly Dictionary<string, TankIcon> _iconsDictionary;
         
-        public static Dictionary<KeyValuePair<int, int>, TankInfo> TankDictionary
+        public static Dictionary<KeyValuePair<int, int>, TankInfo> TanksDictionary
         {
-            get { return _tankDictionary; }
+            get { return _tanksDictionary; }
         }
 
-        public static Dictionary<string, TankContour> ContoursDictionary
+        public static Dictionary<string, TankIcon> IconsDictionary
         {
-            get { return _contoursDictionary; }
+            get { return _iconsDictionary; }
         }
 
         /// <summary>
@@ -40,8 +44,8 @@ namespace WotDossier.Dal
         /// </summary>
         static WotApiClient()
         {
-            _tankDictionary = ReadTanksLibrary();
-            _contoursDictionary = ReadTankContours();
+            _tanksDictionary = ReadTanks();
+            _iconsDictionary = ReadTankIcons();
         }
 
         public static WotApiClient Instance
@@ -89,8 +93,8 @@ namespace WotDossier.Dal
 
         public void ExtendPropertiesData(TankJson tank)
         {
-            tank.Info = _tankDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
-            tank.TankContour = GetTankContour(tank);
+            tank.Info = _tanksDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
+            tank.Icon = GetTankIcon(tank);
             tank.Frags =
                 tank.Kills.Select(
                     x =>
@@ -103,22 +107,22 @@ namespace WotDossier.Dal
                         });
         }
 
-        public TankContour GetTankContour(TankJson tank)
+        public TankIcon GetTankIcon(TankJson tank)
         {
-            return GetTankContour(tank.Info);
+            return GetTankIcon(tank.Info);
         }
 
-        public TankContour GetTankContour(TankInfo tank)
+        public TankIcon GetTankIcon(TankInfo tank)
         {
             string key = string.Format("{0}_{1}", tank.countryCode, tank.icon.ToLowerInvariant());
-            if (_contoursDictionary.ContainsKey(key))
+            if (_iconsDictionary.ContainsKey(key))
             {
-                return _contoursDictionary[key];
+                return _iconsDictionary[key];
             }
-            return TankContour.Empty;
+            return TankIcon.Empty;
         }
 
-        private static Dictionary<KeyValuePair<int, int>, TankInfo> ReadTanksLibrary()
+        private static Dictionary<KeyValuePair<int, int>, TankInfo> ReadTanks()
         {
             List<TankInfo> tanks = new List<TankInfo>();
             using (StreamReader re = new StreamReader(@"External\tanks.json"))
@@ -137,9 +141,9 @@ namespace WotDossier.Dal
             return tanks.ToDictionary(x => new KeyValuePair<int, int>(x.tankid, x.countryid));
         }
 
-        private static Dictionary<string, TankContour> ReadTankContours()
+        private static Dictionary<string, TankIcon> ReadTankIcons()
         {
-            List<TankContour> tanks = new List<TankContour>();
+            List<TankIcon> tanks = new List<TankIcon>();
             using (StreamReader re = new StreamReader(@"External\contour.json"))
             {
                 JsonTextReader reader = new JsonTextReader(re);
@@ -147,7 +151,7 @@ namespace WotDossier.Dal
                 var parsedData = se.Deserialize<JArray>(reader);
                 foreach (JToken jToken in parsedData)
                 {
-                    TankContour tank = JsonConvert.DeserializeObject<TankContour>(jToken.ToString());
+                    TankIcon tank = JsonConvert.DeserializeObject<TankIcon>(jToken.ToString());
                     tanks.Add(tank);
                 }
             }
@@ -156,9 +160,8 @@ namespace WotDossier.Dal
         }
 
         /// <summary>
-        /// https://gist.github.com/bartku/2419852
+        /// Loads player stat from server
         /// </summary>
-        /// <returns></returns>
         /// <exception cref="PlayerInfoLoadException"></exception>
         public PlayerStat LoadPlayerStat(AppSettings settings)
         {
@@ -175,7 +178,7 @@ namespace WotDossier.Dal
 
             try
             {
-                player = GetPlayerServerData(settings);
+                player = SearchPlayer(settings);
             }
             catch (Exception e)
             {
@@ -220,28 +223,12 @@ namespace WotDossier.Dal
             }
         }
 
-//#if DEBUG
         /// <summary>
-        /// https://gist.github.com/bartku/2419852
+        /// Searches the player.
         /// </summary>
-        /// <returns></returns>
-        public PlayerStat LoadPrevPlayerStat(AppSettings settings)
-        {
-            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
-            {
-                return null;
-            }
-
-            using (StreamReader streamReader = new StreamReader(@"stat_prev.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(streamReader);
-                JsonSerializer se = new JsonSerializer();
-                return se.Deserialize<PlayerStat>(reader);
-            }
-        }
-//#endif
-
-        public PlayerSearchJson GetPlayerServerData(AppSettings settings)
+        /// <param name="settings">The settings.</param>
+        /// <returns>First found player</returns>
+        public PlayerSearchJson SearchPlayer(AppSettings settings)
         {
             string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);

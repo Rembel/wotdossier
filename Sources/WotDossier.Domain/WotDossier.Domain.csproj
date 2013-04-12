@@ -77,8 +77,8 @@
     <Compile Include="Tank\MajorJson.cs" />
     <Compile Include="Tank\SeriesJson.cs" />
     <Compile Include="Tank\SpecialJson.cs" />
+    <Compile Include="Tank\TankIcon.cs" />
     <Compile Include="Tank\TankJson.cs" />
-    <Compile Include="Tank\TankContour.cs" />
     <Compile Include="Tank\TankDataJson.cs" />
     <Compile Include="Tank\TankInfo.cs" />
   </ItemGroup>

@@ -5,7 +5,7 @@ namespace WotDossier.Applications.ViewModel.Rows
     public class TankRowBase : ITankRowBase
     {
         private int _tier;
-        private TankContour _icon;
+        private TankIcon _icon;
         private string _tank;
         private int _tankType;
         private int _countryId;
@@ -16,7 +16,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             set { _tier = value; }
         }
 
-        public TankContour Icon
+        public TankIcon Icon
         {
             get { return _icon; }
             set { _icon = value; }
@@ -55,7 +55,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
             Tank = tank.Common.tanktitle;
-            Icon = tank.TankContour;
+            Icon = tank.Icon;
             CountryId = tank.Common.countryid;
         }
 

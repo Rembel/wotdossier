@@ -14,7 +14,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #region Common
 
-        public TankContour Icon { get; set; }
+        public TankIcon Icon { get; set; }
 
         public string Tank { get; set; }
 
@@ -306,7 +306,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         #region [ ITankRowTime ]
         public DateTime LastBattle
         {
-            get { return _lastBattle.ToLocalTime(); }
+            get { return _lastBattle; }
             set { _lastBattle = value; }
         }
 
@@ -327,7 +327,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
             Tank = tank.Common.tanktitle;
-            Icon = tank.TankContour;
+            Icon = tank.Icon;
             CountryId = tank.Common.countryid;
 
             #region [ ITankRowBattleAwards ]

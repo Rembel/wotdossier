@@ -4,7 +4,6 @@ using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using NUnit.Framework;
 using WotDossier.Applications;
@@ -68,6 +67,27 @@ namespace WotDossier.Test
             Environment.CurrentDirectory = temp;
         }
 
+
+        /*Добавлены новые немецкие танки:
+            VK 20.01 (D) (средний 4-го уровня);
+            VK 30.01 (D) (средний 6-го уровня);
+            Aufklarerpanzer Panther (лёгкий 7-го уровня);
+            Indien Panzer (средний 8-го уровня);
+            Leopard Prototype der Arbeitsgruppe A (средний 9-го уровня);
+            Leopard 1 (средний 10-го уровня);
+
+        Добавлены новые советские танки:
+            Т-60 (лёгкий 2-го уровня);
+            Т-70 (лёгкий 3-го уровня);
+            Т-80 (лёгкий 4-го уровня);
+         
+        Американская премиум САУ Sexton 3-го уровня переведена в британское дерево и добавлена в магазин для продажи.
+
+        Для тестирования супертестерами добавлены танки:
+            британский тяжёлый премиум танк 5-го уровня A33 Excelsior;
+            советский специальный танк 10-го уровня «Объект 907»;
+            американский специальный средний танк 10-го уровня М60;
+            немецкий специальный тяжёлый танк 10-го уровня VK7201.*/
         [Test]
         public void CacheTest_085()
         {

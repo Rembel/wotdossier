@@ -314,9 +314,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Data\dossier.sqlce" />
-    <None Include="stat_prev.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

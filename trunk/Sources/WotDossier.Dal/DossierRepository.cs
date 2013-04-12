@@ -136,8 +136,8 @@ namespace WotDossier.Dal
             PlayerSearchJson player;
             try
             {
-                player = WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "ru" }) ?? 
-                         WotApiClient.Instance.GetPlayerServerData(new AppSettings { PlayerId = playerName, Server = "eu" });
+                player = WotApiClient.Instance.SearchPlayer(new AppSettings { PlayerId = playerName, Server = "ru" }) ?? 
+                         WotApiClient.Instance.SearchPlayer(new AppSettings { PlayerId = playerName, Server = "eu" });
             }
             catch (Exception e)
             {
@@ -163,7 +163,7 @@ namespace WotDossier.Dal
                         tankEntity.CountryId = tank.Common.countryid;
                         tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(tank.Common.countryid);
                         tankEntity.TankId = tank.Common.tankid;
-                        tankEntity.Icon = tank.TankContour.iconid;
+                        tankEntity.Icon = tank.Icon.iconid;
                         tankEntity.PlayerId = playerEntity.Id;
                         tankEntity.IsPremium = tank.Common.premium == 1;
                         tankEntity.Name = tank.Common.tanktitle;

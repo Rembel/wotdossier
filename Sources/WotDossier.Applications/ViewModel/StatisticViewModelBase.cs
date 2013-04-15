@@ -5,6 +5,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public abstract class StatisticViewModelBase
     {
+        private DateTime _updated;
         public int BattlesCount { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }
@@ -182,7 +183,11 @@ namespace WotDossier.Applications.ViewModel
         /// <summary>
         /// Stat updated
         /// </summary>
-        public DateTime Updated { get; set; }
+        public DateTime Updated
+        {
+            get { return _updated.ToLocalTime(); }
+            set { _updated = value; }
+        }
 
         public int BattlesPerDay { get; set; }
     }

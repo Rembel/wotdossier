@@ -1,26 +1,11 @@
 ﻿<Window x:Class="WotDossier.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:WotDossier.Converters"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
         Title="MainWindow" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png"        >
     <DockPanel>
-        <DockPanel.Resources>
-            <DataTemplate x:Key="MasterTemplate" >
-                <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       ToolTip="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToTooltipConverter.Default}}" 
-                       Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" />
-            </DataTemplate>
-            <DataTemplate x:Key="TankIconTemplate" >
-                <Grid>
-                    <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
-                    <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
-                </Grid>
-            </DataTemplate>
-        </DockPanel.Resources>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
             <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>
             <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Click="MenuItemSettings_Click"></MenuItem>
@@ -96,333 +81,59 @@
             </TabItem>
             <!--XP-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_XP}" Name="tabXP">
-                <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgXP" IsReadOnly="True" 
-                              AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn  Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_TotalXP}" Binding="{Binding Xp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_MaximumXP}" Binding="{Binding MaxXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_AverageXP}" Binding="{Binding AvgXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:XPTab HorizontalAlignment="Stretch"></tabs:XPTab>
             </TabItem>
             <!--Battles-->
             <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Battles}" Name="tabBattles">
-                <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Won}" Binding="{Binding Wins}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_WonPercent}" Binding="{Binding WinsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Lost}" Binding="{Binding Losses}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_LostPercent}" Binding="{Binding LossesPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Draws}" Binding="{Binding Draws}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_DrawsPercent}" Binding="{Binding DrawsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Survived}" Binding="{Binding SurvivedBattles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedPercent}" Binding="{Binding SurvivedBattlesPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedAndWon}" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedAndWonPercent}" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:BattlesTab HorizontalAlignment="Stretch"></tabs:BattlesTab>
             </TabItem>
             <!--Frags-->
             <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_Frags}" Name="tabFrags">
-                <Grid >
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_Frags}" Binding="{Binding Frags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_MaxFrags}" Binding="{Binding MaxFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_FragsPerBattle}" Binding="{Binding FragsPerBattle, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_KillDeathRatio}" Binding="{Binding KillDeathRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_Tier8Frags}" Binding="{Binding Tier8Frags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_BeastFrags}" Binding="{Binding BeastFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_SinaiFrags}" Binding="{Binding SinaiFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:FragsTab HorizontalAlignment="Stretch"></tabs:FragsTab>
             </TabItem>
             <!--Damage-->
             <TabItem TabIndex="3" Header="{x:Static Resources:Resources.Tab_Header_Damage}" Name="tabDamage">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageDealt}" Binding="{Binding DamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageTaken}" Binding="{Binding DamageTaken}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageRatio}" Binding="{Binding DamageRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AvgDamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamagePerHit}" Binding="{Binding DamagePerHit}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:DamageTab HorizontalAlignment="Stretch"></tabs:DamageTab>
             </TabItem>
             <!--Battle awards-->
             <TabItem TabIndex="4" Header="{x:Static Resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_BattleHero}" HeaderTemplate="{StaticResource BattleHeroColumnHeaderTemplate}" Binding="{Binding BattleHero}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_TopGun}" HeaderTemplate="{StaticResource TopGunColumnHeaderTemplate}" Binding="{Binding TopGun}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_Invader}" HeaderTemplate="{StaticResource InvaderColumnHeaderTemplate}" Binding="{Binding Invader}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_Sniper}" HeaderTemplate="{StaticResource SniperColumnHeaderTemplate}" Binding="{Binding Sniper}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_Defender}" HeaderTemplate="{StaticResource DefenderColumnHeaderTemplate}" Binding="{Binding Defender}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_SteelWall}" HeaderTemplate="{StaticResource SteelWallColumnHeaderTemplate}" Binding="{Binding SteelWall}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_Confederate}" HeaderTemplate="{StaticResource ConfederateColumnHeaderTemplate}" Binding="{Binding Confederate}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_Scout}" HeaderTemplate="{StaticResource ScoutColumnHeaderTemplate}" Binding="{Binding Scout}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_PatrolDuty}" HeaderTemplate="{StaticResource PatrolDutyColumnHeaderTemplate}" Binding="{Binding PatrolDuty}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_BrothersInArms}" HeaderTemplate="{StaticResource BrothersInArmsColumnHeaderTemplate}" Binding="{Binding BrothersInArms}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_CrucialContribution}" HeaderTemplate="{StaticResource CrucialContributionColumnHeaderTemplate}" Binding="{Binding CrucialContribution}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_CoolHeaded}" HeaderTemplate="{StaticResource CoolHeadedColumnHeaderTemplate}" Binding="{Binding CoolHeaded}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_LuckyDevil}" HeaderTemplate="{StaticResource LuckyDevilColumnHeaderTemplate}" Binding="{Binding LuckyDevil}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_Spartan}" HeaderTemplate="{StaticResource SpartanColumnHeaderTemplate}" Binding="{Binding Spartan}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:BattleAwardsTab HorizontalAlignment="Stretch"></tabs:BattleAwardsTab>
             </TabItem>
             <!--Special awards-->
             <TabItem TabIndex="5" Header="{x:Static Resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Kamikaze}" HeaderTemplate="{StaticResource KamikazeColumnHeaderTemplate}" Binding="{Binding Kamikaze}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Raider}" HeaderTemplate="{StaticResource RaiderColumnHeaderTemplate}" Binding="{Binding Raider}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Bombardier}" HeaderTemplate="{StaticResource BombardierColumnHeaderTemplate}" Binding="{Binding Bombardier}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Reaper}" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding Reaper}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Sharpshooter}" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding Sharpshooter}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Invincible}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding Invincible}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Survivor}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding Survivor}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_MouseTrap}" HeaderTemplate="{StaticResource MouseTrapColumnHeaderTemplate}" Binding="{Binding MouseTrap}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Hunter}" HeaderTemplate="{StaticResource HunterColumnHeaderTemplate}" Binding="{Binding Hunter}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Sinai}" HeaderTemplate="{StaticResource SinaiColumnHeaderTemplate}" Binding="{Binding Sinai}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_PattonValley}" HeaderTemplate="{StaticResource PattonValleyColumnHeaderTemplate}" Binding="{Binding PattonValley}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Ranger}" HeaderTemplate="{StaticResource RangerColumnHeaderTemplate}" Binding="{Binding Ranger}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:SpecialAwardsTab HorizontalAlignment="Stretch"></tabs:SpecialAwardsTab>
             </TabItem>
             <!--Series-->
             <TabItem TabIndex="6" Header="{x:Static Resources:Resources.Tab_Header_Series}" Name="tabSeries">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_ReaperLongest}" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_ReaperProgress}" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SharpshooterLongest}" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SharpshooterProgress}" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_MasterGunnerLongest}" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_MasterGunnerProgress}" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_InvincibleLongest}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_InvincibleProgress}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SurvivorLongest}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SurvivorProgress}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:SeriesTab HorizontalAlignment="Stretch"></tabs:SeriesTab>
             </TabItem>
             <!--Medals-->
             <TabItem TabIndex="7" Header="{x:Static Resources:Resources.Tab_Header_Medals}" Name="tabMedals">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Kay}" HeaderTemplate="{StaticResource KayColumnHeaderTemplate}" Binding="{Binding Kay}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Carius}" HeaderTemplate="{StaticResource CariusColumnHeaderTemplate}" Binding="{Binding Carius}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Knispel}" HeaderTemplate="{StaticResource KnispelColumnHeaderTemplate}" Binding="{Binding Knispel}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Poppel}" HeaderTemplate="{StaticResource PoppelColumnHeaderTemplate}" Binding="{Binding Poppel}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Abrams}" HeaderTemplate="{StaticResource AbramsColumnHeaderTemplate}" Binding="{Binding Abrams}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Leclerk}" HeaderTemplate="{StaticResource LeclerkColumnHeaderTemplate}" Binding="{Binding Leclerk}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Lavrinenko}" HeaderTemplate="{StaticResource LavrinenkoColumnHeaderTemplate}" Binding="{Binding Lavrinenko}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Ekins}" HeaderTemplate="{StaticResource EkinsColumnHeaderTemplate}" Binding="{Binding Ekins}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:MedalsTab HorizontalAlignment="Stretch"></tabs:MedalsTab>
             </TabItem>
             <!--Ratings-->
             <TabItem TabIndex="8" Header="{x:Static Resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AverageDamage}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KillDeathRatio}" Binding="{Binding KillDeathRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" CellStyle="{StaticResource DataGridCellEffStyle}" Binding="{Binding EffRating}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_WN6}" CellStyle="{StaticResource DataGridCellWn6Style}" Binding="{Binding WN6Rating}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_DamageRatingRev1}" Binding="{Binding DamageRatingRev1}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KievArmorRating}" Binding="{Binding KievArmorRating}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:RatingsTab HorizontalAlignment="Stretch"></tabs:RatingsTab>
             </TabItem>
             <!--Performance-->
             <TabItem TabIndex="9" Header="{x:Static Resources:Resources.Tab_Header_Performance}" Name="tabPerformance">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgPerformance" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Shots}" Binding="{Binding Shots}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Hits}" Binding="{Binding Hits}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_HitRatio}" Binding="{Binding HitsPercents, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_CapturePoints}" Binding="{Binding CapturePoints}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DefencePoints}" Binding="{Binding DroppedCapturePoints}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_TanksSpotted}" Binding="{Binding Spotted}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:PerformanceTab HorizontalAlignment="Stretch"></tabs:PerformanceTab>
             </TabItem>
             <!--Frags count-->
             <TabItem TabIndex="10" Header="{x:Static Resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts">
-                <Grid />
+                <tabs:FragsTab HorizontalAlignment="Stretch"></tabs:FragsTab>
             </TabItem>
             <!--Master tanker-->
             <TabItem TabIndex="11" Header="{x:Static Resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding MasterTanker}" VerticalAlignment="Stretch" Name="dgMasterTanker" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="Auto" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridCheckBoxColumn Header="{x:Static Resources:Resources.Column_MasterTanker_IsPremium}" Binding="{Binding IsPremium}"></DataGridCheckBoxColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
+                <tabs:MasterTankerTab HorizontalAlignment="Stretch"></tabs:MasterTankerTab>
             </TabItem>
             <!--Epics-->
             <TabItem TabIndex="12" Header="{x:Static Resources:Resources.Tab_Header_Epics}" Name="tabEpics">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgEpics" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Boelter}" HeaderTemplate="{StaticResource BoelterColumnHeaderTemplate}" Binding="{Binding Boelter}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_RadleyWalters}" HeaderTemplate="{StaticResource RadleyWaltersColumnHeaderTemplate}" Binding="{Binding RadleyWalters}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_LafayettePool}" HeaderTemplate="{StaticResource LafayettePoolColumnHeaderTemplate}" Binding="{Binding LafayettePool}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Orlik}" HeaderTemplate="{StaticResource OrlikColumnHeaderTemplate}" Binding="{Binding Orlik}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Oskin}" HeaderTemplate="{StaticResource OskinColumnHeaderTemplate}" Binding="{Binding Oskin}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Lehvaslaiho}" HeaderTemplate="{StaticResource LehvaslaihoColumnHeaderTemplate}" Binding="{Binding Lehvaslaiho}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Nikolas}" HeaderTemplate="{StaticResource NikolasColumnHeaderTemplate}" Binding="{Binding Nikolas}"  ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Halonen}" HeaderTemplate="{StaticResource HalonenColumnHeaderTemplate}" Binding="{Binding Halonen}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Burda}" HeaderTemplate="{StaticResource BurdaColumnHeaderTemplate}" Binding="{Binding Burda}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Pascucci}" HeaderTemplate="{StaticResource PascucciColumnHeaderTemplate}" Binding="{Binding Pascucci}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Dumitru}" HeaderTemplate="{StaticResource DumitruColumnHeaderTemplate}" Binding="{Binding Dumitru}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_TamadaYoshio}" HeaderTemplate="{StaticResource TamadaYoshioColumnHeaderTemplate}" Binding="{Binding TamadaYoshio}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Billotte}" HeaderTemplate="{StaticResource BillotteColumnHeaderTemplate}" Binding="{Binding Billotte}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_BrunoPietro}" HeaderTemplate="{StaticResource BrunoPietroColumnHeaderTemplate}" Binding="{Binding BrunoPietro}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Tarczay}" HeaderTemplate="{StaticResource TarczayColumnHeaderTemplate}" Binding="{Binding Tarczay}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Kolobanov}" HeaderTemplate="{StaticResource KolobanovColumnHeaderTemplate}" Binding="{Binding Kolobanov}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_Fadin}" HeaderTemplate="{StaticResource FadinColumnHeaderTemplate}" Binding="{Binding Fadin}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_HeroesOfRaseiniai}" HeaderTemplate="{StaticResource HeroesOfRaseiniaiColumnHeaderTemplate}" Binding="{Binding HeroesOfRaseiniai}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Epics_DeLanglade}" HeaderTemplate="{StaticResource DeLangladeColumnHeaderTemplate}" Binding="{Binding DeLanglade}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:EpicsTab HorizontalAlignment="Stretch"></tabs:EpicsTab>
             </TabItem>
             <!--Time-->
             <TabItem TabIndex="13" Header="{x:Static Resources:Resources.Tab_Header_Time}" Name="tabTime">
-                <Grid>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Time_LastBattle}" Binding="{Binding LastBattle, StringFormat='dd.MM.yyyy HH:mm:ss'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Time_AverageBattleTime}" Binding="{Binding AverageBattleTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseDoubleClick">
-                                <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DataGrid>
-                </Grid>
+                <tabs:TimeTab HorizontalAlignment="Stretch"></tabs:TimeTab>
             </TabItem>
         </TabControl>
     </DockPanel>

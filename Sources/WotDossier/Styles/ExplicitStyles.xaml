@@ -28,5 +28,6 @@
             <!--<ResourceDictionary Source="TreeView.xaml" />-->
             <ResourceDictionary Source="Window.xaml" />
             <ResourceDictionary Source="ApplicationStyle.xaml" />
+            <ResourceDictionary Source="SpecialStyle.xaml" />
         </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

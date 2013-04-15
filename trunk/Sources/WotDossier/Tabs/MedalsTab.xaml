@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="WotDossier.Tabs.MedalsTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+             xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Kay}" HeaderTemplate="{StaticResource KayColumnHeaderTemplate}" Binding="{Binding Kay, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"  />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Carius}" HeaderTemplate="{StaticResource CariusColumnHeaderTemplate}" Binding="{Binding Carius, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"  />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Knispel}" HeaderTemplate="{StaticResource KnispelColumnHeaderTemplate}" Binding="{Binding Knispel, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Poppel}" HeaderTemplate="{StaticResource PoppelColumnHeaderTemplate}" Binding="{Binding Poppel, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Abrams}" HeaderTemplate="{StaticResource AbramsColumnHeaderTemplate}" Binding="{Binding Abrams, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Leclerk}" HeaderTemplate="{StaticResource LeclerkColumnHeaderTemplate}" Binding="{Binding Leclerk, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Lavrinenko}" HeaderTemplate="{StaticResource LavrinenkoColumnHeaderTemplate}" Binding="{Binding Lavrinenko, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Ekins}" HeaderTemplate="{StaticResource EkinsColumnHeaderTemplate}" Binding="{Binding Ekins, Converter={x:Static Converters:MedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+            </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+    </Grid>
+</UserControl>

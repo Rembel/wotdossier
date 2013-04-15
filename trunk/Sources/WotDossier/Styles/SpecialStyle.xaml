@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:WotDossier.Converters">
+    <DataTemplate x:Key="MasterTemplate" >
+        <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       ToolTip="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToTooltipConverter.Default}}" 
+                       Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" />
+    </DataTemplate>
+    <DataTemplate x:Key="TankIconTemplate" >
+        <Grid>
+            <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
+            <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

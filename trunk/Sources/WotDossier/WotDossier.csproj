@@ -96,6 +96,7 @@
     <Reference Include="System.Threading">
       <HintPath>..\..\References\System.Threading.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\..\References\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -123,6 +124,8 @@
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\EpicMedalCountToStringConverter.cs" />
+    <Compile Include="Converters\MedalCountToStringConverter.cs" />
     <Compile Include="Converters\StatisticPeriodToStringConverter.cs" />
     <Compile Include="Converters\ValueNearestPercentFormater.cs" />
     <Compile Include="Converters\MarkOfMasteryToTooltipConverter.cs" />
@@ -156,8 +159,56 @@
     <Compile Include="Tabs\CommonTabNew.xaml.cs">
       <DependentUpon>CommonTabNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\ChartsTab.xaml.cs">
+      <DependentUpon>ChartsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\XPTab.xaml.cs">
+      <DependentUpon>XPTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\DamageTab.xaml.cs">
+      <DependentUpon>DamageTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\FragsTab.xaml.cs">
+      <DependentUpon>FragsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\BattleAwardsTab.xaml.cs">
+      <DependentUpon>BattleAwardsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\SpecialAwardsTab.xaml.cs">
+      <DependentUpon>SpecialAwardsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\BattlesTab.xaml.cs">
+      <DependentUpon>BattlesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\SeriesTab.xaml.cs">
+      <DependentUpon>SeriesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\MedalsTab.xaml.cs">
+      <DependentUpon>MedalsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\RatingsTab.xaml.cs">
+      <DependentUpon>RatingsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\PerformanceTab.xaml.cs">
+      <DependentUpon>PerformanceTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\FragCountsTab.xaml.cs">
+      <DependentUpon>FragCountsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\MasterTankerTab.xaml.cs">
+      <DependentUpon>MasterTankerTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\EpicsTab.xaml.cs">
+      <DependentUpon>EpicsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TimeTab.xaml.cs">
+      <DependentUpon>TimeTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\PeriodTab.xaml.cs">
       <DependentUpon>PeriodTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Tab.xaml.cs">
+      <DependentUpon>Tab.xaml</DependentUpon>
     </Compile>
     <Compile Include="TankStatisticWindow.xaml.cs">
       <DependentUpon>TankStatisticWindow.xaml</DependentUpon>
@@ -224,6 +275,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\DataGridHeaderTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\DataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -252,6 +307,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\SpecialStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\TabControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -272,9 +331,73 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tabs\ChartsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\XPTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\DamageTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\FragsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\BattleAwardsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\SpecialAwardsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\BattlesTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\SeriesTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\MedalsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\RatingsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\PerformanceTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\FragCountsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\MasterTankerTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\EpicsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\TimeTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Tabs\PeriodTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Tab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TankStatisticWindow.xaml">
       <SubType>Designer</SubType>
@@ -285,20 +408,11 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

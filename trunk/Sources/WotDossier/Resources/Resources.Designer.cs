@@ -1816,6 +1816,223 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Survive at least 10 ricochets and non-penetrations in a row from enemy players..
+        /// </summary>
+        public static string Tooltip_CommemorativeAchievements_CoolHeaded {
+            get {
+                return ResourceManager.GetString("Tooltip_CommemorativeAchievements_CoolHeaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Witness the destruction of an enemy vehicle by an enemy team player. You must be within 10 meters or less from the enemy vehicle at the moment of its destruction..
+        /// </summary>
+        public static string Tooltip_CommemorativeAchievements_Lucky {
+            get {
+                return ResourceManager.GetString("Tooltip_CommemorativeAchievements_Lucky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survive a ricochet or non-penetrating shot from an enemy player. Your vehicle must have less than 10% of its hit points (HP) left and you must survive the battle..
+        /// </summary>
+        public static string Tooltip_CommemorativeAchievements_Spartan {
+            get {
+                return ResourceManager.GetString("Tooltip_CommemorativeAchievements_Spartan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to players who destroy at least one enemy vehicle and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
+        ///Pierre Billotte was a captain in the French Army who destroyed 2 PzKpfw IV, 11 PzKpfw III and 2 guns with his Char B1 bis on May 16, 1940..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Billotte {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Billotte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With the release of Version 0.8.0, this medal is no longer being awarded. Prior to 0.8.0, this was awarded for destroying seven or more enemy tanks and self-propelled guns with a tank or tank destroyer, or 10 or more vehicles with a self-propelled gun in one battle. The targets must be at least tier four enemy vehicles.
+        ///Johannes Bölter was one of the most successful German tank aces of WWII. He participated in operations in the invasions of Poland, France, Greece and the Soviet Union, and the defense of Fr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Boelter {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Boelter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to players who destroy three or four enemy vehicles and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
+        ///Pietro Bruno was an Italian tank ace. For exceptional valor in the face of the enemy he was awarded the Gold Medal of Military Valor (Medaglia d&apos;oro al Valore Militare), the highest Italian award..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_BrunoPietro {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_BrunoPietro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for the destruction of five or more enemy self-propelled guns.
+        ///Guards Colonel Alexander Burda was a Soviet tank ace and a Hero of the Soviet Union. On October 4, 1941, Burda organized an ambush and destroyed an enemy armored column, including 10 medium and light tanks, 2 trucks with antitank guns and 5 infantry vehicles. (Not awarded to SPG&apos;s (Self Propelled Gun drivers)).
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Burda {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Burda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to a player who in the course of one battle destroys four enemy vehicles within a base circle while they are attempting to capture the base. Enemy vehicles may attempt to capture the base all at once or in turn.
+        ///On 13 September 1944, Colonel Paul Girot de Langlade&apos;s Groupement Tactique &quot;Langlade&quot; (G.T.L), outnumbered by over two to one, attacked a German 112th Panzer Regiment occupying the French village of Dompaire. In the ensuing battle de Langlade&apos;s 16 M4A2 tanks and 4 M10 tank destroyers, with  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Tooltip_EpicAchievements_DeLanglade {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_DeLanglade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for the destruction of four enemy self-propelled guns.
+        ///Ion S. Dumitru was a Romanian tank ace. He fought in World War II for just twenty-five days, of which five on the German side, and, after Romania changed sides, twenty days against the Germans. On March 6th, 1945, Dumitru contributed to the destruction of six enemy tank destroyers and capture of a battery of 150 mm guns..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Dumitru {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Dumitru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for destroying the last enemy vehicle in the battle with the last shell remaining in the player&apos;s tank.
+        ///A hero of the Soviet Union, Alexander Fadin was a T-34 commander. Supported by one infantry platoon, Fadin managed to capture and hold the Dashukovka village for 5 hours with one tank, and destroyed 3 tanks, 1 halftrack, 2 mortars and 12 machinegun nests. His crew also shot down an enemy plane with his tank&apos;s coaxial machinegun..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Fadin {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Fadin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for destroying three or more enemy vehicles with a tank destroyer. The targets must be at least two tiers higher than the player&apos;s vehicle.
+        ///Erkki Halonen, a sergeant in the Finnish Army and a tank ace, destroyed three T-34, two KV-1, and two ISU-152 with his StuG III in battles during June and July, 1944..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Halonen {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Halonen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to a player who destroys single-handedly all enemy vehicles (at least 14 vehicles).
+        ///In June 1941, near the Lithuanian town of Raseiniai, roughly 20 KV tanks of the Soviet 3rd Mechanized Corps met the assault of the 6th Panzer Division, with approximately 100 vehicles. A single KV-2 tank managed to hold off the German advance for a full day while being pummeled by a variety of antitank weapons, until finally the KV-2 ran out of ammunition and was knocked out..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_HeroesOfRaseiniai {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_HeroesOfRaseiniai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to a player who stands alone against five or more enemy tanks or self-propelled guns and wins (this means that you can capture the enemy base by yourself when you are against five enemies and you will recieve the achievement.)
+        ///Colonel Zinoviy Kolobanov was a Soviet tank ace who destroyed 22 German tanks, 2 guns and 2 halftracks with his KV in battle on August 19, 1941..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Kolobanov {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Kolobanov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for destroying 10 or more enemy tanks and self-propelled guns with any vehicle. The targets must be at least tier four enemy vehicles.
+        ///Lafayette G. Pool is widely recognized as the U.S. tank ace of aces, credited with 12 confirmed tank kills and 258 total armored vehicle and self-propelled gun kills..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_LafayettePool {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_LafayettePool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for destroying two enemy vehicles with a medium tank. The targets must be at least two tiers higher than the player&apos;s tank.
+        ///Reino Lehväslaiho was a Finnish tank ace who destroyed seven tanks and tank destroyers..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Lehvaslaiho {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Lehvaslaiho", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for destroying four or more enemy vehicles with a medium tank. The targets must be at least two tiers higher than the player&apos;s tank.
+        ///Alfie Nicolas was a British tank gunner. During the battle of Al Alamein he destroyed fourteen enemy vehicles..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Nikolas {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Nikolas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for destroying three or more enemy tanks or tank destroyers with a light tank. The targets must be at least two tiers higher than the player&apos;s tank.
+        ///Roman Edmund Orlik, a Polish Army sergeant, was a tank ace who knocked out 13 German tanks with his light TKS tankette in September, 1939..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Orlik {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Orlik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for destroying three or more enemy tanks or tank destroyers with a light tank. The targets must be at least two tiers higher than the player&apos;s tank.
+        ///Roman Edmund Orlik, a Polish Army sergeant, was a tank ace who knocked out 13 German tanks with his light TKS tankette in September, 1939..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Oskin {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Oskin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for the destruction of three enemy self-propelled guns.
+        ///Second Lieutenant Luigi Arbib Pascucci was an Italian tank commander during World War Two. He fought with the Ariete Tank Division in North Africa. Pascucci fought in the Second Battle of El Alamein, where he sacrificed his life in a reckless frontal attack that enabled the rest of his company to escape encirclement..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Pascucci {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Pascucci", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to players in the 5th or higher tier for destroying 8 or 9 enemy vehicles in one battle.
+        ///Sydney Valpy Radley-Walters was a Canadian tank ace of the 27th Armored Regiment. In 1944–1945 he destroyed 18 German vehicles with his Sherman Firefly..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_RadleyWalters {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_RadleyWalters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to a player who destroys at least three Self-Propelled Guns while driving a light tank, and survives the battle. The targets must be at least two tiers higher than the player&apos;s tank.
+        ///Tamada Yoshio commanded the Japanese 4th Tank Regiment (Type 95 Ha-Gō light tanks) in an attack that overran and destroyed twelve Russian artillery guns during the Second Sino-Japanese War in July 1939..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_TamadaYoshio {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_TamadaYoshio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to players who destroy at least five enemy vehicles and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
+        ///Ervin Tarczay was a Hungarian tank ace. He fought with the Hungarian 2nd Armored Division and destroyed at least ten enemy vehicles..
+        /// </summary>
+        public static string Tooltip_EpicAchievements_Tarczay {
+            get {
+                return ResourceManager.GetString("Tooltip_EpicAchievements_Tarczay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earn more experience in a single battle than the average highest experience of 50% of all players in the same tank within the last seven days..
         /// </summary>
         public static string Tooltip_MarkOfMastery_1 {
@@ -1848,6 +2065,215 @@ namespace WotDossier.Resources {
         public static string Tooltip_MarkOfMastery_4 {
             get {
                 return ResourceManager.GetString("Tooltip_MarkOfMastery_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for displaying mastery in controlling a specific armored vehicle. To qualify, the amount of experience you earn in a single battle must be higher than what a percentage of other players have achieved in the same tank. Once earned on a tank, the Mastery Badge is permanent..
+        /// </summary>
+        public static string Tooltip_MasteryBadges {
+            get {
+                return ResourceManager.GetString("Tooltip_MasteryBadges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded to the player who destroys two or more vehicles with one shot..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Bombardier {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Bombardier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy 100 or more of the following tanks: Jagdpanther, Jagdtiger, PzKpfw V Panther, Panther-M10, Panther II, PzKpfw VI Tiger, PzKpfw VI Tiger (P), PzKpfw VIB Tiger II, Löwe, GW Panther, GW Tiger, Jagdpanther II and 8.8 cm PaK 43 Jagdtiger.
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Hunter {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survive 5 or more consecutive battles without taking any damage (not including battles fought using self-propelled guns). Battles fought using self-propelled guns do not break the sequence, but are not included either. The icon in the service record displays the longest sequence..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Invincible {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Invincible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy a higher-tier enemy vehicle by ramming it. You can only earn this achievement once per battle. The icon in the service record displays the number of times the achievement was awarded..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Kamikaze {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Kamikaze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Achieve at least five armor penetrating hits in a row against enemy vehicles. The results of the next battle in a row using any vehicle also count towards this number, unless the sequence is broken by a miss, non-penetration or ricochet. The icon in the service record displays the longest sequence..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_MasterGunner {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_MasterGunner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy 10 or more PzKpfw VIII Maus tanks. The icon in the service record displays the number of times the achievement was awarded..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_MouseTrap {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_MouseTrap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy 100 M46 Patton or M48A1 Patton III&apos;s..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_PattonValley {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_PattonValley", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy all the enemy light tanks (must be at least three) in the course of a single battle..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Raider {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Raider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy all the enemy light tanks (must be at least three) in the course of a single battle..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Ranger {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Ranger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy three or more enemy vehicles in a row with a single round each. The achievement is granted on completion of the sequence. The sequence can be continued in the next battle fought on any vehicle. The icon in the service record displays the longest sequence..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Reaper {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Reaper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hit an enemy vehicle ten or more times in a row without missing. The results of the next battle in a row using any vehicle also count towards this number, unless the sequence is broken by a miss. The icon in the service record displays the longest sequence..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Sharpshooter {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Sharpshooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Lion of Sinai - Destroy at least 100 tanks of the IS series, and vehicles based on their chassis: IS, IS-3, IS-4, IS-6, IS-7, IS-8, ISU-152, Object 704, Object 261, Object 268 or Object 263.
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Sinai {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Sinai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survive 20 or more consecutive battles. Battles fought using self-propelled guns do not break the sequence, but are not included either..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Survivor {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Survivor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded in one of four classes for the total number of team victories in which the player survived the battle: Class IV - 5 victories Class III - 50 victories Class II - 500 victories Class I - 5,000 victories
+        ///General Creighton Abrams commanded US armored forces during WWII and the Vietnam War, earning a reputation as an aggressive and successful commander..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Abrams {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Abrams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for the destruction of enemy tanks and self-propelled guns in four classes:Class IV - 10 vehicles Class III - 100 vehicles Class II - 1,000 vehicles Class I - 10,000 vehicles
+        ///Otto Carius was one of the most efficient tank aces of WWII. He commanded the PzKpfw 38 (t), the PzKpfw VI Tiger and the Jagdtiger tank destroyer during his impressive career..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Carius {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Carius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded in four classes for destroying tier 8, 9 or 10 enemy tanks and self-propelled guns: Class IV - 3 vehicles Class III - 30 vehicles Class II - 300 vehicles Class I - 3,000 vehicles
+        ///Joe Ekins was a private in the Northamptonshire Division of the British Territorial Army. A number of sources confirm Ekins as the final nemesis of famous German tank ace Michael Wittmann..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Ekins {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Ekins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for achieving the Battle Hero status in four classes:Class IV - 1 time Class III - 10 times Class II - 100 times Class I - 1,000 times
+        ///
+        ///
+        ///Douglas Kay, a British Army sergeant, and gunner on a Sherman Firefly, participated in the Allied landing in Normandy and was famous for the popularization of the history of tank warfare.
+        ///Note: Only the medals listed under &quot;Battle Hero Achievements&quot; above are counted in the “Kay’s Medal” achievement..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Kay {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Kay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for the total amount of damage caused and received in four classes: Class IV - 10,000 HP Class III - 100,000 HP Class II - 1,000,000 HP Class I - 10,000,000 HP
+        ///Kurt Knispel, a German tank ace during WWII, participated in battles on both the Western and Eastern Fronts fighting on PzKpfw II, PzKpfw III, PzKpfw IV, PzKpfw VI Tiger, and PzKpfw VIB Tiger II..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Knispel {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Knispel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for reducing the total number of capture points of a friendly base, up to 100 points per battle. This award is established in four classes: Class IV - 30 points Class III - 300 points Class II - 3,000 points Class I - 30,000 points
+        ///Dmitry Lavrinenko, a Hero of the Soviet Union, Guards Lieutenant, and tank ace was recognized as the most efficient Soviet tanker, destroying 52 tanks in 28 battles over the course of just two months..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Lavrinenko {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Lavrinenko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for the total amount of the player&apos;s enemy base capture points. An unsuccessful or reduced capture does not count toward this number. The award is established in four classes: Class IV - 30 points Class III - 300 points Class II - 3,000 points Class I - 30,000 points
+        ///Philippe Leclerc was a General of the Free French Forces during WWII and one of the leaders of the Paris liberation operation..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Leclerk {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Leclerk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awarded for detecting enemy tanks and self-propelled guns in all battles, in four classes: Class IV - 20 vehicles Class III - 200 vehicles Class II - 2,000 vehicles Class I - 20,000 vehicles
+        ///Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and political worker, organized a raid against the enemy rear using captured vehicles during the battle of Dubno in the Summer of 1941..
+        /// </summary>
+        public static string Tooltip_StepAchievements_Poppel {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_Poppel", resourceCulture);
             }
         }
         

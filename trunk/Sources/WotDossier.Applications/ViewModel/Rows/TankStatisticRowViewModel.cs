@@ -306,7 +306,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         #region [ ITankRowTime ]
         public DateTime LastBattle
         {
-            get { return _lastBattle; }
+            get { return _lastBattle.ToLocalTime(); }
             set { _lastBattle = value; }
         }
 

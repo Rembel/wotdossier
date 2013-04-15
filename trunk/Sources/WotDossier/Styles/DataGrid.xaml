@@ -155,36 +155,22 @@
             <Trigger Property="IsSelected" Value="true">
                 <Setter Property="Background" Value="#A7B0C9" />
             </Trigger>
-            <!--<DataTrigger Binding="{Binding Path=HideFlag}" Value="true">
-                <Setter Property="Foreground" Value="Gray"></Setter>
-            </DataTrigger>
-            <Trigger Property="Validation.HasError" Value="true">
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="BorderBrush" Value="Red"/>
-                <Setter Property="ToolTip"
-              Value="{Binding RelativeSource={RelativeSource Self},
-                     Path=(Validation.Errors)[0].ErrorContent}"/>
-            </Trigger>-->
         </Style.Triggers>
         <Setter Property="SnapsToDevicePixels" Value="true" />
-        <!--<Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />-->
         <Setter Property="MinHeight" Value="22" />
-        <!--<Setter Property="ValidationErrorTemplate">
-            <Setter.Value>
-                <ControlTemplate>
-                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Foreground="Red" Text="!" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>-->
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
     </Style>
 
     <Style x:Key="RTextBlock" TargetType="{x:Type TextBlock}">
         <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="Margin" Value="6,0,6,0"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
     <Style x:Key="CTextBlock" TargetType="{x:Type TextBlock}">
         <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
     <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
@@ -327,68 +313,6 @@
         <Setter Property="CellStyle" Value="{StaticResource DataGridCellStyle}" />
         <Setter Property="RowStyle" Value="{StaticResource DataGridRowStyle}"/>
         <Setter Property="RowHeaderStyle" Value="{StaticResource DataGridRowHeaderStyle}" />
-    </Style>
-
-    <!--<Style x:Key="ValidateDataGridRowHeaderStyle" TargetType="{x:Type DataGridRowHeader}">
-        <Setter Property="MinWidth" Value="20" />
-        <Setter Property="Background">
-            <Setter.Value>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="#FFFFFF" Offset="0" />
-                    <GradientStop Color="#D4D7DB" Offset="1" />
-                </LinearGradientBrush>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="BorderBrush" Value="#6E6D8F" />
-        <Setter Property="BorderThickness" Value="0,0,0,1" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate  TargetType="{x:Type DataGridRowHeader}">
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsRowSelected" Value="true">
-                            <Setter Value="{StaticResource selectedRowGlyph}" Property="ContentTemplate" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                    <Grid>
-                        <Border Name="mainBorder" Background="{TemplateBinding Background}">
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                                <ContentPresenter Name="mainContent" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                <Control SnapsToDevicePixels="false" Visibility="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}}, Path=DataContext.HasError, Converter={x:Static Converters:BoolToVisibilityConverter.Default}}" 
-                                             Template="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}, Path=ValidationErrorTemplate}" />
-                            </StackPanel>
-                        </Border>
-                        <Thumb Name="PART_BottomHeaderGripper" VerticalAlignment="Bottom" Height="6" Cursor="SizeNS" Style="{StaticResource invisibleThumbStyle}" />
-                        <Border Margin="4,0,4,0" VerticalAlignment="Bottom" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" />
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
-
-    <Style x:Key="ValidateDataGridRowStyle" TargetType="{x:Type DataGridRow}">
-        <Style.Triggers>
-            <Trigger Property="IsSelected" Value="true">
-                <Setter Property="Background" Value="#A7B0C9" />
-            </Trigger>
-            <DataTrigger Binding="{Binding Path=HideFlag}" Value="true">
-                <Setter Property="Foreground" Value="Gray"></Setter>
-            </DataTrigger>
-            <DataTrigger Binding="{Binding Path=HasError}" Value="true">
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="BorderBrush" Value="Red"/>
-                <Setter Property="ToolTip" Value="{Binding Error}"/>
-            </DataTrigger>
-        </Style.Triggers>
-        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
-        <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="MinHeight" Value="22" />
-        <!--<Setter Property="ValidationErrorTemplate">
-            <Setter.Value>
-                <ControlTemplate>
-                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Foreground="Red" Text="!" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>-->
     </Style>
 
 </ResourceDictionary>

@@ -18,7 +18,7 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageDealt}" Binding="{Binding DamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageTaken}" Binding="{Binding DamageTaken}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageRatio}" Binding="{Binding DamageRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AvgDamageDealt}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AvgDamageDealt, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamagePerHit}" Binding="{Binding DamagePerHit}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </DataGrid.Columns>
             <i:Interaction.Triggers>

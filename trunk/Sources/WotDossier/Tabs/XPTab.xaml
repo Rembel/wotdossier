@@ -17,7 +17,7 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_TotalXP}" Binding="{Binding Xp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_MaximumXP}" Binding="{Binding MaxXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_AverageXP}" Binding="{Binding AvgXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_AverageXP}" Binding="{Binding AvgXp, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">

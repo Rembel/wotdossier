@@ -144,7 +144,6 @@
     <Compile Include="Converters\WN6ToColorConverter.cs" />
     <Compile Include="Converters\EffectivityToColorConverter.cs" />
     <Compile Include="Converters\Double2Formater.cs" />
-    <Compile Include="Converters\TankIconImageConverter.cs" />
     <Compile Include="RatingRow.xaml.cs">
       <DependentUpon>RatingRow.xaml</DependentUpon>
     </Compile>
@@ -429,9 +428,6 @@
     </None>
     <None Include="Data\dossier.sqlce" />
     <None Include="External\bz2.pyd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\contour.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="External\library.zip">
@@ -839,6 +835,16 @@
     <Resource Include="Resources\Images\Tanks\usa_t1_cunningham.png" />
     <Resource Include="Resources\Images\Tanks\usa_t1_e6.png" />
     <Resource Include="Resources\Images\Tanks\usa_t2_med.png" />
+    <Resource Include="Resources\Images\Tanks\germany_auf_panther.png" />
+    <Resource Include="Resources\Images\Tanks\germany_indien_panzer.png" />
+    <Resource Include="Resources\Images\Tanks\germany_leopard1.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pro_ag_a.png" />
+    <Resource Include="Resources\Images\Tanks\germany_vk2001db.png" />
+    <Resource Include="Resources\Images\Tanks\germany_vk3002db_v1.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb78_sexton_i.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_t80.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_t_60.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_t_70.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

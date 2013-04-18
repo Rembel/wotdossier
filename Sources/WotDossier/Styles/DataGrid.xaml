@@ -23,6 +23,22 @@
         <Path Margin="0,4,0,0" Opacity="1" Fill="#6E6D8F" />
     </DataTemplate>
 
+    <!--<Style  x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate  TargetType="{x:Type DataGridCell}">
+                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                   ContentTemplate="{TemplateBinding ContentTemplate}" Margin="6,3,6,3"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
     <Style x:Key="SelectAllButton" TargetType="{x:Type Button}">
         <Setter Property="MinHeight" Value="24" />
         <Setter Property="MinWidth" Value="20" />

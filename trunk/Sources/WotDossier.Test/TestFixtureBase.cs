@@ -94,7 +94,11 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.5\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            //WotApiClient.Instance.
+            foreach (TankJson tankJson in tanks)
+            {
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png", tankJson.Icon.iconid);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
+            }
         }
 
         /// <summary>

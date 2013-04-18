@@ -27,7 +27,7 @@ namespace WotDossier.Dal
         private static volatile WotApiClient _instance = new WotApiClient();
 
         private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> _tanksDictionary;
-        private static readonly Dictionary<string, TankIcon> _iconsDictionary;
+        private static readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
         
         public static Dictionary<KeyValuePair<int, int>, TankInfo> TanksDictionary
         {
@@ -44,8 +44,7 @@ namespace WotDossier.Dal
         /// </summary>
         static WotApiClient()
         {
-            _tanksDictionary = ReadTanks();
-            _iconsDictionary = ReadTankIcons();
+            _tanksDictionary = ReadTanksDictionary();
         }
 
         public static WotApiClient Instance
@@ -122,7 +121,7 @@ namespace WotDossier.Dal
             return TankIcon.Empty;
         }
 
-        private static Dictionary<KeyValuePair<int, int>, TankInfo> ReadTanks()
+        private static Dictionary<KeyValuePair<int, int>, TankInfo> ReadTanksDictionary()
         {
             List<TankInfo> tanks = new List<TankInfo>();
             using (StreamReader re = new StreamReader(@"External\tanks.json"))
@@ -135,28 +134,18 @@ namespace WotDossier.Dal
                     TankInfo tank = JsonConvert.DeserializeObject<TankInfo>(jToken.ToString());
                     tank.countryCode = WotApiHelper.GetCountryNameCode(tank.countryid);
                     tanks.Add(tank);
+
+                    TankIcon tankIcon = new TankIcon
+                        {
+                            country_code = tank.countryCode,
+                            country_id = tank.countryid,
+                            iconid = string.Format("{0}_{1}", tank.countryCode, tank.icon)
+                        };
+                    _iconsDictionary.Add(tankIcon.iconid, tankIcon);
                 }
             }
 
             return tanks.ToDictionary(x => new KeyValuePair<int, int>(x.tankid, x.countryid));
-        }
-
-        private static Dictionary<string, TankIcon> ReadTankIcons()
-        {
-            List<TankIcon> tanks = new List<TankIcon>();
-            using (StreamReader re = new StreamReader(@"External\contour.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                var parsedData = se.Deserialize<JArray>(reader);
-                foreach (JToken jToken in parsedData)
-                {
-                    TankIcon tank = JsonConvert.DeserializeObject<TankIcon>(jToken.ToString());
-                    tanks.Add(tank);
-                }
-            }
-
-            return tanks.ToDictionary(x => x.iconid.ToLowerInvariant());
         }
 
         /// <summary>
@@ -170,7 +159,7 @@ namespace WotDossier.Dal
                 return null;
             }
             
-#if !DEBUG
+#if DEBUG
             long playerId = 10800699;
             using (StreamReader streamReader = new StreamReader(@"stat.json"))
 #else

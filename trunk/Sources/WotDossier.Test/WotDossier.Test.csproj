@@ -91,10 +91,6 @@
       <Link>External\bz2.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\WotDossier\External\contour.json">
-      <Link>External\contour.json</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\WotDossier\External\library.zip">
       <Link>External\library.zip</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -530,6 +530,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string Column_FragCounts_Count {
+            get {
+                return ResourceManager.GetString("Column_FragCounts_Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battles.
         /// </summary>
         public static string Column_Frags_Battles {

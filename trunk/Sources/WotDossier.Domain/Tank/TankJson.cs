@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using WotDossier.Common;
 
 namespace WotDossier.Domain.Tank
 {
@@ -21,5 +22,9 @@ namespace WotDossier.Domain.Tank
         public TankDataJson Tankdata { get; set; }
 
         //public Dictionary<int, string> Rawdata { get; set; }
+        public int UniqueId()
+        {
+            return Utils.ToUniqueId(Common.countryid, Common.tankid);
+        }
     }
 }

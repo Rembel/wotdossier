@@ -121,7 +121,7 @@
             </TabItem>
             <!--Frags count-->
             <TabItem TabIndex="10" Header="{x:Static Resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts">
-                <tabs:FragsTab HorizontalAlignment="Stretch"></tabs:FragsTab>
+                <tabs:FragCountsTab DataContext="{Binding FraggsCount}" HorizontalAlignment="Stretch"></tabs:FragCountsTab>
             </TabItem>
             <!--Master tanker-->
             <TabItem TabIndex="11" Header="{x:Static Resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker">

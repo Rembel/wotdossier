@@ -8,5 +8,10 @@ namespace WotDossier.Common
         {
             return new DateTime(1970, 1, 1).AddSeconds(value);
         }
+
+        public static int ToUniqueId(int countryId, int tankId)
+        {
+            return countryId * 10000 + tankId;
+        }
     }
 }

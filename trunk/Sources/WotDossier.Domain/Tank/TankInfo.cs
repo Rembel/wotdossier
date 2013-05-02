@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Tank
+﻿using WotDossier.Common;
+
+namespace WotDossier.Domain.Tank
 {
     public class TankInfo
     {
@@ -11,6 +13,11 @@
         public string title;
         public string icon;
         public string icon_orig;
+
+        public int UniqueId()
+        {
+            return Utils.ToUniqueId(countryid, tankid);
+        }
 
         /// <summary>
         /// Returns a string that represents the current object.

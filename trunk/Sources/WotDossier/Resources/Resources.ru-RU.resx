@@ -879,4 +879,7 @@
   <data name="Tooltip_MasteryBadges" xml:space="preserve">
     <value>Знаки классности присваиваются игроку за мастерство владения боевой машиной. Для получения знака отличия необходимо заработать больше опыта за бой, чем у определенного числа играющих на данной технике за последнее время. </value>
   </data>
+  <data name="Column_FragCounts_Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
 </root>

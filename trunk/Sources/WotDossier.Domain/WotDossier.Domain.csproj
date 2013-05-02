@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="Country.cs" />
     <Compile Include="Entities\DbVersionEntity.cs" />
     <Compile Include="Entities\TankEntity.cs" />
     <Compile Include="Entities\TankStatisticEntity.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Player\TankExperts.cs" />
     <Compile Include="Player\Vehicle.cs" />
     <Compile Include="StatisticPeriod.cs" />
+    <Compile Include="TankType.cs" />
     <Compile Include="Tank\FragsJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tank\BattleJson.cs" />

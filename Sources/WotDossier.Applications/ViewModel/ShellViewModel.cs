@@ -92,7 +92,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
+
+        public FraggsCountViewModel FraggsCount
+        {
+            get { return _fraggsCount; }
+            set { _fraggsCount = value; }
+        }
+
         private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
+        
         public ObservableCollection<SellInfo> LastUsedTanks
         {
             get { return _lastUsedTanks; }
@@ -276,6 +285,8 @@ namespace WotDossier.Applications.ViewModel
                     Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
 
                     InitMasterTankerList(tanks);
+
+                    FraggsCount.Init(Tanks);
                 };
 
             //System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
@@ -283,8 +294,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitMasterTankerList(List<TankJson> tanks)
         {
-            IEnumerable<KeyValuePair<int, int>> killed =
-                tanks.SelectMany(x => x.Frags).Select(x => new KeyValuePair<int, int>(x.TankId, x.CountryId)).Distinct();
+            IEnumerable<int> killed =
+                tanks.SelectMany(x => x.Frags).Select(x => x.TankUniqueId).Distinct();
             IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TanksDictionary.Where(
                 x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                                                                         .Select(

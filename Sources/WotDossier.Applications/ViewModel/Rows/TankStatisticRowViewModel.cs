@@ -11,6 +11,7 @@ namespace WotDossier.Applications.ViewModel.Rows
                            ITankRowSpecialAwards, ITankRowTime, ITankRowXP
     {
         private DateTime _lastBattle;
+        private IEnumerable<FragsJson> _tankFrags;
 
         #region Common
 
@@ -21,6 +22,10 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int TankType { get; set; }
 
         public int CountryId { get; set; }
+
+        public int TankId { get; set; }
+
+        public int TankUniqueId { get; set; }
 
         #endregion
 
@@ -329,6 +334,9 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tank = tank.Common.tanktitle;
             Icon = tank.Icon;
             CountryId = tank.Common.countryid;
+            TankId = tank.Common.tankid;
+            TankUniqueId = tank.UniqueId();
+            TankFrags = tank.Frags;
 
             #region [ ITankRowBattleAwards ]
             BattleHero = tank.Battle.battleHeroes;
@@ -466,6 +474,12 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);
+        }
+
+        public IEnumerable<FragsJson> TankFrags
+        {
+            get { return _tankFrags; }
+            set { _tankFrags = value; }
         }
 
         /// <summary>

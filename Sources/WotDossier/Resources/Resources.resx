@@ -887,4 +887,7 @@ Philippe Leclerc was a General of the Free French Forces during WWII and one of 
     <value>Awarded for detecting enemy tanks and self-propelled guns in all battles, in four classes: Class IV - 20 vehicles Class III - 200 vehicles Class II - 2,000 vehicles Class I - 20,000 vehicles
 Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and political worker, organized a raid against the enemy rear using captured vehicles during the battle of Dubno in the Summer of 1941.</value>
   </data>
+  <data name="Column_FragCounts_Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
 </root>

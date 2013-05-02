@@ -3,9 +3,76 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Resources="clr-namespace:WotDossier.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
             
+            <TextBlock Grid.Row="0" Text="Tank"></TextBlock>
+            <TextBlock Grid.Row="1" Text="Levels"></TextBlock>
+            <TextBlock Grid.Row="2" Text="Types"></TextBlock>
+            <TextBlock Grid.Row="3" Text="Country"></TextBlock>
+
+            <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Tanks}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250"></ComboBox>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                <CheckBox Margin="6,3,6,3" Content="1"  IsChecked="{Binding Level1Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="2" IsChecked="{Binding Level2Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="3" IsChecked="{Binding Level3Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="4" IsChecked="{Binding Level4Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="5" IsChecked="{Binding Level5Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="6" IsChecked="{Binding Level6Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="7" IsChecked="{Binding Level7Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="8" IsChecked="{Binding Level8Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="9" IsChecked="{Binding Level9Selected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="10" IsChecked="{Binding Level10Selected}"></CheckBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                <CheckBox Margin="6,3,6,3" Content="LT"  IsChecked="{Binding LTSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="MT" IsChecked="{Binding MTSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="HT" IsChecked="{Binding HTSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="TD" IsChecked="{Binding TDSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="SPG" IsChecked="{Binding SPGSelected}"></CheckBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                <CheckBox Margin="6,3,6,3" Content="USSR"  IsChecked="{Binding USSRSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="Germany" IsChecked="{Binding GermanySelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="US" IsChecked="{Binding USSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="China" IsChecked="{Binding ChinaSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="France" IsChecked="{Binding FranceSelected}"></CheckBox>
+                <CheckBox Margin="6,3,6,3" Content="UK" IsChecked="{Binding UKSelected}"></CheckBox>
+            </StackPanel>
+
+        </Grid>
+        
+        <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding TankFrags}" VerticalAlignment="Stretch" Name="dgFragCounts" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_FragCounts_Count}" Binding="{Binding Count}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

@@ -5,6 +5,7 @@ using System.Net;
 using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using WotDossier.Common;
 using WotDossier.Domain;
 using System.Linq;
 using WotDossier.Domain.Player;
@@ -26,10 +27,14 @@ namespace WotDossier.Dal
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
 
-        private static readonly Dictionary<KeyValuePair<int, int>, TankInfo> _tanksDictionary;
+        private static readonly Dictionary<int, TankInfo> _tanksDictionary;
         private static readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
         
-        public static Dictionary<KeyValuePair<int, int>, TankInfo> TanksDictionary
+        /// <summary>
+        /// Tanks dictionary
+        /// KEY - tankid, countryid
+        /// </summary>
+        public static Dictionary<int, TankInfo> TanksDictionary
         {
             get { return _tanksDictionary; }
         }
@@ -92,17 +97,27 @@ namespace WotDossier.Dal
 
         public void ExtendPropertiesData(TankJson tank)
         {
-            tank.Info = _tanksDictionary[new KeyValuePair<int, int>(tank.Common.tankid, tank.Common.countryid)];
+            tank.Info = _tanksDictionary[tank.UniqueId()];
             tank.Icon = GetTankIcon(tank);
             tank.Frags =
                 tank.Kills.Select(
                     x =>
-                    new FragsJson
                         {
-                            CountryId = Convert.ToInt32(x[0]),
-                            TankId = Convert.ToInt32(x[1]),
-                            Count = Convert.ToInt32(x[2]),
-                            Name = x[3]
+                            int countryId = Convert.ToInt32(x[0]);
+                            int tankId = Convert.ToInt32(x[1]);
+                            int uniqueId = Utils.ToUniqueId(countryId, tankId);
+                            return new FragsJson
+                                 {
+                                     CountryId = countryId,
+                                     TankId = tankId,
+                                     Icon = GetTankIcon(TanksDictionary[uniqueId]),
+                                     TankUniqueId = uniqueId,
+                                     Count = Convert.ToInt32(x[2]),
+                                     Type = TanksDictionary[uniqueId].type,
+                                     Tier = TanksDictionary[uniqueId].tier,
+                                     KilledByTankUniqueId = tank.UniqueId(),
+                                     Tank = x[3]
+                                 };
                         });
         }
 
@@ -121,7 +136,7 @@ namespace WotDossier.Dal
             return TankIcon.Empty;
         }
 
-        private static Dictionary<KeyValuePair<int, int>, TankInfo> ReadTanksDictionary()
+        private static Dictionary<int, TankInfo> ReadTanksDictionary()
         {
             List<TankInfo> tanks = new List<TankInfo>();
             using (StreamReader re = new StreamReader(@"External\tanks.json"))
@@ -145,7 +160,7 @@ namespace WotDossier.Dal
                 }
             }
 
-            return tanks.ToDictionary(x => new KeyValuePair<int, int>(x.tankid, x.countryid));
+            return tanks.ToDictionary(x => x.UniqueId());
         }
 
         /// <summary>

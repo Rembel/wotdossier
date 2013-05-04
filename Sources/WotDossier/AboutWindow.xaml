@@ -4,7 +4,7 @@
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
         Title="{x:Static Resources:Resources.WindowTitle_AboutWindow}" Height="155" Width="380" 
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource applicationBackgroundBrush}" 
-        Foreground="{StaticResource DefaultForeground}" FontFamily="{StaticResource DefaultFontFamily}" FontSize="{StaticResource DefaultFontSize}">
+        Foreground="{StaticResource DefaultForeground}" FontFamily="{StaticResource DefaultFontFamily}" FontSize="{StaticResource DefaultFontSize}" WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>

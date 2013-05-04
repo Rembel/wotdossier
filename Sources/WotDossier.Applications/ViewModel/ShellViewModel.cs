@@ -286,7 +286,7 @@ namespace WotDossier.Applications.ViewModel
 
                     InitMasterTankerList(tanks);
 
-                    FraggsCount.Init(Tanks);
+                    FraggsCount.Init(Tanks.ToList());
                 };
 
             //System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);

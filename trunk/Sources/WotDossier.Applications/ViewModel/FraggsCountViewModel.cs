@@ -45,7 +45,6 @@ namespace WotDossier.Applications.ViewModel
         private bool _chinaSelected = true;
         private bool _franceSelected = true;
         private bool _ukSelected = true;
-        private List<KeyValue<int, string>> _tanks;
         private KeyValue<int, string> _selectedTank;
 
         #region FILTERS
@@ -262,14 +261,7 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        public List<KeyValue<int, string>> Tanks
-        {
-            get { return _tanks; }
-            set
-            {
-                _tanks = value;
-            }
-        }
+        public List<KeyValue<int, string>> Tanks { get; set; }
 
         public KeyValue<int, string> SelectedTank
         {
@@ -354,7 +346,7 @@ namespace WotDossier.Applications.ViewModel
             return filter.ToList();
         }
 
-        public void Init(IEnumerable<TankStatisticRowViewModel> tanks)
+        public void Init(List<TankStatisticRowViewModel> tanks)
         {
             TankFrags = tanks.SelectMany(x => x.TankFrags);
             Tanks = tanks.OrderBy(x => x.Tank).Select(x => new KeyValue<int, string>(x.TankUniqueId, x.Tank)).ToList();

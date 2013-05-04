@@ -19,7 +19,7 @@ namespace WotDossier.Dal
     /// </summary>
     public class WotApiClient
     {
-        protected static readonly ILog _log = LogManager.GetLogger("WotApiClient");
+        private static readonly ILog _log = LogManager.GetLogger("WotApiClient");
 
         private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
         private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
@@ -239,14 +239,17 @@ namespace WotDossier.Dal
             WebResponse response = request.GetResponse();
             using (Stream stream = response.GetResponseStream())
             {
-                StreamReader streamReader = new StreamReader(stream);
-                JsonTextReader reader = new JsonTextReader(streamReader);
-                JsonSerializer se = new JsonSerializer();
-                JObject parsedData = (JObject)se.Deserialize(reader);
-
-                if (parsedData["data"]["items"].Any())
+                if (stream != null)
                 {
-                    return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"]["items"][0].ToString());
+                    StreamReader streamReader = new StreamReader(stream);
+                    JsonTextReader reader = new JsonTextReader(streamReader);
+                    JsonSerializer se = new JsonSerializer();
+                    JObject parsedData = (JObject)se.Deserialize(reader);
+
+                    if (parsedData["data"]["items"].Any())
+                    {
+                        return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"]["items"][0].ToString());
+                    }
                 }
                 return null;
             }

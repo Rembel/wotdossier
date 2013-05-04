@@ -112,15 +112,8 @@ namespace WotDossier.Test
 
             string[] files = new string[0];
 
-            try
-            {
-                files = Directory.GetFiles(Environment.CurrentDirectory + folder, "*.dat");
-            }
-            catch (DirectoryNotFoundException ex)
-            {
-                //_log.Error("Cann't find dossier cache files", ex);
-            }
-
+            files = Directory.GetFiles(Environment.CurrentDirectory + folder, "*.dat");
+        
             if (!files.Any())
             {
                 return null;

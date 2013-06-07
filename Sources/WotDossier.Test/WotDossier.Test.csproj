@@ -157,6 +157,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WotDossier.Applications\WotDossier.Applications.csproj">
@@ -229,8 +232,16 @@
       <Link>External\w9xpopen.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\WotDossier\External\wotbr2j.exe">
+      <Link>External\wotbr2j.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\WotDossier\External\wotdc2j.exe">
       <Link>External\wotdc2j.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\wotrpbr2j.exe">
+      <Link>External\wotrpbr2j.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\WotDossier\x86\Microsoft.VC90.CRT\msvcr90.dll">

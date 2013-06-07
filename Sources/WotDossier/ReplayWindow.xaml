@@ -1,0 +1,22 @@
+﻿<Window x:Class="WotDossier.ReplayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:tabs="clr-namespace:WotDossier.Tabs"
+        Title="{x:Static Resources:Resources.WindowTitle_BattleResults}" Height="970" Width="605">
+    <Grid>
+        <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
+            <!--PersonalResults-->
+            <TabItem TabIndex="0" Header="Личный результат">
+                <tabs:PersonalResults HorizontalAlignment="Stretch"></tabs:PersonalResults>
+            </TabItem>
+            <!--Common tab-->
+            <TabItem TabIndex="0" Header="Командный результат">
+                <tabs:CommandResults HorizontalAlignment="Stretch"></tabs:CommandResults>
+            </TabItem>
+            <!--Common tab-->
+            <TabItem TabIndex="0" Header="Подробный отчет">
+                <tabs:DetailedResults HorizontalAlignment="Stretch"></tabs:DetailedResults>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -10,6 +10,7 @@ using WotDossier.Applications;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
+using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Test
@@ -114,6 +115,19 @@ namespace WotDossier.Test
             }
         }
 
+        [Test]
+        public void ReplayTest_084()
+        {
+            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
+            CacheHelper.ReplayToJson(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            //foreach (TankJson tankJson in tanks)
+            //{
+            //    string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png", tankJson.Icon.iconid);
+            //    Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
+            //}
+        }
+
         /// <summary>
         /// Gets the cache file.
         /// </summary>
@@ -164,6 +178,12 @@ namespace WotDossier.Test
             string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
             string playerName = decodedFileName.Split(';')[1];
             return playerName;
+        }
+
+        [Test]
+        public void ReplayFileTest()
+        {
+            ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\20130329_2326_ussr-IS-3_19_monastery.wotreplay" ));
         }
     }
 }

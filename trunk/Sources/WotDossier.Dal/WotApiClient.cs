@@ -9,7 +9,9 @@ using WotDossier.Common;
 using WotDossier.Domain;
 using System.Linq;
 using WotDossier.Domain.Player;
+using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
+using Vehicle = WotDossier.Domain.Replay.Vehicle;
 
 namespace WotDossier.Dal
 {
@@ -253,6 +255,34 @@ namespace WotDossier.Dal
                 }
                 return null;
             }
+        }
+
+        public Replay ReadReplay(string json)
+        {
+            Replay replay;
+
+            using (StreamReader re = new StreamReader(json))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                replay = se.Deserialize<Replay>(reader);
+            }
+
+            using (StreamReader re = new StreamReader(json))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                JObject parsedData = (JObject)se.Deserialize(reader);
+                CommandResult result = new CommandResult();
+
+                result.Damage = parsedData["datablock_2"][0].ToObject<Damaged>();
+                result.Vehicles = parsedData["datablock_2"][1].ToObject< Dictionary<int, Vehicle>>();
+                result.Frags = parsedData["datablock_2"][2].ToObject<Dictionary<int, FragsCount>>();
+
+                replay.CommandResult = result;
+            }
+
+            return replay;
         }
     }
 }

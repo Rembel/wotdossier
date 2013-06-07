@@ -27,6 +27,26 @@ namespace WotDossier.Dal
             return string.Empty;
         }
 
+        public static int GetCountryId(string countryCode)
+        {
+            switch (countryCode)
+            {
+                case "ussr":
+                    return 0;
+                case "germany":
+                    return 1;
+                case "usa":
+                    return 2;
+                case "china":
+                    return 3;
+                case "france":
+                    return 4;
+                case "uk":
+                    return 5;
+            }
+            return -1;
+        }
+
         public static byte[] Zip(string value)
         {
             using (var ms = new MemoryStream())

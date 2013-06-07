@@ -1004,4 +1004,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Column_FragCounts_Count" xml:space="preserve">
     <value>Count</value>
   </data>
+  <data name="Column_Header_Map" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="Tab_Header_Replays" xml:space="preserve">
+    <value>Реплеи</value>
+  </data>
 </root>

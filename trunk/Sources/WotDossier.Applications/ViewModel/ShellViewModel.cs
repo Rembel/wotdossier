@@ -61,6 +61,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand LoadCommand { get; set; }
 
         public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
+        public DelegateCommand<object> OnReplayRowDoubleClickCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -92,6 +93,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public IEnumerable<ReplayFile> Replays
+        {
+            get { return _replays; }
+            set
+            {
+                _replays = value;
+                RaisePropertyChanged("Replays");
+            }
+        }
+
         private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
 
         public FraggsCountViewModel FraggsCount
@@ -101,7 +112,8 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
-        
+        private IEnumerable<ReplayFile> _replays;
+
         public ObservableCollection<SellInfo> LastUsedTanks
         {
             get { return _lastUsedTanks; }
@@ -153,7 +165,8 @@ namespace WotDossier.Applications.ViewModel
         {
             _dossierRepository = dossierRepository;
             LoadCommand = new DelegateCommand(OnLoad);
-            OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick); 
+            OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
+            OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick); 
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
@@ -167,6 +180,18 @@ namespace WotDossier.Applications.ViewModel
             {
                 TankStatisticViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<TankStatisticViewModel>().Value;
                 viewModel.TankStatistic = tankStatisticRowViewModel;
+                viewModel.Show();
+            }
+        }
+
+        private void OnReplayRowDoubleClick(object rowData)
+        {
+            ReplayFile replayFile = rowData as ReplayFile;
+
+            if (replayFile != null)
+            {
+                ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
+                viewModel.Replay = replayFile;
                 viewModel.Show();
             }
         }
@@ -200,6 +225,7 @@ namespace WotDossier.Applications.ViewModel
                     Thread.Sleep(1000);
                     InitTanksStatistic(cacheFile);
                     InitLastUsedTanksChart();
+                    LoadReplaysList();
                 }
                 else
                 {
@@ -207,6 +233,12 @@ namespace WotDossier.Applications.ViewModel
                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
+        }
+
+        private void LoadReplaysList()
+        {
+            string[] files = Directory.GetFiles(Folder.GetReplaysFolder(), "*.wotreplay");
+            Replays = files.Select(x => new ReplayFile(new FileInfo(Path.Combine(Folder.GetReplaysFolder(), x))));
         }
 
         private void InitLastUsedTanksChart()

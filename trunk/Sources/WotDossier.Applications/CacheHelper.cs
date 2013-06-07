@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using Common.Logging;
 using WotDossier.Common;
@@ -22,13 +21,11 @@ namespace WotDossier.Applications
         {
             FileInfo cacheFile = null;
 
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
             string[] files = new string[0];
 
             try
             {
-                files = Directory.GetFiles(appDataPath + @"\Wargaming.net\WorldOfTanks\dossier_cache", "*.dat");
+                files = Directory.GetFiles(Folder.GetDossierCacheFolder(), "*.dat");
             }
             catch (DirectoryNotFoundException ex)
             {
@@ -72,6 +69,25 @@ namespace WotDossier.Applications
             Process proc = new Process();
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = directoryName + @"\External\wotdc2j.exe";
+            proc.StartInfo.Arguments = string.Format("{0} -f -r", cacheFile.FullName);
+            proc.Start();
+
+            Environment.CurrentDirectory = temp;
+        }
+
+        /// <summary>
+        /// Binary dossier cache to plain json.
+        /// </summary>
+        /// <param name="cacheFile">The cache file.</param>
+        public static void ReplayToJson(FileInfo cacheFile)
+        {
+            string temp = Environment.CurrentDirectory;
+
+            string directoryName = temp;
+            Environment.CurrentDirectory = directoryName + @"\External";
+            Process proc = new Process();
+            proc.EnableRaisingEvents = false;
+            proc.StartInfo.FileName = directoryName + @"\External\wotrpbr2j.exe";
             proc.StartInfo.Arguments = string.Format("{0} -f -r", cacheFile.FullName);
             proc.Start();
 

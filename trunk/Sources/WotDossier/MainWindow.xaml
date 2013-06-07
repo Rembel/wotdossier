@@ -135,6 +135,10 @@
             <TabItem TabIndex="13" Header="{x:Static Resources:Resources.Tab_Header_Time}" Name="tabTime">
                 <tabs:TimeTab HorizontalAlignment="Stretch"></tabs:TimeTab>
             </TabItem>
+            <!--Replays-->
+            <TabItem TabIndex="14" Header="{x:Static Resources:Resources.Tab_Header_Replays}" Name="tabReplays">
+                <tabs:ReplaysTab HorizontalAlignment="Stretch"></tabs:ReplaysTab>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

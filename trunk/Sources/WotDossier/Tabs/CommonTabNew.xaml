@@ -6,7 +6,7 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:wotDossier="clr-namespace:WotDossier"
              xmlns:controls="clr-namespace:WotDossier.Controls" xmlns:Resources="clr-namespace:WotDossier.Resources"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="800" d:DesignWidth="900">
     <UserControl.Resources>
         <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="None" />
         <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" />

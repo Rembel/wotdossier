@@ -30,7 +30,7 @@ namespace WotDossier.Domain.Replay
 
     public class FirstBlock
     {
-        public DateTime dateTime { get; set; }
+        public string dateTime { get; set; }
         public string gameplayID { get; set; }
         public string mapDisplayName { get; set; }
         public string mapName { get; set; }
@@ -96,7 +96,7 @@ namespace WotDossier.Domain.Replay
             public List<int> achievements { get; set; }
             public int aogasFactor10 { get; set; }
             public List<int> autoEquipCost { get; set; }
-            public int? autoLoadCost { get; set; }
+            public List<int> autoLoadCost { get; set; }
             public int autoRepairCost { get; set; }
             public int capturePoints { get; set; }
             public int credits { get; set; }

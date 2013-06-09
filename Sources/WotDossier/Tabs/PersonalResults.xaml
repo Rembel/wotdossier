@@ -4,14 +4,81 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            <StackPanel>
-                
-                <Grid Height="85">
-                    <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
-                    <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
+             d:DesignHeight="605" d:DesignWidth="970">
+    <UserControl.Resources>
+        <!--<ImageBrush x:Key="bg" ImageSource="..\Resources\Images\Maps\content_bg.png" Stretch="Fill" />-->
+        <DataTemplate x:Key="CombatEffectRowTemplate">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="31"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Text="wip022 [DDY-S]" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                <Image Grid.Column="1" Source="/Resources\Images\Tanks\ussr_kv_1s.png" HorizontalAlignment="Left"></Image>
+                <TextBlock Margin="40,0,0,0" Grid.Column="1" Text="T26E4 SuperPershing" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                <Image Grid.Column="2" Source="/Resources\Images\Replays\06s.png" Stretch="None" HorizontalAlignment="Left"></Image>
+                <Image Grid.Column="3" Source="/Resources\Images\Replays\04s.png" Stretch="None" HorizontalAlignment="Left"></Image>
+                <Border Margin="18,18,0,0" Grid.Column="3" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D">
+                    <TextBlock Text="5" Foreground="#5C5A4A" FontSize="10"></TextBlock>
+                </Border>
+                <Image Grid.Column="4" Source="/Resources\Images\Replays\03s.png" Stretch="None" HorizontalAlignment="Left"></Image>
+                <Border Margin="18,18,0,0" Grid.Column="4" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D">
+                    <TextBlock Text="5" Foreground="#5C5A4A" FontSize="10"></TextBlock>
+                </Border>
+                <Image Grid.Column="5" Source="/Resources\Images\Replays\01s.png" Stretch="None" HorizontalAlignment="Left"></Image>
+                <Image Grid.Column="6" Source="/Resources\Images\Replays\02s.png" Stretch="None" HorizontalAlignment="Left"></Image>
+                <!--<Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="..\Resources\Images\table_border_gradient.png" ></Image>-->
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Background="#0E0C09">
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Height="225" HorizontalAlignment="Stretch">
+                <Image Stretch="Fill" HorizontalAlignment="Stretch" Height="225" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.png" />
+                <Image Margin="0,123,0,0" Stretch="Fill" HorizontalAlignment="Stretch" Height="85" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
+                <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" Text="Победа"></TextBlock>
+            </Grid>
+            <Grid Height="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="/Resources\Images\Maps\11_murovanka.png" VerticalAlignment="Top" />
+                <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="/Resources\Images\Maps\overlay.png" VerticalAlignment="Top" />
+                <Image Margin="171,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="/Resources\Images\Tanks\ussr_kv_1s.png" VerticalAlignment="Top" />
+                <Grid Margin="0,130,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="24"></RowDefinition>
+                        <RowDefinition Height="24"></RowDefinition>
+                        <RowDefinition Height="24"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="Без премиума" Foreground="#C8C8B5" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="2" Grid.Row="0" Text="С премиумом" Foreground="#FEC264" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Кредиты" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Опыт x(2) за первую победу в день" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
                 </Grid>
-            </StackPanel>
+                <ListView Grid.Column="1" BorderThickness="0" Background="Transparent" ItemsSource="{Binding CombatEffects}" Margin="10,10,10,10" HorizontalAlignment="Stretch" Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">
+                    <!--<ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>-->
+                </ListView>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

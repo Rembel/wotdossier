@@ -31,6 +31,7 @@ namespace WotDossier.Dal
 
         private static readonly Dictionary<int, TankInfo> _tanksDictionary;
         private static readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
+        private static readonly List<Map> _maps = new List<Map>();
         
         /// <summary>
         /// Tanks dictionary
@@ -46,12 +47,18 @@ namespace WotDossier.Dal
             get { return _iconsDictionary; }
         }
 
+        public static List<Map> Maps
+        {
+            get { return _maps; }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         static WotApiClient()
         {
             _tanksDictionary = ReadTanksDictionary();
+            _maps = ReadMaps();
         }
 
         public static WotApiClient Instance
@@ -163,6 +170,19 @@ namespace WotDossier.Dal
             }
 
             return tanks.ToDictionary(x => x.UniqueId());
+        }
+
+        public static List<Map> ReadMaps()
+        {
+            List<Map> maps = null;
+            using (StreamReader re = new StreamReader(@"External\maps.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                maps = se.Deserialize<List<Map>>(reader);
+            }
+
+            return maps ?? new List<Map>();
         }
 
         /// <summary>

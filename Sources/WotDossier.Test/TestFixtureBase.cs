@@ -4,12 +4,14 @@ using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
+using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 
@@ -184,6 +186,42 @@ namespace WotDossier.Test
         public void ReplayFileTest()
         {
             ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\20130329_2326_ussr-IS-3_19_monastery.wotreplay" ));
+        }
+
+        [Test]
+        public void LoadMapsImages()
+        {
+            List<Map> maps = WotApiClient.ReadMaps();
+
+            foreach (var map in maps)
+            {
+                string url = "http://wotreplays.ru/img/results/Maps/" + map.mapidname + ".png"; 
+
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response;
+                try
+                {
+                    response = request.GetResponse();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(map.mapidname);
+                    continue;
+                }
+                Stream responseStream = response.GetResponseStream();
+
+                if (responseStream != null)
+                {
+                    using (var streamReader = new BinaryReader(responseStream))
+                    {
+                        Byte[] lnByte = streamReader.ReadBytes(1 * 1024 * 1024 * 10);
+                        using (FileStream destinationFile = File.Create(Path.Combine(Environment.CurrentDirectory, map.mapidname + ".png")))
+                        {
+                            destinationFile.Write(lnByte, 0, lnByte.Length);
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -4,8 +4,110 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+             d:DesignHeight="605" d:DesignWidth="970">
+    <UserControl.Resources>
+        <!--<ImageBrush x:Key="bg" ImageSource="..\Resources\Images\Maps\content_bg.png" Stretch="Fill" />-->
+        <DataTemplate x:Key="CombatEffectRowTemplate">
+            <Border BorderThickness="0,0,0,1" BorderBrush="#26251E">
+                <Grid HorizontalAlignment="Stretch" Height="31">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="47"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="179"></ColumnDefinition>
+                        <ColumnDefinition Width="37"></ColumnDefinition>
+                        <ColumnDefinition Width="55"></ColumnDefinition>
+                        <ColumnDefinition Width="69"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="/Resources\Images\Replays\Squad-Ico-silver.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"></Image>
+                    <TextBlock Grid.Column="1" Text="wip022 [DDY-S]" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                    <Image Grid.Column="2" Source="/Resources\Images\Tanks\ussr_kv_1s.png" HorizontalAlignment="Left"></Image>
+                    <TextBlock Margin="40,0,0,0" Grid.Column="2" Text="T26E4 SuperPershing" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="3" Text="1026" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="4" Text="2" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Grid Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="777" Foreground="#C7C7B4" FontSize="13" VerticalAlignment="Center"></TextBlock>
+                        <Image Grid.Column="1" Source="/Resources\Images\Replays\XpIcon-1.png" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None"></Image>
+                    </Grid>
+                    <!--<Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="..\Resources\Images\table_border_gradient.png" ></Image>-->
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Background="#0E0C09">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Наши" FontSize="16" Foreground="#BCBDBE"></TextBlock>
+        <TextBlock Grid.Column="1" Text="Враги" FontSize="16" Foreground="#BCBDBE"></TextBlock>
+        <Grid Height="33" Grid.Row="1" Background="#222117">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="47"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="179"></ColumnDefinition>
+                <ColumnDefinition Width="37"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="69"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="2" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="3" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="4" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="5" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+        </Grid>
+        <Grid Height="33" Grid.Row="1" Grid.Column="1" Background="#222117">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="47"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="179"></ColumnDefinition>
+                <ColumnDefinition Width="37"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="69"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="2" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="3" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="4" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+            <Border Grid.Column="5" BorderThickness="1" BorderBrush="#12110C">
+                <Image Source="..\Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+            </Border>
+        </Grid>
+        <ListView Grid.Column="0" Grid.Row="2" BorderThickness="0" Background="Transparent" ItemsSource="{Binding FirstTeam}" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">
+        </ListView>
+        <ListView Grid.Column="1" Grid.Row="2" BorderThickness="0" Background="Transparent" ItemsSource="{Binding SecondTeam}" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">
+        </ListView>
     </Grid>
 </UserControl>

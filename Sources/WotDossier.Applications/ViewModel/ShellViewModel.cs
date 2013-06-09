@@ -17,6 +17,7 @@ using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
+using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
@@ -191,7 +192,12 @@ namespace WotDossier.Applications.ViewModel
             if (replayFile != null)
             {
                 ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
-                viewModel.Replay = replayFile;
+
+                //convert dossier cache file to json
+                CacheHelper.ReplayToJson(replayFile.FileInfo);
+                Thread.Sleep(1000);
+                Replay replay = WotApiClient.Instance.ReadReplay(replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json"));
+                viewModel.Replay = replay;
                 viewModel.Show();
             }
         }

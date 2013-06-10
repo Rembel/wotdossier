@@ -197,7 +197,7 @@ namespace WotDossier.Applications.ViewModel
                 CacheHelper.ReplayToJson(replayFile.FileInfo);
                 Thread.Sleep(1000);
                 Replay replay = WotApiClient.Instance.ReadReplay(replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json"));
-                viewModel.Replay = replay;
+                viewModel.Init(replay);
                 viewModel.Show();
             }
         }

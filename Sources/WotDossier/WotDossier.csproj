@@ -124,6 +124,7 @@
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\MapNameToImageConverter.cs" />
     <Compile Include="Converters\EpicMedalCountToStringConverter.cs" />
     <Compile Include="Converters\MedalCountToStringConverter.cs" />
     <Compile Include="Converters\StatisticPeriodToStringConverter.cs" />

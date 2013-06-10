@@ -256,6 +256,10 @@ namespace WotDossier.Dal
         /// <returns>First found player</returns>
         public PlayerSearchJson SearchPlayer(AppSettings settings)
         {
+#if DEBUG
+            return new PlayerSearchJson { created_at = 0, id = 10800699, name = "rembel"};
+#endif
+
             string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -293,13 +297,14 @@ namespace WotDossier.Dal
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = (JObject)se.Deserialize(reader);
-                CommandResult result = new CommandResult();
-
-                result.Damage = parsedData["datablock_2"][0].ToObject<Damaged>();
-                result.Vehicles = parsedData["datablock_2"][1].ToObject< Dictionary<int, Vehicle>>();
-                result.Frags = parsedData["datablock_2"][2].ToObject<Dictionary<int, FragsCount>>();
-
-                replay.CommandResult = result;
+                if (parsedData.Count > 2)
+                {
+                    CommandResult result = new CommandResult();
+                    result.Damage = parsedData["datablock_2"][0].ToObject<Damaged>();
+                    result.Vehicles = parsedData["datablock_2"][1].ToObject<Dictionary<int, Vehicle>>();
+                    result.Frags = parsedData["datablock_2"][2].ToObject<Dictionary<int, FragsCount>>();
+                    replay.CommandResult = result;
+                }
             }
 
             return replay;

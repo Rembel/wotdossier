@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
@@ -47,14 +48,22 @@
                 <Image Margin="0,123,0,0" Stretch="Fill" HorizontalAlignment="Stretch" Height="85" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
                 <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" Text="Победа"></TextBlock>
             </Grid>
-            <Grid Height="Auto">
+            <Grid Background="#272519">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="/Resources\Images\Maps\11_murovanka.png" VerticalAlignment="Top" />
+                <TextBlock Text="{Binding MapDisplayName}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
+                <TextBlock Grid.Column="1" Text="Боевая эффективность" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
+            </Grid>
+            <Grid Height="Auto" Margin="10,10,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="{Binding Path=MapName, Mode=OneWay, Converter={x:Static Converters:MapNameToImageConverter.Default}}" VerticalAlignment="Top" />
                 <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="/Resources\Images\Maps\overlay.png" VerticalAlignment="Top" />
-                <Image Margin="171,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="/Resources\Images\Tanks\ussr_kv_1s.png" VerticalAlignment="Top" />
+                <Image Margin="171,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" VerticalAlignment="Top" />
                 <Grid Margin="0,130,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"></ColumnDefinition>

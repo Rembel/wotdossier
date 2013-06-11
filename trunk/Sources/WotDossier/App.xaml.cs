@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.Globalization;
+using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Dal;
+using WotDossier.Domain.Replay;
 using WotDossier.Framework;
 
 namespace WotDossier
@@ -47,7 +50,21 @@ namespace WotDossier
             // start application
             try
             {
-                Controller.Run();
+                //Controller.Run();
+
+                ReplayFile replayFile = new ReplayFile(new FileInfo(@"I:\20130421_2021_ussr-IS-3_18_cliff.wotreplay"));
+
+                if (replayFile != null)
+                {
+                    ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
+
+                    //convert dossier cache file to json
+                    CacheHelper.ReplayToJson(replayFile.FileInfo);
+                    Thread.Sleep(1000);
+                    Replay replay = WotApiClient.Instance.ReadReplay(replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json"));
+                    viewModel.Init(replay);
+                    viewModel.Show();
+                }
             }
             catch (Exception exception)
             {

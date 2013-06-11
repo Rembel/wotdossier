@@ -48,8 +48,8 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Наши" FontSize="16" Foreground="#BCBDBE"></TextBlock>
-        <TextBlock Grid.Column="1" Text="Враги" FontSize="16" Foreground="#BCBDBE"></TextBlock>
+        <TextBlock Margin="10,0,0,0" Text="Наши" FontSize="16" Foreground="#BCBDBE"></TextBlock>
+        <TextBlock Margin="10,0,0,0" Grid.Column="1" Text="Враги" FontSize="16" Foreground="#BCBDBE"></TextBlock>
         <Grid Height="33" Grid.Row="1" Background="#222117">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="47"></ColumnDefinition>

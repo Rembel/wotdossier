@@ -942,6 +942,11 @@
     <Resource Include="Resources\Images\Replays\tbl_ico__user.png" />
     <Resource Include="Resources\Images\Replays\Squad-Ico-silver.png" />
     <Resource Include="Resources\Images\Replays\XpIcon-1.png" />
+    <Resource Include="Resources\Images\Results.png" />
+    <Resource Include="Resources\Images\Replays\FreeXpIcon-1.png" />
+    <Resource Include="Resources\Images\Replays\GoldIcon-2.png" />
+    <Resource Include="Resources\Images\Replays\multyXp.png" />
+    <Resource Include="Resources\Images\Replays\CreditsIcon-2.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

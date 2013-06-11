@@ -30,7 +30,7 @@
                         </Grid>
                         <Border Grid.Row="1" Grid.Column="1" Background="{TemplateBinding Background}" Opacity="0.3" />
                         <Border Name="Border" Grid.Row="1" Grid.Column="1" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2">
-                            <ContentPresenter Name="PART_SelectedContentHost" TextBlock.Foreground="{TemplateBinding Foreground}" Margin="4" ContentSource="SelectedContent" />
+                            <ContentPresenter Name="PART_SelectedContentHost" TextBlock.Foreground="{TemplateBinding Foreground}" Margin="0" ContentSource="SelectedContent" />
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>

@@ -94,12 +94,24 @@ namespace WotDossier.Domain.Replay
 
     public class Personal
     {
+        private List<int> _autoLoadCost;
+        private List<int> _autoEquipCost;
         public int accountDBID { get; set; }
         public List<int> achievements { get; set; }
         public int aogasFactor10 { get; set; }
-        public List<int> autoEquipCost { get; set; }
-        public List<int> autoLoadCost { get; set; }
-        public int autoRepairCost { get; set; }
+        public List<int> autoEquipCost
+        {
+            get { return _autoEquipCost ?? new List<int>(); }
+            set { _autoEquipCost = value; }
+        }
+
+        public List<int> autoLoadCost
+        {
+            get { return _autoLoadCost ?? new List<int>(); }
+            set { _autoLoadCost = value; }
+        }
+
+        public int? autoRepairCost { get; set; }
         public int capturePoints { get; set; }
         public int credits { get; set; }
         public int creditsContributionIn { get; set; }
@@ -144,7 +156,7 @@ namespace WotDossier.Domain.Replay
         public int shots { get; set; }
         public int shotsReceived { get; set; }
         public int spotted { get; set; }
-        public int tdamageDealt { get; set; }
+        public double tdamageDealt { get; set; }
         public int team { get; set; }
         public int tkills { get; set; }
         public int tmenXP { get; set; }
@@ -202,7 +214,7 @@ namespace WotDossier.Domain.Replay
         public int shots { get; set; }
         public int shotsReceived { get; set; }
         public int spotted { get; set; }
-        public int tdamageDealt { get; set; }
+        public double tdamageDealt { get; set; }
         public int team { get; set; }
         public int thits { get; set; }
         public int tkills { get; set; }

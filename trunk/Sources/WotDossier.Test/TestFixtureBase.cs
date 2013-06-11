@@ -186,6 +186,7 @@ namespace WotDossier.Test
         public void ReplayFileTest()
         {
             ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\20130329_2326_ussr-IS-3_19_monastery.wotreplay" ));
+            replayFile = new ReplayFile(new FileInfo(@"C:\20130202_1447_usa-T1_hvy_29_el_hallouf.wotreplay"));
         }
 
         [Test]

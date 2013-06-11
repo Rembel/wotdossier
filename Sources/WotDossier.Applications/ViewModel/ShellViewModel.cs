@@ -191,15 +191,34 @@ namespace WotDossier.Applications.ViewModel
 
             if (replayFile != null)
             {
-                ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
-
+                string jsonFile = replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json");
                 //convert dossier cache file to json
-                CacheHelper.ReplayToJson(replayFile.FileInfo);
-                Thread.Sleep(1000);
-                Replay replay = WotApiClient.Instance.ReadReplay(replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json"));
-                viewModel.Init(replay);
-                viewModel.Show();
+                if (!File.Exists(jsonFile))
+                {
+                    CacheHelper.ReplayToJson(replayFile.FileInfo);
+                    Thread.Sleep(1000);
+                }
+                Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
+                if (ValidateReplayData(replay))
+                {
+                    ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
+                    viewModel.Init(replay);
+                    viewModel.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Can't load replay file. File incomplete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
+        }
+
+        private bool ValidateReplayData(Replay replayFile)
+        {
+            if (replayFile.datablock_battle_result != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>

@@ -15,7 +15,7 @@ namespace WotDossier.Applications.ViewModel
     public class ReplayViewModel : ViewModel<IReplayView>
     {
         private Replay _replay;
-        private List<object> _combatEffects = new List<object> {1, 2, 3, 4, 5, 6};
+        private List<CombatTarget> _combatEffects;
         private List<TeamMember> _firstTeam;
         private List<TeamMember> _secondTeam;
         private string _mapName;
@@ -28,7 +28,7 @@ namespace WotDossier.Applications.ViewModel
             set { _replay = value; }
         }
 
-        public List<object> CombatEffects
+        public List<CombatTarget> CombatEffects
         {
             get { return _combatEffects; }
             set { _combatEffects = value; }
@@ -54,6 +54,10 @@ namespace WotDossier.Applications.ViewModel
 
         public string Date { get; set; }
 
+        public string FullName { get; set; }
+
+        public string Tank { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;"/> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -70,27 +74,92 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Show();
         }
 
-        public void Init(Replay replay)
+        public bool Init(Replay replay)
         {
             Replay = replay;
-            MapName = replay.datablock_1.mapName;
-            MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(replay.datablock_1.gameplayID));
-            TankIcon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
-            Date = replay.datablock_1.dateTime;
-
+            
             if (replay.datablock_battle_result != null)
             {
+                MapName = replay.datablock_1.mapName;
+                MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(replay.datablock_1.gameplayID));
+                TankIcon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
+                Date = replay.datablock_1.dateTime;
+
                 List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
                 List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
                 List<KeyValuePair<long, Vehicle>> vehicles = replay.datablock_1.vehicles.ToList();
-                IEnumerable<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, p_vr => p_vr.Item2.Key, v => v.Key, (p_vr, v) => new TeamMember(p_vr.Item1, p_vr.Item2, v)).ToList();
+                IEnumerable<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v)).ToList();
 
                 int myTeamId = replay.datablock_battle_result.players[replay.datablock_1.playerID].team;
 
                 FirstTeam = teamMembers.Where(x => x.team == myTeamId).OrderByDescending(x => x.xp).ToList();
                 SecondTeam = teamMembers.Where(x => x.team != myTeamId).OrderByDescending(x => x.xp).ToList();
+
+                CombatEffects = replay.datablock_battle_result.personal.details.Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key))).ToList();
+
+                FullName = string.Format("{0} {1}", replay.datablock_1.playerName,
+                                         replay.datablock_battle_result.players[replay.datablock_1.playerID].clanAbbrev);
+
+                TeamMember replayUser = teamMembers.First(x => x.accountDBID == replay.datablock_1.playerID);
+                Tank = replayUser.Tank;
+
+                double premiumFactor = replay.datablock_battle_result.personal.premiumCreditsFactor10 / (double)10;
+                PremiumCredits = replay.datablock_battle_result.personal.credits;
+                PremiumXp = replay.datablock_battle_result.personal.xp;
+                Credits = (int) Math.Round((PremiumCredits / premiumFactor), 0);
+                ActionCredits = Credits - replayUser.credits;
+                Xp = replayUser.xp * replay.datablock_battle_result.personal.dailyXPFactor10 / 10;
+                XpTitle = GetXpTitle(replay.datablock_battle_result.personal.dailyXPFactor10);
+
+                CreditsContributionOut = replay.datablock_battle_result.personal.creditsContributionOut;
+                CreditsContributionIn = replay.datablock_battle_result.personal.creditsContributionIn;
+                AutoRepairCost = replay.datablock_battle_result.personal.autoRepairCost ?? 0;
+                AutoLoadCost = replay.datablock_battle_result.personal.autoLoadCost.Sum();
+                AutoEquipCost = replay.datablock_battle_result.personal.autoEquipCost.Sum();
+                
+                PremiumTotalCredits = PremiumCredits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
+                TotalCredits = Credits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
+
+                return true;
             }
+            return false;
         }
+
+        public int CreditsContributionOut { get; set; }
+
+        public int CreditsContributionIn { get; set; }
+
+        public int TotalCredits { get; set; }
+
+        public int PremiumTotalCredits { get; set; }
+
+        public int AutoEquipCost { get; set; }
+
+        public int AutoLoadCost { get; set; }
+
+        public int AutoRepairCost { get; set; }
+
+        public int ActionCredits { get; set; }
+
+        private string GetXpTitle(int dailyXpFactor10)
+        {
+            int factor = dailyXpFactor10/10;
+            if (factor > 1)
+            {
+                return string.Format("Опыт (x{0} за первую победу в день)", factor);
+            }
+            return "Опыт";
+        }
+
+        public string XpTitle { get; set; }
+
+        public int Xp { get; set; }
+
+        public int PremiumXp { get; set; }
+
+        public int Credits { get; set; }
+
+        public int PremiumCredits { get; set; }
 
         private object GetMapMode(string gameplayId)
         {
@@ -208,7 +277,7 @@ namespace WotDossier.Applications.ViewModel
         public int shots { get; set; }
         public int shotsReceived { get; set; }
         public int spotted { get; set; }
-        public int tdamageDealt { get; set; }
+        public double tdamageDealt { get; set; }
         //public int team { get; set; }
         public int thits { get; set; }
         public int tkills { get; set; }
@@ -222,5 +291,43 @@ namespace WotDossier.Applications.ViewModel
         //public string name { get; set; }
         //public int team { get; set; }
         public string vehicleType { get; set; }
+    }
+
+    public class CombatTarget
+    {
+        public TeamMember TeamMember { get; set; }
+
+        public CombatTarget(KeyValuePair<long, DamagedVehicle> vehicleDamage, TeamMember teamMember)
+        {
+            TeamMember = teamMember;
+
+            crits = vehicleDamage.Value.crits;
+            critsTooltip = string.Format("Вы нанесли критических повреждений: {0}", crits);
+            damageAssisted = vehicleDamage.Value.damageAssisted;
+            damageAssistedTooltip = string.Format("По вашим разведданным союзники нанесли очков урона: {0}", damageAssisted);
+            damageDealt = vehicleDamage.Value.damageDealt;
+            damageDealtTooltip = string.Format("Вы нанесли урона: {0}", damageDealt);
+            fire = vehicleDamage.Value.fire;
+            he_hits = vehicleDamage.Value.he_hits;
+            hits = vehicleDamage.Value.hits;
+            killed = vehicleDamage.Value.killed;
+            pierced = vehicleDamage.Value.pierced;
+            spotted = vehicleDamage.Value.spotted;
+            spottedTooltip = spotted > 0 ? "Вы обнаружили этот танк противника" : string.Empty;
+        }
+
+        public int crits { get; set; }
+        public string critsTooltip { get; set; }
+        public int damageAssisted { get; set; }
+        public string damageAssistedTooltip { get; set; }
+        public int damageDealt { get; set; }
+        public string damageDealtTooltip { get; set; }
+        public int fire { get; set; }
+        public int he_hits { get; set; }
+        public int hits { get; set; }
+        public int killed { get; set; }
+        public int pierced { get; set; }
+        public int spotted { get; set; }
+        public string spottedTooltip { get; set; }
     }
 }

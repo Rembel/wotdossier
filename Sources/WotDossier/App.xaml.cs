@@ -50,21 +50,22 @@ namespace WotDossier
             // start application
             try
             {
-                //Controller.Run();
+                Controller.Run();
 
-                ReplayFile replayFile = new ReplayFile(new FileInfo(@"I:\20130421_2021_ussr-IS-3_18_cliff.wotreplay"));
+                //ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\Documents and Settings\YaroshikPV\Application Data\Wargaming.net\WorldOfTanks\replays\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
+                //ReplayFile replayFile = new ReplayFile(new FileInfo(@"D:\906525_ussr_IS-3_hills.wotreplay"));
 
-                if (replayFile != null)
-                {
-                    ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
+                //if (replayFile != null)
+                //{
+                //    ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
 
-                    //convert dossier cache file to json
-                    CacheHelper.ReplayToJson(replayFile.FileInfo);
-                    Thread.Sleep(1000);
-                    Replay replay = WotApiClient.Instance.ReadReplay(replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json"));
-                    viewModel.Init(replay);
-                    viewModel.Show();
-                }
+                //    //convert dossier cache file to json
+                //    CacheHelper.ReplayToJson(replayFile.FileInfo);
+                //    Thread.Sleep(1000);
+                //    Replay replay = WotApiClient.Instance.ReadReplay(replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json"));
+                //    viewModel.Init(replay);
+                //    viewModel.Show();
+                //}
             }
             catch (Exception exception)
             {

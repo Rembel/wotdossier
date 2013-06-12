@@ -123,11 +123,14 @@ namespace WotDossier.Test
             FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
             Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
-            //foreach (TankJson tankJson in tanks)
-            //{
-            //    string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png", tankJson.Icon.iconid);
-            //    Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
-            //}
+        }
+
+        [Test]
+        public void ReplayTest_086()
+        {
+            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay"));
+            CacheHelper.ReplayToJson(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
 
         /// <summary>
@@ -224,5 +227,37 @@ namespace WotDossier.Test
                 }
             }
         }
+
+        [Test]
+        public void LoginTest()
+        {
+            string url = "https://api.worldoftanks.ru/auth/create/api/1.0/?source_token=WG-WoT_Assistant-1.3.2";
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+            request.Method = "POST";
+            request.CookieContainer = new CookieContainer();
+            request.ContentType = "application/x-www-form-urlencoded";
+
+            // Перед тем как заполнять поля формы, текст запроса конвертируем в байты            
+            byte[] ByteQuery = Encoding.ASCII.GetBytes("login=<>&password=<>");
+            // Длинна запроса (обязательный параметр)
+            request.ContentLength = ByteQuery.Length;
+            // Открываем поток для записи
+            Stream QueryStream = request.GetRequestStream();
+            // Записываем в поток (это и есть POST запрос(заполнение форм))
+            QueryStream.Write(ByteQuery, 0, ByteQuery.Length);
+            // Закрываем поток
+            QueryStream.Close();
+
+            WebResponse webResponse = request.GetResponse();
+            using (Stream stream = webResponse.GetResponseStream())
+            {
+                if (stream != null)
+                {
+                    StreamReader streamReader = new StreamReader(stream);
+                    string readToEnd = streamReader.ReadToEnd();
+                }
+            }
+        }
+
     }
 }

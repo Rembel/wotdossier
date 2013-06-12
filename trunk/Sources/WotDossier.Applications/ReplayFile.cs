@@ -9,8 +9,9 @@ namespace WotDossier.Applications
     public class ReplayFile
     {
         //20121201_1636_ussr-IS_42_north_america
-        private const string REPLAY_FILENAME_FORMAT = @"(\d+_\d+)_([0-9a-zA-Z.-]+)_(\d+)_(.+)";
-        private const string TANKNAME_FORMAT = @"([a-zA-Z]+)-([0-9a-zA-Z.-]+)";
+        private const string REPLAY_DATETIME_FORMAT = @"(\d+_\d+)";
+        private const string MAPNAME_FILENAME = @"(\d+_[a-zA-Z_]+)(\.wotreplay)";
+        private const string TANKNAME_FORMAT = @"([a-zA-Z]+)-(.+)";
 
         public string MapName { get; set; }
         public string Tank { get; set; }
@@ -24,19 +25,23 @@ namespace WotDossier.Applications
         public ReplayFile(FileInfo replayFileInfo)
         {
             FileInfo = replayFileInfo;
-            Regex fileNameRegexp = new Regex(REPLAY_FILENAME_FORMAT);
-            Match match = fileNameRegexp.Match(replayFileInfo.Name);
-            if (match.Success)
-            {
-                CultureInfo provider = CultureInfo.InvariantCulture;
+            string fileName = replayFileInfo.Name;
 
-                PlayTime = DateTime.ParseExact(match.Groups[1].Value, "yyyyMMdd_HHmm", provider);
-                Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
-                Match nameMatch = tankNameRegexp.Match(replayFileInfo.Name);
-                CountryId = WotApiHelper.GetCountryId(nameMatch.Groups[1].Value);
-                Tank = nameMatch.Groups[2].Value;
-                MapName = match.Groups[4].Value.Replace(".wotreplay", "");
-            }
+            Regex dateTimeRegexp = new Regex(REPLAY_DATETIME_FORMAT);
+            Match dateTimeMatch = dateTimeRegexp.Match(fileName);
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            PlayTime = DateTime.ParseExact(dateTimeMatch.Groups[1].Value, "yyyyMMdd_HHmm", provider);
+            
+            Regex mapNameRegexp = new Regex(MAPNAME_FILENAME);
+            Match mapNameMatch = mapNameRegexp.Match(fileName);
+            MapName = mapNameMatch.Groups[1].Value;
+
+            Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
+            string tankName = fileName.Replace(dateTimeMatch.Groups[1].Value, "").Replace(mapNameMatch.Groups[0].Value, "");
+            tankName = tankName.Substring(1, tankName.Length - 2);
+            Match tankNameMatch = tankNameRegexp.Match(tankName);
+            CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
+            Tank = tankNameMatch.Groups[2].Value;
         }
     }
 }

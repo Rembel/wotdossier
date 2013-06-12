@@ -160,6 +160,9 @@
     <None Include="Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WotDossier.Applications\WotDossier.Applications.csproj">

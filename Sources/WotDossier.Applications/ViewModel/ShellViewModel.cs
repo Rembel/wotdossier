@@ -202,7 +202,7 @@ namespace WotDossier.Applications.ViewModel
                 if (ValidateReplayData(replay))
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
-                    viewModel.Init(replay);
+                    viewModel.Init(replay, replayFile);
                     viewModel.Show();
                 }
                 else

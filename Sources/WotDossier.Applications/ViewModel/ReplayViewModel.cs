@@ -74,7 +74,7 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Show();
         }
 
-        public bool Init(Replay replay)
+        public bool Init(Replay replay, ReplayFile replayFile)
         {
             Replay = replay;
             
@@ -108,8 +108,10 @@ namespace WotDossier.Applications.ViewModel
                 PremiumXp = replay.datablock_battle_result.personal.xp;
                 Credits = (int) Math.Round((PremiumCredits / premiumFactor), 0);
                 ActionCredits = Credits - replayUser.credits;
-                Xp = replayUser.xp * replay.datablock_battle_result.personal.dailyXPFactor10 / 10;
-                XpTitle = GetXpTitle(replay.datablock_battle_result.personal.dailyXPFactor10);
+                XpFactor = replay.datablock_battle_result.personal.dailyXPFactor10/10;
+                Xp = replayUser.xp * XpFactor;
+                XpPenalty = replay.datablock_battle_result.personal.xpPenalty;
+                XpTitle = GetXpTitle(XpFactor);
 
                 CreditsContributionOut = replay.datablock_battle_result.personal.creditsContributionOut;
                 CreditsContributionIn = replay.datablock_battle_result.personal.creditsContributionIn;
@@ -120,10 +122,70 @@ namespace WotDossier.Applications.ViewModel
                 PremiumTotalCredits = PremiumCredits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
                 TotalCredits = Credits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
 
+                Shots = replay.datablock_battle_result.personal.shots;
+                Hits = replay.datablock_battle_result.personal.hits;
+                HEHits = replay.datablock_battle_result.personal.he_hits;
+                Pierced = replay.datablock_battle_result.personal.pierced;
+                DamageDealt = replay.datablock_battle_result.personal.damageDealt;
+                ShotsReceived = replay.datablock_battle_result.personal.shotsReceived;
+                TDamage = string.Format("{0}/{1}", replay.datablock_battle_result.personal.tkills, replay.datablock_battle_result.personal.tdamageDealt);
+                Damaged = replay.datablock_battle_result.personal.damaged;
+                Kills = replay.datablock_battle_result.personal.kills;
+                Spotted = replay.datablock_battle_result.personal.spotted;
+                DamageAssisted = replay.datablock_battle_result.personal.damageAssisted;
+                CapturePoints = replay.datablock_battle_result.personal.capturePoints;
+                DroppedCapturePoints = replay.datablock_battle_result.personal.droppedCapturePoints;
+                Mileage = string.Format("{0:.00} км", replay.datablock_battle_result.personal.mileage/(double)1000);
+
+                StartTime = replayFile.PlayTime.ToShortTimeString();
+                TimeSpan battleLength = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
+                BattleTime = battleLength.ToString("m' м 's' с'");
+
+                TimeSpan userbattleLength = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
+                UserBattleTime = userbattleLength.ToString("m' м 's' с'");
+
                 return true;
             }
             return false;
         }
+
+        public int HEHits { get; set; }
+
+        public int XpFactor { get; set; }
+
+        public int XpPenalty { get; set; }
+
+        public string UserBattleTime { get; set; }
+
+        public string BattleTime { get; set; }
+
+        public string StartTime { get; set; }
+
+        public string Mileage { get; set; }
+
+        public int DroppedCapturePoints { get; set; }
+
+        public int CapturePoints { get; set; }
+
+        public int DamageAssisted { get; set; }
+
+        public int Spotted { get; set; }
+
+        public int Kills { get; set; }
+
+        public int Damaged { get; set; }
+
+        public string TDamage { get; set; }
+
+        public int ShotsReceived { get; set; }
+
+        public int DamageDealt { get; set; }
+
+        public int Pierced { get; set; }
+
+        public int Hits { get; set; }
+
+        public int Shots { get; set; }
 
         public int CreditsContributionOut { get; set; }
 
@@ -141,12 +203,11 @@ namespace WotDossier.Applications.ViewModel
 
         public int ActionCredits { get; set; }
 
-        private string GetXpTitle(int dailyXpFactor10)
+        private string GetXpTitle(int dailyXpFactor)
         {
-            int factor = dailyXpFactor10/10;
-            if (factor > 1)
+            if (dailyXpFactor > 1)
             {
-                return string.Format("Опыт (x{0} за первую победу в день)", factor);
+                return string.Format("Опыт (x{0} за первую победу в день)", dailyXpFactor);
             }
             return "Опыт";
         }

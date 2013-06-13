@@ -1,0 +1,44 @@
+﻿<Window x:Class="WotDossier.UploadReplayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UploadReplayWindow" Height="685" Width="660">
+    <Window.Resources>
+        <ImageBrush x:Key="Bg" ImageSource="Resources\Images\Replays\popup_remind_bg.jpg" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="HeadBg" ImageSource="Resources\Images\Replays\popup_remind_head_bg.jpg" Stretch="UniformToFill" TileMode="FlipX"></ImageBrush>
+    </Window.Resources>
+    <Grid Background="{StaticResource Bg}">
+        <StackPanel Orientation="Vertical">
+            <Grid Background="{StaticResource HeadBg}" Height="48" HorizontalAlignment="Stretch">
+                <TextBlock Margin="24,0,0,0" Text="Добавить реплей" FontWeight="Normal" FontSize="24" FontFamily="Arial" Foreground="White" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+            <TextBlock Margin="20,0,0,8" Text="Название" FontWeight="Normal" FontSize="17" FontFamily="Arial" Foreground="White" VerticalAlignment="Center"></TextBlock>
+            <TextBox Margin="20,0,0,8" Width="345" HorizontalAlignment="Left"></TextBox>
+            <TextBlock Margin="20,0,0,22" Text="Пример: Как я захватил базу за первые 5 минут" FontWeight="Normal" FontSize="11" FontFamily="Arial" Foreground="#7A7D7F" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Margin="20,0,0,8" Text="Описание" FontWeight="Normal" FontSize="17" FontFamily="Arial" Foreground="White" VerticalAlignment="Center"></TextBlock>
+            <TextBox Margin="20,0,0,0" Width="345" Height="298" HorizontalAlignment="Left"></TextBox>
+            
+            <Button Margin="20" Style="{x:Null}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left" CommandBindings="">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Image  Width="177" Height="37" Opacity="0.75" Name="ButtonImage">
+                            <Image.Source>
+                                <CroppedBitmap Source="Resources/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
+                            </Image.Source>
+                        </Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="ButtonImage" Property="Opacity" Value="1" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -5,7 +5,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Web;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Common;
@@ -145,7 +147,7 @@ namespace WotDossier.Test
             string[] files = new string[0];
 
             files = Directory.GetFiles(Environment.CurrentDirectory + folder, "*.dat");
-        
+
             if (!files.Any())
             {
                 return null;
@@ -188,7 +190,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplayFileTest()
         {
-            ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\20130329_2326_ussr-IS-3_19_monastery.wotreplay" ));
+            ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\20130329_2326_ussr-IS-3_19_monastery.wotreplay"));
             replayFile = new ReplayFile(new FileInfo(@"C:\20130202_1447_usa-T1_hvy_29_el_hallouf.wotreplay"));
         }
 
@@ -199,7 +201,7 @@ namespace WotDossier.Test
 
             foreach (var map in maps)
             {
-                string url = "http://wotreplays.ru/img/results/Maps/" + map.mapidname + ".png"; 
+                string url = "http://wotreplays.ru/img/results/Maps/" + map.mapidname + ".png";
 
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response;
@@ -233,7 +235,7 @@ namespace WotDossier.Test
         {
             string url = "https://api.worldoftanks.ru/auth/create/api/1.0/?source_token=WG-WoT_Assistant-1.3.2";
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-            request.Method = "POST";
+            request.Method = WebRequestMethods.Http.Post;
             request.CookieContainer = new CookieContainer();
             request.ContentType = "application/x-www-form-urlencoded";
 
@@ -259,5 +261,14 @@ namespace WotDossier.Test
             }
         }
 
+        [Test]
+        public void UploadTest()
+        {
+            FileInfo info = new FileInfo(@"C:\Documents and Settings\YaroshikPV\AppData\Roaming\Wargaming.net\WorldOfTanks\replays\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay");
+
+            ReplayUploader uploader = new ReplayUploader();
+
+            uploader.Upload(info, "replay1", "replayDescription1", "http://wotreplays.ru/site/upload");
+        }
     }
 }

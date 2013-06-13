@@ -228,6 +228,9 @@
     <Compile Include="TankStatisticWindow.xaml.cs">
       <DependentUpon>TankStatisticWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UploadReplayWindow.xaml.cs">
+      <DependentUpon>UploadReplayWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="AboutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -435,6 +438,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TankStatisticWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UploadReplayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -947,6 +954,9 @@
     <Resource Include="Resources\Images\Replays\GoldIcon-2.png" />
     <Resource Include="Resources\Images\Replays\multyXp.png" />
     <Resource Include="Resources\Images\Replays\CreditsIcon-2.png" />
+    <Resource Include="Resources\Images\Replays\popup_remind_bg.jpg" />
+    <Resource Include="Resources\Images\Replays\popup_remind_head_bg.jpg" />
+    <Resource Include="Resources\Images\buttons.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

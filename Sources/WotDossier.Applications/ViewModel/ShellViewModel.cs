@@ -63,6 +63,7 @@ namespace WotDossier.Applications.ViewModel
 
         public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> OnReplayRowDoubleClickCommand { get; set; }
+        public DelegateCommand<object> OnReplayRowUploadCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -167,10 +168,24 @@ namespace WotDossier.Applications.ViewModel
             _dossierRepository = dossierRepository;
             LoadCommand = new DelegateCommand(OnLoad);
             OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
-            OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick); 
+            OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
+            OnReplayRowUploadCommand = new DelegateCommand<object>(OnOnReplayRowUpload); 
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
+        }
+
+        private void OnOnReplayRowUpload(object rowData)
+        {
+            ReplayFile replayFile = rowData as ReplayFile;
+
+            if (replayFile != null)
+            {
+                UploadReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<UploadReplayViewModel>().Value;
+                viewModel.Show();
+                //ReplayUploader replayUploader = new ReplayUploader();
+                //replayUploader.Upload(replayFile.FileInfo, "test", "replayDescription", "http://wotreplays.ru/site/upload");
+            }
         }
 
         private void OnRowDoubleClick(object rowData)

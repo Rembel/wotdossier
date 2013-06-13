@@ -18,7 +18,32 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Upload" CommandParameter="{Binding}" Command="{Binding Path=DataContext.OnReplayRowUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"></Button>    
+                            <Button Margin="20" Style="{x:Null}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left" 
+                                    CommandParameter="{Binding}" Command="{Binding Path=DataContext.OnReplayRowUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <Image  Width="177" Height="37" Opacity="0.75" Name="ButtonImage">
+                                                <Image.Source>
+                                                    <CroppedBitmap Source="../Resources/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
+                                                </Image.Source>
+                                            </Image>
+                                            <TextBlock Text="Upload" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter TargetName="ButtonImage" Property="Opacity" Value="1" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
+                                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

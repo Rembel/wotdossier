@@ -36,8 +36,6 @@ namespace WotDossier.Applications.ViewModel
         private static readonly ILog _log = LogManager.GetLogger("ShellViewModel");
 
         private readonly DossierRepository _dossierRepository;
-        private readonly SettingsReader _reader = new SettingsReader(WotDossierSettings.SettingsPath);
-
         private PlayerStatisticViewModel _playerStatistic;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
         private IEnumerable<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
@@ -183,8 +181,6 @@ namespace WotDossier.Applications.ViewModel
             {
                 UploadReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<UploadReplayViewModel>().Value;
                 viewModel.Show();
-                //ReplayUploader replayUploader = new ReplayUploader();
-                //replayUploader.Upload(replayFile.FileInfo, "test", "replayDescription", "http://wotreplays.ru/site/upload");
             }
         }
 
@@ -277,8 +273,17 @@ namespace WotDossier.Applications.ViewModel
 
         private void LoadReplaysList()
         {
-            string[] files = Directory.GetFiles(Folder.GetReplaysFolder(), "*.wotreplay");
-            Replays = files.Select(x => new ReplayFile(new FileInfo(Path.Combine(Folder.GetReplaysFolder(), x))));
+            string replaysFolder = Folder.GetReplaysFolder();
+
+            if (Directory.Exists(replaysFolder))
+            {
+                string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
+                Replays = files.Select(x => new ReplayFile(new FileInfo(Path.Combine(replaysFolder, x))));
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Can't find replays directory - '{0}'.", replaysFolder), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void InitLastUsedTanksChart()
@@ -291,7 +296,7 @@ namespace WotDossier.Applications.ViewModel
 
         private PlayerStatisticViewModel GetPlayerStatistic()
         {
-            AppSettings settings = _reader.Get();
+            AppSettings settings = SettingsReader.Get();
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
                 MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK,

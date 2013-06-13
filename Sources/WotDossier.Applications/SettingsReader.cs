@@ -2,31 +2,24 @@
 using System.IO;
 using System.Text;
 using WotDossier.Common;
+using WotDossier.Dal;
 using WotDossier.Domain;
 
 namespace WotDossier.Applications
 {
-    public class SettingsReader
+    public static class SettingsReader
     {
         private static readonly object _syncObject = new object();
 
         private const string PATH_WEB_BIN = @".\..";
 
-        private readonly string _filePath;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
-        /// </summary>
-        public SettingsReader(string filePath)
-        {
-            _filePath = filePath;
-        }
+        private static readonly string _filePath = WotDossierSettings.SettingsPath;
 
         /// <summary>
         /// Reads this instance.
         /// </summary>
         /// <returns></returns>
-        public AppSettings Get()
+        public static AppSettings Get()
         {
             var filePath = GetFilePath();
 
@@ -43,7 +36,7 @@ namespace WotDossier.Applications
             return settingsDto;
         }
 
-        private string GetFilePath()
+        private static string GetFilePath()
         {
             return Environment.CurrentDirectory + _filePath;
         }
@@ -52,7 +45,7 @@ namespace WotDossier.Applications
         /// Saves the specified settings.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        public void Save(AppSettings settings)
+        public static void Save(AppSettings settings)
         {
             var filePath = GetFilePath();
 

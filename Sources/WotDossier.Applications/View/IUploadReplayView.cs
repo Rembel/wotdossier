@@ -5,5 +5,6 @@ namespace WotDossier.Applications.View
     public interface IUploadReplayView : IView
     {
         void Show();
+        void Close();
     }
 }

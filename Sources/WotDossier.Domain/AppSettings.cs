@@ -4,6 +4,8 @@
     {
         private string _language = "ru-RU";
         private StatisticPeriod _period;
+        private string _replaysUploadServerPath = "http://wotreplays.ru/site/upload";
+        private string _replaysFolderPath;
         public string PlayerId { get; set; }
         public string Server { get; set; }
 
@@ -17,6 +19,18 @@
         {
             get { return _period; }
             set { _period = value; }
+        }
+
+        public string ReplaysUploadServerPath
+        {
+            get { return _replaysUploadServerPath; }
+            set { _replaysUploadServerPath = value; }
+        }
+
+        public string ReplaysFolderPath
+        {
+            get { return _replaysFolderPath; }
+            set { _replaysFolderPath = value; }
         }
     }
 }

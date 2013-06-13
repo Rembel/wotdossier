@@ -32,9 +32,8 @@ namespace WotDossier
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            SettingsReader reader = new SettingsReader(WotDossierSettings.SettingsPath);
             //set app lang
-            var culture = new CultureInfo(reader.Get().Language);
+            var culture = new CultureInfo(SettingsReader.Get().Language);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 

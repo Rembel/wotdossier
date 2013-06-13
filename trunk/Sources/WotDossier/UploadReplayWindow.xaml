@@ -12,12 +12,12 @@
                 <TextBlock Margin="24,0,0,0" Text="Добавить реплей" FontWeight="Normal" FontSize="24" FontFamily="Arial" Foreground="White" VerticalAlignment="Center"></TextBlock>
             </Grid>
             <TextBlock Margin="20,0,0,8" Text="Название" FontWeight="Normal" FontSize="17" FontFamily="Arial" Foreground="White" VerticalAlignment="Center"></TextBlock>
-            <TextBox Margin="20,0,0,8" Width="345" HorizontalAlignment="Left"></TextBox>
+            <TextBox Margin="20,0,0,8" Text="{Binding ReplayName, Mode=TwoWay}" Width="345" HorizontalAlignment="Left"></TextBox>
             <TextBlock Margin="20,0,0,22" Text="Пример: Как я захватил базу за первые 5 минут" FontWeight="Normal" FontSize="11" FontFamily="Arial" Foreground="#7A7D7F" VerticalAlignment="Center"></TextBlock>
             <TextBlock Margin="20,0,0,8" Text="Описание" FontWeight="Normal" FontSize="17" FontFamily="Arial" Foreground="White" VerticalAlignment="Center"></TextBlock>
-            <TextBox Margin="20,0,0,0" Width="345" Height="298" HorizontalAlignment="Left"></TextBox>
+            <TextBox Margin="20,0,0,0" Text="{Binding ReplayDescription, Mode=TwoWay}" Width="345" Height="298" HorizontalAlignment="Left" TextWrapping="Wrap"></TextBox>
             
-            <Button Margin="20" Style="{x:Null}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left" CommandBindings="">
+            <Button Margin="20" Style="{x:Null}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left" Command="{Binding OnReplayUploadCommand}">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Image  Width="177" Height="37" Opacity="0.75" Name="ButtonImage">

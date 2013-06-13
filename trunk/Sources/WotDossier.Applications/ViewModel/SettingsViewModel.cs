@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using WotDossier.Applications.View;
-using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
@@ -10,12 +9,12 @@ namespace WotDossier.Applications.ViewModel
 {
     public class SettingsViewModel : ViewModel<ISettingsView>
     {
-        private SettingsReader _reader;
         private AppSettings _appSettings;
         private List<string> _servers = new List<string>{"ru", "eu"};
         private List<string> _languages = new List<string>{"ru-RU", "en-US"};
         private List<StatisticPeriod> _periods = new List<StatisticPeriod>{StatisticPeriod.Recent, StatisticPeriod.LastWeek, StatisticPeriod.AllObservationPeriod};
         public DelegateCommand SaveCommand { get; set; }
+        public DelegateCommand SelectReplaysFolderCommand { get; set; }
 
         public AppSettings AppSettings
         {
@@ -49,6 +48,12 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public string ReplaysFolderPath
+        {
+            get { return AppSettings.ReplaysFolderPath; }
+            set { AppSettings.ReplaysFolderPath = value; }
+        }
+
         public SettingsViewModel()
         {
         }
@@ -61,13 +66,18 @@ namespace WotDossier.Applications.ViewModel
         public SettingsViewModel(ISettingsView view) : base(view)
         {
             SaveCommand = new DelegateCommand(OnSave);
-            _reader = new SettingsReader(WotDossierSettings.SettingsPath);
-            _appSettings = _reader.Get();
+            SelectReplaysFolderCommand = new DelegateCommand(OnSelectReplaysFolder);
+            _appSettings = SettingsReader.Get();
+        }
+
+        private void OnSelectReplaysFolder()
+        {
+            //TODO
         }
 
         private void OnSave()
         {
-            _reader.Save(_appSettings);
+            SettingsReader.Save(_appSettings);
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period));
             ViewTyped.Close();
         }

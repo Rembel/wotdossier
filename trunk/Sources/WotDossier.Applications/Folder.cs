@@ -16,10 +16,7 @@ namespace WotDossier.Applications
 
         public static string GetReplaysFolder()
         {
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string dossierCacheFolder = appDataPath + @"\Wargaming.net\WorldOfTanks\replays";
-            return dossierCacheFolder;
-            //return @"I:\World_of_Tanks\replays";
+            return SettingsReader.Get().ReplaysFolderPath;
         }
     }
 }

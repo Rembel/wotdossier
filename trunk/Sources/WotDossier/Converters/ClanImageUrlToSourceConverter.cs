@@ -8,7 +8,6 @@ using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using Common.Logging;
 using WotDossier.Applications;
-using WotDossier.Dal;
 using WotDossier.Domain;
 
 namespace WotDossier.Converters
@@ -40,8 +39,7 @@ namespace WotDossier.Converters
                             Directory.CreateDirectory(dir);
                         }
 
-                        SettingsReader reader = new SettingsReader(WotDossierSettings.SettingsPath);
-                        AppSettings appSettings = reader.Get();
+                        AppSettings appSettings = SettingsReader.Get();
                         WebRequest request = HttpWebRequest.Create(string.Format("http://worldoftanks.{1}{0}", url, appSettings.Server));
                         WebResponse response;
                         response = request.GetResponse();

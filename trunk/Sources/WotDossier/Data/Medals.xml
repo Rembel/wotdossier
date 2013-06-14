@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Medals>
+  <Epic>
+    <medal name="medalWittmann" id="52"/>
+    <medal name="medalOrlik" id="53"/>
+    <medal name="medalOskin" id="54"/>
+    <medal name="medalHalonen" id="55" icon=""/>
+    <medal name="medalBurda" id="56"/>
+    <medal name="medalBillotte" id="57"/>
+    <medal name="medalKolobanov" id="58"/>
+    <medal name="medalFadin" id="59"/>
+    <medal name="medalRadleyWalters" id="60"/>
+    <medal name="medalBrunoPietro" id="61"/>
+    <medal name="medalTarczay" id="62"/>
+    <medal name="medalPascucci" id="63"/>
+    <medal name="medalDumitru" id="64"/>
+    <medal name="medalLehvaslaiho" id="65"/>
+    <medal name="medalNikolas" id="66"/>
+    <medal name="medalLafayettePool" id="67"/>
+    <medal name="heroesOfRassenay" id="69"/>
+    <medal name="medalBoelter" id=""/>
+    <medal name="medalBrothersInArms" id="116"/> 
+    <medal name="medalCrucialContribution" id="117"/>
+    <medal name="medalDeLanglade" id="118"/>
+    <medal name="medalTamadaYoshio" id="119"/>
+  </Epic>
+  <BattleHero>
+    <medal name="steelwall" id=""/>
+    <medal name="invader" id=""/>
+    <medal name="defende" id=""/>
+    <medal name="supporter" id=""/>
+    <medal name="sniper" id=""/>
+    <medal name="warrior" id=""/>
+    <medal name="scout" id=""/>
+    <!--Дозорный-->
+    <medal name="evileye" id=""/>
+  </BattleHero>
+  <Special>
+    <!--Бронебойщик-->
+    <medal name="armorPiercer" id=""/>
+    <!--Гроза мышей-->
+    <medal name="mousebane" id=""/>
+    <!--Бомбардир-->
+    <medal name="bombardier" id=""/>
+    <!--Егерь-->
+    <medal name="huntsman" id=""/>
+    <!--Счастливчик-->
+    <medal name="luckyDevil" id=""/>
+    <!--Коса смерти-->
+    <medal name="handOfDeath" id=""/>
+    <!--лев синя-->
+    <medal name="sinai" id=""/>
+    <!--<medal name="titleSniper" id=""/>-->
+    <!--невозмутимый-->
+    <medal name="ironMan" id=""/>
+    <!--Зверобой-->
+    <medal name="beasthunter" id=""/>
+    <!--Камикадзе-->
+    <medal name="kamikaze" id=""/>
+    <!--Спартанец-->
+    <medal name="sturdy" id=""/>
+    <!--неуязвимый-->
+    <medal name="invincible" id=""/>
+    <!--Егерь-->
+    <medal name="lumberjack" id=""/>
+    <!--Живучий-->
+    <medal name="diehard" id="75"/>
+    <!--рейдер-->
+    <medal name="raider" id="76"/>
+    <!--Долина паттонов-->
+    <medal name="pattonValley" id=""/>
+  </Special>
+  <Common>
+    <medal name="medalKay" id="44"/>
+    <medal name="medalCarius" id="45"/>
+    <medal name="medalKnispel" id="46"/>
+    <medal name="medalPoppel" id="47"/>
+    <medal name="medalAbrams" id="48"/>
+    <medal name="medalLeClerc" id="49"/>
+    <medal name="medalLavrinenko" id="50"/>
+    <medal name="medalEkins" id="51"/>
+  </Common>
+</Medals>

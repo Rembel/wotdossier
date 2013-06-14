@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
 using WotDossier.Domain;
 using WotDossier.Framework.Applications;
@@ -51,7 +52,11 @@ namespace WotDossier.Applications.ViewModel
         public string ReplaysFolderPath
         {
             get { return AppSettings.ReplaysFolderPath; }
-            set { AppSettings.ReplaysFolderPath = value; }
+            set
+            {
+                AppSettings.ReplaysFolderPath = value;
+                RaisePropertyChanged("ReplaysFolderPath");
+            }
         }
 
         public SettingsViewModel()
@@ -72,7 +77,12 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSelectReplaysFolder()
         {
-            //TODO
+            VistaFolderBrowserDialog dialog = new VistaFolderBrowserDialog();
+            bool? showDialog = dialog.ShowDialog();
+            if (showDialog == true)
+            {
+                ReplaysFolderPath = dialog.SelectedPath;
+            }
         }
 
         private void OnSave()

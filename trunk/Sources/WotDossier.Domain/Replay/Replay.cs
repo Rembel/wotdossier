@@ -4,22 +4,7 @@ using System.Collections.Generic;
 namespace WotDossier.Domain.Replay
 {
     /*
-    'warrior',  # 1
-'invader',  # 2
-'sniper',  # 3
-'defender',  # 4
-'steelwall', # 5
-'supporter', # 6
-'scout',  # 7
-
-    'medalWittmann',  # 0
-'medalOrlik',   # 1
-'medalOskin',   # 2
-'medalHalonen',  # 3
-'medalBurda',   # 4
-'medalBillotte',  # 5
-'medalKolobanov',  # 6
-'medalFadin',   # 7
+http://wiki.vbaddict.net
     */
     public class Replay
     {

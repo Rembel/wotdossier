@@ -58,6 +58,8 @@ namespace WotDossier.Applications.ViewModel
 
         public string Tank { get; set; }
 
+        public List<int> BattleMedals { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;"/> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -269,6 +271,7 @@ namespace WotDossier.Applications.ViewModel
 
             accountDBID = vehicleResult.Value.accountDBID;
             achievements = vehicleResult.Value.achievements;
+            BattleMedals = vehicleResult.Value.achievements;
             capturePoints = vehicleResult.Value.capturePoints;
             credits = vehicleResult.Value.credits;
             damageAssisted = vehicleResult.Value.damageAssisted;
@@ -299,6 +302,8 @@ namespace WotDossier.Applications.ViewModel
             typeCompDescr = vehicleResult.Value.typeCompDescr;
             xp = vehicleResult.Value.xp;
         }
+
+        public List<int> BattleMedals { get; set; }
 
         public string Tank { get; set; }
 

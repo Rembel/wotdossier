@@ -151,6 +151,12 @@
     <Compile Include="ReplayWindow.xaml.cs">
       <DependentUpon>ReplayWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\EpicMedalTeplateSelector.cs" />
+    <Compile Include="Resources\Medals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Medals.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -455,6 +461,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\Medals.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Medals.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -580,6 +590,7 @@
     <Content Include="Data\dossier.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Data\Medals.xml" />
     <Content Include="External\python27.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -957,6 +968,145 @@
     <Resource Include="Resources\Images\Replays\popup_remind_bg.jpg" />
     <Resource Include="Resources\Images\Replays\popup_remind_head_bg.jpg" />
     <Resource Include="Resources\Images\buttons.png" />
+    <Resource Include="Resources\Images\Medals\100px-.png" />
+    <Resource Include="Resources\Images\Medals\100px-_002.png" />
+    <Resource Include="Resources\Images\Medals\100px-_003.png" />
+    <Resource Include="Resources\Images\Medals\100px-__.png" />
+    <Resource Include="Resources\Images\Medals\1_class.png" />
+    <Resource Include="Resources\Images\Medals\2_class.png" />
+    <Resource Include="Resources\Images\Medals\3_class.png" />
+    <Resource Include="Resources\Images\Medals\51px-Herhalhol.png" />
+    <Resource Include="Resources\Images\Medals\51px-Masofstep.png" />
+    <Resource Include="Resources\Images\Medals\51px-Redbat.png" />
+    <Resource Include="Resources\Images\Medals\64px-__.png" />
+    <Resource Include="Resources\Images\Medals\64px-___002.png" />
+    <Resource Include="Resources\Images\Medals\71px-HeroesOfRassenay.png" />
+    <Resource Include="Resources\Images\Medals\71px-Medal_brussel-107-150.png" />
+    <Resource Include="Resources\Images\Medals\71px-Medal_piza-107-150.png" />
+    <Resource Include="Resources\Images\Medals\71px-Medal_poland-107-150.png" />
+    <Resource Include="Resources\Images\Medals\71px-Medal_sofia-107-150.png" />
+    <Resource Include="Resources\Images\Medals\71px-Medal_tallin-107-150.png" />
+    <Resource Include="Resources\Images\Medals\Amur-tiger.png" />
+    <Resource Include="Resources\Images\Medals\ArmorPiercer.png" />
+    <Resource Include="Resources\Images\Medals\Atlant_1.png" />
+    <Resource Include="Resources\Images\Medals\Atlant_2.png" />
+    <Resource Include="Resources\Images\Medals\Atlant_3.png" />
+    <Resource Include="Resources\Images\Medals\Beasthunter.png" />
+    <Resource Include="Resources\Images\Medals\Bombardier.png" />
+    <Resource Include="Resources\Images\Medals\Defender.png" />
+    <Resource Include="Resources\Images\Medals\Diehard.png" />
+    <Resource Include="Resources\Images\Medals\Don-cossack.png" />
+    <Resource Include="Resources\Images\Medals\Evileye.png" />
+    <Resource Include="Resources\Images\Medals\Gold-miner-en.png" />
+    <Resource Include="Resources\Images\Medals\HandOfDeath.png" />
+    <Resource Include="Resources\Images\Medals\Imperturbable.png" />
+    <Resource Include="Resources\Images\Medals\Invader.png" />
+    <Resource Include="Resources\Images\Medals\Invincible.png" />
+    <Resource Include="Resources\Images\Medals\Jager.png" />
+    <Resource Include="Resources\Images\Medals\Jolly_roger.png" />
+    <Resource Include="Resources\Images\Medals\Kamikaze.png" />
+    <Resource Include="Resources\Images\Medals\Land-of-honest-people.png" />
+    <Resource Include="Resources\Images\Medals\Libertalia-ru.png" />
+    <Resource Include="Resources\Images\Medals\Lord-of-taiga.png" />
+    <Resource Include="Resources\Images\Medals\Lucky.png" />
+    <Resource Include="Resources\Images\Medals\Lutetia-en.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineer.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerBrit.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerBritgray.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerChina.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerChinagray.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerFrance.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerFrancegray.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerGermany.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerGermanygray.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineergray.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerUSA.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerUSAgray.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerUSSR.png" />
+    <Resource Include="Resources\Images\Medals\MechanicEngineerUSSRgray.png" />
+    <Resource Include="Resources\Images\Medals\MedalAbrams1.png" />
+    <Resource Include="Resources\Images\Medals\MedalAbrams2.png" />
+    <Resource Include="Resources\Images\Medals\MedalAbrams3.png" />
+    <Resource Include="Resources\Images\Medals\MedalAbrams4.png" />
+    <Resource Include="Resources\Images\Medals\MedalBillotte.png" />
+    <Resource Include="Resources\Images\Medals\MedalBoelter.png" />
+    <Resource Include="Resources\Images\Medals\MedalBrothersInArms.png" />
+    <Resource Include="Resources\Images\Medals\MedalBrunoPietro.png" />
+    <Resource Include="Resources\Images\Medals\MedalBurda.png" />
+    <Resource Include="Resources\Images\Medals\MedalCarius1.png" />
+    <Resource Include="Resources\Images\Medals\MedalCarius2.png" />
+    <Resource Include="Resources\Images\Medals\MedalCarius3.png" />
+    <Resource Include="Resources\Images\Medals\MedalCarius4.png" />
+    <Resource Include="Resources\Images\Medals\MedalCrucialContribution.png" />
+    <Resource Include="Resources\Images\Medals\MedalDeLanglade.png" />
+    <Resource Include="Resources\Images\Medals\MedalDumitru.png" />
+    <Resource Include="Resources\Images\Medals\MedalEkins1.png" />
+    <Resource Include="Resources\Images\Medals\MedalEkins2.png" />
+    <Resource Include="Resources\Images\Medals\MedalEkins3.png" />
+    <Resource Include="Resources\Images\Medals\MedalEkins4.png" />
+    <Resource Include="Resources\Images\Medals\MedalFadin.png" />
+    <Resource Include="Resources\Images\Medals\MedalHalonen.png" />
+    <Resource Include="Resources\Images\Medals\MedalKay1.png" />
+    <Resource Include="Resources\Images\Medals\MedalKay2.png" />
+    <Resource Include="Resources\Images\Medals\MedalKay3.png" />
+    <Resource Include="Resources\Images\Medals\MedalKay4.png" />
+    <Resource Include="Resources\Images\Medals\MedalKnispel1.png" />
+    <Resource Include="Resources\Images\Medals\MedalKnispel2.png" />
+    <Resource Include="Resources\Images\Medals\MedalKnispel3.png" />
+    <Resource Include="Resources\Images\Medals\MedalKnispel4.png" />
+    <Resource Include="Resources\Images\Medals\MedalKolobanov.png" />
+    <Resource Include="Resources\Images\Medals\MedalLafayettePool.png" />
+    <Resource Include="Resources\Images\Medals\MedalLavrinenko1.png" />
+    <Resource Include="Resources\Images\Medals\MedalLavrinenko2.png" />
+    <Resource Include="Resources\Images\Medals\MedalLavrinenko3.png" />
+    <Resource Include="Resources\Images\Medals\MedalLavrinenko4.png" />
+    <Resource Include="Resources\Images\Medals\MedalLeClerc1.png" />
+    <Resource Include="Resources\Images\Medals\MedalLeClerc2.png" />
+    <Resource Include="Resources\Images\Medals\MedalLeClerc3.png" />
+    <Resource Include="Resources\Images\Medals\MedalLeClerc4.png" />
+    <Resource Include="Resources\Images\Medals\MedalLehvaslaiho.png" />
+    <Resource Include="Resources\Images\Medals\MedalNikolas.png" />
+    <Resource Include="Resources\Images\Medals\MedalOrlik.png" />
+    <Resource Include="Resources\Images\Medals\MedalOskin.png" />
+    <Resource Include="Resources\Images\Medals\MedalPascucci.png" />
+    <Resource Include="Resources\Images\Medals\MedalPoppel1.png" />
+    <Resource Include="Resources\Images\Medals\MedalPoppel2.png" />
+    <Resource Include="Resources\Images\Medals\MedalPoppel3.png" />
+    <Resource Include="Resources\Images\Medals\MedalPoppel4.png" />
+    <Resource Include="Resources\Images\Medals\MedalRadleyWalters.png" />
+    <Resource Include="Resources\Images\Medals\MedalTamadaYoshio.png" />
+    <Resource Include="Resources\Images\Medals\MedalTarczay.png" />
+    <Resource Include="Resources\Images\Medals\Mousebane.png" />
+    <Resource Include="Resources\Images\Medals\M_class.png" />
+    <Resource Include="Resources\Images\Medals\North-palmira.png" />
+    <Resource Include="Resources\Images\Medals\Oil-baron.png" />
+    <Resource Include="Resources\Images\Medals\Pattonvalley.png" />
+    <Resource Include="Resources\Images\Medals\Raider.png" />
+    <Resource Include="Resources\Images\Medals\Scout.png" />
+    <Resource Include="Resources\Images\Medals\Sib_lion.png" />
+    <Resource Include="Resources\Images\Medals\Sinai.png" />
+    <Resource Include="Resources\Images\Medals\Sniper.png" />
+    <Resource Include="Resources\Images\Medals\Sparta.png" />
+    <Resource Include="Resources\Images\Medals\Steelwall.png" />
+    <Resource Include="Resources\Images\Medals\Supporter.png" />
+    <Resource Include="Resources\Images\Medals\Tank.png" />
+    <Resource Include="Resources\Images\Medals\TankExpert.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertBrit.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertBritgray.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertChina.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertChinagray.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertFrance.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertFrancegray.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertGermany.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertGermanygray.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertgray2.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertUSA.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertUSAgray.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertUSSR.png" />
+    <Resource Include="Resources\Images\Medals\TankExpertUSSRgray.png" />
+    <Resource Include="Resources\Images\Medals\TitleSniper.png" />
+    <Resource Include="Resources\Images\Medals\Warrior.png" />
+    <Resource Include="Resources\Images\Medals\Zulu-warrior.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

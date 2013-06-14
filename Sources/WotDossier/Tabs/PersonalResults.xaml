@@ -126,6 +126,31 @@
             <Grid Height="225" HorizontalAlignment="Stretch">
                 <Image Stretch="Fill" HorizontalAlignment="Stretch" Height="225" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.png" />
                 <Image Margin="0,123,0,0" Stretch="Fill" HorizontalAlignment="Stretch" Height="85" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
+                <Grid Margin="0,123,0,0" Height="85">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Background="Transparent">
+                        
+                    </ListBox>
+                    <Grid Grid.Column="1" VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Credits}" FontSize="30" Foreground="White"></TextBlock>
+                        <TextBlock Grid.Row="1" Text="{Binding Xp}" FontSize="30" Foreground="White"></TextBlock>
+                    </Grid>
+                    <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleHeroAwards}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}"></TextBlock>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
                 <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" Text="Победа"></TextBlock>
             </Grid>
             <Grid Background="#272519">

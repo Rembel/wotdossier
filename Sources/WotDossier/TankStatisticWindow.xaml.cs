@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows;
+using System.Windows.Input;
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
 
@@ -30,6 +31,15 @@ namespace WotDossier
         public TankStatisticWindow()
         {
             InitializeComponent();
+            KeyDown += Window_KeyDown;
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
+            }
         }
     }
 }

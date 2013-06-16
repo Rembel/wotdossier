@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <StackPanel Orientation="Vertical"  Background="#0E0C09">
@@ -104,42 +105,42 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Начислено за бой" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding Credits}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding Credits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Margin="30,0,0,0" Text="за участие в акции" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding ActionCredits}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding ActionCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Штраф за урон союзникам" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding CreditsContributionOut}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding CreditsContributionOut}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Компенсация за урон от союзников" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding CreditsContributionIn}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding CreditsContributionIn}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="Автоматический ремонт техники" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding AutoRepairCost}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding AutoRepairCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Автопополнение боекомплекта" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding AutoLoadCost}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding AutoLoadCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Автопополнение снаряжения" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding AutoEquipCost}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding AutoEquipCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="Итого" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding TotalCredits}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding TotalCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
         </Grid>

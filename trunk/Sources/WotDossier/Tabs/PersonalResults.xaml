@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="965">
     <UserControl.Resources>
@@ -193,10 +193,10 @@
                         <TextBlock Grid.Column="2" Grid.Row="0" Text="С премиумом" Foreground="#FEC264" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
                         <TextBlock Grid.Column="0" Grid.Row="1" Text="Кредиты" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
                         <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding XpTitle}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Credits}" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding PremiumCredits}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Xp}" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding PremiumXp}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+                        <controls:TextWithImage Grid.Column="1" Grid.Row="1" Text="{Binding Credits}" Source="\Resources\Images\Replays\CreditsIcon-2.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
+                        <controls:TextWithImage Grid.Column="2" Grid.Row="1" Text="{Binding PremiumCredits}" Source="\Resources\Images\Replays\CreditsIcon-2.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
+                        <controls:TextWithImage Grid.Column="1" Grid.Row="2" Text="{Binding Xp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
+                        <controls:TextWithImage Grid.Column="2" Grid.Row="2" Text="{Binding PremiumXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
                     </Grid>
                 </StackPanel>
                 

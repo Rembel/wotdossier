@@ -123,7 +123,11 @@
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TextWithImage.xaml.cs">
+      <DependentUpon>TextWithImage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\IntToVisibilityConverter.cs" />
     <Compile Include="Converters\MapNameToImageConverter.cs" />
     <Compile Include="Converters\EpicMedalCountToStringConverter.cs" />
     <Compile Include="Converters\MedalCountToStringConverter.cs" />
@@ -242,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ClanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TextWithImage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -533,6 +541,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Tabs\Replay\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>

@@ -97,6 +97,12 @@ namespace WotDossier.Applications.ViewModel
                 FirstTeam = teamMembers.Where(x => x.team == myTeamId).OrderByDescending(x => x.xp).ToList();
                 SecondTeam = teamMembers.Where(x => x.team != myTeamId).OrderByDescending(x => x.xp).ToList();
 
+                List<long> squads1 = FirstTeam.Where(x => x.prebattleID > 0).OrderBy(x => x.prebattleID).Select(x => x.prebattleID).Distinct().ToList();
+                List<long> squads2 = SecondTeam.Where(x => x.prebattleID > 0).OrderBy(x => x.prebattleID).Select(x => x.prebattleID).Distinct().ToList();
+
+                FirstTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads1.IndexOf(tm.prebattleID) + 1; });
+                SecondTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads2.IndexOf(tm.prebattleID) + 1; });
+
                 CombatEffects = replay.datablock_battle_result.personal.details.Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key))).ToList();
 
                 FullName = string.Format("{0} {1}", replay.datablock_1.playerName,
@@ -357,6 +363,8 @@ namespace WotDossier.Applications.ViewModel
         //public string name { get; set; }
         //public int team { get; set; }
         public string vehicleType { get; set; }
+
+        public int Squad { get; set; }
     }
 
     public class CombatTarget

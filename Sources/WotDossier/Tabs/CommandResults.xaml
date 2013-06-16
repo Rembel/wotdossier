@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
@@ -19,20 +19,14 @@
                         <ColumnDefinition Width="55"></ColumnDefinition>
                         <ColumnDefinition Width="69"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Resources\Images\Replays\Squad-Ico-silver.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"></Image>
+                    <Image Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Grid.Column="0" Source="/Resources\Images\Replays\Squad-Ico-silver.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"></Image>
+                    <TextBlock Grid.Column="0" Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="1" Text="{Binding FullName}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
                     <Image Grid.Column="2" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" HorizontalAlignment="Left"></Image>
                     <TextBlock Margin="40,0,0,0" Grid.Column="2" Text="{Binding Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="3" Text="{Binding damageDealt}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="4" Text="{Binding kills}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                    <Grid Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding xp}" Foreground="#C7C7B4" FontSize="13" VerticalAlignment="Center"></TextBlock>
-                        <Image Grid.Column="1" Source="/Resources\Images\Replays\XpIcon-1.png" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None"></Image>
-                    </Grid>
+                    <controls:TextWithImage Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding xp}" Source="/Resources\Images\Replays\XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
                     <!--<Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="..\Resources\Images\table_border_gradient.png" ></Image>-->
                 </Grid>
             </Border>

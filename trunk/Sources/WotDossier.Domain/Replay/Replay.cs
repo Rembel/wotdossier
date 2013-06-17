@@ -79,23 +79,11 @@ http://wiki.vbaddict.net
 
     public class Personal
     {
-        private List<int> _autoLoadCost;
-        private List<int> _autoEquipCost;
         public int accountDBID { get; set; }
         public List<int> achievements { get; set; }
         public int aogasFactor10 { get; set; }
-        public List<int> autoEquipCost
-        {
-            get { return _autoEquipCost ?? new List<int>(); }
-            set { _autoEquipCost = value; }
-        }
-
-        public List<int> autoLoadCost
-        {
-            get { return _autoLoadCost ?? new List<int>(); }
-            set { _autoLoadCost = value; }
-        }
-
+        public List<int> autoEquipCost { get; set; }
+        public List<int> autoLoadCost { get; set; }
         public int? autoRepairCost { get; set; }
         public int capturePoints { get; set; }
         public int credits { get; set; }

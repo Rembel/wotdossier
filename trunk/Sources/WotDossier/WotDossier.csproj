@@ -599,7 +599,9 @@
     <Content Include="Data\dossier.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Data\Medals.xml" />
+    <Resource Include="Data\Medals.xml">
+      <SubType>Designer</SubType>
+    </Resource>
     <Content Include="External\python27.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -113,19 +113,21 @@ namespace WotDossier.Applications.ViewModel
 
                 double premiumFactor = replay.datablock_battle_result.personal.premiumCreditsFactor10 / (double)10;
                 PremiumCredits = replay.datablock_battle_result.personal.credits;
-                PremiumXp = replay.datablock_battle_result.personal.xp;
+                PremiumTotalXp = replay.datablock_battle_result.personal.xp;
+                PremiumXp = (int)Math.Round(replayUser.xp * premiumFactor, 0);
                 Credits = (int) Math.Round((PremiumCredits / premiumFactor), 0);
                 ActionCredits = Credits - replayUser.credits;
                 XpFactor = replay.datablock_battle_result.personal.dailyXPFactor10/10;
-                Xp = replayUser.xp * XpFactor;
+                TotalXp = replayUser.xp * XpFactor;
+                Xp = replayUser.xp;
                 XpPenalty = replay.datablock_battle_result.personal.xpPenalty;
                 XpTitle = GetXpTitle(XpFactor);
 
                 CreditsContributionOut = replay.datablock_battle_result.personal.creditsContributionOut;
                 CreditsContributionIn = replay.datablock_battle_result.personal.creditsContributionIn;
                 AutoRepairCost = replay.datablock_battle_result.personal.autoRepairCost ?? 0;
-                AutoLoadCost = replay.datablock_battle_result.personal.autoLoadCost.Sum();
-                AutoEquipCost = replay.datablock_battle_result.personal.autoEquipCost.Sum();
+                AutoLoadCost = GetAutoLoadCost(replay);
+                AutoEquipCost = GetAutoEquipCost(replay);
                 
                 PremiumTotalCredits = PremiumCredits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
                 TotalCredits = Credits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
@@ -155,6 +157,24 @@ namespace WotDossier.Applications.ViewModel
                 return true;
             }
             return false;
+        }
+
+        private static int GetAutoEquipCost(Replay replay)
+        {
+            if (replay.datablock_battle_result.personal.autoEquipCost != null)
+            {
+                return replay.datablock_battle_result.personal.autoEquipCost.Sum();
+            }
+            return 0;
+        }
+
+        private static int GetAutoLoadCost(Replay replay)
+        {
+            if (replay.datablock_battle_result.personal.autoLoadCost!= null)
+            {
+                return replay.datablock_battle_result.personal.autoLoadCost.Sum();
+            }
+            return 0;
         }
 
         public int HEHits { get; set; }
@@ -222,9 +242,14 @@ namespace WotDossier.Applications.ViewModel
 
         public string XpTitle { get; set; }
 
+        public int TotalXp { get; set; }
+
         public int Xp { get; set; }
 
+        public int PremiumTotalXp { get; set; }
         public int PremiumXp { get; set; }
+        
+        public int TotalPremiumXp { get; set; }
 
         public int Credits { get; set; }
 

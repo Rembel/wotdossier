@@ -209,6 +209,12 @@ namespace WotDossier.Applications.ViewModel
                     CacheHelper.ReplayToJson(replayFile.FileInfo);
                     Thread.Sleep(1000);
                 }
+
+                if (!File.Exists(jsonFile))
+                {
+                    MessageBox.Show("Error on replay file read", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
                 Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
                 if (ValidateReplayData(replay))
                 {

@@ -140,8 +140,8 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Credits}" FontSize="30" Foreground="White"></TextBlock>
-                        <TextBlock Grid.Row="1" Text="{Binding Xp}" FontSize="30" Foreground="White"></TextBlock>
+                        <TextBlock Text="{Binding PremiumCredits}" FontSize="30" Foreground="White"></TextBlock>
+                        <TextBlock Grid.Row="1" Text="{Binding PremiumTotalXp}" FontSize="30" Foreground="White"></TextBlock>
                     </Grid>
                     <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleHeroAwards}">
                         <ListBox.ItemTemplate>
@@ -195,8 +195,8 @@
                         <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding XpTitle}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
                         <controls:TextWithImage Grid.Column="1" Grid.Row="1" Text="{Binding Credits}" Source="\Resources\Images\Replays\CreditsIcon-2.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
                         <controls:TextWithImage Grid.Column="2" Grid.Row="1" Text="{Binding PremiumCredits}" Source="\Resources\Images\Replays\CreditsIcon-2.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
-                        <controls:TextWithImage Grid.Column="1" Grid.Row="2" Text="{Binding Xp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
-                        <controls:TextWithImage Grid.Column="2" Grid.Row="2" Text="{Binding PremiumXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
+                        <controls:TextWithImage Grid.Column="1" Grid.Row="2" Text="{Binding TotalXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
+                        <controls:TextWithImage Grid.Column="2" Grid.Row="2" Text="{Binding PremiumTotalXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
                     </Grid>
                 </StackPanel>
                 

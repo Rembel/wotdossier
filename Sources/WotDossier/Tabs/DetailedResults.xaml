@@ -125,22 +125,56 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="Автоматический ремонт техники" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoRepairCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoRepairCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Автопополнение боекомплекта" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoLoadCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoLoadCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Автопополнение снаряжения" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoEquipCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoEquipCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="Итого" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                     <controls:TextWithImage Text="{Binding TotalCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Margin="0" HorizontalAlignment="Stretch">
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding PremiumCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding PremiumActionCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding CreditsContributionOut}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding CreditsContributionIn}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding AutoRepairCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding AutoLoadCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding AutoEquipCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding PremiumTotalCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
         </Grid>
@@ -180,26 +214,41 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="Начислено за бой" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding Xp}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding Xp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Margin="30,0,0,0" Text="за первую победу в день" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding XpFactor}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding XpFactor}" Source="\Resources\Images\Replays\multyXp.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="Штраф за урон союзникам" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding XpPenalty}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding XpPenalty}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="Итого:" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding Xp}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <controls:TextWithImage Text="{Binding TotalXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Column="2">
-                
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <controls:TextWithImage Text="{Binding PremiumXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <controls:TextWithImage Text="{Binding XpFactor}" Source="\Resources\Images\Replays\multyXp.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
+                    <controls:TextWithImage Text="{Binding XpPenalty}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
+                    <controls:TextWithImage Text="{Binding PremiumTotalXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                </Grid>
             </StackPanel>
         </Grid>
     </StackPanel>

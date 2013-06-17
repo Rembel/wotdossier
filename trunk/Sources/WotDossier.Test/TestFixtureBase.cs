@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Web;
 using NUnit.Framework;
 using WotDossier.Applications;
@@ -98,6 +99,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.5\");
             CacheHelper.BinaryCacheToJson(cacheFile);
+            Thread.Sleep(1000);
             List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
@@ -111,6 +113,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.6\");
             CacheHelper.BinaryCacheToJson(cacheFile);
+            Thread.Sleep(1000);
             List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
@@ -261,14 +264,14 @@ namespace WotDossier.Test
             }
         }
 
-        [Test]
-        public void UploadTest()
-        {
-            FileInfo info = new FileInfo(@"C:\Documents and Settings\YaroshikPV\AppData\Roaming\Wargaming.net\WorldOfTanks\replays\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay");
+        //[Test]
+        //public void UploadTest()
+        //{
+        //    FileInfo info = new FileInfo(@"C:\Documents and Settings\YaroshikPV\AppData\Roaming\Wargaming.net\WorldOfTanks\replays\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay");
 
-            ReplayUploader uploader = new ReplayUploader();
+        //    ReplayUploader uploader = new ReplayUploader();
 
-            uploader.Upload(info, "replay1", "replayDescription1", "http://wotreplays.ru/site/upload");
-        }
+        //    uploader.Upload(info, "replay1", "replayDescription1", "http://wotreplays.ru/site/upload");
+        //}
     }
 }

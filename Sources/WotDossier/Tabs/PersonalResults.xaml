@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:viewModel="clr-namespace:WotDossier.Applications.ViewModel;assembly=WotDossier.Applications"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="965">
     <UserControl.Resources>
@@ -120,19 +121,58 @@
                 <!--<Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="..\Resources\Images\table_border_gradient.png" ></Image>-->
             </Grid>
         </DataTemplate>
+        <Style TargetType="Image" x:Key="FinalStatisticLineWinStyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Win}">
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Loose}">
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linefrlose.png" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linefrlose.png" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Image" x:Key="FinalStatisticPicWinStyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Win}">
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.png" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Loose}">
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.png" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.png" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="FinalStatisticResultTextStyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Win}">
+                    <Setter Property="Text" Value="Победа" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Loose}">
+                    <Setter Property="Text" Value="Поражение" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
+                    <Setter Property="Text" Value="Ничья" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
     <Grid Background="#0E0C09">
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid Height="225" HorizontalAlignment="Stretch">
-                <Image Stretch="Fill" HorizontalAlignment="Stretch" Height="225" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.png" />
-                <Image Margin="0,123,0,0" Stretch="Fill" HorizontalAlignment="Stretch" Height="85" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
+                <Image Stretch="Fill" HorizontalAlignment="Stretch" Height="225" Style="{StaticResource FinalStatisticPicWinStyle}" DataContext="{Binding Status}" />
+                <Image Margin="0,123,0,0" Stretch="Fill" HorizontalAlignment="Stretch" Height="85" Style="{StaticResource FinalStatisticLineWinStyle}" DataContext="{Binding Status}" />
                 <Grid Margin="0,123,0,0" Height="85">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListBox Background="Transparent">
+                    <ListBox Background="Transparent" BorderThickness="0">
                         
                     </ListBox>
                     <Grid Grid.Column="1" VerticalAlignment="Center">
@@ -143,7 +183,7 @@
                         <TextBlock Text="{Binding PremiumCredits}" FontSize="30" Foreground="White"></TextBlock>
                         <TextBlock Grid.Row="1" Text="{Binding PremiumTotalXp}" FontSize="30" Foreground="White"></TextBlock>
                     </Grid>
-                    <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleHeroAwards}">
+                    <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleHeroAwards}" BorderThickness="0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding}"></TextBlock>
@@ -151,7 +191,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
-                <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" Text="Победа"></TextBlock>
+                <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" Style="{StaticResource FinalStatisticResultTextStyle}" DataContext="{Binding Status}"></TextBlock>
             </Grid>
             <Grid Background="#272519">
                 <Grid.ColumnDefinitions>

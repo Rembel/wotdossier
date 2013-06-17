@@ -132,6 +132,10 @@
       <Link>External\structures_27.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\structures_28.json">
+      <Link>External\structures_28.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\tanks.json">
       <Link>External\tanks.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

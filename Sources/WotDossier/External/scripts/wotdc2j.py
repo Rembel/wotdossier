@@ -1,4 +1,4 @@
-###################################################
+﻿###################################################
 # World of Tanks Dossier Cache to JSON            #
 # Initial version by Phalynx www.vbaddict.net/wot #
 ###################################################
@@ -51,7 +51,7 @@ def main():
 	
 	printmessage('###### WoTDC2J ' + parserversion)
 	
-	working_directory = os.path.dirname(os.path.realpath(__file__))
+	working_directory = filename_source
 	
 	printmessage('Processing ' + filename_source)
 	
@@ -342,14 +342,6 @@ def getstructureddata(category, tankversion):
 def get_json_data(filename):
 	import json, time, sys, os
 	
-	#os.chdir(os.getcwd())
-	os.chdir(sys.path[0])
-	
-	
-	if not os.path.exists(filename) or not os.path.isfile(filename) or not os.access(filename, os.R_OK):
-		catch_fatal(filename + " does not exists!")
-		sys.exit(1)
-
 	file_json = open(filename, 'r')
 
 	try:

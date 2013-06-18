@@ -29,25 +29,25 @@ namespace WotDossier.Dal
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
 
-        private static readonly Dictionary<int, TankInfo> _tanksDictionary;
-        private static readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
-        private static readonly List<Map> _maps = new List<Map>();
+        private readonly Dictionary<int, TankInfo> _tanksDictionary;
+        private readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
+        private readonly List<Map> _maps = new List<Map>();
         
         /// <summary>
         /// Tanks dictionary
         /// KEY - tankid, countryid
         /// </summary>
-        public static Dictionary<int, TankInfo> TanksDictionary
+        public Dictionary<int, TankInfo> TanksDictionary
         {
             get { return _tanksDictionary; }
         }
 
-        public static Dictionary<string, TankIcon> IconsDictionary
+        public Dictionary<string, TankIcon> IconsDictionary
         {
             get { return _iconsDictionary; }
         }
 
-        public static List<Map> Maps
+        public List<Map> Maps
         {
             get { return _maps; }
         }
@@ -55,7 +55,7 @@ namespace WotDossier.Dal
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        static WotApiClient()
+        private WotApiClient()
         {
             _tanksDictionary = ReadTanksDictionary();
             _maps = ReadMaps();
@@ -155,7 +155,7 @@ namespace WotDossier.Dal
             return TankIcon.Empty;
         }
 
-        private static Dictionary<int, TankInfo> ReadTanksDictionary()
+        private Dictionary<int, TankInfo> ReadTanksDictionary()
         {
             List<TankInfo> tanks = new List<TankInfo>();
             using (StreamReader re = new StreamReader(@"External\tanks.json"))

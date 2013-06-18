@@ -2,6 +2,7 @@
 using WotDossier.Dal;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
+using System.Linq;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -10,7 +11,11 @@ namespace WotDossier.Applications.ViewModel
         public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle)
         {
             Id = vehicle.Key;
-            Tank = vehicle.Value.vehicleType.Split(':')[1];
+            string[] strings = vehicle.Value.vehicleType.Split(':');
+            string tankCountryCode = strings[0];
+            string tankIcon = strings[1];
+            TankInfo tank = WotApiClient.Instance.TanksDictionary.Values.FirstOrDefault(x => x.countryCode.Equals(tankCountryCode) && x.icon_orig.Equals(tankIcon));
+            Tank = tank != null ? tank.title : tankIcon;
             TankIcon = WotApiClient.Instance.GetTankIcon(vehicle.Value.vehicleType);
             clanAbbrev = vehicle.Value.clanAbbrev;
             name = vehicle.Value.name;

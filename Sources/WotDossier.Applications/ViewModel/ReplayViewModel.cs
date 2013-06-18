@@ -178,8 +178,8 @@ namespace WotDossier.Applications.ViewModel
                 List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
                 List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
                 List<KeyValuePair<long, Vehicle>> vehicles = replay.datablock_1.vehicles.ToList();
-                IEnumerable<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v)).ToList();
-
+                List<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v)).ToList();
+                
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
 
                 int myTeamId = replay.datablock_battle_result.players[playerId].team;

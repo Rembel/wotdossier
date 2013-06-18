@@ -159,4 +159,37 @@ Win percent: {1:0.00}</value>
   <data name="WarningMsg_CanntFindPlayerDataInDossierCache" xml:space="preserve">
     <value>Can't find player data in dossier cache</value>
   </data>
+  <data name="Traveled_Format" xml:space="preserve">
+    <value>{0:0.00} km</value>
+  </data>
+  <data name="ExtendedTimeFormat" xml:space="preserve">
+    <value>m' m 's' s'</value>
+  </data>
+  <data name="Label_Replay_XpFactorFormat" xml:space="preserve">
+    <value>Experience (x{0} for the first win in a day)</value>
+  </data>
+  <data name="Label_Experience" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="Label_Replay_MapMode_Standart" xml:space="preserve">
+    <value>Standart</value>
+  </data>
+  <data name="Label_Replay_MapMode_domination" xml:space="preserve">
+    <value>Domination</value>
+  </data>
+  <data name="Label_Replay_MapMode_Assault" xml:space="preserve">
+    <value>Assault</value>
+  </data>
+  <data name="Tooltip_Replay_CriticalDamage" xml:space="preserve">
+    <value>Critical damage to enemy vehicle: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_AlliesDamage" xml:space="preserve">
+    <value>Damage by allies to enemy vehicle you detected: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_Damage" xml:space="preserve">
+    <value>Damage to enemy vehicle: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_Detected" xml:space="preserve">
+    <value>You detected this enemy vehicle</value>
+  </data>
 </root>

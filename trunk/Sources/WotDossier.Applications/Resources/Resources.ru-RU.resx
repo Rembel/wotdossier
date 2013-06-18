@@ -159,4 +159,37 @@
   <data name="WarningMsg_SpecifyPlayerName" xml:space="preserve">
     <value>Укажите имя игрока в настройках приложения</value>
   </data>
+  <data name="Traveled_Format" xml:space="preserve">
+    <value>{0:0.00} км</value>
+  </data>
+  <data name="ExtendedTimeFormat" xml:space="preserve">
+    <value>m' м 's' с'</value>
+  </data>
+  <data name="Label_Replay_XpFactorFormat" xml:space="preserve">
+    <value>Опыт (x{0} за первую победу в день)</value>
+  </data>
+  <data name="Label_Experience" xml:space="preserve">
+    <value>Опыт</value>
+  </data>
+  <data name="Label_Replay_MapMode_Standart" xml:space="preserve">
+    <value>Стандартный бой</value>
+  </data>
+  <data name="Label_Replay_MapMode_domination" xml:space="preserve">
+    <value>Встречный бой</value>
+  </data>
+  <data name="Label_Replay_MapMode_Assault" xml:space="preserve">
+    <value>Штурм</value>
+  </data>
+  <data name="Tooltip_Replay_CriticalDamage" xml:space="preserve">
+    <value>Вы нанесли критических повреждений: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_AlliesDamage" xml:space="preserve">
+    <value>По вашим разведданным союзники нанесли очков урона: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_Damage" xml:space="preserve">
+    <value>Вы нанесли урона: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_Detected" xml:space="preserve">
+    <value>Вы обнаружили этот танк противника</value>
+  </data>
 </root>

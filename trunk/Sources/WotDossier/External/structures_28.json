@@ -127,5 +127,7 @@
 {"version": 28, "category": "clan", "name": "capturePoints", "offset": 274, "length": 4},
 {"version": 28, "category": "clan", "name": "droppedCapturePoints", "offset": 278, "length": 4},
 
-{"version": 28, "category": "structure", "name": "fragspos", "offset": 308, "length": 2}
+{"version": 28, "category": "structure", "name": "fragspos", "offset": 309, "length": 2}
+
+
 ]

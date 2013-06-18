@@ -1512,6 +1512,375 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle efficiency.
+        /// </summary>
+        public static string Label_Replay_BattleEfficiency {
+            get {
+                return ResourceManager.GetString("Label_Replay_BattleEfficiency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credits.
+        /// </summary>
+        public static string Label_Replay_Credits {
+            get {
+                return ResourceManager.GetString("Label_Replay_Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defeat.
+        /// </summary>
+        public static string Label_Replay_Defeat {
+            get {
+                return ResourceManager.GetString("Label_Replay_Defeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Draw.
+        /// </summary>
+        public static string Label_Replay_Draw {
+            get {
+                return ResourceManager.GetString("Label_Replay_Draw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enemy Team.
+        /// </summary>
+        public static string Label_Replay_EnemyTeam {
+            get {
+                return ResourceManager.GetString("Label_Replay_EnemyTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OurTeam.
+        /// </summary>
+        public static string Label_Replay_OurTeam {
+            get {
+                return ResourceManager.GetString("Label_Replay_OurTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victory.
+        /// </summary>
+        public static string Label_Replay_Victory {
+            get {
+                return ResourceManager.GetString("Label_Replay_Victory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Without Premium.
+        /// </summary>
+        public static string Label_Replay_WithoutPremium {
+            get {
+                return ResourceManager.GetString("Label_Replay_WithoutPremium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With Premium.
+        /// </summary>
+        public static string Label_Replay_WithPremium {
+            get {
+                return ResourceManager.GetString("Label_Replay_WithPremium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to action participation.
+        /// </summary>
+        public static string Label_ReplayDetail_ActionCredits {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_ActionCredits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage caused to allies (destroyed/HP).
+        /// </summary>
+        public static string Label_ReplayDetail_AlliesDamage {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_AlliesDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-resupply consumables.
+        /// </summary>
+        public static string Label_ReplayDetail_AutoEquip {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_AutoEquip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-resupply ammunition.
+        /// </summary>
+        public static string Label_ReplayDetail_AutoLoad {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_AutoLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-repair vehicle.
+        /// </summary>
+        public static string Label_ReplayDetail_AutoRepair {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_AutoRepair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle duration.
+        /// </summary>
+        public static string Label_ReplayDetail_BattleDuration {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_BattleDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting time.
+        /// </summary>
+        public static string Label_ReplayDetail_BattleStartTime {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_BattleStartTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base capture points.
+        /// </summary>
+        public static string Label_ReplayDetail_CapturePoint {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_CapturePoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credits.
+        /// </summary>
+        public static string Label_ReplayDetail_Credits {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Received.
+        /// </summary>
+        public static string Label_ReplayDetail_CreditsReceived {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_CreditsReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total:.
+        /// </summary>
+        public static string Label_ReplayDetail_CreditsTotal {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_CreditsTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage.
+        /// </summary>
+        public static string Label_ReplayDetail_Damage {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Damage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enemies damaged.
+        /// </summary>
+        public static string Label_ReplayDetail_Damaged {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Damaged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage upon detecting.
+        /// </summary>
+        public static string Label_ReplayDetail_DamageUponDetecting {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_DamageUponDetecting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base defense points.
+        /// </summary>
+        public static string Label_ReplayDetail_DefensePoints {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_DefensePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enemies destroyed.
+        /// </summary>
+        public static string Label_ReplayDetail_Destroyed {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Destroyed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enemies detected.
+        /// </summary>
+        public static string Label_ReplayDetail_Detected {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Detected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to direct hits.
+        /// </summary>
+        public static string Label_ReplayDetail_DirectHits {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_DirectHits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to for the first victory each day.
+        /// </summary>
+        public static string Label_ReplayDetail_ForTheFirstVictory {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_ForTheFirstVictory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to damage caused by HE shells.
+        /// </summary>
+        public static string Label_ReplayDetail_HEDamage {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_HEDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hits received.
+        /// </summary>
+        public static string Label_ReplayDetail_HitsReceived {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_HitsReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compensation for damage caused by allies.
+        /// </summary>
+        public static string Label_ReplayDetail_InContribution {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_InContribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time of destruction.
+        /// </summary>
+        public static string Label_ReplayDetail_LifeTime {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_LifeTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fine for causing damage to allies.
+        /// </summary>
+        public static string Label_ReplayDetail_OutContribution {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_OutContribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to penetrations.
+        /// </summary>
+        public static string Label_ReplayDetail_Penetrations {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Penetrations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shots fired.
+        /// </summary>
+        public static string Label_ReplayDetail_ShotsFired {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_ShotsFired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string Label_ReplayDetail_Statistic {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Statistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time.
+        /// </summary>
+        public static string Label_ReplayDetail_Time {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Traveled.
+        /// </summary>
+        public static string Label_ReplayDetail_Traveled {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_Traveled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With Premium.
+        /// </summary>
+        public static string Label_ReplayDetail_WithPremium {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_WithPremium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Experience.
+        /// </summary>
+        public static string Label_ReplayDetail_XP {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_XP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total:.
+        /// </summary>
+        public static string Label_ReplayDetail_XpTotal {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_XpTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string MenuItem_Header_About {
@@ -1535,6 +1904,33 @@ namespace WotDossier.Resources {
         public static string MenuItem_Header_Settings {
             get {
                 return ResourceManager.GetString("MenuItem_Header_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detailed Report.
+        /// </summary>
+        public static string Replay_Tab_Header_DetailedReport {
+            get {
+                return ResourceManager.GetString("Replay_Tab_Header_DetailedReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Score.
+        /// </summary>
+        public static string Replay_Tab_Header_PersonalScore {
+            get {
+                return ResourceManager.GetString("Replay_Tab_Header_PersonalScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Team Score.
+        /// </summary>
+        public static string Replay_Tab_Header_TeamScore {
+            get {
+                return ResourceManager.GetString("Replay_Tab_Header_TeamScore", resourceCulture);
             }
         }
         

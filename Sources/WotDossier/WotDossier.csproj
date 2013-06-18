@@ -1134,6 +1134,7 @@
     <Resource Include="Resources\Images\Tanks\ussr_bt_sv.png" />
     <Resource Include="Resources\Images\Tanks\ussr_kv_220_action.png" />
     <Resource Include="Resources\Images\Tanks\ussr_su_85i.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb51_excelsior.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

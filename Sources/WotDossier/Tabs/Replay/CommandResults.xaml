@@ -1,9 +1,10 @@
-﻿<UserControl x:Class="WotDossier.Tabs.CommandResults"
+﻿<UserControl x:Class="WotDossier.Tabs.Replay.CommandResults"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:Resources="clr-namespace:WotDossier.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
@@ -42,8 +43,8 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Margin="10,0,0,0" Text="Наши" FontSize="16" Foreground="#BCBDBE"></TextBlock>
-        <TextBlock Margin="10,0,0,0" Grid.Column="1" Text="Враги" FontSize="16" Foreground="#BCBDBE"></TextBlock>
+        <TextBlock Margin="10,0,0,0" Text="{x:Static Resources:Resources.Label_Replay_OurTeam}" FontSize="16" Foreground="#BCBDBE"></TextBlock>
+        <TextBlock Margin="10,0,0,0" Grid.Column="1" Text="{x:Static Resources:Resources.Label_Replay_EnemyTeam}" FontSize="16" Foreground="#BCBDBE"></TextBlock>
         <Grid Height="33" Grid.Row="1" Background="#222117">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="47"></ColumnDefinition>
@@ -54,22 +55,22 @@
                 <ColumnDefinition Width="69"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="1" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="2" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="3" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="4" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="5" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
         </Grid>
         <Grid Height="33" Grid.Row="1" Grid.Column="1" Background="#222117">
@@ -82,22 +83,22 @@
                 <ColumnDefinition Width="69"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="1" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="2" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="3" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="4" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
             <Border Grid.Column="5" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="..\Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                <Image Source="/Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
             </Border>
         </Grid>
         <ListView Grid.Column="0" Grid.Row="2" BorderThickness="0" Background="Transparent" ItemsSource="{Binding FirstTeam}" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">

@@ -169,23 +169,23 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\CommandResults.xaml.cs">
-      <DependentUpon>CommandResults.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\CommonTabNew.xaml.cs">
       <DependentUpon>CommonTabNew.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\DetailedResults.xaml.cs">
-      <DependentUpon>DetailedResults.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\PersonalResults.xaml.cs">
-      <DependentUpon>PersonalResults.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\ReplaysTab.xaml.cs">
       <DependentUpon>ReplaysTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Replay\CommandResults.xaml.cs">
+      <DependentUpon>CommandResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Replay\DetailedResults.xaml.cs">
+      <DependentUpon>DetailedResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Replay\PersonalResults.xaml.cs">
+      <DependentUpon>PersonalResults.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\XPTab.xaml.cs">
       <DependentUpon>XPTab.xaml</DependentUpon>
@@ -363,10 +363,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tabs\CommandResults.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Tabs\CommonTabNew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -375,15 +371,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tabs\DetailedResults.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Tabs\PersonalResults.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Tabs\ReplaysTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Replay\CommandResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Replay\DetailedResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Replay\PersonalResults.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -521,6 +521,9 @@
     <None Include="External\structures_27.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="External\structures_28.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="External\tanks.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -541,7 +544,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tabs\Replay\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
@@ -1118,6 +1120,8 @@
     <Resource Include="Resources\Images\Medals\TitleSniper.png" />
     <Resource Include="Resources\Images\Medals\Warrior.png" />
     <Resource Include="Resources\Images\Medals\Zulu-warrior.png" />
+    <Resource Include="Resources\Images\Replays\CreditsIcon_Large.png" />
+    <Resource Include="Resources\Images\Replays\XpIcon_Large.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

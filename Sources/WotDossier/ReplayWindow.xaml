@@ -1,21 +1,21 @@
 ﻿<Window x:Class="WotDossier.ReplayWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
-        xmlns:tabs="clr-namespace:WotDossier.Tabs"
+        xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
         Title="{x:Static Resources:Resources.WindowTitle_BattleResults}" Width="980" Height="650" ResizeMode="NoResize" Icon="Resources/Images/Results.png" WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--PersonalResults-->
-            <TabItem TabIndex="0" Header="Личный результат">
-                <tabs:PersonalResults HorizontalAlignment="Stretch"></tabs:PersonalResults>
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Replay_Tab_Header_PersonalScore}">
+                <replay:PersonalResults HorizontalAlignment="Stretch"></replay:PersonalResults>
             </TabItem>
             <!--Common tab-->
-            <TabItem TabIndex="0" Header="Командный результат">
-                <tabs:CommandResults HorizontalAlignment="Stretch"></tabs:CommandResults>
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Replay_Tab_Header_TeamScore}">
+                <replay:CommandResults HorizontalAlignment="Stretch"></replay:CommandResults>
             </TabItem>
             <!--Common tab-->
-            <TabItem TabIndex="0" Header="Подробный отчет">
-                <tabs:DetailedResults HorizontalAlignment="Stretch"></tabs:DetailedResults>
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Replay_Tab_Header_DetailedReport}">
+                <replay:DetailedResults HorizontalAlignment="Stretch"></replay:DetailedResults>
             </TabItem>
         </TabControl>
     </Grid>

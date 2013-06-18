@@ -899,4 +899,136 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="WindowTitle_BattleResults" xml:space="preserve">
     <value>Battle Results</value>
   </data>
+  <data name="Replay_Tab_Header_PersonalScore" xml:space="preserve">
+    <value>Personal Score</value>
+  </data>
+  <data name="Replay_Tab_Header_TeamScore" xml:space="preserve">
+    <value>Team Score</value>
+  </data>
+  <data name="Replay_Tab_Header_DetailedReport" xml:space="preserve">
+    <value>Detailed Report</value>
+  </data>
+  <data name="Label_Replay_WithoutPremium" xml:space="preserve">
+    <value>Without Premium</value>
+  </data>
+  <data name="Label_Replay_WithPremium" xml:space="preserve">
+    <value>With Premium</value>
+  </data>
+  <data name="Label_Replay_Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="Label_Replay_BattleEfficiency" xml:space="preserve">
+    <value>Battle efficiency</value>
+  </data>
+  <data name="Label_Replay_Victory" xml:space="preserve">
+    <value>Victory</value>
+  </data>
+  <data name="Label_Replay_Defeat" xml:space="preserve">
+    <value>Defeat</value>
+  </data>
+  <data name="Label_Replay_Draw" xml:space="preserve">
+    <value>Draw</value>
+  </data>
+  <data name="Label_Replay_OurTeam" xml:space="preserve">
+    <value>OurTeam</value>
+  </data>
+  <data name="Label_Replay_EnemyTeam" xml:space="preserve">
+    <value>Enemy Team</value>
+  </data>
+  <data name="Label_ReplayDetail_ShotsFired" xml:space="preserve">
+    <value>Shots fired</value>
+  </data>
+  <data name="Label_ReplayDetail_DirectHits" xml:space="preserve">
+    <value>direct hits</value>
+  </data>
+  <data name="Label_ReplayDetail_HEDamage" xml:space="preserve">
+    <value>damage caused by HE shells</value>
+  </data>
+  <data name="Label_ReplayDetail_Penetrations" xml:space="preserve">
+    <value>penetrations</value>
+  </data>
+  <data name="Label_ReplayDetail_Damage" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="Label_ReplayDetail_HitsReceived" xml:space="preserve">
+    <value>Hits received</value>
+  </data>
+  <data name="Label_ReplayDetail_AlliesDamage" xml:space="preserve">
+    <value>Damage caused to allies (destroyed/HP)</value>
+  </data>
+  <data name="Label_ReplayDetail_Detected" xml:space="preserve">
+    <value>Enemies detected</value>
+  </data>
+  <data name="Label_ReplayDetail_Damaged" xml:space="preserve">
+    <value>Enemies damaged</value>
+  </data>
+  <data name="Label_ReplayDetail_Destroyed" xml:space="preserve">
+    <value>Enemies destroyed</value>
+  </data>
+  <data name="Label_ReplayDetail_DamageUponDetecting" xml:space="preserve">
+    <value>Damage upon detecting</value>
+  </data>
+  <data name="Label_ReplayDetail_CapturePoint" xml:space="preserve">
+    <value>Base capture points</value>
+  </data>
+  <data name="Label_ReplayDetail_DefensePoints" xml:space="preserve">
+    <value>Base defense points</value>
+  </data>
+  <data name="Label_ReplayDetail_Traveled" xml:space="preserve">
+    <value>Traveled</value>
+  </data>
+  <data name="Label_ReplayDetail_CreditsReceived" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="Label_ReplayDetail_ActionCredits" xml:space="preserve">
+    <value>action participation</value>
+  </data>
+  <data name="Label_ReplayDetail_OutContribution" xml:space="preserve">
+    <value>Fine for causing damage to allies</value>
+  </data>
+  <data name="Label_ReplayDetail_InContribution" xml:space="preserve">
+    <value>Compensation for damage caused by allies</value>
+  </data>
+  <data name="Label_ReplayDetail_AutoRepair" xml:space="preserve">
+    <value>Auto-repair vehicle</value>
+  </data>
+  <data name="Label_ReplayDetail_AutoLoad" xml:space="preserve">
+    <value>Auto-resupply ammunition</value>
+  </data>
+  <data name="Label_ReplayDetail_AutoEquip" xml:space="preserve">
+    <value>Auto-resupply consumables</value>
+  </data>
+  <data name="Label_ReplayDetail_CreditsTotal" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="Label_ReplayDetail_BattleStartTime" xml:space="preserve">
+    <value>Starting time</value>
+  </data>
+  <data name="Label_ReplayDetail_BattleDuration" xml:space="preserve">
+    <value>Battle duration</value>
+  </data>
+  <data name="Label_ReplayDetail_LifeTime" xml:space="preserve">
+    <value>Time of destruction</value>
+  </data>
+  <data name="Label_ReplayDetail_ForTheFirstVictory" xml:space="preserve">
+    <value>for the first victory each day</value>
+  </data>
+  <data name="Label_ReplayDetail_XpTotal" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="Label_ReplayDetail_Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="Label_ReplayDetail_WithPremium" xml:space="preserve">
+    <value>With Premium</value>
+  </data>
+  <data name="Label_ReplayDetail_Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Label_ReplayDetail_XP" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="Label_ReplayDetail_Statistic" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
 </root>

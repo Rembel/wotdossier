@@ -1,10 +1,11 @@
-﻿<UserControl x:Class="WotDossier.Tabs.PersonalResults"
+﻿<UserControl x:Class="WotDossier.Tabs.Replay.PersonalResults"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:viewModel="clr-namespace:WotDossier.Applications.ViewModel;assembly=WotDossier.Applications"
+             xmlns:Resources="clr-namespace:WotDossier.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="965">
     <UserControl.Resources>
@@ -150,13 +151,13 @@
         <Style TargetType="TextBlock" x:Key="FinalStatisticResultTextStyle">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Win}">
-                    <Setter Property="Text" Value="Победа" />
+                    <Setter Property="Text" Value="{x:Static Resources:Resources.Label_Replay_Victory}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Loose}">
-                    <Setter Property="Text" Value="Поражение" />
+                    <Setter Property="Text" Value="{x:Static Resources:Resources.Label_Replay_Defeat}" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
-                    <Setter Property="Text" Value="Ничья" />
+                    <Setter Property="Text" Value="{x:Static Resources:Resources.Label_Replay_Draw}" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -180,8 +181,8 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding PremiumCredits}" FontSize="30" Foreground="White"></TextBlock>
-                        <TextBlock Grid.Row="1" Text="{Binding PremiumTotalXp}" FontSize="30" Foreground="White"></TextBlock>
+                        <controls:TextWithImage Text="{Binding PremiumCredits}" Source="\Resources\Images\Replays\CreditsIcon_Large.png" FontSize="30" Foreground="White"></controls:TextWithImage>
+                        <controls:TextWithImage Grid.Row="1" Text="{Binding PremiumTotalXp}" Source="\Resources\Images\Replays\XpIcon_Large.png" FontSize="30" Foreground="White"></controls:TextWithImage>
                     </Grid>
                     <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleHeroAwards}" BorderThickness="0">
                         <ListBox.ItemTemplate>
@@ -199,7 +200,7 @@
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding MapDisplayName}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
-                <TextBlock Grid.Column="1" Text="Боевая эффективность" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
+                <TextBlock Grid.Column="1" Text="{x:Static Resources:Resources.Label_Replay_BattleEfficiency}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
             </Grid>
             <Grid Height="Auto">
                 <Grid.ColumnDefinitions>
@@ -229,9 +230,9 @@
                             <RowDefinition Height="24"></RowDefinition>
                             <RowDefinition Height="24"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Без премиума" Foreground="#C8C8B5" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock Grid.Column="2" Grid.Row="0" Text="С премиумом" Foreground="#FEC264" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
-                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Кредиты" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{x:Static Resources:Resources.Label_Replay_WithoutPremium}" Foreground="#C8C8B5" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="0" Text="{x:Static Resources:Resources.Label_Replay_WithPremium}" Foreground="#FEC264" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{x:Static Resources:Resources.Label_Replay_Credits}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
                         <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding XpTitle}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
                         <controls:TextWithImage Grid.Column="1" Grid.Row="1" Text="{Binding Credits}" Source="\Resources\Images\Replays\CreditsIcon-2.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
                         <controls:TextWithImage Grid.Column="2" Grid.Row="1" Text="{Binding PremiumCredits}" Source="\Resources\Images\Replays\CreditsIcon-2.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>

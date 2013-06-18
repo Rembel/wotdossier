@@ -665,7 +665,6 @@
     <Resource Include="Resources\Images\Tanks\france_arl_44.png" />
     <Resource Include="Resources\Images\Tanks\france_arl_v39.png" />
     <Resource Include="Resources\Images\Tanks\france_b1.png" />
-    <Resource Include="Resources\Images\Tanks\france_bat_chatillon155.png" />
     <Resource Include="Resources\Images\Tanks\france_bat_chatillon25t.png" />
     <Resource Include="Resources\Images\Tanks\france_bdr_g1b.png" />
     <Resource Include="Resources\Images\Tanks\france_d2.png" />
@@ -1122,6 +1121,19 @@
     <Resource Include="Resources\Images\Medals\Zulu-warrior.png" />
     <Resource Include="Resources\Images\Replays\CreditsIcon_Large.png" />
     <Resource Include="Resources\Images\Replays\XpIcon_Large.png" />
+    <Resource Include="Resources\Images\Tanks\france_amx_ob_am105.png" />
+    <Resource Include="Resources\Images\Tanks\france_bat_chatillon155_55.png" />
+    <Resource Include="Resources\Images\Tanks\france_bat_chatillon155_58.png" />
+    <Resource Include="Resources\Images\Tanks\usa_m44.png" />
+    <Resource Include="Resources\Images\Tanks\usa_m53_55.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_su122a.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_su14_1.png" />
+    <Resource Include="Resources\Images\Tanks\germany_gw_mk_vie.png" />
+    <Resource Include="Resources\Images\Tanks\germany_gw_tiger_p.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pz_sfl_ivb.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_bt-sv.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_kv_220_action.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_su_85i.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

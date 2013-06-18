@@ -1131,7 +1131,7 @@
     <Resource Include="Resources\Images\Tanks\germany_gw_mk_vie.png" />
     <Resource Include="Resources\Images\Tanks\germany_gw_tiger_p.png" />
     <Resource Include="Resources\Images\Tanks\germany_pz_sfl_ivb.png" />
-    <Resource Include="Resources\Images\Tanks\ussr_bt-sv.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_bt_sv.png" />
     <Resource Include="Resources\Images\Tanks\ussr_kv_220_action.png" />
     <Resource Include="Resources\Images\Tanks\ussr_su_85i.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">

@@ -284,7 +284,7 @@ namespace WotDossier.Applications.ViewModel
             if (Directory.Exists(replaysFolder))
             {
                 string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
-                Replays = files.Select(x => new ReplayFile(new FileInfo(Path.Combine(replaysFolder, x))));
+                Replays = files.Select(x => new ReplayFile(new FileInfo(Path.Combine(replaysFolder, x)))).OrderByDescending(x => x.FileInfo.CreationTime);
             }
             else
             {
@@ -379,7 +379,7 @@ namespace WotDossier.Applications.ViewModel
         {
             IEnumerable<int> killed =
                 tanks.SelectMany(x => x.Frags).Select(x => x.TankUniqueId).Distinct();
-            IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.TanksDictionary.Where(
+            IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.Instance.TanksDictionary.Where(
                 x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                                                                         .Select(
                                                                             x =>

@@ -12,4 +12,29 @@
             <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
         </Grid>
     </DataTemplate>
+
+    <Style TargetType="Image" x:Key="MedalImageStyle">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding}" Value="1">
+                <!-- These setters are the same as your ListBoxItemBorder style -->
+                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding}" Value="1">
+                <!-- These setters are the same as your ListBoxItemBorder style -->
+                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding}" Value="">
+                <!-- These setters are the same as your ListBoxItemBorder style -->
+                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding}" Value="1">
+                <!-- These setters are the same as your ListBoxItemBorder style -->
+                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding}" Value="">
+                <!-- These setters are the same as your ListBoxItemBorder style -->
+                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

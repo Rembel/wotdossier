@@ -264,15 +264,22 @@ namespace WotDossier.Test
             }
         }
 
-        //[Test]
-        //public void UploadTest()
-        //{
-        //    FileInfo info = new FileInfo(@"C:\Documents and Settings\YaroshikPV\AppData\Roaming\Wargaming.net\WorldOfTanks\replays\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay");
+        [Test]
+        public void UploadTest()
+        {
+            //FileInfo info = new FileInfo(@"C:\Documents and Settings\YaroshikPV\AppData\Roaming\Wargaming.net\WorldOfTanks\replays\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay");
 
-        //    ReplayUploader uploader = new ReplayUploader();
+            //ReplayUploader uploader = new ReplayUploader();
 
-        //    uploader.Upload(info, "replay1", "replayDescription1", "http://wotreplays.ru/site/upload");
-        //}
+            //uploader.Upload(info, "replay1", "replayDescription1", "http://wotreplays.ru/site/upload");
+            string url = "http://wotreplays.ru/site/upload";
+            Uri uri = new Uri(url);
+            CookieContainer cookieContainer = ReplayUploader.LoadCookies(url);
+            foreach (Cookie coockie in cookieContainer.GetCookies(uri))
+            {
+                string s = HttpUtility.UrlDecode(coockie.Value);
+            }
+        }
 
         //[Test]
         //public void Base64ToFile()

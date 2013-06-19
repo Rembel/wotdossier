@@ -285,7 +285,7 @@ namespace WotDossier.Applications.ViewModel
             if (Directory.Exists(replaysFolder))
             {
                 string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
-                Replays = files.Select(x => new ReplayFile(new FileInfo(Path.Combine(replaysFolder, x)))).OrderByDescending(x => x.FileInfo.CreationTime);
+                Replays = files.Select( x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).Select(x => new ReplayFile(x)).OrderByDescending(x => x.FileInfo.CreationTime);
             }
             else
             {

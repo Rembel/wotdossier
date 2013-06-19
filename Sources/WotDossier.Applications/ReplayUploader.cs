@@ -99,8 +99,16 @@ Content-Disposition: form-data; name=""yt0""
 
         private bool IsAuthentificated(CookieContainer cookieContainer, string uploadUrl)
         {
-            //TODO auth validate
-            return true;
+            bool auth = false;
+
+            foreach (Cookie cookie in cookieContainer.GetCookies(new Uri(uploadUrl)))
+            {
+                if (cookie.Name.Length == 32)
+                {
+                    auth = true;
+                }
+            }
+            return auth;
         }
 
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
@@ -108,7 +116,7 @@ Content-Disposition: form-data; name=""yt0""
         static extern bool InternetGetCookie(string lpszUrlName, string lpszCookieName,
         [Out] StringBuilder lpszCookieData, [MarshalAs(UnmanagedType.U4)] out int lpdwSize);
 
-        private CookieContainer LoadCookies(String url)
+        public static CookieContainer LoadCookies(String url)
         {
             CookieContainer cookies = new CookieContainer();
             Uri uri = new Uri(url);

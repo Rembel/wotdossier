@@ -180,6 +180,7 @@ namespace WotDossier.Applications.ViewModel
             if (replayFile != null)
             {
                 UploadReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<UploadReplayViewModel>().Value;
+                viewModel.ReplayFile = replayFile;
                 viewModel.Show();
             }
         }

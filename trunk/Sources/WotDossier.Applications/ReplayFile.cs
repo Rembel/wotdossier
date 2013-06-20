@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using WotDossier.Dal;
 
@@ -43,5 +44,70 @@ namespace WotDossier.Applications
             CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
             Tank = tankNameMatch.Groups[2].Value;
         }
+
+        /*
+        public void wotReplay(FileInfo replayFileInfo)
+        {
+            string path = replayFileInfo.FullName;
+            string str = "";
+            string str2 = "";
+            if (File.Exists(path))
+            {
+                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                int count = 0;
+                byte[] buffer = new byte[4];
+                stream.Read(buffer, 0, 4);
+                if (buffer[0] != 0x21)
+                {
+                    stream.Read(buffer, 0, 4);
+                    stream.Read(buffer, 0, 4);
+                    count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
+                }
+                byte[] buffer2 = new byte[count];
+                stream.Read(buffer2, 0, count);
+                ASCIIEncoding encoding = new ASCIIEncoding();
+                str = encoding.GetString(buffer2);
+                if (count > 0)
+                {
+                    stream.Read(buffer, 0, 4);
+                    count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
+                    buffer2 = new byte[count];
+                    stream.Read(buffer2, 0, count);
+                    str2 = encoding.GetString(buffer2);
+                }
+                stream.Close();
+                if (str.Length > 0)
+                {
+                    this.fb = JsonConvert.DeserializeObject<firstBlock>(str);
+                }
+                else
+                {
+                    this.fb = new firstBlock();
+                    this.fb.playerVehicle = "no data";
+                }
+                try
+                {
+                    this.sb = JsonConvert.DeserializeObject<secondBlock[]>(str2)[0];
+                }
+                catch
+                {
+                    this.sb = new secondBlock();
+                    this.sb.spotted = new int[0];
+                    this.sb.killed = new int[0];
+                    this.sb.factors = new factors();
+                }
+                str = "";
+                str2 = "";
+                foreach (int num2 in this.fb.vehicles.Keys)
+                {
+                    if (this.fb.vehicles[num2].name == this.fb.playerName)
+                    {
+                        this.fb.team = this.fb.vehicles[num2].team;
+                        break;
+                    }
+                }
+            }
+        }
+        */
     }
 }

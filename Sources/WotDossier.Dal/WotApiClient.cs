@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Text;
 using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -318,6 +319,69 @@ namespace WotDossier.Dal
             }
 
             return replay;
+        }
+
+        public Replay ReadReplay2Blocks(FileInfo replayFileInfo)
+        {
+            string path = replayFileInfo.FullName;
+            string str = string.Empty;
+            string str2 = string.Empty;
+            if (File.Exists(path))
+            {
+                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                int count = 0;
+                byte[] buffer = new byte[4];
+                stream.Read(buffer, 0, 4);
+                if (buffer[0] != 0x21)
+                {
+                    stream.Read(buffer, 0, 4);
+                    stream.Read(buffer, 0, 4);
+                    count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
+                }
+                byte[] buffer2 = new byte[count];
+                stream.Read(buffer2, 0, count);
+                ASCIIEncoding encoding = new ASCIIEncoding();
+                str = encoding.GetString(buffer2);
+                if (count > 0)
+                {
+                    stream.Read(buffer, 0, 4);
+                    count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
+                    buffer2 = new byte[count];
+                    stream.Read(buffer2, 0, count);
+                    str2 = encoding.GetString(buffer2);
+                }
+                stream.Close();
+
+                FirstBlock firstBlock = null;
+                CommandResult commandResult = null;
+
+                if (str.Length > 0)
+                {
+                    firstBlock = JsonConvert.DeserializeObject<FirstBlock>(str);
+                }
+
+                try
+                {
+                    var reader = new JsonTextReader(new StringReader(str2));
+                    var se = new JsonSerializer();
+                    var parsedData = (JArray)se.Deserialize(reader);
+                    if (parsedData.Count > 2)
+                    {
+                        commandResult = new CommandResult();
+                        commandResult.Damage = parsedData[0].ToObject<Damaged>();
+                        commandResult.Vehicles = parsedData[1].ToObject<Dictionary<int, Vehicle>>();
+                        commandResult.Frags = parsedData[2].ToObject<Dictionary<int, FragsCount>>();
+                    }
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on replay file read. Incorrect file format", e);
+                    return null;
+                }
+
+                return new Replay { datablock_1 = firstBlock, CommandResult = commandResult };
+            }
+            return null;
         }
     }
 }

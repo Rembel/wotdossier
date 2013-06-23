@@ -285,7 +285,7 @@ namespace WotDossier.Applications.ViewModel
             if (Directory.Exists(replaysFolder))
             {
                 string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
-                Replays = files.Select( x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).Select(x => new ReplayFile(x)).OrderByDescending(x => x.FileInfo.CreationTime);
+                Replays = files.Select(x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).Select(x => new ReplayFile(x, WotApiClient.Instance.ReadReplay2Blocks(x))).OrderByDescending(x => x.FileInfo.CreationTime);
             }
             else
             {
@@ -503,7 +503,15 @@ namespace WotDossier.Applications.ViewModel
 
         public virtual void Show()
         {
+            ViewTyped.Loaded += OnShellViewActivated;
             ViewTyped.Show();
+        }
+
+        private void OnShellViewActivated(object sender, EventArgs eventArgs)
+        {
+            ViewTyped.Loaded -= OnShellViewActivated;
+            Action act = OnLoad;
+            System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
         }
 
         private void ViewClosing(object sender, CancelEventArgs e)

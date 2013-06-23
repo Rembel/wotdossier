@@ -181,11 +181,11 @@ namespace WotDossier.Applications.ViewModel
                 List<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v)).ToList();
                 
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
-
                 int myTeamId = replay.datablock_battle_result.players[playerId].team;
 
                 FirstTeam = teamMembers.Where(x => x.team == myTeamId).OrderByDescending(x => x.xp).ToList();
                 SecondTeam = teamMembers.Where(x => x.team != myTeamId).OrderByDescending(x => x.xp).ToList();
+                TeamMember replayUser = teamMembers.First(x => x.accountDBID == playerId);
 
                 List<long> squads1 = FirstTeam.Where(x => x.prebattleID > 0).OrderBy(x => x.prebattleID).Select(x => x.prebattleID).Distinct().ToList();
                 List<long> squads2 = SecondTeam.Where(x => x.prebattleID > 0).OrderBy(x => x.prebattleID).Select(x => x.prebattleID).Distinct().ToList();
@@ -195,11 +195,8 @@ namespace WotDossier.Applications.ViewModel
 
                 CombatEffects = replay.datablock_battle_result.personal.details.Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key))).ToList();
 
-                FullName = string.Format("{0} {1}", replay.datablock_1.playerName,
-                                         replay.datablock_battle_result.players[playerId].clanAbbrev);
-
-                TeamMember replayUser = teamMembers.First(x => x.accountDBID == playerId);
                 Tank = replayUser.Tank;
+                FullName = replayUser.FullName;
 
                 double premiumFactor = replay.datablock_battle_result.personal.premiumCreditsFactor10 / (double)10;
                 PremiumCredits = replay.datablock_battle_result.personal.credits;

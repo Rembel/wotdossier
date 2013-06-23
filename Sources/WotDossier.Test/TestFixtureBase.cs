@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading;
 using System.Web;
 using NUnit.Framework;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using WotDossier.Applications;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -304,5 +306,12 @@ namespace WotDossier.Test
         //        fileStream.Close();
         //    }
         //}
+
+        [Test]
+        public void ReplayTest()
+        {
+            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
+            Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
+        }
     }
 }

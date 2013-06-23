@@ -19,7 +19,7 @@ namespace WotDossier.Applications.ViewModel
             TankIcon = WotApiClient.Instance.GetTankIcon(vehicle.Value.vehicleType);
             clanAbbrev = vehicle.Value.clanAbbrev;
             name = vehicle.Value.name;
-            FullName = string.Format("{0} {1}", name, clanAbbrev);
+            FullName = string.Format("{0}{1}", name, GetClanAbbrev(clanAbbrev));
             vehicleType = vehicle.Value.vehicleType;
             team = vehicle.Value.team;
             isTeamKiller = vehicle.Value.isTeamKiller;
@@ -60,6 +60,15 @@ namespace WotDossier.Applications.ViewModel
             tkills = vehicleResult.Value.tkills;
             typeCompDescr = vehicleResult.Value.typeCompDescr;
             xp = vehicleResult.Value.xp;
+        }
+
+        private string GetClanAbbrev(string abbrev)
+        {
+            if (!string.IsNullOrEmpty(abbrev))
+            {
+                return string.Format("[{0}]", abbrev);
+            }
+            return string.Empty;
         }
 
         public List<int> BattleMedals { get; set; }

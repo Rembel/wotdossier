@@ -55,6 +55,9 @@
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging">
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
@@ -598,6 +601,7 @@
     <Content Include="amd64\sqlcese40.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="app_icon.ico" />
     <Content Include="Data\dossier.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1136,6 +1140,8 @@
     <Resource Include="Resources\Images\Tanks\ussr_su_85i.png" />
     <Resource Include="Resources\Images\Tanks\uk_gb51_excelsior.png" />
     <Resource Include="Resources\Images\Maps\73_asia_korea.png" />
+    <Resource Include="Resources\Images\app_icon.ico" />
+    <Resource Include="Resources\Images\movieicon2.jpg" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -4,7 +4,7 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
-        Title="MainWindow" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png"        >
+        Title="WotDossier" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/app_icon.ico">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
             <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>

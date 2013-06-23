@@ -4,6 +4,5 @@ namespace WotDossier.Applications.View
 {
     public interface IReplayView : IView
     {
-        void Show();
     }
 }

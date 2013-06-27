@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework.Applications;
@@ -60,7 +61,7 @@ namespace WotDossier.Applications.ViewModel
 
         public string Tank { get; set; }
 
-        public List<int> BattleMedals { get; set; }
+        public List<Medal> BattleMedals { get; set; }
 
         public BattleStatus Status { get; set; }
 
@@ -237,6 +238,8 @@ namespace WotDossier.Applications.ViewModel
                 StartTime = replayFile.PlayTime.ToShortTimeString();
                 TimeSpan battleLength = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
+
+                BattleMedals = replayUser.BattleMedals;
 
                 TimeSpan userbattleLength = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                 UserBattleTime = userbattleLength.ToString(Resources.Resources.ExtendedTimeFormat);

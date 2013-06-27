@@ -77,6 +77,7 @@
     <Compile Include="SettingsReader.cs" />
     <Compile Include="ViewModel\BattleStatus.cs" />
     <Compile Include="ViewModel\CombatTarget.cs" />
+    <Compile Include="MedalHelper.cs" />
     <Compile Include="ViewModel\TeamMember.cs" />
     <Compile Include="ViewModel\UploadReplayViewModel.cs" />
     <Compile Include="ViewModel\DataPoint.cs" />

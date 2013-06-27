@@ -38,7 +38,7 @@ namespace WotDossier.Applications
                 CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
                 Tank = tankNameMatch.Groups[2].Value;
 
-                PlayTime = DateTime.Parse(replay.datablock_1.dateTime);
+                PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                 FileInfo = replayFileInfo;
             }
             else

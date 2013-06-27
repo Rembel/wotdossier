@@ -184,10 +184,19 @@
                         <controls:TextWithImage Text="{Binding PremiumCredits}" Source="\Resources\Images\Replays\CreditsIcon_Large.png" FontSize="30" Foreground="White"></controls:TextWithImage>
                         <controls:TextWithImage Grid.Row="1" Text="{Binding PremiumTotalXp}" Source="\Resources\Images\Replays\XpIcon_Large.png" FontSize="30" Foreground="White"></controls:TextWithImage>
                     </Grid>
-                    <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleHeroAwards}" BorderThickness="0">
+                    <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding}"></TextBlock>
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
+                                    </Image.ToolTip>
+                                </Image>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>

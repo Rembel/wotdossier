@@ -13,6 +13,7 @@ using NUnit.Framework;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Applications;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
@@ -312,6 +313,12 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
             Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
+        }
+
+        [Test]
+        public void MedalsTest()
+        {
+            MedalHelper.ReadMedals();
         }
     }
 }

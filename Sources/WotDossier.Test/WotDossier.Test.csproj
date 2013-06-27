@@ -236,6 +236,10 @@
       <Link>Data\dossier.sdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\WotDossier\Data\Medals.xml">
+      <Link>Data\Medals.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\WotDossier\External\python27.dll">
       <Link>External\python27.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

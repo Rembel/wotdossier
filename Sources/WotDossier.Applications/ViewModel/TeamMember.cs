@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 using System.Linq;
@@ -8,6 +9,8 @@ namespace WotDossier.Applications.ViewModel
 {
     public class TeamMember
     {
+        private List<int> _achievements;
+
         public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle)
         {
             Id = vehicle.Key;
@@ -30,7 +33,7 @@ namespace WotDossier.Applications.ViewModel
 
             accountDBID = vehicleResult.Value.accountDBID;
             achievements = vehicleResult.Value.achievements;
-            BattleMedals = vehicleResult.Value.achievements;
+            BattleMedals = MedalHelper.GetMedals(vehicleResult.Value.achievements);
             capturePoints = vehicleResult.Value.capturePoints;
             credits = vehicleResult.Value.credits;
             damageAssisted = vehicleResult.Value.damageAssisted;
@@ -71,7 +74,7 @@ namespace WotDossier.Applications.ViewModel
             return string.Empty;
         }
 
-        public List<int> BattleMedals { get; set; }
+        public List<Medal> BattleMedals { get; set; }
 
         public string Tank { get; set; }
 
@@ -87,7 +90,12 @@ namespace WotDossier.Applications.ViewModel
         public int team { get; set; }
 
         public long accountDBID { get; set; }
-        public List<int> achievements { get; set; }
+        public List<int> achievements
+        {
+            get { return _achievements ?? new List<int>(); }
+            set { _achievements = value; }
+        }
+
         public int capturePoints { get; set; }
         public int credits { get; set; }
         public int damageAssisted { get; set; }

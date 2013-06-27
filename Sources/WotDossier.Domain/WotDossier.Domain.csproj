@@ -47,6 +47,7 @@
     <Compile Include="Entities\TankEntity.cs" />
     <Compile Include="Entities\TankStatisticEntity.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Medal.cs" />
     <Compile Include="Player\ClanCommonInfo.cs" />
     <Compile Include="Player\ClanEmblems.cs" />
     <Compile Include="Player\ClanExt.cs" />

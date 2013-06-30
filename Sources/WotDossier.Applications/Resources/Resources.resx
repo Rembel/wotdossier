@@ -192,4 +192,19 @@ Win percent: {1:0.00}</value>
   <data name="Tooltip_Replay_Detected" xml:space="preserve">
     <value>You detected this enemy vehicle</value>
   </data>
+  <data name="ProgressTitle_Loading_replays" xml:space="preserve">
+    <value>Loading replays</value>
+  </data>
+  <data name="ProgressLabel_Processing_file_format" xml:space="preserve">
+    <value>Processing file {0}/{1} - {2}...</value>
+  </data>
+  <data name="Msg_CantFindReplaysDirectory" xml:space="preserve">
+    <value>Can't find replays directory - '{0}'.</value>
+  </data>
+  <data name="Msg_Error_on_replay_file_read" xml:space="preserve">
+    <value>Error on replay file read</value>
+  </data>
+  <data name="Msg_File_incomplete_or_not_supported" xml:space="preserve">
+    <value>Can't load replay file. File incomplete or not supported</value>
+  </data>
 </root>

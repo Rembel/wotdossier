@@ -24,6 +24,7 @@ using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using Common.Logging;
+using WotDossier.Framework.Forms.ProgressDialog;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -213,7 +214,7 @@ namespace WotDossier.Applications.ViewModel
 
                 if (!File.Exists(jsonFile))
                 {
-                    MessageBox.Show("Error on replay file read", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 
                 Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
@@ -225,7 +226,7 @@ namespace WotDossier.Applications.ViewModel
                 }
                 else
                 {
-                    MessageBox.Show("Can't load replay file. File incomplete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(Resources.Resources.Msg_File_incomplete_or_not_supported, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -284,12 +285,38 @@ namespace WotDossier.Applications.ViewModel
 
             if (Directory.Exists(replaysFolder))
             {
-                string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
-                Replays = files.Select(x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).Select(x => new ReplayFile(x, WotApiClient.Instance.ReadReplay2Blocks(x))).OrderByDescending(x => x.FileInfo.CreationTime);
+                ProgressDialogResult result = ProgressDialog.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
+                {
+                    string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
+                    List<FileInfo> replays = files.Select(x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).ToList();
+
+                    int count = replays.Count();
+
+                    List<ReplayFile> replayFiles = new List<ReplayFile>(count);
+
+                    int index = 0;
+                    foreach (FileInfo replay in replays)
+                    {
+                        ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay));
+                        replayFiles.Add(replayFile);
+                        index++;
+                        int percent = (index + 1) * 100 / count;
+                        if (ProgressDialog.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
+                        {
+                            return;
+                        }
+                    }
+
+                    // So this check in order to avoid default processing after the Cancel button has been pressed.
+                    // This call will set the Cancelled flag on the result structure.
+                    ProgressDialog.CheckForPendingCancellation(bw, we);
+
+                    Replays = replayFiles.OrderByDescending(x => x.PlayTime).ToList();
+                }, new ProgressDialogSettings(true, true, false));
             }
             else
             {
-                MessageBox.Show(string.Format("Can't find replays directory - '{0}'.", replaysFolder), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, replaysFolder), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

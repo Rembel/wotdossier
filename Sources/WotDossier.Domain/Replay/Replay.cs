@@ -179,13 +179,8 @@ http://wiki.vbaddict.net
         public int damageAssistedTrack { get; set; }
         [DataMember]
         public Dictionary<long, DamagedVehicle> details { get; set; }
-
-        //"dossierPopUps": [
-        //    [
-        //        36, 
-        //        7
-        //    ]
-        //], 
+        [DataMember]
+        public List<List<int>> dossierPopUps { get; set; }
         [DataMember]
         public int droppedCapturePoints { get; set; }
         [DataMember]
@@ -410,10 +405,19 @@ http://wiki.vbaddict.net
     {
         [DataMember]
         private int _damageAssisted;
+
+        private int _deathReason = -1;
+        private int _killed;
+
         [DataMember]
         public int crits { get; set; }
         [DataMember]
-        public int deathReason { get; set; }
+        public int deathReason
+        {
+            get { return _deathReason; }
+            set { _deathReason = value; }
+        }
+
         [DataMember]
         public int damageAssistedRadio { get; set; }
         [DataMember]
@@ -437,7 +441,20 @@ http://wiki.vbaddict.net
         [DataMember]
         public int hits { get; set; }
         [DataMember]
-        public int killed { get; set; }
+        [Obsolete("0.8.6")]
+        public int killed
+        {
+            get
+            {
+                if (deathReason >= 0)
+                {
+                    return 1;
+                }
+                return _killed;
+            }
+            set { _killed = value; }
+        }
+
         [DataMember]
         public int pierced { get; set; }
         [DataMember]

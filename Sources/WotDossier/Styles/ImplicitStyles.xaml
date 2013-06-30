@@ -4,7 +4,7 @@
         <ResourceDictionary Source="ExplicitStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{StaticResource office2007SilverButton}" />
+    <!--<Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{StaticResource office2007SilverButton}" />-->
     <!--<Style x:Key="{x:Type Calendar}" TargetType="{x:Type Calendar}" BasedOn="{StaticResource office2007SilverButton}" />-->
     <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource office2007SilverCheckBox}" />
     <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource office2007SilverComboBox}" />
@@ -25,7 +25,7 @@
     <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource office2007SilverMenuItem}" />
     <!--<Style x:Key="{x:Type Page}" TargetType="{x:Type Page}" BasedOn="{StaticResource office2007SilverPage}" />-->
     <Style x:Key="{x:Type PasswordBox}" TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource office2007SilverPasswordBox}" />
-    <Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}" BasedOn="{StaticResource office2007SilverProgressBar}" />
+    <!--<Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}" BasedOn="{StaticResource office2007SilverProgressBar}" />-->
     <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource office2007SilverRadioButton}" />
     <!--<Style x:Key="{x:Type RepeatButton}" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource office2007SilverRepeatButton}" />-->
     <!--<Style x:Key="{x:Type ResizeGrip}" TargetType="{x:Type ResizeGrip}" BasedOn="{StaticResource office2007SilverResizeGrip}" />-->

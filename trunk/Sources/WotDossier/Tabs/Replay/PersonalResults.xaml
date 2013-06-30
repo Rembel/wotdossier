@@ -173,8 +173,21 @@
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListBox Background="Transparent" BorderThickness="0">
-                        
+                    <ListBox Background="Transparent" ItemsSource="{Binding AchievMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Right">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
+                                    </Image.ToolTip>
+                                </Image>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
                     </ListBox>
                     <Grid Grid.Column="1" VerticalAlignment="Center">
                         <Grid.RowDefinitions>

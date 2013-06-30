@@ -25,60 +25,88 @@
     <medal name="medalTamadaYoshio" id="146" icon=""/>
   </Epic>
   <BattleHero>
-    <medal name="steelwall" id="38" icon=""/>
-    <medal name="invader" id="35" icon=""/>
-    <medal name="defender" id="37" icon=""/>
-    <medal name="supporter" id="39" icon=""/>
-    <medal name="sniper" id="36" icon=""/>
     <medal name="warrior" id="34" icon=""/>
+    <medal name="invader" id="35" icon=""/>
+    <medal name="sniper" id="36" icon=""/>
+    <medal name="defender" id="37" icon=""/>
+    <medal name="steelwall" id="38" icon=""/>
+    <medal name="supporter" id="39" icon=""/>
     <medal name="scout" id="40" icon=""/>
     <!--Дозорный-->
-    <medal name="evileye" id="41" icon=""/>
+    <medal name="evileye" id="72" icon=""/>
   </BattleHero>
   <Special>
+    <!--Коса смерти-->
+    <medal name="handOfDeath" id="58" icon="HandOfDeath"/>
+    <!--рейдер-->
+    <medal name="raider" id="61" icon="Raider"/>
+    <!--Стрелок-->
+    <medal name="titleSniper" id="62" icon="TitleSniper"/>
     <!--Бронебойщик-->
-    <!--<medal name="armorPiercer" id="" icon=""/>-->
+    <medal name="armorPiercer" id="63" icon="ArmorPiercer"/>
+    <!--Камикадзе-->
+    <medal name="kamikaze" id="64" icon="Kamikaze"/>
+    <!--Зверобой-->
+    <medal name="beasthunter" id="66" icon=""/>
     <!--Гроза мышей-->
-    <medal name="mousebane" id="67" icon=""/>
+    <medal name="mousebane" id="67" icon="Mousebane"/>
     <!--Бомбардир-->
-    <medal name="bombardier" id="147" icon=""/>
+    <medal name="bombardier" id="147" icon="Bombardier"/>
     <!--Егерь-->
     <medal name="huntsman" id="148" icon="Jager"/>
-    <!--Счастливчик-->
-    <medal name="luckyDevil" id="152" icon=""/>
-    <!--Коса смерти-->
-    <!--<medal name="handOfDeath" id="62" icon=""/>-->
-    <!--лев синaя-->
-    <!--<medal name="sinai" id="" icon=""/>-->
-    <!--<medal name="titleSniper" id="" icon=""/>-->
-    <!--невозмутимый-->
-    <medal name="alaric" id="151" icon="Imperturbable"/>
-    <!--Зверобой-->
-    <!--<medal name="beasthunter" id="" icon=""/>-->
-    <!--Камикадзе-->
-    <medal name="kamikaze" id="64" icon=""/>
     <!--Спартанец-->
     <medal name="sturdy" id="150" icon="Sparta"/>
+    <!--невозмутимый-->
+    <medal name="alaric" id="151" icon="Imperturbable"/>
+    <!--Счастливчик-->
+    <medal name="luckyDevil" id="152" icon="Lucky"/>
+    <!--лев синaя-->
+    <!--<medal name="sinai" id="" icon=""/>-->
     <!--неуязвимый-->
     <!--<medal name="invincible" id="" icon=""/>-->
     <!--Живучий-->
     <!--<medal name="diehard" id="75" icon=""/>-->
-    <!--рейдер-->
-    <medal name="raider" id="61" icon=""/>
     <!--Долина паттонов-->
     <!--<medal name="pattonValley" id="" icon=""/>-->
   </Special>
   <Common>
-    <!--<medal name="medalKay" id="44" icon="medalKay"/>
-    <medal name="medalCarius" id="45" icon="medalCarius"/>
-    <medal name="medalKnispel" id="46" icon="medalKnispel"/>
-    <medal name="medalPoppel" id="47" icon="medalPoppel"/>
-    <medal name="medalAbrams" id="48" icon="medalAbrams"/>
-    <medal name="medalLeClerc" id="49" icon="medalLeClerc"/>
-    <medal name="medalLavrinenko" id="50" icon="medalLavrinenko"/>
-    <medal name="medalEkins" id="51" icon="medalEkins"/>-->
+    <medal name="medalKay" id="411" icon="medalKay1"/>
+    <medal name="medalKay" id="412" icon="medalKay2"/>
+    <medal name="medalKay" id="413" icon="medalKay3"/>
+    <medal name="medalKay" id="414" icon="medalKay4"/>
+    <medal name="medalCarius" id="421" icon="medalCarius1"/>
+    <medal name="medalCarius" id="422" icon="medalCarius2"/>
+    <medal name="medalCarius" id="423" icon="medalCarius3"/>
+    <medal name="medalCarius" id="424" icon="medalCarius4"/>
+    <medal name="medalKnispel" id="431" icon="medalKnispel1"/>
+    <medal name="medalKnispel" id="432" icon="medalKnispel2"/>
+    <medal name="medalKnispel" id="433" icon="medalKnispel3"/>
+    <medal name="medalKnispel" id="434" icon="medalKnispel4"/>
+    <medal name="medalPoppel" id="441" icon="medalPoppel1"/>
+    <medal name="medalPoppel" id="442" icon="medalPoppel2"/>
+    <medal name="medalPoppel" id="443" icon="medalPoppel3"/>
+    <medal name="medalPoppel" id="444" icon="medalPoppel4"/>
+    <medal name="medalAbrams" id="451" icon="medalAbrams1"/>
+    <medal name="medalAbrams" id="452" icon="medalAbrams2"/>
+    <medal name="medalAbrams" id="453" icon="medalAbrams3"/>
+    <medal name="medalAbrams" id="454" icon="medalAbrams4"/>
+    <medal name="medalLeClerc" id="461" icon="medalLeClerc1"/>
+    <medal name="medalLeClerc" id="462" icon="medalLeClerc2"/>
+    <medal name="medalLeClerc" id="463" icon="medalLeClerc3"/>
+    <medal name="medalLeClerc" id="464" icon="medalLeClerc4"/>
+    <medal name="medalLavrinenko" id="471" icon="medalLavrinenko1"/>
+    <medal name="medalLavrinenko" id="472" icon="medalLavrinenko2"/>
+    <medal name="medalLavrinenko" id="473" icon="medalLavrinenko3"/>
+    <medal name="medalLavrinenko" id="474" icon="medalLavrinenko4"/>
+    <medal name="medalEkins" id="481" icon="medalEkins1"/>
+    <medal name="medalEkins" id="482" icon="medalEkins2"/>
+    <medal name="medalEkins" id="483" icon="medalEkins3"/>
+    <medal name="medalEkins" id="484" icon="medalEkins4"/>
   </Common>
   <master>
-    <medal name="MarkOfMastery" id="79" icon="MarkOfMastery"/>
+    <medal name="MarkOfMastery" id="791" icon="MarkOfMastery1"/>
+    <medal name="MarkOfMastery" id="792" icon="MarkOfMastery2"/>
+    <medal name="MarkOfMastery" id="793" icon="MarkOfMastery3"/>
+    <medal name="MarkOfMastery" id="794" icon="MarkOfMastery4"/>
   </master>
 </Medals>

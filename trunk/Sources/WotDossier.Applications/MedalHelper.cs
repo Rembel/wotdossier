@@ -49,5 +49,32 @@ namespace WotDossier.Applications
 
             return medals;
         }
+
+        public static List<Medal> GetAchievMedals(List<List<int>> dossierPopUps)
+        {
+            if (Medals == null)
+            {
+                Medals = ReadMedals();
+            }
+
+            List<Medal> list = new List<Medal>();
+
+            foreach (List<int> achievement in dossierPopUps)
+            {
+                int id = achievement[0];
+                int value = achievement[1];
+                int exId = id * 10 + value;
+
+                if (Medals.ContainsKey(id))
+                {
+                    list.Add(Medals[id]);
+                }
+                else if (Medals.ContainsKey(exId))
+                {
+                    list.Add(Medals[exId]);
+                }
+            }
+            return list;
+        }
     }
 }

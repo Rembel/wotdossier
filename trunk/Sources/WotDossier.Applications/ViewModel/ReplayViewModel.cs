@@ -63,6 +63,8 @@ namespace WotDossier.Applications.ViewModel
 
         public List<Medal> BattleMedals { get; set; }
 
+        public List<Medal> AchievMedals { get; set; }
+
         public BattleStatus Status { get; set; }
 
         public int HEHits { get; set; }
@@ -240,6 +242,7 @@ namespace WotDossier.Applications.ViewModel
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
                 BattleMedals = replayUser.BattleMedals;
+                AchievMedals = MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps).Except(BattleMedals).ToList();
 
                 TimeSpan userbattleLength = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                 UserBattleTime = userbattleLength.ToString(Resources.Resources.ExtendedTimeFormat);

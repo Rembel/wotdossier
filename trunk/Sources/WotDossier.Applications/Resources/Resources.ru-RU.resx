@@ -192,4 +192,19 @@
   <data name="Tooltip_Replay_Detected" xml:space="preserve">
     <value>Вы обнаружили этот танк противника</value>
   </data>
+  <data name="ProgressTitle_Loading_replays" xml:space="preserve">
+    <value>Загрузка реплеев</value>
+  </data>
+  <data name="ProgressLabel_Processing_file_format" xml:space="preserve">
+    <value>Обработка файла {0}/{1} - {2}...</value>
+  </data>
+  <data name="Msg_CantFindReplaysDirectory" xml:space="preserve">
+    <value>Не удалось найти папку с реплеями - '{0}'.</value>
+  </data>
+  <data name="Msg_Error_on_replay_file_read" xml:space="preserve">
+    <value>Ошибка при чтении файла</value>
+  </data>
+  <data name="Msg_File_incomplete_or_not_supported" xml:space="preserve">
+    <value>Не удалось загрузить файл реплея. Файл неполный и неподдерживается</value>
+  </data>
 </root>

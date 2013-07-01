@@ -532,7 +532,7 @@
     <value>Последний бой</value>
   </data>
   <data name="Column_Time_PlayTime" xml:space="preserve">
-    <value>Суммарное время</value>
+    <value>Время боя</value>
   </data>
   <data name="Settings_PlayerName" xml:space="preserve">
     <value>Имя игрока</value>
@@ -1144,5 +1144,11 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   </data>
   <data name="Label_ReplayDetail_Statistic" xml:space="preserve">
     <value>Статистика</value>
+  </data>
+  <data name="ReplaysTab_UploadBtn" xml:space="preserve">
+    <value>Загрузить на сервер</value>
+  </data>
+  <data name="ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server" xml:space="preserve">
+    <value>Не удалось загрузить иконку клана с сервера</value>
   </data>
 </root>

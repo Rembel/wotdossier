@@ -37,7 +37,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
                 </Grid>
                 <controls:ClanView Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}"
-                                   ClanImageSource="{Binding Clan.large, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                                   ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
                                    Days="{Binding Clan.Days}" Position="{Binding Clan.role}" Date="{Binding Clan.since}" Abbreviation="{Binding Clan.abbreviation}" ClanName="{Binding Clan.name}">
                 </controls:ClanView>
             </StackPanel>

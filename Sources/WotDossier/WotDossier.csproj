@@ -603,6 +603,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="app_icon.ico" />
+    <Content Include="Data\dossier_release.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\dossier.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

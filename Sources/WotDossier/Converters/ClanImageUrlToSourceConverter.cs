@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using Common.Logging;
 using WotDossier.Applications;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Domain;
 
 namespace WotDossier.Converters
@@ -22,14 +22,21 @@ namespace WotDossier.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string url = (string) value;
-            
+            PlayerStatisticClanViewModel clan = (PlayerStatisticClanViewModel) value;
+
+            if (clan == null)
+            {
+                return null;
+            }
+
+            string url = clan.large;
+
             if (!string.IsNullOrEmpty(url))
             {
-                string fileName = url.Split('/').Last();
+                string fileName = clan.abbreviation.Replace("[", string.Empty).Replace("]", string.Empty);
 
                 string dir = Environment.CurrentDirectory + @"\IconsCache\";
-                string path = dir + fileName;
+                string path = dir + fileName + ".png";
                 if (!File.Exists(path))
                 {
                     try
@@ -39,8 +46,7 @@ namespace WotDossier.Converters
                             Directory.CreateDirectory(dir);
                         }
 
-                        AppSettings appSettings = SettingsReader.Get();
-                        WebRequest request = HttpWebRequest.Create(string.Format("http://worldoftanks.{1}{0}", url, appSettings.Server));
+                        WebRequest request = HttpWebRequest.Create(url);
                         WebResponse response;
                         response = request.GetResponse();
                         Stream responseStream = response.GetResponseStream();
@@ -59,7 +65,7 @@ namespace WotDossier.Converters
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show("Can't get or save player clan icon from server", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show(Resources.Resources.ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         _log.Error("Error on clan icon load", e);
                         return null;
                     }

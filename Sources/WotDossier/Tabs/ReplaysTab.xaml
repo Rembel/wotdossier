@@ -14,7 +14,7 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Map}" Binding="{Binding MapName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -28,7 +28,7 @@
                                                     <CroppedBitmap Source="../Resources/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
                                                 </Image.Source>
                                             </Image>
-                                            <TextBlock Text="Upload" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                                            <TextBlock Text="{x:Static Resources:Resources.ReplaysTab_UploadBtn}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                                         </Grid>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="true">

@@ -205,6 +205,6 @@
     <value>Ошибка при чтении файла</value>
   </data>
   <data name="Msg_File_incomplete_or_not_supported" xml:space="preserve">
-    <value>Не удалось загрузить файл реплея. Файл неполный и неподдерживается</value>
+    <value>Не удалось загрузить файл реплея. Файл неполный или не поддерживается</value>
   </data>
 </root>

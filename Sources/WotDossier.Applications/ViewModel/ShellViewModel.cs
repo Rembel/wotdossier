@@ -283,6 +283,11 @@ namespace WotDossier.Applications.ViewModel
         {
             string replaysFolder = Folder.GetReplaysFolder();
 
+            if (string.IsNullOrEmpty(replaysFolder))
+            {
+                return;
+            }
+
             if (Directory.Exists(replaysFolder))
             {
                 ProgressDialogResult result = ProgressDialog.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>

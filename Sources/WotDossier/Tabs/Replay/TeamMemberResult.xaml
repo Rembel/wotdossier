@@ -1,0 +1,168 @@
+﻿<UserControl x:Class="WotDossier.Tabs.Replay.TeamMemberResult"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Resources="clr-namespace:WotDossier.Resources"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_ShotsFired}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding Shots}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Margin="30,0,0,0"
+                                   Text="{x:Static Resources:Resources.Label_ReplayDetail_DirectHits}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding Hits}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Margin="30,0,0,0" Text="{x:Static Resources:Resources.Label_ReplayDetail_HEDamage}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding HEHits}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Margin="30,0,0,0"
+                                   Text="{x:Static Resources:Resources.Label_ReplayDetail_Penetrations}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding Pierced}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_Damage}" Foreground="#BCBDBE"
+                                   FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding DamageDealt}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_HitsReceived}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding ShotsReceived}" Foreground="#BCBDBE" FontFamily="Arial"
+                                   FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_AlliesDamage}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding TDamage}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_Detected}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding Spotted}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_Damaged}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding Damaged}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_Destroyed}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding Kills}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_DamageUponDetecting}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding DamageAssisted}" Foreground="#BCBDBE" FontFamily="Arial"
+                                   FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_CapturePoint}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding CapturePoints}" Foreground="#BCBDBE" FontFamily="Arial"
+                                   FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_DefensePoints}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding DroppedCapturePoints}" Foreground="#BCBDBE" FontFamily="Arial"
+                                   FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_Traveled}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding Mileage}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px"
+                                   VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

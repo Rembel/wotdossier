@@ -408,9 +408,90 @@ http://wiki.vbaddict.net
 
         private int _deathReason = -1;
         private int _killed;
+        private List<Device> _tankDamageCrits;
+        private List<CrewMember> _crewCrits;
+        private List<Device> _tankCrits;
 
         [DataMember]
         public int crits { get; set; }
+
+        public List<Device> tankDamageCrits
+        {
+            get
+            {
+                if (_tankDamageCrits == null)
+                {
+                    _tankDamageCrits = new List<Device>();
+                    int critsFlags = crits >> 12 & 4095;
+                    Array array = Enum.GetValues(typeof(Device));
+                    foreach (Device device in array)
+                    {
+                        if ((critsFlags & (short) device) == (short)device)
+                        {
+                            _tankDamageCrits.Add(device);
+                        }
+                    }
+                }
+                return _tankDamageCrits;
+            }
+        }
+
+
+
+        public List<Device> tankCrits
+        {
+            get
+            {
+                if (_tankCrits == null)
+                {
+                    _tankCrits = new List<Device>();
+                    int critsFlags = crits & 4095;
+                    Array array = Enum.GetValues(typeof(Device));
+                    foreach (Device device in array)
+                    {
+                        if ((critsFlags & (short) device) == (short)device)
+                        {
+                            _tankCrits.Add(device);
+                        }
+                    }
+                }
+                return _tankCrits;
+            }
+        }
+
+        public List<CrewMember> crewCrits
+        {
+            get
+            {
+                if (_crewCrits == null)
+                {
+                    _crewCrits = new List<CrewMember>();
+                    int critsFlags = crits >> 24 & 255;
+                    Array array = Enum.GetValues(typeof(CrewMember));
+                    foreach (CrewMember member in array)
+                    {
+                        if ((critsFlags & (short)member) == (short)member)
+                        {
+                            _crewCrits.Add(member);
+                        }
+                    }
+                }
+                return _crewCrits;
+            }
+        }
+
+        public int critsCount
+        {
+            get 
+            {
+                if (crits > 1000)
+                {
+                    return tankDamageCrits.Count + crewCrits.Count + tankCrits.Count;
+                }
+                return crits;
+            }
+        }
+
         [DataMember]
         public int deathReason
         {
@@ -459,5 +540,28 @@ http://wiki.vbaddict.net
         public int pierced { get; set; }
         [DataMember]
         public int spotted { get; set; }
+    }
+
+    [Flags]
+    public enum Device : short
+    {
+        engine = 1,
+        ammoBay = 2,
+        fuelTank = 4,
+        radio = 8,
+        track = 16,
+        gun = 32,
+        turretRotator = 64,
+        surveyingDevice = 128
+    }
+
+    [Flags]
+    public enum CrewMember : short
+    {
+        commander = 1,
+        driver = 2,
+        radioman = 4,
+        gunner = 8,
+        loader = 16
     }
 }

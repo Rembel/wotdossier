@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
-             xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
@@ -25,9 +25,9 @@
                     <TextBlock Grid.Column="1" Text="{Binding FullName}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
                     <Image Grid.Column="2" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" HorizontalAlignment="Left"></Image>
                     <TextBlock Margin="40,0,0,0" Grid.Column="2" Text="{Binding Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
-                    <TextBlock Grid.Column="3" Text="{Binding damageDealt}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                    <TextBlock Grid.Column="4" Text="{Binding kills}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                    <controls:TextWithImage Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding xp}" Source="/Resources\Images\Replays\XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
+                    <TextBlock Grid.Column="3" Text="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="4" Text="{Binding Kills}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <controls:TextWithImage Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" Source="/Resources\Images\Replays\XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
                     <!--<Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="..\Resources\Images\table_border_gradient.png" ></Image>-->
                 </Grid>
             </Border>
@@ -38,72 +38,116 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <TextBlock Margin="10,0,0,0" Text="{x:Static Resources:Resources.Label_Replay_OurTeam}" FontSize="16" Foreground="#BCBDBE"></TextBlock>
-        <TextBlock Margin="10,0,0,0" Grid.Column="1" Text="{x:Static Resources:Resources.Label_Replay_EnemyTeam}" FontSize="16" Foreground="#BCBDBE"></TextBlock>
-        <Grid Height="33" Grid.Row="1" Background="#222117">
+
+        <Grid HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="47"></ColumnDefinition>
-                <ColumnDefinition Width="80"></ColumnDefinition>
-                <ColumnDefinition Width="179"></ColumnDefinition>
-                <ColumnDefinition Width="37"></ColumnDefinition>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="69"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="1" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="2" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="3" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="4" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="5" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
+            
+            <StackPanel Visibility="{Binding AlienTeamMember, Converter={x:Static Converters:ObjectToCollapseConverter.Default}}">
+                <TextBlock Margin="10,0,0,0" Text="{x:Static Resources:Resources.Label_Replay_OurTeam}" FontSize="16" Foreground="#BCBDBE">
+                </TextBlock>
+                <replay:CommandResultsHeader />
+                <ListView BorderThickness="0" Background="Transparent" SelectedItem="{Binding OurTeamMember}"
+                          ItemsSource="{Binding FirstTeam}" Margin="0,0,0,0" HorizontalAlignment="Stretch"
+                          Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">
+                </ListView>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Width="480"
+                  Visibility="{Binding AlienTeamMember, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
+                <Grid HorizontalAlignment="Stretch" DataContext="{Binding AlienTeamMember}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Left"
+                           Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" VerticalAlignment="Top" />
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <TextBlock Text="{Binding FullName}" FontSize="20" Foreground="#FEC264"></TextBlock>
+                        <TextBlock Text="{Binding Tank}" Foreground="White" FontSize="16"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" DataContext="{Binding AlienTeamMember}">
+                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
+                    <ListBox Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
+                                    </Image.ToolTip>
+                                </Image>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+                <replay:TeamMemberResult DataContext="{Binding AlienTeamMember}" HorizontalAlignment="Stretch" />
+            </StackPanel>
         </Grid>
-        <Grid Height="33" Grid.Row="1" Grid.Column="1" Background="#222117">
+
+        <Grid Grid.Column="1" HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="47"></ColumnDefinition>
-                <ColumnDefinition Width="80"></ColumnDefinition>
-                <ColumnDefinition Width="179"></ColumnDefinition>
-                <ColumnDefinition Width="37"></ColumnDefinition>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="69"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="1" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="2" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="3" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="4" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
-            <Border Grid.Column="5" BorderThickness="1" BorderBrush="#12110C">
-                <Image Source="/Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-            </Border>
+            
+            <StackPanel Visibility="{Binding OurTeamMember, Converter={x:Static Converters:ObjectToCollapseConverter.Default}}">
+                <TextBlock Margin="10,0,0,0" Text="{x:Static Resources:Resources.Label_Replay_EnemyTeam}" FontSize="16"
+                           Foreground="#BCBDBE">
+                </TextBlock>
+                <replay:CommandResultsHeader />
+                <ListView BorderThickness="0" Background="Transparent" SelectedItem="{Binding AlienTeamMember}"
+                          ItemsSource="{Binding SecondTeam}" Margin="0,0,0,0" HorizontalAlignment="Stretch"
+                          Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">
+                </ListView>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Width="480"
+                  Visibility="{Binding OurTeamMember, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
+                <Grid HorizontalAlignment="Stretch" DataContext="{Binding OurTeamMember}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Left"
+                           Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" VerticalAlignment="Top" />
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <TextBlock Text="{Binding FullName}" FontSize="20" Foreground="#FEC264"></TextBlock>
+                        <TextBlock Text="{Binding Tank}" Foreground="White" FontSize="16"></TextBlock>
+                    </StackPanel>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" DataContext="{Binding OurTeamMember}">
+                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
+                    <ListBox Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
+                                    </Image.ToolTip>
+                                </Image>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+                <replay:TeamMemberResult DataContext="{Binding OurTeamMember}" HorizontalAlignment="Stretch" />
+            </StackPanel>
         </Grid>
-        <ListView Grid.Column="0" Grid.Row="2" BorderThickness="0" Background="Transparent" ItemsSource="{Binding FirstTeam}" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">
-        </ListView>
-        <ListView Grid.Column="1" Grid.Row="2" BorderThickness="0" Background="Transparent" ItemsSource="{Binding SecondTeam}" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" ItemTemplate="{StaticResource CombatEffectRowTemplate}">
-        </ListView>
     </Grid>
 </UserControl>

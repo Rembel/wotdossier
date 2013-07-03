@@ -11,7 +11,7 @@ namespace WotDossier.Applications.ViewModel
         {
             TeamMember = teamMember;
 
-            crits = vehicleDamage.Value.crits;
+            crits = vehicleDamage.Value.critsCount;
             critsTooltip = string.Format(Resources.Resources.Tooltip_Replay_CriticalDamage, crits);
             damageAssisted = vehicleDamage.Value.damageAssisted;
             damageAssistedTooltip = string.Format(Resources.Resources.Tooltip_Replay_AlliesDamage, damageAssisted);

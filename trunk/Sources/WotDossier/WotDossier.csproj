@@ -130,6 +130,7 @@
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\ObjectToCollapseConverter.cs" />
     <Compile Include="Converters\MedalIconImageConverter.cs" />
     <Compile Include="Converters\IntToVisibilityConverter.cs" />
     <Compile Include="Converters\MapNameToImageConverter.cs" />
@@ -185,11 +186,17 @@
     <Compile Include="Tabs\Replay\CommandResults.xaml.cs">
       <DependentUpon>CommandResults.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Replay\CommandResultsHeader.xaml.cs">
+      <DependentUpon>CommandResultsHeader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Replay\DetailedResults.xaml.cs">
       <DependentUpon>DetailedResults.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Replay\PersonalResults.xaml.cs">
       <DependentUpon>PersonalResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Replay\TeamMemberResult.xaml.cs">
+      <DependentUpon>TeamMemberResult.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\XPTab.xaml.cs">
       <DependentUpon>XPTab.xaml</DependentUpon>
@@ -383,6 +390,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Tabs\Replay\CommandResultsHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tabs\Replay\DetailedResults.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -390,6 +401,10 @@
     <Page Include="Tabs\Replay\PersonalResults.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Replay\TeamMemberResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\XPTab.xaml">
       <Generator>MSBuild:Compile</Generator>

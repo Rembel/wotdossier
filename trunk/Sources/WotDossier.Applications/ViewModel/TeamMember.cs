@@ -20,49 +20,49 @@ namespace WotDossier.Applications.ViewModel
             TankInfo tank = WotApiClient.Instance.TanksDictionary.Values.FirstOrDefault(x => x.countryCode.Equals(tankCountryCode) && x.icon_orig.Equals(tankIcon));
             Tank = tank != null ? tank.title : tankIcon;
             TankIcon = WotApiClient.Instance.GetTankIcon(vehicle.Value.vehicleType);
-            clanAbbrev = vehicle.Value.clanAbbrev;
-            name = vehicle.Value.name;
-            FullName = string.Format("{0}{1}", name, GetClanAbbrev(clanAbbrev));
-            vehicleType = vehicle.Value.vehicleType;
-            team = vehicle.Value.team;
-            isTeamKiller = vehicle.Value.isTeamKiller;
-            isAlive = vehicle.Value.isAlive;
+            ClanAbbrev = vehicle.Value.clanAbbrev;
+            Name = vehicle.Value.name;
+            FullName = string.Format("{0}{1}", Name, GetClanAbbrev(ClanAbbrev));
+            VehicleType = vehicle.Value.vehicleType;
+            Team = vehicle.Value.team;
+            IsTeamKiller = vehicle.Value.isTeamKiller;
+            IsAlive = vehicle.Value.isAlive;
 
-            clanDBID = player.Value.clanDBID;
-            prebattleID = player.Value.prebattleID;
+            ClanDBID = player.Value.clanDBID;
+            PrebattleId = player.Value.prebattleID;
 
-            accountDBID = vehicleResult.Value.accountDBID;
+            AccountDBID = vehicleResult.Value.accountDBID;
             achievements = vehicleResult.Value.achievements;
             BattleMedals = MedalHelper.GetMedals(vehicleResult.Value.achievements);
-            capturePoints = vehicleResult.Value.capturePoints;
-            credits = vehicleResult.Value.credits;
-            damageAssisted = vehicleResult.Value.damageAssisted;
-            damageDealt = vehicleResult.Value.damageDealt;
-            damageReceived = vehicleResult.Value.damageReceived;
-            damaged = vehicleResult.Value.damaged;
-            droppedCapturePoints = vehicleResult.Value.droppedCapturePoints;
-            freeXP = vehicleResult.Value.freeXP;
-            gold = vehicleResult.Value.gold;
-            he_hits = vehicleResult.Value.he_hits;
-            health = vehicleResult.Value.health;
-            hits = vehicleResult.Value.hits;
-            isTeamKiller = vehicleResult.Value.isTeamKiller;
-            killerID = vehicleResult.Value.killerID;
-            kills = vehicleResult.Value.kills;
-            lifeTime = vehicleResult.Value.lifeTime;
-            mileage = vehicleResult.Value.mileage;
-            pierced = vehicleResult.Value.pierced;
-            potentialDamageReceived = vehicleResult.Value.potentialDamageReceived;
-            repair = vehicleResult.Value.repair;
-            shots = vehicleResult.Value.shots;
-            shotsReceived = vehicleResult.Value.shotsReceived;
-            spotted = vehicleResult.Value.spotted;
-            tdamageDealt = vehicleResult.Value.tdamageDealt;
+            CapturePoints = vehicleResult.Value.capturePoints;
+            Credits = vehicleResult.Value.credits;
+            DamageAssisted = vehicleResult.Value.damageAssisted;
+            DamageDealt = vehicleResult.Value.damageDealt;
+            DamageReceived = vehicleResult.Value.damageReceived;
+            Damaged = vehicleResult.Value.damaged;
+            DroppedCapturePoints = vehicleResult.Value.droppedCapturePoints;
+            FreeXp = vehicleResult.Value.freeXP;
+            Gold = vehicleResult.Value.gold;
+            HEHits = vehicleResult.Value.he_hits;
+            Health = vehicleResult.Value.health;
+            Hits = vehicleResult.Value.hits;
+            IsTeamKiller = vehicleResult.Value.isTeamKiller;
+            KillerId = vehicleResult.Value.killerID;
+            Kills = vehicleResult.Value.kills;
+            LifeTime = vehicleResult.Value.lifeTime;
+            Mileage = vehicleResult.Value.mileage;
+            Pierced = vehicleResult.Value.pierced;
+            PotentialDamageReceived = vehicleResult.Value.potentialDamageReceived;
+            Repair = vehicleResult.Value.repair;
+            Shots = vehicleResult.Value.shots;
+            ShotsReceived = vehicleResult.Value.shotsReceived;
+            Spotted = vehicleResult.Value.spotted;
+            TDamageDealt = vehicleResult.Value.tdamageDealt;
             //team = vehicleResult.Value;
-            thits = vehicleResult.Value.thits;
-            tkills = vehicleResult.Value.tkills;
-            typeCompDescr = vehicleResult.Value.typeCompDescr;
-            xp = vehicleResult.Value.xp;
+            THits = vehicleResult.Value.thits;
+            TKills = vehicleResult.Value.tkills;
+            TypeCompDescr = vehicleResult.Value.typeCompDescr;
+            Xp = vehicleResult.Value.xp;
         }
 
         private string GetClanAbbrev(string abbrev)
@@ -83,56 +83,56 @@ namespace WotDossier.Applications.ViewModel
         public long Id { get; set; }
         public string FullName { get; set; }
         
-        public string clanAbbrev { get; set; }
-        public long clanDBID { get; set; }
-        public string name { get; set; }
-        public long prebattleID { get; set; }
-        public int team { get; set; }
+        public string ClanAbbrev { get; set; }
+        public long ClanDBID { get; set; }
+        public string Name { get; set; }
+        public long PrebattleId { get; set; }
+        public int Team { get; set; }
 
-        public long accountDBID { get; set; }
+        public long AccountDBID { get; set; }
         public List<int> achievements
         {
             get { return _achievements ?? new List<int>(); }
             set { _achievements = value; }
         }
 
-        public int capturePoints { get; set; }
-        public int credits { get; set; }
-        public int damageAssisted { get; set; }
-        public int damageDealt { get; set; }
-        public int damageReceived { get; set; }
-        public int damaged { get; set; }
-        public int droppedCapturePoints { get; set; }
-        public int freeXP { get; set; }
-        public int gold { get; set; }
-        public int he_hits { get; set; }
-        public int health { get; set; }
-        public int hits { get; set; }
-        public bool isTeamKiller { get; set; }
-        public int killerID { get; set; }
-        public int kills { get; set; }
-        public int lifeTime { get; set; }
-        public int mileage { get; set; }
-        public int pierced { get; set; }
-        public int potentialDamageReceived { get; set; }
-        public int repair { get; set; }
-        public int shots { get; set; }
-        public int shotsReceived { get; set; }
-        public int spotted { get; set; }
-        public double tdamageDealt { get; set; }
+        public int CapturePoints { get; set; }
+        public int Credits { get; set; }
+        public int DamageAssisted { get; set; }
+        public int DamageDealt { get; set; }
+        public int DamageReceived { get; set; }
+        public int Damaged { get; set; }
+        public int DroppedCapturePoints { get; set; }
+        public int FreeXp { get; set; }
+        public int Gold { get; set; }
+        public int HEHits { get; set; }
+        public int Health { get; set; }
+        public int Hits { get; set; }
+        public bool IsTeamKiller { get; set; }
+        public int KillerId { get; set; }
+        public int Kills { get; set; }
+        public int LifeTime { get; set; }
+        public int Mileage { get; set; }
+        public int Pierced { get; set; }
+        public int PotentialDamageReceived { get; set; }
+        public int Repair { get; set; }
+        public int Shots { get; set; }
+        public int ShotsReceived { get; set; }
+        public int Spotted { get; set; }
+        public double TDamageDealt { get; set; }
         //public int team { get; set; }
-        public int thits { get; set; }
-        public int tkills { get; set; }
-        public int typeCompDescr { get; set; }
-        public int xp { get; set; }
+        public int THits { get; set; }
+        public int TKills { get; set; }
+        public int TypeCompDescr { get; set; }
+        public int Xp { get; set; }
 
         //public string clanAbbrev { get; set; }
         //        "events": {}, 
-        public bool isAlive { get; set; }
+        public bool IsAlive { get; set; }
         //public bool isTeamKiller { get; set; }
         //public string name { get; set; }
         //public int team { get; set; }
-        public string vehicleType { get; set; }
+        public string VehicleType { get; set; }
 
         public int Squad { get; set; }
     }

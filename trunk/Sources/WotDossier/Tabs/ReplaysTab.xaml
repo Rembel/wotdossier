@@ -8,6 +8,35 @@
              xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:tab="clr-namespace:WotDossier.Tabs"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Image  Width="177" Height="37" Opacity="0.75" Name="ButtonImage">
+                                <Image.Source>
+                                    <CroppedBitmap Source="../Resources/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
+                                </Image.Source>
+                            </Image>
+                            <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="ButtonImage" Property="Opacity" Value="1" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Replays}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -18,31 +47,19 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Style="{x:Null}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left" 
-                                    CommandParameter="{Binding}" Command="{Binding Path=DataContext.OnReplayRowUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}">
-                                <Button.Template>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Grid>
-                                            <Image  Width="177" Height="37" Opacity="0.75" Name="ButtonImage">
-                                                <Image.Source>
-                                                    <CroppedBitmap Source="../Resources/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
-                                                </Image.Source>
-                                            </Image>
-                                            <TextBlock Text="{x:Static Resources:Resources.ReplaysTab_UploadBtn}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                                        </Grid>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter TargetName="ButtonImage" Property="Opacity" Value="1" />
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
-                                            </Trigger>
-                                            <Trigger Property="IsPressed" Value="true">
-                                                <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Button.Template>
+                            <Button Style="{StaticResource ButtonStyle}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left" 
+                                    CommandParameter="{Binding}" Content="{x:Static Resources:Resources.ReplaysTab_UploadBtn}"
+                                    Command="{Binding Path=DataContext.OnReplayRowUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}">
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource ButtonStyle}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left"
+                                    CommandParameter="{Binding}" Content="{x:Static Resources:Resources.ReplaysTab_DeleteBtn}"
+                                    Command="{Binding Path=DataContext.OnReplayRowDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}">
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

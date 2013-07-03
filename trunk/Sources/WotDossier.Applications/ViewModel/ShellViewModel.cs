@@ -63,6 +63,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> OnReplayRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> OnReplayRowUploadCommand { get; set; }
+        public DelegateCommand<object> OnReplayRowDeleteCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -94,7 +95,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<ReplayFile> Replays
+        public ObservableCollection<ReplayFile> Replays
         {
             get { return _replays; }
             set
@@ -113,7 +114,7 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
-        private IEnumerable<ReplayFile> _replays;
+        private ObservableCollection<ReplayFile> _replays;
 
         public ObservableCollection<SellInfo> LastUsedTanks
         {
@@ -168,13 +169,28 @@ namespace WotDossier.Applications.ViewModel
             LoadCommand = new DelegateCommand(OnLoad);
             OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
-            OnReplayRowUploadCommand = new DelegateCommand<object>(OnOnReplayRowUpload); 
+            OnReplayRowUploadCommand = new DelegateCommand<object>(OnReplayRowUpload);
+            OnReplayRowDeleteCommand = new DelegateCommand<object>(OnReplayRowDelete); 
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
         }
 
-        private void OnOnReplayRowUpload(object rowData)
+        private void OnReplayRowDelete(object rowData)
+        {
+            ReplayFile replayFile = rowData as ReplayFile;
+
+            if (replayFile != null)
+            {
+                if (replayFile.FileInfo.Exists)
+                {
+                    replayFile.FileInfo.Delete();
+                    Replays.Remove(replayFile);
+                }
+            }
+        }
+
+        private void OnReplayRowUpload(object rowData)
         {
             ReplayFile replayFile = rowData as ReplayFile;
 
@@ -290,6 +306,8 @@ namespace WotDossier.Applications.ViewModel
 
             if (Directory.Exists(replaysFolder))
             {
+                ObservableCollection<ReplayFile> replayFilesTemp = new ObservableCollection<ReplayFile>();
+
                 ProgressDialogResult result = ProgressDialog.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                 {
                     string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
@@ -316,7 +334,8 @@ namespace WotDossier.Applications.ViewModel
                     // This call will set the Cancelled flag on the result structure.
                     ProgressDialog.CheckForPendingCancellation(bw, we);
 
-                    Replays = replayFiles.OrderByDescending(x => x.PlayTime).ToList();
+                    replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
+                    Replays = replayFilesTemp;
                 }, new ProgressDialogSettings(true, true, false));
             }
             else

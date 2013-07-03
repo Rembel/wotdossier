@@ -1945,6 +1945,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string ReplaysTab_DeleteBtn {
+            get {
+                return ResourceManager.GetString("ReplaysTab_DeleteBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload.
         /// </summary>
         public static string ReplaysTab_UploadBtn {

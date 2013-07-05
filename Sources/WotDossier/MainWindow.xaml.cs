@@ -15,6 +15,9 @@ namespace WotDossier
         public MainWindow()
         {
             InitializeComponent();
+
+            // Enable "minimize to tray" behavior for this Window
+            MinimizeToTray.Enable(this);
         }
 
         private void MenuItemSettings_Click(object sender, RoutedEventArgs e)

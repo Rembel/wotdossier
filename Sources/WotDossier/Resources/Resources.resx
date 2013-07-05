@@ -501,7 +501,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
     <value>FragsPerBattle</value>
   </data>
   <data name="Column_Frags_KillDeathRatio" xml:space="preserve">
-    <value>KillDeathRatio</value>
+    <value>Kill Death Ratio</value>
   </data>
   <data name="Column_Frags_Tier8Frags" xml:space="preserve">
     <value>Tier8Frags</value>
@@ -510,7 +510,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
     <value>SinaiFrags</value>
   </data>
   <data name="Column_Frags_BeastFrags" xml:space="preserve">
-    <value>BeastFrags</value>
+    <value>Beast Frags</value>
   </data>
   <data name="Column_Medals_Kay" xml:space="preserve">
     <value>Kay</value>
@@ -576,7 +576,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
     <value>Billotte</value>
   </data>
   <data name="Column_Epics_BrunoPietro" xml:space="preserve">
-    <value>BrunoPietro</value>
+    <value>Bruno Pietro</value>
   </data>
   <data name="Column_Epics_Tarczay" xml:space="preserve">
     <value>Tarczay</value>
@@ -651,7 +651,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
     <value>Average Damage</value>
   </data>
   <data name="Column_Ratings_KillDeathRatio" xml:space="preserve">
-    <value>KillDeathRatio</value>
+    <value>Kill Death Ratio</value>
   </data>
   <data name="Column_Ratings_EffRating" xml:space="preserve">
     <value>Eff Rating</value>
@@ -1039,5 +1039,29 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   </data>
   <data name="ReplaysTab_DeleteBtn" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Column_Replay_BattleResult" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="Column_Replay_Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="Column_Replay_Damaged" xml:space="preserve">
+    <value>Damaged</value>
+  </data>
+  <data name="Column_Replay_DamageDealt" xml:space="preserve">
+    <value>Damage Dealt</value>
+  </data>
+  <data name="Column_Replay_DamageReceived" xml:space="preserve">
+    <value>Damage Received</value>
+  </data>
+  <data name="Column_Replay_Frags" xml:space="preserve">
+    <value>Frags</value>
+  </data>
+  <data name="Column_Replay_XP" xml:space="preserve">
+    <value>XP</value>
+  </data>
+  <data name="Replay_TeamMember_HideResultButton" xml:space="preserve">
+    <value>Hide</value>
   </data>
 </root>

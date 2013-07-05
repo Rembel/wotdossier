@@ -1154,4 +1154,28 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="ReplaysTab_DeleteBtn" xml:space="preserve">
     <value>Удалить</value>
   </data>
+  <data name="Column_Replay_BattleResult" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="Column_Replay_Credits" xml:space="preserve">
+    <value>Кредиты</value>
+  </data>
+  <data name="Column_Replay_Damaged" xml:space="preserve">
+    <value>Повреждено</value>
+  </data>
+  <data name="Column_Replay_DamageDealt" xml:space="preserve">
+    <value>Нанесено урона</value>
+  </data>
+  <data name="Column_Replay_DamageReceived" xml:space="preserve">
+    <value>Получено урона</value>
+  </data>
+  <data name="Column_Replay_Frags" xml:space="preserve">
+    <value>Уничтожено</value>
+  </data>
+  <data name="Column_Replay_XP" xml:space="preserve">
+    <value>Опыт</value>
+  </data>
+  <data name="Replay_TeamMember_HideResultButton" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
 </root>

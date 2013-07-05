@@ -154,6 +154,7 @@
     <Compile Include="Converters\WN6ToColorConverter.cs" />
     <Compile Include="Converters\EffectivityToColorConverter.cs" />
     <Compile Include="Converters\Double2Formater.cs" />
+    <Compile Include="MinimizeToTray.cs" />
     <Compile Include="RatingRow.xaml.cs">
       <DependentUpon>RatingRow.xaml</DependentUpon>
     </Compile>
@@ -1166,6 +1167,7 @@
     <Resource Include="Resources\Images\Medals\MarkOfMastery4.png" />
     <Resource Include="Resources\Images\Medals\MarkOfMastery1.png" />
     <Resource Include="Resources\Images\Medals\MarkOfMastery2.png" />
+    <Resource Include="Resources\Images\tile.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

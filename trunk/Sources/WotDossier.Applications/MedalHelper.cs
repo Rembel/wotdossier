@@ -44,6 +44,7 @@ namespace WotDossier.Applications
                 medal.Id = Convert.ToInt32(node.Attributes["id"].Value);
                 medal.Name = node.Attributes["name"].Value;
                 medal.Icon = node.Attributes["icon"].Value;
+                medal.Type = int.Parse(node.Attributes["type"].Value);
                 medals.Add(medal.Id, medal);
             }
 

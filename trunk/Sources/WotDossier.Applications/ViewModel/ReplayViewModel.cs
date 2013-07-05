@@ -8,6 +8,7 @@ using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework.Applications;
 using System.Linq;
+using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -171,6 +172,8 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public DelegateCommand HideTeamMemberResultsCommand { get; set; }
+
         #endregion
 
         /// <summary>
@@ -182,6 +185,13 @@ namespace WotDossier.Applications.ViewModel
         public ReplayViewModel([Import(typeof(IReplayView))]IReplayView view)
             : base(view)
         {
+            HideTeamMemberResultsCommand = new DelegateCommand(OnHideTeamMemberResultsCommand);
+        }
+
+        private void OnHideTeamMemberResultsCommand()
+        {
+            OurTeamMember = null;
+            AlienTeamMember = null;
         }
 
         public void Show()
@@ -202,7 +212,7 @@ namespace WotDossier.Applications.ViewModel
 
                 List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
                 List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
-                List<KeyValuePair<long, Vehicle>> vehicles = replay.datablock_1.vehicles.ToList();
+                List<KeyValuePair<long, Vehicle>> vehicles = replay.CommandResult.Vehicles.ToList();
                 List<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v)).ToList();
                 
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
@@ -263,8 +273,10 @@ namespace WotDossier.Applications.ViewModel
                 TimeSpan battleLength = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
-                BattleMedals = replayUser.BattleMedals;
-                AchievMedals = MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps).Except(BattleMedals).ToList();
+                List<Medal> medals = replayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps)).ToList();
+
+                BattleMedals = medals.Where(x => x.Type == 0).ToList();
+                AchievMedals = medals.Where(x => x.Type == 1).ToList();
 
                 TimeSpan userbattleLength = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                 UserBattleTime = userbattleLength.ToString(Resources.Resources.ExtendedTimeFormat);

@@ -45,9 +45,9 @@ http://wiki.vbaddict.net
         [DataMember]
         public Damaged Damage { get; set; }
         [DataMember]
-        public Dictionary<int, Vehicle> Vehicles { get; set; }
+        public Dictionary<long, Vehicle> Vehicles { get; set; }
         [DataMember]
-        public Dictionary<int, FragsCount> Frags { get; set; }
+        public Dictionary<long, FragsCount> Frags { get; set; }
     }
 
     [DataContract]
@@ -69,6 +69,7 @@ http://wiki.vbaddict.net
         public int damageReceived { get; set; }
         [DataMember]
         public List<int> damaged { get; set; }
+
         [DataMember]
         public int droppedCapturePoints { get; set; }
         [DataMember]
@@ -81,6 +82,7 @@ http://wiki.vbaddict.net
         public int isWinner { get; set; }
         [DataMember]
         public List<int> killed { get; set; }
+
         [DataMember]
         public int killerID { get; set; }
         [DataMember]

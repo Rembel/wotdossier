@@ -80,11 +80,11 @@ namespace WotDossier.Dal
             }
         }
 
-        public List<TankJson> ReadTanks(string json)
+        public List<TankJson> ReadTanks(string path)
         {
             List<TankJson> tanks = new List<TankJson>();
 
-            using (StreamReader re = new StreamReader(json))
+            using (StreamReader re = new StreamReader(path))
             {
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
@@ -312,8 +312,8 @@ namespace WotDossier.Dal
                 {
                     CommandResult result = new CommandResult();
                     result.Damage = parsedData["datablock_2"][0].ToObject<Damaged>();
-                    result.Vehicles = parsedData["datablock_2"][1].ToObject<Dictionary<int, Vehicle>>();
-                    result.Frags = parsedData["datablock_2"][2].ToObject<Dictionary<int, FragsCount>>();
+                    result.Vehicles = parsedData["datablock_2"][1].ToObject<Dictionary<long, Vehicle>>();
+                    result.Frags = parsedData["datablock_2"][2].ToObject<Dictionary<long, FragsCount>>();
                     replay.CommandResult = result;
                 }
             }
@@ -369,8 +369,8 @@ namespace WotDossier.Dal
                     {
                         commandResult = new CommandResult();
                         commandResult.Damage = parsedData[0].ToObject<Damaged>();
-                        commandResult.Vehicles = parsedData[1].ToObject<Dictionary<int, Vehicle>>();
-                        commandResult.Frags = parsedData[2].ToObject<Dictionary<int, FragsCount>>();
+                        commandResult.Vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
+                        commandResult.Frags = parsedData[2].ToObject<Dictionary<long, FragsCount>>();
                     }
                 }
                 catch (Exception e)

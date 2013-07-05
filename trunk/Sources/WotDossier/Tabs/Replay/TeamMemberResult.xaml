@@ -163,6 +163,7 @@
                                    VerticalAlignment="Top" HorizontalAlignment="Right">
                 </TextBlock>
             </Grid>
+            <Button Margin="10" Content="{x:Static Resources:Resources.Replay_TeamMember_HideResultButton}" Click="ButtonBase_OnClick" HorizontalAlignment="Center"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

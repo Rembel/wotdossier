@@ -9,6 +9,16 @@
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
         <!--<ImageBrush x:Key="bg" ImageSource="..\Resources\Images\Maps\content_bg.png" Stretch="Fill" />-->
+        <Style TargetType="Image" x:Key="KilledBg">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding}" Value="true">
+                    <Setter Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding}" Value="false">
+                    <Setter Property="Visibility" Value="Visible" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
         <DataTemplate x:Key="CombatEffectRowTemplate">
             <Border BorderThickness="0,0,0,1" BorderBrush="#26251E">
                 <Grid HorizontalAlignment="Stretch" Height="31">
@@ -20,6 +30,7 @@
                         <ColumnDefinition Width="55"></ColumnDefinition>
                         <ColumnDefinition Width="69"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
+                    <Image DataContext="{Binding IsAlive}" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Stretch" Style="{StaticResource KilledBg}" HorizontalAlignment="Stretch" Stretch="Fill" Source="/Resources\Images\tile.png" ></Image>
                     <Image Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Grid.Column="0" Source="/Resources\Images\Replays\Squad-Ico-silver.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"></Image>
                     <TextBlock Grid.Column="0" Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="1" Text="{Binding FullName}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
@@ -28,7 +39,6 @@
                     <TextBlock Grid.Column="3" Text="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="4" Text="{Binding Kills}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <controls:TextWithImage Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" Source="/Resources\Images\Replays\XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
-                    <!--<Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="..\Resources\Images\table_border_gradient.png" ></Image>-->
                 </Grid>
             </Border>
         </DataTemplate>
@@ -90,7 +100,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
-                <replay:TeamMemberResult DataContext="{Binding AlienTeamMember}" HorizontalAlignment="Stretch" />
+                <replay:TeamMemberResult DataContext="{Binding AlienTeamMember}" HideTeamMemberResultsCommand="{Binding Path=DataContext.HideTeamMemberResultsCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}" HorizontalAlignment="Stretch" />
             </StackPanel>
         </Grid>
 
@@ -146,7 +156,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
-                <replay:TeamMemberResult DataContext="{Binding OurTeamMember}" HorizontalAlignment="Stretch" />
+                <replay:TeamMemberResult DataContext="{Binding OurTeamMember}" HideTeamMemberResultsCommand="{Binding Path=DataContext.HideTeamMemberResultsCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}" HorizontalAlignment="Stretch" />
             </StackPanel>
         </Grid>
     </Grid>

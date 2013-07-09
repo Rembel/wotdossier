@@ -2,8 +2,8 @@
 {
     public enum BattleStatus
     {
-        Win,
-        Loose,
-        Draw
+        Defeat = -1,
+        Draw = 0,
+        Victory = 1
     }
 }

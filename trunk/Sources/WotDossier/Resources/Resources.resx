@@ -920,13 +920,13 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Label_Replay_BattleEfficiency" xml:space="preserve">
     <value>Battle efficiency</value>
   </data>
-  <data name="Label_Replay_Victory" xml:space="preserve">
+  <data name="BattleStatus_Victory" xml:space="preserve">
     <value>Victory</value>
   </data>
-  <data name="Label_Replay_Defeat" xml:space="preserve">
+  <data name="BattleStatus_Defeat" xml:space="preserve">
     <value>Defeat</value>
   </data>
-  <data name="Label_Replay_Draw" xml:space="preserve">
+  <data name="BattleStatus_Draw" xml:space="preserve">
     <value>Draw</value>
   </data>
   <data name="Label_Replay_OurTeam" xml:space="preserve">

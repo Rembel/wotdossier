@@ -1034,13 +1034,13 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Label_Replay_BattleEfficiency" xml:space="preserve">
     <value>Боевая эффективность</value>
   </data>
-  <data name="Label_Replay_Victory" xml:space="preserve">
+  <data name="BattleStatus_Victory" xml:space="preserve">
     <value>Победа</value>
   </data>
-  <data name="Label_Replay_Defeat" xml:space="preserve">
+  <data name="BattleStatus_Defeat" xml:space="preserve">
     <value>Поражение</value>
   </data>
-  <data name="Label_Replay_Draw" xml:space="preserve">
+  <data name="BattleStatus_Draw" xml:space="preserve">
     <value>Ничья</value>
   </data>
   <data name="Label_Replay_OurTeam" xml:space="preserve">

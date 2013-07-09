@@ -75,7 +75,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="31"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock Text="{Binding Path=TeamMember.FullName}" Foreground="#5C5A4A" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
                 <Image Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" HorizontalAlignment="Left"></Image>
@@ -119,45 +119,32 @@
                         <TextBlock Text="{Binding spottedTooltip}"></TextBlock>
                     </Image.ToolTip>
                 </Image>
-                <!--<Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="..\Resources\Images\table_border_gradient.png" ></Image>-->
+                <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="/Resources\Images\table_border_gradient.png" ></Image>
             </Grid>
         </DataTemplate>
         <Style TargetType="Image" x:Key="FinalStatisticLineWinStyle">
             <Style.Triggers>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Win}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Victory}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Loose}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linefrlose.png" />
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Defeat}">
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linelose.png" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linefrlose.png" />
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linedraw.png" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="Image" x:Key="FinalStatisticPicWinStyle">
             <Style.Triggers>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Win}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Victory}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.png" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Loose}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Defeat}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.png" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.png" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="FinalStatisticResultTextStyle">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Win}">
-                    <Setter Property="Text" Value="{x:Static Resources:Resources.Label_Replay_Victory}" />
-                </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Loose}">
-                    <Setter Property="Text" Value="{x:Static Resources:Resources.Label_Replay_Defeat}" />
-                </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
-                    <Setter Property="Text" Value="{x:Static Resources:Resources.Label_Replay_Draw}" />
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picdraw.png" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -214,7 +201,8 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
-                <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" Style="{StaticResource FinalStatisticResultTextStyle}" DataContext="{Binding Status}"></TextBlock>
+                <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" 
+                           Text="{Binding Status, Converter={x:Static Converters:EnumToTextConverter.Default}}"></TextBlock>
             </Grid>
             <Grid Background="#272519">
                 <Grid.ColumnDefinitions>

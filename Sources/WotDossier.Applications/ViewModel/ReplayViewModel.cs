@@ -281,18 +281,7 @@ namespace WotDossier.Applications.ViewModel
                 TimeSpan userbattleLength = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                 UserBattleTime = userbattleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
-                if (replay.datablock_battle_result.common.winnerTeam == replayUser.Team)
-                {
-                    Status = BattleStatus.Win;
-                }
-                else if (replay.datablock_battle_result.common.winnerTeam < 1)
-                {
-                    Status = BattleStatus.Draw;
-                }
-                else
-                {
-                    Status = BattleStatus.Loose;
-                }
+                Status = (BattleStatus) replay.CommandResult.Damage.isWinner;
 
                 return true;
             }

@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Dal;
 using WotDossier.Domain.Replay;
 
@@ -43,7 +44,7 @@ namespace WotDossier.Applications
                 Credits = replay.CommandResult.Damage.credits;
                 DamageDealt = replay.CommandResult.Damage.damageDealt;
                 DamageReceived = replay.CommandResult.Damage.damageReceived;
-                IsWinner = replay.CommandResult.Damage.isWinner;
+                IsWinner = (BattleStatus) replay.CommandResult.Damage.isWinner;
                 Xp = replay.CommandResult.Damage.xp;
                 Killed = replay.CommandResult.Damage.killed.Count;
                 Damaged = replay.CommandResult.Damage.damaged.Count;
@@ -77,7 +78,7 @@ namespace WotDossier.Applications
 
         public int Xp { get; set; }
 
-        public int IsWinner { get; set; }
+        public BattleStatus IsWinner { get; set; }
 
         public int DamageReceived { get; set; }
 

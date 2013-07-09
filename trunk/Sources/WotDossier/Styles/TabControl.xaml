@@ -26,7 +26,7 @@
                                 <RowDefinition Height="0.2*" />
                                 <RowDefinition Height="0.8*" />
                             </Grid.RowDefinitions>
-                            <Border Name="tabControlMainBorder" Grid.Row="0" Background="{StaticResource tabControlDefaultBackgroundBrush}" BorderBrush="{StaticResource tabControlDefaultBorderBrush}" BorderThickness="1" CornerRadius="0,2,2,2" Grid.RowSpan="3" />
+                            <Border Name="tabControlMainBorder" Grid.Row="0" Background="{StaticResource tabControlDefaultBackgroundBrush}" BorderBrush="{StaticResource tabControlDefaultBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,2,2,2" Grid.RowSpan="3" />
                         </Grid>
                         <Border Grid.Row="1" Grid.Column="1" Background="{TemplateBinding Background}" Opacity="0.3" />
                         <Border Name="Border" Grid.Row="1" Grid.Column="1" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2">

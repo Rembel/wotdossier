@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:wotDossier="clr-namespace:WotDossier"
+             xmlns:Converters="clr-namespace:WotDossier.Converters"
              xmlns:controls="clr-namespace:WotDossier.Controls" xmlns:Resources="clr-namespace:WotDossier.Resources"
              xmlns:tabs="clr-namespace:WotDossier.Tabs"
              mc:Ignorable="d" 
@@ -21,333 +21,45 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
         <TabControl Grid.Column="1" Background="Transparent" Margin="40" BorderThickness="0">
-            <TabItem Header="Боевая эффективность">
+            <TabControl.Resources>
+                <Style TargetType="TabPanel">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
-                            <TextBlock Foreground="White" FontSize="32" FontFamily="Arial Narrow" Text="{Binding Name}" HorizontalAlignment="Center"></TextBlock>
-                            <Grid>
+                            <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding Name}" HorizontalAlignment="Center"></TextBlock>
+                            <Grid Margin="10" HorizontalAlignment="Center">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"></RowDefinition>
                                     <RowDefinition Height="Auto"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="100"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
                                 <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Created, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
                             </Grid>
-                            <controls:ClanView Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}"
+                            <controls:ClanView Margin="10" Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
                                            ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
                                            Days="{Binding Clan.Days}" Position="{Binding Clan.role}" Date="{Binding Clan.since}" Abbreviation="{Binding Clan.abbreviation}" ClanName="{Binding Clan.name}">
                             </controls:ClanView>
                         </StackPanel>
-                        <Grid Width="Auto" HorizontalAlignment="Center">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="25"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="200"></ColumnDefinition>
-                                <ColumnDefinition Width="200"></ColumnDefinition>
-                                <ColumnDefinition Width="150"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Foreground="#FFA759" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="0" Text="{x:Static Resources:Resources.Common_BattlesParticipated}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Text="{Binding BattlesCount, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding BattlesCountDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="1" Grid.Column="2" Text="{Binding BattlesCountDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Victories}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="1" DataContext="{Binding}">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueNearestPercentFormater.Default}" >
-                                        <Binding Path="Wins" />
-                                        <Binding Path="WinsPercent" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="{Binding WinsPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="2" Grid.Column="2">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
-                                        <Binding Path="WinsDelta" />
-                                        <Binding Path="WinsPercentDelta" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Defeats}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="1">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValuePercentFormater.Default}" >
-                                        <Binding Path="Losses" />
-                                        <Binding Path="LossesPercent" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="{Binding LossesPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=true}" TextAlignment="Right" Grid.Row="3" Grid.Column="2">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
-                                        <Binding Path="LossesDelta" />
-                                        <Binding Path="LossesPercentDelta" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="{x:Static Resources:Resources.Common_BattlesSurvived}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="1">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueNearestPercentFormater.Default}" >
-                                        <Binding Path="SurvivedBattles" />
-                                        <Binding Path="SurvivedBattlesPercent" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="{Binding SurvivedBattlesPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="4" Grid.Column="2">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
-                                        <Binding Path="SurvivedBattlesDelta" />
-                                        <Binding Path="SurvivedBattlesPercentDelta" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-
-                            <TextBlock Foreground="#FFA759" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_Experience}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-                            <!--TotalExperience-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="0" Text="{x:Static Resources:Resources.Common_TotalExperience}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="1" Text="{Binding Xp, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding XpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="6" Grid.Column="2" Text="{Binding XpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--AvgExperience-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgExperience}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="7" Grid.Column="1" Text="{Binding AvgXp, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding AvgXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="7" Grid.Column="2" Text="{Binding AvgXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--MaxExperience-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="{x:Static Resources:Resources.Common_MaxExperience}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="8" Grid.Column="1" Text="{Binding MaxXp, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding MaxXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="8" Grid.Column="2" Text="{Binding MaxXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-
-                            <TextBlock Foreground="#FFA759" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_BattlePerformance}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-                            <!--Destroyed-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Destroyed}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="10" Grid.Column="1" Text="{Binding Frags, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding FragsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="10" Grid.Column="2" Text="{Binding FragsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--Detected-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Detected}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="11" Grid.Column="1" Text="{Binding Spotted, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding SpottedDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="11" Grid.Column="2" Text="{Binding SpottedDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--HitRatio-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="12" Grid.Column="0" Text="{x:Static Resources:Resources.Common_HitRatio}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="12" Grid.Column="1" Text="{Binding HitsPercents, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding HitsPercentsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="12" Grid.Column="2" Text="{Binding HitsPercentsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--DamageCaused-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DamageCaused}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="13" Grid.Column="1" Text="{Binding DamageDealt, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding DamageDealtDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="13" Grid.Column="2" Text="{Binding DamageDealtDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--CapturePoints-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="14" Grid.Column="0" Text="{x:Static Resources:Resources.Common_CapturePoints}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="14" Grid.Column="1" Text="{Binding CapturePoints, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding CapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="14" Grid.Column="2" Text="{Binding CapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--DefensePoints-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DefensePoints}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="15" Grid.Column="1" Text="{Binding DroppedCapturePoints, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding DroppedCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="15" Grid.Column="2" Text="{Binding DroppedCapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--EffectivityRating-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="16" Grid.Column="0" Text="{x:Static Resources:Resources.Common_EffectivityRating}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="16" Grid.Column="1" Text="{Binding EffRating, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="16" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--Wn6Rating-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Wn6Rating}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="17" Grid.Column="1" Text="{Binding WN6Rating, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="17" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <!--KievArmorRating-->
-                            <TextBlock Foreground="#BABFBA" Grid.Row="18" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="18" Grid.Column="1" Text="{Binding KievArmorRating, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="18" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                        </Grid>
+                        <controls:StatisticView  Width="Auto" HorizontalAlignment="Center"></controls:StatisticView>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Rating">
-                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                        <Grid Width="Auto" HorizontalAlignment="Center">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid Background="Black" Grid.Row="0" HorizontalAlignment="Stretch">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"></ColumnDefinition>
-                                    <ColumnDefinition Width="300"></ColumnDefinition>
-                                    <ColumnDefinition Width="100"></ColumnDefinition>
-                                    <ColumnDefinition Width="50"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Foreground="#BABFBA" FontFamily="sans-serif" FontSize="17" Grid.Column="1"
-                                           Text="{x:Static Resources:Resources.Common_RatingHeader_Rating}">
-                                </TextBlock>
-                                <TextBlock Foreground="#BABFBA" FontFamily="sans-serif" FontSize="17" Grid.Column="2"
-                                           Text="{x:Static Resources:Resources.Common_RatingHeader_Value}">
-                                </TextBlock>
-                                <TextBlock Foreground="#BABFBA" FontFamily="sans-serif" FontSize="17" Grid.Column="3"
-                                           Text="{x:Static Resources:Resources.Common_RatingHeader_Place}">
-                                </TextBlock>
-                            </Grid>
-                            <!--GR-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/gr.png" Grid.Row="1"
-                                                  ShortName="GR"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_GlobalRating}"
-                                                  Value="{Binding Rating_IntegratedValue}"
-                                                  Place="{Binding Rating_IntegratedPlace}"
-                                                  ValueDelta="{Binding Rating_IntegratedValueDelta}"
-                                                  PlaceDelta="{Binding Rating_IntegratedPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_IntegratedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--W/B-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/wb.png" Grid.Row="2"
-                                                  ShortName="W/B"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_VictoriesBattles}"
-                                                  Value="{Binding Rating_BattleAvgPerformanceValue}"
-                                                  Place="{Binding Rating_BattleAvgPerformancePlace}"
-                                                  ValueDelta="{Binding Rating_BattleAvgPerformanceValueDelta}"
-                                                  PlaceDelta="{Binding Rating_BattleAvgPerformancePlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattleAvgPerformanceValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--E/B-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/eb.png" Grid.Row="3"
-                                                  ShortName="E/B"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_AvgExperience}"
-                                                  Value="{Binding Rating_BattleAvgXpValue}"
-                                                  Place="{Binding Rating_BattleAvgXpPlace}"
-                                                  ValueDelta="{Binding Rating_BattleAvgXpValueDelta}"
-                                                  PlaceDelta="{Binding Rating_BattleAvgXpPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--WIN-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/win.png" Grid.Row="4"
-                                                  ShortName="WIN"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_Victories}"
-                                                  Value="{Binding Rating_BattleWinsValue}"
-                                                  Place="{Binding Rating_BattleWinsPlace}"
-                                                  ValueDelta="{Binding Rating_BattleWinsValueDelta}"
-                                                  PlaceDelta="{Binding Rating_BattleWinsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--GPL-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/gpl.png" Grid.Row="5"
-                                                  ShortName="GPL"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_BattlesParticipated}"
-                                                  Value="{Binding Rating_BattlesValue}"
-                                                  Place="{Binding Rating_BattlesPlace}"
-                                                  ValueDelta="{Binding Rating_BattlesValueDelta}"
-                                                  PlaceDelta="{Binding Rating_BattlesPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattlesValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--CPT-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/cpt.png" Grid.Row="6"
-                                                  ShortName="CPT"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_CapturePoints}"
-                                                  Value="{Binding Rating_CapturedPointsValue}"
-                                                  Place="{Binding Rating_CapturedPointsPlace}"
-                                                  ValueDelta="{Binding Rating_CapturedPointsValueDelta}"
-                                                  PlaceDelta="{Binding Rating_CapturedPointsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_CapturedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_CapturedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--DMG-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/dmg.png" Grid.Row="7"
-                                                  ShortName="DMG"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_DamageCaused}"
-                                                  Value="{Binding Rating_DamageDealtValue}"
-                                                  Place="{Binding Rating_DamageDealtPlace}"
-                                                  ValueDelta="{Binding Rating_DamageDealtValueDelta}"
-                                                  PlaceDelta="{Binding Rating_DamageDealtPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_DamageDealtValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--DPT-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/dpt.png" Grid.Row="8"
-                                                  ShortName="DPT"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_DefensePoints}"
-                                                  Value="{Binding Rating_DroppedPointsValue}"
-                                                  Place="{Binding Rating_DroppedPointsPlace}"
-                                                  ValueDelta="{Binding Rating_DroppedPointsValueDelta}"
-                                                  PlaceDelta="{Binding Rating_DroppedPointsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_DroppedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_DroppedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--FRG-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/frg.png" Grid.Row="9"
-                                                  ShortName="FRG"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_TargetsDestroyed}"
-                                                  Value="{Binding Rating_FragsValue}"
-                                                  Place="{Binding Rating_FragsPlace}"
-                                                  ValueDelta="{Binding Rating_FragsValueDelta}"
-                                                  PlaceDelta="{Binding Rating_FragsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_FragsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_FragsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--SPT-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/spt.png" Grid.Row="10"
-                                                  ShortName="SPT"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_TargetsDetected}"
-                                                  Value="{Binding Rating_SpottedValue}"
-                                                  Place="{Binding Rating_SpottedPlace}"
-                                                  ValueDelta="{Binding Rating_SpottedValueDelta}"
-                                                  PlaceDelta="{Binding Rating_SpottedPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_SpottedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                            <!--EXP-->
-                            <wotDossier:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
-                                                  ShortName="EXP"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_TotalExperience}"
-                                                  Value="{Binding Rating_XpValue}"
-                                                  Place="{Binding Rating_XpPlace}"
-                                                  ValueDelta="{Binding Rating_XpValueDelta}"
-                                                  PlaceDelta="{Binding Rating_XpPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_XpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_XpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                            </wotDossier:RatingRow>
-                        </Grid>
-                    </StackPanel>
-                </Grid>
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
+                <controls:RatingView></controls:RatingView>
             </TabItem>
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod">
-                    <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
+                <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
             </TabItem>
         </TabControl>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
-        xmlns:tabs="clr-namespace:WotDossier.Tabs"
+        xmlns:tabs="clr-namespace:WotDossier.Tabs" xmlns:controls="clr-namespace:WotDossier.Controls"
         Title="{Binding TankStatistic.Tank}" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png">
     <Window.Resources>
         <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="None" />
@@ -18,167 +18,46 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
         <StackPanel Background="{StaticResource bcolorCenter}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
-                <Grid>
+            <Grid>
                 <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
-                </Grid>
-                <TabControl Name="tabControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <!--Common tab-->
-                    <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabCommon">
-                        <Grid HorizontalAlignment="Center" DataContext="{Binding TankStatistic}" Background="Transparent">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="25"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="200"></ColumnDefinition>
-                                <ColumnDefinition Width="200"></ColumnDefinition>
-                                <ColumnDefinition Width="150"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Foreground="#FFA759" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="0" Text="{x:Static Resources:Resources.Common_BattlesParticipated}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Text="{Binding BattlesCount, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding BattlesCountDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="1" Grid.Column="2" Text="{Binding BattlesCountDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Victories}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="1" DataContext="{Binding}">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueNearestPercentFormater.Default}" >
-                                        <Binding Path="Wins" />
-                                        <Binding Path="WinsPercent" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="{Binding WinsPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="2" Grid.Column="2">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
-                                        <Binding Path="WinsDelta" />
-                                        <Binding Path="WinsPercentDelta" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="3" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Defeats}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="3" Grid.Column="1">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValuePercentFormater.Default}" >
-                                        <Binding Path="Losses" />
-                                        <Binding Path="LossesPercent" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="{Binding LossesPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=true}" TextAlignment="Right" Grid.Row="3" Grid.Column="2">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
-                                        <Binding Path="LossesDelta" />
-                                        <Binding Path="LossesPercentDelta" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="4" Grid.Column="0" Text="{x:Static Resources:Resources.Common_BattlesSurvived}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="4" Grid.Column="1">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueNearestPercentFormater.Default}" >
-                                        <Binding Path="SurvivedBattles" />
-                                        <Binding Path="SurvivedBattlesPercent" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock Foreground="{Binding SurvivedBattlesPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="4" Grid.Column="2">
-                                <TextBlock.Text>
-                                    <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
-                                        <Binding Path="SurvivedBattlesDelta" />
-                                        <Binding Path="SurvivedBattlesPercentDelta" />
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-
-                            <TextBlock Foreground="#FFA759" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_Experience}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="0" Text="{x:Static Resources:Resources.Common_TotalExperience}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="1" Text="{Binding Xp, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding XpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="6" Grid.Column="2" Text="{Binding XpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgExperience}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="7" Grid.Column="1" Text="{Binding BattleAvgXp, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding BattleAvgXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="7" Grid.Column="2" Text="{Binding BattleAvgXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="{x:Static Resources:Resources.Common_MaxExperience}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="8" Grid.Column="1" Text="{Binding MaxXp, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding MaxXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="8" Grid.Column="2" Text="{Binding MaxXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-
-                            <TextBlock Foreground="#FFA759" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_BattlePerformance}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Destroyed}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="10" Grid.Column="1" Text="{Binding Frags, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding FragsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="10" Grid.Column="2" Text="{Binding FragsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Detected}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="11" Grid.Column="1" Text="{Binding Spotted, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding SpottedDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="11" Grid.Column="2" Text="{Binding SpottedDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="12" Grid.Column="0" Text="{x:Static Resources:Resources.Common_HitRatio}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="12" Grid.Column="1" Text="{Binding HitsPercents, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding HitsPercentsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="12" Grid.Column="2" Text="{Binding HitsPercentsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DamageCaused}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="13" Grid.Column="1" Text="{Binding DamageDealt, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding DamageDealtDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="13" Grid.Column="2" Text="{Binding DamageDealtDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="14" Grid.Column="0" Text="{x:Static Resources:Resources.Common_CapturePoints}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="14" Grid.Column="1" Text="{Binding CapturePoints, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding CapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="14" Grid.Column="2" Text="{Binding CapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DefensePoints}"></TextBlock>
-                            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="15" Grid.Column="1" Text="{Binding DroppedCapturePoints, StringFormat='### ### ### ###'}"></TextBlock>
-                            <TextBlock Foreground="{Binding DroppedCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="15" Grid.Column="2" Text="{Binding DroppedCapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                        <!--EffectivityRating-->
-                        <TextBlock Foreground="#BABFBA" Grid.Row="16" Grid.Column="0" Text="{x:Static Resources:Resources.Common_EffectivityRating}"></TextBlock>
-                        <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="16" Grid.Column="1" Text="{Binding EffRating, StringFormat='### ### ### ###'}"></TextBlock>
-                        <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="16" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                        <!--Wn6Rating-->
-                        <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Wn6Rating}"></TextBlock>
-                        <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="17" Grid.Column="1" Text="{Binding WN6Rating, StringFormat='### ### ### ###'}"></TextBlock>
-                        <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="17" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                        <!--KievArmorRating-->
-                        <TextBlock Foreground="#BABFBA" Grid.Row="18" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
-                        <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="18" Grid.Column="1" Text="{Binding KievArmorRating, StringFormat='### ### ### ###'}"></TextBlock>
-                        <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="18" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
-                    </Grid>
-                    </TabItem>
-                    <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod" VerticalAlignment="Stretch">
-                        <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
-                    </TabItem>
-                    <!--Charts-->
-                    <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
-                        <ScrollViewer>
-                            <StackPanel>
-                                <Grid>
-                                    <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
+            </Grid>
+            <TabControl Name="tabControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TabControl.Resources>
+                    <Style TargetType="TabPanel">
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                    </Style>
+                </TabControl.Resources>
+                <!--Common tab-->
+                <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabCommon">
+                    <controls:StatisticView  HorizontalAlignment="Center" DataContext="{Binding TankStatistic}" Background="Transparent"></controls:StatisticView>
+                </TabItem>
+                <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod" VerticalAlignment="Stretch">
+                    <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
+                </TabItem>
+                <!--Charts-->
+                <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
+                    <ScrollViewer>
+                        <StackPanel>
+                            <Grid>
+                                <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
                                       Margin="10,10,0,10">
-                                    </d3:ChartPlotter>
-                                </Grid>
-                                <Grid>
-                                    <d3:ChartPlotter Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
+                                </d3:ChartPlotter>
+                            </Grid>
+                            <Grid>
+                                <d3:ChartPlotter Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
                                       Margin="10,10,0,10">
-                                    </d3:ChartPlotter>
-                                </Grid>
-                                <Grid>
-                                    <d3:ChartPlotter Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
+                                </d3:ChartPlotter>
+                            </Grid>
+                            <Grid>
+                                <d3:ChartPlotter Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
                                       Margin="10,10,0,10">
-                                    </d3:ChartPlotter>
-                                </Grid>
-                            </StackPanel>
-                        </ScrollViewer>
-                    </TabItem>
-                </TabControl>
-            </StackPanel>
+                                </d3:ChartPlotter>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
     </Grid>
 </Window>

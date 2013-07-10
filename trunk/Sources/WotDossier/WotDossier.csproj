@@ -126,6 +126,12 @@
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RatingView.xaml.cs">
+      <DependentUpon>RatingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatisticView.xaml.cs">
+      <DependentUpon>StatisticView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TextWithImage.xaml.cs">
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
@@ -259,6 +265,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ClanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RatingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatisticView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

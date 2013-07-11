@@ -1,6 +1,14 @@
 ﻿namespace WotDossier.Domain.Tank
 {
-    public class FragsJson
+    public interface ITankFilterable
+    {
+        int CountryId { get; set; }
+        int Type { get; set; }
+        string Tank { get; set; }
+        double Tier { get; set; }
+    }
+
+    public class FragsJson : ITankFilterable
     {
         public int CountryId { get; set; }
 
@@ -18,6 +26,6 @@
 
         public string Tank { get; set; }
 
-        public int Tier { get; set; }
+        public double Tier { get; set; }
     }
 }

@@ -87,7 +87,7 @@ namespace WotDossier.Applications.ViewModel
 
         public IEnumerable<TankStatisticRowViewModel> Tanks
         {
-            get { return _tanks; }
+            get { return TankFilter.Filter(_tanks); }
             set
             {
                 _tanks = value;
@@ -115,6 +115,7 @@ namespace WotDossier.Applications.ViewModel
 
         private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
         private ObservableCollection<ReplayFile> _replays;
+        private TankFilterViewModel _tankFilter;
 
         public ObservableCollection<SellInfo> LastUsedTanks
         {
@@ -174,6 +175,20 @@ namespace WotDossier.Applications.ViewModel
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
+
+            TankFilter = new TankFilterViewModel();
+            TankFilter.PropertyChanged += TankFilterOnPropertyChanged;
+        }
+
+        private void TankFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            RaisePropertyChanged("Tanks");
+        }
+
+        public TankFilterViewModel TankFilter
+        {
+            get { return _tankFilter; }
+            set { _tankFilter = value; }
         }
 
         private void OnReplayRowDelete(object rowData)
@@ -347,7 +362,7 @@ namespace WotDossier.Applications.ViewModel
         private void InitLastUsedTanksChart()
         {
             LastUsedTanks.Clear();
-            IEnumerable<TankStatisticRowViewModel> viewModels = Tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate);
+            IEnumerable<TankStatisticRowViewModel> viewModels = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate);
             IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
             LastUsedTanks.AddMany(items);
         }
@@ -421,7 +436,7 @@ namespace WotDossier.Applications.ViewModel
 
                     InitMasterTankerList(tanks);
 
-                    FraggsCount.Init(Tanks.ToList());
+                    FraggsCount.Init(_tanks.ToList());
                 };
 
             //System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);

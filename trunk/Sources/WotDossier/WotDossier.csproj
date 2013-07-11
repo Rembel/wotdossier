@@ -132,6 +132,9 @@
     <Compile Include="Controls\StatisticView.xaml.cs">
       <DependentUpon>StatisticView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TankFilterPanel.xaml.cs">
+      <DependentUpon>TankFilterPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TextWithImage.xaml.cs">
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
@@ -273,6 +276,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\StatisticView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TankFilterPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

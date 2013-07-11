@@ -8,7 +8,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 {
     public class TankStatisticRowViewModel : PeriodStatisticViewModel<TankStatisticRowViewModel>, ITankRowBattleAwards, ITankRowBattles, ITankRowDamage, ITankRowEpic, 
                            ITankRowFrags, ITankRowMasterTanker, ITankRowMedals, ITankRowPerformance, ITankRowRatings, ITankRowSeries, 
-                           ITankRowSpecialAwards, ITankRowTime, ITankRowXP
+                           ITankRowSpecialAwards, ITankRowTime, ITankRowXP, ITankFilterable
     {
         private DateTime _lastBattle;
         private IEnumerable<FragsJson> _tankFrags;
@@ -19,7 +19,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public string Tank { get; set; }
 
-        public int TankType { get; set; }
+        public int Type { get; set; }
 
         public int CountryId { get; set; }
 
@@ -330,7 +330,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         public TankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list) : base(Utils.UnixDateToDateTime(tank.Common.updated), list.Select(x => new TankStatisticRowViewModel(x)).ToList())
         {
             Tier = tank.Common.tier;
-            TankType = tank.Common.type;
+            Type = tank.Common.type;
             Tank = tank.Common.tanktitle;
             Icon = tank.Icon;
             CountryId = tank.Common.countryid;

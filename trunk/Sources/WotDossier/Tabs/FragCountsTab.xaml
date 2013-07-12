@@ -32,7 +32,7 @@
             <TextBlock Grid.Row="2" Text="Types"></TextBlock>
             <TextBlock Grid.Row="3" Text="Country"></TextBlock>
 
-            <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Tanks}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250"></ComboBox>
+            <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250"></ComboBox>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
                 <CheckBox Margin="6,3,6,3" Content="1"  IsChecked="{Binding Level1Selected}"></CheckBox>

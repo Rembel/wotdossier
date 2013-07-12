@@ -90,7 +90,7 @@ namespace WotDossier.Applications.ViewModel
             get { return TankFilter.Filter(_tanks); }
             set
             {
-                _tanks = value;
+                _tanks = value.ToList();
                 RaisePropertyChanged("Tanks");
             }
         }
@@ -432,7 +432,7 @@ namespace WotDossier.Applications.ViewModel
 
                     IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity);
 
-                    Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank);
+                    Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
 
                     InitMasterTankerList(tanks);
 

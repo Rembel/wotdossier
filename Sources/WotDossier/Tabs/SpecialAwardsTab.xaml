@@ -6,11 +6,17 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <controls:TankFilterPanel DataContext="{Binding TankFilter}">
+        </controls:TankFilterPanel>
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgSpecialAwards" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

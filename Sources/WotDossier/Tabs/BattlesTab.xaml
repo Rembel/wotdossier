@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

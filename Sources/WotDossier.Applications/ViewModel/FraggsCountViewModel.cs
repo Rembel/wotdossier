@@ -22,6 +22,7 @@ namespace WotDossier.Applications.ViewModel
 
     public class FraggsCountViewModel : TankFilterViewModel
     {
+        private const string TANK_FRAGS_PROPERTY_NAME = "TankFrags";
         private IEnumerable<FragsJson> _tankFrags;
         private KeyValue<int, string> _selectedTank;
 
@@ -33,7 +34,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _selectedTank = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged(TANK_FRAGS_PROPERTY_NAME);
             }
         }
 
@@ -43,7 +44,16 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _tankFrags = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged(TANK_FRAGS_PROPERTY_NAME);
+            }
+        }
+
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (!TANK_FRAGS_PROPERTY_NAME.Equals(propertyName))
+            {
+                OnPropertyChanged(TANK_FRAGS_PROPERTY_NAME);
             }
         }
 

@@ -37,7 +37,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level10Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level10Selected");
             }
         }
 
@@ -47,7 +47,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level9Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level9Selected");
             }
         }
 
@@ -57,7 +57,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level8Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level8Selected");
             }
         }
 
@@ -67,7 +67,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level7Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level7Selected");
             }
         }
 
@@ -77,7 +77,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level6Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level6Selected");
             }
         }
 
@@ -87,7 +87,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level5Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level5Selected");
             }
         }
 
@@ -97,7 +97,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level4Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level4Selected");
             }
         }
 
@@ -107,7 +107,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level3Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level3Selected");
             }
         }
 
@@ -117,7 +117,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level1Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level2Selected");
             }
         }
 
@@ -127,7 +127,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _level1Selected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("Level1Selected");
             }
         }
 
@@ -137,7 +137,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _spgSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("SPGSelected");
             }
         }
 
@@ -147,7 +147,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _tdSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("TDSelected");
             }
         }
 
@@ -157,7 +157,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _htSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("HTSelected");
             }
         }
 
@@ -167,7 +167,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _mtSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("MTSelected");
             }
         }
 
@@ -177,7 +177,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _ltSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("LTSelected");
             }
         }
 
@@ -187,7 +187,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _ussrSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("USSRSelected");
             }
         }
 
@@ -197,7 +197,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _germanySelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("GermanySelected");
             }
         }
 
@@ -207,7 +207,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _usSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("USSelected");
             }
         }
 
@@ -217,7 +217,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _chinaSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("ChinaSelected");
             }
         }
 
@@ -227,7 +227,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _franceSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("FranceSelected");
             }
         }
 
@@ -237,7 +237,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _ukSelected = value;
-                OnPropertyChanged("TankFrags");
+                OnPropertyChanged("UKSelected");
             }
         }
 

@@ -1178,4 +1178,46 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Replay_TeamMember_HideResultButton" xml:space="preserve">
     <value>Скрыть</value>
   </data>
+  <data name="TankFilterPanel_Levels" xml:space="preserve">
+    <value>Уровни</value>
+  </data>
+  <data name="TankFilterPanel_Types" xml:space="preserve">
+    <value>Типы</value>
+  </data>
+  <data name="TankFilterPanel_Country" xml:space="preserve">
+    <value>Страны</value>
+  </data>
+  <data name="TankType_LT" xml:space="preserve">
+    <value>ЛТ</value>
+  </data>
+  <data name="TankType_MT" xml:space="preserve">
+    <value>СТ</value>
+  </data>
+  <data name="TankType_HT" xml:space="preserve">
+    <value>ТТ</value>
+  </data>
+  <data name="TankType_TD" xml:space="preserve">
+    <value>ПТ-САУ</value>
+  </data>
+  <data name="TankType_SPG" xml:space="preserve">
+    <value>САУ</value>
+  </data>
+  <data name="Country_USSR" xml:space="preserve">
+    <value>СССР</value>
+  </data>
+  <data name="Country_Germany" xml:space="preserve">
+    <value>Германия</value>
+  </data>
+  <data name="Country_US" xml:space="preserve">
+    <value>США</value>
+  </data>
+  <data name="Country_China" xml:space="preserve">
+    <value>Китай</value>
+  </data>
+  <data name="Country_France" xml:space="preserve">
+    <value>Франция</value>
+  </data>
+  <data name="Country_UK" xml:space="preserve">
+    <value>Великобритания</value>
+  </data>
 </root>

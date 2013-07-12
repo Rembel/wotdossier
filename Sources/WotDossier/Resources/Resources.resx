@@ -1064,4 +1064,46 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Replay_TeamMember_HideResultButton" xml:space="preserve">
     <value>Hide</value>
   </data>
+  <data name="TankFilterPanel_Levels" xml:space="preserve">
+    <value>Levels</value>
+  </data>
+  <data name="TankFilterPanel_Types" xml:space="preserve">
+    <value>Types</value>
+  </data>
+  <data name="TankFilterPanel_Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="TankType_LT" xml:space="preserve">
+    <value>LT</value>
+  </data>
+  <data name="TankType_MT" xml:space="preserve">
+    <value>MT</value>
+  </data>
+  <data name="TankType_HT" xml:space="preserve">
+    <value>HT</value>
+  </data>
+  <data name="TankType_TD" xml:space="preserve">
+    <value>TD</value>
+  </data>
+  <data name="TankType_SPG" xml:space="preserve">
+    <value>SPG</value>
+  </data>
+  <data name="Country_USSR" xml:space="preserve">
+    <value>USSR</value>
+  </data>
+  <data name="Country_Germany" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="Country_US" xml:space="preserve">
+    <value>US</value>
+  </data>
+  <data name="Country_China" xml:space="preserve">
+    <value>China</value>
+  </data>
+  <data name="Country_France" xml:space="preserve">
+    <value>France</value>
+  </data>
+  <data name="Country_UK" xml:space="preserve">
+    <value>UK</value>
+  </data>
 </root>

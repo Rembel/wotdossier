@@ -139,6 +139,7 @@
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\KievArmorRatingToColorConverter.cs" />
     <Compile Include="Converters\EnumToTextConverter.cs" />
     <Compile Include="Converters\ObjectToCollapseConverter.cs" />
     <Compile Include="Converters\MedalIconImageConverter.cs" />
@@ -1192,6 +1193,18 @@
     <Resource Include="Resources\Images\tile.png" />
     <Resource Include="Resources\Images\Replays\FinalStatistic_linedraw.png" />
     <Resource Include="Resources\Images\Replays\FinalStatistic_picdraw.png" />
+    <Resource Include="Resources\Images\Maps\85_winter.png" />
+    <Resource Include="Resources\Images\Tanks\germany_e-25.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb25_loyd_carrier.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb26_birch_gun.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb27_sexton.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb28_bishop.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb29_crusader_5inch.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb30_fv3805.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb31_conqueror_gun.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb77_fv304.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb79_fv206.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_mt25.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

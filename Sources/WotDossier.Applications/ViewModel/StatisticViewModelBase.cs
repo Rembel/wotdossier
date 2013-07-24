@@ -1,9 +1,10 @@
 ﻿using System;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public abstract class StatisticViewModelBase
+    public abstract class StatisticViewModelBase : IRating
     {
         private DateTime _updated;
         public int BattlesCount { get; set; }

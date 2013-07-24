@@ -55,11 +55,11 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
-                <controls:RatingView></controls:RatingView>
-            </TabItem>
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod">
                 <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
+            </TabItem>
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
+                <controls:RatingView></controls:RatingView>
             </TabItem>
         </TabControl>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>

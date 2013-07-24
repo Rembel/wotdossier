@@ -264,14 +264,21 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public double TierForInterval
+        {
+            get
+            {
+                return (Tier * BattlesCount - PrevStatistic.Tier * PrevStatistic.BattlesCount) / BattlesCountDelta;
+            }
+        }
+
         public double EffRatingForPeriod
         {
             get
             {
                 if (BattlesCountDelta > 0)
                 {
-                    double tier = (BattlesCount*Tier - PrevStatistic.BattlesCount*PrevStatistic.Tier)/BattlesCountDelta;
-                    return RatingHelper.CalcER(AvgDamageDealtForPeriod, tier, AvgFragsForPeriod, AvgSpottedForPeriod,
+                    return RatingHelper.CalcER(AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
                                                AvgCapturePointsForPeriod, AvgDroppedCapturePointsForPeriod);
                 }
                 return 0;
@@ -284,8 +291,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    double tier = (BattlesCount*Tier - PrevStatistic.BattlesCount*PrevStatistic.Tier)/BattlesCountDelta;
-                    return RatingHelper.CalcWN6(AvgDamageDealtForPeriod, tier, AvgFragsForPeriod, AvgSpottedForPeriod,
+                    return RatingHelper.CalcWN6(AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
                                                 AvgDroppedCapturePointsForPeriod, WinsPercentForPeriod);
                 }
                 return 0;
@@ -404,7 +410,7 @@ namespace WotDossier.Applications.ViewModel
                     break;
 
                     case StatisticPeriod.LastWeek:
-                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated >= DateTime.Now.AddDays(-7));
+                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
                     break;
 
                     case StatisticPeriod.AllObservationPeriod:

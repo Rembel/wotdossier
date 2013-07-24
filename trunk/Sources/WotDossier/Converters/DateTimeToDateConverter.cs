@@ -21,7 +21,7 @@ namespace WotDossier.Converters
         {
             if (value != null)
             {
-                return ((DateTime)value).ToString("MM/dd/yyyy");
+                return ((DateTime)value).ToString("dd.MM.yyyy");
             }
             return value;
         }

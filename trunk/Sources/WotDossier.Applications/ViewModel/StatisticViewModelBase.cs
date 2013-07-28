@@ -179,6 +179,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public double XEFF
+        {
+            get { return RatingHelper.XEFF(EffRating); }
+        }
+
+        public double XWN
+        {
+            get { return RatingHelper.XWN(WN6Rating); }
+        }
+
         #endregion
         
         /// <summary>

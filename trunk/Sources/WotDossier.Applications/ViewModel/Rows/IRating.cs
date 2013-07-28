@@ -5,5 +5,7 @@
         double EffRating { get; }
         double WN6Rating { get; }
         double KievArmorRating { get; }
+        double XEFF { get; }
+        double XWN { get; }
     }
 }

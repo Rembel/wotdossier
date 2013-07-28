@@ -104,8 +104,8 @@
             <TextBlock Foreground="{Binding XpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="6" Grid.Column="2" Text="{Binding XpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--BattleAvgXp-->
             <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgExperience}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="7" Grid.Column="1" Text="{Binding BattleAvgXp, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding BattleAvgXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="7" Grid.Column="2" Text="{Binding BattleAvgXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="7" Grid.Column="1" Text="{Binding AvgXp, StringFormat='### ### ### ###'}"></TextBlock>
+            <TextBlock Foreground="{Binding AvgXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="7" Grid.Column="2" Text="{Binding AvgXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--MaxXp-->
             <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="{x:Static Resources:Resources.Common_MaxExperience}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="8" Grid.Column="1" Text="{Binding MaxXp, StringFormat='### ### ### ###'}"></TextBlock>

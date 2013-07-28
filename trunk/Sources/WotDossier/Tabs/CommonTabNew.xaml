@@ -44,7 +44,7 @@
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
                                 <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Created, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
                             </Grid>
                             <controls:ClanView Margin="10" Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
                                            ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"

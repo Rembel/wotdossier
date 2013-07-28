@@ -531,6 +531,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Data\dossier.sqlce" />
+    <None Include="Data\vstat.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1242,7 +1245,7 @@
     <Resource Include="Resources\Images\spt.png" />
     <Resource Include="Resources\Images\wb.png" />
     <Resource Include="Resources\Images\win.png" />
-    <None Include="stat.json">
+    <None Include="Data\stat.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Resource Include="Resources\Images\64x64_v3.png" />

@@ -209,7 +209,7 @@ namespace WotDossier.Dal
             
 #if DEBUG
             long playerId = 10800699;
-            using (StreamReader streamReader = new StreamReader(@"stat.json"))
+            using (StreamReader streamReader = new StreamReader(@"Data\stat.json"))
 #else
             PlayerSearchJson player = null;
 
@@ -382,6 +382,17 @@ namespace WotDossier.Dal
                 return new Replay { datablock_1 = firstBlock, CommandResult = commandResult };
             }
             return null;
+        }
+
+        public Dictionary<string, VStat> ReadVstat()
+        {
+            using (StreamReader streamReader = new StreamReader(@"Data\vstat.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(streamReader);
+                JsonSerializer se = new JsonSerializer();
+                var parsedData = se.Deserialize<Dictionary<string, VStat>>(reader);
+                return parsedData;
+            }
         }
     }
 }

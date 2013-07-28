@@ -57,5 +57,15 @@ def = dropped_capture_points / bc (среднее количество очко�
             double d = (avgWonBattles*K_AvgWonBattles) + (avgFrags*K_AvgFrags) + (avgSpot*K_AvgSpotted) + (avgCap*K_AvgCapPoints) + (avgDef*K_AvgDefPoints);
             return log10 * (avgXP * khp + avgDamage * d);
         }
+
+        public static double XWN(double wn6)
+        {
+            return wn6>2200 ? 100 : Math.Max(Math.Min( wn6*(wn6*(wn6*(-0.00000000001268*wn6 + 0.00000005147) - 0.00006418) + 0.07576) - 7.25, 100), 0);
+        }
+
+        public static double XEFF(double eff)
+        {
+            return eff<400 ? 0 : Math.Max(Math.Min(eff*(eff*(eff*(eff*(eff*(0.000000000000000045254*eff - 0.00000000000033131) + 0.00000000094164) - 0.0000013227) + 0.00095664) - 0.2598) + 13.23, 100), 0);
+        }
     }
 }

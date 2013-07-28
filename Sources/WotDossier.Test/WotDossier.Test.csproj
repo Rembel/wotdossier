@@ -92,6 +92,10 @@
       <Link>amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\Data\vstat.json">
+      <Link>Data\vstat.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\bz2.pyd">
       <Link>External\bz2.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -349,5 +349,73 @@ namespace WotDossier.Test
             int res = 67108864 >> 24 & 255;
             int res1 = 65552 >> 12 & 4095;
         }
+
+        [Test]
+        public void TEffTest()
+        {
+            Dictionary<string, VStat> vstat = WotApiClient.Instance.ReadVstat();
+
+            VStat stat = vstat["is_3"];
+
+            //корректирующие коэффициенты, которые задаются для каждого типа и уровня танка согласно матрице 
+            //(на время тестов можно изменять эти коэффициенты в конфиге в секции "consts")
+            double Kf = 1;
+            double Kd = 3;
+            double Ks = 1;
+            double Kmin = 0.4;
+
+            double Dmax = stat.topD;
+            double Smax = stat.topS;
+            double Fmax = stat.topF;
+
+            double Davg = stat.avgD;
+            double Savg = stat.avgS;
+            double Favg = stat.avgF;
+            
+            double Dmin = Davg*Kmin;
+            double Smin = Savg*Kmin;
+            double Fmin = Favg*Kmin;
+            
+            //параметры текущего игрока для текущего танка (дамаг)
+            double Dt = 2399248.0/1631.0;
+            double D = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) :
+                           1 + (Dt - Davg) / (Davg - Dmin);
+
+            //параметры текущего игрока для текущего танка (фраги)
+            double Ft = 1813.0/1631.0;
+            double F = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) :
+                           1 + (Ft - Favg) / (Favg - Fmin);
+
+            double St = 1525.0 / 1631.0;
+            double S = St > Savg ? 1 + (St - Savg) / (Smax - Savg) :
+                           1 + (St - Savg) / (Savg - Smin);
+
+            double TEFF = (D*Kd + F*Kf + S*Ks)/(Kd + Kf + Ks)*1000;
+
+            Console.WriteLine(TEFF);
+
+            double D2 = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) : Dt / Davg;
+
+            double F2 = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) : Ft / Favg;
+
+            double S2 = St > Savg ? 1 + (St - Savg) / (Smax - Savg) : St / Savg;
+
+            double TEFF2 = (D2*Kd + F2*Kf + S2*Ks)/(Kd + Kf + Ks)*1000;
+
+            Console.WriteLine(TEFF2);
+        }
+
+        [Test]
+        public void VStatReadTest()
+        {
+            Dictionary<string, VStat> vstat = WotApiClient.Instance.ReadVstat();
+        }
+
+        [Test]
+        public void XVMTest()
+        {
+            double xeff = RatingHelper.XEFF(1257);
+            double xwn = RatingHelper.XWN(1318);
+        }
     }
 }

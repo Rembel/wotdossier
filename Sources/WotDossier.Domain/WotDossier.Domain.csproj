@@ -87,6 +87,7 @@
     <Compile Include="Tank\TankJson.cs" />
     <Compile Include="Tank\TankDataJson.cs" />
     <Compile Include="Tank\TankInfo.cs" />
+    <Compile Include="VStat.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">

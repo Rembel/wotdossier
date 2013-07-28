@@ -20,7 +20,7 @@
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
         <StackPanel Grid.Column="1" Background="{StaticResource bcolorCenter}" Orientation="Vertical">
             <TextBlock Foreground="#FFA759" FontFamily="sans-serif" FontSize="25" Margin="0, 25, 0, 25" HorizontalAlignment="Center" 
-                       Text="{Binding PreviousDate, StringFormat='Сравнение с данными за {0:dd.MM.yyyy}'}"></TextBlock>
+                       Text="{Binding PreviousDate, StringFormat='Сравнение с данными за {0:dd.MM.yyyy HH:mm}'}"></TextBlock>
             <Grid Width="Auto" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>

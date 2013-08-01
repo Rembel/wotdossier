@@ -311,7 +311,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         #region [ ITankRowTime ]
         public DateTime LastBattle
         {
-            get { return _lastBattle.ToLocalTime(); }
+            get { return _lastBattle; }
             set { _lastBattle = value; }
         }
 
@@ -454,7 +454,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             #region [ ITankRowTime ]
-            LastBattle = Utils.UnixDateToDateTime(tank.Tankdata.lastBattleTime);
+            LastBattle = tank.Common.lastBattleTimeR;
             PlayTime = new TimeSpan(0, 0, 0, tank.Tankdata.battleLifeTime);
             if (tank.Tankdata.battlesCount > 0)
             {

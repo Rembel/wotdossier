@@ -44,6 +44,7 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Entities\DbVersionEntity.cs" />
+    <Compile Include="Entities\PlayerStatAdapter.cs" />
     <Compile Include="Entities\TankEntity.cs" />
     <Compile Include="Entities\TankStatisticEntity.cs" />
     <Compile Include="Map.cs" />

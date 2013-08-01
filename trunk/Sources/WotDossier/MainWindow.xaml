@@ -4,6 +4,9 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+        xmlns:Converters="clr-namespace:WotDossier.Converters"
         Title="WotDossier" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/app_icon.ico">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
@@ -17,6 +20,30 @@
                 <ScrollViewer>
                     <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
                 </ScrollViewer>
+            </TabItem>
+            <TabItem>
+                <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AverageDamage}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KillDeathRatio}" Binding="{Binding KillDeathRatio, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" CellStyle="{StaticResource DataGridCellEffStyle}" Binding="{Binding EffRating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_WN6}" CellStyle="{StaticResource DataGridCellWn6Style}" Binding="{Binding WN6Rating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="XVM" CellStyle="{StaticResource DataGridCellXvmStyle}" Binding="{Binding XWN, StringFormat='0.0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_DamageRatingRev1}" Binding="{Binding DamageRatingRev1}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KievArmorRating}" Binding="{Binding KievArmorRating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
+                    </DataGrid.Columns>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </DataGrid>
             </TabItem>
             <!--Charts-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">

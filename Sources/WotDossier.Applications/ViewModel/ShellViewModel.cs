@@ -374,6 +374,16 @@ namespace WotDossier.Applications.ViewModel
             IEnumerable<TankStatisticRowViewModel> viewModels = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate);
             IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo { TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta });
             LastUsedTanks.AddMany(items);
+            RaisePropertyChanged("LastUsedTanksList");
+        }
+
+        public List<TankStatisticRowViewModel> LastUsedTanksList
+        {
+            get
+            {
+                List<TankStatisticRowViewModel> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
+                return list;
+            }
         }
 
         private PlayerStatisticViewModel InitPlayerStatisticViewModel(PlayerStat playerStat, List<TankJson> tanks)

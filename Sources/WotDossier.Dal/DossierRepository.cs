@@ -4,7 +4,6 @@ using System.ComponentModel.Composition;
 using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
-using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Tank;
@@ -33,7 +32,7 @@ namespace WotDossier.Dal
             _dataProvider = dataProvider;
         }
 
-        public IEnumerable<PlayerStatisticEntity> GetPlayerStatistic(string playerName)
+        public IEnumerable<PlayerStatisticEntity> GetPlayerStatistic(int playerId)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -44,7 +43,7 @@ namespace WotDossier.Dal
             {
                 list = _dataProvider.QueryOver(() => statistic)
                                     .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                                    .Where(x => player.Name == playerName).List<PlayerStatisticEntity>();
+                                    .Where(x => player.PlayerId == playerId).List<PlayerStatisticEntity>();
                 _dataProvider.CommitTransaction();
             }
             catch (Exception e)
@@ -59,40 +58,51 @@ namespace WotDossier.Dal
             return list;
         }
 
-        public PlayerEntity UpdatePlayerStatistic(string playerId, PlayerStat stat)
+        public PlayerEntity UpdatePlayerStatistic(PlayerStat stat, List<TankJson> tanks)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
             PlayerEntity playerEntity = null;
+
             try
             {
-                string name = stat.data.name;
-                int id = stat.data.id;
-                DateTime creaded = Utils.UnixDateToDateTime((long)stat.data.created_at);
-
-                playerEntity = GetOrCreatePlayer(playerId, name, id, creaded);
+                playerEntity = GetOrCreatePlayer(stat);
 
                 PlayerStatisticEntity statisticEntity = _dataProvider.QueryOver<PlayerStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
                                                .Desc.Take(1)
                                                .SingleOrDefault<PlayerStatisticEntity>();
-                DateTime updated = Utils.UnixDateToDateTime((long) stat.data.updated_at).Date;
+
+                //init server stat adapter
+                PlayerStatAdapter serverStat = new PlayerStatAdapter(stat);
+                //init local stat adapter
+                PlayerStatAdapter localStat = new PlayerStatAdapter(tanks);
+
+                //by default using server statistic
+                PlayerStatAdapter playerStatAdapter = serverStat;
+
+                //but if in local statistic battle count more then in server 
+                if (localStat.Battles_count > serverStat.Battles_count)
+                {
+                    //use local
+                    playerStatAdapter = localStat;
+                }
+
                 //create new record
                 if (statisticEntity == null ||
-                    (statisticEntity.Updated.Date != updated.Date && statisticEntity.BattlesCount < stat.data.summary.Battles_count))
+                    (statisticEntity.Updated.Date != playerStatAdapter.Updated.Date && statisticEntity.BattlesCount < playerStatAdapter.Battles_count))
                 {
                     statisticEntity = new PlayerStatisticEntity();
                     statisticEntity.PlayerId = playerEntity.Id;
-                    statisticEntity.Update(stat);
-                    _dataProvider.Save(statisticEntity);
+                    statisticEntity.Update(stat, playerStatAdapter);
                 }
                 //update current date record
-                else if (statisticEntity.Updated.Date == updated.Date)
+                else if (statisticEntity.Updated.Date == playerStatAdapter.Updated.Date)
                 {
-                    statisticEntity.Update(stat);
-                    _dataProvider.Save(statisticEntity);
+                    statisticEntity.Update(stat, playerStatAdapter);
                 }
-
+            
+                _dataProvider.Save(statisticEntity);
                 _dataProvider.CommitTransaction();
             }
             catch (Exception e)
@@ -109,10 +119,15 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        public PlayerEntity GetOrCreatePlayer(string playerId, string name, int id, DateTime creaded)
+        private PlayerEntity GetOrCreatePlayer(PlayerStat stat)
+        {
+            return GetOrCreatePlayer(stat.data.name, stat.data.id, Utils.UnixDateToDateTime((long)stat.data.created_at));
+        }
+
+        public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
         {
             PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>()
-                                        .Where(x => x.Name == playerId)
+                                        .Where(x => x.PlayerId == id)
                                         .Take(1)
                                         .SingleOrDefault<PlayerEntity>();
 
@@ -128,27 +143,12 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        public PlayerEntity UpdateTankStatistic(string playerName, List<TankJson> tanks)
+        public PlayerEntity UpdateTankStatistic(PlayerStat player, List<TankJson> tanks)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
 
-            PlayerSearchJson player;
-            try
-            {
-                player = WotApiClient.Instance.SearchPlayer(new AppSettings { PlayerId = playerName, Server = "ru" }) ?? 
-                         WotApiClient.Instance.SearchPlayer(new AppSettings { PlayerId = playerName, Server = "eu" });
-            }
-            catch (Exception e)
-            {
-                _log.Error("Can't get player info from server", e);
-                return null;
-            }
-
-            string name = player.name;
-            int id = player.id;
-            DateTime creaded = Utils.UnixDateToDateTime((long)player.created_at);
-            PlayerEntity playerEntity = GetOrCreatePlayer(playerName, name, id, creaded);
+            PlayerEntity playerEntity = GetOrCreatePlayer(player);
 
             try
             {

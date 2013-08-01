@@ -40,7 +40,7 @@ namespace WotDossier.Applications.ViewModel
         private PlayerStatisticViewModel _playerStatistic;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
         private IEnumerable<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
-        
+
         #region [ Properties ]
 
         public ChartPlotter ChartRating
@@ -57,7 +57,7 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return ViewTyped.ChartAvgDamage; }
         }
-        
+
         public DelegateCommand LoadCommand { get; set; }
 
         public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
@@ -171,7 +171,7 @@ namespace WotDossier.Applications.ViewModel
             OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
             OnReplayRowUploadCommand = new DelegateCommand<object>(OnReplayRowUpload);
-            OnReplayRowDeleteCommand = new DelegateCommand<object>(OnReplayRowDelete); 
+            OnReplayRowDeleteCommand = new DelegateCommand<object>(OnReplayRowDelete);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
@@ -247,7 +247,7 @@ namespace WotDossier.Applications.ViewModel
                 {
                     MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                
+
                 Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
                 if (ValidateReplayData(replay))
                 {
@@ -285,22 +285,29 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnLoad()
         {
-            PlayerStatistic = GetPlayerStatistic();
+            AppSettings settings = SettingsReader.Get();
 
-            if (PlayerStatistic != null)
+            PlayerStat playerStat = LoadPlayerStatistic(settings);
+
+            if (playerStat != null && playerStat.data.name.Equals(settings.PlayerId, StringComparison.InvariantCultureIgnoreCase))
             {
-                InitChart();
+                FileInfo cacheFile = CacheHelper.GetCacheFile(playerStat.data.name);
 
-                FileInfo cacheFile = CacheHelper.GetCacheFile(PlayerStatistic.Name);
+                List<TankJson> tanks;
 
                 if (cacheFile != null)
                 {
                     //convert dossier cache file to json
                     CacheHelper.BinaryCacheToJson(cacheFile);
                     Thread.Sleep(1000);
-                    InitTanksStatistic(cacheFile);
+
+                    tanks = LoadTanks(cacheFile);
+
+                    PlayerStatistic = InitPlayerStatisticViewModel(playerStat, tanks);
+                    InitTanksStatistic(playerStat, tanks);
+
+                    InitChart();
                     InitLastUsedTanksChart();
-                    LoadReplaysList();
                 }
                 else
                 {
@@ -308,6 +315,8 @@ namespace WotDossier.Applications.ViewModel
                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
+
+            LoadReplaysList();
         }
 
         private void LoadReplaysList()
@@ -363,21 +372,46 @@ namespace WotDossier.Applications.ViewModel
         {
             LastUsedTanks.Clear();
             IEnumerable<TankStatisticRowViewModel> viewModels = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate);
-            IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo {TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta});
+            IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo { TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta });
             LastUsedTanks.AddMany(items);
         }
 
-        private PlayerStatisticViewModel GetPlayerStatistic()
+        private PlayerStatisticViewModel InitPlayerStatisticViewModel(PlayerStat playerStat, List<TankJson> tanks)
         {
-            AppSettings settings = SettingsReader.Get();
+            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(playerStat, tanks);
+
+            var statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
+
+            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+            List<PlayerStatisticViewModel> oldStatisticEntities =
+                statisticEntities.Where(x => x.Id != currentStatistic.Id)
+                                 .Select(x => new PlayerStatisticViewModel(x)).ToList();
+
+            PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic,
+                                                                                              oldStatisticEntities);
+            currentStatisticViewModel.Name = player.Name;
+            currentStatisticViewModel.Created = player.Creaded;
+            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount/
+                                                      (DateTime.Now - player.Creaded).Days;
+
+            if (playerStat.data.clan.clan != null)
+            {
+                currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
+            }
+
+            return currentStatisticViewModel;
+        }
+
+        private static PlayerStat LoadPlayerStatistic(AppSettings settings)
+        {
+            PlayerStat playerStat = null;
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
-                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK,
+                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
+                                MessageBoxButton.OK,
                                 MessageBoxImage.Warning);
                 return null;
             }
-
-            PlayerStat playerStat = null;
 
             try
             {
@@ -386,60 +420,35 @@ namespace WotDossier.Applications.ViewModel
             catch (Exception e)
             {
                 _log.Error(e);
-                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
+                                MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            if (playerStat != null && playerStat.data.name.Equals(settings.PlayerId, StringComparison.InvariantCultureIgnoreCase))
-            {
-                PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(settings.PlayerId, playerStat);
-
-                var statisticEntities = _dossierRepository.GetPlayerStatistic(settings.PlayerId).ToList();
-
-                PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-                List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                    .Select(x => new PlayerStatisticViewModel(x)).ToList();
-
-                PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
-                currentStatisticViewModel.Name = player.Name;
-                currentStatisticViewModel.Created = player.Creaded;
-                currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
-
-                if (playerStat.data.clan.clan != null)
-                {
-                    currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
-                }
-
-                return currentStatisticViewModel;
-            }
-            return null;
+            return playerStat;
         }
 
-        private void InitTanksStatistic(FileInfo cacheFile)
+        private void InitTanksStatistic(PlayerStat playerStat, List<TankJson> tanks)
         {
-           // Action act = () =>
-                {
-                    var playerName = CacheHelper.GetPlayerName(cacheFile);
+            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(playerStat, tanks);
 
-                    List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+            if (playerEntity == null)
+            {
+                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-                    PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(playerName, tanks);
+            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity);
 
-                    if (playerEntity == null)
-                    {
-                        MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                        return;
-                    }
+            Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
 
-                    IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity);
+            InitMasterTankerList(tanks);
 
-                    Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
+            FraggsCount.Init(_tanks.ToList());
+        }
 
-                    InitMasterTankerList(tanks);
-
-                    FraggsCount.Init(_tanks.ToList());
-                };
-
-            //System.Windows.Threading.Dispatcher.CurrentDispatcher.BeginInvoke(act);
+        private static List<TankJson> LoadTanks(FileInfo cacheFile)
+        {
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+            return tanks;
         }
 
         private void InitMasterTankerList(List<TankJson> tanks)

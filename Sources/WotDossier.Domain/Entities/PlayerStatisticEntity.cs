@@ -267,6 +267,7 @@ namespace WotDossier.Domain.Entities
             CapturePoints = statAdapter.Capture_points;
             DroppedCapturePoints = statAdapter.Dropped_capture_points;
             Updated = statAdapter.Updated;
+            AvgLevel = statAdapter.AvgLevel;
 
             #endregion
 
@@ -318,8 +319,6 @@ namespace WotDossier.Domain.Entities
             RatingXpPlace = stat.data.ratings.Xp.Place ?? 0;
 
             #endregion
-
-            AvgLevel = stat.data.vehicles.Sum(x => x.level * x.battle_count) / (double)stat.data.summary.Battles_count;
         }
     }
 }

@@ -139,6 +139,7 @@
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\KievArmorRatingToColorConverter.cs" />
     <Compile Include="Converters\EnumToTextConverter.cs" />
     <Compile Include="Converters\ObjectToCollapseConverter.cs" />
@@ -1208,6 +1209,7 @@
     <Resource Include="Resources\Images\Tanks\uk_gb77_fv304.png" />
     <Resource Include="Resources\Images\Tanks\uk_gb79_fv206.png" />
     <Resource Include="Resources\Images\Tanks\ussr_mt25.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_ltp.png" />
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

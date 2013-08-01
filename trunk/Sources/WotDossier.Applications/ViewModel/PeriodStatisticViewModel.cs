@@ -152,6 +152,11 @@ namespace WotDossier.Applications.ViewModel
             get { return KievArmorRating - PrevStatistic.KievArmorRating; }
         }
 
+        public double XvmRatingDelta
+        {
+            get { return XEFF - PrevStatistic.XEFF; }
+        }
+
         #endregion
 
         #region Average values

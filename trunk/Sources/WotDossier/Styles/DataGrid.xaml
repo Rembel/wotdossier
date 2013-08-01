@@ -216,6 +216,10 @@
         <Setter Property="Background" Value="{Binding Path=., Converter={x:Static Converters:WN6ToColorConverter.Default}}" />
     </Style>
 
+    <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=., Converter={x:Static Converters:XvmRatingToColorConverter.Default}}" />
+    </Style>
+
     <!--<Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="true">

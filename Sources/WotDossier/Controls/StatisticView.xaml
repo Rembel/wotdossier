@@ -34,6 +34,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="25"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -161,15 +162,19 @@
             <!--EffectivityRating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="22" Grid.Column="0" Text="{x:Static Resources:Resources.Common_EffectivityRating}"></TextBlock>
             <TextBlock Foreground="{Binding Path=., Converter={x:Static Converters:EffectivityToColorConverter.Default}}" TextAlignment="Right" Grid.Row="22" Grid.Column="1" Text="{Binding EffRating, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="22" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="22" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--Wn6Rating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="23" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Wn6Rating}"></TextBlock>
             <TextBlock Foreground="{Binding Path=., Converter={x:Static Converters:WN6ToColorConverter.Default}}" TextAlignment="Right" Grid.Row="23" Grid.Column="1" Text="{Binding WN6Rating, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="23" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="23" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--KievArmorRating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="24" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
             <TextBlock Foreground="{Binding Path=., Converter={x:Static Converters:KievArmorRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="1" Text="{Binding KievArmorRating, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
+            <!--KievArmorRating-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="25" Grid.Column="0" Text="XVM"></TextBlock>
+            <TextBlock Foreground="{Binding Path=., Converter={x:Static Converters:XvmRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="1" Text="{Binding XEFF, StringFormat='0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding XvmRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="2" Text="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
         </Grid>
     </Grid>
 </UserControl>

@@ -371,18 +371,18 @@ namespace WotDossier.Test
             double Davg = stat.avgD;
             double Savg = stat.avgS;
             double Favg = stat.avgF;
-            
-            double Dmin = Davg*Kmin;
-            double Smin = Savg*Kmin;
-            double Fmin = Favg*Kmin;
-            
+
+            double Dmin = Davg * Kmin;
+            double Smin = Savg * Kmin;
+            double Fmin = Favg * Kmin;
+
             //параметры текущего игрока для текущего танка (дамаг)
-            double Dt = 2399248.0/1631.0;
+            double Dt = 2399248.0 / 1631.0;
             double D = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) :
                            1 + (Dt - Davg) / (Davg - Dmin);
 
             //параметры текущего игрока для текущего танка (фраги)
-            double Ft = 1813.0/1631.0;
+            double Ft = 1813.0 / 1631.0;
             double F = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) :
                            1 + (Ft - Favg) / (Favg - Fmin);
 
@@ -390,7 +390,7 @@ namespace WotDossier.Test
             double S = St > Savg ? 1 + (St - Savg) / (Smax - Savg) :
                            1 + (St - Savg) / (Savg - Smin);
 
-            double TEFF = (D*Kd + F*Kf + S*Ks)/(Kd + Kf + Ks)*1000;
+            double TEFF = (D * Kd + F * Kf + S * Ks) / (Kd + Kf + Ks) * 1000;
 
             Console.WriteLine(TEFF);
 
@@ -400,7 +400,7 @@ namespace WotDossier.Test
 
             double S2 = St > Savg ? 1 + (St - Savg) / (Smax - Savg) : St / Savg;
 
-            double TEFF2 = (D2*Kd + F2*Kf + S2*Ks)/(Kd + Kf + Ks)*1000;
+            double TEFF2 = (D2 * Kd + F2 * Kf + S2 * Ks) / (Kd + Kf + Ks) * 1000;
 
             Console.WriteLine(TEFF2);
         }
@@ -416,6 +416,65 @@ namespace WotDossier.Test
         {
             double xeff = RatingHelper.XEFF(1257);
             double xwn = RatingHelper.XWN(1318);
+        }
+
+        [Test]
+        public void NoobMeterPerformanceRatingAlgorithmTest()
+        {
+            //Win rate component
+            double expectedWinrate = 0.4856;
+            double winrateWeight = 500;
+
+            double playerWinrate = 54.54;
+            double winrateRatio = playerWinrate / expectedWinrate;
+            double winrateComponent = winrateRatio * winrateWeight;
+
+            //Damage component
+            double expectedDamage = 1300/*sum of all individual tank expected damages*/;
+            //double individualTankExpectedDamage = battles*tankNominalDamage;
+            double playerDamage = 1155;
+            double damageRatio = playerDamage / expectedDamage;
+            double damageWeight = 1000;
+            double damageComponent = damageRatio * damageWeight;
+
+            //
+            //First penalty threshold:
+            double clearedFromPenalties1 = 1500;
+            double expectedMinBattles1 = 500;
+            double expectedMinAvgTier1 = 6;
+
+            //Second penalty threshold:
+            double clearedFromPenalties2 = 1900;
+            double expectedMinBattles2 = 2000;
+            double expectedMinAvgTier2 = 7;
+
+            //Tying it together
+            double beforePenalties = winrateComponent + damageComponent;
+            double performanceRating = beforePenalties; // with "seal-clubbing" penalties applied
+
+            double avgTier = 7.16;
+            double battles = 4769;
+
+            //Here is the penalties logic (applied twice for each of the two sets of penalty parameters):
+            double subjectToPenalties = beforePenalties - clearedFromPenalties1;
+            double lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier1));
+            double lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles1));
+            double whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
+            double totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
+            double afterPenalties = subjectToPenalties * (1 - totalPenalty);
+            double result = (clearedFromPenalties1 + afterPenalties);
+
+            beforePenalties = result;
+
+            subjectToPenalties = beforePenalties - clearedFromPenalties2;
+            lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier2));
+            lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles2));
+            whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
+            totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
+            afterPenalties = subjectToPenalties * (1 - totalPenalty);
+            result = (clearedFromPenalties2 + afterPenalties);
+
+            Console.WriteLine(result);
         }
     }
 }

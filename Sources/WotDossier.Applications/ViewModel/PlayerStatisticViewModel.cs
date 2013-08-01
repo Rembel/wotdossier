@@ -201,14 +201,6 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        public double TierForInterval
-        {
-            get
-            {
-                return (Tier * BattlesCount - PrevStatistic.Tier * PrevStatistic.BattlesCount) / BattlesCountDelta;
-            }
-        }
-
         public PlayerStatisticClanViewModel Clan { get; set; }
 
         public PlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())

@@ -94,13 +94,15 @@ namespace WotDossier.Dal
                 {
                     statisticEntity = new PlayerStatisticEntity();
                     statisticEntity.PlayerId = playerEntity.Id;
-                    statisticEntity.Update(stat, playerStatAdapter);
+                    statisticEntity.Update(playerStatAdapter);
                 }
                 //update current date record
                 else if (statisticEntity.Updated.Date == playerStatAdapter.Updated.Date)
                 {
-                    statisticEntity.Update(stat, playerStatAdapter);
+                    statisticEntity.Update(playerStatAdapter);
                 }
+
+                statisticEntity.UpdateRatings(stat);
             
                 _dataProvider.Save(statisticEntity);
                 _dataProvider.CommitTransaction();

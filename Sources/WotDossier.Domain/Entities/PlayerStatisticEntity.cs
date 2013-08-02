@@ -249,7 +249,7 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public virtual double AvgLevel { get; set; }
 
-        public virtual void Update(PlayerStat stat, PlayerStatAdapter statAdapter)
+        public virtual void Update(PlayerStatAdapter statAdapter)
         {
             #region CommonJson init
 
@@ -270,7 +270,10 @@ namespace WotDossier.Domain.Entities
             AvgLevel = statAdapter.AvgLevel;
 
             #endregion
+        }
 
+        public virtual void UpdateRatings(PlayerStat stat)
+        {
             #region Ratings init
 
             //GR-->

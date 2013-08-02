@@ -6,6 +6,9 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters"
              xmlns:controls="clr-namespace:WotDossier.Controls" xmlns:Resources="clr-namespace:WotDossier.Resources"
              xmlns:tabs="clr-namespace:WotDossier.Tabs"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+             xmlns:View="clr-namespace:WotDossier"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="900">
     <UserControl.Resources>
@@ -56,7 +59,27 @@
                 </Grid>
             </TabItem>
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod">
-                <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
+                <StackPanel Orientation="Vertical" >
+                    <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
+                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding DataContext.LastUsedTanksList, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MainWindow}}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCountDelta}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercentForPeriod, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AvgDamageDealtForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_FragsPerBattle}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" CellStyle="{StaticResource DataGridCellEffStyle}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_WN6}" CellStyle="{StaticResource DataGridCellWn6Style}" Binding="{Binding WN6RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseDoubleClick">
+                                <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=DataContext.OnRowDoubleClickCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MainWindow}, Mode=OneWay}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </DataGrid>
+                </StackPanel>
             </TabItem>
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
                 <controls:RatingView></controls:RatingView>

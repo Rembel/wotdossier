@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Windows;
 using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
@@ -52,12 +53,18 @@ namespace WotDossier.Applications.ViewModel
         public TankStatisticViewModel([Import(typeof(ITankStatisticView))]ITankStatisticView view)
             : base(view)
         {
+            ViewTyped.Loaded += OnShellViewActivated;
+        }
+
+        private void OnShellViewActivated(object sender, RoutedEventArgs e)
+        {
+            ViewTyped.Loaded -= OnShellViewActivated;
+            InitChart(TankStatistic.GetAll());
         }
 
         public virtual void Show()
         {
-            ViewTyped.Show();
-            InitChart(TankStatistic.GetAll());
+            ViewTyped.ShowDialog();
         }
 
         private void InitChart(IEnumerable<StatisticViewModelBase> statisticViewModels)

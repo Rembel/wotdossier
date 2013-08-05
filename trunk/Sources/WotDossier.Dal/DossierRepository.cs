@@ -74,19 +74,19 @@ namespace WotDossier.Dal
                                                .SingleOrDefault<PlayerStatisticEntity>();
 
                 //init server stat adapter
-                PlayerStatAdapter serverStat = new PlayerStatAdapter(stat);
+                //PlayerStatAdapter serverStat = new PlayerStatAdapter(stat);
                 //init local stat adapter
                 PlayerStatAdapter localStat = new PlayerStatAdapter(tanks);
 
                 //by default using server statistic
-                PlayerStatAdapter playerStatAdapter = serverStat;
+                PlayerStatAdapter playerStatAdapter = localStat;
 
                 //but if in local statistic battle count more then in server 
-                if (localStat.Battles_count > serverStat.Battles_count)
-                {
-                    //use local
-                    playerStatAdapter = localStat;
-                }
+                //if (localStat.Battles_count > serverStat.Battles_count)
+                //{
+                //    //use local
+                //    playerStatAdapter = localStat;
+                //}
 
                 //create new record
                 if (statisticEntity == null ||
@@ -173,7 +173,7 @@ namespace WotDossier.Dal
                         tankEntity.Tier = tank.Common.tier;
                         TankStatisticEntity statisticEntity = new TankStatisticEntity();
                         statisticEntity.TankIdObject = tankEntity;
-                        statisticEntity.Update(tank);
+                        Update(statisticEntity, tank);
                         tankEntity.TankStatisticEntities.Add(statisticEntity);
                         _dataProvider.Save(tankEntity);
                     }
@@ -188,18 +188,25 @@ namespace WotDossier.Dal
                                 && tankAlias.CountryId == tank.Common.countryid)
                             .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<TankStatisticEntity>();
                         DateTime updated = tank.Common.lastBattleTimeR.Date;
+
+                        TankJson prevTank = null;
+                        if (statisticEntity != null)
+                        {
+                            prevTank = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
+                        }
+
                         //create new record
-                        if (statisticEntity == null || statisticEntity.Updated < updated)
+                        if (statisticEntity == null || statisticEntity.Updated != updated && prevTank.Tankdata.battlesCount < tank.Tankdata.battlesCount)
                         {
                             statisticEntity = new TankStatisticEntity();
                             statisticEntity.TankIdObject = tankEntity;
-                            statisticEntity.Update(tank);
+                            Update(statisticEntity, tank);
                             _dataProvider.Save(statisticEntity);
                         }
                         //update current date record
                         else if (statisticEntity.Updated.Date == updated)
                         {
-                            statisticEntity.Update(tank);
+                            Update(statisticEntity, tank);
                             _dataProvider.Save(statisticEntity);
                         }
                     }
@@ -221,6 +228,13 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
+        }
+
+        public virtual void Update(TankStatisticEntity statisticEntity, TankJson tank)
+        {
+            statisticEntity.Updated = tank.Common.lastBattleTimeR;
+            statisticEntity.Version = tank.Common.basedonversion;
+            statisticEntity.Raw = tank.Raw;
         }
 
         public IEnumerable<TankStatisticEntity> GetTanksStatistic(PlayerEntity player)

@@ -270,6 +270,10 @@
       <Link>External\wotrpbr2j.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\WotDossier\Updates\2013080601.sql">
+      <Link>Updates\2013080601.sql</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\WotDossier\x86\Microsoft.VC90.CRT\msvcr90.dll">
       <Link>x86\Microsoft.VC90.CRT\msvcr90.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

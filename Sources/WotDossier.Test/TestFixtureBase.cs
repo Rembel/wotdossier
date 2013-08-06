@@ -13,6 +13,7 @@ using NUnit.Framework;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Applications;
+using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -475,6 +476,13 @@ namespace WotDossier.Test
             result = (clearedFromPenalties2 + afterPenalties);
 
             Console.WriteLine(result);
+        }
+
+        [Test]
+        public void UpdateTest()
+        {
+            DatabaseManager manager = new DatabaseManager();
+            manager.Update();
         }
     }
 }

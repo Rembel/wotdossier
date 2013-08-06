@@ -196,7 +196,7 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         public DateTime Updated
         {
-            get { return _updated.ToLocalTime(); }
+            get { return _updated; }
             set { _updated = value; }
         }
 

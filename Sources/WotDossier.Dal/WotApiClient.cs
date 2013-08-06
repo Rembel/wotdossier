@@ -207,7 +207,7 @@ namespace WotDossier.Dal
                 return null;
             }
             
-#if DEBUG
+#if !DEBUG
             long playerId = 10800699;
             using (StreamReader streamReader = new StreamReader(@"Data\stat.json"))
 #else

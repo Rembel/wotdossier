@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Reflection;
 
 namespace WotDossier.Applications
 {
@@ -17,6 +16,12 @@ namespace WotDossier.Applications
         public static string GetReplaysFolder()
         {
             return SettingsReader.Get().ReplaysFolderPath;
+        }
+
+        public static string AssemblyDirectory()
+        {
+            var uri = new UriBuilder(Assembly.GetExecutingAssembly().CodeBase);
+            return Path.GetDirectoryName(Uri.UnescapeDataString(uri.Path));
         }
     }
 }

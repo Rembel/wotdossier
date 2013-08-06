@@ -83,7 +83,10 @@
       <DependentUpon>Resources.ru-RU.resx</DependentUpon>
     </Compile>
     <Compile Include="SettingsReader.cs" />
+    <Compile Include="Update\CodeUpdateBase.cs" />
     <Compile Include="Update\DatabaseManager.cs" />
+    <Compile Include="Update\SqlUpdate.cs" />
+    <Compile Include="Update\IDbUpdate.cs" />
     <Compile Include="ViewModel\BattleStatus.cs" />
     <Compile Include="ViewModel\CombatTarget.cs" />
     <Compile Include="MedalHelper.cs" />

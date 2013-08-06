@@ -11,7 +11,7 @@ namespace WotDossier.Applications.Update
     {
         public void Update()
         {
-            List<DbUpdate> updates = GetDbUpdates();
+            List<IDbUpdate> updates = GetDbUpdates();
 
             long version = GetCurrentDbVersion();
 
@@ -108,41 +108,18 @@ namespace WotDossier.Applications.Update
             }
         }
 
-        private List<DbUpdate> GetDbUpdates()
+        private List<IDbUpdate> GetDbUpdates()
         {
+            var type = typeof(CodeUpdateBase);
+            var types = type.Assembly.GetTypes().Where(type.IsAssignableFrom);
+
             string currentDirectory = Folder.AssemblyDirectory();
             string[] strings = Directory.GetFiles(Path.Combine(currentDirectory, "Updates"), "*.sql");
 
-            return strings.Select(x => new DbUpdate(x)).OrderBy(x => x.Version).ToList();
-        }
-    }
+            List<IDbUpdate> updates = strings.Select(x => (IDbUpdate)new SqlUpdate(x)).ToList();
+            updates.AddRange(types.Select(Activator.CreateInstance).Cast<IDbUpdate>());
 
-    public interface IDbUpdate
-    {
-        long Version { get; set; }
-        void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction);
-    }
-
-    public class DbUpdate : IDbUpdate
-    {
-        public DbUpdate(string sqlScriptPath)
-        {
-            FileInfo info = new FileInfo(sqlScriptPath);
-            SqlScript = File.ReadAllText(sqlScriptPath);
-            Version = long.Parse(info.Name.Replace(info.Extension, string.Empty));
-        }
-
-        public long Version { get; set; }
-
-        public string SqlScript { get; set; }
-
-        public void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
-        {
-            SqlCeCommand command = new SqlCeCommand(SqlScript, sqlCeConnection, transaction);
-
-            command.CommandType = CommandType.Text;
-
-            command.ExecuteNonQuery();
+            return updates.OrderBy(x => x.Version).ToList();
         }
     }
 }

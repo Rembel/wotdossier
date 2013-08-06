@@ -156,7 +156,7 @@ namespace WotDossier.Dal
             {
                 IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
 
-                DateTime updated = DateTime.Now;
+                DateTime updated = tanks.Max(x => x.Common.lastBattleTimeR);
                 DateTime updatedDate = updated.Date;
 
                 foreach (TankJson tank in tanks)

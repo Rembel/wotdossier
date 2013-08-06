@@ -34,7 +34,7 @@ namespace WotDossier.Domain.Entities
             Damage_dealt = _tanks.Sum(x => x.Tankdata.damageDealt);
             Capture_points = _tanks.Sum(x => x.Tankdata.capturePoints);
             Dropped_capture_points = _tanks.Sum(x => x.Tankdata.droppedCapturePoints);
-            Updated = _tanks.Max(x => x.Common.lastBattleTimeR).ToUniversalTime();
+            Updated = _tanks.Max(x => x.Common.lastBattleTimeR);
             if (Battles_count > 0)
             {
                 AvgLevel = tanks.Sum(x => x.Common.tier*x.Tankdata.battlesCount)/(double) Battles_count;
@@ -56,7 +56,7 @@ namespace WotDossier.Domain.Entities
             Damage_dealt = stat.data.battles.Damage_dealt;
             Capture_points = stat.data.battles.Capture_points;
             Dropped_capture_points = stat.data.battles.Dropped_capture_points;
-            Updated = Utils.UnixDateToDateTime((long)stat.data.updated_at);
+            Updated = Utils.UnixDateToDateTime((long)stat.data.updated_at).ToLocalTime();
             if (Battles_count > 0)
             {
                 AvgLevel = stat.data.vehicles.Sum(x => x.level*x.battle_count)/(double) stat.data.summary.Battles_count;

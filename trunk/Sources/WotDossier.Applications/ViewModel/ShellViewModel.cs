@@ -371,7 +371,7 @@ namespace WotDossier.Applications.ViewModel
         private void InitLastUsedTanksChart()
         {
             LastUsedTanks.Clear();
-            IEnumerable<TankStatisticRowViewModel> viewModels = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate);
+            IEnumerable<TankStatisticRowViewModel> viewModels = _tanks.Where(x => x.Updated > PlayerStatistic.PreviousDate);
             IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo { TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta });
             LastUsedTanks.AddMany(items);
             RaisePropertyChanged("LastUsedTanksList");

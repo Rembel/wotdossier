@@ -156,6 +156,9 @@ namespace WotDossier.Dal
             {
                 IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
 
+                DateTime updated = DateTime.Now;
+                DateTime updatedDate = updated.Date;
+
                 foreach (TankJson tank in tanks)
                 {
                     TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tank.Common.tankid && x.CountryId == tank.Common.countryid);
@@ -187,8 +190,7 @@ namespace WotDossier.Dal
                                 && tankAlias.TankId == tank.Common.tankid 
                                 && tankAlias.CountryId == tank.Common.countryid)
                             .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<TankStatisticEntity>();
-                        DateTime updated = tank.Common.lastBattleTimeR.Date;
-
+                        
                         TankJson prevTank = null;
                         if (statisticEntity != null)
                         {
@@ -196,16 +198,18 @@ namespace WotDossier.Dal
                         }
 
                         //create new record
-                        if (statisticEntity == null || statisticEntity.Updated != updated && prevTank.Tankdata.battlesCount < tank.Tankdata.battlesCount)
+                        if (statisticEntity == null || statisticEntity.Updated.Date != updatedDate && prevTank.Tankdata.battlesCount < tank.Tankdata.battlesCount)
                         {
                             statisticEntity = new TankStatisticEntity();
                             statisticEntity.TankIdObject = tankEntity;
+                            statisticEntity.Updated = updated;
                             Update(statisticEntity, tank);
                             _dataProvider.Save(statisticEntity);
                         }
                         //update current date record
-                        else if (statisticEntity.Updated.Date == updated)
+                        else if (statisticEntity.Updated.Date == updatedDate)
                         {
+                            statisticEntity.Updated = updated;
                             Update(statisticEntity, tank);
                             _dataProvider.Save(statisticEntity);
                         }

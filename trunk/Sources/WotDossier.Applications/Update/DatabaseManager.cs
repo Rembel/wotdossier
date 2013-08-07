@@ -88,7 +88,7 @@ namespace WotDossier.Applications.Update
                 command.CommandType = CommandType.Text;
                 object result = command.ExecuteScalar();
 
-                if (result == DBNull.Value)
+                if (result == null)
                 {
                     return 0;
                 }
@@ -111,7 +111,7 @@ namespace WotDossier.Applications.Update
         private List<IDbUpdate> GetDbUpdates()
         {
             var type = typeof(CodeUpdateBase);
-            var types = type.Assembly.GetTypes().Where(type.IsAssignableFrom);
+            var types = type.Assembly.GetTypes().Where(type1 => type.IsAssignableFrom(type1) && type1 != type);
 
             string currentDirectory = Folder.AssemblyDirectory();
             string[] strings = Directory.GetFiles(Path.Combine(currentDirectory, "Updates"), "*.sql");

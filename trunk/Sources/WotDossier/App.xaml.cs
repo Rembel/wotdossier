@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
+using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Dal;
 using WotDossier.Domain.Replay;
@@ -49,6 +50,9 @@ namespace WotDossier
             // start application
             try
             {
+                DatabaseManager manager = new DatabaseManager();
+                manager.Update();
+
                 Controller.Run();
 
                 //ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\Documents and Settings\YaroshikPV\Application Data\Wargaming.net\WorldOfTanks\replays\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));

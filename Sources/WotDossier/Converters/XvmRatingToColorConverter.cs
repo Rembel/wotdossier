@@ -16,16 +16,19 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             IRating eff = (IRating)value;
-            if (eff.XEFF >= 93) 
-                return Brushes.Purple;
-            if (eff.XEFF >= 76)
-                return Brushes.CornflowerBlue;
-            if (eff.XEFF >= 53)
-                return Brushes.Lime;
-            if (eff.XEFF >= 34)
-                return Brushes.Yellow;
-            if (eff.XEFF >= 17)
-                return Brushes.DarkOrange;
+            if (eff != null)
+            {
+                if (eff.XEFF >= 93)
+                    return Brushes.Purple;
+                if (eff.XEFF >= 76)
+                    return Brushes.CornflowerBlue;
+                if (eff.XEFF >= 53)
+                    return Brushes.Lime;
+                if (eff.XEFF >= 34)
+                    return Brushes.Yellow;
+                if (eff.XEFF >= 17)
+                    return Brushes.DarkOrange;
+            }
             return Brushes.Red;
         }
 

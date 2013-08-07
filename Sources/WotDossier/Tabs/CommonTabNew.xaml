@@ -70,8 +70,8 @@
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercentForPeriod, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AvgDamageDealtForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_FragsPerBattle}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" CellStyle="{StaticResource DataGridCellEffStyle}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_WN6}" CellStyle="{StaticResource DataGridCellWn6Style}" Binding="{Binding WN6RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_WN6}" Binding="{Binding WN6RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                         </DataGrid.Columns>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="MouseDoubleClick">

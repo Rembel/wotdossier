@@ -1106,4 +1106,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Country_UK" xml:space="preserve">
     <value>UK</value>
   </data>
+  <data name="Settings_ReplaysFolder" xml:space="preserve">
+    <value>Replays folder</value>
+  </data>
 </root>

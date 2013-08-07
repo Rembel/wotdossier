@@ -2,7 +2,6 @@
 using System.Windows;
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
-using WotDossier.Applications.ViewModel;
 
 namespace WotDossier
 {
@@ -18,12 +17,6 @@ namespace WotDossier
 
             // Enable "minimize to tray" behavior for this Window
             MinimizeToTray.Enable(this);
-        }
-
-        private void MenuItemSettings_Click(object sender, RoutedEventArgs e)
-        {
-            SettingsViewModel model = new SettingsViewModel(new Settings());
-            model.Show();
         }
 
         public ChartPlotter ChartRating

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel.Composition;
+using System.Windows;
 using System.Windows.Input;
 using WotDossier.Applications.View;
 
@@ -7,6 +8,8 @@ namespace WotDossier
     /// <summary>
     /// Interaction logic for Settings.xaml
     /// </summary>
+    [PartCreationPolicy(CreationPolicy.NonShared)]
+    [Export(typeof(ISettingsView))]
     public partial class Settings : Window, ISettingsView
     {
         public Settings()

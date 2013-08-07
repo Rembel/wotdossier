@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain
+﻿using System;
+
+namespace WotDossier.Domain
 {
     public class AppSettings
     {
@@ -6,6 +8,7 @@
         private StatisticPeriod _period;
         private string _replaysUploadServerPath = "http://wotreplays.ru/site/upload";
         private string _replaysFolderPath;
+        private DateTime? _prevDate;
         public string PlayerId { get; set; }
         public string Server { get; set; }
 
@@ -31,6 +34,12 @@
         {
             get { return _replaysFolderPath; }
             set { _replaysFolderPath = value; }
+        }
+
+        public DateTime? PrevDate
+        {
+            get { return _prevDate; }
+            set { _prevDate = value; }
         }
     }
 }

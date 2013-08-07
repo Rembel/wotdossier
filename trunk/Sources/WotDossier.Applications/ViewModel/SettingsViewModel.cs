@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
 using WotDossier.Domain;
@@ -8,12 +10,15 @@ using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
 {
+    [PartCreationPolicy(CreationPolicy.NonShared)]
+    [Export(typeof(SettingsViewModel))]
     public class SettingsViewModel : ViewModel<ISettingsView>
     {
         private AppSettings _appSettings;
         private List<string> _servers = new List<string>{"ru", "eu"};
         private List<string> _languages = new List<string>{"ru-RU", "en-US"};
-        private List<StatisticPeriod> _periods = new List<StatisticPeriod>{StatisticPeriod.Recent, StatisticPeriod.LastWeek, StatisticPeriod.AllObservationPeriod};
+        private List<StatisticPeriod> _periods = new List<StatisticPeriod>{StatisticPeriod.Recent, StatisticPeriod.LastWeek, StatisticPeriod.AllObservationPeriod, StatisticPeriod.Custom};
+        private List<DateTime> _prevDates;
         public DelegateCommand SaveCommand { get; set; }
         public DelegateCommand SelectReplaysFolderCommand { get; set; }
 
@@ -40,12 +45,27 @@ namespace WotDossier.Applications.ViewModel
             set { _periods = value; }
         }
 
+        public List<DateTime> PrevDates
+        {
+            get { return _prevDates; }
+            set { _prevDates = value; }
+        }
+
         public StatisticPeriod Period
         {
             get { return AppSettings.Period; }
             set
             {
                 AppSettings.Period = value;
+            }
+        }
+
+        public DateTime? PrevDate
+        {
+            get { return AppSettings.PrevDate; }
+            set
+            {
+                AppSettings.PrevDate = value;
             }
         }
 
@@ -68,7 +88,9 @@ namespace WotDossier.Applications.ViewModel
         /// attaches itself as <c>DataContext</c> to the view.
         /// </summary>
         /// <param name="view">The view.</param>
-        public SettingsViewModel(ISettingsView view) : base(view)
+        [ImportingConstructor]
+        public SettingsViewModel([Import(typeof(ISettingsView))]ISettingsView view)
+            : base(view)
         {
             SaveCommand = new DelegateCommand(OnSave);
             SelectReplaysFolderCommand = new DelegateCommand(OnSelectReplaysFolder);
@@ -88,7 +110,7 @@ namespace WotDossier.Applications.ViewModel
         private void OnSave()
         {
             SettingsReader.Save(_appSettings);
-            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period));
+            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate));
             ViewTyped.Close();
         }
 

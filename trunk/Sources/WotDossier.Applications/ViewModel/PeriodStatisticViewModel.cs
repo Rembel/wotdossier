@@ -396,7 +396,9 @@ namespace WotDossier.Applications.ViewModel
         {
             _list = list;
             Updated = updated;
-            T prevPlayerStatistic = _list.Where(x => x.Updated <= Updated).OrderByDescending(x => x.Updated).FirstOrDefault();
+            
+            AppSettings appSettings = SettingsReader.Get();
+            T prevPlayerStatistic = GetPrevStatistic(appSettings.Period, appSettings.PrevDate);
             PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
 
             if (_list.Any())
@@ -407,22 +409,30 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent eventArgs)
         {
-            T prevStatistic = null;
-            switch (eventArgs.StatisticPeriod)
-            {
-                    case StatisticPeriod.Recent:
-                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
-                    break;
-
-                    case StatisticPeriod.LastWeek:
-                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
-                    break;
-
-                    case StatisticPeriod.AllObservationPeriod:
-                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault();
-                    break;
-            } 
+            StatisticPeriod statisticPeriod = eventArgs.StatisticPeriod;
+            DateTime? prevDateTime = eventArgs.PrevDateTime;
+            
+            T prevStatistic = GetPrevStatistic(statisticPeriod, prevDateTime); 
             SetPreviousStatistic(prevStatistic);
+        }
+
+        private T GetPrevStatistic(StatisticPeriod statisticPeriod, DateTime? prevDateTime)
+        {
+            switch (statisticPeriod)
+            {
+                case StatisticPeriod.Recent:
+                    return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
+                
+                case StatisticPeriod.LastWeek:
+                    return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
+
+                case StatisticPeriod.AllObservationPeriod:
+                    return _list.OrderBy(x => x.Updated).FirstOrDefault();
+
+                case StatisticPeriod.Custom:
+                    return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= prevDateTime);
+            }
+            return null;
         }
 
         protected virtual void SetPreviousStatistic(T prevPlayerStatistic)
@@ -492,13 +502,16 @@ namespace WotDossier.Applications.ViewModel
     {
         public StatisticPeriod StatisticPeriod { get; set; }
 
+        public DateTime? PrevDateTime { get; set; }
+
         public StatisticPeriodChangedEvent()
         {
         }
 
-        public StatisticPeriodChangedEvent(StatisticPeriod statisticPeriod)
+        public StatisticPeriodChangedEvent(StatisticPeriod statisticPeriod, DateTime? prevDate)
         {
             StatisticPeriod = statisticPeriod;
+            PrevDateTime = prevDate;
         }
     }
 }

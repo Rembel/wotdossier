@@ -16,16 +16,19 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             IRating eff = (IRating)value;
-            if (eff.KievArmorRating >= 7300) 
-                return Brushes.Purple;
-            if (eff.KievArmorRating >= 5570)
-                return Brushes.CornflowerBlue;
-            if (eff.KievArmorRating >= 3850)
-                return Brushes.Lime;
-            if (eff.KievArmorRating >= 2730)
-                return Brushes.Yellow;
-            if (eff.KievArmorRating >= 2080)
-                return Brushes.DarkOrange;
+            if (eff !=null)
+            {
+                if (eff.KievArmorRating >= 7300)
+                    return Brushes.Purple;
+                if (eff.KievArmorRating >= 5570)
+                    return Brushes.CornflowerBlue;
+                if (eff.KievArmorRating >= 3850)
+                    return Brushes.Lime;
+                if (eff.KievArmorRating >= 2730)
+                    return Brushes.Yellow;
+                if (eff.KievArmorRating >= 2080)
+                    return Brushes.DarkOrange;
+            }
             return Brushes.Red;
         }
 

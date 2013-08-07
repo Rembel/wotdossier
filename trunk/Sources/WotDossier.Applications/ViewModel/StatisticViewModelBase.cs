@@ -190,6 +190,11 @@ namespace WotDossier.Applications.ViewModel
         }
 
         #endregion
+
+        #region Achievments
+
+        #endregion
+
         
         /// <summary>
         /// Stat updated

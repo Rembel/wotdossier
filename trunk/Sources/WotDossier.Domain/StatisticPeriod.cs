@@ -5,6 +5,6 @@
         Recent,
         LastWeek,
         AllObservationPeriod,
-        //Custom
+        Custom
     }
 }

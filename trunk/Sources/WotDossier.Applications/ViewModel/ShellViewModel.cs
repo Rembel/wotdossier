@@ -59,6 +59,7 @@ namespace WotDossier.Applications.ViewModel
         }
 
         public DelegateCommand LoadCommand { get; set; }
+        public DelegateCommand SettingsCommand { get; set; }
 
         public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> OnReplayRowDoubleClickCommand { get; set; }
@@ -168,6 +169,7 @@ namespace WotDossier.Applications.ViewModel
         {
             _dossierRepository = dossierRepository;
             LoadCommand = new DelegateCommand(OnLoad);
+            SettingsCommand = new DelegateCommand(OnSettings);
             OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
             OnReplayRowUploadCommand = new DelegateCommand<object>(OnReplayRowUpload);
@@ -178,6 +180,21 @@ namespace WotDossier.Applications.ViewModel
 
             TankFilter = new TankFilterViewModel();
             TankFilter.PropertyChanged += TankFilterOnPropertyChanged;
+
+            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
+        }
+
+        private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent obj)
+        {
+            InitLastUsedTanksChart();
+        }
+
+        private void OnSettings()
+        {
+            SettingsViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<SettingsViewModel>().Value;
+            List<DateTime> list = PlayerStatistic.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
+            viewModel.PrevDates = list;
+            viewModel.Show();
         }
 
         private void TankFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

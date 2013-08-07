@@ -1220,4 +1220,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Country_UK" xml:space="preserve">
     <value>Великобритания</value>
   </data>
+  <data name="Settings_ReplaysFolder" xml:space="preserve">
+    <value>Папка с реплеями</value>
+  </data>
 </root>

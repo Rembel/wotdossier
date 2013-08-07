@@ -49,9 +49,14 @@ namespace WotDossier.Applications.Update
             }
         }
 
-        private void UpdateDbVersion(long max, SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
+        private void UpdateDbVersion(long max, SqlCeConnection connection, SqlCeTransaction transaction)
         {
-            
+            //Logger.Debug("BatchImportBcg. Source connection obtained");
+            SqlCeCommand command = new SqlCeCommand(@"update DbVersion set SchemaVersion = @version", connection, transaction);
+            command.CommandType = CommandType.Text;
+            command.Parameters.Add("@version", SqlDbType.NVarChar).Value = max.ToString();
+
+            command.ExecuteNonQuery();
         }
 
         private void CloseConnection(SqlCeConnection connection)
@@ -98,7 +103,7 @@ namespace WotDossier.Applications.Update
                 }
             }
             catch (Exception e)
-            {          
+            {
                 return int.MaxValue;
             }
             finally

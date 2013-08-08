@@ -123,8 +123,14 @@
     <Compile Include="AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Achievements.xaml.cs">
+      <DependentUpon>Achievements.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MedalAchievement.xaml.cs">
+      <DependentUpon>MedalAchievement.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\RatingView.xaml.cs">
       <DependentUpon>RatingView.xaml</DependentUpon>
@@ -173,7 +179,6 @@
     <Compile Include="ReplayWindow.xaml.cs">
       <DependentUpon>ReplayWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resources\EpicMedalTeplateSelector.cs" />
     <Compile Include="Resources\Medals.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -269,7 +274,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Achievements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\ClanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MedalAchievement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -515,6 +528,7 @@
     </Compile>
     <EmbeddedResource Include="Resources\Medals.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Medals.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resources.resx">
@@ -1044,7 +1058,7 @@
     <Resource Include="Resources\Images\Medals\51px-Redbat.png" />
     <Resource Include="Resources\Images\Medals\64px-__.png" />
     <Resource Include="Resources\Images\Medals\64px-___002.png" />
-    <Resource Include="Resources\Images\Medals\71px-HeroesOfRassenay.png" />
+    <Resource Include="Resources\Images\Medals\MedalHeroesOfRassenay.png" />
     <Resource Include="Resources\Images\Medals\71px-Medal_brussel-107-150.png" />
     <Resource Include="Resources\Images\Medals\71px-Medal_piza-107-150.png" />
     <Resource Include="Resources\Images\Medals\71px-Medal_poland-107-150.png" />
@@ -1211,6 +1225,21 @@
     <Resource Include="Resources\Images\Tanks\ussr_mt25.png" />
     <Resource Include="Resources\Images\Tanks\ussr_ltp.png" />
     <Content Include="Updates\2013080601.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013080801.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013080802.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013080803.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013080804.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013080800.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">

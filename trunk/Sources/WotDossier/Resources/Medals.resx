@@ -517,8 +517,8 @@
   <data name="_64px____002" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\64px-___002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_71px_HeroesOfRassenay" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\71px-heroesofrassenay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MedalHeroesOfRassenay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\MedalHeroesOfRassenay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_71px_Medal_brussel_107_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\71px-medal_brussel-107-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -6,9 +6,9 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TankStatisticRowViewModel : PeriodStatisticViewModel<TankStatisticRowViewModel>, ITankRowBattleAwards, ITankRowBattles, ITankRowDamage, ITankRowEpic, 
-                           ITankRowFrags, ITankRowMasterTanker, ITankRowMedals, ITankRowPerformance, ITankRowRatings, ITankRowSeries, 
-                           ITankRowSpecialAwards, ITankRowTime, ITankRowXP, ITankFilterable
+    public class TankStatisticRowViewModel : PeriodStatisticViewModel<TankStatisticRowViewModel>, ITankRowBattles, ITankRowDamage, 
+                           ITankRowFrags, ITankRowMasterTanker, ITankRowPerformance, ITankRowRatings, 
+                           ITankRowTime, ITankRowXP, ITankFilterable
     {
         private DateTime _lastBattle;
         private IEnumerable<FragsJson> _tankFrags;
@@ -26,38 +26,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int TankId { get; set; }
 
         public int TankUniqueId { get; set; }
-
-        #endregion
-
-        #region [ ITankRowBattleAwards ]
-
-        public int BattleHero { get; set; }
-
-        public int TopGun { get; set; }
-
-        public int Invader { get; set; }
-
-        public int Sniper { get; set; }
-
-        public int Defender { get; set; }
-
-        public int SteelWall { get; set; }
-
-        public int Confederate { get; set; }
-
-        public int Scout { get; set; }
-
-        public int PatrolDuty { get; set; }
-
-        public int BrothersInArms { get; set; }
-
-        public int CrucialContribution { get; set; }
-
-        public int CoolHeaded { get; set; }
-
-        public int LuckyDevil { get; set; }
-
-        public int Spartan { get; set; }
 
         #endregion
 
@@ -125,49 +93,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         }
 
         #endregion
-
-        #region [ ITankRowEpic ]
-
-        public int Boelter { get; set; }
-
-        public int RadleyWalters { get; set; }
-
-        public int LafayettePool { get; set; }
-
-        public int Orlik { get; set; }
-
-        public int Oskin { get; set; }
-
-        public int Lehvaslaiho { get; set; }
-
-        public int Nikolas { get; set; }
-
-        public int Halonen { get; set; }
-
-        public int Burda { get; set; }
-
-        public int Pascucci { get; set; }
-
-        public int Dumitru { get; set; }
-
-        public int TamadaYoshio { get; set; }
-
-        public int Billotte { get; set; }
-
-        public int BrunoPietro { get; set; }
-
-        public int Tarczay { get; set; }
-
-        public int Kolobanov { get; set; }
-
-        public int Fadin { get; set; }
-
-        public int HeroesOfRaseiniai { get; set; }
-
-        public int DeLanglade { get; set; }
-
-        #endregion
-
+       
         #region [ ITankRowFrags ]
 
         public int MaxFrags { get; set; }
@@ -210,26 +136,6 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
 
-        #region [ ITankRowMedals]
-
-        public int Kay { get; set; }
-
-        public int Carius { get; set; }
-
-        public int Knispel { get; set; }
-
-        public int Poppel { get; set; }
-
-        public int Abrams { get; set; }
-
-        public int Leclerk { get; set; }
-
-        public int Lavrinenko { get; set; }
-
-        public int Ekins { get; set; }
-
-        #endregion
-
         #region [ ITankRowPerformance ]
 
         public int Shots { get; set; }
@@ -253,58 +159,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         }
 
         public int MarkOfMastery { get; set; }
-
-        #endregion
-
-        #region [ ITankRowSeries ]
-
-        public int ReaperLongest { get; set; }
-
-        public int ReaperProgress { get; set; }
-
-        public int SharpshooterLongest { get; set; }
-
-        public int SharpshooterProgress { get; set; }
-
-        public int MasterGunnerLongest { get; set; }
-
-        public int MasterGunnerProgress { get; set; }
-
-        public int InvincibleLongest { get; set; }
-
-        public int InvincibleProgress { get; set; }
-
-        public int SurvivorLongest { get; set; }
-
-        public int SurvivorProgress { get; set; }
-
-        #endregion
-
-        #region [ ITankRowSpecialAwards ]
-
-        public int Kamikaze { get; set; }
-
-        public int Raider { get; set; }
-
-        public int Bombardier { get; set; }
-
-        public int Reaper { get; set; }
-
-        public int Sharpshooter { get; set; }
-
-        public int Invincible { get; set; }
-
-        public int Survivor { get; set; }
-
-        public int MouseTrap { get; set; }
-
-        public int Hunter { get; set; }
-
-        public int Sinai { get; set; }
-
-        public int PattonValley { get; set; }
-
-        public int Ranger { get; set; }
 
         #endregion
 
@@ -353,6 +207,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             CoolHeaded = tank.Special.alaric;
             LuckyDevil = tank.Special.luckyDevil;
             Spartan = tank.Special.sturdy;
+            Jager = tank.Special.huntsman;
             #endregion
 
             #region [ ITankRowBattles ]

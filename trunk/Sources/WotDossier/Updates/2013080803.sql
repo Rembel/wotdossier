@@ -1,0 +1,1 @@
+﻿CREATE UNIQUE INDEX [UQ__PlayerAchievements__0000000000000193] ON [PlayerAchievements] ([Id] ASC);

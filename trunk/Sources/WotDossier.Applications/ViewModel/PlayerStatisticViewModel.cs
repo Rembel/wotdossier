@@ -278,6 +278,96 @@ namespace WotDossier.Applications.ViewModel
             Rating_XpPlace = stat.RatingXpPlace;
 
             #endregion
+
+            #region Achievements
+
+            if (stat.AchievementsIdObject != null)
+            {
+                #region [ IRowBattleAwards ]
+
+                //BattleHero = stat.AchievementsIdObject.battleHeroes;
+                TopGun = stat.AchievementsIdObject.Warrior;
+                Invader = stat.AchievementsIdObject.Invader;
+                Sniper = stat.AchievementsIdObject.Sniper;
+                Defender = stat.AchievementsIdObject.Defender;
+                SteelWall = stat.AchievementsIdObject.SteelWall;
+                Confederate = stat.AchievementsIdObject.Confederate;
+                Scout = stat.AchievementsIdObject.Scout;
+                PatrolDuty = stat.AchievementsIdObject.PatrolDuty;
+                BrothersInArms = stat.AchievementsIdObject.BrothersInArms;
+                CrucialContribution = stat.AchievementsIdObject.CrucialContribution;
+                CoolHeaded = stat.AchievementsIdObject.CoolHeaded;
+                LuckyDevil = stat.AchievementsIdObject.LuckyDevil;
+                Spartan = stat.AchievementsIdObject.Spartan;
+                Jager = stat.AchievementsIdObject.Jager;
+
+                #endregion
+
+                #region [ IRowEpic ]
+
+                Boelter = stat.AchievementsIdObject.Boelter;
+                RadleyWalters = stat.AchievementsIdObject.RadleyWalters;
+                LafayettePool = stat.AchievementsIdObject.LafayettePool;
+                Orlik = stat.AchievementsIdObject.Orlik;
+                Oskin = stat.AchievementsIdObject.Oskin;
+                Lehvaslaiho = stat.AchievementsIdObject.Lehvaslaiho;
+                Nikolas = stat.AchievementsIdObject.Nikolas;
+                Halonen = stat.AchievementsIdObject.Halonen;
+                Burda = stat.AchievementsIdObject.Burda;
+                Pascucci = stat.AchievementsIdObject.Pascucci;
+                Dumitru = stat.AchievementsIdObject.Dumitru;
+                TamadaYoshio = stat.AchievementsIdObject.TamadaYoshio;
+                Billotte = stat.AchievementsIdObject.Billotte;
+                BrunoPietro = stat.AchievementsIdObject.BrunoPietro;
+                Tarczay = stat.AchievementsIdObject.Tarczay;
+                Kolobanov = stat.AchievementsIdObject.Kolobanov;
+                Fadin = stat.AchievementsIdObject.Fadin;
+                HeroesOfRaseiniai = stat.AchievementsIdObject.HeroesOfRaseiniai;
+                DeLanglade = stat.AchievementsIdObject.DeLanglade;
+
+                #endregion
+
+                #region [ IRowMedals]
+
+                //Kay = stat.AchievementsIdObject.Major.Kay;
+                //Carius = stat.AchievementsIdObject.Major.Carius;
+                //Knispel = stat.AchievementsIdObject.Major.Knispel;
+                //Poppel = stat.AchievementsIdObject.Major.Poppel;
+                //Abrams = stat.AchievementsIdObject.Major.Abrams;
+                //Leclerk = stat.AchievementsIdObject.Major.LeClerc;
+                //Lavrinenko = stat.AchievementsIdObject.Major.Lavrinenko;
+                //Ekins = stat.AchievementsIdObject.Major.Ekins;
+
+                #endregion
+
+                #region [ IRowSeries ]
+
+                ReaperLongest = stat.AchievementsIdObject.Reaper;
+                SharpshooterLongest = stat.AchievementsIdObject.SharpshooterLongest;
+                MasterGunnerLongest = stat.AchievementsIdObject.MasterGunnerLongest;
+                InvincibleLongest = stat.AchievementsIdObject.Invincible;
+                SurvivorLongest = stat.AchievementsIdObject.Survivor;
+
+                #endregion
+
+                #region [ IRowSpecialAwards ]
+
+                Kamikaze = stat.AchievementsIdObject.Kamikaze;
+                Raider = stat.AchievementsIdObject.Raider;
+                Bombardier = stat.AchievementsIdObject.Bombardier;
+                Reaper = stat.AchievementsIdObject.Reaper;
+                Sharpshooter = stat.AchievementsIdObject.SharpshooterLongest;
+                Invincible = stat.AchievementsIdObject.Invincible;
+                Survivor = stat.AchievementsIdObject.Survivor;
+                MouseTrap = stat.AchievementsIdObject.MouseTrap;
+                Hunter = stat.AchievementsIdObject.Hunter;
+                Sinai = stat.AchievementsIdObject.Sinai;
+                PattonValley = stat.AchievementsIdObject.PattonValley;
+                //Ranger = stat.AchievementsIdObject.Ranger;
+
+                #endregion}
+
+            #endregion
         }
     }
 }

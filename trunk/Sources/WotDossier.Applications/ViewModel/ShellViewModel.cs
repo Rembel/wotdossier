@@ -192,8 +192,12 @@ namespace WotDossier.Applications.ViewModel
         private void OnSettings()
         {
             SettingsViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<SettingsViewModel>().Value;
-            List<DateTime> list = PlayerStatistic.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
-            viewModel.PrevDates = list;
+            List<DateTime> list = null;
+            if (PlayerStatistic != null)
+            {
+                list = PlayerStatistic.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
+            }
+            viewModel.PrevDates = list ?? new List<DateTime>();
             viewModel.Show();
         }
 

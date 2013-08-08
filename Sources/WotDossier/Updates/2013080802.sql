@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerAchievements] ADD CONSTRAINT [PK_PlayerAchievements] PRIMARY KEY ([Id]);

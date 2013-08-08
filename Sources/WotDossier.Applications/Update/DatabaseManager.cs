@@ -4,11 +4,14 @@ using System.Data;
 using System.Data.SqlServerCe;
 using System.IO;
 using System.Linq;
+using Common.Logging;
 
 namespace WotDossier.Applications.Update
 {
     public class DatabaseManager
     {
+        private static readonly ILog Logger = LogManager.GetLogger("ShellViewModel");
+
         public void Update()
         {
             List<IDbUpdate> updates = GetDbUpdates();
@@ -21,10 +24,10 @@ namespace WotDossier.Applications.Update
             try
             {
                 connection = GetConnection();
-                //Logger.Debug("BatchImportBcg. Source connection obtained");
+                Logger.Debug("BatchImportBcg. Source connection obtained");
 
                 transaction = BeginTransaction(connection);
-                //Logger.Debug("BatchImportBcg. Dest transaction started");
+                Logger.Debug("BatchImportBcg. Dest transaction started");
 
                 foreach (var dbUpdate in updates)
                 {
@@ -41,11 +44,13 @@ namespace WotDossier.Applications.Update
             catch (Exception e)
             {
                 RollbackTransaction(transaction);
+                Logger.Error("Exception", e);
+                throw;
             }
             finally
             {
                 CloseConnection(connection);
-                //Logger.Debug("BatchImportBcg. Source connection closed");
+                Logger.Debug("BatchImportBcg. Source connection closed");
             }
         }
 

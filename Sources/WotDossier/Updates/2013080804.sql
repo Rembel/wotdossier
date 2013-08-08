@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerStatistic] ADD CONSTRAINT [PlayerStatistic_PlayerAchievements_FK] FOREIGN KEY ([AchievementsId]) REFERENCES [PlayerAchievements]([Id]) ON DELETE NO ACTION ON UPDATE NO ACTION;

@@ -1,7 +1,6 @@
 ﻿<Application x:Class="WotDossier.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:resources="clr-namespace:WotDossier.Resources">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -9,62 +8,6 @@
                 <ResourceDictionary Source="Styles/Brushes.xaml"/>
                 <ResourceDictionary Source="Styles/ImplicitStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <!--<resources:EpicMedalTeplateSelector x:Key="EpicMedalTeplateSelector"
-                BoelterColumnHeaderTemplate="{StaticResource BoelterColumnHeaderTemplate}"
-                RadleyWaltersColumnHeaderTemplate="{StaticResource RadleyWaltersColumnHeaderTemplate}"
-                LafayettePoolColumnHeaderTemplate="{StaticResource LafayettePoolColumnHeaderTemplate}"
-                OrlikColumnHeaderTemplate="{StaticResource OrlikColumnHeaderTemplate}"
-                OskinColumnHeaderTemplate="{StaticResource OskinColumnHeaderTemplate}"
-                LehvaslaihoColumnHeaderTemplate="{StaticResource LehvaslaihoColumnHeaderTemplate}"
-                NikolasColumnHeaderTemplate="{StaticResource NikolasColumnHeaderTemplate}"
-                HalonenColumnHeaderTemplate="{StaticResource HalonenColumnHeaderTemplate}"
-                BurdaColumnHeaderTemplate="{StaticResource BurdaColumnHeaderTemplate}"
-                PascucciColumnHeaderTemplate="{StaticResource PascucciColumnHeaderTemplate}"
-                DumitruColumnHeaderTemplate="{StaticResource DumitruColumnHeaderTemplate}"
-                TamadaYoshioColumnHeaderTemplate="{StaticResource TamadaYoshioColumnHeaderTemplate}"
-                BillotteColumnHeaderTemplate="{StaticResource BillotteColumnHeaderTemplate}"
-                BrunoPietroColumnHeaderTemplate="{StaticResource BrunoPietroColumnHeaderTemplate}"
-                TarczayColumnHeaderTemplate="{StaticResource TarczayColumnHeaderTemplate}"
-                KolobanovColumnHeaderTemplate="{StaticResource KolobanovColumnHeaderTemplate}"
-                FadinColumnHeaderTemplate="{StaticResource FadinColumnHeaderTemplate}"
-                HeroesOfRaseiniaiColumnHeaderTemplate="{StaticResource HeroesOfRaseiniaiColumnHeaderTemplate}"
-                DeLangladeColumnHeaderTemplate="{StaticResource DeLangladeColumnHeaderTemplate}"
-                KayColumnHeaderTemplate="{StaticResource KayColumnHeaderTemplate}"
-                CariusColumnHeaderTemplate="{StaticResource CariusColumnHeaderTemplate}"
-                KnispelColumnHeaderTemplate="{StaticResource KnispelColumnHeaderTemplate}"
-                PoppelColumnHeaderTemplate="{StaticResource PoppelColumnHeaderTemplate}"
-                AbramsColumnHeaderTemplate="{StaticResource AbramsColumnHeaderTemplate}"
-                LeclerkColumnHeaderTemplate="{StaticResource LeclerkColumnHeaderTemplate}"
-                LavrinenkoColumnHeaderTemplate="{StaticResource LavrinenkoColumnHeaderTemplate}"
-                EkinsColumnHeaderTemplate="{StaticResource EkinsColumnHeaderTemplate}"
-                KamikazeColumnHeaderTemplate="{StaticResource KamikazeColumnHeaderTemplate}"
-                RaiderColumnHeaderTemplate="{StaticResource RaiderColumnHeaderTemplate}"
-                BombardierColumnHeaderTemplate="{StaticResource BombardierColumnHeaderTemplate}"
-                ReaperColumnHeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}"
-                SharpshooterColumnHeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}"
-                InvincibleColumnHeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}"
-                SurvivorColumnHeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}"
-                MouseTrapColumnHeaderTemplate="{StaticResource MouseTrapColumnHeaderTemplate}"
-                HunterColumnHeaderTemplate="{StaticResource HunterColumnHeaderTemplate}"
-                SinaiColumnHeaderTemplate="{StaticResource SinaiColumnHeaderTemplate}"
-                PattonValleyColumnHeaderTemplate="{StaticResource PattonValleyColumnHeaderTemplate}"
-                RangerColumnHeaderTemplate="{StaticResource RangerColumnHeaderTemplate}"
-                BattleHeroColumnHeaderTemplate="{StaticResource BattleHeroColumnHeaderTemplate}"
-                TopGunColumnHeaderTemplate="{StaticResource TopGunColumnHeaderTemplate}"
-                InvaderColumnHeaderTemplate="{StaticResource InvaderColumnHeaderTemplate}"
-                SniperColumnHeaderTemplate="{StaticResource SniperColumnHeaderTemplate}"
-                DefenderColumnHeaderTemplate="{StaticResource DefenderColumnHeaderTemplate}"
-                SteelWallColumnHeaderTemplate="{StaticResource SteelWallColumnHeaderTemplate}"
-                ConfederateColumnHeaderTemplate="{StaticResource ConfederateColumnHeaderTemplate}"
-                ScoutColumnHeaderTemplate="{StaticResource ScoutColumnHeaderTemplate}"
-                PatrolDutyColumnHeaderTemplate="{StaticResource PatrolDutyColumnHeaderTemplate}"
-                BrothersInArmsColumnHeaderTemplate="{StaticResource BrothersInArmsColumnHeaderTemplate}"
-                CrucialContributionColumnHeaderTemplate="{StaticResource CrucialContributionColumnHeaderTemplate}"
-                CoolHeadedColumnHeaderTemplate="{StaticResource CoolHeadedColumnHeaderTemplate}"
-                LuckyDevilColumnHeaderTemplate="{StaticResource LuckyDevilColumnHeaderTemplate}"
-                SpartanColumnHeaderTemplate="{StaticResource SpartanColumnHeaderTemplate}"
-                MasterGunnerColumnHeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}">
-            </resources:EpicMedalTeplateSelector>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

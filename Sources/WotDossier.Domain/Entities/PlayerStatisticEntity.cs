@@ -51,6 +51,7 @@ namespace WotDossier.Domain.Entities
         public static readonly string PropRatingXpPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingXpPlace);
         public static readonly string PropAvgLevel = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.AvgLevel);
         public static readonly string PropPlayerId = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.PlayerId);
+		public static readonly string PropAchievementsId = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.AchievementsId);
 
         #endregion
 
@@ -249,6 +250,16 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public virtual double AvgLevel { get; set; }
 
+				/// <summary>
+		/// Gets/Sets the field "AchievementsId".
+		/// </summary>
+		public virtual int? AchievementsId { get; set; }
+		
+		/// <summary>
+		/// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
+		/// </summary>
+		public virtual PlayerAchievementsEntity AchievementsIdObject { get; set; }
+
         public virtual void Update(PlayerStatAdapter statAdapter)
         {
             #region CommonJson init
@@ -268,6 +279,13 @@ namespace WotDossier.Domain.Entities
             DroppedCapturePoints = statAdapter.Dropped_capture_points;
             Updated = statAdapter.Updated;
             AvgLevel = statAdapter.AvgLevel;
+
+            if (AchievementsIdObject == null)
+            {
+                AchievementsIdObject = new PlayerAchievementsEntity();
+            }
+
+            //AchievementsIdObject.Update
 
             #endregion
         }

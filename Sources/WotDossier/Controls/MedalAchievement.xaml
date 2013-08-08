@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WotDossier.Controls.MedalAchievement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:View="clr-namespace:WotDossier.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="90" d:DesignWidth="90">
+    <Grid>
+        <Image Stretch="Fill" Width="67" Height="71" Source="{Binding Source, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}}" HorizontalAlignment="Center" VerticalAlignment="Center">
+        </Image>
+        <Border Margin="0,0,0,5" BorderThickness="1" BorderBrush="#2F2822" Background="#4F1514" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Border BorderThickness="1" BorderBrush="#2C0909">
+                <TextBlock Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}}" Foreground="White" FontSize="12" Margin="3,1,3,1">
+                </TextBlock>
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

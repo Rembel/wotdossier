@@ -1,6 +1,6 @@
 ﻿namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface ITankRowMedals
+    public interface IRowMedals
     {
         int Kay { get; set; }
         int Carius { get; set; }

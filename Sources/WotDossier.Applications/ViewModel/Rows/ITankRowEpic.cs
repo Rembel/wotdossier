@@ -1,6 +1,6 @@
 ﻿namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface ITankRowEpic
+    public interface IRowEpicAwards
     {
         int Boelter { get; set; }
         int RadleyWalters { get; set; }

@@ -4,8 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:Resources="clr-namespace:WotDossier.Resources"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>

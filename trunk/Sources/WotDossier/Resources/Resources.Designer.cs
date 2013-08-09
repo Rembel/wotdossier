@@ -1666,6 +1666,42 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle Hero Achievements.
+        /// </summary>
+        public static string Label_Achievements_BattleHero {
+            get {
+                return ResourceManager.GetString("Label_Achievements_BattleHero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commemorative Achievements.
+        /// </summary>
+        public static string Label_Achievements_CommemorativeAchievements {
+            get {
+                return ResourceManager.GetString("Label_Achievements_CommemorativeAchievements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Epic Achievements.
+        /// </summary>
+        public static string Label_Achievements_Epic {
+            get {
+                return ResourceManager.GetString("Label_Achievements_Epic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Achievements.
+        /// </summary>
+        public static string Label_Achievements_Special {
+            get {
+                return ResourceManager.GetString("Label_Achievements_Special", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle efficiency.
         /// </summary>
         public static string Label_Replay_BattleEfficiency {

@@ -30,7 +30,8 @@ namespace WotDossier.Domain.Entities
             Max_xp = _tanks.Max(x => x.Tankdata.maxXP);
             Frags = _tanks.Sum(x => x.Tankdata.frags);
             Spotted = _tanks.Sum(x => x.Tankdata.spotted);
-            Hits_percents = (int)(_tanks.Sum(x => x.Tankdata.hits) / ((double)_tanks.Sum(x => x.Tankdata.shots)) * 100.0);
+            double d = (_tanks.Sum(x => x.Tankdata.hits)/((double) _tanks.Sum(x => x.Tankdata.shots))*100.0);
+            Hits_percents = (int) Math.Ceiling(d);
             Damage_dealt = _tanks.Sum(x => x.Tankdata.damageDealt);
             Capture_points = _tanks.Sum(x => x.Tankdata.capturePoints);
             Dropped_capture_points = _tanks.Sum(x => x.Tankdata.droppedCapturePoints);

@@ -1226,4 +1226,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Tab_Header_Achievements" xml:space="preserve">
     <value>Достижения</value>
   </data>
+  <data name="Label_Achievements_BattleHero" xml:space="preserve">
+    <value>Герой битвы</value>
+  </data>
+  <data name="Label_Achievements_Epic" xml:space="preserve">
+    <value>Эпические достижения</value>
+  </data>
+  <data name="Label_Achievements_Special" xml:space="preserve">
+    <value>Почетные звания</value>
+  </data>
+  <data name="Label_Achievements_CommemorativeAchievements" xml:space="preserve">
+    <value>Памятные знаки</value>
+  </data>
 </root>

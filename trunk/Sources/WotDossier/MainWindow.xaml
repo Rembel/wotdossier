@@ -4,7 +4,7 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
-        Title="WotDossier" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/app_icon.ico">
+        Title="WotDossier" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/app_icon.ico">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
             <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>
@@ -14,9 +14,7 @@
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--Common tab-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Overall}" Name="tabCommon">
-                <ScrollViewer>
-                    <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
-                </ScrollViewer>
+                <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
             </TabItem>
             <!--Charts-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
@@ -41,7 +39,7 @@
                         <Grid>
                             <d3:ChartPlotter Grid.Row="0" Name="Chart4" Width="500" Height="500" Margin="50, 0, 50, 0" HorizontalAlignment="Center">
                                 <d3:ViewportUIContainer>
-                                    <d3:PieChart Name="PieChart" Width="400" Height="400" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanks}" 
+                                    <d3:PieChart Name="PieChart" Width="350" Height="350" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanks}" 
 							                Canvas.Left="10" Canvas.Top="10" StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
                                         <d3:PieChart.Resources>
                                             <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
@@ -72,7 +70,6 @@
                         </Grid>
                     </StackPanel>
                 </ScrollViewer>
-
             </TabItem>
             <!--XP-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_XP}" Name="tabXP">

@@ -6,19 +6,8 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:Resources="clr-namespace:WotDossier.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.Resources>
-        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="None" />
-        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" />
-        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="None" />
-    </UserControl.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="1000px"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
-        <StackPanel Grid.Column="1" Background="{StaticResource bcolorCenter}" Orientation="Vertical">
+        <StackPanel Orientation="Vertical">
             <TextBlock Foreground="#FFA759" FontFamily="sans-serif" FontSize="25" Margin="0, 25, 0, 25" HorizontalAlignment="Center" 
                        Text="{Binding PreviousDate, StringFormat='Сравнение с данными за {0:dd.MM.yyyy HH:mm}'}"></TextBlock>
             <Grid Width="Auto" HorizontalAlignment="Center">
@@ -177,6 +166,5 @@
                 <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="22" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             </Grid>
         </StackPanel>
-        <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
     </Grid>
 </UserControl>

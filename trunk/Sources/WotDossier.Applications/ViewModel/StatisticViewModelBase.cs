@@ -6,7 +6,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public abstract class StatisticViewModelBase : IRating, IRowBattleAwards, IRowEpicAwards, IRowSpecialAwards, IRowMedals, IRowSeries
     {
-        public static readonly string PropWarrior = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.TopGun);
+        public static readonly string PropWarrior = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Warrior);
         public static readonly string PropSniper = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Sniper);
         public static readonly string PropInvader = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Invader);
         public static readonly string PropDefender = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Defender);
@@ -243,7 +243,7 @@ namespace WotDossier.Applications.ViewModel
 
         public int BattleHero { get; set; }
 
-        public int TopGun { get; set; }
+        public int Warrior { get; set; }
 
         public int Invader { get; set; }
 

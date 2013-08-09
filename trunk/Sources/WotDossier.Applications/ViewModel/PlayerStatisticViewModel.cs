@@ -375,7 +375,7 @@ namespace WotDossier.Applications.ViewModel
                 #region [ IRowBattleAwards ]
 
                 //BattleHero = stat.AchievementsIdObject.battleHeroes;
-                TopGun = stat.AchievementsIdObject.Warrior;
+                Warrior = stat.AchievementsIdObject.Warrior;
                 Invader = stat.AchievementsIdObject.Invader;
                 Sniper = stat.AchievementsIdObject.Sniper;
                 Defender = stat.AchievementsIdObject.Defender;

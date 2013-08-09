@@ -377,7 +377,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Column_BattleAwards_BattleHero" xml:space="preserve">
     <value>Battle Hero</value>
   </data>
-  <data name="Column_BattleAwards_TopGun" xml:space="preserve">
+  <data name="Column_BattleAwards_Warrior" xml:space="preserve">
     <value>Top Gun</value>
   </data>
   <data name="Column_BattleAwards_Invader" xml:space="preserve">

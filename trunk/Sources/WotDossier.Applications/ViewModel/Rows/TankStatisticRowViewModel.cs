@@ -194,7 +194,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region [ ITankRowBattleAwards ]
             BattleHero = tank.Battle.battleHeroes;
-            TopGun = tank.Battle.warrior;
+            Warrior = tank.Battle.warrior;
             Invader = tank.Battle.invader;
             Sniper = tank.Battle.sniper;
             Defender = tank.Battle.sniper;

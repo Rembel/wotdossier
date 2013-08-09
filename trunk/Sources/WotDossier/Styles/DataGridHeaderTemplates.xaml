@@ -424,7 +424,7 @@
         </StackPanel>
     </DataTemplate>
 
-    <DataTemplate x:Key="TopGunColumnHeaderTemplate">
+    <DataTemplate x:Key="WarriorColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
             <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}">
                 <Image.Source>

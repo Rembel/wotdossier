@@ -84,6 +84,9 @@
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
                 <controls:RatingView></controls:RatingView>
             </TabItem>
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
+                <controls:Achievements></controls:Achievements>
+            </TabItem>
         </TabControl>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
     </Grid>

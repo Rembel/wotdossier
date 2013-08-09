@@ -366,6 +366,7 @@ namespace WotDossier.Applications.ViewModel
                 //Ranger = stat.AchievementsIdObject.Ranger;
 
                 #endregion}
+            }
 
             #endregion
         }

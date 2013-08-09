@@ -20,7 +20,7 @@ namespace WotDossier.Domain.Entities
 		public static readonly string PropConfederate = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Confederate);
 		public static readonly string PropScout = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Scout);
 		public static readonly string PropPatrolDuty = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.PatrolDuty);
-		public static readonly string PropHeroesOfRaseiniai = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.HeroesOfRaseiniai);
+		public static readonly string PropHeroesOfRassenay = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.HeroesOfRassenay);
 		public static readonly string PropLafayettePool = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.LafayettePool);
 		public static readonly string PropRadleyWalters = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.RadleyWalters);
 		public static readonly string PropCrucialContribution = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.CrucialContribution);
@@ -53,7 +53,7 @@ namespace WotDossier.Domain.Entities
 		public static readonly string PropSinai = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Sinai);
 		public static readonly string PropMasterGunnerLongest = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MasterGunnerLongest);
 		public static readonly string PropSharpshooterLongest = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.SharpshooterLongest);
-		public static readonly string PropJager = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Jager);
+        public static readonly string PropRanger = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Ranger);
 		public static readonly string PropCoolHeaded = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.CoolHeaded);
 		public static readonly string PropSpartan = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Spartan);
 		public static readonly string PropLuckyDevil = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.LuckyDevil);
@@ -101,9 +101,9 @@ namespace WotDossier.Domain.Entities
 		public virtual int PatrolDuty	{get; set; }
 		
 		/// <summary>
-		/// Gets/Sets the field "HeroesOfRaseiniai".
+        /// Gets/Sets the field "HeroesOfRassenay".
 		/// </summary>
-		public virtual int HeroesOfRaseiniai	{get; set; }
+		public virtual int HeroesOfRassenay	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "LafayettePool".
@@ -268,7 +268,7 @@ namespace WotDossier.Domain.Entities
 		/// <summary>
 		/// Gets/Sets the field "Jager".
 		/// </summary>
-		public virtual int Jager	{get; set; }
+        public virtual int Ranger { get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "CoolHeaded".
@@ -279,11 +279,51 @@ namespace WotDossier.Domain.Entities
 		/// Gets/Sets the field "Spartan".
 		/// </summary>
 		public virtual int Spartan	{get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "LuckyDevil".
+        /// </summary>
+        public virtual int LuckyDevil { get; set; }
 		
 		/// <summary>
-		/// Gets/Sets the field "LuckyDevil".
+        /// Gets/Sets the field "Kay".
 		/// </summary>
-		public virtual int LuckyDevil	{get; set; }
+        public virtual int Kay { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Carius".
+        /// </summary>
+        public virtual int Carius { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Knispel".
+        /// </summary>
+        public virtual int Knispel { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Poppel".
+        /// </summary>
+        public virtual int Poppel { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Abrams".
+        /// </summary>
+        public virtual int Abrams { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Leclerk".
+        /// </summary>
+        public virtual int Leclerk { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Lavrinenko".
+        /// </summary>
+        public virtual int Lavrinenko { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Ekins".
+        /// </summary>
+        public virtual int Ekins { get; set; }
 		
 		#region Collections
 		

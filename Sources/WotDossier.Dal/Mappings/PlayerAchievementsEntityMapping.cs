@@ -17,7 +17,7 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Confederate, "Confederate");
 			Map(v => v.Scout, "Scout");
 			Map(v => v.PatrolDuty, "PatrolDuty");
-			Map(v => v.HeroesOfRaseiniai, "HeroesOfRaseiniai");
+            Map(v => v.HeroesOfRassenay, "HeroesOfRassenay");
 			Map(v => v.LafayettePool, "LafayettePool");
 			Map(v => v.RadleyWalters, "RadleyWalters");
 			Map(v => v.CrucialContribution, "CrucialContribution");
@@ -50,10 +50,18 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Sinai, "Sinai");
 			Map(v => v.MasterGunnerLongest, "MasterGunnerLongest");
 			Map(v => v.SharpshooterLongest, "SharpshooterLongest");
-			Map(v => v.Jager, "Jager");
+            Map(v => v.Ranger, "Ranger");
 			Map(v => v.CoolHeaded, "CoolHeaded");
 			Map(v => v.Spartan, "Spartan");
 			Map(v => v.LuckyDevil, "LuckyDevil");
+            Map(v => v.Kay, "Kay");
+            Map(v => v.Carius, "Carius");
+            Map(v => v.Knispel, "Knispel");
+            Map(v => v.Poppel, "Poppel");
+            Map(v => v.Abrams, "Abrams");
+            Map(v => v.Leclerk, "Leclerk");
+            Map(v => v.Lavrinenko, "Lavrinenko");
+            Map(v => v.Ekins, "Ekins");
 		
 			//HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.AchievementsId));
         }

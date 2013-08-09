@@ -84,7 +84,7 @@
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
                 <controls:RatingView></controls:RatingView>
             </TabItem>
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
                 <controls:Achievements></controls:Achievements>
             </TabItem>
         </TabControl>

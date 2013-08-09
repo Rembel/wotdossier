@@ -16,6 +16,5 @@
         int CoolHeaded { get; set; }
         int LuckyDevil { get; set; }
         int Spartan { get; set; }
-        int Jager { get; set; }
     }
 }

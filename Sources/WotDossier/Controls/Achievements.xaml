@@ -12,63 +12,55 @@
             <!--Герой битвы-->
             <TextBlock Text="Герой битвы" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
-                <controls:MedalAchievement Text="{Binding TopGun}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}" Source="../Resources/Images/Medals/Warrior.png">
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Text="{Binding Invader}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}" Source="../Resources/Images/Medals/Invader.png">
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Text="{Binding Sniper}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" Source="../Resources/Images/Medals/Sniper.png">
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Text="{Binding Defender}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}" Source="../Resources/Images/Medals/Defender.png">
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Text="{Binding SteelWall}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}" Source="../Resources/Images/Medals/Steelwall.png">
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Text="{Binding Confederate}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}" Source="../Resources/Images/Medals/Supporter.png">
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Text="{Binding Scout}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}" Source="../Resources/Images/Medals/Scout.png">
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Text="{Binding PatrolDuty}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_PatrolDuty}" Source="../Resources/Images/Medals/Evileye.png">
-                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding TopGun}" Delta="{Binding TopGunDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}" Source="../Resources/Images/Medals/Warrior.png" />
+                <controls:MedalAchievement Value="{Binding Sniper}" Delta="{Binding SniperDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" Source="../Resources/Images/Medals/Sniper.png" />
+                <controls:MedalAchievement Value="{Binding Confederate}" Delta="{Binding ConfederateDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}" Source="../Resources/Images/Medals/Supporter.png" />
+                <controls:MedalAchievement Value="{Binding PatrolDuty}" Delta="{Binding PatrolDutyDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_PatrolDuty}" Source="../Resources/Images/Medals/Evileye.png" />
+                <controls:MedalAchievement Value="{Binding SteelWall}" Delta="{Binding SteelWallDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}" Source="../Resources/Images/Medals/Steelwall.png" />
+                <controls:MedalAchievement Value="{Binding Defender}" Delta="{Binding DefenderDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}" Source="../Resources/Images/Medals/Defender.png" />
+                <controls:MedalAchievement Value="{Binding Invader}" Delta="{Binding InvaderDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}" Source="../Resources/Images/Medals/Invader.png" />
+                <controls:MedalAchievement Value="{Binding Scout}" Delta="{Binding ScoutDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}" Source="../Resources/Images/Medals/Scout.png" />
             </WrapPanel>
             <!--Эпические достиженя-->
             <TextBlock Text="Эпические достиженя" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
-                <controls:MedalAchievement Text="{Binding HeroesOfRaseiniai}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_HeroesOfRaseiniai}" Source="../Resources/Images/Medals/MedalHeroesOfRassenay.png" />
-                <controls:MedalAchievement Text="{Binding LafayettePool}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}" Source="../Resources/Images/Medals/MedalLafayettePool.png" />
-                <controls:MedalAchievement Text="{Binding RadleyWalters}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}" Source="../Resources/Images/Medals/MedalRadleyWalters.png" />
-                <controls:MedalAchievement Text="{Binding CrucialContribution}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}" Source="../Resources/Images/Medals/MedalCrucialContribution.png" />
-                <controls:MedalAchievement Text="{Binding BrothersInArms}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}" Source="../Resources/Images/Medals/MedalBrothersInArms.png" />
-                <controls:MedalAchievement Text="{Binding Kolobanov}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Kolobanov}" Source="../Resources/Images/Medals/MedalKolobanov.png" />
-                <controls:MedalAchievement Text="{Binding Nikolas}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Nikolas}" Source="../Resources/Images/Medals/MedalNikolas.png" />
-                <controls:MedalAchievement Text="{Binding Orlik}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Orlik}" Source="../Resources/Images/Medals/MedalOrlik.png" />
-                <controls:MedalAchievement Text="{Binding Oskin}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Oskin}" Source="../Resources/Images/Medals/MedalOskin.png" />
-                <controls:MedalAchievement Text="{Binding Halonen}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Halonen}" Source="../Resources/Images/Medals/MedalHalonen.png" />
-                <controls:MedalAchievement Text="{Binding Lehvaslaiho}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Lehvaslaiho}" Source="../Resources/Images/Medals/MedalLehvaslaiho.png" />
-                <controls:MedalAchievement Text="{Binding DeLanglade}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_DeLanglade}" Source="../Resources/Images/Medals/MedalDeLanglade.png" />
-                <controls:MedalAchievement Text="{Binding Burda}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Burda}" Source="../Resources/Images/Medals/MedalBurda.png" />
-                <controls:MedalAchievement Text="{Binding Dumitru}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Dumitru}" Source="../Resources/Images/Medals/MedalDumitru.png" />
-                <controls:MedalAchievement Text="{Binding Pascucci}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Pascucci}" Source="../Resources/Images/Medals/MedalPascucci.png" />
-                <controls:MedalAchievement Text="{Binding TamadaYoshio}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_TamadaYoshio}" Source="../Resources/Images/Medals/MedalTamadaYoshio.png" />
-                <controls:MedalAchievement Text="{Binding Boelter}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Boelter}" Source="../Resources/Images/Medals/MedalBoelter.png" />
-                <controls:MedalAchievement Text="{Binding Fadin}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Fadin}" Source="../Resources/Images/Medals/MedalFadin.png" />
-                <controls:MedalAchievement Text="{Binding Tarczay}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Tarczay}" Source="../Resources/Images/Medals/MedalTarczay.png" />
-                <controls:MedalAchievement Text="{Binding BrunoPietro}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_BrunoPietro}" Source="../Resources/Images/Medals/MedalBrunoPietro.png" />
-                <controls:MedalAchievement Text="{Binding Billotte}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}" Source="../Resources/Images/Medals/MedalBillotte.png" />
+                <controls:MedalAchievement Value="{Binding HeroesOfRassenay}" Delta="{Binding HeroesOfRassenayDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_HeroesOfRaseiniai}" Source="../Resources/Images/Medals/MedalHeroesOfRassenay.png" />
+                <controls:MedalAchievement Value="{Binding LafayettePool}" Delta="{Binding LafayettePoolDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}" Source="../Resources/Images/Medals/MedalLafayettePool.png" />
+                <controls:MedalAchievement Value="{Binding RadleyWalters}" Delta="{Binding RadleyWaltersDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}" Source="../Resources/Images/Medals/MedalRadleyWalters.png" />
+                <controls:MedalAchievement Value="{Binding CrucialContribution}" Delta="{Binding CrucialContributionDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}" Source="../Resources/Images/Medals/MedalCrucialContribution.png" />
+                <controls:MedalAchievement Value="{Binding BrothersInArms}" Delta="{Binding BrothersInArmsDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}" Source="../Resources/Images/Medals/MedalBrothersInArms.png" />
+                <controls:MedalAchievement Value="{Binding Kolobanov}" Delta="{Binding KolobanovDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Kolobanov}" Source="../Resources/Images/Medals/MedalKolobanov.png" />
+                <controls:MedalAchievement Value="{Binding Nikolas}" Delta="{Binding NikolasDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Nikolas}" Source="../Resources/Images/Medals/MedalNikolas.png" />
+                <controls:MedalAchievement Value="{Binding Orlik}" Delta="{Binding OrlikDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Orlik}" Source="../Resources/Images/Medals/MedalOrlik.png" />
+                <controls:MedalAchievement Value="{Binding Oskin}" Delta="{Binding OskinDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Oskin}" Source="../Resources/Images/Medals/MedalOskin.png" />
+                <controls:MedalAchievement Value="{Binding Halonen}" Delta="{Binding HalonenDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Halonen}" Source="../Resources/Images/Medals/MedalHalonen.png" />
+                <controls:MedalAchievement Value="{Binding Lehvaslaiho}" Delta="{Binding LehvaslaihoDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Lehvaslaiho}" Source="../Resources/Images/Medals/MedalLehvaslaiho.png" />
+                <controls:MedalAchievement Value="{Binding DeLanglade}" Delta="{Binding DeLangladeDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_DeLanglade}" Source="../Resources/Images/Medals/MedalDeLanglade.png" />
+                <controls:MedalAchievement Value="{Binding Burda}" Delta="{Binding BurdaDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Burda}" Source="../Resources/Images/Medals/MedalBurda.png" />
+                <controls:MedalAchievement Value="{Binding Dumitru}" Delta="{Binding DumitruDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Dumitru}" Source="../Resources/Images/Medals/MedalDumitru.png" />
+                <controls:MedalAchievement Value="{Binding Pascucci}" Delta="{Binding PascucciDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Pascucci}" Source="../Resources/Images/Medals/MedalPascucci.png" />
+                <controls:MedalAchievement Value="{Binding TamadaYoshio}" Delta="{Binding TamadaYoshioDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_TamadaYoshio}" Source="../Resources/Images/Medals/MedalTamadaYoshio.png" />
+                <controls:MedalAchievement Value="{Binding Boelter}" Delta="{Binding BoelterDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Boelter}" Source="../Resources/Images/Medals/MedalBoelter.png" />
+                <controls:MedalAchievement Value="{Binding Fadin}" Delta="{Binding FadinDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Fadin}" Source="../Resources/Images/Medals/MedalFadin.png" />
+                <controls:MedalAchievement Value="{Binding Tarczay}" Delta="{Binding TarczayDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Tarczay}" Source="../Resources/Images/Medals/MedalTarczay.png" />
+                <controls:MedalAchievement Value="{Binding BrunoPietro}" Delta="{Binding BrunoPietroDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_BrunoPietro}" Source="../Resources/Images/Medals/MedalBrunoPietro.png" />
+                <controls:MedalAchievement Value="{Binding Billotte}" Delta="{Binding BillotteDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}" Source="../Resources/Images/Medals/MedalBillotte.png" />
             </WrapPanel>
             <!--Почетные звания-->
             <TextBlock Text="Почетные звания" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
-                <controls:MedalAchievement Text="{Binding Survivor}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}" Source="../Resources/Images/Medals/Diehard.png" />
-                <controls:MedalAchievement Text="{Binding Kamikaze}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Kamikaze}" Source="../Resources/Images/Medals/Kamikaze.png" />
-                <controls:MedalAchievement Text="{Binding Invincible}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Invincible}" Source="../Resources/Images/Medals/Invincible.png" />
-                <controls:MedalAchievement Text="{Binding Raider}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Raider}" Source="../Resources/Images/Medals/Raider.png" />
-                <controls:MedalAchievement Text="{Binding Bombardier}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Bombardier}" Source="../Resources/Images/Medals/Bombardier.png" />
-                <controls:MedalAchievement Text="{Binding Reaper}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Reaper}" Source="../Resources/Images/Medals/HandOfDeath.png" />
-                <controls:MedalAchievement Text="{Binding MouseTrap}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_MouseTrap}" Source="../Resources/Images/Medals/Mousebane.png" />
-                <controls:MedalAchievement Text="{Binding PattonValley}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_PattonValley}" Source="../Resources/Images/Medals/Pattonvalley.png" />
-                <controls:MedalAchievement Text="{Binding Hunter}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Hunter}" Source="../Resources/Images/Medals/Beasthunter.png" />
-                <controls:MedalAchievement Text="{Binding Sinai}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sinai}" Source="../Resources/Images/Medals/Sinai.png" />
-                <controls:MedalAchievement Text="{Binding MasterGunnerLongest}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}" Source="../Resources/Images/Medals/ArmorPiercer.png" />
-                <controls:MedalAchievement Text="{Binding SharpshooterLongest}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sharpshooter}" Source="../Resources/Images/Medals/TitleSniper.png" />
+                <controls:MedalAchievement Value="{Binding Survivor}" Delta="{Binding SurvivorDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}" Source="../Resources/Images/Medals/Diehard.png" />
+                <controls:MedalAchievement Value="{Binding Kamikaze}" Delta="{Binding KamikazeDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Kamikaze}" Source="../Resources/Images/Medals/Kamikaze.png" />
+                <controls:MedalAchievement Value="{Binding Invincible}" Delta="{Binding InvincibleDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Invincible}" Source="../Resources/Images/Medals/Invincible.png" />
+                <controls:MedalAchievement Value="{Binding Raider}" Delta="{Binding RaiderDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Raider}" Source="../Resources/Images/Medals/Raider.png" />
+                <controls:MedalAchievement Value="{Binding Bombardier}" Delta="{Binding BombardierDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Bombardier}" Source="../Resources/Images/Medals/Bombardier.png" />
+                <controls:MedalAchievement Value="{Binding Reaper}" Delta="{Binding ReaperDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Reaper}" Source="../Resources/Images/Medals/HandOfDeath.png" />
+                <controls:MedalAchievement Value="{Binding MouseTrap}" Delta="{Binding MouseTrapDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_MouseTrap}" Source="../Resources/Images/Medals/Mousebane.png" />
+                <controls:MedalAchievement Value="{Binding PattonValley}" Delta="{Binding PattonValleyDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_PattonValley}" Source="../Resources/Images/Medals/Pattonvalley.png" />
+                <controls:MedalAchievement Value="{Binding Hunter}" Delta="{Binding HunterDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Hunter}" Source="../Resources/Images/Medals/Beasthunter.png" />
+                <controls:MedalAchievement Value="{Binding Sinai}" Delta="{Binding SinaiDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sinai}" Source="../Resources/Images/Medals/Sinai.png" />
+                <controls:MedalAchievement Value="{Binding MasterGunnerLongest}" Delta="{Binding MasterGunnerLongestDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}" Source="../Resources/Images/Medals/ArmorPiercer.png" />
+                <controls:MedalAchievement Value="{Binding SharpshooterLongest}" Delta="{Binding SharpshooterLongestDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sharpshooter}" Source="../Resources/Images/Medals/TitleSniper.png" />
             </WrapPanel>
             <!--Этапные достижения-->
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
@@ -77,10 +69,10 @@
             <!--Памятные знаки-->
             <TextBlock Text="Памятные знаки" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
-                <controls:MedalAchievement Text="{Binding Jager}" ToolTip="" Source="../Resources/Images/Medals/Jager.png" />
-                <controls:MedalAchievement Text="{Binding CoolHeaded}" ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" Source="../Resources/Images/Medals/Imperturbable.png" />
-                <controls:MedalAchievement Text="{Binding Spartan}" ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}" Source="../Resources/Images/Medals/Sparta.png" />
-                <controls:MedalAchievement Text="{Binding LuckyDevil}" ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}" Source="../Resources/Images/Medals/Lucky.png" />
+                <controls:MedalAchievement Value="{Binding Ranger}" Delta="{Binding RangerDelta}" ToolTip="" Source="../Resources/Images/Medals/Jager.png" />
+                <controls:MedalAchievement Value="{Binding CoolHeaded}" Delta="{Binding CoolHeadedDelta}" ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" Source="../Resources/Images/Medals/Imperturbable.png" />
+                <controls:MedalAchievement Value="{Binding Spartan}" Delta="{Binding SpartanDelta}" ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}" Source="../Resources/Images/Medals/Sparta.png" />
+                <controls:MedalAchievement Value="{Binding LuckyDevil}" Delta="{Binding LuckyDevilDelta}" ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}" Source="../Resources/Images/Medals/Lucky.png" />
             </WrapPanel>
         </StackPanel>
     </Grid>

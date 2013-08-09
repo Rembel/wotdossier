@@ -52,6 +52,52 @@ namespace WotDossier.Applications.ViewModel
 
         public static readonly string PropPreviousDate = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PreviousDate);
 
+        public static readonly string PropWarriorDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.TopGunDelta);
+        public static readonly string PropSniperDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SniperDelta);
+        public static readonly string PropInvaderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.InvaderDelta);
+        public static readonly string PropDefenderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DefenderDelta);
+        public static readonly string PropSteelWallDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SteelWallDelta);
+        public static readonly string PropConfederateDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.ConfederateDelta);
+        public static readonly string PropScoutDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.ScoutDelta);
+        public static readonly string PropPatrolDutyDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PatrolDutyDelta);
+        public static readonly string PropHeroesOfRassenayDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HeroesOfRassenayDelta);
+        public static readonly string PropLafayettePoolDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LafayettePoolDelta);
+        public static readonly string PropRadleyWaltersDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.RadleyWaltersDelta);
+        public static readonly string PropCrucialContributionDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.CrucialContributionDelta);
+        public static readonly string PropBrothersInArmsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BrothersInArmsDelta);
+        public static readonly string PropKolobanovDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KolobanovDelta);
+        public static readonly string PropNikolasDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.NikolasDelta);
+        public static readonly string PropOrlikDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.OrlikDelta);
+        public static readonly string PropOskinDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.OskinDelta);
+        public static readonly string PropHalonenDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HalonenDelta);
+        public static readonly string PropLehvaslaihoDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LehvaslaihoDelta);
+        public static readonly string PropDeLangladeDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DeLangladeDelta);
+        public static readonly string PropBurdaDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BurdaDelta);
+        public static readonly string PropDumitruDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DumitruDelta);
+        public static readonly string PropPascucciDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PascucciDelta);
+        public static readonly string PropTamadaYoshioDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.TamadaYoshioDelta);
+        public static readonly string PropBoelterDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BoelterDelta);
+        public static readonly string PropFadinDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.FadinDelta);
+        public static readonly string PropTarczayDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.TarczayDelta);
+        public static readonly string PropBrunoPietroDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BrunoPietroDelta);
+        public static readonly string PropBillotteDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BillotteDelta);
+        public static readonly string PropSurvivorDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivorDelta);
+        public static readonly string PropKamikazeDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KamikazeDelta);
+        public static readonly string PropInvincibleDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.InvincibleDelta);
+        public static readonly string PropRaiderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.RaiderDelta);
+        public static readonly string PropBombardierDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BombardierDelta);
+        public static readonly string PropReaperDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.ReaperDelta);
+        public static readonly string PropMouseTrapDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.MouseTrapDelta);
+        public static readonly string PropPattonValleyDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PattonValleyDelta);
+        public static readonly string PropHunterDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HunterDelta);
+        public static readonly string PropSinaiDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SinaiDelta);
+        public static readonly string PropMasterGunnerLongestDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.MasterGunnerLongestDelta);
+        public static readonly string PropSharpshooterLongestDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SharpshooterLongestDelta);
+        public static readonly string PropRangerDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.RangerDelta);
+        public static readonly string PropCoolHeadedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.CoolHeadedDelta);
+        public static readonly string PropSpartanDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SpartanDelta);
+        public static readonly string PropLuckyDevilDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LuckyDevilDelta);
+
         #endregion
 
         #region Fields
@@ -226,7 +272,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return WinsDelta/(double) BattlesCountDelta*100.0;
+                    return WinsDelta / (double)BattlesCountDelta * 100.0;
                 }
                 return 0;
             }
@@ -238,7 +284,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return LossesDelta/(double) BattlesCountDelta*100.0;
+                    return LossesDelta / (double)BattlesCountDelta * 100.0;
                 }
                 return 0;
             }
@@ -250,7 +296,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return SurvivedBattlesDelta/(double) BattlesCountDelta*100.0;
+                    return SurvivedBattlesDelta / (double)BattlesCountDelta * 100.0;
                 }
                 return 0;
             }
@@ -310,7 +356,7 @@ namespace WotDossier.Applications.ViewModel
                 if (BattlesCountDelta > 0)
                 {
                     return RatingHelper.CalcKievArmorRating(BattlesCountDelta, AvgXpForPeriod, AvgDamageDealtForPeriod,
-                                                            WinsPercentForPeriod/100.0,
+                                                            WinsPercentForPeriod / 100.0,
                                                             AvgFragsForPeriod, AvgSpottedForPeriod,
                                                             AvgCapturePointsForPeriod, AvgDroppedCapturePointsForPeriod);
                 }
@@ -324,7 +370,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return XpDelta/(double) BattlesCountDelta;
+                    return XpDelta / (double)BattlesCountDelta;
                 }
                 return 0;
             }
@@ -336,7 +382,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return FragsDelta/(double) BattlesCountDelta;
+                    return FragsDelta / (double)BattlesCountDelta;
                 }
                 return 0;
             }
@@ -348,7 +394,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return SpottedDelta/(double) BattlesCountDelta;
+                    return SpottedDelta / (double)BattlesCountDelta;
                 }
                 return 0;
             }
@@ -360,7 +406,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return DamageDealtDelta/(double) BattlesCountDelta;
+                    return DamageDealtDelta / (double)BattlesCountDelta;
                 }
                 return 0;
             }
@@ -372,7 +418,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return CapturePointsDelta/(double) BattlesCountDelta;
+                    return CapturePointsDelta / (double)BattlesCountDelta;
                 }
                 return 0;
             }
@@ -384,7 +430,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return DroppedCapturePointsDelta/(double) BattlesCountDelta;
+                    return DroppedCapturePointsDelta / (double)BattlesCountDelta;
                 }
                 return 0;
             }
@@ -392,11 +438,350 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        #region Achievments
+
+        #region [ ITankRowBattleAwards ]
+
+        public int BattleHeroDelta
+        {
+            get { return BattleHero - PrevStatistic.BattleHero; }
+        }
+
+        public int TopGunDelta
+        {
+            get { return TopGun - PrevStatistic.TopGun; }
+        }
+
+        public int InvaderDelta
+        {
+            get { return Invader - PrevStatistic.Invader; }
+        }
+
+        public int SniperDelta
+        {
+            get { return Sniper - PrevStatistic.Sniper; }
+        }
+
+        public int DefenderDelta
+        {
+            get { return Defender - PrevStatistic.Defender; }
+        }
+
+        public int SteelWallDelta
+        {
+            get { return SteelWall - PrevStatistic.SteelWall; }
+        }
+
+        public int ConfederateDelta
+        {
+            get { return Confederate - PrevStatistic.Confederate; }
+        }
+
+        public int ScoutDelta
+        {
+            get { return Scout - PrevStatistic.Scout; }
+        }
+
+        public int PatrolDutyDelta
+        {
+            get { return PatrolDuty - PrevStatistic.PatrolDuty; }
+        }
+
+        public int BrothersInArmsDelta
+        {
+            get { return BrothersInArms - PrevStatistic.BrothersInArms; }
+        }
+
+        public int CrucialContributionDelta
+        {
+            get { return CrucialContribution - PrevStatistic.CrucialContribution; }
+        }
+
+        public int CoolHeadedDelta
+        {
+            get { return CoolHeaded - PrevStatistic.CoolHeaded; }
+        }
+
+        public int LuckyDevilDelta
+        {
+            get { return LuckyDevil - PrevStatistic.LuckyDevil; }
+        }
+
+        public int SpartanDelta
+        {
+            get { return Spartan - PrevStatistic.Spartan; }
+        }
+
+        #endregion
+
+        #region [ ITankRowEpic ]
+
+        public int BoelterDelta
+        {
+            get { return Boelter - PrevStatistic.Boelter; }
+        }
+
+        public int RadleyWaltersDelta
+        {
+            get { return RadleyWalters - PrevStatistic.RadleyWalters; }
+        }
+
+        public int LafayettePoolDelta
+        {
+            get { return LafayettePool - PrevStatistic.LafayettePool; }
+        }
+
+        public int OrlikDelta
+        {
+            get { return Orlik - PrevStatistic.Orlik; }
+        }
+
+        public int OskinDelta
+        {
+            get { return Oskin - PrevStatistic.Oskin; }
+        }
+
+        public int LehvaslaihoDelta
+        {
+            get { return Lehvaslaiho - PrevStatistic.Lehvaslaiho; }
+        }
+
+        public int NikolasDelta
+        {
+            get { return Nikolas - PrevStatistic.Nikolas; }
+        }
+
+        public int HalonenDelta
+        {
+            get { return Halonen - PrevStatistic.Halonen; }
+        }
+
+        public int BurdaDelta
+        {
+            get { return Burda - PrevStatistic.Burda; }
+        }
+
+        public int PascucciDelta
+        {
+            get { return Pascucci - PrevStatistic.Pascucci; }
+        }
+
+        public int DumitruDelta
+        {
+            get { return Dumitru - PrevStatistic.Dumitru; }
+        }
+
+        public int TamadaYoshioDelta
+        {
+            get { return TamadaYoshio - PrevStatistic.TamadaYoshio; }
+        }
+
+        public int BillotteDelta
+        {
+            get { return Billotte - PrevStatistic.Billotte; }
+        }
+
+        public int BrunoPietroDelta
+        {
+            get { return BrunoPietro - PrevStatistic.BrunoPietro; }
+        }
+
+        public int TarczayDelta
+        {
+            get { return Tarczay - PrevStatistic.Tarczay; }
+        }
+
+        public int KolobanovDelta
+        {
+            get { return Kolobanov - PrevStatistic.Kolobanov; }
+        }
+
+        public int FadinDelta
+        {
+            get { return Fadin - PrevStatistic.Fadin; }
+        }
+
+        public int HeroesOfRassenayDelta
+        {
+            get { return HeroesOfRassenay - PrevStatistic.HeroesOfRassenay; }
+        }
+
+        public int DeLangladeDelta
+        {
+            get { return DeLanglade - PrevStatistic.DeLanglade; }
+        }
+
+        #endregion
+
+        #region [ ITankRowSpecialAwards ]
+
+        public int KamikazeDelta
+        {
+            get { return Kamikaze - PrevStatistic.Kamikaze; }
+        }
+
+        public int RaiderDelta
+        {
+            get { return Raider - PrevStatistic.Raider; }
+        }
+
+        public int BombardierDelta
+        {
+            get { return Bombardier - PrevStatistic.Bombardier; }
+        }
+
+        public int ReaperDelta
+        {
+            get { return Reaper - PrevStatistic.Reaper; }
+        }
+
+        public int SharpshooterDelta
+        {
+            get { return Sharpshooter - PrevStatistic.Sharpshooter; }
+        }
+
+        public int InvincibleDelta
+        {
+            get { return Invincible - PrevStatistic.Invincible; }
+        }
+
+        public int SurvivorDelta
+        {
+            get { return Survivor - PrevStatistic.Survivor; }
+        }
+
+        public int MouseTrapDelta
+        {
+            get { return MouseTrap - PrevStatistic.MouseTrap; }
+        }
+
+        public int HunterDelta
+        {
+            get { return Hunter - PrevStatistic.Hunter; }
+        }
+
+        public int SinaiDelta
+        {
+            get { return Sinai - PrevStatistic.Sinai; }
+        }
+
+        public int PattonValleyDelta
+        {
+            get { return PattonValley - PrevStatistic.PattonValley; }
+        }
+
+        public int RangerDelta
+        {
+            get { return Ranger - PrevStatistic.Ranger; }
+        }
+
+        #endregion
+
+        #region [ ITankRowMedals]
+
+        public int KayDelta
+        {
+            get { return Kay - PrevStatistic.Kay; }
+        }
+
+        public int CariusDelta
+        {
+            get { return Carius - PrevStatistic.Carius; }
+        }
+
+        public int KnispelDelta
+        {
+            get { return Knispel - PrevStatistic.Knispel; }
+        }
+
+        public int PoppelDelta
+        {
+            get { return Poppel - PrevStatistic.Poppel; }
+        }
+
+        public int AbramsDelta
+        {
+            get { return Abrams - PrevStatistic.Abrams; }
+        }
+
+        public int LeclerkDelta
+        {
+            get { return Leclerk - PrevStatistic.Leclerk; }
+        }
+
+        public int LavrinenkoDelta
+        {
+            get { return Lavrinenko - PrevStatistic.Lavrinenko; }
+        }
+
+        public int EkinsDelta
+        {
+            get { return Ekins - PrevStatistic.Ekins; }
+        }
+
+        #endregion
+
+        #region [ ITankRowSeries ]
+
+        public int ReaperLongestDelta
+        {
+            get { return ReaperLongest - PrevStatistic.ReaperLongest; }
+        }
+
+        public int ReaperProgressDelta
+        {
+            get { return ReaperProgress - PrevStatistic.ReaperProgress; }
+        }
+
+        public int SharpshooterLongestDelta
+        {
+            get { return SharpshooterLongest - PrevStatistic.SharpshooterLongest; }
+        }
+
+        public int SharpshooterProgressDelta
+        {
+            get { return SharpshooterProgress - PrevStatistic.SharpshooterProgress; }
+        }
+
+        public int MasterGunnerLongestDelta
+        {
+            get { return MasterGunnerLongest - PrevStatistic.MasterGunnerLongest; }
+        }
+
+        public int MasterGunnerProgressDelta
+        {
+            get { return MasterGunnerProgress - PrevStatistic.MasterGunnerProgress; }
+        }
+
+        public int InvincibleLongestDelta
+        {
+            get { return InvincibleLongest - PrevStatistic.InvincibleLongest; }
+        }
+
+        public int InvincibleProgressDelta
+        {
+            get { return InvincibleProgress - PrevStatistic.InvincibleProgress; }
+        }
+
+        public int SurvivorLongestDelta
+        {
+            get { return SurvivorLongest - PrevStatistic.SurvivorLongest; }
+        }
+
+        public int SurvivorProgressDelta
+        {
+            get { return SurvivorProgress - PrevStatistic.SurvivorProgress; }
+        }
+
+        #endregion
+
+        #endregion
+
         protected PeriodStatisticViewModel(DateTime updated, List<T> list)
         {
             _list = list;
             Updated = updated;
-            
+
             AppSettings appSettings = SettingsReader.Get();
             T prevPlayerStatistic = GetPrevStatistic(appSettings.Period, appSettings.PrevDate);
             PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
@@ -411,8 +796,8 @@ namespace WotDossier.Applications.ViewModel
         {
             StatisticPeriod statisticPeriod = eventArgs.StatisticPeriod;
             DateTime? prevDateTime = eventArgs.PrevDateTime;
-            
-            T prevStatistic = GetPrevStatistic(statisticPeriod, prevDateTime); 
+
+            T prevStatistic = GetPrevStatistic(statisticPeriod, prevDateTime);
             SetPreviousStatistic(prevStatistic);
         }
 
@@ -422,7 +807,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 case StatisticPeriod.Recent:
                     return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
-                
+
                 case StatisticPeriod.LastWeek:
                     return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
 
@@ -478,6 +863,118 @@ namespace WotDossier.Applications.ViewModel
             OnPropertyChanged(PropKievArmorRatingForPeriod);
 
             OnPropertyChanged(PropPreviousDate);
+
+            #region achievements
+
+            OnPropertyChanged(PropWarrior);
+            OnPropertyChanged(PropSniper);
+            OnPropertyChanged(PropInvader);
+            OnPropertyChanged(PropDefender);
+            OnPropertyChanged(PropSteelWall);
+            OnPropertyChanged(PropConfederate);
+            OnPropertyChanged(PropScout);
+            OnPropertyChanged(PropPatrolDuty);
+
+            OnPropertyChanged(PropHeroesOfRassenay);
+            OnPropertyChanged(PropLafayettePool);
+            OnPropertyChanged(PropRadleyWalters);
+            OnPropertyChanged(PropCrucialContribution);
+            OnPropertyChanged(PropBrothersInArms);
+            OnPropertyChanged(PropKolobanov);
+            OnPropertyChanged(PropNikolas);
+            OnPropertyChanged(PropOrlik);
+            OnPropertyChanged(PropOskin);
+            OnPropertyChanged(PropHalonen);
+            OnPropertyChanged(PropLehvaslaiho);
+            OnPropertyChanged(PropDeLanglade);
+            OnPropertyChanged(PropBurda);
+            OnPropertyChanged(PropDumitru);
+            OnPropertyChanged(PropPascucci);
+            OnPropertyChanged(PropTamadaYoshio);
+            OnPropertyChanged(PropBoelter);
+            OnPropertyChanged(PropFadin);
+            OnPropertyChanged(PropTarczay);
+            OnPropertyChanged(PropBrunoPietro);
+            OnPropertyChanged(PropBillotte);
+
+            OnPropertyChanged(PropSurvivor);
+            OnPropertyChanged(PropKamikaze);
+            OnPropertyChanged(PropInvincible);
+            OnPropertyChanged(PropRaider);
+            OnPropertyChanged(PropBombardier);
+            OnPropertyChanged(PropReaper);
+            OnPropertyChanged(PropMouseTrap);
+            OnPropertyChanged(PropPattonValley);
+            OnPropertyChanged(PropHunter);
+            OnPropertyChanged(PropSinai);
+            OnPropertyChanged(PropMasterGunnerLongest);
+            OnPropertyChanged(PropSharpshooterLongest);
+
+            OnPropertyChanged(PropRanger);
+            OnPropertyChanged(PropCoolHeaded);
+            OnPropertyChanged(PropSpartan);
+            OnPropertyChanged(PropLuckyDevil);
+
+            //OnPropertyChanged(PropKay);
+            //OnPropertyChanged(PropCarius);
+            //OnPropertyChanged(PropKnispel);
+            //OnPropertyChanged(PropPoppel);
+            //OnPropertyChanged(PropAbrams);
+            //OnPropertyChanged(PropLeclerk);
+            //OnPropertyChanged(PropLavrinenko);
+            //OnPropertyChanged(PropEkins);
+
+            OnPropertyChanged(PropWarriorDelta);
+            OnPropertyChanged(PropSniperDelta);
+            OnPropertyChanged(PropInvaderDelta);
+            OnPropertyChanged(PropDefenderDelta);
+            OnPropertyChanged(PropSteelWallDelta);
+            OnPropertyChanged(PropConfederateDelta);
+            OnPropertyChanged(PropScoutDelta);
+            OnPropertyChanged(PropPatrolDutyDelta);
+
+            OnPropertyChanged(PropHeroesOfRassenayDelta);
+            OnPropertyChanged(PropLafayettePoolDelta);
+            OnPropertyChanged(PropRadleyWaltersDelta);
+            OnPropertyChanged(PropCrucialContributionDelta);
+            OnPropertyChanged(PropBrothersInArmsDelta);
+            OnPropertyChanged(PropKolobanovDelta);
+            OnPropertyChanged(PropNikolasDelta);
+            OnPropertyChanged(PropOrlikDelta);
+            OnPropertyChanged(PropOskinDelta);
+            OnPropertyChanged(PropHalonenDelta);
+            OnPropertyChanged(PropLehvaslaihoDelta);
+            OnPropertyChanged(PropDeLangladeDelta);
+            OnPropertyChanged(PropBurdaDelta);
+            OnPropertyChanged(PropDumitruDelta);
+            OnPropertyChanged(PropPascucciDelta);
+            OnPropertyChanged(PropTamadaYoshioDelta);
+            OnPropertyChanged(PropBoelterDelta);
+            OnPropertyChanged(PropFadinDelta);
+            OnPropertyChanged(PropTarczayDelta);
+            OnPropertyChanged(PropBrunoPietroDelta);
+            OnPropertyChanged(PropBillotteDelta);
+
+            OnPropertyChanged(PropSurvivorDelta);
+            OnPropertyChanged(PropKamikazeDelta);
+            OnPropertyChanged(PropInvincibleDelta);
+            OnPropertyChanged(PropRaiderDelta);
+            OnPropertyChanged(PropBombardierDelta);
+            OnPropertyChanged(PropReaperDelta);
+            OnPropertyChanged(PropMouseTrapDelta);
+            OnPropertyChanged(PropPattonValleyDelta);
+            OnPropertyChanged(PropHunterDelta);
+            OnPropertyChanged(PropSinaiDelta);
+            OnPropertyChanged(PropMasterGunnerLongestDelta);
+            OnPropertyChanged(PropSharpshooterLongestDelta);
+
+            OnPropertyChanged(PropRangerDelta);
+            OnPropertyChanged(PropCoolHeadedDelta);
+            OnPropertyChanged(PropSpartanDelta);
+            OnPropertyChanged(PropLuckyDevilDelta);
+
+            #endregion
+
         }
 
         public List<T> GetAll()

@@ -8,9 +8,8 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="50">
-            
-            <!--Герой битвы-->
-            <TextBlock Text="Герой битвы" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <!--BattleHero-->
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_BattleHero}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding TopGun}" Delta="{Binding TopGunDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}" Source="../Resources/Images/Medals/Warrior.png" />
                 <controls:MedalAchievement Value="{Binding Sniper}" Delta="{Binding SniperDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" Source="../Resources/Images/Medals/Sniper.png" />
@@ -21,8 +20,8 @@
                 <controls:MedalAchievement Value="{Binding Invader}" Delta="{Binding InvaderDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}" Source="../Resources/Images/Medals/Invader.png" />
                 <controls:MedalAchievement Value="{Binding Scout}" Delta="{Binding ScoutDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}" Source="../Resources/Images/Medals/Scout.png" />
             </WrapPanel>
-            <!--Эпические достиженя-->
-            <TextBlock Text="Эпические достиженя" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <!--Epic Achievements-->
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_Epic}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding HeroesOfRassenay}" Delta="{Binding HeroesOfRassenayDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_HeroesOfRaseiniai}" Source="../Resources/Images/Medals/MedalHeroesOfRassenay.png" />
                 <controls:MedalAchievement Value="{Binding LafayettePool}" Delta="{Binding LafayettePoolDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}" Source="../Resources/Images/Medals/MedalLafayettePool.png" />
@@ -46,8 +45,8 @@
                 <controls:MedalAchievement Value="{Binding BrunoPietro}" Delta="{Binding BrunoPietroDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_BrunoPietro}" Source="../Resources/Images/Medals/MedalBrunoPietro.png" />
                 <controls:MedalAchievement Value="{Binding Billotte}" Delta="{Binding BillotteDelta}" ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}" Source="../Resources/Images/Medals/MedalBillotte.png" />
             </WrapPanel>
-            <!--Почетные звания-->
-            <TextBlock Text="Почетные звания" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <!--Special Achievements-->
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_Special}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding Survivor}" Delta="{Binding SurvivorDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}" Source="../Resources/Images/Medals/Diehard.png" />
                 <controls:MedalAchievement Value="{Binding Kamikaze}" Delta="{Binding KamikazeDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Kamikaze}" Source="../Resources/Images/Medals/Kamikaze.png" />
@@ -62,12 +61,12 @@
                 <controls:MedalAchievement Value="{Binding MasterGunnerLongest}" Delta="{Binding MasterGunnerLongestDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}" Source="../Resources/Images/Medals/ArmorPiercer.png" />
                 <controls:MedalAchievement Value="{Binding SharpshooterLongest}" Delta="{Binding SharpshooterLongestDelta}" ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sharpshooter}" Source="../Resources/Images/Medals/TitleSniper.png" />
             </WrapPanel>
-            <!--Этапные достижения-->
+            <!--Step Achievements-->
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
 
             </WrapPanel>
-            <!--Памятные знаки-->
-            <TextBlock Text="Памятные знаки" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <!--Commemorative Achievements-->
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_CommemorativeAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding Ranger}" Delta="{Binding RangerDelta}" ToolTip="" Source="../Resources/Images/Medals/Jager.png" />
                 <controls:MedalAchievement Value="{Binding CoolHeaded}" Delta="{Binding CoolHeadedDelta}" ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" Source="../Resources/Images/Medals/Imperturbable.png" />

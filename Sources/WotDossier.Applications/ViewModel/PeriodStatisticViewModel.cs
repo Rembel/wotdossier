@@ -52,7 +52,7 @@ namespace WotDossier.Applications.ViewModel
 
         public static readonly string PropPreviousDate = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PreviousDate);
 
-        public static readonly string PropWarriorDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.TopGunDelta);
+        public static readonly string PropWarriorDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WarriorDelta);
         public static readonly string PropSniperDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SniperDelta);
         public static readonly string PropInvaderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.InvaderDelta);
         public static readonly string PropDefenderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DefenderDelta);
@@ -447,9 +447,9 @@ namespace WotDossier.Applications.ViewModel
             get { return BattleHero - PrevStatistic.BattleHero; }
         }
 
-        public int TopGunDelta
+        public int WarriorDelta
         {
-            get { return TopGun - PrevStatistic.TopGun; }
+            get { return Warrior - PrevStatistic.Warrior; }
         }
 
         public int InvaderDelta

@@ -6,18 +6,19 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs" xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:Converters="clr-namespace:WotDossier.Converters"
         mc:Ignorable="d" 
-        Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png">
+        Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/64x64_v3.png">
     <Window.Resources>
-        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="None" />
-        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" />
-        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="None" />
+        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="Fill" />
+        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" Stretch="Fill" />
+        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="Fill" />
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="1000px"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition MinWidth="700" Width="700*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -29,8 +30,19 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
+            <Grid Grid.Row="0" Margin="35" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" DataContext="{Binding TankStatistic}">
+                    <Image Width="140" Height="80" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
+                    <Image Width="140" Height="80" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
+                </Grid>
             </Grid>
 
             <TabControl Grid.Row="1" Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

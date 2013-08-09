@@ -408,7 +408,7 @@
   <data name="Column_BattleAwards_BattleHero" xml:space="preserve">
     <value>Герой битвы</value>
   </data>
-  <data name="Column_BattleAwards_TopGun" xml:space="preserve">
+  <data name="Column_BattleAwards_Warrior" xml:space="preserve">
     <value>Воин</value>
   </data>
   <data name="Column_BattleAwards_Invader" xml:space="preserve">

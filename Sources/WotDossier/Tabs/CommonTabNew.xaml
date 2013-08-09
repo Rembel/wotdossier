@@ -12,15 +12,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="900">
     <UserControl.Resources>
-        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="None" />
-        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" />
-        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="None" />
+        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="Fill" />
+        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" Stretch="Fill" />
+        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="Fill" />
     </UserControl.Resources>
     <Grid Background="{StaticResource bcolorCenter}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="1000px"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition MinWidth="700" Width="700*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
         <TabControl Grid.Column="1" Background="Transparent" Margin="40" BorderThickness="0">
@@ -59,9 +59,13 @@
                 </Grid>
             </TabItem>
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod">
-                <StackPanel Orientation="Vertical" >
-                    <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
-                    <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding DataContext.LastUsedTanksList, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MainWindow}}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <tabs:PeriodTab Grid.Row="0" x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
+                    <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataContext.LastUsedTanksList, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MainWindow}}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -79,13 +83,14 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </DataGrid>
-                </StackPanel>
+                </Grid>
             </TabItem>
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
                 <controls:RatingView></controls:RatingView>
             </TabItem>
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
-                <controls:Achievements></controls:Achievements>
+                <ScrollViewer>
+                    <controls:Achievements></controls:Achievements></ScrollViewer>
             </TabItem>
         </TabControl>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>

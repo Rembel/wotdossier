@@ -245,9 +245,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Top Gun.
         /// </summary>
-        public static string Column_BattleAwards_TopGun {
+        public static string Column_BattleAwards_Warrior {
             get {
-                return ResourceManager.GetString("Column_BattleAwards_TopGun", resourceCulture);
+                return ResourceManager.GetString("Column_BattleAwards_Warrior", resourceCulture);
             }
         }
         

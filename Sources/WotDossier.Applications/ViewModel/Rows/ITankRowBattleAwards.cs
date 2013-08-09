@@ -3,7 +3,7 @@
     public interface IRowBattleAwards
     {
         int BattleHero { get; set; }
-        int TopGun { get; set; }
+        int Warrior { get; set; }
         int Invader { get; set; }
         int Sniper { get; set; }
         int Defender { get; set; }

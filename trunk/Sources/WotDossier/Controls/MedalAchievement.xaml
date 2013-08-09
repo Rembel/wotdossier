@@ -3,17 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:View="clr-namespace:WotDossier.Controls"
+             xmlns:View="clr-namespace:WotDossier.Controls" xmlns:Converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="90" d:DesignWidth="90">
     <Grid>
-        <Image Stretch="Fill" Width="67" Height="71" Source="{Binding Source, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}}" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Image Stretch="Fill" Width="67" Height="71" Source="{Binding Source, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}}" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}, Converter={x:Static Converters:IntToOpacityConverter.Default}}">
         </Image>
-        <Border Margin="0,0,0,5" BorderThickness="1" BorderBrush="#2F2822" Background="#4F1514" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Border BorderThickness="1" BorderBrush="#2C0909">
-                <TextBlock Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}}" Foreground="White" FontSize="12" Margin="3,1,3,1">
-                </TextBlock>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Margin="5" BorderThickness="1" BorderBrush="#2F2822" Background="#4F1514" Visibility="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}, Converter={x:Static Converters:IntToVisibilityConverter.Default}}">
+                <Border BorderThickness="1" BorderBrush="#2C0909">
+                    <TextBlock Text="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}}" Foreground="White" FontSize="12" Margin="3,1,3,1">
+                    </TextBlock>
+                </Border>
             </Border>
-        </Border>
+            <Border Grid.Column="1" Margin="5" BorderThickness="1" BorderBrush="DarkGreen" Background="Green" Visibility="{Binding Delta, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}, Converter={x:Static Converters:IntToVisibilityConverter.Default}}">
+                <Border BorderThickness="1" BorderBrush="DarkGreen">
+                    <TextBlock Text="{Binding Delta, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement},StringFormat='+0.'}" Foreground="White" FontSize="12" Margin="3,1,3,1">
+                    </TextBlock>
+                </Border>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

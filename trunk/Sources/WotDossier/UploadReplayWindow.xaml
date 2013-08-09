@@ -20,8 +20,7 @@
             <TextBlock Margin="20,0,0,8" Text="Описание" FontWeight="Normal" FontSize="17" FontFamily="Arial" Foreground="White" VerticalAlignment="Center"></TextBlock>
             <Grid Margin="20,0,0,0">
                 <TextBox Text="{Binding ReplayDescription, Mode=TwoWay}" Width="345" Height="298" HorizontalAlignment="Left" TextWrapping="Wrap"></TextBox>
-                <TextBlock Margin="0,0,20,0" Height="Auto" Width="250" HorizontalAlignment="Right" TextAlignment="Left" TextWrapping="Wrap" Text="Запрещает использовать мат. Запрещены: любые веб-ссылки, торговые марки латинскими символами, оригинальные названия посторонних проектов схожей тематики, попытки намеренно дискредитировать игровые проекты компании Wargaming.net, саму компанию и её сотрудников.
-" Foreground="#969696" FontSize="11"/>
+                <TextBlock Margin="0,0,20,0" Height="Auto" Width="250" HorizontalAlignment="Right" TextAlignment="Left" TextWrapping="Wrap" Text="Запрещает использовать мат. Запрещены: любые веб-ссылки, торговые марки латинскими символами, оригинальные названия посторонних проектов схожей тематики, попытки намеренно дискредитировать игровые проекты компании Wargaming.net, саму компанию и её сотрудников." Foreground="#969696" FontSize="11"/>
             </Grid>
             <Button Margin="20" Style="{x:Null}" Width="177" Height="37" BorderThickness="0" Padding="0" HorizontalAlignment="Left" Command="{Binding OnReplayUploadCommand}">
                 <Button.Template>

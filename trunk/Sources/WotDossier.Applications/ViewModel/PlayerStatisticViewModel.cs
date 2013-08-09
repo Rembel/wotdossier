@@ -11,7 +11,7 @@ namespace WotDossier.Applications.ViewModel
         public string Name { get; set; }
 
         /// <summary>
-        /// Player account created
+        ///     Player account created
         /// </summary>
         public DateTime Created { get; set; }
 
@@ -201,8 +201,6 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        public PlayerStatisticClanViewModel Clan { get; set; }
-
         public PlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
         {
         }
@@ -299,7 +297,6 @@ namespace WotDossier.Applications.ViewModel
                 CoolHeaded = stat.AchievementsIdObject.CoolHeaded;
                 LuckyDevil = stat.AchievementsIdObject.LuckyDevil;
                 Spartan = stat.AchievementsIdObject.Spartan;
-                Jager = stat.AchievementsIdObject.Jager;
 
                 #endregion
 
@@ -322,7 +319,7 @@ namespace WotDossier.Applications.ViewModel
                 Tarczay = stat.AchievementsIdObject.Tarczay;
                 Kolobanov = stat.AchievementsIdObject.Kolobanov;
                 Fadin = stat.AchievementsIdObject.Fadin;
-                HeroesOfRaseiniai = stat.AchievementsIdObject.HeroesOfRaseiniai;
+                HeroesOfRassenay = stat.AchievementsIdObject.HeroesOfRassenay;
                 DeLanglade = stat.AchievementsIdObject.DeLanglade;
 
                 #endregion
@@ -363,12 +360,14 @@ namespace WotDossier.Applications.ViewModel
                 Hunter = stat.AchievementsIdObject.Hunter;
                 Sinai = stat.AchievementsIdObject.Sinai;
                 PattonValley = stat.AchievementsIdObject.PattonValley;
-                //Ranger = stat.AchievementsIdObject.Ranger;
+                Ranger = stat.AchievementsIdObject.Ranger;
 
-                #endregion}
+                #endregion
             }
-
-            #endregion
         }
+
+        public PlayerStatisticClanViewModel Clan { get; set; }
+
+        #endregion
     }
 }

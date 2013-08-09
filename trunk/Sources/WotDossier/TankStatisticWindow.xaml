@@ -46,7 +46,7 @@
                 <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod">
                     <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
                 </TabItem>
-                <TabItem TabIndex="1" Header="Achievements" Name="tabAchievements">
+                <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Achievements}" Name="tabAchievements">
                     <ScrollViewer>
                         <controls:Achievements DataContext="{Binding TankStatistic}"></controls:Achievements>
                     </ScrollViewer>

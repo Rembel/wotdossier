@@ -17,13 +17,22 @@ namespace WotDossier.Controls
             set { SetValue(SourceProperty, value); }
         }
 
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof (string), typeof (MedalAchievement), new PropertyMetadata(default(string)));
+        public static readonly DependencyProperty ValueProperty =
+            DependencyProperty.Register("Value", typeof(int), typeof(MedalAchievement), new PropertyMetadata(default(int)));
 
-        public string Text
+        public int Value
         {
-            get { return (string) GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get { return (int)GetValue(ValueProperty); }
+            set { SetValue(ValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty DeltaProperty =
+            DependencyProperty.Register("Delta", typeof (int), typeof (MedalAchievement), new PropertyMetadata(default(int)));
+
+        public int Delta
+        {
+            get { return (int) GetValue(DeltaProperty); }
+            set { SetValue(DeltaProperty, value); }
         }
 
         public MedalAchievement()

@@ -207,7 +207,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             CoolHeaded = tank.Special.alaric;
             LuckyDevil = tank.Special.luckyDevil;
             Spartan = tank.Special.sturdy;
-            Jager = tank.Special.huntsman;
+            Ranger = tank.Special.huntsman;
             #endregion
 
             #region [ ITankRowBattles ]
@@ -241,7 +241,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tarczay = tank.Epic.Tarczay;
             Kolobanov = tank.Epic.Kolobanov;
             Fadin = tank.Epic.Fadin;
-            HeroesOfRaseiniai = tank.Special.heroesOfRassenay;
+            HeroesOfRassenay = tank.Special.heroesOfRassenay;
             DeLanglade = tank.Epic.DeLanglade;
             #endregion
 
@@ -305,7 +305,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             Hunter = tank.Special.beasthunter;
             Sinai = tank.Special.sinai;
             PattonValley = tank.Special.pattonValley;
-            Ranger = tank.Special.lumberjack;
             #endregion
 
             #region [ ITankRowTime ]

@@ -2125,6 +2125,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Achievements.
+        /// </summary>
+        public static string Tab_Header_Achievements {
+            get {
+                return ResourceManager.GetString("Tab_Header_Achievements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle awards.
         /// </summary>
         public static string Tab_Header_BattleAwards {

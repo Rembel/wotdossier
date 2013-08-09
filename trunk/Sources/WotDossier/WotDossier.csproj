@@ -145,6 +145,7 @@
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\IntToOpacityConverter.cs" />
     <Compile Include="Converters\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\KievArmorRatingToColorConverter.cs" />
     <Compile Include="Converters\EnumToTextConverter.cs" />

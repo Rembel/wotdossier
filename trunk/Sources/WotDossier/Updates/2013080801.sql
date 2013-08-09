@@ -9,7 +9,7 @@
 , [Scout] int NOT NULL
 , [PatrolDuty] int NOT NULL
 
-, [HeroesOfRaseiniai] int NOT NULL
+, [HeroesOfRassenay] int NOT NULL
 , [LafayettePool] int NOT NULL
 , [RadleyWalters] int NOT NULL
 , [CrucialContribution] int NOT NULL
@@ -44,8 +44,17 @@
 , [MasterGunnerLongest] int NOT NULL
 , [SharpshooterLongest] int NOT NULL
 
-, [Jager] int NOT NULL
+, [Ranger] int NOT NULL
 , [CoolHeaded] int NOT NULL
 , [Spartan] int NOT NULL
 , [LuckyDevil] int NOT NULL
+
+, [Kay] int NOT NULL
+, [Carius] int NOT NULL
+, [Knispel] int NOT NULL
+, [Poppel] int NOT NULL
+, [Abrams] int NOT NULL
+, [Leclerk] int NOT NULL
+, [Lavrinenko] int NOT NULL
+, [Ekins] int NOT NULL
 );

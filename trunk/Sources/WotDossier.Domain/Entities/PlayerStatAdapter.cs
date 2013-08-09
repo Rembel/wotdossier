@@ -39,6 +39,84 @@ namespace WotDossier.Domain.Entities
             {
                 AvgLevel = tanks.Sum(x => x.Common.tier*x.Tankdata.battlesCount)/(double) Battles_count;
             }
+
+            #region [ IRowBattleAwards ]
+
+            Warrior = _tanks.Sum(x => x.Battle.warrior);
+            Invader = _tanks.Sum(x => x.Battle.invader);
+            Sniper = _tanks.Sum(x => x.Battle.sniper);
+            Defender = _tanks.Sum(x => x.Battle.defender);
+            SteelWall = _tanks.Sum(x => x.Battle.steelwall);
+            Confederate = _tanks.Sum(x => x.Battle.supporter);
+            Scout = _tanks.Sum(x => x.Battle.scout);
+            PatrolDuty = _tanks.Sum(x => x.Battle.evileye);
+            BrothersInArms = _tanks.Sum(x => x.Epic.BrothersInArms);
+            CrucialContribution = _tanks.Sum(x => x.Epic.CrucialContribution);
+            CoolHeaded = _tanks.Sum(x => x.Special.ironMan);
+            LuckyDevil = _tanks.Sum(x => x.Special.luckyDevil);
+            Spartan = _tanks.Sum(x => x.Special.sturdy);
+
+            #endregion
+
+            #region [ IRowEpic ]
+
+            Boelter = _tanks.Sum(x => x.Epic.Boelter);
+            RadleyWalters = _tanks.Sum(x => x.Epic.RadleyWalters);
+            LafayettePool = _tanks.Sum(x => x.Epic.LafayettePool);
+            Orlik = _tanks.Sum(x => x.Epic.Orlik);
+            Oskin = _tanks.Sum(x => x.Epic.Oskin);
+            Lehvaslaiho = _tanks.Sum(x => x.Epic.Lehvaslaiho);
+            Nikolas = _tanks.Sum(x => x.Epic.Nikolas);
+            Halonen = _tanks.Sum(x => x.Epic.Halonen);
+            Burda = _tanks.Sum(x => x.Epic.Burda);
+            Pascucci = _tanks.Sum(x => x.Epic.Pascucci);
+            Dumitru = _tanks.Sum(x => x.Epic.Dumitru);
+            TamadaYoshio = _tanks.Sum(x => x.Epic.TamadaYoshio);
+            Billotte = _tanks.Sum(x => x.Epic.Billotte);
+            BrunoPietro = _tanks.Sum(x => x.Epic.BrunoPietro);
+            Tarczay = _tanks.Sum(x => x.Epic.Tarczay);
+            Kolobanov = _tanks.Sum(x => x.Epic.Kolobanov);
+            Fadin = _tanks.Sum(x => x.Epic.Fadin);
+            HeroesOfRassenay = _tanks.Sum(x => x.Special.heroesOfRassenay);
+            DeLanglade = _tanks.Sum(x => x.Epic.DeLanglade);
+
+            #endregion
+
+            #region [ IRowMedals]
+
+            //Kay = stat.data.achievements.medalKay;
+            //Carius = stat.data.achievements.medalCarius;
+            //Knispel = stat.data.achievements.medalKnispel;
+            //Poppel = stat.data.achievements.medalPoppel;
+            //Abrams = stat.data.achievements.medalAbrams;
+            //Leclerk = stat.data.achievements.medalLeClerc;
+            //Lavrinenko = stat.data.achievements.medalLavrinenko;
+            //Ekins = stat.data.achievements.medalEkins;
+
+            #endregion
+
+            #region [ IRowSeries ]
+
+            SharpshooterLongest = _tanks.Max(x => x.Series.maxSniperSeries);
+            MasterGunnerLongest = _tanks.Max(x => x.Series.maxPiercingSeries);
+
+            #endregion
+
+            #region [ IRowSpecialAwards ]
+
+            Kamikaze = _tanks.Sum(x => x.Special.kamikaze);
+            Raider = _tanks.Sum(x => x.Special.raider);
+            Bombardier = _tanks.Sum(x => x.Special.bombardier);
+            Reaper = _tanks.Max(x => x.Series.maxKillingSeries);
+            Invincible = _tanks.Max(x => x.Series.maxInvincibleSeries);
+            Survivor = _tanks.Max(x => x.Series.maxDiehardSeries);
+            MouseTrap = _tanks.Sum(x => x.Special.mousebane);
+            Hunter = _tanks.Sum(x => x.Tankdata.fragsBeast)/100;
+            Sinai = _tanks.Sum(x => x.Battle.fragsSinai)/100;
+            PattonValley = _tanks.Sum(x => x.Special.fragsPatton)/100;
+            Ranger = _tanks.Sum(x => x.Special.huntsman);
+
+            #endregion
         }
 
         public PlayerStatAdapter(PlayerStat stat)
@@ -61,6 +139,84 @@ namespace WotDossier.Domain.Entities
             {
                 AvgLevel = stat.data.vehicles.Sum(x => x.level*x.battle_count)/(double) stat.data.summary.Battles_count;
             }
+
+            #region [ IRowBattleAwards ]
+
+            Warrior = stat.data.achievements.warrior;
+            Invader = stat.data.achievements.invader;
+            Sniper = stat.data.achievements.sniper;
+            Defender = stat.data.achievements.defende;
+            SteelWall = stat.data.achievements.steelwall;
+            Confederate = stat.data.achievements.supporter;
+            Scout = stat.data.achievements.scout;
+            PatrolDuty = stat.data.achievements.evileye;
+            BrothersInArms = stat.data.achievements.medalBrothersInArms;
+            CrucialContribution = stat.data.achievements.medalCrucialContribution;
+            CoolHeaded = stat.data.achievements.ironMan;
+            LuckyDevil = stat.data.achievements.luckyDevil;
+            Spartan = stat.data.achievements.sturdy;
+
+            #endregion
+
+            #region [ IRowEpic ]
+
+            Boelter = stat.data.achievements.medalBoelter;
+            RadleyWalters = stat.data.achievements.medalRadleyWalters;
+            LafayettePool = stat.data.achievements.medalLafayettePool;
+            Orlik = stat.data.achievements.medalOrlik;
+            Oskin = stat.data.achievements.medalOskin;
+            Lehvaslaiho = stat.data.achievements.medalLehvaslaiho;
+            Nikolas = stat.data.achievements.medalNikolas;
+            Halonen = stat.data.achievements.medalHalonen;
+            Burda = stat.data.achievements.medalBurda;
+            Pascucci = stat.data.achievements.medalPascucci;
+            Dumitru = stat.data.achievements.medalDumitru;
+            TamadaYoshio = stat.data.achievements.medalTamadaYoshio;
+            Billotte = stat.data.achievements.medalBillotte;
+            BrunoPietro = stat.data.achievements.medalBrunoPietro;
+            Tarczay = stat.data.achievements.medalTarczay;
+            Kolobanov = stat.data.achievements.medalKolobanov;
+            Fadin = stat.data.achievements.medalFadin;
+            HeroesOfRassenay = stat.data.achievements.heroesOfRassenay;
+            DeLanglade = stat.data.achievements.medalDeLanglade;
+
+            #endregion
+
+            #region [ IRowMedals]
+
+            Kay = stat.data.achievements.medalKay;
+            Carius = stat.data.achievements.medalCarius;
+            Knispel = stat.data.achievements.medalKnispel;
+            Poppel = stat.data.achievements.medalPoppel;
+            Abrams = stat.data.achievements.medalAbrams;
+            Leclerk = stat.data.achievements.medalLeClerc;
+            Lavrinenko = stat.data.achievements.medalLavrinenko;
+            Ekins = stat.data.achievements.medalEkins;
+
+            #endregion
+
+            #region [ IRowSeries ]
+
+            SharpshooterLongest = stat.data.achievements.maxSniperSeries;
+            MasterGunnerLongest = stat.data.achievements.maxPiercingSeries;
+
+            #endregion
+
+            #region [ IRowSpecialAwards ]
+
+            Kamikaze = stat.data.achievements.kamikaze;
+            Raider = stat.data.achievements.raider;
+            Bombardier = stat.data.achievements.bombardier;
+            Reaper = stat.data.achievements.maxKillingSeries;
+            Invincible = stat.data.achievements.maxInvincibleSeries;
+            Survivor = stat.data.achievements.maxDiehardSeries;
+            MouseTrap = stat.data.achievements.mousebane;
+            Hunter = stat.data.achievements.beasthunter;
+            Sinai = stat.data.achievements.sinai;
+            PattonValley = stat.data.achievements.pattonValley;
+            Ranger = stat.data.achievements.huntsman;
+
+            #endregion
         }
 
         public int Battles_count { get; set; }
@@ -97,7 +253,7 @@ namespace WotDossier.Domain.Entities
 
         #region [ ITankRowBattleAwards ]
 
-        public int TopGun { get; set; }
+        public int Warrior { get; set; }
 
         public int Invader { get; set; }
 
@@ -163,7 +319,7 @@ namespace WotDossier.Domain.Entities
 
         public int Fadin { get; set; }
 
-        public int HeroesOfRaseiniai { get; set; }
+        public int HeroesOfRassenay { get; set; }
 
         public int DeLanglade { get; set; }
 

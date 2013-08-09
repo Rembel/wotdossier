@@ -6,6 +6,52 @@ namespace WotDossier.Applications.ViewModel
 {
     public abstract class StatisticViewModelBase : IRating, IRowBattleAwards, IRowEpicAwards, IRowSpecialAwards, IRowMedals, IRowSeries
     {
+        public static readonly string PropWarrior = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.TopGun);
+        public static readonly string PropSniper = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Sniper);
+        public static readonly string PropInvader = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Invader);
+        public static readonly string PropDefender = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Defender);
+        public static readonly string PropSteelWall = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.SteelWall);
+        public static readonly string PropConfederate = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Confederate);
+        public static readonly string PropScout = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Scout);
+        public static readonly string PropPatrolDuty = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.PatrolDuty);
+        public static readonly string PropHeroesOfRassenay = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.HeroesOfRassenay);
+        public static readonly string PropLafayettePool = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.LafayettePool);
+        public static readonly string PropRadleyWalters = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.RadleyWalters);
+        public static readonly string PropCrucialContribution = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.CrucialContribution);
+        public static readonly string PropBrothersInArms = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.BrothersInArms);
+        public static readonly string PropKolobanov = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Kolobanov);
+        public static readonly string PropNikolas = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Nikolas);
+        public static readonly string PropOrlik = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Orlik);
+        public static readonly string PropOskin = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Oskin);
+        public static readonly string PropHalonen = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Halonen);
+        public static readonly string PropLehvaslaiho = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Lehvaslaiho);
+        public static readonly string PropDeLanglade = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.DeLanglade);
+        public static readonly string PropBurda = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Burda);
+        public static readonly string PropDumitru = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Dumitru);
+        public static readonly string PropPascucci = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Pascucci);
+        public static readonly string PropTamadaYoshio = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.TamadaYoshio);
+        public static readonly string PropBoelter = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Boelter);
+        public static readonly string PropFadin = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Fadin);
+        public static readonly string PropTarczay = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Tarczay);
+        public static readonly string PropBrunoPietro = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.BrunoPietro);
+        public static readonly string PropBillotte = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Billotte);
+        public static readonly string PropSurvivor = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Survivor);
+        public static readonly string PropKamikaze = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Kamikaze);
+        public static readonly string PropInvincible = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Invincible);
+        public static readonly string PropRaider = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Raider);
+        public static readonly string PropBombardier = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Bombardier);
+        public static readonly string PropReaper = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Reaper);
+        public static readonly string PropMouseTrap = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.MouseTrap);
+        public static readonly string PropPattonValley = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.PattonValley);
+        public static readonly string PropHunter = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Hunter);
+        public static readonly string PropSinai = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Sinai);
+        public static readonly string PropMasterGunnerLongest = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.MasterGunnerLongest);
+        public static readonly string PropSharpshooterLongest = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.SharpshooterLongest);
+        public static readonly string PropRanger = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Ranger);
+        public static readonly string PropCoolHeaded = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.CoolHeaded);
+        public static readonly string PropSpartan = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.Spartan);
+        public static readonly string PropLuckyDevil = TypeHelper<StatisticViewModelBase>.PropertyName(v => v.LuckyDevil);
+
         private DateTime _updated;
         public int BattlesCount { get; set; }
         public int Wins { get; set; }
@@ -223,8 +269,6 @@ namespace WotDossier.Applications.ViewModel
 
         public int Spartan { get; set; }
 
-        public int Jager { get; set; }
-
         #endregion
 
         #region [ ITankRowEpic ]
@@ -263,7 +307,7 @@ namespace WotDossier.Applications.ViewModel
 
         public int Fadin { get; set; }
 
-        public int HeroesOfRaseiniai { get; set; }
+        public int HeroesOfRassenay { get; set; }
 
         public int DeLanglade { get; set; }
 
@@ -342,7 +386,6 @@ namespace WotDossier.Applications.ViewModel
         #endregion
 
         #endregion
-
         
         /// <summary>
         /// Stat updated

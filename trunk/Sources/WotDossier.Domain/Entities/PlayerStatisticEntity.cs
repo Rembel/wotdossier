@@ -285,7 +285,83 @@ namespace WotDossier.Domain.Entities
                 AchievementsIdObject = new PlayerAchievementsEntity();
             }
 
-            //AchievementsIdObject.Update
+            #region [ IRowBattleAwards ]
+
+            AchievementsIdObject.Warrior = statAdapter.Warrior;
+            AchievementsIdObject.Invader = statAdapter.Invader;
+            AchievementsIdObject.Sniper = statAdapter.Sniper;
+            AchievementsIdObject.Defender = statAdapter.Defender;
+            AchievementsIdObject.SteelWall = statAdapter.SteelWall;
+            AchievementsIdObject.Confederate = statAdapter.Confederate;
+            AchievementsIdObject.Scout = statAdapter.Scout;
+            AchievementsIdObject.PatrolDuty = statAdapter.PatrolDuty;
+            AchievementsIdObject.BrothersInArms = statAdapter.BrothersInArms;
+            AchievementsIdObject.CrucialContribution = statAdapter.CrucialContribution;
+            AchievementsIdObject.CoolHeaded = statAdapter.CoolHeaded;
+            AchievementsIdObject.LuckyDevil = statAdapter.LuckyDevil;
+            AchievementsIdObject.Spartan = statAdapter.Spartan;
+
+            #endregion
+
+            #region [ IRowEpic ]
+
+            AchievementsIdObject.Boelter = statAdapter.Boelter;
+            AchievementsIdObject.RadleyWalters = statAdapter.RadleyWalters;
+            AchievementsIdObject.LafayettePool = statAdapter.LafayettePool;
+            AchievementsIdObject.Orlik = statAdapter.Orlik;
+            AchievementsIdObject.Oskin = statAdapter.Oskin;
+            AchievementsIdObject.Lehvaslaiho = statAdapter.Lehvaslaiho;
+            AchievementsIdObject.Nikolas = statAdapter.Nikolas;
+            AchievementsIdObject.Halonen = statAdapter.Halonen;
+            AchievementsIdObject.Burda = statAdapter.Burda;
+            AchievementsIdObject.Pascucci = statAdapter.Pascucci;
+            AchievementsIdObject.Dumitru = statAdapter.Dumitru;
+            AchievementsIdObject.TamadaYoshio = statAdapter.TamadaYoshio;
+            AchievementsIdObject.Billotte = statAdapter.Billotte;
+            AchievementsIdObject.BrunoPietro = statAdapter.BrunoPietro;
+            AchievementsIdObject.Tarczay = statAdapter.Tarczay;
+            AchievementsIdObject.Kolobanov = statAdapter.Kolobanov;
+            AchievementsIdObject.Fadin = statAdapter.Fadin;
+            AchievementsIdObject.HeroesOfRassenay = statAdapter.HeroesOfRassenay;
+            AchievementsIdObject.DeLanglade = statAdapter.DeLanglade;
+
+            #endregion
+
+            #region [ IRowMedals]
+
+            AchievementsIdObject.Kay = statAdapter.Kay;
+            AchievementsIdObject.Carius = statAdapter.Carius;
+            AchievementsIdObject.Knispel = statAdapter.Knispel;
+            AchievementsIdObject.Poppel = statAdapter.Poppel;
+            AchievementsIdObject.Abrams = statAdapter.Abrams;
+            AchievementsIdObject.Leclerk = statAdapter.Leclerk;
+            AchievementsIdObject.Lavrinenko = statAdapter.Lavrinenko;
+            AchievementsIdObject.Ekins = statAdapter.Ekins;
+
+            #endregion
+
+            #region [ IRowSeries ]
+
+            AchievementsIdObject.SharpshooterLongest = statAdapter.SharpshooterLongest;
+            AchievementsIdObject.MasterGunnerLongest = statAdapter.MasterGunnerLongest;
+
+            #endregion
+
+            #region [ IRowSpecialAwards ]
+
+            AchievementsIdObject.Kamikaze = statAdapter.Kamikaze;
+            AchievementsIdObject.Raider = statAdapter.Raider;
+            AchievementsIdObject.Bombardier = statAdapter.Bombardier;
+            AchievementsIdObject.Reaper = statAdapter.Reaper;
+            AchievementsIdObject.Invincible = statAdapter.Invincible;
+            AchievementsIdObject.Survivor = statAdapter.Survivor;
+            AchievementsIdObject.MouseTrap = statAdapter.MouseTrap;
+            AchievementsIdObject.Hunter = statAdapter.Hunter;
+            AchievementsIdObject.Sinai = statAdapter.Sinai;
+            AchievementsIdObject.PattonValley = statAdapter.PattonValley;
+            AchievementsIdObject.Ranger = statAdapter.Ranger;
+
+            #endregion
 
             #endregion
         }

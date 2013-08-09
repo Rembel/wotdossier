@@ -127,14 +127,14 @@
                 <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Destroyed}"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="10" Grid.Column="1" Text="{Binding FragsDelta, StringFormat='### ### ### ###'}"></TextBlock>
                 <!--AvgDestroyed-->
-                <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDestroyed}"></TextBlock>
+                <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDestroyed}" Margin="20,0,0,0"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="11" Grid.Column="1" Text="{Binding AvgFragsForPeriod, StringFormat='0.00'}"></TextBlock>
                 <TextBlock Foreground="{Binding AvgFragsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="11" Grid.Column="2" Text="{Binding AvgFragsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
                 <!--Detected-->
                 <TextBlock Foreground="#BABFBA" Grid.Row="12" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Detected}"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="12" Grid.Column="1" Text="{Binding SpottedDelta, StringFormat='### ### ### ###'}"></TextBlock>
                 <!--AvgDetected-->
-                <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDetected}"></TextBlock>
+                <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDetected}" Margin="20,0,0,0"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="13" Grid.Column="1" Text="{Binding AvgSpottedForPeriod, StringFormat='0.00'}"></TextBlock>
                 <TextBlock Foreground="{Binding AvgSpottedDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="13" Grid.Column="2" Text="{Binding AvgSpottedDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
                 <!--HitRatio-->
@@ -146,7 +146,7 @@
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="14" Grid.Column="1" Text="{Binding DamageDealtDelta, StringFormat='### ### ### ###'}"></TextBlock>
                 <!--<TextBlock Foreground="{Binding DamageDealtDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="14" Grid.Column="2" Text="{Binding DamageDealtDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>-->
                 <!--AvgDamageCaused-->
-                <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDamageCaused}"></TextBlock>
+                <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDamageCaused}" Margin="20,0,0,0"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="15" Grid.Column="1" Text="{Binding AvgDamageDealtForPeriod, StringFormat='### ### ### ###'}"></TextBlock>
                 <TextBlock Foreground="{Binding AvgDamageDealtDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="15" Grid.Column="2" Text="{Binding AvgDamageDealtDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
                 <!--CapturePoints-->
@@ -154,7 +154,7 @@
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="16" Grid.Column="1" Text="{Binding CapturePointsDelta, StringFormat='### ### ### ###'}"></TextBlock>
                 <!--<TextBlock Foreground="{Binding CapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="16" Grid.Column="2" Text="{Binding CapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>-->
                 <!--AvgCapturePoints-->
-                <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgCapturePoints}"></TextBlock>
+                <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgCapturePoints}" Margin="20,0,0,0"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="17" Grid.Column="1" Text="{Binding AvgCapturePointsForPeriod, StringFormat='0.00'}"></TextBlock>
                 <TextBlock Foreground="{Binding AvgCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="17" Grid.Column="2" Text="{Binding AvgCapturePointsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
                 <!--DefensePoints-->
@@ -162,7 +162,7 @@
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="18" Grid.Column="1" Text="{Binding DroppedCapturePointsDelta, StringFormat='### ### ### ###'}"></TextBlock>
                 <!--<TextBlock Foreground="{Binding DroppedCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="18" Grid.Column="2" Text="{Binding DroppedCapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>-->
                 <!--AvgDefensePoints-->
-                <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDefensePoints}"></TextBlock>
+                <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDefensePoints}" Margin="20,0,0,0"></TextBlock>
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="19" Grid.Column="1" Text="{Binding AvgDroppedCapturePointsForPeriod, StringFormat='0.00'}"></TextBlock>
                 <TextBlock Foreground="{Binding AvgDroppedCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="19" Grid.Column="2" Text="{Binding AvgDroppedCapturePointsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
                 <!--EffectivityRating-->

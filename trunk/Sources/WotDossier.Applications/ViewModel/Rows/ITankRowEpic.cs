@@ -19,7 +19,7 @@
         int Tarczay { get; set; }
         int Kolobanov { get; set; }
         int Fadin { get; set; }
-        int HeroesOfRaseiniai { get; set; }
+        int HeroesOfRassenay { get; set; }
         int DeLanglade { get; set; }
     }
 }

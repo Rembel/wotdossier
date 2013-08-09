@@ -1223,4 +1223,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Settings_ReplaysFolder" xml:space="preserve">
     <value>Папка с реплеями</value>
   </data>
+  <data name="Tab_Header_Achievements" xml:space="preserve">
+    <value>Достижения</value>
+  </data>
 </root>

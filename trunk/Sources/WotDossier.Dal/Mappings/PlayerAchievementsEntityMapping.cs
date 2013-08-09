@@ -55,8 +55,7 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Spartan, "Spartan");
 			Map(v => v.LuckyDevil, "LuckyDevil");
 		
-
-			HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.AchievementsId));
+			//HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.AchievementsId));
         }
     }
 }

@@ -38,6 +38,7 @@ namespace WotDossier.Applications.ViewModel
 
         private readonly DossierRepository _dossierRepository;
         private PlayerStatisticViewModel _playerStatistic;
+        private PlayerStatisticViewModel _sessionStatistic;
         private IEnumerable<TankRowMasterTanker> _masterTanker;
         private IEnumerable<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
 
@@ -73,6 +74,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _playerStatistic = value;
                 RaisePropertyChanged("PlayerStatistic");
+            }
+        }
+
+        public PlayerStatisticViewModel SessionStatistic
+        {
+            get { return _sessionStatistic; }
+            set
+            {
+                _sessionStatistic = value;
+                RaisePropertyChanged("SessionStatistic");
             }
         }
 
@@ -117,6 +128,7 @@ namespace WotDossier.Applications.ViewModel
         private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
         private ObservableCollection<ReplayFile> _replays;
         private TankFilterViewModel _tankFilter;
+        private PlayerStatisticViewModel _sessionStartStatistic;
 
         public ObservableCollection<SellInfo> LastUsedTanks
         {
@@ -325,6 +337,21 @@ namespace WotDossier.Applications.ViewModel
                     tanks = LoadTanks(cacheFile);
 
                     PlayerStatistic = InitPlayerStatisticViewModel(playerStat, tanks);
+
+                    PlayerStatisticViewModel clone = PlayerStatistic.Clone();
+
+                    if (_sessionStartStatistic == null)
+                    {
+                        //save start session statistic
+                        _sessionStartStatistic = clone;
+                    }
+                    else
+                    {
+                        clone.SetPreviousStatistic(_sessionStartStatistic);
+                    }
+
+                    SessionStatistic = clone;
+
                     InitTanksStatistic(playerStat, tanks);
 
                     InitChart();

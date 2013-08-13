@@ -1,101 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using WotDossier.Common;
 using WotDossier.Domain.Entities;
 
 namespace WotDossier.Applications.ViewModel
 {
     public class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
     {
-        //GR-->
-            //Global Rating
-            public static readonly string PropRating_IntegratedValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_IntegratedValue);
-            public static readonly string PropRating_IntegratedPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_IntegratedPlace);
-            //W/B-->
-            //Victories/Battles
-            public static readonly string PropRating_BattleAvgPerformanceValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgPerformanceValue);
-            public static readonly string PropRating_BattleAvgPerformancePlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgPerformancePlace);
-            //E/B-->
-            //Average Experience per Battle
-            public static readonly string PropRating_BattleAvgXpValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgXpValue);
-            public static readonly string PropRating_BattleAvgXpPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgXpPlace);
-            //WIN-->
-            //Victories
-            public static readonly string PropRating_BattleWinsValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleWinsValue);
-            public static readonly string PropRating_BattleWinsPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleWinsPlace);
-            //GPL-->
-            //Battles Participated
-            public static readonly string PropRating_BattlesValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattlesValue);
-            public static readonly string PropRating_BattlesPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattlesPlace);
-            //CPT-->
-            //Capture Points
-            public static readonly string PropRating_CapturedPointsValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_CapturedPointsValue);
-            public static readonly string PropRating_CapturedPointsPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_CapturedPointsPlace);
-            //DMG-->
-            //Damage Caused
-            public static readonly string PropRating_DamageDealtValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DamageDealtValue);
-            public static readonly string PropRating_DamageDealtPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DamageDealtPlace);
-            //DPT-->
-            //Defense Points
-            public static readonly string PropRating_DroppedPointsValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DroppedPointsValue);
-            public static readonly string PropRating_DroppedPointsPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DroppedPointsPlace);
-            //FRG-->
-            //Targets Destroyed
-            public static readonly string PropRating_FragsValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_FragsValue);
-            public static readonly string PropRating_FragsPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_FragsPlace);
-            //SPT-->
-            //Targets Detected
-            public static readonly string PropRating_SpottedValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_SpottedValue);
-            public static readonly string PropRating_SpottedPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_SpottedPlace);
-            //EXP-->
-            //Total Experience
-            public static readonly string PropRating_XpValue = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_XpValue);
-            public static readonly string PropRating_XpPlace = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_XpPlace);
-
-            //GR-->
-            //Global Rating
-            public static readonly string PropRating_IntegratedValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_IntegratedValueDelta);
-            public static readonly string PropRating_IntegratedPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_IntegratedPlaceDelta);
-            //W/B-->
-            //Victories/Battles
-            public static readonly string PropRating_BattleAvgPerformanceValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgPerformanceValueDelta);
-            public static readonly string PropRating_BattleAvgPerformancePlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgPerformancePlaceDelta);
-            //E/B-->
-            //Average Experience per Battle
-            public static readonly string PropRating_BattleAvgXpValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgXpValueDelta);
-            public static readonly string PropRating_BattleAvgXpPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleAvgXpPlaceDelta);
-            //WIN-->
-            //Victories
-            public static readonly string PropRating_BattleWinsValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleWinsValueDelta);
-            public static readonly string PropRating_BattleWinsPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattleWinsPlaceDelta);
-            //GPL-->
-            //Battles Participated
-            public static readonly string PropRating_BattlesValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattlesValueDelta);
-            public static readonly string PropRating_BattlesPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_BattlesPlaceDelta);
-            //CPT-->
-            //Capture Points
-            public static readonly string PropRating_CapturedPointsValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_CapturedPointsValueDelta);
-            public static readonly string PropRating_CapturedPointsPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_CapturedPointsPlaceDelta);
-            //DMG-->
-            //Damage Caused
-            public static readonly string PropRating_DamageDealtValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DamageDealtValueDelta);
-            public static readonly string PropRating_DamageDealtPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DamageDealtPlaceDelta);
-            //DPT-->
-            //Defense Points
-            public static readonly string PropRating_DroppedPointsValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DroppedPointsValueDelta);
-            public static readonly string PropRating_DroppedPointsPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_DroppedPointsPlaceDelta);
-            //FRG-->
-            //Targets Destroyed
-            public static readonly string PropRating_FragsValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_FragsValueDelta);
-            public static readonly string PropRating_FragsPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_FragsPlaceDelta);
-            //SPT-->
-            //Targets Detected
-            public static readonly string PropRating_SpottedValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_SpottedValueDelta);
-            public static readonly string PropRating_SpottedPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_SpottedPlaceDelta);
-            //EXP-->
-            //Total Experience
-            public static readonly string PropRating_XpValueDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_XpValueDelta);
-            public static readonly string PropRating_XpPlaceDelta = TypeHelper<PlayerStatisticViewModel>.PropertyName(v => v.Rating_XpPlaceDelta);
+        private PlayerStatisticEntity _stat;
 
         #region Common
 
@@ -299,6 +210,8 @@ namespace WotDossier.Applications.ViewModel
         public PlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
             : base(stat.Updated, list)
         {
+            _stat = stat;
+
             #region Common init
 
             BattlesCount = stat.BattlesCount;
@@ -459,100 +372,10 @@ namespace WotDossier.Applications.ViewModel
 
         public PlayerStatisticClanViewModel Clan { get; set; }
 
-        protected override void SetPreviousStatistic(PlayerStatisticViewModel prevPlayerStatistic)
+        public PlayerStatisticViewModel Clone()
         {
-            base.SetPreviousStatistic(prevPlayerStatistic);
-
-            OnPropertyChanged(PropBattlesCountDelta);
-            //GR-->
-            //Global Rating
-            OnPropertyChanged(PropRating_IntegratedValue);
-            OnPropertyChanged(PropRating_IntegratedPlace);
-            //W/B-->
-            //Victories/Battles
-            OnPropertyChanged(PropRating_BattleAvgPerformanceValue);
-            OnPropertyChanged(PropRating_BattleAvgPerformancePlace);
-            //E/B-->
-            //Average Experience per Battle
-            OnPropertyChanged(PropRating_BattleAvgXpValue);
-            OnPropertyChanged(PropRating_BattleAvgXpPlace);
-            //WIN-->
-            //Victories
-            OnPropertyChanged(PropRating_BattleWinsValue);
-            OnPropertyChanged(PropRating_BattleWinsPlace);
-            //GPL-->
-            //Battles Participated
-            OnPropertyChanged(PropRating_BattlesValue);
-            OnPropertyChanged(PropRating_BattlesPlace);
-            //CPT-->
-            //Capture Points
-            OnPropertyChanged(PropRating_CapturedPointsValue);
-            OnPropertyChanged(PropRating_CapturedPointsPlace);
-            //DMG-->
-            //Damage Caused
-            OnPropertyChanged(PropRating_DamageDealtValue);
-            OnPropertyChanged(PropRating_DamageDealtPlace);
-            //DPT-->
-            //Defense Points
-            OnPropertyChanged(PropRating_DroppedPointsValue);
-            OnPropertyChanged(PropRating_DroppedPointsPlace);
-            //FRG-->
-            //Targets Destroyed
-            OnPropertyChanged(PropRating_FragsValue);
-            OnPropertyChanged(PropRating_FragsPlace);
-            //SPT-->
-            //Targets Detected
-            OnPropertyChanged(PropRating_SpottedValue);
-            OnPropertyChanged(PropRating_SpottedPlace);
-            //EXP-->
-            //Total Experience
-            OnPropertyChanged(PropRating_XpValue);
-            OnPropertyChanged(PropRating_XpPlace);
-
-            //GR-->
-            //Global Rating
-            OnPropertyChanged(PropRating_IntegratedValueDelta);
-            OnPropertyChanged(PropRating_IntegratedPlaceDelta);
-            //W/B-->
-            //Victories/Battles
-            OnPropertyChanged(PropRating_BattleAvgPerformanceValueDelta);
-            OnPropertyChanged(PropRating_BattleAvgPerformancePlaceDelta);
-            //E/B-->
-            //Average Experience per Battle
-            OnPropertyChanged(PropRating_BattleAvgXpValueDelta);
-            OnPropertyChanged(PropRating_BattleAvgXpPlaceDelta);
-            //WIN-->
-            //Victories
-            OnPropertyChanged(PropRating_BattleWinsValueDelta);
-            OnPropertyChanged(PropRating_BattleWinsPlaceDelta);
-            //GPL-->
-            //Battles Participated
-            OnPropertyChanged(PropRating_BattlesValueDelta);
-            OnPropertyChanged(PropRating_BattlesPlaceDelta);
-            //CPT-->
-            //Capture Points
-            OnPropertyChanged(PropRating_CapturedPointsValueDelta);
-            OnPropertyChanged(PropRating_CapturedPointsPlaceDelta);
-            //DMG-->
-            //Damage Caused
-            OnPropertyChanged(PropRating_DamageDealtValueDelta);
-            OnPropertyChanged(PropRating_DamageDealtPlaceDelta);
-            //DPT-->
-            //Defense Points
-            OnPropertyChanged(PropRating_DroppedPointsValueDelta);
-            OnPropertyChanged(PropRating_DroppedPointsPlaceDelta);
-            //FRG-->
-            //Targets Destroyed
-            OnPropertyChanged(PropRating_FragsValueDelta);
-            OnPropertyChanged(PropRating_FragsPlaceDelta);
-            //SPT-->
-            //Targets Detected
-            OnPropertyChanged(PropRating_SpottedValueDelta);
-            OnPropertyChanged(PropRating_SpottedPlaceDelta);
-            //EXP-->
-            //Total Experience
-            OnPropertyChanged(PropRating_XpValueDelta);
-            OnPropertyChanged(PropRating_XpPlaceDelta);
+            PlayerStatisticViewModel clone = new PlayerStatisticViewModel(_stat);
+            return clone;
         }
 
         #endregion

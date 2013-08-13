@@ -2314,6 +2314,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Session.
+        /// </summary>
+        public static string Tab_Header_Session {
+            get {
+                return ResourceManager.GetString("Tab_Header_Session", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Special awards.
         /// </summary>
         public static string Tab_Header_SpecialAwards {

@@ -29,7 +29,7 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
+            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}" DataContext="{Binding PlayerStatistic}">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
@@ -64,8 +64,8 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <tabs:PeriodTab Grid.Row="0" x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
-                    <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataContext.LastUsedTanksList, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MainWindow}}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
+                    <tabs:PeriodTab Grid.Row="0" x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"  DataContext="{Binding PlayerStatistic}"></tabs:PeriodTab>
+                    <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -79,16 +79,19 @@
                         </DataGrid.Columns>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="MouseDoubleClick">
-                                <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=DataContext.OnRowDoubleClickCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MainWindow}, Mode=OneWay}"/>
+                                <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=DataContext.OnRowDoubleClickCommand, Mode=OneWay}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}">
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Session}" Name="tabSession" DataContext="{Binding SessionStatistic}">
+                    <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
+            </TabItem>
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">
                 <controls:RatingView></controls:RatingView>
             </TabItem>
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}" DataContext="{Binding PlayerStatistic}">
                 <ScrollViewer>
                     <controls:Achievements></controls:Achievements></ScrollViewer>
             </TabItem>

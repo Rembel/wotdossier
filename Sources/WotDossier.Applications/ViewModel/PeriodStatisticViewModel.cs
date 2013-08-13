@@ -39,6 +39,11 @@ namespace WotDossier.Applications.ViewModel
         public static readonly string PropAvgSpottedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgSpottedDelta);
         public static readonly string PropAvgXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgXpDelta);
 
+        public static readonly string PropWinsPercentForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WinsPercentForPeriod);
+        public static readonly string PropLossesPercentForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LossesPercentForPeriod);
+        public static readonly string PropSurvivedBattlesPercentForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesPercentForPeriod);
+
+
         public static readonly string PropAvgCapturePointsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgCapturePointsForPeriod);
         public static readonly string PropAvgDamageDealtForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDamageDealtForPeriod);
         public static readonly string PropAvgDroppedCapturePointsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDroppedCapturePointsForPeriod);
@@ -850,6 +855,10 @@ namespace WotDossier.Applications.ViewModel
             OnPropertyChanged(PropEffRatingDelta);
             OnPropertyChanged(PropKievArmorRatingDelta);
             OnPropertyChanged(PropWN6RatingDelta);
+
+            OnPropertyChanged(PropWinsPercentForPeriod);
+            OnPropertyChanged(PropLossesPercentForPeriod);
+            OnPropertyChanged(PropSurvivedBattlesPercentForPeriod);
 
             OnPropertyChanged(PropAvgCapturePointsForPeriod);
             OnPropertyChanged(PropAvgDamageDealtForPeriod);

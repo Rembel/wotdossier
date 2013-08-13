@@ -548,7 +548,7 @@ namespace WotDossier.Applications.ViewModel
                                   String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
             Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
             ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker,
                                      new PenDescription(Resources.Resources.ChartLegend_ER));
 
@@ -560,7 +560,7 @@ namespace WotDossier.Applications.ViewModel
                                   String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
             brush = new SolidColorBrush { Color = Colors.Green };
             lineThickness = new Pen(brush, 2);
-            circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
             ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker,
                                      new PenDescription(Resources.Resources.ChartLegend_WN6Rating));
 
@@ -579,7 +579,7 @@ namespace WotDossier.Applications.ViewModel
                                   String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
             Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
             ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker,
                                          new PenDescription(Resources.Resources.ChartLegend_WinPercent));
 
@@ -598,7 +598,7 @@ namespace WotDossier.Applications.ViewModel
                                   String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
             Pen lineThickness = new Pen(brush, 2);
-            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
+            ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
             ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker,
                                         new PenDescription(Resources.Resources.ChartLegend_AvgDamage));
 

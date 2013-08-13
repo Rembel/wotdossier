@@ -14,7 +14,7 @@
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--Common tab-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Overall}" Name="tabCommon">
-                <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></tabs:CommonTabNew>
+                <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch"></tabs:CommonTabNew>
             </TabItem>
             <!--Charts-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">

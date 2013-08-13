@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using WotDossier.Common;
 using WotDossier.Domain;
 using WotDossier.Framework.EventAggregator;
@@ -10,101 +11,6 @@ namespace WotDossier.Applications.ViewModel
 {
     public abstract class PeriodStatisticViewModel<T> : StatisticViewModelBase, INotifyPropertyChanged where T : StatisticViewModelBase
     {
-        #region Constants
-
-        public static readonly string PropBattlesCountDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BattlesCountDelta);
-        public static readonly string PropWinsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WinsDelta);
-        public static readonly string PropWinsPercentDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WinsPercentDelta);
-        public static readonly string PropLossesDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LossesDelta);
-        public static readonly string PropLossesPercentDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LossesPercentDelta);
-        public static readonly string PropSurvivedBattlesDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesPercentDelta);
-        public static readonly string PropSurvivedBattlesPercentDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesDelta);
-        public static readonly string PropXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.XpDelta);
-        public static readonly string PropMaxXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.MaxXpDelta);
-        public static readonly string PropFragsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.FragsDelta);
-        public static readonly string PropSpottedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SpottedDelta);
-        public static readonly string PropHitsPercentsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HitsPercentsDelta);
-        public static readonly string PropDamageDealtDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DamageDealtDelta);
-        public static readonly string PropCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.CapturePointsDelta);
-        public static readonly string PropDroppedCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DroppedCapturePointsDelta);
-
-        public static readonly string PropEffRatingDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.EffRatingDelta);
-        public static readonly string PropKievArmorRatingDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KievArmorRatingDelta);
-        public static readonly string PropWN6RatingDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WN6RatingDelta);
-
-        public static readonly string PropAvgCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgCapturePointsDelta);
-        public static readonly string PropAvgDamageDealtDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDamageDealtDelta);
-        public static readonly string PropAvgDroppedCapturePointsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDroppedCapturePointsDelta);
-        public static readonly string PropAvgFragsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgFragsDelta);
-        public static readonly string PropAvgSpottedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgSpottedDelta);
-        public static readonly string PropAvgXpDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgXpDelta);
-
-        public static readonly string PropWinsPercentForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WinsPercentForPeriod);
-        public static readonly string PropLossesPercentForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LossesPercentForPeriod);
-        public static readonly string PropSurvivedBattlesPercentForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivedBattlesPercentForPeriod);
-
-
-        public static readonly string PropAvgCapturePointsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgCapturePointsForPeriod);
-        public static readonly string PropAvgDamageDealtForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDamageDealtForPeriod);
-        public static readonly string PropAvgDroppedCapturePointsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgDroppedCapturePointsForPeriod);
-        public static readonly string PropAvgFragsForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgFragsForPeriod);
-        public static readonly string PropAvgSpottedForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgSpottedForPeriod);
-        public static readonly string PropAvgXpForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.AvgXpForPeriod);
-
-        public static readonly string PropWN6RatingForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WN6RatingForPeriod);
-        public static readonly string PropEffRatingForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.EffRatingForPeriod);
-        public static readonly string PropKievArmorRatingForPeriod = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KievArmorRatingForPeriod);
-
-        public static readonly string PropPreviousDate = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PreviousDate);
-
-        public static readonly string PropWarriorDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.WarriorDelta);
-        public static readonly string PropSniperDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SniperDelta);
-        public static readonly string PropInvaderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.InvaderDelta);
-        public static readonly string PropDefenderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DefenderDelta);
-        public static readonly string PropSteelWallDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SteelWallDelta);
-        public static readonly string PropConfederateDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.ConfederateDelta);
-        public static readonly string PropScoutDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.ScoutDelta);
-        public static readonly string PropPatrolDutyDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PatrolDutyDelta);
-        public static readonly string PropHeroesOfRassenayDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HeroesOfRassenayDelta);
-        public static readonly string PropLafayettePoolDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LafayettePoolDelta);
-        public static readonly string PropRadleyWaltersDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.RadleyWaltersDelta);
-        public static readonly string PropCrucialContributionDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.CrucialContributionDelta);
-        public static readonly string PropBrothersInArmsDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BrothersInArmsDelta);
-        public static readonly string PropKolobanovDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KolobanovDelta);
-        public static readonly string PropNikolasDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.NikolasDelta);
-        public static readonly string PropOrlikDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.OrlikDelta);
-        public static readonly string PropOskinDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.OskinDelta);
-        public static readonly string PropHalonenDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HalonenDelta);
-        public static readonly string PropLehvaslaihoDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LehvaslaihoDelta);
-        public static readonly string PropDeLangladeDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DeLangladeDelta);
-        public static readonly string PropBurdaDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BurdaDelta);
-        public static readonly string PropDumitruDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.DumitruDelta);
-        public static readonly string PropPascucciDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PascucciDelta);
-        public static readonly string PropTamadaYoshioDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.TamadaYoshioDelta);
-        public static readonly string PropBoelterDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BoelterDelta);
-        public static readonly string PropFadinDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.FadinDelta);
-        public static readonly string PropTarczayDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.TarczayDelta);
-        public static readonly string PropBrunoPietroDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BrunoPietroDelta);
-        public static readonly string PropBillotteDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BillotteDelta);
-        public static readonly string PropSurvivorDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SurvivorDelta);
-        public static readonly string PropKamikazeDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.KamikazeDelta);
-        public static readonly string PropInvincibleDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.InvincibleDelta);
-        public static readonly string PropRaiderDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.RaiderDelta);
-        public static readonly string PropBombardierDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.BombardierDelta);
-        public static readonly string PropReaperDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.ReaperDelta);
-        public static readonly string PropMouseTrapDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.MouseTrapDelta);
-        public static readonly string PropPattonValleyDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.PattonValleyDelta);
-        public static readonly string PropHunterDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.HunterDelta);
-        public static readonly string PropSinaiDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SinaiDelta);
-        public static readonly string PropMasterGunnerLongestDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.MasterGunnerLongestDelta);
-        public static readonly string PropSharpshooterLongestDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SharpshooterLongestDelta);
-        public static readonly string PropRangerDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.RangerDelta);
-        public static readonly string PropCoolHeadedDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.CoolHeadedDelta);
-        public static readonly string PropSpartanDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.SpartanDelta);
-        public static readonly string PropLuckyDevilDelta = TypeHelper<PeriodStatisticViewModel<T>>.PropertyName(v => v.LuckyDevilDelta);
-
-        #endregion
-
         #region Fields
 
         private readonly IEnumerable<T> _list;
@@ -262,7 +168,7 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        public T PrevStatistic { get; protected set; }
+        protected T PrevStatistic { get; set; }
 
         public DateTime PreviousDate
         {
@@ -825,165 +731,15 @@ namespace WotDossier.Applications.ViewModel
             return null;
         }
 
-        protected virtual void SetPreviousStatistic(T prevPlayerStatistic)
+        public void SetPreviousStatistic(T prevPlayerStatistic)
         {
             PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
 
-            OnPropertyChanged(PropBattlesCountDelta);
-            OnPropertyChanged(PropWinsDelta);
-            OnPropertyChanged(PropLossesDelta);
-            OnPropertyChanged(PropSurvivedBattlesDelta);
-            OnPropertyChanged(PropXpDelta);
-            OnPropertyChanged(PropMaxXpDelta);
-            OnPropertyChanged(PropFragsDelta);
-            OnPropertyChanged(PropSpottedDelta);
-            OnPropertyChanged(PropHitsPercentsDelta);
-            OnPropertyChanged(PropDamageDealtDelta);
-            OnPropertyChanged(PropCapturePointsDelta);
-            OnPropertyChanged(PropDroppedCapturePointsDelta);
-            OnPropertyChanged(PropWinsPercentDelta);
-            OnPropertyChanged(PropLossesPercentDelta);
-            OnPropertyChanged(PropSurvivedBattlesPercentDelta);
-
-            OnPropertyChanged(PropAvgCapturePointsDelta);
-            OnPropertyChanged(PropAvgDamageDealtDelta);
-            OnPropertyChanged(PropAvgDroppedCapturePointsDelta);
-            OnPropertyChanged(PropAvgFragsDelta);
-            OnPropertyChanged(PropAvgSpottedDelta);
-            OnPropertyChanged(PropAvgXpDelta);
-
-            OnPropertyChanged(PropEffRatingDelta);
-            OnPropertyChanged(PropKievArmorRatingDelta);
-            OnPropertyChanged(PropWN6RatingDelta);
-
-            OnPropertyChanged(PropWinsPercentForPeriod);
-            OnPropertyChanged(PropLossesPercentForPeriod);
-            OnPropertyChanged(PropSurvivedBattlesPercentForPeriod);
-
-            OnPropertyChanged(PropAvgCapturePointsForPeriod);
-            OnPropertyChanged(PropAvgDamageDealtForPeriod);
-            OnPropertyChanged(PropAvgDroppedCapturePointsForPeriod);
-            OnPropertyChanged(PropAvgFragsForPeriod);
-            OnPropertyChanged(PropAvgSpottedForPeriod);
-            OnPropertyChanged(PropAvgXpForPeriod);
-
-            OnPropertyChanged(PropWN6RatingForPeriod);
-            OnPropertyChanged(PropEffRatingForPeriod);
-            OnPropertyChanged(PropKievArmorRatingForPeriod);
-
-            OnPropertyChanged(PropPreviousDate);
-
-            #region achievements
-
-            OnPropertyChanged(PropWarrior);
-            OnPropertyChanged(PropSniper);
-            OnPropertyChanged(PropInvader);
-            OnPropertyChanged(PropDefender);
-            OnPropertyChanged(PropSteelWall);
-            OnPropertyChanged(PropConfederate);
-            OnPropertyChanged(PropScout);
-            OnPropertyChanged(PropPatrolDuty);
-
-            OnPropertyChanged(PropHeroesOfRassenay);
-            OnPropertyChanged(PropLafayettePool);
-            OnPropertyChanged(PropRadleyWalters);
-            OnPropertyChanged(PropCrucialContribution);
-            OnPropertyChanged(PropBrothersInArms);
-            OnPropertyChanged(PropKolobanov);
-            OnPropertyChanged(PropNikolas);
-            OnPropertyChanged(PropOrlik);
-            OnPropertyChanged(PropOskin);
-            OnPropertyChanged(PropHalonen);
-            OnPropertyChanged(PropLehvaslaiho);
-            OnPropertyChanged(PropDeLanglade);
-            OnPropertyChanged(PropBurda);
-            OnPropertyChanged(PropDumitru);
-            OnPropertyChanged(PropPascucci);
-            OnPropertyChanged(PropTamadaYoshio);
-            OnPropertyChanged(PropBoelter);
-            OnPropertyChanged(PropFadin);
-            OnPropertyChanged(PropTarczay);
-            OnPropertyChanged(PropBrunoPietro);
-            OnPropertyChanged(PropBillotte);
-
-            OnPropertyChanged(PropSurvivor);
-            OnPropertyChanged(PropKamikaze);
-            OnPropertyChanged(PropInvincible);
-            OnPropertyChanged(PropRaider);
-            OnPropertyChanged(PropBombardier);
-            OnPropertyChanged(PropReaper);
-            OnPropertyChanged(PropMouseTrap);
-            OnPropertyChanged(PropPattonValley);
-            OnPropertyChanged(PropHunter);
-            OnPropertyChanged(PropSinai);
-            OnPropertyChanged(PropMasterGunnerLongest);
-            OnPropertyChanged(PropSharpshooterLongest);
-
-            OnPropertyChanged(PropRanger);
-            OnPropertyChanged(PropCoolHeaded);
-            OnPropertyChanged(PropSpartan);
-            OnPropertyChanged(PropLuckyDevil);
-
-            //OnPropertyChanged(PropKay);
-            //OnPropertyChanged(PropCarius);
-            //OnPropertyChanged(PropKnispel);
-            //OnPropertyChanged(PropPoppel);
-            //OnPropertyChanged(PropAbrams);
-            //OnPropertyChanged(PropLeclerk);
-            //OnPropertyChanged(PropLavrinenko);
-            //OnPropertyChanged(PropEkins);
-
-            OnPropertyChanged(PropWarriorDelta);
-            OnPropertyChanged(PropSniperDelta);
-            OnPropertyChanged(PropInvaderDelta);
-            OnPropertyChanged(PropDefenderDelta);
-            OnPropertyChanged(PropSteelWallDelta);
-            OnPropertyChanged(PropConfederateDelta);
-            OnPropertyChanged(PropScoutDelta);
-            OnPropertyChanged(PropPatrolDutyDelta);
-
-            OnPropertyChanged(PropHeroesOfRassenayDelta);
-            OnPropertyChanged(PropLafayettePoolDelta);
-            OnPropertyChanged(PropRadleyWaltersDelta);
-            OnPropertyChanged(PropCrucialContributionDelta);
-            OnPropertyChanged(PropBrothersInArmsDelta);
-            OnPropertyChanged(PropKolobanovDelta);
-            OnPropertyChanged(PropNikolasDelta);
-            OnPropertyChanged(PropOrlikDelta);
-            OnPropertyChanged(PropOskinDelta);
-            OnPropertyChanged(PropHalonenDelta);
-            OnPropertyChanged(PropLehvaslaihoDelta);
-            OnPropertyChanged(PropDeLangladeDelta);
-            OnPropertyChanged(PropBurdaDelta);
-            OnPropertyChanged(PropDumitruDelta);
-            OnPropertyChanged(PropPascucciDelta);
-            OnPropertyChanged(PropTamadaYoshioDelta);
-            OnPropertyChanged(PropBoelterDelta);
-            OnPropertyChanged(PropFadinDelta);
-            OnPropertyChanged(PropTarczayDelta);
-            OnPropertyChanged(PropBrunoPietroDelta);
-            OnPropertyChanged(PropBillotteDelta);
-
-            OnPropertyChanged(PropSurvivorDelta);
-            OnPropertyChanged(PropKamikazeDelta);
-            OnPropertyChanged(PropInvincibleDelta);
-            OnPropertyChanged(PropRaiderDelta);
-            OnPropertyChanged(PropBombardierDelta);
-            OnPropertyChanged(PropReaperDelta);
-            OnPropertyChanged(PropMouseTrapDelta);
-            OnPropertyChanged(PropPattonValleyDelta);
-            OnPropertyChanged(PropHunterDelta);
-            OnPropertyChanged(PropSinaiDelta);
-            OnPropertyChanged(PropMasterGunnerLongestDelta);
-            OnPropertyChanged(PropSharpshooterLongestDelta);
-
-            OnPropertyChanged(PropRangerDelta);
-            OnPropertyChanged(PropCoolHeadedDelta);
-            OnPropertyChanged(PropSpartanDelta);
-            OnPropertyChanged(PropLuckyDevilDelta);
-
-            #endregion
-
+            PropertyInfo[] propertyInfos = GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (var propertyInfo in propertyInfos)
+            {
+                OnPropertyChanged(propertyInfo.Name);
+            }
         }
 
         public List<T> GetAll()

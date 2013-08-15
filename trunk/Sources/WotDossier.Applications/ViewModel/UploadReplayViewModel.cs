@@ -45,7 +45,7 @@ namespace WotDossier.Applications.ViewModel
                 }
                 catch (AuthenticationException e)
                 {
-                    MessageBoxResult result = MessageBox.Show("Currently you not logined to the target site. You need to be already authentificated in IE. Do you want to open the site in browser?", "Auth failure", MessageBoxButton.YesNo);
+                    MessageBoxResult result = MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure, Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo);
                     if (result == MessageBoxResult.Yes)
                     {
                         Process proc = new Process();

@@ -132,6 +132,10 @@
     <Compile Include="Forms\Commands\IDelegateCommand.cs" />
     <Compile Include="Forms\IconHelper.cs" />
     <Compile Include="Forms\MessageBoxViewModel.cs" />
+    <Compile Include="Forms\ProgressDialog\ProgressControl.xaml.cs">
+      <DependentUpon>ProgressControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressDialog\ProgressControlViewModel.cs" />
     <Compile Include="Forms\ProgressDialog\ProgressDialog.xaml.cs">
       <DependentUpon>ProgressDialog.xaml</DependentUpon>
     </Compile>
@@ -188,6 +192,10 @@
     <Resource Include="Forms\Images\OK.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Forms\ProgressDialog\ProgressControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\ProgressDialog\ProgressDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

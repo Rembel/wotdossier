@@ -31,7 +31,7 @@
                                     <CroppedBitmap Source="Resources/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
                                 </Image.Source>
                             </Image>
-                            <TextBlock Text="Upload" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                            <TextBlock Text="Загрузить" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">

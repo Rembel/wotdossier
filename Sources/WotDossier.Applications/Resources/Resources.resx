@@ -207,4 +207,10 @@ Win percent: {1:0.00}</value>
   <data name="Msg_File_incomplete_or_not_supported" xml:space="preserve">
     <value>Can't load replay file. File incomplete or not supported</value>
   </data>
+  <data name="Msg_ReplayUpload_AuthentificationFailure" xml:space="preserve">
+    <value>Currently you not logined to the target site. You need to be already authentificated in IE. Do you want to open the site in browser?</value>
+  </data>
+  <data name="WindowCaption_AuthFailure" xml:space="preserve">
+    <value>Auth failure</value>
+  </data>
 </root>

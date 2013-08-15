@@ -129,11 +129,18 @@ namespace WotDossier.Applications.ViewModel
         private ObservableCollection<ReplayFile> _replays;
         private TankFilterViewModel _tankFilter;
         private PlayerStatisticViewModel _sessionStartStatistic;
+        private ProgressControlViewModel _progressView;
 
         public ObservableCollection<SellInfo> LastUsedTanks
         {
             get { return _lastUsedTanks; }
             set { _lastUsedTanks = value; }
+        }
+
+        public ProgressControlViewModel ProgressView
+        {
+            get { return _progressView; }
+            set { _progressView = value; }
         }
 
         public sealed class SellInfo : INotifyPropertyChanged
@@ -194,6 +201,8 @@ namespace WotDossier.Applications.ViewModel
             TankFilter.PropertyChanged += TankFilterOnPropertyChanged;
 
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
+
+            ProgressView = new ProgressControlViewModel();
         }
 
         private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent obj)
@@ -380,7 +389,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 ObservableCollection<ReplayFile> replayFilesTemp = new ObservableCollection<ReplayFile>();
 
-                ProgressDialogResult result = ProgressDialog.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
+                ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                 {
                     string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
                     List<FileInfo> replays = files.Select(x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).ToList();
@@ -396,7 +405,7 @@ namespace WotDossier.Applications.ViewModel
                         replayFiles.Add(replayFile);
                         index++;
                         int percent = (index + 1) * 100 / count;
-                        if (ProgressDialog.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
+                        if (ProgressView.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
                         {
                             return;
                         }
@@ -404,7 +413,7 @@ namespace WotDossier.Applications.ViewModel
 
                     // So this check in order to avoid default processing after the Cancel button has been pressed.
                     // This call will set the Cancelled flag on the result structure.
-                    ProgressDialog.CheckForPendingCancellation(bw, we);
+                    ProgressView.CheckForPendingCancellation(bw, we);
 
                     replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
                     Replays = replayFilesTemp;

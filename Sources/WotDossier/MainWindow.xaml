@@ -4,13 +4,21 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
         Title="WotDossier" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/app_icon.ico">
     <DockPanel>
-        <Menu DockPanel.Dock="Top" Height="23" VerticalAlignment="Top">
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
-        </Menu>
+        <Grid DockPanel.Dock="Top" Height="23">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Menu>
+                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>
+                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
+                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
+            </Menu>
+            <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Grid.Column="1" Height="17" Width="100" HorizontalAlignment="Center"/>
+        </Grid>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--Common tab-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Overall}" Name="tabCommon">

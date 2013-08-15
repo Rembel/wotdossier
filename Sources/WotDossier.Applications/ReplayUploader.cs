@@ -4,6 +4,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Security.Authentication;
 using System.Text;
+using System.Windows;
 
 namespace WotDossier.Applications
 {
@@ -86,6 +87,8 @@ Content-Disposition: form-data; name=""yt0""
             uploadStream.Close();
 
             WebResponse webResponse = request.GetResponse();
+
+            Clipboard.SetText(webResponse.ResponseUri.ToString());
 
             using (Stream stream = webResponse.GetResponseStream())
             {

@@ -207,4 +207,10 @@
   <data name="Msg_File_incomplete_or_not_supported" xml:space="preserve">
     <value>Не удалось загрузить файл реплея. Файл неполный или не поддерживается</value>
   </data>
+  <data name="Msg_ReplayUpload_AuthentificationFailure" xml:space="preserve">
+    <value>Вход на сайт реплеев не выполнен. Выполните вход в браузере IE. Открыть сайт в IE для входа?</value>
+  </data>
+  <data name="WindowCaption_AuthFailure" xml:space="preserve">
+    <value>Ошибка входа</value>
+  </data>
 </root>

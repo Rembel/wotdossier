@@ -88,6 +88,7 @@
     <Compile Include="Update\DatabaseManager.cs" />
     <Compile Include="Update\SqlUpdate.cs" />
     <Compile Include="Update\IDbUpdate.cs" />
+    <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="ViewModel\BattleStatus.cs" />
     <Compile Include="ViewModel\CombatTarget.cs" />
     <Compile Include="MedalHelper.cs" />

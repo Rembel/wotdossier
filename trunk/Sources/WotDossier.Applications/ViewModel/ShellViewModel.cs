@@ -11,6 +11,7 @@ using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
+using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;
@@ -647,6 +648,7 @@ namespace WotDossier.Applications.ViewModel
         {
             ViewTyped.Loaded += OnShellViewActivated;
             ViewTyped.Show();
+            UpdateChecker.CheckForUpdates();
         }
 
         private void OnShellViewActivated(object sender, EventArgs eventArgs)

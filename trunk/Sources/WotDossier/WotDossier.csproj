@@ -540,9 +540,9 @@
     <EmbeddedResource Include="Resources\Resources.ru-RU.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
+    <Content Include="amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -550,60 +550,60 @@
     <None Include="Data\vstat.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="External\bz2.pyd">
+    <Content Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\library.zip">
+    </Content>
+    <Content Include="External\library.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\maps.json">
+    </Content>
+    <Content Include="External\maps.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\README">
+    </Content>
+    <Content Include="External\README">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\select.pyd">
+    </Content>
+    <Content Include="External\select.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\structures_18.json">
+    </Content>
+    <Content Include="External\structures_18.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\structures_20.json">
+    </Content>
+    <Content Include="External\structures_20.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\structures_22.json">
+    </Content>
+    <Content Include="External\structures_22.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\structures_24.json">
+    </Content>
+    <Content Include="External\structures_24.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\structures_26.json">
+    </Content>
+    <Content Include="External\structures_26.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\structures_27.json">
+    </Content>
+    <Content Include="External\structures_27.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\structures_28.json">
+    </Content>
+    <Content Include="External\structures_28.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\tanks.json">
+    </Content>
+    <Content Include="External\tanks.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\unicodedata.pyd">
+    </Content>
+    <Content Include="External\unicodedata.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="External\_hashlib.pyd">
+    </Content>
+    <Content Include="External\_hashlib.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
+    <Content Include="x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -639,9 +639,9 @@
     <Content Include="amd64\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="amd64\Microsoft.VC90.CRT\README_ENU.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="amd64\Microsoft.VC90.CRT\README_ENU.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="amd64\sqlceca40.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -661,9 +661,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="app_icon.ico" />
-    <Content Include="Data\dossier_release.sdf">
+    <None Include="Data\dossier_release.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="Data\dossier.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1246,9 +1246,9 @@
     <Content Include="x86\Microsoft.VC90.CRT\msvcr90.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="x86\Microsoft.VC90.CRT\README_ENU.txt">
+    <Content Include="x86\Microsoft.VC90.CRT\README_ENU.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="x86\sqlceca40.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

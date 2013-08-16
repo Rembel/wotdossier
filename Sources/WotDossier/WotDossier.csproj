@@ -661,12 +661,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="app_icon.ico" />
-    <None Include="Data\dossier_release.sdf">
+    <EmbeddedResource Include="Data\init.sdf" />
+    <None Include="Data\dossier.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Data\dossier.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Data\Medals.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

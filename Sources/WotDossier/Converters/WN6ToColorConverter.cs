@@ -15,7 +15,7 @@ namespace WotDossier.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            IRating eff = (IRating)value;
+            IRating eff = value as IRating;
             if (eff != null)
             {
                 if (eff.WN6Rating >= 1885)

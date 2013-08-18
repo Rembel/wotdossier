@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using Common.Logging;
 using WotDossier.Common;
 
@@ -73,6 +74,11 @@ namespace WotDossier.Applications
             proc.Start();
 
             Environment.CurrentDirectory = temp;
+
+            while (!proc.HasExited)
+            {
+                Thread.Sleep(1000);
+            }
         }
 
         /// <summary>
@@ -92,6 +98,11 @@ namespace WotDossier.Applications
             proc.Start();
 
             Environment.CurrentDirectory = temp;
+
+            while (!proc.HasExited)
+            {
+                Thread.Sleep(1000);
+            }
         }
 
         /// <summary>

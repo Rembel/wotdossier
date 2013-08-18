@@ -34,6 +34,11 @@ namespace WotDossier
             get { return Chart3; }
         }
 
+        public ChartPlotter ChartLastUsedTanks
+        {
+            get { return Chart4; }
+        }
+
         private void MenuItemAbout_Click(object sender, RoutedEventArgs e)
         {
             AboutWindow aboutWindow = new AboutWindow();

@@ -11,5 +11,6 @@ namespace WotDossier.Applications.View
         ChartPlotter ChartRating { get; }
         ChartPlotter ChartWinPercent { get; }
         ChartPlotter ChartAvgDamage { get; }
+        ChartPlotter ChartLastUsedTanks { get; }
     }
 }

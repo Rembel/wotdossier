@@ -42,8 +42,8 @@ namespace WotDossier.Applications.ViewModel
         private readonly DossierRepository _dossierRepository;
         private PlayerStatisticViewModel _playerStatistic;
         private PlayerStatisticViewModel _sessionStatistic;
-        private IEnumerable<TankRowMasterTanker> _masterTanker;
-        private IEnumerable<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
+        private List<TankRowMasterTanker> _masterTanker;
+        private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
 
         #region [ Properties ]
 
@@ -95,7 +95,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankRowMasterTanker> MasterTanker
+        public List<TankRowMasterTanker> MasterTanker
         {
             get { return _masterTanker; }
             set
@@ -105,12 +105,12 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<TankStatisticRowViewModel> Tanks
+        public List<TankStatisticRowViewModel> Tanks
         {
             get { return TankFilter.Filter(_tanks); }
             set
             {
-                _tanks = value.ToList();
+                _tanks = value;
                 RaisePropertyChanged("Tanks");
             }
         }
@@ -526,9 +526,9 @@ namespace WotDossier.Applications.ViewModel
 
             Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
 
-            InitMasterTankerList(tanks);
+            InitMasterTankerList(Tanks);
 
-            FraggsCount.Init(_tanks.ToList());
+            FraggsCount.Init(Tanks);
         }
 
         private static List<TankJson> LoadTanks(FileInfo cacheFile)
@@ -537,20 +537,15 @@ namespace WotDossier.Applications.ViewModel
             return tanks;
         }
 
-        private void InitMasterTankerList(List<TankJson> tanks)
+        private void InitMasterTankerList(List<TankStatisticRowViewModel> tanks)
         {
             IEnumerable<int> killed =
-                tanks.SelectMany(x => x.Frags).Select(x => x.TankUniqueId).Distinct();
-            IEnumerable<TankRowMasterTanker> masterTanker = WotApiClient.Instance.TanksDictionary.Where(
-                x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
-                                                                        .Select(
-                                                                            x =>
-                                                                            new TankRowMasterTanker(x.Value,
-                                                                                                    WotApiClient.Instance
-                                                                                                                .GetTankIcon(
-                                                                                                                    x.Value)))
-                                                                        .OrderBy(x => x.IsPremium)
-                                                                        .ThenBy(x => x.Tier);
+                tanks.SelectMany(x => x.TankFrags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
+            List<TankRowMasterTanker> masterTanker = WotApiClient.Instance.TanksDictionary
+                .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
+                .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankIcon(x.Value)))
+                .OrderBy(x => x.IsPremium)
+                .ThenBy(x => x.Tier).ToList();
             MasterTanker = masterTanker;
         }
 

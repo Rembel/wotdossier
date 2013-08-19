@@ -4,91 +4,55 @@
 
     <DataTemplate x:Key="BoelterColumnHeaderTemplate">
        <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Boelter}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="132 68 63 67"></CroppedBitmap>
-                </Image.Source>
-           </Image>
-            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Boelter}" Source="../Resources/Images/Medals/MedalBoelter.png" Height="71" Width="67"/>
+           <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="RadleyWaltersColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="0 440 54 65"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}" Source="../Resources/Images/Medals/MedalRadleyWalters.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="LafayettePoolColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="391 0 61 68"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}" Source="../Resources/Images/Medals/MedalLafayettePool.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="OrlikColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Orlik}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="64 128 64 67"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Orlik}" Source="../Resources/Images/Medals/MedalOrlik.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="OskinColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Oskin}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="167 324 53 61"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Oskin}" Source="../Resources/Images/Medals/MedalOskin.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="LehvaslaihoColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Lehvaslaiho}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="126 201 61 53"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Lehvaslaiho}" Source="../Resources/Images/Medals/MedalLehvaslaiho.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="NikolasColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Nikolas}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="438 131 60 57"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Nikolas}" Source="../Resources/Images/Medals/MedalNikolas.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="HalonenColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Halonen}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="128 135 63 66"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Halonen}" Source="../Resources/Images/Medals/MedalHalonen.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="BurdaColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Burda}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="54 445 47 67"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_EpicAchievements_Burda}" Source="../Resources/Images/Medals/MedalBurda.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
@@ -426,77 +390,49 @@
 
     <DataTemplate x:Key="WarriorColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="116 254 57 70"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}" Source="../Resources/Images/Medals/Warrior.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="InvaderColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="329 0 62 65"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}" Source="../Resources/Images/Medals/Invader.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SniperColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="67 68 65 60"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" Source="../Resources/Images/Medals/Sniper.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="DefenderColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="58 313 55 66"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}" Source="../Resources/Images/Medals/Defender.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SteelWallColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="161 387 52 68"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}" Source="../Resources/Images/Medals/Steelwall.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="ConfederateColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="267 0 62 66"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}" Source="../Resources/Images/Medals/Supporter.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="ScoutColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="204 0 63 65"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}" Source="../Resources/Images/Medals/Scout.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
@@ -514,22 +450,14 @@
 
     <DataTemplate x:Key="BrothersInArmsColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="315 195 61 57"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}" Source="../Resources/Images/Medals/MedalBrothersInArms.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="CrucialContributionColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="0 0 73 53"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}" Source="../Resources/Images/Medals/MedalCrucialContribution.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
@@ -547,33 +475,21 @@
 
     <DataTemplate x:Key="LuckyDevilColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="187 201 55 59"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}" Source="../Resources/Images/Medals/Lucky.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SpartanColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="113 324 54 63"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}" Source="../Resources/Images/Medals/Sparta.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="MasterGunnerColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}">
-                <Image.Source>
-                    <CroppedBitmap Source="../Resources/Images/award-images.png" SourceRect="213 390 51 69"></CroppedBitmap>
-                </Image.Source>
-            </Image>
+            <Image ToolTip="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}" Source="../Resources/Images/Medals/ArmorPiercer.png" Height="71" Width="67"/>
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>

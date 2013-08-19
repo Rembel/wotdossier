@@ -26,5 +26,16 @@ namespace WotDossier.Domain.Tank
         {
             return Utils.ToUniqueId(Common.countryid, Common.tankid);
         }
+
+        /// <summary>
+        /// Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>
+        /// A string that represents the current object.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("{0}", Info.title);
+        }
     }
 }

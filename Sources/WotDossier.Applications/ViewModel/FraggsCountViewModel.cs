@@ -23,7 +23,7 @@ namespace WotDossier.Applications.ViewModel
     public class FraggsCountViewModel : TankFilterViewModel
     {
         private const string TANK_FRAGS_PROPERTY_NAME = "TankFrags";
-        private IEnumerable<FragsJson> _tankFrags;
+        private List<FragsJson> _tankFrags;
         private KeyValue<int, string> _selectedTank;
 
         public List<KeyValue<int, string>> Tanks { get; set; }
@@ -38,7 +38,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public IEnumerable<FragsJson> TankFrags
+        public List<FragsJson> TankFrags
         {
             get { return AggregateFilter(_tankFrags); }
             set
@@ -57,11 +57,11 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private IEnumerable<FragsJson> AggregateFilter(IEnumerable<FragsJson> tankFrags)
+        private List<FragsJson> AggregateFilter(List<FragsJson> tankFrags)
         {
             if (tankFrags == null)
             {
-                return new FragsJson[0];
+                return new List<FragsJson>();
             }
 
             IEnumerable<FragsJson> filter = Filter(tankFrags)
@@ -96,7 +96,7 @@ namespace WotDossier.Applications.ViewModel
 
         public void Init(List<TankStatisticRowViewModel> tanks)
         {
-            TankFrags = tanks.SelectMany(x => x.TankFrags);
+            TankFrags = tanks.SelectMany(x => x.TankFrags).ToList();
             Tanks = tanks.OrderBy(x => x.Tank).Select(x => new KeyValue<int, string>(x.TankUniqueId, x.Tank)).ToList();
             Tanks.Insert(0, new KeyValue<int, string>(0, "All"));
             OnPropertyChanged("Tanks");

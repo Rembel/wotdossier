@@ -1,8 +1,8 @@
-﻿using System;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Security.Authentication;
 using System.Windows;
+using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -13,6 +13,8 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (UploadReplayViewModel))]
     public class UploadReplayViewModel : ViewModel<IUploadReplayView>
     {
+        private static readonly ILog _log = LogManager.GetLogger("UploadReplayViewModel");
+
         public DelegateCommand OnReplayUploadCommand { get; set; }
 
         public ReplayFile ReplayFile { get; set; }
@@ -45,7 +47,9 @@ namespace WotDossier.Applications.ViewModel
                 }
                 catch (AuthenticationException e)
                 {
+                    _log.Error("Authentication error", e);
                     MessageBoxResult result = MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure, Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo);
+
                     if (result == MessageBoxResult.Yes)
                     {
                         Process proc = new Process();

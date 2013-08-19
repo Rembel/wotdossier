@@ -23,7 +23,7 @@
             <TextBlock  Margin="6,0,0,0" Name="Version" Text="{x:Static services:ApplicationInfo.Version}" />
         </StackPanel>
         <TextBlock Grid.Row="2" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textCopyright" Text="{x:Static services:ApplicationInfo.Copyright}" />
-        <Image Grid.RowSpan="3" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Right" Width="Auto" Source="\Resources\Images\64x64_v3.png"></Image>
+        <Image Grid.RowSpan="3" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Right" Width="Auto" Source="\Resources\Images\app_icon.ico"></Image>
         <Grid Grid.Row="3" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>

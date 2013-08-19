@@ -5,16 +5,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Web;
 using NUnit.Framework;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
-using WotDossier.Applications.ViewModel;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
@@ -58,27 +54,9 @@ namespace WotDossier.Test
             DataProvider.CloseSession();
         }
 
-        /// <summary>
-        /// Binary dossier cache to plain json.
-        /// </summary>
-        /// <param name="cacheFile">The cache file.</param>
-        public static void BinaryCacheToJson(FileInfo cacheFile)
-        {
-            string temp = Environment.CurrentDirectory;
+        #region Dossier cache load tests
 
-            string directoryName = Environment.CurrentDirectory;
-            Environment.CurrentDirectory = directoryName + @"\External";
-            Process proc = new Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = directoryName + @"\External\wotdc2j.exe";
-            proc.StartInfo.Arguments = string.Format("{0} -f -r", cacheFile.FullName);
-            proc.Start();
-
-            Environment.CurrentDirectory = temp;
-        }
-
-
-        /*Добавлены новые немецкие танки:
+/*Добавлены новые немецкие танки:
             VK 20.01 (D) (средний 4-го уровня);
             VK 30.01 (D) (средний 6-го уровня);
             Aufklarerpanzer Panther (лёгкий 7-го уровня);
@@ -98,6 +76,7 @@ namespace WotDossier.Test
             советский специальный танк 10-го уровня «Объект 907»;
             американский специальный средний танк 10-го уровня М60;
             немецкий специальный тяжёлый танк 10-го уровня VK7201.*/
+
         [Test]
         public void CacheTest_085()
         {
@@ -107,7 +86,8 @@ namespace WotDossier.Test
             List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png", tankJson.Icon.iconid);
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                                                tankJson.Icon.iconid);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
             }
         }
@@ -121,7 +101,8 @@ namespace WotDossier.Test
             List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png", tankJson.Icon.iconid);
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                                                tankJson.Icon.iconid);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
             }
         }
@@ -135,15 +116,22 @@ namespace WotDossier.Test
             List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png", tankJson.Icon.iconid);
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                                                tankJson.Icon.iconid);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
             }
         }
 
+        #endregion
+        
+        #region Replays tests
+
         [Test]
         public void ReplayTest_084()
         {
-            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
+            FileInfo cacheFile =
+                new FileInfo(Path.Combine(Environment.CurrentDirectory,
+                                          @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
             Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
@@ -151,7 +139,9 @@ namespace WotDossier.Test
         [Test]
         public void ReplayTest_086()
         {
-            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay"));
+            FileInfo cacheFile =
+                new FileInfo(Path.Combine(Environment.CurrentDirectory,
+                                          @"Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
             Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
@@ -159,10 +149,23 @@ namespace WotDossier.Test
         [Test]
         public void ReplayTest_087()
         {
-            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay"));
+            FileInfo cacheFile =
+                new FileInfo(Path.Combine(Environment.CurrentDirectory,
+                                          @"Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
             Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
+
+        [Test]
+        public void ReplayTest()
+        {
+            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
+            Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
+        }
+
+        #endregion
+
+        #region Help methods
 
         /// <summary>
         /// Gets the cache file.
@@ -202,6 +205,25 @@ namespace WotDossier.Test
         }
 
         /// <summary>
+        /// Binary dossier cache to plain json.
+        /// </summary>
+        /// <param name="cacheFile">The cache file.</param>
+        public static void BinaryCacheToJson(FileInfo cacheFile)
+        {
+            string temp = Environment.CurrentDirectory;
+
+            string directoryName = Environment.CurrentDirectory;
+            Environment.CurrentDirectory = directoryName + @"\External";
+            Process proc = new Process();
+            proc.EnableRaisingEvents = false;
+            proc.StartInfo.FileName = directoryName + @"\External\wotdc2j.exe";
+            proc.StartInfo.Arguments = string.Format("{0} -f -r", cacheFile.FullName);
+            proc.Start();
+
+            Environment.CurrentDirectory = temp;
+        }
+
+        /// <summary>
         /// Gets the name of the player from name of dossier cache file.
         /// </summary>
         /// <param name="cacheFile">The cache file in base32 format. Example of decoded filename - login-ct-p1.worldoftanks.com:20015;_Rembel__RU</param>
@@ -216,13 +238,8 @@ namespace WotDossier.Test
             return playerName;
         }
 
-        [Test]
-        public void ReplayFileTest()
-        {
-            ReplayFile replayFile = new ReplayFile(new FileInfo(@"C:\20130329_2326_ussr-IS-3_19_monastery.wotreplay"));
-            replayFile = new ReplayFile(new FileInfo(@"C:\20130202_1447_usa-T1_hvy_29_el_hallouf.wotreplay"));
-        }
-
+        #endregion
+        
         [Test]
         public void LoadMapsImages()
         {
@@ -238,7 +255,7 @@ namespace WotDossier.Test
                 {
                     response = request.GetResponse();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     Console.WriteLine(map.mapidname);
                     continue;
@@ -293,11 +310,11 @@ namespace WotDossier.Test
         [Test]
         public void UploadTest()
         {
-            //FileInfo info = new FileInfo(@"C:\Documents and Settings\YaroshikPV\AppData\Roaming\Wargaming.net\WorldOfTanks\replays\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay");
+            FileInfo info = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
 
-            //ReplayUploader uploader = new ReplayUploader();
+            ReplayUploader uploader = new ReplayUploader();
 
-            //uploader.Upload(info, "replay1", "replayDescription1", "http://wotreplays.ru/site/upload");
+            uploader.Upload(info, "replay1", "replayDescription1", "http://wotreplays.ru/site/upload");
             string url = "http://wotreplays.ru/site/upload";
             Uri uri = new Uri(url);
             CookieContainer cookieContainer = ReplayUploader.LoadCookies(url);
@@ -332,24 +349,17 @@ namespace WotDossier.Test
         //}
 
         [Test]
-        public void ReplayTest()
-        {
-            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
-            Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
-        }
-
-        [Test]
         public void MedalsTest()
         {
             MedalHelper.ReadMedals();
         }
 
-        [Test]
-        public void CritsTest()
-        {
-            int res = 67108864 >> 24 & 255;
-            int res1 = 65552 >> 12 & 4095;
-        }
+        //[Test]
+        //public void CritsTest()
+        //{
+        //    int res = 67108864 >> 24 & 255;
+        //    int res1 = 65552 >> 12 & 4095;
+        //}
 
         [Test]
         public void TEffTest()
@@ -387,6 +397,7 @@ namespace WotDossier.Test
             double F = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) :
                            1 + (Ft - Favg) / (Favg - Fmin);
 
+            //параметры текущего игрока для текущего танка (засвет)
             double St = 1525.0 / 1631.0;
             double S = St > Savg ? 1 + (St - Savg) / (Smax - Savg) :
                            1 + (St - Savg) / (Savg - Smin);

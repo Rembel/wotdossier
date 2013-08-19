@@ -243,7 +243,7 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        public IEnumerable<T> Filter<T>(IEnumerable<T> tankFrags) where T : ITankFilterable
+        public List<T> Filter<T>(List<T> tankFrags) where T : ITankFilterable
         {
             return tankFrags.Where(x =>
                                    (x.Tier == 1 && Level1Selected
@@ -269,7 +269,7 @@ namespace WotDossier.Applications.ViewModel
                                     || x.CountryId == (int)Country.France && FranceSelected
                                     || x.CountryId == (int)Country.US && USSelected
                                     || x.CountryId == (int)Country.UK && UKSelected)
-                );
+                ).ToList();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

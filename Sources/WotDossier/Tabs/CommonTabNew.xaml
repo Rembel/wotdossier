@@ -8,13 +8,12 @@
              xmlns:tabs="clr-namespace:WotDossier.Tabs"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
-             xmlns:View="clr-namespace:WotDossier"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="900">
     <UserControl.Resources>
-        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.png" Stretch="Fill" />
-        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.png" Stretch="Fill" />
-        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.png" Stretch="Fill" />
+        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.jpg" Stretch="Fill" />
+        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.jpg" Stretch="Fill" />
+        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.jpg" Stretch="Fill" />
     </UserControl.Resources>
     <Grid Background="{StaticResource bcolorCenter}">
         <Grid.ColumnDefinitions>

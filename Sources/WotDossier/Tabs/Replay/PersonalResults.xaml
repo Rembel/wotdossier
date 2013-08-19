@@ -138,13 +138,13 @@
         <Style TargetType="Image" x:Key="FinalStatisticPicWinStyle">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Victory}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.png" />
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.jpg" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Defeat}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.png" />
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.jpg" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picdraw.png" />
+                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picdraw.jpg" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>

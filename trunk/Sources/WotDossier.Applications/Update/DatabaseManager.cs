@@ -25,10 +25,10 @@ namespace WotDossier.Applications.Update
             try
             {
                 connection = GetConnection();
-                Logger.Debug("BatchImportBcg. Source connection obtained");
+                Logger.Debug("Update. Source connection obtained");
 
                 transaction = BeginTransaction(connection);
-                Logger.Debug("BatchImportBcg. Dest transaction started");
+                Logger.Debug("Update. Dest transaction started");
 
                 foreach (var dbUpdate in updates)
                 {
@@ -51,7 +51,7 @@ namespace WotDossier.Applications.Update
             finally
             {
                 CloseConnection(connection);
-                Logger.Debug("BatchImportBcg. Source connection closed");
+                Logger.Debug("Update. Source connection closed");
             }
         }
 
@@ -110,6 +110,7 @@ namespace WotDossier.Applications.Update
             }
             catch (Exception e)
             {
+                Logger.Error("Get Current DbVersion error", e);
                 return int.MaxValue;
             }
             finally
@@ -143,6 +144,7 @@ namespace WotDossier.Applications.Update
                 using (FileStream fileStream = File.OpenWrite(path))
                 {
                     fileStream.Write(embeddedResource, 0, embeddedResource.Length);    
+                    fileStream.Flush();
                 }
             }
         }

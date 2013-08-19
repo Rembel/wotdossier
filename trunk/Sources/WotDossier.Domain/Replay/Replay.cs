@@ -524,7 +524,7 @@ http://wiki.vbaddict.net
         [DataMember]
         public int hits { get; set; }
         [DataMember]
-        [Obsolete("0.8.6")]
+        //NOTE: Obsolete - "0.8.6"
         public int killed
         {
             get

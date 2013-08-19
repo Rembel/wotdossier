@@ -1602,16 +1602,6 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap contour {
-            get {
-                object obj = ResourceManager.GetObject("contour", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to China.
         /// </summary>
         public static string Country_China {
@@ -2067,6 +2057,24 @@ namespace WotDossier.Resources {
         public static string MenuItem_Header_Settings {
             get {
                 return ResourceManager.GetString("MenuItem_Header_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exception occurred during running application..
+        /// </summary>
+        public static string Msg_ExceptionOccurred {
+            get {
+                return ResourceManager.GetString("Msg_ExceptionOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sql exception occurred during running application..
+        /// </summary>
+        public static string Msg_SqlExceptionOccurred {
+            get {
+                return ResourceManager.GetString("Msg_SqlExceptionOccurred", resourceCulture);
             }
         }
         

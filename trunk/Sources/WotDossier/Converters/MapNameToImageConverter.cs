@@ -25,7 +25,7 @@ namespace WotDossier.Converters
         {
             string mapName = (string)value;
 
-            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Maps\{0}.png", mapName), UriKind.Relative));
+            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Maps\{0}.jpg", mapName), UriKind.Relative));
             return bitmapImage;
         }
 

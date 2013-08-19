@@ -1,17 +1,16 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.Data.SqlClient;
 using System.Globalization;
-using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
-using WotDossier.Applications.ViewModel;
-using WotDossier.Dal;
-using WotDossier.Domain.Replay;
 using WotDossier.Framework;
+using WotDossier.Framework.Forms;
+using WotDossier.Framework.Presentation.Services;
 
 namespace WotDossier
 {
@@ -38,7 +37,7 @@ namespace WotDossier
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-#if (DEBUG != true)
+#if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't
             // jump into the code when an exception occurs.
             DispatcherUnhandledException += AppDispatcherUnhandledException;
@@ -85,17 +84,17 @@ namespace WotDossier
 
             //Trace.TraceError(e.ToString());
             _log.Error(e);
-            //if (!isTerminating)
-            //{
-            //    if (e is SqlException || e is EntityException)
-            //    {
-            //        WpfMessageBox.Show(Gui.Properties.Resources.Msg_SqlExceptionOccurred, ApplicationInfo.ProductName, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
-            //    }
-            //    else
-            //    {
-            //        WpfMessageBox.Show(string.Format(CultureInfo.CurrentCulture, "{0}", e), ApplicationInfo.ProductName, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
-            //    }
-            //}
+            if (!isTerminating)
+            {
+                if (e is SqlException)
+                {
+                    WpfMessageBox.Show(WotDossier.Resources.Resources.Msg_SqlExceptionOccurred, ApplicationInfo.ProductName, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                }
+                else
+                {
+                    WpfMessageBox.Show(WotDossier.Resources.Resources.Msg_ExceptionOccurred, ApplicationInfo.ProductName, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                }
+            }
         }
 
         protected override void OnExit(ExitEventArgs e)

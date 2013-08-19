@@ -241,7 +241,6 @@ Global
 		{CE2C7B66-1C6A-4CA7-949A-EDA0B99E7F50}.Release|Any CPU.ActiveCfg = SingleImage
 		{CE2C7B66-1C6A-4CA7-949A-EDA0B99E7F50}.Release|Any CPU.Build.0 = SingleImage
 		{CE2C7B66-1C6A-4CA7-949A-EDA0B99E7F50}.Release|Mixed Platforms.ActiveCfg = SingleImage
-		{CE2C7B66-1C6A-4CA7-949A-EDA0B99E7F50}.Release|Mixed Platforms.Build.0 = SingleImage
 		{CE2C7B66-1C6A-4CA7-949A-EDA0B99E7F50}.Release|x86.ActiveCfg = SingleImage
 		{CE2C7B66-1C6A-4CA7-949A-EDA0B99E7F50}.Release|x86.Build.0 = SingleImage
 		{CE2C7B66-1C6A-4CA7-949A-EDA0B99E7F50}.SingleImage|Any CPU.ActiveCfg = SingleImage

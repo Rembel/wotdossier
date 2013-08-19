@@ -73,20 +73,7 @@ namespace WotDossier.Dal
                                                .Desc.Take(1)
                                                .SingleOrDefault<PlayerStatisticEntity>();
 
-                //init server stat adapter
-                //PlayerStatAdapter serverStat = new PlayerStatAdapter(stat);
-                //init local stat adapter
-                PlayerStatAdapter localStat = new PlayerStatAdapter(tanks);
-
-                //by default using server statistic
-                PlayerStatAdapter playerStatAdapter = localStat;
-
-                //but if in local statistic battle count more then in server 
-                //if (localStat.Battles_count > serverStat.Battles_count)
-                //{
-                //    //use local
-                //    playerStatAdapter = localStat;
-                //}
+                PlayerStatAdapter playerStatAdapter = new PlayerStatAdapter(tanks);
 
                 //create new record
                 if (statisticEntity == null ||
@@ -126,7 +113,7 @@ namespace WotDossier.Dal
             return GetOrCreatePlayer(stat.data.name, stat.data.id, Utils.UnixDateToDateTime((long)stat.data.created_at));
         }
 
-        public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
+        private PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
         {
             PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>()
                                         .Where(x => x.PlayerId == id)
@@ -234,7 +221,7 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        public virtual void Update(TankStatisticEntity statisticEntity, TankJson tank)
+        private void Update(TankStatisticEntity statisticEntity, TankJson tank)
         {
             statisticEntity.Updated = tank.Common.lastBattleTimeR;
             statisticEntity.Version = tank.Common.basedonversion;

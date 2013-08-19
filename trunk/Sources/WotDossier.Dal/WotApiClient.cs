@@ -128,7 +128,7 @@ namespace WotDossier.Dal
                                      KilledByTankUniqueId = tank.UniqueId(),
                                      Tank = x[3]
                                  };
-                        });
+                        }).ToList();
         }
 
         public TankIcon GetTankIcon(TankJson tank)
@@ -269,8 +269,7 @@ namespace WotDossier.Dal
         {
 #if DEBUG
             return new PlayerSearchJson { created_at = 0, id = 10800699, name = "rembel"};
-#endif
-
+#else
             string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
@@ -290,6 +289,7 @@ namespace WotDossier.Dal
                 }
                 return null;
             }
+#endif
         }
 
         public Replay ReadReplay(string json)

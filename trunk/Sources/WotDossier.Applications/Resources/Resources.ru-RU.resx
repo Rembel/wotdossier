@@ -213,4 +213,7 @@
   <data name="WindowCaption_AuthFailure" xml:space="preserve">
     <value>Ошибка входа</value>
   </data>
+  <data name="Msg_NewVersion" xml:space="preserve">
+    <value>Доступна новая версия - {0}. Открыть страницу загрузки?</value>
+  </data>
 </root>

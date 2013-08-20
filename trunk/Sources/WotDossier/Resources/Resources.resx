@@ -1130,4 +1130,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Msg_ExceptionOccurred" xml:space="preserve">
     <value>Exception occurred during running application.</value>
   </data>
+  <data name="Settings_CheckForUpdatesOnStart" xml:space="preserve">
+    <value>Check for updates on start</value>
+  </data>
+  <data name="WindowCaption_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
 </root>

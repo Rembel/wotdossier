@@ -5,12 +5,16 @@ using System.Net;
 using System.Threading;
 using System.Windows.Threading;
 using WotDossier.Domain;
+using WotDossier.Framework.Forms;
 using WotDossier.Framework.Presentation.Services;
 
 namespace WotDossier.Applications.Update
 {
     public class UpdateChecker
     {
+        private const string DownloadsList = @"http://code.google.com/p/wotdossier/downloads/list";
+        private const string VersionUrl = "http://wotdossier.googlecode.com/files/Version.txt";
+
         public static void CheckForUpdates()
         {
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
@@ -18,18 +22,23 @@ namespace WotDossier.Applications.Update
                     AppSettings appSettings = SettingsReader.Get();
                     if (appSettings.CheckForUpdates)
                     {
-                        if (IsNewVersionAvailable())
+                        Version currentVersion = new Version(ApplicationInfo.Version);
+                        Version newVersion = GetServerVersion();
+                        
+                        var isNewVersionAvailable = newVersion > currentVersion;
+
+                        if (isNewVersionAvailable && WpfMessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, newVersion), ApplicationInfo.ProductName, WpfMessageBoxButton.Yes | WpfMessageBoxButton.No, WPFMessageBoxImage.Question) == WpfMessageBoxResult.Yes)
                         {
-                            string targetURL = @"http://code.google.com/p/wotdossier/downloads/list";
-                            Process.Start(targetURL);
+                            Process.Start(DownloadsList);
                         }
                     }
                 }, null);
         }
 
-        private static bool IsNewVersionAvailable()
+        private static Version GetServerVersion()
         {
-            WebRequest request = HttpWebRequest.Create("http://wotdossier.googlecode.com/files/Version.txt");
+            Version newVersion;
+            WebRequest request = HttpWebRequest.Create(VersionUrl);
             WebResponse webResponse = request.GetResponse();
             using (Stream responseStream = webResponse.GetResponseStream())
             {
@@ -38,11 +47,9 @@ namespace WotDossier.Applications.Update
 
                 string[] data = content.Split('\n');
 
-                Version currentVersion = new Version(ApplicationInfo.Version);
-
-                Version newVersion = new Version(data[0].Split(':')[1].Trim());
-                return newVersion > currentVersion;
+                newVersion = new Version(data[0].Split(':')[1].Trim());
             }
+            return newVersion;
         }
     }
 }

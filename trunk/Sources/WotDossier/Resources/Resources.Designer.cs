@@ -2133,6 +2133,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check for updates on start.
+        /// </summary>
+        public static string Settings_CheckForUpdatesOnStart {
+            get {
+                return ResourceManager.GetString("Settings_CheckForUpdatesOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string Settings_Language {
@@ -3003,6 +3012,15 @@ namespace WotDossier.Resources {
         public static string Version {
             get {
                 return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string WindowCaption_Error {
+            get {
+                return ResourceManager.GetString("WindowCaption_Error", resourceCulture);
             }
         }
         

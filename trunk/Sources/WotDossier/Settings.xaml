@@ -13,6 +13,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
@@ -27,8 +28,9 @@
         <ComboBox Margin="6 6 6 6" Grid.Column="2" Grid.Row="2"  ItemsSource="{Binding PrevDates}" ItemStringFormat="dd.MM.yyyy HH:mm" SelectedItem="{Binding PrevDate}">
         </ComboBox>
         <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="3" Text="{x:Static Resources:Resources.Settings_ReplaysFolder}"/>
-        <TextBlock  Margin="6 6 6 6" Grid.Column="1" Grid.Row="3"  Text="{Binding ReplaysFolderPath}"/>
+        <TextBlock  Margin="6 6 6 6" Grid.Column="1" Grid.Row="3"  Text="{Binding ReplaysFolderPath}" ToolTip="{Binding ReplaysFolderPath}"/>
         <Button  Margin="6 6 6 6" Grid.Column="2" Grid.Row="3" Content="..." Command="{Binding SelectReplaysFolderCommand}"></Button>
-        <Button Margin="6 6 6 6" Grid.Column="2" Grid.Row="5" Content="{x:Static Resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
+        <CheckBox Margin="6 6 6 6" Grid.Column="1" Grid.Row="4" Content="{x:Static Resources:Resources.Settings_CheckForUpdatesOnStart}" IsChecked="{Binding CheckForUpdates}"/>
+        <Button Margin="6 6 6 6" Grid.Column="2" Grid.Row="6" Content="{x:Static Resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
     </Grid>
 </Window>

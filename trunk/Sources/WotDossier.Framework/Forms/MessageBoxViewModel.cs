@@ -316,26 +316,26 @@ namespace WotDossier.Framework.Forms
 
         private void SetImageSource(WPFMessageBoxImage image)
         {
-            string source = "pack://application:,,,/Mds.Framework;component/Forms/Images/Default.png";
+            string source = "pack://application:,,,/WotDossier.Framework;component/Forms/Images/Default.png";
             switch (image)
             {
                 case WPFMessageBoxImage.Warning:
-                    source = "pack://application:,,,/Mds.Framework;component/Forms/Images/Alert.png";
+                    source = "pack://application:,,,/WotDossier.Framework;component/Forms/Images/Alert.png";
                     break;
                 case WPFMessageBoxImage.Error:
-                    source = "pack://application:,,,/Mds.Framework;component/Forms/Images/Error.png";
+                    source = "pack://application:,,,/WotDossier.Framework;component/Forms/Images/Error.png";
                     break;
                 case WPFMessageBoxImage.Information:
-                    source = "pack://application:,,,/Mds.Framework;component/Forms/Images/Info.png";
+                    source = "pack://application:,,,/WotDossier.Framework;component/Forms/Images/Info.png";
                     break;
                 case WPFMessageBoxImage.OK:
-                    source = "pack://application:,,,/Mds.Framework;component/Forms/Images/OK.png";
+                    source = "pack://application:,,,/WotDossier.Framework;component/Forms/Images/OK.png";
                     break;
                 case WPFMessageBoxImage.Question:
-                    source = "pack://application:,,,/Mds.Framework;component/Forms/Images/Help.png";
+                    source = "pack://application:,,,/WotDossier.Framework;component/Forms/Images/Help.png";
                     break;
                 default:
-                    source = "pack://application:,,,/Mds.Framework;component/Forms/Images/Default.png";
+                    source = "pack://application:,,,/WotDossier.Framework;component/Forms/Images/Default.png";
                     break;
 
             }

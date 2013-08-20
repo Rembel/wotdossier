@@ -9,6 +9,7 @@ using Common.Logging;
 using WotDossier.Applications;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Domain;
+using WotDossier.Framework.Forms;
 
 namespace WotDossier.Converters
 {
@@ -65,7 +66,7 @@ namespace WotDossier.Converters
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show(Resources.Resources.ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        WpfMessageBox.Show(Resources.Resources.ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
                         _log.Error("Error on clan icon load", e);
                         return null;
                     }

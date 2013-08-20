@@ -5,6 +5,7 @@ using System.Windows;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Framework.Applications;
+using WotDossier.Framework.Forms;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
@@ -48,9 +49,9 @@ namespace WotDossier.Applications.ViewModel
                 catch (AuthenticationException e)
                 {
                     _log.Error("Authentication error", e);
-                    MessageBoxResult result = MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure, Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo);
+                    WpfMessageBoxResult result = WpfMessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure, Resources.Resources.WindowCaption_AuthFailure, WpfMessageBoxButton.Yes | WpfMessageBoxButton.No, WPFMessageBoxImage.Error);
 
-                    if (result == MessageBoxResult.Yes)
+                    if (result == WpfMessageBoxResult.Yes)
                     {
                         Process proc = new Process();
                         proc.EnableRaisingEvents = false;

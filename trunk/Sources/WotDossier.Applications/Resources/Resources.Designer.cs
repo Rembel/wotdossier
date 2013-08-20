@@ -226,6 +226,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New version available - {0}. Do you want download it now?.
+        /// </summary>
+        internal static string Msg_NewVersion {
+            get {
+                return ResourceManager.GetString("Msg_NewVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currently you not logined to the target site. You need to be already authentificated in IE. Do you want to open the site in browser?.
         /// </summary>
         internal static string Msg_ReplayUpload_AuthentificationFailure {

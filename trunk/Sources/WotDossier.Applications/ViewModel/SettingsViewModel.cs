@@ -15,9 +15,9 @@ namespace WotDossier.Applications.ViewModel
     public class SettingsViewModel : ViewModel<ISettingsView>
     {
         private AppSettings _appSettings;
-        private List<string> _servers = new List<string>{"ru", "eu"};
-        private List<string> _languages = new List<string>{"ru-RU", "en-US"};
-        private List<StatisticPeriod> _periods = new List<StatisticPeriod>{StatisticPeriod.Recent, StatisticPeriod.LastWeek, StatisticPeriod.AllObservationPeriod, StatisticPeriod.Custom};
+        private List<string> _servers = new List<string> { "ru", "eu" };
+        private List<string> _languages = new List<string> { "ru-RU", "en-US" };
+        private List<StatisticPeriod> _periods = new List<StatisticPeriod> { StatisticPeriod.Recent, StatisticPeriod.LastWeek, StatisticPeriod.AllObservationPeriod, StatisticPeriod.Custom };
         private List<DateTime> _prevDates;
         public DelegateCommand SaveCommand { get; set; }
         public DelegateCommand SelectReplaysFolderCommand { get; set; }
@@ -54,19 +54,19 @@ namespace WotDossier.Applications.ViewModel
         public StatisticPeriod Period
         {
             get { return AppSettings.Period; }
-            set
-            {
-                AppSettings.Period = value;
-            }
+            set { AppSettings.Period = value; }
         }
 
         public DateTime? PrevDate
         {
             get { return AppSettings.PrevDate; }
-            set
-            {
-                AppSettings.PrevDate = value;
-            }
+            set { AppSettings.PrevDate = value; }
+        }
+
+        public bool CheckForUpdates
+        {
+            get { return AppSettings.CheckForUpdates; }
+            set { AppSettings.CheckForUpdates = value; }
         }
 
         public string ReplaysFolderPath
@@ -119,7 +119,8 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         /// <param name="view">The view.</param>
         /// <param name="isChild">if set to <c>true</c> then this object is a child of another ViewModel.</param>
-        public SettingsViewModel(ISettingsView view, bool isChild) : base(view, isChild)
+        public SettingsViewModel(ISettingsView view, bool isChild)
+            : base(view, isChild)
         {
         }
 

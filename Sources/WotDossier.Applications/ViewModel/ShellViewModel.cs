@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Threading;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
@@ -25,6 +22,7 @@ using WotDossier.Domain.Tank;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
+using WotDossier.Framework.Forms;
 using WotDossier.Framework.Forms.Commands;
 using Common.Logging;
 using WotDossier.Framework.Forms.ProgressDialog;
@@ -37,6 +35,8 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(ShellViewModel))]
     public class ShellViewModel : ViewModel<IShellView>
     {
+        #region [ Properties and Fields ]
+
         private static readonly ILog _log = LogManager.GetLogger("ShellViewModel");
 
         private readonly DossierRepository _dossierRepository;
@@ -44,8 +44,13 @@ namespace WotDossier.Applications.ViewModel
         private PlayerStatisticViewModel _sessionStatistic;
         private List<TankRowMasterTanker> _masterTanker;
         private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
+        private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
 
-        #region [ Properties ]
+        private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
+        private ObservableCollection<ReplayFile> _replays;
+        private TankFilterViewModel _tankFilter;
+        private PlayerStatisticViewModel _sessionStartStatistic;
+        private ProgressControlViewModel _progressView;
 
         public ChartPlotter ChartRating
         {
@@ -125,19 +130,17 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
-
         public FraggsCountViewModel FraggsCount
         {
             get { return _fraggsCount; }
             set { _fraggsCount = value; }
         }
 
-        private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
-        private ObservableCollection<ReplayFile> _replays;
-        private TankFilterViewModel _tankFilter;
-        private PlayerStatisticViewModel _sessionStartStatistic;
-        private ProgressControlViewModel _progressView;
+        public TankFilterViewModel TankFilter
+        {
+            get { return _tankFilter; }
+            set { _tankFilter = value; }
+        }
 
         public ObservableCollection<SellInfo> LastUsedTanks
         {
@@ -149,6 +152,15 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return _progressView; }
             set { _progressView = value; }
+        }
+
+        public List<TankStatisticRowViewModel> LastUsedTanksList
+        {
+            get
+            {
+                List<TankStatisticRowViewModel> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
+                return list;
+            }
         }
 
         public sealed class SellInfo : INotifyPropertyChanged
@@ -213,33 +225,19 @@ namespace WotDossier.Applications.ViewModel
             ProgressView = new ProgressControlViewModel();
         }
 
-        private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent obj)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
+        /// </summary>
+        /// <param name="view">The view.</param>
+        /// <param name="isChild">if set to <c>true</c> [is child].</param>
+        public ShellViewModel(IShellView view, bool isChild)
+            : base(view, isChild)
         {
-            InitLastUsedTanksChart();
         }
 
-        private void OnSettings()
-        {
-            SettingsViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<SettingsViewModel>().Value;
-            List<DateTime> list = null;
-            if (PlayerStatistic != null)
-            {
-                list = PlayerStatistic.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
-            }
-            viewModel.PrevDates = list ?? new List<DateTime>();
-            viewModel.Show();
-        }
+        #endregion
 
-        private void TankFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
-        {
-            RaisePropertyChanged("Tanks");
-        }
-
-        public TankFilterViewModel TankFilter
-        {
-            get { return _tankFilter; }
-            set { _tankFilter = value; }
-        }
+        #region Handlers
 
         private void OnReplayRowDelete(object rowData)
         {
@@ -294,11 +292,11 @@ namespace WotDossier.Applications.ViewModel
 
                 if (!File.Exists(jsonFile))
                 {
-                    MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    WpfMessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
                 }
 
                 Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
-                if (ValidateReplayData(replay))
+                if (replay.datablock_battle_result != null)
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
                     viewModel.Init(replay, replayFile);
@@ -306,31 +304,26 @@ namespace WotDossier.Applications.ViewModel
                 }
                 else
                 {
-                    MessageBox.Show(Resources.Resources.Msg_File_incomplete_or_not_supported, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    WpfMessageBox.Show(Resources.Resources.Msg_File_incomplete_or_not_supported, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
                 }
             }
         }
 
-        private bool ValidateReplayData(Replay replayFile)
+        private void OnSettings()
         {
-            if (replayFile.datablock_battle_result != null)
+            SettingsViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<SettingsViewModel>().Value;
+            List<DateTime> list = null;
+            if (PlayerStatistic != null)
             {
-                return true;
+                list = PlayerStatistic.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
             }
-            return false;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
-        /// </summary>
-        /// <param name="view">The view.</param>
-        /// <param name="isChild">if set to <c>true</c> [is child].</param>
-        public ShellViewModel(IShellView view, bool isChild)
-            : base(view, isChild)
-        {
+            viewModel.PrevDates = list ?? new List<DateTime>();
+            viewModel.Show();
         }
 
         #endregion
+
+        #region load
 
         private void OnLoad()
         {
@@ -383,14 +376,48 @@ namespace WotDossier.Applications.ViewModel
                         }
                         else
                         {
-                            MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
-                                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                            WpfMessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
+                                            WpfMessageBoxButton.OK, WPFMessageBoxImage.Warning);
                         }
                     }
 
                     LoadReplaysList();
                 });
         }
+
+        private static PlayerStat LoadPlayerStatistic(AppSettings settings)
+        {
+            PlayerStat playerStat = null;
+            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
+            {
+                WpfMessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
+                                   WpfMessageBoxButton.OK,
+                                   WPFMessageBoxImage.Warning);
+                return null;
+            }
+
+            try
+            {
+                playerStat = WotApiClient.Instance.LoadPlayerStat(settings);
+            }
+            catch (Exception e)
+            {
+                _log.Error(e);
+                WpfMessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
+                                   WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+            }
+            return playerStat;
+        }
+
+        private static List<TankJson> LoadTanks(FileInfo cacheFile)
+        {
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+            return tanks;
+        }
+
+        #endregion
+
+        #region Initialize
 
         private void LoadReplaysList()
         {
@@ -406,38 +433,38 @@ namespace WotDossier.Applications.ViewModel
                 ObservableCollection<ReplayFile> replayFilesTemp = new ObservableCollection<ReplayFile>();
 
                 ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
-                {
-                    string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
-                    List<FileInfo> replays = files.Select(x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).ToList();
-
-                    int count = replays.Count();
-
-                    List<ReplayFile> replayFiles = new List<ReplayFile>(count);
-
-                    int index = 0;
-                    foreach (FileInfo replay in replays)
                     {
-                        ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay));
-                        replayFiles.Add(replayFile);
-                        index++;
-                        int percent = (index + 1) * 100 / count;
-                        if (ProgressView.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
+                        string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
+                        List<FileInfo> replays = files.Select(x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).ToList();
+
+                        int count = replays.Count();
+
+                        List<ReplayFile> replayFiles = new List<ReplayFile>(count);
+
+                        int index = 0;
+                        foreach (FileInfo replay in replays)
                         {
-                            return;
+                            ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay));
+                            replayFiles.Add(replayFile);
+                            index++;
+                            int percent = (index + 1) * 100 / count;
+                            if (ProgressView.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
+                            {
+                                return;
+                            }
                         }
-                    }
 
-                    // So this check in order to avoid default processing after the Cancel button has been pressed.
-                    // This call will set the Cancelled flag on the result structure.
-                    ProgressView.CheckForPendingCancellation(bw, we);
+                        // So this check in order to avoid default processing after the Cancel button has been pressed.
+                        // This call will set the Cancelled flag on the result structure.
+                        ProgressView.CheckForPendingCancellation(bw, we);
 
-                    replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
-                    Replays = replayFilesTemp;
-                }, new ProgressDialogSettings(true, true, false));
+                        replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
+                        Replays = replayFilesTemp;
+                    }, new ProgressDialogSettings(true, true, false));
             }
             else
             {
-                MessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, replaysFolder), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                WpfMessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, replaysFolder), Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
             }
         }
 
@@ -451,15 +478,6 @@ namespace WotDossier.Applications.ViewModel
                     LastUsedTanks.AddMany(items);
                     RaisePropertyChanged("LastUsedTanksList");
                 });
-        }
-
-        public List<TankStatisticRowViewModel> LastUsedTanksList
-        {
-            get
-            {
-                List<TankStatisticRowViewModel> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
-                return list;
-            }
         }
 
         private PlayerStatisticViewModel InitPlayerStatisticViewModel(PlayerStat playerStat, List<TankJson> tanks)
@@ -488,37 +506,13 @@ namespace WotDossier.Applications.ViewModel
             return currentStatisticViewModel;
         }
 
-        private static PlayerStat LoadPlayerStatistic(AppSettings settings)
-        {
-            PlayerStat playerStat = null;
-            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
-            {
-                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Warning);
-                return null;
-            }
-
-            try
-            {
-                playerStat = WotApiClient.Instance.LoadPlayerStat(settings);
-            }
-            catch (Exception e)
-            {
-                _log.Error(e);
-                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
-                                MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            return playerStat;
-        }
-
         private void InitTanksStatistic(PlayerStat playerStat, List<TankJson> tanks)
         {
             PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(playerStat, tanks);
 
             if (playerEntity == null)
             {
-                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                WpfMessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
                 return;
             }
 
@@ -531,44 +525,19 @@ namespace WotDossier.Applications.ViewModel
             FraggsCount.Init(Tanks);
         }
 
-        private static List<TankJson> LoadTanks(FileInfo cacheFile)
-        {
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            return tanks;
-        }
-
         private void InitMasterTankerList(List<TankStatisticRowViewModel> tanks)
         {
             IEnumerable<int> killed =
                 tanks.SelectMany(x => x.TankFrags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
             List<TankRowMasterTanker> masterTanker = WotApiClient.Instance.TanksDictionary
-                .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
-                .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankIcon(x.Value)))
-                .OrderBy(x => x.IsPremium)
-                .ThenBy(x => x.Tier).ToList();
+                                                                 .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
+                                                                 .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankIcon(x.Value)))
+                                                                 .OrderBy(x => x.IsPremium)
+                                                                 .ThenBy(x => x.Tier).ToList();
             MasterTanker = masterTanker;
         }
 
-        private TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
-        {
-            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.Tankdata.battlesCount).First();
-            IEnumerable<TankJson> prevStatisticViewModels =
-                statisticViewModels.Where(x => x.Tankdata.battlesCount != currentStatistic.Tankdata.battlesCount);
-            return new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
-        }
-
-        private static TankJson UnZipObject(byte[] x)
-        {
-            TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(x);
-            WotApiClient.Instance.ExtendPropertiesData(tankJson);
-            return tankJson;
-        }
-
-        private bool IsExistedtank(TankInfo tankInfo)
-        {
-            return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
-        }
+        #endregion
 
         #region [ Charts initialization ]
 
@@ -666,6 +635,45 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        private TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
+        {
+            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select<TankStatisticEntity, TankJson>(x => UnZipObject(x.Raw)).ToList();
+            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.Tankdata.battlesCount).First();
+            IEnumerable<TankJson> prevStatisticViewModels =
+                statisticViewModels.Where(x => x.Tankdata.battlesCount != currentStatistic.Tankdata.battlesCount);
+            return new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
+        }
+
+        private static TankJson UnZipObject(byte[] x)
+        {
+            TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(x);
+            WotApiClient.Instance.ExtendPropertiesData(tankJson);
+            return tankJson;
+        }
+
+        private bool IsExistedtank(TankInfo tankInfo)
+        {
+            return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
+        }
+
+        private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent obj)
+        {
+            InitLastUsedTanksChart();
+        }
+
+        private void TankFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            RaisePropertyChanged("Tanks");
+        }
+
+        private void ViewClosing(object sender, CancelEventArgs e)
+        {
+            if (!e.Cancel)
+            {
+                e.Cancel = !IsCloseAllowed();
+            }
+        }
+
         public virtual void Show()
         {
             ViewTyped.Loaded += OnShellViewActivated;
@@ -676,15 +684,7 @@ namespace WotDossier.Applications.ViewModel
         private void OnShellViewActivated(object sender, EventArgs eventArgs)
         {
             ViewTyped.Loaded -= OnShellViewActivated;
-            ((Action) OnLoad)();
-        }
-
-        private void ViewClosing(object sender, CancelEventArgs e)
-        {
-            if (!e.Cancel)
-            {
-                e.Cancel = !IsCloseAllowed();
-            }
+            ((Action)OnLoad)();
         }
 
         public bool Close()

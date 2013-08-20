@@ -213,4 +213,7 @@ Win percent: {1:0.00}</value>
   <data name="WindowCaption_AuthFailure" xml:space="preserve">
     <value>Auth failure</value>
   </data>
+  <data name="Msg_NewVersion" xml:space="preserve">
+    <value>New version available - {0}. Do you want download it now?</value>
+  </data>
 </root>

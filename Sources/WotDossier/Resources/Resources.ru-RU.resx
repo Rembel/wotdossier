@@ -1241,4 +1241,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Tab_Header_Session" xml:space="preserve">
     <value>Сессия</value>
   </data>
+  <data name="Msg_ExceptionOccurred" xml:space="preserve">
+    <value>Произошла ошибка во время работы программы</value>
+  </data>
+  <data name="Msg_SqlExceptionOccurred" xml:space="preserve">
+    <value>Произошла ошибка доступа к базе данных во время работы программы</value>
+  </data>
+  <data name="Settings_CheckForUpdatesOnStart" xml:space="preserve">
+    <value>Проверять обновления на старте</value>
+  </data>
+  <data name="WindowCaption_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
 </root>

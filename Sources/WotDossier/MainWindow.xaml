@@ -69,11 +69,39 @@
                                     </d3:ElementMarkerPointsGraph.Marker>
                                 </d3:ElementMarkerPointsGraph>
                             </d3:ChartPlotter>
-                            <d3:ChartPlotter Grid.Row="2" Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                            <d3:ChartPlotter Grid.Row="2" Name="Chart2" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="10,10,0,10">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Процент побед"></TextBlock>
+                                </d3:Header>
+                                <d3:LineGraph DataSource="{Binding WinPercentDataSource}" Stroke="Blue" StrokeThickness="2">
+                                    <d3:LineGraph.Description>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2">
+                                        </d3:PenDescription>
+                                    </d3:LineGraph.Description>
+                                </d3:LineGraph>
+                                <d3:ElementMarkerPointsGraph  DataSource="{Binding WinPercentDataSource}">
+                                    <d3:ElementMarkerPointsGraph.Marker>
+                                        <d3:CircleElementPointMarker Size="4" Fill="Blue" Brush="Blue" />
+                                    </d3:ElementMarkerPointsGraph.Marker>
+                                </d3:ElementMarkerPointsGraph>
                             </d3:ChartPlotter>
-                            <d3:ChartPlotter Grid.Row="3" Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                            <d3:ChartPlotter Grid.Row="3" Name="Chart3" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="10,10,0,10">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Средний урон"></TextBlock>
+                                </d3:Header>
+                                <d3:LineGraph DataSource="{Binding AvgDamageDataSource}" Stroke="Blue" StrokeThickness="2">
+                                    <d3:LineGraph.Description>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2">
+                                        </d3:PenDescription>
+                                    </d3:LineGraph.Description>
+                                </d3:LineGraph>
+                                <d3:ElementMarkerPointsGraph  DataSource="{Binding AvgDamageDataSource}">
+                                    <d3:ElementMarkerPointsGraph.Marker>
+                                        <d3:CircleElementPointMarker Size="4" Fill="Blue" Brush="Blue" />
+                                    </d3:ElementMarkerPointsGraph.Marker>
+                                </d3:ElementMarkerPointsGraph>
                             </d3:ChartPlotter>
                         </Grid>
                         <Grid>

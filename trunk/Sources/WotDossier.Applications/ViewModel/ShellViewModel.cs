@@ -53,6 +53,8 @@ namespace WotDossier.Applications.ViewModel
         private ProgressControlViewModel _progressView;
         private EnumerableDataSource<DataPoint> _ratingDataSource;
         private EnumerableDataSource<DataPoint> _wn6RatingDataSource;
+        private EnumerableDataSource<DataPoint> _winPercentDataSource;
+        private EnumerableDataSource<DataPoint> _avgDamageDataSource;
 
         public ChartPlotter ChartWinPercent
         {
@@ -539,43 +541,19 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitRatingChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
-            //ChartRating.Dispatcher.BeginInvoke((Action)delegate
-            //{
-                //DataRect dataRect = DataRect.Create(0, 0, 100000, 2500);
-                //ChartRating.Viewport.Domain = dataRect;
-                //ChartRating.Viewport.Visible = dataRect;
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
 
-                //ChartRating.RemoveUserElements();
+            RatingDataSource = dataSource;
 
-                IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
-                var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-                dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                      point =>
-                                      String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
-                //SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
-                //Pen lineThickness = new Pen(brush, 2);
-                //ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
-                //ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker,
-                //                         new PenDescription(Resources.Resources.ChartLegend_ER));
+            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
+            dataSource = new EnumerableDataSource<DataPoint>(wn6Points) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
 
-                RatingDataSource = dataSource;
-
-                IEnumerable<DataPoint> wn6Points =
-                    statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
-                dataSource = new EnumerableDataSource<DataPoint>(wn6Points) { XMapping = x => x.X, YMapping = y => y.Y };
-                dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                      point =>
-                                      String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
-                //brush = new SolidColorBrush { Color = Colors.Green };
-                //lineThickness = new Pen(brush, 2);
-                //circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
-                //ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker,
-                //                         new PenDescription(Resources.Resources.ChartLegend_WN6Rating));
-
-                WN6RatingDataSource = dataSource;
-
-                //ChartRating.FitToView();
-            //});
+            WN6RatingDataSource = dataSource;
         }
 
         public EnumerableDataSource<DataPoint> RatingDataSource
@@ -601,48 +579,42 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public EnumerableDataSource<DataPoint> WinPercentDataSource
+        {
+            get { return _winPercentDataSource; }
+            set
+            {
+                _winPercentDataSource = value;
+                RaisePropertyChanged("WinPercentDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> AvgDamageDataSource
+        {
+            get { return _avgDamageDataSource; }
+            set
+            {
+                _avgDamageDataSource = value;
+                RaisePropertyChanged("AvgDamageDataSource");
+            }
+        }
+
         private void InitWinPercentChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
-            ChartWinPercent.Dispatcher.BeginInvoke((Action)delegate
-            {
-                ChartWinPercent.RemoveUserElements();
-
-                IEnumerable<DataPoint> erPoints =
-                    statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
-                var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-                dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                      point =>
-                                      String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
-                SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
-                Pen lineThickness = new Pen(brush, 2);
-                ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
-                ChartWinPercent.AddLineGraph(dataSource, lineThickness, circlePointMarker,
-                                             new PenDescription(Resources.Resources.ChartLegend_WinPercent));
-
-                ChartWinPercent.FitToView();
-            });
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
+            WinPercentDataSource = dataSource;
         }
 
         private void InitAvgDamageChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
-            ChartAvgDamage.Dispatcher.BeginInvoke((Action)delegate
-            {
-                ChartAvgDamage.RemoveUserElements();
-
-                IEnumerable<DataPoint> erPoints =
-                    statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
-                var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
-                dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                      point =>
-                                      String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
-                SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
-                Pen lineThickness = new Pen(brush, 2);
-                ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 4, Fill = brush, Brush = brush };
-                ChartAvgDamage.AddLineGraph(dataSource, lineThickness, circlePointMarker,
-                                            new PenDescription(Resources.Resources.ChartLegend_AvgDamage));
-
-                ChartAvgDamage.FitToView();
-            });
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  point => String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
+            AvgDamageDataSource = dataSource;
         }
 
         private void InitLastUsedTanksChart()

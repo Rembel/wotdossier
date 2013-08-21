@@ -19,11 +19,6 @@ namespace WotDossier
             MinimizeToTray.Enable(this);
         }
 
-        public ChartPlotter ChartRating
-        {
-            get { return Chart; }
-        }
-
         public ChartPlotter ChartWinPercent
         {
             get { return Chart2; }

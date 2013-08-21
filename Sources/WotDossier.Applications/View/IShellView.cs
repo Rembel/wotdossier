@@ -8,7 +8,6 @@ namespace WotDossier.Applications.View
     {
         Window Owner { set; get; }
 
-        ChartPlotter ChartRating { get; }
         ChartPlotter ChartWinPercent { get; }
         ChartPlotter ChartAvgDamage { get; }
         ChartPlotter ChartLastUsedTanks { get; }

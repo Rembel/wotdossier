@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
     <Compile Include="CacheHelper.cs" />
+    <Compile Include="ChartsRegistry.cs" />
     <Compile Include="Folder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplayFile.cs" />

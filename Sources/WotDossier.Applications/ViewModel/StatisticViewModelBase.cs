@@ -190,6 +190,18 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        public double KillDeathRatio
+        {
+            get
+            {
+                if (BattlesCount - SurvivedBattles > 0)
+                {
+                    return Frags / (double)(BattlesCount - SurvivedBattles);
+                }
+                return 0;
+            }
+        }
+
         #region Achievments
 
         #region [ ITankRowBattleAwards ]

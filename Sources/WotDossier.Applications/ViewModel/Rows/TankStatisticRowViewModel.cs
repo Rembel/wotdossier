@@ -110,18 +110,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
-        public double KillDeathRatio
-        {
-            get
-            {
-                if (BattlesCount - SurvivedBattles > 0)
-                {
-                    return Frags/(double) (BattlesCount - SurvivedBattles);
-                }
-                return 0;
-            }
-        }
-
         public int Tier8Frags { get; set; }
 
         public int BeastFrags { get; set; }

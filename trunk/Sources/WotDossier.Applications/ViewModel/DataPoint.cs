@@ -11,4 +11,16 @@
             Y = y;
         }
     }
+
+    public class GenericPoint<T1, T2>
+    {
+        public T1 X { get; set; }
+        public T2 Y { get; set; }
+
+        public GenericPoint(T1 x, T2 y)
+        {
+            X = x;
+            Y = y;
+        }
+    }
 }

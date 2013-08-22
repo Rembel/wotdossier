@@ -6,13 +6,13 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
 using System.Windows;
-using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -46,7 +46,7 @@ namespace WotDossier.Applications.ViewModel
         private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
         private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
 
-        private ObservableCollection<SellInfo> _lastUsedTanks = new ObservableCollection<SellInfo>();
+        private List<SellInfo> _lastUsedTanksDataSource;
         private ObservableCollection<ReplayFile> _replays;
         private TankFilterViewModel _tankFilter;
         private PlayerStatisticViewModel _sessionStartStatistic;
@@ -55,21 +55,11 @@ namespace WotDossier.Applications.ViewModel
         private EnumerableDataSource<DataPoint> _wn6RatingDataSource;
         private EnumerableDataSource<DataPoint> _winPercentDataSource;
         private EnumerableDataSource<DataPoint> _avgDamageDataSource;
-
-        public ChartPlotter ChartWinPercent
-        {
-            get { return ViewTyped.ChartWinPercent; }
-        }
-
-        public ChartPlotter ChartAvgDamage
-        {
-            get { return ViewTyped.ChartAvgDamage; }
-        }
-
-        public ChartPlotter ChartLastUsedTanks
-        {
-            get { return ViewTyped.ChartLastUsedTanks; }
-        }
+        private EnumerableDataSource<DataPoint> _avgXpDataSource;
+        private EnumerableDataSource<DataPoint> _killDeathRatioDataSource;
+        private EnumerableDataSource<DataPoint> _survivePercentDataSource;
+        private List<DataPoint> _efficiencyByTierDataSource;
+        private List<GenericPoint<string, double>> _efficiencyByTypeDataSource;
 
         public DelegateCommand LoadCommand { get; set; }
         public DelegateCommand SettingsCommand { get; set; }
@@ -141,12 +131,6 @@ namespace WotDossier.Applications.ViewModel
             set { _tankFilter = value; }
         }
 
-        public ObservableCollection<SellInfo> LastUsedTanks
-        {
-            get { return _lastUsedTanks; }
-            set { _lastUsedTanks = value; }
-        }
-
         public ProgressControlViewModel ProgressView
         {
             get { return _progressView; }
@@ -159,6 +143,107 @@ namespace WotDossier.Applications.ViewModel
             {
                 List<TankStatisticRowViewModel> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
                 return list;
+            }
+        }
+
+        public List<SellInfo> LastUsedTanksDataSource
+        {
+            get { return _lastUsedTanksDataSource; }
+            set
+            {
+                _lastUsedTanksDataSource = value;
+                RaisePropertyChanged("LastUsedTanksDataSource");
+                RaisePropertyChanged("LastUsedTanksList");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> RatingDataSource
+        {
+            get { return _ratingDataSource; }
+            set
+            {
+                _ratingDataSource = value;
+                RaisePropertyChanged("RatingDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> WN6RatingDataSource
+        {
+            get { return _wn6RatingDataSource; }
+            set
+            {
+                _wn6RatingDataSource = value;
+                RaisePropertyChanged("WN6RatingDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> WinPercentDataSource
+        {
+            get { return _winPercentDataSource; }
+            set
+            {
+                _winPercentDataSource = value;
+                RaisePropertyChanged("WinPercentDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> AvgDamageDataSource
+        {
+            get { return _avgDamageDataSource; }
+            set
+            {
+                _avgDamageDataSource = value;
+                RaisePropertyChanged("AvgDamageDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> AvgXPDataSource
+        {
+            get { return _avgXpDataSource; }
+            set
+            {
+                _avgXpDataSource = value;
+                RaisePropertyChanged("AvgXPDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> KillDeathRatioDataSource
+        {
+            get { return _killDeathRatioDataSource; }
+            set
+            {
+                _killDeathRatioDataSource = value;
+                RaisePropertyChanged("KillDeathRatioDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> SurvivePercentDataSource
+        {
+            get { return _survivePercentDataSource; }
+            set
+            {
+                _survivePercentDataSource = value;
+                RaisePropertyChanged("SurvivePercentDataSource");
+            }
+        }
+
+        public List<DataPoint> EfficiencyByTierDataSource
+        {
+            get { return _efficiencyByTierDataSource; }
+            set
+            {
+                _efficiencyByTierDataSource = value;
+                RaisePropertyChanged("EfficiencyByTierDataSource");
+            }
+        }
+
+        public List<GenericPoint<string, double>> EfficiencyByTypeDataSource
+        {
+            get { return _efficiencyByTypeDataSource; }
+            set
+            {
+                _efficiencyByTypeDataSource = value;
+                RaisePropertyChanged("EfficiencyByTypeDataSource");
             }
         }
 
@@ -368,9 +453,6 @@ namespace WotDossier.Applications.ViewModel
                             ProgressView.Report(bw, 50, string.Empty);
 
                             InitChart();
-                            ProgressView.Report(bw, 75, string.Empty);
-
-                            InitLastUsedTanksChart();
                             ProgressView.Report(bw, 100, string.Empty);
                         }
                         else
@@ -536,7 +618,71 @@ namespace WotDossier.Applications.ViewModel
                 InitRatingChart(statisticViewModels);
                 InitWinPercentChart(statisticViewModels);
                 InitAvgDamageChart(statisticViewModels);
+                InitAvgXPChart(statisticViewModels);
+                InitKillDeathRatioChart(statisticViewModels);
+                InitSurvivePercentChart(statisticViewModels);
+                InitEfficiencyByTierChart(_tanks);
+                InitEfficiencyByTypeChart(_tanks);
+                //InitChart(statisticViewModels);
+                InitLastUsedTanksChart();
             }
+        }
+
+        private void InitEfficiencyByTierChart(List<TankStatisticRowViewModel> statisticViewModels)
+        {
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, RatingHelper.CalcER(
+                x.Average(y => y.AvgDamageDealt),
+                x.Key,
+                x.Average(y => y.AvgFrags),
+                x.Average(y => y.AvgSpotted),
+                x.Average(y => y.AvgCapturePoints),
+                x.Average(y => y.AvgDroppedCapturePoints))));
+            EfficiencyByTierDataSource = dataSource.ToList();
+        }
+
+        private void InitEfficiencyByTypeChart(List<TankStatisticRowViewModel> statisticViewModels)
+        {
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.CalcER(
+                x.Average(y => y.AvgDamageDealt),
+                x.Key,
+                x.Average(y => y.AvgFrags),
+                x.Average(y => y.AvgSpotted),
+                x.Average(y => y.AvgCapturePoints),
+                x.Average(y => y.AvgDroppedCapturePoints))));
+            EfficiencyByTypeDataSource = dataSource.ToList();
+        }
+
+        private void InitSurvivePercentChart(List<PlayerStatisticViewModel> statisticViewModels)
+        {
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.SurvivedBattlesPercent));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
+                                  point => String.Format(@"Battles: {0}
+Survive %: {1:0.00}", point.X, point.Y));
+            SurvivePercentDataSource = dataSource;
+        }
+
+        private void InitKillDeathRatioChart(List<PlayerStatisticViewModel> statisticViewModels)
+        {
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.KillDeathRatio));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
+                                  point => String.Format(@"Battles: {0}
+Ratio: {1:0.00}", point.X, point.Y));
+            KillDeathRatioDataSource = dataSource;
+        }
+
+        private void InitAvgXPChart(List<PlayerStatisticViewModel> statisticViewModels)
+        {
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgXp));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                                  //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
+                                  point => String.Format(@"Battles: {0}
+Avg XP: {1:0.00}", point.X, point.Y));
+            AvgXPDataSource = dataSource;
         }
 
         private void InitRatingChart(List<PlayerStatisticViewModel> statisticViewModels)
@@ -556,49 +702,6 @@ namespace WotDossier.Applications.ViewModel
             WN6RatingDataSource = dataSource;
         }
 
-        public EnumerableDataSource<DataPoint> RatingDataSource
-        {
-            get
-            {
-                return _ratingDataSource;
-            }
-            set
-            {
-                _ratingDataSource = value;
-                RaisePropertyChanged("RatingDataSource");
-            }
-        }
-
-        public EnumerableDataSource<DataPoint> WN6RatingDataSource
-        {
-            get { return _wn6RatingDataSource; }
-            set
-            {
-                _wn6RatingDataSource = value;
-                RaisePropertyChanged("WN6RatingDataSource");
-            }
-        }
-
-        public EnumerableDataSource<DataPoint> WinPercentDataSource
-        {
-            get { return _winPercentDataSource; }
-            set
-            {
-                _winPercentDataSource = value;
-                RaisePropertyChanged("WinPercentDataSource");
-            }
-        }
-
-        public EnumerableDataSource<DataPoint> AvgDamageDataSource
-        {
-            get { return _avgDamageDataSource; }
-            set
-            {
-                _avgDamageDataSource = value;
-                RaisePropertyChanged("AvgDamageDataSource");
-            }
-        }
-
         private void InitWinPercentChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
@@ -610,8 +713,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitAvgDamageChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.DamageDealt / (double)x.BattlesCount));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgDamageDealt));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                                   point => String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
             AvgDamageDataSource = dataSource;
@@ -619,14 +722,9 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitLastUsedTanksChart()
         {
-            ChartLastUsedTanks.Dispatcher.BeginInvoke((Action)delegate
-            {
-                LastUsedTanks.Clear();
-                IEnumerable<TankStatisticRowViewModel> viewModels = _tanks.Where(x => x.Updated > PlayerStatistic.PreviousDate);
-                IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo { TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta });
-                LastUsedTanks.AddMany(items);
-                RaisePropertyChanged("LastUsedTanksList");
-            });
+            IEnumerable<TankStatisticRowViewModel> viewModels = _tanks.Where(x => x.Updated > PlayerStatistic.PreviousDate);
+            IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo { TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta });
+            LastUsedTanksDataSource = items.ToList();
         }
 
         #endregion

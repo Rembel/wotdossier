@@ -5,6 +5,7 @@
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
+        xmlns:wotDossier="clr-namespace:WotDossier"
         Title="WotDossier" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/app_icon.ico">
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="23">
@@ -28,15 +29,9 @@
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
                 <ScrollViewer>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <d3:ChartPlotter Grid.Row="0" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="10,10,0,10">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10">
                                 <d3:Header>
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Рейтинг Эффективности"></TextBlock>
                                 </d3:Header>
@@ -52,15 +47,14 @@
                                     </d3:ElementMarkerPointsGraph.Marker>
                                 </d3:ElementMarkerPointsGraph>
                             </d3:ChartPlotter>
-                            <d3:ChartPlotter Grid.Row="1" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="10,10,0,10">
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10">
                                 <d3:Header>
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Рейтинг WN6"></TextBlock>
                                 </d3:Header>
                                 <d3:LineGraph DataSource="{Binding WN6RatingDataSource}" Stroke="Green" StrokeThickness="2">
                                     <d3:LineGraph.Description>
-                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2">
-                                        </d3:PenDescription>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2" />
                                     </d3:LineGraph.Description>
                                 </d3:LineGraph>
                                 <d3:ElementMarkerPointsGraph  DataSource="{Binding WN6RatingDataSource}">
@@ -69,15 +63,14 @@
                                     </d3:ElementMarkerPointsGraph.Marker>
                                 </d3:ElementMarkerPointsGraph>
                             </d3:ChartPlotter>
-                            <d3:ChartPlotter Grid.Row="2" Name="Chart2" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="10,10,0,10">
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10">
                                 <d3:Header>
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Процент побед"></TextBlock>
                                 </d3:Header>
                                 <d3:LineGraph DataSource="{Binding WinPercentDataSource}" Stroke="Blue" StrokeThickness="2">
                                     <d3:LineGraph.Description>
-                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2">
-                                        </d3:PenDescription>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2" />
                                     </d3:LineGraph.Description>
                                 </d3:LineGraph>
                                 <d3:ElementMarkerPointsGraph  DataSource="{Binding WinPercentDataSource}">
@@ -86,15 +79,30 @@
                                     </d3:ElementMarkerPointsGraph.Marker>
                                 </d3:ElementMarkerPointsGraph>
                             </d3:ChartPlotter>
-                            <d3:ChartPlotter Grid.Row="3" Name="Chart3" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="10,10,0,10">
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Средний опыт за бой"></TextBlock>
+                                </d3:Header>
+                                <d3:LineGraph DataSource="{Binding AvgXPDataSource}" Stroke="Blue" StrokeThickness="2">
+                                    <d3:LineGraph.Description>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2" />
+                                    </d3:LineGraph.Description>
+                                </d3:LineGraph>
+                                <d3:ElementMarkerPointsGraph  DataSource="{Binding AvgXPDataSource}">
+                                    <d3:ElementMarkerPointsGraph.Marker>
+                                        <d3:CircleElementPointMarker Size="4" Fill="Blue" Brush="Blue" />
+                                    </d3:ElementMarkerPointsGraph.Marker>
+                                </d3:ElementMarkerPointsGraph>
+                            </d3:ChartPlotter>
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10">
                                 <d3:Header>
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Средний урон"></TextBlock>
                                 </d3:Header>
                                 <d3:LineGraph DataSource="{Binding AvgDamageDataSource}" Stroke="Blue" StrokeThickness="2">
                                     <d3:LineGraph.Description>
-                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2">
-                                        </d3:PenDescription>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2" />
                                     </d3:LineGraph.Description>
                                 </d3:LineGraph>
                                 <d3:ElementMarkerPointsGraph  DataSource="{Binding AvgDamageDataSource}">
@@ -103,11 +111,44 @@
                                     </d3:ElementMarkerPointsGraph.Marker>
                                 </d3:ElementMarkerPointsGraph>
                             </d3:ChartPlotter>
-                        </Grid>
-                        <Grid>
-                            <d3:ChartPlotter Grid.Row="0" Name="Chart4" Width="500" Height="500" Margin="50, 0, 50, 0" HorizontalAlignment="Center">
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10" Visible="0, 0, 6, 2500">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Эффективность по типам техники"></TextBlock>
+                                </d3:Header>
+                                <d3:HorizontalAxis>
+                                    <d3:HorizontalAxis.LabelProvider>
+                                        <wotDossier:TextLabelProvider />
+                                    </d3:HorizontalAxis.LabelProvider>
+                                </d3:HorizontalAxis>
+                                <d3:BarChart ItemsSource="{Binding EfficiencyByTypeDataSource}">
+                                    <d3:BarChart.Resources>
+                                        <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
+                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                    </d3:BarChart.Resources>
+                                    <d3:TemplateMarkerGenerator>
+                                        <DataTemplate>
+                                            <Rectangle Width="30" Fill="Blue"
+								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                <d3:LiveToolTipService.ToolTip>
+                                                    <d3:LiveToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
+											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                        <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                    </d3:LiveToolTip>
+                                                </d3:LiveToolTipService.ToolTip>
+                                            </Rectangle>
+                                        </DataTemplate>
+                                    </d3:TemplateMarkerGenerator>
+                                </d3:BarChart>
+                            </d3:ChartPlotter>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <d3:ChartPlotter Name="Chart4" Width="400" Height="400" Margin="50, 50, 50, 50" HorizontalAlignment="Center">
                                 <d3:ViewportUIContainer>
-                                    <d3:PieChart Name="PieChart" Width="350" Height="350" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanks}" 
+                                    <d3:PieChart Name="PieChart" Width="350" Height="350" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanksDataSource}" 
 							                Canvas.Left="10" Canvas.Top="10" StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
                                         <d3:PieChart.Resources>
                                             <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
@@ -135,7 +176,68 @@
                                     </d3:PieChart>
                                 </d3:ViewportUIContainer>
                             </d3:ChartPlotter>
-                        </Grid>
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Отношение уничтожил/убит"></TextBlock>
+                                </d3:Header>
+                                <d3:LineGraph DataSource="{Binding KillDeathRatioDataSource}" Stroke="Blue" StrokeThickness="2">
+                                    <d3:LineGraph.Description>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2" />
+                                    </d3:LineGraph.Description>
+                                </d3:LineGraph>
+                                <d3:ElementMarkerPointsGraph  DataSource="{Binding KillDeathRatioDataSource}">
+                                    <d3:ElementMarkerPointsGraph.Marker>
+                                        <d3:CircleElementPointMarker Size="4" Fill="Blue" Brush="Blue" />
+                                    </d3:ElementMarkerPointsGraph.Marker>
+                                </d3:ElementMarkerPointsGraph>
+                            </d3:ChartPlotter>
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Выжил в боях %"></TextBlock>
+                                </d3:Header>
+                                <d3:LineGraph DataSource="{Binding SurvivePercentDataSource}" Stroke="Blue" StrokeThickness="2">
+                                    <d3:LineGraph.Description>
+                                        <d3:PenDescription  DescriptionString="asdasdasd" Stroke="White" StrokeThickness="2" />
+                                    </d3:LineGraph.Description>
+                                </d3:LineGraph>
+                                <d3:ElementMarkerPointsGraph  DataSource="{Binding SurvivePercentDataSource}">
+                                    <d3:ElementMarkerPointsGraph.Marker>
+                                        <d3:CircleElementPointMarker Size="4" Fill="Blue" Brush="Blue" />
+                                    </d3:ElementMarkerPointsGraph.Marker>
+                                </d3:ElementMarkerPointsGraph>
+                            </d3:ChartPlotter>
+
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="50,10,50,10" Visible="0, 0, 11, 2500">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Эффективность по уровням"></TextBlock>
+                                </d3:Header>
+                                <d3:BarChart ItemsSource="{Binding EfficiencyByTierDataSource}">
+                                    <d3:BarChart.Resources>
+                                        <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
+                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                    </d3:BarChart.Resources>
+                                    <d3:TemplateMarkerGenerator>
+                                        <DataTemplate>
+                                            <Rectangle Width="30" Fill="Blue"
+								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                <d3:LiveToolTipService.ToolTip>
+                                                    <d3:LiveToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
+											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                        <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                    </d3:LiveToolTip>
+                                                </d3:LiveToolTipService.ToolTip>
+                                            </Rectangle>
+                                        </DataTemplate>
+                                    </d3:TemplateMarkerGenerator>
+                                </d3:BarChart>
+                            </d3:ChartPlotter>
+                        </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

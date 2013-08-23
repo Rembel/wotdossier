@@ -96,9 +96,6 @@
       <HintPath>..\..\References\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Threading">
-      <HintPath>..\..\References\System.Threading.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\..\References\System.Windows.Interactivity.dll</HintPath>
@@ -128,6 +125,9 @@
     </Compile>
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LineChartControl.xaml.cs">
+      <DependentUpon>LineChartControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\MedalAchievement.xaml.cs">
       <DependentUpon>MedalAchievement.xaml</DependentUpon>
@@ -280,6 +280,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ClanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LineChartControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -647,6 +651,15 @@
     <Resource Include="Resources\Images\Maps\60_asia_miao.jpg" />
     <Resource Include="Resources\Images\Maps\73_asia_korea.jpg" />
     <Resource Include="Resources\Images\Maps\85_winter.jpg" />
+    <Content Include="Updates\2013082301.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013082302.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013082303.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

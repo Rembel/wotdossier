@@ -6,6 +6,7 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Threading;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
@@ -411,8 +412,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnLoad()
         {
-            ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped,
-                Resources.Resources.ProgressTitle_Loading_replays,
+            ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays,
                 (bw, we) =>
                 {
                     AppSettings settings = SettingsReader.Get();
@@ -471,9 +471,9 @@ namespace WotDossier.Applications.ViewModel
             PlayerStat playerStat = null;
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
-                WpfMessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
-                                   WpfMessageBoxButton.OK,
-                                   WPFMessageBoxImage.Warning);
+                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
+                                   MessageBoxButton.OK,
+                                   MessageBoxImage.Warning);
                 return null;
             }
 
@@ -540,6 +540,9 @@ namespace WotDossier.Applications.ViewModel
                         ProgressView.CheckForPendingCancellation(bw, we);
 
                         replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
+
+                        IList<ReplayEntity> dbReplays = _dossierRepository.GetReplays();
+
                         Replays = replayFilesTemp;
                     }, new ProgressDialogSettings(true, true, false));
             }
@@ -655,7 +658,7 @@ namespace WotDossier.Applications.ViewModel
         private void InitSurvivePercentChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.SurvivedBattlesPercent));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                 //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
                                   point => String.Format(@"Battles: {0}
@@ -666,7 +669,7 @@ Survive %: {1:0.00}", point.X, point.Y));
         private void InitKillDeathRatioChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.KillDeathRatio));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                 //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
                                   point => String.Format(@"Battles: {0}
@@ -677,9 +680,9 @@ Ratio: {1:0.00}", point.X, point.Y));
         private void InitAvgXPChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgXp));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                                  //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
+                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
                                   point => String.Format(@"Battles: {0}
 Avg XP: {1:0.00}", point.X, point.Y));
             AvgXPDataSource = dataSource;
@@ -714,7 +717,7 @@ Avg XP: {1:0.00}", point.X, point.Y));
         private void InitAvgDamageChart(List<PlayerStatisticViewModel> statisticViewModels)
         {
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgDamageDealt));
-            var dataSource = new EnumerableDataSource<DataPoint>(erPoints.ToList()) { XMapping = x => x.X, YMapping = y => y.Y };
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                                   point => String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
             AvgDamageDataSource = dataSource;

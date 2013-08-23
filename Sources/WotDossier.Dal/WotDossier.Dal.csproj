@@ -67,6 +67,7 @@
     <Compile Include="Mappings\PlayerAchievementsEntityMapping.cs" />
     <Compile Include="Mappings\PlayerEntityMapping.cs" />
     <Compile Include="Mappings\PlayerStatisticEntityMapping.cs" />
+    <Compile Include="Mappings\ReplayEntityMapping.cs" />
     <Compile Include="Mappings\SubclassMapBase.cs" />
     <Compile Include="Mappings\TankEntityMapping.cs" />
     <Compile Include="Mappings\TankStatisticEntityMapping.cs" />

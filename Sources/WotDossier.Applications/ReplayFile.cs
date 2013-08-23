@@ -40,6 +40,8 @@ namespace WotDossier.Applications
                 Tank = tankNameMatch.Groups[2].Value;
 
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
+                ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
+
                 FileInfo = replayFileInfo;
                 Credits = replay.CommandResult.Damage.credits;
                 DamageDealt = replay.CommandResult.Damage.damageDealt;
@@ -48,6 +50,7 @@ namespace WotDossier.Applications
                 Xp = replay.CommandResult.Damage.xp;
                 Killed = replay.CommandResult.Damage.killed.Count;
                 Damaged = replay.CommandResult.Damage.damaged.Count;
+                PlayerId = replay.datablock_1.playerID;
             }
             else
             {
@@ -75,6 +78,10 @@ namespace WotDossier.Applications
         public int Damaged { get; set; }
 
         public int Killed { get; set; }
+
+        public long PlayerId { get; set; }
+
+        public long ReplayId { get; set; }
 
         public int Xp { get; set; }
 

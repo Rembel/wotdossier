@@ -237,5 +237,13 @@ namespace WotDossier.Dal
             _dataProvider.CloseSession();
             return tankStatisticEntities;
         }
+
+        public IList<ReplayEntity> GetReplays()
+        {
+            _dataProvider.OpenSession();
+            IList<ReplayEntity> replays = _dataProvider.QueryOver<ReplayEntity>().List<ReplayEntity>();
+            _dataProvider.CloseSession();
+            return replays;
+        }
     }
 }

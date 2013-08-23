@@ -33,25 +33,6 @@ namespace WotDossier
         }
     }
 
-    //public class TextAxisControl : AxisControl<string>
-    //{
-    //    public TextAxisControl()
-    //    {
-    //        this.LabelProvider = new TextLabelProvider();
-    //        this.TicksProvider = null;
-    //        this.ConvertToDouble = (Func<double, double>)(d => d);
-    //        this.Range = new Range<double>(0.0, 10.0);
-    //    }
-    //}
-
-    //public class TextAxis : AxisBase<string>
-    //{
-    //    public TextAxis() 
-    //        : base(new TextLabelProvider())
-    //    {            
-    //    }
-    //}
-
     public class TextLabelProvider : LabelProviderBase<double>
     {
         /// <summary>

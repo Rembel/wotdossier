@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
   <variables>
-    <add key="ConnectionString" value="Data Source=..\..\Sources\WotDossier\Data\dossier.sdf;" />
+    <add key="ConnectionString" value="Data Source=..\..\Sources\WotDossier\Data\init.sdf;" />
   </variables>
   <propertySets>
     <propertySet template="Templates\Templates.cst">

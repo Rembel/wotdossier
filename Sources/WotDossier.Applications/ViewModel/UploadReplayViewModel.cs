@@ -4,6 +4,7 @@ using System.Security.Authentication;
 using System.Windows;
 using Common.Logging;
 using WotDossier.Applications.View;
+using WotDossier.Dal;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms;
 using WotDossier.Framework.Forms.Commands;
@@ -14,6 +15,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (UploadReplayViewModel))]
     public class UploadReplayViewModel : ViewModel<IUploadReplayView>
     {
+        private readonly DossierRepository _repository;
         private static readonly ILog _log = LogManager.GetLogger("UploadReplayViewModel");
 
         public DelegateCommand OnReplayUploadCommand { get; set; }
@@ -25,14 +27,16 @@ namespace WotDossier.Applications.ViewModel
         public string ReplayName { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;"/> class and
+        /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
         /// </summary>
         /// <param name="view">The view.</param>
+        /// <param name="repository">The repository.</param>
         [ImportingConstructor]
-        public UploadReplayViewModel([Import(typeof(IUploadReplayView))]IUploadReplayView view)
+        public UploadReplayViewModel([Import(typeof(IUploadReplayView))]IUploadReplayView view, [Import(typeof(DossierRepository))]DossierRepository repository)
             : base(view)
         {
+            _repository = repository;
             OnReplayUploadCommand = new DelegateCommand(OnReplayUpload);
         }
 
@@ -43,7 +47,8 @@ namespace WotDossier.Applications.ViewModel
                 ReplayUploader replayUploader = new ReplayUploader();
                 try
                 {
-                    replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription, SettingsReader.Get().ReplaysUploadServerPath);
+                    ReplayFile.Link = replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription, SettingsReader.Get().ReplaysUploadServerPath);
+                    _repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);
                     ViewTyped.Close();
                 }
                 catch (AuthenticationException e)

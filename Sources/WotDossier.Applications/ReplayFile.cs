@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -8,8 +9,9 @@ using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications
 {
-    public class ReplayFile
+    public class ReplayFile:INotifyPropertyChanged
     {
+        private string _link;
         //20121201_1636_ussr-IS_42_north_america
         private const string REPLAY_DATETIME_FORMAT = @"(\d+_\d+)";
         private const string MAPNAME_FILENAME = @"(\d+_[a-zA-Z_]+)(\.wotreplay)";
@@ -92,5 +94,23 @@ namespace WotDossier.Applications
         public int DamageDealt { get; set; }
 
         public int Credits { get; set; }
+
+        public string Link
+        {
+            get { return _link; }
+            set
+            {
+                _link = value;
+                OnPropertyChanged("Link");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

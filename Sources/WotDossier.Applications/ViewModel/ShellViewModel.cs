@@ -543,6 +543,9 @@ namespace WotDossier.Applications.ViewModel
 
                         IList<ReplayEntity> dbReplays = _dossierRepository.GetReplays();
 
+                        dbReplays.Join(replayFilesTemp, x => new {x.PlayerId, x.ReplayId}, y => new {y.PlayerId, y.ReplayId},
+                                       (x, y) => new {ReplayEntity = x, ReplayFile = y}).ToList().ForEach( x=> x.ReplayFile.Link = x.ReplayEntity.Link);
+
                         Replays = replayFilesTemp;
                     }, new ProgressDialogSettings(true, true, false));
             }

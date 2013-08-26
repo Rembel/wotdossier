@@ -245,5 +245,34 @@ namespace WotDossier.Dal
             _dataProvider.CloseSession();
             return replays;
         }
+
+        public void SaveReplay(long playerId, long replayId, string link)
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+            try
+            {
+                ReplayEntity entity = _dataProvider.QueryOver<ReplayEntity>().Where(x => x.PlayerId == playerId && x.ReplayId == replayId).SingleOrDefault<ReplayEntity>();
+
+                ReplayEntity replayEntity = entity ?? new ReplayEntity();
+
+                replayEntity.PlayerId = playerId;
+                replayEntity.ReplayId = replayId;
+                replayEntity.Link = link;
+
+                _dataProvider.Save(replayEntity);
+
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                _log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.CloseSession();
+            }
+        }
     }
 }

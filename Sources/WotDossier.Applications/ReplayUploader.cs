@@ -50,7 +50,7 @@ Content-Disposition: form-data; name=""yt0""
         /// <param name="replayName">Name of the replay.</param>
         /// <param name="replayDescription">The replay description.</param>
         /// <param name="uploadUrl">The upload URL. "http://wotreplays.ru/site/upload"</param>
-        public void Upload(FileInfo info, string replayName, string replayDescription, string uploadUrl)
+        public string Upload(FileInfo info, string replayName, string replayDescription, string uploadUrl)
         {
             var cookieContainer = LoadCookies(uploadUrl);
 
@@ -88,7 +88,9 @@ Content-Disposition: form-data; name=""yt0""
 
             WebResponse webResponse = request.GetResponse();
 
-            Clipboard.SetText(webResponse.ResponseUri.ToString());
+            string url = webResponse.ResponseUri.ToString();
+
+            Clipboard.SetText(url);
 
             using (Stream stream = webResponse.GetResponseStream())
             {
@@ -98,6 +100,7 @@ Content-Disposition: form-data; name=""yt0""
                     string readToEnd = streamReader.ReadToEnd();
                 }
             }
+            return url;
         }
 
         private bool IsAuthentificated(CookieContainer cookieContainer, string uploadUrl)

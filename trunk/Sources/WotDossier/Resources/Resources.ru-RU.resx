@@ -1253,4 +1253,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="WindowCaption_Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
+  <data name="Column_Replay_Link" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
 </root>

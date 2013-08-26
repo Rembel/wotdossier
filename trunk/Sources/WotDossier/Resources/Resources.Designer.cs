@@ -954,6 +954,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Link.
+        /// </summary>
+        public static string Column_Replay_Link {
+            get {
+                return ResourceManager.GetString("Column_Replay_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to XP.
         /// </summary>
         public static string Column_Replay_XP {

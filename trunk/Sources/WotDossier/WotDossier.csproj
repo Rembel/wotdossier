@@ -651,6 +651,7 @@
     <Resource Include="Resources\Images\Maps\60_asia_miao.jpg" />
     <Resource Include="Resources\Images\Maps\73_asia_korea.jpg" />
     <Resource Include="Resources\Images\Maps\85_winter.jpg" />
+    <Resource Include="Resources\Images\buttons.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1061,7 +1062,6 @@
     <Resource Include="Resources\Images\Replays\CreditsIcon-2.png" />
     <Resource Include="Resources\Images\Replays\popup_remind_bg.jpg" />
     <Resource Include="Resources\Images\Replays\popup_remind_head_bg.jpg" />
-    <Resource Include="Resources\Images\buttons.png" />
     <Resource Include="Resources\Images\Medals\100px-.png" />
     <Resource Include="Resources\Images\Medals\100px-_002.png" />
     <Resource Include="Resources\Images\Medals\100px-_003.png" />

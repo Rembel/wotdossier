@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.IO;
@@ -494,6 +495,18 @@ namespace WotDossier.Test
         {
             DatabaseManager manager = new DatabaseManager();
             manager.Update();
+        }
+
+        [Test]
+        public void ReplaysFoldersSaveLoadTest()
+        {
+            ReplayFolder folder = new ReplayFolder{Name = "Parent", Path = "c:\\Parent", Folders = new ObservableCollection<ReplayFolder> {new ReplayFolder{Name = "Child", Path = "c:\\Child"}}};
+            string xml = XmlSerializer.StoreObjectInXml(folder);
+            Console.WriteLine(xml);
+
+            ReplayFolder replayFolder = XmlSerializer.LoadObjectFromXml<ReplayFolder>(xml);
+
+            Console.WriteLine(replayFolder.Folders.Count);
         }
     }
 }

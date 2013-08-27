@@ -61,8 +61,12 @@ namespace WotDossier.Applications.ViewModel
         private EnumerableDataSource<DataPoint> _survivePercentDataSource;
         private List<DataPoint> _efficiencyByTierDataSource;
         private List<GenericPoint<string, double>> _efficiencyByTypeDataSource;
+        private List<ReplayFolder> _replaysFolder;
+        private ReplaysManager _replaysManager;
 
         public DelegateCommand LoadCommand { get; set; }
+        public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
+        public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
         public DelegateCommand SettingsCommand { get; set; }
 
         public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
@@ -248,6 +252,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public List<ReplayFolder> ReplaysFolder
+        {
+            get { return _replaysFolder; }
+            set
+            {
+                _replaysFolder = value;
+                RaisePropertyChanged("ReplaysFolder");
+            }
+        }
+
         public sealed class SellInfo : INotifyPropertyChanged
         {
             private double _winPercent;
@@ -288,11 +302,14 @@ namespace WotDossier.Applications.ViewModel
         /// <param name="view">The view.</param>
         /// <param name="dossierRepository"></param>
         [ImportingConstructor]
-        public ShellViewModel([Import(typeof(IShellView))]IShellView view, [Import]DossierRepository dossierRepository)
+        public ShellViewModel([Import(typeof(IShellView))]IShellView view, [Import]DossierRepository dossierRepository, [Import]ReplaysManager replaysManager)
             : this(view, false)
         {
             _dossierRepository = dossierRepository;
+            _replaysManager = replaysManager;
             LoadCommand = new DelegateCommand(OnLoad);
+            AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
+            DeleteFolderCommand = new DelegateCommand<ReplayFolder>(OnDeleteFolderCommand);
             SettingsCommand = new DelegateCommand(OnSettings);
             OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
@@ -308,6 +325,39 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
 
             ProgressView = new ProgressControlViewModel();
+        }
+
+        private void OnDeleteFolderCommand(ReplayFolder folder)
+        {
+            ReplayFolder root = ReplaysFolder.FirstOrDefault();
+            ReplayFolder parent = FindFavoriteItemParent(root, folder);
+            parent.Folders.Remove(folder);
+            ReplaysManager.SaveFolder(root);
+        }
+
+        private ReplayFolder FindFavoriteItemParent(ReplayFolder parentDtoToCheck, ReplayFolder dto)
+        {
+            if (parentDtoToCheck.Folders.Contains(dto))
+            {
+                return parentDtoToCheck;
+            }
+            return parentDtoToCheck.Folders.Select(child => FindFavoriteItemParent(child, dto)).FirstOrDefault(foundItem => foundItem != null);
+        }
+
+        private void OnAddFolder(ReplayFolder folder)
+        {
+            ReplayFolder root = ReplaysFolder.FirstOrDefault();
+            folder.Folders.Add(new ReplayFolder{Name = "1"});
+            ReplayFolder replayFolder = new ReplayFolder {Name = "2"};
+            folder.Folders.Add(replayFolder);
+            replayFolder.Folders.Add(new ReplayFolder { Name = "3" });
+            ReplaysManager.SaveFolder(root);
+        }
+
+        public ReplaysManager ReplaysManager
+        {
+            get { return _replaysManager; }
+            set { _replaysManager = value; }
         }
 
         /// <summary>
@@ -503,6 +553,8 @@ namespace WotDossier.Applications.ViewModel
         private void LoadReplaysList()
         {
             string replaysFolder = Folder.GetReplaysFolder();
+
+            ReplaysFolder = ReplaysManager.GetFolders();
 
             if (string.IsNullOrEmpty(replaysFolder))
             {

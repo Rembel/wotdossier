@@ -6,18 +6,57 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:tab="clr-namespace:WotDossier.Tabs"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:commands="clr-namespace:WotDossier.Framework.Forms.Commands;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel>
-            
-        </StackPanel>
-        <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Replays}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
+    <UserControl.Resources>
+        
+        <HierarchicalDataTemplate x:Key="TreeTemplate" ItemsSource="{Binding Folders}">
+            <Grid>
+                <ContextMenuService.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="AddFolder" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}"
+                                   CommandParameter="{Binding}"/>
+                        <MenuItem Header="DeleteFolder" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}"
+                                   CommandParameter="{Binding}"/>
+                    </ContextMenu>
+                </ContextMenuService.ContextMenu>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Resources\Images\folder.png"></Image>
+                <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center"/>
+            </Grid>
+        </HierarchicalDataTemplate>
+
+        <Color x:Key="MenuItemForegroundColor">#FF313541</Color>
+        <SolidColorBrush x:Key="MenuItemForeground" Color="{StaticResource MenuItemForegroundColor}"/>
+
+        <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Arrow"/>
+            <Setter Property="IsTabStop" Value="True"/>
+            <Setter Property="Margin" Value="0 0 10 0"/>
+            <Setter Property="IsExpanded" Value="True"/>
+            <Setter Property="Foreground" Value="{StaticResource MenuItemForeground}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TreeView Name="Folders" Margin="10" ItemTemplate="{StaticResource TreeTemplate}" ItemsSource="{Binding ReplaysFolder}" ItemContainerStyle="{StaticResource TreeViewItemStyle}"/>
+        
+        <DataGrid Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Replays}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_UploadBtn}" 
@@ -30,8 +69,7 @@
             </DataGrid.Resources>
             <DataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}" x:Name="styleForDataRow">
-                    <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}">
-                    </Setter>
+                    <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.InputBindings>

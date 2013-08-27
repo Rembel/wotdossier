@@ -554,6 +554,9 @@
     <None Include="Data\vstat.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="Data\ReplaysCatalog.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -652,6 +655,8 @@
     <Resource Include="Resources\Images\Maps\73_asia_korea.jpg" />
     <Resource Include="Resources\Images\Maps\85_winter.jpg" />
     <Resource Include="Resources\Images\buttons.png" />
+    <Resource Include="Resources\Images\folder.png" />
+    <Resource Include="Resources\Images\selected_folder.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

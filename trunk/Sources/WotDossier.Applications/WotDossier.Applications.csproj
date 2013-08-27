@@ -93,6 +93,7 @@
     <Compile Include="ViewModel\BattleStatus.cs" />
     <Compile Include="ViewModel\CombatTarget.cs" />
     <Compile Include="MedalHelper.cs" />
+    <Compile Include="ViewModel\ReplaysManager.cs" />
     <Compile Include="ViewModel\Rows\IRating.cs" />
     <Compile Include="ViewModel\TankFilterViewModel.cs" />
     <Compile Include="ViewModel\TeamMember.cs" />

@@ -4,7 +4,7 @@ using System.Windows.Input;
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
 
-namespace WotDossier
+namespace WotDossier.Views
 {
     /// <summary>
     /// Interaction logic for TankStatisticWindow.xaml

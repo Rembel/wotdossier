@@ -3,16 +3,16 @@ using System.Windows;
 using System.Windows.Input;
 using WotDossier.Applications.View;
 
-namespace WotDossier
+namespace WotDossier.Views
 {
     /// <summary>
-    /// Interaction logic for ReplayWindow.xaml
+    /// Interaction logic for Settings.xaml
     /// </summary>
     [PartCreationPolicy(CreationPolicy.NonShared)]
-    [Export(typeof(IReplayView))]
-    public partial class ReplayWindow : Window, IReplayView
+    [Export(typeof(ISettingsView))]
+    public partial class SettingsWindow : Window, ISettingsView
     {
-        public ReplayWindow()
+        public SettingsWindow()
         {
             InitializeComponent();
             KeyDown += Window_KeyDown;

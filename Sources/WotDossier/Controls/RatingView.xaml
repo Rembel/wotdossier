@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:wotDossier="clr-namespace:WotDossier"
              xmlns:Converters="clr-namespace:WotDossier.Converters"
-             xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -45,7 +45,7 @@
                         </TextBlock>
                     </Grid>
                     <!--GR-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/gr.png" Grid.Row="1"
+                    <controls:RatingRow Image="..\Resources/Images/gr.png" Grid.Row="1"
                                                   ShortName="GR"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_GlobalRating}"
                                                   Value="{Binding Rating_IntegratedValue}"
@@ -54,9 +54,9 @@
                                                   PlaceDelta="{Binding Rating_IntegratedPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_IntegratedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--W/B-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/wb.png" Grid.Row="2"
+                    <controls:RatingRow Image="..\Resources/Images/wb.png" Grid.Row="2"
                                                   ShortName="W/B"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_VictoriesBattles}"
                                                   Value="{Binding Rating_BattleAvgPerformanceValue}"
@@ -65,9 +65,9 @@
                                                   PlaceDelta="{Binding Rating_BattleAvgPerformancePlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_BattleAvgPerformanceValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--E/B-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/eb.png" Grid.Row="3"
+                    <controls:RatingRow Image="..\Resources/Images/eb.png" Grid.Row="3"
                                                   ShortName="E/B"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_AvgExperience}"
                                                   Value="{Binding Rating_BattleAvgXpValue}"
@@ -76,9 +76,9 @@
                                                   PlaceDelta="{Binding Rating_BattleAvgXpPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--WIN-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/win.png" Grid.Row="4"
+                    <controls:RatingRow Image="..\Resources/Images/win.png" Grid.Row="4"
                                                   ShortName="WIN"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_Victories}"
                                                   Value="{Binding Rating_BattleWinsValue}"
@@ -87,9 +87,9 @@
                                                   PlaceDelta="{Binding Rating_BattleWinsPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--GPL-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/gpl.png" Grid.Row="5"
+                    <controls:RatingRow Image="..\Resources/Images/gpl.png" Grid.Row="5"
                                                   ShortName="GPL"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_BattlesParticipated}"
                                                   Value="{Binding Rating_BattlesValue}"
@@ -98,9 +98,9 @@
                                                   PlaceDelta="{Binding Rating_BattlesPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_BattlesValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--CPT-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/cpt.png" Grid.Row="6"
+                    <controls:RatingRow Image="..\Resources/Images/cpt.png" Grid.Row="6"
                                                   ShortName="CPT"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_CapturePoints}"
                                                   Value="{Binding Rating_CapturedPointsValue}"
@@ -109,9 +109,9 @@
                                                   PlaceDelta="{Binding Rating_CapturedPointsPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_CapturedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_CapturedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--DMG-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/dmg.png" Grid.Row="7"
+                    <controls:RatingRow Image="..\Resources/Images/dmg.png" Grid.Row="7"
                                                   ShortName="DMG"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_DamageCaused}"
                                                   Value="{Binding Rating_DamageDealtValue}"
@@ -120,9 +120,9 @@
                                                   PlaceDelta="{Binding Rating_DamageDealtPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_DamageDealtValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--DPT-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/dpt.png" Grid.Row="8"
+                    <controls:RatingRow Image="..\Resources/Images/dpt.png" Grid.Row="8"
                                                   ShortName="DPT"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_DefensePoints}"
                                                   Value="{Binding Rating_DroppedPointsValue}"
@@ -131,9 +131,9 @@
                                                   PlaceDelta="{Binding Rating_DroppedPointsPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_DroppedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_DroppedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--FRG-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/frg.png" Grid.Row="9"
+                    <controls:RatingRow Image="..\Resources/Images/frg.png" Grid.Row="9"
                                                   ShortName="FRG"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_TargetsDestroyed}"
                                                   Value="{Binding Rating_FragsValue}"
@@ -142,9 +142,9 @@
                                                   PlaceDelta="{Binding Rating_FragsPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_FragsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_FragsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--SPT-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/spt.png" Grid.Row="10"
+                    <controls:RatingRow Image="..\Resources/Images/spt.png" Grid.Row="10"
                                                   ShortName="SPT"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_TargetsDetected}"
                                                   Value="{Binding Rating_SpottedValue}"
@@ -153,9 +153,9 @@
                                                   PlaceDelta="{Binding Rating_SpottedPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_SpottedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                     <!--EXP-->
-                    <wotDossier:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
+                    <controls:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
                                                   ShortName="EXP"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_TotalExperience}"
                                                   Value="{Binding Rating_XpValue}"
@@ -164,7 +164,7 @@
                                                   PlaceDelta="{Binding Rating_XpPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_XpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_XpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </wotDossier:RatingRow>
+                    </controls:RatingRow>
                 </Grid>
             </StackPanel>
         </Grid>

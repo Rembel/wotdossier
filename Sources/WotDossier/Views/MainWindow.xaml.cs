@@ -3,13 +3,12 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.Charts;
 using Microsoft.Research.DynamicDataDisplay.Charts.Axes;
 using WotDossier.Applications.View;
 using WotDossier.Domain;
 
-namespace WotDossier
+namespace WotDossier.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

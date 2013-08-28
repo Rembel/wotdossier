@@ -1,12 +1,12 @@
-﻿<Window x:Class="WotDossier.MainWindow"
+﻿<Window x:Class="WotDossier.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
-        xmlns:controls="clr-namespace:WotDossier.Controls" xmlns:wotDossier="clr-namespace:WotDossier"
-        Title="WotDossier" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/Images/app_icon.ico">
+        xmlns:controls="clr-namespace:WotDossier.Controls"
+        Title="WotDossier" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="23">
             <Grid.ColumnDefinitions>

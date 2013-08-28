@@ -10,6 +10,7 @@ using System.Windows.Threading;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
+using WotDossier.Applications.Events;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
@@ -48,7 +49,7 @@ namespace WotDossier.Applications.ViewModel
         private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
 
         private List<SellInfo> _lastUsedTanksDataSource;
-        private ObservableCollection<ReplayFile> _replays;
+        //private ObservableCollection<ReplayFile> _replays;
         private TankFilterViewModel _tankFilter;
         private PlayerStatisticViewModel _sessionStartStatistic;
         private ProgressControlViewModel _progressView;
@@ -61,8 +62,9 @@ namespace WotDossier.Applications.ViewModel
         private EnumerableDataSource<DataPoint> _survivePercentDataSource;
         private List<DataPoint> _efficiencyByTierDataSource;
         private List<GenericPoint<string, double>> _efficiencyByTypeDataSource;
-        private List<ReplayFolder> _replaysFolder;
+        private List<ReplayFolder> _replaysFolders;
         private ReplaysManager _replaysManager;
+        private ReplayFolder _selectedFolder;
 
         public DelegateCommand LoadCommand { get; set; }
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
@@ -114,15 +116,15 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public ObservableCollection<ReplayFile> Replays
-        {
-            get { return _replays; }
-            set
-            {
-                _replays = value;
-                RaisePropertyChanged("Replays");
-            }
-        }
+        //public ObservableCollection<ReplayFile> Replays
+        //{
+        //    get { return _replays; }
+        //    set
+        //    {
+        //        _replays = value;
+        //        RaisePropertyChanged("Replays");
+        //    }
+        //}
 
         public FraggsCountViewModel FraggsCount
         {
@@ -252,13 +254,29 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public List<ReplayFolder> ReplaysFolder
+        public List<ReplayFolder> ReplaysFolders
         {
-            get { return _replaysFolder; }
+            get { return _replaysFolders; }
             set
             {
-                _replaysFolder = value;
-                RaisePropertyChanged("ReplaysFolder");
+                _replaysFolders = value;
+                RaisePropertyChanged("ReplaysFolders");
+            }
+        }
+
+        public ReplaysManager ReplaysManager
+        {
+            get { return _replaysManager; }
+            set { _replaysManager = value; }
+        }
+
+        public ReplayFolder SelectedFolder
+        {
+            get { return _selectedFolder; }
+            set
+            {
+                _selectedFolder = value;
+                RaisePropertyChanged("SelectedFolder");
             }
         }
 
@@ -323,41 +341,8 @@ namespace WotDossier.Applications.ViewModel
             TankFilter.PropertyChanged += TankFilterOnPropertyChanged;
 
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
-
+            EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
             ProgressView = new ProgressControlViewModel();
-        }
-
-        private void OnDeleteFolderCommand(ReplayFolder folder)
-        {
-            ReplayFolder root = ReplaysFolder.FirstOrDefault();
-            ReplayFolder parent = FindFavoriteItemParent(root, folder);
-            parent.Folders.Remove(folder);
-            ReplaysManager.SaveFolder(root);
-        }
-
-        private ReplayFolder FindFavoriteItemParent(ReplayFolder parentDtoToCheck, ReplayFolder dto)
-        {
-            if (parentDtoToCheck.Folders.Contains(dto))
-            {
-                return parentDtoToCheck;
-            }
-            return parentDtoToCheck.Folders.Select(child => FindFavoriteItemParent(child, dto)).FirstOrDefault(foundItem => foundItem != null);
-        }
-
-        private void OnAddFolder(ReplayFolder folder)
-        {
-            ReplayFolder root = ReplaysFolder.FirstOrDefault();
-            folder.Folders.Add(new ReplayFolder{Name = "1"});
-            ReplayFolder replayFolder = new ReplayFolder {Name = "2"};
-            folder.Folders.Add(replayFolder);
-            replayFolder.Folders.Add(new ReplayFolder { Name = "3" });
-            ReplaysManager.SaveFolder(root);
-        }
-
-        public ReplaysManager ReplaysManager
-        {
-            get { return _replaysManager; }
-            set { _replaysManager = value; }
         }
 
         /// <summary>
@@ -383,7 +368,7 @@ namespace WotDossier.Applications.ViewModel
                 if (replayFile.FileInfo.Exists)
                 {
                     replayFile.FileInfo.Delete();
-                    Replays.Remove(replayFile);
+                    SelectedFolder.Files.Remove(replayFile);
                 }
             }
         }
@@ -454,6 +439,36 @@ namespace WotDossier.Applications.ViewModel
             }
             viewModel.PrevDates = list ?? new List<DateTime>();
             viewModel.Show();
+        }
+
+        private void OnDeleteFolderCommand(ReplayFolder folder)
+        {
+            ReplayFolder root = ReplaysFolders.FirstOrDefault();
+            ReplayFolder parent = FindFavoriteItemParent(root, folder);
+            parent.Folders.Remove(folder);
+            ReplaysManager.SaveFolder(root);
+        }
+
+        private ReplayFolder FindFavoriteItemParent(ReplayFolder parent, ReplayFolder folder)
+        {
+            if (parent.Folders.Contains(folder))
+            {
+                return parent;
+            }
+            return parent.Folders.Select(child => FindFavoriteItemParent(child, folder)).FirstOrDefault(foundItem => foundItem != null);
+        }
+
+        private void OnAddFolder(ReplayFolder folder)
+        {
+            AddReplayFolderViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<AddReplayFolderViewModel>().Value;
+            viewModel.Show();
+
+            if (viewModel.ReplayFolder != null)
+            {
+                ReplayFolder root = ReplaysFolders.FirstOrDefault();
+                folder.Folders.Add(viewModel.ReplayFolder);
+                ReplaysManager.SaveFolder(root);
+            }
         }
 
         #endregion
@@ -552,59 +567,68 @@ namespace WotDossier.Applications.ViewModel
 
         private void LoadReplaysList()
         {
-            string replaysFolder = Folder.GetReplaysFolder();
-
-            ReplaysFolder = ReplaysManager.GetFolders();
-
-            if (string.IsNullOrEmpty(replaysFolder))
-            {
-                return;
-            }
-
-            if (Directory.Exists(replaysFolder))
-            {
-                ObservableCollection<ReplayFile> replayFilesTemp = new ObservableCollection<ReplayFile>();
-
-                ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
+            ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                     {
-                        string[] files = Directory.GetFiles(replaysFolder, "*.wotreplay");
-                        List<FileInfo> replays = files.Select(x => new FileInfo(Path.Combine(replaysFolder, x))).Where(x => x.Length > 0).ToList();
+                        ReplaysFolders = ReplaysManager.GetFolders();
+                        
+                        List<ReplayFolder> replayFolders = ReplaysFolders.GetAll();
 
-                        int count = replays.Count();
-
-                        List<ReplayFile> replayFiles = new List<ReplayFile>(count);
-
-                        int index = 0;
-                        foreach (FileInfo replay in replays)
+                        foreach (var replayFolder in replayFolders)
                         {
-                            ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay));
-                            replayFiles.Add(replayFile);
-                            index++;
-                            int percent = (index + 1) * 100 / count;
-                            if (ProgressView.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
+                            string folderPath = replayFolder.Path;
+
+                            if (string.IsNullOrEmpty(folderPath))
                             {
-                                return;
+                                continue;
                             }
+
+                            if (Directory.Exists(folderPath))
+                            {
+                                ObservableCollection<ReplayFile> replayFilesTemp = new ObservableCollection<ReplayFile>();
+
+                                string[] files = Directory.GetFiles(folderPath, "*.wotreplay");
+                                List<FileInfo> replays = files.Select(x => new FileInfo(Path.Combine(folderPath, x))).Where(x => x.Length > 0).ToList();
+
+                                int count = replays.Count();
+
+                                List<ReplayFile> replayFiles = new List<ReplayFile>(count);
+
+                                int index = 0;
+                                foreach (FileInfo replay in replays)
+                                {
+                                    ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay));
+                                    replayFiles.Add(replayFile);
+                                    index++;
+                                    int percent = (index + 1) * 100 / count;
+                                    if (ProgressView.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
+                                    {
+                                        return;
+                                    }
+                                }
+
+                                // So this check in order to avoid default processing after the Cancel button has been pressed.
+                                // This call will set the Cancelled flag on the result structure.
+                                ProgressView.CheckForPendingCancellation(bw, we);
+
+                                replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
+
+                                IList<ReplayEntity> dbReplays = _dossierRepository.GetReplays();
+
+                                dbReplays.Join(replayFilesTemp, x => new { x.PlayerId, x.ReplayId }, y => new { y.PlayerId, y.ReplayId },
+                                               (x, y) => new { ReplayEntity = x, ReplayFile = y }).ToList().ForEach(x => x.ReplayFile.Link = x.ReplayEntity.Link);
+
+                                replayFolder.Files = replayFilesTemp;
+
+                            }
+                            //else
+                            //{
+                            //    WpfMessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, folderPath), Resources.Resources.WindowCaption_Error, 
+                            //        WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                            //}
+
+                            SelectedFolder = ReplaysFolders.FirstOrDefault();
                         }
-
-                        // So this check in order to avoid default processing after the Cancel button has been pressed.
-                        // This call will set the Cancelled flag on the result structure.
-                        ProgressView.CheckForPendingCancellation(bw, we);
-
-                        replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
-
-                        IList<ReplayEntity> dbReplays = _dossierRepository.GetReplays();
-
-                        dbReplays.Join(replayFilesTemp, x => new {x.PlayerId, x.ReplayId}, y => new {y.PlayerId, y.ReplayId},
-                                       (x, y) => new {ReplayEntity = x, ReplayFile = y}).ToList().ForEach( x=> x.ReplayFile.Link = x.ReplayEntity.Link);
-
-                        Replays = replayFilesTemp;
                     }, new ProgressDialogSettings(true, true, false));
-            }
-            else
-            {
-                WpfMessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, replaysFolder), Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
-            }
         }
 
         private PlayerStatisticViewModel InitPlayerStatisticViewModel(PlayerStat playerStat, List<TankJson> tanks)
@@ -811,6 +835,16 @@ Avg XP: {1:0.00}", point.X, point.Y));
         private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent obj)
         {
             InitLastUsedTanksChart();
+        }
+
+        private void OnReplayFileMove(ReplayFileMoveEventArgs eventArgs)
+        {
+            if (SelectedFolder != eventArgs.TargetFolder)
+            {
+                ReplaysManager.Move(eventArgs.ReplayFile, eventArgs.TargetFolder);
+                SelectedFolder.Files.Remove(eventArgs.ReplayFile);
+                eventArgs.TargetFolder.Files.Add(eventArgs.ReplayFile);
+            }
         }
 
         private void TankFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

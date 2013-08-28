@@ -1,4 +1,4 @@
-﻿<Window x:Class="WotDossier.AboutWindow"
+﻿<Window x:Class="WotDossier.Views.AboutWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
@@ -23,14 +23,14 @@
             <TextBlock  Margin="6,0,0,0" Name="Version" Text="{x:Static services:ApplicationInfo.Version}" />
         </StackPanel>
         <TextBlock Grid.Row="2" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textCopyright" Text="{x:Static services:ApplicationInfo.Copyright}" />
-        <Image Grid.RowSpan="3" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Right" Width="Auto" Source="\Resources\Images\app_icon.ico"></Image>
+        <Image Grid.RowSpan="3" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Right" Width="Auto" Source="..\Resources\Images\app_icon.ico"></Image>
         <Grid Grid.Row="3" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Content="{x:Static Resources:Resources.ButtonOk}" Name="buttonOk" IsCancel="True" IsDefault="true" Margin="0,0,6,6"/>
+            <Button Grid.Column="1" Content="{x:Static Resources:Resources.ButtonOk}" Width="80" Name="buttonOk" IsCancel="True" IsDefault="true" Margin="0,0,6,6"/>
             <Button Grid.Column="2" Content="{x:Static Resources:Resources.ButtonSysInfo}" Click="buttonSysInfo_Click" Name="buttonSysInfo" Width="Auto" Margin="0,0,6,6"/>
         </Grid>
     </Grid>

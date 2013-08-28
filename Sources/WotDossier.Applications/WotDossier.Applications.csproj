@@ -69,6 +69,8 @@
     <Compile Include="ApplicationController.cs" />
     <Compile Include="CacheHelper.cs" />
     <Compile Include="ChartsRegistry.cs" />
+    <Compile Include="Events\ReplayFileMoveEvent.cs" />
+    <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplayFile.cs" />
@@ -93,6 +95,8 @@
     <Compile Include="ViewModel\BattleStatus.cs" />
     <Compile Include="ViewModel\CombatTarget.cs" />
     <Compile Include="MedalHelper.cs" />
+    <Compile Include="ViewModel\AddReplayFolderViewModel.cs" />
+    <Compile Include="ViewModel\ReplayFolder.cs" />
     <Compile Include="ViewModel\ReplaysManager.cs" />
     <Compile Include="ViewModel\Rows\IRating.cs" />
     <Compile Include="ViewModel\TankFilterViewModel.cs" />
@@ -131,6 +135,7 @@
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModelBase.cs" />
     <Compile Include="ViewModel\TankStatisticViewModel.cs" />
+    <Compile Include="View\IAddReplayFolderView.cs" />
     <Compile Include="View\IReplayView.cs" />
     <Compile Include="View\IUploadReplayView.cs" />
     <Compile Include="View\ITankStatisticView.cs" />

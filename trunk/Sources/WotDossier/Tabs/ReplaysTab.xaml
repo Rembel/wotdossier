@@ -6,8 +6,8 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:tab="clr-namespace:WotDossier.Tabs"
-             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:commands="clr-namespace:WotDossier.Framework.Forms.Commands;assembly=WotDossier.Framework"
+             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:behaviours="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -22,6 +22,9 @@
                                    CommandParameter="{Binding}"/>
                     </ContextMenu>
                 </ContextMenuService.ContextMenu>
+                <ToolTipService.ToolTip>
+                    <TextBlock Text="{Binding Path=Path}"></TextBlock>
+                </ToolTipService.ToolTip>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -35,6 +38,7 @@
         <SolidColorBrush x:Key="MenuItemForeground" Color="{StaticResource MenuItemForegroundColor}"/>
 
         <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem">
+            <Setter Property="AllowDrop" Value="True"></Setter>
             <Setter Property="Padding" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -46,6 +50,8 @@
             <Setter Property="Margin" Value="0 0 10 0"/>
             <Setter Property="IsExpanded" Value="True"/>
             <Setter Property="Foreground" Value="{StaticResource MenuItemForeground}"/>
+            <EventSetter Event="TreeViewItem.DragEnter"  Handler="DropList_Drop"/>
+            <EventSetter Event="TreeViewItem.Drop"  Handler="DropList_DragEnter"/>
         </Style>
     </UserControl.Resources>
     <Grid x:Name="LayoutRoot">
@@ -53,10 +59,14 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <TreeView Name="Folders" Margin="10" ItemTemplate="{StaticResource TreeTemplate}" ItemsSource="{Binding ReplaysFolders}" ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+            <i:Interaction.Behaviors>
+                <behaviours:BindableSelectedItemBehavior SelectedItem="{Binding SelectedFolder, Mode=TwoWay}" />
+            </i:Interaction.Behaviors>
+        </TreeView>
 
-        <TreeView Name="Folders" Margin="10" ItemTemplate="{StaticResource TreeTemplate}" ItemsSource="{Binding ReplaysFolder}" ItemContainerStyle="{StaticResource TreeViewItemStyle}"/>
-        
-        <DataGrid Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Replays}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding SelectedFolder.Files}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False"
+                  PreviewMouseLeftButtonDown="OnGridPreviewMouseLeftButtonDown" PreviewMouseMove="OnGridMouseMove">
             <DataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_UploadBtn}" 

@@ -108,6 +108,7 @@
     <Compile Include="Applications\ViewExtensions.cs" />
     <Compile Include="Applications\ViewModel.cs" />
     <Compile Include="Applications\ViewModel.Generic.cs" />
+    <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
     <Compile Include="Controls\MultiSelectListBox.cs" />
     <Compile Include="Controls\MultiSelector\IListItemConverter.cs" />
     <Compile Include="Controls\MultiSelector\MultiSelectorBehaviours.cs" />

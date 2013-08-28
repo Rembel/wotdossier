@@ -1,10 +1,10 @@
-﻿<Window x:Class="WotDossier.UploadReplayWindow"
+﻿<Window x:Class="WotDossier.Views.UploadReplayWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="UploadReplayWindow" Height="685" Width="660" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
-        <ImageBrush x:Key="Bg" ImageSource="Resources\Images\Replays\popup_remind_bg.jpg" Stretch="Fill"></ImageBrush>
-        <ImageBrush x:Key="HeadBg" ImageSource="Resources\Images\Replays\popup_remind_head_bg.jpg" Stretch="UniformToFill" TileMode="FlipX"></ImageBrush>
+        <ImageBrush x:Key="Bg" ImageSource="..\Resources\Images\Replays\popup_remind_bg.jpg" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="HeadBg" ImageSource="..\Resources\Images\Replays\popup_remind_head_bg.jpg" Stretch="UniformToFill" TileMode="FlipX"></ImageBrush>
     </Window.Resources>
     <Grid Background="{StaticResource Bg}">
         <StackPanel Orientation="Vertical">

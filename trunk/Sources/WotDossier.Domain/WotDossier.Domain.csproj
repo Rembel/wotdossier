@@ -73,7 +73,6 @@
     <Compile Include="Player\Summary.cs" />
     <Compile Include="Player\TankExperts.cs" />
     <Compile Include="Player\Vehicle.cs" />
-    <Compile Include="ReplayFolder.cs" />
     <Compile Include="Replay\Replay.cs" />
     <Compile Include="StatisticPeriod.cs" />
     <Compile Include="TankType.cs" />

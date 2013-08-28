@@ -1701,6 +1701,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Folder Name.
+        /// </summary>
+        public static string Label_AddReplayFolder_Name {
+            get {
+                return ResourceManager.GetString("Label_AddReplayFolder_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle efficiency.
         /// </summary>
         public static string Label_Replay_BattleEfficiency {
@@ -3039,6 +3048,15 @@ namespace WotDossier.Resources {
         public static string WindowTitle_AboutWindow {
             get {
                 return ResourceManager.GetString("WindowTitle_AboutWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Replay Folder.
+        /// </summary>
+        public static string WindowTitle_AddReplayFolder {
+            get {
+                return ResourceManager.GetString("WindowTitle_AddReplayFolder", resourceCulture);
             }
         }
         

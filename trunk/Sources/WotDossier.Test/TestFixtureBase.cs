@@ -12,6 +12,7 @@ using System.Web;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;

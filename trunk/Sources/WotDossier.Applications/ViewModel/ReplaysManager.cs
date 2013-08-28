@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using WotDossier.Common;
-using WotDossier.Domain;
 
 namespace WotDossier.Applications.ViewModel
 {
     [Export]
     public class ReplaysManager
     {
-        private const string _dataReplayscatalogXml = @"Data\ReplaysCatalog.xml";
+        private const string REPLAYS_CATALOG_FILE_PATH = @"Data\ReplaysCatalog.xml";
 
         public void SaveFolder(ReplayFolder replayFolder)
         {
-            using (StreamWriter writer = File.CreateText(Path.Combine(Environment.CurrentDirectory, _dataReplayscatalogXml)))
+            using (StreamWriter writer = File.CreateText(Path.Combine(Environment.CurrentDirectory, REPLAYS_CATALOG_FILE_PATH)))
             {
                 writer.WriteLine(XmlSerializer.StoreObjectInXml(replayFolder));
                 writer.Flush();
@@ -23,10 +22,19 @@ namespace WotDossier.Applications.ViewModel
 
         public List<ReplayFolder> GetFolders()
         {
-            using (StreamReader streamReader = File.OpenText(Path.Combine(Environment.CurrentDirectory, _dataReplayscatalogXml)))
+            using (StreamReader streamReader = File.OpenText(Path.Combine(Environment.CurrentDirectory, REPLAYS_CATALOG_FILE_PATH)))
             {
                 string tree = streamReader.ReadToEnd();
                 return new List<ReplayFolder> {XmlSerializer.LoadObjectFromXml<ReplayFolder>(tree)};
+            }
+        }
+
+        public void Move(ReplayFile replayFile, ReplayFolder targetFolder)
+        {
+            string destFileName = Path.Combine(targetFolder.Path, replayFile.FileInfo.Name);
+            if (!File.Exists(destFileName))
+            {
+                replayFile.FileInfo.MoveTo(destFileName);
             }
         }
     }

@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using WotDossier.Applications.View;
 
-namespace WotDossier
+namespace WotDossier.Views
 {
     /// <summary>
     /// Interaction logic for UploadReplayWindow.xaml

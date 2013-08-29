@@ -17,6 +17,7 @@ using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain;
+using WotDossier.Domain.Entities;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 
@@ -26,12 +27,20 @@ namespace WotDossier.Test
     public class TestFixtureBase
     {
         private DataProvider _dataProvider;
+        private DossierRepository _dossierRepository;
 
         [Import(typeof(DataProvider))]
         public DataProvider DataProvider
         {
             get { return _dataProvider; }
             set { _dataProvider = value; }
+        }
+
+        [Import(typeof(DossierRepository))]
+        public DossierRepository DossierRepository
+        {
+            get { return _dossierRepository; }
+            set { _dossierRepository = value; }
         }
 
         [TestFixtureSetUp]
@@ -43,7 +52,6 @@ namespace WotDossier.Test
         [SetUp]
         public virtual void SetUp()
         {
-
             DataProvider.OpenSession();
             DataProvider.BeginTransaction();
         }
@@ -435,11 +443,26 @@ namespace WotDossier.Test
         [Test]
         public void NoobMeterPerformanceRatingAlgorithmTest()
         {
+            Dictionary<int, TankInfo> nominalDamage = WotApiClient.Instance.ReadTankNominalDamage();
+
+            int playerId = 10800699;
+
+            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic(playerId);
+            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+
+            _dataProvider.OpenSession();
+            PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>().Where(x => x.PlayerId == playerId).Take(1).SingleOrDefault<PlayerEntity>();
+            _dataProvider.CloseSession();
+
+            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
+            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.OrderBy(tank => tank.Updated).FirstOrDefault()).Select(x => WotApiHelper.UnZipObject<TankJson>(x.Raw)).ToList();
+
+
             //Win rate component
             double expectedWinrate = 0.4856;
             double winrateWeight = 500;
 
-            double playerWinrate = 54.54;
+            double playerWinrate = currentStatistic.Wins/(double)currentStatistic.BattlesCount * 100.0;
             double winrateRatio = playerWinrate / expectedWinrate;
             double winrateComponent = winrateRatio * winrateWeight;
 

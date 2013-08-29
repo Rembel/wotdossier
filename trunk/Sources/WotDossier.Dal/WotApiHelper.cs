@@ -29,7 +29,7 @@ namespace WotDossier.Dal
 
         public static int GetCountryId(string countryCode)
         {
-            switch (countryCode)
+            switch (countryCode.ToLower())
             {
                 case "ussr":
                     return 0;
@@ -40,6 +40,26 @@ namespace WotDossier.Dal
                 case "china":
                     return 3;
                 case "france":
+                    return 4;
+                case "uk":
+                    return 5;
+            }
+            return -1;
+        }
+
+        public static int GetCountryIdBy2Letters(string countryCode)
+        {
+            switch (countryCode.ToLower())
+            {
+                case "ru":
+                    return 0;
+                case "de":
+                    return 1;
+                case "us":
+                    return 2;
+                case "ch":
+                    return 3;
+                case "fr":
                     return 4;
                 case "uk":
                     return 5;

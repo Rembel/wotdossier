@@ -667,7 +667,7 @@ namespace WotDossier.Applications.ViewModel
                 return;
             }
 
-            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity);
+            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
 
             Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
 

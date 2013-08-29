@@ -16,10 +16,8 @@
             <Grid>
                 <ContextMenuService.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="AddFolder" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}"
-                                   CommandParameter="{Binding}"/>
-                        <MenuItem Header="DeleteFolder" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}"
-                                   CommandParameter="{Binding}"/>
+                        <MenuItem Header="AddFolder" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
+                        <MenuItem Header="DeleteFolder" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
                     </ContextMenu>
                 </ContextMenuService.ContextMenu>
                 <ToolTipService.ToolTip>
@@ -59,7 +57,7 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TreeView Name="Folders" Margin="10" ItemTemplate="{StaticResource TreeTemplate}" ItemsSource="{Binding ReplaysFolders}" ItemContainerStyle="{StaticResource TreeViewItemStyle}">
+        <TreeView Name="Folders" Margin="5" ItemTemplate="{StaticResource TreeTemplate}" ItemsSource="{Binding ReplaysFolders}" ItemContainerStyle="{StaticResource TreeViewItemStyle}">
             <i:Interaction.Behaviors>
                 <behaviours:BindableSelectedItemBehavior SelectedItem="{Binding SelectedFolder, Mode=TwoWay}" />
             </i:Interaction.Behaviors>

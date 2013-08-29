@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Xml;
 using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -393,6 +395,34 @@ namespace WotDossier.Dal
                 var parsedData = se.Deserialize<Dictionary<string, VStat>>(reader);
                 return parsedData;
             }
+        }
+
+        public Dictionary<int, TankInfo> ReadTankNominalDamage()
+        {
+            Dictionary<int, TankInfo> dictionary = new Dictionary<int, TankInfo>();
+            using (StreamReader streamReader = new StreamReader(@"Data\TankNominalDamage.xml"))
+            {
+                XmlDocument document = new XmlDocument();
+                document.Load(streamReader);
+
+                XmlNodeList xmlNodeList = document.SelectNodes("damage/tr");
+
+                foreach (XmlNode node in xmlNodeList)
+                {
+                    XmlNodeList values = node.SelectNodes("td");
+                    if (values != null)
+                    {
+                        TankInfo info = new TankInfo();
+                        info.countryid = WotApiHelper.GetCountryIdBy2Letters(values[2].InnerText);
+                        info.tier = int.Parse(values[3].InnerText);
+                        info.type = (int)Enum.Parse(typeof(TankType), values[4].InnerText);
+                        double nominalDamage = double.Parse(values[5].InnerText, CultureInfo.InvariantCulture);
+                        dictionary.Add(info.UniqueId(), info);
+                    }
+                }
+            }
+
+            return dictionary;
         }
     }
 }

@@ -228,12 +228,12 @@ namespace WotDossier.Dal
             statisticEntity.Raw = tank.Raw;
         }
 
-        public IEnumerable<TankStatisticEntity> GetTanksStatistic(PlayerEntity player)
+        public IEnumerable<TankStatisticEntity> GetTanksStatistic(int playerId)
         {
             _dataProvider.OpenSession();
             TankEntity tankAlias = null;
             IList<TankStatisticEntity> tankStatisticEntities = _dataProvider.QueryOver<TankStatisticEntity>()
-                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == player.Id).List<TankStatisticEntity>();
+                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == playerId).List<TankStatisticEntity>();
             _dataProvider.CloseSession();
             return tankStatisticEntities;
         }

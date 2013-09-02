@@ -18,6 +18,7 @@ namespace WotDossier.Applications
         private const string TANKNAME_FORMAT = @"([a-zA-Z]+)-(.+)";
 
         public string MapName { get; set; }
+        public string ClientVersion { get; set; }
         public string Tank { get; set; }
         public int CountryId { get; set; }
         public DateTime PlayTime { get; set; }
@@ -35,6 +36,7 @@ namespace WotDossier.Applications
             if (replay != null)
             {
                 MapName = replay.datablock_1.mapDisplayName;
+                ClientVersion = replay.datablock_1.clientVersionFromExe;
 
                 Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
                 Match tankNameMatch = tankNameRegexp.Match(replay.datablock_1.playerVehicle);

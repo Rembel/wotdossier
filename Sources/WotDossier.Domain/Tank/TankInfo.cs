@@ -13,6 +13,7 @@ namespace WotDossier.Domain.Tank
         public string title;
         public string icon;
         public string icon_orig;
+        public double nominal_damage;
 
         public int UniqueId()
         {

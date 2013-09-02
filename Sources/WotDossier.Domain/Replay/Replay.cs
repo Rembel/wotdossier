@@ -28,6 +28,10 @@ http://wiki.vbaddict.net
         [DataMember]
         public string mapDisplayName { get; set; }
         [DataMember]
+        public string clientVersionFromXml { get; set; }
+        [DataMember]
+        public string clientVersionFromExe { get; set; }
+        [DataMember]
         public string mapName { get; set; }
         [DataMember]
         public long playerID { get; set; }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using WotDossier.Common;
@@ -9,7 +8,7 @@ using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public abstract class PeriodStatisticViewModel<T> : StatisticViewModelBase, INotifyPropertyChanged where T : StatisticViewModelBase
+    public abstract class PeriodStatisticViewModel<T> : StatisticViewModelBase where T : StatisticViewModelBase
     {
         #region Fields
 
@@ -748,15 +747,6 @@ namespace WotDossier.Applications.ViewModel
             list.AddRange(_list);
             list.Add(this);
             return list.Cast<T>().ToList();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        //[NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 

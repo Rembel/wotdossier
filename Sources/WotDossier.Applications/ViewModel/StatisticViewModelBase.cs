@@ -1,10 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public abstract class StatisticViewModelBase : IRating, IRowBattleAwards, IRowEpicAwards, IRowSpecialAwards, IRowMedals, IRowSeries
+    public abstract class StatisticViewModelBase : IRating, IRowBattleAwards, IRowEpicAwards, IRowSpecialAwards, IRowMedals, IRowSeries, INotifyPropertyChanged
     {
         public int BattlesCount { get; set; }
         public int Wins { get; set; }
@@ -21,6 +22,18 @@ namespace WotDossier.Applications.ViewModel
         public int DroppedCapturePoints { get; set; }
 
         public double Tier { get; set; }
+
+        public double KillDeathRatio
+        {
+            get
+            {
+                if (BattlesCount - SurvivedBattles > 0)
+                {
+                    return Frags / (double)(BattlesCount - SurvivedBattles);
+                }
+                return 0;
+            }
+        }
 
         #region Percents
 
@@ -190,18 +203,6 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        public double KillDeathRatio
-        {
-            get
-            {
-                if (BattlesCount - SurvivedBattles > 0)
-                {
-                    return Frags / (double)(BattlesCount - SurvivedBattles);
-                }
-                return 0;
-            }
-        }
-
         #region Achievments
 
         #region [ ITankRowBattleAwards ]
@@ -358,5 +359,14 @@ namespace WotDossier.Applications.ViewModel
         public DateTime Updated { get; set; }
 
         public int BattlesPerDay { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //[NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

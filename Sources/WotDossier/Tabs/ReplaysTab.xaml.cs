@@ -53,9 +53,12 @@ namespace WotDossier.Tabs
                 // Get the dragged ListViewItem
                 DataGridRow row = FindAnchestor<DataGridRow>((DependencyObject)e.OriginalSource);
 
-                // Initialize the drag & drop operation
-                DataObject dragData = new DataObject(FOLDER_DRAG_FORMAT, row.DataContext);
-                DragDrop.DoDragDrop(row, dragData, DragDropEffects.Move);
+                if (row != null)
+                {
+                    // Initialize the drag & drop operation
+                    DataObject dragData = new DataObject(FOLDER_DRAG_FORMAT, row.DataContext);
+                    DragDrop.DoDragDrop(row, dragData, DragDropEffects.Move);
+                }
             }
         }
 

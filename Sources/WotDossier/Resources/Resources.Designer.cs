@@ -1440,6 +1440,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Noobmeter Performance Rating.
+        /// </summary>
+        public static string Common_NoobmeterPerformanceRating {
+            get {
+                return ResourceManager.GetString("Common_NoobmeterPerformanceRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overall Results.
         /// </summary>
         public static string Common_OverallResults {

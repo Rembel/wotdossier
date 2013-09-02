@@ -32,12 +32,17 @@ def = dropped_capture_points / bc (среднее количество очко�
 +(6-MIN(TIER,6))*-60
 */
 
+        #region KievArmorRating
+
         private const double K_AvgWonBattles = 2.0;
         private const double K_AvgFrags = 0.9;
         private const double K_AvgSpotted = 0.5;
         private const double K_AvgCapPoints = 0.5;
         private const double K_AvgDefPoints = 0.5;
         private const double khp = 1;
+
+        #endregion
+
 
 
         public static double CalcWN6(double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
@@ -66,6 +71,61 @@ def = dropped_capture_points / bc (среднее количество очко�
         public static double XEFF(double eff)
         {
             return eff<400 ? 0 : Math.Max(Math.Min(eff*(eff*(eff*(eff*(eff*(0.000000000000000045254*eff - 0.00000000000033131) + 0.00000000094164) - 0.0000013227) + 0.00095664) - 0.2598) + 13.23, 100), 0);
+        }
+
+        public static double PerformanceRating(double battles, double wins, double expectedDamage, double playerDamage, double avgTier)
+        {
+            //Win rate component
+            double expectedWinrate = 0.4856;
+            double winrateWeight = 500;
+
+            double playerWinrate = wins / battles;
+            double winrateRatio = playerWinrate / expectedWinrate;
+            double winrateComponent = winrateRatio * winrateWeight;
+
+            //Damage component
+            //sum of all individual tank expected damages
+            //double individualTankExpectedDamage = battles*tankNominalDamage;
+
+            double damageRatio = playerDamage / expectedDamage;
+            double damageWeight = 1000;
+            double damageComponent = damageRatio * damageWeight;
+
+            //
+            //First penalty threshold:
+            double clearedFromPenalties1 = 1500;
+            double expectedMinBattles1 = 500;
+            double expectedMinAvgTier1 = 6;
+
+            //Second penalty threshold:
+            double clearedFromPenalties2 = 1900;
+            double expectedMinBattles2 = 2000;
+            double expectedMinAvgTier2 = 7;
+
+            //Tying it together
+            double beforePenalties = winrateComponent + damageComponent;
+
+            //Here is the penalties logic (applied twice for each of the two sets of penalty parameters):
+            double subjectToPenalties = beforePenalties - clearedFromPenalties1;
+            double lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier1));
+            double lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles1));
+            double whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
+            double totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
+            double afterPenalties = subjectToPenalties * (1 - totalPenalty);
+            double performanceRating = (clearedFromPenalties1 + afterPenalties);
+
+            beforePenalties = performanceRating;
+
+            subjectToPenalties = beforePenalties - clearedFromPenalties2;
+            lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier2));
+            lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles2));
+            whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
+            totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
+            afterPenalties = subjectToPenalties * (1 - totalPenalty);
+            performanceRating = (clearedFromPenalties2 + afterPenalties);
+
+            // with "seal-clubbing" penalties applied
+            return performanceRating;
         }
     }
 }

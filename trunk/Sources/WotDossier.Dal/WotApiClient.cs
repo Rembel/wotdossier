@@ -21,6 +21,7 @@ namespace WotDossier.Dal
     /// <summary>
     /// Web Client for WoT web api
     /// https://gist.github.com/bartku/2419852
+    /// http://tanks.noobmeter.com/tankList
     /// </summary>
     public class WotApiClient
     {
@@ -28,6 +29,7 @@ namespace WotDossier.Dal
 
         private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
         private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
+        private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
@@ -310,12 +312,12 @@ namespace WotDossier.Dal
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = (JObject)se.Deserialize(reader);
-                if (parsedData.Count > 2)
+                if (((IDictionary<string, JToken>)parsedData).ContainsKey(REPLAY_DATABLOCK_2))
                 {
                     CommandResult result = new CommandResult();
-                    result.Damage = parsedData["datablock_2"][0].ToObject<Damaged>();
-                    result.Vehicles = parsedData["datablock_2"][1].ToObject<Dictionary<long, Vehicle>>();
-                    result.Frags = parsedData["datablock_2"][2].ToObject<Dictionary<long, FragsCount>>();
+                    result.Damage = parsedData[REPLAY_DATABLOCK_2][0].ToObject<Damaged>();
+                    result.Vehicles = parsedData[REPLAY_DATABLOCK_2][1].ToObject<Dictionary<long, Vehicle>>();
+                    result.Frags = parsedData[REPLAY_DATABLOCK_2][2].ToObject<Dictionary<long, FragsCount>>();
                     replay.CommandResult = result;
                 }
             }
@@ -377,7 +379,7 @@ namespace WotDossier.Dal
                 }
                 catch (Exception e)
                 {
-                    _log.Error("Error on replay file read. Incorrect file format", e);
+                    _log.ErrorFormat("Error on replay file read. Incorrect file format({0})", e, replayFileInfo.FullName);
                     return null;
                 }
 

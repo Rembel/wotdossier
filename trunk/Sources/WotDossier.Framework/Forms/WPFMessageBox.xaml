@@ -29,11 +29,11 @@
                        HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left"/>
         </Expander>
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 5 0">
-            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Yes}" Visibility="{Binding YesVisibility}" Command="{Binding YesCommand}" Margin="5 5 5 5" IsDefault="True" />
-            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_No}" Visibility="{Binding NoVisibility}" Command="{Binding NoCommand}" Margin="5 5 5 5" IsCancel="False" />
-            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Ok}" Visibility="{Binding OkVisibility}" Command="{Binding OkCommand}" Margin="5 5 5 5" IsDefault="True" />
-            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Cancel}" Visibility="{Binding CancelVisibility}" Command="{Binding CancelCommand}" Margin="5 5 5 5" IsCancel="True" />
-            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Close}" Visibility="{Binding CloseVisibility}" Command="{Binding CloseCommand}" Margin="5 5 5 5" />
+            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Yes}" Visibility="{Binding YesVisibility}" Command="{Binding YesCommand}" Width="70" Margin="5 5 5 5" IsDefault="True" />
+            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_No}" Visibility="{Binding NoVisibility}" Command="{Binding NoCommand}" Width="70" Margin="5 5 5 5" IsCancel="False" />
+            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Ok}" Visibility="{Binding OkVisibility}" Command="{Binding OkCommand}" Width="70" Margin="5 5 5 5" IsDefault="True" />
+            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Cancel}" Visibility="{Binding CancelVisibility}" Command="{Binding CancelCommand}" Width="70" Margin="5 5 5 5" IsCancel="True" />
+            <Button Content="{x:Static Properties:Resources.WPFMessageBox_Button_Close}" Visibility="{Binding CloseVisibility}" Command="{Binding CloseCommand}" Width="70" Margin="5 5 5 5" />
             <Button Content="{Binding CustomCommandText}" Visibility="{Binding CustomVisibility}" Command="{Binding CustomCommand}" Margin="5 5 5 5" />
         </StackPanel>
     </Grid>

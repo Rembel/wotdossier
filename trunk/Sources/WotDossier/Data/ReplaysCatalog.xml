@@ -1,5 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<folder name="Common" path="C:\Documents and Settings\YaroshikPV\Application Data\Wargaming.net\WorldOfTanks\replays">
-  <folder name="0.8.6" path="C:\Documents and Settings\YaroshikPV\Application Data\Wargaming.net\WorldOfTanks\replays0.8.6">
-  </folder>
+<?xml version="1.0" encoding="utf-16"?>
+<folder name="Replays" path="">
+  <folder name="best" path="I:\World_of_Tanks\best" />
+  <folder name="replays" path="I:\World_of_Tanks\replays" />
+  <folder name="0.8.7" path="I:\World_of_Tanks\replays\0.8.7" />
 </folder>

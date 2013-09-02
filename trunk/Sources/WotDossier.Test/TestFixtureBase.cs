@@ -132,6 +132,21 @@ namespace WotDossier.Test
             }
         }
 
+        [Test]
+        public void CacheTest_088()
+        {
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.8\");
+            CacheHelper.BinaryCacheToJson(cacheFile);
+            Thread.Sleep(1000);
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanks)
+            {
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                                                tankJson.Icon.iconid);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
+            }
+        }
+
         #endregion
         
         #region Replays tests
@@ -162,6 +177,16 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay"));
+            CacheHelper.ReplayToJson(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+        }
+
+        [Test]
+        public void ReplayTest_088()
+        {
+            FileInfo cacheFile =
+                new FileInfo(Path.Combine(Environment.CurrentDirectory,
+                                          @"Replays\0.8.8\20130831_0013_ussr-T-54_10_hills.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
             Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
@@ -443,75 +468,20 @@ namespace WotDossier.Test
         [Test]
         public void NoobMeterPerformanceRatingAlgorithmTest()
         {
-            Dictionary<int, TankInfo> nominalDamage = WotApiClient.Instance.ReadTankNominalDamage();
-
             int playerId = 10800699;
 
             IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic(playerId);
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
-            _dataProvider.OpenSession();
-            PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>().Where(x => x.PlayerId == playerId).Take(1).SingleOrDefault<PlayerEntity>();
-            _dataProvider.CloseSession();
-
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
-            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.OrderBy(tank => tank.Updated).FirstOrDefault()).Select(x => WotApiHelper.UnZipObject<TankJson>(x.Raw)).ToList();
+            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.Tankdata.battlesCount).FirstOrDefault()).ToList();
 
+            double damage = tankJsons.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.UniqueId(), y => y.UniqueId(),
+                (x, y) => x.Tankdata.battlesCount * y.nominal_damage).Sum();
 
-            //Win rate component
-            double expectedWinrate = 0.4856;
-            double winrateWeight = 500;
+            var performanceRating = RatingHelper.PerformanceRating(currentStatistic.BattlesCount, currentStatistic.Wins, damage, currentStatistic.DamageDealt, currentStatistic.AvgLevel);
 
-            double playerWinrate = currentStatistic.Wins/(double)currentStatistic.BattlesCount * 100.0;
-            double winrateRatio = playerWinrate / expectedWinrate;
-            double winrateComponent = winrateRatio * winrateWeight;
-
-            //Damage component
-            double expectedDamage = 1300/*sum of all individual tank expected damages*/;
-            //double individualTankExpectedDamage = battles*tankNominalDamage;
-            double playerDamage = 1155;
-            double damageRatio = playerDamage / expectedDamage;
-            double damageWeight = 1000;
-            double damageComponent = damageRatio * damageWeight;
-
-            //
-            //First penalty threshold:
-            double clearedFromPenalties1 = 1500;
-            double expectedMinBattles1 = 500;
-            double expectedMinAvgTier1 = 6;
-
-            //Second penalty threshold:
-            double clearedFromPenalties2 = 1900;
-            double expectedMinBattles2 = 2000;
-            double expectedMinAvgTier2 = 7;
-
-            //Tying it together
-            double beforePenalties = winrateComponent + damageComponent;
-            double performanceRating = beforePenalties; // with "seal-clubbing" penalties applied
-
-            double avgTier = 7.16;
-            double battles = 4769;
-
-            //Here is the penalties logic (applied twice for each of the two sets of penalty parameters):
-            double subjectToPenalties = beforePenalties - clearedFromPenalties1;
-            double lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier1));
-            double lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles1));
-            double whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
-            double totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
-            double afterPenalties = subjectToPenalties * (1 - totalPenalty);
-            double result = (clearedFromPenalties1 + afterPenalties);
-
-            beforePenalties = result;
-
-            subjectToPenalties = beforePenalties - clearedFromPenalties2;
-            lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier2));
-            lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles2));
-            whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
-            totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
-            afterPenalties = subjectToPenalties * (1 - totalPenalty);
-            result = (clearedFromPenalties2 + afterPenalties);
-
-            Console.WriteLine(result);
+            Console.WriteLine(performanceRating);
         }
 
         [Test]

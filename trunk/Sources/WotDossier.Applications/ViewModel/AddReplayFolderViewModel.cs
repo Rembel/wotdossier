@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Composition;
+using System.IO;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
 using WotDossier.Domain;
@@ -34,7 +35,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _folderName = value;
-                RaisePropertyChanged("Path");
+                RaisePropertyChanged("FolderName");
             }
         }
 
@@ -82,6 +83,7 @@ namespace WotDossier.Applications.ViewModel
             if (showDialog == true)
             {
                 ReplaysFolderPath = dialog.SelectedPath;
+                FolderName = new DirectoryInfo(ReplaysFolderPath).Name;
             }
         }
 

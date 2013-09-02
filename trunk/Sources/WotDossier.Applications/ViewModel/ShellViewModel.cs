@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Microsoft.Research.DynamicDataDisplay;
@@ -65,7 +67,7 @@ namespace WotDossier.Applications.ViewModel
         private List<ReplayFolder> _replaysFolders;
         private ReplaysManager _replaysManager;
         private ReplayFolder _selectedFolder;
-
+        
         public DelegateCommand LoadCommand { get; set; }
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
         public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
@@ -416,7 +418,7 @@ namespace WotDossier.Applications.ViewModel
                 }
 
                 Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
-                if (replay.datablock_battle_result != null)
+                if (replay.datablock_battle_result != null && replay.CommandResult != null)
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
                     viewModel.Init(replay, replayFile);
@@ -468,6 +470,7 @@ namespace WotDossier.Applications.ViewModel
                 ReplayFolder root = ReplaysFolders.FirstOrDefault();
                 folder.Folders.Add(viewModel.ReplayFolder);
                 ReplaysManager.SaveFolder(root);
+                ProcessReplaysFolders(new List<ReplayFolder> { viewModel.ReplayFolder });
             }
         }
 
@@ -481,6 +484,10 @@ namespace WotDossier.Applications.ViewModel
                 (bw, we) =>
                 {
                     AppSettings settings = SettingsReader.Get();
+                    //set thread culture
+                    var culture = new CultureInfo(SettingsReader.Get().Language);
+                    Thread.CurrentThread.CurrentCulture = culture;
+                    Thread.CurrentThread.CurrentUICulture = culture;
 
                     PlayerStat playerStat = LoadPlayerStatistic(settings);
 
@@ -515,6 +522,9 @@ namespace WotDossier.Applications.ViewModel
                             SessionStatistic = clone;
 
                             InitTanksStatistic(playerStat, tanks);
+
+                            PlayerStatistic.PerformanceRating = GetPerformanceRating();
+
                             ProgressView.Report(bw, 50, string.Empty);
 
                             InitChart();
@@ -531,14 +541,29 @@ namespace WotDossier.Applications.ViewModel
                 });
         }
 
-        private static PlayerStat LoadPlayerStatistic(AppSettings settings)
+        private double GetPerformanceRating()
+        {
+            double damage = _tanks.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.TankUniqueId, y => y.UniqueId(),
+                (x, y) => x.BattlesCount * y.nominal_damage).Sum();
+
+            return RatingHelper.PerformanceRating(PlayerStatistic.BattlesCount, PlayerStatistic.Wins, damage, PlayerStatistic.DamageDealt, PlayerStatistic.Tier);
+        }
+
+        private PlayerStat LoadPlayerStatistic(AppSettings settings)
         {
             PlayerStat playerStat = null;
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
-                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
-                                   MessageBoxButton.OK,
-                                   MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                //TODO:
+                //if (result == MessageBoxResult.Yes)
+                //{
+                //    OnSettings();
+                //}
+
                 return null;
             }
 
@@ -567,68 +592,77 @@ namespace WotDossier.Applications.ViewModel
 
         private void LoadReplaysList()
         {
-            ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
+            ReplaysFolders = ReplaysManager.GetFolders();
+
+            List<ReplayFolder> replayFolders = ReplaysFolders.GetAll();
+
+            ProcessReplaysFolders(replayFolders);
+        }
+
+        private void ProcessReplaysFolders(List<ReplayFolder> replayFolders)
+        {
+            ProgressDialogResult result = ProgressView.Execute((Window) ViewTyped,
+                Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
+                {
+                    foreach (var replayFolder in replayFolders)
                     {
-                        ReplaysFolders = ReplaysManager.GetFolders();
-                        
-                        List<ReplayFolder> replayFolders = ReplaysFolders.GetAll();
+                        string folderPath = replayFolder.Path;
 
-                        foreach (var replayFolder in replayFolders)
+                        if (string.IsNullOrEmpty(folderPath))
                         {
-                            string folderPath = replayFolder.Path;
-
-                            if (string.IsNullOrEmpty(folderPath))
-                            {
-                                continue;
-                            }
-
-                            if (Directory.Exists(folderPath))
-                            {
-                                ObservableCollection<ReplayFile> replayFilesTemp = new ObservableCollection<ReplayFile>();
-
-                                string[] files = Directory.GetFiles(folderPath, "*.wotreplay");
-                                List<FileInfo> replays = files.Select(x => new FileInfo(Path.Combine(folderPath, x))).Where(x => x.Length > 0).ToList();
-
-                                int count = replays.Count();
-
-                                List<ReplayFile> replayFiles = new List<ReplayFile>(count);
-
-                                int index = 0;
-                                foreach (FileInfo replay in replays)
-                                {
-                                    ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay));
-                                    replayFiles.Add(replayFile);
-                                    index++;
-                                    int percent = (index + 1) * 100 / count;
-                                    if (ProgressView.ReportWithCancellationCheck(bw, we, percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
-                                    {
-                                        return;
-                                    }
-                                }
-
-                                // So this check in order to avoid default processing after the Cancel button has been pressed.
-                                // This call will set the Cancelled flag on the result structure.
-                                ProgressView.CheckForPendingCancellation(bw, we);
-
-                                replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
-
-                                IList<ReplayEntity> dbReplays = _dossierRepository.GetReplays();
-
-                                dbReplays.Join(replayFilesTemp, x => new { x.PlayerId, x.ReplayId }, y => new { y.PlayerId, y.ReplayId },
-                                               (x, y) => new { ReplayEntity = x, ReplayFile = y }).ToList().ForEach(x => x.ReplayFile.Link = x.ReplayEntity.Link);
-
-                                replayFolder.Files = replayFilesTemp;
-
-                            }
-                            //else
-                            //{
-                            //    WpfMessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, folderPath), Resources.Resources.WindowCaption_Error, 
-                            //        WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
-                            //}
-
-                            SelectedFolder = ReplaysFolders.FirstOrDefault();
+                            continue;
                         }
-                    }, new ProgressDialogSettings(true, true, false));
+
+                        if (Directory.Exists(folderPath))
+                        {
+                            ObservableCollection<ReplayFile> replayFilesTemp = new ObservableCollection<ReplayFile>();
+
+                            string[] files = Directory.GetFiles(folderPath, "*.wotreplay");
+                            List<FileInfo> replays =
+                                files.Select(x => new FileInfo(Path.Combine(folderPath, x))).Where(x => x.Length > 0).ToList();
+
+                            int count = replays.Count();
+
+                            List<ReplayFile> replayFiles = new List<ReplayFile>(count);
+
+                            int index = 0;
+                            foreach (FileInfo replay in replays)
+                            {
+                                ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay));
+                                replayFiles.Add(replayFile);
+                                index++;
+                                int percent = (index + 1)*100/count;
+                                if (ProgressView.ReportWithCancellationCheck(bw, we, percent,
+                                    Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
+                                {
+                                    return;
+                                }
+                            }
+
+                            // So this check in order to avoid default processing after the Cancel button has been pressed.
+                            // This call will set the Cancelled flag on the result structure.
+                            ProgressView.CheckForPendingCancellation(bw, we);
+
+                            replayFiles.OrderByDescending(x => x.PlayTime).ToList().ForEach(replayFilesTemp.Add);
+
+                            IList<ReplayEntity> dbReplays = _dossierRepository.GetReplays();
+
+                            dbReplays.Join(replayFilesTemp, x => new {x.PlayerId, x.ReplayId}, y => new {y.PlayerId, y.ReplayId},
+                                (x, y) => new {ReplayEntity = x, ReplayFile = y})
+                                .ToList()
+                                .ForEach(x => x.ReplayFile.Link = x.ReplayEntity.Link);
+
+                            replayFolder.Files = replayFilesTemp;
+                        }
+                        //else
+                        //{
+                        //    WpfMessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, folderPath), Resources.Resources.WindowCaption_Error, 
+                        //        WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                        //}
+
+                        SelectedFolder = replayFolders.FirstOrDefault();
+                    }
+                }, new ProgressDialogSettings(true, true, false));
         }
 
         private PlayerStatisticViewModel InitPlayerStatisticViewModel(PlayerStat playerStat, List<TankJson> tanks)

@@ -1262,4 +1262,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="WindowTitle_AddReplayFolder" xml:space="preserve">
     <value>Добавление папки</value>
   </data>
+  <data name="Common_NoobmeterPerformanceRating" xml:space="preserve">
+    <value>Рейтинг нагиба</value>
+  </data>
 </root>

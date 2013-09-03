@@ -6,6 +6,7 @@
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Controls"
+        xmlns:views="clr-namespace:WotDossier.Views"
         Title="WotDossier" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="23">
@@ -69,16 +70,16 @@
                                     </d3:PieChart>
                                 </d3:ViewportUIContainer>
                             </d3:ChartPlotter>
-                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 6, 2500">
                                 <d3:Header>
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Эффективность по типам техники"></TextBlock>
                                 </d3:Header>
-                                <!--<d3:HorizontalAxis>
+                                <d3:HorizontalAxis>
                                     <d3:HorizontalAxis.LabelProvider>
-                                        <wotDossier:TextLabelProvider />
+                                        <views:TextLabelProvider />
                                     </d3:HorizontalAxis.LabelProvider>
-                                </d3:HorizontalAxis>-->
+                                </d3:HorizontalAxis>
                                 <d3:BarChart ItemsSource="{Binding EfficiencyByTypeDataSource}">
                                     <d3:BarChart.Resources>
                                         <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>

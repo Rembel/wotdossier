@@ -132,8 +132,8 @@
             <TextBlock Foreground="{Binding AvgSpottedDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="13" Grid.Column="2" Text="{Binding AvgSpottedDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             <!--HitsPercents-->
             <TextBlock Foreground="#BABFBA" Grid.Row="14" Grid.Column="0" Text="{x:Static Resources:Resources.Common_HitRatio}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="14" Grid.Column="1" Text="{Binding HitsPercents, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding HitsPercentsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="14" Grid.Column="2" Text="{Binding HitsPercentsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="14" Grid.Column="1" Text="{Binding HitsPercents, StringFormat='0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding HitsPercentsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="14" Grid.Column="2" Text="{Binding HitsPercentsDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--DamageDealt-->
             <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DamageCaused}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="15" Grid.Column="1" Text="{Binding DamageDealt, StringFormat='### ### ### ###'}"></TextBlock>

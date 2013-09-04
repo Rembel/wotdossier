@@ -25,13 +25,12 @@ namespace WotDossier.Domain.Entities
             Xp = _tanks.Sum(x => x.Tankdata.xp);
             if (Battles_count > 0)
             {
-                Battle_avg_xp = Xp/Battles_count;
+                Battle_avg_xp = Xp/(double)Battles_count;
             }
             Max_xp = _tanks.Max(x => x.Tankdata.maxXP);
             Frags = _tanks.Sum(x => x.Tankdata.frags);
             Spotted = _tanks.Sum(x => x.Tankdata.spotted);
-            double d = (_tanks.Sum(x => x.Tankdata.hits)/((double) _tanks.Sum(x => x.Tankdata.shots))*100.0);
-            Hits_percents = (int) Math.Ceiling(d);
+            Hits_percents = _tanks.Sum(x => x.Tankdata.hits)/((double) _tanks.Sum(x => x.Tankdata.shots))*100.0;
             Damage_dealt = _tanks.Sum(x => x.Tankdata.damageDealt);
             Capture_points = _tanks.Sum(x => x.Tankdata.capturePoints);
             Dropped_capture_points = _tanks.Sum(x => x.Tankdata.droppedCapturePoints);
@@ -230,7 +229,7 @@ namespace WotDossier.Domain.Entities
 
         public int Xp { get; set; }
 
-        public int Battle_avg_xp { get; set; }
+        public double Battle_avg_xp { get; set; }
 
         public int Max_xp { get; set; }
 
@@ -238,7 +237,7 @@ namespace WotDossier.Domain.Entities
 
         public int Spotted { get; set; }
 
-        public int Hits_percents { get; set; }
+        public double Hits_percents { get; set; }
 
         public int Damage_dealt { get; set; }
 

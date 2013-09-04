@@ -3,8 +3,10 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.Charts;
 using Microsoft.Research.DynamicDataDisplay.Charts.Axes;
+using Microsoft.Research.DynamicDataDisplay.ViewportRestrictions;
 using WotDossier.Applications.View;
 using WotDossier.Domain;
 
@@ -19,6 +21,14 @@ namespace WotDossier.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            //EByTier.Children.Remove(EByTier.DefaultContextMenu);
+            //EByTier.Children.Remove(EByTier.MouseNavigation);
+            //EByType.Children.Remove(EByType.DefaultContextMenu);
+            //EByType.Children.Remove(EByType.MouseNavigation);
+
+            //EByType.Restrictions.Add(new DomainRestriction(new DataRect(0, 0, 6,2400)));
+            //EByTier.Restrictions.Add(new DomainRestriction(new DataRect(0, 0, 11, 2400)));
 
             // Enable "minimize to tray" behavior for this Window
             MinimizeToTray.Enable(this);

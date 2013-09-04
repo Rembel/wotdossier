@@ -7,7 +7,7 @@
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:views="clr-namespace:WotDossier.Views"
-        Title="WotDossier" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
+        Title="WotDossier" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="23">
             <Grid.ColumnDefinitions>
@@ -31,51 +31,23 @@
                 <ScrollViewer>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                            <controls:LineChartControl Header="Средний опыт за бой" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
                             <controls:LineChartControl Header="Рейтинг Эффективности" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
                             <controls:LineChartControl Header="Рейтинг WN6" DataSource="{Binding WN6RatingDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
                             <controls:LineChartControl Header="Процент побед" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
                             <controls:LineChartControl Header="Выжил в боях %" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                            <controls:LineChartControl Header="Отношение уничтожил/убит" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                            <controls:LineChartControl Header="Средний урон" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                            <d3:ChartPlotter Name="Chart4" Width="400" Height="400" Margin="50, 50, 50, 50" HorizontalAlignment="Center">
-                                <d3:ViewportUIContainer>
-                                    <d3:PieChart Name="PieChart" Width="350" Height="350" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanksDataSource}" 
-							                Canvas.Left="10" Canvas.Top="10" StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
-                                        <d3:PieChart.Resources>
-                                            <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
-                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                                        </d3:PieChart.Resources>
-
-                                        <d3:PieChart.MarkerTemplate>
-                                            <DataTemplate>
-                                                <d3:PieChartItem>
-                                                    <d3:LiveToolTipService.ToolTip>
-                                                        <d3:LiveToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
-											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                                            <TextBlock>
-											                    <Bold>Tank:</Bold> <TextBlock Text="{Binding TankName}"/>
-                                                                <LineBreak/>
-											                    <Bold>Battles:</Bold> <TextBlock Text="{Binding Battles}"/>
-											                    <LineBreak/>
-											                    <Bold>Win %:</Bold> <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
-										                    </TextBlock>
-                                                        </d3:LiveToolTip>
-                                                    </d3:LiveToolTipService.ToolTip>
-                                                </d3:PieChartItem>
-                                            </DataTemplate>
-                                        </d3:PieChart.MarkerTemplate>
-                                    </d3:PieChart>
-                                </d3:ViewportUIContainer>
-                            </d3:ChartPlotter>
-                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                            <controls:LineChartControl Header="Средний опыт за бой" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
+                            <controls:LineChartControl Header="Средний урон" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
+                            <controls:LineChartControl Header="Отношение уничтожил/убит" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
+                        </StackPanel>
+                        <!--<StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <d3:ChartPlotter x:Name="EByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 6, 2500">
                                 <d3:Header>
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Эффективность по типам техники"></TextBlock>
                                 </d3:Header>
-                                <d3:HorizontalAxis>
+                                <d3:HorizontalAxis x:Name="HorizontalAxis" >
                                     <d3:HorizontalAxis.LabelProvider>
                                         <views:TextLabelProvider />
                                     </d3:HorizontalAxis.LabelProvider>
@@ -92,19 +64,19 @@
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
-                                                <d3:LiveToolTipService.ToolTip>
-                                                    <d3:LiveToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
 											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                                    </d3:LiveToolTip>
-                                                </d3:LiveToolTipService.ToolTip>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
                                             </Rectangle>
                                         </DataTemplate>
                                     </d3:TemplateMarkerGenerator>
                                 </d3:BarChart>
                             </d3:ChartPlotter>
 
-                            <d3:ChartPlotter NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                            <d3:ChartPlotter x:Name="EByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 11, 2500">
                                 <d3:Header>
                                     <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Эффективность по уровням"></TextBlock>
@@ -121,18 +93,18 @@
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
-                                                <d3:LiveToolTipService.ToolTip>
-                                                    <d3:LiveToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
 											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                                    </d3:LiveToolTip>
-                                                </d3:LiveToolTipService.ToolTip>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
                                             </Rectangle>
                                         </DataTemplate>
                                     </d3:TemplateMarkerGenerator>
                                 </d3:BarChart>
                             </d3:ChartPlotter>
-                        </StackPanel>
+                        </StackPanel>-->
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

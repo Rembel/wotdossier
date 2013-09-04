@@ -83,7 +83,7 @@ namespace WotDossier.Domain.Entities
         /// <summary>
         /// Gets/Sets the field "BattleAvgXp".
         /// </summary>
-        public virtual int BattleAvgXp { get; set; }
+        public virtual double BattleAvgXp { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "MaxXp".
@@ -103,7 +103,7 @@ namespace WotDossier.Domain.Entities
         /// <summary>
         /// Gets/Sets the field "HitsPercents".
         /// </summary>
-        public virtual int HitsPercents { get; set; }
+        public virtual double HitsPercents { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "DamageDealt".

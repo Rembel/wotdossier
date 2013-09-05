@@ -70,7 +70,7 @@ namespace WotDossier.Applications
             Process proc = new Process();
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = directoryName + @"\External\wotdc2j.exe";
-            proc.StartInfo.Arguments = string.Format("\"{0}\" -f -r", cacheFile.FullName);
+            proc.StartInfo.Arguments = string.Format("\"{0}\" -f", cacheFile.FullName);
             proc.Start();
 
             Environment.CurrentDirectory = temp;

@@ -144,35 +144,40 @@
     <Compile Include="Controls\TextWithImage.xaml.cs">
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converters\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\Color\DeltaToColorConverter.cs" />
+    <Compile Include="Converters\Color\EffectivityToColorConverter.cs" />
+    <Compile Include="Converters\Color\KievArmorRatingToColorConverter.cs" />
+    <Compile Include="Converters\Color\PercentToColorConverter.cs" />
+    <Compile Include="Converters\Color\PowerRatingToColorConverter.cs" />
+    <Compile Include="Converters\Color\WN6ToColorConverter.cs" />
+    <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
+    <Compile Include="Converters\Formater\DateTimeToDateConverter.cs" />
+    <Compile Include="Converters\Formater\DateTimeToTimeConverter.cs" />
+    <Compile Include="Converters\Formater\Double2Formater.cs" />
+    <Compile Include="Converters\Formater\DoubleToDateConverter.cs" />
+    <Compile Include="Converters\Formater\MilisecondsToMinutesConverter.cs" />
+    <Compile Include="Converters\Formater\PercentFormater.cs" />
+    <Compile Include="Converters\Formater\ValueDeltaFormater.cs" />
+    <Compile Include="Converters\Formater\ValueDeltaPercentFormater.cs" />
+    <Compile Include="Converters\Formater\ValueNearestPercentFormater.cs" />
+    <Compile Include="Converters\Formater\ValuePercentFormater.cs" />
+    <Compile Include="Converters\Image\ClanImageUrlToSourceConverter.cs" />
+    <Compile Include="Converters\Image\MapNameToImageConverter.cs" />
+    <Compile Include="Converters\Image\MarkOfMasteryImageConverter.cs" />
+    <Compile Include="Converters\Image\MedalIconImageConverter.cs" />
+    <Compile Include="Converters\Image\TankClassToImageConverter.cs" />
+    <Compile Include="Converters\Image\TankIconImageConverter.cs" />
+    <Compile Include="Converters\Image\TankIconImageConverter2.cs" />
     <Compile Include="Converters\IntToOpacityConverter.cs" />
-    <Compile Include="Converters\XvmRatingToColorConverter.cs" />
-    <Compile Include="Converters\KievArmorRatingToColorConverter.cs" />
     <Compile Include="Converters\EnumToTextConverter.cs" />
     <Compile Include="Converters\ObjectToCollapseConverter.cs" />
-    <Compile Include="Converters\MedalIconImageConverter.cs" />
     <Compile Include="Converters\IntToVisibilityConverter.cs" />
-    <Compile Include="Converters\MapNameToImageConverter.cs" />
     <Compile Include="Converters\EpicMedalCountToStringConverter.cs" />
     <Compile Include="Converters\MedalCountToStringConverter.cs" />
     <Compile Include="Converters\StatisticPeriodToStringConverter.cs" />
-    <Compile Include="Converters\ValueNearestPercentFormater.cs" />
     <Compile Include="Converters\MarkOfMasteryToTooltipConverter.cs" />
-    <Compile Include="Converters\TankClassToImageConverter.cs" />
-    <Compile Include="Converters\TankIconImageConverter2.cs" />
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
-    <Compile Include="Converters\ValueDeltaFormater.cs" />
-    <Compile Include="Converters\ValueDeltaPercentFormater.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Converters\ValuePercentFormater.cs" />
-    <Compile Include="Converters\DeltaToColorConverter.cs" />
-    <Compile Include="Converters\DoubleToDateConverter.cs" />
-    <Compile Include="Converters\PercentToColorConverter.cs" />
     <Compile Include="Converters\SubtractValueConverter.cs" />
-    <Compile Include="Converters\WN6ToColorConverter.cs" />
-    <Compile Include="Converters\EffectivityToColorConverter.cs" />
-    <Compile Include="Converters\Double2Formater.cs" />
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="Resources\Medals.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -318,15 +323,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Converters\MarkOfMasteryImageConverter.cs" />
-    <Compile Include="Converters\DateTimeConverter.cs" />
-    <Compile Include="Converters\DateTimeToDateConverter.cs" />
-    <Compile Include="Converters\DateTimeToLocalDateTimeConverter.cs" />
-    <Compile Include="Converters\DateTimeToTimeConverter.cs" />
-    <Compile Include="Converters\MilisecondsToMinutesConverter.cs" />
-    <Compile Include="Converters\PercentFormater.cs" />
     <Compile Include="Converters\TrimConverter.cs" />
-    <Compile Include="Converters\UtcToLocalTimeConverter.cs" />
     <Page Include="Styles\ApplicationStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

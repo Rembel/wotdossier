@@ -203,17 +203,6 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        private double _performanceRating;
-        public double PerformanceRating
-        {
-            get { return _performanceRating; }
-            set
-            {
-                _performanceRating = value;
-                OnPropertyChanged("PerformanceRating");
-            }
-        }
-
         public PlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
         {
         }

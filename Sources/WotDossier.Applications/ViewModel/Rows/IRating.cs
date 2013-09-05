@@ -7,5 +7,6 @@
         double KievArmorRating { get; }
         double XEFF { get; }
         double XWN { get; }
+        double? PerformanceRating { get; }
     }
 }

@@ -201,6 +201,17 @@ namespace WotDossier.Applications.ViewModel
             get { return RatingHelper.XWN(WN6Rating); }
         }
 
+        private double? _performanceRating;
+        public double? PerformanceRating
+        {
+            get { return _performanceRating; }
+            set
+            {
+                _performanceRating = value;
+                OnPropertyChanged("PerformanceRating");
+            }
+        }
+
         #endregion
 
         #region Achievments

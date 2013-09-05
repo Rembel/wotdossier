@@ -178,7 +178,7 @@
             <TextBlock Foreground="{Binding XvmRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="2" Text="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--Noobmeter Performance Rating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="26" Grid.Column="0" Text="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="26" Grid.Column="1" Text="{Binding PerformanceRating, StringFormat='0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding Path=PerformanceRating, Converter={x:Static Converters:PowerRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="1" Text="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"></TextBlock>
             <!--<TextBlock Foreground="{Binding XvmRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="2" Text="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
         </Grid>
     </Grid>

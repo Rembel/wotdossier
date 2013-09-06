@@ -49,7 +49,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Foreground="#606061" FontSize="11" FontFamily="Arial" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Clan_Enrolled}"></TextBlock>
-            <TextBlock Foreground="#BABCBF" FontSize="11" FontFamily="Arial" Grid.Column="1" Text="{Binding Date, RelativeSource={RelativeSource FindAncestor, AncestorType=View:ClanView}, Converter={x:Static Converters:DateTimeToDateConverter.Default}}"></TextBlock>
+            <TextBlock Foreground="#BABCBF" FontSize="11" FontFamily="Arial" Grid.Column="1" Text="{Binding Date, RelativeSource={RelativeSource FindAncestor, AncestorType=View:ClanView}, Converter={x:Static Converters:DateFormater.Default}}"></TextBlock>
         </Grid>
     </Grid>
 </UserControl>

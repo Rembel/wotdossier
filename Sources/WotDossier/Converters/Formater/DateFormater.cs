@@ -4,11 +4,11 @@ using System.Windows.Data;
 
 namespace WotDossier.Converters
 {
-    public class DateTimeToDateConverter: IValueConverter
+    public class DateFormater: IValueConverter
     {
-        private static readonly DateTimeToDateConverter _defaultInstance = new DateTimeToDateConverter();
+        private static readonly DateFormater _defaultInstance = new DateFormater();
 
-        public static DateTimeToDateConverter Default { get { return _defaultInstance; } }
+        public static DateFormater Default { get { return _defaultInstance; } }
 
         /// <summary>
         /// Converts a value. 

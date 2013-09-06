@@ -34,7 +34,7 @@
                     <Image Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Grid.Column="0" Source="/Resources\Images\Replays\Squad-Ico-silver.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"></Image>
                     <TextBlock Grid.Column="0" Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="1" Text="{Binding FullName}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
-                    <Image Grid.Column="2" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" HorizontalAlignment="Left"></Image>
+                    <Image Grid.Column="2" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left"></Image>
                     <TextBlock Margin="40,0,0,0" Grid.Column="2" Text="{Binding Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="3" Text="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="4" Text="{Binding Kills}" Foreground="#CBAD78" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
@@ -74,7 +74,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Image Margin="0,0,0,0" HorizontalAlignment="Left"
-                           Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" VerticalAlignment="Top" />
+                           Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" VerticalAlignment="Top" />
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
                         <TextBlock Text="{Binding FullName}" FontSize="20" Foreground="#FEC264"></TextBlock>
@@ -91,7 +91,7 @@
                         </ItemsControl.ItemsPanel>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
                                         <TextBlock Text="{Binding Name}"></TextBlock>
                                     </Image.ToolTip>
@@ -130,7 +130,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Image Margin="0,0,0,0" HorizontalAlignment="Left"
-                           Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" VerticalAlignment="Top" />
+                           Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" VerticalAlignment="Top" />
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
                         <TextBlock Text="{Binding FullName}" FontSize="20" Foreground="#FEC264"></TextBlock>
@@ -147,7 +147,7 @@
                         </ItemsControl.ItemsPanel>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
                                         <TextBlock Text="{Binding Name}"></TextBlock>
                                     </Image.ToolTip>

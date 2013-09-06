@@ -9,11 +9,11 @@ using System.Windows.Media.Imaging;
 namespace WotDossier.Converters
 {
     [ValueConversion(typeof(int), typeof(Int32Rect))]
-    public class MarkOfMasteryImageConverter : IValueConverter
+    public class MarkOfMasteryToImageConverter : IValueConverter
     {
-        private static MarkOfMasteryImageConverter _default = new MarkOfMasteryImageConverter();
+        private static MarkOfMasteryToImageConverter _default = new MarkOfMasteryToImageConverter();
 
-        public static MarkOfMasteryImageConverter Default
+        public static MarkOfMasteryToImageConverter Default
         {
             get { return _default; }
         }

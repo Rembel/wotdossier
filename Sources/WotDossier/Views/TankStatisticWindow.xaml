@@ -38,7 +38,7 @@
 
                 <Grid Grid.Column="0" DataContext="{Binding TankStatistic}">
                     <Image Width="140" Height="80" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
-                    <Image Width="140" Height="80" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
+                    <Image Width="140" Height="80" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" />
                 </Grid>
                 <Grid Grid.Column="1">
                     <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>

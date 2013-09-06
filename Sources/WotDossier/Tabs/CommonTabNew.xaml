@@ -45,7 +45,7 @@
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Created, Converter={x:Static Converters:DateTimeToDateConverter.Default}}" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Created, Converter={x:Static Converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
                                 <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
                             </Grid>

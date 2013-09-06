@@ -151,11 +151,8 @@
     <Compile Include="Converters\Color\PowerRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\WN6ToColorConverter.cs" />
     <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
-    <Compile Include="Converters\Formater\DateTimeToDateConverter.cs" />
-    <Compile Include="Converters\Formater\DateTimeToTimeConverter.cs" />
+    <Compile Include="Converters\Formater\DateFormater.cs" />
     <Compile Include="Converters\Formater\Double2Formater.cs" />
-    <Compile Include="Converters\Formater\DoubleToDateConverter.cs" />
-    <Compile Include="Converters\Formater\MilisecondsToMinutesConverter.cs" />
     <Compile Include="Converters\Formater\PercentFormater.cs" />
     <Compile Include="Converters\Formater\ValueDeltaFormater.cs" />
     <Compile Include="Converters\Formater\ValueDeltaPercentFormater.cs" />
@@ -163,11 +160,10 @@
     <Compile Include="Converters\Formater\ValuePercentFormater.cs" />
     <Compile Include="Converters\Image\ClanImageUrlToSourceConverter.cs" />
     <Compile Include="Converters\Image\MapNameToImageConverter.cs" />
-    <Compile Include="Converters\Image\MarkOfMasteryImageConverter.cs" />
-    <Compile Include="Converters\Image\MedalIconImageConverter.cs" />
+    <Compile Include="Converters\Image\MarkOfMasteryToImageConverter.cs" />
+    <Compile Include="Converters\Image\MedalToImageConverter.cs" />
     <Compile Include="Converters\Image\TankClassToImageConverter.cs" />
-    <Compile Include="Converters\Image\TankIconImageConverter.cs" />
-    <Compile Include="Converters\Image\TankIconImageConverter2.cs" />
+    <Compile Include="Converters\Image\TankIconToImageConverter.cs" />
     <Compile Include="Converters\IntToOpacityConverter.cs" />
     <Compile Include="Converters\EnumToTextConverter.cs" />
     <Compile Include="Converters\ObjectToCollapseConverter.cs" />

@@ -216,4 +216,22 @@ Win percent: {1:0.00}</value>
   <data name="Msg_NewVersion" xml:space="preserve">
     <value>New version available - {0}. Do you want download it now?</value>
   </data>
+  <data name="Language_Russian" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="StatisticPeriod_Recent" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+  <data name="StatisticPeriod_LastWeek" xml:space="preserve">
+    <value>Last week</value>
+  </data>
+  <data name="StatisticPeriod_AllObservationPeriod" xml:space="preserve">
+    <value>All observation period</value>
+  </data>
+  <data name="StatisticPeriod_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
 </root>

@@ -1148,4 +1148,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Common_NoobmeterPerformanceRating" xml:space="preserve">
     <value>Noobmeter Performance Rating</value>
   </data>
+  <data name="Settings_Period" xml:space="preserve">
+    <value>Period</value>
+  </data>
 </root>

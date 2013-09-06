@@ -446,18 +446,21 @@ namespace WotDossier.Applications.ViewModel
         private void OnDeleteFolderCommand(ReplayFolder folder)
         {
             ReplayFolder root = ReplaysFolders.FirstOrDefault();
-            ReplayFolder parent = FindFavoriteItemParent(root, folder);
-            parent.Folders.Remove(folder);
-            ReplaysManager.SaveFolder(root);
+            ReplayFolder parent = FindParentFolder(root, folder);
+            if (parent != null)
+            {
+                parent.Folders.Remove(folder);
+                ReplaysManager.SaveFolder(root);
+            }
         }
 
-        private ReplayFolder FindFavoriteItemParent(ReplayFolder parent, ReplayFolder folder)
+        private ReplayFolder FindParentFolder(ReplayFolder parent, ReplayFolder folder)
         {
             if (parent.Folders.Contains(folder))
             {
                 return parent;
             }
-            return parent.Folders.Select(child => FindFavoriteItemParent(child, folder)).FirstOrDefault(foundItem => foundItem != null);
+            return parent.Folders.Select(child => FindParentFolder(child, folder)).FirstOrDefault(foundItem => foundItem != null);
         }
 
         private void OnAddFolder(ReplayFolder folder)

@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlServerCe;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using Common.Logging;
 
 namespace WotDossier.Applications.Update
@@ -132,36 +131,6 @@ namespace WotDossier.Applications.Update
             updates.AddRange(types.Select(Activator.CreateInstance).Cast<IDbUpdate>());
 
             return updates.OrderBy(x => x.Version).ToList();
-        }
-
-        public void InitDatabase()
-        {
-            string currentDirectory = Folder.AssemblyDirectory();
-            string path = Path.Combine(currentDirectory, @"Data\dossier.sdf");
-            if (!File.Exists(path))
-            {
-                byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.init.sdf", Assembly.GetEntryAssembly());
-                using (FileStream fileStream = File.OpenWrite(path))
-                {
-                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);    
-                    fileStream.Flush();
-                }
-            }
-        }
-
-        public static byte[] GetEmbeddedResource(string resourceName, Assembly assembly)
-        {
-            using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
-            {
-                if (resourceStream == null)
-                    return null;
-
-                int length = Convert.ToInt32(resourceStream.Length); // get strem length
-                byte[] byteArr = new byte[length]; // create a byte array
-                resourceStream.Read(byteArr, 0, length);
-
-                return byteArr;
-            }
         }
     }
 }

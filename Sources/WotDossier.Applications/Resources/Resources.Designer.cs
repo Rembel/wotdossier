@@ -199,6 +199,24 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        internal static string Language_English {
+            get {
+                return ResourceManager.GetString("Language_English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Русский.
+        /// </summary>
+        internal static string Language_Russian {
+            get {
+                return ResourceManager.GetString("Language_Russian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t find replays directory - &apos;{0}&apos;..
         /// </summary>
         internal static string Msg_CantFindReplaysDirectory {
@@ -258,6 +276,42 @@ namespace WotDossier.Applications.Resources {
         internal static string ProgressTitle_Loading_replays {
             get {
                 return ResourceManager.GetString("ProgressTitle_Loading_replays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All observation period.
+        /// </summary>
+        internal static string StatisticPeriod_AllObservationPeriod {
+            get {
+                return ResourceManager.GetString("StatisticPeriod_AllObservationPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        internal static string StatisticPeriod_Custom {
+            get {
+                return ResourceManager.GetString("StatisticPeriod_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last week.
+        /// </summary>
+        internal static string StatisticPeriod_LastWeek {
+            get {
+                return ResourceManager.GetString("StatisticPeriod_LastWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recent.
+        /// </summary>
+        internal static string StatisticPeriod_Recent {
+            get {
+                return ResourceManager.GetString("StatisticPeriod_Recent", resourceCulture);
             }
         }
         

@@ -16,8 +16,18 @@ namespace WotDossier.Applications.ViewModel
     {
         private AppSettings _appSettings;
         private List<string> _servers = new List<string> { "ru", "eu" };
-        private List<string> _languages = new List<string> { "ru-RU", "en-US" };
-        private List<StatisticPeriod> _periods = new List<StatisticPeriod> { StatisticPeriod.Recent, StatisticPeriod.LastWeek, StatisticPeriod.AllObservationPeriod, StatisticPeriod.Custom };
+        private List<ListItem<string>> _languages = new List<ListItem<string>>
+        {
+            new ListItem<string>("ru-RU", Resources.Resources.Language_Russian),
+            new ListItem<string>("en-US", Resources.Resources.Language_English),
+        };
+        private List<ListItem<StatisticPeriod>> _periods = new List<ListItem<StatisticPeriod>>
+        {
+            new ListItem<StatisticPeriod>(StatisticPeriod.Recent, Resources.Resources.StatisticPeriod_Recent),
+            new ListItem<StatisticPeriod>(StatisticPeriod.LastWeek, Resources.Resources.StatisticPeriod_LastWeek), 
+            new ListItem<StatisticPeriod>(StatisticPeriod.AllObservationPeriod, Resources.Resources.StatisticPeriod_AllObservationPeriod),
+            new ListItem<StatisticPeriod>(StatisticPeriod.Custom, Resources.Resources.StatisticPeriod_Custom)
+        };
         private List<DateTime> _prevDates;
         public DelegateCommand SaveCommand { get; set; }
         public DelegateCommand SelectReplaysFolderCommand { get; set; }
@@ -33,13 +43,13 @@ namespace WotDossier.Applications.ViewModel
             set { _servers = value; }
         }
 
-        public List<string> Languages
+        public List<ListItem<string>> Languages
         {
             get { return _languages; }
             set { _languages = value; }
         }
 
-        public List<StatisticPeriod> Periods
+        public List<ListItem<StatisticPeriod>> Periods
         {
             get { return _periods; }
             set { _periods = value; }
@@ -127,6 +137,21 @@ namespace WotDossier.Applications.ViewModel
         public virtual void Show()
         {
             ViewTyped.Show();
+        }
+    }
+
+    public class ListItem<TId>
+    {
+        public TId Id { get; set; }
+        public string Value { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public ListItem(TId id, string value)
+        {
+            Id = id;
+            Value = value;
         }
     }
 }

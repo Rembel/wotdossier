@@ -216,4 +216,22 @@
   <data name="Msg_NewVersion" xml:space="preserve">
     <value>Доступна новая версия - {0}. Открыть страницу загрузки?</value>
   </data>
+  <data name="Language_Russian" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="StatisticPeriod_Recent" xml:space="preserve">
+    <value>Недавние</value>
+  </data>
+  <data name="StatisticPeriod_LastWeek" xml:space="preserve">
+    <value>Посленидняя неделя</value>
+  </data>
+  <data name="StatisticPeriod_AllObservationPeriod" xml:space="preserve">
+    <value>Весь период</value>
+  </data>
+  <data name="StatisticPeriod_Custom" xml:space="preserve">
+    <value>Свой</value>
+  </data>
 </root>

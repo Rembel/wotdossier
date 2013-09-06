@@ -1,5 +1,8 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.IO;
+using System.Reflection;
+using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -34,6 +37,12 @@ namespace WotDossier.Applications
 
         public void Run()
         {
+            InitDatabase();
+            InitReplaysCatalog();
+
+            DatabaseManager manager = new DatabaseManager();
+            manager.Update();
+
             InitShellViewModel(_shellViewModel);
             _shellViewModel.Show();
         }
@@ -45,6 +54,51 @@ namespace WotDossier.Applications
         private void Close()
         {
             _shellViewModel.Close();
+        }
+
+        public void InitDatabase()
+        {
+            string currentDirectory = Folder.AssemblyDirectory();
+            string path = Path.Combine(currentDirectory, @"Data\dossier.sdf");
+            if (!File.Exists(path))
+            {
+                byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.init.sdf", Assembly.GetEntryAssembly());
+                using (FileStream fileStream = File.OpenWrite(path))
+                {
+                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);
+                    fileStream.Flush();
+                }
+            }
+        }
+
+        public void InitReplaysCatalog()
+        {
+            string currentDirectory = Folder.AssemblyDirectory();
+            string path = Path.Combine(currentDirectory, @"Data\ReplaysCatalog.xml");
+            if (!File.Exists(path))
+            {
+                byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.ReplaysCatalog.xml", Assembly.GetEntryAssembly());
+                using (FileStream fileStream = File.OpenWrite(path))
+                {
+                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);
+                    fileStream.Flush();
+                }
+            }
+        }
+
+        public static byte[] GetEmbeddedResource(string resourceName, Assembly assembly)
+        {
+            using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
+            {
+                if (resourceStream == null)
+                    return null;
+
+                int length = Convert.ToInt32(resourceStream.Length); // get strem length
+                byte[] byteArr = new byte[length]; // create a byte array
+                resourceStream.Read(byteArr, 0, length);
+
+                return byteArr;
+            }
         }
     }
 }

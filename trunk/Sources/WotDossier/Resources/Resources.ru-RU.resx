@@ -1265,4 +1265,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Common_NoobmeterPerformanceRating" xml:space="preserve">
     <value>Рейтинг нагиба</value>
   </data>
+  <data name="Settings_Period" xml:space="preserve">
+    <value>Период</value>
+  </data>
 </root>

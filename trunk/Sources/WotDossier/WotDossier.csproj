@@ -319,7 +319,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Converters\TrimConverter.cs" />
     <Page Include="Styles\ApplicationStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -550,16 +549,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Data\dossier.sqlce" />
+    <EmbeddedResource Include="Data\ReplaysCatalog.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Content Include="Data\TankNominalDamage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Data\vstat.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Data\ReplaysCatalog.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

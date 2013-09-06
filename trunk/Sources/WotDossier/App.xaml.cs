@@ -7,7 +7,6 @@ using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
-using WotDossier.Applications.Update;
 using WotDossier.Framework;
 using WotDossier.Framework.Forms;
 using WotDossier.Framework.Presentation.Services;
@@ -47,12 +46,7 @@ namespace WotDossier
             // start application
             try
             {
-                DatabaseManager manager = new DatabaseManager();
-                manager.InitDatabase();
-                manager.Update();
-
                 CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
-
                 Controller.Run();
             }
             catch (Exception exception)

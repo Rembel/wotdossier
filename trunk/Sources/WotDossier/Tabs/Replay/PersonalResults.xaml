@@ -78,7 +78,7 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock Text="{Binding Path=TeamMember.FullName}" Foreground="#5C5A4A" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
-                <Image Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" HorizontalAlignment="Left"></Image>
+                <Image Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left"></Image>
                 <TextBlock Margin="40,0,0,0" Grid.Column="1" Text="{Binding Path=TeamMember.Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
                 <!--frag-->
                 <Image Grid.Column="2" Source="/Resources\Images\Replays\06s.png" Stretch="None" Style="{StaticResource FragImageStyle}" HorizontalAlignment="Left">
@@ -168,7 +168,7 @@
                         </ItemsControl.ItemsPanel>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
                                         <TextBlock Text="{Binding Name}"></TextBlock>
                                     </Image.ToolTip>
@@ -192,7 +192,7 @@
                         </ItemsControl.ItemsPanel>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalIconImageConverter.Default}}">
+                                <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
                                         <TextBlock Text="{Binding Name}"></TextBlock>
                                     </Image.ToolTip>
@@ -222,7 +222,7 @@
                     <Grid HorizontalAlignment="Stretch" Margin="10,10,10,10">
                         <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="{Binding Path=MapName, Mode=OneWay, Converter={x:Static Converters:MapNameToImageConverter.Default}}" VerticalAlignment="Top" />
                         <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="/Resources\Images\Maps\overlay.png" VerticalAlignment="Top" />
-                        <Image Margin="171,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" VerticalAlignment="Top" />
+                        <Image Margin="171,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" VerticalAlignment="Top" />
                         <StackPanel HorizontalAlignment="Left" Height="100" Margin="336,10,0,0" VerticalAlignment="Top" Width="129">
                             <TextBlock Text="{Binding FullName}" FontSize="20" Foreground="#FEC264"></TextBlock>
                             <TextBlock Text="{Binding Date}" Foreground="#959586" FontSize="12"></TextBlock>

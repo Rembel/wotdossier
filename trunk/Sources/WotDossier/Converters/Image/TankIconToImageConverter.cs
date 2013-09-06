@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using WotDossier.Common;
+using System.Windows.Media.Imaging;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Converters
 {
-    public class DateTimeToTimeConverter : IValueConverter
+    public class TankIconToImageConverter : IValueConverter
     {
-        private static readonly DateTimeToTimeConverter _defaultInstance = new DateTimeToTimeConverter();
+        private static readonly TankIconToImageConverter _default = new TankIconToImageConverter();
 
-        public static DateTimeToTimeConverter Default { get { return _defaultInstance; } }
+        public static TankIconToImageConverter Default
+        {
+            get { return _default; }
+        }
 
         /// <summary>
         /// Converts a value. 
@@ -20,11 +24,10 @@ namespace WotDossier.Converters
         /// <param name="value">The value produced by the binding source.</param><param name="targetType">The type of the binding target property.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value != null)
-            {
-                return DataFormatter.FormatTimeOfDay(DateTime.SpecifyKind((DateTime) value, DateTimeKind.Utc).ToLocalTime(), false);
-            }
-            return value;
+            TankIcon icon = (TankIcon)value;
+
+            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.iconid), UriKind.Relative));
+            return bitmapImage;
         }
 
         /// <summary>
@@ -36,7 +39,7 @@ namespace WotDossier.Converters
         /// <param name="value">The value that is produced by the binding target.</param><param name="targetType">The type to convert to.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            return value;
         }
     }
 }

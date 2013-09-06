@@ -4,12 +4,12 @@
     <DataTemplate x:Key="MasterTemplate" >
         <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        ToolTip="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToTooltipConverter.Default}}" 
-                       Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryImageConverter.Default}}" />
+                       Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToImageConverter.Default}}" />
     </DataTemplate>
     <DataTemplate x:Key="TankIconTemplate" >
         <Grid>
             <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
-            <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconImageConverter2.Default}}" />
+            <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" />
         </Grid>
     </DataTemplate>
 

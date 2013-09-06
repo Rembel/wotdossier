@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using System.Windows.Media.Imaging;
+using WotDossier.Domain;
 
 namespace WotDossier.Converters
 {
-    public class DateTimeToLocalDateTimeConverter : IValueConverter
+    public class MedalToImageConverter : IValueConverter
     {
-        private static readonly DateTimeToLocalDateTimeConverter _defaultInstance = new DateTimeToLocalDateTimeConverter();
+        private static readonly MedalToImageConverter _default = new MedalToImageConverter();
 
-        public static DateTimeToLocalDateTimeConverter Default { get { return _defaultInstance; } }
+        public static MedalToImageConverter Default
+        {
+            get { return _default; }
+        }
 
         /// <summary>
         /// Converts a value. 
@@ -19,11 +24,10 @@ namespace WotDossier.Converters
         /// <param name="value">The value produced by the binding source.</param><param name="targetType">The type of the binding target property.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
-            {
-                return DateTime.SpecifyKind((DateTime) value, DateTimeKind.Utc).ToLocalTime().ToString("MM/dd/yyyy");
-            }
-            return value;
+            Medal medal = (Medal)value;
+            string iconName = string.IsNullOrEmpty(medal.Icon) ? medal.Name : medal.Icon;
+            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Medals\{0}.png", iconName), UriKind.Relative));
+            return bitmapImage;
         }
 
         /// <summary>
@@ -35,7 +39,7 @@ namespace WotDossier.Converters
         /// <param name="value">The value that is produced by the binding target.</param><param name="targetType">The type to convert to.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            return value;
         }
     }
 }

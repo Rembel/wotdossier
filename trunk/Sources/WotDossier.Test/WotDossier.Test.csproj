@@ -197,7 +197,7 @@
     <None Include="Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Replays\0.8.8\20130831_0013_ussr-T-54_10_hills.wotreplay">
+    <None Include="Replays\0.8.8\20130908_2025_usa-M103_14_siegfried_line.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

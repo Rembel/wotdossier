@@ -11,7 +11,7 @@ namespace WotDossier.Applications.ViewModel
     {
         private List<int> _achievements;
 
-        public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle)
+        public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle, int replayPlayerTeam)
         {
             Id = vehicle.Key;
             string[] strings = vehicle.Value.vehicleType.Split(':');
@@ -63,6 +63,8 @@ namespace WotDossier.Applications.ViewModel
             TKills = vehicleResult.Value.tkills;
             TypeCompDescr = vehicleResult.Value.typeCompDescr;
             Xp = vehicleResult.Value.xp;
+
+            TeamMate = Team == replayPlayerTeam;
         }
 
         private string GetClanAbbrev(string abbrev)
@@ -135,5 +137,7 @@ namespace WotDossier.Applications.ViewModel
         public string VehicleType { get; set; }
 
         public int Squad { get; set; }
+
+        public bool TeamMate { get; set; }
     }
 }

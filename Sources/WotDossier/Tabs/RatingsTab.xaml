@@ -17,6 +17,19 @@
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
         <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+                    <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static Converters:EffectivityToColorConverter.Default}}" />
+                </Style>
+
+                <Style x:Key="DataGridCellWn6Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+                    <Setter Property="Background" Value="{Binding Path=WN6Rating, Converter={x:Static Converters:WN6ToColorConverter.Default}}" />
+                </Style>
+
+                <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+                    <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static Converters:XvmRatingToColorConverter.Default}}" />
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=OnRowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

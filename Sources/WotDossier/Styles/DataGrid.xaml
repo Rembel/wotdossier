@@ -192,8 +192,7 @@
     <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="true">
-                <Setter Property="Background" Value="#A7CDF0" />
-                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Foreground" Value="Blue" />
                 <Setter Property="BorderBrush" Value="Transparent" />
             </Trigger>
             <Trigger Property="IsKeyboardFocusWithin" Value="true">
@@ -206,18 +205,6 @@
         <Setter Property="Padding" Value="3,0,0,0" />
         <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"></Setter>
         <Setter Property="FontWeight" Value="Bold"></Setter>
-    </Style>
-
-    <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-        <Setter Property="Background" Value="{Binding Path=., Converter={x:Static Converters:EffectivityToColorConverter.Default}}" />
-    </Style>
-
-    <Style x:Key="DataGridCellWn6Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-        <Setter Property="Background" Value="{Binding Path=., Converter={x:Static Converters:WN6ToColorConverter.Default}}" />
-    </Style>
-
-    <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-        <Setter Property="Background" Value="{Binding Path=., Converter={x:Static Converters:XvmRatingToColorConverter.Default}}" />
     </Style>
 
     <!--<Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}">

@@ -11,7 +11,14 @@
             <!--BattleHero-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_BattleHero}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
-                <controls:MedalAchievement Value="{Binding Warrior}" Delta="{Binding WarriorDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}" Source="../Resources/Images/Medals/Warrior.png" />
+                <controls:MedalAchievement Value="{Binding Warrior}" Delta="{Binding WarriorDelta}"
+                                           Source="../Resources/Images/Medals/Warrior.png">
+                    <ToolTipService.ToolTip>
+                        <ToolTip>
+                            <controls:MedalTooltip Header="Воин" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}"></controls:MedalTooltip>
+                        </ToolTip>
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding Sniper}" Delta="{Binding SniperDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" Source="../Resources/Images/Medals/Sniper.png" />
                 <controls:MedalAchievement Value="{Binding Confederate}" Delta="{Binding ConfederateDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}" Source="../Resources/Images/Medals/Supporter.png" />
                 <controls:MedalAchievement Value="{Binding PatrolDuty}" Delta="{Binding PatrolDutyDelta}" ToolTip="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_PatrolDuty}" Source="../Resources/Images/Medals/Evileye.png" />

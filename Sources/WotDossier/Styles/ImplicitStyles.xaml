@@ -39,7 +39,7 @@
     <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource office2007SilverTextBox}" />
     <!--<Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource office2007SilverToggleButton}" />-->
     <!--<Style x:Key="{x:Type ToolBar}" TargetType="{x:Type ToolBar}" BasedOn="{StaticResource office2007SilverToolBar}" />-->
-    <!--<Style x:Key="{x:Type ToolTip}" TargetType="{x:Type ToolTip}" BasedOn="{StaticResource office2007SilverToolTip}" />-->
+    <Style x:Key="{x:Type ToolTip}" TargetType="{x:Type ToolTip}" BasedOn="{StaticResource office2007SilverToolTip}" />
     <!--<Style x:Key="{x:Type TreeView}" TargetType="{x:Type TreeView}" BasedOn="{StaticResource office2007SilverTreeView}" />-->
     <!--<Style x:Key="{x:Type TreeViewItem}" TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource office2007SilverTreeViewItem}" />-->
     <Style x:Key="{x:Type Window}" TargetType="{x:Type Window}" BasedOn="{StaticResource office2007SilverWindow}" />

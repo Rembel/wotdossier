@@ -24,6 +24,7 @@ namespace WotDossier.Applications.ViewModel
             pierced = vehicleDamage.Value.pierced;
             spotted = vehicleDamage.Value.spotted;
             spottedTooltip = spotted > 0 ? Resources.Resources.Tooltip_Replay_Detected : string.Empty;
+            TeamMate = teamMember.TeamMate;
         }
 
         public int crits { get; set; }
@@ -39,5 +40,6 @@ namespace WotDossier.Applications.ViewModel
         public int pierced { get; set; }
         public int spotted { get; set; }
         public string spottedTooltip { get; set; }
+        public bool TeamMate { get; set; }
     }
 }

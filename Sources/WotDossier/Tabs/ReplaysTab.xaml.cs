@@ -93,6 +93,7 @@ namespace WotDossier.Tabs
                 ReplayFolder target = (ReplayFolder) ((TreeViewItem) sender).DataContext;
                 ReplayFile replayFile = e.Data.GetData(FOLDER_DRAG_FORMAT) as ReplayFile;
                 EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Publish(new ReplayFileMoveEventArgs { TargetFolder = target, ReplayFile = replayFile });
+                e.Handled = true;
             }
         }
     }

@@ -3,6 +3,7 @@
     <ImageBrush x:Key="tooltipBrush" ImageSource="..\Resources\Images\tooltip_bg.jpg" Stretch="Fill" />
     <Style x:Key="office2007SilverToolTip" TargetType="{x:Type ToolTip}">
         <Setter Property="BorderBrush" Value="#454648"></Setter>
+        <Setter Property="Foreground" Value="#979899"></Setter>
         <Setter Property="Background" Value="{StaticResource tooltipBrush}"></Setter>
     </Style>
 </ResourceDictionary>

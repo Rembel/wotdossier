@@ -129,6 +129,9 @@
     <Compile Include="Controls\MedalAchievement.xaml.cs">
       <DependentUpon>MedalAchievement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MedalTooltip.xaml.cs">
+      <DependentUpon>MedalTooltip.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RatingRow.xaml.cs">
       <DependentUpon>RatingRow.xaml</DependentUpon>
     </Compile>
@@ -294,6 +297,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\MedalTooltip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\RatingRow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -340,6 +347,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\ContextMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ToolTip.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -661,6 +672,8 @@
     <Resource Include="Resources\Images\buttons.png" />
     <Resource Include="Resources\Images\folder.png" />
     <Resource Include="Resources\Images\selected_folder.png" />
+    <Resource Include="Resources\Images\Replays\05s.png" />
+    <Resource Include="Resources\Images\tooltip_bg.jpg" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

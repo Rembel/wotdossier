@@ -210,14 +210,14 @@ namespace WotDossier.Applications.ViewModel
                 TankIcon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
                 Date = replay.datablock_1.dateTime;
 
-                List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
-                List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
-                List<KeyValuePair<long, Vehicle>> vehicles = replay.CommandResult.Vehicles.ToList();
-                List<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v)).ToList();
-                
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
                 int myTeamId = replay.datablock_battle_result.players[playerId].team;
 
+                List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
+                List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
+                List<KeyValuePair<long, Vehicle>> vehicles = replay.CommandResult.Vehicles.ToList();
+                List<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v, myTeamId)).ToList();
+                
                 FirstTeam = teamMembers.Where(x => x.Team == myTeamId).OrderByDescending(x => x.Xp).ToList();
                 SecondTeam = teamMembers.Where(x => x.Team != myTeamId).OrderByDescending(x => x.Xp).ToList();
                 TeamMember replayUser = teamMembers.First(x => x.AccountDBID == playerId);
@@ -228,7 +228,7 @@ namespace WotDossier.Applications.ViewModel
                 FirstTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads1.IndexOf(tm.PrebattleId) + 1; });
                 SecondTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads2.IndexOf(tm.PrebattleId) + 1; });
 
-                CombatEffects = replay.datablock_battle_result.personal.details.Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key))).ToList();
+                CombatEffects = replay.datablock_battle_result.personal.details.Where(x => x.Key != replayUser.Id).Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key))).ToList();
 
                 Tank = replayUser.Tank;
                 FullName = replayUser.FullName;

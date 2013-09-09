@@ -312,7 +312,7 @@ namespace WotDossier.Dal
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = (JObject)se.Deserialize(reader);
-                if (((IDictionary<string, JToken>)parsedData).ContainsKey(REPLAY_DATABLOCK_2))
+                if (parsedData != null && ((IDictionary<string, JToken>)parsedData).ContainsKey(REPLAY_DATABLOCK_2))
                 {
                     CommandResult result = new CommandResult();
                     result.Damage = parsedData[REPLAY_DATABLOCK_2][0].ToObject<Damaged>();

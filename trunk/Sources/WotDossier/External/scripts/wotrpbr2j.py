@@ -53,8 +53,9 @@ def main():
                 myblock = f.read(int(datablockSize[i]))
                 if 'arenaUniqueID' in myblock:
                     returndict = cPickle.loads(myblock)
-#                    for mindex in enumerate(returndict['vehicles']):
-#                        del returndict['vehicles'][mindex[1]]['details']
+                    for mindex in enumerate(returndict['vehicles']):
+                        if returndict['vehicles'][mindex[1]].has_key('details'):
+                            del returndict['vehicles'][mindex[1]]['details']
 
                     blocks['datablock_battle_result'] = returndict
                 else:

@@ -76,7 +76,7 @@
                 </ContextMenu>
             </DataGrid.Resources>
             <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}" x:Name="styleForDataRow">
+                <Style TargetType="{x:Type DataGridRow}" x:Name="styleForDataRow" BasedOn="{StaticResource DataGridRowStyle}">
                     <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
                 </Style>
             </DataGrid.RowStyle>

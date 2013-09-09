@@ -24,7 +24,7 @@
             <ResourceDictionary Source="TextBox.xaml" />
             <!--<ResourceDictionary Source="ToggleButton.xaml" />-->
             <ResourceDictionary Source="ToolBar.xaml" />
-            <!--<ResourceDictionary Source="ToolTip.xaml" />-->
+            <ResourceDictionary Source="ToolTip.xaml" />
             <!--<ResourceDictionary Source="TreeView.xaml" />-->
             <ResourceDictionary Source="Window.xaml" />
             <ResourceDictionary Source="ApplicationStyle.xaml" />

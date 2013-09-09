@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
-using WotDossier.Applications.ViewModel.Rows;
 
 namespace WotDossier.Converters
 {
@@ -15,18 +14,18 @@ namespace WotDossier.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            IRating eff = value as IRating;
+            double? eff = value as double?;
             if (eff !=null)
             {
-                if (eff.KievArmorRating >= 7300)
+                if (eff >= 7300)
                     return Brushes.Purple;
-                if (eff.KievArmorRating >= 5570)
+                if (eff >= 5570)
                     return Brushes.CornflowerBlue;
-                if (eff.KievArmorRating >= 3850)
+                if (eff >= 3850)
                     return Brushes.Lime;
-                if (eff.KievArmorRating >= 2730)
+                if (eff >= 2730)
                     return Brushes.Yellow;
-                if (eff.KievArmorRating >= 2080)
+                if (eff >= 2080)
                     return Brushes.DarkOrange;
             }
             return Brushes.Red;

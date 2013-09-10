@@ -4134,7 +4134,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{E5486993-F62E-46B1-9B1E-C4C78DDD99C5}</td></row>
 		<row><td>ISUSSignature</td><td>{3944E5E9-B0BF-4D34-9524-9BC920EC0925}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewUpdateService,viewSetupDesign,viewAppFiles,viewFeatureFiles,viewProject,viewRealSetupDesign,viewSetupTypes,viewUpgradePaths,viewObjects,viewDependencies,viewCustomActions,viewDesignPatches,viewUI,viewSystemSearch,viewSupportFiles,viewInstallScriptStd,viewRelease,viewTextFiles,viewISToday,viewAppV,viewShortcuts,viewBillboards</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewUpdateService,viewSetupDesign,viewAppFiles,viewFeatureFiles,viewProject,viewRealSetupDesign,viewSetupTypes,viewUpgradePaths,viewObjects,viewDependencies,viewCustomActions,viewDesignPatches,viewUI,viewSystemSearch,viewSupportFiles,viewInstallScriptStd,viewRelease,viewTextFiles,viewISToday,viewAppV,viewShortcuts,viewBillboards,viewCE</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4799,7 +4799,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>1.7.0</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>1.8.0</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

@@ -563,9 +563,6 @@
     <EmbeddedResource Include="Data\ReplaysCatalog.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Data\TankNominalDamage.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Data\vstat.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

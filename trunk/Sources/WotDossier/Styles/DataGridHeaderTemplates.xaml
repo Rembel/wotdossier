@@ -8,7 +8,7 @@
             <Image Source="../Resources/Images/Medals/MedalBoelter.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Бёльтера" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Boelter}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Boelter}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Boelter}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -20,7 +20,7 @@
             <Image Source="../Resources/Images/Medals/MedalRadleyWalters.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Редли-Уолтерса" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_RadleyWalters}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -32,7 +32,7 @@
             <Image Source="../Resources/Images/Medals/MedalLafayettePool.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Пула" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_LafayettePool}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -44,7 +44,7 @@
             <Image Source="../Resources/Images/Medals/MedalOrlik.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Орлика" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Orlik}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Orlik}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Orlik}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -56,7 +56,7 @@
             <Image Source="../Resources/Images/Medals/MedalOskin.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Оськина" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Oskin}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Oskin}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Oskin}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -68,7 +68,7 @@
             <Image Source="../Resources/Images/Medals/MedalLehvaslaiho.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Лехвеслайхо" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Lehvaslaiho}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lehvaslaiho}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Lehvaslaiho}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -80,7 +80,7 @@
             <Image Source="../Resources/Images/Medals/MedalNikolas.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Николса" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Nikolas}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Nikolas}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Nikolas}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -92,7 +92,7 @@
             <Image Source="../Resources/Images/Medals/MedalHalonen.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Халонена" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Halonen}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Halonen}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Halonen}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -104,7 +104,7 @@
             <Image Source="../Resources/Images/Medals/MedalBurda.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Бурды" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Burda}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Burda}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Burda}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -116,7 +116,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Паскуччи" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Pascucci}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Pascucci}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Pascucci}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -131,7 +131,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Думитру" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Dumitru}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Dumitru}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Dumitru}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -146,7 +146,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Тамада Йошио" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_TamadaYoshio}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_TamadaYoshio}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_TamadaYoshio}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -161,7 +161,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Бийота" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Billotte}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -176,7 +176,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Бруно" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_BrunoPietro}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Bruno}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_BrunoPietro}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -191,7 +191,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Тарцая" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Tarczay}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Tarczay}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Tarczay}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -206,7 +206,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Колобанова" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Kolobanov}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Kolobanov}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Kolobanov}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -221,7 +221,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Фадина" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Fadin}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Fadin}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Fadin}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -236,7 +236,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Героев Расейняя" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_HeroesOfRaseiniai}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_HeroesOfRassenay}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_HeroesOfRaseiniai}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -251,7 +251,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль ДеЛагланда" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_DeLanglade}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_DeLanglade}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_DeLanglade}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -267,7 +267,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Кея" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Kay}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Kay}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Kay}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -283,7 +283,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Кариуса" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Carius}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Carius}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Carius}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -299,7 +299,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Книспеля" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Knispel}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Knispel}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Knispel}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -315,7 +315,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Поппеля" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Poppel}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Poppel}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Poppel}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -331,7 +331,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Абрамса" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Abrams}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Abrams}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Abrams}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -347,7 +347,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль ЛеКлерка" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Leclerk}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Leclerk}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Leclerk}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -363,7 +363,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Лавриненко" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Lavrinenko}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lavrinenko}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Lavrinenko}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -379,7 +379,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Медаль Экинса" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Ekins}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ekins}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_Ekins}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -395,7 +395,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Камикадзе" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Kamikaze}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Kamikaze}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Kamikaze}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -411,7 +411,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Рейдер" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Raider}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Raider}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Raider}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -427,7 +427,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Бомбардир" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Bombardier}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Bombardier}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Bombardier}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -443,7 +443,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Коса Смерти" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Reaper}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Reaper}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Reaper}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -459,7 +459,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Стрелок" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sharpshooter}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sharpshooter}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sharpshooter}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -475,7 +475,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Неуязвимый" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Invincible}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Invincible}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Invincible}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -491,7 +491,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Живучий" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Survivor}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -507,7 +507,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Гроза Мышей" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_MouseTrap}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MouseTrap}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_MouseTrap}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -523,7 +523,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Зверобой" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Hunter}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Hunter}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Hunter}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -539,7 +539,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Лев Синая" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sinai}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sinai}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sinai}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -555,7 +555,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Долина Паттонов" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_PattonValley}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_PattonValley}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_PattonValley}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -571,7 +571,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Егерь" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ranger}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -587,7 +587,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Герой битвы" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BattleHero}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_BattleHero}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BattleHero}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -603,7 +603,7 @@
             <Image Source="../Resources/Images/Medals/Warrior.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Воин" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Warrior}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -616,7 +616,7 @@
             <Image Source="../Resources/Images/Medals/Invader.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Захватчик" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Invader}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -629,7 +629,7 @@
             <Image Source="../Resources/Images/Medals/Sniper.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Снайпер" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -642,7 +642,7 @@
             <Image Source="../Resources/Images/Medals/Defender.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Защитник" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Defender}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -655,7 +655,7 @@
             <Image Source="../Resources/Images/Medals/Steelwall.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Стальная стена" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_SteelWall}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -668,7 +668,7 @@
             <Image Source="../Resources/Images/Medals/Supporter.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Поддержка" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Confederate}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -681,7 +681,7 @@
             <Image Source="../Resources/Images/Medals/Scout.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Разведчик" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Scout}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -694,7 +694,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Дозорный" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_PatrolDuty}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_PatrolDuty}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_PatrolDuty}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -710,7 +710,7 @@
             <Image Source="../Resources/Images/Medals/MedalBrothersInArms.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Братья по оружию" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_BrothersInArms}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -723,7 +723,7 @@
             <Image Source="../Resources/Images/Medals/MedalCrucialContribution.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Решающий вклад" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CrucialContribution}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -736,7 +736,7 @@
             <Image>
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Невозмутимый" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CoolHeaded}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
                 <Image.Source>
@@ -752,7 +752,7 @@
             <Image Source="../Resources/Images/Medals/Lucky.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Счастливчик" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lucky}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -765,7 +765,7 @@
             <Image Source="../Resources/Images/Medals/Sparta.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Спартанец" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Spartan}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -778,7 +778,7 @@
             <Image Source="../Resources/Images/Medals/ArmorPiercer.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="Бронебойщик" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MasterGunner}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>

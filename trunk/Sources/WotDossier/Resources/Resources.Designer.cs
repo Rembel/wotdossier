@@ -116,6 +116,123 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average Damage.
+        /// </summary>
+        public static string Chart_AvgDamage {
+            get {
+                return ResourceManager.GetString("Chart_AvgDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Spotted.
+        /// </summary>
+        public static string Chart_AvgSpotted {
+            get {
+                return ResourceManager.GetString("Chart_AvgSpotted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average XP.
+        /// </summary>
+        public static string Chart_AvgXp {
+            get {
+                return ResourceManager.GetString("Chart_AvgXp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effectivity by Tier.
+        /// </summary>
+        public static string Chart_EffByTier {
+            get {
+                return ResourceManager.GetString("Chart_EffByTier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effectivity by Type.
+        /// </summary>
+        public static string Chart_EffByType {
+            get {
+                return ResourceManager.GetString("Chart_EffByType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effectivity Rating.
+        /// </summary>
+        public static string Chart_EffectivityRating {
+            get {
+                return ResourceManager.GetString("Chart_EffectivityRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kill/Death Ratio.
+        /// </summary>
+        public static string Chart_KillDeathRatio {
+            get {
+                return ResourceManager.GetString("Chart_KillDeathRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survive %.
+        /// </summary>
+        public static string Chart_SurvivePercent {
+            get {
+                return ResourceManager.GetString("Chart_SurvivePercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles:.
+        /// </summary>
+        public static string Chart_Tooltip_Battles {
+            get {
+                return ResourceManager.GetString("Chart_Tooltip_Battles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tank:.
+        /// </summary>
+        public static string Chart_Tooltip_Tank {
+            get {
+                return ResourceManager.GetString("Chart_Tooltip_Tank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win %:.
+        /// </summary>
+        public static string Chart_Tooltip_WinPercent {
+            get {
+                return ResourceManager.GetString("Chart_Tooltip_WinPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win %.
+        /// </summary>
+        public static string Chart_WinPercent {
+            get {
+                return ResourceManager.GetString("Chart_WinPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rating WN6.
+        /// </summary>
+        public static string Chart_WN6Rating {
+            get {
+                return ResourceManager.GetString("Chart_WN6Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t get or save player clan icon from server.
         /// </summary>
         public static string ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server {
@@ -2061,6 +2178,483 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abrams&apos; Medal.
+        /// </summary>
+        public static string Medal_Abrams {
+            get {
+                return ResourceManager.GetString("Medal_Abrams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle Hero.
+        /// </summary>
+        public static string Medal_BattleHero {
+            get {
+                return ResourceManager.GetString("Medal_BattleHero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Billotte&apos;s Medal.
+        /// </summary>
+        public static string Medal_Billotte {
+            get {
+                return ResourceManager.GetString("Medal_Billotte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bölter&apos;s Medal.
+        /// </summary>
+        public static string Medal_Boelter {
+            get {
+                return ResourceManager.GetString("Medal_Boelter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bombardier.
+        /// </summary>
+        public static string Medal_Bombardier {
+            get {
+                return ResourceManager.GetString("Medal_Bombardier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brothers in Arms.
+        /// </summary>
+        public static string Medal_BrothersInArms {
+            get {
+                return ResourceManager.GetString("Medal_BrothersInArms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bruno&apos;s Medal.
+        /// </summary>
+        public static string Medal_Bruno {
+            get {
+                return ResourceManager.GetString("Medal_Bruno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Burda&apos;s Medal.
+        /// </summary>
+        public static string Medal_Burda {
+            get {
+                return ResourceManager.GetString("Medal_Burda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carius&apos; Medal.
+        /// </summary>
+        public static string Medal_Carius {
+            get {
+                return ResourceManager.GetString("Medal_Carius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confederate.
+        /// </summary>
+        public static string Medal_Confederate {
+            get {
+                return ResourceManager.GetString("Medal_Confederate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cool Headed.
+        /// </summary>
+        public static string Medal_CoolHeaded {
+            get {
+                return ResourceManager.GetString("Medal_CoolHeaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crucial Contribution.
+        /// </summary>
+        public static string Medal_CrucialContribution {
+            get {
+                return ResourceManager.GetString("Medal_CrucialContribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defender.
+        /// </summary>
+        public static string Medal_Defender {
+            get {
+                return ResourceManager.GetString("Medal_Defender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to De Langlade&apos;s Medal.
+        /// </summary>
+        public static string Medal_DeLanglade {
+            get {
+                return ResourceManager.GetString("Medal_DeLanglade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dumitru&apos;s Medal.
+        /// </summary>
+        public static string Medal_Dumitru {
+            get {
+                return ResourceManager.GetString("Medal_Dumitru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ekins&apos; Medal.
+        /// </summary>
+        public static string Medal_Ekins {
+            get {
+                return ResourceManager.GetString("Medal_Ekins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fadin&apos;s Medal.
+        /// </summary>
+        public static string Medal_Fadin {
+            get {
+                return ResourceManager.GetString("Medal_Fadin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Halonen&apos;s Medal.
+        /// </summary>
+        public static string Medal_Halonen {
+            get {
+                return ResourceManager.GetString("Medal_Halonen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raseiniai Heroes&apos; Medal.
+        /// </summary>
+        public static string Medal_HeroesOfRassenay {
+            get {
+                return ResourceManager.GetString("Medal_HeroesOfRassenay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunter.
+        /// </summary>
+        public static string Medal_Hunter {
+            get {
+                return ResourceManager.GetString("Medal_Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invader.
+        /// </summary>
+        public static string Medal_Invader {
+            get {
+                return ResourceManager.GetString("Medal_Invader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invincible.
+        /// </summary>
+        public static string Medal_Invincible {
+            get {
+                return ResourceManager.GetString("Medal_Invincible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kamikaze.
+        /// </summary>
+        public static string Medal_Kamikaze {
+            get {
+                return ResourceManager.GetString("Medal_Kamikaze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kay&apos;s Medal.
+        /// </summary>
+        public static string Medal_Kay {
+            get {
+                return ResourceManager.GetString("Medal_Kay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Knispel&apos;s Medal.
+        /// </summary>
+        public static string Medal_Knispel {
+            get {
+                return ResourceManager.GetString("Medal_Knispel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kolobanov&apos;s Medal.
+        /// </summary>
+        public static string Medal_Kolobanov {
+            get {
+                return ResourceManager.GetString("Medal_Kolobanov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pool&apos;s Medal.
+        /// </summary>
+        public static string Medal_LafayettePool {
+            get {
+                return ResourceManager.GetString("Medal_LafayettePool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lavrinenko&apos;s Medal.
+        /// </summary>
+        public static string Medal_Lavrinenko {
+            get {
+                return ResourceManager.GetString("Medal_Lavrinenko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leclerc&apos;s Medal.
+        /// </summary>
+        public static string Medal_Leclerk {
+            get {
+                return ResourceManager.GetString("Medal_Leclerk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lehväslaiho&apos;s Medal.
+        /// </summary>
+        public static string Medal_Lehvaslaiho {
+            get {
+                return ResourceManager.GetString("Medal_Lehvaslaiho", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lucky.
+        /// </summary>
+        public static string Medal_Lucky {
+            get {
+                return ResourceManager.GetString("Medal_Lucky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master Gunner.
+        /// </summary>
+        public static string Medal_MasterGunner {
+            get {
+                return ResourceManager.GetString("Medal_MasterGunner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mouse Trap.
+        /// </summary>
+        public static string Medal_MouseTrap {
+            get {
+                return ResourceManager.GetString("Medal_MouseTrap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicols&apos;s Medal.
+        /// </summary>
+        public static string Medal_Nikolas {
+            get {
+                return ResourceManager.GetString("Medal_Nikolas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orlik&apos;s Medal.
+        /// </summary>
+        public static string Medal_Orlik {
+            get {
+                return ResourceManager.GetString("Medal_Orlik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oskin&apos;s Medal.
+        /// </summary>
+        public static string Medal_Oskin {
+            get {
+                return ResourceManager.GetString("Medal_Oskin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pascucci&apos;s Medal.
+        /// </summary>
+        public static string Medal_Pascucci {
+            get {
+                return ResourceManager.GetString("Medal_Pascucci", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patrol Duty.
+        /// </summary>
+        public static string Medal_PatrolDuty {
+            get {
+                return ResourceManager.GetString("Medal_PatrolDuty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valley of Pattons.
+        /// </summary>
+        public static string Medal_PattonValley {
+            get {
+                return ResourceManager.GetString("Medal_PattonValley", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Popel&apos;s Medal.
+        /// </summary>
+        public static string Medal_Poppel {
+            get {
+                return ResourceManager.GetString("Medal_Poppel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radley-Walters&apos;s Medal.
+        /// </summary>
+        public static string Medal_RadleyWalters {
+            get {
+                return ResourceManager.GetString("Medal_RadleyWalters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raider.
+        /// </summary>
+        public static string Medal_Raider {
+            get {
+                return ResourceManager.GetString("Medal_Raider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ranger.
+        /// </summary>
+        public static string Medal_Ranger {
+            get {
+                return ResourceManager.GetString("Medal_Ranger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reaper.
+        /// </summary>
+        public static string Medal_Reaper {
+            get {
+                return ResourceManager.GetString("Medal_Reaper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scout.
+        /// </summary>
+        public static string Medal_Scout {
+            get {
+                return ResourceManager.GetString("Medal_Scout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharpshooter.
+        /// </summary>
+        public static string Medal_Sharpshooter {
+            get {
+                return ResourceManager.GetString("Medal_Sharpshooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Lion of Sinai.
+        /// </summary>
+        public static string Medal_Sinai {
+            get {
+                return ResourceManager.GetString("Medal_Sinai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sniper.
+        /// </summary>
+        public static string Medal_Sniper {
+            get {
+                return ResourceManager.GetString("Medal_Sniper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spartan.
+        /// </summary>
+        public static string Medal_Spartan {
+            get {
+                return ResourceManager.GetString("Medal_Spartan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Steel Wall.
+        /// </summary>
+        public static string Medal_SteelWall {
+            get {
+                return ResourceManager.GetString("Medal_SteelWall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tamada Yoshio&apos;s Medal.
+        /// </summary>
+        public static string Medal_TamadaYoshio {
+            get {
+                return ResourceManager.GetString("Medal_TamadaYoshio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarczay&apos;s Medal.
+        /// </summary>
+        public static string Medal_Tarczay {
+            get {
+                return ResourceManager.GetString("Medal_Tarczay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Gun.
+        /// </summary>
+        public static string Medal_Warrior {
+            get {
+                return ResourceManager.GetString("Medal_Warrior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string MenuItem_Header_About {
@@ -2210,6 +2804,15 @@ namespace WotDossier.Resources {
         public static string Settings_Save {
             get {
                 return ResourceManager.GetString("Settings_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survivor.
+        /// </summary>
+        public static string Survivor {
+            get {
+                return ResourceManager.GetString("Survivor", resourceCulture);
             }
         }
         

@@ -61,6 +61,46 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battles: {0}
+        ///Avg Spotted: {1:0.00}.
+        /// </summary>
+        internal static string Chart_Tooltip_AvgSpotted {
+            get {
+                return ResourceManager.GetString("Chart_Tooltip_AvgSpotted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles: {0}
+        ///Avg XP: {1:0.00}.
+        /// </summary>
+        internal static string Chart_Tooltip_AvgXp {
+            get {
+                return ResourceManager.GetString("Chart_Tooltip_AvgXp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles: {0}
+        ///Ratio: {1:0.00}.
+        /// </summary>
+        internal static string Chart_Tooltip_KillDeathRatio {
+            get {
+                return ResourceManager.GetString("Chart_Tooltip_KillDeathRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles: {0}
+        ///Survive %: {1:0.00}.
+        /// </summary>
+        internal static string Chart_Tooltip_Survive {
+            get {
+                return ResourceManager.GetString("Chart_Tooltip_Survive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Avg damage.
         /// </summary>
         internal static string ChartLegend_AvgDamage {

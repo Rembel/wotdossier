@@ -1336,4 +1336,205 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Settings_Period" xml:space="preserve">
     <value>Период</value>
   </data>
+  <data name="Chart_EffByType" xml:space="preserve">
+    <value>Эффективность по типам техники</value>
+  </data>
+  <data name="Chart_EffByTier" xml:space="preserve">
+    <value>Эффективность по уровням</value>
+  </data>
+  <data name="Chart_EffectivityRating" xml:space="preserve">
+    <value>Рейтинг Эффективности</value>
+  </data>
+  <data name="Chart_WN6Rating" xml:space="preserve">
+    <value>Рейтинг WN6</value>
+  </data>
+  <data name="Chart_WinPercent" xml:space="preserve">
+    <value>Процент побед</value>
+  </data>
+  <data name="Chart_SurvivePercent" xml:space="preserve">
+    <value>Выжил в боях %</value>
+  </data>
+  <data name="Chart_AvgXp" xml:space="preserve">
+    <value>Средний опыт за бой</value>
+  </data>
+  <data name="Chart_AvgDamage" xml:space="preserve">
+    <value>Средний урон</value>
+  </data>
+  <data name="Chart_KillDeathRatio" xml:space="preserve">
+    <value>Отношение уничтожил/убит</value>
+  </data>
+  <data name="Medal_Warrior" xml:space="preserve">
+    <value>Воин</value>
+  </data>
+  <data name="Medal_Sniper" xml:space="preserve">
+    <value>Снайпер</value>
+  </data>
+  <data name="Medal_Confederate" xml:space="preserve">
+    <value>Поддержка</value>
+  </data>
+  <data name="Medal_PatrolDuty" xml:space="preserve">
+    <value>Дозорный</value>
+  </data>
+  <data name="Medal_SteelWall" xml:space="preserve">
+    <value>Стальная Стена</value>
+  </data>
+  <data name="Medal_Defender" xml:space="preserve">
+    <value>Защитник</value>
+  </data>
+  <data name="Medal_Invader" xml:space="preserve">
+    <value>Захватчик</value>
+  </data>
+  <data name="Medal_Scout" xml:space="preserve">
+    <value>Разведчик</value>
+  </data>
+  <data name="Medal_Ranger" xml:space="preserve">
+    <value>Егерь</value>
+  </data>
+  <data name="Medal_CoolHeaded" xml:space="preserve">
+    <value>Невозмутимый</value>
+  </data>
+  <data name="Medal_Spartan" xml:space="preserve">
+    <value>Спартанец</value>
+  </data>
+  <data name="Medal_Lucky" xml:space="preserve">
+    <value>Счастливчик</value>
+  </data>
+  <data name="Medal_Sharpshooter" xml:space="preserve">
+    <value>Стрелок</value>
+  </data>
+  <data name="Medal_MasterGunner" xml:space="preserve">
+    <value>Бронебойщик</value>
+  </data>
+  <data name="Medal_Sinai" xml:space="preserve">
+    <value>Лев Синая</value>
+  </data>
+  <data name="Medal_Hunter" xml:space="preserve">
+    <value>Зверобой</value>
+  </data>
+  <data name="Medal_PattonValley" xml:space="preserve">
+    <value>Долина Паттонов</value>
+  </data>
+  <data name="Medal_MouseTrap" xml:space="preserve">
+    <value>Гроза Мышей</value>
+  </data>
+  <data name="Medal_Reaper" xml:space="preserve">
+    <value>Коса Смерти</value>
+  </data>
+  <data name="Medal_Bombardier" xml:space="preserve">
+    <value>Бомбардир</value>
+  </data>
+  <data name="Medal_Raider" xml:space="preserve">
+    <value>Рейдер</value>
+  </data>
+  <data name="Medal_Invincible" xml:space="preserve">
+    <value>Неуязвимый</value>
+  </data>
+  <data name="Medal_Kamikaze" xml:space="preserve">
+    <value>Камикадзе</value>
+  </data>
+  <data name="Survivor" xml:space="preserve">
+    <value>Живучий</value>
+  </data>
+  <data name="Medal_Billotte" xml:space="preserve">
+    <value>Медаль Бийота</value>
+  </data>
+  <data name="Medal_Bruno" xml:space="preserve">
+    <value>Медаль Бруно</value>
+  </data>
+  <data name="Medal_Tarczay" xml:space="preserve">
+    <value>Медаль Тарцая</value>
+  </data>
+  <data name="Medal_Fadin" xml:space="preserve">
+    <value>Медаль Фадина</value>
+  </data>
+  <data name="Medal_Boelter" xml:space="preserve">
+    <value>Медаль Бёлтера</value>
+  </data>
+  <data name="Medal_TamadaYoshio" xml:space="preserve">
+    <value>Медаль Тамада Йошио</value>
+  </data>
+  <data name="Medal_Pascucci" xml:space="preserve">
+    <value>Медаль Паскуччи</value>
+  </data>
+  <data name="Medal_Dumitru" xml:space="preserve">
+    <value>Медаль Думитру</value>
+  </data>
+  <data name="Medal_Burda" xml:space="preserve">
+    <value>Медаль Бурды</value>
+  </data>
+  <data name="Medal_DeLanglade" xml:space="preserve">
+    <value>Медаль Де Лагланда</value>
+  </data>
+  <data name="Medal_Lehvaslaiho" xml:space="preserve">
+    <value>Медаль Лехвеслайхо</value>
+  </data>
+  <data name="Medal_Halonen" xml:space="preserve">
+    <value>Медаль Халонена</value>
+  </data>
+  <data name="Medal_Oskin" xml:space="preserve">
+    <value>Медаль Оськина</value>
+  </data>
+  <data name="Medal_Orlik" xml:space="preserve">
+    <value>Медаль Орлика</value>
+  </data>
+  <data name="Medal_Nikolas" xml:space="preserve">
+    <value>Медаль Николса</value>
+  </data>
+  <data name="Medal_Kolobanov" xml:space="preserve">
+    <value>Медаль Колобанова</value>
+  </data>
+  <data name="Medal_BrothersInArms" xml:space="preserve">
+    <value>Братья по оружию</value>
+  </data>
+  <data name="Medal_CrucialContribution" xml:space="preserve">
+    <value>Решающий вклад</value>
+  </data>
+  <data name="Medal_RadleyWalters" xml:space="preserve">
+    <value>Медаль Редли-Уолтерса</value>
+  </data>
+  <data name="Medal_LafayettePool" xml:space="preserve">
+    <value>Медаль Пула</value>
+  </data>
+  <data name="Medal_HeroesOfRassenay" xml:space="preserve">
+    <value>Медаль Героев Расейняи</value>
+  </data>
+  <data name="Medal_BattleHero" xml:space="preserve">
+    <value>Герой битвы</value>
+  </data>
+  <data name="Medal_Kay" xml:space="preserve">
+    <value>Медаль Кея</value>
+  </data>
+  <data name="Medal_Carius" xml:space="preserve">
+    <value>Медаль Кариуса</value>
+  </data>
+  <data name="Medal_Knispel" xml:space="preserve">
+    <value>Медаль Книспеля</value>
+  </data>
+  <data name="Medal_Poppel" xml:space="preserve">
+    <value>Медаль Поппеля</value>
+  </data>
+  <data name="Medal_Abrams" xml:space="preserve">
+    <value>Медаль Абрамса</value>
+  </data>
+  <data name="Medal_Leclerk" xml:space="preserve">
+    <value>Медаль ЛеКлерка</value>
+  </data>
+  <data name="Medal_Lavrinenko" xml:space="preserve">
+    <value>Медаль Лавриненко</value>
+  </data>
+  <data name="Medal_Ekins" xml:space="preserve">
+    <value>Медаль Экинса</value>
+  </data>
+  <data name="Chart_Tooltip_Battles" xml:space="preserve">
+    <value>Боев:</value>
+  </data>
+  <data name="Chart_Tooltip_Tank" xml:space="preserve">
+    <value>Танк:</value>
+  </data>
+  <data name="Chart_Tooltip_WinPercent" xml:space="preserve">
+    <value>% побед:</value>
+  </data>
+  <data name="Chart_AvgSpotted" xml:space="preserve">
+    <value>Обнаружено в среднем за бой</value>
+  </data>
 </root>

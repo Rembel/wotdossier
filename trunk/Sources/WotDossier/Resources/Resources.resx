@@ -1151,4 +1151,205 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Settings_Period" xml:space="preserve">
     <value>Period</value>
   </data>
+  <data name="Chart_EffByType" xml:space="preserve">
+    <value>Effectivity by Type</value>
+  </data>
+  <data name="Chart_EffByTier" xml:space="preserve">
+    <value>Effectivity by Tier</value>
+  </data>
+  <data name="Chart_EffectivityRating" xml:space="preserve">
+    <value>Effectivity Rating</value>
+  </data>
+  <data name="Chart_WN6Rating" xml:space="preserve">
+    <value>Rating WN6</value>
+  </data>
+  <data name="Chart_WinPercent" xml:space="preserve">
+    <value>Win %</value>
+  </data>
+  <data name="Chart_SurvivePercent" xml:space="preserve">
+    <value>Survive %</value>
+  </data>
+  <data name="Chart_AvgXp" xml:space="preserve">
+    <value>Average XP</value>
+  </data>
+  <data name="Chart_AvgDamage" xml:space="preserve">
+    <value>Average Damage</value>
+  </data>
+  <data name="Chart_KillDeathRatio" xml:space="preserve">
+    <value>Kill/Death Ratio</value>
+  </data>
+  <data name="Medal_Warrior" xml:space="preserve">
+    <value>Top Gun</value>
+  </data>
+  <data name="Medal_Sniper" xml:space="preserve">
+    <value>Sniper</value>
+  </data>
+  <data name="Medal_Confederate" xml:space="preserve">
+    <value>Confederate</value>
+  </data>
+  <data name="Medal_PatrolDuty" xml:space="preserve">
+    <value>Patrol Duty</value>
+  </data>
+  <data name="Medal_SteelWall" xml:space="preserve">
+    <value>Steel Wall</value>
+  </data>
+  <data name="Medal_Defender" xml:space="preserve">
+    <value>Defender</value>
+  </data>
+  <data name="Medal_Invader" xml:space="preserve">
+    <value>Invader</value>
+  </data>
+  <data name="Medal_Scout" xml:space="preserve">
+    <value>Scout</value>
+  </data>
+  <data name="Medal_Ranger" xml:space="preserve">
+    <value>Ranger</value>
+  </data>
+  <data name="Medal_CoolHeaded" xml:space="preserve">
+    <value>Cool Headed</value>
+  </data>
+  <data name="Medal_Spartan" xml:space="preserve">
+    <value>Spartan</value>
+  </data>
+  <data name="Medal_Lucky" xml:space="preserve">
+    <value>Lucky</value>
+  </data>
+  <data name="Medal_Sharpshooter" xml:space="preserve">
+    <value>Sharpshooter</value>
+  </data>
+  <data name="Medal_MasterGunner" xml:space="preserve">
+    <value>Master Gunner</value>
+  </data>
+  <data name="Medal_Sinai" xml:space="preserve">
+    <value>The Lion of Sinai</value>
+  </data>
+  <data name="Medal_Hunter" xml:space="preserve">
+    <value>Hunter</value>
+  </data>
+  <data name="Medal_PattonValley" xml:space="preserve">
+    <value>Valley of Pattons</value>
+  </data>
+  <data name="Medal_MouseTrap" xml:space="preserve">
+    <value>Mouse Trap</value>
+  </data>
+  <data name="Medal_Reaper" xml:space="preserve">
+    <value>Reaper</value>
+  </data>
+  <data name="Medal_Bombardier" xml:space="preserve">
+    <value>Bombardier</value>
+  </data>
+  <data name="Medal_Raider" xml:space="preserve">
+    <value>Raider</value>
+  </data>
+  <data name="Medal_Invincible" xml:space="preserve">
+    <value>Invincible</value>
+  </data>
+  <data name="Medal_Kamikaze" xml:space="preserve">
+    <value>Kamikaze</value>
+  </data>
+  <data name="Survivor" xml:space="preserve">
+    <value>Survivor</value>
+  </data>
+  <data name="Medal_Billotte" xml:space="preserve">
+    <value>Billotte's Medal</value>
+  </data>
+  <data name="Medal_Bruno" xml:space="preserve">
+    <value>Bruno's Medal</value>
+  </data>
+  <data name="Medal_Tarczay" xml:space="preserve">
+    <value>Tarczay's Medal</value>
+  </data>
+  <data name="Medal_Fadin" xml:space="preserve">
+    <value>Fadin's Medal</value>
+  </data>
+  <data name="Medal_Boelter" xml:space="preserve">
+    <value>Bölter's Medal</value>
+  </data>
+  <data name="Medal_TamadaYoshio" xml:space="preserve">
+    <value>Tamada Yoshio's Medal</value>
+  </data>
+  <data name="Medal_Pascucci" xml:space="preserve">
+    <value>Pascucci's Medal</value>
+  </data>
+  <data name="Medal_Dumitru" xml:space="preserve">
+    <value>Dumitru's Medal</value>
+  </data>
+  <data name="Medal_Burda" xml:space="preserve">
+    <value>Burda's Medal</value>
+  </data>
+  <data name="Medal_DeLanglade" xml:space="preserve">
+    <value>De Langlade's Medal</value>
+  </data>
+  <data name="Medal_Lehvaslaiho" xml:space="preserve">
+    <value>Lehväslaiho's Medal</value>
+  </data>
+  <data name="Medal_Halonen" xml:space="preserve">
+    <value>Halonen's Medal</value>
+  </data>
+  <data name="Medal_Oskin" xml:space="preserve">
+    <value>Oskin's Medal</value>
+  </data>
+  <data name="Medal_Orlik" xml:space="preserve">
+    <value>Orlik's Medal</value>
+  </data>
+  <data name="Medal_Nikolas" xml:space="preserve">
+    <value>Nicols's Medal</value>
+  </data>
+  <data name="Medal_Kolobanov" xml:space="preserve">
+    <value>Kolobanov's Medal</value>
+  </data>
+  <data name="Medal_BrothersInArms" xml:space="preserve">
+    <value>Brothers in Arms</value>
+  </data>
+  <data name="Medal_CrucialContribution" xml:space="preserve">
+    <value>Crucial Contribution</value>
+  </data>
+  <data name="Medal_RadleyWalters" xml:space="preserve">
+    <value>Radley-Walters's Medal</value>
+  </data>
+  <data name="Medal_LafayettePool" xml:space="preserve">
+    <value>Pool's Medal</value>
+  </data>
+  <data name="Medal_HeroesOfRassenay" xml:space="preserve">
+    <value>Raseiniai Heroes' Medal</value>
+  </data>
+  <data name="Medal_BattleHero" xml:space="preserve">
+    <value>Battle Hero</value>
+  </data>
+  <data name="Medal_Kay" xml:space="preserve">
+    <value>Kay's Medal</value>
+  </data>
+  <data name="Medal_Carius" xml:space="preserve">
+    <value>Carius' Medal</value>
+  </data>
+  <data name="Medal_Knispel" xml:space="preserve">
+    <value>Knispel's Medal</value>
+  </data>
+  <data name="Medal_Poppel" xml:space="preserve">
+    <value>Popel's Medal</value>
+  </data>
+  <data name="Medal_Abrams" xml:space="preserve">
+    <value>Abrams' Medal</value>
+  </data>
+  <data name="Medal_Leclerk" xml:space="preserve">
+    <value>Leclerc's Medal</value>
+  </data>
+  <data name="Medal_Lavrinenko" xml:space="preserve">
+    <value>Lavrinenko's Medal</value>
+  </data>
+  <data name="Medal_Ekins" xml:space="preserve">
+    <value>Ekins' Medal</value>
+  </data>
+  <data name="Chart_Tooltip_Battles" xml:space="preserve">
+    <value>Battles:</value>
+  </data>
+  <data name="Chart_Tooltip_Tank" xml:space="preserve">
+    <value>Tank:</value>
+  </data>
+  <data name="Chart_Tooltip_WinPercent" xml:space="preserve">
+    <value>Win %:</value>
+  </data>
+  <data name="Chart_AvgSpotted" xml:space="preserve">
+    <value>Average Spotted</value>
+  </data>
 </root>

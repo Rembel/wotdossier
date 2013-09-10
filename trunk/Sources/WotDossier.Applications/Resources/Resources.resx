@@ -234,4 +234,20 @@ Win percent: {1:0.00}</value>
   <data name="StatisticPeriod_Custom" xml:space="preserve">
     <value>Custom</value>
   </data>
+  <data name="Chart_Tooltip_Survive" xml:space="preserve">
+    <value>Battles: {0}
+Survive %: {1:0.00}</value>
+  </data>
+  <data name="Chart_Tooltip_KillDeathRatio" xml:space="preserve">
+    <value>Battles: {0}
+Ratio: {1:0.00}</value>
+  </data>
+  <data name="Chart_Tooltip_AvgXp" xml:space="preserve">
+    <value>Battles: {0}
+Avg XP: {1:0.00}</value>
+  </data>
+  <data name="Chart_Tooltip_AvgSpotted" xml:space="preserve">
+    <value>Battles: {0}
+Avg Spotted: {1:0.00}</value>
+  </data>
 </root>

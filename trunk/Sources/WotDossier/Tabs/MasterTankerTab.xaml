@@ -9,10 +9,10 @@
     <Grid>
         <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding MasterTanker}" VerticalAlignment="Stretch" Name="dgMasterTanker" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="Auto" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridCheckBoxColumn Header="{x:Static Resources:Resources.Column_MasterTanker_IsPremium}" Binding="{Binding IsPremium}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="{x:Static Resources:Resources.Column_MasterTanker_IsPremium}" Binding="{Binding IsPremium}" ElementStyle="{StaticResource CCheckBox}"></DataGridCheckBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

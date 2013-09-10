@@ -162,6 +162,10 @@ namespace WotDossier.Applications.ViewModel.Rows
         public TimeSpan AverageBattleTime { get; set; }
         #endregion
 
+        public int OriginalXP { get; set; }
+
+        public int BattlesCount88 { get; set; }
+
         public TankStatisticRowViewModel(TankJson tank)
             : this(tank, new List<TankJson>())
         {
@@ -180,6 +184,9 @@ namespace WotDossier.Applications.ViewModel.Rows
             TankId = tank.Common.tankid;
             TankUniqueId = tank.UniqueId();
             TankFrags = tank.Frags;
+            OriginalXP = tank.Tankdata.originalXP;
+            int battlesCountBefore88 = tank.Tankdata.battlesCountBefore8_8 != 0 ? tank.Tankdata.battlesCountBefore8_8 : tank.Tankdata.battlesCount;
+            BattlesCount88 = tank.Tankdata.battlesCount - battlesCountBefore88;
 
             #region [ ITankRowBattleAwards ]
             BattleHero = tank.Battle.battleHeroes;

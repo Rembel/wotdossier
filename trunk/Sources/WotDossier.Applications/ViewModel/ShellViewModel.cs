@@ -538,6 +538,7 @@ namespace WotDossier.Applications.ViewModel
                             InitTanksStatistic(playerStat, tanks);
 
                             PlayerStatistic.PerformanceRating = GetPerformanceRating();
+                            PlayerStatistic.RBR = GetRBR();
 
                             ProgressView.Report(bw, 50, string.Empty);
 
@@ -561,6 +562,17 @@ namespace WotDossier.Applications.ViewModel
                 (x, y) => x.BattlesCount * y.nominal_damage).Sum();
 
             return RatingHelper.PerformanceRating(PlayerStatistic.BattlesCount, PlayerStatistic.Wins, damage, PlayerStatistic.DamageDealt, PlayerStatistic.Tier);
+        }
+
+        private double GetRBR()
+        {
+            int battlesCount88 = _tanks.Sum(x => x.BattlesCount88);
+            int xp88 = _tanks.Sum(x => x.OriginalXP);
+            double avgXP88 = xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1);
+
+            double rbr = RatingHelper.RBR(PlayerStatistic.BattlesCount, battlesCount88, PlayerStatistic.Wins / (double)PlayerStatistic.BattlesCount,
+                PlayerStatistic.SurvivedBattles / (double)PlayerStatistic.BattlesCount, PlayerStatistic.HitsPercents / 100.0, PlayerStatistic.AvgDamageDealt, avgXP88);
+            return rbr;
         }
 
         private PlayerStat LoadPlayerStatistic(AppSettings settings)

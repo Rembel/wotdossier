@@ -36,6 +36,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="25"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -179,6 +180,10 @@
             <!--Noobmeter Performance Rating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="26" Grid.Column="0" Text="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}"></TextBlock>
             <TextBlock Foreground="{Binding Path=PerformanceRating, Converter={x:Static Converters:PowerRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="1" Text="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"></TextBlock>
+            <!--<TextBlock Foreground="{Binding PerformanceRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="2" Text="{Binding PerformanceRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
+            <!--Rating WG-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="27" Grid.Column="0" Text="Rating WG"></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="27" Grid.Column="1" Text="{Binding RBR, StringFormat='### ### ### ###.0'}"></TextBlock>
             <!--<TextBlock Foreground="{Binding PerformanceRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="2" Text="{Binding PerformanceRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
         </Grid>
     </Grid>

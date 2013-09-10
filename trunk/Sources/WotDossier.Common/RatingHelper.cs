@@ -127,5 +127,13 @@ def = dropped_capture_points / bc (среднее количество очко�
             // with "seal-clubbing" penalties applied
             return performanceRating;
         }
+
+        public static double RBR(double battles, double battles88, double wins, double survive, double hit, double dmg, double avgXp88)
+        {
+            return (2/(1 + Math.Exp(-battles/4500)) - 1)
+                   *
+                   (3000/(1 + Math.Exp((0.5 - wins)/0.03)) + 7000*Math.Max(0, survive - 0.2) + 6000*Math.Max(0, hit - 0.45) + 5*(2/(1+Math.Exp(-battles88/500)) - 1)
+                   * Math.Max(0, avgXp88 - 160) + Math.Max(0, dmg - 170));
+        }
     }
 }

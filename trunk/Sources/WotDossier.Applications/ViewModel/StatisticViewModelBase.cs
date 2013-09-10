@@ -202,6 +202,8 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private double? _performanceRating;
+        private double? _rbr;
+
         public double? PerformanceRating
         {
             get { return _performanceRating; }
@@ -209,6 +211,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _performanceRating = value;
                 OnPropertyChanged("PerformanceRating");
+            }
+        }
+
+        public double? RBR
+        {
+            get { return _rbr; }
+            set
+            {
+                _rbr = value;
+                OnPropertyChanged("RBR");
             }
         }
 

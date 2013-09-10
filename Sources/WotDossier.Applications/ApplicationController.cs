@@ -37,11 +37,7 @@ namespace WotDossier.Applications
 
         public void Run()
         {
-            InitDatabase();
             InitReplaysCatalog();
-
-            DatabaseManager manager = new DatabaseManager();
-            manager.Update();
 
             InitShellViewModel(_shellViewModel);
             _shellViewModel.Show();
@@ -54,21 +50,6 @@ namespace WotDossier.Applications
         private void Close()
         {
             _shellViewModel.Close();
-        }
-
-        public void InitDatabase()
-        {
-            string currentDirectory = Folder.AssemblyDirectory();
-            string path = Path.Combine(currentDirectory, @"Data\dossier.sdf");
-            if (!File.Exists(path))
-            {
-                byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.init.sdf", Assembly.GetEntryAssembly());
-                using (FileStream fileStream = File.OpenWrite(path))
-                {
-                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);
-                    fileStream.Flush();
-                }
-            }
         }
 
         public void InitReplaysCatalog()

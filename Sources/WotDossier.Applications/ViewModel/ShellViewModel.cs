@@ -67,7 +67,8 @@ namespace WotDossier.Applications.ViewModel
         private List<ReplayFolder> _replaysFolders;
         private ReplaysManager _replaysManager;
         private ReplayFolder _selectedFolder;
-        
+        private EnumerableDataSource<DataPoint> _avgSpottedDataSource;
+
         public DelegateCommand LoadCommand { get; set; }
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
         public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
@@ -213,6 +214,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _avgXpDataSource = value;
                 RaisePropertyChanged("AvgXPDataSource");
+            }
+        }
+
+        public EnumerableDataSource<DataPoint> AvgSpottedDataSource
+        {
+            get { return _avgSpottedDataSource; }
+            set
+            {
+                _avgSpottedDataSource = value;
+                RaisePropertyChanged("AvgSpottedDataSource");
             }
         }
 
@@ -738,11 +749,11 @@ namespace WotDossier.Applications.ViewModel
                 InitWinPercentChart(statisticViewModels);
                 InitAvgDamageChart(statisticViewModels);
                 InitAvgXPChart(statisticViewModels);
+                InitAvgSpottedChart(statisticViewModels);
                 InitKillDeathRatioChart(statisticViewModels);
                 InitSurvivePercentChart(statisticViewModels);
                 InitEfficiencyByTierChart(_tanks);
                 InitEfficiencyByTypeChart(_tanks);
-                //InitChart(statisticViewModels);
                 InitLastUsedTanksChart();
             }
         }
@@ -777,8 +788,7 @@ namespace WotDossier.Applications.ViewModel
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                 //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
-                                  point => String.Format(@"Battles: {0}
-Survive %: {1:0.00}", point.X, point.Y));
+                                  point => String.Format(Resources.Resources.Chart_Tooltip_Survive, point.X, point.Y));
             SurvivePercentDataSource = dataSource;
         }
 
@@ -788,8 +798,7 @@ Survive %: {1:0.00}", point.X, point.Y));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                 //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
-                                  point => String.Format(@"Battles: {0}
-Ratio: {1:0.00}", point.X, point.Y));
+                                  point => String.Format(Resources.Resources.Chart_Tooltip_KillDeathRatio, point.X, point.Y));
             KillDeathRatioDataSource = dataSource;
         }
 
@@ -799,9 +808,18 @@ Ratio: {1:0.00}", point.X, point.Y));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                 //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
-                                  point => String.Format(@"Battles: {0}
-Avg XP: {1:0.00}", point.X, point.Y));
+                                  point => String.Format(Resources.Resources.Chart_Tooltip_AvgXp, point.X, point.Y));
             AvgXPDataSource = dataSource;
+        }
+
+        private void InitAvgSpottedChart(List<PlayerStatisticViewModel> statisticViewModels)
+        {
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgSpotted));
+            var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
+                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
+                                  point => String.Format(Resources.Resources.Chart_Tooltip_AvgSpotted, point.X, point.Y));
+            AvgSpottedDataSource = dataSource;
         }
 
         private void InitRatingChart(List<PlayerStatisticViewModel> statisticViewModels)

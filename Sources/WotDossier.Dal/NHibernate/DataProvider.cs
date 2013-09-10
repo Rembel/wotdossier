@@ -12,6 +12,7 @@ using NHibernate.Cfg;
 using NHibernate.Event;
 using NHibernate.Linq;
 using WotDossier.Domain.Entities;
+using Environment = System.Environment;
 
 namespace WotDossier.Dal.NHibernate
 {
@@ -33,7 +34,6 @@ namespace WotDossier.Dal.NHibernate
         public DataProvider([Import(typeof(ISessionStorage))]ISessionStorage storage)
         {
             _storage = storage;
-
             Configuration configuration = new Configuration().Configure();
             configuration.EventListeners.FlushEntityEventListeners = new IFlushEntityEventListener[] { new FlushEntityEventListener() };
             _factory = InitFluentMappings(configuration).BuildSessionFactory();

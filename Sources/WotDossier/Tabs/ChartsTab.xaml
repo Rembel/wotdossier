@@ -7,7 +7,6 @@
              xmlns:charts="clr-namespace:Microsoft.Research.DynamicDataDisplay.Charts;assembly=DynamicDataDisplay"
              xmlns:markers="clr-namespace:DynamicDataDisplay.Markers;assembly=DynamicDataDisplay.Markers"
              xmlns:markupExtensions="clr-namespace:Microsoft.Research.DynamicDataDisplay.MarkupExtensions;assembly=DynamicDataDisplay"
-             xmlns:converters="clr-namespace:Microsoft.Research.DynamicDataDisplay.Converters;assembly=DynamicDataDisplay"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -35,16 +34,14 @@
                         <markers:PieChart Name="PieChart" Width="400" Height="400" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanks}" 
 							                Canvas.Left="10" Canvas.Top="10" StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
                             <markers:PieChart.Resources>
-                                <converters:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
                                 <markers:NegativeRotateTransformConverter x:Key="transformConverter"/>
                             </markers:PieChart.Resources>
 
                             <markers:PieChart.MarkerTemplate>
                                 <DataTemplate>
                                     <markers:PieChartItem>
-                                        <charts:LiveToolTipService.ToolTip>
-                                            <charts:LiveToolTip Opacity="0.8" Background="{markupExtensions:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
-											                RenderTransform="{markupExtensions:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                        <ToolTipService.ToolTip>
+                                            <ToolTip RenderTransform="{markupExtensions:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                 <TextBlock>
 											                    <Bold>Tank:</Bold> <TextBlock Text="{Binding TankName}"/>
                                                                 <LineBreak/>
@@ -52,8 +49,8 @@
 											                    <LineBreak/>
 											                    <Bold>Win %:</Bold> <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
 										                    </TextBlock>
-                                            </charts:LiveToolTip>
-                                        </charts:LiveToolTipService.ToolTip>
+                                            </ToolTip>
+                                        </ToolTipService.ToolTip>
                                     </markers:PieChartItem>
                                 </DataTemplate>
                             </markers:PieChart.MarkerTemplate>

@@ -234,4 +234,20 @@
   <data name="StatisticPeriod_Custom" xml:space="preserve">
     <value>Свой</value>
   </data>
+  <data name="Chart_Tooltip_Survive" xml:space="preserve">
+    <value>Боев: {0}
+Вижил %: {1:0.00}</value>
+  </data>
+  <data name="Chart_Tooltip_KillDeathRatio" xml:space="preserve">
+    <value>Боев: {0}
+Уничтожил/убит: {1:0.00}</value>
+  </data>
+  <data name="Chart_Tooltip_AvgXp" xml:space="preserve">
+    <value>Боев: {0}
+Средний опыт: {1:0.00}</value>
+  </data>
+  <data name="Chart_Tooltip_AvgSpotted" xml:space="preserve">
+    <value>Боев: {0}
+В среднем обнаружено: {1:0.00}</value>
+  </data>
 </root>

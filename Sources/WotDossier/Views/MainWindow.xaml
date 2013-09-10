@@ -7,6 +7,7 @@
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:views="clr-namespace:WotDossier.Views"
+        xmlns:Converters="clr-namespace:WotDossier.Converters"
         Title="WotDossier" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="23">
@@ -28,24 +29,34 @@
             </TabItem>
             <!--Charts-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
-                <ScrollViewer>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                            <controls:LineChartControl Header="Рейтинг Эффективности" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                            <controls:LineChartControl Header="Рейтинг WN6" DataSource="{Binding WN6RatingDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                            <controls:LineChartControl Header="Процент побед" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                            <controls:LineChartControl Header="Выжил в боях %" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                            <controls:LineChartControl Header="Средний опыт за бой" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                            <controls:LineChartControl Header="Средний урон" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                            <controls:LineChartControl Header="Отношение уничтожил/убит" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20,10,20,10"/>
-                        </StackPanel>
-                        <!--<StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TabControl HorizontalAlignment="Center" Margin="0,50,0,50">
+                    <TabControl.Resources>
+                        <Style TargetType="TabPanel">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </TabControl.Resources>
+                    <TabItem Header="1">
+                        <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_WN6Rating}" DataSource="{Binding WN6RatingDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
+                        </WrapPanel>
+                    </TabItem>
+                    <TabItem Header="2">
+                        <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
+                        </WrapPanel>
+                    </TabItem>
+                    <TabItem Header="3">
+                        <StackPanel>
                             <d3:ChartPlotter x:Name="EByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 6, 2500">
                                 <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Эффективность по типам техники"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByType}"></TextBlock>
                                 </d3:Header>
                                 <d3:HorizontalAxis x:Name="HorizontalAxis" >
                                     <d3:HorizontalAxis.LabelProvider>
@@ -54,19 +65,17 @@
                                 </d3:HorizontalAxis>
                                 <d3:BarChart ItemsSource="{Binding EfficiencyByTypeDataSource}">
                                     <d3:BarChart.Resources>
-                                        <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
                                         <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                                     </d3:BarChart.Resources>
                                     <d3:TemplateMarkerGenerator>
                                         <DataTemplate>
-                                            <Rectangle Width="30" Fill="Blue"
+                                            <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
                                                 <ToolTipService.ToolTip>
-                                                    <ToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
-											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
@@ -79,23 +88,21 @@
                             <d3:ChartPlotter x:Name="EByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 11, 2500">
                                 <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Эффективность по уровням"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
                                 </d3:Header>
                                 <d3:BarChart ItemsSource="{Binding EfficiencyByTierDataSource}">
                                     <d3:BarChart.Resources>
-                                        <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
                                         <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                                     </d3:BarChart.Resources>
                                     <d3:TemplateMarkerGenerator>
                                         <DataTemplate>
-                                            <Rectangle Width="30" Fill="Blue"
+                                            <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
                                                 <ToolTipService.ToolTip>
-                                                    <ToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
-											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
@@ -104,9 +111,9 @@
                                     </d3:TemplateMarkerGenerator>
                                 </d3:BarChart>
                             </d3:ChartPlotter>
-                        </StackPanel>-->
-                    </StackPanel>
-                </ScrollViewer>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
             </TabItem>
             <!--XP-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_XP}" Name="tabXP">

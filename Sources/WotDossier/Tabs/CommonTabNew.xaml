@@ -76,7 +76,6 @@
                                 <d3:PieChart Name="PieChart" Width="150" Height="150" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanksDataSource}" 
 							                Canvas.Left="25" Canvas.Top="25" StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
                                     <d3:PieChart.Resources>
-                                        <d3:BrushHSBConverter SaturationDelta="0.8" LightnessDelta="1.6" x:Key="lighterConverter"/>
                                         <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                                     </d3:PieChart.Resources>
 
@@ -84,14 +83,13 @@
                                         <DataTemplate>
                                             <d3:PieChartItem>
                                                 <ToolTipService.ToolTip>
-                                                    <ToolTip Opacity="0.8" Background="{d3:SelfBinding Path=Owner.Background, Converter={StaticResource lighterConverter}}"
-											                RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock>
-											                    <Bold>Tank:</Bold> <TextBlock Text="{Binding TankName}"/>
+											                    <Bold><x:Static Member="Resources:Resources.Chart_Tooltip_Tank" /></Bold> <TextBlock Text="{Binding TankName}"/>
                                                                 <LineBreak/>
-											                    <Bold>Battles:</Bold> <TextBlock Text="{Binding Battles}"/>
+											                    <Bold><x:Static Member="Resources:Resources.Chart_Tooltip_Battles" /></Bold> <TextBlock Text="{Binding Battles}"/>
 											                    <LineBreak/>
-											                    <Bold>Win %:</Bold> <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
+											                    <Bold><x:Static Member="Resources:Resources.Chart_Tooltip_WinPercent" /></Bold> <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
 										                    </TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
@@ -103,7 +101,7 @@
                         </d3:ChartPlotter>
                         <DataGrid Grid.Row="1" Grid.ColumnSpan="2" MinHeight="100" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" Binding="{Binding Tier}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCountDelta}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>

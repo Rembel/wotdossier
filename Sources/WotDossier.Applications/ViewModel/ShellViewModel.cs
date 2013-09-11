@@ -537,9 +537,6 @@ namespace WotDossier.Applications.ViewModel
 
                             InitTanksStatistic(playerStat, tanks);
 
-                            PlayerStatistic.PerformanceRating = GetPerformanceRating();
-                            PlayerStatistic.RBR = GetRBR();
-
                             ProgressView.Report(bw, 50, string.Empty);
 
                             InitChart();
@@ -554,25 +551,6 @@ namespace WotDossier.Applications.ViewModel
 
                     LoadReplaysList();
                 });
-        }
-
-        private double GetPerformanceRating()
-        {
-            double damage = _tanks.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.TankUniqueId, y => y.UniqueId(),
-                (x, y) => x.BattlesCount * y.nominal_damage).Sum();
-
-            return RatingHelper.PerformanceRating(PlayerStatistic.BattlesCount, PlayerStatistic.Wins, damage, PlayerStatistic.DamageDealt, PlayerStatistic.Tier);
-        }
-
-        private double GetRBR()
-        {
-            int battlesCount88 = _tanks.Sum(x => x.BattlesCount88);
-            int xp88 = _tanks.Sum(x => x.OriginalXP);
-            double avgXP88 = xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1);
-
-            double rbr = RatingHelper.RBR(PlayerStatistic.BattlesCount, battlesCount88, PlayerStatistic.Wins / (double)PlayerStatistic.BattlesCount,
-                PlayerStatistic.SurvivedBattles / (double)PlayerStatistic.BattlesCount, PlayerStatistic.HitsPercents / 100.0, PlayerStatistic.AvgDamageDealt, avgXP88);
-            return rbr;
         }
 
         private PlayerStat LoadPlayerStatistic(AppSettings settings)
@@ -695,26 +673,9 @@ namespace WotDossier.Applications.ViewModel
         {
             PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(playerStat, tanks);
 
-            var statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
+            List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
 
-            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<PlayerStatisticViewModel> oldStatisticEntities =
-                statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                                 .Select(x => new PlayerStatisticViewModel(x)).ToList();
-
-            PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic,
-                                                                                              oldStatisticEntities);
-            currentStatisticViewModel.Name = player.Name;
-            currentStatisticViewModel.Created = player.Creaded;
-            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount /
-                                                      (DateTime.Now - player.Creaded).Days;
-
-            if (playerStat.data.clan.clan != null)
-            {
-                currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
-            }
-
-            return currentStatisticViewModel;
+            return StatisticViewModelFactory.Create(playerStat, statisticEntities, tanks);
         }
 
         private void InitTanksStatistic(PlayerStat playerStat, List<TankJson> tanks)
@@ -729,7 +690,7 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
 
-            Tanks = entities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
+            Tanks = StatisticViewModelFactory.Create(entities);
 
             InitMasterTankerList(Tanks);
 
@@ -799,7 +760,6 @@ namespace WotDossier.Applications.ViewModel
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.SurvivedBattlesPercent));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
                                   point => String.Format(Resources.Resources.Chart_Tooltip_Survive, point.X, point.Y));
             SurvivePercentDataSource = dataSource;
         }
@@ -809,7 +769,6 @@ namespace WotDossier.Applications.ViewModel
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.KillDeathRatio));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
                                   point => String.Format(Resources.Resources.Chart_Tooltip_KillDeathRatio, point.X, point.Y));
             KillDeathRatioDataSource = dataSource;
         }
@@ -819,7 +778,6 @@ namespace WotDossier.Applications.ViewModel
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgXp));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
                                   point => String.Format(Resources.Resources.Chart_Tooltip_AvgXp, point.X, point.Y));
             AvgXPDataSource = dataSource;
         }
@@ -829,7 +787,6 @@ namespace WotDossier.Applications.ViewModel
             IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgSpotted));
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
-                //point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
                                   point => String.Format(Resources.Resources.Chart_Tooltip_AvgSpotted, point.X, point.Y));
             AvgSpottedDataSource = dataSource;
         }
@@ -877,22 +834,6 @@ namespace WotDossier.Applications.ViewModel
         }
 
         #endregion
-
-        private TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
-        {
-            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select<TankStatisticEntity, TankJson>(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.Tankdata.battlesCount).First();
-            IEnumerable<TankJson> prevStatisticViewModels =
-                statisticViewModels.Where(x => x.Tankdata.battlesCount != currentStatistic.Tankdata.battlesCount);
-            return new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
-        }
-
-        private static TankJson UnZipObject(byte[] x)
-        {
-            TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(x);
-            WotApiClient.Instance.ExtendPropertiesData(tankJson);
-            return tankJson;
-        }
 
         private bool IsExistedtank(TankInfo tankInfo)
         {

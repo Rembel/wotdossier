@@ -72,6 +72,7 @@
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
+    <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplayFile.cs" />
     <Compile Include="ReplayUploader.cs" />

@@ -8,10 +8,7 @@
 // DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Interop;
 
 namespace WotDossier.Framework.Forms.ProgressDialog
 {
@@ -45,7 +42,7 @@ namespace WotDossier.Framework.Forms.ProgressDialog
 					if(!window.IsLoaded)
 						window.Loaded += OnWindowLoaded;
 					else
-						HideCloseButton(window);
+						NativeMethods.HideCloseButton(window);
 
 					SetIsCloseButtonHidden(window, true);
 				}
@@ -54,7 +51,7 @@ namespace WotDossier.Framework.Forms.ProgressDialog
 					if(!window.IsLoaded)
 						window.Loaded -= OnWindowLoaded;
 					else
-						ShowCloseButton(window);
+                        NativeMethods.ShowCloseButton(window);
 
 					SetIsCloseButtonHidden(window, false);
 				}
@@ -66,7 +63,7 @@ namespace WotDossier.Framework.Forms.ProgressDialog
 			if(s is Window)
 			{
 				Window window = s as Window;
-				HideCloseButton(window);
+                NativeMethods.HideCloseButton(window);
 				window.Loaded -= OnWindowLoaded;
 			}
 
@@ -93,33 +90,6 @@ namespace WotDossier.Framework.Forms.ProgressDialog
 		}
 
 		#endregion
-
-		#region Helper Methods
-
-		static void HideCloseButton(Window w)
-		{
-			IntPtr hWnd = new WindowInteropHelper(w).Handle;
-			SetWindowLong(hWnd, GWL_STYLE, GetWindowLong(hWnd, GWL_STYLE) & ~WS_SYSMENU);
-		}
-
-		static void ShowCloseButton(Window w)
-		{
-			IntPtr hWnd = new WindowInteropHelper(w).Handle;
-			SetWindowLong(hWnd, GWL_STYLE, GetWindowLong(hWnd, GWL_STYLE) | WS_SYSMENU);
-		}
-
-		#endregion
-
-		#region Win32 Native Methods And Constants
-
-		const int GWL_STYLE = -16;
-		const int WS_SYSMENU = 0x80000;
-
-		[DllImport("user32.dll", SetLastError = true)]
-		static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-		[DllImport("user32.dll")]
-		static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
-
-		#endregion
+		
 	}
 }

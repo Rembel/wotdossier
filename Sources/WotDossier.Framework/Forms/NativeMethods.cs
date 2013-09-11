@@ -7,6 +7,19 @@ namespace WotDossier.Framework.Forms
 {
     internal static class NativeMethods
     {
+        #region Win32 Native Methods And Constants
+
+        const int GWL_EXSTYLE = -20;
+        const int WS_EX_DLGMODALFRAME = 0x0001;
+        const int SWP_NOSIZE = 0x0001;
+        const int SWP_NOMOVE = 0x0002;
+        const int SWP_NOZORDER = 0x0004;
+        const int SWP_FRAMECHANGED = 0x0020;
+        const uint WM_SETICON = 0x0080;
+        
+        const int GWL_STYLE = -16;
+        const int WS_SYSMENU = 0x80000;
+
         [DllImport("user32.dll")]
         static extern int GetWindowLong(IntPtr hwnd, int index);
 
@@ -21,13 +34,7 @@ namespace WotDossier.Framework.Forms
         static extern IntPtr SendMessage(IntPtr hwnd, uint msg,
                    IntPtr wParam, IntPtr lParam);
 
-        const int GWL_EXSTYLE = -20;
-        const int WS_EX_DLGMODALFRAME = 0x0001;
-        const int SWP_NOSIZE = 0x0001;
-        const int SWP_NOMOVE = 0x0002;
-        const int SWP_NOZORDER = 0x0004;
-        const int SWP_FRAMECHANGED = 0x0020;
-        const uint WM_SETICON = 0x0080;
+        #endregion
 
         public static void RemoveIcon(Window window)
         {
@@ -43,5 +50,20 @@ namespace WotDossier.Framework.Forms
                   SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
         }
 
+        #region Helper Methods
+
+        public static void HideCloseButton(Window w)
+        {
+            IntPtr hWnd = new WindowInteropHelper(w).Handle;
+            SetWindowLong(hWnd, GWL_STYLE, GetWindowLong(hWnd, GWL_STYLE) & ~WS_SYSMENU);
+        }
+
+        public static void ShowCloseButton(Window w)
+        {
+            IntPtr hWnd = new WindowInteropHelper(w).Handle;
+            SetWindowLong(hWnd, GWL_STYLE, GetWindowLong(hWnd, GWL_STYLE) | WS_SYSMENU);
+        }
+
+        #endregion
     }
 }

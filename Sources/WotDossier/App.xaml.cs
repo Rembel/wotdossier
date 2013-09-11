@@ -101,7 +101,6 @@ namespace WotDossier
             if (Controller != null)
             {
                 CompositionContainerFactory.Instance.Container.Dispose();
-                Controller.Dispose();
             }
             base.OnExit(e);
         }

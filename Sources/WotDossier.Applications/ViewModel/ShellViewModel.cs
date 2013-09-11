@@ -837,6 +837,7 @@ namespace WotDossier.Applications.ViewModel
 
         private bool IsExistedtank(TankInfo tankInfo)
         {
+            //TODO: refactoring
             return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
         }
 

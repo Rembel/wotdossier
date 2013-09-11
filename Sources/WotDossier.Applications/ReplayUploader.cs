@@ -117,11 +117,6 @@ Content-Disposition: form-data; name=""yt0""
             return auth;
         }
 
-        [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
-
-        static extern bool InternetGetCookie(string lpszUrlName, string lpszCookieName,
-        [Out] StringBuilder lpszCookieData, [MarshalAs(UnmanagedType.U4)] out int lpdwSize);
-
         public static CookieContainer LoadCookies(String url)
         {
             CookieContainer cookies = new CookieContainer();
@@ -131,14 +126,14 @@ Content-Disposition: form-data; name=""yt0""
 
             int cookieSize = cookieBuilder.Length;
 
-            if (!InternetGetCookie(url, null, cookieBuilder, out cookieSize))
+            if (!NativeMethods.InternetGetCookie(url, null, cookieBuilder, out cookieSize))
             {
                 if (cookieSize == 0)
                 {
                     return cookies;
                 }
                 cookieBuilder = new StringBuilder(cookieSize);
-                InternetGetCookie(url, null, cookieBuilder, out cookieSize);
+                NativeMethods.InternetGetCookie(url, null, cookieBuilder, out cookieSize);
             }
 
             cookies.SetCookies(uri, cookieBuilder.ToString().Replace(";", ","));

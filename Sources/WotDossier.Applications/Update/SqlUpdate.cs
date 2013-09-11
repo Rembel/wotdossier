@@ -17,6 +17,7 @@ namespace WotDossier.Applications.Update
 
         public string SqlScript { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
         {
             SqlCeCommand command = new SqlCeCommand(SqlScript, sqlCeConnection, transaction);

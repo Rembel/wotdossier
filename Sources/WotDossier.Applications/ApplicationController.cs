@@ -2,7 +2,6 @@
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Reflection;
-using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -10,7 +9,7 @@ using WotDossier.Framework.Forms.Commands;
 namespace WotDossier.Applications
 {
     [Export(typeof(ApplicationController))]
-    public class ApplicationController : Controller, IDisposable
+    public class ApplicationController : Controller
     {
         private ShellViewModel _shellViewModel;
         private readonly DelegateCommand _exitCommand;
@@ -41,10 +40,6 @@ namespace WotDossier.Applications
 
             InitShellViewModel(_shellViewModel);
             _shellViewModel.Show();
-        }
-
-        public void Dispose()
-        {
         }
 
         private void Close()

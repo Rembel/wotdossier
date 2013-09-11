@@ -131,7 +131,7 @@
     <Compile Include="Forms\Commands\DelegateCommand.Generic.cs" />
     <Compile Include="Forms\Commands\DelegateCommandExtensions.cs" />
     <Compile Include="Forms\Commands\IDelegateCommand.cs" />
-    <Compile Include="Forms\IconHelper.cs" />
+    <Compile Include="Forms\NativeMethods.cs" />
     <Compile Include="Forms\MessageBoxViewModel.cs" />
     <Compile Include="Forms\ProgressDialog\ProgressControl.xaml.cs">
       <DependentUpon>ProgressControl.xaml</DependentUpon>

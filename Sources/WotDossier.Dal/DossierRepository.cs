@@ -68,30 +68,28 @@ namespace WotDossier.Dal
             {
                 playerEntity = GetOrCreatePlayer(stat);
 
-                PlayerStatisticEntity statisticEntity = _dataProvider.QueryOver<PlayerStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
+                PlayerStatisticEntity currentSnapshot = _dataProvider.QueryOver<PlayerStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
                                                .Desc.Take(1)
-                                               .SingleOrDefault<PlayerStatisticEntity>();
+                                               .SingleOrDefault<PlayerStatisticEntity>() ?? new PlayerStatisticEntity{PlayerId = playerEntity.Id};
 
-                PlayerStatAdapter playerStatAdapter = new PlayerStatAdapter(tanks);
+                PlayerStatAdapter newSnapshot = new PlayerStatAdapter(tanks);
 
-                //create new record
-                if (statisticEntity == null ||
-                    (statisticEntity.Updated.Date != playerStatAdapter.Updated.Date && statisticEntity.BattlesCount < playerStatAdapter.Battles_count))
+                //new battles
+                if (currentSnapshot.BattlesCount < newSnapshot.Battles_count)
                 {
-                    statisticEntity = new PlayerStatisticEntity();
-                    statisticEntity.PlayerId = playerEntity.Id;
-                    statisticEntity.Update(playerStatAdapter);
-                }
-                //update current date record
-                else if (statisticEntity.Updated.Date == playerStatAdapter.Updated.Date)
-                {
-                    statisticEntity.Update(playerStatAdapter);
+                    //create new record
+                    if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
+                    {
+                        currentSnapshot = new PlayerStatisticEntity {PlayerId = playerEntity.Id};
+                    }
+
+                    currentSnapshot.Update(newSnapshot);
                 }
 
-                statisticEntity.UpdateRatings(stat);
+                currentSnapshot.UpdateRatings(stat);
             
-                _dataProvider.Save(statisticEntity);
+                _dataProvider.Save(currentSnapshot);
                 _dataProvider.CommitTransaction();
             }
             catch (Exception e)
@@ -106,6 +104,12 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
+        }
+
+        private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
+        {
+            DateTime newSnapshotTreshold = newSnapshotUpdated.Date.AddHours(4); // at 4 hours every day
+            return currentSnapshotUpdated < newSnapshotTreshold && newSnapshotUpdated > newSnapshotTreshold;
         }
 
         private PlayerEntity GetOrCreatePlayer(PlayerStat stat)
@@ -144,8 +148,7 @@ namespace WotDossier.Dal
                 IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
 
                 DateTime updated = tanks.Max(x => x.Common.lastBattleTimeR);
-                DateTime updatedDate = updated.Date;
-
+                
                 foreach (TankJson tank in tanks)
                 {
                     TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tank.Common.tankid && x.CountryId == tank.Common.countryid);
@@ -177,25 +180,29 @@ namespace WotDossier.Dal
                                 && tankAlias.TankId == tank.Common.tankid 
                                 && tankAlias.CountryId == tank.Common.countryid)
                             .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<TankStatisticEntity>();
-                        
-                        TankJson prevTank = null;
+
+                        int currentSnapshotBattlesCount = 0;
+
                         if (statisticEntity != null)
                         {
-                            prevTank = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
+                            TankJson currentSnapshot = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
+                            currentSnapshotBattlesCount = currentSnapshot.Tankdata.battlesCount;
                         }
-
-                        //create new record
-                        if (statisticEntity == null || statisticEntity.Updated.Date != updatedDate && prevTank.Tankdata.battlesCount < tank.Tankdata.battlesCount)
+                        else
                         {
                             statisticEntity = new TankStatisticEntity();
                             statisticEntity.TankIdObject = tankEntity;
-                            statisticEntity.Updated = updated;
-                            Update(statisticEntity, tank);
-                            _dataProvider.Save(statisticEntity);
                         }
-                        //update current date record
-                        else if (statisticEntity.Updated.Date == updatedDate)
+
+                        if (currentSnapshotBattlesCount < tank.Tankdata.battlesCount)
                         {
+                            //create new record
+                            if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated,  updated))
+                            {
+                                statisticEntity = new TankStatisticEntity();
+                                statisticEntity.TankIdObject = tankEntity;
+                            }
+                            
                             statisticEntity.Updated = updated;
                             Update(statisticEntity, tank);
                             _dataProvider.Save(statisticEntity);

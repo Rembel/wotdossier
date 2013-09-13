@@ -113,6 +113,11 @@ namespace WotDossier.Applications.ViewModel
             get { return XEFF - PrevStatistic.XEFF; }
         }
 
+        public double NoobRatingDelta
+        {
+            get { return NoobRating - PrevStatistic.NoobRating; }
+        }
+
         #endregion
 
         #region Average values

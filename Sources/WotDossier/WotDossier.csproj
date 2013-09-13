@@ -147,6 +147,8 @@
     <Compile Include="Controls\TextWithImage.xaml.cs">
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\Color\NoobRatingToColorConverter.cs" />
+    <Compile Include="Converters\Color\WN7ToColorConverter.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverter.cs" />
     <Compile Include="Converters\Color\EffectivityToColorConverter.cs" />
     <Compile Include="Converters\Color\KievArmorRatingToColorConverter.cs" />

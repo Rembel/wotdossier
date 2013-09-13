@@ -18,6 +18,7 @@ namespace WotDossier.Tabs
     public partial class ReplaysTab : UserControl
     {
         private Point _startPoint;
+        private int _selectedIndex;
         private const string FOLDER_DRAG_FORMAT = "folder";
 
         public ReplaysTab()
@@ -94,6 +95,34 @@ namespace WotDossier.Tabs
                 ReplayFile replayFile = e.Data.GetData(FOLDER_DRAG_FORMAT) as ReplayFile;
                 EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Publish(new ReplayFileMoveEventArgs { TargetFolder = target, ReplayFile = replayFile });
                 e.Handled = true;
+            }
+        }
+
+        private void DgTime_OnPreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete)
+            {
+                _selectedIndex = dgTime.SelectedIndex;
+            }
+        }
+
+        private void DgTime_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.RemovedItems.Count > 0 && e.AddedItems.Count == 0)
+            {
+                if (dgTime.Items.Count > _selectedIndex + 1)
+                {
+                    dgTime.SelectedIndex = _selectedIndex;
+                }
+                else
+                {
+                    dgTime.SelectedIndex = _selectedIndex - 1;
+                }
+                if (dgTime.SelectedIndex > 0)
+                {
+                    DataGridRow dgrow = (DataGridRow)dgTime.ItemContainerGenerator.ContainerFromItem(dgTime.Items[dgTime.SelectedIndex]);
+                    dgrow.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                }
             }
         }
     }

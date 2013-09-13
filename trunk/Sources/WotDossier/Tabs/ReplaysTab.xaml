@@ -63,7 +63,7 @@
             </i:Interaction.Behaviors>
         </TreeView>
 
-        <DataGrid Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding SelectedFolder.Files}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False"
+        <DataGrid Grid.Column="1" PreviewKeyDown="DgTime_OnPreviewKeyDown" SelectionChanged="DgTime_OnSelectionChanged" HorizontalAlignment="Stretch" ItemsSource="{Binding SelectedFolder.Files}" VerticalAlignment="Stretch" Name="dgTime" IsReadOnly="True" AutoGenerateColumns="False"
                   PreviewMouseLeftButtonDown="OnGridPreviewMouseLeftButtonDown" PreviewMouseMove="OnGridMouseMove">
             <DataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">

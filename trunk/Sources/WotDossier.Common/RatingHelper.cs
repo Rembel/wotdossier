@@ -30,6 +30,15 @@ def = dropped_capture_points / bc (среднее количество очко�
 +MIN(DEF,2.2)*100
 +((185/(0.17+e^((WINRATE-35)*-0.134)))-500)*0.45
 +(6-MIN(TIER,6))*-60
+         * 
+         * 
+WN7 formula:
+(1240-1040/(MIN(TIER,6))^0.164)*FRAGS
++DAMAGE*530/(184*e^(0.24*TIER)+130)
++SPOT*125*MIN(TIER, 3)/3
++MIN(DEF,2.2)*100
++((185/(0.17+e^((WINRATE-35)*-0.134)))-500)*0.45
+-[(5 - MIN(TIER,5))*125] / [1 + e^( ( TIER - (GAMESPLAYED/220)^(3/TIER) )*1.5 )]
 */
 
         #region KievArmorRating
@@ -42,18 +51,43 @@ def = dropped_capture_points / bc (среднее количество очко�
         private const double khp = 1;
 
         #endregion
-
-
-
+        
         public static double CalcWN6(double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
         {
             return (1240 - 1040 / Math.Pow((Math.Min(tier, 6)), 0.164)) * avgFrags + avgDamage * 530 / (184 * Math.Pow(Math.E, (0.24 * tier)) + 130)
                    + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Pow(Math.E, ((winrate - 35) * -0.134)))) - 500) * 0.45 + (6 - Math.Min(tier, 6)) * -60;
         }
 
+        public static double CalcWN7(double battles, double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
+        {
+            return (1240 - 1040 / Math.Pow((Math.Min(tier, 6)), 0.164)) * avgFrags + avgDamage * 530 / (184 * Math.Exp(0.24 * tier) + 130)
+                   + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Exp((winrate - 35) * -0.134))) - 500) * 0.45
+                   - ((5 - Math.Min(tier, 5)) * 125) / (1 + Math.Exp((tier - Math.Pow(battles/220.0, 3/tier))*1.5));
+        }
+        
         public static double CalcER(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {
             return avgDamage * (10.0 / (tier + 2.0)) * (0.23 + 2.0 * tier / 100.0) + avgFrags * 250.0 + avgSpot * 150.0 + (Math.Log(avgCap + 1, 1.732)) * 150.0 + avgDef * 150.0;
+        }
+
+        /// <summary>
+        /// http://forum.worldoftanks.ru/index.php?/topic/691284-%D0%BD%D1%83%D0%B1%D0%BE-%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3-%D0%BF%D0%BE-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8-wot-noobsru/
+        /// </summary>
+        /// <param name="avgDamage"></param>
+        /// <param name="tier"></param>
+        /// <param name="avgFrags"></param>
+        /// <param name="avgSpot"></param>
+        /// <param name="avgCap"></param>
+        /// <param name="avgDef"></param>
+        /// <returns></returns>
+        public static double CalcNR(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
+        {
+            double kDamage = (avgDamage*10*(0.15+2*(tier/100)))/tier;
+            double kFrags = avgFrags * (0.35 - 2 * (tier / 100)) * 1000;
+            double kSpotted = avgSpot * 0.2 * 1000;
+            double kCap = avgCap * 0.15 * 1000;
+            double kDef = avgDef * 0.15 * 1000;
+            return (kDamage + kFrags + kSpotted + kCap + kDef)/10;
         }
 
         public static double CalcKievArmorRating(double battles, double avgXP, double avgDamage, double avgWonBattles, double avgFrags, double avgSpot, double avgCap, double avgDef)

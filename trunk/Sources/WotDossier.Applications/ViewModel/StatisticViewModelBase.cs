@@ -165,6 +165,30 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public double WN7Rating
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return RatingHelper.CalcWN7(BattlesCount, AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgDroppedCapturePoints, WinsPercent);
+                }
+                return 0;
+            }
+        }
+
+        public double NoobRating
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return RatingHelper.CalcNR(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
+                }
+                return 0;
+            }
+        }
+
         public double EffRating
         {
             get

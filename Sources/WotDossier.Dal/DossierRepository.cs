@@ -108,8 +108,9 @@ namespace WotDossier.Dal
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
         {
-            DateTime newSnapshotTreshold = newSnapshotUpdated.Date.AddHours(4); // at 4 hours every day
-            return currentSnapshotUpdated < newSnapshotTreshold && newSnapshotUpdated > newSnapshotTreshold;
+            newSnapshotUpdated = newSnapshotUpdated.AddHours(-4); // at 4 hours every day
+            currentSnapshotUpdated = currentSnapshotUpdated.AddHours(-4); // at 4 hours every day
+            return newSnapshotUpdated.Date != currentSnapshotUpdated.Date;
         }
 
         private PlayerEntity GetOrCreatePlayer(PlayerStat stat)

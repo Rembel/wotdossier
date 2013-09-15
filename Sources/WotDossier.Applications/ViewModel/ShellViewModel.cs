@@ -684,7 +684,7 @@ namespace WotDossier.Applications.ViewModel
 
             if (playerEntity == null)
             {
-                WpfMessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 

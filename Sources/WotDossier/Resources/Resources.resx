@@ -1352,4 +1352,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Chart_AvgSpotted" xml:space="preserve">
     <value>Average Spotted</value>
   </data>
+  <data name="Chart_EffByCountry" xml:space="preserve">
+    <value>Efficiency by country</value>
+  </data>
 </root>

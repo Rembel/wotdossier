@@ -52,66 +52,165 @@
                         </WrapPanel>
                     </TabItem>
                     <TabItem Header="3">
-                        <StackPanel>
-                            <d3:ChartPlotter x:Name="EByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel>
+                                <d3:ChartPlotter x:Name="EByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 6, 2500">
-                                <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByType}"></TextBlock>
-                                </d3:Header>
-                                <d3:HorizontalAxis x:Name="HorizontalAxis" >
-                                    <d3:HorizontalAxis.LabelProvider>
-                                        <views:TextLabelProvider />
-                                    </d3:HorizontalAxis.LabelProvider>
-                                </d3:HorizontalAxis>
-                                <d3:BarChart ItemsSource="{Binding EfficiencyByTypeDataSource}">
-                                    <d3:BarChart.Resources>
-                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                                    </d3:BarChart.Resources>
-                                    <d3:TemplateMarkerGenerator>
-                                        <DataTemplate>
-                                            <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByType}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis x:Name="TankTypeHorizontalAxis" ShowMinorTicks="False" >
+                                        <d3:IntegerAxis.LabelProvider>
+                                            <views:TankTypeLabelProvider />
+                                        </d3:IntegerAxis.LabelProvider>
+                                    </d3:IntegerAxis>
+                                    <d3:BarChart ItemsSource="{Binding EfficiencyByTypeDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
-                                                <ToolTipService.ToolTip>
-                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                                        <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                                    </ToolTip>
-                                                </ToolTipService.ToolTip>
-                                            </Rectangle>
-                                        </DataTemplate>
-                                    </d3:TemplateMarkerGenerator>
-                                </d3:BarChart>
-                            </d3:ChartPlotter>
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </d3:ChartPlotter>
 
-                            <d3:ChartPlotter x:Name="EByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                <d3:ChartPlotter x:Name="EByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 11, 2500">
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis ShowMinorTicks="False" />
+                                    <d3:BarChart ItemsSource="{Binding EfficiencyByTierDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </d3:ChartPlotter>
+
+                                <d3:ChartPlotter x:Name="EByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" Visible="-1, 0, 7, 2500">
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByCountry}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis x:Name="CountryHorizontalAxis"  ShowMinorTicks="False">
+                                        <d3:IntegerAxis.LabelProvider>
+                                            <views:CountryLabelProvider />
+                                        </d3:IntegerAxis.LabelProvider>
+                                    </d3:IntegerAxis>
+                                    <d3:BarChart ItemsSource="{Binding EfficiencyByCountryDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </d3:ChartPlotter>
+
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+                    <TabItem Header="4">
+                        <StackPanel Orientation="Horizontal">
+                            <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
+                                                 MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
+                                      Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}" MaxY="55">
                                 <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Кол-во реплеев по картам"></TextBlock>
                                 </d3:Header>
-                                <d3:BarChart ItemsSource="{Binding EfficiencyByTierDataSource}">
+                                <d3:IntegerAxis ShowMinorTicks="False" />
+                                <!--<d3:IntegerAxis ShowMinorTicks="True" Placement="Left" />-->
+                                <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
                                     <d3:BarChart.Resources>
                                         <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                                     </d3:BarChart.Resources>
                                     <d3:TemplateMarkerGenerator>
                                         <DataTemplate>
-                                            <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
-								               d3:ViewportPanel.Y="0" 
-								               d3:ViewportPanel.X="{Binding X}"
-								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
-								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                            <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+								               d3:ViewportPanel.X="0" 
+								               d3:ViewportPanel.Y="{Binding Y}"
+								               d3:ViewportPanel.ViewportWidth="{Binding X}"
+								               d3:ViewportPanel.ViewportHorizontalAlignment="Left">
                                                 <ToolTipService.ToolTip>
                                                     <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                                        <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
                                             </Rectangle>
                                         </DataTemplate>
                                     </d3:TemplateMarkerGenerator>
                                 </d3:BarChart>
-                            </d3:ChartPlotter>
+                            </controls:ChartPlotter>
+                            <controls:ChartPlotter x:Name="BattlesWinPercentByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
+                                                 MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
+                                      Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}" MaxY="55">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Процент победных реплеев по картам"></TextBlock>
+                                </d3:Header>
+                                <d3:IntegerAxis ShowMinorTicks="False" />
+                                <!--<d3:IntegerAxis ShowMinorTicks="True" Placement="Left" />-->
+                                <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
+                                    <d3:BarChart.Resources>
+                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                    </d3:BarChart.Resources>
+                                    <d3:TemplateMarkerGenerator>
+                                        <DataTemplate>
+                                            <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+								               d3:ViewportPanel.X="0" 
+								               d3:ViewportPanel.Y="{Binding Y}"
+								               d3:ViewportPanel.ViewportWidth="{Binding X}"
+								               d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                        <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </Rectangle>
+                                        </DataTemplate>
+                                    </d3:TemplateMarkerGenerator>
+                                </d3:BarChart>
+                            </controls:ChartPlotter>
                         </StackPanel>
+
                     </TabItem>
                 </TabControl>
             </TabItem>

@@ -120,6 +120,7 @@
     <Compile Include="Controls\Achievements.xaml.cs">
       <DependentUpon>Achievements.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ChartPlotter.cs" />
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>

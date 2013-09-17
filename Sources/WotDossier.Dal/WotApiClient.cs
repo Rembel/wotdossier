@@ -36,7 +36,7 @@ namespace WotDossier.Dal
 
         private readonly Dictionary<int, TankInfo> _tanksDictionary;
         private readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
-        private readonly List<Map> _maps = new List<Map>();
+        private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
         
         /// <summary>
         /// Tanks dictionary
@@ -52,7 +52,7 @@ namespace WotDossier.Dal
             get { return _iconsDictionary; }
         }
 
-        public List<Map> Maps
+        public Dictionary<string, Map> Maps
         {
             get { return _maps; }
         }
@@ -187,7 +187,7 @@ namespace WotDossier.Dal
             return tanks.ToDictionary(x => x.UniqueId());
         }
 
-        public static List<Map> ReadMaps()
+        public static Dictionary<string, Map> ReadMaps()
         {
             List<Map> maps = null;
             using (StreamReader re = new StreamReader(@"External\maps.json"))
@@ -197,7 +197,7 @@ namespace WotDossier.Dal
                 maps = se.Deserialize<List<Map>>(reader);
             }
 
-            return maps ?? new List<Map>();
+            return (maps ?? new List<Map>()).ToDictionary(x => x.mapidname, y => y);
         }
 
         /// <summary>

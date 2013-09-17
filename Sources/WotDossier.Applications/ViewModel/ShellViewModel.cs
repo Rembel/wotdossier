@@ -68,6 +68,11 @@ namespace WotDossier.Applications.ViewModel
         private ReplaysManager _replaysManager;
         private ReplayFolder _selectedFolder;
         private EnumerableDataSource<DataPoint> _avgSpottedDataSource;
+        private List<GenericPoint<string, double>> _efficiencyByCountryDataSource;
+        private List<DataPoint> _replaysByMapDataSource;
+        private double _maxMapBattles;
+        private double _maxWinReplayPercent;
+        private List<DataPoint> _winReplaysPercentByMapDataSource;
 
         public DelegateCommand LoadCommand { get; set; }
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
@@ -257,6 +262,26 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public List<DataPoint> ReplaysByMapDataSource
+        {
+            get { return _replaysByMapDataSource; }
+            set
+            {
+                _replaysByMapDataSource = value;
+                RaisePropertyChanged("ReplaysByMapDataSource");
+            }
+        }
+
+        public List<DataPoint> WinReplaysPercentByMapDataSource
+        {
+            get { return _winReplaysPercentByMapDataSource; }
+            set
+            {
+                _winReplaysPercentByMapDataSource = value;
+                RaisePropertyChanged("WinReplaysPercentByMapDataSource");
+            }
+        }
+
         public List<GenericPoint<string, double>> EfficiencyByTypeDataSource
         {
             get { return _efficiencyByTypeDataSource; }
@@ -264,6 +289,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _efficiencyByTypeDataSource = value;
                 RaisePropertyChanged("EfficiencyByTypeDataSource");
+            }
+        }
+
+        public List<GenericPoint<string, double>> EfficiencyByCountryDataSource
+        {
+            get { return _efficiencyByCountryDataSource; }
+            set
+            {
+                _efficiencyByCountryDataSource = value;
+                RaisePropertyChanged("EfficiencyByCountryDataSource");
             }
         }
 
@@ -663,9 +698,13 @@ namespace WotDossier.Applications.ViewModel
                         //    WpfMessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, folderPath), Resources.Resources.WindowCaption_Error, 
                         //        WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
                         //}
-
-                        SelectedFolder = replayFolders.FirstOrDefault();
                     }
+
+                    SelectedFolder = replayFolders.FirstOrDefault();
+
+                    InitBattlesByMapChart(ReplaysFolders.GetAll().SelectMany(x => x.Files));
+                    InitWinReplaysPercentByMapChart(ReplaysFolders.GetAll().SelectMany(x => x.Files));
+
                 }, new ProgressDialogSettings(true, true, false));
         }
 
@@ -727,7 +766,50 @@ namespace WotDossier.Applications.ViewModel
                 InitSurvivePercentChart(statisticViewModels);
                 InitEfficiencyByTierChart(_tanks);
                 InitEfficiencyByTypeChart(_tanks);
+                InitEfficiencyByCountryChart(_tanks);
                 InitLastUsedTanksChart();
+            }
+        }
+
+        private void InitBattlesByMapChart(IEnumerable<ReplayFile> list)
+        {
+            IEnumerable<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key));
+
+            ReplaysByMapDataSource = dataSource.ToList();
+
+            double max = ReplaysByMapDataSource.Max(x => x.X);
+            MaxMapBattles = max + 0.1*max;
+        }
+
+        private void InitWinReplaysPercentByMapChart(IEnumerable<ReplayFile> list)
+        {
+            IEnumerable<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(
+                x => new DataPoint(
+                    100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key));
+
+            WinReplaysPercentByMapDataSource = dataSource.ToList();
+
+            double max = WinReplaysPercentByMapDataSource.Max(x => x.X);
+            MaxWinReplayPercent = max;
+        }
+
+        public double MaxMapBattles
+        {
+            get { return _maxMapBattles; }
+            set
+            {
+                _maxMapBattles = value;
+                RaisePropertyChanged("MaxMapBattles");
+            }
+        }
+
+        public double MaxWinReplayPercent
+        {
+            get { return _maxWinReplayPercent; }
+            set
+            {
+                _maxWinReplayPercent = value;
+                RaisePropertyChanged("MaxWinReplayPercent");
             }
         }
 
@@ -753,6 +835,18 @@ namespace WotDossier.Applications.ViewModel
                 x.Average(y => y.AvgCapturePoints),
                 x.Average(y => y.AvgDroppedCapturePoints))));
             EfficiencyByTypeDataSource = dataSource.ToList();
+        }
+
+        private void InitEfficiencyByCountryChart(List<TankStatisticRowViewModel> statisticViewModels)
+        {
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.CalcER(
+                x.Average(y => y.AvgDamageDealt),
+                x.Key,
+                x.Average(y => y.AvgFrags),
+                x.Average(y => y.AvgSpotted),
+                x.Average(y => y.AvgCapturePoints),
+                x.Average(y => y.AvgDroppedCapturePoints))));
+            EfficiencyByCountryDataSource = dataSource.ToList();
         }
 
         private void InitSurvivePercentChart(List<PlayerStatisticViewModel> statisticViewModels)

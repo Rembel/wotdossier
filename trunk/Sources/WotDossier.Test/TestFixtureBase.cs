@@ -278,7 +278,7 @@ namespace WotDossier.Test
         [Test]
         public void LoadMapsImages()
         {
-            List<Map> maps = WotApiClient.ReadMaps();
+            List<Map> maps = WotApiClient.ReadMaps().Values.ToList();
 
             foreach (var map in maps)
             {

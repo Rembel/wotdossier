@@ -1537,4 +1537,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Chart_AvgSpotted" xml:space="preserve">
     <value>Обнаружено в среднем за бой</value>
   </data>
+  <data name="Chart_EffByCountry" xml:space="preserve">
+    <value>Эффективность по нациям</value>
+  </data>
 </root>

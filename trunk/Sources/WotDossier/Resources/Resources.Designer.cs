@@ -143,6 +143,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Efficiency by country.
+        /// </summary>
+        public static string Chart_EffByCountry {
+            get {
+                return ResourceManager.GetString("Chart_EffByCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Effectivity by Tier.
         /// </summary>
         public static string Chart_EffByTier {

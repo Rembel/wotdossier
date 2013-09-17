@@ -18,11 +18,32 @@ namespace WotDossier.Applications
         private const string TANKNAME_FORMAT = @"([a-zA-Z]+)-(.+)";
 
         public string MapName { get; set; }
+        public int MapId { get; set; }
+        public string MapNameId { get; set; }
         public string ClientVersion { get; set; }
         public string Tank { get; set; }
         public int CountryId { get; set; }
         public DateTime PlayTime { get; set; }
+        public int Damaged { get; set; }
+        public int Killed { get; set; }
+        public long PlayerId { get; set; }
+        public long ReplayId { get; set; }
+        public int Xp { get; set; }
+        public BattleStatus IsWinner { get; set; }
+        public int DamageReceived { get; set; }
+        public int DamageDealt { get; set; }
+        public int Credits { get; set; }
         public FileInfo FileInfo { get; set; }
+        
+        public string Link
+        {
+            get { return _link; }
+            set
+            {
+                _link = value;
+                OnPropertyChanged("Link");
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -36,6 +57,11 @@ namespace WotDossier.Applications
             if (replay != null)
             {
                 MapName = replay.datablock_1.mapDisplayName;
+                MapNameId = replay.datablock_1.mapName;
+                if (WotApiClient.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
+                {
+                    MapId = WotApiClient.Instance.Maps[replay.datablock_1.mapName].mapid;
+                }
                 ClientVersion = replay.datablock_1.clientVersionFromExe;
 
                 Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
@@ -76,34 +102,6 @@ namespace WotDossier.Applications
                 Match tankNameMatch = tankNameRegexp.Match(tankName);
                 CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
                 Tank = tankNameMatch.Groups[2].Value;
-            }
-        }
-
-        public int Damaged { get; set; }
-
-        public int Killed { get; set; }
-
-        public long PlayerId { get; set; }
-
-        public long ReplayId { get; set; }
-
-        public int Xp { get; set; }
-
-        public BattleStatus IsWinner { get; set; }
-
-        public int DamageReceived { get; set; }
-
-        public int DamageDealt { get; set; }
-
-        public int Credits { get; set; }
-
-        public string Link
-        {
-            get { return _link; }
-            set
-            {
-                _link = value;
-                OnPropertyChanged("Link");
             }
         }
 

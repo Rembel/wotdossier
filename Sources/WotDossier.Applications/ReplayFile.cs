@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications
@@ -12,6 +14,7 @@ namespace WotDossier.Applications
     public class ReplayFile:INotifyPropertyChanged
     {
         private string _link;
+        private List<Medal> _medals;
         //20121201_1636_ussr-IS_42_north_america
         private const string REPLAY_DATETIME_FORMAT = @"(\d+_\d+)";
         private const string MAPNAME_FILENAME = @"(\d+_[a-zA-Z_]+)(\.wotreplay)";
@@ -43,6 +46,12 @@ namespace WotDossier.Applications
                 _link = value;
                 OnPropertyChanged("Link");
             }
+        }
+
+        public List<Medal> Medals
+        {
+            get { return _medals; }
+            set { _medals = value; }
         }
 
         /// <summary>
@@ -81,6 +90,7 @@ namespace WotDossier.Applications
                 Killed = replay.CommandResult.Damage.killed.Count;
                 Damaged = replay.CommandResult.Damage.damaged.Count;
                 PlayerId = replay.datablock_1.playerID;
+                Medals = MedalHelper.GetMedals(replay.CommandResult.Damage.achieveIndices);
             }
             else
             {

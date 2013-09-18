@@ -379,7 +379,7 @@ namespace WotDossier.Dal
                 }
                 catch (Exception e)
                 {
-                    _log.ErrorFormat("Error on replay file read. Incorrect file format({0})", e, replayFileInfo.FullName);
+                    _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e, replayFileInfo.FullName);
                     return null;
                 }
 

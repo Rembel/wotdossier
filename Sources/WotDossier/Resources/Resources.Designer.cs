@@ -188,6 +188,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Replays count.
+        /// </summary>
+        public static string Chart_ReplaysCountByMap {
+            get {
+                return ResourceManager.GetString("Chart_ReplaysCountByMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Survive %.
         /// </summary>
         public static string Chart_SurvivePercent {
@@ -229,6 +238,15 @@ namespace WotDossier.Resources {
         public static string Chart_WinPercent {
             get {
                 return ResourceManager.GetString("Chart_WinPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win replays percent.
+        /// </summary>
+        public static string Chart_WinReplaysPercentByMap {
+            get {
+                return ResourceManager.GetString("Chart_WinReplaysPercentByMap", resourceCulture);
             }
         }
         
@@ -2183,6 +2201,348 @@ namespace WotDossier.Resources {
         public static string Label_ReplayDetail_XpTotal {
             get {
                 return ResourceManager.GetString("Label_ReplayDetail_XpTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Training area.
+        /// </summary>
+        public static string Map_00_tank_tutorial {
+            get {
+                return ResourceManager.GetString("Map_00_tank_tutorial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Karelia.
+        /// </summary>
+        public static string Map_01_karelia {
+            get {
+                return ResourceManager.GetString("Map_01_karelia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Malinovka.
+        /// </summary>
+        public static string Map_02_malinovka {
+            get {
+                return ResourceManager.GetString("Map_02_malinovka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Province.
+        /// </summary>
+        public static string Map_03_campania {
+            get {
+                return ResourceManager.GetString("Map_03_campania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Himmelsdorf.
+        /// </summary>
+        public static string Map_04_himmelsdorf {
+            get {
+                return ResourceManager.GetString("Map_04_himmelsdorf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prokhorovka.
+        /// </summary>
+        public static string Map_05_prohorovka {
+            get {
+                return ResourceManager.GetString("Map_05_prohorovka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ensk.
+        /// </summary>
+        public static string Map_06_ensk {
+            get {
+                return ResourceManager.GetString("Map_06_ensk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lakeville.
+        /// </summary>
+        public static string Map_07_lakeville {
+            get {
+                return ResourceManager.GetString("Map_07_lakeville", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ruinberg.
+        /// </summary>
+        public static string Map_08_ruinberg {
+            get {
+                return ResourceManager.GetString("Map_08_ruinberg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mines.
+        /// </summary>
+        public static string Map_10_hills {
+            get {
+                return ResourceManager.GetString("Map_10_hills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Murovanka.
+        /// </summary>
+        public static string Map_11_murovanka {
+            get {
+                return ResourceManager.GetString("Map_11_murovanka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erlenberg.
+        /// </summary>
+        public static string Map_13_erlenberg {
+            get {
+                return ResourceManager.GetString("Map_13_erlenberg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Siegfried Line.
+        /// </summary>
+        public static string Map_14_siegfried_line {
+            get {
+                return ResourceManager.GetString("Map_14_siegfried_line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Komarin.
+        /// </summary>
+        public static string Map_15_komarin {
+            get {
+                return ResourceManager.GetString("Map_15_komarin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Widepark.
+        /// </summary>
+        public static string Map_17_munchen {
+            get {
+                return ResourceManager.GetString("Map_17_munchen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cliff.
+        /// </summary>
+        public static string Map_18_cliff {
+            get {
+                return ResourceManager.GetString("Map_18_cliff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abbey.
+        /// </summary>
+        public static string Map_19_monastery {
+            get {
+                return ResourceManager.GetString("Map_19_monastery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swamp.
+        /// </summary>
+        public static string Map_22_slough {
+            get {
+                return ResourceManager.GetString("Map_22_slough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Westfield.
+        /// </summary>
+        public static string Map_23_westfeld {
+            get {
+                return ResourceManager.GetString("Map_23_westfeld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sand River.
+        /// </summary>
+        public static string Map_28_desert {
+            get {
+                return ResourceManager.GetString("Map_28_desert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El Halluf.
+        /// </summary>
+        public static string Map_29_el_hallouf {
+            get {
+                return ResourceManager.GetString("Map_29_el_hallouf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Airfield.
+        /// </summary>
+        public static string Map_31_airfield {
+            get {
+                return ResourceManager.GetString("Map_31_airfield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fjords.
+        /// </summary>
+        public static string Map_33_fjord {
+            get {
+                return ResourceManager.GetString("Map_33_fjord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redshire.
+        /// </summary>
+        public static string Map_34_redshire {
+            get {
+                return ResourceManager.GetString("Map_34_redshire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Steppes.
+        /// </summary>
+        public static string Map_35_steppes {
+            get {
+                return ResourceManager.GetString("Map_35_steppes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fisherman&apos;s Bay.
+        /// </summary>
+        public static string Map_36_fishing_bay {
+            get {
+                return ResourceManager.GetString("Map_36_fishing_bay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mountain Pass.
+        /// </summary>
+        public static string Map_37_caucasus {
+            get {
+                return ResourceManager.GetString("Map_37_caucasus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arctic Region.
+        /// </summary>
+        public static string Map_38_mannerheim_line {
+            get {
+                return ResourceManager.GetString("Map_38_mannerheim_line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to South Coast.
+        /// </summary>
+        public static string Map_39_crimea {
+            get {
+                return ResourceManager.GetString("Map_39_crimea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port.
+        /// </summary>
+        public static string Map_42_north_america {
+            get {
+                return ResourceManager.GetString("Map_42_north_america", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Live Oaks.
+        /// </summary>
+        public static string Map_44_north_america {
+            get {
+                return ResourceManager.GetString("Map_44_north_america", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highway.
+        /// </summary>
+        public static string Map_45_north_america {
+            get {
+                return ResourceManager.GetString("Map_45_north_america", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serene Coast.
+        /// </summary>
+        public static string Map_47_canada_a {
+            get {
+                return ResourceManager.GetString("Map_47_canada_a", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dragon Ridge.
+        /// </summary>
+        public static string Map_51_asia {
+            get {
+                return ResourceManager.GetString("Map_51_asia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pearl River.
+        /// </summary>
+        public static string Map_60_asia_miao {
+            get {
+                return ResourceManager.GetString("Map_60_asia_miao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tundra.
+        /// </summary>
+        public static string Map_63_tundra {
+            get {
+                return ResourceManager.GetString("Map_63_tundra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sacred Valley.
+        /// </summary>
+        public static string Map_73_asia_korea {
+            get {
+                return ResourceManager.GetString("Map_73_asia_korea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Severogorsk.
+        /// </summary>
+        public static string Map_85_winter {
+            get {
+                return ResourceManager.GetString("Map_85_winter", resourceCulture);
             }
         }
         

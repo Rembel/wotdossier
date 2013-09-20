@@ -1540,4 +1540,124 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Chart_EffByCountry" xml:space="preserve">
     <value>Эффективность по нациям</value>
   </data>
+  <data name="Map_00_tank_tutorial" xml:space="preserve">
+    <value>Тренировочная комната</value>
+  </data>
+  <data name="Map_01_karelia" xml:space="preserve">
+    <value>Карелия</value>
+  </data>
+  <data name="Map_02_malinovka" xml:space="preserve">
+    <value>Малиновка</value>
+  </data>
+  <data name="Map_03_campania" xml:space="preserve">
+    <value>Провинция</value>
+  </data>
+  <data name="Map_04_himmelsdorf" xml:space="preserve">
+    <value>Химмельсдорф</value>
+  </data>
+  <data name="Map_05_prohorovka" xml:space="preserve">
+    <value>Прохоровка</value>
+  </data>
+  <data name="Map_06_ensk" xml:space="preserve">
+    <value>Энск</value>
+  </data>
+  <data name="Map_07_lakeville" xml:space="preserve">
+    <value>Ласвилль</value>
+  </data>
+  <data name="Map_08_ruinberg" xml:space="preserve">
+    <value>Руинберг</value>
+  </data>
+  <data name="Map_10_hills" xml:space="preserve">
+    <value>Рудники</value>
+  </data>
+  <data name="Map_11_murovanka" xml:space="preserve">
+    <value>Мурованка</value>
+  </data>
+  <data name="Map_13_erlenberg" xml:space="preserve">
+    <value>Эрленберг</value>
+  </data>
+  <data name="Map_14_siegfried_line" xml:space="preserve">
+    <value>Линия Зигфрида</value>
+  </data>
+  <data name="Map_15_komarin" xml:space="preserve">
+    <value>Комарин</value>
+  </data>
+  <data name="Map_17_munchen" xml:space="preserve">
+    <value>Уайдпарк</value>
+  </data>
+  <data name="Map_18_cliff" xml:space="preserve">
+    <value>Утес</value>
+  </data>
+  <data name="Map_19_monastery" xml:space="preserve">
+    <value>Монастырь</value>
+  </data>
+  <data name="Map_22_slough" xml:space="preserve">
+    <value>Топь</value>
+  </data>
+  <data name="Map_23_westfeld" xml:space="preserve">
+    <value>Вестфилд</value>
+  </data>
+  <data name="Map_28_desert" xml:space="preserve">
+    <value>Песчаная река</value>
+  </data>
+  <data name="Map_29_el_hallouf" xml:space="preserve">
+    <value>Эль-Халлуф</value>
+  </data>
+  <data name="Map_31_airfield" xml:space="preserve">
+    <value>Аэродром</value>
+  </data>
+  <data name="Map_33_fjord" xml:space="preserve">
+    <value>Фьорды</value>
+  </data>
+  <data name="Map_34_redshire" xml:space="preserve">
+    <value>Редшир</value>
+  </data>
+  <data name="Map_35_steppes" xml:space="preserve">
+    <value>Степи</value>
+  </data>
+  <data name="Map_36_fishing_bay" xml:space="preserve">
+    <value>Рыбацкая бухта</value>
+  </data>
+  <data name="Map_37_caucasus" xml:space="preserve">
+    <value>Перевал</value>
+  </data>
+  <data name="Map_38_mannerheim_line" xml:space="preserve">
+    <value>Заполярье</value>
+  </data>
+  <data name="Map_39_crimea" xml:space="preserve">
+    <value>Южный Берег</value>
+  </data>
+  <data name="Map_42_north_america" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="Map_44_north_america" xml:space="preserve">
+    <value>Лайв Окс</value>
+  </data>
+  <data name="Map_45_north_america" xml:space="preserve">
+    <value>Хайвей</value>
+  </data>
+  <data name="Map_47_canada_a" xml:space="preserve">
+    <value>Тихий берег</value>
+  </data>
+  <data name="Map_51_asia" xml:space="preserve">
+    <value>Хребет Дракона</value>
+  </data>
+  <data name="Map_60_asia_miao" xml:space="preserve">
+    <value>Жемчужная Река</value>
+  </data>
+  <data name="Map_63_tundra" xml:space="preserve">
+    <value>Тундра</value>
+  </data>
+  <data name="Map_73_asia_korea" xml:space="preserve">
+    <value>Священная Долина</value>
+  </data>
+  <data name="Map_85_winter" xml:space="preserve">
+    <value>Северогорск</value>
+  </data>
+  <data name="Chart_ReplaysCountByMap" xml:space="preserve">
+    <value>Количество реплеев</value>
+  </data>
+  <data name="Chart_WinReplaysPercentByMap" xml:space="preserve">
+    <value>Процент победных реплеев</value>
+  </data>
 </root>

@@ -58,6 +58,9 @@
   <PropertyGroup>
     <ApplicationIcon>app_icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging">
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
@@ -562,6 +565,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="app.manifest" />
     <None Include="Data\dossier.sqlce" />
     <EmbeddedResource Include="Data\ReplaysCatalog.xml">
       <SubType>Designer</SubType>

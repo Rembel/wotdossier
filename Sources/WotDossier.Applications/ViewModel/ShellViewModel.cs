@@ -83,6 +83,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> OnReplayRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> OnReplayRowUploadCommand { get; set; }
         public DelegateCommand<object> OnReplayRowDeleteCommand { get; set; }
+        public DelegateCommand<object> OnReplayRowsDeleteCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -381,6 +382,7 @@ namespace WotDossier.Applications.ViewModel
             OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
             OnReplayRowUploadCommand = new DelegateCommand<object>(OnReplayRowUpload);
             OnReplayRowDeleteCommand = new DelegateCommand<object>(OnReplayRowDelete);
+            OnReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
@@ -415,9 +417,50 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (replayFile.FileInfo.Exists)
                 {
-                    replayFile.FileInfo.Delete();
+                    try
+                    {
+#if !DEBUG
+                        replayFile.FileInfo.Delete();
+#endif
+                        SelectedFolder.Files.Remove(replayFile);
+                    }
+                    catch (Exception e)
+                    {
+                        _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.FileInfo.Name);
+                        MessageBox.Show(
+                            string.Format("Произошла ошибка при удалении файла({0})", replayFile.FileInfo.Name),
+                            Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+        }
+
+        private void OnReplayRowsDelete(object rowData)
+        {
+            ObservableCollection<object> selectedItems = rowData as ObservableCollection<object> ?? new ObservableCollection<object>();
+            IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
+            bool error = false;
+            foreach (ReplayFile replayFile in replays)
+            {
+                try
+                {
+#if !DEBUG
+                        replayFile.FileInfo.Delete();
+#endif
                     SelectedFolder.Files.Remove(replayFile);
                 }
+                catch (Exception e)
+                {
+                    _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.FileInfo.Name);
+                    error = true;
+                }
+            }
+
+            if (error)
+            {
+                MessageBox.Show(
+                    "Произошла ошибка при удалении одного или нескольких файлов, проверьте что у вас есть необходимые права на совершение операции",
+                    Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -773,24 +816,30 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitBattlesByMapChart(IEnumerable<ReplayFile> list)
         {
-            IEnumerable<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key));
+            List<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
 
-            ReplaysByMapDataSource = dataSource.ToList();
+            if (dataSource.Any())
+            {
+                ReplaysByMapDataSource = dataSource;
 
-            double max = ReplaysByMapDataSource.Max(x => x.X);
-            MaxMapBattles = max + 0.1*max;
+                double max = ReplaysByMapDataSource.Max(x => x.X);
+                MaxMapBattles = max + 0.1*max;
+            }
         }
 
         private void InitWinReplaysPercentByMapChart(IEnumerable<ReplayFile> list)
         {
-            IEnumerable<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(
+            List<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(
                 x => new DataPoint(
-                    100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key));
+                    100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key)).ToList();
 
-            WinReplaysPercentByMapDataSource = dataSource.ToList();
+            if (dataSource.Any())
+            {
+                WinReplaysPercentByMapDataSource = dataSource;
 
-            double max = WinReplaysPercentByMapDataSource.Max(x => x.X);
-            MaxWinReplayPercent = max;
+                double max = WinReplaysPercentByMapDataSource.Max(x => x.X);
+                MaxWinReplayPercent = max;
+            }
         }
 
         public double MaxMapBattles

@@ -250,4 +250,7 @@ Avg XP: {1:0.00}</value>
     <value>Battles: {0}
 Avg Spotted: {1:0.00}</value>
   </data>
+  <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
+    <value>Last N Battles</value>
+  </data>
 </root>

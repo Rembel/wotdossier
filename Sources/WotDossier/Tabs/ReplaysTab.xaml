@@ -81,8 +81,8 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.InputBindings>
-                <KeyBinding Command="{Binding OnReplayRowDeleteCommand}" 
-                            Key="Delete" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                <KeyBinding Command="{Binding OnReplayRowsDeleteCommand}" 
+                            Key="Delete" CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                 <KeyBinding Command="{Binding OnReplayRowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </DataGrid.InputBindings>

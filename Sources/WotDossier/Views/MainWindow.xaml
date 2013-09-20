@@ -153,19 +153,18 @@
                         <StackPanel Orientation="Horizontal">
                             <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
                                                  MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
-                                      Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}" MaxY="55">
+                                      Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}">
                                 <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Кол-во реплеев по картам"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_ReplaysCountByMap}"></TextBlock>
                                 </d3:Header>
                                 <d3:IntegerAxis ShowMinorTicks="False" />
-                                <!--<d3:IntegerAxis ShowMinorTicks="True" Placement="Left" />-->
                                 <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
                                     <d3:BarChart.Resources>
                                         <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                                     </d3:BarChart.Resources>
                                     <d3:TemplateMarkerGenerator>
                                         <DataTemplate>
-                                            <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+                                            <Rectangle Height="10" Fill="Gray"
 								               d3:ViewportPanel.X="0" 
 								               d3:ViewportPanel.Y="{Binding Y}"
 								               d3:ViewportPanel.ViewportWidth="{Binding X}"
@@ -182,19 +181,18 @@
                             </controls:ChartPlotter>
                             <controls:ChartPlotter x:Name="BattlesWinPercentByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
                                                  MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
-                                      Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}" MaxY="55">
+                                      Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}">
                                 <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Процент победных реплеев по картам"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
                                 </d3:Header>
                                 <d3:IntegerAxis ShowMinorTicks="False" />
-                                <!--<d3:IntegerAxis ShowMinorTicks="True" Placement="Left" />-->
                                 <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
                                     <d3:BarChart.Resources>
                                         <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                                     </d3:BarChart.Resources>
                                     <d3:TemplateMarkerGenerator>
                                         <DataTemplate>
-                                            <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+                                            <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:PercentToColorConverter.Default}}"
 								               d3:ViewportPanel.X="0" 
 								               d3:ViewportPanel.Y="{Binding Y}"
 								               d3:ViewportPanel.ViewportWidth="{Binding X}"

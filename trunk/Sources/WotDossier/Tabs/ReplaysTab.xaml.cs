@@ -110,7 +110,7 @@ namespace WotDossier.Tabs
         {
             if (e.RemovedItems.Count > 0 && e.AddedItems.Count == 0)
             {
-                if (dgTime.Items.Count > _selectedIndex + 1)
+                if (dgTime.Items.Count > _selectedIndex)
                 {
                     dgTime.SelectedIndex = _selectedIndex;
                 }
@@ -118,7 +118,7 @@ namespace WotDossier.Tabs
                 {
                     dgTime.SelectedIndex = _selectedIndex - 1;
                 }
-                if (dgTime.SelectedIndex > 0)
+                if (dgTime.SelectedIndex >= 0)
                 {
                     DataGridRow dgrow = (DataGridRow)dgTime.ItemContainerGenerator.ContainerFromItem(dgTime.Items[dgTime.SelectedIndex]);
                     dgrow.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));

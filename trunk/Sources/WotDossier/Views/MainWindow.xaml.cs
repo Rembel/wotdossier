@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
@@ -7,8 +8,10 @@ using System.Windows.Media;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.Charts;
 using Microsoft.Research.DynamicDataDisplay.Charts.Axes;
+using Microsoft.Research.DynamicDataDisplay.Charts.Axes.GenericLocational;
 using Microsoft.Research.DynamicDataDisplay.ViewportRestrictions;
 using WotDossier.Applications.View;
+using WotDossier.Dal;
 using WotDossier.Domain;
 
 namespace WotDossier.Views
@@ -29,8 +32,29 @@ namespace WotDossier.Views
             ConfigureChart(BattlesCountByMap);
             ConfigureChart(BattlesWinPercentByMap);
 
+            BattlesCountByMap.Children.Add(GetMapChartVerticalAxis());
+            BattlesCountByMap.MaxY = WotApiClient.Instance.Maps.Count + 1;
+            BattlesWinPercentByMap.Children.Add(GetMapChartVerticalAxis());
+            BattlesWinPercentByMap.MaxY = WotApiClient.Instance.Maps.Count + 1;
+
             // Enable "minimize to tray" behavior for this Window
             MinimizeToTray.Enable(this);
+        }
+
+        private static VerticalAxis GetMapChartVerticalAxis()
+        {
+            VerticalAxis axis = new VerticalAxis();
+
+            List<Map> list = WotApiClient.Instance.Maps.Values.ToList();
+
+            list.ForEach(x => x.localizedmapname = WotDossier.Resources.Resources.ResourceManager.GetString("Map_"+x.mapidname) ?? x.mapname);
+
+            GenericLocationalLabelProvider<Map, double> labelProvider = new GenericLocationalLabelProvider<Map, double>(list, city => city.localizedmapname);
+            GenericLocationalTicksProvider<Map, double> ticksProvider = new GenericLocationalTicksProvider<Map, double>(list, city => city.mapid);
+
+            axis.LabelProvider = labelProvider;
+            axis.TicksProvider = ticksProvider;
+            return axis;
         }
 
         private void ConfigureChart(ChartPlotter chart)

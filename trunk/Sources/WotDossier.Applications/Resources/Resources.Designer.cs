@@ -338,6 +338,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last N Battles.
+        /// </summary>
+        internal static string StatisticPeriod_LastNBattles {
+            get {
+                return ResourceManager.GetString("StatisticPeriod_LastNBattles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last week.
         /// </summary>
         internal static string StatisticPeriod_LastWeek {

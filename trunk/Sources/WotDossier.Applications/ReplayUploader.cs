@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Security.Authentication;
 using System.Text;
 using System.Windows;
@@ -10,7 +9,9 @@ namespace WotDossier.Applications
 {
     public class ReplayUploader
     {
-        private const string REQ_BOUNDARY = "---------------------------4391253124807";
+        #region Constants
+
+        private const string REQ_BOUNDARY = "---------------------------{0}";
         private const string REQ_CONTENT_PART1_FORMAT = @"--{1}
 Content-Disposition: form-data; name=""Replay[file_name]""
 
@@ -42,6 +43,10 @@ Content-Disposition: form-data; name=""yt0""
 
 Загрузить реплей
 --{4}--";
+        private const string REQ_USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0";
+        private const string REQ_CONTENT_TYPE = "multipart/form-data; boundary=";
+
+        #endregion
 
         /// <summary>
         /// Uploads the specified info.
@@ -59,19 +64,20 @@ Content-Disposition: form-data; name=""yt0""
                 throw new AuthenticationException(string.Format("User not authentificated on site {0}", uploadUrl));
             }
 
-            string firstPart = string.Format(REQ_CONTENT_PART1_FORMAT, info.Name, REQ_BOUNDARY);
-            string secondPart = string.Format(REQ_CONTENT_PART2_FORMAT, replayName, replayDescription, 0, 0, REQ_BOUNDARY);
+            string boundary = string.Format(REQ_BOUNDARY, DateTime.Now.Ticks.ToString("x"));
+            string firstPart = string.Format(REQ_CONTENT_PART1_FORMAT, info.Name, boundary);
+            string secondPart = string.Format(REQ_CONTENT_PART2_FORMAT, replayName, replayDescription, 0, 0, boundary);
 
             byte[] fileBytes = File.ReadAllBytes(info.FullName);
             byte[] contentPart1Bytes = Encoding.UTF8.GetBytes(firstPart);
             byte[] contentPart2Bytes = Encoding.UTF8.GetBytes(secondPart);
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uploadUrl);
-            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0";
+            request.UserAgent = REQ_USER_AGENT;
             request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
             request.CookieContainer = cookieContainer;
             request.ContentLength = info.Length;
-            request.ContentType = "multipart/form-data; boundary=" + REQ_BOUNDARY;
+            request.ContentType = REQ_CONTENT_TYPE + boundary;
             request.Method = WebRequestMethods.Http.Post;
 
             // Длинна запроса (обязательный параметр)

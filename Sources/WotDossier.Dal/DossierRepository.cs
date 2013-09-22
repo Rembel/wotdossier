@@ -58,7 +58,7 @@ namespace WotDossier.Dal
             return list;
         }
 
-        public PlayerEntity UpdatePlayerStatistic(PlayerStat stat, List<TankJson> tanks)
+        public PlayerEntity UpdatePlayerStatistic(Ratings ratings, List<TankJson> tanks, int playerId)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -66,7 +66,7 @@ namespace WotDossier.Dal
 
             try
             {
-                playerEntity = GetOrCreatePlayer(stat);
+                playerEntity = GetPlayer(playerId);
 
                 PlayerStatisticEntity currentSnapshot = _dataProvider.QueryOver<PlayerStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
@@ -87,7 +87,7 @@ namespace WotDossier.Dal
                     currentSnapshot.Update(newSnapshot);
                 }
 
-                currentSnapshot.UpdateRatings(stat);
+                currentSnapshot.UpdateRatings(ratings);
             
                 _dataProvider.Save(currentSnapshot);
                 _dataProvider.CommitTransaction();
@@ -113,13 +113,9 @@ namespace WotDossier.Dal
             return newSnapshotUpdated.Date != currentSnapshotUpdated.Date;
         }
 
-        private PlayerEntity GetOrCreatePlayer(PlayerStat stat)
+        public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
         {
-            return GetOrCreatePlayer(stat.data.name, stat.data.id, Utils.UnixDateToDateTime((long)stat.data.created_at));
-        }
-
-        private PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
-        {
+            _dataProvider.OpenSession();
             PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>()
                                         .Where(x => x.PlayerId == id)
                                         .Take(1)
@@ -134,15 +130,24 @@ namespace WotDossier.Dal
 
                 _dataProvider.Save(playerEntity);
             }
+            _dataProvider.CloseSession();
             return playerEntity;
         }
 
-        public PlayerEntity UpdateTankStatistic(PlayerStat player, List<TankJson> tanks)
+        private PlayerEntity GetPlayer(int id)
+        {
+            return _dataProvider.QueryOver<PlayerEntity>()
+                .Where(x => x.PlayerId == id)
+                .Take(1)
+                .SingleOrDefault<PlayerEntity>();
+        }
+
+        public PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
 
-            PlayerEntity playerEntity = GetOrCreatePlayer(player);
+            PlayerEntity playerEntity = GetPlayer(playerId);
 
             try
             {

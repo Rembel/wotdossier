@@ -215,29 +215,11 @@ namespace WotDossier.Dal
             long playerId = 10800699;
             using (StreamReader streamReader = new StreamReader(@"Data\stat.json"))
 #else
-            PlayerSearchJson player = null;
-
-            try
-            {
-                player = SearchPlayer(settings);
-            }
-            catch (Exception e)
-            {
-                _log.Error("Can't get player id from server", e);
-                throw new PlayerInfoLoadException("Error on getting player data from server", e);
-            }
-
-            if (player == null)
-            {
-                return null;
-            }
-
             Stream stream = null;
-            long playerId = player.id;
 
             try
             {
-                string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                string url = string.Format(URL_GET_PLAYER_INFO, settings.PlayerUniqueId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 stream = response.GetResponseStream();
@@ -259,7 +241,7 @@ namespace WotDossier.Dal
                 JsonTextReader reader = new JsonTextReader(streamReader);
                 JsonSerializer se = new JsonSerializer();
                 PlayerStat loadPlayerStat = se.Deserialize<PlayerStat>(reader);
-                loadPlayerStat.data.id = (int)playerId;
+                loadPlayerStat.data.id = settings.PlayerUniqueId;
                 return loadPlayerStat;
             }
         }

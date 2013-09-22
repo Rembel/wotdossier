@@ -54,9 +54,9 @@ namespace WotDossier.Applications.ViewModel
                 catch (AuthenticationException e)
                 {
                     _log.Error("Authentication error", e);
-                    WpfMessageBoxResult result = WpfMessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure, Resources.Resources.WindowCaption_AuthFailure, WpfMessageBoxButton.Yes | WpfMessageBoxButton.No, WPFMessageBoxImage.Error);
+                    MessageBoxResult result = MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure, Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo, MessageBoxImage.Error);
 
-                    if (result == WpfMessageBoxResult.Yes)
+                    if (result == MessageBoxResult.Yes)
                     {
                         Process proc = new Process();
                         proc.EnableRaisingEvents = false;

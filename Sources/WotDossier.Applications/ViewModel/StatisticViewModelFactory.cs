@@ -12,23 +12,22 @@ namespace WotDossier.Applications.ViewModel
 {
     public class StatisticViewModelFactory
     {
-        public static PlayerStatisticViewModel Create(PlayerStat player, List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks)
+        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, string name, DateTime created, ClanInfo clan)
         {
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
                 .Select(Create).ToList();
 
             PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
-            currentStatisticViewModel.Name = player.data.name;
-            DateTime created = Utils.UnixDateToDateTime((long)player.data.created_at);
+            currentStatisticViewModel.Name = name;
             currentStatisticViewModel.Created = created;
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - created).Days;
             currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
 
-            if (player.data.clan.clan != null)
+            if (clan.clan != null)
             {
-                currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(player.data.clan);
+                currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(clan);
             }
             return currentStatisticViewModel;
         }

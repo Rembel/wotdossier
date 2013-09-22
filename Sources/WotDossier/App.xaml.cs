@@ -87,11 +87,11 @@ namespace WotDossier
             {
                 if (e is SqlException)
                 {
-                    MessageBox.Show(WotDossier.Resources.Resources.Msg_SqlExceptionOccurred, ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(e.ToString(), ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
-                    MessageBox.Show(WotDossier.Resources.Resources.Msg_ExceptionOccurred, ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(e.ToString(), ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }

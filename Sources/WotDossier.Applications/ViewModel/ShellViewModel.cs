@@ -503,7 +503,7 @@ namespace WotDossier.Applications.ViewModel
 
                 if (!File.Exists(jsonFile))
                 {
-                    WpfMessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                    MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
                 Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
@@ -515,7 +515,7 @@ namespace WotDossier.Applications.ViewModel
                 }
                 else
                 {
-                    WpfMessageBox.Show(Resources.Resources.Msg_File_incomplete_or_not_supported, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                    MessageBox.Show(Resources.Resources.Msg_File_incomplete_or_not_supported, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -581,11 +581,19 @@ namespace WotDossier.Applications.ViewModel
                     Thread.CurrentThread.CurrentCulture = culture;
                     Thread.CurrentThread.CurrentUICulture = culture;
 
-                    PlayerStat playerStat = LoadPlayerStatistic(settings);
+                    PlayerStat playerStat = LoadPlayerServerStatistic(settings);
 
-                    if (playerStat != null && playerStat.data.name.Equals(settings.PlayerId, StringComparison.InvariantCultureIgnoreCase))
+                    ClanInfo clanInfo = null;
+                    Ratings ratings = null;
+                    if (playerStat != null)
                     {
-                        FileInfo cacheFile = CacheHelper.GetCacheFile(playerStat.data.name);
+                        clanInfo = playerStat.data.clan;
+                        ratings = playerStat.data.ratings;
+                    }
+
+                    if (settings != null && !string.IsNullOrEmpty(settings.PlayerId) && !string.IsNullOrEmpty(settings.Server))
+                    {
+                        FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerId);
 
                         List<TankJson> tanks;
 
@@ -596,7 +604,7 @@ namespace WotDossier.Applications.ViewModel
 
                             tanks = LoadTanks(cacheFile);
 
-                            PlayerStatistic = InitPlayerStatisticViewModel(playerStat, tanks);
+                            PlayerStatistic = InitPlayerStatisticViewModel(clanInfo, ratings, tanks);
                             ProgressView.Report(bw, 25, string.Empty);
 
                             PlayerStatisticViewModel clone = PlayerStatistic.Clone();
@@ -613,7 +621,7 @@ namespace WotDossier.Applications.ViewModel
 
                             SessionStatistic = clone;
 
-                            InitTanksStatistic(playerStat, tanks);
+                            InitTanksStatistic(tanks);
 
                             ProgressView.Report(bw, 50, string.Empty);
 
@@ -622,8 +630,8 @@ namespace WotDossier.Applications.ViewModel
                         }
                         else
                         {
-                            WpfMessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
-                                            WpfMessageBoxButton.OK, WPFMessageBoxImage.Warning);
+                            MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
+                                            MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                     }
 
@@ -631,21 +639,13 @@ namespace WotDossier.Applications.ViewModel
                 });
         }
 
-        private PlayerStat LoadPlayerStatistic(AppSettings settings)
+        private PlayerStat LoadPlayerServerStatistic(AppSettings settings)
         {
             PlayerStat playerStat = null;
             if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
             {
-                MessageBoxResult result = MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
-
-                //TODO:
-                //if (result == MessageBoxResult.Yes)
-                //{
-                //    OnSettings();
-                //}
-
+                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
                 return null;
             }
 
@@ -656,8 +656,8 @@ namespace WotDossier.Applications.ViewModel
             catch (Exception e)
             {
                 _log.Error(e);
-                WpfMessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
-                                   WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
+                                   MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return playerStat;
         }
@@ -738,8 +738,8 @@ namespace WotDossier.Applications.ViewModel
                         }
                         //else
                         //{
-                        //    WpfMessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, folderPath), Resources.Resources.WindowCaption_Error, 
-                        //        WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                        //    MessageBox.Show(string.Format(Resources.Resources.Msg_CantFindReplaysDirectory, folderPath), Resources.Resources.WindowCaption_Error, 
+                        //        MessageBoxButton.OK, MessageBoxImage.Error);
                         //}
                     }
 
@@ -751,18 +751,20 @@ namespace WotDossier.Applications.ViewModel
                 }, new ProgressDialogSettings(true, true, false));
         }
 
-        private PlayerStatisticViewModel InitPlayerStatisticViewModel(PlayerStat playerStat, List<TankJson> tanks)
+        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ClanInfo clanInfo, Ratings ratings, List<TankJson> tanks)
         {
-            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(playerStat, tanks);
+            AppSettings settings = SettingsReader.Get();
+
+            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(ratings, tanks, settings.PlayerUniqueId);
 
             List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
-
-            return StatisticViewModelFactory.Create(playerStat, statisticEntities, tanks);
+            return StatisticViewModelFactory.Create(statisticEntities, tanks, player.Name, player.Creaded, clanInfo);
         }
 
-        private void InitTanksStatistic(PlayerStat playerStat, List<TankJson> tanks)
+        private void InitTanksStatistic(List<TankJson> tanks)
         {
-            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(playerStat, tanks);
+            AppSettings settings = SettingsReader.Get();
+            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerUniqueId, tanks);
 
             if (playerEntity == null)
             {

@@ -11,6 +11,7 @@ namespace WotDossier.Domain
         private DateTime? _prevDate;
         private bool _checkForUpdates;
         public string PlayerId { get; set; }
+        public int PlayerUniqueId { get; set; }
         public string Server { get; set; }
 
         public string Language

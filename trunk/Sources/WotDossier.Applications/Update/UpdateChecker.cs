@@ -3,9 +3,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Windows;
 using System.Windows.Threading;
 using WotDossier.Domain;
-using WotDossier.Framework.Forms;
 using WotDossier.Framework.Presentation.Services;
 
 namespace WotDossier.Applications.Update
@@ -27,7 +27,7 @@ namespace WotDossier.Applications.Update
                         
                         var isNewVersionAvailable = newVersion > currentVersion;
 
-                        if (isNewVersionAvailable && WpfMessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, newVersion), ApplicationInfo.ProductName, WpfMessageBoxButton.Yes | WpfMessageBoxButton.No, WPFMessageBoxImage.Question) == WpfMessageBoxResult.Yes)
+                        if (isNewVersionAvailable && MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, newVersion), ApplicationInfo.ProductName, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                         {
                             Process.Start(DownloadsList);
                         }

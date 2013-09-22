@@ -66,7 +66,7 @@ namespace WotDossier.Converters
                     }
                     catch (Exception e)
                     {
-                        WpfMessageBox.Show(Resources.Resources.ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server, Resources.Resources.WindowCaption_Error, WpfMessageBoxButton.OK, WPFMessageBoxImage.Error);
+                        MessageBox.Show(Resources.Resources.ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                         _log.Error("Error on clan icon load", e);
                         return null;
                     }

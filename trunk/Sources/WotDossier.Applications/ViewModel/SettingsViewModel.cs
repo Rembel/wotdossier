@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Windows;
+using Common.Logging;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
+using WotDossier.Common;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
@@ -14,6 +18,9 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(SettingsViewModel))]
     public class SettingsViewModel : ViewModel<ISettingsView>
     {
+        private readonly DossierRepository _dossierRepository;
+        private static readonly ILog _log = LogManager.GetLogger("ShellViewModel");
+
         private AppSettings _appSettings;
         private List<string> _servers = new List<string> { "ru", "eu" };
         private List<ListItem<string>> _languages = new List<ListItem<string>>
@@ -99,9 +106,10 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         /// <param name="view">The view.</param>
         [ImportingConstructor]
-        public SettingsViewModel([Import(typeof(ISettingsView))]ISettingsView view)
+        public SettingsViewModel([Import(typeof(ISettingsView))]ISettingsView view, [Import]DossierRepository dossierRepository)
             : base(view)
         {
+            _dossierRepository = dossierRepository;
             SaveCommand = new DelegateCommand(OnSave);
             SelectReplaysFolderCommand = new DelegateCommand(OnSelectReplaysFolder);
             _appSettings = SettingsReader.Get();
@@ -119,9 +127,25 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSave()
         {
-            SettingsReader.Save(_appSettings);
-            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate));
-            ViewTyped.Close();
+            try
+            {
+                var player = WotApiClient.Instance.SearchPlayer(_appSettings);
+                if (player != null)
+                {
+                    _appSettings.PlayerUniqueId = player.id;
+                    _dossierRepository.GetOrCreatePlayer(player.name, player.id, Utils.UnixDateToDateTime((long)player.created_at));
+                }
+
+                SettingsReader.Save(_appSettings);
+                EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate));
+                ViewTyped.Close();
+            }
+            catch (Exception e)
+            {
+                _log.Error("Can't get player info from server", e);
+                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
+                                   MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         /// <summary>

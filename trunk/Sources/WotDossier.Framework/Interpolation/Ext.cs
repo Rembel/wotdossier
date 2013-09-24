@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WotDossier.Applications
+namespace WotDossier.Framework.Interpolation
 {
     public static class Ext
     {

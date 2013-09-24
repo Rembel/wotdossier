@@ -224,6 +224,7 @@ namespace WotDossier.Applications.ViewModel
             Spotted = stat.Spotted;
             HitsPercents = stat.HitsPercents;
             DamageDealt = stat.DamageDealt;
+            DamageTaken = stat.DamageTaken;
             CapturePoints = stat.CapturePoints;
             DroppedCapturePoints = stat.DroppedCapturePoints;
             //Created = stat.PlayerIdObject.Creaded);

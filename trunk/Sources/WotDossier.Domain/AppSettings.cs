@@ -10,9 +10,16 @@ namespace WotDossier.Domain
         private string _replaysFolderPath;
         private DateTime? _prevDate;
         private bool _checkForUpdates;
-        public string PlayerId { get; set; }
-        public int PlayerUniqueId { get; set; }
+        private int _lastNBattles = 100;
+        public string PlayerName { get; set; }
+        public int PlayerId { get; set; }
         public string Server { get; set; }
+
+        public int LastNBattles
+        {
+            get { return _lastNBattles; }
+            set { _lastNBattles = value; }
+        }
 
         public string Language
         {

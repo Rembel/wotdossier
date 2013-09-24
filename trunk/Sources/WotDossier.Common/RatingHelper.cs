@@ -107,6 +107,15 @@ WN7 formula:
             return eff<400 ? 0 : Math.Max(Math.Min(eff*(eff*(eff*(eff*(eff*(0.000000000000000045254*eff - 0.00000000000033131) + 0.00000000094164) - 0.0000013227) + 0.00095664) - 0.2598) + 13.23, 100), 0);
         }
 
+        /// <summary>
+        /// http://tanks.noobmeter.com/tankList
+        /// </summary>
+        /// <param name="battles"></param>
+        /// <param name="wins"></param>
+        /// <param name="expectedDamage"></param>
+        /// <param name="playerDamage"></param>
+        /// <param name="avgTier"></param>
+        /// <returns></returns>
         public static double PerformanceRating(double battles, double wins, double expectedDamage, double playerDamage, double avgTier)
         {
             //Win rate component

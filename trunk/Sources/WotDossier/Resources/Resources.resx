@@ -1475,4 +1475,13 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Chart_WinReplaysPercentByMap" xml:space="preserve">
     <value>Win replays percent</value>
   </data>
+  <data name="Common_KillDeathRatio" xml:space="preserve">
+    <value>Kill/Death:</value>
+  </data>
+  <data name="Common_DamageRatio" xml:space="preserve">
+    <value>Dealt/Received:</value>
+  </data>
+  <data name="PeriodTab_CompareHeader" xml:space="preserve">
+    <value>Compare with</value>
+  </data>
 </root>

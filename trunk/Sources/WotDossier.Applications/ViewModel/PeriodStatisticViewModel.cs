@@ -83,6 +83,11 @@ namespace WotDossier.Applications.ViewModel
             get { return DamageDealt - PrevStatistic.DamageDealt; }
         }
 
+        public double KillDeathRatioDelta
+        {
+            get { return KillDeathRatio - PrevStatistic.KillDeathRatio; }
+        }
+
         public int CapturePointsDelta
         {
             get { return CapturePoints - PrevStatistic.CapturePoints; }
@@ -707,13 +712,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent eventArgs)
+        protected virtual void OnStatisticPeriodChanged(StatisticPeriodChangedEvent eventArgs)
         {
             StatisticPeriod statisticPeriod = eventArgs.StatisticPeriod;
             DateTime? prevDateTime = eventArgs.PrevDateTime;
 
-            T prevStatistic = GetPrevStatistic(statisticPeriod, prevDateTime);
-            SetPreviousStatistic(prevStatistic);
+            if (statisticPeriod != StatisticPeriod.LastNBattles)
+            {
+                T prevStatistic = GetPrevStatistic(statisticPeriod, prevDateTime);
+                SetPreviousStatistic(prevStatistic);
+            }
         }
 
         private T GetPrevStatistic(StatisticPeriod statisticPeriod, DateTime? prevDateTime)
@@ -758,17 +766,18 @@ namespace WotDossier.Applications.ViewModel
     public class StatisticPeriodChangedEvent : BaseEvent<StatisticPeriodChangedEvent>
     {
         public StatisticPeriod StatisticPeriod { get; set; }
-
         public DateTime? PrevDateTime { get; set; }
+        public int LastNBattles { get; set; }
 
         public StatisticPeriodChangedEvent()
         {
         }
 
-        public StatisticPeriodChangedEvent(StatisticPeriod statisticPeriod, DateTime? prevDate)
+        public StatisticPeriodChangedEvent(StatisticPeriod statisticPeriod, DateTime? prevDate, int lastNBattles)
         {
             StatisticPeriod = statisticPeriod;
             PrevDateTime = prevDate;
+            LastNBattles = lastNBattles;
         }
     }
 }

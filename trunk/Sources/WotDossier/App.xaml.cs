@@ -31,11 +31,7 @@ namespace WotDossier
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            //set app lang
-            var culture = new CultureInfo(SettingsReader.Get().Language);
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-
+            
 #if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't
             // jump into the code when an exception occurs.
@@ -49,6 +45,11 @@ namespace WotDossier
                 DatabaseManager manager = new DatabaseManager();
                 manager.InitDatabase();
                 manager.Update();
+
+                //set app lang
+                var culture = new CultureInfo(SettingsReader.Get().Language);
+                Thread.CurrentThread.CurrentCulture = culture;
+                Thread.CurrentThread.CurrentUICulture = culture;
 
                 CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
 

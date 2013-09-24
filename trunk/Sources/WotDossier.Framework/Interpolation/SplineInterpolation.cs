@@ -31,7 +31,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WotDossier.Applications
+namespace WotDossier.Framework.Interpolation
 {
     /// <summary>
     /// Third-Degree Spline Interpolation Algorithm.

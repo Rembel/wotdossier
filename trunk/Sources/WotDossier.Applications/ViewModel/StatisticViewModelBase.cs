@@ -18,6 +18,7 @@ namespace WotDossier.Applications.ViewModel
         public int Spotted { get; set; }
 
         public int DamageDealt { get; set; }
+        public int DamageTaken { get; set; }
         public int CapturePoints { get; set; }
         public int DroppedCapturePoints { get; set; }
 
@@ -30,6 +31,18 @@ namespace WotDossier.Applications.ViewModel
                 if (BattlesCount - SurvivedBattles > 0)
                 {
                     return Frags / (double)(BattlesCount - SurvivedBattles);
+                }
+                return 0;
+            }
+        }
+
+        public double DamageRatio
+        {
+            get
+            {
+                if (DamageTaken > 0)
+                {
+                    return DamageDealt / (double)DamageTaken;
                 }
                 return 0;
             }

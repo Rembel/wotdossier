@@ -1494,6 +1494,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dealt/Received:.
+        /// </summary>
+        public static string Common_DamageRatio {
+            get {
+                return ResourceManager.GetString("Common_DamageRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data as of: .
         /// </summary>
         public static string Common_DataUpdate {
@@ -1571,6 +1580,15 @@ namespace WotDossier.Resources {
         public static string Common_KievArmorRating {
             get {
                 return ResourceManager.GetString("Common_KievArmorRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kill/Death:.
+        /// </summary>
+        public static string Common_KillDeathRatio {
+            get {
+                return ResourceManager.GetString("Common_KillDeathRatio", resourceCulture);
             }
         }
         
@@ -3065,6 +3083,15 @@ namespace WotDossier.Resources {
         public static string Msg_SqlExceptionOccurred {
             get {
                 return ResourceManager.GetString("Msg_SqlExceptionOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare with.
+        /// </summary>
+        public static string PeriodTab_CompareHeader {
+            get {
+                return ResourceManager.GetString("PeriodTab_CompareHeader", resourceCulture);
             }
         }
         

@@ -5,6 +5,7 @@
         Recent,
         LastWeek,
         AllObservationPeriod,
+        LastNBattles,
         Custom
     }
 }

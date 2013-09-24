@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Common;
-using WotDossier.Dal;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
@@ -67,20 +66,6 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #region [ ITankRowDamage ]
 
-        public int DamageTaken { get; set; }
-
-        public double DamageRatio
-        {
-            get
-            {
-                if (DamageTaken > 0)
-                {
-                    return DamageDealt/(double) DamageTaken; 
-                }
-                return 0;
-            }
-        }
-
         public int DamagePerHit
         {
             get
@@ -91,6 +76,11 @@ namespace WotDossier.Applications.ViewModel.Rows
                 }
                 return 0;
             }
+        }
+
+        public double DamageRatioDelta
+        {
+            get { return DamageRatio - PrevStatistic.DamageRatio; }
         }
 
         #endregion

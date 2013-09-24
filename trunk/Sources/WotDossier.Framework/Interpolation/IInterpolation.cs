@@ -30,7 +30,7 @@
 
 using System;
 
-namespace WotDossier.Applications
+namespace WotDossier.Framework.Interpolation
 {
     /// <summary>
     /// Interpolation within the range of a discrete set of known data points.

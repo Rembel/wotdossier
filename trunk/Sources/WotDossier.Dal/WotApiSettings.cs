@@ -1,4 +1,6 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
+using System.Globalization;
 
 namespace WotDossier.Dal
 {
@@ -27,6 +29,24 @@ namespace WotDossier.Dal
         public static string SettingsPath
         {
             get { return ConfigurationManager.AppSettings["settings-path"] ?? "\app.settings"; }
+        }
+
+        public static double SliceTime
+        {
+            get
+            {
+                string time = ConfigurationManager.AppSettings["slice-time"];
+                TimeSpan result;
+                if (!string.IsNullOrEmpty(time))
+                {
+                    if (TimeSpan.TryParse(time, CultureInfo.InvariantCulture, out result))
+                    {
+                        return result.Hours;
+                    }
+                }
+                // at 4 hours every day
+                return 4;
+            }
         }
     }
 }

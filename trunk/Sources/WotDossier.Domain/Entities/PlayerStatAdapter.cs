@@ -32,6 +32,7 @@ namespace WotDossier.Domain.Entities
             Spotted = _tanks.Sum(x => x.Tankdata.spotted);
             Hits_percents = _tanks.Sum(x => x.Tankdata.hits)/((double) _tanks.Sum(x => x.Tankdata.shots))*100.0;
             Damage_dealt = _tanks.Sum(x => x.Tankdata.damageDealt);
+            Damage_taken = _tanks.Sum(x => x.Tankdata.damageReceived);
             Capture_points = _tanks.Sum(x => x.Tankdata.capturePoints);
             Dropped_capture_points = _tanks.Sum(x => x.Tankdata.droppedCapturePoints);
             Updated = _tanks.Max(x => x.Common.lastBattleTimeR);
@@ -240,6 +241,7 @@ namespace WotDossier.Domain.Entities
         public double Hits_percents { get; set; }
 
         public int Damage_dealt { get; set; }
+        public int Damage_taken { get; set; }
 
         public int Capture_points { get; set; }
 

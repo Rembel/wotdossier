@@ -13,6 +13,7 @@ using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using WotDossier.Applications.Events;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
@@ -572,28 +573,25 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnLoad()
         {
-            ProgressDialogResult result = ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays,
+            AppSettings settings = SettingsReader.Get();
+            if (settings == null || string.IsNullOrEmpty(settings.PlayerName) || string.IsNullOrEmpty(settings.Server))
+            {
+                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays,
                 (bw, we) =>
                 {
-                    AppSettings settings = SettingsReader.Get();
                     //set thread culture
-                    var culture = new CultureInfo(SettingsReader.Get().Language);
-                    Thread.CurrentThread.CurrentCulture = culture;
-                    Thread.CurrentThread.CurrentUICulture = culture;
+                    SetUICulture();
 
-                    PlayerStat playerStat = LoadPlayerServerStatistic(settings);
+                    ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
 
-                    ClanInfo clanInfo = null;
-                    Ratings ratings = null;
-                    if (playerStat != null)
+                    if (settings != null && !string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
                     {
-                        clanInfo = playerStat.data.clan;
-                        ratings = playerStat.data.ratings;
-                    }
-
-                    if (settings != null && !string.IsNullOrEmpty(settings.PlayerId) && !string.IsNullOrEmpty(settings.Server))
-                    {
-                        FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerId);
+                        FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName);
 
                         List<TankJson> tanks;
 
@@ -604,7 +602,7 @@ namespace WotDossier.Applications.ViewModel
 
                             tanks = LoadTanks(cacheFile);
 
-                            PlayerStatistic = InitPlayerStatisticViewModel(clanInfo, ratings, tanks);
+                            PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
                             ProgressView.Report(bw, 25, string.Empty);
 
                             PlayerStatisticViewModel clone = PlayerStatistic.Clone();
@@ -639,16 +637,16 @@ namespace WotDossier.Applications.ViewModel
                 });
         }
 
-        private PlayerStat LoadPlayerServerStatistic(AppSettings settings)
+        private static void SetUICulture()
+        {
+            var culture = new CultureInfo(SettingsReader.Get().Language);
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+        }
+
+        private ServerStatWrapper LoadPlayerServerStatistic(AppSettings settings)
         {
             PlayerStat playerStat = null;
-            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
-            {
-                MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                return null;
-            }
-
             try
             {
                 playerStat = WotApiClient.Instance.LoadPlayerStat(settings);
@@ -656,10 +654,8 @@ namespace WotDossier.Applications.ViewModel
             catch (Exception e)
             {
                 _log.Error(e);
-                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
-                                   MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            return playerStat;
+            return new ServerStatWrapper(playerStat);
         }
 
         private static List<TankJson> LoadTanks(FileInfo cacheFile)
@@ -751,20 +747,20 @@ namespace WotDossier.Applications.ViewModel
                 }, new ProgressDialogSettings(true, true, false));
         }
 
-        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ClanInfo clanInfo, Ratings ratings, List<TankJson> tanks)
+        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ServerStatWrapper serverStatistic, List<TankJson> tanks)
         {
             AppSettings settings = SettingsReader.Get();
 
-            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(ratings, tanks, settings.PlayerUniqueId);
+            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(serverStatistic.Ratings, tanks, settings.PlayerId);
 
             List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
-            return StatisticViewModelFactory.Create(statisticEntities, tanks, player.Name, player.Creaded, clanInfo);
+            return StatisticViewModelFactory.Create(statisticEntities, tanks, player.Name, player.Creaded, serverStatistic.ClanInfo);
         }
 
         private void InitTanksStatistic(List<TankJson> tanks)
         {
             AppSettings settings = SettingsReader.Get();
-            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerUniqueId, tanks);
+            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerId, tanks);
 
             if (playerEntity == null)
             {
@@ -986,9 +982,23 @@ namespace WotDossier.Applications.ViewModel
             return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
         }
 
-        private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent obj)
+        private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent args)
         {
-            InitLastUsedTanksChart();
+            if (args.StatisticPeriod == StatisticPeriod.LastNBattles)
+            {
+                int battles = PlayerStatistic.BattlesCount - args.LastNBattles;
+
+                PlayerStatisticViewModel viewModel = PlayerStatistic.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
+                if (viewModel != null)
+                {
+                    EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()
+                        .Publish(new StatisticPeriodChangedEvent(StatisticPeriod.Custom, viewModel.Updated, 0));
+                }
+            }
+            else
+            {
+                InitLastUsedTanksChart();   
+            }
         }
 
         private void OnReplayFileMove(ReplayFileMoveEventArgs eventArgs)

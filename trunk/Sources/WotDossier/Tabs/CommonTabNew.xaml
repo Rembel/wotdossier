@@ -121,7 +121,7 @@
                 </ScrollViewer>
             </TabItem>
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Session}" Name="tabSession" DataContext="{Binding SessionStatistic}">
-                <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Center"></tabs:PeriodTab>
+                <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Top"></tabs:PeriodTab>
             </TabItem>
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">
                 <controls:RatingView></controls:RatingView>

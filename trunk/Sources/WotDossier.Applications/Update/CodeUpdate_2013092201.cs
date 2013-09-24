@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlServerCe;
+using System.IO;
 using WotDossier.Dal;
 using WotDossier.Domain;
 
@@ -16,17 +17,34 @@ namespace WotDossier.Applications.Update
 
         public override void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
         {
+            var filePath = SettingsReader.GetFilePath();
+
+            if (File.Exists(filePath))
+            {
+                string replace;
+                using (StreamReader stream = File.OpenText(filePath))
+                {
+                    var readToEnd = stream.ReadToEnd();
+                    replace = readToEnd.Replace("PlayerId", "PlayerName");
+                }
+
+                using (StreamWriter stream = File.CreateText(filePath))
+                {
+                    stream.Write(replace);
+                }
+            }
+
             AppSettings appSettings = SettingsReader.Get();
-            if (appSettings.PlayerId != null && appSettings.PlayerUniqueId == 0)
+            if (appSettings.PlayerName != null && appSettings.PlayerId == 0)
             {
                 var player = WotApiClient.Instance.SearchPlayer(appSettings);
                 if (player != null)
                 {
-                    appSettings.PlayerUniqueId = player.id;
+                    appSettings.PlayerId = player.id;
                 }
                 else
                 {
-                    appSettings.PlayerId = null;
+                    appSettings.PlayerName = null;
                 }
                 SettingsReader.Save(appSettings);
             }

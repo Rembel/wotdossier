@@ -1669,4 +1669,13 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="PeriodTab_CompareHeader" xml:space="preserve">
     <value>Сравнение с данными за </value>
   </data>
+  <data name="Common_WGRating" xml:space="preserve">
+    <value>Рейтинг WG</value>
+  </data>
+  <data name="Common_AverageTier" xml:space="preserve">
+    <value>Средний уровень</value>
+  </data>
+  <data name="Common_WotNoobsRating" xml:space="preserve">
+    <value>Рейтинг wot-noobs.ru</value>
+  </data>
 </root>

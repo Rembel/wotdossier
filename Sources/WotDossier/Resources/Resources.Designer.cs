@@ -1368,6 +1368,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average tier.
+        /// </summary>
+        public static string Common_AverageTier {
+            get {
+                return ResourceManager.GetString("Common_AverageTier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Average Capture Points:.
         /// </summary>
         public static string Common_AvgCapturePoints {
@@ -1773,11 +1782,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rating WG.
+        /// </summary>
+        public static string Common_WGRating {
+            get {
+                return ResourceManager.GetString("Common_WGRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WN6 Rating.
         /// </summary>
         public static string Common_Wn6Rating {
             get {
                 return ResourceManager.GetString("Common_Wn6Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rating wot-noobs.ru.
+        /// </summary>
+        public static string Common_WotNoobsRating {
+            get {
+                return ResourceManager.GetString("Common_WotNoobsRating", resourceCulture);
             }
         }
         

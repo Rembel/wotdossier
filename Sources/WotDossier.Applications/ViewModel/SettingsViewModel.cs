@@ -8,6 +8,7 @@ using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Domain.Player;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
@@ -33,9 +34,11 @@ namespace WotDossier.Applications.ViewModel
             new ListItem<StatisticPeriod>(StatisticPeriod.Recent, Resources.Resources.StatisticPeriod_Recent),
             new ListItem<StatisticPeriod>(StatisticPeriod.LastWeek, Resources.Resources.StatisticPeriod_LastWeek), 
             new ListItem<StatisticPeriod>(StatisticPeriod.AllObservationPeriod, Resources.Resources.StatisticPeriod_AllObservationPeriod),
+            //new ListItem<StatisticPeriod>(StatisticPeriod.LastNBattles, Resources.Resources.StatisticPeriod_LastNBattles),
             new ListItem<StatisticPeriod>(StatisticPeriod.Custom, Resources.Resources.StatisticPeriod_Custom)
         };
         private List<DateTime> _prevDates;
+        private bool _nameChanged;
         public DelegateCommand SaveCommand { get; set; }
         public DelegateCommand SelectReplaysFolderCommand { get; set; }
 
@@ -56,6 +59,16 @@ namespace WotDossier.Applications.ViewModel
             set { _languages = value; }
         }
 
+        public string PlayerName
+        {
+            get { return AppSettings.PlayerName; }
+            set
+            {
+                AppSettings.PlayerName = value;
+                _nameChanged = true;
+            }
+        }
+
         public List<ListItem<StatisticPeriod>> Periods
         {
             get { return _periods; }
@@ -71,7 +84,28 @@ namespace WotDossier.Applications.ViewModel
         public StatisticPeriod Period
         {
             get { return AppSettings.Period; }
-            set { AppSettings.Period = value; }
+            set
+            {
+                AppSettings.Period = value;
+                RaisePropertyChanged("LastNBattlesVisible");
+                RaisePropertyChanged("PeriodsVisible");
+            }
+        }
+
+        public bool LastNBattlesVisible
+        {
+            get { return Period == StatisticPeriod.LastNBattles; }
+        }
+
+        public bool PeriodsVisible
+        {
+            get { return Period == StatisticPeriod.Custom; }
+        }
+
+        public int LastNBattles
+        {
+            get { return AppSettings.LastNBattles; }
+            set { AppSettings.LastNBattles = value; }
         }
 
         public DateTime? PrevDate
@@ -127,25 +161,35 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSave()
         {
-            try
+            if (_nameChanged)
             {
-                var player = WotApiClient.Instance.SearchPlayer(_appSettings);
-                if (player != null)
+                PlayerSearchJson player = null;
+                
+                try
                 {
-                    _appSettings.PlayerUniqueId = player.id;
-                    _dossierRepository.GetOrCreatePlayer(player.name, player.id, Utils.UnixDateToDateTime((long)player.created_at));
+                    player = WotApiClient.Instance.SearchPlayer(_appSettings);
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Can't get player info from server", e);
                 }
 
-                SettingsReader.Save(_appSettings);
-                EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate));
-                ViewTyped.Close();
+                if (player != null)
+                {
+                    _appSettings.PlayerId = player.id;
+                    _dossierRepository.GetOrCreatePlayer(player.name, player.id, Utils.UnixDateToDateTime((long) player.created_at));
+                }
+                else
+                {
+                    _appSettings.PlayerId = 0;
+                    MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
             }
-            catch (Exception e)
-            {
-                _log.Error("Can't get player info from server", e);
-                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error,
-                                   MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+
+            SettingsReader.Save(_appSettings);
+            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate, LastNBattles));
+            ViewTyped.Close();
         }
 
         /// <summary>

@@ -111,6 +111,11 @@ namespace WotDossier.Domain.Entities
         public virtual int DamageDealt { get; set; }
 
         /// <summary>
+        /// Gets/Sets the field "DamageTaken".
+        /// </summary>
+        public virtual int DamageTaken { get; set; }
+
+        /// <summary>
         /// Gets/Sets the field "CapturePoints".
         /// </summary>
         public virtual int CapturePoints { get; set; }
@@ -275,6 +280,7 @@ namespace WotDossier.Domain.Entities
             Spotted = statAdapter.Spotted;
             HitsPercents = statAdapter.Hits_percents;
             DamageDealt = statAdapter.Damage_dealt;
+            DamageTaken = statAdapter.Damage_taken;
             CapturePoints = statAdapter.Capture_points;
             DroppedCapturePoints = statAdapter.Dropped_capture_points;
             Updated = statAdapter.Updated;

@@ -36,7 +36,7 @@ namespace WotDossier.Applications
             return settingsDto;
         }
 
-        private static string GetFilePath()
+        public static string GetFilePath()
         {
             return Environment.CurrentDirectory + _filePath;
         }

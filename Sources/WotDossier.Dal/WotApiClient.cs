@@ -20,8 +20,7 @@ namespace WotDossier.Dal
 {
     /// <summary>
     /// Web Client for WoT web api
-    /// https://gist.github.com/bartku/2419852
-    /// http://tanks.noobmeter.com/tankList
+    /// https://gist.github.com/bartku/2419852 
     /// </summary>
     public class WotApiClient
     {
@@ -206,20 +205,16 @@ namespace WotDossier.Dal
         /// <exception cref="PlayerInfoLoadException"></exception>
         public PlayerStat LoadPlayerStat(AppSettings settings)
         {
-            if (settings == null || string.IsNullOrEmpty(settings.PlayerId) || string.IsNullOrEmpty(settings.Server))
+            if (settings == null || string.IsNullOrEmpty(settings.PlayerName) || string.IsNullOrEmpty(settings.Server))
             {
                 return null;
             }
             
-#if DEBUG
-            long playerId = 10800699;
-            using (StreamReader streamReader = new StreamReader(@"Data\stat.json"))
-#else
-            Stream stream = null;
+            Stream stream;
 
             try
             {
-                string url = string.Format(URL_GET_PLAYER_INFO, settings.PlayerUniqueId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                string url = string.Format(URL_GET_PLAYER_INFO, settings.PlayerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 stream = response.GetResponseStream();
@@ -236,12 +231,10 @@ namespace WotDossier.Dal
             }
 
             using (StreamReader streamReader = new StreamReader(stream))
-#endif
             {
                 JsonTextReader reader = new JsonTextReader(streamReader);
                 JsonSerializer se = new JsonSerializer();
                 PlayerStat loadPlayerStat = se.Deserialize<PlayerStat>(reader);
-                loadPlayerStat.data.id = settings.PlayerUniqueId;
                 return loadPlayerStat;
             }
         }
@@ -256,7 +249,7 @@ namespace WotDossier.Dal
 #if DEBUG
             return new PlayerSearchJson { created_at = 0, id = 10800699, name = "rembel"};
 #else
-            string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
+            string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream stream = response.GetResponseStream())

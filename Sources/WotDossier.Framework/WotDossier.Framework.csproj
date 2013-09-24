@@ -150,6 +150,11 @@
     <Compile Include="Forms\WPFMessageBoxImage.cs" />
     <Compile Include="Forms\WPFMessageBoxResult.cs" />
     <Compile Include="Foundation\Model.cs" />
+    <Compile Include="Interpolation\AkimaCubicSplineInterpolator.cs" />
+    <Compile Include="Interpolation\CubicHermiteSplineInterpolation.cs" />
+    <Compile Include="Interpolation\Ext.cs" />
+    <Compile Include="Interpolation\IInterpolation.cs" />
+    <Compile Include="Interpolation\SplineInterpolation.cs" />
     <Compile Include="Localization\ITranslationProvider.cs" />
     <Compile Include="Localization\LanguageChangedEventManager.cs" />
     <Compile Include="Localization\ResxTranslationProvider.cs" />
@@ -222,6 +227,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

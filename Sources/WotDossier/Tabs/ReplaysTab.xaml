@@ -110,7 +110,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Medals">
+                <!--<DataGridTemplateColumn Header="Medals">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ListBox Background="Transparent" ItemsSource="{Binding Medals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
@@ -131,7 +131,7 @@
                             </ListBox>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">

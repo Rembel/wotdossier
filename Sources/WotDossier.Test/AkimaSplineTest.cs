@@ -29,7 +29,7 @@
 // </copyright>
 
 using NUnit.Framework;
-using WotDossier.Applications;
+using WotDossier.Framework.Interpolation;
 
 namespace WotDossier.Test
 {

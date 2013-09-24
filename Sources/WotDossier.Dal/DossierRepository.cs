@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Configuration;
 using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
@@ -87,7 +88,10 @@ namespace WotDossier.Dal
                     currentSnapshot.Update(newSnapshot);
                 }
 
-                currentSnapshot.UpdateRatings(ratings);
+                if (ratings != null)
+                {
+                    currentSnapshot.UpdateRatings(ratings);
+                }
             
                 _dataProvider.Save(currentSnapshot);
                 _dataProvider.CommitTransaction();
@@ -108,8 +112,8 @@ namespace WotDossier.Dal
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
         {
-            newSnapshotUpdated = newSnapshotUpdated.AddHours(-4); // at 4 hours every day
-            currentSnapshotUpdated = currentSnapshotUpdated.AddHours(-4); // at 4 hours every day
+            newSnapshotUpdated = newSnapshotUpdated.AddHours(WotDossierSettings.SliceTime);
+            currentSnapshotUpdated = currentSnapshotUpdated.AddHours(WotDossierSettings.SliceTime);
             return newSnapshotUpdated.Date != currentSnapshotUpdated.Date;
         }
 

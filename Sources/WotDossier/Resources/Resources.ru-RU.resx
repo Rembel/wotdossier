@@ -1660,4 +1660,13 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Chart_WinReplaysPercentByMap" xml:space="preserve">
     <value>Процент победных реплеев</value>
   </data>
+  <data name="Common_DamageRatio" xml:space="preserve">
+    <value>Нанесено/получено:</value>
+  </data>
+  <data name="Common_KillDeathRatio" xml:space="preserve">
+    <value>Уничтожил/убит:</value>
+  </data>
+  <data name="PeriodTab_CompareHeader" xml:space="preserve">
+    <value>Сравнение с данными за </value>
+  </data>
 </root>

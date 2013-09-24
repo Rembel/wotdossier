@@ -226,7 +226,7 @@
     <value>Недавние</value>
   </data>
   <data name="StatisticPeriod_LastWeek" xml:space="preserve">
-    <value>Посленидняя неделя</value>
+    <value>Последняя неделя</value>
   </data>
   <data name="StatisticPeriod_AllObservationPeriod" xml:space="preserve">
     <value>Весь период</value>
@@ -249,5 +249,8 @@
   <data name="Chart_Tooltip_AvgSpotted" xml:space="preserve">
     <value>Боев: {0}
 В среднем обнаружено: {1:0.00}</value>
+  </data>
+  <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
+    <value>Последние N боев</value>
   </data>
 </root>

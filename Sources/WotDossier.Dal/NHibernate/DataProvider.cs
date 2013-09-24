@@ -322,12 +322,18 @@ namespace WotDossier.Dal.NHibernate
         /// </summary>
         public void ClearCache()
         {
-            CurrentSession.Clear();
+            if (CurrentSession != null)
+            {
+                CurrentSession.Clear();
+            }
         }
 
         public void Flush()
         {
-            CurrentSession.Flush();
+            if (CurrentSession != null)
+            {
+                CurrentSession.Flush();
+            }
         }
 
         /// <summary>

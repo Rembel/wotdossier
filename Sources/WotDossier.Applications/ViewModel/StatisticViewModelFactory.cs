@@ -21,11 +21,12 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
             currentStatisticViewModel.Name = name;
             currentStatisticViewModel.Created = created;
+            currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.Tankdata.damageReceived);
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - created).Days;
             currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
 
-            if (clan.clan != null)
+            if (clan != null && clan.clan != null)
             {
                 currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(clan);
             }

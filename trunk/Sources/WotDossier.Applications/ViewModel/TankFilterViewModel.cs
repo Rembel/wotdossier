@@ -30,6 +30,8 @@ namespace WotDossier.Applications.ViewModel
         private bool _chinaSelected = true;
         private bool _franceSelected = true;
         private bool _ukSelected = true;
+        private bool _isPremium;
+        private bool _isFavorite;
 
         public bool Level10Selected
         {
@@ -241,11 +243,31 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public bool IsPremium
+        {
+            get { return _isPremium; }
+            set
+            {
+                _isPremium = value;
+                OnPropertyChanged("IsPremium");
+            }
+        }
+
+        public bool IsFavorite
+        {
+            get { return _isFavorite; }
+            set
+            {
+                _isFavorite = value;
+                OnPropertyChanged("IsFavorite");
+            }
+        }
+
         #endregion
 
-        public List<T> Filter<T>(List<T> tankFrags) where T : ITankFilterable
+        public List<T> Filter<T>(List<T> tanks) where T : ITankFilterable
         {
-            return tankFrags.Where(x =>
+            return tanks.Where(x =>
                                    (x.Tier == 1 && Level1Selected
                                     || x.Tier == 2 && Level2Selected
                                     || x.Tier == 3 && Level3Selected
@@ -269,6 +291,8 @@ namespace WotDossier.Applications.ViewModel
                                     || x.CountryId == (int)Country.France && FranceSelected
                                     || x.CountryId == (int)Country.US && USSelected
                                     || x.CountryId == (int)Country.UK && UKSelected)
+                                   && (x.IsFavorite || !IsFavorite)
+                                   && (x.IsPremium || !IsPremium)
                 ).ToList();
         }
 

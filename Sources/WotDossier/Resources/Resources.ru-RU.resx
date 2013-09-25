@@ -1678,4 +1678,46 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Common_WotNoobsRating" xml:space="preserve">
     <value>Рейтинг wot-noobs.ru</value>
   </data>
+  <data name="Column_Performance_BattlesCount88" xml:space="preserve">
+    <value>Боев после 8.8</value>
+  </data>
+  <data name="Column_Performance_BattlesCountBefore88" xml:space="preserve">
+    <value>Боев до 8.8</value>
+  </data>
+  <data name="Column_Performance_DamageAssistedRadio" xml:space="preserve">
+    <value>Урон по засвету(радио)</value>
+  </data>
+  <data name="Column_Performance_DamageAssistedTrack" xml:space="preserve">
+    <value>Урон по засвету(гусли)</value>
+  </data>
+  <data name="Column_Performance_HeHits" xml:space="preserve">
+    <value>Фугасных попаданий</value>
+  </data>
+  <data name="Column_Performance_HeHitsReceived" xml:space="preserve">
+    <value>Фугасных попаданий получено</value>
+  </data>
+  <data name="Column_Performance_Mileage" xml:space="preserve">
+    <value>Пройдено, км</value>
+  </data>
+  <data name="Column_Performance_NoDamageShotsReceived" xml:space="preserve">
+    <value>Попаданий без урона получено</value>
+  </data>
+  <data name="Column_Performance_OriginalXP" xml:space="preserve">
+    <value>Чистый опыт</value>
+  </data>
+  <data name="Column_Performance_Pierced" xml:space="preserve">
+    <value>Пробитий</value>
+  </data>
+  <data name="Column_Performance_PiercedReceived" xml:space="preserve">
+    <value>Пробитий получено</value>
+  </data>
+  <data name="Column_Performance_ShotsReceived" xml:space="preserve">
+    <value>Попаданий получено</value>
+  </data>
+  <data name="Column_Performance_XpBefore88" xml:space="preserve">
+    <value>Опыт до 8.8</value>
+  </data>
+  <data name="Tab_Header_Performance88" xml:space="preserve">
+    <value>Эффективность 8.8</value>
+  </data>
 </root>

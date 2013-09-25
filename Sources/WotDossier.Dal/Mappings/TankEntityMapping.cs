@@ -17,7 +17,8 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Icon, "Icon");
 			Map(v => v.TankType, "TankType");
 			Map(v => v.IsPremium, "IsPremium");
-			Map(v=>v.PlayerId, "PlayerId").Insert();
+            Map(v => v.IsFavorite, "IsFavorite");
+            Map(v => v.PlayerId, "PlayerId").Insert();
 		
 			References(v => v.PlayerIdObject).Column(Column(v => v.PlayerId)).ReadOnly();
 

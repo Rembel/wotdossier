@@ -1,0 +1,1 @@
+﻿ALTER TABLE [Tank] ADD [IsFavorite] bit  NOT NULL default(0);

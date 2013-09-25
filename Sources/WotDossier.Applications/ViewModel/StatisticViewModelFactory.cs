@@ -68,7 +68,9 @@ namespace WotDossier.Applications.ViewModel
             TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.Tankdata.battlesCount).First();
             IEnumerable<TankJson> prevStatisticViewModels =
                 statisticViewModels.Where(x => x.Tankdata.battlesCount != currentStatistic.Tankdata.battlesCount);
-            return new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
+            TankStatisticRowViewModel model = new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
+            model.IsFavorite = tankStatisticEntities.First().TankIdObject.IsFavorite;
+            return model;
         }
 
         private static TankJson UnZipObject(byte[] x)

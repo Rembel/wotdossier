@@ -12,6 +12,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -26,33 +27,35 @@
         <!--<ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Tanks}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250"></ComboBox>-->
 
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-            <CheckBox Margin="6,3,6,3" Content="1"  IsChecked="{Binding Level1Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="2" IsChecked="{Binding Level2Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="3" IsChecked="{Binding Level3Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="4" IsChecked="{Binding Level4Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="5" IsChecked="{Binding Level5Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="6" IsChecked="{Binding Level6Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="7" IsChecked="{Binding Level7Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="8" IsChecked="{Binding Level8Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="9" IsChecked="{Binding Level9Selected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="10" IsChecked="{Binding Level10Selected, Mode=TwoWay}"></CheckBox>
+            <CheckBox Margin="6,3,6,3" Content="1"  IsChecked="{Binding Level1Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="2" IsChecked="{Binding Level2Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="3" IsChecked="{Binding Level3Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="4" IsChecked="{Binding Level4Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="5" IsChecked="{Binding Level5Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="6" IsChecked="{Binding Level6Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="7" IsChecked="{Binding Level7Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="8" IsChecked="{Binding Level8Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="9" IsChecked="{Binding Level9Selected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="10" IsChecked="{Binding Level10Selected, Mode=TwoWay}" />
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_LT}"  IsChecked="{Binding LTSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_MT}" IsChecked="{Binding MTSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_HT}" IsChecked="{Binding HTSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_TD}" IsChecked="{Binding TDSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_SPG}" IsChecked="{Binding SPGSelected, Mode=TwoWay}"></CheckBox>
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_LT}"  IsChecked="{Binding LTSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_MT}" IsChecked="{Binding MTSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_HT}" IsChecked="{Binding HTSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_TD}" IsChecked="{Binding TDSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankType_SPG}" IsChecked="{Binding SPGSelected, Mode=TwoWay}" />
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_USSR}"  IsChecked="{Binding USSRSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_Germany}" IsChecked="{Binding GermanySelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_US}" IsChecked="{Binding USSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_China}" IsChecked="{Binding ChinaSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_France}" IsChecked="{Binding FranceSelected, Mode=TwoWay}"></CheckBox>
-            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_UK}" IsChecked="{Binding UKSelected, Mode=TwoWay}"></CheckBox>
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_USSR}"  IsChecked="{Binding USSRSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_Germany}" IsChecked="{Binding GermanySelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_US}" IsChecked="{Binding USSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_China}" IsChecked="{Binding ChinaSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_France}" IsChecked="{Binding FranceSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_UK}" IsChecked="{Binding UKSelected, Mode=TwoWay}" />
         </StackPanel>
+        <CheckBox Grid.Row="4" Margin="6,3,6,3" Content="Премиумная техника" IsChecked="{Binding IsPremium, Mode=TwoWay}" />
+        <CheckBox Grid.Row="4" Grid.Column="1" Margin="6,3,6,3" Content="Избранная техника" IsChecked="{Binding IsFavorite, Mode=TwoWay}" />
     </Grid>
 </UserControl>

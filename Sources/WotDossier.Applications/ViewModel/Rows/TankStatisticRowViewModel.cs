@@ -165,6 +165,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int XpBefore88 { get; set; }
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
+        public bool IsFavorite { get; set; }
 
         public TankStatisticRowViewModel(TankJson tank)
             : this(tank, new List<TankJson>())
@@ -197,6 +198,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             XpBefore88 = tank.Tankdata.xpBefore8_8 != 0 ? tank.Tankdata.xpBefore8_8 : tank.Tankdata.xp;
             BattlesCountBefore88 = tank.Tankdata.battlesCountBefore8_8 != 0 ? tank.Tankdata.battlesCountBefore8_8 : tank.Tankdata.battlesCount;
             BattlesCount88 = tank.Tankdata.battlesCount - BattlesCountBefore88;
+            IsPremium = tank.Common.premium == 1;
 
             #region [ ITankRowBattleAwards ]
             BattleHero = tank.Battle.battleHeroes;

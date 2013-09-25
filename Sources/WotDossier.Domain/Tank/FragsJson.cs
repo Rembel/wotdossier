@@ -6,6 +6,8 @@
         int Type { get; set; }
         string Tank { get; set; }
         double Tier { get; set; }
+        bool IsPremium { get; set; }
+        bool IsFavorite { get; set; }
     }
 
     public class FragsJson : ITankFilterable
@@ -27,6 +29,10 @@
         public string Tank { get; set; }
 
         public double Tier { get; set; }
+
+        public bool IsPremium { get; set; }
+        
+        public bool IsFavorite { get; set; }
 
         /// <summary>
         /// Returns a string that represents the current object.

@@ -8,10 +8,11 @@ using WotDossier.Applications.ViewModel;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications
 {
-    public class ReplayFile:INotifyPropertyChanged
+    public class ReplayFile : INotifyPropertyChanged
     {
         private string _link;
         private List<Medal> _medals;
@@ -37,7 +38,8 @@ namespace WotDossier.Applications
         public int DamageDealt { get; set; }
         public int Credits { get; set; }
         public FileInfo FileInfo { get; set; }
-        
+        public TankIcon Icon { get; set; }
+
         public string Link
         {
             get { return _link; }
@@ -57,7 +59,8 @@ namespace WotDossier.Applications
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public ReplayFile(FileInfo replayFileInfo) : this(replayFileInfo, null)
+        public ReplayFile(FileInfo replayFileInfo)
+            : this(replayFileInfo, null)
         {
         }
 
@@ -85,12 +88,13 @@ namespace WotDossier.Applications
                 Credits = replay.CommandResult.Damage.credits;
                 DamageDealt = replay.CommandResult.Damage.damageDealt;
                 DamageReceived = replay.CommandResult.Damage.damageReceived;
-                IsWinner = (BattleStatus) replay.CommandResult.Damage.isWinner;
+                IsWinner = (BattleStatus)replay.CommandResult.Damage.isWinner;
                 Xp = replay.CommandResult.Damage.xp;
                 Killed = replay.CommandResult.Damage.killed.Count;
                 Damaged = replay.CommandResult.Damage.damaged.Count;
                 PlayerId = replay.datablock_1.playerID;
                 Medals = MedalHelper.GetMedals(replay.CommandResult.Damage.achieveIndices);
+                Icon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
             }
             else
             {

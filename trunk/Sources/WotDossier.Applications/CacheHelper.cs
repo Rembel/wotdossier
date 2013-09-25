@@ -97,7 +97,7 @@ namespace WotDossier.Applications
             proc.EnableRaisingEvents = false;
             proc.StartInfo.CreateNoWindow = true;
             proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.FileName = directoryName + @"\External\wotrpbr2j.exe";
+            proc.StartInfo.FileName = directoryName + @"\External\wotrp2j.exe";
             proc.StartInfo.Arguments = string.Format("\"{0}\" -f -r", cacheFile.FullName);
             proc.Start();
 

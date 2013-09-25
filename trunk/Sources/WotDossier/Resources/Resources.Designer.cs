@@ -909,6 +909,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battles Count 8.8.
+        /// </summary>
+        public static string Column_Performance_BattlesCount88 {
+            get {
+                return ResourceManager.GetString("Column_Performance_BattlesCount88", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles Count Before 8.8.
+        /// </summary>
+        public static string Column_Performance_BattlesCountBefore88 {
+            get {
+                return ResourceManager.GetString("Column_Performance_BattlesCountBefore88", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture Points.
         /// </summary>
         public static string Column_Performance_CapturePoints {
@@ -918,11 +936,47 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Damage Assisted Radio.
+        /// </summary>
+        public static string Column_Performance_DamageAssistedRadio {
+            get {
+                return ResourceManager.GetString("Column_Performance_DamageAssistedRadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Assisted Track.
+        /// </summary>
+        public static string Column_Performance_DamageAssistedTrack {
+            get {
+                return ResourceManager.GetString("Column_Performance_DamageAssistedTrack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Defence Points.
         /// </summary>
         public static string Column_Performance_DefencePoints {
             get {
                 return ResourceManager.GetString("Column_Performance_DefencePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to He Hits.
+        /// </summary>
+        public static string Column_Performance_HeHits {
+            get {
+                return ResourceManager.GetString("Column_Performance_HeHits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to He Hits Received.
+        /// </summary>
+        public static string Column_Performance_HeHitsReceived {
+            get {
+                return ResourceManager.GetString("Column_Performance_HeHitsReceived", resourceCulture);
             }
         }
         
@@ -945,6 +999,51 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mileage, km.
+        /// </summary>
+        public static string Column_Performance_Mileage {
+            get {
+                return ResourceManager.GetString("Column_Performance_Mileage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Damage Shots Received.
+        /// </summary>
+        public static string Column_Performance_NoDamageShotsReceived {
+            get {
+                return ResourceManager.GetString("Column_Performance_NoDamageShotsReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Original XP.
+        /// </summary>
+        public static string Column_Performance_OriginalXP {
+            get {
+                return ResourceManager.GetString("Column_Performance_OriginalXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pierced.
+        /// </summary>
+        public static string Column_Performance_Pierced {
+            get {
+                return ResourceManager.GetString("Column_Performance_Pierced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pierced Received.
+        /// </summary>
+        public static string Column_Performance_PiercedReceived {
+            get {
+                return ResourceManager.GetString("Column_Performance_PiercedReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shots.
         /// </summary>
         public static string Column_Performance_Shots {
@@ -954,11 +1053,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shots Received.
+        /// </summary>
+        public static string Column_Performance_ShotsReceived {
+            get {
+                return ResourceManager.GetString("Column_Performance_ShotsReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tanks Spotted.
         /// </summary>
         public static string Column_Performance_TanksSpotted {
             get {
                 return ResourceManager.GetString("Column_Performance_TanksSpotted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xp Before 8.8.
+        /// </summary>
+        public static string Column_Performance_XpBefore88 {
+            get {
+                return ResourceManager.GetString("Column_Performance_XpBefore88", resourceCulture);
             }
         }
         
@@ -3353,6 +3470,15 @@ namespace WotDossier.Resources {
         public static string Tab_Header_Performance {
             get {
                 return ResourceManager.GetString("Tab_Header_Performance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performance 8.8.
+        /// </summary>
+        public static string Tab_Header_Performance88 {
+            get {
+                return ResourceManager.GetString("Tab_Header_Performance88", resourceCulture);
             }
         }
         

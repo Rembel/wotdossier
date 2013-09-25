@@ -153,7 +153,17 @@ namespace WotDossier.Applications.ViewModel.Rows
         #endregion
 
         public int OriginalXP { get; set; }
-
+        public int DamageAssistedTrack { get; set; }
+        public int DamageAssistedRadio { get; set; }
+        public double Mileage { get; set; }
+        public int ShotsReceived { get; set; }
+        public int NoDamageShotsReceived { get; set; }
+        public int PiercedReceived { get; set; }
+        public int HeHitsReceived { get; set; }
+        public int HeHits { get; set; }
+        public int Pierced { get; set; }
+        public int XpBefore88 { get; set; }
+        public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
 
         public TankStatisticRowViewModel(TankJson tank)
@@ -175,8 +185,18 @@ namespace WotDossier.Applications.ViewModel.Rows
             TankUniqueId = tank.UniqueId();
             TankFrags = tank.Frags;
             OriginalXP = tank.Tankdata.originalXP;
-            int battlesCountBefore88 = tank.Tankdata.battlesCountBefore8_8 != 0 ? tank.Tankdata.battlesCountBefore8_8 : tank.Tankdata.battlesCount;
-            BattlesCount88 = tank.Tankdata.battlesCount - battlesCountBefore88;
+            DamageAssistedTrack = tank.Tankdata.damageAssistedTrack;
+            DamageAssistedRadio = tank.Tankdata.damageAssistedRadio;
+            Mileage = tank.Tankdata.mileage / 1000;
+            ShotsReceived = tank.Tankdata.shotsReceived;
+            NoDamageShotsReceived = tank.Tankdata.noDamageShotsReceived;
+            PiercedReceived = tank.Tankdata.piercedReceived;
+            HeHitsReceived = tank.Tankdata.heHitsReceived;
+            HeHits = tank.Tankdata.he_hits;
+            Pierced = tank.Tankdata.pierced;
+            XpBefore88 = tank.Tankdata.xpBefore8_8 != 0 ? tank.Tankdata.xpBefore8_8 : tank.Tankdata.xp;
+            BattlesCountBefore88 = tank.Tankdata.battlesCountBefore8_8 != 0 ? tank.Tankdata.battlesCountBefore8_8 : tank.Tankdata.battlesCount;
+            BattlesCount88 = tank.Tankdata.battlesCount - BattlesCountBefore88;
 
             #region [ ITankRowBattleAwards ]
             BattleHero = tank.Battle.battleHeroes;

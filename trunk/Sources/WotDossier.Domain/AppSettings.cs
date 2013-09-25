@@ -9,7 +9,7 @@ namespace WotDossier.Domain
         private string _replaysUploadServerPath = "http://wotreplays.ru/site/upload";
         private string _replaysFolderPath;
         private DateTime? _prevDate;
-        private bool _checkForUpdates;
+        private bool _checkForUpdates = true;
         private int _lastNBattles = 100;
         public string PlayerName { get; set; }
         public int PlayerId { get; set; }

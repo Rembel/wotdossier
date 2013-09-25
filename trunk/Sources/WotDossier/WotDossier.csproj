@@ -200,6 +200,9 @@
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\PerformanceTab88.xaml.cs">
+      <DependentUpon>PerformanceTab88.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\ReplaysTab.xaml.cs">
       <DependentUpon>ReplaysTab.xaml</DependentUpon>
     </Compile>
@@ -420,6 +423,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Tabs\PerformanceTab88.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Tabs\ReplaysTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -613,6 +620,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="External\unicodedata.pyd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\wotrp2j.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="External\_hashlib.pyd">

@@ -1493,4 +1493,46 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Common_AverageTier" xml:space="preserve">
     <value>Average tier</value>
   </data>
+  <data name="Column_Performance_BattlesCount88" xml:space="preserve">
+    <value>Battles Count 8.8</value>
+  </data>
+  <data name="Column_Performance_BattlesCountBefore88" xml:space="preserve">
+    <value>Battles Count Before 8.8</value>
+  </data>
+  <data name="Column_Performance_DamageAssistedRadio" xml:space="preserve">
+    <value>Damage Assisted Radio</value>
+  </data>
+  <data name="Column_Performance_DamageAssistedTrack" xml:space="preserve">
+    <value>Damage Assisted Track</value>
+  </data>
+  <data name="Column_Performance_HeHits" xml:space="preserve">
+    <value>He Hits</value>
+  </data>
+  <data name="Column_Performance_HeHitsReceived" xml:space="preserve">
+    <value>He Hits Received</value>
+  </data>
+  <data name="Column_Performance_Mileage" xml:space="preserve">
+    <value>Mileage, km</value>
+  </data>
+  <data name="Column_Performance_NoDamageShotsReceived" xml:space="preserve">
+    <value>No Damage Shots Received</value>
+  </data>
+  <data name="Column_Performance_OriginalXP" xml:space="preserve">
+    <value>Original XP</value>
+  </data>
+  <data name="Column_Performance_Pierced" xml:space="preserve">
+    <value>Pierced</value>
+  </data>
+  <data name="Column_Performance_PiercedReceived" xml:space="preserve">
+    <value>Pierced Received</value>
+  </data>
+  <data name="Column_Performance_ShotsReceived" xml:space="preserve">
+    <value>Shots Received</value>
+  </data>
+  <data name="Column_Performance_XpBefore88" xml:space="preserve">
+    <value>Xp Before 8.8</value>
+  </data>
+  <data name="Tab_Header_Performance88" xml:space="preserve">
+    <value>Performance 8.8</value>
+  </data>
 </root>

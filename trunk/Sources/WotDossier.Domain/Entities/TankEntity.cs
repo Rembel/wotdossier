@@ -68,6 +68,11 @@ namespace WotDossier.Domain.Entities
 		/// Gets/Sets the field "PlayerId".
 		/// </summary>
 		public virtual int PlayerId { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "IsFavorite".
+        /// </summary>
+        public virtual bool IsFavorite { get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the <see cref="PlayerEntity"/> object.

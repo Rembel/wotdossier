@@ -1535,4 +1535,16 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Tab_Header_Performance88" xml:space="preserve">
     <value>Performance 8.8</value>
   </data>
+  <data name="Command_AddFolder" xml:space="preserve">
+    <value>Add folder</value>
+  </data>
+  <data name="Command_AddToFavorites" xml:space="preserve">
+    <value>Add to Favorites</value>
+  </data>
+  <data name="Command_DeleteFolder" xml:space="preserve">
+    <value>Delete folder</value>
+  </data>
+  <data name="Command_RemoveFromFavorites" xml:space="preserve">
+    <value>Remove from Favorites</value>
+  </data>
 </root>

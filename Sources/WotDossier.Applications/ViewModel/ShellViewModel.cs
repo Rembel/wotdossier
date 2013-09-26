@@ -85,6 +85,8 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> OnReplayRowUploadCommand { get; set; }
         public DelegateCommand<object> OnReplayRowDeleteCommand { get; set; }
         public DelegateCommand<object> OnReplayRowsDeleteCommand { get; set; }
+        public DelegateCommand<object> OnAddToFavoriteCommand { get; set; }
+        public DelegateCommand<object> OnRemoveFromFavoriteCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -384,6 +386,8 @@ namespace WotDossier.Applications.ViewModel
             OnReplayRowUploadCommand = new DelegateCommand<object>(OnReplayRowUpload);
             OnReplayRowDeleteCommand = new DelegateCommand<object>(OnReplayRowDelete);
             OnReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
+            OnAddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
+            OnRemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
@@ -394,6 +398,43 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
             ProgressView = new ProgressControlViewModel();
+        }
+
+        private bool CanRemoveFromFavorite(object data)
+        {
+            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            return model != null && model.IsFavorite;
+        }
+
+        private bool CanAddToFavorite(object data)
+        {
+            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            return model != null && !model.IsFavorite;
+        }
+
+        private void OnRemoveFromFavorite(object data)
+        {
+            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            if (model != null)
+            {
+                SetFavorite(model, false);
+            }
+        }
+
+        private void SetFavorite(TankStatisticRowViewModel model, bool favorite)
+        {
+            AppSettings settings = SettingsReader.Get();
+            model.IsFavorite = favorite;
+            _dossierRepository.SetFavorite(model.TankId, model.CountryId, settings.PlayerId, favorite);
+        }
+
+        private void OnAddToFavorite(object data)
+        {
+            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            if (model != null)
+            {
+                SetFavorite(model, true);
+            }
         }
 
         /// <summary>

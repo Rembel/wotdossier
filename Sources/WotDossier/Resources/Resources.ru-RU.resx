@@ -1720,4 +1720,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Tab_Header_Performance88" xml:space="preserve">
     <value>Эффективность 8.8</value>
   </data>
+  <data name="Command_AddFolder" xml:space="preserve">
+    <value>Добавить папку</value>
+  </data>
+  <data name="Command_AddToFavorites" xml:space="preserve">
+    <value>Добавить в избранное</value>
+  </data>
+  <data name="Command_DeleteFolder" xml:space="preserve">
+    <value>Удалить папку</value>
+  </data>
+  <data name="Command_RemoveFromFavorites" xml:space="preserve">
+    <value>Удалить из избранного</value>
+  </data>
 </root>

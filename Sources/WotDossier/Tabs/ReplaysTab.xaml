@@ -16,8 +16,8 @@
             <Grid>
                 <ContextMenuService.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="AddFolder" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
-                        <MenuItem Header="DeleteFolder" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
+                        <MenuItem Header="{x:Static Resources:Resources.Command_AddFolder}" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
+                        <MenuItem Header="{x:Static Resources:Resources.Command_DeleteFolder}" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
                     </ContextMenu>
                 </ContextMenuService.ContextMenu>
                 <ToolTipService.ToolTip>

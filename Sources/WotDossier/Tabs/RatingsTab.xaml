@@ -16,8 +16,17 @@
         </Grid.RowDefinitions>
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" 
+                  AutoGenerateColumns="False">
             <DataGrid.Resources>
+                <ContextMenu x:Key="ContextMenu">
+                    <MenuItem Header="{x:Static Resources:Resources.Command_AddToFavorites}" 
+                              Command="{Binding Path=DataContext.OnAddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>
+                    <MenuItem Header="{x:Static Resources:Resources.Command_RemoveFromFavorites}" 
+                              Command="{Binding Path=DataContext.OnRemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>
+                </ContextMenu>
                 <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
                     <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static Converters:EffectivityToColorConverter.Default}}" />
                 </Style>
@@ -30,6 +39,12 @@
                     <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static Converters:XvmRatingToColorConverter.Default}}" />
                 </Style>
             </DataGrid.Resources>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
+                    <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}">
+                    </Setter>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=OnRowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

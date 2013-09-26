@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Configuration;
 using Common.Logging;
-using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
@@ -15,7 +13,7 @@ namespace WotDossier.Dal
     [Export]
     public class DossierRepository
     {
-        protected static readonly ILog _log = LogManager.GetLogger("DossierRepository");
+        protected static readonly ILog Log = LogManager.GetLogger("DossierRepository");
 
         private DataProvider _dataProvider;
         public DataProvider DataProvider
@@ -49,7 +47,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error(e);
+                Log.Error(e);
                 _dataProvider.RollbackTransaction();
             }
             finally
@@ -98,7 +96,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error(e);
+                Log.Error(e);
                 _dataProvider.RollbackTransaction();
             }
             finally
@@ -161,13 +159,16 @@ namespace WotDossier.Dal
                 
                 foreach (TankJson tank in tanks)
                 {
-                    TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tank.Common.tankid && x.CountryId == tank.Common.countryid);
+                    int tankId = tank.Common.tankid;
+                    int countryId = tank.Common.countryid;
+
+                    TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tankId && x.CountryId == countryId);
                     if (tankEntity == null)
                     {
                         tankEntity = new TankEntity();
-                        tankEntity.CountryId = tank.Common.countryid;
-                        tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(tank.Common.countryid);
-                        tankEntity.TankId = tank.Common.tankid;
+                        tankEntity.CountryId = countryId;
+                        tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(countryId);
+                        tankEntity.TankId = tankId;
                         tankEntity.Icon = tank.Icon.iconid;
                         tankEntity.PlayerId = playerEntity.Id;
                         tankEntity.IsPremium = tank.Common.premium == 1;
@@ -186,9 +187,9 @@ namespace WotDossier.Dal
                         TankStatisticEntity statisticEntity = _dataProvider.QueryOver<TankStatisticEntity>()
                             .JoinAlias( x => x.TankIdObject, () => tankAlias)
                             .Where(x => 
-                                tankAlias.PlayerId == playerEntity.Id 
-                                && tankAlias.TankId == tank.Common.tankid 
-                                && tankAlias.CountryId == tank.Common.countryid)
+                                tankAlias.PlayerId == playerEntity.Id
+                                && tankAlias.TankId == tankId
+                                && tankAlias.CountryId == countryId)
                             .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<TankStatisticEntity>();
 
                         int currentSnapshotBattlesCount = 0;
@@ -226,7 +227,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error(e);
+                Log.Error(e);
                 _dataProvider.RollbackTransaction();
             }
             finally
@@ -283,7 +284,36 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error(e);
+                Log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.CloseSession();
+            }
+        }
+
+        public void SetFavorite(int tankId, int countryId, int playerId, bool favorite)
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+            try
+            {
+                PlayerEntity playerAlias = null;
+                TankEntity entity = _dataProvider.QueryOver<TankEntity>().Where(x => x.TankId == tankId && x.CountryId == countryId)
+                    .JoinAlias(x => x.PlayerIdObject, () => playerAlias).Where(x => playerAlias.PlayerId == playerId).SingleOrDefault<TankEntity>();
+
+                if (entity != null)
+                {
+                    entity.IsFavorite = favorite;
+                    _dataProvider.Save(entity);
+                }
+
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
                 _dataProvider.RollbackTransaction();
             }
             finally

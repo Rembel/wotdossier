@@ -2,32 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <ResourceDictionary.MergedDictionaries>
             <ResourceDictionary Source="Button.xaml" />
-            <!--<ResourceDictionary Source="Calendar.xaml" />-->
             <ResourceDictionary Source="CheckBox.xaml" />
             <ResourceDictionary Source="ComboBox.xaml" />
             <ResourceDictionary Source="ContextMenu.xaml" />
             <ResourceDictionary Source="DataGrid.xaml" />
             <ResourceDictionary Source="Expander.xaml" />
-            <!--<ResourceDictionary Source="GridSplitter.xaml" />-->
-            <!--<ResourceDictionary Source="GroupBox.xaml" />-->
-            <!--<ResourceDictionary Source="Label.xaml" />-->
             <ResourceDictionary Source="ListBox.xaml" />
-            <!--<ResourceDictionary Source="ProgressBar.xaml" />-->
-            <!--<ResourceDictionary Source="RadioButton.xaml" />-->
-            <!--<ResourceDictionary Source="RepeatButton.xaml" />-->
-            <!--<ResourceDictionary Source="ResizeGrip.xaml" />-->
-            <!--<ResourceDictionary Source="RichtextBox.xaml" />-->
             <ResourceDictionary Source="ScrollBar.xaml" />
-            <!--<ResourceDictionary Source="Slider.xaml" />-->
-            <!--<ResourceDictionary Source="StatusBar.xaml" />-->
             <ResourceDictionary Source="TabControl.xaml" />
             <ResourceDictionary Source="TextBox.xaml" />
-            <!--<ResourceDictionary Source="ToggleButton.xaml" />-->
             <ResourceDictionary Source="ToolBar.xaml" />
             <ResourceDictionary Source="ToolTip.xaml" />
-            <!--<ResourceDictionary Source="TreeView.xaml" />-->
             <ResourceDictionary Source="Window.xaml" />
             <ResourceDictionary Source="ApplicationStyle.xaml" />
-            <ResourceDictionary Source="SpecialStyle.xaml" />
         </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

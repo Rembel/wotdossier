@@ -129,8 +129,8 @@ WN7 formula:
             //Damage component
             //sum of all individual tank expected damages
             //double individualTankExpectedDamage = battles*tankNominalDamage;
-
-            double damageRatio = playerDamage / expectedDamage;
+            double expectedDamageAdjustment = 0.975; // introduced on 25-Sep-2013
+            double damageRatio = playerDamage / (expectedDamage * expectedDamageAdjustment);
             double damageWeight = 1000;
             double damageComponent = damageRatio * damageWeight;
 

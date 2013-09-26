@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Web;
+using System.Xml;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
@@ -516,6 +517,32 @@ namespace WotDossier.Test
             ReplayFolder replayFolder = XmlSerializer.LoadObjectFromXml<ReplayFolder>(xml);
 
             Console.WriteLine(replayFolder.Folders.Count);
+        }
+
+        [Test]
+        public void NominalDamageTest()
+        {
+            XmlDocument document = new XmlDocument();
+            document.Load(@"Data\TankNominalDamage.xml");
+            XmlNodeList nodes = document.SelectNodes("/damage/tr");
+
+            List<TankInfo> xmlTanks = new List<TankInfo>();
+
+            foreach (XmlNode node in nodes)
+            {
+                XmlNodeList values = node.SelectNodes("td");
+                XmlNode nominal_damage = values[5];
+                XmlNode href = values[1].SelectSingleNode("a/@href");
+                xmlTanks.Add(new TankInfo { nominal_damage = double.Parse(nominal_damage.InnerText.Replace(".", ",")), icon = href.InnerText.Replace("/tank/ru/", "") });
+            }
+
+            IEnumerable<string> enumerable = xmlTanks.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.icon.ToLower(), y => y.icon.ToLower(),
+                (x, y) => string.Format("{0} \t\t {1} - {2} \t\t\t\t {3}", x.icon, x.nominal_damage, y.nominal_damage, x.nominal_damage == y.nominal_damage));
+
+            foreach (var value in enumerable)
+            {
+                Console.WriteLine(value);
+            }
         }
     }
 }

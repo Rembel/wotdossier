@@ -401,7 +401,22 @@ namespace WotDossier.Test
         {
             Dictionary<string, VStat> vstat = WotApiClient.Instance.ReadVstat();
 
-            VStat stat = vstat["is_3"];
+            int playerId = 10800699;
+
+            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic(playerId);
+            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+
+            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
+            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.Tankdata.battlesCount).FirstOrDefault()).ToList();
+
+            TankJson is3 = tankJsons.First(x => x.UniqueId() == 29);
+            TankInfo tankInfo = WotApiClient.Instance.TanksDictionary[29];
+            VStat stat = vstat[tankInfo.icon];
+
+            double damageDealt = is3.Tankdata.damageDealt;
+            double battlesCount = is3.Tankdata.battlesCount;
+            double spoted = is3.Tankdata.spotted;
+            double frags = is3.Tankdata.frags;
 
             //корректирующие коэффициенты, которые задаются для каждого типа и уровня танка согласно матрице 
             //(на время тестов можно изменять эти коэффициенты в конфиге в секции "consts")
@@ -423,17 +438,17 @@ namespace WotDossier.Test
             double Fmin = Favg * Kmin;
 
             //параметры текущего игрока для текущего танка (дамаг)
-            double Dt = 2399248.0 / 1631.0;
+            double Dt = damageDealt / battlesCount;
             double D = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) :
                            1 + (Dt - Davg) / (Davg - Dmin);
 
             //параметры текущего игрока для текущего танка (фраги)
-            double Ft = 1813.0 / 1631.0;
+            double Ft = frags / battlesCount;
             double F = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) :
                            1 + (Ft - Favg) / (Favg - Fmin);
 
             //параметры текущего игрока для текущего танка (засвет)
-            double St = 1525.0 / 1631.0;
+            double St = spoted / battlesCount;
             double S = St > Savg ? 1 + (St - Savg) / (Smax - Savg) :
                            1 + (St - Savg) / (Savg - Smin);
 

@@ -1485,6 +1485,42 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add folder.
+        /// </summary>
+        public static string Command_AddFolder {
+            get {
+                return ResourceManager.GetString("Command_AddFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add to Favorites.
+        /// </summary>
+        public static string Command_AddToFavorites {
+            get {
+                return ResourceManager.GetString("Command_AddToFavorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete folder.
+        /// </summary>
+        public static string Command_DeleteFolder {
+            get {
+                return ResourceManager.GetString("Command_DeleteFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove from Favorites.
+        /// </summary>
+        public static string Command_RemoveFromFavorites {
+            get {
+                return ResourceManager.GetString("Command_RemoveFromFavorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Average tier.
         /// </summary>
         public static string Common_AverageTier {

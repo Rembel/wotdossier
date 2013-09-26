@@ -7,6 +7,7 @@
                 <ResourceDictionary Source="Styles/Fonts.xaml"/>
                 <ResourceDictionary Source="Styles/Brushes.xaml"/>
                 <ResourceDictionary Source="Styles/ImplicitStyles.xaml" />
+                <ResourceDictionary Source="Styles/SpecialStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

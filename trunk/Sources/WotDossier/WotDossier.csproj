@@ -136,6 +136,9 @@
     <Compile Include="Controls\MedalTooltip.xaml.cs">
       <DependentUpon>MedalTooltip.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PeriodTab.xaml.cs">
+      <DependentUpon>PeriodTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RatingRow.xaml.cs">
       <DependentUpon>RatingRow.xaml</DependentUpon>
     </Compile>
@@ -263,9 +266,6 @@
     <Compile Include="Tabs\TimeTab.xaml.cs">
       <DependentUpon>TimeTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\PeriodTab.xaml.cs">
-      <DependentUpon>PeriodTab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\Tab.xaml.cs">
       <DependentUpon>Tab.xaml</DependentUpon>
     </Compile>
@@ -309,6 +309,10 @@
     <Page Include="Controls\MedalTooltip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PeriodTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\RatingRow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -504,10 +508,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\TimeTab.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tabs\PeriodTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

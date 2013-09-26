@@ -12,6 +12,7 @@ namespace WotDossier.Applications.ViewModel.Rows
     {
         private DateTime _lastBattle;
         private IEnumerable<FragsJson> _tankFrags;
+        private bool _isFavorite;
 
         #region Common
 
@@ -26,6 +27,18 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int TankId { get; set; }
 
         public int TankUniqueId { get; set; }
+
+        public bool IsPremium { get; set; }
+
+        public bool IsFavorite
+        {
+            get { return _isFavorite; }
+            set
+            {
+                _isFavorite = value;
+                OnPropertyChanged("IsFavorite");
+            }
+        }
 
         #endregion
 
@@ -109,12 +122,6 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
 
-        #region [ ITankRowMasterTanker ]
-
-        public bool IsPremium { get; set; }
-
-        #endregion
-
         #region [ ITankRowPerformance ]
 
         public int Shots { get; set; }
@@ -165,8 +172,11 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int XpBefore88 { get; set; }
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
-        public bool IsFavorite { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
+        /// </summary>
+        /// <param name="tank">The tank.</param>
         public TankStatisticRowViewModel(TankJson tank)
             : this(tank, new List<TankJson>())
         {

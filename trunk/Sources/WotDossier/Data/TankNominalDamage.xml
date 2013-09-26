@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <damage>
-  <tr>
+<tr>
     <td>1</td>
     <td>
       <a href="/tank/ru/T57_58" title="t10 HT (US)">
@@ -10,7 +10,7 @@
     <td>US</td>
     <td>10</td>
     <td>HT</td>
-    <td>2400.0</td>
+    <td>2550.0</td>
   </tr>
   <tr>
     <td>2</td>
@@ -34,7 +34,7 @@
     <td>UK</td>
     <td>10</td>
     <td>HT</td>
-    <td>2200.0</td>
+    <td>2300.0</td>
   </tr>
   <tr>
     <td>4</td>
@@ -46,7 +46,7 @@
     <td>DE</td>
     <td>10</td>
     <td>HT</td>
-    <td>2200.0</td>
+    <td>2300.0</td>
   </tr>
   <tr>
     <td>5</td>
@@ -70,7 +70,7 @@
     <td>FR</td>
     <td>10</td>
     <td>HT</td>
-    <td>2300.0</td>
+    <td>2450.0</td>
   </tr>
   <tr>
     <td>7</td>
@@ -82,7 +82,7 @@
     <td>RU</td>
     <td>10</td>
     <td>HT</td>
-    <td>2100.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
     <td>8</td>
@@ -94,7 +94,7 @@
     <td>RU</td>
     <td>10</td>
     <td>HT</td>
-    <td>2100.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
     <td>9</td>
@@ -106,7 +106,7 @@
     <td>DE</td>
     <td>10</td>
     <td>HT</td>
-    <td>1900.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
     <td>10</td>
@@ -118,7 +118,7 @@
     <td>US</td>
     <td>10</td>
     <td>HT</td>
-    <td>2300.0</td>
+    <td>2400.0</td>
   </tr>
   <tr>
     <td>11</td>
@@ -130,7 +130,7 @@
     <td>UK</td>
     <td>10</td>
     <td>MT</td>
-    <td>2100.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
     <td>12</td>
@@ -178,7 +178,7 @@
     <td>DE</td>
     <td>10</td>
     <td>MT</td>
-    <td>2100.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
     <td>16</td>
@@ -226,10 +226,22 @@
     <td>US</td>
     <td>10</td>
     <td>MT</td>
-    <td>2100.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
     <td>20</td>
+    <td>
+      <a href="/tank/ru/Object_140" title="t10 MT (SU)">
+        Object 140
+      </a>
+    </td>
+    <td>RU</td>
+    <td>10</td>
+    <td>MT</td>
+    <td>2100.0</td>
+  </tr>
+  <tr>
+    <td>21</td>
     <td>
       <a href="/tank/ru/Object_261" title="t10 SPG (SU)">
         Object 261
@@ -241,7 +253,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>21</td>
+    <td>22</td>
     <td>
       <a href="/tank/ru/T92" title="t10 SPG (US)">
         T92
@@ -253,7 +265,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>22</td>
+    <td>23</td>
     <td>
       <a href="/tank/ru/Bat_Chatillon155" title="t10 SPG (FR)">
         Bat Chatillon 155
@@ -265,7 +277,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>23</td>
+    <td>24</td>
     <td>
       <a href="/tank/ru/G_E" title="t10 SPG (DE)">
         GW E 100
@@ -277,7 +289,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>24</td>
+    <td>25</td>
     <td>
       <a href="/tank/ru/Bat_Chatillon155_58" title="t10 SPG (FR)">
         Bat Chatillon 155 58
@@ -289,7 +301,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>25</td>
+    <td>26</td>
     <td>
       <a href="/tank/ru/GB31_Conqueror_Gun" title="t10 SPG (GB)">
         Conqueror Gun Carriage
@@ -301,7 +313,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>26</td>
+    <td>27</td>
     <td>
       <a href="/tank/ru/Object268" title="t10 TD (SU)">
         Object 268
@@ -310,10 +322,10 @@
     <td>RU</td>
     <td>10</td>
     <td>TD</td>
-    <td>2750.0</td>
+    <td>2700.0</td>
   </tr>
   <tr>
-    <td>27</td>
+    <td>28</td>
     <td>
       <a href="/tank/ru/Object263" title="t10 TD (SU)">
         Object 263
@@ -322,10 +334,10 @@
     <td>RU</td>
     <td>10</td>
     <td>TD</td>
-    <td>2550.0</td>
+    <td>2500.0</td>
   </tr>
   <tr>
-    <td>28</td>
+    <td>29</td>
     <td>
       <a href="/tank/ru/JagdPz_E100" title="t10 TD (DE)">
         JagdPz E-100
@@ -334,10 +346,10 @@
     <td>DE</td>
     <td>10</td>
     <td>TD</td>
-    <td>2450.0</td>
+    <td>2400.0</td>
   </tr>
   <tr>
-    <td>29</td>
+    <td>30</td>
     <td>
       <a href="/tank/ru/T110E3" title="t10 TD (US)">
         T110E3
@@ -349,7 +361,7 @@
     <td>2650.0</td>
   </tr>
   <tr>
-    <td>30</td>
+    <td>31</td>
     <td>
       <a href="/tank/ru/T110E4" title="t10 TD (US)">
         T110E4
@@ -361,7 +373,7 @@
     <td>2650.0</td>
   </tr>
   <tr>
-    <td>31</td>
+    <td>32</td>
     <td>
       <a href="/tank/ru/AMX_50Fosh_155" title="t10 TD (FR)">
         AMX 50 Foch 155
@@ -373,7 +385,7 @@
     <td>2800.0</td>
   </tr>
   <tr>
-    <td>32</td>
+    <td>33</td>
     <td>
       <a href="/tank/ru/GB48_FV215b_183" title="t10 TD (GB)">
         FV215b (183)
@@ -382,10 +394,10 @@
     <td>UK</td>
     <td>10</td>
     <td>TD</td>
-    <td>2400.0</td>
+    <td>2500.0</td>
   </tr>
   <tr>
-    <td>33</td>
+    <td>34</td>
     <td>
       <a href="/tank/ru/M103" title="t9 HT (US)">
         M103
@@ -394,10 +406,10 @@
     <td>US</td>
     <td>9</td>
     <td>HT</td>
-    <td>1900.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>34</td>
+    <td>35</td>
     <td>
       <a href="/tank/ru/Ch12_111_1_2_3" title="t9 HT (CN)">
         WZ-111 model 1-4
@@ -406,10 +418,10 @@
     <td>CH</td>
     <td>9</td>
     <td>HT</td>
-    <td>1900.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>35</td>
+    <td>36</td>
     <td>
       <a href="/tank/ru/GB12_Conqueror" title="t9 HT (GB)">
         Conqueror Mk.1
@@ -418,10 +430,10 @@
     <td>UK</td>
     <td>9</td>
     <td>HT</td>
-    <td>1900.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>36</td>
+    <td>37</td>
     <td>
       <a href="/tank/ru/AMX_50_120" title="t9 HT (FR)">
         AMX 50 120
@@ -430,10 +442,10 @@
     <td>FR</td>
     <td>9</td>
     <td>HT</td>
-    <td>2100.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
-    <td>37</td>
+    <td>38</td>
     <td>
       <a href="/tank/ru/VK4502P" title="t9 HT (DE)">
         VK 4502 (P) Ausf. B
@@ -442,10 +454,10 @@
     <td>DE</td>
     <td>9</td>
     <td>HT</td>
-    <td>1800.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>38</td>
+    <td>39</td>
     <td>
       <a href="/tank/ru/E-75" title="t9 HT (DE)">
         E-75
@@ -454,10 +466,10 @@
     <td>DE</td>
     <td>9</td>
     <td>HT</td>
-    <td>1900.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>39</td>
+    <td>40</td>
     <td>
       <a href="/tank/ru/IS8" title="t9 HT (SU)">
         IS-8
@@ -466,10 +478,10 @@
     <td>RU</td>
     <td>9</td>
     <td>HT</td>
-    <td>1900.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>40</td>
+    <td>41</td>
     <td>
       <a href="/tank/ru/ST_I" title="t9 HT (SU)">
         ST-I
@@ -478,10 +490,10 @@
     <td>RU</td>
     <td>9</td>
     <td>HT</td>
-    <td>1900.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>41</td>
+    <td>42</td>
     <td>
       <a href="/tank/ru/T-54" title="t9 MT (SU)">
         T-54
@@ -490,10 +502,10 @@
     <td>RU</td>
     <td>9</td>
     <td>MT</td>
-    <td>1700.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>42</td>
+    <td>43</td>
     <td>
       <a href="/tank/ru/T54E1" title="t9 MT (US)">
         T54E1
@@ -502,10 +514,10 @@
     <td>US</td>
     <td>9</td>
     <td>MT</td>
-    <td>1900.0</td>
+    <td>2000.0</td>
   </tr>
   <tr>
-    <td>43</td>
+    <td>44</td>
     <td>
       <a href="/tank/ru/Lorraine40t" title="t9 MT (FR)">
         Lorraine 40 t
@@ -514,10 +526,10 @@
     <td>FR</td>
     <td>9</td>
     <td>MT</td>
-    <td>1500.0</td>
+    <td>1800.0</td>
   </tr>
   <tr>
-    <td>44</td>
+    <td>45</td>
     <td>
       <a href="/tank/ru/E-50" title="t9 MT (DE)">
         E-50
@@ -526,10 +538,10 @@
     <td>DE</td>
     <td>9</td>
     <td>MT</td>
-    <td>1700.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>45</td>
+    <td>46</td>
     <td>
       <a href="/tank/ru/M46_Patton" title="t9 MT (US)">
         M46 Patton
@@ -538,10 +550,10 @@
     <td>US</td>
     <td>9</td>
     <td>MT</td>
-    <td>1700.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>46</td>
+    <td>47</td>
     <td>
       <a href="/tank/ru/Ch18_WZ-120" title="t9 MT (CN)">
         WZ-120
@@ -550,10 +562,10 @@
     <td>CH</td>
     <td>9</td>
     <td>MT</td>
-    <td>1700.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>47</td>
+    <td>48</td>
     <td>
       <a href="/tank/ru/GB24_Centurion_Mk3" title="t9 MT (GB)">
         Centurion Mk.7
@@ -562,10 +574,10 @@
     <td>UK</td>
     <td>9</td>
     <td>MT</td>
-    <td>1800.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>48</td>
+    <td>49</td>
     <td>
       <a href="/tank/ru/Pro_Ag_A" title="t9 MT (DE)">
         Leopard prototyp A
@@ -574,10 +586,10 @@
     <td>DE</td>
     <td>9</td>
     <td>MT</td>
-    <td>1700.0</td>
+    <td>1800.0</td>
   </tr>
   <tr>
-    <td>49</td>
+    <td>50</td>
     <td>
       <a href="/tank/ru/Object_212" title="t9 SPG (SU)">
         Object 212
@@ -586,10 +598,10 @@
     <td>RU</td>
     <td>9</td>
     <td>SPG</td>
-    <td>2000.0</td>
+    <td>1950.0</td>
   </tr>
   <tr>
-    <td>50</td>
+    <td>51</td>
     <td>
       <a href="/tank/ru/G_Tiger" title="t9 SPG (DE)">
         GW Tiger
@@ -598,10 +610,10 @@
     <td>DE</td>
     <td>9</td>
     <td>SPG</td>
-    <td>2000.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>51</td>
+    <td>52</td>
     <td>
       <a href="/tank/ru/Bat_Chatillon155_55" title="t9 SPG (FR)">
         Bat Chatillon 155 55
@@ -613,7 +625,7 @@
     <td>2000.0</td>
   </tr>
   <tr>
-    <td>52</td>
+    <td>53</td>
     <td>
       <a href="/tank/ru/M53_55" title="t9 SPG (US)">
         M53/M55
@@ -622,10 +634,10 @@
     <td>US</td>
     <td>9</td>
     <td>SPG</td>
-    <td>2000.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>53</td>
+    <td>54</td>
     <td>
       <a href="/tank/ru/GB30_FV3805" title="t9 SPG (GB)">
         FV3805
@@ -634,10 +646,10 @@
     <td>UK</td>
     <td>9</td>
     <td>SPG</td>
-    <td>2050.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>54</td>
+    <td>55</td>
     <td>
       <a href="/tank/ru/T95" title="t9 TD (US)">
         T95
@@ -649,7 +661,7 @@
     <td>2100.0</td>
   </tr>
   <tr>
-    <td>55</td>
+    <td>56</td>
     <td>
       <a href="/tank/ru/Object_704" title="t9 TD (SU)">
         Object 704
@@ -661,7 +673,7 @@
     <td>2400.0</td>
   </tr>
   <tr>
-    <td>56</td>
+    <td>57</td>
     <td>
       <a href="/tank/ru/T30" title="t9 TD (US)">
         T30
@@ -673,7 +685,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>57</td>
+    <td>58</td>
     <td>
       <a href="/tank/ru/JagdTiger" title="t9 TD (DE)">
         Jagdtiger
@@ -685,7 +697,7 @@
     <td>2200.0</td>
   </tr>
   <tr>
-    <td>58</td>
+    <td>59</td>
     <td>
       <a href="/tank/ru/SU122_54" title="t9 TD (SU)">
         SU-122-54
@@ -694,10 +706,10 @@
     <td>RU</td>
     <td>9</td>
     <td>TD</td>
-    <td>2000.0</td>
+    <td>2100.0</td>
   </tr>
   <tr>
-    <td>59</td>
+    <td>60</td>
     <td>
       <a href="/tank/ru/GB32_Tortoise" title="t9 TD (GB)">
         Tortoise
@@ -706,10 +718,10 @@
     <td>UK</td>
     <td>9</td>
     <td>TD</td>
-    <td>2000.0</td>
+    <td>2250.0</td>
   </tr>
   <tr>
-    <td>60</td>
+    <td>61</td>
     <td>
       <a href="/tank/ru/AMX50_Foch" title="t9 TD (FR)">
         AMX 50 Foch
@@ -718,10 +730,10 @@
     <td>FR</td>
     <td>9</td>
     <td>TD</td>
-    <td>2150.0</td>
+    <td>2200.0</td>
   </tr>
   <tr>
-    <td>61</td>
+    <td>62</td>
     <td>
       <a href="/tank/ru/KV-5" title="t8 HT (SU)">
         KV-5
@@ -733,7 +745,7 @@
     <td>1400.0</td>
   </tr>
   <tr>
-    <td>62</td>
+    <td>63</td>
     <td>
       <a href="/tank/ru/Ch11_110" title="t8 HT (CN)">
         110
@@ -742,10 +754,10 @@
     <td>CH</td>
     <td>8</td>
     <td>HT</td>
-    <td>1500.0</td>
+    <td>1600.0</td>
   </tr>
   <tr>
-    <td>63</td>
+    <td>64</td>
     <td>
       <a href="/tank/ru/Object252" title="t8 HT (SU)">
         IS-6
@@ -754,10 +766,10 @@
     <td>RU</td>
     <td>8</td>
     <td>HT</td>
-    <td>1350.0</td>
+    <td>1400.0</td>
   </tr>
   <tr>
-    <td>64</td>
+    <td>65</td>
     <td>
       <a href="/tank/ru/T34_hvy" title="t8 HT (US)">
         T34
@@ -769,7 +781,7 @@
     <td>1400.0</td>
   </tr>
   <tr>
-    <td>65</td>
+    <td>66</td>
     <td>
       <a href="/tank/ru/M6A2E1" title="t8 HT (US)">
         M6A2E1
@@ -781,7 +793,7 @@
     <td>1400.0</td>
   </tr>
   <tr>
-    <td>66</td>
+    <td>67</td>
     <td>
       <a href="/tank/ru/PzVIB_Tiger_II" title="t8 HT (DE)">
         PzKpfw VIB Tiger II
@@ -793,7 +805,7 @@
     <td>1400.0</td>
   </tr>
   <tr>
-    <td>67</td>
+    <td>68</td>
     <td>
       <a href="/tank/ru/AMX_50_100" title="t8 HT (FR)">
         AMX 50 100
@@ -802,10 +814,10 @@
     <td>FR</td>
     <td>8</td>
     <td>HT</td>
-    <td>1600.0</td>
+    <td>1700.0</td>
   </tr>
   <tr>
-    <td>68</td>
+    <td>69</td>
     <td>
       <a href="/tank/ru/T32" title="t8 HT (US)">
         T32
@@ -817,7 +829,7 @@
     <td>1450.0</td>
   </tr>
   <tr>
-    <td>69</td>
+    <td>70</td>
     <td>
       <a href="/tank/ru/VK4502A" title="t8 HT (DE)">
         VK 4502 (P) Ausf. A
@@ -826,10 +838,10 @@
     <td>DE</td>
     <td>8</td>
     <td>HT</td>
-    <td>1400.0</td>
+    <td>1450.0</td>
   </tr>
   <tr>
-    <td>70</td>
+    <td>71</td>
     <td>
       <a href="/tank/ru/IS-3" title="t8 HT (SU)">
         IS-3
@@ -838,10 +850,10 @@
     <td>RU</td>
     <td>8</td>
     <td>HT</td>
-    <td>1400.0</td>
+    <td>1450.0</td>
   </tr>
   <tr>
-    <td>71</td>
+    <td>72</td>
     <td>
       <a href="/tank/ru/Lowe" title="t8 HT (DE)">
         Löwe
@@ -850,10 +862,10 @@
     <td>DE</td>
     <td>8</td>
     <td>HT</td>
-    <td>1350.0</td>
+    <td>1400.0</td>
   </tr>
   <tr>
-    <td>72</td>
+    <td>73</td>
     <td>
       <a href="/tank/ru/FCM_50t" title="t8 HT (FR)">
         FCM 50t
@@ -862,10 +874,10 @@
     <td>FR</td>
     <td>8</td>
     <td>HT</td>
-    <td>1300.0</td>
+    <td>1400.0</td>
   </tr>
   <tr>
-    <td>73</td>
+    <td>74</td>
     <td>
       <a href="/tank/ru/GB11_Caernarvon" title="t8 HT (GB)">
         Caernarvon
@@ -874,10 +886,10 @@
     <td>UK</td>
     <td>8</td>
     <td>HT</td>
-    <td>1400.0</td>
+    <td>1500.0</td>
   </tr>
   <tr>
-    <td>74</td>
+    <td>75</td>
     <td>
       <a href="/tank/ru/KV4" title="t8 HT (SU)">
         KV-4
@@ -886,10 +898,10 @@
     <td>RU</td>
     <td>8</td>
     <td>HT</td>
-    <td>1350.0</td>
+    <td>1400.0</td>
   </tr>
   <tr>
-    <td>75</td>
+    <td>76</td>
     <td>
       <a href="/tank/ru/Ch03_WZ-111" title="t8 HT (CN)">
         WZ-111
@@ -898,10 +910,22 @@
     <td>CH</td>
     <td>8</td>
     <td>HT</td>
-    <td>1350.0</td>
+    <td>1400.0</td>
   </tr>
   <tr>
-    <td>76</td>
+    <td>77</td>
+    <td>
+      <a href="/tank/ru/Ch23_112" title="t8 HT (CN)">
+        112
+      </a>
+    </td>
+    <td>CH</td>
+    <td>8</td>
+    <td>HT</td>
+    <td>1500.0</td>
+  </tr>
+  <tr>
+    <td>78</td>
     <td>
       <a href="/tank/ru/Ch17_WZ131_1_WZ132" title="t8 LT (CN)">
         WZ-132
@@ -910,10 +934,10 @@
     <td>CH</td>
     <td>8</td>
     <td>LT</td>
-    <td>1000.0</td>
+    <td>900.0</td>
   </tr>
   <tr>
-    <td>77</td>
+    <td>79</td>
     <td>
       <a href="/tank/ru/AMX_13_90" title="t8 LT (FR)">
         AMX 13 90
@@ -925,7 +949,7 @@
     <td>1000.0</td>
   </tr>
   <tr>
-    <td>78</td>
+    <td>80</td>
     <td>
       <a href="/tank/ru/T23" title="t8 MT (US)">
         T23
@@ -937,7 +961,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>79</td>
+    <td>81</td>
     <td>
       <a href="/tank/ru/Panther_II" title="t8 MT (DE)">
         Panther II
@@ -946,10 +970,10 @@
     <td>DE</td>
     <td>8</td>
     <td>MT</td>
-    <td>1300.0</td>
+    <td>1350.0</td>
   </tr>
   <tr>
-    <td>80</td>
+    <td>82</td>
     <td>
       <a href="/tank/ru/T69" title="t8 MT (US)">
         T69
@@ -958,10 +982,10 @@
     <td>US</td>
     <td>8</td>
     <td>MT</td>
-    <td>1400.0</td>
+    <td>1500.0</td>
   </tr>
   <tr>
-    <td>81</td>
+    <td>83</td>
     <td>
       <a href="/tank/ru/Pershing" title="t8 MT (US)">
         M26 Pershing
@@ -970,10 +994,10 @@
     <td>US</td>
     <td>8</td>
     <td>MT</td>
-    <td>1300.0</td>
+    <td>1400.0</td>
   </tr>
   <tr>
-    <td>82</td>
+    <td>84</td>
     <td>
       <a href="/tank/ru/Ch05_T34_2" title="t8 MT (CN)">
         T-34-2
@@ -982,10 +1006,10 @@
     <td>CH</td>
     <td>8</td>
     <td>MT</td>
-    <td>1300.0</td>
+    <td>1350.0</td>
   </tr>
   <tr>
-    <td>83</td>
+    <td>85</td>
     <td>
       <a href="/tank/ru/GB23_Centurion" title="t8 MT (GB)">
         Centurion
@@ -997,7 +1021,7 @@
     <td>1400.0</td>
   </tr>
   <tr>
-    <td>84</td>
+    <td>86</td>
     <td>
       <a href="/tank/ru/Ch01_Type59" title="t8 MT (CN)">
         Type 59
@@ -1006,10 +1030,10 @@
     <td>CH</td>
     <td>8</td>
     <td>MT</td>
-    <td>1250.0</td>
+    <td>1350.0</td>
   </tr>
   <tr>
-    <td>85</td>
+    <td>87</td>
     <td>
       <a href="/tank/ru/Indien_Panzer" title="t8 MT (DE)">
         Indien-Panzer
@@ -1018,10 +1042,10 @@
     <td>DE</td>
     <td>8</td>
     <td>MT</td>
-    <td>1300.0</td>
+    <td>1350.0</td>
   </tr>
   <tr>
-    <td>86</td>
+    <td>88</td>
     <td>
       <a href="/tank/ru/T-44" title="t8 MT (SU)">
         T-44
@@ -1030,10 +1054,10 @@
     <td>RU</td>
     <td>8</td>
     <td>MT</td>
-    <td>1150.0</td>
+    <td>1250.0</td>
   </tr>
   <tr>
-    <td>87</td>
+    <td>89</td>
     <td>
       <a href="/tank/ru/T26_E4_SuperPershing" title="t8 MT (US)">
         T26E4 SuperPershing
@@ -1042,10 +1066,10 @@
     <td>US</td>
     <td>8</td>
     <td>MT</td>
-    <td>1100.0</td>
+    <td>1200.0</td>
   </tr>
   <tr>
-    <td>88</td>
+    <td>90</td>
     <td>
       <a href="/tank/ru/Ch01_Type59_Gold" title="t8 MT (CN)">
         Type 59 G
@@ -1054,10 +1078,34 @@
     <td>CH</td>
     <td>8</td>
     <td>MT</td>
-    <td>1250.0</td>
+    <td>1350.0</td>
   </tr>
   <tr>
-    <td>89</td>
+    <td>91</td>
+    <td>
+      <a href="/tank/ru/Object416" title="t8 MT (SU)">
+        Object 416
+      </a>
+    </td>
+    <td>RU</td>
+    <td>8</td>
+    <td>MT</td>
+    <td>1400.0</td>
+  </tr>
+  <tr>
+    <td>92</td>
+    <td>
+      <a href="/tank/ru/Ch14_T34_3" title="t8 MT (CN)">
+        T-34-3
+      </a>
+    </td>
+    <td>CH</td>
+    <td>8</td>
+    <td>MT</td>
+    <td>1300.0</td>
+  </tr>
+  <tr>
+    <td>93</td>
     <td>
       <a href="/tank/ru/M40M43" title="t8 SPG (US)">
         M40/M43
@@ -1066,10 +1114,10 @@
     <td>US</td>
     <td>8</td>
     <td>SPG</td>
-    <td>2000.0</td>
+    <td>1800.0</td>
   </tr>
   <tr>
-    <td>90</td>
+    <td>94</td>
     <td>
       <a href="/tank/ru/Lorraine155_51" title="t8 SPG (FR)">
         Lorraine155 51
@@ -1078,10 +1126,10 @@
     <td>FR</td>
     <td>8</td>
     <td>SPG</td>
-    <td>2000.0</td>
+    <td>1750.0</td>
   </tr>
   <tr>
-    <td>91</td>
+    <td>95</td>
     <td>
       <a href="/tank/ru/SU-14" title="t8 SPG (SU)">
         SU-14-2
@@ -1090,10 +1138,10 @@
     <td>RU</td>
     <td>8</td>
     <td>SPG</td>
-    <td>1600.0</td>
+    <td>1650.0</td>
   </tr>
   <tr>
-    <td>92</td>
+    <td>96</td>
     <td>
       <a href="/tank/ru/GW_Tiger_P" title="t8 SPG (DE)">
         GW Tiger (P)
@@ -1105,7 +1153,7 @@
     <td>1750.0</td>
   </tr>
   <tr>
-    <td>93</td>
+    <td>97</td>
     <td>
       <a href="/tank/ru/GB79_FV206" title="t8 SPG (GB)">
         FV207
@@ -1114,10 +1162,10 @@
     <td>UK</td>
     <td>8</td>
     <td>SPG</td>
-    <td>1900.0</td>
+    <td>1750.0</td>
   </tr>
   <tr>
-    <td>94</td>
+    <td>98</td>
     <td>
       <a href="/tank/ru/JagdPantherII" title="t8 TD (DE)">
         JagdPanther II
@@ -1126,10 +1174,10 @@
     <td>DE</td>
     <td>8</td>
     <td>TD</td>
-    <td>1700.0</td>
+    <td>1800.0</td>
   </tr>
   <tr>
-    <td>95</td>
+    <td>99</td>
     <td>
       <a href="/tank/ru/T28" title="t8 TD (US)">
         T28
@@ -1138,10 +1186,10 @@
     <td>US</td>
     <td>8</td>
     <td>TD</td>
-    <td>1700.0</td>
+    <td>1800.0</td>
   </tr>
   <tr>
-    <td>96</td>
+    <td>100</td>
     <td>
       <a href="/tank/ru/GB72_AT15" title="t8 TD (GB)">
         AT 15
@@ -1150,10 +1198,10 @@
     <td>UK</td>
     <td>8</td>
     <td>TD</td>
-    <td>1600.0</td>
+    <td>1850.0</td>
   </tr>
   <tr>
-    <td>97</td>
+    <td>101</td>
     <td>
       <a href="/tank/ru/JagdTiger_SdKfz_185" title="t8 TD (DE)">
         8.8 cm Pak 43 JagdTiger
@@ -1162,10 +1210,10 @@
     <td>DE</td>
     <td>8</td>
     <td>TD</td>
-    <td>1400.0</td>
+    <td>1550.0</td>
   </tr>
   <tr>
-    <td>98</td>
+    <td>102</td>
     <td>
       <a href="/tank/ru/AMX_AC_Mle1948" title="t8 TD (FR)">
         AMX AC Mle. 1948
@@ -1177,7 +1225,7 @@
     <td>1700.0</td>
   </tr>
   <tr>
-    <td>99</td>
+    <td>103</td>
     <td>
       <a href="/tank/ru/ISU-152" title="t8 TD (SU)">
         ISU-152
@@ -1186,10 +1234,10 @@
     <td>RU</td>
     <td>8</td>
     <td>TD</td>
-    <td>1700.0</td>
+    <td>1900.0</td>
   </tr>
   <tr>
-    <td>100</td>
+    <td>104</td>
     <td>
       <a href="/tank/ru/Ferdinand" title="t8 TD (DE)">
         Ferdinand
@@ -1198,10 +1246,10 @@
     <td>DE</td>
     <td>8</td>
     <td>TD</td>
-    <td>1700.0</td>
+    <td>1800.0</td>
   </tr>
   <tr>
-    <td>101</td>
+    <td>105</td>
     <td>
       <a href="/tank/ru/T28_Prototype" title="t8 TD (US)">
         T28 Prototype
@@ -1210,10 +1258,10 @@
     <td>US</td>
     <td>8</td>
     <td>TD</td>
-    <td>1700.0</td>
+    <td>1800.0</td>
   </tr>
   <tr>
-    <td>102</td>
+    <td>106</td>
     <td>
       <a href="/tank/ru/SU-101" title="t8 TD (SU)">
         Uralmash-1
@@ -1222,10 +1270,10 @@
     <td>RU</td>
     <td>8</td>
     <td>TD</td>
-    <td>1500.0</td>
+    <td>1700.0</td>
   </tr>
   <tr>
-    <td>103</td>
+    <td>107</td>
     <td>
       <a href="/tank/ru/KV-3" title="t7 HT (SU)">
         KV-3
@@ -1234,10 +1282,10 @@
     <td>RU</td>
     <td>7</td>
     <td>HT</td>
-    <td>1050.0</td>
+    <td>1200.0</td>
   </tr>
   <tr>
-    <td>104</td>
+    <td>108</td>
     <td>
       <a href="/tank/ru/GB10_Black_Prince" title="t7 HT (GB)">
         Black Prince
@@ -1246,10 +1294,10 @@
     <td>UK</td>
     <td>7</td>
     <td>HT</td>
-    <td>1100.0</td>
+    <td>1300.0</td>
   </tr>
   <tr>
-    <td>105</td>
+    <td>109</td>
     <td>
       <a href="/tank/ru/AMX_M4_1945" title="t7 HT (FR)">
         AMX M4 (1945)
@@ -1258,10 +1306,10 @@
     <td>FR</td>
     <td>7</td>
     <td>HT</td>
-    <td>1100.0</td>
+    <td>1200.0</td>
   </tr>
   <tr>
-    <td>106</td>
+    <td>110</td>
     <td>
       <a href="/tank/ru/T29" title="t7 HT (US)">
         T29
@@ -1270,10 +1318,10 @@
     <td>US</td>
     <td>7</td>
     <td>HT</td>
-    <td>1150.0</td>
+    <td>1300.0</td>
   </tr>
   <tr>
-    <td>107</td>
+    <td>111</td>
     <td>
       <a href="/tank/ru/Ch10_IS2" title="t7 HT (CN)">
         IS-2
@@ -1282,10 +1330,10 @@
     <td>CH</td>
     <td>7</td>
     <td>HT</td>
-    <td>1200.0</td>
+    <td>1300.0</td>
   </tr>
   <tr>
-    <td>108</td>
+    <td>112</td>
     <td>
       <a href="/tank/ru/PzVI" title="t7 HT (DE)">
         PzKpfw VI Tiger
@@ -1294,10 +1342,10 @@
     <td>DE</td>
     <td>7</td>
     <td>HT</td>
-    <td>1050.0</td>
+    <td>1150.0</td>
   </tr>
   <tr>
-    <td>109</td>
+    <td>113</td>
     <td>
       <a href="/tank/ru/IS" title="t7 HT (SU)">
         IS
@@ -1306,10 +1354,10 @@
     <td>RU</td>
     <td>7</td>
     <td>HT</td>
-    <td>1050.0</td>
+    <td>1200.0</td>
   </tr>
   <tr>
-    <td>110</td>
+    <td>114</td>
     <td>
       <a href="/tank/ru/PzVI_Tiger_P" title="t7 HT (DE)">
         PzKpfw VI Tiger (P)
@@ -1318,10 +1366,10 @@
     <td>DE</td>
     <td>7</td>
     <td>HT</td>
-    <td>1100.0</td>
+    <td>1150.0</td>
   </tr>
   <tr>
-    <td>111</td>
+    <td>115</td>
     <td>
       <a href="/tank/ru/T71" title="t7 LT (US)">
         T71
@@ -1333,7 +1381,7 @@
     <td>850.0</td>
   </tr>
   <tr>
-    <td>112</td>
+    <td>116</td>
     <td>
       <a href="/tank/ru/Ch02_Type62" title="t7 LT (CN)">
         Type-62
@@ -1342,10 +1390,10 @@
     <td>CH</td>
     <td>7</td>
     <td>LT</td>
-    <td>650.0</td>
+    <td>700.0</td>
   </tr>
   <tr>
-    <td>113</td>
+    <td>117</td>
     <td>
       <a href="/tank/ru/Ch16_WZ_131" title="t7 LT (CN)">
         WZ-131
@@ -1354,10 +1402,10 @@
     <td>CH</td>
     <td>7</td>
     <td>LT</td>
-    <td>700.0</td>
+    <td>725.0</td>
   </tr>
   <tr>
-    <td>114</td>
+    <td>118</td>
     <td>
       <a href="/tank/ru/AMX_13_75" title="t7 LT (FR)">
         AMX 13 75
@@ -1366,10 +1414,10 @@
     <td>FR</td>
     <td>7</td>
     <td>LT</td>
-    <td>600.0</td>
+    <td>700.0</td>
   </tr>
   <tr>
-    <td>115</td>
+    <td>119</td>
     <td>
       <a href="/tank/ru/Auf_Panther" title="t7 LT (DE)">
         Aufklärungspanzer Panther
@@ -1378,10 +1426,10 @@
     <td>DE</td>
     <td>7</td>
     <td>LT</td>
-    <td>800.0</td>
+    <td>700.0</td>
   </tr>
   <tr>
-    <td>116</td>
+    <td>120</td>
     <td>
       <a href="/tank/ru/T-43" title="t7 MT (SU)">
         T-43
@@ -1390,10 +1438,10 @@
     <td>RU</td>
     <td>7</td>
     <td>MT</td>
-    <td>900.0</td>
+    <td>925.0</td>
   </tr>
   <tr>
-    <td>117</td>
+    <td>121</td>
     <td>
       <a href="/tank/ru/PzV" title="t7 MT (DE)">
         PzKpfw V Panther
@@ -1405,7 +1453,7 @@
     <td>900.0</td>
   </tr>
   <tr>
-    <td>118</td>
+    <td>122</td>
     <td>
       <a href="/tank/ru/T20" title="t7 MT (US)">
         T20
@@ -1417,7 +1465,7 @@
     <td>1000.0</td>
   </tr>
   <tr>
-    <td>119</td>
+    <td>123</td>
     <td>
       <a href="/tank/ru/GB22_Comet" title="t7 MT (GB)">
         Comet
@@ -1429,7 +1477,7 @@
     <td>1000.0</td>
   </tr>
   <tr>
-    <td>120</td>
+    <td>124</td>
     <td>
       <a href="/tank/ru/VK3002DB" title="t7 MT (DE)">
         VK 3002 (DB)
@@ -1441,7 +1489,7 @@
     <td>850.0</td>
   </tr>
   <tr>
-    <td>121</td>
+    <td>125</td>
     <td>
       <a href="/tank/ru/Panther_M10" title="t7 MT (DE)">
         Panther M10
@@ -1453,7 +1501,7 @@
     <td>850.0</td>
   </tr>
   <tr>
-    <td>122</td>
+    <td>126</td>
     <td>
       <a href="/tank/ru/Ch04_T34_1" title="t7 MT (CN)">
         T-34-1
@@ -1462,10 +1510,10 @@
     <td>CH</td>
     <td>7</td>
     <td>MT</td>
-    <td>1100.0</td>
+    <td>1050.0</td>
   </tr>
   <tr>
-    <td>123</td>
+    <td>127</td>
     <td>
       <a href="/tank/ru/KV-13" title="t7 MT (SU)">
         KV-13
@@ -1474,10 +1522,22 @@
     <td>RU</td>
     <td>7</td>
     <td>MT</td>
-    <td>800.0</td>
+    <td>825.0</td>
   </tr>
   <tr>
-    <td>124</td>
+    <td>128</td>
+    <td>
+      <a href="/tank/ru/A44" title="t7 MT (SU)">
+        A-44
+      </a>
+    </td>
+    <td>RU</td>
+    <td>7</td>
+    <td>MT</td>
+    <td>850.0</td>
+  </tr>
+  <tr>
+    <td>129</td>
     <td>
       <a href="/tank/ru/M12" title="t7 SPG (US)">
         M12
@@ -1486,10 +1546,10 @@
     <td>US</td>
     <td>7</td>
     <td>SPG</td>
-    <td>1600.0</td>
+    <td>1550.0</td>
   </tr>
   <tr>
-    <td>125</td>
+    <td>130</td>
     <td>
       <a href="/tank/ru/S-51" title="t7 SPG (SU)">
         S-51
@@ -1498,10 +1558,10 @@
     <td>RU</td>
     <td>7</td>
     <td>SPG</td>
-    <td>1600.0</td>
+    <td>1500.0</td>
   </tr>
   <tr>
-    <td>126</td>
+    <td>131</td>
     <td>
       <a href="/tank/ru/Lorraine155_50" title="t7 SPG (FR)">
         Lorraine155 50
@@ -1510,10 +1570,10 @@
     <td>FR</td>
     <td>7</td>
     <td>SPG</td>
-    <td>1600.0</td>
+    <td>1550.0</td>
   </tr>
   <tr>
-    <td>127</td>
+    <td>132</td>
     <td>
       <a href="/tank/ru/G_Panther" title="t7 SPG (DE)">
         GW Panther
@@ -1522,10 +1582,10 @@
     <td>DE</td>
     <td>7</td>
     <td>SPG</td>
-    <td>1600.0</td>
+    <td>1550.0</td>
   </tr>
   <tr>
-    <td>128</td>
+    <td>133</td>
     <td>
       <a href="/tank/ru/SU14_1" title="t7 SPG (SU)">
         SU-14-1
@@ -1537,7 +1597,7 @@
     <td>1500.0</td>
   </tr>
   <tr>
-    <td>129</td>
+    <td>134</td>
     <td>
       <a href="/tank/ru/GB29_Crusader_5inch" title="t7 SPG (GB)">
         Crusader 5.5-in. SP
@@ -1546,10 +1606,10 @@
     <td>UK</td>
     <td>7</td>
     <td>SPG</td>
-    <td>1600.0</td>
+    <td>1500.0</td>
   </tr>
   <tr>
-    <td>130</td>
+    <td>135</td>
     <td>
       <a href="/tank/ru/SU100M1" title="t7 TD (SU)">
         SU-100M1
@@ -1561,7 +1621,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>131</td>
+    <td>136</td>
     <td>
       <a href="/tank/ru/SU-152" title="t7 TD (SU)">
         SU-152
@@ -1570,10 +1630,10 @@
     <td>RU</td>
     <td>7</td>
     <td>TD</td>
-    <td>1100.0</td>
+    <td>1350.0</td>
   </tr>
   <tr>
-    <td>132</td>
+    <td>137</td>
     <td>
       <a href="/tank/ru/SU122_44" title="t7 TD (SU)">
         SU-122-44
@@ -1582,10 +1642,10 @@
     <td>RU</td>
     <td>7</td>
     <td>TD</td>
-    <td>1100.0</td>
+    <td>1350.0</td>
   </tr>
   <tr>
-    <td>133</td>
+    <td>138</td>
     <td>
       <a href="/tank/ru/AMX_AC_Mle1946" title="t7 TD (FR)">
         AMX AC Mle.1946
@@ -1597,7 +1657,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>134</td>
+    <td>139</td>
     <td>
       <a href="/tank/ru/GB71_AT_15A" title="t7 TD (GB)">
         AT 15A
@@ -1606,10 +1666,10 @@
     <td>UK</td>
     <td>7</td>
     <td>TD</td>
-    <td>1100.0</td>
+    <td>1200.0</td>
   </tr>
   <tr>
-    <td>135</td>
+    <td>140</td>
     <td>
       <a href="/tank/ru/T25_AT" title="t7 TD (US)">
         T25 AT
@@ -1618,10 +1678,10 @@
     <td>US</td>
     <td>7</td>
     <td>TD</td>
-    <td>1200.0</td>
+    <td>1300.0</td>
   </tr>
   <tr>
-    <td>136</td>
+    <td>141</td>
     <td>
       <a href="/tank/ru/GB75_AT7" title="t7 TD (GB)">
         AT 7
@@ -1630,10 +1690,10 @@
     <td>UK</td>
     <td>7</td>
     <td>TD</td>
-    <td>1400.0</td>
+    <td>1500.0</td>
   </tr>
   <tr>
-    <td>137</td>
+    <td>142</td>
     <td>
       <a href="/tank/ru/E-25" title="t7 TD (DE)">
         E-25
@@ -1645,7 +1705,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>138</td>
+    <td>143</td>
     <td>
       <a href="/tank/ru/JagdPanther" title="t7 TD (DE)">
         Jagdpanther
@@ -1654,10 +1714,10 @@
     <td>DE</td>
     <td>7</td>
     <td>TD</td>
-    <td>1200.0</td>
+    <td>1300.0</td>
   </tr>
   <tr>
-    <td>139</td>
+    <td>144</td>
     <td>
       <a href="/tank/ru/T25_2" title="t7 TD (US)">
         T25/2
@@ -1666,10 +1726,10 @@
     <td>US</td>
     <td>7</td>
     <td>TD</td>
-    <td>1100.0</td>
+    <td>1300.0</td>
   </tr>
   <tr>
-    <td>140</td>
+    <td>145</td>
     <td>
       <a href="/tank/ru/T150" title="t6 HT (SU)">
         T-150
@@ -1681,7 +1741,7 @@
     <td>700.0</td>
   </tr>
   <tr>
-    <td>141</td>
+    <td>146</td>
     <td>
       <a href="/tank/ru/M6" title="t6 HT (US)">
         M6
@@ -1690,10 +1750,10 @@
     <td>US</td>
     <td>6</td>
     <td>HT</td>
-    <td>700.0</td>
+    <td>800.0</td>
   </tr>
   <tr>
-    <td>142</td>
+    <td>147</td>
     <td>
       <a href="/tank/ru/ARL_44" title="t6 HT (FR)">
         ARL 44
@@ -1705,7 +1765,7 @@
     <td>800.0</td>
   </tr>
   <tr>
-    <td>143</td>
+    <td>148</td>
     <td>
       <a href="/tank/ru/GB09_Churchill_VII" title="t6 HT (GB)">
         Churchill VII
@@ -1717,7 +1777,7 @@
     <td>800.0</td>
   </tr>
   <tr>
-    <td>144</td>
+    <td>149</td>
     <td>
       <a href="/tank/ru/GB63_TOG_II" title="t6 HT (GB)">
         TOG II
@@ -1726,10 +1786,10 @@
     <td>UK</td>
     <td>6</td>
     <td>HT</td>
-    <td>900.0</td>
+    <td>875.0</td>
   </tr>
   <tr>
-    <td>145</td>
+    <td>150</td>
     <td>
       <a href="/tank/ru/KV-1s" title="t6 HT (SU)">
         KV-1S
@@ -1738,10 +1798,10 @@
     <td>RU</td>
     <td>6</td>
     <td>HT</td>
-    <td>700.0</td>
+    <td>875.0</td>
   </tr>
   <tr>
-    <td>146</td>
+    <td>151</td>
     <td>
       <a href="/tank/ru/KV2" title="t6 HT (SU)">
         KV-2
@@ -1750,10 +1810,10 @@
     <td>RU</td>
     <td>6</td>
     <td>HT</td>
-    <td>800.0</td>
+    <td>775.0</td>
   </tr>
   <tr>
-    <td>147</td>
+    <td>152</td>
     <td>
       <a href="/tank/ru/T_50_2" title="t6 LT (SU)">
         T-50-2
@@ -1765,7 +1825,7 @@
     <td>275.0</td>
   </tr>
   <tr>
-    <td>148</td>
+    <td>153</td>
     <td>
       <a href="/tank/ru/T21" title="t6 LT (US)">
         T21
@@ -1777,7 +1837,7 @@
     <td>500.0</td>
   </tr>
   <tr>
-    <td>149</td>
+    <td>154</td>
     <td>
       <a href="/tank/ru/VK2801" title="t6 LT (DE)">
         VK 2801
@@ -1789,7 +1849,7 @@
     <td>500.0</td>
   </tr>
   <tr>
-    <td>150</td>
+    <td>155</td>
     <td>
       <a href="/tank/ru/AMX_12t" title="t6 LT (FR)">
         AMX 12t
@@ -1801,7 +1861,7 @@
     <td>350.0</td>
   </tr>
   <tr>
-    <td>151</td>
+    <td>156</td>
     <td>
       <a href="/tank/ru/Ch15_59_16" title="t6 LT (CN)">
         59-16
@@ -1810,10 +1870,10 @@
     <td>CH</td>
     <td>6</td>
     <td>LT</td>
-    <td>400.0</td>
+    <td>350.0</td>
   </tr>
   <tr>
-    <td>152</td>
+    <td>157</td>
     <td>
       <a href="/tank/ru/MT25" title="t6 LT (SU)">
         MT-25
@@ -1825,7 +1885,7 @@
     <td>275.0</td>
   </tr>
   <tr>
-    <td>153</td>
+    <td>158</td>
     <td>
       <a href="/tank/ru/PzV_PzIV_ausf_Alfa" title="t6 MT (DE)">
         PzKpfw V-IV Alpha
@@ -1837,7 +1897,7 @@
     <td>525.0</td>
   </tr>
   <tr>
-    <td>154</td>
+    <td>159</td>
     <td>
       <a href="/tank/ru/PzV_PzIV" title="t6 MT (DE)">
         PzKpfw V-IV
@@ -1849,7 +1909,7 @@
     <td>525.0</td>
   </tr>
   <tr>
-    <td>155</td>
+    <td>160</td>
     <td>
       <a href="/tank/ru/Ch20_Type58" title="t6 MT (CN)">
         Type 58
@@ -1858,10 +1918,10 @@
     <td>CH</td>
     <td>6</td>
     <td>MT</td>
-    <td>800.0</td>
+    <td>750.0</td>
   </tr>
   <tr>
-    <td>156</td>
+    <td>161</td>
     <td>
       <a href="/tank/ru/VK3001H" title="t6 MT (DE)">
         VK 3001 (H)
@@ -1873,7 +1933,7 @@
     <td>625.0</td>
   </tr>
   <tr>
-    <td>157</td>
+    <td>162</td>
     <td>
       <a href="/tank/ru/VK3001P" title="t6 MT (DE)">
         VK 3001 (P)
@@ -1882,10 +1942,10 @@
     <td>DE</td>
     <td>6</td>
     <td>MT</td>
-    <td>600.0</td>
+    <td>625.0</td>
   </tr>
   <tr>
-    <td>158</td>
+    <td>163</td>
     <td>
       <a href="/tank/ru/PzIV_schmalturm" title="t6 MT (DE)">
         Pz IV Schmalturm
@@ -1897,7 +1957,7 @@
     <td>725.0</td>
   </tr>
   <tr>
-    <td>159</td>
+    <td>164</td>
     <td>
       <a href="/tank/ru/Sherman_Jumbo" title="t6 MT (US)">
         M4A3E2
@@ -1909,7 +1969,7 @@
     <td>725.0</td>
   </tr>
   <tr>
-    <td>160</td>
+    <td>165</td>
     <td>
       <a href="/tank/ru/T-34-85" title="t6 MT (SU)">
         T-34-85
@@ -1918,10 +1978,10 @@
     <td>RU</td>
     <td>6</td>
     <td>MT</td>
-    <td>600.0</td>
+    <td>775.0</td>
   </tr>
   <tr>
-    <td>161</td>
+    <td>166</td>
     <td>
       <a href="/tank/ru/GB21_Cromwell" title="t6 MT (GB)">
         Cromwell
@@ -1930,10 +1990,10 @@
     <td>UK</td>
     <td>6</td>
     <td>MT</td>
-    <td>700.0</td>
+    <td>750.0</td>
   </tr>
   <tr>
-    <td>162</td>
+    <td>167</td>
     <td>
       <a href="/tank/ru/M4A3E8_Sherman" title="t6 MT (US)">
         M4A3E8 Sherman
@@ -1945,7 +2005,7 @@
     <td>625.0</td>
   </tr>
   <tr>
-    <td>163</td>
+    <td>168</td>
     <td>
       <a href="/tank/ru/VK3002DB_V1" title="t6 MT (DE)">
         VK 30.01 (D)
@@ -1954,10 +2014,10 @@
     <td>DE</td>
     <td>6</td>
     <td>MT</td>
-    <td>650.0</td>
+    <td>700.0</td>
   </tr>
   <tr>
-    <td>164</td>
+    <td>169</td>
     <td>
       <a href="/tank/ru/VK3601H" title="t6 MT (DE)">
         VK 3601 (H)
@@ -1969,7 +2029,31 @@
     <td>700.0</td>
   </tr>
   <tr>
-    <td>165</td>
+    <td>170</td>
+    <td>
+      <a href="/tank/ru/A43" title="t6 MT (SU)">
+        A-43
+      </a>
+    </td>
+    <td>RU</td>
+    <td>6</td>
+    <td>MT</td>
+    <td>700.0</td>
+  </tr>
+  <tr>
+    <td>171</td>
+    <td>
+      <a href="/tank/ru/VK3002M" title="t6 MT (DE)">
+        VK 30.02 (M)
+      </a>
+    </td>
+    <td>DE</td>
+    <td>6</td>
+    <td>MT</td>
+    <td>725.0</td>
+  </tr>
+  <tr>
+    <td>172</td>
     <td>
       <a href="/tank/ru/Hummel" title="t6 SPG (DE)">
         Hummel
@@ -1981,7 +2065,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>166</td>
+    <td>173</td>
     <td>
       <a href="/tank/ru/M44" title="t6 SPG (US)">
         M44
@@ -1993,7 +2077,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>167</td>
+    <td>174</td>
     <td>
       <a href="/tank/ru/SU-8" title="t6 SPG (SU)">
         SU-8
@@ -2005,7 +2089,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>168</td>
+    <td>175</td>
     <td>
       <a href="/tank/ru/AMX_13F3AM" title="t6 SPG (FR)">
         AMX 13 F3
@@ -2014,10 +2098,10 @@
     <td>FR</td>
     <td>6</td>
     <td>SPG</td>
-    <td>1300.0</td>
+    <td>1200.0</td>
   </tr>
   <tr>
-    <td>169</td>
+    <td>176</td>
     <td>
       <a href="/tank/ru/GB77_FV304" title="t6 SPG (GB)">
         FV304
@@ -2029,7 +2113,7 @@
     <td>1200.0</td>
   </tr>
   <tr>
-    <td>170</td>
+    <td>177</td>
     <td>
       <a href="/tank/ru/GB74_AT8" title="t6 TD (GB)">
         AT 8
@@ -2038,10 +2122,10 @@
     <td>UK</td>
     <td>6</td>
     <td>TD</td>
-    <td>925.0</td>
+    <td>950.0</td>
   </tr>
   <tr>
-    <td>171</td>
+    <td>178</td>
     <td>
       <a href="/tank/ru/SU100Y" title="t6 TD (SU)">
         SU-100Y
@@ -2053,7 +2137,7 @@
     <td>900.0</td>
   </tr>
   <tr>
-    <td>172</td>
+    <td>179</td>
     <td>
       <a href="/tank/ru/M36_Slagger" title="t6 TD (US)">
         M36 Slugger
@@ -2062,10 +2146,10 @@
     <td>US</td>
     <td>6</td>
     <td>TD</td>
-    <td>800.0</td>
+    <td>850.0</td>
   </tr>
   <tr>
-    <td>173</td>
+    <td>180</td>
     <td>
       <a href="/tank/ru/GB40_Gun_Carrier_Churchill" title="t6 TD (GB)">
         Churchill Gun Carrier
@@ -2074,10 +2158,10 @@
     <td>UK</td>
     <td>6</td>
     <td>TD</td>
-    <td>750.0</td>
+    <td>825.0</td>
   </tr>
   <tr>
-    <td>174</td>
+    <td>181</td>
     <td>
       <a href="/tank/ru/ARL_V39" title="t6 TD (FR)">
         ARL V39
@@ -2086,10 +2170,10 @@
     <td>FR</td>
     <td>6</td>
     <td>TD</td>
-    <td>825.0</td>
+    <td>850.0</td>
   </tr>
   <tr>
-    <td>175</td>
+    <td>182</td>
     <td>
       <a href="/tank/ru/M18_Hellcat" title="t6 TD (US)">
         M18 Hellcat
@@ -2098,10 +2182,10 @@
     <td>US</td>
     <td>6</td>
     <td>TD</td>
-    <td>800.0</td>
+    <td>950.0</td>
   </tr>
   <tr>
-    <td>176</td>
+    <td>183</td>
     <td>
       <a href="/tank/ru/JagdPzIV" title="t6 TD (DE)">
         JagdPz IV
@@ -2110,10 +2194,10 @@
     <td>DE</td>
     <td>6</td>
     <td>TD</td>
-    <td>675.0</td>
+    <td>850.0</td>
   </tr>
   <tr>
-    <td>177</td>
+    <td>184</td>
     <td>
       <a href="/tank/ru/DickerMax" title="t6 TD (DE)">
         Dicker Max
@@ -2125,7 +2209,7 @@
     <td>850.0</td>
   </tr>
   <tr>
-    <td>178</td>
+    <td>185</td>
     <td>
       <a href="/tank/ru/SU-100" title="t6 TD (SU)">
         SU-100
@@ -2134,10 +2218,10 @@
     <td>RU</td>
     <td>6</td>
     <td>TD</td>
-    <td>800.0</td>
+    <td>900.0</td>
   </tr>
   <tr>
-    <td>179</td>
+    <td>186</td>
     <td>
       <a href="/tank/ru/KV" title="t5 HT (SU)">
         KV
@@ -2149,7 +2233,7 @@
     <td>750.0</td>
   </tr>
   <tr>
-    <td>180</td>
+    <td>187</td>
     <td>
       <a href="/tank/ru/KV-220_action" title="t5 HT (SU)">
         KV-220 (action)
@@ -2161,7 +2245,7 @@
     <td>750.0</td>
   </tr>
   <tr>
-    <td>181</td>
+    <td>188</td>
     <td>
       <a href="/tank/ru/KV-220" title="t5 HT (SU)">
         KV-220 Beta-Test
@@ -2173,7 +2257,7 @@
     <td>450.0</td>
   </tr>
   <tr>
-    <td>182</td>
+    <td>189</td>
     <td>
       <a href="/tank/ru/GB08_Churchill_I" title="t5 HT (GB)">
         Churchill I
@@ -2185,7 +2269,7 @@
     <td>525.0</td>
   </tr>
   <tr>
-    <td>183</td>
+    <td>190</td>
     <td>
       <a href="/tank/ru/T1_hvy" title="t5 HT (US)">
         T1 heavy
@@ -2197,7 +2281,7 @@
     <td>500.0</td>
   </tr>
   <tr>
-    <td>184</td>
+    <td>191</td>
     <td>
       <a href="/tank/ru/Churchill_LL" title="t5 HT (SU)">
         Churchill
@@ -2209,7 +2293,7 @@
     <td>525.0</td>
   </tr>
   <tr>
-    <td>185</td>
+    <td>192</td>
     <td>
       <a href="/tank/ru/T14" title="t5 HT (US)">
         T14
@@ -2221,7 +2305,7 @@
     <td>450.0</td>
   </tr>
   <tr>
-    <td>186</td>
+    <td>193</td>
     <td>
       <a href="/tank/ru/BDR_G1B" title="t5 HT (FR)">
         BDR G1B
@@ -2233,7 +2317,7 @@
     <td>500.0</td>
   </tr>
   <tr>
-    <td>187</td>
+    <td>194</td>
     <td>
       <a href="/tank/ru/GB51_Excelsior" title="t5 HT (GB)">
         A33 Excelsior
@@ -2245,7 +2329,7 @@
     <td>550.0</td>
   </tr>
   <tr>
-    <td>188</td>
+    <td>195</td>
     <td>
       <a href="/tank/ru/KV1" title="t5 HT (SU)">
         KV-1
@@ -2257,7 +2341,7 @@
     <td>500.0</td>
   </tr>
   <tr>
-    <td>189</td>
+    <td>196</td>
     <td>
       <a href="/tank/ru/M24_Chaffee" title="t5 LT (US)">
         M24 Chaffee
@@ -2269,7 +2353,7 @@
     <td>550.0</td>
   </tr>
   <tr>
-    <td>190</td>
+    <td>197</td>
     <td>
       <a href="/tank/ru/ELC_AMX" title="t5 LT (FR)">
         ELC AMX
@@ -2281,7 +2365,7 @@
     <td>275.0</td>
   </tr>
   <tr>
-    <td>191</td>
+    <td>198</td>
     <td>
       <a href="/tank/ru/VK1602" title="t5 LT (DE)">
         VK 1602 Leopard
@@ -2293,7 +2377,7 @@
     <td>175.0</td>
   </tr>
   <tr>
-    <td>192</td>
+    <td>199</td>
     <td>
       <a href="/tank/ru/GB20_Crusader" title="t5 LT (GB)">
         Crusader
@@ -2305,19 +2389,7 @@
     <td>350.0</td>
   </tr>
   <tr>
-    <td>193</td>
-    <td>
-      <a href="/tank/ru/Ch21_T34" title="t5 MT (CN)">
-        T-34
-      </a>
-    </td>
-    <td>CH</td>
-    <td>5</td>
-    <td>MT</td>
-    <td>500.0</td>
-  </tr>
-  <tr>
-    <td>194</td>
+    <td>200</td>
     <td>
       <a href="/tank/ru/PzIII_IV" title="t5 MT (DE)">
         PzKpfw III/IV
@@ -2329,7 +2401,7 @@
     <td>325.0</td>
   </tr>
   <tr>
-    <td>195</td>
+    <td>201</td>
     <td>
       <a href="/tank/ru/Ram-II" title="t5 MT (US)">
         Ram-II
@@ -2341,7 +2413,7 @@
     <td>450.0</td>
   </tr>
   <tr>
-    <td>196</td>
+    <td>202</td>
     <td>
       <a href="/tank/ru/M4A2E4" title="t5 MT (US)">
         M4A2E4
@@ -2353,7 +2425,7 @@
     <td>400.0</td>
   </tr>
   <tr>
-    <td>197</td>
+    <td>203</td>
     <td>
       <a href="/tank/ru/GB68_Matilda_Black_Prince" title="t5 MT (GB)">
         Matilda Black Prince
@@ -2365,7 +2437,7 @@
     <td>575.0</td>
   </tr>
   <tr>
-    <td>198</td>
+    <td>204</td>
     <td>
       <a href="/tank/ru/M4_Sherman" title="t5 MT (US)">
         M4 Sherman
@@ -2374,10 +2446,10 @@
     <td>US</td>
     <td>5</td>
     <td>MT</td>
-    <td>500.0</td>
+    <td>550.0</td>
   </tr>
   <tr>
-    <td>199</td>
+    <td>205</td>
     <td>
       <a href="/tank/ru/PzIV" title="t5 MT (DE)">
         PzKpfw IV
@@ -2389,19 +2461,7 @@
     <td>450.0</td>
   </tr>
   <tr>
-    <td>200</td>
-    <td>
-      <a href="/tank/ru/PzIV_Hydro" title="t5 MT (DE)">
-        PzKpfw IV Hydraulic
-      </a>
-    </td>
-    <td>DE</td>
-    <td>5</td>
-    <td>MT</td>
-    <td>475.0</td>
-  </tr>
-  <tr>
-    <td>201</td>
+    <td>206</td>
     <td>
       <a href="/tank/ru/M7_med" title="t5 MT (US)">
         M7
@@ -2413,7 +2473,7 @@
     <td>325.0</td>
   </tr>
   <tr>
-    <td>202</td>
+    <td>207</td>
     <td>
       <a href="/tank/ru/Matilda_II_LL" title="t5 MT (SU)">
         Matilda
@@ -2425,7 +2485,7 @@
     <td>450.0</td>
   </tr>
   <tr>
-    <td>203</td>
+    <td>208</td>
     <td>
       <a href="/tank/ru/T-25" title="t5 MT (DE)">
         T-25
@@ -2437,7 +2497,7 @@
     <td>475.0</td>
   </tr>
   <tr>
-    <td>204</td>
+    <td>209</td>
     <td>
       <a href="/tank/ru/T-34" title="t5 MT (SU)">
         T-34
@@ -2446,10 +2506,46 @@
     <td>RU</td>
     <td>5</td>
     <td>MT</td>
-    <td>325.0</td>
+    <td>500.0</td>
   </tr>
   <tr>
-    <td>205</td>
+    <td>210</td>
+    <td>
+      <a href="/tank/ru/PzIV_Hydro" title="t5 MT (DE)">
+        PzKpfw IV Hydraulic
+      </a>
+    </td>
+    <td>DE</td>
+    <td>5</td>
+    <td>MT</td>
+    <td>475.0</td>
+  </tr>
+  <tr>
+    <td>211</td>
+    <td>
+      <a href="/tank/ru/Chi_Nu_Kai" title="t5 MT (JP)">
+        Chi-Nu Kai
+      </a>
+    </td>
+    <td>JP</td>
+    <td>5</td>
+    <td>MT</td>
+    <td>400.0</td>
+  </tr>
+  <tr>
+    <td>212</td>
+    <td>
+      <a href="/tank/ru/Ch21_T34" title="t5 MT (CN)">
+        Type T-34
+      </a>
+    </td>
+    <td>CH</td>
+    <td>5</td>
+    <td>MT</td>
+    <td>500.0</td>
+  </tr>
+  <tr>
+    <td>213</td>
     <td>
       <a href="/tank/ru/_105_leFH18B2" title="t5 SPG (FR)">
         105 leFH18B2
@@ -2458,10 +2554,10 @@
     <td>FR</td>
     <td>5</td>
     <td>SPG</td>
-    <td>680.0</td>
+    <td>750.0</td>
   </tr>
   <tr>
-    <td>206</td>
+    <td>214</td>
     <td>
       <a href="/tank/ru/M41" title="t5 SPG (US)">
         M41
@@ -2470,10 +2566,10 @@
     <td>US</td>
     <td>5</td>
     <td>SPG</td>
-    <td>1250.0</td>
+    <td>800.0</td>
   </tr>
   <tr>
-    <td>207</td>
+    <td>215</td>
     <td>
       <a href="/tank/ru/Grille" title="t5 SPG (DE)">
         Grille
@@ -2482,10 +2578,10 @@
     <td>DE</td>
     <td>5</td>
     <td>SPG</td>
-    <td>660.0</td>
+    <td>750.0</td>
   </tr>
   <tr>
-    <td>208</td>
+    <td>216</td>
     <td>
       <a href="/tank/ru/AMX_105AM" title="t5 SPG (FR)">
         AMX 105AM
@@ -2494,10 +2590,10 @@
     <td>FR</td>
     <td>5</td>
     <td>SPG</td>
-    <td>900.0</td>
+    <td>750.0</td>
   </tr>
   <tr>
-    <td>209</td>
+    <td>217</td>
     <td>
       <a href="/tank/ru/SU122A" title="t5 SPG (SU)">
         SU-122A
@@ -2506,10 +2602,10 @@
     <td>RU</td>
     <td>5</td>
     <td>SPG</td>
-    <td>1250.0</td>
+    <td>800.0</td>
   </tr>
   <tr>
-    <td>210</td>
+    <td>218</td>
     <td>
       <a href="/tank/ru/GB28_Bishop" title="t5 SPG (GB)">
         Bishop
@@ -2518,22 +2614,10 @@
     <td>UK</td>
     <td>5</td>
     <td>SPG</td>
-    <td>800.0</td>
+    <td>750.0</td>
   </tr>
   <tr>
-    <td>211</td>
-    <td>
-      <a href="/tank/ru/SU_85I" title="t5 TD (SU)">
-        SU-85I
-      </a>
-    </td>
-    <td>RU</td>
-    <td>5</td>
-    <td>TD</td>
-    <td>450.0</td>
-  </tr>
-  <tr>
-    <td>212</td>
+    <td>219</td>
     <td>
       <a href="/tank/ru/StuGIII" title="t5 TD (DE)">
         StuG III
@@ -2542,10 +2626,10 @@
     <td>DE</td>
     <td>5</td>
     <td>TD</td>
-    <td>475.0</td>
+    <td>550.0</td>
   </tr>
   <tr>
-    <td>213</td>
+    <td>220</td>
     <td>
       <a href="/tank/ru/GB73_AT2" title="t5 TD (GB)">
         AT 2
@@ -2557,7 +2641,7 @@
     <td>600.0</td>
   </tr>
   <tr>
-    <td>214</td>
+    <td>221</td>
     <td>
       <a href="/tank/ru/T49" title="t5 TD (US)">
         T49
@@ -2566,10 +2650,10 @@
     <td>US</td>
     <td>5</td>
     <td>TD</td>
-    <td>475.0</td>
+    <td>550.0</td>
   </tr>
   <tr>
-    <td>215</td>
+    <td>222</td>
     <td>
       <a href="/tank/ru/SU-85" title="t5 TD (SU)">
         SU-85
@@ -2581,7 +2665,7 @@
     <td>500.0</td>
   </tr>
   <tr>
-    <td>216</td>
+    <td>223</td>
     <td>
       <a href="/tank/ru/M10_Wolverine" title="t5 TD (US)">
         M10 Wolverine
@@ -2593,7 +2677,7 @@
     <td>550.0</td>
   </tr>
   <tr>
-    <td>217</td>
+    <td>224</td>
     <td>
       <a href="/tank/ru/S_35CA" title="t5 TD (FR)">
         S-35 CA
@@ -2605,7 +2689,19 @@
     <td>675.0</td>
   </tr>
   <tr>
-    <td>218</td>
+    <td>225</td>
+    <td>
+      <a href="/tank/ru/SU_85I" title="t5 TD (SU)">
+        SU-85I
+      </a>
+    </td>
+    <td>RU</td>
+    <td>5</td>
+    <td>TD</td>
+    <td>500.0</td>
+  </tr>
+  <tr>
+    <td>226</td>
     <td>
       <a href="/tank/ru/B1" title="t4 HT (FR)">
         B1
@@ -2617,7 +2713,7 @@
     <td>250.0</td>
   </tr>
   <tr>
-    <td>219</td>
+    <td>227</td>
     <td>
       <a href="/tank/ru/B-1bis_captured" title="t4 HT (DE)">
         PzKpfw B2 740 (f)
@@ -2626,10 +2722,22 @@
     <td>DE</td>
     <td>4</td>
     <td>HT</td>
-    <td>500.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>220</td>
+    <td>228</td>
+    <td>
+      <a href="/tank/ru/DW_II" title="t4 HT (DE)">
+        Durchbruchswagen 2
+      </a>
+    </td>
+    <td>DE</td>
+    <td>4</td>
+    <td>HT</td>
+    <td>300.0</td>
+  </tr>
+  <tr>
+    <td>229</td>
     <td>
       <a href="/tank/ru/T-50" title="t4 LT (SU)">
         T-50
@@ -2641,7 +2749,7 @@
     <td>150.0</td>
   </tr>
   <tr>
-    <td>221</td>
+    <td>230</td>
     <td>
       <a href="/tank/ru/GB04_Valentine" title="t4 LT (GB)">
         Valentine
@@ -2653,7 +2761,7 @@
     <td>260.0</td>
   </tr>
   <tr>
-    <td>222</td>
+    <td>231</td>
     <td>
       <a href="/tank/ru/AMX40" title="t4 LT (FR)">
         AMX 40
@@ -2662,10 +2770,10 @@
     <td>FR</td>
     <td>4</td>
     <td>LT</td>
-    <td>180.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>223</td>
+    <td>232</td>
     <td>
       <a href="/tank/ru/Pz38_NA" title="t4 LT (DE)">
         PzKpfw 38 nA
@@ -2677,7 +2785,7 @@
     <td>140.0</td>
   </tr>
   <tr>
-    <td>224</td>
+    <td>233</td>
     <td>
       <a href="/tank/ru/A-20" title="t4 LT (SU)">
         A-20
@@ -2689,7 +2797,7 @@
     <td>100.0</td>
   </tr>
   <tr>
-    <td>225</td>
+    <td>234</td>
     <td>
       <a href="/tank/ru/Ch09_M5" title="t4 LT (CN)">
         M5A1 Stuart
@@ -2701,7 +2809,7 @@
     <td>250.0</td>
   </tr>
   <tr>
-    <td>226</td>
+    <td>235</td>
     <td>
       <a href="/tank/ru/GB60_Covenanter" title="t4 LT (GB)">
         Covenanter
@@ -2713,7 +2821,7 @@
     <td>220.0</td>
   </tr>
   <tr>
-    <td>227</td>
+    <td>236</td>
     <td>
       <a href="/tank/ru/M5_Stuart" title="t4 LT (US)">
         M5 Stuart
@@ -2725,7 +2833,7 @@
     <td>160.0</td>
   </tr>
   <tr>
-    <td>228</td>
+    <td>237</td>
     <td>
       <a href="/tank/ru/PzII_Luchs" title="t4 LT (DE)">
         PzKpfw II Luchs
@@ -2737,7 +2845,7 @@
     <td>150.0</td>
   </tr>
   <tr>
-    <td>229</td>
+    <td>238</td>
     <td>
       <a href="/tank/ru/T80" title="t4 LT (SU)">
         T-80
@@ -2746,10 +2854,10 @@
     <td>RU</td>
     <td>4</td>
     <td>LT</td>
-    <td>160.0</td>
+    <td>280.0</td>
   </tr>
   <tr>
-    <td>230</td>
+    <td>239</td>
     <td>
       <a href="/tank/ru/Valentine_LL" title="t4 LT (SU)">
         Valentine
@@ -2761,7 +2869,7 @@
     <td>360.0</td>
   </tr>
   <tr>
-    <td>231</td>
+    <td>240</td>
     <td>
       <a href="/tank/ru/M3_Grant" title="t4 MT (US)">
         M3 Lee
@@ -2773,7 +2881,7 @@
     <td>250.0</td>
   </tr>
   <tr>
-    <td>232</td>
+    <td>241</td>
     <td>
       <a href="/tank/ru/A-32" title="t4 MT (SU)">
         A-32
@@ -2782,10 +2890,10 @@
     <td>RU</td>
     <td>4</td>
     <td>MT</td>
-    <td>330.0</td>
+    <td>350.0</td>
   </tr>
   <tr>
-    <td>233</td>
+    <td>242</td>
     <td>
       <a href="/tank/ru/GB07_Matilda" title="t4 MT (GB)">
         Matilda
@@ -2797,7 +2905,7 @@
     <td>300.0</td>
   </tr>
   <tr>
-    <td>234</td>
+    <td>243</td>
     <td>
       <a href="/tank/ru/PzIII" title="t4 MT (DE)">
         PzKpfw III
@@ -2806,10 +2914,10 @@
     <td>DE</td>
     <td>4</td>
     <td>MT</td>
-    <td>165.0</td>
+    <td>270.0</td>
   </tr>
   <tr>
-    <td>235</td>
+    <td>244</td>
     <td>
       <a href="/tank/ru/T-28" title="t4 MT (SU)">
         T-28
@@ -2818,10 +2926,10 @@
     <td>RU</td>
     <td>4</td>
     <td>MT</td>
-    <td>225.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>236</td>
+    <td>245</td>
     <td>
       <a href="/tank/ru/VK2001DB" title="t4 MT (DE)">
         VK 20.01 (D)
@@ -2830,10 +2938,10 @@
     <td>DE</td>
     <td>4</td>
     <td>MT</td>
-    <td>300.0</td>
+    <td>270.0</td>
   </tr>
   <tr>
-    <td>237</td>
+    <td>246</td>
     <td>
       <a href="/tank/ru/Sturmpanzer_II" title="t4 SPG (DE)">
         Sturmpanzer II
@@ -2842,10 +2950,10 @@
     <td>DE</td>
     <td>4</td>
     <td>SPG</td>
-    <td>500.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>238</td>
+    <td>247</td>
     <td>
       <a href="/tank/ru/M37" title="t4 SPG (US)">
         M37
@@ -2854,10 +2962,10 @@
     <td>US</td>
     <td>4</td>
     <td>SPG</td>
-    <td>550.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>239</td>
+    <td>248</td>
     <td>
       <a href="/tank/ru/SU-5" title="t4 SPG (SU)">
         SU-5
@@ -2866,10 +2974,10 @@
     <td>RU</td>
     <td>4</td>
     <td>SPG</td>
-    <td>610.0</td>
+    <td>550.0</td>
   </tr>
   <tr>
-    <td>240</td>
+    <td>249</td>
     <td>
       <a href="/tank/ru/AMX_Ob_Am105" title="t4 SPG (FR)">
         AMX 13 105 AM
@@ -2878,10 +2986,10 @@
     <td>FR</td>
     <td>4</td>
     <td>SPG</td>
-    <td>675.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>241</td>
+    <td>250</td>
     <td>
       <a href="/tank/ru/Pz_Sfl_IVb" title="t4 SPG (DE)">
         PzSfl IVb
@@ -2890,10 +2998,10 @@
     <td>DE</td>
     <td>4</td>
     <td>SPG</td>
-    <td>500.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>242</td>
+    <td>251</td>
     <td>
       <a href="/tank/ru/GB26_Birch_Gun" title="t4 SPG (GB)">
         Birch Gun
@@ -2902,10 +3010,10 @@
     <td>UK</td>
     <td>4</td>
     <td>SPG</td>
-    <td>600.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>243</td>
+    <td>252</td>
     <td>
       <a href="/tank/ru/M8A1" title="t4 TD (US)">
         M8A1
@@ -2914,10 +3022,10 @@
     <td>US</td>
     <td>4</td>
     <td>TD</td>
-    <td>320.0</td>
+    <td>350.0</td>
   </tr>
   <tr>
-    <td>244</td>
+    <td>253</td>
     <td>
       <a href="/tank/ru/T40" title="t4 TD (US)">
         T40
@@ -2926,10 +3034,10 @@
     <td>US</td>
     <td>4</td>
     <td>TD</td>
-    <td>380.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>245</td>
+    <td>254</td>
     <td>
       <a href="/tank/ru/Somua_Sau_40" title="t4 TD (FR)">
         Somua S-40
@@ -2938,10 +3046,10 @@
     <td>FR</td>
     <td>4</td>
     <td>TD</td>
-    <td>300.0</td>
+    <td>280.0</td>
   </tr>
   <tr>
-    <td>246</td>
+    <td>255</td>
     <td>
       <a href="/tank/ru/GAZ-74b" title="t4 TD (SU)">
         SU-85B
@@ -2950,10 +3058,10 @@
     <td>RU</td>
     <td>4</td>
     <td>TD</td>
-    <td>310.0</td>
+    <td>350.0</td>
   </tr>
   <tr>
-    <td>247</td>
+    <td>256</td>
     <td>
       <a href="/tank/ru/Hetzer" title="t4 TD (DE)">
         Hetzer
@@ -2962,10 +3070,10 @@
     <td>DE</td>
     <td>4</td>
     <td>TD</td>
-    <td>300.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>248</td>
+    <td>257</td>
     <td>
       <a href="/tank/ru/GB57_Alecto" title="t4 TD (GB)">
         Alecto
@@ -2974,10 +3082,10 @@
     <td>UK</td>
     <td>4</td>
     <td>TD</td>
-    <td>370.0</td>
+    <td>350.0</td>
   </tr>
   <tr>
-    <td>249</td>
+    <td>258</td>
     <td>
       <a href="/tank/ru/M22_Locust" title="t3 LT (US)">
         M22 Locust
@@ -2986,10 +3094,10 @@
     <td>US</td>
     <td>3</td>
     <td>LT</td>
-    <td>225.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>250</td>
+    <td>259</td>
     <td>
       <a href="/tank/ru/Pz_II_AusfG" title="t3 LT (DE)">
         Pz.II Ausf.G
@@ -2998,10 +3106,10 @@
     <td>DE</td>
     <td>3</td>
     <td>LT</td>
-    <td>220.0</td>
+    <td>200.0</td>
   </tr>
   <tr>
-    <td>251</td>
+    <td>260</td>
     <td>
       <a href="/tank/ru/M3_Stuart_LL" title="t3 LT (SU)">
         M3 Stuart LL
@@ -3013,19 +3121,7 @@
     <td>145.0</td>
   </tr>
   <tr>
-    <td>252</td>
-    <td>
-      <a href="/tank/ru/MTLS-1G14" title="t3 LT (US)">
-        MTLS-1G14
-      </a>
-    </td>
-    <td>US</td>
-    <td>3</td>
-    <td>LT</td>
-    <td>300.0</td>
-  </tr>
-  <tr>
-    <td>253</td>
+    <td>261</td>
     <td>
       <a href="/tank/ru/GB59_Cruiser_Mk_IV" title="t3 LT (GB)">
         Cruiser Mk. IV
@@ -3037,7 +3133,7 @@
     <td>165.0</td>
   </tr>
   <tr>
-    <td>254</td>
+    <td>262</td>
     <td>
       <a href="/tank/ru/GB69_Cruiser_Mk_II" title="t3 LT (GB)">
         Cruiser Mk. II
@@ -3049,7 +3145,7 @@
     <td>175.0</td>
   </tr>
   <tr>
-    <td>255</td>
+    <td>263</td>
     <td>
       <a href="/tank/ru/T-127" title="t3 LT (SU)">
         T-127
@@ -3058,10 +3154,10 @@
     <td>RU</td>
     <td>3</td>
     <td>LT</td>
-    <td>170.0</td>
+    <td>380.0</td>
   </tr>
   <tr>
-    <td>256</td>
+    <td>264</td>
     <td>
       <a href="/tank/ru/AMX38" title="t3 LT (FR)">
         AMX 38
@@ -3073,7 +3169,7 @@
     <td>100.0</td>
   </tr>
   <tr>
-    <td>257</td>
+    <td>265</td>
     <td>
       <a href="/tank/ru/Pz38t" title="t3 LT (DE)">
         PzKpfw 38 (t)
@@ -3085,7 +3181,7 @@
     <td>150.0</td>
   </tr>
   <tr>
-    <td>258</td>
+    <td>266</td>
     <td>
       <a href="/tank/ru/PzIII_A" title="t3 LT (DE)">
         PzKpfw III Ausf. A
@@ -3097,7 +3193,7 @@
     <td>135.0</td>
   </tr>
   <tr>
-    <td>259</td>
+    <td>267</td>
     <td>
       <a href="/tank/ru/M3_Stuart" title="t3 LT (US)">
         M3 Stuart
@@ -3109,7 +3205,7 @@
     <td>130.0</td>
   </tr>
   <tr>
-    <td>260</td>
+    <td>268</td>
     <td>
       <a href="/tank/ru/BT-7" title="t3 LT (SU)">
         BT-7
@@ -3121,7 +3217,7 @@
     <td>100.0</td>
   </tr>
   <tr>
-    <td>261</td>
+    <td>269</td>
     <td>
       <a href="/tank/ru/BT-SV" title="t3 LT (SU)">
         BT-SV
@@ -3133,7 +3229,7 @@
     <td>400.0</td>
   </tr>
   <tr>
-    <td>262</td>
+    <td>270</td>
     <td>
       <a href="/tank/ru/Ch08_Type97_Chi_Ha" title="t3 LT (CN)">
         Type 2597 Chi-Ha
@@ -3142,10 +3238,10 @@
     <td>CH</td>
     <td>3</td>
     <td>LT</td>
-    <td>225.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>263</td>
+    <td>271</td>
     <td>
       <a href="/tank/ru/PzII_J" title="t3 LT (DE)">
         PzKpfw II Ausf. J
@@ -3154,10 +3250,10 @@
     <td>DE</td>
     <td>3</td>
     <td>LT</td>
-    <td>380.0</td>
+    <td>400.0</td>
   </tr>
   <tr>
-    <td>264</td>
+    <td>272</td>
     <td>
       <a href="/tank/ru/PzI_ausf_C" title="t3 LT (DE)">
         Pz.I Ausf.С
@@ -3166,10 +3262,10 @@
     <td>DE</td>
     <td>3</td>
     <td>LT</td>
-    <td>210.0</td>
+    <td>225.0</td>
   </tr>
   <tr>
-    <td>265</td>
+    <td>273</td>
     <td>
       <a href="/tank/ru/T-15" title="t3 LT (DE)">
         T-15
@@ -3178,10 +3274,10 @@
     <td>DE</td>
     <td>3</td>
     <td>LT</td>
-    <td>215.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>266</td>
+    <td>274</td>
     <td>
       <a href="/tank/ru/T-46" title="t3 LT (SU)">
         T-46
@@ -3193,7 +3289,7 @@
     <td>135.0</td>
   </tr>
   <tr>
-    <td>267</td>
+    <td>275</td>
     <td>
       <a href="/tank/ru/T-70" title="t3 LT (SU)">
         T-70
@@ -3202,10 +3298,10 @@
     <td>RU</td>
     <td>3</td>
     <td>LT</td>
-    <td>225.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>268</td>
+    <td>276</td>
     <td>
       <a href="/tank/ru/LTP" title="t3 LT (SU)">
         LTP
@@ -3217,7 +3313,19 @@
     <td>150.0</td>
   </tr>
   <tr>
-    <td>269</td>
+    <td>277</td>
+    <td>
+      <a href="/tank/ru/MTLS-1G14" title="t3 LT (US)">
+        MTLS-1G14
+      </a>
+    </td>
+    <td>US</td>
+    <td>3</td>
+    <td>LT</td>
+    <td>400.0</td>
+  </tr>
+  <tr>
+    <td>278</td>
     <td>
       <a href="/tank/ru/D2" title="t3 MT (FR)">
         D2
@@ -3229,7 +3337,7 @@
     <td>140.0</td>
   </tr>
   <tr>
-    <td>270</td>
+    <td>279</td>
     <td>
       <a href="/tank/ru/M2_med" title="t3 MT (US)">
         M2 Medium Tank
@@ -3241,7 +3349,7 @@
     <td>150.0</td>
   </tr>
   <tr>
-    <td>271</td>
+    <td>280</td>
     <td>
       <a href="/tank/ru/S35_captured" title="t3 MT (DE)">
         PzKpfw S35 739 (f)
@@ -3250,10 +3358,10 @@
     <td>DE</td>
     <td>3</td>
     <td>MT</td>
-    <td>400.0</td>
+    <td>350.0</td>
   </tr>
   <tr>
-    <td>272</td>
+    <td>281</td>
     <td>
       <a href="/tank/ru/GB06_Vickers_Medium_Mk_III" title="t3 MT (GB)">
         Vickers Medium Mk. III
@@ -3265,7 +3373,7 @@
     <td>150.0</td>
   </tr>
   <tr>
-    <td>273</td>
+    <td>282</td>
     <td>
       <a href="/tank/ru/M7_Priest" title="t3 SPG (US)">
         M7 Priest
@@ -3274,10 +3382,10 @@
     <td>US</td>
     <td>3</td>
     <td>SPG</td>
-    <td>550.0</td>
+    <td>500.0</td>
   </tr>
   <tr>
-    <td>274</td>
+    <td>283</td>
     <td>
       <a href="/tank/ru/SU-26" title="t3 SPG (SU)">
         SU-26
@@ -3289,7 +3397,7 @@
     <td>350.0</td>
   </tr>
   <tr>
-    <td>275</td>
+    <td>284</td>
     <td>
       <a href="/tank/ru/Sexton_I" title="t3 SPG (US)">
         Sexton I
@@ -3298,10 +3406,10 @@
     <td>US</td>
     <td>3</td>
     <td>SPG</td>
-    <td>500.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>276</td>
+    <td>285</td>
     <td>
       <a href="/tank/ru/Wespe" title="t3 SPG (DE)">
         Wespe
@@ -3313,7 +3421,7 @@
     <td>320.0</td>
   </tr>
   <tr>
-    <td>277</td>
+    <td>286</td>
     <td>
       <a href="/tank/ru/Bison_I" title="t3 SPG (DE)">
         Sturmpanzer I Bison
@@ -3322,10 +3430,10 @@
     <td>DE</td>
     <td>3</td>
     <td>SPG</td>
-    <td>240.0</td>
+    <td>200.0</td>
   </tr>
   <tr>
-    <td>278</td>
+    <td>287</td>
     <td>
       <a href="/tank/ru/Lorraine39_L_AM" title="t3 SPG (FR)">
         Lorraine39 L AM
@@ -3337,7 +3445,7 @@
     <td>425.0</td>
   </tr>
   <tr>
-    <td>279</td>
+    <td>288</td>
     <td>
       <a href="/tank/ru/GB27_Sexton" title="t3 SPG (GB)">
         Sexton II
@@ -3346,10 +3454,10 @@
     <td>UK</td>
     <td>3</td>
     <td>SPG</td>
-    <td>400.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>280</td>
+    <td>289</td>
     <td>
       <a href="/tank/ru/GB78_Sexton_I" title="t3 SPG (GB)">
         Sexton I
@@ -3361,7 +3469,7 @@
     <td>500.0</td>
   </tr>
   <tr>
-    <td>281</td>
+    <td>290</td>
     <td>
       <a href="/tank/ru/RenaultUE57" title="t3 TD (FR)">
         Renault UE 57
@@ -3370,10 +3478,10 @@
     <td>FR</td>
     <td>3</td>
     <td>TD</td>
-    <td>220.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>282</td>
+    <td>291</td>
     <td>
       <a href="/tank/ru/G20_Marder_II" title="t3 TD (DE)">
         Marder II
@@ -3382,10 +3490,10 @@
     <td>DE</td>
     <td>3</td>
     <td>TD</td>
-    <td>270.0</td>
+    <td>350.0</td>
   </tr>
   <tr>
-    <td>283</td>
+    <td>292</td>
     <td>
       <a href="/tank/ru/FCM_36Pak40" title="t3 TD (FR)">
         FCM36 Pak40
@@ -3394,10 +3502,10 @@
     <td>FR</td>
     <td>3</td>
     <td>TD</td>
-    <td>480.0</td>
+    <td>450.0</td>
   </tr>
   <tr>
-    <td>284</td>
+    <td>293</td>
     <td>
       <a href="/tank/ru/T82" title="t3 TD (US)">
         T82
@@ -3406,10 +3514,10 @@
     <td>US</td>
     <td>3</td>
     <td>TD</td>
-    <td>220.0</td>
+    <td>300.0</td>
   </tr>
   <tr>
-    <td>285</td>
+    <td>294</td>
     <td>
       <a href="/tank/ru/SU-76" title="t3 TD (SU)">
         SU-76
@@ -3418,10 +3526,10 @@
     <td>RU</td>
     <td>3</td>
     <td>TD</td>
-    <td>190.0</td>
+    <td>250.0</td>
   </tr>
   <tr>
-    <td>286</td>
+    <td>295</td>
     <td>
       <a href="/tank/ru/GB42_Valentine_AT" title="t3 TD (GB)">
         Valentine AT
@@ -3430,10 +3538,10 @@
     <td>UK</td>
     <td>3</td>
     <td>TD</td>
-    <td>280.0</td>
+    <td>300.0</td>
   </tr>
   <tr>
-    <td>287</td>
+    <td>296</td>
     <td>
       <a href="/tank/ru/PzI" title="t2 LT (DE)">
         Pz.I
@@ -3445,7 +3553,7 @@
     <td>145.0</td>
   </tr>
   <tr>
-    <td>288</td>
+    <td>297</td>
     <td>
       <a href="/tank/ru/Ch07_Vickers_MkE_Type_BT26" title="t2 LT (CN)">
         Vickers Mk. E
@@ -3454,10 +3562,10 @@
     <td>CH</td>
     <td>2</td>
     <td>LT</td>
-    <td>160.0</td>
+    <td>200.0</td>
   </tr>
   <tr>
-    <td>289</td>
+    <td>298</td>
     <td>
       <a href="/tank/ru/M2_lt" title="t2 LT (US)">
         M2 Light Tank
@@ -3469,7 +3577,7 @@
     <td>145.0</td>
   </tr>
   <tr>
-    <td>290</td>
+    <td>299</td>
     <td>
       <a href="/tank/ru/T1_E6" title="t2 LT (US)">
         T1 E6
@@ -3478,10 +3586,10 @@
     <td>US</td>
     <td>2</td>
     <td>LT</td>
-    <td>125.0</td>
+    <td>175.0</td>
   </tr>
   <tr>
-    <td>291</td>
+    <td>300</td>
     <td>
       <a href="/tank/ru/D1" title="t2 LT (FR)">
         D1
@@ -3490,10 +3598,10 @@
     <td>FR</td>
     <td>2</td>
     <td>LT</td>
-    <td>100.0</td>
+    <td>125.0</td>
   </tr>
   <tr>
-    <td>292</td>
+    <td>301</td>
     <td>
       <a href="/tank/ru/Hotchkiss_H35" title="t2 LT (FR)">
         Hotchkiss H35
@@ -3502,10 +3610,10 @@
     <td>FR</td>
     <td>2</td>
     <td>LT</td>
-    <td>135.0</td>
+    <td>175.0</td>
   </tr>
   <tr>
-    <td>293</td>
+    <td>302</td>
     <td>
       <a href="/tank/ru/GB58_Cruiser_Mk_III" title="t2 LT (GB)">
         Cruiser Mk. III
@@ -3514,10 +3622,10 @@
     <td>UK</td>
     <td>2</td>
     <td>LT</td>
-    <td>155.0</td>
+    <td>200.0</td>
   </tr>
   <tr>
-    <td>294</td>
+    <td>303</td>
     <td>
       <a href="/tank/ru/H39_captured" title="t2 LT (DE)">
         PzKpfw 38H735 (f)
@@ -3526,10 +3634,10 @@
     <td>DE</td>
     <td>2</td>
     <td>LT</td>
-    <td>430.0</td>
+    <td>300.0</td>
   </tr>
   <tr>
-    <td>295</td>
+    <td>304</td>
     <td>
       <a href="/tank/ru/BT-2" title="t2 LT (SU)">
         BT-2
@@ -3538,10 +3646,10 @@
     <td>RU</td>
     <td>2</td>
     <td>LT</td>
-    <td>135.0</td>
+    <td>175.0</td>
   </tr>
   <tr>
-    <td>296</td>
+    <td>305</td>
     <td>
       <a href="/tank/ru/Tetrarch_LL" title="t2 LT (SU)">
         MkVII Tetrarch
@@ -3550,10 +3658,10 @@
     <td>RU</td>
     <td>2</td>
     <td>LT</td>
-    <td>230.0</td>
+    <td>225.0</td>
   </tr>
   <tr>
-    <td>297</td>
+    <td>306</td>
     <td>
       <a href="/tank/ru/PzII" title="t2 LT (DE)">
         PzKpfw II
@@ -3562,10 +3670,10 @@
     <td>DE</td>
     <td>2</td>
     <td>LT</td>
-    <td>140.0</td>
+    <td>200.0</td>
   </tr>
   <tr>
-    <td>298</td>
+    <td>307</td>
     <td>
       <a href="/tank/ru/T2_lt" title="t2 LT (US)">
         T2 Light Tank
@@ -3574,10 +3682,10 @@
     <td>US</td>
     <td>2</td>
     <td>LT</td>
-    <td>170.0</td>
+    <td>225.0</td>
   </tr>
   <tr>
-    <td>299</td>
+    <td>308</td>
     <td>
       <a href="/tank/ru/GB03_Cruiser_Mk_I" title="t2 LT (GB)">
         Cruiser Mk. I
@@ -3589,7 +3697,7 @@
     <td>145.0</td>
   </tr>
   <tr>
-    <td>300</td>
+    <td>309</td>
     <td>
       <a href="/tank/ru/Pz35t" title="t2 LT (DE)">
         PzKpfw 35 (t)
@@ -3598,10 +3706,10 @@
     <td>DE</td>
     <td>2</td>
     <td>LT</td>
-    <td>145.0</td>
+    <td>150.0</td>
   </tr>
   <tr>
-    <td>301</td>
+    <td>310</td>
     <td>
       <a href="/tank/ru/T-26" title="t2 LT (SU)">
         T-26
@@ -3610,10 +3718,10 @@
     <td>RU</td>
     <td>2</td>
     <td>LT</td>
-    <td>135.0</td>
+    <td>150.0</td>
   </tr>
   <tr>
-    <td>302</td>
+    <td>311</td>
     <td>
       <a href="/tank/ru/T-60" title="t2 LT (SU)">
         T-60
@@ -3622,10 +3730,10 @@
     <td>RU</td>
     <td>2</td>
     <td>LT</td>
-    <td>145.0</td>
+    <td>175.0</td>
   </tr>
   <tr>
-    <td>303</td>
+    <td>312</td>
     <td>
       <a href="/tank/ru/T2_med" title="t2 MT (US)">
         T2 Medium Tank
@@ -3634,10 +3742,10 @@
     <td>US</td>
     <td>2</td>
     <td>MT</td>
-    <td>135.0</td>
+    <td>150.0</td>
   </tr>
   <tr>
-    <td>304</td>
+    <td>313</td>
     <td>
       <a href="/tank/ru/GB05_Vickers_Medium_Mk_II" title="t2 MT (GB)">
         Vickers Medium Mk. II
@@ -3646,10 +3754,10 @@
     <td>UK</td>
     <td>2</td>
     <td>MT</td>
-    <td>125.0</td>
+    <td>135.0</td>
   </tr>
   <tr>
-    <td>305</td>
+    <td>314</td>
     <td>
       <a href="/tank/ru/RenaultBS" title="t2 SPG (FR)">
         RenaultBS
@@ -3658,10 +3766,10 @@
     <td>FR</td>
     <td>2</td>
     <td>SPG</td>
-    <td>165.0</td>
+    <td>170.0</td>
   </tr>
   <tr>
-    <td>306</td>
+    <td>315</td>
     <td>
       <a href="/tank/ru/T57" title="t2 SPG (US)">
         T57
@@ -3673,7 +3781,7 @@
     <td>180.0</td>
   </tr>
   <tr>
-    <td>307</td>
+    <td>316</td>
     <td>
       <a href="/tank/ru/SU-18" title="t2 SPG (SU)">
         SU-18
@@ -3682,10 +3790,10 @@
     <td>RU</td>
     <td>2</td>
     <td>SPG</td>
-    <td>160.0</td>
+    <td>170.0</td>
   </tr>
   <tr>
-    <td>308</td>
+    <td>317</td>
     <td>
       <a href="/tank/ru/GW_Mk_VIe" title="t2 SPG (DE)">
         GPz Mk VI (e)
@@ -3694,10 +3802,10 @@
     <td>DE</td>
     <td>2</td>
     <td>SPG</td>
-    <td>165.0</td>
+    <td>170.0</td>
   </tr>
   <tr>
-    <td>309</td>
+    <td>318</td>
     <td>
       <a href="/tank/ru/GB25_Loyd_Carrier" title="t2 SPG (GB)">
         Loyd Gun Carriage
@@ -3706,10 +3814,10 @@
     <td>UK</td>
     <td>2</td>
     <td>SPG</td>
-    <td>180.0</td>
+    <td>170.0</td>
   </tr>
   <tr>
-    <td>310</td>
+    <td>319</td>
     <td>
       <a href="/tank/ru/AT-1" title="t2 TD (SU)">
         AT-1
@@ -3718,10 +3826,10 @@
     <td>RU</td>
     <td>2</td>
     <td>TD</td>
-    <td>160.0</td>
+    <td>170.0</td>
   </tr>
   <tr>
-    <td>311</td>
+    <td>320</td>
     <td>
       <a href="/tank/ru/GB39_Universal_CarrierQF2" title="t2 TD (GB)">
         Universal Carrier 2-pdr
@@ -3730,10 +3838,10 @@
     <td>UK</td>
     <td>2</td>
     <td>TD</td>
-    <td>185.0</td>
+    <td>180.0</td>
   </tr>
   <tr>
-    <td>312</td>
+    <td>321</td>
     <td>
       <a href="/tank/ru/T18" title="t2 TD (US)">
         T18
@@ -3742,10 +3850,10 @@
     <td>US</td>
     <td>2</td>
     <td>TD</td>
-    <td>210.0</td>
+    <td>300.0</td>
   </tr>
   <tr>
-    <td>313</td>
+    <td>322</td>
     <td>
       <a href="/tank/ru/PanzerJager_I" title="t2 TD (DE)">
         Panzerjäger I
@@ -3754,10 +3862,10 @@
     <td>DE</td>
     <td>2</td>
     <td>TD</td>
-    <td>180.0</td>
+    <td>215.0</td>
   </tr>
   <tr>
-    <td>314</td>
+    <td>323</td>
     <td>
       <a href="/tank/ru/RenaultFT_AC" title="t2 TD (FR)">
         RenaultFT AC
@@ -3769,7 +3877,7 @@
     <td>200.0</td>
   </tr>
   <tr>
-    <td>315</td>
+    <td>324</td>
     <td>
       <a href="/tank/ru/Observer" title="t1 LT (?)">
         Observer
@@ -3781,7 +3889,7 @@
     <td>0.0</td>
   </tr>
   <tr>
-    <td>316</td>
+    <td>325</td>
     <td>
       <a href="/tank/ru/Ltraktor" title="t1 LT (DE)">
         Leichttraktor
@@ -3790,10 +3898,10 @@
     <td>DE</td>
     <td>1</td>
     <td>LT</td>
-    <td>90.0</td>
+    <td>125.0</td>
   </tr>
   <tr>
-    <td>317</td>
+    <td>326</td>
     <td>
       <a href="/tank/ru/Ch06_Renault_NC31" title="t1 LT (CN)">
         Renault NC-31
@@ -3802,10 +3910,10 @@
     <td>CH</td>
     <td>1</td>
     <td>LT</td>
-    <td>145.0</td>
+    <td>125.0</td>
   </tr>
   <tr>
-    <td>318</td>
+    <td>327</td>
     <td>
       <a href="/tank/ru/MS-1" title="t1 LT (SU)">
         MS-1
@@ -3814,10 +3922,10 @@
     <td>RU</td>
     <td>1</td>
     <td>LT</td>
-    <td>90.0</td>
+    <td>100.0</td>
   </tr>
   <tr>
-    <td>319</td>
+    <td>328</td>
     <td>
       <a href="/tank/ru/RenaultFT" title="t1 LT (FR)">
         RenaultFT
@@ -3826,10 +3934,10 @@
     <td>FR</td>
     <td>1</td>
     <td>LT</td>
-    <td>80.0</td>
+    <td>90.0</td>
   </tr>
   <tr>
-    <td>320</td>
+    <td>329</td>
     <td>
       <a href="/tank/ru/T1_Cunningham" title="t1 LT (US)">
         T1 Cunningham
@@ -3838,10 +3946,10 @@
     <td>US</td>
     <td>1</td>
     <td>LT</td>
-    <td>80.0</td>
+    <td>125.0</td>
   </tr>
   <tr>
-    <td>321</td>
+    <td>330</td>
     <td>
       <a href="/tank/ru/GB01_Medium_Mark_I" title="t1 MT (GB)">
         Medium Mark I
@@ -3850,6 +3958,6 @@
     <td>UK</td>
     <td>1</td>
     <td>MT</td>
-    <td>110.0</td>
+    <td>100.0</td>
   </tr>
 </damage>

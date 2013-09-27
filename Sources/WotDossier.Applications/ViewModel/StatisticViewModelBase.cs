@@ -196,7 +196,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCount > 0)
                 {
-                    return RatingHelper.CalcNR(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
+                    return RatingHelper.CalcNR((int)AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
                 }
                 return 0;
             }

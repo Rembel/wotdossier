@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Image Source="/Resources\Images\folder.png"></Image>
-                <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center" Margin="0,0,5,0"/>
             </Grid>
         </HierarchicalDataTemplate>
 
@@ -72,6 +72,9 @@
                               CommandParameter="{Binding}"/>
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_DeleteBtn}" 
                               Command="{Binding Path=DataContext.OnReplayRowDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              CommandParameter="{Binding}"/>
+                    <MenuItem Header="Скопировать ссылку в буфер" 
+                              Command="{Binding Path=DataContext.OnCopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>
                 </ContextMenu>
             </DataGrid.Resources>

@@ -87,6 +87,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> OnReplayRowsDeleteCommand { get; set; }
         public DelegateCommand<object> OnAddToFavoriteCommand { get; set; }
         public DelegateCommand<object> OnRemoveFromFavoriteCommand { get; set; }
+        public DelegateCommand<object> OnCopyLinkToClipboardCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -383,11 +384,12 @@ namespace WotDossier.Applications.ViewModel
             SettingsCommand = new DelegateCommand(OnSettings);
             OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
-            OnReplayRowUploadCommand = new DelegateCommand<object>(OnReplayRowUpload);
+            OnReplayRowUploadCommand = new DelegateCommand<object>(OnUploadReplay, CanUploadReplay);
             OnReplayRowDeleteCommand = new DelegateCommand<object>(OnReplayRowDelete);
             OnReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
             OnAddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
             OnRemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
+            OnCopyLinkToClipboardCommand = new DelegateCommand<object>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
@@ -400,21 +402,36 @@ namespace WotDossier.Applications.ViewModel
             ProgressView = new ProgressControlViewModel();
         }
 
-        private bool CanRemoveFromFavorite(object data)
+        private bool CanCopyLinkToClipboard(object row)
         {
-            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            ReplayFile model = row as ReplayFile;
+            return  model != null && !string.IsNullOrEmpty(model.Link);
+        }
+
+        private void OnCopyLinkToClipboard(object row)
+        {
+            ReplayFile model = row as ReplayFile;
+            if (model != null && !string.IsNullOrEmpty(model.Link))
+            {
+                Clipboard.SetText(model.Link);
+            }
+        }
+
+        private bool CanRemoveFromFavorite(object row)
+        {
+            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
             return model != null && model.IsFavorite;
         }
 
-        private bool CanAddToFavorite(object data)
+        private bool CanAddToFavorite(object row)
         {
-            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
             return model != null && !model.IsFavorite;
         }
 
-        private void OnRemoveFromFavorite(object data)
+        private void OnRemoveFromFavorite(object row)
         {
-            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
             if (model != null)
             {
                 SetFavorite(model, false);
@@ -469,8 +486,7 @@ namespace WotDossier.Applications.ViewModel
                     catch (Exception e)
                     {
                         _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.FileInfo.Name);
-                        MessageBox.Show(
-                            string.Format("Произошла ошибка при удалении файла({0})", replayFile.FileInfo.Name),
+                        MessageBox.Show(string.Format(Resources.Resources.ErrorMsg_ErrorOnFileDeletion, replayFile.FileInfo.Name),
                             Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
@@ -500,13 +516,12 @@ namespace WotDossier.Applications.ViewModel
 
             if (error)
             {
-                MessageBox.Show(
-                    "Произошла ошибка при удалении одного или нескольких файлов, проверьте что у вас есть необходимые права на совершение операции",
+                MessageBox.Show(Resources.Resources.ErrorMsg_ErrorOnFilesDeletion,
                     Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        private void OnReplayRowUpload(object rowData)
+        private void OnUploadReplay(object rowData)
         {
             ReplayFile replayFile = rowData as ReplayFile;
 
@@ -516,6 +531,12 @@ namespace WotDossier.Applications.ViewModel
                 viewModel.ReplayFile = replayFile;
                 viewModel.Show();
             }
+        }
+
+        private bool CanUploadReplay(object row)
+        {
+            ReplayFile model = row as ReplayFile;
+            return model != null && string.IsNullOrEmpty(model.Link);
         }
 
         private void OnRowDoubleClick(object rowData)

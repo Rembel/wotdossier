@@ -253,4 +253,10 @@
   <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
     <value>Последние N боев</value>
   </data>
+  <data name="ErrorMsg_ErrorOnFilesDeletion" xml:space="preserve">
+    <value>Произошла ошибка при удалении одного или нескольких файлов, проверьте что у вас есть необходимые права на совершение операции</value>
+  </data>
+  <data name="ErrorMsg_ErrorOnFileDeletion" xml:space="preserve">
+    <value>Произошла ошибка при удалении файла({0})</value>
+  </data>
 </root>

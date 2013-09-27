@@ -11,7 +11,7 @@
         <Grid>
             <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
             <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" />
-            <TextBlock Text="*" FontSize="18" Foreground="Gold" HorizontalAlignment="Right" Margin="0,0,5,0" Visibility="{Binding Path=IsFavorite, Mode=OneWay, Converter={x:Static Converters:BoolToVisibilityConverter.Default}}" />
+            <TextBlock Text="*" FontSize="18" Foreground="Gold" HorizontalAlignment="Right" Margin="0,0,5,0" Visibility="{Binding Path=IsFavorite, Mode=OneWay, FallbackValue={x:Static Visibility.Collapsed}, Converter={x:Static Converters:BoolToVisibilityConverter.Default}}" />
         </Grid>
     </DataTemplate>
 

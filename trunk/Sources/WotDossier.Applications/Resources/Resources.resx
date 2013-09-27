@@ -253,4 +253,10 @@ Avg Spotted: {1:0.00}</value>
   <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
     <value>Last N Battles</value>
   </data>
+  <data name="ErrorMsg_ErrorOnFilesDeletion" xml:space="preserve">
+    <value>Error on file deletion, please check your access rights</value>
+  </data>
+  <data name="ErrorMsg_ErrorOnFileDeletion" xml:space="preserve">
+    <value>Error on file deletion, please check your access rights({0})</value>
+  </data>
 </root>

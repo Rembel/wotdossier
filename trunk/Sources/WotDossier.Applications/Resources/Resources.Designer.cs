@@ -167,6 +167,24 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error on file deletion, please check your access rights({0}).
+        /// </summary>
+        internal static string ErrorMsg_ErrorOnFileDeletion {
+            get {
+                return ResourceManager.GetString("ErrorMsg_ErrorOnFileDeletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error on file deletion, please check your access rights.
+        /// </summary>
+        internal static string ErrorMsg_ErrorOnFilesDeletion {
+            get {
+                return ResourceManager.GetString("ErrorMsg_ErrorOnFilesDeletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error on getting player data from server.
         /// </summary>
         internal static string ErrorMsg_GetPlayerData {

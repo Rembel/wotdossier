@@ -16,6 +16,7 @@ namespace WotDossier.Applications
     {
         private string _link;
         private List<Medal> _medals;
+        private TankIcon _icon;
         //20121201_1636_ussr-IS_42_north_america
         private const string REPLAY_DATETIME_FORMAT = @"(\d+_\d+)";
         private const string MAPNAME_FILENAME = @"(\d+_[a-zA-Z_]+)(\.wotreplay)";
@@ -38,7 +39,12 @@ namespace WotDossier.Applications
         public int DamageDealt { get; set; }
         public int Credits { get; set; }
         public FileInfo FileInfo { get; set; }
-        public TankIcon Icon { get; set; }
+
+        public TankIcon Icon
+        {
+            get { return _icon; }
+            set { _icon = value; }
+        }
 
         public string Link
         {

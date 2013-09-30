@@ -71,8 +71,8 @@ namespace WotDossier.Applications.ViewModel
         private EnumerableDataSource<DataPoint> _avgSpottedDataSource;
         private List<GenericPoint<string, double>> _efficiencyByCountryDataSource;
         private List<DataPoint> _replaysByMapDataSource;
-        private double _maxMapBattles;
-        private double _maxWinReplayPercent;
+        private double _maxMapBattles = 10;
+        private double _maxWinReplayPercent = 100;
         private List<DataPoint> _winReplaysPercentByMapDataSource;
 
         public DelegateCommand LoadCommand { get; set; }

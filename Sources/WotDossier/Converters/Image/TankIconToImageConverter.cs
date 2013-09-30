@@ -25,8 +25,11 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             TankIcon icon = (TankIcon)value;
-
-            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.iconid), UriKind.Relative));
+            BitmapImage bitmapImage = null;
+            if (icon != null)
+            {
+                bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.iconid), UriKind.Relative));
+            }
             return bitmapImage;
         }
 

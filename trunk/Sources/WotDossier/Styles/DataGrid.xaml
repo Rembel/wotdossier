@@ -4,6 +4,15 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="DataGridHeaderTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
+    <Color x:Key="GradientStopColor">#D4D7DB</Color>
+    <Color x:Key="GradientStartColor">#FFFFFF</Color>
+    <Color x:Key="HeaderForeColor">Black</Color>
+
+    <!--<Color x:Key="GradientStopColor">#D4D7DB</Color>
+    <Color x:Key="GradientStartColor">#ABABAB</Color>
+    <Color x:Key="HeaderForeColor">White</Color>-->
+
     <DataTemplate x:Key="ascendingSortGlyph">
         <Border Width="15" Height="10">
             <Path Opacity="1" Data="F0 M2 9 L2 9 L13 9 L8 1  Z" Fill="{Binding RelativeSource={RelativeSource Self}, Path=(TextElement.Foreground)}" />
@@ -47,8 +56,8 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#FFFFFF" Offset="0" />
-                    <GradientStop Color="#D4D7DB" Offset="1" />
+                    <GradientStop Color="{StaticResource GradientStartColor}" Offset="0" />
+                    <GradientStop Color="{StaticResource GradientStopColor}" Offset="1" />
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
@@ -65,8 +74,8 @@
                             <Setter TargetName="mainBorder" Property="Background">
                                 <Setter.Value>
                                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Color="#FFFFFF" Offset="1" />
-                                        <GradientStop Color="#D4D7DB" Offset="0" />
+                                        <GradientStop Color="{StaticResource GradientStartColor}" Offset="1" />
+                                        <GradientStop Color="{StaticResource GradientStopColor}" Offset="0" />
                                     </LinearGradientBrush>
                                 </Setter.Value>
                             </Setter>
@@ -103,8 +112,8 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#FFFFFF" Offset="0" />
-                    <GradientStop Color="#D4D7DB" Offset="1" />
+                    <GradientStop Color="{StaticResource GradientStartColor}" Offset="0" />
+                    <GradientStop Color="{StaticResource GradientStopColor}" Offset="1" />
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
@@ -134,8 +143,8 @@
                             <Setter TargetName="mainBorder" Property="Background">
                                 <Setter.Value>
                                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Color="#FFFFFF" Offset="1" />
-                                        <GradientStop Color="#D4D7DB" Offset="0" />
+                                        <GradientStop Color="{StaticResource GradientStartColor}" Offset="1" />
+                                        <GradientStop Color="{StaticResource GradientStopColor}" Offset="0" />
                                     </LinearGradientBrush>
                                 </Setter.Value>
                             </Setter>
@@ -237,8 +246,8 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="#FFFFFF" Offset="0" />
-                    <GradientStop Color="#D4D7DB" Offset="1" />
+                    <GradientStop Color="{StaticResource GradientStartColor}" Offset="0" />
+                    <GradientStop Color="{StaticResource GradientStopColor}" Offset="1" />
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>

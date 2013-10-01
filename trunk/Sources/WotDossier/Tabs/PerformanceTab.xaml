@@ -21,10 +21,10 @@
 <DataGrid.Resources>
                 <ContextMenu x:Key="ContextMenu">
                     <MenuItem Header="{x:Static Resources:Resources.Command_AddToFavorites}" 
-                              Command="{Binding Path=DataContext.OnAddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              Command="{Binding Path=DataContext.AddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
                               CommandParameter="{Binding}"/>
                     <MenuItem Header="{x:Static Resources:Resources.Command_RemoveFromFavorites}" 
-                              Command="{Binding Path=DataContext.OnRemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              Command="{Binding Path=DataContext.RemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
                               CommandParameter="{Binding}"/>
                 </ContextMenu>
             </DataGrid.Resources>
@@ -35,7 +35,7 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.InputBindings>
-                <KeyBinding Command="{Binding Path=OnRowDoubleClickCommand}" 
+                <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </DataGrid.InputBindings>
             <DataGrid.Columns>
@@ -51,7 +51,7 @@
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
-                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
+                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>

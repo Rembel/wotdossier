@@ -819,8 +819,11 @@ namespace WotDossier.Applications.ViewModel
                             int index = 0;
                             foreach (FileInfo replay in replays)
                             {
-                                ReplayFile replayFile = new ReplayFile(replay, WotApiClient.Instance.ReadReplay2Blocks(replay), replayFolder.Id);
-                                replayFiles.Add(replayFile);
+                                Replay data = WotApiClient.Instance.ReadReplay2Blocks(replay);
+                                if (data != null)
+                                {
+                                    replayFiles.Add(new ReplayFile(replay, data, replayFolder.Id));
+                                }
                                 index++;
                                 int percent = (index + 1)*100/count;
                                 if (ProgressView.ReportWithCancellationCheck(bw, we, percent,

@@ -316,8 +316,7 @@ namespace WotDossier.Dal
                 int count = 0;
                 byte[] buffer = new byte[4];
                 stream.Read(buffer, 0, 4);
-                if (buffer[0] != 0x21)
-                {
+                if (buffer[0] != 0x21){
                     stream.Read(buffer, 0, 4);
                     stream.Read(buffer, 0, 4);
                     count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
@@ -360,10 +359,12 @@ namespace WotDossier.Dal
                 catch (Exception e)
                 {
                     _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e, replayFileInfo.FullName);
-                    return null;
                 }
 
-                return new Replay { datablock_1 = firstBlock, CommandResult = commandResult };
+                if (firstBlock != null || commandResult != null)
+                {
+                    return new Replay {datablock_1 = firstBlock, CommandResult = commandResult};
+                }
             }
             return null;
         }

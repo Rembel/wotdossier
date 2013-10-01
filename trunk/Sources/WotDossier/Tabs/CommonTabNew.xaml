@@ -113,7 +113,7 @@
                             </DataGrid.Columns>
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="MouseDoubleClick">
-                                    <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnRowDoubleClickCommand, Mode=OneWay}"/>
+                                    <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </DataGrid>

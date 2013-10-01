@@ -196,7 +196,12 @@ namespace WotDossier.Dal
                 maps = se.Deserialize<List<Map>>(reader);
             }
 
-            return (maps ?? new List<Map>()).ToDictionary(x => x.mapidname, y => y);
+            List<Map> list = (maps ?? new List<Map>());
+            int i = 1;
+            list.ForEach( x => x.localizedmapname = Resources.Resources.ResourceManager.GetString("Map_" + x.mapidname) ?? x.mapname);
+            list = list.OrderByDescending(x => x.localizedmapname).ToList();
+            list.ForEach(x => x.mapid = i++);
+            return list.ToDictionary(x => x.mapidname, y => y);
         }
 
         /// <summary>

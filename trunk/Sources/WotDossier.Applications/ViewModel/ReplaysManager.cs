@@ -25,8 +25,14 @@ namespace WotDossier.Applications.ViewModel
             using (StreamReader streamReader = File.OpenText(Path.Combine(Environment.CurrentDirectory, REPLAYS_CATALOG_FILE_PATH)))
             {
                 string tree = streamReader.ReadToEnd();
-                return new List<ReplayFolder> {XmlSerializer.LoadObjectFromXml<ReplayFolder>(tree)};
+                return new List<ReplayFolder> {InitFolder(tree)};
             }
+        }
+
+        private static ReplayFolder InitFolder(string tree)
+        {
+            ReplayFolder folder = XmlSerializer.LoadObjectFromXml<ReplayFolder>(tree);
+            return folder;
         }
 
         public void Move(ReplayFile replayFile, ReplayFolder targetFolder)
@@ -35,6 +41,10 @@ namespace WotDossier.Applications.ViewModel
             if (!File.Exists(destFileName))
             {
                 replayFile.FileInfo.MoveTo(destFileName);
+            }
+            else
+            {
+                replayFile.FileInfo.Delete();
             }
         }
     }

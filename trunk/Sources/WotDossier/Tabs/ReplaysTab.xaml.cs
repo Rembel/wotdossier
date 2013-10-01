@@ -121,7 +121,10 @@ namespace WotDossier.Tabs
                 if (dgTime.SelectedIndex >= 0)
                 {
                     DataGridRow dgrow = (DataGridRow)dgTime.ItemContainerGenerator.ContainerFromItem(dgTime.Items[dgTime.SelectedIndex]);
-                    dgrow.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                    if (dgrow != null)
+                    {
+                        dgrow.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                    }
                 }
             }
         }

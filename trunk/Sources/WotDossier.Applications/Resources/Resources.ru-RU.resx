@@ -265,4 +265,19 @@
   <data name="Msg_ErrorOnPlayReplay" xml:space="preserve">
     <value>Ошибка при воспроизведении</value>
   </data>
+  <data name="Column_Replay_Credits" xml:space="preserve">
+    <value>Кредиты</value>
+  </data>
+  <data name="Column_Replay_Damaged" xml:space="preserve">
+    <value>Повреждено</value>
+  </data>
+  <data name="Column_Replay_DamageDealt" xml:space="preserve">
+    <value>Нанесено урона</value>
+  </data>
+  <data name="Column_Replay_Frags" xml:space="preserve">
+    <value>Уничтожено</value>
+  </data>
+  <data name="Column_Replay_XP" xml:space="preserve">
+    <value>Опыт</value>
+  </data>
 </root>

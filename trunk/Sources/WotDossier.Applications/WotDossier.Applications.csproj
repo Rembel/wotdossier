@@ -98,6 +98,7 @@
     <Compile Include="ViewModel\CombatTarget.cs" />
     <Compile Include="MedalHelper.cs" />
     <Compile Include="ViewModel\AddReplayFolderViewModel.cs" />
+    <Compile Include="ViewModel\ReplaysFilterViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModelFactory.cs" />
     <Compile Include="ViewModel\ReplayFolder.cs" />
     <Compile Include="ViewModel\ReplaysManager.cs" />

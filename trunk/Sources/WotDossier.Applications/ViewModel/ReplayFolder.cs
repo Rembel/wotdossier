@@ -11,7 +11,21 @@ namespace WotDossier.Applications.ViewModel
     public class ReplayFolder
     {
         private ObservableCollection<ReplayFolder> _folders = new ObservableCollection<ReplayFolder>();
-        private ObservableCollection<ReplayFile> _files = new ObservableCollection<ReplayFile>();
+        private Guid _id;
+
+        [XmlAttribute("id")]
+        public Guid Id
+        {
+            get
+            {
+                if (_id == Guid.Empty)
+                {
+                    _id = Guid.NewGuid();
+                }
+                return _id;
+            }
+            set { _id = value; }
+        }
 
         [XmlAttribute("name")]
         public string Name { get; set; }
@@ -23,13 +37,6 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return _folders; }
             set { _folders = value; }
-        }
-
-        [XmlIgnore]
-        public ObservableCollection<ReplayFile> Files
-        {
-            get { return _files; }
-            set { _files = value; }
         }
     }
 

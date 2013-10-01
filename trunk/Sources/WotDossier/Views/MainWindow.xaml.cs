@@ -47,8 +47,6 @@ namespace WotDossier.Views
 
             List<Map> list = WotApiClient.Instance.Maps.Values.ToList();
 
-            list.ForEach(x => x.localizedmapname = WotDossier.Resources.Resources.ResourceManager.GetString("Map_"+x.mapidname) ?? x.mapname);
-
             GenericLocationalLabelProvider<Map, double> labelProvider = new GenericLocationalLabelProvider<Map, double>(list, city => city.localizedmapname);
             GenericLocationalTicksProvider<Map, double> ticksProvider = new GenericLocationalTicksProvider<Map, double>(list, city => city.mapid);
 

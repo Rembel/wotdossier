@@ -1355,120 +1355,6 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Chart_EffByCountry" xml:space="preserve">
     <value>Efficiency by country</value>
   </data>
-  <data name="Map_00_tank_tutorial" xml:space="preserve">
-    <value>Training area</value>
-  </data>
-  <data name="Map_01_karelia" xml:space="preserve">
-    <value>Karelia</value>
-  </data>
-  <data name="Map_02_malinovka" xml:space="preserve">
-    <value>Malinovka</value>
-  </data>
-  <data name="Map_03_campania" xml:space="preserve">
-    <value>Province</value>
-  </data>
-  <data name="Map_04_himmelsdorf" xml:space="preserve">
-    <value>Himmelsdorf</value>
-  </data>
-  <data name="Map_05_prohorovka" xml:space="preserve">
-    <value>Prokhorovka</value>
-  </data>
-  <data name="Map_06_ensk" xml:space="preserve">
-    <value>Ensk</value>
-  </data>
-  <data name="Map_07_lakeville" xml:space="preserve">
-    <value>Lakeville</value>
-  </data>
-  <data name="Map_08_ruinberg" xml:space="preserve">
-    <value>Ruinberg</value>
-  </data>
-  <data name="Map_10_hills" xml:space="preserve">
-    <value>Mines</value>
-  </data>
-  <data name="Map_11_murovanka" xml:space="preserve">
-    <value>Murovanka</value>
-  </data>
-  <data name="Map_13_erlenberg" xml:space="preserve">
-    <value>Erlenberg</value>
-  </data>
-  <data name="Map_14_siegfried_line" xml:space="preserve">
-    <value>Siegfried Line</value>
-  </data>
-  <data name="Map_15_komarin" xml:space="preserve">
-    <value>Komarin</value>
-  </data>
-  <data name="Map_17_munchen" xml:space="preserve">
-    <value>Widepark</value>
-  </data>
-  <data name="Map_18_cliff" xml:space="preserve">
-    <value>Cliff</value>
-  </data>
-  <data name="Map_19_monastery" xml:space="preserve">
-    <value>Abbey</value>
-  </data>
-  <data name="Map_22_slough" xml:space="preserve">
-    <value>Swamp</value>
-  </data>
-  <data name="Map_23_westfeld" xml:space="preserve">
-    <value>Westfield</value>
-  </data>
-  <data name="Map_28_desert" xml:space="preserve">
-    <value>Sand River</value>
-  </data>
-  <data name="Map_29_el_hallouf" xml:space="preserve">
-    <value>El Halluf</value>
-  </data>
-  <data name="Map_31_airfield" xml:space="preserve">
-    <value>Airfield</value>
-  </data>
-  <data name="Map_33_fjord" xml:space="preserve">
-    <value>Fjords</value>
-  </data>
-  <data name="Map_34_redshire" xml:space="preserve">
-    <value>Redshire</value>
-  </data>
-  <data name="Map_35_steppes" xml:space="preserve">
-    <value>Steppes</value>
-  </data>
-  <data name="Map_36_fishing_bay" xml:space="preserve">
-    <value>Fisherman's Bay</value>
-  </data>
-  <data name="Map_37_caucasus" xml:space="preserve">
-    <value>Mountain Pass</value>
-  </data>
-  <data name="Map_38_mannerheim_line" xml:space="preserve">
-    <value>Arctic Region</value>
-  </data>
-  <data name="Map_39_crimea" xml:space="preserve">
-    <value>South Coast</value>
-  </data>
-  <data name="Map_42_north_america" xml:space="preserve">
-    <value>Port</value>
-  </data>
-  <data name="Map_44_north_america" xml:space="preserve">
-    <value>Live Oaks</value>
-  </data>
-  <data name="Map_45_north_america" xml:space="preserve">
-    <value>Highway</value>
-  </data>
-  <data name="Map_47_canada_a" xml:space="preserve">
-    <value>Serene Coast</value>
-  </data>
-  <data name="Map_51_asia" xml:space="preserve">
-    <value>Dragon Ridge</value>
-  </data>
-  <data name="Map_60_asia_miao" xml:space="preserve">
-    <value>Pearl River</value>
-  </data>
-  <data name="Map_63_tundra" xml:space="preserve">
-    <value>Tundra</value>
-  </data>
-  <data name="Map_73_asia_korea" xml:space="preserve">
-    <value>Sacred Valley</value>
-  </data>
-  <data name="Map_85_winter" xml:space="preserve">
-    <value>Severogorsk</value>
-  </data>
   <data name="Chart_ReplaysCountByMap" xml:space="preserve">
     <value>Replays count</value>
   </data>
@@ -1558,5 +1444,11 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   </data>
   <data name="TankFilterPanel_Favorite" xml:space="preserve">
     <value>Favorite</value>
+  </data>
+  <data name="Operation_Gt" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="Operation_Lt" xml:space="preserve">
+    <value>to</value>
   </data>
 </root>

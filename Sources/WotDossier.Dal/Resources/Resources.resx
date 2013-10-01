@@ -117,167 +117,118 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChartLegend_ER" xml:space="preserve">
-    <value>Effectivity Rating</value>
+  <data name="Map_00_tank_tutorial" xml:space="preserve">
+    <value>Training area</value>
   </data>
-  <data name="ChartLegend_WinPercent" xml:space="preserve">
-    <value>Win %</value>
+  <data name="Map_01_karelia" xml:space="preserve">
+    <value>Karelia</value>
   </data>
-  <data name="ChartLegend_WN6Rating" xml:space="preserve">
-    <value>WN6</value>
+  <data name="Map_02_malinovka" xml:space="preserve">
+    <value>Malinovka</value>
   </data>
-  <data name="ErrorMsg_GetPlayerData" xml:space="preserve">
-    <value>Error on getting player data from server</value>
+  <data name="Map_03_campania" xml:space="preserve">
+    <value>Province</value>
   </data>
-  <data name="ErrorMsg_GetPlayerInfo" xml:space="preserve">
-    <value>Can't get player info from server</value>
+  <data name="Map_04_himmelsdorf" xml:space="preserve">
+    <value>Himmelsdorf</value>
   </data>
-  <data name="WindowCaption_Error" xml:space="preserve">
-    <value>Error</value>
+  <data name="Map_05_prohorovka" xml:space="preserve">
+    <value>Prokhorovka</value>
   </data>
-  <data name="ChartTooltipFormat_AvgDamage" xml:space="preserve">
-    <value>Battles: {0}
-Avg Damage: {1:0.00}</value>
+  <data name="Map_06_ensk" xml:space="preserve">
+    <value>Ensk</value>
   </data>
-  <data name="ChartTooltipFormat_Rating" xml:space="preserve">
-    <value>Battles: {0}
-Rating: {1:0.00}</value>
+  <data name="Map_07_lakeville" xml:space="preserve">
+    <value>Lakeville</value>
   </data>
-  <data name="ChartTooltipFormat_WinPercent" xml:space="preserve">
-    <value>Battles: {0}
-Win percent: {1:0.00}</value>
+  <data name="Map_08_ruinberg" xml:space="preserve">
+    <value>Ruinberg</value>
   </data>
-  <data name="ChartLegend_AvgDamage" xml:space="preserve">
-    <value>Avg damage</value>
+  <data name="Map_10_hills" xml:space="preserve">
+    <value>Mines</value>
   </data>
-  <data name="WindowCaption_Warning" xml:space="preserve">
-    <value>Warning</value>
+  <data name="Map_11_murovanka" xml:space="preserve">
+    <value>Murovanka</value>
   </data>
-  <data name="WarningMsg_SpecifyPlayerName" xml:space="preserve">
-    <value>Please specify player name before</value>
+  <data name="Map_13_erlenberg" xml:space="preserve">
+    <value>Erlenberg</value>
   </data>
-  <data name="WarningMsg_CanntFindPlayerDataInDossierCache" xml:space="preserve">
-    <value>Can't find player data in dossier cache</value>
+  <data name="Map_14_siegfried_line" xml:space="preserve">
+    <value>Siegfried Line</value>
   </data>
-  <data name="Traveled_Format" xml:space="preserve">
-    <value>{0:0.00} km</value>
+  <data name="Map_15_komarin" xml:space="preserve">
+    <value>Komarin</value>
   </data>
-  <data name="ExtendedTimeFormat" xml:space="preserve">
-    <value>m' m 's' s'</value>
+  <data name="Map_17_munchen" xml:space="preserve">
+    <value>Widepark</value>
   </data>
-  <data name="Label_Replay_XpFactorFormat" xml:space="preserve">
-    <value>Experience (x{0} for the first win in a day)</value>
+  <data name="Map_18_cliff" xml:space="preserve">
+    <value>Cliff</value>
   </data>
-  <data name="Label_Experience" xml:space="preserve">
-    <value>Experience</value>
+  <data name="Map_19_monastery" xml:space="preserve">
+    <value>Abbey</value>
   </data>
-  <data name="Label_Replay_MapMode_Standart" xml:space="preserve">
-    <value>Standart</value>
+  <data name="Map_22_slough" xml:space="preserve">
+    <value>Swamp</value>
   </data>
-  <data name="Label_Replay_MapMode_domination" xml:space="preserve">
-    <value>Domination</value>
+  <data name="Map_23_westfeld" xml:space="preserve">
+    <value>Westfield</value>
   </data>
-  <data name="Label_Replay_MapMode_Assault" xml:space="preserve">
-    <value>Assault</value>
+  <data name="Map_28_desert" xml:space="preserve">
+    <value>Sand River</value>
   </data>
-  <data name="Tooltip_Replay_CriticalDamage" xml:space="preserve">
-    <value>Critical damage to enemy vehicle: {0}</value>
+  <data name="Map_29_el_hallouf" xml:space="preserve">
+    <value>El Halluf</value>
   </data>
-  <data name="Tooltip_Replay_AlliesDamage" xml:space="preserve">
-    <value>Damage by allies to enemy vehicle you detected: {0}</value>
+  <data name="Map_31_airfield" xml:space="preserve">
+    <value>Airfield</value>
   </data>
-  <data name="Tooltip_Replay_Damage" xml:space="preserve">
-    <value>Damage to enemy vehicle: {0}</value>
+  <data name="Map_33_fjord" xml:space="preserve">
+    <value>Fjords</value>
   </data>
-  <data name="Tooltip_Replay_Detected" xml:space="preserve">
-    <value>You detected this enemy vehicle</value>
+  <data name="Map_34_redshire" xml:space="preserve">
+    <value>Redshire</value>
   </data>
-  <data name="ProgressTitle_Loading_replays" xml:space="preserve">
-    <value>Loading replays</value>
+  <data name="Map_35_steppes" xml:space="preserve">
+    <value>Steppes</value>
   </data>
-  <data name="ProgressLabel_Processing_file_format" xml:space="preserve">
-    <value>Processing file {0}/{1} - {2}...</value>
+  <data name="Map_36_fishing_bay" xml:space="preserve">
+    <value>Fisherman's Bay</value>
   </data>
-  <data name="Msg_CantFindReplaysDirectory" xml:space="preserve">
-    <value>Can't find replays directory - '{0}'.</value>
+  <data name="Map_37_caucasus" xml:space="preserve">
+    <value>Mountain Pass</value>
   </data>
-  <data name="Msg_Error_on_replay_file_read" xml:space="preserve">
-    <value>Error on replay file read</value>
+  <data name="Map_38_mannerheim_line" xml:space="preserve">
+    <value>Arctic Region</value>
   </data>
-  <data name="Msg_File_incomplete_or_not_supported" xml:space="preserve">
-    <value>Can't load replay file. File incomplete or not supported</value>
+  <data name="Map_39_crimea" xml:space="preserve">
+    <value>South Coast</value>
   </data>
-  <data name="Msg_ReplayUpload_AuthentificationFailure" xml:space="preserve">
-    <value>Currently you not logined to the target site. You need to be already authentificated in IE. Do you want to open the site in browser?</value>
+  <data name="Map_42_north_america" xml:space="preserve">
+    <value>Port</value>
   </data>
-  <data name="WindowCaption_AuthFailure" xml:space="preserve">
-    <value>Auth failure</value>
+  <data name="Map_44_north_america" xml:space="preserve">
+    <value>Live Oaks</value>
   </data>
-  <data name="Msg_NewVersion" xml:space="preserve">
-    <value>New version available - {0}. Do you want download it now?</value>
+  <data name="Map_45_north_america" xml:space="preserve">
+    <value>Highway</value>
   </data>
-  <data name="Language_Russian" xml:space="preserve">
-    <value>Русский</value>
+  <data name="Map_47_canada_a" xml:space="preserve">
+    <value>Serene Coast</value>
   </data>
-  <data name="Language_English" xml:space="preserve">
-    <value>English</value>
+  <data name="Map_51_asia" xml:space="preserve">
+    <value>Dragon Ridge</value>
   </data>
-  <data name="StatisticPeriod_Recent" xml:space="preserve">
-    <value>Recent</value>
+  <data name="Map_60_asia_miao" xml:space="preserve">
+    <value>Pearl River</value>
   </data>
-  <data name="StatisticPeriod_LastWeek" xml:space="preserve">
-    <value>Last week</value>
+  <data name="Map_63_tundra" xml:space="preserve">
+    <value>Tundra</value>
   </data>
-  <data name="StatisticPeriod_AllObservationPeriod" xml:space="preserve">
-    <value>All observation period</value>
+  <data name="Map_73_asia_korea" xml:space="preserve">
+    <value>Sacred Valley</value>
   </data>
-  <data name="StatisticPeriod_Custom" xml:space="preserve">
-    <value>Custom</value>
-  </data>
-  <data name="Chart_Tooltip_Survive" xml:space="preserve">
-    <value>Battles: {0}
-Survive %: {1:0.00}</value>
-  </data>
-  <data name="Chart_Tooltip_KillDeathRatio" xml:space="preserve">
-    <value>Battles: {0}
-Ratio: {1:0.00}</value>
-  </data>
-  <data name="Chart_Tooltip_AvgXp" xml:space="preserve">
-    <value>Battles: {0}
-Avg XP: {1:0.00}</value>
-  </data>
-  <data name="Chart_Tooltip_AvgSpotted" xml:space="preserve">
-    <value>Battles: {0}
-Avg Spotted: {1:0.00}</value>
-  </data>
-  <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
-    <value>Last N Battles</value>
-  </data>
-  <data name="ErrorMsg_ErrorOnFilesDeletion" xml:space="preserve">
-    <value>Error on file deletion, please check your access rights</value>
-  </data>
-  <data name="ErrorMsg_ErrorOnFileDeletion" xml:space="preserve">
-    <value>Error on file deletion, please check your access rights({0})</value>
-  </data>
-  <data name="WindowCaption_SelectPathToWorldOfTanksExecutable" xml:space="preserve">
-    <value>Select path to WorldOfTanks.exe</value>
-  </data>
-  <data name="Msg_ErrorOnPlayReplay" xml:space="preserve">
-    <value>Error on play replay</value>
-  </data>
-  <data name="Column_Replay_Credits" xml:space="preserve">
-    <value>Credits</value>
-  </data>
-  <data name="Column_Replay_Damaged" xml:space="preserve">
-    <value>Damaged</value>
-  </data>
-  <data name="Column_Replay_DamageDealt" xml:space="preserve">
-    <value>Damage Dealt</value>
-  </data>
-  <data name="Column_Replay_Frags" xml:space="preserve">
-    <value>Frags</value>
-  </data>
-  <data name="Column_Replay_XP" xml:space="preserve">
-    <value>XP</value>
+  <data name="Map_85_winter" xml:space="preserve">
+    <value>Severogorsk</value>
   </data>
 </root>

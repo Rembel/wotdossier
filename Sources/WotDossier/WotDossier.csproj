@@ -127,6 +127,9 @@
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ReplaysFilterPanel.xaml.cs">
+      <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LineChartControl.xaml.cs">
       <DependentUpon>LineChartControl.xaml</DependentUpon>
     </Compile>
@@ -297,6 +300,10 @@
     <Page Include="Controls\ClanView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ReplaysFilterPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\LineChartControl.xaml">
       <SubType>Designer</SubType>

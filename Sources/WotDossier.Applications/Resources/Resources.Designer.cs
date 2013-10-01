@@ -167,6 +167,51 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credits.
+        /// </summary>
+        internal static string Column_Replay_Credits {
+            get {
+                return ResourceManager.GetString("Column_Replay_Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damaged.
+        /// </summary>
+        internal static string Column_Replay_Damaged {
+            get {
+                return ResourceManager.GetString("Column_Replay_Damaged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Dealt.
+        /// </summary>
+        internal static string Column_Replay_DamageDealt {
+            get {
+                return ResourceManager.GetString("Column_Replay_DamageDealt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frags.
+        /// </summary>
+        internal static string Column_Replay_Frags {
+            get {
+                return ResourceManager.GetString("Column_Replay_Frags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XP.
+        /// </summary>
+        internal static string Column_Replay_XP {
+            get {
+                return ResourceManager.GetString("Column_Replay_XP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error on file deletion, please check your access rights({0}).
         /// </summary>
         internal static string ErrorMsg_ErrorOnFileDeletion {

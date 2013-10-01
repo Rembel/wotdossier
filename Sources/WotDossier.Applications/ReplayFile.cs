@@ -107,16 +107,20 @@ namespace WotDossier.Applications
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
                 FileInfo = replayFileInfo;
-                Credits = replay.CommandResult.Damage.credits;
-                DamageDealt = replay.CommandResult.Damage.damageDealt;
-                DamageReceived = replay.CommandResult.Damage.damageReceived;
-                IsWinner = (BattleStatus) replay.CommandResult.Damage.isWinner;
-                Xp = replay.CommandResult.Damage.xp;
-                Killed = replay.CommandResult.Damage.killed.Count;
-                Damaged = replay.CommandResult.Damage.damaged.Count;
                 PlayerId = replay.datablock_1.playerID;
-                Medals = MedalHelper.GetMedals(replay.CommandResult.Damage.achieveIndices);
                 Icon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
+
+                if (replay.CommandResult != null)
+                {
+                    Credits = replay.CommandResult.Damage.credits;
+                    DamageDealt = replay.CommandResult.Damage.damageDealt;
+                    DamageReceived = replay.CommandResult.Damage.damageReceived;
+                    IsWinner = (BattleStatus) replay.CommandResult.Damage.isWinner;
+                    Xp = replay.CommandResult.Damage.xp;
+                    Killed = replay.CommandResult.Damage.killed.Count;
+                    Damaged = replay.CommandResult.Damage.damaged.Count;
+                    Medals = MedalHelper.GetMedals(replay.CommandResult.Damage.achieveIndices);
+                }
             }
         }
 

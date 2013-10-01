@@ -14,6 +14,7 @@ namespace WotDossier.Domain
         public string PlayerName { get; set; }
         public int PlayerId { get; set; }
         public string Server { get; set; }
+        public string PathToWotExe { get; set; }
 
         public int LastNBattles
         {

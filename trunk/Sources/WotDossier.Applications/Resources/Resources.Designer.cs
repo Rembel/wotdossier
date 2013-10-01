@@ -293,6 +293,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error on play replay.
+        /// </summary>
+        internal static string Msg_ErrorOnPlayReplay {
+            get {
+                return ResourceManager.GetString("Msg_ErrorOnPlayReplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t load replay file. File incomplete or not supported.
         /// </summary>
         internal static string Msg_File_incomplete_or_not_supported {
@@ -460,6 +469,15 @@ namespace WotDossier.Applications.Resources {
         internal static string WindowCaption_Error {
             get {
                 return ResourceManager.GetString("WindowCaption_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select path to WorldOfTanks.exe.
+        /// </summary>
+        internal static string WindowCaption_SelectPathToWorldOfTanksExecutable {
+            get {
+                return ResourceManager.GetString("WindowCaption_SelectPathToWorldOfTanksExecutable", resourceCulture);
             }
         }
         

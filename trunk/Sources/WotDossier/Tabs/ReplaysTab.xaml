@@ -68,13 +68,16 @@
             <DataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_UploadBtn}" 
-                              Command="{Binding Path=DataContext.OnReplayRowUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              Command="{Binding Path=DataContext.ReplayUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_DeleteBtn}" 
-                              Command="{Binding Path=DataContext.OnReplayRowDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              Command="{Binding Path=DataContext.ReplayDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>
-                    <MenuItem Header="Скопировать ссылку в буфер" 
-                              Command="{Binding Path=DataContext.OnCopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_CopyToClipboard}" 
+                              Command="{Binding Path=DataContext.CopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              CommandParameter="{Binding}"/>
+                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_Play}" 
+                              Command="{Binding Path=DataContext.PlayReplayCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>
                 </ContextMenu>
             </DataGrid.Resources>
@@ -84,9 +87,9 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.InputBindings>
-                <KeyBinding Command="{Binding OnReplayRowsDeleteCommand}" 
+                <KeyBinding Command="{Binding ReplayRowsDeleteCommand}" 
                             Key="Delete" CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                <KeyBinding Command="{Binding OnReplayRowDoubleClickCommand}" 
+                <KeyBinding Command="{Binding ReplayRowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </DataGrid.InputBindings>
             <DataGrid.Columns>
@@ -138,7 +141,7 @@
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
-                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=OnReplayRowDoubleClickCommand, Mode=OneWay}"/>
+                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=ReplayRowDoubleClickCommand, Mode=OneWay}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>

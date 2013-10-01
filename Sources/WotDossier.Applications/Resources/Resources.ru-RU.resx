@@ -259,4 +259,10 @@
   <data name="ErrorMsg_ErrorOnFileDeletion" xml:space="preserve">
     <value>Произошла ошибка при удалении файла({0})</value>
   </data>
+  <data name="WindowCaption_SelectPathToWorldOfTanksExecutable" xml:space="preserve">
+    <value>Укажите путь к WorldOfTanks.exe</value>
+  </data>
+  <data name="Msg_ErrorOnPlayReplay" xml:space="preserve">
+    <value>Ошибка при воспроизведении</value>
+  </data>
 </root>

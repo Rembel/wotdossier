@@ -1732,4 +1732,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Command_RemoveFromFavorites" xml:space="preserve">
     <value>Удалить из избранного</value>
   </data>
+  <data name="ReplaysTab_CopyToClipboard" xml:space="preserve">
+    <value>Скопировать ссылку в буфер</value>
+  </data>
+  <data name="ReplaysTab_Play" xml:space="preserve">
+    <value>Воспроизвести</value>
+  </data>
+  <data name="TankFilterPanel_Premium" xml:space="preserve">
+    <value>Премиумная техника</value>
+  </data>
+  <data name="TankFilterPanel_Favorite" xml:space="preserve">
+    <value>Избранная техника</value>
+  </data>
 </root>

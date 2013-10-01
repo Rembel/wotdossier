@@ -3312,11 +3312,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy link to clipboard.
+        /// </summary>
+        public static string ReplaysTab_CopyToClipboard {
+            get {
+                return ResourceManager.GetString("ReplaysTab_CopyToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string ReplaysTab_DeleteBtn {
             get {
                 return ResourceManager.GetString("ReplaysTab_DeleteBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play.
+        /// </summary>
+        public static string ReplaysTab_Play {
+            get {
+                return ResourceManager.GetString("ReplaysTab_Play", resourceCulture);
             }
         }
         
@@ -3600,11 +3618,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Favorite.
+        /// </summary>
+        public static string TankFilterPanel_Favorite {
+            get {
+                return ResourceManager.GetString("TankFilterPanel_Favorite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Levels.
         /// </summary>
         public static string TankFilterPanel_Levels {
             get {
                 return ResourceManager.GetString("TankFilterPanel_Levels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premium.
+        /// </summary>
+        public static string TankFilterPanel_Premium {
+            get {
+                return ResourceManager.GetString("TankFilterPanel_Premium", resourceCulture);
             }
         }
         

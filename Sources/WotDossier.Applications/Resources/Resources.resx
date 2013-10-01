@@ -259,4 +259,10 @@ Avg Spotted: {1:0.00}</value>
   <data name="ErrorMsg_ErrorOnFileDeletion" xml:space="preserve">
     <value>Error on file deletion, please check your access rights({0})</value>
   </data>
+  <data name="WindowCaption_SelectPathToWorldOfTanksExecutable" xml:space="preserve">
+    <value>Select path to WorldOfTanks.exe</value>
+  </data>
+  <data name="Msg_ErrorOnPlayReplay" xml:space="preserve">
+    <value>Error on play replay</value>
+  </data>
 </root>

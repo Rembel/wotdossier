@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows;
-using System.Windows.Threading;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
+using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Update;
@@ -27,7 +28,6 @@ using WotDossier.Domain.Tank;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
-using WotDossier.Framework.Forms;
 using WotDossier.Framework.Forms.Commands;
 using Common.Logging;
 using WotDossier.Framework.Forms.ProgressDialog;
@@ -51,43 +51,12 @@ namespace WotDossier.Applications.ViewModel
         private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
         private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
 
-        private List<SellInfo> _lastUsedTanksDataSource;
         //private ObservableCollection<ReplayFile> _replays;
-        private TankFilterViewModel _tankFilter;
         private PlayerStatisticViewModel _sessionStartStatistic;
         private ProgressControlViewModel _progressView;
-        private EnumerableDataSource<DataPoint> _ratingDataSource;
-        private EnumerableDataSource<DataPoint> _wn6RatingDataSource;
-        private EnumerableDataSource<DataPoint> _winPercentDataSource;
-        private EnumerableDataSource<DataPoint> _avgDamageDataSource;
-        private EnumerableDataSource<DataPoint> _avgXpDataSource;
-        private EnumerableDataSource<DataPoint> _killDeathRatioDataSource;
-        private EnumerableDataSource<DataPoint> _survivePercentDataSource;
-        private List<DataPoint> _efficiencyByTierDataSource;
-        private List<GenericPoint<string, double>> _efficiencyByTypeDataSource;
         private List<ReplayFolder> _replaysFolders;
         private ReplaysManager _replaysManager;
         private ReplayFolder _selectedFolder;
-        private EnumerableDataSource<DataPoint> _avgSpottedDataSource;
-        private List<GenericPoint<string, double>> _efficiencyByCountryDataSource;
-        private List<DataPoint> _replaysByMapDataSource;
-        private double _maxMapBattles = 10;
-        private double _maxWinReplayPercent = 100;
-        private List<DataPoint> _winReplaysPercentByMapDataSource;
-
-        public DelegateCommand LoadCommand { get; set; }
-        public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
-        public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
-        public DelegateCommand SettingsCommand { get; set; }
-
-        public DelegateCommand<object> OnRowDoubleClickCommand { get; set; }
-        public DelegateCommand<object> OnReplayRowDoubleClickCommand { get; set; }
-        public DelegateCommand<object> OnReplayRowUploadCommand { get; set; }
-        public DelegateCommand<object> OnReplayRowDeleteCommand { get; set; }
-        public DelegateCommand<object> OnReplayRowsDeleteCommand { get; set; }
-        public DelegateCommand<object> OnAddToFavoriteCommand { get; set; }
-        public DelegateCommand<object> OnRemoveFromFavoriteCommand { get; set; }
-        public DelegateCommand<object> OnCopyLinkToClipboardCommand { get; set; }
 
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -129,15 +98,15 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        //public ObservableCollection<ReplayFile> Replays
-        //{
-        //    get { return _replays; }
-        //    set
-        //    {
-        //        _replays = value;
-        //        RaisePropertyChanged("Replays");
-        //    }
-        //}
+        public ObservableCollection<ReplayFile> Replays
+        {
+            get { return _replays; }
+            set
+            {
+                _replays = value;
+                RaisePropertyChanged("Replays");
+            }
+        }
 
         public FraggsCountViewModel FraggsCount
         {
@@ -145,17 +114,64 @@ namespace WotDossier.Applications.ViewModel
             set { _fraggsCount = value; }
         }
 
-        public TankFilterViewModel TankFilter
-        {
-            get { return _tankFilter; }
-            set { _tankFilter = value; }
-        }
+        public ReplaysFilterViewModel ReplayFilter { get; set; }
+        public TankFilterViewModel TankFilter { get; set; }
 
         public ProgressControlViewModel ProgressView
         {
             get { return _progressView; }
             set { _progressView = value; }
         }
+
+        public List<ReplayFolder> ReplaysFolders
+        {
+            get { return _replaysFolders; }
+            set
+            {
+                _replaysFolders = value;
+                RaisePropertyChanged("ReplaysFolders");
+            }
+        }
+
+        public ReplaysManager ReplaysManager
+        {
+            get { return _replaysManager; }
+            set { _replaysManager = value; }
+        }
+
+        public ReplayFolder SelectedFolder
+        {
+            get { return _selectedFolder; }
+            set
+            {
+                _selectedFolder = value;
+                RaisePropertyChanged("SelectedFolder");
+            }
+        }
+
+        #endregion
+
+        #region Charts data
+
+        private List<SellInfo> _lastUsedTanksDataSource;
+
+        private EnumerableDataSource<DataPoint> _ratingDataSource;
+        private EnumerableDataSource<DataPoint> _wn6RatingDataSource;
+        private EnumerableDataSource<DataPoint> _winPercentDataSource;
+        private EnumerableDataSource<DataPoint> _avgDamageDataSource;
+        private EnumerableDataSource<DataPoint> _avgXpDataSource;
+        private EnumerableDataSource<DataPoint> _killDeathRatioDataSource;
+        private EnumerableDataSource<DataPoint> _survivePercentDataSource;
+        private List<DataPoint> _efficiencyByTierDataSource;
+        private List<GenericPoint<string, double>> _efficiencyByTypeDataSource;
+
+        private EnumerableDataSource<DataPoint> _avgSpottedDataSource;
+        private List<GenericPoint<string, double>> _efficiencyByCountryDataSource;
+        private List<DataPoint> _replaysByMapDataSource;
+        private double _maxMapBattles = 10;
+        private double _maxWinReplayPercent = 100;
+        private List<DataPoint> _winReplaysPercentByMapDataSource;
+        private ObservableCollection<ReplayFile> _replays;
 
         public List<TankStatisticRowViewModel> LastUsedTanksList
         {
@@ -307,29 +323,23 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public List<ReplayFolder> ReplaysFolders
+        public double MaxMapBattles
         {
-            get { return _replaysFolders; }
+            get { return _maxMapBattles; }
             set
             {
-                _replaysFolders = value;
-                RaisePropertyChanged("ReplaysFolders");
+                _maxMapBattles = value;
+                RaisePropertyChanged("MaxMapBattles");
             }
         }
 
-        public ReplaysManager ReplaysManager
+        public double MaxWinReplayPercent
         {
-            get { return _replaysManager; }
-            set { _replaysManager = value; }
-        }
-
-        public ReplayFolder SelectedFolder
-        {
-            get { return _selectedFolder; }
+            get { return _maxWinReplayPercent; }
             set
             {
-                _selectedFolder = value;
-                RaisePropertyChanged("SelectedFolder");
+                _maxWinReplayPercent = value;
+                RaisePropertyChanged("MaxWinReplayPercent");
             }
         }
 
@@ -365,6 +375,27 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        #region Commands
+
+        public DelegateCommand LoadCommand { get; set; }
+        public DelegateCommand SettingsCommand { get; set; }
+
+        public DelegateCommand<object> RowDoubleClickCommand { get; set; }
+        public DelegateCommand<object> AddToFavoriteCommand { get; set; }
+        public DelegateCommand<object> RemoveFromFavoriteCommand { get; set; }
+
+        public DelegateCommand<ReplayFile> ReplayUploadCommand { get; set; }
+        public DelegateCommand<ReplayFile> ReplayDeleteCommand { get; set; }
+        public DelegateCommand<ReplayFile> CopyLinkToClipboardCommand { get; set; }
+        public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
+        public DelegateCommand<object> ReplayRowDoubleClickCommand { get; set; }
+        public DelegateCommand<object> ReplayRowsDeleteCommand { get; set; }
+
+        public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
+        public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -378,22 +409,29 @@ namespace WotDossier.Applications.ViewModel
         {
             _dossierRepository = dossierRepository;
             _replaysManager = replaysManager;
+            
             LoadCommand = new DelegateCommand(OnLoad);
+            SettingsCommand = new DelegateCommand(OnSettings);
+            
+            ReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
+            ReplayUploadCommand = new DelegateCommand<ReplayFile>(OnUploadReplay, CanUploadReplay);
+            ReplayDeleteCommand = new DelegateCommand<ReplayFile>(OnReplayRowDelete);
+            ReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
+            CopyLinkToClipboardCommand = new DelegateCommand<ReplayFile>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
+            PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlayReplay);
+
             AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
             DeleteFolderCommand = new DelegateCommand<ReplayFolder>(OnDeleteFolderCommand);
-            SettingsCommand = new DelegateCommand(OnSettings);
-            OnRowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
-            OnReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
-            OnReplayRowUploadCommand = new DelegateCommand<object>(OnUploadReplay, CanUploadReplay);
-            OnReplayRowDeleteCommand = new DelegateCommand<object>(OnReplayRowDelete);
-            OnReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
-            OnAddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
-            OnRemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
-            OnCopyLinkToClipboardCommand = new DelegateCommand<object>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
+
+            RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
+            AddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
+            RemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
 
+            ReplayFilter = new ReplaysFilterViewModel();
+            //ReplayFilter.PropertyChanged += ReplayFilterOnPropertyChanged;
             TankFilter = new TankFilterViewModel();
             TankFilter.PropertyChanged += TankFilterOnPropertyChanged;
 
@@ -402,55 +440,47 @@ namespace WotDossier.Applications.ViewModel
             ProgressView = new ProgressControlViewModel();
         }
 
-        private bool CanCopyLinkToClipboard(object row)
+        private void OnPlayReplay(ReplayFile replay)
         {
-            ReplayFile model = row as ReplayFile;
-            return  model != null && !string.IsNullOrEmpty(model.Link);
-        }
-
-        private void OnCopyLinkToClipboard(object row)
-        {
-            ReplayFile model = row as ReplayFile;
-            if (model != null && !string.IsNullOrEmpty(model.Link))
+            if (replay != null && File.Exists(replay.FileInfo.FullName))
             {
-                Clipboard.SetText(model.Link);
-            }
-        }
+                AppSettings appSettings = SettingsReader.Get();
+                string path = appSettings.PathToWotExe;
+                if (string.IsNullOrEmpty(path) || !File.Exists(path))
+                {
+                    VistaOpenFileDialog dialog = new VistaOpenFileDialog();
+                    dialog.CheckFileExists = true;
+                    dialog.CheckPathExists = true;
+                    dialog.DefaultExt = ".exe"; // Default file extension
+                    dialog.Filter = "WorldOfTanks (.exe)|*.exe"; // Filter files by extension 
+                    dialog.Multiselect = false;
+                    dialog.Title = Resources.Resources.WindowCaption_SelectPathToWorldOfTanksExecutable;
+                    bool? showDialog = dialog.ShowDialog();
+                    if (showDialog == true)
+                    {
+                        path = appSettings.PathToWotExe = dialog.FileName;
+                        SettingsReader.Save(appSettings);
+                    }
+                }
 
-        private bool CanRemoveFromFavorite(object row)
-        {
-            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
-            return model != null && model.IsFavorite;
-        }
-
-        private bool CanAddToFavorite(object row)
-        {
-            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
-            return model != null && !model.IsFavorite;
-        }
-
-        private void OnRemoveFromFavorite(object row)
-        {
-            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
-            if (model != null)
-            {
-                SetFavorite(model, false);
-            }
-        }
-
-        private void SetFavorite(TankStatisticRowViewModel model, bool favorite)
-        {
-            AppSettings settings = SettingsReader.Get();
-            model.IsFavorite = favorite;
-            _dossierRepository.SetFavorite(model.TankId, model.CountryId, settings.PlayerId, favorite);
-        }
-
-        private void OnAddToFavorite(object data)
-        {
-            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
-            if (model != null)
-            {
-                SetFavorite(model, true);
+                if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                {
+                    try
+                    {
+                        Process proc = new Process();
+                        proc.EnableRaisingEvents = false;
+                        proc.StartInfo.CreateNoWindow = true;
+                        proc.StartInfo.UseShellExecute = false;
+                        proc.StartInfo.FileName = path;
+                        proc.StartInfo.Arguments = string.Format("\"{0}\"", replay.FileInfo.FullName);
+                        proc.Start();
+                    }
+                    catch (Exception e)
+                    {
+                        _log.ErrorFormat("Error on play replay ({0} {1})", e, path, replay.FileInfo.FullName);
+                        MessageBox.Show(Resources.Resources.Msg_ErrorOnPlayReplay, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
             }
         }
 
@@ -468,10 +498,51 @@ namespace WotDossier.Applications.ViewModel
 
         #region Handlers
 
-        private void OnReplayRowDelete(object rowData)
+        private void OnCopyLinkToClipboard(ReplayFile model)
         {
-            ReplayFile replayFile = rowData as ReplayFile;
+            if (model != null && !string.IsNullOrEmpty(model.Link))
+            {
+                Clipboard.SetText(model.Link);
+            }
+        }
 
+        private bool CanCopyLinkToClipboard(ReplayFile model)
+        {
+            return  model != null && !string.IsNullOrEmpty(model.Link);
+        }
+
+        private void OnRemoveFromFavorite(object row)
+        {
+            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
+            if (model != null)
+            {
+                SetFavorite(model, false);
+            }
+        }
+
+        private bool CanRemoveFromFavorite(object row)
+        {
+            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
+            return model != null && model.IsFavorite;
+        }
+
+        private void OnAddToFavorite(object data)
+        {
+            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            if (model != null)
+            {
+                SetFavorite(model, true);
+            }
+        }
+
+        private bool CanAddToFavorite(object row)
+        {
+            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
+            return model != null && !model.IsFavorite;
+        }
+
+        private void OnReplayRowDelete(ReplayFile replayFile)
+        {
             if (replayFile != null)
             {
                 if (replayFile.FileInfo.Exists)
@@ -521,10 +592,8 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void OnUploadReplay(object rowData)
+        private void OnUploadReplay(ReplayFile replayFile)
         {
-            ReplayFile replayFile = rowData as ReplayFile;
-
             if (replayFile != null)
             {
                 UploadReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<UploadReplayViewModel>().Value;
@@ -604,15 +673,6 @@ namespace WotDossier.Applications.ViewModel
                 parent.Folders.Remove(folder);
                 ReplaysManager.SaveFolder(root);
             }
-        }
-
-        private ReplayFolder FindParentFolder(ReplayFolder parent, ReplayFolder folder)
-        {
-            if (parent.Folders.Contains(folder))
-            {
-                return parent;
-            }
-            return parent.Folders.Select(child => FindParentFolder(child, folder)).FirstOrDefault(foundItem => foundItem != null);
         }
 
         private void OnAddFolder(ReplayFolder folder)
@@ -902,26 +962,6 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public double MaxMapBattles
-        {
-            get { return _maxMapBattles; }
-            set
-            {
-                _maxMapBattles = value;
-                RaisePropertyChanged("MaxMapBattles");
-            }
-        }
-
-        public double MaxWinReplayPercent
-        {
-            get { return _maxWinReplayPercent; }
-            set
-            {
-                _maxWinReplayPercent = value;
-                RaisePropertyChanged("MaxWinReplayPercent");
-            }
-        }
-
         private void InitEfficiencyByTierChart(List<TankStatisticRowViewModel> statisticViewModels)
         {
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, RatingHelper.CalcER(
@@ -1042,6 +1082,22 @@ namespace WotDossier.Applications.ViewModel
         {
             //TODO: refactoring
             return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
+        }
+
+        private ReplayFolder FindParentFolder(ReplayFolder parent, ReplayFolder folder)
+        {
+            if (parent.Folders.Contains(folder))
+            {
+                return parent;
+            }
+            return parent.Folders.Select(child => FindParentFolder(child, folder)).FirstOrDefault(foundItem => foundItem != null);
+        }
+
+        private void SetFavorite(TankStatisticRowViewModel model, bool favorite)
+        {
+            AppSettings settings = SettingsReader.Get();
+            model.IsFavorite = favorite;
+            _dossierRepository.SetFavorite(model.TankId, model.CountryId, settings.PlayerId, favorite);
         }
 
         private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent args)

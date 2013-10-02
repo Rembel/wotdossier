@@ -1,0 +1,45 @@
+﻿<Window x:Class="WotDossier.Views.ClanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+        Title="Clan" Height="300" Width="500" Background="Transparent" Icon="..\Resources\Images\faces.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Margin="10" Width="60" Height="60" Grid.RowSpan="4" Source="..\Resources\Images\Medals\Evileye.png" VerticalAlignment="Top"></Image>
+            <TextBlock FontFamily="arial,sans-serif" FontSize="30" FontWeight="400" Foreground="#F9D088" Grid.Row="0" Grid.Column="1" Text="[ITN] IT Noobs"></TextBlock>
+            <TextBlock FontFamily="arial,sans-serif" FontSize="24" FontWeight="400" Foreground="#BABCBF" Grid.Row="1" Grid.Column="1" Text="Даже IT-шник может быть нубом"></TextBlock>
+            <TextBlock FontFamily="arial,sans-serif" FontSize="11" Foreground="#606061" Grid.Row="2" Grid.Column="1" Text="Создан: 10.01.2013" VerticalAlignment="Center"></TextBlock>
+        </Grid>
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Members}" VerticalAlignment="Stretch" Name="dgMembers" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.InputBindings>
+                <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
+                            Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+            </DataGrid.InputBindings>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Number}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Role}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата вступления" Binding="{Binding Since}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+            </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+    </Grid>
+</Window>

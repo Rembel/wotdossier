@@ -95,6 +95,7 @@
     <Compile Include="ApplicationRouteCommands.cs" />
     <Compile Include="Applications\CollectionChangedEventListener.cs" />
     <Compile Include="Applications\Controller.cs" />
+    <Compile Include="Applications\ClickEventToCommand.cs" />
     <Compile Include="Applications\DataGridRowDoubleClickEventToCommand.cs" />
     <Compile Include="Applications\DispatcherHelper.cs" />
     <Compile Include="Applications\EventToCommand.cs" />

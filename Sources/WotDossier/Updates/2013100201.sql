@@ -1,0 +1,1 @@
+﻿ALTER TABLE [Tank] ADD CONSTRAINT [Tank_Unique] Unique ([TankId],[CountryId],[PlayerId]);

@@ -278,6 +278,9 @@
     <Compile Include="Views\AddReplayFolderWindow.xaml.cs">
       <DependentUpon>AddReplayFolderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ClanWindow.xaml.cs">
+      <DependentUpon>ClanWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -530,6 +533,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ClanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -707,6 +714,7 @@
     <Resource Include="Resources\Images\Tanks\ussr_object_140.png" />
     <Resource Include="Resources\Images\Tanks\usa_m60.png" />
     <Resource Include="Resources\Images\Maps\63_tundra.jpg" />
+    <Resource Include="Resources\Images\faces.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -723,6 +731,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Updates\2013092501.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Updates\2013100201.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">

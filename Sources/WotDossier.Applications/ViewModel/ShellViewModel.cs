@@ -383,6 +383,8 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
         public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
 
+        public DelegateCommand<object> ClanImageClickCommand { get; set; }
+
         #endregion
 
         #region Constructors
@@ -416,6 +418,8 @@ namespace WotDossier.Applications.ViewModel
             AddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
             RemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
 
+            ClanImageClickCommand = new DelegateCommand<object>(OnClanImageClickCommand);
+
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
 
@@ -427,6 +431,12 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
             ProgressView = new ProgressControlViewModel();
+        }
+
+        private void OnClanImageClickCommand(object param)
+        {
+            ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
+            viewModel.Show();
         }
 
         private void OnPlayReplay(ReplayFile replay)

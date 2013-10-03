@@ -291,12 +291,12 @@ namespace WotDossier.Dal
         /// </summary>
         /// <param name="settings">The settings.</param>
         /// <returns>First found player</returns>
-        public PlayerSearchJson SearchPlayer(AppSettings settings)
+        public PlayerSearchJson SearchPlayer(AppSettings settings, string playerName)
         {
 #if DEBUG
             return new PlayerSearchJson { created_at = 0, id = 10800699, name = "rembel"};
 #else
-            string url = string.Format(URL_SEARCH_PLAYER, settings.PlayerName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
+            string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
             WebRequest request = HttpWebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream stream = response.GetResponseStream())

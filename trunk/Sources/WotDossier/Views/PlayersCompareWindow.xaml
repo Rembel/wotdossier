@@ -1,0 +1,9 @@
+﻿<Window x:Class="WotDossier.Views.PlayersCompareWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:WotDossier.Controls"
+        Title="Players Compare" Height="768" Width="768">
+    <Grid>
+        <controls:CompareStatisticView DataContext="{Binding CompareStatistic}"></controls:CompareStatisticView>
+    </Grid>
+</Window>

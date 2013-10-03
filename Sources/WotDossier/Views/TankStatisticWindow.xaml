@@ -9,11 +9,6 @@
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         mc:Ignorable="d" 
         Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
-    <Window.Resources>
-        <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.jpg" Stretch="Fill" />
-        <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.jpg" Stretch="Fill" />
-        <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.jpg" Stretch="Fill" />
-    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"></ColumnDefinition>

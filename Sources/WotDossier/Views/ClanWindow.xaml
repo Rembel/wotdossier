@@ -5,7 +5,7 @@
         xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
-        Title="{x:Static Resources:Resources.WindowCaption_Clan}" MinHeight="768" MinWidth="1024" Background="Transparent" Icon="..\Resources\Images\faces.png" WindowStartupLocation="CenterOwner">
+        Title="{Binding Path=DataContext.FullName, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="1024" Background="Transparent" Icon="..\Resources\Images\faces.png" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -33,9 +33,9 @@
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </DataGrid.InputBindings>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Clan_Name}" Binding="{Binding Name}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Clan_Role}" Binding="{Binding Role}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Clan_Since}" Binding="{Binding Since, StringFormat='dd.MM.yyyy'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Clan_Name}" Binding="{Binding Name}" Width="Auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Clan_Role}" Binding="{Binding Role}" Width="Auto" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Clan_Since}" Binding="{Binding Since, StringFormat='dd.MM.yyyy'}" Width="Auto" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">

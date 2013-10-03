@@ -8,7 +8,9 @@ using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain.Player;
+using WotDossier.Framework;
 using WotDossier.Framework.Applications;
+using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -87,6 +89,8 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public DelegateCommand<object> RowDoubleClickCommand { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -98,6 +102,20 @@ namespace WotDossier.Applications.ViewModel
             : base(view)
         {
             _repository = repository;
+            RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClickCommand);
+        }
+
+        private void OnRowDoubleClickCommand(object item)
+        {
+            ClanMemberViewModel member = item as ClanMemberViewModel;
+            if (member != null)
+            {
+                PlayerStat playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), member.Id);
+                PlayerServerStatisticViewModel viewModel =
+                    CompositionContainerFactory.Instance.Container.GetExport<PlayerServerStatisticViewModel>().Value;
+                viewModel.Init(playerStat);
+                viewModel.Show();
+            }
         }
 
         public void Show()

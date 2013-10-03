@@ -284,6 +284,9 @@
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PlayerStatisticWindow.xaml.cs">
+      <DependentUpon>PlayerStatisticWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReplayWindow.xaml.cs">
       <DependentUpon>ReplayWindow.xaml</DependentUpon>
     </Compile>
@@ -541,6 +544,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PlayerStatisticWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ReplayWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -715,6 +722,7 @@
     <Resource Include="Resources\Images\Tanks\usa_m60.png" />
     <Resource Include="Resources\Images\Maps\63_tundra.jpg" />
     <Resource Include="Resources\Images\faces.png" />
+    <Resource Include="Resources\Images\player.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

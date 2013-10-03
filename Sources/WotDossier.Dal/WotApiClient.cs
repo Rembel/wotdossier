@@ -209,9 +209,9 @@ namespace WotDossier.Dal
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public PlayerStat LoadPlayerStat(AppSettings settings)
+        public PlayerStat LoadPlayerStat(AppSettings settings, int playerId)
         {
-            if (settings == null || string.IsNullOrEmpty(settings.PlayerName) || string.IsNullOrEmpty(settings.Server))
+            if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
                 return null;
             }
@@ -220,7 +220,7 @@ namespace WotDossier.Dal
 
             try
             {
-                string url = string.Format(URL_GET_PLAYER_INFO, settings.PlayerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 stream = response.GetResponseStream();

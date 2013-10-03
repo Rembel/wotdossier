@@ -2,6 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Converters="clr-namespace:WotDossier.Converters"
                     xmlns:Resources="clr-namespace:WotDossier.Resources">
+
+    <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.jpg" Stretch="Fill" />
+    <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.jpg" Stretch="Fill" />
+    <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.jpg" Stretch="Fill" />
+
     <DataTemplate x:Key="MasterTemplate" >
         <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        ToolTip="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToTooltipConverter.Default}}" 

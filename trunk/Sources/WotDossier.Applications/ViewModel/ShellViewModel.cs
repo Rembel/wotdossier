@@ -775,7 +775,11 @@ namespace WotDossier.Applications.ViewModel
             PlayerStat playerStat = null;
             try
             {
-                playerStat = WotApiClient.Instance.LoadPlayerStat(settings);
+                int playerId = settings.PlayerId;
+                if (!string.IsNullOrEmpty(settings.PlayerName))
+                {
+                    playerStat = WotApiClient.Instance.LoadPlayerStat(settings, playerId);
+                }
             }
             catch (Exception e)
             {

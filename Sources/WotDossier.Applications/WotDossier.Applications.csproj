@@ -100,6 +100,8 @@
     <Compile Include="MedalHelper.cs" />
     <Compile Include="ViewModel\AddReplayFolderViewModel.cs" />
     <Compile Include="ViewModel\ClanViewModel.cs" />
+    <Compile Include="ViewModel\CompareStatisticViewModel.cs" />
+    <Compile Include="ViewModel\PlayersCompareViewModel.cs" />
     <Compile Include="ViewModel\PlayerServerStatisticViewModel.cs" />
     <Compile Include="ViewModel\ReplaysFilterViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModelFactory.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModelBase.cs" />
     <Compile Include="ViewModel\TankStatisticViewModel.cs" />
+    <Compile Include="View\IPlayersCompareView.cs" />
     <Compile Include="View\IPlayerStatistic.cs" />
     <Compile Include="View\IClanView.cs" />
     <Compile Include="View\IAddReplayFolderView.cs" />

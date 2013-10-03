@@ -263,7 +263,7 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        protected CompareStatisticViewModelBase(StatisticViewModelBase first, StatisticViewModelBase second)
+        public CompareStatisticViewModelBase(StatisticViewModelBase first, StatisticViewModelBase second)
         {
             First = first;
             Second = second;

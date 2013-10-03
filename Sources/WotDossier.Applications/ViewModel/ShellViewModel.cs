@@ -435,10 +435,20 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnOpenClanCommand(object param)
         {
-            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.id);
-            ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
-            viewModel.Init(clan);
+            PlayerSearchJson first = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), "_rembel_");
+            PlayerSearchJson second = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), "morphalby");
+
+            PlayerStat stat1 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), first.id);
+            PlayerStat stat2 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), second.id);
+            
+            PlayersCompareViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<PlayersCompareViewModel>().Value;
+            viewModel.Init(stat1, stat2);
             viewModel.Show();
+
+            //ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.id);
+            //ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
+            //viewModel.Init(clan);
+            //viewModel.Show();
         }
 
         private void OnPlayReplay(ReplayFile replay)

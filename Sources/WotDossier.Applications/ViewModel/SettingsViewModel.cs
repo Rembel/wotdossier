@@ -167,7 +167,7 @@ namespace WotDossier.Applications.ViewModel
                 
                 try
                 {
-                    player = WotApiClient.Instance.SearchPlayer(_appSettings);
+                    player = WotApiClient.Instance.SearchPlayer(_appSettings, _appSettings.PlayerName);
                 }
                 catch (Exception e)
                 {

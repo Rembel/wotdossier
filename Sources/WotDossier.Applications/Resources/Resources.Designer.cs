@@ -392,6 +392,60 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Commander.
+        /// </summary>
+        internal static string Role_commander {
+            get {
+                return ResourceManager.GetString("Role_commander", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diplomat.
+        /// </summary>
+        internal static string Role_diplomat {
+            get {
+                return ResourceManager.GetString("Role_diplomat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leader.
+        /// </summary>
+        internal static string Role_leader {
+            get {
+                return ResourceManager.GetString("Role_leader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Private.
+        /// </summary>
+        internal static string Role_private {
+            get {
+                return ResourceManager.GetString("Role_private", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recruit.
+        /// </summary>
+        internal static string Role_recruit {
+            get {
+                return ResourceManager.GetString("Role_recruit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vice Leader.
+        /// </summary>
+        internal static string Role_vice_leader {
+            get {
+                return ResourceManager.GetString("Role_vice_leader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All observation period.
         /// </summary>
         internal static string StatisticPeriod_AllObservationPeriod {

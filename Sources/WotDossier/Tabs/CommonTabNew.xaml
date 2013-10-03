@@ -29,11 +29,11 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}" DataContext="{Binding PlayerStatistic}">
+            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                         <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
-                            <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding Name}" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" HorizontalAlignment="Center"></TextBlock>
                             <Grid Margin="10" HorizontalAlignment="Center">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"></RowDefinition>
@@ -45,13 +45,14 @@
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Created, Converter={x:Static Converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Created, Converter={x:Static Converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
                             </Grid>
-                            <controls:ClanView Margin="10" Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
-                                           ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
-                                           Days="{Binding Clan.Days}" Position="{Binding Clan.role}" Date="{Binding Clan.since}" Abbreviation="{Binding Clan.abbreviation}" ClanName="{Binding Clan.name}">
+                            <controls:ClanView Margin="10" Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
+                                           ClanImageSource="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                                           Days="{Binding PlayerStatistic.Clan.Days}" Position="{Binding PlayerStatistic.Clan.role}" Date="{Binding PlayerStatistic.Clan.since}" Abbreviation="{Binding PlayerStatistic.Clan.abbreviation}" 
+                                           ClanName="{Binding PlayerStatistic.Clan.name}" OpenClanCommand="{Binding OpenClanCommand}">
                                 
                             </controls:ClanView>
                         </StackPanel>

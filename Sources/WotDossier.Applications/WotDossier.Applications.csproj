@@ -95,6 +95,7 @@
     <Compile Include="Update\IDbUpdate.cs" />
     <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="ViewModel\BattleStatus.cs" />
+    <Compile Include="ViewModel\ClanMemberViewModel.cs" />
     <Compile Include="ViewModel\CombatTarget.cs" />
     <Compile Include="MedalHelper.cs" />
     <Compile Include="ViewModel\AddReplayFolderViewModel.cs" />

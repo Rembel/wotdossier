@@ -13,7 +13,7 @@ namespace WotDossier.Domain.Player
         public Experience experience { get; set; }
         public Ratings ratings { get; set; }
         public IList<Vehicle> vehicles { get; set; }
-        public ClanInfo clan { get; set; }
+        public Clan clan { get; set; }
         public int id { get; set; }
     }
 }

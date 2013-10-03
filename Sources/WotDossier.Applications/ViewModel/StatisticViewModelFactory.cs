@@ -12,7 +12,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class StatisticViewModelFactory
     {
-        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, string name, DateTime created, ClanInfo clan)
+        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, string name, DateTime created, Clan clan)
         {
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)

@@ -36,12 +36,15 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter TargetName="ButtonImage" Property="Opacity" Value="1" />
+                                <Setter Property="Cursor" Value="Hand"></Setter>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="False">
                                 <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                                <Setter Property="Cursor" Value="Hand"></Setter>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter TargetName="ButtonImage" Property="Opacity" Value="0.75" />
+                                <Setter Property="Cursor" Value="Arrow"></Setter>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

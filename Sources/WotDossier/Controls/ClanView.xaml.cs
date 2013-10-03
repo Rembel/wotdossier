@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WotDossier.Controls
 {
@@ -73,9 +65,26 @@ namespace WotDossier.Controls
             set { SetValue(ClanImageSourceProperty, value); }
         }
 
+        public static readonly DependencyProperty OpenClanCommandProperty =
+            DependencyProperty.Register("OpenClanCommand", typeof (ICommand), typeof (ClanView), new PropertyMetadata(default(ICommand)));
+
+        public ICommand OpenClanCommand
+        {
+            get { return (ICommand) GetValue(OpenClanCommandProperty); }
+            set { SetValue(OpenClanCommandProperty, value); }
+        }
+
         public ClanView()
         {
             InitializeComponent();
+        }
+
+        private void On_ClanClick(object sender, RoutedEventArgs e)
+        {
+            if (OpenClanCommand != null)
+            {
+                OpenClanCommand.Execute(null);
+            }
         }
     }
 }

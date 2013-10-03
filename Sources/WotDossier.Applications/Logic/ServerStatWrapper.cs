@@ -15,13 +15,13 @@ namespace WotDossier.Applications.Logic
 
             if (playerStat != null && playerStat.data != null)
             {
-                ClanInfo = playerStat.data.clan;
+                Clan = playerStat.data.clan;
                 Ratings = playerStat.data.ratings;
             }
         }
 
         public Ratings Ratings { get; set; }
 
-        public ClanInfo ClanInfo { get; set; }
+        public Clan Clan { get; set; }
     }
 }

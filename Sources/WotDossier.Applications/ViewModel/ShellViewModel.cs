@@ -383,7 +383,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
         public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
 
-        public DelegateCommand<object> ClanImageClickCommand { get; set; }
+        public DelegateCommand<object> OpenClanCommand { get; set; }
 
         #endregion
 
@@ -418,7 +418,7 @@ namespace WotDossier.Applications.ViewModel
             AddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
             RemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
 
-            ClanImageClickCommand = new DelegateCommand<object>(OnClanImageClickCommand);
+            OpenClanCommand = new DelegateCommand<object>(OnOpenClanCommand);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
@@ -433,9 +433,11 @@ namespace WotDossier.Applications.ViewModel
             ProgressView = new ProgressControlViewModel();
         }
 
-        private void OnClanImageClickCommand(object param)
+        private void OnOpenClanCommand(object param)
         {
+            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.id);
             ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
+            viewModel.Init(clan);
             viewModel.Show();
         }
 
@@ -874,7 +876,7 @@ namespace WotDossier.Applications.ViewModel
             PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(serverStatistic.Ratings, tanks, settings.PlayerId);
 
             List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
-            return StatisticViewModelFactory.Create(statisticEntities, tanks, player.Name, player.Creaded, serverStatistic.ClanInfo);
+            return StatisticViewModelFactory.Create(statisticEntities, tanks, player.Name, player.Creaded, serverStatistic.Clan);
         }
 
         private void InitTanksStatistic(List<TankJson> tanks)

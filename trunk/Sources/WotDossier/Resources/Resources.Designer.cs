@@ -260,6 +260,33 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Clan_Name {
+            get {
+                return ResourceManager.GetString("Clan_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        public static string Clan_Role {
+            get {
+                return ResourceManager.GetString("Clan_Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Since.
+        /// </summary>
+        public static string Clan_Since {
+            get {
+                return ResourceManager.GetString("Clan_Since", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t get or save player clan icon from server.
         /// </summary>
         public static string ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server {
@@ -3948,6 +3975,15 @@ namespace WotDossier.Resources {
         public static string Version {
             get {
                 return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clan.
+        /// </summary>
+        public static string WindowCaption_Clan {
+            get {
+                return ResourceManager.GetString("WindowCaption_Clan", resourceCulture);
             }
         }
         

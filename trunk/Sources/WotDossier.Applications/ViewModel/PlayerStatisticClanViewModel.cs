@@ -7,7 +7,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class PlayerStatisticClanViewModel
     {
-        public PlayerStatisticClanViewModel(ClanInfo clan)
+        public PlayerStatisticClanViewModel(Clan clan)
         {
             id = clan.clan.id;
             name = clan.clan.name;

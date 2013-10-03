@@ -280,4 +280,22 @@
   <data name="Column_Replay_XP" xml:space="preserve">
     <value>Опыт</value>
   </data>
+  <data name="Role_leader" xml:space="preserve">
+    <value>Командир</value>
+  </data>
+  <data name="Role_commander" xml:space="preserve">
+    <value>Ротный командир</value>
+  </data>
+  <data name="Role_diplomat" xml:space="preserve">
+    <value>Дипломат</value>
+  </data>
+  <data name="Role_recruit" xml:space="preserve">
+    <value>Новобранец</value>
+  </data>
+  <data name="Role_vice_leader" xml:space="preserve">
+    <value>Заместитель командира</value>
+  </data>
+  <data name="Role_private" xml:space="preserve">
+    <value>Солдат</value>
+  </data>
 </root>

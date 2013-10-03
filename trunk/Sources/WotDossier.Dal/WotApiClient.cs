@@ -27,6 +27,7 @@ namespace WotDossier.Dal
         private static readonly ILog _log = LogManager.GetLogger("WotApiClient");
 
         private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
+        private const string URL_GET_CLAN_INFO = @"http://api.worldoftanks.{3}/community/clans/{0}/api/{1}/?source_token={2}";
         private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
@@ -240,6 +241,47 @@ namespace WotDossier.Dal
                 JsonTextReader reader = new JsonTextReader(streamReader);
                 JsonSerializer se = new JsonSerializer();
                 PlayerStat loadPlayerStat = se.Deserialize<PlayerStat>(reader);
+                return loadPlayerStat;
+            }
+        }
+
+        /// <summary>
+        /// Loads player stat from server
+        /// </summary>
+        /// <exception cref="PlayerInfoLoadException"></exception>
+        public ClanData LoadClan(AppSettings settings, int clanId)
+        {
+            if (settings == null || string.IsNullOrEmpty(settings.Server))
+            {
+                return null;
+            }
+
+            Stream stream;
+
+            try
+            {
+                string url = string.Format(URL_GET_CLAN_INFO, clanId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                stream = response.GetResponseStream();
+            }
+            catch (Exception e)
+            {
+                _log.Error("Can't get clan info from server", e);
+                throw new PlayerInfoLoadException("Error on getting clan data from server", e);
+            }
+
+            if (stream == null)
+            {
+                return null;
+            }
+
+            using (StreamReader streamReader = new StreamReader(stream))
+            {
+                JsonTextReader reader = new JsonTextReader(streamReader);
+                JsonSerializer se = new JsonSerializer();
+                JObject parsedData = (JObject)se.Deserialize(reader);
+                ClanData loadPlayerStat = JsonConvert.DeserializeObject<ClanData>(parsedData["data"].ToString());
                 return loadPlayerStat;
             }
         }

@@ -1636,4 +1636,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Operation_Lt" xml:space="preserve">
     <value>до</value>
   </data>
+  <data name="Clan_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Clan_Role" xml:space="preserve">
+    <value>Должность</value>
+  </data>
+  <data name="Clan_Since" xml:space="preserve">
+    <value>Дата вступления</value>
+  </data>
+  <data name="WindowCaption_Clan" xml:space="preserve">
+    <value>Клан</value>
+  </data>
 </root>

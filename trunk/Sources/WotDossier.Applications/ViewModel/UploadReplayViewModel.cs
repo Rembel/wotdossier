@@ -1,7 +1,10 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.ComponentModel.Composition;
 using System.Diagnostics;
+using System.IO;
 using System.Security.Authentication;
 using System.Windows;
+using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
@@ -44,26 +47,34 @@ namespace WotDossier.Applications.ViewModel
         {
             if (ReplayFile != null)
             {
-                ReplayUploader replayUploader = new ReplayUploader();
                 try
                 {
-                    ReplayFile.Link = replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription, SettingsReader.Get().ReplaysUploadServerPath);
+                    Mouse.SetCursor(Cursors.Wait);
+                    ReplayUploader replayUploader = new ReplayUploader();
+                    ReplayFile.Link = replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription,
+                        SettingsReader.Get().ReplaysUploadServerPath);
                     _repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);
                     ViewTyped.Close();
                 }
                 catch (AuthenticationException e)
                 {
                     _log.Error("Authentication error", e);
-                    MessageBoxResult result = MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure, Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo, MessageBoxImage.Error);
+                    MessageBoxResult result =
+                        MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure,
+                            Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo, MessageBoxImage.Error);
 
                     if (result == MessageBoxResult.Yes)
                     {
                         Process proc = new Process();
                         proc.EnableRaisingEvents = false;
-                        proc.StartInfo.FileName = @"C:\Program Files\Internet Explorer\iexplore.exe";
+                        proc.StartInfo.FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"Internet Explorer\iexplore.exe");
                         proc.StartInfo.Arguments = "http://wotreplays.ru";
                         proc.Start();
                     }
+                }
+                finally
+                {
+                    Mouse.SetCursor(Cursors.Arrow);   
                 }
             }
         }

@@ -280,4 +280,22 @@ Avg Spotted: {1:0.00}</value>
   <data name="Column_Replay_XP" xml:space="preserve">
     <value>XP</value>
   </data>
+  <data name="Role_leader" xml:space="preserve">
+    <value>Leader</value>
+  </data>
+  <data name="Role_commander" xml:space="preserve">
+    <value>Commander</value>
+  </data>
+  <data name="Role_diplomat" xml:space="preserve">
+    <value>Diplomat</value>
+  </data>
+  <data name="Role_recruit" xml:space="preserve">
+    <value>Recruit</value>
+  </data>
+  <data name="Role_vice_leader" xml:space="preserve">
+    <value>Vice Leader</value>
+  </data>
+  <data name="Role_private" xml:space="preserve">
+    <value>Private</value>
+  </data>
 </root>

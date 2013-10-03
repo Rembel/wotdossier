@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Windows.Documents;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Common;
@@ -18,7 +17,6 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (ClanViewModel))]
     public class ClanViewModel : ViewModel<IClanView>
     {
-        private readonly DossierRepository _repository;
         private static readonly ILog _log = LogManager.GetLogger("ClanViewModel");
 
         private static readonly string PropFullName = TypeHelper.GetPropertyName<ClanViewModel>(x => x.FullName);
@@ -96,12 +94,10 @@ namespace WotDossier.Applications.ViewModel
         /// attaches itself as <c>DataContext</c> to the view.
         /// </summary>
         /// <param name="view">The view.</param>
-        /// <param name="repository">The repository.</param>
         [ImportingConstructor]
-        public ClanViewModel([Import(typeof(IClanView))]IClanView view, [Import(typeof(DossierRepository))]DossierRepository repository)
+        public ClanViewModel([Import(typeof(IClanView))]IClanView view)
             : base(view)
         {
-            _repository = repository;
             RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClickCommand);
         }
 

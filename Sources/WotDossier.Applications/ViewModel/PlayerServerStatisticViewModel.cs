@@ -15,7 +15,6 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (PlayerServerStatisticViewModel))]
     public class PlayerServerStatisticViewModel : ViewModel<IPlayerServerStatisticView>
     {
-        private readonly DossierRepository _repository;
         private static readonly ILog _log = LogManager.GetLogger("PlayerServerStatisticViewModel");
 
         private static readonly string PropClan = TypeHelper.GetPropertyName<PlayerServerStatisticViewModel>(x => x.Clan);
@@ -61,13 +60,10 @@ namespace WotDossier.Applications.ViewModel
         /// attaches itself as <c>DataContext</c> to the view.
         /// </summary>
         /// <param name="view">The view.</param>
-        /// <param name="repository">The repository.</param>
         [ImportingConstructor]
-        public PlayerServerStatisticViewModel([Import(typeof(IPlayerServerStatisticView))]IPlayerServerStatisticView view, [Import(typeof(DossierRepository))]DossierRepository repository)
+        public PlayerServerStatisticViewModel([Import(typeof(IPlayerServerStatisticView))]IPlayerServerStatisticView view)
             : base(view)
         {
-            _repository = repository;
-
             OpenClanCommand = new DelegateCommand<object>(OnOpenClanCommand);
         }
 

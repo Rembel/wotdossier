@@ -2,8 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:WotDossier.Controls"
-        Title="Players Compare" Height="768" Width="768">
-    <Grid>
-        <controls:CompareStatisticView DataContext="{Binding CompareStatistic}"></controls:CompareStatisticView>
+        xmlns:Resources="clr-namespace:WotDossier.Resources"
+        Title="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850">
+    <Grid Background="{StaticResource bcolorCenter}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="50" Text="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" HorizontalAlignment="Center" Foreground="#FFA759" FontFamily="sans-serif" FontSize="25"></TextBlock>
+        <controls:CompareStatisticView Grid.Row="1" DataContext="{Binding CompareStatistic}" />
     </Grid>
 </Window>

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
+﻿using System.ComponentModel.Composition;
 using Common.Logging;
 using WotDossier.Applications.View;
-using WotDossier.Common;
-using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
-using WotDossier.Framework;
 using WotDossier.Framework.Applications;
-using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
 {

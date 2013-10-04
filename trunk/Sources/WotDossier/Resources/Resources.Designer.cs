@@ -2043,6 +2043,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Difference.
+        /// </summary>
+        public static string Difference {
+            get {
+                return ResourceManager.GetString("Difference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle Hero Achievements.
         /// </summary>
         public static string Label_Achievements_BattleHero {
@@ -3984,6 +3993,15 @@ namespace WotDossier.Resources {
         public static string WindowCaption_Clan {
             get {
                 return ResourceManager.GetString("WindowCaption_Clan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare players.
+        /// </summary>
+        public static string WindowCaption_ComparePlayers {
+            get {
+                return ResourceManager.GetString("WindowCaption_ComparePlayers", resourceCulture);
             }
         }
         

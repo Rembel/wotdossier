@@ -47,11 +47,11 @@ namespace WotDossier.Controls
         }
 
         public static readonly DependencyProperty DiffProperty =
-            DependencyProperty.Register("Diff", typeof (int), typeof (CompareRow), new PropertyMetadata(default(int)));
+            DependencyProperty.Register("Diff", typeof(string), typeof(CompareRow), new PropertyMetadata(default(string)));
 
-        public int Diff
+        public string Diff
         {
-            get { return (int) GetValue(DiffProperty); }
+            get { return (string)GetValue(DiffProperty); }
             set { SetValue(DiffProperty, value); }
         }
 

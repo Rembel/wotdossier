@@ -1648,4 +1648,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="WindowCaption_Clan" xml:space="preserve">
     <value>Клан</value>
   </data>
+  <data name="WindowCaption_ComparePlayers" xml:space="preserve">
+    <value>Сравнение игроков</value>
+  </data>
+  <data name="Difference" xml:space="preserve">
+    <value>Разница</value>
+  </data>
 </root>

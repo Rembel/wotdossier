@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300" Foreground="#BABFBA">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -13,9 +13,21 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Foreground="#BABFBA" Grid.Column="0" Text="{Binding Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"></TextBlock>
-        <TextBlock Foreground="#BABFBA" Grid.Column="1" TextAlignment="Right" Text="{Binding FirstValue, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"></TextBlock>
-        <TextBlock Foreground="#BABFBA" Grid.Column="2" TextAlignment="Right" Text="{Binding SecondValue, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"></TextBlock>
-        <TextBlock Foreground="#BABFBA" Grid.Column="2" TextAlignment="Right" Text="{Binding Diff, StringFormat='+0.;-0.;0.', RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"></TextBlock>
+        <TextBlock Foreground="#BABFBA" Grid.Column="0" Text="{Binding Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"/>
+        <TextBlock Foreground="#BABFBA" Grid.Column="1" TextAlignment="Right" Text="{Binding FirstValue, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"/>
+        <TextBlock Foreground="#BABFBA" Grid.Column="2" TextAlignment="Right" Text="{Binding SecondValue, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"/>
+        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}" Grid.Column="3" TextAlignment="Right" Text="{Binding Diff, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"/>
     </Grid>
 </UserControl>

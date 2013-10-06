@@ -320,6 +320,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t find player data - {0}.
+        /// </summary>
+        internal static string Msg_CantFindPlayerData {
+            get {
+                return ResourceManager.GetString("Msg_CantFindPlayerData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t find replays directory - &apos;{0}&apos;..
         /// </summary>
         internal static string Msg_CantFindReplaysDirectory {

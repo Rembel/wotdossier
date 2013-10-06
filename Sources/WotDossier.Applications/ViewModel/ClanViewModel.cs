@@ -107,10 +107,12 @@ namespace WotDossier.Applications.ViewModel
             if (member != null)
             {
                 PlayerStat playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), member.Id);
-                PlayerServerStatisticViewModel viewModel =
-                    CompositionContainerFactory.Instance.Container.GetExport<PlayerServerStatisticViewModel>().Value;
-                viewModel.Init(playerStat);
-                viewModel.Show();
+                if (playerStat != null)
+                {
+                    PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<PlayerServerStatisticViewModel>().Value;
+                    viewModel.Init(playerStat);
+                    viewModel.Show();
+                }
             }
         }
 

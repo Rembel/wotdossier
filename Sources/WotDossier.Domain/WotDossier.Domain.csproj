@@ -63,6 +63,7 @@
     <Compile Include="Player\Achievements.cs" />
     <Compile Include="Player\Battles.cs" />
     <Compile Include="Player\ClanMember.cs" />
+    <Compile Include="Player\ClanSearch.cs" />
     <Compile Include="Player\Experience.cs" />
     <Compile Include="Player\MechanicEngineers.cs" />
     <Compile Include="Player\PlayerSearch.cs" />

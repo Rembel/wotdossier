@@ -110,8 +110,8 @@ namespace WotDossier.Dal
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
         {
-            newSnapshotUpdated = newSnapshotUpdated.AddHours(WotDossierSettings.SliceTime);
-            currentSnapshotUpdated = currentSnapshotUpdated.AddHours(WotDossierSettings.SliceTime);
+            newSnapshotUpdated = newSnapshotUpdated.AddHours(-WotDossierSettings.SliceTime);
+            currentSnapshotUpdated = currentSnapshotUpdated.AddHours(-WotDossierSettings.SliceTime);
             return newSnapshotUpdated.Date != currentSnapshotUpdated.Date;
         }
 

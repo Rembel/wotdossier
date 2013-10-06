@@ -98,6 +98,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compare.
+        /// </summary>
+        public static string Btn_ComparePlayers {
+            get {
+                return ResourceManager.GetString("Btn_ComparePlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Btn_Search {
+            get {
+                return ResourceManager.GetString("Btn_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
         public static string ButtonOk {
@@ -2939,6 +2957,33 @@ namespace WotDossier.Resources {
         public static string MenuItem_Header_Settings {
             get {
                 return ResourceManager.GetString("MenuItem_Header_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string MenuItem_Search {
+            get {
+                return ResourceManager.GetString("MenuItem_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clans.
+        /// </summary>
+        public static string MenuItem_SearchClans {
+            get {
+                return ResourceManager.GetString("MenuItem_SearchClans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Players.
+        /// </summary>
+        public static string MenuItem_SearchPlayers {
+            get {
+                return ResourceManager.GetString("MenuItem_SearchPlayers", resourceCulture);
             }
         }
         

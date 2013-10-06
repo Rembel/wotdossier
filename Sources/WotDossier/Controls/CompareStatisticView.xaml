@@ -10,8 +10,6 @@
              d:DesignHeight="800" d:DesignWidth="800">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Background="Transparent">
-            <controls:CompareRow FontFamily="sans-serif" FontSize="17" FontWeight="Bold" FirstValue="{Binding First.Name}" SecondValue="{Binding Second.Name}" Diff="{x:Static Resources:Resources.Difference}"/>
-            
             <TextBlock Foreground="#FFA759" Text="{x:Static Resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <controls:CompareRow Header="{x:Static Resources:Resources.Common_BattlesParticipated}" FirstValue="{Binding First.BattlesCount}"
                                      SecondValue="{Binding Second.BattlesCount}" Diff="{Binding BattlesCount}" 

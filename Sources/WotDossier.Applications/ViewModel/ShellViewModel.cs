@@ -384,6 +384,9 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
 
         public DelegateCommand<object> OpenClanCommand { get; set; }
+        public DelegateCommand CompareCommand { get; set; }
+        public DelegateCommand SearchPlayersCommand { get; set; }
+        public DelegateCommand SearchClansCommand { get; set; }
 
         #endregion
 
@@ -419,6 +422,9 @@ namespace WotDossier.Applications.ViewModel
             RemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
 
             OpenClanCommand = new DelegateCommand<object>(OnOpenClanCommand);
+            CompareCommand = new DelegateCommand(OnCompare);
+            SearchPlayersCommand = new DelegateCommand(OnSearchPlayers);
+            SearchClansCommand = new DelegateCommand(OnSearchClans);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(s, e));
@@ -433,22 +439,33 @@ namespace WotDossier.Applications.ViewModel
             ProgressView = new ProgressControlViewModel();
         }
 
+        private void OnSearchClans()
+        {
+            ClanSearchViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanSearchViewModel>().Value;
+            viewModel.Show();
+        }
+
+        private void OnSearchPlayers()
+        {
+            PlayerSearchViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<PlayerSearchViewModel>().Value;
+            viewModel.Show();
+        }
+
+        private void OnCompare()
+        {
+            PlayersCompareViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<PlayersCompareViewModel>().Value;
+            viewModel.Show();
+        }
+
         private void OnOpenClanCommand(object param)
         {
-            PlayerSearchJson first = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), "_rembel_");
-            PlayerSearchJson second = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), "morphalby");
-
-            PlayerStat stat1 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), first.id);
-            PlayerStat stat2 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), second.id);
-            
-            PlayersCompareViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<PlayersCompareViewModel>().Value;
-            viewModel.Init(stat1, stat2);
-            viewModel.Show();
-
-            //ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.id);
-            //ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
-            //viewModel.Init(clan);
-            //viewModel.Show();
+            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.id);
+            if (clan != null)
+            {
+                ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
+                viewModel.Init(clan);
+                viewModel.Show();
+            }
         }
 
         private void OnPlayReplay(ReplayFile replay)

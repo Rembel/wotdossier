@@ -298,4 +298,7 @@
   <data name="Role_private" xml:space="preserve">
     <value>Солдат</value>
   </data>
+  <data name="Msg_CantFindPlayerData" xml:space="preserve">
+    <value>Не удалось получить информацию об игроке - {0}</value>
+  </data>
 </root>

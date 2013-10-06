@@ -298,4 +298,7 @@ Avg Spotted: {1:0.00}</value>
   <data name="Role_private" xml:space="preserve">
     <value>Private</value>
   </data>
+  <data name="Msg_CantFindPlayerData" xml:space="preserve">
+    <value>Can't find player data - {0}</value>
+  </data>
 </root>

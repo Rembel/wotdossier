@@ -1654,4 +1654,19 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Difference" xml:space="preserve">
     <value>Разница</value>
   </data>
+  <data name="Btn_ComparePlayers" xml:space="preserve">
+    <value>Сравнить</value>
+  </data>
+  <data name="Btn_Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="MenuItem_Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="MenuItem_SearchClans" xml:space="preserve">
+    <value>Кланов</value>
+  </data>
+  <data name="MenuItem_SearchPlayers" xml:space="preserve">
+    <value>Игроков</value>
+  </data>
 </root>

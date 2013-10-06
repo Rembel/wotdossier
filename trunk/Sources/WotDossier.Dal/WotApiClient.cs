@@ -29,6 +29,7 @@ namespace WotDossier.Dal
         private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
         private const string URL_GET_CLAN_INFO = @"http://api.worldoftanks.{3}/community/clans/{0}/api/{1}/?source_token={2}";
         private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
+        private const string URL_SEARCH_CLAN = @"http://api.worldoftanks.{3}/community/clans/api/{1}/?source_token={2}&search={0}&offset=0&limit={4}";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
         private static readonly object _syncObject = new object();
@@ -316,6 +317,34 @@ namespace WotDossier.Dal
                 return null;
             }
 #endif
+        }
+
+        /// <summary>
+        /// Searches the player.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        /// <returns>First found player</returns>
+        public List<ClanSearchJson> SearchClan(AppSettings settings, string clanName, int count)
+        {
+            string url = string.Format(URL_SEARCH_CLAN, clanName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server, count);
+            WebRequest request = HttpWebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            using (Stream stream = response.GetResponseStream())
+            {
+                if (stream != null)
+                {
+                    StreamReader streamReader = new StreamReader(stream);
+                    JsonTextReader reader = new JsonTextReader(streamReader);
+                    JsonSerializer se = new JsonSerializer();
+                    JObject parsedData = (JObject)se.Deserialize(reader);
+
+                    if (parsedData["data"]["items"].Any())
+                    {
+                        return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"]["items"].ToString());
+                    }
+                }
+                return null;
+            }
         }
 
         public Replay ReadReplay(string json)

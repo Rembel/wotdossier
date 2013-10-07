@@ -12,7 +12,10 @@ namespace WotDossier.Applications.ViewModel
             id = clan.clan.id;
             name = clan.clan.name;
             abbreviation = string.Format("[{0}]", clan.clan.abbreviation);
-            color = (Color)ColorConverter.ConvertFromString(clan.clan.color);
+            if (!string.IsNullOrEmpty(clan.clan.color))
+            {
+                color = (Color) ColorConverter.ConvertFromString(clan.clan.color);
+            }
 
             since = Utils.UnixDateToDateTime((long)clan.member.since);
             role = clan.member.role;

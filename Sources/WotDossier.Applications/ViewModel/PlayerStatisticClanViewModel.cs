@@ -7,25 +7,19 @@ namespace WotDossier.Applications.ViewModel
 {
     public class PlayerStatisticClanViewModel
     {
-        public PlayerStatisticClanViewModel(Clan clan)
+        public PlayerStatisticClanViewModel(ClanData clan, string member_role, long member_since)
         {
-            id = clan.clan.id;
-            name = clan.clan.name;
-            if (!string.IsNullOrEmpty(clan.clan.abbreviation))
-            {
-                abbreviation = string.Format("[{0}]", clan.clan.abbreviation);
-            }
-            if (!string.IsNullOrEmpty(clan.clan.color))
-            {
-                color = (Color) ColorConverter.ConvertFromString(clan.clan.color);
-            }
+            id = clan.clan_id;
+            name = clan.name;
+            abbreviation = string.Format("[{0}]", clan.abbreviation);
+            color = (Color)ColorConverter.ConvertFromString(clan.clan_color ?? "#BD3838");
 
-            since = Utils.UnixDateToDateTime((long)clan.member.since);
-            role = clan.member.role;
-            small = clan.clan.emblems_urls.small;
-            large = clan.clan.emblems_urls.large;
-            bw_tank = clan.clan.emblems_urls.bw_tank;
-            medium = clan.clan.emblems_urls.medium;
+            since = Utils.UnixDateToDateTime(member_since);
+            role = member_role;
+            small = clan.emblems.small;
+            large = clan.emblems.large;
+            bw_tank = clan.emblems.bw_tank;
+            medium = clan.emblems.medium;
 
             Days = (DateTime.Now - since).Days;
         }

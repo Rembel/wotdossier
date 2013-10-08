@@ -60,7 +60,7 @@ namespace WotDossier.Applications.ViewModel
             List<ClanSearchJson> clans = WotApiClient.Instance.SearchClan(SettingsReader.Get(), SearchText, 10);
             if (clans != null)
             {
-                List = clans.Select(x => new SearchResultRowViewModel {Id = x.id, Name = x.name}).ToList();
+                List = clans.Select(x => new SearchResultRowViewModel {Id = x.clan_id, Name = x.name}).ToList();
             }
         }
 

@@ -166,11 +166,12 @@ namespace WotDossier.Applications.ViewModel
                 PlayerSearchJson player = null;
                 
                 player = WotApiClient.Instance.SearchPlayer(_appSettings, _appSettings.PlayerName);
-
+                
                 if (player != null)
                 {
                     _appSettings.PlayerId = player.id;
-                    _dossierRepository.GetOrCreatePlayer(player.name, player.id, Utils.UnixDateToDateTime((long) player.created_at));
+                    double createdAt = WotApiClient.Instance.LoadPlayerStat(_appSettings, player.id).dataField.created_at;
+                    _dossierRepository.GetOrCreatePlayer(player.nickname, player.id, Utils.UnixDateToDateTime((long)createdAt));
                 }
                 else
                 {

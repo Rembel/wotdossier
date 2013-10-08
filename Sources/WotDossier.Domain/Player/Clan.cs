@@ -2,8 +2,8 @@
 {
     public class Clan
     {
-        public ClanMember member { get; set; } 
-        public ClanData clan { get; set; } 
-        public ClanExt clan_ext { get; set; } 
+        public int clan_id;
+        public string role;
+        public long since;
     }
 }

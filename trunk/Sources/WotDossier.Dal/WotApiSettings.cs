@@ -16,14 +16,9 @@ namespace WotDossier.Dal
             get { return ConfigurationManager.AppSettings["api"] ?? "1.9"; }
         }
 
-        public static string SearchApiVersion
+        public static string GetAppId(string cluster)
         {
-            get { return ConfigurationManager.AppSettings["search_api"] ?? "1.1"; }
-        }
-
-        public static string SourceToken
-        {
-            get { return ConfigurationManager.AppSettings["source_token"] ?? "WG-WoT_Assistant-1.3.2"; }
+            return ConfigurationManager.AppSettings["app_id." + cluster] ?? "171745d21f7f98fd8878771da1000a31";
         }
 
         public static string SettingsPath

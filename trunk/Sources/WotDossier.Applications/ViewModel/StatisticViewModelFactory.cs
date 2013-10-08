@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -12,7 +13,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class StatisticViewModelFactory
     {
-        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, string name, DateTime created, Clan clan)
+        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, string name, DateTime created, ServerStatWrapper playerData)
         {
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
@@ -26,9 +27,9 @@ namespace WotDossier.Applications.ViewModel
             currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
 
-            if (clan != null && clan.clan != null)
+            if (playerData.Clan != null)
             {
-                currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(clan);
+                currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerData.Clan, playerData.Role, playerData.Since);
             }
             return currentStatisticViewModel;
         }

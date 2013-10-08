@@ -31,8 +31,8 @@
                                      SecondValue="{Binding Second.Xp, StringFormat='### ### ### ###'}" Diff="{Binding Xp, StringFormat='+0.;-0.;0.'}"
                                  Foreground="{Binding Xp, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--BattleAvgXp-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgExperience}" FirstValue="{Binding First.AvgXp, StringFormat='### ### ### ###'}"
-                                     SecondValue="{Binding Second.AvgXp, StringFormat='### ### ### ###'}" Diff="{Binding AvgXp, StringFormat='+0.0;-0.0;0.0'}"
+            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgExperience}" FirstValue="{Binding First.AvgXp, StringFormat='0.0'}"
+                                     SecondValue="{Binding Second.AvgXp, StringFormat='0.0'}" Diff="{Binding AvgXp, StringFormat='+0.0;-0.0;0.0'}"
                                  Foreground="{Binding AvgXp, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--MaxXp-->
             <controls:CompareRow Header="{x:Static Resources:Resources.Common_MaxExperience}" FirstValue="{Binding First.MaxXp, StringFormat='### ### ### ###'}"
@@ -45,20 +45,20 @@
                                      SecondValue="{Binding Second.Frags, StringFormat='### ### ### ###'}" Diff="{Binding Frags, StringFormat='+0.;-0.;0.'}"
                                  Foreground="{Binding Frags, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--killDeathRatio-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_KillDeathRatio}" FirstValue="{Binding First.KillDeathRatio, StringFormat='### ### ### ###'}"
-                                     SecondValue="{Binding Second.KillDeathRatio, StringFormat='### ### ### ###'}" Diff="{Binding KillDeathRatio, StringFormat='+0.0;-0.0;0.0'}"
+            <controls:CompareRow Header="{x:Static Resources:Resources.Common_KillDeathRatio}" FirstValue="{Binding First.KillDeathRatio, StringFormat='0.00'}"
+                                     SecondValue="{Binding Second.KillDeathRatio, StringFormat='0.00'}" Diff="{Binding KillDeathRatio, StringFormat='+0.00;-0.00;0.00'}"
                                  Foreground="{Binding KillDeathRatio, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--AvgDestroyed-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDestroyed}" FirstValue="{Binding First.AvgFrags, StringFormat='### ### ### ###'}"
-                                     SecondValue="{Binding Second.AvgFrags, StringFormat='### ### ### ###'}" Diff="{Binding AvgFrags, StringFormat='+0.0;-0.0;0.0'}"
+            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDestroyed}" FirstValue="{Binding First.AvgFrags, StringFormat='0.00'}"
+                                     SecondValue="{Binding Second.AvgFrags, StringFormat='0.00'}" Diff="{Binding AvgFrags, StringFormat='+0.00;-0.00;0.00'}"
                                  Foreground="{Binding AvgFrags, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--Spotted-->
             <controls:CompareRow Header="{x:Static Resources:Resources.Common_Detected}" FirstValue="{Binding First.Spotted, StringFormat='### ### ### ###'}"
                                      SecondValue="{Binding Second.Spotted, StringFormat='### ### ### ###'}" Diff="{Binding Spotted, StringFormat='+0.;-0.;0.'}"
                                  Foreground="{Binding Spotted, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--AvgSpotted-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDetected}" FirstValue="{Binding First.AvgSpotted, StringFormat='### ### ### ###'}"
-                                     SecondValue="{Binding Second.AvgSpotted, StringFormat='### ### ### ###'}" Diff="{Binding AvgSpotted, StringFormat='+0.0;-0.0;0.0'}"
+            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDetected}" FirstValue="{Binding First.AvgSpotted, StringFormat='0.00'}"
+                                     SecondValue="{Binding Second.AvgSpotted, StringFormat='0.00'}" Diff="{Binding AvgSpotted, StringFormat='+0.00;-0.00;0.00'}"
                                  Foreground="{Binding AvgSpotted, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--HitsPercents-->
             <controls:CompareRow Header="{x:Static Resources:Resources.Common_HitRatio}" FirstValue="{Binding First.HitsPercents, StringFormat='### ### ### ###'}"
@@ -73,24 +73,24 @@
                                      SecondValue="{Binding Second.DamageRatio, StringFormat='### ### ### ###'}" Diff="{Binding DamageRatio, StringFormat='+0.0;-0.0;0.0'}"
                                  Foreground="{Binding DamageRatio, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--AvgDamageCaused-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDamageCaused}" FirstValue="{Binding First.AvgDamageDealt, StringFormat='### ### ### ###'}"
-                                     SecondValue="{Binding Second.AvgDamageDealt, StringFormat='### ### ### ###'}" Diff="{Binding AvgDamageDealt, StringFormat='+0.0;-0.0;0.0'}"
+            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDamageCaused}" FirstValue="{Binding First.AvgDamageDealt, StringFormat='0.0'}"
+                                     SecondValue="{Binding Second.AvgDamageDealt, StringFormat='0.0'}" Diff="{Binding AvgDamageDealt, StringFormat='+0.0;-0.0;0.0'}"
                                  Foreground="{Binding AvgDamageDealt, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--CapturePoints-->
             <controls:CompareRow Header="{x:Static Resources:Resources.Common_CapturePoints}" FirstValue="{Binding First.CapturePoints, StringFormat='### ### ### ###'}"
                                      SecondValue="{Binding Second.CapturePoints, StringFormat='### ### ### ###'}" Diff="{Binding CapturePoints, StringFormat='+0.;-0.;0.'}"
                                  Foreground="{Binding CapturePoints, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--AvgCapturePoints-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgCapturePoints}" FirstValue="{Binding First.AvgCapturePoints, StringFormat='### ### ### ###'}"
-                                     SecondValue="{Binding Second.AvgCapturePoints, StringFormat='### ### ### ###'}" Diff="{Binding AvgCapturePoints, StringFormat='+0.0;-0.0;0.0'}"
+            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgCapturePoints}" FirstValue="{Binding First.AvgCapturePoints, StringFormat='0.00'}"
+                                     SecondValue="{Binding Second.AvgCapturePoints, StringFormat='0.00'}" Diff="{Binding AvgCapturePoints, StringFormat='+0.00;-0.00;0.00'}"
                                  Foreground="{Binding AvgCapturePoints, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--DroppedCapturePoints-->
             <controls:CompareRow Header="{x:Static Resources:Resources.Common_DefensePoints}" FirstValue="{Binding First.DroppedCapturePoints, StringFormat='### ### ### ###'}"
                                      SecondValue="{Binding Second.DroppedCapturePoints, StringFormat='### ### ### ###'}" Diff="{Binding DroppedCapturePoints, StringFormat='+0.;-0.;0.'}"
                                  Foreground="{Binding DroppedCapturePoints, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--AvgDefensePoints-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDefensePoints}" FirstValue="{Binding First.AvgDroppedCapturePoints, StringFormat='### ### ### ###'}"
-                                     SecondValue="{Binding Second.AvgDroppedCapturePoints, StringFormat='### ### ### ###'}" Diff="{Binding AvgDroppedCapturePoints, StringFormat='+0.0;-0.0;0.0'}"
+            <controls:CompareRow Header="{x:Static Resources:Resources.Common_AvgDefensePoints}" FirstValue="{Binding First.AvgDroppedCapturePoints, StringFormat='0.00'}"
+                                     SecondValue="{Binding Second.AvgDroppedCapturePoints, StringFormat='0.00'}" Diff="{Binding AvgDroppedCapturePoints, StringFormat='+0.00;-0.00;0.00'}"
                                  Foreground="{Binding AvgDroppedCapturePoints, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
 
             <TextBlock Foreground="#FFA759" Text="{x:Static Resources:Resources.Tab_Header_Ratings}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
@@ -111,9 +111,9 @@
                                      SecondValue="{Binding Second.XEFF, StringFormat='### ### ### ###'}" Diff="{Binding XEFF, StringFormat='+0.;-0.;0.'}"
                                  Foreground="{Binding XEFF, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
             <!--Noobmeter Performance Rating-->
-            <controls:CompareRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" FirstValue="{Binding First.PerformanceRating, StringFormat='### ### ### ###'}"
+            <!--<controls:CompareRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" FirstValue="{Binding First.PerformanceRating, StringFormat='### ### ### ###'}"
                                      SecondValue="{Binding Second.PerformanceRating, StringFormat='### ### ### ###'}" Diff="{Binding PerformanceRating, StringFormat='+0.;-0.;0.'}"
-                                 Foreground="{Binding PerformanceRating, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>
+                                 Foreground="{Binding PerformanceRating, Converter={x:Static converters:DeltaToColorConverter.Default}}"/>-->
             <!--Rating WG-->
             <!--<controls:CompareRow Header="{x:Static Resources:Resources.Common_WGRating}" FirstValue="{Binding First.RBR, StringFormat='### ### ### ###'}"
                                      SecondValue="{Binding Second.RBR, StringFormat='### ### ### ###'}" Diff="{Binding RBR, StringFormat='### ### ### ###'}"

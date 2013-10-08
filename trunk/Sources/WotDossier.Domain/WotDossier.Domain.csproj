@@ -65,14 +65,14 @@
     <Compile Include="Player\ClanMember.cs" />
     <Compile Include="Player\ClanSearch.cs" />
     <Compile Include="Player\Experience.cs" />
-    <Compile Include="Player\MechanicEngineers.cs" />
     <Compile Include="Player\PlayerSearch.cs" />
     <Compile Include="Player\PlayerStat.cs" />
     <Compile Include="Player\PlayerStatData.cs" />
     <Compile Include="Player\Rating.cs" />
     <Compile Include="Player\Ratings.cs" />
+    <Compile Include="Player\StatisticPart.cs" />
+    <Compile Include="Player\Statistics.cs" />
     <Compile Include="Player\Summary.cs" />
-    <Compile Include="Player\TankExperts.cs" />
     <Compile Include="Player\Vehicle.cs" />
     <Compile Include="Replay\BattleResult.cs" />
     <Compile Include="Replay\CommandResult.cs" />
@@ -91,6 +91,7 @@
     <Compile Include="Replay\VehicleResult.cs" />
     <Compile Include="StatisticPeriod.cs" />
     <Compile Include="TankType.cs" />
+    <Compile Include="Tank\TankServerInfo.cs" />
     <Compile Include="Tank\FragsJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tank\BattleJson.cs" />

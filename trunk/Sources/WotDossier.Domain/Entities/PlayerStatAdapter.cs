@@ -122,100 +122,104 @@ namespace WotDossier.Domain.Entities
 
         public PlayerStatAdapter(PlayerStat stat)
         {
-            Battles_count = stat.data.summary.Battles_count;
-            Wins = stat.data.summary.Wins;
-            Losses = stat.data.summary.Losses;
-            Survived_battles = stat.data.summary.Survived_battles;
-            Xp = stat.data.experience.Xp;
-            Battle_avg_xp = stat.data.experience.Battle_avg_xp;
-            Max_xp = stat.data.experience.Max_xp;
-            Frags = stat.data.battles.Frags;
-            Spotted = stat.data.battles.Spotted;
-            Hits_percents = stat.data.battles.Hits_percents;
-            Damage_dealt = stat.data.battles.Damage_dealt;
-            Capture_points = stat.data.battles.Capture_points;
-            Dropped_capture_points = stat.data.battles.Dropped_capture_points;
-            Updated = Utils.UnixDateToDateTime((long)stat.data.updated_at).ToLocalTime();
-            if (Battles_count > 0)
+            Battles_count = stat.dataField.statistics.all.battles;
+            Wins = stat.dataField.statistics.all.wins;
+            Losses = stat.dataField.statistics.all.losses;
+            Survived_battles = stat.dataField.statistics.all.survived_battles;
+            Xp = stat.dataField.statistics.all.xp;
+            Battle_avg_xp = stat.dataField.statistics.all.battle_avg_xp;
+            Max_xp = stat.dataField.statistics.max_xp;
+            Frags = stat.dataField.statistics.all.frags;
+            Spotted = stat.dataField.statistics.all.spotted;
+            Hits_percents = stat.dataField.statistics.all.hits_percents;
+            Damage_dealt = stat.dataField.statistics.all.damage_dealt;
+            Capture_points = stat.dataField.statistics.all.capture_points;
+            Dropped_capture_points = stat.dataField.statistics.all.dropped_capture_points;
+            Updated = Utils.UnixDateToDateTime((long)stat.dataField.updated_at).ToLocalTime();
+            if (Battles_count > 0 && stat.dataField.vehicles != null)
             {
-                AvgLevel = stat.data.vehicles.Sum(x => x.level*x.battle_count)/(double) stat.data.summary.Battles_count;
+                int battlesCount = stat.dataField.vehicles.Sum(x => x.statistics.all.battles);
+                if (battlesCount > 0)
+                {
+                    AvgLevel = stat.dataField.vehicles.Sum(x => (x.tank != null ? x.tank.level : 1)*x.statistics.all.battles)/(double) battlesCount;
+                }
             }
 
             #region [ IRowBattleAwards ]
 
-            Warrior = stat.data.achievements.warrior;
-            Invader = stat.data.achievements.invader;
-            Sniper = stat.data.achievements.sniper;
-            Defender = stat.data.achievements.defende;
-            SteelWall = stat.data.achievements.steelwall;
-            Confederate = stat.data.achievements.supporter;
-            Scout = stat.data.achievements.scout;
-            PatrolDuty = stat.data.achievements.evileye;
-            BrothersInArms = stat.data.achievements.medalBrothersInArms;
-            CrucialContribution = stat.data.achievements.medalCrucialContribution;
-            CoolHeaded = stat.data.achievements.ironMan;
-            LuckyDevil = stat.data.achievements.luckyDevil;
-            Spartan = stat.data.achievements.sturdy;
+            Warrior = stat.dataField.achievements.warrior;
+            Invader = stat.dataField.achievements.invader;
+            Sniper = stat.dataField.achievements.sniper;
+            Defender = stat.dataField.achievements.defender;
+            SteelWall = stat.dataField.achievements.steelwall;
+            Confederate = stat.dataField.achievements.supporter;
+            Scout = stat.dataField.achievements.scout;
+            PatrolDuty = stat.dataField.achievements.evileye;
+            BrothersInArms = stat.dataField.achievements.medal_brothers_in_arms;
+            CrucialContribution = stat.dataField.achievements.medal_crucial_contribution;
+            CoolHeaded = stat.dataField.achievements.iron_man;
+            LuckyDevil = stat.dataField.achievements.lucky_devil;
+            Spartan = stat.dataField.achievements.sturdy;
 
             #endregion
 
             #region [ IRowEpic ]
 
-            Boelter = stat.data.achievements.medalBoelter;
-            RadleyWalters = stat.data.achievements.medalRadleyWalters;
-            LafayettePool = stat.data.achievements.medalLafayettePool;
-            Orlik = stat.data.achievements.medalOrlik;
-            Oskin = stat.data.achievements.medalOskin;
-            Lehvaslaiho = stat.data.achievements.medalLehvaslaiho;
-            Nikolas = stat.data.achievements.medalNikolas;
-            Halonen = stat.data.achievements.medalHalonen;
-            Burda = stat.data.achievements.medalBurda;
-            Pascucci = stat.data.achievements.medalPascucci;
-            Dumitru = stat.data.achievements.medalDumitru;
-            TamadaYoshio = stat.data.achievements.medalTamadaYoshio;
-            Billotte = stat.data.achievements.medalBillotte;
-            BrunoPietro = stat.data.achievements.medalBrunoPietro;
-            Tarczay = stat.data.achievements.medalTarczay;
-            Kolobanov = stat.data.achievements.medalKolobanov;
-            Fadin = stat.data.achievements.medalFadin;
-            HeroesOfRassenay = stat.data.achievements.heroesOfRassenay;
-            DeLanglade = stat.data.achievements.medalDeLanglade;
+            Boelter = stat.dataField.achievements.medal_boelter;
+            RadleyWalters = stat.dataField.achievements.medal_radley_walters;
+            LafayettePool = stat.dataField.achievements.medal_lafayette_pool;
+            Orlik = stat.dataField.achievements.medal_orlik;
+            Oskin = stat.dataField.achievements.medal_oskin;
+            Lehvaslaiho = stat.dataField.achievements.medal_lehvaslaiho;
+            Nikolas = stat.dataField.achievements.medal_nikolas;
+            Halonen = stat.dataField.achievements.medal_halonen;
+            Burda = stat.dataField.achievements.medal_burda;
+            Pascucci = stat.dataField.achievements.medal_pascucci;
+            Dumitru = stat.dataField.achievements.medal_dumitru;
+            TamadaYoshio = stat.dataField.achievements.medal_tamada_yoshio;
+            Billotte = stat.dataField.achievements.medal_billotte;
+            BrunoPietro = stat.dataField.achievements.medal_bruno_pietro;
+            Tarczay = stat.dataField.achievements.medal_tarczay;
+            Kolobanov = stat.dataField.achievements.medal_kolobanov;
+            Fadin = stat.dataField.achievements.medal_fadin;
+            HeroesOfRassenay = stat.dataField.achievements.medal_heroes_of_rassenay;
+            DeLanglade = stat.dataField.achievements.medal_delanglade;
 
             #endregion
 
             #region [ IRowMedals]
 
-            Kay = stat.data.achievements.medalKay;
-            Carius = stat.data.achievements.medalCarius;
-            Knispel = stat.data.achievements.medalKnispel;
-            Poppel = stat.data.achievements.medalPoppel;
-            Abrams = stat.data.achievements.medalAbrams;
-            Leclerk = stat.data.achievements.medalLeClerc;
-            Lavrinenko = stat.data.achievements.medalLavrinenko;
-            Ekins = stat.data.achievements.medalEkins;
+            Kay = stat.dataField.achievements.medal_kay;
+            Carius = stat.dataField.achievements.medal_carius;
+            Knispel = stat.dataField.achievements.medal_knispel;
+            Poppel = stat.dataField.achievements.medal_poppel;
+            Abrams = stat.dataField.achievements.medal_abrams;
+            Leclerk = stat.dataField.achievements.medal_le_clerc;
+            Lavrinenko = stat.dataField.achievements.medal_lavrinenko;
+            Ekins = stat.dataField.achievements.medal_ekins;
 
             #endregion
 
             #region [ IRowSeries ]
 
-            SharpshooterLongest = stat.data.achievements.maxSniperSeries;
-            MasterGunnerLongest = stat.data.achievements.maxPiercingSeries;
+            SharpshooterLongest = stat.dataField.achievements.max_sniper_series;
+            MasterGunnerLongest = stat.dataField.achievements.max_piercing_series;
 
             #endregion
 
             #region [ IRowSpecialAwards ]
 
-            Kamikaze = stat.data.achievements.kamikaze;
-            Raider = stat.data.achievements.raider;
-            Bombardier = stat.data.achievements.bombardier;
-            Reaper = stat.data.achievements.maxKillingSeries;
-            Invincible = stat.data.achievements.maxInvincibleSeries;
-            Survivor = stat.data.achievements.maxDiehardSeries;
-            MouseTrap = stat.data.achievements.mousebane;
-            Hunter = stat.data.achievements.beasthunter;
-            Sinai = stat.data.achievements.sinai;
-            PattonValley = stat.data.achievements.pattonValley;
-            Ranger = stat.data.achievements.huntsman;
+            Kamikaze = stat.dataField.achievements.kamikaze;
+            Raider = stat.dataField.achievements.raider;
+            Bombardier = stat.dataField.achievements.bombardier;
+            Reaper = stat.dataField.achievements.max_killing_series;
+            Invincible = stat.dataField.achievements.max_invincible_series;
+            Survivor = stat.dataField.achievements.max_diehard_series;
+            MouseTrap = stat.dataField.achievements.mousebane;
+            Hunter = stat.dataField.achievements.beasthunter;
+            Sinai = stat.dataField.achievements.sinai;
+            PattonValley = stat.dataField.achievements.patton_valley;
+            Ranger = stat.dataField.achievements.huntsman;
 
             #endregion
         }

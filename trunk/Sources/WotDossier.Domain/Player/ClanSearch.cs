@@ -3,6 +3,6 @@
     public class ClanSearchJson
     {
         public string name;
-        public int id;
+        public int clan_id;
     }
 }

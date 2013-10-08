@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
@@ -55,13 +56,10 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSearch()
         {
-            PlayerSearchJson player = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), SearchText);
+            List<PlayerSearchJson> player = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), SearchText, 10);
             if (player != null)
             {
-                List = new List<SearchResultRowViewModel>
-                {
-                    new SearchResultRowViewModel {Id = player.id, Name = player.name}
-                };
+                List = player.Select(x => new SearchResultRowViewModel { Id = x.id, Name = x.nickname }).ToList();
             }
         }
 

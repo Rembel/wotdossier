@@ -26,10 +26,12 @@ namespace WotDossier.Dal
     {
         private static readonly ILog _log = LogManager.GetLogger("WotApiClient");
 
-        private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/community/accounts/{0}/api/{1}/?source_token={2}";
-        private const string URL_GET_CLAN_INFO = @"http://api.worldoftanks.{3}/community/clans/{0}/api/{1}/?source_token={2}";
-        private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/community/accounts/api/{1}/?source_token={2}&search={0}&offset=0&limit=1";
-        private const string URL_SEARCH_CLAN = @"http://api.worldoftanks.{3}/community/clans/api/{1}/?source_token={2}&search={0}&offset=0&limit={4}";
+        private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/{1}/account/info/?application_id={2}&account_id={0}";
+        private const string URL_GET_PLAYER_RATINGS = @"http://api.worldoftanks.{3}/{1}/account/ratings/?application_id={2}&account_id={0}";
+        private const string URL_GET_PLAYER_TANKS = @"http://api.worldoftanks.{3}/{1}/account/tanks/?application_id={2}&account_id={0}";
+        private const string URL_GET_CLAN_INFO = @"http://api.worldoftanks.{3}/{1}/clan/info/?application_id={2}&clan_id={0}";
+        private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/{1}/account/list/?application_id={2}&search={0}&limit={4}";
+        private const string URL_SEARCH_CLAN = @"http://api.worldoftanks.{3}/{1}/clan/list/?application_id={2}&search={0}&limit={4}";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
         private static readonly object _syncObject = new object();
@@ -38,7 +40,8 @@ namespace WotDossier.Dal
         private readonly Dictionary<int, TankInfo> _tanksDictionary;
         private readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        
+        private Dictionary<int, TankServerInfo> _serverTanksDictionary;
+
         /// <summary>
         /// Tanks dictionary
         /// KEY - tankid, countryid
@@ -53,6 +56,11 @@ namespace WotDossier.Dal
             get { return _iconsDictionary; }
         }
 
+        public Dictionary<int, TankServerInfo> ServerTanksDictionary
+        {
+            get { return _serverTanksDictionary; }
+        }
+
         public Dictionary<string, Map> Maps
         {
             get { return _maps; }
@@ -64,6 +72,7 @@ namespace WotDossier.Dal
         private WotApiClient()
         {
             _tanksDictionary = ReadTanksDictionary();
+            _serverTanksDictionary = ReadServerTanksDictionary();
             _maps = ReadMaps();
         }
 
@@ -188,6 +197,17 @@ namespace WotDossier.Dal
             return tanks.ToDictionary(x => x.UniqueId());
         }
 
+        private Dictionary<int, TankServerInfo> ReadServerTanksDictionary()
+        {
+            using (StreamReader re = new StreamReader(@"External\server_tanks.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                var parsedData = se.Deserialize<JObject>(reader);
+                return JsonConvert.DeserializeObject<Dictionary<int, TankServerInfo>>(parsedData["data"].ToString());
+            }
+        }
+
         public static Dictionary<string, Map> ReadMaps()
         {
             List<Map> maps = null;
@@ -221,7 +241,7 @@ namespace WotDossier.Dal
 
             try
             {
-                string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 stream = response.GetResponseStream();
@@ -230,8 +250,15 @@ namespace WotDossier.Dal
                 {
                     JsonTextReader reader = new JsonTextReader(streamReader);
                     JsonSerializer se = new JsonSerializer();
-                    PlayerStat loadPlayerStat = se.Deserialize<PlayerStat>(reader);
-                    return loadPlayerStat;
+                    PlayerStat playerStat = se.Deserialize<PlayerStat>(reader);
+                    playerStat.dataField = playerStat.data[playerId];
+                    playerStat.dataField.ratings = GetPlayerRatings(settings, playerId);
+                    playerStat.dataField.vehicles = GetPlayerTanks(settings, playerId);
+                    if (playerStat.dataField.clan != null)
+                    {
+                        playerStat.dataField.clanData = LoadClan(settings, playerStat.dataField.clan.clan_id);
+                    }
+                    return playerStat;
                 }
             }
             catch (Exception e)
@@ -239,6 +266,76 @@ namespace WotDossier.Dal
                 _log.Error("Can't get player info from server", e);
                 throw new PlayerInfoLoadException("Error on getting player data from server", e);
             }
+        }
+
+        private List<VehicleStat> GetPlayerTanks(AppSettings settings, int playerId)
+        {
+            try
+            {
+                string url = string.Format(URL_GET_PLAYER_TANKS, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                using (Stream stream = response.GetResponseStream())
+                {
+                    if (stream != null)
+                    {
+                        StreamReader streamReader = new StreamReader(stream);
+                        JsonTextReader reader = new JsonTextReader(streamReader);
+                        JsonSerializer se = new JsonSerializer();
+                        JObject parsedData = (JObject)se.Deserialize(reader);
+
+                        if (parsedData["data"].Any())
+                        {
+                            List<VehicleStat> tanks = JsonConvert.DeserializeObject<List<VehicleStat>>(parsedData["data"][playerId.ToString()].ToString());
+                            foreach (VehicleStat tank in tanks)
+                            {
+                                if (ServerTanksDictionary.ContainsKey(tank.tank_id))
+                                {
+                                    tank.tank = ServerTanksDictionary[tank.tank_id];
+                                }
+                            }
+                            return tanks;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on player search", e);
+            }
+
+            return null;
+        }
+
+        private Ratings GetPlayerRatings(AppSettings settings, int playerId)
+        {
+            try
+            {
+                string url = string.Format(URL_GET_PLAYER_RATINGS, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                using (Stream stream = response.GetResponseStream())
+                {
+                    if (stream != null)
+                    {
+                        StreamReader streamReader = new StreamReader(stream);
+                        JsonTextReader reader = new JsonTextReader(streamReader);
+                        JsonSerializer se = new JsonSerializer();
+                        JObject parsedData = (JObject)se.Deserialize(reader);
+
+                        if (parsedData["data"].Any())
+                        {
+                            return JsonConvert.DeserializeObject<Ratings>(parsedData["data"][playerId.ToString()].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on player search", e);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -254,7 +351,7 @@ namespace WotDossier.Dal
 
             try
             {
-                string url = string.Format(URL_GET_CLAN_INFO, clanId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                string url = string.Format(URL_GET_CLAN_INFO, clanId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 Stream stream = response.GetResponseStream();
@@ -264,8 +361,8 @@ namespace WotDossier.Dal
                     JsonTextReader reader = new JsonTextReader(streamReader);
                     JsonSerializer se = new JsonSerializer();
                     JObject parsedData = (JObject)se.Deserialize(reader);
-                    ClanData loadPlayerStat = JsonConvert.DeserializeObject<ClanData>(parsedData["data"].ToString());
-                    return loadPlayerStat;
+                    ClanData clan = JsonConvert.DeserializeObject<ClanData>(parsedData["data"][clanId.ToString()].ToString());
+                    return clan;
                 }
             }
             catch (Exception e)
@@ -287,7 +384,7 @@ namespace WotDossier.Dal
 #else
             try
             {
-                string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, 1);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
@@ -299,10 +396,7 @@ namespace WotDossier.Dal
                         JsonSerializer se = new JsonSerializer();
                         JObject parsedData = (JObject)se.Deserialize(reader);
 
-                        if (parsedData["status"].ToString() != "error" && parsedData["data"]["items"].Any())
-                        {
-                            return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"]["items"][0].ToString());
-                        }
+                        return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"].FirstOrDefault().ToString());
                     }
                 }
             }
@@ -320,11 +414,11 @@ namespace WotDossier.Dal
         /// </summary>
         /// <param name="settings">The settings.</param>
         /// <returns>First found player</returns>
-        public List<ClanSearchJson> SearchClan(AppSettings settings, string clanName, int count)
+        public List<PlayerSearchJson> SearchPlayer(AppSettings settings, string playerName, int limit)
         {
             try
             {
-                string url = string.Format(URL_SEARCH_CLAN, clanName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server, count);
+                string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, limit);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
@@ -336,9 +430,45 @@ namespace WotDossier.Dal
                         JsonSerializer se = new JsonSerializer();
                         JObject parsedData = (JObject)se.Deserialize(reader);
 
-                        if (parsedData["status"].ToString() != "error" && parsedData["data"]["items"].Any())
+                        if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
                         {
-                            return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"]["items"].ToString());
+                            return JsonConvert.DeserializeObject<List<PlayerSearchJson>>(parsedData["data"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on player search", e);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Searches the player.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        /// <returns>First found player</returns>
+        public List<ClanSearchJson> SearchClan(AppSettings settings, string clanName, int count)
+        {
+            try
+            {
+                string url = string.Format(URL_SEARCH_CLAN, clanName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, count);
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                using (Stream stream = response.GetResponseStream())
+                {
+                    if (stream != null)
+                    {
+                        StreamReader streamReader = new StreamReader(stream);
+                        JsonTextReader reader = new JsonTextReader(streamReader);
+                        JsonSerializer se = new JsonSerializer();
+                        JObject parsedData = (JObject)se.Deserialize(reader);
+
+                        if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
+                        {
+                            return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"].ToString());
                         }
                     }
                 }

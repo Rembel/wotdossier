@@ -94,10 +94,10 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatisticEntity entity = new PlayerStatisticEntity();
             entity.Update(new PlayerStatAdapter(playerStat));
             PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
-            statistic.Name = playerStat.data.name;
-            if (playerStat.data.clan != null && playerStat.data.clan.clan != null)
+            statistic.Name = playerStat.dataField.nickname;
+            if (playerStat.dataField.clan != null && playerStat.dataField.clan != null)
             {
-                Clan = new PlayerStatisticClanViewModel(playerStat.data.clan);
+                Clan = new PlayerStatisticClanViewModel(playerStat.dataField.clanData, playerStat.dataField.clan.role, playerStat.dataField.clan.since);
             }
 
             PlayerStatistic = statistic;

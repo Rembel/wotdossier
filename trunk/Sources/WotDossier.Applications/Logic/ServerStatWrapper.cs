@@ -15,13 +15,20 @@ namespace WotDossier.Applications.Logic
 
             if (playerStat != null && playerStat.data != null)
             {
-                Clan = playerStat.data.clan;
-                Ratings = playerStat.data.ratings;
+                Clan = playerStat.dataField.clanData;
+                if (playerStat.dataField.clan != null)
+                {
+                    Role = playerStat.dataField.clan.role;
+                    Since = playerStat.dataField.clan.since;
+                }
+                Ratings = playerStat.dataField.ratings;
             }
         }
 
         public Ratings Ratings { get; set; }
 
-        public Clan Clan { get; set; }
+        public ClanData Clan { get; set; }
+        public string Role { get; set; }
+        public long Since { get; set; }
     }
 }

@@ -11,7 +11,10 @@ namespace WotDossier.Applications.ViewModel
         {
             id = clan.clan.id;
             name = clan.clan.name;
-            abbreviation = string.Format("[{0}]", clan.clan.abbreviation);
+            if (!string.IsNullOrEmpty(clan.clan.abbreviation))
+            {
+                abbreviation = string.Format("[{0}]", clan.clan.abbreviation);
+            }
             if (!string.IsNullOrEmpty(clan.clan.color))
             {
                 color = (Color) ColorConverter.ConvertFromString(clan.clan.color);

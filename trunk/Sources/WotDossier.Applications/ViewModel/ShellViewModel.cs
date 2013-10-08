@@ -466,6 +466,11 @@ namespace WotDossier.Applications.ViewModel
                 viewModel.Init(clan);
                 viewModel.Show();
             }
+            else
+            {
+                MessageBox.Show(Resources.Resources.Msg_CantGetClanDataFromServer, Resources.Resources.WindowCaption_Information,
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void OnPlayReplay(ReplayFile replay)
@@ -737,56 +742,65 @@ namespace WotDossier.Applications.ViewModel
             ProgressView.Execute((Window)ViewTyped, Resources.Resources.ProgressTitle_Loading_replays,
                 (bw, we) =>
                 {
-                    //set thread culture
-                    SetUICulture();
-
-                    ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
-
-                    if (settings != null && !string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
+                    try
                     {
-                        FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName);
+//set thread culture
+                        SetUICulture();
 
-                        List<TankJson> tanks;
+                        ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
 
-                        if (cacheFile != null)
+                        if (settings != null && !string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
                         {
-                            //convert dossier cache file to json
-                            CacheHelper.BinaryCacheToJson(cacheFile);
+                            FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName);
 
-                            tanks = LoadTanks(cacheFile);
+                            List<TankJson> tanks;
 
-                            PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
-                            ProgressView.Report(bw, 25, string.Empty);
-
-                            PlayerStatisticViewModel clone = PlayerStatistic.Clone();
-
-                            if (_sessionStartStatistic == null)
+                            if (cacheFile != null)
                             {
-                                //save start session statistic
-                                _sessionStartStatistic = clone;
+                                //convert dossier cache file to json
+                                CacheHelper.BinaryCacheToJson(cacheFile);
+
+                                tanks = LoadTanks(cacheFile);
+
+                                PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
+                                ProgressView.Report(bw, 25, string.Empty);
+
+                                PlayerStatisticViewModel clone = PlayerStatistic.Clone();
+
+                                if (_sessionStartStatistic == null)
+                                {
+                                    //save start session statistic
+                                    _sessionStartStatistic = clone;
+                                }
+                                else
+                                {
+                                    clone.SetPreviousStatistic(_sessionStartStatistic);
+                                }
+
+                                SessionStatistic = clone;
+
+                                InitTanksStatistic(tanks);
+
+                                ProgressView.Report(bw, 50, string.Empty);
+
+                                InitChart();
+                                ProgressView.Report(bw, 100, string.Empty);
                             }
                             else
                             {
-                                clone.SetPreviousStatistic(_sessionStartStatistic);
+                                MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
+                                    MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
-
-                            SessionStatistic = clone;
-
-                            InitTanksStatistic(tanks);
-
-                            ProgressView.Report(bw, 50, string.Empty);
-
-                            InitChart();
-                            ProgressView.Report(bw, 100, string.Empty);
                         }
-                        else
-                        {
-                            MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
-                                            MessageBoxButton.OK, MessageBoxImage.Warning);
-                        }
+
+                        LoadReplaysList();
                     }
-
-                    LoadReplaysList();
+                    catch (Exception e)
+                    {
+                        _log.Error("Error on data load", e);
+                        MessageBox.Show(Resources.Resources.Msg_ErrorOnDataLoad, Resources.Resources.WindowCaption_Error,
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 });
         }
 

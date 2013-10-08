@@ -165,14 +165,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 PlayerSearchJson player = null;
                 
-                try
-                {
-                    player = WotApiClient.Instance.SearchPlayer(_appSettings, _appSettings.PlayerName);
-                }
-                catch (Exception e)
-                {
-                    _log.Error("Can't get player info from server", e);
-                }
+                player = WotApiClient.Instance.SearchPlayer(_appSettings, _appSettings.PlayerName);
 
                 if (player != null)
                 {

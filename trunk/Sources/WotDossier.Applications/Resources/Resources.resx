@@ -301,4 +301,19 @@ Avg Spotted: {1:0.00}</value>
   <data name="Msg_CantFindPlayerData" xml:space="preserve">
     <value>Can't find player data - {0}</value>
   </data>
+  <data name="Msg_ErrorOnDataLoad" xml:space="preserve">
+    <value>Error on data load</value>
+  </data>
+  <data name="WindowCaption_SearchPlayer" xml:space="preserve">
+    <value>Search Player</value>
+  </data>
+  <data name="WindowCaption_SearchClan" xml:space="preserve">
+    <value>Search Clan</value>
+  </data>
+  <data name="WindowCaption_Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Msg_CantGetClanDataFromServer" xml:space="preserve">
+    <value>Can't get clan data from server</value>
+  </data>
 </root>

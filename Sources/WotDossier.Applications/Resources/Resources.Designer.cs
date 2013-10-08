@@ -338,11 +338,29 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t get clan data from server.
+        /// </summary>
+        internal static string Msg_CantGetClanDataFromServer {
+            get {
+                return ResourceManager.GetString("Msg_CantGetClanDataFromServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error on replay file read.
         /// </summary>
         internal static string Msg_Error_on_replay_file_read {
             get {
                 return ResourceManager.GetString("Msg_Error_on_replay_file_read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error on data load.
+        /// </summary>
+        internal static string Msg_ErrorOnDataLoad {
+            get {
+                return ResourceManager.GetString("Msg_ErrorOnDataLoad", resourceCulture);
             }
         }
         
@@ -577,6 +595,33 @@ namespace WotDossier.Applications.Resources {
         internal static string WindowCaption_Error {
             get {
                 return ResourceManager.GetString("WindowCaption_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string WindowCaption_Information {
+            get {
+                return ResourceManager.GetString("WindowCaption_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Clan.
+        /// </summary>
+        internal static string WindowCaption_SearchClan {
+            get {
+                return ResourceManager.GetString("WindowCaption_SearchClan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Player.
+        /// </summary>
+        internal static string WindowCaption_SearchPlayer {
+            get {
+                return ResourceManager.GetString("WindowCaption_SearchPlayer", resourceCulture);
             }
         }
         

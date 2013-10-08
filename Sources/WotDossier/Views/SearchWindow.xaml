@@ -5,7 +5,7 @@
         xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
-        Title="" MinHeight="768" MinWidth="1024" Background="Transparent" WindowStartupLocation="CenterOwner">
+        Title="{Binding Title}" MinHeight="768" MinWidth="1024" Background="Transparent" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>

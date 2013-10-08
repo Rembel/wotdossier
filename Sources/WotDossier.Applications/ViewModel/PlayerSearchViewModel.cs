@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Windows.Documents;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
@@ -32,6 +31,14 @@ namespace WotDossier.Applications.ViewModel
         }
 
         public string SearchText { get; set; }
+
+        public string Title
+        {
+            get
+            {
+                return Resources.Resources.WindowCaption_SearchPlayer;
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and

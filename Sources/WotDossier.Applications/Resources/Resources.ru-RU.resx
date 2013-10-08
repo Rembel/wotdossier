@@ -301,4 +301,19 @@
   <data name="Msg_CantFindPlayerData" xml:space="preserve">
     <value>Не удалось получить информацию об игроке - {0}</value>
   </data>
+  <data name="Msg_ErrorOnDataLoad" xml:space="preserve">
+    <value>Ошибка при загрузке данных</value>
+  </data>
+  <data name="WindowCaption_SearchPlayer" xml:space="preserve">
+    <value>Поиск игрока</value>
+  </data>
+  <data name="WindowCaption_SearchClan" xml:space="preserve">
+    <value>Поиск клана</value>
+  </data>
+  <data name="WindowCaption_Information" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="Msg_CantGetClanDataFromServer" xml:space="preserve">
+    <value>Не удалось получить данные о клане с сервера</value>
+  </data>
 </root>

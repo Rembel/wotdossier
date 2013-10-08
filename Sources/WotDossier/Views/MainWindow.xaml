@@ -21,7 +21,7 @@
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Search}">
                     <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}"></MenuItem>
-                    <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}"></MenuItem>
+                    <!--<MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}"></MenuItem>-->
                 </MenuItem>
                 <MenuItem Header="Сравнить" Command="{Binding CompareCommand}"></MenuItem>
             </Menu>

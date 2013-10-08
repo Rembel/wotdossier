@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Windows;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
@@ -32,6 +33,14 @@ namespace WotDossier.Applications.ViewModel
         }
 
         public string SearchText { get; set; }
+
+        public string Title
+        {
+            get
+            {
+                return Resources.Resources.WindowCaption_SearchClan;
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
@@ -66,6 +75,11 @@ namespace WotDossier.Applications.ViewModel
                     ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
                     viewModel.Init(clan);
                     viewModel.Show();
+                }
+                else
+                {
+                    MessageBox.Show(Resources.Resources.Msg_CantGetClanDataFromServer, Resources.Resources.WindowCaption_Information,
+                        MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }

@@ -225,24 +225,19 @@ namespace WotDossier.Dal
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
                 stream = response.GetResponseStream();
+
+                using (StreamReader streamReader = new StreamReader(stream))
+                {
+                    JsonTextReader reader = new JsonTextReader(streamReader);
+                    JsonSerializer se = new JsonSerializer();
+                    PlayerStat loadPlayerStat = se.Deserialize<PlayerStat>(reader);
+                    return loadPlayerStat;
+                }
             }
             catch (Exception e)
             {
                 _log.Error("Can't get player info from server", e);
                 throw new PlayerInfoLoadException("Error on getting player data from server", e);
-            }
-
-            if (stream == null)
-            {
-                return null;
-            }
-
-            using (StreamReader streamReader = new StreamReader(stream))
-            {
-                JsonTextReader reader = new JsonTextReader(streamReader);
-                JsonSerializer se = new JsonSerializer();
-                PlayerStat loadPlayerStat = se.Deserialize<PlayerStat>(reader);
-                return loadPlayerStat;
             }
         }
 
@@ -257,34 +252,27 @@ namespace WotDossier.Dal
                 return null;
             }
 
-            Stream stream;
-
             try
             {
                 string url = string.Format(URL_GET_CLAN_INFO, clanId, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
                 WebResponse response = request.GetResponse();
-                stream = response.GetResponseStream();
+                Stream stream = response.GetResponseStream();
+                
+                using (StreamReader streamReader = new StreamReader(stream))
+                {
+                    JsonTextReader reader = new JsonTextReader(streamReader);
+                    JsonSerializer se = new JsonSerializer();
+                    JObject parsedData = (JObject)se.Deserialize(reader);
+                    ClanData loadPlayerStat = JsonConvert.DeserializeObject<ClanData>(parsedData["data"].ToString());
+                    return loadPlayerStat;
+                }
             }
             catch (Exception e)
             {
                 _log.Error("Can't get clan info from server", e);
-                throw new PlayerInfoLoadException("Error on getting clan data from server", e);
             }
-
-            if (stream == null)
-            {
-                return null;
-            }
-
-            using (StreamReader streamReader = new StreamReader(stream))
-            {
-                JsonTextReader reader = new JsonTextReader(streamReader);
-                JsonSerializer se = new JsonSerializer();
-                JObject parsedData = (JObject)se.Deserialize(reader);
-                ClanData loadPlayerStat = JsonConvert.DeserializeObject<ClanData>(parsedData["data"].ToString());
-                return loadPlayerStat;
-            }
+            return null;
         }
 
         /// <summary>
@@ -297,25 +285,33 @@ namespace WotDossier.Dal
 #if DEBUG
             return new PlayerSearchJson { created_at = 0, id = 10800699, name = "rembel"};
 #else
-            string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
-            WebRequest request = HttpWebRequest.Create(url);
-            WebResponse response = request.GetResponse();
-            using (Stream stream = response.GetResponseStream())
+            try
             {
-                if (stream != null)
+                string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server);
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                using (Stream stream = response.GetResponseStream())
                 {
-                    StreamReader streamReader = new StreamReader(stream);
-                    JsonTextReader reader = new JsonTextReader(streamReader);
-                    JsonSerializer se = new JsonSerializer();
-                    JObject parsedData = (JObject)se.Deserialize(reader);
-
-                    if (parsedData["data"]["items"].Any())
+                    if (stream != null)
                     {
-                        return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"]["items"][0].ToString());
+                        StreamReader streamReader = new StreamReader(stream);
+                        JsonTextReader reader = new JsonTextReader(streamReader);
+                        JsonSerializer se = new JsonSerializer();
+                        JObject parsedData = (JObject)se.Deserialize(reader);
+
+                        if (parsedData["status"].ToString() != "error" && parsedData["data"]["items"].Any())
+                        {
+                            return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"]["items"][0].ToString());
+                        }
                     }
                 }
-                return null;
             }
+            catch (Exception e)
+            {
+                _log.Error("Error on player search", e);
+            }
+
+            return null;
 #endif
         }
 
@@ -326,25 +322,32 @@ namespace WotDossier.Dal
         /// <returns>First found player</returns>
         public List<ClanSearchJson> SearchClan(AppSettings settings, string clanName, int count)
         {
-            string url = string.Format(URL_SEARCH_CLAN, clanName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server, count);
-            WebRequest request = HttpWebRequest.Create(url);
-            WebResponse response = request.GetResponse();
-            using (Stream stream = response.GetResponseStream())
+            try
             {
-                if (stream != null)
+                string url = string.Format(URL_SEARCH_CLAN, clanName, WotDossierSettings.SearchApiVersion, WotDossierSettings.SourceToken, settings.Server, count);
+                WebRequest request = HttpWebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                using (Stream stream = response.GetResponseStream())
                 {
-                    StreamReader streamReader = new StreamReader(stream);
-                    JsonTextReader reader = new JsonTextReader(streamReader);
-                    JsonSerializer se = new JsonSerializer();
-                    JObject parsedData = (JObject)se.Deserialize(reader);
-
-                    if (parsedData["data"]["items"].Any())
+                    if (stream != null)
                     {
-                        return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"]["items"].ToString());
+                        StreamReader streamReader = new StreamReader(stream);
+                        JsonTextReader reader = new JsonTextReader(streamReader);
+                        JsonSerializer se = new JsonSerializer();
+                        JObject parsedData = (JObject)se.Deserialize(reader);
+
+                        if (parsedData["status"].ToString() != "error" && parsedData["data"]["items"].Any())
+                        {
+                            return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"]["items"].ToString());
+                        }
                     }
                 }
-                return null;
             }
+            catch (Exception e)
+            {
+                _log.Error("Error on clan search", e);
+            }
+            return null;
         }
 
         public Replay ReadReplay(string json)

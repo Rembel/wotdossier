@@ -2934,6 +2934,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compare.
+        /// </summary>
+        public static string MenuItem_Compare {
+            get {
+                return ResourceManager.GetString("MenuItem_Compare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string MenuItem_Header_About {
@@ -2943,7 +2952,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Load.
+        ///   Looks up a localized string similar to _Load.
         /// </summary>
         public static string MenuItem_Header_Load {
             get {
@@ -2952,7 +2961,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to _Settings.
         /// </summary>
         public static string MenuItem_Header_Settings {
             get {

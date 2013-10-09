@@ -122,10 +122,10 @@
     <value>images\award-images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuItem_Header_Load" xml:space="preserve">
-    <value>Load</value>
+    <value>_Load</value>
   </data>
   <data name="MenuItem_Header_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>_Settings</value>
   </data>
   <data name="Column_Header_Tier" xml:space="preserve">
     <value>Tier</value>
@@ -1483,5 +1483,8 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   </data>
   <data name="MenuItem_SearchPlayers" xml:space="preserve">
     <value>Players</value>
+  </data>
+  <data name="MenuItem_Compare" xml:space="preserve">
+    <value>Compare</value>
   </data>
 </root>

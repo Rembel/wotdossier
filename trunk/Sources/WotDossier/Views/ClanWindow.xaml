@@ -5,6 +5,7 @@
         xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:Converters="clr-namespace:WotDossier.Converters"
         Title="{Binding Path=DataContext.FullName, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="1024" Background="Transparent" Icon="..\Resources\Images\faces.png" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
@@ -21,7 +22,7 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Margin="10" Width="60" Height="60" Grid.RowSpan="4" Source="..\Resources\Images\Medals\Evileye.png" VerticalAlignment="Top"></Image>
+            <Image Margin="10" Width="60" Height="60" Grid.RowSpan="4" Source="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}" VerticalAlignment="Top"></Image>
             <TextBlock FontFamily="arial,sans-serif" FontSize="30" FontWeight="400" Foreground="#F9D088" Grid.Row="0" Grid.Column="1" Text="{Binding FullName}"></TextBlock>
             <TextBlock FontFamily="arial,sans-serif" FontSize="24" FontWeight="400" Foreground="#BABCBF" Grid.Row="1" Grid.Column="1" Text="{Binding Motto}"></TextBlock>
             <TextBlock FontFamily="arial,sans-serif" FontSize="11" Foreground="#606061" Grid.Row="2" Grid.Column="1" Text="{Binding Created, StringFormat='dd.MM.yyyy'}" VerticalAlignment="Center"></TextBlock>

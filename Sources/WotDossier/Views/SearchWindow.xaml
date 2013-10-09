@@ -6,7 +6,7 @@
         xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         Title="{Binding Title}" MinHeight="768" MinWidth="1024" Background="Transparent" WindowStartupLocation="CenterOwner">
-    <Grid>
+    <Grid FocusManager.FocusedElement="{Binding ElementName=txtSearch}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -15,8 +15,12 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox Text="{Binding SearchText}" Width="200"></TextBox>
-        <Button Grid.Column="1" HorizontalAlignment="Left" Content="{x:Static Resources:Resources.Btn_Search}" Command="{Binding SearchCommand}"></Button>
+        <TextBox x:Name="txtSearch" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" TabIndex="0">
+            <TextBox.InputBindings>
+                <KeyBinding Command="{Binding SearchCommand}" Key="Enter"/>
+            </TextBox.InputBindings>
+        </TextBox>
+        <Button Grid.Column="1" HorizontalAlignment="Left" Content="{x:Static Resources:Resources.Btn_Search}" Command="{Binding SearchCommand}" IsDefault="True" />
         <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding List}" VerticalAlignment="Stretch" Name="dgResult" IsReadOnly="True" AutoGenerateColumns="False"
                   controls:DataGridBehavior.DisplayRowNumber="True">
             <DataGrid.InputBindings>

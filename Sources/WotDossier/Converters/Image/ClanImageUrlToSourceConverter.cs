@@ -9,6 +9,7 @@ using Common.Logging;
 using WotDossier.Applications;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Domain;
+using WotDossier.Domain.Player;
 using WotDossier.Framework.Forms;
 
 namespace WotDossier.Converters
@@ -23,14 +24,14 @@ namespace WotDossier.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            PlayerStatisticClanViewModel clan = (PlayerStatisticClanViewModel) value;
+            ClanData clan = (ClanData)value;
 
             if (clan == null)
             {
                 return null;
             }
 
-            string url = clan.large;
+            string url = clan.emblems.large;
 
             if (!string.IsNullOrEmpty(url))
             {

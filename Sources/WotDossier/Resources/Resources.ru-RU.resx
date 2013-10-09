@@ -274,10 +274,10 @@
     <value>Побед:</value>
   </data>
   <data name="MenuItem_Header_Load" xml:space="preserve">
-    <value>Загрузить</value>
+    <value>_Загрузить</value>
   </data>
   <data name="MenuItem_Header_Settings" xml:space="preserve">
-    <value>Настройки</value>
+    <value>_Настройки</value>
   </data>
   <data name="Tab_Header_BattleAwards" xml:space="preserve">
     <value>Боевые награды</value>
@@ -1668,5 +1668,8 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   </data>
   <data name="MenuItem_SearchPlayers" xml:space="preserve">
     <value>Игроков</value>
+  </data>
+  <data name="MenuItem_Compare" xml:space="preserve">
+    <value>Сравнить</value>
   </data>
 </root>

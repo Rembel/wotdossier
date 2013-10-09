@@ -45,7 +45,7 @@
                                 <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
                             </Grid>
                             <controls:ClanView Margin="10" Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
-                                           ClanImageSource="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                                           ClanImageSource="{Binding PlayerStatistic.Clan.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
                                            Days="{Binding PlayerStatistic.Clan.Days}" Position="{Binding PlayerStatistic.Clan.role}" Date="{Binding PlayerStatistic.Clan.since}" Abbreviation="{Binding PlayerStatistic.Clan.abbreviation}" 
                                            ClanName="{Binding PlayerStatistic.Clan.name}" OpenClanCommand="{Binding OpenClanCommand}">
                                 
@@ -78,7 +78,7 @@
 
                                     <d3:PieChart.MarkerTemplate>
                                         <DataTemplate>
-                                            <d3:PieChartItem>
+                                            <d3:PieChartItem Background="Black">
                                                 <ToolTipService.ToolTip>
                                                     <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock>

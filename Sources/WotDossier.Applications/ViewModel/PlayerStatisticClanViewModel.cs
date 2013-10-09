@@ -15,6 +15,7 @@ namespace WotDossier.Applications.ViewModel
             color = (Color)ColorConverter.ConvertFromString(clan.clan_color ?? "#BD3838");
 
             since = Utils.UnixDateToDateTime(member_since);
+            Clan = clan;
             role = member_role;
             small = clan.emblems.small;
             large = clan.emblems.large;
@@ -37,5 +38,7 @@ namespace WotDossier.Applications.ViewModel
         public string large { get; set; }
         public string bw_tank { get; set; }
         public string medium { get; set; }
+
+        public ClanData Clan { get; set; }
     }
 }

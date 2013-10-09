@@ -127,6 +127,9 @@ namespace WotDossier.Applications.ViewModel
             Created = Utils.UnixDateToDateTime(clan.created_at);
             Motto = clan.motto;
             Members = clan.members.Values.Select(x => new ClanMemberViewModel(x)).OrderBy(x => x.Name).ToList();
+            Clan = clan;
         }
+
+        public ClanData Clan { get; set; }
     }
 }

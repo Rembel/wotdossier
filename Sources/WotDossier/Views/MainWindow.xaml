@@ -9,6 +9,12 @@
         xmlns:views="clr-namespace:WotDossier.Views"
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         Title="WotDossier" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>
+        <KeyBinding Command="{Binding SettingsCommand}" Key="P" Modifiers="Control"/>
+        <KeyBinding Command="{Binding SearchPlayersCommand}" Key="F" Modifiers="Control"/>
+        <KeyBinding Command="{Binding SearchClansCommand}" Key="H" Modifiers="Control"/>
+    </Window.InputBindings>
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="23">
             <Grid.ColumnDefinitions>
@@ -16,14 +22,14 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Menu>
-                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}"></MenuItem>
+                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}" InputGestureText="F5" ></MenuItem>
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Search}">
                     <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}"></MenuItem>
                     <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="Сравнить" Command="{Binding CompareCommand}"></MenuItem>
+                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Compare}" Command="{Binding CompareCommand}"></MenuItem>
             </Menu>
             <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Grid.Column="1" Height="17" Width="100" HorizontalAlignment="Center"/>
         </Grid>

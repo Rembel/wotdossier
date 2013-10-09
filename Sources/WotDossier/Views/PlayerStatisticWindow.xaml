@@ -12,7 +12,7 @@
             </Grid.RowDefinitions>
         <TextBlock  Margin="20" Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" HorizontalAlignment="Center"></TextBlock>
             <controls:ClanView  Grid.Row="1" Margin="10" Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}" HorizontalAlignment="Center"
-                                ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                                ClanImageSource="{Binding Clan.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
                                            Days="{Binding Clan.Days}" Position="{Binding Clan.role}" Date="{Binding Clan.since}" Abbreviation="{Binding Clan.abbreviation}" 
                                            ClanName="{Binding Clan.name}" OpenClanCommand="{Binding OpenClanCommand}"/>
             <controls:StatisticView Grid.Row="2" DataContext="{Binding PlayerStatistic}" HorizontalContentAlignment="Center" />

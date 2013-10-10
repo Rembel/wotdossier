@@ -36,5 +36,9 @@
 			<Name>WotDossier.Applications</Name>
 			<Project>{BE01E7C1-5EE5-4EB6-AC4D-79ECBD42B75C}</Project>
 		</ProjectReference>
+		<ProjectReference Include="..\WotDossier.Dal\WotDossier.Dal.csproj">
+			<Name>WotDossier.Dal</Name>
+			<Project>{FC09CE1A-0C77-488D-8169-3D825D998E2C}</Project>
+		</ProjectReference>
 	</ItemGroup>
 </Project>

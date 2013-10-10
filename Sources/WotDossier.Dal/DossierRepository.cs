@@ -110,6 +110,11 @@ namespace WotDossier.Dal
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
         {
+            if (currentSnapshotUpdated == DateTime.MinValue)
+            {
+                return true;
+            }
+
             newSnapshotUpdated = newSnapshotUpdated.AddHours(-WotDossierSettings.SliceTime);
             currentSnapshotUpdated = currentSnapshotUpdated.AddHours(-WotDossierSettings.SliceTime);
             return newSnapshotUpdated.Date != currentSnapshotUpdated.Date;
@@ -118,6 +123,7 @@ namespace WotDossier.Dal
         public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
         {
             _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
             PlayerEntity playerEntity = _dataProvider.QueryOver<PlayerEntity>()
                                         .Where(x => x.PlayerId == id)
                                         .Take(1)
@@ -131,6 +137,7 @@ namespace WotDossier.Dal
                 playerEntity.Creaded = creaded;
 
                 _dataProvider.Save(playerEntity);
+                _dataProvider.CommitTransaction();
             }
             _dataProvider.CloseSession();
             return playerEntity;

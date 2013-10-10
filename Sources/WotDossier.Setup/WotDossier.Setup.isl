@@ -344,6 +344,7 @@
 		<row><td>System.Data.SqlServerCe.dll</td><td>{6AD92650-4A1F-4B40-B085-852672BB16F7}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlserverce.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td>{B26D2E43-0F42-4CD4-B35D-45363B051174}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.loca</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Content_Files</td><td>{6F462EF6-ECC0-4B91-809B-4719CF893500}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Dal.Localized_resources</td><td>{450B3710-9725-441F-9E0A-FDE548EDB975}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.dal.localized_res</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Localized_resources</td><td>{CDE56017-E1F2-4E25-8C3E-3769E48FD8F5}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.localized_resourc</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Primary_output</td><td>{2132674F-BB70-47A1-8131-FCB0919997B1}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
@@ -1868,6 +1869,7 @@
 		<row><td>AlwaysInstall</td><td>System.Data.SqlServerCe.dll</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Content_Files</td></row>
+		<row><td>AlwaysInstall</td><td>WotDossier.Dal.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Primary_output</td></row>
 	</table>
@@ -1888,6 +1890,7 @@
 		<row><td>system.data.sqlserverce.enti</td><td>System.Data.SqlServerCe.Entity.dll</td><td>SYSTEM~1.DLL|System.Data.SqlServerCe.Entity.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\System.Data.SqlServerCe.Entity.dll</td><td>1</td><td/></row>
 		<row><td>wotdossier.applications.loca</td><td>WotDossier.Applications.Localized_resources</td><td>WotDossier.Applications.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Applications&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.content_files</td><td>WotDossier.Content_Files</td><td>WotDossier.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|ContentFiles</td><td>3</td><td/></row>
+		<row><td>wotdossier.dal.localized_res</td><td>WotDossier.Dal.Localized_resources</td><td>WotDossier.Dal.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Dal&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.localized_resourc</td><td>WotDossier.Localized_resources</td><td>WotDossier.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.primary_output</td><td>WotDossier.Primary_output</td><td>WotDossier.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|Built</td><td>3</td><td/></row>
 	</table>
@@ -2150,6 +2153,7 @@
 		<row><td>System.Data.SqlServerCe.dll</td><td/><td/><td>_A36CE809_8A3F_402A_9AE5_0C5BFE4BFE99_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td/><td/><td>_F3B59643_AB83_4505_B162_7FBF698CE43B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Content_Files</td><td/><td/><td>_E61CB50C_1E44_44C2_A366_D49C081B809B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Dal.Localized_resources</td><td/><td/><td>_4A664420_71B9_4BB5_B9E0_F6C4263BBE2A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Localized_resources</td><td/><td/><td>_13CE0DCE_D1DF_4ABC_B59F_44C79843B5D4_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Primary_output</td><td/><td/><td>_6D6C096F_1D06_49B1_9DD5_E033060A1B4E_FILTER</td><td/><td/><td/><td/></row>
 	</table>

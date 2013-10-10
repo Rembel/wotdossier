@@ -8,32 +8,46 @@
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:views="clr-namespace:WotDossier.Views"
         xmlns:Converters="clr-namespace:WotDossier.Converters"
+        xmlns:color="clr-namespace:WotDossier.Converters.Color"
         Title="WotDossier" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
     <Window.InputBindings>
         <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>
         <KeyBinding Command="{Binding SettingsCommand}" Key="P" Modifiers="Control"/>
         <KeyBinding Command="{Binding SearchPlayersCommand}" Key="F" Modifiers="Control"/>
-        <KeyBinding Command="{Binding SearchClansCommand}" Key="H" Modifiers="Control"/>
+        <KeyBinding Command="{Binding SearchClansCommand}" Key="G" Modifiers="Control"/>
+        <KeyBinding Command="{Binding CompareCommand}" Key="H" Modifiers="Control"/>
     </Window.InputBindings>
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="23">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Menu>
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}" InputGestureText="F5" ></MenuItem>
-                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
-                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Search}">
-                    <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}"></MenuItem>
-                    <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}"></MenuItem>
+                    <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}" InputGestureText="Ctrl+F"></MenuItem>
+                    <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}" InputGestureText="Ctrl+G"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="{x:Static Resources:Resources.MenuItem_Compare}" Command="{Binding CompareCommand}"></MenuItem>
+                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
+                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
             </Menu>
-            <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Grid.Column="1" Height="17" Width="100" HorizontalAlignment="Center"/>
+            <Grid Grid.Column="1" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Resources:Resources.Settings_Period}"/>
+                <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="1" Width="150" ItemsSource="{Binding Periods}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Period}" />
+                <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="150" Visibility="{Binding PeriodsVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" ItemsSource="{Binding PrevDates}" ItemStringFormat="dd.MM.yyyy HH:mm" SelectedItem="{Binding PrevDate}" />
+                <TextBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="100" HorizontalAlignment="Left" Visibility="{Binding LastNBattlesVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}" />
+            </Grid>
+            <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Grid.Column="2" Height="17" Width="100" HorizontalAlignment="Center"/>
         </Grid>
-        <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
+        <TabControl Margin="0, 10, 0, 0" Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--Common tab-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Overall}" Name="tabCommon">
                 <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch"></tabs:CommonTabNew>
@@ -81,7 +95,7 @@
                                         </d3:BarChart.Resources>
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
-                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
@@ -109,7 +123,7 @@
                                         </d3:BarChart.Resources>
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
-                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
@@ -141,7 +155,7 @@
                                         </d3:BarChart.Resources>
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
-                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static Converters:EffectivityToColorConverter.Default}}"
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"

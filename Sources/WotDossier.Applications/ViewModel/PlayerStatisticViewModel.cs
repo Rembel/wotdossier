@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using WotDossier.Applications.Model;
 using WotDossier.Domain.Entities;
 
 namespace WotDossier.Applications.ViewModel
@@ -371,7 +372,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public PlayerStatisticClanViewModel Clan { get; set; }
+        public ClanModel Clan { get; set; }
 
         public PlayerStatisticViewModel Clone()
         {

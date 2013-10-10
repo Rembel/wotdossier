@@ -7,6 +7,7 @@
              xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -28,15 +29,15 @@
                               CommandParameter="{Binding}"/>
                 </ContextMenu>
                 <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-                    <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static Converters:EffectivityToColorConverter.Default}}" />
+                    <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
                 </Style>
 
                 <Style x:Key="DataGridCellWn6Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-                    <Setter Property="Background" Value="{Binding Path=WN6Rating, Converter={x:Static Converters:WN6ToColorConverter.Default}}" />
+                    <Setter Property="Background" Value="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}" />
                 </Style>
 
                 <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-                    <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static Converters:XvmRatingToColorConverter.Default}}" />
+                    <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" />
                 </Style>
             </DataGrid.Resources>
             <DataGrid.RowStyle>

@@ -95,7 +95,7 @@
     <Compile Include="Update\IDbUpdate.cs" />
     <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="ViewModel\BattleStatus.cs" />
-    <Compile Include="ViewModel\ClanMemberViewModel.cs" />
+    <Compile Include="Model\ClanMemberModel.cs" />
     <Compile Include="ViewModel\CombatTarget.cs" />
     <Compile Include="MedalHelper.cs" />
     <Compile Include="ViewModel\AddReplayFolderViewModel.cs" />
@@ -119,7 +119,7 @@
     <Compile Include="ViewModel\IDataPoint.cs" />
     <Compile Include="Events\OpenTankStatisticEvent.cs" />
     <Compile Include="ViewModel\PeriodStatisticViewModel.cs" />
-    <Compile Include="ViewModel\PlayerStatisticClanViewModel.cs" />
+    <Compile Include="Model\ClanModel.cs" />
     <Compile Include="ViewModel\PlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\ReplayViewModel.cs" />
     <Compile Include="ViewModel\Rows\ITankRowBase.cs" />

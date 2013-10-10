@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using Common.Logging;
+using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -18,74 +19,6 @@ namespace WotDossier.Applications.ViewModel
     public class ClanViewModel : ViewModel<IClanView>
     {
         private static readonly ILog _log = LogManager.GetLogger("ClanViewModel");
-
-        private static readonly string PropFullName = TypeHelper.GetPropertyName<ClanViewModel>(x => x.FullName);
-
-        private string _fullName;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string FullName
-        {
-            get { return _fullName; }
-            set
-            {
-                _fullName = value;
-                RaisePropertyChanged(PropFullName);
-            }
-        }
-
-        private static readonly string PropCreated = TypeHelper.GetPropertyName<ClanViewModel>(x => x.Created);
-
-        private DateTime _created;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime Created
-        {
-            get { return _created; }
-            set
-            {
-                _created = value;
-                RaisePropertyChanged(PropCreated);
-            }
-        }
-
-        private static readonly string PropMotto = TypeHelper.GetPropertyName<ClanViewModel>(x => x.Motto);
-
-        private string _motto;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Motto
-        {
-            get { return _motto; }
-            set
-            {
-                _motto = value;
-                RaisePropertyChanged(PropMotto);
-            }
-        }
-
-        private static readonly string PropMembers = TypeHelper.GetPropertyName<ClanViewModel>(x => x.Members);
-
-        private List<ClanMemberViewModel> _members;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public List<ClanMemberViewModel> Members
-        {
-            get { return _members; }
-            set
-            {
-                _members = value;
-                RaisePropertyChanged(PropMembers);
-            }
-        }
 
         public DelegateCommand<object> RowDoubleClickCommand { get; set; }
 
@@ -103,7 +36,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnRowDoubleClickCommand(object item)
         {
-            ClanMemberViewModel member = item as ClanMemberViewModel;
+            ClanMemberModel member = item as ClanMemberModel;
             if (member != null)
             {
                 PlayerStat playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), member.Id);
@@ -123,13 +56,9 @@ namespace WotDossier.Applications.ViewModel
 
         public void Init(ClanData clan)
         {
-            FullName = string.Format("[{0}] {1}", clan.abbreviation, clan.name);
-            Created = Utils.UnixDateToDateTime(clan.created_at);
-            Motto = clan.motto;
-            Members = clan.members.Values.Select(x => new ClanMemberViewModel(x)).OrderBy(x => x.Name).ToList();
-            Clan = clan;
+            Clan = new ClanModel(clan);
         }
 
-        public ClanData Clan { get; set; }
+        public ClanModel Clan { get; set; }
     }
 }

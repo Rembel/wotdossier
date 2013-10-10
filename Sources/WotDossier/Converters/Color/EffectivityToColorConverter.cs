@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using System.Windows.Media;
 
-namespace WotDossier.Converters
+namespace WotDossier.Converters.Color
 {
     public class EffectivityToColorConverter : IValueConverter
     {
@@ -18,17 +17,17 @@ namespace WotDossier.Converters
             if (eff != null)
             {
                 if (eff >= 1735)
-                    return Brushes.Purple;
+                    return EffRangeBrushes.Purple;
                 if (eff >= 1460)
-                    return Brushes.CornflowerBlue;
+                    return EffRangeBrushes.Blue;
                 if (eff >= 1140)
-                    return Brushes.Lime;
+                    return EffRangeBrushes.Green;
                 if (eff >= 860)
-                    return Brushes.Yellow;
+                    return EffRangeBrushes.Yellow;
                 if (eff >= 630)
-                    return Brushes.DarkOrange;
+                    return EffRangeBrushes.Orange;
             }
-            return Brushes.Red;
+            return EffRangeBrushes.Red;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

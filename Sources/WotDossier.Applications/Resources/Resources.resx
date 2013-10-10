@@ -316,4 +316,19 @@ Avg Spotted: {1:0.00}</value>
   <data name="Msg_CantGetClanDataFromServer" xml:space="preserve">
     <value>Can't get clan data from server</value>
   </data>
+  <data name="TabHeader_AllObservationPeriod" xml:space="preserve">
+    <value>All captured results</value>
+  </data>
+  <data name="TabHeader_Custom" xml:space="preserve">
+    <value>Results from {0}</value>
+  </data>
+  <data name="TabHeader_LastNBattles" xml:space="preserve">
+    <value>Last {0} Battles results</value>
+  </data>
+  <data name="TabHeader_LastWeek" xml:space="preserve">
+    <value>Last week results</value>
+  </data>
+  <data name="TabHeader_Recent" xml:space="preserve">
+    <value>Last day results</value>
+  </data>
 </root>

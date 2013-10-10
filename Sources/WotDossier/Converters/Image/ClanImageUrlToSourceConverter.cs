@@ -6,11 +6,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using Common.Logging;
-using WotDossier.Applications;
-using WotDossier.Applications.ViewModel;
-using WotDossier.Domain;
-using WotDossier.Domain.Player;
-using WotDossier.Framework.Forms;
+using WotDossier.Applications.Model;
 
 namespace WotDossier.Converters
 {
@@ -24,18 +20,18 @@ namespace WotDossier.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            ClanData clan = (ClanData)value;
+            ClanModel clan = (ClanModel)value;
 
             if (clan == null)
             {
                 return null;
             }
 
-            string url = clan.emblems.large;
+            string url = clan.Emblems.large;
 
             if (!string.IsNullOrEmpty(url))
             {
-                string fileName = clan.abbreviation.Replace("[", string.Empty).Replace("]", string.Empty);
+                string fileName = clan.Abbreviation.Replace("[", string.Empty).Replace("]", string.Empty);
 
                 string dir = Environment.CurrentDirectory + @"\IconsCache\";
                 string path = dir + fileName + ".png";

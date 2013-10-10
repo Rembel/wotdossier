@@ -18,8 +18,16 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="1" FontSize="17" FontWeight="Bold" Text="{Binding FirstName}"></TextBox>
-            <TextBox Grid.Column="2" FontSize="17" FontWeight="Bold" Text="{Binding SecondName}"></TextBox>
+            <TextBox Grid.Column="1" FontSize="17" FontWeight="Bold" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding CompareCommand}" Key="Enter"/>
+                </TextBox.InputBindings>
+            </TextBox>
+            <TextBox Grid.Column="2" FontSize="17" FontWeight="Bold" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding CompareCommand}" Key="Enter"/>
+                </TextBox.InputBindings>
+            </TextBox>
             <Button Grid.Column="3" Content="{x:Static Resources:Resources.Btn_ComparePlayers}" Command="{Binding CompareCommand}"></Button>
         </Grid>
 

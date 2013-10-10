@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:wotDossier="clr-namespace:WotDossier"
              xmlns:Converters="clr-namespace:WotDossier.Converters"
              xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -52,8 +53,8 @@
                                                   Place="{Binding Rating_IntegratedPlace}"
                                                   ValueDelta="{Binding Rating_IntegratedValueDelta}"
                                                   PlaceDelta="{Binding Rating_IntegratedPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_IntegratedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_IntegratedValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--W/B-->
                     <controls:RatingRow Image="..\Resources/Images/wb.png" Grid.Row="2"
@@ -63,8 +64,8 @@
                                                   Place="{Binding Rating_BattleAvgPerformancePlace}"
                                                   ValueDelta="{Binding Rating_BattleAvgPerformanceValueDelta}"
                                                   PlaceDelta="{Binding Rating_BattleAvgPerformancePlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattleAvgPerformanceValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_BattleAvgPerformanceValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--E/B-->
                     <controls:RatingRow Image="..\Resources/Images/eb.png" Grid.Row="3"
@@ -74,8 +75,8 @@
                                                   Place="{Binding Rating_BattleAvgXpPlace}"
                                                   ValueDelta="{Binding Rating_BattleAvgXpValueDelta}"
                                                   PlaceDelta="{Binding Rating_BattleAvgXpPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--WIN-->
                     <controls:RatingRow Image="..\Resources/Images/win.png" Grid.Row="4"
@@ -85,8 +86,8 @@
                                                   Place="{Binding Rating_BattleWinsPlace}"
                                                   ValueDelta="{Binding Rating_BattleWinsValueDelta}"
                                                   PlaceDelta="{Binding Rating_BattleWinsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--GPL-->
                     <controls:RatingRow Image="..\Resources/Images/gpl.png" Grid.Row="5"
@@ -96,8 +97,8 @@
                                                   Place="{Binding Rating_BattlesPlace}"
                                                   ValueDelta="{Binding Rating_BattlesValueDelta}"
                                                   PlaceDelta="{Binding Rating_BattlesPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattlesValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_BattlesValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--CPT-->
                     <controls:RatingRow Image="..\Resources/Images/cpt.png" Grid.Row="6"
@@ -107,8 +108,8 @@
                                                   Place="{Binding Rating_CapturedPointsPlace}"
                                                   ValueDelta="{Binding Rating_CapturedPointsValueDelta}"
                                                   PlaceDelta="{Binding Rating_CapturedPointsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_CapturedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_CapturedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_CapturedPointsValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_CapturedPointsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--DMG-->
                     <controls:RatingRow Image="..\Resources/Images/dmg.png" Grid.Row="7"
@@ -118,8 +119,8 @@
                                                   Place="{Binding Rating_DamageDealtPlace}"
                                                   ValueDelta="{Binding Rating_DamageDealtValueDelta}"
                                                   PlaceDelta="{Binding Rating_DamageDealtPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_DamageDealtValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_DamageDealtValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--DPT-->
                     <controls:RatingRow Image="..\Resources/Images/dpt.png" Grid.Row="8"
@@ -129,8 +130,8 @@
                                                   Place="{Binding Rating_DroppedPointsPlace}"
                                                   ValueDelta="{Binding Rating_DroppedPointsValueDelta}"
                                                   PlaceDelta="{Binding Rating_DroppedPointsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_DroppedPointsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_DroppedPointsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_DroppedPointsValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_DroppedPointsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--FRG-->
                     <controls:RatingRow Image="..\Resources/Images/frg.png" Grid.Row="9"
@@ -140,8 +141,8 @@
                                                   Place="{Binding Rating_FragsPlace}"
                                                   ValueDelta="{Binding Rating_FragsValueDelta}"
                                                   PlaceDelta="{Binding Rating_FragsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_FragsValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_FragsPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_FragsValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_FragsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--SPT-->
                     <controls:RatingRow Image="..\Resources/Images/spt.png" Grid.Row="10"
@@ -151,8 +152,8 @@
                                                   Place="{Binding Rating_SpottedPlace}"
                                                   ValueDelta="{Binding Rating_SpottedValueDelta}"
                                                   PlaceDelta="{Binding Rating_SpottedPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_SpottedValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_SpottedValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--EXP-->
                     <controls:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
@@ -162,8 +163,8 @@
                                                   Place="{Binding Rating_XpPlace}"
                                                   ValueDelta="{Binding Rating_XpValueDelta}"
                                                   PlaceDelta="{Binding Rating_XpPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_XpValueDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_XpPlaceDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                                                  ValueDeltaForeground="{Binding Rating_XpValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_XpPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                 </Grid>
             </StackPanel>

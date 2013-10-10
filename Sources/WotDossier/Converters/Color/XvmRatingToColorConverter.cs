@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using System.Windows.Media;
 
-namespace WotDossier.Converters
+namespace WotDossier.Converters.Color
 {
     public class XvmRatingToColorConverter : IValueConverter
     {
@@ -18,17 +17,17 @@ namespace WotDossier.Converters
             if (eff != null)
             {
                 if (eff >= 93)
-                    return Brushes.Purple;
+                    return EffRangeBrushes.Purple;
                 if (eff >= 76)
-                    return Brushes.CornflowerBlue;
+                    return EffRangeBrushes.Blue;
                 if (eff >= 53)
-                    return Brushes.Lime;
+                    return EffRangeBrushes.Green;
                 if (eff >= 34)
-                    return Brushes.Yellow;
+                    return EffRangeBrushes.Yellow;
                 if (eff >= 17)
-                    return Brushes.DarkOrange;
+                    return EffRangeBrushes.Orange;
             }
-            return Brushes.Red;
+            return EffRangeBrushes.Red;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

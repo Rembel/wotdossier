@@ -138,6 +138,26 @@ namespace WotDossier.Applications.ViewModel
             set { _replaysManager = value; }
         }
 
+        private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
+
+        private string _periodTabHeader;
+
+        /// <summary>
+        /// Gets or sets the period tab header.
+        /// </summary>
+        /// <value>
+        /// The period tab header.
+        /// </value>
+        public string PeriodTabHeader
+        {
+            get { return _periodTabHeader; }
+            set
+            {
+                _periodTabHeader = value;
+                RaisePropertyChanged(PropPeriodTabHeader);
+            }
+        }
+
         #endregion
 
         #region Charts data
@@ -403,7 +423,7 @@ namespace WotDossier.Applications.ViewModel
         {
             _dossierRepository = dossierRepository;
             _replaysManager = replaysManager;
-            
+
             LoadCommand = new DelegateCommand(OnLoad);
             SettingsCommand = new DelegateCommand(OnSettings);
             
@@ -437,6 +457,8 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
             ProgressView = new ProgressControlViewModel();
+
+            SetPeriodTabHeader(SettingsReader.Get().Period);
         }
 
         private void OnSearchClans()
@@ -459,7 +481,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnOpenClanCommand(object param)
         {
-            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.id);
+            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.Id);
             if (clan != null)
             {
                 ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
@@ -732,6 +754,7 @@ namespace WotDossier.Applications.ViewModel
         private void OnLoad()
         {
             AppSettings settings = SettingsReader.Get();
+
             if (settings == null || string.IsNullOrEmpty(settings.PlayerName) || string.IsNullOrEmpty(settings.Server))
             {
                 MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
@@ -1147,6 +1170,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent args)
         {
+            SetPeriodTabHeader(args.StatisticPeriod);
+
             if (args.StatisticPeriod == StatisticPeriod.LastNBattles)
             {
                 int battles = PlayerStatistic.BattlesCount - args.LastNBattles;
@@ -1162,6 +1187,11 @@ namespace WotDossier.Applications.ViewModel
             {
                 InitLastUsedTanksChart();   
             }
+        }
+
+        private void SetPeriodTabHeader(StatisticPeriod statisticPeriod)
+        {
+            PeriodTabHeader = Resources.Resources.ResourceManager.GetString("TabHeader_" + statisticPeriod);
         }
 
         private void OnReplayFileMove(ReplayFileMoveEventArgs eventArgs)

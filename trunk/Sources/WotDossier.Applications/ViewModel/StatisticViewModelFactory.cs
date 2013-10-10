@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.Logic;
+using WotDossier.Applications.Model;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
-using WotDossier.Domain.Player;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel
@@ -29,7 +29,7 @@ namespace WotDossier.Applications.ViewModel
 
             if (playerData.Clan != null)
             {
-                currentStatisticViewModel.Clan = new PlayerStatisticClanViewModel(playerData.Clan, playerData.Role, playerData.Since);
+                currentStatisticViewModel.Clan = new ClanModel(playerData.Clan, playerData.Role, playerData.Since);
             }
             return currentStatisticViewModel;
         }

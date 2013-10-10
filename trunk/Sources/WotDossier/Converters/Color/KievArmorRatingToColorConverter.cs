@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using System.Windows.Media;
 
-namespace WotDossier.Converters
+namespace WotDossier.Converters.Color
 {
     public class KievArmorRatingToColorConverter : IValueConverter
     {
@@ -18,17 +17,17 @@ namespace WotDossier.Converters
             if (eff !=null)
             {
                 if (eff >= 7300)
-                    return Brushes.Purple;
+                    return EffRangeBrushes.Purple;
                 if (eff >= 5570)
-                    return Brushes.CornflowerBlue;
+                    return EffRangeBrushes.Blue;
                 if (eff >= 3850)
-                    return Brushes.Lime;
+                    return EffRangeBrushes.Green;
                 if (eff >= 2730)
-                    return Brushes.Yellow;
+                    return EffRangeBrushes.Yellow;
                 if (eff >= 2080)
-                    return Brushes.DarkOrange;
+                    return EffRangeBrushes.Orange;
             }
-            return Brushes.Red;
+            return EffRangeBrushes.Red;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

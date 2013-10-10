@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace WotDossier.Converters
+namespace WotDossier.Converters.Color
 {
     public class DeltaToColorConverter : IValueConverter
     {
@@ -24,7 +24,7 @@ namespace WotDossier.Converters
                 delta = (double)value;
             }
             if (Math.Abs(delta - 0.0) < 0.001)
-                return new SolidColorBrush(Color.FromRgb(186, 191, 186));
+                return new SolidColorBrush(System.Windows.Media.Color.FromRgb(186, 191, 186));
             bool negativBetter = parameter != null ? bool.Parse(parameter.ToString()) : false;
             if ((delta > 0.0 && !negativBetter)
                 || (delta < 0.0 && negativBetter))

@@ -24,6 +24,7 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
+            <!--BattlePerformance-->
             <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
@@ -45,9 +46,9 @@
                                 <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
                             </Grid>
                             <controls:ClanView Margin="10" Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
-                                           ClanImageSource="{Binding PlayerStatistic.Clan.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
-                                           Days="{Binding PlayerStatistic.Clan.Days}" Position="{Binding PlayerStatistic.Clan.role}" Date="{Binding PlayerStatistic.Clan.since}" Abbreviation="{Binding PlayerStatistic.Clan.abbreviation}" 
-                                           ClanName="{Binding PlayerStatistic.Clan.name}" OpenClanCommand="{Binding OpenClanCommand}">
+                                           ClanImageSource="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                                           Days="{Binding PlayerStatistic.Clan.Days}" Position="{Binding PlayerStatistic.Clan.Role}" Date="{Binding PlayerStatistic.Clan.Since}" Abbreviation="{Binding PlayerStatistic.Clan.Abbreviation}" 
+                                           ClanName="{Binding PlayerStatistic.Clan.Name}" OpenClanCommand="{Binding OpenClanCommand}">
                                 
                             </controls:ClanView>
                         </StackPanel>
@@ -55,7 +56,8 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Recent}" Name="tabPeriod">
+            <!--Recent-->
+            <TabItem TabIndex="0" Header="{Binding PeriodTabHeader}" Name="tabPeriod">
                 <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -78,7 +80,7 @@
 
                                     <d3:PieChart.MarkerTemplate>
                                         <DataTemplate>
-                                            <d3:PieChartItem Background="Black">
+                                            <d3:PieChartItem Background="{Binding WinPercent, Converter={x:Static Converters:PercentToColorConverter.Default}}">
                                                 <ToolTipService.ToolTip>
                                                     <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock>
@@ -117,12 +119,15 @@
                     </Grid>
                 </ScrollViewer>
             </TabItem>
+            <!--Session-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Session}" Name="tabSession" DataContext="{Binding SessionStatistic}">
                 <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Top"></tabs:PeriodTab>
             </TabItem>
+            <!--Ratings-->
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">
                 <controls:RatingView></controls:RatingView>
             </TabItem>
+            <!--Achievements-->
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}" DataContext="{Binding PlayerStatistic}">
                 <ScrollViewer>
                     <controls:Achievements></controls:Achievements>

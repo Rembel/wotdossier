@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800">
     <Grid>
@@ -51,7 +52,7 @@
             <TextBlock Foreground="#FFA759" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="1" Grid.Column="0" Text="{x:Static Resources:Resources.Common_BattlesParticipated}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Text="{Binding BattlesCount, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding BattlesCountDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="1" Grid.Column="2" Text="{Binding BattlesCountDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding BattlesCountDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="1" Grid.Column="2" Text="{Binding BattlesCountDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Victories}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="1" DataContext="{Binding}">
                 <TextBlock.Text>
@@ -61,7 +62,7 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            <TextBlock Foreground="{Binding WinsPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="2" Grid.Column="2">
+            <TextBlock Foreground="{Binding WinsPercentDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="2" Grid.Column="2">
                 <TextBlock.Text>
                     <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
                         <Binding Path="WinsDelta" />
@@ -78,7 +79,7 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            <TextBlock Foreground="{Binding LossesPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}, ConverterParameter=true}" TextAlignment="Right" Grid.Row="3" Grid.Column="2">
+            <TextBlock Foreground="{Binding LossesPercentDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=true}" TextAlignment="Right" Grid.Row="3" Grid.Column="2">
                 <TextBlock.Text>
                     <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
                         <Binding Path="LossesDelta" />
@@ -95,7 +96,7 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            <TextBlock Foreground="{Binding SurvivedBattlesPercentDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="4" Grid.Column="2">
+            <TextBlock Foreground="{Binding SurvivedBattlesPercentDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="4" Grid.Column="2">
                 <TextBlock.Text>
                     <MultiBinding Converter="{x:Static Converters:ValueDeltaPercentFormater.Default}" >
                         <Binding Path="SurvivedBattlesDelta" />
@@ -108,90 +109,90 @@
             <!--Xp-->
             <TextBlock Foreground="#BABFBA" Grid.Row="6" Grid.Column="0" Text="{x:Static Resources:Resources.Common_TotalExperience}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="6" Grid.Column="1" Text="{Binding Xp, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding XpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="6" Grid.Column="2" Text="{Binding XpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding XpDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="6" Grid.Column="2" Text="{Binding XpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--BattleAvgXp-->
             <TextBlock Foreground="#BABFBA" Grid.Row="7" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgExperience}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="7" Grid.Column="1" Text="{Binding AvgXp, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding AvgXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="7" Grid.Column="2" Text="{Binding AvgXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding AvgXpDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="7" Grid.Column="2" Text="{Binding AvgXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--MaxXp-->
             <TextBlock Foreground="#BABFBA" Grid.Row="8" Grid.Column="0" Text="{x:Static Resources:Resources.Common_MaxExperience}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="8" Grid.Column="1" Text="{Binding MaxXp, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding MaxXpDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="8" Grid.Column="2" Text="{Binding MaxXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding MaxXpDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="8" Grid.Column="2" Text="{Binding MaxXpDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
 
             <TextBlock Foreground="#FFA759" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Common_BattlePerformance}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <!--Frags-->
             <TextBlock Foreground="#BABFBA" Grid.Row="10" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Destroyed}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="10" Grid.Column="1" Text="{Binding Frags, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding FragsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="10" Grid.Column="2" Text="{Binding FragsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding FragsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="10" Grid.Column="2" Text="{Binding FragsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--killDeathRatio-->
             <TextBlock Foreground="#BABFBA" Grid.Row="11" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KillDeathRatio}" Margin="20,0,0,0"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="11" Grid.Column="1" Text="{Binding KillDeathRatio, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding KillDeathRatioDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="11" Grid.Column="2" Text="{Binding KillDeathRatioDelta, StringFormat='+0.000;-0.000;0.000'}"></TextBlock>
+            <TextBlock Foreground="{Binding KillDeathRatioDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="11" Grid.Column="2" Text="{Binding KillDeathRatioDelta, StringFormat='+0.000;-0.000;0.000'}"></TextBlock>
             <!--AvgDestroyed-->
             <TextBlock Foreground="#BABFBA" Grid.Row="12" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDestroyed}" Margin="20,0,0,0"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="12" Grid.Column="1" Text="{Binding AvgFrags, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding AvgFragsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="12" Grid.Column="2" Text="{Binding AvgFragsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
+            <TextBlock Foreground="{Binding AvgFragsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="12" Grid.Column="2" Text="{Binding AvgFragsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             <!--Spotted-->
             <TextBlock Foreground="#BABFBA" Grid.Row="13" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Detected}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="13" Grid.Column="1" Text="{Binding Spotted, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding SpottedDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="13" Grid.Column="2" Text="{Binding SpottedDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding SpottedDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="13" Grid.Column="2" Text="{Binding SpottedDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--AvgSpotted-->
             <TextBlock Foreground="#BABFBA" Grid.Row="14" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDetected}" Margin="20,0,0,0"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="14" Grid.Column="1" Text="{Binding AvgSpotted, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding AvgSpottedDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="14" Grid.Column="2" Text="{Binding AvgSpottedDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
+            <TextBlock Foreground="{Binding AvgSpottedDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="14" Grid.Column="2" Text="{Binding AvgSpottedDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             <!--HitsPercents-->
             <TextBlock Foreground="#BABFBA" Grid.Row="15" Grid.Column="0" Text="{x:Static Resources:Resources.Common_HitRatio}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="15" Grid.Column="1" Text="{Binding HitsPercents, StringFormat='0.0'}"></TextBlock>
-            <TextBlock Foreground="{Binding HitsPercentsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="15" Grid.Column="2" Text="{Binding HitsPercentsDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding HitsPercentsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="15" Grid.Column="2" Text="{Binding HitsPercentsDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--DamageDealt-->
             <TextBlock Foreground="#BABFBA" Grid.Row="16" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DamageCaused}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="16" Grid.Column="1" Text="{Binding DamageDealt, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding DamageDealtDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="16" Grid.Column="2" Text="{Binding DamageDealtDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding DamageDealtDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="16" Grid.Column="2" Text="{Binding DamageDealtDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--DamageRatio-->
             <TextBlock Foreground="#BABFBA" Grid.Row="17" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DamageRatio}" Margin="20,0,0,0"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="17" Grid.Column="1" Text="{Binding DamageRatio, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding DamageRatioDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="17" Grid.Column="2" Text="{Binding DamageRatioDelta, StringFormat='+0.000;-0.000;0.000'}"></TextBlock>
+            <TextBlock Foreground="{Binding DamageRatioDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="17" Grid.Column="2" Text="{Binding DamageRatioDelta, StringFormat='+0.000;-0.000;0.000'}"></TextBlock>
             <!--AvgDamageCaused-->
             <TextBlock Foreground="#BABFBA" Grid.Row="18" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDamageCaused}" Margin="20,0,0,0"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="18" Grid.Column="1" Text="{Binding AvgDamageDealt, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding AvgDamageDealtDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="18" Grid.Column="2" Text="{Binding AvgDamageDealtDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
+            <TextBlock Foreground="{Binding AvgDamageDealtDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="18" Grid.Column="2" Text="{Binding AvgDamageDealtDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             <!--CapturePoints-->
             <TextBlock Foreground="#BABFBA" Grid.Row="19" Grid.Column="0" Text="{x:Static Resources:Resources.Common_CapturePoints}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="19" Grid.Column="1" Text="{Binding CapturePoints, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding CapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="19" Grid.Column="2" Text="{Binding CapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding CapturePointsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="19" Grid.Column="2" Text="{Binding CapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--AvgCapturePoints-->
             <TextBlock Foreground="#BABFBA" Grid.Row="20" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgCapturePoints}" Margin="20,0,0,0"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="20" Grid.Column="1" Text="{Binding AvgCapturePoints, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding AvgCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="20" Grid.Column="2" Text="{Binding AvgCapturePointsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
+            <TextBlock Foreground="{Binding AvgCapturePointsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="20" Grid.Column="2" Text="{Binding AvgCapturePointsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             <!--DroppedCapturePoints-->
             <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="0" Text="{x:Static Resources:Resources.Common_DefensePoints}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="21" Grid.Column="1" Text="{Binding DroppedCapturePoints, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding DroppedCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="21" Grid.Column="2" Text="{Binding DroppedCapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
+            <TextBlock Foreground="{Binding DroppedCapturePointsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="21" Grid.Column="2" Text="{Binding DroppedCapturePointsDelta, StringFormat='+0.;-0.;0.'}"></TextBlock>
             <!--AvgDefensePoints-->
             <TextBlock Foreground="#BABFBA" Grid.Row="22" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AvgDefensePoints}" Margin="20,0,0,0"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="22" Grid.Column="1" Text="{Binding AvgDroppedCapturePoints, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding AvgDroppedCapturePointsDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="22" Grid.Column="2" Text="{Binding AvgDroppedCapturePointsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
+            <TextBlock Foreground="{Binding AvgDroppedCapturePointsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="22" Grid.Column="2" Text="{Binding AvgDroppedCapturePointsDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             
             <TextBlock Foreground="#FFA759" Grid.Row="23" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static Resources:Resources.Tab_Header_Ratings}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <!--EffectivityRating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="24" Grid.Column="0" Text="{x:Static Resources:Resources.Common_EffectivityRating}"></TextBlock>
-            <TextBlock Foreground="{Binding Path=EffRating, Converter={x:Static Converters:EffectivityToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="1" Text="{Binding EffRating, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="1" Text="{Binding EffRating, StringFormat='### ### ### ###'}"></TextBlock>
+            <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--Wn6Rating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="25" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Wn6Rating}"></TextBlock>
-            <TextBlock Foreground="{Binding Path=WN6Rating, Converter={x:Static Converters:WN6ToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="1" Text="{Binding WN6Rating, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="1" Text="{Binding WN6Rating, StringFormat='### ### ### ###'}"></TextBlock>
+            <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--KievArmorRating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="26" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
-            <TextBlock Foreground="{Binding Path=KievArmorRating, Converter={x:Static Converters:KievArmorRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="1" Text="{Binding KievArmorRating, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="1" Text="{Binding KievArmorRating, StringFormat='### ### ### ###'}"></TextBlock>
+            <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--KievArmorRating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="27" Grid.Column="0" Text="XVM"></TextBlock>
-            <TextBlock Foreground="{Binding Path=XEFF, Converter={x:Static Converters:XvmRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="27" Grid.Column="1" Text="{Binding XEFF, StringFormat='0.0'}"></TextBlock>
-            <TextBlock Foreground="{Binding XvmRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="27" Grid.Column="2" Text="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="27" Grid.Column="1" Text="{Binding XEFF, StringFormat='0.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding XvmRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="27" Grid.Column="2" Text="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
             <!--Noobmeter Performance Rating-->
             <TextBlock Foreground="#BABFBA" Grid.Row="28" Grid.Column="0" Text="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}"></TextBlock>
-            <TextBlock Foreground="{Binding Path=PerformanceRating, Converter={x:Static Converters:PowerRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="28" Grid.Column="1" Text="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"></TextBlock>
+            <TextBlock Foreground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="28" Grid.Column="1" Text="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"></TextBlock>
             <!--<TextBlock Foreground="{Binding PerformanceRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="28" Grid.Column="2" Text="{Binding PerformanceRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
             <!--Rating WG-->
             <TextBlock Foreground="#BABFBA" Grid.Row="29" Grid.Column="0" Text="{x:Static Resources:Resources.Common_WGRating}"></TextBlock>
@@ -204,7 +205,7 @@
             <!--AverageTier-->
             <TextBlock Foreground="#BABFBA" Grid.Row="31" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AverageTier}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="31" Grid.Column="1" Text="{Binding Tier, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding TierDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="31" Grid.Column="2" Text="{Binding TierDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
+            <TextBlock Foreground="{Binding TierDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="31" Grid.Column="2" Text="{Binding TierDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             
         </Grid>
     </Grid>

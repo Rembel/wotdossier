@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows;
 using Common.Logging;
+using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -39,14 +40,14 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private PlayerStatisticClanViewModel _clan;
+        private ClanModel _clan;
         /// <summary>
         /// Gets or sets the clan.
         /// </summary>
         /// <value>
         /// The clan.
         /// </value>
-        public PlayerStatisticClanViewModel Clan
+        public ClanModel Clan
         {
             get { return _clan; }
             set
@@ -70,7 +71,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnOpenClanCommand(object param)
         {
-            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), Clan.id);
+            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), Clan.Id);
             if (clan != null)
             {
                 ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
@@ -97,7 +98,7 @@ namespace WotDossier.Applications.ViewModel
             statistic.Name = playerStat.dataField.nickname;
             if (playerStat.dataField.clan != null && playerStat.dataField.clan != null)
             {
-                Clan = new PlayerStatisticClanViewModel(playerStat.dataField.clanData, playerStat.dataField.clan.role, playerStat.dataField.clan.since);
+                Clan = new ClanModel(playerStat.dataField.clanData, playerStat.dataField.clan.role, playerStat.dataField.clan.since);
             }
 
             PlayerStatistic = statistic;

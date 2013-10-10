@@ -518,6 +518,51 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All captured results.
+        /// </summary>
+        internal static string TabHeader_AllObservationPeriod {
+            get {
+                return ResourceManager.GetString("TabHeader_AllObservationPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results from {0}.
+        /// </summary>
+        internal static string TabHeader_Custom {
+            get {
+                return ResourceManager.GetString("TabHeader_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last {0} Battles results.
+        /// </summary>
+        internal static string TabHeader_LastNBattles {
+            get {
+                return ResourceManager.GetString("TabHeader_LastNBattles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last week results.
+        /// </summary>
+        internal static string TabHeader_LastWeek {
+            get {
+                return ResourceManager.GetString("TabHeader_LastWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last day results.
+        /// </summary>
+        internal static string TabHeader_Recent {
+            get {
+                return ResourceManager.GetString("TabHeader_Recent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Damage by allies to enemy vehicle you detected: {0}.
         /// </summary>
         internal static string Tooltip_Replay_AlliesDamage {

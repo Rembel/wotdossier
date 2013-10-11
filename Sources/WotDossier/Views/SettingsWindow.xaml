@@ -13,7 +13,6 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
@@ -23,10 +22,7 @@
         <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="1" Text="{x:Static Resources:Resources.Settings_Language}"></TextBlock>
         <ComboBox Margin="6 6 6 6" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Languages}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding AppSettings.Language}" />
         <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="2" Text="{x:Static Resources:Resources.Settings_Period}"/>
-        <ComboBox Margin="6 6 6 6" Grid.Column="1" Grid.Row="2"  ItemsSource="{Binding Periods}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Period}" />
-        <ComboBox Margin="6 6 6 6" Grid.Column="2" Grid.Row="2" Visibility="{Binding PeriodsVisible, Converter={x:Static converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" ItemsSource="{Binding PrevDates}" ItemStringFormat="dd.MM.yyyy HH:mm" SelectedItem="{Binding PrevDate}" />
-        <TextBox Margin="6 6 6 6" Grid.Column="2" Grid.Row="2" Visibility="{Binding LastNBattlesVisible, Converter={x:Static converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}" KeyDown="Battles_OnKeyDown" />
-        <CheckBox Margin="6 6 6 6" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Content="{x:Static Resources:Resources.Settings_CheckForUpdatesOnStart}" IsChecked="{Binding CheckForUpdates}"/>
-        <Button Margin="6 6 6 6" Grid.Column="2" Grid.Row="5" Content="{x:Static Resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
+        <CheckBox Margin="6 6 6 6" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Content="{x:Static Resources:Resources.Settings_CheckForUpdatesOnStart}" IsChecked="{Binding CheckForUpdates}"/>
+        <Button Margin="6 6 6 6" Grid.Column="2" Grid.Row="4" Content="{x:Static Resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
     </Grid>
 </Window>

@@ -677,7 +677,18 @@ namespace WotDossier.Applications.ViewModel
             {
                 TankStatisticViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<TankStatisticViewModel>().Value;
                 viewModel.TankStatistic = tankStatisticRowViewModel;
+                AppSettings appSettings = SettingsReader.Get();
+                if (appSettings.Period == StatisticPeriod.LastNBattles)
+                {
+                    int battles = tankStatisticRowViewModel.BattlesCount - appSettings.LastNBattles;
+
+                    TankStatisticRowViewModel model = tankStatisticRowViewModel.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
+                    tankStatisticRowViewModel.SetPreviousStatistic(model);
+                }
                 viewModel.Show();
+
+                EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()
+                        .Publish(new StatisticPeriodChangedEvent(StatisticPeriod.LastNBattles, appSettings.PrevDate, appSettings.LastNBattles));
             }
         }
 

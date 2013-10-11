@@ -9,6 +9,8 @@ using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Common;
+using WotDossier.Domain;
 using WotDossier.Framework.Applications;
 
 namespace WotDossier.Applications.ViewModel
@@ -26,6 +28,26 @@ namespace WotDossier.Applications.ViewModel
             {
                 _tankStatistic = value;
                 RaisePropertyChanged("TankStatistic");
+            }
+        }
+
+        private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
+
+        private string _periodTabHeader;
+
+        /// <summary>
+        /// Gets or sets the period tab header.
+        /// </summary>
+        /// <value>
+        /// The period tab header.
+        /// </value>
+        public string PeriodTabHeader
+        {
+            get { return _periodTabHeader; }
+            set
+            {
+                _periodTabHeader = value;
+                RaisePropertyChanged(PropPeriodTabHeader);
             }
         }
 
@@ -54,6 +76,13 @@ namespace WotDossier.Applications.ViewModel
             : base(view)
         {
             ViewTyped.Loaded += OnShellViewActivated;
+            SetPeriodTabHeader();
+        }
+
+        private void SetPeriodTabHeader()
+        {
+            AppSettings appSettings = SettingsReader.Get();
+            PeriodTabHeader = string.Format(Resources.Resources.ResourceManager.GetString("TabHeader_" + appSettings.Period), appSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PrevDate : appSettings.LastNBattles);
         }
 
         private void OnShellViewActivated(object sender, RoutedEventArgs e)

@@ -323,7 +323,7 @@
     <value>Результаты с {0}</value>
   </data>
   <data name="TabHeader_LastNBattles" xml:space="preserve">
-    <value>Результаты последних N боев</value>
+    <value>Результаты последних {0} боев</value>
   </data>
   <data name="TabHeader_LastWeek" xml:space="preserve">
     <value>Результаты за неделю</value>

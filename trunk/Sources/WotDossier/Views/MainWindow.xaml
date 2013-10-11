@@ -9,6 +9,7 @@
         xmlns:views="clr-namespace:WotDossier.Views"
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:color="clr-namespace:WotDossier.Converters.Color"
+        xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         Title="WotDossier" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
     <Window.InputBindings>
         <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>
@@ -35,7 +36,7 @@
             <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Click="MenuItemAbout_Click"></MenuItem>
         </Menu>
         <ToolBarTray Grid.Row="1">
-            <ToolBar>
+            <ToolBar DataContext="{Binding PeriodSelector}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -45,7 +46,7 @@
                     <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Resources:Resources.Settings_Period}"/>
                     <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="1" Width="150" ItemsSource="{Binding Periods}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Period}" />
                     <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="150" Visibility="{Binding PeriodsVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" ItemsSource="{Binding PrevDates}" ItemStringFormat="dd.MM.yyyy HH:mm" SelectedItem="{Binding PrevDate}" />
-                    <TextBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="100" HorizontalAlignment="Left" Visibility="{Binding LastNBattlesVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}" />
+                    <TextBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="100" HorizontalAlignment="Left" Visibility="{Binding LastNBattlesVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}"  controls1:AttachedProperties.UpdateSourceOnKey="Enter"/>
                 </Grid>
             </ToolBar>
         </ToolBarTray>

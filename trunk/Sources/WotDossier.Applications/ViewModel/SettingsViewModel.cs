@@ -40,7 +40,6 @@ namespace WotDossier.Applications.ViewModel
         private List<DateTime> _prevDates;
         private bool _nameChanged;
         public DelegateCommand SaveCommand { get; set; }
-        public DelegateCommand SelectReplaysFolderCommand { get; set; }
 
         public AppSettings AppSettings
         {
@@ -135,28 +134,18 @@ namespace WotDossier.Applications.ViewModel
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;"/> class and
+        /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
         /// </summary>
         /// <param name="view">The view.</param>
+        /// <param name="dossierRepository">The dossier repository.</param>
         [ImportingConstructor]
         public SettingsViewModel([Import(typeof(ISettingsView))]ISettingsView view, [Import]DossierRepository dossierRepository)
             : base(view)
         {
             _dossierRepository = dossierRepository;
             SaveCommand = new DelegateCommand(OnSave);
-            SelectReplaysFolderCommand = new DelegateCommand(OnSelectReplaysFolder);
             _appSettings = SettingsReader.Get();
-        }
-
-        private void OnSelectReplaysFolder()
-        {
-            VistaFolderBrowserDialog dialog = new VistaFolderBrowserDialog();
-            bool? showDialog = dialog.ShowDialog();
-            if (showDialog == true)
-            {
-                ReplaysFolderPath = dialog.SelectedPath;
-            }
         }
 
         private void OnSave()
@@ -199,21 +188,6 @@ namespace WotDossier.Applications.ViewModel
         public virtual void Show()
         {
             ViewTyped.Show();
-        }
-    }
-
-    public class ListItem<TId>
-    {
-        public TId Id { get; set; }
-        public string Value { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
-        /// </summary>
-        public ListItem(TId id, string value)
-        {
-            Id = id;
-            Value = value;
         }
     }
 }

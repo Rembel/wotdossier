@@ -102,6 +102,9 @@
     <Compile Include="ViewModel\ClanViewModel.cs" />
     <Compile Include="ViewModel\CompareStatisticViewModel.cs" />
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />
+    <Compile Include="ViewModel\KeyValue.cs" />
+    <Compile Include="ViewModel\ListItem.cs" />
+    <Compile Include="ViewModel\PeriodSelectorViewModel.cs" />
     <Compile Include="ViewModel\SearchResultRowViewModel.cs" />
     <Compile Include="ViewModel\PlayerSearchViewModel.cs" />
     <Compile Include="ViewModel\PlayersCompareViewModel.cs" />

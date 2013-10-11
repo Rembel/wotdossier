@@ -116,6 +116,7 @@
     <Compile Include="Controls\MultiSelector\MultiSelectorBehaviours.cs" />
     <Compile Include="Controls\MultiSelector\TwoListSynchronizer.cs" />
     <Compile Include="CompositionContainerFactory.cs" />
+    <Compile Include="Controls\AttachedProperties.cs" />
     <Compile Include="EventAggregator\BaseEvent.cs" />
     <Compile Include="EventAggregator\BaseEvent.Generic.cs" />
     <Compile Include="EventAggregator\DelegateReference.cs" />

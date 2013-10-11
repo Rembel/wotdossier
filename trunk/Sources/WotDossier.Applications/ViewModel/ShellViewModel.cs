@@ -158,6 +158,8 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public PeriodSelectorViewModel PeriodSelector { get; set; }
+
         #endregion
 
         #region Charts data
@@ -457,8 +459,9 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
             ProgressView = new ProgressControlViewModel();
+            PeriodSelector = new PeriodSelectorViewModel();
 
-            SetPeriodTabHeader(SettingsReader.Get().Period);
+            SetPeriodTabHeader();
         }
 
         private void OnSearchClans()
@@ -713,13 +716,18 @@ namespace WotDossier.Applications.ViewModel
         private void OnSettings()
         {
             SettingsViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<SettingsViewModel>().Value;
+            viewModel.PrevDates = GetPreviousDates() ?? new List<DateTime>();
+            viewModel.Show();
+        }
+
+        private List<DateTime> GetPreviousDates()
+        {
             List<DateTime> list = null;
             if (PlayerStatistic != null)
             {
                 list = PlayerStatistic.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
             }
-            viewModel.PrevDates = list ?? new List<DateTime>();
-            viewModel.Show();
+            return list;
         }
 
         private void OnDeleteFolderCommand(ReplayFolder folder)
@@ -786,6 +794,9 @@ namespace WotDossier.Applications.ViewModel
                                 tanks = LoadTanks(cacheFile);
 
                                 PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
+
+                                PeriodSelector.PrevDates = GetPreviousDates();
+
                                 ProgressView.Report(bw, 25, string.Empty);
 
                                 PlayerStatisticViewModel clone = PlayerStatistic.Clone();
@@ -1170,8 +1181,6 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent args)
         {
-            SetPeriodTabHeader(args.StatisticPeriod);
-
             if (args.StatisticPeriod == StatisticPeriod.LastNBattles)
             {
                 int battles = PlayerStatistic.BattlesCount - args.LastNBattles;
@@ -1187,11 +1196,14 @@ namespace WotDossier.Applications.ViewModel
             {
                 InitLastUsedTanksChart();   
             }
+
+            SetPeriodTabHeader();
         }
 
-        private void SetPeriodTabHeader(StatisticPeriod statisticPeriod)
+        private void SetPeriodTabHeader()
         {
-            PeriodTabHeader = Resources.Resources.ResourceManager.GetString("TabHeader_" + statisticPeriod);
+            AppSettings appSettings = SettingsReader.Get();
+            PeriodTabHeader = string.Format(Resources.Resources.ResourceManager.GetString("TabHeader_" + appSettings.Period), appSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PrevDate : appSettings.LastNBattles);
         }
 
         private void OnReplayFileMove(ReplayFileMoveEventArgs eventArgs)

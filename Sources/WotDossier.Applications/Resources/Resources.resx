@@ -331,4 +331,10 @@ Avg Spotted: {1:0.00}</value>
   <data name="TabHeader_Recent" xml:space="preserve">
     <value>Last day results</value>
   </data>
+  <data name="Role_recruiter" xml:space="preserve">
+    <value>Recruiter</value>
+  </data>
+  <data name="Role_treasurer" xml:space="preserve">
+    <value>Treasurer</value>
+  </data>
 </root>

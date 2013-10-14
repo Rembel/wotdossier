@@ -954,6 +954,42 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average Damage Assisted.
+        /// </summary>
+        public static string Column_Performance_AvgDamageAssisted {
+            get {
+                return ResourceManager.GetString("Column_Performance_AvgDamageAssisted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Damage Assisted Radio.
+        /// </summary>
+        public static string Column_Performance_AvgDamageAssistedRadio {
+            get {
+                return ResourceManager.GetString("Column_Performance_AvgDamageAssistedRadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Damage Assisted Track.
+        /// </summary>
+        public static string Column_Performance_AvgDamageAssistedTrack {
+            get {
+                return ResourceManager.GetString("Column_Performance_AvgDamageAssistedTrack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Original XP.
+        /// </summary>
+        public static string Column_Performance_AvgOriginalXP {
+            get {
+                return ResourceManager.GetString("Column_Performance_AvgOriginalXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battles Count 8.8.
         /// </summary>
         public static string Column_Performance_BattlesCount88 {
@@ -977,6 +1013,15 @@ namespace WotDossier.Resources {
         public static string Column_Performance_CapturePoints {
             get {
                 return ResourceManager.GetString("Column_Performance_CapturePoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage Assisted.
+        /// </summary>
+        public static string Column_Performance_DamageAssisted {
+            get {
+                return ResourceManager.GetString("Column_Performance_DamageAssisted", resourceCulture);
             }
         }
         

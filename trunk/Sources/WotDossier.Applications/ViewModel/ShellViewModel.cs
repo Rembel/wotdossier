@@ -685,10 +685,14 @@ namespace WotDossier.Applications.ViewModel
                     TankStatisticRowViewModel model = tankStatisticRowViewModel.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                     tankStatisticRowViewModel.SetPreviousStatistic(model);
                 }
+
                 viewModel.Show();
 
-                EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()
+                if (appSettings.Period == StatisticPeriod.LastNBattles)
+                {
+                    EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()
                         .Publish(new StatisticPeriodChangedEvent(StatisticPeriod.LastNBattles, appSettings.PrevDate, appSettings.LastNBattles));
+                }
             }
         }
 

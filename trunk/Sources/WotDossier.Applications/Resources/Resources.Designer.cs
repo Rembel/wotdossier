@@ -464,6 +464,24 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recruiter.
+        /// </summary>
+        internal static string Role_recruiter {
+            get {
+                return ResourceManager.GetString("Role_recruiter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Treasurer.
+        /// </summary>
+        internal static string Role_treasurer {
+            get {
+                return ResourceManager.GetString("Role_treasurer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vice Leader.
         /// </summary>
         internal static string Role_vice_leader {

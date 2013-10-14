@@ -331,4 +331,10 @@
   <data name="TabHeader_Recent" xml:space="preserve">
     <value>Результаты за последний день</value>
   </data>
+  <data name="Role_recruiter" xml:space="preserve">
+    <value>Вербовщик</value>
+  </data>
+  <data name="Role_treasurer" xml:space="preserve">
+    <value>Казначей</value>
+  </data>
 </root>

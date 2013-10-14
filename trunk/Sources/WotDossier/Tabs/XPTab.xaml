@@ -6,6 +6,7 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:Converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -44,6 +45,8 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_TotalXP}" Binding="{Binding Xp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_MaximumXP}" Binding="{Binding MaxXp}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_XP_AverageXP}" Binding="{Binding AvgXp, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_OriginalXP}" Binding="{Binding OriginalXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_AvgOriginalXP}" Binding="{Binding AvgOriginalXP, Converter={x:Static Converters:Double2Formater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">

@@ -173,6 +173,62 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
 
+        public int DamageAssisted
+        {
+            get
+            {
+                return DamageAssistedTrack + DamageAssistedRadio;
+            }
+        }
+
+        public double AvgDamageAssistedTrack
+        {
+            get
+            {
+                if (BattlesCount88 > 0)
+                {
+                    return DamageAssistedTrack / (double)BattlesCount88;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgDamageAssistedRadio
+        {
+            get
+            {
+                if (BattlesCount88 > 0)
+                {
+                    return DamageAssistedRadio / (double)BattlesCount88;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgDamageAssisted
+        {
+            get
+            {
+                if (BattlesCount88 > 0)
+                {
+                    return DamageAssisted / (double)BattlesCount88;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgOriginalXP
+        {
+            get
+            {
+                if (BattlesCount88 > 0)
+                {
+                    return OriginalXP / (double)BattlesCount88;
+                }
+                return 0;
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
         /// </summary>

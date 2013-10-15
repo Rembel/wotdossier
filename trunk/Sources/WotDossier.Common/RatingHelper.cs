@@ -65,6 +65,20 @@ WN7 formula:
                    - ((5 - Math.Min(tier, 5)) * 125) / (1 + Math.Exp((tier - Math.Pow(battles/220.0, 3/tier))*1.5));
         }
 
+        /// <summary>
+        /// http://blog.noobmeter.com/2013/10/wn8-rating-alpha-testing.html
+        /// </summary>
+        /// <param name="avgDmg"></param>
+        /// <param name="expDmg"></param>
+        /// <param name="avgFrag"></param>
+        /// <param name="expFrag"></param>
+        /// <param name="avgSpot"></param>
+        /// <param name="expSpot"></param>
+        /// <param name="avgDef"></param>
+        /// <param name="expDef"></param>
+        /// <param name="avgWinRate"></param>
+        /// <param name="expWinRate"></param>
+        /// <returns></returns>
         public static double CalcWN8(double avgDmg, double expDmg, double avgFrag, double expFrag, double avgSpot, double expSpot, double avgDef, double expDef, double avgWinRate, double expWinRate)
         {
             double rDamage = avgDmg / expDmg;
@@ -126,6 +140,7 @@ WN7 formula:
 
         /// <summary>
         /// http://tanks.noobmeter.com/tankList
+        /// http://blog.noobmeter.com/2013/07/noobmeter-performance-rating-algorithm.html
         /// </summary>
         /// <param name="battles"></param>
         /// <param name="wins"></param>

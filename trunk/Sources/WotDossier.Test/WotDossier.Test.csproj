@@ -166,6 +166,10 @@
       <Link>External\tanks.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\tanks_expectations.json">
+      <Link>External\tanks_expectations.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\unicodedata.pyd">
       <Link>External\unicodedata.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -193,6 +197,9 @@
     <None Include="CacheFiles\0.8.8\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="CacheFiles\0.8.9\NRXWO2LOFVRXILLQGEXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -204,6 +211,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.8.8\20130908_2025_usa-M103_14_siegfried_line.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.8.9\20131016_0035_ussr-Object263_37_caucasus.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

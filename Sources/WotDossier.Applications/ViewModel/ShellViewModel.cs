@@ -795,7 +795,7 @@ namespace WotDossier.Applications.ViewModel
 
                         ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
 
-                        if (settings != null && !string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
+                        if (!string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
                         {
                             FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName);
 
@@ -999,7 +999,7 @@ namespace WotDossier.Applications.ViewModel
                 tanks.SelectMany(x => x.TankFrags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
             List<TankRowMasterTanker> masterTanker = WotApiClient.Instance.TanksDictionary
                                                                  .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
-                                                                 .Select(x => new TankRowMasterTanker(x.Value, WotApiClient.Instance.GetTankIcon(x.Value)))
+                                                                 .Select(x => new TankRowMasterTanker(x.Value))
                                                                  .OrderBy(x => x.IsPremium)
                                                                  .ThenBy(x => x.Tier).ToList();
             MasterTanker = masterTanker;
@@ -1172,10 +1172,10 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        private bool IsExistedtank(TankInfo tankInfo)
+        private bool IsExistedtank(TankDescription tankDescription)
         {
             //TODO: refactoring
-            return tankInfo.tankid <= 250 && !tankInfo.icon.Contains("training") && tankInfo.title != "KV" && tankInfo.title != "T23";
+            return tankDescription.TankId <= 250 && !tankDescription.Icon.Icon.Contains("training") && tankDescription.Title != "KV" && tankDescription.Title != "T23";
         }
 
         private ReplayFolder FindParentFolder(ReplayFolder parent, ReplayFolder folder)

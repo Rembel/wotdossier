@@ -18,14 +18,14 @@ namespace WotDossier.Applications.ViewModel.Rows
             _isPremium = tank.Common.premium == 1;
         }
 
-        public TankRowMasterTanker(TankInfo tank, TankIcon icon)
+        public TankRowMasterTanker(TankDescription tank)
         {
-            Tier = tank.tier;
-            TankType = tank.type;
-            Tank = tank.title;
-            Icon = icon;
-            CountryId = tank.countryid;
-            _isPremium = tank.premium == 1;
+            Tier = tank.Tier;
+            TankType = tank.Type;
+            Tank = tank.Title;
+            Icon = tank.Icon;
+            CountryId = tank.CountryId;
+            _isPremium = tank.Premium == 1;
         }
     }
 }

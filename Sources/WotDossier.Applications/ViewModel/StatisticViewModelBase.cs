@@ -251,6 +251,17 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private double? _wn8Rating;
+        public double? WN8Rating
+        {
+            get { return _wn8Rating; }
+            set
+            {
+                _wn8Rating = value;
+                OnPropertyChanged("Wn8Rating");
+            }
+        }
+
         public double? RBR
         {
             get { return _rbr; }

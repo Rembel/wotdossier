@@ -17,8 +17,8 @@ namespace WotDossier.Applications.ViewModel
             string[] strings = vehicle.Value.vehicleType.Split(':');
             string tankCountryCode = strings[0];
             string tankIcon = strings[1];
-            TankInfo tank = WotApiClient.Instance.TanksDictionary.Values.FirstOrDefault(x => x.countryCode.Equals(tankCountryCode) && x.icon_orig.Equals(tankIcon));
-            Tank = tank != null ? tank.title : tankIcon;
+            TankDescription tank = WotApiClient.Instance.TanksDictionary.Values.FirstOrDefault(x => x.CountryCode.Equals(tankCountryCode) && x.Icon.IconOrig.Equals(tankIcon));
+            Tank = tank != null ? tank.Title : tankIcon;
             TankIcon = WotApiClient.Instance.GetTankIcon(vehicle.Value.vehicleType);
             ClanAbbrev = vehicle.Value.clanAbbrev;
             Name = vehicle.Value.name;

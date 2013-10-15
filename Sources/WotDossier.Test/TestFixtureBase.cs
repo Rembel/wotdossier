@@ -6,10 +6,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Web;
 using System.Xml;
+using Newtonsoft.Json;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
@@ -98,8 +100,8 @@ namespace WotDossier.Test
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
-                                                tankJson.Icon.iconid);
-                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
         }
 
@@ -113,8 +115,8 @@ namespace WotDossier.Test
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
-                                                tankJson.Icon.iconid);
-                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
         }
 
@@ -128,8 +130,8 @@ namespace WotDossier.Test
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
-                                                tankJson.Icon.iconid);
-                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
         }
 
@@ -143,8 +145,8 @@ namespace WotDossier.Test
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
-                                                tankJson.Icon.iconid);
-                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Icon.iconid));
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
         }
 
@@ -411,8 +413,8 @@ namespace WotDossier.Test
             List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.Tankdata.battlesCount).FirstOrDefault()).ToList();
 
             TankJson is3 = tankJsons.First(x => x.UniqueId() == 29);
-            TankInfo tankInfo = WotApiClient.Instance.TanksDictionary[29];
-            VStat stat = vstat[tankInfo.icon];
+            TankDescription tankDescription = WotApiClient.Instance.TanksDictionary[29];
+            VStat stat = vstat[tankDescription.Icon.Icon];
 
             double damageDealt = is3.Tankdata.damageDealt;
             double battlesCount = is3.Tankdata.battlesCount;
@@ -492,8 +494,7 @@ namespace WotDossier.Test
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
             List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.Tankdata.battlesCount).FirstOrDefault()).ToList();
 
-            double damage = tankJsons.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.UniqueId(), y => y.UniqueId(),
-                (x, y) => x.Tankdata.battlesCount * y.nominal_damage).Sum();
+            double damage = tankJsons.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
 
             var performanceRating = RatingHelper.PerformanceRating(currentStatistic.BattlesCount, currentStatistic.Wins, damage, currentStatistic.DamageDealt, currentStatistic.AvgLevel);
 
@@ -526,23 +527,57 @@ namespace WotDossier.Test
             document.Load(@"Data\TankNominalDamage.xml");
             XmlNodeList nodes = document.SelectNodes("/damage/tr");
 
-            List<TankInfo> xmlTanks = new List<TankInfo>();
+            List<RatingExpectancy> xmlTanks = new List<RatingExpectancy>();
 
             foreach (XmlNode node in nodes)
             {
                 XmlNodeList values = node.SelectNodes("td");
                 XmlNode nominal_damage = values[5];
+                XmlNode wn8_nominal_damage = values[6];
+                XmlNode wn8_nominal_win_rate = values[7];
+                XmlNode wn8_nominal_spotted = values[8];
+                XmlNode wn8_nominal_frags = values[9];
+                XmlNode wn8_nominal_defence = values[10];
                 XmlNode href = values[1].SelectSingleNode("a/@href");
-                xmlTanks.Add(new TankInfo { nominal_damage = double.Parse(nominal_damage.InnerText.Replace(".", ",")), icon = href.InnerText.Replace("/tank/ru/", "") });
+                XmlNode title = values[1].SelectSingleNode("a");
+
+                RatingExpectancy ratingExpectancy = new RatingExpectancy();
+                ratingExpectancy.PRNominalDamage = double.Parse(nominal_damage.InnerText.Replace(",", ""));
+                if (!string.IsNullOrEmpty(wn8_nominal_damage.InnerText))
+                {
+                    ratingExpectancy.Wn8NominalDamage = double.Parse(wn8_nominal_damage.InnerText.Replace(",", ""));
+                    ratingExpectancy.Wn8NominalWinRate = double.Parse(wn8_nominal_win_rate.InnerText.Replace("%", ""));
+                    ratingExpectancy.Wn8NominalSpotted = double.Parse(wn8_nominal_spotted.InnerText.Replace(".", ","));
+                    ratingExpectancy.Wn8NominalFrags = double.Parse(wn8_nominal_frags.InnerText.Replace(".", ","));
+                    ratingExpectancy.Wn8NominalDefence = double.Parse(wn8_nominal_defence.InnerText.Replace(".", ","));
+                }
+                ratingExpectancy.Icon = href.InnerText.Replace("/tank/eu/", "");
+                ratingExpectancy.TankTitle = title.InnerText.Trim();
+                
+                xmlTanks.Add(ratingExpectancy);
             }
 
-            IEnumerable<string> enumerable = xmlTanks.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.icon.ToLower(), y => y.icon.ToLower(),
-                (x, y) => string.Format("{0} \t\t {1} - {2} \t\t\t\t {3}", x.icon, x.nominal_damage, y.nominal_damage, x.nominal_damage == y.nominal_damage));
-
-            foreach (var value in enumerable)
+            foreach (TankDescription description in WotApiClient.Instance.TanksDictionary.Values)
             {
-                Console.WriteLine(value);
+                if (xmlTanks.FirstOrDefault(x => x.Icon.ToLower() == description.Icon.IconOrig.ToLower()) == null)
+                {
+                    Console.WriteLine(description.Icon.IconOrig);
+                }
             }
+
+            JsonSerializer se = new JsonSerializer();
+            StringBuilder builder = new StringBuilder();
+            se.Serialize(new StringWriter(builder), xmlTanks);
+
+            Console.WriteLine(builder);
+
+            //IEnumerable<string> enumerable = xmlTanks.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.Tank, y => y.Icon.Icon.ToLower(),
+            //    (x, y) => string.Format("{0} \t\t {1} - {2} \t\t\t\t {3}", x.Tank, x.PRNominalDamage, y.Expectancy.PRNominalDamage, x.PRNominalDamage == y.Expectancy.PRNominalDamage));
+
+            //foreach (var value in enumerable)
+            //{
+            //    Console.WriteLine(value);
+            //}
         }
     }
 }

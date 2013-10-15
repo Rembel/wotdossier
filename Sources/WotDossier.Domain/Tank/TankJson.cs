@@ -6,8 +6,7 @@ namespace WotDossier.Domain.Tank
     public class TankJson
     {
         public byte[] Raw { get; set; }
-        public TankInfo Info { get; set; }
-        public TankIcon Icon { get; set; }
+        public TankDescription Description { get; set; }
         public IEnumerable<FragsJson> Frags { get; set; }
 
         public BattleJson Battle { get; set; }
@@ -34,7 +33,7 @@ namespace WotDossier.Domain.Tank
         /// </returns>
         public override string ToString()
         {
-            return string.Format("{0}", Info.title);
+            return string.Format("{0}", Description.Title);
         }
     }
 }

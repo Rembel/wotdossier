@@ -4,41 +4,15 @@ namespace WotDossier.Applications.ViewModel.Rows
 {
     public class TankRowBase : ITankRowBase
     {
-        private int _tier;
-        private TankIcon _icon;
-        private string _tank;
-        private int _tankType;
-        private int _countryId;
+        public int Tier { get; set; }
 
-        public int Tier
-        {
-            get { return _tier; }
-            set { _tier = value; }
-        }
+        public TankIcon Icon { get; set; }
 
-        public TankIcon Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
+        public string Tank { get; set; }
 
-        public string Tank
-        {
-            get { return _tank; }
-            set { _tank = value; }
-        }
+        public int TankType { get; set; }
 
-        public int TankType
-        {
-            get { return _tankType; }
-            set { _tankType = value; }
-        }
-
-        public int CountryId
-        {
-            get { return _countryId; }
-            set { _countryId = value; }
-        }
+        public int CountryId { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -55,7 +29,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tier = tank.Common.tier;
             TankType = tank.Common.type;
             Tank = tank.Common.tanktitle;
-            Icon = tank.Icon;
+            Icon = tank.Description.Icon;
             CountryId = tank.Common.countryid;
         }
 

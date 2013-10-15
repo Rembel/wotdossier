@@ -25,6 +25,7 @@ namespace WotDossier.Applications.ViewModel
             currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.Tankdata.damageReceived);
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - created).Days;
             currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
+            currentStatisticViewModel.WN8Rating = GetWN8Rating(tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
 
             if (playerData.Clan != null)
@@ -41,10 +42,25 @@ namespace WotDossier.Applications.ViewModel
 
         private static double GetPerformanceRating(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
         {
-            double damage = tanks.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.UniqueId(), y => y.UniqueId(),
-                (x, y) => x.Tankdata.battlesCount * y.nominal_damage).Sum();
+            double expDamage = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
+            return RatingHelper.PerformanceRating(playerStatistic.BattlesCount, playerStatistic.Wins, expDamage, playerStatistic.DamageDealt, playerStatistic.Tier);
+        }
 
-            return RatingHelper.PerformanceRating(playerStatistic.BattlesCount, playerStatistic.Wins, damage, playerStatistic.DamageDealt, playerStatistic.Tier);
+        private static double GetWN8Rating(List<TankJson> tanks)
+        {
+            double damage = tanks.Select(x => x.Tankdata.damageDealt).Sum();
+            double spotted = tanks.Select(x => x.Tankdata.spotted).Sum();
+            double def = tanks.Select(x => x.Tankdata.droppedCapturePoints).Sum();
+            double winRate = 100.0 * tanks.Sum(x => x.Tankdata.wins) / tanks.Sum(x => x.Tankdata.battlesCount);
+            double frags = tanks.Select(x => x.Tankdata.frags).Sum();
+
+            double expDamage = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalDamage).Sum();
+            double expSpotted = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalSpotted).Sum();
+            double expDef = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalDefence).Sum();
+            double expWinRate = tanks.Average(x => x.Description.Expectancy.Wn8NominalWinRate);
+            double expFrags = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalFrags).Sum();
+            return RatingHelper.CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted,
+                def, expDef, winRate, expWinRate);
         }
 
         private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)

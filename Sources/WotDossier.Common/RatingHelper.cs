@@ -64,6 +64,23 @@ WN7 formula:
                    + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Exp((winrate - 35) * -0.134))) - 500) * 0.45
                    - ((5 - Math.Min(tier, 5)) * 125) / (1 + Math.Exp((tier - Math.Pow(battles/220.0, 3/tier))*1.5));
         }
+
+        public static double CalcWN8(double avgDmg, double expDmg, double avgFrag, double expFrag, double avgSpot, double expSpot, double avgDef, double expDef, double avgWinRate, double expWinRate)
+        {
+            double rDamage = avgDmg / expDmg;
+            double rSpot = avgSpot / expSpot;
+            double rFrag = avgFrag / expFrag;
+            double rDef = avgDef / expDef;
+            double rWin = avgWinRate / expWinRate;
+
+            double rWiNc = Math.Max(0, (rWin - 0.71) / (1 - 0.71));
+            double rDamagEc = Math.Max(0, (rDamage - 0.22) / (1 - 0.22));
+            double rFraGc = Math.Min(rDamagEc + 0.2, Math.Max(0, (rFrag - 0.12) / (1 - 0.12)));
+            double rSpoTc = Math.Min(rDamagEc + 0.1, Math.Max(0, (rSpot - 0.38) / (1 - 0.38)));
+            double rDeFc = Math.Min(rDamagEc + 0.1, Math.Max(0, (rDef - 0.10) / (1 - 0.10)));
+
+            return 980 * rDamagEc + 210 * rDamagEc * rFraGc + 155 * rFraGc * rSpoTc + 75 * rDeFc * rFraGc + 145 * Math.Min(1.8, rWiNc);
+        }
         
         public static double CalcER(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {

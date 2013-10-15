@@ -37,16 +37,17 @@ namespace WotDossier.Dal
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
 
-        private readonly Dictionary<int, TankInfo> _tanksDictionary;
+        private readonly Dictionary<int, TankDescription> _tanksDictionary;
         private readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
         private Dictionary<int, TankServerInfo> _serverTanksDictionary;
+        private Dictionary<string, RatingExpectancy> _ratingExpectations;
 
         /// <summary>
         /// Tanks dictionary
         /// KEY - tankid, countryid
         /// </summary>
-        public Dictionary<int, TankInfo> TanksDictionary
+        public Dictionary<int, TankDescription> TanksDictionary
         {
             get { return _tanksDictionary; }
         }
@@ -71,6 +72,7 @@ namespace WotDossier.Dal
         /// </summary>
         private WotApiClient()
         {
+            _ratingExpectations = ReadRatingExpectationsDictionary();
             _tanksDictionary = ReadTanksDictionary();
             _serverTanksDictionary = ReadServerTanksDictionary();
             _maps = ReadMaps();
@@ -121,8 +123,7 @@ namespace WotDossier.Dal
 
         public void ExtendPropertiesData(TankJson tank)
         {
-            tank.Info = _tanksDictionary[tank.UniqueId()];
-            tank.Icon = GetTankIcon(tank);
+            tank.Description = _tanksDictionary[tank.UniqueId()];
             tank.Frags =
                 tank.Kills.Select(
                     x =>
@@ -134,30 +135,15 @@ namespace WotDossier.Dal
                                  {
                                      CountryId = countryId,
                                      TankId = tankId,
-                                     Icon = GetTankIcon(TanksDictionary[uniqueId]),
+                                     Icon = TanksDictionary[uniqueId].Icon,
                                      TankUniqueId = uniqueId,
                                      Count = Convert.ToInt32(x[2]),
-                                     Type = TanksDictionary[uniqueId].type,
-                                     Tier = TanksDictionary[uniqueId].tier,
+                                     Type = TanksDictionary[uniqueId].Type,
+                                     Tier = TanksDictionary[uniqueId].Tier,
                                      KilledByTankUniqueId = tank.UniqueId(),
                                      Tank = x[3]
                                  };
                         }).ToList();
-        }
-
-        public TankIcon GetTankIcon(TankJson tank)
-        {
-            return GetTankIcon(tank.Info);
-        }
-
-        public TankIcon GetTankIcon(TankInfo tank)
-        {
-            string key = string.Format("{0}_{1}", tank.countryCode, tank.icon.ToLowerInvariant());
-            if (_iconsDictionary.ContainsKey(key))
-            {
-                return _iconsDictionary[key];
-            }
-            return TankIcon.Empty;
         }
 
         public TankIcon GetTankIcon(string playerVehicle)
@@ -170,9 +156,9 @@ namespace WotDossier.Dal
             return TankIcon.Empty;
         }
 
-        private Dictionary<int, TankInfo> ReadTanksDictionary()
+        private Dictionary<int, TankDescription> ReadTanksDictionary()
         {
-            List<TankInfo> tanks = new List<TankInfo>();
+            List<TankDescription> tanks = new List<TankDescription>();
             using (StreamReader re = new StreamReader(@"External\tanks.json"))
             {
                 JsonTextReader reader = new JsonTextReader(re);
@@ -180,17 +166,23 @@ namespace WotDossier.Dal
                 var parsedData = se.Deserialize<JArray>(reader);
                 foreach (JToken jToken in parsedData)
                 {
-                    TankInfo tank = JsonConvert.DeserializeObject<TankInfo>(jToken.ToString());
-                    tank.countryCode = WotApiHelper.GetCountryNameCode(tank.countryid);
-                    tanks.Add(tank);
+                    string json = jToken.ToString();
 
-                    TankIcon tankIcon = new TankIcon
-                        {
-                            country_code = tank.countryCode,
-                            country_id = tank.countryid,
-                            iconid = string.Format("{0}_{1}", tank.countryCode, tank.icon)
-                        };
-                    _iconsDictionary.Add(tankIcon.iconid, tankIcon);
+                    TankDescription tank = JsonConvert.DeserializeObject<TankDescription>(json);
+                    tank.CountryCode = WotApiHelper.GetCountryNameCode(tank.CountryId);
+
+                    TankIcon icon = JsonConvert.DeserializeObject<TankIcon>(json);
+                    icon.CountryCode = tank.CountryCode;
+                    _iconsDictionary.Add(icon.IconId, icon);
+                    
+                    tank.Icon = icon;
+
+                    if (_ratingExpectations.ContainsKey(tank.Icon.IconOrig))
+                    {
+                        tank.Expectancy = _ratingExpectations[tank.Icon.IconOrig];
+                    }
+
+                    tanks.Add(tank);
                 }
             }
 
@@ -206,6 +198,25 @@ namespace WotDossier.Dal
                 var parsedData = se.Deserialize<JObject>(reader);
                 return JsonConvert.DeserializeObject<Dictionary<int, TankServerInfo>>(parsedData["data"].ToString());
             }
+        }
+
+        private Dictionary<string, RatingExpectancy> ReadRatingExpectationsDictionary()
+        {
+            try
+            {
+                using (StreamReader re = new StreamReader(@"External\tanks_expectations.json"))
+                {
+                    JsonTextReader reader = new JsonTextReader(re);
+                    JsonSerializer se = new JsonSerializer();
+                    var parsedData = se.Deserialize<JArray>(reader);
+                    return JsonConvert.DeserializeObject<List<RatingExpectancy>>(parsedData.ToString()).ToDictionary(x => x.Icon, x => x);
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error(e);
+            }
+            return new Dictionary<string, RatingExpectancy>();
         }
 
         public static Dictionary<string, Map> ReadMaps()
@@ -584,9 +595,9 @@ namespace WotDossier.Dal
             }
         }
 
-        public Dictionary<int, TankInfo> ReadTankNominalDamage()
+        public Dictionary<int, TankDescription> ReadTankNominalDamage()
         {
-            Dictionary<int, TankInfo> dictionary = new Dictionary<int, TankInfo>();
+            Dictionary<int, TankDescription> dictionary = new Dictionary<int, TankDescription>();
             using (StreamReader streamReader = new StreamReader(@"Data\TankNominalDamage.xml"))
             {
                 XmlDocument document = new XmlDocument();
@@ -599,12 +610,12 @@ namespace WotDossier.Dal
                     XmlNodeList values = node.SelectNodes("td");
                     if (values != null)
                     {
-                        TankInfo info = new TankInfo();
-                        info.countryid = WotApiHelper.GetCountryIdBy2Letters(values[2].InnerText);
-                        info.tier = int.Parse(values[3].InnerText);
-                        info.type = (int)Enum.Parse(typeof(TankType), values[4].InnerText);
+                        TankDescription description = new TankDescription();
+                        description.CountryId = WotApiHelper.GetCountryIdBy2Letters(values[2].InnerText);
+                        description.Tier = int.Parse(values[3].InnerText);
+                        description.Type = (int)Enum.Parse(typeof(TankType), values[4].InnerText);
                         double nominalDamage = double.Parse(values[5].InnerText, CultureInfo.InvariantCulture);
-                        dictionary.Add(info.UniqueId(), info);
+                        dictionary.Add(description.UniqueId(), description);
                     }
                 }
             }

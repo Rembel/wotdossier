@@ -47,7 +47,7 @@ namespace WotDossier.Applications
         public int Credits { get; set; }
         
         public FileInfo FileInfo { get; set; }
-        public TankInfo Tank { get; set; }
+        public TankDescription Tank { get; set; }
         public TankIcon Icon { get; set; }
         public List<Medal> Medals { get; set; }
 
@@ -101,7 +101,7 @@ namespace WotDossier.Applications
                 Match tankNameMatch = tankNameRegexp.Match(replay.datablock_1.playerVehicle);
                 CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
                 TankName = tankNameMatch.Groups[2].Value;
-                Tank = WotApiClient.Instance.TanksDictionary.Values.FirstOrDefault(x => x.icon_orig.ToLower() == TankName.ToLower());
+                Tank = WotApiClient.Instance.TanksDictionary.Values.FirstOrDefault(x => x.Icon.IconOrig.ToLower() == TankName.ToLower());
 
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));

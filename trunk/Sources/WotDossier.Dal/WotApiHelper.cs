@@ -23,6 +23,8 @@ namespace WotDossier.Dal
                     return "france";
                 case 5:
                     return "uk";
+                case 6:
+                    return "japan";
             }
             return string.Empty;
         }
@@ -43,6 +45,8 @@ namespace WotDossier.Dal
                     return 4;
                 case "uk":
                     return 5;
+                case "jp":
+                    return 6;
             }
             return -1;
         }
@@ -63,6 +67,8 @@ namespace WotDossier.Dal
                     return 4;
                 case "uk":
                     return 5;
+                case "jp":
+                    return 6;
             }
             return -1;
         }

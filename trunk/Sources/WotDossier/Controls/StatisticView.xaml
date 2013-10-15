@@ -202,6 +202,9 @@
             <!--<TextBlock Foreground="#BABFBA" Grid.Row="30" Grid.Column="0" Text="{x:Static Resources:Resources.Common_WotNoobsRating}"></TextBlock>
             <TextBlock Foreground="{Binding Path=NoobRating, Converter={x:Static Converters:NoobRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="1" Text="{Binding NoobRating, StringFormat='0.000'}"></TextBlock>
             <TextBlock Foreground="{Binding NoobRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="2" Text="{Binding NoobRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
+            <!--WN8-->
+            <TextBlock Foreground="#BABFBA" Grid.Row="30" Grid.Column="0" Text="WN8"></TextBlock>
+            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="30" Grid.Column="1" Text="{Binding WN8Rating, StringFormat='0.0'}"></TextBlock>
             <!--AverageTier-->
             <TextBlock Foreground="#BABFBA" Grid.Row="31" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AverageTier}"></TextBlock>
             <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="31" Grid.Column="1" Text="{Binding Tier, StringFormat='0.00'}"></TextBlock>

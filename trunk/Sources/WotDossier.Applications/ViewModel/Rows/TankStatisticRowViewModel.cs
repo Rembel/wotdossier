@@ -246,7 +246,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tier = tank.Common.tier;
             Type = tank.Common.type;
             Tank = tank.Common.tanktitle;
-            Icon = tank.Icon;
+            Icon = tank.Description.Icon;
             CountryId = tank.Common.countryid;
             TankId = tank.Common.tankid;
             TankUniqueId = tank.UniqueId();

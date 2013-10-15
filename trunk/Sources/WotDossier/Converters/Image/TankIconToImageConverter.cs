@@ -28,7 +28,7 @@ namespace WotDossier.Converters
             BitmapImage bitmapImage = null;
             if (icon != null)
             {
-                bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.iconid), UriKind.Relative));
+                bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.IconId), UriKind.Relative));
             }
             return bitmapImage;
         }

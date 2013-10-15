@@ -336,22 +336,22 @@ namespace WotDossier.Applications.ViewModel
         public List<T> Filter<T>(List<T> replays) where T : ReplayFile
         {
             return replays.Where(x =>
-                                   (x.Tank.tier == 1 && Level1Selected
-                                    || x.Tank.tier == 2 && Level2Selected
-                                    || x.Tank.tier == 3 && Level3Selected
-                                    || x.Tank.tier == 4 && Level4Selected
-                                    || x.Tank.tier == 5 && Level5Selected
-                                    || x.Tank.tier == 6 && Level6Selected
-                                    || x.Tank.tier == 7 && Level7Selected
-                                    || x.Tank.tier == 8 && Level8Selected
-                                    || x.Tank.tier == 9 && Level9Selected
-                                    || x.Tank.tier == 10 && Level10Selected)
+                                   (x.Tank.Tier == 1 && Level1Selected
+                                    || x.Tank.Tier == 2 && Level2Selected
+                                    || x.Tank.Tier == 3 && Level3Selected
+                                    || x.Tank.Tier == 4 && Level4Selected
+                                    || x.Tank.Tier == 5 && Level5Selected
+                                    || x.Tank.Tier == 6 && Level6Selected
+                                    || x.Tank.Tier == 7 && Level7Selected
+                                    || x.Tank.Tier == 8 && Level8Selected
+                                    || x.Tank.Tier == 9 && Level9Selected
+                                    || x.Tank.Tier == 10 && Level10Selected)
                                    &&
-                                       (x.Tank.type == (int)TankType.LT && LTSelected
-                                        || x.Tank.type == (int)TankType.MT && MTSelected
-                                        || x.Tank.type == (int)TankType.HT && HTSelected
-                                        || x.Tank.type == (int)TankType.TD && TDSelected
-                                        || x.Tank.type == (int)TankType.SPG && SPGSelected)
+                                       (x.Tank.Type == (int)TankType.LT && LTSelected
+                                        || x.Tank.Type == (int)TankType.MT && MTSelected
+                                        || x.Tank.Type == (int)TankType.HT && HTSelected
+                                        || x.Tank.Type == (int)TankType.TD && TDSelected
+                                        || x.Tank.Type == (int)TankType.SPG && SPGSelected)
                                    &&
                                     (SelectedFolder != null && x.FolderId == SelectedFolder.Id)
                                     &&
@@ -361,7 +361,7 @@ namespace WotDossier.Applications.ViewModel
                                     || x.CountryId == (int)Country.France && FranceSelected
                                     || x.CountryId == (int)Country.US && USSelected
                                     || x.CountryId == (int)Country.UK && UKSelected)
-                                   && (x.Tank.premium == 1 || !IsPremium)
+                                   && (x.Tank.Premium == 1 || !IsPremium)
                                    && (SelectedMap == null || x.MapId == SelectedMap.Key || SelectedMap.Key == 0)
                                    && FieldFilter(x)
                 ).ToList();

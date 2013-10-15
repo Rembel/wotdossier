@@ -18,45 +18,18 @@ namespace WotDossier.Applications.ViewModel
     {
         #region Fields and Properties
 
-        private Replay _replay;
-        private List<CombatTarget> _combatEffects;
-        private List<TeamMember> _firstTeam;
-        private List<TeamMember> _secondTeam;
-        private string _mapName;
-        private string _mapDisplayName;
-        private TankIcon _tankIcon;
         private TeamMember _alienTeamMember;
         private TeamMember _ourTeamMember;
 
-        public Replay Replay
-        {
-            get { return _replay; }
-            set { _replay = value; }
-        }
+        public Replay Replay { get; set; }
 
-        public List<CombatTarget> CombatEffects
-        {
-            get { return _combatEffects; }
-            set { _combatEffects = value; }
-        }
+        public List<CombatTarget> CombatEffects { get; set; }
 
-        public List<TeamMember> FirstTeam
-        {
-            get { return _firstTeam; }
-            set { _firstTeam = value; }
-        }
+        public List<TeamMember> FirstTeam { get; set; }
 
-        public List<TeamMember> SecondTeam
-        {
-            get { return _secondTeam; }
-            set { _secondTeam = value; }
-        }
+        public List<TeamMember> SecondTeam { get; set; }
 
-        public TankIcon TankIcon
-        {
-            get { return _tankIcon; }
-            set { _tankIcon = value; }
-        }
+        public TankIcon TankIcon { get; set; }
 
         public string Date { get; set; }
 
@@ -139,18 +112,9 @@ namespace WotDossier.Applications.ViewModel
 
         public int PremiumCredits { get; set; }
 
-        public string MapDisplayName
+        public string MapDisplayName { get; set; }
 
-        {
-            get { return _mapDisplayName; }
-            set { _mapDisplayName = value; }
-        }
-
-        public string MapName
-        {
-            get { return _mapName; }
-            set { _mapName = value; }
-        }
+        public string MapName { get; set; }
 
         public TeamMember AlienTeamMember
         {

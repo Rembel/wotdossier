@@ -176,7 +176,7 @@ namespace WotDossier.Dal
                         tankEntity.CountryId = countryId;
                         tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(countryId);
                         tankEntity.TankId = tankId;
-                        tankEntity.Icon = tank.Icon.iconid;
+                        tankEntity.Icon = tank.Description.Icon.IconId;
                         tankEntity.PlayerId = playerEntity.Id;
                         tankEntity.IsPremium = tank.Common.premium == 1;
                         tankEntity.Name = tank.Common.tanktitle;

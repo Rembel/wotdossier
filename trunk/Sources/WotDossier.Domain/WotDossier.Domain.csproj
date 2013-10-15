@@ -91,6 +91,7 @@
     <Compile Include="Replay\VehicleResult.cs" />
     <Compile Include="StatisticPeriod.cs" />
     <Compile Include="TankType.cs" />
+    <Compile Include="Tank\RatingExpectancy.cs" />
     <Compile Include="Tank\TankServerInfo.cs" />
     <Compile Include="Tank\FragsJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,7 +106,7 @@
     <Compile Include="Tank\TankIcon.cs" />
     <Compile Include="Tank\TankJson.cs" />
     <Compile Include="Tank\TankDataJson.cs" />
-    <Compile Include="Tank\TankInfo.cs" />
+    <Compile Include="Tank\TankDescription.cs" />
     <Compile Include="VStat.cs" />
   </ItemGroup>
   <ItemGroup>

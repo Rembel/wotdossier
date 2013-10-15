@@ -126,6 +126,10 @@
       <Link>External\select.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\server_tanks.json">
+      <Link>External\server_tanks.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\structures_18.json">
       <Link>External\structures_18.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

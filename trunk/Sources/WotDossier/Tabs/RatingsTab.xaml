@@ -3,8 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
@@ -18,16 +16,8 @@
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
         <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" 
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}">
             <DataGrid.Resources>
-                <ContextMenu x:Key="ContextMenu">
-                    <MenuItem Header="{x:Static Resources:Resources.Command_AddToFavorites}" 
-                              Command="{Binding Path=DataContext.AddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
-                              CommandParameter="{Binding}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.Command_RemoveFromFavorites}" 
-                              Command="{Binding Path=DataContext.RemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
-                              CommandParameter="{Binding}"/>
-                </ContextMenu>
                 <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
                     <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
                 </Style>
@@ -40,16 +30,6 @@
                     <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" />
                 </Style>
             </DataGrid.Resources>
-            <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
-                    <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}">
-                    </Setter>
-                </Style>
-            </DataGrid.RowStyle>
-            <DataGrid.InputBindings>
-                <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
-                            Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-            </DataGrid.InputBindings>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
@@ -66,11 +46,6 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KievArmorRating}" Binding="{Binding KievArmorRating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
             </DataGrid.Columns>
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseDoubleClick">
-                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
         </DataGrid>
     </Grid>
 </UserControl>

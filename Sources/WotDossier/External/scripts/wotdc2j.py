@@ -320,7 +320,7 @@ def write_to_log(logtext):
 	#working_directory
 	if option_server == 1:
 		try:
-			logFile = open("/var/log/wotdc2j/wotdc2j.log", "a+b")
+			logFile = open("wotdc2j.log", "a+b")
 			logFile.write(str(now.strftime("%Y-%m-%d %H:%M:%S")) + " # " + str(logtext) + " # " + str(filename_source) + "\r\n")
 			logFile.close()
 		except:

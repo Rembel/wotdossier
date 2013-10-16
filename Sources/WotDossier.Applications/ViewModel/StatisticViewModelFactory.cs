@@ -25,7 +25,7 @@ namespace WotDossier.Applications.ViewModel
             currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.Tankdata.damageReceived);
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - created).Days;
             currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
-            currentStatisticViewModel.WN8Rating = GetWN8Rating(tanks);
+            currentStatisticViewModel.WN8Rating = GetWN8Rating(currentStatisticViewModel, tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
 
             if (playerData.Clan != null)
@@ -46,7 +46,7 @@ namespace WotDossier.Applications.ViewModel
             return RatingHelper.PerformanceRating(playerStatistic.BattlesCount, playerStatistic.Wins, expDamage, playerStatistic.DamageDealt, playerStatistic.Tier);
         }
 
-        private static double GetWN8Rating(List<TankJson> tanks)
+        private static double GetWN8Rating(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
         {
             double battles = (double)tanks.Sum(x => x.Tankdata.battlesCount);
 
@@ -55,6 +55,12 @@ namespace WotDossier.Applications.ViewModel
             double def = tanks.Select(x => x.Tankdata.droppedCapturePoints).Sum() / battles;
             double winRate = tanks.Sum(x => x.Tankdata.wins) / battles;
             double frags = tanks.Select(x => x.Tankdata.frags).Sum() / battles;
+
+            //double damage = playerStatistic.AvgDamageDealt;
+            //double spotted = playerStatistic.AvgSpotted;
+            //double def = playerStatistic.AvgDroppedCapturePoints;
+            //double winRate = playerStatistic.WinsPercent / 100.0;
+            //double frags = playerStatistic.AvgFrags;
 
             double expDamage = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalDamage).Sum() / battles;
             double expSpotted = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalSpotted).Sum() / battles;

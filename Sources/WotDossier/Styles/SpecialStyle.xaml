@@ -1,7 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Converters="clr-namespace:WotDossier.Converters"
-                    xmlns:Resources="clr-namespace:WotDossier.Resources">
+                    xmlns:Resources="clr-namespace:WotDossier.Resources"
+                    xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework">
 
     <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.jpg" Stretch="Fill" />
     <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.jpg" Stretch="Fill" />
@@ -44,19 +47,40 @@
             </DataTrigger>
         </Style.Triggers>
     </Style>
-    
+
+    <!--Tank grids-->
+    <ContextMenu x:Key="ContextMenu">
+        <MenuItem Header="{x:Static Resources:Resources.Command_AddToFavorites}" InputGestureText="Ctrl+D"
+                              Command="{Binding Path=DataContext.AddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>
+        <MenuItem Header="{x:Static Resources:Resources.Command_RemoveFromFavorites}"
+                              Command="{Binding Path=DataContext.RemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>
+    </ContextMenu>
     <Style x:Key="TankDataRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
-        <Setter Property="ContextMenu">
+        <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}" />
+    </Style>
+
+    <controls:Triggers x:Key="MouseTriggers" x:Shared="False">
+        <i:EventTrigger EventName="MouseDoubleClick">
+            <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
+        </i:EventTrigger>
+    </controls:Triggers>
+
+    <Style x:Key="TankDataGridStyle" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource office2007SilverDataGrid}">
+        <Setter Property="RowStyle" Value="{StaticResource TankDataRowStyle}" />
+        <!--<Setter Property="controls:AttachedProperties.InputBindings">
             <Setter.Value>
-                <ContextMenu>
-                    <MenuItem Header="{x:Static Resources:Resources.Command_AddToFavorites}" 
-                              Command="{Binding Path=DataContext.OnAddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
-                              CommandParameter="{Binding}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.Command_RemoveFromFavorites}" 
-                              Command="{Binding Path=DataContext.OnRemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
-                              CommandParameter="{Binding}"/>
-                </ContextMenu>
+                <InputBindingCollection>
+                    <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
+                            Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                    <KeyBinding Command="{Binding Path=AddToFavoriteCommand}" 
+                            Key="D" Modifiers="Control" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                    <KeyBinding Command="{Binding Path=RemoveFromFavoriteCommand}" 
+                            CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                </InputBindingCollection>
             </Setter.Value>
-        </Setter>
+        </Setter>-->
+        <Setter Property="controls:SupplementaryInteraction.Triggers" Value="{StaticResource MouseTriggers}"></Setter>
     </Style>
 </ResourceDictionary>

@@ -3,8 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
@@ -17,23 +15,7 @@
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
         <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" 
-                  AutoGenerateColumns="False">
-<DataGrid.Resources>
-                <ContextMenu x:Key="ContextMenu">
-                    <MenuItem Header="{x:Static Resources:Resources.Command_AddToFavorites}" 
-                              Command="{Binding Path=DataContext.AddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
-                              CommandParameter="{Binding}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.Command_RemoveFromFavorites}" 
-                              Command="{Binding Path=DataContext.RemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
-                              CommandParameter="{Binding}"/>
-                </ContextMenu>
-            </DataGrid.Resources>
-            <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
-                    <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}">
-                    </Setter>
-                </Style>
-            </DataGrid.RowStyle>
+                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}">
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
@@ -57,11 +39,6 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_LuckyDevil}" HeaderTemplate="{StaticResource LuckyDevilColumnHeaderTemplate}" Binding="{Binding LuckyDevil, Converter={x:Static Converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_BattleAwards_Spartan}" HeaderTemplate="{StaticResource SpartanColumnHeaderTemplate}" Binding="{Binding Spartan, Converter={x:Static Converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </DataGrid.Columns>
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseDoubleClick">
-                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
         </DataGrid>
     </Grid>
 </UserControl>

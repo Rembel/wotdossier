@@ -109,6 +109,7 @@
     <Compile Include="Applications\ViewExtensions.cs" />
     <Compile Include="Applications\ViewModel.cs" />
     <Compile Include="Applications\ViewModel.Generic.cs" />
+    <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
     <Compile Include="Controls\DataGridBehavior.cs" />
     <Compile Include="Controls\MultiSelectListBox.cs" />
@@ -117,6 +118,8 @@
     <Compile Include="Controls\MultiSelector\TwoListSynchronizer.cs" />
     <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="Controls\AttachedProperties.cs" />
+    <Compile Include="Controls\SupplementaryInteraction.cs" />
+    <Compile Include="Controls\Triggers.cs" />
     <Compile Include="EventAggregator\BaseEvent.cs" />
     <Compile Include="EventAggregator\BaseEvent.Generic.cs" />
     <Compile Include="EventAggregator\DelegateReference.cs" />

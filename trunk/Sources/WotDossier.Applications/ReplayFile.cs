@@ -50,6 +50,7 @@ namespace WotDossier.Applications
         public TankDescription Tank { get; set; }
         public TankIcon Icon { get; set; }
         public List<Medal> Medals { get; set; }
+        public List<TeamMember> TeamMembers { get; set; }
 
         public string Link
         {

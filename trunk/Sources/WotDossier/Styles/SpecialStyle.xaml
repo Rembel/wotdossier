@@ -4,7 +4,8 @@
                     xmlns:Resources="clr-namespace:WotDossier.Resources"
                     xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-                    xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework">
+                    xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+                    xmlns:color="clr-namespace:WotDossier.Converters.Color">
 
     <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.jpg" Stretch="Fill" />
     <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.jpg" Stretch="Fill" />
@@ -46,6 +47,18 @@
                 <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
             </DataTrigger>
         </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
+    </Style>
+
+    <Style x:Key="DataGridCellWn6Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}" />
+    </Style>
+
+    <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" />
     </Style>
 
     <!--Tank grids-->

@@ -11,6 +11,7 @@ namespace WotDossier.Domain
         private DateTime? _prevDate;
         private bool _checkForUpdates = true;
         private int _lastNBattles = 100;
+        private TankFilter _tankFilter = new TankFilter();
         public string PlayerName { get; set; }
         public int PlayerId { get; set; }
         public string Server { get; set; }
@@ -56,6 +57,12 @@ namespace WotDossier.Domain
         {
             get { return _checkForUpdates; }
             set { _checkForUpdates = value; }
+        }
+
+        public TankFilter TankFilter
+        {
+            get { return _tankFilter; }
+            set { _tankFilter = value; }
         }
     }
 }

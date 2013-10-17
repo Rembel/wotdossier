@@ -16,6 +16,14 @@
         </controls:TankFilterPanel>
         <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgFrags" IsReadOnly="True" 
                   AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}">
+            <DataGrid.InputBindings>
+                <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
+                            Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                <KeyBinding Command="{Binding Path=AddToFavoriteCommand}" 
+                            Key="D" Modifiers="Control" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                <KeyBinding Command="{Binding Path=RemoveFromFavoriteCommand}" 
+                            CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+            </DataGrid.InputBindings>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

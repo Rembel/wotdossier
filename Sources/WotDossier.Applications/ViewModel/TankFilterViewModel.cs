@@ -8,262 +8,250 @@ namespace WotDossier.Applications.ViewModel
 {
     public class TankFilterViewModel : INotifyPropertyChanged
     {
-        #region FILTERS
+        private readonly TankFilter _filter;
 
-        private bool _level1Selected = true;
-        private bool _level3Selected = true;
-        private bool _level4Selected = true;
-        private bool _level5Selected = true;
-        private bool _level6Selected = true;
-        private bool _level7Selected = true;
-        private bool _level8Selected = true;
-        private bool _level9Selected = true;
-        private bool _level10Selected = true;
-        private bool _ltSelected = true;
-        private bool _mtSelected = true;
-        private bool _htSelected = true;
-        private bool _tdSelected = true;
-        private bool _spgSelected = true;
-        private bool _ussrSelected = true;
-        private bool _germanySelected = true;
-        private bool _usSelected = true;
-        private bool _chinaSelected = true;
-        private bool _franceSelected = true;
-        private bool _ukSelected = true;
-        private bool _isPremium;
-        private bool _isFavorite;
+        #region FILTERS
 
         public bool Level10Selected
         {
-            get { return _level10Selected; }
+
+            get { return _filter.Level10Selected; }
             set
             {
-                _level10Selected = value;
+                _filter.Level10Selected = value;
                 OnPropertyChanged("Level10Selected");
             }
         }
 
         public bool Level9Selected
         {
-            get { return _level9Selected; }
+            get { return _filter.Level9Selected; }
             set
             {
-                _level9Selected = value;
+                _filter.Level9Selected = value;
                 OnPropertyChanged("Level9Selected");
             }
         }
 
         public bool Level8Selected
         {
-            get { return _level8Selected; }
+            get { return _filter.Level8Selected; }
             set
             {
-                _level8Selected = value;
+                _filter.Level8Selected = value;
                 OnPropertyChanged("Level8Selected");
             }
         }
 
         public bool Level7Selected
         {
-            get { return _level7Selected; }
+            get { return _filter.Level7Selected; }
             set
             {
-                _level7Selected = value;
+                _filter.Level7Selected = value;
                 OnPropertyChanged("Level7Selected");
             }
         }
 
         public bool Level6Selected
         {
-            get { return _level6Selected; }
+            get { return _filter.Level6Selected; }
             set
             {
-                _level6Selected = value;
+                _filter.Level6Selected = value;
                 OnPropertyChanged("Level6Selected");
             }
         }
 
         public bool Level5Selected
         {
-            get { return _level5Selected; }
+            get { return _filter.Level5Selected; }
             set
             {
-                _level5Selected = value;
+                _filter.Level5Selected = value;
                 OnPropertyChanged("Level5Selected");
             }
         }
 
         public bool Level4Selected
         {
-            get { return _level4Selected; }
+            get { return _filter.Level4Selected; }
             set
             {
-                _level4Selected = value;
+                _filter.Level4Selected = value;
                 OnPropertyChanged("Level4Selected");
             }
         }
 
         public bool Level3Selected
         {
-            get { return _level3Selected; }
+            get { return _filter.Level3Selected; }
             set
             {
-                _level3Selected = value;
+                _filter.Level3Selected = value;
                 OnPropertyChanged("Level3Selected");
             }
         }
 
         public bool Level2Selected
         {
-            get { return _level1Selected; }
+            get { return _filter.Level1Selected; }
             set
             {
-                _level1Selected = value;
+                _filter.Level1Selected = value;
                 OnPropertyChanged("Level2Selected");
             }
         }
 
         public bool Level1Selected
         {
-            get { return _level1Selected; }
+            get { return _filter.Level1Selected; }
             set
             {
-                _level1Selected = value;
+                _filter.Level1Selected = value;
                 OnPropertyChanged("Level1Selected");
             }
         }
 
         public bool SPGSelected
         {
-            get { return _spgSelected; }
+            get { return _filter.SPGSelected; }
             set
             {
-                _spgSelected = value;
+                _filter.SPGSelected = value;
                 OnPropertyChanged("SPGSelected");
             }
         }
 
         public bool TDSelected
         {
-            get { return _tdSelected; }
+            get { return _filter.TDSelected; }
             set
             {
-                _tdSelected = value;
+                _filter.TDSelected = value;
                 OnPropertyChanged("TDSelected");
             }
         }
 
         public bool HTSelected
         {
-            get { return _htSelected; }
+            get { return _filter.HTSelected; }
             set
             {
-                _htSelected = value;
+                _filter.HTSelected = value;
                 OnPropertyChanged("HTSelected");
             }
         }
 
         public bool MTSelected
         {
-            get { return _mtSelected; }
+            get { return _filter.MTSelected; }
             set
             {
-                _mtSelected = value;
+                _filter.MTSelected = value;
                 OnPropertyChanged("MTSelected");
             }
         }
 
         public bool LTSelected
         {
-            get { return _ltSelected; }
+            get { return _filter.LTSelected; }
             set
             {
-                _ltSelected = value;
+                _filter.LTSelected = value;
                 OnPropertyChanged("LTSelected");
             }
         }
 
         public bool USSRSelected
         {
-            get { return _ussrSelected; }
+            get { return _filter.USSRSelected; }
             set
             {
-                _ussrSelected = value;
+                _filter.USSRSelected = value;
                 OnPropertyChanged("USSRSelected");
             }
         }
 
         public bool GermanySelected
         {
-            get { return _germanySelected; }
+            get { return _filter.GermanySelected; }
             set
             {
-                _germanySelected = value;
+                _filter.GermanySelected = value;
                 OnPropertyChanged("GermanySelected");
             }
         }
 
         public bool USSelected
         {
-            get { return _usSelected; }
+            get { return _filter.USSelected; }
             set
             {
-                _usSelected = value;
+                _filter.USSelected = value;
                 OnPropertyChanged("USSelected");
             }
         }
 
         public bool ChinaSelected
         {
-            get { return _chinaSelected; }
+            get { return _filter.ChinaSelected; }
             set
             {
-                _chinaSelected = value;
+                _filter.ChinaSelected = value;
                 OnPropertyChanged("ChinaSelected");
             }
         }
 
         public bool FranceSelected
         {
-            get { return _franceSelected; }
+            get { return _filter.FranceSelected; }
             set
             {
-                _franceSelected = value;
+                _filter.FranceSelected = value;
                 OnPropertyChanged("FranceSelected");
             }
         }
 
         public bool UKSelected
         {
-            get { return _ukSelected; }
+            get { return _filter.UKSelected; }
             set
             {
-                _ukSelected = value;
+                _filter.UKSelected = value;
                 OnPropertyChanged("UKSelected");
             }
         }
 
         public bool IsPremium
         {
-            get { return _isPremium; }
+            get { return _filter.IsPremium; }
             set
             {
-                _isPremium = value;
+                _filter.IsPremium = value;
                 OnPropertyChanged("IsPremium");
             }
         }
 
         public bool IsFavorite
         {
-            get { return _isFavorite; }
+            get { return _filter.IsFavorite; }
             set
             {
-                _isFavorite = value;
+                _filter.IsFavorite = value;
                 OnPropertyChanged("IsFavorite");
             }
         }
 
         #endregion
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public TankFilterViewModel()
+        {
+            _filter = SettingsReader.Get().TankFilter;
+        }
 
         public List<T> Filter<T>(List<T> tanks) where T : ITankFilterable
         {
@@ -302,6 +290,13 @@ namespace WotDossier.Applications.ViewModel
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void Save()
+        {
+            AppSettings appSettings = SettingsReader.Get();
+            appSettings.TankFilter = _filter;
+            SettingsReader.Save(appSettings);
         }
     }
 }

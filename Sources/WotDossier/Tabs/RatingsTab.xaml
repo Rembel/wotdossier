@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
-             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -17,19 +16,14 @@
         </controls:TankFilterPanel>
         <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgRatings" IsReadOnly="True" 
                   AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}">
-            <DataGrid.Resources>
-                <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-                    <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
-                </Style>
-
-                <Style x:Key="DataGridCellWn6Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-                    <Setter Property="Background" Value="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}" />
-                </Style>
-
-                <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-                    <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" />
-                </Style>
-            </DataGrid.Resources>
+            <DataGrid.InputBindings>
+                <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
+                            Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                <KeyBinding Command="{Binding Path=AddToFavoriteCommand}" 
+                            Key="D" Modifiers="Control" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                <KeyBinding Command="{Binding Path=RemoveFromFavoriteCommand}" 
+                            CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+            </DataGrid.InputBindings>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

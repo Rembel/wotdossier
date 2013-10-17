@@ -462,6 +462,8 @@ namespace WotDossier.Applications.ViewModel
             PeriodSelector = new PeriodSelectorViewModel();
 
             SetPeriodTabHeader();
+
+            ViewTyped.Closing += ViewTypedOnClosing;
         }
 
         private void OnSearchClans()
@@ -1260,6 +1262,11 @@ namespace WotDossier.Applications.ViewModel
         {
             ViewTyped.Loaded -= OnShellViewActivated;
             ((Action)OnLoad)();
+        }
+
+        private void ViewTypedOnClosing(object sender, CancelEventArgs cancelEventArgs)
+        {
+            TankFilter.Save();
         }
 
         public bool Close()

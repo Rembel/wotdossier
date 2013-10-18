@@ -140,6 +140,9 @@
     <Compile Include="Controls\CompareStatisticView.xaml.cs">
       <DependentUpon>CompareStatisticView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\StatisticRow.xaml.cs">
+      <DependentUpon>StatisticRow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ReplaysFilterPanel.xaml.cs">
       <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
     </Compile>
@@ -332,6 +335,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\CompareStatisticView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\StatisticRow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

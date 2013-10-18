@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="WotDossier.Controls.StatisticRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
+             mc:Ignorable="d" Width="800"
+             d:DesignHeight="300" d:DesignWidth="300" Foreground="#BABFBA">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Foreground="#BABFBA" Grid.Column="0" Text="{Binding Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"/>
+        <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   Foreground="{Binding ValueForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"/>
+        <TextBlock Grid.Column="2" TextAlignment="Right" Text="{Binding Delta, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   Foreground="{Binding DeltaForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"/>
+    </Grid>
+</UserControl>

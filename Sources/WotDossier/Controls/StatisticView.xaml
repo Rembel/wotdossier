@@ -6,11 +6,13 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800">
     <Grid>
         <Grid HorizontalAlignment="Center" Background="Transparent">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -182,34 +184,36 @@
             <TextBlock Foreground="#BABFBA" Grid.Row="25" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Wn6Rating}"></TextBlock>
             <TextBlock Foreground="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="1" Text="{Binding WN6Rating, StringFormat='### ### ### ###'}"></TextBlock>
             <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
-            <!--KievArmorRating-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="26" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
-            <TextBlock Foreground="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="1" Text="{Binding KievArmorRating, StringFormat='### ### ### ###'}"></TextBlock>
-            <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="26" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
-            <!--KievArmorRating-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="27" Grid.Column="0" Text="XVM"></TextBlock>
-            <TextBlock Foreground="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="27" Grid.Column="1" Text="{Binding XEFF, StringFormat='0.0'}"></TextBlock>
-            <TextBlock Foreground="{Binding XvmRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="27" Grid.Column="2" Text="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
-            <!--Noobmeter Performance Rating-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="28" Grid.Column="0" Text="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}"></TextBlock>
-            <TextBlock Foreground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="28" Grid.Column="1" Text="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"></TextBlock>
-            <!--<TextBlock Foreground="{Binding PerformanceRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="28" Grid.Column="2" Text="{Binding PerformanceRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
-            <!--Rating WG-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="29" Grid.Column="0" Text="{x:Static Resources:Resources.Common_WGRating}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="29" Grid.Column="1" Text="{Binding RBR, StringFormat='### ### ### ###.0'}"></TextBlock>
-            <!--<TextBlock Foreground="{Binding PerformanceRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="29" Grid.Column="2" Text="{Binding PerformanceRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
-            <!--wot-noobs rating-->
-            <!--<TextBlock Foreground="#BABFBA" Grid.Row="30" Grid.Column="0" Text="{x:Static Resources:Resources.Common_WotNoobsRating}"></TextBlock>
-            <TextBlock Foreground="{Binding Path=NoobRating, Converter={x:Static Converters:NoobRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="1" Text="{Binding NoobRating, StringFormat='0.000'}"></TextBlock>
-            <TextBlock Foreground="{Binding NoobRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="2" Text="{Binding NoobRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
-            <!--WN8-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="30" Grid.Column="0" Text="WN8"></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="30" Grid.Column="1" Text="{Binding WN8Rating, StringFormat='0.0'}"></TextBlock>
-            <!--AverageTier-->
-            <TextBlock Foreground="#BABFBA" Grid.Row="31" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AverageTier}"></TextBlock>
-            <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="31" Grid.Column="1" Text="{Binding Tier, StringFormat='0.00'}"></TextBlock>
-            <TextBlock Foreground="{Binding TierDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="31" Grid.Column="2" Text="{Binding TierDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>
             
+            <StackPanel Orientation="Vertical" Grid.Row="31" Grid.Column="0" Grid.ColumnSpan="3">
+                <!--KievArmorRating-->
+                <controls:StatisticRow Header="{x:Static Resources:Resources.Common_KievArmorRating}" Value="{Binding KievArmorRating, StringFormat='### ### ### ###'}"
+                                       Delta="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"
+                                       DeltaForeground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                       ValueForeground="{Binding Path=XEFF, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}"/>
+                <!--XVM-->
+                <controls:StatisticRow Header="XVM" Value="{Binding XEFF, StringFormat='0.0'}"
+                                       Delta="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"
+                                       DeltaForeground="{Binding XvmRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                       ValueForeground="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}"/>
+                <!--Noobmeter Performance Rating-->
+                <controls:StatisticRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" Value="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"
+                                       ValueForeground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}"/>
+                <!--wot-noobs rating-->
+                <!--<TextBlock Foreground="#BABFBA" Grid.Row="30" Grid.Column="0" Text="{x:Static Resources:Resources.Common_WotNoobsRating}"></TextBlock>
+                <TextBlock Foreground="{Binding Path=NoobRating, Converter={x:Static Converters:NoobRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="1" Text="{Binding NoobRating, StringFormat='0.000'}"></TextBlock>
+                <TextBlock Foreground="{Binding NoobRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="2" Text="{Binding NoobRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
+                <!--WN8-->
+                <controls:StatisticRow Header="WN8" Value="{Binding WN8Rating, StringFormat='### ### ### ###.0'}"/>
+                <!--Rating WG-->
+                <controls:StatisticRow Header="{x:Static Resources:Resources.Common_WGRating}" Value="{Binding RBR, StringFormat='### ### ### ###.0'}"/>
+                <!--AverageTier-->
+                <controls:StatisticRow Header="{x:Static Resources:Resources.Common_AverageTier}" Value="{Binding Tier, StringFormat='0.00'}" Delta="{Binding TierDelta, StringFormat='+0.00;-0.00;0.00'}" 
+                                       DeltaForeground="{Binding TierDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" />
+                <!--BattlesPerDay-->
+                <controls:StatisticRow Header="Боев в день" Value="{Binding BattlesPerDay}"/>
+                <!--<TextBlock Foreground="{Binding BattlesPerDayDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="32" Grid.Column="2" Text="{Binding BattlesPerDayDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>-->
+            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>

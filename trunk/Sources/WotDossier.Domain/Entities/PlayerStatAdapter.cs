@@ -136,6 +136,7 @@ namespace WotDossier.Domain.Entities
             Capture_points = stat.dataField.statistics.all.capture_points;
             Dropped_capture_points = stat.dataField.statistics.all.dropped_capture_points;
             Updated = Utils.UnixDateToDateTime((long)stat.dataField.updated_at).ToLocalTime();
+            Created = Utils.UnixDateToDateTime((long)stat.dataField.created_at).ToLocalTime();
             if (Battles_count > 0 && stat.dataField.vehicles != null)
             {
                 int battlesCount = stat.dataField.vehicles.Sum(x => x.statistics.all.battles);
@@ -223,6 +224,8 @@ namespace WotDossier.Domain.Entities
 
             #endregion
         }
+
+        public DateTime Created { get; set; }
 
         public int Battles_count { get; set; }
 

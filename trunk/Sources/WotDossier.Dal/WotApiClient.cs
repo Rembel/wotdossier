@@ -312,7 +312,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error("Error on player search", e);
+                _log.Error("Error on player tanks loading", e);
             }
 
             return null;

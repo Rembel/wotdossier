@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.ComponentModel.Composition;
 using System.Windows;
 using Common.Logging;
 using WotDossier.Applications.Model;
@@ -93,9 +94,11 @@ namespace WotDossier.Applications.ViewModel
         public void Init(PlayerStat playerStat)
         {
             PlayerStatisticEntity entity = new PlayerStatisticEntity();
-            entity.Update(new PlayerStatAdapter(playerStat));
+            PlayerStatAdapter statAdapter = new PlayerStatAdapter(playerStat);
+            entity.Update(statAdapter);
             PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
             statistic.Name = playerStat.dataField.nickname;
+            statistic.BattlesPerDay = statistic.BattlesCount / (DateTime.Now - statAdapter.Created).Days;
             if (playerStat.dataField.clan != null && playerStat.dataField.clan != null)
             {
                 Clan = new ClanModel(playerStat.dataField.clanData, playerStat.dataField.clan.role, playerStat.dataField.clan.since);

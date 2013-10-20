@@ -3123,6 +3123,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By column.
+        /// </summary>
+        public static string ReplaysFilter_ByColumns {
+            get {
+                return ResourceManager.GetString("ReplaysFilter_ByColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player.
+        /// </summary>
+        public static string ReplaysFilter_Player {
+            get {
+                return ResourceManager.GetString("ReplaysFilter_Player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy link to clipboard.
         /// </summary>
         public static string ReplaysTab_CopyToClipboard {

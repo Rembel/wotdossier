@@ -52,7 +52,7 @@
                                 
                             </controls:ClanView>
                         </StackPanel>
-                        <controls:StatisticView DataContext="{Binding PlayerStatistic}"  Width="Auto" HorizontalAlignment="Center"></controls:StatisticView>
+                        <controls:StatisticView DataContext="{Binding PlayerStatistic}" HorizontalAlignment="Center" />
                     </StackPanel>
                 </Grid>
             </TabItem>

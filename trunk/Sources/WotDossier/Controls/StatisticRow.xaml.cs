@@ -54,6 +54,15 @@ namespace WotDossier.Controls
             set { SetValue(DeltaForegroundProperty, value); }
         }
 
+        public static readonly DependencyProperty HeaderMarginProperty =
+            DependencyProperty.Register("HeaderMargin", typeof (Thickness), typeof (StatisticRow), new PropertyMetadata(default(Thickness)));
+
+        public Thickness HeaderMargin
+        {
+            get { return (Thickness) GetValue(HeaderMarginProperty); }
+            set { SetValue(HeaderMarginProperty, value); }
+        }
+
         public StatisticRow()
         {
             InitializeComponent();

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:WotDossier.Controls"
-             mc:Ignorable="d" Width="800"
+             mc:Ignorable="d" Width="550"
              d:DesignHeight="300" d:DesignWidth="300" Foreground="#BABFBA">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,6 +14,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Foreground="#BABFBA" Grid.Column="0" Text="{Binding Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
                    FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   Margin="{Binding HeaderMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"/>
         <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 

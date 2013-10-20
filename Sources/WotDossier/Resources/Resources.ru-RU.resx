@@ -1687,4 +1687,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Column_Performance_DamageAssisted" xml:space="preserve">
     <value>Урон по засвету</value>
   </data>
+  <data name="ReplaysFilter_Player" xml:space="preserve">
+    <value>Игрок</value>
+  </data>
+  <data name="ReplaysFilter_ByColumns" xml:space="preserve">
+    <value>Фильтр по колонкам</value>
+  </data>
 </root>

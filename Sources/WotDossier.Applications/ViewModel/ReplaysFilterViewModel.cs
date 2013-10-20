@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -40,6 +42,7 @@ namespace WotDossier.Applications.ViewModel
         private string _field;
         private int? _startValue;
         private int? _endValue;
+        private string _member;
 
         public bool Level10Selected
         {
@@ -335,6 +338,13 @@ namespace WotDossier.Applications.ViewModel
 
         public List<T> Filter<T>(List<T> replays) where T : ReplayFile
         {
+            string [] members = null;
+
+            if (!string.IsNullOrEmpty(Member))
+            {
+                members = Member.Split(',');
+            }
+
             return replays.Where(x =>
                                    (x.Tank.Tier == 1 && Level1Selected
                                     || x.Tank.Tier == 2 && Level2Selected
@@ -364,7 +374,35 @@ namespace WotDossier.Applications.ViewModel
                                    && (x.Tank.Premium == 1 || !IsPremium)
                                    && (SelectedMap == null || x.MapId == SelectedMap.Key || SelectedMap.Key == 0)
                                    && FieldFilter(x)
+                                   && MembersFilter(x.TeamMembers, members)
                 ).ToList();
+        }
+
+        private bool MembersFilter(List<Vehicle> vehicles, string[] members)
+        {
+            if (members == null)
+            {
+                return true;
+            }
+
+            bool result = true;
+
+            foreach (var member in members)
+            {
+                result &= vehicles.FirstOrDefault(m => m.name.StartsWith(member, StringComparison.InvariantCultureIgnoreCase)) != null;
+            }
+
+            return result;
+        }
+
+        public string Member
+        {
+            get { return _member; }
+            set
+            {
+                _member = value;
+                OnPropertyChanged("Member");
+            }
         }
 
         private bool FieldFilter<T>(T x) where T : ReplayFile

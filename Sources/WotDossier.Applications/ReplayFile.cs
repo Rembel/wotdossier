@@ -50,7 +50,7 @@ namespace WotDossier.Applications
         public TankDescription Tank { get; set; }
         public TankIcon Icon { get; set; }
         public List<Medal> Medals { get; set; }
-        public List<TeamMember> TeamMembers { get; set; }
+        public List<Vehicle> TeamMembers { get; set; }
 
         public string Link
         {
@@ -122,6 +122,8 @@ namespace WotDossier.Applications
                     Damaged = replay.CommandResult.Damage.damaged.Count;
                     Medals = MedalHelper.GetMedals(replay.CommandResult.Damage.achieveIndices);
                 }
+
+                TeamMembers = replay.datablock_1.vehicles.Values.ToList();
             }
         }
 

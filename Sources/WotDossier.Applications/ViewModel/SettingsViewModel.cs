@@ -82,10 +82,10 @@ namespace WotDossier.Applications.ViewModel
 
         public StatisticPeriod Period
         {
-            get { return AppSettings.Period; }
+            get { return AppSettings.PeriodSettings.Period; }
             set
             {
-                AppSettings.Period = value;
+                AppSettings.PeriodSettings.Period = value;
                 RaisePropertyChanged("LastNBattlesVisible");
                 RaisePropertyChanged("PeriodsVisible");
             }
@@ -103,14 +103,14 @@ namespace WotDossier.Applications.ViewModel
 
         public int LastNBattles
         {
-            get { return AppSettings.LastNBattles; }
-            set { AppSettings.LastNBattles = value; }
+            get { return AppSettings.PeriodSettings.LastNBattles; }
+            set { AppSettings.PeriodSettings.LastNBattles = value; }
         }
 
         public DateTime? PrevDate
         {
-            get { return AppSettings.PrevDate; }
-            set { AppSettings.PrevDate = value; }
+            get { return AppSettings.PeriodSettings.PrevDate; }
+            set { AppSettings.PeriodSettings.PrevDate = value; }
         }
 
         public bool CheckForUpdates

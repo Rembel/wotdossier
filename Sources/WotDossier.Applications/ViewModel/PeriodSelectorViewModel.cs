@@ -9,7 +9,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class PeriodSelectorViewModel : Framework.Foundation.Model
     {
-        private AppSettings _appSettings;
+        private PeriodSettings _periodSettings;
         private List<ListItem<StatisticPeriod>> _periods = new List<ListItem<StatisticPeriod>>
         {
             new ListItem<StatisticPeriod>(StatisticPeriod.Recent, Resources.Resources.StatisticPeriod_Recent),
@@ -20,9 +20,9 @@ namespace WotDossier.Applications.ViewModel
         };
         private List<DateTime> _prevDates;
 
-        public AppSettings AppSettings
+        public PeriodSettings PeriodSettings
         {
-            get { return _appSettings; }
+            get { return _periodSettings; }
         }
 
         public List<ListItem<StatisticPeriod>> Periods
@@ -44,10 +44,10 @@ namespace WotDossier.Applications.ViewModel
 
         public StatisticPeriod Period
         {
-            get { return AppSettings.Period; }
+            get { return PeriodSettings.Period; }
             set
             {
-                AppSettings.Period = value;
+                PeriodSettings.Period = value;
                 RaisePropertyChanged("LastNBattlesVisible");
                 RaisePropertyChanged("PeriodsVisible");
             }
@@ -65,32 +65,34 @@ namespace WotDossier.Applications.ViewModel
 
         public int LastNBattles
         {
-            get { return AppSettings.LastNBattles; }
+            get { return PeriodSettings.LastNBattles; }
             set
             {
-                AppSettings.LastNBattles = value;
+                PeriodSettings.LastNBattles = value;
                 RaisePropertyChanged("LastNBattles");
             }
         }
 
         public DateTime? PrevDate
         {
-            get { return AppSettings.PrevDate; }
+            get { return PeriodSettings.PrevDate; }
             set
             {
-                AppSettings.PrevDate = value;
+                PeriodSettings.PrevDate = value;
                 RaisePropertyChanged("PrevDate");
             }
         }
 
         public PeriodSelectorViewModel()
         {
-            _appSettings = SettingsReader.Get();
+            _periodSettings = SettingsReader.Get().PeriodSettings;
         }
 
         private void Save()
         {
-            SettingsReader.Save(_appSettings);
+            AppSettings appSettings = SettingsReader.Get();
+            appSettings.PeriodSettings = PeriodSettings;
+            SettingsReader.Save(appSettings);
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate, LastNBattles));
         }
 

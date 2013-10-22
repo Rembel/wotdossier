@@ -8,7 +8,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class TankFilterViewModel : INotifyPropertyChanged
     {
-        private readonly TankFilter _filter;
+        private readonly TankFilterSettings _filter;
 
         #region FILTERS
 
@@ -250,7 +250,7 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         public TankFilterViewModel()
         {
-            _filter = SettingsReader.Get().TankFilter;
+            _filter = SettingsReader.Get().TankFilterSettings;
         }
 
         public List<T> Filter<T>(List<T> tanks) where T : ITankFilterable
@@ -295,7 +295,7 @@ namespace WotDossier.Applications.ViewModel
         public void Save()
         {
             AppSettings appSettings = SettingsReader.Get();
-            appSettings.TankFilter = _filter;
+            appSettings.TankFilterSettings = _filter;
             SettingsReader.Save(appSettings);
         }
     }

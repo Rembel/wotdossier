@@ -20,8 +20,12 @@ namespace WotDossier.Applications.Update
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
                 {
                     AppSettings appSettings = SettingsReader.Get();
-                    if (appSettings.CheckForUpdates)
+                    //one day from last check
+                    if (appSettings.CheckForUpdates && (DateTime.Now - appSettings.NewVersionCheckLastDate).Days >= 1 )
                     {
+                        appSettings.NewVersionCheckLastDate = DateTime.Now;
+                        SettingsReader.Save(appSettings);
+
                         Version currentVersion = new Version(ApplicationInfo.Version);
                         Version newVersion = GetServerVersion();
                         

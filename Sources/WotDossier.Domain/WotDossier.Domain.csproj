@@ -93,6 +93,7 @@
     <Compile Include="StatisticPeriod.cs" />
     <Compile Include="TankFilterSettings.cs" />
     <Compile Include="TankType.cs" />
+    <Compile Include="Tank\TankJsonV2.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />
     <Compile Include="Tank\TankServerInfo.cs" />
     <Compile Include="Tank\FragsJson.cs" />

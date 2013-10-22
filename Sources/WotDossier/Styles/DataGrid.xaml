@@ -264,7 +264,7 @@
                     </ControlTemplate.Triggers>
                     <Grid>
                         <Border Name="mainBorder" Background="{TemplateBinding Background}">
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 <ContentPresenter Name="mainContent" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 <Control SnapsToDevicePixels="false" Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}, Path=(Validation.HasError), Converter={x:Static Converters:BoolToVisibilityConverter.Default}}" Template="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}, Path=ValidationErrorTemplate}" />
                             </StackPanel>

@@ -990,9 +990,9 @@ namespace WotDossier.Applications.ViewModel
 
             Tanks = StatisticViewModelFactory.Create(entities);
 
-            InitMasterTankerList(Tanks);
+            InitMasterTankerList(_tanks);
 
-            FraggsCount.Init(Tanks);
+            FraggsCount.Init(_tanks);
         }
 
         private void InitMasterTankerList(List<TankStatisticRowViewModel> tanks)

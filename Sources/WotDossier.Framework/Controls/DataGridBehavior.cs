@@ -28,10 +28,10 @@ namespace WotDossier.Framework.Controls
         private static void OnDisplayRowNumberChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
         {
             DataGrid dataGrid = target as DataGrid;
-            if ((bool)e.NewValue == true)
+            if ((bool)e.NewValue)
             {
                 EventHandler<DataGridRowEventArgs> loadedRowHandler = null;
-                loadedRowHandler = (object sender, DataGridRowEventArgs ea) =>
+                loadedRowHandler = (sender, ea) =>
                 {
                     if (GetDisplayRowNumber(dataGrid) == false)
                     {
@@ -43,7 +43,7 @@ namespace WotDossier.Framework.Controls
                 dataGrid.LoadingRow += loadedRowHandler;
 
                 ItemsChangedEventHandler itemsChangedHandler = null;
-                itemsChangedHandler = (object sender, ItemsChangedEventArgs ea) =>
+                itemsChangedHandler = (sender, ea) =>
                 {
                     if (GetDisplayRowNumber(dataGrid) == false)
                     {

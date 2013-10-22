@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
@@ -62,10 +63,10 @@
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <ComboBox Margin="6,3,20,3" Width="200" ItemsSource="{Binding FilterFields}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Field, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
             <TextBlock Text="{x:Static Resources:Resources.Operation_Gt}" VerticalAlignment="Center"></TextBlock>
-            <TextBox Margin="6,3,6,3" Width="50" Text="{Binding StartValue, NotifyOnValidationError=False}" />
+            <TextBox Margin="6,3,6,3" Width="50" Text="{Binding StartValue, NotifyOnValidationError=False}" controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
             <TextBlock Text="{x:Static Resources:Resources.Operation_Lt}" VerticalAlignment="Center"></TextBlock>
-            <TextBox Margin="6,3,6,3" Width="50"  Text="{Binding EndValue, NotifyOnValidationError=False}"/>
+            <TextBox Margin="6,3,6,3" Width="50"  Text="{Binding EndValue, NotifyOnValidationError=False}" controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
         </StackPanel>
-        <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="6,3,6,3" Width="200" Text="{Binding Member, NotifyOnValidationError=False}" />
+        <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="6,3,6,3" Width="200" Text="{Binding Member, NotifyOnValidationError=False}"  controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
     </Grid>
 </UserControl>

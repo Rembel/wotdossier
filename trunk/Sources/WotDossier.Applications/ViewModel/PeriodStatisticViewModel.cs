@@ -703,7 +703,7 @@ namespace WotDossier.Applications.ViewModel
             Updated = updated;
 
             AppSettings appSettings = SettingsReader.Get();
-            T prevPlayerStatistic = GetPrevStatistic(appSettings.Period, appSettings.PrevDate);
+            T prevPlayerStatistic = GetPrevStatistic(appSettings.PeriodSettings.Period, appSettings.PeriodSettings.PrevDate);
             PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
 
             if (_list.Any())

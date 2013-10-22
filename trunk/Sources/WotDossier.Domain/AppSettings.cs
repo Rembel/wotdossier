@@ -5,34 +5,26 @@ namespace WotDossier.Domain
     public class AppSettings
     {
         private string _language = "ru-RU";
-        private StatisticPeriod _period;
         private string _replaysUploadServerPath = "http://wotreplays.ru/site/upload";
-        private string _replaysFolderPath;
-        private DateTime? _prevDate;
         private bool _checkForUpdates = true;
-        private int _lastNBattles = 100;
-        private TankFilter _tankFilter = new TankFilter();
+
+        private TankFilterSettings _tankFilterSettings = new TankFilterSettings();
+        private PeriodSettings _periodSettings = new PeriodSettings();
+
         public string PlayerName { get; set; }
+
         public int PlayerId { get; set; }
+
         public string Server { get; set; }
+
         public string PathToWotExe { get; set; }
 
-        public int LastNBattles
-        {
-            get { return _lastNBattles; }
-            set { _lastNBattles = value; }
-        }
+        public string ReplaysFolderPath { get; set; }
 
         public string Language
         {
             get { return _language; }
             set { _language = value; }
-        }
-
-        public StatisticPeriod Period
-        {
-            get { return _period; }
-            set { _period = value; }
         }
 
         public string ReplaysUploadServerPath
@@ -41,28 +33,24 @@ namespace WotDossier.Domain
             set { _replaysUploadServerPath = value; }
         }
 
-        public string ReplaysFolderPath
-        {
-            get { return _replaysFolderPath; }
-            set { _replaysFolderPath = value; }
-        }
-
-        public DateTime? PrevDate
-        {
-            get { return _prevDate; }
-            set { _prevDate = value; }
-        }
-
         public bool CheckForUpdates
         {
             get { return _checkForUpdates; }
             set { _checkForUpdates = value; }
         }
 
-        public TankFilter TankFilter
+        public DateTime NewVersionCheckLastDate { get; set; }
+
+        public TankFilterSettings TankFilterSettings
         {
-            get { return _tankFilter; }
-            set { _tankFilter = value; }
+            get { return _tankFilterSettings; }
+            set { _tankFilterSettings = value; }
+        }
+
+        public PeriodSettings PeriodSettings
+        {
+            get { return _periodSettings; }
+            set { _periodSettings = value; }
         }
     }
 }

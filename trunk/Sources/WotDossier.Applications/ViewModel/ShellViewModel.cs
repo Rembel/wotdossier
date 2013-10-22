@@ -680,9 +680,9 @@ namespace WotDossier.Applications.ViewModel
                 TankStatisticViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<TankStatisticViewModel>().Value;
                 viewModel.TankStatistic = tankStatisticRowViewModel;
                 AppSettings appSettings = SettingsReader.Get();
-                if (appSettings.Period == StatisticPeriod.LastNBattles)
+                if (appSettings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
                 {
-                    int battles = tankStatisticRowViewModel.BattlesCount - appSettings.LastNBattles;
+                    int battles = tankStatisticRowViewModel.BattlesCount - appSettings.PeriodSettings.LastNBattles;
 
                     TankStatisticRowViewModel model = tankStatisticRowViewModel.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                     tankStatisticRowViewModel.SetPreviousStatistic(model);
@@ -690,10 +690,10 @@ namespace WotDossier.Applications.ViewModel
 
                 viewModel.Show();
 
-                if (appSettings.Period == StatisticPeriod.LastNBattles)
+                if (appSettings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
                 {
                     EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()
-                        .Publish(new StatisticPeriodChangedEvent(StatisticPeriod.LastNBattles, appSettings.PrevDate, appSettings.LastNBattles));
+                        .Publish(new StatisticPeriodChangedEvent(StatisticPeriod.LastNBattles, appSettings.PeriodSettings.PrevDate, appSettings.PeriodSettings.LastNBattles));
                 }
             }
         }
@@ -1220,7 +1220,7 @@ namespace WotDossier.Applications.ViewModel
         private void SetPeriodTabHeader()
         {
             AppSettings appSettings = SettingsReader.Get();
-            PeriodTabHeader = string.Format(Resources.Resources.ResourceManager.GetString("TabHeader_" + appSettings.Period), appSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PrevDate : appSettings.LastNBattles);
+            PeriodTabHeader = string.Format(Resources.Resources.ResourceManager.GetString("TabHeader_" + appSettings.PeriodSettings.Period), appSettings.PeriodSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PeriodSettings.PrevDate : appSettings.PeriodSettings.LastNBattles);
         }
 
         private void OnReplayFileMove(ReplayFileMoveEventArgs eventArgs)

@@ -59,6 +59,10 @@ namespace WotDossier.Applications
 
         /// <summary>
         /// Binary dossier cache to plain json.
+        /// -f - By setting f the JSON will be formatted for better human readability
+        /// -r - By setting r the JSON will contain all fields with their values and recognized names
+        /// -k - By setting k the JSON will not contain Kills/Frags
+        /// -s - By setting s the JSON will not include unix timestamp of creation as it is useless for calculation of 
         /// </summary>
         /// <param name="cacheFile">The cache file.</param>
         public static void BinaryCacheToJson(FileInfo cacheFile)

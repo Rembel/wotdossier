@@ -93,6 +93,8 @@
     <Compile Include="StatisticPeriod.cs" />
     <Compile Include="TankFilterSettings.cs" />
     <Compile Include="TankType.cs" />
+    <Compile Include="Tank\AchievementsJson.cs" />
+    <Compile Include="Tank\MaxJson.cs" />
     <Compile Include="Tank\TankJsonV2.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />
     <Compile Include="Tank\TankServerInfo.cs" />
@@ -108,8 +110,9 @@
     <Compile Include="Tank\SpecialJson.cs" />
     <Compile Include="Tank\TankIcon.cs" />
     <Compile Include="Tank\TankJson.cs" />
-    <Compile Include="Tank\TankDataJson.cs" />
+    <Compile Include="Tank\StatisticJson.cs" />
     <Compile Include="Tank\TankDescription.cs" />
+    <Compile Include="Tank\TotalJson.cs" />
     <Compile Include="VStat.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -163,6 +163,14 @@ namespace WotDossier.Test
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
+
+            List<TankJsonV2> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJsonV2 tankJson in tanksV2)
+            {
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
+            }
         }
 
         #endregion

@@ -121,6 +121,31 @@ namespace WotDossier.Dal
             return tanks;
         }
 
+        public List<TankJsonV2> ReadTanksV2(string path)
+        {
+            List<TankJsonV2> tanks = new List<TankJsonV2>();
+
+            using (StreamReader re = new StreamReader(path))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                JObject parsedData = (JObject)se.Deserialize(reader);
+
+                JToken tanksDataV2 = parsedData["tanks_v2"];
+
+                foreach (JToken jToken in tanksDataV2)
+                {
+                    JProperty property = (JProperty)jToken;
+                    string raw = property.Value.ToString();
+                    TankJsonV2 tank = JsonConvert.DeserializeObject<TankJsonV2>(raw);
+                    tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                    ExtendPropertiesData(tank);
+                    tanks.Add(tank);
+                }
+            }
+            return tanks;
+        }
+
         public void ExtendPropertiesData(TankJson tank)
         {
             tank.Description = _tanksDictionary[tank.UniqueId()];
@@ -144,6 +169,31 @@ namespace WotDossier.Dal
                                      Tank = x[3]
                                  };
                         }).ToList();
+        }
+
+        public void ExtendPropertiesData(TankJsonV2 tank)
+        {
+            tank.Description = _tanksDictionary[tank.UniqueId()];
+            tank.Frags =
+                tank.FragsList.Select(
+                    x =>
+                    {
+                        int countryId = Convert.ToInt32(x[0]);
+                        int tankId = Convert.ToInt32(x[1]);
+                        int uniqueId = Utils.ToUniqueId(countryId, tankId);
+                        return new FragsJson
+                        {
+                            CountryId = countryId,
+                            TankId = tankId,
+                            Icon = TanksDictionary[uniqueId].Icon,
+                            TankUniqueId = uniqueId,
+                            Count = Convert.ToInt32(x[2]),
+                            Type = TanksDictionary[uniqueId].Type,
+                            Tier = TanksDictionary[uniqueId].Tier,
+                            KilledByTankUniqueId = tank.UniqueId(),
+                            Tank = x[3]
+                        };
+                    }).ToList();
         }
 
         public TankIcon GetTankIcon(string playerVehicle)

@@ -5,24 +5,32 @@ namespace WotDossier.Domain.Tank
 {
     public class TankJsonV2
     {
-        public byte[] Raw { get; set; }
+        private IList<IList<string>> _fragsList = new List<IList<string>>();
+
         public TankDescription Description { get; set; }
         public IEnumerable<FragsJson> Frags { get; set; }
         
         /*8.9*/
-        public TankDataJson a15x15 { get; set; }
-        public TankDataJson a15x15_2 { get; set; }
-        public TankDataJson clan { get; set; }
-        public TankDataJson clan2 { get; set; }
-        public TankDataJson company { get; set; }
-        public TankDataJson company2 { get; set; }
-        public TankDataJson a7x7 { get; set; }
-        public TankDataJson achievements { get; set; }
+        public StatisticJson A15x15 { get; set; }
+        public StatisticJson A15x15_2 { get; set; }
+        public StatisticJson Clan { get; set; }
+        public StatisticJson Clan2 { get; set; }
+        public StatisticJson Company { get; set; }
+        public StatisticJson Company2 { get; set; }
+        public StatisticJson A7x7 { get; set; }
+        public AchievementsJson Achievements { get; set; }
         public CommonJson Common { get; set; }
-        public TankDataJson total { get; set; }
-        public TankDataJson max15x15 { get; set; }
-        public TankDataJson max7x7 { get; set; }
-        public IList<IList<string>> fragslist { get; set; }
+        public TotalJson Total { get; set; }
+        public MaxJson Max15x15 { get; set; }
+        public MaxJson Max7x7 { get; set; }
+
+        public IList<IList<string>> FragsList
+        {
+            get { return _fragsList; }
+            set { _fragsList = value; }
+        }
+
+        public byte[] Raw { get; set; }
 
         public int UniqueId()
         {

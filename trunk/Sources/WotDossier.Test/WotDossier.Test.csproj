@@ -201,9 +201,10 @@
     <None Include="CacheFiles\0.8.8\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="CacheFiles\0.8.9\NRXWO2LOFVRXILLQGEXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+    <None Include="CacheFiles\0.8.9\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="CacheFiles\0.8.9\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.json" />
     <None Include="packages.config" />
     <None Include="Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

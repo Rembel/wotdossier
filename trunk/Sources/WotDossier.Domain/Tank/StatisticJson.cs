@@ -1,6 +1,6 @@
 namespace WotDossier.Domain.Tank
 {
-    public class TankDataJson
+    public class StatisticJson
     {
         public int battleLifeTime;
         public int battlesCount;

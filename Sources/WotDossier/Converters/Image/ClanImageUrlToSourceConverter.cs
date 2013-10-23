@@ -45,8 +45,8 @@ namespace WotDossier.Converters
                         }
 
                         WebRequest request = HttpWebRequest.Create(url);
-                        WebResponse response;
-                        response = request.GetResponse();
+                        request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                        WebResponse response = request.GetResponse();
                         Stream responseStream = response.GetResponseStream();
 
                         if (responseStream != null)

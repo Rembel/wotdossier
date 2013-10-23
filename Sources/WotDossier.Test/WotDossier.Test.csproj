@@ -301,20 +301,12 @@
       <Link>External\w9xpopen.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\WotDossier\External\wotbr2j.exe">
-      <Link>External\wotbr2j.exe</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\WotDossier\External\wotdc2j.exe">
       <Link>External\wotdc2j.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\WotDossier\External\wotrp2j.exe">
       <Link>External\wotrp2j.exe</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\External\wotrpbr2j.exe">
-      <Link>External\wotrpbr2j.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\WotDossier\Updates\2013080601.sql">

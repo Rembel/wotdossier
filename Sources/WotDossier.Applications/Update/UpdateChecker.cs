@@ -43,6 +43,7 @@ namespace WotDossier.Applications.Update
         {
             Version newVersion;
             WebRequest request = HttpWebRequest.Create(VersionUrl);
+            request.Proxy.Credentials = CredentialCache.DefaultCredentials;
             WebResponse webResponse = request.GetResponse();
             using (Stream responseStream = webResponse.GetResponseStream())
             {

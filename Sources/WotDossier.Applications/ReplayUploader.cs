@@ -73,6 +73,7 @@ Content-Disposition: form-data; name=""yt0""
             byte[] contentPart2Bytes = Encoding.UTF8.GetBytes(secondPart);
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uploadUrl);
+            request.Proxy.Credentials = CredentialCache.DefaultCredentials;
             request.UserAgent = REQ_USER_AGENT;
             request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
             request.CookieContainer = cookieContainer;

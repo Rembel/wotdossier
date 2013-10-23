@@ -131,6 +131,19 @@ namespace WotDossier.Dal
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = (JObject)se.Deserialize(reader);
 
+                JToken tanksData = parsedData["tanks"];
+
+                foreach (JToken jToken in tanksData)
+                {
+                    JProperty property = (JProperty)jToken;
+                    string raw = property.Value.ToString();
+                    TankJson tank = JsonConvert.DeserializeObject<TankJson>(raw);
+                    TankJsonV2 tankV2 = TankJsonV2Converter.Convert(tank);
+                    tankV2.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tankV2));
+                    ExtendPropertiesData(tankV2);
+                    tanks.Add(tankV2);
+                }
+
                 JToken tanksDataV2 = parsedData["tanks_v2"];
 
                 foreach (JToken jToken in tanksDataV2)
@@ -304,6 +317,7 @@ namespace WotDossier.Dal
             {
                 string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response = request.GetResponse();
                 stream = response.GetResponseStream();
 
@@ -335,6 +349,7 @@ namespace WotDossier.Dal
             {
                 string url = string.Format(URL_GET_PLAYER_TANKS, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {
@@ -374,6 +389,7 @@ namespace WotDossier.Dal
             {
                 string url = string.Format(URL_GET_PLAYER_RATINGS, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {
@@ -414,6 +430,7 @@ namespace WotDossier.Dal
             {
                 string url = string.Format(URL_GET_CLAN_INFO, clanId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response = request.GetResponse();
                 Stream stream = response.GetResponseStream();
                 
@@ -447,6 +464,7 @@ namespace WotDossier.Dal
             {
                 string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, 1);
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {
@@ -481,6 +499,7 @@ namespace WotDossier.Dal
             {
                 string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, limit);
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {
@@ -517,6 +536,7 @@ namespace WotDossier.Dal
             {
                 string url = string.Format(URL_SEARCH_CLAN, clanName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, count);
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {

@@ -96,8 +96,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.5\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJson tankJson in tanks)
+            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJsonV2 tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -111,8 +111,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.6\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJson tankJson in tanks)
+            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJsonV2 tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -126,8 +126,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.7\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJson tankJson in tanks)
+            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJsonV2 tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -141,8 +141,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.8\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJson tankJson in tanks)
+            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJsonV2 tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -321,6 +321,7 @@ namespace WotDossier.Test
                 string url = "http://wotreplays.ru/img/results/Maps/" + map.mapidname + ".png";
 
                 WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 WebResponse response;
                 try
                 {
@@ -352,6 +353,7 @@ namespace WotDossier.Test
         {
             string url = "https://api.worldoftanks.ru/auth/create/api/1.0/?source_token=WG-WoT_Assistant-1.3.2";
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+            request.Proxy.Credentials = CredentialCache.DefaultCredentials;
             request.Method = WebRequestMethods.Http.Post;
             request.CookieContainer = new CookieContainer();
             request.ContentType = "application/x-www-form-urlencoded";

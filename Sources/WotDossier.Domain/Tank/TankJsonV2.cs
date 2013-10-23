@@ -11,13 +11,13 @@ namespace WotDossier.Domain.Tank
         public IEnumerable<FragsJson> Frags { get; set; }
         
         /*8.9*/
-        public StatisticJson A15x15 { get; set; }
-        public StatisticJson A15x15_2 { get; set; }
-        public StatisticJson Clan { get; set; }
-        public StatisticJson Clan2 { get; set; }
-        public StatisticJson Company { get; set; }
-        public StatisticJson Company2 { get; set; }
-        public StatisticJson A7x7 { get; set; }
+        public StatisticJson8_9 A15x15 { get; set; }
+        public StatisticJson8_9 A15x15_2 { get; set; }
+        public StatisticJson8_9 Clan { get; set; }
+        public StatisticJson8_9 Clan2 { get; set; }
+        public StatisticJson8_9 Company { get; set; }
+        public StatisticJson8_9 Company2 { get; set; }
+        public StatisticJson8_9 A7x7 { get; set; }
         public AchievementsJson Achievements { get; set; }
         public CommonJson Common { get; set; }
         public TotalJson Total { get; set; }

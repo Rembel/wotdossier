@@ -86,6 +86,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TankJsonV2Converter.cs" />
     <Compile Include="WotApiClient.cs" />
     <Compile Include="WotApiHelper.cs" />
     <Compile Include="WotApiSettings.cs" />

@@ -12,12 +12,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             set { _isPremium = value; }
         }
 
-        public TankRowMasterTanker(TankJson tank)
-            : base(tank)
-        {
-            _isPremium = tank.Common.premium == 1;
-        }
-
         public TankRowMasterTanker(TankDescription tank)
         {
             Tier = tank.Tier;

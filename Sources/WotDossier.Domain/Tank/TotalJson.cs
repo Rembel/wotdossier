@@ -5,7 +5,7 @@
         public int battleLifeTime;
         public int creationTime;
         public int lastBattleTime;
-        public int mileage;
+        public double mileage;
         public int treesCut;
     }
 }

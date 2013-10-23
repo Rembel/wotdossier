@@ -868,9 +868,6 @@
     <Content Include="External\w9xpopen.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="External\wotbr2j.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="External\wotdc2j.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1169,9 +1166,6 @@
     <Resource Include="Resources\Images\Tanks\ussr_t80.png" />
     <Resource Include="Resources\Images\Tanks\ussr_t_60.png" />
     <Resource Include="Resources\Images\Tanks\ussr_t_70.png" />
-    <Content Include="External\wotrpbr2j.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Resources\Images\Maps\overlay.png" />
     <Resource Include="Resources\Images\Maps\content_bg.png" />
     <Resource Include="Resources\Images\Replays\01s.png" />

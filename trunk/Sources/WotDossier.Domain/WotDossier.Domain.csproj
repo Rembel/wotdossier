@@ -94,6 +94,7 @@
     <Compile Include="TankFilterSettings.cs" />
     <Compile Include="TankType.cs" />
     <Compile Include="Tank\AchievementsJson.cs" />
+    <Compile Include="Tank\StatisticJson8_9.cs" />
     <Compile Include="Tank\MaxJson.cs" />
     <Compile Include="Tank\TankJsonV2.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />

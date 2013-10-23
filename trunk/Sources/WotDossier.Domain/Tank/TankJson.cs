@@ -40,7 +40,7 @@ namespace WotDossier.Domain.Tank
         /// </returns>
         public override string ToString()
         {
-            return string.Format("{0}", Description.Title);
+            return string.Format("{0}", Common.tanktitle);
         }
     }
 }

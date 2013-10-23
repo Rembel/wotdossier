@@ -5,6 +5,7 @@ namespace WotDossier.Domain.Tank
 {
     public class TankJson
     {
+        private IList<IList<string>> _kills = new List<IList<string>>();
         public byte[] Raw { get; set; }
         public TankDescription Description { get; set; }
         public IEnumerable<FragsJson> Frags { get; set; }
@@ -16,9 +17,15 @@ namespace WotDossier.Domain.Tank
         public EpicJson Epic { get; set; }
         public SeriesJson Series { get; set; }
         public MajorJson Major { get; set; }
-        public IList<IList<string>> Kills { get; set; }
+
+        public IList<IList<string>> Kills
+        {
+            get { return _kills; }
+            set { _kills = value; }
+        }
+
         public SpecialJson Special { get; set; }
-        public TankDataJson Tankdata { get; set; }
+        public StatisticJson Tankdata { get; set; }
 
         public int UniqueId()
         {

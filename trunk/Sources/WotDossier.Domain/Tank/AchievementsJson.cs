@@ -72,5 +72,6 @@
         public int tankExpertStrg;
         public int titleSniper;
         public int warrior;
+        public int markOfMastery;
     }
 }

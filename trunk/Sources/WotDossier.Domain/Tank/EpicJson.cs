@@ -166,7 +166,7 @@ namespace WotDossier.Domain.Tank
 
         public int Boelter
         {
-            get { return _boelter; }
+            get { return GetActualMedalValue(medalWittmann, _boelter); }
             set { _boelter = value; }
         }
 

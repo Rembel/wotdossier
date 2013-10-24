@@ -26,13 +26,18 @@ namespace WotDossier.Dal
     {
         private static readonly ILog _log = LogManager.GetLogger("WotApiClient");
 
-        private const string URL_GET_PLAYER_INFO = @"http://api.worldoftanks.{3}/{1}/account/info/?application_id={2}&account_id={0}";
-        private const string URL_GET_PLAYER_RATINGS = @"http://api.worldoftanks.{3}/{1}/account/ratings/?application_id={2}&account_id={0}";
-        private const string URL_GET_PLAYER_TANKS = @"http://api.worldoftanks.{3}/{1}/account/tanks/?application_id={2}&account_id={0}";
-        private const string URL_GET_CLAN_INFO = @"http://api.worldoftanks.{3}/{1}/clan/info/?application_id={2}&clan_id={0}";
-        private const string URL_SEARCH_PLAYER = @"http://api.worldoftanks.{3}/{1}/account/list/?application_id={2}&search={0}&limit={4}";
-        private const string URL_SEARCH_CLAN = @"http://api.worldoftanks.{3}/{1}/clan/list/?application_id={2}&search={0}&limit={4}";
+        private const string URL_GET_PLAYER_INFO = @"https://api.worldoftanks.{0}/{1}/account/info/";
+        private const string URL_GET_PLAYER_RATINGS = @"https://api.worldoftanks.{0}/{1}/account/ratings/";
+        private const string URL_GET_PLAYER_TANKS = @"https://api.worldoftanks.{0}/{1}/account/tanks/";
+        private const string URL_GET_CLAN_INFO = @"https://api.worldoftanks.{0}/{1}/clan/info/";
+        private const string URL_SEARCH_PLAYER = @"https://api.worldoftanks.{0}/{1}/account/list/";
+        private const string URL_SEARCH_CLAN = @"https://api.worldoftanks.{0}/{1}/clan/list/";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";
+        private const string REQUEST_METHOD = "POST";
+        private const string CONTENT_TYPE = "application/x-www-form-urlencoded";
+        private const string SEARCH_PARAMS = "application_id={0}&search={1}&limit={2}";
+        private const string CLAN_ID_PARAMS = "application_id={0}&clan_id={1}";
+        private const string PLAYER_ID_PARAMS = "application_id={0}&account_id={1}";
 
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
@@ -42,7 +47,7 @@ namespace WotDossier.Dal
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
         private Dictionary<int, TankServerInfo> _serverTanksDictionary;
         private Dictionary<string, RatingExpectancy> _ratingExpectations;
-
+        
         /// <summary>
         /// Tanks dictionary
         /// KEY - tankid, countryid
@@ -315,9 +320,18 @@ namespace WotDossier.Dal
 
             try
             {
-                string url = string.Format(URL_GET_PLAYER_INFO, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
+                string url = string.Format(URL_GET_PLAYER_INFO, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = REQUEST_METHOD;
+                request.ContentType = CONTENT_TYPE;
+                string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
+                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
+                request.ContentLength = encodedBytes.Length;
+                Stream newStream = request.GetRequestStream();
+                newStream.Write(encodedBytes, 0, encodedBytes.Length);
+                newStream.Close();
+
                 WebResponse response = request.GetResponse();
                 stream = response.GetResponseStream();
 
@@ -347,9 +361,18 @@ namespace WotDossier.Dal
         {
             try
             {
-                string url = string.Format(URL_GET_PLAYER_TANKS, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
+                string url = string.Format(URL_GET_PLAYER_TANKS, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = REQUEST_METHOD;
+                request.ContentType = CONTENT_TYPE;
+                string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
+                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
+                request.ContentLength = encodedBytes.Length;
+                Stream newStream = request.GetRequestStream();
+                newStream.Write(encodedBytes, 0, encodedBytes.Length);
+                newStream.Close();
+
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {
@@ -387,9 +410,18 @@ namespace WotDossier.Dal
         {
             try
             {
-                string url = string.Format(URL_GET_PLAYER_RATINGS, playerId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
+                string url = string.Format(URL_GET_PLAYER_RATINGS, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = REQUEST_METHOD;
+                request.ContentType = CONTENT_TYPE;
+                string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
+                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
+                request.ContentLength = encodedBytes.Length;
+                Stream newStream = request.GetRequestStream();
+                newStream.Write(encodedBytes, 0, encodedBytes.Length);
+                newStream.Close();
+
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {
@@ -428,9 +460,17 @@ namespace WotDossier.Dal
 
             try
             {
-                string url = string.Format(URL_GET_CLAN_INFO, clanId, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server);
+                string url = string.Format(URL_GET_CLAN_INFO, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = REQUEST_METHOD;
+                request.ContentType = CONTENT_TYPE;
+                string parameters = string.Format(CLAN_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), clanId);
+                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
+                request.ContentLength = encodedBytes.Length;
+                Stream newStream = request.GetRequestStream();
+                newStream.Write(encodedBytes, 0, encodedBytes.Length);
+                newStream.Close();
                 WebResponse response = request.GetResponse();
                 Stream stream = response.GetResponseStream();
                 
@@ -457,14 +497,38 @@ namespace WotDossier.Dal
         /// <returns>First found player</returns>
         public PlayerSearchJson SearchPlayer(AppSettings settings, string playerName)
         {
+            List<PlayerSearchJson> list = SearchPlayer(settings, playerName, 1);
+            if (list != null)
+            {
+                return list.FirstOrDefault();
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Searches the player.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        /// <returns>First found player</returns>
+        public List<PlayerSearchJson> SearchPlayer(AppSettings settings, string playerName, int limit)
+        {
 #if DEBUG
             return new PlayerSearchJson { created_at = 0, id = 10800699, name = "rembel"};
 #else
             try
             {
-                string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, 1);
+                string url = string.Format(URL_SEARCH_PLAYER, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = REQUEST_METHOD;
+                request.ContentType = CONTENT_TYPE;
+                string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerName, 1);
+                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
+                request.ContentLength = encodedBytes.Length;
+                Stream newStream = request.GetRequestStream();
+                newStream.Write(encodedBytes, 0, encodedBytes.Length);
+                newStream.Close();
+
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {
@@ -475,7 +539,7 @@ namespace WotDossier.Dal
                         JsonSerializer se = new JsonSerializer();
                         JObject parsedData = (JObject)se.Deserialize(reader);
 
-                        return JsonConvert.DeserializeObject<PlayerSearchJson>(parsedData["data"].FirstOrDefault().ToString());
+                        return JsonConvert.DeserializeObject<List<PlayerSearchJson>>(parsedData["data"].ToString());
                     }
                 }
             }
@@ -489,54 +553,28 @@ namespace WotDossier.Dal
         }
 
         /// <summary>
-        /// Searches the player.
+        /// Search clans.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        /// <returns>First found player</returns>
-        public List<PlayerSearchJson> SearchPlayer(AppSettings settings, string playerName, int limit)
-        {
-            try
-            {
-                string url = string.Format(URL_SEARCH_PLAYER, playerName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, limit);
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                WebResponse response = request.GetResponse();
-                using (Stream stream = response.GetResponseStream())
-                {
-                    if (stream != null)
-                    {
-                        StreamReader streamReader = new StreamReader(stream);
-                        JsonTextReader reader = new JsonTextReader(streamReader);
-                        JsonSerializer se = new JsonSerializer();
-                        JObject parsedData = (JObject)se.Deserialize(reader);
-
-                        if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
-                        {
-                            return JsonConvert.DeserializeObject<List<PlayerSearchJson>>(parsedData["data"].ToString());
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                _log.Error("Error on player search", e);
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Searches the player.
-        /// </summary>
-        /// <param name="settings">The settings.</param>
-        /// <returns>First found player</returns>
+        /// <param name="clanName">Name of the clan.</param>
+        /// <param name="count">The count.</param>
+        /// <returns>Found clans</returns>
         public List<ClanSearchJson> SearchClan(AppSettings settings, string clanName, int count)
         {
             try
             {
-                string url = string.Format(URL_SEARCH_CLAN, clanName, WotDossierSettings.ApiVersion, WotDossierSettings.GetAppId(settings.Server), settings.Server, count);
+                string url = string.Format(URL_SEARCH_CLAN, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = REQUEST_METHOD;
+                request.ContentType = CONTENT_TYPE;
+                string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), clanName, count);
+                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
+                request.ContentLength = encodedBytes.Length;
+                Stream newStream = request.GetRequestStream();
+                newStream.Write(encodedBytes, 0, encodedBytes.Length);
+                newStream.Close();
+
                 WebResponse response = request.GetResponse();
                 using (Stream stream = response.GetResponseStream())
                 {

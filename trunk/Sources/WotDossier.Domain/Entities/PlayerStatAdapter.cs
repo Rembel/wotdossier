@@ -10,6 +10,7 @@ namespace WotDossier.Domain.Entities
     public class PlayerStatAdapter
     {
         private readonly List<TankJson> _tanks;
+        private readonly List<TankJsonV2> _tanksV2;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -116,6 +117,115 @@ namespace WotDossier.Domain.Entities
             Sinai = _tanks.Sum(x => x.Battle.fragsSinai)/100;
             PattonValley = _tanks.Sum(x => x.Special.fragsPatton)/100;
             Ranger = _tanks.Sum(x => x.Special.huntsman);
+
+            #endregion
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public PlayerStatAdapter(List<TankJsonV2> tanks)
+        {
+            _tanksV2 = tanks;
+
+            Battles_count = _tanksV2.Sum(x => x.A15x15.battlesCount);
+            Wins = _tanksV2.Sum(x => x.A15x15.wins);
+            Losses = _tanksV2.Sum(x => x.A15x15.losses);
+            Survived_battles = _tanksV2.Sum(x => x.A15x15.survivedBattles);
+            Xp = _tanksV2.Sum(x => x.A15x15.xp);
+            if (Battles_count > 0)
+            {
+                Battle_avg_xp = Xp / (double)Battles_count;
+            }
+            Max_xp = _tanksV2.Max(x => x.Max15x15.maxXP);
+            Frags = _tanksV2.Sum(x => x.A15x15.frags);
+            Spotted = _tanksV2.Sum(x => x.A15x15.spotted);
+            Hits_percents = _tanksV2.Sum(x => x.A15x15.hits) / ((double)_tanksV2.Sum(x => x.A15x15.shots)) * 100.0;
+            Damage_dealt = _tanksV2.Sum(x => x.A15x15.damageDealt);
+            Damage_taken = _tanksV2.Sum(x => x.A15x15.damageReceived);
+            Capture_points = _tanksV2.Sum(x => x.A15x15.capturePoints);
+            Dropped_capture_points = _tanksV2.Sum(x => x.A15x15.droppedCapturePoints);
+            Updated = _tanksV2.Max(x => x.Common.lastBattleTimeR);
+            if (Battles_count > 0)
+            {
+                AvgLevel = tanks.Sum(x => x.Common.tier * x.A15x15.battlesCount) / (double)Battles_count;
+            }
+
+            #region [ IRowBattleAwards ]
+
+            Warrior = _tanksV2.Sum(x => x.Achievements.warrior);
+            Invader = _tanksV2.Sum(x => x.Achievements.invader);
+            Sniper = _tanksV2.Sum(x => x.Achievements.sniper);
+            Defender = _tanksV2.Sum(x => x.Achievements.defender);
+            SteelWall = _tanksV2.Sum(x => x.Achievements.steelwall);
+            Confederate = _tanksV2.Sum(x => x.Achievements.supporter);
+            Scout = _tanksV2.Sum(x => x.Achievements.scout);
+            PatrolDuty = _tanksV2.Sum(x => x.Achievements.evileye);
+            BrothersInArms = _tanksV2.Sum(x => x.Achievements.medalBrothersInArms);
+            CrucialContribution = _tanksV2.Sum(x => x.Achievements.medalCrucialContribution);
+            CoolHeaded = _tanksV2.Sum(x => x.Achievements.ironMan);
+            LuckyDevil = _tanksV2.Sum(x => x.Achievements.luckyDevil);
+            Spartan = _tanksV2.Sum(x => x.Achievements.sturdy);
+
+            #endregion
+
+            #region [ IRowEpic ]
+
+            Boelter = _tanksV2.Sum(x => x.Achievements.medalWittmann);
+            RadleyWalters = _tanksV2.Sum(x => x.Achievements.medalRadleyWalters);
+            LafayettePool = _tanksV2.Sum(x => x.Achievements.medalLafayettePool);
+            Orlik = _tanksV2.Sum(x => x.Achievements.medalOrlik);
+            Oskin = _tanksV2.Sum(x => x.Achievements.medalOskin);
+            Lehvaslaiho = _tanksV2.Sum(x => x.Achievements.medalLehvaslaiho);
+            Nikolas = _tanksV2.Sum(x => x.Achievements.medalNikolas);
+            Halonen = _tanksV2.Sum(x => x.Achievements.medalHalonen);
+            Burda = _tanksV2.Sum(x => x.Achievements.medalBurda);
+            Pascucci = _tanksV2.Sum(x => x.Achievements.medalPascucci);
+            Dumitru = _tanksV2.Sum(x => x.Achievements.medalDumitru);
+            TamadaYoshio = _tanksV2.Sum(x => x.Achievements.medalTamadaYoshio);
+            Billotte = _tanksV2.Sum(x => x.Achievements.medalBillotte);
+            BrunoPietro = _tanksV2.Sum(x => x.Achievements.medalBrunoPietro);
+            Tarczay = _tanksV2.Sum(x => x.Achievements.medalTarczay);
+            Kolobanov = _tanksV2.Sum(x => x.Achievements.medalKolobanov);
+            Fadin = _tanksV2.Sum(x => x.Achievements.medalFadin);
+            HeroesOfRassenay = _tanksV2.Sum(x => x.Achievements.heroesOfRassenay);
+            DeLanglade = _tanksV2.Sum(x => x.Achievements.medalDeLanglade);
+
+            #endregion
+
+            #region [ IRowMedals]
+
+            //Kay = stat.data.achievements.medalKay;
+            //Carius = stat.data.achievements.medalCarius;
+            //Knispel = stat.data.achievements.medalKnispel;
+            //Poppel = stat.data.achievements.medalPoppel;
+            //Abrams = stat.data.achievements.medalAbrams;
+            //Leclerk = stat.data.achievements.medalLeClerc;
+            //Lavrinenko = stat.data.achievements.medalLavrinenko;
+            //Ekins = stat.data.achievements.medalEkins;
+
+            #endregion
+
+            #region [ IRowSeries ]
+
+            SharpshooterLongest = _tanksV2.Max(x => x.Achievements.maxSniperSeries);
+            MasterGunnerLongest = _tanksV2.Max(x => x.Achievements.maxPiercingSeries);
+
+            #endregion
+
+            #region [ IRowSpecialAwards ]
+
+            Kamikaze = _tanksV2.Sum(x => x.Achievements.kamikaze);
+            Raider = _tanksV2.Sum(x => x.Achievements.raider);
+            Bombardier = _tanksV2.Sum(x => x.Achievements.bombardier);
+            Reaper = _tanksV2.Max(x => x.Achievements.maxKillingSeries);
+            Invincible = _tanksV2.Max(x => x.Achievements.maxInvincibleSeries);
+            Survivor = _tanksV2.Max(x => x.Achievements.maxDiehardSeries);
+            MouseTrap = _tanksV2.Sum(x => x.Achievements.mousebane);
+            Hunter = _tanksV2.Sum(x => x.Achievements.fragsBeast) / 100;
+            Sinai = _tanksV2.Sum(x => x.Achievements.fragsSinai) / 100;
+            PattonValley = _tanksV2.Sum(x => x.Achievements.fragsPatton) / 100;
+            Ranger = _tanksV2.Sum(x => x.Achievements.huntsman);
 
             #endregion
         }

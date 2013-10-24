@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -16,6 +17,7 @@ using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
@@ -170,6 +172,46 @@ namespace WotDossier.Test
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
+            }
+        }
+
+        [Test]
+        public void CacheTest_089_Converter()
+        {
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
+            CacheHelper.BinaryCacheToJson(cacheFile);
+            Thread.Sleep(1000);
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanks)
+            {
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
+            }
+
+            foreach (TankJson tankJson in tanks)
+            {
+                TankStatisticRowViewModel model = new TankStatisticRowViewModel(tankJson);
+                TankJsonV2 tankJsonV2 = TankJsonV2Converter.Convert(tankJson);
+                tankJsonV2.Description = tankJson.Description;
+                tankJsonV2.Frags = tankJson.Frags;
+                TankStatisticRowViewModel modelV2 = new TankStatisticRowViewModel(tankJsonV2);
+
+                PropertyInfo[] propertyInfos = typeof(TankStatisticRowViewModel).GetProperties();
+
+                foreach (PropertyInfo propertyInfo in propertyInfos)
+                {
+                    object value = propertyInfo.GetValue(model);
+                    object value2 = propertyInfo.GetValue(modelV2);
+
+                    bool result = Equals(value, value2);
+                    if (!result)
+                    {
+                        Console.WriteLine("{0}\t\t{1} - {2}\t{3}", propertyInfo.Name, value, value2, result);
+                    }
+
+                    Assert.IsTrue(result, string.Format("Converter. Data missing for property - {0}", propertyInfo.Name));
+                }
             }
         }
 

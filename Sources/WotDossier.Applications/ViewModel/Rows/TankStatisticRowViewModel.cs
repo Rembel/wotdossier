@@ -233,15 +233,15 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
         /// </summary>
         /// <param name="tank">The tank.</param>
-        public TankStatisticRowViewModel(TankJson tank)
-            : this(tank, new List<TankJson>())
+        public TankStatisticRowViewModel(TankJsonV2 tank)
+            : this(tank, new List<TankJsonV2>())
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list) : base(Utils.UnixDateToDateTime(tank.Common.updated), list.Select(x => new TankStatisticRowViewModel(x)).ToList())
+        public TankStatisticRowViewModel(TankJsonV2 tank, IEnumerable<TankJsonV2> list) : base(Utils.UnixDateToDateTime(tank.Common.updated), list.Select(x => new TankStatisticRowViewModel(x)).ToList())
         {
             Tier = tank.Common.tier;
             Type = tank.Common.type;
@@ -251,80 +251,80 @@ namespace WotDossier.Applications.ViewModel.Rows
             TankId = tank.Common.tankid;
             TankUniqueId = tank.UniqueId();
             TankFrags = tank.Frags;
-            OriginalXP = tank.Tankdata.originalXP;
-            DamageAssistedTrack = tank.Tankdata.damageAssistedTrack;
-            DamageAssistedRadio = tank.Tankdata.damageAssistedRadio;
-            Mileage = tank.Tankdata.mileage / 1000;
-            ShotsReceived = tank.Tankdata.shotsReceived;
-            NoDamageShotsReceived = tank.Tankdata.noDamageShotsReceived;
-            PiercedReceived = tank.Tankdata.piercedReceived;
-            HeHitsReceived = tank.Tankdata.heHitsReceived;
-            HeHits = tank.Tankdata.he_hits;
-            Pierced = tank.Tankdata.pierced;
-            XpBefore88 = tank.Tankdata.xpBefore8_8 != 0 ? tank.Tankdata.xpBefore8_8 : tank.Tankdata.xp;
-            BattlesCountBefore88 = tank.Tankdata.battlesCountBefore8_8 != 0 ? tank.Tankdata.battlesCountBefore8_8 : tank.Tankdata.battlesCount;
-            BattlesCount88 = tank.Tankdata.battlesCount - BattlesCountBefore88;
+            OriginalXP = tank.A15x15.originalXP;
+            DamageAssistedTrack = tank.A15x15.damageAssistedTrack;
+            DamageAssistedRadio = tank.A15x15.damageAssistedRadio;
+            Mileage = tank.Total.mileage / 1000;
+            ShotsReceived = tank.A15x15.shotsReceived;
+            NoDamageShotsReceived = tank.A15x15.noDamageShotsReceived;
+            PiercedReceived = tank.A15x15.piercedReceived;
+            HeHitsReceived = tank.A15x15.heHitsReceived;
+            HeHits = tank.A15x15.he_hits;
+            Pierced = tank.A15x15.pierced;
+            XpBefore88 = tank.A15x15.xpBefore8_8 != 0 ? tank.A15x15.xpBefore8_8 : tank.A15x15.xp;
+            BattlesCountBefore88 = tank.A15x15.battlesCountBefore8_8 != 0 ? tank.A15x15.battlesCountBefore8_8 : tank.A15x15.battlesCount;
+            BattlesCount88 = tank.A15x15.battlesCount - BattlesCountBefore88;
             IsPremium = tank.Common.premium == 1;
 
             #region [ ITankRowBattleAwards ]
-            BattleHero = tank.Battle.battleHeroes;
-            Warrior = tank.Battle.warrior;
-            Invader = tank.Battle.invader;
-            Sniper = tank.Battle.sniper;
-            Defender = tank.Battle.sniper;
-            SteelWall = tank.Battle.steelwall;
-            Confederate = tank.Battle.supporter;
-            Scout = tank.Battle.scout;
-            PatrolDuty = tank.Battle.evileye;
-            BrothersInArms = tank.Epic.BrothersInArms;
-            CrucialContribution = tank.Epic.CrucialContribution;
-            CoolHeaded = tank.Special.alaric;
-            LuckyDevil = tank.Special.luckyDevil;
-            Spartan = tank.Special.sturdy;
-            Ranger = tank.Special.huntsman;
+            BattleHero = tank.Achievements.battleHeroes;
+            Warrior = tank.Achievements.warrior;
+            Invader = tank.Achievements.invader;
+            Sniper = tank.Achievements.sniper;
+            Defender = tank.Achievements.sniper;
+            SteelWall = tank.Achievements.steelwall;
+            Confederate = tank.Achievements.supporter;
+            Scout = tank.Achievements.scout;
+            PatrolDuty = tank.Achievements.evileye;
+            BrothersInArms = tank.Achievements.medalBrothersInArms;
+            CrucialContribution = tank.Achievements.medalCrucialContribution;
+            CoolHeaded = tank.Achievements.alaric;
+            LuckyDevil = tank.Achievements.luckyDevil;
+            Spartan = tank.Achievements.sturdy;
+            Ranger = tank.Achievements.huntsman;
             #endregion
 
             #region [ ITankRowBattles ]
-            BattlesCount = tank.Tankdata.battlesCount;
-            Wins = tank.Tankdata.wins;
-            Losses = tank.Tankdata.losses;
-            SurvivedBattles = tank.Tankdata.survivedBattles;
-            SurvivedAndWon = tank.Tankdata.winAndSurvived;
+            BattlesCount = tank.A15x15.battlesCount;
+            Wins = tank.A15x15.wins;
+            Losses = tank.A15x15.losses;
+            SurvivedBattles = tank.A15x15.survivedBattles;
+            SurvivedAndWon = tank.A15x15.winAndSurvived;
             #endregion
 
             #region [ ITankRowDamage ]
-            DamageDealt = tank.Tankdata.damageDealt;
-            DamageTaken = tank.Tankdata.damageReceived;
+            DamageDealt = tank.A15x15.damageDealt;
+            DamageTaken = tank.A15x15.damageReceived;
             #endregion
 
             #region [ ITankRowEpic ]
-            Boelter = tank.Epic.Boelter;
-            RadleyWalters = tank.Epic.RadleyWalters;
-            LafayettePool = tank.Epic.LafayettePool;
-            Orlik = tank.Epic.Orlik;
-            Oskin = tank.Epic.Oskin;
-            Lehvaslaiho = tank.Epic.Lehvaslaiho;
-            Nikolas = tank.Epic.Nikolas;
-            Halonen = tank.Epic.Halonen;
-            Burda = tank.Epic.Burda;
-            Pascucci = tank.Epic.Pascucci;
-            Dumitru = tank.Epic.Dumitru;
-            TamadaYoshio = tank.Epic.TamadaYoshio;
-            Billotte = tank.Epic.Billotte;
-            BrunoPietro = tank.Epic.BrunoPietro;
-            Tarczay = tank.Epic.Tarczay;
-            Kolobanov = tank.Epic.Kolobanov;
-            Fadin = tank.Epic.Fadin;
-            HeroesOfRassenay = tank.Special.heroesOfRassenay;
-            DeLanglade = tank.Epic.DeLanglade;
+            Boelter = tank.Achievements.medalWittmann;
+            RadleyWalters = tank.Achievements.medalRadleyWalters;
+            LafayettePool = tank.Achievements.medalLafayettePool;
+            Orlik = tank.Achievements.medalOrlik;
+            Oskin = tank.Achievements.medalOskin;
+            Lehvaslaiho = tank.Achievements.medalLehvaslaiho;
+            Nikolas = tank.Achievements.medalNikolas;
+            Halonen = tank.Achievements.medalHalonen;
+            Burda = tank.Achievements.medalBurda;
+            Pascucci = tank.Achievements.medalPascucci;
+            Dumitru = tank.Achievements.medalDumitru;
+            TamadaYoshio = tank.Achievements.medalTamadaYoshio;
+            Billotte = tank.Achievements.medalBillotte;
+            BrunoPietro = tank.Achievements.medalBrunoPietro;
+            Tarczay = tank.Achievements.medalTarczay;
+            Kolobanov = tank.Achievements.medalKolobanov;
+            Fadin = tank.Achievements.medalFadin;
+            HeroesOfRassenay = tank.Achievements.heroesOfRassenay;
+            DeLanglade = tank.Achievements.medalDeLanglade;
             #endregion
 
             #region [ ITankRowFrags ]
-            Frags = tank.Tankdata.frags;
-            MaxFrags = tank.Tankdata.maxFrags;
-            Tier8Frags = tank.Tankdata.frags8p;
-            BeastFrags = tank.Tankdata.fragsBeast;
-            SinaiFrags = tank.Battle.fragsSinai;
+            Frags = tank.A15x15.frags;
+            MaxFrags = tank.Max15x15.maxFrags;
+            Tier8Frags = tank.A15x15.frags8p;
+            BeastFrags = tank.A15x15.fragsBeast;
+            SinaiFrags = tank.Achievements.fragsSinai;
             #endregion
 
             #region [ ITankRowMasterTanker ]
@@ -332,72 +332,71 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             #region [ ITankRowMedals]
-            Kay = tank.Major.Kay;
-            Carius = tank.Major.Carius;
-            Knispel = tank.Major.Knispel;
-            Poppel = tank.Major.Poppel;
-            Abrams = tank.Major.Abrams;
-            Leclerk = tank.Major.LeClerc;
-            Lavrinenko = tank.Major.Lavrinenko;
-            Ekins = tank.Major.Ekins;
+            Kay = tank.Achievements.medalKay;
+            Carius = tank.Achievements.medalCarius;
+            Knispel = tank.Achievements.medalKnispel;
+            Poppel = tank.Achievements.medalPoppel;
+            Abrams = tank.Achievements.medalAbrams;
+            Leclerk = tank.Achievements.medalLeClerc;
+            Lavrinenko = tank.Achievements.medalLavrinenko;
+            Ekins = tank.Achievements.medalEkins;
             #endregion
 
             #region [ ITankRowPerformance ]
-            Shots = tank.Tankdata.shots;
-            Hits = tank.Tankdata.hits;
+            Shots = tank.A15x15.shots;
+            Hits = tank.A15x15.hits;
             if (Shots > 0)
             {
                 HitsPercents = Hits/(double) Shots*100.0;
             }
-            CapturePoints = tank.Tankdata.capturePoints;
-            DroppedCapturePoints = tank.Tankdata.droppedCapturePoints;
-            Spotted = tank.Tankdata.spotted;
+            CapturePoints = tank.A15x15.capturePoints;
+            DroppedCapturePoints = tank.A15x15.droppedCapturePoints;
+            Spotted = tank.A15x15.spotted;
             #endregion
 
             #region [ ITankRowSeries ]
-            ReaperLongest = tank.Series.maxKillingSeries;
-            ReaperProgress = tank.Series.killingSeries;
-            SharpshooterLongest = tank.Series.maxSniperSeries;
-            SharpshooterProgress = tank.Series.sniperSeries;
-            MasterGunnerLongest = tank.Series.maxPiercingSeries;
-            MasterGunnerProgress = tank.Series.piercingSeries;
-            InvincibleLongest = tank.Series.maxInvincibleSeries;
-            InvincibleProgress = tank.Series.invincibleSeries;
-            SurvivorLongest = tank.Series.maxDiehardSeries;
-            SurvivorProgress = tank.Series.diehardSeries;
+            ReaperLongest = tank.Achievements.maxKillingSeries;
+            ReaperProgress = tank.Achievements.killingSeries;
+            SharpshooterLongest = tank.Achievements.maxSniperSeries;
+            SharpshooterProgress = tank.Achievements.sniperSeries;
+            MasterGunnerLongest = tank.Achievements.maxPiercingSeries;
+            MasterGunnerProgress = tank.Achievements.piercingSeries;
+            InvincibleLongest = tank.Achievements.maxInvincibleSeries;
+            InvincibleProgress = tank.Achievements.invincibleSeries;
+            SurvivorLongest = tank.Achievements.maxDiehardSeries;
+            SurvivorProgress = tank.Achievements.diehardSeries;
             #endregion
 
             #region [ ITankRowSpecialAwards ]
-            Kamikaze = tank.Special.kamikaze;
-            Raider = tank.Special.raider;
-            Bombardier = tank.Special.bombardier;
-            Reaper = tank.Series.maxKillingSeries;
-            Sharpshooter = tank.Series.maxSniperSeries;
-            Invincible = tank.Series.maxInvincibleSeries;
-            Survivor = tank.Series.maxDiehardSeries;
-            MouseTrap = tank.Special.mousebane;
-            Hunter = tank.Special.beasthunter;
-            Sinai = tank.Special.sinai;
-            PattonValley = tank.Special.pattonValley;
+            Kamikaze = tank.Achievements.kamikaze;
+            Raider = tank.Achievements.raider;
+            Bombardier = tank.Achievements.bombardier;
+            Reaper = tank.Achievements.maxKillingSeries;
+            Sharpshooter = tank.Achievements.maxSniperSeries;
+            Invincible = tank.Achievements.maxInvincibleSeries;
+            Survivor = tank.Achievements.maxDiehardSeries;
+            MouseTrap = tank.Achievements.mousebane;
+            Hunter = tank.Achievements.beasthunter;
+            Sinai = tank.Achievements.sinai;
+            PattonValley = tank.Achievements.pattonValley;
             #endregion
 
             #region [ ITankRowTime ]
             LastBattle = tank.Common.lastBattleTimeR;
-            PlayTime = new TimeSpan(0, 0, 0, tank.Tankdata.battleLifeTime);
-            if (tank.Tankdata.battlesCount > 0)
+            PlayTime = new TimeSpan(0, 0, 0, tank.Total.battleLifeTime);
+            if (tank.A15x15.battlesCount > 0)
             {
-                AverageBattleTime = new TimeSpan(0, 0, 0, tank.Tankdata.battleLifeTime/tank.Tankdata.battlesCount);
+                AverageBattleTime = new TimeSpan(0, 0, 0, tank.Total.battleLifeTime/tank.A15x15.battlesCount);
             }
             #endregion
 
             #region [ ITankRowXP ]
-            Xp = tank.Tankdata.xp;
-            MaxXp = tank.Tankdata.maxXP;
+            Xp = tank.A15x15.xp;
+            MaxXp = tank.Max15x15.maxXP;
             #endregion
 
             #region [ ITankRowRatings ]
-
-            MarkOfMastery = tank.Special.markOfMastery;
+            MarkOfMastery = tank.Achievements.markOfMastery;
 
             #endregion
 

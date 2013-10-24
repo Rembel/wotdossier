@@ -1,1 +1,0 @@
-C:\Python27\python.exe wotdc2j.py dossier.dat -f -r

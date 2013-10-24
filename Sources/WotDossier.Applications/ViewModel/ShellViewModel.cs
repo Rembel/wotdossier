@@ -801,16 +801,16 @@ namespace WotDossier.Applications.ViewModel
                         {
                             FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName);
 
-                            List<TankJson> tanks;
+                            List<TankJsonV2> tanksV2;
 
                             if (cacheFile != null)
                             {
                                 //convert dossier cache file to json
                                 CacheHelper.BinaryCacheToJson(cacheFile);
 
-                                tanks = LoadTanks(cacheFile);
+                                tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
 
-                                PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
+                                PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanksV2);
 
                                 PeriodSelector.PrevDates = GetPreviousDates();
 
@@ -830,7 +830,7 @@ namespace WotDossier.Applications.ViewModel
 
                                 SessionStatistic = clone;
 
-                                InitTanksStatistic(tanks);
+                                InitTanksStatistic(tanksV2);
 
                                 ProgressView.Report(bw, 50, string.Empty);
 
@@ -878,12 +878,6 @@ namespace WotDossier.Applications.ViewModel
                 _log.Error(e);
             }
             return new ServerStatWrapper(playerStat);
-        }
-
-        private static List<TankJson> LoadTanks(FileInfo cacheFile)
-        {
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            return tanks;
         }
 
         #endregion
@@ -965,7 +959,7 @@ namespace WotDossier.Applications.ViewModel
                 }, new ProgressDialogSettings(true, true, false));
         }
 
-        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ServerStatWrapper serverStatistic, List<TankJson> tanks)
+        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ServerStatWrapper serverStatistic, List<TankJsonV2> tanks)
         {
             AppSettings settings = SettingsReader.Get();
 
@@ -975,7 +969,7 @@ namespace WotDossier.Applications.ViewModel
             return StatisticViewModelFactory.Create(statisticEntities, tanks, player.Name, player.Creaded, serverStatistic);
         }
 
-        private void InitTanksStatistic(List<TankJson> tanks)
+        private void InitTanksStatistic(List<TankJsonV2> tanks)
         {
             AppSettings settings = SettingsReader.Get();
             PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerId, tanks);

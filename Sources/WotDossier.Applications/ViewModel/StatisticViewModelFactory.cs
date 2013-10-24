@@ -13,7 +13,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class StatisticViewModelFactory
     {
-        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, string name, DateTime created, ServerStatWrapper playerData)
+        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJsonV2> tanks, string name, DateTime created, ServerStatWrapper playerData)
         {
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
@@ -22,7 +22,7 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
             currentStatisticViewModel.Name = name;
             currentStatisticViewModel.Created = created;
-            currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.Tankdata.damageReceived);
+            currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.A15x15.damageReceived);
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - created).Days;
             currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
             currentStatisticViewModel.WN8Rating = GetWN8Rating(currentStatisticViewModel, tanks);
@@ -40,21 +40,21 @@ namespace WotDossier.Applications.ViewModel
             return new PlayerStatisticViewModel(statisticEntity);
         }
 
-        private static double GetPerformanceRating(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
+        private static double GetPerformanceRating(PlayerStatisticViewModel playerStatistic, List<TankJsonV2> tanks)
         {
-            double expDamage = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
+            double expDamage = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
             return RatingHelper.PerformanceRating(playerStatistic.BattlesCount, playerStatistic.Wins, expDamage, playerStatistic.DamageDealt, playerStatistic.Tier);
         }
 
-        private static double GetWN8Rating(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
+        private static double GetWN8Rating(PlayerStatisticViewModel playerStatistic, List<TankJsonV2> tanks)
         {
-            double battles = (double)tanks.Sum(x => x.Tankdata.battlesCount);
+            double battles = (double)tanks.Sum(x => x.A15x15.battlesCount);
 
-            double damage = tanks.Select(x => x.Tankdata.damageDealt).Sum() / battles;
-            double spotted = tanks.Select(x => x.Tankdata.spotted).Sum() / battles;
-            double def = tanks.Select(x => x.Tankdata.droppedCapturePoints).Sum() / battles;
-            double winRate = tanks.Sum(x => x.Tankdata.wins) / battles;
-            double frags = tanks.Select(x => x.Tankdata.frags).Sum() / battles;
+            double damage = tanks.Select(x => x.A15x15.damageDealt).Sum() / battles;
+            double spotted = tanks.Select(x => x.A15x15.spotted).Sum() / battles;
+            double def = tanks.Select(x => x.A15x15.droppedCapturePoints).Sum() / battles;
+            double winRate = tanks.Sum(x => x.A15x15.wins) / battles;
+            double frags = tanks.Select(x => x.A15x15.frags).Sum() / battles;
 
             //double damage = playerStatistic.AvgDamageDealt;
             //double spotted = playerStatistic.AvgSpotted;
@@ -62,18 +62,18 @@ namespace WotDossier.Applications.ViewModel
             //double winRate = playerStatistic.WinsPercent / 100.0;
             //double frags = playerStatistic.AvgFrags;
 
-            double expDamage = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalDamage).Sum() / battles;
-            double expSpotted = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalSpotted).Sum() / battles;
-            double expDef = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalDefence).Sum() / battles;
+            double expDamage = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDamage).Sum() / battles;
+            double expSpotted = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalSpotted).Sum() / battles;
+            double expDef = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDefence).Sum() / battles;
             double expWinRate = tanks.Average(x => x.Description.Expectancy.Wn8NominalWinRate) / 100.0;
-            double expFrags = tanks.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.Wn8NominalFrags).Sum() / battles;
+            double expFrags = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalFrags).Sum() / battles;
             return RatingHelper.CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
         }
 
-        private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
+        private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJsonV2> tanks)
         {
-            int battlesCount88 = playerStatistic.BattlesCount - tanks.Sum(x => x.Tankdata.battlesCountBefore8_8 != 0 ? x.Tankdata.battlesCountBefore8_8 : x.Tankdata.battlesCount);
-            int xp88 = tanks.Sum(x => x.Tankdata.originalXP);
+            int battlesCount88 = playerStatistic.BattlesCount - tanks.Sum(x => x.A15x15.battlesCountBefore8_8 != 0 ? x.A15x15.battlesCountBefore8_8 : x.A15x15.battlesCount);
+            int xp88 = tanks.Sum(x => x.A15x15.originalXP);
             double avgXP88 = xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1);
 
             double rbr = RatingHelper.RBR(playerStatistic.BattlesCount, battlesCount88, playerStatistic.Wins / (double)playerStatistic.BattlesCount,
@@ -88,18 +88,18 @@ namespace WotDossier.Applications.ViewModel
 
         private static TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
         {
-            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.Tankdata.battlesCount).First();
-            IEnumerable<TankJson> prevStatisticViewModels =
-                statisticViewModels.Where(x => x.Tankdata.battlesCount != currentStatistic.Tankdata.battlesCount);
+            IEnumerable<TankJsonV2> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
+            TankJsonV2 currentStatistic = statisticViewModels.OrderByDescending(x => x.A15x15.battlesCount).First();
+            IEnumerable<TankJsonV2> prevStatisticViewModels =
+                statisticViewModels.Where(x => x.A15x15.battlesCount != currentStatistic.A15x15.battlesCount);
             TankStatisticRowViewModel model = new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
             model.IsFavorite = tankStatisticEntities.First().TankIdObject.IsFavorite;
             return model;
         }
 
-        private static TankJson UnZipObject(byte[] x)
+        private static TankJsonV2 UnZipObject(byte[] x)
         {
-            TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(x);
+            TankJsonV2 tankJson = WotApiHelper.UnZipObject<TankJsonV2>(x);
             WotApiClient.Instance.ExtendPropertiesData(tankJson);
             return tankJson;
         }

@@ -1,4 +1,5 @@
-﻿using WotDossier.Domain.Tank;
+﻿using WotDossier.Common;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Dal
 {
@@ -28,7 +29,6 @@ namespace WotDossier.Dal
             v2.A15x15.xp = tankJson.Tankdata.xp;
             v2.A15x15.xpBefore8_8 = tankJson.Tankdata.xpBefore8_8;
 
-            v2.A15x15_2 = new StatisticJson8_9();
             v2.A15x15.originalXP = tankJson.Tankdata.originalXP;
             v2.A15x15.damageAssistedRadio = tankJson.Tankdata.damageAssistedRadio;
             v2.A15x15.damageAssistedTrack = tankJson.Tankdata.damageAssistedTrack;
@@ -38,6 +38,36 @@ namespace WotDossier.Dal
             v2.A15x15.heHitsReceived = tankJson.Tankdata.heHitsReceived;
             v2.A15x15.he_hits = tankJson.Tankdata.he_hits;
             v2.A15x15.pierced = tankJson.Tankdata.pierced;
+
+            v2.A15x15_2 = new StatisticJson8_9();
+            v2.A15x15_2.battlesCount = tankJson.Tankdata.battlesCount;
+            v2.A15x15_2.battlesCountBefore8_8 = tankJson.Tankdata.battlesCountBefore8_8;
+            v2.A15x15_2.capturePoints = tankJson.Tankdata.capturePoints;
+            v2.A15x15_2.damageDealt = tankJson.Tankdata.damageDealt;
+            v2.A15x15_2.damageReceived = tankJson.Tankdata.damageReceived;
+            v2.A15x15_2.droppedCapturePoints = tankJson.Tankdata.droppedCapturePoints;
+            v2.A15x15_2.frags = tankJson.Tankdata.frags;
+            v2.A15x15_2.frags8p = tankJson.Tankdata.frags8p;
+            v2.A15x15_2.fragsBeast = tankJson.Tankdata.fragsBeast;
+            v2.A15x15_2.hits = tankJson.Tankdata.hits;
+            v2.A15x15_2.losses = tankJson.Tankdata.losses;
+            v2.A15x15_2.shots = tankJson.Tankdata.shots;
+            v2.A15x15_2.spotted = tankJson.Tankdata.spotted;
+            v2.A15x15_2.survivedBattles = tankJson.Tankdata.survivedBattles;
+            v2.A15x15_2.winAndSurvived = tankJson.Tankdata.winAndSurvived;
+            v2.A15x15_2.wins = tankJson.Tankdata.wins;
+            v2.A15x15_2.xp = tankJson.Tankdata.xp;
+            v2.A15x15_2.xpBefore8_8 = tankJson.Tankdata.xpBefore8_8;
+
+            v2.A15x15_2.originalXP = tankJson.Tankdata.originalXP;
+            v2.A15x15_2.damageAssistedRadio = tankJson.Tankdata.damageAssistedRadio;
+            v2.A15x15_2.damageAssistedTrack = tankJson.Tankdata.damageAssistedTrack;
+            v2.A15x15_2.shotsReceived = tankJson.Tankdata.shotsReceived;
+            v2.A15x15_2.noDamageShotsReceived = tankJson.Tankdata.noDamageShotsReceived;
+            v2.A15x15_2.piercedReceived = tankJson.Tankdata.piercedReceived;
+            v2.A15x15_2.heHitsReceived = tankJson.Tankdata.heHitsReceived;
+            v2.A15x15_2.he_hits = tankJson.Tankdata.he_hits;
+            v2.A15x15_2.pierced = tankJson.Tankdata.pierced;
 
 
             v2.Total = new TotalJson();
@@ -109,7 +139,7 @@ namespace WotDossier.Dal
             v2.Achievements.medalRadleyWalters = tankJson.Epic.RadleyWalters;
             v2.Achievements.medalTamadaYoshio = tankJson.Epic.TamadaYoshio;
             v2.Achievements.medalTarczay = tankJson.Epic.Tarczay;
-            v2.Achievements.medalWittmann = tankJson.Epic.Wittmann;
+            v2.Achievements.medalWittmann = tankJson.Epic.Boelter;
             v2.Achievements.mousebane = tankJson.Special.mousebane;
             v2.Achievements.pattonValley = tankJson.Special.pattonValley;
             v2.Achievements.piercingSeries = tankJson.Series.piercingSeries;
@@ -124,6 +154,7 @@ namespace WotDossier.Dal
             v2.Achievements.tankExpertStrg = tankJson.Special.tankExpertStrg;
             v2.Achievements.titleSniper = tankJson.Special.titleSniper;
             v2.Achievements.warrior = tankJson.Battle.warrior;
+            v2.Achievements.markOfMastery = tankJson.Special.markOfMastery;
 
             if (tankJson.Clan != null)
             {
@@ -181,7 +212,7 @@ namespace WotDossier.Dal
             v2.Common.tier = tankJson.Common.tier;
             v2.Common.type = tankJson.Common.type;
             v2.Common.updated = tankJson.Common.updated;
-            v2.Common.updatedR = tankJson.Common.updatedR;
+            v2.Common.updatedR = Utils.UnixDateToDateTime(tankJson.Common.updated);
 
             return v2;
         }

@@ -10,11 +10,6 @@ namespace WotDossier.Common
     public static class RatingHelper
     {
         /*
-РЭ = DAMAGE * (10 / (TIER + 2)) * (0.21 + 3*TIER / 100)
-FRAGS * 250 +
-SPOT * 150 +
-(log(CAP + 1,1.732))*150 + 
-DEF * 150;
 *             bc - количество боёв
 mid - средний уровень танков (с учётом количества боёв) = SUM<L=1..10>(L * (количество боёв на технике уровня L) / (общее кол-во боев))
 dmg = damageDealt / bc (нанесённый урон делится на количество боёв, т.е. средний дамаг за бой)
@@ -22,23 +17,6 @@ des = frags / bc (среднее количество убитых за бой)
 det = spotted / bc (среднее количество обнаруженных за бой)
 cap = capture_points / bc (среднее количество очков захвата за бой)
 def = dropped_capture_points / bc (среднее количество очков защиты за бой)
-* 
-* 
-* wn6 = (1240-1040/(MIN(TIER,6))^0.164)*FRAGS
-+DAMAGE*530/(184*e^(0.24*TIER)+130)
-+SPOT*125
-+MIN(DEF,2.2)*100
-+((185/(0.17+e^((WINRATE-35)*-0.134)))-500)*0.45
-+(6-MIN(TIER,6))*-60
-         * 
-         * 
-WN7 formula:
-(1240-1040/(MIN(TIER,6))^0.164)*FRAGS
-+DAMAGE*530/(184*e^(0.24*TIER)+130)
-+SPOT*125*MIN(TIER, 3)/3
-+MIN(DEF,2.2)*100
-+((185/(0.17+e^((WINRATE-35)*-0.134)))-500)*0.45
--[(5 - MIN(TIER,5))*125] / [1 + e^( ( TIER - (GAMESPLAYED/220)^(3/TIER) )*1.5 )]
 */
 
         #region KievArmorRating
@@ -51,33 +29,67 @@ WN7 formula:
         private const double khp = 1;
 
         #endregion
-        
+
+        /// <summary>
+        /// Calcs the Wn6.
+        /// wn6 = (1240-1040/(MIN(TIER,6))^0.164)*FRAGS
+        /// +DAMAGE*530/(184*e^(0.24*TIER)+130)
+        /// +SPOT*125
+        /// +MIN(DEF,2.2)*100
+        /// +((185/(0.17+e^((WINRATE-35)*-0.134)))-500)*0.45
+        /// +(6-MIN(TIER,6))*-60
+        /// </summary>
+        /// <param name="avgDamage">The avg damage.</param>
+        /// <param name="tier">The tier.</param>
+        /// <param name="avgFrags">The avg frags.</param>
+        /// <param name="avgSpot">The avg spot.</param>
+        /// <param name="avgDef">The avg def.</param>
+        /// <param name="winrate">The winrate.</param>
+        /// <returns></returns>
         public static double CalcWN6(double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
         {
             return (1240 - 1040 / Math.Pow((Math.Min(tier, 6)), 0.164)) * avgFrags + avgDamage * 530 / (184 * Math.Pow(Math.E, (0.24 * tier)) + 130)
                    + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Pow(Math.E, ((winrate - 35) * -0.134)))) - 500) * 0.45 + (6 - Math.Min(tier, 6)) * -60;
         }
 
+        /// <summary>
+        /// Calcs the Wn7.
+        /// WN7 formula:
+        /// (1240-1040/(MIN(TIER,6))^0.164)*FRAGS
+        /// +DAMAGE*530/(184*e^(0.24*TIER)+130)
+        /// +SPOT*125*MIN(TIER, 3)/3
+        /// +MIN(DEF,2.2)*100
+        /// +((185/(0.17+e^((WINRATE-35)*-0.134)))-500)*0.45
+        /// -[(5 - MIN(TIER,5))*125] / [1 + e^( ( TIER - (GAMESPLAYED/220)^(3/TIER) )*1.5 )]
+        /// </summary>
+        /// <param name="battles">The battles.</param>
+        /// <param name="avgDamage">The avg damage.</param>
+        /// <param name="tier">The tier.</param>
+        /// <param name="avgFrags">The avg frags.</param>
+        /// <param name="avgSpot">The avg spot.</param>
+        /// <param name="avgDef">The avg def.</param>
+        /// <param name="winrate">The winrate.</param>
+        /// <returns></returns>
         public static double CalcWN7(double battles, double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
         {
             return (1240 - 1040 / Math.Pow((Math.Min(tier, 6)), 0.164)) * avgFrags + avgDamage * 530 / (184 * Math.Exp(0.24 * tier) + 130)
                    + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Exp((winrate - 35) * -0.134))) - 500) * 0.45
-                   - ((5 - Math.Min(tier, 5)) * 125) / (1 + Math.Exp((tier - Math.Pow(battles/220.0, 3/tier))*1.5));
+                   - ((5 - Math.Min(tier, 5)) * 125) / (1 + Math.Exp((tier - Math.Pow(battles / 220.0, 3 / tier)) * 1.5));
         }
 
         /// <summary>
         /// http://blog.noobmeter.com/2013/10/wn8-rating-alpha-testing.html
         /// </summary>
-        /// <param name="avgDmg"></param>
-        /// <param name="expDmg"></param>
-        /// <param name="avgFrag"></param>
-        /// <param name="expFrag"></param>
-        /// <param name="avgSpot"></param>
-        /// <param name="expSpot"></param>
-        /// <param name="avgDef"></param>
-        /// <param name="expDef"></param>
-        /// <param name="avgWinRate"></param>
-        /// <param name="expWinRate"></param>
+        /// <param name="avgDmg">The avg DMG.</param>
+        /// <param name="expDmg">The exp DMG.</param>
+        /// <param name="avgFrag">The avg frag.</param>
+        /// <param name="expFrag">The exp frag.</param>
+        /// <param name="avgSpot">The avg spot.</param>
+        /// <param name="expSpot">The exp spot.</param>
+        /// <param name="avgDef">The avg def.</param>
+        /// <param name="expDef">The exp def.</param>
+        /// <param name="avgWinRate">The avg win rate.</param>
+        /// <param name="expWinRate">The exp win rate.</param>
         /// <returns></returns>
         public static double CalcWN8(double avgDmg, double expDmg, double avgFrag, double expFrag, double avgSpot, double expSpot, double avgDef, double expDef, double avgWinRate, double expWinRate)
         {
@@ -95,7 +107,22 @@ WN7 formula:
 
             return 980 * rDamagEc + 210 * rDamagEc * rFraGc + 155 * rFraGc * rSpoTc + 75 * rDeFc * rFraGc + 145 * Math.Min(1.8, rWiNc);
         }
-        
+
+        /// <summary>
+        /// Calcs the ER.
+        /// РЭ = DAMAGE * (10 / (TIER + 2)) * (0.21 + 3*TIER / 100)
+        /// FRAGS * 250 +
+        /// SPOT * 150 +
+        /// (log(CAP + 1,1.732))*150 + 
+        /// DEF * 150;
+        /// </summary>
+        /// <param name="avgDamage">The avg damage.</param>
+        /// <param name="tier">The tier.</param>
+        /// <param name="avgFrags">The avg frags.</param>
+        /// <param name="avgSpot">The avg spot.</param>
+        /// <param name="avgCap">The avg cap.</param>
+        /// <param name="avgDef">The avg def.</param>
+        /// <returns></returns>
         public static double CalcER(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {
             return avgDamage * (10.0 / (tier + 2.0)) * (0.23 + 2.0 * tier / 100.0) + avgFrags * 250.0 + avgSpot * 150.0 + (Math.Log(avgCap + 1, 1.732)) * 150.0 + avgDef * 150.0;
@@ -104,49 +131,73 @@ WN7 formula:
         /// <summary>
         /// http://forum.worldoftanks.ru/index.php?/topic/691284-%D0%BD%D1%83%D0%B1%D0%BE-%D1%80%D0%B5%D0%B9%D1%82%D0%B8%D0%BD%D0%B3-%D0%BF%D0%BE-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8-wot-noobsru/
         /// </summary>
-        /// <param name="avgDamage"></param>
-        /// <param name="tier"></param>
-        /// <param name="avgFrags"></param>
-        /// <param name="avgSpot"></param>
-        /// <param name="avgCap"></param>
-        /// <param name="avgDef"></param>
+        /// <param name="avgDamage">The avg damage.</param>
+        /// <param name="tier">The tier.</param>
+        /// <param name="avgFrags">The avg frags.</param>
+        /// <param name="avgSpot">The avg spot.</param>
+        /// <param name="avgCap">The avg cap.</param>
+        /// <param name="avgDef">The avg def.</param>
         /// <returns></returns>
         public static double CalcNR(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {
-            double kDamage = (avgDamage*10*(0.15+2*(tier/100)))/tier;
+            double kDamage = (avgDamage * 10 * (0.15 + 2 * (tier / 100))) / tier;
             double kFrags = avgFrags * (0.35 - 2 * (tier / 100)) * 1000;
             double kSpotted = avgSpot * 0.2 * 1000;
             double kCap = avgCap * 0.15 * 1000;
             double kDef = avgDef * 0.15 * 1000;
-            return (kDamage + kFrags + kSpotted + kCap + kDef)/10;
-        }
-
-        public static double CalcKievArmorRating(double battles, double avgXP, double avgDamage, double avgWonBattles, double avgFrags, double avgSpot, double avgCap, double avgDef)
-        {
-            double log10 = Math.Log(battles) / 10;
-            double d = (avgWonBattles*K_AvgWonBattles) + (avgFrags*K_AvgFrags) + (avgSpot*K_AvgSpotted) + (avgCap*K_AvgCapPoints) + (avgDef*K_AvgDefPoints);
-            return log10 * (avgXP * khp + avgDamage * d);
-        }
-
-        public static double XWN(double wn6)
-        {
-            return wn6>2200 ? 100 : Math.Max(Math.Min( wn6*(wn6*(wn6*(-0.00000000001268*wn6 + 0.00000005147) - 0.00006418) + 0.07576) - 7.25, 100), 0);
-        }
-
-        public static double XEFF(double eff)
-        {
-            return eff<400 ? 0 : Math.Max(Math.Min(eff*(eff*(eff*(eff*(eff*(0.000000000000000045254*eff - 0.00000000000033131) + 0.00000000094164) - 0.0000013227) + 0.00095664) - 0.2598) + 13.23, 100), 0);
+            return (kDamage + kFrags + kSpotted + kCap + kDef) / 10;
         }
 
         /// <summary>
+        /// Calcs the kiev armor rating.
+        /// http://armor.kiev.ua/wot/info/
+        /// </summary>
+        /// <param name="battles">The battles.</param>
+        /// <param name="avgXP">The avg XP.</param>
+        /// <param name="avgDamage">The avg damage.</param>
+        /// <param name="avgWonBattles">The avg won battles.</param>
+        /// <param name="avgFrags">The avg frags.</param>
+        /// <param name="avgSpot">The avg spot.</param>
+        /// <param name="avgCap">The avg cap.</param>
+        /// <param name="avgDef">The avg def.</param>
+        /// <returns></returns>
+        public static double CalcKievArmorRating(double battles, double avgXP, double avgDamage, double avgWonBattles, double avgFrags, double avgSpot, double avgCap, double avgDef)
+        {
+            double log10 = Math.Log(battles) / 10;
+            double d = (avgWonBattles * K_AvgWonBattles) + (avgFrags * K_AvgFrags) + (avgSpot * K_AvgSpotted) + (avgCap * K_AvgCapPoints) + (avgDef * K_AvgDefPoints);
+            return log10 * (avgXP * khp + avgDamage * d);
+        }
+
+        /// <summary>
+        /// Calc XWN
+        /// </summary>
+        /// <param name="wn6">The WN6.</param>
+        /// <returns></returns>
+        public static double XWN(double wn6)
+        {
+            return wn6 > 2200 ? 100 : Math.Max(Math.Min(wn6 * (wn6 * (wn6 * (-0.00000000001268 * wn6 + 0.00000005147) - 0.00006418) + 0.07576) - 7.25, 100), 0);
+        }
+
+        /// <summary>
+        /// Calc XEFF
+        /// </summary>
+        /// <param name="eff">The eff.</param>
+        /// <returns></returns>
+        public static double XEFF(double eff)
+        {
+            return eff < 400 ? 0 : Math.Max(Math.Min(eff * (eff * (eff * (eff * (eff * (0.000000000000000045254 * eff - 0.00000000000033131) + 0.00000000094164) - 0.0000013227) + 0.00095664) - 0.2598) + 13.23, 100), 0);
+        }
+
+        /// <summary>
+        /// Calc Performance Rating
         /// http://tanks.noobmeter.com/tankList
         /// http://blog.noobmeter.com/2013/07/noobmeter-performance-rating-algorithm.html
         /// </summary>
-        /// <param name="battles"></param>
-        /// <param name="wins"></param>
-        /// <param name="expectedDamage"></param>
-        /// <param name="playerDamage"></param>
-        /// <param name="avgTier"></param>
+        /// <param name="battles">The battles.</param>
+        /// <param name="wins">The wins.</param>
+        /// <param name="expectedDamage">The expected damage.</param>
+        /// <param name="playerDamage">The player damage.</param>
+        /// <param name="avgTier">The avg tier.</param>
         /// <returns></returns>
         public static double PerformanceRating(double battles, double wins, double expectedDamage, double playerDamage, double avgTier)
         {
@@ -203,11 +254,22 @@ WN7 formula:
             return performanceRating;
         }
 
-        public static double RBR(double battles, double battles88, double wins, double survive, double hit, double dmg, double avgXp88)
+        /// <summary>
+        /// Calc Rating WG
+        /// </summary>
+        /// <param name="battles">The battles.</param>
+        /// <param name="battles88">The battles88.</param>
+        /// <param name="wins">The wins.</param>
+        /// <param name="survive">The survive.</param>
+        /// <param name="hit">The hit.</param>
+        /// <param name="dmg">The DMG.</param>
+        /// <param name="avgXp88">The avg XP88.</param>
+        /// <returns></returns>
+        public static double RatingWG(double battles, double battles88, double wins, double survive, double hit, double dmg, double avgXp88)
         {
-            return (2/(1 + Math.Exp(-battles/4500)) - 1)
+            return (2 / (1 + Math.Exp(-battles / 4500)) - 1)
                    *
-                   (3000/(1 + Math.Exp((0.5 - wins)/0.03)) + 7000*Math.Max(0, survive - 0.2) + 6000*Math.Max(0, hit - 0.45) + 5*(2/(1+Math.Exp(-battles88/500)) - 1)
+                   (3000 / (1 + Math.Exp((0.5 - wins) / 0.03)) + 7000 * Math.Max(0, survive - 0.2) + 6000 * Math.Max(0, hit - 0.45) + 5 * (2 / (1 + Math.Exp(-battles88 / 500)) - 1)
                    * Math.Max(0, avgXp88 - 160) + Math.Max(0, dmg - 170));
         }
     }

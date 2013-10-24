@@ -76,7 +76,7 @@ namespace WotDossier.Applications.ViewModel
             int xp88 = tanks.Sum(x => x.A15x15.originalXP);
             double avgXP88 = xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1);
 
-            double rbr = RatingHelper.RBR(playerStatistic.BattlesCount, battlesCount88, playerStatistic.Wins / (double)playerStatistic.BattlesCount,
+            double rbr = RatingHelper.RatingWG(playerStatistic.BattlesCount, battlesCount88, playerStatistic.Wins / (double)playerStatistic.BattlesCount,
                 playerStatistic.SurvivedBattles / (double)playerStatistic.BattlesCount, playerStatistic.HitsPercents / 100.0, playerStatistic.AvgDamageDealt, avgXP88);
             return rbr;
         }

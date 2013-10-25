@@ -2,8 +2,10 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Interop;
 
 namespace WotDossier
 {
@@ -70,6 +72,7 @@ namespace WotDossier
                     _notifyIcon.ShowBalloonTip(1000, null, _window.Title, ToolTipIcon.None);
                     _balloonShown = true;
                 }
+                RegisterRestoreWindowHotKey(_window);
             }
 
             /// <summary>
@@ -82,6 +85,76 @@ namespace WotDossier
                 // Restore the Window
                 _window.WindowState = WindowState.Normal;
             }
+
+            #region Restore hot key
+
+            [DllImport("User32.dll")]
+            private static extern bool RegisterHotKey(
+                [In] IntPtr hWnd,
+                [In] int id,
+                [In] uint fsModifiers,
+                [In] uint vk);
+
+            [DllImport("User32.dll")]
+            private static extern bool UnregisterHotKey(
+                [In] IntPtr hWnd,
+                [In] int id);
+
+            private static HwndSource _source;
+            private const int HOTKEY_ID = 9000;
+
+            private void RegisterRestoreWindowHotKey(Window window)
+            {
+                var helper = new WindowInteropHelper(window);
+                _source = HwndSource.FromHwnd(helper.Handle);
+                _source.AddHook(HwndHook);
+                RegisterHotKey(window);
+            }
+
+            private void RegisterHotKey(Window window)
+            {
+                var helper = new WindowInteropHelper(window);
+                const uint VK_F10 = 0x79;
+                const uint MOD_CTRL = 0x0002;
+                if (!RegisterHotKey(helper.Handle, HOTKEY_ID, MOD_CTRL, VK_F10))
+                {
+                    // handle error
+                }
+            }
+
+            private void UnregisterHotKey(Window window)
+            {
+                _source.RemoveHook(HwndHook);
+                _source = null;
+                var helper = new WindowInteropHelper(window);
+                UnregisterHotKey(helper.Handle, HOTKEY_ID);
+            }
+
+            private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+            {
+                const int WM_HOTKEY = 0x0312;
+                switch (msg)
+                {
+                    case WM_HOTKEY:
+                        switch (wParam.ToInt32())
+                        {
+                            case HOTKEY_ID:
+                                OnHotKeyPressed();
+                                handled = true;
+                                break;
+                        }
+                        break;
+                }
+                return IntPtr.Zero;
+            }
+
+            private void OnHotKeyPressed()
+            {
+                HandleNotifyIconOrBalloonClicked(null, null);
+                UnregisterHotKey(_window);
+            }
+
+            #endregion
         }
     }
 }

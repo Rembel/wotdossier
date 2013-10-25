@@ -3,7 +3,7 @@ using WotDossier.Common;
 
 namespace WotDossier.Domain.Tank
 {
-    public class TankJsonV2
+    public class TankJson
     {
         private IList<IList<string>> _fragsList = new List<IList<string>>();
         private StatisticJson8_9 _a15X15;
@@ -113,8 +113,14 @@ namespace WotDossier.Domain.Tank
             set { _fragsList = value; }
         }
 
+        public TankDescription Description { get; set; }
+        public IEnumerable<FragsJson> Frags { get; set; }
         public byte[] Raw { get; set; }
 
+        /// <summary>
+        /// Get tank unique id.
+        /// </summary>
+        /// <returns></returns>
         public int UniqueId()
         {
             return Utils.ToUniqueId(Common.countryid, Common.tankid);

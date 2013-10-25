@@ -57,7 +57,7 @@ namespace WotDossier.Dal
             return list;
         }
 
-        public PlayerEntity UpdatePlayerStatistic(Ratings ratings, List<TankJsonV2> tanks, int playerId)
+        public PlayerEntity UpdatePlayerStatistic(Ratings ratings, List<TankJson> tanks, int playerId)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -151,7 +151,7 @@ namespace WotDossier.Dal
                 .SingleOrDefault<PlayerEntity>();
         }
 
-        public PlayerEntity UpdateTankStatistic(int playerId, List<TankJsonV2> tanks)
+        public PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -164,7 +164,7 @@ namespace WotDossier.Dal
 
                 DateTime updated = tanks.Max(x => x.Common.lastBattleTimeR);
                 
-                foreach (TankJsonV2 tank in tanks)
+                foreach (TankJson tank in tanks)
                 {
                     int tankId = tank.Common.tankid;
                     int countryId = tank.Common.countryid;
@@ -203,7 +203,7 @@ namespace WotDossier.Dal
 
                         if (statisticEntity != null)
                         {
-                            TankJsonV2 currentSnapshot = WotApiHelper.UnZipObject<TankJsonV2>(statisticEntity.Raw);
+                            TankJson currentSnapshot = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
                             currentSnapshotBattlesCount = currentSnapshot.A15x15.battlesCount;
                         }
                         else
@@ -246,7 +246,7 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        private void Update(TankStatisticEntity statisticEntity, TankJsonV2 tank)
+        private void Update(TankStatisticEntity statisticEntity, TankJson tank)
         {
             statisticEntity.Updated = tank.Common.lastBattleTimeR;
             statisticEntity.Version = tank.Common.basedonversion;

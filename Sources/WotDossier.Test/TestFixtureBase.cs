@@ -98,8 +98,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.5\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJsonV2 tankJson in tanks)
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -113,8 +113,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.6\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJsonV2 tankJson in tanks)
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -128,8 +128,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.7\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJsonV2 tankJson in tanks)
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -143,8 +143,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.8\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJsonV2> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJsonV2 tankJson in tanks)
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -158,16 +158,8 @@ namespace WotDossier.Test
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
             CacheHelper.BinaryCacheToJson(cacheFile);
             Thread.Sleep(1000);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanks(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJson tankJson in tanks)
-            {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
-                                                tankJson.Description.Icon.IconId);
-                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
-            }
-
-            List<TankJsonV2> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
-            foreach (TankJsonV2 tankJson in tanksV2)
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanksV2)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
@@ -487,16 +479,16 @@ namespace WotDossier.Test
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
-            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.Tankdata.battlesCount).FirstOrDefault()).ToList();
+            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
             TankJson is3 = tankJsons.First(x => x.UniqueId() == 29);
             TankDescription tankDescription = WotApiClient.Instance.TanksDictionary[29];
             VStat stat = vstat[tankDescription.Icon.Icon];
 
-            double damageDealt = is3.Tankdata.damageDealt;
-            double battlesCount = is3.Tankdata.battlesCount;
-            double spoted = is3.Tankdata.spotted;
-            double frags = is3.Tankdata.frags;
+            double damageDealt = is3.A15x15.damageDealt;
+            double battlesCount = is3.A15x15.battlesCount;
+            double spoted = is3.A15x15.spotted;
+            double frags = is3.A15x15.frags;
 
             //корректирующие коэффициенты, которые задаются для каждого типа и уровня танка согласно матрице 
             //(на время тестов можно изменять эти коэффициенты в конфиге в секции "consts")
@@ -569,9 +561,9 @@ namespace WotDossier.Test
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
-            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.Tankdata.battlesCount).FirstOrDefault()).ToList();
+            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
-            double damage = tankJsons.Select(x => x.Tankdata.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
+            double damage = tankJsons.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
 
             var performanceRating = RatingHelper.PerformanceRating(currentStatistic.BattlesCount, currentStatistic.Wins, damage, currentStatistic.DamageDealt, currentStatistic.AvgLevel);
 

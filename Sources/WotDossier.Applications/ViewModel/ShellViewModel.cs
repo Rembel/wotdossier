@@ -801,7 +801,7 @@ namespace WotDossier.Applications.ViewModel
                         {
                             FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName);
 
-                            List<TankJsonV2> tanksV2;
+                            List<TankJson> tanksV2;
 
                             if (cacheFile != null)
                             {
@@ -870,7 +870,7 @@ namespace WotDossier.Applications.ViewModel
                 int playerId = settings.PlayerId;
                 if (!string.IsNullOrEmpty(settings.PlayerName))
                 {
-                    playerStat = WotApiClient.Instance.LoadPlayerStat(settings, playerId);
+                    playerStat = WotApiClient.Instance.LoadPlayerStat(settings, playerId, false);
                 }
             }
             catch (Exception e)
@@ -959,7 +959,7 @@ namespace WotDossier.Applications.ViewModel
                 }, new ProgressDialogSettings(true, true, false));
         }
 
-        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ServerStatWrapper serverStatistic, List<TankJsonV2> tanks)
+        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ServerStatWrapper serverStatistic, List<TankJson> tanks)
         {
             AppSettings settings = SettingsReader.Get();
 
@@ -969,7 +969,7 @@ namespace WotDossier.Applications.ViewModel
             return StatisticViewModelFactory.Create(statisticEntities, tanks, player.Name, player.Creaded, serverStatistic);
         }
 
-        private void InitTanksStatistic(List<TankJsonV2> tanks)
+        private void InitTanksStatistic(List<TankJson> tanks)
         {
             AppSettings settings = SettingsReader.Get();
             PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerId, tanks);

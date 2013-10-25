@@ -1,6 +1,6 @@
-namespace WotDossier.Domain.Tank
+namespace WotDossier.Domain.Dossier.TankV29
 {
-    public class MajorJson
+    public class MajorJson29
     {
         private int _abrams;
         private int _carius;

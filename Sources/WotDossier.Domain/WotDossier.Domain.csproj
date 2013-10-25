@@ -43,6 +43,10 @@
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="Dossier\TankV29\CommonJson.cs" />
+    <Compile Include="Dossier\TankV65\CommonJson.cs" />
+    <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
+    <Compile Include="Dossier\TankV65\TotalJson.cs" />
     <Compile Include="Entities\DbVersionEntity.cs" />
     <Compile Include="Entities\PlayerAchievementsEntity.cs" />
     <Compile Include="Entities\PlayerStatAdapter.cs" />
@@ -93,27 +97,30 @@
     <Compile Include="StatisticPeriod.cs" />
     <Compile Include="TankFilterSettings.cs" />
     <Compile Include="TankType.cs" />
+    <Compile Include="Dossier\TankV65\AchievementsJson.cs" />
+    <Compile Include="Dossier\TankV65\StatisticJson.cs" />
+    <Compile Include="Dossier\TankV65\MaxJson.cs" />
+    <Compile Include="Dossier\TankV65\TankJson.cs" />
     <Compile Include="Tank\AchievementsJson.cs" />
-    <Compile Include="Tank\StatisticJson8_9.cs" />
     <Compile Include="Tank\MaxJson.cs" />
-    <Compile Include="Tank\TankJsonV2.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />
+    <Compile Include="Tank\StatisticJson.cs" />
+    <Compile Include="Tank\TankJsonV2.cs" />
     <Compile Include="Tank\TankServerInfo.cs" />
     <Compile Include="Tank\FragsJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tank\BattleJson.cs" />
-    <Compile Include="Tank\ClanJson.cs" />
+    <Compile Include="Dossier\TankV29\BattleJson.cs" />
+    <Compile Include="Dossier\TankV29\ClanJson.cs" />
     <Compile Include="Tank\CommonJson.cs" />
-    <Compile Include="Tank\CompanyJson.cs" />
-    <Compile Include="Tank\EpicJson.cs" />
-    <Compile Include="Tank\MajorJson.cs" />
-    <Compile Include="Tank\SeriesJson.cs" />
-    <Compile Include="Tank\SpecialJson.cs" />
+    <Compile Include="Dossier\TankV29\CompanyJson.cs" />
+    <Compile Include="Dossier\TankV29\EpicJson.cs" />
+    <Compile Include="Dossier\TankV29\MajorJson.cs" />
+    <Compile Include="Dossier\TankV29\SeriesJson.cs" />
+    <Compile Include="Dossier\TankV29\SpecialJson.cs" />
     <Compile Include="Tank\TankIcon.cs" />
-    <Compile Include="Tank\TankJson.cs" />
-    <Compile Include="Tank\StatisticJson.cs" />
+    <Compile Include="Dossier\TankV29\TankJson.cs" />
+    <Compile Include="Dossier\TankV29\StatisticJson.cs" />
     <Compile Include="Tank\TankDescription.cs" />
-    <Compile Include="Tank\TotalJson.cs" />
     <Compile Include="VStat.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +128,9 @@
       <Project>{1268b707-a866-4723-89c7-2e9bd92e6aa6}</Project>
       <Name>WotDossier.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Server\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
@@ -41,7 +42,19 @@ namespace WotDossier
             {
                 Debug.Assert(window != null, "window parameter is null.");
                 _window = window;
+                _window.SourceInitialized += OnSourceInitialized;
+                _window.Closing += WindowOnClosing;
                 _window.StateChanged += HandleStateChanged;
+            }
+
+            private void WindowOnClosing(object sender, CancelEventArgs cancelEventArgs)
+            {
+                UnregisterHotKey(_window);
+            }
+
+            private void OnSourceInitialized(object sender, EventArgs eventArgs)
+            {
+                RegisterRestoreWindowHotKey(_window);
             }
 
             /// <summary>
@@ -72,7 +85,6 @@ namespace WotDossier
                     _notifyIcon.ShowBalloonTip(1000, null, _window.Title, ToolTipIcon.None);
                     _balloonShown = true;
                 }
-                RegisterRestoreWindowHotKey(_window);
             }
 
             /// <summary>
@@ -83,7 +95,14 @@ namespace WotDossier
             private void HandleNotifyIconOrBalloonClicked(object sender, EventArgs e)
             {
                 // Restore the Window
-                _window.WindowState = WindowState.Normal;
+                _window.WindowState = WindowState.Maximized;
+
+                // Get the window to the front.
+                _window.Topmost = true;
+                _window.Topmost = false;
+
+                // 'Steal' the focus.
+                _window.Activate();
             }
 
             #region Restore hot key
@@ -151,7 +170,6 @@ namespace WotDossier
             private void OnHotKeyPressed()
             {
                 HandleNotifyIconOrBalloonClicked(null, null);
-                UnregisterHotKey(_window);
             }
 
             #endregion

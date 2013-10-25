@@ -1,6 +1,7 @@
-namespace WotDossier.Domain.Tank
+namespace WotDossier.Domain.Dossier.TankV29
 {
-    public class ClanJson {
+    public class CompanyJson29
+    {
         public int battlesCount;
         public int capturePoints;
         public int damageDealt;

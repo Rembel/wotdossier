@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
-using WotDossier.Applications.ViewModel;
 using WotDossier.Common;
 using WotDossier.Domain.Player;
 
@@ -33,7 +32,10 @@ namespace WotDossier.Applications.Model
             RequestAvailability = clan.request_availability;
 
             Emblems = clan.emblems;
-            Members = clan.members.Values.Select(x => new ClanMemberModel(x)).OrderBy(x => x.Name).ToList();
+            if (clan.members != null)
+            {
+                Members = clan.members.Values.Select(x => new ClanMemberModel(x)).OrderBy(x => x.Name).ToList();
+            }
         }
 
         public ClanModel(ClanData clan, string memberRole, long memberSince): this(clan)

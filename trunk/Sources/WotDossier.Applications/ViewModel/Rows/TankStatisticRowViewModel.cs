@@ -233,8 +233,8 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
         /// </summary>
         /// <param name="tank">The tank.</param>
-        public TankStatisticRowViewModel(TankJsonV2 tank)
-            : this(tank, new List<TankJsonV2>())
+        public TankStatisticRowViewModel(TankJson tank)
+            : this(tank, new List<TankJson>())
         {
         }
 
@@ -421,7 +421,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             OriginalXP = tank.A15x15.originalXP;
             DamageAssistedTrack = tank.A15x15.damageAssistedTrack;
             DamageAssistedRadio = tank.A15x15.damageAssistedRadio;
-            Mileage = tank.Total.mileage / 1000;
+            Mileage = tank.Common.mileage / 1000;
             ShotsReceived = tank.A15x15.shotsReceived;
             NoDamageShotsReceived = tank.A15x15.noDamageShotsReceived;
             PiercedReceived = tank.A15x15.piercedReceived;
@@ -438,7 +438,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Warrior = tank.Achievements.warrior;
             Invader = tank.Achievements.invader;
             Sniper = tank.Achievements.sniper;
-            Defender = tank.Achievements.sniper;
+            Defender = tank.Achievements.defender;
             SteelWall = tank.Achievements.steelwall;
             Confederate = tank.Achievements.supporter;
             Scout = tank.Achievements.scout;
@@ -488,7 +488,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region [ ITankRowFrags ]
             Frags = tank.A15x15.frags;
-            MaxFrags = tank.Max15x15.maxFrags;
+            MaxFrags = tank.A15x15.maxFrags;
             Tier8Frags = tank.A15x15.frags8p;
             BeastFrags = tank.A15x15.fragsBeast;
             SinaiFrags = tank.Achievements.fragsSinai;
@@ -550,16 +550,16 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region [ ITankRowTime ]
             LastBattle = tank.Common.lastBattleTimeR;
-            PlayTime = new TimeSpan(0, 0, 0, tank.Total.battleLifeTime);
+            PlayTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime);
             if (tank.A15x15.battlesCount > 0)
             {
-                AverageBattleTime = new TimeSpan(0, 0, 0, tank.Total.battleLifeTime/tank.A15x15.battlesCount);
+                AverageBattleTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime/tank.A15x15.battlesCount);
             }
             #endregion
 
             #region [ ITankRowXP ]
             Xp = tank.A15x15.xp;
-            MaxXp = tank.Max15x15.maxXP;
+            MaxXp = tank.A15x15.maxXP;
             #endregion
 
             #region [ ITankRowRatings ]

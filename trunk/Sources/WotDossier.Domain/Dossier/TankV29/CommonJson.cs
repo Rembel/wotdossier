@@ -1,8 +1,8 @@
 using System;
 
-namespace WotDossier.Domain.Tank
+namespace WotDossier.Domain.Dossier.TankV29
 {
-    public class CommonJson
+    public class CommonJson29
     {
         public int basedonversion;
         public int compactDescr;
@@ -24,8 +24,5 @@ namespace WotDossier.Domain.Tank
         public int type;
         public int updated;
         public DateTime updatedR;
-        public int battleLifeTime;
-        public double mileage;
-        public int treesCut;
     }
 }

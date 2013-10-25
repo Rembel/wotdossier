@@ -159,7 +159,7 @@ namespace WotDossier.Applications.ViewModel
                 if (player != null)
                 {
                     _appSettings.PlayerId = player.id;
-                    double createdAt = WotApiClient.Instance.LoadPlayerStat(_appSettings, player.id).dataField.created_at;
+                    double createdAt = WotApiClient.Instance.LoadPlayerStat(_appSettings, player.id, false).dataField.created_at;
                     _dossierRepository.GetOrCreatePlayer(player.nickname, player.id, Utils.UnixDateToDateTime((long)createdAt));
                 }
                 else

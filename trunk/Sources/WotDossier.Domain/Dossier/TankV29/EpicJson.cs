@@ -1,6 +1,7 @@
-namespace WotDossier.Domain.Tank
+namespace WotDossier.Domain.Dossier.TankV29
 {
-    public class EpicJson {
+    public class EpicJson29
+    {
         private int _billotte;
         private int _brothersInArms;
         private int _brunoPietro;

@@ -13,7 +13,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class StatisticViewModelFactory
     {
-        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJsonV2> tanks, string name, DateTime created, ServerStatWrapper playerData)
+        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, string name, DateTime created, ServerStatWrapper playerData)
         {
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
@@ -40,13 +40,13 @@ namespace WotDossier.Applications.ViewModel
             return new PlayerStatisticViewModel(statisticEntity);
         }
 
-        private static double GetPerformanceRating(PlayerStatisticViewModel playerStatistic, List<TankJsonV2> tanks)
+        private static double GetPerformanceRating(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
         {
             double expDamage = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
             return RatingHelper.PerformanceRating(playerStatistic.BattlesCount, playerStatistic.Wins, expDamage, playerStatistic.DamageDealt, playerStatistic.Tier);
         }
 
-        private static double GetWN8Rating(PlayerStatisticViewModel playerStatistic, List<TankJsonV2> tanks)
+        private static double GetWN8Rating(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
         {
             double battles = (double)tanks.Sum(x => x.A15x15.battlesCount);
 
@@ -70,7 +70,7 @@ namespace WotDossier.Applications.ViewModel
             return RatingHelper.CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
         }
 
-        private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJsonV2> tanks)
+        private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
         {
             int battlesCount88 = playerStatistic.BattlesCount - tanks.Sum(x => x.A15x15.battlesCountBefore8_8 != 0 ? x.A15x15.battlesCountBefore8_8 : x.A15x15.battlesCount);
             int xp88 = tanks.Sum(x => x.A15x15.originalXP);
@@ -88,18 +88,18 @@ namespace WotDossier.Applications.ViewModel
 
         private static TankStatisticRowViewModel ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
         {
-            IEnumerable<TankJsonV2> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJsonV2 currentStatistic = statisticViewModels.OrderByDescending(x => x.A15x15.battlesCount).First();
-            IEnumerable<TankJsonV2> prevStatisticViewModels =
+            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
+            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.A15x15.battlesCount).First();
+            IEnumerable<TankJson> prevStatisticViewModels =
                 statisticViewModels.Where(x => x.A15x15.battlesCount != currentStatistic.A15x15.battlesCount);
             TankStatisticRowViewModel model = new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
             model.IsFavorite = tankStatisticEntities.First().TankIdObject.IsFavorite;
             return model;
         }
 
-        private static TankJsonV2 UnZipObject(byte[] x)
+        private static TankJson UnZipObject(byte[] x)
         {
-            TankJsonV2 tankJson = WotApiHelper.UnZipObject<TankJsonV2>(x);
+            TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(x);
             WotApiClient.Instance.ExtendPropertiesData(tankJson);
             return tankJson;
         }

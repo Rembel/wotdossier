@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Common;
+using WotDossier.Domain.Dossier.TankV29;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Tank;
 
@@ -9,122 +10,12 @@ namespace WotDossier.Domain.Entities
 {
     public class PlayerStatAdapter
     {
-        private readonly List<TankJson> _tanks;
-        private readonly List<TankJsonV2> _tanksV2;
+        private readonly List<TankJson> _tanksV2;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         public PlayerStatAdapter(List<TankJson> tanks)
-        {
-            _tanks = tanks;
-
-            Battles_count = _tanks.Sum(x => x.Tankdata.battlesCount);
-            Wins = _tanks.Sum(x => x.Tankdata.wins);
-            Losses = _tanks.Sum(x => x.Tankdata.losses);
-            Survived_battles = _tanks.Sum(x => x.Tankdata.survivedBattles);
-            Xp = _tanks.Sum(x => x.Tankdata.xp);
-            if (Battles_count > 0)
-            {
-                Battle_avg_xp = Xp/(double)Battles_count;
-            }
-            Max_xp = _tanks.Max(x => x.Tankdata.maxXP);
-            Frags = _tanks.Sum(x => x.Tankdata.frags);
-            Spotted = _tanks.Sum(x => x.Tankdata.spotted);
-            Hits_percents = _tanks.Sum(x => x.Tankdata.hits)/((double) _tanks.Sum(x => x.Tankdata.shots))*100.0;
-            Damage_dealt = _tanks.Sum(x => x.Tankdata.damageDealt);
-            Damage_taken = _tanks.Sum(x => x.Tankdata.damageReceived);
-            Capture_points = _tanks.Sum(x => x.Tankdata.capturePoints);
-            Dropped_capture_points = _tanks.Sum(x => x.Tankdata.droppedCapturePoints);
-            Updated = _tanks.Max(x => x.Common.lastBattleTimeR);
-            if (Battles_count > 0)
-            {
-                AvgLevel = tanks.Sum(x => x.Common.tier*x.Tankdata.battlesCount)/(double) Battles_count;
-            }
-
-            #region [ IRowBattleAwards ]
-
-            Warrior = _tanks.Sum(x => x.Battle.warrior);
-            Invader = _tanks.Sum(x => x.Battle.invader);
-            Sniper = _tanks.Sum(x => x.Battle.sniper);
-            Defender = _tanks.Sum(x => x.Battle.defender);
-            SteelWall = _tanks.Sum(x => x.Battle.steelwall);
-            Confederate = _tanks.Sum(x => x.Battle.supporter);
-            Scout = _tanks.Sum(x => x.Battle.scout);
-            PatrolDuty = _tanks.Sum(x => x.Battle.evileye);
-            BrothersInArms = _tanks.Sum(x => x.Epic.BrothersInArms);
-            CrucialContribution = _tanks.Sum(x => x.Epic.CrucialContribution);
-            CoolHeaded = _tanks.Sum(x => x.Special.ironMan);
-            LuckyDevil = _tanks.Sum(x => x.Special.luckyDevil);
-            Spartan = _tanks.Sum(x => x.Special.sturdy);
-
-            #endregion
-
-            #region [ IRowEpic ]
-
-            Boelter = _tanks.Sum(x => x.Epic.Boelter);
-            RadleyWalters = _tanks.Sum(x => x.Epic.RadleyWalters);
-            LafayettePool = _tanks.Sum(x => x.Epic.LafayettePool);
-            Orlik = _tanks.Sum(x => x.Epic.Orlik);
-            Oskin = _tanks.Sum(x => x.Epic.Oskin);
-            Lehvaslaiho = _tanks.Sum(x => x.Epic.Lehvaslaiho);
-            Nikolas = _tanks.Sum(x => x.Epic.Nikolas);
-            Halonen = _tanks.Sum(x => x.Epic.Halonen);
-            Burda = _tanks.Sum(x => x.Epic.Burda);
-            Pascucci = _tanks.Sum(x => x.Epic.Pascucci);
-            Dumitru = _tanks.Sum(x => x.Epic.Dumitru);
-            TamadaYoshio = _tanks.Sum(x => x.Epic.TamadaYoshio);
-            Billotte = _tanks.Sum(x => x.Epic.Billotte);
-            BrunoPietro = _tanks.Sum(x => x.Epic.BrunoPietro);
-            Tarczay = _tanks.Sum(x => x.Epic.Tarczay);
-            Kolobanov = _tanks.Sum(x => x.Epic.Kolobanov);
-            Fadin = _tanks.Sum(x => x.Epic.Fadin);
-            HeroesOfRassenay = _tanks.Sum(x => x.Special.heroesOfRassenay);
-            DeLanglade = _tanks.Sum(x => x.Epic.DeLanglade);
-
-            #endregion
-
-            #region [ IRowMedals]
-
-            //Kay = stat.data.achievements.medalKay;
-            //Carius = stat.data.achievements.medalCarius;
-            //Knispel = stat.data.achievements.medalKnispel;
-            //Poppel = stat.data.achievements.medalPoppel;
-            //Abrams = stat.data.achievements.medalAbrams;
-            //Leclerk = stat.data.achievements.medalLeClerc;
-            //Lavrinenko = stat.data.achievements.medalLavrinenko;
-            //Ekins = stat.data.achievements.medalEkins;
-
-            #endregion
-
-            #region [ IRowSeries ]
-
-            SharpshooterLongest = _tanks.Max(x => x.Series.maxSniperSeries);
-            MasterGunnerLongest = _tanks.Max(x => x.Series.maxPiercingSeries);
-
-            #endregion
-
-            #region [ IRowSpecialAwards ]
-
-            Kamikaze = _tanks.Sum(x => x.Special.kamikaze);
-            Raider = _tanks.Sum(x => x.Special.raider);
-            Bombardier = _tanks.Sum(x => x.Special.bombardier);
-            Reaper = _tanks.Max(x => x.Series.maxKillingSeries);
-            Invincible = _tanks.Max(x => x.Series.maxInvincibleSeries);
-            Survivor = _tanks.Max(x => x.Series.maxDiehardSeries);
-            MouseTrap = _tanks.Sum(x => x.Special.mousebane);
-            Hunter = _tanks.Sum(x => x.Tankdata.fragsBeast)/100;
-            Sinai = _tanks.Sum(x => x.Battle.fragsSinai)/100;
-            PattonValley = _tanks.Sum(x => x.Special.fragsPatton)/100;
-            Ranger = _tanks.Sum(x => x.Special.huntsman);
-
-            #endregion
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
-        /// </summary>
-        public PlayerStatAdapter(List<TankJsonV2> tanks)
         {
             _tanksV2 = tanks;
 
@@ -137,7 +28,7 @@ namespace WotDossier.Domain.Entities
             {
                 Battle_avg_xp = Xp / (double)Battles_count;
             }
-            Max_xp = _tanksV2.Max(x => x.Max15x15.maxXP);
+            Max_xp = _tanksV2.Max(x => x.A15x15.maxXP);
             Frags = _tanksV2.Sum(x => x.A15x15.frags);
             Spotted = _tanksV2.Sum(x => x.A15x15.spotted);
             Hits_percents = _tanksV2.Sum(x => x.A15x15.hits) / ((double)_tanksV2.Sum(x => x.A15x15.shots)) * 100.0;

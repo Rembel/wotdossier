@@ -11,6 +11,8 @@ using Newtonsoft.Json.Linq;
 using WotDossier.Common;
 using WotDossier.Domain;
 using System.Linq;
+using WotDossier.Domain.Dossier.TankV29;
+using WotDossier.Domain.Dossier.TankV65;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
@@ -101,7 +103,7 @@ namespace WotDossier.Dal
             }
         }
 
-        public List<TankJson> ReadTanks(string path)
+        public List<TankJson> ReadTanksV2(string path)
         {
             List<TankJson> tanks = new List<TankJson>();
 
@@ -110,43 +112,18 @@ namespace WotDossier.Dal
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = (JObject)se.Deserialize(reader);
-                //JToken headerData = parsedData["header"];
+
                 JToken tanksData = parsedData["tanks"];
 
                 foreach (JToken jToken in tanksData)
                 {
                     JProperty property = (JProperty)jToken;
                     string raw = property.Value.ToString();
-                    TankJson tank = JsonConvert.DeserializeObject<TankJson>(raw);
+                    TankJson29 tank29 = JsonConvert.DeserializeObject<TankJson29>(raw);
+                    TankJson tank = TankJsonV2Converter.Convert(tank29);
                     tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                     ExtendPropertiesData(tank);
                     tanks.Add(tank);
-                }
-            }
-            return tanks;
-        }
-
-        public List<TankJsonV2> ReadTanksV2(string path)
-        {
-            List<TankJsonV2> tanks = new List<TankJsonV2>();
-
-            using (StreamReader re = new StreamReader(path))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                JObject parsedData = (JObject)se.Deserialize(reader);
-
-                JToken tanksData = parsedData["tanks"];
-
-                foreach (JToken jToken in tanksData)
-                {
-                    JProperty property = (JProperty)jToken;
-                    string raw = property.Value.ToString();
-                    TankJson tank = JsonConvert.DeserializeObject<TankJson>(raw);
-                    TankJsonV2 tankV2 = TankJsonV2Converter.Convert(tank);
-                    tankV2.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tankV2));
-                    ExtendPropertiesData(tankV2);
-                    tanks.Add(tankV2);
                 }
 
                 JToken tanksDataV2 = parsedData["tanks_v2"];
@@ -155,7 +132,8 @@ namespace WotDossier.Dal
                 {
                     JProperty property = (JProperty)jToken;
                     string raw = property.Value.ToString();
-                    TankJsonV2 tank = JsonConvert.DeserializeObject<TankJsonV2>(raw);
+                    TankJson65 tank65 = JsonConvert.DeserializeObject<TankJson65>(raw);
+                    TankJson tank = TankJsonV2Converter.Convert(tank65);
                     tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                     ExtendPropertiesData(tank);
                     tanks.Add(tank);
@@ -165,31 +143,6 @@ namespace WotDossier.Dal
         }
 
         public void ExtendPropertiesData(TankJson tank)
-        {
-            tank.Description = _tanksDictionary[tank.UniqueId()];
-            tank.Frags =
-                tank.Kills.Select(
-                    x =>
-                        {
-                            int countryId = Convert.ToInt32(x[0]);
-                            int tankId = Convert.ToInt32(x[1]);
-                            int uniqueId = Utils.ToUniqueId(countryId, tankId);
-                            return new FragsJson
-                                 {
-                                     CountryId = countryId,
-                                     TankId = tankId,
-                                     Icon = TanksDictionary[uniqueId].Icon,
-                                     TankUniqueId = uniqueId,
-                                     Count = Convert.ToInt32(x[2]),
-                                     Type = TanksDictionary[uniqueId].Type,
-                                     Tier = TanksDictionary[uniqueId].Tier,
-                                     KilledByTankUniqueId = tank.UniqueId(),
-                                     Tank = x[3]
-                                 };
-                        }).ToList();
-        }
-
-        public void ExtendPropertiesData(TankJsonV2 tank)
         {
             tank.Description = _tanksDictionary[tank.UniqueId()];
             tank.Frags =
@@ -311,6 +264,15 @@ namespace WotDossier.Dal
         /// <exception cref="PlayerInfoLoadException"></exception>
         public PlayerStat LoadPlayerStat(AppSettings settings, int playerId)
         {
+            return LoadPlayerStat(settings, playerId, true);
+        }
+
+        /// <summary>
+        /// Loads player stat from server
+        /// </summary>
+        /// <exception cref="PlayerInfoLoadException"></exception>
+        public PlayerStat LoadPlayerStat(AppSettings settings, int playerId, bool loadVehicles)
+        {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
                 return null;
@@ -342,10 +304,13 @@ namespace WotDossier.Dal
                     PlayerStat playerStat = se.Deserialize<PlayerStat>(reader);
                     playerStat.dataField = playerStat.data[playerId];
                     playerStat.dataField.ratings = GetPlayerRatings(settings, playerId);
-                    playerStat.dataField.vehicles = GetPlayerTanks(settings, playerId);
+                    if (loadVehicles)
+                    {
+                        playerStat.dataField.vehicles = GetPlayerTanks(settings, playerId);
+                    }
                     if (playerStat.dataField.clan != null)
                     {
-                        playerStat.dataField.clanData = LoadClan(settings, playerStat.dataField.clan.clan_id);
+                        playerStat.dataField.clanData = LoadClan(settings, playerStat.dataField.clan.clan_id, new[] { "abbreviation", "name", "clan_id", "description", "emblems" });
                     }
                     return playerStat;
                 }
@@ -453,6 +418,15 @@ namespace WotDossier.Dal
         /// <exception cref="PlayerInfoLoadException"></exception>
         public ClanData LoadClan(AppSettings settings, int clanId)
         {
+            return LoadClan(settings, clanId, null);
+        }
+
+        /// <summary>
+        /// Loads player stat from server
+        /// </summary>
+        /// <exception cref="PlayerInfoLoadException"></exception>
+        public ClanData LoadClan(AppSettings settings, int clanId, string [] fields)
+        {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
                 return null;
@@ -466,6 +440,12 @@ namespace WotDossier.Dal
                 request.Method = REQUEST_METHOD;
                 request.ContentType = CONTENT_TYPE;
                 string parameters = string.Format(CLAN_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), clanId);
+
+                if (fields != null)
+                {
+                    parameters += "&fields=" + string.Join(",", fields);
+                }
+
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
                 request.ContentLength = encodedBytes.Length;
                 Stream newStream = request.GetRequestStream();

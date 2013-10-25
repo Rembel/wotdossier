@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlServerCe;
 using Newtonsoft.Json;
 using WotDossier.Dal;
+using WotDossier.Domain.Dossier.TankV29;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Tank;
 
@@ -47,12 +47,11 @@ namespace WotDossier.Applications.Update
             {
                 if (entity.Version < 65)
                 {
-                    TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(entity.Raw);
-                    TankJson tank = tankJson;
-                    TankJsonV2 tankJsonV2 = TankJsonV2Converter.Convert(tank);
-                    byte[] zip = WotApiHelper.Zip(JsonConvert.SerializeObject(tankJsonV2));
+                    TankJson29 tankV29 = WotApiHelper.UnZipObject<TankJson29>(entity.Raw);
+                    TankJson tank = TankJsonV2Converter.Convert(tankV29);
 
-
+                    byte[] zip = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                    
                     commandText = @"Update TankStatistic set Version=65, Raw=@raw where Id=@id";
                     command = new SqlCeCommand(commandText, sqlCeConnection, transaction);
                     command.Parameters.Add("@raw", SqlDbType.Image).Value = zip;

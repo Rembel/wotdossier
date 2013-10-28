@@ -34,6 +34,7 @@ namespace WotDossier.Applications.ViewModel
         private bool _chinaSelected = true;
         private bool _franceSelected = true;
         private bool _ukSelected = true;
+        private bool _jpSelected = true;
         private bool _isPremium;
         private bool _isFavorite;
         private ReplayFolder _selectedFolder;
@@ -251,6 +252,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _ukSelected = value;
                 OnPropertyChanged("UKSelected");
+            }
+        }
+
+        public bool JPSelected
+        {
+            get { return _jpSelected; }
+            set
+            {
+                _jpSelected = value;
+                OnPropertyChanged("JPSelected");
             }
         }
 

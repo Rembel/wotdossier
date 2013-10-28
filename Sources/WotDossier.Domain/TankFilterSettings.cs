@@ -10,6 +10,7 @@
             GermanySelected = true;
             USSelected = true;
             USSRSelected = true;
+            JPSelected = true;
             LTSelected = true;
             MTSelected = true;
             HTSelected = true;
@@ -67,6 +68,8 @@
         public bool FranceSelected { get; set; }
 
         public bool UKSelected { get; set; }
+
+        public bool JPSelected { get; set; }
 
         public bool IsPremium { get; set; }
 

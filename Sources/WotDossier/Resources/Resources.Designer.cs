@@ -2079,6 +2079,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Japan.
+        /// </summary>
+        public static string Country_Japan {
+            get {
+                return ResourceManager.GetString("Country_Japan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UK.
         /// </summary>
         public static string Country_UK {

@@ -33,11 +33,11 @@ namespace WotDossier.Framework
             return _internalCommands[(int)idCommand];
         }
 
-        public static RoutedCommand ApplyTemplate
+        public static RoutedCommand PrintWindow
         {
             get
             {
-                return _EnsureCommand(CommandId.ApplyTemplate);
+                return _EnsureCommand(CommandId.PrintWindow);
             }
         }
 
@@ -46,7 +46,7 @@ namespace WotDossier.Framework
             string str = string.Empty;
             switch (commandId)
             {
-                case CommandId.ApplyTemplate:
+                case CommandId.PrintWindow:
                     return "ApplyTemplate";
             }
             return str;
@@ -55,7 +55,7 @@ namespace WotDossier.Framework
         // Nested Types
         private enum CommandId : byte
         {
-            ApplyTemplate = 0
+            PrintWindow = 0
         }
 
     }

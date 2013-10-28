@@ -1,8 +1,12 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.ComponentModel.Composition;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
+using WotDossier.Dal;
+using WotDossier.Framework;
 
 namespace WotDossier.Views
 {
@@ -40,6 +44,24 @@ namespace WotDossier.Views
             {
                 Close();
             }
+        }
+
+        private void PrintWindow_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            int i = 0;
+
+            string fileName = string.Format(WotDossierSettings.FILE_NAME_FORMAT, i);
+
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName);
+
+            while (File.Exists(path))
+            {
+                i++;
+                fileName = string.Format(WotDossierSettings.FILE_NAME_FORMAT, i);
+                path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName);
+            }
+
+            Util.SaveWindow(this, 96, path);
         }
     }
 }

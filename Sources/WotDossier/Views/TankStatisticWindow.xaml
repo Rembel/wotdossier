@@ -7,8 +7,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:Converters="clr-namespace:WotDossier.Converters"
+        xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         mc:Ignorable="d" 
         Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static framework:ApplicationRouteCommands.PrintWindow}" Executed="PrintWindow_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding  Command="{x:Static framework:ApplicationRouteCommands.PrintWindow}" Key="N" Modifiers="Ctrl+Shift"/>
+    </Window.InputBindings>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"></ColumnDefinition>

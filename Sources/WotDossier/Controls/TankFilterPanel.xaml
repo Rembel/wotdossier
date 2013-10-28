@@ -54,6 +54,7 @@
             <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_China}" IsChecked="{Binding ChinaSelected, Mode=TwoWay}" />
             <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_France}" IsChecked="{Binding FranceSelected, Mode=TwoWay}" />
             <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_UK}" IsChecked="{Binding UKSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_Japan}" IsChecked="{Binding JPSelected, Mode=TwoWay}" />
         </StackPanel>
         <CheckBox Grid.Row="4" Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" />
         <CheckBox Grid.Row="4" Grid.Column="1" Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankFilterPanel_Favorite}" IsChecked="{Binding IsFavorite, Mode=TwoWay}" />

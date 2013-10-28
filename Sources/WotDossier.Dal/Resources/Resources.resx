@@ -207,6 +207,9 @@
   <data name="Map_42_north_america" xml:space="preserve">
     <value>Port</value>
   </data>
+  <data name="Map_43_north_america" xml:space="preserve">
+    <value>Northwest</value>
+  </data>
   <data name="Map_44_north_america" xml:space="preserve">
     <value>Live Oaks</value>
   </data>

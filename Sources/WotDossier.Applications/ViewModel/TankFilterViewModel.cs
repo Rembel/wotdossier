@@ -9,7 +9,7 @@ namespace WotDossier.Applications.ViewModel
     public class TankFilterViewModel : INotifyPropertyChanged
     {
         private readonly TankFilterSettings _filter;
-
+        
         #region FILTERS
 
         public bool Level10Selected
@@ -220,6 +220,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _filter.UKSelected = value;
                 OnPropertyChanged("UKSelected");
+            }
+        }
+
+        public bool JPSelected
+        {
+            get { return _filter.JPSelected; }
+            set
+            {
+                _filter.JPSelected = value;
+                OnPropertyChanged("JPSelected");
             }
         }
 

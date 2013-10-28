@@ -11,6 +11,8 @@ namespace WotDossier.Dal
 
     public class WotDossierSettings
     {
+        public const string FILE_NAME_FORMAT = "wotdossier_screenshot_{0:D2}.png";
+
         public static string ApiVersion
         {
             get { return ConfigurationManager.AppSettings["api"] ?? "1.9"; }

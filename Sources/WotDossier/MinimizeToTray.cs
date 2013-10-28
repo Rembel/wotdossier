@@ -30,7 +30,7 @@ namespace WotDossier
         /// </summary>
         private class MinimizeToTrayInstance
         {
-            private Window _window;
+            private readonly Window _window;
             private NotifyIcon _notifyIcon;
             private bool _balloonShown;
 

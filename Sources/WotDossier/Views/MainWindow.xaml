@@ -10,13 +10,18 @@
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:color="clr-namespace:WotDossier.Converters.Color"
         xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+        xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         Title="WotDossier" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static framework:ApplicationRouteCommands.PrintWindow}" Executed="PrintWindow_Executed"/>
+    </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>
         <KeyBinding Command="{Binding SettingsCommand}" Key="P" Modifiers="Control"/>
         <KeyBinding Command="{Binding SearchPlayersCommand}" Key="F" Modifiers="Control"/>
         <KeyBinding Command="{Binding SearchClansCommand}" Key="G" Modifiers="Control"/>
         <KeyBinding Command="{Binding CompareCommand}" Key="H" Modifiers="Control"/>
+        <KeyBinding  Command="{x:Static framework:ApplicationRouteCommands.PrintWindow}" Key="N" Modifiers="Ctrl+Shift"/>
     </Window.InputBindings>
     <Grid>
         <Grid.RowDefinitions>

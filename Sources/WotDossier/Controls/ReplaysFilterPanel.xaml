@@ -59,6 +59,7 @@
             <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_China}" IsChecked="{Binding ChinaSelected, Mode=TwoWay}" />
             <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_France}" IsChecked="{Binding FranceSelected, Mode=TwoWay}" />
             <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_UK}" IsChecked="{Binding UKSelected, Mode=TwoWay}" />
+            <CheckBox Margin="6,3,6,3" Content="{x:Static Resources:Resources.Country_Japan}" IsChecked="{Binding JPSelected, Mode=TwoWay}" />
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <ComboBox Margin="6,3,20,3" Width="200" ItemsSource="{Binding FilterFields}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Field, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />

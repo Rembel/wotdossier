@@ -775,6 +775,26 @@
     <Resource Include="Resources\Images\Maps\63_tundra.jpg" />
     <Resource Include="Resources\Images\faces.png" />
     <Resource Include="Resources\Images\player.png" />
+    <Resource Include="Resources\Images\Maps\43_north_america.jpg" />
+    <Resource Include="Resources\Images\Tanks\germany_marder_iii.png" />
+    <Resource Include="Resources\Images\Tanks\germany_nashorn.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pz_sfl_ivc.png" />
+    <Resource Include="Resources\Images\Tanks\germany_rhb_waffentrager.png" />
+    <Resource Include="Resources\Images\Tanks\germany_sturer_emil.png" />
+    <Resource Include="Resources\Images\Tanks\germany_vk7201.png" />
+    <Resource Include="Resources\Images\Tanks\germany_waffentrager_e100.png" />
+    <Resource Include="Resources\Images\Tanks\germany_waffentrager_iv.png" />
+    <Resource Include="Resources\Images\Tanks\japan_chi_nu_kai.png" />
+    <Resource Include="Resources\Images\Tanks\uk_gb76_mk_vic.png" />
+    <Resource Include="Resources\Images\Tanks\usa_mtls_1g14.png" />
+    <Resource Include="Resources\Images\Tanks\usa_sexton_i.png" />
+    <Resource Include="Resources\Images\Tanks\usa_t7_combat_car.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_object_907.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_t44_122.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_t44_85.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pziv_hydro.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pzv_pziv_ausf_alfa.png" />
+    <Resource Include="Resources\Images\Tanks\china_ch01_type59_gold.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -267,10 +267,8 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <returns></returns>
         public static double RatingWG(double battles, double battles88, double wins, double survive, double hit, double dmg, double avgXp88)
         {
-            return (2 / (1 + Math.Exp(-battles / 4500)) - 1)
-                   *
-                   (3000 / (1 + Math.Exp((0.5 - wins) / 0.03)) + 7000 * Math.Max(0, survive - 0.2) + 6000 * Math.Max(0, hit - 0.45) + 5 * (2 / (1 + Math.Exp(-battles88 / 500)) - 1)
-                   * Math.Max(0, avgXp88 - 160) + Math.Max(0, dmg - 170));
+            return (2 / (1 + Math.Exp(-battles / 3000)) - 1)
+                   * (3000 / (1 + Math.Exp(13 - 25 * wins)) + 1300 / (1 + Math.Exp(7 - 22 * survive)) + 700 / (1 + Math.Exp(14 - 24 * hit)) + 5 * avgXp88 * (2 / (1 + Math.Exp(-battles88 / 500)) - 1) + dmg);
         }
     }
 }

@@ -887,7 +887,7 @@ namespace WotDossier.Applications.ViewModel
         private void LoadReplaysList()
         {
             ReplaysFolders = ReplaysManager.GetFolders();
-            Replays.Clear();
+            _replays.Clear();
 
             List<ReplayFolder> replayFolders = ReplaysFolders.GetAll();
 

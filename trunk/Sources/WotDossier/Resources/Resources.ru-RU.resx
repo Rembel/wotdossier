@@ -1693,4 +1693,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="ReplaysFilter_ByColumns" xml:space="preserve">
     <value>Фильтр по колонкам</value>
   </data>
+  <data name="Country_Japan" xml:space="preserve">
+    <value>Япония</value>
+  </data>
 </root>

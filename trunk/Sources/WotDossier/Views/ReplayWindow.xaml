@@ -2,7 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
+        xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         Title="{x:Static Resources:Resources.WindowTitle_BattleResults}" Width="1024" Height="650" ResizeMode="NoResize" Icon="../Resources/Images/movieicon2.jpg" WindowStartupLocation="CenterScreen">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static framework:ApplicationRouteCommands.PrintWindow}" Executed="PrintWindow_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding  Command="{x:Static framework:ApplicationRouteCommands.PrintWindow}" Key="N" Modifiers="Ctrl+Shift"/>
+    </Window.InputBindings>
     <Grid>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--PersonalResults-->

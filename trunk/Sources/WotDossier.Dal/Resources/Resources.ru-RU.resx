@@ -231,4 +231,7 @@
   <data name="Map_85_winter" xml:space="preserve">
     <value>Северогорск</value>
   </data>
+  <data name="Map_43_north_america" xml:space="preserve">
+    <value>Северо-Запад</value>
+  </data>
 </root>

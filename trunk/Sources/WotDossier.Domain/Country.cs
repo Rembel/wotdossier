@@ -7,6 +7,7 @@
         US = 2,
         China = 3,
         France = 4,
-        UK = 5
+        UK = 5,
+        Japan = 5
     }
 }

@@ -331,6 +331,15 @@ namespace WotDossier.Dal.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Northwest.
+        /// </summary>
+        internal static string Map_43_north_america {
+            get {
+                return ResourceManager.GetString("Map_43_north_america", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Live Oaks.
         /// </summary>
         internal static string Map_44_north_america {

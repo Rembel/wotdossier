@@ -11,6 +11,8 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public string gameplayID { get; set; }
         [DataMember]
+        public int battleType { get; set; }
+        [DataMember]
         public string mapDisplayName { get; set; }
         [DataMember]
         public string clientVersionFromXml { get; set; }

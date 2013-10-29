@@ -337,4 +337,25 @@ Avg Spotted: {1:0.00}</value>
   <data name="Role_treasurer" xml:space="preserve">
     <value>Treasurer</value>
   </data>
+  <data name="BattleType_ClanWar" xml:space="preserve">
+    <value>Clan War</value>
+  </data>
+  <data name="BattleType_CompanyWar" xml:space="preserve">
+    <value>Company War</value>
+  </data>
+  <data name="BattleType_CyberSport" xml:space="preserve">
+    <value>Cyber Sport</value>
+  </data>
+  <data name="BattleType_Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="BattleType_Tournament" xml:space="preserve">
+    <value>Tournament</value>
+  </data>
+  <data name="BattleType_Training" xml:space="preserve">
+    <value>Training</value>
+  </data>
+  <data name="BattleType_Tutorial" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
 </root>

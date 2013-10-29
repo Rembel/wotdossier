@@ -61,6 +61,69 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clan War.
+        /// </summary>
+        internal static string BattleType_ClanWar {
+            get {
+                return ResourceManager.GetString("BattleType_ClanWar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company War.
+        /// </summary>
+        internal static string BattleType_CompanyWar {
+            get {
+                return ResourceManager.GetString("BattleType_CompanyWar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cyber Sport.
+        /// </summary>
+        internal static string BattleType_CyberSport {
+            get {
+                return ResourceManager.GetString("BattleType_CyberSport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Regular.
+        /// </summary>
+        internal static string BattleType_Regular {
+            get {
+                return ResourceManager.GetString("BattleType_Regular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tournament.
+        /// </summary>
+        internal static string BattleType_Tournament {
+            get {
+                return ResourceManager.GetString("BattleType_Tournament", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Training.
+        /// </summary>
+        internal static string BattleType_Training {
+            get {
+                return ResourceManager.GetString("BattleType_Training", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tutorial.
+        /// </summary>
+        internal static string BattleType_Tutorial {
+            get {
+                return ResourceManager.GetString("BattleType_Tutorial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
         ///Avg Spotted: {1:0.00}.
         /// </summary>

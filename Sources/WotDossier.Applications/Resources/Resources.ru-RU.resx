@@ -337,4 +337,25 @@
   <data name="Role_treasurer" xml:space="preserve">
     <value>Казначей</value>
   </data>
+  <data name="BattleType_ClanWar" xml:space="preserve">
+    <value>Клановый бой</value>
+  </data>
+  <data name="BattleType_CompanyWar" xml:space="preserve">
+    <value>Ротный бой</value>
+  </data>
+  <data name="BattleType_CyberSport" xml:space="preserve">
+    <value>Командный бой</value>
+  </data>
+  <data name="BattleType_Regular" xml:space="preserve">
+    <value>Стандартный бой</value>
+  </data>
+  <data name="BattleType_Tournament" xml:space="preserve">
+    <value>Турнир</value>
+  </data>
+  <data name="BattleType_Training" xml:space="preserve">
+    <value>Тренировка</value>
+  </data>
+  <data name="BattleType_Tutorial" xml:space="preserve">
+    <value>Обучающий бой</value>
+  </data>
 </root>

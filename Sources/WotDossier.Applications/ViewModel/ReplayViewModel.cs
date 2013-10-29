@@ -170,7 +170,7 @@ namespace WotDossier.Applications.ViewModel
             if (replay.datablock_battle_result != null)
             {
                 MapName = replay.datablock_1.mapName;
-                MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(replay.datablock_1.gameplayID));
+                MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(replay.datablock_1.gameplayID, (BattleType)replay.datablock_1.battleType));
                 TankIcon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
                 Date = replay.datablock_1.dateTime;
 
@@ -279,17 +279,29 @@ namespace WotDossier.Applications.ViewModel
             return Resources.Resources.Label_Experience;
         }
 
-        private object GetMapMode(string gameplayId)
+        private object GetMapMode(string gameplayId, BattleType battleType)
         {
-            if ("ctf".Equals(gameplayId))
+            List<BattleType> list = new List<BattleType>
             {
-                return Resources.Resources.Label_Replay_MapMode_Standart;
-            }
-            if ("domination".Equals(gameplayId))
+                BattleType.Unknown,
+                BattleType.Regular,
+                BattleType.CompanyWar,
+                BattleType.ClanWar
+            };
+
+            if (list.Contains(battleType))
             {
-                return Resources.Resources.Label_Replay_MapMode_domination;
+                if ("ctf".Equals(gameplayId))
+                {
+                    return Resources.Resources.Label_Replay_MapMode_Standart;
+                }
+                if ("domination".Equals(gameplayId))
+                {
+                    return Resources.Resources.Label_Replay_MapMode_domination;
+                }
+                return Resources.Resources.Label_Replay_MapMode_Assault;
             }
-            return Resources.Resources.Label_Replay_MapMode_Assault;
+            return Resources.Resources.ResourceManager.GetString(String.Format("BattleType_{0}", battleType));
         }
     }
 }

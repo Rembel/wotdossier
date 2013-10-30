@@ -123,6 +123,7 @@
     <Compile Include="Dossier\TankV29\StatisticJson.cs" />
     <Compile Include="Tank\TankDescription.cs" />
     <Compile Include="VStat.cs" />
+    <Compile Include="WotReplaysSiteResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">

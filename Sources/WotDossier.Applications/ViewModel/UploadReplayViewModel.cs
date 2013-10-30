@@ -8,6 +8,7 @@ using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms;
 using WotDossier.Framework.Forms.Commands;
@@ -45,6 +46,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnReplayUpload()
         {
+            AppSettings appSettings = SettingsReader.Get();
+
             if (ReplayFile != null)
             {
                 try
@@ -52,7 +55,7 @@ namespace WotDossier.Applications.ViewModel
                     Mouse.SetCursor(Cursors.Wait);
                     ReplayUploader replayUploader = new ReplayUploader();
                     ReplayFile.Link = replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription,
-                        SettingsReader.Get().ReplaysUploadServerPath);
+                        string.Format(appSettings.ReplaysUploadServerPath, appSettings.Server, appSettings.PlayerId, appSettings.PlayerName));
                     _repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);
                     ViewTyped.Close();
                 }
@@ -68,7 +71,7 @@ namespace WotDossier.Applications.ViewModel
                         Process proc = new Process();
                         proc.EnableRaisingEvents = false;
                         proc.StartInfo.FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"Internet Explorer\iexplore.exe");
-                        proc.StartInfo.Arguments = "http://wotreplays.ru";
+                        proc.StartInfo.Arguments = string.Format("http://wotreplays.{0}", appSettings.Server);
                         proc.Start();
                     }
                 }

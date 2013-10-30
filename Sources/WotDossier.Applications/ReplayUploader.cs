@@ -2,8 +2,12 @@
 using System.IO;
 using System.Net;
 using System.Security.Authentication;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using Newtonsoft.Json;
+using WotDossier.Common;
+using WotDossier.Domain;
 
 namespace WotDossier.Applications
 {
@@ -45,6 +49,7 @@ Content-Disposition: form-data; name=""yt0""
 --{4}--";
         private const string REQ_USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0";
         private const string REQ_CONTENT_TYPE = "multipart/form-data; boundary=";
+        private const string FIND_REPLAY_URL = "http://wotreplays.{0}/api/find/md5/{1}";
 
         #endregion
 
@@ -54,59 +59,83 @@ Content-Disposition: form-data; name=""yt0""
         /// <param name="info">The info.</param>
         /// <param name="replayName">Name of the replay.</param>
         /// <param name="replayDescription">The replay description.</param>
-        /// <param name="uploadUrl">The upload URL. "http://wotreplays.ru/site/upload"</param>
+        /// <param name="uploadUrl">The upload URL.</param>
         public string Upload(FileInfo info, string replayName, string replayDescription, string uploadUrl)
         {
-            var cookieContainer = LoadCookies(uploadUrl);
+            string url;
 
-            if (!IsAuthentificated(cookieContainer, uploadUrl))
+            string str = info.MD5();
+            string result = new Uri(string.Format(FIND_REPLAY_URL, SettingsReader.Get().Server, str)).Get();
+
+            WotReplaysSiteResponse response = null;
+
+            try
             {
-                throw new AuthenticationException(string.Format("User not authentificated on site {0}", uploadUrl));
+                response = JsonConvert.DeserializeObject<WotReplaysSiteResponse>(result);
             }
+            catch (Exception) {/*ignore*/}
 
-            string boundary = string.Format(REQ_BOUNDARY, DateTime.Now.Ticks.ToString("x"));
-            string firstPart = string.Format(REQ_CONTENT_PART1_FORMAT, info.Name, boundary);
-            string secondPart = string.Format(REQ_CONTENT_PART2_FORMAT, replayName, replayDescription, 0, 0, boundary);
+            //if replay not found
+            if (response == null || (response.Result.HasValue && response.Result == false))
+            {
+                //http://wotreplays.{0}/api/upload/bwId/{1}/username/{2}        
+                var cookieContainer = LoadCookies(uploadUrl);
 
-            byte[] fileBytes = File.ReadAllBytes(info.FullName);
-            byte[] contentPart1Bytes = Encoding.UTF8.GetBytes(firstPart);
-            byte[] contentPart2Bytes = Encoding.UTF8.GetBytes(secondPart);
+                if (!IsAuthentificated(cookieContainer, uploadUrl))
+                {
+                    throw new AuthenticationException(string.Format("User not authentificated on site {0}", uploadUrl));
+                }
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uploadUrl);
-            request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-            request.UserAgent = REQ_USER_AGENT;
-            request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-            request.CookieContainer = cookieContainer;
-            request.ContentLength = info.Length;
-            request.ContentType = REQ_CONTENT_TYPE + boundary;
-            request.Method = WebRequestMethods.Http.Post;
+                string boundary = string.Format(REQ_BOUNDARY, DateTime.Now.Ticks.ToString("x"));
+                string firstPart = string.Format(REQ_CONTENT_PART1_FORMAT, info.Name, boundary);
+                string secondPart = string.Format(REQ_CONTENT_PART2_FORMAT, replayName, replayDescription, 0, 0,
+                    boundary);
 
-            // Длинна запроса (обязательный параметр)
-            request.ContentLength = fileBytes.Length + contentPart1Bytes.Length + contentPart2Bytes.Length;
-            // Открываем поток для записи
-            Stream uploadStream = request.GetRequestStream();
-            // Записываем в поток (это и есть POST запрос(заполнение форм))
-            uploadStream.Write(contentPart1Bytes, 0, contentPart1Bytes.Length);
-            uploadStream.Write(fileBytes, 0, fileBytes.Length);
-            uploadStream.Write(contentPart2Bytes, 0, contentPart2Bytes.Length);
-            // Закрываем поток
-            uploadStream.Flush();
-            uploadStream.Close();
+                byte[] fileBytes = File.ReadAllBytes(info.FullName);
+                byte[] contentPart1Bytes = Encoding.UTF8.GetBytes(firstPart);
+                byte[] contentPart2Bytes = Encoding.UTF8.GetBytes(secondPart);
 
-            WebResponse webResponse = request.GetResponse();
+                HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(uploadUrl);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.UserAgent = REQ_USER_AGENT;
+                request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+                request.CookieContainer = cookieContainer;
+                request.ContentLength = info.Length;
+                request.ContentType = REQ_CONTENT_TYPE + boundary;
+                request.Method = WebRequestMethods.Http.Post;
 
-            string url = webResponse.ResponseUri.ToString();
+                // Длинна запроса (обязательный параметр)
+                request.ContentLength = fileBytes.Length + contentPart1Bytes.Length + contentPart2Bytes.Length;
+                // Открываем поток для записи
+                Stream uploadStream = request.GetRequestStream();
+                // Записываем в поток (это и есть POST запрос(заполнение форм))
+                uploadStream.Write(contentPart1Bytes, 0, contentPart1Bytes.Length);
+                uploadStream.Write(fileBytes, 0, fileBytes.Length);
+                uploadStream.Write(contentPart2Bytes, 0, contentPart2Bytes.Length);
+                // Закрываем поток
+                uploadStream.Flush();
+                uploadStream.Close();
+
+                WebResponse webResponse = request.GetResponse();
+
+                url = webResponse.ResponseUri.ToString();
+
+                using (Stream stream = webResponse.GetResponseStream())
+                {
+                    if (stream != null)
+                    {
+                        StreamReader streamReader = new StreamReader(stream);
+                        string readToEnd = streamReader.ReadToEnd();
+                    }
+                }
+            }
+            else
+            {
+                url = response.Url;
+            }
 
             Clipboard.SetText(url);
 
-            using (Stream stream = webResponse.GetResponseStream())
-            {
-                if (stream != null)
-                {
-                    StreamReader streamReader = new StreamReader(stream);
-                    string readToEnd = streamReader.ReadToEnd();
-                }
-            }
             return url;
         }
 

@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Base32Encoder.cs" />
     <Compile Include="DataFormatter.cs" />
+    <Compile Include="FileUtils.cs" />
+    <Compile Include="HttpUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingHelper.cs" />
     <Compile Include="StopWatch.cs" />

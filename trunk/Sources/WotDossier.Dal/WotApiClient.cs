@@ -35,7 +35,6 @@ namespace WotDossier.Dal
         private const string URL_SEARCH_PLAYER = @"https://api.worldoftanks.{0}/{1}/account/list/";
         private const string URL_SEARCH_CLAN = @"https://api.worldoftanks.{0}/{1}/clan/list/";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";
-        private const string REQUEST_METHOD = "POST";
         private const string CONTENT_TYPE = "application/x-www-form-urlencoded";
         private const string SEARCH_PARAMS = "application_id={0}&search={1}&limit={2}";
         private const string CLAN_ID_PARAMS = "application_id={0}&clan_id={1}";
@@ -285,7 +284,7 @@ namespace WotDossier.Dal
                 string url = string.Format(URL_GET_PLAYER_INFO, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = REQUEST_METHOD;
+                request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
                 string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
@@ -329,7 +328,7 @@ namespace WotDossier.Dal
                 string url = string.Format(URL_GET_PLAYER_TANKS, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = REQUEST_METHOD;
+                request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
                 string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
@@ -378,7 +377,7 @@ namespace WotDossier.Dal
                 string url = string.Format(URL_GET_PLAYER_RATINGS, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = REQUEST_METHOD;
+                request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
                 string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
@@ -437,7 +436,7 @@ namespace WotDossier.Dal
                 string url = string.Format(URL_GET_CLAN_INFO, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = REQUEST_METHOD;
+                request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
                 string parameters = string.Format(CLAN_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), clanId);
 
@@ -500,7 +499,7 @@ namespace WotDossier.Dal
                 string url = string.Format(URL_SEARCH_PLAYER, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = REQUEST_METHOD;
+                request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
                 string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerName, 1);
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
@@ -546,7 +545,7 @@ namespace WotDossier.Dal
                 string url = string.Format(URL_SEARCH_CLAN, settings.Server, WotDossierSettings.ApiVersion);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = REQUEST_METHOD;
+                request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
                 string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), clanName, count);
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);

@@ -792,7 +792,7 @@ namespace WotDossier.Applications.ViewModel
                 {
                     try
                     {
-//set thread culture
+                        //set thread culture
                         SetUICulture();
 
                         ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
@@ -843,15 +843,14 @@ namespace WotDossier.Applications.ViewModel
                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
-
-                        LoadReplaysList();
                     }
                     catch (Exception e)
                     {
                         _log.Error("Error on data load", e);
-                        MessageBox.Show(Resources.Resources.Msg_ErrorOnDataLoad, Resources.Resources.WindowCaption_Error,
-                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show(Resources.Resources.Msg_ErrorOnDataLoad, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
+
+                    LoadReplaysList();
                 });
         }
 

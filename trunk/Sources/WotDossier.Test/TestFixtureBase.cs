@@ -12,6 +12,7 @@ using System.Threading;
 using System.Web;
 using System.Xml;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
@@ -623,8 +624,33 @@ namespace WotDossier.Test
                 }
             }
 
-            Console.WriteLine(tanksV2.Sum(x => x.A15x15.battlesCount));
-            Console.WriteLine(tanksV2.Max(x => x.Common.lastBattleTimeR));
+            Console.WriteLine("battles count cache -" + tanksV2.Sum(x => x.A15x15.battlesCount));
+            Console.WriteLine("last battle -" + tanksV2.Max(x => x.Common.lastBattleTimeR));
+            Console.WriteLine("tanks count cache - " + tanksV2.Count);
+
+            string tanks = new Uri(
+                "http://api.worldoftanks.ru/wot/account/tanks/?application_id=19779cdf6e8aab1a8c99e1261274f13b&access_token=ab2994337c9f5b09d0b7f372001f17c45f0b4af8&account_id=1749450")
+                .Get();
+
+            var parsedData = JsonConvert.DeserializeObject<JObject>(tanks);
+
+            JArray array = (JArray)parsedData["data"]["1749450"];
+            Console.WriteLine("tanks count server - " + array.Count());
+            Console.WriteLine("battles count server - " + array.Sum(x => x["statistics"]["all"]["battles"].Value<int>()));
+
+            foreach (TankJson tankJson in tanksV2)
+            {
+                TankServerInfo serverInfo = WotApiClient.Instance.ServerTanksDictionary.Values.FirstOrDefault(x => x.name.EndsWith(tankJson.Description.Icon.IconOrig));
+
+                if (serverInfo != null)
+                {
+                    JToken token = array.FirstOrDefault(x => x["tank_id"].Value<int>() == serverInfo.tank_id);
+                    if (token == null)
+                    {
+                        Console.WriteLine(tankJson.Description.Title);
+                    }
+                }
+            }
         }
 
         private string GetCount(StatisticJson a15X15)

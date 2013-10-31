@@ -353,6 +353,43 @@ namespace WotDossier.Dal
                 v2.Company.pierced = tankJson.Company2.pierced;
             }
 
+            if (tankJson.A7x7 != null)
+            {
+                v2.A7x7 = new StatisticJson();
+                v2.A7x7.battlesCount = tankJson.A7x7.battlesCount;
+                v2.A7x7.capturePoints = tankJson.A7x7.capturePoints;
+                v2.A7x7.damageDealt = tankJson.A7x7.damageDealt;
+                v2.A7x7.damageReceived = tankJson.A7x7.damageReceived;
+                v2.A7x7.droppedCapturePoints = tankJson.A7x7.droppedCapturePoints;
+                v2.A7x7.frags = tankJson.A7x7.frags;
+                v2.A7x7.frags8p = tankJson.A7x7.frags8p;
+                v2.A7x7.fragsBeast = tankJson.A7x7.fragsBeast;
+                v2.A7x7.hits = tankJson.A7x7.hits;
+                v2.A7x7.losses = tankJson.A7x7.losses;
+                v2.A7x7.shots = tankJson.A7x7.shots;
+                v2.A7x7.spotted = tankJson.A7x7.spotted;
+                v2.A7x7.survivedBattles = tankJson.A7x7.survivedBattles;
+                v2.A7x7.winAndSurvived = tankJson.A7x7.winAndSurvived;
+                v2.A7x7.wins = tankJson.A7x7.wins;
+                v2.A7x7.xp = tankJson.A7x7.xp;
+                v2.A7x7.battlesCountBefore8_8 = tankJson.A7x7.battlesCountBefore8_8;
+                v2.A7x7.xpBefore8_8 = tankJson.A7x7.xpBefore8_8;
+
+                //v2.A7x7.originalXP = tankJson.A7x7_2.originalXP;
+                //v2.A7x7.damageAssistedRadio = tankJson.A7x7_2.damageAssistedRadio;
+                //v2.A7x7.damageAssistedTrack = tankJson.A7x7_2.damageAssistedTrack;
+                //v2.A7x7.shotsReceived = tankJson.A7x7_2.shotsReceived;
+                //v2.A7x7.noDamageShotsReceived = tankJson.A7x7_2.noDamageShotsReceived;
+                //v2.A7x7.piercedReceived = tankJson.A7x7_2.piercedReceived;
+                //v2.A7x7.heHitsReceived = tankJson.A7x7_2.heHitsReceived;
+                //v2.A7x7.he_hits = tankJson.A7x7_2.he_hits;
+                //v2.A7x7.pierced = tankJson.A7x7_2.pierced;
+
+                v2.A7x7.maxDamage = tankJson.Max7x7.maxDamage;
+                v2.A7x7.maxFrags = tankJson.Max7x7.maxFrags;
+                v2.A7x7.maxXP = tankJson.Max7x7.maxXP;
+            }
+
             v2.Common = new CommonJson();
             v2.Common.basedonversion = tankJson.Common.basedonversion;
             v2.Common.compactDescr = tankJson.Common.compactDescr;

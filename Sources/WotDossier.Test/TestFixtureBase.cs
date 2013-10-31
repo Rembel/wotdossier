@@ -606,5 +606,34 @@ namespace WotDossier.Test
             //    Console.WriteLine(value);
             //}
         }
+
+        [Test]
+        public void CacheTest()
+        {
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(@"D:\NRXWO2LOFZYDMLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGQ5XO2LMMRTW6YTMNFXA====.json");
+
+            foreach (var group in tanksV2.GroupBy(x => x.Common.type))
+            {
+                Console.WriteLine();
+                Console.WriteLine("Battles - " + group.Sum(x => x.A15x15.battlesCount));
+
+                foreach (TankJson tankJson in group.OrderBy(x => x.Common.type).ThenByDescending(x => x.A15x15.battlesCount))
+                {
+                    Console.WriteLine("15x15-{1}\t\tclan-{2}\tcompany-{3}\t7x7-{4}\t\tTank - {0} - {5}", tankJson.Common.tanktitle, GetCount(tankJson.A15x15), GetCount(tankJson.Clan), GetCount(tankJson.Company), GetCount(tankJson.A7x7), tankJson.Common.basedonversion);
+                }
+            }
+
+            Console.WriteLine(tanksV2.Sum(x => x.A15x15.battlesCount));
+            Console.WriteLine(tanksV2.Max(x => x.Common.lastBattleTimeR));
+        }
+
+        private string GetCount(StatisticJson a15X15)
+        {
+            if (a15X15 != null)
+            {
+                return a15X15.battlesCount.ToString("D3");
+            }
+            return "000";
+        }
     }
 }

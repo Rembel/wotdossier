@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WotDossier.Controls.AchievementCompareRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
+             mc:Ignorable="d" Width="300"
+             d:DesignHeight="300" d:DesignWidth="300" Foreground="#BABFBA">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" TextAlignment="Right" 
+                   Text="{Binding FirstValue, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}">
+            <TextBlock.Foreground>
+                <MultiBinding Converter="{x:Static color:DeltaToColorConverterWithParams.Default}" >
+                    <Binding Path="FirstValue" RelativeSource="{RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}" />
+                    <Binding Path="SecondValue" RelativeSource="{RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}" />
+                </MultiBinding>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Image Stretch="Fill" HorizontalAlignment="Center" Width="67" Height="71" Grid.Column="1" Source="{Binding AchievementIconSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}"/>
+        <TextBlock Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" TextAlignment="Right" 
+                   Text="{Binding SecondValue, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}" 
+                   FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}"
+                   FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}"
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}}">
+            <TextBlock.Foreground>
+                <MultiBinding Converter="{x:Static color:DeltaToColorConverterWithParams.Default}" >
+                    <Binding Path="SecondValue" RelativeSource="{RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}" />
+                    <Binding Path="FirstValue" RelativeSource="{RelativeSource FindAncestor, AncestorType=controls:AchievementCompareRow}" />
+                </MultiBinding>
+            </TextBlock.Foreground>
+        </TextBlock>
+    </Grid>
+</UserControl>

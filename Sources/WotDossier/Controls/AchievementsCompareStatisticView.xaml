@@ -1,0 +1,249 @@
+﻿<UserControl x:Class="WotDossier.Controls.AchievementsCompareStatisticView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:resources="clr-namespace:WotDossier.Resources" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel HorizontalAlignment="Center">
+                <controls:AchievementCompareRow FirstValue="{Binding First.Warrior}" SecondValue="{Binding Second.Warrior}" AchievementIconSource="../Resources/Images/Medals/Warrior.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Warrior}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Warrior}"></controls:MedalTooltip>
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Sniper}" SecondValue="{Binding Second.Sniper}" AchievementIconSource="../Resources/Images/Medals/Sniper.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Confederate}" SecondValue="{Binding Second.Confederate}" AchievementIconSource="../Resources/Images/Medals/Supporter.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Confederate}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.PatrolDuty}" SecondValue="{Binding Second.PatrolDuty}" AchievementIconSource="../Resources/Images/Medals/Evileye.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_PatrolDuty}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_PatrolDuty}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.SteelWall}" SecondValue="{Binding Second.SteelWall}" AchievementIconSource="../Resources/Images/Medals/Steelwall.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_SteelWall}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_SteelWall}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Defender}" SecondValue="{Binding Second.Defender}" AchievementIconSource="../Resources/Images/Medals/Defender.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Defender}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Defender}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Invader}" SecondValue="{Binding Second.Invader}" AchievementIconSource="../Resources/Images/Medals/Invader.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Invader}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Invader}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Scout}" SecondValue="{Binding Second.Scout}" AchievementIconSource="../Resources/Images/Medals/Scout.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Scout}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Scout}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+
+                <!--Epic Achievements-->
+                <TextBlock Text="{x:Static resources:Resources.Label_Achievements_Epic}" HorizontalAlignment="Center" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+                <controls:AchievementCompareRow FirstValue="{Binding First.HeroesOfRassenay}" SecondValue="{Binding Second.HeroesOfRassenay}" AchievementIconSource="../Resources/Images/Medals/MedalHeroesOfRassenay.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_HeroesOfRassenay}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_HeroesOfRaseiniai}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.LafayettePool}" SecondValue="{Binding Second.LafayettePool}" AchievementIconSource="../Resources/Images/Medals/MedalLafayettePool.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_LafayettePool}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_LafayettePool}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.RadleyWalters}" SecondValue="{Binding Second.RadleyWalters}" AchievementIconSource="../Resources/Images/Medals/MedalRadleyWalters.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_RadleyWalters}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.CrucialContribution}" SecondValue="{Binding Second.CrucialContribution}" AchievementIconSource="../Resources/Images/Medals/MedalCrucialContribution.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CrucialContribution}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.BrothersInArms}" SecondValue="{Binding Second.BrothersInArms}" AchievementIconSource="../Resources/Images/Medals/MedalBrothersInArms.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_BrothersInArms}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Kolobanov}" SecondValue="{Binding Second.Kolobanov}" AchievementIconSource="../Resources/Images/Medals/MedalKolobanov.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Kolobanov}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Kolobanov}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Nikolas}" SecondValue="{Binding Second.Nikolas}" AchievementIconSource="../Resources/Images/Medals/MedalNikolas.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Nikolas}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Nikolas}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Orlik}" SecondValue="{Binding Second.Orlik}" AchievementIconSource="../Resources/Images/Medals/MedalOrlik.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Orlik}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Orlik}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Oskin}" SecondValue="{Binding Second.Oskin}" AchievementIconSource="../Resources/Images/Medals/MedalOskin.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Oskin}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Oskin}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Halonen}" SecondValue="{Binding Second.Halonen}" AchievementIconSource="../Resources/Images/Medals/MedalHalonen.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Halonen}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Halonen}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Lehvaslaiho}" SecondValue="{Binding Second.Lehvaslaiho}" AchievementIconSource="../Resources/Images/Medals/MedalLehvaslaiho.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lehvaslaiho}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Lehvaslaiho}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.DeLanglade}" SecondValue="{Binding Second.DeLanglade}" AchievementIconSource="../Resources/Images/Medals/MedalDeLanglade.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_DeLanglade}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_DeLanglade}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Burda}" SecondValue="{Binding Second.Burda}" AchievementIconSource="../Resources/Images/Medals/MedalBurda.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Burda}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Burda}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Dumitru}" SecondValue="{Binding Second.Dumitru}" AchievementIconSource="../Resources/Images/Medals/MedalDumitru.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Dumitru}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Dumitru}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Pascucci}" SecondValue="{Binding Second.Pascucci}" AchievementIconSource="../Resources/Images/Medals/MedalPascucci.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Pascucci}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Pascucci}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.TamadaYoshio}" SecondValue="{Binding Second.TamadaYoshio}" AchievementIconSource="../Resources/Images/Medals/MedalTamadaYoshio.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_TamadaYoshio}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_TamadaYoshio}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Boelter}" SecondValue="{Binding Second.Boelter}" AchievementIconSource="../Resources/Images/Medals/MedalBoelter.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Boelter}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Boelter}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Fadin}" SecondValue="{Binding Second.Fadin}" AchievementIconSource="../Resources/Images/Medals/MedalFadin.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Fadin}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Fadin}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Tarczay}" SecondValue="{Binding Second.Tarczay}" AchievementIconSource="../Resources/Images/Medals/MedalTarczay.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Tarczay}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Tarczay}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.BrunoPietro}" SecondValue="{Binding Second.BrunoPietro}" AchievementIconSource="../Resources/Images/Medals/MedalBrunoPietro.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Bruno}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_BrunoPietro}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Billotte}" SecondValue="{Binding Second.Billotte}" AchievementIconSource="../Resources/Images/Medals/MedalBillotte.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Billotte}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <!--Special Achievements-->
+                <TextBlock HorizontalAlignment="Center" Text="{x:Static resources:Resources.Label_Achievements_Special}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Survivor}" SecondValue="{Binding Second.Survivor}" AchievementIconSource="../Resources/Images/Medals/Diehard.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Survivor}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Kamikaze}" SecondValue="{Binding Second.Kamikaze}" AchievementIconSource="../Resources/Images/Medals/Kamikaze.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Kamikaze}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Kamikaze}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Invincible}" SecondValue="{Binding Second.Invincible}" AchievementIconSource="../Resources/Images/Medals/Invincible.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Invincible}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Invincible}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Raider}" SecondValue="{Binding Second.Raider}" AchievementIconSource="../Resources/Images/Medals/Raider.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Raider}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Raider}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Bombardier}" SecondValue="{Binding Second.Bombardier}" AchievementIconSource="../Resources/Images/Medals/Bombardier.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Bombardier}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Bombardier}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Reaper}" SecondValue="{Binding Second.Reaper}" AchievementIconSource="../Resources/Images/Medals/HandOfDeath.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Reaper}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Reaper}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.MouseTrap}" SecondValue="{Binding Second.MouseTrap}" AchievementIconSource="../Resources/Images/Medals/Mousebane.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MouseTrap}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_MouseTrap}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.PattonValley}" SecondValue="{Binding Second.PattonValley}" AchievementIconSource="../Resources/Images/Medals/Pattonvalley.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_PattonValley}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_PattonValley}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Hunter}" SecondValue="{Binding Second.Hunter}" AchievementIconSource="../Resources/Images/Medals/Beasthunter.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Hunter}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Hunter}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Sinai}" SecondValue="{Binding Second.Sinai}" AchievementIconSource="../Resources/Images/Medals/Sinai.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sinai}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sinai}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.MasterGunnerLongest}" SecondValue="{Binding Second.MasterGunnerLongest}" AchievementIconSource="../Resources/Images/Medals/ArmorPiercer.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MasterGunner}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_MasterGunner}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.SharpshooterLongest}" SecondValue="{Binding Second.SharpshooterLongest}" AchievementIconSource="../Resources/Images/Medals/TitleSniper.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sharpshooter}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Sharpshooter}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <!--Step Achievements-->
+                <!--Commemorative Achievements-->
+                <TextBlock HorizontalAlignment="Center" Text="{x:Static resources:Resources.Label_Achievements_CommemorativeAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Ranger}" SecondValue="{Binding Second.Ranger}" AchievementIconSource="../Resources/Images/Medals/Jager.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ranger}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.CoolHeaded}" SecondValue="{Binding Second.CoolHeaded}" AchievementIconSource="../Resources/Images/Medals/Imperturbable.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CoolHeaded}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Spartan}" SecondValue="{Binding Second.Spartan}" AchievementIconSource="../Resources/Images/Medals/Sparta.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Spartan}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.LuckyDevil}" SecondValue="{Binding Second.LuckyDevil}" AchievementIconSource="../Resources/Images/Medals/Lucky.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lucky}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

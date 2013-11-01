@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Threading;
@@ -10,6 +11,7 @@ using WotDossier.Applications;
 using WotDossier.Applications.Update;
 using WotDossier.Framework;
 using WotDossier.Framework.Presentation.Services;
+using Configuration = NHibernate.Cfg.Configuration;
 
 namespace WotDossier
 {
@@ -19,6 +21,9 @@ namespace WotDossier
     public partial class App : Application
     {
         private static readonly ILog _log = LogManager.GetLogger("App");
+
+        private Mutex _mutex;
+        private const string INSTANCE_ID = "1D4E6094-31A4-402F-AB5B-9E4000A4ED48";
 
         private ApplicationController _controller;
         
@@ -31,6 +36,30 @@ namespace WotDossier
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            /*App config appSettings section encrypt\decrypt*/
+            //string appName = "WotDossier.exe";
+            //System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(appName);
+            //AppSettingsSection section = config.GetSection("appSettings") as AppSettingsSection;
+            //if (section.SectionInformation.IsProtected)
+            //{
+            //    section.SectionInformation.UnprotectSection();
+            //}
+            //else
+            //{
+            //    section.SectionInformation.ProtectSection("DataProtectionConfigurationProvider");
+            //}
+            //config.Save();
+
+            bool isNewInstance;
+            _mutex = new Mutex(true, INSTANCE_ID, out isNewInstance);
+            if (!isNewInstance)
+            {
+                //WPFMessageBox.Show(Gui.Properties.Resources.Msg_ApplicationIs_Already_Started, Gui.Properties.Resources.MessageBox_Title_Error, WPFMessageBoxImage.Error);
+                Shutdown();
+                //activate already opened app window
+                NativeMethods.ActivateWindow(ApplicationInfo.FullProductName);
+                return;
+            }
             
 #if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't

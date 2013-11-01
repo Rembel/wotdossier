@@ -58,7 +58,6 @@
     <Compile Include="PeriodSettings.cs" />
     <Compile Include="Player\ClanData.cs" />
     <Compile Include="Player\ClanEmblems.cs" />
-    <Compile Include="Player\ClanExt.cs" />
     <Compile Include="Player\Clan.cs" />
     <Compile Include="Common\CommonStatGroup.cs" />
     <Compile Include="Common\CommonStatRow.cs" />

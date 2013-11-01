@@ -92,6 +92,7 @@
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -130,6 +131,9 @@
     <Compile Include="Controls\Achievements.xaml.cs">
       <DependentUpon>Achievements.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AchievementsCompareStatisticView.xaml.cs">
+      <DependentUpon>AchievementsCompareStatisticView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ChartPlotter.cs" />
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
@@ -139,6 +143,9 @@
     </Compile>
     <Compile Include="Controls\CompareStatisticView.xaml.cs">
       <DependentUpon>CompareStatisticView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AchievementCompareRow.xaml.cs">
+      <DependentUpon>AchievementCompareRow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\StatisticRow.xaml.cs">
       <DependentUpon>StatisticRow.xaml</DependentUpon>
@@ -183,6 +190,7 @@
     <Compile Include="Converters\Color\PowerRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\WN6ToColorConverter.cs" />
     <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
+    <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
     <Compile Include="Converters\Formater\DateFormater.cs" />
     <Compile Include="Converters\Formater\Double2Formater.cs" />
     <Compile Include="Converters\Formater\PercentFormater.cs" />
@@ -207,6 +215,7 @@
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Converters\SubtractValueConverter.cs" />
     <Compile Include="MinimizeToTray.cs" />
+    <Compile Include="NativeMethods.cs" />
     <Compile Include="Resources\Medals.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -326,6 +335,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\AchievementsCompareStatisticView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\ClanView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -335,6 +348,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\CompareStatisticView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AchievementCompareRow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

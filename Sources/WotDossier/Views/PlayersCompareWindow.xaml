@@ -31,6 +31,19 @@
             <Button Grid.Column="3" Content="{x:Static Resources:Resources.Btn_ComparePlayers}" Command="{Binding CompareCommand}"></Button>
         </Grid>
 
-        <controls:CompareStatisticView Grid.Row="2" DataContext="{Binding CompareStatistic}" />
+        <TabControl Grid.Row="2">
+            <TabControl.Resources>
+                <Style TargetType="TabPanel">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="Common">
+                <controls:CompareStatisticView DataContext="{Binding CompareStatistic}" />
+            </TabItem>
+            <TabItem Header="Achievements">
+                <controls:AchievementsCompareStatisticView DataContext="{Binding CompareStatistic}" />
+            </TabItem>
+        </TabControl>
+        
     </Grid>
 </Window>

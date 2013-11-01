@@ -14,6 +14,11 @@ namespace WotDossier.Converters.Color
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value == null)
+            {
+                return null;
+            }
+
             double delta;
             if(value is int)
             {

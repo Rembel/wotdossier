@@ -75,6 +75,7 @@
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
+    <Compile Include="Logic\BattleLevelDetector.cs" />
     <Compile Include="Logic\ServerStatWrapper.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

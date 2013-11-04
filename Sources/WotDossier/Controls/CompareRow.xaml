@@ -14,6 +14,7 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Foreground="#BABFBA" Grid.Column="0" Text="{Binding Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}" 
+                   Margin="{Binding HeaderMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
                    FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"
                    FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:CompareRow}}"/>

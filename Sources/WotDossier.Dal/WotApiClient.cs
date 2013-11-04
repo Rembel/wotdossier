@@ -176,6 +176,17 @@ namespace WotDossier.Dal
             return TankIcon.Empty;
         }
 
+        public TankDescription GetTankDecription(string playerVehicle)
+        {
+            string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
+            TankDescription description = TanksDictionary.Values.FirstOrDefault(x => x.Icon.IconId == replace);
+            if (description != null)
+            {
+                return description;
+            }
+            return null;
+        }
+
         private Dictionary<int, TankDescription> ReadTanksDictionary()
         {
             List<TankDescription> tanks = new List<TankDescription>();

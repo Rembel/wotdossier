@@ -4,46 +4,44 @@
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         Title="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850">
-    <Grid Background="{StaticResource bcolorCenter}">
+    <Grid Background="{StaticResource bcolorCenter}" FocusManager.FocusedElement="{Binding ElementName=txtSearch}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Margin="50" Text="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" HorizontalAlignment="Center" Foreground="#FFA759" FontFamily="sans-serif" FontSize="25"></TextBlock>
-        <Grid Grid.Row="1">
+        <TextBlock Margin="30" Text="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" HorizontalAlignment="Center" Foreground="#FFA759" FontFamily="sans-serif" FontSize="25"></TextBlock>
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="1" FontSize="17" FontWeight="Bold" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}">
+            <TextBox x:Name="txtSearch" Grid.Column="0" Width="200" Margin="6,0" FontSize="17" FontWeight="Bold" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}">
                 <TextBox.InputBindings>
                     <KeyBinding Command="{Binding CompareCommand}" Key="Enter"/>
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox Grid.Column="2" FontSize="17" FontWeight="Bold" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}">
+            <TextBox Grid.Column="1" Width="200" Margin="6,0" FontSize="17" FontWeight="Bold" Text="{Binding SecondName, UpdateSourceTrigger=PropertyChanged}">
                 <TextBox.InputBindings>
                     <KeyBinding Command="{Binding CompareCommand}" Key="Enter"/>
                 </TextBox.InputBindings>
             </TextBox>
-            <Button Grid.Column="3" Content="{x:Static Resources:Resources.Btn_ComparePlayers}" Command="{Binding CompareCommand}"></Button>
+            <Button Grid.Column="2" Width="80" Margin="6,0" Content="{x:Static Resources:Resources.Btn_ComparePlayers}" Command="{Binding CompareCommand}"></Button>
         </Grid>
 
-        <TabControl Grid.Row="2">
+        <TabControl Grid.Row="2" Margin="0,30,0,0">
             <TabControl.Resources>
                 <Style TargetType="TabPanel">
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="Common">
+            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
                 <controls:CompareStatisticView DataContext="{Binding CompareStatistic}" />
             </TabItem>
-            <TabItem Header="Achievements">
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
                 <controls:AchievementsCompareStatisticView DataContext="{Binding CompareStatistic}" />
             </TabItem>
         </TabControl>
-        
     </Grid>
 </Window>

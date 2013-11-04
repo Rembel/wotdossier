@@ -3,14 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
-        Title="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850">
+        Title="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource bcolorCenter}" FocusManager.FocusedElement="{Binding ElementName=txtSearch}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Margin="30" Text="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" HorizontalAlignment="Center" Foreground="#FFA759" FontFamily="sans-serif" FontSize="25"></TextBlock>
+        <TextBlock Margin="15" Text="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" HorizontalAlignment="Center" Foreground="#FFA759" FontFamily="sans-serif" FontSize="25"></TextBlock>
         <Grid Grid.Row="1" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>

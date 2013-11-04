@@ -27,33 +27,35 @@
             <!--BattlePerformance-->
             <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                        <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
-                            <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" HorizontalAlignment="Center"></TextBlock>
-                            <Grid Margin="10" HorizontalAlignment="Center">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition Width="100"></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Created, Converter={x:Static Converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
-                                <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
-                            </Grid>
-                            <controls:ClanView Margin="10" Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
+                                <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" HorizontalAlignment="Center"></TextBlock>
+                                <Grid Margin="10" HorizontalAlignment="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Created, Converter={x:Static Converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
+                                    <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
+                                    <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
+                                </Grid>
+                                <controls:ClanView Margin="10" Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
                                            ClanImageSource="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
                                            Days="{Binding PlayerStatistic.Clan.Days}" Position="{Binding PlayerStatistic.Clan.Role}" Date="{Binding PlayerStatistic.Clan.Since}" Abbreviation="{Binding PlayerStatistic.Clan.Abbreviation}" 
                                            ClanName="{Binding PlayerStatistic.Clan.Name}" OpenClanCommand="{Binding OpenClanCommand}">
-                                
-                            </controls:ClanView>
+
+                                </controls:ClanView>
+                            </StackPanel>
+                            <controls:StatisticView DataContext="{Binding PlayerStatistic}" HorizontalAlignment="Center" />
                         </StackPanel>
-                        <controls:StatisticView DataContext="{Binding PlayerStatistic}" HorizontalAlignment="Center" />
-                    </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
             <!--Recent-->
@@ -121,7 +123,9 @@
             </TabItem>
             <!--Session-->
             <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Session}" Name="tabSession" DataContext="{Binding SessionStatistic}">
-                <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Top"></tabs:PeriodTab>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Top"></tabs:PeriodTab>
+                </ScrollViewer>
             </TabItem>
             <!--Ratings-->
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:Converters="clr-namespace:WotDossier.Converters"
-        Title="{Binding Path=DataContext.PlayerStatistic.Name, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="768" Icon="..\Resources\Images\player.png">
+        Title="{Binding Path=DataContext.PlayerStatistic.Name, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="768" 
+        Icon="..\Resources\Images\player.png" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource bcolorCenter}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>

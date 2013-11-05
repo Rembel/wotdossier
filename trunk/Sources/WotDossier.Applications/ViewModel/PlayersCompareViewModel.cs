@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows;
+using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
@@ -70,6 +71,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnCompare()
         {
+            Mouse.SetCursor(Cursors.Wait);
             if (!string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(SecondName))
             {
                 PlayerSearchJson first = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), FirstName);
@@ -92,6 +94,7 @@ namespace WotDossier.Applications.ViewModel
 
                 CompareStatistic = new CompareStatisticViewModelBase<PlayerStatisticViewModel>(GetPlayerViewModel(stat1), GetPlayerViewModel(stat2));
             }
+            Mouse.SetCursor(Cursors.Arrow);
         }
 
         private StatisticViewModelBase GetPlayerViewModel(PlayerStat stat)

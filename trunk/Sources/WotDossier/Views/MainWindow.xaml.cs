@@ -12,6 +12,7 @@ using Microsoft.Research.DynamicDataDisplay.Charts;
 using Microsoft.Research.DynamicDataDisplay.Charts.Axes;
 using Microsoft.Research.DynamicDataDisplay.Charts.Axes.GenericLocational;
 using WotDossier.Applications.View;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework;
@@ -113,7 +114,7 @@ namespace WotDossier.Views
 
         public string GetTankTypeName(int type)
         {
-            return Resources.Resources.ResourceManager.GetString("TankType_" + (TankType) type);
+            return Resources.Resources.ResourceManager.GetEnumResource((TankType) type);
         }
     }
 
@@ -141,7 +142,7 @@ namespace WotDossier.Views
 
         public string GetCountryName(int type)
         {
-            return Resources.Resources.ResourceManager.GetString("Country_" + (Country)type);
+            return Resources.Resources.ResourceManager.GetEnumResource((Country)type);
         }
     }
 }

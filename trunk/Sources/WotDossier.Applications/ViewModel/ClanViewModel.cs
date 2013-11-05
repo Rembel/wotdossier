@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
@@ -39,7 +40,9 @@ namespace WotDossier.Applications.ViewModel
             ClanMemberModel member = item as ClanMemberModel;
             if (member != null)
             {
+                Mouse.SetCursor(Cursors.Wait);
                 PlayerStat playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), member.Id);
+                Mouse.SetCursor(Cursors.Arrow);
                 if (playerStat != null)
                 {
                     PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<PlayerServerStatisticViewModel>().Value;

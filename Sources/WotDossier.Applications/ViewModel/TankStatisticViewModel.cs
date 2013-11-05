@@ -82,7 +82,7 @@ namespace WotDossier.Applications.ViewModel
         private void SetPeriodTabHeader()
         {
             AppSettings appSettings = SettingsReader.Get();
-            PeriodTabHeader = string.Format(Resources.Resources.ResourceManager.GetString("TabHeader_" + appSettings.PeriodSettings.Period), appSettings.PeriodSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PeriodSettings.PrevDate : appSettings.PeriodSettings.LastNBattles);
+            PeriodTabHeader = Resources.Resources.ResourceManager.GetFormatedEnumResource(appSettings.PeriodSettings.Period, appSettings.PeriodSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PeriodSettings.PrevDate : appSettings.PeriodSettings.LastNBattles);
         }
 
         private void OnShellViewActivated(object sender, RoutedEventArgs e)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.Windows;
+using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
@@ -72,7 +73,9 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnOpenClanCommand(object param)
         {
+            Mouse.SetCursor(Cursors.Wait);
             ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), Clan.Id);
+            Mouse.SetCursor(Cursors.Arrow);
             if (clan != null)
             {
                 ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;

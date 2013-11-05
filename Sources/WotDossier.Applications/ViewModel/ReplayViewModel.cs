@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using WotDossier.Applications.View;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -301,7 +302,7 @@ namespace WotDossier.Applications.ViewModel
                 }
                 return Resources.Resources.Label_Replay_MapMode_Assault;
             }
-            return Resources.Resources.ResourceManager.GetString(String.Format("BattleType_{0}", battleType));
+            return Resources.Resources.ResourceManager.GetEnumResource(battleType);
         }
     }
 }

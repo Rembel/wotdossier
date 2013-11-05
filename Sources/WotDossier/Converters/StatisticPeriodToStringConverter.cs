@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using WotDossier.Common;
 using WotDossier.Domain;
 
 namespace WotDossier.Converters
@@ -23,7 +24,7 @@ namespace WotDossier.Converters
             if (value != null && !string.IsNullOrEmpty(value.ToString()))
             {
                 StatisticPeriod statisticPeriod = (StatisticPeriod)value;
-                return Resources.Resources.ResourceManager.GetString(statisticPeriod.ToString());
+                return Resources.Resources.ResourceManager.GetEnumResource(statisticPeriod);
             }
             return "N/A";
         }

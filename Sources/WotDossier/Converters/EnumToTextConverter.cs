@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using WotDossier.Common;
 
 namespace WotDossier.Converters
 {
@@ -18,7 +19,7 @@ namespace WotDossier.Converters
                 bool b = value is Enum;
                 if (b)
                 {
-                    return Resources.Resources.ResourceManager.GetString(string.Format("{0}_{1}", value.GetType().Name, value));
+                    return Resources.Resources.ResourceManager.GetEnumResource((Enum)value);
                 }
             }
             return "-res not found-";

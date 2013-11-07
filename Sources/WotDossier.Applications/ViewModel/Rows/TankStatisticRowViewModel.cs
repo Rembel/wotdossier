@@ -155,7 +155,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             set { _lastBattle = value; }
         }
 
-        public TimeSpan PlayTime { get; set; }
         public TimeSpan AverageBattleTime { get; set; }
         #endregion
 

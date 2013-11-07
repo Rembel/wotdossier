@@ -1692,6 +1692,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battles per day.
+        /// </summary>
+        public static string Common_BattlesPerDay {
+            get {
+                return ResourceManager.GetString("Common_BattlesPerDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battles Survived:.
         /// </summary>
         public static string Common_BattlesSurvived {
@@ -1868,6 +1877,15 @@ namespace WotDossier.Resources {
         public static string Common_OverallResults {
             get {
                 return ResourceManager.GetString("Common_OverallResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play time.
+        /// </summary>
+        public static string Common_PlayTime {
+            get {
+                return ResourceManager.GetString("Common_PlayTime", resourceCulture);
             }
         }
         

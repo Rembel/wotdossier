@@ -22,6 +22,8 @@ namespace WotDossier.Applications.ViewModel
         public int CapturePoints { get; set; }
         public int DroppedCapturePoints { get; set; }
 
+        public TimeSpan PlayTime { get; set; }
+
         public double Tier { get; set; }
 
         public double KillDeathRatio

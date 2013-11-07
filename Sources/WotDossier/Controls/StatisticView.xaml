@@ -186,8 +186,10 @@
             <controls:StatisticRow Header="{x:Static Resources:Resources.Common_AverageTier}" Value="{Binding Tier, StringFormat='0.00'}" Delta="{Binding TierDelta, StringFormat='+0.00;-0.00;0.00'}" 
                                    DeltaForeground="{Binding TierDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" />
             <!--BattlesPerDay-->
-            <controls:StatisticRow Header="Боев в день" Value="{Binding BattlesPerDay}"/>
+            <controls:StatisticRow Header="{x:Static Resources:Resources.Common_BattlesPerDay}" Value="{Binding BattlesPerDay}"/>
             <!--<TextBlock Foreground="{Binding BattlesPerDayDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="32" Grid.Column="2" Text="{Binding BattlesPerDayDelta, StringFormat='+0.00;-0.00;0.00'}"></TextBlock>-->
+            <!--TimeSpend-->
+            <!--<controls:StatisticRow Header="{x:Static Resources:Resources.Common_PlayTime}" Value="{Binding PlayTime}"/>-->
         </StackPanel>
 
     </Grid>

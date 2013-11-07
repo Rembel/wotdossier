@@ -9,6 +9,7 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+             xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="900">
     <Grid Background="{StaticResource bcolorCenter}">
@@ -100,7 +101,8 @@
                                 </d3:PieChart>
                             </d3:ViewportUIContainer>
                         </d3:ChartPlotter>
-                        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" MinHeight="100" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" MinHeight="100" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" 
+                                  ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False" controls1:DataGridBehavior.DisplayRowNumber="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

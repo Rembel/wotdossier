@@ -27,6 +27,7 @@ namespace WotDossier.Applications.ViewModel
             currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
             currentStatisticViewModel.WN8Rating = GetWN8Rating(currentStatisticViewModel, tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
+            currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
 
             if (playerData.Clan != null)
             {
@@ -74,10 +75,13 @@ namespace WotDossier.Applications.ViewModel
         {
             int battlesCount88 = playerStatistic.BattlesCount - tanks.Sum(x => x.A15x15.battlesCountBefore8_8 != 0 ? x.A15x15.battlesCountBefore8_8 : x.A15x15.battlesCount);
             int xp88 = tanks.Sum(x => x.A15x15.originalXP);
-            double avgXP88 = xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1);
+            double avgXp88 = Math.Round(xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1), 0);
+            double wins = Math.Round(playerStatistic.Wins / (double)playerStatistic.BattlesCount, 2);
+            double survive = Math.Round(playerStatistic.SurvivedBattles / (double)playerStatistic.BattlesCount, 2);
+            double hit = Math.Round(playerStatistic.HitsPercents / 100.0, 2);
+            double avgDamageDealt = Math.Round(playerStatistic.AvgDamageDealt, 0);
 
-            double rbr = RatingHelper.RatingWG(playerStatistic.BattlesCount, battlesCount88, playerStatistic.Wins / (double)playerStatistic.BattlesCount,
-                playerStatistic.SurvivedBattles / (double)playerStatistic.BattlesCount, playerStatistic.HitsPercents / 100.0, playerStatistic.AvgDamageDealt, avgXP88);
+            double rbr = RatingHelper.RatingWG(playerStatistic.BattlesCount, battlesCount88, wins, survive, hit, avgDamageDealt, avgXp88);
             return rbr;
         }
 

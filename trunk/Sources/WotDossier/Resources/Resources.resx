@@ -1511,4 +1511,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Country_Japan" xml:space="preserve">
     <value>Japan</value>
   </data>
+  <data name="Common_BattlesPerDay" xml:space="preserve">
+    <value>Battles per day</value>
+  </data>
+  <data name="Common_PlayTime" xml:space="preserve">
+    <value>Play time</value>
+  </data>
 </root>

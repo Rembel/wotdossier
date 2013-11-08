@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Reflection;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Replay
 {
     public class ReplaysFilterViewModel : INotifyPropertyChanged
     {

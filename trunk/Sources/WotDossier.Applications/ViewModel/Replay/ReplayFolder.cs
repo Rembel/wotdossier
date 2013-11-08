@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Xml.Serialization;
 using System.Linq;
+using System.Xml.Serialization;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Replay
 {
     [Serializable]
     [XmlRoot("folder")]

@@ -18,6 +18,7 @@ using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -753,7 +754,7 @@ namespace WotDossier.Applications.ViewModel
                     MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
+                Domain.Replay.Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
                 if (replay != null && replay.datablock_battle_result != null && replay.CommandResult != null)
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
@@ -957,7 +958,7 @@ namespace WotDossier.Applications.ViewModel
                             int index = 0;
                             foreach (FileInfo replay in replays)
                             {
-                                Replay data = WotApiClient.Instance.ReadReplay2Blocks(replay);
+                                Domain.Replay.Replay data = WotApiClient.Instance.ReadReplay2Blocks(replay);
                                 if (data != null)
                                 {
                                     replayFiles.Add(new ReplayFile(replay, data, replayFolder.Id));

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WotDossier.Domain.Replay;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Replay
 {
     public class CombatTarget
     {

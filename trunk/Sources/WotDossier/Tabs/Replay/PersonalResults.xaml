@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
-             xmlns:viewModel="clr-namespace:WotDossier.Applications.ViewModel;assembly=WotDossier.Applications"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:replay="clr-namespace:WotDossier.Applications.ViewModel.Replay;assembly=WotDossier.Applications"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="965">
     <UserControl.Resources>
@@ -125,26 +125,26 @@
         </DataTemplate>
         <Style TargetType="Image" x:Key="FinalStatisticLineWinStyle">
             <Style.Triggers>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Victory}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Victory}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Defeat}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Defeat}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linelose.png" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Draw}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linedraw.png" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="Image" x:Key="FinalStatisticPicWinStyle">
             <Style.Triggers>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Victory}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Victory}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.jpg" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Defeat}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Defeat}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.jpg" />
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="{x:Static viewModel:BattleStatus.Draw}">
+                <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Draw}">
                     <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picdraw.jpg" />
                 </DataTrigger>
             </Style.Triggers>

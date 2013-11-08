@@ -62,7 +62,7 @@
                 <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch"></tabs:CommonTabNew>
             </TabItem>
             <!--Charts-->
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
+            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
                 <TabControl HorizontalAlignment="Center" Margin="0,50,0,50">
                     <TabControl.Resources>
                         <Style TargetType="TabPanel">

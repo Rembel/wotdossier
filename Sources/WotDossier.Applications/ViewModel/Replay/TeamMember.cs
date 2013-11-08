@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
-using System.Linq;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Replay
 {
     public class TeamMember
     {

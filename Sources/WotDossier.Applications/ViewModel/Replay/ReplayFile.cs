@@ -5,14 +5,13 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using WotDossier.Applications.ViewModel;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 
-namespace WotDossier.Applications
+namespace WotDossier.Applications.ViewModel.Replay
 {
     public class ReplayFile : INotifyPropertyChanged
     {
@@ -63,7 +62,7 @@ namespace WotDossier.Applications
             }
         }
 
-        public ReplayFile(FileInfo replayFileInfo, Replay replay, Guid folderId)
+        public ReplayFile(FileInfo replayFileInfo, Domain.Replay.Replay replay, Guid folderId)
         {
             FolderId = folderId;
 

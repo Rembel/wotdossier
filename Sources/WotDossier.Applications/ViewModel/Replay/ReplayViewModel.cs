@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -8,10 +9,9 @@ using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework.Applications;
-using System.Linq;
 using WotDossier.Framework.Forms.Commands;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Replay
 {
     [PartCreationPolicy(CreationPolicy.NonShared)]
     [Export(typeof (ReplayViewModel))]
@@ -22,7 +22,7 @@ namespace WotDossier.Applications.ViewModel
         private TeamMember _alienTeamMember;
         private TeamMember _ourTeamMember;
 
-        public Replay Replay { get; set; }
+        public Domain.Replay.Replay Replay { get; set; }
 
         public List<CombatTarget> CombatEffects { get; set; }
 
@@ -164,7 +164,7 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Show();
         }
 
-        public bool Init(Replay replay, ReplayFile replayFile)
+        public bool Init(Domain.Replay.Replay replay, ReplayFile replayFile)
         {
             Replay = replay;
             
@@ -253,7 +253,7 @@ namespace WotDossier.Applications.ViewModel
             return false;
         }
 
-        private static int GetAutoEquipCost(Replay replay)
+        private static int GetAutoEquipCost(Domain.Replay.Replay replay)
         {
             if (replay.datablock_battle_result.personal.autoEquipCost != null)
             {
@@ -262,7 +262,7 @@ namespace WotDossier.Applications.ViewModel
             return 0;
         }
 
-        private static int GetAutoLoadCost(Replay replay)
+        private static int GetAutoLoadCost(Domain.Replay.Replay replay)
         {
             if (replay.datablock_battle_result.personal.autoLoadCost!= null)
             {

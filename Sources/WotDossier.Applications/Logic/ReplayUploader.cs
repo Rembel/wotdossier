@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using WotDossier.Common;
 using WotDossier.Domain;
 
-namespace WotDossier.Applications
+namespace WotDossier.Applications.Logic
 {
     public class ReplayUploader
     {

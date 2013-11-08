@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
+using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Common;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.Logic
 {
     [Export]
     public class ReplaysManager

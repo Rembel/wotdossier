@@ -6,14 +6,14 @@ using System.Security.Authentication;
 using System.Windows;
 using System.Windows.Input;
 using Common.Logging;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.Applications;
-using WotDossier.Framework.Forms;
 using WotDossier.Framework.Forms.Commands;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Replay
 {
     [PartCreationPolicy(CreationPolicy.NonShared)]
     [Export(typeof (UploadReplayViewModel))]

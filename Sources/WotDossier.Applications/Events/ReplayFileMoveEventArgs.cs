@@ -1,4 +1,4 @@
-﻿using WotDossier.Applications.ViewModel;
+﻿using WotDossier.Applications.ViewModel.Replay;
 
 namespace WotDossier.Applications.Events
 {

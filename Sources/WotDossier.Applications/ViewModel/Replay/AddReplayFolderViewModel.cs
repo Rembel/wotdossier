@@ -2,9 +2,8 @@
 using System.IO;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
-using WotDossier.Domain;
+using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Framework.Applications;
-using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel

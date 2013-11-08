@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using WotDossier.Applications;
 using WotDossier.Applications.Events;
-using WotDossier.Applications.ViewModel;
+using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier.Tabs

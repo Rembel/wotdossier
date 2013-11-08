@@ -1323,6 +1323,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Respawn.
+        /// </summary>
+        public static string Column_Respawn {
+            get {
+                return ResourceManager.GetString("Column_Respawn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invincible Longest.
         /// </summary>
         public static string Column_Series_InvincibleLongest {

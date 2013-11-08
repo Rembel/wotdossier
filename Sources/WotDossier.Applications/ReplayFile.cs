@@ -45,6 +45,7 @@ namespace WotDossier.Applications
         public int DamageReceived { get; set; }
         public int DamageDealt { get; set; }
         public int Credits { get; set; }
+        public int Team { get; set; }
         
         public FileInfo FileInfo { get; set; }
         public TankDescription Tank { get; set; }
@@ -124,6 +125,7 @@ namespace WotDossier.Applications
                 }
 
                 TeamMembers = replay.datablock_1.vehicles.Values.ToList();
+                Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
             }
         }
 

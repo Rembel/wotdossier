@@ -251,7 +251,7 @@
 В среднем обнаружено: {1:0.00}</value>
   </data>
   <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
-    <value>Последние N боев</value>
+    <value>Результаты последних {0} боев</value>
   </data>
   <data name="ErrorMsg_ErrorOnFilesDeletion" xml:space="preserve">
     <value>Произошла ошибка при удалении одного или нескольких файлов, проверьте что у вас есть необходимые права на совершение операции</value>
@@ -357,5 +357,8 @@
   </data>
   <data name="BattleType_Tutorial" xml:space="preserve">
     <value>Обучающий бой</value>
+  </data>
+  <data name="StatisticPeriod_LastNBattles_ComboItem" xml:space="preserve">
+    <value>Последние N боев</value>
   </data>
 </root>

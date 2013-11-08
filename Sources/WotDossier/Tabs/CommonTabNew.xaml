@@ -72,7 +72,7 @@
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <tabs:PeriodTab Grid.Row="0" x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"  DataContext="{Binding PlayerStatistic}"></tabs:PeriodTab>
-                        <d3:ChartPlotter BorderBrush="Transparent" Grid.Row="0" Grid.Column="1" Name="Chart4" Width="200" Height="200" Margin="20" HorizontalAlignment="Center" 
+                        <d3:ChartPlotter DataContext="{Binding ChartView}" BorderBrush="Transparent" Grid.Row="0" Grid.Column="1" Name="Chart4" Width="200" Height="200" Margin="20" HorizontalAlignment="Center" 
                                          MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent" BorderThickness="0">
                             <d3:ViewportUIContainer>
                                 <d3:PieChart Name="PieChart" Width="150" Height="150" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanksDataSource}" 

@@ -344,6 +344,7 @@ namespace WotDossier.Test
         }
 
         [Test]
+        //TODO: move to api 2.0
         public void LoginTest()
         {
             string url = "https://api.worldoftanks.ru/auth/create/api/1.0/?source_token=WG-WoT_Assistant-1.3.2";
@@ -498,12 +499,6 @@ namespace WotDossier.Test
             double TEFF2 = (D2 * Kd + F2 * Kf + S2 * Ks) / (Kd + Kf + Ks) * 1000;
 
             Console.WriteLine(TEFF2);
-        }
-
-        [Test]
-        public void VStatReadTest()
-        {
-            Dictionary<string, VStat> vstat = WotApiClient.Instance.ReadVstat();
         }
 
         [Test]

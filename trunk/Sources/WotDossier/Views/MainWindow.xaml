@@ -184,6 +184,104 @@
                         </ScrollViewer>
                     </TabItem>
                     <TabItem Header="4">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel>
+                                <d3:ChartPlotter x:Name="battlesByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" Visible="0, 0, 6, 2500">
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByType}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis ShowMinorTicks="False" >
+                                        <d3:IntegerAxis.LabelProvider>
+                                            <views:TankTypeLabelProvider />
+                                        </d3:IntegerAxis.LabelProvider>
+                                    </d3:IntegerAxis>
+                                    <d3:BarChart ItemsSource="{Binding BattlesByTypeDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </d3:ChartPlotter>
+
+                                <d3:ChartPlotter x:Name="battlesByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" Visible="0, 0, 11, 2500">
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis ShowMinorTicks="False" />
+                                    <d3:BarChart ItemsSource="{Binding BattlesByTierDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </d3:ChartPlotter>
+
+                                <d3:ChartPlotter x:Name="battlesByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" Visible="-1, 0, 7, 2500">
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByCountry}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis ShowMinorTicks="False">
+                                        <d3:IntegerAxis.LabelProvider>
+                                            <views:CountryLabelProvider />
+                                        </d3:IntegerAxis.LabelProvider>
+                                    </d3:IntegerAxis>
+                                    <d3:BarChart ItemsSource="{Binding BattlesByCountryDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </d3:ChartPlotter>
+
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+                    <TabItem Header="5">
                         <StackPanel Orientation="Horizontal">
                             <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
                                                  MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"

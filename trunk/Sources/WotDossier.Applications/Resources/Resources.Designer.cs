@@ -572,11 +572,20 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last N Battles.
+        ///   Looks up a localized string similar to Last {0} Battles results.
         /// </summary>
         internal static string StatisticPeriod_LastNBattles {
             get {
                 return ResourceManager.GetString("StatisticPeriod_LastNBattles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last {0} Battles results.
+        /// </summary>
+        internal static string StatisticPeriod_LastNBattles_ComboItem {
+            get {
+                return ResourceManager.GetString("StatisticPeriod_LastNBattles_ComboItem", resourceCulture);
             }
         }
         

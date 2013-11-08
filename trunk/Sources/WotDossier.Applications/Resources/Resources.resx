@@ -251,7 +251,7 @@ Avg XP: {1:0.00}</value>
 Avg Spotted: {1:0.00}</value>
   </data>
   <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
-    <value>Last N Battles</value>
+    <value>Last {0} Battles results</value>
   </data>
   <data name="ErrorMsg_ErrorOnFilesDeletion" xml:space="preserve">
     <value>Error on file deletion, please check your access rights</value>
@@ -357,5 +357,8 @@ Avg Spotted: {1:0.00}</value>
   </data>
   <data name="BattleType_Tutorial" xml:space="preserve">
     <value>Tutorial</value>
+  </data>
+  <data name="StatisticPeriod_LastNBattles_ComboItem" xml:space="preserve">
+    <value>Last {0} Battles results</value>
   </data>
 </root>

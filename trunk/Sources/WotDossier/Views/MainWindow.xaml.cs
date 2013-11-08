@@ -32,6 +32,9 @@ namespace WotDossier.Views
             ConfigureChart(EByTier);
             ConfigureChart(EByType);
             ConfigureChart(EByCountry);
+            ConfigureChart(battlesByTier);
+            ConfigureChart(battlesByType);
+            ConfigureChart(battlesByCountry);
             ConfigureChart(BattlesCountByMap);
             ConfigureChart(BattlesWinPercentByMap);
 

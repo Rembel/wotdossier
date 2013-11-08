@@ -176,9 +176,13 @@ namespace WotDossier.Applications.ViewModel
         private EnumerableDataSource<DataPoint> _survivePercentDataSource;
         private List<DataPoint> _efficiencyByTierDataSource;
         private List<GenericPoint<string, double>> _efficiencyByTypeDataSource;
+        private List<GenericPoint<string, double>> _efficiencyByCountryDataSource;
+
+        private List<DataPoint> _battlesByTierDataSource;
+        private List<GenericPoint<string, double>> _battlesByTypeDataSource;
+        private List<GenericPoint<string, double>> _battlesByCountryDataSource;
 
         private EnumerableDataSource<DataPoint> _avgSpottedDataSource;
-        private List<GenericPoint<string, double>> _efficiencyByCountryDataSource;
         private List<DataPoint> _replaysByMapDataSource;
         private double _maxMapBattles = 10;
         private double _maxWinReplayPercent = 100;
@@ -285,16 +289,6 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public List<DataPoint> EfficiencyByTierDataSource
-        {
-            get { return _efficiencyByTierDataSource; }
-            set
-            {
-                _efficiencyByTierDataSource = value;
-                RaisePropertyChanged("EfficiencyByTierDataSource");
-            }
-        }
-
         public List<DataPoint> ReplaysByMapDataSource
         {
             get { return _replaysByMapDataSource; }
@@ -315,6 +309,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public List<DataPoint> EfficiencyByTierDataSource
+        {
+            get { return _efficiencyByTierDataSource; }
+            set
+            {
+                _efficiencyByTierDataSource = value;
+                RaisePropertyChanged("EfficiencyByTierDataSource");
+            }
+        }
+
         public List<GenericPoint<string, double>> EfficiencyByTypeDataSource
         {
             get { return _efficiencyByTypeDataSource; }
@@ -332,6 +336,36 @@ namespace WotDossier.Applications.ViewModel
             {
                 _efficiencyByCountryDataSource = value;
                 RaisePropertyChanged("EfficiencyByCountryDataSource");
+            }
+        }
+
+        public List<DataPoint> BattlesByTierDataSource
+        {
+            get { return _battlesByTierDataSource; }
+            set
+            {
+                _battlesByTierDataSource = value;
+                RaisePropertyChanged("BattlesByTierDataSource");
+            }
+        }
+
+        public List<GenericPoint<string, double>> BattlesByTypeDataSource
+        {
+            get { return _battlesByTypeDataSource; }
+            set
+            {
+                _battlesByTypeDataSource = value;
+                RaisePropertyChanged("BattlesByTypeDataSource");
+            }
+        }
+
+        public List<GenericPoint<string, double>> BattlesByCountryDataSource
+        {
+            get { return _battlesByCountryDataSource; }
+            set
+            {
+                _battlesByCountryDataSource = value;
+                RaisePropertyChanged("BattlesByCountryDataSource");
             }
         }
 
@@ -1022,6 +1056,9 @@ namespace WotDossier.Applications.ViewModel
                 InitEfficiencyByTierChart(_tanks);
                 InitEfficiencyByTypeChart(_tanks);
                 InitEfficiencyByCountryChart(_tanks);
+                InitBattlesByTierChart(_tanks);
+                InitBattlesByTypeChart(_tanks);
+                InitBattlesByCountryChart(_tanks);
                 InitLastUsedTanksChart();
             }
         }
@@ -1088,6 +1125,24 @@ namespace WotDossier.Applications.ViewModel
                 x.Average(y => y.AvgCapturePoints),
                 x.Average(y => y.AvgDroppedCapturePoints))));
             EfficiencyByCountryDataSource = dataSource.ToList();
+        }
+
+        private void InitBattlesByTierChart(List<TankStatisticRowViewModel> statisticViewModels)
+        {
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount)));
+            BattlesByTierDataSource = dataSource.ToList();
+        }
+
+        private void InitBattlesByTypeChart(List<TankStatisticRowViewModel> statisticViewModels)
+        {
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount)));
+            BattlesByTypeDataSource = dataSource.ToList();
+        }
+
+        private void InitBattlesByCountryChart(List<TankStatisticRowViewModel> statisticViewModels)
+        {
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount) ));
+            BattlesByCountryDataSource = dataSource.ToList();
         }
 
         private void InitSurvivePercentChart(List<PlayerStatisticViewModel> statisticViewModels)

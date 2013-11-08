@@ -499,7 +499,11 @@ namespace WotDossier.Dal
         /// Searches the player.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        /// <returns>First found player</returns>
+        /// <param name="playerName">Name of the player.</param>
+        /// <param name="limit">The limit.</param>
+        /// <returns>
+        /// Found players
+        /// </returns>
         public List<PlayerSearchJson> SearchPlayer(AppSettings settings, string playerName, int limit)
         {
 #if DEBUG
@@ -512,7 +516,7 @@ namespace WotDossier.Dal
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
-                string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerName, 1);
+                string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerName, limit);
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
                 request.ContentLength = encodedBytes.Length;
                 Stream newStream = request.GetRequestStream();

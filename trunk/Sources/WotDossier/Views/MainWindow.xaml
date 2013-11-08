@@ -186,8 +186,8 @@
                     <TabItem Header="4">
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                             <StackPanel>
-                                <d3:ChartPlotter x:Name="battlesByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" Visible="0, 0, 6, 2500">
+                                <controls:ChartPlotter x:Name="battlesByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" MaxX="6" MaxY="{Binding MaxBattlesByType}">
                                     <d3:Header>
                                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByType}"></TextBlock>
                                     </d3:Header>
@@ -202,7 +202,7 @@
                                         </d3:BarChart.Resources>
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
-                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                                <Rectangle Width="30" Fill="Gray"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
@@ -216,9 +216,9 @@
                                             </DataTemplate>
                                         </d3:TemplateMarkerGenerator>
                                     </d3:BarChart>
-                                </d3:ChartPlotter>
+                                </controls:ChartPlotter>
 
-                                <d3:ChartPlotter x:Name="battlesByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                <controls:ChartPlotter x:Name="battlesByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 11, 2500">
                                     <d3:Header>
                                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
@@ -230,7 +230,7 @@
                                         </d3:BarChart.Resources>
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
-                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                                <Rectangle Width="30" Fill="Gray"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
@@ -244,9 +244,9 @@
                                             </DataTemplate>
                                         </d3:TemplateMarkerGenerator>
                                     </d3:BarChart>
-                                </d3:ChartPlotter>
+                                </controls:ChartPlotter>
 
-                                <d3:ChartPlotter x:Name="battlesByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                <controls:ChartPlotter x:Name="battlesByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="-1, 0, 7, 2500">
                                     <d3:Header>
                                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByCountry}"></TextBlock>
@@ -262,7 +262,7 @@
                                         </d3:BarChart.Resources>
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
-                                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                                <Rectangle Width="30" Fill="Gray"
 								               d3:ViewportPanel.Y="0" 
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
@@ -276,7 +276,7 @@
                                             </DataTemplate>
                                         </d3:TemplateMarkerGenerator>
                                     </d3:BarChart>
-                                </d3:ChartPlotter>
+                                </controls:ChartPlotter>
 
                             </StackPanel>
                         </ScrollViewer>

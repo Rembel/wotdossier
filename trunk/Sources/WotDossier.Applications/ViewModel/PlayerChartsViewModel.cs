@@ -35,6 +35,7 @@ namespace WotDossier.Applications.ViewModel
         private double _maxMapBattles = 10;
         private double _maxWinReplayPercent = 100;
         private List<DataPoint> _winReplaysPercentByMapDataSource;
+        private double _maxBattlesByType;
 
         public List<SellInfo> LastUsedTanksDataSource
         {
@@ -226,6 +227,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public double MaxBattlesByType
+        {
+            get { return _maxBattlesByType; }
+            set
+            {
+                _maxBattlesByType = value;
+                RaisePropertyChanged("MaxBattlesByType");
+            }
+        }
+
         public void InitBattlesByMapChart(IEnumerable<ReplayFile> list)
         {
             List<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
@@ -300,6 +311,8 @@ namespace WotDossier.Applications.ViewModel
         {
             IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount)));
             BattlesByTypeDataSource = dataSource.ToList();
+            double max = dataSource.Max(x => x.Y);
+            MaxBattlesByType = max*1.2;
         }
 
         private void InitBattlesByCountryChart(List<TankStatisticRowViewModel> statisticViewModels)

@@ -161,25 +161,25 @@
                                    Delta="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                    ValueForeground="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}"/>
+            <!--WN8-->
+            <controls:StatisticRow Header="WN8" Value="{Binding WN8Rating, StringFormat='### ### ### ###.0'}"/>
             <!--KievArmorRating-->
             <controls:StatisticRow Header="{x:Static Resources:Resources.Common_KievArmorRating}" Value="{Binding KievArmorRating, StringFormat='### ### ### ###'}"
                                    Delta="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                    ValueForeground="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}"/>
+            <!--Noobmeter Performance Rating-->
+            <controls:StatisticRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" Value="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"
+                                   ValueForeground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}"/>
             <!--XVM-->
             <controls:StatisticRow Header="XVM" Value="{Binding XEFF, StringFormat='0.0'}"
                                    Delta="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding XvmRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                    ValueForeground="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}"/>
-            <!--Noobmeter Performance Rating-->
-            <controls:StatisticRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" Value="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"
-                                   ValueForeground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}"/>
             <!--wot-noobs rating-->
             <!--<TextBlock Foreground="#BABFBA" Grid.Row="30" Grid.Column="0" Text="{x:Static Resources:Resources.Common_WotNoobsRating}"></TextBlock>
                 <TextBlock Foreground="{Binding Path=NoobRating, Converter={x:Static Converters:NoobRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="1" Text="{Binding NoobRating, StringFormat='0.000'}"></TextBlock>
                 <TextBlock Foreground="{Binding NoobRatingDelta, Converter={x:Static Converters:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="2" Text="{Binding NoobRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
-            <!--WN8-->
-            <controls:StatisticRow Header="WN8" Value="{Binding WN8Rating, StringFormat='### ### ### ###.0'}"/>
             <!--Rating WG-->
             <controls:StatisticRow Header="{x:Static Resources:Resources.Common_WGRating}" Value="{Binding RBR, StringFormat='### ### ### ###.0'}"/>
             <!--AverageTier-->
@@ -191,6 +191,5 @@
             <!--TimeSpend-->
             <!--<controls:StatisticRow Header="{x:Static Resources:Resources.Common_PlayTime}" Value="{Binding PlayTime}"/>-->
         </StackPanel>
-
     </Grid>
 </UserControl>

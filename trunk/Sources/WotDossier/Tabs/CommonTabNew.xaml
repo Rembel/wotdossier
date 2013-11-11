@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*" MinWidth="0"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="{StaticResource bcolorLeft}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>
-        <TabControl Grid.Column="1" Background="Transparent" Margin="40" BorderThickness="0">
+        <TabControl Grid.Column="1" Background="Transparent" Margin="0,30,0,0" BorderThickness="0">
             <TabControl.Resources>
                 <Style TargetType="TabPanel">
                     <Setter Property="HorizontalAlignment" Value="Center"/>

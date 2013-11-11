@@ -189,7 +189,7 @@
                                 <controls:ChartPlotter x:Name="battlesByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" MaxX="6" MaxY="{Binding MaxBattlesByType}">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByType}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByType}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis ShowMinorTicks="False" >
                                         <d3:IntegerAxis.LabelProvider>
@@ -219,9 +219,9 @@
                                 </controls:ChartPlotter>
 
                                 <controls:ChartPlotter x:Name="battlesByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" Visible="0, 0, 11, 2500">
+                                      Margin="20,10,20,10" MaxX="11"  MaxY="{Binding MaxBattlesByTier}">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByTier}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis ShowMinorTicks="False" />
                                     <d3:BarChart ItemsSource="{Binding BattlesByTierDataSource}">
@@ -247,9 +247,9 @@
                                 </controls:ChartPlotter>
 
                                 <controls:ChartPlotter x:Name="battlesByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" Visible="-1, 0, 7, 2500">
+                                      Margin="20,10,20,10" MaxX="7"  MaxY="{Binding MaxBattlesByCountry}">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByCountry}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByCountry}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis ShowMinorTicks="False">
                                         <d3:IntegerAxis.LabelProvider>

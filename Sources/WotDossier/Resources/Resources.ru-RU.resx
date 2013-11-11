@@ -1702,10 +1702,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Common_PlayTime" xml:space="preserve">
     <value>Время в игре</value>
   </data>
-  <data name="Common_BattlesPerDay" xml:space="preserve">
-    <value>Battles per day</value>
-  </data>
   <data name="Column_Respawn" xml:space="preserve">
     <value>Респаун</value>
+  </data>
+  <data name="Chart_BattlesByCountry" xml:space="preserve">
+    <value>Боев по нациям</value>
+  </data>
+  <data name="Chart_BattlesByTier" xml:space="preserve">
+    <value>Боев по уровням</value>
+  </data>
+  <data name="Chart_BattlesByType" xml:space="preserve">
+    <value>Боев по типам техники</value>
   </data>
 </root>

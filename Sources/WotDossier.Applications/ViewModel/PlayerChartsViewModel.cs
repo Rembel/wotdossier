@@ -36,6 +36,8 @@ namespace WotDossier.Applications.ViewModel
         private double _maxWinReplayPercent = 100;
         private List<DataPoint> _winReplaysPercentByMapDataSource;
         private double _maxBattlesByType;
+        private double _maxBattlesByTier;
+        private double _maxBattlesByCountry;
 
         public List<SellInfo> LastUsedTanksDataSource
         {
@@ -237,6 +239,26 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public double MaxBattlesByTier
+        {
+            get { return _maxBattlesByTier; }
+            set
+            {
+                _maxBattlesByTier = value;
+                RaisePropertyChanged("MaxBattlesByTier");
+            }
+        }
+
+        public double MaxBattlesByCountry
+        {
+            get { return _maxBattlesByCountry; }
+            set
+            {
+                _maxBattlesByCountry = value;
+                RaisePropertyChanged("MaxBattlesByCountry");
+            }
+        }
+
         public void InitBattlesByMapChart(IEnumerable<ReplayFile> list)
         {
             List<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
@@ -305,6 +327,8 @@ namespace WotDossier.Applications.ViewModel
         {
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount)));
             BattlesByTierDataSource = dataSource.ToList();
+            double max = dataSource.Max(x => x.Y);
+            MaxBattlesByTier = max * 1.2;
         }
 
         private void InitBattlesByTypeChart(List<TankStatisticRowViewModel> statisticViewModels)
@@ -319,6 +343,8 @@ namespace WotDossier.Applications.ViewModel
         {
             IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount)));
             BattlesByCountryDataSource = dataSource.ToList();
+            double max = dataSource.Max(x => x.Y);
+            MaxBattlesByCountry = max * 1.2;
         }
 
         private void InitSurvivePercentChart(List<PlayerStatisticViewModel> statisticViewModels)

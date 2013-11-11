@@ -161,6 +161,33 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battles by country.
+        /// </summary>
+        public static string Chart_BattlesByCountry {
+            get {
+                return ResourceManager.GetString("Chart_BattlesByCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles by Tier.
+        /// </summary>
+        public static string Chart_BattlesByTier {
+            get {
+                return ResourceManager.GetString("Chart_BattlesByTier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battles by Type.
+        /// </summary>
+        public static string Chart_BattlesByType {
+            get {
+                return ResourceManager.GetString("Chart_BattlesByType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Efficiency by country.
         /// </summary>
         public static string Chart_EffByCountry {

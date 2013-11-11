@@ -11,8 +11,13 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock  Margin="20" Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" HorizontalAlignment="Center"></TextBlock>
-
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+            <TextBlock Margin="20,0" Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" VerticalAlignment="Center"></TextBlock>
+            <controls:ClanView Margin="20,0" Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}" HorizontalAlignment="Center"
+                                ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                                           Days="{Binding Clan.Days}" Position="{Binding Clan.Role}" Date="{Binding Clan.Since}" Abbreviation="{Binding Clan.Abbreviation}" 
+                                           ClanName="{Binding Clan.Name}" OpenClanCommand="{Binding OpenClanCommand}"/>
+        </StackPanel>
         <TabControl Grid.Row="1" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch">
             <TabControl.Resources>
                 <Style TargetType="TabPanel">
@@ -21,17 +26,7 @@
             </TabControl.Resources>
             <TabItem  Header="{x:Static Resources:Resources.Common_BattlePerformance}">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <Grid Background="{StaticResource bcolorCenter}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <controls:ClanView  Grid.Row="0" Margin="10" Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}" HorizontalAlignment="Center"
-                                ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
-                                           Days="{Binding Clan.Days}" Position="{Binding Clan.Role}" Date="{Binding Clan.Since}" Abbreviation="{Binding Clan.Abbreviation}" 
-                                           ClanName="{Binding Clan.Name}" OpenClanCommand="{Binding OpenClanCommand}"/>
-                        <controls:StatisticView Grid.Row="1" DataContext="{Binding PlayerStatistic}" HorizontalContentAlignment="Center" />
-                    </Grid>
+                        <controls:StatisticView DataContext="{Binding PlayerStatistic}" HorizontalContentAlignment="Center" />
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">

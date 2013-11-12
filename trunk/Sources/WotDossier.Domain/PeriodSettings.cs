@@ -21,13 +21,16 @@ namespace WotDossier.Domain
             set { _period = value; }
         }
 
-        [XmlIgnore]
-        public bool PrevDateSpecified;
-
         public DateTime? PrevDate
         {
             get { return _prevDate; }
             set { _prevDate = value; }
+        }
+
+        [XmlIgnore]
+        public bool PrevDateSpecified
+        {
+            get { return _prevDate != null; }
         }
     }
 }

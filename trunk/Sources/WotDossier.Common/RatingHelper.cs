@@ -99,13 +99,18 @@ def = dropped_capture_points / bc (среднее количество очко�
             double rDef = avgDef / expDef;
             double rWin = avgWinRate / expWinRate;
 
-            double rWiNc = Math.Max(0, (rWin - 0.71) / (1 - 0.71));
-            double rDamagEc = Math.Max(0, (rDamage - 0.22) / (1 - 0.22));
-            double rFraGc = Math.Min(rDamagEc + 0.2, Math.Max(0, (rFrag - 0.12) / (1 - 0.12)));
-            double rSpoTc = Math.Min(rDamagEc + 0.1, Math.Max(0, (rSpot - 0.38) / (1 - 0.38)));
-            double rDeFc = Math.Min(rDamagEc + 0.1, Math.Max(0, (rDef - 0.10) / (1 - 0.10)));
+            return CalcWn8(rWin, rDamage, rFrag, rSpot, rDef);
+        }
 
-            return 980 * rDamagEc + 210 * rDamagEc * rFraGc + 155 * rFraGc * rSpoTc + 75 * rDeFc * rFraGc + 145 * Math.Min(1.8, rWiNc);
+        public static double CalcWn8(double rWin, double rDamage, double rFrag, double rSpot, double rDef)
+        {
+            double rWiNc = Math.Max(0, (rWin - 0.71)/(1 - 0.71));
+            double rDamagEc = Math.Max(0, (rDamage - 0.22)/(1 - 0.22));
+            double rFraGc = Math.Min(rDamagEc + 0.2, Math.Max(0, (rFrag - 0.12)/(1 - 0.12)));
+            double rSpoTc = Math.Min(rDamagEc + 0.1, Math.Max(0, (rSpot - 0.38)/(1 - 0.38)));
+            double rDeFc = Math.Min(rDamagEc + 0.1, Math.Max(0, (rDef - 0.10)/(1 - 0.10)));
+
+            return 980*rDamagEc + 210*rDamagEc*rFraGc + 155*rFraGc*rSpoTc + 75*rDeFc*rFraGc + 145*Math.Min(1.8, rWiNc);
         }
 
         /// <summary>

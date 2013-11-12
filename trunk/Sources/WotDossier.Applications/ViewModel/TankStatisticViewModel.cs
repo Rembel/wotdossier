@@ -111,7 +111,7 @@ namespace WotDossier.Applications.ViewModel
 
             ChartRating.RemoveUserElements();
 
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating));
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.EffRating)).SkipWhile(x => x.Y == 0);
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
@@ -119,7 +119,7 @@ namespace WotDossier.Applications.ViewModel
             ElementPointMarker circlePointMarker = new CircleElementPointMarker { Size = 7, Fill = brush, Brush = brush };
             ChartRating.AddLineGraph(dataSource, lineThickness, circlePointMarker, new PenDescription(Resources.Resources.ChartLegend_ER));
 
-            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
+            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating)).SkipWhile(x => x.Y == 0);
             dataSource = new EnumerableDataSource<DataPoint>(wn6Points) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                                   point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
@@ -135,7 +135,7 @@ namespace WotDossier.Applications.ViewModel
         {
             ChartWinPercent.RemoveUserElements();
 
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent));
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WinsPercent)).SkipWhile(x => x.Y == 0);
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_WinPercent, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };
@@ -150,7 +150,7 @@ namespace WotDossier.Applications.ViewModel
         {
             ChartAvgDamage.RemoveUserElements();
 
-            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgDamageDealt));
+            IEnumerable<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.AvgDamageDealt)).SkipWhile(x => x.Y == 0);
             var dataSource = new EnumerableDataSource<DataPoint>(erPoints) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(Resources.Resources.ChartTooltipFormat_AvgDamage, point.X, point.Y));
             SolidColorBrush brush = new SolidColorBrush { Color = Colors.Blue };

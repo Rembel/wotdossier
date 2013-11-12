@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Windows;
-using Common.Logging;
-using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Player;
 using WotDossier.Framework.Applications;
-using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
@@ -20,24 +16,13 @@ namespace WotDossier.Applications.ViewModel
     public class SettingsViewModel : ViewModel<ISettingsView>
     {
         private readonly DossierRepository _dossierRepository;
-        private static readonly ILog _log = LogManager.GetLogger("ShellViewModel");
-
-        private AppSettings _appSettings;
+        private readonly AppSettings _appSettings;
         private List<string> _servers = new List<string> { "ru", "eu" };
         private List<ListItem<string>> _languages = new List<ListItem<string>>
         {
             new ListItem<string>("ru-RU", Resources.Resources.Language_Russian),
             new ListItem<string>("en-US", Resources.Resources.Language_English),
         };
-        private List<ListItem<StatisticPeriod>> _periods = new List<ListItem<StatisticPeriod>>
-        {
-            new ListItem<StatisticPeriod>(StatisticPeriod.Recent, Resources.Resources.StatisticPeriod_Recent),
-            new ListItem<StatisticPeriod>(StatisticPeriod.LastWeek, Resources.Resources.StatisticPeriod_LastWeek), 
-            new ListItem<StatisticPeriod>(StatisticPeriod.AllObservationPeriod, Resources.Resources.StatisticPeriod_AllObservationPeriod),
-            //new ListItem<StatisticPeriod>(StatisticPeriod.LastNBattles, Resources.Resources.StatisticPeriod_LastNBattles),
-            new ListItem<StatisticPeriod>(StatisticPeriod.Custom, Resources.Resources.StatisticPeriod_Custom)
-        };
-        private List<DateTime> _prevDates;
         private bool _nameChanged;
         public DelegateCommand SaveCommand { get; set; }
 
@@ -66,51 +51,6 @@ namespace WotDossier.Applications.ViewModel
                 AppSettings.PlayerName = value;
                 _nameChanged = true;
             }
-        }
-
-        public List<ListItem<StatisticPeriod>> Periods
-        {
-            get { return _periods; }
-            set { _periods = value; }
-        }
-
-        public List<DateTime> PrevDates
-        {
-            get { return _prevDates; }
-            set { _prevDates = value; }
-        }
-
-        public StatisticPeriod Period
-        {
-            get { return AppSettings.PeriodSettings.Period; }
-            set
-            {
-                AppSettings.PeriodSettings.Period = value;
-                RaisePropertyChanged("LastNBattlesVisible");
-                RaisePropertyChanged("PeriodsVisible");
-            }
-        }
-
-        public bool LastNBattlesVisible
-        {
-            get { return Period == StatisticPeriod.LastNBattles; }
-        }
-
-        public bool PeriodsVisible
-        {
-            get { return Period == StatisticPeriod.Custom; }
-        }
-
-        public int LastNBattles
-        {
-            get { return AppSettings.PeriodSettings.LastNBattles; }
-            set { AppSettings.PeriodSettings.LastNBattles = value; }
-        }
-
-        public DateTime? PrevDate
-        {
-            get { return AppSettings.PeriodSettings.PrevDate; }
-            set { AppSettings.PeriodSettings.PrevDate = value; }
         }
 
         public bool CheckForUpdates
@@ -152,7 +92,7 @@ namespace WotDossier.Applications.ViewModel
         {
             if (_nameChanged)
             {
-                PlayerSearchJson player = null;
+                PlayerSearchJson player;
                 
                 player = WotApiClient.Instance.SearchPlayer(_appSettings, _appSettings.PlayerName);
                 
@@ -171,7 +111,6 @@ namespace WotDossier.Applications.ViewModel
             }
 
             SettingsReader.Save(_appSettings);
-            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate, LastNBattles));
             ViewTyped.Close();
         }
 

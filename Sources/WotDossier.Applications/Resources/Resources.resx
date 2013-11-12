@@ -232,7 +232,7 @@ Win percent: {1:0.00}</value>
     <value>All observation period</value>
   </data>
   <data name="StatisticPeriod_Custom" xml:space="preserve">
-    <value>Custom</value>
+    <value>Results from {0}</value>
   </data>
   <data name="Chart_Tooltip_Survive" xml:space="preserve">
     <value>Battles: {0}
@@ -359,6 +359,9 @@ Avg Spotted: {1:0.00}</value>
     <value>Tutorial</value>
   </data>
   <data name="StatisticPeriod_LastNBattles_ComboItem" xml:space="preserve">
-    <value>Last {0} Battles results</value>
+    <value>Last N Battles</value>
+  </data>
+  <data name="StatisticPeriod_Custom_ComboItem" xml:space="preserve">
+    <value>Custom</value>
   </data>
 </root>

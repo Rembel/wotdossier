@@ -232,7 +232,7 @@
     <value>Весь период</value>
   </data>
   <data name="StatisticPeriod_Custom" xml:space="preserve">
-    <value>Свой</value>
+    <value>Результаты с {0}</value>
   </data>
   <data name="Chart_Tooltip_Survive" xml:space="preserve">
     <value>Боев: {0}
@@ -360,5 +360,8 @@
   </data>
   <data name="StatisticPeriod_LastNBattles_ComboItem" xml:space="preserve">
     <value>Последние N боев</value>
+  </data>
+  <data name="StatisticPeriod_Custom_ComboItem" xml:space="preserve">
+    <value>Свой</value>
   </data>
 </root>

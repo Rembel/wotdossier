@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using WotDossier.Domain;
-using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Foundation;
 
 namespace WotDossier.Applications.ViewModel
@@ -16,7 +15,7 @@ namespace WotDossier.Applications.ViewModel
             new ListItem<StatisticPeriod>(StatisticPeriod.LastWeek, Resources.Resources.StatisticPeriod_LastWeek), 
             new ListItem<StatisticPeriod>(StatisticPeriod.AllObservationPeriod, Resources.Resources.StatisticPeriod_AllObservationPeriod),
             new ListItem<StatisticPeriod>(StatisticPeriod.LastNBattles, Resources.Resources.StatisticPeriod_LastNBattles_ComboItem),
-            new ListItem<StatisticPeriod>(StatisticPeriod.Custom, Resources.Resources.StatisticPeriod_Custom)
+            new ListItem<StatisticPeriod>(StatisticPeriod.Custom, Resources.Resources.StatisticPeriod_Custom_ComboItem)
         };
         private List<DateTime> _prevDates;
 
@@ -93,7 +92,6 @@ namespace WotDossier.Applications.ViewModel
             AppSettings appSettings = SettingsReader.Get();
             appSettings.PeriodSettings = PeriodSettings;
             SettingsReader.Save(appSettings);
-            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(Period, PrevDate, LastNBattles));
         }
 
         /// <summary>

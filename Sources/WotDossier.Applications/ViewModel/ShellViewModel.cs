@@ -144,6 +144,7 @@ namespace WotDossier.Applications.ViewModel
         private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
 
         private string _periodTabHeader;
+        private PeriodSelectorViewModel _periodSelector;
 
         /// <summary>
         /// Gets or sets the period tab header.
@@ -161,11 +162,19 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public PeriodSelectorViewModel PeriodSelector { get; set; }
+        public PeriodSelectorViewModel PeriodSelector
+        {
+            get { return _periodSelector; }
+            set
+            {
+                _periodSelector = value;
+                RaisePropertyChanged("PeriodSelector");
+            }
+        }
 
         public PlayerChartsViewModel ChartView { get; set; }
 
-public List<TankStatisticRowViewModel> LastUsedTanksList
+        public List<TankStatisticRowViewModel> LastUsedTanksList
         {
             get
             {
@@ -250,6 +259,7 @@ public List<TankStatisticRowViewModel> LastUsedTanksList
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
             ProgressView = new ProgressControlViewModel();
             PeriodSelector = new PeriodSelectorViewModel();
+
             ChartView = new PlayerChartsViewModel();
 
             SetPeriodTabHeader();
@@ -483,6 +493,7 @@ public List<TankStatisticRowViewModel> LastUsedTanksList
 
                 viewModel.Show();
 
+                //restore settings
                 if (appSettings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
                 {
                     EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()
@@ -526,18 +537,12 @@ public List<TankStatisticRowViewModel> LastUsedTanksList
         private void OnSettings()
         {
             SettingsViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<SettingsViewModel>().Value;
-            viewModel.PrevDates = GetPreviousDates() ?? new List<DateTime>();
             viewModel.Show();
         }
 
-        private List<DateTime> GetPreviousDates()
+        private List<DateTime> GetPreviousDates(PlayerStatisticViewModel playerStatisticViewModel)
         {
-            List<DateTime> list = null;
-            if (PlayerStatistic != null)
-            {
-                list = PlayerStatistic.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
-            }
-            return list;
+            return playerStatisticViewModel.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
         }
 
         private void OnDeleteFolderCommand(ReplayFolder folder)
@@ -605,7 +610,10 @@ public List<TankStatisticRowViewModel> LastUsedTanksList
 
                                 PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanksV2);
 
-                                PeriodSelector.PrevDates = GetPreviousDates();
+                                //init previous dates list
+                                PeriodSelector.PropertyChanged -= PeriodSelectorOnPropertyChanged;
+                                PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
+                                PeriodSelector.PropertyChanged += PeriodSelectorOnPropertyChanged;
 
                                 ProgressView.Report(bw, 25, string.Empty);
 
@@ -624,6 +632,12 @@ public List<TankStatisticRowViewModel> LastUsedTanksList
                                 SessionStatistic = clone;
 
                                 InitTanksStatistic(tanksV2);
+
+                                //trick for set "N last battles period"
+                                if (settings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
+                                {
+                                    PeriodSelectorOnPropertyChanged(null, null);
+                                }
 
                                 ProgressView.Report(bw, 50, string.Empty);
 
@@ -645,6 +659,13 @@ public List<TankStatisticRowViewModel> LastUsedTanksList
 
                     LoadReplaysList();
                 });
+        }
+
+        private void PeriodSelectorOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            AppSettings settings = SettingsReader.Get();
+            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(settings.PeriodSettings.Period,
+                    settings.PeriodSettings.PrevDate, settings.PeriodSettings.LastNBattles));
         }
 
         private static void SetUICulture()

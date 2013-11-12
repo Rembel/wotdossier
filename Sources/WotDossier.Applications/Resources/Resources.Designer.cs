@@ -563,11 +563,20 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Custom.
+        ///   Looks up a localized string similar to Results from {0}.
         /// </summary>
         internal static string StatisticPeriod_Custom {
             get {
                 return ResourceManager.GetString("StatisticPeriod_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        internal static string StatisticPeriod_Custom_ComboItem {
+            get {
+                return ResourceManager.GetString("StatisticPeriod_Custom_ComboItem", resourceCulture);
             }
         }
         
@@ -581,7 +590,7 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last {0} Battles results.
+        ///   Looks up a localized string similar to Last N Battles.
         /// </summary>
         internal static string StatisticPeriod_LastNBattles_ComboItem {
             get {

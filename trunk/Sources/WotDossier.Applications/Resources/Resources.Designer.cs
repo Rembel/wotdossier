@@ -786,5 +786,14 @@ namespace WotDossier.Applications.Resources {
                 return ResourceManager.GetString("WindowCaption_Warning", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        internal static string WondowCaption_Export {
+            get {
+                return ResourceManager.GetString("WondowCaption_Export", resourceCulture);
+            }
+        }
     }
 }

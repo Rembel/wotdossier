@@ -16,6 +16,7 @@ using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
+using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Replay;
@@ -206,6 +207,7 @@ namespace WotDossier.Applications.ViewModel
 
         public DelegateCommand<object> OpenClanCommand { get; set; }
         public DelegateCommand CompareCommand { get; set; }
+        public DelegateCommand ExportToCsvCommand { get; set; }
         public DelegateCommand SearchPlayersCommand { get; set; }
         public DelegateCommand SearchClansCommand { get; set; }
 
@@ -244,6 +246,7 @@ namespace WotDossier.Applications.ViewModel
 
             OpenClanCommand = new DelegateCommand<object>(OnOpenClanCommand);
             CompareCommand = new DelegateCommand(OnCompare);
+            ExportToCsvCommand = new DelegateCommand(OnExportToCsv);
             SearchPlayersCommand = new DelegateCommand(OnSearchPlayers);
             SearchClansCommand = new DelegateCommand(OnSearchClans);
 
@@ -265,6 +268,26 @@ namespace WotDossier.Applications.ViewModel
             SetPeriodTabHeader();
 
             ViewTyped.Closing += ViewTypedOnClosing;
+        }
+
+        private void OnExportToCsv()
+        {
+            CsvExportProvider provider = new CsvExportProvider();
+            provider.Export(_tanks, new List<Type>
+            {
+                typeof(ITankRowBase),
+                typeof(ITankRowXP),
+                typeof(ITankRowBattles),
+                typeof(ITankRowFrags),
+                typeof(ITankRowDamage),
+                typeof(ITankRowBattleAwards),
+                typeof(ITankRowSpecialAwards),
+                typeof(ITankRowSeries),
+                typeof(ITankRowMedals),
+                typeof(ITankRowEpic),
+                typeof(ITankRowTime),
+                typeof(ITankRowPerformance)
+            });
         }
 
         private void OnSearchClans()

@@ -1,6 +1,6 @@
 ﻿namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface IRowSpecialAwards
+    public interface ITankRowSpecialAwards
     {
         int Kamikaze { get; set; }
         int Raider { get; set; }

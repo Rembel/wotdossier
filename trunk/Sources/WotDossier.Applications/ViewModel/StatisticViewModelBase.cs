@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
-using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public abstract class StatisticViewModelBase : IRating, IRowBattleAwards, IRowEpicAwards, IRowSpecialAwards, IRowMedals, IRowSeries, INotifyPropertyChanged
+    public abstract class StatisticViewModelBase : INotifyPropertyChanged
     {
         public int BattlesCount { get; set; }
         public int Wins { get; set; }

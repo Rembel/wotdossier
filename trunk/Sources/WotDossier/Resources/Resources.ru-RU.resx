@@ -1714,4 +1714,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Chart_BattlesByType" xml:space="preserve">
     <value>Боев по типам техники</value>
   </data>
+  <data name="MenuItem_Export" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="MenuItem_Export_Csv" xml:space="preserve">
+    <value>CSV</value>
+  </data>
 </root>

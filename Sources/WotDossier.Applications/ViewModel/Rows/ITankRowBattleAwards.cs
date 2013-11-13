@@ -1,6 +1,6 @@
 ﻿namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface IRowBattleAwards
+    public interface ITankRowBattleAwards
     {
         int BattleHero { get; set; }
         int Warrior { get; set; }

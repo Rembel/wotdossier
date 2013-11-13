@@ -6,9 +6,9 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TankStatisticRowViewModel : PeriodStatisticViewModel<TankStatisticRowViewModel>, ITankRowBattles, ITankRowDamage, 
-                           ITankRowFrags, ITankRowMasterTanker, ITankRowPerformance, ITankRowRatings, 
-                           ITankRowTime, ITankRowXP, ITankFilterable
+    public class TankStatisticRowViewModel : PeriodStatisticViewModel<TankStatisticRowViewModel>, 
+        ITankRowBattles, ITankRowDamage, ITankRowFrags, ITankRowPerformance, ITankRowRatings, ITankRowTime, ITankRowXP, ITankFilterable, 
+        ITankRowBase, ITankRowBattleAwards, ITankRowEpic, ITankRowSpecialAwards, ITankRowMedals, ITankRowSeries
     {
         private DateTime _lastBattle;
         private IEnumerable<FragsJson> _tankFrags;

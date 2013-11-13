@@ -364,4 +364,7 @@ Avg Spotted: {1:0.00}</value>
   <data name="StatisticPeriod_Custom_ComboItem" xml:space="preserve">
     <value>Custom</value>
   </data>
+  <data name="WondowCaption_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
 </root>

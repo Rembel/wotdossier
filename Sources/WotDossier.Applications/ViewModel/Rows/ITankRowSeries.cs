@@ -1,6 +1,6 @@
 ﻿namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface IRowSeries
+    public interface ITankRowSeries
     {
         int ReaperLongest { get; set; }
         int ReaperProgress { get; set; }

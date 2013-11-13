@@ -16,9 +16,11 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Logic;
+using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
@@ -26,6 +28,7 @@ using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
+using List = NHibernate.Mapping.List;
 
 namespace WotDossier.Test
 {
@@ -657,6 +660,18 @@ namespace WotDossier.Test
                 return a15X15.battlesCount.ToString("D3");
             }
             return "000";
+        }
+
+        [Test]
+        public void CsvExportProviderTest()
+        {
+            CsvExportProvider provider = new CsvExportProvider();
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
+            CacheHelper.BinaryCacheToJson(cacheFile);
+            Thread.Sleep(1000);
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankStatisticRowViewModel> list = tanksV2.Select(x => new TankStatisticRowViewModel(x)).ToList();
+            provider.Export(list, new List<Type>{typeof(ITankRowBattles), typeof(ITankRowFrags)});
         }
     }
 }

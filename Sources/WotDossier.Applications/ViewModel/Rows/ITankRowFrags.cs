@@ -2,7 +2,6 @@
 {
     public interface ITankRowFrags
     {
-        int BattlesCount { get; set; }
         int Frags { get; set; }
         int MaxFrags { get; set; }
         double FragsPerBattle { get; }

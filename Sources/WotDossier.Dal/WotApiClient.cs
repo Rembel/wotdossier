@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using WotDossier.Common;
 using WotDossier.Domain;
 using System.Linq;
+using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Dossier.TankV29;
 using WotDossier.Domain.Dossier.TankV65;
 using WotDossier.Domain.Player;
@@ -100,6 +101,28 @@ namespace WotDossier.Dal
                 }
                 return _instance;
             }
+        }
+
+        public List<TankJson> ReadDossierAppSpotTanks(string data)
+        {
+            List<TankJson> tanks = new List<TankJson>();
+
+            JObject parsedData = JsonConvert.DeserializeObject<JObject>(data);
+
+            JToken tanksData = parsedData["tanks"];
+
+            foreach (JToken jToken in tanksData)
+            {
+                JProperty property = (JProperty)jToken;
+                string raw = property.Value.ToString();
+                Tank appSpotTank = JsonConvert.DeserializeObject<Tank>(raw);
+                TankJson tank = TankJsonV2Converter.Convert(appSpotTank);
+                tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                ExtendPropertiesData(tank);
+                tanks.Add(tank);
+            }
+
+            return tanks;
         }
 
         public List<TankJson> ReadTanksV2(string path)

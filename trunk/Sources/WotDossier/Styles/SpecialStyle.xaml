@@ -48,6 +48,10 @@
             </DataTrigger>
         </Style.Triggers>
     </Style>
+    
+    <Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding WinsPercent, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
+    </Style>
 
     <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" />

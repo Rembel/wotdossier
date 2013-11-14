@@ -43,6 +43,12 @@
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="Dossier\AppSpot\Amounts.cs" />
+    <Compile Include="Dossier\AppSpot\Awards.cs" />
+    <Compile Include="Dossier\AppSpot\Epic.cs" />
+    <Compile Include="Dossier\AppSpot\Medals.cs" />
+    <Compile Include="Dossier\AppSpot\Series.cs" />
+    <Compile Include="Dossier\AppSpot\Tank.cs" />
     <Compile Include="Dossier\TankV29\CommonJson.cs" />
     <Compile Include="Dossier\TankV65\CommonJson.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />

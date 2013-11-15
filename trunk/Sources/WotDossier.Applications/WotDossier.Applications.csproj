@@ -112,6 +112,7 @@
     <Compile Include="ViewModel\ListItem.cs" />
     <Compile Include="ViewModel\PeriodSelectorViewModel.cs" />
     <Compile Include="ViewModel\PlayerChartsViewModel.cs" />
+    <Compile Include="ViewModel\ReplaysViewModel.cs" />
     <Compile Include="ViewModel\Replay\AddReplayFolderViewModel.cs" />
     <Compile Include="ViewModel\Replay\BattleStatus.cs" />
     <Compile Include="ViewModel\Replay\CombatTarget.cs" />

@@ -100,8 +100,6 @@ namespace WotDossier.Framework.Forms.ProgressDialog
 
             _worker.RunWorkerAsync();
 
-            //ShowDialog();
-
             return result;
         }
 
@@ -120,69 +118,69 @@ namespace WotDossier.Framework.Forms.ProgressDialog
             e.Cancel = _isBusy;
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Action operation)
+        public ProgressDialogResult Execute(string label, Action operation)
         {
-            return ExecuteInternal(owner, label, (object)operation, null);
+            return ExecuteInternal(label, operation, null);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Action operation, ProgressDialogSettings settings)
+        public ProgressDialogResult Execute(string label, Action operation, ProgressDialogSettings settings)
         {
-            return ExecuteInternal(owner, label, (object)operation, settings);
+            return ExecuteInternal(label, operation, settings);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Action<BackgroundWorker> operation)
+        public ProgressDialogResult Execute(string label, Action<BackgroundWorker> operation)
         {
-            return ExecuteInternal(owner, label, (object)operation, null);
+            return ExecuteInternal(label, operation, null);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Action<BackgroundWorker> operation, ProgressDialogSettings settings)
+        public ProgressDialogResult Execute(string label, Action<BackgroundWorker> operation, ProgressDialogSettings settings)
         {
-            return ExecuteInternal(owner, label, (object)operation, settings);
+            return ExecuteInternal(label, operation, settings);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Action<BackgroundWorker, DoWorkEventArgs> operation)
+        public ProgressDialogResult Execute(string label, Action<BackgroundWorker, DoWorkEventArgs> operation)
         {
-            return ExecuteInternal(owner, label, (object)operation, null);
+            return ExecuteInternal(label, operation, null);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Action<BackgroundWorker, DoWorkEventArgs> operation, ProgressDialogSettings settings)
+        public ProgressDialogResult Execute(string label, Action<BackgroundWorker, DoWorkEventArgs> operation, ProgressDialogSettings settings)
         {
-            return ExecuteInternal(owner, label, (object)operation, settings);
+            return ExecuteInternal( label, operation, settings);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Func<object> operationWithResult)
+        public ProgressDialogResult Execute(string label, Func<object> operationWithResult)
         {
-            return ExecuteInternal(owner, label, (object)operationWithResult, null);
+            return ExecuteInternal(label, operationWithResult, null);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Func<object> operationWithResult, ProgressDialogSettings settings)
+        public ProgressDialogResult Execute(string label, Func<object> operationWithResult, ProgressDialogSettings settings)
         {
-            return ExecuteInternal(owner, label, (object)operationWithResult, settings);
+            return ExecuteInternal(label, operationWithResult, settings);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Func<BackgroundWorker, object> operationWithResult)
+        public ProgressDialogResult Execute(string label, Func<BackgroundWorker, object> operationWithResult)
         {
-            return ExecuteInternal(owner, label, (object)operationWithResult, null);
+            return ExecuteInternal(label, operationWithResult, null);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Func<BackgroundWorker, object> operationWithResult, ProgressDialogSettings settings)
+        public ProgressDialogResult Execute(string label, Func<BackgroundWorker, object> operationWithResult, ProgressDialogSettings settings)
         {
-            return ExecuteInternal(owner, label, (object)operationWithResult, settings);
+            return ExecuteInternal(label, operationWithResult, settings);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Func<BackgroundWorker, DoWorkEventArgs, object> operationWithResult)
+        public ProgressDialogResult Execute(string label, Func<BackgroundWorker, DoWorkEventArgs, object> operationWithResult)
         {
-            return ExecuteInternal(owner, label, (object)operationWithResult, null);
+            return ExecuteInternal(label, operationWithResult, null);
         }
 
-        public ProgressDialogResult Execute(Window owner, string label, Func<BackgroundWorker, DoWorkEventArgs, object> operationWithResult, ProgressDialogSettings settings)
+        public ProgressDialogResult Execute(string label, Func<BackgroundWorker, DoWorkEventArgs, object> operationWithResult, ProgressDialogSettings settings)
         {
-            return ExecuteInternal(owner, label, (object)operationWithResult, settings);
+            return ExecuteInternal(label, operationWithResult, settings);
         }
 
-        public void Execute(Window owner, string label, Action operation, Action<ProgressDialogResult> successOperation, Action<ProgressDialogResult> failureOperation = null, Action<ProgressDialogResult> cancelledOperation = null)
+        public void Execute(string label, Action operation, Action<ProgressDialogResult> successOperation, Action<ProgressDialogResult> failureOperation = null, Action<ProgressDialogResult> cancelledOperation = null)
         {
-            ProgressDialogResult result = ExecuteInternal(owner, label, operation, null);
+            ProgressDialogResult result = ExecuteInternal(label, operation, null);
 
             if (result.Cancelled && cancelledOperation != null)
                 cancelledOperation(result);
@@ -192,14 +190,8 @@ namespace WotDossier.Framework.Forms.ProgressDialog
                 successOperation(result);
         }
 
-        internal ProgressDialogResult ExecuteInternal(Window owner, string label, object operation, ProgressDialogSettings settings)
+        internal ProgressDialogResult ExecuteInternal(string label, object operation, ProgressDialogSettings settings)
         {
-            //ProgressDialog dialog = new ProgressDialog(settings);
-            //dialog.Owner = owner;
-
-            //if (!string.IsNullOrEmpty(label))
-            //    dialog.Label = label;
-
             return Execute(operation);
         }
 

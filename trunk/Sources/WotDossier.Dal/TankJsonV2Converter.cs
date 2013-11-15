@@ -50,7 +50,6 @@ namespace WotDossier.Dal
             v2.FragsList = tankJson.Kills;
 
             v2.Achievements = new AchievementsJson();
-            v2.Achievements.alaric = tankJson.Special.alaric;
             v2.Achievements.armorPiercer = tankJson.Special.armorPiercer;
             v2.Achievements.battleHeroes = tankJson.Battle.battleHeroes;
             v2.Achievements.beasthunter = tankJson.Special.beasthunter;
@@ -227,7 +226,6 @@ namespace WotDossier.Dal
             v2.FragsList = tankJson.FragsList;
 
             v2.Achievements = new AchievementsJson();
-            v2.Achievements.alaric = tankJson.Achievements.alaric;
             v2.Achievements.armorPiercer = tankJson.Achievements.armorPiercer;
             v2.Achievements.battleHeroes = tankJson.Achievements.battleHeroes;
             v2.Achievements.beasthunter = tankJson.Achievements.beasthunter;
@@ -461,7 +459,6 @@ namespace WotDossier.Dal
             v2.FragsList = tankJson.frag_counts;
 
             v2.Achievements = new AchievementsJson();
-            v2.Achievements.alaric = tankJson.awards.cool_headed;
             v2.Achievements.armorPiercer = tankJson.series.master_gunner;
             v2.Achievements.battleHeroes = tankJson.awards.battle_hero;
             v2.Achievements.beasthunter = tankJson.awards.hunter;

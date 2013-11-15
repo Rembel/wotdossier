@@ -277,7 +277,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             PatrolDuty = tank.Achievements.evileye;
             BrothersInArms = tank.Achievements.medalBrothersInArms;
             CrucialContribution = tank.Achievements.medalCrucialContribution;
-            CoolHeaded = tank.Achievements.alaric;
+            CoolHeaded = tank.Achievements.ironMan;
             LuckyDevil = tank.Achievements.luckyDevil;
             Spartan = tank.Achievements.sturdy;
             Ranger = tank.Achievements.huntsman;

@@ -409,7 +409,7 @@
             </TabItem>
             <!--Replays-->
             <TabItem TabIndex="14" Header="{x:Static Resources:Resources.Tab_Header_Replays}" Name="tabReplays">
-                <tabs:ReplaysTab HorizontalAlignment="Stretch"></tabs:ReplaysTab>
+                <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}"></tabs:ReplaysTab>
             </TabItem>
         </TabControl>
         <StatusBar Grid.Row="3" VerticalAlignment="Bottom" Background="Beige">

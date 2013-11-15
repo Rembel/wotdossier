@@ -812,6 +812,7 @@
     <Resource Include="Resources\Images\Tanks\germany_pziv_hydro.png" />
     <Resource Include="Resources\Images\Tanks\germany_pzv_pziv_ausf_alfa.png" />
     <Resource Include="Resources\Images\Tanks\china_ch01_type59_gold.png" />
+    <Resource Include="Resources\Images\Tanks\china_ch24_type64.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

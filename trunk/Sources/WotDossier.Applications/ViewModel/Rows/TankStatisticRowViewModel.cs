@@ -322,7 +322,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Frags = tank.A15x15.frags;
             MaxFrags = tank.A15x15.maxFrags;
             Tier8Frags = tank.A15x15.frags8p;
-            BeastFrags = tank.A15x15.fragsBeast;
+            BeastFrags = tank.Achievements.fragsBeast;
             SinaiFrags = tank.Achievements.fragsSinai;
             #endregion
 

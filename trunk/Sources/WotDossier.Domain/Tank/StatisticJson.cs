@@ -9,7 +9,6 @@ namespace WotDossier.Domain.Tank
         public int droppedCapturePoints;
         public int frags;
         public int frags8p;
-        public int fragsBeast;
         public int hits;
         public int losses;
         public int shots;

@@ -102,7 +102,7 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
             statistic.Name = playerStat.dataField.nickname;
             statistic.BattlesPerDay = statistic.BattlesCount / (DateTime.Now - statAdapter.Created).Days;
-            if (playerStat.dataField.clan != null && playerStat.dataField.clan != null)
+            if (playerStat.dataField.clan != null && playerStat.dataField.clan != null && playerStat.dataField.clanData != null)
             {
                 Clan = new ClanModel(playerStat.dataField.clanData, playerStat.dataField.clan.role, playerStat.dataField.clan.since);
             }

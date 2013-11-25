@@ -400,7 +400,7 @@ namespace WotDossier.Applications.ViewModel
 
                         if (!string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
                         {
-                            FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName);
+                            FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName, settings.Server);
 
                             if (cacheFile != null)
                             {

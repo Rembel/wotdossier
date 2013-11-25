@@ -1535,4 +1535,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="MenuItem_Export_Csv" xml:space="preserve">
     <value>CSV</value>
   </data>
+  <data name="Btn_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
 </root>

@@ -22,7 +22,6 @@ namespace WotDossier.Dal
             v2.A15x15.droppedCapturePoints = tankJson.Tankdata.droppedCapturePoints;
             v2.A15x15.frags = tankJson.Tankdata.frags;
             v2.A15x15.frags8p = tankJson.Tankdata.frags8p;
-            v2.A15x15.fragsBeast = tankJson.Tankdata.fragsBeast;
             v2.A15x15.hits = tankJson.Tankdata.hits;
             v2.A15x15.losses = tankJson.Tankdata.losses;
             v2.A15x15.shots = tankJson.Tankdata.shots;
@@ -197,7 +196,6 @@ namespace WotDossier.Dal
             v2.A15x15.droppedCapturePoints = tankJson.A15x15.droppedCapturePoints;
             v2.A15x15.frags = tankJson.A15x15.frags;
             v2.A15x15.frags8p = tankJson.A15x15.frags8p;
-            v2.A15x15.fragsBeast = tankJson.A15x15.fragsBeast;
             v2.A15x15.hits = tankJson.A15x15.hits;
             v2.A15x15.losses = tankJson.A15x15.losses;
             v2.A15x15.shots = tankJson.A15x15.shots;
@@ -363,7 +361,6 @@ namespace WotDossier.Dal
                 v2.A7x7.droppedCapturePoints = tankJson.A7x7.droppedCapturePoints;
                 v2.A7x7.frags = tankJson.A7x7.frags;
                 v2.A7x7.frags8p = tankJson.A7x7.frags8p;
-                v2.A7x7.fragsBeast = tankJson.A7x7.fragsBeast;
                 v2.A7x7.hits = tankJson.A7x7.hits;
                 v2.A7x7.losses = tankJson.A7x7.losses;
                 v2.A7x7.shots = tankJson.A7x7.shots;
@@ -431,7 +428,6 @@ namespace WotDossier.Dal
             v2.A15x15.droppedCapturePoints = tankJson.amounts.defence_points;
             v2.A15x15.frags = tankJson.amounts.frags;
             v2.A15x15.frags8p = tankJson.amounts.tier8_frags;
-            v2.A15x15.fragsBeast = tankJson.amounts.beast_frags;
             v2.A15x15.hits = tankJson.amounts.hits;
             v2.A15x15.losses = tankJson.amounts.losses;
             v2.A15x15.shots = tankJson.amounts.shots;

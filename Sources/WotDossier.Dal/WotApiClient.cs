@@ -652,7 +652,7 @@ namespace WotDossier.Dal
             string str2 = string.Empty;
             if (File.Exists(path))
             {
-                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 int count = 0;
                 byte[] buffer = new byte[4];
                 stream.Read(buffer, 0, 4);

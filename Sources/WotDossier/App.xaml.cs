@@ -57,7 +57,7 @@ namespace WotDossier
                 //WPFMessageBox.Show(Gui.Properties.Resources.Msg_ApplicationIs_Already_Started, Gui.Properties.Resources.MessageBox_Title_Error, WPFMessageBoxImage.Error);
                 Shutdown();
                 //activate already opened app window
-                NativeMethods.ActivateWindow(ApplicationInfo.FullProductName);
+                NativeMethods.ActivateWindow(ApplicationInfo.ProductName);
                 return;
             }
             

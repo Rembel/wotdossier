@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -11,14 +12,24 @@ namespace WotDossier.Applications
 {
     public static class CacheHelper
     {
-        private static readonly ILog _log = LogManager.GetLogger("DossierRepository");
+        private const char SEPARATOR = ';';
+        private static readonly ILog Log = LogManager.GetLogger("DossierRepository");
+
+        private static readonly Dictionary<string, string> GameServers = new Dictionary<string, string>
+        {
+            {"ru", "worldoftanks.net"},
+            {"eu", "worldoftanks.eu"},
+            {"cn", "worldoftanks.cn"},
+            {"us", "worldoftanks.com"},
+        }; 
 
         /// <summary>
         /// Gets the cache file.
         /// </summary>
         /// <param name="playerId">The player id.</param>
+        /// <param name="server"></param>
         /// <returns>null if there is no any dossier cache file for specified player</returns>
-        public static FileInfo GetCacheFile(string playerId)
+        public static FileInfo GetCacheFile(string playerId, string server)
         {
             FileInfo cacheFile = null;
 
@@ -30,7 +41,7 @@ namespace WotDossier.Applications
             }
             catch (DirectoryNotFoundException ex)
             {
-                _log.Error("Cann't find dossier cache files", ex);
+                Log.Error("Cann't find dossier cache files", ex);
             }
 
             if (!files.Any())
@@ -42,7 +53,11 @@ namespace WotDossier.Applications
             {
                 FileInfo info = new FileInfo(file);
 
-                if (GetPlayerName(info).Equals(playerId, StringComparison.InvariantCultureIgnoreCase))
+                string decodFileName = DecodFileName(info);
+                string playerName = decodFileName.Split(SEPARATOR)[1];
+                string serverName = decodFileName.Split(SEPARATOR)[0];
+
+                if (playerName.Equals(playerId, StringComparison.InvariantCultureIgnoreCase) && serverName.Contains(GameServers[server]))
                 {
                     if (cacheFile == null)
                     {
@@ -120,12 +135,17 @@ namespace WotDossier.Applications
         /// <returns></returns>
         public static string GetPlayerName(FileInfo cacheFile)
         {
+            var decodedFileName = DecodFileName(cacheFile);
+            return decodedFileName.Split(SEPARATOR)[1];
+        }
+
+        public static string DecodFileName(FileInfo cacheFile)
+        {
             Base32Encoder encoder = new Base32Encoder();
             string str = cacheFile.Name.Replace(cacheFile.Extension, string.Empty);
             byte[] decodedFileNameBytes = encoder.Decode(str.ToLowerInvariant());
             string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
-            string playerName = decodedFileName.Split(';')[1];
-            return playerName;
+            return decodedFileName;
         }
     }
 }

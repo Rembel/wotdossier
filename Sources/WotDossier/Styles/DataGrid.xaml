@@ -131,7 +131,13 @@
                                 <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Grid.Column="0"
                                                   Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                   ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                                   ContentTemplate="{TemplateBinding ContentTemplate}">
+                                <ToolTipService.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}"></TextBlock>
+                                    </ToolTip>
+                                </ToolTipService.ToolTip>
+                                </ContentPresenter>
                                 <ContentPresenter Name="SortGlyphPresenter" Grid.Column="1" IsHitTestVisible="false" Content="{x:Null}" />
                             </Grid>
                         </Border>

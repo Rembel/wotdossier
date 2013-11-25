@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
+using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
@@ -314,8 +315,6 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
-        #endregion
-
         public int? StartValue
         {
             get { return _startValue; }
@@ -345,6 +344,20 @@ namespace WotDossier.Applications.ViewModel.Replay
                 OnPropertyChanged("Field");
             }
         }
+
+        public string Member
+        {
+            get { return _member; }
+            set
+            {
+                _member = value;
+                OnPropertyChanged("Member");
+            }
+        }
+
+        #endregion
+
+        public DelegateCommand ClearCommand { get; set; }
 
         public List<T> Filter<T>(List<T> replays) where T : ReplayFile
         {
@@ -405,16 +418,6 @@ namespace WotDossier.Applications.ViewModel.Replay
             return result;
         }
 
-        public string Member
-        {
-            get { return _member; }
-            set
-            {
-                _member = value;
-                OnPropertyChanged("Member");
-            }
-        }
-
         private bool FieldFilter<T>(T x) where T : ReplayFile
         {
             if (!string.IsNullOrEmpty(Field))
@@ -463,6 +466,24 @@ namespace WotDossier.Applications.ViewModel.Replay
                 new KeyValue<string, string>(ReplayFile.PropKilled,Resources.Resources.Column_Replay_Frags), 
                 new KeyValue<string, string>(ReplayFile.PropDamaged,Resources.Resources.Column_Replay_Damaged), 
             };
+
+            ClearCommand = new DelegateCommand(OnClear);
+        }
+
+        private void OnClear()
+        {
+            StartValue = EndValue = null;
+            Field = null;
+            SelectedMap = null;
+            Level10Selected =
+                Level9Selected =
+                    Level8Selected =
+                        Level7Selected =
+                            Level6Selected =
+                                Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = false;
+            TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = false;
+            USSRSelected =
+                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
         }
 
         public List<KeyValue<string, string>> FilterFields { get; set; }

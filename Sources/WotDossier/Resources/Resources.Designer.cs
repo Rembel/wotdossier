@@ -98,6 +98,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Btn_Clear {
+            get {
+                return ResourceManager.GetString("Btn_Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Compare.
         /// </summary>
         public static string Btn_ComparePlayers {

@@ -15,34 +15,22 @@
             <ColumnDefinition Width="69"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" BorderThickness="1" BorderBrush="#12110C">
-            <Image Source="/Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center"
-                               HorizontalAlignment="Center">
-            </Image>
+            <Image Source="/Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Column="1" BorderThickness="1" BorderBrush="#12110C">
-            <Image Source="/Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center"
-                               HorizontalAlignment="Center">
-            </Image>
+            <Image Source="/Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Column="2" BorderThickness="1" BorderBrush="#12110C">
-            <Image Source="/Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center"
-                               HorizontalAlignment="Center">
-            </Image>
+            <Image Source="/Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Column="3" BorderThickness="1" BorderBrush="#12110C">
-            <Image Source="/Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center"
-                               HorizontalAlignment="Center">
-            </Image>
+            <Image Source="/Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Column="4" BorderThickness="1" BorderBrush="#12110C">
-            <Image Source="/Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center"
-                               HorizontalAlignment="Center">
-            </Image>
+            <Image Source="/Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Column="5" BorderThickness="1" BorderBrush="#12110C">
-            <Image Source="/Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center"
-                               HorizontalAlignment="Center">
-            </Image>
+            <Image Source="/Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </Grid>
 </UserControl>

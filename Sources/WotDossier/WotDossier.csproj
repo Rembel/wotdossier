@@ -180,6 +180,7 @@
     <Compile Include="Controls\TextWithImage.xaml.cs">
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\Color\AliveToColorConverter.cs" />
     <Compile Include="Converters\Color\EffRangeBrushes.cs" />
     <Compile Include="Converters\Color\NoobRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\WN7ToColorConverter.cs" />
@@ -427,6 +428,10 @@
     <Page Include="Styles\ContextMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ReplayDataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\ToolTip.xaml">
       <Generator>MSBuild:Compile</Generator>

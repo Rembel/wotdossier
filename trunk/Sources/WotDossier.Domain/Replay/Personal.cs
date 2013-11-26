@@ -107,6 +107,8 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int piercedReceived { get; set; }
         [DataMember]
+        public int potentialDamageReceived { get; set; }
+        [DataMember]
         public int pierced { get; set; }
         [DataMember]
         public int premiumCreditsFactor10 { get; set; }

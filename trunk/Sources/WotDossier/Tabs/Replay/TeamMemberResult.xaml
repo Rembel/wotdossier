@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Resources="clr-namespace:WotDossier.Resources"
              mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <Grid Background="#28261D">
         <StackPanel HorizontalAlignment="Stretch">
             <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                 <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_ShotsFired}"
@@ -72,6 +72,17 @@
                 <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
                                    SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
                 <TextBlock Text="{Binding ShotsReceived}" Foreground="#BCBDBE" FontFamily="Arial"
+                                   FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right">
+                </TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                <TextBlock Text="{x:Static Resources:Resources.Label_PotentialDamageReceived}"
+                                   Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top"
+                                   HorizontalAlignment="Left">
+                </TextBlock>
+                <Rectangle Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2"
+                                   SnapsToDevicePixels="True" VerticalAlignment="Bottom" />
+                <TextBlock Text="{Binding PotentialDamageReceived}" Foreground="#BCBDBE" FontFamily="Arial"
                                    FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right">
                 </TextBlock>
             </Grid>

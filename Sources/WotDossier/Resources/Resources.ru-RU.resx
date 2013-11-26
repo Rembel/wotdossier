@@ -1723,4 +1723,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Btn_Clear" xml:space="preserve">
     <value>Очистить</value>
   </data>
+  <data name="Label_PotentialDamageReceived" xml:space="preserve">
+    <value>Потенциально полученный урон</value>
+  </data>
 </root>

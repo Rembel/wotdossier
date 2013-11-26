@@ -242,9 +242,6 @@
     <Compile Include="Tabs\Replay\CommandResults.xaml.cs">
       <DependentUpon>CommandResults.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\Replay\CommandResultsHeader.xaml.cs">
-      <DependentUpon>CommandResultsHeader.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\Replay\DetailedResults.xaml.cs">
       <DependentUpon>DetailedResults.xaml</DependentUpon>
     </Compile>
@@ -508,10 +505,6 @@
     <Page Include="Tabs\Replay\CommandResults.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tabs\Replay\CommandResultsHeader.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\Replay\DetailedResults.xaml">
       <Generator>MSBuild:Compile</Generator>

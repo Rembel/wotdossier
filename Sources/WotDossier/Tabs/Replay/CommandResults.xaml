@@ -9,16 +9,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
-        <Style TargetType="Image" x:Key="KilledBg">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding}" Value="true">
-                    <Setter Property="Visibility" Value="Hidden" />
-                </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="false">
-                    <Setter Property="Visibility" Value="Visible" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
         <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource ReplayDataGridRowStyle}">
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="true">
@@ -41,7 +31,6 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
             <StackPanel Visibility="{Binding AlienTeamMember, Converter={x:Static Converters:ObjectToCollapseConverter.Default}}">
                 <TextBlock Margin="10,0,0,0" Text="{x:Static Resources:Resources.Label_Replay_OurTeam}" FontSize="16" Foreground="#BCBDBE" />
                 <DataGrid Style="{StaticResource replayDataGrid}" SelectedItem="{Binding OurTeamMember}"

@@ -2232,6 +2232,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Potential damage received.
+        /// </summary>
+        public static string Label_PotentialDamageReceived {
+            get {
+                return ResourceManager.GetString("Label_PotentialDamageReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle efficiency.
         /// </summary>
         public static string Label_Replay_BattleEfficiency {

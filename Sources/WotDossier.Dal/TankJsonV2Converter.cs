@@ -420,23 +420,23 @@ namespace WotDossier.Dal
             TankJson v2 = new TankJson();
 
             v2.A15x15 = new StatisticJson();
-            v2.A15x15.battlesCount = tankJson.amounts.battles;
+            v2.A15x15.battlesCount = tankJson._15x15.battles;
             v2.A15x15.battlesCountBefore8_8 = tankJson.amounts.battles;
-            v2.A15x15.capturePoints = tankJson.amounts.capture_points;
-            v2.A15x15.damageDealt = tankJson.amounts.damage_dealt;
-            v2.A15x15.damageReceived = tankJson.amounts.damage_received;
-            v2.A15x15.droppedCapturePoints = tankJson.amounts.defence_points;
-            v2.A15x15.frags = tankJson.amounts.frags;
-            v2.A15x15.frags8p = tankJson.amounts.tier8_frags;
-            v2.A15x15.hits = tankJson.amounts.hits;
-            v2.A15x15.losses = tankJson.amounts.losses;
-            v2.A15x15.shots = tankJson.amounts.shots;
-            v2.A15x15.spotted = tankJson.amounts.spotted;
-            v2.A15x15.survivedBattles = tankJson.amounts.survived;
-            v2.A15x15.winAndSurvived = tankJson.amounts.survived_with_victory;
-            v2.A15x15.wins = tankJson.amounts.victories;
-            v2.A15x15.xp = tankJson.amounts.experience;
-            v2.A15x15.xpBefore8_8 = tankJson.amounts.experience;
+            v2.A15x15.capturePoints = tankJson._15x15.capture_points;
+            v2.A15x15.damageDealt = tankJson._15x15.damage_dealt;
+            v2.A15x15.damageReceived = tankJson._15x15.damage_received;
+            v2.A15x15.droppedCapturePoints = tankJson._15x15.defence_points;
+            v2.A15x15.frags = tankJson._15x15.frags;
+            v2.A15x15.frags8p = tankJson._15x15.tier8_frags;
+            v2.A15x15.hits = tankJson._15x15.hits;
+            v2.A15x15.losses = tankJson._15x15.losses;
+            v2.A15x15.shots = tankJson._15x15.shots;
+            v2.A15x15.spotted = tankJson._15x15.spotted;
+            v2.A15x15.survivedBattles = tankJson._15x15.survived;
+            v2.A15x15.winAndSurvived = tankJson._15x15.survived_with_victory;
+            v2.A15x15.wins = tankJson._15x15.victories;
+            v2.A15x15.xp = tankJson._15x15.experience;
+            v2.A15x15.xpBefore8_8 = tankJson._15x15.experience;
 
             v2.A15x15.originalXP = 0;
             v2.A15x15.damageAssistedRadio = 0;
@@ -449,8 +449,8 @@ namespace WotDossier.Dal
             v2.A15x15.pierced = 0;
 
             //v2.A15x15.maxDamage = ;
-            v2.A15x15.maxFrags = tankJson.amounts.max_frags;
-            v2.A15x15.maxXP = tankJson.amounts.max_experience;
+            v2.A15x15.maxFrags = tankJson._15x15.max_frags;
+            v2.A15x15.maxXP = tankJson._15x15.max_experience;
 
             v2.FragsList = tankJson.frag_counts;
 
@@ -532,7 +532,7 @@ namespace WotDossier.Dal
             v2.Common.countryid = tankJson.country;
             v2.Common.creationTime = 0;
             v2.Common.creationTimeR = DateTime.MinValue;
-            v2.Common.frags = tankJson.amounts.frags;
+            v2.Common.frags = tankJson._15x15.frags;
             v2.Common.frags_compare = 0;
             v2.Common.has_15x15 = 1;
             v2.Common.has_7x7 = 0;
@@ -540,16 +540,16 @@ namespace WotDossier.Dal
             v2.Common.has_company = 0;
             v2.Common.lastBattleTime = tankJson.last_time_played;
             v2.Common.lastBattleTimeR = Utils.UnixDateToDateTime(tankJson.last_time_played);
-            v2.Common.premium = 0;
             v2.Common.tankid = tankJson.id;
-            v2.Common.tanktitle = string.Empty;
-            v2.Common.tier = 0;
-            v2.Common.type = 0;
+            v2.Common.premium = Dictionaries.Instance.Tanks[v2.UniqueId()].Premium;
+            v2.Common.tanktitle = Dictionaries.Instance.Tanks[v2.UniqueId()].Title;
+            v2.Common.tier = Dictionaries.Instance.Tanks[v2.UniqueId()].Tier;
+            v2.Common.type = Dictionaries.Instance.Tanks[v2.UniqueId()].Type;
             v2.Common.updated = tankJson.updated;
             v2.Common.updatedR = Utils.UnixDateToDateTime(tankJson.updated);
             v2.Common.battleLifeTime = tankJson.play_time;
             v2.Common.mileage = 0;
-            v2.Common.treesCut = 0;
+            v2.Common.treesCut = tankJson.amounts.trees_knocked_down;
 
             return v2;
         }

@@ -7,6 +7,8 @@ namespace WotDossier.Domain.Dossier.AppSpot
     {
         private IList<IList<string>> _kills = new List<IList<string>>();
 
+        public TankStatistic _15x15 { get; set; }
+        public TankStatistic _7x7 { get; set; }
         public Amounts amounts { get; set; }
         public Awards awards { get; set; }
         public Epic epics { get; set; }

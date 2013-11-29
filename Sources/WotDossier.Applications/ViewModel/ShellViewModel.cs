@@ -406,8 +406,11 @@ namespace WotDossier.Applications.ViewModel
                             {
                                 //convert dossier cache file to json
                                 CacheHelper.BinaryCacheToJson(cacheFile);
-
                                 List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+
+                                //get tanks from dossier app spot
+                                //string data = new Uri("http://wot-dossier.appspot.com/dossier-data/2587067").Get();
+                                //List<TankJson> tanksV2 = WotApiClient.Instance.ReadDossierAppSpotTanks(data);
 
                                 PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanksV2);
 
@@ -532,7 +535,7 @@ namespace WotDossier.Applications.ViewModel
         {
             IEnumerable<int> killed =
                 tanks.SelectMany(x => x.TankFrags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
-            List<TankRowMasterTanker> masterTanker = Dictionaries.Instance.TanksDictionary
+            List<TankRowMasterTanker> masterTanker = Dictionaries.Instance.Tanks
                                                                  .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                                                                  .Select(x => new TankRowMasterTanker(x.Value))
                                                                  .OrderBy(x => x.IsPremium)

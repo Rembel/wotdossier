@@ -49,6 +49,7 @@
     <Compile Include="Dossier\AppSpot\Medals.cs" />
     <Compile Include="Dossier\AppSpot\Series.cs" />
     <Compile Include="Dossier\AppSpot\Tank.cs" />
+    <Compile Include="Dossier\AppSpot\TankStatistic.cs" />
     <Compile Include="Dossier\TankV29\CommonJson.cs" />
     <Compile Include="Dossier\TankV65\CommonJson.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />

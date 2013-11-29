@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Net;
@@ -77,9 +78,7 @@ namespace WotDossier.Dal
 
             foreach (JToken jToken in tanksData)
             {
-                JProperty property = (JProperty)jToken;
-                string raw = property.Value.ToString();
-                Tank appSpotTank = JsonConvert.DeserializeObject<Tank>(raw);
+                Tank appSpotTank = JsonConvert.DeserializeObject<Tank>(jToken.ToString());
                 TankJson tank = TankJsonV2Converter.Convert(appSpotTank);
                 tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                 ExtendPropertiesData(tank);
@@ -130,7 +129,7 @@ namespace WotDossier.Dal
 
         public void ExtendPropertiesData(TankJson tank)
         {
-            tank.Description = Dictionaries.Instance.TanksDictionary[tank.UniqueId()];
+            tank.Description = Dictionaries.Instance.Tanks[tank.UniqueId()];
             tank.Frags =
                 tank.FragsList.Select(
                     x =>
@@ -142,13 +141,13 @@ namespace WotDossier.Dal
                         {
                             CountryId = countryId,
                             TankId = tankId,
-                            Icon = Dictionaries.Instance.TanksDictionary[uniqueId].Icon,
+                            Icon = Dictionaries.Instance.Tanks[uniqueId].Icon,
                             TankUniqueId = uniqueId,
                             Count = Convert.ToInt32(x[2]),
-                            Type = Dictionaries.Instance.TanksDictionary[uniqueId].Type,
-                            Tier = Dictionaries.Instance.TanksDictionary[uniqueId].Tier,
+                            Type = Dictionaries.Instance.Tanks[uniqueId].Type,
+                            Tier = Dictionaries.Instance.Tanks[uniqueId].Tier,
                             KilledByTankUniqueId = tank.UniqueId(),
-                            Tank = x[3]
+                            Tank = Dictionaries.Instance.Tanks[uniqueId].Title
                         };
                     }).ToList();
         }
@@ -215,9 +214,9 @@ namespace WotDossier.Dal
                     List<VehicleStat> tanks = JsonConvert.DeserializeObject<List<VehicleStat>>(parsedData["data"][playerId.ToString()].ToString());
                     foreach (VehicleStat tank in tanks)
                     {
-                        if (Dictionaries.Instance.ServerTanksDictionary.ContainsKey(tank.tank_id))
+                        if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))
                         {
-                            tank.tank = Dictionaries.Instance.ServerTanksDictionary[tank.tank_id];
+                            tank.tank = Dictionaries.Instance.ServerTanks[tank.tank_id];
                         }
                     }
                     return tanks;

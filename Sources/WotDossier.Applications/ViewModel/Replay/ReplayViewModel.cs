@@ -174,7 +174,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             {
                 MapName = replay.datablock_1.mapName;
                 MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(replay.datablock_1.gameplayID, (BattleType)replay.datablock_1.battleType));
-                TankIcon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
+                TankIcon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
                 Date = replay.datablock_1.dateTime;
 
                 long playerId = replay.datablock_battle_result.personal.accountDBID;

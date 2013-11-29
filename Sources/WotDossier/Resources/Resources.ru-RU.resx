@@ -1726,4 +1726,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Label_PotentialDamageReceived" xml:space="preserve">
     <value>Потенциально полученный урон</value>
   </data>
+  <data name="Column_Replay_Platoon" xml:space="preserve">
+    <value>Взвод</value>
+  </data>
+  <data name="Column_Replay_PlayerName" xml:space="preserve">
+    <value>Игрок</value>
+  </data>
 </root>

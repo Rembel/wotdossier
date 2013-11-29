@@ -29,60 +29,24 @@ namespace WotDossier.Dal
     {
         private static readonly ILog _log = LogManager.GetLogger("WotApiClient");
 
-        private const string URL_GET_PLAYER_INFO = @"https://api.worldoftanks.{0}/{1}/account/info/";
-        private const string URL_GET_PLAYER_RATINGS = @"https://api.worldoftanks.{0}/{1}/account/ratings/";
-        private const string URL_GET_PLAYER_TANKS = @"https://api.worldoftanks.{0}/{1}/account/tanks/";
-        private const string URL_GET_CLAN_INFO = @"https://api.worldoftanks.{0}/{1}/clan/info/";
-        private const string URL_SEARCH_PLAYER = @"https://api.worldoftanks.{0}/{1}/account/list/";
-        private const string URL_SEARCH_CLAN = @"https://api.worldoftanks.{0}/{1}/clan/list/";
+        private const string URL_API = @"https://api.worldoftanks.{0}/{1}/{2}";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";
         private const string CONTENT_TYPE = "application/x-www-form-urlencoded";
-        private const string SEARCH_PARAMS = "application_id={0}&search={1}&limit={2}";
-        private const string CLAN_ID_PARAMS = "application_id={0}&clan_id={1}";
-        private const string PLAYER_ID_PARAMS = "application_id={0}&account_id={1}";
+        public const string PARAM_APPID = "application_id";
+        public const string PARAM_SEARCH = "search";
+        public const string PARAM_ACCOUNT_ID = "account_id";
+        public const string PARAM_CLAN_ID = "clan_id";
+        public const string PARAM_FIELDS = "fields";
+        public const string PARAM_LIMIT = "limit";
 
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
-
-        private readonly Dictionary<int, TankDescription> _tanksDictionary;
-        private readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
-        private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        private Dictionary<int, TankServerInfo> _serverTanksDictionary;
-        private Dictionary<string, RatingExpectancy> _ratingExpectations;
-        
-        /// <summary>
-        /// Tanks dictionary
-        /// KEY - tankid, countryid
-        /// </summary>
-        public Dictionary<int, TankDescription> TanksDictionary
-        {
-            get { return _tanksDictionary; }
-        }
-
-        public Dictionary<string, TankIcon> IconsDictionary
-        {
-            get { return _iconsDictionary; }
-        }
-
-        public Dictionary<int, TankServerInfo> ServerTanksDictionary
-        {
-            get { return _serverTanksDictionary; }
-        }
-
-        public Dictionary<string, Map> Maps
-        {
-            get { return _maps; }
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         private WotApiClient()
         {
-            _ratingExpectations = ReadRatingExpectationsDictionary();
-            _tanksDictionary = ReadTanksDictionary();
-            _serverTanksDictionary = ReadServerTanksDictionary();
-            _maps = ReadMaps();
         }
 
         public static WotApiClient Instance
@@ -166,7 +130,7 @@ namespace WotDossier.Dal
 
         public void ExtendPropertiesData(TankJson tank)
         {
-            tank.Description = _tanksDictionary[tank.UniqueId()];
+            tank.Description = Dictionaries.Instance.TanksDictionary[tank.UniqueId()];
             tank.Frags =
                 tank.FragsList.Select(
                     x =>
@@ -178,117 +142,15 @@ namespace WotDossier.Dal
                         {
                             CountryId = countryId,
                             TankId = tankId,
-                            Icon = TanksDictionary[uniqueId].Icon,
+                            Icon = Dictionaries.Instance.TanksDictionary[uniqueId].Icon,
                             TankUniqueId = uniqueId,
                             Count = Convert.ToInt32(x[2]),
-                            Type = TanksDictionary[uniqueId].Type,
-                            Tier = TanksDictionary[uniqueId].Tier,
+                            Type = Dictionaries.Instance.TanksDictionary[uniqueId].Type,
+                            Tier = Dictionaries.Instance.TanksDictionary[uniqueId].Tier,
                             KilledByTankUniqueId = tank.UniqueId(),
                             Tank = x[3]
                         };
                     }).ToList();
-        }
-
-        public TankIcon GetTankIcon(string playerVehicle)
-        {
-            string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
-            if (IconsDictionary.ContainsKey(replace))
-            {
-                return IconsDictionary[replace];
-            }
-            return TankIcon.Empty;
-        }
-
-        public TankDescription GetTankDecription(string playerVehicle)
-        {
-            string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
-            TankDescription description = TanksDictionary.Values.FirstOrDefault(x => x.Icon.IconId == replace);
-            if (description != null)
-            {
-                return description;
-            }
-            return null;
-        }
-
-        private Dictionary<int, TankDescription> ReadTanksDictionary()
-        {
-            List<TankDescription> tanks = new List<TankDescription>();
-            using (StreamReader re = new StreamReader(@"External\tanks.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                var parsedData = se.Deserialize<JArray>(reader);
-                foreach (JToken jToken in parsedData)
-                {
-                    string json = jToken.ToString();
-
-                    TankDescription tank = JsonConvert.DeserializeObject<TankDescription>(json);
-                    tank.CountryCode = WotApiHelper.GetCountryNameCode(tank.CountryId);
-
-                    TankIcon icon = JsonConvert.DeserializeObject<TankIcon>(json);
-                    icon.CountryCode = tank.CountryCode;
-                    _iconsDictionary.Add(icon.IconId, icon);
-                    
-                    tank.Icon = icon;
-
-                    if (_ratingExpectations.ContainsKey(tank.Icon.IconOrig))
-                    {
-                        tank.Expectancy = _ratingExpectations[tank.Icon.IconOrig];
-                    }
-
-                    tanks.Add(tank);
-                }
-            }
-
-            return tanks.ToDictionary(x => x.UniqueId());
-        }
-
-        private Dictionary<int, TankServerInfo> ReadServerTanksDictionary()
-        {
-            using (StreamReader re = new StreamReader(@"External\server_tanks.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                var parsedData = se.Deserialize<JObject>(reader);
-                return JsonConvert.DeserializeObject<Dictionary<int, TankServerInfo>>(parsedData["data"].ToString());
-            }
-        }
-
-        private Dictionary<string, RatingExpectancy> ReadRatingExpectationsDictionary()
-        {
-            try
-            {
-                using (StreamReader re = new StreamReader(@"External\tanks_expectations.json"))
-                {
-                    JsonTextReader reader = new JsonTextReader(re);
-                    JsonSerializer se = new JsonSerializer();
-                    var parsedData = se.Deserialize<JArray>(reader);
-                    return JsonConvert.DeserializeObject<List<RatingExpectancy>>(parsedData.ToString()).ToDictionary(x => x.Icon, x => x);
-                }
-            }
-            catch (Exception e)
-            {
-                _log.Error(e);
-            }
-            return new Dictionary<string, RatingExpectancy>();
-        }
-
-        public static Dictionary<string, Map> ReadMaps()
-        {
-            List<Map> maps = null;
-            using (StreamReader re = new StreamReader(@"External\maps.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                maps = se.Deserialize<List<Map>>(reader);
-            }
-
-            List<Map> list = (maps ?? new List<Map>());
-            int i = 1;
-            list.ForEach( x => x.localizedmapname = Resources.Resources.ResourceManager.GetString("Map_" + x.mapidname) ?? x.mapname);
-            list = list.OrderByDescending(x => x.localizedmapname).ToList();
-            list.ForEach(x => x.mapid = i++);
-            return list.ToDictionary(x => x.mapidname, y => y);
         }
 
         /// <summary>
@@ -310,43 +172,26 @@ namespace WotDossier.Dal
             {
                 return null;
             }
-            
-            Stream stream;
 
             try
             {
-                string url = string.Format(URL_GET_PLAYER_INFO, settings.Server, WotDossierSettings.ApiVersion);
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = WebRequestMethods.Http.Post;
-                request.ContentType = CONTENT_TYPE;
-                string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
-                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
-                request.ContentLength = encodedBytes.Length;
-                Stream newStream = request.GetRequestStream();
-                newStream.Write(encodedBytes, 0, encodedBytes.Length);
-                newStream.Close();
-
-                WebResponse response = request.GetResponse();
-                stream = response.GetResponseStream();
-
-                using (StreamReader streamReader = new StreamReader(stream))
+                var playerStat = Request<PlayerStat>(settings, "account/info/", new Dictionary<string, object>
                 {
-                    JsonTextReader reader = new JsonTextReader(streamReader);
-                    JsonSerializer se = new JsonSerializer();
-                    PlayerStat playerStat = se.Deserialize<PlayerStat>(reader);
-                    playerStat.dataField = playerStat.data[playerId];
-                    playerStat.dataField.ratings = GetPlayerRatings(settings, playerId);
-                    if (loadVehicles)
-                    {
-                        playerStat.dataField.vehicles = GetPlayerTanks(settings, playerId);
-                    }
-                    if (playerStat.dataField.clan != null)
-                    {
-                        playerStat.dataField.clanData = LoadClan(settings, playerStat.dataField.clan.clan_id, new[] { "abbreviation", "name", "clan_id", "description", "emblems" });
-                    }
-                    return playerStat;
+                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_ACCOUNT_ID, playerId},
+                });
+                playerStat.dataField = playerStat.data[playerId];
+                playerStat.dataField.ratings = GetPlayerRatings(settings, playerId);
+                if (loadVehicles)
+                {
+                    playerStat.dataField.vehicles = GetPlayerTanks(settings, playerId);
                 }
+                if (playerStat.dataField.clan != null)
+                {
+                    playerStat.dataField.clanData = LoadClan(settings, playerStat.dataField.clan.clan_id,
+                        new[] {"abbreviation", "name", "clan_id", "description", "emblems"});
+                }
+                return playerStat;
             }
             catch (Exception e)
             {
@@ -359,41 +204,23 @@ namespace WotDossier.Dal
         {
             try
             {
-                string url = string.Format(URL_GET_PLAYER_TANKS, settings.Server, WotDossierSettings.ApiVersion);
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = WebRequestMethods.Http.Post;
-                request.ContentType = CONTENT_TYPE;
-                string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
-                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
-                request.ContentLength = encodedBytes.Length;
-                Stream newStream = request.GetRequestStream();
-                newStream.Write(encodedBytes, 0, encodedBytes.Length);
-                newStream.Close();
-
-                WebResponse response = request.GetResponse();
-                using (Stream stream = response.GetResponseStream())
+                JObject parsedData = Request<JObject>(settings, "account/tanks/", new Dictionary<string, object>
                 {
-                    if (stream != null)
-                    {
-                        StreamReader streamReader = new StreamReader(stream);
-                        JsonTextReader reader = new JsonTextReader(streamReader);
-                        JsonSerializer se = new JsonSerializer();
-                        JObject parsedData = (JObject)se.Deserialize(reader);
+                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_ACCOUNT_ID, playerId},
+                });
 
-                        if (parsedData["data"].Any())
+                if (parsedData["data"].Any())
+                {
+                    List<VehicleStat> tanks = JsonConvert.DeserializeObject<List<VehicleStat>>(parsedData["data"][playerId.ToString()].ToString());
+                    foreach (VehicleStat tank in tanks)
+                    {
+                        if (Dictionaries.Instance.ServerTanksDictionary.ContainsKey(tank.tank_id))
                         {
-                            List<VehicleStat> tanks = JsonConvert.DeserializeObject<List<VehicleStat>>(parsedData["data"][playerId.ToString()].ToString());
-                            foreach (VehicleStat tank in tanks)
-                            {
-                                if (ServerTanksDictionary.ContainsKey(tank.tank_id))
-                                {
-                                    tank.tank = ServerTanksDictionary[tank.tank_id];
-                                }
-                            }
-                            return tanks;
+                            tank.tank = Dictionaries.Instance.ServerTanksDictionary[tank.tank_id];
                         }
                     }
+                    return tanks;
                 }
             }
             catch (Exception e)
@@ -408,33 +235,15 @@ namespace WotDossier.Dal
         {
             try
             {
-                string url = string.Format(URL_GET_PLAYER_RATINGS, settings.Server, WotDossierSettings.ApiVersion);
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = WebRequestMethods.Http.Post;
-                request.ContentType = CONTENT_TYPE;
-                string parameters = string.Format(PLAYER_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerId);
-                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
-                request.ContentLength = encodedBytes.Length;
-                Stream newStream = request.GetRequestStream();
-                newStream.Write(encodedBytes, 0, encodedBytes.Length);
-                newStream.Close();
-
-                WebResponse response = request.GetResponse();
-                using (Stream stream = response.GetResponseStream())
+                JObject parsedData = Request<JObject>(settings, "account/ratings/", new Dictionary<string, object>
                 {
-                    if (stream != null)
-                    {
-                        StreamReader streamReader = new StreamReader(stream);
-                        JsonTextReader reader = new JsonTextReader(streamReader);
-                        JsonSerializer se = new JsonSerializer();
-                        JObject parsedData = (JObject)se.Deserialize(reader);
+                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_ACCOUNT_ID, playerId},
+                });
 
-                        if (parsedData["data"].Any())
-                        {
-                            return JsonConvert.DeserializeObject<Ratings>(parsedData["data"][playerId.ToString()].ToString());
-                        }
-                    }
+                if (parsedData["data"].Any())
+                {
+                    return JsonConvert.DeserializeObject<Ratings>(parsedData["data"][playerId.ToString()].ToString());
                 }
             }
             catch (Exception e)
@@ -458,7 +267,7 @@ namespace WotDossier.Dal
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public ClanData LoadClan(AppSettings settings, int clanId, string [] fields)
+        public ClanData LoadClan(AppSettings settings, int clanId, string[] fields)
         {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
@@ -467,34 +276,19 @@ namespace WotDossier.Dal
 
             try
             {
-                string url = string.Format(URL_GET_CLAN_INFO, settings.Server, WotDossierSettings.ApiVersion);
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = WebRequestMethods.Http.Post;
-                request.ContentType = CONTENT_TYPE;
-                string parameters = string.Format(CLAN_ID_PARAMS, WotDossierSettings.GetAppId(settings.Server), clanId);
+                Dictionary<string, object> dictionary = new Dictionary<string, object>
+                {
+                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_CLAN_ID, clanId},
+                };
 
                 if (fields != null)
                 {
-                    parameters += "&fields=" + string.Join(",", fields);
+                    dictionary.Add(PARAM_FIELDS, string.Join(",", fields));
                 }
 
-                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
-                request.ContentLength = encodedBytes.Length;
-                Stream newStream = request.GetRequestStream();
-                newStream.Write(encodedBytes, 0, encodedBytes.Length);
-                newStream.Close();
-                WebResponse response = request.GetResponse();
-                Stream stream = response.GetResponseStream();
-                
-                using (StreamReader streamReader = new StreamReader(stream))
-                {
-                    JsonTextReader reader = new JsonTextReader(streamReader);
-                    JsonSerializer se = new JsonSerializer();
-                    JObject parsedData = (JObject)se.Deserialize(reader);
-                    ClanData clan = JsonConvert.DeserializeObject<ClanData>(parsedData["data"][clanId.ToString()].ToString());
-                    return clan;
-                }
+                JObject parsedData = Request<JObject>(settings, "clan/info/", dictionary);
+                return JsonConvert.DeserializeObject<ClanData>(parsedData["data"][clanId.ToString()].ToString());
             }
             catch (Exception e)
             {
@@ -530,35 +324,17 @@ namespace WotDossier.Dal
         public List<PlayerSearchJson> SearchPlayer(AppSettings settings, string playerName, int limit)
         {
 #if DEBUG
-            return new PlayerSearchJson { created_at = 0, id = 10800699, name = "rembel"};
+            return new List<PlayerSearchJson> {new PlayerSearchJson {id = 10800699, nickname = "rembel"}};
 #else
             try
             {
-                string url = string.Format(URL_SEARCH_PLAYER, settings.Server, WotDossierSettings.ApiVersion);
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = WebRequestMethods.Http.Post;
-                request.ContentType = CONTENT_TYPE;
-                string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), playerName, limit);
-                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
-                request.ContentLength = encodedBytes.Length;
-                Stream newStream = request.GetRequestStream();
-                newStream.Write(encodedBytes, 0, encodedBytes.Length);
-                newStream.Close();
-
-                WebResponse response = request.GetResponse();
-                using (Stream stream = response.GetResponseStream())
+                JObject parsedData = Request<JObject>(settings, "account/list/", new Dictionary<string, object>
                 {
-                    if (stream != null)
-                    {
-                        StreamReader streamReader = new StreamReader(stream);
-                        JsonTextReader reader = new JsonTextReader(streamReader);
-                        JsonSerializer se = new JsonSerializer();
-                        JObject parsedData = (JObject)se.Deserialize(reader);
-
-                        return JsonConvert.DeserializeObject<List<PlayerSearchJson>>(parsedData["data"].ToString());
-                    }
-                }
+                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_SEARCH, playerName},
+                    {PARAM_LIMIT, limit},
+                });
+                return JsonConvert.DeserializeObject<List<PlayerSearchJson>>(parsedData["data"].ToString());
             }
             catch (Exception e)
             {
@@ -580,33 +356,16 @@ namespace WotDossier.Dal
         {
             try
             {
-                string url = string.Format(URL_SEARCH_CLAN, settings.Server, WotDossierSettings.ApiVersion);
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                request.Method = WebRequestMethods.Http.Post;
-                request.ContentType = CONTENT_TYPE;
-                string parameters = string.Format(SEARCH_PARAMS, WotDossierSettings.GetAppId(settings.Server), clanName, count);
-                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(parameters);
-                request.ContentLength = encodedBytes.Length;
-                Stream newStream = request.GetRequestStream();
-                newStream.Write(encodedBytes, 0, encodedBytes.Length);
-                newStream.Close();
-
-                WebResponse response = request.GetResponse();
-                using (Stream stream = response.GetResponseStream())
+                JObject parsedData = Request<JObject>(settings, "clan/list/", new Dictionary<string, object>
                 {
-                    if (stream != null)
-                    {
-                        StreamReader streamReader = new StreamReader(stream);
-                        JsonTextReader reader = new JsonTextReader(streamReader);
-                        JsonSerializer se = new JsonSerializer();
-                        JObject parsedData = (JObject)se.Deserialize(reader);
+                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_SEARCH, clanName},
+                    {PARAM_LIMIT, count}
+                });
 
-                        if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
-                        {
-                            return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"].ToString());
-                        }
-                    }
+                if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
+                {
+                    return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"].ToString());
                 }
             }
             catch (Exception e)
@@ -656,7 +415,8 @@ namespace WotDossier.Dal
                 int count = 0;
                 byte[] buffer = new byte[4];
                 stream.Read(buffer, 0, 4);
-                if (buffer[0] != 0x21){
+                if (buffer[0] != 0x21)
+                {
                     stream.Read(buffer, 0, 4);
                     stream.Read(buffer, 0, 4);
                     count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
@@ -703,7 +463,7 @@ namespace WotDossier.Dal
 
                 if (firstBlock != null || commandResult != null)
                 {
-                    return new Replay {datablock_1 = firstBlock, CommandResult = commandResult};
+                    return new Replay { datablock_1 = firstBlock, CommandResult = commandResult };
                 }
             }
             return null;
@@ -746,6 +506,38 @@ namespace WotDossier.Dal
             }
 
             return dictionary;
+        }
+
+        public T Request<T>(AppSettings settings, string method, Dictionary<string, object> parameters)
+        {
+            try
+            {
+                string url = string.Format(URL_API, settings.Server, WotDossierSettings.ApiVersion, method);
+                WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.Method = WebRequestMethods.Http.Post;
+                request.ContentType = CONTENT_TYPE;
+                string queryParameters = string.Join("&", parameters.Select(x => string.Format("{0}={1}", x.Key, x.Value)));
+                byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(queryParameters);
+                request.ContentLength = encodedBytes.Length;
+                Stream newStream = request.GetRequestStream();
+                newStream.Write(encodedBytes, 0, encodedBytes.Length);
+                newStream.Close();
+
+                WebResponse response = request.GetResponse();
+                using (Stream stream = response.GetResponseStream())
+                {
+                    var streamReader = new StreamReader(stream);
+                    var reader = new JsonTextReader(streamReader);
+                    var se = new JsonSerializer();
+                    return se.Deserialize<T>(reader);
+                }
+            }
+            catch (Exception e)
+            {
+                _log.ErrorFormat("Error on execute api method - {0}", e, method);
+                throw new ApiRequestException("Api request exception", e);
+            }
         }
     }
 }

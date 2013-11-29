@@ -83,6 +83,7 @@
     <Compile Include="Logic\ReplayUploader.cs" />
     <Compile Include="Logic\ServerStatWrapper.cs" />
     <Compile Include="NativeMethods.cs" />
+    <Compile Include="PlayerNameSuggestionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -454,7 +454,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         public ReplaysFilterViewModel()
         {
-            List<KeyValue<int, string>> list = WotApiClient.Instance.Maps.Values.OrderByDescending(x => x.mapid).Select(x => new KeyValue<int, string>(x.mapid, x.localizedmapname)).ToList();
+            List<KeyValue<int, string>> list = Dictionaries.Instance.Maps.Values.OrderByDescending(x => x.mapid).Select(x => new KeyValue<int, string>(x.mapid, x.localizedmapname)).ToList();
             list.Insert(0, new KeyValue<int, string>(0, ""));
             Maps = list;
 

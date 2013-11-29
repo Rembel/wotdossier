@@ -22,29 +22,29 @@ namespace WotDossier.Dal
         private static readonly object _syncObject = new object();
         private static volatile Dictionaries _instance = new Dictionaries();
 
-        private readonly Dictionary<int, TankDescription> _tanksDictionary;
-        private readonly Dictionary<string, TankIcon> _iconsDictionary = new Dictionary<string, TankIcon>();
+        private readonly Dictionary<int, TankDescription> _tanks;
+        private readonly Dictionary<string, TankIcon> _icons = new Dictionary<string, TankIcon>();
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        private readonly Dictionary<int, TankServerInfo> _serverTanksDictionary;
+        private readonly Dictionary<int, TankServerInfo> _serverTanks;
         private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
 
         /// <summary>
         /// Tanks dictionary
         /// KEY - tankid, countryid
         /// </summary>
-        public Dictionary<int, TankDescription> TanksDictionary
+        public Dictionary<int, TankDescription> Tanks
         {
-            get { return _tanksDictionary; }
+            get { return _tanks; }
         }
 
-        public Dictionary<string, TankIcon> IconsDictionary
+        public Dictionary<string, TankIcon> Icons
         {
-            get { return _iconsDictionary; }
+            get { return _icons; }
         }
 
-        public Dictionary<int, TankServerInfo> ServerTanksDictionary
+        public Dictionary<int, TankServerInfo> ServerTanks
         {
-            get { return _serverTanksDictionary; }
+            get { return _serverTanks; }
         }
 
         public Dictionary<string, Map> Maps
@@ -58,8 +58,8 @@ namespace WotDossier.Dal
         private Dictionaries()
         {
             _ratingExpectations = ReadRatingExpectationsDictionary();
-            _tanksDictionary = ReadTanksDictionary();
-            _serverTanksDictionary = ReadServerTanksDictionary();
+            _tanks = ReadTanksDictionary();
+            _serverTanks = ReadServerTanksDictionary();
             _maps = ReadMaps();
         }
 
@@ -84,9 +84,9 @@ namespace WotDossier.Dal
         public TankIcon GetTankIcon(string playerVehicle)
         {
             string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
-            if (IconsDictionary.ContainsKey(replace))
+            if (Icons.ContainsKey(replace))
             {
-                return IconsDictionary[replace];
+                return Icons[replace];
             }
             return TankIcon.Empty;
         }
@@ -94,7 +94,7 @@ namespace WotDossier.Dal
         public TankDescription GetTankDecription(string playerVehicle)
         {
             string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
-            TankDescription description = TanksDictionary.Values.FirstOrDefault(x => x.Icon.IconId == replace);
+            TankDescription description = Tanks.Values.FirstOrDefault(x => x.Icon.IconId == replace);
             if (description != null)
             {
                 return description;
@@ -119,7 +119,7 @@ namespace WotDossier.Dal
 
                     TankIcon icon = JsonConvert.DeserializeObject<TankIcon>(json);
                     icon.CountryCode = tank.CountryCode;
-                    _iconsDictionary.Add(icon.IconId, icon);
+                    _icons.Add(icon.IconId, icon);
 
                     tank.Icon = icon;
 

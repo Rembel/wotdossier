@@ -92,9 +92,9 @@ namespace WotDossier.Applications.ViewModel.Replay
             {
                 MapName = replay.datablock_1.mapDisplayName;
                 MapNameId = replay.datablock_1.mapName;
-                if (WotApiClient.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
+                if (Dictionaries.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
                 {
-                    MapId = WotApiClient.Instance.Maps[replay.datablock_1.mapName].mapid;
+                    MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].mapid;
                 }
                 ClientVersion = replay.datablock_1.clientVersionFromExe;
 
@@ -102,14 +102,14 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Match tankNameMatch = tankNameRegexp.Match(replay.datablock_1.playerVehicle);
                 CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
                 TankName = tankNameMatch.Groups[2].Value;
-                Tank = WotApiClient.Instance.TanksDictionary.Values.FirstOrDefault(x => x.Icon.IconOrig.ToLower() == TankName.ToLower());
+                Tank = Dictionaries.Instance.TanksDictionary.Values.FirstOrDefault(x => x.Icon.IconOrig.ToLower() == TankName.ToLower());
 
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
                 FileInfo = replayFileInfo;
                 PlayerId = replay.datablock_1.playerID;
-                Icon = WotApiClient.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
+                Icon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
 
                 if (replay.CommandResult != null)
                 {

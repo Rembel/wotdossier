@@ -62,6 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiRequestException.cs" />
+    <Compile Include="Dictionaries.cs" />
     <Compile Include="DossierRepository.cs" />
     <Compile Include="IDataProvider.cs" />
     <Compile Include="Mappings\ClassMapBase.cs" />

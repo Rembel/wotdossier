@@ -312,7 +312,7 @@ namespace WotDossier.Test
         [Test]
         public void LoadMapsImages()
         {
-            List<Map> maps = WotApiClient.ReadMaps().Values.ToList();
+            List<Map> maps = Dictionaries.ReadMaps().Values.ToList();
 
             foreach (var map in maps)
             {
@@ -447,7 +447,7 @@ namespace WotDossier.Test
             List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
             TankJson is3 = tankJsons.First(x => x.UniqueId() == 29);
-            TankDescription tankDescription = WotApiClient.Instance.TanksDictionary[29];
+            TankDescription tankDescription = Dictionaries.Instance.TanksDictionary[29];
             VStat stat = vstat[tankDescription.Icon.Icon];
 
             double damageDealt = is3.A15x15.damageDealt;
@@ -585,7 +585,7 @@ namespace WotDossier.Test
                 xmlTanks.Add(ratingExpectancy);
             }
 
-            foreach (TankDescription description in WotApiClient.Instance.TanksDictionary.Values)
+            foreach (TankDescription description in Dictionaries.Instance.TanksDictionary.Values)
             {
                 if (xmlTanks.FirstOrDefault(x => x.Icon.ToLower() == description.Icon.IconOrig.ToLower()) == null)
                 {
@@ -640,7 +640,7 @@ namespace WotDossier.Test
 
             foreach (TankJson tankJson in tanksV2)
             {
-                TankServerInfo serverInfo = WotApiClient.Instance.ServerTanksDictionary.Values.FirstOrDefault(x => x.name.EndsWith(tankJson.Description.Icon.IconOrig));
+                TankServerInfo serverInfo = Dictionaries.Instance.ServerTanksDictionary.Values.FirstOrDefault(x => x.name.EndsWith(tankJson.Description.Icon.IconOrig));
 
                 if (serverInfo != null)
                 {

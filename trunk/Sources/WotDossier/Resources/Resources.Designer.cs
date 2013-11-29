@@ -1350,6 +1350,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Platoon.
+        /// </summary>
+        public static string Column_Replay_Platoon {
+            get {
+                return ResourceManager.GetString("Column_Replay_Platoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Name.
+        /// </summary>
+        public static string Column_Replay_PlayerName {
+            get {
+                return ResourceManager.GetString("Column_Replay_PlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to XP.
         /// </summary>
         public static string Column_Replay_XP {

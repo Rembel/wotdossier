@@ -39,9 +39,9 @@ namespace WotDossier.Views
             ConfigureChart(BattlesWinPercentByMap);
 
             BattlesCountByMap.Children.Add(GetMapChartVerticalAxis());
-            BattlesCountByMap.MaxY = WotApiClient.Instance.Maps.Count + 1;
+            BattlesCountByMap.MaxY = Dictionaries.Instance.Maps.Count + 1;
             BattlesWinPercentByMap.Children.Add(GetMapChartVerticalAxis());
-            BattlesWinPercentByMap.MaxY = WotApiClient.Instance.Maps.Count + 1;
+            BattlesWinPercentByMap.MaxY = Dictionaries.Instance.Maps.Count + 1;
 
             // Enable "minimize to tray" behavior for this Window
             MinimizeToTray.Enable(this);
@@ -51,7 +51,7 @@ namespace WotDossier.Views
         {
             VerticalAxis axis = new VerticalAxis();
 
-            List<Map> list = WotApiClient.Instance.Maps.Values.ToList();
+            List<Map> list = Dictionaries.Instance.Maps.Values.ToList();
 
             GenericLocationalLabelProvider<Map, double> labelProvider = new GenericLocationalLabelProvider<Map, double>(list, city => city.localizedmapname);
             GenericLocationalTicksProvider<Map, double> ticksProvider = new GenericLocationalTicksProvider<Map, double>(list, city => city.mapid);

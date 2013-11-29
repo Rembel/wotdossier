@@ -38,7 +38,7 @@
                           Height="Auto" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" HeadersVisibility="Column"
                           RowHeight="31" RowStyle="{StaticResource RowStyle}" IsReadOnly="True">
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Width="47" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
+                        <DataGridTemplateColumn Width="47" Header="{x:Static Resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -51,8 +51,8 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Width="100" Binding="{Binding FullName}" Foreground="#5C5A4A" ElementStyle="{StaticResource LTextBlock}" HeaderTemplate="{StaticResource userTemplate}"></DataGridTextColumn>
-                        <DataGridTemplateColumn Width="179" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
+                        <DataGridTextColumn Width="100" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" Binding="{Binding FullName}" Foreground="#5C5A4A" ElementStyle="{StaticResource LTextBlock}" HeaderTemplate="{StaticResource userTemplate}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Width="179" Header="{x:Static Resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -63,9 +63,9 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Width="37" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />
-                        <DataGridTextColumn Width="55" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
-                        <DataGridTemplateColumn Width="69" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
+                        <DataGridTextColumn Width="37" Header="{x:Static Resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />
+                        <DataGridTextColumn Width="55" Header="{x:Static Resources:Resources.Column_Replay_Frags}" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
+                        <DataGridTemplateColumn Width="69" Header="{x:Static Resources:Resources.Column_Replay_XP}" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>

@@ -76,6 +76,7 @@
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
     <Compile Include="Logic\BattleLevelDetector.cs" />
+    <Compile Include="Logic\AppSpotUploader.cs" />
     <Compile Include="Logic\Export\CsvExportProvider.cs" />
     <Compile Include="Logic\Export\ExportProviderBase.cs" />
     <Compile Include="Logic\Export\IExportProviderBase.cs" />

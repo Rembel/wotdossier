@@ -673,5 +673,15 @@ namespace WotDossier.Test
             List<TankStatisticRowViewModel> list = tanksV2.Select(x => new TankStatisticRowViewModel(x)).ToList();
             provider.Export(list, new List<Type>{typeof(ITankRowBattles), typeof(ITankRowFrags)});
         }
+
+        [Test]
+        public void appSpotTest()
+        {
+            AppSpotUploader uploader = new AppSpotUploader();
+
+            uploader.Upload(
+                new FileInfo(
+                    @"C:\Users\Pasha\AppData\Roaming\wargaming.net\WorldOfTanks\dossier_cache\NRXWO2LOFZYDCLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGQ5V6UTFNVRGK3C7.dat"), 19376001);
+        }
     }
 }

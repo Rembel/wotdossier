@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Xml;
 using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -183,44 +181,32 @@ namespace WotDossier.Dal
             return list.ToDictionary(x => x.mapidname, y => y);
         }
 
+        //public Dictionary<int, TankDescription> ReadTankNominalDamage()
+        //{
+        //    Dictionary<int, TankDescription> dictionary = new Dictionary<int, TankDescription>();
+        //    using (StreamReader streamReader = new StreamReader(@"Data\TankNominalDamage.xml"))
+        //    {
+        //        XmlDocument document = new XmlDocument();
+        //        document.Load(streamReader);
 
-        public Dictionary<string, VStat> ReadVstat()
-        {
-            using (StreamReader streamReader = new StreamReader(@"Data\vstat.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(streamReader);
-                JsonSerializer se = new JsonSerializer();
-                var parsedData = se.Deserialize<Dictionary<string, VStat>>(reader);
-                return parsedData;
-            }
-        }
+        //        XmlNodeList xmlNodeList = document.SelectNodes("damage/tr");
 
-        public Dictionary<int, TankDescription> ReadTankNominalDamage()
-        {
-            Dictionary<int, TankDescription> dictionary = new Dictionary<int, TankDescription>();
-            using (StreamReader streamReader = new StreamReader(@"Data\TankNominalDamage.xml"))
-            {
-                XmlDocument document = new XmlDocument();
-                document.Load(streamReader);
+        //        foreach (XmlNode node in xmlNodeList)
+        //        {
+        //            XmlNodeList values = node.SelectNodes("td");
+        //            if (values != null)
+        //            {
+        //                TankDescription description = new TankDescription();
+        //                description.CountryId = WotApiHelper.GetCountryIdBy2Letters(values[2].InnerText);
+        //                description.Tier = int.Parse(values[3].InnerText);
+        //                description.Type = (int)Enum.Parse(typeof(TankType), values[4].InnerText);
+        //                double nominalDamage = double.Parse(values[5].InnerText, CultureInfo.InvariantCulture);
+        //                dictionary.Add(description.UniqueId(), description);
+        //            }
+        //        }
+        //    }
 
-                XmlNodeList xmlNodeList = document.SelectNodes("damage/tr");
-
-                foreach (XmlNode node in xmlNodeList)
-                {
-                    XmlNodeList values = node.SelectNodes("td");
-                    if (values != null)
-                    {
-                        TankDescription description = new TankDescription();
-                        description.CountryId = WotApiHelper.GetCountryIdBy2Letters(values[2].InnerText);
-                        description.Tier = int.Parse(values[3].InnerText);
-                        description.Type = (int)Enum.Parse(typeof(TankType), values[4].InnerText);
-                        double nominalDamage = double.Parse(values[5].InnerText, CultureInfo.InvariantCulture);
-                        dictionary.Add(description.UniqueId(), description);
-                    }
-                }
-            }
-
-            return dictionary;
-        }
+        //    return dictionary;
+        //}
     }
 }

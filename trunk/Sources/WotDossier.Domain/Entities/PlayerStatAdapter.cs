@@ -112,7 +112,8 @@ namespace WotDossier.Domain.Entities
             Reaper = _tanksV2.Max(x => x.Achievements.maxKillingSeries);
             Invincible = _tanksV2.Max(x => x.Achievements.maxInvincibleSeries);
             Survivor = _tanksV2.Max(x => x.Achievements.maxDiehardSeries);
-            MouseTrap = _tanksV2.Sum(x => x.Achievements.mousebane);
+            //count Maus frags
+            MouseTrap = _tanksV2.Sum(x => x.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
             Hunter = _tanksV2.Sum(x => x.Achievements.fragsBeast) / 100;
             Sinai = _tanksV2.Sum(x => x.Achievements.fragsSinai) / 100;
             PattonValley = _tanksV2.Sum(x => x.Achievements.fragsPatton) / 100;

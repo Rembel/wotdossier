@@ -147,6 +147,9 @@
     <Compile Include="Controls\AchievementCompareRow.xaml.cs">
       <DependentUpon>AchievementCompareRow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LinkStatisticRow.xaml.cs">
+      <DependentUpon>LinkStatisticRow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatisticRow.xaml.cs">
       <DependentUpon>StatisticRow.xaml</DependentUpon>
     </Compile>
@@ -350,6 +353,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\AchievementCompareRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\LinkStatisticRow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

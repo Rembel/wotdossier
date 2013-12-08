@@ -100,4 +100,15 @@
         </Setter>-->
         <Setter Property="controls:SupplementaryInteraction.Triggers" Value="{StaticResource MouseTriggers}"></Setter>
     </Style>
+
+    <Style TargetType="{x:Type Hyperlink}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="TextBlock.TextDecorations" Value="{x:Static TextDecorations.Underline}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

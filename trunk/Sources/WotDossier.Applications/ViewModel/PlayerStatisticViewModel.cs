@@ -204,6 +204,26 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        public string PerformanceRatingLink
+        {
+            get { return string.Format(@"http://noobmeter.com/player/{0}/{1}", SettingsReader.Get().Server, Name); }
+        }
+
+        public string KievArmorRatingLink
+        {
+            get { return string.Format(@"http://armor.kiev.ua/wot/gamerstat/{0}", Name); }
+        }
+
+        public string EffRatingLink
+        {
+            get { return string.Format(@"http://wot-news.com/index.php/stat/pstat/ru/{0}", Name); }
+        }
+
+        public string NameLink
+        {
+            get { return string.Format(@"http://worldoftanks.{0}/community/accounts/{1}-{2}/", SettingsReader.Get().Server, SettingsReader.Get().PlayerId, Name); }
+        }
+
         public PlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
         {
         }

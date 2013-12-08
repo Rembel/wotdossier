@@ -150,13 +150,14 @@
                 
             <TextBlock Foreground="#FFA759" Text="{x:Static Resources:Resources.Tab_Header_Ratings}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <!--EffectivityRating-->
-            <controls:StatisticRow Header="{x:Static Resources:Resources.Common_EffectivityRating}" 
+            <controls:LinkStatisticRow Header="{x:Static Resources:Resources.Common_EffectivityRating}" 
                                    Value="{Binding EffRating, StringFormat='### ### ### ###'}"
                                    Delta="{Binding EffRatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding EffRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}"/>
+                                   ValueForeground="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                       HeaderLink="{Binding EffRatingLink}"/>
             <!--Wn6Rating-->
-            <controls:StatisticRow Header="{x:Static Resources:Resources.Common_Wn6Rating}" 
+            <controls:StatisticRow Header="WN6" 
                                    Value="{Binding WN6Rating, StringFormat='### ### ### ###'}"
                                    Delta="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
@@ -164,13 +165,15 @@
             <!--WN8-->
             <controls:StatisticRow Header="WN8" Value="{Binding WN8Rating, StringFormat='### ### ### ###.0'}"/>
             <!--KievArmorRating-->
-            <controls:StatisticRow Header="{x:Static Resources:Resources.Common_KievArmorRating}" Value="{Binding KievArmorRating, StringFormat='### ### ### ###'}"
+            <controls:LinkStatisticRow Header="{x:Static Resources:Resources.Common_KievArmorRating}" Value="{Binding KievArmorRating, StringFormat='### ### ### ###'}"
                                    Delta="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}"/>
+                                   ValueForeground="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}"
+                                       HeaderLink="{Binding KievArmorRatingLink}"/>
             <!--Noobmeter Performance Rating-->
-            <controls:StatisticRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" Value="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"
-                                   ValueForeground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}"/>
+            <controls:LinkStatisticRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" Value="{Binding PerformanceRating, StringFormat='### ### ### ###.0'}"
+                                   ValueForeground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}"
+                                       HeaderLink="{Binding PerformanceRatingLink}"/>
             <!--XVM-->
             <controls:StatisticRow Header="XVM" Value="{Binding XEFF, StringFormat='0.0'}"
                                    Delta="{Binding XvmRatingDelta, StringFormat='+0.0;-0.0;0.0'}"

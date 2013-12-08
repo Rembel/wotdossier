@@ -36,8 +36,6 @@ namespace WotDossier.Applications.Logic.Export
             }
 
             VistaSaveFileDialog dialog = new VistaSaveFileDialog();
-            dialog.CheckFileExists = true;
-            dialog.CheckPathExists = true;
             dialog.DefaultExt = ".csv"; // Default file extension
             dialog.Filter = "CSV (.csv)|*.csv"; // Filter files by extension 
             dialog.Title = Resources.Resources.WondowCaption_Export;

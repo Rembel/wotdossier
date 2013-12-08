@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -38,6 +39,15 @@ namespace WotDossier.Tabs
         {
             base.OnInitialized(e);
             InvalidateVisual();
+        }
+
+        private void Hyperlink_OnClick(object sender, RoutedEventArgs e)
+        {
+            Hyperlink hyperlink = e.OriginalSource as Hyperlink;
+            if (hyperlink != null && hyperlink.NavigateUri != null)
+            {
+                Process.Start(hyperlink.NavigateUri.ToString());
+            }
         }
     }
 }

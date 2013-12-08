@@ -171,6 +171,21 @@ namespace WotDossier.Test
             }
         }
 
+        [Test]
+        public void CacheTest_0810()
+        {
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.10\");
+            CacheHelper.BinaryCacheToJson(cacheFile);
+            Thread.Sleep(1000);
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            foreach (TankJson tankJson in tanksV2)
+            {
+                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
+            }
+        }
+
         #endregion
         
         #region Replays tests
@@ -221,6 +236,16 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.9\20131016_0035_ussr-Object263_37_caucasus.wotreplay"));
+            CacheHelper.ReplayToJson(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+        }
+
+        [Test]
+        public void ReplayTest_0810()
+        {
+            FileInfo cacheFile =
+                new FileInfo(Path.Combine(Environment.CurrentDirectory,
+                                          @"Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
             Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }

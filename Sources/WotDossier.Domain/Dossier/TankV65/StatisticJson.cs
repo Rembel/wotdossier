@@ -20,7 +20,5 @@ namespace WotDossier.Domain.Dossier.TankV65
         public int xp;
         public int xpBefore8_8;
         public int battlesCountBefore8_8;
-        public int xpBefore8_9;
-        public int battlesCountBefore8_9;
     }
 }

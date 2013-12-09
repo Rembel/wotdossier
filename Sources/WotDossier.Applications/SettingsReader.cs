@@ -50,7 +50,7 @@ namespace WotDossier.Applications
 
             lock (_syncObject)
             {
-                using (FileStream stream = File.Open(filePath, FileMode.Create))
+                using (FileStream stream = File.Open(filePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read))
                 {
                     StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
                     string xml = XmlSerializer.StoreObjectInXml(settings);

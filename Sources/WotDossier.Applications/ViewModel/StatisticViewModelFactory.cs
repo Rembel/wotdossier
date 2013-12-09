@@ -67,13 +67,13 @@ namespace WotDossier.Applications.ViewModel
 
         private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
         {
-            int battlesCount88 = playerStatistic.BattlesCount - tanks.Sum(x => x.A15x15.battlesCountBefore8_8 != 0 ? x.A15x15.battlesCountBefore8_8 : x.A15x15.battlesCount);
+            int battlesCount88 = tanks.Sum(x => x.A15x15.battlesCount - x.A15x15.battlesCountBefore8_8);
             int xp88 = tanks.Sum(x => x.A15x15.originalXP);
-            double avgXp88 = Math.Round(xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1), 0);
-            double wins = Math.Round(playerStatistic.Wins / (double)playerStatistic.BattlesCount, 2);
-            double survive = Math.Round(playerStatistic.SurvivedBattles / (double)playerStatistic.BattlesCount, 2);
-            double hit = Math.Round(playerStatistic.HitsPercents / 100.0, 2);
-            double avgDamageDealt = Math.Round(playerStatistic.AvgDamageDealt, 0);
+            double avgXp88 = xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1);
+            double wins = playerStatistic.Wins / (double)playerStatistic.BattlesCount;
+            double survive = playerStatistic.SurvivedBattles / (double)playerStatistic.BattlesCount;
+            double hit = playerStatistic.HitsPercents / 100.0;
+            double avgDamageDealt = playerStatistic.AvgDamageDealt;
 
             double rbr = RatingHelper.RatingWG(playerStatistic.BattlesCount, battlesCount88, wins, survive, hit, avgDamageDealt, avgXp88);
             return rbr;

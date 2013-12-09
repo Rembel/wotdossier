@@ -15,7 +15,7 @@ namespace WotDossier.Dal
 
             v2.A15x15 = new StatisticJson();
             v2.A15x15.battlesCount = tankJson.Tankdata.battlesCount;
-            v2.A15x15.battlesCountBefore8_8 = tankJson.Tankdata.battlesCountBefore8_8;
+            v2.A15x15.battlesCountBefore8_8 = tankJson.Common.basedonversion > 28 ? tankJson.Tankdata.battlesCountBefore8_8 : tankJson.Tankdata.battlesCount;
             v2.A15x15.capturePoints = tankJson.Tankdata.capturePoints;
             v2.A15x15.damageDealt = tankJson.Tankdata.damageDealt;
             v2.A15x15.damageReceived = tankJson.Tankdata.damageReceived;
@@ -30,7 +30,7 @@ namespace WotDossier.Dal
             v2.A15x15.winAndSurvived = tankJson.Tankdata.winAndSurvived;
             v2.A15x15.wins = tankJson.Tankdata.wins;
             v2.A15x15.xp = tankJson.Tankdata.xp;
-            v2.A15x15.xpBefore8_8 = tankJson.Tankdata.xpBefore8_8;
+            v2.A15x15.xpBefore8_8 = tankJson.Common.basedonversion > 28 ? tankJson.Tankdata.xpBefore8_8 : tankJson.Tankdata.xp;
 
             v2.A15x15.originalXP = tankJson.Tankdata.originalXP;
             v2.A15x15.damageAssistedRadio = tankJson.Tankdata.damageAssistedRadio;

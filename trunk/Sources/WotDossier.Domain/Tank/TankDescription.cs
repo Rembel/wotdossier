@@ -29,6 +29,9 @@ namespace WotDossier.Domain.Tank
         [DataMember(Name = "title")]
         public string Title { get; set; }
 
+        [DataMember(Name = "compDescr")]
+        public int CompDescr { get; set; }
+
         [IgnoreDataMember]
         public TankIcon Icon { get; set; }
 

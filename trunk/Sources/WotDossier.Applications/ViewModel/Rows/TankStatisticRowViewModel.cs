@@ -260,8 +260,8 @@ namespace WotDossier.Applications.ViewModel.Rows
             HeHitsReceived = tank.A15x15.heHitsReceived;
             HeHits = tank.A15x15.he_hits;
             Pierced = tank.A15x15.pierced;
-            XpBefore88 = tank.A15x15.xpBefore8_8 != 0 ? tank.A15x15.xpBefore8_8 : tank.A15x15.xp;
-            BattlesCountBefore88 = tank.A15x15.battlesCountBefore8_8 != 0 ? tank.A15x15.battlesCountBefore8_8 : tank.A15x15.battlesCount;
+            XpBefore88 = tank.A15x15.xpBefore8_8;
+            BattlesCountBefore88 = tank.A15x15.battlesCountBefore8_8;
             BattlesCount88 = tank.A15x15.battlesCount - BattlesCountBefore88;
             IsPremium = tank.Common.premium == 1;
 

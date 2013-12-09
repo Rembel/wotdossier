@@ -11,8 +11,6 @@ namespace WotDossier.Applications
     {
         private static readonly object _syncObject = new object();
 
-        private const string PATH_WEB_BIN = @".\..";
-
         private static readonly string _filePath = WotDossierSettings.SettingsPath;
 
         /// <summary>
@@ -25,9 +23,10 @@ namespace WotDossier.Applications
 
             if (File.Exists(filePath))
             {
-                using (StreamReader stream = File.OpenText(filePath))
+                FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                using (StreamReader reader = new StreamReader(stream))
                 {
-                    var readToEnd = stream.ReadToEnd();
+                    var readToEnd = reader.ReadToEnd();
                     return XmlSerializer.LoadObjectFromXml<AppSettings>(readToEnd);
                 }
             }

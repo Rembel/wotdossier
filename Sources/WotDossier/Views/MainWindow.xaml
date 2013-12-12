@@ -128,7 +128,11 @@
                                     <d3:Header>
                                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
                                     </d3:Header>
-                                    <d3:IntegerAxis ShowMinorTicks="False" />
+                                    <d3:IntegerAxis ShowMinorTicks="False">
+                                        <d3:IntegerAxis.LabelProvider>
+                                            <views:TierLabelProvider />
+                                        </d3:IntegerAxis.LabelProvider>
+                                    </d3:IntegerAxis>
                                     <d3:BarChart ItemsSource="{Binding EfficiencyByTierDataSource}">
                                         <d3:BarChart.Resources>
                                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
@@ -152,7 +156,7 @@
                                 </d3:ChartPlotter>
 
                                 <d3:ChartPlotter x:Name="EByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" Visible="-1, 0, 7, 2500">
+                                      Margin="20,10,20,10" Visible="-1, 0, 8, 2500">
                                     <d3:Header>
                                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByCountry}"></TextBlock>
                                     </d3:Header>
@@ -226,7 +230,11 @@
                                     <d3:Header>
                                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByTier}"></TextBlock>
                                     </d3:Header>
-                                    <d3:IntegerAxis ShowMinorTicks="False" />
+                                    <d3:IntegerAxis ShowMinorTicks="False">
+                                        <d3:IntegerAxis.LabelProvider>
+                                            <views:TierLabelProvider />
+                                        </d3:IntegerAxis.LabelProvider>
+                                    </d3:IntegerAxis>
                                     <d3:BarChart ItemsSource="{Binding BattlesByTierDataSource}">
                                         <d3:BarChart.Resources>
                                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
@@ -250,7 +258,7 @@
                                 </controls:ChartPlotter>
 
                                 <controls:ChartPlotter x:Name="battlesByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" MaxX="7"  MaxY="{Binding MaxBattlesByCountry}">
+                                      Margin="20,10,20,10" MaxX="7" MinX="-1" MaxY="{Binding MaxBattlesByCountry}">
                                     <d3:Header>
                                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByCountry}"></TextBlock>
                                     </d3:Header>

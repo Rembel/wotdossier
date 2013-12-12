@@ -47,6 +47,15 @@ namespace WotDossier.Controls
             set { SetValue(MaxXProperty, value); }
         }
 
+        public static readonly DependencyProperty MinXProperty =
+            DependencyProperty.Register("MinX", typeof(double), typeof(ChartPlotter), new PropertyMetadata((double)0, ChangeMax));
+
+        public double MinX
+        {
+            get { return (double) GetValue(MinXProperty); }
+            set { SetValue(MinXProperty, value); }
+        }
+
         #endregion public double MinY
 
         private static void ChangeMax(DependencyObject source, DependencyPropertyChangedEventArgs eventArgs)
@@ -56,7 +65,7 @@ namespace WotDossier.Controls
 
         private void ConfigureAxises()
         {
-            DataRect dataRect = DataRect.Create(0, 0, MaxX, MaxY);
+            DataRect dataRect = DataRect.Create(MinX, 0, MaxX, MaxY);
             Viewport.Domain = dataRect;
             Viewport.Visible = dataRect;
         }

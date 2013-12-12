@@ -376,6 +376,15 @@ namespace WotDossier.Dal.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hidden Village.
+        /// </summary>
+        internal static string Map_53_japan {
+            get {
+                return ResourceManager.GetString("Map_53_japan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pearl River.
         /// </summary>
         internal static string Map_60_asia_miao {

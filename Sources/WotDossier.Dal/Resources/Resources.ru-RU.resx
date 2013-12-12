@@ -234,4 +234,7 @@
   <data name="Map_43_north_america" xml:space="preserve">
     <value>Северо-Запад</value>
   </data>
+  <data name="Map_53_japan" xml:space="preserve">
+    <value>Скрытая Деревня</value>
+  </data>
 </root>

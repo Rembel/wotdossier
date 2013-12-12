@@ -818,6 +818,7 @@
     <Resource Include="Resources\Images\Tanks\germany_pzv_pziv_ausf_alfa.png" />
     <Resource Include="Resources\Images\Tanks\china_ch01_type59_gold.png" />
     <Resource Include="Resources\Images\Tanks\china_ch24_type64.png" />
+    <Resource Include="Resources\Images\Countries\slot_bright_6.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1394,7 +1395,7 @@
     <Resource Include="Resources\Images\Medals\MarkOfMastery1.png" />
     <Resource Include="Resources\Images\Medals\MarkOfMastery2.png" />
     <Resource Include="Resources\Images\tile.png" />
-    <Resource Include="Resources\Images\Tanks\germany_e-25.png" />
+    <Resource Include="Resources\Images\Tanks\germany_e_25.png" />
     <Resource Include="Resources\Images\Tanks\uk_gb25_loyd_carrier.png" />
     <Resource Include="Resources\Images\Tanks\uk_gb26_birch_gun.png" />
     <Resource Include="Resources\Images\Tanks\uk_gb27_sexton.png" />

@@ -222,6 +222,9 @@
   <data name="Map_51_asia" xml:space="preserve">
     <value>Dragon Ridge</value>
   </data>
+  <data name="Map_53_japan" xml:space="preserve">
+    <value>Hidden Village</value>
+  </data>
   <data name="Map_60_asia_miao" xml:space="preserve">
     <value>Pearl River</value>
   </data>

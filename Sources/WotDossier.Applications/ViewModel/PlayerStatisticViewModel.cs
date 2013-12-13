@@ -13,6 +13,8 @@ namespace WotDossier.Applications.ViewModel
 
         public string Name { get; set; }
 
+        public long AccountId { get; set; }
+
         /// <summary>
         ///     Player account created
         /// </summary>
@@ -221,7 +223,7 @@ namespace WotDossier.Applications.ViewModel
 
         public string NameLink
         {
-            get { return string.Format(@"http://worldoftanks.{0}/community/accounts/{1}-{2}/", SettingsReader.Get().Server, SettingsReader.Get().PlayerId, Name); }
+            get { return string.Format(@"http://worldoftanks.{0}/community/accounts/{1}-{2}/", SettingsReader.Get().Server, AccountId, Name); }
         }
 
         public PlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())

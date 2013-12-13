@@ -101,6 +101,7 @@ namespace WotDossier.Applications.ViewModel
             entity.Update(statAdapter);
             PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
             statistic.Name = playerStat.dataField.nickname;
+            statistic.AccountId = playerStat.dataField.account_id;
             statistic.BattlesPerDay = statistic.BattlesCount / (DateTime.Now - statAdapter.Created).Days;
             statistic.Created = Utils.UnixDateToDateTime( (long) playerStat.dataField.created_at);
             if (playerStat.dataField.clan != null && playerStat.dataField.clan != null && playerStat.dataField.clanData != null)

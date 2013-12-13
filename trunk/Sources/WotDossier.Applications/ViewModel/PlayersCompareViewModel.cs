@@ -103,6 +103,7 @@ namespace WotDossier.Applications.ViewModel
             entity.Update(new PlayerStatAdapter(stat));
             PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
             statistic.Name = stat.dataField.nickname;
+            statistic.AccountId = stat.dataField.account_id;
             if (stat.dataField.clan != null && stat.dataField.clan != null)
             {
                 //statistic.Clan = new PlayerStatisticClanViewModel(stat.dataField.clan);

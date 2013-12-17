@@ -69,6 +69,10 @@ namespace WotDossier.Applications
                     }
                 }
             }
+            if (cacheFile != null)
+            {
+                cacheFile = cacheFile.CopyTo(Path.Combine(Path.GetTempPath(), cacheFile.Name), true);
+            }
             return cacheFile;
         }
 

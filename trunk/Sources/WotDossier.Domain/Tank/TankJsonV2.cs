@@ -1,10 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using WotDossier.Common;
 
 namespace WotDossier.Domain.Tank
 {
     public class TankJson
     {
+        public static TankJson Initial  = new TankJson
+        {
+            A15x15 = new StatisticJson(), Clan = new StatisticJson(), Company = new StatisticJson(), A7x7 = new StatisticJson(),
+            Achievements = new AchievementsJson(), Common = new CommonJson(), Description = new TankDescription(), Frags = new BindingList<FragsJson>()
+        };
+
         public StatisticJson A15x15 { get; set; }
         public StatisticJson Clan { get; set; }
         public StatisticJson Company { get; set; }

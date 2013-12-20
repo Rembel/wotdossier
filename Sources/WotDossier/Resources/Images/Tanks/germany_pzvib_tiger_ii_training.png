@@ -1,0 +1,614 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en" id="wotpa">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.vbaddict.net/" /><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vApp 2.0" />
+<meta name="keywords" content="world of tanks, charts, credits, income, expenditure, charting, statistics, dossier" />
+<meta name="description" content="Analysis of World of Tanks dossier cache and battle results" />
+<meta name="google-site-verification" content="bkG7J6IW8BXAstqEVghfqDiOKKDUIFdtveW-d4ppKN0" />
+
+
+
+	<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=420"></script>
+	<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=420"></script>
+
+<script type="text/javascript">
+<!--
+	var SESSIONURL = "s=7e2487b172eef5d7b7e112cf1186c722&";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "420";
+	var BBURL = "http://www.vbaddict.net";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "wot";
+	var RELPATH = "wot/tanks/1_pzvib_tiger_ii_training.png";
+	var PATHS = {forum : ""}
+// -->
+</script>
+<script type="text/javascript" src="http://www.vbaddict.net/clientscript/vbulletin-core.js?v=420"></script>
+
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00003l/main-rollup.css?d=1387464296" />
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00003l/popupmenu-ie.css?d=1387464296" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00003l/vbulletin-ie.css?d=1387464296" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00003l/vbulletin-chrome-ie.css?d=1387464296" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00003l/vbulletin-formcontrols-ie.css?d=1387464296" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00003l/editor-ie.css?d=1387464296" />
+	<![endif]-->
+
+<title>vBaddict World of Tanks Statistics and Performance Analyzer</title>
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00003l/additional.css?d=1387464296" />
+
+
+<style type="text/css">
+<!--
+
+
+#container
+{
+  width: 100%;
+  float: left;
+  margin-right: -250px;
+}
+
+
+#content
+{
+  margin-right: 260px;
+}
+
+#sidebar
+{
+  width: 250px;
+  float: right;
+}
+
+.centeredlink
+{
+	 margin-left: 30px;
+	 margin-top: 10px;
+	 	
+}
+
+
+.tankname 
+{
+	display:block;
+	width: 180px;
+	float: left;
+	clear: right;
+
+}
+
+.tankamount 
+{
+	margin-left: 180px;
+	font-weight: bold;
+text-align: right;
+}
+
+-->
+</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+    function disable_obj(id)
+    {
+       var e = document.getElementById(id);
+       e.style.display = 'none';
+    }
+
+
+    function enable_obj(id)
+    {
+       var e = document.getElementById(id);
+          e.style.display = 'block';
+    }
+    
+    function toggle_visibility(id)
+    {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+   
+ 
+
+ function SearchClan()
+{
+	$.getJSON('wot_search_clan.php?search=' + document.wotsearch_clan.searchclan.value, function(data)
+	{
+		$('.wotsearch_clan').empty();
+	
+		if (data.length == 0)
+		{
+			$item = '<li>No Clan found</li>';
+	    $('.wotsearch_clan').append($item);
+      return;
+    }
+    else
+		{
+		  $.each(data, function(clankey, clan)
+		  {
+				$item = '<li><a href="/clan/' + clan.servername + '/' + clan.clanDBID + '/' + clan.clanseo + '">' + '[' + clan.tag + ']' + ' ' + clan.name + '</a><br/></li>';
+		    $('.wotsearch_clan').append($item);
+		  });
+		}
+	})
+};
+  
+
+ 
+ 
+function SearchProfile()
+{
+	$.getJSON('wot_search.php?search=' + document.wotsearch.searchprofile.value, function(data)
+	{
+		$('.wotsearch').empty();
+	
+		if (data.length == 0)
+		{
+			$item = '<li>No profile found</li>';
+	    $('.wotsearch').append($item);
+      return;
+    }
+    else
+		{
+		  $.each(data, function(profilekey, profile)
+		  {
+				$item = '<li><a href="/wot.php?do=charts&amp;wotid=' + profile.wotid + '">' + profile.username + '</a><br/></li>';
+		    $('.wotsearch').append($item);
+		  });
+		}
+	})
+};
+ 
+ 
+    	 	 	//-->
+   	   
+    	
+</script>
+
+</head>
+<body>
+
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+	<!-- div><a name="top" href="forum.php?s=7e2487b172eef5d7b7e112cf1186c722" class="logo-image"><img src="images/misc/vbulletin4_logo.png" alt="vBAddict - Powered by vBulletin" /></a></div -->
+	<div id="toplinks" class="toplinks">
+		
+You are not logged in. Login now with your Wargaming.net ID.&nbsp;
+			<ul class="nouser">
+				<li>
+					<a href="/wot_login.php?server=asia">ASIA</a>
+					<a href="/wot_login.php?server=na">USA</a>
+					<a href="/wot_login.php?server=ru">RU</a>
+					<a href="/wot_login.php?server=eu">EU</a>
+					<a href="/wot.php?do=wargamingid">More Info</a>
+				</li>
+
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		
+		
+	</div>
+	<hr />
+</div>
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+
+
+<li class="selected"><a class="navtab" href="wot.php">Overview</a></li>
+
+
+
+<li><a class="navtab" href="content.php">Blog and News</a></li>
+
+
+
+<li><a class="navtab" href="wot.php?do=charts">Charts</a></li>
+
+
+
+<li><a class="navtab" href="statistics.php">Tank Statistics</a></li>
+
+
+
+<li><a class="navtab" href="statistics_maps.php">Map Statistics</a></li>
+
+
+
+<li><a class="navtab" href="battlehistory.php">Battlehistory</a></li>
+
+
+
+<li><a class="navtab" href="/heatmaps/">Heatmaps</a></li>
+
+
+
+
+<li><a class="navtab" href="wot.php?do=leaderboard">Leaderboard</a></li>
+
+
+
+<li><a class="navtab" href="wot.php?do=upload">Upload your Profile</a></li>
+
+
+
+<li><a class="navtab" href="wot.php?do=about">About</a></li>
+
+
+
+
+<li><a class="navtab" href="project.php?projectid=6">Project Tracker</a></li>
+
+
+
+
+	</ul>
+
+
+
+
+</div>
+<br/>
+
+
+<div class="body_wrapper">
+
+
+
+	<form action="profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input type="hidden" name="do" value="dismissnotice" />
+		<input type="hidden" name="s" value="s=7e2487b172eef5d7b7e112cf1186c722&amp;" />
+		<input type="hidden" name="securitytoken" value="guest" />
+		<input type="hidden" id="dismiss_notice_hidden" name="dismiss_noticeid" value="" />
+		<input type="hidden" name="url" value="" />
+		<ol>
+			<li class="restore" id="navbar_notice_16">
+	
+	Important Message to all ADU Users:<br/>
+<b>The ADU Active Dossier Uploader v3.0.0.x - v3.0.1.x is unable to update automatically!</b><br/>
+(disabled button for update, wrong URI)<br/>
+<br/>
+Please update ADU by manually downloading the version 3.0.3, which fixes the automatic update behaviour.<br/>
+<br/>
+Link:<br/>
+<a href="http://www.vbaddict.net/adu/ActiveDossierUploader.exe">http://www.vbaddict.net/adu/ActiveDossierUploader.exe</a><br/>
+<br/>
+Sorry for the trouble!
+</li>
+		</ol>
+	</form>
+
+
+<div id="container">
+	<div id="content">
+		<div class="grouplist">
+			<div class="block wotpaentry">
+				<h1 class="blockhead">Welcome to the vBAddict World of Tanks Performance Analyzer and Statistics Site</h1>
+				
+				<h2 class="blocksubhead">Track your progress</h2>
+					<div class="section">
+						<div class="blockbody" style="padding:10px;">
+vBAddict WoT Performance Analyzer can analyze your WoT Profile with the help of locally stored dossier cache files. Dossier files contains statistics of the last game on each tank you played.<br />
+<br />
+The Performance Analyzer will help you to keep track on your overall battle performance WN7 efficiency, accuracy, damage ratio, damage dealt, damage assisted (radio + track), damage taken, damage per kill, experience, average battle time, mileage per map, credits and experience per minute and even more.<br/>
+See which tanks and how many of them you already destroyed, compare it with the list of the tanks you still need to destroy.<br/>
+<br/>
+Expenditure helps you to keep an eye on your profit by tracking earned and spent credits/gold for vehicle repair, resupply ammunition and consumables seperately for each of your tanks.
+<br/>
+By uploading your dossier on a regular base you will get real progress of your gaming skills. With the tank charts you will even now track progress on each of your tank. With the help of the <a href="/wot.php?do=upload">Active Dossier Uploader</a> the dossier cache file, battle results and replays are automatically uploaded to vBAddict for further analysis.<br/>
+<br/>
+<br/>
+</div>
+</div>
+
+				<h2 class="blocksubhead">Examples</h2>
+					<div class="section">
+						<div class="blockbody" style="padding:10px;">
+Example for "Efficiency by Tier" Chart:<br/>
+<a href="/wot.php?do=charts&amp;chartname=profile&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img alt="Example for Efficiency by Tier" style="margin: 15px;" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_profile_efficiency_by_tier.png" /></a><br/>
+<br/>
+
+Example for "Skillradar":<br/>
+<a href="/wot.php?do=charts&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img alt="Skillradar" style="margin: 15px;" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_skill_0_0_-1_-1.png" /></a><br/>
+<br/>
+
+Example for Progress:<br/>
+<a href="/wot.php?do=charts&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img alt="Progress" style="margin: 15px;" border="0" src="http://www.vbaddict.net/wot/data/vbaddict_progress_battleresults.png" /></a><br/>
+<br/>
+
+Example for Income / Expenditure:<br/>
+<a href="/wot.php?do=charts&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img alt="Progress" style="margin: 15px;" border="0" src="http://www.vbaddict.net/wot/data/vbaddict_expenditure.png" /></a><br/>
+<br/>
+
+Example for "Damage per Kill" Chart (from the beginning):<br/>
+<a href="/wot.php?do=charts&amp;countryid=3&amp;tankid=0&amp;charttype=1&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img alt="Example for "Damage per Kill" Chart (from the beginning)" style="margin: 15px;" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_t_3_0_damage_kill_all.png" /></a><br/>
+<br/>
+
+Example for "Damage ratio" Chart:<br/>
+<a href="/wot.php?do=charts&amp;countryid=0&amp;tankid=32&amp;charttype=1&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img alt="Damage ratio" style="margin: 15px;" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_t_0_32_damage_ratio.png" /></a><br/>
+<br/>
+
+Example of signature image:<br/>
+<a href="/wot.php?do=charts&amp;chartname=signature&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img src="http://www.vbaddict.net/wotsig/0af79b837139a524d1df5b2289bcc213_24.png" style="margin: 15px;" border="0"/></a><br/>
+<br/>
+
+To see what you will get by uploading your dossier file on a regular base, you can see Phalynx' personal charts: <a href="wot.php?do=charts&amp;wotid=0af79b837139a524d1df5b2289bcc213">Charts of Phalynx</a>.
+
+
+						</div>
+					</div>
+
+					<h2 class="blocksubhead">How do I submit my dossier cache file and battle results?</h2>
+					<div class="section">
+						<div class="blockbody" style="padding:10px;">
+You can submit your dossier cache and battle results on two ways:<br/><br/>
+- Automatically with the <a href="/wot.php?do=upload">Active Dossier Uploader</a>, a small application<br/>
+- By using the upload functionality of this Webapplication<br/>
+- With the help of a batchfile<br/>
+<br/>
+<a href="wot.php?do=upload">Click here for more informations about uploading</a>
+
+						</div>
+					</div>
+				
+					
+			
+<h2 class="blocksubhead">Sharing your progress charts</h2>
+					<div class="section">
+						<div class="blockbody" style="padding:10px;">
+Of course you are able to share your data. You can link directly to the desired charts (.PNG image files).<br />
+You can include the smaller charts in signatures. They have a size of 468x100 pixel.
+						</div>
+					</div>
+			
+			
+					
+					
+<!-- h3 class="blocksubhead">Thanks to World of Tanks Dossier Tool</h3>
+					<div class="section">
+						<div class="blockbody" style="padding:10px;">
+The dossier file is beeing processed by the <a target="_blank" href="http://wot-dossier.appspot.com/dossier">WoT Dossier Tool</a>. Thanks for offering such great service!
+						</div>
+					</div -->
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="sidebar">
+	<div class="grouplist">
+		<div class="block lwentry">
+			<h2 class="blockhead">Start right now</h2>
+			<div class="section">
+				<div class="blockbody" style="padding:10px;">
+					<p class="centeredlink"><a href="wot.php?do=upload" class="newcontent_textcontrol">Analyze my WoT Profile</a></p>
+					<div style="clear:both;">&nbsp;</div>
+				</div>
+			</div>
+<h3 class="blocksubhead">Some numbers</h3>
+			<div class="section">
+				<div class="blockbody" style="padding:10px;">
+<ul>
+<li>Serving charts for <b>21,997</b> gamers.</li><li>Printing progress for <b>1.96 Mio</b> tanks.</li><li>Keeping history of <b>10.32 Mio</b> battles.</li><li>Offering <b>923,624</b> replays for download.</li>	
+	
+	</ul>
+				</div>
+			</div>
+
+		<h2 class="blocksubhead">Support the Author to pay the Server</h2>
+			<div class="section">
+				<div class="blockbody" style="padding:10px;">
+<center>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="2U9XV6K3LJZUL">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal ? The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>
+</center>
+
+
+				</div>
+			</div>	
+
+
+<h2 class="blocksubhead">Partner</h2>
+			<div class="section">
+				<div class="blockbody" style="padding:10px;">
+<center>
+	<!-- <a href="http://forum.worldoftanks.eu/index.php?/topic/187229-082-druids-contour-icon-mod-by-phalynx/" target="_blank"><img src="/cim/pim_1_icons.png" border="0" /></a><br />
+	<a href="http://forum.worldoftanks.eu/index.php?/topic/187229-082-druids-contour-icon-mod-by-phalynx/" target="_blank">Contour Icon Mod</a>
+<br/>
+<br/> -->
+	<a href="http://www.wotstatistics.net/" target="_blank"><img src="/wot/partner/WOT_12_64x64x32.png" border="0" /></a><br />
+	<a href="http://www.wotstatistics.net/" target="_blank">WOT Offline Statistics</a>
+</center>
+
+
+				</div>
+			</div>
+			
+			
+			<h2 class="blocksubhead">Search for a Player</h2>
+			<div class="section">
+				<div class="blockbody" style="padding:10px;">
+					<form action="wot.php" method="post" name="wotsearch" id="wotsearch" class="block">
+						<input type="text" onkeyup="SearchProfile();" class="primary textbox" name="searchprofile" id="searchprofile"  maxlength="20" dir="ltr" tabindex="1" value="" /><br/>
+					</form>
+				</div>
+					<div class="blockbody" style="padding:10px;">
+					<ul>
+						<div class="wotsearch">&nbsp;</div>
+					</ul>
+				</div>
+			</div>
+			
+			<h2 class="blocksubhead">Search for a Clan</h2>
+			<div class="section">
+				<div class="blockbody" style="padding:10px;">
+					<form action="wot.php" method="post" name="wotsearch_clan" id="wotsearch_clan" class="block">
+						<input type="text" onkeyup="SearchClan();" class="primary textbox" name="searchclan" id="searchclan"  maxlength="20" dir="ltr" tabindex="1" value="" /><br/>
+					</form>
+				</div>
+					<div class="blockbody" style="padding:10px;">
+					<ul>
+						<div class="wotsearch_clan">&nbsp;</div>
+					</ul>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+
+<div style="clear:both;">&nbsp;</div>
+
+
+<div id="footer" class="floatcontainer footer">
+
+	
+	<ul id="footer_links" class="footer_links">
+		
+		
+		
+		
+		<li><a href="archive/index.php?s=7e2487b172eef5d7b7e112cf1186c722">Archive</a></li>
+		
+		
+		
+		<li><a href="wot/tanks/1_pzvib_tiger_ii_training.png#top" onclick="document.location.hash='top'; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT. The time now is <span class="time">08:29</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+<div class="shade footer_time">World of Tanks and Wargaming.net are registered trademarks or trademarks of Wargaming.net LLP.</div>
+<div class="shade footer_time">This website is in no way associated with Wargaming.net. </div>
+<br/>
+	Powered by vBulletin&reg; <br />Copyright &copy; 2013 vBulletin Solutions, Inc. All rights reserved.
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	
+</div>
+ 
+
+</div>
+
+
+
+
+
+
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {lang: 'en-GB'}
+</script>
+
+
+
+<script type="text/javascript">
+<!--
+    function enable_obj(id) {
+       var e = document.getElementById(id);
+          e.style.display = 'block';
+    }
+    function disable_obj(id) {
+       var e = document.getElementById(id);
+          e.style.display = 'none';
+    }
+
+    function scrollto_obj(id) {
+	    document.getElementById(id).scrollIntoView();
+    }
+
+
+    function SetFocus(id)
+    {
+    	document.getElementById(id).focus();
+    }
+
+
+	//-->
+</script>
+
+
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.www.vbaddict.net"]);
+  _paq.push(["setDomains", ["*.www.vbaddict.net"]]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://pw.vbaddict.net/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+<noscript>
+	<!-- Piwik Image Tracker -->
+	<img src="http://pw.vbaddict.net/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+	<!-- End Piwik -->
+</noscript>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-26558277-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

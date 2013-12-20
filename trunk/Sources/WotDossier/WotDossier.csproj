@@ -819,6 +819,33 @@
     <Resource Include="Resources\Images\Tanks\china_ch01_type59_gold.png" />
     <Resource Include="Resources\Images\Tanks\china_ch24_type64.png" />
     <Resource Include="Resources\Images\Countries\slot_bright_6.png" />
+    <Resource Include="Resources\Images\Maps\53_japan.jpg" />
+    <Resource Include="Resources\Images\Tanks\china_ch04_t34_1_training.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pziii_training.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pzv_training.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pzvib_tiger_ii_training.png" />
+    <Resource Include="Resources\Images\Tanks\japan_chi_ha.png" />
+    <Resource Include="Resources\Images\Tanks\japan_chi_he.png" />
+    <Resource Include="Resources\Images\Tanks\japan_chi_ni.png" />
+    <Resource Include="Resources\Images\Tanks\japan_chi_nu.png" />
+    <Resource Include="Resources\Images\Tanks\japan_chi_ri.png" />
+    <Resource Include="Resources\Images\Tanks\japan_chi_to.png" />
+    <Resource Include="Resources\Images\Tanks\japan_ha_go.png" />
+    <Resource Include="Resources\Images\Tanks\japan_ke_ho.png" />
+    <Resource Include="Resources\Images\Tanks\japan_ke_ni.png" />
+    <Resource Include="Resources\Images\Tanks\japan_ke_ni_b.png" />
+    <Resource Include="Resources\Images\Tanks\japan_nc27.png" />
+    <Resource Include="Resources\Images\Tanks\japan_sta_1.png" />
+    <Resource Include="Resources\Images\Tanks\japan_st_b1.png" />
+    <Resource Include="Resources\Images\Tanks\japan_type_61.png" />
+    <Resource Include="Resources\Images\Tanks\usa_m4a3e8_sherman_training.png" />
+    <Resource Include="Resources\Images\Tanks\usa_t23.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_kv.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_object_430.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_observer.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_r104_object_430_ii.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_su76i.png" />
+    <Resource Include="Resources\Images\Tanks\ussr_t_34_85_training.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1490,6 +1517,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)\..\..\Tools\mt.exe –manifest app.manifest –outputresource:$(TargetDir)$(TargetName).exe;#1</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

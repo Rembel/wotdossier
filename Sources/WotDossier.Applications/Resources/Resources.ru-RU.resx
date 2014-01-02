@@ -367,4 +367,7 @@
   <data name="WondowCaption_Export" xml:space="preserve">
     <value>Экспорт</value>
   </data>
+  <data name="TankFilterPanel_All" xml:space="preserve">
+    <value>Все</value>
+  </data>
 </root>

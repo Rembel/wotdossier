@@ -80,7 +80,7 @@ namespace WotDossier
                 Thread.CurrentThread.CurrentCulture = culture;
                 Thread.CurrentThread.CurrentUICulture = culture;
 
-                CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
+                Controller = CompositionContainerFactory.Instance.Container.GetExport<ApplicationController>().Value;
 
                 Controller.Run();
             }

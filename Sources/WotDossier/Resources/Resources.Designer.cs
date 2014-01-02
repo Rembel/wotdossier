@@ -3555,6 +3555,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string TankFilterPanel_All {
+            get {
+                return ResourceManager.GetString("TankFilterPanel_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string TankFilterPanel_Country {
@@ -3587,6 +3596,15 @@ namespace WotDossier.Resources {
         public static string TankFilterPanel_Premium {
             get {
                 return ResourceManager.GetString("TankFilterPanel_Premium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tank.
+        /// </summary>
+        public static string TankFilterPanel_Tank {
+            get {
+                return ResourceManager.GetString("TankFilterPanel_Tank", resourceCulture);
             }
         }
         

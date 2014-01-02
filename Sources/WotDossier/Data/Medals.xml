@@ -37,11 +37,11 @@
   </BattleHero>
   <Special>
     <!--Коса смерти-->
-    <medal name="handOfDeath" id="58" icon="HandOfDeath" type="1"/>
+    <medal name="handOfDeath" id="62" icon="HandOfDeath" type="1"/>
     <!--рейдер-->
     <medal name="raider" id="61" icon="Raider" type="0"/>
     <!--Стрелок-->
-    <medal name="titleSniper" id="62" icon="TitleSniper" type="1"/>
+    <medal name="titleSniper" id="58" icon="TitleSniper" type="1"/>
     <!--Бронебойщик-->
     <medal name="armorPiercer" id="63" icon="ArmorPiercer" type="1"/>
     <!--Камикадзе-->

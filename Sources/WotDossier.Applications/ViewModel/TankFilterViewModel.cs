@@ -288,6 +288,7 @@ namespace WotDossier.Applications.ViewModel
                                     || x.CountryId == (int)Country.China && ChinaSelected
                                     || x.CountryId == (int)Country.France && FranceSelected
                                     || x.CountryId == (int)Country.US && USSelected
+                                    || x.CountryId == (int)Country.Japan && JPSelected
                                     || x.CountryId == (int)Country.UK && UKSelected)
                                    && (x.IsFavorite || !IsFavorite)
                                    && (x.IsPremium || !IsPremium)

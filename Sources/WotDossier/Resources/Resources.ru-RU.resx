@@ -1732,4 +1732,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Column_Replay_PlayerName" xml:space="preserve">
     <value>Игрок</value>
   </data>
+  <data name="TankFilterPanel_Tank" xml:space="preserve">
+    <value>Танк</value>
+  </data>
+  <data name="TankFilterPanel_All" xml:space="preserve">
+    <value>Все</value>
+  </data>
 </root>

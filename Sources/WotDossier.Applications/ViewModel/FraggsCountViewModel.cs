@@ -83,7 +83,7 @@ namespace WotDossier.Applications.ViewModel
         {
             TankFrags = tanks.SelectMany(x => x.TankFrags).ToList();
             Tanks = tanks.OrderBy(x => x.Tank).Select(x => new KeyValue<int, string>(x.TankUniqueId, x.Tank)).ToList();
-            Tanks.Insert(0, new KeyValue<int, string>(0, "All"));
+            Tanks.Insert(0, new KeyValue<int, string>(0, Resources.Resources.TankFilterPanel_All));
             OnPropertyChanged("Tanks");
         }
     }

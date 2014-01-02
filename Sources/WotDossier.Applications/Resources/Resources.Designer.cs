@@ -662,6 +662,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        internal static string TankFilterPanel_All {
+            get {
+                return ResourceManager.GetString("TankFilterPanel_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Damage by allies to enemy vehicle you detected: {0}.
         /// </summary>
         internal static string Tooltip_Replay_AlliesDamage {

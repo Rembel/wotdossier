@@ -16,6 +16,8 @@ namespace WotDossier.Domain.Replay
         private List<CrewMember> _crewCrits;
         private List<Device> _tankCrits;
 
+        //up to Version 0.8.5: The total number of critical hits scored on this vehicle
+        //since Version 0.8.6: Packed value. 
         [DataMember]
         public int crits { get; set; }
 
@@ -81,18 +83,6 @@ namespace WotDossier.Domain.Replay
                     }
                 }
                 return _crewCrits;
-            }
-        }
-
-        public int critsCount
-        {
-            get 
-            {
-                if (crits > 1000)
-                {
-                    return tankDamageCrits.Count + crewCrits.Count + tankCrits.Count;
-                }
-                return crits;
             }
         }
 

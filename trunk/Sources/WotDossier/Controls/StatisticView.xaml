@@ -151,14 +151,14 @@
             <TextBlock Foreground="#FFA759" Text="{x:Static Resources:Resources.Tab_Header_Ratings}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <!--EffectivityRating-->
             <controls:LinkStatisticRow Header="{x:Static Resources:Resources.Common_EffectivityRating}" 
-                                   Value="{Binding EffRating, StringFormat='### ### ### ###'}"
+                                   Value="{Binding EffRating, StringFormat='### ### ### ###.0'}"
                                    Delta="{Binding EffRatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding EffRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                    ValueForeground="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}"
                                        HeaderLink="{Binding EffRatingLink}"/>
             <!--Wn6Rating-->
             <controls:StatisticRow Header="WN6" 
-                                   Value="{Binding WN6Rating, StringFormat='### ### ### ###'}"
+                                   Value="{Binding WN6Rating, StringFormat='### ### ### ###.0'}"
                                    Delta="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"
                                    DeltaForeground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                    ValueForeground="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}"/>

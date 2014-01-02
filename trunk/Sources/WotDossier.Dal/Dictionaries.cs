@@ -110,12 +110,10 @@ namespace WotDossier.Dal
                 var parsedData = se.Deserialize<JArray>(reader);
                 foreach (JToken jToken in parsedData)
                 {
-                    string json = jToken.ToString();
-
-                    TankDescription tank = JsonConvert.DeserializeObject<TankDescription>(json);
+                    TankDescription tank = jToken.ToObject<TankDescription>();
                     tank.CountryCode = WotApiHelper.GetCountryNameCode(tank.CountryId);
 
-                    TankIcon icon = JsonConvert.DeserializeObject<TankIcon>(json);
+                    TankIcon icon = jToken.ToObject<TankIcon>();
                     icon.CountryCode = tank.CountryCode;
                     _icons.Add(icon.IconId, icon);
 
@@ -140,7 +138,7 @@ namespace WotDossier.Dal
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
                 var parsedData = se.Deserialize<JObject>(reader);
-                return JsonConvert.DeserializeObject<Dictionary<int, TankServerInfo>>(parsedData["data"].ToString());
+                return parsedData["data"].ToObject<Dictionary<int, TankServerInfo>>();
             }
         }
 
@@ -153,7 +151,7 @@ namespace WotDossier.Dal
                     JsonTextReader reader = new JsonTextReader(re);
                     JsonSerializer se = new JsonSerializer();
                     var parsedData = se.Deserialize<JArray>(reader);
-                    return JsonConvert.DeserializeObject<List<RatingExpectancy>>(parsedData.ToString()).ToDictionary(x => x.Icon, x => x);
+                    return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.Icon, x => x);
                 }
             }
             catch (Exception e)

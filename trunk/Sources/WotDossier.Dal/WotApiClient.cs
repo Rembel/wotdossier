@@ -77,7 +77,7 @@ namespace WotDossier.Dal
 
             foreach (JToken jToken in tanksData)
             {
-                Tank appSpotTank = JsonConvert.DeserializeObject<Tank>(jToken.ToString());
+                Tank appSpotTank = jToken.ToObject<Tank>();
                 TankJson tank = TankJsonV2Converter.Convert(appSpotTank);
                 tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                 ExtendPropertiesData(tank);
@@ -102,8 +102,7 @@ namespace WotDossier.Dal
                 foreach (JToken jToken in tanksData)
                 {
                     JProperty property = (JProperty)jToken;
-                    string raw = property.Value.ToString();
-                    TankJson29 tank29 = JsonConvert.DeserializeObject<TankJson29>(raw);
+                    TankJson29 tank29 = property.Value.ToObject<TankJson29>();
                     TankJson tank = TankJsonV2Converter.Convert(tank29);
                     tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                     ExtendPropertiesData(tank);
@@ -115,8 +114,7 @@ namespace WotDossier.Dal
                 foreach (JToken jToken in tanksDataV2)
                 {
                     JProperty property = (JProperty)jToken;
-                    string raw = property.Value.ToString();
-                    TankJson65 tank65 = JsonConvert.DeserializeObject<TankJson65>(raw);
+                    TankJson65 tank65 = property.Value.ToObject<TankJson65>();
                     TankJson tank = TankJsonV2Converter.Convert(tank65);
                     tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                     ExtendPropertiesData(tank);
@@ -210,7 +208,7 @@ namespace WotDossier.Dal
 
                 if (parsedData["data"].Any())
                 {
-                    List<VehicleStat> tanks = JsonConvert.DeserializeObject<List<VehicleStat>>(parsedData["data"][playerId.ToString()].ToString());
+                    List<VehicleStat> tanks = parsedData["data"][playerId.ToString()].ToObject<List<VehicleStat>>();
                     foreach (VehicleStat tank in tanks)
                     {
                         if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))
@@ -241,7 +239,7 @@ namespace WotDossier.Dal
 
                 if (parsedData["data"].Any())
                 {
-                    return JsonConvert.DeserializeObject<Ratings>(parsedData["data"][playerId.ToString()].ToString());
+                    return parsedData["data"][playerId.ToString()].ToObject<Ratings>();
                 }
             }
             catch (Exception e)
@@ -286,7 +284,7 @@ namespace WotDossier.Dal
                 }
 
                 JObject parsedData = Request<JObject>(settings, "clan/info/", dictionary);
-                return JsonConvert.DeserializeObject<ClanData>(parsedData["data"][clanId.ToString()].ToString());
+                return parsedData["data"][clanId.ToString()].ToObject<ClanData>();
             }
             catch (Exception e)
             {
@@ -332,7 +330,7 @@ namespace WotDossier.Dal
                     {PARAM_SEARCH, playerName},
                     {PARAM_LIMIT, limit},
                 });
-                return JsonConvert.DeserializeObject<List<PlayerSearchJson>>(parsedData["data"].ToString());
+                return parsedData["data"].ToObject<List<PlayerSearchJson>>();
             }
             catch (Exception e)
             {
@@ -363,7 +361,7 @@ namespace WotDossier.Dal
 
                 if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
                 {
-                    return JsonConvert.DeserializeObject<List<ClanSearchJson>>(parsedData["data"].ToString());
+                    return parsedData["data"].ToObject<List<ClanSearchJson>>();
                 }
             }
             catch (Exception e)

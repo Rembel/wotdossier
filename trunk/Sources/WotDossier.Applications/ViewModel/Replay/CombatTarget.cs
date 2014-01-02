@@ -7,11 +7,11 @@ namespace WotDossier.Applications.ViewModel.Replay
     {
         public TeamMember TeamMember { get; set; }
 
-        public CombatTarget(KeyValuePair<long, DamagedVehicle> vehicleDamage, TeamMember teamMember)
+        public CombatTarget(KeyValuePair<long, DamagedVehicle> vehicleDamage, TeamMember teamMember, string clientVersionFromExe)
         {
             TeamMember = teamMember;
 
-            crits = vehicleDamage.Value.critsCount;
+            crits = GetCritsCount(vehicleDamage.Value, clientVersionFromExe);
             critsTooltip = string.Format(Resources.Resources.Tooltip_Replay_CriticalDamage, crits);
             damageAssisted = vehicleDamage.Value.damageAssisted;
             damageAssistedTooltip = string.Format(Resources.Resources.Tooltip_Replay_AlliesDamage, damageAssisted);
@@ -25,6 +25,17 @@ namespace WotDossier.Applications.ViewModel.Replay
             spotted = vehicleDamage.Value.spotted;
             spottedTooltip = spotted > 0 ? Resources.Resources.Tooltip_Replay_Detected : string.Empty;
             TeamMate = teamMember.TeamMate;
+        }
+
+        private int GetCritsCount(DamagedVehicle vehicleDamage, string clientVersionFromExe)
+        {
+            //up to Version 0.8.5: The total number of critical hits scored on this vehicle
+            //since Version 0.8.6: Packed value. 
+            if (!string.IsNullOrEmpty(clientVersionFromExe))
+            {
+                return vehicleDamage.tankDamageCrits.Count + vehicleDamage.crewCrits.Count + vehicleDamage.tankCrits.Count;
+            }
+            return crits;
         }
 
         public int crits { get; set; }

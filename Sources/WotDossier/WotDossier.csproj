@@ -184,6 +184,7 @@
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\Color\AliveToColorConverter.cs" />
+    <Compile Include="Converters\Color\WN8ToColorConverter.cs" />
     <Compile Include="Converters\Color\EffRangeBrushes.cs" />
     <Compile Include="Converters\Color\NoobRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\WN7ToColorConverter.cs" />

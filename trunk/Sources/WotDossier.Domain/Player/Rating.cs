@@ -1,25 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WotDossier.Domain.Player
+﻿namespace WotDossier.Domain.Player
 {
     public class Rating
     {
-        private int? place;
-        private int value;
+        public int? Rank { get; set; }
 
-        public int? Place
-        {
-            get { return place; }
-            set { place = value; }
-        }
+        public int? Value { get; set; }
 
-        public int Value
-        {
-            get { return value; }
-            set { this.value = value; }
-        }
+        public int? rank_delta { get; set; }
     }
 }

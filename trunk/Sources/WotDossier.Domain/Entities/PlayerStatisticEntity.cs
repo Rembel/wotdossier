@@ -378,48 +378,64 @@ namespace WotDossier.Domain.Entities
 
             //GR-->
             //Global Rating
-            RatingIntegratedValue = ratings.Integrated_rating.Value;
-            RatingIntegratedPlace = ratings.Integrated_rating.Place ?? 0;
+            //RatingIntegratedValue = ratings.Integrated_rating.Value;
+            //RatingIntegratedPlace = ratings.Integrated_rating.Rank ?? 0;
             //W/B-->
             //Victories/Battles
-            RatingBattleAvgPerformanceValue = ratings.Battle_avg_performance.Value;
-            RatingBattleAvgPerformancePlace = ratings.Battle_avg_performance.Place ?? 0;
+            //wins_ratio 	Процент побед wins_ratio.rank 	numeric 	
+            RatingBattleAvgPerformanceValue = ratings.wins_ratio.Value ?? 0;
+            RatingBattleAvgPerformancePlace = ratings.wins_ratio.Rank ?? 0;
             //E/B-->
             //Average Experience per BattleJson
-            RatingBattleAvgXpValue = ratings.Battle_avg_xp.Value;
-            RatingBattleAvgXpPlace = ratings.Battle_avg_xp.Place ?? 0;
+            //xp_avg 	Средний опыт за бой xp_avg.rank 	numeric 	
+            RatingBattleAvgXpValue = ratings.xp_avg.Value ?? 0;
+            RatingBattleAvgXpPlace = ratings.xp_avg.Rank ?? 0;
             //WIN-->
             //Victories
-            RatingBattleWinsValue = ratings.Battle_wins.Value;
-            RatingBattleWinsPlace = ratings.Battle_wins.Place ?? 0;
+            //RatingBattleWinsValue = ratings.Battle_wins.Value;
+            //RatingBattleWinsPlace = ratings.Battle_wins.Rank ?? 0;
             //GPL-->
             //Battles Participated
-            RatingBattlesValue = ratings.Battles.Value;
-            RatingBattlesPlace = ratings.Battles.Place ?? 0;
+            //battles_count 	Количество проведённых боёв battles_count.rank 	numeric 	
+            RatingBattlesValue = ratings.battles_count.Value ?? 0;
+            RatingBattlesPlace = ratings.battles_count.Rank ?? 0;
             //CPT-->
             //Capture Points
-            RatingCapturedPointsValue = ratings.Ctf_points.Value;
-            RatingCapturedPointsPlace = ratings.Ctf_points.Place ?? 0;
+            //RatingCapturedPointsValue = ratings.Ctf_points.Value;
+            //RatingCapturedPointsPlace = ratings.Ctf_points.Rank ?? 0;
             //DMG-->
             //Damage Caused
-            RatingDamageDealtValue = ratings.Damage_dealt.Value;
-            RatingDamageDealtPlace = ratings.Damage_dealt.Place ?? 0;
+            //damage_dealt 	Общий нанесённый урон damage_dealt.rank 	numeric 	
+            RatingDamageDealtValue = ratings.damage_dealt.Value ?? 0;
+            RatingDamageDealtPlace = ratings.damage_dealt.Rank ?? 0;
             //DPT-->
             //Defense Points
-            RatingDroppedPointsValue = ratings.Dropped_ctf_points.Value;
-            RatingDroppedPointsPlace = ratings.Dropped_ctf_points.Place ?? 0;
+            //RatingDroppedPointsValue = ratings.Dropped_ctf_points.Value;
+            //RatingDroppedPointsPlace = ratings.Dropped_ctf_points.Rank ?? 0;
             //FRG-->
             //Targets Destroyed
-            RatingFragsValue = ratings.Frags.Value;
-            RatingFragsPlace = ratings.Frags.Place ?? 0;
+            //frags_count 	Количество уничтоженной техники frags_count.rank 	numeric 	
+            RatingFragsValue = ratings.frags_count.Value ?? 0;
+            RatingFragsPlace = ratings.frags_count.Rank ?? 0;
             //SPT-->
             //Targets Detected
-            RatingSpottedValue = ratings.Spotted.Value;
-            RatingSpottedPlace = ratings.Spotted.Place ?? 0;
+            //spotted_count 	Количество обнаруженной техники spotted_count.rank 	numeric 	
+            RatingSpottedValue = ratings.spotted_count.Value ?? 0;
+            RatingSpottedPlace = ratings.spotted_count.Rank ?? 0;
             //EXP-->
             //Total Experience
-            RatingXpValue = ratings.Xp.Value;
-            RatingXpPlace = ratings.Xp.Place ?? 0;
+            //xp_amount 	Общий опыт xp_amount.rank 	numeric 	
+            RatingXpValue = ratings.xp_amount.Value ?? 0;
+            RatingXpPlace = ratings.xp_amount.Rank ?? 0;
+
+            /*
+            damage_avg 	Средний нанесённый урон за бой damage_avg.rank 	numeric 	
+            frags_avg 	Среднее количество уничтоженной техники за бой frags_avg.rank 	numeric 	
+            hits_ratio 	Процент попаданий hits_ratio.rank 	numeric 	
+            spotted_avg 	Среднее количество обнаруженной техники за бой spotted_avg.rank 	numeric 	
+            survived_ratio 	Процент выживаемости survived_ratio.rank 	numeric 	
+            xp_max 	Максимальный опыт за бой xp_max.rank 	numeric 	
+             */
 
             #endregion
         }

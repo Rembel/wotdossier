@@ -31,6 +31,7 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageDealt}" Binding="{Binding DamageDealt}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageTaken}" Binding="{Binding DamageTaken}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_MaxDamage}" Binding="{Binding MaxDamage}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamageRatio}" Binding="{Binding DamageRatio, Converter={x:Static Converters:Double2Formater.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AvgDamageDealt, StringFormat='0.00'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Damage_DamagePerHit}" Binding="{Binding DamagePerHit}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>

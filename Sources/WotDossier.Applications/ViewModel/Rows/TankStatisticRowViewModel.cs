@@ -171,6 +171,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int XpBefore88 { get; set; }
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
+        public int MaxDamage { get; set; }
 
         public int DamageAssisted
         {
@@ -294,6 +295,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowDamage ]
             DamageDealt = tank.A15x15.damageDealt;
             DamageTaken = tank.A15x15.damageReceived;
+            MaxDamage = tank.A15x15.maxDamage;
             #endregion
 
             #region [ ITankRowEpic ]

@@ -621,6 +621,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max damage.
+        /// </summary>
+        public static string Column_Damage_MaxDamage {
+            get {
+                return ResourceManager.GetString("Column_Damage_MaxDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Billotte.
         /// </summary>
         public static string Column_Epics_Billotte {

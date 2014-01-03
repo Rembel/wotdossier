@@ -35,6 +35,7 @@ namespace WotDossier.Dal
         public const string PARAM_APPID = "application_id";
         public const string PARAM_SEARCH = "search";
         public const string PARAM_ACCOUNT_ID = "account_id";
+        public const string PARAM_TYPE = "type";
         public const string PARAM_CLAN_ID = "clan_id";
         public const string PARAM_FIELDS = "fields";
         public const string PARAM_LIMIT = "limit";
@@ -231,10 +232,11 @@ namespace WotDossier.Dal
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, "account/ratings/", new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(settings, "ratings/accounts/", new Dictionary<string, object>
                 {
                     {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
+                    {PARAM_TYPE, "all"},
                 });
 
                 if (parsedData["data"].Any())

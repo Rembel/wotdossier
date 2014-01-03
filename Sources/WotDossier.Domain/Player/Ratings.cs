@@ -1,88 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WotDossier.Domain.Player
+﻿namespace WotDossier.Domain.Player
 {
     public class Ratings
     {
-        private Rating spotted;
-        private Rating dropped_ctf_points;
-        private Rating battle_avg_xp;
-        private Rating xp;
-        private Rating battles;
-        private Rating damage_dealt;
-        private Rating ctf_points;
-        private Rating integrated_rating;
-        private Rating battle_avg_performance;
-        private Rating frags;
-        private Rating battle_wins;
+        public Rating spotted_count { get; set; }
+        public Rating spotted_avg { get; set; }
 
-        public Rating Spotted
-        {
-            get { return spotted; }
-            set { spotted = value; }
-        }
+        public Rating xp_amount { get; set; }
+        public Rating xp_avg { get; set; }
+        public Rating xp_max { get; set; }
 
-        public Rating Dropped_ctf_points
-        {
-            get { return dropped_ctf_points; }
-            set { dropped_ctf_points = value; }
-        }
+        public Rating battles_count { get; set; }
 
-        public Rating Xp
-        {
-            get { return xp; }
-            set { xp = value; }
-        }
+        public Rating frags_count { get; set; }
+        public Rating frags_avg { get; set; }
 
-        public Rating Battles
-        {
-            get { return battles; }
-            set { battles = value; }
-        }
+        public Rating damage_dealt { get; set; }
+        public Rating damage_avg { get; set; }
 
-        public Rating Frags
-        {
-            get { return frags; }
-            set { frags = value; }
-        }
-
-        public Rating Battle_wins
-        {
-            get { return battle_wins; }
-            set { battle_wins = value; }
-        }
-
-        public Rating Battle_avg_performance
-        {
-            get { return battle_avg_performance; }
-            set { battle_avg_performance = value; }
-        }
-
-        public Rating Integrated_rating
-        {
-            get { return integrated_rating; }
-            set { integrated_rating = value; }
-        }
-
-        public Rating Ctf_points
-        {
-            get { return ctf_points; }
-            set { ctf_points = value; }
-        }
-
-        public Rating Damage_dealt
-        {
-            get { return damage_dealt; }
-            set { damage_dealt = value; }
-        }
-
-        public Rating Battle_avg_xp
-        {
-            get { return battle_avg_xp; }
-            set { battle_avg_xp = value; }
-        }
+        public Rating survived_ratio { get; set; }
+        public Rating wins_ratio { get; set; }
+        public Rating hits_ratio { get; set; }
     }
 }

@@ -18,7 +18,6 @@ using WotDossier.Applications;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
-using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
@@ -28,7 +27,6 @@ using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
-using List = NHibernate.Mapping.List;
 
 namespace WotDossier.Test
 {
@@ -363,6 +361,43 @@ namespace WotDossier.Test
                     {
                         Byte[] lnByte = streamReader.ReadBytes(1 * 1024 * 1024 * 10);
                         using (FileStream destinationFile = File.Create(Path.Combine(Environment.CurrentDirectory, map.mapidname + ".png")))
+                        {
+                            destinationFile.Write(lnByte, 0, lnByte.Length);
+                        }
+                    }
+                }
+            }
+        }
+
+        [Test]
+        public void LoadTanksImages()
+        {
+            List<TankDescription> tanks = Dictionaries.Instance.Tanks.Values.ToList();
+
+            foreach (var tank in tanks)
+            {
+                string url = string.Format("http://www.vbaddict.net/wot/tanks/{0}_{1}.png", tank.Icon.CountryId, tank.Icon.Icon);
+
+                WebRequest request = HttpWebRequest.Create(url);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                WebResponse response;
+                try
+                {
+                    response = request.GetResponse();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine(tank.Title);
+                    continue;
+                }
+                Stream responseStream = response.GetResponseStream();
+
+                if (responseStream != null)
+                {
+                    using (var streamReader = new BinaryReader(responseStream))
+                    {
+                        Byte[] lnByte = streamReader.ReadBytes(1 * 1024 * 1024 * 10);
+                        using (FileStream destinationFile = File.Create(Path.Combine(Environment.CurrentDirectory, string.Format("{0}_{1}.png", tank.CountryCode, tank.Icon.Icon))))
                         {
                             destinationFile.Write(lnByte, 0, lnByte.Length);
                         }

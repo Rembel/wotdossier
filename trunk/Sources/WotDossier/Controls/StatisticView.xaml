@@ -163,7 +163,8 @@
                                    DeltaForeground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                    ValueForeground="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}"/>
             <!--WN8-->
-            <controls:StatisticRow Header="WN8" Value="{Binding WN8Rating, StringFormat='### ### ### ###.0'}"/>
+            <controls:StatisticRow Header="WN8" Value="{Binding WN8Rating, StringFormat='### ### ### ###.0'}"
+                                   ValueForeground="{Binding Path=WN8Rating, Converter={x:Static color:WN8ToColorConverter.Default}}"/>
             <!--KievArmorRating-->
             <controls:LinkStatisticRow Header="{x:Static Resources:Resources.Common_KievArmorRating}" Value="{Binding KievArmorRating, StringFormat='### ### ### ###'}"
                                    Delta="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"

@@ -145,7 +145,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_FragsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--SPT-->
-                    <controls:RatingRow Image="..\Resources/Images/spt.png" Grid.Row="10"
+                    <!--<controls:RatingRow Image="..\Resources/Images/spt.png" Grid.Row="10"
                                                   ShortName="SPT"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_TargetsDetected}"
                                                   Value="{Binding Rating_SpottedValue}"
@@ -154,9 +154,9 @@
                                                   PlaceDelta="{Binding Rating_SpottedPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_SpottedValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </controls:RatingRow>
+                    </controls:RatingRow>-->
                     <!--EXP-->
-                    <controls:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
+                    <!--<controls:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
                                                   ShortName="EXP"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_TotalExperience}"
                                                   Value="{Binding Rating_XpValue}"
@@ -165,7 +165,7 @@
                                                   PlaceDelta="{Binding Rating_XpPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_XpValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_XpPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </controls:RatingRow>
+                    </controls:RatingRow>-->
                 </Grid>
             </StackPanel>
         </Grid>

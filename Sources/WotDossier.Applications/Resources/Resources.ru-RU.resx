@@ -370,4 +370,7 @@
   <data name="TankFilterPanel_All" xml:space="preserve">
     <value>Все</value>
   </data>
+  <data name="Msg_ServerNotSelected" xml:space="preserve">
+    <value>Не выбран сервер</value>
+  </data>
 </root>

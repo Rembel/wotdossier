@@ -125,6 +125,7 @@
     <Compile Include="ViewModel\Replay\ReplayViewModel.cs" />
     <Compile Include="ViewModel\Replay\TeamMember.cs" />
     <Compile Include="ViewModel\Replay\UploadReplayViewModel.cs" />
+    <Compile Include="ViewModel\Rows\TotalTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\SearchResultRowViewModel.cs" />
     <Compile Include="ViewModel\PlayerSearchViewModel.cs" />
     <Compile Include="ViewModel\PlayersCompareViewModel.cs" />

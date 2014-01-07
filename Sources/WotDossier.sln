@@ -69,6 +69,7 @@ Global
 		{A4EF480B-49B6-42C4-8ACE-6127B15699F8}.Lite|x86.ActiveCfg = Debug|x86
 		{A4EF480B-49B6-42C4-8ACE-6127B15699F8}.Lite|x86.Build.0 = Debug|x86
 		{A4EF480B-49B6-42C4-8ACE-6127B15699F8}.Release|Any CPU.ActiveCfg = Release|x86
+		{A4EF480B-49B6-42C4-8ACE-6127B15699F8}.Release|Any CPU.Build.0 = Release|x86
 		{A4EF480B-49B6-42C4-8ACE-6127B15699F8}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{A4EF480B-49B6-42C4-8ACE-6127B15699F8}.Release|Mixed Platforms.Build.0 = Release|x86
 		{A4EF480B-49B6-42C4-8ACE-6127B15699F8}.Release|x86.ActiveCfg = Release|x86

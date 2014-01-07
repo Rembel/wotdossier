@@ -92,6 +92,12 @@ namespace WotDossier.Applications.ViewModel
         {
             if (_nameChanged)
             {
+                if (string.IsNullOrEmpty(_appSettings.Server))
+                {
+                    MessageBox.Show(Resources.Resources.Msg_ServerNotSelected, Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                }
+
                 PlayerSearchJson player;
                 
                 player = WotApiClient.Instance.SearchPlayer(_appSettings, _appSettings.PlayerName);

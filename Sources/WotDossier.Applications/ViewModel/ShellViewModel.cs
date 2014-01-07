@@ -524,7 +524,12 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
 
-            Tanks = StatisticViewModelFactory.Create(entities);
+            List<TankStatisticRowViewModel> tankStatisticRowViewModels = StatisticViewModelFactory.Create(entities);
+            TotalTankStatisticRowViewModel totalRow = new TotalTankStatisticRowViewModel(tankStatisticRowViewModels);
+            List<TankStatisticRowViewModel> result = new List<TankStatisticRowViewModel>();
+            result.AddRange(tankStatisticRowViewModels);
+            result.Add(totalRow);
+            Tanks = result;
 
             InitMasterTankerList(_tanks);
 

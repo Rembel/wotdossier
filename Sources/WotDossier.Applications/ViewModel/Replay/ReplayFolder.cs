@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Xml.Serialization;
 
@@ -8,10 +9,12 @@ namespace WotDossier.Applications.ViewModel.Replay
 {
     [Serializable]
     [XmlRoot("folder")]
-    public class ReplayFolder
+    public class ReplayFolder : INotifyPropertyChanged
     {
         private ObservableCollection<ReplayFolder> _folders = new ObservableCollection<ReplayFolder>();
         private Guid _id;
+        private int _count;
+        private string _name;
 
         [XmlAttribute("id")]
         public Guid Id
@@ -28,7 +31,12 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         [XmlAttribute("name")]
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return string.Format("{0}({1})", _name, Count); }
+            set { _name = value; }
+        }
+
         [XmlAttribute("path")]
         public string Path { get; set; }
 
@@ -37,6 +45,24 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             get { return _folders; }
             set { _folders = value; }
+        }
+
+        public int Count
+        {
+            get { return _count; }
+            set
+            {
+                _count = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 

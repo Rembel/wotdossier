@@ -697,6 +697,10 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        protected PeriodStatisticViewModel()
+        {
+        }
+
         protected PeriodStatisticViewModel(DateTime updated, List<T> list)
         {
             _list = list;

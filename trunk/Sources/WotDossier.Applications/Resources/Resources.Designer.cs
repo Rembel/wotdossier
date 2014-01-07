@@ -464,6 +464,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Server not selected.
+        /// </summary>
+        internal static string Msg_ServerNotSelected {
+            get {
+                return ResourceManager.GetString("Msg_ServerNotSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Processing file {0}/{1} - {2}....
         /// </summary>
         internal static string ProgressLabel_Processing_file_format {

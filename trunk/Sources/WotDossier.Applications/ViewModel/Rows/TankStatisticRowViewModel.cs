@@ -229,6 +229,10 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
+        protected TankStatisticRowViewModel()
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
         /// </summary>

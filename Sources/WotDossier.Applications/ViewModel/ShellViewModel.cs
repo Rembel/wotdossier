@@ -87,7 +87,17 @@ namespace WotDossier.Applications.ViewModel
 
         public List<TankStatisticRowViewModel> Tanks
         {
-            get { return TankFilter.Filter(_tanks); }
+            get
+            {
+                List<TankStatisticRowViewModel> tankStatisticRowViewModels = TankFilter.Filter(_tanks);
+                if (tankStatisticRowViewModels.Count > 0)
+                {
+                    TotalTankStatisticRowViewModel totalRow =
+                        new TotalTankStatisticRowViewModel(tankStatisticRowViewModels.ToList());
+                    tankStatisticRowViewModels.Add(totalRow);
+                }
+                return tankStatisticRowViewModels;
+            }
             set
             {
                 _tanks = value;
@@ -525,11 +535,7 @@ namespace WotDossier.Applications.ViewModel
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
 
             List<TankStatisticRowViewModel> tankStatisticRowViewModels = StatisticViewModelFactory.Create(entities);
-            TotalTankStatisticRowViewModel totalRow = new TotalTankStatisticRowViewModel(tankStatisticRowViewModels);
-            List<TankStatisticRowViewModel> result = new List<TankStatisticRowViewModel>();
-            result.AddRange(tankStatisticRowViewModels);
-            result.Add(totalRow);
-            Tanks = result;
+            Tanks = tankStatisticRowViewModels;
 
             InitMasterTankerList(_tanks);
 

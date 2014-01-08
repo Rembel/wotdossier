@@ -266,8 +266,7 @@ namespace WotDossier.Applications.ViewModel
         public List<T> Filter<T>(List<T> tanks) where T : ITankFilterable
         {
             return tanks.Where(x =>
-                                   (x.Tier == -1
-                                    || x.Tier == 1 && Level1Selected
+                                   (x.Tier == 1 && Level1Selected
                                     || x.Tier == 2 && Level2Selected
                                     || x.Tier == 3 && Level3Selected
                                     || x.Tier == 4 && Level4Selected
@@ -278,15 +277,13 @@ namespace WotDossier.Applications.ViewModel
                                     || x.Tier == 9 && Level9Selected
                                     || x.Tier == 10 && Level10Selected)
                                    &&
-                                   (x.Type == -1
-                                    || x.Type == (int)TankType.LT && LTSelected
+                                   (x.Type == (int)TankType.LT && LTSelected
                                     || x.Type == (int)TankType.MT && MTSelected
                                     || x.Type == (int)TankType.HT && HTSelected
                                     || x.Type == (int)TankType.TD && TDSelected
                                     || x.Type == (int)TankType.SPG && SPGSelected)
                                    &&
-                                   (x.CountryId == -1
-                                    ||x.CountryId == (int)Country.USSR && USSRSelected
+                                   (x.CountryId == (int)Country.USSR && USSRSelected
                                     || x.CountryId == (int)Country.Germany && GermanySelected
                                     || x.CountryId == (int)Country.China && ChinaSelected
                                     || x.CountryId == (int)Country.France && FranceSelected

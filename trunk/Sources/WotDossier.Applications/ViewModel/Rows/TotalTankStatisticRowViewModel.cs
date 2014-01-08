@@ -1,196 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TotalTankStatisticRowViewModel : TankStatisticRowViewModel, 
-        ITankRowBattles, ITankRowDamage, ITankRowFrags, ITankRowPerformance, ITankRowRatings, ITankRowTime 
+    public class TotalTankStatisticRowViewModel : TankStatisticRowViewModel
     {
-        private DateTime _lastBattle;
-        private IEnumerable<FragsJson> _tankFrags;
-        private bool _isFavorite;
-
-        #region [ ITankRowBattles ]
-
-        public int Draws
-        {
-            get { return BattlesCount - Wins - Losses; }
-        }
-
-        public double DrawsPercent
-        {
-            get
-            {
-                if (BattlesCount > 0)
-                {
-                    return Draws/(double) BattlesCount*100.0;
-                }
-                return 0;
-            }
-        }
-
-        public int SurvivedAndWon { get; set; }
-
-        public double SurvivedAndWonPercent
-        {
-            get
-            {
-                if (BattlesCount > 0)
-                {
-                    return SurvivedAndWon/(double) BattlesCount*100.0;
-                }
-                return 0;
-            }
-        }
-
-        #endregion
-
-        #region [ ITankRowDamage ]
-
-        public int DamagePerHit
-        {
-            get
-            {
-                if (Hits > 0)
-                {
-                    return DamageDealt/Hits;
-                }
-                return 0;
-            }
-        }
-
-        public double DamageRatioDelta
-        {
-            get { return DamageRatio - PrevStatistic.DamageRatio; }
-        }
-
-        #endregion
-       
-        #region [ ITankRowFrags ]
-
-        public int MaxFrags { get; set; }
-
-        public double FragsPerBattle
-        {
-            get
-            {
-                if (BattlesCount > 0)
-                {
-                    return Frags/(double) BattlesCount;
-                }
-                return 0;
-            }
-        }
-
-        public int Tier8Frags { get; set; }
-
-        public int BeastFrags { get; set; }
-
-        public int SinaiFrags { get; set; }
-
-        #endregion
-
-        #region [ ITankRowPerformance ]
-
-        public int Shots { get; set; }
-
-        public int Hits { get; set; }
-
-        #endregion
-
-        #region [ ITankRowRatings ]
-
-        public int DamageRatingRev1
-        {
-            get
-            {
-                if (DamageTaken > 0)
-                {
-                    return (int) (DamageDealt/(double) DamageTaken*100);
-                }
-                return 0;
-            }
-        }
-
-        public int MarkOfMastery { get; set; }
-
-        #endregion
-
-        #region [ ITankRowTime ]
-        public DateTime LastBattle
-        {
-            get { return _lastBattle; }
-            set { _lastBattle = value; }
-        }
-
-        public TimeSpan AverageBattleTime { get; set; }
-        #endregion
-
-        public int DamageAssisted
-        {
-            get
-            {
-                return DamageAssistedTrack + DamageAssistedRadio;
-            }
-        }
-
-        public double AvgDamageAssistedTrack
-        {
-            get
-            {
-                if (BattlesCount88 > 0)
-                {
-                    return DamageAssistedTrack / (double)BattlesCount88;
-                }
-                return 0;
-            }
-        }
-
-        public double AvgDamageAssistedRadio
-        {
-            get
-            {
-                if (BattlesCount88 > 0)
-                {
-                    return DamageAssistedRadio / (double)BattlesCount88;
-                }
-                return 0;
-            }
-        }
-
-        public double AvgDamageAssisted
-        {
-            get
-            {
-                if (BattlesCount88 > 0)
-                {
-                    return DamageAssisted / (double)BattlesCount88;
-                }
-                return 0;
-            }
-        }
-
-        public double AvgOriginalXP
-        {
-            get
-            {
-                if (BattlesCount88 > 0)
-                {
-                    return OriginalXP / (double)BattlesCount88;
-                }
-                return 0;
-            }
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TotalTankStatisticRowViewModel(IEnumerable<TankStatisticRowViewModel> list)
+        public TotalTankStatisticRowViewModel(List<TankStatisticRowViewModel> list)
         {
-            Tier = -1;
             Type = -1;
             Tank = "Total";
             Icon = null;
@@ -237,6 +58,8 @@ namespace WotDossier.Applications.ViewModel.Rows
             SurvivedBattles = list.Sum(x => x.SurvivedBattles);
             SurvivedAndWon = list.Sum(x => x.SurvivedAndWon);
             #endregion
+
+            Tier = list.Sum(x => x.Tier * x.BattlesCount) / BattlesCount;
 
             #region [ ITankRowDamage ]
             DamageDealt = list.Sum(x => x.DamageDealt);

@@ -15,6 +15,7 @@ using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
+using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -94,9 +95,11 @@ namespace WotDossier.Applications.ViewModel
                 {
                     TotalTankStatisticRowViewModel totalRow =
                         new TotalTankStatisticRowViewModel(tankStatisticRowViewModels.ToList());
-                    tankStatisticRowViewModels.Add(totalRow);
+                    tankStatisticRowViewModels.Insert(0, totalRow);
                 }
-                return tankStatisticRowViewModels;
+                FooterList<TankStatisticRowViewModel> statisticRowViewModels = new FooterList<TankStatisticRowViewModel>();
+                statisticRowViewModels.AddRange(tankStatisticRowViewModels);
+                return statisticRowViewModels;
             }
             set
             {

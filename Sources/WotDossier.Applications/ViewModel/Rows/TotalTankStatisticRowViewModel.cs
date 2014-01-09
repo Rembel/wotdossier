@@ -142,9 +142,9 @@ namespace WotDossier.Applications.ViewModel.Rows
             Raider = list.Sum(x => x.Raider);
             Bombardier = list.Sum(x => x.Bombardier);
             Reaper = list.Max(x => x.Reaper);
-            Sharpshooter = list.Sum(x => x.Sharpshooter);
-            Invincible = list.Sum(x => x.Invincible);
-            Survivor = list.Sum(x => x.Survivor);
+            Sharpshooter = list.Max(x => x.Sharpshooter);
+            Invincible = list.Max(x => x.Invincible);
+            Survivor = list.Max(x => x.Survivor);
             MouseTrap = list.Sum(x => x.MouseTrap);
             Hunter = list.Sum(x => x.Hunter);
             Sinai = list.Sum(x => x.Sinai);

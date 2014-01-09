@@ -5,7 +5,8 @@
                     xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                     xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
-                    xmlns:color="clr-namespace:WotDossier.Converters.Color">
+                    xmlns:color="clr-namespace:WotDossier.Converters.Color"
+                    xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
 
     <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.jpg" Stretch="Fill" />
     <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.jpg" Stretch="Fill" />
@@ -84,7 +85,7 @@
         </i:EventTrigger>
     </controls:Triggers>
 
-    <Style x:Key="TankDataGridStyle" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource office2007SilverDataGrid}">
+    <Style x:Key="TankDataGridStyle" TargetType="{x:Type dataGrid:FooterDataGrid}" BasedOn="{StaticResource office2007SilverFooterDataGrid}">
         <Setter Property="RowStyle" Value="{StaticResource TankDataRowStyle}" />
         <!--<Setter Property="controls:AttachedProperties.InputBindings">
             <Setter.Value>

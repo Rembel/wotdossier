@@ -39,6 +39,12 @@ namespace WotDossier.Dal
         public const string PARAM_CLAN_ID = "clan_id";
         public const string PARAM_FIELDS = "fields";
         public const string PARAM_LIMIT = "limit";
+        private const string METHOD_ACCOUNT_INFO = "account/info/";
+        private const string METHOD_ACCOUNT_TANKS = "account/tanks/";
+        private const string METHOD_RATINGS_ACCOUNTS = "ratings/accounts/";
+        private const string METHOD_CLAN_INFO = "clan/info/";
+        private const string METHOD_ACCOUNT_LIST = "account/list/";
+        private const string METHOD_CLAN_LIST = "clan/list/";
 
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
@@ -172,7 +178,7 @@ namespace WotDossier.Dal
 
             try
             {
-                var playerStat = Request<PlayerStat>(settings, "account/info/", new Dictionary<string, object>
+                var playerStat = Request<PlayerStat>(settings, METHOD_ACCOUNT_INFO, new Dictionary<string, object>
                 {
                     {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
@@ -201,7 +207,7 @@ namespace WotDossier.Dal
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, "account/tanks/", new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_TANKS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
@@ -232,7 +238,7 @@ namespace WotDossier.Dal
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, "ratings/accounts/", new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(settings, METHOD_RATINGS_ACCOUNTS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
@@ -285,7 +291,7 @@ namespace WotDossier.Dal
                     dictionary.Add(PARAM_FIELDS, string.Join(",", fields));
                 }
 
-                JObject parsedData = Request<JObject>(settings, "clan/info/", dictionary);
+                JObject parsedData = Request<JObject>(settings, METHOD_CLAN_INFO, dictionary);
                 return parsedData["data"][clanId.ToString()].ToObject<ClanData>();
             }
             catch (Exception e)
@@ -326,7 +332,7 @@ namespace WotDossier.Dal
 #else
             try
             {
-                JObject parsedData = Request<JObject>(settings, "account/list/", new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_LIST, new Dictionary<string, object>
                 {
                     {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, playerName},
@@ -354,7 +360,7 @@ namespace WotDossier.Dal
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, "clan/list/", new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(settings, METHOD_CLAN_LIST, new Dictionary<string, object>
                 {
                     {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, clanName},
@@ -515,6 +521,7 @@ namespace WotDossier.Dal
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.Method = WebRequestMethods.Http.Post;
                 request.ContentType = CONTENT_TYPE;
+                request.Timeout = 5000;
                 string queryParameters = string.Join("&", parameters.Select(x => string.Format("{0}={1}", x.Key, x.Value)));
                 byte[] encodedBytes = Encoding.GetEncoding("utf-8").GetBytes(queryParameters);
                 request.ContentLength = encodedBytes.Length;

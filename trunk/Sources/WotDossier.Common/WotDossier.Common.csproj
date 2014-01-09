@@ -41,11 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base32Encoder.cs" />
+    <Compile Include="Collections\FooterList.cs" />
+    <Compile Include="Collections\IFooterList.cs" />
     <Compile Include="DataFormatter.cs" />
     <Compile Include="FileUtils.cs" />
     <Compile Include="HttpUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingHelper.cs" />
+    <Compile Include="Reflection\IPropertyAccessor.cs" />
+    <Compile Include="Reflection\PropertyAccessor.cs" />
+    <Compile Include="Reflection\PropertyComparer.cs" />
     <Compile Include="ResourceManagerExtensions.cs" />
     <Compile Include="StopWatch.cs" />
     <Compile Include="TypeHelper.cs" />

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -14,17 +15,17 @@
         </Grid.RowDefinitions>
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" 
+        <dataGrid:FooterDataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" 
                   AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}" controls1:DataGridBehavior.DisplayRowNumber="True">
-            <DataGrid.InputBindings>
+            <dataGrid:FooterDataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                 <KeyBinding Command="{Binding Path=AddToFavoriteCommand}" 
                             Key="D" Modifiers="Control" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                 <KeyBinding Command="{Binding Path=RemoveFromFavoriteCommand}" 
                             CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-            </DataGrid.InputBindings>
-            <DataGrid.Columns>
+            </dataGrid:FooterDataGrid.InputBindings>
+            <dataGrid:FooterDataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -38,7 +39,7 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_InvincibleProgress}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SurvivorLongest}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SurvivorProgress}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+            </dataGrid:FooterDataGrid.Columns>
+        </dataGrid:FooterDataGrid>
     </Grid>
 </UserControl>

@@ -45,6 +45,10 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.RatingSpottedPlace, "Rating_SpottedPlace");
 			Map(v => v.RatingXpValue, "Rating_XpValue");
 			Map(v => v.RatingXpPlace, "Rating_XpPlace");
+            Map(v => v.RatingMaxXpPlace, "Rating_MaxXpPlace");
+            Map(v => v.RatingMaxXpValue, "Rating_MaxXpValue");
+            Map(v => v.RatingHitsPercentsPlace, "Rating_HitsPercentsPlace");
+            Map(v => v.RatingHitsPercentsValue, "Rating_HitsPercentsValue");
             Map(v => v.AvgLevel, "AvgLevel");
 			Map(v=>v.PlayerId, "PlayerId").Insert();
             Map(v => v.AchievementsId, "AchievementsId").ReadOnly();

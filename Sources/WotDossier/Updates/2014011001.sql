@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerStatistic] ADD [Rating_HitsPercentsValue] float  NOT NULL default(0);

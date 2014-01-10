@@ -1,0 +1,1 @@
+﻿UPDATE [PlayerStatistic] SET [Rating_MaxXpValue] = [MaxXp], [Rating_HitsPercentsValue] = [HitsPercents];

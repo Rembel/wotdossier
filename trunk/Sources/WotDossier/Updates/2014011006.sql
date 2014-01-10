@@ -1,0 +1,1 @@
+﻿ALTER TABLE PlayerStatistic ALTER COLUMN Rating_BattleAvgPerformanceValue float;

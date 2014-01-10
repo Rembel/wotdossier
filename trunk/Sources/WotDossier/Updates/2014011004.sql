@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerStatistic] ADD [Rating_MaxXpPlace] int  NOT NULL default(0);

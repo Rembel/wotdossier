@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerStatistic] ADD [Rating_HitsPercentsPlace] int  NOT NULL default(0);

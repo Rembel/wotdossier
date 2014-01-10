@@ -32,13 +32,13 @@ namespace WotDossier.Applications.ViewModel
 
         //W/B-->
         //Victories/Battles
-        public int Rating_BattleAvgPerformanceValue { get; set; }
+        public double Rating_BattleAvgPerformanceValue { get; set; }
 
         public int Rating_BattleAvgPerformancePlace { get; set; }
 
         //E/B-->
         //Average Experience per Battle
-        public int Rating_BattleAvgXpValue { get; set; }
+        public double Rating_BattleAvgXpValue { get; set; }
 
         public int Rating_BattleAvgXpPlace { get; set; }
 
@@ -90,6 +90,16 @@ namespace WotDossier.Applications.ViewModel
 
         public int Rating_XpPlace { get; set; }
 
+        //HR-->
+        //Hits Percent
+        public int Rating_HitsPercentsPlace { get; set; }
+        public double Rating_HitsPercentsValue { get; set; }
+
+        //MXP-->
+        //Max Experience
+        public int Rating_MaxXpPlace { get; set; }
+        public int Rating_MaxXpValue { get; set; }
+
         #endregion
 
         #region Rating delta
@@ -104,7 +114,7 @@ namespace WotDossier.Applications.ViewModel
             get { return Rating_IntegratedPlace - PrevStatistic.Rating_IntegratedPlace; }
         }
 
-        public int Rating_BattleAvgPerformanceValueDelta
+        public double Rating_BattleAvgPerformanceValueDelta
         {
             get { return Rating_BattleAvgPerformanceValue - PrevStatistic.Rating_BattleAvgPerformanceValue; }
         }
@@ -114,7 +124,7 @@ namespace WotDossier.Applications.ViewModel
             get { return Rating_BattleAvgPerformancePlace - PrevStatistic.Rating_BattleAvgPerformancePlace; }
         }
 
-        public int Rating_BattleAvgXpValueDelta
+        public double Rating_BattleAvgXpValueDelta
         {
             get { return Rating_BattleAvgXpValue - PrevStatistic.Rating_BattleAvgXpValue; }
         }
@@ -202,6 +212,26 @@ namespace WotDossier.Applications.ViewModel
         public int Rating_XpPlaceDelta
         {
             get { return Rating_XpPlace - PrevStatistic.Rating_XpPlace; }
+        }
+
+        public int Rating_MaxXpValueDelta
+        {
+            get { return Rating_MaxXpValue - PrevStatistic.Rating_MaxXpValue; }
+        }
+
+        public int Rating_MaxXpPlaceDelta
+        {
+            get { return Rating_MaxXpPlace - PrevStatistic.Rating_MaxXpPlace; }
+        }
+
+        public double Rating_HitsPercentsValueDelta
+        {
+            get { return Rating_HitsPercentsValue - PrevStatistic.Rating_HitsPercentsValue; }
+        }
+
+        public int Rating_HitsPercentsPlaceDelta
+        {
+            get { return Rating_HitsPercentsPlace - PrevStatistic.Rating_HitsPercentsPlace; }
         }
 
         #endregion
@@ -302,6 +332,14 @@ namespace WotDossier.Applications.ViewModel
             //Total Experience
             Rating_XpValue = stat.RatingXpValue;
             Rating_XpPlace = stat.RatingXpPlace;
+            //MXP-->
+            //Max Experience
+            Rating_MaxXpValue = stat.RatingMaxXpValue;
+            Rating_MaxXpPlace = stat.RatingMaxXpPlace;
+            //HR-->
+            //Hits Percent
+            Rating_HitsPercentsValue = stat.RatingHitsPercentsValue;
+            Rating_HitsPercentsPlace = stat.RatingHitsPercentsPlace;
 
             #endregion
 

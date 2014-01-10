@@ -143,7 +143,7 @@ namespace WotDossier.Domain.Entities
         /// <summary>
         /// Gets/Sets the field "Rating_BattleAvgPerformanceValue".
         /// </summary>
-        public virtual int RatingBattleAvgPerformanceValue { get; set; }
+        public virtual double RatingBattleAvgPerformanceValue { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "Rating_BattleAvgPerformancePlace".
@@ -153,7 +153,7 @@ namespace WotDossier.Domain.Entities
         /// <summary>
         /// Gets/Sets the field "Rating_BattleAvgXpValue".
         /// </summary>
-        public virtual int RatingBattleAvgXpValue { get; set; }
+        public virtual double RatingBattleAvgXpValue { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "Rating_BattleAvgXpPlace".
@@ -239,6 +239,26 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "Rating_XpPlace".
         /// </summary>
         public virtual int RatingXpPlace { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "RatingHitsPercentsValue".
+        /// </summary>
+        public virtual double RatingHitsPercentsValue { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "RatingHitsPercentsPlace".
+        /// </summary>
+        public virtual int RatingHitsPercentsPlace { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "RatingMaxXpValue".
+        /// </summary>
+        public virtual int RatingMaxXpValue { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "RatingMaxXpPlace".
+        /// </summary>
+        public virtual int RatingMaxXpPlace { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "PlayerId".
@@ -397,7 +417,7 @@ namespace WotDossier.Domain.Entities
             //GPL-->
             //Battles Participated
             //battles_count 	Количество проведённых боёв battles_count.rank 	numeric 	
-            RatingBattlesValue = ratings.battles_count.Value ?? 0;
+            RatingBattlesValue = (int) (ratings.battles_count.Value ?? 0);
             RatingBattlesPlace = ratings.battles_count.Rank ?? 0;
             //CPT-->
             //Capture Points
@@ -406,7 +426,7 @@ namespace WotDossier.Domain.Entities
             //DMG-->
             //Damage Caused
             //damage_dealt 	Общий нанесённый урон damage_dealt.rank 	numeric 	
-            RatingDamageDealtValue = ratings.damage_dealt.Value ?? 0;
+            RatingDamageDealtValue = (int) (ratings.damage_dealt.Value ?? 0);
             RatingDamageDealtPlace = ratings.damage_dealt.Rank ?? 0;
             //DPT-->
             //Defense Points
@@ -415,18 +435,24 @@ namespace WotDossier.Domain.Entities
             //FRG-->
             //Targets Destroyed
             //frags_count 	Количество уничтоженной техники frags_count.rank 	numeric 	
-            RatingFragsValue = ratings.frags_count.Value ?? 0;
+            RatingFragsValue = (int) (ratings.frags_count.Value ?? 0);
             RatingFragsPlace = ratings.frags_count.Rank ?? 0;
             //SPT-->
             //Targets Detected
             //spotted_count 	Количество обнаруженной техники spotted_count.rank 	numeric 	
-            RatingSpottedValue = ratings.spotted_count.Value ?? 0;
+            RatingSpottedValue = (int) (ratings.spotted_count.Value ?? 0);
             RatingSpottedPlace = ratings.spotted_count.Rank ?? 0;
             //EXP-->
             //Total Experience
             //xp_amount 	Общий опыт xp_amount.rank 	numeric 	
-            RatingXpValue = ratings.xp_amount.Value ?? 0;
+            RatingXpValue = (int) (ratings.xp_amount.Value ?? 0);
             RatingXpPlace = ratings.xp_amount.Rank ?? 0;
+
+            RatingMaxXpValue = (int) (ratings.xp_max.Value ?? 0);
+            RatingMaxXpPlace = ratings.xp_max.Rank ?? 0;
+
+            RatingHitsPercentsValue = ratings.hits_ratio.Value ?? 0;
+            RatingHitsPercentsPlace = ratings.hits_ratio.Rank ?? 0;
 
             /*
             damage_avg 	Средний нанесённый урон за бой damage_avg.rank 	numeric 	

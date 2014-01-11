@@ -62,17 +62,18 @@ namespace WotDossier.Framework.Forms.ProgressDialog
                 (s, e) =>
                 {
                     if (operation is Action)
-                        ((Action)operation)();
+                        ((Action) operation)();
                     else if (operation is Action<BackgroundWorker>)
-                        ((Action<BackgroundWorker>)operation)(s as BackgroundWorker);
+                        ((Action<BackgroundWorker>) operation)(s as BackgroundWorker);
                     else if (operation is Action<BackgroundWorker, DoWorkEventArgs>)
-                        ((Action<BackgroundWorker, DoWorkEventArgs>)operation)(s as BackgroundWorker, e);
+                        ((Action<BackgroundWorker, DoWorkEventArgs>) operation)(s as BackgroundWorker, e);
                     else if (operation is Func<object>)
-                        e.Result = ((Func<object>)operation)();
+                        e.Result = ((Func<object>) operation)();
                     else if (operation is Func<BackgroundWorker, object>)
-                        e.Result = ((Func<BackgroundWorker, object>)operation)(s as BackgroundWorker);
+                        e.Result = ((Func<BackgroundWorker, object>) operation)(s as BackgroundWorker);
                     else if (operation is Func<BackgroundWorker, DoWorkEventArgs, object>)
-                        e.Result = ((Func<BackgroundWorker, DoWorkEventArgs, object>)operation)(s as BackgroundWorker, e);
+                        e.Result =
+                            ((Func<BackgroundWorker, DoWorkEventArgs, object>) operation)(s as BackgroundWorker, e);
                     else
                         throw new InvalidOperationException("Operation type is not supoorted");
                 };

@@ -10,6 +10,7 @@ using WotDossier.Applications.Logic;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
 
@@ -50,34 +51,32 @@ namespace WotDossier.Applications.ViewModel.Replay
 
             if (ReplayFile != null)
             {
-                try
+                using (new WaitCursor())
                 {
-                    Mouse.SetCursor(Cursors.Wait);
-                    ReplayUploader replayUploader = new ReplayUploader();
-                    ReplayFile.Link = replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription,
-                        string.Format(appSettings.ReplaysUploadServerPath, appSettings.Server, appSettings.PlayerId, appSettings.PlayerName));
-                    _repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);
-                    ViewTyped.Close();
-                }
-                catch (AuthenticationException e)
-                {
-                    _log.Error("Authentication error", e);
-                    MessageBoxResult result =
-                        MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure,
-                            Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo, MessageBoxImage.Error);
-
-                    if (result == MessageBoxResult.Yes)
+                    try
                     {
-                        Process proc = new Process();
-                        proc.EnableRaisingEvents = false;
-                        proc.StartInfo.FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"Internet Explorer\iexplore.exe");
-                        proc.StartInfo.Arguments = string.Format("http://wotreplays.{0}", appSettings.Server);
-                        proc.Start();
+                        ReplayUploader replayUploader = new ReplayUploader();
+                        ReplayFile.Link = replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription,
+                            string.Format(appSettings.ReplaysUploadServerPath, appSettings.Server, appSettings.PlayerId, appSettings.PlayerName));
+                        _repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);
+                        ViewTyped.Close();
                     }
-                }
-                finally
-                {
-                    Mouse.SetCursor(Cursors.Arrow);   
+                    catch (AuthenticationException e)
+                    {
+                        _log.Error("Authentication error", e);
+                        MessageBoxResult result = MessageBox.Show(Resources.Resources.Msg_ReplayUpload_AuthentificationFailure,
+                                Resources.Resources.WindowCaption_AuthFailure, MessageBoxButton.YesNo, MessageBoxImage.Error);
+
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            Process proc = new Process();
+                            proc.EnableRaisingEvents = false;
+                            proc.StartInfo.FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),
+                                    @"Internet Explorer\iexplore.exe");
+                            proc.StartInfo.Arguments = string.Format("http://wotreplays.{0}", appSettings.Server);
+                            proc.Start();
+                        }
+                    }
                 }
             }
         }

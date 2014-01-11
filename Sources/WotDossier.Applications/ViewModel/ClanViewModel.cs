@@ -40,9 +40,11 @@ namespace WotDossier.Applications.ViewModel
             ClanMemberModel member = item as ClanMemberModel;
             if (member != null)
             {
-                Mouse.SetCursor(Cursors.Wait);
-                PlayerStat playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), member.Id);
-                Mouse.SetCursor(Cursors.Arrow);
+                PlayerStat playerStat;
+                using (new WaitCursor())
+                {
+                    playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), member.Id);
+                }
                 if (playerStat != null)
                 {
                     PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<PlayerServerStatisticViewModel>().Value;

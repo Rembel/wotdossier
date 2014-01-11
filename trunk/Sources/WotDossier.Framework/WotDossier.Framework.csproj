@@ -182,6 +182,7 @@
     </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="WafConfiguration.cs" />
+    <Compile Include="WaitCursor.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

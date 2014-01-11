@@ -73,9 +73,11 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnOpenClanCommand(object param)
         {
-            Mouse.SetCursor(Cursors.Wait);
-            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), Clan.Id);
-            Mouse.SetCursor(Cursors.Arrow);
+            ClanData clan;
+            using (new WaitCursor())
+            {
+                clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), Clan.Id);
+            }
             if (clan != null)
             {
                 ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;

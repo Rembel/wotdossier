@@ -58,13 +58,14 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSearch()
         {
-            Mouse.SetCursor(Cursors.Wait);
-            List<ClanSearchJson> clans = WotApiClient.Instance.SearchClan(SettingsReader.Get(), SearchText, 100);
-            if (clans != null)
+            using(new WaitCursor())
             {
-                List = clans.OrderBy(x => x.abbreviation).Select(x => new SearchResultRowViewModel {Id = x.clan_id, Name = string.Format("[{0}] {1}", x.abbreviation, x.name)}).ToList();
+                List<ClanSearchJson> clans = WotApiClient.Instance.SearchClan(SettingsReader.Get(), SearchText, 100);
+                if (clans != null)
+                {
+                    List = clans.OrderBy(x => x.abbreviation).Select(x => new SearchResultRowViewModel {Id = x.clan_id, Name = string.Format("[{0}] {1}", x.abbreviation, x.name)}).ToList();
+                }
             }
-            Mouse.SetCursor(Cursors.Arrow);
         }
 
         private void OnRowDoubleClick(object item)
@@ -72,9 +73,11 @@ namespace WotDossier.Applications.ViewModel
             SearchResultRowViewModel row = item as SearchResultRowViewModel;
             if (row != null)
             {
-                Mouse.SetCursor(Cursors.Wait);
-                ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), row.Id);
-                Mouse.SetCursor(Cursors.Arrow);
+                ClanData clan;
+                using (new WaitCursor())
+                {
+                    clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), row.Id);
+                }
                 if (clan != null)
                 {
                     ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;

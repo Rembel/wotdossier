@@ -1,4 +1,5 @@
-﻿using Common.Logging;
+﻿using System.Windows.Threading;
+using Common.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -136,6 +137,8 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private PeriodSelectorViewModel _periodSelector;
+        private bool _loadInProgress;
+
         public PeriodSelectorViewModel PeriodSelector
         {
             get { return _periodSelector; }
@@ -191,7 +194,7 @@ namespace WotDossier.Applications.ViewModel
         {
             _dossierRepository = dossierRepository;
 
-            LoadCommand = new DelegateCommand(OnLoad);
+            LoadCommand = new DelegateCommand(OnLoad, CanLoad);
             SettingsCommand = new DelegateCommand(OnSettings);
             
             RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
@@ -221,6 +224,11 @@ namespace WotDossier.Applications.ViewModel
             ReplaysViewModel = new ReplaysViewModel(_dossierRepository, ProgressView, ChartView);
 
             ViewTyped.Closing += ViewTypedOnClosing;
+        }
+
+        private bool CanLoad()
+        {
+            return !LoadInProgress;
         }
 
         private void OnExportToCsv()
@@ -275,9 +283,11 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnOpenClanCommand(object param)
         {
-            Mouse.SetCursor(Cursors.Wait);
-            ClanData clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.Id);
-            Mouse.SetCursor(Cursors.Arrow);
+            ClanData clan;
+            using (new WaitCursor())
+            {
+                clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.Id);
+            }
             if (clan != null)
             {
                 var export = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>();
@@ -406,6 +416,8 @@ namespace WotDossier.Applications.ViewModel
                 {
                     try
                     {
+                        LoadInProgress = true;
+
                         //set thread culture
                         SetUiCulture();
 
@@ -419,7 +431,8 @@ namespace WotDossier.Applications.ViewModel
                             {
                                 //convert dossier cache file to json
                                 CacheHelper.BinaryCacheToJson(cacheFile);
-                                List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+                                List<TankJson> tanksV2 =
+                                    WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
 
                                 //get tanks from dossier app spot
                                 //string data = new Uri("http://wot-dossier.appspot.com/dossier-data/2587067").Get();
@@ -463,7 +476,8 @@ namespace WotDossier.Applications.ViewModel
                             }
                             else
                             {
-                                MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache, Resources.Resources.WindowCaption_Warning,
+                                MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache,
+                                    Resources.Resources.WindowCaption_Warning,
                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
                         }
@@ -471,7 +485,13 @@ namespace WotDossier.Applications.ViewModel
                     catch (Exception e)
                     {
                         _log.Error("Error on data load", e);
-                        MessageBox.Show(Resources.Resources.Msg_ErrorOnDataLoad, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show(Resources.Resources.Msg_ErrorOnDataLoad, Resources.Resources.WindowCaption_Error,
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    finally
+                    {
+                        LoadInProgress = false;
+                        LoadCommand.RaiseCanExecuteChanged();
                     }
 
                     ReplaysViewModel.LoadReplaysList();
@@ -601,6 +621,12 @@ namespace WotDossier.Applications.ViewModel
                     30003,//WZ-111
                 };
             }
+        }
+
+        public bool LoadInProgress
+        {
+            get { return _loadInProgress; }
+            set { _loadInProgress = value; }
         }
 
         private void SetFavorite(TankStatisticRowViewModel model, bool favorite)

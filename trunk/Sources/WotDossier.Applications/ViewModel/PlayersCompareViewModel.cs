@@ -6,6 +6,7 @@ using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Player;
+using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
 
@@ -71,30 +72,31 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnCompare()
         {
-            Mouse.SetCursor(Cursors.Wait);
-            if (!string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(SecondName))
+            using (new WaitCursor())
             {
-                PlayerSearchJson first = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), FirstName);
-                PlayerSearchJson second = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), SecondName);
-
-                if (first == null)
+                if (!string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(SecondName))
                 {
-                    MessageBox.Show(string.Format(Resources.Resources.Msg_CantFindPlayerData, FirstName), Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK);
-                    return;
+                    PlayerSearchJson first = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), FirstName);
+                    PlayerSearchJson second = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), SecondName);
+
+                    if (first == null)
+                    {
+                        MessageBox.Show(string.Format(Resources.Resources.Msg_CantFindPlayerData, FirstName), Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK);
+                        return;
+                    }
+
+                    if (second == null)
+                    {
+                        MessageBox.Show(string.Format(Resources.Resources.Msg_CantFindPlayerData, SecondName), Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK);
+                        return;
+                    }
+
+                    PlayerStat stat1 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), first.id);
+                    PlayerStat stat2 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), second.id);
+
+                    CompareStatistic = new CompareStatisticViewModelBase<PlayerStatisticViewModel>(GetPlayerViewModel(stat1), GetPlayerViewModel(stat2));
                 }
-
-                if (second == null)
-                {
-                    MessageBox.Show(string.Format(Resources.Resources.Msg_CantFindPlayerData, SecondName), Resources.Resources.WindowCaption_Warning, MessageBoxButton.OK);
-                    return;
-                }
-
-                PlayerStat stat1 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), first.id);
-                PlayerStat stat2 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), second.id);
-
-                CompareStatistic = new CompareStatisticViewModelBase<PlayerStatisticViewModel>(GetPlayerViewModel(stat1), GetPlayerViewModel(stat2));
             }
-            Mouse.SetCursor(Cursors.Arrow);
         }
 
         private StatisticViewModelBase GetPlayerViewModel(PlayerStat stat)

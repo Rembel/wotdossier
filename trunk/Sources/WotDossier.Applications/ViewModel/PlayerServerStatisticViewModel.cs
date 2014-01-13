@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
@@ -43,6 +46,8 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private ClanModel _clan;
+        private List<TankStatisticRowViewModel> _tanks;
+
         /// <summary>
         /// Gets or sets the clan.
         /// </summary>
@@ -112,6 +117,18 @@ namespace WotDossier.Applications.ViewModel
             }
 
             PlayerStatistic = statistic;
+
+            Tanks = playerStat.dataField.vehicles.Select(x => new TankStatisticRowViewModel(TankJsonV2Converter.Convert(x))).OrderByDescending(x => x.Tier).ToList();
+        }
+
+        public List<TankStatisticRowViewModel> Tanks
+        {
+            get { return _tanks; }
+            set
+            {
+                _tanks = value;
+                RaisePropertyChanged("Tanks");
+            }
         }
     }
 }

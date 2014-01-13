@@ -4,6 +4,7 @@
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:tabs="clr-namespace:WotDossier.Tabs"
         Title="{Binding Path=DataContext.PlayerStatistic.Name, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="768" 
         Icon="..\Resources\Images\player.png" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource bcolorCenter}">
@@ -54,6 +55,9 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                     <controls:Achievements HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></controls:Achievements>
                 </ScrollViewer>
+            </TabItem>
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Vehicles}">
+                <tabs:ServerBattlesTab HorizontalAlignment="Stretch"></tabs:ServerBattlesTab>
             </TabItem>
         </TabControl>
     </Grid>

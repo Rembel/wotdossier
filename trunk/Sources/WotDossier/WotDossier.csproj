@@ -237,6 +237,9 @@
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\ServerBattlesTab.xaml.cs">
+      <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\PerformanceTab88.xaml.cs">
       <DependentUpon>PerformanceTab88.xaml</DependentUpon>
     </Compile>
@@ -499,6 +502,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\ChartsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\ServerBattlesTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

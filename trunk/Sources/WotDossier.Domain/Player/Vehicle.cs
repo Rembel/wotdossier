@@ -4,18 +4,17 @@ namespace WotDossier.Domain.Player
 {
     public class VehicleStat
     {
-        public int max_xp;
-        public int wins;
-        public int last_battle_time;
         public int mark_of_mastery;
-        public int in_garage;
         public int tank_id;
         public TankServerInfo tank;
         public TankServerStatistic statistics;
+        public TankDescription description { get; set; }
     }
 
     public class TankServerStatistic
     {
+        public int battles;
+        public int wins;
         public StatisticPart clan;
         public StatisticPart all;
         public StatisticPart company;

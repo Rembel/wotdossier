@@ -493,9 +493,9 @@ namespace WotDossier.Applications.ViewModel
                         LoadInProgress = false;
                         LoadCommand.RaiseCanExecuteChanged();
                     }
-
-                    ReplaysViewModel.LoadReplaysList();
                 });
+
+            ReplaysViewModel.LoadReplaysList();
         }
 
         private void PeriodSelectorOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
+using WotDossier.Framework.Controls.DataGrid;
 
 namespace WotDossier.Framework.Controls
 {
@@ -28,6 +29,7 @@ namespace WotDossier.Framework.Controls
         private static void OnDisplayRowNumberChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
         {
             System.Windows.Controls.DataGrid dataGrid = target as System.Windows.Controls.DataGrid;
+
             if ((bool)e.NewValue)
             {
                 EventHandler<DataGridRowEventArgs> loadedRowHandler = null;
@@ -38,7 +40,7 @@ namespace WotDossier.Framework.Controls
                         dataGrid.LoadingRow -= loadedRowHandler;
                         return;
                     }
-                    ea.Row.Header = GetRowHeader(ea.Row.GetIndex());
+                    ea.Row.Header = GetRowHeader(ea.Row.GetIndex(), dataGrid is FooterDataGrid);
                 };
                 dataGrid.LoadingRow += loadedRowHandler;
 
@@ -51,19 +53,23 @@ namespace WotDossier.Framework.Controls
                         return;
                     }
                     GetVisualChildCollection<DataGridRow>(dataGrid).
-                        ForEach(d => d.Header = GetRowHeader(d.GetIndex()));
+                        ForEach(d => d.Header = GetRowHeader(d.GetIndex(), dataGrid is FooterDataGrid));
                 };
                 dataGrid.ItemContainerGenerator.ItemsChanged += itemsChangedHandler;
             }
         }
 
-        private static string GetRowHeader(int d)
+        private static string GetRowHeader(int index, bool hasTotalRow)
         {
-            if (d == 0)
+            if (hasTotalRow)
             {
-                return string.Empty;
+                if (index == 0)
+                {
+                    return string.Empty;
+                }
+                return index.ToString();
             }
-            return d.ToString();
+            return (index + 1).ToString();
         }
 
         #endregion // DisplayRowNumber

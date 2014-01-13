@@ -5,6 +5,6 @@ namespace WotDossier.Common.Collections
 {
     public interface IFooterList : IEnumerable
     {
-        void SortButFirstRows(int count, string propertyName, ListSortDirection direction);
+        void SortButFirstRows(int count, string propertyName, ListSortDirection direction, bool clearExistingSortDescriptions);
     }
 }

@@ -1741,4 +1741,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Column_Damage_MaxDamage" xml:space="preserve">
     <value>Макс. урон</value>
   </data>
+  <data name="Tab_Header_Vehicles" xml:space="preserve">
+    <value>Техника</value>
+  </data>
 </root>

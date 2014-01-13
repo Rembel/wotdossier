@@ -3555,6 +3555,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vehicles.
+        /// </summary>
+        public static string Tab_Header_Vehicles {
+            get {
+                return ResourceManager.GetString("Tab_Header_Vehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to XP.
         /// </summary>
         public static string Tab_Header_XP {

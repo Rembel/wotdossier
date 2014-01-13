@@ -4,6 +4,7 @@ using System.Linq;
 using WotDossier.Common;
 using WotDossier.Domain.Dossier.TankV29;
 using WotDossier.Domain.Player;
+using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Entities
@@ -225,7 +226,11 @@ namespace WotDossier.Domain.Entities
             Ranger = stat.dataField.achievements.huntsman;
 
             #endregion
+
+            Vehicle = stat.dataField.vehicles;
         }
+
+        public List<VehicleStat> Vehicle { get; set; }
 
         public DateTime Created { get; set; }
 

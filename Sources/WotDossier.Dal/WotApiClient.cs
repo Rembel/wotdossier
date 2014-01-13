@@ -221,6 +221,7 @@ namespace WotDossier.Dal
                         if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))
                         {
                             tank.tank = Dictionaries.Instance.ServerTanks[tank.tank_id];
+                            tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
                         }
                     }
                     return tanks;

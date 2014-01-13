@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using WotDossier.Common.Collections;
 
@@ -35,8 +36,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                                 ? ListSortDirection.Ascending
                                 : ListSortDirection.Descending;
             column.SortDirection = direction;
-            //TODO: multisorting
-            lastRowList.SortButFirstRows(1, e.Column.SortMemberPath, direction);
+            lastRowList.SortButFirstRows(1, e.Column.SortMemberPath, direction, (Keyboard.Modifiers & ModifierKeys.Shift) != ModifierKeys.Shift);
 
             Items.Refresh();
         }

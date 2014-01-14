@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -84,6 +85,7 @@ namespace WotDossier.Applications.ViewModel
             ReplaysManager = new ReplaysManager();
             DossierRepository = dossierRepository;
             ProgressView = progressControlView;
+            playerChartsViewModel.ReplaysDataSource = new CallBackDataSource<ReplayFile>(() => _replays);
             ChartView = playerChartsViewModel;
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
@@ -263,8 +265,8 @@ namespace WotDossier.Applications.ViewModel
 
                     ReplayFilter.SelectedFolder = replayFolders.FirstOrDefault();
 
-                    ChartView.InitBattlesByMapChart(_replays);
-                    ChartView.InitWinReplaysPercentByMapChart(_replays);
+                    ChartView.InitBattlesByMapChart();
+                    ChartView.InitWinReplaysPercentByMapChart();
 
                 }, new ProgressDialogSettings(true, true, false));
         }
@@ -382,6 +384,26 @@ namespace WotDossier.Applications.ViewModel
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    public class CallBackDataSource<T> : IEnumerable<T>
+    {
+        private readonly Func<List<T>> _func;
+
+        public CallBackDataSource(Func<List<T>> func)
+        {
+            _func = func;
+        }
+        
+        public IEnumerator<T> GetEnumerator()
+        {
+            return _func().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

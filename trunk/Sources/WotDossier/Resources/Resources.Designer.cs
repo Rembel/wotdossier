@@ -242,6 +242,42 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All bases.
+        /// </summary>
+        public static string Chart_Label_AllBases {
+            get {
+                return ResourceManager.GetString("Chart_Label_AllBases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base 1.
+        /// </summary>
+        public static string Chart_Label_Base1 {
+            get {
+                return ResourceManager.GetString("Chart_Label_Base1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base 2.
+        /// </summary>
+        public static string Chart_Label_Base2 {
+            get {
+                return ResourceManager.GetString("Chart_Label_Base2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Chart_Label_Settings {
+            get {
+                return ResourceManager.GetString("Chart_Label_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Replays count.
         /// </summary>
         public static string Chart_ReplaysCountByMap {

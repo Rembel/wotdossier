@@ -1744,4 +1744,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Tab_Header_Vehicles" xml:space="preserve">
     <value>Техника</value>
   </data>
+  <data name="Chart_Label_AllBases" xml:space="preserve">
+    <value>Все базы</value>
+  </data>
+  <data name="Chart_Label_Base1" xml:space="preserve">
+    <value>База 1</value>
+  </data>
+  <data name="Chart_Label_Base2" xml:space="preserve">
+    <value>База 2</value>
+  </data>
+  <data name="Chart_Label_Settings" xml:space="preserve">
+    <value>Настройка</value>
+  </data>
 </root>

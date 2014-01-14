@@ -38,6 +38,43 @@ namespace WotDossier.Applications.ViewModel
         private double _maxBattlesByType;
         private double _maxBattlesByTier;
         private double _maxBattlesByCountry;
+        private IEnumerable<ReplayFile> _replaysDataSource;
+        private bool _resp1;
+        private bool _resp2;
+        private bool _allResps = true;
+
+        public bool Resp1
+        {
+            get { return _resp1; }
+            set
+            {
+                _resp1 = value;
+                InitWinReplaysPercentByMapChart();
+                InitBattlesByMapChart();
+            }
+        }
+
+        public bool Resp2
+        {
+            get { return _resp2; }
+            set
+            {
+                _resp2 = value;
+                InitWinReplaysPercentByMapChart();
+                InitBattlesByMapChart();
+            }
+        }
+
+        public bool AllResps
+        {
+            get { return _allResps; }
+            set
+            {
+                _allResps = value;
+                InitWinReplaysPercentByMapChart();
+                InitBattlesByMapChart();
+            }
+        }
 
         public List<SellInfo> LastUsedTanksDataSource
         {
@@ -259,9 +296,25 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public void InitBattlesByMapChart(IEnumerable<ReplayFile> list)
+        public IEnumerable<ReplayFile> ReplaysDataSource
         {
-            List<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
+            get { return Filter(_replaysDataSource); }
+            set { _replaysDataSource = value; }
+        }
+
+        private IEnumerable<ReplayFile> Filter(IEnumerable<ReplayFile> replaysDataSource)
+        {
+            return replaysDataSource.Where(x =>
+                                   (Resp1 && x.Team == 1
+                                    || Resp2 && x.Team == 2
+                                    || AllResps)
+                ).ToList();
+
+        }
+
+        public void InitBattlesByMapChart()
+        {
+            List<DataPoint> dataSource = ReplaysDataSource.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
 
             if (dataSource.Any())
             {
@@ -272,9 +325,9 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public void InitWinReplaysPercentByMapChart(IEnumerable<ReplayFile> list)
+        public void InitWinReplaysPercentByMapChart()
         {
-            List<DataPoint> dataSource = list.GroupBy(x => x.MapId).Select(
+            List<DataPoint> dataSource = ReplaysDataSource.GroupBy(x => x.MapId).Select(
                 x => new DataPoint(
                     100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key)).ToList();
 

@@ -293,7 +293,20 @@
                         </ScrollViewer>
                     </TabItem>
                     <TabItem Header="5">
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
+                            <GroupBox Header="{x:Static Resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" Margin="20">
+                                <Grid VerticalAlignment="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <RadioButton Margin="6" Grid.Row="0" Content="{x:Static Resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps}"></RadioButton>    
+                                    <RadioButton Margin="6" Grid.Row="1" Content="{x:Static Resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1}"></RadioButton>
+                                    <RadioButton Margin="6" Grid.Row="2" Content="{x:Static Resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2}"></RadioButton>
+                                </Grid>    
+                            </GroupBox>
                             <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
                                                  MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
                                       Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}">
@@ -351,7 +364,7 @@
                                 </d3:BarChart>
                             </controls:ChartPlotter>
                         </StackPanel>
-
+                                </ScrollViewer>
                     </TabItem>
                 </TabControl>
             </TabItem>

@@ -3150,6 +3150,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Frags to CSV.
+        /// </summary>
+        public static string MenuItem_Export_Frags_Csv {
+            get {
+                return ResourceManager.GetString("MenuItem_Export_Frags_Csv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string MenuItem_Header_About {

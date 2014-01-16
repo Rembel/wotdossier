@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace WotDossier.Applications.Logic.Export
 {
-    public interface IExportProviderBase<T>
+    public interface IExportProviderBase
     {
-        void Export(List<T> list, List<Type> exportInterfaces);
+        void Export(IList list, List<Type> exportInterfaces);
     }
 }

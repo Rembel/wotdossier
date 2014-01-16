@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using Ookii.Dialogs.Wpf;
-using WotDossier.Applications.ViewModel.Rows;
 
 namespace WotDossier.Applications.Logic.Export
 {
-    public class CsvExportProvider : ExportProviderBase<TankStatisticRowViewModel>
+    public class CsvExportProvider : ExportProviderBase
     {
-        public override void Export(List<TankStatisticRowViewModel> list, List<Type> exportInterfaces)
+        public override void Export(IList list, List<Type> exportInterfaces)
         {
             StringBuilder builder = new StringBuilder();
 
@@ -29,9 +29,9 @@ namespace WotDossier.Applications.Logic.Export
 
             builder.AppendLine(string.Join(";", properties.Select(x => x.Name).ToArray()));
 
-            foreach (TankStatisticRowViewModel item in list)
+            foreach (object item in list)
             {
-                List<object> values = properties.Select(propertyInfo => propertyInfo.GetValue(item, null)).ToList();
+                List<object> values = properties.Where(x => x.DeclaringType.IsAssignableFrom(itemType)).Select(propertyInfo => propertyInfo.GetValue(item, null)).ToList();
                 builder.AppendLine(string.Join(";", values.ToArray()));
             }
 

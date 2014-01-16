@@ -1,5 +1,4 @@
-﻿using System.Windows.Threading;
-using Common.Logging;
+﻿using Common.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows;
-using System.Windows.Input;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
@@ -176,6 +174,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> OpenClanCommand { get; set; }
         public DelegateCommand CompareCommand { get; set; }
         public DelegateCommand ExportToCsvCommand { get; set; }
+        public DelegateCommand ExportFragsToCsvCommand { get; set; }
         public DelegateCommand SearchPlayersCommand { get; set; }
         public DelegateCommand SearchClansCommand { get; set; }
 
@@ -204,6 +203,7 @@ namespace WotDossier.Applications.ViewModel
             OpenClanCommand = new DelegateCommand<object>(OnOpenClanCommand);
             CompareCommand = new DelegateCommand(OnCompare);
             ExportToCsvCommand = new DelegateCommand(OnExportToCsv);
+            ExportFragsToCsvCommand = new DelegateCommand(OnExportFragsToCsv);
             SearchPlayersCommand = new DelegateCommand(OnSearchPlayers);
             SearchClansCommand = new DelegateCommand(OnSearchClans);
 
@@ -249,6 +249,16 @@ namespace WotDossier.Applications.ViewModel
                 typeof(ITankRowTime),
                 typeof(ITankRowPerformance)
             });
+        }
+
+        private void OnExportFragsToCsv()
+        {
+            CsvExportProvider provider = new CsvExportProvider();
+            provider.Export(_tanks.SelectMany(x => x.TankFrags.Select(f => new ExportTankFragModel(x, f))).ToList(),
+                new List<Type>
+                {
+                    typeof (IExportTankFragModel),
+                });
         }
 
         private void OnSearchClans()
@@ -716,5 +726,98 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Close();
         }
 
+    }
+
+    internal interface IExportTankFragModel
+    {
+        string Tank { get; set; }
+        double Tier { get; set; }
+        int CountryId { get; set; }
+        int Type { get; set; }
+        int TankId { get; set; }
+        string FragTank { get; set; }
+        double FragTier { get; set; }
+        int FragCountryId { get; set; }
+        int FragType { get; set; }
+        int FragTankId { get; set; }
+        int Count { get; set; }
+    }
+
+    internal class ExportTankFragModel : IExportTankFragModel
+    {
+        private readonly TankStatisticRowViewModel _tank;
+        private readonly FragsJson _frag;
+
+        public ExportTankFragModel(TankStatisticRowViewModel tank, FragsJson frag)
+        {
+            _tank = tank;
+            _frag = frag;
+        }
+
+        public string Tank
+        {
+            get { return _tank.Tank; }
+            set { _tank.Tank = value; }
+        }
+
+        public double Tier
+        {
+            get { return _frag.Tier; }
+            set { _frag.Tier = value; }
+        }
+
+        public int CountryId
+        {
+            get { return _tank.CountryId; }
+            set { _tank.CountryId = value; }
+        }
+
+        public int Type
+        {
+            get { return _tank.Type; }
+            set { _tank.Type = value; }
+        }
+
+        public int TankId
+        {
+            get { return _tank.TankId; }
+            set { _tank.TankId = value; }
+        }
+
+        public double FragTier
+        {
+            get { return _frag.Tier; }
+            set { _frag.Tier = value; }
+        }
+
+        public int FragCountryId
+        {
+            get { return _frag.CountryId; }
+            set { _frag.CountryId = value; }
+        }
+
+        public int FragType
+        {
+            get { return _frag.Type; }
+            set { _frag.Type = value; }
+        }
+
+        public int FragTankId
+        {
+            get { return _frag.TankId; }
+            set { _frag.TankId = value; }
+        }
+
+        public string FragTank
+        {
+            get { return _frag.Tank; }
+            set { _frag.Tank = value; }
+        }
+
+        public int Count
+        {
+            get { return _frag.Count; }
+            set { _frag.Count = value; }
+        }
     }
 }

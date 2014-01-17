@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Domain.Tank;
 
@@ -153,10 +154,11 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region [ ITankRowTime ]
             LastBattle = list.Max(x => x.LastBattle);
-            PlayTime = list.Max(x => x.PlayTime);
+            double totalSeconds = list.Sum(x => x.PlayTime.TotalSeconds);
+            PlayTime = new TimeSpan(0, 0, 0, (int) totalSeconds);
             if (BattlesCount > 0)
             {
-                //AverageBattleTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime/tank.A15x15.battlesCount);
+                AverageBattleTime = new TimeSpan(0, 0, 0, (int) (totalSeconds / (double)BattlesCount));
             }
             #endregion
 

@@ -339,6 +339,7 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{F24F419A-388F-4EAE-89A2-C0E2E2E0069E}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>System.Data.SqlServerCe.Entity.dll</td><td>{F78FD423-A234-4B0B-B3CF-97E36D1938DE}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlserverce.enti</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>System.Data.SqlServerCe.dll</td><td>{4A406403-C5FF-4888-8C44-DA6C84F89113}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlserverce.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td>{DEC41DA3-6284-45F5-BA8F-A97F0DB9CF01}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.loca</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1054,6 +1055,7 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1864,6 +1866,7 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>System.Data.SqlServerCe.Entity.dll</td></row>
 		<row><td>AlwaysInstall</td><td>System.Data.SqlServerCe.dll</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Localized_resources</td></row>
@@ -2148,6 +2151,7 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_5564DD31_4287_4A7E_B7DA_77BBFB9D8B78_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>System.Data.SqlServerCe.Entity.dll</td><td/><td/><td>_AD6D7269_9918_4E1E_B213_CB02B0D9B6CF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>System.Data.SqlServerCe.dll</td><td/><td/><td>_8D459DDC_EBBC_4D9C_8F36_C646E49FAB79_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td/><td/><td>_37EC7889_47A5_4CB1_8F02_40D6D49EFA11_FILTER</td><td/><td/><td/><td/></row>
@@ -2787,7 +2791,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>547506230</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-2002609683</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>547535733</td></row>
@@ -3598,6 +3602,8 @@
 		<row><td>IDS_PROGMSG_XML_ROLLBACK_FILES</td><td>1033</td><td>Rolling back XML file changes...</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1033</td><td>Updating XML file %s...</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>547535733</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-2002619891</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>-2002628051</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>547535733</td></row>
@@ -3886,13 +3892,17 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>547535733</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.Rembel.com</td><td>0</td><td/><td>547506230</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>547506230</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://code.google.com/p/wotdossier/</td><td>0</td><td/><td>-2002644529</td></row>
+		<row><td>ID_STRING10</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-2002594322</td></row>
+		<row><td>ID_STRING11</td><td>1033</td><td>http://code.google.com/p/wotdossier/downloads/list</td><td>0</td><td/><td>-2002646609</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-2002609683</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>547533813</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>547546421</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>547499349</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>547499381</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>547493269</td></row>
+		<row><td>ID_STRING8</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>-2002615763</td></row>
+		<row><td>ID_STRING9</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-2002600466</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>547535733</td></row>
 	</table>
 
@@ -4000,7 +4010,7 @@
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
-		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
+		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectFolder&gt;\..\WotDossier\Resources\Images\app_icon.ico </td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4134,7 +4144,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{9DF58A70-0A63-46D9-96A3-58CEFCC8E611}</td></row>
 		<row><td>ISUSSignature</td><td>{E00D1265-9E35-4A88-84DD-CE51FF807082}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewAppFiles,viewFeatureFiles,viewObjects,viewDependencies,viewCE,viewUpgradePaths,viewShortcuts,viewDesignPatches,viewRelease</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewAppFiles,viewFeatureFiles,viewObjects,viewDependencies,viewCE,viewUpgradePaths,viewShortcuts,viewDesignPatches,viewRelease,viewISToday,viewRealSetupDesign,viewSetupDesign,viewSetupTypes,viewSupportFiles,viewRegistry</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4444,6 +4454,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ARPPRODUCTICON</td><td>ARPPRODUCTICON.exe</td><td/></row>
 		<row><td>ARPSIZE</td><td/><td/></row>
 		<row><td>ARPURLINFOABOUT</td><td>##ID_STRING1##</td><td/></row>
+		<row><td>ARPURLUPDATEINFO</td><td>##ID_STRING11##</td><td/></row>
 		<row><td>AgreeToLicense</td><td>No</td><td/></row>
 		<row><td>ApplicationUsers</td><td>AllUsers</td><td/></row>
 		<row><td>DWUSINTERVAL</td><td>30</td><td/></row>
@@ -4507,9 +4518,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{A617E45B-B074-405A-BF0E-00FF464639C2}</td><td/></row>
+		<row><td>ProductCode</td><td>{1BD8F9A8-E042-4260-BE81-E549C731BE38}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>1.14.0</td><td/></row>
+		<row><td>ProductVersion</td><td>1.15.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4584,6 +4595,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
+		<row><td>NewShortcut1</td><td>WotDossier.Primary_output</td><td/><td>newfolder2</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4669,6 +4681,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>NewShortcut1</td><td>newfolder2</td><td>##ID_STRING9##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING10##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4791,7 +4805,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>1.14.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>1.15.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

@@ -2241,6 +2241,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select date.
+        /// </summary>
+        public static string DatePicker_SelectDate {
+            get {
+                return ResourceManager.GetString("DatePicker_SelectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Difference.
         /// </summary>
         public static string Difference {

@@ -15,6 +15,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         private Guid _id;
         private int _count;
         private string _name;
+        private bool _useInCharts = true;
 
         [XmlAttribute("id")]
         public Guid Id
@@ -55,6 +56,13 @@ namespace WotDossier.Applications.ViewModel.Replay
                 _count = value;
                 OnPropertyChanged("Name");
             }
+        }
+
+        [XmlAttribute("use-in-charts")]
+        public bool UseInCharts
+        {
+            get { return _useInCharts; }
+            set { _useInCharts = value; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

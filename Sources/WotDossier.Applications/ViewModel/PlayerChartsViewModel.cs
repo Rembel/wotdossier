@@ -42,6 +42,8 @@ namespace WotDossier.Applications.ViewModel
         private bool _resp1;
         private bool _resp2;
         private bool _allResps = true;
+        private DateTime? _startDate;
+        private DateTime? _endDate;
 
         public bool Resp1
         {
@@ -49,8 +51,10 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _resp1 = value;
-                InitWinReplaysPercentByMapChart();
-                InitBattlesByMapChart();
+                if (value)
+                {
+                    RefreshReplaysCharts();
+                }
             }
         }
 
@@ -60,8 +64,10 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _resp2 = value;
-                InitWinReplaysPercentByMapChart();
-                InitBattlesByMapChart();
+                if (value)
+                {
+                    RefreshReplaysCharts();
+                }
             }
         }
 
@@ -71,8 +77,30 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _allResps = value;
-                InitWinReplaysPercentByMapChart();
-                InitBattlesByMapChart();
+                if (value)
+                {
+                    RefreshReplaysCharts();
+                }
+            }
+        }
+
+        public DateTime? StartDate
+        {
+            get { return _startDate; }
+            set
+            {
+                _startDate = value;
+                RefreshReplaysCharts();
+            }
+        }
+
+        public DateTime? EndDate
+        {
+            get { return _endDate; }
+            set
+            {
+                _endDate = value;
+                RefreshReplaysCharts();
             }
         }
 
@@ -302,12 +330,22 @@ namespace WotDossier.Applications.ViewModel
             set { _replaysDataSource = value; }
         }
 
+        private void RefreshReplaysCharts()
+        {
+            InitWinReplaysPercentByMapChart();
+            InitBattlesByMapChart();
+        }
+
         private IEnumerable<ReplayFile> Filter(IEnumerable<ReplayFile> replaysDataSource)
         {
             return replaysDataSource.Where(x =>
                                    (Resp1 && x.Team == 1
                                     || Resp2 && x.Team == 2
                                     || AllResps)
+                                    &&
+                                    (StartDate == null || x.PlayTime.Date >= StartDate)
+                                    &&
+                                    (EndDate == null || x.PlayTime.Date <= EndDate)
                 ).ToList();
 
         }

@@ -1759,4 +1759,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="MenuItem_Export_Frags_Csv" xml:space="preserve">
     <value>Уничтоженные танки в CSV</value>
   </data>
+  <data name="DatePicker_SelectDate" xml:space="preserve">
+    <value>Выберите дату</value>
+  </data>
 </root>

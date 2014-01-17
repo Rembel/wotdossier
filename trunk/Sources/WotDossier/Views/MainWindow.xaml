@@ -302,10 +302,18 @@
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
                                     </Grid.RowDefinitions>
-                                    <RadioButton Margin="6" Grid.Row="0" Content="{x:Static Resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps}"></RadioButton>    
-                                    <RadioButton Margin="6" Grid.Row="1" Content="{x:Static Resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1}"></RadioButton>
-                                    <RadioButton Margin="6" Grid.Row="2" Content="{x:Static Resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2}"></RadioButton>
+                                        <RadioButton Margin="6" Grid.Row="0" Content="{x:Static Resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps}"></RadioButton>    
+                                        <RadioButton Margin="6" Grid.Row="1" Content="{x:Static Resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1}"></RadioButton>
+                                        <RadioButton Margin="6" Grid.Row="2" Content="{x:Static Resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2}"></RadioButton>
+                                        <TextBlock Margin="6" Grid.Row="3" Text="С"/>
+                                        <DatePicker Margin="6" Grid.Row="4" Text="date" SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+                                        <TextBlock Margin="6" Grid.Row="5" Text="по"/>
+                                        <DatePicker Margin="6" Grid.Row="6" Text="date" SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
                                 </Grid>    
                             </GroupBox>
                             <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 

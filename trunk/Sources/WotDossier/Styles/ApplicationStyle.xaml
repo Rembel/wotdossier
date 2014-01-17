@@ -118,4 +118,5 @@
         <Setter Property="BorderBrush" Value="{StaticResource progressBarBackgroundBorderBrush}" />
         <Setter Property="Template" Value="{StaticResource office2007SilverHorizontalProgressBarTemplate}" />
     </Style>
+
 </ResourceDictionary>

@@ -120,6 +120,8 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public int SinaiFrags { get; set; }
 
+        public int PattonFrags { get; set; }
+
         #endregion
 
         #region [ ITankRowPerformance ]
@@ -330,6 +332,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tier8Frags = tank.A15x15.frags8p;
             BeastFrags = tank.Achievements.fragsBeast;
             SinaiFrags = tank.Achievements.fragsSinai;
+            PattonFrags = tank.Achievements.fragsPatton;
             #endregion
 
             #region [ ITankRowMasterTanker ]

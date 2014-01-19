@@ -1584,7 +1584,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ranger.
+        ///   Looks up a localized string similar to Medal Naidin.
         /// </summary>
         public static string Column_SpecialAwards_Ranger {
             get {
@@ -3033,7 +3033,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ranger.
+        ///   Looks up a localized string similar to Medal Naidin.
         /// </summary>
         public static string Medal_Ranger {
             get {

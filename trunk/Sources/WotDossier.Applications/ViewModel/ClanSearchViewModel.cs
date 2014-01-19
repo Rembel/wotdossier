@@ -80,7 +80,7 @@ namespace WotDossier.Applications.ViewModel
                 }
                 if (clan != null)
                 {
-                    ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
+                    ClanViewModel viewModel = CompositionContainerFactory.Instance.GetExport<ClanViewModel>();
                     viewModel.Init(clan);
                     viewModel.Show();
                 }

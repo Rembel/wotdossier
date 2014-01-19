@@ -74,6 +74,12 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="SimpleInjector">
+      <HintPath>..\packages\SimpleInjector.2.4.1\lib\net40-client\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Diagnostics">
+      <HintPath>..\packages\SimpleInjector.2.4.1\lib\net40-client\SimpleInjector.Diagnostics.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition, Version=2009.26.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -109,6 +115,7 @@
     <Compile Include="Applications\ViewExtensions.cs" />
     <Compile Include="Applications\ViewModel.cs" />
     <Compile Include="Applications\ViewModel.Generic.cs" />
+    <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
     <Compile Include="Controls\DataGrid\FooterDataGrid.cs" />
@@ -121,7 +128,6 @@
     <Compile Include="Controls\MultiSelector\IListItemConverter.cs" />
     <Compile Include="Controls\MultiSelector\MultiSelectorBehaviours.cs" />
     <Compile Include="Controls\MultiSelector\TwoListSynchronizer.cs" />
-    <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="Controls\AttachedProperties.cs" />
     <Compile Include="Controls\SupplementaryInteraction.cs" />
     <Compile Include="Controls\Triggers.cs" />

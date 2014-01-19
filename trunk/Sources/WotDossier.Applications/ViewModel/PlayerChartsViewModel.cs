@@ -51,7 +51,6 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _resp1 = value;
-                if (value)
                 {
                     RefreshReplaysCharts();
                 }
@@ -64,7 +63,6 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _resp2 = value;
-                if (value)
                 {
                     RefreshReplaysCharts();
                 }
@@ -77,7 +75,6 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _allResps = value;
-                if (value)
                 {
                     RefreshReplaysCharts();
                 }

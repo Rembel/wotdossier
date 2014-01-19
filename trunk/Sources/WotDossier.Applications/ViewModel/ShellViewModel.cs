@@ -189,7 +189,7 @@ namespace WotDossier.Applications.ViewModel
         /// <param name="dossierRepository"></param>
         [ImportingConstructor]
         public ShellViewModel([Import(typeof(IShellView))]IShellView view, [Import]DossierRepository dossierRepository)
-            : this(view, false)
+            : base(view, false)
         {
             _dossierRepository = dossierRepository;
 
@@ -263,30 +263,30 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSearchClans()
         {
-            var export = CompositionContainerFactory.Instance.Container.GetExport<ClanSearchViewModel>();
+            var export = CompositionContainerFactory.Instance.GetExport<ClanSearchViewModel>();
             if (export != null)
             {
-                ClanSearchViewModel viewModel = export.Value;
+                ClanSearchViewModel viewModel = export;
                 viewModel.Show();
             }
         }
 
         private void OnSearchPlayers()
         {
-            var export = CompositionContainerFactory.Instance.Container.GetExport<PlayerSearchViewModel>();
+            var export = CompositionContainerFactory.Instance.GetExport<PlayerSearchViewModel>();
             if (export != null)
             {
-                PlayerSearchViewModel viewModel = export.Value;
+                PlayerSearchViewModel viewModel = export;
                 viewModel.Show();
             }
         }
 
         private void OnCompare()
         {
-            var export = CompositionContainerFactory.Instance.Container.GetExport<PlayersCompareViewModel>();
+            var export = CompositionContainerFactory.Instance.GetExport<PlayersCompareViewModel>();
             if (export != null)
             {
-                PlayersCompareViewModel viewModel = export.Value;
+                PlayersCompareViewModel viewModel = export;
                 viewModel.Show();
             }
         }
@@ -300,10 +300,10 @@ namespace WotDossier.Applications.ViewModel
             }
             if (clan != null)
             {
-                var export = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>();
+                var export = CompositionContainerFactory.Instance.GetExport<ClanViewModel>();
                 if (export != null)
                 {
-                    ClanViewModel viewModel = export.Value;
+                    ClanViewModel viewModel = export;
                     viewModel.Init(clan);
                     viewModel.Show();
                 }
@@ -313,16 +313,6 @@ namespace WotDossier.Applications.ViewModel
                 MessageBox.Show(Resources.Resources.Msg_CantGetClanDataFromServer, Resources.Resources.WindowCaption_Information,
                     MessageBoxButton.OK, MessageBoxImage.Information);
             }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
-        /// </summary>
-        /// <param name="view">The view.</param>
-        /// <param name="isChild">if set to <c>true</c> [is child].</param>
-        public ShellViewModel(IShellView view, bool isChild)
-            : base(view, isChild)
-        {
         }
 
         #endregion
@@ -365,10 +355,10 @@ namespace WotDossier.Applications.ViewModel
 
             if (tankStatisticRowViewModel != null)
             {
-                var export = CompositionContainerFactory.Instance.Container.GetExport<TankStatisticViewModel>();
+                var export = CompositionContainerFactory.Instance.GetExport<TankStatisticViewModel>();
                 if (export != null)
                 {
-                    TankStatisticViewModel viewModel = export.Value;
+                    TankStatisticViewModel viewModel = export;
                     viewModel.TankStatistic = tankStatisticRowViewModel;
                     AppSettings appSettings = SettingsReader.Get();
                     if (appSettings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
@@ -393,10 +383,10 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSettings()
         {
-            var export = CompositionContainerFactory.Instance.Container.GetExport<SettingsViewModel>();
+            var export = CompositionContainerFactory.Instance.GetExport<SettingsViewModel>();
             if (export != null)
             {
-                SettingsViewModel viewModel = export.Value;
+                SettingsViewModel viewModel = export;
                 viewModel.Show();
             }
         }

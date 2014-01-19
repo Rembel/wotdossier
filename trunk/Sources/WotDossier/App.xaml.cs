@@ -7,10 +7,19 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
+using SimpleInjector;
 using WotDossier.Applications;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.Update;
+using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel;
+using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Dal;
+using WotDossier.Dal.NHibernate;
 using WotDossier.Framework;
+using WotDossier.Framework.Applications.Services;
 using WotDossier.Framework.Presentation.Services;
+using WotDossier.Views;
 using Configuration = NHibernate.Cfg.Configuration;
 
 namespace WotDossier
@@ -80,7 +89,38 @@ namespace WotDossier
                 Thread.CurrentThread.CurrentCulture = culture;
                 Thread.CurrentThread.CurrentUICulture = culture;
 
-                Controller = CompositionContainerFactory.Instance.Container.GetExport<ApplicationController>().Value;
+                // Registrations here
+                CompositionContainerFactory.Instance.Register<ApplicationController, ApplicationController>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.Register<ShellViewModel, ShellViewModel>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.Register<SettingsViewModel, SettingsViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<ClanSearchViewModel, ClanSearchViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<PlayersCompareViewModel, PlayersCompareViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<PlayerSearchViewModel, PlayerSearchViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<PlayerServerStatisticViewModel, PlayerServerStatisticViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<TankStatisticViewModel, TankStatisticViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<AddReplayFolderViewModel, AddReplayFolderViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<UploadReplayViewModel, UploadReplayViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>(Lifestyle.Transient);
+
+                CompositionContainerFactory.Instance.Register<IDataProvider, DataProvider>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.Register<DossierRepository, DossierRepository>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.Register<ReplaysManager, ReplaysManager>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.Register<ISessionStorage, NHibernateSessionStorage>(Lifestyle.Singleton);
+
+                CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IClanView, ClanWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IShellView, MainWindow>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.Register<IPlayerServerStatisticView, PlayerServerStatisticWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<ISearchView, SearchWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<ITankStatisticView, TankStatisticWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IFileDialogService, FileDialogService>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IMessageService, MessageService>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<ISettingsView, SettingsWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>(Lifestyle.Transient);
+
+                Controller = CompositionContainerFactory.Instance.GetExport<ApplicationController>();
 
                 Controller.Run();
             }
@@ -130,7 +170,7 @@ namespace WotDossier
         {
             if (Controller != null)
             {
-                CompositionContainerFactory.Instance.Container.Dispose();
+                CompositionContainerFactory.Instance.Dispose();
             }
             base.OnExit(e);
         }

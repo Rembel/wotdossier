@@ -1,16 +1,13 @@
-﻿using System.ComponentModel.Composition.Hosting;
-using System.IO;
-using System.Reflection;
-using Common.Logging;
+﻿using SimpleInjector;
 
 namespace WotDossier.Framework
 {
     public class CompositionContainerFactory
     {
-        protected static readonly ILog _log = LogManager.GetLogger("CompositionContainerFactory");
-        private CompositionContainer _container;
+        //private CompositionContainer _container;
         private static readonly object _syncObject = new object();
-        private static volatile CompositionContainerFactory _instance = new CompositionContainerFactory();
+        private static volatile CompositionContainerFactory _instance;
+        private Container _simpleContainer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -37,20 +34,61 @@ namespace WotDossier.Framework
             }
         }
 
-        public CompositionContainer Container
+        public void Register<TService, TImplementation>(Lifestyle lifestyle)
+            where TService : class
+            where TImplementation : class, TService
+        {
+            SimpleContainer.Register<TService, TImplementation>(lifestyle);
+        }
+
+        //private CompositionContainer Container
+        //{
+        //    get
+        //    {
+        //        if (_container == null)
+        //        {
+        //            var directoryCatalog =
+        //                new DirectoryCatalog(
+        //                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+        //            AssemblyCatalog assemblyCatalog = new AssemblyCatalog(Assembly.GetEntryAssembly());
+        //            _container = new CompositionContainer(new AggregateCatalog(directoryCatalog, assemblyCatalog));
+        //        }
+        //        return _container;
+        //    }
+        //}
+
+        public Container SimpleContainer
         {
             get
             {
-                if (_container == null)
+                if (_simpleContainer == null)
                 {
-                    var directoryCatalog =
-                        new DirectoryCatalog(
-                            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-                    AssemblyCatalog assemblyCatalog = new AssemblyCatalog(Assembly.GetEntryAssembly());
-                    _container = new CompositionContainer(new AggregateCatalog(directoryCatalog, assemblyCatalog));
+                    _simpleContainer = new Container();
                 }
-                return _container;
+                return _simpleContainer;
             }
+        }
+
+        //public T GetExport<T>(string contractName)
+        //{
+        //    var export = Container.GetExport<T>(contractName);
+        //    if (export != null) return export.Value;
+        //    return default(T);
+        //}
+
+        public T GetExport<T>() where T: class 
+        {
+            T instance = SimpleContainer.GetInstance<T>();
+            return instance;
+
+            //var export = Container.GetExport<T>();
+            //if (export != null) return export.Value;
+            //return default(T);
+        }
+
+        public void Dispose()
+        {
+            //Container.Dispose();
         }
     }
 }

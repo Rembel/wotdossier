@@ -146,10 +146,10 @@ namespace WotDossier.Applications.ViewModel.Rows
             Sharpshooter = list.Max(x => x.Sharpshooter);
             Invincible = list.Max(x => x.Invincible);
             Survivor = list.Max(x => x.Survivor);
-            MouseTrap = list.Sum(x => x.MouseTrap);
-            Hunter = list.Sum(x => x.Hunter);
-            Sinai = list.Sum(x => x.Sinai);
-            PattonValley = list.Sum(x => x.PattonValley);
+            MouseTrap = list.Sum(x => x.TankFrags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
+            Hunter = list.Sum(x => x.BeastFrags) / 100;
+            Sinai = list.Sum(x => x.SinaiFrags) / 100;
+            PattonValley = list.Sum(x => x.PattonFrags) / 100;
             #endregion
 
             #region [ ITankRowTime ]

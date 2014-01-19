@@ -502,7 +502,7 @@
     <value>Рейдер</value>
   </data>
   <data name="Column_SpecialAwards_Ranger" xml:space="preserve">
-    <value>Егерь</value>
+    <value>Медаль Найдина</value>
   </data>
   <data name="Column_SpecialAwards_Reaper" xml:space="preserve">
     <value>Коса Смерти</value>
@@ -1388,7 +1388,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Разведчик</value>
   </data>
   <data name="Medal_Ranger" xml:space="preserve">
-    <value>Егерь</value>
+    <value>Медаль Найдина</value>
   </data>
   <data name="Medal_CoolHeaded" xml:space="preserve">
     <value>Невозмутимый</value>

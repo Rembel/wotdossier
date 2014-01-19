@@ -2,11 +2,10 @@
 using System.IO;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
-using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Replay
 {
     [PartCreationPolicy(CreationPolicy.NonShared)]
     [Export(typeof(AddReplayFolderViewModel))]
@@ -44,23 +43,6 @@ namespace WotDossier.Applications.ViewModel
             set { _replayFolder = value; }
         }
 
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddReplayFolderViewModel"/> class.
-        /// </summary>
-        public AddReplayFolderViewModel()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;"/> class.
-        /// </summary>
-        /// <param name="view">The view.</param>
-        /// <param name="isChild">if set to <c>true</c> then this object is a child of another ViewModel.</param>
-        public AddReplayFolderViewModel(IAddReplayFolderView view, bool isChild)
-            : base(view, isChild)
-        {
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;"/> class and

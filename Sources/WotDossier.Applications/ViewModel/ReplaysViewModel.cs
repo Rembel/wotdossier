@@ -190,7 +190,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnAddFolder(ReplayFolder folder)
         {
-            AddReplayFolderViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<AddReplayFolderViewModel>().Value;
+            AddReplayFolderViewModel viewModel = CompositionContainerFactory.Instance.GetExport<AddReplayFolderViewModel>();
             viewModel.Show();
 
             if (viewModel.ReplayFolder != null)
@@ -297,7 +297,7 @@ namespace WotDossier.Applications.ViewModel
                 Domain.Replay.Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
                 if (replay != null && replay.datablock_battle_result != null && replay.CommandResult != null)
                 {
-                    ReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ReplayViewModel>().Value;
+                    ReplayViewModel viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewModel>();
                     viewModel.Init(replay, replayFile);
                     viewModel.Show();
                 }
@@ -372,7 +372,7 @@ namespace WotDossier.Applications.ViewModel
         {
             if (replayFile != null)
             {
-                UploadReplayViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<UploadReplayViewModel>().Value;
+                UploadReplayViewModel viewModel = CompositionContainerFactory.Instance.GetExport<UploadReplayViewModel>();
                 viewModel.ReplayFile = replayFile;
                 viewModel.Show();
             }

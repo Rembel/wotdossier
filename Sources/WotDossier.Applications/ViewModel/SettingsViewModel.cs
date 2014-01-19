@@ -69,10 +69,6 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public SettingsViewModel()
-        {
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -118,16 +114,6 @@ namespace WotDossier.Applications.ViewModel
 
             SettingsReader.Save(_appSettings);
             ViewTyped.Close();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;"/> class.
-        /// </summary>
-        /// <param name="view">The view.</param>
-        /// <param name="isChild">if set to <c>true</c> then this object is a child of another ViewModel.</param>
-        public SettingsViewModel(ISettingsView view, bool isChild)
-            : base(view, isChild)
-        {
         }
 
         public virtual void Show()

@@ -483,7 +483,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
     <value>PattonValley</value>
   </data>
   <data name="Column_SpecialAwards_Ranger" xml:space="preserve">
-    <value>Ranger</value>
+    <value>Medal Naidin</value>
   </data>
   <data name="Column_Frags_Battles" xml:space="preserve">
     <value>Battles</value>
@@ -1203,7 +1203,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Scout</value>
   </data>
   <data name="Medal_Ranger" xml:space="preserve">
-    <value>Ranger</value>
+    <value>Medal Naidin</value>
   </data>
   <data name="Medal_CoolHeaded" xml:space="preserve">
     <value>Cool Headed</value>

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
-using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
@@ -85,7 +84,7 @@ namespace WotDossier.Applications.ViewModel
             }
             if (clan != null)
             {
-                ClanViewModel viewModel = CompositionContainerFactory.Instance.Container.GetExport<ClanViewModel>().Value;
+                ClanViewModel viewModel = CompositionContainerFactory.Instance.GetExport<ClanViewModel>();
                 viewModel.Init(clan);
                 viewModel.Show();
             }

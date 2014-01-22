@@ -204,6 +204,7 @@
     <Compile Include="Converters\Color\WN6ToColorConverter.cs" />
     <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
+    <Compile Include="Converters\ResxTextConverter.cs" />
     <Compile Include="Converters\Formater\DateFormater.cs" />
     <Compile Include="Converters\Formater\Double2Formater.cs" />
     <Compile Include="Converters\Formater\PercentFormater.cs" />

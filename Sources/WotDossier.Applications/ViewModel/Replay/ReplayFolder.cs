@@ -34,8 +34,14 @@ namespace WotDossier.Applications.ViewModel.Replay
         [XmlAttribute("name")]
         public string Name
         {
-            get { return string.Format("{0}({1})", _name, Count); }
+            get { return _name; }
             set { _name = value; }
+        }
+
+        [XmlIgnore]
+        public string NameWithCount
+        {
+            get { return string.Format("{0}({1})", _name, Count); }
         }
 
         [XmlAttribute("path")]
@@ -54,7 +60,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             set
             {
                 _count = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged("NameWithCount");
             }
         }
 

@@ -107,7 +107,7 @@
                             <DataTemplate>
                                 <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
-                                        <TextBlock Text="{Binding Name}"></TextBlock>
+                                        <TextBlock Text="{Binding Name, Converter={x:Static Converters:ResxTextConverter.Default}}"></TextBlock>
                                     </Image.ToolTip>
                                 </Image>
                             </DataTemplate>
@@ -202,7 +202,7 @@
                             <DataTemplate>
                                 <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
-                                        <TextBlock Text="{Binding Name}"></TextBlock>
+                                        <TextBlock Text="{Binding Name, Converter={x:Static Converters:ResxTextConverter.Default}}"></TextBlock>
                                     </Image.ToolTip>
                                 </Image>
                             </DataTemplate>

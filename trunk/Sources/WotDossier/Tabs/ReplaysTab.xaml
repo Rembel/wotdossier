@@ -29,7 +29,7 @@
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Image Source="/Resources\Images\folder.png"></Image>
-                <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding NameWithCount}" VerticalAlignment="Center" Margin="0,0,5,0"/>
             </Grid>
         </HierarchicalDataTemplate>
 

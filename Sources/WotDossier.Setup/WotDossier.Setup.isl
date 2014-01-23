@@ -4486,6 +4486,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>IS_SQLSERVER_SERVER</td><td/><td/></row>
 		<row><td>IS_SQLSERVER_USERNAME</td><td>sa</td><td/></row>
 		<row><td>InstallChoice</td><td>AR</td><td/></row>
+		<row><td>LAUNCHPROGRAM</td><td>1</td><td/></row>
 		<row><td>LAUNCHREADME</td><td>1</td><td/></row>
 		<row><td>Manufacturer</td><td>##COMPANY_NAME##</td><td/></row>
 		<row><td>PIDKEY</td><td/><td/></row>
@@ -4527,7 +4528,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>RestartManagerOption</td><td>CloseRestart</td><td/></row>
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
-		<row><td>SHOWLAUNCHPROGRAM</td><td>0</td><td/></row>
+		<row><td>SHOWLAUNCHPROGRAM</td><td>-1</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40FULL;ISACTIONPROP1</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>

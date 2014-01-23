@@ -80,7 +80,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--MXP Максимальный опыт за бой-->
-                    <controls:RatingRow Image="..\Resources/Images/gr.png" Grid.Row="4"
+                    <controls:RatingRow Image="..\Resources/Images/mxp.png" Grid.Row="4"
                                                   ShortName="MXP"
                                                   FullName="Max XP"
                                                   Value="{Binding Rating_MaxXpValue}"
@@ -102,7 +102,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--HR Процент попаданий-->
-                    <controls:RatingRow Image="..\Resources/Images/gr.png" Grid.Row="6"
+                    <controls:RatingRow Image="..\Resources/Images/hr.png" Grid.Row="6"
                                                   ShortName="HR"
                                                   FullName="Hits percent"
                                                   Value="{Binding Rating_HitsPercentsValue}"

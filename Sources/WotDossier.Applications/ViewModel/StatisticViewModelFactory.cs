@@ -98,14 +98,18 @@ namespace WotDossier.Applications.ViewModel
         private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
         {
             int battlesCount88 = tanks.Sum(x => x.A15x15.battlesCount - x.A15x15.battlesCountBefore8_8);
+            battlesCount88 = battlesCount88 != 0 ? battlesCount88 : 1;
             int xp88 = tanks.Sum(x => x.A15x15.originalXP);
-            double avgXp88 = xp88 / (double)(battlesCount88 != 0 ? battlesCount88 : 1);
+            int xpRadio88 = tanks.Sum(x => x.A15x15.damageAssistedRadio);
+            int xpTrack88 = tanks.Sum(x => x.A15x15.damageAssistedTrack);
+            double avgXp88 = xp88 / (double)battlesCount88;
+            double avgXpRadio88 = xpRadio88 / (double)battlesCount88;
+            double avgXpTrack88 = xpTrack88 / (double)battlesCount88;
             double wins = playerStatistic.Wins / (double)playerStatistic.BattlesCount;
             double survive = playerStatistic.SurvivedBattles / (double)playerStatistic.BattlesCount;
-            double hit = playerStatistic.HitsPercents / 100.0;
             double avgDamageDealt = playerStatistic.AvgDamageDealt;
 
-            double rbr = RatingHelper.RatingWG(playerStatistic.BattlesCount, battlesCount88, wins, survive, hit, avgDamageDealt, avgXp88);
+            double rbr = RatingHelper.RatingWG(playerStatistic.BattlesCount, battlesCount88, wins, survive, avgDamageDealt, avgXp88, avgXpRadio88, avgXpTrack88);
             return rbr;
         }
 

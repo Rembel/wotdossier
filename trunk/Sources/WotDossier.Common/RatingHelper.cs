@@ -266,14 +266,25 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="battles88">The battles88.</param>
         /// <param name="wins">The wins.</param>
         /// <param name="survive">The survive.</param>
-        /// <param name="hit">The hit.</param>
-        /// <param name="dmg">The DMG.</param>
+        /// <param name="dmg">The avg DMG.</param>
         /// <param name="avgXp88">The avg XP88.</param>
+        /// <param name="avgXpRadio88">The avg radio XP88.</param>
+        /// <param name="avgXpTrack88">The avg track XP88.</param>
+        /// <remarks>http://forum.worldoftanks.ru/index.php?/topic/995453-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D1%91%D0%BD%D0%BD%D1%8B%D0%B9-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD-%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0-%D1%80%D0%B0%D1%81%D1%87%D1%91/</remarks>
         /// <returns></returns>
-        public static double RatingWG(double battles, double battles88, double wins, double survive, double hit, double dmg, double avgXp88)
+        public static double RatingWG(double battles, double battles88, double wins, double survive, double dmg, double avgXp88, double avgXpRadio88, double avgXpTrack88)
         {
-            return (2 / (1 + Math.Exp(-battles / 3000)) - 1)
-                   * (3000 / (1 + Math.Exp(13 - 25 * wins)) + 1300 / (1 + Math.Exp(7 - 22 * survive)) + 700 / (1 + Math.Exp(14 - 24 * hit)) + 5 * avgXp88 * (2 / (1 + Math.Exp(-battles88 / 500)) - 1) + dmg);
+            return 540*Math.Pow(battles, 0.37)*
+                   Math.Tanh(0.00163*Math.Pow(battles, -0.37)*
+                             (3500/(1 + Math.Exp(13 - 31*wins)) + 1400/(1 + Math.Exp(8 - 27*survive))
+                              + 3700*Asinh(0.0006*dmg) + Math.Tanh(0.002*battles88)*(3900*Asinh(0.0015*avgXp88)) +
+                              1.4*avgXpRadio88 + 1.1*avgXpTrack88));
+        }
+
+        private static double Asinh(double x)
+        {
+            //asinh(x) = log(x + sqrt(x2 + 1))
+            return Math.Log(x + Math.Sqrt(Math.Pow(x, 2) + 1));
         }
     }
 }

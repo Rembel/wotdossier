@@ -276,9 +276,9 @@ def = dropped_capture_points / bc (среднее количество очко�
         {
             return 540*Math.Pow(battles, 0.37)*
                    Math.Tanh(0.00163*Math.Pow(battles, -0.37)*
-                             (3500/(1 + Math.Exp(13 - 31*wins)) + 1400/(1 + Math.Exp(8 - 27*survive))
-                              + 3700*Asinh(0.0006*dmg) + Math.Tanh(0.002*battles88)*(3900*Asinh(0.0015*avgXp88)) +
-                              1.4*avgXpRadio88 + 1.1*avgXpTrack88));
+                             (3500/(1 + Math.Exp(16 - 31*wins)) + 1400/(1 + Math.Exp(8 - 27*survive))
+                              + 3700*Asinh(0.0006*dmg) + Math.Tanh(0.002*battles88)*(3900*Asinh(0.0015*avgXp88) +
+                              1.4*avgXpRadio88 + 1.1*avgXpTrack88)));
         }
 
         private static double Asinh(double x)

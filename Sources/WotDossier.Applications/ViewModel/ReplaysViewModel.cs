@@ -229,10 +229,17 @@ namespace WotDossier.Applications.ViewModel
                             int index = 0;
                             foreach (FileInfo replay in replays)
                             {
-                                Domain.Replay.Replay data = WotApiClient.Instance.ReadReplay2Blocks(replay);
-                                if (data != null)
+                                try
                                 {
-                                    replayFiles.Add(new ReplayFile(replay, data, replayFolder.Id));
+                                    Domain.Replay.Replay data = WotApiClient.Instance.ReadReplay2Blocks(replay);
+                                    if (data != null)
+                                    {
+                                        replayFiles.Add(new ReplayFile(replay, data, replayFolder.Id));
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    _log.Error("Error on replay processing", e);
                                 }
                                 index++;
                                 int percent = (index + 1) * 100 / count;

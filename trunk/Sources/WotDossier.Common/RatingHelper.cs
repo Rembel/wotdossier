@@ -174,13 +174,23 @@ def = dropped_capture_points / bc (среднее количество очко�
         }
 
         /// <summary>
-        /// Calc XWN
+        /// Calc XWN6
         /// </summary>
         /// <param name="wn6">The WN6.</param>
         /// <returns></returns>
-        public static double XWN(double wn6)
+        public static double XWN6(double wn6)
         {
             return wn6 > 2200 ? 100 : Math.Max(Math.Min(wn6 * (wn6 * (wn6 * (-0.00000000001268 * wn6 + 0.00000005147) - 0.00006418) + 0.07576) - 7.25, 100), 0);
+        }
+
+        /// <summary>
+        /// Calc XWN8
+        /// </summary>
+        /// <param name="wn8">The WN8.</param>
+        /// <returns></returns>
+        public static double XWN8(double wn8)
+        {
+            return wn8 > 3250 ? 100 : Math.Max(Math.Min(wn8 * (wn8 *(wn8 * (wn8 * (wn8 * (0.00000000000000000007119*wn8 + 0.0000000000000002334) - 0.000000000006963) + 0.00000002845) - 0.00004558) + 0.06565) - 0.18, 100), 0);
         }
 
         /// <summary>
@@ -283,7 +293,7 @@ def = dropped_capture_points / bc (среднее количество очко�
 
         private static double Asinh(double x)
         {
-            //asinh(x) = log(x + sqrt(x2 + 1))
+            //asinh(x) = log(x + sqrt(x^2 + 1))
             return Math.Log(x + Math.Sqrt(Math.Pow(x, 2) + 1));
         }
     }

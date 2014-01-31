@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using Common.Logging;
 using WotDossier.Common;
 
@@ -87,23 +86,16 @@ namespace WotDossier.Applications
         public static void BinaryCacheToJson(FileInfo cacheFile)
         {
             string temp = Environment.CurrentDirectory;
-
             string directoryName = temp;
+
             Environment.CurrentDirectory = directoryName + @"\External";
-            Process proc = new Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.CreateNoWindow = true;
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.FileName = directoryName + @"\External\wotdc2j.exe";
-            proc.StartInfo.Arguments = string.Format("\"{0}\" -f", cacheFile.FullName);
-            proc.Start();
+            
+            string task = directoryName + @"\External\wotdc2j.exe";
+            string arguments = string.Format("\"{0}\" -f", cacheFile.FullName);
+
+            ExecuteTask(task, arguments, @"..\Logs\wotdc2j.log");
 
             Environment.CurrentDirectory = temp;
-
-            while (!proc.HasExited)
-            {
-                Thread.Sleep(1000);
-            }
         }
 
         /// <summary>
@@ -113,22 +105,37 @@ namespace WotDossier.Applications
         public static void ReplayToJson(FileInfo cacheFile)
         {
             string temp = Environment.CurrentDirectory;
-
             string directoryName = temp;
+
             Environment.CurrentDirectory = directoryName + @"\External";
-            Process proc = new Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.CreateNoWindow = true;
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.FileName = directoryName + @"\External\wotrp2j.exe";
-            proc.StartInfo.Arguments = string.Format("\"{0}\" -f -r", cacheFile.FullName);
-            proc.Start();
+            
+            string task = directoryName + @"\External\wotrp2j.exe";
+            string arguments = string.Format("\"{0}\" -f -r", cacheFile.FullName);
+
+            ExecuteTask(task, arguments, @"..\Logs\wotrp2j.log");
 
             Environment.CurrentDirectory = temp;
+        }
 
-            while (!proc.HasExited)
+        private static void ExecuteTask(string task, string arguments, string logPath)
+        {
+            using(Process proc = new Process())
             {
-                Thread.Sleep(1000);
+                proc.StartInfo.CreateNoWindow = true;
+                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.FileName = task;
+                proc.StartInfo.Arguments = arguments;
+
+                proc.Start();
+
+                //write log
+                using (StreamWriter streamWriter = new StreamWriter(logPath, false))
+                {
+                    streamWriter.WriteLine(proc.StandardOutput.ReadToEnd());   
+                }
+
+                proc.WaitForExit();
             }
         }
 

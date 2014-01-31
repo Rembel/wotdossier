@@ -593,7 +593,7 @@ namespace WotDossier.Test
         public void XVMTest()
         {
             double xeff = RatingHelper.XEFF(1257);
-            double xwn = RatingHelper.XWN(1318);
+            double xwn = RatingHelper.XWN6(1318);
         }
 
         [Test]

@@ -236,7 +236,7 @@ namespace WotDossier.Applications.ViewModel
 
         public double XWN
         {
-            get { return RatingHelper.XWN(WN6Rating); }
+            get { return RatingHelper.XWN6(WN6Rating); }
         }
 
         private double? _performanceRating;

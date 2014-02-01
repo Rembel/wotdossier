@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
@@ -8,6 +9,7 @@ namespace WotDossier.Converters
     public class CountryIdToImageConverter : IValueConverter
     {
         private static readonly CountryIdToImageConverter _default = new CountryIdToImageConverter();
+        private static Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
 
         public static CountryIdToImageConverter Default
         {
@@ -24,8 +26,18 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             int countryId = (int)value;
-            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Countries\slot_bright_{0}.png", countryId), UriKind.Relative));
+            Uri uriSource = new Uri(string.Format(@"\Resources\Images\Countries\slot_bright_{0}.png", countryId), UriKind.Relative);
+            var bitmapImage = GetBitmapImage(uriSource);
             return bitmapImage;
+        }
+
+        private static BitmapImage GetBitmapImage(Uri uriSource)
+        {
+            if (!_cache.ContainsKey(uriSource))
+            {
+                _cache.Add(uriSource, new BitmapImage(uriSource));
+            }
+            return _cache[uriSource];
         }
 
         /// <summary>

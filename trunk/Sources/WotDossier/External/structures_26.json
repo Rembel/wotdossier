@@ -74,12 +74,12 @@
 
 {"version": 26, "category": "epic", "name": "DeLanglade", "offset": 282, "length": 2},
 {"version": 26, "category": "epic", "name": "TamadaYoshio", "offset": 284, "length": 2},
-{"version": 26, "category": "epic", "name": "bombardier", "offset": 286, "length": 2},
-{"version": 26, "category": "epic", "name": "huntsman", "offset": 288, "length": 2},
-{"version": 26, "category": "epic", "name": "alaric", "offset": 290, "length": 2},
-{"version": 26, "category": "epic", "name": "sturdy", "offset": 292, "length": 2},
-{"version": 26, "category": "epic", "name": "ironMan", "offset": 294, "length": 2},
-{"version": 26, "category": "epic", "name": "luckyDevil", "offset": 296, "length": 2},
+{"version": 26, "category": "special", "name": "bombardier", "offset": 286, "length": 2},
+{"version": 26, "category": "special", "name": "huntsman", "offset": 288, "length": 2},
+{"version": 26, "category": "special", "name": "alaric", "offset": 290, "length": 2},
+{"version": 26, "category": "special", "name": "sturdy", "offset": 292, "length": 2},
+{"version": 26, "category": "special", "name": "ironMan", "offset": 294, "length": 2},
+{"version": 26, "category": "special", "name": "luckyDevil", "offset": 296, "length": 2},
 
 
 

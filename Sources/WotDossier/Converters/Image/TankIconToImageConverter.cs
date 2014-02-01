@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
@@ -9,6 +10,8 @@ namespace WotDossier.Converters
     public class TankIconToImageConverter : IValueConverter
     {
         private static readonly TankIconToImageConverter _default = new TankIconToImageConverter();
+
+        private static Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
 
         public static TankIconToImageConverter Default
         {
@@ -28,9 +31,19 @@ namespace WotDossier.Converters
             BitmapImage bitmapImage = null;
             if (icon != null)
             {
-                bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.IconId), UriKind.Relative));
+                Uri uriSource = new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.IconId), UriKind.Relative);
+                bitmapImage = GetBitmapImage(uriSource);
             }
             return bitmapImage;
+        }
+
+        private static BitmapImage GetBitmapImage(Uri uriSource)
+        {
+            if (!_cache.ContainsKey(uriSource))
+            {
+                _cache.Add(uriSource, new BitmapImage(uriSource));
+            }
+            return _cache[uriSource];
         }
 
         /// <summary>

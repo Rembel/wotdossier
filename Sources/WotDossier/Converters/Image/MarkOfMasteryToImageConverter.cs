@@ -13,6 +13,13 @@ namespace WotDossier.Converters
     {
         private static MarkOfMasteryToImageConverter _default = new MarkOfMasteryToImageConverter();
 
+        private static BitmapSource _toBitmapSource = ToBitmapSource(Resources.Resources.award_images);
+        private static CroppedBitmap cb0 = new CroppedBitmap(_toBitmapSource, new Int32Rect(0, 0, 1, 1));
+        private static CroppedBitmap cb1 = new CroppedBitmap(_toBitmapSource, new Int32Rect(101, 454, 34, 30));
+        private static CroppedBitmap cb2 = new CroppedBitmap(_toBitmapSource, new Int32Rect(135, 454, 34, 30));
+        private static CroppedBitmap cb3 = new CroppedBitmap(_toBitmapSource, new Int32Rect(169, 453, 34, 30));
+        private static CroppedBitmap cb4 = new CroppedBitmap(_toBitmapSource, new Int32Rect(203, 457, 34, 30));
+        
         public static MarkOfMasteryToImageConverter Default
         {
             get { return _default; }
@@ -28,27 +35,19 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             int mark = (int)value;
-            Int32Rect rect = Int32Rect.Empty;
             switch (mark)
             {
                 case 1:
-                    rect = new Int32Rect(101, 454, 34, 30);
-                    break;
+                    return cb1;
                 case 2:
-                    rect = new Int32Rect(135, 454, 34, 30);
-                    break;
+                    return cb2;
                 case 3:
-                    rect = new Int32Rect(169, 453, 34, 30);
-                    break;
+                    return cb3;
                 case 4:
-                    rect = new Int32Rect(203, 457, 34, 30);
-                    break;
+                    return cb4;
                 default:
-                    rect = new Int32Rect(0, 0, 1, 1);
-                    break;
+                    return cb0;
             }
-            CroppedBitmap cb = new CroppedBitmap(ToBitmapSource(Resources.Resources.award_images), rect);       //select region rect
-            return cb;
         }
 
         /// <summary>

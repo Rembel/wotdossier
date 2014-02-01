@@ -212,7 +212,7 @@ namespace WotDossier.Dal
                             statisticEntity.TankIdObject = tankEntity;
                         }
 
-                        if (currentSnapshotBattlesCount < tank.A15x15.battlesCount)
+                        if (currentSnapshotBattlesCount < tank.A15x15.battlesCount || (currentSnapshotBattlesCount == tank.A15x15.battlesCount && tank.Common.basedonversion == 26))
                         {
                             //create new record
                             if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated,  updated))

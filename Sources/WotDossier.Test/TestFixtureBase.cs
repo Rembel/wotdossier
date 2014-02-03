@@ -6,9 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
 using System.Web;
 using System.Xml;
 using Newtonsoft.Json;
@@ -99,7 +97,6 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.5\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
@@ -114,7 +111,6 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.6\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
@@ -129,7 +125,6 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.7\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
@@ -144,7 +139,6 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.8\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
@@ -159,7 +153,6 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
@@ -174,7 +167,6 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.10\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
@@ -189,7 +181,6 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.11\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
@@ -753,7 +744,6 @@ namespace WotDossier.Test
             CsvExportProvider provider = new CsvExportProvider();
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            Thread.Sleep(1000);
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
             List<TankStatisticRowViewModel> list = tanksV2.Select(x => new TankStatisticRowViewModel(x)).ToList();
             provider.Export(list, new List<Type>{typeof(ITankRowBattles), typeof(ITankRowFrags)});

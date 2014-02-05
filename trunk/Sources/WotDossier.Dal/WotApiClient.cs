@@ -399,7 +399,7 @@ namespace WotDossier.Dal
                 JObject parsedData = (JObject)se.Deserialize(reader);
                 if (parsedData != null && ((IDictionary<string, JToken>)parsedData).ContainsKey(REPLAY_DATABLOCK_2))
                 {
-                    replay.PlayerResult = parsedData[REPLAY_DATABLOCK_2][0].ToObject<PlayerResult>();
+                    replay.datablock_battle_result_plain = parsedData[REPLAY_DATABLOCK_2][0].ToObject<PlayerResult>();
                 }
             }
 
@@ -475,7 +475,7 @@ namespace WotDossier.Dal
                     return new Replay
                     {
                         datablock_1 = firstBlock,
-                        PlayerResult = commandResult,
+                        datablock_battle_result_plain = commandResult,
                         datablock_battle_result = battleResult
                     };
                 }

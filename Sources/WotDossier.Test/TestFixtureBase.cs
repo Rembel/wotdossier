@@ -260,8 +260,12 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.11\20140126_2109_ussr-T-54_14_siegfried_line.wotreplay"));
+
+            Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
+            Assert.IsNotNull(replay);
             CacheHelper.ReplayToJson(cacheFile);
-            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Assert.IsNotNull(replay);
         }
 
         [Test]

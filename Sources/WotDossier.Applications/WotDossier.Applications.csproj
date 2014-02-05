@@ -119,6 +119,7 @@
     <Compile Include="ViewModel\Replay\AddReplayFolderViewModel.cs" />
     <Compile Include="ViewModel\Replay\BattleStatus.cs" />
     <Compile Include="ViewModel\Replay\CombatTarget.cs" />
+    <Compile Include="ViewModel\Replay\FinishReason.cs" />
     <Compile Include="ViewModel\Replay\ReplayFile.cs" />
     <Compile Include="ViewModel\Replay\ReplayFolder.cs" />
     <Compile Include="ViewModel\Replay\ReplaysFilterViewModel.cs" />

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace WotDossier.Domain.Replay
@@ -6,6 +7,8 @@ namespace WotDossier.Domain.Replay
     [DataContract]
     public class FirstBlock
     {
+        private Version _version;
+
         [DataMember]
         public string dateTime { get; set; }
         [DataMember]
@@ -20,6 +23,21 @@ namespace WotDossier.Domain.Replay
         //since Version 0.8.6:
         [DataMember]
         public string clientVersionFromExe { get; set; }
+
+        [IgnoreDataMember]
+        public Version Version
+        {
+            get
+            {
+                if (_version == null)
+                {
+                    _version = new Version(clientVersionFromExe.Replace(",", string.Empty).Replace(" ", "."));
+                }
+                return _version;
+            }
+            set { _version = value; }
+        }
+
         [DataMember]
         public string mapName { get; set; }
         [DataMember]

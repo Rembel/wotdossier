@@ -23,9 +23,6 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public Guid FolderId { get; set; }
         private string _link;
-        //20121201_1636_ussr-IS_42_north_america
-        private const string REPLAY_DATETIME_FORMAT = @"(\d+_\d+)";
-        private const string MAPNAME_FILENAME = @"(\d+_[a-zA-Z_]+)(\.wotreplay)";
         private const string TANKNAME_FORMAT = @"([a-zA-Z]+)-(.+)";
 
         public string MapName { get; set; }
@@ -66,29 +63,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             FolderId = folderId;
 
-            if (replay == null)
-            {
-                FileInfo = replayFileInfo;
-                string fileName = replayFileInfo.Name;
-
-                Regex dateTimeRegexp = new Regex(REPLAY_DATETIME_FORMAT);
-                Match dateTimeMatch = dateTimeRegexp.Match(fileName);
-                CultureInfo provider = CultureInfo.InvariantCulture;
-                PlayTime = DateTime.ParseExact(dateTimeMatch.Groups[1].Value, "yyyyMMdd_HHmm", provider);
-
-                Regex mapNameRegexp = new Regex(MAPNAME_FILENAME);
-                Match mapNameMatch = mapNameRegexp.Match(fileName);
-                MapName = mapNameMatch.Groups[1].Value;
-
-                Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
-                string tankName =
-                    fileName.Replace(dateTimeMatch.Groups[1].Value, "").Replace(mapNameMatch.Groups[0].Value, "");
-                tankName = tankName.Substring(1, tankName.Length - 2);
-                Match tankNameMatch = tankNameRegexp.Match(tankName);
-                CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
-                TankName = tankNameMatch.Groups[2].Value;
-            }
-            else
+            if (replay != null)
             {
                 MapName = replay.datablock_1.mapDisplayName;
                 MapNameId = replay.datablock_1.mapName;
@@ -102,7 +77,9 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Match tankNameMatch = tankNameRegexp.Match(replay.datablock_1.playerVehicle);
                 CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
                 TankName = tankNameMatch.Groups[2].Value;
-                Tank = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.Icon.IconOrig.ToLower() == TankName.ToLower());
+                Tank =
+                    Dictionaries.Instance.Tanks.Values.FirstOrDefault(
+                        x => x.Icon.IconOrig.ToLower() == TankName.ToLower());
 
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
@@ -111,21 +88,52 @@ namespace WotDossier.Applications.ViewModel.Replay
                 PlayerId = replay.datablock_1.playerID;
                 Icon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
 
-                if (replay.CommandResult != null)
+                if (replay.datablock_1.Version < WotApiClient.JsonFormatedResultsMinVersion)
                 {
-                    Credits = replay.CommandResult.Damage.credits;
-                    DamageDealt = replay.CommandResult.Damage.damageDealt;
-                    DamageReceived = replay.CommandResult.Damage.damageReceived;
-                    IsWinner = (BattleStatus) replay.CommandResult.Damage.isWinner;
-                    Xp = replay.CommandResult.Damage.xp;
-                    Killed = replay.CommandResult.Damage.killed.Count;
-                    Damaged = replay.CommandResult.Damage.damaged.Count;
-                    Medals = MedalHelper.GetMedals(replay.CommandResult.Damage.achieveIndices);
+                    if (replay.datablock_battle_result_plain != null)
+                    {
+                        Credits = replay.datablock_battle_result_plain.credits;
+                        DamageDealt = replay.datablock_battle_result_plain.damageDealt;
+                        DamageReceived = replay.datablock_battle_result_plain.damageReceived;
+                        IsWinner = (BattleStatus) replay.datablock_battle_result_plain.isWinner;
+                        Xp = replay.datablock_battle_result_plain.xp;
+                        Killed = replay.datablock_battle_result_plain.killed.Count;
+                        Damaged = replay.datablock_battle_result_plain.damaged.Count;
+                    }
+                }
+                else
+                {
+                    if (replay.datablock_battle_result != null)
+                    {
+                        Credits = replay.datablock_battle_result.personal.credits;
+                        DamageDealt = replay.datablock_battle_result.personal.damageDealt;
+                        DamageReceived = replay.datablock_battle_result.personal.damageReceived;
+                        IsWinner = GetBattleStatus(replay);
+                        Xp = replay.datablock_battle_result.personal.xp;
+                        Killed = replay.datablock_battle_result.personal.kills;
+                        Damaged = replay.datablock_battle_result.personal.damaged;
+                        //Medals = MedalHelper.GetMedals(replay.datablock_battle_result.achieveIndices);
+                    }
                 }
 
                 TeamMembers = replay.datablock_1.vehicles.Values.ToList();
                 Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
             }
+        }
+
+        private BattleStatus GetBattleStatus(Domain.Replay.Replay replay)
+        {
+            if (replay.datablock_battle_result.common.winnerTeam == 0)
+            {
+                return BattleStatus.Draw;
+            }
+
+            if (replay.datablock_battle_result.common.winnerTeam == replay.datablock_battle_result.personal.team)
+            {
+                return BattleStatus.Victory;
+            }
+
+            return BattleStatus.Draw;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

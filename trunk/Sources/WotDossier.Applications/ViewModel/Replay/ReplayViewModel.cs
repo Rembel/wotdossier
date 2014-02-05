@@ -21,6 +21,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         private TeamMember _alienTeamMember;
         private TeamMember _ourTeamMember;
+        private TeamMember _replayUser;
 
         public Domain.Replay.Replay Replay { get; set; }
 
@@ -141,6 +142,12 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public DelegateCommand HideTeamMemberResultsCommand { get; set; }
 
+        public TeamMember ReplayUser
+        {
+            get { return _replayUser; }
+            set { _replayUser = value; }
+        }
+
         #endregion
 
         /// <summary>
@@ -182,12 +189,12 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
                 List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
-                List<KeyValuePair<long, Vehicle>> vehicles = replay.CommandResult.Vehicles.ToList();
+                List<KeyValuePair<long, Vehicle>> vehicles = replay.datablock_1.vehicles.ToList();
                 List<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v, myTeamId)).ToList();
                 
                 FirstTeam = teamMembers.Where(x => x.Team == myTeamId).OrderByDescending(x => x.Xp).ToList();
                 SecondTeam = teamMembers.Where(x => x.Team != myTeamId).OrderByDescending(x => x.Xp).ToList();
-                TeamMember replayUser = teamMembers.First(x => x.AccountDBID == playerId);
+                ReplayUser = teamMembers.First(x => x.AccountDBID == playerId);
 
                 List<long> squads1 = FirstTeam.Where(x => x.PrebattleId > 0).OrderBy(x => x.PrebattleId).Select(x => x.PrebattleId).Distinct().ToList();
                 List<long> squads2 = SecondTeam.Where(x => x.PrebattleId > 0).OrderBy(x => x.PrebattleId).Select(x => x.PrebattleId).Distinct().ToList();
@@ -195,20 +202,20 @@ namespace WotDossier.Applications.ViewModel.Replay
                 FirstTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads1.IndexOf(tm.PrebattleId) + 1; });
                 SecondTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads2.IndexOf(tm.PrebattleId) + 1; });
 
-                CombatEffects = replay.datablock_battle_result.personal.details.Where(x => x.Key != replayUser.Id).Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.clientVersionFromExe)).OrderBy(x => x.TeamMember.FullName).ToList();
+                CombatEffects = replay.datablock_battle_result.personal.details.Where(x => x.Key != ReplayUser.Id).Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.clientVersionFromExe)).OrderBy(x => x.TeamMember.FullName).ToList();
 
-                Tank = replayUser.Tank;
-                FullName = replayUser.FullName;
+                Tank = ReplayUser.Tank;
+                FullName = ReplayUser.FullName;
 
                 double premiumFactor = replay.datablock_battle_result.personal.premiumCreditsFactor10 / (double)10;
                 PremiumCredits = replay.datablock_battle_result.personal.credits;
                 PremiumTotalXp = replay.datablock_battle_result.personal.xp;
-                PremiumXp = (int)Math.Round(replayUser.Xp * premiumFactor, 0);
+                PremiumXp = (int)Math.Round(ReplayUser.Xp * premiumFactor, 0);
                 Credits = (int) Math.Round((PremiumCredits / premiumFactor), 0);
-                ActionCredits = Credits - replayUser.Credits;
+                ActionCredits = Credits - ReplayUser.Credits;
                 XpFactor = replay.datablock_battle_result.personal.dailyXPFactor10/10;
-                TotalXp = replayUser.Xp * XpFactor;
-                Xp = replayUser.Xp;
+                TotalXp = ReplayUser.Xp * XpFactor;
+                Xp = ReplayUser.Xp;
                 XpPenalty = replay.datablock_battle_result.personal.xpPenalty;
                 XpTitle = GetXpTitle(XpFactor);
 
@@ -241,7 +248,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TimeSpan battleLength = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
-                List<Medal> medals = replayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps)).ToList();
+                List<Medal> medals = ReplayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps)).ToList();
 
                 BattleMedals = medals.Where(x => x.Type == 0).ToList();
                 AchievMedals = medals.Where(x => x.Type == 1).ToList();
@@ -249,11 +256,26 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TimeSpan userbattleLength = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                 UserBattleTime = userbattleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
-                Status = (BattleStatus) replay.CommandResult.Damage.isWinner;
+                Status = GetBattleStatus(replay);
 
                 return true;
             }
             return false;
+        }
+
+        private BattleStatus GetBattleStatus(Domain.Replay.Replay replay)
+        {
+            if(replay.datablock_battle_result.common.winnerTeam == 0)
+            {
+                return BattleStatus.Draw;
+            }
+
+            if (replay.datablock_battle_result.common.winnerTeam == ReplayUser.Team)
+            {
+                return BattleStatus.Victory;
+            }
+
+            return BattleStatus.Draw;
         }
 
         private static int GetAutoEquipCost(Domain.Replay.Replay replay)

@@ -263,9 +263,11 @@ namespace WotDossier.Test
 
             Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
             Assert.IsNotNull(replay);
+            Assert.IsNotNull(replay.datablock_battle_result);
             CacheHelper.ReplayToJson(cacheFile);
             replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
             Assert.IsNotNull(replay);
+            Assert.IsNotNull(replay.datablock_battle_result);
         }
 
         [Test]

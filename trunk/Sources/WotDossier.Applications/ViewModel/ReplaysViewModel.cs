@@ -302,7 +302,7 @@ namespace WotDossier.Applications.ViewModel
                 }
 
                 Domain.Replay.Replay replay = WotApiClient.Instance.ReadReplay(jsonFile);
-                if (replay != null && replay.datablock_battle_result != null && replay.CommandResult != null)
+                if (replay != null && replay.datablock_battle_result != null)
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewModel>();
                     viewModel.Init(replay, replayFile);

@@ -17,7 +17,6 @@ using WotDossier.Domain.Dossier.TankV65;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
-using Vehicle = WotDossier.Domain.Replay.Vehicle;
 
 namespace WotDossier.Dal
 {
@@ -27,6 +26,8 @@ namespace WotDossier.Dal
     /// </summary>
     public class WotApiClient
     {
+        public static Version JsonFormatedResultsMinVersion = new Version("0.8.11.0");
+
         private static readonly ILog _log = LogManager.GetLogger("WotApiClient");
 
         private const string URL_API = @"https://api.worldoftanks.{0}/{1}/{2}";
@@ -398,11 +399,7 @@ namespace WotDossier.Dal
                 JObject parsedData = (JObject)se.Deserialize(reader);
                 if (parsedData != null && ((IDictionary<string, JToken>)parsedData).ContainsKey(REPLAY_DATABLOCK_2))
                 {
-                    CommandResult result = new CommandResult();
-                    result.Damage = parsedData[REPLAY_DATABLOCK_2][0].ToObject<Damaged>();
-                    result.Vehicles = parsedData[REPLAY_DATABLOCK_2][1].ToObject<Dictionary<long, Vehicle>>();
-                    result.Frags = parsedData[REPLAY_DATABLOCK_2][2].ToObject<Dictionary<long, FragsCount>>();
-                    replay.CommandResult = result;
+                    replay.PlayerResult = parsedData[REPLAY_DATABLOCK_2][0].ToObject<PlayerResult>();
                 }
             }
 
@@ -441,34 +438,46 @@ namespace WotDossier.Dal
                 stream.Close();
 
                 FirstBlock firstBlock = null;
-                CommandResult commandResult = null;
+                PlayerResult commandResult = null;
+                BattleResult battleResult = null;
 
                 if (str.Length > 0)
                 {
                     firstBlock = JsonConvert.DeserializeObject<FirstBlock>(str);
                 }
 
-                try
+                if (firstBlock != null)
                 {
-                    var reader = new JsonTextReader(new StringReader(str2));
-                    var se = new JsonSerializer();
-                    var parsedData = (JArray)se.Deserialize(reader);
-                    if (parsedData.Count > 2)
-                    {
-                        commandResult = new CommandResult();
-                        commandResult.Damage = parsedData[0].ToObject<Damaged>();
-                        commandResult.Vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
-                        commandResult.Frags = parsedData[2].ToObject<Dictionary<long, FragsCount>>();
-                    }
-                }
-                catch (Exception e)
-                {
-                    _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e, replayFileInfo.FullName);
-                }
 
-                if (firstBlock != null || commandResult != null)
-                {
-                    return new Replay { datablock_1 = firstBlock, CommandResult = commandResult };
+                    try
+                    {
+                        var reader = new JsonTextReader(new StringReader(str2));
+                        var se = new JsonSerializer();
+                        var parsedData = (JArray) se.Deserialize(reader);
+                        if (parsedData.Count > 0)
+                        {
+                            if (firstBlock.Version < JsonFormatedResultsMinVersion)
+                            {
+                                commandResult = parsedData[0].ToObject<PlayerResult>();
+                            }
+                            else
+                            {
+                                battleResult = parsedData[0].ToObject<BattleResult>();
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e,
+                            replayFileInfo.FullName);
+                    }
+
+                    return new Replay
+                    {
+                        datablock_1 = firstBlock,
+                        PlayerResult = commandResult,
+                        datablock_battle_result = battleResult
+                    };
                 }
             }
             return null;

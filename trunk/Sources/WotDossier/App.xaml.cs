@@ -119,6 +119,7 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.Register<IMessageService, MessageService>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<ISettingsView, SettingsWindow>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IPlayersCompareView, PlayersCompareWindow>(Lifestyle.Transient);
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ApplicationController>();
 

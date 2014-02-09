@@ -459,6 +459,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High Caliber.
+        /// </summary>
+        public static string Column_BattleAwards_MainGun {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_MainGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Patrol Duty.
         /// </summary>
         public static string Column_BattleAwards_PatrolDuty {
@@ -482,6 +491,15 @@ namespace WotDossier.Resources {
         public static string Column_BattleAwards_Sniper {
             get {
                 return ResourceManager.GetString("Column_BattleAwards_Sniper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tanker-Sniper.
+        /// </summary>
+        public static string Column_BattleAwards_Sniper2 {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Sniper2", resourceCulture);
             }
         }
         
@@ -3810,6 +3828,21 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Нанести наибольшее количество урона за бой
+        ///  • Нанесенный урон должен составлять не менее 20% от сумарной прочности техники
+        ///	• Нанесенный урон должен составлять не менее 1000 единиц
+        ///	• Нельзя задевать союзников прямыми выстрелами
+        ///	• При равном количестве нанесенного урона награждается игрок, получивший 
+        ///наибольшее количество очков опыта за бой
+        ///	• Выдается только в случайных боях.
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_MainGun {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_MainGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Awarded to the player who helps the team damage at least six enemy vehicles by highlighting them. The tanks must be highlighted only by you when they take damage..
         /// </summary>
         public static string Tooltip_BattleHeroAchievements_PatrolDuty {
@@ -3835,6 +3868,24 @@ namespace WotDossier.Resources {
         public static string Tooltip_BattleHeroAchievements_Sniper {
             get {
                 return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Sniper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нанести наибольшее количество урона за бой с 
+        ///дистанции не менее 300 метров
+        ///  • Общая точность стрельбы за бой не менее 85%
+        ///	• Не менее 80% попаданий должны быть с нанесением урона, учитывается урон
+        ///по технике и повреждение модулей.
+        ///	• Нанесенного урона должно быть больше очков прочности машины игрока и не менее 1000
+        ///  • Нельзя задевать союзников прямыми выстрелами
+        ///  • Выдается только одна награда за бой
+        ///	• Не выдается при игре на САУ
+        ///  • Выдается только в случайных боях.
+        /// </summary>
+        public static string Tooltip_BattleHeroAchievements_Sniper2 {
+            get {
+                return ResourceManager.GetString("Tooltip_BattleHeroAchievements_Sniper2", resourceCulture);
             }
         }
         

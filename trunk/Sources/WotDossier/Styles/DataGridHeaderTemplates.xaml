@@ -642,7 +642,7 @@
             <Image Source="../Resources/Images/Medals/Sniper.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper2}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper2}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper2}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -655,7 +655,7 @@
             <Image Source="../Resources/Images/Medals/Sniper.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MainGun}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MainGun}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_MainGun}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>

@@ -52,6 +52,7 @@
     <Compile Include="Dossier\AppSpot\TankStatistic.cs" />
     <Compile Include="Dossier\TankV29\CommonJson.cs" />
     <Compile Include="Dossier\TankV65\CommonJson.cs" />
+    <Compile Include="Dossier\TankV65\Achievements7x7_65.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
     <Compile Include="Entities\DbVersionEntity.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Dossier\TankV65\MaxJson.cs" />
     <Compile Include="Dossier\TankV65\TankJson.cs" />
     <Compile Include="Tank\AchievementsJson.cs" />
+    <Compile Include="Tank\Achievements7x7.cs" />
     <Compile Include="Tank\MaxJson.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />
     <Compile Include="Tank\StatisticJson.cs" />

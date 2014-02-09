@@ -1762,4 +1762,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="DatePicker_SelectDate" xml:space="preserve">
     <value>Выберите дату</value>
   </data>
+  <data name="Medal_MainGun" xml:space="preserve">
+    <value>Основной калибр</value>
+  </data>
+  <data name="Medal_Sniper2" xml:space="preserve">
+    <value>Танкист-Снайпер</value>
+  </data>
 </root>

@@ -1577,4 +1577,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="DatePicker_SelectDate" xml:space="preserve">
     <value>Select date</value>
   </data>
+  <data name="Medal_MainGun" xml:space="preserve">
+    <value>High Caliber</value>
+  </data>
+  <data name="Medal_Sniper2" xml:space="preserve">
+    <value>Tanker-Sniper</value>
+  </data>
 </root>

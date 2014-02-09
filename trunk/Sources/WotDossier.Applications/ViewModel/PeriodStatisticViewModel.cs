@@ -382,6 +382,16 @@ namespace WotDossier.Applications.ViewModel
             get { return Sniper - PrevStatistic.Sniper; }
         }
 
+        public int Sniper2Delta
+        {
+            get { return Sniper2 - PrevStatistic.Sniper2; }
+        }
+
+        public int MainGunDelta
+        {
+            get { return MainGun - PrevStatistic.MainGun; }
+        }
+
         public int DefenderDelta
         {
             get { return Defender - PrevStatistic.Defender; }

@@ -287,6 +287,10 @@ namespace WotDossier.Applications.ViewModel
 
         public int Sniper { get; set; }
 
+        public int Sniper2 { get; set; }
+
+        public int MainGun { get; set; }
+
         public int Defender { get; set; }
 
         public int SteelWall { get; set; }

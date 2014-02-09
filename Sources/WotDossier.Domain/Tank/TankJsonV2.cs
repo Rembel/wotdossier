@@ -9,7 +9,8 @@ namespace WotDossier.Domain.Tank
         public static TankJson Initial  = new TankJson
         {
             A15x15 = new StatisticJson(), Clan = new StatisticJson(), Company = new StatisticJson(), A7x7 = new StatisticJson(),
-            Achievements = new AchievementsJson(), Common = new CommonJson(), Description = new TankDescription(), Frags = new BindingList<FragsJson>()
+            Achievements = new AchievementsJson(), Common = new CommonJson(), Description = new TankDescription(), Frags = new BindingList<FragsJson>(),
+            Achievements7x7 = new Achievements7x7()
         };
 
         public StatisticJson A15x15 { get; set; }
@@ -17,6 +18,7 @@ namespace WotDossier.Domain.Tank
         public StatisticJson Company { get; set; }
         public StatisticJson A7x7 { get; set; }
         public AchievementsJson Achievements { get; set; }
+        public Achievements7x7 Achievements7x7 { get; set; }
         public CommonJson Common { get; set; }
 
         private IList<IList<string>> _fragsList = new List<IList<string>>();

@@ -18,6 +18,7 @@ namespace WotDossier.Domain.Dossier.TankV65
         private MaxJson65 _max15X15 = new MaxJson65();
         private MaxJson65 _max7X7 = new MaxJson65();
         private StatisticJson65_2 _a15X152 = new StatisticJson65_2();
+        private Achievements7x7_65 _achievements7X7 = new Achievements7x7_65();
 
         /*8.9*/
 
@@ -67,6 +68,12 @@ namespace WotDossier.Domain.Dossier.TankV65
         {
             get { return _achievements; }
             set { _achievements = value; }
+        }
+
+        public Achievements7x7_65 Achievements7X7
+        {
+            get { return _achievements7X7; }
+            set { _achievements7X7 = value; }
         }
 
         public CommonJson65 Common

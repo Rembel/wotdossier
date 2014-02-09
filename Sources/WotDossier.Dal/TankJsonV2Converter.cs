@@ -297,6 +297,17 @@ namespace WotDossier.Dal
             v2.Achievements.warrior = tankJson.Achievements.warrior;
             v2.Achievements.markOfMastery = tankJson.Achievements.markOfMastery;
 
+            v2.Achievements7x7 = new Achievements7x7();
+            v2.Achievements7x7.armoredFist = tankJson.Achievements7X7.armoredFist;
+            v2.Achievements7x7.geniusForWar = tankJson.Achievements7X7.geniusForWar;
+            v2.Achievements7x7.geniusForWarMedal = tankJson.Achievements7X7.geniusForWarMedal;
+            v2.Achievements7x7.kingOfTheHill = tankJson.Achievements7X7.kingOfTheHill;
+            v2.Achievements7x7.maxTacticalBreakthroughSeries = tankJson.Achievements7X7.maxTacticalBreakthroughSeries;
+            v2.Achievements7x7.tacticalBreakthrough = tankJson.Achievements7X7.tacticalBreakthrough;
+            v2.Achievements7x7.tacticalBreakthroughSeries = tankJson.Achievements7X7.tacticalBreakthroughSeries;
+            v2.Achievements7x7.wolfAmongSheep = tankJson.Achievements7X7.wolfAmongSheep;
+            v2.Achievements7x7.wolfAmongSheepMedal = tankJson.Achievements7X7.wolfAmongSheepMedal;
+
             if (tankJson.Clan != null)
             {
                 v2.Clan = new StatisticJson();

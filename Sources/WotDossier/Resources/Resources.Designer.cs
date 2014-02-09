@@ -2934,6 +2934,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High Caliber.
+        /// </summary>
+        public static string Medal_MainGun {
+            get {
+                return ResourceManager.GetString("Medal_MainGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Master Gunner.
         /// </summary>
         public static string Medal_MasterGunner {
@@ -3083,6 +3092,15 @@ namespace WotDossier.Resources {
         public static string Medal_Sniper {
             get {
                 return ResourceManager.GetString("Medal_Sniper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tanker-Sniper.
+        /// </summary>
+        public static string Medal_Sniper2 {
+            get {
+                return ResourceManager.GetString("Medal_Sniper2", resourceCulture);
             }
         }
         

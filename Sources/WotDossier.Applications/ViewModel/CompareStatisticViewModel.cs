@@ -120,6 +120,10 @@
 
         public int Sniper { get { return First.Sniper - Second.Sniper; } }
 
+        public int Sniper2 { get { return First.Sniper2 - Second.Sniper2; } }
+
+        public int MainGun { get { return First.MainGun - Second.MainGun; } }
+
         public int Defender { get { return First.Defender - Second.Defender; } }
 
         public int SteelWall { get { return First.SteelWall - Second.SteelWall; } }

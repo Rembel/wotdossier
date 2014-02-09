@@ -20,6 +20,16 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Sniper2}" SecondValue="{Binding Second.Sniper2}" AchievementIconSource="../Resources/Images/Medals/Sniper.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper2}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.MainGun}" SecondValue="{Binding Second.MainGun}" AchievementIconSource="../Resources/Images/Medals/Sniper.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MainGun}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
                 <controls:AchievementCompareRow FirstValue="{Binding First.Confederate}" SecondValue="{Binding Second.Confederate}" AchievementIconSource="../Resources/Images/Medals/Supporter.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Confederate}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Confederate}" />

@@ -1583,4 +1583,31 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Medal_Sniper2" xml:space="preserve">
     <value>Tanker-Sniper</value>
   </data>
+  <data name="Tooltip_BattleHeroAchievements_Sniper2" xml:space="preserve">
+    <value>Нанести наибольшее количество урона за бой с 
+дистанции не менее 300 метров
+  • Общая точность стрельбы за бой не менее 85%
+	• Не менее 80% попаданий должны быть с нанесением урона, учитывается урон
+по технике и повреждение модулей.
+	• Нанесенного урона должно быть больше очков прочности машины игрока и не менее 1000
+  • Нельзя задевать союзников прямыми выстрелами
+  • Выдается только одна награда за бой
+	• Не выдается при игре на САУ
+  • Выдается только в случайных боях</value>
+  </data>
+  <data name="Tooltip_BattleHeroAchievements_MainGun" xml:space="preserve">
+    <value>Нанести наибольшее количество урона за бой
+  • Нанесенный урон должен составлять не менее 20% от сумарной прочности техники
+	• Нанесенный урон должен составлять не менее 1000 единиц
+	• Нельзя задевать союзников прямыми выстрелами
+	• При равном количестве нанесенного урона награждается игрок, получивший 
+наибольшее количество очков опыта за бой
+	• Выдается только в случайных боях</value>
+  </data>
+  <data name="Column_BattleAwards_MainGun" xml:space="preserve">
+    <value>High Caliber</value>
+  </data>
+  <data name="Column_BattleAwards_Sniper2" xml:space="preserve">
+    <value>Tanker-Sniper</value>
+  </data>
 </root>

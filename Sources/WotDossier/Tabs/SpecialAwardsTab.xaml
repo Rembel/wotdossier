@@ -41,7 +41,6 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Hunter}" HeaderTemplate="{StaticResource HunterColumnHeaderTemplate}" Binding="{Binding Hunter, Converter={x:Static Converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Sinai}" HeaderTemplate="{StaticResource SinaiColumnHeaderTemplate}" Binding="{Binding Sinai, Converter={x:Static Converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_PattonValley}" HeaderTemplate="{StaticResource PattonValleyColumnHeaderTemplate}" Binding="{Binding PattonValley, Converter={x:Static Converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_SpecialAwards_Ranger}" HeaderTemplate="{StaticResource RangerColumnHeaderTemplate}" Binding="{Binding Ranger, Converter={x:Static Converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

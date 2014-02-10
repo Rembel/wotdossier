@@ -12,7 +12,7 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public string name { get; set; }
         [DataMember]
-        public int prebattleID { get; set; }
+        public int platoonID { get; set; }
         [DataMember]
         public int team { get; set; }
     }

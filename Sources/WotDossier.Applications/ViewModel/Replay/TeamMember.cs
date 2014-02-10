@@ -29,7 +29,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             IsAlive = vehicle.Value.isAlive;
 
             ClanDBID = player.Value.clanDBID;
-            PrebattleId = player.Value.prebattleID;
+            platoonID = player.Value.platoonID;
 
             AccountDBID = vehicleResult.Value.accountDBID;
             achievements = vehicleResult.Value.achievements;
@@ -88,7 +88,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string ClanAbbrev { get; set; }
         public long ClanDBID { get; set; }
         public string Name { get; set; }
-        public long PrebattleId { get; set; }
+        public long platoonID { get; set; }
         public int Team { get; set; }
 
         public long AccountDBID { get; set; }

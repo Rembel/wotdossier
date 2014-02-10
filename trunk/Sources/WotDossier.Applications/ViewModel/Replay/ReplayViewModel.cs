@@ -196,11 +196,11 @@ namespace WotDossier.Applications.ViewModel.Replay
                 SecondTeam = teamMembers.Where(x => x.Team != myTeamId).OrderByDescending(x => x.Xp).ToList();
                 ReplayUser = teamMembers.First(x => x.AccountDBID == playerId);
 
-                List<long> squads1 = FirstTeam.Where(x => x.PrebattleId > 0).OrderBy(x => x.PrebattleId).Select(x => x.PrebattleId).Distinct().ToList();
-                List<long> squads2 = SecondTeam.Where(x => x.PrebattleId > 0).OrderBy(x => x.PrebattleId).Select(x => x.PrebattleId).Distinct().ToList();
+                List<long> squads1 = FirstTeam.Where(x => x.platoonID > 0).OrderBy(x => x.platoonID).Select(x => x.platoonID).Distinct().ToList();
+                List<long> squads2 = SecondTeam.Where(x => x.platoonID > 0).OrderBy(x => x.platoonID).Select(x => x.platoonID).Distinct().ToList();
 
-                FirstTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads1.IndexOf(tm.PrebattleId) + 1; });
-                SecondTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads2.IndexOf(tm.PrebattleId) + 1; });
+                FirstTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads1.IndexOf(tm.platoonID) + 1; });
+                SecondTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads2.IndexOf(tm.platoonID) + 1; });
 
                 CombatEffects = replay.datablock_battle_result.personal.details.Where(x => x.Key != ReplayUser.Id).Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.clientVersionFromExe)).OrderBy(x => x.TeamMember.FullName).ToList();
 

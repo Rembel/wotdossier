@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en" id="wotpa">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.vbaddict.net/" /><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vApp 3.0" />
+<meta name="keywords" content="world of tanks, charts, credits, income, expenditure, charting, statistics, dossier, replays" />
+<meta name="description" content="Analysis of World of Tanks Dossier Cache, Battle Results and Replays" />
+<meta name="google-site-verification" content="bkG7J6IW8BXAstqEVghfqDiOKKDUIFdtveW-d4ppKN0" />
+
+	<meta name="description" content="overview &amp; stats" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- basic styles -->
+
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- link rel="stylesheet" href="assets/css/font-awesome.min.css" / -->
+
+	<!-- page specific plugin styles -->
+
+	<!-- fonts -->
+
+	<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+	<!-- ace styles -->
+
+	<link rel="stylesheet" href="assets/css/ace.min.css" />
+	<link rel="stylesheet" href="assets/css/vbaddict2-font.css" />
+	<!-- link rel="stylesheet" href="assets/css/ace-skins.min.css" / -->
+	<link rel="stylesheet" href="assets/css/ace-skins.css" />
+
+	<!--[if lte IE 8]>
+	  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+	<![endif]-->
+
+	<!-- inline styles related to this page -->
+
+	<!-- ace settings handler -->
+
+	<script src="assets/js/ace-extra.min.js"></script>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+
+<script type="text/javascript">
+<!--
+    function disable_obj(id)
+    {
+       var e = document.getElementById(id);
+       e.style.display = 'none';
+    }
+
+
+    function enable_obj(id)
+    {
+       var e = document.getElementById(id);
+          e.style.display = 'block';
+    }
+    
+    function toggle_visibility(id)
+    {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+
+ 
+    	 	 	//-->
+   	   
+    	
+</script>
+
+<title>vBAddict - World of Tanks Statistics and Performance Analyzer</title>
+
+<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00007l/additional.css?d=1392036944" />
+
+
+</script>
+
+</head>
+<body class="skin-1">
+
+
+<div class="navbar navbar-default" id="navbar">
+
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="http://www.vbaddict.net" class="navbar-brand">
+						<small>
+							<i class="icon-tank"></i>
+							vBAddict </small>
+						<small class="smaller-50">VISUALIZE YOUR GAMEPLAY</small>
+					</a>
+				</div>
+
+			
+				<div class="navbar-header pull-right" role="navigation">
+					<div class="control-group">
+						<a href="http://www.vbaddict.net/wot.php?do=wargamingid" type="button" class="btn btn-primary btn-sm">Login with your Wargaming.net ID</a>																
+					  <a href="http://www.vbaddict.net/wot_login.php?server=eu" type="button" class="btn btn-default btn-sm">EU</a>
+					  <a href="http://www.vbaddict.net/wot_login.php?server=na" type="button" class="btn btn-default btn-sm">NA</a>
+					  <a href="http://www.vbaddict.net/wot_login.php?server=ru" type="button" class="btn btn-default btn-sm">RU</a>
+					  <a href="http://www.vbaddict.net/wot_login.php?server=asia" type="button" class="btn btn-default btn-sm">ASIA</a>
+					  <a href="http://www.vbaddict.net/wot_login.php?server=kr" type="button" class="btn btn-default btn-sm">KR</a>
+					</div>
+				</div>
+				
+				
+				
+				
+			</div><!-- /.container -->
+		</div>
+</div>
+</div>
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<div class="sidebar" id="sidebar">
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					</script>
+
+					<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+						<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+							
+							<a href="http://www.vbaddict.net/content/1-blog-news" class="btn btn-success">
+								<i class="icon-bullhorn"></i>
+							</a>
+
+							<a href="http://www.vbaddict.net/activity.php" class="btn btn-info">
+								<i class="icon-cog"></i>
+							</a>
+
+							<a href="http://www.vbaddict.net/forum" class="btn btn-danger">
+								<i class="icon-bubbles"></i>
+							</a>
+
+							<a href="http://www.vbaddict.net/project.php?projectid=6" class="btn btn-warning">
+								<i class="icon-lab2"></i>
+							</a>
+						
+
+						</div>
+
+						<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+							<span class="btn btn-success"></span>
+
+							<span class="btn btn-danger"></span>
+
+							<span class="btn btn-info"></span>
+
+							<span class="btn btn-warning"></span>
+
+						</div>
+					</div><!-- #sidebar-shortcuts -->
+					
+
+					<ul class="nav nav-list">
+						<li class="active">
+							<a href="wot.php">
+								<i class="icon-atom"></i>
+								<span class="menu-text"> Introduction </span>
+							</a>
+						</li>
+						
+						
+						
+						
+						
+						
+						<li >
+							<a href="statistics.php">
+								<i class="icon-chart5"></i>
+								<span class="menu-text"> Tank Statistics </span>
+							</a>
+						</li>
+
+						<li >
+							<a href="statistics_maps.php">
+								<i class="icon-chart6"></i>
+								<span class="menu-text"> Map Statistics </span>
+							</a>
+						</li>
+
+						<li >
+							<a href="battlehistory.php">
+								<i class="icon-cannon"></i>
+								<span class="menu-text"> Battle History </span>
+							</a>
+						</li>
+						
+						<li >
+							<a href="/replays/">
+								<i class="icon-camera2"></i>
+								<span class="menu-text"> Replays </span>
+							</a>
+						</li>
+						
+						<li >
+							<a href="/heatmaps/">
+								<i class="icon-th-small"></i>
+								<span class="menu-text"> Heatmaps </span>
+							</a>
+						</li>
+
+						<li >
+							<a href="leaderboard.php">
+								<i class="icon-cup"></i>
+								<span class="menu-text"> Leaderboard </span>
+							</a>
+						</li>
+					
+					
+						<li >
+							<a href="http://www.vbaddict.net/find.php">
+								<i class="icon-search"></i>
+								<span class="menu-text"> Search </span>
+							</a>
+						</li>
+						
+					 <li >
+							<a href="http://www.vbaddict.net/support.php">
+								<i class="icon-fire-extinguisher"></i>
+								<span class="menu-text"> Get Support </span>
+							</a>
+						</li>
+						
+						<li >
+							<a href="http://www.vbaddict.net/about.php">
+								<i class="icon-info"></i>
+								<span class="menu-text"> About / Donate </span>
+							</a>
+						</li>
+												
+						
+
+
+					</ul><!-- /.nav-list -->
+
+					<div class="sidebar-collapse" id="sidebar-collapse">
+						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+					</div>
+
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+					</script>
+
+
+					
+					
+					
+				</div>
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="/">vBAddict</a>
+							</li>
+							
+							
+							
+							
+						</ul><!-- .breadcrumb -->
+
+
+					</div>
+
+					
+
+
+
+					<div class="page-content">
+						
+											
+								<form action="profile.php?do=dismissnotice" method="post" id="notices">
+									<input type="hidden" name="do" value="dismissnotice" />
+									<input type="hidden" name="s" value="s=38d10a6461b1e86b65d94c2223cff460&amp;" />
+									<input type="hidden" name="securitytoken" value="guest" />
+									<input type="hidden" id="dismiss_notice_hidden" name="dismiss_noticeid" value="" />
+									<input type="hidden" name="url" value="" />
+										<div class="restore" id="navbar_notice_27">
+	
+	<p class="alert alert-warning">
+The programming and maintenance of the site is eating much time and money. The server costs me monthly <strong>132 EUR</strong>, this has to be payed from my own pocket.<br/>
+I don't want to introduce ads as these can disturb too much.<br/>
+<br/>
+If you like to show some appreciation, feel free to donate some bucks via PayPal, read more about this <a href="http://www.vbaddict.net/about.php">here</a>.<br/>
+</p>
+</div>
+								</form>
+					
+<div class="page-header">
+<h1><i class="blue icon-tank bigger-110"></i>
+vBAddict - World of Tanks Statistics and Performance Analyzer</h1>
+</div>
+
+
+	
+	<div class="row-fluid">
+		<div class="col-sm-9">
+			
+			<h3 class="row header smaller lighter blue"><i class="icon-info black"></i> About vBAddict</h3>
+			<p>vBAddict WoT Performance Analyzer can analyze your World of Tanks Profile with the informations stored locally in your Dossier cache file. Dossier files contains a summary of all of your tanks you ever played.</p>
+			vBAddict will help you to keep track on your overall battle performance WN7/WN8 efficiency, accuracy, damage ratio, damage dealt, damage assisted (radio + track), damage taken, damage per kill, experience, average battle time, mileage per map, credits and experience per minute and even more.<br/>
+			<br/>
+			By uploading your Dossier on a regular base you will get real progress of your gaming skills. With the tank charts you will even now track progress on each of your tank. With the help of the <a href="/adu">ADU Active Dossier Uploader</a> the dossier cache file, Battle Results and Replays are automatically uploaded.
+			<br/>
+			<br/>
+		</div>
+		
+		<div class="col-sm-3">
+			<h3 class="row header smaller lighter blue"><i class="icon-chart-area blue"></i> vBAddict Statistics</h3>
+			<li>Serving charts for <b>29,063</b> gamers.</li><li>Printing progress for <b>2.64 Mio</b> tanks.</li><li>Keeping history of <b>13.42 Mio</b> battles.</li><li>Offering <b>1.47 Mio</b> replays for download.</li>
+	
+			Currently active Users: <strong>446</strong>
+			
+		</div>
+
+			<div class="space-8"></div>	
+			
+	</div>
+	
+	<div class="row-fluid">
+		<div class="col-sm-12">
+			<p class="alert alert-success">
+			Keep in mind, usage of vBAddict is for <strong>FREE</strong>, even without disturbing Ads. vBAddict pays the server with the help of donations. <a href="/about.php">Read more....</a>
+			</p>
+		</div>
+	</div>	
+	
+	<div class="row-fluid">
+		<div class="col-sm-12">
+		
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-chart-area blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Knee-Deep analyzings of your Tanks, Modules and Crew</strong><br/>
+						Showing you the data, statistics and charts for all of your tanks. With ATS Advanced Tank Statistics you can even track the progress of your Crew
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-money blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Income Expenditure</strong><br/>
+						Expenditure helps you to keep an eye on your profit by tracking earned and spent credits/gold for vehicle repair, resupply ammunition and consumables seperately for each of your tanks
+					</div>
+				</div>
+			</div>
+			
+			<div class="space-8"></div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-upload blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Automatic Uploading and sharing your Battles</strong><br/>
+						With the little application ADU Active Dossier Upload you don't need to upload manually any Dossier, Replay or Battle Result any more - it will do it for you in the background
+					</div>
+				</div>
+			
+				
+			
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-rocket blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Per Battle Ratings</strong><br/>
+						See how you are performing on each of your Battle. Get a summarization for your playing day
+					</div>
+				</div>
+			</div>
+			
+			<div class="space-8"></div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-th-small blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Heatmaps</strong><br/>
+						Heatmaps based on uploaded Replays are showing the most visited locations on each map, now even for each tank class
+					</div>
+				</div>
+				
+				
+				
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-statistics blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Tank and Map Statistics</strong><br/>
+						Find the top Earners, top Damage dealers, most efficiency tanks. Find out which Map is well balanced, which not
+					</div>
+				</div>
+			</div>
+			
+			<div class="space-8"></div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-medal blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Achievements</strong><br/>
+						The answer to the question where did you make an achievement on which tank and on which Battle, together with a Replay of you Glory
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-tank blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Tank Expert</strong><br/>
+						Find out how many times you destroyed a tank and which one you still need to destroy to be the Export of a Nation
+					</div>
+				</div>
+			</div>
+						
+			<div class="space-8"></div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-camera2 blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Learn from the Best</strong><br/>
+						Browse through thousands of the best Replays in the Communiy and learn from the best Gameplay
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-stats blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Daily Progress and Quick Summary</strong><br/>
+						Your personal daily progress is ready to be analyzed with a summarization of all relevant details
+					</div>
+				</div>
+			</div>
+			
+			<div class="space-8"></div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-users blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Statistics for Clans</strong><br/>
+						Get an overview of the members of a Clan, see last results of their Clanwars
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-search blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Search and find Gamers</strong><br/>
+						Looking up someones Profile or just searching for statistics of a specific Clan, use the Search facility
+					</div>
+				</div>
+			</div>
+			
+			<div class="space-8"></div>
+		
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-database blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Data2Go</strong><br/>
+						For the case you want to Analyze your data in an external tool like Excel, there is a possibility to get a computer readable output from your data
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<div class="col-sm-1">
+						<i class="icon-wrench blue bigger-275">&nbsp;</i>
+					</div>
+					<div class="col-sm-11">
+						<strong>Sites driven by vBAddict API and Tools</strong><br/>
+						Many Sites and Applications rely on vBAddict's API and Tools to enhace their own products without the need to create own tools and infrastructure
+					</div>
+				</div>
+			</div>
+			
+			<div class="space-8"></div>
+		
+		</div>
+	
+	</div>
+		
+
+	<div class="row-fluid">
+		<div class="col-sm-12">
+				<h3 class="row header smaller lighter blue"><i class="icon-tank black"></i> Visualize your Gameplay</h3>
+				
+				Example for "Efficiency by Tier" Chart:<br/>
+				<a href="http://www.vbaddict.net/player/phalynx-eu-0af79b837139a524d1df5b2289bcc213"><img alt="Example for Efficiency by Tier" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_profile_efficiency_by_tier.png" /></a><br/>
+				<br/>
+				
+				Example for "Skillradar":<br/>
+				<a href="http://www.vbaddict.net/player/phalynx-eu-0af79b837139a524d1df5b2289bcc213"><img alt="Skillradar" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_skill_0_0_-1_-1.png" /></a><br/>
+				<br/>
+				
+				Example for Progress:<br/>
+				<a href="http://www.vbaddict.net/player/phalynx-eu-0af79b837139a524d1df5b2289bcc213"><img alt="Progress" border="0" src="http://www.vbaddict.net/wot/data/vbaddict_progress_battleresults.png" /></a><br/>
+				<br/>
+				
+				Example for Income / Expenditure:<br/>
+				<a href="http://www.vbaddict.net/player/phalynx-eu-0af79b837139a524d1df5b2289bcc213"><img alt="Progress" border="0" src="http://www.vbaddict.net/wot/data/vbaddict_expenditure.png" /></a><br/>
+				<br/>
+				
+				Example for "Damage per Kill" Chart (from the beginning):<br/>
+				<a href="http://www.vbaddict.net/tank/phalynx-eu-0af79b837139a524d1df5b2289bcc213/china-3/type-59-0"><img alt="Example for "Damage per Kill" Chart (from the beginning)" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_t_3_0_damage_kill_all.png" /></a><br/>
+				<br/>
+				
+				Example for "Damage ratio" Chart:<br/>
+				<a href="http://www.vbaddict.net/tank/phalynx-eu-0af79b837139a524d1df5b2289bcc213/soviet-union-0/object-704-32"><img alt="Damage ratio" border="0" src="http://www.vbaddict.net/wot/charts/0af79b837139a524d1df5b2289bcc213/0af79b837139a524d1df5b2289bcc213_t_0_32_damage_ratio.png" /></a><br/>
+				<br/>
+				
+				Example of signature image:<br/>
+				<a href="/wot.php?do=charts&amp;chartname=signature&amp;wotid=0af79b837139a524d1df5b2289bcc213"><img src="http://www.vbaddict.net/wotsig/0af79b837139a524d1df5b2289bcc213_24.png" border="0"/></a><br/>
+				<br/>
+				
+				Example of Quick Summary:<br/>
+				<a href="http://www.vbaddict.net/quick/phalynx-eu-0af79b837139a524d1df5b2289bcc213/silver/24h"><img src="http://www.vbaddict.net/wot/data/vBAddict_QuickSummary.png" border="0"/></a><br/>
+				<br/>
+			
+				
+				To see what you will get by uploading your dossier file on a regular base, you can see Phalynx' personal charts: <a href="/player/phalynx-eu-0af79b837139a524d1df5b2289bcc213">Charts of Phalynx</a>.
+				
+				
+		</div>
+	</div>
+	
+</div> <!-- page content -->
+
+
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+	
+	
+
+        
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.www.vbaddict.net"]);
+  _paq.push(["setDomains", ["*.www.vbaddict.net"]]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://pw.vbaddict.net/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+<noscript>
+	<!-- Piwik Image Tracker -->
+	<img src="http://pw.vbaddict.net/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+	<!-- End Piwik -->
+</noscript>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-26558277-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<!-- script src="assets/js/typeahead-bs2.min.js"></script -->
+
+
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+
+</body>
+</html>

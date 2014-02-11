@@ -412,11 +412,38 @@ namespace WotDossier.Dal.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Windstorm.
+        /// </summary>
+        internal static string Map_84_winter {
+            get {
+                return ResourceManager.GetString("Map_84_winter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Severogorsk.
         /// </summary>
         internal static string Map_85_winter {
             get {
                 return ResourceManager.GetString("Map_85_winter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter Himmelsdorf.
+        /// </summary>
+        internal static string Map_86_himmelsdorf_winter {
+            get {
+                return ResourceManager.GetString("Map_86_himmelsdorf_winter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ruinberg on Fire.
+        /// </summary>
+        internal static string Map_87_ruinberg_on_fire {
+            get {
+                return ResourceManager.GetString("Map_87_ruinberg_on_fire", resourceCulture);
             }
         }
     }

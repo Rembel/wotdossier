@@ -874,6 +874,11 @@
     <Resource Include="Resources\Images\Tanks\ussr_t_34_85_training.png" />
     <Resource Include="Resources\Images\hr.png" />
     <Resource Include="Resources\Images\mxp.png" />
+    <Resource Include="Resources\Images\Maps\84_winter.jpg" />
+    <Resource Include="Resources\Images\Maps\86_himmelsdorf_winter.jpg" />
+    <Resource Include="Resources\Images\Maps\87_ruinberg_on_fire.jpg" />
+    <Resource Include="Resources\Images\Medals\maingun.png" />
+    <Resource Include="Resources\Images\Medals\sniper2.png" />
     <Content Include="Updates\2013082301.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

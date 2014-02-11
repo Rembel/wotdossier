@@ -21,12 +21,12 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Sniper2}" Delta="{Binding Sniper2Delta}" Source="../Resources/Images/Medals/Sniper.png">
+                <controls:MedalAchievement Value="{Binding Sniper2}" Delta="{Binding Sniper2Delta}" Source="../Resources/Images/Medals/Sniper2.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper2}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper2}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding MainGun}" Delta="{Binding MainGunDelta}" Source="../Resources/Images/Medals/Sniper.png">
+                <controls:MedalAchievement Value="{Binding MainGun}" Delta="{Binding MainGunDelta}" Source="../Resources/Images/Medals/maingun.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MainGun}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_MainGun}" />
                     </ToolTipService.ToolTip>

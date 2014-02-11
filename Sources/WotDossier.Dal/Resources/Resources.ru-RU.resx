@@ -237,4 +237,13 @@
   <data name="Map_53_japan" xml:space="preserve">
     <value>Скрытая Деревня</value>
   </data>
+  <data name="Map_84_winter" xml:space="preserve">
+    <value>Виндсторм</value>
+  </data>
+  <data name="Map_86_himmelsdorf_winter" xml:space="preserve">
+    <value>Зимний Химмельсдорф</value>
+  </data>
+  <data name="Map_87_ruinberg_on_fire" xml:space="preserve">
+    <value>Руинберг в огне</value>
+  </data>
 </root>

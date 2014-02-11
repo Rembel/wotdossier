@@ -23,13 +23,15 @@
     <medal name="Medal_CrucialContribution" id="144" icon="medalCrucialContribution" type="0"/>
     <medal name="Medal_DeLanglade" id="145" icon="medalDeLanglade" type="0"/>
     <medal name="Medal_TamadaYoshio" id="146" icon="medalTamadaYoshio" type="0"/>
+    <!--Егерь-->
+    <medal name="Medal_Ranger" id="148" icon="Jager" type="0"/>
   </Epic>
   <BattleHero>
     <medal name="Medal_Warrior" id="34" icon="warrior" type="0"/>
     <medal name="Medal_Invader" id="35" icon="invader" type="0"/>
     <medal name="Medal_Sniper" id="36" icon="sniper" type="0"/>
-    <!--<medal name="Medal_Sniper2" id="36" icon="sniper" type="0"/>
-    <medal name="Medal_MainGun" id="36" icon="sniper" type="0"/>-->
+    <medal name="Medal_Sniper2" id="227" icon="sniper2" type="0"/>
+    <medal name="Medal_MainGun" id="228" icon="maingun" type="0"/>
     <medal name="Medal_Defender" id="37" icon="defender" type="0"/>
     <medal name="Medal_SteelWall" id="38" icon="steelwall" type="0"/>
     <medal name="Medal_Confederate" id="39" icon="supporter" type="0"/>
@@ -54,8 +56,6 @@
     <medal name="Medal_MouseTrap" id="67" icon="Mousebane" type="1"/>
     <!--Бомбардир-->
     <medal name="Medal_Bombardier" id="147" icon="Bombardier" type="1"/>
-    <!--Егерь-->
-    <medal name="Medal_Ranger" id="148" icon="Jager" type="0"/>
     <!--Спартанец-->
     <medal name="Medal_Spartan" id="150" icon="Sparta" type="0"/>
     <!--невозмутимый-->

@@ -20,12 +20,12 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
-                <controls:AchievementCompareRow FirstValue="{Binding First.Sniper2}" SecondValue="{Binding Second.Sniper2}" AchievementIconSource="../Resources/Images/Medals/Sniper.png">
+                <controls:AchievementCompareRow FirstValue="{Binding First.Sniper2}" SecondValue="{Binding Second.Sniper2}" AchievementIconSource="../Resources/Images/Medals/Sniper2.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sniper2}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_Sniper2}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
-                <controls:AchievementCompareRow FirstValue="{Binding First.MainGun}" SecondValue="{Binding Second.MainGun}" AchievementIconSource="../Resources/Images/Medals/Sniper.png">
+                <controls:AchievementCompareRow FirstValue="{Binding First.MainGun}" SecondValue="{Binding Second.MainGun}" AchievementIconSource="../Resources/Images/Medals/maingun.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_MainGun}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_MainGun}" />
                     </ToolTipService.ToolTip>
@@ -168,6 +168,11 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Billotte}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
+                <controls:AchievementCompareRow FirstValue="{Binding First.Ranger}" SecondValue="{Binding Second.Ranger}" AchievementIconSource="../Resources/Images/Medals/Jager.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ranger}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}" />
+                    </ToolTipService.ToolTip>
+                </controls:AchievementCompareRow>
                 <!--Special Achievements-->
                 <TextBlock HorizontalAlignment="Center" Text="{x:Static resources:Resources.Label_Achievements_Special}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
                 <controls:AchievementCompareRow FirstValue="{Binding First.Survivor}" SecondValue="{Binding Second.Survivor}" AchievementIconSource="../Resources/Images/Medals/Diehard.png">
@@ -233,11 +238,6 @@
                 <!--Step Achievements-->
                 <!--Commemorative Achievements-->
                 <TextBlock HorizontalAlignment="Center" Text="{x:Static resources:Resources.Label_Achievements_CommemorativeAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
-                <controls:AchievementCompareRow FirstValue="{Binding First.Ranger}" SecondValue="{Binding Second.Ranger}" AchievementIconSource="../Resources/Images/Medals/Jager.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ranger}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}" />
-                    </ToolTipService.ToolTip>
-                </controls:AchievementCompareRow>
                 <controls:AchievementCompareRow FirstValue="{Binding First.CoolHeaded}" SecondValue="{Binding Second.CoolHeaded}" AchievementIconSource="../Resources/Images/Medals/Imperturbable.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CoolHeaded}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" />

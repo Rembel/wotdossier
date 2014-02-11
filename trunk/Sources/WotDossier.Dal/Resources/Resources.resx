@@ -234,7 +234,16 @@
   <data name="Map_73_asia_korea" xml:space="preserve">
     <value>Sacred Valley</value>
   </data>
+  <data name="Map_84_winter" xml:space="preserve">
+    <value>Windstorm</value>
+  </data>
   <data name="Map_85_winter" xml:space="preserve">
     <value>Severogorsk</value>
+  </data>
+  <data name="Map_86_himmelsdorf_winter" xml:space="preserve">
+    <value>Winter Himmelsdorf</value>
+  </data>
+  <data name="Map_87_ruinberg_on_fire" xml:space="preserve">
+    <value>Ruinberg on Fire</value>
   </data>
 </root>

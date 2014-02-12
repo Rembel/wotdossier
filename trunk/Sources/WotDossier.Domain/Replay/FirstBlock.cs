@@ -31,7 +31,14 @@ namespace WotDossier.Domain.Replay
             {
                 if (_version == null)
                 {
-                    _version = new Version(clientVersionFromExe.Replace(",", string.Empty).Replace(" ", "."));
+                    if (!string.IsNullOrEmpty(clientVersionFromExe))
+                    {
+                        _version = new Version(clientVersionFromExe.Replace(",", string.Empty).Replace(" ", "."));
+                    }
+                    else
+                    {
+                        _version = new Version();
+                    }
                 }
                 return _version;
             }

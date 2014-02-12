@@ -353,6 +353,8 @@ namespace WotDossier.Applications.ViewModel
                 Warrior = stat.AchievementsIdObject.Warrior;
                 Invader = stat.AchievementsIdObject.Invader;
                 Sniper = stat.AchievementsIdObject.Sniper;
+                Sniper2 = stat.AchievementsIdObject.Sniper2;
+                MainGun = stat.AchievementsIdObject.MainGun;
                 Defender = stat.AchievementsIdObject.Defender;
                 SteelWall = stat.AchievementsIdObject.SteelWall;
                 Confederate = stat.AchievementsIdObject.Confederate;

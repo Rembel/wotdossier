@@ -57,6 +57,9 @@ namespace WotDossier.Domain.Entities
 		public static readonly string PropCoolHeaded = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.CoolHeaded);
 		public static readonly string PropSpartan = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Spartan);
 		public static readonly string PropLuckyDevil = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.LuckyDevil);
+        public static readonly string PropSniper2 = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Sniper2);
+        public static readonly string PropMainGun = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MainGun);
+        
 		
 		#endregion
 
@@ -69,6 +72,16 @@ namespace WotDossier.Domain.Entities
 		/// Gets/Sets the field "Sniper".
 		/// </summary>
 		public virtual int Sniper	{get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "Sniper2".
+        /// </summary>
+        public virtual int Sniper2	{get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MainGun".
+        /// </summary>
+		public virtual int MainGun	{get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "Invader".

@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerAchievements] ADD [MainGun] int  NOT NULL default(0);

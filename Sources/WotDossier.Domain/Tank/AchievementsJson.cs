@@ -65,6 +65,8 @@
         public int scout;
         public int sinai;
         public int sniper;
+        public int sniper2;
+        public int mainGun;
         public int sniperSeries;
         public int steelwall;
         public int sturdy;

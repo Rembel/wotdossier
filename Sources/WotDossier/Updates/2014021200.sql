@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerAchievements] ADD [Sniper2] int  NOT NULL default(0);

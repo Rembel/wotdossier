@@ -288,6 +288,8 @@ namespace WotDossier.Dal
             v2.Achievements.scout = tankJson.Achievements.scout;
             v2.Achievements.sinai = tankJson.Achievements.sinai;
             v2.Achievements.sniper = tankJson.Achievements.sniper;
+            v2.Achievements.sniper2 = tankJson.Achievements.sniper2;
+            v2.Achievements.mainGun = tankJson.Achievements.mainGun;
             v2.Achievements.sniperSeries = tankJson.Achievements.sniperSeries;
             v2.Achievements.steelwall = tankJson.Achievements.steelwall;
             v2.Achievements.sturdy = tankJson.Achievements.sturdy;

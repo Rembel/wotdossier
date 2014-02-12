@@ -11,6 +11,8 @@ namespace WotDossier.Dal.Mappings
         {
 			Map(v => v.Warrior, "Warrior");
 			Map(v => v.Sniper, "Sniper");
+			Map(v => v.Sniper2, "Sniper2");
+			Map(v => v.MainGun, "MainGun");
 			Map(v => v.Invader, "Invader");
 			Map(v => v.Defender, "Defender");
 			Map(v => v.SteelWall, "SteelWall");

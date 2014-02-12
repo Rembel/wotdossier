@@ -48,6 +48,8 @@ namespace WotDossier.Domain.Entities
             Warrior = _tanksV2.Sum(x => x.Achievements.warrior);
             Invader = _tanksV2.Sum(x => x.Achievements.invader);
             Sniper = _tanksV2.Sum(x => x.Achievements.sniper);
+            Sniper2 = _tanksV2.Sum(x => x.Achievements.sniper2);
+            MainGun = _tanksV2.Sum(x => x.Achievements.mainGun);
             Defender = _tanksV2.Sum(x => x.Achievements.defender);
             SteelWall = _tanksV2.Sum(x => x.Achievements.steelwall);
             Confederate = _tanksV2.Sum(x => x.Achievements.supporter);
@@ -274,6 +276,10 @@ namespace WotDossier.Domain.Entities
         public int Invader { get; set; }
 
         public int Sniper { get; set; }
+
+        public int Sniper2 { get; set; }
+
+        public int MainGun { get; set; }
 
         public int Defender { get; set; }
 

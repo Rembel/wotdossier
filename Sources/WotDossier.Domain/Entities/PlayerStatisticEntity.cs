@@ -316,6 +316,8 @@ namespace WotDossier.Domain.Entities
             AchievementsIdObject.Warrior = statAdapter.Warrior;
             AchievementsIdObject.Invader = statAdapter.Invader;
             AchievementsIdObject.Sniper = statAdapter.Sniper;
+            AchievementsIdObject.Sniper2 = statAdapter.Sniper2;
+            AchievementsIdObject.MainGun = statAdapter.MainGun;
             AchievementsIdObject.Defender = statAdapter.Defender;
             AchievementsIdObject.SteelWall = statAdapter.SteelWall;
             AchievementsIdObject.Confederate = statAdapter.Confederate;

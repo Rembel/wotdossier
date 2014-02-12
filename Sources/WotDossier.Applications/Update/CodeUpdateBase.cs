@@ -1,4 +1,4 @@
-﻿using System.Data.SqlServerCe;
+﻿using System.Data.SQLite;
 
 namespace WotDossier.Applications.Update
 {
@@ -6,6 +6,6 @@ namespace WotDossier.Applications.Update
     {
         public abstract long Version { get; set; }
 
-        public abstract void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction);
+        public abstract void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction);
     }
 }

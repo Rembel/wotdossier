@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Threading;
@@ -20,7 +19,6 @@ using WotDossier.Framework;
 using WotDossier.Framework.Applications.Services;
 using WotDossier.Framework.Presentation.Services;
 using WotDossier.Views;
-using Configuration = NHibernate.Cfg.Configuration;
 
 namespace WotDossier
 {

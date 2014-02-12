@@ -1,4 +1,4 @@
-﻿using System.Data.SqlServerCe;
+﻿using System.Data.SQLite;
 using System.IO;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -15,7 +15,7 @@ namespace WotDossier.Applications.Update
             set { _version = value; }
         }
 
-        public override void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
+        public override void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
             var filePath = SettingsReader.GetFilePath();
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlServerCe;
+using System.Data.SQLite;
 using Newtonsoft.Json;
 using WotDossier.Dal;
 using WotDossier.Domain.Dossier.TankV29;
@@ -24,12 +24,12 @@ namespace WotDossier.Applications.Update
             set { _version = value; }
         }
 
-        public override void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
+        public override void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
             string commandText = @"Select Id, Version, Raw from TankStatistic";
-            SqlCeCommand command = new SqlCeCommand(commandText, sqlCeConnection, transaction);
+            SQLiteCommand command = new SQLiteCommand(commandText, sqlCeConnection, transaction);
             List<TankStatisticEntity> list = new List<TankStatisticEntity>();
-            using (SqlCeDataReader reader = command.ExecuteReader())
+            using (SQLiteDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -53,9 +53,9 @@ namespace WotDossier.Applications.Update
                     byte[] zip = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                     
                     commandText = @"Update TankStatistic set Version=65, Raw=@raw where Id=@id";
-                    command = new SqlCeCommand(commandText, sqlCeConnection, transaction);
-                    command.Parameters.Add("@raw", SqlDbType.Image).Value = zip;
-                    command.Parameters.Add("@id", SqlDbType.Int).Value = entity.Id;
+                    command = new SQLiteCommand(commandText, sqlCeConnection, transaction);
+                    command.Parameters.Add("@raw", DbType.Binary).Value = zip;
+                    command.Parameters.Add("@id", DbType.Int32).Value = entity.Id;
                     command.ExecuteNonQuery();
                 }
             }

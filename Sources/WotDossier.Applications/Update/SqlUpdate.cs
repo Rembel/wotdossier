@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using System.Data.SqlServerCe;
+using System.Data.SQLite;
 using System.IO;
 
 namespace WotDossier.Applications.Update
@@ -18,9 +18,9 @@ namespace WotDossier.Applications.Update
         public string SqlScript { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
-        public void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
+        public void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
-            SqlCeCommand command = new SqlCeCommand(SqlScript, sqlCeConnection, transaction);
+            SQLiteCommand command = new SQLiteCommand(SqlScript, sqlCeConnection, transaction);
 
             command.CommandType = CommandType.Text;
 

@@ -75,6 +75,13 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.90.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Data.SQLite.1.0.90.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.1.0.90.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\System.Data.SqlServerCe.dll</HintPath>
@@ -98,10 +105,6 @@
     <Compile Include="TestFixtureBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\WotDossier\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
-      <Link>amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\WotDossier\App.config">
       <Link>App.config</Link>
     </None>
@@ -197,10 +200,6 @@
       <Link>External\_hashlib.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\WotDossier\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
-      <Link>x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="CacheFiles\0.8.10\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -273,38 +272,6 @@
       <Link>Config\Log4Net.xml</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\WotDossier\amd64\Microsoft.VC90.CRT\msvcr90.dll">
-      <Link>amd64\Microsoft.VC90.CRT\msvcr90.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\amd64\Microsoft.VC90.CRT\README_ENU.txt">
-      <Link>amd64\Microsoft.VC90.CRT\README_ENU.txt</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\amd64\sqlceca40.dll">
-      <Link>amd64\sqlceca40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\amd64\sqlcecompact40.dll">
-      <Link>amd64\sqlcecompact40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\amd64\sqlceer40EN.dll">
-      <Link>amd64\sqlceer40EN.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\amd64\sqlceme40.dll">
-      <Link>amd64\sqlceme40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\amd64\sqlceqp40.dll">
-      <Link>amd64\sqlceqp40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\amd64\sqlcese40.dll">
-      <Link>amd64\sqlcese40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\WotDossier\Data\dossier.sdf">
       <Link>Data\dossier.sdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -357,36 +324,10 @@
       <Link>Updates\2013080804.sql</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\WotDossier\x86\Microsoft.VC90.CRT\msvcr90.dll">
-      <Link>x86\Microsoft.VC90.CRT\msvcr90.dll</Link>
+    <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\WotDossier\x86\Microsoft.VC90.CRT\README_ENU.txt">
-      <Link>x86\Microsoft.VC90.CRT\README_ENU.txt</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\x86\sqlceca40.dll">
-      <Link>x86\sqlceca40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\x86\sqlcecompact40.dll">
-      <Link>x86\sqlcecompact40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\x86\sqlceer40EN.dll">
-      <Link>x86\sqlceer40EN.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\x86\sqlceme40.dll">
-      <Link>x86\sqlceme40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\x86\sqlceqp40.dll">
-      <Link>x86\sqlceqp40.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\WotDossier\x86\sqlcese40.dll">
-      <Link>x86\sqlcese40.dll</Link>
+    <Content Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

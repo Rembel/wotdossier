@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlServerCe;
+using System.Data.SQLite;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -11,16 +12,20 @@ namespace WotDossier.Applications.Update
 {
     public class DatabaseManager
     {
-        private static readonly ILog Logger = LogManager.GetLogger("ShellViewModel");
+        private const string DATA_DOSSIER_SDF = @"\Data\dossier.sdf";
+        private const string BACKUP_DOSSIER_SDF = @"\backup\dossier_{0}.sdf";
+        private static readonly ILog Logger = LogManager.GetLogger("DatabaseManager");
 
         public void Update()
         {
             List<IDbUpdate> updates = GetDbUpdates();
 
+            MigrateToSqlite();
+
             long version = GetCurrentDbVersion();
 
-            SqlCeConnection connection = null;
-            SqlCeTransaction transaction = null;
+            SQLiteConnection connection = null;
+            SQLiteTransaction transaction = null;
 
             try
             {
@@ -55,47 +60,95 @@ namespace WotDossier.Applications.Update
             }
         }
 
-        private void UpdateDbVersion(long max, SqlCeConnection connection, SqlCeTransaction transaction)
+        private void MigrateToSqlite()
+        {
+            string directoryName = Folder.AssemblyDirectory();
+            string path = Path.Combine(directoryName, @"Data\dossier.s3db");
+
+            string ceDbFilePath = directoryName + DATA_DOSSIER_SDF;
+            string ceDbFileBackupPath = directoryName + string.Format(BACKUP_DOSSIER_SDF, DateTime.Now.Ticks);
+            string migrationScriptPath = Path.Combine(Path.GetTempPath(), "data.sql");
+
+            if (File.Exists(ceDbFilePath))
+            {
+                using (File.Open(path, FileMode.Truncate)) { }
+
+                var proc = new Process();
+                proc.EnableRaisingEvents = false;
+                proc.StartInfo.CreateNoWindow = true;
+                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.FileName = directoryName + @"\External\ExportSqlCe40.exe";
+                proc.StartInfo.Arguments = string.Format(@"""Data Source={0}"" ""{1}"" sqlite", ceDbFilePath, migrationScriptPath);
+                proc.Start();
+                proc.WaitForExit();
+
+                Migrate(migrationScriptPath);
+
+                //backup ce db
+                BackupSdf(ceDbFileBackupPath, ceDbFilePath);
+            }
+        }
+
+        private void Migrate(string migrationScriptPath)
+        {
+            string sqlScript = File.ReadAllText(migrationScriptPath);
+
+            SQLiteCommand command = new SQLiteCommand(sqlScript, GetConnection());
+            command.CommandType = CommandType.Text;
+            command.ExecuteNonQuery();
+        }
+
+        private static void BackupSdf(string ceDbFileBackupPath, string ceDbFilePath)
+        {
+            string backupDir = new FileInfo(ceDbFileBackupPath).DirectoryName;
+            if (backupDir != null && !Directory.Exists(backupDir))
+            {
+                Directory.CreateDirectory(backupDir);
+            }
+            File.Move(ceDbFilePath, ceDbFileBackupPath);
+        }
+
+        private void UpdateDbVersion(long max, SQLiteConnection connection, SQLiteTransaction transaction)
         {
             //Logger.Debug("BatchImportBcg. Source connection obtained");
-            SqlCeCommand command = new SqlCeCommand(@"update DbVersion set SchemaVersion = @version", connection, transaction);
+            SQLiteCommand command = new SQLiteCommand(@"update DbVersion set SchemaVersion = @version", connection, transaction);
             command.CommandType = CommandType.Text;
-            command.Parameters.Add("@version", SqlDbType.NVarChar).Value = max.ToString();
+            command.Parameters.Add("@version", DbType.String).Value = max.ToString();
 
             command.ExecuteNonQuery();
         }
 
-        private void CloseConnection(SqlCeConnection connection)
+        private void CloseConnection(SQLiteConnection connection)
         {
             connection.Close();
         }
 
-        private void RollbackTransaction(SqlCeTransaction transaction)
+        private void RollbackTransaction(SQLiteTransaction transaction)
         {
             transaction.Rollback();
         }
 
-        private SqlCeTransaction BeginTransaction(SqlCeConnection sourceConnection)
+        private SQLiteTransaction BeginTransaction(SQLiteConnection sourceConnection)
         {
             return sourceConnection.BeginTransaction();
         }
 
-        private SqlCeConnection GetConnection()
+        private SQLiteConnection GetConnection()
         {
-            SqlCeConnection connection = new SqlCeConnection("Data Source=Data/dossier.sdf");
+            SQLiteConnection connection = new SQLiteConnection("Data Source=Data/dossier.s3db;Version=3;");
             connection.Open();
             return connection;
         }
 
         private long GetCurrentDbVersion()
         {
-            SqlCeConnection connection = null;
+            SQLiteConnection connection = null;
 
             try
             {
                 connection = GetConnection();
                 //Logger.Debug("BatchImportBcg. Source connection obtained");
-                SqlCeCommand command = new SqlCeCommand(@"Select top 1 SchemaVersion from DbVersion", connection);
+                SQLiteCommand command = new SQLiteCommand(@"Select SchemaVersion from DbVersion limit 1", connection);
                 command.CommandType = CommandType.Text;
                 object result = command.ExecuteScalar();
 
@@ -137,10 +190,10 @@ namespace WotDossier.Applications.Update
         public void InitDatabase()
         {
             string currentDirectory = Folder.AssemblyDirectory();
-            string path = Path.Combine(currentDirectory, @"Data\dossier.sdf");
+            string path = Path.Combine(currentDirectory, @"Data\dossier.s3db");
             if (!File.Exists(path))
             {
-                byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.init.sdf", Assembly.GetEntryAssembly());
+                byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.init.s3db", Assembly.GetEntryAssembly());
                 using (FileStream fileStream = File.OpenWrite(path))
                 {
                     fileStream.Write(embeddedResource, 0, embeddedResource.Length);    

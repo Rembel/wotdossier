@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlServerCe;
+using System.Data.SQLite;
 
 namespace WotDossier.Applications.Update
 {
@@ -14,15 +14,15 @@ namespace WotDossier.Applications.Update
             set { _version = value; }
         }
 
-        public override void Execute(SqlCeConnection sqlCeConnection, SqlCeTransaction transaction)
+        public override void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
             TimeSpan utcOffset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now);
 
             string commandText = @"Update PlayerStatistic set Updated = DATEADD(hour,@zone,Updated)";
-            SqlCeCommand command = new SqlCeCommand(commandText, sqlCeConnection, transaction);
+            SQLiteCommand command = new SQLiteCommand(commandText, sqlCeConnection, transaction);
 
             command.CommandType = CommandType.Text;
-            command.Parameters.Add("@zone", SqlDbType.Int).Value = utcOffset.Hours;
+            command.Parameters.Add("@zone", DbType.Int32).Value = utcOffset.Hours;
 
             command.ExecuteNonQuery();
         }

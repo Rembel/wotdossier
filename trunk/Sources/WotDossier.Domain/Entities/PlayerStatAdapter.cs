@@ -2,42 +2,36 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Common;
-using WotDossier.Domain.Dossier.TankV29;
 using WotDossier.Domain.Player;
-using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Domain.Entities
 {
     public class PlayerStatAdapter
     {
-        private readonly List<TankJson> _tanksV2;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         public PlayerStatAdapter(List<TankJson> tanks)
         {
-            _tanksV2 = tanks;
-
-            Battles_count = _tanksV2.Sum(x => x.A15x15.battlesCount);
-            Wins = _tanksV2.Sum(x => x.A15x15.wins);
-            Losses = _tanksV2.Sum(x => x.A15x15.losses);
-            Survived_battles = _tanksV2.Sum(x => x.A15x15.survivedBattles);
-            Xp = _tanksV2.Sum(x => x.A15x15.xp);
+            Battles_count = tanks.Sum(x => x.A15x15.battlesCount);
+            Wins = tanks.Sum(x => x.A15x15.wins);
+            Losses = tanks.Sum(x => x.A15x15.losses);
+            Survived_battles = tanks.Sum(x => x.A15x15.survivedBattles);
+            Xp = tanks.Sum(x => x.A15x15.xp);
             if (Battles_count > 0)
             {
                 Battle_avg_xp = Xp / (double)Battles_count;
             }
-            Max_xp = _tanksV2.Max(x => x.A15x15.maxXP);
-            Frags = _tanksV2.Sum(x => x.A15x15.frags);
-            Spotted = _tanksV2.Sum(x => x.A15x15.spotted);
-            Hits_percents = _tanksV2.Sum(x => x.A15x15.hits) / ((double)_tanksV2.Sum(x => x.A15x15.shots)) * 100.0;
-            Damage_dealt = _tanksV2.Sum(x => x.A15x15.damageDealt);
-            Damage_taken = _tanksV2.Sum(x => x.A15x15.damageReceived);
-            Capture_points = _tanksV2.Sum(x => x.A15x15.capturePoints);
-            Dropped_capture_points = _tanksV2.Sum(x => x.A15x15.droppedCapturePoints);
-            Updated = _tanksV2.Max(x => x.Common.lastBattleTimeR);
+            Max_xp = tanks.Max(x => x.A15x15.maxXP);
+            Frags = tanks.Sum(x => x.A15x15.frags);
+            Spotted = tanks.Sum(x => x.A15x15.spotted);
+            Hits_percents = tanks.Sum(x => x.A15x15.hits) / ((double)tanks.Sum(x => x.A15x15.shots)) * 100.0;
+            Damage_dealt = tanks.Sum(x => x.A15x15.damageDealt);
+            Damage_taken = tanks.Sum(x => x.A15x15.damageReceived);
+            Capture_points = tanks.Sum(x => x.A15x15.capturePoints);
+            Dropped_capture_points = tanks.Sum(x => x.A15x15.droppedCapturePoints);
+            Updated = tanks.Max(x => x.Common.lastBattleTimeR);
             if (Battles_count > 0)
             {
                 AvgLevel = tanks.Sum(x => x.Common.tier * x.A15x15.battlesCount) / (double)Battles_count;
@@ -45,45 +39,45 @@ namespace WotDossier.Domain.Entities
 
             #region [ IRowBattleAwards ]
 
-            Warrior = _tanksV2.Sum(x => x.Achievements.warrior);
-            Invader = _tanksV2.Sum(x => x.Achievements.invader);
-            Sniper = _tanksV2.Sum(x => x.Achievements.sniper);
-            Sniper2 = _tanksV2.Sum(x => x.Achievements.sniper2);
-            MainGun = _tanksV2.Sum(x => x.Achievements.mainGun);
-            Defender = _tanksV2.Sum(x => x.Achievements.defender);
-            SteelWall = _tanksV2.Sum(x => x.Achievements.steelwall);
-            Confederate = _tanksV2.Sum(x => x.Achievements.supporter);
-            Scout = _tanksV2.Sum(x => x.Achievements.scout);
-            PatrolDuty = _tanksV2.Sum(x => x.Achievements.evileye);
-            BrothersInArms = _tanksV2.Sum(x => x.Achievements.medalBrothersInArms);
-            CrucialContribution = _tanksV2.Sum(x => x.Achievements.medalCrucialContribution);
-            CoolHeaded = _tanksV2.Sum(x => x.Achievements.ironMan);
-            LuckyDevil = _tanksV2.Sum(x => x.Achievements.luckyDevil);
-            Spartan = _tanksV2.Sum(x => x.Achievements.sturdy);
+            Warrior = tanks.Sum(x => x.Achievements.warrior);
+            Invader = tanks.Sum(x => x.Achievements.invader);
+            Sniper = tanks.Sum(x => x.Achievements.sniper);
+            Sniper2 = tanks.Sum(x => x.Achievements.sniper2);
+            MainGun = tanks.Sum(x => x.Achievements.mainGun);
+            Defender = tanks.Sum(x => x.Achievements.defender);
+            SteelWall = tanks.Sum(x => x.Achievements.steelwall);
+            Confederate = tanks.Sum(x => x.Achievements.supporter);
+            Scout = tanks.Sum(x => x.Achievements.scout);
+            PatrolDuty = tanks.Sum(x => x.Achievements.evileye);
+            BrothersInArms = tanks.Sum(x => x.Achievements.medalBrothersInArms);
+            CrucialContribution = tanks.Sum(x => x.Achievements.medalCrucialContribution);
+            CoolHeaded = tanks.Sum(x => x.Achievements.ironMan);
+            LuckyDevil = tanks.Sum(x => x.Achievements.luckyDevil);
+            Spartan = tanks.Sum(x => x.Achievements.sturdy);
 
             #endregion
 
             #region [ IRowEpic ]
 
-            Boelter = _tanksV2.Sum(x => x.Achievements.medalWittmann);
-            RadleyWalters = _tanksV2.Sum(x => x.Achievements.medalRadleyWalters);
-            LafayettePool = _tanksV2.Sum(x => x.Achievements.medalLafayettePool);
-            Orlik = _tanksV2.Sum(x => x.Achievements.medalOrlik);
-            Oskin = _tanksV2.Sum(x => x.Achievements.medalOskin);
-            Lehvaslaiho = _tanksV2.Sum(x => x.Achievements.medalLehvaslaiho);
-            Nikolas = _tanksV2.Sum(x => x.Achievements.medalNikolas);
-            Halonen = _tanksV2.Sum(x => x.Achievements.medalHalonen);
-            Burda = _tanksV2.Sum(x => x.Achievements.medalBurda);
-            Pascucci = _tanksV2.Sum(x => x.Achievements.medalPascucci);
-            Dumitru = _tanksV2.Sum(x => x.Achievements.medalDumitru);
-            TamadaYoshio = _tanksV2.Sum(x => x.Achievements.medalTamadaYoshio);
-            Billotte = _tanksV2.Sum(x => x.Achievements.medalBillotte);
-            BrunoPietro = _tanksV2.Sum(x => x.Achievements.medalBrunoPietro);
-            Tarczay = _tanksV2.Sum(x => x.Achievements.medalTarczay);
-            Kolobanov = _tanksV2.Sum(x => x.Achievements.medalKolobanov);
-            Fadin = _tanksV2.Sum(x => x.Achievements.medalFadin);
-            HeroesOfRassenay = _tanksV2.Sum(x => x.Achievements.heroesOfRassenay);
-            DeLanglade = _tanksV2.Sum(x => x.Achievements.medalDeLanglade);
+            Boelter = tanks.Sum(x => x.Achievements.medalWittmann);
+            RadleyWalters = tanks.Sum(x => x.Achievements.medalRadleyWalters);
+            LafayettePool = tanks.Sum(x => x.Achievements.medalLafayettePool);
+            Orlik = tanks.Sum(x => x.Achievements.medalOrlik);
+            Oskin = tanks.Sum(x => x.Achievements.medalOskin);
+            Lehvaslaiho = tanks.Sum(x => x.Achievements.medalLehvaslaiho);
+            Nikolas = tanks.Sum(x => x.Achievements.medalNikolas);
+            Halonen = tanks.Sum(x => x.Achievements.medalHalonen);
+            Burda = tanks.Sum(x => x.Achievements.medalBurda);
+            Pascucci = tanks.Sum(x => x.Achievements.medalPascucci);
+            Dumitru = tanks.Sum(x => x.Achievements.medalDumitru);
+            TamadaYoshio = tanks.Sum(x => x.Achievements.medalTamadaYoshio);
+            Billotte = tanks.Sum(x => x.Achievements.medalBillotte);
+            BrunoPietro = tanks.Sum(x => x.Achievements.medalBrunoPietro);
+            Tarczay = tanks.Sum(x => x.Achievements.medalTarczay);
+            Kolobanov = tanks.Sum(x => x.Achievements.medalKolobanov);
+            Fadin = tanks.Sum(x => x.Achievements.medalFadin);
+            HeroesOfRassenay = tanks.Sum(x => x.Achievements.heroesOfRassenay);
+            DeLanglade = tanks.Sum(x => x.Achievements.medalDeLanglade);
 
             #endregion
 
@@ -102,27 +96,29 @@ namespace WotDossier.Domain.Entities
 
             #region [ IRowSeries ]
 
-            SharpshooterLongest = _tanksV2.Max(x => x.Achievements.maxSniperSeries);
-            MasterGunnerLongest = _tanksV2.Max(x => x.Achievements.maxPiercingSeries);
+            SharpshooterLongest = tanks.Max(x => x.Achievements.maxSniperSeries);
+            MasterGunnerLongest = tanks.Max(x => x.Achievements.maxPiercingSeries);
 
             #endregion
 
             #region [ IRowSpecialAwards ]
 
-            Kamikaze = _tanksV2.Sum(x => x.Achievements.kamikaze);
-            Raider = _tanksV2.Sum(x => x.Achievements.raider);
-            Bombardier = _tanksV2.Sum(x => x.Achievements.bombardier);
-            Reaper = _tanksV2.Max(x => x.Achievements.maxKillingSeries);
-            Invincible = _tanksV2.Max(x => x.Achievements.maxInvincibleSeries);
-            Survivor = _tanksV2.Max(x => x.Achievements.maxDiehardSeries);
+            Kamikaze = tanks.Sum(x => x.Achievements.kamikaze);
+            Raider = tanks.Sum(x => x.Achievements.raider);
+            Bombardier = tanks.Sum(x => x.Achievements.bombardier);
+            Reaper = tanks.Max(x => x.Achievements.maxKillingSeries);
+            Invincible = tanks.Max(x => x.Achievements.maxInvincibleSeries);
+            Survivor = tanks.Max(x => x.Achievements.maxDiehardSeries);
             //count Maus frags
-            MouseTrap = _tanksV2.Sum(x => x.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
-            Hunter = _tanksV2.Sum(x => x.Achievements.fragsBeast) / 100;
-            Sinai = _tanksV2.Sum(x => x.Achievements.fragsSinai) / 100;
-            PattonValley = _tanksV2.Sum(x => x.Achievements.fragsPatton) / 100;
-            Ranger = _tanksV2.Sum(x => x.Achievements.huntsman);
+            MouseTrap = tanks.Sum(x => x.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
+            Hunter = tanks.Sum(x => x.Achievements.fragsBeast) / 100;
+            Sinai = tanks.Sum(x => x.Achievements.fragsSinai) / 100;
+            PattonValley = tanks.Sum(x => x.Achievements.fragsPatton) / 100;
+            Ranger = tanks.Sum(x => x.Achievements.huntsman);
 
             #endregion
+
+
         }
 
         public PlayerStatAdapter(PlayerStat stat)
@@ -257,6 +253,7 @@ namespace WotDossier.Domain.Entities
         public double Hits_percents { get; set; }
 
         public int Damage_dealt { get; set; }
+
         public int Damage_taken { get; set; }
 
         public int Capture_points { get; set; }

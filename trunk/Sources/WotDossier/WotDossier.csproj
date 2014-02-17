@@ -696,14 +696,10 @@
     <None Include="Data\dossier.s3db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Data\dossier.sqlce" />
     <EmbeddedResource Include="Data\ReplaysCatalog.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\init.s3db" />
-    <None Include="Data\vstat.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Content Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -974,7 +970,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Resource Include="app_icon.ico" />
-    <EmbeddedResource Include="Data\init.sdf" />
     <None Include="Data\dossier.sdf" />
     <Content Include="Data\Medals.xml">
       <SubType>Designer</SubType>
@@ -1511,9 +1506,6 @@
     <Resource Include="Resources\Images\spt.png" />
     <Resource Include="Resources\Images\wb.png" />
     <Resource Include="Resources\Images\win.png" />
-    <None Include="Data\stat.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Resource Include="Resources\Images\award-images.png" />
   </ItemGroup>
   <ItemGroup>

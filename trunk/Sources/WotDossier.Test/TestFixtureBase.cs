@@ -507,14 +507,7 @@ namespace WotDossier.Test
         {
             MedalHelper.ReadMedals();
         }
-
-        //[Test]
-        //public void CritsTest()
-        //{
-        //    int res = 67108864 >> 24 & 255;
-        //    int res1 = 65552 >> 12 & 4095;
-        //}
-
+        
         [Test]
         public void TEffTest()
         {

@@ -275,7 +275,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 return BattleStatus.Victory;
             }
 
-            return BattleStatus.Draw;
+            return BattleStatus.Defeat;
         }
 
         private static int GetAutoEquipCost(Domain.Replay.Replay replay)

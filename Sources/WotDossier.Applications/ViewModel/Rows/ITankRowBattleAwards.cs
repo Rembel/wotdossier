@@ -6,6 +6,8 @@
         int Warrior { get; set; }
         int Invader { get; set; }
         int Sniper { get; set; }
+        int Sniper2 { get; set; }
+        int MainGun { get; set; }
         int Defender { get; set; }
         int SteelWall { get; set; }
         int Confederate { get; set; }

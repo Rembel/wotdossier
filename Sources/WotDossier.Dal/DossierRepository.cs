@@ -108,6 +108,52 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
+        public PlayerEntity UpdateTeamBattlesStatistic(List<TankJson> tanks, int playerId)
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+            PlayerEntity playerEntity = null;
+
+            try
+            {
+                playerEntity = GetPlayer(playerId);
+
+                TeamBattlesStatisticEntity currentSnapshot = _dataProvider.QueryOver<TeamBattlesStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
+                                               .OrderBy(x => x.Updated)
+                                               .Desc.Take(1)
+                                               .SingleOrDefault<TeamBattlesStatisticEntity>() ?? new TeamBattlesStatisticEntity { PlayerId = playerEntity.Id };
+
+                TeamBattlesStatAdapter newSnapshot = new TeamBattlesStatAdapter(tanks);
+
+                //new battles
+                if (currentSnapshot.BattlesCount < newSnapshot.Battles_count)
+                {
+                    //create new record
+                    if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
+                    {
+                        currentSnapshot = new TeamBattlesStatisticEntity { PlayerId = playerEntity.Id };
+                    }
+
+                    currentSnapshot.Update(newSnapshot);
+                }
+
+                _dataProvider.Save(currentSnapshot);
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.ClearCache();
+                _dataProvider.CloseSession();
+            }
+
+            return playerEntity;
+        }
+
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
         {
             if (currentSnapshotUpdated == DateTime.MinValue)
@@ -327,6 +373,13 @@ namespace WotDossier.Dal
             {
                 _dataProvider.CloseSession();
             }
+        }
+
+        public PlayerEntity UpdateStatistic(Ratings ratings, List<TankJson> tanks, int playerId)
+        {
+            PlayerEntity playerEntity = UpdatePlayerStatistic(ratings, tanks, playerId);
+            UpdateTeamBattlesStatistic(tanks, playerId);
+            return playerEntity;
         }
     }
 }

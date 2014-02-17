@@ -538,7 +538,7 @@ namespace WotDossier.Applications.ViewModel
         {
             AppSettings settings = SettingsReader.Get();
 
-            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(serverStatistic.Ratings, tanks, settings.PlayerId);
+            PlayerEntity player = _dossierRepository.UpdateStatistic(serverStatistic.Ratings, tanks, settings.PlayerId);
 
             List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
             return StatisticViewModelFactory.Create(statisticEntities, tanks, player, serverStatistic);

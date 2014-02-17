@@ -133,7 +133,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 return BattleStatus.Victory;
             }
 
-            return BattleStatus.Draw;
+            return BattleStatus.Defeat;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

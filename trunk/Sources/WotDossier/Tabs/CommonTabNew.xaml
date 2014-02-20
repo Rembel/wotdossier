@@ -128,19 +128,20 @@
                 </ScrollViewer>
             </TabItem>
             <!--Session-->
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Session}" Name="tabSession" DataContext="{Binding SessionStatistic}">
+            <!--<TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Session}" Name="tabSession">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Top"></tabs:PeriodTab>
+                    <tabs:PeriodTab x:Name="SessionTab" HorizontalAlignment="Center" VerticalAlignment="Top" DataContext="{Binding TeamBattlesStatistic}"></tabs:PeriodTab>
+                    <controls:StatisticView Margin="50" DataContext="{Binding TeamBattlesStatistic}" HorizontalAlignment="Center" />
                 </ScrollViewer>
-            </TabItem>
+            </TabItem>-->
             <!--Ratings-->
             <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">
                 <controls:RatingView></controls:RatingView>
             </TabItem>
             <!--Achievements-->
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}" DataContext="{Binding PlayerStatistic}">
+            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
                 <ScrollViewer>
-                    <controls:Achievements></controls:Achievements>
+                    <controls:Achievements DataContext="{Binding PlayerStatistic}"></controls:Achievements>
                 </ScrollViewer>
             </TabItem>
         </TabControl>

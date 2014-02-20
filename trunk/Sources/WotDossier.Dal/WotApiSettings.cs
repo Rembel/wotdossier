@@ -45,5 +45,15 @@ namespace WotDossier.Dal
                 return 4;
             }
         }
+
+        public static string DownloadUrl
+        {
+            get { return ConfigurationManager.AppSettings["update.download-url"] ?? "http://code.google.com/p/wotdossier/downloads/list"; }
+        }
+
+        public static string VersionUrl
+        {
+            get { return ConfigurationManager.AppSettings["update.check-version-url"] ?? "http://wotdossier.googlecode.com/files/Version.txt"; }
+        }
     }
 }

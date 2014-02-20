@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using WotDossier.Applications.Update;
+using WotDossier.Framework;
 
 namespace WotDossier.Views
 {
@@ -16,6 +18,14 @@ namespace WotDossier.Views
         private void buttonSysInfo_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("sysdm.cpl");
+        }
+
+        private void buttonCheckUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            using (new WaitCursor())
+            {
+                UpdateChecker.CheckNewVersionAvailable();
+            }
         }
     }
 }

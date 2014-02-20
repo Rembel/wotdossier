@@ -1795,4 +1795,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Column_BattleAwards_Sniper2" xml:space="preserve">
     <value>Танкист-снайпер</value>
   </data>
+  <data name="ButtonCheckUpdate" xml:space="preserve">
+    <value>Проверить обновления</value>
+  </data>
 </root>

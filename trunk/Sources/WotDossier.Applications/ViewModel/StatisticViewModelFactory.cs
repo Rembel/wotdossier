@@ -37,7 +37,32 @@ namespace WotDossier.Applications.ViewModel
             return currentStatisticViewModel;
         }
 
+        public static PlayerStatisticViewModel Create(List<TeamBattlesStatisticEntity> statisticEntities, List<TankJson> tanks, PlayerEntity player)
+        {
+            TeamBattlesStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+            List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
+                .Select(Create).ToList();
+
+            PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
+            currentStatisticViewModel.Name = player.Name;
+            currentStatisticViewModel.Created = player.Creaded;
+            currentStatisticViewModel.AccountId = player.PlayerId;
+            currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.A15x15.damageReceived);
+            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
+            currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
+            currentStatisticViewModel.WN8Rating = GetWN8Rating(tanks);
+            currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
+            currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
+
+            return currentStatisticViewModel;
+        }
+
         public static PlayerStatisticViewModel Create(PlayerStatisticEntity statisticEntity)
+        {
+            return new PlayerStatisticViewModel(statisticEntity);
+        }
+
+        public static PlayerStatisticViewModel Create(TeamBattlesStatisticEntity statisticEntity)
         {
             return new PlayerStatisticViewModel(statisticEntity);
         }

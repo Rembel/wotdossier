@@ -125,6 +125,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check Update.
+        /// </summary>
+        public static string ButtonCheckUpdate {
+            get {
+                return ResourceManager.GetString("ButtonCheckUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
         public static string ButtonOk {

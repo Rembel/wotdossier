@@ -38,7 +38,8 @@ namespace WotDossier.Applications.ViewModel
 
         private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
         public static readonly string PropPlayerStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.PlayerStatistic);
-        public static readonly string PropSessionStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.SessionStatistic);
+        public static readonly string PropTeamBattlesStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.TeamBattlesStatistic);
+        //public static readonly string PropSessionStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.SessionStatistic);
         public static readonly string PropMasterTanker = TypeHelper<ShellViewModel>.PropertyName(v => v.MasterTanker);
         public static readonly string PropTanks = TypeHelper<ShellViewModel>.PropertyName(v => v.Tanks);
         public static readonly string PropPeriodSelector = TypeHelper<ShellViewModel>.PropertyName(v => v.PeriodSelector);
@@ -47,14 +48,14 @@ namespace WotDossier.Applications.ViewModel
         #region [ Properties and Fields ]
 
         private readonly DossierRepository _dossierRepository;
-        private PlayerStatisticViewModel _playerStatistic;
         private PlayerStatisticViewModel _sessionStatistic;
         private List<TankRowMasterTanker> _masterTanker;
         private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
         private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
 
-        private PlayerStatisticViewModel _sessionStartStatistic;
+        //private PlayerStatisticViewModel _sessionStartStatistic;
 
+        private PlayerStatisticViewModel _playerStatistic;
         public PlayerStatisticViewModel PlayerStatistic
         {
             get { return _playerStatistic; }
@@ -65,15 +66,26 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public PlayerStatisticViewModel SessionStatistic
+        private PlayerStatisticViewModel _teamBattlesStatistic;
+        public PlayerStatisticViewModel TeamBattlesStatistic
         {
-            get { return _sessionStatistic; }
+            get { return _teamBattlesStatistic; }
             set
             {
-                _sessionStatistic = value;
-                RaisePropertyChanged(PropSessionStatistic);
+                _teamBattlesStatistic = value;
+                RaisePropertyChanged(PropTeamBattlesStatistic);
             }
         }
+
+        //public PlayerStatisticViewModel SessionStatistic
+        //{
+        //    get { return _sessionStatistic; }
+        //    set
+        //    {
+        //        _sessionStatistic = value;
+        //        RaisePropertyChanged(PropSessionStatistic);
+        //    }
+        //}
 
         public List<TankRowMasterTanker> MasterTanker
         {
@@ -136,7 +148,6 @@ namespace WotDossier.Applications.ViewModel
 
         private PeriodSelectorViewModel _periodSelector;
         private bool _loadInProgress;
-
         public PeriodSelectorViewModel PeriodSelector
         {
             get { return _periodSelector; }
@@ -439,7 +450,9 @@ namespace WotDossier.Applications.ViewModel
                                 //List<TankJson> tanksV2 = WotApiClient.Instance.ReadDossierAppSpotTanks(data);
 
                                 PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanksV2);
-
+                                //PlayerStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
+                                //TeamBattlesStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
+                                
                                 //init previous dates list
                                 PeriodSelector.PropertyChanged -= PeriodSelectorOnPropertyChanged;
                                 PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
@@ -447,19 +460,19 @@ namespace WotDossier.Applications.ViewModel
 
                                 ProgressView.Report(bw, 25, string.Empty);
 
-                                PlayerStatisticViewModel clone = PlayerStatistic.Clone();
+                                //PlayerStatisticViewModel clone = PlayerStatistic.Clone();
 
-                                if (_sessionStartStatistic == null)
-                                {
-                                    //save start session statistic
-                                    _sessionStartStatistic = clone;
-                                }
-                                else
-                                {
-                                    clone.SetPreviousStatistic(_sessionStartStatistic);
-                                }
+                                //if (_sessionStartStatistic == null)
+                                //{
+                                //    //save start session statistic
+                                //    _sessionStartStatistic = clone;
+                                //}
+                                //else
+                                //{
+                                //    clone.SetPreviousStatistic(_sessionStartStatistic);
+                                //}
 
-                                SessionStatistic = clone;
+                                //SessionStatistic = clone;
 
                                 InitTanksStatistic(tanksV2);
 
@@ -542,6 +555,16 @@ namespace WotDossier.Applications.ViewModel
 
             List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
             return StatisticViewModelFactory.Create(statisticEntities, tanks, player, serverStatistic);
+        }
+
+        private PlayerStatisticViewModel InitTeamBattlesStatisticViewModel(List<TankJson> tanks)
+        {
+            AppSettings settings = SettingsReader.Get();
+
+            PlayerEntity player = _dossierRepository.GetPlayer(settings.PlayerId);
+
+            List<TeamBattlesStatisticEntity> statisticEntities = _dossierRepository.GetStatistic<TeamBattlesStatisticEntity>(player.PlayerId).ToList();
+            return StatisticViewModelFactory.Create(statisticEntities, tanks, player);
         }
 
         private void InitTanksStatistic(List<TankJson> tanks)
@@ -716,98 +739,5 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Close();
         }
 
-    }
-
-    internal interface IExportTankFragModel
-    {
-        string Tank { get; set; }
-        double Tier { get; set; }
-        int CountryId { get; set; }
-        int Type { get; set; }
-        int TankId { get; set; }
-        string FragTank { get; set; }
-        double FragTier { get; set; }
-        int FragCountryId { get; set; }
-        int FragType { get; set; }
-        int FragTankId { get; set; }
-        int Count { get; set; }
-    }
-
-    internal class ExportTankFragModel : IExportTankFragModel
-    {
-        private readonly TankStatisticRowViewModel _tank;
-        private readonly FragsJson _frag;
-
-        public ExportTankFragModel(TankStatisticRowViewModel tank, FragsJson frag)
-        {
-            _tank = tank;
-            _frag = frag;
-        }
-
-        public string Tank
-        {
-            get { return _tank.Tank; }
-            set { _tank.Tank = value; }
-        }
-
-        public double Tier
-        {
-            get { return _frag.Tier; }
-            set { _frag.Tier = value; }
-        }
-
-        public int CountryId
-        {
-            get { return _tank.CountryId; }
-            set { _tank.CountryId = value; }
-        }
-
-        public int Type
-        {
-            get { return _tank.Type; }
-            set { _tank.Type = value; }
-        }
-
-        public int TankId
-        {
-            get { return _tank.TankId; }
-            set { _tank.TankId = value; }
-        }
-
-        public double FragTier
-        {
-            get { return _frag.Tier; }
-            set { _frag.Tier = value; }
-        }
-
-        public int FragCountryId
-        {
-            get { return _frag.CountryId; }
-            set { _frag.CountryId = value; }
-        }
-
-        public int FragType
-        {
-            get { return _frag.Type; }
-            set { _frag.Type = value; }
-        }
-
-        public int FragTankId
-        {
-            get { return _frag.TankId; }
-            set { _frag.TankId = value; }
-        }
-
-        public string FragTank
-        {
-            get { return _frag.Tank; }
-            set { _frag.Tank = value; }
-        }
-
-        public int Count
-        {
-            get { return _frag.Count; }
-            set { _frag.Count = value; }
-        }
     }
 }

@@ -13,6 +13,29 @@ namespace WotDossier.Applications.ViewModel
 {
     public class StatisticViewModelFactory
     {
+        private static readonly List<int> _notExistsedTanksList = new List<int>
+                {
+                    30251,//T-34-1 training
+                    255,//Spectator
+                    10226,//pziii_training
+                    10227,//pzvib_tiger_ii_training
+                    10228,//pzv_training
+                    220,//t_34_85_training
+                    20212,//m4a3e8_sherman_training
+                    5,//KV
+                    20009,//T23
+                    222,//t44_122
+                    223,//t44_85
+                    210,//su_85i
+                    30002,//Type 59 G
+                    20211,//sexton_i
+                    30003,//WZ-111
+                };
+        public static List<int> NotExistsedTanksList
+        {
+            get { return _notExistsedTanksList; }
+        }
+
         public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, PlayerEntity player, ServerStatWrapper playerData)
         {
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
@@ -160,6 +183,23 @@ namespace WotDossier.Applications.ViewModel
             TankJson tankJson = WotApiHelper.UnZipObject<TankJson>(x);
             WotApiClient.Instance.ExtendPropertiesData(tankJson);
             return tankJson;
+        }
+
+        public static List<TankRowMasterTanker> GetMasterTankerList(List<TankStatisticRowViewModel> tanks)
+        {
+            IEnumerable<int> killed =
+                tanks.SelectMany(x => x.TankFrags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
+            List<TankRowMasterTanker> masterTanker = Dictionaries.Instance.Tanks
+                                                                 .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
+                                                                 .Select(x => new TankRowMasterTanker(x.Value))
+                                                                 .OrderBy(x => x.IsPremium)
+                                                                 .ThenBy(x => x.Tier).ToList();
+            return masterTanker;
+        }
+
+        private static bool IsExistedtank(TankDescription tankDescription)
+        {
+            return !NotExistsedTanksList.Contains(tankDescription.UniqueId());
         }
     }
 }

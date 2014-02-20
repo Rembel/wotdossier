@@ -83,7 +83,7 @@ namespace WotDossier.Applications
         /// -s - By setting s the JSON will not include unix timestamp of creation as it is useless for calculation of 
         /// </summary>
         /// <param name="cacheFile">The cache file.</param>
-        public static void BinaryCacheToJson(FileInfo cacheFile)
+        public static string BinaryCacheToJson(FileInfo cacheFile)
         {
             string temp = Environment.CurrentDirectory;
             string directoryName = temp;
@@ -96,6 +96,8 @@ namespace WotDossier.Applications
             ExecuteTask(task, arguments, @"..\Logs\wotdc2j.log");
 
             Environment.CurrentDirectory = temp;
+
+            return cacheFile.FullName.Replace(".dat", ".json");
         }
 
         /// <summary>

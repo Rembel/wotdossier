@@ -95,7 +95,7 @@ namespace WotDossier.Dal
             return tanks;
         }
 
-        public List<TankJson> ReadTanksV2(string path)
+        public List<TankJson> ReadTanksCache(string path)
         {
             List<TankJson> tanks = new List<TankJson>();
 
@@ -481,17 +481,6 @@ namespace WotDossier.Dal
                 }
             }
             return null;
-        }
-
-        public Dictionary<string, VStat> ReadVstat()
-        {
-            using (StreamReader streamReader = new StreamReader(@"Data\vstat.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(streamReader);
-                JsonSerializer se = new JsonSerializer();
-                var parsedData = se.Deserialize<Dictionary<string, VStat>>(reader);
-                return parsedData;
-            }
         }
 
         public Dictionary<int, TankDescription> ReadTankNominalDamage()

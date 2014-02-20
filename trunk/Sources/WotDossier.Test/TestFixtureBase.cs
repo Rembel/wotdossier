@@ -97,7 +97,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.5\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
@@ -111,7 +111,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.6\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
@@ -125,7 +125,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.7\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
@@ -139,7 +139,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.8\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanks = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
@@ -153,7 +153,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
@@ -167,7 +167,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.10\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
@@ -181,7 +181,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.11\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
@@ -686,7 +686,7 @@ namespace WotDossier.Test
         [Test]
         public void CacheTest()
         {
-            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(@"D:\NRXWO2LOFZYDMLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGQ5XO2LMMRTW6YTMNFXA====.json");
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(@"D:\NRXWO2LOFZYDMLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGQ5XO2LMMRTW6YTMNFXA====.json");
 
             foreach (var group in tanksV2.GroupBy(x => x.Common.type))
             {
@@ -743,7 +743,7 @@ namespace WotDossier.Test
             CsvExportProvider provider = new CsvExportProvider();
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
             CacheHelper.BinaryCacheToJson(cacheFile);
-            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             List<TankStatisticRowViewModel> list = tanksV2.Select(x => new TankStatisticRowViewModel(x)).ToList();
             provider.Export(list, new List<Type>{typeof(ITankRowBattles), typeof(ITankRowFrags)});
         }

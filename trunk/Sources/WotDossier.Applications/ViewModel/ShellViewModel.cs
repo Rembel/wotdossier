@@ -39,7 +39,6 @@ namespace WotDossier.Applications.ViewModel
         private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
         public static readonly string PropPlayerStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.PlayerStatistic);
         public static readonly string PropTeamBattlesStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.TeamBattlesStatistic);
-        //public static readonly string PropSessionStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.SessionStatistic);
         public static readonly string PropMasterTanker = TypeHelper<ShellViewModel>.PropertyName(v => v.MasterTanker);
         public static readonly string PropTanks = TypeHelper<ShellViewModel>.PropertyName(v => v.Tanks);
         public static readonly string PropPeriodSelector = TypeHelper<ShellViewModel>.PropertyName(v => v.PeriodSelector);
@@ -48,13 +47,7 @@ namespace WotDossier.Applications.ViewModel
         #region [ Properties and Fields ]
 
         private readonly DossierRepository _dossierRepository;
-        private PlayerStatisticViewModel _sessionStatistic;
-        private List<TankRowMasterTanker> _masterTanker;
-        private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
-        private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
-
-        //private PlayerStatisticViewModel _sessionStartStatistic;
-
+        
         private PlayerStatisticViewModel _playerStatistic;
         public PlayerStatisticViewModel PlayerStatistic
         {
@@ -77,16 +70,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        //public PlayerStatisticViewModel SessionStatistic
-        //{
-        //    get { return _sessionStatistic; }
-        //    set
-        //    {
-        //        _sessionStatistic = value;
-        //        RaisePropertyChanged(PropSessionStatistic);
-        //    }
-        //}
-
+        private List<TankRowMasterTanker> _masterTanker;
         public List<TankRowMasterTanker> MasterTanker
         {
             get { return _masterTanker; }
@@ -97,6 +81,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
         public List<TankStatisticRowViewModel> Tanks
         {
             get
@@ -119,6 +104,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private FraggsCountViewModel _fraggsCount = new FraggsCountViewModel();
         public FraggsCountViewModel FraggsCount
         {
             get { return _fraggsCount; }
@@ -147,7 +133,6 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private PeriodSelectorViewModel _periodSelector;
-        private bool _loadInProgress;
         public PeriodSelectorViewModel PeriodSelector
         {
             get { return _periodSelector; }
@@ -169,6 +154,13 @@ namespace WotDossier.Applications.ViewModel
                 List<TankStatisticRowViewModel> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
                 return list;
             }
+        }
+
+        private bool _loadInProgress;
+        public bool LoadInProgress
+        {
+            get { return _loadInProgress; }
+            set { _loadInProgress = value; }
         }
 
         #endregion
@@ -441,40 +433,18 @@ namespace WotDossier.Applications.ViewModel
                             if (cacheFile != null)
                             {
                                 //convert dossier cache file to json
-                                CacheHelper.BinaryCacheToJson(cacheFile);
-                                List<TankJson> tanksV2 =
-                                    WotApiClient.Instance.ReadTanksV2(cacheFile.FullName.Replace(".dat", ".json"));
+                                string jsonFile = CacheHelper.BinaryCacheToJson(cacheFile);
+                                List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(jsonFile);
 
                                 //get tanks from dossier app spot
                                 //string data = new Uri("http://wot-dossier.appspot.com/dossier-data/2587067").Get();
                                 //List<TankJson> tanksV2 = WotApiClient.Instance.ReadDossierAppSpotTanks(data);
 
-                                PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanksV2);
-                                //PlayerStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
-                                //TeamBattlesStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
-                                
-                                //init previous dates list
-                                PeriodSelector.PropertyChanged -= PeriodSelectorOnPropertyChanged;
-                                PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
-                                PeriodSelector.PropertyChanged += PeriodSelectorOnPropertyChanged;
+                                InitPlayerStatistic(serverStatistic, tanks);
 
                                 ProgressView.Report(bw, 25, string.Empty);
 
-                                //PlayerStatisticViewModel clone = PlayerStatistic.Clone();
-
-                                //if (_sessionStartStatistic == null)
-                                //{
-                                //    //save start session statistic
-                                //    _sessionStartStatistic = clone;
-                                //}
-                                //else
-                                //{
-                                //    clone.SetPreviousStatistic(_sessionStartStatistic);
-                                //}
-
-                                //SessionStatistic = clone;
-
-                                InitTanksStatistic(tanksV2);
+                                InitTanksStatistic(tanks);
 
                                 //trick for set "N last battles period"
                                 if (settings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
@@ -485,6 +455,7 @@ namespace WotDossier.Applications.ViewModel
                                 ProgressView.Report(bw, 50, string.Empty);
 
                                 InitChart();
+
                                 ProgressView.Report(bw, 100, string.Empty);
                             }
                             else
@@ -511,18 +482,37 @@ namespace WotDossier.Applications.ViewModel
             ReplaysViewModel.LoadReplaysList();
         }
 
-        private void PeriodSelectorOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        private void InitPlayerStatistic(ServerStatWrapper serverStatistic, List<TankJson> tanks)
         {
-            AppSettings settings = SettingsReader.Get();
-            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(settings.PeriodSettings.Period,
-                    settings.PeriodSettings.PrevDate, settings.PeriodSettings.LastNBattles));
+            PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
+            //PlayerStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
+            //TeamBattlesStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
+
+            //init previous dates list
+            PeriodSelector.PropertyChanged -= PeriodSelectorOnPropertyChanged;
+            PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
+            PeriodSelector.PropertyChanged += PeriodSelectorOnPropertyChanged;
         }
 
-        private static void SetUiCulture()
+        private void InitTanksStatistic(List<TankJson> tanks)
         {
-            var culture = new CultureInfo(SettingsReader.Get().Language);
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
+            AppSettings settings = SettingsReader.Get();
+            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerId, tanks);
+
+            if (playerEntity == null)
+            {
+                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
+
+            List<TankStatisticRowViewModel> tankStatisticRowViewModels = StatisticViewModelFactory.Create(entities);
+            Tanks = tankStatisticRowViewModels;
+
+            MasterTanker = StatisticViewModelFactory.GetMasterTankerList(_tanks);
+
+            FraggsCount.Init(_tanks);
         }
 
         private ServerStatWrapper LoadPlayerServerStatistic(AppSettings settings)
@@ -567,39 +557,6 @@ namespace WotDossier.Applications.ViewModel
             return StatisticViewModelFactory.Create(statisticEntities, tanks, player);
         }
 
-        private void InitTanksStatistic(List<TankJson> tanks)
-        {
-            AppSettings settings = SettingsReader.Get();
-            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerId, tanks);
-
-            if (playerEntity == null)
-            {
-                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
-
-            List<TankStatisticRowViewModel> tankStatisticRowViewModels = StatisticViewModelFactory.Create(entities);
-            Tanks = tankStatisticRowViewModels;
-
-            InitMasterTankerList(_tanks);
-
-            FraggsCount.Init(_tanks);
-        }
-
-        private void InitMasterTankerList(IEnumerable<TankStatisticRowViewModel> tanks)
-        {
-            IEnumerable<int> killed =
-                tanks.SelectMany(x => x.TankFrags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
-            List<TankRowMasterTanker> masterTanker = Dictionaries.Instance.Tanks
-                                                                 .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
-                                                                 .Select(x => new TankRowMasterTanker(x.Value))
-                                                                 .OrderBy(x => x.IsPremium)
-                                                                 .ThenBy(x => x.Tier).ToList();
-            MasterTanker = masterTanker;
-        }
-
         #endregion
 
         #region [ Charts initialization ]
@@ -615,42 +572,6 @@ namespace WotDossier.Applications.ViewModel
 
         
         #endregion
-
-        private bool IsExistedtank(TankDescription tankDescription)
-        {
-            return !NotExistsedTanksList.Contains(tankDescription.UniqueId());
-        }
-
-        public List<int> NotExistsedTanksList
-        {
-            get
-            {
-                return new List<int>
-                {
-                    30251,//T-34-1 training
-                    255,//Spectator
-                    10226,//pziii_training
-                    10227,//pzvib_tiger_ii_training
-                    10228,//pzv_training
-                    220,//t_34_85_training
-                    20212,//m4a3e8_sherman_training
-                    5,//KV
-                    20009,//T23
-                    222,//t44_122
-                    223,//t44_85
-                    210,//su_85i
-                    30002,//Type 59 G
-                    20211,//sexton_i
-                    30003,//WZ-111
-                };
-            }
-        }
-
-        public bool LoadInProgress
-        {
-            get { return _loadInProgress; }
-            set { _loadInProgress = value; }
-        }
 
         private void SetFavorite(TankStatisticRowViewModel model, bool favorite)
         {
@@ -685,6 +606,20 @@ namespace WotDossier.Applications.ViewModel
         {
             AppSettings appSettings = SettingsReader.Get();
             PeriodTabHeader = Resources.Resources.ResourceManager.GetFormatedEnumResource(appSettings.PeriodSettings.Period, appSettings.PeriodSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PeriodSettings.PrevDate : appSettings.PeriodSettings.LastNBattles);
+        }
+
+        private void PeriodSelectorOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            AppSettings settings = SettingsReader.Get();
+            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(settings.PeriodSettings.Period,
+                    settings.PeriodSettings.PrevDate, settings.PeriodSettings.LastNBattles));
+        }
+
+        private static void SetUiCulture()
+        {
+            var culture = new CultureInfo(SettingsReader.Get().Language);
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
         }
 
         private void TankFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

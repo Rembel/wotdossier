@@ -434,6 +434,35 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public PlayerStatisticViewModel(TeamBattlesStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        {
+        }
+
+        public PlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+            : base(stat.Updated, list)
+        {
+            #region Common init
+
+            BattlesCount = stat.BattlesCount;
+            Wins = stat.Wins;
+            Losses = stat.Losses;
+            SurvivedBattles = stat.SurvivedBattles;
+            Xp = stat.Xp;
+            MaxXp = stat.MaxXp;
+            Frags = stat.Frags;
+            Spotted = stat.Spotted;
+            HitsPercents = stat.HitsPercents;
+            DamageDealt = stat.DamageDealt;
+            DamageTaken = stat.DamageTaken;
+            CapturePoints = stat.CapturePoints;
+            DroppedCapturePoints = stat.DroppedCapturePoints;
+            //Created = stat.PlayerIdObject.Creaded);
+            Updated = stat.Updated;
+            Tier = stat.AvgLevel;
+
+            #endregion
+        }
+
         public ClanModel Clan { get; set; }
 
         public PlayerStatisticViewModel Clone()

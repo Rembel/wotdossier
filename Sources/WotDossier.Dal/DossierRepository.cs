@@ -57,6 +57,32 @@ namespace WotDossier.Dal
             return list;
         }
 
+        public IEnumerable<T> GetStatistic<T>(int playerId) where T : StatisticEntity
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+            PlayerEntity player = null;
+            T statistic = null;
+            IList<T> list = null;
+            try
+            {
+                list = _dataProvider.QueryOver(() => statistic)
+                                    .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
+                                    .Where(x => player.PlayerId == playerId).List<T>();
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.CloseSession();
+            }
+            return list;
+        }
+
         public PlayerEntity UpdatePlayerStatistic(Ratings ratings, List<TankJson> tanks, int playerId)
         {
             _dataProvider.OpenSession();
@@ -65,7 +91,7 @@ namespace WotDossier.Dal
 
             try
             {
-                playerEntity = GetPlayer(playerId);
+                playerEntity = GetPlayerInternal(playerId);
 
                 PlayerStatisticEntity currentSnapshot = _dataProvider.QueryOver<PlayerStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
@@ -116,7 +142,7 @@ namespace WotDossier.Dal
 
             try
             {
-                playerEntity = GetPlayer(playerId);
+                playerEntity = GetPlayerInternal(playerId);
 
                 TeamBattlesStatisticEntity currentSnapshot = _dataProvider.QueryOver<TeamBattlesStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
@@ -189,7 +215,7 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        private PlayerEntity GetPlayer(int id)
+        private PlayerEntity GetPlayerInternal(int id)
         {
             return _dataProvider.QueryOver<PlayerEntity>()
                 .Where(x => x.PlayerId == id)
@@ -197,12 +223,21 @@ namespace WotDossier.Dal
                 .SingleOrDefault<PlayerEntity>();
         }
 
+        public PlayerEntity GetPlayer(int id)
+        {
+            _dataProvider.OpenSession();
+            PlayerEntity player = GetPlayerInternal(id);
+            _dataProvider.ClearCache();
+            _dataProvider.CloseSession();
+            return player;
+        }
+
         public PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
 
-            PlayerEntity playerEntity = GetPlayer(playerId);
+            PlayerEntity playerEntity = GetPlayerInternal(playerId);
 
             try
             {

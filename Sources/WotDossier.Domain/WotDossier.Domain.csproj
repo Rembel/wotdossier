@@ -55,6 +55,7 @@
     <Compile Include="Dossier\TankV65\Achievements7x7_65.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
+    <Compile Include="Entities\StatisticEntity.cs" />
     <Compile Include="Entities\TeamBattlesAchievementsEntity.cs" />
     <Compile Include="Entities\TeamBattlesStatAdapter.cs" />
     <Compile Include="Entities\TeamBattlesStatisticEntity.cs" />

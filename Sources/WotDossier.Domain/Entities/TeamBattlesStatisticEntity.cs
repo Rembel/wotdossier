@@ -4,10 +4,10 @@ using WotDossier.Common;
 namespace WotDossier.Domain.Entities
 {
     /// <summary>
-    /// Object representation for table 'PlayerStatistic'.
+    /// Object representation for table 'TeamBattlesStatisticEntity'.
     /// </summary>
     [Serializable]
-    public class TeamBattlesStatisticEntity : EntityBase
+    public class TeamBattlesStatisticEntity : StatisticEntity
     {
         #region Property names
 
@@ -127,16 +127,6 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "BattlesCount".
         /// </summary>
         public virtual int BattlesCount { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "PlayerId".
-        /// </summary>
-        public virtual int PlayerId { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the <see cref="PlayerEntity"/> object.
-        /// </summary>
-        public virtual PlayerEntity PlayerIdObject { get; set; }
 
         /// <summary>
         /// Gets/Sets the AvgLevel object.

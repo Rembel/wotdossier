@@ -16,9 +16,23 @@ namespace WotDossier.Domain.Tank
         public StatisticJson A15x15 { get; set; }
         public StatisticJson Clan { get; set; }
         public StatisticJson Company { get; set; }
-        public StatisticJson A7x7 { get; set; }
+
+        private StatisticJson _a7X7 = new StatisticJson();
+        public StatisticJson A7x7
+        {
+            get { return _a7X7; }
+            set { _a7X7 = value; }
+        }
+
         public AchievementsJson Achievements { get; set; }
-        public Achievements7x7 Achievements7x7 { get; set; }
+
+        private Achievements7x7 _achievements7X7 = new Achievements7x7();
+        public Achievements7x7 Achievements7x7
+        {
+            get { return _achievements7X7; }
+            set { _achievements7X7 = value; }
+        }
+
         public CommonJson Common { get; set; }
 
         private IList<IList<string>> _fragsList = new List<IList<string>>();

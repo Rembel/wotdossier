@@ -1,7 +1,6 @@
 using System;
 using WotDossier.Common;
 using WotDossier.Domain.Player;
-using System.Linq;
 
 namespace WotDossier.Domain.Entities
 {
@@ -9,7 +8,7 @@ namespace WotDossier.Domain.Entities
     /// Object representation for table 'PlayerStatistic'.
     /// </summary>
     [Serializable]
-    public class PlayerStatisticEntity : EntityBase
+    public class PlayerStatisticEntity : StatisticEntity
     {
         #region Property names
 
@@ -259,16 +258,6 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "RatingMaxXpPlace".
         /// </summary>
         public virtual int RatingMaxXpPlace { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "PlayerId".
-        /// </summary>
-        public virtual int PlayerId { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the <see cref="PlayerEntity"/> object.
-        /// </summary>
-        public virtual PlayerEntity PlayerIdObject { get; set; }
 
         /// <summary>
         /// Gets/Sets the AvgLevel object.

@@ -106,9 +106,11 @@
     <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="Model\ClanMemberModel.cs" />
     <Compile Include="MedalHelper.cs" />
+    <Compile Include="ViewModel\BattleMode.cs" />
     <Compile Include="ViewModel\ClanViewModel.cs" />
     <Compile Include="ViewModel\CompareStatisticViewModel.cs" />
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />
+    <Compile Include="ViewModel\BattleModeSelectorViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
     <Compile Include="ViewModel\KeyValue.cs" />

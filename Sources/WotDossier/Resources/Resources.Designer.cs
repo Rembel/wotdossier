@@ -3402,6 +3402,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle mode.
+        /// </summary>
+        public static string Settings_BattleMode {
+            get {
+                return ResourceManager.GetString("Settings_BattleMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check for updates on start.
         /// </summary>
         public static string Settings_CheckForUpdatesOnStart {

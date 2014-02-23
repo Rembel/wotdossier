@@ -61,6 +61,24 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Random, Company.
+        /// </summary>
+        internal static string BattleMode_RandomCompany {
+            get {
+                return ResourceManager.GetString("BattleMode_RandomCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Team Battle.
+        /// </summary>
+        internal static string BattleMode_TeamBattle {
+            get {
+                return ResourceManager.GetString("BattleMode_TeamBattle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clan War.
         /// </summary>
         internal static string BattleType_ClanWar {

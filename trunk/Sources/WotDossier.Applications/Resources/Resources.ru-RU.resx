@@ -373,4 +373,10 @@
   <data name="Msg_ServerNotSelected" xml:space="preserve">
     <value>Не выбран сервер</value>
   </data>
+  <data name="BattleMode_RandomCompany" xml:space="preserve">
+    <value>Случайный, Ротный</value>
+  </data>
+  <data name="BattleMode_TeamBattle" xml:space="preserve">
+    <value>Командный бой</value>
+  </data>
 </root>

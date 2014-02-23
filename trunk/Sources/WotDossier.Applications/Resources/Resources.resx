@@ -373,4 +373,10 @@ Avg Spotted: {1:0.00}</value>
   <data name="Msg_ServerNotSelected" xml:space="preserve">
     <value>Server not selected</value>
   </data>
+  <data name="BattleMode_RandomCompany" xml:space="preserve">
+    <value>Random, Company</value>
+  </data>
+  <data name="BattleMode_TeamBattle" xml:space="preserve">
+    <value>Team Battle</value>
+  </data>
 </root>

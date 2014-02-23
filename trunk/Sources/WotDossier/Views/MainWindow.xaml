@@ -58,6 +58,16 @@
                     <TextBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="100" HorizontalAlignment="Left" Visibility="{Binding LastNBattlesVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}"  controls1:AttachedProperties.UpdateSourceOnKey="Enter"/>
                 </Grid>
             </ToolBar>
+            <ToolBar DataContext="{Binding BattleModeSelector}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Resources:Resources.Settings_BattleMode}"/>
+                    <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="1" Width="150" ItemsSource="{Binding BattleModes}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding BattleMode}" />
+                </Grid>
+            </ToolBar>
         </ToolBarTray>
 
         <TabControl Grid.Row="2" Name="tcMain" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

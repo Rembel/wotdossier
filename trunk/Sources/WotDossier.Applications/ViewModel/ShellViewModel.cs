@@ -38,10 +38,10 @@ namespace WotDossier.Applications.ViewModel
 
         private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
         public static readonly string PropPlayerStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.PlayerStatistic);
-        public static readonly string PropTeamBattlesStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.TeamBattlesStatistic);
         public static readonly string PropMasterTanker = TypeHelper<ShellViewModel>.PropertyName(v => v.MasterTanker);
         public static readonly string PropTanks = TypeHelper<ShellViewModel>.PropertyName(v => v.Tanks);
         public static readonly string PropPeriodSelector = TypeHelper<ShellViewModel>.PropertyName(v => v.PeriodSelector);
+        public static readonly string PropBattleModeSelector = TypeHelper<ShellViewModel>.PropertyName(v => v.BattleModeSelector);
         public static readonly string PropLastUsedTanksList = TypeHelper<ShellViewModel>.PropertyName(v => v.LastUsedTanksList);
 
         #region [ Properties and Fields ]
@@ -56,17 +56,6 @@ namespace WotDossier.Applications.ViewModel
             {
                 _playerStatistic = value;
                 RaisePropertyChanged(PropPlayerStatistic);
-            }
-        }
-
-        private PlayerStatisticViewModel _teamBattlesStatistic;
-        public PlayerStatisticViewModel TeamBattlesStatistic
-        {
-            get { return _teamBattlesStatistic; }
-            set
-            {
-                _teamBattlesStatistic = value;
-                RaisePropertyChanged(PropTeamBattlesStatistic);
             }
         }
 
@@ -140,6 +129,17 @@ namespace WotDossier.Applications.ViewModel
             {
                 _periodSelector = value;
                 RaisePropertyChanged(PropPeriodSelector);
+            }
+        }
+
+        private BattleModeSelectorViewModel _battleModeSelector;
+        public BattleModeSelectorViewModel BattleModeSelector
+        {
+            get { return _battleModeSelector; }
+            set
+            {
+                _battleModeSelector = value;
+                RaisePropertyChanged(PropBattleModeSelector);
             }
         }
 
@@ -219,6 +219,7 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
             ProgressView = new ProgressControlViewModel();
             PeriodSelector = new PeriodSelectorViewModel();
+            BattleModeSelector = new BattleModeSelectorViewModel();
 
             ChartView = new PlayerChartsViewModel();
 
@@ -484,10 +485,15 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitPlayerStatistic(ServerStatWrapper serverStatistic, List<TankJson> tanks)
         {
-            PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
-            //PlayerStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
-            //TeamBattlesStatistic = InitTeamBattlesStatisticViewModel(tanksV2);
-
+            if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
+            {
+                PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
+            }
+            else
+            {
+                PlayerStatistic = InitTeamBattlesStatisticViewModel(tanks);    
+            }
+            
             //init previous dates list
             PeriodSelector.PropertyChanged -= PeriodSelectorOnPropertyChanged;
             PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);

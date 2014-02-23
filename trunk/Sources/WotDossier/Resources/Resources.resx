@@ -1613,4 +1613,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="ButtonCheckUpdate" xml:space="preserve">
     <value>Check Update</value>
   </data>
+  <data name="Settings_BattleMode" xml:space="preserve">
+    <value>Battle mode</value>
+  </data>
 </root>

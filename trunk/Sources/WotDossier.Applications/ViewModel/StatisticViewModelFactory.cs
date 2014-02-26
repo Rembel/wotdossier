@@ -174,7 +174,7 @@ namespace WotDossier.Applications.ViewModel
             TankStatisticRowViewModel model = new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson>{TankJson.Initial});
             model.IsFavorite = tankStatisticEntities.First().TankIdObject.IsFavorite;
             model.PerformanceRating = GetPerformanceRating(currentStatistic);
-            model.WN8Rating = GetWN8Rating(currentStatistic);
+            //model.WN8Rating = GetWN8Rating(currentStatistic);
             return model;
         }
 

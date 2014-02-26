@@ -61,6 +61,10 @@
     <Style x:Key="DataGridCellWn6Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}" />
     </Style>
+    
+    <Style x:Key="DataGridCellWn8Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN8Rating, Converter={x:Static color:WN8ToColorConverter.Default}}" />
+    </Style>
 
     <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" />

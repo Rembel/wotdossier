@@ -102,7 +102,7 @@ def = dropped_capture_points / bc (среднее количество очко�
             return CalcWn8(rWin, rDamage, rFrag, rSpot, rDef);
         }
 
-        public static double CalcWn8(double rWin, double rDamage, double rFrag, double rSpot, double rDef)
+        private static double CalcWn8(double rWin, double rDamage, double rFrag, double rSpot, double rDef)
         {
             double rWiNc = Math.Max(0, (rWin - 0.71)/(1 - 0.71));
             double rDamagEc = Math.Max(0, (rDamage - 0.22)/(1 - 0.22));

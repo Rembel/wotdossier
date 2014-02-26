@@ -157,11 +157,11 @@
                                    ValueForeground="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}"
                                        HeaderLink="{Binding EffRatingLink}"/>
             <!--Wn6Rating-->
-            <controls:StatisticRow Header="WN6" 
-                                   Value="{Binding WN6Rating, StringFormat='### ### ### ###.0'}"
-                                   Delta="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"
-                                   DeltaForeground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=WN6Rating, Converter={x:Static color:WN6ToColorConverter.Default}}"/>
+            <controls:StatisticRow Header="WN7" 
+                                   Value="{Binding WN7Rating, StringFormat='### ### ### ###.0'}"
+                                   Delta="{Binding WN7RatingDelta, StringFormat='+0.0;-0.0;0.0'}"
+                                   DeltaForeground="{Binding WN7RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                   ValueForeground="{Binding Path=WN7Rating, Converter={x:Static color:WN7ToColorConverter.Default}}"/>
             <!--WN8-->
             <controls:StatisticRow Header="WN8" Value="{Binding WN8Rating, StringFormat='### ### ### ###.0'}"
                                    ValueForeground="{Binding Path=WN8Rating, Converter={x:Static color:WN8ToColorConverter.Default}}"/>

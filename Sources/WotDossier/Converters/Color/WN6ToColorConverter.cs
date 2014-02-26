@@ -16,11 +16,11 @@ namespace WotDossier.Converters.Color
             double? eff = value as double?;
             if (eff != null)
             {
-                if (eff >= 1885)
+                if (eff >= 1925)
                     return EffRangeBrushes.Purple;
-                if (eff >= 1570)
+                if (eff >= 1585)
                     return EffRangeBrushes.Blue;
-                if (eff >= 1175)
+                if (eff >= 1185)
                     return EffRangeBrushes.Green;
                 if (eff >= 795)
                     return EffRangeBrushes.Yellow;

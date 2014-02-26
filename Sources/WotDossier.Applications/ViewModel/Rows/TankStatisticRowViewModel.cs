@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Common;
 using WotDossier.Domain.Tank;
 
@@ -231,6 +232,24 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
+        public override double? WN8Rating
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    double expDamage = BattlesCount * Description.Expectancy.Wn8NominalDamage / BattlesCount;
+                    double expSpotted = BattlesCount * Description.Expectancy.Wn8NominalSpotted / BattlesCount;
+                    double expDef = BattlesCount * Description.Expectancy.Wn8NominalDefence / BattlesCount;
+                    double expWinRate = BattlesCount * Description.Expectancy.Wn8NominalWinRate / 100.0 / BattlesCount;
+                    double expFrags = BattlesCount * Description.Expectancy.Wn8NominalFrags / BattlesCount;
+
+                    return RatingHelper.CalcWN8(AvgDamageDealt, expDamage, AvgFrags, expFrags, AvgSpotted, expSpotted, AvgDroppedCapturePoints, expDef, WinsPercent, expWinRate);
+                }
+                return 0;
+            }
+        }
+
         protected TankStatisticRowViewModel()
         {
         }
@@ -253,6 +272,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Type = tank.Common.type;
             Tank = tank.Common.tanktitle;
             Icon = tank.Description.Icon;
+            Description = tank.Description;
             CountryId = tank.Common.countryid;
             TankId = tank.Common.tankid;
             TankUniqueId = tank.UniqueId();
@@ -410,6 +430,8 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);
         }
+
+        public TankDescription Description { get; set; }
 
         public IEnumerable<FragsJson> TankFrags
         {

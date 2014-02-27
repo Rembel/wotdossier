@@ -252,8 +252,8 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private double? _wn8Rating;
-        public virtual double? WN8Rating
+        private double _wn8Rating;
+        public virtual double WN8Rating
         {
             get { return _wn8Rating; }
             set

@@ -13,6 +13,7 @@ namespace WotDossier.Applications.ViewModel
         #region Fields
 
         private readonly IEnumerable<T> _list;
+        private double _wn8RatingForPeriod;
 
         #endregion
 
@@ -101,6 +102,11 @@ namespace WotDossier.Applications.ViewModel
         public double WN6RatingDelta
         {
             get { return WN6Rating - PrevStatistic.WN6Rating; }
+        }
+
+        public double WN8RatingDelta
+        {
+            get { return WN8Rating - PrevStatistic.WN8Rating; }
         }
 
         public double EffRatingDelta
@@ -266,6 +272,16 @@ namespace WotDossier.Applications.ViewModel
                                                 AvgDroppedCapturePointsForPeriod, WinsPercentForPeriod);
                 }
                 return 0;
+            }
+        }
+
+        public virtual double WN8RatingForPeriod
+        {
+            get { return _wn8RatingForPeriod; }
+            set
+            {
+                _wn8RatingForPeriod = value;
+                OnPropertyChanged("WN8RatingForPeriod");
             }
         }
 

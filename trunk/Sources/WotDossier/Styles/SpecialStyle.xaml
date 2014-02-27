@@ -53,6 +53,10 @@
     <Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding WinsPercent, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
     </Style>
+    
+    <Style x:Key="DataGridCellWinPercentForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding WinsPercentForPeriod, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
+    </Style>
 
     <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
@@ -64,6 +68,18 @@
     
     <Style x:Key="DataGridCellWn8Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding Path=WN8Rating, Converter={x:Static color:WN8ToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellEffForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=EffRatingForPeriod, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
+    </Style>
+
+    <Style x:Key="DataGridCellWn6ForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN6RatingForPeriod, Converter={x:Static color:WN6ToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellWn8ForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN8RatingForPeriod, Converter={x:Static color:WN8ToColorConverter.Default}}" />
     </Style>
 
     <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">

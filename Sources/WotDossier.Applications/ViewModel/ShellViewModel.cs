@@ -457,6 +457,8 @@ namespace WotDossier.Applications.ViewModel
 
                                 InitChart();
 
+                                InitLastUsedTankList();
+
                                 ProgressView.Report(bw, 100, string.Empty);
                             }
                             else
@@ -481,6 +483,15 @@ namespace WotDossier.Applications.ViewModel
                 });
 
             ReplaysViewModel.LoadReplaysList();
+        }
+
+        private void InitLastUsedTankList()
+        {
+            if (PlayerStatistic != null)
+            {
+                RaisePropertyChanged(PropLastUsedTanksList);
+                PlayerStatistic.WN8RatingForPeriod = StatisticViewModelFactory.GetWN8RatingForPeriod(LastUsedTanksList);
+            }
         }
 
         private void InitPlayerStatistic(ServerStatWrapper serverStatistic, List<TankJson> tanks)
@@ -572,7 +583,6 @@ namespace WotDossier.Applications.ViewModel
             if (PlayerStatistic != null)
             {
                 ChartView.InitCharts(PlayerStatistic, _tanks);
-                RaisePropertyChanged(PropLastUsedTanksList);
             }
         }
 
@@ -602,7 +612,7 @@ namespace WotDossier.Applications.ViewModel
             else
             {
                 ChartView.InitLastUsedTanksChart(PlayerStatistic, _tanks);
-                RaisePropertyChanged(PropLastUsedTanksList);
+                InitLastUsedTankList();
             }
 
             SetPeriodTabHeader();

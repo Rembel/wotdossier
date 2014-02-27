@@ -159,10 +159,10 @@
                 <TextBlock Foreground="#BABFBA" Grid.Row="20" Grid.Column="0" Text="{x:Static Resources:Resources.Common_EffectivityRating}"></TextBlock>
                 <TextBlock Foreground="{Binding EffRatingForPeriod, Converter={x:Static color:EffectivityToColorConverter.Default}}" TextAlignment="Right" Grid.Row="20" Grid.Column="1" Text="{Binding EffRatingForPeriod, StringFormat='### ### ### ###'}"></TextBlock>
                 <TextBlock Foreground="{Binding EffRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="20" Grid.Column="2" Text="{Binding EffRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
-                <!--Wn6Rating-->
-                <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="0" Text="{x:Static Resources:Resources.Common_Wn6Rating}"></TextBlock>
-                <TextBlock Foreground="{Binding WN6RatingForPeriod, Converter={x:Static color:WN6ToColorConverter.Default}}" TextAlignment="Right" Grid.Row="21" Grid.Column="1" Text="{Binding WN6RatingForPeriod, StringFormat='### ### ### ###'}"></TextBlock>
-                <TextBlock Foreground="{Binding WN6RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="21" Grid.Column="2" Text="{Binding WN6RatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
+                <!--Wn8Rating-->
+                <TextBlock Foreground="#BABFBA" Grid.Row="21" Grid.Column="0" Text="WN8"></TextBlock>
+                <TextBlock Foreground="{Binding WN8RatingForPeriod, Converter={x:Static color:WN8ToColorConverter.Default}}" TextAlignment="Right" Grid.Row="21" Grid.Column="1" Text="{Binding WN8RatingForPeriod, StringFormat='### ### ### ###'}"></TextBlock>
+                <!--<TextBlock Foreground="{Binding WN8RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="21" Grid.Column="2" Text="{Binding WN8RatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
                 <!--KievArmorRating-->
                 <TextBlock Foreground="#BABFBA" Grid.Row="22" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
                 <TextBlock Foreground="{Binding KievArmorRatingForPeriod, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="22" Grid.Column="1" Text="{Binding KievArmorRatingForPeriod, StringFormat='### ### ### ###'}"></TextBlock>

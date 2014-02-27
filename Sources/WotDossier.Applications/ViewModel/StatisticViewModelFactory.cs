@@ -107,21 +107,39 @@ namespace WotDossier.Applications.ViewModel
                 tank.A15x15.damageDealt, tank.Description.Tier);
         }
 
+        public static double GetWN8RatingForPeriod(List<TankStatisticRowViewModel> tanks)
+        {
+            double battles = tanks.Sum(x => x.BattlesCountDelta);
+
+            double damage = tanks.Sum(x => x.DamageDealtDelta) / battles;
+            double spotted = tanks.Sum(x => x.SpottedDelta) / battles;
+            double def = tanks.Sum(x => x.DroppedCapturePointsDelta) / battles;
+            double winRate = tanks.Sum(x => x.WinsDelta) / battles;
+            double frags = tanks.Sum(x => x.FragsDelta) / battles;
+
+            double expDamage = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalDamage) / battles;
+            double expSpotted = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalSpotted) / battles;
+            double expDef = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalDefence) / battles;
+            double expWinRate = tanks.Sum(x => (x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
+            double expFrags = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalFrags) / battles;
+            return RatingHelper.CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
+        }
+
         private static double GetWN8Rating(List<TankJson> tanks)
         {
             double battles = tanks.Sum(x => x.A15x15.battlesCount);
-            
-            double damage = tanks.Select(x => x.A15x15.damageDealt).Sum() / battles;
-            double spotted = tanks.Select(x => x.A15x15.spotted).Sum() / battles;
-            double def = tanks.Select(x => x.A15x15.droppedCapturePoints).Sum() / battles;
-            double winRate = tanks.Sum(x => x.A15x15.wins) / battles;
-            double frags = tanks.Select(x => x.A15x15.frags).Sum() / battles;
 
-            double expDamage = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDamage).Sum() / battles;
-            double expSpotted = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalSpotted).Sum() / battles;
-            double expDef = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDefence).Sum() / battles;
-            double expWinRate = tanks.Select(x => (x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalWinRate) / 100.0).Sum() / battles;
-            double expFrags = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalFrags).Sum() / battles;
+            double damage = tanks.Sum(x => x.A15x15.damageDealt) / battles;
+            double spotted = tanks.Sum(x => x.A15x15.spotted) / battles;
+            double def = tanks.Sum(x => x.A15x15.droppedCapturePoints) / battles;
+            double winRate = tanks.Sum(x => x.A15x15.wins) / battles;
+            double frags = tanks.Sum(x => x.A15x15.frags) / battles;
+
+            double expDamage = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDamage) / battles;
+            double expSpotted = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalSpotted) / battles;
+            double expDef = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDefence) / battles;
+            double expWinRate = tanks.Sum(x => (x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
+            double expFrags = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalFrags) / battles;
             return RatingHelper.CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
         }
 

@@ -232,7 +232,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
-        public override double? WN8Rating
+        public override double WN8Rating
         {
             get
             {
@@ -245,6 +245,24 @@ namespace WotDossier.Applications.ViewModel.Rows
                     double expFrags = BattlesCount * Description.Expectancy.Wn8NominalFrags / BattlesCount;
 
                     return RatingHelper.CalcWN8(AvgDamageDealt, expDamage, AvgFrags, expFrags, AvgSpotted, expSpotted, AvgDroppedCapturePoints, expDef, WinsPercent, expWinRate);
+                }
+                return 0;
+            }
+        }
+
+        public override double WN8RatingForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    double expDamage = BattlesCountDelta * Description.Expectancy.Wn8NominalDamage / BattlesCountDelta;
+                    double expSpotted = BattlesCountDelta * Description.Expectancy.Wn8NominalSpotted / BattlesCountDelta;
+                    double expDef = BattlesCountDelta * Description.Expectancy.Wn8NominalDefence / BattlesCountDelta;
+                    double expWinRate = BattlesCountDelta * Description.Expectancy.Wn8NominalWinRate / 100.0 / BattlesCountDelta;
+                    double expFrags = BattlesCountDelta * Description.Expectancy.Wn8NominalFrags / BattlesCountDelta;
+
+                    return RatingHelper.CalcWN8(AvgDamageDealtForPeriod, expDamage, AvgFragsForPeriod, expFrags, AvgSpottedForPeriod, expSpotted, AvgDroppedCapturePointsForPeriod, expDef, WinsPercentForPeriod, expWinRate);
                 }
                 return 0;
             }

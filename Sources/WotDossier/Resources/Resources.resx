@@ -1622,4 +1622,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Medal_KingOfTheHill" xml:space="preserve">
     <value>King Of The Hill</value>
   </data>
+  <data name="Medal_TacticalBreakthrough" xml:space="preserve">
+    <value>Tactical Breakthrough</value>
+  </data>
+  <data name="Column_Ratings_PerformanceRating" xml:space="preserve">
+    <value>Performance Rating</value>
+  </data>
 </root>

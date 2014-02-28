@@ -13,8 +13,6 @@ namespace WotDossier.Applications.ViewModel
         #region Fields
 
         private readonly IEnumerable<T> _list;
-        private double _wn8RatingForPeriod;
-
         #endregion
 
         #region Common delta
@@ -102,6 +100,11 @@ namespace WotDossier.Applications.ViewModel
         public double WN6RatingDelta
         {
             get { return WN6Rating - PrevStatistic.WN6Rating; }
+        }
+
+        public double WN7RatingDelta
+        {
+            get { return WN7Rating - PrevStatistic.WN7Rating; }
         }
 
         public double WN8RatingDelta
@@ -275,6 +278,31 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public double WN7RatingForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return RatingHelper.CalcWN7(BattlesCountDelta, AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
+                                                AvgDroppedCapturePointsForPeriod, WinsPercentForPeriod);
+                }
+                return 0;
+            }
+        }
+
+        private double _performanceRatingForPeriod;
+        public virtual double PerformanceRatingForPeriod
+        {
+            get { return _performanceRatingForPeriod; }
+            set
+            {
+                _performanceRatingForPeriod = value;
+                OnPropertyChanged("PerformanceRatingForPeriod");
+            }
+        }
+
+        private double _wn8RatingForPeriod;
         public virtual double WN8RatingForPeriod
         {
             get { return _wn8RatingForPeriod; }

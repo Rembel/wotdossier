@@ -239,10 +239,10 @@ namespace WotDossier.Applications.ViewModel
             get { return RatingHelper.XWN6(WN6Rating); }
         }
 
-        private double? _performanceRating;
+        private double _performanceRating;
         private double? _rbr;
 
-        public double? PerformanceRating
+        public virtual double PerformanceRating
         {
             get { return _performanceRating; }
             set

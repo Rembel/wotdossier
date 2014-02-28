@@ -78,6 +78,10 @@
         <Setter Property="Background" Value="{Binding Path=WN6RatingForPeriod, Converter={x:Static color:WN6ToColorConverter.Default}}" />
     </Style>
     
+    <Style x:Key="DataGridCellWn7ForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN7RatingForPeriod, Converter={x:Static color:WN7ToColorConverter.Default}}" />
+    </Style>
+    
     <Style x:Key="DataGridCellWn8ForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding Path=WN8RatingForPeriod, Converter={x:Static color:WN8ToColorConverter.Default}}" />
     </Style>

@@ -491,6 +491,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 RaisePropertyChanged(PropLastUsedTanksList);
                 PlayerStatistic.WN8RatingForPeriod = StatisticViewModelFactory.GetWN8RatingForPeriod(LastUsedTanksList);
+                PlayerStatistic.PerformanceRatingForPeriod = StatisticViewModelFactory.GetPerformanceRatingForPeriod(LastUsedTanksList);
             }
         }
 

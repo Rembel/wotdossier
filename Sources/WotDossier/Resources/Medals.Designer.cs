@@ -243,6 +243,16 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap armoredfist {
+            get {
+                object obj = ResourceManager.GetObject("armoredfist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ArmorPiercer {
             get {
                 object obj = ResourceManager.GetObject("ArmorPiercer", resourceCulture);
@@ -416,6 +426,16 @@ namespace WotDossier.Resources {
         internal static System.Drawing.Bitmap Kamikaze {
             get {
                 object obj = ResourceManager.GetObject("Kamikaze", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kingofthehill {
+            get {
+                object obj = ResourceManager.GetObject("kingofthehill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

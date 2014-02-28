@@ -39,6 +39,11 @@
     <!--Дозорный-->
     <medal name="Medal_PatrolDuty" id="72" icon="evileye" type="0"/>
   </BattleHero>
+  <TeamBattles>
+    <medal name="Medal_ArmoredFist" id="236" icon="armoredfist" type="0"/>
+    <medal name="Medal_KingOfTheHill" id="233" icon="kingofthehill" type="0"/>
+    <!--<medal name="Medal_" id="237" icon="" type="0"/>-->
+  </TeamBattles>
   <Special>
     <!--Коса смерти-->
     <medal name="Medal_Reaper" id="62" icon="HandOfDeath" type="1"/>

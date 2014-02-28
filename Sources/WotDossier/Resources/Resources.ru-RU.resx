@@ -1801,4 +1801,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Settings_BattleMode" xml:space="preserve">
     <value>Режим боя</value>
   </data>
+  <data name="Medal_ArmoredFist" xml:space="preserve">
+    <value>Бронетанковый кулак</value>
+  </data>
+  <data name="Medal_KingOfTheHill" xml:space="preserve">
+    <value>Царь Горы</value>
+  </data>
 </root>

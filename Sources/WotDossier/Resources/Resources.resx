@@ -1616,4 +1616,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Settings_BattleMode" xml:space="preserve">
     <value>Battle mode</value>
   </data>
+  <data name="Medal_ArmoredFist" xml:space="preserve">
+    <value>Armored Fist</value>
+  </data>
+  <data name="Medal_KingOfTheHill" xml:space="preserve">
+    <value>King Of The Hill</value>
+  </data>
 </root>

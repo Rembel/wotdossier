@@ -2691,6 +2691,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Armored Fist.
+        /// </summary>
+        public static string Medal_ArmoredFist {
+            get {
+                return ResourceManager.GetString("Medal_ArmoredFist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle Hero.
         /// </summary>
         public static string Medal_BattleHero {
@@ -2894,6 +2903,15 @@ namespace WotDossier.Resources {
         public static string Medal_Kay {
             get {
                 return ResourceManager.GetString("Medal_Kay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to King Of The Hill.
+        /// </summary>
+        public static string Medal_KingOfTheHill {
+            get {
+                return ResourceManager.GetString("Medal_KingOfTheHill", resourceCulture);
             }
         }
         

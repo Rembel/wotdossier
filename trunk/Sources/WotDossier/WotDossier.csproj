@@ -657,6 +657,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\Images\Medals\armoredfist.png" />
+    <Resource Include="Resources\Images\Medals\kingofthehill.png" />
     <Content Include="Updates\2014021200.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -116,6 +116,7 @@
                                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AvgDamageDealtForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_FragsPerBattle}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellEffForPeriodStyle}" Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn7ForPeriodStyle}" Header="WN7" Binding="{Binding WN7RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn8ForPeriodStyle}" Header="WN8" Binding="{Binding WN8RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             </DataGrid.Columns>
                             <i:Interaction.Triggers>

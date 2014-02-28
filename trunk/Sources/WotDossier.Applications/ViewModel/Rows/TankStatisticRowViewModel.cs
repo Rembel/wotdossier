@@ -250,6 +250,20 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
+        public override double PerformanceRating
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return RatingHelper.PerformanceRating(BattlesCount, Wins,
+                        BattlesCount*Description.Expectancy.PRNominalDamage,
+                        DamageDealt, Tier);
+                }
+                return 0;
+            }
+        }
+
         public override double WN8RatingForPeriod
         {
             get

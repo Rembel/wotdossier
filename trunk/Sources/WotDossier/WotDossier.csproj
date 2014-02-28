@@ -659,6 +659,7 @@
     </Compile>
     <Resource Include="Resources\Images\Medals\armoredfist.png" />
     <Resource Include="Resources\Images\Medals\kingofthehill.png" />
+    <Resource Include="Resources\Images\Medals\TacticalBreakthrough.png" />
     <Content Include="Updates\2014021200.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

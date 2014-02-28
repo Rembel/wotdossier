@@ -1807,4 +1807,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Medal_KingOfTheHill" xml:space="preserve">
     <value>Царь Горы</value>
   </data>
+  <data name="Medal_TacticalBreakthrough" xml:space="preserve">
+    <value>Тактик</value>
+  </data>
+  <data name="Column_Ratings_PerformanceRating" xml:space="preserve">
+    <value>Рейтинг Нагиба</value>
+  </data>
 </root>

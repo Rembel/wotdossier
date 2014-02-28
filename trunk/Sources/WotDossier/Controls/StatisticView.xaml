@@ -156,7 +156,7 @@
                                    DeltaForeground="{Binding EffRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                    ValueForeground="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}"
                                        HeaderLink="{Binding EffRatingLink}"/>
-            <!--Wn6Rating-->
+            <!--Wn7Rating-->
             <controls:StatisticRow Header="WN7" 
                                    Value="{Binding WN7Rating, StringFormat='### ### ### ###.0'}"
                                    Delta="{Binding WN7RatingDelta, StringFormat='+0.0;-0.0;0.0'}"

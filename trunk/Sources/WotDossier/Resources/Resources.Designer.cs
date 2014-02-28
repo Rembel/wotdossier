@@ -1341,6 +1341,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Performance Rating.
+        /// </summary>
+        public static string Column_Ratings_PerformanceRating {
+            get {
+                return ResourceManager.GetString("Column_Ratings_PerformanceRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Winrate.
         /// </summary>
         public static string Column_Ratings_Winrate {
@@ -3164,6 +3173,15 @@ namespace WotDossier.Resources {
         public static string Medal_SteelWall {
             get {
                 return ResourceManager.GetString("Medal_SteelWall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tactical Breakthrough.
+        /// </summary>
+        public static string Medal_TacticalBreakthrough {
+            get {
+                return ResourceManager.GetString("Medal_TacticalBreakthrough", resourceCulture);
             }
         }
         

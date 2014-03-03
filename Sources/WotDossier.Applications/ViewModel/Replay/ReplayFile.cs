@@ -73,6 +73,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 }
                 ClientVersion = replay.datablock_1.clientVersionFromExe;
 
+                IsWinner = BattleStatus.Unknown;
+
                 Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
                 Match tankNameMatch = tankNameRegexp.Match(replay.datablock_1.playerVehicle);
                 CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);

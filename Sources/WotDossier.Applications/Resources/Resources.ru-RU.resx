@@ -379,4 +379,16 @@
   <data name="BattleMode_TeamBattle" xml:space="preserve">
     <value>Командный бой</value>
   </data>
+  <data name="BattleStatus_Defeat" xml:space="preserve">
+    <value>Поражение</value>
+  </data>
+  <data name="BattleStatus_Draw" xml:space="preserve">
+    <value>Ничья</value>
+  </data>
+  <data name="BattleStatus_Victory" xml:space="preserve">
+    <value>Победа</value>
+  </data>
+  <data name="BattleStatus_Unknown" xml:space="preserve">
+    <value>Нет данных</value>
+  </data>
 </root>

@@ -89,6 +89,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Data.
+        /// </summary>
+        public static string BattleStatus_Unknown {
+            get {
+                return ResourceManager.GetString("BattleStatus_Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Victory.
         /// </summary>
         public static string BattleStatus_Victory {
@@ -3402,6 +3411,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string ReplaysFilter_Result {
+            get {
+                return ResourceManager.GetString("ReplaysFilter_Result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy link to clipboard.
         /// </summary>
         public static string ReplaysTab_CopyToClipboard {
@@ -3749,6 +3767,15 @@ namespace WotDossier.Resources {
         public static string TankFilterPanel_Levels {
             get {
                 return ResourceManager.GetString("TankFilterPanel_Levels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        public static string TankFilterPanel_Map {
+            get {
+                return ResourceManager.GetString("TankFilterPanel_Map", resourceCulture);
             }
         }
         
@@ -4177,6 +4204,29 @@ namespace WotDossier.Resources {
         public static string Tooltip_EpicAchievements_Tarczay {
             get {
                 return ResourceManager.GetString("Tooltip_EpicAchievements_Tarczay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroy all enemy vehicles while losing only one friendly vehicle.
+        ///  • Win the battle.
+        ///  • Awarded to all team members.
+        ///  • Can be obtained in Team Battles only..
+        /// </summary>
+        public static string Tooltip_GroupAchievements_ArmoredFist {
+            get {
+                return ResourceManager.GetString("Tooltip_GroupAchievements_ArmoredFist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Be the only survivor while driving a tank or a tank destroyer.
+        ///  • Win the battle.
+        ///  • Can be obtained in Team Battles only..
+        /// </summary>
+        public static string Tooltip_GroupAchievements_KingOfTheHill {
+            get {
+                return ResourceManager.GetString("Tooltip_GroupAchievements_KingOfTheHill", resourceCulture);
             }
         }
         

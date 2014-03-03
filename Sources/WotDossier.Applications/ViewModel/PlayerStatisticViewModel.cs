@@ -460,6 +460,10 @@ namespace WotDossier.Applications.ViewModel
             Updated = stat.Updated;
             Tier = stat.AvgLevel;
 
+            ArmoredFist = stat.AchievementsIdObject.ArmoredFist;
+            TacticalBreakthrough = stat.AchievementsIdObject.TacticalBreakthrough;
+            KingOfTheHill = stat.AchievementsIdObject.KingOfTheHill;
+
             #endregion
         }
 

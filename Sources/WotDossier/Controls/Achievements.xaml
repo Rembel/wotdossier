@@ -80,16 +80,6 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_RadleyWalters}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_RadleyWalters}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding CrucialContribution}" Delta="{Binding CrucialContributionDelta}" Source="../Resources/Images/Medals/MedalCrucialContribution.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CrucialContribution}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding BrothersInArms}" Delta="{Binding BrothersInArmsDelta}" Source="../Resources/Images/Medals/MedalBrothersInArms.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_BrothersInArms}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding Kolobanov}" Delta="{Binding KolobanovDelta}" Source="../Resources/Images/Medals/MedalKolobanov.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Kolobanov}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Kolobanov}" />
@@ -176,9 +166,33 @@
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
             </WrapPanel>
+            <!--Group Achievements-->
+            <TextBlock Text="Group Achievements" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+                <controls:MedalAchievement Value="{Binding CrucialContribution}" Delta="{Binding CrucialContributionDelta}" Source="../Resources/Images/Medals/MedalCrucialContribution.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CrucialContribution}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_CrucialContribution}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding BrothersInArms}" Delta="{Binding BrothersInArmsDelta}" Source="../Resources/Images/Medals/MedalBrothersInArms.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_BrothersInArms}" Text="{x:Static resources:Resources.Tooltip_BattleHeroAchievements_BrothersInArms}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding ArmoredFist}" Delta="{Binding ArmoredFistDelta}" Source="../Resources/Images/Medals/ArmoredFist.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_ArmoredFist}" Text="{x:Static resources:Resources.Tooltip_GroupAchievements_ArmoredFist}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+            </WrapPanel>
             <!--Special Achievements-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_Special}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+                <controls:MedalAchievement Value="{Binding TacticalBreakthrough}" Delta="{Binding TacticalBreakthroughDelta}" Source="../Resources/Images/Medals/TacticalBreakthrough.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_TacticalBreakthrough}" Text="TacticalBreakthrough" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding Survivor}" Delta="{Binding SurvivorDelta}" Source="../Resources/Images/Medals/Diehard.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Survivor}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}" />
@@ -247,6 +261,11 @@
             <!--Commemorative Achievements-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_CommemorativeAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+                <controls:MedalAchievement Value="{Binding KingOfTheHill}" Delta="{Binding KingOfTheHillDelta}" Source="../Resources/Images/Medals/KingOfTheHill.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_KingOfTheHill}" Text="{x:Static resources:Resources.Tooltip_GroupAchievements_KingOfTheHill}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding CoolHeaded}" Delta="{Binding CoolHeadedDelta}" Source="../Resources/Images/Medals/Imperturbable.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CoolHeaded}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" />

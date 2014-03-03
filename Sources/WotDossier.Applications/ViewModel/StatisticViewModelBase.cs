@@ -427,6 +427,10 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        public int KingOfTheHill { get; set; }
+        public int ArmoredFist { get; set; }
+        public int TacticalBreakthrough { get; set; }
+
         #endregion
 
         /// <summary>

@@ -486,6 +486,19 @@ namespace WotDossier.Applications.ViewModel
             get { return Spartan - PrevStatistic.Spartan; }
         }
 
+        public int KingOfTheHillDelta
+        {
+            get { return KingOfTheHill - PrevStatistic.KingOfTheHill; }
+        }
+        public int ArmoredFistDelta
+        {
+            get { return ArmoredFist - PrevStatistic.ArmoredFist; }
+        }
+        public int TacticalBreakthroughDelta
+        {
+            get { return TacticalBreakthrough - PrevStatistic.TacticalBreakthrough; }
+        }
+
         #endregion
 
         #region [ ITankRowEpic ]

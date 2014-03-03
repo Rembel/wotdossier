@@ -15,6 +15,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -22,12 +23,13 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Карта" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="1" Text="{x:Static Resources:Resources.TankFilterPanel_Levels}"></TextBlock>
-        <TextBlock Grid.Row="2" Text="{x:Static Resources:Resources.TankFilterPanel_Types}"></TextBlock>
-        <TextBlock Grid.Row="3" Text="{x:Static Resources:Resources.TankFilterPanel_Country}"></TextBlock>
-        <TextBlock Grid.Row="4" Text="{x:Static Resources:Resources.ReplaysFilter_ByColumns}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="5" Text="{x:Static Resources:Resources.ReplaysFilter_Player}" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{x:Static Resources:Resources.TankFilterPanel_Map}" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Text="{x:Static Resources:Resources.TankFilterPanel_Levels}" />
+        <TextBlock Grid.Row="2" Text="{x:Static Resources:Resources.TankFilterPanel_Types}" />
+        <TextBlock Grid.Row="3" Text="{x:Static Resources:Resources.TankFilterPanel_Country}" />
+        <TextBlock Grid.Row="4" Text="{x:Static Resources:Resources.ReplaysFilter_ByColumns}" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="5" Text="{x:Static Resources:Resources.ReplaysFilter_Player}" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="6" Text="{x:Static Resources:Resources.ReplaysFilter_Result}" VerticalAlignment="Center" />
 
         <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" Width="200" ItemsSource="{Binding Maps}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left"></ComboBox>
 
@@ -70,6 +72,7 @@
             <TextBox Margin="6,3,6,3" Width="50"  Text="{Binding EndValue, NotifyOnValidationError=False}" controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
         </StackPanel>
         <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="6,3,6,3" Width="200" Text="{Binding Member, NotifyOnValidationError=False}"  controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
-        <Button Margin="6,3,6,3" Content="{x:Static Resources:Resources.Btn_Clear}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Command="{Binding ClearCommand}"></Button>
+        <ComboBox Margin="6,3,6,3" Grid.Row="6" Grid.Column="1" Width="200" ItemsSource="{Binding BattleResults}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding SelectedBattleResult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+        <Button Margin="6,3,6,3" Content="{x:Static Resources:Resources.Btn_Clear}" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" Command="{Binding ClearCommand}"></Button>
     </Grid>
 </UserControl>

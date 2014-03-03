@@ -1813,4 +1813,24 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Column_Ratings_PerformanceRating" xml:space="preserve">
     <value>Рейтинг Нагиба</value>
   </data>
+  <data name="Tooltip_GroupAchievements_ArmoredFist" xml:space="preserve">
+    <value>Уничтожить всю технику противника, потеряв при этом не более 1 машины.
+  • Победить в бою.
+  • Выдаётся всем членам команды.
+  • Выдаётся только в Командных боях.</value>
+  </data>
+  <data name="Tooltip_GroupAchievements_KingOfTheHill" xml:space="preserve">
+    <value>Остаться единственным выжившим в бою, управляя танком или ПТ-САУ.
+  • Победить в бою.
+  • Выдаётся только в Командных боях.</value>
+  </data>
+  <data name="TankFilterPanel_Map" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="ReplaysFilter_Result" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="BattleStatus_Unknown" xml:space="preserve">
+    <value>Нет данных</value>
+  </data>
 </root>

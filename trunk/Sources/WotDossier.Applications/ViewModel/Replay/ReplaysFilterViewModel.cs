@@ -44,6 +44,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         private int? _startValue;
         private int? _endValue;
         private string _member;
+        private BattleStatus _selectedBattleResult = BattleStatus.Unknown;
 
         public bool Level10Selected
         {
@@ -394,6 +395,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                                     || x.CountryId == (int)Country.France && FranceSelected
                                     || x.CountryId == (int)Country.US && USSelected
                                     || x.CountryId == (int)Country.UK && UKSelected)
+                                    &&
+                                    (x.IsWinner == SelectedBattleResult || SelectedBattleResult == BattleStatus.Unknown)
                                    && (x.Tank.Premium == 1 || !IsPremium)
                                    && (SelectedMap == null || x.MapId == SelectedMap.Key || SelectedMap.Key == 0)
                                    && FieldFilter(x)
@@ -467,6 +470,14 @@ namespace WotDossier.Applications.ViewModel.Replay
                 new KeyValue<string, string>(ReplayFile.PropDamaged,Resources.Resources.Column_Replay_Damaged), 
             };
 
+            BattleResults = new List<KeyValue<BattleStatus, string>>
+            {
+                new KeyValue<BattleStatus, string>(BattleStatus.Unknown, Resources.Resources.TankFilterPanel_All), 
+                new KeyValue<BattleStatus, string>(BattleStatus.Victory, Resources.Resources.BattleStatus_Victory), 
+                new KeyValue<BattleStatus, string>(BattleStatus.Defeat,Resources.Resources.BattleStatus_Defeat), 
+                new KeyValue<BattleStatus, string>(BattleStatus.Draw,Resources.Resources.BattleStatus_Draw), 
+            };
+
             ClearCommand = new DelegateCommand(OnClear);
         }
 
@@ -487,6 +498,18 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         public List<KeyValue<string, string>> FilterFields { get; set; }
+
+        public List<KeyValue<BattleStatus, string>> BattleResults { get; set; }
+
+        public BattleStatus SelectedBattleResult
+        {
+            get { return _selectedBattleResult; }
+            set
+            {
+                _selectedBattleResult = value;
+                OnPropertyChanged("SelectedBattleResult");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

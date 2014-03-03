@@ -1628,4 +1628,24 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Column_Ratings_PerformanceRating" xml:space="preserve">
     <value>Performance Rating</value>
   </data>
+  <data name="Tooltip_GroupAchievements_ArmoredFist" xml:space="preserve">
+    <value>Destroy all enemy vehicles while losing only one friendly vehicle.
+  • Win the battle.
+  • Awarded to all team members.
+  • Can be obtained in Team Battles only.</value>
+  </data>
+  <data name="Tooltip_GroupAchievements_KingOfTheHill" xml:space="preserve">
+    <value>Be the only survivor while driving a tank or a tank destroyer.
+  • Win the battle.
+  • Can be obtained in Team Battles only.</value>
+  </data>
+  <data name="TankFilterPanel_Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="ReplaysFilter_Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="BattleStatus_Unknown" xml:space="preserve">
+    <value>No Data</value>
+  </data>
 </root>

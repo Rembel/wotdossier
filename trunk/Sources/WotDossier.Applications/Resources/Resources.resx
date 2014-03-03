@@ -379,4 +379,16 @@ Avg Spotted: {1:0.00}</value>
   <data name="BattleMode_TeamBattle" xml:space="preserve">
     <value>Team Battle</value>
   </data>
+  <data name="BattleStatus_Defeat" xml:space="preserve">
+    <value>Defeat</value>
+  </data>
+  <data name="BattleStatus_Draw" xml:space="preserve">
+    <value>Draw</value>
+  </data>
+  <data name="BattleStatus_Victory" xml:space="preserve">
+    <value>Victory</value>
+  </data>
+  <data name="BattleStatus_Unknown" xml:space="preserve">
+    <value>No Data</value>
+  </data>
 </root>

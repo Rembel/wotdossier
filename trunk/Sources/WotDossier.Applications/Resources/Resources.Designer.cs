@@ -79,6 +79,42 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Defeat.
+        /// </summary>
+        internal static string BattleStatus_Defeat {
+            get {
+                return ResourceManager.GetString("BattleStatus_Defeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Draw.
+        /// </summary>
+        internal static string BattleStatus_Draw {
+            get {
+                return ResourceManager.GetString("BattleStatus_Draw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Data.
+        /// </summary>
+        internal static string BattleStatus_Unknown {
+            get {
+                return ResourceManager.GetString("BattleStatus_Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victory.
+        /// </summary>
+        internal static string BattleStatus_Victory {
+            get {
+                return ResourceManager.GetString("BattleStatus_Victory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clan War.
         /// </summary>
         internal static string BattleType_ClanWar {

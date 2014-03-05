@@ -508,76 +508,76 @@ namespace WotDossier.Test
             MedalHelper.ReadMedals();
         }
         
-        [Test]
-        public void TEffTest()
-        {
-            Dictionary<string, VStat> vstat = WotApiClient.Instance.ReadVstat();
+        //[Test]
+        //public void TEffTest()
+        //{
+        //    Dictionary<string, VStat> vstat = WotApiClient.Instance.ReadVstat();
 
-            int playerId = 10800699;
+        //    int playerId = 10800699;
 
-            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic(playerId);
-            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+        //    IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic(playerId);
+        //    PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
-            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
-            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
+        //    IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
+        //    List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
-            TankJson is3 = tankJsons.First(x => x.UniqueId() == 29);
-            TankDescription tankDescription = Dictionaries.Instance.Tanks[29];
-            VStat stat = vstat[tankDescription.Icon.Icon];
+        //    TankJson is3 = tankJsons.First(x => x.UniqueId() == 29);
+        //    TankDescription tankDescription = Dictionaries.Instance.Tanks[29];
+        //    VStat stat = vstat[tankDescription.Icon.Icon];
 
-            double damageDealt = is3.A15x15.damageDealt;
-            double battlesCount = is3.A15x15.battlesCount;
-            double spoted = is3.A15x15.spotted;
-            double frags = is3.A15x15.frags;
+        //    double damageDealt = is3.A15x15.damageDealt;
+        //    double battlesCount = is3.A15x15.battlesCount;
+        //    double spoted = is3.A15x15.spotted;
+        //    double frags = is3.A15x15.frags;
 
-            //корректирующие коэффициенты, которые задаются для каждого типа и уровня танка согласно матрице 
-            //(на время тестов можно изменять эти коэффициенты в конфиге в секции "consts")
-            double Kf = 1;
-            double Kd = 3;
-            double Ks = 1;
-            double Kmin = 0.4;
+        //    //корректирующие коэффициенты, которые задаются для каждого типа и уровня танка согласно матрице 
+        //    //(на время тестов можно изменять эти коэффициенты в конфиге в секции "consts")
+        //    double Kf = 1;
+        //    double Kd = 3;
+        //    double Ks = 1;
+        //    double Kmin = 0.4;
 
-            double Dmax = stat.topD;
-            double Smax = stat.topS;
-            double Fmax = stat.topF;
+        //    double Dmax = stat.topD;
+        //    double Smax = stat.topS;
+        //    double Fmax = stat.topF;
 
-            double Davg = stat.avgD;
-            double Savg = stat.avgS;
-            double Favg = stat.avgF;
+        //    double Davg = stat.avgD;
+        //    double Savg = stat.avgS;
+        //    double Favg = stat.avgF;
 
-            double Dmin = Davg * Kmin;
-            double Smin = Savg * Kmin;
-            double Fmin = Favg * Kmin;
+        //    double Dmin = Davg * Kmin;
+        //    double Smin = Savg * Kmin;
+        //    double Fmin = Favg * Kmin;
 
-            //параметры текущего игрока для текущего танка (дамаг)
-            double Dt = damageDealt / battlesCount;
-            double D = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) :
-                           1 + (Dt - Davg) / (Davg - Dmin);
+        //    //параметры текущего игрока для текущего танка (дамаг)
+        //    double Dt = damageDealt / battlesCount;
+        //    double D = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) :
+        //                   1 + (Dt - Davg) / (Davg - Dmin);
 
-            //параметры текущего игрока для текущего танка (фраги)
-            double Ft = frags / battlesCount;
-            double F = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) :
-                           1 + (Ft - Favg) / (Favg - Fmin);
+        //    //параметры текущего игрока для текущего танка (фраги)
+        //    double Ft = frags / battlesCount;
+        //    double F = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) :
+        //                   1 + (Ft - Favg) / (Favg - Fmin);
 
-            //параметры текущего игрока для текущего танка (засвет)
-            double St = spoted / battlesCount;
-            double S = St > Savg ? 1 + (St - Savg) / (Smax - Savg) :
-                           1 + (St - Savg) / (Savg - Smin);
+        //    //параметры текущего игрока для текущего танка (засвет)
+        //    double St = spoted / battlesCount;
+        //    double S = St > Savg ? 1 + (St - Savg) / (Smax - Savg) :
+        //                   1 + (St - Savg) / (Savg - Smin);
 
-            double TEFF = (D * Kd + F * Kf + S * Ks) / (Kd + Kf + Ks) * 1000;
+        //    double TEFF = (D * Kd + F * Kf + S * Ks) / (Kd + Kf + Ks) * 1000;
 
-            Console.WriteLine(TEFF);
+        //    Console.WriteLine(TEFF);
 
-            double D2 = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) : Dt / Davg;
+        //    double D2 = Dt > Davg ? 1 + (Dt - Davg) / (Dmax - Davg) : Dt / Davg;
 
-            double F2 = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) : Ft / Favg;
+        //    double F2 = Ft > Favg ? 1 + (Ft - Favg) / (Fmax - Favg) : Ft / Favg;
 
-            double S2 = St > Savg ? 1 + (St - Savg) / (Smax - Savg) : St / Savg;
+        //    double S2 = St > Savg ? 1 + (St - Savg) / (Smax - Savg) : St / Savg;
 
-            double TEFF2 = (D2 * Kd + F2 * Kf + S2 * Ks) / (Kd + Kf + Ks) * 1000;
+        //    double TEFF2 = (D2 * Kd + F2 * Kf + S2 * Ks) / (Kd + Kf + Ks) * 1000;
 
-            Console.WriteLine(TEFF2);
-        }
+        //    Console.WriteLine(TEFF2);
+        //}
 
         [Test]
         public void XVMTest()

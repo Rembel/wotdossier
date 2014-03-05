@@ -391,4 +391,7 @@ Avg Spotted: {1:0.00}</value>
   <data name="BattleStatus_Unknown" xml:space="preserve">
     <value>No Data</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
 </root>

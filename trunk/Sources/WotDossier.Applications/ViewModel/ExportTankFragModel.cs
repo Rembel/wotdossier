@@ -5,10 +5,10 @@ namespace WotDossier.Applications.ViewModel
 {
     internal class ExportTankFragModel : IExportTankFragModel
     {
-        private readonly TankStatisticRowViewModel _tank;
+        private readonly ITankStatisticRow _tank;
         private readonly FragsJson _frag;
 
-        public ExportTankFragModel(TankStatisticRowViewModel tank, FragsJson frag)
+        public ExportTankFragModel(ITankStatisticRow tank, FragsJson frag)
         {
             _tank = tank;
             _frag = frag;

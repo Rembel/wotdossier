@@ -18,6 +18,7 @@ using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Player;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework;
@@ -70,19 +71,19 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private List<TankStatisticRowViewModel> _tanks = new List<TankStatisticRowViewModel>();
-        public List<TankStatisticRowViewModel> Tanks
+        private List<ITankStatisticRow> _tanks = new List<ITankStatisticRow>();
+        public List<ITankStatisticRow> Tanks
         {
             get
             {
-                List<TankStatisticRowViewModel> tankStatisticRowViewModels = TankFilter.Filter(_tanks);
+                List<ITankStatisticRow> tankStatisticRowViewModels = TankFilter.Filter(_tanks);
                 if (tankStatisticRowViewModels.Count > 0)
                 {
                     TotalTankStatisticRowViewModel totalRow =
                         new TotalTankStatisticRowViewModel(tankStatisticRowViewModels.ToList());
                     tankStatisticRowViewModels.Insert(0, totalRow);
                 }
-                FooterList<TankStatisticRowViewModel> statisticRowViewModels = new FooterList<TankStatisticRowViewModel>();
+                FooterList<ITankStatisticRow> statisticRowViewModels = new FooterList<ITankStatisticRow>();
                 statisticRowViewModels.AddRange(tankStatisticRowViewModels);
                 return statisticRowViewModels;
             }
@@ -147,11 +148,11 @@ namespace WotDossier.Applications.ViewModel
 
         public ReplaysViewModel ReplaysViewModel { get; set; }
 
-        public List<TankStatisticRowViewModel> LastUsedTanksList
+        public List<ITankStatisticRow> LastUsedTanksList
         {
             get
             {
-                List<TankStatisticRowViewModel> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
+                List<ITankStatisticRow> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
                 return list;
             }
         }
@@ -241,15 +242,15 @@ namespace WotDossier.Applications.ViewModel
             provider.Export(_tanks, new List<Type>
             {
                 typeof(ITankRowBase),
-                typeof(ITankRowXP),
+                typeof(IStatisticXp),
                 typeof(ITankRowBattles),
                 typeof(ITankRowFrags),
                 typeof(ITankRowDamage),
-                typeof(ITankRowBattleAwards),
-                typeof(ITankRowSpecialAwards),
-                typeof(ITankRowSeries),
-                typeof(ITankRowMedals),
-                typeof(ITankRowEpic),
+                typeof(IStatisticBattleAwards),
+                typeof(IStatisticSpecialAwards),
+                typeof(IStatisticSeries),
+                typeof(IStatisticMedals),
+                typeof(IStatisticEpic),
                 typeof(ITankRowTime),
                 typeof(ITankRowPerformance)
             });
@@ -325,7 +326,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnRemoveFromFavorite(object row)
         {
-            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
+            ITankStatisticRow model = row as ITankStatisticRow;
             if (model != null)
             {
                 SetFavorite(model, false);
@@ -334,13 +335,13 @@ namespace WotDossier.Applications.ViewModel
 
         private bool CanRemoveFromFavorite(object row)
         {
-            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
+            ITankStatisticRow model = row as ITankStatisticRow;
             return model != null && model.IsFavorite;
         }
 
         private void OnAddToFavorite(object data)
         {
-            TankStatisticRowViewModel model = data as TankStatisticRowViewModel;
+            ITankStatisticRow model = data as ITankStatisticRow;
             if (model != null)
             {
                 SetFavorite(model, true);
@@ -349,15 +350,16 @@ namespace WotDossier.Applications.ViewModel
 
         private bool CanAddToFavorite(object row)
         {
-            TankStatisticRowViewModel model = row as TankStatisticRowViewModel;
+            ITankStatisticRow model = row as ITankStatisticRow;
             return model != null && !model.IsFavorite;
         }
 
         private void OnRowDoubleClick(object rowData)
         {
-            TankStatisticRowViewModel tankStatisticRowViewModel = rowData as TankStatisticRowViewModel;
+            ITankStatisticRow tankStatisticRowViewModel = rowData as ITankStatisticRow;
 
-            if (tankStatisticRowViewModel != null)
+            //NRE if row of type TotalTankStatisticRowViewModel
+            if (tankStatisticRowViewModel != null && !(tankStatisticRowViewModel is TotalTankStatisticRowViewModel))
             {
                 var export = CompositionContainerFactory.Instance.GetExport<TankStatisticViewModel>();
                 if (export != null)
@@ -369,7 +371,7 @@ namespace WotDossier.Applications.ViewModel
                     {
                         int battles = tankStatisticRowViewModel.BattlesCount - appSettings.PeriodSettings.LastNBattles;
 
-                        TankStatisticRowViewModel model = tankStatisticRowViewModel.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
+                        ITankStatisticRow model = tankStatisticRowViewModel.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                         tankStatisticRowViewModel.SetPreviousStatistic(model);
                     }
 
@@ -525,8 +527,14 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
 
-            List<TankStatisticRowViewModel> tankStatisticRowViewModels = StatisticViewModelFactory.Create(entities);
-            Tanks = tankStatisticRowViewModels;
+            if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
+            {
+                Tanks = StatisticViewModelFactory.CreateBattlesStatistic(entities);
+            }
+            else
+            {
+                Tanks = StatisticViewModelFactory.CreateTeamBattlesStatistic(entities);
+            }
 
             MasterTanker = StatisticViewModelFactory.GetMasterTankerList(_tanks);
 
@@ -590,7 +598,7 @@ namespace WotDossier.Applications.ViewModel
         
         #endregion
 
-        private void SetFavorite(TankStatisticRowViewModel model, bool favorite)
+        private void SetFavorite(ITankStatisticRow model, bool favorite)
         {
             AppSettings settings = SettingsReader.Get();
             model.IsFavorite = favorite;

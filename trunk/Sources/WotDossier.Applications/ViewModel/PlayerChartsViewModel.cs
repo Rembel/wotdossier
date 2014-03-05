@@ -375,7 +375,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void InitEfficiencyByTierChart(List<TankStatisticRowViewModel> statisticViewModels)
+        private void InitEfficiencyByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, RatingHelper.CalcER(
                 x.Average(y => y.AvgDamageDealt),
@@ -387,7 +387,7 @@ namespace WotDossier.Applications.ViewModel
             EfficiencyByTierDataSource = dataSource.ToList();
         }
 
-        private void InitEfficiencyByTypeChart(List<TankStatisticRowViewModel> statisticViewModels)
+        private void InitEfficiencyByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.CalcER(
                 x.Average(y => y.AvgDamageDealt),
@@ -399,7 +399,7 @@ namespace WotDossier.Applications.ViewModel
             EfficiencyByTypeDataSource = dataSource.ToList();
         }
 
-        private void InitEfficiencyByCountryChart(List<TankStatisticRowViewModel> statisticViewModels)
+        private void InitEfficiencyByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.CalcER(
                 x.Average(y => y.AvgDamageDealt),
@@ -411,7 +411,7 @@ namespace WotDossier.Applications.ViewModel
             EfficiencyByCountryDataSource = dataSource.ToList();
         }
 
-        private void InitBattlesByTierChart(List<TankStatisticRowViewModel> statisticViewModels)
+        private void InitBattlesByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount)));
             BattlesByTierDataSource = dataSource.ToList();
@@ -419,7 +419,7 @@ namespace WotDossier.Applications.ViewModel
             MaxBattlesByTier = max * 1.2;
         }
 
-        private void InitBattlesByTypeChart(List<TankStatisticRowViewModel> statisticViewModels)
+        private void InitBattlesByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount)));
             BattlesByTypeDataSource = dataSource.ToList();
@@ -427,7 +427,7 @@ namespace WotDossier.Applications.ViewModel
             MaxBattlesByType = max*1.2;
         }
 
-        private void InitBattlesByCountryChart(List<TankStatisticRowViewModel> statisticViewModels)
+        private void InitBattlesByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount)));
             BattlesByCountryDataSource = dataSource.ToList();
@@ -506,9 +506,9 @@ namespace WotDossier.Applications.ViewModel
             AvgDamageDataSource = dataSource;
         }
 
-        public void InitLastUsedTanksChart(PlayerStatisticViewModel playerStatistic, List<TankStatisticRowViewModel> tanks)
+        public void InitLastUsedTanksChart(PlayerStatisticViewModel playerStatistic, List<ITankStatisticRow> tanks)
         {
-            IEnumerable<TankStatisticRowViewModel> viewModels = tanks.Where(x => x.Updated > playerStatistic.PreviousDate);
+            IEnumerable<ITankStatisticRow> viewModels = tanks.Where(x => x.Updated > playerStatistic.PreviousDate);
             IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo { TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta });
             LastUsedTanksDataSource = items.ToList();
         }
@@ -551,7 +551,7 @@ namespace WotDossier.Applications.ViewModel
             #endregion
         }
 
-        public void InitCharts(PlayerStatisticViewModel playerStatistic, List<TankStatisticRowViewModel> tanks)
+        public void InitCharts(PlayerStatisticViewModel playerStatistic, List<ITankStatisticRow> tanks)
         {
             List<PlayerStatisticViewModel> statisticViewModels = playerStatistic.GetAll();
             InitRatingChart(statisticViewModels);

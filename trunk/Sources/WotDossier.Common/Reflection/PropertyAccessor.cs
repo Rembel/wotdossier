@@ -27,11 +27,12 @@ namespace WotDossier.Common.Reflection
         /// <param name="property">Property name.</param>
         public PropertyAccessor(Type targetType, string property)
         {
-            mTargetType = targetType;
             mProperty = property;
 
-            PropertyInfo propertyInfo =
-                targetType.GetProperty(property);
+            PropertyInfoEx propertyInfoEx = targetType.GetPublicProperty(property);
+
+            PropertyInfo propertyInfo = propertyInfoEx.PropertyInfo;
+            mTargetType = propertyInfoEx.Type;
 
             //
             // Make sure the property exists

@@ -5,16 +5,47 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TotalTankStatisticRowViewModel : TankStatisticRowViewModel
+    public class TotalTankStatisticRowViewModel : TankStatisticRowViewModelBase<TotalTankStatisticRowViewModel>
     {
+        public override double WN8Rating
+        {
+            get
+            {
+                //if (BattlesCount > 0)
+                //{
+                //    double expDamage = BattlesCount * Description.Expectancy.Wn8NominalDamage / BattlesCount;
+                //    double expSpotted = BattlesCount * Description.Expectancy.Wn8NominalSpotted / BattlesCount;
+                //    double expDef = BattlesCount * Description.Expectancy.Wn8NominalDefence / BattlesCount;
+                //    double expWinRate = BattlesCount * Description.Expectancy.Wn8NominalWinRate / 100.0 / BattlesCount;
+                //    double expFrags = BattlesCount * Description.Expectancy.Wn8NominalFrags / BattlesCount;
+
+                //    return RatingHelper.CalcWN8(AvgDamageDealt, expDamage, AvgFrags, expFrags, AvgSpotted, expSpotted, AvgDroppedCapturePoints, expDef, WinsPercent, expWinRate);
+                //}
+                return 0;
+            }
+        }
+
+        public override double PerformanceRating
+        {
+            get
+            {
+                //if (BattlesCount > 0)
+                //{
+                //    return RatingHelper.PerformanceRating(BattlesCount, Wins,
+                //        BattlesCount * Description.Expectancy.PRNominalDamage,
+                //        DamageDealt, Tier);
+                //}
+                return 0;
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TotalTankStatisticRowViewModel(List<TankStatisticRowViewModel> list)
+        public TotalTankStatisticRowViewModel(List<ITankStatisticRow> list)
         {
             Type = -1;
-            Tank = "Total";
+            Tank = Resources.Resources.Total;
             Icon = null;
             CountryId = -1;
             TankId = -1;
@@ -158,7 +189,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             PlayTime = new TimeSpan(0, 0, 0, (int) totalSeconds);
             if (BattlesCount > 0)
             {
-                AverageBattleTime = new TimeSpan(0, 0, 0, (int) (totalSeconds / (double)BattlesCount));
+                AverageBattleTime = new TimeSpan(0, 0, 0, (int) (totalSeconds / BattlesCount));
             }
             #endregion
 
@@ -169,12 +200,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             MaxXp = list.Max(x => x.MaxXp);
             #endregion
 
-            #region [ ITankRowRatings ]
-            //MarkOfMastery = list.Sum(x => x.markOfMastery;
 
-            #endregion
-
-            //Updated = Utils.UnixDateToDateTime(tank.Common.updated);
         }
 
         /// <summary>

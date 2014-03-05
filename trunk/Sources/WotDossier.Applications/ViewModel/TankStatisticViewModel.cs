@@ -19,9 +19,9 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(TankStatisticViewModel))]
     public class TankStatisticViewModel : ViewModel<ITankStatisticView>
     {
-        private TankStatisticRowViewModel _tankStatistic;
+        private ITankStatisticRow _tankStatistic;
 
-        public TankStatisticRowViewModel TankStatistic
+        public ITankStatisticRow TankStatistic
         {
             get { return _tankStatistic; }
             set
@@ -96,14 +96,14 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.ShowDialog();
         }
 
-        private void InitChart(IEnumerable<StatisticViewModelBase> statisticViewModels)
+        private void InitChart(IEnumerable<ITankStatisticRow> statisticViewModels)
         {
             InitRatingChart(statisticViewModels);
             InitWinPercentChart(statisticViewModels);
             InitAvgDamageChart(statisticViewModels);
         }
 
-        private void InitRatingChart(IEnumerable<StatisticViewModelBase> statisticViewModels)
+        private void InitRatingChart(IEnumerable<ITankStatisticRow> statisticViewModels)
         {
             DataRect dataRect = DataRect.Create(0, 0, 100000, 2500);
             ChartRating.Viewport.Domain = dataRect;
@@ -131,7 +131,7 @@ namespace WotDossier.Applications.ViewModel
             ChartRating.FitToView();
         }
 
-        private void InitWinPercentChart(IEnumerable<StatisticViewModelBase> statisticViewModels)
+        private void InitWinPercentChart(IEnumerable<ITankStatisticRow> statisticViewModels)
         {
             ChartWinPercent.RemoveUserElements();
 
@@ -146,7 +146,7 @@ namespace WotDossier.Applications.ViewModel
             ChartWinPercent.FitToView();
         }
 
-        private void InitAvgDamageChart(IEnumerable<StatisticViewModelBase> statisticViewModels)
+        private void InitAvgDamageChart(IEnumerable<ITankStatisticRow> statisticViewModels)
         {
             ChartAvgDamage.RemoveUserElements();
 

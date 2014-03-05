@@ -387,15 +387,15 @@ namespace WotDossier.Dal
                 v2.A7x7.battlesCountBefore8_8 = tankJson.A7x7.battlesCountBefore8_8;
                 v2.A7x7.xpBefore8_8 = tankJson.A7x7.xpBefore8_8;
 
-                //v2.A7x7.originalXP = tankJson.A7x7_2.originalXP;
-                //v2.A7x7.damageAssistedRadio = tankJson.A7x7_2.damageAssistedRadio;
-                //v2.A7x7.damageAssistedTrack = tankJson.A7x7_2.damageAssistedTrack;
-                //v2.A7x7.shotsReceived = tankJson.A7x7_2.shotsReceived;
-                //v2.A7x7.noDamageShotsReceived = tankJson.A7x7_2.noDamageShotsReceived;
-                //v2.A7x7.piercedReceived = tankJson.A7x7_2.piercedReceived;
-                //v2.A7x7.heHitsReceived = tankJson.A7x7_2.heHitsReceived;
-                //v2.A7x7.he_hits = tankJson.A7x7_2.he_hits;
-                //v2.A7x7.pierced = tankJson.A7x7_2.pierced;
+                v2.A7x7.originalXP = tankJson.A7x7.originalXP;
+                v2.A7x7.damageAssistedRadio = tankJson.A7x7.damageAssistedRadio;
+                v2.A7x7.damageAssistedTrack = tankJson.A7x7.damageAssistedTrack;
+                v2.A7x7.shotsReceived = tankJson.A7x7.shotsReceived;
+                v2.A7x7.noDamageShotsReceived = tankJson.A7x7.noDamageShotsReceived;
+                v2.A7x7.piercedReceived = tankJson.A7x7.piercedReceived;
+                v2.A7x7.heHitsReceived = tankJson.A7x7.heHitsReceived;
+                v2.A7x7.he_hits = tankJson.A7x7.he_hits;
+                v2.A7x7.pierced = tankJson.A7x7.pierced;
 
                 v2.A7x7.maxDamage = tankJson.Max7x7.maxDamage;
                 v2.A7x7.maxFrags = tankJson.Max7x7.maxFrags;

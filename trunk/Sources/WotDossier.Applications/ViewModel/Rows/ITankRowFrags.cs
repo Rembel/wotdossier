@@ -9,5 +9,6 @@
         int Tier8Frags { get; set; }
         int BeastFrags { get; set; }
         int SinaiFrags { get; set; }
+        int PattonFrags { get; set; }
     }
 }

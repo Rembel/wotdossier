@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using WotDossier.Domain;
-using WotDossier.Domain.Tank;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.ViewModel
 {

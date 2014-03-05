@@ -51,8 +51,13 @@
     <Compile Include="RatingHelper.cs" />
     <Compile Include="Reflection\MultiPropertyComparer.cs" />
     <Compile Include="Reflection\IPropertyAccessor.cs" />
-    <Compile Include="Reflection\PropertyAccessor.cs" />
-    <Compile Include="Reflection\PropertyComparer.cs" />
+    <Compile Include="Reflection\PropertyAccessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reflection\PropertyComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reflection\ReflectionExtensions.cs" />
     <Compile Include="ResourceManagerExtensions.cs" />
     <Compile Include="StopWatch.cs" />
     <Compile Include="TypeHelper.cs" />

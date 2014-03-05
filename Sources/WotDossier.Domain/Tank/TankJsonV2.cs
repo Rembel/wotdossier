@@ -17,10 +17,17 @@ namespace WotDossier.Domain.Tank
         public StatisticJson Clan { get; set; }
         public StatisticJson Company { get; set; }
 
-        private StatisticJson _a7X7 = new StatisticJson();
+        private StatisticJson _a7X7;
         public StatisticJson A7x7
         {
-            get { return _a7X7; }
+            get
+            {
+                if (_a7X7 == null)
+                {
+                    _a7X7 = new StatisticJson();
+                }
+                return _a7X7;
+            }
             set { _a7X7 = value; }
         }
 

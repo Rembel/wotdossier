@@ -391,4 +391,7 @@
   <data name="BattleStatus_Unknown" xml:space="preserve">
     <value>Нет данных</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Всего</value>
+  </data>
 </root>

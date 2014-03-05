@@ -79,7 +79,7 @@ namespace WotDossier.Applications.ViewModel
             return filter.ToList();
         }
 
-        public void Init(List<TankStatisticRowViewModel> tanks)
+        public void Init(List<ITankStatisticRow> tanks)
         {
             TankFrags = tanks.SelectMany(x => x.TankFrags).ToList();
             Tanks = tanks.OrderBy(x => x.Tank).Select(x => new KeyValue<int, string>(x.TankUniqueId, x.Tank)).ToList();

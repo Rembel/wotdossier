@@ -760,6 +760,11 @@ namespace WotDossier.Applications.ViewModel
             get { return SurvivorProgress - PrevStatistic.SurvivorProgress; }
         }
 
+        public double DamageRatioDelta
+        {
+            get { return DamageRatio - PrevStatistic.DamageRatio; }
+        }
+
         #endregion
 
         #endregion

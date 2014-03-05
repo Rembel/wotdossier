@@ -16,7 +16,7 @@ namespace WotDossier.Common.Reflection
         {
             accessor = new PropertyAccessor(typeof(T), propertyName);
             var comparerForPropertyType =
-                typeof(Comparer<>).MakeGenericType(typeof(T).GetProperty(propertyName).PropertyType);
+                typeof(Comparer<>).MakeGenericType(accessor.TargetType.GetProperty(propertyName).PropertyType);
             comparer =
                 (IComparer)
                 comparerForPropertyType.InvokeMember("Default",

@@ -65,6 +65,7 @@
     <Compile Include="Entities\ReplayEntity.cs" />
     <Compile Include="Entities\TankEntity.cs" />
     <Compile Include="Entities\TankStatisticEntity.cs" />
+    <Compile Include="Interfaces\ITankRowBase.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Medal.cs" />
     <Compile Include="PeriodSettings.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Dossier\TankV65\TankJson.cs" />
     <Compile Include="Tank\AchievementsJson.cs" />
     <Compile Include="Tank\Achievements7x7.cs" />
+    <Compile Include="Interfaces\ITankFilterable.cs" />
     <Compile Include="Tank\MaxJson.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />
     <Compile Include="Tank\StatisticJson.cs" />

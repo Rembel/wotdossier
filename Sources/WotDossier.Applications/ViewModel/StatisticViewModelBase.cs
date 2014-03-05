@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public abstract class StatisticViewModelBase : INotifyPropertyChanged
+    public abstract class StatisticViewModelBase : INotifyPropertyChanged, IStatisticBase
     {
         public int BattlesCount { get; set; }
         public int Wins { get; set; }
@@ -24,6 +25,23 @@ namespace WotDossier.Applications.ViewModel
         public TimeSpan PlayTime { get; set; }
 
         public double Tier { get; set; }
+
+        public int Draws
+        {
+            get { return BattlesCount - Wins - Losses; }
+        }
+
+        public double DrawsPercent
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return Draws / (double)BattlesCount * 100.0;
+                }
+                return 0;
+            }
+        }
 
         public double KillDeathRatio
         {

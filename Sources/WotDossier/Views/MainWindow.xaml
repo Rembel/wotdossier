@@ -11,7 +11,8 @@
         xmlns:color="clr-namespace:WotDossier.Converters.Color"
         xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
-        Title="WotDossier" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
+        xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
+        Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static framework:ApplicationRouteCommands.PrintWindow}" Executed="PrintWindow_Executed"/>
     </Window.CommandBindings>

@@ -11,7 +11,7 @@ namespace WotDossier.Applications
     {
         private static readonly object _syncObject = new object();
 
-        private static readonly string _filePath = WotDossierSettings.SettingsPath;
+        private static readonly string _filePath = AppConfigSettings.SettingsPath;
 
         /// <summary>
         /// Reads this instance.

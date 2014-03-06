@@ -40,14 +40,14 @@ namespace WotDossier.Applications.Update
                 MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, newVersion), ApplicationInfo.ProductName,
                     MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                Process.Start(WotDossierSettings.DownloadUrl);
+                Process.Start(AppConfigSettings.DownloadUrl);
             }
         }
 
         private static Version GetServerVersion()
         {
             Version newVersion;
-            WebRequest request = HttpWebRequest.Create(WotDossierSettings.VersionUrl);
+            WebRequest request = HttpWebRequest.Create(AppConfigSettings.VersionUrl);
             request.Proxy.Credentials = CredentialCache.DefaultCredentials;
             WebResponse webResponse = request.GetResponse();
             using (Stream responseStream = webResponse.GetResponseStream())

@@ -48,7 +48,7 @@ namespace WotDossier.Applications.ViewModel
             currentStatisticViewModel.AccountId = player.PlayerId;
             currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.A15x15.damageReceived);
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
-            currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
+            currentStatisticViewModel.PerformanceRating = GetPerformanceRating(tanks);
             currentStatisticViewModel.WN8Rating = GetWN8Rating(tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
@@ -72,7 +72,7 @@ namespace WotDossier.Applications.ViewModel
             currentStatisticViewModel.AccountId = player.PlayerId;
             currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.A15x15.damageReceived);
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
-            currentStatisticViewModel.PerformanceRating = GetPerformanceRating(currentStatisticViewModel, tanks);
+            currentStatisticViewModel.PerformanceRating = GetPerformanceRating(tanks);
             currentStatisticViewModel.WN8Rating = GetWN8Rating(tanks);
             currentStatisticViewModel.RBR = GetRBR(currentStatisticViewModel, tanks);
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
@@ -90,13 +90,13 @@ namespace WotDossier.Applications.ViewModel
             return new PlayerStatisticViewModel(statisticEntity);
         }
 
-        private static double GetPerformanceRating(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)
+        private static double GetPerformanceRating(List<TankJson> tanks)
         {
             double expDamage = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
-            int battlesCount = playerStatistic.BattlesCount;
-            int wins = playerStatistic.Wins;
-            int playerDamage = playerStatistic.DamageDealt;
-            double avgTier = playerStatistic.Tier;
+            int battlesCount = tanks.Sum(x => x.A15x15.battlesCount);
+            int wins = tanks.Sum(x => x.A15x15.wins);
+            int playerDamage = tanks.Sum(x => x.A15x15.damageDealt);
+            double avgTier = tanks.Sum(x => x.A15x15.battlesCount*x.Description.Tier)/(double) battlesCount;
             return RatingHelper.PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
         }
 

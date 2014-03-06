@@ -319,7 +319,8 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return RatingHelper.CalcKievArmorRating(BattlesCountDelta, AvgXpForPeriod, AvgDamageDealtForPeriod,
+                    //Battle count used to calc rating for period on noobmeter.com
+                    return RatingHelper.CalcKievArmorRating(BattlesCount, AvgXpForPeriod, AvgDamageDealtForPeriod,
                                                             WinsPercentForPeriod / 100.0,
                                                             AvgFragsForPeriod, AvgSpottedForPeriod,
                                                             AvgCapturePointsForPeriod, AvgDroppedCapturePointsForPeriod);

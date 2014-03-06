@@ -64,11 +64,11 @@ namespace WotDossier.Framework.Presentation.Services
                     Assembly entryAssembly = Assembly.GetEntryAssembly();
                     if (entryAssembly != null)
                     {
-                        _version = entryAssembly.GetName().Version.ToString();
+                        _version = entryAssembly.GetName().Version.ToString(3);
                     }
                     else
                     {
-                        _version = "";
+                        _version = "1.0.0.0";
                     }
                     _versionCached = true;
                 }

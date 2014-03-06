@@ -9,7 +9,7 @@ namespace WotDossier.Dal
     <add key="source_token" value="WG-WoT_Assistant-1.3.2"/>
     <add key="settings-path" value="\app.settings"/>*/
 
-    public class WotDossierSettings
+    public class AppConfigSettings
     {
         public const string FILE_NAME_FORMAT = "wotdossier_screenshot_{0:D2}.png";
 

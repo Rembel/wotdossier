@@ -181,7 +181,7 @@ namespace WotDossier.Dal
             {
                 var playerStat = Request<PlayerStat>(settings, METHOD_ACCOUNT_INFO, new Dictionary<string, object>
                 {
-                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                 });
                 playerStat.dataField = playerStat.data[playerId];
@@ -210,7 +210,7 @@ namespace WotDossier.Dal
             {
                 JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_TANKS, new Dictionary<string, object>
                 {
-                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                 });
 
@@ -242,7 +242,7 @@ namespace WotDossier.Dal
             {
                 JObject parsedData = Request<JObject>(settings, METHOD_RATINGS_ACCOUNTS, new Dictionary<string, object>
                 {
-                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                     {PARAM_TYPE, "all"},
                 });
@@ -284,7 +284,7 @@ namespace WotDossier.Dal
             {
                 Dictionary<string, object> dictionary = new Dictionary<string, object>
                 {
-                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_CLAN_ID, clanId},
                 };
 
@@ -336,7 +336,7 @@ namespace WotDossier.Dal
             {
                 JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_LIST, new Dictionary<string, object>
                 {
-                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, playerName},
                     {PARAM_LIMIT, limit},
                 });
@@ -364,7 +364,7 @@ namespace WotDossier.Dal
             {
                 JObject parsedData = Request<JObject>(settings, METHOD_CLAN_LIST, new Dictionary<string, object>
                 {
-                    {PARAM_APPID, WotDossierSettings.GetAppId(settings.Server)},
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, clanName},
                     {PARAM_LIMIT, count}
                 });
@@ -515,7 +515,7 @@ namespace WotDossier.Dal
         {
             try
             {
-                string url = string.Format(URL_API, settings.Server, WotDossierSettings.ApiVersion, method);
+                string url = string.Format(URL_API, settings.Server, AppConfigSettings.ApiVersion, method);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.Method = WebRequestMethods.Http.Post;

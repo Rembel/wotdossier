@@ -187,8 +187,8 @@ namespace WotDossier.Dal
                 return true;
             }
 
-            newSnapshotUpdated = newSnapshotUpdated.AddHours(-WotDossierSettings.SliceTime);
-            currentSnapshotUpdated = currentSnapshotUpdated.AddHours(-WotDossierSettings.SliceTime);
+            newSnapshotUpdated = newSnapshotUpdated.AddHours(-AppConfigSettings.SliceTime);
+            currentSnapshotUpdated = currentSnapshotUpdated.AddHours(-AppConfigSettings.SliceTime);
             return newSnapshotUpdated.Date != currentSnapshotUpdated.Date;
         }
 

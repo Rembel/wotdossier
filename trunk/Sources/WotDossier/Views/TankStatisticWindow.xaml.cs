@@ -50,14 +50,14 @@ namespace WotDossier.Views
         {
             int i = 0;
 
-            string fileName = string.Format(WotDossierSettings.FILE_NAME_FORMAT, i);
+            string fileName = string.Format(AppConfigSettings.FILE_NAME_FORMAT, i);
 
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName);
 
             while (File.Exists(path))
             {
                 i++;
-                fileName = string.Format(WotDossierSettings.FILE_NAME_FORMAT, i);
+                fileName = string.Format(AppConfigSettings.FILE_NAME_FORMAT, i);
                 path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName);
             }
 

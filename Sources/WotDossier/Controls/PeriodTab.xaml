@@ -39,6 +39,7 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="25"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -171,10 +172,14 @@
                 <TextBlock Foreground="#BABFBA" Grid.Row="23" Grid.Column="0" Text="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}"></TextBlock>
                 <TextBlock Foreground="{Binding PerformanceRatingForPeriod, Converter={x:Static color:PowerRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="23" Grid.Column="1" Text="{Binding PerformanceRatingForPeriod, StringFormat='### ### ### ###'}"></TextBlock>
                 <!--<TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="23" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
+                <!--KievArmorRating-->
+                <TextBlock Foreground="#BABFBA" Grid.Row="24" Grid.Column="0" Text="{x:Static Resources:Resources.Common_KievArmorRating}"></TextBlock>
+                <TextBlock Foreground="{Binding KievArmorRatingForPeriod, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="1" Text="{Binding KievArmorRatingForPeriod, StringFormat='### ### ### ###'}"></TextBlock>
+                <TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>
                 <!--Tier-->
-                <TextBlock Foreground="#BABFBA" Grid.Row="24" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AverageTier}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="24" Grid.Column="1" Text="{Binding TierForInterval, StringFormat='0.00'}"></TextBlock>
-                <!--<TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="24" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
+                <TextBlock Foreground="#BABFBA" Grid.Row="25" Grid.Column="0" Text="{x:Static Resources:Resources.Common_AverageTier}"></TextBlock>
+                <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="25" Grid.Column="1" Text="{Binding TierForInterval, StringFormat='0.00'}"></TextBlock>
+                <!--<TextBlock Foreground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}" TextAlignment="Right" Grid.Row="25" Grid.Column="2" Text="{Binding KievArmorRatingDelta, StringFormat='+0.0;-0.0;0.0'}"></TextBlock>-->
             </Grid>
         </StackPanel>
     </Grid>

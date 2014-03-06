@@ -245,25 +245,32 @@ def = dropped_capture_points / bc (среднее количество очко�
 
             //Tying it together
             double beforePenalties = winrateComponent + damageComponent;
+            double performanceRating = beforePenalties;
 
-            //Here is the penalties logic (applied twice for each of the two sets of penalty parameters):
-            double subjectToPenalties = beforePenalties - clearedFromPenalties1;
-            double lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier1));
-            double lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles1));
-            double whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
-            double totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
-            double afterPenalties = subjectToPenalties * (1 - totalPenalty);
-            double performanceRating = (clearedFromPenalties1 + afterPenalties);
+            if (beforePenalties > clearedFromPenalties1)
+            {
+                //Here is the penalties logic (applied twice for each of the two sets of penalty parameters):
+                double subjectToPenalties = beforePenalties - clearedFromPenalties1;
+                double lowTierPenalty = Math.Max(0, 1 - (avgTier/expectedMinAvgTier1));
+                double lowBattlePenalty = Math.Max(0, 1 - (battles/expectedMinBattles1));
+                double whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
+                double totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
+                double afterPenalties = subjectToPenalties*(1 - totalPenalty);
+                performanceRating = (clearedFromPenalties1 + afterPenalties);
 
-            beforePenalties = performanceRating;
+                beforePenalties = performanceRating;
+            }
 
-            subjectToPenalties = beforePenalties - clearedFromPenalties2;
-            lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier2));
-            lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles2));
-            whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
-            totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
-            afterPenalties = subjectToPenalties * (1 - totalPenalty);
-            performanceRating = (clearedFromPenalties2 + afterPenalties);
+            if (beforePenalties > clearedFromPenalties1)
+            {
+                double subjectToPenalties = beforePenalties - clearedFromPenalties2;
+                double lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier2));
+                double lowBattlePenalty = Math.Max(0, 1 - (battles / expectedMinBattles2));
+                double whichPenalty = Math.Max(lowTierPenalty, lowBattlePenalty);
+                double totalPenalty = Math.Min(Math.Pow(whichPenalty, 0.5), 1);
+                double afterPenalties = subjectToPenalties * (1 - totalPenalty);
+                performanceRating = (clearedFromPenalties2 + afterPenalties);
+            }
 
             // with "seal-clubbing" penalties applied
             return performanceRating;

@@ -499,14 +499,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitPlayerStatistic(ServerStatWrapper serverStatistic, List<TankJson> tanks)
         {
-            if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
-            {
-                PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
-            }
-            else
-            {
-                PlayerStatistic = InitTeamBattlesStatisticViewModel(tanks);    
-            }
+            PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
             
             //init previous dates list
             PeriodSelector.PropertyChanged -= PeriodSelectorOnPropertyChanged;
@@ -569,18 +562,16 @@ namespace WotDossier.Applications.ViewModel
 
             PlayerEntity player = _dossierRepository.UpdateStatistic(serverStatistic.Ratings, tanks, settings.PlayerId);
 
-            List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetPlayerStatistic(player.PlayerId).ToList();
-            return StatisticViewModelFactory.Create(statisticEntities, tanks, player, serverStatistic);
-        }
-
-        private PlayerStatisticViewModel InitTeamBattlesStatisticViewModel(List<TankJson> tanks)
-        {
-            AppSettings settings = SettingsReader.Get();
-
-            PlayerEntity player = _dossierRepository.GetPlayer(settings.PlayerId);
-
-            List<TeamBattlesStatisticEntity> statisticEntities = _dossierRepository.GetStatistic<TeamBattlesStatisticEntity>(player.PlayerId).ToList();
-            return StatisticViewModelFactory.Create(statisticEntities, tanks, player);
+            if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
+            {
+                List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetStatistic<PlayerStatisticEntity>(player.PlayerId).ToList();
+                return StatisticViewModelFactory.Create(statisticEntities, tanks, player, serverStatistic);
+            }
+            else
+            {
+                List<TeamBattlesStatisticEntity> statisticEntities = _dossierRepository.GetStatistic<TeamBattlesStatisticEntity>(player.PlayerId).ToList();
+                return StatisticViewModelFactory.Create(statisticEntities, tanks, player);
+            }
         }
 
         #endregion

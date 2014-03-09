@@ -74,5 +74,8 @@
         public int mechanic_engineer_china;
         public int medal_nikolas;
         public int scout;
+        //added in 0.8.11
+        public int sniper2;
+        public int main_gun;
     }
 }

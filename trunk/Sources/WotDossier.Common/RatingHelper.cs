@@ -214,7 +214,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="playerDamage">The player damage.</param>
         /// <param name="avgTier">The avg tier.</param>
         /// <returns></returns>
-        public static double PerformanceRating(double battles, double wins, double expectedDamage, double playerDamage, double avgTier)
+        public static double PerformanceRating(double battles, double wins, double expectedDamage, double playerDamage, double avgTier, bool applyPenalties = true)
         {
             //Win rate component
             double expectedWinrate = 0.4856;
@@ -247,7 +247,7 @@ def = dropped_capture_points / bc (среднее количество очко�
             double beforePenalties = winrateComponent + damageComponent;
             double performanceRating = beforePenalties;
 
-            if (beforePenalties > clearedFromPenalties1)
+            if (beforePenalties > clearedFromPenalties1 && applyPenalties)
             {
                 //Here is the penalties logic (applied twice for each of the two sets of penalty parameters):
                 double subjectToPenalties = beforePenalties - clearedFromPenalties1;
@@ -261,7 +261,7 @@ def = dropped_capture_points / bc (среднее количество очко�
                 beforePenalties = performanceRating;
             }
 
-            if (beforePenalties > clearedFromPenalties1)
+            if (beforePenalties > clearedFromPenalties1 && applyPenalties)
             {
                 double subjectToPenalties = beforePenalties - clearedFromPenalties2;
                 double lowTierPenalty = Math.Max(0, 1 - (avgTier / expectedMinAvgTier2));

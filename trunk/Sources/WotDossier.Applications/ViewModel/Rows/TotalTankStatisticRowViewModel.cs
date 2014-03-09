@@ -81,6 +81,8 @@ namespace WotDossier.Applications.ViewModel.Rows
             LuckyDevil = list.Sum(x => x.LuckyDevil);
             Spartan = list.Sum(x => x.Spartan);
             Ranger = list.Sum(x => x.Ranger);
+            Sniper2 = list.Sum(x => x.Sniper2);
+            MainGun = list.Sum(x => x.MainGun);
             #endregion
 
             #region [ ITankRowBattles ]

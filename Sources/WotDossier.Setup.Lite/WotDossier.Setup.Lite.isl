@@ -341,8 +341,6 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{F24F419A-388F-4EAE-89A2-C0E2E2E0069E}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>System.Data.SqlServerCe.Entity.dll</td><td>{F78FD423-A234-4B0B-B3CF-97E36D1938DE}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlserverce.enti</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>System.Data.SqlServerCe.dll</td><td>{4A406403-C5FF-4888-8C44-DA6C84F89113}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlserverce.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td>{DEC41DA3-6284-45F5-BA8F-A97F0DB9CF01}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.loca</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Content_Files</td><td>{BF7BC31F-BDD1-4BC9-808D-C34800E5C7EF}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Dal.Localized_resources</td><td>{EEDF2C61-E813-4181-B78B-103E29F7F16F}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.dal.localized_res</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1870,8 +1868,6 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>AlwaysInstall</td><td>System.Data.SqlServerCe.Entity.dll</td></row>
-		<row><td>AlwaysInstall</td><td>System.Data.SqlServerCe.dll</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Content_Files</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Dal.Localized_resources</td></row>
@@ -1891,8 +1887,6 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>system.data.sqlserverce.dll</td><td>System.Data.SqlServerCe.dll</td><td>SYSTEM~1.DLL|System.Data.SqlServerCe.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\System.Data.SqlServerCe.dll</td><td>1</td><td/></row>
-		<row><td>system.data.sqlserverce.enti</td><td>System.Data.SqlServerCe.Entity.dll</td><td>SYSTEM~1.DLL|System.Data.SqlServerCe.Entity.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\System.Data.SqlServerCe.Entity.dll</td><td>1</td><td/></row>
 		<row><td>wotdossier.applications.loca</td><td>WotDossier.Applications.Localized_resources</td><td>WotDossier.Applications.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Applications&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.content_files</td><td>WotDossier.Content_Files</td><td>WotDossier.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|ContentFiles</td><td>3</td><td/></row>
 		<row><td>wotdossier.dal.localized_res</td><td>WotDossier.Dal.Localized_resources</td><td>WotDossier.Dal.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Dal&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
@@ -2155,8 +2149,6 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_5564DD31_4287_4A7E_B7DA_77BBFB9D8B78_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>System.Data.SqlServerCe.Entity.dll</td><td/><td/><td>_AD6D7269_9918_4E1E_B213_CB02B0D9B6CF_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>System.Data.SqlServerCe.dll</td><td/><td/><td>_8D459DDC_EBBC_4D9C_8F36_C646E49FAB79_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td/><td/><td>_37EC7889_47A5_4CB1_8F02_40D6D49EFA11_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Content_Files</td><td/><td/><td>_CD531555_AD1D_41E5_A502_2323DBA973A4_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Dal.Localized_resources</td><td/><td/><td>_51A861AA_8279_41BE_A7B4_07EBE60F9D1C_FILTER</td><td/><td/><td/><td/></row>
@@ -4524,9 +4516,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{346BB45E-5CEE-4BD6-8363-E8A40C6BA740}</td><td/></row>
+		<row><td>ProductCode</td><td>{C7AB5A8C-EBF2-436E-BE0C-0D4523652FEC}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>1.16</td><td/></row>
+		<row><td>ProductVersion</td><td>2.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4812,7 +4804,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>1.16</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>2.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

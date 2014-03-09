@@ -162,6 +162,8 @@ namespace WotDossier.Domain.Entities
             CoolHeaded = stat.dataField.achievements.iron_man;
             LuckyDevil = stat.dataField.achievements.lucky_devil;
             Spartan = stat.dataField.achievements.sturdy;
+            Sniper2 = stat.dataField.achievements.sniper2;
+            MainGun = stat.dataField.achievements.main_gun;
 
             #endregion
 

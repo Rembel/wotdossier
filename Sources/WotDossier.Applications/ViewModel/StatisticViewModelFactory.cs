@@ -143,7 +143,7 @@ namespace WotDossier.Applications.ViewModel
             int wins = tanks.Sum(x => x.WinsDelta);
             int playerDamage = tanks.Sum(x => x.DamageDealtDelta);
             double avgTier = tanks.Sum(x => x.BattlesCountDelta * x.Tier) / battlesCount;
-            return RatingHelper.PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
+            return RatingHelper.PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier, false);
         }
 
         private static double GetRBR(PlayerStatisticViewModel playerStatistic, List<TankJson> tanks)

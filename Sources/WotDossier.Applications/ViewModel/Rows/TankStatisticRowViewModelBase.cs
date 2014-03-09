@@ -313,6 +313,8 @@ namespace WotDossier.Applications.ViewModel.Rows
             LuckyDevil = tank.Achievements.luckyDevil;
             Spartan = tank.Achievements.sturdy;
             Ranger = tank.Achievements.huntsman;
+            MainGun = tank.Achievements.mainGun;
+            Sniper2 = tank.Achievements.sniper2;
             #endregion
 
             #region [ ITankRowEpic ]

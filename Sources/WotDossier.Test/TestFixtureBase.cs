@@ -25,6 +25,7 @@ using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace WotDossier.Test
 {
@@ -591,7 +592,7 @@ namespace WotDossier.Test
         {
             int playerId = 10800699;
 
-            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic(playerId);
+            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetStatistic<PlayerStatisticEntity>(playerId);
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
@@ -668,19 +669,7 @@ namespace WotDossier.Test
                 }
             }
 
-            JsonSerializer se = new JsonSerializer();
-            StringBuilder builder = new StringBuilder();
-            se.Serialize(new StringWriter(builder), xmlTanks);
-
-            Console.WriteLine(builder);
-
-            //IEnumerable<string> enumerable = xmlTanks.Join(WotApiClient.Instance.TanksDictionary.Values, x => x.Tank, y => y.Icon.Icon.ToLower(),
-            //    (x, y) => string.Format("{0} \t\t {1} - {2} \t\t\t\t {3}", x.Tank, x.PRNominalDamage, y.Expectancy.PRNominalDamage, x.PRNominalDamage == y.Expectancy.PRNominalDamage));
-
-            //foreach (var value in enumerable)
-            //{
-            //    Console.WriteLine(value);
-            //}
+            Console.WriteLine(JsonConvert.SerializeObject(xmlTanks, Formatting.Indented));
         }
 
         [Test]

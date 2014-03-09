@@ -31,32 +31,6 @@ namespace WotDossier.Dal
             _dataProvider = dataProvider;
         }
 
-        public IEnumerable<PlayerStatisticEntity> GetPlayerStatistic(int playerId)
-        {
-            _dataProvider.OpenSession();
-            _dataProvider.BeginTransaction();
-            PlayerEntity player = null;
-            PlayerStatisticEntity statistic = null;
-            IList<PlayerStatisticEntity> list = null;
-            try
-            {
-                list = _dataProvider.QueryOver(() => statistic)
-                                    .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                                    .Where(x => player.PlayerId == playerId).List<PlayerStatisticEntity>();
-                _dataProvider.CommitTransaction();
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-                _dataProvider.RollbackTransaction();
-            }
-            finally
-            {
-                _dataProvider.CloseSession();    
-            }
-            return list;
-        }
-
         public IEnumerable<T> GetStatistic<T>(int playerId) where T : StatisticEntity
         {
             _dataProvider.OpenSession();

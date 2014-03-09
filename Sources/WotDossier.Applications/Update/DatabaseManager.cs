@@ -91,11 +91,24 @@ namespace WotDossier.Applications.Update
 
         private void Migrate(string migrationScriptPath)
         {
-            string sqlScript = File.ReadAllText(migrationScriptPath);
-
-            SQLiteCommand command = new SQLiteCommand(sqlScript, GetConnection());
-            command.CommandType = CommandType.Text;
-            command.ExecuteNonQuery();
+            SQLiteConnection sqLiteConnection = null;
+            
+            try
+            {
+                sqLiteConnection = GetConnection();
+                string sqlScript = File.ReadAllText(migrationScriptPath);
+                SQLiteCommand command = new SQLiteCommand(sqlScript, sqLiteConnection);
+                command.CommandType = CommandType.Text;
+                command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Logger.Error("Migrate failed", e);
+            }
+            finally
+            {
+                CloseConnection(sqLiteConnection);
+            }
         }
 
         private static void BackupSdf(string ceDbFileBackupPath, string ceDbFilePath)
@@ -120,7 +133,10 @@ namespace WotDossier.Applications.Update
 
         private void CloseConnection(SQLiteConnection connection)
         {
-            connection.Close();
+            if (connection != null)
+            {
+                connection.Close();
+            }
         }
 
         private void RollbackTransaction(SQLiteTransaction transaction)

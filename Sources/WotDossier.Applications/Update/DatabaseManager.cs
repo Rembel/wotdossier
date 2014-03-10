@@ -68,6 +68,8 @@ namespace WotDossier.Applications.Update
             string ceDbFilePath = directoryName + DATA_DOSSIER_SDF;
             string ceDbFileBackupPath = directoryName + string.Format(BACKUP_DOSSIER_SDF, DateTime.Now.Ticks);
             string migrationScriptPath = Path.Combine(Path.GetTempPath(), "data.sql");
+            string exportToolPath = directoryName + @"\External\ExportSqlCe40.exe";
+            string logPath = directoryName + @"\Logs\ExportSqlCe40.log";
 
             if (File.Exists(ceDbFilePath))
             {
@@ -77,9 +79,17 @@ namespace WotDossier.Applications.Update
                 proc.EnableRaisingEvents = false;
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.FileName = directoryName + @"\External\ExportSqlCe40.exe";
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.FileName = exportToolPath;
                 proc.StartInfo.Arguments = string.Format(@"""Data Source={0}"" ""{1}"" sqlite", ceDbFilePath, migrationScriptPath);
                 proc.Start();
+
+                //write log
+                using (StreamWriter streamWriter = new StreamWriter(logPath, false))
+                {
+                    streamWriter.WriteLine(proc.StandardOutput.ReadToEnd());
+                }
+
                 proc.WaitForExit();
 
                 Migrate(migrationScriptPath);

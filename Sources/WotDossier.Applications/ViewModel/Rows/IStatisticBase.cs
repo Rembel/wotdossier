@@ -13,7 +13,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         double XWN { get; }
         double PerformanceRating { get; set; }
         double WN8Rating { get; set; }
-        double? RBR { get; set; }
+        double RBR { get; set; }
         int KingOfTheHill { get; set; }
         int ArmoredFist { get; set; }
         int TacticalBreakthrough { get; set; }

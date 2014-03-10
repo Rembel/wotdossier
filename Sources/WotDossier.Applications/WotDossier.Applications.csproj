@@ -73,11 +73,14 @@
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
+    <Compile Include="Logic\Adapter\PlayerStatAdapter.cs" />
+    <Compile Include="Logic\Adapter\TeamBattlesStatAdapter.cs" />
     <Compile Include="Logic\BattleLevelDetector.cs" />
     <Compile Include="Logic\AppSpotUploader.cs" />
     <Compile Include="Logic\Export\CsvExportProvider.cs" />
     <Compile Include="Logic\Export\ExportProviderBase.cs" />
     <Compile Include="Logic\Export\IExportProviderBase.cs" />
+    <Compile Include="Logic\RatingHelper.cs" />
     <Compile Include="Logic\ReplaysManager.cs" />
     <Compile Include="Logic\ReplayUploader.cs" />
     <Compile Include="Logic\ServerStatWrapper.cs" />

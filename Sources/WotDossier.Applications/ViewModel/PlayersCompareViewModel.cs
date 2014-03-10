@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows;
-using System.Windows.Input;
-using Common.Logging;
+using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
@@ -16,7 +15,6 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (PlayersCompareViewModel))]
     public class PlayersCompareViewModel : ViewModel<IPlayersCompareView>
     {
-        private static readonly ILog _log = LogManager.GetLogger("PlayersCompareViewModel");
         private CompareStatisticViewModelBase<PlayerStatisticViewModel> _compareStatistic;
         private string _firstName;
         private string _secondName;
@@ -102,7 +100,7 @@ namespace WotDossier.Applications.ViewModel
         private StatisticViewModelBase GetPlayerViewModel(PlayerStat stat)
         {
             PlayerStatisticEntity entity = new PlayerStatisticEntity();
-            entity.Update(new PlayerStatAdapter(stat));
+            new PlayerStatAdapter(stat).Update(entity);
             PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
             statistic.Name = stat.dataField.nickname;
             statistic.AccountId = stat.dataField.account_id;

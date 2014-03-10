@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.Logic;
 using WotDossier.Common;
 using WotDossier.Domain.Tank;
 
@@ -244,6 +245,20 @@ namespace WotDossier.Applications.ViewModel.Rows
                     return RatingHelper.PerformanceRating(BattlesCount, Wins,
                         BattlesCount*Description.Expectancy.PRNominalDamage,
                         DamageDealt, Tier);
+                }
+                return 0;
+            }
+        }
+
+        public override double PerformanceRatingForPeriod
+        {
+            get
+            {
+                if (BattlesCountDelta > 0)
+                {
+                    return RatingHelper.PerformanceRating(BattlesCountDelta, WinsDelta,
+                        BattlesCountDelta * Description.Expectancy.PRNominalDamage,
+                        DamageDealtDelta, Tier, false);
                 }
                 return 0;
             }

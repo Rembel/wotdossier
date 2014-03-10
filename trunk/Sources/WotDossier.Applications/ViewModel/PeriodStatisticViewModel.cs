@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using WotDossier.Common;
+using WotDossier.Applications.Logic;
 using WotDossier.Domain;
 using WotDossier.Framework.EventAggregator;
 
@@ -110,6 +110,16 @@ namespace WotDossier.Applications.ViewModel
         public double WN8RatingDelta
         {
             get { return WN8Rating - PrevStatistic.WN8Rating; }
+        }
+
+        public double PerformanceRatingDelta
+        {
+            get { return PerformanceRating - PrevStatistic.PerformanceRating; }
+        }
+
+        public double RBRDelta
+        {
+            get { return RBR - PrevStatistic.RBR; }
         }
 
         public double EffRatingDelta

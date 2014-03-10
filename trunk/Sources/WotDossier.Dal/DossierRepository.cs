@@ -57,7 +57,7 @@ namespace WotDossier.Dal
             return list;
         }
 
-        public PlayerEntity UpdatePlayerStatistic(Ratings ratings, List<TankJson> tanks, int playerId)
+        public PlayerEntity UpdatePlayerStatistic(Ratings ratings, IStatisticAdapter<PlayerStatisticEntity> newSnapshot, int playerId)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -72,8 +72,6 @@ namespace WotDossier.Dal
                                                .Desc.Take(1)
                                                .SingleOrDefault<PlayerStatisticEntity>() ?? new PlayerStatisticEntity{PlayerId = playerEntity.Id};
 
-                PlayerStatAdapter newSnapshot = new PlayerStatAdapter(tanks);
-
                 //new battles
                 if (currentSnapshot.BattlesCount < newSnapshot.Battles_count)
                 {
@@ -83,7 +81,7 @@ namespace WotDossier.Dal
                         currentSnapshot = new PlayerStatisticEntity {PlayerId = playerEntity.Id};
                     }
 
-                    currentSnapshot.Update(newSnapshot);
+                    newSnapshot.Update(currentSnapshot);
                 }
 
                 if (ratings != null)
@@ -108,7 +106,7 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        public PlayerEntity UpdateTeamBattlesStatistic(List<TankJson> tanks, int playerId)
+        public PlayerEntity UpdateTeamBattlesStatistic(IStatisticAdapter<TeamBattlesStatisticEntity> newSnapshot, int playerId)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -123,8 +121,6 @@ namespace WotDossier.Dal
                                                .Desc.Take(1)
                                                .SingleOrDefault<TeamBattlesStatisticEntity>() ?? new TeamBattlesStatisticEntity { PlayerId = playerEntity.Id };
 
-                TeamBattlesStatAdapter newSnapshot = new TeamBattlesStatAdapter(tanks);
-
                 //new battles
                 if (currentSnapshot.BattlesCount < newSnapshot.Battles_count)
                 {
@@ -134,7 +130,7 @@ namespace WotDossier.Dal
                         currentSnapshot = new TeamBattlesStatisticEntity { PlayerId = playerEntity.Id };
                     }
 
-                    currentSnapshot.Update(newSnapshot);
+                    newSnapshot.Update(currentSnapshot);
                 }
 
                 _dataProvider.Save(currentSnapshot);
@@ -382,13 +378,6 @@ namespace WotDossier.Dal
             {
                 _dataProvider.CloseSession();
             }
-        }
-
-        public PlayerEntity UpdateStatistic(Ratings ratings, List<TankJson> tanks, int playerId)
-        {
-            PlayerEntity playerEntity = UpdatePlayerStatistic(ratings, tanks, playerId);
-            UpdateTeamBattlesStatistic(tanks, playerId);
-            return playerEntity;
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
-using Common.Logging;
+using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
@@ -21,8 +21,6 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (PlayerServerStatisticViewModel))]
     public class PlayerServerStatisticViewModel : ViewModel<IPlayerServerStatisticView>
     {
-        private static readonly ILog _log = LogManager.GetLogger("PlayerServerStatisticViewModel");
-
         private static readonly string PropClan = TypeHelper.GetPropertyName<PlayerServerStatisticViewModel>(x => x.Clan);
 
         public DelegateCommand<object> OpenClanCommand { get; set; }
@@ -104,7 +102,7 @@ namespace WotDossier.Applications.ViewModel
         {
             PlayerStatisticEntity entity = new PlayerStatisticEntity();
             PlayerStatAdapter statAdapter = new PlayerStatAdapter(playerStat);
-            entity.Update(statAdapter);
+            statAdapter.Update(entity);
             PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
             statistic.Name = playerStat.dataField.nickname;
             statistic.AccountId = playerStat.dataField.account_id;

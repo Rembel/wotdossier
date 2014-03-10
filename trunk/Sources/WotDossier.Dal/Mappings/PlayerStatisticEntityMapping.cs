@@ -50,6 +50,9 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.RatingHitsPercentsPlace, "Rating_HitsPercentsPlace");
             Map(v => v.RatingHitsPercentsValue, "Rating_HitsPercentsValue");
             Map(v => v.AvgLevel, "AvgLevel");
+            Map(v => v.RBR, "RBR");
+            Map(v => v.WN8Rating, "WN8Rating");
+            Map(v => v.PerformanceRating, "PerformanceRating");
 			Map(v=>v.PlayerId, "PlayerId").Insert();
             Map(v => v.AchievementsId, "AchievementsId").ReadOnly();
 		

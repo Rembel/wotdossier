@@ -24,6 +24,9 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.DroppedCapturePoints, "DroppedCapturePoints");
 			Map(v => v.BattlesCount, "BattlesCount");
             Map(v => v.AvgLevel, "AvgLevel");
+            Map(v => v.RBR, "RBR");
+            Map(v => v.WN8Rating, "WN8Rating");
+            Map(v => v.PerformanceRating, "PerformanceRating");
 			Map(v=>v.PlayerId, "PlayerId").Insert();
             Map(v => v.AchievementsId, "AchievementsId").ReadOnly();
 		

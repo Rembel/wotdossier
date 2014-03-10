@@ -284,6 +284,10 @@ namespace WotDossier.Applications.ViewModel
             Updated = stat.Updated;
             Tier = stat.AvgLevel;
 
+            RBR = stat.RBR;
+            PerformanceRating = stat.PerformanceRating;
+            WN8Rating = stat.WN8Rating;
+
             #endregion
 
             #region Ratings init
@@ -456,6 +460,8 @@ namespace WotDossier.Applications.ViewModel
             DamageTaken = stat.DamageTaken;
             CapturePoints = stat.CapturePoints;
             DroppedCapturePoints = stat.DroppedCapturePoints;
+            PerformanceRating = stat.PerformanceRating;
+            WN8Rating = stat.WN8Rating;
             //Created = stat.PlayerIdObject.Creaded);
             Updated = stat.Updated;
             Tier = stat.AvgLevel;

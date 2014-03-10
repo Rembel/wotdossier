@@ -5,9 +5,9 @@ using System.Linq;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
-using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {

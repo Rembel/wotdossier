@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerStatistic] ADD [PerformanceRating] float  NOT NULL default(0);

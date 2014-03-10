@@ -1,0 +1,1 @@
+﻿ALTER TABLE [TeamBattlesStatistic] ADD [RBR] float  NOT NULL default(0);

@@ -143,45 +143,9 @@ namespace WotDossier.Domain.Entities
 		/// </summary>
 		public virtual TeamBattlesAchievementsEntity AchievementsIdObject { get; set; }
 
-        public virtual void Update(TeamBattlesStatAdapter statAdapter)
-        {
-            #region CommonJson init
-
-            BattlesCount = statAdapter.Battles_count;
-            Wins = statAdapter.Wins;
-            Losses = statAdapter.Losses;
-            SurvivedBattles = statAdapter.Survived_battles;
-            Xp = statAdapter.Xp;
-            BattleAvgXp = statAdapter.Battle_avg_xp;
-            MaxXp = statAdapter.Max_xp;
-            Frags = statAdapter.Frags;
-            Spotted = statAdapter.Spotted;
-            HitsPercents = statAdapter.Hits_percents;
-            DamageDealt = statAdapter.Damage_dealt;
-            DamageTaken = statAdapter.Damage_taken;
-            CapturePoints = statAdapter.Capture_points;
-            DroppedCapturePoints = statAdapter.Dropped_capture_points;
-            Updated = statAdapter.Updated;
-            AvgLevel = statAdapter.AvgLevel;
-
-            if (AchievementsIdObject == null)
-            {
-                AchievementsIdObject = new TeamBattlesAchievementsEntity();
-            }
-
-            AchievementsIdObject.WolfAmongSheep = statAdapter.WolfAmongSheep;
-            AchievementsIdObject.WolfAmongSheepMedal = statAdapter.WolfAmongSheepMedal;
-            AchievementsIdObject.GeniusForWar = statAdapter.GeniusForWar;
-            AchievementsIdObject.GeniusForWarMedal = statAdapter.GeniusForWarMedal;
-            AchievementsIdObject.KingOfTheHill = statAdapter.KingOfTheHill;
-            AchievementsIdObject.TacticalBreakthroughSeries = statAdapter.TacticalBreakthroughSeries;
-            AchievementsIdObject.MaxTacticalBreakthroughSeries = statAdapter.MaxTacticalBreakthroughSeries;
-            AchievementsIdObject.ArmoredFist = statAdapter.ArmoredFist;
-            AchievementsIdObject.TacticalBreakthrough = statAdapter.TacticalBreakthrough;
-
-            #endregion
-
-        }
+        public virtual double RBR { get; set; }
+        public virtual double WN8Rating { get; set; }
+        public virtual double PerformanceRating { get; set; }
     }
 }
 

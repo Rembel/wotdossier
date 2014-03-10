@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications.Logic;
+using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
@@ -560,7 +561,9 @@ namespace WotDossier.Applications.ViewModel
         {
             AppSettings settings = SettingsReader.Get();
 
-            PlayerEntity player = _dossierRepository.UpdateStatistic(serverStatistic.Ratings, tanks, settings.PlayerId);
+            int playerId = settings.PlayerId;
+            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(serverStatistic.Ratings, new PlayerStatAdapter(tanks), playerId);
+            _dossierRepository.UpdateTeamBattlesStatistic(new TeamBattlesStatAdapter(tanks), playerId);
 
             if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
             {

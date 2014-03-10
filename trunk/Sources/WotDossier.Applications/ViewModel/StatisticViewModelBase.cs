@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Rows;
-using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -258,7 +258,7 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private double _performanceRating;
-        private double? _rbr;
+        private double _rbr;
 
         public virtual double PerformanceRating
         {
@@ -281,7 +281,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public double? RBR
+        public double RBR
         {
             get { return _rbr; }
             set

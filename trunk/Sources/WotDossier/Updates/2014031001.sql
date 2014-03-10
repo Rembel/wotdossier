@@ -1,0 +1,1 @@
+﻿ALTER TABLE [PlayerStatistic] ADD [RBR] float  NOT NULL default(0);

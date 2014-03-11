@@ -20,10 +20,19 @@ namespace WotDossier.Controls
         public static readonly DependencyProperty ValueProperty =
             DependencyProperty.Register("Value", typeof(int), typeof(MedalAchievement), new PropertyMetadata(default(int)));
 
+        public static readonly DependencyProperty MinValueProperty =
+            DependencyProperty.Register("MinValue", typeof(int), typeof(MedalAchievement), new PropertyMetadata(default(int)));
+
         public int Value
         {
             get { return (int)GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
+        }
+
+        public int MinValue
+        {
+            get { return (int)GetValue(MinValueProperty); }
+            set { SetValue(MinValueProperty, value); }
         }
 
         public static readonly DependencyProperty DeltaProperty =

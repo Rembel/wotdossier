@@ -16,7 +16,7 @@ namespace WotDossier.Applications.ViewModel
         private List<SellInfo> _lastUsedTanksDataSource;
 
         private EnumerableDataSource<DataPoint> _ratingDataSource;
-        private EnumerableDataSource<DataPoint> _wn6RatingDataSource;
+        private EnumerableDataSource<DataPoint> _wn7RatingDataSource;
         private EnumerableDataSource<DataPoint> _winPercentDataSource;
         private EnumerableDataSource<DataPoint> _avgDamageDataSource;
         private EnumerableDataSource<DataPoint> _avgXpDataSource;
@@ -121,13 +121,13 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public EnumerableDataSource<DataPoint> WN6RatingDataSource
+        public EnumerableDataSource<DataPoint> WN7RatingDataSource
         {
-            get { return _wn6RatingDataSource; }
+            get { return _wn7RatingDataSource; }
             set
             {
-                _wn6RatingDataSource = value;
-                RaisePropertyChanged("WN6RatingDataSource");
+                _wn7RatingDataSource = value;
+                RaisePropertyChanged("WN7RatingDataSource");
             }
         }
 
@@ -480,12 +480,12 @@ namespace WotDossier.Applications.ViewModel
 
             RatingDataSource = dataSource;
 
-            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN6Rating));
+            IEnumerable<DataPoint> wn6Points = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, x.WN7Rating));
             dataSource = new EnumerableDataSource<DataPoint>(wn6Points) { XMapping = x => x.X, YMapping = y => y.Y };
             dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,
                                   point => String.Format(Resources.Resources.ChartTooltipFormat_Rating, point.X, point.Y));
 
-            WN6RatingDataSource = dataSource;
+            WN7RatingDataSource = dataSource;
         }
 
         private void InitWinPercentChart(List<PlayerStatisticViewModel> statisticViewModels)

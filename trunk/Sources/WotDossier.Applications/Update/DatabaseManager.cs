@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using Common.Logging;
 
 namespace WotDossier.Applications.Update
@@ -67,9 +68,15 @@ namespace WotDossier.Applications.Update
 
             string ceDbFilePath = directoryName + DATA_DOSSIER_SDF;
             string ceDbFileBackupPath = directoryName + string.Format(BACKUP_DOSSIER_SDF, DateTime.Now.Ticks);
-            string migrationScriptPath = Path.Combine(Path.GetTempPath(), "data.sql");
+            string migrationScriptFolderPath = Path.Combine(Path.GetTempPath(), @"dossier_migration_scripts\");
+            string migrationScriptFilePath = Path.Combine(migrationScriptFolderPath,"dossier.sql");
             string exportToolPath = directoryName + @"\External\ExportSqlCe40.exe";
             string logPath = directoryName + @"\Logs\ExportSqlCe40.log";
+
+            if (!Directory.Exists(migrationScriptFolderPath))
+            {
+                Directory.CreateDirectory(migrationScriptFolderPath);
+            }
 
             if (File.Exists(ceDbFilePath))
             {
@@ -81,7 +88,7 @@ namespace WotDossier.Applications.Update
                 proc.StartInfo.UseShellExecute = false;
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.FileName = exportToolPath;
-                proc.StartInfo.Arguments = string.Format(@"""Data Source={0}"" ""{1}"" sqlite", ceDbFilePath, migrationScriptPath);
+                proc.StartInfo.Arguments = string.Format(@"""Data Source={0}"" ""{1}"" sqlite", ceDbFilePath, migrationScriptFilePath);
                 proc.Start();
 
                 //write log
@@ -92,33 +99,50 @@ namespace WotDossier.Applications.Update
 
                 proc.WaitForExit();
 
-                Migrate(migrationScriptPath);
-
-                //backup ce db
-                BackupSdf(ceDbFileBackupPath, ceDbFilePath);
+                if(Migrate(migrationScriptFolderPath))
+                {
+                    //backup ce db
+                    BackupSdf(ceDbFileBackupPath, ceDbFilePath);
+                }
             }
         }
 
-        private void Migrate(string migrationScriptPath)
+        private bool Migrate(string migrationScriptPath)
         {
             SQLiteConnection sqLiteConnection = null;
             
             try
             {
                 sqLiteConnection = GetConnection();
-                string sqlScript = File.ReadAllText(migrationScriptPath);
+                string sqlScript = ReadScripts(migrationScriptPath);
                 SQLiteCommand command = new SQLiteCommand(sqlScript, sqLiteConnection);
                 command.CommandType = CommandType.Text;
                 command.ExecuteNonQuery();
+                return true;
             }
             catch (Exception e)
             {
                 Logger.Error("Migrate failed", e);
+                return false;
             }
             finally
             {
                 CloseConnection(sqLiteConnection);
             }
+        }
+
+        private static string ReadScripts(string migrationScriptFolderPath)
+        {
+            string[] files = Directory.GetFiles(migrationScriptFolderPath, "*.sql");
+
+            StringBuilder builder = new StringBuilder();
+
+            foreach (string file in files)
+            {
+                builder.Append(File.ReadAllText(file));
+            }
+
+            return builder.ToString();
         }
 
         private static void BackupSdf(string ceDbFileBackupPath, string ceDbFilePath)

@@ -236,6 +236,19 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
+        public override double RBR
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return RatingHelper.RatingWG(BattlesCount, BattlesCount88, Wins/(double)BattlesCount,
+                        SurvivedBattles/(double)BattlesCount, DamageDealt/(double)BattlesCount, AvgOriginalXP, AvgDamageAssistedRadio, AvgDamageAssistedTrack);
+                }
+                return 0;
+            }
+        }
+
         public override double PerformanceRating
         {
             get

@@ -193,7 +193,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_TacticalBreakthrough}" Text="TacticalBreakthrough" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Survivor}" Delta="{Binding SurvivorDelta}" Source="../Resources/Images/Medals/Diehard.png">
+                <controls:MedalAchievement Value="{Binding Survivor}" MinValue="19" Delta="{Binding SurvivorDelta}" Source="../Resources/Images/Medals/Diehard.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Survivor}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Survivor}" />
                     </ToolTipService.ToolTip>
@@ -203,7 +203,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Kamikaze}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Kamikaze}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Invincible}" Delta="{Binding InvincibleDelta}" Source="../Resources/Images/Medals/Invincible.png">
+                <controls:MedalAchievement Value="{Binding Invincible}" MinValue="4" Delta="{Binding InvincibleDelta}" Source="../Resources/Images/Medals/Invincible.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Invincible}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Invincible}" />
                     </ToolTipService.ToolTip>

@@ -8,7 +8,13 @@
              d:DesignHeight="90" d:DesignWidth="90">
     <Grid>
         <Image Stretch="Fill" Width="67" Height="71" Source="{Binding Source, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}}" 
-               HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=View:MedalAchievement}, Converter={x:Static Converters:IntToOpacityConverter.Default}}">
+               HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image.Opacity>
+                <MultiBinding Converter="{x:Static Converters:MedalsCountToOpacityConverter.Default}">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=View:MedalAchievement}" Path="Value" />
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=View:MedalAchievement}" Path="MinValue" />
+                </MultiBinding>
+            </Image.Opacity>
         </Image>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>

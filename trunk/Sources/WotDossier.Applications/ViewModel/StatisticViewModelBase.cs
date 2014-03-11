@@ -281,7 +281,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public double RBR
+        public virtual double RBR
         {
             get { return _rbr; }
             set

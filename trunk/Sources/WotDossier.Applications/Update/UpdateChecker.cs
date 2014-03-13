@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using Common.Logging;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.Presentation.Services;
@@ -13,6 +14,8 @@ namespace WotDossier.Applications.Update
 {
     public class UpdateChecker
     {
+        private static readonly ILog Logger = LogManager.GetLogger("UpdateChecker");
+
         public static void CheckForUpdates()
         {
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
@@ -46,18 +49,25 @@ namespace WotDossier.Applications.Update
 
         private static Version GetServerVersion()
         {
-            Version newVersion;
-            WebRequest request = HttpWebRequest.Create(AppConfigSettings.VersionUrl);
-            request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-            WebResponse webResponse = request.GetResponse();
-            using (Stream responseStream = webResponse.GetResponseStream())
+            Version newVersion = new Version(ApplicationInfo.Version);
+            try
             {
-                StreamReader reader = new StreamReader(responseStream);
-                string content = reader.ReadToEnd();
+                WebRequest request = HttpWebRequest.Create(AppConfigSettings.VersionUrl);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                WebResponse webResponse = request.GetResponse();
+                using (Stream responseStream = webResponse.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(responseStream);
+                    string content = reader.ReadToEnd();
 
-                string[] data = content.Split('\n');
+                    string[] data = content.Split('\n');
 
-                newVersion = new Version(data[0].Split(':')[1].Trim());
+                    newVersion = new Version(data[0].Split(':')[1].Trim());
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error("Error on version check", e);
             }
             return newVersion;
         }

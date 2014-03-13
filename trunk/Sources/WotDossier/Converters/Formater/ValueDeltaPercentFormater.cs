@@ -30,7 +30,7 @@ namespace WotDossier.Converters
 
             int val = (int)values[0];
             double percent = (double)values[1];
-            return string.Format("{0:+0.;-0.;0.} ({1:+0.000;-0.000;0.000}%)", val, percent);
+            return string.Format("{0:+#,0.;-#,0.;0.} ({1:+0.000;-0.000;0.000}%)", val, percent);
         }
 
         /// <summary>

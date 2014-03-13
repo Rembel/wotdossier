@@ -35,7 +35,7 @@ namespace WotDossier.Converters
 
             double b = GetBattlesToNearest(nearest, percent, val);
 
-            return string.Format("{0} ({1:0.00}% - {2} -> {3:0.0}%)", val, percent, b, nearest);
+            return string.Format("{0:### ### ###} ({1:0.00}% - {2} -> {3:0.0}%)", val, percent, b, nearest);
         }
 
         private int GetBattlesToNearest(double nearestPercent, double currentPercent, double value)

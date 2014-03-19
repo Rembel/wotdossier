@@ -55,11 +55,11 @@ namespace WotDossier.Controls
         }
 
         public static readonly DependencyProperty ValueDeltaProperty =
-            DependencyProperty.Register("ValueDelta", typeof(int), typeof(RatingRow), new PropertyMetadata(default(int)));
+            DependencyProperty.Register("ValueDelta", typeof(string), typeof(RatingRow), new PropertyMetadata(default(string)));
 
-        public int ValueDelta
+        public string ValueDelta
         {
-            get { return (int)GetValue(ValueDeltaProperty); }
+            get { return (string)GetValue(ValueDeltaProperty); }
             set { SetValue(ValueDeltaProperty, value); }
         }
 

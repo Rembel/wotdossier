@@ -20,6 +20,7 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Spotted, "Spotted");
 			Map(v => v.HitsPercents, "HitsPercents");
 			Map(v => v.DamageDealt, "DamageDealt");
+            Map(v => v.DamageTaken, "DamageTaken");
 			Map(v => v.CapturePoints, "CapturePoints");
 			Map(v => v.DroppedCapturePoints, "DroppedCapturePoints");
 			Map(v => v.BattlesCount, "BattlesCount");

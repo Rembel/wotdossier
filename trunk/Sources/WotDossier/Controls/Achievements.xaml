@@ -167,7 +167,7 @@
                 </controls:MedalAchievement>
             </WrapPanel>
             <!--Group Achievements-->
-            <TextBlock Text="Group Achievements" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_GroupAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding CrucialContribution}" Delta="{Binding CrucialContributionDelta}" Source="../Resources/Images/Medals/MedalCrucialContribution.png">
                     <ToolTipService.ToolTip>

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:WotDossier.Controls" xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:Converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <StackPanel Orientation="Vertical"  Background="#0E0C09">
@@ -53,17 +54,17 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_Damage}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding DamageDealt}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock Text="{Binding DamageDealt, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_HitsReceived}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding ShotsReceived}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock Text="{Binding ShotsReceived, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_AlliesDamage}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding TDamage}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock Text="{Binding TDamage, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_Detected}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
@@ -83,7 +84,7 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_DamageUponDetecting}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding DamageAssisted}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock Text="{Binding DamageAssisted, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_CapturePoint}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
@@ -105,76 +106,76 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_CreditsReceived}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding Credits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding Credits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Margin="30,0,0,0" Text="{x:Static Resources:Resources.Label_ReplayDetail_ActionCredits}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding ActionCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding ActionCredits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_OutContribution}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding CreditsContributionOut}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding CreditsContributionOut, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_InContribution}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding CreditsContributionIn}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding CreditsContributionIn, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_AutoRepair}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoRepairCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoRepairCost, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_AutoLoad}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoLoadCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoLoadCost, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_AutoEquip}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoEquipCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoEquipCost, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_CreditsTotal}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding TotalCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding TotalCredits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Column="2" Margin="0" HorizontalAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding PremiumCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding PremiumCredits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding PremiumActionCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding PremiumActionCredits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding CreditsContributionOut}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding CreditsContributionOut, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding CreditsContributionIn}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding CreditsContributionIn, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoRepairCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoRepairCost, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoLoadCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoLoadCost, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding AutoEquipCost}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding AutoEquipCost, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="Red" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding PremiumTotalCredits}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding PremiumTotalCredits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="/Resources\Images\Replays\CreditsIcon-2.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
         </Grid>
@@ -214,7 +215,7 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_CreditsReceived}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding Xp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding Xp, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Margin="30,0,0,0" Text="{x:Static Resources:Resources.Label_ReplayDetail_ForTheFirstVictory}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
@@ -229,12 +230,12 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="{x:Static Resources:Resources.Label_ReplayDetail_XpTotal}" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding TotalXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding TotalXp, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Column="2">
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
-                    <controls:TextWithImage Text="{Binding PremiumXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding PremiumXp, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
@@ -246,7 +247,7 @@
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
-                    <controls:TextWithImage Text="{Binding PremiumTotalXp}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding PremiumTotalXp, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="\Resources\Images\Replays\XpIcon-1.png" Foreground="#BCBDBE" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                     <Rectangle  Stroke="#BCBDBE" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                 </Grid>
             </StackPanel>

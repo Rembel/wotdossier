@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ITN")]
 [assembly: AssemblyProduct("WotDossier.Domain")]
-[assembly: AssemblyCopyright("Copyright © ITN 2013")]
+[assembly: AssemblyCopyright("Copyright © ITN 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

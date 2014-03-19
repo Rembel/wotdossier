@@ -98,7 +98,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             #region [ ITankRowDamage ]
             DamageDealt = list.Sum(x => x.DamageDealt);
             DamageTaken = list.Sum(x => x.DamageTaken);
-            MaxDamage = list.Sum(x => x.MaxDamage);
+            MaxDamage = list.Max(x => x.MaxDamage);
             #endregion
 
             #region [ ITankRowEpic ]

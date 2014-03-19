@@ -1,0 +1,1 @@
+﻿ALTER TABLE [TeamBattlesStatistic] ADD [DamageTaken] int  NOT NULL default(0);

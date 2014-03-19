@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ITN")]
 [assembly: AssemblyProduct("WotDossier")]
-[assembly: AssemblyCopyright("Copyright © ITN 2013")]
+[assembly: AssemblyCopyright("Copyright © ITN 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

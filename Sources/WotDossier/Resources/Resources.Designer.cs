@@ -657,6 +657,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avg Damage Taken.
+        /// </summary>
+        public static string Column_Damage_AvgDamageTaken {
+            get {
+                return ResourceManager.GetString("Column_Damage_AvgDamageTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Damage Dealt.
         /// </summary>
         public static string Column_Damage_DamageDealt {
@@ -2097,6 +2106,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hits percent.
+        /// </summary>
+        public static string Common_Rating_HitsPercent {
+            get {
+                return ResourceManager.GetString("Common_Rating_HitsPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max XP.
+        /// </summary>
+        public static string Common_Rating_MaxXP {
+            get {
+                return ResourceManager.GetString("Common_Rating_MaxXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Targets Destroyed.
         /// </summary>
         public static string Common_Rating_TargetsDestroyed {
@@ -2327,6 +2354,15 @@ namespace WotDossier.Resources {
         public static string Label_Achievements_Epic {
             get {
                 return ResourceManager.GetString("Label_Achievements_Epic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group Achievements.
+        /// </summary>
+        public static string Label_Achievements_GroupAchievements {
+            get {
+                return ResourceManager.GetString("Label_Achievements_GroupAchievements", resourceCulture);
             }
         }
         

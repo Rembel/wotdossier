@@ -25,6 +25,7 @@ namespace WotDossier.Converters
                 {
                     _formatProvider = ((CultureInfo)CultureInfo.CurrentCulture.Clone()).NumberFormat;
                     FormatProvider.NumberGroupSeparator = " ";
+                    FormatProvider.NumberDecimalSeparator = ".";
                 }
                 return _formatProvider;
             }

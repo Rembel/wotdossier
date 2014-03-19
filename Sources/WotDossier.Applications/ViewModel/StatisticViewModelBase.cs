@@ -145,6 +145,18 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public double AvgDamageTaken
+        {
+            get
+            {
+                if (BattlesCount > 0)
+                {
+                    return DamageTaken / (double)BattlesCount;
+                }
+                return 0;
+            }
+        }
+
         public double AvgDamageDealt
         {
             get

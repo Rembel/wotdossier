@@ -30,12 +30,12 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Shots}" Binding="{Binding Shots}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Hits}" Binding="{Binding Hits}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Shots}" Binding="{Binding Shots, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Hits}" Binding="{Binding Hits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_HitRatio}" Binding="{Binding HitsPercents, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_CapturePoints}" Binding="{Binding CapturePoints}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DefencePoints}" Binding="{Binding DroppedCapturePoints}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_TanksSpotted}" Binding="{Binding Spotted}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_CapturePoints}" Binding="{Binding CapturePoints, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DefencePoints}" Binding="{Binding DroppedCapturePoints, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_TanksSpotted}" Binding="{Binding Spotted, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

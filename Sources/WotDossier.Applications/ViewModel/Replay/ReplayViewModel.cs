@@ -248,7 +248,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TimeSpan battleLength = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
-                List<Medal> medals = ReplayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps)).ToList();
+                List<Medal> medals = ReplayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps))
+                    .Union(MedalHelper.GetAchievMedals(new List<List<int>>{new List<int>{790 + replay.datablock_battle_result.personal.markOfMastery, 0}})).ToList();
 
                 BattleMedals = medals.Where(x => x.Type == 0).ToList();
                 AchievMedals = medals.Where(x => x.Type == 1).ToList();

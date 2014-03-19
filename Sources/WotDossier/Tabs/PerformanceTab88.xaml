@@ -34,12 +34,6 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DamageAssistedTrack}" Binding="{Binding DamageAssistedTrack}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DamageAssistedRadio}" Binding="{Binding DamageAssistedRadio}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Mileage}" Binding="{Binding Mileage, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_ShotsReceived}" Binding="{Binding ShotsReceived}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_NoDamageShotsReceived}" Binding="{Binding NoDamageShotsReceived}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_PiercedReceived}" Binding="{Binding PiercedReceived}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_HeHitsReceived}" Binding="{Binding HeHitsReceived}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_HeHits}" Binding="{Binding HeHits}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Pierced}" Binding="{Binding Pierced}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_XpBefore88}" Binding="{Binding XpBefore88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_BattlesCountBefore88}" Binding="{Binding BattlesCountBefore88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_BattlesCount88}" Binding="{Binding BattlesCount88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />

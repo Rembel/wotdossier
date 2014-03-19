@@ -1833,4 +1833,16 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="BattleStatus_Unknown" xml:space="preserve">
     <value>Нет данных</value>
   </data>
+  <data name="Common_Rating_HitsPercent" xml:space="preserve">
+    <value>Процент попаданий</value>
+  </data>
+  <data name="Common_Rating_MaxXP" xml:space="preserve">
+    <value>Максимальный опыт</value>
+  </data>
+  <data name="Column_Damage_AvgDamageTaken" xml:space="preserve">
+    <value>В ср. получено урона</value>
+  </data>
+  <data name="Label_Achievements_GroupAchievements" xml:space="preserve">
+    <value>Групповые достижения</value>
+  </data>
 </root>

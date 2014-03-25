@@ -42,6 +42,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> ReplayRowsZipCommand { get; set; }
 
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
+        public DelegateCommand<ReplayFolder> ZipFolderCommand { get; set; }
         public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
 
         private List<ReplayFile> _replays = new List<ReplayFile>();
@@ -80,6 +81,7 @@ namespace WotDossier.Applications.ViewModel
             PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlayReplay);
 
             AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
+            ZipFolderCommand = new DelegateCommand<ReplayFolder>(OnZipFolder);
             DeleteFolderCommand = new DelegateCommand<ReplayFolder>(OnDeleteFolderCommand);
 
             ReplayFilter = new ReplaysFilterViewModel();
@@ -202,6 +204,40 @@ namespace WotDossier.Applications.ViewModel
                 folder.Folders.Add(viewModel.ReplayFolder);
                 ReplaysManager.SaveFolder(root);
                 ProcessReplaysFolders(new List<ReplayFolder> { viewModel.ReplayFolder });
+            }
+        }
+
+        private void OnZipFolder(ReplayFolder folder)
+        {
+            List<ReplayFile> replays = _replays.Where(x => x.FolderId == folder.Id).ToList();
+
+            string name = folder.Name;
+
+            PackReplays(replays, name);
+        }
+
+        private static void PackReplays(List<ReplayFile> replays, string name)
+        {
+            using (new WaitCursor())
+            {
+                using (ZipFile zip = new ZipFile())
+                {
+                    // add this map file into the "images" directory in the zip archive
+                    foreach (ReplayFile replayFile in replays)
+                    {
+                        zip.AddFile(replayFile.FileInfo.FullName, @"\" + name);
+                    }
+
+                    VistaSaveFileDialog dialog = new VistaSaveFileDialog();
+                    dialog.DefaultExt = ".zip"; // Default file extension
+                    dialog.Filter = "ZIP (.zip)|*.zip"; // Filter files by extension 
+                    dialog.Title = Resources.Resources.WindowCaption_Pack;
+                    bool? showDialog = dialog.ShowDialog();
+                    if (showDialog == true)
+                    {
+                        zip.Save(dialog.FileName);
+                    }
+                }
             }
         }
 
@@ -345,26 +381,8 @@ namespace WotDossier.Applications.ViewModel
         private void OnReplayRowsZip(object rowData)
         {
             ObservableCollection<object> selectedItems = rowData as ObservableCollection<object> ?? new ObservableCollection<object>();
-            IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
-
-            using (ZipFile zip = new ZipFile())
-            {
-                // add this map file into the "images" directory in the zip archive
-                foreach (ReplayFile replayFile in replays)
-                {
-                    zip.AddFile(replayFile.FileInfo.FullName, @"\pack");
-                }
-
-                VistaSaveFileDialog dialog = new VistaSaveFileDialog();
-                dialog.DefaultExt = ".zip"; // Default file extension
-                dialog.Filter = "ZIP (.zip)|*.zip"; // Filter files by extension 
-                dialog.Title = "Save";//Resources.Resources.WondowCaption_Save;
-                bool? showDialog = dialog.ShowDialog();
-                if (showDialog == true)
-                {
-                    zip.Save(dialog.FileName);
-                }
-            }
+            List<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
+            PackReplays(replays, "pack");
         }
 
         private void OnReplayRowsDelete(object rowData)

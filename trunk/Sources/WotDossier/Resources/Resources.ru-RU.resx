@@ -1845,4 +1845,10 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Label_Achievements_GroupAchievements" xml:space="preserve">
     <value>Групповые достижения</value>
   </data>
+  <data name="ReplaysTab_PackBtn" xml:space="preserve">
+    <value>Упаковать</value>
+  </data>
+  <data name="Command_ZipFolder" xml:space="preserve">
+    <value>Упаковать</value>
+  </data>
 </root>

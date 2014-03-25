@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Foreground="#FFA759" FontFamily="sans-serif" FontSize="25" Margin="0, 25, 0, 25" HorizontalAlignment="Center">
-                <x:Static Member="Resources:Resources.PeriodTab_CompareHeader" /> <TextBlock Text="{Binding PreviousDate, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='dd.MM.yyyy HH:mm'}"/>
+                <x:Static Member="Resources:Resources.PeriodTab_CompareHeader" /> <TextBlock Text="{Binding PreviousDate, StringFormat='dd.MM.yyyy HH:mm'}"/>
             </TextBlock>
             <Grid Width="Auto" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>

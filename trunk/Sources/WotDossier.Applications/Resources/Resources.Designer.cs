@@ -833,6 +833,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        internal static string WindowCaption_Pack {
+            get {
+                return ResourceManager.GetString("WindowCaption_Pack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search Clan.
         /// </summary>
         internal static string WindowCaption_SearchClan {

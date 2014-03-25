@@ -347,7 +347,7 @@
 								               d3:ViewportPanel.ViewportHorizontalAlignment="Left">
                                                 <ToolTipService.ToolTip>
                                                     <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                                        <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        <TextBlock Text="{Binding X, StringFormat='N0'}" FontWeight="Bold" ></TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
                                             </Rectangle>

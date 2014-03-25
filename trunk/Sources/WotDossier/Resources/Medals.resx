@@ -118,20 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Amur_tiger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\amur-tiger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ArmorPiercer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\armorpiercer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Atlant_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\atlant_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Atlant_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\atlant_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Atlant_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\atlant_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Beasthunter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\beasthunter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,14 +133,8 @@
   <data name="Diehard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\diehard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Don_cossack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\don-cossack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Evileye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\evileye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gold_miner_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\gold-miner-en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HandOfDeath" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\handofdeath.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,26 +151,11 @@
   <data name="Jager" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\jager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Jolly_roger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\jolly_roger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Kamikaze" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\kamikaze.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Land_of_honest_people" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\land-of-honest-people.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Libertalia_ru" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\libertalia-ru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lord_of_taiga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\lord-of-taiga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Lucky" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\lucky.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lutetia_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\lutetia-en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MechanicEngineer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\mechanicengineer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -391,15 +358,6 @@
   <data name="Mousebane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\mousebane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="M_class" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\m_class.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="North_palmira" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\north-palmira.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Oil_baron" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\oil-baron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Pattonvalley" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\pattonvalley.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -408,9 +366,6 @@
   </data>
   <data name="Scout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\scout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sib_lion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\sib_lion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sinai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\sinai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -478,62 +433,8 @@
   <data name="Warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Zulu_warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\zulu-warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_100px_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\100px-.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_100px__002" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\100px-_002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_100px__003" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\100px-_003.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_100px___" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\100px-__.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_class" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\1_class.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_class" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\2_class.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_3_class" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\3_class.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_51px_Herhalhol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\51px-herhalhol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_51px_Masofstep" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\51px-masofstep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_51px_Redbat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\51px-redbat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_64px___" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\64px-__.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_64px____002" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\64px-___002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="MedalHeroesOfRassenay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\MedalHeroesOfRassenay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_71px_Medal_brussel_107_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\71px-medal_brussel-107-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_71px_Medal_piza_107_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\71px-medal_piza-107-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_71px_Medal_poland_107_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\71px-medal_poland-107-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_71px_Medal_sofia_107_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\71px-medal_sofia-107-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_71px_Medal_tallin_107_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\71px-medal_tallin-107-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="armoredfist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\armoredfist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -543,5 +444,32 @@
   </data>
   <data name="TacticalBreakthrough" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\tacticalbreakthrough.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crucialShotMedal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\crucialshotmedal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fightingReconnaissanceMedal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\fightingreconnaissancemedal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forTacticalOperations2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\fortacticaloperations2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forTacticalOperations3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\fortacticaloperations3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forTacticalOperations4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\fortacticaloperations4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="geniusforwarmedal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\geniusforwarmedal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="godOfWar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\godofwar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="willToWinSpirit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\willtowinspirit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wolfamongsheepmedal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\wolfamongsheepmedal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -19,6 +19,7 @@
                     <ContextMenu>
                         <MenuItem Header="{x:Static Resources:Resources.Command_AddFolder}" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
                         <MenuItem Header="{x:Static Resources:Resources.Command_DeleteFolder}" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
+                        <MenuItem Header="{x:Static Resources:Resources.Command_ZipFolder}" Command="{Binding Path=DataContext.ZipFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
                     </ContextMenu>
                 </ContextMenuService.ContextMenu>
                 <ToolTipService.ToolTip>
@@ -80,7 +81,7 @@
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_DeleteBtn}" 
                               Command="{Binding Path=DataContext.ReplayDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>
-                    <MenuItem Header="ZIP" 
+                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_PackBtn}" 
                               Command="{Binding Path=DataContext.ReplayRowsZipCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_CopyToClipboard}" 

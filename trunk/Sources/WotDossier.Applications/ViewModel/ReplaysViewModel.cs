@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using Common.Logging;
+using Ionic.Zip;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
@@ -38,6 +39,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
         public DelegateCommand<object> ReplayRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> ReplayRowsDeleteCommand { get; set; }
+        public DelegateCommand<object> ReplayRowsZipCommand { get; set; }
 
         public DelegateCommand<ReplayFolder> AddFolderCommand { get; set; }
         public DelegateCommand<ReplayFolder> DeleteFolderCommand { get; set; }
@@ -73,6 +75,7 @@ namespace WotDossier.Applications.ViewModel
             ReplayUploadCommand = new DelegateCommand<ReplayFile>(OnUploadReplay, CanUploadReplay);
             ReplayDeleteCommand = new DelegateCommand<ReplayFile>(OnReplayRowDelete);
             ReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
+            ReplayRowsZipCommand = new DelegateCommand<object>(OnReplayRowsZip);
             CopyLinkToClipboardCommand = new DelegateCommand<ReplayFile>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
             PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlayReplay);
 
@@ -335,6 +338,31 @@ namespace WotDossier.Applications.ViewModel
                         MessageBox.Show(string.Format(Resources.Resources.ErrorMsg_ErrorOnFileDeletion, replayFile.FileInfo.Name),
                             Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
+                }
+            }
+        }
+
+        private void OnReplayRowsZip(object rowData)
+        {
+            ObservableCollection<object> selectedItems = rowData as ObservableCollection<object> ?? new ObservableCollection<object>();
+            IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
+
+            using (ZipFile zip = new ZipFile())
+            {
+                // add this map file into the "images" directory in the zip archive
+                foreach (ReplayFile replayFile in replays)
+                {
+                    zip.AddFile(replayFile.FileInfo.FullName, @"\pack");
+                }
+
+                VistaSaveFileDialog dialog = new VistaSaveFileDialog();
+                dialog.DefaultExt = ".zip"; // Default file extension
+                dialog.Filter = "ZIP (.zip)|*.zip"; // Filter files by extension 
+                dialog.Title = "Save";//Resources.Resources.WondowCaption_Save;
+                bool? showDialog = dialog.ShowDialog();
+                if (showDialog == true)
+                {
+                    zip.Save(dialog.FileName);
                 }
             }
         }

@@ -54,6 +54,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _folders = value; }
         }
 
+        [XmlIgnore]
         public int Count
         {
             get { return _count; }

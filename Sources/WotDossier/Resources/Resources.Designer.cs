@@ -1773,6 +1773,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        public static string Command_ZipFolder {
+            get {
+                return ResourceManager.GetString("Command_ZipFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Average tier.
         /// </summary>
         public static string Common_AverageTier {
@@ -3470,6 +3479,15 @@ namespace WotDossier.Resources {
         public static string ReplaysTab_DeleteBtn {
             get {
                 return ResourceManager.GetString("ReplaysTab_DeleteBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pack.
+        /// </summary>
+        public static string ReplaysTab_PackBtn {
+            get {
+                return ResourceManager.GetString("ReplaysTab_PackBtn", resourceCulture);
             }
         }
         

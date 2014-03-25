@@ -9,6 +9,7 @@
         Tournament = 4, 
         ClanWar = 5, 
         Tutorial = 6, 
-        CyberSport = 7 
+        CyberSport = 7,
+        Historical = 8 
     }
 }

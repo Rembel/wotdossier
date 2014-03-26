@@ -3501,11 +3501,20 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload.
+        ///   Looks up a localized string similar to Upload replay to server.
         /// </summary>
         public static string ReplaysTab_UploadBtn {
             get {
                 return ResourceManager.GetString("ReplaysTab_UploadBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload selected replays to server.
+        /// </summary>
+        public static string ReplaysTab_UploadMultipleBtn {
+            get {
+                return ResourceManager.GetString("ReplaysTab_UploadMultipleBtn", resourceCulture);
             }
         }
         

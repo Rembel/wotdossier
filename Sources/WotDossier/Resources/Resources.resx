@@ -1029,7 +1029,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Statistics</value>
   </data>
   <data name="ReplaysTab_UploadBtn" xml:space="preserve">
-    <value>Upload</value>
+    <value>Upload replay to server</value>
+  </data>
+  <data name="ReplaysTab_UploadMultipleBtn" xml:space="preserve">
+    <value>Upload selected replays to server</value>
   </data>
   <data name="ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server" xml:space="preserve">
     <value>Can't get or save player clan icon from server</value>

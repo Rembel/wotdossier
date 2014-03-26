@@ -10,12 +10,17 @@ namespace WotDossier.Domain
 
         private TankFilterSettings _tankFilterSettings = new TankFilterSettings();
         private PeriodSettings _periodSettings = new PeriodSettings();
+        private string _server = "ru";
 
         public string PlayerName { get; set; }
 
         public int PlayerId { get; set; }
 
-        public string Server { get; set; }
+        public string Server
+        {
+            get { return _server; }
+            set { _server = value; }
+        }
 
         public string PathToWotExe { get; set; }
 

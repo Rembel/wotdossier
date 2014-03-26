@@ -86,6 +86,7 @@
     <Compile Include="Logic\RatingHelper.cs" />
     <Compile Include="Logic\ReplaysManager.cs" />
     <Compile Include="Logic\ReplayUploader.cs" />
+    <Compile Include="Logic\RequestComposer.cs" />
     <Compile Include="Logic\ServerStatWrapper.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlayerNameSuggestionProvider.cs" />

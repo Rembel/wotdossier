@@ -34,6 +34,7 @@ namespace WotDossier.Applications.ViewModel
         public PlayerChartsViewModel ChartView { get; set; }
 
         public DelegateCommand<ReplayFile> ReplayUploadCommand { get; set; }
+        public DelegateCommand<object> ReplaysUploadCommand { get; set; }
         public DelegateCommand<ReplayFile> ReplayDeleteCommand { get; set; }
         public DelegateCommand<ReplayFile> CopyLinkToClipboardCommand { get; set; }
         public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
@@ -74,6 +75,7 @@ namespace WotDossier.Applications.ViewModel
         {
             ReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
             ReplayUploadCommand = new DelegateCommand<ReplayFile>(OnUploadReplay, CanUploadReplay);
+            ReplaysUploadCommand = new DelegateCommand<object>(OnUploadReplays, CanUploadReplays);
             ReplayDeleteCommand = new DelegateCommand<ReplayFile>(OnReplayRowDelete);
             ReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
             ReplayRowsZipCommand = new DelegateCommand<object>(OnReplayRowsZip);
@@ -421,6 +423,12 @@ namespace WotDossier.Applications.ViewModel
             return model != null && string.IsNullOrEmpty(model.Link);
         }
 
+        private bool CanUploadReplays(object rows)
+        {
+            ObservableCollection<object> model = rows as ObservableCollection<object>;
+            return model != null;
+        }
+
         private void OnUploadReplay(ReplayFile replayFile)
         {
             if (replayFile != null)
@@ -428,6 +436,29 @@ namespace WotDossier.Applications.ViewModel
                 UploadReplayViewModel viewModel = CompositionContainerFactory.Instance.GetExport<UploadReplayViewModel>();
                 viewModel.ReplayFile = replayFile;
                 viewModel.Show();
+            }
+        }
+
+        private void OnUploadReplays(object rows)
+        {
+            ReplayUploader replayUploader = new ReplayUploader();
+
+            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
+            IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
+
+            using (new WaitCursor())
+            {
+                AppSettings appSettings = SettingsReader.Get();
+
+                foreach (var replay in replays)
+                {
+                    WotReplaysSiteResponse response = replayUploader.Upload(replay.FileInfo, appSettings.PlayerId, appSettings.PlayerName);
+                    if (response != null && response.Result == true)
+                    {
+                        replay.Link = response.Url;
+                        //_repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);    
+                    }
+                }
             }
         }
 

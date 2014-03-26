@@ -1235,7 +1235,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Статистика</value>
   </data>
   <data name="ReplaysTab_UploadBtn" xml:space="preserve">
-    <value>Загрузить на сервер</value>
+    <value>Загрузить реплей на сервер</value>
   </data>
   <data name="ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server" xml:space="preserve">
     <value>Не удалось загрузить иконку клана с сервера</value>
@@ -1850,5 +1850,8 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   </data>
   <data name="Command_ZipFolder" xml:space="preserve">
     <value>Упаковать</value>
+  </data>
+  <data name="ReplaysTab_UploadMultipleBtn" xml:space="preserve">
+    <value>Загрузить выбранные реплеи на сервер</value>
   </data>
 </root>

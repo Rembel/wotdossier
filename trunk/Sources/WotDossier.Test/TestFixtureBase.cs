@@ -495,7 +495,7 @@ namespace WotDossier.Test
         [Test]
         public void UploadTest()
         {
-            FileInfo info = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
+            FileInfo info = new FileInfo(@"I:\World_of_Tanks_\Replays\20140325_2258_ussr-Object_140_84_winter.wotreplay");
 
             ReplayUploader uploader = new ReplayUploader();
 
@@ -507,6 +507,15 @@ namespace WotDossier.Test
             {
                 string s = HttpUtility.UrlDecode(coockie.Value);
             }
+        }
+
+        [Test]
+        public void MultipleUploadTest()
+        {
+            FileInfo info = new FileInfo(@"I:\World_of_Tanks_\Replays\20140325_2258_ussr-Object_140_84_winter.wotreplay");
+            ReplayUploader uploader = new ReplayUploader();
+            WotReplaysSiteResponse response = uploader.Upload(info, 10800699, "_rembel_");
+            Console.WriteLine(response.Error);
         }
 
         //[Test]

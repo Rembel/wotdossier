@@ -125,36 +125,47 @@ namespace WotDossier.Dal
                     TankJson65 tank65 = property.Value.ToObject<TankJson65>();
                     TankJson tank = TankJsonV2Converter.Convert(tank65);
                     tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
-                    ExtendPropertiesData(tank);
-                    tanks.Add(tank);
+                    if (ExtendPropertiesData(tank))
+                    {
+                        tanks.Add(tank);
+                    }
                 }
             }
             return tanks;
         }
 
-        public void ExtendPropertiesData(TankJson tank)
+        public bool ExtendPropertiesData(TankJson tank)
         {
-            tank.Description = Dictionaries.Instance.Tanks[tank.UniqueId()];
-            tank.Frags =
-                tank.FragsList.Select(
-                    x =>
-                    {
-                        int countryId = Convert.ToInt32(x[0]);
-                        int tankId = Convert.ToInt32(x[1]);
-                        int uniqueId = Utils.ToUniqueId(countryId, tankId);
-                        return new FragsJson
+            if (Dictionaries.Instance.Tanks.ContainsKey(tank.UniqueId()))
+            {
+                tank.Description = Dictionaries.Instance.Tanks[tank.UniqueId()];
+                tank.Frags =
+                    tank.FragsList.Select(
+                        x =>
                         {
-                            CountryId = countryId,
-                            TankId = tankId,
-                            Icon = Dictionaries.Instance.Tanks[uniqueId].Icon,
-                            TankUniqueId = uniqueId,
-                            Count = Convert.ToInt32(x[2]),
-                            Type = Dictionaries.Instance.Tanks[uniqueId].Type,
-                            Tier = Dictionaries.Instance.Tanks[uniqueId].Tier,
-                            KilledByTankUniqueId = tank.UniqueId(),
-                            Tank = Dictionaries.Instance.Tanks[uniqueId].Title
-                        };
-                    }).ToList();
+                            int countryId = Convert.ToInt32(x[0]);
+                            int tankId = Convert.ToInt32(x[1]);
+                            int uniqueId = Utils.ToUniqueId(countryId, tankId);
+                            return new FragsJson
+                            {
+                                CountryId = countryId,
+                                TankId = tankId,
+                                Icon = Dictionaries.Instance.Tanks[uniqueId].Icon,
+                                TankUniqueId = uniqueId,
+                                Count = Convert.ToInt32(x[2]),
+                                Type = Dictionaries.Instance.Tanks[uniqueId].Type,
+                                Tier = Dictionaries.Instance.Tanks[uniqueId].Tier,
+                                KilledByTankUniqueId = tank.UniqueId(),
+                                Tank = Dictionaries.Instance.Tanks[uniqueId].Title
+                            };
+                        }).ToList();
+                return true;
+            }
+            else
+            {
+                _log.WarnFormat("Found unknown tank:\n", JsonConvert.SerializeObject(tank));
+                return false;
+            }
         }
 
         /// <summary>

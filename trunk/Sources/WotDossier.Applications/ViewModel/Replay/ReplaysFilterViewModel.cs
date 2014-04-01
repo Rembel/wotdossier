@@ -362,6 +362,11 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public List<T> Filter<T>(List<T> replays) where T : ReplayFile
         {
+            if (replays == null)
+            {
+                return new List<T>();
+            }
+
             string [] members = null;
 
             if (!string.IsNullOrEmpty(Member))
@@ -370,6 +375,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
 
             return replays.Where(x =>
+                                    x.Tank != null &&
                                    (x.Tank.Tier == 1 && Level1Selected
                                     || x.Tank.Tier == 2 && Level2Selected
                                     || x.Tank.Tier == 3 && Level3Selected

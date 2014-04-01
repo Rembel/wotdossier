@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using Common.Logging;
 using Ionic.Zip;
@@ -36,7 +37,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<ReplayFile> ReplayUploadCommand { get; set; }
         public DelegateCommand<object> ReplaysUploadCommand { get; set; }
         public DelegateCommand<ReplayFile> ReplayDeleteCommand { get; set; }
-        public DelegateCommand<ReplayFile> CopyLinkToClipboardCommand { get; set; }
+        public DelegateCommand<object> CopyLinkToClipboardCommand { get; set; }
         public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
         public DelegateCommand<object> ReplayRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> ReplayRowsDeleteCommand { get; set; }
@@ -79,7 +80,7 @@ namespace WotDossier.Applications.ViewModel
             ReplayDeleteCommand = new DelegateCommand<ReplayFile>(OnReplayRowDelete);
             ReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
             ReplayRowsZipCommand = new DelegateCommand<object>(OnReplayRowsZip);
-            CopyLinkToClipboardCommand = new DelegateCommand<ReplayFile>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
+            CopyLinkToClipboardCommand = new DelegateCommand<object>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
             PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlayReplay);
 
             AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
@@ -171,17 +172,27 @@ namespace WotDossier.Applications.ViewModel
             return parent.Folders.Select(child => FindParentFolder(child, folder)).FirstOrDefault(foundItem => foundItem != null);
         }
 
-        private void OnCopyLinkToClipboard(ReplayFile model)
+        private void OnCopyLinkToClipboard(object rows)
         {
-            if (model != null && !string.IsNullOrEmpty(model.Link))
+            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
+
+            List<ReplayFile> replayFiles = selectedItems.Cast<ReplayFile>().ToList();
+
+            StringBuilder builder = new StringBuilder();
+            foreach (ReplayFile replay in replayFiles)
             {
-                Clipboard.SetText(model.Link);
+                builder.AppendLine(string.Format("{0}, {1}", replay.TankName, replay.MapName));
+                builder.AppendLine(replay.Link);
+                builder.AppendLine();
             }
+
+            Clipboard.SetText(builder.ToString());
         }
 
-        private bool CanCopyLinkToClipboard(ReplayFile model)
+        private bool CanCopyLinkToClipboard(object rows)
         {
-            return model != null && !string.IsNullOrEmpty(model.Link);
+            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
+            return selectedItems.Cast<ReplayFile>().ToList().Any(x => !string.IsNullOrEmpty(x.Link));
         }
 
         private void OnDeleteFolderCommand(ReplayFolder folder)
@@ -380,16 +391,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void OnReplayRowsZip(object rowData)
+        private void OnReplayRowsZip(object rows)
         {
-            ObservableCollection<object> selectedItems = rowData as ObservableCollection<object> ?? new ObservableCollection<object>();
+            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
             List<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
             PackReplays(replays, "pack");
         }
 
-        private void OnReplayRowsDelete(object rowData)
+        private void OnReplayRowsDelete(object rows)
         {
-            ObservableCollection<object> selectedItems = rowData as ObservableCollection<object> ?? new ObservableCollection<object>();
+            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
             IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
             bool error = false;
             foreach (ReplayFile replayFile in replays)
@@ -456,7 +467,7 @@ namespace WotDossier.Applications.ViewModel
                     if (response != null && response.Result == true)
                     {
                         replay.Link = response.Url;
-                        //_repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);    
+                        DossierRepository.SaveReplay(replay.PlayerId, replay.ReplayId, replay.Link);
                     }
                 }
             }

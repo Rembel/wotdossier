@@ -89,7 +89,7 @@
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_CopyToClipboard}" 
                               Command="{Binding Path=DataContext.CopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
-                              CommandParameter="{Binding}"/>
+                              CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_Play}" 
                               Command="{Binding Path=DataContext.PlayReplayCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>

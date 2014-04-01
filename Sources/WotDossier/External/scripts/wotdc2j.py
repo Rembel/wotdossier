@@ -119,17 +119,17 @@ def main():
 	dossierheader['tankcount'] = len(tankitems)
 
 	
-	base32name = "?;?"
-	if option_server == 0:
-		try:
-			base32name = base64.b32decode(os.path.splitext(filename_source)[0].replace('.\\', ''))
-		except Exception, e:
-			if e.message != 'Incorrect padding':
-				printmessage('cannot decode filename ' + os.path.splitext(filename_source)[0] + ': ' + e.message)
-
-
-	dossierheader['server'] = base32name.split(';', 1)[0];
-	dossierheader['username'] = base32name.split(';', 1)[1];
+#	base32name = "?;?"
+#	if option_server == 0:
+#		try:
+#			base32name = base64.b32decode(os.path.splitext(filename_source)[0].replace('.\\', ''))
+#		except Exception, e:
+#			if e.message != 'Incorrect padding':
+#				printmessage('cannot decode filename ' + os.path.splitext(filename_source)[0] + ': ' + e.message)
+#
+#
+#	dossierheader['server'] = base32name.split(';', 1)[0];
+#	dossierheader['username'] = base32name.split(';', 1)[1];
 	
 	
 	if option_server == 0:
@@ -400,17 +400,17 @@ def main():
 	sys.exit(0)
 	
 	
-def get_current_working_path():
-	#workaround for py2exe
-	import sys, os
-	
-	try:
-		if hasattr(sys, "frozen"):
-			return os.path.dirname(unicode(sys.executable, sys.getfilesystemencoding( )))
-		else:
-			return sys.path[0]
-	except Exception, e:
-		print e.message
+#def get_current_working_path():
+#	#workaround for py2exe
+#	import sys, os
+#	
+#	try:
+#		if hasattr(sys, "frozen"):
+#			return os.path.dirname(unicode(sys.executable, sys.getfilesystemencoding( )))
+#		else:
+#			return sys.path[0]
+#	except Exception, e:
+#		print e.message
 
 ############################################################################################################################
 
@@ -540,15 +540,15 @@ def keepCompatibility(structureddata):
 def get_json_data(filename):
 	import json, time, sys, os
 	
-
-	current_working_path = get_current_working_path()
-
-	os.chdir(current_working_path)
-	
-	if not os.path.exists(filename) or not os.path.isfile(filename) or not os.access(filename, os.R_OK):
-		catch_fatal(filename + " does not exists!")
-		sys.exit(1)
-
+#
+#	current_working_path = get_current_working_path()
+#
+#	os.chdir(current_working_path)
+#	
+#	if not os.path.exists(filename) or not os.path.isfile(filename) or not os.access(filename, os.R_OK):
+#		catch_fatal(filename + " does not exists!")
+#		sys.exit(1)
+#
 	file_json = open(filename, 'r')
 
 	try:
@@ -576,7 +576,7 @@ def get_tank_data(tanksdata, countryid, tankid, dataname):
 		return 'unknown_' + str(countryid) + '_' + str(tankid)
 
 
-	return "-"
+	return "-1"
 
 
 def getdata_fragslist(tankversion, tanksdata, offset):

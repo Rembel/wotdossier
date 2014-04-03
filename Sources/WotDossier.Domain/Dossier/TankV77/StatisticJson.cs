@@ -1,6 +1,6 @@
-namespace WotDossier.Domain.Tank
+namespace WotDossier.Domain.Dossier.TankV77
 {
-    public class StatisticJson
+    public class StatisticJson77 : StatisticJson77_2
     {
         public int battlesCount;
         public int capturePoints;
@@ -9,6 +9,7 @@ namespace WotDossier.Domain.Tank
         public int droppedCapturePoints;
         public int frags;
         public int frags8p;
+        public int fragsBeast;
         public int hits;
         public int losses;
         public int shots;
@@ -17,24 +18,8 @@ namespace WotDossier.Domain.Tank
         public int winAndSurvived;
         public int wins;
         public int xp;
-
-        public int originalXP;
-        public int damageAssistedTrack;
-        public int damageAssistedRadio;
-        public int shotsReceived;
-        public int noDamageShotsReceived;
-        public int potentialDamageReceived;
-        public int damageBlockedByArmor;
-        public int piercedReceived;
-        public int heHitsReceived;
-        public int he_hits;
-        public int pierced;
         public int xpBefore8_8;
         public int battlesCountBefore8_8;
         public int battlesCountBefore9_0;
-        
-        public int maxDamage;
-        public int maxFrags;
-        public int maxXP;
     }
 }

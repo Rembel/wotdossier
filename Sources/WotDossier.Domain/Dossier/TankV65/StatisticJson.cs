@@ -1,6 +1,6 @@
 namespace WotDossier.Domain.Dossier.TankV65
 {
-    public class StatisticJson65
+    public class StatisticJson65 : StatisticJson65_2
     {
         public int battlesCount;
         public int capturePoints;
@@ -20,15 +20,5 @@ namespace WotDossier.Domain.Dossier.TankV65
         public int xp;
         public int xpBefore8_8;
         public int battlesCountBefore8_8;
-
-        public int originalXP;
-        public int damageAssistedTrack;
-        public int damageAssistedRadio;
-        public int shotsReceived;
-        public int noDamageShotsReceived;
-        public int piercedReceived;
-        public int heHitsReceived;
-        public int he_hits;
-        public int pierced;
     }
 }

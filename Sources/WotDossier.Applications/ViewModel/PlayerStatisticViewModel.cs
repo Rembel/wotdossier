@@ -473,6 +473,43 @@ namespace WotDossier.Applications.ViewModel
             #endregion
         }
 
+        public PlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat)
+            : this(stat, new List<PlayerStatisticViewModel>())
+        {
+        }
+
+        public PlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+            : base(stat.Updated, list)
+        {
+            #region Common init
+
+            BattlesCount = stat.BattlesCount;
+            Wins = stat.Wins;
+            Losses = stat.Losses;
+            SurvivedBattles = stat.SurvivedBattles;
+            Xp = stat.Xp;
+            MaxXp = stat.MaxXp;
+            Frags = stat.Frags;
+            Spotted = stat.Spotted;
+            HitsPercents = stat.HitsPercents;
+            DamageDealt = stat.DamageDealt;
+            DamageTaken = stat.DamageTaken;
+            CapturePoints = stat.CapturePoints;
+            DroppedCapturePoints = stat.DroppedCapturePoints;
+            PerformanceRating = stat.PerformanceRating;
+            WN8Rating = stat.WN8Rating;
+            //Created = stat.PlayerIdObject.Creaded);
+            Updated = stat.Updated;
+            Tier = stat.AvgLevel;
+
+            GuardsMan = stat.AchievementsIdObject.GuardsMan;
+            MakerOfHistory = stat.AchievementsIdObject.MakerOfHistory;
+            WeakVehiclesWins = stat.AchievementsIdObject.WeakVehiclesWins;
+            BothSidesWins = stat.AchievementsIdObject.BothSidesWins;
+
+            #endregion
+        }
+
         public ClanModel Clan { get; set; }
 
         public PlayerStatisticViewModel Clone()

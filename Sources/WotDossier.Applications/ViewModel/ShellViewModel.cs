@@ -525,6 +525,10 @@ namespace WotDossier.Applications.ViewModel
             {
                 Tanks = StatisticViewModelFactory.CreateBattlesStatistic(entities);
             }
+            else if (BattleModeSelector.BattleMode == BattleMode.HistoricalBattle)
+            {
+                Tanks = StatisticViewModelFactory.CreateHistoricalBattlesStatistic(entities);
+            }
             else
             {
                 Tanks = StatisticViewModelFactory.CreateTeamBattlesStatistic(entities);
@@ -563,12 +567,19 @@ namespace WotDossier.Applications.ViewModel
 
             int playerId = settings.PlayerId;
             PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(serverStatistic.Ratings, new PlayerStatAdapter(tanks), playerId);
-            _dossierRepository.UpdateTeamBattlesStatistic(new TeamBattlesStatAdapter(tanks), playerId);
+            _dossierRepository.UpdateStatistic(new TeamBattlesStatAdapter(tanks), playerId);
+            _dossierRepository.UpdateStatistic(new HistoricalBattlesStatAdapter(tanks), playerId);
 
             if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
             {
                 List<PlayerStatisticEntity> statisticEntities = _dossierRepository.GetStatistic<PlayerStatisticEntity>(player.PlayerId).ToList();
                 return StatisticViewModelFactory.Create(statisticEntities, tanks, player, serverStatistic);
+            }
+            
+            if (BattleModeSelector.BattleMode == BattleMode.HistoricalBattle)
+            {
+                List<HistoricalBattlesStatisticEntity> statisticEntities = _dossierRepository.GetStatistic<HistoricalBattlesStatisticEntity>(player.PlayerId).ToList();
+                return StatisticViewModelFactory.Create(statisticEntities, tanks, player);
             }
             else
             {

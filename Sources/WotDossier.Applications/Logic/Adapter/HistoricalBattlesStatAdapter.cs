@@ -8,55 +8,42 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class TeamBattlesStatAdapter : IStatisticAdapter<TeamBattlesStatisticEntity>
+    public class HistoricalBattlesStatAdapter : IStatisticAdapter<HistoricalBattlesStatisticEntity>
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
         /// </summary>
-        public TeamBattlesStatAdapter(List<TankJson> tanks)
+        public HistoricalBattlesStatAdapter(List<TankJson> tanks)
         {
-            Battles_count = tanks.Sum(x => x.A7x7.battlesCount);
-            Wins = tanks.Sum(x => x.A7x7.wins);
-            Losses = tanks.Sum(x => x.A7x7.losses);
-            Survived_battles = tanks.Sum(x => x.A7x7.survivedBattles);
-            Xp = tanks.Sum(x => x.A7x7.xp);
+            Battles_count = tanks.Sum(x => x.Historical.battlesCount);
+            Wins = tanks.Sum(x => x.Historical.wins);
+            Losses = tanks.Sum(x => x.Historical.losses);
+            Survived_battles = tanks.Sum(x => x.Historical.survivedBattles);
+            Xp = tanks.Sum(x => x.Historical.xp);
             if (Battles_count > 0)
             {
                 Battle_avg_xp = Xp/(double) Battles_count;
             }
-            Max_xp = tanks.Max(x => x.A7x7.maxXP);
-            Frags = tanks.Sum(x => x.A7x7.frags);
-            Spotted = tanks.Sum(x => x.A7x7.spotted);
-            Hits_percents = tanks.Sum(x => x.A7x7.hits)/((double) tanks.Sum(x => x.A7x7.shots))*100.0;
-            Damage_dealt = tanks.Sum(x => x.A7x7.damageDealt);
-            Damage_taken = tanks.Sum(x => x.A7x7.damageReceived);
-            Capture_points = tanks.Sum(x => x.A7x7.capturePoints);
-            Dropped_capture_points = tanks.Sum(x => x.A7x7.droppedCapturePoints);
+            Max_xp = tanks.Max(x => x.Historical.maxXP);
+            Frags = tanks.Sum(x => x.Historical.frags);
+            Spotted = tanks.Sum(x => x.Historical.spotted);
+            Hits_percents = tanks.Sum(x => x.Historical.hits)/((double) tanks.Sum(x => x.Historical.shots))*100.0;
+            Damage_dealt = tanks.Sum(x => x.Historical.damageDealt);
+            Damage_taken = tanks.Sum(x => x.Historical.damageReceived);
+            Capture_points = tanks.Sum(x => x.Historical.capturePoints);
+            Dropped_capture_points = tanks.Sum(x => x.Historical.droppedCapturePoints);
             Updated = tanks.Max(x => x.Common.lastBattleTimeR);
             if (Battles_count > 0)
             {
-                AvgLevel = tanks.Sum(x => x.Common.tier*x.A7x7.battlesCount)/(double) Battles_count;
+                AvgLevel = tanks.Sum(x => x.Common.tier*x.Historical.battlesCount)/(double) Battles_count;
             }
 
             #region [ Awards ]
 
-            WolfAmongSheep = tanks.Sum(x => x.Achievements7x7.wolfAmongSheep);
-            WolfAmongSheepMedal = tanks.Sum(x => x.Achievements7x7.wolfAmongSheepMedal);
-            GeniusForWar = tanks.Sum(x => x.Achievements7x7.geniusForWar);
-            GeniusForWarMedal = tanks.Sum(x => x.Achievements7x7.geniusForWarMedal);
-            KingOfTheHill = tanks.Sum(x => x.Achievements7x7.kingOfTheHill);
-            TacticalBreakthroughSeries = tanks.Sum(x => x.Achievements7x7.tacticalBreakthroughSeries);
-            MaxTacticalBreakthroughSeries = tanks.Sum(x => x.Achievements7x7.maxTacticalBreakthroughSeries);
-            ArmoredFist = tanks.Sum(x => x.Achievements7x7.armoredFist);
-            TacticalBreakthrough = tanks.Sum(x => x.Achievements7x7.tacticalBreakthrough);
-
-            GodOfWar = tanks.Sum(x => x.Achievements7x7.godOfWar);
-            FightingReconnaissance = tanks.Sum(x => x.Achievements7x7.fightingReconnaissance);
-            FightingReconnaissanceMedal = tanks.Sum(x => x.Achievements7x7.fightingReconnaissanceMedal);
-            WillToWinSpirit = tanks.Sum(x => x.Achievements7x7.willToWinSpirit);
-            CrucialShot = tanks.Sum(x => x.Achievements7x7.crucialShot);
-            CrucialShotMedal = tanks.Sum(x => x.Achievements7x7.crucialShotMedal);
-            ForTacticalOperations = tanks.Sum(x => x.Achievements7x7.forTacticalOperations);
+            GuardsMan = tanks.Sum(x => x.AchievementsHistorical.guardsman);
+            MakerOfHistory = tanks.Sum(x => x.AchievementsHistorical.makerOfHistory);
+            BothSidesWins = tanks.Sum(x => x.AchievementsHistorical.bothSidesWins);
+            WeakVehiclesWins = tanks.Sum(x => x.AchievementsHistorical.weakVehiclesWins);
 
             #endregion
 
@@ -148,44 +135,20 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #region Achievments
 
-        public int WolfAmongSheep { get; set; }
+        public int GuardsMan { get; set; }
 
-        public int WolfAmongSheepMedal { get; set; }
+        public int MakerOfHistory { get; set; }
 
-        public int GeniusForWar { get; set; }
+        public int BothSidesWins { get; set; }
 
-        public int GeniusForWarMedal { get; set; }
-
-        public int KingOfTheHill { get; set; }
-
-        public int TacticalBreakthroughSeries { get; set; }
-
-        public int MaxTacticalBreakthroughSeries { get; set; }
-
-        public int ArmoredFist { get; set; }
-
-        public int TacticalBreakthrough { get; set; }
-
-        public int GodOfWar { get; set; }
-
-        public int FightingReconnaissance { get; set; }
-
-        public int FightingReconnaissanceMedal { get; set; }
-
-        public int WillToWinSpirit { get; set; }
-
-        public int CrucialShot { get; set; }
-
-        public int CrucialShotMedal { get; set; }
-
-        public int ForTacticalOperations { get; set; }
+        public int WeakVehiclesWins { get; set; }
 
         #endregion
 
         public int Battles_count { get; set; }
         public DateTime Updated { get; set; }
 
-        public virtual void Update(TeamBattlesStatisticEntity entity)
+        public virtual void Update(HistoricalBattlesStatisticEntity entity)
         {
             #region CommonJson init
 
@@ -211,26 +174,13 @@ namespace WotDossier.Applications.Logic.Adapter
 
             if (entity.AchievementsIdObject == null)
             {
-                entity.AchievementsIdObject = new TeamBattlesAchievementsEntity();
+                entity.AchievementsIdObject = new HistoricalBattlesAchievementsEntity();
             }
 
-            entity.AchievementsIdObject.WolfAmongSheep = WolfAmongSheep;
-            entity.AchievementsIdObject.WolfAmongSheepMedal = WolfAmongSheepMedal;
-            entity.AchievementsIdObject.GeniusForWar = GeniusForWar;
-            entity.AchievementsIdObject.GeniusForWarMedal = GeniusForWarMedal;
-            entity.AchievementsIdObject.KingOfTheHill = KingOfTheHill;
-            entity.AchievementsIdObject.TacticalBreakthroughSeries = TacticalBreakthroughSeries;
-            entity.AchievementsIdObject.MaxTacticalBreakthroughSeries = MaxTacticalBreakthroughSeries;
-            entity.AchievementsIdObject.ArmoredFist = ArmoredFist;
-            entity.AchievementsIdObject.TacticalBreakthrough = TacticalBreakthrough;
-
-            entity.AchievementsIdObject.GodOfWar = GodOfWar;
-            entity.AchievementsIdObject.FightingReconnaissance = FightingReconnaissance;
-            entity.AchievementsIdObject.FightingReconnaissanceMedal = FightingReconnaissanceMedal;
-            entity.AchievementsIdObject.WillToWinSpirit = WillToWinSpirit;
-            entity.AchievementsIdObject.CrucialShot = CrucialShot;
-            entity.AchievementsIdObject.CrucialShotMedal = CrucialShotMedal;
-            entity.AchievementsIdObject.ForTacticalOperations = ForTacticalOperations;
+            entity.AchievementsIdObject.WeakVehiclesWins = WeakVehiclesWins;
+            entity.AchievementsIdObject.GuardsMan = GuardsMan;
+            entity.AchievementsIdObject.MakerOfHistory = MakerOfHistory;
+            entity.AchievementsIdObject.BothSidesWins = BothSidesWins;
 
             #endregion
         }

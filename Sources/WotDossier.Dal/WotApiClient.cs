@@ -122,8 +122,8 @@ namespace WotDossier.Dal
                 foreach (JToken jToken in tanksDataV2)
                 {
                     JProperty property = (JProperty)jToken;
-                    TankJson65 tank65 = property.Value.ToObject<TankJson65>();
-                    TankJson tank = TankJsonV2Converter.Convert(tank65);
+                    int version = property.Value["common"].ToObject<CommonJson>().basedonversion;
+                    TankJson tank = TankJsonV2Converter.Convert(property.Value, version);
                     tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                     if (ExtendPropertiesData(tank))
                     {

@@ -1,6 +1,6 @@
-﻿namespace WotDossier.Domain.Tank
+﻿namespace WotDossier.Domain.Dossier.TankV77
 {
-    public class Achievements7x7
+    public class Achievements7x7_77
     {
         public int wolfAmongSheep;
         public int wolfAmongSheepMedal;

@@ -76,6 +76,7 @@
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
+    <Compile Include="Logic\Adapter\HistoricalBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\PlayerStatAdapter.cs" />
     <Compile Include="Logic\Adapter\TeamBattlesStatAdapter.cs" />
     <Compile Include="Logic\BattleLevelDetector.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="ViewModel\BattleModeSelectorViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
+    <Compile Include="ViewModel\Rows\HistoricalBattlesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\IStatisticBase.cs" />
     <Compile Include="ViewModel\KeyValue.cs" />
     <Compile Include="ViewModel\ListItem.cs" />

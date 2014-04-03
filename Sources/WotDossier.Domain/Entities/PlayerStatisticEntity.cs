@@ -55,11 +55,6 @@ namespace WotDossier.Domain.Entities
         #endregion
 
         /// <summary>
-        /// Gets/Sets the field "Updated".
-        /// </summary>
-        public virtual DateTime Updated { get; set; }
-
-        /// <summary>
         /// Gets/Sets the field "Wins".
         /// </summary>
         public virtual int Wins { get; set; }
@@ -123,11 +118,6 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "DroppedCapturePoints".
         /// </summary>
         public virtual int DroppedCapturePoints { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "BattlesCount".
-        /// </summary>
-        public virtual int BattlesCount { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "Rating_IntegratedValue".

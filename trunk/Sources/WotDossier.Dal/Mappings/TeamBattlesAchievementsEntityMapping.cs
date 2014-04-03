@@ -18,6 +18,13 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.MaxTacticalBreakthroughSeries, "MaxTacticalBreakthroughSeries");
 			Map(v => v.ArmoredFist, "ArmoredFist");
 			Map(v => v.TacticalBreakthrough, "TacticalBreakthrough");
+			Map(v => v.GodOfWar, "GodOfWar");
+			Map(v => v.FightingReconnaissance, "FightingReconnaissance");
+			Map(v => v.FightingReconnaissanceMedal, "FightingReconnaissanceMedal");
+			Map(v => v.WillToWinSpirit, "WillToWinSpirit");
+			Map(v => v.CrucialShot, "CrucialShot");
+			Map(v => v.CrucialShotMedal, "CrucialShotMedal");
+			Map(v => v.ForTacticalOperations, "ForTacticalOperations");
 		
 			//HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.AchievementsId));
         }

@@ -1,6 +1,6 @@
-﻿namespace WotDossier.Domain.Tank
+﻿namespace WotDossier.Domain.Dossier.TankV77
 {
-    public class AchievementsJson
+    public class AchievementsJson77
     {
         public int alaric;
         public int armorPiercer;

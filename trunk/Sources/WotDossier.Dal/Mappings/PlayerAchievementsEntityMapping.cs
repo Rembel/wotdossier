@@ -64,7 +64,14 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.Leclerk, "Leclerk");
             Map(v => v.Lavrinenko, "Lavrinenko");
             Map(v => v.Ekins, "Ekins");
-		
+            Map(v => v.MarksOnGun, "MarksOnGun");
+            Map(v => v.MovingAvgDamage, "MovingAvgDamage");
+            Map(v => v.MedalMonolith, "MedalMonolith");
+            Map(v => v.MedalAntiSpgFire, "MedalAntiSpgFire");
+            Map(v => v.MedalGore, "MedalGore");
+            Map(v => v.MedalCoolBlood, "MedalCoolBlood");
+            Map(v => v.MedalStark, "MedalStark");
+
 			//HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.AchievementsId));
         }
     }

@@ -39,7 +39,7 @@ namespace WotDossier.Applications.Logic.Adapter
                 AvgLevel = tanks.Sum(x => x.Common.tier * x.A15x15.battlesCount) / (double)Battles_count;
             }
 
-            #region [ IRowBattleAwards ]
+            #region [ BattleAwards ]
 
             Warrior = tanks.Sum(x => x.Achievements.warrior);
             Invader = tanks.Sum(x => x.Achievements.invader);
@@ -59,7 +59,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowEpic ]
+            #region [ Epic ]
 
             Boelter = tanks.Sum(x => x.Achievements.medalWittmann);
             RadleyWalters = tanks.Sum(x => x.Achievements.medalRadleyWalters);
@@ -83,7 +83,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowMedals]
+            #region [ Medals]
 
             //Kay = stat.data.achievements.medalKay;
             //Carius = stat.data.achievements.medalCarius;
@@ -96,14 +96,14 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowSeries ]
+            #region [ Series ]
 
             SharpshooterLongest = tanks.Max(x => x.Achievements.maxSniperSeries);
             MasterGunnerLongest = tanks.Max(x => x.Achievements.maxPiercingSeries);
 
             #endregion
 
-            #region [ IRowSpecialAwards ]
+            #region [ SpecialAwards ]
 
             Kamikaze = tanks.Sum(x => x.Achievements.kamikaze);
             Raider = tanks.Sum(x => x.Achievements.raider);
@@ -119,6 +119,14 @@ namespace WotDossier.Applications.Logic.Adapter
             Ranger = tanks.Sum(x => x.Achievements.huntsman);
 
             #endregion
+
+            MarksOnGun = tanks.Sum(x => x.Achievements.marksOnGun);
+            MovingAvgDamage = tanks.Sum(x => x.Achievements.movingAvgDamage);
+            MedalMonolith = tanks.Sum(x => x.Achievements.medalMonolith);
+            MedalAntiSpgFire = tanks.Sum(x => x.Achievements.medalAntiSpgFire);
+            MedalGore = tanks.Sum(x => x.Achievements.medalGore);
+            MedalCoolBlood = tanks.Sum(x => x.Achievements.medalCoolBlood);
+            MedalStark = tanks.Sum(x => x.Achievements.medalStark);
 
             PerformanceRating = RatingHelper.GetPerformanceRating(tanks);
             WN8Rating = RatingHelper.GetWN8Rating(tanks);
@@ -151,7 +159,7 @@ namespace WotDossier.Applications.Logic.Adapter
                 }
             }
 
-            #region [ IRowBattleAwards ]
+            #region [ BattleAwards ]
 
             Warrior = stat.dataField.achievements.warrior;
             Invader = stat.dataField.achievements.invader;
@@ -171,7 +179,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowEpic ]
+            #region [ Epic ]
 
             Boelter = stat.dataField.achievements.medal_boelter;
             RadleyWalters = stat.dataField.achievements.medal_radley_walters;
@@ -195,7 +203,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowMedals]
+            #region [ Medals]
 
             Kay = stat.dataField.achievements.medal_kay;
             Carius = stat.dataField.achievements.medal_carius;
@@ -208,14 +216,14 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowSeries ]
+            #region [ Series ]
 
             SharpshooterLongest = stat.dataField.achievements.max_sniper_series;
             MasterGunnerLongest = stat.dataField.achievements.max_piercing_series;
 
             #endregion
 
-            #region [ IRowSpecialAwards ]
+            #region [ SpecialAwards ]
 
             Kamikaze = stat.dataField.achievements.kamikaze;
             Raider = stat.dataField.achievements.raider;
@@ -230,6 +238,14 @@ namespace WotDossier.Applications.Logic.Adapter
             Ranger = stat.dataField.achievements.huntsman;
 
             #endregion
+
+            MarksOnGun = stat.dataField.achievements.marksOnGun;
+            MovingAvgDamage = stat.dataField.achievements.movingAvgDamage;
+            MedalMonolith = stat.dataField.achievements.medalMonolith;
+            MedalAntiSpgFire = stat.dataField.achievements.medalAntiSpgFire;
+            MedalGore = stat.dataField.achievements.medalGore;
+            MedalCoolBlood = stat.dataField.achievements.medalCoolBlood;
+            MedalStark = stat.dataField.achievements.medalStark;
 
             Vehicle = stat.dataField.vehicles;
         }
@@ -272,7 +288,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #region Achievments
 
-        #region [ ITankRowBattleAwards ]
+        #region [ BattleAwards ]
 
         public int Warrior { get; set; }
 
@@ -308,7 +324,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #endregion
 
-        #region [ ITankRowEpic ]
+        #region [ RowEpic ]
 
         public int Boelter { get; set; }
 
@@ -350,7 +366,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #endregion
 
-        #region [ ITankRowSpecialAwards ]
+        #region [ SpecialAwards ]
 
         public int Kamikaze { get; set; }
 
@@ -378,7 +394,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #endregion
 
-        #region [ ITankRowMedals]
+        #region [ Medals]
 
         public int Kay { get; set; }
 
@@ -398,7 +414,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         #endregion
 
-        #region [ ITankRowSeries ]
+        #region [ Series ]
 
         public int ReaperLongest { get; set; }
 
@@ -421,6 +437,20 @@ namespace WotDossier.Applications.Logic.Adapter
         public int SurvivorProgress { get; set; }
 
         #endregion
+
+        public int MarksOnGun { get; set; }
+
+        public int MovingAvgDamage { get; set; }
+
+        public int MedalMonolith { get; set; }
+        
+        public int MedalAntiSpgFire { get; set; }
+        
+        public int MedalGore { get; set; }
+        
+        public int MedalCoolBlood { get; set; }
+        
+        public int MedalStark { get; set; }
 
         public double RBR { get; set; }
 
@@ -459,7 +489,7 @@ namespace WotDossier.Applications.Logic.Adapter
                 entity.AchievementsIdObject = new PlayerAchievementsEntity();
             }
 
-            #region [ IRowBattleAwards ]
+            #region [ BattleAwards ]
 
             entity.AchievementsIdObject.Warrior = Warrior;
             entity.AchievementsIdObject.Invader = Invader;
@@ -479,7 +509,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowEpic ]
+            #region [ Epic ]
 
             entity.AchievementsIdObject.Boelter = Boelter;
             entity.AchievementsIdObject.RadleyWalters = RadleyWalters;
@@ -503,7 +533,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowMedals]
+            #region [ Medals]
 
             entity.AchievementsIdObject.Kay = Kay;
             entity.AchievementsIdObject.Carius = Carius;
@@ -516,14 +546,14 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            #region [ IRowSeries ]
+            #region [ Series ]
 
             entity.AchievementsIdObject.SharpshooterLongest = SharpshooterLongest;
             entity.AchievementsIdObject.MasterGunnerLongest = MasterGunnerLongest;
 
             #endregion
 
-            #region [ IRowSpecialAwards ]
+            #region [ SpecialAwards ]
 
             entity.AchievementsIdObject.Kamikaze = Kamikaze;
             entity.AchievementsIdObject.Raider = Raider;
@@ -538,6 +568,14 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.Ranger = Ranger;
 
             #endregion
+
+            entity.AchievementsIdObject.MarksOnGun = MarksOnGun;
+            entity.AchievementsIdObject.MovingAvgDamage = MovingAvgDamage;
+            entity.AchievementsIdObject.MedalMonolith = MedalMonolith;
+            entity.AchievementsIdObject.MedalAntiSpgFire = MedalAntiSpgFire;
+            entity.AchievementsIdObject.MedalGore = MedalGore;
+            entity.AchievementsIdObject.MedalCoolBlood = MedalCoolBlood;
+            entity.AchievementsIdObject.MedalStark = MedalStark;
 
             #endregion
         }

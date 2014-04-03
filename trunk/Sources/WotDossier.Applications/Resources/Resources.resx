@@ -397,4 +397,7 @@ Avg Spotted: {1:0.00}</value>
   <data name="WindowCaption_Pack" xml:space="preserve">
     <value>Pack</value>
   </data>
+  <data name="BattleMode_HistoricalBattle" xml:space="preserve">
+    <value>Historical Battle</value>
+  </data>
 </root>

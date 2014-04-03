@@ -77,5 +77,13 @@
         //added in 0.8.11
         public int sniper2;
         public int main_gun;
+
+        public int marksOnGun;
+        public int movingAvgDamage;
+        public int medalMonolith;
+        public int medalAntiSpgFire;
+        public int medalGore;
+        public int medalCoolBlood;
+        public int medalStark;
     }
 }

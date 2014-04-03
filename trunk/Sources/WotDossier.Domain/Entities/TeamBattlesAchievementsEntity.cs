@@ -42,6 +42,20 @@ namespace WotDossier.Domain.Entities
 
         public virtual int TacticalBreakthrough { get; set; }
 
+        public virtual int GodOfWar { get; set; }
+
+        public virtual int FightingReconnaissance { get; set; }
+
+        public virtual int FightingReconnaissanceMedal { get; set; }
+
+        public virtual int WillToWinSpirit { get; set; }
+
+        public virtual int CrucialShot { get; set; }
+
+        public virtual int CrucialShotMedal { get; set; }
+
+        public virtual int ForTacticalOperations { get; set; }
+
         #region Collections
 
         private IList<TeamBattlesStatisticEntity> _teamBattlesStatisticEntities;

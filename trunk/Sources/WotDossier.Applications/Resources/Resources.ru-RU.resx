@@ -397,4 +397,7 @@
   <data name="WindowCaption_Pack" xml:space="preserve">
     <value>Упаковка</value>
   </data>
+  <data name="BattleMode_HistoricalBattle" xml:space="preserve">
+    <value>Исторический бой</value>
+  </data>
 </root>

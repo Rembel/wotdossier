@@ -59,7 +59,13 @@ namespace WotDossier.Domain.Entities
 		public static readonly string PropLuckyDevil = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.LuckyDevil);
         public static readonly string PropSniper2 = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Sniper2);
         public static readonly string PropMainGun = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MainGun);
-        
+        public static readonly string PropMarksOnGun = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MarksOnGun);
+        public static readonly string PropMovingAvgDamage = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MovingAvgDamage);
+        public static readonly string PropMedalMonolith = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MedalMonolith);
+        public static readonly string PropMedalAntiSpgFire = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MedalAntiSpgFire);
+        public static readonly string PropMedalGore = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MedalGore);
+        public static readonly string PropMedalCoolBlood = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MedalCoolBlood);
+        public static readonly string PropMedalStark = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MedalStark);
 		
 		#endregion
 
@@ -337,6 +343,41 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "Ekins".
         /// </summary>
         public virtual int Ekins { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MarksOnGun".
+        /// </summary>
+        public virtual int MarksOnGun { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MovingAvgDamage".
+        /// </summary>
+        public virtual int MovingAvgDamage { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MedalMonolith".
+        /// </summary>
+        public virtual int MedalMonolith { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MedalAntiSpgFire".
+        /// </summary>
+        public virtual int MedalAntiSpgFire { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MedalGore".
+        /// </summary>
+        public virtual int MedalGore { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MedalCoolBlood".
+        /// </summary>
+        public virtual int MedalCoolBlood { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MedalStark".
+        /// </summary>
+        public virtual int MedalStark { get; set; }
 		
 		#region Collections
 		

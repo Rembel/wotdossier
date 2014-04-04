@@ -566,9 +566,9 @@ namespace WotDossier.Applications.ViewModel
             AppSettings settings = SettingsReader.Get();
 
             int playerId = settings.PlayerId;
-            PlayerEntity player = _dossierRepository.UpdatePlayerStatistic(serverStatistic.Ratings, new PlayerStatAdapter(tanks), playerId);
-            _dossierRepository.UpdateStatistic(new TeamBattlesStatAdapter(tanks), playerId);
-            _dossierRepository.UpdateStatistic(new HistoricalBattlesStatAdapter(tanks), playerId);
+            PlayerEntity player = _dossierRepository.UpdateStatistic(new PlayerStatAdapter(tanks), serverStatistic.Ratings, playerId);
+            _dossierRepository.UpdateStatistic(new TeamBattlesStatAdapter(tanks), serverStatistic.Ratings, playerId);
+            _dossierRepository.UpdateStatistic(new HistoricalBattlesStatAdapter(tanks), serverStatistic.Ratings, playerId);
 
             if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
             {

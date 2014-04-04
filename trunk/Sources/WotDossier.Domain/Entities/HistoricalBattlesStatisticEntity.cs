@@ -32,6 +32,14 @@ namespace WotDossier.Domain.Entities
         #endregion
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="HistoricalBattlesStatisticEntity"/> class.
+        /// </summary>
+        public HistoricalBattlesStatisticEntity()
+        {
+            AchievementsIdObject = new HistoricalBattlesAchievementsEntity();
+        }
+
+        /// <summary>
         /// Gets/Sets the field "Wins".
         /// </summary>
         public virtual int Wins { get; set; }
@@ -101,19 +109,30 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public virtual double AvgLevel { get; set; }
 
-				/// <summary>
+		/// <summary>
 		/// Gets/Sets the field "AchievementsId".
 		/// </summary>
 		public virtual int? AchievementsId { get; set; }
 		
 		/// <summary>
-		/// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
-		/// </summary>
-		public virtual HistoricalBattlesAchievementsEntity AchievementsIdObject { get; set; }
-
+        /// Gets or sets the RBR.
+        /// </summary>
         public virtual double RBR { get; set; }
+
+        /// <summary>
+        /// Gets or sets the W n8 rating.
+        /// </summary>
         public virtual double WN8Rating { get; set; }
+
+        /// <summary>
+        /// Gets or sets the performance rating.
+        /// </summary>
         public virtual double PerformanceRating { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
+        /// </summary>
+        public virtual HistoricalBattlesAchievementsEntity AchievementsIdObject { get; set; }
     }
 }
 

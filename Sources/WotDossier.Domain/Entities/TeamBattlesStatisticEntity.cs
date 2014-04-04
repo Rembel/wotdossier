@@ -32,9 +32,12 @@ namespace WotDossier.Domain.Entities
         #endregion
 
         /// <summary>
-        /// Gets/Sets the field "Updated".
+        /// Initializes a new instance of the <see cref="TeamBattlesStatisticEntity"/> class.
         /// </summary>
-        public virtual DateTime Updated { get; set; }
+        public TeamBattlesStatisticEntity()
+        {
+            AchievementsIdObject = new TeamBattlesAchievementsEntity();
+        }
 
         /// <summary>
         /// Gets/Sets the field "Wins".
@@ -102,28 +105,34 @@ namespace WotDossier.Domain.Entities
         public virtual int DroppedCapturePoints { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "BattlesCount".
-        /// </summary>
-        public virtual int BattlesCount { get; set; }
-
-        /// <summary>
         /// Gets/Sets the AvgLevel object.
         /// </summary>
         public virtual double AvgLevel { get; set; }
 
-				/// <summary>
-		/// Gets/Sets the field "AchievementsId".
-		/// </summary>
-		public virtual int? AchievementsId { get; set; }
-		
-		/// <summary>
-		/// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
-		/// </summary>
-		public virtual TeamBattlesAchievementsEntity AchievementsIdObject { get; set; }
-
+        /// <summary>
+        /// Gets or sets the RBR.
+        /// </summary>
         public virtual double RBR { get; set; }
+
+        /// <summary>
+        /// Gets or sets the W n8 rating.
+        /// </summary>
         public virtual double WN8Rating { get; set; }
+
+        /// <summary>
+        /// Gets or sets the performance rating.
+        /// </summary>
         public virtual double PerformanceRating { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "AchievementsId".
+        /// </summary>
+        public virtual int? AchievementsId { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
+        /// </summary>
+        public virtual TeamBattlesAchievementsEntity AchievementsIdObject { get; set; }
     }
 }
 

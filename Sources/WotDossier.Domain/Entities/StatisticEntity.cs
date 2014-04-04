@@ -1,4 +1,5 @@
 using System;
+using WotDossier.Domain.Player;
 
 namespace WotDossier.Domain.Entities
 {
@@ -27,5 +28,10 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the <see cref="PlayerEntity"/> object.
         /// </summary>
         public virtual PlayerEntity PlayerIdObject { get; set; }
+
+        public virtual void UpdateRatings(Ratings ratings)
+        {
+            
+        }
     }
 }

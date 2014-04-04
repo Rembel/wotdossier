@@ -57,7 +57,7 @@ namespace WotDossier.Dal
             return list;
         }
 
-        public PlayerEntity UpdateStatistic<T>(IStatisticAdapter<T> newSnapshot, int playerId) where T : StatisticEntity, new()
+        public PlayerEntity UpdateStatistic<T>(IStatisticAdapter<T> newSnapshot, Ratings ratings, int playerId) where T : StatisticEntity, new()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -70,7 +70,7 @@ namespace WotDossier.Dal
                 T currentSnapshot = _dataProvider.QueryOver<T>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
                                                .Desc.Take(1)
-                                               .SingleOrDefault<T>() ?? new T { PlayerId = playerEntity.Id };
+                                               .SingleOrDefault<T>() ?? new T { PlayerId = playerEntity.Id};
 
                 //new battles
                 if (currentSnapshot.BattlesCount < newSnapshot.Battles_count)
@@ -84,55 +84,11 @@ namespace WotDossier.Dal
                     newSnapshot.Update(currentSnapshot);
                 }
 
-                _dataProvider.Save(currentSnapshot);
-                _dataProvider.CommitTransaction();
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-                _dataProvider.RollbackTransaction();
-            }
-            finally
-            {
-                _dataProvider.ClearCache();
-                _dataProvider.CloseSession();
-            }
-
-            return playerEntity;
-        }
-
-        public PlayerEntity UpdatePlayerStatistic(Ratings ratings, IStatisticAdapter<PlayerStatisticEntity> newSnapshot, int playerId)
-        {
-            _dataProvider.OpenSession();
-            _dataProvider.BeginTransaction();
-            PlayerEntity playerEntity = null;
-
-            try
-            {
-                playerEntity = GetPlayerInternal(playerId);
-
-                PlayerStatisticEntity currentSnapshot = _dataProvider.QueryOver<PlayerStatisticEntity>().Where(x => x.PlayerId == playerEntity.Id)
-                                               .OrderBy(x => x.Updated)
-                                               .Desc.Take(1)
-                                               .SingleOrDefault<PlayerStatisticEntity>() ?? new PlayerStatisticEntity{PlayerId = playerEntity.Id};
-
-                //new battles
-                if (currentSnapshot.BattlesCount < newSnapshot.Battles_count)
-                {
-                    //create new record
-                    if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
-                    {
-                        currentSnapshot = new PlayerStatisticEntity {PlayerId = playerEntity.Id};
-                    }
-
-                    newSnapshot.Update(currentSnapshot);
-                }
-
                 if (ratings != null)
                 {
                     currentSnapshot.UpdateRatings(ratings);
                 }
-            
+
                 _dataProvider.Save(currentSnapshot);
                 _dataProvider.CommitTransaction();
             }

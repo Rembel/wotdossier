@@ -354,7 +354,6 @@ namespace WotDossier.Applications.ViewModel
             if (dataSource.Any())
             {
                 ReplaysByMapDataSource = dataSource;
-
                 double max = ReplaysByMapDataSource.Max(x => x.X);
                 MaxMapBattles = max + 0.1 * max;
             }
@@ -369,7 +368,6 @@ namespace WotDossier.Applications.ViewModel
             if (dataSource.Any())
             {
                 WinReplaysPercentByMapDataSource = dataSource;
-
                 double max = WinReplaysPercentByMapDataSource.Max(x => x.X);
                 MaxWinReplayPercent = max;
             }
@@ -413,26 +411,35 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitBattlesByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount)));
-            BattlesByTierDataSource = dataSource.ToList();
-            double max = dataSource.Max(x => x.Y);
-            MaxBattlesByTier = max * 1.2;
+            List<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
+            if (dataSource.Any())
+            {
+                BattlesByTierDataSource = dataSource;
+                double max = dataSource.Max(x => x.Y);
+                MaxBattlesByTier = max*1.2;
+            }
         }
 
         private void InitBattlesByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount)));
-            BattlesByTypeDataSource = dataSource.ToList();
-            double max = dataSource.Max(x => x.Y);
-            MaxBattlesByType = max*1.2;
+            List<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount))).ToList();
+            if (dataSource.Any())
+            {
+                BattlesByTypeDataSource = dataSource;
+                double max = dataSource.Max(x => x.Y);
+                MaxBattlesByType = max*1.2;
+            }
         }
 
         private void InitBattlesByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount)));
-            BattlesByCountryDataSource = dataSource.ToList();
-            double max = dataSource.Max(x => x.Y);
-            MaxBattlesByCountry = max * 1.2;
+            List<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), x.Sum(y => y.BattlesCount))).ToList();
+            if (dataSource.Any())
+            {
+                BattlesByCountryDataSource = dataSource;
+                double max = dataSource.Max(x => x.Y);
+                MaxBattlesByCountry = max * 1.2;
+            }
         }
 
         private void InitSurvivePercentChart(List<PlayerStatisticViewModel> statisticViewModels)

@@ -254,21 +254,36 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public virtual double AvgLevel { get; set; }
 
-				/// <summary>
-		/// Gets/Sets the field "AchievementsId".
-		/// </summary>
-		public virtual int? AchievementsId { get; set; }
-		
-		/// <summary>
-		/// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
-		/// </summary>
-		public virtual PlayerAchievementsEntity AchievementsIdObject { get; set; }
+        /// <summary>
+        /// Gets or sets the RBR.
+        /// </summary>
+		public virtual double RBR { get; set; }
 
-        public virtual double RBR { get; set; }
+        /// <summary>
+        /// Gets or sets the Wn8 rating.
+        /// </summary>
         public virtual double WN8Rating { get; set; }
+
+        /// <summary>
+        /// Gets or sets the performance rating.
+        /// </summary>
         public virtual double PerformanceRating { get; set; }
 
-        public virtual void UpdateRatings(Ratings ratings)
+        /// <summary>
+        /// Gets/Sets the field "AchievementsId".
+        /// </summary>
+        public virtual int? AchievementsId { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
+        /// </summary>
+        public virtual PlayerAchievementsEntity AchievementsIdObject { get; set; }
+
+        /// <summary>
+        /// Updates the ratings.
+        /// </summary>
+        /// <param name="ratings">The ratings.</param>
+        public override void UpdateRatings(Ratings ratings)
         {
             #region Ratings init
 

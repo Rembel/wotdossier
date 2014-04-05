@@ -139,17 +139,11 @@
   <data name="HandOfDeath" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\handofdeath.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Imperturbable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\imperturbable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Invader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\invader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Invincible" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\invincible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Jager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\jager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Kamikaze" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\kamikaze.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,9 +367,6 @@
   <data name="Sniper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\sniper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sparta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>images\medals\sparta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Steelwall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\steelwall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -471,5 +462,50 @@
   </data>
   <data name="wolfamongsheepmedal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\medals\wolfamongsheepmedal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guardsman1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\guardsman1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guardsman2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\guardsman2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guardsman3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\guardsman3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guardsman4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\guardsman4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="makerOfHistory1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\makerofhistory1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="makerOfHistory2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\makerofhistory2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="makerOfHistory3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\makerofhistory3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="makerOfHistory4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\makerofhistory4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MarkOfMastery1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\markofmastery1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MarkOfMastery2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\markofmastery2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MarkOfMastery3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\markofmastery3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MarkOfMastery4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\markofmastery4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huntsman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\huntsman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sturdy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\sturdy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IronMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\medals\ironman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

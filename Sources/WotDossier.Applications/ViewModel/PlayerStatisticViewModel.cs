@@ -368,7 +368,7 @@ namespace WotDossier.Applications.ViewModel
                 CrucialContribution = stat.AchievementsIdObject.CrucialContribution;
                 CoolHeaded = stat.AchievementsIdObject.CoolHeaded;
                 LuckyDevil = stat.AchievementsIdObject.LuckyDevil;
-                Spartan = stat.AchievementsIdObject.Spartan;
+                Sturdy = stat.AchievementsIdObject.Spartan;
 
                 #endregion
 

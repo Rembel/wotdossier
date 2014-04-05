@@ -456,7 +456,7 @@
   <data name="Column_BattleAwards_LuckyDevil" xml:space="preserve">
     <value>Счастливчик</value>
   </data>
-  <data name="Column_BattleAwards_Spartan" xml:space="preserve">
+  <data name="Column_BattleAwards_Sturdy" xml:space="preserve">
     <value>Спартанец</value>
   </data>
   <data name="Column_Damage_DamageDealt" xml:space="preserve">
@@ -790,7 +790,7 @@
 уничтожения выстрелом игрока вражеской команды.
 	• Не выдаётся в клановых войнах.</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_Spartan" xml:space="preserve">
+  <data name="Tooltip_CommemorativeAchievements_Sturdy" xml:space="preserve">
     <value>• Присуждается игроку, получившему рикошет или непробитие от игрока команды противника при прочности танка меньше 10 процентов.
 	• Для получения награды необходимо выжить.
 	• Не выдаётся в клановых войнах.</value>
@@ -1408,13 +1408,13 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Medal_Scout" xml:space="preserve">
     <value>Разведчик</value>
   </data>
-  <data name="Medal_Ranger" xml:space="preserve">
+  <data name="Medal_Huntsman" xml:space="preserve">
     <value>Медаль Найдина</value>
   </data>
   <data name="Medal_CoolHeaded" xml:space="preserve">
     <value>Невозмутимый</value>
   </data>
-  <data name="Medal_Spartan" xml:space="preserve">
+  <data name="Medal_Sturdy" xml:space="preserve">
     <value>Спартанец</value>
   </data>
   <data name="Medal_Lucky" xml:space="preserve">

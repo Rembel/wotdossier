@@ -142,7 +142,7 @@
 
         public int LuckyDevil { get { return First.LuckyDevil - Second.LuckyDevil; } }
 
-        public int Spartan { get { return First.Spartan - Second.Spartan; } }
+        public int Sturdy { get { return First.Sturdy - Second.Sturdy; } }
 
         #endregion
 

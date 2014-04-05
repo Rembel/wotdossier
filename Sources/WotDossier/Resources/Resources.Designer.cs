@@ -61,16 +61,6 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap award_images {
-            get {
-                object obj = ResourceManager.GetObject("award_images", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Defeat.
         /// </summary>
         public static string BattleStatus_Defeat {
@@ -522,20 +512,20 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spartan.
-        /// </summary>
-        public static string Column_BattleAwards_Spartan {
-            get {
-                return ResourceManager.GetString("Column_BattleAwards_Spartan", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Steel Wall.
         /// </summary>
         public static string Column_BattleAwards_SteelWall {
             get {
                 return ResourceManager.GetString("Column_BattleAwards_SteelWall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sturdy.
+        /// </summary>
+        public static string Column_BattleAwards_Sturdy {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_Sturdy", resourceCulture);
             }
         }
         
@@ -2934,6 +2924,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medal Naidin.
+        /// </summary>
+        public static string Medal_Huntsman {
+            get {
+                return ResourceManager.GetString("Medal_Huntsman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invader.
         /// </summary>
         public static string Medal_Invader {
@@ -3150,15 +3149,6 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medal Naidin.
-        /// </summary>
-        public static string Medal_Ranger {
-            get {
-                return ResourceManager.GetString("Medal_Ranger", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reaper.
         /// </summary>
         public static string Medal_Reaper {
@@ -3213,20 +3203,20 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spartan.
-        /// </summary>
-        public static string Medal_Spartan {
-            get {
-                return ResourceManager.GetString("Medal_Spartan", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Steel Wall.
         /// </summary>
         public static string Medal_SteelWall {
             get {
                 return ResourceManager.GetString("Medal_SteelWall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sturdy.
+        /// </summary>
+        public static string Medal_Sturdy {
+            get {
+                return ResourceManager.GetString("Medal_Sturdy", resourceCulture);
             }
         }
         
@@ -4074,9 +4064,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Survive a ricochet or non-penetrating shot from an enemy player. Your vehicle must have less than 10% of its hit points (HP) left and you must survive the battle..
         /// </summary>
-        public static string Tooltip_CommemorativeAchievements_Spartan {
+        public static string Tooltip_CommemorativeAchievements_Sturdy {
             get {
-                return ResourceManager.GetString("Tooltip_CommemorativeAchievements_Spartan", resourceCulture);
+                return ResourceManager.GetString("Tooltip_CommemorativeAchievements_Sturdy", resourceCulture);
             }
         }
         

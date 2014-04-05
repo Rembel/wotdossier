@@ -88,8 +88,11 @@ namespace WotDossier.Dal.NHibernate
         /// </summary>
         public void OpenSession()
         {
-            CurrentSession = _factory.OpenSession();
-            CurrentSession.FlushMode = FlushMode.Never;
+            if (CurrentSession == null)
+            {
+                CurrentSession = _factory.OpenSession();
+                CurrentSession.FlushMode = FlushMode.Never;
+            }
         }
 
         /// <summary>

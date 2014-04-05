@@ -55,7 +55,7 @@ namespace WotDossier.Applications.Logic.Adapter
             CrucialContribution = tanks.Sum(x => x.Achievements.medalCrucialContribution);
             CoolHeaded = tanks.Sum(x => x.Achievements.ironMan);
             LuckyDevil = tanks.Sum(x => x.Achievements.luckyDevil);
-            Spartan = tanks.Sum(x => x.Achievements.sturdy);
+            Sturdy = tanks.Sum(x => x.Achievements.sturdy);
 
             #endregion
 
@@ -116,7 +116,7 @@ namespace WotDossier.Applications.Logic.Adapter
             Hunter = tanks.Sum(x => x.Achievements.fragsBeast) / 100;
             Sinai = tanks.Sum(x => x.Achievements.fragsSinai) / 100;
             PattonValley = tanks.Sum(x => x.Achievements.fragsPatton) / 100;
-            Ranger = tanks.Sum(x => x.Achievements.huntsman);
+            Huntsman = tanks.Sum(x => x.Achievements.huntsman);
 
             #endregion
 
@@ -173,7 +173,7 @@ namespace WotDossier.Applications.Logic.Adapter
             CrucialContribution = stat.dataField.achievements.medal_crucial_contribution;
             CoolHeaded = stat.dataField.achievements.iron_man;
             LuckyDevil = stat.dataField.achievements.lucky_devil;
-            Spartan = stat.dataField.achievements.sturdy;
+            Sturdy = stat.dataField.achievements.sturdy;
             Sniper2 = stat.dataField.achievements.sniper2;
             MainGun = stat.dataField.achievements.main_gun;
 
@@ -235,7 +235,7 @@ namespace WotDossier.Applications.Logic.Adapter
             Hunter = stat.dataField.achievements.beasthunter;
             Sinai = stat.dataField.achievements.sinai;
             PattonValley = stat.dataField.achievements.patton_valley;
-            Ranger = stat.dataField.achievements.huntsman;
+            Huntsman = stat.dataField.achievements.huntsman;
 
             #endregion
 
@@ -318,9 +318,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         public int LuckyDevil { get; set; }
 
-        public int Spartan { get; set; }
-
-        public int Jager { get; set; }
+        public int Sturdy { get; set; }
 
         #endregion
 
@@ -390,7 +388,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         public int PattonValley { get; set; }
 
-        public int Ranger { get; set; }
+        public int Huntsman { get; set; }
 
         #endregion
 
@@ -505,7 +503,7 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.CrucialContribution = CrucialContribution;
             entity.AchievementsIdObject.CoolHeaded = CoolHeaded;
             entity.AchievementsIdObject.LuckyDevil = LuckyDevil;
-            entity.AchievementsIdObject.Spartan = Spartan;
+            entity.AchievementsIdObject.Spartan = Sturdy;
 
             #endregion
 
@@ -565,7 +563,7 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.Hunter = Hunter;
             entity.AchievementsIdObject.Sinai = Sinai;
             entity.AchievementsIdObject.PattonValley = PattonValley;
-            entity.AchievementsIdObject.Ranger = Ranger;
+            entity.AchievementsIdObject.Ranger = Huntsman;
 
             #endregion
 

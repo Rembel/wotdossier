@@ -492,9 +492,9 @@ namespace WotDossier.Applications.ViewModel
             get { return LuckyDevil - PrevStatistic.LuckyDevil; }
         }
 
-        public int SpartanDelta
+        public int SturdyDelta
         {
-            get { return Spartan - PrevStatistic.Spartan; }
+            get { return Sturdy - PrevStatistic.Sturdy; }
         }
 
         public int KingOfTheHillDelta

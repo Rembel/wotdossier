@@ -170,7 +170,7 @@
                 </controls:AchievementCompareRow>
                 <controls:AchievementCompareRow FirstValue="{Binding First.Ranger}" SecondValue="{Binding Second.Ranger}" AchievementIconSource="../Resources/Images/Medals/Jager.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ranger}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Huntsman}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
                 <!--Special Achievements-->
@@ -238,14 +238,14 @@
                 <!--Step Achievements-->
                 <!--Commemorative Achievements-->
                 <TextBlock HorizontalAlignment="Center" Text="{x:Static resources:Resources.Label_Achievements_CommemorativeAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
-                <controls:AchievementCompareRow FirstValue="{Binding First.CoolHeaded}" SecondValue="{Binding Second.CoolHeaded}" AchievementIconSource="../Resources/Images/Medals/Imperturbable.png">
+                <controls:AchievementCompareRow FirstValue="{Binding First.CoolHeaded}" SecondValue="{Binding Second.CoolHeaded}" AchievementIconSource="../Resources/Images/Medals/IronMan.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CoolHeaded}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
-                <controls:AchievementCompareRow FirstValue="{Binding First.Spartan}" SecondValue="{Binding Second.Spartan}" AchievementIconSource="../Resources/Images/Medals/Sparta.png">
+                <controls:AchievementCompareRow FirstValue="{Binding First.Sturdy}" SecondValue="{Binding Second.Sturdy}" AchievementIconSource="../Resources/Images/Medals/sturdy.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Spartan}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sturdy}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Sturdy}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
                 <controls:AchievementCompareRow FirstValue="{Binding First.LuckyDevil}" SecondValue="{Binding Second.LuckyDevil}" AchievementIconSource="../Resources/Images/Medals/Lucky.png">

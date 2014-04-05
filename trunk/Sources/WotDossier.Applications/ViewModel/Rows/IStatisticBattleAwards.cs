@@ -17,6 +17,6 @@
         int CrucialContribution { get; set; }
         int CoolHeaded { get; set; }
         int LuckyDevil { get; set; }
-        int Spartan { get; set; }
+        int Sturdy { get; set; }
     }
 }

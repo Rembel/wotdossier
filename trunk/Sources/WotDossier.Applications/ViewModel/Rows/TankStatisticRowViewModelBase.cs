@@ -339,7 +339,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             CrucialContribution = tank.Achievements.medalCrucialContribution;
             CoolHeaded = tank.Achievements.ironMan;
             LuckyDevil = tank.Achievements.luckyDevil;
-            Spartan = tank.Achievements.sturdy;
+            Sturdy = tank.Achievements.sturdy;
             Ranger = tank.Achievements.huntsman;
             MainGun = tank.Achievements.mainGun;
             Sniper2 = tank.Achievements.sniper2;

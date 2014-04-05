@@ -160,9 +160,9 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Billotte}" Text="{x:Static resources:Resources.Tooltip_EpicAchievements_Billotte}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Ranger}" Delta="{Binding RangerDelta}" Source="../Resources/Images/Medals/Jager.png">
+                <controls:MedalAchievement Value="{Binding Ranger}" Delta="{Binding RangerDelta}" Source="../Resources/Images/Medals/huntsman.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ranger}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Huntsman}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
             </WrapPanel>
@@ -266,14 +266,14 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_KingOfTheHill}" Text="{x:Static resources:Resources.Tooltip_GroupAchievements_KingOfTheHill}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding CoolHeaded}" Delta="{Binding CoolHeadedDelta}" Source="../Resources/Images/Medals/Imperturbable.png">
+                <controls:MedalAchievement Value="{Binding CoolHeaded}" Delta="{Binding CoolHeadedDelta}" Source="../Resources/Images/Medals/ironMan.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CoolHeaded}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Spartan}" Delta="{Binding SpartanDelta}" Source="../Resources/Images/Medals/Sparta.png">
+                <controls:MedalAchievement Value="{Binding Sturdy}" Delta="{Binding SturdyDelta}" Source="../Resources/Images/Medals/sturdy.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Spartan}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Spartan}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sturdy}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Sturdy}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding LuckyDevil}" Delta="{Binding LuckyDevilDelta}" Source="../Resources/Images/Medals/Lucky.png">

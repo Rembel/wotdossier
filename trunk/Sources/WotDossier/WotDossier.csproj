@@ -672,6 +672,33 @@
     <Resource Include="Resources\Images\Medals\godOfWar.png" />
     <Resource Include="Resources\Images\Medals\willToWinSpirit.png" />
     <Resource Include="Resources\Images\Medals\wolfamongsheepmedal.png" />
+    <Resource Include="Resources\Images\Medals\makerOfHistory1.png" />
+    <Resource Include="Resources\Images\Medals\makerOfHistory2.png" />
+    <Resource Include="Resources\Images\Medals\makerOfHistory3.png" />
+    <Resource Include="Resources\Images\Medals\makerOfHistory4.png" />
+    <Resource Include="Resources\Images\Medals\guardsman1.png" />
+    <Resource Include="Resources\Images\Medals\guardsman2.png" />
+    <Resource Include="Resources\Images\Medals\guardsman3.png" />
+    <Resource Include="Resources\Images\Medals\guardsman4.png" />
+    <Resource Include="Resources\Images\Medals\BattleHero.png" />
+    <Resource Include="Resources\Images\levels\tank_level_1.png" />
+    <Resource Include="Resources\Images\levels\tank_level_10.png" />
+    <Resource Include="Resources\Images\levels\tank_level_2.png" />
+    <Resource Include="Resources\Images\levels\tank_level_3.png" />
+    <Resource Include="Resources\Images\levels\tank_level_4.png" />
+    <Resource Include="Resources\Images\levels\tank_level_5.png" />
+    <Resource Include="Resources\Images\levels\tank_level_6.png" />
+    <Resource Include="Resources\Images\levels\tank_level_7.png" />
+    <Resource Include="Resources\Images\levels\tank_level_8.png" />
+    <Resource Include="Resources\Images\levels\tank_level_9.png" />
+    <Resource Include="Resources\Images\nations\all.png" />
+    <Resource Include="Resources\Images\nations\china.png" />
+    <Resource Include="Resources\Images\nations\france.png" />
+    <Resource Include="Resources\Images\nations\germany.png" />
+    <Resource Include="Resources\Images\nations\japan.png" />
+    <Resource Include="Resources\Images\nations\uk.png" />
+    <Resource Include="Resources\Images\nations\usa.png" />
+    <Resource Include="Resources\Images\nations\ussr.png" />
     <Content Include="Updates\2014021200.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1365,10 +1392,10 @@
     <Resource Include="Resources\Images\Medals\Diehard.png" />
     <Resource Include="Resources\Images\Medals\Evileye.png" />
     <Resource Include="Resources\Images\Medals\HandOfDeath.png" />
-    <Resource Include="Resources\Images\Medals\Imperturbable.png" />
+    <Resource Include="Resources\Images\Medals\IronMan.png" />
     <Resource Include="Resources\Images\Medals\Invader.png" />
     <Resource Include="Resources\Images\Medals\Invincible.png" />
-    <Resource Include="Resources\Images\Medals\Jager.png" />
+    <Resource Include="Resources\Images\Medals\huntsman.png" />
     <Resource Include="Resources\Images\Medals\Kamikaze.png" />
     <Resource Include="Resources\Images\Medals\Lucky.png" />
     <Resource Include="Resources\Images\Medals\MechanicEngineer.png" />
@@ -1443,7 +1470,7 @@
     <Resource Include="Resources\Images\Medals\Scout.png" />
     <Resource Include="Resources\Images\Medals\Sinai.png" />
     <Resource Include="Resources\Images\Medals\Sniper.png" />
-    <Resource Include="Resources\Images\Medals\Sparta.png" />
+    <Resource Include="Resources\Images\Medals\sturdy.png" />
     <Resource Include="Resources\Images\Medals\Steelwall.png" />
     <Resource Include="Resources\Images\Medals\Supporter.png" />
     <Resource Include="Resources\Images\Medals\Tank.png" />
@@ -1528,7 +1555,6 @@
     <Resource Include="Resources\Images\spt.png" />
     <Resource Include="Resources\Images\wb.png" />
     <Resource Include="Resources\Images\win.png" />
-    <Resource Include="Resources\Images\award-images.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

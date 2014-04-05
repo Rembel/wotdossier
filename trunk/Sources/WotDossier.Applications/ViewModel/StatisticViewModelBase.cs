@@ -339,7 +339,7 @@ namespace WotDossier.Applications.ViewModel
 
         public int LuckyDevil { get; set; }
 
-        public int Spartan { get; set; }
+        public int Sturdy { get; set; }
 
         #endregion
 

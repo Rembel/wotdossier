@@ -256,6 +256,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void ProcessReplaysFolders(List<ReplayFolder> replayFolders)
         {
+            IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
+
             ProgressView.Execute(
                 Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                 {
@@ -311,8 +313,6 @@ namespace WotDossier.Applications.ViewModel
                     ReplayFolder root = ReplaysFolders.First();
 
                     root.Count = ReplaysFolders.GetAll().Skip(1).Sum(x => x.Count);
-
-                    IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
 
                     dbReplays.Join(replayFiles, x => new { x.PlayerId, x.ReplayId }, y => new { y.PlayerId, y.ReplayId },
                         (x, y) => new { ReplayEntity = x, ReplayFile = y })

@@ -24,7 +24,7 @@
     <medal name="Medal_DeLanglade" id="145" icon="medalDeLanglade" type="0"/>
     <medal name="Medal_TamadaYoshio" id="146" icon="medalTamadaYoshio" type="0"/>
     <!--Егерь-->
-    <medal name="Medal_Ranger" id="148" icon="Jager" type="0"/>
+    <medal name="Medal_Huntsman" id="148" icon="huntsman" type="0"/>
   </Epic>
   <BattleHero>
     <!--Воин-->
@@ -74,9 +74,9 @@
     <!--Бомбардир-->
     <medal name="Medal_Bombardier" id="147" icon="Bombardier" type="1"/>
     <!--Спартанец-->
-    <medal name="Medal_Spartan" id="150" icon="Sparta" type="0"/>
+    <medal name="Medal_Sturdy" id="150" icon="sturdy" type="0"/>
     <!--невозмутимый-->
-    <medal name="Medal_CoolHeaded" id="151" icon="Imperturbable" type="0"/>
+    <medal name="Medal_CoolHeaded" id="151" icon="IronMan" type="0"/>
     <!--Счастливчик-->
     <medal name="Medal_Lucky" id="152" icon="Lucky" type="0"/>
     <!--лев синaя-->

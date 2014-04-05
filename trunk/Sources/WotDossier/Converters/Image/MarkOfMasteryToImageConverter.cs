@@ -13,12 +13,11 @@ namespace WotDossier.Converters
     {
         private static MarkOfMasteryToImageConverter _default = new MarkOfMasteryToImageConverter();
 
-        private static BitmapSource _toBitmapSource = ToBitmapSource(Resources.Resources.award_images);
-        private static CroppedBitmap cb0 = new CroppedBitmap(_toBitmapSource, new Int32Rect(0, 0, 1, 1));
-        private static CroppedBitmap cb1 = new CroppedBitmap(_toBitmapSource, new Int32Rect(101, 454, 34, 30));
-        private static CroppedBitmap cb2 = new CroppedBitmap(_toBitmapSource, new Int32Rect(135, 454, 34, 30));
-        private static CroppedBitmap cb3 = new CroppedBitmap(_toBitmapSource, new Int32Rect(169, 453, 34, 30));
-        private static CroppedBitmap cb4 = new CroppedBitmap(_toBitmapSource, new Int32Rect(203, 457, 34, 30));
+        private static BitmapSource cb0 = null;
+        private static BitmapSource cb1 = ToBitmapSource(Resources.Medals.MarkOfMastery1);
+        private static BitmapSource cb2 = ToBitmapSource(Resources.Medals.MarkOfMastery2);
+        private static BitmapSource cb3 = ToBitmapSource(Resources.Medals.MarkOfMastery3);
+        private static BitmapSource cb4 = ToBitmapSource(Resources.Medals.MarkOfMastery4);
         
         public static MarkOfMasteryToImageConverter Default
         {

@@ -482,9 +482,9 @@ namespace WotDossier.Applications.ViewModel
             get { return CrucialContribution - PrevStatistic.CrucialContribution; }
         }
 
-        public int CoolHeadedDelta
+        public int IronManDelta
         {
-            get { return CoolHeaded - PrevStatistic.CoolHeaded; }
+            get { return IronMan - PrevStatistic.IronMan; }
         }
 
         public int LuckyDevilDelta
@@ -668,9 +668,9 @@ namespace WotDossier.Applications.ViewModel
             get { return PattonValley - PrevStatistic.PattonValley; }
         }
 
-        public int RangerDelta
+        public int HuntsmanDelta
         {
-            get { return Ranger - PrevStatistic.Ranger; }
+            get { return Huntsman - PrevStatistic.Huntsman; }
         }
 
         #endregion

@@ -13,6 +13,6 @@
         int Hunter { get; set; }
         int Sinai { get; set; }
         int PattonValley { get; set; }
-        int Ranger { get; set; }
+        int Huntsman { get; set; }
     }
 }

@@ -77,10 +77,10 @@ namespace WotDossier.Applications.ViewModel.Rows
             PatrolDuty = list.Sum(x => x.PatrolDuty);
             BrothersInArms = list.Sum(x => x.BrothersInArms);
             CrucialContribution = list.Sum(x => x.CrucialContribution);
-            CoolHeaded = list.Sum(x => x.CoolHeaded);
+            IronMan = list.Sum(x => x.IronMan);
             LuckyDevil = list.Sum(x => x.LuckyDevil);
             Sturdy = list.Sum(x => x.Sturdy);
-            Ranger = list.Sum(x => x.Ranger);
+            Huntsman = list.Sum(x => x.Huntsman);
             Sniper2 = list.Sum(x => x.Sniper2);
             MainGun = list.Sum(x => x.MainGun);
             #endregion

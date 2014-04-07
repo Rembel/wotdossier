@@ -400,8 +400,8 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Column_BattleAwards_CrucialContribution" xml:space="preserve">
     <value>Crucial Contribution</value>
   </data>
-  <data name="Column_BattleAwards_CoolHeaded" xml:space="preserve">
-    <value>Cool Headed</value>
+  <data name="Column_BattleAwards_IronMan" xml:space="preserve">
+    <value>Iron Man</value>
   </data>
   <data name="Column_BattleAwards_LuckyDevil" xml:space="preserve">
     <value>Lucky Devil</value>
@@ -478,7 +478,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Column_SpecialAwards_PattonValley" xml:space="preserve">
     <value>PattonValley</value>
   </data>
-  <data name="Column_SpecialAwards_Ranger" xml:space="preserve">
+  <data name="Column_SpecialAwards_Huntsman" xml:space="preserve">
     <value>Medal Naidin</value>
   </data>
   <data name="Column_Frags_Battles" xml:space="preserve">
@@ -718,7 +718,7 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Common_AvgDetected" xml:space="preserve">
     <value>Average Detected:</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_CoolHeaded" xml:space="preserve">
+  <data name="Tooltip_CommemorativeAchievements_IronMan" xml:space="preserve">
     <value>Survive at least 10 ricochets and non-penetrations in a row from enemy players.</value>
   </data>
   <data name="Tooltip_CommemorativeAchievements_Lucky" xml:space="preserve">
@@ -826,7 +826,7 @@ Ervin Tarczay was a Hungarian tank ace. He fought with the Hungarian 2nd Armored
   <data name="Tooltip_SpecialAchievements_Raider" xml:space="preserve">
     <value>Destroy all the enemy light tanks (must be at least three) in the course of a single battle.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Ranger" xml:space="preserve">
+  <data name="Tooltip_SpecialAchievements_Huntsman" xml:space="preserve">
     <value>Destroy all the enemy light tanks (must be at least three) in the course of a single battle.</value>
   </data>
   <data name="Tooltip_SpecialAchievements_Reaper" xml:space="preserve">
@@ -1204,8 +1204,8 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Medal_Huntsman" xml:space="preserve">
     <value>Medal Naidin</value>
   </data>
-  <data name="Medal_CoolHeaded" xml:space="preserve">
-    <value>Cool Headed</value>
+  <data name="Medal_IronMan" xml:space="preserve">
+    <value>Iron Man</value>
   </data>
   <data name="Medal_Sturdy" xml:space="preserve">
     <value>Sturdy</value>
@@ -1664,5 +1664,59 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   </data>
   <data name="Command_ZipFolder" xml:space="preserve">
     <value>Pack</value>
+  </data>
+  <data name="Medal_FightingReconnaissanceMedal" xml:space="preserve">
+    <value>Разведка боем</value>
+  </data>
+  <data name="Tooltip_TeamBattlesAchievements_FightingReconnaissanceMedal" xml:space="preserve">
+    <value>50 раз выполнить следующие условия:
+  • Обнаружить не менее 2 машин противника
+  • Занять 3 и выше место по нанесенному урону
+  • В общем зачете повтовно полученные награды не суммируются
+    </value> 
+  </data>
+  <data name="Medal_WillToWinSpirit" xml:space="preserve">
+    <value>За волю к победе</value>
+  </data>
+  <data name="Tooltip_TeamBattlesAchievements_WillToWinSpirit" xml:space="preserve">
+    <value>Победить в бою оставшись в одиночку против 3 
+и более машин противника
+  • В общем зачете повтовно полученные награды не суммируются
+    </value> 
+  </data>
+  <data name="Medal_CrucialShotMedal" xml:space="preserve">
+    <value>Решающий выстрел</value>
+  </data>
+  <data name="Tooltip_TeamBattlesAchievements_CrucialShotMedal" xml:space="preserve">
+    <value>20 раз уничтожить последнюю машину противника
+  • Победить в бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value> 
+  </data>
+  <data name="Medal_GodOfWar" xml:space="preserve">
+    <value>Бог войны</value>
+  </data>
+  <data name="Tooltip_TeamBattlesAchievements_GodOfWar" xml:space="preserve">
+    <value>Победить в бою на САУ оставшись единственным выжившим
+  • Победить в бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value> 
+  </data>
+  <data name="Medal_WolfAmongSheepMedal" xml:space="preserve">
+    <value>За отличную стрельбу</value>
+  </data>
+  <data name="Tooltip_TeamBattlesAchievements_WolfAmongSheepMedal" xml:space="preserve">
+    <value>Занять 100 раз первое место по количеству нанесенного урона в победном бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value> 
+  </data>
+  <data name="Medal_GeniusForWarMedal" xml:space="preserve">
+    <value>Отличник боевой подготовки</value>
+  </data>
+  <data name="Tooltip_TeamBattlesAchievements_GeniusForWarMedal" xml:space="preserve">
+    <value>Занять 100 раз первое место по количеству заработанного опыта за бой
+  • Победить в бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value> 
   </data>
 </root>

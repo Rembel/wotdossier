@@ -479,12 +479,12 @@
         </StackPanel>
     </DataTemplate>
 
-    <DataTemplate x:Key="RangerColumnHeaderTemplate">
+    <DataTemplate x:Key="HuntsmanColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
             <Image Source="../Resources/Images/Medals/huntsman.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Huntsman}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Ranger}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Huntsman}" Text="{x:Static resources:Resources.Tooltip_SpecialAchievements_Huntsman}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>
@@ -661,12 +661,12 @@
         </StackPanel>
     </DataTemplate>
 
-    <DataTemplate x:Key="CoolHeadedColumnHeaderTemplate">
+    <DataTemplate x:Key="IronManColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
             <Image Source="../Resources/Images/Medals/IronMan.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_CoolHeaded}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_CoolHeaded}"></controls:MedalTooltip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_IronMan}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_IronMan}"></controls:MedalTooltip>
                     </ToolTip>
                 </ToolTipService.ToolTip>
             </Image>

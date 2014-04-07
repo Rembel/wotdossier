@@ -5,11 +5,279 @@ using WotDossier.Domain.Entities;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
+    public class TeamPlayerStatisticViewModel : PlayerStatisticViewModel
     {
-        private PlayerStatisticEntity _stat;
+        public TeamPlayerStatisticViewModel(TeamBattlesStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        {
+        }
 
+        public TeamPlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+            : base(stat.Updated, list)
+        {
+            #region Common init
+
+            BattlesCount = stat.BattlesCount;
+            Wins = stat.Wins;
+            Losses = stat.Losses;
+            SurvivedBattles = stat.SurvivedBattles;
+            Xp = stat.Xp;
+            MaxXp = stat.MaxXp;
+            Frags = stat.Frags;
+            Spotted = stat.Spotted;
+            HitsPercents = stat.HitsPercents;
+            DamageDealt = stat.DamageDealt;
+            DamageTaken = stat.DamageTaken;
+            CapturePoints = stat.CapturePoints;
+            DroppedCapturePoints = stat.DroppedCapturePoints;
+            PerformanceRating = stat.PerformanceRating;
+            WN8Rating = stat.WN8Rating;
+            RBR = stat.RBR;
+            //Created = stat.PlayerIdObject.Creaded);
+            Updated = stat.Updated;
+            Tier = stat.AvgLevel;
+
+            ArmoredFist = stat.AchievementsIdObject.ArmoredFist;
+            TacticalBreakthrough = stat.AchievementsIdObject.TacticalBreakthrough;
+            KingOfTheHill = stat.AchievementsIdObject.KingOfTheHill;
+
+            #endregion
+        }
+    }
+
+    public class HistoricalPlayerStatisticViewModel : PlayerStatisticViewModel
+    {
+        public HistoricalPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat)
+            : this(stat, new List<PlayerStatisticViewModel>())
+        {
+        }
+
+        public HistoricalPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+            : base(stat.Updated, list)
+        {
+            #region Common init
+
+            BattlesCount = stat.BattlesCount;
+            Wins = stat.Wins;
+            Losses = stat.Losses;
+            SurvivedBattles = stat.SurvivedBattles;
+            Xp = stat.Xp;
+            MaxXp = stat.MaxXp;
+            Frags = stat.Frags;
+            Spotted = stat.Spotted;
+            HitsPercents = stat.HitsPercents;
+            DamageDealt = stat.DamageDealt;
+            DamageTaken = stat.DamageTaken;
+            CapturePoints = stat.CapturePoints;
+            DroppedCapturePoints = stat.DroppedCapturePoints;
+            PerformanceRating = stat.PerformanceRating;
+            WN8Rating = stat.WN8Rating;
+            //Created = stat.PlayerIdObject.Creaded);
+            Updated = stat.Updated;
+            Tier = stat.AvgLevel;
+
+            GuardsMan = stat.AchievementsIdObject.GuardsMan;
+            MakerOfHistory = stat.AchievementsIdObject.MakerOfHistory;
+            WeakVehiclesWins = stat.AchievementsIdObject.WeakVehiclesWins;
+            BothSidesWins = stat.AchievementsIdObject.BothSidesWins;
+
+            #endregion
+        }
+    }
+
+    public class RandomPlayerStatisticViewModel : PlayerStatisticViewModel
+    {
+        public RandomPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        {
+        }
+
+        public RandomPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
+            : base(stat.Updated, list)
+        {
+            #region Common init
+
+            BattlesCount = stat.BattlesCount;
+            Wins = stat.Wins;
+            Losses = stat.Losses;
+            SurvivedBattles = stat.SurvivedBattles;
+            Xp = stat.Xp;
+            MaxXp = stat.MaxXp;
+            Frags = stat.Frags;
+            Spotted = stat.Spotted;
+            HitsPercents = stat.HitsPercents;
+            DamageDealt = stat.DamageDealt;
+            DamageTaken = stat.DamageTaken;
+            CapturePoints = stat.CapturePoints;
+            DroppedCapturePoints = stat.DroppedCapturePoints;
+            //Created = stat.PlayerIdObject.Creaded);
+            Updated = stat.Updated;
+            Tier = stat.AvgLevel;
+
+            RBR = stat.RBR;
+            PerformanceRating = stat.PerformanceRating;
+            WN8Rating = stat.WN8Rating;
+
+            #endregion
+
+            #region Ratings init
+
+            //GR-->
+            //Global Rating
+            Rating_IntegratedValue = stat.RatingIntegratedValue;
+            Rating_IntegratedPlace = stat.RatingIntegratedPlace;
+            //W/B-->
+            //Victories/Battles
+            Rating_BattleAvgPerformanceValue = stat.RatingBattleAvgPerformanceValue;
+            Rating_BattleAvgPerformancePlace = stat.RatingBattleAvgPerformancePlace;
+            //E/B-->
+            //Average Experience per Battle
+            Rating_BattleAvgXpValue = stat.RatingBattleAvgXpValue;
+            Rating_BattleAvgXpPlace = stat.RatingBattleAvgXpPlace;
+            //WIN-->
+            //Victories
+            Rating_BattleWinsValue = stat.RatingBattleWinsValue;
+            Rating_BattleWinsPlace = stat.RatingBattleWinsPlace;
+            //GPL-->
+            //Battles Participated
+            Rating_BattlesValue = stat.RatingBattlesValue;
+            Rating_BattlesPlace = stat.RatingBattlesPlace;
+            //CPT-->
+            //Capture Points
+            Rating_CapturedPointsValue = stat.RatingCapturedPointsValue;
+            Rating_CapturedPointsPlace = stat.RatingCapturedPointsPlace;
+            //DMG-->
+            //Damage Caused
+            Rating_DamageDealtValue = stat.RatingDamageDealtValue;
+            Rating_DamageDealtPlace = stat.RatingDamageDealtPlace;
+            //DPT-->
+            //Defense Points
+            Rating_DroppedPointsValue = stat.RatingDroppedPointsValue;
+            Rating_DroppedPointsPlace = stat.RatingDroppedPointsPlace;
+            //FRG-->
+            //Targets Destroyed
+            Rating_FragsValue = stat.RatingFragsValue;
+            Rating_FragsPlace = stat.RatingFragsPlace;
+            //SPT-->
+            //Targets Detected
+            Rating_SpottedValue = stat.RatingSpottedValue;
+            Rating_SpottedPlace = stat.RatingSpottedPlace;
+            //EXP-->
+            //Total Experience
+            Rating_XpValue = stat.RatingXpValue;
+            Rating_XpPlace = stat.RatingXpPlace;
+            //MXP-->
+            //Max Experience
+            Rating_MaxXpValue = stat.RatingMaxXpValue;
+            Rating_MaxXpPlace = stat.RatingMaxXpPlace;
+            //HR-->
+            //Hits Percent
+            Rating_HitsPercentsValue = stat.RatingHitsPercentsValue;
+            Rating_HitsPercentsPlace = stat.RatingHitsPercentsPlace;
+
+            #endregion
+
+            #region Achievements
+
+            DamageTaken = stat.DamageTaken;
+
+            if (stat.AchievementsIdObject != null)
+            {
+                #region [ IRowBattleAwards ]
+
+                //BattleHero = stat.AchievementsIdObject.battleHeroes;
+                Warrior = stat.AchievementsIdObject.Warrior;
+                Invader = stat.AchievementsIdObject.Invader;
+                Sniper = stat.AchievementsIdObject.Sniper;
+                Sniper2 = stat.AchievementsIdObject.Sniper2;
+                MainGun = stat.AchievementsIdObject.MainGun;
+                Defender = stat.AchievementsIdObject.Defender;
+                SteelWall = stat.AchievementsIdObject.SteelWall;
+                Confederate = stat.AchievementsIdObject.Confederate;
+                Scout = stat.AchievementsIdObject.Scout;
+                PatrolDuty = stat.AchievementsIdObject.PatrolDuty;
+                BrothersInArms = stat.AchievementsIdObject.BrothersInArms;
+                CrucialContribution = stat.AchievementsIdObject.CrucialContribution;
+                IronMan = stat.AchievementsIdObject.CoolHeaded;
+                LuckyDevil = stat.AchievementsIdObject.LuckyDevil;
+                Sturdy = stat.AchievementsIdObject.Spartan;
+
+                #endregion
+
+                #region [ IRowEpic ]
+
+                Boelter = stat.AchievementsIdObject.Boelter;
+                RadleyWalters = stat.AchievementsIdObject.RadleyWalters;
+                LafayettePool = stat.AchievementsIdObject.LafayettePool;
+                Orlik = stat.AchievementsIdObject.Orlik;
+                Oskin = stat.AchievementsIdObject.Oskin;
+                Lehvaslaiho = stat.AchievementsIdObject.Lehvaslaiho;
+                Nikolas = stat.AchievementsIdObject.Nikolas;
+                Halonen = stat.AchievementsIdObject.Halonen;
+                Burda = stat.AchievementsIdObject.Burda;
+                Pascucci = stat.AchievementsIdObject.Pascucci;
+                Dumitru = stat.AchievementsIdObject.Dumitru;
+                TamadaYoshio = stat.AchievementsIdObject.TamadaYoshio;
+                Billotte = stat.AchievementsIdObject.Billotte;
+                BrunoPietro = stat.AchievementsIdObject.BrunoPietro;
+                Tarczay = stat.AchievementsIdObject.Tarczay;
+                Kolobanov = stat.AchievementsIdObject.Kolobanov;
+                Fadin = stat.AchievementsIdObject.Fadin;
+                HeroesOfRassenay = stat.AchievementsIdObject.HeroesOfRassenay;
+                DeLanglade = stat.AchievementsIdObject.DeLanglade;
+
+                #endregion
+
+                #region [ IRowMedals]
+
+                //Kay = stat.AchievementsIdObject.Major.Kay;
+                //Carius = stat.AchievementsIdObject.Major.Carius;
+                //Knispel = stat.AchievementsIdObject.Major.Knispel;
+                //Poppel = stat.AchievementsIdObject.Major.Poppel;
+                //Abrams = stat.AchievementsIdObject.Major.Abrams;
+                //Leclerk = stat.AchievementsIdObject.Major.LeClerc;
+                //Lavrinenko = stat.AchievementsIdObject.Major.Lavrinenko;
+                //Ekins = stat.AchievementsIdObject.Major.Ekins;
+
+                #endregion
+
+                #region [ IRowSeries ]
+
+                ReaperLongest = stat.AchievementsIdObject.Reaper;
+                SharpshooterLongest = stat.AchievementsIdObject.SharpshooterLongest;
+                MasterGunnerLongest = stat.AchievementsIdObject.MasterGunnerLongest;
+                InvincibleLongest = stat.AchievementsIdObject.Invincible;
+                SurvivorLongest = stat.AchievementsIdObject.Survivor;
+
+                #endregion
+
+                #region [ IRowSpecialAwards ]
+
+                Kamikaze = stat.AchievementsIdObject.Kamikaze;
+                Raider = stat.AchievementsIdObject.Raider;
+                Bombardier = stat.AchievementsIdObject.Bombardier;
+                Reaper = stat.AchievementsIdObject.Reaper;
+                Sharpshooter = stat.AchievementsIdObject.SharpshooterLongest;
+                Invincible = stat.AchievementsIdObject.Invincible;
+                Survivor = stat.AchievementsIdObject.Survivor;
+                MouseTrap = stat.AchievementsIdObject.MouseTrap;
+                Hunter = stat.AchievementsIdObject.Hunter;
+                Sinai = stat.AchievementsIdObject.Sinai;
+                PattonValley = stat.AchievementsIdObject.PattonValley;
+                Huntsman = stat.AchievementsIdObject.Ranger;
+
+                #endregion
+            }
+            #endregion
+        }
+    }
+
+
+    public abstract class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
+    {
         #region Common
+
+        protected PlayerStatisticViewModel()
+        {
+        }
 
         public string Name { get; set; }
 
@@ -256,268 +524,10 @@ namespace WotDossier.Applications.ViewModel
             get { return string.Format(@"http://worldoftanks.{0}/community/accounts/{1}-{2}/", SettingsReader.Get().Server, AccountId, Name); }
         }
 
-        public PlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
-        {
-        }
-
-        public PlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
-            : base(stat.Updated, list)
-        {
-            _stat = stat;
-
-            #region Common init
-
-            BattlesCount = stat.BattlesCount;
-            Wins = stat.Wins;
-            Losses = stat.Losses;
-            SurvivedBattles = stat.SurvivedBattles;
-            Xp = stat.Xp;
-            MaxXp = stat.MaxXp;
-            Frags = stat.Frags;
-            Spotted = stat.Spotted;
-            HitsPercents = stat.HitsPercents;
-            DamageDealt = stat.DamageDealt;
-            DamageTaken = stat.DamageTaken;
-            CapturePoints = stat.CapturePoints;
-            DroppedCapturePoints = stat.DroppedCapturePoints;
-            //Created = stat.PlayerIdObject.Creaded);
-            Updated = stat.Updated;
-            Tier = stat.AvgLevel;
-
-            RBR = stat.RBR;
-            PerformanceRating = stat.PerformanceRating;
-            WN8Rating = stat.WN8Rating;
-
-            #endregion
-
-            #region Ratings init
-
-            //GR-->
-            //Global Rating
-            Rating_IntegratedValue = stat.RatingIntegratedValue;
-            Rating_IntegratedPlace = stat.RatingIntegratedPlace;
-            //W/B-->
-            //Victories/Battles
-            Rating_BattleAvgPerformanceValue = stat.RatingBattleAvgPerformanceValue;
-            Rating_BattleAvgPerformancePlace = stat.RatingBattleAvgPerformancePlace;
-            //E/B-->
-            //Average Experience per Battle
-            Rating_BattleAvgXpValue = stat.RatingBattleAvgXpValue;
-            Rating_BattleAvgXpPlace = stat.RatingBattleAvgXpPlace;
-            //WIN-->
-            //Victories
-            Rating_BattleWinsValue = stat.RatingBattleWinsValue;
-            Rating_BattleWinsPlace = stat.RatingBattleWinsPlace;
-            //GPL-->
-            //Battles Participated
-            Rating_BattlesValue = stat.RatingBattlesValue;
-            Rating_BattlesPlace = stat.RatingBattlesPlace;
-            //CPT-->
-            //Capture Points
-            Rating_CapturedPointsValue = stat.RatingCapturedPointsValue;
-            Rating_CapturedPointsPlace = stat.RatingCapturedPointsPlace;
-            //DMG-->
-            //Damage Caused
-            Rating_DamageDealtValue = stat.RatingDamageDealtValue;
-            Rating_DamageDealtPlace = stat.RatingDamageDealtPlace;
-            //DPT-->
-            //Defense Points
-            Rating_DroppedPointsValue = stat.RatingDroppedPointsValue;
-            Rating_DroppedPointsPlace = stat.RatingDroppedPointsPlace;
-            //FRG-->
-            //Targets Destroyed
-            Rating_FragsValue = stat.RatingFragsValue;
-            Rating_FragsPlace = stat.RatingFragsPlace;
-            //SPT-->
-            //Targets Detected
-            Rating_SpottedValue = stat.RatingSpottedValue;
-            Rating_SpottedPlace = stat.RatingSpottedPlace;
-            //EXP-->
-            //Total Experience
-            Rating_XpValue = stat.RatingXpValue;
-            Rating_XpPlace = stat.RatingXpPlace;
-            //MXP-->
-            //Max Experience
-            Rating_MaxXpValue = stat.RatingMaxXpValue;
-            Rating_MaxXpPlace = stat.RatingMaxXpPlace;
-            //HR-->
-            //Hits Percent
-            Rating_HitsPercentsValue = stat.RatingHitsPercentsValue;
-            Rating_HitsPercentsPlace = stat.RatingHitsPercentsPlace;
-
-            #endregion
-
-            #region Achievements
-
-            if (stat.AchievementsIdObject != null)
-            {
-                #region [ IRowBattleAwards ]
-
-                //BattleHero = stat.AchievementsIdObject.battleHeroes;
-                Warrior = stat.AchievementsIdObject.Warrior;
-                Invader = stat.AchievementsIdObject.Invader;
-                Sniper = stat.AchievementsIdObject.Sniper;
-                Sniper2 = stat.AchievementsIdObject.Sniper2;
-                MainGun = stat.AchievementsIdObject.MainGun;
-                Defender = stat.AchievementsIdObject.Defender;
-                SteelWall = stat.AchievementsIdObject.SteelWall;
-                Confederate = stat.AchievementsIdObject.Confederate;
-                Scout = stat.AchievementsIdObject.Scout;
-                PatrolDuty = stat.AchievementsIdObject.PatrolDuty;
-                BrothersInArms = stat.AchievementsIdObject.BrothersInArms;
-                CrucialContribution = stat.AchievementsIdObject.CrucialContribution;
-                CoolHeaded = stat.AchievementsIdObject.CoolHeaded;
-                LuckyDevil = stat.AchievementsIdObject.LuckyDevil;
-                Sturdy = stat.AchievementsIdObject.Spartan;
-
-                #endregion
-
-                #region [ IRowEpic ]
-
-                Boelter = stat.AchievementsIdObject.Boelter;
-                RadleyWalters = stat.AchievementsIdObject.RadleyWalters;
-                LafayettePool = stat.AchievementsIdObject.LafayettePool;
-                Orlik = stat.AchievementsIdObject.Orlik;
-                Oskin = stat.AchievementsIdObject.Oskin;
-                Lehvaslaiho = stat.AchievementsIdObject.Lehvaslaiho;
-                Nikolas = stat.AchievementsIdObject.Nikolas;
-                Halonen = stat.AchievementsIdObject.Halonen;
-                Burda = stat.AchievementsIdObject.Burda;
-                Pascucci = stat.AchievementsIdObject.Pascucci;
-                Dumitru = stat.AchievementsIdObject.Dumitru;
-                TamadaYoshio = stat.AchievementsIdObject.TamadaYoshio;
-                Billotte = stat.AchievementsIdObject.Billotte;
-                BrunoPietro = stat.AchievementsIdObject.BrunoPietro;
-                Tarczay = stat.AchievementsIdObject.Tarczay;
-                Kolobanov = stat.AchievementsIdObject.Kolobanov;
-                Fadin = stat.AchievementsIdObject.Fadin;
-                HeroesOfRassenay = stat.AchievementsIdObject.HeroesOfRassenay;
-                DeLanglade = stat.AchievementsIdObject.DeLanglade;
-
-                #endregion
-
-                #region [ IRowMedals]
-
-                //Kay = stat.AchievementsIdObject.Major.Kay;
-                //Carius = stat.AchievementsIdObject.Major.Carius;
-                //Knispel = stat.AchievementsIdObject.Major.Knispel;
-                //Poppel = stat.AchievementsIdObject.Major.Poppel;
-                //Abrams = stat.AchievementsIdObject.Major.Abrams;
-                //Leclerk = stat.AchievementsIdObject.Major.LeClerc;
-                //Lavrinenko = stat.AchievementsIdObject.Major.Lavrinenko;
-                //Ekins = stat.AchievementsIdObject.Major.Ekins;
-
-                #endregion
-
-                #region [ IRowSeries ]
-
-                ReaperLongest = stat.AchievementsIdObject.Reaper;
-                SharpshooterLongest = stat.AchievementsIdObject.SharpshooterLongest;
-                MasterGunnerLongest = stat.AchievementsIdObject.MasterGunnerLongest;
-                InvincibleLongest = stat.AchievementsIdObject.Invincible;
-                SurvivorLongest = stat.AchievementsIdObject.Survivor;
-
-                #endregion
-
-                #region [ IRowSpecialAwards ]
-
-                Kamikaze = stat.AchievementsIdObject.Kamikaze;
-                Raider = stat.AchievementsIdObject.Raider;
-                Bombardier = stat.AchievementsIdObject.Bombardier;
-                Reaper = stat.AchievementsIdObject.Reaper;
-                Sharpshooter = stat.AchievementsIdObject.SharpshooterLongest;
-                Invincible = stat.AchievementsIdObject.Invincible;
-                Survivor = stat.AchievementsIdObject.Survivor;
-                MouseTrap = stat.AchievementsIdObject.MouseTrap;
-                Hunter = stat.AchievementsIdObject.Hunter;
-                Sinai = stat.AchievementsIdObject.Sinai;
-                PattonValley = stat.AchievementsIdObject.PattonValley;
-                Ranger = stat.AchievementsIdObject.Ranger;
-
-                #endregion
-            }
-        }
-
-        public PlayerStatisticViewModel(TeamBattlesStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
-        {
-        }
-
-        public PlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
-            : base(stat.Updated, list)
-        {
-            #region Common init
-
-            BattlesCount = stat.BattlesCount;
-            Wins = stat.Wins;
-            Losses = stat.Losses;
-            SurvivedBattles = stat.SurvivedBattles;
-            Xp = stat.Xp;
-            MaxXp = stat.MaxXp;
-            Frags = stat.Frags;
-            Spotted = stat.Spotted;
-            HitsPercents = stat.HitsPercents;
-            DamageDealt = stat.DamageDealt;
-            DamageTaken = stat.DamageTaken;
-            CapturePoints = stat.CapturePoints;
-            DroppedCapturePoints = stat.DroppedCapturePoints;
-            PerformanceRating = stat.PerformanceRating;
-            WN8Rating = stat.WN8Rating;
-            //Created = stat.PlayerIdObject.Creaded);
-            Updated = stat.Updated;
-            Tier = stat.AvgLevel;
-
-            ArmoredFist = stat.AchievementsIdObject.ArmoredFist;
-            TacticalBreakthrough = stat.AchievementsIdObject.TacticalBreakthrough;
-            KingOfTheHill = stat.AchievementsIdObject.KingOfTheHill;
-
-            #endregion
-        }
-
-        public PlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat)
-            : this(stat, new List<PlayerStatisticViewModel>())
-        {
-        }
-
-        public PlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
-            : base(stat.Updated, list)
-        {
-            #region Common init
-
-            BattlesCount = stat.BattlesCount;
-            Wins = stat.Wins;
-            Losses = stat.Losses;
-            SurvivedBattles = stat.SurvivedBattles;
-            Xp = stat.Xp;
-            MaxXp = stat.MaxXp;
-            Frags = stat.Frags;
-            Spotted = stat.Spotted;
-            HitsPercents = stat.HitsPercents;
-            DamageDealt = stat.DamageDealt;
-            DamageTaken = stat.DamageTaken;
-            CapturePoints = stat.CapturePoints;
-            DroppedCapturePoints = stat.DroppedCapturePoints;
-            PerformanceRating = stat.PerformanceRating;
-            WN8Rating = stat.WN8Rating;
-            //Created = stat.PlayerIdObject.Creaded);
-            Updated = stat.Updated;
-            Tier = stat.AvgLevel;
-
-            GuardsMan = stat.AchievementsIdObject.GuardsMan;
-            MakerOfHistory = stat.AchievementsIdObject.MakerOfHistory;
-            WeakVehiclesWins = stat.AchievementsIdObject.WeakVehiclesWins;
-            BothSidesWins = stat.AchievementsIdObject.BothSidesWins;
-
-            #endregion
-        }
-
         public ClanModel Clan { get; set; }
 
-        public PlayerStatisticViewModel Clone()
+        protected PlayerStatisticViewModel(DateTime updated, List<PlayerStatisticViewModel> list) : base(updated, list)
         {
-            PlayerStatisticViewModel clone = new PlayerStatisticViewModel(_stat);
-            return clone;
         }
-
-        #endregion
     }
 }

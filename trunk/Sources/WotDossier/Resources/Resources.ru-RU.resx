@@ -450,7 +450,7 @@
   <data name="Column_BattleAwards_CrucialContribution" xml:space="preserve">
     <value>Решающий вклад</value>
   </data>
-  <data name="Column_BattleAwards_CoolHeaded" xml:space="preserve">
+  <data name="Column_BattleAwards_IronMan" xml:space="preserve">
     <value>Невозмутимый</value>
   </data>
   <data name="Column_BattleAwards_LuckyDevil" xml:space="preserve">
@@ -522,7 +522,7 @@
   <data name="Column_SpecialAwards_Raider" xml:space="preserve">
     <value>Рейдер</value>
   </data>
-  <data name="Column_SpecialAwards_Ranger" xml:space="preserve">
+  <data name="Column_SpecialAwards_Huntsman" xml:space="preserve">
     <value>Медаль Найдина</value>
   </data>
   <data name="Column_SpecialAwards_Reaper" xml:space="preserve">
@@ -780,7 +780,7 @@
   <data name="Common_AvgDetected" xml:space="preserve">
     <value>В среднем обнаружено за бой:</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_CoolHeaded" xml:space="preserve">
+  <data name="Tooltip_CommemorativeAchievements_IronMan" xml:space="preserve">
     <value>	• Присуждается игроку, который получил подряд более 10 рикошетов и непробитий от игроков вражеской команды.
 	• Не выдаётся в клановых войнах.</value>
   </data>
@@ -1016,7 +1016,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
 Для получения данного достижения необходимо и достаточно 
 поучаствовать в состоявшемся захвате базы, получив достижение "Захватчик".</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Ranger" xml:space="preserve">
+  <data name="Tooltip_SpecialAchievements_Huntsman" xml:space="preserve">
     <value>Игрок должен уничтожить в бою все лёгкие 
 танки противника (как минимум 3 танка).</value>
   </data>
@@ -1411,7 +1411,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Medal_Huntsman" xml:space="preserve">
     <value>Медаль Найдина</value>
   </data>
-  <data name="Medal_CoolHeaded" xml:space="preserve">
+  <data name="Medal_IronMan" xml:space="preserve">
     <value>Невозмутимый</value>
   </data>
   <data name="Medal_Sturdy" xml:space="preserve">

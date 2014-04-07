@@ -422,15 +422,6 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cool Headed.
-        /// </summary>
-        public static string Column_BattleAwards_CoolHeaded {
-            get {
-                return ResourceManager.GetString("Column_BattleAwards_CoolHeaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Crucial Contribution.
         /// </summary>
         public static string Column_BattleAwards_CrucialContribution {
@@ -454,6 +445,15 @@ namespace WotDossier.Resources {
         public static string Column_BattleAwards_Invader {
             get {
                 return ResourceManager.GetString("Column_BattleAwards_Invader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iron Man.
+        /// </summary>
+        public static string Column_BattleAwards_IronMan {
+            get {
+                return ResourceManager.GetString("Column_BattleAwards_IronMan", resourceCulture);
             }
         }
         
@@ -1583,6 +1583,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medal Naidin.
+        /// </summary>
+        public static string Column_SpecialAwards_Huntsman {
+            get {
+                return ResourceManager.GetString("Column_SpecialAwards_Huntsman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invincible.
         /// </summary>
         public static string Column_SpecialAwards_Invincible {
@@ -1624,15 +1633,6 @@ namespace WotDossier.Resources {
         public static string Column_SpecialAwards_Raider {
             get {
                 return ResourceManager.GetString("Column_SpecialAwards_Raider", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Medal Naidin.
-        /// </summary>
-        public static string Column_SpecialAwards_Ranger {
-            get {
-                return ResourceManager.GetString("Column_SpecialAwards_Ranger", resourceCulture);
             }
         }
         
@@ -2834,20 +2834,20 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cool Headed.
-        /// </summary>
-        public static string Medal_CoolHeaded {
-            get {
-                return ResourceManager.GetString("Medal_CoolHeaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Crucial Contribution.
         /// </summary>
         public static string Medal_CrucialContribution {
             get {
                 return ResourceManager.GetString("Medal_CrucialContribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Решающий выстрел.
+        /// </summary>
+        public static string Medal_CrucialShotMedal {
+            get {
+                return ResourceManager.GetString("Medal_CrucialShotMedal", resourceCulture);
             }
         }
         
@@ -2893,6 +2893,33 @@ namespace WotDossier.Resources {
         public static string Medal_Fadin {
             get {
                 return ResourceManager.GetString("Medal_Fadin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Разведка боем.
+        /// </summary>
+        public static string Medal_FightingReconnaissanceMedal {
+            get {
+                return ResourceManager.GetString("Medal_FightingReconnaissanceMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отличник боевой подготовки.
+        /// </summary>
+        public static string Medal_GeniusForWarMedal {
+            get {
+                return ResourceManager.GetString("Medal_GeniusForWarMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Бог войны.
+        /// </summary>
+        public static string Medal_GodOfWar {
+            get {
+                return ResourceManager.GetString("Medal_GodOfWar", resourceCulture);
             }
         }
         
@@ -2947,6 +2974,15 @@ namespace WotDossier.Resources {
         public static string Medal_Invincible {
             get {
                 return ResourceManager.GetString("Medal_Invincible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iron Man.
+        /// </summary>
+        public static string Medal_IronMan {
+            get {
+                return ResourceManager.GetString("Medal_IronMan", resourceCulture);
             }
         }
         
@@ -3253,6 +3289,24 @@ namespace WotDossier.Resources {
         public static string Medal_Warrior {
             get {
                 return ResourceManager.GetString("Medal_Warrior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to За волю к победе.
+        /// </summary>
+        public static string Medal_WillToWinSpirit {
+            get {
+                return ResourceManager.GetString("Medal_WillToWinSpirit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to За отличную стрельбу.
+        /// </summary>
+        public static string Medal_WolfAmongSheepMedal {
+            get {
+                return ResourceManager.GetString("Medal_WolfAmongSheepMedal", resourceCulture);
             }
         }
         
@@ -4046,9 +4100,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Survive at least 10 ricochets and non-penetrations in a row from enemy players..
         /// </summary>
-        public static string Tooltip_CommemorativeAchievements_CoolHeaded {
+        public static string Tooltip_CommemorativeAchievements_IronMan {
             get {
-                return ResourceManager.GetString("Tooltip_CommemorativeAchievements_CoolHeaded", resourceCulture);
+                return ResourceManager.GetString("Tooltip_CommemorativeAchievements_IronMan", resourceCulture);
             }
         }
         
@@ -4347,6 +4401,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Destroy all the enemy light tanks (must be at least three) in the course of a single battle..
+        /// </summary>
+        public static string Tooltip_SpecialAchievements_Huntsman {
+            get {
+                return ResourceManager.GetString("Tooltip_SpecialAchievements_Huntsman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Survive 5 or more consecutive battles without taking any damage (not including battles fought using self-propelled guns). Battles fought using self-propelled guns do not break the sequence, but are not included either. The icon in the service record displays the longest sequence..
         /// </summary>
         public static string Tooltip_SpecialAchievements_Invincible {
@@ -4397,15 +4460,6 @@ namespace WotDossier.Resources {
         public static string Tooltip_SpecialAchievements_Raider {
             get {
                 return ResourceManager.GetString("Tooltip_SpecialAchievements_Raider", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Destroy all the enemy light tanks (must be at least three) in the course of a single battle..
-        /// </summary>
-        public static string Tooltip_SpecialAchievements_Ranger {
-            get {
-                return ResourceManager.GetString("Tooltip_SpecialAchievements_Ranger", resourceCulture);
             }
         }
         
@@ -4525,6 +4579,78 @@ namespace WotDossier.Resources {
         public static string Tooltip_StepAchievements_Poppel {
             get {
                 return ResourceManager.GetString("Tooltip_StepAchievements_Poppel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 20 раз уничтожить последнюю машину противника
+        ///  • Победить в бою
+        ///  • В общем зачете повтовно полученные награды не суммируются
+        ///    .
+        /// </summary>
+        public static string Tooltip_TeamBattlesAchievements_CrucialShotMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_TeamBattlesAchievements_CrucialShotMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 50 раз выполнить следующие условия:
+        ///  • Обнаружить не менее 2 машин противника
+        ///  • Занять 3 и выше место по нанесенному урону
+        ///  • В общем зачете повтовно полученные награды не суммируются
+        ///    .
+        /// </summary>
+        public static string Tooltip_TeamBattlesAchievements_FightingReconnaissanceMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_TeamBattlesAchievements_FightingReconnaissanceMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Занять 100 раз первое место по количеству заработанного опыта за бой
+        ///  • Победить в бою
+        ///  • В общем зачете повтовно полученные награды не суммируются
+        ///    .
+        /// </summary>
+        public static string Tooltip_TeamBattlesAchievements_GeniusForWarMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_TeamBattlesAchievements_GeniusForWarMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Победить в бою на САУ оставшись единственным выжившим
+        ///  • Победить в бою
+        ///  • В общем зачете повтовно полученные награды не суммируются
+        ///    .
+        /// </summary>
+        public static string Tooltip_TeamBattlesAchievements_GodOfWar {
+            get {
+                return ResourceManager.GetString("Tooltip_TeamBattlesAchievements_GodOfWar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Победить в бою оставшись в одиночку против 3 
+        ///и более машин противника
+        ///  • В общем зачете повтовно полученные награды не суммируются
+        ///    .
+        /// </summary>
+        public static string Tooltip_TeamBattlesAchievements_WillToWinSpirit {
+            get {
+                return ResourceManager.GetString("Tooltip_TeamBattlesAchievements_WillToWinSpirit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Занять 100 раз первое место по количеству нанесенного урона в победном бою
+        ///  • В общем зачете повтовно полученные награды не суммируются
+        ///    .
+        /// </summary>
+        public static string Tooltip_TeamBattlesAchievements_WolfAmongSheepMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_TeamBattlesAchievements_WolfAmongSheepMedal", resourceCulture);
             }
         }
         

@@ -301,94 +301,45 @@ def = dropped_capture_points / bc (среднее количество очко�
                               1.4*avgXpRadio88 + 1.1*avgXpTrack88)));
         }
 
-        public static double GetPerformanceRating(List<TankJson> tanks)
+        public static double GetPerformanceRating(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
         {
-            double expDamage = tanks.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
-            int battlesCount = tanks.Sum(x => x.A15x15.battlesCount);
-            int wins = tanks.Sum(x => x.A15x15.wins);
-            int playerDamage = tanks.Sum(x => x.A15x15.damageDealt);
-            double avgTier = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Tier) / (double)battlesCount;
+            double expDamage = tanks.Select(x => func(x).battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
+            int battlesCount = tanks.Sum(x => func(x).battlesCount);
+            int wins = tanks.Sum(x => func(x).wins);
+            int playerDamage = tanks.Sum(x => func(x).damageDealt);
+            double avgTier = tanks.Sum(x => func(x).battlesCount * x.Description.Tier) / (double)battlesCount;
             return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
         }
 
-        public static double GetWN8Rating(List<TankJson> tanks)
+        public static double GetWN8Rating(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
         {
-            double battles = tanks.Sum(x => x.A15x15.battlesCount);
+            double battles = tanks.Sum(x => func(x).battlesCount);
 
-            double damage = tanks.Sum(x => x.A15x15.damageDealt) / battles;
-            double spotted = tanks.Sum(x => x.A15x15.spotted) / battles;
-            double def = tanks.Sum(x => x.A15x15.droppedCapturePoints) / battles;
-            double winRate = tanks.Sum(x => x.A15x15.wins) / battles;
-            double frags = tanks.Sum(x => x.A15x15.frags) / battles;
+            double damage = tanks.Sum(x => func(x).damageDealt) / battles;
+            double spotted = tanks.Sum(x => func(x).spotted) / battles;
+            double def = tanks.Sum(x => func(x).droppedCapturePoints) / battles;
+            double winRate = tanks.Sum(x => func(x).wins) / battles;
+            double frags = tanks.Sum(x => func(x).frags) / battles;
 
-            double expDamage = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDamage) / battles;
-            double expSpotted = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalSpotted) / battles;
-            double expDef = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalDefence) / battles;
-            double expWinRate = tanks.Sum(x => (x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
-            double expFrags = tanks.Sum(x => x.A15x15.battlesCount * x.Description.Expectancy.Wn8NominalFrags) / battles;
+            double expDamage = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalDamage) / battles;
+            double expSpotted = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalSpotted) / battles;
+            double expDef = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalDefence) / battles;
+            double expWinRate = tanks.Sum(x => (func(x).battlesCount * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
+            double expFrags = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalFrags) / battles;
             return CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
         }
 
-        public static double GetPerformanceRating7x7(List<TankJson> tanks)
+        public static double GetRBR(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
         {
-            double expDamage = tanks.Select(x => x.A7x7.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
-            int battlesCount = tanks.Sum(x => x.A7x7.battlesCount);
-            int wins = tanks.Sum(x => x.A7x7.wins);
-            int playerDamage = tanks.Sum(x => x.A7x7.damageDealt);
-            double avgTier = tanks.Sum(x => x.A7x7.battlesCount * x.Description.Tier) / (double)battlesCount;
-            return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
-        }
-
-        public static double GetWN8Rating7x7(List<TankJson> tanks)
-        {
-            double battles = tanks.Sum(x => x.A7x7.battlesCount);
-
-            double damage = tanks.Sum(x => x.A7x7.damageDealt) / battles;
-            double spotted = tanks.Sum(x => x.A7x7.spotted) / battles;
-            double def = tanks.Sum(x => x.A7x7.droppedCapturePoints) / battles;
-            double winRate = tanks.Sum(x => x.A7x7.wins) / battles;
-            double frags = tanks.Sum(x => x.A7x7.frags) / battles;
-
-            double expDamage = tanks.Sum(x => x.A7x7.battlesCount * x.Description.Expectancy.Wn8NominalDamage) / battles;
-            double expSpotted = tanks.Sum(x => x.A7x7.battlesCount * x.Description.Expectancy.Wn8NominalSpotted) / battles;
-            double expDef = tanks.Sum(x => x.A7x7.battlesCount * x.Description.Expectancy.Wn8NominalDefence) / battles;
-            double expWinRate = tanks.Sum(x => (x.A7x7.battlesCount * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
-            double expFrags = tanks.Sum(x => x.A7x7.battlesCount * x.Description.Expectancy.Wn8NominalFrags) / battles;
-            return CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
-        }
-
-        public static double GetRBR7x7(List<TankJson> tanks)
-        {
-            double battlesCount = tanks.Sum(x => x.A7x7.battlesCount);
-            double winBattles = tanks.Sum(x => x.A7x7.wins);
-            double surviveBattles = tanks.Sum(x => x.A7x7.survivedBattles);
-            double damage = tanks.Sum(x => x.A7x7.damageDealt);
-            double battlesCount88 = tanks.Sum(x => x.A7x7.battlesCount - x.A7x7.battlesCountBefore8_8);
+            double battlesCount = tanks.Sum(x => func(x).battlesCount);
+            double winBattles = tanks.Sum(x => func(x).wins);
+            double surviveBattles = tanks.Sum(x => func(x).survivedBattles);
+            double damage = tanks.Sum(x => func(x).damageDealt);
+            double battlesCount88 = tanks.Sum(x => func(x).battlesCount - func(x).battlesCountBefore8_8);
             battlesCount88 = battlesCount88 != 0 ? battlesCount88 : 1;
-            int xp88 = tanks.Sum(x => x.A7x7.originalXP);
-            int xpRadio88 = tanks.Sum(x => x.A7x7.damageAssistedRadio);
-            int xpTrack88 = tanks.Sum(x => x.A7x7.damageAssistedTrack);
-            double avgXp88 = xp88 / battlesCount88;
-            double avgXpRadio88 = xpRadio88 / battlesCount88;
-            double avgXpTrack88 = xpTrack88 / battlesCount88;
-            double wins = winBattles / battlesCount;
-            double survive = surviveBattles / battlesCount;
-            double avgDamageDealt = damage / battlesCount;
-
-            return RatingWG(battlesCount, battlesCount88, wins, survive, avgDamageDealt, avgXp88, avgXpRadio88, avgXpTrack88);
-        }
-
-        public static double GetRBR(List<TankJson> tanks)
-        {
-            double battlesCount = tanks.Sum(x => x.A15x15.battlesCount);
-            double winBattles = tanks.Sum(x => x.A15x15.wins);
-            double surviveBattles = tanks.Sum(x => x.A15x15.survivedBattles);
-            double damage = tanks.Sum(x => x.A15x15.damageDealt);
-            double battlesCount88 = tanks.Sum(x => x.A15x15.battlesCount - x.A15x15.battlesCountBefore8_8);
-            battlesCount88 = battlesCount88 != 0 ? battlesCount88 : 1;
-            int xp88 = tanks.Sum(x => x.A15x15.originalXP);
-            int xpRadio88 = tanks.Sum(x => x.A15x15.damageAssistedRadio);
-            int xpTrack88 = tanks.Sum(x => x.A15x15.damageAssistedTrack);
+            int xp88 = tanks.Sum(x => func(x).originalXP);
+            int xpRadio88 = tanks.Sum(x => func(x).damageAssistedRadio);
+            int xpTrack88 = tanks.Sum(x => func(x).damageAssistedTrack);
             double avgXp88 = xp88 / battlesCount88;
             double avgXpRadio88 = xpRadio88 / battlesCount88;
             double avgXpTrack88 = xpTrack88 / battlesCount88;

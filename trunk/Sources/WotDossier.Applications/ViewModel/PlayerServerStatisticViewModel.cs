@@ -103,7 +103,7 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatisticEntity entity = new PlayerStatisticEntity();
             PlayerStatAdapter statAdapter = new PlayerStatAdapter(playerStat);
             statAdapter.Update(entity);
-            PlayerStatisticViewModel statistic = new PlayerStatisticViewModel(entity);
+            PlayerStatisticViewModel statistic = new RandomPlayerStatisticViewModel(entity);
             statistic.Name = playerStat.dataField.nickname;
             statistic.AccountId = playerStat.dataField.account_id;
             statistic.BattlesPerDay = statistic.BattlesCount / (DateTime.Now - statAdapter.Created).Days;

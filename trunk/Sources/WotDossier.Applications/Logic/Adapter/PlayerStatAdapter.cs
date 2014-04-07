@@ -53,7 +53,7 @@ namespace WotDossier.Applications.Logic.Adapter
             PatrolDuty = tanks.Sum(x => x.Achievements.evileye);
             BrothersInArms = tanks.Sum(x => x.Achievements.medalBrothersInArms);
             CrucialContribution = tanks.Sum(x => x.Achievements.medalCrucialContribution);
-            CoolHeaded = tanks.Sum(x => x.Achievements.ironMan);
+            IronMan = tanks.Sum(x => x.Achievements.ironMan);
             LuckyDevil = tanks.Sum(x => x.Achievements.luckyDevil);
             Sturdy = tanks.Sum(x => x.Achievements.sturdy);
 
@@ -128,9 +128,9 @@ namespace WotDossier.Applications.Logic.Adapter
             MedalCoolBlood = tanks.Sum(x => x.Achievements.medalCoolBlood);
             MedalStark = tanks.Sum(x => x.Achievements.medalStark);
 
-            PerformanceRating = RatingHelper.GetPerformanceRating(tanks);
-            WN8Rating = RatingHelper.GetWN8Rating(tanks);
-            RBR = RatingHelper.GetRBR(tanks);
+            PerformanceRating = RatingHelper.GetPerformanceRating(tanks, tank => tank.A15x15);
+            WN8Rating = RatingHelper.GetWN8Rating(tanks, tank => tank.A15x15);
+            RBR = RatingHelper.GetRBR(tanks, tank => tank.A15x15);
         }
 
         public PlayerStatAdapter(PlayerStat stat)
@@ -171,7 +171,7 @@ namespace WotDossier.Applications.Logic.Adapter
             PatrolDuty = stat.dataField.achievements.evileye;
             BrothersInArms = stat.dataField.achievements.medal_brothers_in_arms;
             CrucialContribution = stat.dataField.achievements.medal_crucial_contribution;
-            CoolHeaded = stat.dataField.achievements.iron_man;
+            IronMan = stat.dataField.achievements.iron_man;
             LuckyDevil = stat.dataField.achievements.lucky_devil;
             Sturdy = stat.dataField.achievements.sturdy;
             Sniper2 = stat.dataField.achievements.sniper2;
@@ -314,7 +314,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
         public int CrucialContribution { get; set; }
 
-        public int CoolHeaded { get; set; }
+        public int IronMan { get; set; }
 
         public int LuckyDevil { get; set; }
 
@@ -501,7 +501,7 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.PatrolDuty = PatrolDuty;
             entity.AchievementsIdObject.BrothersInArms = BrothersInArms;
             entity.AchievementsIdObject.CrucialContribution = CrucialContribution;
-            entity.AchievementsIdObject.CoolHeaded = CoolHeaded;
+            entity.AchievementsIdObject.CoolHeaded = IronMan;
             entity.AchievementsIdObject.LuckyDevil = LuckyDevil;
             entity.AchievementsIdObject.Spartan = Sturdy;
 

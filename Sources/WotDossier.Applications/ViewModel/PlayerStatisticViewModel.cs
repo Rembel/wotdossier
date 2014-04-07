@@ -12,29 +12,9 @@ namespace WotDossier.Applications.ViewModel
         }
 
         public TeamPlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
-            : base(stat.Updated, list)
+            : base(stat, list)
         {
-            #region Common init
-
-            BattlesCount = stat.BattlesCount;
-            Wins = stat.Wins;
-            Losses = stat.Losses;
-            SurvivedBattles = stat.SurvivedBattles;
-            Xp = stat.Xp;
-            MaxXp = stat.MaxXp;
-            Frags = stat.Frags;
-            Spotted = stat.Spotted;
-            HitsPercents = stat.HitsPercents;
-            DamageDealt = stat.DamageDealt;
-            DamageTaken = stat.DamageTaken;
-            CapturePoints = stat.CapturePoints;
-            DroppedCapturePoints = stat.DroppedCapturePoints;
-            PerformanceRating = stat.PerformanceRating;
-            WN8Rating = stat.WN8Rating;
-            RBR = stat.RBR;
-            //Created = stat.PlayerIdObject.Creaded);
-            Updated = stat.Updated;
-            Tier = stat.AvgLevel;
+            #region Awards
 
             ArmoredFist = stat.AchievementsIdObject.ArmoredFist;
             TacticalBreakthrough = stat.AchievementsIdObject.TacticalBreakthrough;
@@ -52,28 +32,9 @@ namespace WotDossier.Applications.ViewModel
         }
 
         public HistoricalPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
-            : base(stat.Updated, list)
+            : base(stat, list)
         {
-            #region Common init
-
-            BattlesCount = stat.BattlesCount;
-            Wins = stat.Wins;
-            Losses = stat.Losses;
-            SurvivedBattles = stat.SurvivedBattles;
-            Xp = stat.Xp;
-            MaxXp = stat.MaxXp;
-            Frags = stat.Frags;
-            Spotted = stat.Spotted;
-            HitsPercents = stat.HitsPercents;
-            DamageDealt = stat.DamageDealt;
-            DamageTaken = stat.DamageTaken;
-            CapturePoints = stat.CapturePoints;
-            DroppedCapturePoints = stat.DroppedCapturePoints;
-            PerformanceRating = stat.PerformanceRating;
-            WN8Rating = stat.WN8Rating;
-            //Created = stat.PlayerIdObject.Creaded);
-            Updated = stat.Updated;
-            Tier = stat.AvgLevel;
+            #region Awards
 
             GuardsMan = stat.AchievementsIdObject.GuardsMan;
             MakerOfHistory = stat.AchievementsIdObject.MakerOfHistory;
@@ -91,33 +52,8 @@ namespace WotDossier.Applications.ViewModel
         }
 
         public RandomPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
-            : base(stat.Updated, list)
+            : base(stat, list)
         {
-            #region Common init
-
-            BattlesCount = stat.BattlesCount;
-            Wins = stat.Wins;
-            Losses = stat.Losses;
-            SurvivedBattles = stat.SurvivedBattles;
-            Xp = stat.Xp;
-            MaxXp = stat.MaxXp;
-            Frags = stat.Frags;
-            Spotted = stat.Spotted;
-            HitsPercents = stat.HitsPercents;
-            DamageDealt = stat.DamageDealt;
-            DamageTaken = stat.DamageTaken;
-            CapturePoints = stat.CapturePoints;
-            DroppedCapturePoints = stat.DroppedCapturePoints;
-            //Created = stat.PlayerIdObject.Creaded);
-            Updated = stat.Updated;
-            Tier = stat.AvgLevel;
-
-            RBR = stat.RBR;
-            PerformanceRating = stat.PerformanceRating;
-            WN8Rating = stat.WN8Rating;
-
-            #endregion
-
             #region Ratings init
 
             //GR-->
@@ -181,7 +117,7 @@ namespace WotDossier.Applications.ViewModel
 
             if (stat.AchievementsIdObject != null)
             {
-                #region [ IRowBattleAwards ]
+                #region [ BattleAwards ]
 
                 //BattleHero = stat.AchievementsIdObject.battleHeroes;
                 Warrior = stat.AchievementsIdObject.Warrior;
@@ -202,7 +138,7 @@ namespace WotDossier.Applications.ViewModel
 
                 #endregion
 
-                #region [ IRowEpic ]
+                #region [ Epic ]
 
                 Boelter = stat.AchievementsIdObject.Boelter;
                 RadleyWalters = stat.AchievementsIdObject.RadleyWalters;
@@ -226,7 +162,7 @@ namespace WotDossier.Applications.ViewModel
 
                 #endregion
 
-                #region [ IRowMedals]
+                #region [ Medals]
 
                 //Kay = stat.AchievementsIdObject.Major.Kay;
                 //Carius = stat.AchievementsIdObject.Major.Carius;
@@ -239,7 +175,7 @@ namespace WotDossier.Applications.ViewModel
 
                 #endregion
 
-                #region [ IRowSeries ]
+                #region [ Series ]
 
                 ReaperLongest = stat.AchievementsIdObject.Reaper;
                 SharpshooterLongest = stat.AchievementsIdObject.SharpshooterLongest;
@@ -249,7 +185,7 @@ namespace WotDossier.Applications.ViewModel
 
                 #endregion
 
-                #region [ IRowSpecialAwards ]
+                #region [ SpecialAwards ]
 
                 Kamikaze = stat.AchievementsIdObject.Kamikaze;
                 Raider = stat.AchievementsIdObject.Raider;
@@ -526,8 +462,28 @@ namespace WotDossier.Applications.ViewModel
 
         public ClanModel Clan { get; set; }
 
-        protected PlayerStatisticViewModel(DateTime updated, List<PlayerStatisticViewModel> list) : base(updated, list)
+        protected PlayerStatisticViewModel(StatisticEntity stat, List<PlayerStatisticViewModel> list) : base(stat.Updated, list)
         {
+            BattlesCount = stat.BattlesCount;
+            Wins = stat.Wins;
+            Losses = stat.Losses;
+            SurvivedBattles = stat.SurvivedBattles;
+            Xp = stat.Xp;
+            MaxXp = stat.MaxXp;
+            Frags = stat.Frags;
+            Spotted = stat.Spotted;
+            HitsPercents = stat.HitsPercents;
+            DamageDealt = stat.DamageDealt;
+            DamageTaken = stat.DamageTaken;
+            CapturePoints = stat.CapturePoints;
+            DroppedCapturePoints = stat.DroppedCapturePoints;
+            //Created = stat.PlayerIdObject.Creaded);
+            Updated = stat.Updated;
+            Tier = stat.AvgLevel;
+
+            RBR = stat.RBR;
+            PerformanceRating = stat.PerformanceRating;
+            WN8Rating = stat.WN8Rating;
         }
     }
 }

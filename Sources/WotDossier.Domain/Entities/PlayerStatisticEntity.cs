@@ -12,20 +12,6 @@ namespace WotDossier.Domain.Entities
     {
         #region Property names
 
-        public static readonly string PropUpdated = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.Updated);
-        public static readonly string PropWins = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.Wins);
-        public static readonly string PropLosses = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.Losses);
-        public static readonly string PropSurvivedBattles = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.SurvivedBattles);
-        public static readonly string PropXp = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.Xp);
-        public static readonly string PropBattleAvgXp = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.BattleAvgXp);
-        public static readonly string PropMaxXp = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.MaxXp);
-        public static readonly string PropFrags = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.Frags);
-        public static readonly string PropSpotted = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.Spotted);
-        public static readonly string PropHitsPercents = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.HitsPercents);
-        public static readonly string PropDamageDealt = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.DamageDealt);
-        public static readonly string PropCapturePoints = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.CapturePoints);
-        public static readonly string PropDroppedCapturePoints = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.DroppedCapturePoints);
-        public static readonly string PropBattlesCount = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.BattlesCount);
         public static readonly string PropRatingIntegratedValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingIntegratedValue);
         public static readonly string PropRatingIntegratedPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingIntegratedPlace);
         public static readonly string PropRatingBattleAvgPerformanceValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingBattleAvgPerformanceValue);
@@ -48,76 +34,9 @@ namespace WotDossier.Domain.Entities
         public static readonly string PropRatingSpottedPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingSpottedPlace);
         public static readonly string PropRatingXpValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingXpValue);
         public static readonly string PropRatingXpPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingXpPlace);
-        public static readonly string PropAvgLevel = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.AvgLevel);
-        public static readonly string PropPlayerId = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.PlayerId);
 		public static readonly string PropAchievementsId = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.AchievementsId);
 
         #endregion
-
-        /// <summary>
-        /// Gets/Sets the field "Wins".
-        /// </summary>
-        public virtual int Wins { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "Losses".
-        /// </summary>
-        public virtual int Losses { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "SurvivedBattles".
-        /// </summary>
-        public virtual int SurvivedBattles { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "Xp".
-        /// </summary>
-        public virtual int Xp { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "BattleAvgXp".
-        /// </summary>
-        public virtual double BattleAvgXp { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "MaxXp".
-        /// </summary>
-        public virtual int MaxXp { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "Frags".
-        /// </summary>
-        public virtual int Frags { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "Spotted".
-        /// </summary>
-        public virtual int Spotted { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "HitsPercents".
-        /// </summary>
-        public virtual double HitsPercents { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "DamageDealt".
-        /// </summary>
-        public virtual int DamageDealt { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "DamageTaken".
-        /// </summary>
-        public virtual int DamageTaken { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "CapturePoints".
-        /// </summary>
-        public virtual int CapturePoints { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the field "DroppedCapturePoints".
-        /// </summary>
-        public virtual int DroppedCapturePoints { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "Rating_IntegratedValue".
@@ -248,26 +167,6 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "RatingMaxXpPlace".
         /// </summary>
         public virtual int RatingMaxXpPlace { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the AvgLevel object.
-        /// </summary>
-        public virtual double AvgLevel { get; set; }
-
-        /// <summary>
-        /// Gets or sets the RBR.
-        /// </summary>
-		public virtual double RBR { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Wn8 rating.
-        /// </summary>
-        public virtual double WN8Rating { get; set; }
-
-        /// <summary>
-        /// Gets or sets the performance rating.
-        /// </summary>
-        public virtual double PerformanceRating { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "AchievementsId".

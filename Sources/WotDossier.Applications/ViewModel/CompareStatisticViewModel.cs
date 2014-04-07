@@ -138,7 +138,7 @@
 
         public int CrucialContribution { get { return First.CrucialContribution - Second.CrucialContribution; } }
 
-        public int CoolHeaded { get { return First.CoolHeaded - Second.CoolHeaded; } }
+        public int IronMan { get { return First.IronMan - Second.IronMan; } }
 
         public int LuckyDevil { get { return First.LuckyDevil - Second.LuckyDevil; } }
 
@@ -212,7 +212,7 @@
 
         //public int PattonValley { get { return First. - Second.; } }
 
-        //public int Ranger { get { return First. - Second.; } }
+        //public int Huntsman { get { return First. - Second.; } }
 
         //#endregion
 

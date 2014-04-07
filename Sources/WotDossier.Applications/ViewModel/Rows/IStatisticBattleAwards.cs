@@ -15,7 +15,7 @@
         int PatrolDuty { get; set; }
         int BrothersInArms { get; set; }
         int CrucialContribution { get; set; }
-        int CoolHeaded { get; set; }
+        int IronMan { get; set; }
         int LuckyDevil { get; set; }
         int Sturdy { get; set; }
     }

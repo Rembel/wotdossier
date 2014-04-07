@@ -103,6 +103,7 @@
       <DependentUpon>Resources.ru-RU.resx</DependentUpon>
     </Compile>
     <Compile Include="SettingsReader.cs" />
+    <Compile Include="StatisticViewStrategyBase.cs" />
     <Compile Include="Update\CodeUpdateBase.cs" />
     <Compile Include="Update\CodeUpdate_2013080602.cs" />
     <Compile Include="Update\CodeUpdate_2013092201.cs" />

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.Logic;
-using WotDossier.Applications.Model;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
@@ -35,70 +34,6 @@ namespace WotDossier.Applications.ViewModel
             get { return _notExistsedTanksList; }
         }
 
-        public static PlayerStatisticViewModel Create(List<PlayerStatisticEntity> statisticEntities, List<TankJson> tanks, PlayerEntity player, ServerStatWrapper playerData)
-        {
-            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                .Select(x => new PlayerStatisticViewModel(x)).ToList();
-
-            PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
-            currentStatisticViewModel.Name = player.Name;
-            currentStatisticViewModel.Created = player.Creaded;
-            currentStatisticViewModel.AccountId = player.PlayerId;
-            currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.A15x15.damageReceived);
-            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
-            currentStatisticViewModel.PerformanceRating = RatingHelper.GetPerformanceRating(tanks);
-            currentStatisticViewModel.WN8Rating = RatingHelper.GetWN8Rating(tanks);
-            currentStatisticViewModel.RBR = RatingHelper.GetRBR(tanks);
-            currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
-
-            if (playerData.Clan != null)
-            {
-                currentStatisticViewModel.Clan = new ClanModel(playerData.Clan, playerData.Role, playerData.Since);
-            }
-            return currentStatisticViewModel;
-        }
-
-        public static PlayerStatisticViewModel Create(List<TeamBattlesStatisticEntity> statisticEntities, List<TankJson> tanks, PlayerEntity player)
-        {
-            TeamBattlesStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                .Select(x => new PlayerStatisticViewModel(x)).ToList();
-
-            PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
-            currentStatisticViewModel.Name = player.Name;
-            currentStatisticViewModel.Created = player.Creaded;
-            currentStatisticViewModel.AccountId = player.PlayerId;
-            currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.A7x7.damageReceived);
-            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
-            currentStatisticViewModel.PerformanceRating = RatingHelper.GetPerformanceRating7x7(tanks);
-            currentStatisticViewModel.WN8Rating = RatingHelper.GetWN8Rating7x7(tanks);
-            currentStatisticViewModel.RBR = RatingHelper.GetRBR7x7(tanks);
-            currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
-
-            return currentStatisticViewModel;
-        }
-
-        public static PlayerStatisticViewModel Create(List<HistoricalBattlesStatisticEntity> statisticEntities, List<TankJson> tanks, PlayerEntity player)
-        {
-            HistoricalBattlesStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                .Select(x => new PlayerStatisticViewModel(x)).ToList();
-
-            PlayerStatisticViewModel currentStatisticViewModel = new PlayerStatisticViewModel(currentStatistic, oldStatisticEntities);
-            currentStatisticViewModel.Name = player.Name;
-            currentStatisticViewModel.Created = player.Creaded;
-            currentStatisticViewModel.AccountId = player.PlayerId;
-            currentStatisticViewModel.DamageTaken = tanks.Sum(x => x.A7x7.damageReceived);
-            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
-            //currentStatisticViewModel.PerformanceRating = RatingHelper.GetPerformanceRating_(tanks);
-            //currentStatisticViewModel.WN8Rating = RatingHelper.GetWN8Rating_(tanks);
-            //currentStatisticViewModel.RBR = RatingHelper.GetRBR_(tanks);
-            currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
-
-            return currentStatisticViewModel;
-        }
-
         public static double GetWN8RatingForPeriod(List<ITankStatisticRow> tanks)
         {
             double battles = tanks.Sum(x => x.BattlesCountDelta);
@@ -127,47 +62,17 @@ namespace WotDossier.Applications.ViewModel
             return RatingHelper.PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier, false);
         }
 
-        public static List<ITankStatisticRow> CreateTeamBattlesStatistic(IEnumerable<TankStatisticEntity> tankStatisticEntities)
+        public static List<ITankStatisticRow> CreateStatistic(IEnumerable<TankStatisticEntity> tankStatisticEntities, Func<TankJson, StatisticJson> func)
         {
-            return tankStatisticEntities.GroupBy(x => x.TankId).Select(ToTeamBattlesStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).Where(x => x.BattlesCount > 0).ToList();
+            return tankStatisticEntities.GroupBy(x => x.TankId).Select(x => ToStatisticViewModel(x, func)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).Where(x => x.BattlesCount > 0).ToList();
         }
 
-        public static List<ITankStatisticRow> CreateHistoricalBattlesStatistic(IEnumerable<TankStatisticEntity> tankStatisticEntities)
-        {
-            return tankStatisticEntities.GroupBy(x => x.TankId).Select(ToHistoricalBattlesStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).Where(x => x.BattlesCount > 0).ToList();
-        }
-
-        public static List<ITankStatisticRow> CreateBattlesStatistic(IEnumerable<TankStatisticEntity> tankStatisticEntities)
-        {
-            return tankStatisticEntities.GroupBy(x => x.TankId).Select(ToStatisticViewModel).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).ToList();
-        }
-
-        private static ITankStatisticRow ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
+        private static ITankStatisticRow ToStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities, Func<TankJson, StatisticJson> func)
         {
             IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.A15x15.battlesCount).First();
-            IEnumerable<TankJson> prevStatisticViewModels = statisticViewModels.Where(x => x.A15x15.battlesCount != currentStatistic.A15x15.battlesCount);
-            TankStatisticRowViewModel model = new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson>{TankJson.Initial});
-            model.IsFavorite = tankStatisticEntities.First().TankIdObject.IsFavorite;
-            return model;
-        }
-
-        private static ITankStatisticRow ToTeamBattlesStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
-        {
-            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.A7x7.battlesCount).First();
-            IEnumerable<TankJson> prevStatisticViewModels = statisticViewModels.Where(x => x.A7x7.battlesCount != currentStatistic.A7x7.battlesCount);
-            TeamBattlesTankStatisticRowViewModel model = new TeamBattlesTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
-            model.IsFavorite = tankStatisticEntities.First().TankIdObject.IsFavorite;
-            return model;
-        }
-
-        private static ITankStatisticRow ToHistoricalBattlesStatisticViewModel(IGrouping<int, TankStatisticEntity> tankStatisticEntities)
-        {
-            IEnumerable<TankJson> statisticViewModels = tankStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => x.A7x7.battlesCount).First();
-            IEnumerable<TankJson> prevStatisticViewModels = statisticViewModels.Where(x => x.A7x7.battlesCount != currentStatistic.A7x7.battlesCount);
-            HistoricalBattlesTankStatisticRowViewModel model = new HistoricalBattlesTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
+            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => func(x).battlesCount).First();
+            IEnumerable<TankJson> prevStatisticViewModels = statisticViewModels.Where(x => func(x).battlesCount != func(currentStatistic).battlesCount);
+            TankStatisticRowViewModel model = new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
             model.IsFavorite = tankStatisticEntities.First().TankIdObject.IsFavorite;
             return model;
         }

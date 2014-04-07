@@ -335,7 +335,7 @@ namespace WotDossier.Applications.ViewModel
 
         public int CrucialContribution { get; set; }
 
-        public int CoolHeaded { get; set; }
+        public int IronMan { get; set; }
 
         public int LuckyDevil { get; set; }
 
@@ -409,7 +409,7 @@ namespace WotDossier.Applications.ViewModel
 
         public int PattonValley { get; set; }
 
-        public int Ranger { get; set; }
+        public int Huntsman { get; set; }
 
         #endregion
 

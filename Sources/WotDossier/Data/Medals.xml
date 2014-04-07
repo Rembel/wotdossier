@@ -76,7 +76,7 @@
     <!--Спартанец-->
     <medal name="Medal_Sturdy" id="150" icon="sturdy" type="0"/>
     <!--невозмутимый-->
-    <medal name="Medal_CoolHeaded" id="151" icon="IronMan" type="0"/>
+    <medal name="Medal_IronMan" id="151" icon="IronMan" type="0"/>
     <!--Счастливчик-->
     <medal name="Medal_Lucky" id="152" icon="Lucky" type="0"/>
     <!--лев синaя-->

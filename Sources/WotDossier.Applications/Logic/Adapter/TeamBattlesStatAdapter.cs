@@ -60,9 +60,9 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            PerformanceRating = RatingHelper.GetPerformanceRating7x7(tanks);
-            WN8Rating = RatingHelper.GetWN8Rating7x7(tanks);
-            RBR = RatingHelper.GetRBR7x7(tanks);
+            PerformanceRating = RatingHelper.GetPerformanceRating(tanks, tank => tank.A7x7);
+            WN8Rating = RatingHelper.GetWN8Rating(tanks, tank => tank.A7x7);
+            RBR = RatingHelper.GetRBR(tanks, tank => tank.A7x7);
         }
 
         //public TeamBattlesStatAdapter(PlayerStat stat)

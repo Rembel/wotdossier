@@ -337,10 +337,10 @@ namespace WotDossier.Applications.ViewModel.Rows
             PatrolDuty = tank.Achievements.evileye;
             BrothersInArms = tank.Achievements.medalBrothersInArms;
             CrucialContribution = tank.Achievements.medalCrucialContribution;
-            CoolHeaded = tank.Achievements.ironMan;
+            IronMan = tank.Achievements.ironMan;
             LuckyDevil = tank.Achievements.luckyDevil;
             Sturdy = tank.Achievements.sturdy;
-            Ranger = tank.Achievements.huntsman;
+            Huntsman = tank.Achievements.huntsman;
             MainGun = tank.Achievements.mainGun;
             Sniper2 = tank.Achievements.sniper2;
             #endregion

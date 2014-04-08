@@ -223,6 +223,8 @@ namespace WotDossier.Applications.ViewModel
             PeriodSelector = new PeriodSelectorViewModel();
             BattleModeSelector = new BattleModeSelectorViewModel();
 
+            BattleModeSelector.PropertyChanged += (sender, args) => OnLoad();
+
             ChartView = new PlayerChartsViewModel();
 
             SetPeriodTabHeader();

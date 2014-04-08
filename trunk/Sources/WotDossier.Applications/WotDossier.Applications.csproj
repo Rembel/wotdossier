@@ -76,6 +76,7 @@
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
+    <Compile Include="Logic\Adapter\AbstractStatisticAdapter.cs" />
     <Compile Include="Logic\Adapter\HistoricalBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\PlayerStatAdapter.cs" />
     <Compile Include="Logic\Adapter\TeamBattlesStatAdapter.cs" />

@@ -73,7 +73,7 @@ namespace WotDossier.Dal
                                                .SingleOrDefault<T>() ?? new T { PlayerId = playerEntity.Id};
 
                 //new battles
-                if (currentSnapshot.BattlesCount < newSnapshot.Battles_count)
+                if (currentSnapshot.BattlesCount < newSnapshot.BattlesCount)
                 {
                     //create new record
                     if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))

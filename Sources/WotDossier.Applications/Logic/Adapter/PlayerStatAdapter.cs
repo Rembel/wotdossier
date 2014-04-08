@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Common;
@@ -9,36 +8,13 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class PlayerStatAdapter : IStatisticAdapter<PlayerStatisticEntity>
+    public class PlayerStatAdapter : AbstractStatisticAdapter<PlayerStatisticEntity>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public PlayerStatAdapter(List<TankJson> tanks)
+        public PlayerStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.A15x15)
         {
-            Battles_count = tanks.Sum(x => x.A15x15.battlesCount);
-            Wins = tanks.Sum(x => x.A15x15.wins);
-            Losses = tanks.Sum(x => x.A15x15.losses);
-            Survived_battles = tanks.Sum(x => x.A15x15.survivedBattles);
-            Xp = tanks.Sum(x => x.A15x15.xp);
-            if (Battles_count > 0)
-            {
-                Battle_avg_xp = Xp / (double)Battles_count;
-            }
-            Max_xp = tanks.Max(x => x.A15x15.maxXP);
-            Frags = tanks.Sum(x => x.A15x15.frags);
-            Spotted = tanks.Sum(x => x.A15x15.spotted);
-            Hits_percents = tanks.Sum(x => x.A15x15.hits) / ((double)tanks.Sum(x => x.A15x15.shots)) * 100.0;
-            Damage_dealt = tanks.Sum(x => x.A15x15.damageDealt);
-            Damage_taken = tanks.Sum(x => x.A15x15.damageReceived);
-            Capture_points = tanks.Sum(x => x.A15x15.capturePoints);
-            Dropped_capture_points = tanks.Sum(x => x.A15x15.droppedCapturePoints);
-            Updated = tanks.Max(x => x.Common.lastBattleTimeR);
-            if (Battles_count > 0)
-            {
-                AvgLevel = tanks.Sum(x => x.Common.tier * x.A15x15.battlesCount) / (double)Battles_count;
-            }
-
             #region [ BattleAwards ]
 
             Warrior = tanks.Sum(x => x.Achievements.warrior);
@@ -127,30 +103,26 @@ namespace WotDossier.Applications.Logic.Adapter
             MedalGore = tanks.Sum(x => x.Achievements.medalGore);
             MedalCoolBlood = tanks.Sum(x => x.Achievements.medalCoolBlood);
             MedalStark = tanks.Sum(x => x.Achievements.medalStark);
-
-            PerformanceRating = RatingHelper.GetPerformanceRating(tanks, tank => tank.A15x15);
-            WN8Rating = RatingHelper.GetWN8Rating(tanks, tank => tank.A15x15);
-            RBR = RatingHelper.GetRBR(tanks, tank => tank.A15x15);
         }
 
         public PlayerStatAdapter(PlayerStat stat)
         {
-            Battles_count = stat.dataField.statistics.all.battles;
+            BattlesCount = stat.dataField.statistics.all.battles;
             Wins = stat.dataField.statistics.all.wins;
             Losses = stat.dataField.statistics.all.losses;
-            Survived_battles = stat.dataField.statistics.all.survived_battles;
+            SurvivedBattles = stat.dataField.statistics.all.survived_battles;
             Xp = stat.dataField.statistics.all.xp;
-            Battle_avg_xp = stat.dataField.statistics.all.battle_avg_xp;
-            Max_xp = stat.dataField.statistics.max_xp;
+            BattleAvgXp = stat.dataField.statistics.all.battle_avg_xp;
+            MaxXp = stat.dataField.statistics.max_xp;
             Frags = stat.dataField.statistics.all.frags;
             Spotted = stat.dataField.statistics.all.spotted;
-            Hits_percents = stat.dataField.statistics.all.hits_percents;
-            Damage_dealt = stat.dataField.statistics.all.damage_dealt;
-            Capture_points = stat.dataField.statistics.all.capture_points;
-            Dropped_capture_points = stat.dataField.statistics.all.dropped_capture_points;
+            HitsPercents = stat.dataField.statistics.all.hits_percents;
+            DamageDealt = stat.dataField.statistics.all.damage_dealt;
+            CapturePoints = stat.dataField.statistics.all.capture_points;
+            DroppedCapturePoints = stat.dataField.statistics.all.dropped_capture_points;
             Updated = Utils.UnixDateToDateTime((long)stat.dataField.updated_at).ToLocalTime();
             Created = Utils.UnixDateToDateTime((long)stat.dataField.created_at).ToLocalTime();
-            if (Battles_count > 0 && stat.dataField.vehicles != null)
+            if (BattlesCount > 0 && stat.dataField.vehicles != null)
             {
                 int battlesCount = stat.dataField.vehicles.Sum(x => x.statistics.all.battles);
                 if (battlesCount > 0)
@@ -251,40 +223,6 @@ namespace WotDossier.Applications.Logic.Adapter
         }
 
         public List<VehicleStat> Vehicle { get; set; }
-
-        public DateTime Created { get; set; }
-
-        public int Battles_count { get; set; }
-
-        public int Wins { get; set; }
-
-        public int Losses { get; set; }
-
-        public int Survived_battles { get; set; }
-
-        public int Xp { get; set; }
-
-        public double Battle_avg_xp { get; set; }
-
-        public int Max_xp { get; set; }
-
-        public int Frags { get; set; }
-
-        public int Spotted { get; set; }
-
-        public double Hits_percents { get; set; }
-
-        public int Damage_dealt { get; set; }
-
-        public int Damage_taken { get; set; }
-
-        public int Capture_points { get; set; }
-
-        public int Dropped_capture_points { get; set; }
-
-        public DateTime Updated { get; set; }
-
-        public double AvgLevel { get; set; }
 
         #region Achievments
 
@@ -450,37 +388,11 @@ namespace WotDossier.Applications.Logic.Adapter
         
         public int MedalStark { get; set; }
 
-        public double RBR { get; set; }
-
-        public double WN8Rating { get; set; }
-
-        public double PerformanceRating { get; set; }
-
         #endregion
 
-        public virtual void Update(PlayerStatisticEntity entity)
+        public override void Update(PlayerStatisticEntity entity)
         {
-            #region CommonJson init
-
-            entity.BattlesCount = Battles_count;
-            entity.Wins = Wins;
-            entity.Losses = Losses;
-            entity.SurvivedBattles = Survived_battles;
-            entity.Xp = Xp;
-            entity.BattleAvgXp = Battle_avg_xp;
-            entity.MaxXp = Max_xp;
-            entity.Frags = Frags;
-            entity.Spotted = Spotted;
-            entity.HitsPercents = Hits_percents;
-            entity.DamageDealt = Damage_dealt;
-            entity.DamageTaken = Damage_taken;
-            entity.CapturePoints = Capture_points;
-            entity.DroppedCapturePoints = Dropped_capture_points;
-            entity.Updated = Updated;
-            entity.AvgLevel = AvgLevel;
-            entity.RBR = RBR;
-            entity.WN8Rating = WN8Rating;
-            entity.PerformanceRating = PerformanceRating;
+            base.Update(entity);
 
             if (entity.AchievementsIdObject == null)
             {
@@ -574,8 +486,6 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.MedalGore = MedalGore;
             entity.AchievementsIdObject.MedalCoolBlood = MedalCoolBlood;
             entity.AchievementsIdObject.MedalStark = MedalStark;
-
-            #endregion
         }
     }
 }

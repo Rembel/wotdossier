@@ -6,7 +6,7 @@ namespace WotDossier.Dal
     public interface IStatisticAdapter<T> where T : StatisticEntity
     {
         DateTime Updated { get; set; }
-        int Battles_count { get; set; }
+        int BattlesCount { get; set; }
         void Update(T currentSnapshot);
     }
 }

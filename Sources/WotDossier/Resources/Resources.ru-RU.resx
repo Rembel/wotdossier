@@ -1854,4 +1854,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="ReplaysTab_UploadMultipleBtn" xml:space="preserve">
     <value>Загрузить выбранные реплеи на сервер</value>
   </data>
+  <data name="Common_Rating_Personal" xml:space="preserve">
+    <value>Личный рейтинг</value>
+  </data>
 </root>

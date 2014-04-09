@@ -36,14 +36,17 @@ namespace WotDossier.Dal
         public const string PARAM_APPID = "application_id";
         public const string PARAM_SEARCH = "search";
         public const string PARAM_ACCOUNT_ID = "account_id";
+        public const string PARAM_MEMBER_ID = "member_id";
         public const string PARAM_TYPE = "type";
         public const string PARAM_CLAN_ID = "clan_id";
         public const string PARAM_FIELDS = "fields";
         public const string PARAM_LIMIT = "limit";
         private const string METHOD_ACCOUNT_INFO = "account/info/";
         private const string METHOD_ACCOUNT_TANKS = "account/tanks/";
+        private const string METHOD_ACCOUNT_ACHIEVEMENTS = "account/achievements/";
         private const string METHOD_RATINGS_ACCOUNTS = "ratings/accounts/";
         private const string METHOD_CLAN_INFO = "clan/info/";
+        private const string METHOD_CLAN_MEMBERSINFO = "clan/membersinfo/";
         private const string METHOD_ACCOUNT_LIST = "account/list/";
         private const string METHOD_CLAN_LIST = "clan/list/";
 
@@ -197,13 +200,18 @@ namespace WotDossier.Dal
                 });
                 playerStat.dataField = playerStat.data[playerId];
                 playerStat.dataField.ratings = GetPlayerRatings(settings, playerId);
+                playerStat.dataField.achievements = GetPlayerAchievements(settings, playerId);
                 if (loadVehicles)
                 {
                     playerStat.dataField.vehicles = GetPlayerTanks(settings, playerId);
                 }
-                if (playerStat.dataField.clan != null)
+
+                Clan clanMemberInfo = GetClanMemberInfo(settings, playerId);
+
+                if (clanMemberInfo != null)
                 {
-                    playerStat.dataField.clanData = LoadClan(settings, playerStat.dataField.clan.clan_id,
+                    playerStat.dataField.clan = clanMemberInfo;
+                    playerStat.dataField.clanData = LoadClan(settings, clanMemberInfo.clan_id,
                         new[] {"abbreviation", "name", "clan_id", "description", "emblems"});
                 }
                 return playerStat;
@@ -213,6 +221,29 @@ namespace WotDossier.Dal
                 _log.Error("Can't get player info from server", e);
                 throw new PlayerInfoLoadException("Error on getting player data from server", e);
             }
+        }
+
+        private Clan GetClanMemberInfo(AppSettings settings, int playerId)
+        {
+            try
+            {
+                JObject parsedData = Request<JObject>(settings, METHOD_CLAN_MEMBERSINFO, new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_MEMBER_ID, playerId},
+                });
+
+                if (parsedData["data"].Any())
+                {
+                    return parsedData["data"][playerId.ToString()].ToObject<Clan>();
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on player tanks loading", e);
+            }
+
+            return null;
         }
 
         private List<VehicleStat> GetPlayerTanks(AppSettings settings, int playerId)
@@ -261,6 +292,29 @@ namespace WotDossier.Dal
                 if (parsedData["data"].Any())
                 {
                     return parsedData["data"][playerId.ToString()].ToObject<Ratings>();
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on player search", e);
+            }
+
+            return null;
+        }
+
+        private Achievements GetPlayerAchievements(AppSettings settings, int playerId)
+        {
+            try
+            {
+                JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_ACHIEVEMENTS, new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_ACCOUNT_ID, playerId}
+                });
+
+                if (parsedData["data"].Any())
+                {
+                    return parsedData["data"][playerId.ToString()]["achievements"].ToObject<Achievements>();
                 }
             }
             catch (Exception e)

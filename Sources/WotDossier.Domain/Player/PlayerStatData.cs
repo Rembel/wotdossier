@@ -8,6 +8,9 @@ namespace WotDossier.Domain.Player
         public string nickname { get; set; }
         public double created_at { get; set; }
         public double updated_at { get; set; }
+        public double logout_at { get; set; }
+        public double last_battle_time { get; set; }
+        public double global_rating { get; set; }
         public Achievements achievements { get; set; }
         public Ratings ratings { get; set; }
         public List<VehicleStat> vehicles { get; set; }

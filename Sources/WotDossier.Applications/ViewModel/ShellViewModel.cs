@@ -495,8 +495,8 @@ namespace WotDossier.Applications.ViewModel
             if (PlayerStatistic != null)
             {
                 RaisePropertyChanged(PropLastUsedTanksList);
-                PlayerStatistic.WN8RatingForPeriod = StatisticViewModelFactory.GetWN8RatingForPeriod(LastUsedTanksList);
-                PlayerStatistic.PerformanceRatingForPeriod = StatisticViewModelFactory.GetPerformanceRatingForPeriod(LastUsedTanksList);
+                PlayerStatistic.WN8RatingForPeriod = RatingHelper.GetWN8RatingForPeriod(LastUsedTanksList);
+                PlayerStatistic.PerformanceRatingForPeriod = RatingHelper.GetPerformanceRatingForPeriod(LastUsedTanksList);
             }
         }
 
@@ -527,7 +527,7 @@ namespace WotDossier.Applications.ViewModel
 
             Tanks = strategy.CreateStatistic(entities);
 
-            MasterTanker = StatisticViewModelFactory.GetMasterTankerList(_tanks);
+            MasterTanker = strategy.GetMasterTankerList(_tanks);
 
             FraggsCount.Init(_tanks);
         }

@@ -21,5 +21,9 @@
         public Rating xp_amount { get; set; }
         public Rating xp_avg { get; set; }
         public Rating xp_max { get; set; }
+
+        public Rating capture_points { get; set; }
+
+        public Rating global_rating { get; set; }
     }
 }

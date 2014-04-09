@@ -141,10 +141,10 @@ namespace WotDossier.Applications.Logic.Adapter
             Confederate = stat.dataField.achievements.supporter;
             Scout = stat.dataField.achievements.scout;
             PatrolDuty = stat.dataField.achievements.evileye;
-            BrothersInArms = stat.dataField.achievements.medal_brothers_in_arms;
-            CrucialContribution = stat.dataField.achievements.medal_crucial_contribution;
-            IronMan = stat.dataField.achievements.iron_man;
-            LuckyDevil = stat.dataField.achievements.lucky_devil;
+            BrothersInArms = stat.dataField.achievements.medalBrothersInArms;
+            CrucialContribution = stat.dataField.achievements.medalCrucialContribution;
+            IronMan = stat.dataField.achievements.ironMan;
+            LuckyDevil = stat.dataField.achievements.luckyDevil;
             Sturdy = stat.dataField.achievements.sturdy;
             Sniper2 = stat.dataField.achievements.sniper2;
             MainGun = stat.dataField.achievements.main_gun;
@@ -153,38 +153,38 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #region [ Epic ]
 
-            Boelter = stat.dataField.achievements.medal_boelter;
-            RadleyWalters = stat.dataField.achievements.medal_radley_walters;
-            LafayettePool = stat.dataField.achievements.medal_lafayette_pool;
-            Orlik = stat.dataField.achievements.medal_orlik;
-            Oskin = stat.dataField.achievements.medal_oskin;
-            Lehvaslaiho = stat.dataField.achievements.medal_lehvaslaiho;
-            Nikolas = stat.dataField.achievements.medal_nikolas;
-            Halonen = stat.dataField.achievements.medal_halonen;
-            Burda = stat.dataField.achievements.medal_burda;
-            Pascucci = stat.dataField.achievements.medal_pascucci;
-            Dumitru = stat.dataField.achievements.medal_dumitru;
-            TamadaYoshio = stat.dataField.achievements.medal_tamada_yoshio;
-            Billotte = stat.dataField.achievements.medal_billotte;
-            BrunoPietro = stat.dataField.achievements.medal_bruno_pietro;
-            Tarczay = stat.dataField.achievements.medal_tarczay;
-            Kolobanov = stat.dataField.achievements.medal_kolobanov;
-            Fadin = stat.dataField.achievements.medal_fadin;
-            HeroesOfRassenay = stat.dataField.achievements.medal_heroes_of_rassenay;
-            DeLanglade = stat.dataField.achievements.medal_delanglade;
+            Boelter = stat.dataField.achievements.medalBoelter;
+            RadleyWalters = stat.dataField.achievements.medalRadleyWalters;
+            LafayettePool = stat.dataField.achievements.medalLafayettePool;
+            Orlik = stat.dataField.achievements.medalOrlik;
+            Oskin = stat.dataField.achievements.medalOskin;
+            Lehvaslaiho = stat.dataField.achievements.medalLehvaslaiho;
+            Nikolas = stat.dataField.achievements.medalNikolas;
+            Halonen = stat.dataField.achievements.medalHalonen;
+            Burda = stat.dataField.achievements.medalBurda;
+            Pascucci = stat.dataField.achievements.medalPascucci;
+            Dumitru = stat.dataField.achievements.medalDumitru;
+            TamadaYoshio = stat.dataField.achievements.medalTamadaYoshio;
+            Billotte = stat.dataField.achievements.medalBillotte;
+            BrunoPietro = stat.dataField.achievements.medalBrunoPietro;
+            Tarczay = stat.dataField.achievements.medalTarczay;
+            Kolobanov = stat.dataField.achievements.medalKolobanov;
+            Fadin = stat.dataField.achievements.medalFadin;
+            HeroesOfRassenay = stat.dataField.achievements.medalHeroesOfRassenay;
+            DeLanglade = stat.dataField.achievements.medalDeLanglade;
 
             #endregion
 
             #region [ Medals]
 
             Kay = stat.dataField.achievements.medal_kay;
-            Carius = stat.dataField.achievements.medal_carius;
-            Knispel = stat.dataField.achievements.medal_knispel;
-            Poppel = stat.dataField.achievements.medal_poppel;
-            Abrams = stat.dataField.achievements.medal_abrams;
-            Leclerk = stat.dataField.achievements.medal_le_clerc;
-            Lavrinenko = stat.dataField.achievements.medal_lavrinenko;
-            Ekins = stat.dataField.achievements.medal_ekins;
+            Carius = stat.dataField.achievements.medalCarius;
+            Knispel = stat.dataField.achievements.medalKnispel;
+            Poppel = stat.dataField.achievements.medalPoppel;
+            Abrams = stat.dataField.achievements.medalAbrams;
+            Leclerk = stat.dataField.achievements.medalLeClerc;
+            Lavrinenko = stat.dataField.achievements.medalLavrinenko;
+            Ekins = stat.dataField.achievements.medalEkins;
 
             #endregion
 
@@ -206,7 +206,7 @@ namespace WotDossier.Applications.Logic.Adapter
             MouseTrap = stat.dataField.achievements.mousebane;
             Hunter = stat.dataField.achievements.beasthunter;
             Sinai = stat.dataField.achievements.sinai;
-            PattonValley = stat.dataField.achievements.patton_valley;
+            PattonValley = stat.dataField.achievements.pattonValley;
             Huntsman = stat.dataField.achievements.huntsman;
 
             #endregion

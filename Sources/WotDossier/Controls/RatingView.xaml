@@ -45,9 +45,20 @@
                                            Text="{x:Static Resources:Resources.Common_RatingHeader_Place}">
                         </TextBlock>
                     </Grid>
-                    
-                    <!--GPL Количество проведённых боёв -->
+
+                    <!--PR Personal Rating -->
                     <controls:RatingRow Image="..\Resources/Images/gpl.png" Grid.Row="1"
+                                                  ShortName="PR"
+                                                  FullName="{x:Static Resources:Resources.Common_Rating_Personal}"
+                                                  Value="{Binding Rating_IntegratedValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                                                  Place="{Binding Rating_IntegratedPlace, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                                                  ValueDelta="{Binding Rating_IntegratedValueDelta, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='+#,0;-#,0;0'}"
+                                                  PlaceDelta="{Binding Rating_IntegratedPlaceDelta}"
+                                                  ValueDeltaForeground="{Binding Rating_IntegratedValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                                  PlaceDeltaForeground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
+                    </controls:RatingRow>
+                    <!--GPL Количество проведённых боёв -->
+                    <controls:RatingRow Image="..\Resources/Images/gpl.png" Grid.Row="2"
                                                   ShortName="GPL"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_BattlesParticipated}"
                                                   Value="{Binding Rating_BattlesValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
@@ -58,7 +69,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_BattlesPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--FRG Количество уничтоженной техники-->
-                    <controls:RatingRow Image="..\Resources/Images/frg.png" Grid.Row="2"
+                    <controls:RatingRow Image="..\Resources/Images/frg.png" Grid.Row="3"
                                                   ShortName="FRG"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_TargetsDestroyed}"
                                                   Value="{Binding Rating_FragsValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
@@ -69,7 +80,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_FragsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--DMG Общий нанесённый урон-->
-                    <controls:RatingRow Image="..\Resources/Images/dmg.png" Grid.Row="3"
+                    <controls:RatingRow Image="..\Resources/Images/dmg.png" Grid.Row="4"
                                                   ShortName="DMG"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_DamageCaused}"
                                                   Value="{Binding Rating_DamageDealtValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
@@ -80,7 +91,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_DamageDealtPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--MXP Максимальный опыт за бой-->
-                    <controls:RatingRow Image="..\Resources/Images/mxp.png" Grid.Row="4"
+                    <controls:RatingRow Image="..\Resources/Images/mxp.png" Grid.Row="5"
                                                   ShortName="MXP"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_MaxXP}"
                                                   Value="{Binding Rating_MaxXpValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
@@ -91,7 +102,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_MaxXpPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--W/B-->
-                    <controls:RatingRow Image="..\Resources/Images/wb.png" Grid.Row="5"
+                    <controls:RatingRow Image="..\Resources/Images/wb.png" Grid.Row="6"
                                                   ShortName="W/B"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_VictoriesBattles}"
                                                   Value="{Binding Rating_BattleAvgPerformanceValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N2'}"
@@ -102,7 +113,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_BattleAvgPerformancePlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--HR Процент попаданий-->
-                    <controls:RatingRow Image="..\Resources/Images/hr.png" Grid.Row="6"
+                    <controls:RatingRow Image="..\Resources/Images/hr.png" Grid.Row="7"
                                                   ShortName="HR"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_HitsPercent}"
                                                   Value="{Binding Rating_HitsPercentsValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N2'}"
@@ -113,7 +124,7 @@
                                                   PlaceDeltaForeground="{Binding Rating_HitsPercentsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
                     <!--E/B-->
-                    <controls:RatingRow Image="..\Resources/Images/eb.png" Grid.Row="7"
+                    <controls:RatingRow Image="..\Resources/Images/eb.png" Grid.Row="8"
                                                   ShortName="E/B"
                                                   FullName="{x:Static Resources:Resources.Common_Rating_AvgExperience}"
                                                   Value="{Binding Rating_BattleAvgXpValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
@@ -123,28 +134,6 @@
                                                   ValueDeltaForeground="{Binding Rating_BattleAvgXpValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_BattleAvgXpPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>
-                    <!--GR-->
-                    <!--<controls:RatingRow Image="..\Resources/Images/gr.png" Grid.Row="1"
-                                                  ShortName="GR"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_GlobalRating}"
-                                                  Value="{Binding Rating_IntegratedValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                                  Place="{Binding Rating_IntegratedPlace, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                                  ValueDelta="{Binding Rating_IntegratedValueDelta, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='+#,0;-#,0;0'}"
-                                                  PlaceDelta="{Binding Rating_IntegratedPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_IntegratedValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_IntegratedPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </controls:RatingRow>-->
-                    <!--WIN-->
-                    <!--<controls:RatingRow Image="..\Resources/Images/win.png" Grid.Row="4"
-                                                  ShortName="WIN"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_Victories}"
-                                                  Value="{Binding Rating_BattleWinsValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                                  Place="{Binding Rating_BattleWinsPlace, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                                  ValueDelta="{Binding Rating_BattleWinsValueDelta, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='+#,0;-#,0;0'}"
-                                                  PlaceDelta="{Binding Rating_BattleWinsPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_BattleWinsValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_BattleWinsPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </controls:RatingRow>-->
                     <!--CPT-->
                     <!--<controls:RatingRow Image="..\Resources/Images/cpt.png" Grid.Row="6"
                                                   ShortName="CPT"
@@ -177,17 +166,6 @@
                                                   PlaceDelta="{Binding Rating_SpottedPlaceDelta}"
                                                   ValueDeltaForeground="{Binding Rating_SpottedValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
                                                   PlaceDeltaForeground="{Binding Rating_SpottedPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
-                    </controls:RatingRow>-->
-                    <!--EXP-->
-                    <!--<controls:RatingRow Image="..\Resources/Images/exp.png" Grid.Row="11"
-                                                  ShortName="EXP"
-                                                  FullName="{x:Static Resources:Resources.Common_Rating_TotalExperience}"
-                                                  Value="{Binding Rating_XpValue, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                                  Place="{Binding Rating_XpPlace, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                                  ValueDelta="{Binding Rating_XpValueDelta, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='+#,0;-#,0;0'}"
-                                                  PlaceDelta="{Binding Rating_XpPlaceDelta}"
-                                                  ValueDeltaForeground="{Binding Rating_XpValueDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                                  PlaceDeltaForeground="{Binding Rating_XpPlaceDelta, Converter={x:Static color:DeltaToColorConverter.Default}, ConverterParameter=True}">
                     </controls:RatingRow>-->
                 </Grid>
             </StackPanel>

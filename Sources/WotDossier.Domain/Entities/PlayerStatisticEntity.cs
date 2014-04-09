@@ -14,8 +14,8 @@ namespace WotDossier.Domain.Entities
 
         public static readonly string PropRatingIntegratedValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingIntegratedValue);
         public static readonly string PropRatingIntegratedPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingIntegratedPlace);
-        public static readonly string PropRatingBattleAvgPerformanceValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingBattleAvgPerformanceValue);
-        public static readonly string PropRatingBattleAvgPerformancePlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingBattleAvgPerformancePlace);
+        public static readonly string PropRatingBattleAvgPerformanceValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingWinsRatioValue);
+        public static readonly string PropRatingBattleAvgPerformancePlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingWinsRatioPlace);
         public static readonly string PropRatingBattleAvgXpValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingBattleAvgXpValue);
         public static readonly string PropRatingBattleAvgXpPlace = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingBattleAvgXpPlace);
         public static readonly string PropRatingBattleWinsValue = TypeHelper<PlayerStatisticEntity>.PropertyName(v => v.RatingBattleWinsValue);
@@ -51,12 +51,12 @@ namespace WotDossier.Domain.Entities
         /// <summary>
         /// Gets/Sets the field "Rating_BattleAvgPerformanceValue".
         /// </summary>
-        public virtual double RatingBattleAvgPerformanceValue { get; set; }
+        public virtual double RatingWinsRatioValue { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "Rating_BattleAvgPerformancePlace".
         /// </summary>
-        public virtual int RatingBattleAvgPerformancePlace { get; set; }
+        public virtual int RatingWinsRatioPlace { get; set; }
 
         /// <summary>
         /// Gets/Sets the field "Rating_BattleAvgXpValue".
@@ -188,13 +188,13 @@ namespace WotDossier.Domain.Entities
 
             //GR-->
             //Global Rating
-            //RatingIntegratedValue = ratings.Integrated_rating.Value;
-            //RatingIntegratedPlace = ratings.Integrated_rating.Rank ?? 0;
+            RatingIntegratedValue = (int) (ratings.global_rating.Value ?? 0);
+            RatingIntegratedPlace = ratings.global_rating.Rank ?? 0;
             //W/B-->
             //Victories/Battles
             //wins_ratio 	Процент побед wins_ratio.rank 	numeric 	
-            RatingBattleAvgPerformanceValue = ratings.wins_ratio.Value ?? 0;
-            RatingBattleAvgPerformancePlace = ratings.wins_ratio.Rank ?? 0;
+            RatingWinsRatioValue = ratings.wins_ratio.Value ?? 0;
+            RatingWinsRatioPlace = ratings.wins_ratio.Rank ?? 0;
             //E/B-->
             //Average Experience per BattleJson
             //xp_avg 	Средний опыт за бой xp_avg.rank 	numeric 	

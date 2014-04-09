@@ -26,8 +26,8 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.BattlesCount, "BattlesCount");
 			Map(v => v.RatingIntegratedValue, "Rating_IntegratedValue");
 			Map(v => v.RatingIntegratedPlace, "Rating_IntegratedPlace");
-			Map(v => v.RatingBattleAvgPerformanceValue, "Rating_BattleAvgPerformanceValue");
-			Map(v => v.RatingBattleAvgPerformancePlace, "Rating_BattleAvgPerformancePlace");
+			Map(v => v.RatingWinsRatioValue, "Rating_BattleAvgPerformanceValue");
+			Map(v => v.RatingWinsRatioPlace, "Rating_BattleAvgPerformancePlace");
 			Map(v => v.RatingBattleAvgXpValue, "Rating_BattleAvgXpValue");
 			Map(v => v.RatingBattleAvgXpPlace, "Rating_BattleAvgXpPlace");
 			Map(v => v.RatingBattleWinsValue, "Rating_BattleWinsValue");

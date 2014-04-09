@@ -1673,7 +1673,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   • Обнаружить не менее 2 машин противника
   • Занять 3 и выше место по нанесенному урону
   • В общем зачете повтовно полученные награды не суммируются
-    </value> 
+    </value>
   </data>
   <data name="Medal_WillToWinSpirit" xml:space="preserve">
     <value>За волю к победе</value>
@@ -1682,7 +1682,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Победить в бою оставшись в одиночку против 3 
 и более машин противника
   • В общем зачете повтовно полученные награды не суммируются
-    </value> 
+    </value>
   </data>
   <data name="Medal_CrucialShotMedal" xml:space="preserve">
     <value>Решающий выстрел</value>
@@ -1691,7 +1691,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>20 раз уничтожить последнюю машину противника
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
-    </value> 
+    </value>
   </data>
   <data name="Medal_GodOfWar" xml:space="preserve">
     <value>Бог войны</value>
@@ -1700,7 +1700,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Победить в бою на САУ оставшись единственным выжившим
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
-    </value> 
+    </value>
   </data>
   <data name="Medal_WolfAmongSheepMedal" xml:space="preserve">
     <value>За отличную стрельбу</value>
@@ -1708,7 +1708,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Tooltip_TeamBattlesAchievements_WolfAmongSheepMedal" xml:space="preserve">
     <value>Занять 100 раз первое место по количеству нанесенного урона в победном бою
   • В общем зачете повтовно полученные награды не суммируются
-    </value> 
+    </value>
   </data>
   <data name="Medal_GeniusForWarMedal" xml:space="preserve">
     <value>Отличник боевой подготовки</value>
@@ -1717,6 +1717,9 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Занять 100 раз первое место по количеству заработанного опыта за бой
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
-    </value> 
+    </value>
+  </data>
+  <data name="Common_Rating_Personal" xml:space="preserve">
+    <value>Personal Rating</value>
   </data>
 </root>

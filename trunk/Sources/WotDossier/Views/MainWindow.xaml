@@ -429,9 +429,9 @@
                 <tabs:PerformanceTab HorizontalAlignment="Stretch"></tabs:PerformanceTab>
             </TabItem>
             <!--Performance88-->
-            <!--<TabItem TabIndex="9" Header="{x:Static Resources:Resources.Tab_Header_Performance88}" Name="tabPerformance88">
+            <TabItem TabIndex="9" Header="{x:Static Resources:Resources.Tab_Header_Performance88}" Name="tabPerformance88">
                 <tabs:PerformanceTab88 HorizontalAlignment="Stretch"></tabs:PerformanceTab88>
-            </TabItem>-->
+            </TabItem>
             <!--Frags count-->
             <TabItem TabIndex="10" Header="{x:Static Resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts">
                 <tabs:FragCountsTab DataContext="{Binding FraggsCount}" HorizontalAlignment="Stretch"></tabs:FragCountsTab>

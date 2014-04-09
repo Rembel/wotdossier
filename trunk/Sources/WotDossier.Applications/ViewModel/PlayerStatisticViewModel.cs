@@ -56,14 +56,14 @@ namespace WotDossier.Applications.ViewModel
         {
             #region Ratings init
 
-            //GR-->
-            //Global Rating
+            //PR-->
+            //Private Rating
             Rating_IntegratedValue = stat.RatingIntegratedValue;
             Rating_IntegratedPlace = stat.RatingIntegratedPlace;
             //W/B-->
             //Victories/Battles
-            Rating_BattleAvgPerformanceValue = stat.RatingBattleAvgPerformanceValue;
-            Rating_BattleAvgPerformancePlace = stat.RatingBattleAvgPerformancePlace;
+            Rating_BattleAvgPerformanceValue = stat.RatingWinsRatioValue;
+            Rating_BattleAvgPerformancePlace = stat.RatingWinsRatioPlace;
             //E/B-->
             //Average Experience per Battle
             Rating_BattleAvgXpValue = stat.RatingBattleAvgXpValue;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic
@@ -354,6 +355,34 @@ def = dropped_capture_points / bc (среднее количество очко�
         {
             //asinh(x) = log(x + sqrt(x^2 + 1))
             return Math.Log(x + Math.Sqrt(Math.Pow(x, 2) + 1));
+        }
+
+        public static double GetWN8RatingForPeriod(List<ITankStatisticRow> tanks)
+        {
+            double battles = tanks.Sum(x => x.BattlesCountDelta);
+
+            double damage = tanks.Sum(x => x.DamageDealtDelta) / battles;
+            double spotted = tanks.Sum(x => x.SpottedDelta) / battles;
+            double def = tanks.Sum(x => x.DroppedCapturePointsDelta) / battles;
+            double winRate = tanks.Sum(x => x.WinsDelta) / battles;
+            double frags = tanks.Sum(x => x.FragsDelta) / battles;
+
+            double expDamage = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalDamage) / battles;
+            double expSpotted = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalSpotted) / battles;
+            double expDef = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalDefence) / battles;
+            double expWinRate = tanks.Sum(x => (x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
+            double expFrags = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalFrags) / battles;
+            return CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
+        }
+
+        public static double GetPerformanceRatingForPeriod(List<ITankStatisticRow> tanks)
+        {
+            double expDamage = tanks.Select(x => x.BattlesCountDelta * x.Description.Expectancy.PRNominalDamage).Sum();
+            int battlesCount = tanks.Sum(x => x.BattlesCountDelta);
+            int wins = tanks.Sum(x => x.WinsDelta);
+            int playerDamage = tanks.Sum(x => x.DamageDealtDelta);
+            double avgTier = tanks.Sum(x => x.BattlesCountDelta * x.Tier) / battlesCount;
+            return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier, false);
         }
     }
 }

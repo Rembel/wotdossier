@@ -525,7 +525,7 @@ namespace WotDossier.Applications.ViewModel
 
             StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode);
 
-            Tanks = strategy.CreateStatistic(entities);
+            Tanks = strategy.ToTankStatisticRow(entities);
 
             MasterTanker = strategy.GetMasterTankerList(_tanks);
 
@@ -565,7 +565,7 @@ namespace WotDossier.Applications.ViewModel
 
             StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode);
 
-            List<StatisticEntity> statisticEntities = strategy.GetStatistic(_dossierRepository, player).ToList();
+            List<StatisticEntity> statisticEntities = strategy.GetStatisticSlices(_dossierRepository, player).ToList();
             return strategy.Create(statisticEntities, tanks, player, serverStatistic);
         }
 

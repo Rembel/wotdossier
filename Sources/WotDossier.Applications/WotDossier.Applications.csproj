@@ -72,11 +72,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
+    <Compile Include="BattleModeStrategies\HistoricalStatisticViewStrategy.cs" />
+    <Compile Include="BattleModeStrategies\RandomStatisticViewStrategy.cs" />
+    <Compile Include="BattleModeStrategies\StatisticViewStrategyBase.cs" />
+    <Compile Include="BattleModeStrategies\StatisticViewStrategyManager.cs" />
+    <Compile Include="BattleModeStrategies\TeamStatisticViewStrategy.cs" />
     <Compile Include="CacheHelper.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
-    <Compile Include="HistoricalStatisticViewStrategy.cs" />
     <Compile Include="Logic\Adapter\AbstractStatisticAdapter.cs" />
     <Compile Include="Logic\Adapter\HistoricalBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\PlayerStatAdapter.cs" />
@@ -94,7 +98,6 @@
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlayerNameSuggestionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomStatisticViewStrategy.cs" />
     <Compile Include="Resources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,9 +109,6 @@
       <DependentUpon>Resources.ru-RU.resx</DependentUpon>
     </Compile>
     <Compile Include="SettingsReader.cs" />
-    <Compile Include="StatisticViewStrategyBase.cs" />
-    <Compile Include="StatisticViewStrategyManager.cs" />
-    <Compile Include="TeamStatisticViewStrategy.cs" />
     <Compile Include="Update\CodeUpdateBase.cs" />
     <Compile Include="Update\CodeUpdate_2013080602.cs" />
     <Compile Include="Update\CodeUpdate_2013092201.cs" />

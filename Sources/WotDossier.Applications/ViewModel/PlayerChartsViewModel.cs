@@ -375,7 +375,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitEfficiencyByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, RatingHelper.CalcER(
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, RatingHelper.EffectivityRating(
                 x.Average(y => y.AvgDamageDealt),
                 x.Key,
                 x.Average(y => y.AvgFrags),
@@ -387,7 +387,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitEfficiencyByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.CalcER(
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.EffectivityRating(
                 x.Average(y => y.AvgDamageDealt),
                 x.Key,
                 x.Average(y => y.AvgFrags),
@@ -399,7 +399,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitEfficiencyByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.CalcER(
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(), RatingHelper.EffectivityRating(
                 x.Average(y => y.AvgDamageDealt),
                 x.Key,
                 x.Average(y => y.AvgFrags),

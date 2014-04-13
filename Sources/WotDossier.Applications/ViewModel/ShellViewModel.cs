@@ -162,7 +162,11 @@ namespace WotDossier.Applications.ViewModel
         public bool LoadInProgress
         {
             get { return _loadInProgress; }
-            set { _loadInProgress = value; }
+            set
+            {
+                _loadInProgress = value;
+                RaisePropertyChanged("LoadCommand");
+            }
         }
 
         #endregion
@@ -483,7 +487,6 @@ namespace WotDossier.Applications.ViewModel
                     finally
                     {
                         LoadInProgress = false;
-                        LoadCommand.RaiseCanExecuteChanged();
                     }
                 });
 
@@ -495,8 +498,8 @@ namespace WotDossier.Applications.ViewModel
             if (PlayerStatistic != null)
             {
                 RaisePropertyChanged(PropLastUsedTanksList);
-                PlayerStatistic.WN8RatingForPeriod = RatingHelper.GetWN8RatingForPeriod(LastUsedTanksList);
-                PlayerStatistic.PerformanceRatingForPeriod = RatingHelper.GetPerformanceRatingForPeriod(LastUsedTanksList);
+                PlayerStatistic.WN8RatingForPeriod = RatingHelper.Wn8ForPeriod(LastUsedTanksList);
+                PlayerStatistic.PerformanceRatingForPeriod = RatingHelper.PerformanceRatingForPeriod(LastUsedTanksList);
             }
         }
 

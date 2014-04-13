@@ -230,7 +230,7 @@ namespace WotDossier.Applications.ViewModel.Rows
                     double expWinRate = BattlesCount * Description.Expectancy.Wn8NominalWinRate / 100.0 / BattlesCount;
                     double expFrags = BattlesCount * Description.Expectancy.Wn8NominalFrags / BattlesCount;
 
-                    return RatingHelper.CalcWN8(AvgDamageDealt, expDamage, AvgFrags, expFrags, AvgSpotted, expSpotted, AvgDroppedCapturePoints, expDef, WinsPercent, expWinRate);
+                    return RatingHelper.Wn8(AvgDamageDealt, expDamage, AvgFrags, expFrags, AvgSpotted, expSpotted, AvgDroppedCapturePoints, expDef, WinsPercent, expWinRate);
                 }
                 return 0;
             }
@@ -242,7 +242,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             {
                 if (BattlesCount > 0)
                 {
-                    return RatingHelper.RatingWG(BattlesCount, BattlesCount88, Wins/(double)BattlesCount,
+                    return RatingHelper.PersonalRating(BattlesCount, BattlesCount88, Wins/(double)BattlesCount,
                         SurvivedBattles/(double)BattlesCount, DamageDealt/(double)BattlesCount, AvgOriginalXP, AvgDamageAssistedRadio, AvgDamageAssistedTrack);
                 }
                 return 0;
@@ -289,7 +289,7 @@ namespace WotDossier.Applications.ViewModel.Rows
                     double expWinRate = BattlesCountDelta * Description.Expectancy.Wn8NominalWinRate / 100.0 / BattlesCountDelta;
                     double expFrags = BattlesCountDelta * Description.Expectancy.Wn8NominalFrags / BattlesCountDelta;
 
-                    return RatingHelper.CalcWN8(AvgDamageDealtForPeriod, expDamage, AvgFragsForPeriod, expFrags, AvgSpottedForPeriod, expSpotted, AvgDroppedCapturePointsForPeriod, expDef, WinsPercentForPeriod, expWinRate);
+                    return RatingHelper.Wn8(AvgDamageDealtForPeriod, expDamage, AvgFragsForPeriod, expFrags, AvgSpottedForPeriod, expSpotted, AvgDroppedCapturePointsForPeriod, expDef, WinsPercentForPeriod, expWinRate);
                 }
                 return 0;
             }

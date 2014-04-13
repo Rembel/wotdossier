@@ -576,23 +576,23 @@ namespace WotDossier.Dal
             TankJson v2 = new TankJson();
 
             v2.A15x15 = new StatisticJson();
-            v2.A15x15.battlesCount = tankJson.statistics.all.battles;
-            v2.A15x15.battlesCountBefore8_8 = tankJson.statistics.all.battles; //?
-            v2.A15x15.capturePoints = tankJson.statistics.all.capture_points;
-            v2.A15x15.damageDealt = tankJson.statistics.all.damage_dealt;
-            v2.A15x15.damageReceived = tankJson.statistics.all.damage_received;
-            v2.A15x15.droppedCapturePoints = tankJson.statistics.all.dropped_capture_points;
-            v2.A15x15.frags = tankJson.statistics.all.frags;
-            v2.A15x15.frags8p = tankJson.statistics.all.frags; //?
-            v2.A15x15.hits = tankJson.statistics.all.hits;
-            v2.A15x15.losses = tankJson.statistics.all.losses;
-            v2.A15x15.shots = tankJson.statistics.all.shots;
-            v2.A15x15.spotted = tankJson.statistics.all.spotted;
-            v2.A15x15.survivedBattles = tankJson.statistics.all.survived_battles;
-            v2.A15x15.winAndSurvived = tankJson.statistics.all.survived_battles; //?
-            v2.A15x15.wins = tankJson.statistics.all.wins;
-            v2.A15x15.xp = tankJson.statistics.all.xp;
-            v2.A15x15.xpBefore8_8 = tankJson.statistics.all.xp; //?
+            v2.A15x15.battlesCount = tankJson.all.battles;
+            v2.A15x15.battlesCountBefore8_8 = tankJson.all.battles; //?
+            v2.A15x15.capturePoints = tankJson.all.capture_points;
+            v2.A15x15.damageDealt = tankJson.all.damage_dealt;
+            v2.A15x15.damageReceived = tankJson.all.damage_received;
+            v2.A15x15.droppedCapturePoints = tankJson.all.dropped_capture_points;
+            v2.A15x15.frags = tankJson.all.frags;
+            v2.A15x15.frags8p = tankJson.all.frags; //?
+            v2.A15x15.hits = tankJson.all.hits;
+            v2.A15x15.losses = tankJson.all.losses;
+            v2.A15x15.shots = tankJson.all.shots;
+            v2.A15x15.spotted = tankJson.all.spotted;
+            v2.A15x15.survivedBattles = tankJson.all.survived_battles;
+            v2.A15x15.winAndSurvived = tankJson.all.survived_battles; //?
+            v2.A15x15.wins = tankJson.all.wins;
+            v2.A15x15.xp = tankJson.all.xp;
+            v2.A15x15.xpBefore8_8 = tankJson.all.xp; //?
 
             v2.A15x15.originalXP = 0;
             v2.A15x15.damageAssistedRadio = 0;
@@ -604,9 +604,9 @@ namespace WotDossier.Dal
             v2.A15x15.he_hits = 0;
             v2.A15x15.pierced = 0;
 
-            //v2.A15x15.maxDamage = ;
-            v2.A15x15.maxFrags = tankJson.statistics.all.frags; //?
-            v2.A15x15.maxXP = tankJson.statistics.all.xp; //?
+            //v2.A15x15.maxDamage = tankJson;
+            v2.A15x15.maxFrags = tankJson.max_frags;
+            v2.A15x15.maxXP = tankJson.max_xp;
 
             v2.FragsList = new List<IList<string>>();
 
@@ -688,7 +688,7 @@ namespace WotDossier.Dal
             v2.Common.countryid = tankJson.description.CountryId;
             v2.Common.creationTime = 0;
             v2.Common.creationTimeR = DateTime.MinValue;
-            v2.Common.frags = tankJson.statistics.all.frags;
+            v2.Common.frags = tankJson.all.frags;
             v2.Common.frags_compare = 0;
             v2.Common.has_15x15 = 1;
             v2.Common.has_7x7 = 0;

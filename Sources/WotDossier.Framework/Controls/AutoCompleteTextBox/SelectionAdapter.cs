@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls.Primitives;
+﻿using System;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace WotDossier.Framework.Controls.AutoCompleteTextBox
@@ -15,6 +17,15 @@ namespace WotDossier.Framework.Controls.AutoCompleteTextBox
         {
             SelectorControl = selector;
             SelectorControl.PreviewMouseUp += OnSelectorMouseDown;
+            //SelectorControl.SelectionChanged += SelectorControlOnSelectionChanged ;
+        }
+
+        private void SelectorControlOnSelectionChanged(object sender, SelectionChangedEventArgs selectionChangedEventArgs)
+        {
+            if (Commit != null)
+            {
+                Commit();
+            }
         }
 
         #endregion

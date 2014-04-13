@@ -59,9 +59,9 @@ namespace WotDossier.Applications.Logic.Adapter
                 AvgLevel = tanks.Sum(x => x.Common.tier * statPredicate(x).battlesCount) / (double)BattlesCount;
             }
 
-            PerformanceRating = RatingHelper.GetPerformanceRating(tanks, statPredicate);
-            WN8Rating = RatingHelper.GetWN8Rating(tanks, statPredicate);
-            RBR = RatingHelper.GetRBR(tanks, statPredicate);
+            PerformanceRating = RatingHelper.PerformanceRating(tanks, statPredicate);
+            WN8Rating = RatingHelper.Wn8(tanks, statPredicate);
+            RBR = RatingHelper.PersonalRating(tanks, statPredicate);
         }
 
         public virtual void Update(T entity)

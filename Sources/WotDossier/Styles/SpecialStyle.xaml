@@ -89,6 +89,14 @@
     <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" />
     </Style>
+    
+    <Style x:Key="DataGridCellPRStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellKievArmorStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}" />
+    </Style>
 
     <!--Tank grids-->
     <ContextMenu x:Key="ContextMenu">

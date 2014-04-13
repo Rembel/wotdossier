@@ -20,8 +20,8 @@ namespace WotDossier.Applications.Logic.Adapter
             GeniusForWar = tanks.Sum(x => x.Achievements7x7.geniusForWar);
             GeniusForWarMedal = tanks.Sum(x => x.Achievements7x7.geniusForWarMedal);
             KingOfTheHill = tanks.Sum(x => x.Achievements7x7.kingOfTheHill);
-            TacticalBreakthroughSeries = tanks.Sum(x => x.Achievements7x7.tacticalBreakthroughSeries);
-            MaxTacticalBreakthroughSeries = tanks.Sum(x => x.Achievements7x7.maxTacticalBreakthroughSeries);
+            TacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.tacticalBreakthroughSeries);
+            MaxTacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.maxTacticalBreakthroughSeries);
             ArmoredFist = tanks.Sum(x => x.Achievements7x7.armoredFist);
             TacticalBreakthrough = tanks.Sum(x => x.Achievements7x7.tacticalBreakthrough);
 

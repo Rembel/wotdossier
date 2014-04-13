@@ -1,14 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Threading;
-using System.Windows;
 using System.Windows.Threading;
 
 namespace WotDossier.Framework.Forms.ProgressDialog
 {
     public class ProgressControlViewModel : INotifyPropertyChanged
     {
-        volatile bool _isBusy;
         BackgroundWorker _worker;
 
         private string _subLabel;
@@ -52,8 +50,6 @@ namespace WotDossier.Framework.Forms.ProgressDialog
 
             ProgressDialogResult result = null;
 
-            _isBusy = true;
-
             _worker = new BackgroundWorker();
             _worker.WorkerReportsProgress = true;
             _worker.WorkerSupportsCancellation = true;
@@ -84,7 +80,6 @@ namespace WotDossier.Framework.Forms.ProgressDialog
                     result = new ProgressDialogResult(e);
                     Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
                     {
-                        _isBusy = false;
                         //Close();
                     }, null);
                 };
@@ -102,21 +97,6 @@ namespace WotDossier.Framework.Forms.ProgressDialog
             _worker.RunWorkerAsync();
 
             return result;
-        }
-
-        void OnCancelButtonClick(object sender, RoutedEventArgs e)
-        {
-            if (_worker != null && _worker.WorkerSupportsCancellation)
-            {
-                SubLabel = "Please wait while process will be cancelled...";
-                IsCancelEnabled = false;
-                _worker.CancelAsync();
-            }
-        }
-
-        void OnClosing(object sender, CancelEventArgs e)
-        {
-            e.Cancel = _isBusy;
         }
 
         public ProgressDialogResult Execute(string label, Action operation)

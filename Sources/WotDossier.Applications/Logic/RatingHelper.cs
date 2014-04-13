@@ -25,12 +25,12 @@ def = dropped_capture_points / bc (среднее количество очко�
 
         #region KievArmorRating
 
-        private const double K_AvgWonBattles = 2.0;
-        private const double K_AvgFrags = 0.9;
-        private const double K_AvgSpotted = 0.5;
-        private const double K_AvgCapPoints = 0.5;
-        private const double K_AvgDefPoints = 0.5;
-        private const double khp = 1;
+        private const double K_AVG_WON_BATTLES = 2.0;
+        private const double K_AVG_FRAGS = 0.9;
+        private const double K_AVG_SPOTTED = 0.5;
+        private const double K_AVG_CAP_POINTS = 0.5;
+        private const double K_AVG_DEF_POINTS = 0.5;
+        private const double KHP = 1;
 
         #endregion
 
@@ -50,7 +50,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="avgDef">The avg def.</param>
         /// <param name="winrate">The winrate.</param>
         /// <returns></returns>
-        public static double CalcWN6(double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
+        public static double Wn6(double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
         {
             return (1240 - 1040 / Math.Pow((Math.Min(tier, 6)), 0.164)) * avgFrags + avgDamage * 530 / (184 * Math.Pow(Math.E, (0.24 * tier)) + 130)
                    + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Pow(Math.E, ((winrate - 35) * -0.134)))) - 500) * 0.45 + (6 - Math.Min(tier, 6)) * -60;
@@ -74,7 +74,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="avgDef">The avg def.</param>
         /// <param name="winrate">The winrate.</param>
         /// <returns></returns>
-        public static double CalcWN7(double battles, double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
+        public static double Wn7(double battles, double avgDamage, double tier, double avgFrags, double avgSpot, double avgDef, double winrate)
         {
             return (1240 - 1040 / Math.Pow((Math.Min(tier, 6)), 0.164)) * avgFrags + avgDamage * 530 / (184 * Math.Exp(0.24 * tier) + 130)
                    + avgSpot * 125 + Math.Min(avgDef, 2.2) * 100 + ((185 / (0.17 + Math.Exp((winrate - 35) * -0.134))) - 500) * 0.45
@@ -95,7 +95,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="avgWinRate">The avg win rate.</param>
         /// <param name="expWinRate">The exp win rate.</param>
         /// <returns></returns>
-        public static double CalcWN8(double avgDmg, double expDmg, double avgFrag, double expFrag, double avgSpot, double expSpot, double avgDef, double expDef, double avgWinRate, double expWinRate)
+        public static double Wn8(double avgDmg, double expDmg, double avgFrag, double expFrag, double avgSpot, double expSpot, double avgDef, double expDef, double avgWinRate, double expWinRate)
         {
             double rDamage = avgDmg / expDmg;
             double rSpot = avgSpot / expSpot;
@@ -103,10 +103,10 @@ def = dropped_capture_points / bc (среднее количество очко�
             double rDef = avgDef / expDef;
             double rWin = avgWinRate / expWinRate;
 
-            return CalcWn8(rWin, rDamage, rFrag, rSpot, rDef);
+            return Wn8(rWin, rDamage, rFrag, rSpot, rDef);
         }
 
-        private static double CalcWn8(double rWin, double rDamage, double rFrag, double rSpot, double rDef)
+        private static double Wn8(double rWin, double rDamage, double rFrag, double rSpot, double rDef)
         {
             double rWiNc = Math.Max(0, (rWin - 0.71)/(1 - 0.71));
             double rDamagEc = Math.Max(0, (rDamage - 0.22)/(1 - 0.22));
@@ -132,7 +132,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="avgCap">The avg cap.</param>
         /// <param name="avgDef">The avg def.</param>
         /// <returns></returns>
-        public static double CalcER(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
+        public static double EffectivityRating(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {
             return avgDamage * (10.0 / (tier + 2.0)) * (0.23 + 2.0 * tier / 100.0) + avgFrags * 250.0 + avgSpot * 150.0 + (Math.Log(avgCap + 1, 1.732)) * 150.0 + avgDef * 150.0;
         }
@@ -147,7 +147,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="avgCap">The avg cap.</param>
         /// <param name="avgDef">The avg def.</param>
         /// <returns></returns>
-        public static double CalcNR(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
+        public static double WotNoobsRating(double avgDamage, double tier, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {
             double kDamage = (avgDamage * 10 * (0.15 + 2 * (tier / 100))) / tier;
             double kFrags = avgFrags * (0.35 - 2 * (tier / 100)) * 1000;
@@ -162,7 +162,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// http://armor.kiev.ua/wot/info/
         /// </summary>
         /// <param name="battles">The battles.</param>
-        /// <param name="avgXP">The avg XP.</param>
+        /// <param name="avgXp">The avg XP.</param>
         /// <param name="avgDamage">The avg damage.</param>
         /// <param name="avgWonBattles">The avg won battles.</param>
         /// <param name="avgFrags">The avg frags.</param>
@@ -170,11 +170,11 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="avgCap">The avg cap.</param>
         /// <param name="avgDef">The avg def.</param>
         /// <returns></returns>
-        public static double CalcKievArmorRating(double battles, double avgXP, double avgDamage, double avgWonBattles, double avgFrags, double avgSpot, double avgCap, double avgDef)
+        public static double KievArmorRating(double battles, double avgXp, double avgDamage, double avgWonBattles, double avgFrags, double avgSpot, double avgCap, double avgDef)
         {
             double log10 = Math.Log(battles) / 10;
-            double d = (avgWonBattles * K_AvgWonBattles) + (avgFrags * K_AvgFrags) + (avgSpot * K_AvgSpotted) + (avgCap * K_AvgCapPoints) + (avgDef * K_AvgDefPoints);
-            return log10 * (avgXP * khp + avgDamage * d);
+            double d = (avgWonBattles * K_AVG_WON_BATTLES) + (avgFrags * K_AVG_FRAGS) + (avgSpot * K_AVG_SPOTTED) + (avgCap * K_AVG_CAP_POINTS) + (avgDef * K_AVG_DEF_POINTS);
+            return log10 * (avgXp * KHP + avgDamage * d);
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// </summary>
         /// <param name="wn6">The WN6.</param>
         /// <returns></returns>
-        public static double XWN6(double wn6)
+        public static double Xwn6(double wn6)
         {
             return wn6 > 2200 ? 100 : Math.Max(Math.Min(wn6 * (wn6 * (wn6 * (-0.00000000001268 * wn6 + 0.00000005147) - 0.00006418) + 0.07576) - 7.25, 100), 0);
         }
@@ -192,7 +192,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// </summary>
         /// <param name="wn8">The WN8.</param>
         /// <returns></returns>
-        public static double XWN8(double wn8)
+        public static double Xwn8(double wn8)
         {
             return wn8 > 3250 ? 100 : Math.Max(Math.Min(wn8 * (wn8 *(wn8 * (wn8 * (wn8 * (0.00000000000000000007119*wn8 + 0.0000000000000002334) - 0.000000000006963) + 0.00000002845) - 0.00004558) + 0.06565) - 0.18, 100), 0);
         }
@@ -202,7 +202,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// </summary>
         /// <param name="eff">The eff.</param>
         /// <returns></returns>
-        public static double XEFF(double eff)
+        public static double Xeff(double eff)
         {
             return eff < 400 ? 0 : Math.Max(Math.Min(eff * (eff * (eff * (eff * (eff * (0.000000000000000045254 * eff - 0.00000000000033131) + 0.00000000094164) - 0.0000013227) + 0.00095664) - 0.2598) + 13.23, 100), 0);
         }
@@ -217,12 +217,13 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="expectedDamage">The expected damage.</param>
         /// <param name="playerDamage">The player damage.</param>
         /// <param name="avgTier">The avg tier.</param>
+        /// <param name="applyPenalties">Apply penalties</param>
         /// <returns></returns>
         public static double PerformanceRating(double battles, double wins, double expectedDamage, double playerDamage, double avgTier, bool applyPenalties = true)
         {
             //Win rate component
-            double expectedWinrate = 0.4856;
-            double winrateWeight = 500;
+            const double expectedWinrate = 0.4856;
+            const double winrateWeight = 500;
 
             double playerWinrate = wins / battles;
             double winrateRatio = playerWinrate / expectedWinrate;
@@ -231,21 +232,21 @@ def = dropped_capture_points / bc (среднее количество очко�
             //Damage component
             //sum of all individual tank expected damages
             //double individualTankExpectedDamage = battles*tankNominalDamage;
-            double expectedDamageAdjustment = 0.975; // introduced on 25-Sep-2013
+            const double expectedDamageAdjustment = 0.975; // introduced on 25-Sep-2013
             double damageRatio = playerDamage / (expectedDamage * expectedDamageAdjustment);
-            double damageWeight = 1000;
+            const double damageWeight = 1000;
             double damageComponent = damageRatio * damageWeight;
 
             //
             //First penalty threshold:
-            double clearedFromPenalties1 = 1500;
-            double expectedMinBattles1 = 500;
-            double expectedMinAvgTier1 = 6;
+            const double clearedFromPenalties1 = 1500;
+            const double expectedMinBattles1 = 500;
+            const double expectedMinAvgTier1 = 6;
 
             //Second penalty threshold:
-            double clearedFromPenalties2 = 1900;
-            double expectedMinBattles2 = 2000;
-            double expectedMinAvgTier2 = 7;
+            const double clearedFromPenalties2 = 1900;
+            const double expectedMinBattles2 = 2000;
+            const double expectedMinAvgTier2 = 7;
 
             //Tying it together
             double beforePenalties = winrateComponent + damageComponent;
@@ -293,7 +294,7 @@ def = dropped_capture_points / bc (среднее количество очко�
         /// <param name="avgXpTrack88">The avg track XP88.</param>
         /// <remarks>http://forum.worldoftanks.ru/index.php?/topic/995453-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D1%91%D0%BD%D0%BD%D1%8B%D0%B9-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD-%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0-%D1%80%D0%B0%D1%81%D1%87%D1%91/</remarks>
         /// <returns></returns>
-        public static double RatingWG(double battles, double battles88, double wins, double survive, double dmg, double avgXp88, double avgXpRadio88, double avgXpTrack88)
+        public static double PersonalRating(double battles, double battles88, double wins, double survive, double dmg, double avgXp88, double avgXpRadio88, double avgXpTrack88)
         {
             return 540*Math.Pow(battles, 0.37)*
                    Math.Tanh(0.00163*Math.Pow(battles, -0.37)*
@@ -302,53 +303,107 @@ def = dropped_capture_points / bc (среднее количество очко�
                               1.4*avgXpRadio88 + 1.1*avgXpTrack88)));
         }
 
-        public static double GetPerformanceRating(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
+        public static double PerformanceRating(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
         {
-            double expDamage = tanks.Select(x => func(x).battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
             int battlesCount = tanks.Sum(x => func(x).battlesCount);
-            int wins = tanks.Sum(x => func(x).wins);
-            int playerDamage = tanks.Sum(x => func(x).damageDealt);
-            double avgTier = tanks.Sum(x => func(x).battlesCount * x.Description.Tier) / (double)battlesCount;
-            return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
+            if (battlesCount > 0)
+            {
+                double expDamage =
+                    tanks.Select(x => func(x).battlesCount*x.Description.Expectancy.PRNominalDamage).Sum();
+                int wins = tanks.Sum(x => func(x).wins);
+                int playerDamage = tanks.Sum(x => func(x).damageDealt);
+                double avgTier = tanks.Sum(x => func(x).battlesCount*x.Description.Tier)/(double) battlesCount;
+                return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
+            }
+            return 0;
         }
 
-        public static double GetWN8Rating(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
+        public static double Wn8(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
         {
             double battles = tanks.Sum(x => func(x).battlesCount);
 
-            double damage = tanks.Sum(x => func(x).damageDealt) / battles;
-            double spotted = tanks.Sum(x => func(x).spotted) / battles;
-            double def = tanks.Sum(x => func(x).droppedCapturePoints) / battles;
-            double winRate = tanks.Sum(x => func(x).wins) / battles;
-            double frags = tanks.Sum(x => func(x).frags) / battles;
+            if (battles > 0)
+            {
+                double damage = tanks.Sum(x => func(x).damageDealt)/battles;
+                double spotted = tanks.Sum(x => func(x).spotted)/battles;
+                double def = tanks.Sum(x => func(x).droppedCapturePoints)/battles;
+                double winRate = tanks.Sum(x => func(x).wins)/battles;
+                double frags = tanks.Sum(x => func(x).frags)/battles;
 
-            double expDamage = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalDamage) / battles;
-            double expSpotted = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalSpotted) / battles;
-            double expDef = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalDefence) / battles;
-            double expWinRate = tanks.Sum(x => (func(x).battlesCount * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
-            double expFrags = tanks.Sum(x => func(x).battlesCount * x.Description.Expectancy.Wn8NominalFrags) / battles;
-            return CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
+                double expDamage = tanks.Sum(x => func(x).battlesCount*x.Description.Expectancy.Wn8NominalDamage)/
+                                   battles;
+                double expSpotted = tanks.Sum(x => func(x).battlesCount*x.Description.Expectancy.Wn8NominalSpotted)/
+                                    battles;
+                double expDef = tanks.Sum(x => func(x).battlesCount*x.Description.Expectancy.Wn8NominalDefence)/battles;
+                double expWinRate =
+                    tanks.Sum(x => (func(x).battlesCount*x.Description.Expectancy.Wn8NominalWinRate)/100.0)/battles;
+                double expFrags = tanks.Sum(x => func(x).battlesCount*x.Description.Expectancy.Wn8NominalFrags)/battles;
+                return Wn8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
+            }
+            return 0;
         }
 
-        public static double GetRBR(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
+        public static double PerformanceRating(List<ITankStatisticRow> tanks)
+        {
+            int battlesCount = tanks.Sum(x => x.BattlesCount);
+            if (battlesCount > 0)
+            {
+                double expDamage = tanks.Select(x => x.BattlesCount*x.Description.Expectancy.PRNominalDamage).Sum();
+                int wins = tanks.Sum(x => x.Wins);
+                int playerDamage = tanks.Sum(x => x.DamageDealt);
+                double avgTier = tanks.Sum(x => x.BattlesCount*x.Description.Tier)/(double) battlesCount;
+                return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
+            }
+            return 0;
+        }
+
+        public static double Wn8(List<ITankStatisticRow> tanks)
+        {
+            double battles = tanks.Sum(x => x.BattlesCount);
+
+            if (battles > 0)
+            {
+                double damage = tanks.Sum(x => x.DamageDealt)/battles;
+                double spotted = tanks.Sum(x => x.Spotted)/battles;
+                double def = tanks.Sum(x => x.DroppedCapturePoints)/battles;
+                double winRate = tanks.Sum(x => x.Wins)/battles;
+                double frags = tanks.Sum(x => x.Frags)/battles;
+
+                double expDamage = tanks.Sum(x => x.BattlesCount*x.Description.Expectancy.Wn8NominalDamage)/battles;
+                double expSpotted = tanks.Sum(x => x.BattlesCount*x.Description.Expectancy.Wn8NominalSpotted)/battles;
+                double expDef = tanks.Sum(x => x.BattlesCount*x.Description.Expectancy.Wn8NominalDefence)/battles;
+                double expWinRate = tanks.Sum(x => (x.BattlesCount*x.Description.Expectancy.Wn8NominalWinRate)/100.0)/
+                                    battles;
+                double expFrags = tanks.Sum(x => x.BattlesCount*x.Description.Expectancy.Wn8NominalFrags)/battles;
+                return Wn8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
+            }
+            return 0;
+        }
+
+        public static double PersonalRating(List<TankJson> tanks, Func<TankJson, StatisticJson> func)
         {
             double battlesCount = tanks.Sum(x => func(x).battlesCount);
-            double winBattles = tanks.Sum(x => func(x).wins);
-            double surviveBattles = tanks.Sum(x => func(x).survivedBattles);
-            double damage = tanks.Sum(x => func(x).damageDealt);
-            double battlesCount88 = tanks.Sum(x => func(x).battlesCount - func(x).battlesCountBefore8_8);
-            battlesCount88 = battlesCount88 != 0 ? battlesCount88 : 1;
-            int xp88 = tanks.Sum(x => func(x).originalXP);
-            int xpRadio88 = tanks.Sum(x => func(x).damageAssistedRadio);
-            int xpTrack88 = tanks.Sum(x => func(x).damageAssistedTrack);
-            double avgXp88 = xp88 / battlesCount88;
-            double avgXpRadio88 = xpRadio88 / battlesCount88;
-            double avgXpTrack88 = xpTrack88 / battlesCount88;
-            double wins = winBattles / battlesCount;
-            double survive = surviveBattles / battlesCount;
-            double avgDamageDealt = damage / battlesCount;
+            if (battlesCount > 0)
+            {
+                double winBattles = tanks.Sum(x => func(x).wins);
+                double surviveBattles = tanks.Sum(x => func(x).survivedBattles);
+                double damage = tanks.Sum(x => func(x).damageDealt);
+                double battlesCount88 = tanks.Sum(x => func(x).battlesCount - func(x).battlesCountBefore8_8);
+                battlesCount88 = battlesCount88 != 0 ? battlesCount88 : 1;
+                int xp88 = tanks.Sum(x => func(x).originalXP);
+                int xpRadio88 = tanks.Sum(x => func(x).damageAssistedRadio);
+                int xpTrack88 = tanks.Sum(x => func(x).damageAssistedTrack);
+                double avgXp88 = xp88/battlesCount88;
+                double avgXpRadio88 = xpRadio88/battlesCount88;
+                double avgXpTrack88 = xpTrack88/battlesCount88;
+                double wins = winBattles/battlesCount;
+                double survive = surviveBattles/battlesCount;
+                double avgDamageDealt = damage/battlesCount;
 
-            return RatingWG(battlesCount, battlesCount88, wins, survive, avgDamageDealt, avgXp88, avgXpRadio88, avgXpTrack88);
+                return PersonalRating(battlesCount, battlesCount88, wins, survive, avgDamageDealt, avgXp88, avgXpRadio88,
+                    avgXpTrack88);
+            }
+            return 0;
         }
 
         private static double Asinh(double x)
@@ -357,32 +412,42 @@ def = dropped_capture_points / bc (среднее количество очко�
             return Math.Log(x + Math.Sqrt(Math.Pow(x, 2) + 1));
         }
 
-        public static double GetWN8RatingForPeriod(List<ITankStatisticRow> tanks)
+        public static double Wn8ForPeriod(List<ITankStatisticRow> tanks)
         {
             double battles = tanks.Sum(x => x.BattlesCountDelta);
 
-            double damage = tanks.Sum(x => x.DamageDealtDelta) / battles;
-            double spotted = tanks.Sum(x => x.SpottedDelta) / battles;
-            double def = tanks.Sum(x => x.DroppedCapturePointsDelta) / battles;
-            double winRate = tanks.Sum(x => x.WinsDelta) / battles;
-            double frags = tanks.Sum(x => x.FragsDelta) / battles;
+            if (battles > 0)
+            {
+                double damage = tanks.Sum(x => x.DamageDealtDelta)/battles;
+                double spotted = tanks.Sum(x => x.SpottedDelta)/battles;
+                double def = tanks.Sum(x => x.DroppedCapturePointsDelta)/battles;
+                double winRate = tanks.Sum(x => x.WinsDelta)/battles;
+                double frags = tanks.Sum(x => x.FragsDelta)/battles;
 
-            double expDamage = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalDamage) / battles;
-            double expSpotted = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalSpotted) / battles;
-            double expDef = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalDefence) / battles;
-            double expWinRate = tanks.Sum(x => (x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalWinRate) / 100.0) / battles;
-            double expFrags = tanks.Sum(x => x.BattlesCountDelta * x.Description.Expectancy.Wn8NominalFrags) / battles;
-            return CalcWN8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
+                double expDamage = tanks.Sum(x => x.BattlesCountDelta*x.Description.Expectancy.Wn8NominalDamage)/battles;
+                double expSpotted = tanks.Sum(x => x.BattlesCountDelta*x.Description.Expectancy.Wn8NominalSpotted)/
+                                    battles;
+                double expDef = tanks.Sum(x => x.BattlesCountDelta*x.Description.Expectancy.Wn8NominalDefence)/battles;
+                double expWinRate =
+                    tanks.Sum(x => (x.BattlesCountDelta*x.Description.Expectancy.Wn8NominalWinRate)/100.0)/battles;
+                double expFrags = tanks.Sum(x => x.BattlesCountDelta*x.Description.Expectancy.Wn8NominalFrags)/battles;
+                return Wn8(damage, expDamage, frags, expFrags, spotted, expSpotted, def, expDef, winRate, expWinRate);
+            }
+            return 0;
         }
 
-        public static double GetPerformanceRatingForPeriod(List<ITankStatisticRow> tanks)
+        public static double PerformanceRatingForPeriod(List<ITankStatisticRow> tanks)
         {
-            double expDamage = tanks.Select(x => x.BattlesCountDelta * x.Description.Expectancy.PRNominalDamage).Sum();
             int battlesCount = tanks.Sum(x => x.BattlesCountDelta);
-            int wins = tanks.Sum(x => x.WinsDelta);
-            int playerDamage = tanks.Sum(x => x.DamageDealtDelta);
-            double avgTier = tanks.Sum(x => x.BattlesCountDelta * x.Tier) / battlesCount;
-            return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier, false);
+            if (battlesCount > 0)
+            {
+                double expDamage = tanks.Select(x => x.BattlesCountDelta*x.Description.Expectancy.PRNominalDamage).Sum();
+                int wins = tanks.Sum(x => x.WinsDelta);
+                int playerDamage = tanks.Sum(x => x.DamageDealtDelta);
+                double avgTier = tanks.Sum(x => x.BattlesCountDelta*x.Tier)/battlesCount;
+                return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier, false);
+            }
+            return 0;
         }
     }
 }

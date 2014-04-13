@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
@@ -43,7 +44,7 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private ClanModel _clan;
-        private List<TankStatisticRowViewModel> _tanks;
+        private List<ITankStatisticRow> _tanks;
 
         /// <summary>
         /// Gets or sets the clan.
@@ -61,6 +62,8 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public DelegateCommand<object> RowDoubleClickCommand { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -71,6 +74,24 @@ namespace WotDossier.Applications.ViewModel
             : base(view)
         {
             OpenClanCommand = new DelegateCommand<object>(OnOpenClanCommand);
+            RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
+        }
+
+        private void OnRowDoubleClick(object rowData)
+        {
+            ITankStatisticRow tankStatisticRowViewModel = rowData as ITankStatisticRow;
+
+            //NRE if row of type TotalTankStatisticRowViewModel
+            if (tankStatisticRowViewModel != null && !(tankStatisticRowViewModel is TotalTankStatisticRowViewModel))
+            {
+                var export = CompositionContainerFactory.Instance.GetExport<TankStatisticViewModel>();
+                if (export != null)
+                {
+                    TankStatisticViewModel viewModel = export;
+                    viewModel.TankStatistic = tankStatisticRowViewModel;
+                    viewModel.Show();
+                }
+            }
         }
 
         private void OnOpenClanCommand(object param)
@@ -113,12 +134,15 @@ namespace WotDossier.Applications.ViewModel
                 Clan = new ClanModel(playerStat.dataField.clanData, playerStat.dataField.clan.role, playerStat.dataField.clan.since);
             }
 
-            PlayerStatistic = statistic;
+            Tanks = playerStat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(TankJsonV2Converter.Convert(x))).OrderByDescending(x => x.Tier).ToList();
 
-            Tanks = playerStat.dataField.vehicles.Select(x => new TankStatisticRowViewModel(TankJsonV2Converter.Convert(x))).OrderByDescending(x => x.Tier).ToList();
+            statistic.WN8Rating = RatingHelper.Wn8(Tanks);
+            statistic.PerformanceRating = RatingHelper.PerformanceRating(Tanks);
+
+            PlayerStatistic = statistic;
         }
 
-        public List<TankStatisticRowViewModel> Tanks
+        public List<ITankStatisticRow> Tanks
         {
             get { return _tanks; }
             set

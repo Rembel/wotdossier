@@ -1,42 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.Logic;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
     public class TotalTankStatisticRowViewModel : TankStatisticRowViewModelBase<TotalTankStatisticRowViewModel>
     {
+        private double _wn8RatingValue;
+        private double _performanceRatingValue;
+
         public override double WN8Rating
         {
-            get
-            {
-                //if (BattlesCount > 0)
-                //{
-                //    double expDamage = BattlesCount * Description.Expectancy.Wn8NominalDamage / BattlesCount;
-                //    double expSpotted = BattlesCount * Description.Expectancy.Wn8NominalSpotted / BattlesCount;
-                //    double expDef = BattlesCount * Description.Expectancy.Wn8NominalDefence / BattlesCount;
-                //    double expWinRate = BattlesCount * Description.Expectancy.Wn8NominalWinRate / 100.0 / BattlesCount;
-                //    double expFrags = BattlesCount * Description.Expectancy.Wn8NominalFrags / BattlesCount;
-
-                //    return RatingHelper.CalcWN8(AvgDamageDealt, expDamage, AvgFrags, expFrags, AvgSpotted, expSpotted, AvgDroppedCapturePoints, expDef, WinsPercent, expWinRate);
-                //}
-                return 0;
-            }
+            get { return _wn8RatingValue; }
+            set { _wn8RatingValue = value; }
         }
 
         public override double PerformanceRating
         {
-            get
-            {
-                //if (BattlesCount > 0)
-                //{
-                //    return RatingHelper.PerformanceRating(BattlesCount, Wins,
-                //        BattlesCount * Description.Expectancy.PRNominalDamage,
-                //        DamageDealt, Tier);
-                //}
-                return 0;
-            }
+            get { return _performanceRatingValue; }
+            set { _performanceRatingValue = value; }
         }
 
         /// <summary>
@@ -202,7 +186,8 @@ namespace WotDossier.Applications.ViewModel.Rows
             MaxXp = list.Max(x => x.MaxXp);
             #endregion
 
-
+            WN8Rating = RatingHelper.Wn8(list);
+            PerformanceRating = RatingHelper.PerformanceRating(list);
         }
 
         /// <summary>

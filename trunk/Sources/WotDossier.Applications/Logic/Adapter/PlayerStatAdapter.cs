@@ -118,16 +118,17 @@ namespace WotDossier.Applications.Logic.Adapter
             Spotted = stat.dataField.statistics.all.spotted;
             HitsPercents = stat.dataField.statistics.all.hits_percents;
             DamageDealt = stat.dataField.statistics.all.damage_dealt;
+            DamageTaken = stat.dataField.statistics.all.damage_received;
             CapturePoints = stat.dataField.statistics.all.capture_points;
             DroppedCapturePoints = stat.dataField.statistics.all.dropped_capture_points;
             Updated = Utils.UnixDateToDateTime((long)stat.dataField.updated_at).ToLocalTime();
             Created = Utils.UnixDateToDateTime((long)stat.dataField.created_at).ToLocalTime();
             if (BattlesCount > 0 && stat.dataField.vehicles != null)
             {
-                int battlesCount = stat.dataField.vehicles.Sum(x => x.statistics.all.battles);
+                int battlesCount = stat.dataField.vehicles.Sum(x => x.all.battles);
                 if (battlesCount > 0)
                 {
-                    AvgLevel = stat.dataField.vehicles.Sum(x => (x.tank != null ? x.tank.level : 1)*x.statistics.all.battles)/(double) battlesCount;
+                    AvgLevel = stat.dataField.vehicles.Sum(x => (x.tank != null ? x.tank.level : 1)*x.all.battles)/(double) battlesCount;
                 }
             }
 

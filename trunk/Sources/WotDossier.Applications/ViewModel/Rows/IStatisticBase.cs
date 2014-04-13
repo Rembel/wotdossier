@@ -2,7 +2,7 @@
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface IStatisticBase : IStatisticXp, IStatisticBattleAwards, IStatisticEpic, IStatisticSpecialAwards, IStatisticMedals, IStatisticSeries
+    public interface IStatisticBase : IStatisticXp, IStatisticBattleAwards, IStatisticEpic, IStatisticSpecialAwards, IStatisticMedals, IStatisticSeries, IStatisticTeamBattleAwards
     {
         double AvgFrags { get; }
         double AvgSpotted { get; }
@@ -14,9 +14,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         double PerformanceRating { get; set; }
         double WN8Rating { get; set; }
         double RBR { get; set; }
-        int KingOfTheHill { get; set; }
-        int ArmoredFist { get; set; }
-        int TacticalBreakthrough { get; set; }
 
         /// <summary>
         /// Stat updated

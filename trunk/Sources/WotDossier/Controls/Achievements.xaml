@@ -285,7 +285,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_KingOfTheHill}" Text="{x:Static resources:Resources.Tooltip_GroupAchievements_KingOfTheHill}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding TacticalBreakthrough}" Delta="{Binding TacticalBreakthroughDelta}" Source="../Resources/Images/Medals/TacticalBreakthrough.png">
+                <controls:MedalAchievement Value="{Binding MaxTacticalBreakthroughSeries}" Delta="{Binding TacticalBreakthroughDelta}" Source="../Resources/Images/Medals/TacticalBreakthrough.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_TacticalBreakthrough}" Text="TacticalBreakthrough" />
                     </ToolTipService.ToolTip>

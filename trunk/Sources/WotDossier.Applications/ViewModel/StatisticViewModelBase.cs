@@ -203,7 +203,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCount > 0)
                 {
-                    return RatingHelper.CalcWN6(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgDroppedCapturePoints, WinsPercent);
+                    return RatingHelper.Wn6(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgDroppedCapturePoints, WinsPercent);
                 }
                 return 0;
             }
@@ -215,7 +215,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCount > 0)
                 {
-                    return RatingHelper.CalcWN7(BattlesCount, AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgDroppedCapturePoints, WinsPercent);
+                    return RatingHelper.Wn7(BattlesCount, AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgDroppedCapturePoints, WinsPercent);
                 }
                 return 0;
             }
@@ -227,7 +227,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCount > 0)
                 {
-                    return RatingHelper.CalcNR(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
+                    return RatingHelper.WotNoobsRating(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
                 }
                 return 0;
             }
@@ -239,7 +239,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCount > 0)
                 {
-                    return RatingHelper.CalcER(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
+                    return RatingHelper.EffectivityRating(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgCapturePoints, AvgDroppedCapturePoints);
                 }
                 return 0;
             }
@@ -251,7 +251,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCount > 0)
                 {
-                    return RatingHelper.CalcKievArmorRating(BattlesCount, AvgXp, AvgDamageDealt, WinsPercent/100.0,
+                    return RatingHelper.KievArmorRating(BattlesCount, AvgXp, AvgDamageDealt, WinsPercent/100.0,
                                                             AvgFrags, AvgSpotted, AvgCapturePoints,
                                                             AvgDroppedCapturePoints);
                 }
@@ -261,12 +261,12 @@ namespace WotDossier.Applications.ViewModel
 
         public double XEFF
         {
-            get { return RatingHelper.XEFF(EffRating); }
+            get { return RatingHelper.Xeff(EffRating); }
         }
 
         public double XWN
         {
-            get { return RatingHelper.XWN6(WN6Rating); }
+            get { return RatingHelper.Xwn6(WN6Rating); }
         }
 
         private double _performanceRating;
@@ -461,7 +461,20 @@ namespace WotDossier.Applications.ViewModel
 
         public int KingOfTheHill { get; set; }
         public int ArmoredFist { get; set; }
+        public int CrucialShot { get; set; }
+        public int CrucialShotMedal { get; set; }
+        public int FightingReconnaissance { get; set; }
+        public int FightingReconnaissanceMedal { get; set; }
+        public int ForTacticalOperations { get; set; }
+        public int GeniusForWar { get; set; }
+        public int GeniusForWarMedal { get; set; }
+        public int GodOfWar { get; set; }
+        public int MaxTacticalBreakthroughSeries { get; set; }
         public int TacticalBreakthrough { get; set; }
+        public int TacticalBreakthroughSeries { get; set; }
+        public int WillToWinSpirit { get; set; }
+        public int WolfAmongSheep { get; set; }
+        public int WolfAmongSheepMedal { get; set; }
 
         #endregion
         

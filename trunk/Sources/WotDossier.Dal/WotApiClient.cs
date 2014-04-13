@@ -42,6 +42,7 @@ namespace WotDossier.Dal
         public const string PARAM_FIELDS = "fields";
         public const string PARAM_LIMIT = "limit";
         private const string METHOD_ACCOUNT_INFO = "account/info/";
+        private const string METHOD_TANKS_STATS = "tanks/stats/";
         private const string METHOD_ACCOUNT_TANKS = "account/tanks/";
         private const string METHOD_ACCOUNT_ACHIEVEMENTS = "account/achievements/";
         private const string METHOD_RATINGS_ACCOUNTS = "ratings/accounts/";
@@ -250,11 +251,21 @@ namespace WotDossier.Dal
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_TANKS, new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(settings, METHOD_TANKS_STATS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                 });
+
+
+                JObject markOfMastery = Request<JObject>(settings, METHOD_ACCOUNT_TANKS, new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_ACCOUNT_ID, playerId},
+                    {PARAM_FIELDS, "mark_of_mastery,tank_id"}
+                });
+
+                Dictionary<int, int> vehicleMarkOfMastery = markOfMastery["data"][playerId.ToString()].ToObject<List<VehicleMarkOfMastery>>().ToDictionary(x => x.tank_id, y => y.mark_of_mastery);
 
                 if (parsedData["data"].Any())
                 {
@@ -265,6 +276,10 @@ namespace WotDossier.Dal
                         {
                             tank.tank = Dictionaries.Instance.ServerTanks[tank.tank_id];
                             tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
+                            if (vehicleMarkOfMastery.ContainsKey(tank.tank_id))
+                            {
+                                tank.mark_of_mastery = vehicleMarkOfMastery[tank.tank_id];
+                            }
                         }
                     }
                     return tanks;

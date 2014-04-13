@@ -38,8 +38,8 @@
                 <DataGridTextColumn Header="WN8" CellStyle="{StaticResource DataGridCellWn8Style}" Binding="{Binding WN8Rating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="WN7" CellStyle="{StaticResource DataGridCellWn6Style}" Binding="{Binding WN7Rating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="XVM" CellStyle="{StaticResource DataGridCellXvmStyle}" Binding="{Binding XEFF, StringFormat='0.0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_PerformanceRating}" Binding="{Binding PerformanceRating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KievArmorRating}" Binding="{Binding KievArmorRating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_PerformanceRating}" CellStyle="{StaticResource DataGridCellPRStyle}" Binding="{Binding PerformanceRating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_KievArmorRating}" CellStyle="{StaticResource DataGridCellKievArmorStyle}" Binding="{Binding KievArmorRating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>

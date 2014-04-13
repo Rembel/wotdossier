@@ -495,7 +495,7 @@ namespace WotDossier.Test
         [Test]
         public void UploadTest()
         {
-            FileInfo info = new FileInfo(@"I:\World_of_Tanks_\Replays\20140325_2258_ussr-Object_140_84_winter.wotreplay");
+            FileInfo info = new FileInfo(@"Replays\20140325_2258_ussr-Object_140_84_winter.wotreplay");
 
             ReplayUploader uploader = new ReplayUploader();
 
@@ -512,7 +512,7 @@ namespace WotDossier.Test
         [Test]
         public void MultipleUploadTest()
         {
-            FileInfo info = new FileInfo(@"I:\World_of_Tanks_\Replays\20140325_2258_ussr-Object_140_84_winter.wotreplay");
+            FileInfo info = new FileInfo(@"Replays\20140325_2258_ussr-Object_140_84_winter.wotreplay");
             ReplayUploader uploader = new ReplayUploader();
             WotReplaysSiteResponse response = uploader.Upload(info, 10800699, "_rembel_");
             Console.WriteLine(response.Error);
@@ -620,13 +620,6 @@ namespace WotDossier.Test
         //}
 
         [Test]
-        public void XVMTest()
-        {
-            double xeff = RatingHelper.XEFF(1257);
-            double xwn = RatingHelper.XWN6(1318);
-        }
-
-        [Test]
         public void NoobMeterPerformanceRatingAlgorithmTest()
         {
             int playerId = 10800699;
@@ -637,9 +630,7 @@ namespace WotDossier.Test
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
             List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
-            double damage = tankJsons.Select(x => x.A15x15.battlesCount * x.Description.Expectancy.PRNominalDamage).Sum();
-
-            var performanceRating = RatingHelper.PerformanceRating(currentStatistic.BattlesCount, currentStatistic.Wins, damage, currentStatistic.DamageDealt, currentStatistic.AvgLevel);
+            var performanceRating = RatingHelper.PerformanceRating(tankJsons, json => json.A15x15);
 
             Console.WriteLine(performanceRating);
         }
@@ -702,7 +693,7 @@ namespace WotDossier.Test
 
             foreach (TankDescription description in Dictionaries.Instance.Tanks.Values)
             {
-                if (xmlTanks.FirstOrDefault(x => x.Icon.ToLower() == description.Icon.IconOrig.ToLower()) == null)
+                if (xmlTanks.FirstOrDefault(x => string.Equals(x.Icon, description.Icon.IconOrig, StringComparison.InvariantCultureIgnoreCase)) == null)
                 {
                     Console.WriteLine(description.Icon.IconOrig);
                 }
@@ -714,7 +705,8 @@ namespace WotDossier.Test
         [Test]
         public void CacheTest()
         {
-            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(@"D:\NRXWO2LOFZYDMLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGQ5XO2LMMRTW6YTMNFXA====.json");
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
+            List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName);
 
             foreach (var group in tanksV2.GroupBy(x => x.Common.type))
             {
@@ -780,10 +772,10 @@ namespace WotDossier.Test
         public void appSpotTest()
         {
             AppSpotUploader uploader = new AppSpotUploader();
-
-            uploader.Upload(
-                new FileInfo(
-                    @"C:\Users\Pasha\AppData\Roaming\wargaming.net\WorldOfTanks\dossier_cache\NRXWO2LOFZYDCLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGQ5V6UTFNVRGK3C7.dat"), 19376001);
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
+            uploader.Upload(cacheFile, 19376001);
         }
+
+
     }
 }

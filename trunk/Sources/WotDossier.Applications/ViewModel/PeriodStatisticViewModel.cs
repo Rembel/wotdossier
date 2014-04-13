@@ -258,7 +258,11 @@ namespace WotDossier.Applications.ViewModel
         {
             get
             {
-                return (Tier * BattlesCount - PrevStatistic.Tier * PrevStatistic.BattlesCount) / BattlesCountDelta;
+                if (BattlesCountDelta > 0)
+                {
+                    return (Tier*BattlesCount - PrevStatistic.Tier*PrevStatistic.BattlesCount)/BattlesCountDelta;
+                }
+                return 0;
             }
         }
 
@@ -268,7 +272,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return RatingHelper.CalcER(AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
+                    return RatingHelper.EffectivityRating(AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
                                                AvgCapturePointsForPeriod, AvgDroppedCapturePointsForPeriod);
                 }
                 return 0;
@@ -281,7 +285,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return RatingHelper.CalcWN6(AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
+                    return RatingHelper.Wn6(AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
                                                 AvgDroppedCapturePointsForPeriod, WinsPercentForPeriod);
                 }
                 return 0;
@@ -294,7 +298,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (BattlesCountDelta > 0)
                 {
-                    return RatingHelper.CalcWN7(BattlesCountDelta, AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
+                    return RatingHelper.Wn7(BattlesCountDelta, AvgDamageDealtForPeriod, TierForInterval, AvgFragsForPeriod, AvgSpottedForPeriod,
                                                 AvgDroppedCapturePointsForPeriod, WinsPercentForPeriod);
                 }
                 return 0;
@@ -330,7 +334,7 @@ namespace WotDossier.Applications.ViewModel
                 if (BattlesCountDelta > 0)
                 {
                     //Battle count used to calc rating for period on noobmeter.com
-                    return RatingHelper.CalcKievArmorRating(BattlesCount, AvgXpForPeriod, AvgDamageDealtForPeriod,
+                    return RatingHelper.KievArmorRating(BattlesCount, AvgXpForPeriod, AvgDamageDealtForPeriod,
                                                             WinsPercentForPeriod / 100.0,
                                                             AvgFragsForPeriod, AvgSpottedForPeriod,
                                                             AvgCapturePointsForPeriod, AvgDroppedCapturePointsForPeriod);

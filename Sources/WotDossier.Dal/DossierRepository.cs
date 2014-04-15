@@ -4,7 +4,7 @@ using System.ComponentModel.Composition;
 using Common.Logging;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 using System.Linq;
 

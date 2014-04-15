@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
 using WotDossier.Common;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 
 namespace WotDossier.Applications.Model
 {

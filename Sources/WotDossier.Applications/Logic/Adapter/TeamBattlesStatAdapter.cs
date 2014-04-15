@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Domain.Entities;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
@@ -36,7 +36,7 @@ namespace WotDossier.Applications.Logic.Adapter
             #endregion
         }
 
-        //public TeamBattlesStatAdapter(PlayerStat stat)
+        //public TeamBattlesStatAdapter(Player stat)
         //{
         //    Battles_count = stat.dataField.statistics.all.battles;
         //    Wins = stat.dataField.statistics.all.wins;
@@ -79,7 +79,7 @@ namespace WotDossier.Applications.Logic.Adapter
         //    Vehicle = stat.dataField.vehicles;
         //}
 
-        public List<VehicleStat> Vehicle { get; set; }
+        public List<Vehicle> Vehicle { get; set; }
 
         #region Achievments
 

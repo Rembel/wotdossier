@@ -278,10 +278,6 @@
       <Link>Data\Medals.xml</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\WotDossier\Data\TankNominalDamage.xml">
-      <Link>Data\TankNominalDamage.xml</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\WotDossier\External\python27.dll">
       <Link>External\python27.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -320,6 +316,9 @@
     </Content>
     <Content Include="..\WotDossier\Updates\2013080804.sql">
       <Link>Updates\2013080804.sql</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\TankNominalDamage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="x64\SQLite.Interop.dll">

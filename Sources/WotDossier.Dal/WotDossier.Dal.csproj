@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRequestException.cs" />
+    <Compile Include="DataMapper.cs" />
     <Compile Include="Dictionaries.cs" />
     <Compile Include="DossierRepository.cs" />
     <Compile Include="IDataProvider.cs" />
@@ -100,7 +101,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TankJsonV2Converter.cs" />
     <Compile Include="WotApiClient.cs" />
     <Compile Include="WotApiHelper.cs" />
     <Compile Include="WotApiSettings.cs" />

@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Common;
-using WotDossier.Dal;
 using WotDossier.Domain.Entities;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
@@ -105,7 +104,7 @@ namespace WotDossier.Applications.Logic.Adapter
             MedalStark = tanks.Sum(x => x.Achievements.medalStark);
         }
 
-        public PlayerStatAdapter(PlayerStat stat)
+        public PlayerStatAdapter(Player stat)
         {
             BattlesCount = stat.dataField.statistics.all.battles;
             Wins = stat.dataField.statistics.all.wins;
@@ -223,7 +222,7 @@ namespace WotDossier.Applications.Logic.Adapter
             Vehicle = stat.dataField.vehicles;
         }
 
-        public List<VehicleStat> Vehicle { get; set; }
+        public List<Vehicle> Vehicle { get; set; }
 
         #region Achievments
 

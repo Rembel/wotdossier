@@ -11,7 +11,7 @@ using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -99,7 +99,7 @@ namespace WotDossier.Applications.ViewModel
             ClanData clan;
             using (new WaitCursor())
             {
-                clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), Clan.Id);
+                clan = WotApiClient.Instance.LoadClan(Clan.Id, SettingsReader.Get());
             }
             if (clan != null)
             {
@@ -114,27 +114,30 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        /// <summary>
+        /// Shows this instance.
+        /// </summary>
         public void Show()
         {
             ViewTyped.ShowDialog();
         }
 
-        public void Init(PlayerStat playerStat)
+        public void Init(Player player)
         {
             PlayerStatisticEntity entity = new PlayerStatisticEntity();
-            PlayerStatAdapter statAdapter = new PlayerStatAdapter(playerStat);
+            PlayerStatAdapter statAdapter = new PlayerStatAdapter(player);
             statAdapter.Update(entity);
             PlayerStatisticViewModel statistic = new RandomPlayerStatisticViewModel(entity);
-            statistic.Name = playerStat.dataField.nickname;
-            statistic.AccountId = playerStat.dataField.account_id;
+            statistic.Name = player.dataField.nickname;
+            statistic.AccountId = player.dataField.account_id;
             statistic.BattlesPerDay = statistic.BattlesCount / (DateTime.Now - statAdapter.Created).Days;
-            statistic.Created = Utils.UnixDateToDateTime( (long) playerStat.dataField.created_at);
-            if (playerStat.dataField.clan != null && playerStat.dataField.clan != null && playerStat.dataField.clanData != null)
+            statistic.Created = Utils.UnixDateToDateTime( (long) player.dataField.created_at);
+            if (player.dataField.clan != null && player.dataField.clan != null && player.dataField.clanData != null)
             {
-                Clan = new ClanModel(playerStat.dataField.clanData, playerStat.dataField.clan.role, playerStat.dataField.clan.since);
+                Clan = new ClanModel(player.dataField.clanData, player.dataField.clan.role, player.dataField.clan.since);
             }
 
-            Tanks = playerStat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(TankJsonV2Converter.Convert(x))).OrderByDescending(x => x.Tier).ToList();
+            Tanks = player.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
 
             statistic.WN8Rating = RatingHelper.Wn8(Tanks);
             statistic.PerformanceRating = RatingHelper.PerformanceRating(Tanks);

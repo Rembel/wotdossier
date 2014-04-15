@@ -4,7 +4,6 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Xml;
 using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -12,11 +11,11 @@ using WotDossier.Common;
 using WotDossier.Domain;
 using System.Linq;
 using WotDossier.Domain.Dossier.AppSpot;
-using WotDossier.Domain.Dossier.TankV29;
-using WotDossier.Domain.Dossier.TankV65;
-using WotDossier.Domain.Player;
 using WotDossier.Domain.Replay;
+using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
+using Player = WotDossier.Domain.Server.Player;
+using Vehicle = WotDossier.Domain.Server.Vehicle;
 
 namespace WotDossier.Dal
 {
@@ -33,14 +32,15 @@ namespace WotDossier.Dal
         private const string URL_API = @"https://api.worldoftanks.{0}/{1}/{2}";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";
         private const string CONTENT_TYPE = "application/x-www-form-urlencoded";
-        public const string PARAM_APPID = "application_id";
-        public const string PARAM_SEARCH = "search";
-        public const string PARAM_ACCOUNT_ID = "account_id";
-        public const string PARAM_MEMBER_ID = "member_id";
-        public const string PARAM_TYPE = "type";
-        public const string PARAM_CLAN_ID = "clan_id";
-        public const string PARAM_FIELDS = "fields";
-        public const string PARAM_LIMIT = "limit";
+        private const string PARAM_APPID = "application_id";
+        private const string PARAM_SEARCH = "search";
+        private const string PARAM_ACCOUNT_ID = "account_id";
+        private const string PARAM_IN_GARAGE = "in_garage";
+        private const string PARAM_MEMBER_ID = "member_id";
+        private const string PARAM_TYPE = "type";
+        private const string PARAM_CLAN_ID = "clan_id";
+        private const string PARAM_FIELDS = "fields";
+        private const string PARAM_LIMIT = "limit";
         private const string METHOD_ACCOUNT_INFO = "account/info/";
         private const string METHOD_TANKS_STATS = "tanks/stats/";
         private const string METHOD_ACCOUNT_TANKS = "account/tanks/";
@@ -61,6 +61,12 @@ namespace WotDossier.Dal
         {
         }
 
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>
+        /// The instance.
+        /// </value>
         public static WotApiClient Instance
         {
             get
@@ -79,6 +85,11 @@ namespace WotDossier.Dal
             }
         }
 
+        /// <summary>
+        /// Reads the dossier application spot tanks.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public List<TankJson> ReadDossierAppSpotTanks(string data)
         {
             List<TankJson> tanks = new List<TankJson>();
@@ -90,15 +101,22 @@ namespace WotDossier.Dal
             foreach (JToken jToken in tanksData)
             {
                 Tank appSpotTank = jToken.ToObject<Tank>();
-                TankJson tank = TankJsonV2Converter.Convert(appSpotTank);
+                TankJson tank = DataMapper.Map(appSpotTank);
                 tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
-                ExtendPropertiesData(tank);
-                tanks.Add(tank);
+                if (ExtendPropertiesData(tank))
+                {
+                    tanks.Add(tank);
+                }
             }
 
             return tanks;
         }
 
+        /// <summary>
+        /// Reads the tanks from cache.
+        /// </summary>
+        /// <param name="path">The path to parsed cache file.</param>
+        /// <returns></returns>
         public List<TankJson> ReadTanksCache(string path)
         {
             List<TankJson> tanks = new List<TankJson>();
@@ -109,35 +127,29 @@ namespace WotDossier.Dal
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = (JObject)se.Deserialize(reader);
 
-                JToken tanksData = parsedData["tanks"];
-
-                foreach (JToken jToken in tanksData)
+                foreach (JToken tanksData in new[] { parsedData["tanks"], parsedData["tanks_v2"] })
                 {
-                    JProperty property = (JProperty)jToken;
-                    TankJson29 tank29 = property.Value.ToObject<TankJson29>();
-                    TankJson tank = TankJsonV2Converter.Convert(tank29);
-                    tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
-                    ExtendPropertiesData(tank);
-                    tanks.Add(tank);
-                }
-
-                JToken tanksDataV2 = parsedData["tanks_v2"];
-
-                foreach (JToken jToken in tanksDataV2)
-                {
-                    JProperty property = (JProperty)jToken;
-                    int version = property.Value["common"].ToObject<CommonJson>().basedonversion;
-                    TankJson tank = TankJsonV2Converter.Convert(property.Value, version);
-                    tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
-                    if (ExtendPropertiesData(tank))
+                    foreach (JToken jToken in tanksData)
                     {
-                        tanks.Add(tank);
+                        JProperty property = (JProperty)jToken;
+                        int version = property.Value["common"].ToObject<CommonJson>().basedonversion;
+                        TankJson tank = DataMapper.Map(property.Value, version);
+                        tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                        if (ExtendPropertiesData(tank))
+                        {
+                            tanks.Add(tank);
+                        }
                     }
                 }
             }
             return tanks;
         }
 
+        /// <summary>
+        /// Extends the properties data with Description and FragsList.
+        /// </summary>
+        /// <param name="tank">The tank.</param>
+        /// <returns></returns>
         public bool ExtendPropertiesData(TankJson tank)
         {
             if (Dictionaries.Instance.Tanks.ContainsKey(tank.UniqueId()))
@@ -176,16 +188,16 @@ namespace WotDossier.Dal
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public PlayerStat LoadPlayerStat(AppSettings settings, int playerId)
+        public Player LoadPlayerStat(int playerId, AppSettings settings)
         {
-            return LoadPlayerStat(settings, playerId, true);
+            return LoadPlayerStat(playerId, true, settings);
         }
 
         /// <summary>
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public PlayerStat LoadPlayerStat(AppSettings settings, int playerId, bool loadVehicles)
+        public Player LoadPlayerStat(int playerId, bool loadVehicles, AppSettings settings)
         {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
@@ -194,26 +206,26 @@ namespace WotDossier.Dal
 
             try
             {
-                var playerStat = Request<PlayerStat>(settings, METHOD_ACCOUNT_INFO, new Dictionary<string, object>
+                var playerStat = Request<Player>(METHOD_ACCOUNT_INFO, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
-                });
+                }, settings);
                 playerStat.dataField = playerStat.data[playerId];
-                playerStat.dataField.ratings = GetPlayerRatings(settings, playerId);
-                playerStat.dataField.achievements = GetPlayerAchievements(settings, playerId);
+                playerStat.dataField.ratings = GetPlayerRatings(playerId, settings);
+                playerStat.dataField.achievements = GetPlayerAchievements(playerId, settings);
                 if (loadVehicles)
                 {
-                    playerStat.dataField.vehicles = GetPlayerTanks(settings, playerId);
+                    playerStat.dataField.vehicles = GetPlayerTanks(playerId, settings);
                 }
 
-                Clan clanMemberInfo = GetClanMemberInfo(settings, playerId);
+                Clan clanMemberInfo = GetClanMemberInfo(playerId, settings);
 
                 if (clanMemberInfo != null)
                 {
                     playerStat.dataField.clan = clanMemberInfo;
-                    playerStat.dataField.clanData = LoadClan(settings, clanMemberInfo.clan_id,
-                        new[] {"abbreviation", "name", "clan_id", "description", "emblems"});
+                    playerStat.dataField.clanData = LoadClan(clanMemberInfo.clan_id,
+                        new[] {"abbreviation", "name", "clan_id", "description", "emblems"}, settings);
                 }
                 return playerStat;
             }
@@ -224,19 +236,25 @@ namespace WotDossier.Dal
             }
         }
 
-        private Clan GetClanMemberInfo(AppSettings settings, int playerId)
+        /// <summary>
+        /// Gets the clan member information.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="settings">The settings.</param>
+        /// <returns></returns>
+        private Clan GetClanMemberInfo(int playerId, AppSettings settings)
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, METHOD_CLAN_MEMBERSINFO, new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(METHOD_CLAN_MEMBERSINFO, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_MEMBER_ID, playerId},
-                });
+                }, settings);
 
                 if (parsedData["data"].Any())
                 {
-                    return parsedData["data"][playerId.ToString()].ToObject<Clan>();
+                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Clan>();
                 }
             }
             catch (Exception e)
@@ -247,30 +265,37 @@ namespace WotDossier.Dal
             return null;
         }
 
-        private List<VehicleStat> GetPlayerTanks(AppSettings settings, int playerId)
+        /// <summary>
+        /// Gets the player tanks.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="settings">The settings.</param>
+        /// <returns></returns>
+        private List<Vehicle> GetPlayerTanks(int playerId, AppSettings settings)
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, METHOD_TANKS_STATS, new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(METHOD_TANKS_STATS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
-                });
+                    //{PARAM_IN_GARAGE, 1},
+                }, settings);
 
 
-                JObject markOfMastery = Request<JObject>(settings, METHOD_ACCOUNT_TANKS, new Dictionary<string, object>
+                JObject markOfMastery = Request<JObject>(METHOD_ACCOUNT_TANKS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                     {PARAM_FIELDS, "mark_of_mastery,tank_id"}
-                });
+                }, settings);
 
-                Dictionary<int, int> vehicleMarkOfMastery = markOfMastery["data"][playerId.ToString()].ToObject<List<VehicleMarkOfMastery>>().ToDictionary(x => x.tank_id, y => y.mark_of_mastery);
+                Dictionary<int, int> vehicleMarkOfMastery = markOfMastery["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<VehicleMarkOfMastery>>().ToDictionary(x => x.tank_id, y => y.mark_of_mastery);
 
                 if (parsedData["data"].Any())
                 {
-                    List<VehicleStat> tanks = parsedData["data"][playerId.ToString()].ToObject<List<VehicleStat>>();
-                    foreach (VehicleStat tank in tanks)
+                    List<Vehicle> tanks = parsedData["data"][playerId.ToString()].ToObject<List<Vehicle>>();
+                    foreach (Vehicle tank in tanks)
                     {
                         if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))
                         {
@@ -293,20 +318,20 @@ namespace WotDossier.Dal
             return null;
         }
 
-        private Ratings GetPlayerRatings(AppSettings settings, int playerId)
+        private Ratings GetPlayerRatings(int playerId, AppSettings settings)
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, METHOD_RATINGS_ACCOUNTS, new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(METHOD_RATINGS_ACCOUNTS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                     {PARAM_TYPE, "all"},
-                });
+                }, settings);
 
                 if (parsedData["data"].Any())
                 {
-                    return parsedData["data"][playerId.ToString()].ToObject<Ratings>();
+                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Ratings>();
                 }
             }
             catch (Exception e)
@@ -317,19 +342,19 @@ namespace WotDossier.Dal
             return null;
         }
 
-        private Achievements GetPlayerAchievements(AppSettings settings, int playerId)
+        private Achievements GetPlayerAchievements(int playerId, AppSettings settings)
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_ACHIEVEMENTS, new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(METHOD_ACCOUNT_ACHIEVEMENTS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId}
-                });
+                }, settings);
 
                 if (parsedData["data"].Any())
                 {
-                    return parsedData["data"][playerId.ToString()]["achievements"].ToObject<Achievements>();
+                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)]["achievements"].ToObject<Achievements>();
                 }
             }
             catch (Exception e)
@@ -344,16 +369,16 @@ namespace WotDossier.Dal
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public ClanData LoadClan(AppSettings settings, int clanId)
+        public ClanData LoadClan(int clanId, AppSettings settings)
         {
-            return LoadClan(settings, clanId, null);
+            return LoadClan(clanId, null, settings);
         }
 
         /// <summary>
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public ClanData LoadClan(AppSettings settings, int clanId, string[] fields)
+        public ClanData LoadClan(int clanId, string[] fields, AppSettings settings)
         {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
@@ -373,8 +398,8 @@ namespace WotDossier.Dal
                     dictionary.Add(PARAM_FIELDS, string.Join(",", fields));
                 }
 
-                JObject parsedData = Request<JObject>(settings, METHOD_CLAN_INFO, dictionary);
-                return parsedData["data"][clanId.ToString()].ToObject<ClanData>();
+                JObject parsedData = Request<JObject>(METHOD_CLAN_INFO, dictionary, settings);
+                return parsedData["data"][clanId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanData>();
             }
             catch (Exception e)
             {
@@ -386,11 +411,14 @@ namespace WotDossier.Dal
         /// <summary>
         /// Searches the player.
         /// </summary>
+        /// <param name="playerName">Name of the player.</param>
         /// <param name="settings">The settings.</param>
-        /// <returns>First found player</returns>
-        public PlayerSearchJson SearchPlayer(AppSettings settings, string playerName)
+        /// <returns>
+        /// First found player
+        /// </returns>
+        public PlayerSearchJson SearchPlayer(string playerName, AppSettings settings)
         {
-            List<PlayerSearchJson> list = SearchPlayer(settings, playerName, 1);
+            List<PlayerSearchJson> list = SearchPlayer(playerName, 1, settings);
             if (list != null)
             {
                 return list.FirstOrDefault();
@@ -401,25 +429,25 @@ namespace WotDossier.Dal
         /// <summary>
         /// Searches the player.
         /// </summary>
-        /// <param name="settings">The settings.</param>
         /// <param name="playerName">Name of the player.</param>
         /// <param name="limit">The limit.</param>
+        /// <param name="settings">The settings.</param>
         /// <returns>
         /// Found players
         /// </returns>
-        public List<PlayerSearchJson> SearchPlayer(AppSettings settings, string playerName, int limit)
+        public List<PlayerSearchJson> SearchPlayer(string playerName, int limit, AppSettings settings)
         {
 #if DEBUG
             return new List<PlayerSearchJson> {new PlayerSearchJson {id = 10800699, nickname = "rembel"}};
 #else
             try
             {
-                JObject parsedData = Request<JObject>(settings, METHOD_ACCOUNT_LIST, new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(METHOD_ACCOUNT_LIST, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, playerName},
                     {PARAM_LIMIT, limit},
-                });
+                }, settings);
                 return parsedData["data"].ToObject<List<PlayerSearchJson>>();
             }
             catch (Exception e)
@@ -434,20 +462,20 @@ namespace WotDossier.Dal
         /// <summary>
         /// Search clans.
         /// </summary>
-        /// <param name="settings">The settings.</param>
         /// <param name="clanName">Name of the clan.</param>
         /// <param name="count">The count.</param>
+        /// <param name="settings">The settings.</param>
         /// <returns>Found clans</returns>
-        public List<ClanSearchJson> SearchClan(AppSettings settings, string clanName, int count)
+        public List<ClanSearchJson> SearchClan(string clanName, int count, AppSettings settings)
         {
             try
             {
-                JObject parsedData = Request<JObject>(settings, METHOD_CLAN_LIST, new Dictionary<string, object>
+                JObject parsedData = Request<JObject>(METHOD_CLAN_LIST, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, clanName},
                     {PARAM_LIMIT, count}
-                });
+                }, settings);
 
                 if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
                 {
@@ -461,18 +489,23 @@ namespace WotDossier.Dal
             return null;
         }
 
-        public Replay ReadReplay(string json)
+        /// <summary>
+        /// Loads the replay.
+        /// </summary>
+        /// <param name="replayFilePath">The replay file path.</param>
+        /// <returns></returns>
+        public Replay LoadReplay(string replayFilePath)
         {
             Replay replay;
 
-            using (StreamReader re = new StreamReader(json))
+            using (StreamReader re = new StreamReader(replayFilePath))
             {
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
                 replay = se.Deserialize<Replay>(reader);
             }
 
-            using (StreamReader re = new StreamReader(json))
+            using (StreamReader re = new StreamReader(replayFilePath))
             {
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
@@ -486,9 +519,14 @@ namespace WotDossier.Dal
             return replay;
         }
 
-        public Replay ReadReplay2Blocks(FileInfo replayFileInfo)
+        /// <summary>
+        /// Reads the replay statistic blocks.
+        /// </summary>
+        /// <param name="file">The replay file.</param>
+        /// <returns></returns>
+        public Replay ReadReplayStatisticBlocks(FileInfo file)
         {
-            string path = replayFileInfo.FullName;
+            string path = file.FullName;
             string str = string.Empty;
             string str2 = string.Empty;
             if (File.Exists(path))
@@ -549,7 +587,7 @@ namespace WotDossier.Dal
                     catch (Exception e)
                     {
                         _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e,
-                            replayFileInfo.FullName);
+                            file.FullName);
                     }
 
                     return new Replay
@@ -563,35 +601,16 @@ namespace WotDossier.Dal
             return null;
         }
 
-        public Dictionary<int, TankDescription> ReadTankNominalDamage()
-        {
-            Dictionary<int, TankDescription> dictionary = new Dictionary<int, TankDescription>();
-            using (StreamReader streamReader = new StreamReader(@"Data\TankNominalDamage.xml"))
-            {
-                XmlDocument document = new XmlDocument();
-                document.Load(streamReader);
-
-                XmlNodeList xmlNodeList = document.SelectNodes("damage/tr");
-
-                foreach (XmlNode node in xmlNodeList)
-                {
-                    XmlNodeList values = node.SelectNodes("td");
-                    if (values != null)
-                    {
-                        TankDescription description = new TankDescription();
-                        description.CountryId = WotApiHelper.GetCountryIdBy2Letters(values[2].InnerText);
-                        description.Tier = int.Parse(values[3].InnerText);
-                        description.Type = (int)Enum.Parse(typeof(TankType), values[4].InnerText);
-                        double nominalDamage = double.Parse(values[5].InnerText, CultureInfo.InvariantCulture);
-                        dictionary.Add(description.UniqueId(), description);
-                    }
-                }
-            }
-
-            return dictionary;
-        }
-
-        public T Request<T>(AppSettings settings, string method, Dictionary<string, object> parameters)
+        /// <summary>
+        /// Requests the specified method from wot api.
+        /// </summary>
+        /// <typeparam name="T">Return type</typeparam>
+        /// <param name="method">The API method.</param>
+        /// <param name="parameters">The method parameters.</param>
+        /// <param name="settings">The app settings.</param>
+        /// <returns></returns>
+        /// <exception cref="ApiRequestException">Api request exception</exception>
+        public T Request<T>(string method, Dictionary<string, object> parameters, AppSettings settings)
         {
             try
             {

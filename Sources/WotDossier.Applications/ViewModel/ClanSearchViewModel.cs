@@ -2,11 +2,10 @@
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
-using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -60,7 +59,7 @@ namespace WotDossier.Applications.ViewModel
         {
             using(new WaitCursor())
             {
-                List<ClanSearchJson> clans = WotApiClient.Instance.SearchClan(SettingsReader.Get(), SearchText, 100);
+                List<ClanSearchJson> clans = WotApiClient.Instance.SearchClan(SearchText, 100, SettingsReader.Get());
                 if (clans != null)
                 {
                     List = clans.OrderBy(x => x.abbreviation).Select(x => new SearchResultRowViewModel {Id = x.clan_id, Name = string.Format("[{0}] {1}", x.abbreviation, x.name)}).ToList();
@@ -76,7 +75,7 @@ namespace WotDossier.Applications.ViewModel
                 ClanData clan;
                 using (new WaitCursor())
                 {
-                    clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), row.Id);
+                    clan = WotApiClient.Instance.LoadClan(row.Id, SettingsReader.Get());
                 }
                 if (clan != null)
                 {

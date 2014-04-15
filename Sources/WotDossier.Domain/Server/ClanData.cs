@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace WotDossier.Domain.Player
+namespace WotDossier.Domain.Server
 {
     public class ClanData
     {

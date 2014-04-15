@@ -5,7 +5,7 @@ using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
 
@@ -96,12 +96,12 @@ namespace WotDossier.Applications.ViewModel
 
                 PlayerSearchJson player;
                 
-                player = WotApiClient.Instance.SearchPlayer(_appSettings, _appSettings.PlayerName);
+                player = WotApiClient.Instance.SearchPlayer(_appSettings.PlayerName, _appSettings);
                 
                 if (player != null)
                 {
                     _appSettings.PlayerId = player.id;
-                    double createdAt = WotApiClient.Instance.LoadPlayerStat(_appSettings, player.id, false).dataField.created_at;
+                    double createdAt = WotApiClient.Instance.LoadPlayerStat(player.id, false, _appSettings).dataField.created_at;
                     _dossierRepository.GetOrCreatePlayer(player.nickname, player.id, Utils.UnixDateToDateTime((long)createdAt));
                 }
                 else

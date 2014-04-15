@@ -216,7 +216,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
-            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
 
         [Test]
@@ -226,7 +226,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
-            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
 
         [Test]
@@ -236,7 +236,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
-            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
 
         [Test]
@@ -246,7 +246,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.8\20130908_2025_usa-M103_14_siegfried_line.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
-            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
 
         [Test]
@@ -256,7 +256,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.9\20131016_0035_ussr-Object263_37_caucasus.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
-            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
 
         [Test]
@@ -266,7 +266,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay"));
             CacheHelper.ReplayToJson(cacheFile);
-            Replay replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
         }
 
         [Test]
@@ -276,11 +276,11 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.11\20140126_2109_ussr-T-54_14_siegfried_line.wotreplay"));
 
-            Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplayStatisticBlocks(cacheFile);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
             CacheHelper.ReplayToJson(cacheFile);
-            replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
         }
@@ -293,11 +293,11 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.9.0\13954715200495_germany_PzVI_prohorovka.wotreplay"));
 
-            Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplayStatisticBlocks(cacheFile);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
             CacheHelper.ReplayToJson(cacheFile);
-            replay = WotApiClient.Instance.ReadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
         }
@@ -305,7 +305,7 @@ namespace WotDossier.Test
         public void ReplayTest()
         {
             FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
-            Replay replay = WotApiClient.Instance.ReadReplay2Blocks(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplayStatisticBlocks(cacheFile);
         }
 
         #endregion

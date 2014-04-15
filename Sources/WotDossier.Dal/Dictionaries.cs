@@ -35,16 +35,25 @@ namespace WotDossier.Dal
             get { return _tanks; }
         }
 
+        /// <summary>
+        /// Gets the tanks icons.
+        /// </summary>
         public Dictionary<string, TankIcon> Icons
         {
             get { return _icons; }
         }
 
+        /// <summary>
+        /// Gets the server tanks info.
+        /// </summary>
         public Dictionary<int, TankServerInfo> ServerTanks
         {
             get { return _serverTanks; }
         }
 
+        /// <summary>
+        /// Gets the maps.
+        /// </summary>
         public Dictionary<string, Map> Maps
         {
             get { return _maps; }
@@ -61,6 +70,9 @@ namespace WotDossier.Dal
             _maps = ReadMaps();
         }
 
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
         public static Dictionaries Instance
         {
             get
@@ -79,6 +91,11 @@ namespace WotDossier.Dal
             }
         }
 
+        /// <summary>
+        /// Gets the tank icon.
+        /// </summary>
+        /// <param name="playerVehicle">The player vehicle.</param>
+        /// <returns></returns>
         public TankIcon GetTankIcon(string playerVehicle)
         {
             string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
@@ -89,6 +106,11 @@ namespace WotDossier.Dal
             return TankIcon.Empty;
         }
 
+        /// <summary>
+        /// Gets the tank decription.
+        /// </summary>
+        /// <param name="playerVehicle">The player vehicle.</param>
+        /// <returns></returns>
         public TankDescription GetTankDecription(string playerVehicle)
         {
             string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
@@ -161,6 +183,10 @@ namespace WotDossier.Dal
             return new Dictionary<string, RatingExpectancy>();
         }
 
+        /// <summary>
+        /// Reads the maps.
+        /// </summary>
+        /// <returns></returns>
         public static Dictionary<string, Map> ReadMaps()
         {
             List<Map> maps;
@@ -178,33 +204,5 @@ namespace WotDossier.Dal
             list.ForEach(x => x.mapid = i++);
             return list.ToDictionary(x => x.mapidname, y => y);
         }
-
-        //public Dictionary<int, TankDescription> ReadTankNominalDamage()
-        //{
-        //    Dictionary<int, TankDescription> dictionary = new Dictionary<int, TankDescription>();
-        //    using (StreamReader streamReader = new StreamReader(@"Data\TankNominalDamage.xml"))
-        //    {
-        //        XmlDocument document = new XmlDocument();
-        //        document.Load(streamReader);
-
-        //        XmlNodeList xmlNodeList = document.SelectNodes("damage/tr");
-
-        //        foreach (XmlNode node in xmlNodeList)
-        //        {
-        //            XmlNodeList values = node.SelectNodes("td");
-        //            if (values != null)
-        //            {
-        //                TankDescription description = new TankDescription();
-        //                description.CountryId = WotApiHelper.GetCountryIdBy2Letters(values[2].InnerText);
-        //                description.Tier = int.Parse(values[3].InnerText);
-        //                description.Type = (int)Enum.Parse(typeof(TankType), values[4].InnerText);
-        //                double nominalDamage = double.Parse(values[5].InnerText, CultureInfo.InvariantCulture);
-        //                dictionary.Add(description.UniqueId(), description);
-        //            }
-        //        }
-        //    }
-
-        //    return dictionary;
-        //}
     }
 }

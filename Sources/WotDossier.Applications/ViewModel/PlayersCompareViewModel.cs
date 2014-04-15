@@ -4,7 +4,7 @@ using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -74,8 +74,8 @@ namespace WotDossier.Applications.ViewModel
             {
                 if (!string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(SecondName))
                 {
-                    PlayerSearchJson first = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), FirstName);
-                    PlayerSearchJson second = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), SecondName);
+                    PlayerSearchJson first = WotApiClient.Instance.SearchPlayer(FirstName, SettingsReader.Get());
+                    PlayerSearchJson second = WotApiClient.Instance.SearchPlayer(SecondName, SettingsReader.Get());
 
                     if (first == null)
                     {
@@ -89,15 +89,15 @@ namespace WotDossier.Applications.ViewModel
                         return;
                     }
 
-                    PlayerStat stat1 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), first.id);
-                    PlayerStat stat2 = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), second.id);
+                    Player stat1 = WotApiClient.Instance.LoadPlayerStat(first.id, SettingsReader.Get());
+                    Player stat2 = WotApiClient.Instance.LoadPlayerStat(second.id, SettingsReader.Get());
 
                     CompareStatistic = new CompareStatisticViewModelBase<PlayerStatisticViewModel>(GetPlayerViewModel(stat1), GetPlayerViewModel(stat2));
                 }
             }
         }
 
-        private StatisticViewModelBase GetPlayerViewModel(PlayerStat stat)
+        private StatisticViewModelBase GetPlayerViewModel(Player stat)
         {
             PlayerStatisticEntity entity = new PlayerStatisticEntity();
             new PlayerStatAdapter(stat).Update(entity);

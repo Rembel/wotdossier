@@ -37,7 +37,7 @@ namespace WotDossier.Applications.Update
             AppSettings appSettings = SettingsReader.Get();
             if (appSettings.PlayerName != null && appSettings.PlayerId == 0)
             {
-                var player = WotApiClient.Instance.SearchPlayer(appSettings, appSettings.PlayerName);
+                var player = WotApiClient.Instance.SearchPlayer(appSettings.PlayerName, appSettings);
                 if (player != null)
                 {
                     appSettings.PlayerId = player.id;

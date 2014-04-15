@@ -1,6 +1,6 @@
 ﻿using System;
 using WotDossier.Common;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 
 namespace WotDossier.Applications.Model
 {

@@ -115,6 +115,7 @@
     <Compile Include="Applications\ViewExtensions.cs" />
     <Compile Include="Applications\ViewModel.cs" />
     <Compile Include="Applications\ViewModel.Generic.cs" />
+    <Compile Include="CallbackDataSource.cs" />
     <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />

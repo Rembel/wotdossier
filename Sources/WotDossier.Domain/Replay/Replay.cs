@@ -2,9 +2,9 @@
 
 namespace WotDossier.Domain.Replay
 {
-    /*
-http://wiki.vbaddict.net
-    */
+    /// <summary>
+    /// http://wiki.vbaddict.net
+    /// </summary>
     [DataContract]
     public class Replay
     {

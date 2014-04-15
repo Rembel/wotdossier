@@ -666,24 +666,24 @@ namespace WotDossier.Test
             foreach (XmlNode node in nodes)
             {
                 XmlNodeList values = node.SelectNodes("td");
-                XmlNode nominal_damage = values[5];
-                XmlNode wn8_nominal_damage = values[6];
-                XmlNode wn8_nominal_win_rate = values[7];
-                XmlNode wn8_nominal_spotted = values[8];
-                XmlNode wn8_nominal_frags = values[9];
-                XmlNode wn8_nominal_defence = values[10];
+                XmlNode nominalDamage = values[5];
+                XmlNode wn8NominalDamage = values[6];
+                XmlNode wn8NominalWinRate = values[7];
+                XmlNode wn8NominalSpotted = values[8];
+                XmlNode wn8NominalFrags = values[9];
+                XmlNode wn8NominalDefence = values[10];
                 XmlNode href = values[1].SelectSingleNode("a/@href");
                 XmlNode title = values[1].SelectSingleNode("a");
 
                 RatingExpectancy ratingExpectancy = new RatingExpectancy();
-                ratingExpectancy.PRNominalDamage = double.Parse(nominal_damage.InnerText.Replace(",", ""));
-                if (!string.IsNullOrEmpty(wn8_nominal_damage.InnerText))
+                ratingExpectancy.PRNominalDamage = double.Parse(nominalDamage.InnerText.Replace(",", ""));
+                if (!string.IsNullOrEmpty(wn8NominalDamage.InnerText))
                 {
-                    ratingExpectancy.Wn8NominalDamage = double.Parse(wn8_nominal_damage.InnerText.Replace(",", ""));
-                    ratingExpectancy.Wn8NominalWinRate = double.Parse(wn8_nominal_win_rate.InnerText.Replace("%", ""));
-                    ratingExpectancy.Wn8NominalSpotted = double.Parse(wn8_nominal_spotted.InnerText.Replace(".", ","));
-                    ratingExpectancy.Wn8NominalFrags = double.Parse(wn8_nominal_frags.InnerText.Replace(".", ","));
-                    ratingExpectancy.Wn8NominalDefence = double.Parse(wn8_nominal_defence.InnerText.Replace(".", ","));
+                    ratingExpectancy.Wn8NominalDamage = double.Parse(wn8NominalDamage.InnerText.Replace(",", ""));
+                    ratingExpectancy.Wn8NominalWinRate = double.Parse(wn8NominalWinRate.InnerText.Replace("%", ""));
+                    ratingExpectancy.Wn8NominalSpotted = double.Parse(wn8NominalSpotted.InnerText.Replace(".", ","));
+                    ratingExpectancy.Wn8NominalFrags = double.Parse(wn8NominalFrags.InnerText.Replace(".", ","));
+                    ratingExpectancy.Wn8NominalDefence = double.Parse(wn8NominalDefence.InnerText.Replace(".", ","));
                 }
                 ratingExpectancy.Icon = href.InnerText.Replace("/tank/eu/", "");
                 ratingExpectancy.TankTitle = title.InnerText.Trim();

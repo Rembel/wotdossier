@@ -78,28 +78,11 @@
     <Compile Include="Map.cs" />
     <Compile Include="Medal.cs" />
     <Compile Include="PeriodSettings.cs" />
-    <Compile Include="Player\ClanData.cs" />
-    <Compile Include="Player\ClanEmblems.cs" />
-    <Compile Include="Player\Clan.cs" />
     <Compile Include="Common\CommonStatGroup.cs" />
     <Compile Include="Common\CommonStatRow.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\PlayerEntity.cs" />
     <Compile Include="Entities\PlayerStatisticEntity.cs" />
-    <Compile Include="Player\Achievements.cs" />
-    <Compile Include="Player\Battles.cs" />
-    <Compile Include="Player\ClanMember.cs" />
-    <Compile Include="Player\ClanSearch.cs" />
-    <Compile Include="Player\Experience.cs" />
-    <Compile Include="Player\PlayerSearch.cs" />
-    <Compile Include="Player\PlayerStat.cs" />
-    <Compile Include="Player\PlayerStatData.cs" />
-    <Compile Include="Player\Rating.cs" />
-    <Compile Include="Player\Ratings.cs" />
-    <Compile Include="Player\StatisticPart.cs" />
-    <Compile Include="Player\Statistics.cs" />
-    <Compile Include="Player\Summary.cs" />
-    <Compile Include="Player\Vehicle.cs" />
     <Compile Include="Replay\BattleResult.cs" />
     <Compile Include="Replay\Common.cs" />
     <Compile Include="Replay\CrewMember.cs" />
@@ -116,6 +99,21 @@
     <Compile Include="Replay\ReplayIdentify.cs" />
     <Compile Include="Replay\Vehicle.cs" />
     <Compile Include="Replay\VehicleResult.cs" />
+    <Compile Include="Server\Achievements.cs" />
+    <Compile Include="Server\Clan.cs" />
+    <Compile Include="Server\ClanData.cs" />
+    <Compile Include="Server\ClanEmblems.cs" />
+    <Compile Include="Server\ClanMember.cs" />
+    <Compile Include="Server\ClanSearch.cs" />
+    <Compile Include="Server\Player.cs" />
+    <Compile Include="Server\PlayerData.cs" />
+    <Compile Include="Server\PlayerSearch.cs" />
+    <Compile Include="Server\Rating.cs" />
+    <Compile Include="Server\Ratings.cs" />
+    <Compile Include="Server\StatisticPart.cs" />
+    <Compile Include="Server\Statistics.cs" />
+    <Compile Include="Server\Vehicle.cs" />
+    <Compile Include="Server\VehicleMarkOfMastery.cs" />
     <Compile Include="StatisticPeriod.cs" />
     <Compile Include="TankFilterSettings.cs" />
     <Compile Include="TankType.cs" />
@@ -155,9 +153,7 @@
       <Name>WotDossier.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Server\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

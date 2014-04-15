@@ -48,7 +48,7 @@ namespace WotDossier.Applications.Update
                 if (entity.Version < 65)
                 {
                     TankJson29 tankV29 = WotApiHelper.UnZipObject<TankJson29>(entity.Raw);
-                    TankJson tank = TankJsonV2Converter.Convert(tankV29);
+                    TankJson tank = DataMapper.Map(tankV29);
 
                     byte[] zip = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
                     

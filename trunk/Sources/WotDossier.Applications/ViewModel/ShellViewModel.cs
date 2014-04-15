@@ -20,7 +20,7 @@ using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Interfaces;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
@@ -308,7 +308,7 @@ namespace WotDossier.Applications.ViewModel
             ClanData clan;
             using (new WaitCursor())
             {
-                clan = WotApiClient.Instance.LoadClan(SettingsReader.Get(), PlayerStatistic.Clan.Id);
+                clan = WotApiClient.Instance.LoadClan(PlayerStatistic.Clan.Id, SettingsReader.Get());
             }
             if (clan != null)
             {
@@ -537,20 +537,20 @@ namespace WotDossier.Applications.ViewModel
 
         private ServerStatWrapper LoadPlayerServerStatistic(AppSettings settings)
         {
-            PlayerStat playerStat = null;
+            Player player = null;
             try
             {
                 int playerId = settings.PlayerId;
                 if (!string.IsNullOrEmpty(settings.PlayerName))
                 {
-                    playerStat = WotApiClient.Instance.LoadPlayerStat(settings, playerId, false);
+                    player = WotApiClient.Instance.LoadPlayerStat(playerId, false, settings);
                 }
             }
             catch (Exception e)
             {
                 _log.Error(e);
             }
-            return new ServerStatWrapper(playerStat);
+            return new ServerStatWrapper(player);
         }
 
         #endregion

@@ -4,7 +4,7 @@ using System.Linq;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -58,7 +58,7 @@ namespace WotDossier.Applications.ViewModel
         {
             using (new WaitCursor())
             {
-                List<PlayerSearchJson> player = WotApiClient.Instance.SearchPlayer(SettingsReader.Get(), SearchText, 10);
+                List<PlayerSearchJson> player = WotApiClient.Instance.SearchPlayer(SearchText, 10, SettingsReader.Get());
                 if (player != null)
                 {
                     List = player.Select(x => new SearchResultRowViewModel {Id = x.id, Name = x.nickname}).ToList();
@@ -71,15 +71,15 @@ namespace WotDossier.Applications.ViewModel
             SearchResultRowViewModel row = item as SearchResultRowViewModel;
             if (row != null)
             {
-                PlayerStat playerStat;
+                Player player;
                 using (new WaitCursor())
                 {
-                    playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), row.Id, true);
+                    player = WotApiClient.Instance.LoadPlayerStat(row.Id, true, SettingsReader.Get());
                 }
-                if (playerStat != null)
+                if (player != null)
                 {
                     PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.GetExport<PlayerServerStatisticViewModel>();
-                    viewModel.Init(playerStat);
+                    viewModel.Init(player);
                     viewModel.Show();
                 }
             }

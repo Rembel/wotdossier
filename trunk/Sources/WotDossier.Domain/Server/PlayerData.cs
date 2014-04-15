@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace WotDossier.Domain.Player
+namespace WotDossier.Domain.Server
 {
-    public class PlayerStatData
+    public class PlayerData
     {
         public int account_id { get; set; }
         public string nickname { get; set; }
@@ -13,7 +13,7 @@ namespace WotDossier.Domain.Player
         public double global_rating { get; set; }
         public Achievements achievements { get; set; }
         public Ratings ratings { get; set; }
-        public List<VehicleStat> vehicles { get; set; }
+        public List<Vehicle> vehicles { get; set; }
         public Clan clan { get; set; }
         public ClanData clanData { get; set; }
         public Statistics statistics { get; set; }

@@ -1,27 +1,27 @@
-﻿using WotDossier.Domain.Player;
+﻿using WotDossier.Domain.Server;
 
 namespace WotDossier.Applications.Logic
 {
     public class ServerStatWrapper
     {
-        private readonly PlayerStat _playerStat;
+        private readonly Player _player;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public ServerStatWrapper(PlayerStat playerStat)
+        public ServerStatWrapper(Player player)
         {
-            _playerStat = playerStat;
+            _player = player;
 
-            if (playerStat != null && playerStat.data != null)
+            if (player != null && player.data != null)
             {
-                Clan = playerStat.dataField.clanData;
-                if (playerStat.dataField.clan != null)
+                Clan = player.dataField.clanData;
+                if (player.dataField.clan != null)
                 {
-                    Role = playerStat.dataField.clan.role;
-                    Since = playerStat.dataField.clan.since;
+                    Role = player.dataField.clan.role;
+                    Since = player.dataField.clan.since;
                 }
-                Ratings = playerStat.dataField.ratings;
+                Ratings = player.dataField.ratings;
             }
         }
 

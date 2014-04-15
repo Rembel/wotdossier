@@ -3,7 +3,7 @@ using Common.Logging;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
-using WotDossier.Domain.Player;
+using WotDossier.Domain.Server;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
@@ -35,15 +35,15 @@ namespace WotDossier.Applications.ViewModel
             ClanMemberModel member = item as ClanMemberModel;
             if (member != null)
             {
-                PlayerStat playerStat;
+                Player player;
                 using (new WaitCursor())
                 {
-                    playerStat = WotApiClient.Instance.LoadPlayerStat(SettingsReader.Get(), member.Id);
+                    player = WotApiClient.Instance.LoadPlayerStat(member.Id, SettingsReader.Get());
                 }
-                if (playerStat != null)
+                if (player != null)
                 {
                     PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.GetExport<PlayerServerStatisticViewModel>();
-                    viewModel.Init(playerStat);
+                    viewModel.Init(player);
                     viewModel.Show();
                 }
             }

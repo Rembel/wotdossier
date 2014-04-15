@@ -1,4 +1,4 @@
-﻿namespace WotDossier.Domain.Player
+﻿namespace WotDossier.Domain.Server
 {
     public class Ratings
     {

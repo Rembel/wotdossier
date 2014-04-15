@@ -177,11 +177,8 @@ namespace WotDossier.Dal
                         }).ToList();
                 return true;
             }
-            else
-            {
-                _log.WarnFormat("Found unknown tank:\n", JsonConvert.SerializeObject(tank));
-                return false;
-            }
+            _log.WarnFormat("Found unknown tank:\n", JsonConvert.SerializeObject(tank));
+            return false;
         }
 
         /// <summary>
@@ -294,7 +291,7 @@ namespace WotDossier.Dal
 
                 if (parsedData["data"].Any())
                 {
-                    List<Vehicle> tanks = parsedData["data"][playerId.ToString()].ToObject<List<Vehicle>>();
+                    List<Vehicle> tanks = parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<Vehicle>>();
                     foreach (Vehicle tank in tanks)
                     {
                         if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))

@@ -35,18 +35,5 @@ namespace WotDossier.Applications.Logic
             ReplayFolder folder = XmlSerializer.LoadObjectFromXml<ReplayFolder>(tree);
             return folder;
         }
-
-        public void Move(ReplayFile replayFile, ReplayFolder targetFolder)
-        {
-            string destFileName = Path.Combine(targetFolder.Path, replayFile.FileInfo.Name);
-            if (!File.Exists(destFileName))
-            {
-                replayFile.FileInfo.MoveTo(destFileName);
-            }
-            else
-            {
-                replayFile.FileInfo.Delete();
-            }
-        }
     }
 }

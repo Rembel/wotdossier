@@ -27,6 +27,22 @@ namespace WotDossier.Framework.Presentation.Services
         }
 
         /// <summary>
+        /// Gets the full product name of the application.
+        /// </summary>
+        public static Uri DownloadUri
+        {
+            get { return new Uri("http://res-mods.ru/mod/4137-wotdossier"); }
+        }
+
+        /// <summary>
+        /// Gets the full product name of the application.
+        /// </summary>
+        public static Uri ForumUri
+        {
+            get { return new Uri("http://forum.worldoftanks.ru/index.php?/topic/890389-wotdossier/"); }
+        }
+
+        /// <summary>
         /// Gets the product name of the application.
         /// </summary>
         public static string ProductName

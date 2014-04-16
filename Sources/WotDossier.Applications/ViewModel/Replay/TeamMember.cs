@@ -25,7 +25,6 @@ namespace WotDossier.Applications.ViewModel.Replay
             FullName = string.Format("{0}{1}", Name, GetClanAbbrev(ClanAbbrev));
             VehicleType = vehicle.Value.vehicleType;
             Team = vehicle.Value.team;
-            IsTeamKiller = vehicle.Value.isTeamKiller;
             IsAlive = vehicle.Value.isAlive;
 
             ClanDBID = player.Value.clanDBID;

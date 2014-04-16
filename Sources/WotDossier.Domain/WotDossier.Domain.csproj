@@ -64,6 +64,9 @@
     <Compile Include="Dossier\TankV65\Achievements7x7_65.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
+    <Compile Include="Entities\TankStatisticEntity.cs" />
+    <Compile Include="Entities\TankTeamBattleStatisticEntity.cs" />
+    <Compile Include="Entities\TankHistoricalBattleStatisticEntity.cs" />
     <Compile Include="Entities\HistoricalBattlesAchievementsEntity.cs" />
     <Compile Include="Entities\HistoricalBattlesStatisticEntity.cs" />
     <Compile Include="Entities\StatisticEntity.cs" />
@@ -73,7 +76,7 @@
     <Compile Include="Entities\PlayerAchievementsEntity.cs" />
     <Compile Include="Entities\ReplayEntity.cs" />
     <Compile Include="Entities\TankEntity.cs" />
-    <Compile Include="Entities\TankStatisticEntity.cs" />
+    <Compile Include="Entities\TankStatisticEntityBase.cs" />
     <Compile Include="Interfaces\ITankRowBase.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Medal.cs" />

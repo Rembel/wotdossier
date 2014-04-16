@@ -1722,4 +1722,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Common_Rating_Personal" xml:space="preserve">
     <value>Personal Rating</value>
   </data>
+  <data name="Hyperlink_Download_Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Hyperlink_Forum_Text" xml:space="preserve">
+    <value>Forum</value>
+  </data>
 </root>

@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows;
+using Common.Logging;
+using Ookii.Dialogs.Wpf;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -15,6 +19,8 @@ namespace WotDossier.Applications.ViewModel.Replay
 {
     public class ReplayFile : INotifyPropertyChanged
     {
+        private static readonly ILog _log = LogManager.GetLogger("ReplayFile");
+
         public static readonly string PropDamageDealt = TypeHelper<ReplayFile>.PropertyName(v => v.DamageDealt);
         public static readonly string PropDamaged = TypeHelper<ReplayFile>.PropertyName(v => v.Damaged);
         public static readonly string PropCredits = TypeHelper<ReplayFile>.PropertyName(v => v.Credits);
@@ -43,7 +49,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int Credits { get; set; }
         public int Team { get; set; }
         
-        public FileInfo FileInfo { get; set; }
+        public FileInfo PhisicalFile { get; set; }
         public TankDescription Tank { get; set; }
         public TankIcon Icon { get; set; }
         public List<Medal> Medals { get; set; }
@@ -57,6 +63,21 @@ namespace WotDossier.Applications.ViewModel.Replay
                 _link = value;
                 OnPropertyChanged("Link");
             }
+        }
+
+        public bool Exists 
+        {
+            get { return PhisicalFile.Exists; } 
+        }
+
+        public string PhisicalPath
+        {
+            get { return PhisicalFile != null ? PhisicalFile.FullName : null; }
+        }
+
+        public string Name
+        {
+            get { return PhisicalFile != null ? PhisicalFile.Name : null; }
         }
 
         public ReplayFile(FileInfo replayFileInfo, Domain.Replay.Replay replay, Guid folderId)
@@ -84,7 +105,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
-                FileInfo = replayFileInfo;
+                PhisicalFile = replayFileInfo;
                 PlayerId = replay.datablock_1.playerID;
                 Icon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
 
@@ -142,6 +163,93 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void Move(ReplayFolder targetFolder)
+        {
+            if (PhisicalFile != null)
+            {
+                string destFileName = Path.Combine(targetFolder.Path, PhisicalFile.Name);
+                if (!File.Exists(destFileName))
+                {
+                    PhisicalFile.MoveTo(destFileName);
+                }
+                else
+                {
+                    PhisicalFile.Delete();
+                }
+            }
+        }
+
+        public void Play()
+        {
+            if (PhisicalFile != null && File.Exists(PhisicalFile.FullName))
+            {
+                AppSettings appSettings = SettingsReader.Get();
+                string path = appSettings.PathToWotExe;
+                if (string.IsNullOrEmpty(path) || !File.Exists(path))
+                {
+                    VistaOpenFileDialog dialog = new VistaOpenFileDialog();
+                    dialog.CheckFileExists = true;
+                    dialog.CheckPathExists = true;
+                    dialog.DefaultExt = ".exe"; // Default file extension
+                    dialog.Filter = "WorldOfTanks (.exe)|*.exe"; // Filter files by extension 
+                    dialog.Multiselect = false;
+                    dialog.Title = Resources.Resources.WindowCaption_SelectPathToWorldOfTanksExecutable;
+                    bool? showDialog = dialog.ShowDialog();
+                    if (showDialog == true)
+                    {
+                        path = appSettings.PathToWotExe = dialog.FileName;
+                        SettingsReader.Save(appSettings);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                {
+                    try
+                    {
+                        Process proc = new Process();
+                        proc.EnableRaisingEvents = false;
+                        proc.StartInfo.CreateNoWindow = true;
+                        proc.StartInfo.UseShellExecute = false;
+                        proc.StartInfo.FileName = path;
+                        proc.StartInfo.Arguments = string.Format("\"{0}\"", PhisicalFile.FullName);
+                        proc.Start();
+                    }
+                    catch (Exception e)
+                    {
+                        _log.ErrorFormat("Error on play replay ({0} {1})", e, path, PhisicalFile.FullName);
+                        MessageBox.Show(Resources.Resources.Msg_ErrorOnPlayReplay, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+        }
+
+        public Domain.Replay.Replay ReplayData()
+        {
+            if (PhisicalFile != null)
+            {
+                string jsonFile = PhisicalFile.FullName.Replace(PhisicalFile.Extension, ".json");
+                //convert dossier cache file to json
+                if (!File.Exists(jsonFile))
+                {
+                    CacheHelper.ReplayToJson(PhisicalFile);
+                }
+
+                if (!File.Exists(jsonFile))
+                {
+                    MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read,
+                        Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                return WotApiClient.Instance.LoadReplay(jsonFile);
+            }
+            return null;
+        }
+
+        public void Delete()
+        {
+            PhisicalFile.Delete();
         }
     }
 }

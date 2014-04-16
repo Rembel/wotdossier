@@ -515,6 +515,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitTanksStatistic(List<TankJson> tanks)
         {
+            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode);
+
             AppSettings settings = SettingsReader.Get();
             PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerId, tanks);
 
@@ -525,8 +527,6 @@ namespace WotDossier.Applications.ViewModel
             }
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
-
-            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode);
 
             Tanks = strategy.ToTankStatisticRow(entities);
 

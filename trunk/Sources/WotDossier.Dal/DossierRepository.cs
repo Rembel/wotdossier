@@ -253,7 +253,102 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        private void Update(TankStatisticEntity statisticEntity, TankJson tank)
+        /*public PlayerEntity UpdateTankStatistic<T>(int playerId, List<TankJson> tanks) where T : TankStatisticEntityBase, new ()
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+
+            PlayerEntity playerEntity = GetPlayerInternal(playerId);
+
+            try
+            {
+                IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
+
+                DateTime updated = tanks.Max(x => x.Common.lastBattleTimeR);
+
+                foreach (TankJson tank in tanks)
+                {
+                    int tankId = tank.Common.tankid;
+                    int countryId = tank.Common.countryid;
+
+                    TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tankId && x.CountryId == countryId);
+                    if (tankEntity == null)
+                    {
+                        tankEntity = new TankEntity();
+                        tankEntity.CountryId = countryId;
+                        tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(countryId);
+                        tankEntity.TankId = tankId;
+                        tankEntity.Icon = tank.Description.Icon.IconId;
+                        tankEntity.PlayerId = playerEntity.Id;
+                        tankEntity.IsPremium = tank.Common.premium == 1;
+                        tankEntity.Name = tank.Common.tanktitle;
+                        tankEntity.TankType = tank.Common.type;
+                        tankEntity.Tier = tank.Common.tier;
+                        T statisticEntity = new T();
+                        statisticEntity.TankIdObject = tankEntity;
+                        Update(statisticEntity, tank);
+                        tankEntity.TankStatisticEntities.Add(statisticEntity);
+                        _dataProvider.Save(tankEntity);
+                    }
+                    else
+                    {
+                        TankEntity tankAlias = null;
+                        T statisticEntity = _dataProvider.QueryOver<T>()
+                            .JoinAlias(x => x.TankIdObject, () => tankAlias)
+                            .Where(x =>
+                                tankAlias.PlayerId == playerEntity.Id
+                                && tankAlias.TankId == tankId
+                                && tankAlias.CountryId == countryId)
+                            .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<T>();
+
+                        int currentSnapshotBattlesCount = 0;
+
+                        if (statisticEntity != null)
+                        {
+                            TankJson currentSnapshot = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
+                            currentSnapshotBattlesCount = currentSnapshot.A15x15.battlesCount;
+                        }
+                        else
+                        {
+                            statisticEntity = new T();
+                            statisticEntity.TankIdObject = tankEntity;
+                        }
+
+                        if (currentSnapshotBattlesCount < tank.A15x15.battlesCount || (currentSnapshotBattlesCount == tank.A15x15.battlesCount && tank.Common.basedonversion == 26))
+                        {
+                            //create new record
+                            if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated, updated))
+                            {
+                                statisticEntity = new T();
+                                statisticEntity.TankIdObject = tankEntity;
+                            }
+
+                            statisticEntity.Updated = updated;
+                            Update(statisticEntity, tank);
+                            _dataProvider.Save(statisticEntity);
+                        }
+                    }
+                }
+
+                _dataProvider.CommitTransaction();
+
+                return playerEntity;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.ClearCache();
+                _dataProvider.CloseSession();
+            }
+
+            return playerEntity;
+        }
+        */
+        private void Update(TankStatisticEntityBase statisticEntity, TankJson tank)
         {
             statisticEntity.Updated = tank.Common.lastBattleTimeR;
             statisticEntity.Version = tank.Common.basedonversion;

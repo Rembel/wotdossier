@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -94,7 +93,7 @@ namespace WotDossier.Applications.ViewModel
             ReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
             ReplayRowsZipCommand = new DelegateCommand<object>(OnReplayRowsZip);
             CopyLinkToClipboardCommand = new DelegateCommand<object>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
-            PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlayReplay);
+            PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlay);
 
             AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
             ZipFolderCommand = new DelegateCommand<ReplayFolder>(OnZipFolder);
@@ -110,6 +109,11 @@ namespace WotDossier.Applications.ViewModel
             ChartView = playerChartsViewModel;
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
+        }
+
+        private void OnPlay(ReplayFile replayFile)
+        {
+            replayFile.Play();
         }
 
         /// <summary>
@@ -129,53 +133,9 @@ namespace WotDossier.Applications.ViewModel
         {
             if (ReplayFilter.SelectedFolder != eventArgs.TargetFolder)
             {
-                ReplaysManager.Move(eventArgs.ReplayFile, eventArgs.TargetFolder);
+                eventArgs.ReplayFile.Move(eventArgs.TargetFolder);
                 eventArgs.ReplayFile.FolderId = eventArgs.TargetFolder.Id;
                 OnPropertyChanged("Replays");
-            }
-        }
-
-        private void OnPlayReplay(ReplayFile replay)
-        {
-            if (replay != null && File.Exists(replay.FileInfo.FullName))
-            {
-                AppSettings appSettings = SettingsReader.Get();
-                string path = appSettings.PathToWotExe;
-                if (string.IsNullOrEmpty(path) || !File.Exists(path))
-                {
-                    VistaOpenFileDialog dialog = new VistaOpenFileDialog();
-                    dialog.CheckFileExists = true;
-                    dialog.CheckPathExists = true;
-                    dialog.DefaultExt = ".exe"; // Default file extension
-                    dialog.Filter = "WorldOfTanks (.exe)|*.exe"; // Filter files by extension 
-                    dialog.Multiselect = false;
-                    dialog.Title = Resources.Resources.WindowCaption_SelectPathToWorldOfTanksExecutable;
-                    bool? showDialog = dialog.ShowDialog();
-                    if (showDialog == true)
-                    {
-                        path = appSettings.PathToWotExe = dialog.FileName;
-                        SettingsReader.Save(appSettings);
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(path) && File.Exists(path))
-                {
-                    try
-                    {
-                        Process proc = new Process();
-                        proc.EnableRaisingEvents = false;
-                        proc.StartInfo.CreateNoWindow = true;
-                        proc.StartInfo.UseShellExecute = false;
-                        proc.StartInfo.FileName = path;
-                        proc.StartInfo.Arguments = string.Format("\"{0}\"", replay.FileInfo.FullName);
-                        proc.Start();
-                    }
-                    catch (Exception e)
-                    {
-                        _log.ErrorFormat("Error on play replay ({0} {1})", e, path, replay.FileInfo.FullName);
-                        MessageBox.Show(Resources.Resources.Msg_ErrorOnPlayReplay, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                }
             }
         }
 
@@ -254,7 +214,11 @@ namespace WotDossier.Applications.ViewModel
                     // add this map file into the "images" directory in the zip archive
                     foreach (ReplayFile replayFile in replays)
                     {
-                        zip.AddFile(replayFile.FileInfo.FullName, @"\" + name);
+                        string phisicalPath = replayFile.PhisicalPath;
+                        if (!string.IsNullOrEmpty(phisicalPath))
+                        {
+                            zip.AddFile(phisicalPath, @"\" + name);
+                        }
                     }
 
                     VistaSaveFileDialog dialog = new VistaSaveFileDialog();
@@ -357,19 +321,8 @@ namespace WotDossier.Applications.ViewModel
 
             if (replayFile != null)
             {
-                string jsonFile = replayFile.FileInfo.FullName.Replace(replayFile.FileInfo.Extension, ".json");
-                //convert dossier cache file to json
-                if (!File.Exists(jsonFile))
-                {
-                    CacheHelper.ReplayToJson(replayFile.FileInfo);
-                }
+                Domain.Replay.Replay replay = replayFile.ReplayData();
 
-                if (!File.Exists(jsonFile))
-                {
-                    MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-                Domain.Replay.Replay replay = WotApiClient.Instance.LoadReplay(jsonFile);
                 if (replay != null && replay.datablock_battle_result != null)
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewModel>();
@@ -385,24 +338,22 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnReplayRowDelete(ReplayFile replayFile)
         {
-            if (replayFile != null)
+            if (replayFile != null && replayFile.Exists)
             {
-                if (replayFile.FileInfo.Exists)
+                try
                 {
-                    try
-                    {
 #if !DEBUG
-                        replayFile.FileInfo.Delete();
+                    replayFile.Delete();
 #endif
-                        _replays.Remove(replayFile);
-                        OnPropertyChanged("Replays");
-                    }
-                    catch (Exception e)
-                    {
-                        _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.FileInfo.Name);
-                        MessageBox.Show(string.Format(Resources.Resources.ErrorMsg_ErrorOnFileDeletion, replayFile.FileInfo.Name),
-                            Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    _replays.Remove(replayFile);
+                    OnPropertyChanged("Replays");
+                }
+                catch (Exception e)
+                {
+                    _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.Name);
+                    MessageBox.Show(
+                        string.Format(Resources.Resources.ErrorMsg_ErrorOnFileDeletion, replayFile.Name),
+                        Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -424,13 +375,13 @@ namespace WotDossier.Applications.ViewModel
                 try
                 {
 #if !DEBUG
-                    replayFile.FileInfo.Delete();
+                    replayFile.Delete();
 #endif
                     _replays.Remove(replayFile);
                 }
                 catch (Exception e)
                 {
-                    _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.FileInfo.Name);
+                    _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.Name);
                     error = true;
                 }
             }
@@ -447,7 +398,7 @@ namespace WotDossier.Applications.ViewModel
         private bool CanUploadReplay(object row)
         {
             ReplayFile model = row as ReplayFile;
-            return model != null && string.IsNullOrEmpty(model.Link);
+            return model != null && model.PhisicalFile != null && string.IsNullOrEmpty(model.Link);
         }
 
         private bool CanUploadReplays(object rows)
@@ -479,11 +430,15 @@ namespace WotDossier.Applications.ViewModel
 
                 foreach (var replay in replays)
                 {
-                    WotReplaysSiteResponse response = replayUploader.Upload(replay.FileInfo, appSettings.PlayerId, appSettings.PlayerName);
-                    if (response != null && response.Result == true)
+                    if (replay.PhisicalFile != null)
                     {
-                        replay.Link = response.Url;
-                        DossierRepository.SaveReplay(replay.PlayerId, replay.ReplayId, replay.Link);
+                        WotReplaysSiteResponse response = replayUploader.Upload(replay.PhisicalFile,
+                            appSettings.PlayerId, appSettings.PlayerName);
+                        if (response != null && response.Result == true)
+                        {
+                            replay.Link = response.Url;
+                            DossierRepository.SaveReplay(replay.PlayerId, replay.ReplayId, replay.Link);
+                        }
                     }
                 }
             }

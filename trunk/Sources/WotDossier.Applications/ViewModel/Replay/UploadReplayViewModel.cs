@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Security.Authentication;
 using System.Windows;
-using System.Windows.Input;
 using Common.Logging;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.View;
@@ -56,7 +55,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     try
                     {
                         ReplayUploader replayUploader = new ReplayUploader();
-                        ReplayFile.Link = replayUploader.Upload(ReplayFile.FileInfo, ReplayName, ReplayDescription,
+                        ReplayFile.Link = replayUploader.Upload(ReplayFile.PhisicalFile, ReplayName, ReplayDescription,
                             string.Format(appSettings.ReplaysUploadServerPath, appSettings.Server, appSettings.PlayerId, appSettings.PlayerName));
                         _repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);
                         ViewTyped.Close();

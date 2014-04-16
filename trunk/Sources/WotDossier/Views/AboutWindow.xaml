@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
-        Title="{x:Static Resources:Resources.WindowTitle_AboutWindow}" Height="155" Width="450" 
+        Title="{x:Static Resources:Resources.WindowTitle_AboutWindow}" Height="195" Width="450" 
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource applicationBackgroundBrush}" 
         Foreground="{StaticResource DefaultForeground}" FontFamily="{StaticResource DefaultFontFamily}" FontSize="{StaticResource DefaultFontSize}" WindowStyle="None">
     <Grid>
@@ -15,16 +15,28 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
+        <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Right" Width="Auto" Source="..\Resources\Images\app_icon.ico"></Image>
         <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textName" Text="{x:Static services:ApplicationInfo.ProductName}" />
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="12,12,0,0" Orientation="Horizontal">
             <TextBlock Name="textVersion" Text="{x:Static Resources:Resources.Version}"/>
             <TextBlock  Margin="6,0,0,0" Name="Version" Text="{x:Static services:ApplicationInfo.Version}" />
         </StackPanel>
-        <TextBlock Grid.Row="2" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textCopyright" Text="{x:Static services:ApplicationInfo.Copyright}" />
-        <Image Grid.RowSpan="3" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Right" Width="Auto" Source="..\Resources\Images\app_icon.ico"></Image>
-        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+        <TextBlock Margin="12,12,0,0" Grid.Row="2" HorizontalAlignment="Left">
+            <Hyperlink NavigateUri="{x:Static services:ApplicationInfo.DownloadUri}" Click="Hyperlink_OnClick">
+                <TextBlock Text="{x:Static Resources:Resources.Hyperlink_Download_Text}"></TextBlock>
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="12,12,0,0" Grid.Row="3" HorizontalAlignment="Left">
+            <Hyperlink NavigateUri="{x:Static services:ApplicationInfo.ForumUri}" Click="Hyperlink_OnClick">
+                <TextBlock Text="{x:Static Resources:Resources.Hyperlink_Forum_Text}"></TextBlock>
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="4" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textCopyright" Text="{x:Static services:ApplicationInfo.Copyright}" />
+        <Grid Grid.Row="5" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>

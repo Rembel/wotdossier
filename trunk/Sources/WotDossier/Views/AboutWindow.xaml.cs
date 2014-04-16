@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using System.Windows.Documents;
 using WotDossier.Applications.Update;
 using WotDossier.Framework;
 
@@ -25,6 +26,15 @@ namespace WotDossier.Views
             using (new WaitCursor())
             {
                 UpdateChecker.CheckNewVersionAvailable();
+            }
+        }
+
+        private void Hyperlink_OnClick(object sender, RoutedEventArgs e)
+        {
+            Hyperlink hyperlink = e.OriginalSource as Hyperlink;
+            if (hyperlink != null)
+            {
+                Process.Start(hyperlink.NavigateUri.ToString());
             }
         }
     }

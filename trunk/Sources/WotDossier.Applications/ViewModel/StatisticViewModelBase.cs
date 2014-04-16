@@ -261,7 +261,7 @@ namespace WotDossier.Applications.ViewModel
 
         public double XEFF
         {
-            get { return RatingHelper.Xeff(EffRating); }
+            get { return RatingHelper.Xwn8(WN8Rating); }
         }
 
         public double XWN

@@ -62,5 +62,10 @@ namespace WotDossier.Applications
         {
             return repository.GetStatistic<PlayerStatisticEntity>(player.PlayerId).Cast<StatisticEntity>().ToList();
         }
+
+        public override PlayerEntity UpdateTankStatistic(DossierRepository dossierRepository, int playerId, List<TankJson> tanks)
+        {
+            return dossierRepository.UpdateTankStatistic<TankStatisticEntity>(playerId, tanks, x => x.A15x15);
+        }
     }
 }

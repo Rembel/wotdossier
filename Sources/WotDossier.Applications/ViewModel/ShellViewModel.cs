@@ -515,10 +515,11 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitTanksStatistic(List<TankJson> tanks)
         {
+            AppSettings settings = SettingsReader.Get();
+
             StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode);
 
-            AppSettings settings = SettingsReader.Get();
-            PlayerEntity playerEntity = _dossierRepository.UpdateTankStatistic(settings.PlayerId, tanks);
+            PlayerEntity playerEntity = strategy.UpdateTankStatistic(_dossierRepository, settings.PlayerId, tanks);
 
             if (playerEntity == null)
             {
@@ -526,7 +527,7 @@ namespace WotDossier.Applications.ViewModel
                 return;
             }
 
-            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(playerEntity.Id);
+            IEnumerable<TankStatisticEntity> entities = strategy.GetTanksStatistic(_dossierRepository, playerEntity.Id);
 
             Tanks = strategy.ToTankStatisticRow(entities);
 

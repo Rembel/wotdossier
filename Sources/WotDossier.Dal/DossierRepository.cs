@@ -253,7 +253,7 @@ namespace WotDossier.Dal
             return playerEntity;
         }
 
-        /*public PlayerEntity UpdateTankStatistic<T>(int playerId, List<TankJson> tanks) where T : TankStatisticEntityBase, new ()
+        public PlayerEntity UpdateTankStatistic<T>(int playerId, List<TankJson> tanks, Func<TankJson, StatisticJson> predicate) where T : TankStatisticEntityBase, new ()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -284,11 +284,12 @@ namespace WotDossier.Dal
                         tankEntity.Name = tank.Common.tanktitle;
                         tankEntity.TankType = tank.Common.type;
                         tankEntity.Tier = tank.Common.tier;
+                        _dataProvider.Save(tankEntity);
+
                         T statisticEntity = new T();
                         statisticEntity.TankIdObject = tankEntity;
                         Update(statisticEntity, tank);
-                        tankEntity.TankStatisticEntities.Add(statisticEntity);
-                        _dataProvider.Save(tankEntity);
+                        _dataProvider.Save(statisticEntity);
                     }
                     else
                     {
@@ -306,7 +307,7 @@ namespace WotDossier.Dal
                         if (statisticEntity != null)
                         {
                             TankJson currentSnapshot = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
-                            currentSnapshotBattlesCount = currentSnapshot.A15x15.battlesCount;
+                            currentSnapshotBattlesCount = predicate(currentSnapshot).battlesCount;
                         }
                         else
                         {
@@ -314,7 +315,7 @@ namespace WotDossier.Dal
                             statisticEntity.TankIdObject = tankEntity;
                         }
 
-                        if (currentSnapshotBattlesCount < tank.A15x15.battlesCount || (currentSnapshotBattlesCount == tank.A15x15.battlesCount && tank.Common.basedonversion == 26))
+                        if (currentSnapshotBattlesCount < tank.A15x15.battlesCount || (currentSnapshotBattlesCount == predicate(tank).battlesCount && tank.Common.basedonversion == 26))
                         {
                             //create new record
                             if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated, updated))
@@ -347,7 +348,7 @@ namespace WotDossier.Dal
 
             return playerEntity;
         }
-        */
+        
         private void Update(TankStatisticEntityBase statisticEntity, TankJson tank)
         {
             statisticEntity.Updated = tank.Common.lastBattleTimeR;

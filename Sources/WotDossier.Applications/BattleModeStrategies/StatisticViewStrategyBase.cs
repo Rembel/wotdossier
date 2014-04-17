@@ -159,5 +159,15 @@ namespace WotDossier.Applications
         /// <param name="player">The player.</param>
         /// <returns></returns>
         public abstract List<StatisticEntity> GetStatisticSlices(DossierRepository repository, PlayerEntity player);
+
+        public virtual PlayerEntity UpdateTankStatistic(DossierRepository dossierRepository, int playerId, List<TankJson> tanks)
+        {
+            return dossierRepository.UpdateTankStatistic(playerId, tanks);
+        }
+
+        public virtual IEnumerable<TankStatisticEntity> GetTanksStatistic(DossierRepository dossierRepository, int playerId)
+        {
+            return dossierRepository.GetTanksStatistic(playerId);
+        }
     }
 }

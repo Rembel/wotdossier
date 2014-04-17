@@ -766,32 +766,30 @@ namespace WotDossier.Dal
                 };
             }
 
-            v2.Common = new CommonJson
-            {
-                basedonversion = tankJson.Common.basedonversion,
-                compactDescr = tankJson.Common.compactDescr,
-                countryid = tankJson.Common.countryid,
-                creationTime = tankJson.Common.creationTime,
-                creationTimeR = tankJson.Common.creationTimeR,
-                frags = tankJson.Common.frags,
-                frags_compare = tankJson.Common.frags_compare,
-                has_15x15 = 1,
-                has_7x7 = 0,
-                has_clan = tankJson.Clan != null ? 1 : 0,
-                has_company = tankJson.Company != null ? 1 : 0,
-                lastBattleTime = tankJson.Common.lastBattleTime,
-                lastBattleTimeR = tankJson.Common.lastBattleTimeR,
-                premium = tankJson.Common.premium,
-                tankid = tankJson.Common.tankid,
-                tanktitle = tankJson.Common.tanktitle,
-                tier = tankJson.Common.tier,
-                type = tankJson.Common.type,
-                updated = tankJson.Common.updated,
-                updatedR = Utils.UnixDateToDateTime(tankJson.Common.updated),
-                battleLifeTime = tankJson.Total.battleLifeTime,
-                mileage = tankJson.Total.mileage,
-                treesCut = tankJson.Total.treesCut
-            };
+            v2.Common = new CommonJson();
+            v2.Common.basedonversion = tankJson.Common.basedonversion;
+            v2.Common.compactDescr = tankJson.Common.compactDescr;
+            v2.Common.countryid = tankJson.Common.countryid;
+            v2.Common.creationTime = tankJson.Common.creationTime;
+            v2.Common.creationTimeR = tankJson.Common.creationTimeR;
+            v2.Common.frags = tankJson.Common.frags;
+            v2.Common.frags_compare = tankJson.Common.frags_compare;
+            v2.Common.has_15x15 = 1;
+            v2.Common.has_7x7 = 0;
+            v2.Common.has_clan = tankJson.Clan != null ? 1 : 0;
+            v2.Common.has_company = tankJson.Company != null ? 1 : 0;
+            v2.Common.lastBattleTime = tankJson.Common.lastBattleTime;
+            v2.Common.lastBattleTimeR = tankJson.Common.lastBattleTimeR;
+            v2.Common.premium = tankJson.Common.premium;
+            v2.Common.tankid = tankJson.Common.tankid;
+            v2.Common.tanktitle = tankJson.Common.tanktitle;
+            v2.Common.tier = tankJson.Common.tier;
+            v2.Common.type = tankJson.Common.type;
+            v2.Common.updated = tankJson.Common.updated;
+            v2.Common.updatedR = Utils.UnixDateToDateTime(tankJson.Common.updated);
+            v2.Common.battleLifeTime = tankJson.Total.battleLifeTime;
+            v2.Common.mileage = tankJson.Total.mileage;
+            v2.Common.treesCut = tankJson.Total.treesCut;
 
             return v2;
         }
@@ -917,32 +915,30 @@ namespace WotDossier.Dal
                 markOfMastery = tankJson.awards.mastery_mark
             };
 
-            v2.Common = new CommonJson
-            {
-                basedonversion = tankJson.version,
-                compactDescr = 0,
-                countryid = tankJson.country,
-                creationTime = 0,
-                creationTimeR = DateTime.MinValue,
-                frags = tankJson._15x15.frags,
-                frags_compare = 0,
-                has_15x15 = 1,
-                has_7x7 = 0,
-                has_clan = 0,
-                has_company = 0,
-                lastBattleTime = tankJson.last_time_played,
-                lastBattleTimeR = Utils.UnixDateToDateTime(tankJson.last_time_played),
-                tankid = tankJson.id,
-                premium = Dictionaries.Instance.Tanks[v2.UniqueId()].Premium,
-                tanktitle = Dictionaries.Instance.Tanks[v2.UniqueId()].Title,
-                tier = Dictionaries.Instance.Tanks[v2.UniqueId()].Tier,
-                type = Dictionaries.Instance.Tanks[v2.UniqueId()].Type,
-                updated = tankJson.updated,
-                updatedR = Utils.UnixDateToDateTime(tankJson.updated),
-                battleLifeTime = tankJson.play_time,
-                mileage = 0,
-                treesCut = tankJson.amounts.trees_knocked_down
-            };
+            v2.Common = new CommonJson();
+            v2.Common.basedonversion = tankJson.version;
+            v2.Common.compactDescr = 0;
+            v2.Common.countryid = tankJson.country;
+            v2.Common.creationTime = 0;
+            v2.Common.creationTimeR = DateTime.MinValue;
+            v2.Common.frags = tankJson._15x15.frags;
+            v2.Common.frags_compare = 0;
+            v2.Common.has_15x15 = 1;
+            v2.Common.has_7x7 = 0;
+            v2.Common.has_clan = 0;
+            v2.Common.has_company = 0;
+            v2.Common.lastBattleTime = tankJson.last_time_played;
+            v2.Common.lastBattleTimeR = Utils.UnixDateToDateTime(tankJson.last_time_played);
+            v2.Common.tankid = tankJson.id;
+            v2.Common.premium = Dictionaries.Instance.Tanks[v2.UniqueId()].Premium;
+            v2.Common.tanktitle = Dictionaries.Instance.Tanks[v2.UniqueId()].Title;
+            v2.Common.tier = Dictionaries.Instance.Tanks[v2.UniqueId()].Tier;
+            v2.Common.type = Dictionaries.Instance.Tanks[v2.UniqueId()].Type;
+            v2.Common.updated = tankJson.updated;
+            v2.Common.updatedR = Utils.UnixDateToDateTime(tankJson.updated);
+            v2.Common.battleLifeTime = tankJson.play_time;
+            v2.Common.mileage = 0;
+            v2.Common.treesCut = tankJson.amounts.trees_knocked_down;
 
             return v2;
         }
@@ -1066,26 +1062,24 @@ namespace WotDossier.Dal
             //v2.Achievements.warrior = tankJson.awards.top_gun;
             v2.Achievements.markOfMastery = tankJson.mark_of_mastery;
 
-            v2.Common = new CommonJson
-            {
-                basedonversion = 65,
-                compactDescr = 0,
-                countryid = tankJson.description.CountryId,
-                creationTime = 0,
-                creationTimeR = DateTime.MinValue,
-                frags = tankJson.all.frags,
-                frags_compare = 0,
-                has_15x15 = 1,
-                has_7x7 = 0,
-                has_clan = 0,
-                has_company = 0,
-                tankid = tankJson.description.TankId,
-                premium = Dictionaries.Instance.Tanks[v2.UniqueId()].Premium,
-                tanktitle = Dictionaries.Instance.Tanks[v2.UniqueId()].Title,
-                tier = Dictionaries.Instance.Tanks[v2.UniqueId()].Tier,
-                type = Dictionaries.Instance.Tanks[v2.UniqueId()].Type,
-                mileage = 0
-            };
+            v2.Common = new CommonJson();
+            v2.Common.basedonversion = 65;
+            v2.Common.compactDescr = 0;
+            v2.Common.countryid = tankJson.description.CountryId;
+            v2.Common.creationTime = 0;
+            v2.Common.creationTimeR = DateTime.MinValue;
+            v2.Common.frags = tankJson.all.frags;
+            v2.Common.frags_compare = 0;
+            v2.Common.has_15x15 = 1;
+            v2.Common.has_7x7 = 0;
+            v2.Common.has_clan = 0;
+            v2.Common.has_company = 0;
+            v2.Common.tankid = tankJson.description.TankId;
+            v2.Common.premium = Dictionaries.Instance.Tanks[v2.UniqueId()].Premium;
+            v2.Common.tanktitle = Dictionaries.Instance.Tanks[v2.UniqueId()].Title;
+            v2.Common.tier = Dictionaries.Instance.Tanks[v2.UniqueId()].Tier;
+            v2.Common.type = Dictionaries.Instance.Tanks[v2.UniqueId()].Type;
+            v2.Common.mileage = 0;
             //v2.Common.lastBattleTime = tankJson.last_time_played;
             //v2.Common.lastBattleTimeR = Utils.UnixDateToDateTime(tankJson.last_time_played);
             //v2.Common.updated = tankJson.updated;

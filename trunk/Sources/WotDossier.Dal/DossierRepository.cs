@@ -366,6 +366,16 @@ namespace WotDossier.Dal
             return tankStatisticEntities;
         }
 
+        public IEnumerable<T> GetTanksStatistic<T>(int playerId) where T : TankStatisticEntityBase
+        {
+            _dataProvider.OpenSession();
+            TankEntity tankAlias = null;
+            IList<T> tankStatisticEntities = _dataProvider.QueryOver<T>()
+                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == playerId).List<T>();
+            _dataProvider.CloseSession();
+            return tankStatisticEntities;
+        }
+
         public IList<ReplayEntity> GetReplays()
         {
             _dataProvider.OpenSession();

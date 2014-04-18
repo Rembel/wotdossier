@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
@@ -21,8 +22,24 @@ namespace WotDossier.Applications.BattleModeStrategies
             get { return tank => tank.A15x15; }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RandomStatisticViewStrategy"/> class.
+        /// </summary>
+        /// <param name="dossierRepository">The dossier repository.</param>
         public RandomStatisticViewStrategy(DossierRepository dossierRepository) : base(dossierRepository)
         {
+        }
+
+        /// <summary>
+        /// Gets the player statistic.
+        /// </summary>
+        /// <param name="player">The player.</param>
+        /// <param name="tanks">The tanks.</param>
+        /// <param name="playerData">The player data.</param>
+        /// <returns></returns>
+        public override PlayerStatisticViewModel GetPlayerStatistic(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
+        {
+            return GetPlayerStatistic<PlayerStatisticEntity>(player, tanks, playerData);
         }
 
         /// <summary>
@@ -33,8 +50,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<TankJson> prevStatisticViewModels)
         {
-            TankStatisticRowViewModel model = new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
-            return model;
+            return new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
         }
 
         /// <summary>
@@ -59,26 +75,34 @@ namespace WotDossier.Applications.BattleModeStrategies
         }
 
         /// <summary>
-        /// Gets the statistic slices.
+        /// Updates the tank statistic.
         /// </summary>
-        /// <param name="player">The player.</param>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="tanks">The tanks.</param>
         /// <returns></returns>
-        public override List<StatisticEntity> GetStatisticSlices(PlayerEntity player)
-        {
-            return DossierRepository.GetStatistic<PlayerStatisticEntity>(player.PlayerId).Cast<StatisticEntity>().ToList();
-        }
-
         public override PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
         {
-            return DossierRepository.UpdateTankStatistic<TankStatisticEntity>(playerId, tanks, Predicate);
+            return UpdateTankStatistic<TankStatisticEntity>(playerId, tanks);
         }
 
-        public override IEnumerable<TankStatisticEntityBase> GetTanksStatistic(int playerId)
+        /// <summary>
+        /// Gets the tanks statistic.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <returns></returns>
+        public override List<ITankStatisticRow> GetTanksStatistic(int playerId)
         {
-            return DossierRepository.GetTanksStatistic<TankStatisticEntity>(playerId);
+            return GetTanksStatistic<TankStatisticEntity>(playerId);
         }
 
-        public override PlayerEntity UpdateStatistic(List<TankJson> tanks, Ratings ratings, int playerId)
+        /// <summary>
+        /// Updates the player statistic.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="tanks">The tanks.</param>
+        /// <param name="ratings">The ratings.</param>
+        /// <returns></returns>
+        public override PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, Ratings ratings)
         {
             return DossierRepository.UpdateStatistic(new PlayerStatAdapter(tanks), ratings, playerId);
         }

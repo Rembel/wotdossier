@@ -31,7 +31,13 @@ namespace WotDossier.Dal
             _dataProvider = dataProvider;
         }
 
-        public IEnumerable<T> GetStatistic<T>(int playerId) where T : StatisticEntity
+        /// <summary>
+        /// Gets the player statistic.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="playerId">The player identifier.</param>
+        /// <returns></returns>
+        public IEnumerable<T> GetPlayerStatistic<T>(int playerId) where T : StatisticEntity
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -57,7 +63,15 @@ namespace WotDossier.Dal
             return list;
         }
 
-        public PlayerEntity UpdateStatistic<T>(IStatisticAdapter<T> newSnapshot, Ratings ratings, int playerId) where T : StatisticEntity, new()
+        /// <summary>
+        /// Updates the player statistic.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="newSnapshot">The new snapshot.</param>
+        /// <param name="ratings">The ratings.</param>
+        /// <param name="playerId">The player identifier.</param>
+        /// <returns></returns>
+        public PlayerEntity UpdatePlayerStatistic<T>(IStatisticAdapter<T> newSnapshot, Ratings ratings, int playerId) where T : StatisticEntity, new()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -118,6 +132,13 @@ namespace WotDossier.Dal
             return newSnapshotUpdated.Date != currentSnapshotUpdated.Date;
         }
 
+        /// <summary>
+        /// Get the or create player.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="id">The identifier.</param>
+        /// <param name="creaded">Creaded at.</param>
+        /// <returns></returns>
         public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
         {
             _dataProvider.OpenSession();
@@ -149,6 +170,11 @@ namespace WotDossier.Dal
                 .SingleOrDefault<PlayerEntity>();
         }
 
+        /// <summary>
+        /// Gets the player.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public PlayerEntity GetPlayer(int id)
         {
             _dataProvider.OpenSession();
@@ -158,101 +184,14 @@ namespace WotDossier.Dal
             return player;
         }
 
-        public PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
-        {
-            _dataProvider.OpenSession();
-            _dataProvider.BeginTransaction();
-
-            PlayerEntity playerEntity = GetPlayerInternal(playerId);
-
-            try
-            {
-                IList<TankEntity> tankEntities = _dataProvider.QueryOver<TankEntity>().Where(x => x.PlayerId == playerEntity.Id).List<TankEntity>();
-
-                DateTime updated = tanks.Max(x => x.Common.lastBattleTimeR);
-                
-                foreach (TankJson tank in tanks)
-                {
-                    int tankId = tank.Common.tankid;
-                    int countryId = tank.Common.countryid;
-
-                    TankEntity tankEntity = tankEntities.SingleOrDefault(x => x.TankId == tankId && x.CountryId == countryId);
-                    if (tankEntity == null)
-                    {
-                        tankEntity = new TankEntity();
-                        tankEntity.CountryId = countryId;
-                        tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(countryId);
-                        tankEntity.TankId = tankId;
-                        tankEntity.Icon = tank.Description.Icon.IconId;
-                        tankEntity.PlayerId = playerEntity.Id;
-                        tankEntity.IsPremium = tank.Common.premium == 1;
-                        tankEntity.Name = tank.Common.tanktitle;
-                        tankEntity.TankType = tank.Common.type;
-                        tankEntity.Tier = tank.Common.tier;
-                        TankStatisticEntity statisticEntity = new TankStatisticEntity();
-                        statisticEntity.TankIdObject = tankEntity;
-                        Update(statisticEntity, tank);
-                        tankEntity.TankStatisticEntities.Add(statisticEntity);
-                        _dataProvider.Save(tankEntity);
-                    }
-                    else
-                    {
-                        TankEntity tankAlias = null;
-                        TankStatisticEntity statisticEntity = _dataProvider.QueryOver<TankStatisticEntity>()
-                            .JoinAlias( x => x.TankIdObject, () => tankAlias)
-                            .Where(x => 
-                                tankAlias.PlayerId == playerEntity.Id
-                                && tankAlias.TankId == tankId
-                                && tankAlias.CountryId == countryId)
-                            .OrderBy(x => x.Updated).Desc.Take(1).SingleOrDefault<TankStatisticEntity>();
-
-                        int currentSnapshotBattlesCount = 0;
-
-                        if (statisticEntity != null)
-                        {
-                            TankJson currentSnapshot = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
-                            currentSnapshotBattlesCount = currentSnapshot.A15x15.battlesCount;
-                        }
-                        else
-                        {
-                            statisticEntity = new TankStatisticEntity();
-                            statisticEntity.TankIdObject = tankEntity;
-                        }
-
-                        if (currentSnapshotBattlesCount < tank.A15x15.battlesCount || (currentSnapshotBattlesCount == tank.A15x15.battlesCount && tank.Common.basedonversion == 26))
-                        {
-                            //create new record
-                            if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated,  updated))
-                            {
-                                statisticEntity = new TankStatisticEntity();
-                                statisticEntity.TankIdObject = tankEntity;
-                            }
-                            
-                            statisticEntity.Updated = updated;
-                            Update(statisticEntity, tank);
-                            _dataProvider.Save(statisticEntity);
-                        }
-                    }
-                }
-
-                _dataProvider.CommitTransaction();
-
-                return playerEntity;
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-                _dataProvider.RollbackTransaction();
-            }
-            finally
-            {
-                _dataProvider.ClearCache();
-                _dataProvider.CloseSession();
-            }
-
-            return playerEntity;
-        }
-
+        /// <summary>
+        /// Updates the tank statistic.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="tanks">The tanks.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns></returns>
         public PlayerEntity UpdateTankStatistic<T>(int playerId, List<TankJson> tanks, Func<TankJson, StatisticJson> predicate) where T : TankStatisticEntityBase, new ()
         {
             _dataProvider.OpenSession();
@@ -356,16 +295,12 @@ namespace WotDossier.Dal
             statisticEntity.Raw = tank.Raw;
         }
 
-        public IEnumerable<TankStatisticEntity> GetTanksStatistic(int playerId)
-        {
-            _dataProvider.OpenSession();
-            TankEntity tankAlias = null;
-            IList<TankStatisticEntity> tankStatisticEntities = _dataProvider.QueryOver<TankStatisticEntity>()
-                .JoinAlias(x => x.TankIdObject, () => tankAlias).Where(x => tankAlias.PlayerId == playerId).List<TankStatisticEntity>();
-            _dataProvider.CloseSession();
-            return tankStatisticEntities;
-        }
-
+        /// <summary>
+        /// Gets the tanks statistic.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="playerId">The player identifier.</param>
+        /// <returns></returns>
         public IEnumerable<T> GetTanksStatistic<T>(int playerId) where T : TankStatisticEntityBase
         {
             _dataProvider.OpenSession();
@@ -376,6 +311,10 @@ namespace WotDossier.Dal
             return tankStatisticEntities;
         }
 
+        /// <summary>
+        /// Gets the replays.
+        /// </summary>
+        /// <returns></returns>
         public IList<ReplayEntity> GetReplays()
         {
             _dataProvider.OpenSession();
@@ -384,6 +323,12 @@ namespace WotDossier.Dal
             return replays;
         }
 
+        /// <summary>
+        /// Saves the replay.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="replayId">The replay identifier.</param>
+        /// <param name="link">The link.</param>
         public void SaveReplay(long playerId, long replayId, string link)
         {
             _dataProvider.OpenSession();
@@ -413,6 +358,13 @@ namespace WotDossier.Dal
             }
         }
 
+        /// <summary>
+        /// Sets the favorite.
+        /// </summary>
+        /// <param name="tankId">The tank identifier.</param>
+        /// <param name="countryId">The country identifier.</param>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="favorite">if set to <c>true</c> [favorite].</param>
         public void SetFavorite(int tankId, int countryId, int playerId, bool favorite)
         {
             _dataProvider.OpenSession();

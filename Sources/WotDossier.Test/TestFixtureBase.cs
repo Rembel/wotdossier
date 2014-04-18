@@ -624,10 +624,10 @@ namespace WotDossier.Test
         {
             int playerId = 10800699;
 
-            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetStatistic<PlayerStatisticEntity>(playerId);
+            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic<PlayerStatisticEntity>(playerId);
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
-            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
+            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic<TankStatisticEntity>(currentStatistic.PlayerId);
             List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
             var performanceRating = RatingHelper.PerformanceRating(tankJsons, json => json.A15x15);

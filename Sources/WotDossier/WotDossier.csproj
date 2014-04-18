@@ -700,12 +700,14 @@
     <Resource Include="Resources\Images\nations\usa.png" />
     <Resource Include="Resources\Images\nations\ussr.png" />
     <Resource Include="Resources\Images\Tanks\germany_g100_gtraktor_krupp.png" />
-    <Resource Include="Resources\Images\Tanks\germany_G101_StuG_III.png" />
-    <Resource Include="Resources\Images\Tanks\germany_Pz_IV_AusfA.png" />
+    <Resource Include="Resources\Images\Tanks\germany_g101_stug_iii.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pz_iv_ausfa.png" />
     <Resource Include="Resources\Images\Tanks\usa_t95_e6.png" />
     <Resource Include="Resources\Images\Tanks\usa_t23e3.png" />
     <Resource Include="Resources\Images\Tanks\germany_pz_iv_ausfh.png" />
     <Resource Include="Resources\Images\Tanks\germany_pz_iv_ausfd.png" />
+    <Resource Include="Resources\Images\Tanks\germany_stug_40_ausfg.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pziii_ausfj.png" />
     <Content Include="Updates\2014021200.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

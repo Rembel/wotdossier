@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows;
+using WotDossier.Applications.BattleModeStrategies;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.Logic.Export;
@@ -517,9 +518,9 @@ namespace WotDossier.Applications.ViewModel
         {
             AppSettings settings = SettingsReader.Get();
 
-            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode);
+            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
 
-            PlayerEntity playerEntity = strategy.UpdateTankStatistic(_dossierRepository, settings.PlayerId, tanks);
+            PlayerEntity playerEntity = strategy.UpdateTankStatistic(settings.PlayerId, tanks);
 
             if (playerEntity == null)
             {
@@ -527,7 +528,7 @@ namespace WotDossier.Applications.ViewModel
                 return;
             }
 
-            IEnumerable<TankStatisticEntity> entities = strategy.GetTanksStatistic(_dossierRepository, playerEntity.Id);
+            IEnumerable<TankStatisticEntityBase> entities = strategy.GetTanksStatistic(playerEntity.Id);
 
             Tanks = strategy.ToTankStatisticRow(entities);
 
@@ -562,14 +563,14 @@ namespace WotDossier.Applications.ViewModel
         {
             AppSettings settings = SettingsReader.Get();
 
+            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
+
             int playerId = settings.PlayerId;
-            PlayerEntity player = _dossierRepository.UpdateStatistic(new PlayerStatAdapter(tanks), serverStatistic.Ratings, playerId);
-            _dossierRepository.UpdateStatistic(new TeamBattlesStatAdapter(tanks), serverStatistic.Ratings, playerId);
-            _dossierRepository.UpdateStatistic(new HistoricalBattlesStatAdapter(tanks), serverStatistic.Ratings, playerId);
 
-            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode);
-
-            List<StatisticEntity> statisticEntities = strategy.GetStatisticSlices(_dossierRepository, player).ToList();
+            PlayerEntity player = strategy.UpdateStatistic(tanks, serverStatistic.Ratings, playerId);
+            
+            List<StatisticEntity> statisticEntities = strategy.GetStatisticSlices(player).ToList();
+            
             return strategy.Create(statisticEntities, tanks, player, serverStatistic);
         }
 

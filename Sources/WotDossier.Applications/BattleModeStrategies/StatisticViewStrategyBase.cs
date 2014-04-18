@@ -7,12 +7,15 @@ using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 
-namespace WotDossier.Applications
+namespace WotDossier.Applications.BattleModeStrategies
 {
     public abstract class StatisticViewStrategyBase
     {
+        private readonly DossierRepository _dossierRepository;
+
         private readonly List<int> _notExistsedTanksList = new List<int>
                 {
                     30251,//T-34-1 training
@@ -43,10 +46,20 @@ namespace WotDossier.Applications
             get { return _notExistsedTanksList; }
         }
 
+        protected StatisticViewStrategyBase(DossierRepository dossierRepository)
+        {
+            _dossierRepository = dossierRepository;
+        }
+
         /// <summary>
         /// Predicate to get tank statistic
         /// </summary>
         public abstract Func<TankJson, StatisticJson> Predicate { get; }
+
+        public DossierRepository DossierRepository
+        {
+            get { return _dossierRepository; }
+        }
 
         /// <summary>
         /// Gets the master tanker list.
@@ -75,7 +88,7 @@ namespace WotDossier.Applications
         /// </summary>
         /// <param name="entities">The statistic entities.</param>
         /// <returns></returns>
-        public List<ITankStatisticRow> ToTankStatisticRow(IEnumerable<TankStatisticEntity> entities)
+        public List<ITankStatisticRow> ToTankStatisticRow(IEnumerable<TankStatisticEntityBase> entities)
         {
             return entities.GroupBy(x => x.TankId).Select(x => ToTankStatisticRow(x, Predicate)).OrderByDescending(x => x.Tier).ThenBy(x => x.Tank).Where(x => x.BattlesCount > 0).ToList();
         }
@@ -107,7 +120,7 @@ namespace WotDossier.Applications
         /// <param name="groupedEntities">The tank statistic entities grouped by tankId.</param>
         /// <param name="predicate">Predicate to get tank statistic</param>
         /// <returns></returns>
-        private ITankStatisticRow ToTankStatisticRow(IGrouping<int, TankStatisticEntity> groupedEntities, Func<TankJson, StatisticJson> predicate)
+        private ITankStatisticRow ToTankStatisticRow(IGrouping<int, TankStatisticEntityBase> groupedEntities, Func<TankJson, StatisticJson> predicate)
         {
             List<TankJson> statisticViewModels = groupedEntities.Select(x => UnZipObject(x.Raw)).ToList();
             TankJson currentStatistic = statisticViewModels.OrderByDescending(x => predicate(x).battlesCount).First();
@@ -155,19 +168,13 @@ namespace WotDossier.Applications
         /// <summary>
         /// Gets the statistic slices.
         /// </summary>
-        /// <param name="repository">The repository.</param>
         /// <param name="player">The player.</param>
         /// <returns></returns>
-        public abstract List<StatisticEntity> GetStatisticSlices(DossierRepository repository, PlayerEntity player);
+        public abstract List<StatisticEntity> GetStatisticSlices(PlayerEntity player);
 
-        public virtual PlayerEntity UpdateTankStatistic(DossierRepository dossierRepository, int playerId, List<TankJson> tanks)
-        {
-            return dossierRepository.UpdateTankStatistic(playerId, tanks);
-        }
+        public abstract PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks);
 
-        public virtual IEnumerable<TankStatisticEntity> GetTanksStatistic(DossierRepository dossierRepository, int playerId)
-        {
-            return dossierRepository.GetTanksStatistic(playerId);
-        }
+        public abstract IEnumerable<TankStatisticEntityBase> GetTanksStatistic(int playerId);
+        public abstract PlayerEntity UpdateStatistic(List<TankJson> tanks, Ratings ratings, int playerId);
     }
 }

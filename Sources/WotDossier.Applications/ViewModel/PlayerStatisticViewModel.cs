@@ -16,22 +16,25 @@ namespace WotDossier.Applications.ViewModel
         {
             #region Awards
 
-            ArmoredFist = stat.AchievementsIdObject.ArmoredFist;
-            CrucialShot = stat.AchievementsIdObject.CrucialShot;
-            CrucialShotMedal = stat.AchievementsIdObject.CrucialShotMedal;
-            FightingReconnaissance = stat.AchievementsIdObject.FightingReconnaissance;
-            FightingReconnaissanceMedal = stat.AchievementsIdObject.FightingReconnaissanceMedal;
-            ForTacticalOperations = stat.AchievementsIdObject.ForTacticalOperations;
-            GeniusForWar = stat.AchievementsIdObject.GeniusForWar;
-            GeniusForWarMedal = stat.AchievementsIdObject.GeniusForWarMedal;
-            GodOfWar = stat.AchievementsIdObject.GodOfWar;
-            KingOfTheHill = stat.AchievementsIdObject.KingOfTheHill;
-            MaxTacticalBreakthroughSeries = stat.AchievementsIdObject.MaxTacticalBreakthroughSeries;
-            TacticalBreakthrough = stat.AchievementsIdObject.TacticalBreakthrough;
-            TacticalBreakthroughSeries = stat.AchievementsIdObject.TacticalBreakthroughSeries;
-            WillToWinSpirit = stat.AchievementsIdObject.WillToWinSpirit;
-            WolfAmongSheep = stat.AchievementsIdObject.WolfAmongSheep;
-            WolfAmongSheepMedal = stat.AchievementsIdObject.WolfAmongSheepMedal;
+            if (stat.AchievementsIdObject != null)
+            {
+                ArmoredFist = stat.AchievementsIdObject.ArmoredFist;
+                CrucialShot = stat.AchievementsIdObject.CrucialShot;
+                CrucialShotMedal = stat.AchievementsIdObject.CrucialShotMedal;
+                FightingReconnaissance = stat.AchievementsIdObject.FightingReconnaissance;
+                FightingReconnaissanceMedal = stat.AchievementsIdObject.FightingReconnaissanceMedal;
+                ForTacticalOperations = stat.AchievementsIdObject.ForTacticalOperations;
+                GeniusForWar = stat.AchievementsIdObject.GeniusForWar;
+                GeniusForWarMedal = stat.AchievementsIdObject.GeniusForWarMedal;
+                GodOfWar = stat.AchievementsIdObject.GodOfWar;
+                KingOfTheHill = stat.AchievementsIdObject.KingOfTheHill;
+                MaxTacticalBreakthroughSeries = stat.AchievementsIdObject.MaxTacticalBreakthroughSeries;
+                TacticalBreakthrough = stat.AchievementsIdObject.TacticalBreakthrough;
+                TacticalBreakthroughSeries = stat.AchievementsIdObject.TacticalBreakthroughSeries;
+                WillToWinSpirit = stat.AchievementsIdObject.WillToWinSpirit;
+                WolfAmongSheep = stat.AchievementsIdObject.WolfAmongSheep;
+                WolfAmongSheepMedal = stat.AchievementsIdObject.WolfAmongSheepMedal;
+            }
 
             #endregion
         }
@@ -49,10 +52,13 @@ namespace WotDossier.Applications.ViewModel
         {
             #region Awards
 
-            GuardsMan = stat.AchievementsIdObject.GuardsMan;
-            MakerOfHistory = stat.AchievementsIdObject.MakerOfHistory;
-            WeakVehiclesWins = stat.AchievementsIdObject.WeakVehiclesWins;
-            BothSidesWins = stat.AchievementsIdObject.BothSidesWins;
+            if (stat.AchievementsIdObject != null)
+            {
+                GuardsMan = stat.AchievementsIdObject.GuardsMan;
+                MakerOfHistory = stat.AchievementsIdObject.MakerOfHistory;
+                WeakVehiclesWins = stat.AchievementsIdObject.WeakVehiclesWins;
+                BothSidesWins = stat.AchievementsIdObject.BothSidesWins;
+            }
 
             #endregion
         }

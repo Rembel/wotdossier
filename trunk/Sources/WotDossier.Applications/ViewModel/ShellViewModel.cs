@@ -646,6 +646,9 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        /// <summary>
+        /// Shows this instance.
+        /// </summary>
         public virtual void Show()
         {
             ViewTyped.Loaded += OnShellViewActivated;
@@ -664,12 +667,16 @@ namespace WotDossier.Applications.ViewModel
             TankFilter.Save();
         }
 
+        /// <summary>
+        /// Closes this instance.
+        /// </summary>
+        /// <returns></returns>
         public bool Close()
         {
             bool close = false;
             if (IsCloseAllowed())
             {
-                CloseView();
+                ViewTyped.Close();
                 close = true;
             }
             return close;
@@ -679,11 +686,5 @@ namespace WotDossier.Applications.ViewModel
         {
             return true;
         }
-
-        public virtual void CloseView()
-        {
-            ViewTyped.Close();
-        }
-
     }
 }

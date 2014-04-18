@@ -95,7 +95,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         protected PlayerStatisticViewModel GetPlayerStatistic<T>(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
             where T : StatisticEntity
         {
-            List<T> statisticEntities = DossierRepository.GetStatistic<T>(player.PlayerId).ToList();
+            List<T> statisticEntities = DossierRepository.GetPlayerStatistic<T>(player.PlayerId).ToList();
 
             T currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
             List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)

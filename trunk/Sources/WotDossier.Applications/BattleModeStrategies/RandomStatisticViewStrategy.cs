@@ -104,7 +104,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         public override PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, Ratings ratings)
         {
-            return DossierRepository.UpdateStatistic(new PlayerStatAdapter(tanks), ratings, playerId);
+            return DossierRepository.UpdatePlayerStatistic(new PlayerStatAdapter(tanks), ratings, playerId);
         }
     }
 }

@@ -699,6 +699,13 @@
     <Resource Include="Resources\Images\nations\uk.png" />
     <Resource Include="Resources\Images\nations\usa.png" />
     <Resource Include="Resources\Images\nations\ussr.png" />
+    <Resource Include="Resources\Images\Tanks\germany_g100_gtraktor_krupp.png" />
+    <Resource Include="Resources\Images\Tanks\germany_G101_StuG_III.png" />
+    <Resource Include="Resources\Images\Tanks\germany_Pz_IV_AusfA.png" />
+    <Resource Include="Resources\Images\Tanks\usa_t95_e6.png" />
+    <Resource Include="Resources\Images\Tanks\usa_t23e3.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pz_iv_ausfh.png" />
+    <Resource Include="Resources\Images\Tanks\germany_pz_iv_ausfd.png" />
     <Content Include="Updates\2014021200.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -778,9 +785,7 @@
     <Content Include="app.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Data\dossier.s3db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Data\dossier.s3db" />
     <EmbeddedResource Include="Data\ReplaysCatalog.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -1058,7 +1063,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Resource Include="app_icon.ico" />
-    <None Include="Data\dossier.sdf" />
     <Content Include="Data\Medals.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

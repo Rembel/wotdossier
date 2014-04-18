@@ -10,7 +10,6 @@ using System.Threading;
 using System.Windows;
 using WotDossier.Applications.BattleModeStrategies;
 using WotDossier.Applications.Logic;
-using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
@@ -528,9 +527,7 @@ namespace WotDossier.Applications.ViewModel
                 return;
             }
 
-            IEnumerable<TankStatisticEntityBase> entities = strategy.GetTanksStatistic(playerEntity.Id);
-
-            Tanks = strategy.ToTankStatisticRow(entities);
+            Tanks = strategy.GetTanksStatistic(playerEntity.Id);
 
             MasterTanker = strategy.GetMasterTankerList(_tanks);
 
@@ -567,11 +564,9 @@ namespace WotDossier.Applications.ViewModel
 
             int playerId = settings.PlayerId;
 
-            PlayerEntity player = strategy.UpdateStatistic(tanks, serverStatistic.Ratings, playerId);
+            PlayerEntity player = strategy.UpdatePlayerStatistic(playerId, tanks, serverStatistic.Ratings);
             
-            List<StatisticEntity> statisticEntities = strategy.GetStatisticSlices(player).ToList();
-            
-            return strategy.Create(statisticEntities, tanks, player, serverStatistic);
+            return strategy.GetPlayerStatistic(player, tanks, serverStatistic);
         }
 
         #endregion

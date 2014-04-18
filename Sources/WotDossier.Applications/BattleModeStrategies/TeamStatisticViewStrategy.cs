@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
@@ -21,8 +22,24 @@ namespace WotDossier.Applications.BattleModeStrategies
             get { return tank => tank.A7x7; }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamStatisticViewStrategy"/> class.
+        /// </summary>
+        /// <param name="dossierRepository">The dossier repository.</param>
         public TeamStatisticViewStrategy(DossierRepository dossierRepository) : base(dossierRepository)
         {
+        }
+
+        /// <summary>
+        /// Gets the player statistic.
+        /// </summary>
+        /// <param name="player">The player.</param>
+        /// <param name="tanks">The tanks.</param>
+        /// <param name="playerData">The player data.</param>
+        /// <returns></returns>
+        public override PlayerStatisticViewModel GetPlayerStatistic(PlayerEntity player, List<TankJson> tanks, ServerStatWrapper playerData = null)
+        {
+            return GetPlayerStatistic<TeamBattlesStatisticEntity>(player, tanks, playerData);
         }
 
         /// <summary>
@@ -59,26 +76,34 @@ namespace WotDossier.Applications.BattleModeStrategies
         }
 
         /// <summary>
-        /// Gets the statistic slices.
+        /// Updates the tank statistic.
         /// </summary>
-        /// <param name="player">The player.</param>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="tanks">The tanks.</param>
         /// <returns></returns>
-        public override List<StatisticEntity> GetStatisticSlices(PlayerEntity player)
-        {
-            return DossierRepository.GetStatistic<TeamBattlesStatisticEntity>(player.PlayerId).Cast<StatisticEntity>().ToList();
-        }
-
         public override PlayerEntity UpdateTankStatistic(int playerId, List<TankJson> tanks)
         {
-            return DossierRepository.UpdateTankStatistic<TankTeamBattleStatisticEntity>(playerId, tanks, Predicate);
+            return UpdateTankStatistic<TankTeamBattleStatisticEntity>(playerId, tanks);
         }
 
-        public override IEnumerable<TankStatisticEntityBase> GetTanksStatistic(int playerId)
+        /// <summary>
+        /// Gets the tanks statistic.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <returns></returns>
+        public override List<ITankStatisticRow> GetTanksStatistic(int playerId)
         {
-            return DossierRepository.GetTanksStatistic<TankTeamBattleStatisticEntity>(playerId);
+            return GetTanksStatistic<TankTeamBattleStatisticEntity>(playerId);
         }
 
-        public override PlayerEntity UpdateStatistic(List<TankJson> tanks, Ratings ratings, int playerId)
+        /// <summary>
+        /// Updates the player statistic.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="tanks">The tanks.</param>
+        /// <param name="ratings">The ratings.</param>
+        /// <returns></returns>
+        public override PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, Ratings ratings)
         {
             return DossierRepository.UpdateStatistic(new TeamBattlesStatAdapter(tanks), ratings, playerId);
         }

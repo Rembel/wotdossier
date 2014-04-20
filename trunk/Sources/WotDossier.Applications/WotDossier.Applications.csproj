@@ -127,6 +127,7 @@
     <Compile Include="ViewModel\BattleModeSelectorViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
+    <Compile Include="ViewModel\Replay\DbReplay.cs" />
     <Compile Include="ViewModel\Replay\PhisicalReplay.cs" />
     <Compile Include="ViewModel\Rows\HistoricalBattlesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\IStatisticBase.cs" />

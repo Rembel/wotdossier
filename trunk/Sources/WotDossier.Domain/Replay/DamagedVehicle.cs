@@ -15,6 +15,9 @@ namespace WotDossier.Domain.Replay
         private List<Device> _tankDamageCrits;
         private List<CrewMember> _crewCrits;
         private List<Device> _tankCrits;
+        private int _pierced;
+        private int _heHits;
+        private int _hits;
 
         //up to Version 0.8.5: The total number of critical hits scored on this vehicle
         //since Version 0.8.6: Packed value. 
@@ -111,10 +114,39 @@ namespace WotDossier.Domain.Replay
         public int damageDealt { get; set; }
         [DataMember]
         public int fire { get; set; }
+
         [DataMember]
-        public int he_hits { get; set; }
+        public int he_hits
+        {
+            get
+            {
+                if (_heHits > 0)
+                {
+                    return _heHits;
+                }
+                return explosionHits;
+            }
+            set { _heHits = value; }
+        }
+
         [DataMember]
-        public int hits { get; set; }
+        public int hits
+        {
+            get
+            {
+                if (_hits > 0)
+                {
+                    return _hits;
+                }
+                return directHits;
+            }
+            set { _hits = value; }
+        }
+
+        [DataMember]
+        public int directHits { get; set; }
+        [DataMember]
+        public int explosionHits { get; set; }
         [DataMember]
         //NOTE: Obsolete - "0.8.6"
         public int killed
@@ -131,7 +163,21 @@ namespace WotDossier.Domain.Replay
         }
 
         [DataMember]
-        public int pierced { get; set; }
+        public int pierced
+        {
+            get
+            {
+                if (_pierced > 0)
+                {
+                    return _pierced;
+                }
+                return piercings;
+            }
+            set { _pierced = value; }
+        }
+
+        [DataMember]
+        public int piercings { get; set; }
         [DataMember]
         public int spotted { get; set; }
     }

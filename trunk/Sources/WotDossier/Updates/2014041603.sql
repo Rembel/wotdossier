@@ -1,0 +1,1 @@
+﻿ALTER TABLE [Replay] ADD [Raw] image;

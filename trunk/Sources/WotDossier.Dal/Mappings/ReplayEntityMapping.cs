@@ -12,6 +12,7 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.ReplayId, "ReplayId");
 			Map(v => v.PlayerId, "PlayerId");
 			Map(v => v.Link, "Link");
+			Map(v => v.Raw, "Raw");
 		
 
         }

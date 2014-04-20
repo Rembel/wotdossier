@@ -341,7 +341,10 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{21831A37-7240-4A5F-A738-03C351448415}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>System.Threading.dll</td><td>{5EB668FF-CF9E-4F14-AD23-C2D90150EBD8}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.threading.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td>{B26D2E43-0F42-4CD4-B35D-45363B051174}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.loca</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Applications.Primary_output</td><td>{73D58477-17B0-41A3-A520-75B9C8623EFE}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.prim</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Content_Files</td><td>{6F462EF6-ECC0-4B91-809B-4719CF893500}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Dal.Localized_resources</td><td>{450B3710-9725-441F-9E0A-FDE548EDB975}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.dal.localized_res</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Localized_resources</td><td>{CDE56017-E1F2-4E25-8C3E-3769E48FD8F5}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.localized_resourc</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1869,7 +1872,10 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>System.Threading.dll</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Localized_resources</td></row>
+		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Content_Files</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Dal.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Localized_resources</td></row>
@@ -1888,11 +1894,15 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>dynamicdatadisplay.license.t</td><td>ISX_DEFAULTCOMPONENT</td><td>DYNAMI~1.TXT|DynamicDataDisplay.License.txt</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\DynamicDataDisplay.License.txt</td><td>1</td><td/></row>
+		<row><td>system.threading.dll</td><td>System.Threading.dll</td><td>SYSTEM~1.DLL|System.Threading.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\System.Threading.dll</td><td>1</td><td/></row>
+		<row><td>system.threading.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>SYSTEM~1.XML|System.Threading.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\System.Threading.xml</td><td>1</td><td/></row>
 		<row><td>wotdossier.applications.loca</td><td>WotDossier.Applications.Localized_resources</td><td>WotDossier.Applications.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Applications&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
+		<row><td>wotdossier.applications.prim</td><td>WotDossier.Applications.Primary_output</td><td>WotDossier.Applications.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.Applications&gt;|Built</td><td>3</td><td/></row>
 		<row><td>wotdossier.content_files</td><td>WotDossier.Content_Files</td><td>WotDossier.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|ContentFiles</td><td>3</td><td/></row>
 		<row><td>wotdossier.dal.localized_res</td><td>WotDossier.Dal.Localized_resources</td><td>WotDossier.Dal.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Dal&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.localized_resourc</td><td>WotDossier.Localized_resources</td><td>WotDossier.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
-		<row><td>wotdossier.primary_output</td><td>WotDossier.Primary_output</td><td>WotDossier.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|Built</td><td>3</td><td/></row>
+		<row><td>wotdossier.primary_output</td><td>WotDossier.Primary_output</td><td>WotDossier.Primary output</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2036,7 +2046,10 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_69EC8EA9_4BC6_4B01_808D_05D9738D766F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>System.Threading.dll</td><td/><td/><td>_FCD0EC72_58F5_4FAD_9DB2_94CB198AAE66_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td/><td/><td>_F3B59643_AB83_4505_B162_7FBF698CE43B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Applications.Primary_output</td><td/><td/><td>_9698DA21_7FF9_440B_8FFB_FE8A095F9C3C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Content_Files</td><td/><td/><td>_E61CB50C_1E44_44C2_A366_D49C081B809B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Dal.Localized_resources</td><td/><td/><td>_4A664420_71B9_4BB5_B9E0_F6C4263BBE2A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Localized_resources</td><td/><td/><td>_13CE0DCE_D1DF_4ABC_B59F_44C79843B5D4_FILTER</td><td/><td/><td/><td/></row>
@@ -2630,8 +2643,8 @@
 		<col def="I2">Order</col>
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
-		<row><td>_51D69465_62CA_46D7_98BA_4D4510D477FA_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td/><td/><td/></row>
-		<row><td>_CADDBF55_1A28_4EEE_A05F_E92BC2D84B4C_</td><td>Microsoft Visual C++ 2010 Redistributable Package (x86).prq</td><td/><td/><td/></row>
+		<row><td>_4C53CFCC_CBAA_4362_A799_71040385B770_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td/><td/><td/></row>
+		<row><td>_C1D0F5CE_3CDE_414B_B41F_168E4F35BF99_</td><td>Microsoft Visual C++ 2010 Redistributable Package (x86).prq</td><td/><td/><td/></row>
 	</table>
 
 	<table name="ISSetupType">
@@ -4392,9 +4405,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{CCA07ED8-D197-4379-9FCB-011116F76D8B}</td><td/></row>
+		<row><td>ProductCode</td><td>{3A43A2A5-E773-4BDC-9021-B3C48AA38F3A}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>2.0.5</td><td/></row>
+		<row><td>ProductVersion</td><td>2.0.6</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4683,7 +4696,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>2.0.5</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>2.0.6</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using Newtonsoft.Json.Linq;
 using WotDossier.Domain;
 
 namespace WotDossier.Applications
@@ -51,7 +52,7 @@ namespace WotDossier.Applications
             return medals;
         }
 
-        public static List<Medal> GetAchievMedals(List<List<int>> dossierPopUps)
+        public static List<Medal> GetAchievMedals(List<List<JValue>> dossierPopUps)
         {
             if (Medals == null)
             {
@@ -60,10 +61,19 @@ namespace WotDossier.Applications
 
             List<Medal> list = new List<Medal>();
 
-            foreach (List<int> achievement in dossierPopUps)
+            foreach (List<JValue> achievement in dossierPopUps)
             {
-                int id = achievement[0];
-                int value = achievement[1];
+                int id = achievement[0].Value<int>();
+                int value = 0;
+                if (achievement[1].Type == JTokenType.Integer)
+                {
+                    value = achievement[1].Value<int>();
+                }
+                else
+                {
+                    value = -1;
+                }
+
                 int exId = id * 10 + value;
 
                 if (Medals.ContainsKey(id))

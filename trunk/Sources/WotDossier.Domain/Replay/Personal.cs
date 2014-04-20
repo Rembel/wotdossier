@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace WotDossier.Domain.Replay
 {
@@ -8,6 +9,14 @@ namespace WotDossier.Domain.Replay
     {
         [DataMember]
         private int _damageAssisted;
+
+        private int _shotsReceived;
+        private int _heHitsReceived;
+        private int _heHits;
+        private int _hits;
+        private int _piercedReceived;
+        private int _pierced;
+
         [DataMember]
         public int accountDBID { get; set; }
         [DataMember]
@@ -57,7 +66,7 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public Dictionary<long, DamagedVehicle> details { get; set; }
         [DataMember]
-        public List<List<int>> dossierPopUps { get; set; }
+        public List<List<JValue>> dossierPopUps { get; set; }
         [DataMember]
         public int droppedCapturePoints { get; set; }
         [DataMember]
@@ -75,13 +84,56 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int gold { get; set; }
         [DataMember]
-        public int heHitsReceived { get; set; }
+        public int heHitsReceived
+        {
+            get
+            {
+                if (_heHitsReceived > 0)
+                {
+                    return _heHitsReceived;
+                }
+                return explosionHitsReceived;
+            }
+            set { _heHitsReceived = value; }
+        }
+
         [DataMember]
-        public int he_hits { get; set; }
+        public int explosionHitsReceived { get; set; }
+
+        [DataMember]
+        public int he_hits
+        {
+            get
+            {
+                if (_heHits > 0)
+                {
+                    return _heHits;
+                }
+                return explosionHits;
+            }
+            set { _heHits = value; }
+        }
+
+        [DataMember]
+        public int explosionHits { get; set; }
         [DataMember]
         public int health { get; set; }
         [DataMember]
-        public int hits { get; set; }
+        public int hits
+        {
+            get
+            {
+                if (_hits > 0)
+                {
+                    return _hits;
+                }
+                return directHits;
+            }
+            set { _hits = value; }
+        }
+
+        [DataMember]
+        public int directHits { get; set; }
         [DataMember]
         public bool isPremium { get; set; }
         [DataMember]
@@ -105,11 +157,40 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int originalXP { get; set; }
         [DataMember]
-        public int piercedReceived { get; set; }
+        public int piercedReceived
+        {
+            get
+            {
+                if (_piercedReceived > 0)
+                {
+                    return _piercedReceived;
+                }
+                return piercingsReceived;
+            }
+            set { _piercedReceived = value; }
+        }
+
+        [DataMember]
+        public int piercingsReceived { get; set; }
+
+        [DataMember]
+        public int pierced
+        {
+            get
+            {
+                if (_pierced > 0)
+                {
+                    return _pierced;
+                }
+                return piercings;
+            }
+            set { _pierced = value; }
+        }
+
+        [DataMember]
+        public int piercings { get; set; }
         [DataMember]
         public int potentialDamageReceived { get; set; }
-        [DataMember]
-        public int pierced { get; set; }
         [DataMember]
         public int premiumCreditsFactor10 { get; set; }
         [DataMember]
@@ -119,7 +200,21 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int shots { get; set; }
         [DataMember]
-        public int shotsReceived { get; set; }
+        public int shotsReceived
+        {
+            get
+            {
+                if (_shotsReceived > 0)
+                {
+                    return _shotsReceived;
+                }
+                return directHitsReceived;
+            }
+            set { _shotsReceived = value; }
+        }
+
+        [DataMember]
+        public int directHitsReceived { get; set; }
         [DataMember]
         public int spotted { get; set; }
         [DataMember]

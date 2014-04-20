@@ -8,6 +8,15 @@ namespace WotDossier.Domain.Replay
     {
         [DataMember]
         private int _damageAssisted;
+
+        private int _shotsReceived;
+        private int _pierced;
+        private int _piercedReceived;
+        private int _heHits;
+        private int _heHitsReceived;
+        private int _hits;
+        private int _thits;
+
         [DataMember]
         public long accountDBID { get; set; }
         [DataMember]
@@ -45,13 +54,57 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int gold { get; set; }
         [DataMember]
-        public int heHitsReceived { get; set; }
+        public int heHitsReceived
+        {
+            get
+            {
+                if (_heHitsReceived > 0)
+                {
+                    return _heHitsReceived;
+                }
+                return explosionHitsReceived;
+            }
+            set { _heHitsReceived = value; }
+        }
+
         [DataMember]
-        public int he_hits { get; set; }
+        public int explosionHitsReceived { get; set; }
+
+        [DataMember]
+        public int he_hits
+        {
+            get
+            {
+                if (_heHits > 0)
+                {
+                    return _heHits;
+                }
+                return explosionHits;
+            }
+            set { _heHits = value; }
+        }
+
+        [DataMember]
+        public int explosionHits { get; set; }
         [DataMember]
         public int health { get; set; }
+
         [DataMember]
-        public int hits { get; set; }
+        public int hits
+        {
+            get
+            {
+                if (_hits > 0)
+                {
+                    return _hits;
+                }
+                return directHits;
+            }
+            set { _hits = value; }
+        }
+
+        [DataMember]
+        public int directHits { get; set; }
         [DataMember]
         public bool isTeamKiller { get; set; }
         [DataMember]
@@ -64,26 +117,86 @@ namespace WotDossier.Domain.Replay
         public int mileage { get; set; }
         [DataMember]
         public int noDamageShotsReceived { get; set; }
+
         [DataMember]
-        public int piercedReceived { get; set; }
+        public int piercedReceived
+        {
+            get
+            {
+                if (_piercedReceived > 0)
+                {
+                    return _piercedReceived;
+                }
+                return piercingsReceived;
+            }
+            set { _piercedReceived = value; }
+        }
+
         [DataMember]
-        public int pierced { get; set; }
+        public int piercingsReceived { get; set; }
+
+        [DataMember]
+        public int pierced
+        {
+            get
+            {
+                if (_pierced > 0)
+                {
+                    return _pierced;
+                }
+                return piercings;
+            }
+            set { _pierced = value; }
+        }
+
+        [DataMember]
+        public int piercings { get; set; }
         [DataMember]
         public int potentialDamageReceived { get; set; }
         [DataMember]
         public int repair { get; set; }
         [DataMember]
         public int shots { get; set; }
+
         [DataMember]
-        public int shotsReceived { get; set; }
+        public int shotsReceived
+        {
+            get
+            {
+                if (_shotsReceived > 0)
+                {
+                    return _shotsReceived;
+                }
+                return directHitsReceived;
+            }
+            set { _shotsReceived = value; }
+        }
+
+        [DataMember]
+        public int directHitsReceived { get; set; }
         [DataMember]
         public int spotted { get; set; }
         [DataMember]
         public double tdamageDealt { get; set; }
         [DataMember]
         public int team { get; set; }
+
         [DataMember]
-        public int thits { get; set; }
+        public int thits
+        {
+            get
+            {
+                if (_thits > 0)
+                {
+                    return _thits;
+                }
+                return directTeamHits;
+            }
+            set { _thits = value; }
+        }
+
+        [DataMember]
+        public int directTeamHits { get; set; }
         [DataMember]
         public int tkills { get; set; }
         [DataMember]

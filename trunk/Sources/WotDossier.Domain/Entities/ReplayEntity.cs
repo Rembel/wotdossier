@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using WotDossier.Common;
 
 namespace WotDossier.Domain.Entities
@@ -32,8 +31,11 @@ namespace WotDossier.Domain.Entities
 		/// Gets/Sets the field "Link".
 		/// </summary>
 		public virtual string Link	{get; set; }
-		
-		
+
+        /// <summary>
+        /// Gets or sets the raw.
+        /// </summary>
+		public virtual byte[] Raw	{get; set; }
 	}
 }
 

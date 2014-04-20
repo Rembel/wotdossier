@@ -151,6 +151,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Historical battle.
+        /// </summary>
+        internal static string BattleType_Historical {
+            get {
+                return ResourceManager.GetString("BattleType_Historical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Regular.
         /// </summary>
         internal static string BattleType_Regular {

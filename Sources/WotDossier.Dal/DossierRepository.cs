@@ -4,6 +4,7 @@ using System.ComponentModel.Composition;
 using Common.Logging;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Replay;
 using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 using System.Linq;
@@ -380,6 +381,61 @@ namespace WotDossier.Dal
                     entity.IsFavorite = favorite;
                     _dataProvider.Save(entity);
                 }
+
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.CloseSession();
+            }
+        }
+
+        public void SaveReplay(long playerId, long replayId, string link, Replay replayData)
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+            try
+            {
+                ReplayEntity entity = _dataProvider.QueryOver<ReplayEntity>().Where(x => x.PlayerId == playerId && x.ReplayId == replayId)
+                    .SingleOrDefault<ReplayEntity>();
+
+                ReplayEntity replayEntity = entity ?? new ReplayEntity();
+
+                replayEntity.PlayerId = playerId;
+                replayEntity.ReplayId = replayId;
+                replayEntity.Link = link;
+                replayEntity.Raw = WotApiHelper.ZipObject(replayData);
+
+                _dataProvider.Save(replayEntity);
+
+                _dataProvider.CommitTransaction();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                _dataProvider.RollbackTransaction();
+            }
+            finally
+            {
+                _dataProvider.CloseSession();
+            }
+        }
+
+        public void DeleteReplay(long replayId)
+        {
+            _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
+            try
+            {
+                ReplayEntity entity = _dataProvider.QueryOver<ReplayEntity>().Where(x => x.ReplayId == replayId)
+                    .SingleOrDefault<ReplayEntity>();
+                
+                _dataProvider.Delete(entity);
 
                 _dataProvider.CommitTransaction();
             }

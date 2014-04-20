@@ -101,5 +101,10 @@ namespace WotDossier.Dal
             string json = UnZip(byteArray);
             return JsonConvert.DeserializeObject<T>(json);
         }
+
+        public static byte[] ZipObject(object tank)
+        {
+            return Zip(JsonConvert.SerializeObject(tank));
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -249,7 +250,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
                 List<Medal> medals = ReplayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps))
-                    .Union(MedalHelper.GetAchievMedals(new List<List<int>>{new List<int>{790 + replay.datablock_battle_result.personal.markOfMastery, 0}})).ToList();
+                    .Union(MedalHelper.GetAchievMedals(new List<List<JValue>> { new List<JValue> { new JValue(790 + replay.datablock_battle_result.personal.markOfMastery), new JValue(0) } })).ToList();
 
                 BattleMedals = medals.Where(x => x.Type == 0).ToList();
                 AchievMedals = medals.Where(x => x.Type == 1).ToList();

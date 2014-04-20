@@ -400,4 +400,7 @@
   <data name="BattleMode_HistoricalBattle" xml:space="preserve">
     <value>Исторический бой</value>
   </data>
+  <data name="BattleType_Historical" xml:space="preserve">
+    <value>Исторический бой</value>
+  </data>
 </root>

@@ -400,4 +400,7 @@ Avg Spotted: {1:0.00}</value>
   <data name="BattleMode_HistoricalBattle" xml:space="preserve">
     <value>Historical Battle</value>
   </data>
+  <data name="BattleType_Historical" xml:space="preserve">
+    <value>Historical battle</value>
+  </data>
 </root>

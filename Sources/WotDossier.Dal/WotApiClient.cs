@@ -102,7 +102,7 @@ namespace WotDossier.Dal
             {
                 Tank appSpotTank = jToken.ToObject<Tank>();
                 TankJson tank = DataMapper.Map(appSpotTank);
-                tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                tank.Raw = WotApiHelper.ZipObject(tank);
                 if (ExtendPropertiesData(tank))
                 {
                     tanks.Add(tank);
@@ -510,6 +510,7 @@ namespace WotDossier.Dal
                 if (parsedData != null && ((IDictionary<string, JToken>)parsedData).ContainsKey(REPLAY_DATABLOCK_2))
                 {
                     replay.datablock_battle_result_plain = parsedData[REPLAY_DATABLOCK_2][0].ToObject<PlayerResult>();
+                    replay.datablock_1.vehicles = parsedData[REPLAY_DATABLOCK_2][1].ToObject<Dictionary<long, Domain.Replay.Vehicle>>();
                 }
             }
 

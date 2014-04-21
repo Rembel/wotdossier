@@ -17,6 +17,12 @@ namespace WotDossier.Applications.ViewModel.Replay
         private string _name;
         private bool _useInCharts = true;
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         [XmlAttribute("id")]
         public Guid Id
         {
@@ -31,6 +37,12 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _id = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [XmlAttribute("name")]
         public string Name
         {
@@ -38,15 +50,33 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _name = value; }
         }
 
+        /// <summary>
+        /// Gets the name with count.
+        /// </summary>
+        /// <value>
+        /// The name with count.
+        /// </value>
         [XmlIgnore]
         public string NameWithCount
         {
             get { return string.Format("{0}({1})", _name, Count); }
         }
 
+        /// <summary>
+        /// Gets or sets the path.
+        /// </summary>
+        /// <value>
+        /// The path.
+        /// </value>
         [XmlAttribute("path")]
         public string Path { get; set; }
 
+        /// <summary>
+        /// Gets or sets the folders.
+        /// </summary>
+        /// <value>
+        /// The folders.
+        /// </value>
         [XmlElement(ElementName = "folder", Type = typeof(ReplayFolder))]
         public ObservableCollection<ReplayFolder> Folders
         {
@@ -54,6 +84,12 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _folders = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the count.
+        /// </summary>
+        /// <value>
+        /// The count.
+        /// </value>
         [XmlIgnore]
         public int Count
         {
@@ -65,6 +101,12 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [use in charts].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [use in charts]; otherwise, <c>false</c>.
+        /// </value>
         [XmlAttribute("use-in-charts")]
         public bool UseInCharts
         {
@@ -72,8 +114,15 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _useInCharts = value; }
         }
 
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Called when [property changed].
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -83,6 +132,11 @@ namespace WotDossier.Applications.ViewModel.Replay
 
     public static class Extensions
     {
+        /// <summary>
+        /// Gets all folders recursively.
+        /// </summary>
+        /// <param name="list">The plain folders list.</param>
+        /// <returns></returns>
         public static List<ReplayFolder> GetAll(this List<ReplayFolder> list)
         {
             List<ReplayFolder> result = new List<ReplayFolder>();

@@ -342,7 +342,6 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{21831A37-7240-4A5F-A738-03C351448415}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>System.Threading.dll</td><td>{5EB668FF-CF9E-4F14-AD23-C2D90150EBD8}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.threading.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td>{B26D2E43-0F42-4CD4-B35D-45363B051174}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.loca</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Applications.Primary_output</td><td>{73D58477-17B0-41A3-A520-75B9C8623EFE}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.prim</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Content_Files</td><td>{6F462EF6-ECC0-4B91-809B-4719CF893500}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1058,6 +1057,7 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1873,7 +1873,6 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
-		<row><td>AlwaysInstall</td><td>System.Threading.dll</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Content_Files</td></row>
@@ -1894,9 +1893,6 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>dynamicdatadisplay.license.t</td><td>ISX_DEFAULTCOMPONENT</td><td>DYNAMI~1.TXT|DynamicDataDisplay.License.txt</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\DynamicDataDisplay.License.txt</td><td>1</td><td/></row>
-		<row><td>system.threading.dll</td><td>System.Threading.dll</td><td>SYSTEM~1.DLL|System.Threading.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\System.Threading.dll</td><td>1</td><td/></row>
-		<row><td>system.threading.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>SYSTEM~1.XML|System.Threading.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Projects\wotdossier\References\System.Threading.xml</td><td>1</td><td/></row>
 		<row><td>wotdossier.applications.loca</td><td>WotDossier.Applications.Localized_resources</td><td>WotDossier.Applications.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Applications&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.applications.prim</td><td>WotDossier.Applications.Primary_output</td><td>WotDossier.Applications.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.Applications&gt;|Built</td><td>3</td><td/></row>
 		<row><td>wotdossier.content_files</td><td>WotDossier.Content_Files</td><td>WotDossier.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|ContentFiles</td><td>3</td><td/></row>
@@ -2047,7 +2043,6 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_69EC8EA9_4BC6_4B01_808D_05D9738D766F_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>System.Threading.dll</td><td/><td/><td>_FCD0EC72_58F5_4FAD_9DB2_94CB198AAE66_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Applications.Localized_resources</td><td/><td/><td>_F3B59643_AB83_4505_B162_7FBF698CE43B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Applications.Primary_output</td><td/><td/><td>_9698DA21_7FF9_440B_8FFB_FE8A095F9C3C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Content_Files</td><td/><td/><td>_E61CB50C_1E44_44C2_A366_D49C081B809B_FILTER</td><td/><td/><td/><td/></row>

@@ -132,7 +132,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnReplayFileMove(ReplayFileMoveEventArgs eventArgs)
         {
-            if (ReplayFilter.SelectedFolder != eventArgs.TargetFolder)
+            if (ReplayFilter.SelectedFolder != eventArgs.TargetFolder && eventArgs.ReplayFile is PhisicalReplay)
             {
                 eventArgs.ReplayFile.Move(eventArgs.TargetFolder);
                 eventArgs.ReplayFile.FolderId = eventArgs.TargetFolder.Id;

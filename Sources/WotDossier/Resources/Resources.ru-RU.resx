@@ -1863,4 +1863,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Hyperlink_Forum_Text" xml:space="preserve">
     <value>Форум</value>
   </data>
+  <data name="Btn_All" xml:space="preserve">
+    <value>Все</value>
+  </data>
 </root>

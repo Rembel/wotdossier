@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using WotDossier.Domain;
 using WotDossier.Domain.Interfaces;
+using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -261,7 +262,40 @@ namespace WotDossier.Applications.ViewModel
         public TankFilterViewModel()
         {
             _filter = SettingsReader.Get().TankFilterSettings;
+
+            ClearCommand = new DelegateCommand(OnClear);
+            AllCommand = new DelegateCommand(OnAll);
         }
+
+        private void OnAll()
+        {
+            Level10Selected =
+                Level9Selected =
+                    Level8Selected =
+                        Level7Selected =
+                            Level6Selected =
+                                Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = true;
+            TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = true;
+            USSRSelected =
+                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = true;
+        }
+
+        private void OnClear()
+        {
+            Level10Selected =
+                Level9Selected =
+                    Level8Selected =
+                        Level7Selected =
+                            Level6Selected =
+                                Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = false;
+            TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = false;
+            USSRSelected =
+                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
+        }
+
+        public DelegateCommand AllCommand { get; set; }
+
+        public DelegateCommand ClearCommand { get; set; }
 
         public List<T> Filter<T>(List<T> tanks) where T : ITankFilterable
         {

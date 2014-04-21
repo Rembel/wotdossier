@@ -35,12 +35,10 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public override void Move(ReplayFolder targetFolder)
         {
-            throw new NotImplementedException();
         }
 
         public override void Play()
         {
-            throw new NotImplementedException();
         }
 
         public override Domain.Replay.Replay ReplayData()

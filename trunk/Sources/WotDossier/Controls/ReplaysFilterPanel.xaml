@@ -161,6 +161,13 @@
         </StackPanel>
         <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="6,3,6,3" Width="200" Text="{Binding Member, NotifyOnValidationError=False}"  controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
         <ComboBox Margin="6,3,6,3" Grid.Row="6" Grid.Column="1" Width="200" ItemsSource="{Binding BattleResults}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding SelectedBattleResult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
-        <Button Margin="6,3,6,3" Content="{x:Static Resources:Resources.Btn_Clear}" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" Command="{Binding ClearCommand}"></Button>
+        <Grid Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Margin="6,3,6,3" Content="{x:Static Resources:Resources.Btn_All}" Command="{Binding AllCommand}"></Button>
+            <Button Margin="6,3,6,3" Grid.Column="1" Content="{x:Static Resources:Resources.Btn_Clear}" Command="{Binding ClearCommand}"></Button>
+        </Grid>
     </Grid>
 </UserControl>

@@ -16,7 +16,9 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <!--<TextBlock Grid.Row="0" Text="Tank"></TextBlock>-->
@@ -26,7 +28,7 @@
 
         <!--<ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Tanks}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250"></ComboBox>-->
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left">
             <CheckBox Margin="6,3,6,3" ToolTip="I"  IsChecked="{Binding Level1Selected, Mode=TwoWay}">
                 <CheckBox.Content>
                        <Image Source="..\Resources\Images\levels\tank_level_1.png"></Image>
@@ -79,7 +81,7 @@
             </CheckBox>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left">
             <CheckBox Margin="6,3,6,3" ToolTip="{x:Static Resources:Resources.TankType_LT}"  IsChecked="{Binding LTSelected, Mode=TwoWay}">
                 <CheckBox.Content>
                        <Image Source="..\Resources\Images\Types\tank_type_light.png"></Image>
@@ -146,5 +148,13 @@
         </StackPanel>
         <CheckBox Grid.Row="4" Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" />
         <CheckBox Grid.Row="4" Grid.Column="1" Margin="6,3,6,3" Content="{x:Static Resources:Resources.TankFilterPanel_Favorite}" IsChecked="{Binding IsFavorite, Mode=TwoWay}" />
+        <Grid Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Margin="6,3,6,3" Content="{x:Static Resources:Resources.Btn_All}" Command="{Binding AllCommand}"></Button>
+            <Button Margin="6,3,6,3" Grid.Column="1" Content="{x:Static Resources:Resources.Btn_Clear}" Command="{Binding ClearCommand}"></Button>
+        </Grid>
     </Grid>
 </UserControl>

@@ -359,6 +359,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         #endregion
 
         public DelegateCommand ClearCommand { get; set; }
+        public DelegateCommand AllCommand { get; set; }
 
         public List<T> Filter<T>(List<T> replays) where T : ReplayFile
         {
@@ -485,6 +486,23 @@ namespace WotDossier.Applications.ViewModel.Replay
             };
 
             ClearCommand = new DelegateCommand(OnClear);
+            AllCommand = new DelegateCommand(OnAll);
+        }
+
+        private void OnAll()
+        {
+            StartValue = EndValue = null;
+            Field = null;
+            SelectedMap = null;
+            Level10Selected =
+                Level9Selected =
+                    Level8Selected =
+                        Level7Selected =
+                            Level6Selected =
+                                Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = true;
+            TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = true;
+            USSRSelected =
+                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = true;
         }
 
         private void OnClear()

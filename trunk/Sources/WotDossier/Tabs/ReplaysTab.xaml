@@ -82,8 +82,8 @@
                               Command="{Binding Path=DataContext.ReplaysUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_DeleteBtn}" 
-                              Command="{Binding Path=DataContext.ReplayDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
-                              CommandParameter="{Binding}"/>
+                              Command="{Binding Path=DataContext.ReplayRowsDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                     <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_PackBtn}" 
                               Command="{Binding Path=DataContext.ReplayRowsZipCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
@@ -103,6 +103,8 @@
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding ReplayRowsDeleteCommand}" 
                             Key="Delete" CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                <KeyBinding Command="{Binding ReplayRowsDeleteCommand}" 
+                            Key="Delete" Modifiers="Shift" CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                 <KeyBinding Command="{Binding ReplayRowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </DataGrid.InputBindings>

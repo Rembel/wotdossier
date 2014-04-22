@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Input;
 using Common.Logging;
 using Ionic.Zip;
 using Ookii.Dialogs.Wpf;
@@ -34,7 +35,6 @@ namespace WotDossier.Applications.ViewModel
 
         public DelegateCommand<ReplayFile> ReplayUploadCommand { get; set; }
         public DelegateCommand<object> ReplaysUploadCommand { get; set; }
-        public DelegateCommand<ReplayFile> ReplayDeleteCommand { get; set; }
         public DelegateCommand<object> CopyLinkToClipboardCommand { get; set; }
         public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
         public DelegateCommand<object> ReplayRowDoubleClickCommand { get; set; }
@@ -90,7 +90,6 @@ namespace WotDossier.Applications.ViewModel
             ReplayRowDoubleClickCommand = new DelegateCommand<object>(OnReplayRowDoubleClick);
             ReplayUploadCommand = new DelegateCommand<ReplayFile>(OnUploadReplay, CanUploadReplay);
             ReplaysUploadCommand = new DelegateCommand<object>(OnUploadReplays, CanUploadReplays);
-            ReplayDeleteCommand = new DelegateCommand<ReplayFile>(OnReplayRowDelete);
             ReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
             ReplayRowsZipCommand = new DelegateCommand<object>(OnReplayRowsZip);
             CopyLinkToClipboardCommand = new DelegateCommand<object>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
@@ -356,28 +355,6 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void OnReplayRowDelete(ReplayFile replayFile)
-        {
-            if (replayFile != null && replayFile.Exists)
-            {
-                try
-                {
-#if !DEBUG
-                    replayFile.Delete();
-#endif
-                    _replays.Remove(replayFile);
-                    OnPropertyChanged("Replays");
-                }
-                catch (Exception e)
-                {
-                    _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.Name);
-                    MessageBox.Show(
-                        string.Format(Resources.Resources.ErrorMsg_ErrorOnFileDeletion, replayFile.Name),
-                        Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-        }
-
         private void OnReplayRowsZip(object rows)
         {
             ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
@@ -389,14 +366,38 @@ namespace WotDossier.Applications.ViewModel
         {
             ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
             IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
+
+            MessageBoxResult delete;
+            if (Keyboard.Modifiers == ModifierKeys.Shift || replays.All(x => x is DbReplay))
+            {
+                //use complete delete
+                delete = MessageBoxResult.No;
+            }
+            else
+            {
+                delete = MessageBox.Show(Resources.Resources.Msg_ReplaysDelete, Resources.Resources.WindowCaption_Information, 
+                    MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Yes);
+
+                if (delete == MessageBoxResult.Cancel)
+                {
+                    return;
+                }
+            }
+
+
             bool error = false;
             foreach (ReplayFile replayFile in replays)
             {
                 try
                 {
-#if !DEBUG
+                    if (delete == MessageBoxResult.Yes)
+                    {
+                        Domain.Replay.Replay replayData = replayFile.ReplayData();
+                        DossierRepository.SaveReplay(replayFile.PlayerId, replayFile.ReplayId, replayFile.Link, replayData);
+                        _replays.Add(new DbReplay(replayData, FOLDER_DELETED));
+                    }
+
                     replayFile.Delete();
-#endif
                     _replays.Remove(replayFile);
                 }
                 catch (Exception e)

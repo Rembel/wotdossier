@@ -55,6 +55,12 @@ namespace WotDossier.Applications.ViewModel.Replay
         public List<Vehicle> TeamMembers { get; set; }
 
         private string _link;
+        /// <summary>
+        /// Gets or sets the link.
+        /// </summary>
+        /// <value>
+        /// The link.
+        /// </value>
         public string Link
         {
             get { return _link; }
@@ -66,7 +72,13 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         #endregion
-        
+
+        /// <summary>
+        /// Gets or sets the phisical file.
+        /// </summary>
+        /// <value>
+        /// The phisical file.
+        /// </value>
         public FileInfo PhisicalFile { get; set; }
         
         /// <summary>
@@ -165,7 +177,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         /// <summary>
-        /// Moves the specified target folder.
+        /// Moves replay to the specified folder.
         /// </summary>
         /// <param name="targetFolder">The target folder.</param>
         public abstract void Move(ReplayFolder targetFolder);
@@ -176,7 +188,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public abstract void Play();
 
         /// <summary>
-        /// Replays the data.
+        /// Gets Replay data.
         /// </summary>
         /// <returns></returns>
         public abstract Domain.Replay.Replay ReplayData();

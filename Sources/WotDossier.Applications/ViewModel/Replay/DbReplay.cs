@@ -9,6 +9,36 @@ namespace WotDossier.Applications.ViewModel.Replay
         private readonly Domain.Replay.Replay _replay;
 
         /// <summary>
+        /// Gets a value indicating whether this <see cref="ReplayFile" /> is exists.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if exists; otherwise, <c>false</c>.
+        /// </value>
+        public override bool Exists
+        {
+            get { return _replay != null; }
+        }
+
+        /// <summary>
+        /// Gets the phisical path.
+        /// </summary>
+        /// <value>
+        /// The phisical path.
+        /// </value>
+        public override string PhisicalPath
+        {
+            get { return null; }
+        }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        public override string Name
+        {
+            get { throw null; }
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DbReplay" /> class.
         /// </summary>
         /// <param name="replay">The replay.</param>
@@ -18,34 +48,34 @@ namespace WotDossier.Applications.ViewModel.Replay
             _replay = replay;
         }
 
-        public override bool Exists
-        {
-            get { return _replay != null; }
-        }
-
-        public override string PhisicalPath
-        {
-            get { return null; }
-        }
-
-        public override string Name
-        {
-            get { throw null; }
-        }
-
+        /// <summary>
+        /// Moves replay to the specified folder.
+        /// </summary>
+        /// <param name="targetFolder">The target folder.</param>
         public override void Move(ReplayFolder targetFolder)
         {
         }
 
+        /// <summary>
+        /// Plays replay.
+        /// </summary>
         public override void Play()
         {
         }
 
+        /// <summary>
+        /// Gets Replay data.
+        /// </summary>
+        /// <returns></returns>
         public override Domain.Replay.Replay ReplayData()
         {
             return _replay;
         }
 
+        /// <summary>
+        /// Deletes this instance.
+        /// </summary>
+        /// <returns></returns>
         public override void Delete()
         {
             CompositionContainerFactory.Instance.GetExport<DossierRepository>().DeleteReplay(ReplayId);

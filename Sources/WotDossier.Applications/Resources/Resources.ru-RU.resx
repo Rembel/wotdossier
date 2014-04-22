@@ -403,4 +403,7 @@
   <data name="BattleType_Historical" xml:space="preserve">
     <value>Исторический бой</value>
   </data>
+  <data name="Msg_ReplaysDelete" xml:space="preserve">
+    <value>Удалить файлы и сохранить результаты локально? Да - сохранить. Нет - удалить окончательно.</value>
+  </data>
 </root>

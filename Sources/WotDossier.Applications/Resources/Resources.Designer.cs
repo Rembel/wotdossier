@@ -527,6 +527,15 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete files and save battle results to local base? Press Yes to save results? Press No to complete deletion..
+        /// </summary>
+        internal static string Msg_ReplaysDelete {
+            get {
+                return ResourceManager.GetString("Msg_ReplaysDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currently you not logined to the target site. You need to be already authentificated in IE. Do you want to open the site in browser?.
         /// </summary>
         internal static string Msg_ReplayUpload_AuthentificationFailure {

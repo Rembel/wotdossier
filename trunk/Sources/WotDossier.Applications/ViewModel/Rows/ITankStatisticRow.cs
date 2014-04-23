@@ -39,5 +39,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         int DamageAssisted { get; }
         IEnumerable<ITankStatisticRow> GetAll();
         void SetPreviousStatistic(ITankStatisticRow model);
+        ITankStatisticRow GetPreviousStatistic();
     }
 }

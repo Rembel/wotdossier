@@ -112,8 +112,15 @@ def main():
 			if (int(replay_version_dict[1]) == 8 and int(replay_version_dict[2]) > 10) or int(replay_version_dict[1]) > 8 or myblock[0]=='[':
 				br_json_list = json.loads(myblock)
 				br_block = br_json_list[0]
+				
+				v_block = br_json_list[1]
+
+				for key, value in v_block.items(): 
+					result_blocks['datablock_1']['vehicles'][key]['isAlive'] = value['isAlive'] 
+					result_blocks['datablock_1']['vehicles'][key]['isTeamKiller'] = value['isTeamKiller'] 				
+
 			else:
-				br_block = cPickle.loads(myblock)				
+				br_block = cPickle.loads(myblock)					
 				
 			if 'vehicles' in br_block:
 				for key, value in br_block['vehicles'].items():
@@ -147,7 +154,7 @@ def main():
 		else:
 			blockdict = dict()
 			blockdict = json.loads(myblock)
-			
+
 			if 'clientVersionFromExe' in blockdict:
 				replay_version = cleanReplayVersion(blockdict['clientVersionFromExe'])
 				result_blocks['common']['replay_version'] = replay_version

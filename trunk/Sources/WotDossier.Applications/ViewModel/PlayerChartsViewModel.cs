@@ -560,7 +560,7 @@ namespace WotDossier.Applications.ViewModel
 
         public void InitCharts(PlayerStatisticViewModel playerStatistic, List<ITankStatisticRow> tanks)
         {
-            List<PlayerStatisticViewModel> statisticViewModels = playerStatistic.GetAll();
+            List<PlayerStatisticViewModel> statisticViewModels = playerStatistic.GetAllSlices();
             InitRatingChart(statisticViewModels);
             InitWinPercentChart(statisticViewModels);
             InitAvgDamageChart(statisticViewModels);

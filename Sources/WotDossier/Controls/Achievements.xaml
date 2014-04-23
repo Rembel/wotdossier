@@ -268,7 +268,7 @@
                 </controls:MedalAchievement>
             </WrapPanel>
             <!--Team battles achievements-->
-            <TextBlock Text="Team battles" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_TeamBattle}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding GeniusForWarMedal}" Delta="{Binding GeniusForWarMedalDelta}" Source="../Resources/Images/Medals/GeniusForWarMedal.png">
                     <ToolTipService.ToolTip>

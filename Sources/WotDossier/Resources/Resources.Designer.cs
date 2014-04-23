@@ -2411,6 +2411,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Team battle.
+        /// </summary>
+        public static string Label_Achievements_TeamBattle {
+            get {
+                return ResourceManager.GetString("Label_Achievements_TeamBattle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder Name.
         /// </summary>
         public static string Label_AddReplayFolder_Name {

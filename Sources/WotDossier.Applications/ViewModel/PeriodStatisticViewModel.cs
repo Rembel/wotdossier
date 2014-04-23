@@ -817,26 +817,29 @@ namespace WotDossier.Applications.ViewModel
 
         private T GetPrevStatistic(StatisticPeriod statisticPeriod, DateTime? prevDateTime)
         {
+            T prevStatistic = null;
             switch (statisticPeriod)
             {
                 case StatisticPeriod.Recent:
-                    return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
-
+                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
+                    break;
                 case StatisticPeriod.LastWeek:
-                    return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
-
+                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
+                    break;
                 case StatisticPeriod.AllObservationPeriod:
-                    return _list.OrderBy(x => x.Updated).FirstOrDefault();
-
+                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault();
+                    break;
                 case StatisticPeriod.Custom:
-                    return _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= prevDateTime);
+                    prevStatistic  = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= prevDateTime) ??
+                                     _list.OrderBy(x => x.Updated).FirstOrDefault();
+                    break;
             }
-            return null;
+            return prevStatistic;
         }
 
-        public void SetPreviousStatistic(T prevPlayerStatistic)
+        public void SetPreviousStatistic(T prevStatistic)
         {
-            PrevStatistic = (T)((object)prevPlayerStatistic ?? this);
+            PrevStatistic = (T)((object)prevStatistic ?? this);
 
             PropertyInfo[] propertyInfos = GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (var propertyInfo in propertyInfos)
@@ -851,24 +854,6 @@ namespace WotDossier.Applications.ViewModel
             list.AddRange(_list);
             list.Add(this);
             return list.Cast<T>().ToList();
-        }
-    }
-
-    public class StatisticPeriodChangedEvent : BaseEvent<StatisticPeriodChangedEvent>
-    {
-        public StatisticPeriod StatisticPeriod { get; set; }
-        public DateTime? PrevDateTime { get; set; }
-        public int LastNBattles { get; set; }
-
-        public StatisticPeriodChangedEvent()
-        {
-        }
-
-        public StatisticPeriodChangedEvent(StatisticPeriod statisticPeriod, DateTime? prevDate, int lastNBattles)
-        {
-            StatisticPeriod = statisticPeriod;
-            PrevDateTime = prevDate;
-            LastNBattles = lastNBattles;
         }
     }
 }

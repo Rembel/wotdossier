@@ -1866,4 +1866,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Btn_All" xml:space="preserve">
     <value>Все</value>
   </data>
+  <data name="Label_Achievements_TeamBattle" xml:space="preserve">
+    <value>Командный бой</value>
+  </data>
 </root>

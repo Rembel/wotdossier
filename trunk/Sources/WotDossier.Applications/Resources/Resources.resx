@@ -406,4 +406,7 @@ Avg Spotted: {1:0.00}</value>
   <data name="Msg_ReplaysDelete" xml:space="preserve">
     <value>Delete files and save battle results to local base? Press Yes to save results? Press No to complete deletion.</value>
   </data>
+  <data name="ReplaysFolders_Deleted" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
 </root>

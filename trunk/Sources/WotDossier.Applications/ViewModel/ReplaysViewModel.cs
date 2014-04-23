@@ -313,7 +313,7 @@ namespace WotDossier.Applications.ViewModel
                     ReplayFolder deletedFolder = root.Folders.FirstOrDefault(x => x.Id == FOLDER_DELETED);
                     if (deletedFolder == null)
                     {
-                        deletedFolder = new ReplayFolder {Id = FOLDER_DELETED, Name = "Deleted"};
+                        deletedFolder = new ReplayFolder {Id = FOLDER_DELETED, Name = Resources.Resources.ReplaysFolders_Deleted};
                         Application.Current.Dispatcher.Invoke((Action)(() => root.Folders.Add(deletedFolder)));
                     }
                     deletedFolder.Count = collection.Count;

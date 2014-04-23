@@ -406,4 +406,7 @@
   <data name="Msg_ReplaysDelete" xml:space="preserve">
     <value>Удалить файлы и сохранить результаты локально? Да - сохранить. Нет - удалить окончательно.</value>
   </data>
+  <data name="ReplaysFolders_Deleted" xml:space="preserve">
+    <value>Удаленные</value>
+  </data>
 </root>

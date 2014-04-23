@@ -154,12 +154,17 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         IEnumerable<ITankStatisticRow> ITankStatisticRow.GetAll()
         {
-            return GetAll().Cast<ITankStatisticRow>();
+            return GetAllSlices().Cast<ITankStatisticRow>();
         }
 
         public void SetPreviousStatistic(ITankStatisticRow model)
         {
             SetPreviousStatistic((T) model);
+        }
+
+        public ITankStatisticRow GetPreviousStatistic()
+        {
+            return (ITankStatisticRow) PrevStatistic;
         }
 
         public int DamageAssisted

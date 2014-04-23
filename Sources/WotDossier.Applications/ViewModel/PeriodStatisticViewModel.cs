@@ -848,7 +848,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public List<T> GetAll()
+        public List<T> GetAllSlices()
         {
             List<StatisticViewModelBase> list = new List<StatisticViewModelBase>();
             list.AddRange(_list);

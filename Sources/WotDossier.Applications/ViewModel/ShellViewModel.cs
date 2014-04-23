@@ -368,27 +368,28 @@ namespace WotDossier.Applications.ViewModel
             //NRE if row of type TotalTankStatisticRowViewModel
             if (tankStatisticRowViewModel != null && !(tankStatisticRowViewModel is TotalTankStatisticRowViewModel))
             {
-                var export = CompositionContainerFactory.Instance.GetExport<TankStatisticViewModel>();
-                if (export != null)
+                TankStatisticViewModel viewModel = CompositionContainerFactory.Instance.GetExport<TankStatisticViewModel>();
+                if (viewModel != null)
                 {
-                    TankStatisticViewModel viewModel = export;
                     viewModel.TankStatistic = tankStatisticRowViewModel;
                     AppSettings appSettings = SettingsReader.Get();
+
+                    ITankStatisticRow temp = tankStatisticRowViewModel.GetPreviousStatistic();
+
+                    // configure LastNBattles stat for tank
                     if (appSettings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
                     {
                         int battles = tankStatisticRowViewModel.BattlesCount - appSettings.PeriodSettings.LastNBattles;
-
                         ITankStatisticRow model = tankStatisticRowViewModel.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                         tankStatisticRowViewModel.SetPreviousStatistic(model);
                     }
 
                     viewModel.Show();
 
-                    //restore settings
+                    //restore settings 
                     if (appSettings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
                     {
-                        EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()
-                            .Publish(new StatisticPeriodChangedEvent(StatisticPeriod.LastNBattles, appSettings.PeriodSettings.PrevDate, appSettings.PeriodSettings.LastNBattles));
+                        tankStatisticRowViewModel.SetPreviousStatistic(temp);
                     }
                 }
             }
@@ -406,7 +407,7 @@ namespace WotDossier.Applications.ViewModel
 
         private List<DateTime> GetPreviousDates(PlayerStatisticViewModel playerStatisticViewModel)
         {
-            return playerStatisticViewModel.GetAll().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
+            return playerStatisticViewModel.GetAllSlices().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
         }
 
         #endregion
@@ -612,9 +613,10 @@ namespace WotDossier.Applications.ViewModel
 
             if (settings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
             {
+                //convert LastNBattles period -> Custom
                 int battles = PlayerStatistic.BattlesCount - settings.PeriodSettings.LastNBattles;
 
-                PlayerStatisticViewModel viewModel = PlayerStatistic.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
+                PlayerStatisticViewModel viewModel = PlayerStatistic.GetAllSlices().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                 if (viewModel != null)
                 {
                     EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()

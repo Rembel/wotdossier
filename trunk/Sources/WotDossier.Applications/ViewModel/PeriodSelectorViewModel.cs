@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using WotDossier.Common;
 using WotDossier.Domain;
 using WotDossier.Framework.Foundation;
 
@@ -8,7 +9,12 @@ namespace WotDossier.Applications.ViewModel
 {
     public class PeriodSelectorViewModel : Framework.Foundation.Model
     {
-        private PeriodSettings _periodSettings;
+        private static readonly string PropPrevDate = TypeHelper.GetPropertyName<PeriodSelectorViewModel>(x => x.PrevDate);
+        private static readonly string PropPeriod = TypeHelper.GetPropertyName<PeriodSelectorViewModel>(x => x.Period);
+        private static readonly string PropLastNBattles = TypeHelper.GetPropertyName<PeriodSelectorViewModel>(x => x.LastNBattles);
+
+        private List<string> _list = new List<string> { PropPrevDate, PropPeriod, PropLastNBattles };
+
         private List<ListItem<StatisticPeriod>> _periods = new List<ListItem<StatisticPeriod>>
         {
             new ListItem<StatisticPeriod>(StatisticPeriod.Recent, Resources.Resources.StatisticPeriod_Recent),
@@ -17,19 +23,40 @@ namespace WotDossier.Applications.ViewModel
             new ListItem<StatisticPeriod>(StatisticPeriod.LastNBattles, Resources.Resources.StatisticPeriod_LastNBattles_ComboItem),
             new ListItem<StatisticPeriod>(StatisticPeriod.Custom, Resources.Resources.StatisticPeriod_Custom_ComboItem)
         };
-        private List<DateTime> _prevDates;
 
+        public event Action PeriodSettingsUpdated;
+
+        private PeriodSettings _periodSettings;
+        /// <summary>
+        /// Gets the period settings.
+        /// </summary>
+        /// <value>
+        /// The period settings.
+        /// </value>
         public PeriodSettings PeriodSettings
         {
             get { return _periodSettings; }
         }
 
+        /// <summary>
+        /// Gets or sets the periods.
+        /// </summary>
+        /// <value>
+        /// The periods.
+        /// </value>
         public List<ListItem<StatisticPeriod>> Periods
         {
             get { return _periods; }
             set { _periods = value; }
         }
 
+        private List<DateTime> _prevDates;
+        /// <summary>
+        /// Gets or sets the previous dates.
+        /// </summary>
+        /// <value>
+        /// The previous dates.
+        /// </value>
         public List<DateTime> PrevDates
         {
             get { return _prevDates; }
@@ -37,10 +64,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _prevDates = value;
                 RaisePropertyChanged("PrevDates");
-                RaisePropertyChanged("PrevDate");
+                RaisePropertyChanged(PropPrevDate);
             }
         }
 
+        /// <summary>
+        /// Gets or sets the period.
+        /// </summary>
+        /// <value>
+        /// The period.
+        /// </value>
         public StatisticPeriod Period
         {
             get { return PeriodSettings.Period; }
@@ -49,36 +82,61 @@ namespace WotDossier.Applications.ViewModel
                 PeriodSettings.Period = value;
                 RaisePropertyChanged("LastNBattlesVisible");
                 RaisePropertyChanged("PeriodsVisible");
+                RaisePropertyChanged(PropPeriod);
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether [last n battles visible].
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if [last n battles visible]; otherwise, <c>false</c>.
+        /// </value>
         public bool LastNBattlesVisible
         {
             get { return Period == StatisticPeriod.LastNBattles; }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether [periods visible].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [periods visible]; otherwise, <c>false</c>.
+        /// </value>
         public bool PeriodsVisible
         {
             get { return Period == StatisticPeriod.Custom; }
         }
 
+        /// <summary>
+        /// Gets or sets the last n battles.
+        /// </summary>
+        /// <value>
+        /// The last n battles.
+        /// </value>
         public int LastNBattles
         {
             get { return PeriodSettings.LastNBattles; }
             set
             {
                 PeriodSettings.LastNBattles = value;
-                RaisePropertyChanged("LastNBattles");
+                RaisePropertyChanged(PropLastNBattles);
             }
         }
 
+        /// <summary>
+        /// Gets or sets the previous date.
+        /// </summary>
+        /// <value>
+        /// The previous date.
+        /// </value>
         public DateTime? PrevDate
         {
             get { return PeriodSettings.PrevDate; }
             set
             {
                 PeriodSettings.PrevDate = value;
-                RaisePropertyChanged("PrevDate");
+                RaisePropertyChanged(PropPrevDate);
             }
         }
 
@@ -101,6 +159,15 @@ namespace WotDossier.Applications.ViewModel
         protected override void OnPropertyChanged(PropertyChangedEventArgs e)
         {
             Save();
+
+            if (_list.Contains(e.PropertyName))
+            {
+                if (PeriodSettingsUpdated != null)
+                {
+                    PeriodSettingsUpdated();
+                }
+            }
+
             base.OnPropertyChanged(e);
         }
     }

@@ -459,7 +459,7 @@ namespace WotDossier.Applications.ViewModel
                                 //trick for set "N last battles period"
                                 if (settings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
                                 {
-                                    PeriodSelectorOnPropertyChanged(null, null);
+                                    PeriodSelectorOnPropertyChanged();
                                 }
 
                                 ProgressView.Report(bw, 50, string.Empty);
@@ -498,8 +498,9 @@ namespace WotDossier.Applications.ViewModel
             if (PlayerStatistic != null)
             {
                 RaisePropertyChanged(PropLastUsedTanksList);
-                PlayerStatistic.WN8RatingForPeriod = RatingHelper.Wn8ForPeriod(LastUsedTanksList);
-                PlayerStatistic.PerformanceRatingForPeriod = RatingHelper.PerformanceRatingForPeriod(LastUsedTanksList);
+                var lastUsedTanksList = LastUsedTanksList;
+                PlayerStatistic.WN8RatingForPeriod = RatingHelper.Wn8ForPeriod(lastUsedTanksList);
+                PlayerStatistic.PerformanceRatingForPeriod = RatingHelper.PerformanceRatingForPeriod(lastUsedTanksList);
             }
         }
 
@@ -508,9 +509,9 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
             
             //init previous dates list
-            PeriodSelector.PropertyChanged -= PeriodSelectorOnPropertyChanged;
+            PeriodSelector.PeriodSettingsUpdated -= PeriodSelectorOnPropertyChanged;
             PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
-            PeriodSelector.PropertyChanged += PeriodSelectorOnPropertyChanged;
+            PeriodSelector.PeriodSettingsUpdated += PeriodSelectorOnPropertyChanged;
         }
 
         private void InitTanksStatistic(List<TankJson> tanks)
@@ -593,9 +594,25 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnStatisticPeriodChanged(StatisticPeriodChangedEvent args)
         {
-            if (args.StatisticPeriod == StatisticPeriod.LastNBattles)
+            ChartView.InitLastUsedTanksChart(PlayerStatistic, _tanks);
+            InitLastUsedTankList();
+            
+            SetPeriodTabHeader();
+        }
+
+        private void SetPeriodTabHeader()
+        {
+            AppSettings appSettings = SettingsReader.Get();
+            PeriodTabHeader = Resources.Resources.ResourceManager.GetFormatedEnumResource(appSettings.PeriodSettings.Period, appSettings.PeriodSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PeriodSettings.PrevDate : appSettings.PeriodSettings.LastNBattles);
+        }
+
+        private void PeriodSelectorOnPropertyChanged()
+        {
+            AppSettings settings = SettingsReader.Get();
+
+            if (settings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
             {
-                int battles = PlayerStatistic.BattlesCount - args.LastNBattles;
+                int battles = PlayerStatistic.BattlesCount - settings.PeriodSettings.LastNBattles;
 
                 PlayerStatisticViewModel viewModel = PlayerStatistic.GetAll().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                 if (viewModel != null)
@@ -606,24 +623,9 @@ namespace WotDossier.Applications.ViewModel
             }
             else
             {
-                ChartView.InitLastUsedTanksChart(PlayerStatistic, _tanks);
-                InitLastUsedTankList();
+                EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(settings.PeriodSettings.Period,
+                    settings.PeriodSettings.PrevDate, settings.PeriodSettings.LastNBattles));   
             }
-
-            SetPeriodTabHeader();
-        }
-
-        private void SetPeriodTabHeader()
-        {
-            AppSettings appSettings = SettingsReader.Get();
-            PeriodTabHeader = Resources.Resources.ResourceManager.GetFormatedEnumResource(appSettings.PeriodSettings.Period, appSettings.PeriodSettings.Period == StatisticPeriod.Custom ? (object)appSettings.PeriodSettings.PrevDate : appSettings.PeriodSettings.LastNBattles);
-        }
-
-        private void PeriodSelectorOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
-        {
-            AppSettings settings = SettingsReader.Get();
-            EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(settings.PeriodSettings.Period,
-                    settings.PeriodSettings.PrevDate, settings.PeriodSettings.LastNBattles));
         }
 
         private static void SetUiCulture()

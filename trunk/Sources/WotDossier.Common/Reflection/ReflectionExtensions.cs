@@ -5,8 +5,16 @@ using System.Reflection;
 
 namespace WotDossier.Common.Reflection
 {
+    /// <summary>
+    /// Replection extension methods 
+    /// </summary>
     public static class ReflectionExtensions
     {
+        /// <summary>
+        /// Gets the public properties.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
         public static PropertyInfo[] GetPublicProperties(this Type type)
         {
             if (type.IsInterface)
@@ -46,6 +54,12 @@ namespace WotDossier.Common.Reflection
                 | BindingFlags.Public | BindingFlags.Instance);
         }
 
+        /// <summary>
+        /// Gets the public property.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <returns></returns>
         public static PropertyInfoEx GetPublicProperty(this Type type, string propertyName)
         {
             PropertyInfo propertyInfo;
@@ -91,11 +105,5 @@ namespace WotDossier.Common.Reflection
 
             return null;
         }
-    }
-
-    public class PropertyInfoEx
-    {
-        public Type Type { get; set; }
-        public PropertyInfo PropertyInfo { get; set; }
     }
 }

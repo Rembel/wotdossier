@@ -10,6 +10,12 @@ namespace WotDossier.Converters
     {
         private static readonly MedalToImageConverter _default = new MedalToImageConverter();
 
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static MedalToImageConverter Default
         {
             get { return _default; }

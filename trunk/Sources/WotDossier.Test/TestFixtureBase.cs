@@ -559,7 +559,7 @@ namespace WotDossier.Test
         //    PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
         //    IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic(currentStatistic.PlayerId);
-        //    List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
+        //    List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => CompressHelper.DecompressObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
         //    TankJson is3 = tankJsons.First(x => x.UniqueId() == 29);
         //    TankDescription tankDescription = Dictionaries.Instance.Tanks[29];
@@ -628,7 +628,7 @@ namespace WotDossier.Test
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
 
             IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic<TankStatisticEntity>(currentStatistic.PlayerId);
-            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => WotApiHelper.UnZipObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
+            List<TankJson> tankJsons = entities.GroupBy(x => x.TankId).Select(x => x.Select(tank => CompressHelper.DecompressObject<TankJson>(tank.Raw)).OrderByDescending(y => y.A15x15.battlesCount).FirstOrDefault()).ToList();
 
             var performanceRating = RatingHelper.PerformanceRating(tankJsons, json => json.A15x15);
 

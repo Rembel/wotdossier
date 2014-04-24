@@ -25,10 +25,36 @@ namespace WotDossier.Applications.Logic
             }
         }
 
+        /// <summary>
+        /// Gets or sets the ratings.
+        /// </summary>
+        /// <value>
+        /// The ratings.
+        /// </value>
         public Ratings Ratings { get; set; }
 
+        /// <summary>
+        /// Gets or sets the clan.
+        /// </summary>
+        /// <value>
+        /// The clan.
+        /// </value>
         public ClanData Clan { get; set; }
+
+        /// <summary>
+        /// Gets or sets the role.
+        /// </summary>
+        /// <value>
+        /// The role.
+        /// </value>
         public string Role { get; set; }
+
+        /// <summary>
+        /// Gets or sets the since.
+        /// </summary>
+        /// <value>
+        /// The since.
+        /// </value>
         public long Since { get; set; }
     }
 }

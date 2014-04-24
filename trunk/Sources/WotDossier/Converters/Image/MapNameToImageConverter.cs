@@ -8,7 +8,13 @@ namespace WotDossier.Converters
     public class MapNameToImageConverter : IValueConverter
     {
         private static readonly MapNameToImageConverter _default = new MapNameToImageConverter();
-        
+
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static MapNameToImageConverter Default
         {
             get { return _default; }

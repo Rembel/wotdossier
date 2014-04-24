@@ -9,8 +9,14 @@ namespace WotDossier.Converters
     public class CountryIdToImageConverter : IValueConverter
     {
         private static readonly CountryIdToImageConverter _default = new CountryIdToImageConverter();
-        private static Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
+        private static readonly Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
 
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static CountryIdToImageConverter Default
         {
             get { return _default; }

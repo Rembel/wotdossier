@@ -16,13 +16,19 @@ namespace WotDossier.Applications.Logic
         private const string FORM_DATA_YT0 = "Content-Disposition: form-data; name=\"yt0\"\r\n\r\nUpload";
         private const string CONTENT_TYPE_OCTET_STREAM = "Content-Type: application/octet-stream\r\n\r\n";
 
-        readonly List<byte> _bytes = new List<byte>();
+        private readonly List<byte> _bytes = new List<byte>();
         private readonly string _boundary = string.Format(REQ_BOUNDARY, DateTime.Now.Ticks.ToString("x"));
         private readonly string _separator;
         private readonly string _requestEnd;
 
-        private StringBuilder _builder = new StringBuilder();
+        private readonly StringBuilder _builder = new StringBuilder();
 
+        /// <summary>
+        /// Gets the boundary.
+        /// </summary>
+        /// <value>
+        /// The boundary.
+        /// </value>
         public string Boundary
         {
             get { return _boundary; }
@@ -37,6 +43,9 @@ namespace WotDossier.Applications.Logic
             _requestEnd = "\r\n--" + _boundary + "--\r\n";
         }
 
+        /// <summary>
+        /// Write request content Description field
+        /// </summary>
         public RequestComposer Description(string description)
         {
             Append(Encoding.UTF8.GetBytes(_separator));
@@ -47,6 +56,9 @@ namespace WotDossier.Applications.Logic
             return this;
         }
 
+        /// <summary>
+        /// Write request content isSecret field
+        /// </summary>
         public RequestComposer Secret(string isSecret)
         {
             Append(Encoding.UTF8.GetBytes(_separator));
@@ -54,6 +66,9 @@ namespace WotDossier.Applications.Logic
             return this;
         }
 
+        /// <summary>
+        /// Write request content file field
+        /// </summary>
         public RequestComposer File(FileInfo file)
         {
             string fileName = string.Format(FORM_DATA_FILENAME, file.Name);
@@ -66,6 +81,9 @@ namespace WotDossier.Applications.Logic
             return this;
         }
 
+        /// <summary>
+        /// Write request content title
+        /// </summary>
         public RequestComposer Title(string title)
         {
             Append(Encoding.UTF8.GetBytes(_separator));
@@ -73,6 +91,9 @@ namespace WotDossier.Applications.Logic
             return this;
         }
 
+        /// <summary>
+        /// Write request content end
+        /// </summary>
         public RequestComposer End()
         {
             Append(Encoding.UTF8.GetBytes(_separator));
@@ -86,6 +107,10 @@ namespace WotDossier.Applications.Logic
             _bytes.AddRange(bytes);
         }
 
+        /// <summary>
+        /// Gets the request content bytes.
+        /// </summary>
+        /// <returns></returns>
         public byte[] GetRequestBytes()
         {
             return _bytes.ToArray();

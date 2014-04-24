@@ -226,11 +226,13 @@
     <Compile Include="Converters\ObjectToCollapseConverter.cs" />
     <Compile Include="Converters\IntToVisibilityConverter.cs" />
     <Compile Include="Converters\EpicMedalCountToStringConverter.cs" />
-    <Compile Include="Converters\MedalCountToStringConverter.cs" />
+    <Compile Include="Converters\MedalRankToStringConverter.cs" />
     <Compile Include="Converters\StatisticPeriodToStringConverter.cs" />
     <Compile Include="Converters\MarkOfMasteryToTooltipConverter.cs" />
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
-    <Compile Include="Converters\SubtractValueConverter.cs" />
+    <Compile Include="Converters\SubtractValueConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Resources\Medals.Designer.cs">

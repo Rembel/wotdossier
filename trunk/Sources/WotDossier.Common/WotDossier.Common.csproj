@@ -56,6 +56,7 @@
     <Compile Include="Reflection\PropertyComparer.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Reflection\PropertyInfoEx.cs" />
     <Compile Include="Reflection\ReflectionExtensions.cs" />
     <Compile Include="ResourceManagerExtensions.cs" />
     <Compile Include="StopWatch.cs" />

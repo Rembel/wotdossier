@@ -8,6 +8,12 @@ namespace WotDossier.Converters
     {
         private static readonly DateFormater _defaultInstance = new DateFormater();
 
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static DateFormater Default { get { return _defaultInstance; } }
 
         /// <summary>

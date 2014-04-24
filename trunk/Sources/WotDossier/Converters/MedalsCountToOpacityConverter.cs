@@ -5,10 +5,20 @@ using System.Windows.Data;
 
 namespace WotDossier.Converters
 {
+    /// <summary>
+    /// Medal icon opacity dependancy to count of medals
+    /// param - min medals count
+    /// </summary>
     public class MedalsCountToOpacityConverter : IMultiValueConverter
     {
-        private static MedalsCountToOpacityConverter _default = new MedalsCountToOpacityConverter();
+        private static readonly MedalsCountToOpacityConverter _default = new MedalsCountToOpacityConverter();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static MedalsCountToOpacityConverter Default
         {
             get { return _default; }

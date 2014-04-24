@@ -47,10 +47,10 @@ namespace WotDossier.Applications.Update
             {
                 if (entity.Version < 65)
                 {
-                    TankJson29 tankV29 = WotApiHelper.UnZipObject<TankJson29>(entity.Raw);
+                    TankJson29 tankV29 = CompressHelper.DecompressObject<TankJson29>(entity.Raw);
                     TankJson tank = DataMapper.Map(tankV29);
 
-                    byte[] zip = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                    byte[] zip = CompressHelper.Compress(JsonConvert.SerializeObject(tank));
                     
                     commandText = @"Update TankStatistic set Version=65, Raw=@raw where Id=@id";
                     command = new SQLiteCommand(commandText, sqlCeConnection, transaction);

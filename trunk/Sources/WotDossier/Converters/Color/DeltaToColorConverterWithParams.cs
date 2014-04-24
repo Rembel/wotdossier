@@ -6,10 +6,23 @@ using System.Windows.Media;
 
 namespace WotDossier.Converters.Color
 {
+    /// <summary>
+    /// Parametrized value change delta converter  
+    /// </summary>
+    /// <remarks>
+    /// param - negative value better 
+    /// value - "true", "false"
+    /// </remarks>
     public class DeltaToColorConverterWithParams : IMultiValueConverter
     {
-        private static DeltaToColorConverterWithParams _default = new DeltaToColorConverterWithParams();
+        private static readonly DeltaToColorConverterWithParams _default = new DeltaToColorConverterWithParams();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static DeltaToColorConverterWithParams Default
         {
             get { return _default; }

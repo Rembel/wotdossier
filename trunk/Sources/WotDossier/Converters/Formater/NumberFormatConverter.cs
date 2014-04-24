@@ -8,8 +8,14 @@ namespace WotDossier.Converters
 {
     public class NumberFormatConverter : IValueConverter
     {
-        private static NumberFormatConverter _default = new NumberFormatConverter();
+        private static readonly NumberFormatConverter _default = new NumberFormatConverter();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static NumberFormatConverter Default
         {
             get { return _default; }
@@ -17,6 +23,12 @@ namespace WotDossier.Converters
 
         private static NumberFormatInfo _formatProvider;
 
+        /// <summary>
+        /// Gets the format provider.
+        /// </summary>
+        /// <value>
+        /// The format provider.
+        /// </value>
         public static NumberFormatInfo FormatProvider
         {
             get
@@ -31,6 +43,16 @@ namespace WotDossier.Converters
             }
         }
 
+        /// <summary>
+        /// Converts a value.
+        /// </summary>
+        /// <param name="value">The value produced by the binding source.</param>
+        /// <param name="targetType">The type of the binding target property.</param>
+        /// <param name="parameter">The converter parameter to use.</param>
+        /// <param name="culture">The culture to use in the converter.</param>
+        /// <returns>
+        /// A converted value. If the method returns null, the valid null value is used.
+        /// </returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null) return DependencyProperty.UnsetValue;
@@ -49,11 +71,26 @@ namespace WotDossier.Converters
             return DependencyProperty.UnsetValue;
         }
 
+        /// <summary>
+        /// Converts a value.
+        /// </summary>
+        /// <param name="value">The value that is produced by the binding target.</param>
+        /// <param name="targetType">The type to convert to.</param>
+        /// <param name="parameter">The converter parameter to use.</param>
+        /// <param name="culture">The culture to use in the converter.</param>
+        /// <returns>
+        /// A converted value. If the method returns null, the valid null value is used.
+        /// </returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return DependencyProperty.UnsetValue;
         }
 
+        /// <summary>
+        /// Determines whether the specified type is numeric.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
         public static bool IsNumeric(Type type)
         {
             if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))

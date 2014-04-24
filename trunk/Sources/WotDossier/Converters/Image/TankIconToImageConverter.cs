@@ -11,8 +11,14 @@ namespace WotDossier.Converters
     {
         private static readonly TankIconToImageConverter _default = new TankIconToImageConverter();
 
-        private static Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
+        private static readonly Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
 
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static TankIconToImageConverter Default
         {
             get { return _default; }

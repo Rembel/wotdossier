@@ -1,16 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Windows.Data;
 
 namespace WotDossier.Converters
 {
+    /// <summary>
+    /// Mark of mastery to description tooltip converter
+    /// </summary>
     public class MarkOfMasteryToTooltipConverter : IValueConverter
     {
-        private static MarkOfMasteryToTooltipConverter _default = new MarkOfMasteryToTooltipConverter();
+        private static readonly MarkOfMasteryToTooltipConverter _default = new MarkOfMasteryToTooltipConverter();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static MarkOfMasteryToTooltipConverter Default
         {
             get { return _default; }

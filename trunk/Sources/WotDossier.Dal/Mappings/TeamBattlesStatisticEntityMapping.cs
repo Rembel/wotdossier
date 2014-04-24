@@ -7,6 +7,9 @@ namespace WotDossier.Dal.Mappings
     /// </summary>
     public class TeamBattlesStatisticEntityMapping : ClassMapBase<TeamBattlesStatisticEntity>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamBattlesStatisticEntityMapping"/> class.
+        /// </summary>
         public TeamBattlesStatisticEntityMapping()
         {
 			Map(v => v.Updated, "Updated");

@@ -6,10 +6,19 @@ using WotDossier.Domain;
 
 namespace WotDossier.Converters
 {
+    /// <summary>
+    /// <see cref="StatisticPeriod"/> to String converter
+    /// </summary>
     public class StatisticPeriodToStringConverter : IValueConverter
     {
         private static readonly StatisticPeriodToStringConverter _defaultInstance = new StatisticPeriodToStringConverter();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static StatisticPeriodToStringConverter Default { get { return _defaultInstance; } }
 
         /// <summary>

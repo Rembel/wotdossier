@@ -17,6 +17,11 @@ namespace WotDossier.Common
         public Base32Encoder (char padding) : this (DEF_ENCODING_TABLE, padding) { }
         public Base32Encoder (string encodingTable) : this (encodingTable, DEF_PADDING) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Base32Encoder"/> class.
+        /// </summary>
+        /// <param name="encodingTable">The encoding table.</param>
+        /// <param name="padding">The padding.</param>
         public Base32Encoder (string encodingTable, char padding) {
             this.eTable = encodingTable;
             this.padding = padding;
@@ -24,7 +29,12 @@ namespace WotDossier.Common
             InitialiseDecodingTable ();
         }
 
-        virtual public string Encode (byte[] input) {
+        /// <summary>
+        /// Encodes the specified input.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        public string Encode (byte[] input) {
             var output = new StringBuilder ();
             int specialLength = input.Length % 5;
             int normalLength = input.Length - specialLength;
@@ -96,7 +106,12 @@ namespace WotDossier.Common
             return output.ToString ();
         }
 
-        virtual public byte[] Decode (string data) {
+        /// <summary>
+        /// Decodes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
+        public byte[] Decode (string data) {
             var outStream = new List<Byte> ();
 
             int length = data.Length;

@@ -306,7 +306,7 @@ namespace WotDossier.Applications.ViewModel
                     _replays.AddRange(replayFiles.OrderByDescending(x => x.PlayTime).ToList());
 
                     //add db replays
-                    List<DbReplay> collection = dbReplays.Where(x => x.Raw != null).Select(x => new DbReplay(WotApiHelper.UnZipObject<Domain.Replay.Replay>(x.Raw), FOLDER_DELETED)).ToList();
+                    List<DbReplay> collection = dbReplays.Where(x => x.Raw != null).Select(x => new DbReplay(CompressHelper.DecompressObject<Domain.Replay.Replay>(x.Raw), FOLDER_DELETED)).ToList();
                     _replays.AddRange(collection);
 
                     //add folder for deleted replays

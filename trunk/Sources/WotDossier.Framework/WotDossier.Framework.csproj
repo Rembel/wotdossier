@@ -168,6 +168,7 @@
     <Compile Include="Forms\WPFMessageBoxImage.cs" />
     <Compile Include="Forms\WPFMessageBoxResult.cs" />
     <Compile Include="Foundation\Model.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Interpolation\AkimaCubicSplineInterpolator.cs" />
     <Compile Include="Interpolation\CubicHermiteSplineInterpolation.cs" />
     <Compile Include="Interpolation\Ext.cs" />

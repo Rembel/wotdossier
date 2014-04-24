@@ -11,14 +11,20 @@ namespace WotDossier.Converters
     [ValueConversion(typeof(int), typeof(Int32Rect))]
     public class MarkOfMasteryToImageConverter : IValueConverter
     {
-        private static MarkOfMasteryToImageConverter _default = new MarkOfMasteryToImageConverter();
+        private static readonly MarkOfMasteryToImageConverter _default = new MarkOfMasteryToImageConverter();
 
         private static BitmapSource cb0 = null;
         private static BitmapSource cb1 = ToBitmapSource(Resources.Medals.MarkOfMastery1);
         private static BitmapSource cb2 = ToBitmapSource(Resources.Medals.MarkOfMastery2);
         private static BitmapSource cb3 = ToBitmapSource(Resources.Medals.MarkOfMastery3);
         private static BitmapSource cb4 = ToBitmapSource(Resources.Medals.MarkOfMastery4);
-        
+
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static MarkOfMasteryToImageConverter Default
         {
             get { return _default; }

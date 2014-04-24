@@ -44,7 +44,7 @@ namespace WotDossier.Applications.Update
 
             foreach (TankStatisticEntity entity in list)
             {
-                TankJson tank = WotApiHelper.UnZipObject<TankJson>(entity.Raw);
+                TankJson tank = CompressHelper.DecompressObject<TankJson>(entity.Raw);
 
                 if (tank.Common.basedonversion < 29)
                 {
@@ -52,7 +52,7 @@ namespace WotDossier.Applications.Update
                     tank.A15x15.xpBefore8_8 = tank.A15x15.xp;
                 }
 
-                byte[] zip = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                byte[] zip = CompressHelper.Compress(JsonConvert.SerializeObject(tank));
 
                 commandText = @"Update TankStatistic set Raw=@raw where Id=@id";
                 command = new SQLiteCommand(commandText, sqlCeConnection, transaction);

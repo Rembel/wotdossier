@@ -6,8 +6,14 @@ namespace WotDossier.Converters
 {
     public class PercentFormater : IValueConverter
     {
-        private static PercentFormater _default = new PercentFormater();
+        private static readonly PercentFormater _default = new PercentFormater();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static PercentFormater Default
         {
             get { return _default; }

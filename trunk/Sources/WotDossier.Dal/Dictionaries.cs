@@ -133,7 +133,7 @@ namespace WotDossier.Dal
                 foreach (JToken jToken in parsedData)
                 {
                     TankDescription tank = jToken.ToObject<TankDescription>();
-                    tank.CountryCode = WotApiHelper.GetCountryNameCode(tank.CountryId);
+                    tank.CountryCode = CountryHelper.GetCountryNameCode(tank.CountryId);
 
                     TankIcon icon = jToken.ToObject<TankIcon>();
                     icon.CountryCode = tank.CountryCode;

@@ -216,7 +216,7 @@ namespace WotDossier.Dal
                     {
                         tankEntity = new TankEntity();
                         tankEntity.CountryId = countryId;
-                        tankEntity.CountryCode = WotApiHelper.GetCountryNameCode(countryId);
+                        tankEntity.CountryCode = CountryHelper.GetCountryNameCode(countryId);
                         tankEntity.TankId = tankId;
                         tankEntity.Icon = tank.Description.Icon.IconId;
                         tankEntity.PlayerId = playerEntity.Id;
@@ -246,7 +246,7 @@ namespace WotDossier.Dal
 
                         if (statisticEntity != null)
                         {
-                            TankJson currentSnapshot = WotApiHelper.UnZipObject<TankJson>(statisticEntity.Raw);
+                            TankJson currentSnapshot = CompressHelper.DecompressObject<TankJson>(statisticEntity.Raw);
                             currentSnapshotBattlesCount = predicate(currentSnapshot).battlesCount;
                         }
                         else
@@ -332,31 +332,7 @@ namespace WotDossier.Dal
         /// <param name="link">The link.</param>
         public void SaveReplay(long playerId, long replayId, string link)
         {
-            _dataProvider.OpenSession();
-            _dataProvider.BeginTransaction();
-            try
-            {
-                ReplayEntity entity = _dataProvider.QueryOver<ReplayEntity>().Where(x => x.PlayerId == playerId && x.ReplayId == replayId).SingleOrDefault<ReplayEntity>();
-
-                ReplayEntity replayEntity = entity ?? new ReplayEntity();
-
-                replayEntity.PlayerId = playerId;
-                replayEntity.ReplayId = replayId;
-                replayEntity.Link = link;
-
-                _dataProvider.Save(replayEntity);
-
-                _dataProvider.CommitTransaction();
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-                _dataProvider.RollbackTransaction();
-            }
-            finally
-            {
-                _dataProvider.CloseSession();
-            }
+            SaveReplay(playerId, replayId, link, null);
         }
 
         /// <summary>
@@ -409,7 +385,10 @@ namespace WotDossier.Dal
                 replayEntity.PlayerId = playerId;
                 replayEntity.ReplayId = replayId;
                 replayEntity.Link = link;
-                replayEntity.Raw = WotApiHelper.ZipObject(replayData);
+                if (replayData != null)
+                {
+                    replayEntity.Raw = CompressHelper.CompressObject(replayData);
+                }
 
                 _dataProvider.Save(replayEntity);
 

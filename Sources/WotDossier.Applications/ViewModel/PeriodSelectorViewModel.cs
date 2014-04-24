@@ -24,6 +24,9 @@ namespace WotDossier.Applications.ViewModel
             new ListItem<StatisticPeriod>(StatisticPeriod.Custom, Resources.Resources.StatisticPeriod_Custom_ComboItem)
         };
 
+        /// <summary>
+        /// Occurs when [period settings updated].
+        /// </summary>
         public event Action PeriodSettingsUpdated;
 
         private PeriodSettings _periodSettings;

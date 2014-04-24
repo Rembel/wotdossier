@@ -7,6 +7,9 @@ namespace WotDossier.Dal.Mappings
     /// </summary>
     public class PlayerAchievementsMapping : ClassMapBase<PlayerAchievementsEntity>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlayerAchievementsMapping"/> class.
+        /// </summary>
         public PlayerAchievementsMapping()
         {
 			Map(v => v.Warrior, "Warrior");

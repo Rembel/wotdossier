@@ -4,10 +4,19 @@ using System.Windows.Data;
 
 namespace WotDossier.Converters
 {
+    /// <summary>
+    /// Epic medals count To string converter
+    /// </summary>
     public class EpicMedalCountToStringConverter : IValueConverter
     {
         private static readonly EpicMedalCountToStringConverter _default = new EpicMedalCountToStringConverter();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static EpicMedalCountToStringConverter Default
         {
             get { return _default; }

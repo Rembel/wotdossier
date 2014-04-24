@@ -70,6 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRequestException.cs" />
+    <Compile Include="AppConfigSettings.cs" />
+    <Compile Include="CountryHelper.cs" />
     <Compile Include="DataMapper.cs" />
     <Compile Include="Dictionaries.cs" />
     <Compile Include="DossierRepository.cs" />
@@ -104,8 +106,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="WotApiClient.cs" />
-    <Compile Include="WotApiHelper.cs" />
-    <Compile Include="WotApiSettings.cs" />
+    <Compile Include="CompressHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

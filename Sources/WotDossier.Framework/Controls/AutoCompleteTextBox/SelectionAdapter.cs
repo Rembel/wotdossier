@@ -32,15 +32,9 @@ namespace WotDossier.Framework.Controls.AutoCompleteTextBox
 
         #region "Events"
 
-        public delegate void CancelEventHandler();
-
-        public delegate void CommitEventHandler();
-
-        public delegate void SelectionChangedEventHandler();
-
-        public event CancelEventHandler Cancel;
-        public event CommitEventHandler Commit;
-        public event SelectionChangedEventHandler SelectionChanged;
+        public event Action Cancel;
+        public event Action Commit;
+        public event Action SelectionChanged;
 
         #endregion
 

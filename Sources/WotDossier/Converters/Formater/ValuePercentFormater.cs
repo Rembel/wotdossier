@@ -7,8 +7,14 @@ namespace WotDossier.Converters
 {
     public class ValuePercentFormater : IMultiValueConverter
     {
-        private static ValuePercentFormater _default = new ValuePercentFormater();
+        private static readonly ValuePercentFormater _default = new ValuePercentFormater();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static ValuePercentFormater Default
         {
             get { return _default; }

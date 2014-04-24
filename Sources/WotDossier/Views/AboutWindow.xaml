@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
+        xmlns:dal="clr-namespace:WotDossier.Dal;assembly=WotDossier.Dal"
         Title="{x:Static Resources:Resources.WindowTitle_AboutWindow}" Height="195" Width="450" 
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource applicationBackgroundBrush}" 
         Foreground="{StaticResource DefaultForeground}" FontFamily="{StaticResource DefaultFontFamily}" FontSize="{StaticResource DefaultFontSize}" WindowStyle="None">
@@ -26,12 +27,12 @@
             <TextBlock  Margin="6,0,0,0" Name="Version" Text="{x:Static services:ApplicationInfo.Version}" />
         </StackPanel>
         <TextBlock Margin="12,12,0,0" Grid.Row="2" HorizontalAlignment="Left">
-            <Hyperlink NavigateUri="{x:Static services:ApplicationInfo.DownloadUri}" Click="Hyperlink_OnClick">
+            <Hyperlink NavigateUri="{x:Static dal:AppConfigSettings.DownloadUri}" Click="Hyperlink_OnClick">
                 <TextBlock Text="{x:Static Resources:Resources.Hyperlink_Download_Text}"></TextBlock>
             </Hyperlink>
         </TextBlock>
         <TextBlock Margin="12,12,0,0" Grid.Row="3" HorizontalAlignment="Left">
-            <Hyperlink NavigateUri="{x:Static services:ApplicationInfo.ForumUri}" Click="Hyperlink_OnClick">
+            <Hyperlink NavigateUri="{x:Static dal:AppConfigSettings.ForumUri}" Click="Hyperlink_OnClick">
                 <TextBlock Text="{x:Static Resources:Resources.Hyperlink_Forum_Text}"></TextBlock>
             </Hyperlink>
         </TextBlock>

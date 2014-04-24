@@ -133,7 +133,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
                 Match tankNameMatch = tankNameRegexp.Match(replay.datablock_1.playerVehicle);
-                CountryId = WotApiHelper.GetCountryId(tankNameMatch.Groups[1].Value);
+                CountryId = CountryHelper.GetCountryIdByCode(tankNameMatch.Groups[1].Value);
                 TankName = tankNameMatch.Groups[2].Value;
                 Tank = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => string.Equals(x.Icon.IconOrig, TankName, StringComparison.InvariantCultureIgnoreCase));
 

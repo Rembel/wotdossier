@@ -6,8 +6,14 @@ namespace WotDossier.Converters
 {
     public class Double2Formater : IValueConverter
     {
-        private static Double2Formater _default = new Double2Formater();
+        private static readonly Double2Formater _default = new Double2Formater();
 
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static Double2Formater Default
         {
             get { return _default; }

@@ -7,8 +7,14 @@ namespace WotDossier.Converters
 {
     public class ValueNearestPercentFormater : IMultiValueConverter
     {
-        private static ValueNearestPercentFormater _default = new ValueNearestPercentFormater();
+        private static readonly ValueNearestPercentFormater _default = new ValueNearestPercentFormater();
 
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
         public static ValueNearestPercentFormater Default
         {
             get { return _default; }

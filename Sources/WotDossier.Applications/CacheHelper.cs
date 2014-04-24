@@ -14,6 +14,9 @@ namespace WotDossier.Applications
         private const char SEPARATOR = ';';
         private static readonly ILog Log = LogManager.GetLogger("DossierRepository");
 
+        /// <summary>
+        /// The game servers
+        /// </summary>
         private static readonly Dictionary<string, string> GameServers = new Dictionary<string, string>
         {
             {"ru", "worldoftanks.net"},
@@ -152,6 +155,11 @@ namespace WotDossier.Applications
             return decodedFileName.Split(SEPARATOR)[1];
         }
 
+        /// <summary>
+        /// Decods the name of the file.
+        /// </summary>
+        /// <param name="cacheFile">The cache file.</param>
+        /// <returns></returns>
         public static string DecodFileName(FileInfo cacheFile)
         {
             Base32Encoder encoder = new Base32Encoder();

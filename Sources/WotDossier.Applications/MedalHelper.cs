@@ -9,8 +9,19 @@ namespace WotDossier.Applications
 {
     public static class MedalHelper
     {
+        /// <summary>
+        /// Gets or sets the medals dictionary.
+        /// </summary>
+        /// <value>
+        /// The medals.
+        /// </value>
         public static Dictionary<int, Medal> Medals { get; set; }
 
+        /// <summary>
+        /// Gets the medals by identifiers.
+        /// </summary>
+        /// <param name="achievements">The achievements.</param>
+        /// <returns></returns>
         public static List<Medal> GetMedals(List<int> achievements)
         {
             if (Medals == null)
@@ -30,6 +41,10 @@ namespace WotDossier.Applications
             return list;
         }
 
+        /// <summary>
+        /// Reads the medals.
+        /// </summary>
+        /// <returns></returns>
         public static Dictionary<int, Medal> ReadMedals()
         {
             XmlDocument doc = new XmlDocument();
@@ -52,6 +67,11 @@ namespace WotDossier.Applications
             return medals;
         }
 
+        /// <summary>
+        /// Gets the achiev medals.
+        /// </summary>
+        /// <param name="dossierPopUps">The dossier pop ups.</param>
+        /// <returns></returns>
         public static List<Medal> GetAchievMedals(List<List<JValue>> dossierPopUps)
         {
             if (Medals == null)

@@ -4,11 +4,20 @@ using System.Windows.Data;
 
 namespace WotDossier.Converters
 {
-    public class MedalCountToStringConverter : IValueConverter
+    /// <summary>
+    /// Medal rank to string converter
+    /// </summary>
+    public class MedalRankToStringConverter : IValueConverter
     {
-        private static readonly MedalCountToStringConverter _default = new MedalCountToStringConverter();
+        private static readonly MedalRankToStringConverter _default = new MedalRankToStringConverter();
 
-        public static MedalCountToStringConverter Default
+        /// <summary>
+        /// Gets the default instance.
+        /// </summary>
+        /// <value>
+        /// The default.
+        /// </value>
+        public static MedalRankToStringConverter Default
         {
             get { return _default; }
         }

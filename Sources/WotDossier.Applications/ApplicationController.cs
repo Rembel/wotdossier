@@ -34,6 +34,9 @@ namespace WotDossier.Applications
             //shellViewModel.ExitCommand = _exitCommand;
         }
 
+        /// <summary>
+        /// Runs this instance.
+        /// </summary>
         public void Run()
         {
             InitReplaysCatalog();
@@ -47,6 +50,9 @@ namespace WotDossier.Applications
             _shellViewModel.Close();
         }
 
+        /// <summary>
+        /// Initializes the replays catalog.
+        /// </summary>
         public void InitReplaysCatalog()
         {
             string currentDirectory = Folder.AssemblyDirectory();
@@ -62,6 +68,12 @@ namespace WotDossier.Applications
             }
         }
 
+        /// <summary>
+        /// Gets the embedded resource.
+        /// </summary>
+        /// <param name="resourceName">Name of the resource.</param>
+        /// <param name="assembly">The assembly.</param>
+        /// <returns></returns>
         public static byte[] GetEmbeddedResource(string resourceName, Assembly assembly)
         {
             using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))

@@ -102,7 +102,7 @@ namespace WotDossier.Dal
             {
                 Tank appSpotTank = jToken.ToObject<Tank>();
                 TankJson tank = DataMapper.Map(appSpotTank);
-                tank.Raw = WotApiHelper.ZipObject(tank);
+                tank.Raw = CompressHelper.CompressObject(tank);
                 if (ExtendPropertiesData(tank))
                 {
                     tanks.Add(tank);
@@ -134,7 +134,7 @@ namespace WotDossier.Dal
                         JProperty property = (JProperty)jToken;
                         int version = property.Value["common"].ToObject<CommonJson>().basedonversion;
                         TankJson tank = DataMapper.Map(property.Value, version);
-                        tank.Raw = WotApiHelper.Zip(JsonConvert.SerializeObject(tank));
+                        tank.Raw = CompressHelper.Compress(JsonConvert.SerializeObject(tank));
                         if (ExtendPropertiesData(tank))
                         {
                             tanks.Add(tank);

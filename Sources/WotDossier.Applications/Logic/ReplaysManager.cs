@@ -12,6 +12,10 @@ namespace WotDossier.Applications.Logic
     {
         private const string REPLAYS_CATALOG_FILE_PATH = @"Data\ReplaysCatalog.xml";
 
+        /// <summary>
+        /// Saves the folder.
+        /// </summary>
+        /// <param name="replayFolder">The replay folder.</param>
         public void SaveFolder(ReplayFolder replayFolder)
         {
             using (StreamWriter writer = File.CreateText(Path.Combine(Environment.CurrentDirectory, REPLAYS_CATALOG_FILE_PATH)))
@@ -21,6 +25,10 @@ namespace WotDossier.Applications.Logic
             }
         }
 
+        /// <summary>
+        /// Gets the folders.
+        /// </summary>
+        /// <returns></returns>
         public List<ReplayFolder> GetFolders()
         {
             using (StreamReader streamReader = File.OpenText(Path.Combine(Environment.CurrentDirectory, REPLAYS_CATALOG_FILE_PATH)))

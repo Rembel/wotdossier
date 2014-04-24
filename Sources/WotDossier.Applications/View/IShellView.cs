@@ -5,6 +5,12 @@ namespace WotDossier.Applications.View
 {
     public interface IShellView : IView
     {
+        /// <summary>
+        /// Gets or sets the owner.
+        /// </summary>
+        /// <value>
+        /// The owner.
+        /// </value>
         Window Owner { set; get; }
     }
 }

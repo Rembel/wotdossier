@@ -17,12 +17,13 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public static byte[] Compress(string value)
         {
-            var zip = new GZipStream(new MemoryStream(), CompressionMode.Compress);
+            var memoryStream = new MemoryStream();
+            var zip = new GZipStream(memoryStream, CompressionMode.Compress);
             using (var writer = new StreamWriter(zip, Encoding.UTF8))
             {
                 writer.Write(value);
             }
-            return new MemoryStream().ToArray();
+            return memoryStream.ToArray();
         }
 
         /// <summary>

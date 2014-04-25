@@ -30,6 +30,11 @@ namespace WotDossier.Domain.Entities
 		/// Gets/Sets the field "TankId".
 		/// </summary>
 		public virtual int TankId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the battles count.
+        /// </summary>
+        public virtual int BattlesCount { get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the <see cref="TankEntity"/> object.

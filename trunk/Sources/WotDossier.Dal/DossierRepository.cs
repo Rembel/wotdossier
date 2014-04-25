@@ -228,7 +228,7 @@ namespace WotDossier.Dal
 
                         T statisticEntity = new T();
                         statisticEntity.TankIdObject = tankEntity;
-                        Update(statisticEntity, tank);
+                        Update(statisticEntity, tank, predicate);
                         _dataProvider.Save(statisticEntity);
                     }
                     else
@@ -255,7 +255,7 @@ namespace WotDossier.Dal
                             statisticEntity.TankIdObject = tankEntity;
                         }
 
-                        if (currentSnapshotBattlesCount < tank.A15x15.battlesCount || (currentSnapshotBattlesCount == predicate(tank).battlesCount && tank.Common.basedonversion == 26))
+                        if (currentSnapshotBattlesCount < predicate(tank).battlesCount)
                         {
                             //create new record
                             if (IsNewSnapshotShouldBeAdded(statisticEntity.Updated, updated))
@@ -265,7 +265,7 @@ namespace WotDossier.Dal
                             }
 
                             statisticEntity.Updated = updated;
-                            Update(statisticEntity, tank);
+                            Update(statisticEntity, tank, predicate);
                             _dataProvider.Save(statisticEntity);
                         }
                     }
@@ -288,12 +288,13 @@ namespace WotDossier.Dal
 
             return playerEntity;
         }
-        
-        private void Update(TankStatisticEntityBase statisticEntity, TankJson tank)
+
+        private void Update(TankStatisticEntityBase statisticEntity, TankJson tank, Func<TankJson, StatisticJson> predicate)
         {
             statisticEntity.Updated = tank.Common.lastBattleTimeR;
             statisticEntity.Version = tank.Common.basedonversion;
             statisticEntity.Raw = tank.Raw;
+            statisticEntity.BattlesCount = predicate(tank).battlesCount;
         }
 
         /// <summary>

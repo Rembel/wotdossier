@@ -32,7 +32,6 @@ namespace WotDossier.Applications.BattleModeStrategies
                     20009,//T23
                     222,//t44_122
                     223,//t44_85
-                    210,//su_85i
                     30002,//Type 59 G
                     20211,//sexton_i
                     30003,//WZ-111

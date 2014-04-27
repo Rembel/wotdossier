@@ -131,11 +131,14 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnReplayFileMove(ReplayFileMoveEventArgs eventArgs)
         {
-            if (ReplayFilter.SelectedFolder != eventArgs.TargetFolder && eventArgs.ReplayFile is PhisicalReplay)
+            using (new WaitCursor())
             {
-                eventArgs.ReplayFile.Move(eventArgs.TargetFolder);
-                eventArgs.ReplayFile.FolderId = eventArgs.TargetFolder.Id;
-                OnPropertyChanged("Replays");
+                if (ReplayFilter.SelectedFolder != eventArgs.TargetFolder && eventArgs.ReplayFile is PhisicalReplay)
+                {
+                    eventArgs.ReplayFile.Move(eventArgs.TargetFolder);
+                    eventArgs.ReplayFile.FolderId = eventArgs.TargetFolder.Id;
+                    OnPropertyChanged("Replays");
+                }
             }
         }
 
@@ -357,62 +360,71 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnReplayRowsZip(object rows)
         {
-            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
-            List<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
-            PackReplays(replays, "pack");
+            using (new WaitCursor())
+            {
+                ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
+                List<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
+                PackReplays(replays, "pack");
+            }
         }
 
         private void OnReplayRowsDelete(object rows)
         {
-            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
-            IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
-
-            MessageBoxResult delete;
-            if (Keyboard.Modifiers == ModifierKeys.Shift || replays.All(x => x is DbReplay))
+            using (new WaitCursor())
             {
-                //use complete delete
-                delete = MessageBoxResult.No;
-            }
-            else
-            {
-                delete = MessageBox.Show(Resources.Resources.Msg_ReplaysDelete, Resources.Resources.WindowCaption_Information, 
-                    MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Yes);
+                ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ??
+                                                             new ObservableCollection<object>();
+                IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
 
-                if (delete == MessageBoxResult.Cancel)
+                MessageBoxResult delete;
+                if (Keyboard.Modifiers == ModifierKeys.Shift || replays.All(x => x is DbReplay))
                 {
-                    return;
+                    //use complete delete
+                    delete = MessageBoxResult.No;
                 }
-            }
-
-
-            bool error = false;
-            foreach (ReplayFile replayFile in replays)
-            {
-                try
+                else
                 {
-                    if (delete == MessageBoxResult.Yes)
+                    delete = MessageBox.Show(Resources.Resources.Msg_ReplaysDelete,
+                        Resources.Resources.WindowCaption_Information,
+                        MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Yes);
+
+                    if (delete == MessageBoxResult.Cancel)
                     {
-                        Domain.Replay.Replay replayData = replayFile.ReplayData();
-                        DossierRepository.SaveReplay(replayFile.PlayerId, replayFile.ReplayId, replayFile.Link, replayData);
-                        _replays.Add(new DbReplay(replayData, FOLDER_DELETED));
+                        return;
                     }
-
-                    replayFile.Delete();
-                    _replays.Remove(replayFile);
                 }
-                catch (Exception e)
+
+
+                bool error = false;
+                foreach (ReplayFile replayFile in replays)
                 {
-                    _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.Name);
-                    error = true;
+                    try
+                    {
+                        if (delete == MessageBoxResult.Yes)
+                        {
+                            Domain.Replay.Replay replayData = replayFile.ReplayData();
+                            DossierRepository.SaveReplay(replayFile.PlayerId, replayFile.ReplayId, replayFile.Link,
+                                replayData);
+                            _replays.Add(new DbReplay(replayData, FOLDER_DELETED));
+                        }
+
+                        replayFile.Delete();
+                        _replays.Remove(replayFile);
+                    }
+                    catch (Exception e)
+                    {
+                        _log.ErrorFormat("Error on file deletion - {0}", e, replayFile.Name);
+                        error = true;
+                    }
                 }
-            }
 
-            OnPropertyChanged("Replays");
+                OnPropertyChanged("Replays");
 
-            if (error)
-            {
-                MessageBox.Show(Resources.Resources.ErrorMsg_ErrorOnFilesDeletion,
-                    Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                if (error)
+                {
+                    MessageBox.Show(Resources.Resources.ErrorMsg_ErrorOnFilesDeletion,
+                        Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -440,25 +452,29 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnUploadReplays(object rows)
         {
-            ReplayUploader replayUploader = new ReplayUploader();
-
-            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
-            IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
-
             using (new WaitCursor())
             {
-                AppSettings appSettings = SettingsReader.Get();
+                ReplayUploader replayUploader = new ReplayUploader();
 
-                foreach (var replay in replays)
+                ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ??
+                                                             new ObservableCollection<object>();
+                IEnumerable<ReplayFile> replays = selectedItems.Cast<ReplayFile>().ToList();
+
+                using (new WaitCursor())
                 {
-                    if (replay.PhisicalFile != null)
+                    AppSettings appSettings = SettingsReader.Get();
+
+                    foreach (var replay in replays)
                     {
-                        WotReplaysSiteResponse response = replayUploader.Upload(replay.PhisicalFile,
-                            appSettings.PlayerId, appSettings.PlayerName);
-                        if (response != null && response.Result == true)
+                        if (replay.PhisicalFile != null)
                         {
-                            replay.Link = response.Url;
-                            DossierRepository.SaveReplay(replay.PlayerId, replay.ReplayId, replay.Link);
+                            WotReplaysSiteResponse response = replayUploader.Upload(replay.PhisicalFile,
+                                appSettings.PlayerId, appSettings.PlayerName);
+                            if (response != null && response.Result == true)
+                            {
+                                replay.Link = response.Url;
+                                DossierRepository.SaveReplay(replay.PlayerId, replay.ReplayId, replay.Link);
+                            }
                         }
                     }
                 }

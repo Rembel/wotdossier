@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Rows;
 
@@ -496,6 +498,15 @@ namespace WotDossier.Applications.ViewModel
 
         public int BattlesPerDay { get; set; }
 
+        /// <summary>
+        /// Gets all statistic slices.
+        /// </summary>
+        /// <returns></returns>
+        public abstract List<StatisticViewModelBase> GetAllSlices();
+
+        /// <summary>
+        /// Occurs when [property changed].
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         //[NotifyPropertyChangedInvocator]

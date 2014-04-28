@@ -124,6 +124,7 @@
     <Compile Include="MedalHelper.cs" />
     <Compile Include="ViewModel\BattleMode.cs" />
     <Compile Include="ViewModel\ClanViewModel.cs" />
+    <Compile Include="ViewModel\CommonChartsViewModel.cs" />
     <Compile Include="ViewModel\CompareStatisticViewModel.cs" />
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />
     <Compile Include="ViewModel\BattleModeSelectorViewModel.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="ViewModel\PlayerSearchViewModel.cs" />
     <Compile Include="ViewModel\PlayersCompareViewModel.cs" />
     <Compile Include="ViewModel\PlayerServerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\SellInfo.cs" />
     <Compile Include="ViewModel\StatisticPeriodChangedEvent.cs" />
     <Compile Include="ViewModel\TankFilterViewModel.cs" />
     <Compile Include="ViewModel\DataPoint.cs" />

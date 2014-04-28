@@ -87,7 +87,7 @@
                     <TabItem Header="1">
                         <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
                             <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
-                            <controls:LineChartControl Header="WN7" DataSource="{Binding WN7RatingDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
                             <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
                             <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
                         </WrapPanel>

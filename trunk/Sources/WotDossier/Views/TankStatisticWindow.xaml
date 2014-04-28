@@ -2,7 +2,6 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
-        xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
         xmlns:tabs="clr-namespace:WotDossier.Tabs" xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -66,27 +65,31 @@
                     </ScrollViewer>
                 </TabItem>
                 <!--Charts-->
-                <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart">
-                    <ScrollViewer>
-                        <StackPanel>
-                            <Grid>
-                                <d3:ChartPlotter Name="Chart" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
-                                      Margin="10,10,0,10">
-                                </d3:ChartPlotter>
-                            </Grid>
-                            <Grid>
-                                <d3:ChartPlotter Name="Chart2" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
-                                      Margin="10,10,0,10">
-                                </d3:ChartPlotter>
-                            </Grid>
-                            <Grid>
-                                <d3:ChartPlotter Name="Chart3" LegendVisibility="Hidden" Height="200" Width="600" MainHorizontalAxisVisibility="Visible" MainVerticalAxisVisibility="Visible"
-                                      Margin="10,10,0,10">
-                                </d3:ChartPlotter>
-                            </Grid>
-                        </StackPanel>
-                    </ScrollViewer>
-                </TabItem>
+              <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
+                <TabControl HorizontalAlignment="Center" Margin="0,50,0,50" Background="White">
+                  <TabControl.Resources>
+                    <Style TargetType="TabPanel">
+                      <Setter Property="HorizontalAlignment" Value="Center"/>
+                    </Style>
+                  </TabControl.Resources>
+                  <TabItem Header="1">
+                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
+                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
+                    </WrapPanel>
+                  </TabItem>
+                  <TabItem Header="2">
+                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
+                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
+                    </WrapPanel>
+                  </TabItem>
+                </TabControl>
+              </TabItem>
             </TabControl>
         </Grid>
         <Grid Grid.Column="2" Background="{StaticResource bcolorRight}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Grid>

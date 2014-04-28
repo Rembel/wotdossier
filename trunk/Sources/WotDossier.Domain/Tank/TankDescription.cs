@@ -3,38 +3,70 @@ using WotDossier.Common;
 
 namespace WotDossier.Domain.Tank
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [DataContract]
     public class TankDescription
     {
-        private RatingExpectancy _expectancy;
-
+        /// <summary>
+        /// Gets or sets the tank id.
+        /// </summary>
         [DataMember(Name = "tankid")]
         public int TankId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the country id.
+        /// </summary>
         [DataMember(Name = "countryid")]
         public int CountryId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the country code.
+        /// </summary>
         [DataMember(Name = "countryCode")]
         public string CountryCode { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type.
+        /// </summary>
         [DataMember(Name = "type")]
         public int Type { get; set; }
 
+        /// <summary>
+        /// Gets or sets the tier.
+        /// </summary>
         [DataMember(Name = "tier")]
         public int Tier { get; set; }
 
+        /// <summary>
+        /// Gets or sets the premium.
+        /// </summary>
         [DataMember(Name = "premium")]
         public int Premium { get; set; }
 
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
         [DataMember(Name = "title")]
         public string Title { get; set; }
 
+        /// <summary>
+        /// Gets or sets the comp descr.
+        /// </summary>
         [DataMember(Name = "compDescr")]
         public int CompDescr { get; set; }
 
+        /// <summary>
+        /// Gets or sets the icon.
+        /// </summary>
         [IgnoreDataMember]
         public TankIcon Icon { get; set; }
 
+        private RatingExpectancy _expectancy;
+        /// <summary>
+        /// Gets or sets the rating expectancy.
+        /// </summary>
         [IgnoreDataMember]
         public RatingExpectancy Expectancy
         {
@@ -42,6 +74,9 @@ namespace WotDossier.Domain.Tank
             set { _expectancy = value; }
         }
 
+        /// <summary>
+        /// Uniques the id.
+        /// </summary>
         public int UniqueId()
         {
             return Utils.ToUniqueId(CountryId, TankId);

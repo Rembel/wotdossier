@@ -18,7 +18,7 @@
             <d3:LineGraph DataSource="{Binding Path=DataSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" Stroke="SteelBlue" StrokeThickness="2" />
             <d3:ElementMarkerPointsGraph  DataSource="{Binding Path=DataSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}">
                 <d3:ElementMarkerPointsGraph.Marker>
-                    <pointMarkers:CircleElementPointMarker Size="3" Fill="SteelBlue" Brush="SteelBlue" />
+                    <pointMarkers:CircleElementPointMarker Size="5" Fill="Transparent" Brush="Transparent" />
                 </d3:ElementMarkerPointsGraph.Marker>
             </d3:ElementMarkerPointsGraph>
         </d3:ChartPlotter>

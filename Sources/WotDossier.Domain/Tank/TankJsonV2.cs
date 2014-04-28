@@ -4,6 +4,9 @@ using WotDossier.Common;
 
 namespace WotDossier.Domain.Tank
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class TankJson
     {
         public static TankJson Initial = new TankJson
@@ -21,16 +24,25 @@ namespace WotDossier.Domain.Tank
             Historical = new StatisticJson()
         };
 
-        private StatisticJson _a7X7;
-        private Achievements7x7 _achievements7X7 = new Achievements7x7();
-        private AchievementsHistorical _achievementsHistorical = new AchievementsHistorical();
-        private IList<IList<string>> _fragsList = new List<IList<string>>();
-        private StatisticJson _historical = new StatisticJson();
+        /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        public TankDescription Description { get; set; }
 
+        /// <summary>
+        /// Gets or sets the common stat.
+        /// </summary>
+        public CommonJson Common { get; set; }
+
+        /// <summary>
+        /// Gets or sets the a15x15 stat.
+        /// </summary>
         public StatisticJson A15x15 { get; set; }
-        public StatisticJson Clan { get; set; }
-        public StatisticJson Company { get; set; }
 
+        private StatisticJson _a7X7;
+        /// <summary>
+        /// Gets or sets the a7x7 stat.
+        /// </summary>
         public StatisticJson A7x7
         {
             get
@@ -44,37 +56,70 @@ namespace WotDossier.Domain.Tank
             set { _a7X7 = value; }
         }
 
+        private StatisticJson _historical = new StatisticJson();
+        /// <summary>
+        /// Gets or sets the historical stat.
+        /// </summary>
+        public StatisticJson Historical
+        {
+            get { return _historical; }
+            set { _historical = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the clan stat.
+        /// </summary>
+        public StatisticJson Clan { get; set; }
+
+        /// <summary>
+        /// Gets or sets the company stat.
+        /// </summary>
+        public StatisticJson Company { get; set; }
+
+        /// <summary>
+        /// Gets or sets the achievements.
+        /// </summary>
         public AchievementsJson Achievements { get; set; }
 
+        private Achievements7x7 _achievements7X7 = new Achievements7x7();
+        /// <summary>
+        /// Gets or sets the achievements7x7.
+        /// </summary>
         public Achievements7x7 Achievements7x7
         {
             get { return _achievements7X7; }
             set { _achievements7X7 = value; }
         }
 
-        public CommonJson Common { get; set; }
-
-        public IList<IList<string>> FragsList
-        {
-            get { return _fragsList; }
-            set { _fragsList = value; }
-        }
-
-        public TankDescription Description { get; set; }
-        public IEnumerable<FragsJson> Frags { get; set; }
-        public byte[] Raw { get; set; }
-
+        private AchievementsHistorical _achievementsHistorical = new AchievementsHistorical();
+        /// <summary>
+        /// Gets or sets the achievements historical.
+        /// </summary>
         public AchievementsHistorical AchievementsHistorical
         {
             get { return _achievementsHistorical; }
             set { _achievementsHistorical = value; }
         }
 
-        public StatisticJson Historical
+        private IList<IList<string>> _fragsList = new List<IList<string>>();
+        /// <summary>
+        /// Gets or sets the frags list.
+        /// </summary>
+        public IList<IList<string>> FragsList
         {
-            get { return _historical; }
-            set { _historical = value; }
+            get { return _fragsList; }
+            set { _fragsList = value; }
         }
+
+        /// <summary>
+        /// Gets or sets the frags.
+        /// </summary>
+        public IEnumerable<FragsJson> Frags { get; set; }
+
+        /// <summary>
+        /// Gets or sets the raw.
+        /// </summary>
+        public byte[] Raw { get; set; }
 
         /// <summary>
         ///     Get tank unique id.

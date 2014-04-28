@@ -848,12 +848,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public List<T> GetAllSlices()
+        /// <summary>
+        /// Gets all statistic slices.
+        /// </summary>
+        /// <returns></returns>
+        public override List<StatisticViewModelBase> GetAllSlices()
         {
             List<StatisticViewModelBase> list = new List<StatisticViewModelBase>();
             list.AddRange(_list);
             list.Add(this);
-            return list.Cast<T>().ToList();
+            return list;
         }
     }
 }

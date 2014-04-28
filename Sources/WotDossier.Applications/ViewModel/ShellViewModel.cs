@@ -616,7 +616,7 @@ namespace WotDossier.Applications.ViewModel
                 //convert LastNBattles period -> Custom
                 int battles = PlayerStatistic.BattlesCount - settings.PeriodSettings.LastNBattles;
 
-                PlayerStatisticViewModel viewModel = PlayerStatistic.GetAllSlices().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
+                StatisticViewModelBase viewModel = PlayerStatistic.GetAllSlices().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                 if (viewModel != null)
                 {
                     EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()

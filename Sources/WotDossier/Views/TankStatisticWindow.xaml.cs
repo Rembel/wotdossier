@@ -17,21 +17,6 @@ namespace WotDossier.Views
     [Export(typeof(ITankStatisticView))]
     public partial class TankStatisticWindow : Window, ITankStatisticView
     {
-        public ChartPlotter ChartRating
-        {
-            get { return Chart; }
-        }
-
-        public ChartPlotter ChartWinPercent
-        {
-            get { return Chart2; }
-        }
-
-        public ChartPlotter ChartAvgDamage
-        {
-            get { return Chart3; }
-        }
-
         public TankStatisticWindow()
         {
             InitializeComponent();

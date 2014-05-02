@@ -773,7 +773,8 @@ namespace WotDossier.Test
         {
             AppSpotUploader uploader = new AppSpotUploader();
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
-            uploader.Upload(cacheFile, 19376001);
+            long id = uploader.Upload(cacheFile);
+            uploader.Update(cacheFile, id);
         }
 
 

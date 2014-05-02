@@ -436,7 +436,7 @@ namespace WotDossier.Applications.ViewModel
                         SetUiCulture();
 
                         ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
-
+                        
                         if (!string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
                         {
                             FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName, settings.Server);
@@ -496,6 +496,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitLastUsedTankList()
         {
+            _log.Trace("InitLastUsedTankList start");
+
             if (PlayerStatistic != null)
             {
                 RaisePropertyChanged(PropLastUsedTanksList);
@@ -503,20 +505,25 @@ namespace WotDossier.Applications.ViewModel
                 PlayerStatistic.WN8RatingForPeriod = RatingHelper.Wn8ForPeriod(lastUsedTanksList);
                 PlayerStatistic.PerformanceRatingForPeriod = RatingHelper.PerformanceRatingForPeriod(lastUsedTanksList);
             }
+
+            _log.Trace("InitLastUsedTankList end");
         }
 
         private void InitPlayerStatistic(ServerStatWrapper serverStatistic, List<TankJson> tanks)
         {
+            _log.Trace("ShellViewModel.InitPlayerStatistic start");
             PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
             
             //init previous dates list
             PeriodSelector.PeriodSettingsUpdated -= PeriodSelectorOnPropertyChanged;
             PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
             PeriodSelector.PeriodSettingsUpdated += PeriodSelectorOnPropertyChanged;
+            _log.Trace("ShellViewModel.InitPlayerStatistic end");
         }
 
         private void InitTanksStatistic(List<TankJson> tanks)
         {
+            _log.Trace("ShellViewModel.InitTanksStatistic start");
             AppSettings settings = SettingsReader.Get();
 
             StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
@@ -534,10 +541,12 @@ namespace WotDossier.Applications.ViewModel
             MasterTanker = strategy.GetMasterTankerList(_tanks);
 
             FraggsCount.Init(_tanks);
+            _log.Trace("ShellViewModel.InitTanksStatistic end");
         }
 
         private ServerStatWrapper LoadPlayerServerStatistic(AppSettings settings)
         {
+            _log.Trace("ShellViewModel.LoadPlayerServerStatistic start");
             Player player = null;
             try
             {
@@ -551,6 +560,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 _log.Error(e);
             }
+            _log.Trace("ShellViewModel.LoadPlayerServerStatistic end");
             return new ServerStatWrapper(player);
         }
 

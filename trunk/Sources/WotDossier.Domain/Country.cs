@@ -1,5 +1,8 @@
 ﻿namespace WotDossier.Domain
 {
+    /// <summary>
+    /// Countries enum
+    /// </summary>
     public enum Country : int
     {
         USSR = 0,

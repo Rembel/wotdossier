@@ -78,6 +78,8 @@ namespace WotDossier
             // start application
             try
             {
+                _log.Trace("OnStartup start");
+
                 DatabaseManager manager = new DatabaseManager();
                 manager.InitDatabase();
                 manager.Update();
@@ -122,6 +124,8 @@ namespace WotDossier
                 Controller = CompositionContainerFactory.Instance.GetExport<ApplicationController>();
 
                 Controller.Run();
+
+                _log.Trace("OnStartup end");
             }
             catch (Exception exception)
             {

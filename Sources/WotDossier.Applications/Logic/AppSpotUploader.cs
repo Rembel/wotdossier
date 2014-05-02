@@ -12,14 +12,6 @@ namespace WotDossier.Applications.Logic
     {
         #region Constants
 
-        private const string REQ_BOUNDARY = "---------------------------{0}";
-        private const string REQ_CONTENT_PART1_FORMAT = @"--{1}
-Content-Disposition: form-data; name=""dossier""; filename=""{0}""
-Content-Type: application/octet-stream
-
-";
-        private const string REQ_CONTENT_PART2_FORMAT = @"--{0}--";
-
         private const string REQ_USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0";
         private const string REQ_CONTENT_TYPE = "multipart/form-data; boundary=";
         private const string URL_PREVIEW = "http://wot-dossier.appspot.com/preview";
@@ -30,35 +22,30 @@ Content-Type: application/octet-stream
         #endregion
 
         /// <summary>
-        /// Uploads the specified info.
+        /// Uploads the specified dossier cache file.
         /// </summary>
-        /// <param name="info">The info.</param>
-        public int Upload(FileInfo info)
+        /// <param name="file">The file.</param>
+        /// <returns></returns>
+        public long Upload(FileInfo file)
         {
-            string boundary = string.Format(REQ_BOUNDARY, DateTime.Now.Ticks.ToString("x"));
-            string firstPart = string.Format(REQ_CONTENT_PART1_FORMAT, info.Name, boundary);
-            string secondPart = string.Format(REQ_CONTENT_PART2_FORMAT, boundary);
-
-            byte[] fileBytes = File.ReadAllBytes(info.FullName);
-            byte[] contentPart1Bytes = Encoding.UTF8.GetBytes(firstPart);
-            byte[] contentPart2Bytes = Encoding.UTF8.GetBytes(secondPart);
+            RequestComposer composer = new RequestComposer();
+            byte[] requestBytes = composer.File(file, "dossier")
+                .End()
+                .GetRequestBytes();
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(URL_PREVIEW);
             request.Proxy.Credentials = CredentialCache.DefaultCredentials;
             request.UserAgent = REQ_USER_AGENT;
             request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-            request.ContentLength = info.Length;
-            request.ContentType = REQ_CONTENT_TYPE + boundary;
+            request.ContentType = REQ_CONTENT_TYPE + composer.Boundary;
             request.Method = WebRequestMethods.Http.Post;
 
             // Длинна запроса (обязательный параметр)
-            request.ContentLength = fileBytes.Length + contentPart1Bytes.Length + contentPart2Bytes.Length;
+            request.ContentLength = requestBytes.Length;
             // Открываем поток для записи
             Stream uploadStream = request.GetRequestStream();
             // Записываем в поток (это и есть POST запрос(заполнение форм))
-            uploadStream.Write(contentPart1Bytes, 0, contentPart1Bytes.Length);
-            uploadStream.Write(fileBytes, 0, fileBytes.Length);
-            uploadStream.Write(contentPart2Bytes, 0, contentPart2Bytes.Length);
+            uploadStream.Write(requestBytes, 0, requestBytes.Length);
             // Закрываем поток
             uploadStream.Flush();
             uploadStream.Close();
@@ -80,7 +67,7 @@ Content-Type: application/octet-stream
 
             if (!string.IsNullOrEmpty(fileName))
             {
-                request = (HttpWebRequest) HttpWebRequest.Create(URL_PERSIST);
+                request = (HttpWebRequest)HttpWebRequest.Create(URL_PERSIST);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.UserAgent = REQ_USER_AGENT;
                 request.Accept = "application/json, text/javascript, */*; q=0.01";
@@ -115,39 +102,33 @@ Content-Type: application/octet-stream
         /// <summary>
         /// Uploads the specified info.
         /// </summary>
-        /// <param name="info">The info.</param>
-        public void Upload(FileInfo info, int id)
+        /// <param name="file">The info.</param>
+        public void Update(FileInfo file, long id)
         {
+            RequestComposer composer = new RequestComposer();
+            byte[] requestBytes = composer.File(file, "dossier")
+                .End()
+                .GetRequestBytes();
+
             string uploadData = new Uri(string.Format(URL_SECTION_UPDATE, id)).Get();
 
             AppSpotResponse appSpotResponse = JsonConvert.DeserializeObject<AppSpotResponse>(uploadData);
 
             string uploadUrl = string.Format(URL_UPLOAD, id, appSpotResponse.expires, appSpotResponse.secret);
 
-            string boundary = string.Format(REQ_BOUNDARY, DateTime.Now.Ticks.ToString("x"));
-            string firstPart = string.Format(REQ_CONTENT_PART1_FORMAT, info.Name, boundary);
-            string secondPart = string.Format(REQ_CONTENT_PART2_FORMAT, boundary);
-
-            byte[] fileBytes = File.ReadAllBytes(info.FullName);
-            byte[] contentPart1Bytes = Encoding.UTF8.GetBytes(firstPart);
-            byte[] contentPart2Bytes = Encoding.UTF8.GetBytes(secondPart);
-
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uploadUrl);
             request.Proxy.Credentials = CredentialCache.DefaultCredentials;
             request.UserAgent = REQ_USER_AGENT;
             request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-            request.ContentLength = info.Length;
-            request.ContentType = REQ_CONTENT_TYPE + boundary;
+            request.ContentType = REQ_CONTENT_TYPE + composer.Boundary;
             request.Method = WebRequestMethods.Http.Post;
 
             // Длинна запроса (обязательный параметр)
-            request.ContentLength = fileBytes.Length + contentPart1Bytes.Length + contentPart2Bytes.Length;
+            request.ContentLength = requestBytes.Length;
             // Открываем поток для записи
             Stream uploadStream = request.GetRequestStream();
             // Записываем в поток (это и есть POST запрос(заполнение форм))
-            uploadStream.Write(contentPart1Bytes, 0, contentPart1Bytes.Length);
-            uploadStream.Write(fileBytes, 0, fileBytes.Length);
-            uploadStream.Write(contentPart2Bytes, 0, contentPart2Bytes.Length);
+            uploadStream.Write(requestBytes, 0, requestBytes.Length);
             // Закрываем поток
             uploadStream.Flush();
             uploadStream.Close();
@@ -168,7 +149,7 @@ Content-Type: application/octet-stream
     public class AppSpotResponse
     {
         public string secret { get; set; }
-        public int expires { get; set; }
-        public int id { get; set; }
+        public long expires { get; set; }
+        public long id { get; set; }
     }
 }

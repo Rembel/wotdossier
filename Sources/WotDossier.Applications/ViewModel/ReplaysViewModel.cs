@@ -20,6 +20,7 @@ using WotDossier.Framework;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using WotDossier.Framework.Forms.ProgressDialog;
+using WotReplaysSiteResponse = WotDossier.Applications.Logic.WotReplaysSiteResponse;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -64,8 +65,6 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private List<ReplayFolder> _replaysFolders;
-        private readonly Guid FOLDER_DELETED = new Guid("09C12D79-65B0-49DE-A257-D7B9B411F0C3");
-
         /// <summary>
         /// Gets or sets the replays folders.
         /// </summary>
@@ -176,7 +175,7 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnDeleteFolderCommand(ReplayFolder folder)
         {
-            if (folder.Id != FOLDER_DELETED)
+            if (folder.Id != ReplaysManager.DeletedFolder.Id)
             {
                 ReplayFolder root = ReplaysFolders.FirstOrDefault();
                 ReplayFolder parent = FindParentFolder(root, folder);
@@ -309,14 +308,14 @@ namespace WotDossier.Applications.ViewModel
                     _replays.AddRange(replayFiles.OrderByDescending(x => x.PlayTime).ToList());
 
                     //add db replays
-                    List<DbReplay> collection = dbReplays.Where(x => x.Raw != null).Select(x => new DbReplay(CompressHelper.DecompressObject<Domain.Replay.Replay>(x.Raw), FOLDER_DELETED)).ToList();
+                    List<DbReplay> collection = dbReplays.Where(x => x.Raw != null).Select(x => new DbReplay(CompressHelper.DecompressObject<Domain.Replay.Replay>(x.Raw), ReplaysManager.DeletedFolder.Id)).ToList();
                     _replays.AddRange(collection);
 
                     //add folder for deleted replays
-                    ReplayFolder deletedFolder = root.Folders.FirstOrDefault(x => x.Id == FOLDER_DELETED);
+                    ReplayFolder deletedFolder = root.Folders.FirstOrDefault(x => x.Id == ReplaysManager.DeletedFolder.Id);
                     if (deletedFolder == null)
                     {
-                        deletedFolder = new ReplayFolder {Id = FOLDER_DELETED, Name = Resources.Resources.ReplaysFolders_Deleted};
+                        deletedFolder = ReplaysManager.DeletedFolder;
                         Application.Current.Dispatcher.Invoke((Action)(() => root.Folders.Add(deletedFolder)));
                     }
                     deletedFolder.Count = collection.Count;
@@ -405,7 +404,7 @@ namespace WotDossier.Applications.ViewModel
                             Domain.Replay.Replay replayData = replayFile.ReplayData();
                             DossierRepository.SaveReplay(replayFile.PlayerId, replayFile.ReplayId, replayFile.Link,
                                 replayData);
-                            _replays.Add(new DbReplay(replayData, FOLDER_DELETED));
+                            _replays.Add(new DbReplay(replayData, ReplaysManager.DeletedFolder.Id));
                         }
 
                         replayFile.Delete();

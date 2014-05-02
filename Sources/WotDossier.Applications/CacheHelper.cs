@@ -33,6 +33,8 @@ namespace WotDossier.Applications
         /// <returns>null if there is no any dossier cache file for specified player</returns>
         public static FileInfo GetCacheFile(string playerId, string server)
         {
+            Log.Trace("CacheHelper.GetCacheFile start");
+
             FileInfo cacheFile = null;
 
             string[] files = new string[0];
@@ -75,6 +77,7 @@ namespace WotDossier.Applications
             {
                 cacheFile = cacheFile.CopyTo(Path.Combine(Path.GetTempPath(), cacheFile.Name), true);
             }
+            Log.Trace("CacheHelper.GetCacheFile end");
             return cacheFile;
         }
 
@@ -88,6 +91,7 @@ namespace WotDossier.Applications
         /// <param name="cacheFile">The cache file.</param>
         public static string BinaryCacheToJson(FileInfo cacheFile)
         {
+            Log.Trace("CacheHelper.BinaryCacheToJson start");
             string temp = Environment.CurrentDirectory;
             string directoryName = temp;
 
@@ -100,6 +104,7 @@ namespace WotDossier.Applications
 
             Environment.CurrentDirectory = temp;
 
+            Log.Trace("CacheHelper.BinaryCacheToJson end");
             return cacheFile.FullName.Replace(".dat", ".json");
         }
 

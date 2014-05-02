@@ -123,10 +123,16 @@ namespace WotDossier.Applications.ViewModel.Replay
             {
                 MapName = replay.datablock_1.mapDisplayName;
                 MapNameId = replay.datablock_1.mapName;
+                
                 if (Dictionaries.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
                 {
                     MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].mapid;
                 }
+                else
+                {
+                    _log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
+                }
+                
                 ClientVersion = replay.datablock_1.clientVersionFromExe;
 
                 IsWinner = BattleStatus.Unknown;

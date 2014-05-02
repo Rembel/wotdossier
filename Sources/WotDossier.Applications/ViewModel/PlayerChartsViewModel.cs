@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using Common.Logging;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Domain;
 
 namespace WotDossier.Applications.ViewModel
 {
     public class PlayerChartsViewModel : CommonChartsViewModel
     {
         #region [Properties and Fields]
+
+        private static readonly ILog _log = LogManager.GetLogger("PlayerChartsViewModel");
 
         private List<SellInfo> _lastUsedTanksDataSource;
 
@@ -368,6 +371,9 @@ namespace WotDossier.Applications.ViewModel
         {
             List<DataPoint> dataSource = ReplaysDataSource.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
 
+            IEnumerable<ReplayFile> replayFiles = ReplaysDataSource.Where(x => x.MapId == 0);
+            int count = replayFiles.Count();
+
             if (dataSource.Any())
             {
                 ReplaysByMapDataSource = dataSource;
@@ -412,6 +418,8 @@ namespace WotDossier.Applications.ViewModel
         /// <param name="tanks">The tanks.</param>
         public void InitCharts(PlayerStatisticViewModel playerStatistic, List<ITankStatisticRow> tanks)
         {
+            _log.Trace("InitCharts start");
+
             InitCharts(playerStatistic);
 
             InitEfficiencyByTierChart(tanks);
@@ -421,6 +429,8 @@ namespace WotDossier.Applications.ViewModel
             InitBattlesByTypeChart(tanks);
             InitBattlesByCountryChart(tanks);
             InitLastUsedTanksChart(playerStatistic, tanks);
+
+            _log.Trace("InitCharts end");
         }
 
         private void RefreshReplaysCharts()
@@ -431,6 +441,8 @@ namespace WotDossier.Applications.ViewModel
 
         private IEnumerable<ReplayFile> Filter(IEnumerable<ReplayFile> replaysDataSource)
         {
+            AppSettings settings = SettingsReader.Get();
+
             return replaysDataSource.Where(x =>
                                    (Resp1 && x.Team == 1
                                     || Resp2 && x.Team == 2
@@ -439,6 +451,7 @@ namespace WotDossier.Applications.ViewModel
                                     (StartDate == null || x.PlayTime.Date >= StartDate)
                                     &&
                                     (EndDate == null || x.PlayTime.Date <= EndDate)
+                                    && (settings.PlayerId == 0 || x.PlayerId == settings.PlayerId)
                 ).ToList();
 
         }

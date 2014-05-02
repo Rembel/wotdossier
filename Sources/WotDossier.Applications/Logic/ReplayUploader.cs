@@ -7,7 +7,6 @@ using System.Windows;
 using Common.Logging;
 using Newtonsoft.Json;
 using WotDossier.Common;
-using WotDossier.Domain;
 
 namespace WotDossier.Applications.Logic
 {

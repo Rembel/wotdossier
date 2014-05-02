@@ -119,6 +119,7 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public List<TankJson> ReadTanksCache(string path)
         {
+            _log.Trace("WotApiClient.ReadTanksCache start");
             List<TankJson> tanks = new List<TankJson>();
 
             using (StreamReader re = new StreamReader(path))
@@ -142,6 +143,7 @@ namespace WotDossier.Dal
                     }
                 }
             }
+            _log.Trace("WotApiClient.ReadTanksCache end");
             return tanks;
         }
 
@@ -177,7 +179,7 @@ namespace WotDossier.Dal
                         }).ToList();
                 return true;
             }
-            _log.WarnFormat("Found unknown tank:\n", JsonConvert.SerializeObject(tank));
+            _log.WarnFormat("Found unknown tank:\n{0}", JsonConvert.SerializeObject(tank.Common, Formatting.Indented));
             return false;
         }
 

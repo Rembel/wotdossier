@@ -12,7 +12,7 @@ namespace WotDossier.Applications.Logic
         private const string FORM_DATA_TITLE = "Content-Disposition: form-data; name=\"Replay[title]\"\r\n\r\n{0}";
         private const string FORM_DATA_DESCRIPTION = "Content-Disposition: form-data; name=\"Replay[description]\"\r\n\r\n{0}";
         private const string FORM_DATA_IS_SECRET = "Content-Disposition: form-data; name=\"Replay[isSecret]\"\r\n\r\n{0}";
-        private const string FORM_DATA_FILENAME = "Content-Disposition: form-data; name=\"Replay[file_name]\"; filename=\"{0}\"\r\n" + CONTENT_TYPE_OCTET_STREAM;
+        private const string FORM_DATA_FILENAME = "Content-Disposition: form-data; name=\"{1}\"; filename=\"{0}\"\r\n" + CONTENT_TYPE_OCTET_STREAM;
         private const string FORM_DATA_YT0 = "Content-Disposition: form-data; name=\"yt0\"\r\n\r\nUpload";
         private const string CONTENT_TYPE_OCTET_STREAM = "Content-Type: application/octet-stream\r\n\r\n";
 
@@ -71,7 +71,15 @@ namespace WotDossier.Applications.Logic
         /// </summary>
         public RequestComposer File(FileInfo file)
         {
-            string fileName = string.Format(FORM_DATA_FILENAME, file.Name);
+            return File(file, "Replay[file_name]");
+        }
+
+        /// <summary>
+        /// Write request content file field
+        /// </summary>
+        public RequestComposer File(FileInfo file, string fieldName)
+        {
+            string fileName = string.Format(FORM_DATA_FILENAME, file.Name, fieldName);
             byte[] fileNameBytes = Encoding.UTF8.GetBytes(fileName);
             byte[] fileBytes = System.IO.File.ReadAllBytes(file.FullName);
 

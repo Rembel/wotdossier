@@ -1,7 +1,7 @@
 ﻿namespace WotDossier.Domain
 {
     /// <summary>
-    /// 
+    /// Medal description class
     /// </summary>
     public class Medal
     {

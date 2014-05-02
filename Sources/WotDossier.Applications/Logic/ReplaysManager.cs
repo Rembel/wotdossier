@@ -12,6 +12,14 @@ namespace WotDossier.Applications.Logic
     {
         private const string REPLAYS_CATALOG_FILE_PATH = @"Data\ReplaysCatalog.xml";
 
+        private static readonly Guid FOLDER_DELETED = new Guid("09C12D79-65B0-49DE-A257-D7B9B411F0C3");
+
+        public static ReplayFolder DeletedFolder = new ReplayFolder
+        {
+            Id = FOLDER_DELETED,
+            Name = Resources.Resources.ReplaysFolders_Deleted
+        };
+
         /// <summary>
         /// Saves the folder.
         /// </summary>

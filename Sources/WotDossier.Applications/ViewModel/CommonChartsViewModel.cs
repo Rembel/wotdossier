@@ -168,13 +168,15 @@ namespace WotDossier.Applications.ViewModel
         {
             List<DataPoint> dataPoints;
 
-            if (erPoints.Count > 100)
+            if (erPoints.Count > 10)
             {
-                dataPoints = erPoints.Where((x, i) => i % 20 == 0).ToList();
+                int step = (int) (erPoints.Count*0.15);
+
+                dataPoints = erPoints.Where((x, i) => i % step == 0).ToList();
             }
             else
             {
-                dataPoints = erPoints;
+                return erPoints;
             }
 
             DataPoint first = erPoints.First();
@@ -192,7 +194,7 @@ namespace WotDossier.Applications.ViewModel
 
             AkimaSplineInterpolation interpolation = new AkimaSplineInterpolation(dataPoints.Select(x => x.X).ToList(),
                 dataPoints.Select(x => x.Y).ToList());
-            return erPoints.Select(x => new DataPoint(x.X, interpolation.Interpolate(x.X))).ToList();
+            return erPoints.Select(x => new DataPoint(x.X, interpolation.Interpolate(x.X))).OrderBy(x => x.X).ToList();
         }
 
         private EnumerableDataSource<DataPoint> GetDataSource(List<StatisticViewModelBase> statisticViewModels,

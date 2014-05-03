@@ -27,9 +27,14 @@ namespace WotDossier.Domain.Dossier.AppSpot
             set { _kills = value; }
         }
 
+        private int _uniqueId = -1;
         public int UniqueId()
         {
-            return Utils.ToUniqueId(country, id);
+            if (_uniqueId == -1)
+            {
+                _uniqueId = Utils.ToUniqueId(country, id);
+            }
+            return _uniqueId;
         }
     }
 }

@@ -121,13 +121,14 @@ namespace WotDossier.Domain.Tank
         /// </summary>
         public byte[] Raw { get; set; }
 
-        /// <summary>
-        ///     Get tank unique id.
-        /// </summary>
-        /// <returns></returns>
+        private int _uniqueId = -1;
         public int UniqueId()
         {
-            return Utils.ToUniqueId(Common.countryid, Common.tankid);
+            if (_uniqueId == -1)
+            {
+                _uniqueId = Utils.ToUniqueId(Common.countryid, Common.tankid);
+            }
+            return _uniqueId;
         }
 
         /// <summary>

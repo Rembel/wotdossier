@@ -74,12 +74,17 @@ namespace WotDossier.Domain.Tank
             set { _expectancy = value; }
         }
 
+        private int _uniqueId = -1;
         /// <summary>
         /// Uniques the id.
         /// </summary>
         public int UniqueId()
         {
-            return Utils.ToUniqueId(CountryId, TankId);
+            if (_uniqueId == -1)
+            {
+                _uniqueId = Utils.ToUniqueId(CountryId, TankId);
+            }
+            return _uniqueId;
         }
 
         /// <summary>

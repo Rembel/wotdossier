@@ -7,6 +7,7 @@ namespace WotDossier
     internal static class NativeMethods
     {
         private const int SW_MAXIMIZE = 3;
+        private const int SW_RESTORE = 9;
 
         [DllImport("User32.dll")]
         public static extern int FindWindow(String ClassName, String WindowName);
@@ -36,7 +37,7 @@ namespace WotDossier
             if (hWnd > 0)
             {
                 SetForegroundWindow(hWnd);
-                ShowWindow(hWnd, SW_MAXIMIZE);
+                ShowWindow(hWnd, SW_RESTORE);
             }
         }
     }

@@ -23,7 +23,6 @@ namespace WotDossier.Domain.Dossier.TankV77
         private StatisticJson77 _historical = new StatisticJson77();
         private AchievementsHistorical_77 _historicalAchievements = new AchievementsHistorical_77();
         private MaxJson77 _maxHistorical = new MaxJson77();
-
         public StatisticJson77 A15x15
         {
             get { return _a15X15; }
@@ -126,9 +125,14 @@ namespace WotDossier.Domain.Dossier.TankV77
             set { _historicalAchievements = value; }
         }
 
+        private int _uniqueId = -1;
         public int UniqueId()
         {
-            return Utils.ToUniqueId(Common.countryid, Common.tankid);
+            if (_uniqueId == -1)
+            {
+                _uniqueId = Utils.ToUniqueId(Common.countryid, Common.tankid);
+            }
+            return _uniqueId;
         }
 
         /// <summary>

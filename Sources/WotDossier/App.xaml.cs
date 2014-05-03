@@ -64,7 +64,7 @@ namespace WotDossier
                 //WPFMessageBox.Show(Gui.Properties.Resources.Msg_ApplicationIs_Already_Started, Gui.Properties.Resources.MessageBox_Title_Error, WPFMessageBoxImage.Error);
                 Shutdown();
                 //activate already opened app window
-                NativeMethods.ActivateWindow(ApplicationInfo.ProductName);
+                NativeMethods.ActivateWindow(ApplicationInfo.FullProductName);
                 return;
             }
             
@@ -82,8 +82,7 @@ namespace WotDossier
 
                 DatabaseManager manager = new DatabaseManager();
                 manager.InitDatabase();
-                manager.Update();
-
+                
                 //set app lang
                 var culture = new CultureInfo(SettingsReader.Get().Language);
                 Thread.CurrentThread.CurrentCulture = culture;
@@ -158,17 +157,14 @@ namespace WotDossier
             _log.Error(e);
             if (!isTerminating)
             {
-                if (e is SqlException)
-                {
-                    MessageBox.Show(e.ToString(), ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                else
-                {
-                    MessageBox.Show(e.ToString(), ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                MessageBox.Show(e.ToString(), ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
+        /// <summary>
+        /// Raises the <see cref="E:System.Windows.Application.Exit" /> event.
+        /// </summary>
+        /// <param name="e">An <see cref="T:System.Windows.ExitEventArgs" /> that contains the event data.</param>
         protected override void OnExit(ExitEventArgs e)
         {
             if (Controller != null)

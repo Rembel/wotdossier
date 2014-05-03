@@ -239,6 +239,12 @@ namespace WotDossier.Applications.Update
 
         public void InitDatabase()
         {
+            InitDbFile();
+            Update();
+        }
+
+        private static void InitDbFile()
+        {
             string currentDirectory = Folder.AssemblyDirectory();
             string path = Path.Combine(currentDirectory, @"Data\dossier.s3db");
             if (!File.Exists(path))
@@ -246,7 +252,7 @@ namespace WotDossier.Applications.Update
                 byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.init.s3db", Assembly.GetEntryAssembly());
                 using (FileStream fileStream = File.OpenWrite(path))
                 {
-                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);    
+                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);
                     fileStream.Flush();
                 }
             }

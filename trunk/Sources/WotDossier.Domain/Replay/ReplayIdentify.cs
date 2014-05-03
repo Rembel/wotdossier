@@ -28,9 +28,14 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int tankid { get; set; }
 
-        public int TankUniqueId()
+        private int _uniqueId = -1;
+        public int UniqueId()
         {
-            return Utils.ToUniqueId(countryid, tankid);
+            if (_uniqueId == -1)
+            {
+                _uniqueId = Utils.ToUniqueId(countryid, tankid);
+            }
+            return _uniqueId;
         }
     }
 }

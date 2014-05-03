@@ -56,9 +56,14 @@ namespace WotDossier.Domain.Dossier.TankV29
 
         public StatisticJson29 Tankdata { get; set; }
 
+        private int _uniqueId = -1;
         public int UniqueId()
         {
-            return Utils.ToUniqueId(Common.countryid, Common.tankid);
+            if (_uniqueId == -1)
+            {
+                _uniqueId = Utils.ToUniqueId(Common.countryid, Common.tankid);
+            }
+            return _uniqueId;
         }
 
         /// <summary>

@@ -106,9 +106,14 @@ namespace WotDossier.Domain.Dossier.TankV65
             set { _fragsList = value; }
         }
 
+        private int _uniqueId = -1;
         public int UniqueId()
         {
-            return Utils.ToUniqueId(Common.countryid, Common.tankid);
+            if (_uniqueId == -1)
+            {
+                _uniqueId = Utils.ToUniqueId(Common.countryid, Common.tankid);
+            }
+            return _uniqueId;
         }
 
         /// <summary>

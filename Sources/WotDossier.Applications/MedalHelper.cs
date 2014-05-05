@@ -9,6 +9,11 @@ namespace WotDossier.Applications
 {
     public static class MedalHelper
     {
+        /*
+         218-max damage
+         2-max xp
+         */
+
         /// <summary>
         /// Gets or sets the medals dictionary.
         /// </summary>

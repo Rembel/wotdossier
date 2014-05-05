@@ -34,7 +34,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string MapName { get; set; }
         public int MapId { get; set; }
         public string MapNameId { get; set; }
-        public string ClientVersion { get; set; }
+        public Version ClientVersion { get; set; }
         public string TankName { get; set; }
         public int CountryId { get; set; }
         public DateTime PlayTime { get; set; }
@@ -111,6 +111,14 @@ namespace WotDossier.Applications.ViewModel.Replay
         public abstract string Name { get; }
 
         /// <summary>
+        /// Gets or sets the mark of mastery.
+        /// </summary>
+        /// <value>
+        /// The mark of mastery.
+        /// </value>
+        public int MarkOfMastery { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ReplayFile" /> class.
         /// </summary>
         /// <param name="replay">The replay.</param>
@@ -133,7 +141,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     _log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
                 }
                 
-                ClientVersion = replay.datablock_1.clientVersionFromExe;
+                ClientVersion = replay.datablock_1.Version;
 
                 IsWinner = BattleStatus.Unknown;
 
@@ -173,6 +181,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                         Xp = replay.datablock_battle_result.personal.xp;
                         Killed = replay.datablock_battle_result.personal.kills;
                         Damaged = replay.datablock_battle_result.personal.damaged;
+                        MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
                         //Medals = MedalHelper.GetMedals(replay.datablock_battle_result.achieveIndices);
                     }
                 }

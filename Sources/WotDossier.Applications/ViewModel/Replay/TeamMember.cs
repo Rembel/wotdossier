@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -17,7 +18,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             string[] strings = vehicle.Value.vehicleType.Split(':');
             string tankCountryCode = strings[0];
             string tankIcon = strings[1];
-            TankDescription tank = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CountryCode.Equals(tankCountryCode) && x.Icon.IconOrig.Equals(tankIcon));
+            TankDescription tank = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CountryCode.Equals(tankCountryCode, StringComparison.InvariantCultureIgnoreCase) && x.Icon.IconOrig.Equals(tankIcon, StringComparison.InvariantCultureIgnoreCase));
             Tank = tank != null ? tank.Title : tankIcon;
             TankIcon = Dictionaries.Instance.GetTankIcon(vehicle.Value.vehicleType);
             ClanAbbrev = vehicle.Value.clanAbbrev;

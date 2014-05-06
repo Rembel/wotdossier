@@ -72,7 +72,7 @@
     <!--Гроза мышей-->
     <medal name="Medal_MouseTrap" id="67" icon="Mousebane" type="1"/>
     <!--неуязвимый-->
-    <medal name="Medal_Invincible" id="79" icon="invincible" type="0"/>
+    <!--<medal name="Medal_Invincible" id="79" icon="invincible" type="0"/>-->
     <!--лев синaя-->
     <medal name="Medal_Sinai" id="109" icon="sinai" type="1"/>
     <!--Бомбардир-->

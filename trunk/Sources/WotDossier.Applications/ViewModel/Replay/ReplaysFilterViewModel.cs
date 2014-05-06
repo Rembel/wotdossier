@@ -396,13 +396,13 @@ namespace WotDossier.Applications.ViewModel.Replay
                                    &&
                                     (SelectedFolder != null && x.FolderId == SelectedFolder.Id)
                                     &&
-                                   (x.CountryId == (int)Country.USSR && USSRSelected
+                                   (x.CountryId == (int)Country.Ussr && USSRSelected
                                     || x.CountryId == (int)Country.Germany && GermanySelected
                                     || x.CountryId == (int)Country.China && ChinaSelected
                                     || x.CountryId == (int)Country.France && FranceSelected
-                                    || x.CountryId == (int)Country.US && USSelected
+                                    || x.CountryId == (int)Country.Usa && USSelected
                                     || x.CountryId == (int)Country.Japan && JPSelected
-                                    || x.CountryId == (int)Country.UK && UKSelected)
+                                    || x.CountryId == (int)Country.Uk && UKSelected)
                                     &&
                                     (x.IsWinner == SelectedBattleResult || SelectedBattleResult == BattleStatus.Unknown)
                                    && (x.Tank.Premium == 1 || !IsPremium)

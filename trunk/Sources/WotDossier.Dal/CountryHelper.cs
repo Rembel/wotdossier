@@ -50,7 +50,7 @@ namespace WotDossier.Dal
                     return 4;
                 case "uk":
                     return 5;
-                case "jp":
+                case "japan":
                     return 6;
             }
             return -1;

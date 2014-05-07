@@ -13,7 +13,6 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Name, "Name");
 			Map(v => v.Tier, "Tier");
 			Map(v => v.CountryId, "CountryId");
-			Map(v => v.CountryCode, "CountryCode");
 			Map(v => v.Icon, "Icon");
 			Map(v => v.TankType, "TankType");
 			Map(v => v.IsPremium, "IsPremium");

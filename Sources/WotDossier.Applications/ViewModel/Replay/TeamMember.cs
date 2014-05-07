@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -15,12 +13,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle, int replayPlayerTeam)
         {
             Id = vehicle.Key;
-            string[] strings = vehicle.Value.vehicleType.Split(':');
-            string tankCountryCode = strings[0];
-            string tankIcon = strings[1];
-            TankDescription tank = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CountryCode.Equals(tankCountryCode, StringComparison.InvariantCultureIgnoreCase) && x.Icon.IconOrig.Equals(tankIcon, StringComparison.InvariantCultureIgnoreCase));
-            Tank = tank != null ? tank.Title : tankIcon;
             TankIcon = Dictionaries.Instance.GetTankIcon(vehicle.Value.vehicleType);
+            TankDescription tank = Dictionaries.Instance.IconTanks[TankIcon];
+            Tank = tank != null ? tank.Title : vehicle.Value.vehicleType;
             ClanAbbrev = vehicle.Value.clanAbbrev;
             Name = vehicle.Value.name;
             FullName = string.Format("{0}{1}", Name, GetClanAbbrev(ClanAbbrev));

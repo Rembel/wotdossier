@@ -22,6 +22,7 @@ namespace WotDossier.Dal
 
         private readonly Dictionary<int, TankDescription> _tanks;
         private readonly Dictionary<string, TankIcon> _icons = new Dictionary<string, TankIcon>();
+        private readonly Dictionary<TankIcon, TankDescription> _iconTanks = new Dictionary<TankIcon, TankDescription>();
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
         private readonly Dictionary<int, TankServerInfo> _serverTanks;
         private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
@@ -41,6 +42,14 @@ namespace WotDossier.Dal
         public Dictionary<string, TankIcon> Icons
         {
             get { return _icons; }
+        }
+
+        /// <summary>
+        /// Gets the tanks icons.
+        /// </summary>
+        public Dictionary<TankIcon, TankDescription> IconTanks
+        {
+            get { return _iconTanks; }
         }
 
         /// <summary>
@@ -98,28 +107,12 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public TankIcon GetTankIcon(string playerVehicle)
         {
-            string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
-            if (Icons.ContainsKey(replace))
+            string iconId = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
+            if (Icons.ContainsKey(iconId))
             {
-                return Icons[replace];
+                return Icons[iconId];
             }
             return TankIcon.Empty;
-        }
-
-        /// <summary>
-        /// Gets the tank decription.
-        /// </summary>
-        /// <param name="playerVehicle">The player vehicle.</param>
-        /// <returns></returns>
-        public TankDescription GetTankDecription(string playerVehicle)
-        {
-            string replace = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
-            TankDescription description = Tanks.Values.FirstOrDefault(x => x.Icon.IconId == replace);
-            if (description != null)
-            {
-                return description;
-            }
-            return null;
         }
 
         private Dictionary<int, TankDescription> ReadTanksDictionary()
@@ -133,11 +126,12 @@ namespace WotDossier.Dal
                 foreach (JToken jToken in parsedData)
                 {
                     TankDescription tank = jToken.ToObject<TankDescription>();
-                    tank.CountryCode = CountryHelper.GetCountryNameCode(tank.CountryId);
 
                     TankIcon icon = jToken.ToObject<TankIcon>();
-                    icon.CountryCode = tank.CountryCode;
-                    _icons.Add(icon.IconId, icon);
+
+                    _icons.Add(icon.IconId.ToLower(), icon);
+
+                    _iconTanks.Add(icon, tank);
 
                     tank.Icon = icon;
 

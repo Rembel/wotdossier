@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -155,7 +154,6 @@ namespace WotDossier.Applications.ViewModel.Replay
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
                 PlayerId = replay.datablock_1.playerID;
-                Icon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
 
                 if (replay.datablock_1.Version < WotApiClient.JsonFormatedResultsMinVersion)
                 {

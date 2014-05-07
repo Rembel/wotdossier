@@ -347,42 +347,6 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error on file deletion, please check your access rights({0}).
-        /// </summary>
-        internal static string ErrorMsg_ErrorOnFileDeletion {
-            get {
-                return ResourceManager.GetString("ErrorMsg_ErrorOnFileDeletion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error on file deletion, please check your access rights.
-        /// </summary>
-        internal static string ErrorMsg_ErrorOnFilesDeletion {
-            get {
-                return ResourceManager.GetString("ErrorMsg_ErrorOnFilesDeletion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error on getting player data from server.
-        /// </summary>
-        internal static string ErrorMsg_GetPlayerData {
-            get {
-                return ResourceManager.GetString("ErrorMsg_GetPlayerData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t get player info from server.
-        /// </summary>
-        internal static string ErrorMsg_GetPlayerInfo {
-            get {
-                return ResourceManager.GetString("ErrorMsg_GetPlayerInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to m&apos; m &apos;s&apos; s&apos;.
         /// </summary>
         internal static string ExtendedTimeFormat {
@@ -500,6 +464,33 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error on file deletion, please check your access rights({0}).
+        /// </summary>
+        internal static string Msg_ErrorOnFileDeletion {
+            get {
+                return ResourceManager.GetString("Msg_ErrorOnFileDeletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error on file deletion, please check your access rights.
+        /// </summary>
+        internal static string Msg_ErrorOnFilesDeletion {
+            get {
+                return ResourceManager.GetString("Msg_ErrorOnFilesDeletion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player info not found in local app database - [{0}].
+        /// </summary>
+        internal static string Msg_ErrorOnGetLocalPlayerInfo {
+            get {
+                return ResourceManager.GetString("Msg_ErrorOnGetLocalPlayerInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error on play replay.
         /// </summary>
         internal static string Msg_ErrorOnPlayReplay {
@@ -514,6 +505,15 @@ namespace WotDossier.Applications.Resources {
         internal static string Msg_File_incomplete_or_not_supported {
             get {
                 return ResourceManager.GetString("Msg_File_incomplete_or_not_supported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error on getting player data from server - [{0}].
+        /// </summary>
+        internal static string Msg_GetPlayerData {
+            get {
+                return ResourceManager.GetString("Msg_GetPlayerData", resourceCulture);
             }
         }
         

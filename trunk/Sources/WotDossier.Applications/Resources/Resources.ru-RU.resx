@@ -126,11 +126,11 @@
   <data name="ChartLegend_WN6Rating" xml:space="preserve">
     <value>WN6</value>
   </data>
-  <data name="ErrorMsg_GetPlayerData" xml:space="preserve">
-    <value>Ошибка при получении статистики пользователя</value>
+  <data name="Msg_GetPlayerData" xml:space="preserve">
+    <value>Ошибка при получении данных пользователя с сервера - [{0}]</value>
   </data>
-  <data name="ErrorMsg_GetPlayerInfo" xml:space="preserve">
-    <value>Ошибка при получении данных пользователя</value>
+  <data name="Msg_ErrorOnGetLocalPlayerInfo" xml:space="preserve">
+    <value>Не найдено данных об игроке [{0}] в локальной базе приложения</value>
   </data>
   <data name="WindowCaption_Error" xml:space="preserve">
     <value>Ошибка</value>
@@ -253,10 +253,10 @@
   <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
     <value>Результаты последних {0} боев</value>
   </data>
-  <data name="ErrorMsg_ErrorOnFilesDeletion" xml:space="preserve">
+  <data name="Msg_ErrorOnFilesDeletion" xml:space="preserve">
     <value>Произошла ошибка при удалении одного или нескольких файлов, проверьте что у вас есть необходимые права на совершение операции</value>
   </data>
-  <data name="ErrorMsg_ErrorOnFileDeletion" xml:space="preserve">
+  <data name="Msg_ErrorOnFileDeletion" xml:space="preserve">
     <value>Произошла ошибка при удалении файла({0})</value>
   </data>
   <data name="WindowCaption_SelectPathToWorldOfTanksExecutable" xml:space="preserve">

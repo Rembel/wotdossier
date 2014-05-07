@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Windows;
 using Common.Logging;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
@@ -81,6 +82,10 @@ namespace WotDossier.Applications.ViewModel
                     PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.GetExport<PlayerServerStatisticViewModel>();
                     viewModel.Init(player);
                     viewModel.Show();
+                }
+                else
+                {
+                    MessageBox.Show(string.Format(Resources.Resources.Msg_GetPlayerData, row.Name), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }

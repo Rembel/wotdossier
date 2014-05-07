@@ -421,7 +421,7 @@ namespace WotDossier.Applications.ViewModel
 
                 if (error)
                 {
-                    MessageBox.Show(Resources.Resources.ErrorMsg_ErrorOnFilesDeletion,
+                    MessageBox.Show(Resources.Resources.Msg_ErrorOnFilesDeletion,
                         Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }

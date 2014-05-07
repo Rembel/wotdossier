@@ -14,7 +14,7 @@ namespace WotDossier.Domain.Tank
         {
             get
             {
-                return string.Format("{0}_{1}", CountryCode, Icon);
+                return string.Format("{0}_{1}", CountryId, Icon);
             }
         }
 
@@ -22,13 +22,7 @@ namespace WotDossier.Domain.Tank
         /// Gets or sets the country id.
         /// </summary>
         [DataMember(Name = "countryid")]
-        public int CountryId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the country code.
-        /// </summary>
-        [DataMember(Name = "country_code")]
-        public string CountryCode { get; set; }
+        public Country CountryId { get; set; }
 
         /// <summary>
         /// Gets or sets the icon.
@@ -41,5 +35,44 @@ namespace WotDossier.Domain.Tank
         /// </summary>
         [DataMember(Name = "icon_orig")]
         public string IconOrig { get; set; }
+
+        /// <summary>
+        /// Equalses the specified other.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns></returns>
+        protected bool Equals(TankIcon other)
+        {
+            return CountryId == other.CountryId && string.Equals(IconOrig, other.IconOrig);
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" }, is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((TankIcon) obj);
+        }
+
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// </returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((int) CountryId*397) ^ (IconOrig != null ? IconOrig.GetHashCode() : 0);
+            }
+        }
     }
 }

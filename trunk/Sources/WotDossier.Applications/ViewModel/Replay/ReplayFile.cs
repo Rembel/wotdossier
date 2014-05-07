@@ -27,8 +27,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         public static readonly string PropKilled = TypeHelper<ReplayFile>.PropertyName(v => v.Killed);
         public static readonly string PropXp = TypeHelper<ReplayFile>.PropertyName(v => v.Xp);
 
-        private const string TANKNAME_FORMAT = @"([a-zA-Z]+)-(.+)";
-
         #region result fields
 
         public string MapName { get; set; }
@@ -36,7 +34,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string MapNameId { get; set; }
         public Version ClientVersion { get; set; }
         public string TankName { get; set; }
-        public int CountryId { get; set; }
+        public Country CountryId { get; set; }
         public DateTime PlayTime { get; set; }
         public int Damaged { get; set; }
         public int Killed { get; set; }
@@ -145,11 +143,13 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 IsWinner = BattleStatus.Unknown;
 
-                Regex tankNameRegexp = new Regex(TANKNAME_FORMAT);
-                Match tankNameMatch = tankNameRegexp.Match(replay.datablock_1.playerVehicle);
-                CountryId = CountryHelper.GetCountryIdByCode(tankNameMatch.Groups[1].Value);
-                TankName = tankNameMatch.Groups[2].Value;
-                Tank = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => string.Equals(x.Icon.IconOrig, TankName, StringComparison.InvariantCultureIgnoreCase));
+                Icon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
+
+                CountryId = Icon.CountryId;
+                
+                Tank = Dictionaries.Instance.IconTanks[Icon];
+
+                TankName = Tank.Title;
 
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));

@@ -216,7 +216,6 @@ namespace WotDossier.Dal
                     {
                         tankEntity = new TankEntity();
                         tankEntity.CountryId = countryId;
-                        tankEntity.CountryCode = CountryHelper.GetCountryNameCode(countryId);
                         tankEntity.TankId = tankId;
                         tankEntity.Icon = tank.Description.Icon.IconId;
                         tankEntity.PlayerId = playerEntity.Id;

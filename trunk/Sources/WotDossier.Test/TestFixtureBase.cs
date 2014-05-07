@@ -429,7 +429,7 @@ namespace WotDossier.Test
 
             foreach (var tank in tanks)
             {
-                string url = string.Format("http://www.vbaddict.net/wot/tanks/{0}_{1}.png", tank.Icon.CountryId, tank.Icon.Icon);
+                string url = string.Format("http://www.vbaddict.net/wot/tanks/{0}.png", tank.Icon.IconId);
 
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
@@ -450,7 +450,7 @@ namespace WotDossier.Test
                     using (var streamReader = new BinaryReader(responseStream))
                     {
                         Byte[] lnByte = streamReader.ReadBytes(1 * 1024 * 1024 * 10);
-                        using (FileStream destinationFile = File.Create(Path.Combine(Environment.CurrentDirectory, string.Format("{0}_{1}.png", tank.CountryCode, tank.Icon.Icon))))
+                        using (FileStream destinationFile = File.Create(Path.Combine(Environment.CurrentDirectory,tank.Icon.IconId)))
                         {
                             destinationFile.Write(lnByte, 0, lnByte.Length);
                         }

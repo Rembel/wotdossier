@@ -22,12 +22,6 @@ namespace WotDossier.Domain.Tank
         public int CountryId { get; set; }
 
         /// <summary>
-        /// Gets or sets the country code.
-        /// </summary>
-        [DataMember(Name = "countryCode")]
-        public string CountryCode { get; set; }
-
-        /// <summary>
         /// Gets or sets the type.
         /// </summary>
         [DataMember(Name = "type")]

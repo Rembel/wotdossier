@@ -94,20 +94,27 @@ namespace WotDossier.Applications.ViewModel
                         MessageBoxImage.Warning);
                 }
 
-                PlayerSearchJson player;
-                
-                player = WotApiClient.Instance.SearchPlayer(_appSettings.PlayerName, _appSettings);
-                
+                PlayerSearchJson player = WotApiClient.Instance.SearchPlayer(_appSettings.PlayerName, _appSettings);
+
+                Player playerStat = null;
+
                 if (player != null)
                 {
                     _appSettings.PlayerId = player.id;
-                    double createdAt = WotApiClient.Instance.LoadPlayerStat(player.id, false, _appSettings).dataField.created_at;
-                    _dossierRepository.GetOrCreatePlayer(player.nickname, player.id, Utils.UnixDateToDateTime((long)createdAt));
+                    
+                    playerStat = WotApiClient.Instance.LoadPlayerStat(player.id, false, _appSettings);
+
+                    if (playerStat != null)
+                    {
+                        double createdAt = playerStat.dataField.created_at;
+                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.id, Utils.UnixDateToDateTime((long) createdAt));
+                    }
                 }
-                else
+
+                if (playerStat == null)
                 {
                     _appSettings.PlayerId = 0;
-                    MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerData, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(string.Format(Resources.Resources.Msg_GetPlayerData, _appSettings.PlayerName), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }

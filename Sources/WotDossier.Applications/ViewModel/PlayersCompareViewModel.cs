@@ -92,7 +92,10 @@ namespace WotDossier.Applications.ViewModel
                     Player stat1 = WotApiClient.Instance.LoadPlayerStat(first.id, SettingsReader.Get());
                     Player stat2 = WotApiClient.Instance.LoadPlayerStat(second.id, SettingsReader.Get());
 
-                    CompareStatistic = new CompareStatisticViewModelBase<PlayerStatisticViewModel>(GetPlayerViewModel(stat1), GetPlayerViewModel(stat2));
+                    if (stat1 != null && stat2 != null)
+                    {
+                        CompareStatistic = new CompareStatisticViewModelBase<PlayerStatisticViewModel>(GetPlayerViewModel(stat1), GetPlayerViewModel(stat2));
+                    }
                 }
             }
         }

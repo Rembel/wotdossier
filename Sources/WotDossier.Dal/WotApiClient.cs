@@ -231,7 +231,7 @@ namespace WotDossier.Dal
             catch (Exception e)
             {
                 _log.Error("Can't get player info from server", e);
-                throw new PlayerInfoLoadException("Error on getting player data from server", e);
+                return null;
             }
         }
 

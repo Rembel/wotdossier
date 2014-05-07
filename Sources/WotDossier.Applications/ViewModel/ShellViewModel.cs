@@ -532,7 +532,7 @@ namespace WotDossier.Applications.ViewModel
 
             if (playerEntity == null)
             {
-                MessageBox.Show(Resources.Resources.ErrorMsg_GetPlayerInfo, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(string.Format(Resources.Resources.Msg_ErrorOnGetLocalPlayerInfo, settings.PlayerName), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 

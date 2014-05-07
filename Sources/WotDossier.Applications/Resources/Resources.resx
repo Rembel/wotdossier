@@ -126,11 +126,8 @@
   <data name="ChartLegend_WN6Rating" xml:space="preserve">
     <value>WN6</value>
   </data>
-  <data name="ErrorMsg_GetPlayerData" xml:space="preserve">
-    <value>Error on getting player data from server</value>
-  </data>
-  <data name="ErrorMsg_GetPlayerInfo" xml:space="preserve">
-    <value>Can't get player info from server</value>
+  <data name="Msg_GetPlayerData" xml:space="preserve">
+    <value>Error on getting player data from server - [{0}]</value>
   </data>
   <data name="WindowCaption_Error" xml:space="preserve">
     <value>Error</value>
@@ -253,10 +250,10 @@ Avg Spotted: {1:0.00}</value>
   <data name="StatisticPeriod_LastNBattles" xml:space="preserve">
     <value>Last {0} Battles results</value>
   </data>
-  <data name="ErrorMsg_ErrorOnFilesDeletion" xml:space="preserve">
+  <data name="Msg_ErrorOnFilesDeletion" xml:space="preserve">
     <value>Error on file deletion, please check your access rights</value>
   </data>
-  <data name="ErrorMsg_ErrorOnFileDeletion" xml:space="preserve">
+  <data name="Msg_ErrorOnFileDeletion" xml:space="preserve">
     <value>Error on file deletion, please check your access rights({0})</value>
   </data>
   <data name="WindowCaption_SelectPathToWorldOfTanksExecutable" xml:space="preserve">
@@ -408,5 +405,8 @@ Avg Spotted: {1:0.00}</value>
   </data>
   <data name="ReplaysFolders_Deleted" xml:space="preserve">
     <value>Deleted</value>
+  </data>
+  <data name="Msg_ErrorOnGetLocalPlayerInfo" xml:space="preserve">
+    <value>Player info not found in local app database - [{0}]</value>
   </data>
 </root>

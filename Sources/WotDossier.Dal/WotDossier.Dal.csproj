@@ -78,6 +78,7 @@
     <Compile Include="IDataProvider.cs" />
     <Compile Include="IStatisticAdapter.cs" />
     <Compile Include="Mappings\ClassMapBase.cs" />
+    <Compile Include="Mappings\StatisticClassMapBase.cs" />
     <Compile Include="Mappings\TankTeamBattleStatisticEntityMapping.cs" />
     <Compile Include="Mappings\TankHistoricalBattleStatisticEntityMapping.cs" />
     <Compile Include="Mappings\HistoricalBattlesStatisticEntityMapping.cs" />

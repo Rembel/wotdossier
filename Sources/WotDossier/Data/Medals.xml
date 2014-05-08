@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Medals>
   <Epic>
-    <!--<medal name="medalWittmann" id="" icon=""/>-->
-    <!--<medal name="medalBoelter" id="" icon=""/>-->
     <medal name="Medal_Orlik" id="50" icon="medalOrlik" type="0"/>
     <medal name="Medal_Oskin" id="51" icon="medalOskin" type="0"/>
     <medal name="Medal_Halonen" id="52" icon="medalHalonen" type="0"/>
@@ -55,6 +53,23 @@
     <medal name="Medal_ArmoredFist" id="236" icon="armoredfist" type="0"/>
     <!--Тактик-->
     <medal name="Medal_TacticalBreakthrough" id="237" icon="TacticalBreakthrough" type="0"/>
+    <!--за отличную стрельбу-->
+    <medal name="Medal_WolfAmongSheepMedal" id="230" icon="wolfAmongSheepMedal" type="0"/>
+    <!--отличник боевой подготовки-->
+    <medal name="Medal_GeniusForWarMedal" id="232" icon="geniusForWarMedal" type="0"/>
+    <!--бог войны-->
+    <medal name="Medal_GodOfWar" id="286" icon="godOfWar" type="0"/>
+    <!--разведка боем-->
+    <medal name="Medal_FightingReconnaissanceMedal" id="288" icon="fightingReconnaissanceMedal" type="0"/>
+    <!--за волю к победе-->
+    <medal name="Medal_WillToWinSpirit" id="289" icon="willToWinSpirit" type="0"/>
+    <!--решающий выстрел-->
+    <medal name="Medal_CrucialShotMedal" id="291" icon="crucialShotMedal" type="0"/>
+    <!--за тактические операции-->
+    <medal name="Medal_ForTacticalOperations" id="2921" icon="forTacticalOperations1" type="1"/>
+    <medal name="Medal_ForTacticalOperations" id="2922" icon="forTacticalOperations2" type="1"/>
+    <medal name="Medal_ForTacticalOperations" id="2923" icon="forTacticalOperations3" type="1"/>
+    <medal name="Medal_ForTacticalOperations" id="2924" icon="forTacticalOperations4" type="1"/>
   </TeamBattles>
   <Special>
     <!--Стрелок-->
@@ -72,7 +87,7 @@
     <!--Гроза мышей-->
     <medal name="Medal_MouseTrap" id="67" icon="Mousebane" type="1"/>
     <!--неуязвимый-->
-    <!--<medal name="Medal_Invincible" id="79" icon="invincible" type="0"/>-->
+    <medal name="Medal_Invincible" id="59" icon="invincible" type="0"/>
     <!--лев синaя-->
     <medal name="Medal_Sinai" id="109" icon="sinai" type="1"/>
     <!--Бомбардир-->
@@ -86,7 +101,7 @@
     <!--Долина паттонов-->
     <medal name="Medal_PattonValley" id="154" icon="Pattonvalley" type="1"/>
     <!--Живучий-->
-    <!--<medal name="diehard" id="75" icon=""/>-->
+    <medal name="diehard" id="60" icon="Diehard" type="1"/>
   </Special>
   <Common>
     <medal name="Medal_Kay" id="411" icon="medalKay1" type="1"/>

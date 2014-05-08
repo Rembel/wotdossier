@@ -20,7 +20,7 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int accountDBID { get; set; }
         [DataMember]
-        public List<int> achievements { get; set; }
+        public List<object> achievements { get; set; }
         [DataMember]
         public int aogasFactor10 { get; set; }
         [DataMember]

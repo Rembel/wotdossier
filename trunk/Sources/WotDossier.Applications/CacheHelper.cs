@@ -120,7 +120,7 @@ namespace WotDossier.Applications
             Environment.CurrentDirectory = directoryName + @"\External";
             
             string task = directoryName + @"\External\wotrp2j.exe";
-            string arguments = string.Format("\"{0}\" -f -r", cacheFile.FullName);
+            string arguments = string.Format("\"{0}\" ", cacheFile.FullName);
 
             ExecuteTask(task, arguments, @"..\Logs\wotrp2j.log");
 

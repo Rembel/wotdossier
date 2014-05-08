@@ -21,11 +21,15 @@ namespace WotDossier.Domain.Entities
         public static readonly string PropSpotted = TypeHelper<StatisticEntity>.PropertyName(v => v.Spotted);
         public static readonly string PropHitsPercents = TypeHelper<StatisticEntity>.PropertyName(v => v.HitsPercents);
         public static readonly string PropDamageDealt = TypeHelper<StatisticEntity>.PropertyName(v => v.DamageDealt);
+        public static readonly string PropDamageTaken = TypeHelper<StatisticEntity>.PropertyName(v => v.DamageTaken);
         public static readonly string PropCapturePoints = TypeHelper<StatisticEntity>.PropertyName(v => v.CapturePoints);
         public static readonly string PropDroppedCapturePoints = TypeHelper<StatisticEntity>.PropertyName(v => v.DroppedCapturePoints);
         public static readonly string PropBattlesCount = TypeHelper<StatisticEntity>.PropertyName(v => v.BattlesCount);
         public static readonly string PropAvgLevel = TypeHelper<StatisticEntity>.PropertyName(v => v.AvgLevel);
         public static readonly string PropPlayerId = TypeHelper<StatisticEntity>.PropertyName(v => v.PlayerId);
+        public static readonly string PropRBR = TypeHelper<StatisticEntity>.PropertyName(v => v.RBR);
+        public static readonly string PropWN8Rating = TypeHelper<StatisticEntity>.PropertyName(v => v.WN8Rating);
+        public static readonly string PropPerformanceRating = TypeHelper<StatisticEntity>.PropertyName(v => v.PerformanceRating);
 
         /// <summary>
         /// Gets/Sets the field "PlayerId".

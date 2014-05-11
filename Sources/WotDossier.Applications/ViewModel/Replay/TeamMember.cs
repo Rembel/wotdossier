@@ -14,7 +14,11 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             Id = vehicle.Key;
             TankIcon = Dictionaries.Instance.GetTankIcon(vehicle.Value.vehicleType);
-            TankDescription tank = Dictionaries.Instance.IconTanks[TankIcon];
+            TankDescription tank = null;
+            if (Dictionaries.Instance.IconTanks.ContainsKey(TankIcon))
+            {
+                tank = Dictionaries.Instance.IconTanks[TankIcon];
+            }
             Tank = tank != null ? tank.Title : vehicle.Value.vehicleType;
             ClanAbbrev = vehicle.Value.clanAbbrev;
             Name = vehicle.Value.name;

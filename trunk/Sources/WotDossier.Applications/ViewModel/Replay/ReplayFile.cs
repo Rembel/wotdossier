@@ -145,10 +145,14 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Icon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
 
                 CountryId = Icon.CountryId;
-                
-                Tank = Dictionaries.Instance.IconTanks[Icon];
 
-                TankName = Tank.Title;
+                
+                if (Dictionaries.Instance.IconTanks.ContainsKey(Icon))
+                {
+                    Tank = Dictionaries.Instance.IconTanks[Icon];
+                }
+
+                TankName = Tank != null ? Tank.Title : replay.datablock_1.playerVehicle;
 
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));

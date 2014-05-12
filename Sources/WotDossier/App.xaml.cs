@@ -94,6 +94,7 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.Register<SettingsViewModel, SettingsViewModel>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<ClanSearchViewModel, ClanSearchViewModel>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<AboutViewModel, AboutViewModel>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<PlayersCompareViewModel, PlayersCompareViewModel>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<PlayerSearchViewModel, PlayerSearchViewModel>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<PlayerServerStatisticViewModel, PlayerServerStatisticViewModel>(Lifestyle.Transient);
@@ -109,6 +110,7 @@ namespace WotDossier
 
                 CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<IClanView, ClanWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IAboutView, AboutWindow>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<IShellView, MainWindow>(Lifestyle.Singleton);
                 CompositionContainerFactory.Instance.Register<IPlayerServerStatisticView, PlayerServerStatisticWindow>(Lifestyle.Transient);
                 CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>(Lifestyle.Transient);

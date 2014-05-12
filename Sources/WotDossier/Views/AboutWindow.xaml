@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
         xmlns:dal="clr-namespace:WotDossier.Dal;assembly=WotDossier.Dal"
+        xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         Title="{x:Static Resources:Resources.WindowTitle_AboutWindow}" Height="195" Width="450" 
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource applicationBackgroundBrush}" 
         Foreground="{StaticResource DefaultForeground}" FontFamily="{StaticResource DefaultFontFamily}" FontSize="{StaticResource DefaultFontSize}" WindowStyle="None">
@@ -20,19 +21,19 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Right" Width="Auto" Source="..\Resources\Images\app_icon.ico"></Image>
+        <Image Grid.Row="0" Grid.RowSpan="5" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Source="..\Resources\Images\app_icon.ico"></Image>
         <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textName" Text="{x:Static services:ApplicationInfo.ProductName}" />
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="12,12,0,0" Orientation="Horizontal">
             <TextBlock Name="textVersion" Text="{x:Static Resources:Resources.Version}"/>
             <TextBlock  Margin="6,0,0,0" Name="Version" Text="{x:Static services:ApplicationInfo.Version}" />
         </StackPanel>
         <TextBlock Margin="12,12,0,0" Grid.Row="2" HorizontalAlignment="Left">
-            <Hyperlink NavigateUri="{x:Static dal:AppConfigSettings.DownloadUri}" Click="Hyperlink_OnClick">
+            <Hyperlink Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}" CommandParameter="{x:Static dal:AppConfigSettings.DownloadUri}">
                 <TextBlock Text="{x:Static Resources:Resources.Hyperlink_Download_Text}"></TextBlock>
             </Hyperlink>
         </TextBlock>
         <TextBlock Margin="12,12,0,0" Grid.Row="3" HorizontalAlignment="Left">
-            <Hyperlink NavigateUri="{x:Static dal:AppConfigSettings.ForumUri}" Click="Hyperlink_OnClick">
+            <Hyperlink Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}" CommandParameter="{x:Static dal:AppConfigSettings.ForumUri}">
                 <TextBlock Text="{x:Static Resources:Resources.Hyperlink_Forum_Text}"></TextBlock>
             </Hyperlink>
         </TextBlock>
@@ -45,8 +46,8 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="1" Content="{x:Static Resources:Resources.ButtonOk}" Width="80" IsCancel="True" IsDefault="true" Margin="0,0,6,6"/>
-            <Button Grid.Column="2" Content="{x:Static Resources:Resources.ButtonSysInfo}" Click="buttonSysInfo_Click" Width="Auto" Margin="0,0,6,6"/>
-            <Button Grid.Column="3" Content="{x:Static Resources:Resources.ButtonCheckUpdate}" Click="buttonCheckUpdate_Click" Width="Auto" Margin="0,0,6,6"/>
+            <Button Grid.Column="2" Content="{x:Static Resources:Resources.ButtonSysInfo}" Command="{Binding SysInfoCommand}" Width="Auto" Margin="0,0,6,6"/>
+            <Button Grid.Column="3" Content="{x:Static Resources:Resources.ButtonCheckUpdate}" Command="{Binding CheckUpdateCommand}" Width="Auto" Margin="0,0,6,6"/>
         </Grid>
     </Grid>
 </Window>

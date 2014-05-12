@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              mc:Ignorable="d" Width="550"
              d:DesignHeight="300" d:DesignWidth="300" Foreground="#BABFBA">
     <Grid>
@@ -13,7 +14,7 @@
             <ColumnDefinition Width="150"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0">
-            <Hyperlink NavigateUri="{Binding HeaderLink, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LinkStatisticRow}}" Click="Hyperlink_OnClick">
+            <Hyperlink CommandParameter="{Binding HeaderLink, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LinkStatisticRow}}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
                 <TextBlock Foreground="#BABFBA" Text="{Binding Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LinkStatisticRow}}" 
                    FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LinkStatisticRow}}"
                    Margin="{Binding HeaderMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LinkStatisticRow}}"

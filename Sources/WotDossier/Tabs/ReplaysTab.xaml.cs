@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using WotDossier.Applications;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Framework.EventAggregator;
@@ -24,15 +21,6 @@ namespace WotDossier.Tabs
         public ReplaysTab()
         {
             InitializeComponent();
-        }
-
-        private void Hyperlink_OnClick(object sender, RoutedEventArgs e)
-        {
-            Hyperlink hyperlink = e.OriginalSource as Hyperlink;
-            if (hyperlink != null)
-            {
-                Process.Start(hyperlink.NavigateUri.ToString());
-            }
         }
 
         private void OnGridPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

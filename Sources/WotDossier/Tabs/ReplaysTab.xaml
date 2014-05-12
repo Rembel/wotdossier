@@ -9,6 +9,7 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters"
              xmlns:behaviours="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -125,7 +126,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0" Visibility="{Binding Link, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
-                                <Hyperlink NavigateUri="{Binding Link}" Click="Hyperlink_OnClick">
+                                <Hyperlink CommandParameter="{Binding Link}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
                                     <TextBlock Text="{x:Static Resources:Resources.Column_Replay_Link}"></TextBlock>
                                 </Hyperlink>
                             </TextBlock>

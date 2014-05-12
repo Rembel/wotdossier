@@ -100,7 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationRouteCommands.cs" />
+    <Compile Include="ApplicationStaticCommands.cs" />
     <Compile Include="Applications\CollectionChangedEventListener.cs" />
     <Compile Include="Applications\Controller.cs" />
     <Compile Include="Applications\ClickEventToCommand.cs" />

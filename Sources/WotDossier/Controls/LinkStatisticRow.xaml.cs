@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace WotDossier.Controls
@@ -74,18 +72,12 @@ namespace WotDossier.Controls
             set { SetValue(HeaderLinkProperty, value); }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LinkStatisticRow"/> class.
+        /// </summary>
         public LinkStatisticRow()
         {
             InitializeComponent();
-        }
-
-        private void Hyperlink_OnClick(object sender, RoutedEventArgs e)
-        {
-            Hyperlink hyperlink = e.OriginalSource as Hyperlink;
-            if (hyperlink != null && hyperlink.NavigateUri != null)
-            {
-                Process.Start(hyperlink.NavigateUri.ToString());
-            }
         }
     }
 }

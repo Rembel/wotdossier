@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WotDossier.Tabs
 {
@@ -20,6 +8,9 @@ namespace WotDossier.Tabs
     /// </summary>
     public partial class CommonTabNew : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommonTabNew"/> class.
+        /// </summary>
         public CommonTabNew()
         {
             InitializeComponent();
@@ -39,15 +30,6 @@ namespace WotDossier.Tabs
         {
             base.OnInitialized(e);
             InvalidateVisual();
-        }
-
-        private void Hyperlink_OnClick(object sender, RoutedEventArgs e)
-        {
-            Hyperlink hyperlink = e.OriginalSource as Hyperlink;
-            if (hyperlink != null && hyperlink.NavigateUri != null)
-            {
-                Process.Start(hyperlink.NavigateUri.ToString());
-            }
         }
     }
 }

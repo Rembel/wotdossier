@@ -19,6 +19,7 @@ namespace WotDossier.Views
         public ReplayWindow()
         {
             InitializeComponent();
+            Owner = App.Current.MainWindow;
             KeyDown += Window_KeyDown;
         }
 

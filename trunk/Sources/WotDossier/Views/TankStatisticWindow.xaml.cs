@@ -3,7 +3,6 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using Microsoft.Research.DynamicDataDisplay;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Framework;
@@ -20,6 +19,7 @@ namespace WotDossier.Views
         public TankStatisticWindow()
         {
             InitializeComponent();
+            Owner = App.Current.MainWindow;
             KeyDown += Window_KeyDown;
         }
 

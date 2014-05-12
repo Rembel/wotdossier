@@ -25,6 +25,7 @@ namespace WotDossier.Views
         public PlayersCompareWindow()
         {
             InitializeComponent();
+            Owner = App.Current.MainWindow;
             KeyDown += Window_KeyDown;
         }
 

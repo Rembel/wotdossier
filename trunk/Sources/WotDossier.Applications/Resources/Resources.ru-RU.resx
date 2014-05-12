@@ -214,7 +214,7 @@
     <value>Ошибка входа</value>
   </data>
   <data name="Msg_NewVersion" xml:space="preserve">
-    <value>Доступна новая версия - {0}. Открыть страницу загрузки?</value>
+    <value>Доступна новая версия - {0}. Скачать и установить ее?</value>
   </data>
   <data name="Language_Russian" xml:space="preserve">
     <value>Русский</value>

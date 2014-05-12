@@ -518,7 +518,7 @@ namespace WotDossier.Applications.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New version available - {0}. Do you want download it now?.
+        ///   Looks up a localized string similar to New version available - {0}. Do you want download and install it now?.
         /// </summary>
         internal static string Msg_NewVersion {
             get {

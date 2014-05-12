@@ -2,9 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Threading;
 using System.Windows;
-using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -21,18 +19,15 @@ namespace WotDossier.Applications.Update
         /// </summary>
         public static void CheckForUpdates()
         {
-            Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
-                {
-                    AppSettings appSettings = SettingsReader.Get();
-                    //one day from last check
-                    if (appSettings.CheckForUpdates && (DateTime.Now - appSettings.NewVersionCheckLastDate).Days >= 1 )
-                    {
-                        appSettings.NewVersionCheckLastDate = DateTime.Now;
-                        SettingsReader.Save(appSettings);
+            AppSettings appSettings = SettingsReader.Get();
+            //one day from last check
+            if (appSettings.CheckForUpdates && (DateTime.Now - appSettings.NewVersionCheckLastDate).Days >= 1)
+            {
+                appSettings.NewVersionCheckLastDate = DateTime.Now;
+                SettingsReader.Save(appSettings);
 
-                        CheckNewVersionAvailable();
-                    }
-                }, null);
+                CheckNewVersionAvailable();
+            }
         }
 
         /// <summary>
@@ -49,8 +44,7 @@ namespace WotDossier.Applications.Update
                 MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, info.LatestVersion), ApplicationInfo.ProductName,
                     MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                Process.Start(AppConfigSettings.DownloadUrl);
-                //Download(info);
+                Download(info);
             }
         }
 
@@ -133,6 +127,8 @@ namespace WotDossier.Applications.Update
                 }
                 fs.Close();
                 stream.Close();
+
+                Process.Start(filepath);
             }
 
             catch

@@ -211,7 +211,7 @@ Win percent: {1:0.00}</value>
     <value>Auth failure</value>
   </data>
   <data name="Msg_NewVersion" xml:space="preserve">
-    <value>New version available - {0}. Do you want download it now?</value>
+    <value>New version available - {0}. Do you want download and install it now?</value>
   </data>
   <data name="Language_Russian" xml:space="preserve">
     <value>Русский</value>

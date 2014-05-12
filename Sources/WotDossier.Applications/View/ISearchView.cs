@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using WotDossier.Framework.Applications;
+﻿using WotDossier.Framework.Applications;
 
 namespace WotDossier.Applications.View
 {

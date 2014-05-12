@@ -11,6 +11,7 @@ namespace WotDossier.Views
         public AboutWindow()
         {
             InitializeComponent();
+            Owner = App.Current.MainWindow;
         }
     }
 }

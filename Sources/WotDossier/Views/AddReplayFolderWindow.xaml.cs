@@ -14,6 +14,7 @@ namespace WotDossier.Views
         public AddReplayFolderWindow()
         {
             InitializeComponent();
+            Owner = App.Current.MainWindow;
         }
     }
 }

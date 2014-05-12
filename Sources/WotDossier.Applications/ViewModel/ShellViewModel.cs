@@ -1,4 +1,5 @@
-﻿using Common.Logging;
+﻿using System.Windows.Threading;
+using Common.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -677,13 +678,17 @@ namespace WotDossier.Applications.ViewModel
         {
             ViewTyped.Loaded += OnShellViewActivated;
             ViewTyped.Show();
-            UpdateChecker.CheckForUpdates();
+
+            Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
+            {
+                UpdateChecker.CheckForUpdates();
+            }, null);
         }
 
         private void OnShellViewActivated(object sender, EventArgs eventArgs)
         {
             ViewTyped.Loaded -= OnShellViewActivated;
-            ((Action)OnLoad)();
+            OnLoad();
         }
 
         private void ViewTypedOnClosing(object sender, CancelEventArgs cancelEventArgs)

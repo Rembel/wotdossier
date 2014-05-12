@@ -5,6 +5,7 @@
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:Resources="clr-namespace:WotDossier.Resources"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
+        xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         Title="{Binding Path=DataContext.PlayerStatistic.Name, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="768" 
         Icon="..\Resources\Images\player.png" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource bcolorCenter}">
@@ -15,7 +16,7 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                 <TextBlock HorizontalAlignment="Center">
-                                        <Hyperlink Click="Hyperlink_OnClick" NavigateUri="{Binding PlayerStatistic.NameLink}">
+                                        <Hyperlink Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}" CommandParameter="{Binding PlayerStatistic.NameLink}">
                                             <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" />        
                                         </Hyperlink>    
                 </TextBlock>

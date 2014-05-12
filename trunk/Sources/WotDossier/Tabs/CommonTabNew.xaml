@@ -10,6 +10,7 @@
              xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="900">
     <Grid Background="{StaticResource bcolorCenter}">
@@ -32,7 +33,7 @@
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                             <StackPanel Orientation="Vertical" Width="Auto" HorizontalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Center">
-                                    <Hyperlink Click="Hyperlink_OnClick" NavigateUri="{Binding PlayerStatistic.NameLink}">
+                                    <Hyperlink Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}" CommandParameter="{Binding PlayerStatistic.NameLink}">
                                         <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" />        
                                     </Hyperlink>    
                                 </TextBlock>

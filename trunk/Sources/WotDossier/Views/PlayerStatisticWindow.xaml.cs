@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel.Composition;
-using System.Diagnostics;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Input;
 using WotDossier.Applications.View;
 
@@ -25,15 +23,6 @@ namespace WotDossier.Views
             if (e.Key == Key.Escape)
             {
                 Close();
-            }
-        }
-
-        private void Hyperlink_OnClick(object sender, RoutedEventArgs e)
-        {
-            Hyperlink hyperlink = e.OriginalSource as Hyperlink;
-            if (hyperlink != null && hyperlink.NavigateUri != null)
-            {
-                Process.Start(hyperlink.NavigateUri.ToString());
             }
         }
     }

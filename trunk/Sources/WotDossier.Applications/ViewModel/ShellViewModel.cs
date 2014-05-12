@@ -175,6 +175,7 @@ namespace WotDossier.Applications.ViewModel
 
         public DelegateCommand LoadCommand { get; set; }
         public DelegateCommand SettingsCommand { get; set; }
+        public DelegateCommand AboutCommand { get; set; }
 
         public DelegateCommand<object> RowDoubleClickCommand { get; set; }
         public DelegateCommand<object> AddToFavoriteCommand { get; set; }
@@ -204,6 +205,7 @@ namespace WotDossier.Applications.ViewModel
 
             LoadCommand = new DelegateCommand(OnLoad, CanLoad);
             SettingsCommand = new DelegateCommand(OnSettings);
+            AboutCommand = new DelegateCommand(OnAbout);
             
             RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             AddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
@@ -397,10 +399,18 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnSettings()
         {
-            var export = CompositionContainerFactory.Instance.GetExport<SettingsViewModel>();
-            if (export != null)
+            var viewModel = CompositionContainerFactory.Instance.GetExport<SettingsViewModel>();
+            if (viewModel != null)
             {
-                SettingsViewModel viewModel = export;
+                viewModel.Show();
+            }
+        }
+
+        private void OnAbout()
+        {
+            AboutViewModel viewModel = CompositionContainerFactory.Instance.GetExport<AboutViewModel>();
+            if (viewModel != null)
+            {
                 viewModel.Show();
             }
         }

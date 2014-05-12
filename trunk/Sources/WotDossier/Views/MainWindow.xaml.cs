@@ -68,13 +68,6 @@ namespace WotDossier.Views
             chart.Children.Remove(chart.KeyboardNavigation);
         }
 
-        private void MenuItemAbout_Click(object sender, RoutedEventArgs e)
-        {
-            AboutWindow aboutWindow = new AboutWindow();
-            aboutWindow.Owner = this;
-            aboutWindow.ShowDialog();
-        }
-
         private void PrintWindow_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             int i = 0;

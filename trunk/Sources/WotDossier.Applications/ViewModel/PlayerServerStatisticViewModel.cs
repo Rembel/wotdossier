@@ -25,7 +25,7 @@ namespace WotDossier.Applications.ViewModel
         private static readonly string PropClan = TypeHelper.GetPropertyName<PlayerServerStatisticViewModel>(x => x.Clan);
 
         public DelegateCommand<object> OpenClanCommand { get; set; }
-
+        
         private PlayerStatisticViewModel _playerStatistic;
         /// <summary>
         /// Gets or sets the player statistic.

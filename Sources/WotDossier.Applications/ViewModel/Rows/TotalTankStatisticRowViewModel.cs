@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.Logic;
-using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
@@ -113,6 +112,8 @@ namespace WotDossier.Applications.ViewModel.Rows
             Tier8Frags = list.Sum(x => x.Tier8Frags);
             BeastFrags = list.Sum(x => x.BeastFrags);
             SinaiFrags = list.Sum(x => x.SinaiFrags);
+            MouseFrags = list.Sum(x => x.MouseFrags);
+            PattonFrags = list.Sum(x => x.PattonFrags);
             #endregion
 
             #region [ ITankRowMasterTanker ]
@@ -163,7 +164,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Sharpshooter = list.Max(x => x.Sharpshooter);
             Invincible = list.Max(x => x.Invincible);
             Survivor = list.Max(x => x.Survivor);
-            MouseTrap = list.Sum(x => x.TankFrags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
+            MouseTrap = list.Sum(x => x.MouseFrags) / 10;
             Hunter = list.Sum(x => x.BeastFrags) / 100;
             Sinai = list.Sum(x => x.SinaiFrags) / 100;
             PattonValley = list.Sum(x => x.PattonFrags) / 100;
@@ -179,8 +180,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
             #endregion
 
-            TankFrags = new List<FragsJson>();
-            
             #region [ ITankRowXP ]
             Xp = list.Sum(x => x.Xp);
             MaxXp = list.Max(x => x.MaxXp);

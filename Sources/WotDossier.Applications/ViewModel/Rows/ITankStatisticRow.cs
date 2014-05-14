@@ -6,7 +6,6 @@ namespace WotDossier.Applications.ViewModel.Rows
 {
     public interface ITankStatisticRow : IStatisticBase, ITankRowBattles, ITankRowDamage, ITankRowFrags, ITankRowPerformance, ITankRowRatings, ITankRowTime, ITankFilterable
     {
-        IEnumerable<FragsJson> TankFrags { get; set; }
         TankIcon Icon { get; set; }
         int TankId { get; set; }
         int TankUniqueId { get; set; }

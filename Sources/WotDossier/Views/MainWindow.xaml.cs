@@ -85,6 +85,11 @@ namespace WotDossier.Views
 
             Util.SaveWindow(this,96, path);
         }
+
+        private void MenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            tcMain.SelectedIndex = 17;
+        }
     }
 
     public class TankTypeLabelProvider : LabelProviderBase<int>

@@ -1,14 +1,13 @@
-﻿using WotDossier.Applications.ViewModel.Rows;
-using WotDossier.Domain.Tank;
+﻿using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel
 {
     internal class ExportTankFragModel : IExportTankFragModel
     {
-        private readonly ITankStatisticRow _tank;
+        private readonly TankJson _tank;
         private readonly FragsJson _frag;
 
-        public ExportTankFragModel(ITankStatisticRow tank, FragsJson frag)
+        public ExportTankFragModel(TankJson tank, FragsJson frag)
         {
             _tank = tank;
             _frag = frag;
@@ -16,8 +15,8 @@ namespace WotDossier.Applications.ViewModel
 
         public string Tank
         {
-            get { return _tank.Tank; }
-            set { _tank.Tank = value; }
+            get { return _tank.Common.tanktitle; }
+            set { _tank.Common.tanktitle = value; }
         }
 
         public double Tier
@@ -28,20 +27,20 @@ namespace WotDossier.Applications.ViewModel
 
         public int CountryId
         {
-            get { return _tank.CountryId; }
-            set { _tank.CountryId = value; }
+            get { return _tank.Common.countryid; }
+            set { _tank.Common.countryid = value; }
         }
 
         public int Type
         {
-            get { return _tank.Type; }
-            set { _tank.Type = value; }
+            get { return _tank.Common.type; }
+            set { _tank.Common.type = value; }
         }
 
         public int TankId
         {
-            get { return _tank.TankId; }
-            set { _tank.TankId = value; }
+            get { return _tank.Common.tankid; }
+            set { _tank.Common.tankid = value; }
         }
 
         public double FragTier

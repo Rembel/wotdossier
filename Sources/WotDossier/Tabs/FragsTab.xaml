@@ -38,6 +38,8 @@
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_Tier8Frags}" Binding="{Binding Tier8Frags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_BeastFrags}" Binding="{Binding BeastFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_SinaiFrags}" Binding="{Binding SinaiFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_MauseFrags}" Binding="{Binding MouseFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_PattonFrags}" Binding="{Binding PattonFrags}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

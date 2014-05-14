@@ -49,6 +49,8 @@ namespace WotDossier.Applications.ViewModel
 
         #region [ Properties and Fields ]
 
+        private List<TankJson> _tanksCache;
+
         private readonly DossierRepository _dossierRepository;
         
         private PlayerStatisticViewModel _playerStatistic;
@@ -269,7 +271,7 @@ namespace WotDossier.Applications.ViewModel
         private void OnExportFragsToCsv()
         {
             CsvExportProvider provider = new CsvExportProvider();
-            provider.Export(_tanks.SelectMany(x => x.TankFrags.Select(f => new ExportTankFragModel(x, f))).ToList(),
+            provider.Export(_tanksCache.SelectMany(x => x.Frags.Select(f => new ExportTankFragModel(x, f))).ToList(),
                 new List<Type>
                 {
                     typeof (IExportTankFragModel),
@@ -456,17 +458,17 @@ namespace WotDossier.Applications.ViewModel
                             {
                                 //convert dossier cache file to json
                                 string jsonFile = CacheHelper.BinaryCacheToJson(cacheFile);
-                                List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(jsonFile);
+                                _tanksCache = WotApiClient.Instance.ReadTanksCache(jsonFile);
 
                                 //get tanks from dossier app spot
                                 //string data = new Uri("http://wot-dossier.appspot.com/dossier-data/2587067").Get();
                                 //List<TankJson> tanksV2 = WotApiClient.Instance.ReadDossierAppSpotTanks(data);
 
-                                InitPlayerStatistic(serverStatistic, tanks);
+                                InitPlayerStatistic(serverStatistic, _tanksCache);
 
                                 ProgressView.Report(bw, 25, string.Empty);
 
-                                InitTanksStatistic(tanks);
+                                InitTanksStatistic(_tanksCache);
 
                                 //trick for set "N last battles period"
                                 if (settings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
@@ -549,9 +551,10 @@ namespace WotDossier.Applications.ViewModel
 
             Tanks = strategy.GetTanksStatistic(playerEntity.Id);
 
-            MasterTanker = strategy.GetMasterTankerList(_tanks);
+            MasterTanker = strategy.GetMasterTankerList(tanks);
 
-            FraggsCount.Init(_tanks);
+            FraggsCount.Init(tanks);
+
             _log.Trace("ShellViewModel.InitTanksStatistic end");
         }
 

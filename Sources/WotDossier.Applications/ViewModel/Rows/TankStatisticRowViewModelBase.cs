@@ -10,7 +10,6 @@ namespace WotDossier.Applications.ViewModel.Rows
     public class TankStatisticRowViewModelBase<T> : PeriodStatisticViewModel<T>, ITankStatisticRow where T : StatisticViewModelBase
     {
         private DateTime _lastBattle;
-        private IEnumerable<FragsJson> _tankFrags;
         private bool _isFavorite;
 
         #region Common
@@ -98,6 +97,8 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int SinaiFrags { get; set; }
 
         public int PattonFrags { get; set; }
+
+        public int MouseFrags { get; set; }
 
         #endregion
 
@@ -327,7 +328,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             CountryId = tank.Common.countryid;
             TankId = tank.Common.tankid;
             TankUniqueId = tank.UniqueId();
-            TankFrags = tank.Frags;
             Mileage = tank.Common.mileage / 1000;    
             
             #region [ ITankRowBattleAwards ]
@@ -418,12 +418,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         }
 
         public TankDescription Description { get; set; }
-
-        public IEnumerable<FragsJson> TankFrags
-        {
-            get { return _tankFrags; }
-            set { _tankFrags = value; }
-        }
 
         /// <summary>
         /// Returns a string that represents the current object.

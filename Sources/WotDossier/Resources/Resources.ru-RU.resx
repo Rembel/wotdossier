@@ -1097,7 +1097,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Карта</value>
   </data>
   <data name="Tab_Header_Replays" xml:space="preserve">
-    <value>Реплеи</value>
+    <value>Менеджер Реплеев</value>
   </data>
   <data name="WindowTitle_BattleResults" xml:space="preserve">
     <value>Результаты боя</value>
@@ -1868,5 +1868,11 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   </data>
   <data name="Label_Achievements_TeamBattle" xml:space="preserve">
     <value>Командный бой</value>
+  </data>
+  <data name="Column_Frags_MauseFrags" xml:space="preserve">
+    <value>Фрагов "Маус"</value>
+  </data>
+  <data name="Column_Frags_PattonFrags" xml:space="preserve">
+    <value>Фрагов "Паттон"</value>
   </data>
 </root>

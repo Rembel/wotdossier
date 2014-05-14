@@ -935,11 +935,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mause Frags.
+        /// </summary>
+        public static string Column_Frags_MauseFrags {
+            get {
+                return ResourceManager.GetString("Column_Frags_MauseFrags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Max Frags.
         /// </summary>
         public static string Column_Frags_MaxFrags {
             get {
                 return ResourceManager.GetString("Column_Frags_MaxFrags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patton Frags.
+        /// </summary>
+        public static string Column_Frags_PattonFrags {
+            get {
+                return ResourceManager.GetString("Column_Frags_PattonFrags", resourceCulture);
             }
         }
         
@@ -3824,7 +3842,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Replays.
+        ///   Looks up a localized string similar to Replays Manager.
         /// </summary>
         public static string Tab_Header_Replays {
             get {

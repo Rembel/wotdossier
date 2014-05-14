@@ -96,7 +96,7 @@
                     </StackPanel>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" DataContext="{Binding AlienTeamMember}">
-                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
+                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
                     <ListBox Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -191,7 +191,7 @@
                     </StackPanel>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" DataContext="{Binding OurTeamMember}">
-                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
+                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
                     <ListBox Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>

@@ -126,26 +126,26 @@
         <Style TargetType="Image" x:Key="FinalStatisticLineWinStyle">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Victory}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linewin.png" />
+                    <Setter Property="Source" Value="/Resources/Images/Replays/FinalStatistic_linewin.png" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Defeat}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linelose.png" />
+                    <Setter Property="Source" Value="/Resources/Images/Replays/FinalStatistic_linelose.png" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Draw}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_linedraw.png" />
+                    <Setter Property="Source" Value="/Resources/Images/Replays/FinalStatistic_linedraw.png" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="Image" x:Key="FinalStatisticPicWinStyle">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Victory}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picwin.jpg" />
+                    <Setter Property="Source" Value="/Resources/Images/Replays/FinalStatistic_picwin.jpg" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Defeat}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_piclose.jpg" />
+                    <Setter Property="Source" Value="/Resources/Images/Replays/FinalStatistic_piclose.jpg" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="{x:Static replay:BattleStatus.Draw}">
-                    <Setter Property="Source" Value="/WotDossier;component/Resources/Images/Replays/FinalStatistic_picdraw.jpg" />
+                    <Setter Property="Source" Value="/Resources/Images/Replays/FinalStatistic_picdraw.jpg" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>

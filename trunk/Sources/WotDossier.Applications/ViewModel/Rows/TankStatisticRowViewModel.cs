@@ -90,6 +90,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             BeastFrags = tank.Achievements.fragsBeast;
             SinaiFrags = tank.Achievements.fragsSinai;
             PattonFrags = tank.Achievements.fragsPatton;
+            MouseFrags = tank.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count);
             #endregion
         }
 

@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
-using WotDossier.Applications.ViewModel.Rows;
 using System.Linq;
+using WotDossier.Common;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel
 {
     public class FraggsCountViewModel : TankFilterViewModel
     {
-        private const string TANK_FRAGS_PROPERTY_NAME = "TankFrags";
+        public static readonly string PropTankFrags = TypeHelper<FraggsCountViewModel>.PropertyName(v => v.TankFrags);
+        
+        private const int KEY_ALL_VALUES = -1;
         private List<FragsJson> _tankFrags;
         private KeyValue<int, string> _selectedTank;
 
@@ -19,7 +21,7 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _selectedTank = value;
-                OnPropertyChanged(TANK_FRAGS_PROPERTY_NAME);
+                OnPropertyChanged(PropTankFrags);
             }
         }
 
@@ -29,16 +31,16 @@ namespace WotDossier.Applications.ViewModel
             set
             {
                 _tankFrags = value;
-                OnPropertyChanged(TANK_FRAGS_PROPERTY_NAME);
+                OnPropertyChanged(PropTankFrags);
             }
         }
 
         protected override void OnPropertyChanged(string propertyName)
         {
             base.OnPropertyChanged(propertyName);
-            if (!TANK_FRAGS_PROPERTY_NAME.Equals(propertyName))
+            if (!PropTankFrags.Equals(propertyName))
             {
-                OnPropertyChanged(TANK_FRAGS_PROPERTY_NAME);
+                OnPropertyChanged(PropTankFrags);
             }
         }
 
@@ -51,7 +53,7 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<FragsJson> filter = Filter(tankFrags)
                 .Where(x => (SelectedTank == null
-                   || SelectedTank.Key == 0
+                   || SelectedTank.Key == KEY_ALL_VALUES
                    || x.KilledByTankUniqueId == SelectedTank.Key))
                 .GroupBy(x => new
                     {   
@@ -79,11 +81,11 @@ namespace WotDossier.Applications.ViewModel
             return filter.ToList();
         }
 
-        public void Init(List<ITankStatisticRow> tanks)
+        public void Init(List<TankJson> tanks)
         {
-            TankFrags = tanks.SelectMany(x => x.TankFrags).ToList();
-            Tanks = tanks.OrderBy(x => x.Tank).Select(x => new KeyValue<int, string>(x.TankUniqueId, x.Tank)).ToList();
-            Tanks.Insert(0, new KeyValue<int, string>(0, Resources.Resources.TankFilterPanel_All));
+            TankFrags = tanks.SelectMany(x => x.Frags).ToList();
+            Tanks = tanks.OrderBy(x => x.Common.tanktitle).Select(x => new KeyValue<int, string>(x.UniqueId(), x.Common.tanktitle)).ToList();
+            Tanks.Insert(0, new KeyValue<int, string>(KEY_ALL_VALUES, Resources.Resources.TankFilterPanel_All));
             OnPropertyChanged("Tanks");
         }
     }

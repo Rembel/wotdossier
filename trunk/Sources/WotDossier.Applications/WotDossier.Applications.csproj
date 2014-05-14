@@ -33,9 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+    <Reference Include="Common.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+      <HintPath>..\packages\Common.Logging.2.2.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\packages\Common.Logging.Core.2.2.0\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
     <Reference Include="DynamicDataDisplay">
       <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
@@ -78,6 +81,7 @@
     <Compile Include="BattleModeStrategies\StatisticViewStrategyManager.cs" />
     <Compile Include="BattleModeStrategies\TeamStatisticViewStrategy.cs" />
     <Compile Include="CacheHelper.cs" />
+    <Compile Include="ReplaysManagerController.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
     <Compile Include="Folder.cs" />
@@ -127,6 +131,7 @@
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />
     <Compile Include="ViewModel\BattleModeSelectorViewModel.cs" />
     <Compile Include="ViewModel\AboutViewModel.cs" />
+    <Compile Include="ViewModel\ReplayManagerShellViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
     <Compile Include="ViewModel\Replay\DbReplay.cs" />

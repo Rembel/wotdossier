@@ -1,0 +1,10 @@
+﻿<Window x:Class="WotDossier.ReplaysManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resources="clr-namespace:WotDossier.Resources"
+        xmlns:tabs="clr-namespace:WotDossier.Tabs"
+        Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/movieicon2.jpg">
+    <Grid>
+      <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}" VerticalAlignment="Stretch"></tabs:ReplaysTab>
+    </Grid>
+</Window>

@@ -229,7 +229,14 @@ namespace WotDossier.Applications.Update
             var types = type.Assembly.GetTypes().Where(type1 => type.IsAssignableFrom(type1) && type1 != type);
 
             string currentDirectory = Folder.AssemblyDirectory();
-            string[] strings = Directory.GetFiles(Path.Combine(currentDirectory, "Updates"), "*.sql");
+            var updatesFolder = Path.Combine(currentDirectory, "Updates");
+            
+            string[] strings = new string[0];
+            
+            if (Directory.Exists(updatesFolder))
+            {
+                strings = Directory.GetFiles(updatesFolder, "*.sql");
+            }
 
             List<IDbUpdate> updates = strings.Select(x => (IDbUpdate)new SqlUpdate(x)).ToList();
             updates.AddRange(types.Select(Activator.CreateInstance).Cast<IDbUpdate>());
@@ -249,7 +256,9 @@ namespace WotDossier.Applications.Update
             string path = Path.Combine(currentDirectory, @"Data\dossier.s3db");
             if (!File.Exists(path))
             {
-                byte[] embeddedResource = GetEmbeddedResource(@"WotDossier.Data.init.s3db", Assembly.GetEntryAssembly());
+                Assembly entryAssembly = Assembly.GetEntryAssembly();
+                var resourceName = entryAssembly.GetName().Name + @".Data.init.s3db";
+                byte[] embeddedResource = GetEmbeddedResource(resourceName, entryAssembly);
                 using (FileStream fileStream = File.OpenWrite(path))
                 {
                     fileStream.Write(embeddedResource, 0, embeddedResource.Length);

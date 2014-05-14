@@ -805,9 +805,6 @@
     <Content Include="External\bz2.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="External\ExportSqlCe40.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="External\library.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

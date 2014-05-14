@@ -227,10 +227,10 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Loaded += OnShellViewActivated;
             ViewTyped.Show();
 
-            Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
-            {
-                UpdateChecker.CheckForUpdates();
-            }, null);
+            //Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
+            //{
+            //    UpdateChecker.CheckForUpdates();
+            //}, null);
         }
 
         private void OnShellViewActivated(object sender, EventArgs eventArgs)

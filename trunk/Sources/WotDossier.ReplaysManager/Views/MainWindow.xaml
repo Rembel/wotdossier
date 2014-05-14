@@ -3,8 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:resources="clr-namespace:WotDossier.Resources"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
+        xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
         Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/movieicon2.jpg">
-    <Grid>
-      <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}" VerticalAlignment="Stretch"></tabs:ReplaysTab>
-    </Grid>
+  <Window.InputBindings>
+    <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>
+    <KeyBinding Command="{Binding SettingsCommand}" Key="P" Modifiers="Control"/>
+    <!--<KeyBinding Command="ApplicationCommands.Print"  Key="N" Modifiers="Ctrl+Shift"/>-->
+  </Window.InputBindings>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Menu Grid.Row="0" IsMainMenu="True">
+      <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}" InputGestureText="F5" ></MenuItem>
+      <!--<MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>-->
+      <!--<MenuItem Header="{x:Static resources:Resources.MenuItem_Header_About}" Command="{Binding AboutCommand}"></MenuItem>-->
+    </Menu>
+    <tabs:ReplaysTab Grid.Row="1" HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}" VerticalAlignment="Stretch"></tabs:ReplaysTab>
+    <StatusBar Grid.Row="2" VerticalAlignment="Bottom" Background="Beige">
+      <StatusBarItem HorizontalAlignment="Right">
+        <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Height="17" Width="100" HorizontalAlignment="Right"/>
+      </StatusBarItem>
+    </StatusBar>
+  </Grid>
 </Window>

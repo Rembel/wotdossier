@@ -72,27 +72,6 @@ namespace WotDossier.Test
 
         #region Dossier cache load tests
 
-/*Добавлены новые немецкие танки:
-            VK 20.01 (D) (средний 4-го уровня);
-            VK 30.01 (D) (средний 6-го уровня);
-            Aufklarerpanzer Panther (лёгкий 7-го уровня);
-            Indien Panzer (средний 8-го уровня);
-            Leopard Prototype der Arbeitsgruppe A (средний 9-го уровня);
-            Leopard 1 (средний 10-го уровня);
-
-        Добавлены новые советские танки:
-            Т-60 (лёгкий 2-го уровня);
-            Т-70 (лёгкий 3-го уровня);
-            Т-80 (лёгкий 4-го уровня);
-         
-        Американская премиум САУ Sexton 3-го уровня переведена в британское дерево и добавлена в магазин для продажи.
-
-        Для тестирования супертестерами добавлены танки:
-            британский тяжёлый премиум танк 5-го уровня A33 Excelsior;
-            советский специальный танк 10-го уровня «Объект 907»;
-            американский специальный средний танк 10-го уровня М60;
-            немецкий специальный тяжёлый танк 10-го уровня VK7201.*/
-
         [Test]
         public void CacheTest_085()
         {
@@ -101,7 +80,7 @@ namespace WotDossier.Test
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -115,7 +94,7 @@ namespace WotDossier.Test
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -129,7 +108,7 @@ namespace WotDossier.Test
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -143,7 +122,7 @@ namespace WotDossier.Test
             List<TankJson> tanks = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanks)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -157,7 +136,7 @@ namespace WotDossier.Test
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -171,7 +150,7 @@ namespace WotDossier.Test
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -185,7 +164,7 @@ namespace WotDossier.Test
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -199,7 +178,7 @@ namespace WotDossier.Test
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             foreach (TankJson tankJson in tanksV2)
             {
-                string iconPath = string.Format(@"..\..\..\WotDossier\Resources\Images\Tanks\{0}.png",
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
                                                 tankJson.Description.Icon.IconId);
                 Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
             }
@@ -385,80 +364,6 @@ namespace WotDossier.Test
 
         #endregion
         
-        [Test]
-        public void LoadMapsImages()
-        {
-            List<Map> maps = Dictionaries.ReadMaps().Values.ToList();
-
-            foreach (var map in maps)
-            {
-                string url = "http://wotreplays.ru/img/results/Maps/" + map.mapidname + ".png";
-
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                WebResponse response;
-                try
-                {
-                    response = request.GetResponse();
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine(map.mapidname);
-                    continue;
-                }
-                Stream responseStream = response.GetResponseStream();
-
-                if (responseStream != null)
-                {
-                    using (var streamReader = new BinaryReader(responseStream))
-                    {
-                        Byte[] lnByte = streamReader.ReadBytes(1 * 1024 * 1024 * 10);
-                        using (FileStream destinationFile = File.Create(Path.Combine(Environment.CurrentDirectory, map.mapidname + ".png")))
-                        {
-                            destinationFile.Write(lnByte, 0, lnByte.Length);
-                        }
-                    }
-                }
-            }
-        }
-
-        [Test]
-        public void LoadTanksImages()
-        {
-            List<TankDescription> tanks = Dictionaries.Instance.Tanks.Values.ToList();
-
-            foreach (var tank in tanks)
-            {
-                string url = string.Format("http://www.vbaddict.net/wot/tanks/{0}.png", tank.Icon.IconId);
-
-                WebRequest request = HttpWebRequest.Create(url);
-                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                WebResponse response;
-                try
-                {
-                    response = request.GetResponse();
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine(tank.Title);
-                    continue;
-                }
-                Stream responseStream = response.GetResponseStream();
-
-                if (responseStream != null)
-                {
-                    using (var streamReader = new BinaryReader(responseStream))
-                    {
-                        Byte[] lnByte = streamReader.ReadBytes(1 * 1024 * 1024 * 10);
-                        using (FileStream destinationFile = File.Create(Path.Combine(Environment.CurrentDirectory,tank.Icon.IconId)))
-                        {
-                            destinationFile.Write(lnByte, 0, lnByte.Length);
-                        }
-                    }
-                }
-            }
-        }
-
         [Test]
         //TODO: move to api 2.0
         public void LoginTest()

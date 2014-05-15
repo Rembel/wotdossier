@@ -111,10 +111,15 @@ namespace WotDossier.Domain.Tank
             set { _fragsList = value; }
         }
 
+        private IEnumerable<FragsJson> _frags = new List<FragsJson>();
         /// <summary>
         /// Gets or sets the frags.
         /// </summary>
-        public IEnumerable<FragsJson> Frags { get; set; }
+        public IEnumerable<FragsJson> Frags
+        {
+            get { return _frags; }
+            set { _frags = value; }
+        }
 
         /// <summary>
         /// Gets or sets the raw.
@@ -122,6 +127,7 @@ namespace WotDossier.Domain.Tank
         public byte[] Raw { get; set; }
 
         private int _uniqueId = -1;
+        
         public int UniqueId()
         {
             if (_uniqueId == -1)

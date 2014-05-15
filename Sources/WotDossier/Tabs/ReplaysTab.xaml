@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:Applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
-             xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:tab="clr-namespace:WotDossier.Tabs"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources" xmlns:tab="clr-namespace:WotDossier.Tabs"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
              xmlns:behaviours="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
@@ -18,9 +18,9 @@
             <Grid>
                 <ContextMenuService.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="{x:Static Resources:Resources.Command_AddFolder}" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
-                        <MenuItem Header="{x:Static Resources:Resources.Command_DeleteFolder}" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
-                        <MenuItem Header="{x:Static Resources:Resources.Command_ZipFolder}" Command="{Binding Path=DataContext.ZipFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
+                        <MenuItem Header="{x:Static resources:Resources.Command_AddFolder}" Command="{Binding Path=DataContext.AddFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
+                        <MenuItem Header="{x:Static resources:Resources.Command_DeleteFolder}" Command="{Binding Path=DataContext.DeleteFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
+                        <MenuItem Header="{x:Static resources:Resources.Command_ZipFolder}" Command="{Binding Path=DataContext.ZipFolderCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}"/>
                     </ContextMenu>
                 </ContextMenuService.ContextMenu>
                 <ToolTipService.ToolTip>
@@ -30,7 +30,7 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Image Source="/Resources\Images\folder.png"></Image>
+                <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/folder.png"></Image>
                 <TextBlock Grid.Column="1" Text="{Binding NameWithCount}" VerticalAlignment="Center" Margin="0,0,5,0"/>
             </Grid>
         </HierarchicalDataTemplate>
@@ -76,22 +76,22 @@
                   PreviewMouseLeftButtonDown="OnGridPreviewMouseLeftButtonDown" PreviewMouseMove="OnGridMouseMove" behaviours:DataGridBehavior.DisplayRowNumber="True">
             <DataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">
-                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_UploadBtn}" 
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadBtn}" 
                               Command="{Binding Path=DataContext.ReplayUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_UploadMultipleBtn}" 
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadMultipleBtn}" 
                               Command="{Binding Path=DataContext.ReplaysUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_DeleteBtn}" 
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_DeleteBtn}" 
                               Command="{Binding Path=DataContext.ReplayRowsDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_PackBtn}" 
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_PackBtn}" 
                               Command="{Binding Path=DataContext.ReplayRowsZipCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_CopyToClipboard}" 
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyToClipboard}" 
                               Command="{Binding Path=DataContext.CopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <MenuItem Header="{x:Static Resources:Resources.ReplaysTab_Play}" 
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_Play}" 
                               Command="{Binding Path=DataContext.PlayReplayCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding}"/>
                 </ContextMenu>
@@ -110,30 +110,30 @@
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </DataGrid.InputBindings>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Map}" Binding="{Binding MapName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding TankName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Replay_Credits}" Binding="{Binding Credits, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Replay_DamageReceived}" Binding="{Binding DamageReceived, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Replay_BattleResult}" Binding="{Binding IsWinner, Converter={x:Static Converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Replay_XP}" Binding="{Binding Xp, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Replay_Frags}" Binding="{Binding Killed}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Replay_Damaged}" Binding="{Binding Damaged}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Version}" Binding="{Binding ClientVersion}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Replay_Link}">
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Map}" Binding="{Binding MapName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding TankName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Credits}" Binding="{Binding Credits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_DamageReceived}" Binding="{Binding DamageReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_BattleResult}" Binding="{Binding IsWinner, Converter={x:Static converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_XP}" Binding="{Binding Xp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Frags}" Binding="{Binding Killed}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Damaged}" Binding="{Binding Damaged}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Version}" Binding="{Binding ClientVersion}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Replay_Link}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0" Visibility="{Binding Link, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0" Visibility="{Binding Link, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
                                 <Hyperlink CommandParameter="{Binding Link}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
-                                    <TextBlock Text="{x:Static Resources:Resources.Column_Replay_Link}"></TextBlock>
+                                    <TextBlock Text="{x:Static resources:Resources.Column_Replay_Link}"></TextBlock>
                                 </Hyperlink>
                             </TextBlock>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Respawn}" Binding="{Binding Team}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Respawn}" Binding="{Binding Team}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <!--<DataGridTemplateColumn Header="Medals">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -156,11 +156,11 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>-->
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
-                    <Applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=ReplayRowDoubleClickCommand, Mode=OneWay}"/>
+                    <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=ReplayRowDoubleClickCommand, Mode=OneWay}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>

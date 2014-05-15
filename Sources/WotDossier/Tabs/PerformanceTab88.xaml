@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -28,16 +28,16 @@
                             CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </dataGrid:FooterDataGrid.InputBindings>
             <dataGrid:FooterDataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}" />
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_OriginalXP}" Binding="{Binding OriginalXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DamageAssistedTrack}" Binding="{Binding DamageAssistedTrack}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DamageAssistedRadio}" Binding="{Binding DamageAssistedRadio}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_Mileage}" Binding="{Binding Mileage, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_XpBefore88}" Binding="{Binding XpBefore88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_BattlesCountBefore88}" Binding="{Binding BattlesCountBefore88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_BattlesCount88}" Binding="{Binding BattlesCount88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}" />
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_OriginalXP}" Binding="{Binding OriginalXP}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_DamageAssistedTrack}" Binding="{Binding DamageAssistedTrack}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_DamageAssistedRadio}" Binding="{Binding DamageAssistedRadio}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_Mileage}" Binding="{Binding Mileage, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_XpBefore88}" Binding="{Binding XpBefore88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_BattlesCountBefore88}" Binding="{Binding BattlesCountBefore88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_BattlesCount88}" Binding="{Binding BattlesCount88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

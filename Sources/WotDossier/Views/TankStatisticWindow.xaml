@@ -1,13 +1,14 @@
 ﻿<Window x:Class="WotDossier.Views.TankStatisticWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:tabs="clr-namespace:WotDossier.Tabs" xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:Converters="clr-namespace:WotDossier.Converters"
+        xmlns:converters="clr-namespace:WotDossier.Converters"
         mc:Ignorable="d" 
-        Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
+        Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" 
+        Icon="{Binding Path=TankStatistic.Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Print" Executed="PrintWindow_Executed"/>
     </Window.CommandBindings>
@@ -37,8 +38,8 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.Column="0" DataContext="{Binding TankStatistic}">
-                    <Image Width="140" Height="80" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
-                    <Image Width="140" Height="80" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" />
+                    <Image Width="140" Height="80" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static converters:CountryIdToImageConverter.Default}}" />
+                    <Image Width="140" Height="80" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" />
                 </Grid>
                 <Grid Grid.Column="1">
                     <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
@@ -52,19 +53,19 @@
                     </Style>
                 </TabControl.Resources>
                 <!--Common tab-->
-                <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Common}" Name="tabCommon">
+                <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Common}" Name="tabCommon">
                     <controls:StatisticView  HorizontalAlignment="Center" DataContext="{Binding TankStatistic}" Background="Transparent"></controls:StatisticView>
                 </TabItem>
                 <TabItem TabIndex="1" Header="{Binding PeriodTabHeader}" Name="tabPeriod">
                     <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
                 </TabItem>
-                <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Achievements}" Name="tabAchievements">
+                <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Achievements}" Name="tabAchievements">
                     <ScrollViewer>
                         <controls:Achievements DataContext="{Binding TankStatistic}"></controls:Achievements>
                     </ScrollViewer>
                 </TabItem>
                 <!--Charts-->
-              <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
+              <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
                 <TabControl HorizontalAlignment="Center" Margin="0,50,0,50" Background="White">
                   <TabControl.Resources>
                     <Style TargetType="TabPanel">
@@ -73,18 +74,18 @@
                   </TabControl.Resources>
                   <TabItem Header="1">
                     <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
                       <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
-                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
-                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
                     </WrapPanel>
                   </TabItem>
                   <TabItem Header="2">
                     <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
-                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
-                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
-                      <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
+                      <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
                     </WrapPanel>
                   </TabItem>
                 </TabControl>

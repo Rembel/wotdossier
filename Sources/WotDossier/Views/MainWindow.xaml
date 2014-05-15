@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
-        xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:views="clr-namespace:WotDossier.Views"
@@ -11,7 +11,7 @@
         xmlns:color="clr-namespace:WotDossier.Converters.Color"
         xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
-        Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="../Resources/Images/app_icon.ico">
+        Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="pack://application:,,,/WotDossier.Resources;component/Images/app_icon.ico">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Print" Executed="PrintWindow_Executed"/>
     </Window.CommandBindings>
@@ -31,19 +31,19 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" IsMainMenu="True">
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}" InputGestureText="F5" ></MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.Tab_Header_Replays}" Click="MenuItem_OnClick" ></MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Search}">
-                <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}" InputGestureText="Ctrl+F"></MenuItem>
-                <MenuItem Header="{x:Static Resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}" InputGestureText="Ctrl+G"></MenuItem>
+            <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}" InputGestureText="F5" ></MenuItem>
+            <MenuItem Header="{x:Static resources:Resources.Tab_Header_Replays}" Click="MenuItem_OnClick" ></MenuItem>
+            <MenuItem Header="{x:Static resources:Resources.MenuItem_Search}">
+                <MenuItem Header="{x:Static resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}" InputGestureText="Ctrl+F"></MenuItem>
+                <MenuItem Header="{x:Static resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}" InputGestureText="Ctrl+G"></MenuItem>
             </MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Compare}" Command="{Binding CompareCommand}"></MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Export}">
-                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Export_Csv}" Command="{Binding ExportToCsvCommand}"></MenuItem>
-                <MenuItem Header="{x:Static Resources:Resources.MenuItem_Export_Frags_Csv}" Command="{Binding ExportFragsToCsvCommand}"></MenuItem>
+            <MenuItem Header="{x:Static resources:Resources.MenuItem_Compare}" Command="{Binding CompareCommand}"></MenuItem>
+            <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
+            <MenuItem Header="{x:Static resources:Resources.MenuItem_Export}">
+                <MenuItem Header="{x:Static resources:Resources.MenuItem_Export_Csv}" Command="{Binding ExportToCsvCommand}"></MenuItem>
+                <MenuItem Header="{x:Static resources:Resources.MenuItem_Export_Frags_Csv}" Command="{Binding ExportFragsToCsvCommand}"></MenuItem>
             </MenuItem>
-            <MenuItem Header="{x:Static Resources:Resources.MenuItem_Header_About}" Command="{Binding AboutCommand}"></MenuItem>
+            <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_About}" Command="{Binding AboutCommand}"></MenuItem>
         </Menu>
         <ToolBarTray Grid.Row="1">
             <ToolBar DataContext="{Binding PeriodSelector}">
@@ -53,7 +53,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Resources:Resources.Settings_Period}"/>
+                    <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static resources:Resources.Settings_Period}"/>
                     <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="1" Width="150" ItemsSource="{Binding Periods}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Period}" />
                     <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="150" Visibility="{Binding PeriodsVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" ItemsSource="{Binding PrevDates}" ItemStringFormat="dd.MM.yyyy HH:mm" SelectedItem="{Binding PrevDate}" />
                     <TextBox Margin="6 0 6 0" Height="20" Grid.Column="2" Width="100" HorizontalAlignment="Left" Visibility="{Binding LastNBattlesVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}"  controls1:AttachedProperties.UpdateSourceOnKey="Enter"/>
@@ -65,7 +65,7 @@
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static Resources:Resources.Settings_BattleMode}"/>
+                    <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static resources:Resources.Settings_BattleMode}"/>
                     <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="1" Width="150" ItemsSource="{Binding BattleModes}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding BattleMode}" />
                 </Grid>
             </ToolBar>
@@ -73,11 +73,11 @@
 
         <TabControl Grid.Row="2" Name="tcMain" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <!--Common tab-->
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Tab_Header_Overall}" Name="tabCommon">
+            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Overall}" Name="tabCommon">
                 <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch"></tabs:CommonTabNew>
             </TabItem>
             <!--Charts-->
-            <TabItem TabIndex="1" Header="{x:Static Resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
+            <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
                 <TabControl HorizontalAlignment="Center" Margin="0,50,0,50">
                     <TabControl.Resources>
                         <Style TargetType="TabPanel">
@@ -86,18 +86,18 @@
                     </TabControl.Resources>
                     <TabItem Header="1">
                         <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
                             <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
-                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
-                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
                         </WrapPanel>
                     </TabItem>
                     <TabItem Header="2">
                         <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
-                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
-                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
-                            <controls:LineChartControl Header="{x:Static Resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
+                            <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
                         </WrapPanel>
                     </TabItem>
                     <TabItem Header="3">
@@ -106,7 +106,7 @@
                                 <d3:ChartPlotter x:Name="EByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 6, 2500">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByType}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_EffByType}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis x:Name="TankTypeHorizontalAxis" ShowMinorTicks="False" >
                                         <d3:IntegerAxis.LabelProvider>
@@ -138,7 +138,7 @@
                                 <d3:ChartPlotter x:Name="EByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="0, 0, 11, 2500">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByTier}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_EffByTier}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis ShowMinorTicks="False">
                                         <d3:IntegerAxis.LabelProvider>
@@ -170,7 +170,7 @@
                                 <d3:ChartPlotter x:Name="EByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" Visible="-1, 0, 8, 2500">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_EffByCountry}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_EffByCountry}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis x:Name="CountryHorizontalAxis"  ShowMinorTicks="False">
                                         <d3:IntegerAxis.LabelProvider>
@@ -208,7 +208,7 @@
                                 <controls:ChartPlotter x:Name="battlesByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" MaxX="6" MaxY="{Binding MaxBattlesByType}">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByType}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_BattlesByType}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis ShowMinorTicks="False" >
                                         <d3:IntegerAxis.LabelProvider>
@@ -240,7 +240,7 @@
                                 <controls:ChartPlotter x:Name="battlesByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" MaxX="11"  MaxY="{Binding MaxBattlesByTier}">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByTier}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_BattlesByTier}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis ShowMinorTicks="False">
                                         <d3:IntegerAxis.LabelProvider>
@@ -272,7 +272,7 @@
                                 <controls:ChartPlotter x:Name="battlesByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
                                       Margin="20,10,20,10" MaxX="7" MinX="-1" MaxY="{Binding MaxBattlesByCountry}">
                                     <d3:Header>
-                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_BattlesByCountry}"></TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_BattlesByCountry}"></TextBlock>
                                     </d3:Header>
                                     <d3:IntegerAxis ShowMinorTicks="False">
                                         <d3:IntegerAxis.LabelProvider>
@@ -307,7 +307,7 @@
                     <TabItem Header="5">
                             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Horizontal">
-                            <GroupBox Header="{x:Static Resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" Margin="20">
+                            <GroupBox Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" Margin="20">
                                 <Grid VerticalAlignment="Center">
                                     <Grid.RowDefinitions>
                                         <RowDefinition></RowDefinition>
@@ -318,9 +318,9 @@
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition></RowDefinition>
                                     </Grid.RowDefinitions>
-                                        <RadioButton Margin="6" Grid.Row="0" Content="{x:Static Resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>    
-                                        <RadioButton Margin="6" Grid.Row="1" Content="{x:Static Resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                                        <RadioButton Margin="6" Grid.Row="2" Content="{x:Static Resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                                        <RadioButton Margin="6" Grid.Row="0" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>    
+                                        <RadioButton Margin="6" Grid.Row="1" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                                        <RadioButton Margin="6" Grid.Row="2" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
                                         <TextBlock Margin="6" Grid.Row="3" Text="С"/>
                                         <DatePicker Margin="6" Grid.Row="4" Text="date" SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
                                         <TextBlock Margin="6" Grid.Row="5" Text="по"/>
@@ -331,7 +331,7 @@
                                                  MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
                                       Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}">
                                 <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_ReplaysCountByMap}"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_ReplaysCountByMap}"></TextBlock>
                                 </d3:Header>
                                 <d3:IntegerAxis ShowMinorTicks="False" />
                                 <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
@@ -359,7 +359,7 @@
                                                  MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
                                       Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}">
                                 <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static Resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
                                 </d3:Header>
                                 <d3:IntegerAxis ShowMinorTicks="False" />
                                 <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
@@ -389,43 +389,43 @@
                 </TabControl>
             </TabItem>
             <!--XP-->
-            <TabItem TabIndex="2" Header="{x:Static Resources:Resources.Tab_Header_XP}" Name="tabXP">
+            <TabItem TabIndex="2" Header="{x:Static resources:Resources.Tab_Header_XP}" Name="tabXP">
                 <tabs:XPTab HorizontalAlignment="Stretch"></tabs:XPTab>
             </TabItem>
             <!--Battles-->
-            <TabItem TabIndex="3" Header="{x:Static Resources:Resources.Tab_Header_Battles}" Name="tabBattles">
+            <TabItem TabIndex="3" Header="{x:Static resources:Resources.Tab_Header_Battles}" Name="tabBattles">
                 <tabs:BattlesTab HorizontalAlignment="Stretch"></tabs:BattlesTab>
             </TabItem>
             <!--Frags-->
-            <TabItem TabIndex="4" Header="{x:Static Resources:Resources.Tab_Header_Frags}" Name="tabFrags">
+            <TabItem TabIndex="4" Header="{x:Static resources:Resources.Tab_Header_Frags}" Name="tabFrags">
                 <tabs:FragsTab HorizontalAlignment="Stretch"></tabs:FragsTab>
             </TabItem>
             <!--Damage-->
-            <TabItem TabIndex="5" Header="{x:Static Resources:Resources.Tab_Header_Damage}" Name="tabDamage">
+            <TabItem TabIndex="5" Header="{x:Static resources:Resources.Tab_Header_Damage}" Name="tabDamage">
                 <tabs:DamageTab HorizontalAlignment="Stretch"></tabs:DamageTab>
             </TabItem>
             <!--Battle awards-->
-            <TabItem TabIndex="6" Header="{x:Static Resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards">
+            <TabItem TabIndex="6" Header="{x:Static resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards">
                 <tabs:BattleAwardsTab HorizontalAlignment="Stretch"></tabs:BattleAwardsTab>
             </TabItem>
             <!--Special awards-->
-            <TabItem TabIndex="7" Header="{x:Static Resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards">
+            <TabItem TabIndex="7" Header="{x:Static resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards">
                 <tabs:SpecialAwardsTab HorizontalAlignment="Stretch"></tabs:SpecialAwardsTab>
             </TabItem>
             <!--Series-->
-            <TabItem TabIndex="8" Header="{x:Static Resources:Resources.Tab_Header_Series}" Name="tabSeries">
+            <TabItem TabIndex="8" Header="{x:Static resources:Resources.Tab_Header_Series}" Name="tabSeries">
                 <tabs:SeriesTab HorizontalAlignment="Stretch"></tabs:SeriesTab>
             </TabItem>
             <!--Medals-->
-            <TabItem TabIndex="9" Header="{x:Static Resources:Resources.Tab_Header_Medals}" Name="tabMedals">
+            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedals">
                 <tabs:MedalsTab HorizontalAlignment="Stretch"></tabs:MedalsTab>
             </TabItem>
             <!--Ratings-->
-            <TabItem TabIndex="10" Header="{x:Static Resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
+            <TabItem TabIndex="10" Header="{x:Static resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
                 <tabs:RatingsTab HorizontalAlignment="Stretch"></tabs:RatingsTab>
             </TabItem>
             <!--Performance-->
-            <TabItem TabIndex="11" Header="{x:Static Resources:Resources.Tab_Header_Performance}" Name="tabPerformance">
+            <TabItem TabIndex="11" Header="{x:Static resources:Resources.Tab_Header_Performance}" Name="tabPerformance">
                 <tabs:PerformanceTab HorizontalAlignment="Stretch"></tabs:PerformanceTab>
             </TabItem>
             <!--Performance88-->
@@ -433,23 +433,23 @@
                 <tabs:PerformanceTab88 HorizontalAlignment="Stretch"></tabs:PerformanceTab88>
             </TabItem>-->
             <!--Frags count-->
-            <TabItem TabIndex="13" Header="{x:Static Resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts">
+            <TabItem TabIndex="13" Header="{x:Static resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts">
                 <tabs:FragCountsTab DataContext="{Binding FraggsCount}" HorizontalAlignment="Stretch"></tabs:FragCountsTab>
             </TabItem>
             <!--Master tanker-->
-            <TabItem TabIndex="14" Header="{x:Static Resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker">
+            <TabItem TabIndex="14" Header="{x:Static resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker">
                 <tabs:MasterTankerTab HorizontalAlignment="Stretch"></tabs:MasterTankerTab>
             </TabItem>
             <!--Epics-->
-            <TabItem TabIndex="15" Header="{x:Static Resources:Resources.Tab_Header_Epics}" Name="tabEpics">
+            <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Epics}" Name="tabEpics">
                 <tabs:EpicsTab HorizontalAlignment="Stretch"></tabs:EpicsTab>
             </TabItem>
             <!--Time-->
-            <TabItem TabIndex="16" Header="{x:Static Resources:Resources.Tab_Header_Time}" Name="tabTime">
+            <TabItem TabIndex="16" Header="{x:Static resources:Resources.Tab_Header_Time}" Name="tabTime">
                 <tabs:TimeTab HorizontalAlignment="Stretch"></tabs:TimeTab>
             </TabItem>
             <!--Replays-->
-            <TabItem TabIndex="17" Header="{x:Static Resources:Resources.Tab_Header_Replays}" Name="tabReplays">
+            <TabItem TabIndex="17" Header="{x:Static resources:Resources.Tab_Header_Replays}" Name="tabReplays">
                 <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}"></tabs:ReplaysTab>
             </TabItem>
         </TabControl>

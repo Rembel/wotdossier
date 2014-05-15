@@ -138,32 +138,32 @@
     <!--Headers-->
     <DataTemplate x:Key="squadTemplate">
         <Border BorderThickness="1" BorderBrush="#12110C" Height="33" Background="#222117">
-            <Image Source="/Resources\Images\Replays\tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/tbl_ico__squad.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </DataTemplate>
     <DataTemplate x:Key="userTemplate">
         <Border BorderThickness="1" BorderBrush="#12110C" Height="33" Background="#222117">
-            <Image Source="/Resources\Images\Replays\tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/tbl_ico__user.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </DataTemplate>
     <DataTemplate x:Key="tankTemplate">
         <Border BorderThickness="1" BorderBrush="#12110C" Height="33" Background="#222117">
-            <Image Source="/Resources\Images\Replays\tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/tbl_ico__tank.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </DataTemplate>
     <DataTemplate x:Key="healthTemplate">
         <Border BorderThickness="1" BorderBrush="#12110C" Height="33" Background="#222117">
-            <Image Source="/Resources\Images\Replays\tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/tbl_ico__health.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </DataTemplate>
     <DataTemplate x:Key="killsTemplate">
         <Border BorderThickness="1" BorderBrush="#12110C" Height="33" Background="#222117">
-            <Image Source="/Resources\Images\Replays\tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/tbl_ico__kills.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </DataTemplate>
     <DataTemplate x:Key="starTemplate">
         <Border BorderThickness="1" BorderBrush="#12110C" Height="33" Background="#222117">
-            <Image Source="/Resources\Images\Replays\tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </DataTemplate>
 </ResourceDictionary>

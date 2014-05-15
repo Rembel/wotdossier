@@ -37,7 +37,7 @@ namespace WotDossier.Converters
             BitmapImage bitmapImage = null;
             if (icon != null)
             {
-                Uri uriSource = new Uri(string.Format(@"\Resources\Images\Tanks\{0}.png", icon.IconId), UriKind.Relative);
+                Uri uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Tanks/{0}.png", icon.IconId));
                 bitmapImage = GetBitmapImage(uriSource);
             }
             return bitmapImage;

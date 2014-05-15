@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
-             xmlns:controls="clr-namespace:WotDossier.Controls" xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:controls="clr-namespace:WotDossier.Controls" xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:tabs="clr-namespace:WotDossier.Tabs"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
@@ -27,7 +27,7 @@
                 </Style>
             </TabControl.Resources>
             <!--BattlePerformance-->
-            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
+            <TabItem Header="{x:Static resources:Resources.Common_BattlePerformance}">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
@@ -47,13 +47,13 @@
                                         <ColumnDefinition></ColumnDefinition>
                                         <ColumnDefinition></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
-                                    <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Created, Converter={x:Static Converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
-                                    <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Created, Converter={x:Static converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
+                                    <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
                                     <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
                                 </Grid>
-                                <controls:ClanView Margin="10" Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
-                                           ClanImageSource="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                                <controls:ClanView Margin="10" Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}"
+                                           ClanImageSource="{Binding PlayerStatistic.Clan, Converter={x:Static converters:ClanImageUrlToSourceConverter.Default}}"
                                            Days="{Binding PlayerStatistic.Clan.Days}" Position="{Binding PlayerStatistic.Clan.Role}" Date="{Binding PlayerStatistic.Clan.Since}" Abbreviation="{Binding PlayerStatistic.Clan.Abbreviation}" 
                                            ClanName="{Binding PlayerStatistic.Clan.Name}" OpenClanCommand="{Binding OpenClanCommand}">
 
@@ -88,15 +88,15 @@
 
                                     <d3:PieChart.MarkerTemplate>
                                         <DataTemplate>
-                                            <d3:PieChartItem Background="{Binding WinPercent, Converter={x:Static Converters:PercentToColorConverter.Default}}">
+                                            <d3:PieChartItem Background="{Binding WinPercent, Converter={x:Static converters:PercentToColorConverter.Default}}">
                                                 <ToolTipService.ToolTip>
                                                     <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock>
-											                    <Bold><x:Static Member="Resources:Resources.Chart_Tooltip_Tank" /></Bold> <TextBlock Text="{Binding TankName}"/>
+											                    <Bold><x:Static Member="resources:Resources.Chart_Tooltip_Tank" /></Bold> <TextBlock Text="{Binding TankName}"/>
                                                                 <LineBreak/>
-											                    <Bold><x:Static Member="Resources:Resources.Chart_Tooltip_Battles" /></Bold> <TextBlock Text="{Binding Battles}"/>
+											                    <Bold><x:Static Member="resources:Resources.Chart_Tooltip_Battles" /></Bold> <TextBlock Text="{Binding Battles}"/>
 											                    <LineBreak/>
-											                    <Bold><x:Static Member="Resources:Resources.Chart_Tooltip_WinPercent" /></Bold> <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
+											                    <Bold><x:Static Member="resources:Resources.Chart_Tooltip_WinPercent" /></Bold> <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
 										                    </TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
@@ -109,14 +109,14 @@
                         <DataGrid Grid.Row="1" Grid.ColumnSpan="2" MinHeight="100" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" 
                                   ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False" controls1:DataGridBehavior.DisplayRowNumber="True">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
-                                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCountDelta}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                                <DataGridTextColumn CellStyle="{StaticResource DataGridCellWinPercentForPeriodStyle}" Header="{x:Static Resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercentForPeriod, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AvgDamageDealtForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Frags_FragsPerBattle}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                                <DataGridTextColumn CellStyle="{StaticResource DataGridCellEffForPeriodStyle}" Header="{x:Static Resources:Resources.Column_Ratings_EffRating}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
+                                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCountDelta}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn CellStyle="{StaticResource DataGridCellWinPercentForPeriodStyle}" Header="{x:Static resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercentForPeriod, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AvgDamageDealtForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Frags_FragsPerBattle}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn CellStyle="{StaticResource DataGridCellEffForPeriodStyle}" Header="{x:Static resources:Resources.Column_Ratings_EffRating}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn7ForPeriodStyle}" Header="WN7" Binding="{Binding WN7RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn8ForPeriodStyle}" Header="WN8" Binding="{Binding WN8RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                             </DataGrid.Columns>
@@ -137,11 +137,11 @@
                 </ScrollViewer>
             </TabItem>-->
             <!--Ratings-->
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">
                 <controls:RatingView></controls:RatingView>
             </TabItem>
             <!--Achievements-->
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Achievements}">
                 <ScrollViewer>
                     <controls:Achievements DataContext="{Binding PlayerStatistic}"></controls:Achievements>
                 </ScrollViewer>

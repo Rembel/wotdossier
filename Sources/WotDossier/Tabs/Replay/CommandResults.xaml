@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
-             xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources" xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
@@ -32,27 +32,27 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Visibility="{Binding AlienTeamMember, Converter={x:Static Converters:ObjectToCollapseConverter.Default}}">
-                <TextBlock Margin="10,0,0,0" Text="{x:Static Resources:Resources.Label_Replay_OurTeam}" FontSize="16" Foreground="#BCBDBE" />
+                <TextBlock Margin="10,0,0,0" Text="{x:Static resources:Resources.Label_Replay_OurTeam}" FontSize="16" Foreground="#BCBDBE" />
                 <DataGrid Style="{StaticResource replayDataGrid}" SelectedItem="{Binding OurTeamMember}"
                            BorderThickness="0" ItemsSource="{Binding FirstTeam}" Margin="0,0,0,3" HorizontalAlignment="Stretch"
                           Height="Auto" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" HeadersVisibility="Column"
                           RowHeight="31" RowStyle="{StaticResource RowStyle}" IsReadOnly="True">
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Width="47" Header="{x:Static Resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
+                        <DataGridTemplateColumn Width="47" Header="{x:Static resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Image Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" 
                                                HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" 
-                                               Source="/Resources\Images\Replays\Squad-Ico-silver.png"/>
+                                               Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/Squad-Ico-silver.png"/>
                                         <TextBlock Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" 
                                                    FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Width="100" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" Binding="{Binding FullName}" Foreground="#5C5A4A" ElementStyle="{StaticResource LTextBlock}" HeaderTemplate="{StaticResource userTemplate}"></DataGridTextColumn>
-                        <DataGridTemplateColumn Width="179" Header="{x:Static Resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
+                        <DataGridTextColumn Width="100" Header="{x:Static resources:Resources.Column_Replay_PlayerName}" Binding="{Binding FullName}" Foreground="#5C5A4A" ElementStyle="{StaticResource LTextBlock}" HeaderTemplate="{StaticResource userTemplate}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Width="179" Header="{x:Static resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -63,14 +63,14 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Width="37" Header="{x:Static Resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />
-                        <DataGridTextColumn Width="55" Header="{x:Static Resources:Resources.Column_Replay_Frags}" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
-                        <DataGridTemplateColumn Width="69" Header="{x:Static Resources:Resources.Column_Replay_XP}" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
+                        <DataGridTextColumn Width="37" Header="{x:Static resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />
+                        <DataGridTextColumn Width="55" Header="{x:Static resources:Resources.Column_Replay_Frags}" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
+                        <DataGridTemplateColumn Width="69" Header="{x:Static resources:Resources.Column_Replay_XP}" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <controls:TextWithImage HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" 
-                                            Source="/Resources\Images\Replays\XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
+                                            Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
                                     </Grid>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -96,7 +96,7 @@
                     </StackPanel>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" DataContext="{Binding AlienTeamMember}">
-                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
+                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/FinalStatistic_linewin.png"></Image>
                     <ListBox Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -125,7 +125,7 @@
             </Grid.ColumnDefinitions>
             
             <StackPanel Visibility="{Binding OurTeamMember, Converter={x:Static Converters:ObjectToCollapseConverter.Default}}">
-                <TextBlock Margin="10,0,0,0" Text="{x:Static Resources:Resources.Label_Replay_EnemyTeam}" FontSize="16"
+                <TextBlock Margin="10,0,0,0" Text="{x:Static resources:Resources.Label_Replay_EnemyTeam}" FontSize="16"
                            Foreground="#BCBDBE">
                 </TextBlock>
                 <DataGrid Style="{StaticResource replayDataGrid}" SelectedItem="{Binding AlienTeamMember}"
@@ -139,7 +139,7 @@
                                     <Grid>
                                         <Image Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" 
                                                HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" 
-                                               Source="/Resources\Images\Replays\Squad-Ico-silver.png"/>
+                                               Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/Squad-Ico-silver.png"/>
                                         <TextBlock Visibility="{Binding Squad, Converter={x:Static Converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" 
                                                    FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
@@ -165,7 +165,7 @@
                                 <DataTemplate>
                                     <Grid>
                                         <controls:TextWithImage HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" 
-                                            Source="/Resources\Images\Replays\XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
+                                            Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
                                     </Grid>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -191,7 +191,7 @@
                     </StackPanel>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" DataContext="{Binding OurTeamMember}">
-                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="/Resources/Images/Replays/FinalStatistic_linewin.png"></Image>
+                    <Image Height="71" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/FinalStatistic_linewin.png"></Image>
                     <ListBox Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>

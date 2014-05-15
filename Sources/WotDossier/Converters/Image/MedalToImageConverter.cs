@@ -32,7 +32,7 @@ namespace WotDossier.Converters
         {
             Medal medal = (Medal)value;
             string iconName = string.IsNullOrEmpty(medal.Icon) ? medal.Name : medal.Icon;
-            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"\Resources\Images\Medals\{0}.png", iconName), UriKind.Relative));
+            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Medals/{0}.png", iconName)));
             return bitmapImage;
         }
 

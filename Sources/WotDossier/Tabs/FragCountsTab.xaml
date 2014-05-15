@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:controls1="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
@@ -27,7 +27,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             
-            <TextBlock Grid.Row="0" Text="{x:Static Resources:Resources.TankFilterPanel_Tank}"></TextBlock>
+            <TextBlock Grid.Row="0" Text="{x:Static resources:Resources.TankFilterPanel_Tank}"></TextBlock>
 
             <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250"></ComboBox>
 
@@ -37,10 +37,10 @@
         <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding TankFrags}" VerticalAlignment="Stretch" Name="dgFragCounts" 
                   IsReadOnly="True" AutoGenerateColumns="False" controls:DataGridBehavior.DisplayRowNumber="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_FragCounts_Count}" Binding="{Binding Count}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_FragCounts_Count}" Binding="{Binding Count}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

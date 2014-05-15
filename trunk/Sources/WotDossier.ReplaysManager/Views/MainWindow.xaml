@@ -4,6 +4,9 @@
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
+        xmlns:Converters="clr-namespace:WotDossier.Converters"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:controls="clr-namespace:WotDossier.Controls"
         Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="pack://application:,,,/WotDossier.Resources;component/Images/Replays/replay.png">
   <Window.InputBindings>
     <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>
@@ -21,7 +24,95 @@
       <!--<MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>-->
       <!--<MenuItem Header="{x:Static resources:Resources.MenuItem_Header_About}" Command="{Binding AboutCommand}"></MenuItem>-->
     </Menu>
-    <tabs:ReplaysTab Grid.Row="1" HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}" VerticalAlignment="Stretch"></tabs:ReplaysTab>
+    <TabControl Grid.Row="1" Name="tcMain" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+      <!--Replays-->
+      <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Replays}" Name="tabReplays">
+        <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}"></tabs:ReplaysTab>
+      </TabItem>
+      <!--Charts-->
+      <TabItem TabIndex="2" Header="{x:Static resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+          <StackPanel Orientation="Horizontal">
+            <GroupBox Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" Margin="20">
+              <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                  <RowDefinition></RowDefinition>
+                  <RowDefinition></RowDefinition>
+                  <RowDefinition></RowDefinition>
+                  <RowDefinition></RowDefinition>
+                  <RowDefinition></RowDefinition>
+                  <RowDefinition></RowDefinition>
+                  <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <RadioButton Margin="6" Grid.Row="0" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                <RadioButton Margin="6" Grid.Row="1" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                <RadioButton Margin="6" Grid.Row="2" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                <TextBlock Margin="6" Grid.Row="3" Text="С"/>
+                <DatePicker Margin="6" Grid.Row="4" Text="date" SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+                <TextBlock Margin="6" Grid.Row="5" Text="по"/>
+                <DatePicker Margin="6" Grid.Row="6" Text="date" SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+              </Grid>
+            </GroupBox>
+            <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400"
+                                 MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
+                      Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}">
+              <d3:Header>
+                <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_ReplaysCountByMap}"></TextBlock>
+              </d3:Header>
+              <d3:IntegerAxis ShowMinorTicks="False" />
+              <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
+                <d3:BarChart.Resources>
+                  <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                </d3:BarChart.Resources>
+                <d3:TemplateMarkerGenerator>
+                  <DataTemplate>
+                    <Rectangle Height="10" Fill="Gray"
+       d3:ViewportPanel.X="0"
+       d3:ViewportPanel.Y="{Binding Y}"
+       d3:ViewportPanel.ViewportWidth="{Binding X}"
+       d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                      <ToolTipService.ToolTip>
+                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                          <TextBlock Text="{Binding X, StringFormat='N0'}" FontWeight="Bold" ></TextBlock>
+                        </ToolTip>
+                      </ToolTipService.ToolTip>
+                    </Rectangle>
+                  </DataTemplate>
+                </d3:TemplateMarkerGenerator>
+              </d3:BarChart>
+            </controls:ChartPlotter>
+            <controls:ChartPlotter x:Name="BattlesWinPercentByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400"
+                                 MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
+                      Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}">
+              <d3:Header>
+                <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
+              </d3:Header>
+              <d3:IntegerAxis ShowMinorTicks="False" />
+              <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
+                <d3:BarChart.Resources>
+                  <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                </d3:BarChart.Resources>
+                <d3:TemplateMarkerGenerator>
+                  <DataTemplate>
+                    <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:PercentToColorConverter.Default}}"
+       d3:ViewportPanel.X="0"
+       d3:ViewportPanel.Y="{Binding Y}"
+       d3:ViewportPanel.ViewportWidth="{Binding X}"
+       d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                      <ToolTipService.ToolTip>
+                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                          <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                        </ToolTip>
+                      </ToolTipService.ToolTip>
+                    </Rectangle>
+                  </DataTemplate>
+                </d3:TemplateMarkerGenerator>
+              </d3:BarChart>
+            </controls:ChartPlotter>
+          </StackPanel>
+        </ScrollViewer>
+      </TabItem>
+    </TabControl>
     <StatusBar Grid.Row="2" VerticalAlignment="Bottom" Background="Beige">
       <StatusBarItem HorizontalAlignment="Right">
         <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Height="17" Width="100" HorizontalAlignment="Right"/>

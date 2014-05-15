@@ -50,6 +50,13 @@
     <Reference Include="Common.Logging.Log4Net1211">
       <HintPath>..\packages\Common.Logging.Log4Net1211.2.2.0\lib\net40\Common.Logging.Log4Net1211.dll</HintPath>
     </Reference>
+    <Reference Include="DynamicDataDisplay, Version=0.3.4703.0, Culture=neutral, PublicKeyToken=5b7d744a7263923f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicDataDisplay.Markers">
+      <HintPath>..\..\References\DynamicDataDisplay.Markers.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -64,6 +71,7 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\System.Windows.Interactivity.dll</HintPath>
@@ -249,14 +257,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="..\WotDossier\Controls\ChartPlotter.cs">
+      <Link>Controls\ChartPlotter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Controls\MedalTooltip.xaml.cs">
       <Link>Controls\MedalTooltip.xaml.cs</Link>
+      <DependentUpon>MedalTooltip.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Controls\ReplaysFilterPanel.xaml.cs">
       <Link>Controls\ReplaysFilterPanel.xaml.cs</Link>
+      <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Controls\TextWithImage.xaml.cs">
       <Link>Controls\TextWithImage.xaml.cs</Link>
+      <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Converters\BoolToVisibilityConverter.cs">
       <Link>Converters\BoolToVisibilityConverter.cs</Link>
@@ -333,29 +347,43 @@
     <Compile Include="..\WotDossier\Converters\SubtractValueConverter.cs">
       <Link>Converters\SubtractValueConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\MinimizeToTray.cs">
+      <Link>MinimizeToTray.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\NativeMethods.cs">
+      <Link>NativeMethods.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Tabs\ReplaysTab.xaml.cs">
       <Link>Tabs\ReplaysTab.xaml.cs</Link>
+      <DependentUpon>ReplaysTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\CommandResults.xaml.cs">
       <Link>Tabs\Replay\CommandResults.xaml.cs</Link>
+      <DependentUpon>CommandResults.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\DetailedResults.xaml.cs">
       <Link>Tabs\Replay\DetailedResults.xaml.cs</Link>
+      <DependentUpon>DetailedResults.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\PersonalResults.xaml.cs">
       <Link>Tabs\Replay\PersonalResults.xaml.cs</Link>
+      <DependentUpon>PersonalResults.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\TeamMemberResult.xaml.cs">
       <Link>Tabs\Replay\TeamMemberResult.xaml.cs</Link>
+      <DependentUpon>TeamMemberResult.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Views\AddReplayFolderWindow.xaml.cs">
       <Link>Views\AddReplayFolderWindow.xaml.cs</Link>
+      <DependentUpon>AddReplayFolderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Views\ReplayWindow.xaml.cs">
       <Link>Views\ReplayWindow.xaml.cs</Link>
+      <DependentUpon>ReplayWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Views\UploadReplayWindow.xaml.cs">
       <Link>Views\UploadReplayWindow.xaml.cs</Link>
+      <DependentUpon>UploadReplayWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -425,6 +453,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="app.config" />
+    <Content Include="app.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -494,6 +525,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)\..\..\Tools\mt.exe –manifest app.manifest –outputresource:$(TargetDir)$(TargetName).exe;#1</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

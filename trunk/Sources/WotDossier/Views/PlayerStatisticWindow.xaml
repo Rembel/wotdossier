@@ -2,12 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:WotDossier.Controls"
-        xmlns:Converters="clr-namespace:WotDossier.Converters"
-        xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:converters="clr-namespace:WotDossier.Converters"
+        xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         Title="{Binding Path=DataContext.PlayerStatistic.Name, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="768" 
-        Icon="..\Resources\Images\player.png" WindowStartupLocation="CenterScreen">
+        Icon="pack://application:,,,/WotDossier.Resources;component/Images/player.png" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource bcolorCenter}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -20,8 +20,8 @@
                                             <TextBlock  Foreground="#FFA759" FontSize="32" FontFamily="Arial Narrow" Text="{Binding PlayerStatistic.Name}" />        
                                         </Hyperlink>    
                 </TextBlock>
-                <controls:ClanView Margin="20,0" Visibility="{Binding Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}" HorizontalAlignment="Center"
-                                    ClanImageSource="{Binding Clan, Converter={x:Static Converters:ClanImageUrlToSourceConverter.Default}}"
+                <controls:ClanView Margin="20,0" Visibility="{Binding Clan, Converter={x:Static converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}" HorizontalAlignment="Center"
+                                    ClanImageSource="{Binding Clan, Converter={x:Static converters:ClanImageUrlToSourceConverter.Default}}"
                                                Days="{Binding Clan.Days}" Position="{Binding Clan.Role}" Date="{Binding Clan.Since}" Abbreviation="{Binding Clan.Abbreviation}" 
                                                ClanName="{Binding Clan.Name}" OpenClanCommand="{Binding OpenClanCommand}"/>
             </StackPanel>
@@ -35,9 +35,9 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Created, Converter={x:Static Converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static Resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static resources:Resources.Common_RegisterDate}" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Created, Converter={x:Static converters:DateFormater.Default}}" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="2" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{x:Static resources:Resources.Common_DataUpdate}" HorizontalAlignment="Left"></TextBlock>
                 <TextBlock Grid.Row="0" Grid.Column="3" Foreground="#606061" FontSize="12" FontFamily="Arial" Text="{Binding PlayerStatistic.Updated, StringFormat='dd.MM.yyyy HH:mm'}" HorizontalAlignment="Left"></TextBlock>
             </Grid>
         </StackPanel>
@@ -47,17 +47,17 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem  Header="{x:Static Resources:Resources.Common_BattlePerformance}">
+            <TabItem  Header="{x:Static resources:Resources.Common_BattlePerformance}">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <controls:StatisticView DataContext="{Binding PlayerStatistic}" HorizontalContentAlignment="Center" />
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Achievements}">
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                     <controls:Achievements HorizontalAlignment="Stretch" DataContext="{Binding PlayerStatistic}"></controls:Achievements>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Vehicles}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Vehicles}">
                 <tabs:ServerBattlesTab HorizontalAlignment="Stretch"></tabs:ServerBattlesTab>
             </TabItem>
         </TabControl>

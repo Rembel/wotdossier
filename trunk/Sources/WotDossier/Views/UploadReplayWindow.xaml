@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="UploadReplayWindow" Height="685" Width="660" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
-        <ImageBrush x:Key="Bg" ImageSource="..\Resources\Images\Replays\popup_remind_bg.jpg" Stretch="Fill"></ImageBrush>
-        <ImageBrush x:Key="HeadBg" ImageSource="..\Resources\Images\Replays\popup_remind_head_bg.jpg" Stretch="UniformToFill" TileMode="FlipX"></ImageBrush>
+        <ImageBrush x:Key="Bg" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/Replays/popup_remind_bg.jpg" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="HeadBg" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/Replays/popup_remind_head_bg.jpg" Stretch="UniformToFill" TileMode="FlipX"></ImageBrush>
     </Window.Resources>
     <Grid Background="{StaticResource Bg}">
         <StackPanel Orientation="Vertical">
@@ -28,7 +28,7 @@
                         <Grid>
                             <Image  Width="177" Height="37" Opacity="0.75" Name="ButtonImage">
                                 <Image.Source>
-                                    <CroppedBitmap Source="/Resources/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
+                                    <CroppedBitmap Source="pack://application:,,,/WotDossier.Resources;component/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
                                 </Image.Source>
                             </Image>
                             <TextBlock Text="Загрузить" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>

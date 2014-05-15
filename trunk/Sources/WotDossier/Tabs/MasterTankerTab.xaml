@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Resources="clr-namespace:WotDossier.Resources"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -11,10 +11,10 @@
         <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding MasterTanker}" VerticalAlignment="Stretch" Name="dgMasterTanker" IsReadOnly="True" AutoGenerateColumns="False"
                   controls:DataGridBehavior.DisplayRowNumber="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="Auto" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridCheckBoxColumn Header="{x:Static Resources:Resources.Column_MasterTanker_IsPremium}" Binding="{Binding IsPremium}" ElementStyle="{StaticResource CCheckBox}"></DataGridCheckBoxColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="Auto" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="{x:Static resources:Resources.Column_MasterTanker_IsPremium}" Binding="{Binding IsPremium}" ElementStyle="{StaticResource CCheckBox}"></DataGridCheckBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

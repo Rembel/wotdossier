@@ -103,16 +103,6 @@
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlayerNameSuggestionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Resources.ru-RU.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.ru-RU.resx</DependentUpon>
-    </Compile>
     <Compile Include="SettingsReader.cs" />
     <Compile Include="Update\CodeUpdateBase.cs" />
     <Compile Include="Update\CodeUpdate_2014042501.cs" />
@@ -227,18 +217,10 @@
       <Project>{27b67dfe-0bf1-4435-b036-e4c083eaea03}</Project>
       <Name>WotDossier.Framework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Resources.ru-RU.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
+      <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
+      <Name>WotDossier.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="x64\SQLite.Interop.dll">

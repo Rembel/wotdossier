@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Resources="clr-namespace:WotDossier.Resources" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
-             xmlns:Converters="clr-namespace:WotDossier.Converters"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -27,19 +27,19 @@
                             CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </dataGrid:FooterDataGrid.InputBindings>
             <dataGrid:FooterDataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_ReaperLongest}" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_ReaperProgress}" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SharpshooterLongest}" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SharpshooterProgress}" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_MasterGunnerLongest}" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_MasterGunnerProgress}" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_InvincibleLongest}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_InvincibleProgress}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SurvivorLongest}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Series_SurvivorProgress}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_ReaperLongest}" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_ReaperProgress}" HeaderTemplate="{StaticResource ReaperColumnHeaderTemplate}" Binding="{Binding ReaperProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_SharpshooterLongest}" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_SharpshooterProgress}" HeaderTemplate="{StaticResource SharpshooterColumnHeaderTemplate}" Binding="{Binding SharpshooterProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_MasterGunnerLongest}" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_MasterGunnerProgress}" HeaderTemplate="{StaticResource MasterGunnerColumnHeaderTemplate}" Binding="{Binding MasterGunnerProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_InvincibleLongest}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_InvincibleProgress}" HeaderTemplate="{StaticResource InvincibleColumnHeaderTemplate}" Binding="{Binding InvincibleProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_SurvivorLongest}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorLongest}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Series_SurvivorProgress}" HeaderTemplate="{StaticResource SurvivorColumnHeaderTemplate}" Binding="{Binding SurvivorProgress}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

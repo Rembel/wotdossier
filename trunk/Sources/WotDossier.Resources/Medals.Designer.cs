@@ -39,7 +39,7 @@ namespace WotDossier.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WotDossier.ReplaysManager.Resources.Medals", typeof(Medals).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WotDossier.Resources.Medals", typeof(Medals).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

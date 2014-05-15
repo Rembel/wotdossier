@@ -1,8 +1,8 @@
 ﻿<Window x:Class="WotDossier.Views.ReplayWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
-        Title="{x:Static Resources:Resources.WindowTitle_BattleResults}" Width="1024" Height="650" ResizeMode="NoResize" Icon="../Resources/Images/movieicon2.jpg" WindowStartupLocation="CenterScreen">
+        Title="{x:Static resources:Resources.WindowTitle_BattleResults}" Width="1024" Height="650" ResizeMode="NoResize" Icon="pack://application:,,,/WotDossier.Resources;component/Images/Replays/replay.png" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Print" Executed="PrintWindow_Executed"/>
     </Window.CommandBindings>
@@ -12,15 +12,15 @@
     <Grid>
         <TabControl Height="Auto" Name="tabControl1" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
             <!--PersonalResults-->
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Replay_Tab_Header_PersonalScore}">
+            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Replay_Tab_Header_PersonalScore}">
                 <replay:PersonalResults HorizontalAlignment="Stretch"></replay:PersonalResults>
             </TabItem>
             <!--Common tab-->
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Replay_Tab_Header_TeamScore}">
+            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Replay_Tab_Header_TeamScore}">
                 <replay:CommandResults HorizontalAlignment="Stretch"></replay:CommandResults>
             </TabItem>
             <!--Common tab-->
-            <TabItem TabIndex="0" Header="{x:Static Resources:Resources.Replay_Tab_Header_DetailedReport}">
+            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Replay_Tab_Header_DetailedReport}">
                 <replay:DetailedResults HorizontalAlignment="Stretch"></replay:DetailedResults>
             </TabItem>
         </TabControl>

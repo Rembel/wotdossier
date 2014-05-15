@@ -1,16 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Converters="clr-namespace:WotDossier.Converters"
-                    xmlns:Resources="clr-namespace:WotDossier.Resources"
+                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
                     xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                     xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
                     xmlns:color="clr-namespace:WotDossier.Converters.Color"
                     xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
 
-    <ImageBrush x:Key="bcolorLeft" ImageSource="..\Resources\Images\left_back.jpg" Stretch="Fill" />
-    <ImageBrush x:Key="bcolorCenter" ImageSource="..\Resources\Images\center_back.jpg" Stretch="Fill" />
-    <ImageBrush x:Key="bcolorRight" ImageSource="..\Resources\Images\right_back.jpg" Stretch="Fill" />
+    <ImageBrush x:Key="bcolorLeft" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/left_back.jpg" Stretch="Fill" />
+    <ImageBrush x:Key="bcolorCenter" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/center_back.jpg" Stretch="Fill" />
+    <ImageBrush x:Key="bcolorRight" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/right_back.jpg" Stretch="Fill" />
 
     <DataTemplate x:Key="MasterTemplate" >
         <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
@@ -25,31 +25,6 @@
         </Grid>
     </DataTemplate>
 
-    <Style TargetType="Image" x:Key="MedalImageStyle">
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding}" Value="1">
-                <!-- These setters are the same as your ListBoxItemBorder style -->
-                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
-            </DataTrigger>
-            <DataTrigger Binding="{Binding}" Value="1">
-                <!-- These setters are the same as your ListBoxItemBorder style -->
-                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
-            </DataTrigger>
-            <DataTrigger Binding="{Binding}" Value="">
-                <!-- These setters are the same as your ListBoxItemBorder style -->
-                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
-            </DataTrigger>
-            <DataTrigger Binding="{Binding}" Value="1">
-                <!-- These setters are the same as your ListBoxItemBorder style -->
-                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
-            </DataTrigger>
-            <DataTrigger Binding="{Binding}" Value="">
-                <!-- These setters are the same as your ListBoxItemBorder style -->
-                <Setter Property="Source" Value="/Resources\Images\Medals\ArmorPiercer.png" />
-            </DataTrigger>
-        </Style.Triggers>
-    </Style>
-    
     <Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
         <Setter Property="Background" Value="{Binding WinsPercent, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
     </Style>
@@ -100,10 +75,10 @@
 
     <!--Tank grids-->
     <ContextMenu x:Key="ContextMenu">
-        <MenuItem Header="{x:Static Resources:Resources.Command_AddToFavorites}" InputGestureText="Ctrl+D"
+        <MenuItem Header="{x:Static resources:Resources.Command_AddToFavorites}" InputGestureText="Ctrl+D"
                               Command="{Binding Path=DataContext.AddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
                               CommandParameter="{Binding}"/>
-        <MenuItem Header="{x:Static Resources:Resources.Command_RemoveFromFavorites}"
+        <MenuItem Header="{x:Static resources:Resources.Command_RemoveFromFavorites}"
                               Command="{Binding Path=DataContext.RemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
                               CommandParameter="{Binding}"/>
     </ContextMenu>

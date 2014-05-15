@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WotDossier.Views.AddReplayFolderWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Resources="clr-namespace:WotDossier.Resources"
-        Title="{x:Static Resources:Resources.WindowTitle_AddReplayFolder}" Height="140" Width="400" WindowStartupLocation="CenterScreen">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+        Title="{x:Static resources:Resources.WindowTitle_AddReplayFolder}" Height="140" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -13,9 +13,9 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Margin="6 6 6 6" Grid.Column="0" Text="{x:Static Resources:Resources.Label_AddReplayFolder_Name}"></TextBlock>
+        <TextBlock Margin="6 6 6 6" Grid.Column="0" Text="{x:Static resources:Resources.Label_AddReplayFolder_Name}"></TextBlock>
         <TextBox Margin="6 6 6 6" Grid.Column="1" Text="{Binding FolderName}"></TextBox>
-        <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="1" Text="{x:Static Resources:Resources.Settings_ReplaysFolder}"/>
+        <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="1" Text="{x:Static resources:Resources.Settings_ReplaysFolder}"/>
         <TextBlock  Margin="6 6 6 6" Grid.Column="1" Grid.Row="1"  Text="{Binding ReplaysFolderPath}" ToolTip="{Binding ReplaysFolderPath}"/>
         <Button Width="50" Margin="6 6 6 6" Grid.Column="2" Grid.Row="1" Content="..." Command="{Binding SelectReplaysFolderCommand}"></Button>
         <Button Width="80" Margin="6 6 6 6" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Content="OK" Command="{Binding OkCommand}"  HorizontalAlignment="Right"></Button>

@@ -32,9 +32,13 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             int countryId = (int)value;
-            Uri uriSource = new Uri(string.Format(@"\Resources\Images\Countries\slot_bright_{0}.png", countryId), UriKind.Relative);
-            var bitmapImage = GetBitmapImage(uriSource);
-            return bitmapImage;
+            if (countryId > -1)
+            {
+                Uri uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Countries/slot_bright_{0}.png", countryId));
+                var bitmapImage = GetBitmapImage(uriSource);
+                return bitmapImage;
+            }
+            return null;
         }
 
         private static BitmapImage GetBitmapImage(Uri uriSource)

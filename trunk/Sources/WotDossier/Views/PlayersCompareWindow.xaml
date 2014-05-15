@@ -2,15 +2,15 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:WotDossier.Controls"
-        xmlns:Resources="clr-namespace:WotDossier.Resources"
-        Title="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850" MinWidth="850" MinHeight="768" WindowStartupLocation="CenterScreen">
+        xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+        Title="{x:Static resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850" MinWidth="850" MinHeight="768" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource bcolorCenter}" FocusManager.FocusedElement="{Binding ElementName=txtSearch}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Margin="15" Text="{x:Static Resources:Resources.WindowCaption_ComparePlayers}" HorizontalAlignment="Center" Foreground="#FFA759" FontFamily="sans-serif" FontSize="25"></TextBlock>
+        <TextBlock Margin="15" Text="{x:Static resources:Resources.WindowCaption_ComparePlayers}" HorizontalAlignment="Center" Foreground="#FFA759" FontFamily="sans-serif" FontSize="25"></TextBlock>
         <Grid Grid.Row="1" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -27,7 +27,7 @@
                     <KeyBinding Command="{Binding CompareCommand}" Key="Enter"/>
                 </TextBox.InputBindings>
             </TextBox>
-            <Button Grid.Column="2" Width="80" Margin="6,0" Content="{x:Static Resources:Resources.Btn_ComparePlayers}" Command="{Binding CompareCommand}"></Button>
+            <Button Grid.Column="2" Width="80" Margin="6,0" Content="{x:Static resources:Resources.Btn_ComparePlayers}" Command="{Binding CompareCommand}"></Button>
         </Grid>
 
         <TabControl Grid.Row="2" Margin="0,30,0,0">
@@ -36,10 +36,10 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="{x:Static Resources:Resources.Common_BattlePerformance}">
+            <TabItem Header="{x:Static resources:Resources.Common_BattlePerformance}">
                 <controls:CompareStatisticView DataContext="{Binding CompareStatistic}" />
             </TabItem>
-            <TabItem Header="{x:Static Resources:Resources.Tab_Header_Achievements}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Achievements}">
                 <controls:AchievementsCompareStatisticView DataContext="{Binding CompareStatistic}" />
             </TabItem>
         </TabControl>

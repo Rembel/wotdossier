@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
-                    xmlns:Resources="clr-namespace:WotDossier.Resources">
+                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ExplicitStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -25,6 +25,6 @@
     <Style x:Key="{x:Type ToolTip}" TargetType="{x:Type ToolTip}" BasedOn="{StaticResource office2007SilverToolTip}" />
     <Style x:Key="{x:Type Window}" TargetType="{x:Type Window}" BasedOn="{StaticResource office2007SilverWindow}" />
     <Style x:Key="{x:Type DatePicker}" TargetType="DatePicker" BasedOn="{StaticResource {x:Type DatePicker}}">
-        <Setter Property="controls:DatePickerWatermarkBehaviour.Watermark" Value="{x:Static Resources:Resources.DatePicker_SelectDate}"/>
+        <Setter Property="controls:DatePickerWatermarkBehaviour.Watermark" Value="{x:Static resources:Resources.DatePicker_SelectDate}"/>
     </Style>
 </ResourceDictionary>

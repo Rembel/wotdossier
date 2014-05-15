@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Resources="clr-namespace:WotDossier.Resources"
-             xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+             xmlns:converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
@@ -27,17 +27,17 @@
                             CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </dataGrid:FooterDataGrid.InputBindings>
             <dataGrid:FooterDataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="{x:Static Resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Kay}" HeaderTemplate="{StaticResource KayColumnHeaderTemplate}" Binding="{Binding Kay, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"  />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Carius}" HeaderTemplate="{StaticResource CariusColumnHeaderTemplate}" Binding="{Binding Carius, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"  />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Knispel}" HeaderTemplate="{StaticResource KnispelColumnHeaderTemplate}" Binding="{Binding Knispel, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Poppel}" HeaderTemplate="{StaticResource PoppelColumnHeaderTemplate}" Binding="{Binding Poppel, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Abrams}" HeaderTemplate="{StaticResource AbramsColumnHeaderTemplate}" Binding="{Binding Abrams, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Leclerk}" HeaderTemplate="{StaticResource LeclerkColumnHeaderTemplate}" Binding="{Binding Leclerk, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Lavrinenko}" HeaderTemplate="{StaticResource LavrinenkoColumnHeaderTemplate}" Binding="{Binding Lavrinenko, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Medals_Ekins}" HeaderTemplate="{StaticResource EkinsColumnHeaderTemplate}" Binding="{Binding Ekins, Converter={x:Static Converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Kay}" HeaderTemplate="{StaticResource KayColumnHeaderTemplate}" Binding="{Binding Kay, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"  />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Carius}" HeaderTemplate="{StaticResource CariusColumnHeaderTemplate}" Binding="{Binding Carius, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"  />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Knispel}" HeaderTemplate="{StaticResource KnispelColumnHeaderTemplate}" Binding="{Binding Knispel, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Poppel}" HeaderTemplate="{StaticResource PoppelColumnHeaderTemplate}" Binding="{Binding Poppel, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Abrams}" HeaderTemplate="{StaticResource AbramsColumnHeaderTemplate}" Binding="{Binding Abrams, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Leclerk}" HeaderTemplate="{StaticResource LeclerkColumnHeaderTemplate}" Binding="{Binding Leclerk, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Lavrinenko}" HeaderTemplate="{StaticResource LavrinenkoColumnHeaderTemplate}" Binding="{Binding Lavrinenko, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Medals_Ekins}" HeaderTemplate="{StaticResource EkinsColumnHeaderTemplate}" Binding="{Binding Ekins, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}" />
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

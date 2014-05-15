@@ -88,7 +88,7 @@ namespace WotDossier.Views
 
         private void MenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            tcMain.SelectedIndex = 17;
+            tcMain.SelectedIndex = 16;
         }
     }
 

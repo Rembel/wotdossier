@@ -1,12 +1,8 @@
-﻿using System.Windows.Threading;
-using Common.Logging;
+﻿using Common.Logging;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Threading;
-using System.Windows;
-using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;

@@ -342,12 +342,11 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{21831A37-7240-4A5F-A738-03C351448415}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WotDossier.Applications.Localized_resources</td><td>{B26D2E43-0F42-4CD4-B35D-45363B051174}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.loca</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WotDossier.Applications.Primary_output</td><td>{73D58477-17B0-41A3-A520-75B9C8623EFE}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.applications.prim</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WotDossier.Content_Files</td><td>{6F462EF6-ECC0-4B91-809B-4719CF893500}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WotDossier.Dal.Localized_resources</td><td>{450B3710-9725-441F-9E0A-FDE548EDB975}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.dal.localized_res</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WotDossier.Localized_resources</td><td>{CDE56017-E1F2-4E25-8C3E-3769E48FD8F5}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.localized_resourc</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Content_Files</td><td>{6C01BEC1-F7AB-485A-B1FD-E0912F278B59}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Primary_output</td><td>{2132674F-BB70-47A1-8131-FCB0919997B1}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.ReplaysManager.Primary_output</td><td>{FF31E896-146C-441C-AB0A-DE32EDC77F45}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.replaysmanager.pr</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Resources.Localized_resources</td><td>{0536180D-70D4-4CBD-BFC0-9A242BCE3782}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.resources.localiz</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Resources.Primary_output</td><td>{1A5F764B-98D0-4B9F-BAFC-756EBFDD03E8}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.resources.primary</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1873,12 +1872,11 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
-		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Localized_resources</td></row>
-		<row><td>AlwaysInstall</td><td>WotDossier.Applications.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Content_Files</td></row>
-		<row><td>AlwaysInstall</td><td>WotDossier.Dal.Localized_resources</td></row>
-		<row><td>AlwaysInstall</td><td>WotDossier.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Primary_output</td></row>
+		<row><td>AlwaysInstall</td><td>WotDossier.ReplaysManager.Primary_output</td></row>
+		<row><td>AlwaysInstall</td><td>WotDossier.Resources.Localized_resources</td></row>
+		<row><td>AlwaysInstall</td><td>WotDossier.Resources.Primary_output</td></row>
 	</table>
 
 	<table name="File">
@@ -1893,12 +1891,11 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>wotdossier.applications.loca</td><td>WotDossier.Applications.Localized_resources</td><td>WotDossier.Applications.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Applications&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
-		<row><td>wotdossier.applications.prim</td><td>WotDossier.Applications.Primary_output</td><td>WotDossier.Applications.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.Applications&gt;|Built</td><td>3</td><td/></row>
 		<row><td>wotdossier.content_files</td><td>WotDossier.Content_Files</td><td>WotDossier.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|ContentFiles</td><td>3</td><td/></row>
-		<row><td>wotdossier.dal.localized_res</td><td>WotDossier.Dal.Localized_resources</td><td>WotDossier.Dal.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Dal&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
-		<row><td>wotdossier.localized_resourc</td><td>WotDossier.Localized_resources</td><td>WotDossier.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.primary_output</td><td>WotDossier.Primary_output</td><td>WotDossier.Primary output</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier&gt;|Built</td><td>3</td><td/></row>
+		<row><td>wotdossier.replaysmanager.pr</td><td>WotDossier.ReplaysManager.Primary_output</td><td>WotDossier.ReplaysManager.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.ReplaysManager&gt;|Built</td><td>3</td><td/></row>
+		<row><td>wotdossier.resources.localiz</td><td>WotDossier.Resources.Localized_resources</td><td>WotDossier.Resources.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Resources&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
+		<row><td>wotdossier.resources.primary</td><td>WotDossier.Resources.Primary_output</td><td>WotDossier.Resources.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.Resources&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2043,12 +2040,11 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_69EC8EA9_4BC6_4B01_808D_05D9738D766F_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>WotDossier.Applications.Localized_resources</td><td/><td/><td>_F3B59643_AB83_4505_B162_7FBF698CE43B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>WotDossier.Applications.Primary_output</td><td/><td/><td>_9698DA21_7FF9_440B_8FFB_FE8A095F9C3C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>WotDossier.Content_Files</td><td/><td/><td>_E61CB50C_1E44_44C2_A366_D49C081B809B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>WotDossier.Dal.Localized_resources</td><td/><td/><td>_4A664420_71B9_4BB5_B9E0_F6C4263BBE2A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>WotDossier.Localized_resources</td><td/><td/><td>_13CE0DCE_D1DF_4ABC_B59F_44C79843B5D4_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Content_Files</td><td/><td/><td>_65BD12D5_7A87_442F_86AD_9C63664AB117_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Primary_output</td><td/><td/><td>_6D6C096F_1D06_49B1_9DD5_E033060A1B4E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.ReplaysManager.Primary_output</td><td/><td/><td>_41640696_1C8E_4F90_9943_8FFAC75C7F36_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Resources.Localized_resources</td><td/><td/><td>_DEFC98B7_EDB4_4499_95FD_C0CCC06523AA_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Resources.Primary_output</td><td/><td/><td>_63479FF6_28F2_4063_9C65_4E610355A168_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2363,6 +2359,8 @@
 		<row><td>WotDossier.Dal</td><td>WotDossier.Dal\WotDossier.Dal.csproj</td><td/><td>2</td></row>
 		<row><td>WotDossier.Domain</td><td>WotDossier.Domain\WotDossier.Domain.csproj</td><td/><td>2</td></row>
 		<row><td>WotDossier.Framework</td><td>WotDossier.Framework\WotDossier.Framework.csproj</td><td/><td>2</td></row>
+		<row><td>WotDossier.ReplaysManager</td><td>WotDossier.ReplaysManager\WotDossier.ReplaysManager.csproj</td><td/><td>2</td></row>
+		<row><td>WotDossier.Resources</td><td>WotDossier.Resources\WotDossier.Resources.csproj</td><td/><td>2</td></row>
 	</table>
 
 	<table name="ISPowerShellWrap">
@@ -2638,8 +2636,8 @@
 		<col def="I2">Order</col>
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
-		<row><td>_4C53CFCC_CBAA_4362_A799_71040385B770_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td/><td/><td/></row>
-		<row><td>_C1D0F5CE_3CDE_414B_B41F_168E4F35BF99_</td><td>Microsoft Visual C++ 2010 Redistributable Package (x86).prq</td><td/><td/><td/></row>
+		<row><td>_132E4BC5_F8B5_4C54_BD7E_3517B24B5056_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td/><td/><td/></row>
+		<row><td>_FE2B80F2_7C46_47B2_A9A4_5F30F4C77189_</td><td>Microsoft Visual C++ 2010 Redistributable Package (x86).prq</td><td/><td/><td/></row>
 	</table>
 
 	<table name="ISSetupType">
@@ -3781,6 +3779,8 @@
 		<row><td>ID_STRING3</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-1943983629</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-2078172018</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>http://code.google.com/p/wotdossier/downloads/list</td><td>0</td><td/><td>-2002636369</td></row>
+		<row><td>ID_STRING6</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057464943</td></row>
+		<row><td>ID_STRING7</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057487471</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-2078153748</td></row>
 	</table>
 
@@ -3888,7 +3888,7 @@
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
-		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectFolder&gt;\..\WotDossier\Resources\Images\app_icon.ico</td><td>0</td></row>
+		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectFolder&gt;\..\WotDossier.Resources\Images\app_icon.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4481,6 +4481,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="i2">InstallMode</col>
 		<row><td>FileKey1</td><td>WotDossier.Primary_output</td><td/><td>rembel</td><td>2</td></row>
 		<row><td>FileKey2</td><td>WotDossier.Primary_output</td><td/><td>wotdos_1_wotdossier</td><td>2</td></row>
+		<row><td>NewShortcut1</td><td>WotDossier.ReplaysManager.Primary_output</td><td/><td>wotdos_1_wotdossier</td><td>2</td></row>
 		<row><td>_Built</td><td>WotDossier.Primary_output</td><td/><td>wotdos_1_wotdossier</td><td>2</td></row>
 	</table>
 
@@ -4567,6 +4568,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>NewShortcut1</td><td>wotdos_1_wotdossier</td><td>##ID_STRING6##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING7##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>_Built</td><td>wotdos_1_wotdossier</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>

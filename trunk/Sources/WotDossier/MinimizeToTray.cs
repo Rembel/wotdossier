@@ -152,18 +152,14 @@ namespace WotDossier
             private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
             {
                 const int WM_HOTKEY = 0x0312;
-                switch (msg)
+                
+                if((msg == WM_HOTKEY && wParam.ToInt32() == HOTKEY_ID)
+                    || msg == NativeMethods.WM_SHOWFIRSTINSTANCE)
                 {
-                    case WM_HOTKEY:
-                        switch (wParam.ToInt32())
-                        {
-                            case HOTKEY_ID:
-                                OnHotKeyPressed();
-                                handled = true;
-                                break;
-                        }
-                        break;
+                    OnHotKeyPressed();
+                    handled = true;
                 }
+                
                 return IntPtr.Zero;
             }
 

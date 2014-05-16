@@ -719,9 +719,6 @@
     <Content Include="External\maps.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="External\README">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="External\select.pyd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

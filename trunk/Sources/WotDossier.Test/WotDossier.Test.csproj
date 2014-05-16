@@ -118,10 +118,6 @@
       <Link>External\maps.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\WotDossier\External\README">
-      <Link>External\README</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\WotDossier\External\select.pyd">
       <Link>External\select.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

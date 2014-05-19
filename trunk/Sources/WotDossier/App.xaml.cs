@@ -5,7 +5,6 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
-using SimpleInjector;
 using WotDossier.Applications;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Update;
@@ -92,38 +91,38 @@ namespace WotDossier
                 Thread.CurrentThread.CurrentUICulture = culture;
 
                 // Registrations here
-                CompositionContainerFactory.Instance.Register<ApplicationController, ApplicationController>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<ShellViewModel, ShellViewModel>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<SettingsViewModel, SettingsViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<ClanSearchViewModel, ClanSearchViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<AboutViewModel, AboutViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<PlayersCompareViewModel, PlayersCompareViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<PlayerSearchViewModel, PlayerSearchViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<PlayerServerStatisticViewModel, PlayerServerStatisticViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<TankStatisticViewModel, TankStatisticViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<AddReplayFolderViewModel, AddReplayFolderViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<UploadReplayViewModel, UploadReplayViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.RegisterSingle<ApplicationController, ApplicationController>();
+                CompositionContainerFactory.Instance.RegisterSingle<ShellViewModel, ShellViewModel>();
+                CompositionContainerFactory.Instance.Register<SettingsViewModel, SettingsViewModel>();
+                CompositionContainerFactory.Instance.Register<ClanSearchViewModel, ClanSearchViewModel>();
+                CompositionContainerFactory.Instance.Register<ClanViewModel, ClanViewModel>();
+                CompositionContainerFactory.Instance.Register<AboutViewModel, AboutViewModel>();
+                CompositionContainerFactory.Instance.Register<PlayersCompareViewModel, PlayersCompareViewModel>();
+                CompositionContainerFactory.Instance.Register<PlayerSearchViewModel, PlayerSearchViewModel>();
+                CompositionContainerFactory.Instance.Register<PlayerServerStatisticViewModel, PlayerServerStatisticViewModel>();
+                CompositionContainerFactory.Instance.Register<TankStatisticViewModel, TankStatisticViewModel>();
+                CompositionContainerFactory.Instance.Register<AddReplayFolderViewModel, AddReplayFolderViewModel>();
+                CompositionContainerFactory.Instance.Register<UploadReplayViewModel, UploadReplayViewModel>();
+                CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>();
 
-                CompositionContainerFactory.Instance.Register<IDataProvider, DataProvider>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<DossierRepository, DossierRepository>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<ReplaysManager, ReplaysManager>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<ISessionStorage, NHibernateSessionStorage>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
+                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
+                CompositionContainerFactory.Instance.RegisterSingle<ReplaysManager, ReplaysManager>();
+                CompositionContainerFactory.Instance.RegisterSingle<ISessionStorage, NHibernateSessionStorage>();
 
-                CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IClanView, ClanWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IAboutView, AboutWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IShellView, MainWindow>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<IPlayerServerStatisticView, PlayerServerStatisticWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<ISearchView, SearchWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<ITankStatisticView, TankStatisticWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IFileDialogService, FileDialogService>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IMessageService, MessageService>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<ISettingsView, SettingsWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IPlayersCompareView, PlayersCompareWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>();
+                CompositionContainerFactory.Instance.Register<IClanView, ClanWindow>();
+                CompositionContainerFactory.Instance.Register<IAboutView, AboutWindow>();
+                CompositionContainerFactory.Instance.RegisterSingle<IShellView, MainWindow>();
+                CompositionContainerFactory.Instance.Register<IPlayerServerStatisticView, PlayerServerStatisticWindow>();
+                CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>();
+                CompositionContainerFactory.Instance.Register<ISearchView, SearchWindow>();
+                CompositionContainerFactory.Instance.Register<ITankStatisticView, TankStatisticWindow>();
+                CompositionContainerFactory.Instance.Register<IFileDialogService, FileDialogService>();
+                CompositionContainerFactory.Instance.Register<IMessageService, MessageService>();
+                CompositionContainerFactory.Instance.Register<ISettingsView, SettingsWindow>();
+                CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>();
+                CompositionContainerFactory.Instance.Register<IPlayersCompareView, PlayersCompareWindow>();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ApplicationController>();
 

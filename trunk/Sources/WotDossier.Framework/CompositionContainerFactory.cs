@@ -34,11 +34,18 @@ namespace WotDossier.Framework
             }
         }
 
-        public void Register<TService, TImplementation>(Lifestyle lifestyle)
+        public void Register<TService, TImplementation>()
             where TService : class
             where TImplementation : class, TService
         {
-            SimpleContainer.Register<TService, TImplementation>(lifestyle);
+            SimpleContainer.Register<TService, TImplementation>();
+        }
+
+        public void RegisterSingle<TService, TImplementation>()
+            where TService : class
+            where TImplementation : class, TService
+        {
+            SimpleContainer.RegisterSingle<TService, TImplementation>();
         }
 
         //private CompositionContainer Container

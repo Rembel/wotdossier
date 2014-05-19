@@ -5,7 +5,6 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
-using SimpleInjector;
 using WotDossier.Applications;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
@@ -63,23 +62,23 @@ namespace WotDossier
                 Thread.CurrentThread.CurrentUICulture = culture;
 
                 // Registrations here
-                CompositionContainerFactory.Instance.Register<ReplaysManagerController, ReplaysManagerController>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<ReplayManagerShellViewModel, ReplayManagerShellViewModel>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<AddReplayFolderViewModel, AddReplayFolderViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<UploadReplayViewModel, UploadReplayViewModel>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.RegisterSingle<ReplaysManagerController, ReplaysManagerController>();
+                CompositionContainerFactory.Instance.RegisterSingle<ReplayManagerShellViewModel, ReplayManagerShellViewModel>();
+                CompositionContainerFactory.Instance.Register<AddReplayFolderViewModel, AddReplayFolderViewModel>();
+                CompositionContainerFactory.Instance.Register<UploadReplayViewModel, UploadReplayViewModel>();
+                CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>();
 
-                CompositionContainerFactory.Instance.Register<IDataProvider, DataProvider>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<DossierRepository, DossierRepository>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<Applications.Logic.ReplaysManager, Applications.Logic.ReplaysManager>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<ISessionStorage, NHibernateSessionStorage>(Lifestyle.Singleton);
+                CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
+                CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
+                CompositionContainerFactory.Instance.Register<Applications.Logic.ReplaysManager, Applications.Logic.ReplaysManager>();
+                CompositionContainerFactory.Instance.Register<ISessionStorage, NHibernateSessionStorage>();
 
-                CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IShellView, MainWindow>(Lifestyle.Singleton);
-                CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>(Lifestyle.Transient);
-                //CompositionContainerFactory.Instance.Register<IFileDialogService, FileDialogService>(Lifestyle.Transient);
-                //CompositionContainerFactory.Instance.Register<IMessageService, MessageService>(Lifestyle.Transient);
-                CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>(Lifestyle.Transient);
+                CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>();
+                CompositionContainerFactory.Instance.RegisterSingle<IShellView, MainWindow>();
+                CompositionContainerFactory.Instance.Register<IReplayView, ReplayWindow>();
+                //CompositionContainerFactory.Instance.Register<IFileDialogService, FileDialogService>();
+                //CompositionContainerFactory.Instance.Register<IMessageService, MessageService>();
+                CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ReplaysManagerController>();
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Common.Logging;
+using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Replay;
@@ -11,10 +12,13 @@ using System.Linq;
 
 namespace WotDossier.Dal
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Export]
     public class DossierRepository
     {
-        protected static readonly ILog Log = LogManager.GetLogger("DossierRepository");
+        protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
         private DataProvider _dataProvider;
         public DataProvider DataProvider
@@ -69,10 +73,10 @@ namespace WotDossier.Dal
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="newSnapshot">The new snapshot.</param>
-        /// <param name="ratings">The ratings.</param>
+        /// <param name="serverStatistic">The server statistic.</param>
         /// <param name="playerId">The player identifier.</param>
         /// <returns></returns>
-        public PlayerEntity UpdatePlayerStatistic<T>(IStatisticAdapter<T> newSnapshot, Ratings ratings, int playerId) where T : StatisticEntity, new()
+        public PlayerEntity UpdatePlayerStatistic<T>(IStatisticAdapter<T> newSnapshot, ServerStatWrapper serverStatistic, int playerId) where T : StatisticEntity, new()
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -80,7 +84,9 @@ namespace WotDossier.Dal
 
             try
             {
-                playerEntity = GetPlayerInternal(playerId);
+                playerEntity = GetPlayerInternal(playerId) ??
+                               //recreate payer record in case db was deleted but exists user configured in application setting 
+                               GetOrCreatePlayerInternal(serverStatistic.Player.dataField.nickname, serverStatistic.Player.dataField.account_id, Utils.UnixDateToDateTime((long)serverStatistic.Player.dataField.created_at));
 
                 T currentSnapshot = _dataProvider.QueryOver<T>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
@@ -99,9 +105,9 @@ namespace WotDossier.Dal
                     newSnapshot.Update(currentSnapshot);
                 }
 
-                if (ratings != null)
+                if (serverStatistic != null)
                 {
-                    currentSnapshot.UpdateRatings(ratings);
+                    currentSnapshot.UpdateRatings(serverStatistic.Ratings);
                 }
 
                 _dataProvider.Save(currentSnapshot);
@@ -160,6 +166,24 @@ namespace WotDossier.Dal
                 _dataProvider.CommitTransaction();
             }
             _dataProvider.CloseSession();
+            return playerEntity;
+        }
+
+        /// <summary>
+        /// Get the or create player.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="id">The identifier.</param>
+        /// <param name="creaded">Creaded at.</param>
+        /// <returns></returns>
+        private PlayerEntity GetOrCreatePlayerInternal(string name, int id, DateTime creaded)
+        {
+            PlayerEntity playerEntity = new PlayerEntity();
+            playerEntity.Name = name;
+            playerEntity.PlayerId = id;
+            playerEntity.Creaded = creaded;
+            _dataProvider.Save(playerEntity);
+            
             return playerEntity;
         }
 

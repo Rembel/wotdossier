@@ -27,7 +27,7 @@ namespace WotDossier.Dal
     {
         public static Version JsonFormatedResultsMinVersion = new Version("0.8.11.0");
 
-        private static readonly ILog _log = LogManager.GetLogger("WotApiClient");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         private const string URL_API = @"https://api.worldoftanks.{0}/{1}/{2}";
         private const string REPLAY_DATABLOCK_2 = "datablock_2";

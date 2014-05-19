@@ -129,6 +129,7 @@
     <Compile Include="Server\PlayerSearch.cs" />
     <Compile Include="Server\Rating.cs" />
     <Compile Include="Server\Ratings.cs" />
+    <Compile Include="Server\ServerStatWrapper.cs" />
     <Compile Include="Server\StatisticPart.cs" />
     <Compile Include="Server\Statistics.cs" />
     <Compile Include="Server\Vehicle.cs" />

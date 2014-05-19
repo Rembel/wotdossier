@@ -14,7 +14,7 @@ namespace WotDossier.Applications.ViewModel
     {
         #region [Properties and Fields]
 
-        private static readonly ILog _log = LogManager.GetLogger("PlayerChartsViewModel");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         private List<SellInfo> _lastUsedTanksDataSource;
 

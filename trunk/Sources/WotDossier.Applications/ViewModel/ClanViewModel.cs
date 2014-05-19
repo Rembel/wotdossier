@@ -14,7 +14,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (ClanViewModel))]
     public class ClanViewModel : ViewModel<IClanView>
     {
-        private static readonly ILog _log = LogManager.GetLogger("ClanViewModel");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         public DelegateCommand<object> RowDoubleClickCommand { get; set; }
 

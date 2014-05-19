@@ -1,6 +1,4 @@
-﻿using WotDossier.Domain.Server;
-
-namespace WotDossier.Applications.Logic
+﻿namespace WotDossier.Domain.Server
 {
     public class ServerStatWrapper
     {
@@ -56,5 +54,16 @@ namespace WotDossier.Applications.Logic
         /// The since.
         /// </value>
         public long Since { get; set; }
+
+        /// <summary>
+        /// Gets the player.
+        /// </summary>
+        /// <value>
+        /// The player.
+        /// </value>
+        public Player Player
+        {
+            get { return _player; }
+        }
     }
 }

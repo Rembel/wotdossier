@@ -1,14 +1,12 @@
 ﻿using System;
 using System.ComponentModel.Composition.Hosting;
-using System.IO;
-using System.Reflection;
 using Common.Logging;
 
 namespace WotDossier.Test
 {
     public class CompositionContainerFactory
     {
-        protected static readonly ILog _log = LogManager.GetLogger("CompositionContainerFactory");
+        protected static readonly ILog _log = LogManager.GetCurrentClassLogger();
         private CompositionContainer _container;
         private static readonly object _syncObject = new object();
         private static volatile CompositionContainerFactory _instance = new CompositionContainerFactory();

@@ -21,7 +21,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(ReplayManagerShellViewModel))]
     public class ReplayManagerShellViewModel : ViewModel<IShellView>
     {
-        private static readonly ILog _log = LogManager.GetLogger("ReplayManagerShellViewModel");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         #region [ Properties and Fields ]
 

@@ -100,11 +100,11 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// </summary>
         /// <param name="playerId">The player identifier.</param>
         /// <param name="tanks">The tanks.</param>
-        /// <param name="ratings">The ratings.</param>
+        /// <param name="serverStatistic">The server statistic.</param>
         /// <returns></returns>
-        public override PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, Ratings ratings)
+        public override PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, ServerStatWrapper serverStatistic)
         {
-            return DossierRepository.UpdatePlayerStatistic(new PlayerStatAdapter(tanks), ratings, playerId);
+            return DossierRepository.UpdatePlayerStatistic(new PlayerStatAdapter(tanks), serverStatistic, playerId);
         }
     }
 }

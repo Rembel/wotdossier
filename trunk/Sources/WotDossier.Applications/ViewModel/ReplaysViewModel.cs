@@ -26,7 +26,7 @@ namespace WotDossier.Applications.ViewModel
 {
     public class ReplaysViewModel : INotifyPropertyChanged
     {
-        private static readonly ILog _log = LogManager.GetLogger("ReplaysViewModel");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         public ReplaysFilterViewModel ReplayFilter { get; set; }
         public ReplaysManager ReplaysManager { get; set; }

@@ -8,6 +8,12 @@ namespace WotDossier.Framework.EventAggregator
     {
         private readonly List<IEventSubscription> _subscriptions = new List<IEventSubscription>();
 
+        /// <summary>
+        /// Gets the subscriptions.
+        /// </summary>
+        /// <value>
+        /// The subscriptions.
+        /// </value>
         protected ICollection<IEventSubscription> Subscriptions
         {
             get
@@ -16,6 +22,11 @@ namespace WotDossier.Framework.EventAggregator
             }
         }
 
+        /// <summary>
+        /// Subscribes to the specified event subscription.
+        /// </summary>
+        /// <param name="eventSubscription">The event subscription.</param>
+        /// <returns></returns>
         protected virtual SubscriptionToken Subscribe(IEventSubscription eventSubscription)
         {
             eventSubscription.SubscriptionToken = new SubscriptionToken();
@@ -28,6 +39,10 @@ namespace WotDossier.Framework.EventAggregator
             return eventSubscription.SubscriptionToken;
         }
 
+        /// <summary>
+        /// Publishes the event.
+        /// </summary>
+        /// <param name="arguments">The arguments.</param>
         protected virtual void Publish(params object[] arguments)
         {
             List<Action<object[]>> executionStrategies = PruneAndReturnStrategies();
@@ -38,6 +53,10 @@ namespace WotDossier.Framework.EventAggregator
             }
         }
 
+        /// <summary>
+        /// Unsubscribes from event by token.
+        /// </summary>
+        /// <param name="token">The token.</param>
         public virtual void Unsubscribe(SubscriptionToken token)
         {
             lock (_subscriptions)
@@ -51,6 +70,11 @@ namespace WotDossier.Framework.EventAggregator
             }
         }
 
+        /// <summary>
+        /// Determines whether [contains] [the specified token].
+        /// </summary>
+        /// <param name="token">The token.</param>
+        /// <returns></returns>
         public virtual bool Contains(SubscriptionToken token)
         {
             lock (_subscriptions)

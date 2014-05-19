@@ -13,7 +13,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(AboutViewModel))]
     public class AboutViewModel : ViewModel<IAboutView>
     {
-        private static readonly ILog _log = LogManager.GetLogger("AboutViewModel");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         public DelegateCommand CheckUpdateCommand { get; set; }
         public DelegateCommand SysInfoCommand { get; set; }

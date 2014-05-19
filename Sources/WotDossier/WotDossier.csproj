@@ -192,6 +192,7 @@
     <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
     <Compile Include="Converters\Formater\NumberFormatConverter.cs" />
+    <Compile Include="Converters\Image\AppLogoToImageConverter.cs" />
     <Compile Include="Converters\MedalsCountToOpacityConverter.cs" />
     <Compile Include="Converters\ResxTextConverter.cs" />
     <Compile Include="Converters\Formater\DateFormater.cs" />

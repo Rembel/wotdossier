@@ -37,7 +37,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>replay_manager_icon.ico</ApplicationIcon>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
@@ -238,6 +238,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Views\AboutWindow.xaml">
+      <Link>Views\AboutWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Views\AddReplayFolderWindow.xaml">
       <Link>Views\AddReplayFolderWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -245,6 +250,11 @@
     </Page>
     <Page Include="..\WotDossier\Views\ReplayWindow.xaml">
       <Link>Views\ReplayWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\SettingsWindow.xaml">
+      <Link>Views\SettingsWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -314,6 +324,9 @@
     <Compile Include="..\WotDossier\Converters\Formater\PercentFormater.cs">
       <Link>Converters\Formater\PercentFormater.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\AppLogoToImageConverter.cs">
+      <Link>Converters\AppLogoToImageConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\CountryIdToImageConverter.cs">
       <Link>Converters\Image\CountryIdToImageConverter.cs</Link>
     </Compile>
@@ -373,6 +386,9 @@
       <Link>Tabs\Replay\TeamMemberResult.xaml.cs</Link>
       <DependentUpon>TeamMemberResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\WotDossier\Views\AboutWindow.xaml.cs">
+      <Link>Views\AboutWindow.xaml.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Views\AddReplayFolderWindow.xaml.cs">
       <Link>Views\AddReplayFolderWindow.xaml.cs</Link>
       <DependentUpon>AddReplayFolderWindow.xaml</DependentUpon>
@@ -380,6 +396,9 @@
     <Compile Include="..\WotDossier\Views\ReplayWindow.xaml.cs">
       <Link>Views\ReplayWindow.xaml.cs</Link>
       <DependentUpon>ReplayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\SettingsWindow.xaml.cs">
+      <Link>Views\SettingsWindow.xaml.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Views\UploadReplayWindow.xaml.cs">
       <Link>Views\UploadReplayWindow.xaml.cs</Link>
@@ -408,7 +427,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="replay_manager_icon.ico" />
+    <Resource Include="app_icon.ico" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

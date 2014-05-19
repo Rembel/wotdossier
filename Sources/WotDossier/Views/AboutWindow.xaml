@@ -4,6 +4,7 @@
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
         xmlns:dal="clr-namespace:WotDossier.Dal;assembly=WotDossier.Dal"
         xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
+        xmlns:Converters="clr-namespace:WotDossier.Converters"
         Title="{x:Static resources:Resources.WindowTitle_AboutWindow}" Height="195" Width="450" 
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource applicationBackgroundBrush}" 
         Foreground="{StaticResource DefaultForeground}" FontFamily="{StaticResource DefaultFontFamily}" FontSize="{StaticResource DefaultFontSize}" WindowStyle="None">
@@ -21,7 +22,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Grid.RowSpan="5" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Source="pack://application:,,,/WotDossier.Resources;component/Images/app_icon.ico"></Image>
+        <Image Grid.Row="0" Grid.RowSpan="5" Grid.Column="1" Margin="6,6,6,6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Source="{Binding Converter={x:Static Converters:AppLogoToImageConverter.Default}, ConverterParameter='app_icon.ico'}"></Image>
         <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textName" Text="{x:Static services:ApplicationInfo.ProductName}" />
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="12,12,0,0" Orientation="Horizontal">
             <TextBlock Name="textVersion" Text="{x:Static resources:Resources.Version}"/>

@@ -546,19 +546,19 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitPlayerStatistic(ServerStatWrapper serverStatistic, List<TankJson> tanks)
         {
-            _log.Trace("ShellViewModel.InitPlayerStatistic start");
+            _log.Trace("InitPlayerStatistic start");
             PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
             
             //init previous dates list
             PeriodSelector.PeriodSettingsUpdated -= PeriodSelectorOnPropertyChanged;
             PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
             PeriodSelector.PeriodSettingsUpdated += PeriodSelectorOnPropertyChanged;
-            _log.Trace("ShellViewModel.InitPlayerStatistic end");
+            _log.Trace("InitPlayerStatistic end");
         }
 
         private void InitTanksStatistic(List<TankJson> tanks)
         {
-            _log.Trace("ShellViewModel.InitTanksStatistic start");
+            _log.Trace("InitTanksStatistic start");
             AppSettings settings = SettingsReader.Get();
 
             StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
@@ -577,12 +577,12 @@ namespace WotDossier.Applications.ViewModel
 
             FraggsCount.Init(tanks);
 
-            _log.Trace("ShellViewModel.InitTanksStatistic end");
+            _log.Trace("InitTanksStatistic end");
         }
 
         private ServerStatWrapper LoadPlayerServerStatistic(AppSettings settings)
         {
-            _log.Trace("ShellViewModel.LoadPlayerServerStatistic start");
+            _log.Trace("LoadPlayerServerStatistic start");
             Player player = null;
             try
             {
@@ -596,7 +596,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 _log.Error(e);
             }
-            _log.Trace("ShellViewModel.LoadPlayerServerStatistic end");
+            _log.Trace("LoadPlayerServerStatistic end");
             return new ServerStatWrapper(player);
         }
 

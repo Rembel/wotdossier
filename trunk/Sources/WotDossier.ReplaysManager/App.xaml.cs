@@ -67,6 +67,8 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.Register<AddReplayFolderViewModel, AddReplayFolderViewModel>();
                 CompositionContainerFactory.Instance.Register<UploadReplayViewModel, UploadReplayViewModel>();
                 CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>();
+                CompositionContainerFactory.Instance.Register<AboutViewModel, AboutViewModel>();
+                CompositionContainerFactory.Instance.Register<SettingsViewModel, SettingsViewModel>();
 
                 CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
                 CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
@@ -79,6 +81,8 @@ namespace WotDossier
                 //CompositionContainerFactory.Instance.Register<IFileDialogService, FileDialogService>();
                 //CompositionContainerFactory.Instance.Register<IMessageService, MessageService>();
                 CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>();
+                CompositionContainerFactory.Instance.Register<IAboutView, AboutWindow>();
+                CompositionContainerFactory.Instance.Register<ISettingsView, SettingsWindow>();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ReplaysManagerController>();
 

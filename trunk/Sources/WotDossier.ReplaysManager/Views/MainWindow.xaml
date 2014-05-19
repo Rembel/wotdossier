@@ -21,8 +21,8 @@
     </Grid.RowDefinitions>
     <Menu Grid.Row="0" IsMainMenu="True">
       <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}" InputGestureText="F5" ></MenuItem>
-      <!--<MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>-->
-      <!--<MenuItem Header="{x:Static resources:Resources.MenuItem_Header_About}" Command="{Binding AboutCommand}"></MenuItem>-->
+      <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Settings}" Command="{Binding SettingsCommand}"></MenuItem>
+      <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_About}" Command="{Binding AboutCommand}"></MenuItem>
     </Menu>
     <TabControl Grid.Row="1" Name="tcMain" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
       <!--Replays-->

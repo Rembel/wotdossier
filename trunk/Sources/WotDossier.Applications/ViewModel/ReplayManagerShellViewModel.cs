@@ -1,8 +1,10 @@
-﻿using Common.Logging;
+﻿using System.Threading;
+using System.Windows.Threading;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Linq;
+using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;
@@ -21,12 +23,8 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(ReplayManagerShellViewModel))]
     public class ReplayManagerShellViewModel : ViewModel<IShellView>
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
-
         #region [ Properties and Fields ]
 
-        private readonly DossierRepository _dossierRepository;
-        
         public ProgressControlViewModel ProgressView { get; set; }
 
         public PlayerChartsViewModel ChartView { get; set; }
@@ -69,15 +67,11 @@ namespace WotDossier.Applications.ViewModel
         public ReplayManagerShellViewModel([Import(typeof(IShellView))]IShellView view, [Import]DossierRepository dossierRepository)
             : base(view, false)
         {
-            _dossierRepository = dossierRepository;
-
             LoadCommand = new DelegateCommand(OnLoad, CanLoad);
             SettingsCommand = new DelegateCommand(OnSettings);
             AboutCommand = new DelegateCommand(OnAbout);
             
             RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
-            AddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavorite, CanAddToFavorite);
-            RemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavorite, CanRemoveFromFavorite);
 
             WeakEventHandler.SetAnyGenericHandler<ReplayManagerShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(e));
@@ -86,7 +80,7 @@ namespace WotDossier.Applications.ViewModel
 
             ChartView = new PlayerChartsViewModel();
 
-            ReplaysViewModel = new ReplaysViewModel(_dossierRepository, ProgressView, ChartView);
+            ReplaysViewModel = new ReplaysViewModel(dossierRepository, ProgressView, ChartView);
         }
 
         private bool CanLoad()
@@ -97,36 +91,6 @@ namespace WotDossier.Applications.ViewModel
         #endregion
 
         #region Handlers
-
-        private void OnRemoveFromFavorite(object row)
-        {
-            ITankStatisticRow model = row as ITankStatisticRow;
-            if (model != null)
-            {
-                SetFavorite(model, false);
-            }
-        }
-
-        private bool CanRemoveFromFavorite(object row)
-        {
-            ITankStatisticRow model = row as ITankStatisticRow;
-            return model != null && model.IsFavorite;
-        }
-
-        private void OnAddToFavorite(object data)
-        {
-            ITankStatisticRow model = data as ITankStatisticRow;
-            if (model != null)
-            {
-                SetFavorite(model, true);
-            }
-        }
-
-        private bool CanAddToFavorite(object row)
-        {
-            ITankStatisticRow model = row as ITankStatisticRow;
-            return model != null && !model.IsFavorite;
-        }
 
         private void OnRowDoubleClick(object rowData)
         {
@@ -200,13 +164,6 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
-        private void SetFavorite(ITankStatisticRow model, bool favorite)
-        {
-            AppSettings settings = SettingsReader.Get();
-            model.IsFavorite = favorite;
-            _dossierRepository.SetFavorite(model.TankId, model.CountryId, settings.PlayerId, favorite);
-        }
-
         private void ViewClosing(CancelEventArgs e)
         {
             if (!e.Cancel)
@@ -223,10 +180,10 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Loaded += OnShellViewActivated;
             ViewTyped.Show();
 
-            //Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
-            //{
-            //    UpdateChecker.CheckForUpdates();
-            //}, null);
+            Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
+            {
+                UpdateChecker.CheckForUpdates();
+            }, null);
         }
 
         private void OnShellViewActivated(object sender, EventArgs eventArgs)

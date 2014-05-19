@@ -119,7 +119,7 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public List<TankJson> ReadTanksCache(string path)
         {
-            _log.Trace("WotApiClient.ReadTanksCache start");
+            _log.Trace("ReadTanksCache start");
             List<TankJson> tanks = new List<TankJson>();
 
             using (StreamReader re = new StreamReader(path))
@@ -143,7 +143,7 @@ namespace WotDossier.Dal
                     }
                 }
             }
-            _log.Trace("WotApiClient.ReadTanksCache end");
+            _log.Trace("ReadTanksCache end");
             return tanks;
         }
 

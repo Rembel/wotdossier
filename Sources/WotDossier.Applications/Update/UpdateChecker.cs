@@ -12,7 +12,7 @@ namespace WotDossier.Applications.Update
 {
     public class UpdateChecker
     {
-        private static readonly ILog Logger = LogManager.GetLogger("UpdateChecker");
+        private static readonly ILog Logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// Checks for updates.

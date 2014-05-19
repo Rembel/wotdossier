@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using WotDossier.Applications.Logic;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
@@ -119,9 +118,9 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// </summary>
         /// <param name="playerId">The player identifier.</param>
         /// <param name="tanks">The tanks.</param>
-        /// <param name="ratings">The ratings.</param>
+        /// <param name="serverStatistic">The server statistic.</param>
         /// <returns></returns>
-        public abstract PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, Ratings ratings);
+        public abstract PlayerEntity UpdatePlayerStatistic(int playerId, List<TankJson> tanks, ServerStatWrapper serverStatistic);
 
         /// <summary>
         /// To the view model.

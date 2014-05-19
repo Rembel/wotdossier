@@ -16,7 +16,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof (PlayerSearchViewModel))]
     public class PlayerSearchViewModel : ViewModel<ISearchView>
     {
-        private static readonly ILog _log = LogManager.GetLogger("PlayerSearchViewModel");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
         private List<SearchResultRowViewModel> _list;
 
         public DelegateCommand<object> RowDoubleClickCommand { get; set; }

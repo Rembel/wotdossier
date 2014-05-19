@@ -15,7 +15,7 @@ namespace WotDossier.Applications.Update
     {
         private const string DATA_DOSSIER_SDF = @"\Data\dossier.sdf";
         private const string BACKUP_DOSSIER_SDF = @"\backup\dossier_{0}.sdf";
-        private static readonly ILog Logger = LogManager.GetLogger("DatabaseManager");
+        private static readonly ILog Logger = LogManager.GetCurrentClassLogger();
 
         public void Update()
         {

@@ -26,7 +26,7 @@ namespace WotDossier
     /// </summary>
     public partial class App : Application
     {
-        private static readonly ILog _log = LogManager.GetLogger("App");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         private Mutex _mutex;
         private const string INSTANCE_ID = "1D4E6094-31A4-402F-AB5B-9E4000A4ED48";

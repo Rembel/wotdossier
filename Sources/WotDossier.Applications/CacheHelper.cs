@@ -12,7 +12,7 @@ namespace WotDossier.Applications
     public static class CacheHelper
     {
         private const char SEPARATOR = ';';
-        private static readonly ILog Log = LogManager.GetLogger("DossierRepository");
+        private static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// The game servers

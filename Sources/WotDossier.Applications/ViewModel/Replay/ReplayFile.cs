@@ -18,7 +18,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     /// </summary>
     public abstract class ReplayFile : INotifyPropertyChanged
     {
-        protected static readonly ILog _log = LogManager.GetLogger("ReplayFile");
+        protected static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         public static readonly string PropDamageDealt = TypeHelper<ReplayFile>.PropertyName(v => v.DamageDealt);
         public static readonly string PropDamaged = TypeHelper<ReplayFile>.PropertyName(v => v.Damaged);

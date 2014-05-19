@@ -37,7 +37,7 @@ namespace WotDossier.Applications.ViewModel
     [Export(typeof(ShellViewModel))]
     public class ShellViewModel : ViewModel<IShellView>
     {
-        private static readonly ILog _log = LogManager.GetLogger("ShellViewModel");
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         private static readonly string PropPeriodTabHeader = TypeHelper.GetPropertyName<ShellViewModel>(x => x.PeriodTabHeader);
         public static readonly string PropPlayerStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.PlayerStatistic);
@@ -241,6 +241,28 @@ namespace WotDossier.Applications.ViewModel
             ReplaysViewModel = new ReplaysViewModel(_dossierRepository, ProgressView, ChartView);
 
             ViewTyped.Closing += ViewTypedOnClosing;
+
+            InitCacheMonitor();
+        }
+
+        private void InitCacheMonitor()
+        {
+            // Create a new FileSystemWatcher and set its properties.
+            FileSystemWatcher watcher = new FileSystemWatcher();
+            watcher.Path = Folder.GetDossierCacheFolder();
+            
+            // Watch for changes in LastAccess and LastWrite times.
+            watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
+            
+            // Only watch text files.
+            watcher.Filter = "*.dat";
+
+            // Add event handlers.
+            watcher.Created += (sender, eventArgs) => OnLoad();
+            watcher.Changed += (sender, eventArgs) => OnLoad();
+
+            // Begin watching.
+            watcher.EnableRaisingEvents = true;
         }
 
         private bool CanLoad()
@@ -590,7 +612,7 @@ namespace WotDossier.Applications.ViewModel
 
             int playerId = settings.PlayerId;
 
-            PlayerEntity player = strategy.UpdatePlayerStatistic(playerId, tanks, serverStatistic.Ratings);
+            PlayerEntity player = strategy.UpdatePlayerStatistic(playerId, tanks, serverStatistic);
             
             return strategy.GetPlayerStatistic(player, tanks, serverStatistic);
         }

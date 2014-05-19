@@ -289,8 +289,7 @@ namespace WotDossier.Applications.ViewModel
                             Level6Selected =
                                 Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = false;
             TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = false;
-            USSRSelected =
-                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
+            //USSRSelected = UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
         }
 
         public DelegateCommand AllCommand { get; set; }

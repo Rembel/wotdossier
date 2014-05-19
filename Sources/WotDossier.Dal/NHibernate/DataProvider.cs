@@ -12,7 +12,6 @@ using NHibernate.Cfg;
 using NHibernate.Event;
 using NHibernate.Linq;
 using WotDossier.Domain.Entities;
-using Environment = System.Environment;
 
 namespace WotDossier.Dal.NHibernate
 {
@@ -22,7 +21,7 @@ namespace WotDossier.Dal.NHibernate
     [Export]
     public class DataProvider: IDataProvider
     {
-        protected static readonly ILog Log = LogManager.GetLogger("DataProvider");
+        protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
         private readonly ISessionFactory _factory;
         private readonly ISessionStorage _storage;

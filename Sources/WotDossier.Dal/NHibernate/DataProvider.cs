@@ -23,8 +23,9 @@ namespace WotDossier.Dal.NHibernate
     {
         protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
-        private readonly ISessionFactory _factory;
+        private ISessionFactory _factory;
         private readonly ISessionStorage _storage;
+        private static readonly object _lockObject = new object();
 
         /// <summary>
         /// 	Creates new instance of <see cref = "DataProvider" />.
@@ -33,9 +34,6 @@ namespace WotDossier.Dal.NHibernate
         public DataProvider([Import(typeof(ISessionStorage))]ISessionStorage storage)
         {
             _storage = storage;
-            Configuration configuration = new Configuration().Configure();
-            configuration.EventListeners.FlushEntityEventListeners = new IFlushEntityEventListener[] { new FlushEntityEventListener() };
-            _factory = InitFluentMappings(configuration).BuildSessionFactory();
         }
 
         private static FluentConfiguration InitFluentMappings(Configuration configuration)
@@ -82,6 +80,23 @@ namespace WotDossier.Dal.NHibernate
             set { _storage.CurrentSession = value; }
         }
 
+        public ISessionFactory Factory
+        {
+            get
+            {
+                lock (_lockObject)
+                {
+                    if (_factory == null)
+                    {
+                        Configuration configuration = new Configuration().Configure();
+                        configuration.EventListeners.FlushEntityEventListeners = new IFlushEntityEventListener[] { new FlushEntityEventListener() };
+                        _factory = InitFluentMappings(configuration).BuildSessionFactory();
+                    }
+                }
+                return _factory;
+            }
+        }
+
         /// <summary>
         /// 	Opens current NHibernate session.
         /// </summary>
@@ -89,7 +104,7 @@ namespace WotDossier.Dal.NHibernate
         {
             if (CurrentSession == null)
             {
-                CurrentSession = _factory.OpenSession();
+                CurrentSession = Factory.OpenSession();
                 CurrentSession.FlushMode = FlushMode.Never;
             }
         }

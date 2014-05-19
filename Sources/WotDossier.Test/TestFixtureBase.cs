@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -21,7 +20,6 @@ using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
-using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
@@ -326,25 +324,6 @@ namespace WotDossier.Test
                 }
             }
             return cacheFile;
-        }
-
-        /// <summary>
-        /// Binary dossier cache to plain json.
-        /// </summary>
-        /// <param name="cacheFile">The cache file.</param>
-        public static void BinaryCacheToJson(FileInfo cacheFile)
-        {
-            string temp = Environment.CurrentDirectory;
-
-            string directoryName = Environment.CurrentDirectory;
-            Environment.CurrentDirectory = directoryName + @"\External";
-            Process proc = new Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = directoryName + @"\External\wotdc2j.exe";
-            proc.StartInfo.Arguments = string.Format("{0} -f -r", cacheFile.FullName);
-            proc.Start();
-
-            Environment.CurrentDirectory = temp;
         }
 
         /// <summary>

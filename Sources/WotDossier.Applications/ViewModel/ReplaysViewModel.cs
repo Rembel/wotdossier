@@ -241,11 +241,11 @@ namespace WotDossier.Applications.ViewModel
 
         private void ProcessReplaysFolders(List<ReplayFolder> replayFolders)
         {
-            IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
-
             ProgressView.Execute(
                 Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                 {
+                    IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
+
                     List<ReplayFile> replayFiles = new List<ReplayFile>();
 
                     foreach (var replayFolder in replayFolders)

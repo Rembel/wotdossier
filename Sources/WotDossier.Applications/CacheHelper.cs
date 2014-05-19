@@ -92,17 +92,15 @@ namespace WotDossier.Applications
         public static string BinaryCacheToJson(FileInfo cacheFile)
         {
             Log.Trace("CacheHelper.BinaryCacheToJson start");
-            string temp = Environment.CurrentDirectory;
-            string directoryName = temp;
 
-            Environment.CurrentDirectory = directoryName + @"\External";
-            
+            string directoryName = Environment.CurrentDirectory;
+
             string task = directoryName + @"\External\wotdc2j.exe";
             string arguments = string.Format("\"{0}\" -f", cacheFile.FullName);
+            var logPath = directoryName + @"\Logs\wotdc2j.log";
+            var workingDirectory = directoryName + @"\External";
 
-            ExecuteTask(task, arguments, @"..\Logs\wotdc2j.log");
-
-            Environment.CurrentDirectory = temp;
+            ExecuteTask(task, arguments, logPath, workingDirectory);
 
             Log.Trace("CacheHelper.BinaryCacheToJson end");
             return cacheFile.FullName.Replace(".dat", ".json");
@@ -114,20 +112,17 @@ namespace WotDossier.Applications
         /// <param name="cacheFile">The cache file.</param>
         public static void ReplayToJson(FileInfo cacheFile)
         {
-            string temp = Environment.CurrentDirectory;
-            string directoryName = temp;
+            string directoryName = Environment.CurrentDirectory;
 
-            Environment.CurrentDirectory = directoryName + @"\External";
-            
             string task = directoryName + @"\External\wotrp2j.exe";
             string arguments = string.Format("\"{0}\" ", cacheFile.FullName);
+            var logPath = directoryName + @"\Logs\wotrp2j.log";
+            var workingDirectory = directoryName + @"\External";
 
-            ExecuteTask(task, arguments, @"..\Logs\wotrp2j.log");
-
-            Environment.CurrentDirectory = temp;
+            ExecuteTask(task, arguments, logPath, workingDirectory);
         }
 
-        private static void ExecuteTask(string task, string arguments, string logPath)
+        private static void ExecuteTask(string task, string arguments, string logPath, string workingDirectory = null)
         {
             using(Process proc = new Process())
             {
@@ -136,6 +131,11 @@ namespace WotDossier.Applications
                 proc.StartInfo.RedirectStandardOutput = true;
                 proc.StartInfo.FileName = task;
                 proc.StartInfo.Arguments = arguments;
+
+                if (!string.IsNullOrEmpty(workingDirectory))
+                {
+                    proc.StartInfo.WorkingDirectory = workingDirectory;
+                }
 
                 proc.Start();
 

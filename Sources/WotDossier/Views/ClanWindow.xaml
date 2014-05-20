@@ -6,7 +6,7 @@
         xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:converters="clr-namespace:WotDossier.Converters"
-        Title="{Binding Path=DataContext.FullName, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="1024" Background="Transparent" Icon="pack://application:,,,/WotDossier.Resources;component/Images/faces.png" WindowStartupLocation="CenterOwner">
+        Title="{Binding Path=DataContext.FullName, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="1024" Background="Transparent" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_clan.png" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>

@@ -44,7 +44,7 @@ namespace WotDossier.Converters.Color
                 return new SolidColorBrush(Colors.Transparent);
             ImageBrush imageBrush = new ImageBrush();
             imageBrush.Stretch = Stretch.Fill;
-            imageBrush.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/WotDossier.Resources;component/Images/tile.png"));
+            imageBrush.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/WotDossier.Resources;component/Images/Replays/tile.png"));
             return imageBrush;
         }
 

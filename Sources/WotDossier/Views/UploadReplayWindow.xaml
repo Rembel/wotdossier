@@ -28,7 +28,7 @@
                         <Grid>
                             <Image  Width="177" Height="37" Opacity="0.75" Name="ButtonImage">
                                 <Image.Source>
-                                    <CroppedBitmap Source="pack://application:,,,/WotDossier.Resources;component/Images/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
+                                    <CroppedBitmap Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/buttons.png" SourceRect="0,0,177,37"></CroppedBitmap>
                                 </Image.Source>
                             </Image>
                             <TextBlock Text="Загрузить" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>

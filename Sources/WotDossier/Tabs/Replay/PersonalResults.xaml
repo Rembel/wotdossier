@@ -120,7 +120,7 @@
                         <TextBlock Text="{Binding spottedTooltip}"></TextBlock>
                     </Image.ToolTip>
                 </Image>
-                <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/table_border_gradient.png" ></Image>
+                <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/table_border_gradient.png" ></Image>
             </Grid>
         </DataTemplate>
         <Style TargetType="Image" x:Key="FinalStatisticLineWinStyle">

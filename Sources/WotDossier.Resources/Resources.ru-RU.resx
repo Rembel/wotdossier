@@ -1291,13 +1291,13 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="TankType_SPG" xml:space="preserve">
     <value>САУ</value>
   </data>
-  <data name="Country_USSR" xml:space="preserve">
+  <data name="Country_Ussr" xml:space="preserve">
     <value>СССР</value>
   </data>
   <data name="Country_Germany" xml:space="preserve">
     <value>Германия</value>
   </data>
-  <data name="Country_US" xml:space="preserve">
+  <data name="Country_Usa" xml:space="preserve">
     <value>США</value>
   </data>
   <data name="Country_China" xml:space="preserve">
@@ -1306,7 +1306,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Country_France" xml:space="preserve">
     <value>Франция</value>
   </data>
-  <data name="Country_UK" xml:space="preserve">
+  <data name="Country_Uk" xml:space="preserve">
     <value>Великобритания</value>
   </data>
   <data name="Settings_ReplaysFolder" xml:space="preserve">

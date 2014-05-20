@@ -1084,14 +1084,14 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="TankType_SPG" xml:space="preserve">
     <value>SPG</value>
   </data>
-  <data name="Country_USSR" xml:space="preserve">
+  <data name="Country_Ussr" xml:space="preserve">
     <value>USSR</value>
   </data>
   <data name="Country_Germany" xml:space="preserve">
     <value>Germany</value>
   </data>
-  <data name="Country_US" xml:space="preserve">
-    <value>US</value>
+  <data name="Country_Usa" xml:space="preserve">
+    <value>USA</value>
   </data>
   <data name="Country_China" xml:space="preserve">
     <value>China</value>
@@ -1099,7 +1099,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Country_France" xml:space="preserve">
     <value>France</value>
   </data>
-  <data name="Country_UK" xml:space="preserve">
+  <data name="Country_Uk" xml:space="preserve">
     <value>UK</value>
   </data>
   <data name="Settings_ReplaysFolder" xml:space="preserve">

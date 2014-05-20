@@ -116,7 +116,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-            <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_USSR}"  IsChecked="{Binding USSRSelected, Mode=TwoWay}">
+            <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Ussr}"  IsChecked="{Binding USSRSelected, Mode=TwoWay}">
                 <CheckBox.Content>
                        <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/ussr.png"></Image>
                 </CheckBox.Content>
@@ -126,7 +126,7 @@
                        <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/germany.png"></Image>
                 </CheckBox.Content>
             </CheckBox>
-            <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_US}" IsChecked="{Binding USSelected, Mode=TwoWay}">
+            <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Usa}" IsChecked="{Binding USSelected, Mode=TwoWay}">
                 <CheckBox.Content>
                        <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/usa.png"></Image>
                 </CheckBox.Content>
@@ -141,7 +141,7 @@
                        <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/france.png"></Image>
                 </CheckBox.Content>
             </CheckBox>
-            <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_UK}" IsChecked="{Binding UKSelected, Mode=TwoWay}">
+            <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Uk}" IsChecked="{Binding UKSelected, Mode=TwoWay}">
                 <CheckBox.Content>
                        <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/uk.png"></Image>
                 </CheckBox.Content>

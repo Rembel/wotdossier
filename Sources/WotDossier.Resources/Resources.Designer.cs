@@ -2573,27 +2573,27 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized string similar to UK.
         /// </summary>
-        public static string Country_UK {
+        public static string Country_Uk {
             get {
-                return ResourceManager.GetString("Country_UK", resourceCulture);
+                return ResourceManager.GetString("Country_Uk", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to US.
+        ///   Looks up a localized string similar to USA.
         /// </summary>
-        public static string Country_US {
+        public static string Country_Usa {
             get {
-                return ResourceManager.GetString("Country_US", resourceCulture);
+                return ResourceManager.GetString("Country_Usa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to USSR.
         /// </summary>
-        public static string Country_USSR {
+        public static string Country_Ussr {
             get {
-                return ResourceManager.GetString("Country_USSR", resourceCulture);
+                return ResourceManager.GetString("Country_Ussr", resourceCulture);
             }
         }
         

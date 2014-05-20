@@ -162,6 +162,8 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private bool _loadInProgress;
+        private static readonly object _syncObject = new object();
+
         public bool LoadInProgress
         {
             get { return _loadInProgress; }
@@ -252,14 +254,22 @@ namespace WotDossier.Applications.ViewModel
             watcher.Path = Folder.GetDossierCacheFolder();
             
             // Watch for changes in LastAccess and LastWrite times.
-            watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
+            watcher.NotifyFilter = NotifyFilters.LastWrite;
             
             // Only watch text files.
             watcher.Filter = "*.dat";
 
             // Add event handlers.
-            watcher.Created += (sender, eventArgs) => OnLoad();
-            watcher.Changed += (sender, eventArgs) => OnLoad();
+            watcher.Changed += (sender, eventArgs) =>
+            {
+                lock (_syncObject)
+                {
+                    if (CanLoad())
+                    {
+                        OnLoad();
+                    }
+                }
+            };
 
             // Begin watching.
             watcher.EnableRaisingEvents = true;
@@ -451,6 +461,8 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnLoad()
         {
+            LoadInProgress = true;
+
             AppSettings settings = SettingsReader.Get();
 
             if (settings == null || string.IsNullOrEmpty(settings.PlayerName) || string.IsNullOrEmpty(settings.Server))
@@ -465,8 +477,6 @@ namespace WotDossier.Applications.ViewModel
                 {
                     try
                     {
-                        LoadInProgress = true;
-
                         //set thread culture
                         SetUiCulture();
 

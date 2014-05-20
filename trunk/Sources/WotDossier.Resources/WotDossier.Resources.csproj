@@ -53,8 +53,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\app_icon.ico" />
-    <Resource Include="Images\buttons.png" />
     <Resource Include="Images\center_back.jpg" />
     <Resource Include="Images\Countries\slot_bright_0.png" />
     <Resource Include="Images\Countries\slot_bright_1.png" />
@@ -63,17 +61,7 @@
     <Resource Include="Images\Countries\slot_bright_4.png" />
     <Resource Include="Images\Countries\slot_bright_5.png" />
     <Resource Include="Images\Countries\slot_bright_6.png" />
-    <Resource Include="Images\cpt.png" />
-    <Resource Include="Images\dmg.png" />
-    <Resource Include="Images\dpt.png" />
-    <Resource Include="Images\eb.png" />
-    <Resource Include="Images\exp.png" />
-    <Resource Include="Images\faces.png" />
-    <Resource Include="Images\folder.png" />
-    <Resource Include="Images\frg.png" />
-    <Resource Include="Images\gpl.png" />
-    <Resource Include="Images\gr.png" />
-    <Resource Include="Images\hr.png" />
+    <Resource Include="Images\window_clan.png" />
     <Resource Include="Images\left_back.jpg" />
     <Resource Include="Images\levels\tank_level_1.png" />
     <Resource Include="Images\levels\tank_level_10.png" />
@@ -264,8 +252,6 @@
     <Resource Include="Images\Medals\Warrior.png" />
     <Resource Include="Images\Medals\willToWinSpirit.png" />
     <Resource Include="Images\Medals\wolfamongsheepmedal.png" />
-    <Resource Include="Images\movieicon2.jpg" />
-    <Resource Include="Images\mxp.png" />
     <Resource Include="Images\nations\all.png" />
     <Resource Include="Images\nations\china.png" />
     <Resource Include="Images\nations\france.png" />
@@ -274,7 +260,7 @@
     <Resource Include="Images\nations\uk.png" />
     <Resource Include="Images\nations\usa.png" />
     <Resource Include="Images\nations\ussr.png" />
-    <Resource Include="Images\player.png" />
+    <Resource Include="Images\window_player.png" />
     <Resource Include="Images\Replays\01s.png" />
     <Resource Include="Images\Replays\02s.png" />
     <Resource Include="Images\Replays\03s.png" />
@@ -303,11 +289,7 @@
     <Resource Include="Images\Replays\tbl_ico__user.png" />
     <Resource Include="Images\Replays\XpIcon-1.png" />
     <Resource Include="Images\Replays\XpIcon_Large.png" />
-    <Resource Include="Images\Results.png" />
     <Resource Include="Images\right_back.jpg" />
-    <Resource Include="Images\selected_folder.png" />
-    <Resource Include="Images\spt.png" />
-    <Resource Include="Images\table_border_gradient.png" />
     <Resource Include="Images\Tanks\china_ch01_type59.png" />
     <Resource Include="Images\Tanks\china_ch01_type59_gold.png" />
     <Resource Include="Images\Tanks\china_ch02_type62.png" />
@@ -681,8 +663,7 @@
     <Resource Include="Images\Tanks\ussr_t_60.png" />
     <Resource Include="Images\Tanks\ussr_t_70.png" />
     <Resource Include="Images\Tanks\ussr_valentine_ll.png" />
-    <Resource Include="Images\tile.png" />
-    <Resource Include="Images\Tools.png" />
+    <Resource Include="Images\window_settings.png" />
     <Resource Include="Images\tooltip_bg.jpg" />
     <Resource Include="Images\Types\all.png" />
     <Resource Include="Images\Types\tank_type_heavy.png" />
@@ -690,9 +671,6 @@
     <Resource Include="Images\Types\tank_type_medium.png" />
     <Resource Include="Images\Types\tank_type_spg.png" />
     <Resource Include="Images\Types\tank_type_td.png" />
-    <Resource Include="Images\ui-bg-top.jpg" />
-    <Resource Include="Images\wb.png" />
-    <Resource Include="Images\win.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Medals.resx">
@@ -709,10 +687,28 @@
     <Resource Include="Images\Replays\replay.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\window_search.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\replay_manager_icon.ico" />
+    <Resource Include="Images\window_replay.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rating\dmg.png" />
+    <Resource Include="Images\Rating\eb.png" />
+    <Resource Include="Images\Rating\frg.png" />
+    <Resource Include="Images\Rating\gpl.png" />
+    <Resource Include="Images\Rating\hr.png" />
+    <Resource Include="Images\Rating\mxp.png" />
+    <Resource Include="Images\Rating\wb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Replays\table_border_gradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Replays\buttons.png" />
+    <Resource Include="Images\Replays\folder.png" />
+    <Resource Include="Images\Replays\selected_folder.png" />
+    <Resource Include="Images\Replays\tile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

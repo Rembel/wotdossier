@@ -244,6 +244,8 @@ namespace WotDossier.Applications.ViewModel
             ProgressView.Execute(
                 Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                 {
+                    CultureHelper.SetUiCulture();
+
                     IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
 
                     List<ReplayFile> replayFiles = new List<ReplayFile>();

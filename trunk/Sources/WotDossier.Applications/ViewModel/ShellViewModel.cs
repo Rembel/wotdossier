@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -478,7 +477,7 @@ namespace WotDossier.Applications.ViewModel
                     try
                     {
                         //set thread culture
-                        SetUiCulture();
+                        CultureHelper.SetUiCulture();
 
                         ServerStatWrapper serverStatistic = LoadPlayerServerStatistic(settings);
                         
@@ -684,13 +683,6 @@ namespace WotDossier.Applications.ViewModel
                 EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Publish(new StatisticPeriodChangedEvent(settings.PeriodSettings.Period,
                     settings.PeriodSettings.PrevDate, settings.PeriodSettings.LastNBattles));   
             }
-        }
-
-        private static void SetUiCulture()
-        {
-            var culture = new CultureInfo(SettingsReader.Get().Language);
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
         }
 
         private void TankFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

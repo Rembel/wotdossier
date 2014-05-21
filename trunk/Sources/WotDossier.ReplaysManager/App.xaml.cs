@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using System.Globalization;
-using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Common.Logging;
@@ -57,9 +55,7 @@ namespace WotDossier
                 manager.InitDatabase();
 
                 //set app lang
-                var culture = new CultureInfo(SettingsReader.Get().Language);
-                Thread.CurrentThread.CurrentCulture = culture;
-                Thread.CurrentThread.CurrentUICulture = culture;
+                CultureHelper.SetUiCulture();
 
                 // Registrations here
                 CompositionContainerFactory.Instance.RegisterSingle<ReplaysManagerController, ReplaysManagerController>();

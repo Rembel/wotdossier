@@ -453,7 +453,7 @@
                 <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}"></tabs:ReplaysTab>
             </TabItem>
         </TabControl>
-        <StatusBar Grid.Row="3" VerticalAlignment="Bottom" Background="Beige">
+        <StatusBar Grid.Row="3" VerticalAlignment="Bottom">
             <StatusBarItem HorizontalAlignment="Right">
                 <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Height="17" HorizontalAlignment="Right"/>
             </StatusBarItem>

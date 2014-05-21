@@ -322,6 +322,8 @@ namespace WotDossier.Applications.ViewModel
                     }
                     deletedFolder.Count = collection.Count;
 
+                    ProgressView.Report(bw, 100, Resources.Resources.Progress_DataLoadCompleted);
+
                     //refresh replays
                     OnPropertyChanged("Replays");
 

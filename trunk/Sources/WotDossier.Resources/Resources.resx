@@ -2146,4 +2146,31 @@ Survive %: {1:0.00}</value>
   <data name="Map_87_ruinberg_on_fire" xml:space="preserve">
     <value>Ruinberg on Fire</value>
   </data>
+  <data name="Progress_CommonStatLoading" xml:space="preserve">
+    <value>Common player statistic loading</value>
+  </data>
+  <data name="Progress_CommonStatLoadingCompleted" xml:space="preserve">
+    <value>Common player statistic loading completed</value>
+  </data>
+  <data name="Progress_VehiclesStatLoading" xml:space="preserve">
+    <value>Vehicles statistic loading</value>
+  </data>
+  <data name="Progress_VehiclesStatLoadingCompleted" xml:space="preserve">
+    <value>Vehicles statistic loading completed</value>
+  </data>
+  <data name="Progress_ChartsInitialization" xml:space="preserve">
+    <value>Charts initialization</value>
+  </data>
+  <data name="Progress_ChartsInitializationCompleted" xml:space="preserve">
+    <value>Charts initialization completed</value>
+  </data>
+  <data name="Progress_LoadLastUsedVehiclesList" xml:space="preserve">
+    <value>Last used vehicles list loading</value>
+  </data>
+  <data name="Progress_LoadLastUsedVehiclesListCompleted" xml:space="preserve">
+    <value>Last used vehicles list loading completed</value>
+  </data>
+  <data name="Progress_DataLoadCompleted" xml:space="preserve">
+    <value>Data load completed</value>
+  </data>
 </root>

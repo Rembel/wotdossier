@@ -2281,4 +2281,31 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Map_87_ruinberg_on_fire" xml:space="preserve">
     <value>Руинберг в огне</value>
   </data>
+  <data name="Progress_CommonStatLoading" xml:space="preserve">
+    <value>Загрузка общей статистики игрока</value>
+  </data>
+  <data name="Progress_CommonStatLoadingCompleted" xml:space="preserve">
+    <value>Загрузка общей статистики игрока завершена</value>
+  </data>
+  <data name="Progress_VehiclesStatLoading" xml:space="preserve">
+    <value>Загрузка статистики по технике</value>
+  </data>
+  <data name="Progress_VehiclesStatLoadingCompleted" xml:space="preserve">
+    <value>Загрузка статистики по технике завершена</value>
+  </data>
+  <data name="Progress_ChartsInitialization" xml:space="preserve">
+    <value>Инициализация графиков</value>
+  </data>
+  <data name="Progress_ChartsInitializationCompleted" xml:space="preserve">
+    <value>Инициализация графиков завершена</value>
+  </data>
+  <data name="Progress_LoadLastUsedVehiclesList" xml:space="preserve">
+    <value>Инициализация списка последней использованой техники</value>
+  </data>
+  <data name="Progress_LoadLastUsedVehiclesListCompleted" xml:space="preserve">
+    <value>Инициализация списка последней использованой техники завершена</value>
+  </data>
+  <data name="Progress_DataLoadCompleted" xml:space="preserve">
+    <value>Загрузка данных завершена</value>
+  </data>
 </root>

@@ -495,9 +495,12 @@ namespace WotDossier.Applications.ViewModel
                                 //string data = new Uri("http://wot-dossier.appspot.com/dossier-data/2587067").Get();
                                 //List<TankJson> tanksV2 = WotApiClient.Instance.ReadDossierAppSpotTanks(data);
 
+                                ProgressView.Report(bw, 25, Resources.Resources.Progress_CommonStatLoading);
+
                                 InitPlayerStatistic(serverStatistic, _tanksCache);
 
-                                ProgressView.Report(bw, 25, string.Empty);
+                                ProgressView.Report(bw, 25, Resources.Resources.Progress_CommonStatLoadingCompleted);
+                                ProgressView.Report(bw, 25, Resources.Resources.Progress_VehiclesStatLoading);
 
                                 InitTanksStatistic(_tanksCache);
 
@@ -507,13 +510,18 @@ namespace WotDossier.Applications.ViewModel
                                     PeriodSelectorOnPropertyChanged();
                                 }
 
-                                ProgressView.Report(bw, 50, string.Empty);
+                                ProgressView.Report(bw, 50, Resources.Resources.Progress_VehiclesStatLoadingCompleted);
+                                ProgressView.Report(bw, 50, Resources.Resources.Progress_ChartsInitialization);
 
                                 InitChart();
 
+                                ProgressView.Report(bw, 75, Resources.Resources.Progress_ChartsInitializationCompleted);
+                                ProgressView.Report(bw, 75, Resources.Resources.Progress_LoadLastUsedVehiclesList);
+
                                 InitLastUsedTankList();
 
-                                ProgressView.Report(bw, 100, string.Empty);
+                                ProgressView.Report(bw, 100, Resources.Resources.Progress_LoadLastUsedVehiclesListCompleted);
+                                ProgressView.Report(bw, 100, Resources.Resources.Progress_DataLoadCompleted);
                             }
                             else
                             {

@@ -1,7 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:WotDossier.Converters"
-                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <Style x:Key="office2007SilverRadioButton" TargetType="{x:Type RadioButton}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -57,65 +55,70 @@
         </Setter>
     </Style>
     
-    <!--<LinearGradientBrush x:Key="buttonOutsideBorderDefaultBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#FFB3B2C9" Offset="1" />
-        <GradientStop Color="#FFEDEDF5" Offset="0" />
-    </LinearGradientBrush>-->
-
     <ControlTemplate x:Key="office2007SilverHorizontalProgressBarTemplate" TargetType="{x:Type ProgressBar}">
-        <Grid x:Name="TemplateRoot">
-            <Border x:Name="PART_Track" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" />
-            <Border x:Name="PART_Indicator" HorizontalAlignment="Left" Background="{StaticResource completeProgressBarBackgroundBrush}" BorderBrush="{StaticResource progressBarBackgroundBorderBrush}" BorderThickness="1" CornerRadius="2" />
-            <Border HorizontalAlignment="Left" Background="{TemplateBinding Foreground}" CornerRadius="2" Opacity="0.5" Width="{Binding Path=Width, ElementName=PART_Indicator}" />
-            <TextBlock Foreground="Black" FontWeight="Medium" 
-                    FontSize="14"  Grid.Column="0" Grid.ColumnSpan="2"
-                    TextAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ProgressBar}}, Path=Value, 
-                        Converter={x:Static converters:PercentFormater.Default}}" />                    
+        <Grid x:Name="TemplateRoot" SnapsToDevicePixels="true">
+            <Rectangle Fill="{TemplateBinding Background}" RadiusY="2" RadiusX="2"/>
+            <Border Background="{StaticResource ProgressBarGlassyHighlight}" CornerRadius="2" Margin="1"/>
+            <Border BorderBrush="#80FFFFFF" BorderThickness="1,0,1,1" Background="{StaticResource ProgressBarTopHighlight}" Margin="1"/>
+            <Rectangle x:Name="PART_Track" Margin="1"/>
+            <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" Margin="1">
+                <Grid x:Name="Foreground">
+                    <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}"/>
+                    <Grid x:Name="Animation" ClipToBounds="true">
+                        <Rectangle x:Name="PART_GlowRect" Fill="{StaticResource ProgressBarIndicatorAnimatedFill}" HorizontalAlignment="Left" Margin="-100,0,0,0" Width="100"/>
+                    </Grid>
+                    <Grid x:Name="Overlay">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MaxWidth="15"/>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition MaxWidth="15"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Rectangle x:Name="LeftDark" Fill="{StaticResource ProgressBarIndicatorDarkEdgeLeft}" Margin="1,1,0,1" RadiusY="1" RadiusX="1" Grid.RowSpan="2"/>
+                        <Rectangle x:Name="RightDark" Grid.Column="2" Fill="{StaticResource ProgressBarIndicatorDarkEdgeRight}" Margin="0,1,1,1" RadiusY="1" RadiusX="1" Grid.RowSpan="2"/>
+                        <Rectangle x:Name="LeftLight" Grid.Column="0" Fill="{StaticResource ProgressBarIndicatorLightingEffectLeft}" Grid.Row="2"/>
+                        <Rectangle x:Name="CenterLight" Grid.Column="1" Fill="{StaticResource ProgressBarIndicatorLightingEffect}" Grid.Row="2"/>
+                        <Rectangle x:Name="RightLight" Grid.Column="2" Fill="{StaticResource ProgressBarIndicatorLightingEffectRight}" Grid.Row="2"/>
+                        <Border x:Name="Highlight1" Background="{StaticResource ProgressBarIndicatorGlassyHighlight}" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+                        <Border x:Name="Highlight2" Background="{StaticResource ProgressBarTopHighlight}" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+                    </Grid>
+                </Grid>
+            </Decorator>
+            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+            <TextBlock Foreground="Black" FontWeight="Medium" FontSize="10"  Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ProgressBar}}, Path=Value, StringFormat='\{0:0.} %'}" />                    
             </TextBlock>
-            <Grid x:Name="isIndeterminateGrid" Row="0" RowSpan="2" Opacity="0.7" Margin="2" Visibility="Collapsed">
-                <Grid.Background>
-                    <LinearGradientBrush MappingMode="RelativeToBoundingBox" EndPoint="1,0.5" StartPoint="-0.2,0.5">
-                        <GradientStop x:Name="isIndeterminateStop2" Color="#FFFFFEE4" Offset="0.1" />
-                        <GradientStop x:Name="isIndeterminateStop1" Color="#00FFFEE4" Offset="0.2" />
-                        <GradientStop x:Name="isIndeterminateStop3" Color="#00FFFEE4" Offset="0" />
-                    </LinearGradientBrush>
-                </Grid.Background>
-            </Grid>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="Orientation" Value="Vertical">
-                <Setter TargetName="TemplateRoot" Property="LayoutTransform">
+                <Setter Property="LayoutTransform" TargetName="TemplateRoot">
                     <Setter.Value>
                         <RotateTransform Angle="-90"/>
                     </Setter.Value>
                 </Setter>
             </Trigger>
             <Trigger Property="IsIndeterminate" Value="true">
-                <Trigger.EnterActions>
-                    <BeginStoryboard>
-                        <Storyboard AutoReverse="true" RepeatBehavior="Forever">
-                            <DoubleAnimation Storyboard.TargetName="isIndeterminateStop1" Storyboard.TargetProperty="Offset" From="0" To="1" Duration="00:00:01.5" />
-                            <DoubleAnimation Storyboard.TargetName="isIndeterminateStop2" Storyboard.TargetProperty="Offset" From="0.1" To="1.1" Duration="00:00:01.5" />
-                            <DoubleAnimation Storyboard.TargetName="isIndeterminateStop3" Storyboard.TargetProperty="Offset" From="0.2" To="1.2" Duration="00:00:01.5" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </Trigger.EnterActions>
-                <Setter TargetName="isIndeterminateGrid" Property="Visibility" Value="Visible" />
+                <Setter Property="Visibility" TargetName="LeftDark" Value="Collapsed"/>
+                <Setter Property="Visibility" TargetName="RightDark" Value="Collapsed"/>
+                <Setter Property="Visibility" TargetName="LeftLight" Value="Collapsed"/>
+                <Setter Property="Visibility" TargetName="CenterLight" Value="Collapsed"/>
+                <Setter Property="Visibility" TargetName="RightLight" Value="Collapsed"/>
+                <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
             </Trigger>
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Value="{StaticResource progressBarBakcgroundIsEnabledBackgroundBrush}" Property="Background" />
-                <Setter Value="{StaticResource progressBarBackgroundIsEnabledBorderBrush}" Property="BorderBrush" />
+            <Trigger Property="IsIndeterminate" Value="false">
+                <Setter Property="Background" TargetName="Animation" Value="#80B5FFA9"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     
     <Style x:Key="office2007SilverProgressBar" TargetType="{x:Type ProgressBar}">
-        <!--<Setter Property="Check" Value="true" />-->
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Foreground" Value="Transparent" />
-        <Setter Property="Background" Value="{StaticResource progressBarBackgroundBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource progressBarBackgroundBorderBrush}" />
+        <Setter Property="Foreground" Value="#01D328"/>
+        <Setter Property="Background" Value="{StaticResource ProgressBarBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ProgressBarBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template" Value="{StaticResource office2007SilverHorizontalProgressBarTemplate}" />
     </Style>
 

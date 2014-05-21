@@ -2173,4 +2173,7 @@ Survive %: {1:0.00}</value>
   <data name="Progress_DataLoadCompleted" xml:space="preserve">
     <value>Data load completed</value>
   </data>
+  <data name="WindowTitleFormat_Replay" xml:space="preserve">
+    <value>{0}, {1}, battle level - {2}</value>
+  </data>
 </root>

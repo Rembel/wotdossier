@@ -19,6 +19,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             {
                 tank = Dictionaries.Instance.IconTanks[TankIcon];
             }
+            LevelRange = tank != null ? tank.LevelRange : LevelRange.All;
             Tank = tank != null ? tank.Title : vehicle.Value.vehicleType;
             ClanAbbrev = vehicle.Value.clanAbbrev;
             Name = vehicle.Value.name;
@@ -65,6 +66,8 @@ namespace WotDossier.Applications.ViewModel.Replay
 
             TeamMate = Team == replayPlayerTeam;
         }
+
+        public LevelRange LevelRange { get; set; }
 
         private string GetClanAbbrev(string abbrev)
         {
@@ -138,5 +141,10 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int Squad { get; set; }
 
         public bool TeamMate { get; set; }
+
+        public override string ToString()
+        {
+            return LevelRange.ToString();
+        }
     }
 }

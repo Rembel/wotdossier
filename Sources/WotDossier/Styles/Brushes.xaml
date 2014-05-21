@@ -116,26 +116,54 @@
 
     <SolidColorBrush x:Key="ListBorder" Color="#828790" />
 
-    <LinearGradientBrush x:Key="completeProgressBarBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FFFEE4" Offset="0" />
-        <GradientStop Color="#FFE8A7" Offset="0.4" />
-        <GradientStop Color="#FFD767" Offset="0.4" />
-        <GradientStop Color="#FFE69E" Offset="1" />
+    <LinearGradientBrush x:Key="ProgressBarBackground" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#BABABA" Offset="0"/>
+        <GradientStop Color="#C7C7C7" Offset="0.5"/>
+        <GradientStop Color="#BABABA" Offset="1"/>
     </LinearGradientBrush>
-    <SolidColorBrush x:Key="progressBarBakcgroundIsEnabledBackgroundBrush" Color="#7FEEEEEE" />
-    <LinearGradientBrush x:Key="progressBarBackgroundIsEnabledBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FFD4D4D4" Offset="0" />
-        <GradientStop Color="#FFB2B2B2" Offset="1" />
+    <LinearGradientBrush x:Key="ProgressBarBorderBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#B2B2B2" Offset="0"/>
+        <GradientStop Color="#8C8C8C" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="progressBarBackgroundBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FF7C7C94" Offset="1" />
-        <GradientStop Color="#FFEFEFEF" Offset="0" />
+    <LinearGradientBrush x:Key="ProgressBarGlassyHighlight" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#50FFFFFF" Offset="0.5385"/>
+        <GradientStop Color="#00FFFFFF" Offset="0.5385"/>
     </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="progressBarBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#66FFFFFF" Offset="0" />
-        <GradientStop Color="#4CFFFFFF" Offset="1" />
-        <GradientStop Color="#00FFFFFF" Offset="0.4" />
+    <LinearGradientBrush x:Key="ProgressBarTopHighlight" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#80FFFFFF" Offset="0.05"/>
+        <GradientStop Color="#00FFFFFF" Offset="0.25"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ProgressBarIndicatorAnimatedFill" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#00FFFFFF" Offset="0"/>
+        <GradientStop Color="#60FFFFFF" Offset="0.4"/>
+        <GradientStop Color="#60FFFFFF" Offset="0.6"/>
+        <GradientStop Color="#00FFFFFF" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ProgressBarIndicatorDarkEdgeLeft" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#0C000000" Offset="0"/>
+        <GradientStop Color="#20000000" Offset="0.3"/>
+        <GradientStop Color="#00000000" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ProgressBarIndicatorDarkEdgeRight" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#00000000" Offset="0"/>
+        <GradientStop Color="#20000000" Offset="0.7"/>
+        <GradientStop Color="#0C000000" Offset="1"/>
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="ProgressBarIndicatorLightingEffectLeft" RadiusY="1" RadiusX="1" RelativeTransform="1,0,0,1,0.5,0.5">
+        <GradientStop Color="#60FFFFC4" Offset="0"/>
+        <GradientStop Color="#00FFFFC4" Offset="1"/>
+    </RadialGradientBrush>
+    <LinearGradientBrush x:Key="ProgressBarIndicatorLightingEffect" EndPoint="0,0" StartPoint="0,1">
+        <GradientStop Color="#60FFFFC4" Offset="0"/>
+        <GradientStop Color="#00FFFFC4" Offset="1"/>
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="ProgressBarIndicatorLightingEffectRight" RadiusY="1" RadiusX="1" RelativeTransform="1,0,0,1,-0.5,0.5">
+        <GradientStop Color="#60FFFFC4" Offset="0"/>
+        <GradientStop Color="#00FFFFC4" Offset="1"/>
+    </RadialGradientBrush>
+    <LinearGradientBrush x:Key="ProgressBarIndicatorGlassyHighlight" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#90FFFFFF" Offset="0.5385"/>
+        <GradientStop Color="#00FFFFFF" Offset="0.5385"/>
     </LinearGradientBrush>
 
 </ResourceDictionary>

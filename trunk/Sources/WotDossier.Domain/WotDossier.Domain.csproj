@@ -146,6 +146,7 @@
     <Compile Include="Tank\Achievements7x7.cs" />
     <Compile Include="Interfaces\ITankFilterable.cs" />
     <Compile Include="Tank\MaxJson.cs" />
+    <Compile Include="Tank\LevelRange.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />
     <Compile Include="Tank\StatisticJson.cs" />
     <Compile Include="Tank\TankJsonV2.cs" />

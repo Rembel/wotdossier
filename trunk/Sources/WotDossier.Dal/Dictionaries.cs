@@ -27,6 +27,110 @@ namespace WotDossier.Dal
         private readonly Dictionary<int, TankServerInfo> _serverTanks;
         private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
 
+        #region BattleLevels
+
+        /// <summary>
+        /// http://forum.worldoftanks.ru/index.php?/topic/41221-
+        /// </summary>
+        private readonly Dictionary<int, Dictionary<TankType, LevelRange>> _tankLevelsMap = new Dictionary<int, Dictionary<TankType, LevelRange>>
+        {
+            {
+                1, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange {Min = 1, Max = 2}},
+                    {TankType.MT, new LevelRange {Min = 1, Max = 2}},
+                }
+            },
+            {
+                2, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange{Min = 2, Max = 3}},
+                    {TankType.MT, new LevelRange{Min = 2, Max = 3}},
+                    {TankType.SPG, new LevelRange{Min = 2, Max = 3}},
+                    {TankType.TD, new LevelRange{Min = 2, Max = 3}},
+                }
+            },
+            {
+                3, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange{Min = 3, Max = 5}},
+                    {TankType.MT, new LevelRange{Min = 3, Max = 5}},
+                    {TankType.SPG, new LevelRange{Min = 3, Max = 5}},
+                    {TankType.TD, new LevelRange{Min = 3, Max = 5}},
+                }
+            },
+            {
+                4, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange{Min = 4, Max = 8}},
+                    {TankType.MT, new LevelRange{Min = 4, Max = 6}},
+                    {TankType.HT, new LevelRange{Min = 4, Max = 5}},
+                    {TankType.SPG, new LevelRange{Min = 4, Max = 6}},
+                    {TankType.TD, new LevelRange{Min = 4, Max = 6}},
+                }
+            },
+            {
+                5, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange{Min = 6, Max = 9}},
+                    {TankType.MT, new LevelRange{Min = 5, Max = 7}},
+                    {TankType.HT, new LevelRange{Min = 5, Max = 7}},
+                    {TankType.SPG, new LevelRange{Min = 5, Max = 7}},
+                    {TankType.TD, new LevelRange{Min = 5, Max = 7}},
+                }
+            },
+            {
+                6, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange{Min = 7, Max = 10}},
+                    {TankType.MT, new LevelRange{Min = 6, Max = 8}},
+                    {TankType.HT, new LevelRange{Min = 6, Max = 8}},
+                    {TankType.SPG, new LevelRange{Min = 6, Max = 8}},
+                    {TankType.TD, new LevelRange{Min = 6, Max = 8}},
+                }
+            },
+            {
+                7, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange{Min = 8, Max = 11}},
+                    {TankType.MT, new LevelRange{Min = 7, Max = 9}},
+                    {TankType.HT, new LevelRange{Min = 7, Max = 9}},
+                    {TankType.SPG, new LevelRange{Min = 7, Max = 9}},
+                    {TankType.TD, new LevelRange{Min = 7, Max = 9}},
+                }
+            },
+            {
+                8, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.LT, new LevelRange{Min = 9, Max = 11}},
+                    {TankType.MT, new LevelRange{Min = 8, Max = 10}},
+                    {TankType.HT, new LevelRange{Min = 8, Max = 10}},
+                    {TankType.SPG, new LevelRange{Min = 8, Max = 10}},
+                    {TankType.TD, new LevelRange{Min = 8, Max = 10}},
+                }
+            },
+            {
+                9, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.MT, new LevelRange{Min = 9, Max = 11}},
+                    {TankType.HT, new LevelRange{Min = 9, Max = 11}},
+                    {TankType.SPG, new LevelRange{Min = 9, Max = 11}},
+                    {TankType.TD, new LevelRange{Min = 9, Max = 11}},
+                }
+            },
+            {
+                10, new Dictionary<TankType, LevelRange>
+                {
+                    {TankType.MT, new LevelRange{Min = 10, Max = 11}},
+                    {TankType.HT, new LevelRange{Min = 10, Max = 11}},
+                    {TankType.SPG, new LevelRange{Min = 10, Max = 11}},
+                    {TankType.TD, new LevelRange{Min = 10, Max = 11}},
+                }
+            },
+        };
+
+        #endregion
+
         /// <summary>
         /// Tanks dictionary
         /// KEY - tankid, countryid
@@ -122,7 +226,7 @@ namespace WotDossier.Dal
             {
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
-                var parsedData = se.Deserialize<JArray>(reader);
+                JArray parsedData = se.Deserialize<JArray>(reader);
                 foreach (JToken jToken in parsedData)
                 {
                     TankDescription tank = jToken.ToObject<TankDescription>();
@@ -134,6 +238,8 @@ namespace WotDossier.Dal
                     _iconTanks.Add(icon, tank);
 
                     tank.Icon = icon;
+
+                    tank.LevelRange = _tankLevelsMap[tank.Tier][(TankType) tank.Type];
 
                     if (_ratingExpectations.ContainsKey(tank.Icon.IconOrig))
                     {
@@ -153,7 +259,7 @@ namespace WotDossier.Dal
             {
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
-                var parsedData = se.Deserialize<JObject>(reader);
+                JObject parsedData = se.Deserialize<JObject>(reader);
                 return parsedData["data"].ToObject<Dictionary<int, TankServerInfo>>();
             }
         }
@@ -166,7 +272,7 @@ namespace WotDossier.Dal
                 {
                     JsonTextReader reader = new JsonTextReader(re);
                     JsonSerializer se = new JsonSerializer();
-                    var parsedData = se.Deserialize<JArray>(reader);
+                    JArray parsedData = se.Deserialize<JArray>(reader);
                     return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.Icon, x => x);
                 }
             }
@@ -197,6 +303,24 @@ namespace WotDossier.Dal
             list = list.OrderByDescending(x => x.localizedmapname).ToList();
             list.ForEach(x => x.mapid = i++);
             return list.ToDictionary(x => x.mapidname, y => y);
+        }
+
+        public int GetBattleLevel(List<LevelRange> members)
+        {
+            int max = members.Max(x => x.Max);
+
+            int level = -1;
+
+            for (int i = max; i > 0; i--)
+            {
+                if (members.All(x => x.Min <= i && x.Max >= i))
+                {
+                    level = i;
+                    break;
+                }
+            }
+
+            return level;
         }
     }
 }

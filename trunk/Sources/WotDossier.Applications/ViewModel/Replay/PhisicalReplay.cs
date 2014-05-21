@@ -5,7 +5,6 @@ using System.Windows;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Dal;
 using WotDossier.Domain;
-using WotDossier.Framework;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {

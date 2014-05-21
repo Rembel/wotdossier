@@ -2308,4 +2308,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Progress_DataLoadCompleted" xml:space="preserve">
     <value>Загрузка данных завершена</value>
   </data>
+  <data name="WindowTitleFormat_Replay" xml:space="preserve">
+    <value>{0}, {1}, уровень боя - {2}</value>
+  </data>
 </root>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Globalization;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using WotDossier.Applications.View;
@@ -258,12 +259,24 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TimeSpan userbattleLength = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                 UserBattleTime = userbattleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
+                //calc levels by squad
+                List<LevelRange> membersLevels = new List<LevelRange>();
+                membersLevels.AddRange(teamMembers.Where(x => x.Squad == 0).Select(x => x.LevelRange));
+                IEnumerable<IGrouping<int, TeamMember>> groupBy = teamMembers.Where(x => x.Squad > 0).GroupBy(x => x.Squad);
+                membersLevels.AddRange(groupBy.Select(x => x.Select(s => s.LevelRange).OrderByDescending(o => o.Max).First()));
+
+                int level = Dictionaries.Instance.GetBattleLevel(membersLevels);
+
+                Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDisplayName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a");
+
                 Status = GetBattleStatus(replay);
 
                 return true;
             }
             return false;
         }
+
+        public string Title { get; set; }
 
         private BattleStatus GetBattleStatus(Domain.Replay.Replay replay)
         {

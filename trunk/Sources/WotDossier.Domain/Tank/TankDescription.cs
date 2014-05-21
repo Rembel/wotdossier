@@ -51,6 +51,8 @@ namespace WotDossier.Domain.Tank
         [DataMember(Name = "compDescr")]
         public int CompDescr { get; set; }
 
+        public LevelRange LevelRange { get; set; }
+
         /// <summary>
         /// Gets or sets the icon.
         /// </summary>

@@ -6057,6 +6057,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}, {1}, battle level - {2}.
+        /// </summary>
+        public static string WindowTitleFormat_Replay {
+            get {
+                return ResourceManager.GetString("WindowTitleFormat_Replay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Export.
         /// </summary>
         public static string WondowCaption_Export {

@@ -86,9 +86,7 @@ namespace WotDossier
                 manager.InitDatabase();
                 
                 //set app lang
-                var culture = new CultureInfo(SettingsReader.Get().Language);
-                Thread.CurrentThread.CurrentCulture = culture;
-                Thread.CurrentThread.CurrentUICulture = culture;
+                CultureHelper.SetUiCulture();
 
                 // Registrations here
                 CompositionContainerFactory.Instance.RegisterSingle<ApplicationController, ApplicationController>();

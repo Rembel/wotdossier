@@ -6,9 +6,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="17" d:DesignWidth="100">
     <Grid>
-        <!--<TextBlock x:Name="TextLabel" Text="Loading..." TextTrimming="CharacterEllipsis" />-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" x:Name="TextLabel" Text="{Binding SubLabel}" TextTrimming="CharacterEllipsis" />
         <!--<TextBlock x:Name="SubTextLabel" Margin="0 18 0 0" Text="" FontStyle="Italic" Visibility="Collapsed" TextTrimming="CharacterEllipsis" />-->
-        <ProgressBar  x:Name="ProgressBar" IsIndeterminate="False" Value="{Binding ProgressBarValue}" />
+        <ProgressBar Grid.Column="1" x:Name="ProgressBar" IsIndeterminate="False" Value="{Binding ProgressBarValue}" Width="100" />
         <!--<Button x:Name="CancelButton" Margin="0 38 0 0" Width="70" Content="Cancel" Visibility="Collapsed" HorizontalAlignment="Right" Click="OnCancelButtonClick" />-->
     </Grid>
 </UserControl>

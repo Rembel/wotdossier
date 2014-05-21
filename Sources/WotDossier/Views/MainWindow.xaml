@@ -455,7 +455,7 @@
         </TabControl>
         <StatusBar Grid.Row="3" VerticalAlignment="Bottom" Background="Beige">
             <StatusBarItem HorizontalAlignment="Right">
-                <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Height="17" Width="100" HorizontalAlignment="Right"/>
+                <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Height="17" HorizontalAlignment="Right"/>
             </StatusBarItem>
         </StatusBar>
     </Grid>

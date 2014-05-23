@@ -27,20 +27,20 @@
                             CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </dataGrid:FooterDataGrid.InputBindings>
             <dataGrid:FooterDataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}" />
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Won}" Binding="{Binding Wins}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_WonPercent}" Binding="{Binding WinsPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Won}" Binding="{Binding Wins}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_WonPercent}" Binding="{Binding WinsPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Lost}" Binding="{Binding Losses}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_LostPercent}" Binding="{Binding LossesPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_LostPercent}" Binding="{Binding LossesPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Draws}" Binding="{Binding Draws}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_DrawsPercent}" Binding="{Binding DrawsPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Survived}" Binding="{Binding SurvivedBattles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedPercent}" Binding="{Binding SurvivedBattlesPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedAndWon}" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedAndWonPercent}" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_DrawsPercent}" Binding="{Binding DrawsPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Survived}" Binding="{Binding SurvivedBattles}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedPercent}" Binding="{Binding SurvivedBattlesPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedAndWon}" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedAndWonPercent}" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

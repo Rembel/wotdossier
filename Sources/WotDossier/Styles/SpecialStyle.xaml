@@ -8,6 +8,11 @@
                     xmlns:color="clr-namespace:WotDossier.Converters.Color"
                     xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ReplayDataGrid.xaml" />
+        <ResourceDictionary Source="DataGridHeaderTemplates.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
     <ImageBrush x:Key="bcolorLeft" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/left_back.jpg" Stretch="Fill" />
     <ImageBrush x:Key="bcolorCenter" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/center_back.jpg" Stretch="Fill" />
     <ImageBrush x:Key="bcolorRight" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/right_back.jpg" Stretch="Fill" />
@@ -94,18 +99,6 @@
 
     <Style x:Key="TankDataGridStyle" TargetType="{x:Type dataGrid:FooterDataGrid}" BasedOn="{StaticResource office2007SilverFooterDataGrid}">
         <Setter Property="RowStyle" Value="{StaticResource TankDataRowStyle}" />
-        <!--<Setter Property="controls:AttachedProperties.InputBindings">
-            <Setter.Value>
-                <InputBindingCollection>
-                    <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
-                            Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <KeyBinding Command="{Binding Path=AddToFavoriteCommand}" 
-                            Key="D" Modifiers="Control" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <KeyBinding Command="{Binding Path=RemoveFromFavoriteCommand}" 
-                            CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                </InputBindingCollection>
-            </Setter.Value>
-        </Setter>-->
         <Setter Property="controls:SupplementaryInteraction.Triggers" Value="{StaticResource MouseTriggers}"></Setter>
     </Style>
 

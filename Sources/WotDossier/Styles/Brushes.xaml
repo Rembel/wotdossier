@@ -166,4 +166,8 @@
         <GradientStop Color="#00FFFFFF" Offset="0.5385"/>
     </LinearGradientBrush>
 
+    <Color x:Key="DataGridGradientStopColor">#D4D7DB</Color>
+    <Color x:Key="DataGridGradientStartColor">#FFFFFF</Color>
+    <Color x:Key="DataGridHeaderForeColor">Black</Color>
+    
 </ResourceDictionary>

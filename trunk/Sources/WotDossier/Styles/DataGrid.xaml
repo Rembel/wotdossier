@@ -1,19 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Converters="clr-namespace:WotDossier.Converters"
-                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
                     xmlns:local="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="DataGridHeaderTemplates.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Color x:Key="GradientStopColor">#D4D7DB</Color>
-    <Color x:Key="GradientStartColor">#FFFFFF</Color>
-    <Color x:Key="HeaderForeColor">Black</Color>
-
-    <!--<Color x:Key="GradientStopColor">#D4D7DB</Color>
-    <Color x:Key="GradientStartColor">#ABABAB</Color>
-    <Color x:Key="HeaderForeColor">White</Color>-->
 
     <DataTemplate x:Key="ascendingSortGlyph">
         <Border Width="15" Height="10">
@@ -30,25 +18,6 @@
             <Path Opacity="1"  Data="F0 M1 2 L1 2 L1 13 L1 13 L9 8 Z" Fill="{Binding RelativeSource={RelativeSource Self}, Path=(TextElement.Foreground)}" />
         </Border>
     </DataTemplate>
-    <DataTemplate x:Key="currentItemGlyph">
-        <Path Margin="0,4,0,0" Opacity="1" Fill="#6E6D8F" />
-    </DataTemplate>
-
-    <!--<Style  x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
-        <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-        <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate  TargetType="{x:Type DataGridCell}">
-                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                   ContentTemplate="{TemplateBinding ContentTemplate}" Margin="6,3,6,3"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
 
     <Style x:Key="SelectAllButton" TargetType="{x:Type Button}">
         <Setter Property="MinHeight" Value="24" />
@@ -58,8 +27,8 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="{StaticResource GradientStartColor}" Offset="0" />
-                    <GradientStop Color="{StaticResource GradientStopColor}" Offset="1" />
+                    <GradientStop Color="{StaticResource DataGridGradientStartColor}" Offset="0" />
+                    <GradientStop Color="{StaticResource DataGridGradientStopColor}" Offset="1" />
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
@@ -68,7 +37,6 @@
                 <ControlTemplate  TargetType="{x:Type Button}">
                     <Grid>
                         <Border Name="mainBorder" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" />
-                        <!--<Border Margin="0,0,0,0" Background="#6E6D8F" Width="1" HorizontalAlignment="Right" />-->
                         <Polygon Name="Arrow" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="8,8,3,3" Opacity="0.15" Fill="Black" Stretch="Uniform" Points="0,10 10,10 10,0" />
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -76,8 +44,8 @@
                             <Setter TargetName="mainBorder" Property="Background">
                                 <Setter.Value>
                                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Color="{StaticResource GradientStartColor}" Offset="1" />
-                                        <GradientStop Color="{StaticResource GradientStopColor}" Offset="0" />
+                                        <GradientStop Color="{StaticResource DataGridGradientStartColor}" Offset="1" />
+                                        <GradientStop Color="{StaticResource DataGridGradientStopColor}" Offset="0" />
                                     </LinearGradientBrush>
                                 </Setter.Value>
                             </Setter>
@@ -114,8 +82,8 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="{StaticResource GradientStartColor}" Offset="0" />
-                    <GradientStop Color="{StaticResource GradientStopColor}" Offset="1" />
+                    <GradientStop Color="{StaticResource DataGridGradientStartColor}" Offset="0" />
+                    <GradientStop Color="{StaticResource DataGridGradientStopColor}" Offset="1" />
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
@@ -151,8 +119,8 @@
                             <Setter TargetName="mainBorder" Property="Background">
                                 <Setter.Value>
                                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Color="{StaticResource GradientStartColor}" Offset="1" />
-                                        <GradientStop Color="{StaticResource GradientStopColor}" Offset="0" />
+                                        <GradientStop Color="{StaticResource DataGridGradientStartColor}" Offset="1" />
+                                        <GradientStop Color="{StaticResource DataGridGradientStopColor}" Offset="0" />
                                     </LinearGradientBrush>
                                 </Setter.Value>
                             </Setter>
@@ -171,17 +139,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <!--<DataTemplate x:Key="ColumnHeaderTemplate">
-        <StackPanel Orientation="Vertical">
-            <Image>
-                <Image.Source>
-                    <CroppedBitmap Source="pack://application:,,,/WotDossier.Resources;component/Images/award-images.png" SourceRect=""></CroppedBitmap>
-                </Image.Source>
-            </Image>
-            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        </StackPanel>
-    </DataTemplate>-->
 
     <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
         <Style.Triggers>
@@ -235,23 +192,6 @@
         <Setter Property="FontWeight" Value="Bold"></Setter>
     </Style>
 
-    <!--<Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}">
-        <Style.Triggers>
-            <Trigger Property="IsSelected" Value="true">
-                <Setter Property="Background" Value="#A7CDF0" />
-                <Setter Property="Foreground" Value="Black" />
-                <Setter Property="BorderBrush" Value="Transparent" />
-            </Trigger>
-            <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                <Setter Property="BorderBrush" Value="{DynamicResource {x:Static DataGrid.FocusBorderBrushKey}}" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Background" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=Text, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
-        <Setter Property="BorderBrush" Value="LightGray" />
-        <Setter Property="BorderThickness" Value="0,0,0,0" />
-        <Setter Property="Padding" Value="3,0,0,0" />
-    </Style>-->
-
     <Style x:Key="DataGridCellCenterStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
     </Style>
 
@@ -260,8 +200,8 @@
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="{StaticResource GradientStartColor}" Offset="0" />
-                    <GradientStop Color="{StaticResource GradientStopColor}" Offset="1" />
+                    <GradientStop Color="{StaticResource DataGridGradientStartColor}" Offset="0" />
+                    <GradientStop Color="{StaticResource DataGridGradientStopColor}" Offset="1" />
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>

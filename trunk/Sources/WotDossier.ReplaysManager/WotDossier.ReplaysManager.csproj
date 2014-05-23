@@ -108,11 +108,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ApplicationStyle.xaml">
-      <Link>Styles\ApplicationStyle.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\WotDossier\Styles\Brushes.xaml">
       <Link>Styles\Brushes.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +158,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Styles\Hyperlink.xaml">
+      <Link>Styles\Hyperlink.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Styles\ImplicitStyles.xaml">
       <Link>Styles\ImplicitStyles.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +170,16 @@
     </Page>
     <Page Include="..\WotDossier\Styles\ListBox.xaml">
       <Link>Styles\ListBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\ProgressBar.xaml">
+      <Link>Styles\ProgressBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\RadioButton.xaml">
+      <Link>Styles\RadioButton.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

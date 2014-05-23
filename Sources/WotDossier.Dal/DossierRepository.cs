@@ -163,8 +163,18 @@ namespace WotDossier.Dal
                 playerEntity.Creaded = creaded;
 
                 _dataProvider.Save(playerEntity);
-                _dataProvider.CommitTransaction();
             }
+            else
+            {
+                //user change name
+                if (!Equals(playerEntity.Name, name))
+                {
+                    playerEntity.Name = name;
+                }
+            }
+            
+            _dataProvider.CommitTransaction();
+
             _dataProvider.CloseSession();
             return playerEntity;
         }

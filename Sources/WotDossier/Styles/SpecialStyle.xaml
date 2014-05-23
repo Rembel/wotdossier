@@ -9,6 +9,7 @@
                     xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="DataGrid.xaml" />
         <ResourceDictionary Source="ReplayDataGrid.xaml" />
         <ResourceDictionary Source="DataGridHeaderTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -101,15 +102,5 @@
         <Setter Property="RowStyle" Value="{StaticResource TankDataRowStyle}" />
         <Setter Property="controls:SupplementaryInteraction.Triggers" Value="{StaticResource MouseTriggers}"></Setter>
     </Style>
-
-    <Style TargetType="{x:Type Hyperlink}">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="TextBlock.TextDecorations" Value="{x:Static TextDecorations.Underline}" />
-            </Trigger>
-            <Trigger Property="IsMouseOver" Value="False">
-                <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
+    
 </ResourceDictionary>

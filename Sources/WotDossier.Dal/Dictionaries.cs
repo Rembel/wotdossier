@@ -239,7 +239,14 @@ namespace WotDossier.Dal
 
                     tank.Icon = icon;
 
-                    tank.LevelRange = _tankLevelsMap[tank.Tier][(TankType) tank.Type];
+                    if (_tankLevelsMap.ContainsKey(tank.Tier) && _tankLevelsMap[tank.Tier].ContainsKey((TankType)tank.Type))
+                    {
+                        tank.LevelRange = _tankLevelsMap[tank.Tier][(TankType) tank.Type];
+                    }
+                    else
+                    {
+                        tank.LevelRange = LevelRange.All;
+                    }
 
                     if (_ratingExpectations.ContainsKey(tank.Icon.IconOrig))
                     {

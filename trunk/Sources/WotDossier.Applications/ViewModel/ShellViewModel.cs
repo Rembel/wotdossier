@@ -711,7 +711,7 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         public virtual void Show()
         {
-            ViewTyped.Loaded += OnShellViewActivated;
+            ViewTyped.Loaded += OnWindowLoaded;
             ViewTyped.Show();
 
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
@@ -720,9 +720,9 @@ namespace WotDossier.Applications.ViewModel
             }, null);
         }
 
-        private void OnShellViewActivated(object sender, EventArgs eventArgs)
+        private void OnWindowLoaded(object sender, EventArgs eventArgs)
         {
-            ViewTyped.Loaded -= OnShellViewActivated;
+            ViewTyped.Loaded -= OnWindowLoaded;
             OnLoad();
         }
 

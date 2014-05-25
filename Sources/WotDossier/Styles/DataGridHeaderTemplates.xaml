@@ -680,7 +680,7 @@
 
     <DataTemplate x:Key="LuckyDevilColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Lucky.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/luckyDevil.png" Height="71" Width="67">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lucky}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}"></controls:MedalTooltip>

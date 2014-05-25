@@ -83,6 +83,26 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap battleCitizen {
+            get {
+                object obj = ResourceManager.GetObject("battleCitizen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BattleHero {
+            get {
+                object obj = ResourceManager.GetObject("BattleHero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Beasthunter {
             get {
                 object obj = ResourceManager.GetObject("Beasthunter", resourceCulture);
@@ -103,9 +123,69 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap conqueror1 {
+            get {
+                object obj = ResourceManager.GetObject("conqueror1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap conqueror2 {
+            get {
+                object obj = ResourceManager.GetObject("conqueror2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap conqueror3 {
+            get {
+                object obj = ResourceManager.GetObject("conqueror3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap conqueror4 {
+            get {
+                object obj = ResourceManager.GetObject("conqueror4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap counterblow {
+            get {
+                object obj = ResourceManager.GetObject("counterblow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap crucialShotMedal {
             get {
                 object obj = ResourceManager.GetObject("crucialShotMedal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap crusher {
+            get {
+                object obj = ResourceManager.GetObject("crusher", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +226,66 @@ namespace WotDossier.Resources {
         public static System.Drawing.Bitmap fightingReconnaissanceMedal {
             get {
                 object obj = ResourceManager.GetObject("fightingReconnaissanceMedal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap fireAndSteelMedal {
+            get {
+                object obj = ResourceManager.GetObject("fireAndSteelMedal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap fireAndSword1 {
+            get {
+                object obj = ResourceManager.GetObject("fireAndSword1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap fireAndSword2 {
+            get {
+                object obj = ResourceManager.GetObject("fireAndSword2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap fireAndSword3 {
+            get {
+                object obj = ResourceManager.GetObject("fireAndSword3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap fireAndSword4 {
+            get {
+                object obj = ResourceManager.GetObject("fireAndSword4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap forTacticalOperations1 {
+            get {
+                object obj = ResourceManager.GetObject("forTacticalOperations1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +393,146 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap heavyFireMedal {
+            get {
+                object obj = ResourceManager.GetObject("heavyFireMedal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap heroesOfRassenay {
+            get {
+                object obj = ResourceManager.GetObject("heroesOfRassenay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle1_battlefield {
+            get {
+                object obj = ResourceManager.GetObject("histBattle1_battlefield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle1_historyLessons {
+            get {
+                object obj = ResourceManager.GetObject("histBattle1_historyLessons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle2_battlefield {
+            get {
+                object obj = ResourceManager.GetObject("histBattle2_battlefield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle2_historyLessons {
+            get {
+                object obj = ResourceManager.GetObject("histBattle2_historyLessons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle3_battlefield {
+            get {
+                object obj = ResourceManager.GetObject("histBattle3_battlefield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle3_historyLessons {
+            get {
+                object obj = ResourceManager.GetObject("histBattle3_historyLessons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle4_battlefield {
+            get {
+                object obj = ResourceManager.GetObject("histBattle4_battlefield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle4_historyLessons {
+            get {
+                object obj = ResourceManager.GetObject("histBattle4_historyLessons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle5_battlefield {
+            get {
+                object obj = ResourceManager.GetObject("histBattle5_battlefield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle5_historyLessons {
+            get {
+                object obj = ResourceManager.GetObject("histBattle5_historyLessons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle6_battlefield {
+            get {
+                object obj = ResourceManager.GetObject("histBattle6_battlefield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap histBattle6_historyLessons {
+            get {
+                object obj = ResourceManager.GetObject("histBattle6_historyLessons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap huntsman {
             get {
                 object obj = ResourceManager.GetObject("huntsman", resourceCulture);
@@ -303,6 +583,46 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap kampfer1 {
+            get {
+                object obj = ResourceManager.GetObject("kampfer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap kampfer2 {
+            get {
+                object obj = ResourceManager.GetObject("kampfer2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap kampfer3 {
+            get {
+                object obj = ResourceManager.GetObject("kampfer3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap kampfer4 {
+            get {
+                object obj = ResourceManager.GetObject("kampfer4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap kingofthehill {
             get {
                 object obj = ResourceManager.GetObject("kingofthehill", resourceCulture);
@@ -313,9 +633,19 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Lucky {
+        public static System.Drawing.Bitmap luckyDevil {
             get {
-                object obj = ResourceManager.GetObject("Lucky", resourceCulture);
+                object obj = ResourceManager.GetObject("luckyDevil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap maingun {
+            get {
+                object obj = ResourceManager.GetObject("maingun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +743,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerBrit {
+        public static System.Drawing.Bitmap mechanicEngineer0 {
             get {
-                object obj = ResourceManager.GetObject("MechanicEngineerBrit", resourceCulture);
+                object obj = ResourceManager.GetObject("mechanicEngineer0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +753,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerBritgray {
+        public static System.Drawing.Bitmap mechanicEngineer1 {
             get {
-                object obj = ResourceManager.GetObject("MechanicEngineerBritgray", resourceCulture);
+                object obj = ResourceManager.GetObject("mechanicEngineer1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +763,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerChina {
+        public static System.Drawing.Bitmap mechanicEngineer2 {
             get {
-                object obj = ResourceManager.GetObject("MechanicEngineerChina", resourceCulture);
+                object obj = ResourceManager.GetObject("mechanicEngineer2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +773,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerChinagray {
+        public static System.Drawing.Bitmap mechanicEngineer3 {
             get {
-                object obj = ResourceManager.GetObject("MechanicEngineerChinagray", resourceCulture);
+                object obj = ResourceManager.GetObject("mechanicEngineer3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,9 +783,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerFrance {
+        public static System.Drawing.Bitmap mechanicEngineer4 {
             get {
-                object obj = ResourceManager.GetObject("MechanicEngineerFrance", resourceCulture);
+                object obj = ResourceManager.GetObject("mechanicEngineer4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,9 +793,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerFrancegray {
+        public static System.Drawing.Bitmap mechanicEngineer5 {
             get {
-                object obj = ResourceManager.GetObject("MechanicEngineerFrancegray", resourceCulture);
+                object obj = ResourceManager.GetObject("mechanicEngineer5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -473,69 +803,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerGermany {
+        public static System.Drawing.Bitmap mechanicEngineer6 {
             get {
-                object obj = ResourceManager.GetObject("MechanicEngineerGermany", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerGermanygray {
-            get {
-                object obj = ResourceManager.GetObject("MechanicEngineerGermanygray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineergray {
-            get {
-                object obj = ResourceManager.GetObject("MechanicEngineergray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerUSA {
-            get {
-                object obj = ResourceManager.GetObject("MechanicEngineerUSA", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerUSAgray {
-            get {
-                object obj = ResourceManager.GetObject("MechanicEngineerUSAgray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerUSSR {
-            get {
-                object obj = ResourceManager.GetObject("MechanicEngineerUSSR", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap MechanicEngineerUSSRgray {
-            get {
-                object obj = ResourceManager.GetObject("MechanicEngineerUSSRgray", resourceCulture);
+                object obj = ResourceManager.GetObject("mechanicEngineer6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -576,6 +846,16 @@ namespace WotDossier.Resources {
         public static System.Drawing.Bitmap MedalAbrams4 {
             get {
                 object obj = ResourceManager.GetObject("MedalAbrams4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap medalAntiSpgFire {
+            get {
+                object obj = ResourceManager.GetObject("medalAntiSpgFire", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -673,6 +953,16 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap medalCoolBlood {
+            get {
+                object obj = ResourceManager.GetObject("medalCoolBlood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap MedalCrucialContribution {
             get {
                 object obj = ResourceManager.GetObject("MedalCrucialContribution", resourceCulture);
@@ -746,6 +1036,16 @@ namespace WotDossier.Resources {
         public static System.Drawing.Bitmap MedalFadin {
             get {
                 object obj = ResourceManager.GetObject("MedalFadin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap medalGore {
+            get {
+                object obj = ResourceManager.GetObject("medalGore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -963,6 +1263,16 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap medalMonolith {
+            get {
+                object obj = ResourceManager.GetObject("medalMonolith", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap MedalNikolas {
             get {
                 object obj = ResourceManager.GetObject("MedalNikolas", resourceCulture);
@@ -1053,6 +1363,16 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap medalStark {
+            get {
+                object obj = ResourceManager.GetObject("medalStark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap MedalTamadaYoshio {
             get {
                 object obj = ResourceManager.GetObject("MedalTamadaYoshio", resourceCulture);
@@ -1073,6 +1393,16 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap medalWittmann {
+            get {
+                object obj = ResourceManager.GetObject("medalWittmann", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Mousebane {
             get {
                 object obj = ResourceManager.GetObject("Mousebane", resourceCulture);
@@ -1083,9 +1413,39 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap noMansLand {
+            get {
+                object obj = ResourceManager.GetObject("noMansLand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Pattonvalley {
             get {
                 object obj = ResourceManager.GetObject("Pattonvalley", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap promisingFighterMedal {
+            get {
+                object obj = ResourceManager.GetObject("promisingFighterMedal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pyromaniacMedal {
+            get {
+                object obj = ResourceManager.GetObject("pyromaniacMedal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1133,6 +1493,56 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap sniper2 {
+            get {
+                object obj = ResourceManager.GetObject("sniper2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap soldierOfFortune1 {
+            get {
+                object obj = ResourceManager.GetObject("soldierOfFortune1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap soldierOfFortune2 {
+            get {
+                object obj = ResourceManager.GetObject("soldierOfFortune2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap soldierOfFortune3 {
+            get {
+                object obj = ResourceManager.GetObject("soldierOfFortune3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap soldierOfFortune4 {
+            get {
+                object obj = ResourceManager.GetObject("soldierOfFortune4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Steelwall {
             get {
                 object obj = ResourceManager.GetObject("Steelwall", resourceCulture);
@@ -1173,16 +1583,6 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Tank {
-            get {
-                object obj = ResourceManager.GetObject("Tank", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap TankExpert {
             get {
                 object obj = ResourceManager.GetObject("TankExpert", resourceCulture);
@@ -1193,9 +1593,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TankExpertBrit {
+        public static System.Drawing.Bitmap tankExpert0 {
             get {
-                object obj = ResourceManager.GetObject("TankExpertBrit", resourceCulture);
+                object obj = ResourceManager.GetObject("tankExpert0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1203,9 +1603,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TankExpertBritgray {
+        public static System.Drawing.Bitmap tankExpert1 {
             get {
-                object obj = ResourceManager.GetObject("TankExpertBritgray", resourceCulture);
+                object obj = ResourceManager.GetObject("tankExpert1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1213,9 +1613,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TankExpertChina {
+        public static System.Drawing.Bitmap tankExpert2 {
             get {
-                object obj = ResourceManager.GetObject("TankExpertChina", resourceCulture);
+                object obj = ResourceManager.GetObject("tankExpert2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1223,9 +1623,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TankExpertChinagray {
+        public static System.Drawing.Bitmap tankExpert3 {
             get {
-                object obj = ResourceManager.GetObject("TankExpertChinagray", resourceCulture);
+                object obj = ResourceManager.GetObject("tankExpert3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1233,9 +1633,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TankExpertFrance {
+        public static System.Drawing.Bitmap tankExpert4 {
             get {
-                object obj = ResourceManager.GetObject("TankExpertFrance", resourceCulture);
+                object obj = ResourceManager.GetObject("tankExpert4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1243,9 +1643,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TankExpertFrancegray {
+        public static System.Drawing.Bitmap tankExpert5 {
             get {
-                object obj = ResourceManager.GetObject("TankExpertFrancegray", resourceCulture);
+                object obj = ResourceManager.GetObject("tankExpert5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1253,69 +1653,9 @@ namespace WotDossier.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TankExpertGermany {
+        public static System.Drawing.Bitmap tankExpert6 {
             get {
-                object obj = ResourceManager.GetObject("TankExpertGermany", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TankExpertGermanygray {
-            get {
-                object obj = ResourceManager.GetObject("TankExpertGermanygray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TankExpertgray2 {
-            get {
-                object obj = ResourceManager.GetObject("TankExpertgray2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TankExpertUSA {
-            get {
-                object obj = ResourceManager.GetObject("TankExpertUSA", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TankExpertUSAgray {
-            get {
-                object obj = ResourceManager.GetObject("TankExpertUSAgray", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TankExpertUSSR {
-            get {
-                object obj = ResourceManager.GetObject("TankExpertUSSR", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TankExpertUSSRgray {
-            get {
-                object obj = ResourceManager.GetObject("TankExpertUSSRgray", resourceCulture);
+                object obj = ResourceManager.GetObject("tankExpert6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1336,6 +1676,26 @@ namespace WotDossier.Resources {
         public static System.Drawing.Bitmap Warrior {
             get {
                 object obj = ResourceManager.GetObject("Warrior", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap WFC2014 {
+            get {
+                object obj = ResourceManager.GetObject("WFC2014", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap whiteTiger {
+            get {
+                object obj = ResourceManager.GetObject("whiteTiger", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

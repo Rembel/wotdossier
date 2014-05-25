@@ -248,7 +248,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sturdy}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Sturdy}" />
                     </ToolTipService.ToolTip>
                 </controls:AchievementCompareRow>
-                <controls:AchievementCompareRow FirstValue="{Binding First.LuckyDevil}" SecondValue="{Binding Second.LuckyDevil}" AchievementIconSource="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Lucky.png">
+                <controls:AchievementCompareRow FirstValue="{Binding First.LuckyDevil}" SecondValue="{Binding Second.LuckyDevil}" AchievementIconSource="pack://application:,,,/WotDossier.Resources;component/Images/Medals/LuckyDevil.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lucky}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}" />
                     </ToolTipService.ToolTip>

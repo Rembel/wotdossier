@@ -261,7 +261,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Sturdy}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Sturdy}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding LuckyDevil}" Delta="{Binding LuckyDevilDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Lucky.png">
+                <controls:MedalAchievement Value="{Binding LuckyDevil}" Delta="{Binding LuckyDevilDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/LuckyDevil.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Lucky}" Text="{x:Static resources:Resources.Tooltip_CommemorativeAchievements_Lucky}" />
                     </ToolTipService.ToolTip>

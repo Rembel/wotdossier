@@ -154,7 +154,7 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public bool ExtendPropertiesData(TankJson tank)
         {
-            if (Dictionaries.Instance.Tanks.ContainsKey(tank.UniqueId()))
+            if (Dictionaries.Instance.Tanks.ContainsKey(tank.UniqueId()) && !Dictionaries.Instance.NotExistsedTanksList.Contains(tank.UniqueId()))
             {
                 tank.Description = Dictionaries.Instance.Tanks[tank.UniqueId()];
                 tank.Frags =

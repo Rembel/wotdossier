@@ -18,35 +18,6 @@ namespace WotDossier.Applications.BattleModeStrategies
     {
         private readonly DossierRepository _dossierRepository;
 
-        private readonly List<int> _notExistsedTanksList = new List<int>
-                {
-                    30251,//T-34-1 training
-                    255,//Spectator
-                    10226,//pziii_training
-                    10227,//pzvib_tiger_ii_training
-                    10228,//pzv_training
-                    220,//t_34_85_training
-                    20212,//m4a3e8_sherman_training
-                    5,//KV
-                    20009,//T23
-                    222,//t44_122
-                    223,//t44_85
-                    30002,//Type 59 G
-                    20211,//sexton_i
-                    30003,//WZ-111
-                };
-
-        /// <summary>
-        /// Gets the not existsed tanks list.
-        /// </summary>
-        /// <value>
-        /// The not existsed tanks list.
-        /// </value>
-        public List<int> NotExistsedTanksList
-        {
-            get { return _notExistsedTanksList; }
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="StatisticViewStrategyBase"/> class.
         /// </summary>
@@ -225,7 +196,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         private bool IsExistedtank(TankDescription tankDescription)
         {
-            return !NotExistsedTanksList.Contains(tankDescription.UniqueId());
+            return !Dictionaries.Instance.NotExistsedTanksList.Contains(tankDescription.UniqueId());
         }
 
         /// <summary>

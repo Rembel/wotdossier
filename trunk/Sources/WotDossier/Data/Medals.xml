@@ -97,7 +97,7 @@
     <!--невозмутимый-->
     <medal name="Medal_IronMan" id="151" icon="IronMan" type="0"/>
     <!--Счастливчик-->
-    <medal name="Medal_Lucky" id="152" icon="Lucky" type="0"/>
+    <medal name="Medal_Lucky" id="152" icon="LuckyDevil" type="0"/>
     <!--Долина паттонов-->
     <medal name="Medal_PattonValley" id="154" icon="Pattonvalley" type="1"/>
     <!--Живучий-->

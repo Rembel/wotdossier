@@ -21,7 +21,10 @@ namespace WotDossier.Domain.Tank
             Frags = new BindingList<FragsJson>(),
             Achievements7x7 = new Achievements7x7(),
             AchievementsHistorical = new AchievementsHistorical(),
-            Historical = new StatisticJson()
+            Historical = new StatisticJson(),
+            FortBattles = new StatisticJson(),
+            FortAchievements = new AchievementsFort(),
+            FortSorties = new StatisticJson()
         };
 
         /// <summary>
@@ -64,6 +67,36 @@ namespace WotDossier.Domain.Tank
         {
             get { return _historical; }
             set { _historical = value; }
+        }
+
+        private StatisticJson _fortBattles = new StatisticJson();
+        /// <summary>
+        /// Gets or sets the fort battles stat.
+        /// </summary>
+        public StatisticJson FortBattles
+        {
+            get { return _fortBattles; }
+            set { _fortBattles = value; }
+        }
+
+        private StatisticJson _fortSorties = new StatisticJson();
+        /// <summary>
+        /// Gets or sets the fort sorties.
+        /// </summary>
+        public StatisticJson FortSorties
+        {
+            get { return _fortSorties; }
+            set { _fortSorties = value; }
+        }
+
+        private AchievementsFort _fortAchievements = new AchievementsFort();
+        /// <summary>
+        /// Gets or sets the fort achievements.
+        /// </summary>
+        public AchievementsFort FortAchievements
+        {
+            get { return _fortAchievements; }
+            set { _fortAchievements = value; }
         }
 
         /// <summary>
@@ -127,7 +160,6 @@ namespace WotDossier.Domain.Tank
         public byte[] Raw { get; set; }
 
         private int _uniqueId = -1;
-        
         public int UniqueId()
         {
             if (_uniqueId == -1)
@@ -147,5 +179,15 @@ namespace WotDossier.Domain.Tank
         {
             return string.Format("{0}", Description.Title);
         }
+    }
+
+    public class AchievementsFort
+    {
+        public int conqueror;
+        public int fireAndSword;
+        public int crusher;
+        public int counterblow;
+        public int soldierOfFortune;
+        public int kampfer;
     }
 }

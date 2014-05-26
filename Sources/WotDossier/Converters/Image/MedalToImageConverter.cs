@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using WotDossier.Domain;
+using WotDossier.Resources;
 
 namespace WotDossier.Converters
 {
@@ -32,7 +33,8 @@ namespace WotDossier.Converters
         {
             Medal medal = (Medal)value;
             string iconName = string.IsNullOrEmpty(medal.Icon) ? medal.Name : medal.Icon;
-            BitmapImage bitmapImage = new BitmapImage(new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Medals/{0}.png", iconName)));
+            var uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Medals/{0}.png", iconName));
+            BitmapImage bitmapImage = ImageCache.GetBitmapImage(uriSource);
             return bitmapImage;
         }
 

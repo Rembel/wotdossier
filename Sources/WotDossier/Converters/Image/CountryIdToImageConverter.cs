@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
-using System.Windows.Media.Imaging;
+using WotDossier.Resources;
 
 namespace WotDossier.Converters
 {
     public class CountryIdToImageConverter : IValueConverter
     {
         private static readonly CountryIdToImageConverter _default = new CountryIdToImageConverter();
-        private static readonly Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
-
+        
         /// <summary>
         /// Gets the default.
         /// </summary>
@@ -35,19 +33,10 @@ namespace WotDossier.Converters
             if (countryId > -1)
             {
                 Uri uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Countries/slot_bright_{0}.png", countryId));
-                var bitmapImage = GetBitmapImage(uriSource);
+                var bitmapImage = ImageCache.GetBitmapImage(uriSource);
                 return bitmapImage;
             }
             return null;
-        }
-
-        private static BitmapImage GetBitmapImage(Uri uriSource)
-        {
-            if (!_cache.ContainsKey(uriSource))
-            {
-                _cache.Add(uriSource, new BitmapImage(uriSource));
-            }
-            return _cache[uriSource];
         }
 
         /// <summary>

@@ -2182,4 +2182,100 @@ Survive %: {1:0.00}</value>
   <data name="Tooltip_StepAchievements_ForTacticalOperations" xml:space="preserve">
     <value />
   </data>
+  <data name="Medal_7x7_ArmoredFist" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_ForTacticalOperations1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_GodOfWar" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_HeavyFireMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_KingOfTheHill" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_NoMansLand" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_PyromaniacMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_RangerMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_TacticalBreakthrough" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_ArmoredFist" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_KingOfTheHill" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_PromisingFighterMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_PyromaniacMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_RangerMedal" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
+    <value />
+  </data>
 </root>

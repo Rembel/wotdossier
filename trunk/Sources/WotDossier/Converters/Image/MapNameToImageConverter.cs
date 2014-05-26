@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using WotDossier.Resources;
 
 namespace WotDossier.Converters
 {
     public class MapNameToImageConverter : IValueConverter
     {
         private static readonly MapNameToImageConverter _default = new MapNameToImageConverter();
-
-        private static readonly Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
 
         /// <summary>
         /// Gets the default.
@@ -36,18 +35,9 @@ namespace WotDossier.Converters
 
             var uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Maps/{0}.jpg", mapName));
 
-            BitmapImage bitmapImage = GetBitmapImage(uriSource);
+            BitmapImage bitmapImage = ImageCache.GetBitmapImage(uriSource);
 
             return bitmapImage;
-        }
-
-        private static BitmapImage GetBitmapImage(Uri uriSource)
-        {
-            if (!_cache.ContainsKey(uriSource))
-            {
-                _cache.Add(uriSource, new BitmapImage(uriSource));
-            }
-            return _cache[uriSource];
         }
 
         /// <summary>

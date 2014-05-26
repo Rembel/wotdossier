@@ -723,12 +723,208 @@
       <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/forTacticalOperations1.png" Height="71" Width="67">
         <ToolTipService.ToolTip>
           <ToolTip>
-            <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ekins}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_ForTacticalOperations}"></controls:MedalTooltip>
+            <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_ForTacticalOperations1}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_ForTacticalOperations}"></controls:MedalTooltip>
           </ToolTip>
         </ToolTipService.ToolTip>
       </Image>
       <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
   </DataTemplate>
+
+    <DataTemplate x:Key="KingOfTheHillColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/KingOfTheHill.png" Height="71"
+                   Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_KingOfTheHill}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_KingOfTheHill}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="ArmoredFistColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ArmoredFist.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_ArmoredFist}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_ArmoredFist}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CrucialShotMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/crucialShotMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_CrucialShotMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_CrucialShotMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="FightingReconnaissanceMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FightingReconnaissanceMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FightingReconnaissanceMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FightingReconnaissanceMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="GeniusForWarMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GeniusForWarMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_GeniusForWarMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_GeniusForWarMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="GodOfWarColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GodOfWar.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_GodOfWar}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_GodOfWar}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="TacticalBreakthroughColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/TacticalBreakthrough.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_TacticalBreakthrough}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_TacticalBreakthrough}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="WolfAmongSheepMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/WolfAmongSheepMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_WolfAmongSheepMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_WolfAmongSheepMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="WillToWinSpiritColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/WillToWinSpirit.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_WillToWinSpirit}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_WillToWinSpirit}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PromisingFighterMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PromisingFighterMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PromisingFighterMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PromisingFighterMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="HeavyFireMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HeavyFireMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_HeavyFireMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_HeavyFireMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="RangerMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/RangerMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_RangerMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_RangerMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="FireAndSteelMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FireAndSteelMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FireAndSteelMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FireAndSteelMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="PyromaniacMedalColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PyromaniacMedal.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PyromaniacMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PyromaniacMedal}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+  
+    <DataTemplate x:Key="NoMansLandColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/NoMansLand.png" Height="71" Width="67">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_NoMansLand}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_NoMansLand}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
   
 </ResourceDictionary>

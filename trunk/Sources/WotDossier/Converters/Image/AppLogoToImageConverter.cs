@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using WotDossier.Resources;
 
 namespace WotDossier.Converters
 {
     public class AppLogoToImageConverter : IValueConverter
     {
         private static readonly AppLogoToImageConverter _default = new AppLogoToImageConverter();
-
-        private static readonly Dictionary<Uri, BitmapImage> _cache = new Dictionary<Uri, BitmapImage>();
 
         /// <summary>
         /// Gets the default.
@@ -38,18 +36,9 @@ namespace WotDossier.Converters
             if (logo != null)
             {
                 Uri uriSource = new Uri(string.Format(@"pack://application:,,,/{0};component/{1}", Assembly.GetEntryAssembly().GetName().Name, logo));
-                bitmapImage = GetBitmapImage(uriSource);
+                bitmapImage = ImageCache.GetBitmapImage(uriSource);
             }
             return bitmapImage;
-        }
-
-        private static BitmapImage GetBitmapImage(Uri uriSource)
-        {
-            if (!_cache.ContainsKey(uriSource))
-            {
-                _cache.Add(uriSource, new BitmapImage(uriSource));
-            }
-            return _cache[uriSource];
         }
 
         /// <summary>

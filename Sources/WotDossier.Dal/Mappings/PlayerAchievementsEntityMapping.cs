@@ -55,9 +55,9 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Sinai, "Sinai");
 			Map(v => v.MasterGunnerLongest, "MasterGunnerLongest");
 			Map(v => v.SharpshooterLongest, "SharpshooterLongest");
-            Map(v => v.Ranger, "Ranger");
-			Map(v => v.CoolHeaded, "CoolHeaded");
-			Map(v => v.Spartan, "Spartan");
+            Map(v => v.Huntsman, "Ranger");
+			Map(v => v.IronMan, "CoolHeaded");
+			Map(v => v.Sturdy, "Spartan");
 			Map(v => v.LuckyDevil, "LuckyDevil");
             Map(v => v.Kay, "Kay");
             Map(v => v.Carius, "Carius");

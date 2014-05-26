@@ -19,5 +19,21 @@
         public int crucialShot;
         public int crucialShotMedal;
         public int forTacticalOperations;
+
+        #region 0.9.1
+
+        public int promisingFighter;
+        public int promisingFighterMedal;
+        public int heavyFire;
+        public int heavyFireMedal;
+        public int ranger;
+        public int rangerMedal;
+        public int fireAndSteel;
+        public int fireAndSteelMedal;
+        public int pyromaniac;
+        public int pyromaniacMedal;
+        public int noMansLand;
+
+        #endregion
     }
 }

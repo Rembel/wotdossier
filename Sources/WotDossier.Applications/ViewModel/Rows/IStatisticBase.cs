@@ -1,8 +1,9 @@
 ﻿using System;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface IStatisticBase : IStatisticXp, IStatisticBattleAwards, IStatisticEpic, IStatisticSpecialAwards, IStatisticMedals, IStatisticSeries, IStatisticTeamBattleAwards
+    public interface IStatisticBase : IStatisticXp, IRandomBattlesAchievements, ITeamBattlesAchievements, IHistoricalBattlesAchievements
     {
         double AvgFrags { get; }
         double AvgSpotted { get; }

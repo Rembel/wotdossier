@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using WotDossier.Common;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Entities
 {
@@ -8,7 +9,7 @@ namespace WotDossier.Domain.Entities
     ///     Object representation for table 'TeamBattlesAchievements'.
     /// </summary>
     [Serializable]
-    public class TeamBattlesAchievementsEntity : EntityBase
+    public class TeamBattlesAchievementsEntity : EntityBase, ITeamBattlesAchievements
     {
         #region Property names
         
@@ -27,7 +28,7 @@ namespace WotDossier.Domain.Entities
         public virtual int WolfAmongSheep { get; set; }
 
         public virtual int WolfAmongSheepMedal { get; set; }
-
+        
         public virtual int GeniusForWar { get; set; }
 
         public virtual int GeniusForWarMedal { get; set; }
@@ -55,6 +56,28 @@ namespace WotDossier.Domain.Entities
         public virtual int CrucialShotMedal { get; set; }
 
         public virtual int ForTacticalOperations { get; set; }
+
+        public virtual int PromisingFighter { get; set; }
+
+        public virtual int PromisingFighterMedal { get; set; }
+
+        public virtual int HeavyFire { get; set; }
+
+        public virtual int HeavyFireMedal { get; set; }
+
+        public virtual int Ranger { get; set; }
+
+        public virtual int RangerMedal { get; set; }
+
+        public virtual int FireAndSteel { get; set; }
+
+        public virtual int FireAndSteelMedal { get; set; }
+
+        public virtual int Pyromaniac { get; set; }
+
+        public virtual int PyromaniacMedal { get; set; }
+
+        public virtual int NoMansLand { get; set; }
 
         #region Collections
 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Ookii.Dialogs.Wpf;
+using WotDossier.Common.Reflection;
 
 namespace WotDossier.Applications.Logic.Export
 {
@@ -17,21 +18,23 @@ namespace WotDossier.Applications.Logic.Export
 
             Type itemType = list.GetType().GetGenericArguments()[0];
 
-            List<PropertyInfo> properties = new List<PropertyInfo>();
+            List<PropertyInfoEx> properties = new List<PropertyInfoEx>();
 
-            foreach (Type exportInterface in exportInterfaces)
+            var interfaces = ExtendWithParent(exportInterfaces);
+
+            foreach (Type exportInterface in interfaces)
             {
                 if (exportInterface.IsAssignableFrom(itemType))
                 {
-                    properties.AddRange(exportInterface.GetProperties());
+                    properties.AddRange(exportInterface.GetPublicProperties());
                 }
             }
 
-            builder.AppendLine(string.Join(";", properties.Select(x => x.Name).ToArray()));
+            builder.AppendLine(string.Join(";", properties.Select(x => x.PropertyInfo.Name).ToArray()));
 
             foreach (object item in list)
             {
-                List<object> values = properties.Where(x => x.DeclaringType.IsAssignableFrom(itemType)).Select(propertyInfo => propertyInfo.GetValue(item, null)).ToList();
+                List<object> values = properties.Where(x => x.PropertyInfo.DeclaringType.IsAssignableFrom(itemType)).Select(propertyInfo => propertyInfo.PropertyInfo.GetValue(item, null)).ToList();
                 builder.AppendLine(string.Join(";", values.ToArray()));
             }
 
@@ -48,6 +51,11 @@ namespace WotDossier.Applications.Logic.Export
                     writer.Write(builder);
                 }
             }
+        }
+
+        private IEnumerable<Type> ExtendWithParent(List<Type> exportInterfaces)
+        {
+            return exportInterfaces;
         }
     }
 }

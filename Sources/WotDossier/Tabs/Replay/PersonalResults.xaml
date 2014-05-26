@@ -63,7 +63,7 @@
         </Style>
 
         <!--<ImageBrush x:Key="bg" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/Maps\content_bg.png" Stretch="Fill" />-->
-        <DataTemplate x:Key="CombatEffectRowTemplate">
+        <DataTemplate x:Key="CombatEffectRowTemplate" DataType="replay:CombatTarget">
             <Grid HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="148"></ColumnDefinition>
@@ -83,45 +83,45 @@
                             <TextBlock Text="{Binding Path=TeamMember.FullName}"></TextBlock>
                     </ToolTipService.ToolTip>
                 </TextBlock>
-                <Image Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left"></Image>
-                <TextBlock Margin="40,0,0,0" Grid.Column="1" Text="{Binding Path=TeamMember.Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                <Image Grid.Row="0" Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left"></Image>
+                <TextBlock Margin="40,0,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Path=TeamMember.Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
                 <!--frag-->
-                <Image Grid.Column="2" Stretch="None" Style="{StaticResource FragImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="2" Stretch="None" Style="{StaticResource FragImageStyle}" HorizontalAlignment="Left">
                 </Image>
                 <!--damage-->
-                <Image Grid.Column="3" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/03s.png" Stretch="None" Style="{StaticResource DamageImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="3" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/03s.png" Stretch="None" Style="{StaticResource DamageImageStyle}" HorizontalAlignment="Left">
                     <Image.ToolTip>
-                        <TextBlock Text="{Binding damageDealtTooltip}"></TextBlock>
+                        <TextBlock Text="{Binding DamageDealtTooltip}"></TextBlock>
                     </Image.ToolTip>
                 </Image>
-                <Border Margin="18,18,5,0" Width="Auto" Grid.Column="3" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Left">
-                    <TextBlock Text="{Binding hits}" Foreground="#5C5A4A" FontSize="10">
+                <Border Margin="18,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="3" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Left">
+                    <TextBlock Text="{Binding Hits}" Foreground="#5C5A4A" FontSize="10">
                         <TextBlock.ToolTip>
-                            <TextBlock Text="{Binding damageDealtTooltip}"></TextBlock>
+                            <TextBlock Text="{Binding DamageDealtTooltip}"></TextBlock>
                         </TextBlock.ToolTip>
                     </TextBlock>
                 </Border>
                 <!--crits-->
-                <Image Grid.Column="4" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/04s.png" Stretch="None" Style="{StaticResource CritsImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="4" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/04s.png" Stretch="None" Style="{StaticResource CritsImageStyle}" HorizontalAlignment="Left">
                     <Image.ToolTip>
-                        <TextBlock Text="{Binding critsTooltip}"></TextBlock>
+                        <TextBlock Text="{Binding CritsTooltip}"></TextBlock>
                     </Image.ToolTip>
                 </Image>
-                <Border Margin="18,18,5,0" Width="Auto" Grid.Column="4" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Left">
-                    <TextBlock Text="{Binding crits}" Foreground="#5C5A4A" FontSize="10">
+                <Border Margin="18,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="4" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Left">
+                    <TextBlock Text="{Binding Crits}" Foreground="#5C5A4A" FontSize="10">
                         <TextBlock.ToolTip>
-                            <TextBlock Text="{Binding critsTooltip}"></TextBlock>
+                            <TextBlock Text="{Binding CritsTooltip}"></TextBlock>
                         </TextBlock.ToolTip>
                     </TextBlock>
                 </Border>
-                <Image Grid.Column="5" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/01s.png" Stretch="None" Style="{StaticResource DamageAssistImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="5" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/01s.png" Stretch="None" Style="{StaticResource DamageAssistImageStyle}" HorizontalAlignment="Left">
                     <Image.ToolTip>
-                        <TextBlock Text="{Binding damageAssistedTooltip}"></TextBlock>
+                        <TextBlock Text="{Binding DamageAssistedTooltip}"></TextBlock>
                     </Image.ToolTip>
                 </Image>
-                <Image Grid.Column="6" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/02s.png" Stretch="None" Style="{StaticResource SpottedImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="6" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/02s.png" Stretch="None" Style="{StaticResource SpottedImageStyle}" HorizontalAlignment="Left">
                     <Image.ToolTip>
-                        <TextBlock Text="{Binding spottedTooltip}"></TextBlock>
+                        <TextBlock Text="{Binding SpottedTooltip}"></TextBlock>
                     </Image.ToolTip>
                 </Image>
                 <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/table_border_gradient.png" ></Image>

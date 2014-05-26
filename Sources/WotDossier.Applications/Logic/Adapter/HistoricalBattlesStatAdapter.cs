@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class HistoricalBattlesStatAdapter : AbstractStatisticAdapter<HistoricalBattlesStatisticEntity>
+    public class HistoricalBattlesStatAdapter : AbstractStatisticAdapter<HistoricalBattlesStatisticEntity>, IHistoricalBattlesAchievements
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.

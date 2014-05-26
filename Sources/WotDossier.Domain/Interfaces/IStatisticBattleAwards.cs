@@ -1,4 +1,4 @@
-﻿namespace WotDossier.Applications.ViewModel.Rows
+﻿namespace WotDossier.Domain.Interfaces
 {
     public interface IStatisticBattleAwards
     {

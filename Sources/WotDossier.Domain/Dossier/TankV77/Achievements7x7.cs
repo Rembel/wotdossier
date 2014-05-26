@@ -26,7 +26,7 @@
         public int promisingFighterMedal;
         public int heavyFire;
         public int heavyFireMedal;
-        public int range;
+        public int ranger;
         public int rangerMedal;
         public int fireAndSteel;
         public int fireAndSteelMedal;

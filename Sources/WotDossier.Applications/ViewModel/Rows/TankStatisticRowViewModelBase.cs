@@ -328,92 +328,10 @@ namespace WotDossier.Applications.ViewModel.Rows
             CountryId = tank.Common.countryid;
             TankId = tank.Common.tankid;
             TankUniqueId = tank.UniqueId();
-            Mileage = tank.Common.mileage / 1000;    
-            
-            #region [ ITankRowBattleAwards ]
-            BattleHero = tank.Achievements.battleHeroes;
-            Warrior = tank.Achievements.warrior;
-            Invader = tank.Achievements.invader;
-            Sniper = tank.Achievements.sniper;
-            Defender = tank.Achievements.defender;
-            SteelWall = tank.Achievements.steelwall;
-            Confederate = tank.Achievements.supporter;
-            Scout = tank.Achievements.scout;
-            PatrolDuty = tank.Achievements.evileye;
-            BrothersInArms = tank.Achievements.medalBrothersInArms;
-            CrucialContribution = tank.Achievements.medalCrucialContribution;
-            IronMan = tank.Achievements.ironMan;
-            LuckyDevil = tank.Achievements.luckyDevil;
-            Sturdy = tank.Achievements.sturdy;
-            Huntsman = tank.Achievements.huntsman;
-            MainGun = tank.Achievements.mainGun;
-            Sniper2 = tank.Achievements.sniper2;
-            #endregion
+            Mileage = tank.Common.mileage / 1000;
 
-            #region [ ITankRowEpic ]
-            Boelter = tank.Achievements.medalWittmann;
-            RadleyWalters = tank.Achievements.medalRadleyWalters;
-            LafayettePool = tank.Achievements.medalLafayettePool;
-            Orlik = tank.Achievements.medalOrlik;
-            Oskin = tank.Achievements.medalOskin;
-            Lehvaslaiho = tank.Achievements.medalLehvaslaiho;
-            Nikolas = tank.Achievements.medalNikolas;
-            Halonen = tank.Achievements.medalHalonen;
-            Burda = tank.Achievements.medalBurda;
-            Pascucci = tank.Achievements.medalPascucci;
-            Dumitru = tank.Achievements.medalDumitru;
-            TamadaYoshio = tank.Achievements.medalTamadaYoshio;
-            Billotte = tank.Achievements.medalBillotte;
-            BrunoPietro = tank.Achievements.medalBrunoPietro;
-            Tarczay = tank.Achievements.medalTarczay;
-            Kolobanov = tank.Achievements.medalKolobanov;
-            Fadin = tank.Achievements.medalFadin;
-            HeroesOfRassenay = tank.Achievements.heroesOfRassenay;
-            DeLanglade = tank.Achievements.medalDeLanglade;
-            #endregion
-
-            #region [ ITankRowMedals]
-            Kay = tank.Achievements.medalKay;
-            Carius = tank.Achievements.medalCarius;
-            Knispel = tank.Achievements.medalKnispel;
-            Poppel = tank.Achievements.medalPoppel;
-            Abrams = tank.Achievements.medalAbrams;
-            Leclerk = tank.Achievements.medalLeClerc;
-            Lavrinenko = tank.Achievements.medalLavrinenko;
-            Ekins = tank.Achievements.medalEkins;
-            #endregion
-
-            #region [ ITankRowSeries ]
-            ReaperLongest = tank.Achievements.maxKillingSeries;
-            ReaperProgress = tank.Achievements.killingSeries;
-            SharpshooterLongest = tank.Achievements.maxSniperSeries;
-            SharpshooterProgress = tank.Achievements.sniperSeries;
-            MasterGunnerLongest = tank.Achievements.maxPiercingSeries;
-            MasterGunnerProgress = tank.Achievements.piercingSeries;
-            InvincibleLongest = tank.Achievements.maxInvincibleSeries;
-            InvincibleProgress = tank.Achievements.invincibleSeries;
-            SurvivorLongest = tank.Achievements.maxDiehardSeries;
-            SurvivorProgress = tank.Achievements.diehardSeries;
-            #endregion
-
-            #region [ ITankRowSpecialAwards ]
-            Kamikaze = tank.Achievements.kamikaze;
-            Raider = tank.Achievements.raider;
-            Bombardier = tank.Achievements.bombardier;
-            Reaper = tank.Achievements.maxKillingSeries;
-            Sharpshooter = tank.Achievements.maxSniperSeries;
-            Invincible = tank.Achievements.maxInvincibleSeries;
-            Survivor = tank.Achievements.maxDiehardSeries;
-            MouseTrap = tank.Achievements.mousebane;
-            Hunter = tank.Achievements.beasthunter;
-            Sinai = tank.Achievements.sinai;
-            PattonValley = tank.Achievements.pattonValley;
-            #endregion
-
-            #region [ ITankRowRatings ]
             MarkOfMastery = tank.Achievements.markOfMastery;
-            #endregion
-
+            
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);
         }
 

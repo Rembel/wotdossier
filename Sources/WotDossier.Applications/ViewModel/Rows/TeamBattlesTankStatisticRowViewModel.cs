@@ -85,6 +85,40 @@ namespace WotDossier.Applications.ViewModel.Rows
                 AverageBattleTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime / tank.A7x7.battlesCount);
             }
             #endregion
+
+            #region Achievements
+
+            KingOfTheHill = tank.Achievements7x7.kingOfTheHill;
+            ArmoredFist = tank.Achievements7x7.armoredFist;
+            CrucialShot = tank.Achievements7x7.crucialShot;
+            CrucialShotMedal = tank.Achievements7x7.crucialShotMedal;
+            FightingReconnaissance = tank.Achievements7x7.fightingReconnaissance;
+            FightingReconnaissanceMedal = tank.Achievements7x7.fightingReconnaissanceMedal;
+            ForTacticalOperations = tank.Achievements7x7.forTacticalOperations;
+            GeniusForWar = tank.Achievements7x7.geniusForWar;
+            GeniusForWarMedal = tank.Achievements7x7.geniusForWarMedal;
+            GodOfWar = tank.Achievements7x7.godOfWar;
+            MaxTacticalBreakthroughSeries = tank.Achievements7x7.maxTacticalBreakthroughSeries;
+            TacticalBreakthrough = tank.Achievements7x7.tacticalBreakthrough;
+            TacticalBreakthroughSeries = tank.Achievements7x7.tacticalBreakthroughSeries;
+            WillToWinSpirit = tank.Achievements7x7.willToWinSpirit;
+            WolfAmongSheep = tank.Achievements7x7.wolfAmongSheep;
+            WolfAmongSheepMedal = tank.Achievements7x7.wolfAmongSheepMedal;
+
+            PromisingFighter = tank.Achievements7x7.promisingFighter;
+            PromisingFighterMedal = tank.Achievements7x7.promisingFighterMedal;
+            HeavyFire = tank.Achievements7x7.heavyFire;
+            HeavyFireMedal = tank.Achievements7x7.heavyFireMedal;
+            Ranger = tank.Achievements7x7.ranger;
+            RangerMedal = tank.Achievements7x7.rangerMedal;
+            FireAndSteel = tank.Achievements7x7.fireAndSteel;
+            FireAndSteelMedal = tank.Achievements7x7.fireAndSteelMedal;
+            Pyromaniac = tank.Achievements7x7.pyromaniac;
+            PyromaniacMedal = tank.Achievements7x7.pyromaniacMedal;
+            NoMansLand = tank.Achievements7x7.noMansLand;
+
+            #endregion
+
         }
 
         /// <summary>

@@ -88,7 +88,12 @@ namespace WotDossier.Views
 
         private void MenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            tcMain.SelectedIndex = 16;
+            tcMain.SelectedItem = tabReplays;
+        }
+
+        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tcMain.SelectedIndex = 0;
         }
     }
 

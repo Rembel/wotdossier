@@ -10,11 +10,12 @@
              xmlns:behaviours="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
+             xmlns:replay="clr-namespace:WotDossier.Applications.ViewModel.Replay;assembly=WotDossier.Applications"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         
-        <HierarchicalDataTemplate x:Key="TreeTemplate" ItemsSource="{Binding Folders}">
+        <HierarchicalDataTemplate x:Key="TreeTemplate" ItemsSource="{Binding Folders}" DataType="replay:ReplayFolder">
             <Grid>
                 <ContextMenuService.ContextMenu>
                     <ContextMenu>

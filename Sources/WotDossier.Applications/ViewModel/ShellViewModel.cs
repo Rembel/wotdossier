@@ -289,13 +289,11 @@ namespace WotDossier.Applications.ViewModel
                 typeof(ITankRowBattles),
                 typeof(ITankRowFrags),
                 typeof(ITankRowDamage),
-                typeof(IStatisticBattleAwards),
-                typeof(IStatisticSpecialAwards),
-                typeof(IStatisticSeries),
-                typeof(IStatisticMedals),
-                typeof(IStatisticEpic),
                 typeof(ITankRowTime),
-                typeof(ITankRowPerformance)
+                typeof(ITankRowPerformance),
+                typeof(IRandomBattlesAchievements),
+                typeof(IHistoricalBattlesAchievements),
+                typeof(ITeamBattlesAchievements),
             });
         }
 

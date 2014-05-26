@@ -121,6 +121,8 @@
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />
     <Compile Include="ViewModel\BattleModeSelectorViewModel.cs" />
     <Compile Include="ViewModel\AboutViewModel.cs" />
+    <Compile Include="ViewModel\HistoricalPlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\RandomPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\ReplayManagerShellViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
@@ -143,7 +145,6 @@
     <Compile Include="ViewModel\Replay\ReplayViewModel.cs" />
     <Compile Include="ViewModel\Replay\TeamMember.cs" />
     <Compile Include="ViewModel\Replay\UploadReplayViewModel.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticTeamBattleAwards.cs" />
     <Compile Include="ViewModel\Rows\ITankStatisticRow.cs" />
     <Compile Include="ViewModel\Rows\TankStatisticRowViewModelBase.cs" />
     <Compile Include="ViewModel\Rows\TeamBattlesTankStatisticRowViewModel.cs">
@@ -164,17 +165,12 @@
     <Compile Include="ViewModel\PeriodStatisticViewModel.cs" />
     <Compile Include="Model\ClanModel.cs" />
     <Compile Include="ViewModel\PlayerStatisticViewModel.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticBattleAwards.cs" />
     <Compile Include="ViewModel\Rows\ITankRowBattles.cs" />
     <Compile Include="ViewModel\Rows\ITankRowDamage.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticEpic.cs" />
     <Compile Include="ViewModel\Rows\ITankRowFrags.cs" />
     <Compile Include="ViewModel\Rows\ITankRowMasterTanker.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticMedals.cs" />
     <Compile Include="ViewModel\Rows\ITankRowPerformance.cs" />
     <Compile Include="ViewModel\Rows\ITankRowRatings.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticSeries.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticSpecialAwards.cs" />
     <Compile Include="ViewModel\Rows\ITankRowTime.cs" />
     <Compile Include="ViewModel\Rows\IStatisticXp.cs" />
     <Compile Include="ViewModel\Rows\TankRowMasterTanker.cs">
@@ -185,6 +181,7 @@
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModelBase.cs" />
     <Compile Include="ViewModel\TankStatisticViewModel.cs" />
+    <Compile Include="ViewModel\TeamPlayerStatisticViewModel.cs" />
     <Compile Include="View\IAboutView.cs" />
     <Compile Include="View\ISearchView.cs" />
     <Compile Include="View\IPlayersCompareView.cs" />

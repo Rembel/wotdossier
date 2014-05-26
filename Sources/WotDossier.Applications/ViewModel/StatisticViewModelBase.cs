@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Rows;
 
@@ -309,7 +308,7 @@ namespace WotDossier.Applications.ViewModel
 
         #region Achievments
 
-        #region [ ITankRowBattleAwards ]
+        #region Random
 
         public int BattleHero { get; set; }
 
@@ -342,10 +341,6 @@ namespace WotDossier.Applications.ViewModel
         public int LuckyDevil { get; set; }
 
         public int Sturdy { get; set; }
-
-        #endregion
-
-        #region [ ITankRowEpic ]
 
         public int Boelter { get; set; }
 
@@ -385,10 +380,6 @@ namespace WotDossier.Applications.ViewModel
 
         public int DeLanglade { get; set; }
 
-        #endregion
-
-        #region [ ITankRowSpecialAwards ]
-
         public int Kamikaze { get; set; }
 
         public int Raider { get; set; }
@@ -413,10 +404,6 @@ namespace WotDossier.Applications.ViewModel
 
         public int Huntsman { get; set; }
 
-        #endregion
-
-        #region [ ITankRowMedals]
-
         public int Kay { get; set; }
 
         public int Carius { get; set; }
@@ -432,10 +419,6 @@ namespace WotDossier.Applications.ViewModel
         public int Lavrinenko { get; set; }
 
         public int Ekins { get; set; }
-
-        #endregion
-
-        #region [ ITankRowSeries ]
 
         public int ReaperLongest { get; set; }
 
@@ -457,6 +440,18 @@ namespace WotDossier.Applications.ViewModel
 
         public int SurvivorProgress { get; set; }
 
+        public int MedalMonolith { get; set; }
+
+        public int MedalAntiSpgFire { get; set; }
+
+        public int MedalGore { get; set; }
+
+        public int MedalCoolBlood { get; set; }
+
+        public int MedalStark { get; set; }
+
+        public int DamageRating { get; set; }
+
         #endregion
 
         #region 7x7
@@ -477,6 +472,18 @@ namespace WotDossier.Applications.ViewModel
         public int WillToWinSpirit { get; set; }
         public int WolfAmongSheep { get; set; }
         public int WolfAmongSheepMedal { get; set; }
+
+        public int NoMansLand { get; set; }
+        public int PyromaniacMedal { get; set; }
+        public int Pyromaniac { get; set; }
+        public int FireAndSteel { get; set; }
+        public int FireAndSteelMedal { get; set; }
+        public int RangerMedal { get; set; }
+        public int Ranger { get; set; }
+        public int HeavyFireMedal { get; set; }
+        public int HeavyFire { get; set; }
+        public int PromisingFighterMedal { get; set; }
+        public int PromisingFighter { get; set; }
 
         #endregion
         

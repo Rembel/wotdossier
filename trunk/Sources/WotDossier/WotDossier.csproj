@@ -191,6 +191,7 @@
     <Compile Include="Converters\Color\WN6ToColorConverter.cs" />
     <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
+    <Compile Include="Converters\BattleModeToVisibilityConverter.cs" />
     <Compile Include="Converters\Formater\NumberFormatConverter.cs" />
     <Compile Include="Converters\Image\AppLogoToImageConverter.cs" />
     <Compile Include="Converters\MedalsCountToOpacityConverter.cs" />
@@ -227,6 +228,9 @@
     </Compile>
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Medals7x7Tab.xaml.cs">
+      <DependentUpon>Medals7x7Tab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\ServerBattlesTab.xaml.cs">
       <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
@@ -501,6 +505,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\ChartsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Medals7x7Tab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

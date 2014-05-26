@@ -85,6 +85,16 @@ namespace WotDossier.Applications.ViewModel.Rows
                 AverageBattleTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime / tank.Historical.battlesCount);
             }
             #endregion
+
+            #region Achievements
+
+            GuardsMan = tank.AchievementsHistorical.guardsman;
+            MakerOfHistory = tank.AchievementsHistorical.makerOfHistory;
+            BothSidesWins = tank.AchievementsHistorical.bothSidesWins;
+            WeakVehiclesWins = tank.AchievementsHistorical.weakVehiclesWins;
+
+            #endregion
+
         }
 
         /// <summary>

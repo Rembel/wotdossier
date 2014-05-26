@@ -1302,6 +1302,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For Tactical Operations.
+        /// </summary>
+        public static string Column_Medals7x7_ForTacticalOperations {
+            get {
+                return ResourceManager.GetString("Column_Medals7x7_ForTacticalOperations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Average Damage Assisted.
         /// </summary>
         public static string Column_Performance_AvgDamageAssisted {
@@ -5766,6 +5775,15 @@ namespace WotDossier.Resources {
         public static string Tooltip_StepAchievements_Ekins {
             get {
                 return ResourceManager.GetString("Tooltip_StepAchievements_Ekins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Tooltip_StepAchievements_ForTacticalOperations {
+            get {
+                return ResourceManager.GetString("Tooltip_StepAchievements_ForTacticalOperations", resourceCulture);
             }
         }
         

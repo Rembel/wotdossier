@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using WotDossier.Common;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Entities
 {
@@ -8,7 +9,7 @@ namespace WotDossier.Domain.Entities
 	/// Object representation for table 'PlayerAchievements'.
 	/// </summary>
 	[Serializable]
-	public class PlayerAchievementsEntity : EntityBase
+    public class PlayerAchievementsEntity : EntityBase, IRandomBattlesAchievements
 	{	
 		#region Property names
 		
@@ -53,9 +54,9 @@ namespace WotDossier.Domain.Entities
 		public static readonly string PropSinai = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Sinai);
 		public static readonly string PropMasterGunnerLongest = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MasterGunnerLongest);
 		public static readonly string PropSharpshooterLongest = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.SharpshooterLongest);
-        public static readonly string PropRanger = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Ranger);
-		public static readonly string PropCoolHeaded = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.CoolHeaded);
-		public static readonly string PropSpartan = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Spartan);
+        public static readonly string PropRanger = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Huntsman);
+		public static readonly string PropCoolHeaded = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.IronMan);
+		public static readonly string PropSpartan = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Sturdy);
 		public static readonly string PropLuckyDevil = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.LuckyDevil);
         public static readonly string PropSniper2 = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.Sniper2);
         public static readonly string PropMainGun = TypeHelper<PlayerAchievementsEntity>.PropertyName(v => v.MainGun);
@@ -287,17 +288,17 @@ namespace WotDossier.Domain.Entities
 		/// <summary>
 		/// Gets/Sets the field "Jager".
 		/// </summary>
-        public virtual int Ranger { get; set; }
+        public virtual int Huntsman { get; set; }
 		
 		/// <summary>
-		/// Gets/Sets the field "CoolHeaded".
+		/// Gets/Sets the field "IronMan".
 		/// </summary>
-		public virtual int CoolHeaded	{get; set; }
+		public virtual int IronMan	{get; set; }
 		
 		/// <summary>
-		/// Gets/Sets the field "Spartan".
+		/// Gets/Sets the field "Sturdy".
 		/// </summary>
-		public virtual int Spartan	{get; set; }
+		public virtual int Sturdy	{get; set; }
 
         /// <summary>
         /// Gets/Sets the field "LuckyDevil".
@@ -378,8 +379,21 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "MedalStark".
         /// </summary>
         public virtual int MedalStark { get; set; }
-		
-		#region Collections
+
+	    public virtual int DamageRating { get; set; }
+
+	    public virtual int BattleHero { get; set; }
+        public virtual int Sharpshooter { get; set; }
+        public virtual int ReaperLongest { get; set; }
+        public virtual int ReaperProgress { get; set; }
+        public virtual int SharpshooterProgress { get; set; }
+        public virtual int MasterGunnerProgress { get; set; }
+        public virtual int InvincibleLongest { get; set; }
+        public virtual int InvincibleProgress { get; set; }
+        public virtual int SurvivorLongest { get; set; }
+        public virtual int SurvivorProgress { get; set; }
+
+	    #region Collections
 		
 		private IList<PlayerStatisticEntity> _playerStatisticEntities;
 		/// <summary>

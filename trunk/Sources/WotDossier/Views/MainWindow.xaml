@@ -11,6 +11,7 @@
         xmlns:color="clr-namespace:WotDossier.Converters.Color"
         xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
+        xmlns:viewModel="clr-namespace:WotDossier.Applications.ViewModel;assembly=WotDossier.Applications"
         Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Print" Executed="PrintWindow_Executed"/>
@@ -66,7 +67,8 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Grid.Column="0" Text="{x:Static resources:Resources.Settings_BattleMode}"/>
-                    <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="1" Width="150" ItemsSource="{Binding BattleModes}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding BattleMode}" />
+                    <ComboBox Margin="6 0 6 0" Height="20" Grid.Column="1" Width="150" ItemsSource="{Binding BattleModes}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding BattleMode}"
+                              SelectionChanged="Selector_OnSelectionChanged"/>
                 </Grid>
             </ToolBar>
         </ToolBarTray>
@@ -405,21 +407,35 @@
                 <tabs:DamageTab HorizontalAlignment="Stretch"></tabs:DamageTab>
             </TabItem>
             <!--Battle awards-->
-            <TabItem TabIndex="6" Header="{x:Static resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards">
+            <TabItem TabIndex="6" Header="{x:Static resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards" 
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:BattleAwardsTab HorizontalAlignment="Stretch"></tabs:BattleAwardsTab>
             </TabItem>
             <!--Special awards-->
-            <TabItem TabIndex="7" Header="{x:Static resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards">
+            <TabItem TabIndex="7" Header="{x:Static resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:SpecialAwardsTab HorizontalAlignment="Stretch"></tabs:SpecialAwardsTab>
             </TabItem>
             <!--Series-->
-            <TabItem TabIndex="8" Header="{x:Static resources:Resources.Tab_Header_Series}" Name="tabSeries">
+            <TabItem TabIndex="8" Header="{x:Static resources:Resources.Tab_Header_Series}" Name="tabSeries"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:SeriesTab HorizontalAlignment="Stretch"></tabs:SeriesTab>
             </TabItem>
             <!--Medals-->
-            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedals">
+            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedals"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:MedalsTab HorizontalAlignment="Stretch"></tabs:MedalsTab>
             </TabItem>
+          <!--Medals-->
+          <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedals7x7"
+                   Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.TeamBattle}}">
+            <tabs:Medals7x7Tab HorizontalAlignment="Stretch"></tabs:Medals7x7Tab>
+          </TabItem>
             <!--Ratings-->
             <TabItem TabIndex="10" Header="{x:Static resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
                 <tabs:RatingsTab HorizontalAlignment="Stretch"></tabs:RatingsTab>
@@ -433,15 +449,21 @@
                 <tabs:PerformanceTab88 HorizontalAlignment="Stretch"></tabs:PerformanceTab88>
             </TabItem>-->
             <!--Frags count-->
-            <TabItem TabIndex="13" Header="{x:Static resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts">
+            <TabItem TabIndex="13" Header="{x:Static resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:FragCountsTab DataContext="{Binding FraggsCount}" HorizontalAlignment="Stretch"></tabs:FragCountsTab>
             </TabItem>
             <!--Master tanker-->
-            <TabItem TabIndex="14" Header="{x:Static resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker">
+            <TabItem TabIndex="14" Header="{x:Static resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:MasterTankerTab HorizontalAlignment="Stretch"></tabs:MasterTankerTab>
             </TabItem>
             <!--Epics-->
-            <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Epics}" Name="tabEpics">
+            <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Epics}" Name="tabEpics"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:EpicsTab HorizontalAlignment="Stretch"></tabs:EpicsTab>
             </TabItem>
             <!--Time-->

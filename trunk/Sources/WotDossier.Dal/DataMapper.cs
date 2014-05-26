@@ -590,7 +590,16 @@ namespace WotDossier.Dal
                 tankExpertStrg = tankJson.Achievements.tankExpertStrg,
                 titleSniper = tankJson.Achievements.titleSniper,
                 warrior = tankJson.Achievements.warrior,
-                markOfMastery = tankJson.Achievements.markOfMastery
+                markOfMastery = tankJson.Achievements.markOfMastery,
+
+                marksOnGun = tankJson.Achievements.marksOnGun,
+                movingAvgDamage = tankJson.Achievements.movingAvgDamage,
+                medalMonolith = tankJson.Achievements.medalMonolith,
+                medalAntiSpgFire = tankJson.Achievements.medalAntiSpgFire,
+                medalGore = tankJson.Achievements.medalGore,
+                medalCoolBlood = tankJson.Achievements.medalCoolBlood,
+                medalStark = tankJson.Achievements.medalStark,
+                damageRating = tankJson.Achievements.damageRating,
             };
 
             //achievements 7x7
@@ -611,7 +620,19 @@ namespace WotDossier.Dal
                 willToWinSpirit = tankJson.Achievements7X7.willToWinSpirit,
                 crucialShot = tankJson.Achievements7X7.crucialShot,
                 crucialShotMedal = tankJson.Achievements7X7.crucialShotMedal,
-                forTacticalOperations = tankJson.Achievements7X7.forTacticalOperations
+                forTacticalOperations = tankJson.Achievements7X7.forTacticalOperations,
+                
+                promisingFighter = tankJson.Achievements7X7.promisingFighter,
+                promisingFighterMedal = tankJson.Achievements7X7.promisingFighterMedal,
+                heavyFire = tankJson.Achievements7X7.heavyFire,
+                heavyFireMedal = tankJson.Achievements7X7.heavyFireMedal,
+                ranger = tankJson.Achievements7X7.ranger,
+                rangerMedal = tankJson.Achievements7X7.rangerMedal,
+                fireAndSteel = tankJson.Achievements7X7.fireAndSteel,
+                fireAndSteelMedal = tankJson.Achievements7X7.fireAndSteelMedal,
+                pyromaniac = tankJson.Achievements7X7.pyromaniac,
+                pyromaniacMedal = tankJson.Achievements7X7.pyromaniacMedal,
+                noMansLand = tankJson.Achievements7X7.noMansLand,
             };
 
             v2.AchievementsHistorical = new AchievementsHistorical

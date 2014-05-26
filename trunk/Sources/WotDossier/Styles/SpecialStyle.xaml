@@ -6,7 +6,8 @@
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                     xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
                     xmlns:color="clr-namespace:WotDossier.Converters.Color"
-                    xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
+                    xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
+                    xmlns:rows="clr-namespace:WotDossier.Applications.ViewModel.Rows;assembly=WotDossier.Applications">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="DataGrid.xaml" />
@@ -18,12 +19,12 @@
     <ImageBrush x:Key="bcolorCenter" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/center_back.jpg" Stretch="Fill" />
     <ImageBrush x:Key="bcolorRight" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/right_back.jpg" Stretch="Fill" />
 
-    <DataTemplate x:Key="MasterTemplate" >
+    <DataTemplate x:Key="MasterTemplate" DataType="rows:ITankStatisticRow" >
         <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        ToolTip="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToTooltipConverter.Default}}" 
                        Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToImageConverter.Default}}" />
     </DataTemplate>
-    <DataTemplate x:Key="TankIconTemplate" >
+    <DataTemplate x:Key="TankIconTemplate" DataType="rows:ITankStatisticRow" >
         <Grid>
             <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
             <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" />

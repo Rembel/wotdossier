@@ -83,5 +83,6 @@
         public int medalGore;
         public int medalCoolBlood;
         public int medalStark;
+        public int damageRating;
     }
 }

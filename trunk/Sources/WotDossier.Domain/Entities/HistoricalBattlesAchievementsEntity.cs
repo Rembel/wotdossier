@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using WotDossier.Common;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Entities
 {
@@ -8,7 +9,7 @@ namespace WotDossier.Domain.Entities
     ///     Object representation for table 'HistoricalBattlesAchievements'.
     /// </summary>
     [Serializable]
-    public class HistoricalBattlesAchievementsEntity : EntityBase
+    public class HistoricalBattlesAchievementsEntity : EntityBase, IHistoricalBattlesAchievements
     {
         #region Property names
 

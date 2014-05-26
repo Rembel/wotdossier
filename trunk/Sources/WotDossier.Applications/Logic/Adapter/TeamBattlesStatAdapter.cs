@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class TeamBattlesStatAdapter : AbstractStatisticAdapter<TeamBattlesStatisticEntity>
+    public class TeamBattlesStatAdapter : AbstractStatisticAdapter<TeamBattlesStatisticEntity>, ITeamBattlesAchievements
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Object" /> class.
@@ -32,6 +33,18 @@ namespace WotDossier.Applications.Logic.Adapter
             CrucialShot = tanks.Sum(x => x.Achievements7x7.crucialShot);
             CrucialShotMedal = tanks.Sum(x => x.Achievements7x7.crucialShotMedal);
             ForTacticalOperations = tanks.Sum(x => x.Achievements7x7.forTacticalOperations);
+
+            PromisingFighter = tanks.Sum(x => x.Achievements7x7.promisingFighter);
+            PromisingFighterMedal = tanks.Sum(x => x.Achievements7x7.promisingFighterMedal);
+            HeavyFire = tanks.Sum(x => x.Achievements7x7.heavyFire);
+            HeavyFireMedal = tanks.Sum(x => x.Achievements7x7.heavyFireMedal);
+            Ranger = tanks.Sum(x => x.Achievements7x7.ranger);
+            RangerMedal = tanks.Sum(x => x.Achievements7x7.rangerMedal);
+            FireAndSteel = tanks.Sum(x => x.Achievements7x7.fireAndSteel);
+            FireAndSteelMedal = tanks.Sum(x => x.Achievements7x7.fireAndSteelMedal);
+            Pyromaniac = tanks.Sum(x => x.Achievements7x7.pyromaniac);
+            PyromaniacMedal = tanks.Sum(x => x.Achievements7x7.pyromaniacMedal);
+            NoMansLand = tanks.Sum(x => x.Achievements7x7.noMansLand);
 
             #endregion
         }
@@ -86,7 +99,7 @@ namespace WotDossier.Applications.Logic.Adapter
         public int WolfAmongSheep { get; set; }
 
         public int WolfAmongSheepMedal { get; set; }
-
+        
         public int GeniusForWar { get; set; }
 
         public int GeniusForWarMedal { get; set; }
@@ -114,6 +127,18 @@ namespace WotDossier.Applications.Logic.Adapter
         public int CrucialShotMedal { get; set; }
 
         public int ForTacticalOperations { get; set; }
+
+        public int PromisingFighter { get; set; }
+        public int PromisingFighterMedal { get; set; }
+        public int HeavyFire { get; set; }
+        public int HeavyFireMedal { get; set; }
+        public int Ranger { get; set; }
+        public int RangerMedal { get; set; }
+        public int FireAndSteel { get; set; }
+        public int FireAndSteelMedal { get; set; }
+        public int Pyromaniac { get; set; }
+        public int PyromaniacMedal { get; set; }
+        public int NoMansLand { get; set; }
 
         #endregion
 
@@ -143,6 +168,18 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.CrucialShot = CrucialShot;
             entity.AchievementsIdObject.CrucialShotMedal = CrucialShotMedal;
             entity.AchievementsIdObject.ForTacticalOperations = ForTacticalOperations;
+
+            entity.AchievementsIdObject.PromisingFighter = PromisingFighter;
+            entity.AchievementsIdObject.PromisingFighterMedal = PromisingFighterMedal;
+            entity.AchievementsIdObject.HeavyFire = HeavyFire;
+            entity.AchievementsIdObject.HeavyFireMedal = HeavyFireMedal;
+            entity.AchievementsIdObject.Ranger = Ranger;
+            entity.AchievementsIdObject.RangerMedal = RangerMedal;
+            entity.AchievementsIdObject.FireAndSteel = FireAndSteel;
+            entity.AchievementsIdObject.FireAndSteelMedal = FireAndSteelMedal;
+            entity.AchievementsIdObject.Pyromaniac = Pyromaniac;
+            entity.AchievementsIdObject.PyromaniacMedal = PyromaniacMedal;
+            entity.AchievementsIdObject.NoMansLand = NoMansLand;
         }
     }
 }

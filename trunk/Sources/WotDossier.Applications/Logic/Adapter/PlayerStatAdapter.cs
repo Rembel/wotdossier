@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Common;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class PlayerStatAdapter : AbstractStatisticAdapter<PlayerStatisticEntity>
+    public class PlayerStatAdapter : AbstractStatisticAdapter<PlayerStatisticEntity>, IRandomBattlesAchievements
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -102,6 +103,7 @@ namespace WotDossier.Applications.Logic.Adapter
             MedalGore = tanks.Sum(x => x.Achievements.medalGore);
             MedalCoolBlood = tanks.Sum(x => x.Achievements.medalCoolBlood);
             MedalStark = tanks.Sum(x => x.Achievements.medalStark);
+            DamageRating = tanks.Max(x => x.Achievements.damageRating);
         }
 
         public PlayerStatAdapter(Player stat)
@@ -388,6 +390,10 @@ namespace WotDossier.Applications.Logic.Adapter
         
         public int MedalStark { get; set; }
 
+        public int BattleHero { get; set; }
+
+        public int DamageRating { get; set; }
+
         #endregion
 
         public override void Update(PlayerStatisticEntity entity)
@@ -413,9 +419,9 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.PatrolDuty = PatrolDuty;
             entity.AchievementsIdObject.BrothersInArms = BrothersInArms;
             entity.AchievementsIdObject.CrucialContribution = CrucialContribution;
-            entity.AchievementsIdObject.CoolHeaded = IronMan;
+            entity.AchievementsIdObject.IronMan = IronMan;
             entity.AchievementsIdObject.LuckyDevil = LuckyDevil;
-            entity.AchievementsIdObject.Spartan = Sturdy;
+            entity.AchievementsIdObject.Sturdy = Sturdy;
 
             #endregion
 
@@ -475,7 +481,7 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.Hunter = Hunter;
             entity.AchievementsIdObject.Sinai = Sinai;
             entity.AchievementsIdObject.PattonValley = PattonValley;
-            entity.AchievementsIdObject.Ranger = Huntsman;
+            entity.AchievementsIdObject.Huntsman = Huntsman;
 
             #endregion
 
@@ -486,6 +492,7 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.MedalGore = MedalGore;
             entity.AchievementsIdObject.MedalCoolBlood = MedalCoolBlood;
             entity.AchievementsIdObject.MedalStark = MedalStark;
+            entity.AchievementsIdObject.DamageRating = DamageRating;
         }
     }
 }

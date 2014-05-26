@@ -15,11 +15,11 @@ namespace WotDossier.Common.Reflection
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns></returns>
-        public static PropertyInfo[] GetPublicProperties(this Type type)
+        public static PropertyInfoEx[] GetPublicProperties(this Type type)
         {
             if (type.IsInterface)
             {
-                var propertyInfos = new List<PropertyInfo>();
+                var propertyInfos = new List<PropertyInfoEx>();
 
                 var considered = new List<Type>();
                 var queue = new Queue<Type>();
@@ -41,17 +41,14 @@ namespace WotDossier.Common.Reflection
                         | BindingFlags.Public
                         | BindingFlags.Instance);
 
-                    var newPropertyInfos = typeProperties
-                        .Where(x => !propertyInfos.Contains(x));
-
-                    propertyInfos.InsertRange(0, newPropertyInfos);
+                    propertyInfos.InsertRange(0, typeProperties.Select(x => new PropertyInfoEx { PropertyInfo = x, Type = subType }));
                 }
 
                 return propertyInfos.ToArray();
             }
 
             return type.GetProperties(BindingFlags.FlattenHierarchy
-                | BindingFlags.Public | BindingFlags.Instance);
+                | BindingFlags.Public | BindingFlags.Instance).Select(x => new PropertyInfoEx { PropertyInfo = x, Type = type }).ToArray();
         }
 
         /// <summary>

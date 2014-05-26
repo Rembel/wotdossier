@@ -716,5 +716,19 @@
             <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </DataTemplate>
-
+  
+  <!--7x7-->
+  <DataTemplate x:Key="ForTacticalOperationsColumnHeaderTemplate">
+    <StackPanel Orientation="Vertical">
+      <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/forTacticalOperations1.png" Height="71" Width="67">
+        <ToolTipService.ToolTip>
+          <ToolTip>
+            <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_Ekins}" Text="{x:Static resources:Resources.Tooltip_StepAchievements_ForTacticalOperations}"></controls:MedalTooltip>
+          </ToolTip>
+        </ToolTipService.ToolTip>
+      </Image>
+      <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </StackPanel>
+  </DataTemplate>
+  
 </ResourceDictionary>

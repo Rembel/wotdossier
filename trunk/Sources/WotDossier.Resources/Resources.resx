@@ -2176,4 +2176,10 @@ Survive %: {1:0.00}</value>
   <data name="WindowTitleFormat_Replay" xml:space="preserve">
     <value>{0}, {1}, battle level - {2}</value>
   </data>
+  <data name="Column_Medals7x7_ForTacticalOperations" xml:space="preserve">
+    <value>For Tactical Operations</value>
+  </data>
+  <data name="Tooltip_StepAchievements_ForTacticalOperations" xml:space="preserve">
+    <value />
+  </data>
 </root>

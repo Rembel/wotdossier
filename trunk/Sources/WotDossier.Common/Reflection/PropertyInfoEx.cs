@@ -23,5 +23,10 @@ namespace WotDossier.Common.Reflection
         /// The property information.
         /// </value>
         public PropertyInfo PropertyInfo { get; set; }
+
+        public override string ToString()
+        {
+            return PropertyInfo.ToString();
+        }
     }
 }

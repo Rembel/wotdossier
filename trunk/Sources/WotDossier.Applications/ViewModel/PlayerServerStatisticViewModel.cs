@@ -137,10 +137,7 @@ namespace WotDossier.Applications.ViewModel
                 Clan = new ClanModel(player.dataField.clanData, player.dataField.clan.role, player.dataField.clan.since);
             }
 
-            Tanks = player.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
-
-            statistic.WN8Rating = RatingHelper.Wn8(Tanks);
-            statistic.PerformanceRating = RatingHelper.PerformanceRating(Tanks);
+            Tanks = statAdapter.Tanks;
 
             PlayerStatistic = statistic;
         }

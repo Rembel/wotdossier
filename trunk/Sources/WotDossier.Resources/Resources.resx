@@ -327,87 +327,48 @@
   <data name="Column_Battles_SurvivedAndWonPercent" xml:space="preserve">
     <value>Survived And Won %</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Warrior" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Warrior" xml:space="preserve">
     <value>Destroy more enemy vehicles than any other player in your team during the battle (at least 6).
 If two or more players have destroyed equal amount vehicles, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_BrothersInArms" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_BrothersInArms" xml:space="preserve">
     <value>Awarded to a platoon in which all platoon members destroy at least 3 enemy vehicles and survive in battle. Each platoon participant receive this title.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Confederate" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Confederate" xml:space="preserve">
     <value>Hit more enemy vehicles than any other player on your team (at least 6), which are subsequently destroyed by another player.
 If two or more players have equal amount of hits, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_CrucialContribution" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_CrucialContribution" xml:space="preserve">
     <value>Awarded to a platoon which destroyed at least 12 enemy vehicles in one battle. Each platoon participant receive this title.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Defender" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Defender" xml:space="preserve">
     <value>Reduce the amount of enemy capture points on a friendly base by 70 or more.
 If two or more players have reduced equal amount of capture points, the achievement is granted to the player who has earned more XP in the battle (including additional XP provided to Premium account users). If the amount of XP is equal as well, the achievement is not awarded.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Invader" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Invader" xml:space="preserve">
     <value>Capture the maximum number of points from the enemy base, but not less than 80.
 The achievement is granted on successful base capture, including only the points that were part of the base capture. If the battle ends in a draw, the achievement is granted to the first player to receive 80 or more capture points.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_PatrolDuty" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_PatrolDuty" xml:space="preserve">
     <value>Awarded to the player who helps the team damage at least six enemy vehicles by highlighting them. The tanks must be highlighted only by you when they take damage.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Scout" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Scout" xml:space="preserve">
     <value>Detect most enemy tanks and self-propelled guns than anyone else on your team (at least nine). The achievement is granted to the winning team only.
 If two or more players have detected equal number of enemy vehicles, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Sniper" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sniper" xml:space="preserve">
     <value>Achieve at least 85% hits out of a minimum of ten shots fired with the potential damage of 1,000 HP and more. Non-penetrating hits are included, but hits on friendly units are not included.
 If two or more players have an equal hit ratio, the achievement is granted to the player with the highest potential damage. If two or more players have an equal amount of potential damage, the achievement is granted to the player who earned more XP for the battle, including additional XP provided to Premium Account users. If the amount of XP is equal as well, the achievement is not granted.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_SteelWall" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_SteelWall" xml:space="preserve">
     <value>Receive the most hits (at least 11) of any player on your team, with potential damage of at least 1,000 HP, and survive.
 If two or more players have equal amount of hits, the achievement is granted to the player with the highest potential damage. If two or more players have equal amount of potential damage, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_BattleHero" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_BattleHero" xml:space="preserve">
     <value>Awarded for individual battles if all of the requirements are met.</value>
   </data>
   <data name="Column_BattleAwards_BattleHero" xml:space="preserve">
     <value>Battle Hero</value>
-  </data>
-  <data name="Column_BattleAwards_Warrior" xml:space="preserve">
-    <value>Top Gun</value>
-  </data>
-  <data name="Column_BattleAwards_Invader" xml:space="preserve">
-    <value>Invader</value>
-  </data>
-  <data name="Column_BattleAwards_Sniper" xml:space="preserve">
-    <value>Sniper</value>
-  </data>
-  <data name="Column_BattleAwards_Defender" xml:space="preserve">
-    <value>Defender</value>
-  </data>
-  <data name="Column_BattleAwards_SteelWall" xml:space="preserve">
-    <value>Steel Wall</value>
-  </data>
-  <data name="Column_BattleAwards_Confederate" xml:space="preserve">
-    <value>Confederate</value>
-  </data>
-  <data name="Column_BattleAwards_Scout" xml:space="preserve">
-    <value>Scout</value>
-  </data>
-  <data name="Column_BattleAwards_PatrolDuty" xml:space="preserve">
-    <value>Patrol Duty</value>
-  </data>
-  <data name="Column_BattleAwards_BrothersInArms" xml:space="preserve">
-    <value>Brothers In Arms</value>
-  </data>
-  <data name="Column_BattleAwards_CrucialContribution" xml:space="preserve">
-    <value>Crucial Contribution</value>
-  </data>
-  <data name="Column_BattleAwards_IronMan" xml:space="preserve">
-    <value>Iron Man</value>
-  </data>
-  <data name="Column_BattleAwards_LuckyDevil" xml:space="preserve">
-    <value>Lucky Devil</value>
-  </data>
-  <data name="Column_BattleAwards_Sturdy" xml:space="preserve">
-    <value>Sturdy</value>
   </data>
   <data name="Column_Damage_DamageDealt" xml:space="preserve">
     <value>Damage Dealt</value>
@@ -445,42 +406,6 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Column_Time_AverageBattleTime" xml:space="preserve">
     <value>Average Battle Time</value>
   </data>
-  <data name="Column_SpecialAwards_Kamikaze" xml:space="preserve">
-    <value>Kamikaze</value>
-  </data>
-  <data name="Column_SpecialAwards_Raider" xml:space="preserve">
-    <value>Raider</value>
-  </data>
-  <data name="Column_SpecialAwards_Bombardier" xml:space="preserve">
-    <value>Bombardier</value>
-  </data>
-  <data name="Column_SpecialAwards_Reaper" xml:space="preserve">
-    <value>Reaper</value>
-  </data>
-  <data name="Column_SpecialAwards_Sharpshooter" xml:space="preserve">
-    <value>Sharpshooter</value>
-  </data>
-  <data name="Column_SpecialAwards_Invincible" xml:space="preserve">
-    <value>Invincible</value>
-  </data>
-  <data name="Column_SpecialAwards_Survivor" xml:space="preserve">
-    <value>Survivor</value>
-  </data>
-  <data name="Column_SpecialAwards_MouseTrap" xml:space="preserve">
-    <value>MouseTrap</value>
-  </data>
-  <data name="Column_SpecialAwards_Hunter" xml:space="preserve">
-    <value>Hunter</value>
-  </data>
-  <data name="Column_SpecialAwards_Sinai" xml:space="preserve">
-    <value>Sinai</value>
-  </data>
-  <data name="Column_SpecialAwards_PattonValley" xml:space="preserve">
-    <value>PattonValley</value>
-  </data>
-  <data name="Column_SpecialAwards_Huntsman" xml:space="preserve">
-    <value>Medal Naidin</value>
-  </data>
   <data name="Column_Frags_Battles" xml:space="preserve">
     <value>Battles</value>
   </data>
@@ -504,87 +429,6 @@ If two or more players have equal amount of hits, the achievement is granted to 
   </data>
   <data name="Column_Frags_BeastFrags" xml:space="preserve">
     <value>Beast Frags</value>
-  </data>
-  <data name="Column_Medals_Kay" xml:space="preserve">
-    <value>Kay</value>
-  </data>
-  <data name="Column_Medals_Carius" xml:space="preserve">
-    <value>Carius</value>
-  </data>
-  <data name="Column_Medals_Knispel" xml:space="preserve">
-    <value>Knispel</value>
-  </data>
-  <data name="Column_Medals_Poppel" xml:space="preserve">
-    <value>Poppel</value>
-  </data>
-  <data name="Column_Medals_Abrams" xml:space="preserve">
-    <value>Abrams</value>
-  </data>
-  <data name="Column_Medals_Leclerk" xml:space="preserve">
-    <value>Leclerk</value>
-  </data>
-  <data name="Column_Medals_Lavrinenko" xml:space="preserve">
-    <value>Lavrinenko</value>
-  </data>
-  <data name="Column_Medals_Ekins" xml:space="preserve">
-    <value>Ekins</value>
-  </data>
-  <data name="Column_Epics_Boelter" xml:space="preserve">
-    <value>Boelter</value>
-  </data>
-  <data name="Column_Epics_RadleyWalters" xml:space="preserve">
-    <value>Radley-Walters</value>
-  </data>
-  <data name="Column_Epics_LafayettePool" xml:space="preserve">
-    <value>Lafayette-Pool</value>
-  </data>
-  <data name="Column_Epics_Orlik" xml:space="preserve">
-    <value>Orlik</value>
-  </data>
-  <data name="Column_Epics_Oskin" xml:space="preserve">
-    <value>Oskin</value>
-  </data>
-  <data name="Column_Epics_Lehvaslaiho" xml:space="preserve">
-    <value>Lehvaslaiho</value>
-  </data>
-  <data name="Column_Epics_Nikolas" xml:space="preserve">
-    <value>Nikolas</value>
-  </data>
-  <data name="Column_Epics_Halonen" xml:space="preserve">
-    <value>Halonen</value>
-  </data>
-  <data name="Column_Epics_Burda" xml:space="preserve">
-    <value>Burda</value>
-  </data>
-  <data name="Column_Epics_Pascucci" xml:space="preserve">
-    <value>Pascucci</value>
-  </data>
-  <data name="Column_Epics_Dumitru" xml:space="preserve">
-    <value>Dumitru</value>
-  </data>
-  <data name="Column_Epics_TamadaYoshio" xml:space="preserve">
-    <value>Tamada Yoshio</value>
-  </data>
-  <data name="Column_Epics_Billotte" xml:space="preserve">
-    <value>Billotte</value>
-  </data>
-  <data name="Column_Epics_BrunoPietro" xml:space="preserve">
-    <value>Bruno Pietro</value>
-  </data>
-  <data name="Column_Epics_Tarczay" xml:space="preserve">
-    <value>Tarczay</value>
-  </data>
-  <data name="Column_Epics_Kolobanov" xml:space="preserve">
-    <value>Kolobanov</value>
-  </data>
-  <data name="Column_Epics_Fadin" xml:space="preserve">
-    <value>Fadin</value>
-  </data>
-  <data name="Column_Epics_HeroesOfRaseiniai" xml:space="preserve">
-    <value>Heroes Of Raseiniai</value>
-  </data>
-  <data name="Column_Epics_DeLanglade" xml:space="preserve">
-    <value>De Langlade</value>
   </data>
   <data name="Column_Series_ReaperLongest" xml:space="preserve">
     <value>Reaper Longest</value>
@@ -648,9 +492,6 @@ If two or more players have equal amount of hits, the achievement is granted to 
   </data>
   <data name="Column_Ratings_EffRating" xml:space="preserve">
     <value>Eff Rating</value>
-  </data>
-  <data name="Column_Ratings_WN6" xml:space="preserve">
-    <value>WN6</value>
   </data>
   <data name="Column_Ratings_DamageRatingRev1" xml:space="preserve">
     <value>Damage Rating Rev1</value>
@@ -718,165 +559,165 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Common_AvgDetected" xml:space="preserve">
     <value>Average Detected:</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_IronMan" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_IronMan" xml:space="preserve">
     <value>Survive at least 10 ricochets and non-penetrations in a row from enemy players.</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_Lucky" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Lucky" xml:space="preserve">
     <value>Witness the destruction of an enemy vehicle by an enemy team player. You must be within 10 meters or less from the enemy vehicle at the moment of its destruction.</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_Sturdy" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sturdy" xml:space="preserve">
     <value>Survive a ricochet or non-penetrating shot from an enemy player. Your vehicle must have less than 10% of its hit points (HP) left and you must survive the battle.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Billotte" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Billotte" xml:space="preserve">
     <value>Awarded to players who destroy at least one enemy vehicle and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
 Pierre Billotte was a captain in the French Army who destroyed 2 PzKpfw IV, 11 PzKpfw III and 2 guns with his Char B1 bis on May 16, 1940.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Boelter" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Boelter" xml:space="preserve">
     <value>With the release of Version 0.8.0, this medal is no longer being awarded. Prior to 0.8.0, this was awarded for destroying seven or more enemy tanks and self-propelled guns with a tank or tank destroyer, or 10 or more vehicles with a self-propelled gun in one battle. The targets must be at least tier four enemy vehicles.
 Johannes Bölter was one of the most successful German tank aces of WWII. He participated in operations in the invasions of Poland, France, Greece and the Soviet Union, and the defense of France.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_BrunoPietro" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_BrunoPietro" xml:space="preserve">
     <value>Awarded to players who destroy three or four enemy vehicles and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
 Pietro Bruno was an Italian tank ace. For exceptional valor in the face of the enemy he was awarded the Gold Medal of Military Valor (Medaglia d'oro al Valore Militare), the highest Italian award.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Burda" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Burda" xml:space="preserve">
     <value>Awarded for the destruction of five or more enemy self-propelled guns.
 Guards Colonel Alexander Burda was a Soviet tank ace and a Hero of the Soviet Union. On October 4, 1941, Burda organized an ambush and destroyed an enemy armored column, including 10 medium and light tanks, 2 trucks with antitank guns and 5 infantry vehicles. (Not awarded to SPG's (Self Propelled Gun drivers))</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Dumitru" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Dumitru" xml:space="preserve">
     <value>Awarded for the destruction of four enemy self-propelled guns.
 Ion S. Dumitru was a Romanian tank ace. He fought in World War II for just twenty-five days, of which five on the German side, and, after Romania changed sides, twenty days against the Germans. On March 6th, 1945, Dumitru contributed to the destruction of six enemy tank destroyers and capture of a battery of 150 mm guns.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Fadin" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Fadin" xml:space="preserve">
     <value>Awarded for destroying the last enemy vehicle in the battle with the last shell remaining in the player's tank.
 A hero of the Soviet Union, Alexander Fadin was a T-34 commander. Supported by one infantry platoon, Fadin managed to capture and hold the Dashukovka village for 5 hours with one tank, and destroyed 3 tanks, 1 halftrack, 2 mortars and 12 machinegun nests. His crew also shot down an enemy plane with his tank's coaxial machinegun.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Halonen" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Halonen" xml:space="preserve">
     <value>Awarded for destroying three or more enemy vehicles with a tank destroyer. The targets must be at least two tiers higher than the player's vehicle.
 Erkki Halonen, a sergeant in the Finnish Army and a tank ace, destroyed three T-34, two KV-1, and two ISU-152 with his StuG III in battles during June and July, 1944.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_HeroesOfRaseiniai" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_HeroesOfRaseiniai" xml:space="preserve">
     <value>Awarded to a player who destroys single-handedly all enemy vehicles (at least 14 vehicles).
 In June 1941, near the Lithuanian town of Raseiniai, roughly 20 KV tanks of the Soviet 3rd Mechanized Corps met the assault of the 6th Panzer Division, with approximately 100 vehicles. A single KV-2 tank managed to hold off the German advance for a full day while being pummeled by a variety of antitank weapons, until finally the KV-2 ran out of ammunition and was knocked out.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Kolobanov" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Kolobanov" xml:space="preserve">
     <value>Awarded to a player who stands alone against five or more enemy tanks or self-propelled guns and wins (this means that you can capture the enemy base by yourself when you are against five enemies and you will recieve the achievement.)
 Colonel Zinoviy Kolobanov was a Soviet tank ace who destroyed 22 German tanks, 2 guns and 2 halftracks with his KV in battle on August 19, 1941.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_LafayettePool" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_LafayettePool" xml:space="preserve">
     <value>Awarded for destroying 10 or more enemy tanks and self-propelled guns with any vehicle. The targets must be at least tier four enemy vehicles.
 Lafayette G. Pool is widely recognized as the U.S. tank ace of aces, credited with 12 confirmed tank kills and 258 total armored vehicle and self-propelled gun kills.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Lehvaslaiho" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Lehvaslaiho" xml:space="preserve">
     <value>Awarded for destroying two enemy vehicles with a medium tank. The targets must be at least two tiers higher than the player's tank.
 Reino Lehväslaiho was a Finnish tank ace who destroyed seven tanks and tank destroyers.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Nikolas" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Nikolas" xml:space="preserve">
     <value>Awarded for destroying four or more enemy vehicles with a medium tank. The targets must be at least two tiers higher than the player's tank.
 Alfie Nicolas was a British tank gunner. During the battle of Al Alamein he destroyed fourteen enemy vehicles.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Orlik" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Orlik" xml:space="preserve">
     <value>Awarded for destroying three or more enemy tanks or tank destroyers with a light tank. The targets must be at least two tiers higher than the player's tank.
 Roman Edmund Orlik, a Polish Army sergeant, was a tank ace who knocked out 13 German tanks with his light TKS tankette in September, 1939.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Oskin" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Oskin" xml:space="preserve">
     <value>Awarded for destroying three or more enemy tanks or tank destroyers with a light tank. The targets must be at least two tiers higher than the player's tank.
 Roman Edmund Orlik, a Polish Army sergeant, was a tank ace who knocked out 13 German tanks with his light TKS tankette in September, 1939.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Pascucci" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Pascucci" xml:space="preserve">
     <value>Awarded for the destruction of three enemy self-propelled guns.
 Second Lieutenant Luigi Arbib Pascucci was an Italian tank commander during World War Two. He fought with the Ariete Tank Division in North Africa. Pascucci fought in the Second Battle of El Alamein, where he sacrificed his life in a reckless frontal attack that enabled the rest of his company to escape encirclement.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_RadleyWalters" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_RadleyWalters" xml:space="preserve">
     <value>Awarded to players in the 5th or higher tier for destroying 8 or 9 enemy vehicles in one battle.
 Sydney Valpy Radley-Walters was a Canadian tank ace of the 27th Armored Regiment. In 1944–1945 he destroyed 18 German vehicles with his Sherman Firefly.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_TamadaYoshio" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_TamadaYoshio" xml:space="preserve">
     <value>Awarded to a player who destroys at least three Self-Propelled Guns while driving a light tank, and survives the battle. The targets must be at least two tiers higher than the player's tank.
 Tamada Yoshio commanded the Japanese 4th Tank Regiment (Type 95 Ha-Gō light tanks) in an attack that overran and destroyed twelve Russian artillery guns during the Second Sino-Japanese War in July 1939.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Tarczay" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Tarczay" xml:space="preserve">
     <value>Awarded to players who destroy at least five enemy vehicles and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
 Ervin Tarczay was a Hungarian tank ace. He fought with the Hungarian 2nd Armored Division and destroyed at least ten enemy vehicles.</value>
   </data>
   <data name="Tooltip_MasteryBadges" xml:space="preserve">
     <value>Awarded for displaying mastery in controlling a specific armored vehicle. To qualify, the amount of experience you earn in a single battle must be higher than what a percentage of other players have achieved in the same tank. Once earned on a tank, the Mastery Badge is permanent.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Bombardier" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Bombardier" xml:space="preserve">
     <value>Awarded to the player who destroys two or more vehicles with one shot.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Hunter" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Hunter" xml:space="preserve">
     <value>Destroy 100 or more of the following tanks: Jagdpanther, Jagdtiger, PzKpfw V Panther, Panther-M10, Panther II, PzKpfw VI Tiger, PzKpfw VI Tiger (P), PzKpfw VIB Tiger II, Löwe, GW Panther, GW Tiger, Jagdpanther II and 8.8 cm PaK 43 Jagdtiger</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Invincible" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Invincible" xml:space="preserve">
     <value>Survive 5 or more consecutive battles without taking any damage (not including battles fought using self-propelled guns). Battles fought using self-propelled guns do not break the sequence, but are not included either. The icon in the service record displays the longest sequence.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Kamikaze" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Kamikaze" xml:space="preserve">
     <value>Destroy a higher-tier enemy vehicle by ramming it. You can only earn this achievement once per battle. The icon in the service record displays the number of times the achievement was awarded.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_MasterGunner" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_MasterGunner" xml:space="preserve">
     <value>Achieve at least five armor penetrating hits in a row against enemy vehicles. The results of the next battle in a row using any vehicle also count towards this number, unless the sequence is broken by a miss, non-penetration or ricochet. The icon in the service record displays the longest sequence.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_MouseTrap" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_MouseTrap" xml:space="preserve">
     <value>Destroy 10 or more PzKpfw VIII Maus tanks. The icon in the service record displays the number of times the achievement was awarded.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_PattonValley" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_PattonValley" xml:space="preserve">
     <value>Destroy 100 M46 Patton or M48A1 Patton III's.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Raider" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Raider" xml:space="preserve">
     <value>Destroy all the enemy light tanks (must be at least three) in the course of a single battle.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Huntsman" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Huntsman" xml:space="preserve">
     <value>Destroy all the enemy light tanks (must be at least three) in the course of a single battle.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Reaper" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Reaper" xml:space="preserve">
     <value>Destroy three or more enemy vehicles in a row with a single round each. The achievement is granted on completion of the sequence. The sequence can be continued in the next battle fought on any vehicle. The icon in the service record displays the longest sequence.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Sharpshooter" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sharpshooter" xml:space="preserve">
     <value>Hit an enemy vehicle ten or more times in a row without missing. The results of the next battle in a row using any vehicle also count towards this number, unless the sequence is broken by a miss. The icon in the service record displays the longest sequence.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Sinai" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sinai" xml:space="preserve">
     <value>The Lion of Sinai - Destroy at least 100 tanks of the IS series, and vehicles based on their chassis: IS, IS-3, IS-4, IS-6, IS-7, IS-8, ISU-152, Object 704, Object 261, Object 268 or Object 263</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Survivor" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Survivor" xml:space="preserve">
     <value>Survive 20 or more consecutive battles. Battles fought using self-propelled guns do not break the sequence, but are not included either.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Abrams" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Abrams" xml:space="preserve">
     <value>Awarded in one of four classes for the total number of team victories in which the player survived the battle: Class IV - 5 victories Class III - 50 victories Class II - 500 victories Class I - 5,000 victories
 General Creighton Abrams commanded US armored forces during WWII and the Vietnam War, earning a reputation as an aggressive and successful commander.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Carius" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Carius" xml:space="preserve">
     <value>Awarded for the destruction of enemy tanks and self-propelled guns in four classes:Class IV - 10 vehicles Class III - 100 vehicles Class II - 1,000 vehicles Class I - 10,000 vehicles
 Otto Carius was one of the most efficient tank aces of WWII. He commanded the PzKpfw 38 (t), the PzKpfw VI Tiger and the Jagdtiger tank destroyer during his impressive career.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_DeLanglade" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_DeLanglade" xml:space="preserve">
     <value>Awarded to a player who in the course of one battle destroys four enemy vehicles within a base circle while they are attempting to capture the base. Enemy vehicles may attempt to capture the base all at once or in turn.
 On 13 September 1944, Colonel Paul Girot de Langlade's Groupement Tactique "Langlade" (G.T.L), outnumbered by over two to one, attacked a German 112th Panzer Regiment occupying the French village of Dompaire. In the ensuing battle de Langlade's 16 M4A2 tanks and 4 M10 tank destroyers, with support from French artillery and American fighter-bombers, destroyed 69 of 90 PzKpfw V Panther and PzKpfw IV tanks.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Ekins" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Ekins" xml:space="preserve">
     <value>Awarded in four classes for destroying tier 8, 9 or 10 enemy tanks and self-propelled guns: Class IV - 3 vehicles Class III - 30 vehicles Class II - 300 vehicles Class I - 3,000 vehicles
 Joe Ekins was a private in the Northamptonshire Division of the British Territorial Army. A number of sources confirm Ekins as the final nemesis of famous German tank ace Michael Wittmann.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Kay" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Kay" xml:space="preserve">
     <value>Awarded for achieving the Battle Hero status in four classes:Class IV - 1 time Class III - 10 times Class II - 100 times Class I - 1,000 times
 
 
 Douglas Kay, a British Army sergeant, and gunner on a Sherman Firefly, participated in the Allied landing in Normandy and was famous for the popularization of the history of tank warfare.
 Note: Only the medals listed under "Battle Hero Achievements" above are counted in the “Kay’s Medal” achievement.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Knispel" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Knispel" xml:space="preserve">
     <value>Awarded for the total amount of damage caused and received in four classes: Class IV - 10,000 HP Class III - 100,000 HP Class II - 1,000,000 HP Class I - 10,000,000 HP
 Kurt Knispel, a German tank ace during WWII, participated in battles on both the Western and Eastern Fronts fighting on PzKpfw II, PzKpfw III, PzKpfw IV, PzKpfw VI Tiger, and PzKpfw VIB Tiger II.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Lavrinenko" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Lavrinenko" xml:space="preserve">
     <value>Awarded for reducing the total number of capture points of a friendly base, up to 100 points per battle. This award is established in four classes: Class IV - 30 points Class III - 300 points Class II - 3,000 points Class I - 30,000 points
 Dmitry Lavrinenko, a Hero of the Soviet Union, Guards Lieutenant, and tank ace was recognized as the most efficient Soviet tanker, destroying 52 tanks in 28 battles over the course of just two months.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Leclerk" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Leclerk" xml:space="preserve">
     <value>Awarded for the total amount of the player's enemy base capture points. An unsuccessful or reduced capture does not count toward this number. The award is established in four classes: Class IV - 30 points Class III - 300 points Class II - 3,000 points Class I - 30,000 points
 Philippe Leclerc was a General of the Free French Forces during WWII and one of the leaders of the Paris liberation operation.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Poppel" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Poppel" xml:space="preserve">
     <value>Awarded for detecting enemy tanks and self-propelled guns in all battles, in four classes: Class IV - 20 vehicles Class III - 200 vehicles Class II - 2,000 vehicles Class I - 20,000 vehicles
 Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and political worker, organized a raid against the enemy rear using captured vehicles during the battle of Dubno in the Summer of 1941.</value>
   </data>
@@ -1177,166 +1018,166 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Chart_KillDeathRatio" xml:space="preserve">
     <value>Kill/Death Ratio</value>
   </data>
-  <data name="Medal_Warrior" xml:space="preserve">
+  <data name="Medal_15x15_Warrior" xml:space="preserve">
     <value>Top Gun</value>
   </data>
-  <data name="Medal_Sniper" xml:space="preserve">
+  <data name="Medal_15x15_Sniper" xml:space="preserve">
     <value>Sniper</value>
   </data>
-  <data name="Medal_Confederate" xml:space="preserve">
+  <data name="Medal_15x15_Confederate" xml:space="preserve">
     <value>Confederate</value>
   </data>
-  <data name="Medal_PatrolDuty" xml:space="preserve">
+  <data name="Medal_15x15_PatrolDuty" xml:space="preserve">
     <value>Patrol Duty</value>
   </data>
-  <data name="Medal_SteelWall" xml:space="preserve">
+  <data name="Medal_15x15_SteelWall" xml:space="preserve">
     <value>Steel Wall</value>
   </data>
-  <data name="Medal_Defender" xml:space="preserve">
+  <data name="Medal_15x15_Defender" xml:space="preserve">
     <value>Defender</value>
   </data>
-  <data name="Medal_Invader" xml:space="preserve">
+  <data name="Medal_15x15_Invader" xml:space="preserve">
     <value>Invader</value>
   </data>
-  <data name="Medal_Scout" xml:space="preserve">
+  <data name="Medal_15x15_Scout" xml:space="preserve">
     <value>Scout</value>
   </data>
-  <data name="Medal_Huntsman" xml:space="preserve">
+  <data name="Medal_15x15_Huntsman" xml:space="preserve">
     <value>Medal Naidin</value>
   </data>
-  <data name="Medal_IronMan" xml:space="preserve">
+  <data name="Medal_15x15_IronMan" xml:space="preserve">
     <value>Iron Man</value>
   </data>
-  <data name="Medal_Sturdy" xml:space="preserve">
+  <data name="Medal_15x15_Sturdy" xml:space="preserve">
     <value>Sturdy</value>
   </data>
-  <data name="Medal_Lucky" xml:space="preserve">
+  <data name="Medal_15x15_LuckyDevil" xml:space="preserve">
     <value>Lucky</value>
   </data>
-  <data name="Medal_Sharpshooter" xml:space="preserve">
+  <data name="Medal_15x15_Sharpshooter" xml:space="preserve">
     <value>Sharpshooter</value>
   </data>
-  <data name="Medal_MasterGunner" xml:space="preserve">
+  <data name="Medal_15x15_MasterGunner" xml:space="preserve">
     <value>Master Gunner</value>
   </data>
-  <data name="Medal_Sinai" xml:space="preserve">
+  <data name="Medal_15x15_Sinai" xml:space="preserve">
     <value>The Lion of Sinai</value>
   </data>
-  <data name="Medal_Hunter" xml:space="preserve">
+  <data name="Medal_15x15_Hunter" xml:space="preserve">
     <value>Hunter</value>
   </data>
-  <data name="Medal_PattonValley" xml:space="preserve">
+  <data name="Medal_15x15_PattonValley" xml:space="preserve">
     <value>Valley of Pattons</value>
   </data>
-  <data name="Medal_MouseTrap" xml:space="preserve">
+  <data name="Medal_15x15_MouseTrap" xml:space="preserve">
     <value>Mouse Trap</value>
   </data>
-  <data name="Medal_Reaper" xml:space="preserve">
+  <data name="Medal_15x15_Reaper" xml:space="preserve">
     <value>Reaper</value>
   </data>
-  <data name="Medal_Bombardier" xml:space="preserve">
+  <data name="Medal_15x15_Bombardier" xml:space="preserve">
     <value>Bombardier</value>
   </data>
-  <data name="Medal_Raider" xml:space="preserve">
+  <data name="Medal_15x15_Raider" xml:space="preserve">
     <value>Raider</value>
   </data>
-  <data name="Medal_Invincible" xml:space="preserve">
+  <data name="Medal_15x15_Invincible" xml:space="preserve">
     <value>Invincible</value>
   </data>
-  <data name="Medal_Kamikaze" xml:space="preserve">
+  <data name="Medal_15x15_Kamikaze" xml:space="preserve">
     <value>Kamikaze</value>
   </data>
-  <data name="Survivor" xml:space="preserve">
+  <data name="Medal_15x15_Survivor" xml:space="preserve">
     <value>Survivor</value>
   </data>
-  <data name="Medal_Billotte" xml:space="preserve">
+  <data name="Medal_15x15_Billotte" xml:space="preserve">
     <value>Billotte's Medal</value>
   </data>
-  <data name="Medal_Bruno" xml:space="preserve">
+  <data name="Medal_15x15_Bruno" xml:space="preserve">
     <value>Bruno's Medal</value>
   </data>
-  <data name="Medal_Tarczay" xml:space="preserve">
+  <data name="Medal_15x15_Tarczay" xml:space="preserve">
     <value>Tarczay's Medal</value>
   </data>
-  <data name="Medal_Fadin" xml:space="preserve">
+  <data name="Medal_15x15_Fadin" xml:space="preserve">
     <value>Fadin's Medal</value>
   </data>
-  <data name="Medal_Boelter" xml:space="preserve">
+  <data name="Medal_15x15_Boelter" xml:space="preserve">
     <value>Bölter's Medal</value>
   </data>
-  <data name="Medal_TamadaYoshio" xml:space="preserve">
+  <data name="Medal_15x15_TamadaYoshio" xml:space="preserve">
     <value>Tamada Yoshio's Medal</value>
   </data>
-  <data name="Medal_Pascucci" xml:space="preserve">
+  <data name="Medal_15x15_Pascucci" xml:space="preserve">
     <value>Pascucci's Medal</value>
   </data>
-  <data name="Medal_Dumitru" xml:space="preserve">
+  <data name="Medal_15x15_Dumitru" xml:space="preserve">
     <value>Dumitru's Medal</value>
   </data>
-  <data name="Medal_Burda" xml:space="preserve">
+  <data name="Medal_15x15_Burda" xml:space="preserve">
     <value>Burda's Medal</value>
   </data>
-  <data name="Medal_DeLanglade" xml:space="preserve">
+  <data name="Medal_15x15_DeLanglade" xml:space="preserve">
     <value>De Langlade's Medal</value>
   </data>
-  <data name="Medal_Lehvaslaiho" xml:space="preserve">
+  <data name="Medal_15x15_Lehvaslaiho" xml:space="preserve">
     <value>Lehväslaiho's Medal</value>
   </data>
-  <data name="Medal_Halonen" xml:space="preserve">
+  <data name="Medal_15x15_Halonen" xml:space="preserve">
     <value>Halonen's Medal</value>
   </data>
-  <data name="Medal_Oskin" xml:space="preserve">
+  <data name="Medal_15x15_Oskin" xml:space="preserve">
     <value>Oskin's Medal</value>
   </data>
-  <data name="Medal_Orlik" xml:space="preserve">
+  <data name="Medal_15x15_Orlik" xml:space="preserve">
     <value>Orlik's Medal</value>
   </data>
-  <data name="Medal_Nikolas" xml:space="preserve">
+  <data name="Medal_15x15_Nikolas" xml:space="preserve">
     <value>Nicols's Medal</value>
   </data>
-  <data name="Medal_Kolobanov" xml:space="preserve">
+  <data name="Medal_15x15_Kolobanov" xml:space="preserve">
     <value>Kolobanov's Medal</value>
   </data>
-  <data name="Medal_BrothersInArms" xml:space="preserve">
+  <data name="Medal_15x15_BrothersInArms" xml:space="preserve">
     <value>Brothers in Arms</value>
   </data>
-  <data name="Medal_CrucialContribution" xml:space="preserve">
+  <data name="Medal_15x15_CrucialContribution" xml:space="preserve">
     <value>Crucial Contribution</value>
   </data>
-  <data name="Medal_RadleyWalters" xml:space="preserve">
+  <data name="Medal_15x15_RadleyWalters" xml:space="preserve">
     <value>Radley-Walters's Medal</value>
   </data>
-  <data name="Medal_LafayettePool" xml:space="preserve">
+  <data name="Medal_15x15_LafayettePool" xml:space="preserve">
     <value>Pool's Medal</value>
   </data>
-  <data name="Medal_HeroesOfRassenay" xml:space="preserve">
+  <data name="Medal_15x15_HeroesOfRassenay" xml:space="preserve">
     <value>Raseiniai Heroes' Medal</value>
   </data>
-  <data name="Medal_BattleHero" xml:space="preserve">
+  <data name="Medal_15x15_BattleHero" xml:space="preserve">
     <value>Battle Hero</value>
   </data>
-  <data name="Medal_Kay" xml:space="preserve">
+  <data name="Medal_15x15_Kay" xml:space="preserve">
     <value>Kay's Medal</value>
   </data>
-  <data name="Medal_Carius" xml:space="preserve">
+  <data name="Medal_15x15_Carius" xml:space="preserve">
     <value>Carius' Medal</value>
   </data>
-  <data name="Medal_Knispel" xml:space="preserve">
+  <data name="Medal_15x15_Knispel" xml:space="preserve">
     <value>Knispel's Medal</value>
   </data>
-  <data name="Medal_Poppel" xml:space="preserve">
+  <data name="Medal_15x15_Poppel" xml:space="preserve">
     <value>Popel's Medal</value>
   </data>
-  <data name="Medal_Abrams" xml:space="preserve">
+  <data name="Medal_15x15_Abrams" xml:space="preserve">
     <value>Abrams' Medal</value>
   </data>
-  <data name="Medal_Leclerk" xml:space="preserve">
+  <data name="Medal_15x15_Leclerk" xml:space="preserve">
     <value>Leclerc's Medal</value>
   </data>
-  <data name="Medal_Lavrinenko" xml:space="preserve">
+  <data name="Medal_15x15_Lavrinenko" xml:space="preserve">
     <value>Lavrinenko's Medal</value>
   </data>
-  <data name="Medal_Ekins" xml:space="preserve">
+  <data name="Medal_15x15_Ekins" xml:space="preserve">
     <value>Ekins' Medal</value>
   </data>
   <data name="Chart_Tooltip_Battles" xml:space="preserve">
@@ -1576,13 +1417,13 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="DatePicker_SelectDate" xml:space="preserve">
     <value>Select date</value>
   </data>
-  <data name="Medal_MainGun" xml:space="preserve">
+  <data name="Medal_15x15_MainGun" xml:space="preserve">
     <value>High Caliber</value>
   </data>
-  <data name="Medal_Sniper2" xml:space="preserve">
+  <data name="Medal_15x15_Sniper2" xml:space="preserve">
     <value>Tanker-Sniper</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Sniper2" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sniper2" xml:space="preserve">
     <value>Нанести наибольшее количество урона за бой с 
 дистанции не менее 300 метров
   • Общая точность стрельбы за бой не менее 85%
@@ -1594,7 +1435,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
 	• Не выдается при игре на САУ
   • Выдается только в случайных боях</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_MainGun" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_MainGun" xml:space="preserve">
     <value>Нанести наибольшее количество урона за бой
   • Нанесенный урон должен составлять не менее 20% от сумарной прочности техники
 	• Нанесенный урон должен составлять не менее 1000 единиц
@@ -1603,37 +1444,31 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
 наибольшее количество очков опыта за бой
 	• Выдается только в случайных боях</value>
   </data>
-  <data name="Column_BattleAwards_MainGun" xml:space="preserve">
-    <value>High Caliber</value>
-  </data>
-  <data name="Column_BattleAwards_Sniper2" xml:space="preserve">
-    <value>Tanker-Sniper</value>
-  </data>
   <data name="ButtonCheckUpdate" xml:space="preserve">
     <value>Check Update</value>
   </data>
   <data name="Settings_BattleMode" xml:space="preserve">
     <value>Battle mode</value>
   </data>
-  <data name="Medal_ArmoredFist" xml:space="preserve">
+  <data name="Medal_7x7_ArmoredFist" xml:space="preserve">
     <value>Armored Fist</value>
   </data>
-  <data name="Medal_KingOfTheHill" xml:space="preserve">
+  <data name="Medal_7x7_KingOfTheHill" xml:space="preserve">
     <value>King Of The Hill</value>
   </data>
-  <data name="Medal_TacticalBreakthrough" xml:space="preserve">
+  <data name="Medal_7x7_TacticalBreakthrough" xml:space="preserve">
     <value>Tactical Breakthrough</value>
   </data>
   <data name="Column_Ratings_PerformanceRating" xml:space="preserve">
     <value>Performance Rating</value>
   </data>
-  <data name="Tooltip_GroupAchievements_ArmoredFist" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_ArmoredFist" xml:space="preserve">
     <value>Destroy all enemy vehicles while losing only one friendly vehicle.
   • Win the battle.
   • Awarded to all team members.
   • Can be obtained in Team Battles only.</value>
   </data>
-  <data name="Tooltip_GroupAchievements_KingOfTheHill" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_KingOfTheHill" xml:space="preserve">
     <value>Be the only survivor while driving a tank or a tank destroyer.
   • Win the battle.
   • Can be obtained in Team Battles only.</value>
@@ -1665,55 +1500,55 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="Command_ZipFolder" xml:space="preserve">
     <value>Pack</value>
   </data>
-  <data name="Medal_FightingReconnaissanceMedal" xml:space="preserve">
+  <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
     <value>Разведка боем</value>
   </data>
-  <data name="Tooltip_TeamBattlesAchievements_FightingReconnaissanceMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
     <value>50 раз выполнить следующие условия:
   • Обнаружить не менее 2 машин противника
   • Занять 3 и выше место по нанесенному урону
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-  <data name="Medal_WillToWinSpirit" xml:space="preserve">
+  <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
     <value>За волю к победе</value>
   </data>
-  <data name="Tooltip_TeamBattlesAchievements_WillToWinSpirit" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
     <value>Победить в бою оставшись в одиночку против 3 
 и более машин противника
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-  <data name="Medal_CrucialShotMedal" xml:space="preserve">
+  <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
     <value>Решающий выстрел</value>
   </data>
-  <data name="Tooltip_TeamBattlesAchievements_CrucialShotMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7" xml:space="preserve">
     <value>20 раз уничтожить последнюю машину противника
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-  <data name="Medal_GodOfWar" xml:space="preserve">
+  <data name="Medal_7x7_GodOfWar" xml:space="preserve">
     <value>Бог войны</value>
   </data>
-  <data name="Tooltip_TeamBattlesAchievements_GodOfWar" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
     <value>Победить в бою на САУ оставшись единственным выжившим
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-  <data name="Medal_WolfAmongSheepMedal" xml:space="preserve">
+  <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
     <value>За отличную стрельбу</value>
   </data>
-  <data name="Tooltip_TeamBattlesAchievements_WolfAmongSheepMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
     <value>Занять 100 раз первое место по количеству нанесенного урона в победном бою
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-  <data name="Medal_GeniusForWarMedal" xml:space="preserve">
+  <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
     <value>Отличник боевой подготовки</value>
   </data>
-  <data name="Tooltip_TeamBattlesAchievements_GeniusForWarMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
     <value>Занять 100 раз первое место по количеству заработанного опыта за бой
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
@@ -1782,9 +1617,6 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   <data name="ChartLegend_WinPercent" xml:space="preserve">
     <value>Win %</value>
   </data>
-  <data name="ChartLegend_WN6Rating" xml:space="preserve">
-    <value>WN6</value>
-  </data>
   <data name="ChartTooltipFormat_AvgDamage" xml:space="preserve">
     <value>Battles: {0}
 Avg Damage: {1:0.00}</value>
@@ -1812,21 +1644,6 @@ Ratio: {1:0.00}</value>
   <data name="Chart_Tooltip_Survive" xml:space="preserve">
     <value>Battles: {0}
 Survive %: {1:0.00}</value>
-  </data>
-  <data name="Column_Replay_Credits1" xml:space="preserve">
-    <value>Credits</value>
-  </data>
-  <data name="Column_Replay_Damaged1" xml:space="preserve">
-    <value>Damaged</value>
-  </data>
-  <data name="Column_Replay_DamageDealt1" xml:space="preserve">
-    <value>Damage Dealt</value>
-  </data>
-  <data name="Column_Replay_Frags1" xml:space="preserve">
-    <value>Frags</value>
-  </data>
-  <data name="Column_Replay_XP1" xml:space="preserve">
-    <value>XP</value>
   </data>
   <data name="ExtendedTimeFormat" xml:space="preserve">
     <value>m' m 's' s'</value>
@@ -2176,68 +1993,29 @@ Survive %: {1:0.00}</value>
   <data name="WindowTitleFormat_Replay" xml:space="preserve">
     <value>{0}, {1}, battle level - {2}</value>
   </data>
-  <data name="Column_Medals7x7_ForTacticalOperations" xml:space="preserve">
-    <value>For Tactical Operations</value>
-  </data>
-  <data name="Tooltip_StepAchievements_ForTacticalOperations" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_ArmoredFist" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_ForTacticalOperations" xml:space="preserve">
     <value />
   </data>
   <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
-    <value />
+    <value>Fire And Steel Medal</value>
   </data>
-  <data name="Medal_7x7_ForTacticalOperations1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_GodOfWar" xml:space="preserve">
-    <value />
+  <data name="Medal_7x7_ForTacticalOperations" xml:space="preserve">
+    <value>For Tactical Operations</value>
   </data>
   <data name="Medal_7x7_HeavyFireMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_KingOfTheHill" xml:space="preserve">
-    <value />
+    <value>Heavy Fire Medal</value>
   </data>
   <data name="Medal_7x7_NoMansLand" xml:space="preserve">
-    <value />
+    <value>No Mans Land</value>
   </data>
   <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
-    <value />
+    <value>Promising Fighter Medal</value>
   </data>
   <data name="Medal_7x7_PyromaniacMedal" xml:space="preserve">
-    <value />
+    <value>Pyromaniac Medal</value>
   </data>
   <data name="Medal_7x7_RangerMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_TacticalBreakthrough" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Tooltip_Achievements_7x7_ArmoredFist" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
-    <value />
+    <value>Ranger Medal</value>
   </data>
   <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
     <value />
@@ -2245,16 +2023,7 @@ Survive %: {1:0.00}</value>
   <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
     <value />
   </data>
-  <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
-    <value />
-  </data>
   <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Tooltip_Achievements_7x7_KingOfTheHill" xml:space="preserve">
     <value />
   </data>
   <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
@@ -2272,10 +2041,34 @@ Survive %: {1:0.00}</value>
   <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
     <value />
   </data>
-  <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
     <value />
   </data>
-  <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
+  <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
+    <value>Historical Battle</value>
+  </data>
+  <data name="Medal_HistoricalBattle_BothSidesWins" xml:space="preserve">
+    <value>Both Sides Wins</value>
+  </data>
+  <data name="Medal_HistoricalBattle_GuardsMan" xml:space="preserve">
+    <value>Guards Man</value>
+  </data>
+  <data name="Medal_HistoricalBattle_MakerOfHistory" xml:space="preserve">
+    <value>Maker Of History</value>
+  </data>
+  <data name="Medal_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
+    <value>Weak Vehicles Wins</value>
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_BothSidesWins" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_GuardsMan" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_MakerOfHistory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
     <value />
   </data>
 </root>

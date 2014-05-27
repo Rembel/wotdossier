@@ -79,8 +79,8 @@
                                      SecondValue="{Binding Second.DamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Diff="{Binding DamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
                                  Foreground="{Binding DamageDealt, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--DamageRatio-->
-            <controls:CompareRow HeaderMargin="20,0,0,0" Header="{x:Static resources:Resources.Common_DamageRatio}" FirstValue="{Binding First.DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                     SecondValue="{Binding Second.DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Diff="{Binding DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
+            <controls:CompareRow HeaderMargin="20,0,0,0" Header="{x:Static resources:Resources.Common_DamageRatio}" FirstValue="{Binding First.DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}"
+                                     SecondValue="{Binding Second.DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}" Diff="{Binding DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
                                  Foreground="{Binding DamageRatio, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--AvgDamageCaused-->
             <controls:CompareRow HeaderMargin="20,0,0,0" Header="{x:Static resources:Resources.Common_AvgDamageCaused}" FirstValue="{Binding First.AvgDamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
@@ -112,14 +112,14 @@
             <controls:CompareRow Header="WN7" FirstValue="{Binding First.WN7Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                      SecondValue="{Binding Second.WN7Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Diff="{Binding WN7Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
                                  Foreground="{Binding WN7Rating, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
+            <!--Wn8Rating-->
+            <controls:CompareRow Header="WN8" FirstValue="{Binding First.WN8Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                                     SecondValue="{Binding Second.WN8Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Diff="{Binding WN8Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
+                                 Foreground="{Binding WN8Rating, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--KievArmorRating-->
             <controls:CompareRow Header="{x:Static resources:Resources.Common_KievArmorRating}" FirstValue="{Binding First.KievArmorRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                      SecondValue="{Binding Second.KievArmorRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Diff="{Binding KievArmorRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
                                  Foreground="{Binding KievArmorRating, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
-            <!--XEFF-->
-            <controls:CompareRow Header="XVM" FirstValue="{Binding First.XEFF, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
-                                     SecondValue="{Binding Second.XEFF, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Diff="{Binding XEFF, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
-                                 Foreground="{Binding XEFF, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--Noobmeter Performance Rating-->
             <!--<controls:CompareRow Header="{x:Static Resources:Resources.Common_NoobmeterPerformanceRating}" FirstValue="{Binding First.PerformanceRating, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                      SecondValue="{Binding Second.PerformanceRating, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Diff="{Binding PerformanceRating, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"

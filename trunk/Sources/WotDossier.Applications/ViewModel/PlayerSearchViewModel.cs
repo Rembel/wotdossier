@@ -75,7 +75,7 @@ namespace WotDossier.Applications.ViewModel
                 Player player;
                 using (new WaitCursor())
                 {
-                    player = WotApiClient.Instance.LoadPlayerStat(row.Id, true, SettingsReader.Get());
+                    player = WotApiClient.Instance.LoadPlayerStat(row.Id, SettingsReader.Get(), true);
                 }
                 if (player != null)
                 {

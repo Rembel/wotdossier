@@ -189,14 +189,14 @@ namespace WotDossier.Dal
         /// <exception cref="PlayerInfoLoadException"></exception>
         public Player LoadPlayerStat(int playerId, AppSettings settings)
         {
-            return LoadPlayerStat(playerId, true, settings);
+            return LoadPlayerStat(playerId, settings, true);
         }
 
         /// <summary>
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public Player LoadPlayerStat(int playerId, bool loadVehicles, AppSettings settings)
+        public Player LoadPlayerStat(int playerId, AppSettings settings, bool loadVehicles)
         {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
@@ -290,6 +290,10 @@ namespace WotDossier.Dal
                         {
                             tank.tank = Dictionaries.Instance.ServerTanks[tank.tank_id];
                             tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
+                        }
+                        else
+                        {
+                            _log.WarnFormat("Unknown tank id found [{0}] on get player server tank statistic", tank.tank_id);
                         }
                     }
                     return tanks;

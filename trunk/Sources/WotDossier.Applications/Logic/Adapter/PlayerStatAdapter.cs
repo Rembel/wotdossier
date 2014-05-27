@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
+using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Server;
@@ -221,10 +224,16 @@ namespace WotDossier.Applications.Logic.Adapter
             MedalCoolBlood = stat.dataField.achievements.medalCoolBlood;
             MedalStark = stat.dataField.achievements.medalStark;
 
-            Vehicle = stat.dataField.vehicles;
+            //PerformanceRating = RatingHelper.PerformanceRating(tanks);
+            if (stat.dataField.vehicles != null)
+            {
+                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
+                WN8Rating = RatingHelper.Wn8(Tanks);
+                PerformanceRating = RatingHelper.PerformanceRating(Tanks);
+            }
         }
 
-        public List<Vehicle> Vehicle { get; set; }
+        public List<ITankStatisticRow> Tanks { get; set; }
 
         #region Achievments
 

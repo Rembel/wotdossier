@@ -604,7 +604,7 @@ namespace WotDossier.Applications.ViewModel
                 int playerId = settings.PlayerId;
                 if (!string.IsNullOrEmpty(settings.PlayerName))
                 {
-                    player = WotApiClient.Instance.LoadPlayerStat(playerId, false, settings);
+                    player = WotApiClient.Instance.LoadPlayerStat(playerId, settings, false);
                 }
             }
             catch (Exception e)

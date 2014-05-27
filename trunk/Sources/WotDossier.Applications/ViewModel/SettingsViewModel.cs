@@ -102,7 +102,7 @@ namespace WotDossier.Applications.ViewModel
                 {
                     _appSettings.PlayerId = player.id;
                     
-                    playerStat = WotApiClient.Instance.LoadPlayerStat(player.id, false, _appSettings);
+                    playerStat = WotApiClient.Instance.LoadPlayerStat(player.id, _appSettings, false);
 
                     if (playerStat != null)
                     {

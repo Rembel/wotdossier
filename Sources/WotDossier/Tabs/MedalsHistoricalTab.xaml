@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="WotDossier.Tabs.MedalsHistoricalTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+             xmlns:converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="1*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <controls:TankFilterPanel DataContext="{Binding TankFilter}">
+    </controls:TankFilterPanel>
+    <dataGrid:FooterDataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgMedals" IsReadOnly="True"
+              AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}" controls1:DataGridBehavior.DisplayRowNumber="True">
+      <dataGrid:FooterDataGrid.InputBindings>
+        <KeyBinding Command="{Binding Path=RowDoubleClickCommand}"
+                    Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+        <KeyBinding Command="{Binding Path=AddToFavoriteCommand}"
+                    Key="D" Modifiers="Control" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+        <KeyBinding Command="{Binding Path=RemoveFromFavoriteCommand}"
+                    CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+      </dataGrid:FooterDataGrid.InputBindings>
+      <dataGrid:FooterDataGrid.Columns>
+        <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='0.##'}"></DataGridTextColumn>
+        <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+        <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+
+        <DataGridTextColumn Header="{x:Static resources:Resources.Medal_HistoricalBattle_GuardsMan}" HeaderTemplate="{StaticResource GuardsManColumnHeaderTemplate}" Binding="{Binding GuardsMan, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
+        <DataGridTextColumn Header="{x:Static resources:Resources.Medal_HistoricalBattle_MakerOfHistory}" HeaderTemplate="{StaticResource MakerOfHistoryColumnHeaderTemplate}" Binding="{Binding MakerOfHistory, Converter={x:Static converters:MedalRankToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
+      </dataGrid:FooterDataGrid.Columns>
+    </dataGrid:FooterDataGrid>
+  </Grid>
+</UserControl>

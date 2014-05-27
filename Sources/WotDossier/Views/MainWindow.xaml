@@ -122,7 +122,7 @@
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
                                                 <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
-								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
@@ -154,7 +154,7 @@
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
                                                 <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
-								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
@@ -186,7 +186,7 @@
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
                                                 <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
-								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
@@ -224,7 +224,7 @@
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
                                                 <Rectangle Width="30" Fill="Gray"
-								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
@@ -256,7 +256,7 @@
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
                                                 <Rectangle Width="30" Fill="Gray"
-								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
@@ -288,7 +288,7 @@
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
                                                 <Rectangle Width="30" Fill="Gray"
-								               d3:ViewportPanel.Y="0" 
+								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
 								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
@@ -307,86 +307,86 @@
                         </ScrollViewer>
                     </TabItem>
                     <TabItem Header="5">
-                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                        <StackPanel Orientation="Horizontal">
-                            <GroupBox Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" Margin="20">
-                                <Grid VerticalAlignment="Center">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                        <RadioButton Margin="6" Grid.Row="0" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>    
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <StackPanel Orientation="Horizontal">
+                                <GroupBox Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" Margin="20">
+                                    <Grid VerticalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <RadioButton Margin="6" Grid.Row="0" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
                                         <RadioButton Margin="6" Grid.Row="1" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
                                         <RadioButton Margin="6" Grid.Row="2" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
                                         <TextBlock Margin="6" Grid.Row="3" Text="С"/>
                                         <DatePicker Margin="6" Grid.Row="4" Text="date" SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
                                         <TextBlock Margin="6" Grid.Row="5" Text="по"/>
                                         <DatePicker Margin="6" Grid.Row="6" Text="date" SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
-                                </Grid>    
-                            </GroupBox>
-                            <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
-                                                 MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
-                                      Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}">
-                                <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_ReplaysCountByMap}"></TextBlock>
-                                </d3:Header>
-                                <d3:IntegerAxis ShowMinorTicks="False" />
-                                <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
-                                    <d3:BarChart.Resources>
-                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                                    </d3:BarChart.Resources>
-                                    <d3:TemplateMarkerGenerator>
-                                        <DataTemplate>
-                                            <Rectangle Height="10" Fill="Gray"
-								               d3:ViewportPanel.X="0" 
-								               d3:ViewportPanel.Y="{Binding Y}"
-								               d3:ViewportPanel.ViewportWidth="{Binding X}"
-								               d3:ViewportPanel.ViewportHorizontalAlignment="Left">
-                                                <ToolTipService.ToolTip>
-                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                                        <TextBlock Text="{Binding X, StringFormat='N0'}" FontWeight="Bold" ></TextBlock>
-                                                    </ToolTip>
-                                                </ToolTipService.ToolTip>
-                                            </Rectangle>
-                                        </DataTemplate>
-                                    </d3:TemplateMarkerGenerator>
-                                </d3:BarChart>
-                            </controls:ChartPlotter>
-                            <controls:ChartPlotter x:Name="BattlesWinPercentByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400" 
-                                                 MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
-                                      Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}">
-                                <d3:Header>
-                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
-                                </d3:Header>
-                                <d3:IntegerAxis ShowMinorTicks="False" />
-                                <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
-                                    <d3:BarChart.Resources>
-                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                                    </d3:BarChart.Resources>
-                                    <d3:TemplateMarkerGenerator>
-                                        <DataTemplate>
-                                            <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:PercentToColorConverter.Default}}"
-								               d3:ViewportPanel.X="0" 
-								               d3:ViewportPanel.Y="{Binding Y}"
-								               d3:ViewportPanel.ViewportWidth="{Binding X}"
-								               d3:ViewportPanel.ViewportHorizontalAlignment="Left">
-                                                <ToolTipService.ToolTip>
-                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                                        <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                                    </ToolTip>
-                                                </ToolTipService.ToolTip>
-                                            </Rectangle>
-                                        </DataTemplate>
-                                    </d3:TemplateMarkerGenerator>
-                                </d3:BarChart>
-                            </controls:ChartPlotter>
-                        </StackPanel>
-                                </ScrollViewer>
+                                    </Grid>
+                                </GroupBox>
+                                <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400"
+                                                     MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
+                                          Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}">
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_ReplaysCountByMap}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis ShowMinorTicks="False" />
+                                    <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Height="10" Fill="Gray"
+                                                   d3:ViewportPanel.X="0"
+                                                   d3:ViewportPanel.Y="{Binding Y}"
+                                                   d3:ViewportPanel.ViewportWidth="{Binding X}"
+                                                   d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding X, StringFormat='N0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </controls:ChartPlotter>
+                                <controls:ChartPlotter x:Name="BattlesWinPercentByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400"
+                                                     MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
+                                          Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}">
+                                    <d3:Header>
+                                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
+                                    </d3:Header>
+                                    <d3:IntegerAxis ShowMinorTicks="False" />
+                                    <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
+                                        <d3:BarChart.Resources>
+                                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                        </d3:BarChart.Resources>
+                                        <d3:TemplateMarkerGenerator>
+                                            <DataTemplate>
+                                                <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:PercentToColorConverter.Default}}"
+                                                   d3:ViewportPanel.X="0"
+                                                   d3:ViewportPanel.Y="{Binding Y}"
+                                                   d3:ViewportPanel.ViewportWidth="{Binding X}"
+                                                   d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                            <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                        </ToolTip>
+                                                    </ToolTipService.ToolTip>
+                                                </Rectangle>
+                                            </DataTemplate>
+                                        </d3:TemplateMarkerGenerator>
+                                    </d3:BarChart>
+                                </controls:ChartPlotter>
+                            </StackPanel>
+                        </ScrollViewer>
                     </TabItem>
                 </TabControl>
             </TabItem>
@@ -407,7 +407,7 @@
                 <tabs:DamageTab HorizontalAlignment="Stretch"></tabs:DamageTab>
             </TabItem>
             <!--Battle awards-->
-            <TabItem TabIndex="6" Header="{x:Static resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards" 
+            <TabItem TabIndex="6" Header="{x:Static resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards"
                      Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
                      ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:BattleAwardsTab HorizontalAlignment="Stretch"></tabs:BattleAwardsTab>
@@ -430,12 +430,18 @@
                      ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
                 <tabs:MedalsTab HorizontalAlignment="Stretch"></tabs:MedalsTab>
             </TabItem>
-          <!--Medals-->
-          <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedals7x7"
-                   Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+            <!--Medals-->
+            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedals7x7"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
                      ConverterParameter={x:Static viewModel:BattleMode.TeamBattle}}">
-            <tabs:Medals7x7Tab HorizontalAlignment="Stretch"></tabs:Medals7x7Tab>
-          </TabItem>
+                <tabs:Medals7x7Tab HorizontalAlignment="Stretch"></tabs:Medals7x7Tab>
+            </TabItem>
+            <!--Medals-->
+            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedalsHistorical"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.HistoricalBattle}}">
+                <tabs:MedalsHistoricalTab HorizontalAlignment="Stretch"></tabs:MedalsHistoricalTab>
+            </TabItem>
             <!--Ratings-->
             <TabItem TabIndex="10" Header="{x:Static resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
                 <tabs:RatingsTab HorizontalAlignment="Stretch"></tabs:RatingsTab>

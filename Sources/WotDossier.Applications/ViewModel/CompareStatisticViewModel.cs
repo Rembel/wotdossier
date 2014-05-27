@@ -71,11 +71,6 @@
 
         #region Unofficial ratings
 
-        public double WN6Rating
-        {
-            get { return First.WN6Rating - Second.WN6Rating; }
-        }
-
         public double WN7Rating
         {
             get { return First.WN7Rating - Second.WN7Rating; }

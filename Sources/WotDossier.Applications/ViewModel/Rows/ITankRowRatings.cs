@@ -6,8 +6,8 @@
         int MarkOfMastery { get; set; }
 
         double EffRating { get; }
-        double WN6Rating { get; }
         double WN7Rating { get; }
+        double WN8Rating { get; }
         double KievArmorRating { get; }
     }
 }

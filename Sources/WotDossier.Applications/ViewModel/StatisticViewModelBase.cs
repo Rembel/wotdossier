@@ -198,18 +198,6 @@ namespace WotDossier.Applications.ViewModel
 
         #region Unofficial ratings
         
-        public double WN6Rating
-        {
-            get
-            {
-                if (BattlesCount > 0)
-                {
-                    return RatingHelper.Wn6(AvgDamageDealt, Tier, AvgFrags, AvgSpotted, AvgDroppedCapturePoints, WinsPercent);
-                }
-                return 0;
-            }
-        }
-
         public double WN7Rating
         {
             get
@@ -267,7 +255,7 @@ namespace WotDossier.Applications.ViewModel
 
         public double XWN
         {
-            get { return RatingHelper.Xwn6(WN6Rating); }
+            get { return RatingHelper.Xwn6(WN7Rating); }
         }
 
         private double _performanceRating;

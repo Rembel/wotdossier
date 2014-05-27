@@ -142,6 +142,12 @@
     <Compile Include="Controls\AchievementCompareRow.xaml.cs">
       <DependentUpon>AchievementCompareRow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Achievements7x7.xaml.cs">
+      <DependentUpon>Achievements7x7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AchievementsHistorical.xaml.cs">
+      <DependentUpon>AchievementsHistorical.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LinkStatisticRow.xaml.cs">
       <DependentUpon>LinkStatisticRow.xaml</DependentUpon>
     </Compile>
@@ -228,6 +234,9 @@
     </Compile>
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\MedalsHistoricalTab.xaml.cs">
+      <DependentUpon>MedalsHistoricalTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Medals7x7Tab.xaml.cs">
       <DependentUpon>Medals7x7Tab.xaml</DependentUpon>
@@ -352,6 +361,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\AchievementCompareRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Achievements7x7.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AchievementsHistorical.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -505,6 +522,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\ChartsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\MedalsHistoricalTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -97,11 +97,6 @@ namespace WotDossier.Applications.ViewModel
             get { return DroppedCapturePoints - PrevStatistic.DroppedCapturePoints; }
         }
 
-        public double WN6RatingDelta
-        {
-            get { return WN6Rating - PrevStatistic.WN6Rating; }
-        }
-
         public double WN7RatingDelta
         {
             get { return WN7Rating - PrevStatistic.WN7Rating; }
@@ -419,8 +414,6 @@ namespace WotDossier.Applications.ViewModel
 
         #region Achievments
 
-        #region [ ITankRowBattleAwards ]
-
         public int BattleHeroDelta
         {
             get { return BattleHero - PrevStatistic.BattleHero; }
@@ -500,23 +493,6 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return Sturdy - PrevStatistic.Sturdy; }
         }
-
-        public int KingOfTheHillDelta
-        {
-            get { return KingOfTheHill - PrevStatistic.KingOfTheHill; }
-        }
-        public int ArmoredFistDelta
-        {
-            get { return ArmoredFist - PrevStatistic.ArmoredFist; }
-        }
-        public int TacticalBreakthroughDelta
-        {
-            get { return TacticalBreakthrough - PrevStatistic.TacticalBreakthrough; }
-        }
-
-        #endregion
-
-        #region [ ITankRowEpic ]
 
         public int BoelterDelta
         {
@@ -613,10 +589,6 @@ namespace WotDossier.Applications.ViewModel
             get { return DeLanglade - PrevStatistic.DeLanglade; }
         }
 
-        #endregion
-
-        #region [ ITankRowSpecialAwards ]
-
         public int KamikazeDelta
         {
             get { return Kamikaze - PrevStatistic.Kamikaze; }
@@ -677,10 +649,6 @@ namespace WotDossier.Applications.ViewModel
             get { return Huntsman - PrevStatistic.Huntsman; }
         }
 
-        #endregion
-
-        #region [ ITankRowMedals]
-
         public int KayDelta
         {
             get { return Kay - PrevStatistic.Kay; }
@@ -720,10 +688,6 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return Ekins - PrevStatistic.Ekins; }
         }
-
-        #endregion
-
-        #region [ ITankRowSeries ]
 
         public int ReaperLongestDelta
         {
@@ -781,6 +745,117 @@ namespace WotDossier.Applications.ViewModel
         }
 
         #endregion
+
+        #region Achievments 7x7
+
+        public int KingOfTheHillDelta
+        {
+            get { return KingOfTheHill - PrevStatistic.KingOfTheHill; }
+        }
+
+        public int ArmoredFistDelta
+        {
+            get { return ArmoredFist - PrevStatistic.ArmoredFist; }
+        }
+
+        public int TacticalBreakthroughDelta
+        {
+            get { return TacticalBreakthrough - PrevStatistic.TacticalBreakthrough; }
+        }
+
+        public int CrucialShotDelta
+        {
+            get { return CrucialShot - PrevStatistic.CrucialShot; }
+        }
+
+        public int CrucialShotMedalDelta
+        {
+            get { return CrucialShotMedal - PrevStatistic.CrucialShotMedal; }
+        }
+
+        public int FightingReconnaissanceMedalDelta
+        {
+            get { return FightingReconnaissanceMedal - PrevStatistic.FightingReconnaissanceMedal; }
+        }
+
+        public int ForTacticalOperationsDelta
+        {
+            get { return ForTacticalOperations - PrevStatistic.ForTacticalOperations; }
+        }
+
+        public int GeniusForWarMedalDelta
+        {
+            get { return GeniusForWarMedal - PrevStatistic.GeniusForWarMedal; }
+        }
+
+        public int GodOfWarDelta
+        {
+            get { return GodOfWar - PrevStatistic.GodOfWar; }
+        }
+
+        public int WillToWinSpiritDelta
+        {
+            get { return WillToWinSpirit - PrevStatistic.WillToWinSpirit; }
+        }
+
+        public int WolfAmongSheepMedalDelta
+        {
+            get { return WolfAmongSheepMedal - PrevStatistic.WolfAmongSheepMedal; }
+        }
+
+        public int NoMansLandDelta
+        {
+            get { return NoMansLand - PrevStatistic.NoMansLand; }
+        }
+
+        public int PyromaniacMedalDelta
+        {
+            get { return PyromaniacMedal - PrevStatistic.PyromaniacMedal; }
+        }
+
+        public int FireAndSteelMedalDelta
+        {
+            get { return FireAndSteel - PrevStatistic.FireAndSteel; }
+        }
+
+        public int RangerMedalDelta
+        {
+            get { return RangerMedal - PrevStatistic.RangerMedal; }
+        }
+
+        public int HeavyFireMedalDelta
+        {
+            get { return HeavyFireMedal - PrevStatistic.HeavyFireMedal; }
+        }
+
+        public int PromisingFighterMedalDelta
+        {
+            get { return PromisingFighterMedal - PrevStatistic.PromisingFighterMedal; }
+        }
+
+        #endregion
+        
+        #region Achievments  Historical
+
+        public int GuardsManDelta
+        {
+            get { return GuardsMan - PrevStatistic.GuardsMan; }
+        }
+
+        public int MakerOfHistoryDelta
+        {
+            get { return MakerOfHistory - PrevStatistic.MakerOfHistory; }
+        }
+
+        public int BothSidesWinsDelta
+        {
+            get { return BothSidesWins - PrevStatistic.BothSidesWins; }
+        }
+
+        public int WeakVehiclesWinsDelta
+        {
+            get { return WeakVehiclesWins - PrevStatistic.WeakVehiclesWins; }
+        }
 
         #endregion
 

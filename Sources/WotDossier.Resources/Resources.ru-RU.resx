@@ -327,46 +327,46 @@
   <data name="Tab_Header_XP" xml:space="preserve">
     <value>Опыт</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_BattleHero" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_BattleHero" xml:space="preserve">
     <value>Награды этой категории выдаются исключительно по результатам боя. 
 Награду каждой номинации по результатам боя может получить только один игрок.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_BrothersInArms" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_BrothersInArms" xml:space="preserve">
     <value>	• Для получения награды каждый игрок взвода должен уничтожить не менее 3-х машин противника и выжить.
 	• Присуждается всем игрокам взвода.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Confederate" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Confederate" xml:space="preserve">
     <value>	• Присуждается игроку, который произвёл наибольшее 
 количество попаданий (не менее 6) по различным противникам, которые 
 впоследствии были уничтожены другими игроками или самоуничтожились.
 	• При равном количестве попаданий выдаётся игроку, получившему больше очков опыта за бой с учётом премиум аккаунта.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_CrucialContribution" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_CrucialContribution" xml:space="preserve">
     <value>Для получения награды взводу необходимо уничтожить не менее 12-ти машин противника.
 Присуждается всем игрокам взвода.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Defender" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Defender" xml:space="preserve">
     <value>Присуждается игроку, сбившему наибольший процент захвата дружественной базы (70 % и более). 
 При равном количестве сбитых очков награда присуждается тому, кто в данном бою заработал 
 наибольшее количество очков опыта с учетом премиум аккаунта.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Invader" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Invader" xml:space="preserve">
     <value>Присуждается игроку, получившему наибольшее количество очков захвата базы, 
 но не менее 80. Выдаётся после состоявшегося захвата без учета того, 
 что бой мог быть закончен уничтожением всех противников. 
 В случае одновременного захвата базы обоими командами, 
 присваивается игроку, получившему наибольшее количество опыта.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_PatrolDuty" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_PatrolDuty" xml:space="preserve">
     <value>	• Присуждается игроку, по разведданным которого членами его команды было повреждено 6 и более танков противника.
 	• В зачёт идут цели, разведданные по которым в момент их повреждения передавал только один игрок.
 	• При равном количестве повреждённых танков, приоритет у того, кто получил больше очков опыта.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Scout" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Scout" xml:space="preserve">
     <value>Присваивается игроку победившей команды, обнаружившему 
     наибольшее число танков и САУ противника (девять и более).</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Sniper" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sniper" xml:space="preserve">
     <value>	• Присуждается игроку, который, не задевая союзников 
 прямыми выстрелами, произвёл не менее 85% попаданий по противнику, 
 сделав не менее 10-ти выстрелов с потенциальным уроном от 1 000 единиц.
@@ -375,7 +375,7 @@
 	• При равном проценте и количестве попаданий присуждается игроку, 
 набравшему больше очков опыта за бой с учётом премиум аккаунта.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Sniper2" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sniper2" xml:space="preserve">
     <value>Нанести наибольшее количество урона за бой с 
 дистанции не менее 300 метров
   • Общая точность стрельбы за бой не менее 85%
@@ -387,7 +387,7 @@
   • Не выдается при игре на САУ
   • Выдается только в случайных боях</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_MainGun" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_MainGun" xml:space="preserve">
     <value>Нанести наибольшее количество урона за бой
   • Нанесенный урон должен составлять не менее 20% от сумарной прочности техники
   • Нанесенный урон должен составлять не менее 1000 единиц
@@ -396,7 +396,7 @@
 наибольшее количество очков опыта за бой
   • Выдается только в случайных боях</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_SteelWall" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_SteelWall" xml:space="preserve">
     <value>	• Присуждается игроку, получившему наибольший потенциальный урон, но не менее 1 000 единиц.
 	• Необходимо получить не менее 11 попаданий.
 	• Присуждается только выжившим.
@@ -405,7 +405,7 @@
 попаданий, присуждается игроку, набравшему больше очков опыта за бой с 
 учетом премиум аккаунта.</value>
   </data>
-  <data name="Tooltip_BattleHeroAchievements_Warrior" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Warrior" xml:space="preserve">
     <value>Присваивается игроку, уничтожившему 
 наибольшее количество машин противника (не менее шести). 
 Присваивается как выжившему игроку, так и посмертно. 
@@ -419,45 +419,6 @@
   </data>
   <data name="Column_BattleAwards_BattleHero" xml:space="preserve">
     <value>Герой битвы</value>
-  </data>
-  <data name="Column_BattleAwards_Warrior" xml:space="preserve">
-    <value>Воин</value>
-  </data>
-  <data name="Column_BattleAwards_Invader" xml:space="preserve">
-    <value>Захватчик</value>
-  </data>
-  <data name="Column_BattleAwards_Sniper" xml:space="preserve">
-    <value>Снайпер</value>
-  </data>
-  <data name="Column_BattleAwards_Defender" xml:space="preserve">
-    <value>Защитник</value>
-  </data>
-  <data name="Column_BattleAwards_SteelWall" xml:space="preserve">
-    <value>Стальная стена</value>
-  </data>
-  <data name="Column_BattleAwards_Confederate" xml:space="preserve">
-    <value>Поддержка</value>
-  </data>
-  <data name="Column_BattleAwards_Scout" xml:space="preserve">
-    <value>Разведчик</value>
-  </data>
-  <data name="Column_BattleAwards_PatrolDuty" xml:space="preserve">
-    <value>Дозорный</value>
-  </data>
-  <data name="Column_BattleAwards_BrothersInArms" xml:space="preserve">
-    <value>Братья по оружию</value>
-  </data>
-  <data name="Column_BattleAwards_CrucialContribution" xml:space="preserve">
-    <value>Решающий вклад</value>
-  </data>
-  <data name="Column_BattleAwards_IronMan" xml:space="preserve">
-    <value>Невозмутимый</value>
-  </data>
-  <data name="Column_BattleAwards_LuckyDevil" xml:space="preserve">
-    <value>Счастливчик</value>
-  </data>
-  <data name="Column_BattleAwards_Sturdy" xml:space="preserve">
-    <value>Спартанец</value>
   </data>
   <data name="Column_Damage_DamageDealt" xml:space="preserve">
     <value>Нанесено урона</value>
@@ -501,42 +462,6 @@
   <data name="Column_Frags_Tier8Frags" xml:space="preserve">
     <value>Фрагов 8 уровня</value>
   </data>
-  <data name="Column_SpecialAwards_Bombardier" xml:space="preserve">
-    <value>Бомбардир</value>
-  </data>
-  <data name="Column_SpecialAwards_Hunter" xml:space="preserve">
-    <value>Зверобой</value>
-  </data>
-  <data name="Column_SpecialAwards_Invincible" xml:space="preserve">
-    <value>Неуязвимый</value>
-  </data>
-  <data name="Column_SpecialAwards_Kamikaze" xml:space="preserve">
-    <value>Камикадзе</value>
-  </data>
-  <data name="Column_SpecialAwards_MouseTrap" xml:space="preserve">
-    <value>Гроза мышей</value>
-  </data>
-  <data name="Column_SpecialAwards_PattonValley" xml:space="preserve">
-    <value>Долина Паттонов</value>
-  </data>
-  <data name="Column_SpecialAwards_Raider" xml:space="preserve">
-    <value>Рейдер</value>
-  </data>
-  <data name="Column_SpecialAwards_Huntsman" xml:space="preserve">
-    <value>Медаль Найдина</value>
-  </data>
-  <data name="Column_SpecialAwards_Reaper" xml:space="preserve">
-    <value>Коса Смерти</value>
-  </data>
-  <data name="Column_SpecialAwards_Sharpshooter" xml:space="preserve">
-    <value>Стрелок</value>
-  </data>
-  <data name="Column_SpecialAwards_Sinai" xml:space="preserve">
-    <value>Лев Синая</value>
-  </data>
-  <data name="Column_SpecialAwards_Survivor" xml:space="preserve">
-    <value>Живучий</value>
-  </data>
   <data name="Column_Time_AverageBattleTime" xml:space="preserve">
     <value>Среднее время боя</value>
   </data>
@@ -554,87 +479,6 @@
   </data>
   <data name="Settings_Language" xml:space="preserve">
     <value>Язык</value>
-  </data>
-  <data name="Column_Medals_Kay" xml:space="preserve">
-    <value>Медаль Кея</value>
-  </data>
-  <data name="Column_Medals_Carius" xml:space="preserve">
-    <value>Медаль Кариуса</value>
-  </data>
-  <data name="Column_Medals_Knispel" xml:space="preserve">
-    <value>Медаль Книспеля</value>
-  </data>
-  <data name="Column_Medals_Poppel" xml:space="preserve">
-    <value>Медаль Попеля</value>
-  </data>
-  <data name="Column_Medals_Abrams" xml:space="preserve">
-    <value>Медаль Абрамса</value>
-  </data>
-  <data name="Column_Medals_Leclerk" xml:space="preserve">
-    <value>Медаль Леклерка</value>
-  </data>
-  <data name="Column_Medals_Lavrinenko" xml:space="preserve">
-    <value>Медаль Лавриненко</value>
-  </data>
-  <data name="Column_Medals_Ekins" xml:space="preserve">
-    <value>Медаль Экинса</value>
-  </data>
-  <data name="Column_Epics_Billotte" xml:space="preserve">
-    <value>Бийота</value>
-  </data>
-  <data name="Column_Epics_Boelter" xml:space="preserve">
-    <value>Бёльтера</value>
-  </data>
-  <data name="Column_Epics_BrunoPietro" xml:space="preserve">
-    <value>Бруно</value>
-  </data>
-  <data name="Column_Epics_Burda" xml:space="preserve">
-    <value>Бурды</value>
-  </data>
-  <data name="Column_Epics_DeLanglade" xml:space="preserve">
-    <value>де Ланглада</value>
-  </data>
-  <data name="Column_Epics_Dumitru" xml:space="preserve">
-    <value>Думитру</value>
-  </data>
-  <data name="Column_Epics_Fadin" xml:space="preserve">
-    <value>Фадина</value>
-  </data>
-  <data name="Column_Epics_Halonen" xml:space="preserve">
-    <value>Халонена</value>
-  </data>
-  <data name="Column_Epics_HeroesOfRaseiniai" xml:space="preserve">
-    <value>Героев Расейняя</value>
-  </data>
-  <data name="Column_Epics_Kolobanov" xml:space="preserve">
-    <value>Колобанов</value>
-  </data>
-  <data name="Column_Epics_LafayettePool" xml:space="preserve">
-    <value>Пула</value>
-  </data>
-  <data name="Column_Epics_Lehvaslaiho" xml:space="preserve">
-    <value>Лехвеслайхо</value>
-  </data>
-  <data name="Column_Epics_Nikolas" xml:space="preserve">
-    <value>Николса</value>
-  </data>
-  <data name="Column_Epics_Orlik" xml:space="preserve">
-    <value>Орлика</value>
-  </data>
-  <data name="Column_Epics_Oskin" xml:space="preserve">
-    <value>Оськина</value>
-  </data>
-  <data name="Column_Epics_Pascucci" xml:space="preserve">
-    <value>Паскуччи</value>
-  </data>
-  <data name="Column_Epics_RadleyWalters" xml:space="preserve">
-    <value>Рэдли-Уолтерса</value>
-  </data>
-  <data name="Column_Epics_TamadaYoshio" xml:space="preserve">
-    <value>Тамада Йошио</value>
-  </data>
-  <data name="Column_Epics_Tarczay" xml:space="preserve">
-    <value>Тарцая</value>
   </data>
   <data name="Column_Performance_CapturePoints" xml:space="preserve">
     <value>Очки захвата</value>
@@ -677,9 +521,6 @@
   </data>
   <data name="Column_Ratings_Winrate" xml:space="preserve">
     <value>% побед</value>
-  </data>
-  <data name="Column_Ratings_WN6" xml:space="preserve">
-    <value>WN6</value>
   </data>
   <data name="Column_Series_InvincibleLongest" xml:space="preserve">
     <value>Неуязвимый макс.</value>
@@ -780,22 +621,22 @@
   <data name="Common_AvgDetected" xml:space="preserve">
     <value>В среднем обнаружено за бой:</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_IronMan" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_IronMan" xml:space="preserve">
     <value>	• Присуждается игроку, который получил подряд более 10 рикошетов и непробитий от игроков вражеской команды.
 	• Не выдаётся в клановых войнах.</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_Lucky" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Lucky" xml:space="preserve">
     <value>	• Присуждается игроку, который находился на 
 расстоянии не более 10 метров от танка противника в момент его 
 уничтожения выстрелом игрока вражеской команды.
 	• Не выдаётся в клановых войнах.</value>
   </data>
-  <data name="Tooltip_CommemorativeAchievements_Sturdy" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sturdy" xml:space="preserve">
     <value>• Присуждается игроку, получившему рикошет или непробитие от игрока команды противника при прочности танка меньше 10 процентов.
 	• Для получения награды необходимо выжить.
 	• Не выдаётся в клановых войнах.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Billotte" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Billotte" xml:space="preserve">
     <value>Награждается игрок, уничтоживший не менее 2-х машин противника в победном бою.
 Для получения награды необходимо выжить, несмотря на получение 5-ти разных критических повреждений и потерю 80% прочности танка.
 Учёт уничтоженных противников начинается после получения всех перечисленных повреждений.
@@ -805,7 +646,7 @@
 уничтоживший на B1 bis два PzKpfw IV, одиннадцать PzKpfw III и два 
 орудия.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Boelter" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Boelter" xml:space="preserve">
     <value>Награждается игрок, уничтоживший в одном бою 7 и более
  вражеских танков и САУ на танке или ПТ-САУ либо 10 и более на САУ. В 
 зачёт идут цели 4-го уровня и выше.
@@ -815,7 +656,7 @@
 Второй мировой войны. Участвовал в боевых действиях в Польше, Франции, 
 Греции, на территории СССР и в Нормандии.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_BrunoPietro" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_BrunoPietro" xml:space="preserve">
     <value>Награждается игрок, уничтоживший 3 или 4 машины противника в победном бою.
 Для получения награды необходимо выжить, несмотря на получение 5-ти разных критических повреждений и потерю 80% прочности танка.
 Учёт уничтоженных противников начинается после получения всех перечисленных повреждений.
@@ -824,7 +665,7 @@
 Пьетро Бруно — итальянский офицер, танкист. Кавалер высшей награды 
 Италии за подвиг на поле боя — золотой медали «За воинскую доблесть».</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Burda" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Burda" xml:space="preserve">
     <value>Награждается игрок, уничтоживший на танке или ПТ-САУ в одном бою 5 и более САУ противника.
 Не выдаётся в клановых войнах.
 
@@ -834,7 +675,7 @@
 десять средних и лёгких танков, два тягача с ПТ-орудиями, пять автомашин
  с пехотой.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_DeLanglade" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_DeLanglade" xml:space="preserve">
     <value>Награждается игрок, уничтоживший в одном бою в кругу 
 захвата базы 4 машины противника, захватывающие базу. Захват может быть 
 как последовательным, так и одновременным.
@@ -846,7 +687,7 @@
 Ланглада почти полностью уничтожила 112-ую панцербригаду. После боя из 
 45-ти «Пантер» осталось всего 4 танка.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Dumitru" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Dumitru" xml:space="preserve">
     <value>Награждается игрок, уничтоживший на танке или ПТ-САУ в одном бою 4 САУ противника.
 Не выдаётся в клановых войнах.
 
@@ -857,7 +698,7 @@
  уничтожило шесть немецких противотанковых орудий и захватило батарею 
 15-см гаубиц.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Fadin" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Fadin" xml:space="preserve">
     <value>Награждается игрок, уничтоживший последним снарядом в боекомплекте последнюю вражескую машину.
 Не выдаётся в клановых войнах.
 
@@ -867,7 +708,7 @@
 пулемётных точек, до 50 солдат и офицеров противника. Также сумел сбить 
 самолёт противника выстрелом из орудия.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Halonen" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Halonen" xml:space="preserve">
     <value>Награждается игрок, в ходе боя уничтоживший на ПТ-САУ 3 и более танков или ПТ-САУ противника.
 В зачёт идут цели, превосходящие танк игрока не менее, чем на 2 уровня.
 Не выдаётся в клановых войнах.
@@ -876,7 +717,7 @@
 июне — июле 1944 г. на StuG III уничтожил три Т-34, два КВ-1 и два 
 ИСУ-152.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_HeroesOfRaseiniai" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_HeroesOfRaseiniai" xml:space="preserve">
     <value>Награждается игрок, в одиночку уничтоживший не менее 14-ти машин противника.
 Не выдаётся в клановых войнах.
 
@@ -887,7 +728,7 @@
 войска понесли большие потери. Один из танков КВ сумел более чем на 
 сутки перерезать немецкие коммуникации.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Kolobanov" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Kolobanov" xml:space="preserve">
     <value>Награждается игрок, оставшийся в одиночестве против 5-ти и более вражеских танков или САУ и одержавший победу.
 Не выдаётся в клановых войнах.
 
@@ -895,7 +736,7 @@
  бою 19 августа 1941 г. на КВ-1 уничтожил двадцать два немецких танка, 
 два орудия и два бронетранспортёра.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_LafayettePool" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_LafayettePool" xml:space="preserve">
     <value>Награждается игрок на технике 5-го уровня и выше, уничтоживший в одном бою 10–13 машин противника.
 Не выдаётся в клановых войнах.
 
@@ -903,7 +744,7 @@
 боевых действиях подбил и уничтожил 258 немецких бронемашин и 
 автомобилей.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Lehvaslaiho" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Lehvaslaiho" xml:space="preserve">
     <value>Награждается игрок, в ходе боя на среднем танке 
 уничтоживший 2 танка или ПТ-САУ противника. В зачёт идут цели, 
 превосходящие танк игрока не менее, чем на 2 уровня.
@@ -911,7 +752,7 @@
 
 Рейно Лехвеслайхо — сержант танковой бригады финской танковой дивизии. Подбил семь танков и ПТ-САУ.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Nikolas" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Nikolas" xml:space="preserve">
     <value>Награждается игрок, в ходе боя на среднем танке 
 уничтоживший не менее 4-х танков или ПТ-САУ противника. В зачёт идут 
 цели, превосходящие танк игрока не менее, чем на 2 уровня.
@@ -921,7 +762,7 @@
 Эль-Аламейне уничтожил девять немецких танков. Всего в ходе битвы подбил
  четырнадцать танков противника.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Orlik" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Orlik" xml:space="preserve">
     <value>Награждается игрок, в ходе боя уничтоживший на лёгком 
 танке 3 и более танка или ПТ-САУ противника. В зачёт идут цели, 
 превосходящие танк игрока не менее, чем на 2 уровня.
@@ -931,7 +772,7 @@
 сентябрь 1939 г., сражаясь на танкетке TKS, подбил тринадцать немецких 
 танков.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Oskin" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Oskin" xml:space="preserve">
     <value>Награждается игрок, в ходе боя на среднем танке 
 уничтоживший 3 танка или ПТ-САУ противника. В зачёт идут цели, 
 превосходящие танк игрока не менее, чем на 2 уровня.
@@ -941,7 +782,7 @@
 11 августа 1944 г., находясь в разведке у Оглендува, уничтожил три 
 «Королевских тигра» на Т-34.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Pascucci" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Pascucci" xml:space="preserve">
     <value>Награждается игрок, уничтоживший на танке или ПТ-САУ в одном бою 3 САУ противника.
 Не выдаётся в клановых войнах.
 
@@ -950,7 +791,7 @@
 Во время второго сражения при Эль-Аламейне возглавил контратаку, в 
 результате которой британские войска понесли существенные потери.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_RadleyWalters" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_RadleyWalters" xml:space="preserve">
     <value>Награждается игрок на технике 5-го уровня и выше, уничтоживший в одном бою 8 или 9 машин противника.
 Не выдаётся в клановых войнах.
 
@@ -958,13 +799,13 @@
 полка. На танке Sherman Firefly уничтожил восемнадцать немецких танков в
  1944–1945 гг.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_TamadaYoshio" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_TamadaYoshio" xml:space="preserve">
     <value>Награждается игрок на лёгком танке, уничтоживший в 
 одном бою 3 САУ противника. Уничтоженная техника должна превосходить 
 танк игрока как минимум на 2 уровня. Для получения награды необходимо 
 выжить.</value>
   </data>
-  <data name="Tooltip_EpicAchievements_Tarczay" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Tarczay" xml:space="preserve">
     <value>Награждается игрок, уничтоживший не менее 5 машин противника в победном бою.
 Для получения награды необходимо выжить, несмотря на получение 5-ти разных критических повреждений и потерю 80% прочности танка.
 Учёт уничтоженных противников начинается после получения всех перечисленных повреждений.
@@ -972,55 +813,55 @@
 
 Эрвин Тарцай — венгерский танковый ас. Служил во 2-й венгерской танковой дивизии, уничтожил около десяти танков.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Bombardier" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Bombardier" xml:space="preserve">
     <value>Награждается игрок, уничтоживший одним снарядом два и более танка. 
 Указывается количество полученных достижений «Бомбардир» для каждого танка. 
 В аккаунте указывается сумма «бомбардиров» по всем танкам.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Hunter" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Hunter" xml:space="preserve">
     <value>Присваивается игроку, уничтожившему 100 и 
 более танков Löwe, PzKpfw VI Tiger, PzKpfw VI Tiger (P), 
 PzKpfw V Panther, Panther II, JagdPanther, JagdPanther II, 
 PzKpfw VIB Tiger II, Jagdtiger, Gw-Panther, Gw-Tiger, 
 Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Invincible" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Invincible" xml:space="preserve">
     <value>• Присуждается игроку, который в 5-ти и более боях подряд не получил ни одного повреждения.
 • Если серия не прервалась, то в зачёт пойдут также результаты следующего боя на текущей машине.
 • Бои на САУ не прерывают серию, но в зачёт не идут.
 • В общий зачёт идёт максимальная серия.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Kamikaze" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Kamikaze" xml:space="preserve">
     <value>Присуждается игроку, уничтожившему тараном танк более высокого уровня. Выдаётся не более одного достижения за бой.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_MasterGunner" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_MasterGunner" xml:space="preserve">
     <value>Присваивается игроку, пробившему 5 и 
 более раз подряд броню вражеского танка. Если 
 серия не прервалась непробитием, рикошетом или промахом, 
 то в зачет пойдут также результаты следующего боя на 
 любой машине (иконка отображает самую длинную серию).</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_MouseTrap" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_MouseTrap" xml:space="preserve">
     <value>Присваивается игроку, уничтожившему 10 
 и более танков Maus (иконка отображает количество 
 десятков уничтоженных танков).</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_PattonValley" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_PattonValley" xml:space="preserve">
     <value>Выдаётся за уничтожение 100 единиц 
 танков M46 Patton или M48A1 Patton.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Raider" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Raider" xml:space="preserve">
     <value>Присваивается игроку, захватившему базу врага 
 и не замеченному ни одним врагом за весь бой 
 (в иконке отображается количество проведенных боев незамеченным). 
 Для получения данного достижения необходимо и достаточно 
 поучаствовать в состоявшемся захвате базы, получив достижение "Захватчик".</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Huntsman" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Huntsman" xml:space="preserve">
     <value>Игрок должен уничтожить в бою все лёгкие 
 танки противника (как минимум 3 танка).</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Reaper" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Reaper" xml:space="preserve">
     <value>Присваивается игроку, уничтожившему 3 и более 
 вражеские машины подряд, затратив на уничтожение 
 каждой не более одного снаряда. Серия может продолжаться 
@@ -1031,55 +872,55 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
 серию). Серия ведется для каждого танка отдельно. 
 В общий зачет идет максимальная серия.</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Sharpshooter" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sharpshooter" xml:space="preserve">
     <value>Присваивается игроку, попавшему 10 и более раз подряд во вражеский танк. 
 Если серия попаданий не прервалась промахом, то в зачет попаданий 
 пойдут также результаты следующего боя на текущей машине 
 (в иконке отображается самая длинная серия попаданий).</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Sinai" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Sinai" xml:space="preserve">
     <value>Присуждается игроку, уничтожившему 100 и более танков ИС, 
 а также машин на их базе: ИС, ИС-3, ИС-4, ИС-6, ИС-7, ИС-8, ИСУ-152, 
 Объект 704, Объект 261, Объект 263, Объект 268</value>
   </data>
-  <data name="Tooltip_SpecialAchievements_Survivor" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Survivor" xml:space="preserve">
     <value>Присваивается игроку, выжившему в 20 и более боях подряд, 
 управляя танком/ПТ-САУ. Бои на САУ не прерывают 
 успешную серию, но в зачет не идут.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Abrams" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Abrams" xml:space="preserve">
     <value>Выдается за суммарное количество побед, 
 одержанных командой в 5/50/500/5000 боях. 
 Необходимое условие — выживание игрока.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Carius" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Carius" xml:space="preserve">
     <value>Присваивается игроку, уничтожившему 10/100/1000/10000 
 вражеских танков и САУ.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Ekins" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Ekins" xml:space="preserve">
     <value>Присваивается игроку, уничтожившему 3/30/300/3000 
 вражеских танков и САУ восьмого уровня и выше.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Kay" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Kay" xml:space="preserve">
     <value>Присваивается игроку, получившему звание 
 «Герой битвы» 1/10/100/1000 раз.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Knispel" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Knispel" xml:space="preserve">
     <value>Присваивается игроку, суммарно получившему 
 и нанесшему 10К/100К/1000К/10000К повреждений.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Lavrinenko" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Lavrinenko" xml:space="preserve">
     <value>Присваивается игроку, суммарно сбросившему 30/300/3000/30000 
 очков захвата базы (не более 100 очков за 1 бой) 
 суммарно за все проведенные битвы.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Leclerk" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Leclerk" xml:space="preserve">
     <value>Присваивается игроку, набравшему 30/300/3000/30000 
 очков захвата базы суммарно за все бои. 
 В зачет идут только успешные захваты базы, 
 сбитые очки захвата не засчитываются.</value>
   </data>
-  <data name="Tooltip_StepAchievements_Poppel" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_Poppel" xml:space="preserve">
     <value>Присваивается игроку, обнаружившему 20/200/2000/20000 
 танков и САУ противника суммарно за все бои.</value>
   </data>
@@ -1384,166 +1225,166 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Chart_KillDeathRatio" xml:space="preserve">
     <value>Отношение уничтожил/убит</value>
   </data>
-  <data name="Medal_Warrior" xml:space="preserve">
+  <data name="Medal_15x15_Warrior" xml:space="preserve">
     <value>Воин</value>
   </data>
-  <data name="Medal_Sniper" xml:space="preserve">
+  <data name="Medal_15x15_Sniper" xml:space="preserve">
     <value>Снайпер</value>
   </data>
-  <data name="Medal_Confederate" xml:space="preserve">
+  <data name="Medal_15x15_Confederate" xml:space="preserve">
     <value>Поддержка</value>
   </data>
-  <data name="Medal_PatrolDuty" xml:space="preserve">
+  <data name="Medal_15x15_PatrolDuty" xml:space="preserve">
     <value>Дозорный</value>
   </data>
-  <data name="Medal_SteelWall" xml:space="preserve">
+  <data name="Medal_15x15_SteelWall" xml:space="preserve">
     <value>Стальная Стена</value>
   </data>
-  <data name="Medal_Defender" xml:space="preserve">
+  <data name="Medal_15x15_Defender" xml:space="preserve">
     <value>Защитник</value>
   </data>
-  <data name="Medal_Invader" xml:space="preserve">
+  <data name="Medal_15x15_Invader" xml:space="preserve">
     <value>Захватчик</value>
   </data>
-  <data name="Medal_Scout" xml:space="preserve">
+  <data name="Medal_15x15_Scout" xml:space="preserve">
     <value>Разведчик</value>
   </data>
-  <data name="Medal_Huntsman" xml:space="preserve">
+  <data name="Medal_15x15_Huntsman" xml:space="preserve">
     <value>Медаль Найдина</value>
   </data>
-  <data name="Medal_IronMan" xml:space="preserve">
+  <data name="Medal_15x15_IronMan" xml:space="preserve">
     <value>Невозмутимый</value>
   </data>
-  <data name="Medal_Sturdy" xml:space="preserve">
+  <data name="Medal_15x15_Sturdy" xml:space="preserve">
     <value>Спартанец</value>
   </data>
-  <data name="Medal_Lucky" xml:space="preserve">
+  <data name="Medal_15x15_LuckyDevil" xml:space="preserve">
     <value>Счастливчик</value>
   </data>
-  <data name="Medal_Sharpshooter" xml:space="preserve">
+  <data name="Medal_15x15_Sharpshooter" xml:space="preserve">
     <value>Стрелок</value>
   </data>
-  <data name="Medal_MasterGunner" xml:space="preserve">
+  <data name="Medal_15x15_MasterGunner" xml:space="preserve">
     <value>Бронебойщик</value>
   </data>
-  <data name="Medal_Sinai" xml:space="preserve">
+  <data name="Medal_15x15_Sinai" xml:space="preserve">
     <value>Лев Синая</value>
   </data>
-  <data name="Medal_Hunter" xml:space="preserve">
+  <data name="Medal_15x15_Hunter" xml:space="preserve">
     <value>Зверобой</value>
   </data>
-  <data name="Medal_PattonValley" xml:space="preserve">
+  <data name="Medal_15x15_PattonValley" xml:space="preserve">
     <value>Долина Паттонов</value>
   </data>
-  <data name="Medal_MouseTrap" xml:space="preserve">
+  <data name="Medal_15x15_MouseTrap" xml:space="preserve">
     <value>Гроза Мышей</value>
   </data>
-  <data name="Medal_Reaper" xml:space="preserve">
+  <data name="Medal_15x15_Reaper" xml:space="preserve">
     <value>Коса Смерти</value>
   </data>
-  <data name="Medal_Bombardier" xml:space="preserve">
+  <data name="Medal_15x15_Bombardier" xml:space="preserve">
     <value>Бомбардир</value>
   </data>
-  <data name="Medal_Raider" xml:space="preserve">
+  <data name="Medal_15x15_Raider" xml:space="preserve">
     <value>Рейдер</value>
   </data>
-  <data name="Medal_Invincible" xml:space="preserve">
+  <data name="Medal_15x15_Invincible" xml:space="preserve">
     <value>Неуязвимый</value>
   </data>
-  <data name="Medal_Kamikaze" xml:space="preserve">
+  <data name="Medal_15x15_Kamikaze" xml:space="preserve">
     <value>Камикадзе</value>
   </data>
-  <data name="Survivor" xml:space="preserve">
+  <data name="Medal_15x15_Survivor" xml:space="preserve">
     <value>Живучий</value>
   </data>
-  <data name="Medal_Billotte" xml:space="preserve">
+  <data name="Medal_15x15_Billotte" xml:space="preserve">
     <value>Медаль Бийота</value>
   </data>
-  <data name="Medal_Bruno" xml:space="preserve">
+  <data name="Medal_15x15_Bruno" xml:space="preserve">
     <value>Медаль Бруно</value>
   </data>
-  <data name="Medal_Tarczay" xml:space="preserve">
+  <data name="Medal_15x15_Tarczay" xml:space="preserve">
     <value>Медаль Тарцая</value>
   </data>
-  <data name="Medal_Fadin" xml:space="preserve">
+  <data name="Medal_15x15_Fadin" xml:space="preserve">
     <value>Медаль Фадина</value>
   </data>
-  <data name="Medal_Boelter" xml:space="preserve">
+  <data name="Medal_15x15_Boelter" xml:space="preserve">
     <value>Медаль Бёлтера</value>
   </data>
-  <data name="Medal_TamadaYoshio" xml:space="preserve">
+  <data name="Medal_15x15_TamadaYoshio" xml:space="preserve">
     <value>Медаль Тамада Йошио</value>
   </data>
-  <data name="Medal_Pascucci" xml:space="preserve">
+  <data name="Medal_15x15_Pascucci" xml:space="preserve">
     <value>Медаль Паскуччи</value>
   </data>
-  <data name="Medal_Dumitru" xml:space="preserve">
+  <data name="Medal_15x15_Dumitru" xml:space="preserve">
     <value>Медаль Думитру</value>
   </data>
-  <data name="Medal_Burda" xml:space="preserve">
+  <data name="Medal_15x15_Burda" xml:space="preserve">
     <value>Медаль Бурды</value>
   </data>
-  <data name="Medal_DeLanglade" xml:space="preserve">
+  <data name="Medal_15x15_DeLanglade" xml:space="preserve">
     <value>Медаль Де Лагланда</value>
   </data>
-  <data name="Medal_Lehvaslaiho" xml:space="preserve">
+  <data name="Medal_15x15_Lehvaslaiho" xml:space="preserve">
     <value>Медаль Лехвеслайхо</value>
   </data>
-  <data name="Medal_Halonen" xml:space="preserve">
+  <data name="Medal_15x15_Halonen" xml:space="preserve">
     <value>Медаль Халонена</value>
   </data>
-  <data name="Medal_Oskin" xml:space="preserve">
+  <data name="Medal_15x15_Oskin" xml:space="preserve">
     <value>Медаль Оськина</value>
   </data>
-  <data name="Medal_Orlik" xml:space="preserve">
+  <data name="Medal_15x15_Orlik" xml:space="preserve">
     <value>Медаль Орлика</value>
   </data>
-  <data name="Medal_Nikolas" xml:space="preserve">
+  <data name="Medal_15x15_Nikolas" xml:space="preserve">
     <value>Медаль Николса</value>
   </data>
-  <data name="Medal_Kolobanov" xml:space="preserve">
+  <data name="Medal_15x15_Kolobanov" xml:space="preserve">
     <value>Медаль Колобанова</value>
   </data>
-  <data name="Medal_BrothersInArms" xml:space="preserve">
+  <data name="Medal_15x15_BrothersInArms" xml:space="preserve">
     <value>Братья по оружию</value>
   </data>
-  <data name="Medal_CrucialContribution" xml:space="preserve">
+  <data name="Medal_15x15_CrucialContribution" xml:space="preserve">
     <value>Решающий вклад</value>
   </data>
-  <data name="Medal_RadleyWalters" xml:space="preserve">
+  <data name="Medal_15x15_RadleyWalters" xml:space="preserve">
     <value>Медаль Редли-Уолтерса</value>
   </data>
-  <data name="Medal_LafayettePool" xml:space="preserve">
+  <data name="Medal_15x15_LafayettePool" xml:space="preserve">
     <value>Медаль Пула</value>
   </data>
-  <data name="Medal_HeroesOfRassenay" xml:space="preserve">
+  <data name="Medal_15x15_HeroesOfRassenay" xml:space="preserve">
     <value>Медаль Героев Расейняи</value>
   </data>
-  <data name="Medal_BattleHero" xml:space="preserve">
+  <data name="Medal_15x15_BattleHero" xml:space="preserve">
     <value>Герой битвы</value>
   </data>
-  <data name="Medal_Kay" xml:space="preserve">
+  <data name="Medal_15x15_Kay" xml:space="preserve">
     <value>Медаль Кея</value>
   </data>
-  <data name="Medal_Carius" xml:space="preserve">
+  <data name="Medal_15x15_Carius" xml:space="preserve">
     <value>Медаль Кариуса</value>
   </data>
-  <data name="Medal_Knispel" xml:space="preserve">
+  <data name="Medal_15x15_Knispel" xml:space="preserve">
     <value>Медаль Книспеля</value>
   </data>
-  <data name="Medal_Poppel" xml:space="preserve">
+  <data name="Medal_15x15_Poppel" xml:space="preserve">
     <value>Медаль Поппеля</value>
   </data>
-  <data name="Medal_Abrams" xml:space="preserve">
+  <data name="Medal_15x15_Abrams" xml:space="preserve">
     <value>Медаль Абрамса</value>
   </data>
-  <data name="Medal_Leclerk" xml:space="preserve">
+  <data name="Medal_15x15_Leclerk" xml:space="preserve">
     <value>Медаль ЛеКлерка</value>
   </data>
-  <data name="Medal_Lavrinenko" xml:space="preserve">
+  <data name="Medal_15x15_Lavrinenko" xml:space="preserve">
     <value>Медаль Лавриненко</value>
   </data>
-  <data name="Medal_Ekins" xml:space="preserve">
+  <data name="Medal_15x15_Ekins" xml:space="preserve">
     <value>Медаль Экинса</value>
   </data>
   <data name="Chart_Tooltip_Battles" xml:space="preserve">
@@ -1738,9 +1579,6 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="MenuItem_Export" xml:space="preserve">
     <value>Экспорт</value>
   </data>
-  <data name="MenuItem_Export_Csv" xml:space="preserve">
-    <value>CSV</value>
-  </data>
   <data name="Btn_Clear" xml:space="preserve">
     <value>Очистить</value>
   </data>
@@ -1783,17 +1621,11 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="DatePicker_SelectDate" xml:space="preserve">
     <value>Выберите дату</value>
   </data>
-  <data name="Medal_MainGun" xml:space="preserve">
+  <data name="Medal_15x15_MainGun" xml:space="preserve">
     <value>Основной калибр</value>
   </data>
-  <data name="Medal_Sniper2" xml:space="preserve">
+  <data name="Medal_15x15_Sniper2" xml:space="preserve">
     <value>Танкист-Снайпер</value>
-  </data>
-  <data name="Column_BattleAwards_MainGun" xml:space="preserve">
-    <value>Основной калибр</value>
-  </data>
-  <data name="Column_BattleAwards_Sniper2" xml:space="preserve">
-    <value>Танкист-снайпер</value>
   </data>
   <data name="ButtonCheckUpdate" xml:space="preserve">
     <value>Проверить обновления</value>
@@ -1801,25 +1633,25 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Settings_BattleMode" xml:space="preserve">
     <value>Режим боя</value>
   </data>
-  <data name="Medal_ArmoredFist" xml:space="preserve">
+  <data name="Medal_7x7_ArmoredFist" xml:space="preserve">
     <value>Бронетанковый кулак</value>
   </data>
-  <data name="Medal_KingOfTheHill" xml:space="preserve">
+  <data name="Medal_7x7_KingOfTheHill" xml:space="preserve">
     <value>Царь Горы</value>
   </data>
-  <data name="Medal_TacticalBreakthrough" xml:space="preserve">
+  <data name="Medal_7x7_TacticalBreakthrough" xml:space="preserve">
     <value>Тактик</value>
   </data>
   <data name="Column_Ratings_PerformanceRating" xml:space="preserve">
     <value>Рейтинг Нагиба</value>
   </data>
-  <data name="Tooltip_GroupAchievements_ArmoredFist" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_ArmoredFist" xml:space="preserve">
     <value>Уничтожить всю технику противника, потеряв при этом не более 1 машины.
   • Победить в бою.
   • Выдаётся всем членам команды.
   • Выдаётся только в Командных боях.</value>
   </data>
-  <data name="Tooltip_GroupAchievements_KingOfTheHill" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_KingOfTheHill" xml:space="preserve">
     <value>Остаться единственным выжившим в бою, управляя танком или ПТ-САУ.
   • Победить в бою.
   • Выдаётся только в Командных боях.</value>
@@ -1917,9 +1749,6 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="ChartLegend_WinPercent" xml:space="preserve">
     <value>% побед</value>
   </data>
-  <data name="ChartLegend_WN6Rating" xml:space="preserve">
-    <value>WN6</value>
-  </data>
   <data name="ChartTooltipFormat_AvgDamage" xml:space="preserve">
     <value>Боев: {0}
 Средний урон: {1:0.00}</value>
@@ -1948,21 +1777,6 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Боев: {0}
 Вижил %: {1:0.00}</value>
   </data>
-  <data name="Column_Replay_Credits1" xml:space="preserve">
-    <value>Кредиты</value>
-  </data>
-  <data name="Column_Replay_Damaged1" xml:space="preserve">
-    <value>Повреждено</value>
-  </data>
-  <data name="Column_Replay_DamageDealt1" xml:space="preserve">
-    <value>Нанесено урона</value>
-  </data>
-  <data name="Column_Replay_Frags1" xml:space="preserve">
-    <value>Уничтожено</value>
-  </data>
-  <data name="Column_Replay_XP1" xml:space="preserve">
-    <value>Опыт</value>
-  </data>
   <data name="ExtendedTimeFormat" xml:space="preserve">
     <value>m' м 's' с'</value>
   </data>
@@ -1980,12 +1794,6 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   </data>
   <data name="Label_Replay_XpFactorFormat" xml:space="preserve">
     <value>Опыт (x{0} за первую победу в день)</value>
-  </data>
-  <data name="Language_English" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="Language_Russian" xml:space="preserve">
-    <value>Русский</value>
   </data>
   <data name="Msg_CantFindPlayerData" xml:space="preserve">
     <value>Не удалось получить информацию об игроке - {0}</value>
@@ -2310,5 +2118,113 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   </data>
   <data name="WindowTitleFormat_Replay" xml:space="preserve">
     <value>{0}, {1}, уровень боя - {2}</value>
+  </data>
+    <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
+    <value>Разведка боем</value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
+    <value>50 раз выполнить следующие условия:
+  • Обнаружить не менее 2 машин противника
+  • Занять 3 и выше место по нанесенному урону
+  • В общем зачете повтовно полученные награды не суммируются
+    </value>
+  </data>
+    <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
+    <value>За волю к победе</value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
+    <value>Победить в бою оставшись в одиночку против 3 
+и более машин противника
+  • В общем зачете повтовно полученные награды не суммируются
+    </value>
+  </data>
+    <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
+    <value>Решающий выстрел</value>
+  </data>
+    <data name="Tooltip_Achievements_7x7" xml:space="preserve">
+    <value>20 раз уничтожить последнюю машину противника
+  • Победить в бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value>
+  </data>
+    <data name="Medal_7x7_GodOfWar" xml:space="preserve">
+    <value>Бог войны</value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
+    <value>Победить в бою на САУ оставшись единственным выжившим
+  • Победить в бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value>
+  </data>
+    <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
+    <value>За отличную стрельбу</value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
+    <value>Занять 100 раз первое место по количеству нанесенного урона в победном бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value>
+  </data>
+    <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
+    <value>Отличник боевой подготовки</value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
+    <value>Занять 100 раз первое место по количеству заработанного опыта за бой
+  • Победить в бою
+  • В общем зачете повтовно полученные награды не суммируются
+    </value>
+  </data>
+    <data name="Tooltip_Achievements_15x15_ForTacticalOperations" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Medal_7x7_ForTacticalOperations" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Medal_7x7_HeavyFireMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Medal_7x7_NoMansLand" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Medal_7x7_PyromaniacMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Medal_7x7_RangerMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_PromisingFighterMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_PyromaniacMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_RangerMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
+    <value />
+  </data>
+    <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
+    <value>Исторический бой</value>
   </data>
 </root>

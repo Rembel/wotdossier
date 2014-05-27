@@ -2119,112 +2119,139 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="WindowTitleFormat_Replay" xml:space="preserve">
     <value>{0}, {1}, уровень боя - {2}</value>
   </data>
-    <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
+  <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
     <value>Разведка боем</value>
   </data>
-    <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
     <value>50 раз выполнить следующие условия:
   • Обнаружить не менее 2 машин противника
   • Занять 3 и выше место по нанесенному урону
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-    <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
+  <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
     <value>За волю к победе</value>
   </data>
-    <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
     <value>Победить в бою оставшись в одиночку против 3 
 и более машин противника
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-    <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
+  <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
     <value>Решающий выстрел</value>
   </data>
-    <data name="Tooltip_Achievements_7x7" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7" xml:space="preserve">
     <value>20 раз уничтожить последнюю машину противника
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-    <data name="Medal_7x7_GodOfWar" xml:space="preserve">
+  <data name="Medal_7x7_GodOfWar" xml:space="preserve">
     <value>Бог войны</value>
   </data>
-    <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
     <value>Победить в бою на САУ оставшись единственным выжившим
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-    <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
+  <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
     <value>За отличную стрельбу</value>
   </data>
-    <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
     <value>Занять 100 раз первое место по количеству нанесенного урона в победном бою
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-    <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
+  <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
     <value>Отличник боевой подготовки</value>
   </data>
-    <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
     <value>Занять 100 раз первое место по количеству заработанного опыта за бой
   • Победить в бою
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-    <data name="Tooltip_Achievements_15x15_ForTacticalOperations" xml:space="preserve">
+  <data name="Tooltip_Achievements_15x15_ForTacticalOperations" xml:space="preserve">
     <value />
   </data>
-    <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
+  <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
+    <value>Закалённый в боях</value>
+  </data>
+  <data name="Medal_7x7_ForTacticalOperations" xml:space="preserve">
+    <value>За тактические операции</value>
+  </data>
+  <data name="Medal_7x7_HeavyFireMedal" xml:space="preserve">
+    <value>Снайперский резерв</value>
+  </data>
+  <data name="Medal_7x7_NoMansLand" xml:space="preserve">
+    <value>Бой до последнего</value>
+  </data>
+  <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
     <value />
   </data>
-    <data name="Medal_7x7_ForTacticalOperations" xml:space="preserve">
+  <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
+    <value>Перспективный боец</value>
+  </data>
+  <data name="Medal_7x7_PyromaniacMedal" xml:space="preserve">
+    <value>Пироман</value>
+  </data>
+  <data name="Medal_7x7_RangerMedal" xml:space="preserve">
     <value />
   </data>
-    <data name="Medal_7x7_HeavyFireMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
     <value />
   </data>
-    <data name="Medal_7x7_NoMansLand" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
     <value />
   </data>
-    <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
     <value />
   </data>
-    <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_PromisingFighterMedal" xml:space="preserve">
     <value />
   </data>
-    <data name="Medal_7x7_PyromaniacMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_PyromaniacMedal" xml:space="preserve">
     <value />
   </data>
-    <data name="Medal_7x7_RangerMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_RangerMedal" xml:space="preserve">
     <value />
   </data>
-    <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
     <value />
   </data>
-    <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
+  <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
     <value />
   </data>
-    <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
-    <value />
-  </data>
-    <data name="Tooltip_Achievements_7x7_PromisingFighterMedal" xml:space="preserve">
-    <value />
-  </data>
-    <data name="Tooltip_Achievements_7x7_PyromaniacMedal" xml:space="preserve">
-    <value />
-  </data>
-    <data name="Tooltip_Achievements_7x7_RangerMedal" xml:space="preserve">
-    <value />
-  </data>
-    <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
-    <value />
-  </data>
-    <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
-    <value />
-  </data>
-    <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
+  <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
     <value>Исторический бой</value>
+  </data>
+  <data name="Medal_15x15_MedalMonolith" xml:space="preserve">
+    <value>Монолит</value>
+  </data>
+  <data name="Medal_15x15_MedalAntiSpgFire" xml:space="preserve">
+    <value>За контрбатарейную стрельбу</value>
+  </data>
+  <data name="Medal_15x15_MedalGore" xml:space="preserve">
+    <value>Медаль Гора</value>
+  </data>
+  <data name="Medal_15x15_MedalCoolBlood" xml:space="preserve">
+    <value>Хладнокровный</value>
+  </data>
+  <data name="Medal_15x15_MedalStark" xml:space="preserve">
+    <value>Медаль Старка</value>
+  </data>
+  <data name="Medal_HistoricalBattle_BothSidesWins" xml:space="preserve">
+    <value>Both Sides Wins</value>
+  </data>
+  <data name="Medal_HistoricalBattle_GuardsMan" xml:space="preserve">
+    <value>Guards Man</value>
+  </data>
+  <data name="Medal_HistoricalBattle_MakerOfHistory" xml:space="preserve">
+    <value>Maker Of History</value>
+  </data>
+  <data name="Medal_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
+    <value>Weak Vehicles Wins</value>
   </data>
 </root>

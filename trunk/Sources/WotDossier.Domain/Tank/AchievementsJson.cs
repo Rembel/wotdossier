@@ -75,7 +75,7 @@
         public int titleSniper;
         public int warrior;
         public int markOfMastery;
-
+        //0.9.1
         public int marksOnGun;
         public int movingAvgDamage;
         public int medalMonolith;

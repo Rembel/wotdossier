@@ -267,6 +267,34 @@
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
             </WrapPanel>
+
+          <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+              <controls:MedalAchievement Value="{Binding MedalMonolith}" Delta="{Binding MedalMonolithDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalMonolith.png">
+                  <ToolTipService.ToolTip>
+                      <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalMonolith}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalMonolith}" />
+                  </ToolTipService.ToolTip>
+              </controls:MedalAchievement>
+              <controls:MedalAchievement Value="{Binding MedalAntiSpgFire}" Delta="{Binding MedalAntiSpgFireDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalAntiSpgFire.png">
+                  <ToolTipService.ToolTip>
+                      <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalAntiSpgFire}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalAntiSpgFire}" />
+                  </ToolTipService.ToolTip>
+              </controls:MedalAchievement>
+              <controls:MedalAchievement Value="{Binding MedalGore}" Delta="{Binding MedalGoreDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalGore.png">
+                  <ToolTipService.ToolTip>
+                      <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalGore}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalGore}" />
+                  </ToolTipService.ToolTip>
+              </controls:MedalAchievement>
+              <controls:MedalAchievement Value="{Binding MedalCoolBlood}" Delta="{Binding MedalCoolBloodDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalCoolBlood.png">
+                  <ToolTipService.ToolTip>
+                      <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalCoolBlood}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalCoolBlood}" />
+                  </ToolTipService.ToolTip>
+              </controls:MedalAchievement>
+              <controls:MedalAchievement Value="{Binding MedalStark}" Delta="{Binding MedalStarkDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalStark.png">
+                  <ToolTipService.ToolTip>
+                      <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalStark}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalStark}" />
+                  </ToolTipService.ToolTip>
+              </controls:MedalAchievement>
+          </WrapPanel>
         </StackPanel>
     </Grid>
 </UserControl>

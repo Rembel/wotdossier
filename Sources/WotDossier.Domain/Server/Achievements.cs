@@ -77,7 +77,7 @@
         //added in 0.8.11
         public int sniper2;
         public int main_gun;
-        //added in 0.9.0
+        //added in 0.9.1
         public int marksOnGun;
         public int movingAvgDamage;
         public int medalMonolith;

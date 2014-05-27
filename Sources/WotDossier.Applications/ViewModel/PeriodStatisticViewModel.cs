@@ -744,6 +744,36 @@ namespace WotDossier.Applications.ViewModel
             get { return DamageRatio - PrevStatistic.DamageRatio; }
         }
 
+        public int MedalMonolithDelta
+        {
+            get { return MedalMonolith - PrevStatistic.MedalMonolith; }
+        }
+
+        public int MedalAntiSpgFireDelta
+        {
+            get { return MedalAntiSpgFire - PrevStatistic.MedalAntiSpgFire; }
+        }
+
+        public int MedalGoreDelta
+        {
+            get { return MedalGore - PrevStatistic.MedalGore; }
+        }
+
+        public int MedalCoolBloodDelta
+        {
+            get { return MedalCoolBlood - PrevStatistic.MedalCoolBlood; }
+        }
+
+        public int MedalStarkDelta
+        {
+            get { return MedalStark - PrevStatistic.MedalStark; }
+        }
+
+        public int DamageRatingDelta
+        {
+            get { return DamageRating - PrevStatistic.DamageRating; }
+        }
+
         #endregion
 
         #region Achievments 7x7

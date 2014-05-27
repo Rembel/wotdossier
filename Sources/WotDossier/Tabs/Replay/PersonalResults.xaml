@@ -1,12 +1,13 @@
 ﻿<UserControl x:Class="WotDossier.Tabs.Replay.PersonalResults"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:replay="clr-namespace:WotDossier.Applications.ViewModel.Replay;assembly=WotDossier.Applications"
-             mc:Ignorable="d" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
              d:DesignHeight="605" d:DesignWidth="965">
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="FragImageStyle">
@@ -80,7 +81,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock Text="{Binding Path=TeamMember.FullName}" Foreground="#5C5A4A" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <ToolTipService.ToolTip>
-                            <TextBlock Text="{Binding Path=TeamMember.FullName}"></TextBlock>
+                        <TextBlock Text="{Binding Path=TeamMember.FullName}"></TextBlock>
                     </ToolTipService.ToolTip>
                 </TextBlock>
                 <Image Grid.Row="0" Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left"></Image>
@@ -115,14 +116,32 @@
                     </TextBlock>
                 </Border>
                 <Image Grid.Row="0" Grid.Column="5" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/01s.png" Stretch="None" Style="{StaticResource DamageAssistImageStyle}" HorizontalAlignment="Left">
+                    <Image.Resources>
+                        <system:Int32 x:Key="fixedValue">0</system:Int32>
+                    </Image.Resources>
                     <Image.ToolTip>
                         <TextBlock Text="{Binding DamageAssistedTooltip}"></TextBlock>
                     </Image.ToolTip>
+                    <Image.Opacity>
+                        <MultiBinding Converter="{x:Static converters:MedalsCountToOpacityConverter.Default}">
+                            <Binding Path="DamageAssisted" />
+                            <Binding Source="{StaticResource fixedValue}" />
+                        </MultiBinding>
+                    </Image.Opacity>
                 </Image>
                 <Image Grid.Row="0" Grid.Column="6" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/02s.png" Stretch="None" Style="{StaticResource SpottedImageStyle}" HorizontalAlignment="Left">
+                    <Image.Resources>
+                        <system:Int32 x:Key="fixedValue">0</system:Int32>
+                    </Image.Resources>
                     <Image.ToolTip>
                         <TextBlock Text="{Binding SpottedTooltip}"></TextBlock>
                     </Image.ToolTip>
+                    <Image.Opacity>
+                        <MultiBinding Converter="{x:Static converters:MedalsCountToOpacityConverter.Default}">
+                            <Binding Path="Spotted" />
+                            <Binding Source="{StaticResource fixedValue}" />
+                        </MultiBinding>
+                    </Image.Opacity>
                 </Image>
                 <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/table_border_gradient.png" ></Image>
             </Grid>
@@ -191,9 +210,9 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <controls:TextWithImage Text="{Binding PremiumCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" 
+                    <controls:TextWithImage Text="{Binding PremiumCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                             Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon_Large.png" FontSize="30" Foreground="White" HorizontalAlignment="Right" />
-                    <controls:TextWithImage Grid.Row="1" Text="{Binding PremiumTotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" 
+                    <controls:TextWithImage Grid.Row="1" Text="{Binding PremiumTotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                             Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon_Large.png" FontSize="30" Foreground="White" HorizontalAlignment="Right" />
                 </Grid>
                 <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0">
@@ -213,7 +232,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </Grid>
-            <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60" 
+            <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60"
                            Text="{Binding Status, Converter={x:Static converters:EnumToTextConverter.Default}}"></TextBlock>
         </Grid>
         <Grid Grid.Row="1" Background="#272519">

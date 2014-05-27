@@ -1997,22 +1997,22 @@ Survive %: {1:0.00}</value>
     <value />
   </data>
   <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
-    <value>Fire And Steel Medal</value>
+    <value>Fire and Steel</value>
   </data>
   <data name="Medal_7x7_ForTacticalOperations" xml:space="preserve">
     <value>For Tactical Operations</value>
   </data>
   <data name="Medal_7x7_HeavyFireMedal" xml:space="preserve">
-    <value>Heavy Fire Medal</value>
+    <value>Heavy Fire</value>
   </data>
   <data name="Medal_7x7_NoMansLand" xml:space="preserve">
-    <value>No Mans Land</value>
+    <value>No Man's Land</value>
   </data>
   <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
-    <value>Promising Fighter Medal</value>
+    <value>Promising Fighter</value>
   </data>
   <data name="Medal_7x7_PyromaniacMedal" xml:space="preserve">
-    <value>Pyromaniac Medal</value>
+    <value>Pyromaniac</value>
   </data>
   <data name="Medal_7x7_RangerMedal" xml:space="preserve">
     <value>Ranger Medal</value>
@@ -2069,6 +2069,36 @@ Survive %: {1:0.00}</value>
     <value />
   </data>
   <data name="Tooltip_Achievements_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Medal_15x15_MedalAntiSpgFire" xml:space="preserve">
+    <value>For Counter-Battery Fire</value>
+  </data>
+  <data name="Medal_15x15_MedalCoolBlood" xml:space="preserve">
+    <value>Cold-Blooded</value>
+  </data>
+  <data name="Medal_15x15_MedalGore" xml:space="preserve">
+    <value>Gore’s Medal</value>
+  </data>
+  <data name="Medal_15x15_MedalMonolith" xml:space="preserve">
+    <value>Rock Solid</value>
+  </data>
+  <data name="Medal_15x15_MedalStark" xml:space="preserve">
+    <value>Stark’s Medal</value>
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalAntiSpgFire" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalCoolBlood" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalGore" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalMonolith" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalStark" xml:space="preserve">
     <value />
   </data>
 </root>

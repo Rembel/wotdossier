@@ -147,8 +147,10 @@
                 </ScrollViewer>
             </TabItem>-->
             <!--Ratings-->
-            <TabItem Header="{x:Static resources:Resources.Tab_Header_Ratings}" DataContext="{Binding PlayerStatistic}">
-                <controls:RatingView></controls:RatingView>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Ratings}"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
+                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
+                <controls:RatingView DataContext="{Binding PlayerStatistic}"></controls:RatingView>
             </TabItem>
             <!--Achievements-->
             <TabItem Header="{x:Static resources:Resources.Tab_Header_Achievements}"

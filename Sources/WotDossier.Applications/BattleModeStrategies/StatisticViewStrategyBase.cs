@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.Model;
-using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Server;

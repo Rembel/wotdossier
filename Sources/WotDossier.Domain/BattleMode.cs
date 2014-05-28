@@ -1,4 +1,4 @@
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Domain
 {
     public enum BattleMode
     {

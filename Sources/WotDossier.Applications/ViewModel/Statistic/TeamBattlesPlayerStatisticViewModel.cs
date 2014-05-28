@@ -1,15 +1,24 @@
 ﻿using System.Collections.Generic;
 using WotDossier.Domain.Entities;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Statistic
 {
-    public class TeamPlayerStatisticViewModel : PlayerStatisticViewModel
+    public class TeamBattlesPlayerStatisticViewModel : PlayerStatisticViewModel
     {
-        public TeamPlayerStatisticViewModel(TeamBattlesStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamBattlesPlayerStatisticViewModel"/> class.
+        /// </summary>
+        /// <param name="stat">The stat.</param>
+        public TeamBattlesPlayerStatisticViewModel(TeamBattlesStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
         {
         }
 
-        public TeamPlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamBattlesPlayerStatisticViewModel"/> class.
+        /// </summary>
+        /// <param name="stat">The stat.</param>
+        /// <param name="list">The list.</param>
+        public TeamBattlesPlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
             : base(stat, list)
         {
             #region Awards

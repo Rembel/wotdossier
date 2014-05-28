@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.Logic;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
 using WotDossier.Domain.Tank;
 
@@ -40,7 +41,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
 
-        #region [ ITankRowBattles ]
+        #region [ IStatisticBattles ]
 
         public int SurvivedAndWon { get; set; }
 
@@ -58,7 +59,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
 
-        #region [ ITankRowDamage ]
+        #region [ IStatisticDamage ]
 
         public int DamagePerHit
         {
@@ -74,21 +75,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
        
-        #region [ ITankRowFrags ]
-
-        public int MaxFrags { get; set; }
-
-        public double FragsPerBattle
-        {
-            get
-            {
-                if (BattlesCount > 0)
-                {
-                    return Frags/(double) BattlesCount;
-                }
-                return 0;
-            }
-        }
+        #region [ IStatisticFrags ]
 
         public int Tier8Frags { get; set; }
 
@@ -102,7 +89,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
 
-        #region [ ITankRowPerformance ]
+        #region [ IStatisticPerformance ]
 
         public int Shots { get; set; }
 
@@ -110,7 +97,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
 
-        #region [ ITankRowRatings ]
+        #region [ IStatisticRatings ]
 
         public int DamageRatingRev1
         {
@@ -128,7 +115,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         #endregion
 
-        #region [ ITankRowTime ]
+        #region [ IStatisticTime ]
         public DateTime LastBattle
         {
             get { return _lastBattle; }
@@ -301,6 +288,9 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TankStatisticRowViewModelBase{T}"/> class.
+        /// </summary>
         protected TankStatisticRowViewModelBase()
         {
         }

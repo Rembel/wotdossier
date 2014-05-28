@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WotDossier.Domain.Entities;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Statistic
 {
     public class RandomPlayerStatisticViewModel : PlayerStatisticViewModel
     {

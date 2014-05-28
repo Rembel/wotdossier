@@ -1,5 +1,6 @@
 using WotDossier.Applications.ViewModel;
 using WotDossier.Dal;
+using WotDossier.Domain;
 
 namespace WotDossier.Applications.BattleModeStrategies
 {

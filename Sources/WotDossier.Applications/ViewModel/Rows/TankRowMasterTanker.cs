@@ -1,8 +1,9 @@
-﻿using WotDossier.Domain.Tank;
+﻿using WotDossier.Domain.Interfaces;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TankRowMasterTanker : ITankRowMasterTanker
+    public class TankRowMasterTanker : ITankRowBase
     {
         /// <summary>
         /// Gets or sets the tier.
@@ -10,7 +11,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// <value>
         /// The tier.
         /// </value>
-        public int Tier { get; set; }
+        public double Tier { get; set; }
 
         /// <summary>
         /// Gets or sets the icon.

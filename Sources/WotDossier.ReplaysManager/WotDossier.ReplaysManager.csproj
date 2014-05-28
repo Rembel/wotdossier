@@ -358,6 +358,9 @@
     <Compile Include="..\WotDossier\Converters\MarkOfMasteryToTooltipConverter.cs">
       <Link>Converters\MarkOfMasteryToTooltipConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\MedalsCountToOpacityConverter.cs">
+      <Link>Converters\MedalsCountToOpacityConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\ObjectToCollapseConverter.cs">
       <Link>Converters\ObjectToCollapseConverter.cs</Link>
     </Compile>

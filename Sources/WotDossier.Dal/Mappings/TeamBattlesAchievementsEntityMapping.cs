@@ -25,6 +25,18 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.CrucialShot, "CrucialShot");
 			Map(v => v.CrucialShotMedal, "CrucialShotMedal");
 			Map(v => v.ForTacticalOperations, "ForTacticalOperations");
+
+            Map(v => v.PromisingFighter, "PromisingFighter");
+            Map(v => v.PromisingFighterMedal, "PromisingFighterMedal");
+            Map(v => v.HeavyFire, "HeavyFire");
+            Map(v => v.HeavyFireMedal, "HeavyFireMedal");
+            Map(v => v.Ranger, "Ranger");
+            Map(v => v.RangerMedal, "RangerMedal");
+            Map(v => v.FireAndSteel, "FireAndSteel");
+            Map(v => v.FireAndSteelMedal, "FireAndSteelMedal");
+            Map(v => v.Pyromaniac, "Pyromaniac");
+            Map(v => v.PyromaniacMedal, "PyromaniacMedal");
+            Map(v => v.NoMansLand, "NoMansLand");
 		
 			//HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.AchievementsId));
         }

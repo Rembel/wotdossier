@@ -21,6 +21,7 @@ using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 using Formatting = Newtonsoft.Json.Formatting;
@@ -663,7 +664,7 @@ namespace WotDossier.Test
             CacheHelper.BinaryCacheToJson(cacheFile);
             List<TankJson> tanksV2 = WotApiClient.Instance.ReadTanksCache(cacheFile.FullName.Replace(".dat", ".json"));
             List<TankStatisticRowViewModel> list = tanksV2.Select(x => new TankStatisticRowViewModel(x)).ToList();
-            provider.Export(list, new List<Type>{typeof(ITankRowBattles), typeof(ITankRowFrags)});
+            provider.Export(list, new List<Type>{typeof(IStatisticBattles), typeof(IStatisticFrags)});
         }
 
         [Test]

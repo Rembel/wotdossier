@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using WotDossier.Domain;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Selectors
 {
     public class BattleModeSelectorViewModel : Framework.Foundation.Model
     {

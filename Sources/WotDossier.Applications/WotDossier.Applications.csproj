@@ -114,26 +114,25 @@
     <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="Model\ClanMemberModel.cs" />
     <Compile Include="MedalHelper.cs" />
-    <Compile Include="ViewModel\BattleMode.cs" />
+    <Compile Include="ViewModel\Chart\CommonChartsViewModel.cs" />
+    <Compile Include="ViewModel\Chart\DataPoint.cs" />
+    <Compile Include="ViewModel\Chart\IDataPoint.cs" />
+    <Compile Include="ViewModel\Chart\PlayerChartsViewModel.cs" />
+    <Compile Include="ViewModel\Chart\SellInfo.cs" />
     <Compile Include="ViewModel\ClanViewModel.cs" />
-    <Compile Include="ViewModel\CommonChartsViewModel.cs" />
     <Compile Include="ViewModel\CompareStatisticViewModel.cs" />
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />
-    <Compile Include="ViewModel\BattleModeSelectorViewModel.cs" />
     <Compile Include="ViewModel\AboutViewModel.cs" />
-    <Compile Include="ViewModel\HistoricalPlayerStatisticViewModel.cs" />
-    <Compile Include="ViewModel\RandomPlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Filter\FraggsCountViewModel.cs" />
+    <Compile Include="ViewModel\Filter\ReplaysFilterViewModel.cs" />
+    <Compile Include="ViewModel\Filter\TankFilterViewModel.cs" />
     <Compile Include="ViewModel\ReplayManagerShellViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
     <Compile Include="ViewModel\Replay\DbReplay.cs" />
     <Compile Include="ViewModel\Replay\PhisicalReplay.cs" />
     <Compile Include="ViewModel\Rows\HistoricalBattlesTankStatisticRowViewModel.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticBase.cs" />
-    <Compile Include="ViewModel\KeyValue.cs" />
     <Compile Include="ViewModel\ListItem.cs" />
-    <Compile Include="ViewModel\PeriodSelectorViewModel.cs" />
-    <Compile Include="ViewModel\PlayerChartsViewModel.cs" />
     <Compile Include="ViewModel\ReplaysViewModel.cs" />
     <Compile Include="ViewModel\Replay\AddReplayFolderViewModel.cs" />
     <Compile Include="ViewModel\Replay\BattleStatus.cs" />
@@ -141,7 +140,6 @@
     <Compile Include="ViewModel\Replay\FinishReason.cs" />
     <Compile Include="ViewModel\Replay\ReplayFile.cs" />
     <Compile Include="ViewModel\Replay\ReplayFolder.cs" />
-    <Compile Include="ViewModel\Replay\ReplaysFilterViewModel.cs" />
     <Compile Include="ViewModel\Replay\ReplayViewModel.cs" />
     <Compile Include="ViewModel\Replay\TeamMember.cs" />
     <Compile Include="ViewModel\Replay\UploadReplayViewModel.cs" />
@@ -155,33 +153,24 @@
     <Compile Include="ViewModel\PlayerSearchViewModel.cs" />
     <Compile Include="ViewModel\PlayersCompareViewModel.cs" />
     <Compile Include="ViewModel\PlayerServerStatisticViewModel.cs" />
-    <Compile Include="ViewModel\SellInfo.cs" />
+    <Compile Include="ViewModel\Selectors\BattleModeSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Selectors\PeriodSelectorViewModel.cs" />
     <Compile Include="ViewModel\StatisticPeriodChangedEvent.cs" />
-    <Compile Include="ViewModel\TankFilterViewModel.cs" />
-    <Compile Include="ViewModel\DataPoint.cs" />
-    <Compile Include="ViewModel\FraggsCountViewModel.cs" />
-    <Compile Include="ViewModel\IDataPoint.cs" />
+    <Compile Include="ViewModel\Statistic\HistoricalBattlesPlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Statistic\PeriodStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Statistic\PlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Statistic\RandomPlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Statistic\StatisticViewModelBase.cs" />
+    <Compile Include="ViewModel\Statistic\TeamBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="Events\OpenTankStatisticEvent.cs" />
-    <Compile Include="ViewModel\PeriodStatisticViewModel.cs" />
     <Compile Include="Model\ClanModel.cs" />
-    <Compile Include="ViewModel\PlayerStatisticViewModel.cs" />
-    <Compile Include="ViewModel\Rows\ITankRowBattles.cs" />
-    <Compile Include="ViewModel\Rows\ITankRowDamage.cs" />
-    <Compile Include="ViewModel\Rows\ITankRowFrags.cs" />
-    <Compile Include="ViewModel\Rows\ITankRowMasterTanker.cs" />
-    <Compile Include="ViewModel\Rows\ITankRowPerformance.cs" />
-    <Compile Include="ViewModel\Rows\ITankRowRatings.cs" />
-    <Compile Include="ViewModel\Rows\ITankRowTime.cs" />
-    <Compile Include="ViewModel\Rows\IStatisticXp.cs" />
     <Compile Include="ViewModel\Rows\TankRowMasterTanker.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModel\Rows\TankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ShellViewModel.cs" />
-    <Compile Include="ViewModel\StatisticViewModelBase.cs" />
     <Compile Include="ViewModel\TankStatisticViewModel.cs" />
-    <Compile Include="ViewModel\TeamPlayerStatisticViewModel.cs" />
     <Compile Include="View\IAboutView.cs" />
     <Compile Include="View\ISearchView.cs" />
     <Compile Include="View\IPlayersCompareView.cs" />
@@ -227,6 +216,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

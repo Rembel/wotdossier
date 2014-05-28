@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="BattleMode.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Dossier\AppSpot\Amounts.cs" />
     <Compile Include="Dossier\AppSpot\Awards.cs" />
@@ -72,11 +73,19 @@
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
     <Compile Include="Interfaces\IRandomBattlesAchievements.cs" />
     <Compile Include="Interfaces\IHistoricalBattlesAchievements.cs" />
+    <Compile Include="Interfaces\IStatisticBase.cs" />
     <Compile Include="Interfaces\IStatisticBattleAwards.cs" />
+    <Compile Include="Interfaces\IStatisticBattles.cs" />
+    <Compile Include="Interfaces\IStatisticDamage.cs" />
     <Compile Include="Interfaces\IStatisticEpic.cs" />
+    <Compile Include="Interfaces\IStatisticFrags.cs" />
     <Compile Include="Interfaces\IStatisticMedals.cs" />
+    <Compile Include="Interfaces\IStatisticPerformance.cs" />
+    <Compile Include="Interfaces\IStatisticRatings.cs" />
     <Compile Include="Interfaces\IStatisticSeries.cs" />
     <Compile Include="Interfaces\IStatisticSpecialAwards.cs" />
+    <Compile Include="Interfaces\IStatisticTime.cs" />
+    <Compile Include="Interfaces\IStatisticXp.cs" />
     <Compile Include="Interfaces\ITeamBattlesAchievements.cs" />
     <Compile Include="Entities\TankStatisticEntity.cs" />
     <Compile Include="Entities\TankTeamBattleStatisticEntity.cs" />

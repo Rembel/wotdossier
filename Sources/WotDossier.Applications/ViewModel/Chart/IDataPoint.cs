@@ -1,4 +1,4 @@
-﻿namespace WotDossier.Applications.ViewModel
+﻿namespace WotDossier.Applications.ViewModel.Chart
 {
     public interface IDataPoint
     {

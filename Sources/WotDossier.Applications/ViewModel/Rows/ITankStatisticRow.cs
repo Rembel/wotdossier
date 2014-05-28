@@ -4,7 +4,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface ITankStatisticRow : IStatisticBase, ITankRowBattles, ITankRowDamage, ITankRowFrags, ITankRowPerformance, ITankRowRatings, ITankRowTime, ITankFilterable
+    public interface ITankStatisticRow : IStatisticBase, IStatisticBattles, IStatisticDamage, IStatisticFrags, IStatisticPerformance, IStatisticRatings, IStatisticTime, ITankFilterable
     {
         TankIcon Icon { get; set; }
         int TankId { get; set; }

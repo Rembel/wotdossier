@@ -6,6 +6,7 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Dal;
 using WotDossier.Domain;

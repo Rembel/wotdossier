@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using WotDossier.Domain.Entities;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Statistic
 {
-    public class HistoricalPlayerStatisticViewModel : PlayerStatisticViewModel
+    public class HistoricalBattlesPlayerStatisticViewModel : PlayerStatisticViewModel
     {
-        public HistoricalPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat)
+        public HistoricalBattlesPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat)
             : this(stat, new List<PlayerStatisticViewModel>())
         {
         }
 
-        public HistoricalPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        public HistoricalBattlesPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
             : base(stat, list)
         {
             #region Awards

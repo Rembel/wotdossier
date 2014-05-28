@@ -2,6 +2,7 @@
 using System.Windows;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Server;

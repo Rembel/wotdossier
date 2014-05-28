@@ -3776,9 +3776,9 @@
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-2078153748</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>-2078153748</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>http://code.google.com/p/wotdossier/</td><td>0</td><td/><td>-2002589265</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-1943983629</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-492677419</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-2078172018</td></row>
-		<row><td>ID_STRING5</td><td>1033</td><td>http://code.google.com/p/wotdossier/downloads/list</td><td>0</td><td/><td>-2002636369</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>http://forum.worldoftanks.ru/index.php?/topic/890389-wotdossier/</td><td>0</td><td/><td>-492667179</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057464943</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057487471</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-2078153748</td></row>
@@ -4329,11 +4329,11 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L0">Value</col>
 		<col def="S255">ISComments</col>
 		<row><td>ALLUSERS</td><td>1</td><td/></row>
-		<row><td>ARPHELPLINK</td><td>##ID_STRING5##</td><td/></row>
 		<row><td>ARPINSTALLLOCATION</td><td/><td/></row>
 		<row><td>ARPPRODUCTICON</td><td>ARPPRODUCTICON.exe</td><td/></row>
 		<row><td>ARPSIZE</td><td/><td/></row>
 		<row><td>ARPURLINFOABOUT</td><td>##ID_STRING2##</td><td/></row>
+		<row><td>ARPURLUPDATEINFO</td><td>##ID_STRING5##</td><td/></row>
 		<row><td>AgreeToLicense</td><td>No</td><td/></row>
 		<row><td>ApplicationUsers</td><td>AllUsers</td><td/></row>
 		<row><td>DWUSINTERVAL</td><td>30</td><td/></row>
@@ -4400,9 +4400,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{707224DC-99F2-4252-BFB1-5916374F8382}</td><td/></row>
+		<row><td>ProductCode</td><td>{1942420A-2AA0-4E04-9FDE-6B10366DC57D}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>3.1.0</td><td/></row>
+		<row><td>ProductVersion</td><td>3.2.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4694,7 +4694,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.1.0</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.2.0</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

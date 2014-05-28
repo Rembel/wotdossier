@@ -341,8 +341,8 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{F24F419A-388F-4EAE-89A2-C0E2E2E0069E}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WotDossier.Content_Files</td><td>{BF7BC31F-BDD1-4BC9-808D-C34800E5C7EF}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WotDossier.Primary_output</td><td>{298F2FCE-E913-4E31-9285-653C201A1F57}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Content_Files</td><td>{805F7A9F-286D-4264-9A01-6220F4B4CD9F}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Primary_output</td><td>{9FCFB9FE-8A96-4148-B9AB-4BBA403E3041}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.ReplaysManager.Primary_output</td><td>{D649D4D2-CE66-4FAB-A4AB-B2C64FA8A1F1}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.replaysmanager.pr</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Resources.Localized_resources</td><td>{68FF5ED0-CAD3-4CB2-861F-AE688A835FF1}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.resources.localiz</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Resources.Primary_output</td><td>{98F4EB64-CE56-4AB3-B4F6-EF44B6C17CC8}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.resources.primary</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -2039,8 +2039,8 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_5564DD31_4287_4A7E_B7DA_77BBFB9D8B78_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>WotDossier.Content_Files</td><td/><td/><td>_CD531555_AD1D_41E5_A502_2323DBA973A4_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>WotDossier.Primary_output</td><td/><td/><td>_3741B356_B6EC_41DD_B6EE_C038A6CF0C1A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Content_Files</td><td/><td/><td>_773F011F_710E_4F91_A6B3_96B85A6C94C6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Primary_output</td><td/><td/><td>_A9E97D19_CFFB_4DF8_B99F_955A6BDB19BB_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.ReplaysManager.Primary_output</td><td/><td/><td>_7A3123FD_5910_4292_B2F1_58A8D4F2D425_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Resources.Localized_resources</td><td/><td/><td>_C60C1623_A9A5_48AD_9167_2BECCA0B4521_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Resources.Primary_output</td><td/><td/><td>_99A1411D_453A_40F8_BA50_D27724C720CA_FILTER</td><td/><td/><td/><td/></row>
@@ -3771,11 +3771,11 @@
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>547535733</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td>http://code.google.com/p/wotdossier/</td><td>0</td><td/><td>-2002644529</td></row>
 		<row><td>ID_STRING10</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-2002594322</td></row>
-		<row><td>ID_STRING11</td><td>1033</td><td>http://code.google.com/p/wotdossier/downloads/list</td><td>0</td><td/><td>-2002646609</td></row>
+		<row><td>ID_STRING11</td><td>1033</td><td>http://forum.worldoftanks.ru/index.php?/topic/890389-wotdossier/</td><td>0</td><td/><td>-492658987</td></row>
 		<row><td>ID_STRING12</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057466895</td></row>
 		<row><td>ID_STRING13</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057483279</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-2002609683</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>547533813</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-492642603</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>-492697867</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>547546421</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>547499349</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>547499381</td></row>
@@ -4400,9 +4400,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{D10F5B42-E383-40B8-98FF-8E501C73B82E}</td><td/></row>
+		<row><td>ProductCode</td><td>{34EB5FF3-CC2E-4BC8-A3C9-713664D01B6B}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>3.1.0</td><td/></row>
+		<row><td>ProductVersion</td><td>3.2.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4478,7 +4478,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>NewShortcut1</td><td>WotDossier.Primary_output</td><td/><td>newfolder2</td><td>2</td></row>
 		<row><td>NewShortcut3</td><td>WotDossier.ReplaysManager.Primary_output</td><td/><td>newfolder2</td><td>2</td></row>
 	</table>
 
@@ -4565,8 +4564,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut1</td><td>newfolder2</td><td>##ID_STRING9##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING10##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>newfolder2</td><td>##ID_STRING12##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut4</td><td>DesktopFolder</td><td>##ID_STRING13##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
@@ -4691,7 +4688,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.1.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.2.0</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

@@ -4,9 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
 using Microsoft.Research.DynamicDataDisplay.PointMarkers;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Framework.Interpolation;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Chart
 {
     public class CommonChartsViewModel : INotifyPropertyChanged
     {

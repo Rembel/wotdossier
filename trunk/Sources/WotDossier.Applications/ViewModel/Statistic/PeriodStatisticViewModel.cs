@@ -6,7 +6,7 @@ using WotDossier.Applications.Logic;
 using WotDossier.Domain;
 using WotDossier.Framework.EventAggregator;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Statistic
 {
     public abstract class PeriodStatisticViewModel<T> : StatisticViewModelBase where T : StatisticViewModelBase
     {
@@ -889,10 +889,18 @@ namespace WotDossier.Applications.ViewModel
 
         #endregion
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PeriodStatisticViewModel{T}"/> class.
+        /// </summary>
         protected PeriodStatisticViewModel()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PeriodStatisticViewModel{T}"/> class.
+        /// </summary>
+        /// <param name="updated">The updated.</param>
+        /// <param name="list">The list.</param>
         protected PeriodStatisticViewModel(DateTime updated, List<T> list)
         {
             _list = list;
@@ -908,6 +916,10 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        /// <summary>
+        /// Called when [statistic period changed].
+        /// </summary>
+        /// <param name="eventArgs">The event arguments.</param>
         protected virtual void OnStatisticPeriodChanged(StatisticPeriodChangedEvent eventArgs)
         {
             StatisticPeriod statisticPeriod = eventArgs.StatisticPeriod;
@@ -942,6 +954,10 @@ namespace WotDossier.Applications.ViewModel
             return prevStatistic;
         }
 
+        /// <summary>
+        /// Sets the previous statistic.
+        /// </summary>
+        /// <param name="prevStatistic">The previous statistic.</param>
         public void SetPreviousStatistic(T prevStatistic)
         {
             PrevStatistic = (T)((object)prevStatistic ?? this);

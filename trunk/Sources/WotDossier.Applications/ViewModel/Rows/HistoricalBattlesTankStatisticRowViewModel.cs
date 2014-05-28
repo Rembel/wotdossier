@@ -7,6 +7,9 @@ namespace WotDossier.Applications.ViewModel.Rows
 {
     public class HistoricalBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase<HistoricalBattlesTankStatisticRowViewModel>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HistoricalBattlesTankStatisticRowViewModel"/> class.
+        /// </summary>
         protected HistoricalBattlesTankStatisticRowViewModel()
         {
         }
@@ -40,7 +43,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             BattlesCount88 = tank.Historical.battlesCount - BattlesCountBefore88;
             IsPremium = tank.Common.premium == 1;
 
-            #region [ ITankRowBattles ]
+            #region [ IStatisticBattles ]
             BattlesCount = tank.Historical.battlesCount;
             Wins = tank.Historical.wins;
             Losses = tank.Historical.losses;
@@ -48,13 +51,13 @@ namespace WotDossier.Applications.ViewModel.Rows
             SurvivedAndWon = tank.Historical.winAndSurvived;
             #endregion
 
-            #region [ ITankRowDamage ]
+            #region [ IStatisticDamage ]
             DamageDealt = tank.Historical.damageDealt;
             DamageTaken = tank.Historical.damageReceived;
             MaxDamage = tank.Historical.maxDamage;
             #endregion
 
-            #region [ ITankRowPerformance ]
+            #region [ IStatisticPerformance ]
             Shots = tank.Historical.shots;
             Hits = tank.Historical.hits;
             if (Shots > 0)
@@ -71,13 +74,13 @@ namespace WotDossier.Applications.ViewModel.Rows
             MaxXp = tank.Historical.maxXP;
             #endregion
 
-            #region [ ITankRowFrags ]
+            #region [ IStatisticFrags ]
             Frags = tank.Historical.frags;
             MaxFrags = tank.Historical.maxFrags;
             Tier8Frags = tank.Historical.frags8p;
             #endregion
 
-            #region [ ITankRowTime ]
+            #region [ IStatisticTime ]
             LastBattle = tank.Common.lastBattleTimeR;
             PlayTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime);
             if (tank.Historical.battlesCount > 0)

@@ -447,7 +447,7 @@
   <data name="Column_Frags_Frags" xml:space="preserve">
     <value>Фраги</value>
   </data>
-  <data name="Column_Frags_FragsPerBattle" xml:space="preserve">
+  <data name="Column_Frags_AvgFrags" xml:space="preserve">
     <value>Фрагов за бой</value>
   </data>
   <data name="Column_Frags_KillDeathRatio" xml:space="preserve">
@@ -2246,12 +2246,15 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Both Sides Wins</value>
   </data>
   <data name="Medal_HistoricalBattle_GuardsMan" xml:space="preserve">
-    <value>Guards Man</value>
+    <value>Гвардеец</value>
   </data>
   <data name="Medal_HistoricalBattle_MakerOfHistory" xml:space="preserve">
-    <value>Maker Of History</value>
+    <value>Вершитель истории</value>
   </data>
   <data name="Medal_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
     <value>Weak Vehicles Wins</value>
+  </data>
+    <data name="Map_83_kharkiv" xml:space="preserve">
+    <value>Харьков</value>
   </data>
 </root>

@@ -6,9 +6,10 @@ using Common.Logging;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Domain;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Chart
 {
     public class PlayerChartsViewModel : CommonChartsViewModel
     {

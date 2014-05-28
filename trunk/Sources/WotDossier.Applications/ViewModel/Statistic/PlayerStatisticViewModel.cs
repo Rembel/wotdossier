@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using WotDossier.Applications.Model;
 using WotDossier.Domain.Entities;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Statistic
 {
     public abstract class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
     {
@@ -269,6 +269,8 @@ namespace WotDossier.Applications.ViewModel
             Xp = stat.Xp;
             MaxXp = stat.MaxXp;
             Frags = stat.Frags;
+            //TODO: field MaxFrags
+            //MaxFrags = stat.MaxFrags;
             Spotted = stat.Spotted;
             HitsPercents = stat.HitsPercents;
             DamageDealt = stat.DamageDealt;

@@ -13,7 +13,11 @@ using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Chart;
+using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Selectors;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
 using WotDossier.Common.Collections;
 using WotDossier.Dal;
@@ -286,11 +290,11 @@ namespace WotDossier.Applications.ViewModel
             {
                 typeof(ITankRowBase),
                 typeof(IStatisticXp),
-                typeof(ITankRowBattles),
-                typeof(ITankRowFrags),
-                typeof(ITankRowDamage),
-                typeof(ITankRowTime),
-                typeof(ITankRowPerformance),
+                typeof(IStatisticBattles),
+                typeof(IStatisticFrags),
+                typeof(IStatisticDamage),
+                typeof(IStatisticTime),
+                typeof(IStatisticPerformance),
                 typeof(IRandomBattlesAchievements),
                 typeof(IHistoricalBattlesAchievements),
                 typeof(ITeamBattlesAchievements),

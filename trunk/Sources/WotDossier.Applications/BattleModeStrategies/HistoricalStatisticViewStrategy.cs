@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Server;
@@ -61,7 +61,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic)
         {
-            return new HistoricalPlayerStatisticViewModel((HistoricalBattlesStatisticEntity)currentStatistic);
+            return new HistoricalBattlesPlayerStatisticViewModel((HistoricalBattlesStatisticEntity)currentStatistic);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<PlayerStatisticViewModel> oldStatisticEntities)
         {
-            return new HistoricalPlayerStatisticViewModel((HistoricalBattlesStatisticEntity)currentStatistic, oldStatisticEntities);
+            return new HistoricalBattlesPlayerStatisticViewModel((HistoricalBattlesStatisticEntity)currentStatistic, oldStatisticEntities);
         }
 
         /// <summary>

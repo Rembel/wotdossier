@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using WotDossier.Applications.Logic;
-using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Domain.Interfaces;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Statistic
 {
     public abstract class StatisticViewModelBase : INotifyPropertyChanged, IStatisticBase
     {
@@ -16,6 +16,7 @@ namespace WotDossier.Applications.ViewModel
 
         public int MaxXp { get; set; }
         public int Frags { get; set; }
+        public int MaxFrags { get; set; }
         public int Spotted { get; set; }
 
         public int DamageDealt { get; set; }

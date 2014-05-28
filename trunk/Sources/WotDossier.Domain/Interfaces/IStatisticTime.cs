@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace WotDossier.Applications.ViewModel.Rows
+namespace WotDossier.Domain.Interfaces
 {
-    public interface ITankRowTime
+    public interface IStatisticTime
     {
         DateTime LastBattle { get; set; }
         TimeSpan PlayTime { get; set; }

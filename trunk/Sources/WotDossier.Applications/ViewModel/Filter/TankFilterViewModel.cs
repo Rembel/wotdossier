@@ -5,7 +5,7 @@ using WotDossier.Domain;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Framework.Forms.Commands;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Filter
 {
     public class TankFilterViewModel : INotifyPropertyChanged
     {
@@ -328,14 +328,24 @@ namespace WotDossier.Applications.ViewModel
                 ).ToList();
         }
 
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Called when [property changed].
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Saves this instance.
+        /// </summary>
         public void Save()
         {
             AppSettings appSettings = SettingsReader.Get();

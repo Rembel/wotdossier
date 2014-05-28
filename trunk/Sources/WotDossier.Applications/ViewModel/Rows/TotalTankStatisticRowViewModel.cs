@@ -68,7 +68,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             MainGun = list.Sum(x => x.MainGun);
             #endregion
 
-            #region [ ITankRowBattles ]
+            #region [ IStatisticBattles ]
             BattlesCount = list.Sum(x => x.BattlesCount);
             Wins = list.Sum(x => x.Wins);
             Losses = list.Sum(x => x.Losses);
@@ -78,7 +78,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             Tier = list.Sum(x => x.Tier * x.BattlesCount) / BattlesCount;
 
-            #region [ ITankRowDamage ]
+            #region [ IStatisticDamage ]
             DamageDealt = list.Sum(x => x.DamageDealt);
             DamageTaken = list.Sum(x => x.DamageTaken);
             MaxDamage = list.Max(x => x.MaxDamage);
@@ -106,7 +106,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             DeLanglade = list.Sum(x => x.DeLanglade);
             #endregion
 
-            #region [ ITankRowFrags ]
+            #region [ IStatisticFrags ]
             Frags = list.Sum(x => x.Frags);
             MaxFrags = list.Max(x => x.MaxFrags);
             Tier8Frags = list.Sum(x => x.Tier8Frags);
@@ -131,7 +131,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Ekins = list.Sum(x => x.Ekins);
             #endregion
 
-            #region [ ITankRowPerformance ]
+            #region [ IStatisticPerformance ]
             Shots = list.Sum(x => x.Shots);
             Hits = list.Sum(x => x.Hits);
             if (Shots > 0)
@@ -170,7 +170,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             PattonValley = list.Sum(x => x.PattonFrags) / 100;
             #endregion
 
-            #region [ ITankRowTime ]
+            #region [ IStatisticTime ]
             LastBattle = list.Max(x => x.LastBattle);
             double totalSeconds = list.Sum(x => x.PlayTime.TotalSeconds);
             PlayTime = new TimeSpan(0, 0, 0, (int) totalSeconds);

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Framework.Forms.Commands;
 
-namespace WotDossier.Applications.ViewModel.Replay
+namespace WotDossier.Applications.ViewModel.Filter
 {
     public class ReplaysFilterViewModel : INotifyPropertyChanged
     {
@@ -38,8 +39,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         private bool _isPremium;
         private bool _isFavorite;
         private ReplayFolder _selectedFolder;
-        private KeyValue<int, string> _selectedMap;
-        private List<KeyValue<int, string>> _maps;
+        private ListItem<int> _selectedMap;
+        private List<ListItem<int>> _maps;
         private string _field;
         private int? _startValue;
         private int? _endValue;
@@ -296,7 +297,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
-        public List<KeyValue<int, string>> Maps
+        public List<ListItem<int>> Maps
         {
             get { return _maps; }
             set
@@ -306,7 +307,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
-        public KeyValue<int, string> SelectedMap
+        public ListItem<int> SelectedMap
         {
             get { return _selectedMap; }
             set
@@ -361,6 +362,12 @@ namespace WotDossier.Applications.ViewModel.Replay
         public DelegateCommand ClearCommand { get; set; }
         public DelegateCommand AllCommand { get; set; }
 
+        /// <summary>
+        /// Filters the replays list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="replays">The replays.</param>
+        /// <returns></returns>
         public List<T> Filter<T>(List<T> replays) where T : ReplayFile
         {
             if (replays == null)
@@ -406,7 +413,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                                     &&
                                     (x.IsWinner == SelectedBattleResult || SelectedBattleResult == BattleStatus.Unknown)
                                    && (x.Tank.Premium == 1 || !IsPremium)
-                                   && (SelectedMap == null || x.MapId == SelectedMap.Key || SelectedMap.Key == 0)
+                                   && (SelectedMap == null || x.MapId == SelectedMap.Id || SelectedMap.Id == 0)
                                    && FieldFilter(x)
                                    && MembersFilter(x.TeamMembers, members)
                 ).ToList();
@@ -465,25 +472,25 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         public ReplaysFilterViewModel()
         {
-            List<KeyValue<int, string>> list = Dictionaries.Instance.Maps.Values.OrderByDescending(x => x.mapid).Select(x => new KeyValue<int, string>(x.mapid, x.localizedmapname)).ToList();
-            list.Insert(0, new KeyValue<int, string>(0, ""));
+            List<ListItem<int>> list = Dictionaries.Instance.Maps.Values.OrderByDescending(x => x.mapid).Select(x => new ListItem<int>(x.mapid, x.localizedmapname)).ToList();
+            list.Insert(0, new ListItem<int>(0, ""));
             Maps = list;
 
-            FilterFields = new List<KeyValue<string, string>>
+            FilterFields = new List<ListItem<string>>
             {
-                new KeyValue<string, string>(ReplayFile.PropCredits,Resources.Resources.Column_Replay_Credits), 
-                new KeyValue<string, string>(ReplayFile.PropDamageDealt,Resources.Resources.Column_Replay_DamageDealt), 
-                new KeyValue<string, string>(ReplayFile.PropXp,Resources.Resources.Column_Replay_XP), 
-                new KeyValue<string, string>(ReplayFile.PropKilled,Resources.Resources.Column_Replay_Frags), 
-                new KeyValue<string, string>(ReplayFile.PropDamaged,Resources.Resources.Column_Replay_Damaged), 
+                new ListItem<string>(ReplayFile.PropCredits,Resources.Resources.Column_Replay_Credits), 
+                new ListItem<string>(ReplayFile.PropDamageDealt,Resources.Resources.Column_Replay_DamageDealt), 
+                new ListItem<string>(ReplayFile.PropXp,Resources.Resources.Column_Replay_XP), 
+                new ListItem<string>(ReplayFile.PropKilled,Resources.Resources.Column_Replay_Frags), 
+                new ListItem<string>(ReplayFile.PropDamaged,Resources.Resources.Column_Replay_Damaged), 
             };
 
-            BattleResults = new List<KeyValue<BattleStatus, string>>
+            BattleResults = new List<ListItem<BattleStatus>>
             {
-                new KeyValue<BattleStatus, string>(BattleStatus.Unknown, Resources.Resources.TankFilterPanel_All), 
-                new KeyValue<BattleStatus, string>(BattleStatus.Victory, Resources.Resources.BattleStatus_Victory), 
-                new KeyValue<BattleStatus, string>(BattleStatus.Defeat,Resources.Resources.BattleStatus_Defeat), 
-                new KeyValue<BattleStatus, string>(BattleStatus.Draw,Resources.Resources.BattleStatus_Draw), 
+                new ListItem<BattleStatus>(BattleStatus.Unknown, Resources.Resources.TankFilterPanel_All), 
+                new ListItem<BattleStatus>(BattleStatus.Victory, Resources.Resources.BattleStatus_Victory), 
+                new ListItem<BattleStatus>(BattleStatus.Defeat,Resources.Resources.BattleStatus_Defeat), 
+                new ListItem<BattleStatus>(BattleStatus.Draw,Resources.Resources.BattleStatus_Draw), 
             };
 
             ClearCommand = new DelegateCommand(OnClear);
@@ -522,9 +529,9 @@ namespace WotDossier.Applications.ViewModel.Replay
                 UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
         }
 
-        public List<KeyValue<string, string>> FilterFields { get; set; }
+        public List<ListItem<string>> FilterFields { get; set; }
 
-        public List<KeyValue<BattleStatus, string>> BattleResults { get; set; }
+        public List<ListItem<BattleStatus>> BattleResults { get; set; }
 
         public BattleStatus SelectedBattleResult
         {
@@ -536,8 +543,15 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Called when [property changed].
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

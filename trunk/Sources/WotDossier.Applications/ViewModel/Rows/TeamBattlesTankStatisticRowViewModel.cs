@@ -40,7 +40,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             BattlesCount88 = tank.A7x7.battlesCount - BattlesCountBefore88;
             IsPremium = tank.Common.premium == 1;
 
-            #region [ ITankRowBattles ]
+            #region [ IStatisticBattles ]
             BattlesCount = tank.A7x7.battlesCount;
             Wins = tank.A7x7.wins;
             Losses = tank.A7x7.losses;
@@ -48,13 +48,13 @@ namespace WotDossier.Applications.ViewModel.Rows
             SurvivedAndWon = tank.A7x7.winAndSurvived;
             #endregion
 
-            #region [ ITankRowDamage ]
+            #region [ IStatisticDamage ]
             DamageDealt = tank.A7x7.damageDealt;
             DamageTaken = tank.A7x7.damageReceived;
             MaxDamage = tank.A7x7.maxDamage;
             #endregion
 
-            #region [ ITankRowPerformance ]
+            #region [ IStatisticPerformance ]
             Shots = tank.A7x7.shots;
             Hits = tank.A7x7.hits;
             if (Shots > 0)
@@ -71,13 +71,13 @@ namespace WotDossier.Applications.ViewModel.Rows
             MaxXp = tank.A7x7.maxXP;
             #endregion
 
-            #region [ ITankRowFrags ]
+            #region [ IStatisticFrags ]
             Frags = tank.A7x7.frags;
             MaxFrags = tank.A7x7.maxFrags;
             Tier8Frags = tank.A7x7.frags8p;
             #endregion
 
-            #region [ ITankRowTime ]
+            #region [ IStatisticTime ]
             LastBattle = tank.Common.lastBattleTimeR;
             PlayTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime);
             if (tank.A7x7.battlesCount > 0)

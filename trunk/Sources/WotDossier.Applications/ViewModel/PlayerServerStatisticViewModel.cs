@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Linq;
 using System.Windows;
-using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain.Entities;

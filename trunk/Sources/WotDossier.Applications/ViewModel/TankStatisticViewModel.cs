@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.Composition;
 using System.Windows;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
 using WotDossier.Domain;
 using WotDossier.Framework.Applications;

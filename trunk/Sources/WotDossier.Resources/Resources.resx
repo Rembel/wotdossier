@@ -415,8 +415,8 @@ If two or more players have equal amount of hits, the achievement is granted to 
   <data name="Column_Frags_MaxFrags" xml:space="preserve">
     <value>Max Frags</value>
   </data>
-  <data name="Column_Frags_FragsPerBattle" xml:space="preserve">
-    <value>FragsPerBattle</value>
+  <data name="Column_Frags_AvgFrags" xml:space="preserve">
+    <value>AvgFrags</value>
   </data>
   <data name="Column_Frags_KillDeathRatio" xml:space="preserve">
     <value>Kill Death Ratio</value>
@@ -2100,5 +2100,8 @@ Survive %: {1:0.00}</value>
   </data>
   <data name="Tooltip_Achievements_15x15_MedalStark" xml:space="preserve">
     <value />
+  </data>
+  <data name="Map_83_kharkiv" xml:space="preserve">
+    <value>Kharkiv</value>
   </data>
 </root>

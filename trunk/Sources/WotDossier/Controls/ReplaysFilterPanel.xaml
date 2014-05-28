@@ -153,14 +153,14 @@
             </CheckBox>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-            <ComboBox Margin="6,3,20,3" Width="200" ItemsSource="{Binding FilterFields}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Field, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+            <ComboBox Margin="6,3,20,3" Width="200" ItemsSource="{Binding FilterFields}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Field, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
             <TextBlock Text="{x:Static resources:Resources.Operation_Gt}" VerticalAlignment="Center"></TextBlock>
             <TextBox Margin="6,3,6,3" Width="50" Text="{Binding StartValue, NotifyOnValidationError=False}" controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
             <TextBlock Text="{x:Static resources:Resources.Operation_Lt}" VerticalAlignment="Center"></TextBlock>
             <TextBox Margin="6,3,6,3" Width="50"  Text="{Binding EndValue, NotifyOnValidationError=False}" controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
         </StackPanel>
         <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="6,3,6,3" Width="200" Text="{Binding Member, NotifyOnValidationError=False}"  controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
-        <ComboBox Margin="6,3,6,3" Grid.Row="6" Grid.Column="1" Width="200" ItemsSource="{Binding BattleResults}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding SelectedBattleResult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+        <ComboBox Margin="6,3,6,3" Grid.Row="6" Grid.Column="1" Width="200" ItemsSource="{Binding BattleResults}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedBattleResult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
         <Grid Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>

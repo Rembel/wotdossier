@@ -12,6 +12,7 @@
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              xmlns:viewModel="clr-namespace:WotDossier.Applications.ViewModel;assembly=WotDossier.Applications"
+             xmlns:domain="clr-namespace:WotDossier.Domain;assembly=WotDossier.Domain"
              mc:Ignorable="d"
              d:DesignHeight="800" d:DesignWidth="900">
     <Grid Background="{StaticResource bcolorCenter}">
@@ -125,7 +126,7 @@
                                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCountDelta}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellWinPercentForPeriodStyle}" Header="{x:Static resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercentForPeriod, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AvgDamageDealtForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Frags_FragsPerBattle}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Frags_AvgFrags}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellEffForPeriodStyle}" Header="{x:Static resources:Resources.Column_Ratings_EffRating}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn7ForPeriodStyle}" Header="WN7" Binding="{Binding WN7RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                                 <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn8ForPeriodStyle}" Header="WN8" Binding="{Binding WN8RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
@@ -149,27 +150,27 @@
             <!--Ratings-->
             <TabItem Header="{x:Static resources:Resources.Tab_Header_Ratings}"
                      Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
-                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
+                     ConverterParameter={x:Static domain:BattleMode.RandomCompany}}">
                 <controls:RatingView DataContext="{Binding PlayerStatistic}"></controls:RatingView>
             </TabItem>
             <!--Achievements-->
             <TabItem Header="{x:Static resources:Resources.Tab_Header_Achievements}"
                      Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
-                     ConverterParameter={x:Static viewModel:BattleMode.RandomCompany}}">
+                     ConverterParameter={x:Static domain:BattleMode.RandomCompany}}">
                 <ScrollViewer>
                     <controls:Achievements DataContext="{Binding PlayerStatistic}"></controls:Achievements>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="{x:Static resources:Resources.Tab_Header_Achievements}"
                      Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
-                     ConverterParameter={x:Static viewModel:BattleMode.TeamBattle}}">
+                     ConverterParameter={x:Static domain:BattleMode.TeamBattle}}">
                 <ScrollViewer>
                     <controls:Achievements7x7 DataContext="{Binding PlayerStatistic}"></controls:Achievements7x7>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="{x:Static resources:Resources.Tab_Header_Achievements}"
                      Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
-                     ConverterParameter={x:Static viewModel:BattleMode.HistoricalBattle}}">
+                     ConverterParameter={x:Static domain:BattleMode.HistoricalBattle}}">
                 <ScrollViewer>
                     <controls:AchievementsHistorical DataContext="{Binding PlayerStatistic}"></controls:AchievementsHistorical>
                 </ScrollViewer>

@@ -1,6 +1,6 @@
-﻿namespace WotDossier.Applications.ViewModel.Rows
+﻿namespace WotDossier.Domain.Interfaces
 {
-    public interface ITankRowDamage
+    public interface IStatisticDamage
     {
         int DamageDealt { get; set; }
         int DamageTaken { get; set; }

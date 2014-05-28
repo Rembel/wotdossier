@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Applications.ViewModel
+﻿using WotDossier.Applications.ViewModel.Statistic;
+
+namespace WotDossier.Applications.ViewModel
 {
     public class CompareStatisticViewModelBase<T> where T : StatisticViewModelBase
     {

@@ -12,6 +12,8 @@ using Ionic.Zip;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
+using WotDossier.Applications.ViewModel.Chart;
+using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Dal;
 using WotDossier.Domain;

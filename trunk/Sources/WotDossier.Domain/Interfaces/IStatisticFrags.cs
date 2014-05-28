@@ -1,10 +1,10 @@
-﻿namespace WotDossier.Applications.ViewModel.Rows
+﻿namespace WotDossier.Domain.Interfaces
 {
-    public interface ITankRowFrags
+    public interface IStatisticFrags
     {
         int Frags { get; set; }
         int MaxFrags { get; set; }
-        double FragsPerBattle { get; }
+        double AvgFrags { get; }
         double KillDeathRatio { get; }
         int Tier8Frags { get; set; }
         int BeastFrags { get; set; }

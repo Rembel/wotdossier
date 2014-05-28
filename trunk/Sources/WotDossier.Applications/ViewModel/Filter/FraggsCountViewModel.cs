@@ -3,7 +3,7 @@ using System.Linq;
 using WotDossier.Common;
 using WotDossier.Domain.Tank;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Filter
 {
     public class FraggsCountViewModel : TankFilterViewModel
     {
@@ -11,11 +11,11 @@ namespace WotDossier.Applications.ViewModel
         
         private const int KEY_ALL_VALUES = -1;
         private List<FragsJson> _tankFrags;
-        private KeyValue<int, string> _selectedTank;
+        private ListItem<int> _selectedTank;
 
-        public List<KeyValue<int, string>> Tanks { get; set; }
+        public List<ListItem<int>> Tanks { get; set; }
 
-        public KeyValue<int, string> SelectedTank
+        public ListItem<int> SelectedTank
         {
             get { return _selectedTank; }
             set
@@ -53,8 +53,8 @@ namespace WotDossier.Applications.ViewModel
 
             IEnumerable<FragsJson> filter = Filter(tankFrags)
                 .Where(x => (SelectedTank == null
-                   || SelectedTank.Key == KEY_ALL_VALUES
-                   || x.KilledByTankUniqueId == SelectedTank.Key))
+                   || SelectedTank.Id == KEY_ALL_VALUES
+                   || x.KilledByTankUniqueId == SelectedTank.Id))
                 .GroupBy(x => new
                     {   
                         x.CountryId, 
@@ -84,8 +84,8 @@ namespace WotDossier.Applications.ViewModel
         public void Init(List<TankJson> tanks)
         {
             TankFrags = tanks.SelectMany(x => x.Frags).ToList();
-            Tanks = tanks.OrderBy(x => x.Common.tanktitle).Select(x => new KeyValue<int, string>(x.UniqueId(), x.Common.tanktitle)).ToList();
-            Tanks.Insert(0, new KeyValue<int, string>(KEY_ALL_VALUES, Resources.Resources.TankFilterPanel_All));
+            Tanks = tanks.OrderBy(x => x.Common.tanktitle).Select(x => new ListItem<int>(x.UniqueId(), x.Common.tanktitle)).ToList();
+            Tanks.Insert(0, new ListItem<int>(KEY_ALL_VALUES, Resources.Resources.TankFilterPanel_All));
             OnPropertyChanged("Tanks");
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Microsoft.Research.DynamicDataDisplay;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Chart
 {
     public sealed class SellInfo : INotifyPropertyChanged
     {

@@ -5,7 +5,7 @@ using WotDossier.Common;
 using WotDossier.Domain;
 using WotDossier.Framework.Foundation;
 
-namespace WotDossier.Applications.ViewModel
+namespace WotDossier.Applications.ViewModel.Selectors
 {
     public class PeriodSelectorViewModel : Framework.Foundation.Model
     {

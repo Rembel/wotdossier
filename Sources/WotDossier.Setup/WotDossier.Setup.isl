@@ -2636,8 +2636,10 @@
 		<col def="I2">Order</col>
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
-		<row><td>_132E4BC5_F8B5_4C54_BD7E_3517B24B5056_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td/><td/><td/></row>
-		<row><td>_43FFCA6E_688A_40AE_AB38_6AFB3C6CBB80_</td><td>Microsoft Visual C++ 2008 Redistributable Package (x86).prq</td><td/><td>1</td><td/></row>
+		<row><td>_132E4BC5_F8B5_4C54_BD7E_3517B24B5056_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td>0</td><td/><td/></row>
+		<row><td>_1B8B6967_B0FC_41F9_862C_ACC03FCD4947_</td><td>Windows Imaging Component (x86).prq</td><td>2</td><td/><td/></row>
+		<row><td>_43FFCA6E_688A_40AE_AB38_6AFB3C6CBB80_</td><td>Microsoft Visual C++ 2008 Redistributable Package (x86).prq</td><td>1</td><td>1</td><td/></row>
+		<row><td>_828FF778_4BDD_4606_92F9_2FE378A39322_</td><td>Windows Imaging Component (x64).prq</td><td>3</td><td/><td/></row>
 	</table>
 
 	<table name="ISSetupType">
@@ -3889,6 +3891,9 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectFolder&gt;\..\WotDossier\app_icon.ico</td><td>0</td></row>
+		<row><td>NewShortcut1_0E5DBDC52C5149EE92F6A6F3B4D7B3A4.exe</td><td/><td>\WotDossier.Primary output</td><td>0</td></row>
+		<row><td>_Built1_0EE87CAAED574457A9499DEBF0B3186B.exe</td><td/><td>\WotDossier.Primary output</td><td>0</td></row>
+		<row><td>_Built_3890A16BCA094C9EBA5FF2E52617F76D.exe</td><td/><td>\WotDossier.Primary output</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4568,10 +4573,10 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut1</td><td>wotdos_1_wotdossier</td><td>##ID_STRING6##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING7##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>_Built</td><td>wotdos_1_wotdossier</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut1</td><td>wotdos_1_wotdossier</td><td>##ID_STRING6##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING7##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built</td><td>wotdos_1_wotdossier</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

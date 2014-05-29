@@ -3774,6 +3774,8 @@
 		<row><td>ID_STRING11</td><td>1033</td><td>http://forum.worldoftanks.ru/index.php?/topic/890389-wotdossier/</td><td>0</td><td/><td>-492658987</td></row>
 		<row><td>ID_STRING12</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057466895</td></row>
 		<row><td>ID_STRING13</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057483279</td></row>
+		<row><td>ID_STRING14</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-358478805</td></row>
+		<row><td>ID_STRING15</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-358425557</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-492642603</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>-492697867</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>547546421</td></row>
@@ -4478,6 +4480,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
+		<row><td>NewShortcut1</td><td>WotDossier.Primary_output</td><td/><td>newfolder2</td><td>2</td></row>
 		<row><td>NewShortcut3</td><td>WotDossier.ReplaysManager.Primary_output</td><td/><td>newfolder2</td><td>2</td></row>
 	</table>
 
@@ -4564,6 +4567,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>NewShortcut1</td><td>newfolder2</td><td>##ID_STRING14##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING15##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>newfolder2</td><td>##ID_STRING12##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut4</td><td>DesktopFolder</td><td>##ID_STRING13##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>

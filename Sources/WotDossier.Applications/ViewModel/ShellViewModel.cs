@@ -211,7 +211,7 @@ namespace WotDossier.Applications.ViewModel
         {
             _dossierRepository = dossierRepository;
 
-            LoadCommand = new DelegateCommand(OnLoad, CanLoad);
+            LoadCommand = new DelegateCommand(OnLoad/*, CanLoad*/);
             SettingsCommand = new DelegateCommand(OnSettings);
             AboutCommand = new DelegateCommand(OnAbout);
             

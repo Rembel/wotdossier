@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using WotDossier.Common;
 
 namespace WotDossier.Domain.Entities
 {
@@ -10,19 +9,6 @@ namespace WotDossier.Domain.Entities
 	[Serializable]
 	public class TankEntity : EntityBase
 	{	
-		#region Property names
-		
-		public static readonly string PropTankId = TypeHelper<TankEntity>.PropertyName(v => v.TankId);
-		public static readonly string PropName = TypeHelper<TankEntity>.PropertyName(v => v.Name);
-		public static readonly string PropTier = TypeHelper<TankEntity>.PropertyName(v => v.Tier);
-		public static readonly string PropCountryId = TypeHelper<TankEntity>.PropertyName(v => v.CountryId);
-		public static readonly string PropIcon = TypeHelper<TankEntity>.PropertyName(v => v.Icon);
-		public static readonly string PropTankType = TypeHelper<TankEntity>.PropertyName(v => v.TankType);
-		public static readonly string PropIsPremium = TypeHelper<TankEntity>.PropertyName(v => v.IsPremium);
-		public static readonly string PropPlayerId = TypeHelper<TankEntity>.PropertyName(v => v.PlayerId);
-		
-		#endregion
-
 		/// <summary>
 		/// Gets/Sets the field "TankId".
 		/// </summary>

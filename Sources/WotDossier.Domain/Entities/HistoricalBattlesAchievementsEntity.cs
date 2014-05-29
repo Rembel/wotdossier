@@ -1,25 +1,15 @@
 using System;
 using System.Collections.Generic;
-using WotDossier.Common;
 using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Entities
 {
     /// <summary>
-    ///     Object representation for table 'HistoricalBattlesAchievements'.
+    /// Object representation for table 'HistoricalBattlesAchievements'.
     /// </summary>
     [Serializable]
     public class HistoricalBattlesAchievementsEntity : EntityBase, IHistoricalBattlesAchievements
     {
-        #region Property names
-
-        public static readonly string PropGuardsMan = TypeHelper<HistoricalBattlesAchievementsEntity>.PropertyName(v => v.GuardsMan);
-        public static readonly string PropMakerOfHistory = TypeHelper<HistoricalBattlesAchievementsEntity>.PropertyName(v => v.MakerOfHistory);
-        public static readonly string PropBothSidesWins = TypeHelper<HistoricalBattlesAchievementsEntity>.PropertyName(v => v.BothSidesWins);
-        public static readonly string PropWeakVehiclesWins = TypeHelper<HistoricalBattlesAchievementsEntity>.PropertyName(v => v.WeakVehiclesWins);
-
-        #endregion
-
         public virtual int GuardsMan { get; set; }
 
         public virtual int MakerOfHistory { get; set; }

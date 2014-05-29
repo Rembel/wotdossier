@@ -9,10 +9,8 @@ namespace WotDossier.Dal.Mappings
     {
         public DbVersionMapping()
         {
-			Map(v => v.SchemaVersion, "SchemaVersion");
-			Map(v => v.Applied, "Applied");
-		
-
+			Map(v => v.SchemaVersion);
+			Map(v => v.Applied);
         }
     }
 }

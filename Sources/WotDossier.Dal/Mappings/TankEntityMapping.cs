@@ -7,6 +7,9 @@ namespace WotDossier.Dal.Mappings
     /// </summary>
     public class TankMapping : ClassMapBase<TankEntity>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TankMapping"/> class.
+        /// </summary>
         public TankMapping()
         {
 			Map(v => v.TankId, "TankId");

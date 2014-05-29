@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using WotDossier.Common;
 
 namespace WotDossier.Domain.Entities
 {
@@ -10,14 +9,6 @@ namespace WotDossier.Domain.Entities
 	[Serializable]
 	public class PlayerEntity : EntityBase
 	{	
-		#region Property names
-		
-		public static readonly string PropName = TypeHelper<PlayerEntity>.PropertyName(v => v.Name);
-		public static readonly string PropCreaded = TypeHelper<PlayerEntity>.PropertyName(v => v.Creaded);
-		public static readonly string PropPlayerId = TypeHelper<PlayerEntity>.PropertyName(v => v.PlayerId);
-		
-		#endregion
-
 		/// <summary>
 		/// Gets/Sets the field "Name".
 		/// </summary>

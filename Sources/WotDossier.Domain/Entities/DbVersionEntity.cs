@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using WotDossier.Common;
 
 namespace WotDossier.Domain.Entities
 {
@@ -10,13 +8,6 @@ namespace WotDossier.Domain.Entities
 	[Serializable]
 	public class DbVersionEntity : EntityBase
 	{	
-		#region Property names
-		
-		public static readonly string PropSchemaVersion = TypeHelper<DbVersionEntity>.PropertyName(v => v.SchemaVersion);
-		public static readonly string PropApplied = TypeHelper<DbVersionEntity>.PropertyName(v => v.Applied);
-		
-		#endregion
-
 		/// <summary>
 		/// Gets/Sets the field "SchemaVersion".
 		/// </summary>

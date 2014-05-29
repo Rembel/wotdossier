@@ -97,12 +97,10 @@
     <Compile Include="Mappings\SubclassMapBase.cs" />
     <Compile Include="Mappings\TankEntityMapping.cs" />
     <Compile Include="Mappings\TankStatisticEntityMapping.cs" />
-    <Compile Include="NHibernate\ConcurrencyException.cs" />
     <Compile Include="NHibernate\DataProvider.cs" />
     <Compile Include="NHibernate\ExSqlServerCeDriver.cs" />
-    <Compile Include="NHibernate\FlushEntityEventListener.cs" />
     <Compile Include="NHibernate\ISessionStorage.cs" />
-    <Compile Include="NHibernate\NHibernateSessionStorage.cs" />
+    <Compile Include="NHibernate\DesktopAppSessionStorage.cs" />
     <Compile Include="PlayerInfoLoadException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WotApiClient.cs" />

@@ -2637,7 +2637,7 @@
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
 		<row><td>_132E4BC5_F8B5_4C54_BD7E_3517B24B5056_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td/><td/><td/></row>
-		<row><td>_FE2B80F2_7C46_47B2_A9A4_5F30F4C77189_</td><td>Microsoft Visual C++ 2010 Redistributable Package (x86).prq</td><td/><td/><td/></row>
+		<row><td>_43FFCA6E_688A_40AE_AB38_6AFB3C6CBB80_</td><td>Microsoft Visual C++ 2008 Redistributable Package (x86).prq</td><td/><td>1</td><td/></row>
 	</table>
 
 	<table name="ISSetupType">

@@ -1,0 +1,1390 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DevStudio>
+	<IDE>
+		<Workspaces>
+			<MM_FilesExlusion>
+				<FilesExlusion MM_GUID = "{ACFBA53A-FABD-4050-95B7-17C3271217C8}" InclusionFileNames = "background.jpg"/>
+				<FilesExlusion MM_GUID = "{C3A146F6-4B48-11D5-A819-00B0D0428C0C}" InclusionFileNames = "background.jpg"/>
+				<FilesExlusion MM_GUID = "{27E235A4-D3FB-42A2-BE8F-88D7809C49D0}" InclusionFileNames = "background.jpg"/>
+			</MM_FilesExlusion>
+			<UpdateService>
+				<ISUS_Version Name="FlexNet Connect 13.03 without Software Manager" Value="fnc1303_lite.9FC896E6_8DD6_4BFD_A02C_189B1B87F512" />
+			  <ISUS_Version Name="FlexNet Connect 13.03 with Software Manager" Value="fnc1303_full.C4D4FE07_FC74_47DD_9A30_533F27F843F1" />				
+				<ISUS_Version Name="FlexNet Connect 12.01 without Software Manager" Value="fnc1201_lite.9FC896E6_8DD6_4BFD_A02C_189B1B87F512" Hidden="Y"/>
+			  <ISUS_Version Name="FlexNet Connect 12.01 with Software Manager" Value="fnc1201_full.C4D4FE07_FC74_47DD_9A30_533F27F843F1" Hidden="Y"/>
+			  <ISUS_Version Name="FlexNet Connect 12.00 without Software Manager" Value="fnc1200_lite.9FC896E6_8DD6_4BFD_A02C_189B1B87F512" Hidden="Y"/>
+			  <ISUS_Version Name="FlexNet Connect 12.00 with Software Manager" Value="fnc1200_full.C4D4FE07_FC74_47DD_9A30_533F27F843F1" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 11.60 without Software Manager" Value="fnc1160_lite.6D3E87AB_FB03_4156_B435_6AE8B46FAFD1" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 11.60 with Software Manager" Value="fnc1160_full.D5A09942_925E_44C9_979D_D78D19ABF629" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 11.50 without Software Manager" Value="fnc1150_lite.6D3E87AB_FB03_4156_B435_6AE8B46FAFD1" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 11.50 with Software Manager" Value="fnc1150_full.D5A09942_925E_44C9_979D_D78D19ABF629" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 11.0 without Software Manager" Value="fnc11_lite.7BD80F88_FA71_4C84_8B9D_8F0283C8002B" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 11.0 with Software Manager" Value="fnc11_full.4747EFCD_A8CE_4016_80F6_050BCAD9FE72" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 6.1" Value="fnc61.6ED28686_7B19_420C_B255_5B6C1BD2C705" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 6.0" Value="isus.C3A146F5_4B48_11D5_A819_00B0D0428C0C" Hidden="Y"/>
+				<ISUS_Version Name="FlexNet Connect 5.0" Value="ISUS.C3A146F5_4B48_11D5_A819_00B0D0428C0C" Hidden="Y"/>
+				<!-- Use Default Product Version MUST always be the first item-->
+				<ISUS_GridAttribute Name="Use Default Product Version" HelpLink="IViewUpdateServiceVersion" Property="DWUSVERSION" Default="" Ignore="Y"/>
+				<ISUS_GridAttribute Name="Product Link" HelpLink="" Property="DWUSLINK" Default="" Hidden="Y"/>
+				<ISUS_GridAttribute Name="Company Logo" HelpLink="IViewUpdateServiceLogoProperty" Property="DWUSLOGO" Default="Default"/>
+				<ISUS_CmdLine Name="ISUSCmdLineRegister" Value="/r[ProductCode],[DWUSVERSION]:[DWUSLINK] [DWUSLOGO]"/>
+				<ISUS_CmdLine Name="ISUSCmdLineUnRegister" Value="/u[ProductCode]"/>
+				<ISUS_CmdLine Name="ISUSCmdLineSchedule" Value="/ssi[ProductCode],[DWUSINTERVAL]:[DWUSLINK] [DWUSLOGO]"/>
+				<ISUS_CmdLine Name="ISUSCmdLineHost" Value="/sh[ProductCode] /h[DWUSHOST]"/>
+				<ISUS_CmdLine Name="ISUSCmdLineLanguage" Value="/l[ProductCode] /[DWUSLANG]"/>
+				<ISUS_GridAttribute Name="Update Check Interval" HelpLink="IViewUpdateServiceInterval" Property="DWUSINTERVAL" Default="30"/>
+				<ISUS_GridAttribute Name="Host" HelpLink="IViewUpdateServiceHost" Property="DWUSHOST" Default=""/>
+				<ISUS_GridAttribute Name="Language" HelpLink="IViewUpdateServiceLanguageProperty" Property="DWUSLANG" Default="English">
+					<ComboAttribute Name="Basque" Value="1069"/>
+					<ComboAttribute Name="Bulgarian" Value="1026"/>
+					<ComboAttribute Name="Catalan" Value="1027"/>
+					<ComboAttribute Name="Chinese (Simplified)" Value="2052"/>
+					<ComboAttribute Name="Chinese (Traditional)" Value="1028"/>
+					<ComboAttribute Name="Croatian" Value="1050"/>
+					<ComboAttribute Name="Czech" Value="1029"/>
+					<ComboAttribute Name="Danish" Value="1030"/>
+					<ComboAttribute Name="Dutch (Standard)" Value="1043"/>
+					<ComboAttribute Name="English" Value="1033"/>
+					<ComboAttribute Name="Finnish" Value="1035"/>
+					<ComboAttribute Name="French (Canadian)" Value="3084"/>
+					<ComboAttribute Name="French (Standard)" Value="1036"/>
+					<ComboAttribute Name="German" Value="1031"/>
+					<ComboAttribute Name="Greek" Value="1032"/>
+					<ComboAttribute Name="Hebrew" Value="1037"/>
+					<ComboAttribute Name="Hungarian" Value="1038"/>
+					<ComboAttribute Name="Indonesian" Value="1057"/>
+					<ComboAttribute Name="Italian (Standard)" Value="1040"/>
+					<ComboAttribute Name="Japanese" Value="1041"/>
+					<ComboAttribute Name="Korean" Value="1042"/>
+					<ComboAttribute Name="Norwegian (Bokmal)" Value="1044"/>
+					<ComboAttribute Name="Polish" Value="1045"/>
+					<ComboAttribute Name="Portuguese (Brazilian)" Value="1046"/>
+					<ComboAttribute Name="Portuguese (Standard)" Value="2070"/>
+					<ComboAttribute Name="Romanian" Value="1048"/>
+					<ComboAttribute Name="Russian" Value="1049"/>
+					<ComboAttribute Name="Slovak" Value="1051"/>
+					<ComboAttribute Name="Slovene" Value="1060"/>
+					<ComboAttribute Name="Spanish (Traditional Sort)" Value="1034"/>
+					<ComboAttribute Name="Swedish" Value="1053"/>
+					<ComboAttribute Name="Thai" Value="1054"/>
+					<ComboAttribute Name="Turkish" Value="1055"/>
+				</ISUS_GridAttribute>
+				<ISUS_GridAttribute Name="Include Software Manager" HelpLink="IViewUpdateServiceManagerProperty" Property="DWUSMANAGER" Default="Yes" Ignore="Y">
+					<ComboAttribute Name="Yes" Value="1"/>
+					<ComboAttribute Name="No" Value="0"/>
+				</ISUS_GridAttribute>
+				<ISUS_GridAttribute Name="Vendor Database" HelpLink="IViewUpdateServiceVendorDB" Property="DWUSVENDORDB" Default=""/>
+			</UpdateService>
+			<CustomAction>
+				<IS_Action Name="ISSetAllUsers" Hidden="Y" Description="Sets ALLUSERS per upgrade or initial installation requirements."/>
+				<IS_Action Name="SetARPReadme" Hidden="Y" Description=""/>
+				<IS_Action Name="ISVerifyScriptingRuntime" Hidden="Y" Description="Verifies that an InstallScript MSI installation was launched using Setup.exe, and if not, it displays the message contained in the property STANDARD_USE_SETUPEXE. This custom action is included in all InstallScript MSI projects, and it is scheduled for the beginning of the User Interface sequence."/>
+				<IS_Action Name="ShowMsiLog" Hidden="Y" Description="Displays the Windows Installer log file in Notepad if the end user selects the Show the Windows Installer log check box in the SetupCompleteSuccess, SetupCompleteError, or SetupInterrupted dialogs and then clicks Finish. This works only with Windows Installer 4.0."/>
+				<IS_Action Name="DLLWrapCleanup" Hidden="Y" Description="Standard DLL wrapper that cleans extracted data."/>
+				<IS_Action Name="DLLWrapStartup" Hidden="Y" Description="Standard DLL wrapper that extracts data that describes calls."/>
+				<IS_Action Name="ISPowerShellCleanup" Hidden="Y" Description="PowerShell wrapper that cleans extracted data."/>
+				<IS_Action Name="ISPowerShellStartup" Hidden="Y" Description="PowerShell wrapper that extracts data that runs scripts."/>
+				<IS_Action Name="ISSelfRegisterCosting" Hidden="Y" Description="Extracts operations to a temporary file for self-registration."/>
+				<IS_Action Name="ISSelfRegisterFiles" Type="3073" Hidden="Y" Description="Registers self-registering files."/>
+				<IS_Action Name="ISSelfRegisterFinalize" Hidden="Y" Description="Cleans up temporary file from self-registration."/>
+				<IS_Action Name="ISUnSelfRegisterFiles" Type="3073" Hidden="Y" Description="Unregisters self-registering files."/>
+				<IS_Action Name="setUserProfileNT" Hidden="Y" Description="Initializes the USERPROFILE directory indentifier."/>
+				<IS_Action Name="setAllUsersProfile2K" Hidden="Y" Description="Initializes the ALLUSERSPROFILE directory identifier for Windows 2000 or later."/>
+				<IS_Action Name="SetAllUsersProfileNT" Hidden="Y" Description="Initializes the ALLUSERSPROFILE directory identifier for Windows NT 4."/>
+				<IS_Action Name="setUsersProfileNT" Hidden="Y" Description=""/>
+				<IS_Action Name="CheckForProductUpdates" Hidden="Y" Description="Uses the Update Service to check for product updates."/>
+				<IS_Action Name="CheckForProductUpdatesOnReboot" Hidden="Y" Description="Uses the Update Service to check for product updates on reboot."/>
+				<IS_Action Name="SetARPINSTALLLOCATION" Hidden="Y" Description="Resolves the directory identifier used in the Add or Remove Programs Read Me property. This custom action is required because ARPREADME is a Windows Installer property and such properties are not formatted automatically."/>
+				<IS_Action Name="ISInitAllUsers" Hidden="Y" Description=""/>
+				<IS_Action Name="ISChainPackagePrepare" Hidden="Y" Description="Prepares and extracts files for a multi-package transaction."/>
+				<IS_Action Name="ISChainPackageRollback" Hidden="Y" Description="Removes extracted files from a multi-package transaction."/>
+				<IS_Action Name="ISChainPackageCommit" Hidden="Y" Description="Removes extracted files from a multi-package transaction."/>
+				<IS_Action Name="ISComponentServiceInstall" Type="3073" Hidden="Y" Description="Installs COM+ applications during an installation."/>
+				<IS_Action Name="ISComponentServiceUninstall" Type="3073" Hidden="Y" Description="Removes COM+ applications during uninstallation."/>
+				<IS_Action Name="ISComponentServiceRollback" Type="3329" Hidden="Y" Description="Rolls back COM+ applications during a failed installation or uninstallation."/>
+				<IS_Action Name="ISComponentServiceCosting" Hidden="Y" Description="Extracts information from the ISComPlusApplication table and saves it in a temporary file for COM+ applications."/>
+				<IS_Action Name="ISComponentServiceFinalize=" Hidden="Y" Description="Commits COM+ applications during installation and uninstallation."/>
+				<IS_Action Name="ISSQLServerCosting" Hidden="Y" Description="Extracts operations to a temporary file for SQL scripts."/>
+				<IS_Action Name="ISSQLServerInstall" Type="1025" Hidden="Y" Description="Runs SQL scripts during an installation."/>
+				<IS_Action Name="ISSQLServerUninstall" Type="1025" Hidden="Y" Description="Runs SQL scripts during an uninstallation."/>
+				<IS_Action Name="ISSQLServerFinalize" Hidden="Y" Description="Cleans up temporary files and the state for SQL scripts."/>
+				<IS_Action Name="ISSQLServerValidate" Hidden="Y" Description="Tests server connections."/>
+				<IS_Action Name="ISSQLServerList" Hidden="Y" Description="Finds available servers."/>
+				<IS_Action Name="ISSQLServerFilteredList" Hidden="Y" Description="Finds available servers for SQL scripts."/>
+				<IS_Action Name="ISSQLServerRollback" Type="1281" Hidden="Y" Description="Runs SQL scripts during a failed installation or uninstallation."/>
+				<IS_Action Name="ISSQLQueryDatabases" Hidden="Y" Description="Finds database catalogs that are available on a specified database server."/>
+				<IS_Action Name="ISSQLServerInitialize" Hidden="Y" Description="Adds property names for SQL login password to MsiHiddenProperties."/>
+				<IS_Action Name="ISSQLServerWriteLoginInfo"  Type="3073" Hidden="Y" Description="Writes SQL database login credentials to the Windows registry during an installation."/>
+				<IS_Action Name="ISSQLServerRemoveLoginInfo"  Type="3073" Hidden="Y" Description="Removes SQL database login credentials from the Windows registry during an uninstallation."/>
+				<IS_Action Name="ISSQLServerRollbackLoginInfo"  Type="3329" Hidden="Y" Description="During a failed installation or uninstallation, rolls back SQL database login credentials that are stored in the Windows registry."/>
+				<IS_Action Name="ISPrint" Hidden="Y" Description="Prints the contents of a ScrollableText control on a dialog."/>
+				<IS_Action Name="_CST_NEW_INSTALLDIR" Hidden="Y" Description=""/>
+				<IS_Action Name="caCreateVRoots" Type="3073" Hidden="Y" Description="Creates Web sites, virtual roots, and other items for an IIS installation."/>
+				<IS_Action Name="caCreateVRootsUninstall" Hidden="Y" Description=""/>
+				<IS_Action Name="caExtractIISSuppFiles" Hidden="Y" Description="Creates a list of actions in a temporary file for an IIS installation. Sets the CustomActionData property for other IIS actions."/>
+				<IS_Action Name="caIISCleanup" Hidden="Y" Description="Removes temporary files and registry entries for an IIS installation."/>
+				<IS_Action Name="caRemoveVRoots" Type="3073" Hidden="Y" Description="Removes Web sites, virtual roots, and other items during uninstallation for IIS."/>
+				<IS_Action Name="caRlbackVRoots" Type="3329" Hidden="Y" Description="Removes Web sites, virtual roots, and other items during rollback for IIS."/>
+				<IS_Action Name="MsiCleanupOnSuccess" Hidden="Y" Description=""/>
+				<IS_Action Name="MsiInstallDrivers" Type="3073" Hidden="Y" Description=""/>
+				<IS_Action Name="MsiProcessDrivers" Hidden="Y" Description=""/>
+				<IS_Action Name="MsiRollbackInstall" Type="3329" Hidden="Y" Description=""/>
+				<IS_Action Name="MsiUninstallDrivers" Type="3073" Hidden="Y" Description=""/>
+				<IS_Action Name="CEObjectCleanup" Hidden="Y" Description="Ensures that the Windows Mobile application is uninstalled by deleting empty folders (of .cab files, etc.)."/>
+				<IS_Action Name="InstallCEApps" Hidden="Y" Description="Installs a Windows Mobile application to a device by launching the Application Manager (CeAppMgr.exe) that is referenced in the CEAPPMGRLOC property."/>
+				<IS_Action Name="InstallCEAppsDesktop" Hidden="Y" Description="Installs the .ini files, .cab files, and .ico files for a Windows Mobile application to the desktop machine."/>
+				<IS_Action Name="RemoveCEApps" Hidden="Y" Description="Uninstalls the Windows Mobile application from the device."/>
+				<IS_Action Name="RemoveCEAppsDesktop" Hidden="Y" Description="Deletes the .ini files, .cab files, and .ico files for the Windows Mobile application from the desktop machine."/>
+				<IS_Action Name="RollbackCEApps" Hidden="Y" Description="Rolls back the Windows Mobile application and deletes the .ini files, .cab files, and .ico files during rollback."/>
+				<IS_Action Name="ExtractCEApps" Hidden="Y" Description="Creates a list of actions in a temporary file for a Windows Mobile installation. Sets the CustomActionData property for other Windows Mobile actions."/>
+				<IS_Action Name="ISPalmOSCleanup" Hidden="Y" Description="Cleans up the .dll file and temporary file for a Palm OS application."/>
+				<IS_Action Name="ISPalmOSCosting" Hidden="Y" Description="Extracts Instaide.dll and operations to temporary files for Palm OS applications."/>
+				<IS_Action Name="ISPalmOSInstall" Hidden="Y" Description="Installs Palm OS application."/>
+				<IS_Action Name="ISPalmOSRemove" Hidden="Y" Description="Uninstalls Palm OS application."/>
+				<IS_Action Name="ISXmlCosting" Hidden="Y" Description="Extracts operations to a temporary file for XML file changes."/>
+				<IS_Action Name="ISXmlInstall" Type="3073" Hidden="Y" Description="Applies XML file changes."/>
+				<IS_Action Name="ISXmlUnInstall" Type="3073" Hidden="Y" Description="Uninstalls XML file changes."/>
+				<IS_Action Name="ISXmlRollback" Type="3329" Hidden="Y" Description="Rolls back XML file changes."/>
+				<IS_Action Name="ISXmlFinalize" Hidden="Y" Description="Cleans up temporary files for XML file changes."/>
+				<IS_Action Name="ISXmlAppSearch" Hidden="Y" Description="Performs a system search for XML: finds file, performs XPath queries, and stores the results in properties. Driven by the ISXmlLocator table."/>
+				<IS_Action Name="ISNetApiInstall" Type="3073" Hidden="Y" Description="Creates users and groups from an .ini file (ISNetInitializeIniFile)."/>
+				<IS_Action Name="ISNetApiRollback" Type="3329" Hidden="Y" Description="Rolls back changes for users and groups."/>
+				<IS_Action Name="ISNetGetGroups" Hidden="Y" Description="Puts groups into a combo box."/>
+				<IS_Action Name="ISNetGetServers" Hidden="Y" Description="Puts a list of servers into a combo box."/>
+				<IS_Action Name="ISNetGetUsers" Hidden="Y" Description="Puts a list of users into a combo box."/>
+				<IS_Action Name="ISNetInitializeIniFile" Hidden="Y" Description="Writes users and groups setting to an .ini file for use in a deferred custom action."/>
+				<IS_Action Name="ISNetSetLogonName" Hidden="Y" Description="Stores the user, group, and server properties that were entered in the LogonInformation dialogs."/>
+				<IS_Action Name="ISNetValidateLogonName" Hidden="Y" Description="Verifies that a valid user name, server, and password combination were entered in the LogonInformation dialog."/>
+				<IS_Action Name="ISNetDeleteIniFile" Hidden="Y" Description="Cleans up temporary files for users and groups."/>
+				<IS_Action Name="ISNetValidateNewUserInformation" Hidden="Y" Description="Validates that the information entered into the LogonInfoCreateUser is valid. There must be a valid user name, server, and password."/>
+				<IS_Action Name="ISNetCreateIniForOneUser" Hidden="Y" Description="Extracts operations to a temporary file for users and groups."/>
+				<IS_Action Name="ISSetupFilesCleanup" Hidden="Y" Description="Cleans up the temp directory of support files."/>
+				<IS_Action Name="ISSetupFilesExtract" Hidden="Y" Description="Extracts support files to a temp directory."/>
+				<IS_Action Name="ISSetTARGETDIR" Hidden="Y" Description="Sets TARGETDIR to [INSTALLDIR]."/>
+				<IS_Action Name="caDRMSetup.7666F65F_B819_451E_A75D_50EDB655640D" Hidden="Y" Description="Extracts information from the ISDRMFile table to an .ini file to be used by caDRMInstall.7666F65F_B819_451E_A75D_50EDB655640D for trialware functionality. This action is part of the InstallShield Trialware Service Installer merge module."/>
+				<IS_Action Name="caDRMInstall.7666F65F_B819_451E_A75D_50EDB655640D" Hidden="Y" Description="Reads the .ini file from caDRMInstall.7666F65F_B819_451E_A75D_50EDB655640D. Calls the wrapped application's Service Installer DLL (IsSvcInst&lt;FileName&gt;.dll) to install the InstallShield Licensing Service. This action is part of the InstallShield Trialware Service Installer merge module."/>
+				<IS_Action Name="caDRMUninstallSetup.7666F65F_B819_451E_A75D_50EDB655640D" Hidden="Y" Description="Extracts information from the ISDRMFile table to an .ini file to be used by caDRMUninstall.7666F65F_B819_451E_A75D_50EDB655640D for trialware functionality. This action is part of the InstallShield Trialware Service Installer merge module."/>
+				<IS_Action Name="caDRMUninstall.7666F65F_B819_451E_A75D_50EDB655640D" Hidden="Y" Description="Calls the wrapped trialware application to deactivate the license on the current machine. This action is part of the InstallShield Trialware Service Installer merge module."/>
+				<IS_Action Name="ISJITCompileActionAtInstall" Hidden="Y" Description="Precompiles .NET assemblies at installation time."/>
+				<IS_Action Name="ISJITCompileActionAtUnInstall" Hidden="Y" Description="Deletes a precompiled .NET assemblies at uninstallation time."/>
+				<IS_Action Name="ISQuickPatchFinalize" Hidden="Y" Description="Cleans shared reference counts for a QuickPatch."/>
+				<IS_Action Name="ISQuickPatchFixShortcut" Hidden="Y" Description="Reinstalls shortcuts for a QuickPatch."/>
+				<IS_Action Name="ISQuickPatchHelper" Hidden="Y" Description="Applies clean feature states for a QuickPatch."/>
+				<IS_Action Name="ISQuickPatchInit" Hidden="Y" Description="Cleans component and feature states for a QuickPatch."/>
+				<IS_Action Name="ISQuickPatchInit9X" Hidden="Y" Description="Cleans component and feature states for a QuickPatch."/>
+				<IS_Action Name="ISQuickPatchInit9X2" Hidden="Y" Description="Cleans component and feature states for a QuickPatch."/>
+				<IS_Action Name="LaunchProgramFileFromSetupCompleteSuccess" Hidden="Y" Description="Launches an executable file at the end of an installation."/>
+				<IS_Action Name="LaunchReadmeFileFromSetupCompleteSuccess" Hidden="Y" Description="Launches a readme file at the end of an installation."/>
+				<IS_Action Name="ISInstallPrerequisites" Hidden="Y" Description="Launches installation of prerequisites associated with features."/>
+				<IS_Action Name="ISPreventDowngrade" Hidden="Y" Description="Prevents an old package from installing over a newer version."/>
+				<IS_Action Name="{GUID}.uninstall" Type="3137" Hidden="Y" Description="Invokes the uninstallation action of the associated .NET Installer Class."/>
+				<IS_Action Name="{GUID}.install" Type="3073" Hidden="Y" Description="Invokes the installation action of the associated .NET Installer Class."/>
+				<IS_Action Name="{GUID}.rollback" Type="3329" Hidden="Y" Description="Invokes the rollback action of the associated .NET Installer Class."/>
+				<IS_Action Name="{GUID}.commit" Type="3585" Hidden="Y" Description="Invokes the commit action of the associated .NET Installer Class."/>
+				<IS_Action Name="ISIISInstall" Type="3073" Hidden="Y" Description="Creates Web sites, applications, virtual directories, and other items for an IIS installation."/>
+				<IS_Action Name="ISIISCosting" Hidden="Y" Description="Creates a list of actions in a temporary file for an IIS installation. Sets the CustomActionData property for other IIS actions."/>
+				<IS_Action Name="ISIISCleanup" Hidden="Y" Description="Removes temporary files and registry entries for an IIS installation."/>
+				<IS_Action Name="ISIISUninstall" Type="3073" Hidden="Y" Description="Removes Web sites, applications, virtual directories, and other items during uninstallation for IIS."/>
+				<IS_Action Name="ISIISRollback" Type="3329" Hidden="Y" Description="Removes Web sites, applications, virtual directories, and other items during rollback for IIS."/>
+				<IS_Action Name="ISSearchReplaceCosting" Type="1" Hidden="Y" Description="Creates a temporary file that has a list of changes that need to be made in text files."/>
+				<IS_Action Name="ISSearchReplaceFinalize" Type="1" Hidden="Y" Description="Cleans up temporary files for text file changes."/>
+				<IS_Action Name="ISSearchReplaceInstall" Type="3073" Hidden="Y" Description="Applies text file changes when the product is installed."/>
+				<IS_Action Name="ISSearchReplaceRollback" Type="3329" Hidden="Y" Description="Rolls back text file changes and cleans up temporary files for text file changes."/>
+				<IS_Action Name="ISSearchReplaceUninstall" Type="3073" Hidden="Y" Description="Uninstalls text file changes when the product is uninstalled."/>
+				<IS_Action Name="ISSetINSTALLDIR" Hidden="Y" Description="Sets INSTALLDIR for the initial installation."/>
+				<IS_Action Name="ISLockPermissionsCost" Hidden="Y" Description="Sets the CustomActionData property for the ISLockPermissionsInstall action."/>
+				<IS_Action Name="ISLockPermissionsInstall" Hidden="Y" Description="Sets permissions when the product is installed."/>
+				<IS_Action Name="ISRunSetupTypeAddLocalEvent" Hidden="Y" Description="Runs the AddLocal events that are associated with the Next button on the Setup Type dialog. This action needs to be called when the installation does not display the Setup Type dialog."/>
+				<IS_Action Name="ISNetworkSharesCosting" Type="1" Hidden="Y" Description="Creates a temporary file for network shares."/>
+				<IS_Action Name="ISNetworkSharesFinalize" Type="1" Hidden="Y" Description="Cleans up temporary files for network shares."/>
+				<IS_Action Name="ISNetworkSharesInstall" Type="3073" Hidden="Y" Description="Applies network shares when the product is installed."/>
+				<IS_Action Name="ISNetworkSharesRollback" Type="3329" Hidden="Y" Description="Rolls back network shares and cleans up temporary files for network shares."/>
+				<IS_Action Name="ISNetworkSharesUninstall" Type="3073" Hidden="Y" Description="Uninstalls network shares when the product is uninstalled."/>
+				<IS_Action Name="ISScheduledTasksCosting" Type="1" Hidden="Y" Description="Creates a temporary file for scheduled tasks."/>
+				<IS_Action Name="ISScheduledTasksFinalize" Type="1" Hidden="Y" Description="Cleans up temporary files for scheduled tasks."/>
+				<IS_Action Name="ISScheduledTasksInstall" Type="3073" Hidden="Y" Description="Installs scheduled tasks when the product is installed."/>
+				<IS_Action Name="ISScheduledTasksRollback" Type="3329" Hidden="Y" Description="Rolls back scheduled tasks and cleans up temporary files for scheduled tasks."/>
+				<IS_Action Name="ISScheduledTasksUninstall" Type="3073" Hidden="Y" Description="Uninstalls scheduled tasks when the product is uninstalled."/>
+			</CustomAction>
+			<MsiDialog>
+			</MsiDialog>
+			<ScriptDialog>
+				<IS_ScriptDialog Name="10103" DisplayName="AskPath or AdminAskPath" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10104" DisplayName="EnterDisk" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10105" DisplayName="AskOptions" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10106" DisplayName="EnterPassword" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10108" DisplayName="SQLServerLogin" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10109" DisplayName="SQLServerSelectLogin(Ex)(2)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10110" DisplayName="SQLServerSelect" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10111" DisplayName="SQLBrowse" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10201" DisplayName="AskDestPath" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10203" DisplayName="SetupType" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10204" DisplayName="SelectFolder" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10205" DisplayName="Welcome" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10206" DisplayName="RebootDialog" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10207" DisplayName="FeatureDialog" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12001" DisplayName="SdRegisterUser" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12002" DisplayName="SdRegisterUserEx" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12003" DisplayName="SdConfirmRegistration" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12004" DisplayName="SdConfirmNewDir" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12005" DisplayName="SdAskDestPath" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12006" DisplayName="SdWelcome" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12007" DisplayName="SdShowInfoList" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12008" DisplayName="SdSelectFolder" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12009" DisplayName="SdSetupType" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12011" DisplayName="SdDisplayTopics" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12013" DisplayName="SdAskOptionsList (EXCLUSIVE)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12014" DisplayName="SdAskOptionsList (NONEXCLUSIVE)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12016" DisplayName="SdShowFileMods" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12017" DisplayName="SdShowDlgEdit1" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12018" DisplayName="SdShowDlgEdit2" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12019" DisplayName="SdShowDlgEdit3" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12020" DisplayName="SdAskOptions" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12021" DisplayName="SdFeatureDialog" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12022" DisplayName="SdFeatureDialogAdv" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12024" DisplayName="SdFeatureDialog2" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12025" DisplayName="SdFeatureMult" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12026" DisplayName="SdOptionsButtons" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12027" DisplayName="SdBitmap" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12029" DisplayName="SdLicenseEx (Non-RTF)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12030" DisplayName="SdStartCopy" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12031" DisplayName="SdFinishReboot" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12032" DisplayName="SdFinish" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12033" DisplayName="SdSetupTypeEx" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12052" DisplayName="SdFeatureTree" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12053" DisplayName="SdWelcomeMaint" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12054" DisplayName="SdCustomerInformation" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12055" DisplayName="SdCustomerInformationEx" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12056" DisplayName="SdDiskSpace2 (Requirements)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12057" DisplayName="SdDiskSpace2 (Out Of Disk Space)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12058" DisplayName="SdFilesInUse" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12059" DisplayName="SdPatchWelcome" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12060" DisplayName="SdSetupCompleteError" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12064" DisplayName="SdFinishUpdateReboot" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12061" DisplayName="SdSetupType2" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12062" DisplayName="SetupType2" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12063" DisplayName="SdFinishUpdate(Ex)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12066" DisplayName="SdLicense2Ex (Non-RTF)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12067" DisplayName="SdAskDestPath2" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12068" DisplayName="SdStartCopy2" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12069" DisplayName="SdLicense2Ex (RTF)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12070" DisplayName="SdLicenseEx (RTF)" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="12071" DisplayName="SdRMFilesInUse" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="17818" DisplayName="SdLogonUserInformation" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="17819" DisplayName="SdLogonUserBrowse" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="17821" DisplayName="SdLogonUserListGroups" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="17823" DisplayName="SdLogonUserListServers" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="17824" DisplayName="SdLogonUserListUsers" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="17825" DisplayName="SdLogonUserCreateUser" ScriptMSIOnly="N"/>
+				<IS_ScriptDialog Name="10107" DisplayName="EnterLoginInfo" ScriptMSIOnly="N"/>
+				<IS_ScriptTextStyle Lang="1041" Name="MSGothic9" FaceName="MS Gothic" Size="9" Color="" StyleBits=""/>
+				<IS_ScriptTextStyle Lang="1042" Name="KOR_TextStyle9" FaceName="굴림" Size="9" Color="" StyleBits=""/>
+				<IS_ScriptTextStyle Lang="1028" Name="CHT_TextStyle9" FaceName="細明體" Size="9" Color="" StyleBits=""/>
+				<IS_ScriptTextStyle Lang="2052" Name="CHS_TextStyle9" FaceName="宋体" Size="9" Color="" StyleBits=""/>
+			</ScriptDialog>
+
+         	<SQLScripts>
+				<IS_MetaData Name="MSSQLServer" DisplayName="Microsoft SQL Server" Default="True" AdoDriverName="sqloledb" AdoCxnDriver="Provider=" AdoCxnServer="Server=" AdoCxnDatabase="Initial Catalog=" AdoCxnUserID="User ID=" AdoCxnPassword="Password=" AdoCxnWindowsSecurity="Integrated Security=SSPI" AdoCxnNetLibrary="[IS_SQLSERVER_NETLIB_MS]" VersionBeginToken="-" VersionEndToken="(" TestDatabaseCmd="select name from master.dbo.sysdatabases where name = '%s'" TestTableCmd="select * from dbo.sysobjects where id = object_id('dbo.%s') and sysstat &amp; 0xf = 3" VersionInfoCmd="SELECT @@VERSION" LocalInstanceNames="(local);(localdb);." CreateDbCmd="CREATE DATABASE [%s]" SwitchDbCmd="USE [%s]" ISAttributes="8" TestTableCmd2="select * from dbo.sysobjects where id = object_id('dbo.%2') and sysstat &amp; 0xf = 3" WinAuthentUserId="" DsnODBCName="{SQL Server}" AdoCxnPort="" AdoCxnAdditional="" QueryDatabasesCmd="select name from master.dbo.sysdatabases" CreateTableCmd="CREATE TABLE [dbo].[%1] (%2 %3)" InsertRecordCmd="INSERT INTO [dbo].[%1] (%2) VALUES('%3')" SelectTableCmd="SELECT %1 FROM [dbo].[%2]" ScriptVersion_Table="InstallShield" ScriptVersion_Column="ISSchema" ScriptVersion_ColumnType="char (15)">
+					<Properties>
+						<Property Name="IS_SQLSERVER_NETLIB_MS" Value="Network Library=DBMSSOCN"/>
+					</Properties>
+					<ProductVersions>
+						<ProductVersion Name="6.50.201" MajorVersion="6.50" ServicePackLevel="201" Value="SQL Server 6.5 RTM (Release To Manufacturing)"/>
+			       			<ProductVersion Name="6.50.213" MajorVersion="6.50" ServicePackLevel="213" Value="SQL Server 6.5 Service Pack 1 (SP1)"/>
+						<ProductVersion Name="6.50.240" MajorVersion="6.50" ServicePackLevel="240" Value="SQL Server 6.5 Service Pack 2 (SP2)"/>
+						<ProductVersion Name="6.50.258" MajorVersion="6.50" ServicePackLevel="258" Value="SQL Server 6.5 Service Pack 3 (SP3)"/>
+						<ProductVersion Name="6.50.281" MajorVersion="6.50" ServicePackLevel="281" Value="SQL Server 6.5 Service Pack 4 (SP4)"/>
+						<ProductVersion Name="6.50.415" MajorVersion="6.50" ServicePackLevel="415" Value="SQL Server 6.5 Service Pack 5 (SP5)"/>
+						<ProductVersion Name="6.50.416" MajorVersion="6.50" ServicePackLevel="416" Value="SQL Server 6.5 Service Pack 5a (SP5a)"/>
+						<ProductVersion Name="6.50.479" MajorVersion="6.50" ServicePackLevel="479" Value="SQL Server 6.5 Service Pack 5a (SP5a) Update"/>
+						<ProductVersion Name="7.00.623" MajorVersion="7.00" ServicePackLevel="623" Value="SQL Server 7.0 RTM (Release To Manufacturing)"/>
+						<ProductVersion Name="7.00.699" MajorVersion="7.00" ServicePackLevel="699" Value="SQL Server 7.0 Service Pack 1 (SP1)"/>
+						<ProductVersion Name="7.00.842" MajorVersion="7.00" ServicePackLevel="842" Value="SQL Server 7.0 Service Pack 2 (SP2)"/>
+						<ProductVersion Name="7.00.961" MajorVersion="7.00" ServicePackLevel="961" Value="SQL Server 7.0 Service Pack 3 (SP3)"/>
+						<ProductVersion Name="7.00.1063" MajorVersion="7.00" ServicePackLevel="1063" Value="SQL Server 7.0 Service Pack 4 (SP4)"/>
+						<ProductVersion Name="8.00.194" MajorVersion="8.00" ServicePackLevel="194" Value="SQL Server 2000 RTM (Release To Manufacturing)"/>
+						<ProductVersion Name="8.00.384" MajorVersion="8.00" ServicePackLevel="384" Value="SQL Server 2000 Service Pack 1 (SP1)"/>
+						<ProductVersion Name="8.00.534" MajorVersion="8.00" ServicePackLevel="534" Value="SQL Server 2000 Service Pack 2 (SP2)"/>
+						<ProductVersion Name="8.00.760" MajorVersion="8.00" ServicePackLevel="760" Value="SQL Server 2000 Service Pack 3 (SP3)"/>
+						<ProductVersion Name="8.00.2039" MajorVersion="8.00" ServicePackLevel="2039" Value="SQL Server 2000 Service Pack 4 (SP4)"/>
+						<ProductVersion Name="9.00.1399" MajorVersion="9.00" ServicePackLevel="1399" Value="SQL Server 2005 RTM (Release To Manufacturing)"/>
+						<ProductVersion Name="9.00.2047" MajorVersion="9.00" ServicePackLevel="2047" Value="SQL Server 2005 Service Pack 1 (SP1)"/>
+						<ProductVersion Name="9.00.3042" MajorVersion="9.00" ServicePackLevel="3042" Value="SQL Server 2005 Service Pack 2 (SP2)"/>
+						<ProductVersion Name="9.00.4035" MajorVersion="9.00" ServicePackLevel="4035" Value="SQL Server 2005 Service Pack 3 (SP3)"/>
+						<ProductVersion Name="10.0.1600" MajorVersion="10.00" ServicePackLevel="1600" Value="SQL Server 2008 RTM (Release To Manufacturing)"/>
+						<ProductVersion Name="10.0.2531" MajorVersion="10.00" ServicePackLevel="2531" Value="SQL Server 2008 Service Pack 1 (SP1)"/>
+						<ProductVersion Name="10.50.1600" MajorVersion="10.50" ServicePackLevel="1600" Value="SQL Server 2008 R2 RTM (Release To Manufacturing)"/>
+						<ProductVersion Name="11.0.2100" MajorVersion="11.00" ServicePackLevel="2100" Value="SQL Server 2012 RTM (Release To Manufacturing)" Default="True"/>
+					</ProductVersions>
+				</IS_MetaData>
+				<IS_MetaData Name="MSSQLAzure" DisplayName="Microsoft Windows Azure" AdoDriverName="{SQL Server Native Client 10.0}" AdoCxnDriver="Driver=" AdoCxnServer="Server=" AdoCxnDatabase="Database=" AdoCxnUserID="Uid=" AdoCxnPassword="Pwd=" AdoCxnWindowsSecurity="Integrated Security=SSPI" AdoCxnNetLibrary="" VersionBeginToken="-" VersionEndToken="(" TestDatabaseCmd="select name from sys.databases where name = '%s'" TestTableCmd="select * from dbo.sysobjects where id = object_id('dbo.%s') and sysstat &amp; 0xf = 3" VersionInfoCmd="SELECT @@VERSION" LocalInstanceNames="" CreateDbCmd="CREATE DATABASE [%s]" SwitchDbCmd="" ISAttributes="0" TestTableCmd2="select * from dbo.sysobjects where id = object_id('dbo.%2') and sysstat &amp; 0xf = 3" WinAuthentUserId="" DsnODBCName="{SQL Server Native Client 10.0}" AdoCxnPort="" AdoCxnAdditional="Encrypt=yes" QueryDatabasesCmd="select name from sys.databases" CreateTableCmd="CREATE TABLE [dbo].[%1] (%2 %3 CONSTRAINT %1_%2 UNIQUE CLUSTERED)" InsertRecordCmd="INSERT INTO [dbo].[%1] (%2) VALUES('%3')" SelectTableCmd="SELECT %1 FROM [dbo].[%2]" ScriptVersion_Table="InstallShield" ScriptVersion_Column="ISSchema" ScriptVersion_ColumnType="char (15)">
+					<ProductVersions>
+					</ProductVersions>
+				</IS_MetaData>
+				<IS_MetaData Name="MySQL" DisplayName="MySQL" AdoDriverName="{MySQL ODBC 3.51 Driver}" AdoCxnDriver="DRIVER=" AdoCxnServer="SERVER=" AdoCxnDatabase="DATABASE=" AdoCxnUserID="UID=" AdoCxnPassword="PWD=" AdoCxnWindowsSecurity="" AdoCxnNetLibrary="" VersionBeginToken="" VersionEndToken="-" TestDatabaseCmd="SHOW DATABASES LIKE '%s'" TestTableCmd="SHOW TABLES LIKE '%s'" VersionInfoCmd="SELECT VERSION()" LocalInstanceNames="localhost" CreateDbCmd="CREATE DATABASE %s" SwitchDbCmd="USE %s" ISAttributes="1" TestTableCmd2="SHOW TABLES LIKE '%2'" WinAuthentUserId="" DsnODBCName="{MySQL ODBC 3.51 Driver}" AdoCxnPort=";PORT=" AdoCxnAdditional="" QueryDatabasesCmd="SHOW DATABASES" CreateTableCmd="CREATE TABLE `%1` (`%2` %3)" InsertRecordCmd="INSERT INTO `%1` (`%2`) VALUES('%3')" SelectTableCmd="SELECT %1 FROM `%2`" ScriptVersion_Table="InstallShield" ScriptVersion_Column="ISSchema" ScriptVersion_ColumnType="char (15)">
+					<ProductVersions>
+						<ProductVersion Name="3.21.16a" MajorVersion="3.21" ServicePackLevel="16a" Value="MySQL Database Server Version 3.21.16a"/>
+						<ProductVersion Name="3.21.19" MajorVersion="3.21" ServicePackLevel="19" Value="MySQL Database Server Version 3.21.19"/>
+						<ProductVersion Name="3.21.21a" MajorVersion="3.21" ServicePackLevel="21a" Value="MySQL Database Server Version 3.21.21a"/>
+						<ProductVersion Name="3.21.24" MajorVersion="3.21" ServicePackLevel="24" Value="MySQL Database Server Version 3.21.24"/>
+						<ProductVersion Name="3.21.25" MajorVersion="3.21" ServicePackLevel="25" Value="MySQL Database Server Version 3.21.25"/>
+						<ProductVersion Name="3.21.26" MajorVersion="3.21" ServicePackLevel="26" Value="MySQL Database Server Version 3.21.26"/>
+						<ProductVersion Name="3.21.28" MajorVersion="3.21" ServicePackLevel="28" Value="MySQL Database Server Version 3.21.28"/>
+						<ProductVersion Name="3.21.29" MajorVersion="3.21" ServicePackLevel="29" Value="MySQL Database Server Version 3.21.29"/>
+						<ProductVersion Name="3.21.30" MajorVersion="3.21" ServicePackLevel="30" Value="MySQL Database Server Version 3.21.30"/>
+						<ProductVersion Name="3.21.31" MajorVersion="3.21" ServicePackLevel="31" Value="MySQL Database Server Version 3.21.31"/>
+						<ProductVersion Name="3.21.32a" MajorVersion="3.21" ServicePackLevel="32a" Value="MySQL Database Server Version 3.21.32a"/>
+						<ProductVersion Name="3.21.33" MajorVersion="3.21" ServicePackLevel="33" Value="MySQL Database Server Version 3.21.33"/>
+						<ProductVersion Name="3.21.33b" MajorVersion="3.21" ServicePackLevel="33b" Value="MySQL Database Server Version 3.21.33b"/>
+						<ProductVersion Name="3.21.33c" MajorVersion="3.21" ServicePackLevel="33c" Value="MySQL Database Server Version 3.21.33c"/>
+						<ProductVersion Name="3.22.25" MajorVersion="3.22" ServicePackLevel="25" Value="MySQL Database Server Version 3.22.25"/>
+						<ProductVersion Name="3.22.30" MajorVersion="3.22" ServicePackLevel="30" Value="MySQL Database Server Version 3.22.30"/>
+						<ProductVersion Name="3.23.32" MajorVersion="3.23" ServicePackLevel="32" Value="MySQL Database Server Version 3.23.32"/>
+						<ProductVersion Name="3.23.36" MajorVersion="3.23" ServicePackLevel="36" Value="MySQL Database Server Version 3.23.36"/>
+						<ProductVersion Name="3.23.38" MajorVersion="3.23" ServicePackLevel="38" Value="MySQL Database Server Version 3.23.38"/>
+						<ProductVersion Name="3.23.39" MajorVersion="3.23" ServicePackLevel="39" Value="MySQL Database Server Version 3.23.39"/>
+						<ProductVersion Name="3.23.40" MajorVersion="3.23" ServicePackLevel="40" Value="MySQL Database Server Version 3.23.40"/>
+						<ProductVersion Name="3.23.41" MajorVersion="3.23" ServicePackLevel="41" Value="MySQL Database Server Version 3.23.41"/>
+						<ProductVersion Name="3.23.42" MajorVersion="3.23" ServicePackLevel="42" Value="MySQL Database Server Version 3.23.42"/>
+						<ProductVersion Name="3.23.43" MajorVersion="3.23" ServicePackLevel="43" Value="MySQL Database Server Version 3.23.43"/>
+						<ProductVersion Name="3.23.44" MajorVersion="3.23" ServicePackLevel="44" Value="MySQL Database Server Version 3.23.44"/>
+						<ProductVersion Name="3.23.45" MajorVersion="3.23" ServicePackLevel="45" Value="MySQL Database Server Version 3.23.45"/>
+						<ProductVersion Name="3.23.46" MajorVersion="3.23" ServicePackLevel="46" Value="MySQL Database Server Version 3.23.46"/>
+						<ProductVersion Name="3.23.46a" MajorVersion="3.23" ServicePackLevel="46a" Value="MySQL Database Server Version 3.23.46a"/>
+						<ProductVersion Name="3.23.47" MajorVersion="3.23" ServicePackLevel="47" Value="MySQL Database Server Version 3.23.47"/>
+						<ProductVersion Name="3.23.48" MajorVersion="3.23" ServicePackLevel="48" Value="MySQL Database Server Version 3.23.48"/>
+						<ProductVersion Name="3.23.49" MajorVersion="3.23" ServicePackLevel="49" Value="MySQL Database Server Version 3.23.49"/>
+						<ProductVersion Name="3.23.49a" MajorVersion="3.23" ServicePackLevel="49a" Value="MySQL Database Server Version 3.23.49a"/>
+						<ProductVersion Name="3.23.52" MajorVersion="3.23" ServicePackLevel="52" Value="MySQL Database Server Version 3.23.52"/>
+						<ProductVersion Name="3.23.53" MajorVersion="3.23" ServicePackLevel="53" Value="MySQL Database Server Version 3.23.53"/>
+						<ProductVersion Name="3.23.53a" MajorVersion="3.23" ServicePackLevel="53a" Value="MySQL Database Server Version 3.23.53a"/>
+						<ProductVersion Name="3.23.54" MajorVersion="3.23" ServicePackLevel="54" Value="MySQL Database Server Version 3.23.54"/>
+						<ProductVersion Name="3.23.54a" MajorVersion="3.23" ServicePackLevel="54a" Value="MySQL Database Server Version 3.23.54a"/>
+						<ProductVersion Name="3.23.54b" MajorVersion="3.23" ServicePackLevel="54b" Value="MySQL Database Server Version 3.23.54b"/>
+						<ProductVersion Name="3.23.55" MajorVersion="3.23" ServicePackLevel="55" Value="MySQL Database Server Version 3.23.55"/>
+						<ProductVersion Name="3.23.56" MajorVersion="3.23" ServicePackLevel="56" Value="MySQL Database Server Version 3.23.56"/>
+						<ProductVersion Name="4.0.0" MajorVersion="4.0" ServicePackLevel="0" Value="MySQL Database Server Version 4.0.0"/>
+						<ProductVersion Name="4.0.0a" MajorVersion="4.0" ServicePackLevel="0a" Value="MySQL Database Server Version 4.0.0a"/>
+						<ProductVersion Name="4.0.1" MajorVersion="4.0" ServicePackLevel="1" Value="MySQL Database Server Version 4.0.1"/>
+						<ProductVersion Name="4.0.10" MajorVersion="4.0" ServicePackLevel="10" Value="MySQL Database Server Version 4.0.10"/>
+						<ProductVersion Name="4.0.11" MajorVersion="4.0" ServicePackLevel="11" Value="MySQL Database Server Version 4.0.11"/>
+						<ProductVersion Name="4.0.12" MajorVersion="4.0" ServicePackLevel="12" Value="MySQL Database Server Version 4.0.12"/>
+						<ProductVersion Name="4.0.13" MajorVersion="4.0" ServicePackLevel="13" Value="MySQL Database Server Version 4.0.13"/>
+						<ProductVersion Name="4.0.14" MajorVersion="4.0" ServicePackLevel="14" Value="MySQL Database Server Version 4.0.14"/>
+						<ProductVersion Name="4.0.14a" MajorVersion="4.0" ServicePackLevel="14a" Value="MySQL Database Server Version 4.0.14a"/>
+						<ProductVersion Name="4.0.14b" MajorVersion="4.0" ServicePackLevel="14b" Value="MySQL Database Server Version 4.0.14b"/>
+						<ProductVersion Name="4.0.15" MajorVersion="4.0" ServicePackLevel="15" Value="MySQL Database Server Version 4.0.15"/>
+						<ProductVersion Name="4.0.15a" MajorVersion="4.0" ServicePackLevel="15a" Value="MySQL Database Server Version 4.0.15a"/>
+						<ProductVersion Name="4.0.16" MajorVersion="4.0" ServicePackLevel="16" Value="MySQL Database Server Version 4.0.16"/>
+						<ProductVersion Name="4.0.17" MajorVersion="4.0" ServicePackLevel="17" Value="MySQL Database Server Version 4.0.17"/>
+						<ProductVersion Name="4.0.18" MajorVersion="4.0" ServicePackLevel="18" Value="MySQL Database Server Version 4.0.18"/>
+						<ProductVersion Name="4.0.18a" MajorVersion="4.0" ServicePackLevel="18a" Value="MySQL Database Server Version 4.0.18a"/>
+						<ProductVersion Name="4.0.2" MajorVersion="4.0" ServicePackLevel="2" Value="MySQL Database Server Version 4.0.2"/>
+						<ProductVersion Name="4.0.3" MajorVersion="4.0" ServicePackLevel="3" Value="MySQL Database Server Version 4.0.3"/>
+						<ProductVersion Name="4.0.4" MajorVersion="4.0" ServicePackLevel="4" Value="MySQL Database Server Version 4.0.4"/>
+						<ProductVersion Name="4.0.5" MajorVersion="4.0" ServicePackLevel="5" Value="MySQL Database Server Version 4.0.5"/>
+						<ProductVersion Name="4.0.5a" MajorVersion="4.0" ServicePackLevel="5a" Value="MySQL Database Server Version 4.0.5a"/>
+						<ProductVersion Name="4.0.6" MajorVersion="4.0" ServicePackLevel="6" Value="MySQL Database Server Version 4.0.6"/>
+						<ProductVersion Name="4.0.7" MajorVersion="4.0" ServicePackLevel="7" Value="MySQL Database Server Version 4.0.7"/>
+						<ProductVersion Name="4.0.8" MajorVersion="4.0" ServicePackLevel="8" Value="MySQL Database Server Version 4.0.8"/>
+						<ProductVersion Name="4.0.9" MajorVersion="4.0" ServicePackLevel="9" Value="MySQL Database Server Version 4.0.9"/>
+						<ProductVersion Name="4.1.0" MajorVersion="4.1" ServicePackLevel="0" Value="MySQL Database Server Version 4.1.0"/>
+						<ProductVersion Name="4.1.1" MajorVersion="4.1" ServicePackLevel="1" Value="MySQL Database Server Version 4.1.1"/>
+						<ProductVersion Name="4.1.1a" MajorVersion="4.1" ServicePackLevel="1a" Value="MySQL Database Server Version 4.1.1a"/>
+						<ProductVersion Name="4.1.1b" MajorVersion="4.1" ServicePackLevel="1b" Value="MySQL Database Server Version 4.1.1b"/>
+						<ProductVersion Name="4.1.2" MajorVersion="4.1" ServicePackLevel="2" Value="MySQL Database Server Version 4.1.2"/>
+						<ProductVersion Name="4.1.3" MajorVersion="4.1" ServicePackLevel="3" Value="MySQL Database Server Version 4.1.3"/>
+						<ProductVersion Name="4.1.4" MajorVersion="4.1" ServicePackLevel="4" Value="MySQL Database Server Version 4.1.4"/>
+						<ProductVersion Name="4.1.5" MajorVersion="4.1" ServicePackLevel="5" Value="MySQL Database Server Version 4.1.5"/>
+						<ProductVersion Name="4.1.6" MajorVersion="4.1" ServicePackLevel="6" Value="MySQL Database Server Version 4.1.6"/>
+						<ProductVersion Name="4.1.7" MajorVersion="4.1" ServicePackLevel="7" Value="MySQL Database Server Version 4.1.7"/>
+						<ProductVersion Name="4.1.8" MajorVersion="4.1" ServicePackLevel="8" Value="MySQL Database Server Version 4.1.8"/>
+						<ProductVersion Name="4.1.9" MajorVersion="4.1" ServicePackLevel="9" Value="MySQL Database Server Version 4.1.9"/>
+						<ProductVersion Name="4.1.10" MajorVersion="4.1" ServicePackLevel="10" Value="MySQL Database Server Version 4.1.10"/>
+						<ProductVersion Name="4.1.11" MajorVersion="4.1" ServicePackLevel="11" Value="MySQL Database Server Version 4.1.11"/>
+						<ProductVersion Name="4.1.12" MajorVersion="4.1" ServicePackLevel="12" Value="MySQL Database Server Version 4.1.12"/>
+						<ProductVersion Name="4.1.13" MajorVersion="4.1" ServicePackLevel="13" Value="MySQL Database Server Version 4.1.13"/>
+						<ProductVersion Name="4.1.14" MajorVersion="4.1" ServicePackLevel="14" Value="MySQL Database Server Version 4.1.14"/>
+						<ProductVersion Name="4.1.15" MajorVersion="4.1" ServicePackLevel="15" Value="MySQL Database Server Version 4.1.15"/>
+						<ProductVersion Name="4.1.16" MajorVersion="4.1" ServicePackLevel="16" Value="MySQL Database Server Version 4.1.16"/>
+						<ProductVersion Name="4.1.18" MajorVersion="4.1" ServicePackLevel="18" Value="MySQL Database Server Version 4.1.18"/>
+						<ProductVersion Name="4.1.19" MajorVersion="4.1" ServicePackLevel="19" Value="MySQL Database Server Version 4.1.19"/>
+						<ProductVersion Name="4.1.20" MajorVersion="4.1" ServicePackLevel="20" Value="MySQL Database Server Version 4.1.20"/>
+						<ProductVersion Name="4.1.21" MajorVersion="4.1" ServicePackLevel="21" Value="MySQL Database Server Version 4.1.21"/>
+						<ProductVersion Name="4.1.22" MajorVersion="4.1" ServicePackLevel="22" Value="MySQL Database Server Version 4.1.22"/>
+						<ProductVersion Name="5.0.0" MajorVersion="5.0" ServicePackLevel="0" Value="MySQL Database Server Version 5.0.0"/>
+						<ProductVersion Name="5.0.1" MajorVersion="5.0" ServicePackLevel="1" Value="MySQL Database Server Version 5.0.1"/>
+						<ProductVersion Name="5.0.2" MajorVersion="5.0" ServicePackLevel="2" Value="MySQL Database Server Version 5.0.2"/>
+						<ProductVersion Name="5.0.3" MajorVersion="5.0" ServicePackLevel="3" Value="MySQL Database Server Version 5.0.3"/>
+						<ProductVersion Name="5.0.4" MajorVersion="5.0" ServicePackLevel="4" Value="MySQL Database Server Version 5.0.4"/>
+						<ProductVersion Name="5.0.5" MajorVersion="5.0" ServicePackLevel="5" Value="MySQL Database Server Version 5.0.5"/>
+						<ProductVersion Name="5.0.6" MajorVersion="5.0" ServicePackLevel="6" Value="MySQL Database Server Version 5.0.6"/>
+						<ProductVersion Name="5.0.9" MajorVersion="5.0" ServicePackLevel="9" Value="MySQL Database Server Version 5.0.9"/>
+						<ProductVersion Name="5.0.10" MajorVersion="5.0" ServicePackLevel="10" Value="MySQL Database Server Version 5.0.10"/>
+						<ProductVersion Name="5.0.11" MajorVersion="5.0" ServicePackLevel="11" Value="MySQL Database Server Version 5.0.11"/>
+						<ProductVersion Name="5.0.12" MajorVersion="5.0" ServicePackLevel="12" Value="MySQL Database Server Version 5.0.12"/>
+						<ProductVersion Name="5.0.13" MajorVersion="5.0" ServicePackLevel="13" Value="MySQL Database Server Version 5.0.13"/>
+						<ProductVersion Name="5.0.15" MajorVersion="5.0" ServicePackLevel="15" Value="MySQL Database Server Version 5.0.15"/>
+						<ProductVersion Name="5.0.16" MajorVersion="5.0" ServicePackLevel="16" Value="MySQL Database Server Version 5.0.16"/>
+						<ProductVersion Name="5.0.17" MajorVersion="5.0" ServicePackLevel="17" Value="MySQL Database Server Version 5.0.17"/>
+						<ProductVersion Name="5.0.18" MajorVersion="5.0" ServicePackLevel="18" Value="MySQL Database Server Version 5.0.18"/>
+						<ProductVersion Name="5.0.19" MajorVersion="5.0" ServicePackLevel="19" Value="MySQL Database Server Version 5.0.19"/>
+						<ProductVersion Name="5.0.20" MajorVersion="5.0" ServicePackLevel="20" Value="MySQL Database Server Version 5.0.20"/>
+						<ProductVersion Name="5.0.21" MajorVersion="5.0" ServicePackLevel="21" Value="MySQL Database Server Version 5.0.21"/>
+						<ProductVersion Name="5.0.22" MajorVersion="5.0" ServicePackLevel="22" Value="MySQL Database Server Version 5.0.22"/>
+						<ProductVersion Name="5.0.23" MajorVersion="5.0" ServicePackLevel="23" Value="MySQL Database Server Version 5.0.23"/>
+						<ProductVersion Name="5.0.24" MajorVersion="5.0" ServicePackLevel="24" Value="MySQL Database Server Version 5.0.24"/>
+						<ProductVersion Name="5.0.27" MajorVersion="5.0" ServicePackLevel="27" Value="MySQL Database Server Version 5.0.27"/>
+						<ProductVersion Name="5.0.33" MajorVersion="5.0" ServicePackLevel="33" Value="MySQL Database Server Version 5.0.33"/>
+						<ProductVersion Name="5.0.37" MajorVersion="5.0" ServicePackLevel="37" Value="MySQL Database Server Version 5.0.37"/>
+						<ProductVersion Name="5.0.41" MajorVersion="5.0" ServicePackLevel="41" Value="MySQL Database Server Version 5.0.41"/>
+						<ProductVersion Name="5.0.45" MajorVersion="5.0" ServicePackLevel="45" Value="MySQL Database Server Version 5.0.45"/>
+						<ProductVersion Name="5.1.0" MajorVersion="5.1" ServicePackLevel="0" Value="MySQL Database Server Version 5.1.0"/>
+						<ProductVersion Name="5.1.1" MajorVersion="5.1" ServicePackLevel="1" Value="MySQL Database Server Version 5.1.1"/>
+						<ProductVersion Name="5.1.2" MajorVersion="5.1" ServicePackLevel="2" Value="MySQL Database Server Version 5.1.2"/>
+						<ProductVersion Name="5.1.3" MajorVersion="5.1" ServicePackLevel="3" Value="MySQL Database Server Version 5.1.3"/>
+						<ProductVersion Name="5.1.4" MajorVersion="5.1" ServicePackLevel="4" Value="MySQL Database Server Version 5.1.4"/>
+						<ProductVersion Name="5.1.5" MajorVersion="5.1" ServicePackLevel="5" Value="MySQL Database Server Version 5.1.5"/>
+						<ProductVersion Name="5.1.6" MajorVersion="5.1" ServicePackLevel="6" Value="MySQL Database Server Version 5.1.6"/>
+						<ProductVersion Name="5.1.7" MajorVersion="5.1" ServicePackLevel="7" Value="MySQL Database Server Version 5.1.7"/>
+						<ProductVersion Name="5.1.8" MajorVersion="5.1" ServicePackLevel="8" Value="MySQL Database Server Version 5.1.8"/>
+						<ProductVersion Name="5.1.9" MajorVersion="5.1" ServicePackLevel="9" Value="MySQL Database Server Version 5.1.9"/>
+						<ProductVersion Name="5.1.10" MajorVersion="5.1" ServicePackLevel="10" Value="MySQL Database Server Version 5.1.10"/>
+						<ProductVersion Name="5.1.11" MajorVersion="5.1" ServicePackLevel="11" Value="MySQL Database Server Version 5.1.11"/>
+						<ProductVersion Name="5.1.12" MajorVersion="5.1" ServicePackLevel="12" Value="MySQL Database Server Version 5.1.12"/>
+						<ProductVersion Name="5.1.13" MajorVersion="5.1" ServicePackLevel="13" Value="MySQL Database Server Version 5.1.13"/>
+						<ProductVersion Name="5.1.14" MajorVersion="5.1" ServicePackLevel="14" Value="MySQL Database Server Version 5.1.14"/>
+						<ProductVersion Name="5.1.15" MajorVersion="5.1" ServicePackLevel="15" Value="MySQL Database Server Version 5.1.15"/>
+						<ProductVersion Name="5.1.16" MajorVersion="5.1" ServicePackLevel="16" Value="MySQL Database Server Version 5.1.16"/>
+						<ProductVersion Name="5.1.17" MajorVersion="5.1" ServicePackLevel="17" Value="MySQL Database Server Version 5.1.17"/>
+						<ProductVersion Name="5.1.18" MajorVersion="5.1" ServicePackLevel="18" Value="MySQL Database Server Version 5.1.18"/>
+						<ProductVersion Name="5.1.19" MajorVersion="5.1" ServicePackLevel="19" Value="MySQL Database Server Version 5.1.19"/>
+						<ProductVersion Name="5.1.20" MajorVersion="5.1" ServicePackLevel="20" Value="MySQL Database Server Version 5.1.20"/>
+						<ProductVersion Name="5.1.21" MajorVersion="5.1" ServicePackLevel="21" Value="MySQL Database Server Version 5.1.21"/>
+						<ProductVersion Name="5.1.22" MajorVersion="5.1" ServicePackLevel="22" Value="MySQL Database Server Version 5.1.22"/>
+						<ProductVersion Name="5.1.23" MajorVersion="5.1" ServicePackLevel="23" Value="MySQL Database Server Version 5.1.23"/>
+						<ProductVersion Name="5.1.24" MajorVersion="5.1" ServicePackLevel="24" Value="MySQL Database Server Version 5.1.24"/>
+						<ProductVersion Name="5.1.25" MajorVersion="5.1" ServicePackLevel="25" Value="MySQL Database Server Version 5.1.25"/>
+						<ProductVersion Name="5.1.26" MajorVersion="5.1" ServicePackLevel="26" Value="MySQL Database Server Version 5.1.26"/>
+						<ProductVersion Name="5.1.27" MajorVersion="5.1" ServicePackLevel="27" Value="MySQL Database Server Version 5.1.27"/>
+						<ProductVersion Name="5.1.28" MajorVersion="5.1" ServicePackLevel="28" Value="MySQL Database Server Version 5.1.28"/>
+						<ProductVersion Name="5.1.29" MajorVersion="5.1" ServicePackLevel="29" Value="MySQL Database Server Version 5.1.29"/>
+						<ProductVersion Name="5.1.30" MajorVersion="5.1" ServicePackLevel="30" Value="MySQL Database Server Version 5.1.30"/>
+						<ProductVersion Name="5.1.31" MajorVersion="5.1" ServicePackLevel="31" Value="MySQL Database Server Version 5.1.31"/>
+						<ProductVersion Name="5.1.32" MajorVersion="5.1" ServicePackLevel="32" Value="MySQL Database Server Version 5.1.32"/>
+						<ProductVersion Name="5.1.33" MajorVersion="5.1" ServicePackLevel="33" Value="MySQL Database Server Version 5.1.33"/>
+						<ProductVersion Name="5.1.34" MajorVersion="5.1" ServicePackLevel="34" Value="MySQL Database Server Version 5.1.34"/>
+						<ProductVersion Name="5.1.35" MajorVersion="5.1" ServicePackLevel="35" Value="MySQL Database Server Version 5.1.35"/>
+						<ProductVersion Name="5.1.36" MajorVersion="5.1" ServicePackLevel="36" Value="MySQL Database Server Version 5.1.36"/>
+						<ProductVersion Name="5.1.37" MajorVersion="5.1" ServicePackLevel="37" Value="MySQL Database Server Version 5.1.37"/>
+						<ProductVersion Name="5.1.38" MajorVersion="5.1" ServicePackLevel="38" Value="MySQL Database Server Version 5.1.38"/>
+						<ProductVersion Name="5.1.39" MajorVersion="5.1" ServicePackLevel="39" Value="MySQL Database Server Version 5.1.39"/>
+						<ProductVersion Name="5.1.40" MajorVersion="5.1" ServicePackLevel="40" Value="MySQL Database Server Version 5.1.40"/>
+						<ProductVersion Name="5.1.41" MajorVersion="5.1" ServicePackLevel="41" Value="MySQL Database Server Version 5.1.41"/>
+						<ProductVersion Name="5.1.42" MajorVersion="5.1" ServicePackLevel="42" Value="MySQL Database Server Version 5.1.42"/>
+						<ProductVersion Name="5.1.43" MajorVersion="5.1" ServicePackLevel="43" Value="MySQL Database Server Version 5.1.43"/>
+						<ProductVersion Name="5.1.44" MajorVersion="5.1" ServicePackLevel="44" Value="MySQL Database Server Version 5.1.44"/>
+						<ProductVersion Name="5.1.45" MajorVersion="5.1" ServicePackLevel="45" Value="MySQL Database Server Version 5.1.45"/>
+						<ProductVersion Name="5.1.46" MajorVersion="5.1" ServicePackLevel="46" Value="MySQL Database Server Version 5.1.46"/>
+						<ProductVersion Name="5.1.47" MajorVersion="5.1" ServicePackLevel="47" Value="MySQL Database Server Version 5.1.47"/>
+						<ProductVersion Name="5.1.48" MajorVersion="5.1" ServicePackLevel="48" Value="MySQL Database Server Version 5.1.48"/>
+						<ProductVersion Name="5.1.49" MajorVersion="5.1" ServicePackLevel="49" Value="MySQL Database Server Version 5.1.49"/>
+						<ProductVersion Name="5.1.50" MajorVersion="5.1" ServicePackLevel="50" Value="MySQL Database Server Version 5.1.50"/>
+						<ProductVersion Name="5.1.51" MajorVersion="5.1" ServicePackLevel="51" Value="MySQL Database Server Version 5.1.51"/>
+						<ProductVersion Name="5.1.52" MajorVersion="5.1" ServicePackLevel="52" Value="MySQL Database Server Version 5.1.52"/>
+						<ProductVersion Name="5.1.53" MajorVersion="5.1" ServicePackLevel="53" Value="MySQL Database Server Version 5.1.53"/>
+						<ProductVersion Name="5.1.54" MajorVersion="5.1" ServicePackLevel="54" Value="MySQL Database Server Version 5.1.54"/>
+						<ProductVersion Name="5.1.55" MajorVersion="5.1" ServicePackLevel="55" Value="MySQL Database Server Version 5.1.55"/>
+						<ProductVersion Name="5.1.56" MajorVersion="5.1" ServicePackLevel="56" Value="MySQL Database Server Version 5.1.56"/>
+						<ProductVersion Name="5.1.57" MajorVersion="5.1" ServicePackLevel="57" Value="MySQL Database Server Version 5.1.57"/>
+						<ProductVersion Name="5.1.58" MajorVersion="5.1" ServicePackLevel="58" Value="MySQL Database Server Version 5.1.58"/>
+						<ProductVersion Name="5.1.59" MajorVersion="5.1" ServicePackLevel="59" Value="MySQL Database Server Version 5.1.59"/>
+						<ProductVersion Name="5.1.60" MajorVersion="5.1" ServicePackLevel="60" Value="MySQL Database Server Version 5.1.60"/>
+						<ProductVersion Name="5.1.61" MajorVersion="5.1" ServicePackLevel="61" Value="MySQL Database Server Version 5.1.61"/>
+						<ProductVersion Name="5.1.62" MajorVersion="5.1" ServicePackLevel="62" Value="MySQL Database Server Version 5.1.62"/>
+						<ProductVersion Name="5.5.0" MajorVersion="5.5" ServicePackLevel="0" Value="MySQL Database Server Version 5.5.0"/>
+						<ProductVersion Name="5.5.1" MajorVersion="5.5" ServicePackLevel="1" Value="MySQL Database Server Version 5.5.1"/>
+						<ProductVersion Name="5.5.2" MajorVersion="5.5" ServicePackLevel="2" Value="MySQL Database Server Version 5.5.2"/>
+						<ProductVersion Name="5.5.3" MajorVersion="5.5" ServicePackLevel="3" Value="MySQL Database Server Version 5.5.3"/>
+						<ProductVersion Name="5.5.4" MajorVersion="5.5" ServicePackLevel="4" Value="MySQL Database Server Version 5.5.4"/>
+						<ProductVersion Name="5.5.5" MajorVersion="5.5" ServicePackLevel="5" Value="MySQL Database Server Version 5.5.5"/>
+						<ProductVersion Name="5.5.6" MajorVersion="5.5" ServicePackLevel="6" Value="MySQL Database Server Version 5.5.6"/>
+						<ProductVersion Name="5.5.7" MajorVersion="5.5" ServicePackLevel="7" Value="MySQL Database Server Version 5.5.7"/>
+						<ProductVersion Name="5.5.8" MajorVersion="5.5" ServicePackLevel="8" Value="MySQL Database Server Version 5.5.8"/>
+						<ProductVersion Name="5.5.9" MajorVersion="5.5" ServicePackLevel="9" Value="MySQL Database Server Version 5.5.9"/>
+						<ProductVersion Name="5.5.10" MajorVersion="5.5" ServicePackLevel="10" Value="MySQL Database Server Version 5.5.10"/>
+						<ProductVersion Name="5.5.11" MajorVersion="5.5" ServicePackLevel="11" Value="MySQL Database Server Version 5.5.11"/>
+						<ProductVersion Name="5.5.12" MajorVersion="5.5" ServicePackLevel="12" Value="MySQL Database Server Version 5.5.12"/>
+						<ProductVersion Name="5.5.13" MajorVersion="5.5" ServicePackLevel="13" Value="MySQL Database Server Version 5.5.13"/>
+						<ProductVersion Name="5.5.14" MajorVersion="5.5" ServicePackLevel="14" Value="MySQL Database Server Version 5.5.14"/>
+						<ProductVersion Name="5.5.15" MajorVersion="5.5" ServicePackLevel="15" Value="MySQL Database Server Version 5.5.15"/>
+						<ProductVersion Name="5.5.16" MajorVersion="5.5" ServicePackLevel="16" Value="MySQL Database Server Version 5.5.16"/>
+						<ProductVersion Name="5.5.17" MajorVersion="5.5" ServicePackLevel="17" Value="MySQL Database Server Version 5.5.17"/>
+						<ProductVersion Name="5.5.18" MajorVersion="5.5" ServicePackLevel="18" Value="MySQL Database Server Version 5.5.18"/>
+						<ProductVersion Name="5.5.19" MajorVersion="5.5" ServicePackLevel="19" Value="MySQL Database Server Version 5.5.19"/>
+						<ProductVersion Name="5.5.20" MajorVersion="5.5" ServicePackLevel="20" Value="MySQL Database Server Version 5.5.20"/>
+						<ProductVersion Name="5.5.21" MajorVersion="5.5" ServicePackLevel="21" Value="MySQL Database Server Version 5.5.21"/>
+						<ProductVersion Name="5.5.22" MajorVersion="5.5" ServicePackLevel="22" Value="MySQL Database Server Version 5.5.22" Default="True"/>
+					</ProductVersions>
+				</IS_MetaData>
+				<IS_MetaData Name="Oracle" DisplayName="Oracle" Default="True" AdoDriverName="{Microsoft ODBC for Oracle};{Microsoft ODBC para Oracle}" AdoCxnDriver="DRIVER=" AdoCxnServer="SERVER=" AdoCxnDatabase="" AdoCxnUserID="UID=" AdoCxnPassword="PWD=" AdoCxnWindowsSecurity="" AdoCxnNetLibrary="" VersionBeginToken="Release" VersionEndToken="-" TestDatabaseCmd="SELECT * FROM ALL_USERS WHERE USERNAME = '%s'" TestTableCmd="SELECT * FROM USER_CATALOG WHERE TABLE_NAME = '%s' AND TABLE_TYPE = 'TABLE'" VersionInfoCmd="SELECT * FROM V$VERSION" LocalInstanceNames="" CreateDbCmd="CREATE USER %s IDENTIFIED BY %s DEFAULT TABLESPACE USERS QUOTA UNLIMITED on USERS; GRANT CONNECT TO %s; GRANT DBA TO %s; ALTER USER %s DEFAULT ROLE ALL" SwitchDbCmd="ALTER SESSION SET CURRENT_SCHEMA = %s" ISAttributes="14" TestTableCmd2="SELECT * FROM ALL_CATALOG WHERE OWNER = '%1' AND TABLE_NAME = '%2' AND TABLE_TYPE = 'TABLE'" WinAuthentUserId="/" DsnODBCName="" AdoCxnPort="" AdoCxnAdditional="" QueryDatabasesCmd="SELECT USERNAME FROM ALL_USERS" CreateTableCmd="CREATE TABLE &quot;%1&quot; (&quot;%2&quot; %3)" InsertRecordCmd="INSERT INTO &quot;%1&quot; (&quot;%2&quot;) VALUES('%3')" SelectTableCmd="SELECT %1 FROM &quot;%2&quot;" ScriptVersion_Table="InstallShield" ScriptVersion_Column="ISSchema" ScriptVersion_ColumnType="char (15)">
+					<ProductVersions>
+			       			<ProductVersion Name="11.2.0.2" MajorVersion="11.2.0" ServicePackLevel="2" Value="Oracle Database 11g Release 2 (11.2.0.2)" Default="True"/>
+			       			<ProductVersion Name="11.2.0.1" MajorVersion="11.2.0" ServicePackLevel="1" Value="Oracle Database 11g Release 2 (11.2.0.1)"/>
+			       			<ProductVersion Name="11.1.0.7" MajorVersion="11.1.0" ServicePackLevel="7" Value="Oracle Database 11g Release 1 (11.1.0.7)"/>
+			       			<ProductVersion Name="11.1.0.6" MajorVersion="11.1.0" ServicePackLevel="6" Value="Oracle Database 11g Release 1 (11.1.0.6)"/>
+			       			<ProductVersion Name="10.2.0.4" MajorVersion="10.2.0" ServicePackLevel="4" Value="Oracle Database 10g Release 2 (10.2.0.4)"/>
+			       			<ProductVersion Name="10.2.0.3" MajorVersion="10.2.0" ServicePackLevel="3" Value="Oracle Database 10g Release 2 (10.2.0.3)"/>
+			       			<ProductVersion Name="10.2.0.1" MajorVersion="10.2.0" ServicePackLevel="1" Value="Oracle Database 10g Release 2 (10.2.0.1)"/>
+			       			<ProductVersion Name="10.1.0.3" MajorVersion="10.1.0" ServicePackLevel="3" Value="Oracle Database 10g Release 1 (10.1.0.3)"/>
+						<ProductVersion Name="10.1.0.2" MajorVersion="10.1.0" ServicePackLevel="2" Value="Oracle Database 10g Release 1 (10.1.0.2)"/>
+						<ProductVersion Name="9.2.0.4" MajorVersion="9.2.0" ServicePackLevel="4" Value="Oracle9i Database Release 2 (9.2.0.4)"/>
+						<ProductVersion Name="9.2.0.2" MajorVersion="9.2.0" ServicePackLevel="2" Value="Oracle9i Database Release 2 (9.2.0.2)"/>
+						<ProductVersion Name="9.2.0.1" MajorVersion="9.2.0" ServicePackLevel="1" Value="Oracle9i Database Release 2 (9.2.0.1)"/>
+						<ProductVersion Name="9.0.1.0" MajorVersion="9.0.1" ServicePackLevel="0" Value="Oracle9i Database Release 1 (9.0.1)"/>
+						<ProductVersion Name="8.1.7.0.1" MajorVersion="8.1.7" ServicePackLevel="0.1" Value="Oracle8i Database Release 3 (8.1.7.0.1)"/>
+						<ProductVersion Name="8.1.7.0.0" MajorVersion="8.1.7" ServicePackLevel="0" Value="Oracle8i Database Release 3 (8.1.7)"/>
+					</ProductVersions>
+				</IS_MetaData>
+				<DBImport_ColumnType Name="bigint" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="decimal" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="int" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="tinyint" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="smallint" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="float" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="real" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="smallmoney" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="money" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="numeric" Type="numericValue" Nullable="Y" DefaultValue="0" />
+				<DBImport_ColumnType Name="bit" Type="numericValue" Nullable="Y" DefaultValue="0" />
+
+				<DBImport_ColumnType Name="text" Type="stringValue" Nullable="N" DefaultValue="" />
+				<DBImport_ColumnType Name="ntext" Type="stringValue" Nullable="N" DefaultValue="" />
+				<DBImport_ColumnType Name="varchar" Type="stringValue" Nullable="N" DefaultValue="" />
+				<DBImport_ColumnType Name="nvarchar" Type="stringValue" Nullable="N" DefaultValue="" />
+
+				<DBImport_ColumnType Name="char" Type="stringValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="nchar" Type="stringValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="smalldatetime" Type="stringValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="datetime" Type="stringValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="uniqueidentifier" Type="stringValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="xml" Type="stringValue" Nullable="Y" DefaultValue="" />
+
+				<DBImport_ColumnType Name="binary" Type="hexValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="image" Type="hexValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="varbinary" Type="hexValue" Nullable="Y" DefaultValue="" />
+				<DBImport_ColumnType Name="sql_variant" Type="hexValue" Nullable="Y" DefaultValue="" />
+
+				<DBImport_BulkCopyProp ColumnDelimiter="\t" RowDelimiter="\v" />
+			</SQLScripts>
+			<DigitalRightsManagement>
+				<DRM_GridAttribute Name="Executable" Hidden="Y" />
+				<DRM_GridAttribute Name="Type" Hidden="Y" />
+				<DRM_GridAttribute Name="Product Name" Property="ProductName" HelpLink="DRM_ProductName"/>
+				<DRM_GridAttribute Name="Type of Trial Limit" Property="GracePeriodType" Default="Days" HelpLink="DRM_GracePeriodType">								
+					<ComboAttribute Name="Days" Value="Days"/>
+					<ComboAttribute Name="Uses" Value="Uses"/>
+				</DRM_GridAttribute>
+				<DRM_GridAttribute Name="Trial Limit Quantity" Numeric="Y" Maximum="365" Property="TrialDays" Default="30" HelpLink="DRM_TrialDays"/>
+				<!-- SerialNumberMask must go before TrialExtensionPassword-->
+				<DRM_GridAttribute Name="Serial Number Format" Property="SerialNumberMask" Default="???????-???-??????????" HelpLink="DRM_SerialNumberMask" />
+				<DRM_GridAttribute Name="Allow Trial Extension" Property="AllowTrialExtension" HelpLink="DRM_AllowTrialExtension" YesNo="Y" />							
+				<DRM_GridAttribute Name="Extension Limit Quantity" Numeric="Y" Maximum="90" Property="TrialExtensionDays" Default="30" HelpLink="DRM_TrialExtensionDays"/>								
+				<DRM_GridAttribute Name="Extension Serial Number" Property="TrialExtensionPassword" HelpLink="DRM_TrialExtensionPassword"/>
+				<DRM_GridAttribute Name="Expiration Date" Property="ExpirationDate" Default="-1" HelpLink="DRM_ExpirationDate"/>
+				<DRM_GridAttribute Name="Product Purchase URL" Property="ProductPurchaseURL" Default="http://www.installshield.com/cdsource/redirects/at/buy.asp" HelpLink="DRM_ProductPurchaseURL" />
+				<DRM_GridAttribute Name="Feedback URL" Property="FeedbackURL" Default="http://www.installshield.com/cdsource/redirects/at/feedback.asp" HelpLink="DRM_FeedbackURL" />
+				<DRM_GridAttribute Name="Serial Number Information URL" Default="" Property="WhereIsMySerialNumberURL" HelpLink="DRM_WhereIsMySerialNumberURL"/>
+				<DRM_GridAttribute Name="Help URL" Default="http://www.installshield.com/cdsource/redirects/at/activationhelp.asp" Property="HelpURL" HelpLink="DRM_HelpURL"/>
+				<DRM_GridAttribute Name="Privacy Policy URL" Default="http://www.installshield.com/cdsource/redirects/at/privacy.asp" Property="PrivacyPolicy" HelpLink="DRM_PrivacyPolicyURL"/>
+				<DRM_GridAttribute Name="Offline Activation Email" Default = "activate@mycompany.com" Property="EmailAddressToActivate" HelpLink="DRM_EmailAddressToActivate"/>
+				<DRM_GridAttribute Name="Offline Activation Phone" Property="PhoneToActivate" HelpLink="DRM_PhoneToActivate"/>
+				<DRM_GridAttribute Name="Serial Number Registry Key" Hidden="Y" Property="SNKey" HelpLink="DRM_SNKey"/>
+				<DRM_GridAttribute Name="Serial Number Registry Value" Hidden="Y" Property="SNValue" HelpLink="DRM_SNValue"/>
+			</DigitalRightsManagement>
+			<ClickOnce>
+				<Permissions>
+					<System.Security.Permissions.EnvironmentPermission Zones="Local,Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Read=USERNAME"/>
+					<System.Security.Permissions.FileDialogPermission Zones="Internet,Local,Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Security.Permissions.FileIOPermission Zones="Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Security.Permissions.IsolatedStorageFilePermission Zones="Internet,Local,Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Allowed=AssemblyIsolationByUser;UserQuota=9223372036854775807;Expiry=9223372036854775807;Permanent=True"/>
+					<System.Security.Permissions.ReflectionPermission Zones="Local,Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Flags=ReflectionEmit"/>
+					<System.Security.Permissions.RegistryPermission Zones="Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Security.Permissions.SecurityPermission Zones="Internet,Local,Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Flags=Assertion, Execution, BindingRedirects"/>
+					<System.Security.Permissions.UIPermission Zones="Internet,Local,Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Security.Permissions.KeyContainerPermission Zones="Full"
+						Source="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Security.Permissions.StorePermission Zones="Full"
+						Source="System.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Net.DnsPermission Zones="Local,Full"
+						Source="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Windows.Forms.WebBrowserPermission Zones="Local,Full"
+						Source="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Drawing.Printing.PrintingPermission Zones="Local,Full"
+						Source="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+						MetaData="version=1;Level=DefaultPrinting"/>
+					<System.Net.SocketPermission Zones="Full"
+						Source="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Net.WebPermission Zones="Full"
+						Source="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Diagnostics.EventLogPermission Zones="Full"
+						Source="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Diagnostics.PerformanceCounterPermission Zones="Full"
+						Source="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Data.OleDb.OleDbPermission Zones="Full"
+						Source="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Data.SqlClient.SqlClientPermission Zones="Full"
+						Source="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+						MetaData="version=1;Unrestricted=true"/>
+					<System.Security.Permissions.DataProtectionPermission Zones="Full"
+						Source="System.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+						MetaData="version=1;Unrestricted=true"/>
+				</Permissions>
+			</ClickOnce>
+			<IIS>
+				<iiserrors>
+					<iiserror error="502" suberror="0" value="Bad Gateway" />
+					<iiserror error="501" suberror="0" value="Not Implemented" />
+
+					<iiserror error="500" suberror="100" value="Internal Server Error - ASP Error" />
+					<iiserror error="500" suberror="15" value="Internal Server Error - Direct requests for GLOBAL.ASA" />
+					<iiserror error="500" suberror="13" value="Internal Server Error - Server too busy" />
+					<iiserror error="500" suberror="12" value="Internal Server Error - Application restarting" />
+					<iiserror error="500" suberror="0" value="Internal Server Error" />
+
+					<iiserror error="414" suberror="0" value="Request-URL too long" />
+					<iiserror error="412" suberror="0" value="Precondition Failed" />
+					<iiserror error="407" suberror="0" value="Proxy Authentication Required" />
+					<iiserror error="406" suberror="0" value="Not Acceptable" />
+					<iiserror error="404" suberror="0" value="Not Found" />
+
+					<iiserror error="405" suberror="0" value="Method Not Allowed" />
+					<iiserror error="403" suberror="17" value="Forbidden - Client certificate has expired or is not yet valid" />
+					<iiserror error="403" suberror="16" value="Forbidden - Client certificate untrusted or ill-formed" />
+					<iiserror error="403" suberror="15" value="Forbidden - Client Access Licenses Exceeded" />
+					<iiserror error="403" suberror="14" value="Forbidden - Directory List Denied" />
+					<iiserror error="403" suberror="13" value="Forbidden - Client certificate revoked" />
+					<iiserror error="403" suberror="12" value="Forbidden - Mapper Denied Access" />
+					<iiserror error="403" suberror="11" value="Forbidden - Password Change" />
+					<iiserror error="403" suberror="10" value="Forbidden - Invalid Configuration" />
+					<iiserror error="403" suberror="9" value="Forbidden - Too many users" />
+					<iiserror error="403" suberror="8" value="Forbidden - Site access denied" />
+					<iiserror error="403" suberror="7" value="Forbidden - Client certificate required" />
+					<iiserror error="403" suberror="6" value="Forbidden - IP address rejected" />
+					<iiserror error="403" suberror="5" value="Forbidden - SSL128 required" />
+					<iiserror error="403" suberror="4" value="Forbidden - SSL required" />
+					<iiserror error="403" suberror="3" value="Forbidden - Write access forbidden" />
+					<iiserror error="403" suberror="2" value="Forbidden - Read access forbidden" />
+					<iiserror error="403" suberror="1" value="Forbidden - Execute access forbidden" />
+					<iiserror error="401" suberror="5" value="Unauthorized - Authorization failed by ISAPI/CGI app" />
+					<iiserror error="401" suberror="4" value="Unauthorized - Authorization failed by filter" />
+					<iiserror error="401" suberror="3" value="Unauthorized - Unauthorized due to ACL on resource" />
+					<iiserror error="401" suberror="2" value="Unauthorized - Login failed due to server configuration" />
+					<iiserror error="401" suberror="1" value="Unauthorized - Login failed" />
+					<iiserror error="400" suberror="0" value="Bad Request" />
+				</iiserrors>
+				<iisMetadata>
+					<VirtualDirProperty Property="AZEnable" InternalId="6048" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspThreadGateTimeSlice" InternalId="7031" Value="1000" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspExceptionCatchEnable" InternalId="7015" Value="TRUE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspEnableParentPaths" InternalId="7008" Value="FALSE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AZImpersonationLevel" InternalId="6053" Value="0" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="SsiExecDisable" InternalId="6028" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="PasswordCacheTtl" InternalId="2064" Value="600" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspBufferingOn" InternalId="7000" Value="TRUE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AppOopRecoverLimit" InternalId="2110" Value="4294967295" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspEnableApplicationRestart" InternalId="7027" Value="TRUE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="CreateCgiWithNewConsole" InternalId="6036" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspThreadGateLoadHigh" InternalId="7035" Value="80" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspTrackThreadingModel" InternalId="7020" Value="FALSE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="CgiTimeout" InternalId="6033" Value="300" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AppAllowClientDebug" InternalId="7019" Value="FALSE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="CreateProcessAsUser" InternalId="6035" Value="TRUE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="UploadReadAheadSize" InternalId="6045" Value="49152" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspRequestQueueMax" InternalId="7026" Value="500" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspEnableTypelibCache" InternalId="7023" Value="TRUE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspScriptTimeout" InternalId="7006" Value="90" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="EnableDocFooter" InternalId="6010" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="ShutdownTimeLimit" InternalId="9012" Value="90" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="LogonMethod" InternalId="6013" Value="3" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="CacheIsapi" InternalId="6034" Value="TRUE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="DisableStaticFileCache" InternalId="3007" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspQueueConnectionTestTime" InternalId="7028" Value="3" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="FrontPageWeb" InternalId="2072" Value="FALSE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspThreadGateSleepDelay" InternalId="7032" Value="100" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspMaxDiskTemplateCacheFiles" InternalId="7040" Value="2000" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="ContentIndexed" InternalId="6039" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspProcessorThreadMax" InternalId="7025" Value="10" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="CpuAppEnabled" InternalId="2141" Value="TRUE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspMaxRequestEntityAllowed" InternalId="7053" Value="200000" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspBufferingLimit" InternalId="7052" Value="4194304" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="CpuCgiEnabled" InternalId="2140" Value="TRUE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspThreadGateSleepMax" InternalId="7033" Value="50" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspExecuteInMta" InternalId="7041" Value="0" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspQueueTimeout" InternalId="7013" Value="4294967295" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspScriptEngineCacheMax" InternalId="7005" Value="250" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspScriptFileCacheSize" InternalId="7004" Value="500" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspAllowSessionState" InternalId="7011" Value="TRUE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="UncAuthenticationPassthrough" InternalId="3006" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspEnableAspHtmlFallback" InternalId="7021" Value="FALSE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspErrorsToNTLog" InternalId="7024" Value="FALSE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="UseDigestSsp" InternalId="6047" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AppAllowDebugging" InternalId="7018" Value="FALSE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspSessionMax" InternalId="7029" Value="4294967295" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspThreadGateLoadLow" InternalId="7034" Value="50" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="CacheControlNoCache" InternalId="6041" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspThreadGateEnabled" InternalId="7030" Value="0" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspEnableChunkedEncoding" InternalId="7022" Value="TRUE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspKeepSessionIdSecure" InternalId="7043" Value="1" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspRunOnEndAnonymously" InternalId="7051" Value="TRUE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspCalcLineNumber" InternalId="7050" Value="TRUE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspScriptErrorSentToBrowser" InternalId="7002" Value="TRUE" UserType="ASP_MD_UT_APP" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="PassportRequireADMapping" InternalId="6052" Value="1" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AuthPersistence" InternalId="6031" Value="64" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspLogErrorRequests" InternalId="7001" Value="TRUE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspScriptLanguage" InternalId="7012" Value="Vbscript" UserType="ASP_MD_UT_APP" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="AspAllowOutOfProcComponents" InternalId="7014" Value="TRUE" UserType="IIS_MD_UT_WAM" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="HttpExpires" InternalId="6002" Value="" UserType="IIS_MD_UT_FILE" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="HttpRedirect" InternalId="6011" Value="" UserType="IIS_MD_UT_FILE" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<VirtualDirProperty Property="DefaultLogonDomain" InternalId="6012" Value="" UserType="IIS_MD_UT_FILE" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="CpuResetInterval" InternalId="2144" Value="0" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="CpuLoggingInterval" InternalId="2145" Value="60" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="CpuLimitsEnabled" InternalId="2143" Value="FALSE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="CpuLoggingOptions" InternalId="2146" Value="1" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="ServerListenBacklog" InternalId="1019" Value="40" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="ServerListenTimeout" InternalId="1020" Value="120" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="MaxEndpointConnections" InternalId="1024" Value="4294967295" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="PoolIdcTimeout" InternalId="6037" Value="0" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="SslAlwaysNegoClientCert" InternalId="5521" Value="FALSE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="EnableReverseDns" InternalId="6029" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="UseHostName" InternalId="2066" Value="FALSE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="RevocationUrlRetrievalTimeout" InternalId="2162" Value="0" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="AllowPathInfoForScriptMappings" InternalId="2095" Value="FALSE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="CertCheckMode" InternalId="2160" Value="0" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="AllowKeepAlive" InternalId="6038" Value="TRUE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="DoDynamicCompression" InternalId="2255" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="PasswordExpirePrenotifyDays" InternalId="2063" Value="0" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="RevocationFreshnessTime" InternalId="2161" Value="86400" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="ConnectionTimeout" InternalId="1013" Value="120" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="DisableSocketPooling" InternalId="1029" Value="TRUE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="LogType" InternalId="4000" Value="1" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="MaxBandwidth" InternalId="1000" Value="4294967295" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="SslUseDSMapper" InternalId="5519" Value="FALSE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="MaxConnections" InternalId="1014" Value="0" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="DoStaticCompression" InternalId="2256" Value="FALSE" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="ServerSize" InternalId="1018" Value="1" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="ServerAutoStart" InternalId="1017" Value="TRUE" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="LogOdbcTableName" InternalId="4008" Value="InternetLog" UserType="IIS_MD_UT_SERVER" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="LogFilePeriod" InternalId="4003" Value="1" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="LogOdbcUserName" InternalId="4009" Value="InternetAdmin" UserType="IIS_MD_UT_SERVER" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="LogOdbcDataSource" InternalId="4007" Value="HTTPLOG" UserType="IIS_MD_UT_SERVER" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="PasswordChangeFlags" InternalId="2068" Value="0" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="LogFileTruncateSize" InternalId="4004" Value="2000000" UserType="IIS_MD_UT_SERVER" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="MaxRequestEntityAllowed" InternalId="6051" Value="4294967295" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="ServerBindings" InternalId="1023" Value="" UserType="IIS_MD_UT_SERVER" DataType="MULTISZ_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="HttpRedirect" InternalId="6011" Value="" UserType="IIS_MD_UT_FILE" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="SecureBindings" InternalId="2021" Value="" UserType="IIS_MD_UT_FILE" DataType="MULTISZ_METADATA" Attributes="0" Order="0"/>
+					<WebSiteProperty Property="AccessSSLFlags" InternalId="6030" Value="" UserType="IIS_MD_UT_FILE" DataType="DWORD_METADATA" Attributes="1" Order="0"/>
+					<WebSiteProperty Property="DefaultLogonDomain" InternalId="6012" Value="" UserType="IIS_MD_UT_FILE" DataType="STRING_METADATA" Attributes="1" Order="0"/>
+				</iisMetadata>
+			</IIS>
+		</Workspaces> 
+        <NewProjectDlg> 
+            <!--Below is how to hide InstallScript MSI Object project types. Look at EPrjType in ISCommonDlg_h.h for more values-->
+            <!--<IS_HidePrjType Name="ISScriptMSIObj" EPrjType="8"/>-->
+        </NewProjectDlg>
+		<StringImportExport>
+			<StringImport EscCharsAsLiteral="N"/>
+		</StringImportExport>
+	</IDE>
+	<Scanners>
+		<DotNetExclusionList>
+			<Folder Path="Microsoft.NET\Framework\v1.0.3705\Temporary ASP.NET Files"/>
+			<Folder Path="Microsoft.NET\Framework\v1.1.4322\Temporary ASP.NET Files"/>
+			<Folder Path="Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files"/>
+		</DotNetExclusionList>
+	</Scanners>
+	<Build>
+		<Settings>
+			<MSI30 version="3.0.3790.2180"/>
+			<MSI31 version="3.1.4000.2435"/>
+		</Settings>
+		<DotNetRedistributables>
+			<NetFx key="0" Version="1.0.3705" CoreLang="" LangPack=""/>
+			<NetFx key="1" Version="1.1.4322"
+				CoreLang="1033,2052,1028,1029,1030,1035,1043,1036,1031,1032,1038,1040,1041,1042,1044,1045,1046,2070,1049,3082,1053,1055"
+				LangPack="2052,1028,1029,1030,1043,1035,1036,1031,1032,1038,1040,1041,1042,1044,1045,1046,2070,1049,3082,1053,1055"
+				JSharpLangPack="2052,1028,1029,1030,1043,1035,1036,1031,1032,1038,1040,1041,1042,1044,1045,1046,2070,1049,3082,1053,1055"/>
+			<NetFx key="2" Version="2.0.50727"
+				CoreLang="1033,2052,1025,1028,1029,1030,1031,1032,3082,1035,1036,1037,1038,1040,1041,1042,1043,1044,1046,2070,1049,1053,1055"
+				LangPack="2052,1025,1028,1029,1030,1031,1032,3082,1035,1036,1037,1038,1040,1041,1042,1043,1044,1046,2070,1049,1053,1055"
+				JSharpLangPack="1028,1031,1036,1040,1041,1042,3082"/>
+		</DotNetRedistributables>
+		<DirectoryReferences>
+			<Reference Table="AppSearch" Column="Property"/>
+			<Reference Table="Component" Column="Directory_"/>
+			<Reference Table="Control" Column="Property"/>
+			<Reference Table="ControlEvent" Column="Argument"/>
+			<Reference Table="CreateFolder" Column="Directory_"/>
+			<Reference Table="CustomAction" Column="Source"/>
+			<Reference Table="DuplicateFile" Column="DestFolder"/>
+			<Reference Table="Feature" Column="Directory_"/>
+			<Reference Table="IniFile" Column="DirProperty"/>
+			<Reference Table="LockPermissions" Column="LockObject"/>
+			<Reference Table="ISLockPermissions" Column="LockObject"/>
+			<Reference Table="MsiLockPermissionsEx" Column="LockObject"/>
+			<Reference Table="MoveFile" Column="SourceFolder"/>
+			<Reference Table="MoveFile" Column="DestFolder"/>
+			<Reference Table="RemoveFile" Column="DirProperty"/>
+			<Reference Table="RemoveIniFile" Column="DirProperty"/>
+			<Reference Table="ReserveCost" Column="ReserveFolder"/>
+			<Reference Table="Shortcut" Column="Directory_"/>
+			<Reference Table="Shortcut" Column="WkDir"/>
+			<Reference Table="TypeLib" Column="Directory_"/>
+			<Reference Table="ISCEApp" Column="DesktopTargetDir"/>
+			<Reference Table="ISCEInstall" Column="CEDesktopDir"/>
+			<Reference Table="ISIISCommon" Column="RootDir"/>
+			<Reference Table="ISVirtualDirectory" Column="Directory_"/>
+			<Reference Table="ISXmlFile" Column="Directory"/>
+			<Reference Table="ISSearchReplaceSet" Column="Directory_"/>
+			<Reference Table="ISIISProperty" Column="MetaDataValue"/>
+		</DirectoryReferences>
+		<EmptyTableDisposition MSI="Drop" MSM="Drop">
+			<!-- What to do with an empty table during build process: "Keep", "Drop", or drop only if "Ref:[table]" is empty. Defaults above, exceptions below. Custom tables are never dropped. -->
+			<Component MSI="Keep" MSM="Keep"/>
+			<Directory MSI="Keep" MSM="Keep"/>
+			<FeatureComponents MSI="Keep" MSM="Keep"/>
+			<File MSI="Keep" MSM="Keep"/>
+			<Media MSI="Keep"/>
+			<ModuleSignature MSM="Keep"/>
+			<ModuleComponents MSM="Keep"/>
+			<Validation MSI="Keep" MSM="Keep"/>
+			<InstallExecuteSequence MSI="Keep" MSM="Ref:ModuleInstallExecuteSequence"/>
+			<InstallUISequence MSI="Keep" MSM="Ref:ModuleInstallUISequence"/>
+			<AdvtExecuteSequence MSI="Keep" MSM="Ref:ModuleAdvtExecuteSequence"/>
+			<AdvtUISequence MSI="Keep" MSM="Ref:ModuleAdvtUISequence"/>
+			<AdminExecuteSequence MSI="Keep" MSM="Ref:ModuleAdminExecuteSequence"/>
+			<AdminUISequence MSI="Keep" MSM="Ref:ModuleAdminUISequence"/>
+			<ComboBox MSI="Keep">Authors may populate</ComboBox>
+			<ListBox MSI="Keep">Required by FilesInUse Dialog ICE20</ListBox>
+			<ListView MSI="Keep">Authors may populate</ListView>
+			<Signature MSI="Ref:AppSearch" MSM="Ref:AppSearch">Required for AppSearch action</Signature>
+			<Extension MSI="Ref:ProgId" MSM="Ref:ProgId">Required for RegisterProgIdInfo action</Extension>
+			<Class MSI="Ref:ProgId" MSM="Ref:ProgId">Required for RegisterProgIdInfo action</Class>
+			<Verb MSI="Ref:Extension" MSM="Ref:Extension">Required for RegisterExtensionInfo action</Verb>
+			<MsiAssembly MSI="Ref:MsiAssemblyName" MSM="Ref:MsiAssemblyName"/>
+			<MsiAssemblyName MSI="Ref:MsiAssembly" MSM="Ref:MsiAssembly"/>
+			<MsiPatchOldAssemblyFile MSI="Ref:MsiAssemblyName"/>
+			<MsiPatchOldAssemblyName MSI="Ref:MsiAssemblyName"/>
+			<Patch MSI="Keep" MSM="Keep"/>
+		</EmptyTableDisposition>
+		<!-- Comma-separated list of warning and error numbers to suppress -->
+		<Warnings Disable=""/>
+		<!-- default attribute: Maximum size (in MB) of .cab files for compressed Setup.exe or .msi packages, or -1 to indicate a single .cab file -->
+		<CompressedNetworkCABSize default="600"/>
+		<!--  exclude attribute: Comma-separated list of names of files to be included as uncompressed
+			compressionlevel: Level of compression. -1 = default, 0 = no compression; 9 = maximum compression -->
+		<StreamCompression exclude="*.CAB" compressionlevel="-1"/>
+		<DigitalSignature Timestamp="http://timestamp.verisign.com/scripts/timstamp.dll"/>
+		<DeprecatedProObjects>
+			<DeprecatedProObject Guid="5F1AF520-FE7B-11d2-8B05-00105A9846E9" Name="Access 97 Object"/>
+			<DeprecatedProObject Guid="B2189C20-2039-11D3-8B09-00105A9846E9" Name="BDE 5.11 Object"/>
+			<DeprecatedProObject Guid="3147e334-8505-11d4-8415-00b0d0235abe" Name="Crystal Reports 8 Object"/>
+			<DeprecatedProObject Guid="50948842-9599-4987-82F1-D5EAFCFBC5B5" Name="Crystal Reports 8 Object"/>
+			<DeprecatedProObject Guid="CED0E2D0-ED68-11d2-A8F1-00105A088FAC" Name="DAO 3.5 Object"/>
+			<DeprecatedProObject Guid="E6A37AB0-2033-11D3-8B09-00105A9846E9" Name="DCOM Deployment Object"/>
+			<DeprecatedProObject Guid="2ADCEF00-1F6A-11D3-8B09-00105A9846E9" Name="DCOM95 1.3 Object"/>
+			<DeprecatedProObject Guid="452DFAB0-503E-11D3-8B14-00105A9846E9" Name="Dcomcnfg Object"/>
+			<DeprecatedProObject Guid="E3479542-820B-4B27-8365-82A560514038" Name="DirectX Object"/>
+			<DeprecatedProObject Guid="32D8EA70-1D12-11D3-8B09-00105A9846E9" Name="Jet 3.51 Object"/>
+			<DeprecatedProObject Guid="990E6D00-1D14-11D3-8B09-00105A9846E9" Name="Jet 4.0 (w/DAO 3.6) Object"/>
+			<DeprecatedProObject Guid="038487A5-F6D3-4EC9-B47A-14D48CCB27FF" Name="JRE 1.5 Object"/>
+			<DeprecatedProObject Guid="5AD9E300-22A2-11d4-8D1E-00105A088FD2" Name="MDAC 2.5 Object"/>
+			<DeprecatedProObject Guid="4055284D-E31E-4AA5-A687-9AAA8E17EE5F" Name="MDAC (ODBC, OLEDB, ADO, RDS) (2.8 SP1)"/>
+			<DeprecatedProObject Guid="03C5C2C0-1EA5-11D3-8B09-00105A9846E9" Name="MFC 6 Runtime Object"/>
+			<DeprecatedProObject Guid="0B73DD39-715D-4CA3-A1D6-96C11F10F3C4" Name="Microsoft .NET Framework Object"/>
+			<DeprecatedProObject Guid="1ADF3B18-18D7-4FB7-BDE9-D42DEDDF1A06" Name="MSDE 2000 Object"/>
+			<DeprecatedProObject Guid="C9FE0DD0-2F11-11D3-8B0C-00105A9846E9" Name="NT Services Object"/>
+			<DeprecatedProObject Guid="4EB040C0-12E8-11D3-BD6E-00104B974AC8" Name="ODBC Config Object"/>
+			<DeprecatedProObject Guid="53AADD65-7A8A-4338-A8F3-410478E2041C" Name="OLE Automation Object"/>
+			<DeprecatedProObject Guid="A0C006FA-0642-472F-AC48-C88783DDDF72" Name="Palm OS Object"/>
+			<DeprecatedProObject Guid="755142B0-1EB4-11D3-8B09-00105A9846E9" Name="RDO 2.0 Object"/>
+			<DeprecatedProObject Guid="07E889E9-D542-11D4-8456-00B0D0235ABE" Name="Visual Basic Remote Server Deployment Object"/>
+			<DeprecatedProObject Guid="D843E499-489B-4230-8BA7-8D034C1CA50C" Name="Visual Basic Runtime Object"/>
+			<DeprecatedProObject Guid="5DD2AB10-0E81-11d4-A465-006067620F66" Name="Windows Mobile Object"/>
+			<DeprecatedProObject Guid="175C7AC3-69B5-46C5-9AAA-5E6CD80E30AD" Name="Windows Installer Object"/>
+		</DeprecatedProObjects>
+	</Build>
+	<DIM>
+		<PredefinedTargetFolders>
+			<PredefinedTargetFolder VarName="$[INSTALLDIR]" VarValue="[INSTALLDIR]"></PredefinedTargetFolder>
+			<PredefinedTargetFolder VarName="$[TARGETDIR]" VarValue="[TARGETDIR]"></PredefinedTargetFolder>
+			<PredefinedTargetFolder VarName="$[ProgramFilesFolder]" VarValue="[ProgramFilesFolder]"></PredefinedTargetFolder>
+			<PredefinedTargetFolder VarName="$[TempFolder]" VarValue="[TempFolder]"></PredefinedTargetFolder>				
+			<PredefinedTargetFolder VarName="$[CommonFilesFolder]" VarValue="[CommonFilesFolder]"></PredefinedTargetFolder>			
+			<PredefinedTargetFolder VarName="$[PersonalFolder]" VarValue="[PersonalFolder]"></PredefinedTargetFolder>						
+			<PredefinedTargetFolder VarName="$[AppDataFolder]" VarValue="[AppDataFolder]"></PredefinedTargetFolder>			
+			<PredefinedTargetFolder VarName="$[CommonAppDataFolder]" VarValue="[CommonAppDataFolder]"></PredefinedTargetFolder>			
+			<PredefinedTargetFolder VarName="$[MyPicturesFolder]" VarValue="[MyPicturesFolder]"></PredefinedTargetFolder>
+			<PredefinedTargetFolder VarName="$[FontsFolder]" VarValue="[FontsFolder]"></PredefinedTargetFolder>			
+			<PredefinedTargetFolder VarName="$[TemplateFolder]" VarValue="[TemplateFolder]"></PredefinedTargetFolder>			
+			<PredefinedTargetFolder VarName="$[ProgramFiles64Folder]" VarValue="[ProgramFiles64Folder]"></PredefinedTargetFolder>
+			<PredefinedTargetFolder VarName="$[CommonFiles64Folder]" VarValue="[CommonFiles64Folder]"></PredefinedTargetFolder>		
+			<PredefinedTargetFolder VarName="$[System64Folder]" VarValue="[System64Folder]"></PredefinedTargetFolder>		
+			<PredefinedTargetFolder VarName="$[GlobalAssemblyCache]" VarValue="[GlobalAssemblyCache]"></PredefinedTargetFolder>		
+			<PredefinedTargetFolder VarName="$[StartupFolder]" VarValue="[StartupFolder]"></PredefinedTargetFolder>		
+			<PredefinedTargetFolder VarName="$[DesktopFolder]" VarValue="[DesktopFolder]"></PredefinedTargetFolder>		
+			<PredefinedTargetFolder VarName="$[StartMenuFolder]" VarValue="[StartMenuFolder]"></PredefinedTargetFolder>		
+			<PredefinedTargetFolder VarName="$[ProgramMenuFolder]" VarValue="[ProgramMenuFolder]"></PredefinedTargetFolder>		
+			<PredefinedTargetFolder VarName="$[SendToFolder]" VarValue="[SendToFolder]"></PredefinedTargetFolder>		
+		</PredefinedTargetFolders>
+		<Languages>
+			<Language Name="sq" MsiLangId="1052" FriendlyName="Albanian"/>
+			<Language Name="be" MsiLangId="1059" FriendlyName="Belarusian"/>
+			<Language Name="ca" MsiLangId="1027" FriendlyName="Catalan"/>
+			<Language Name="et" MsiLangId="1061" FriendlyName="Estonian"/>
+			<Language Name="iw" MsiLangId="1037" FriendlyName=""/>
+			<Language Name="is" MsiLangId="1039" FriendlyName="Icelandic"/>
+			<Language Name="lv" MsiLangId="1062" FriendlyName=""/>
+			<Language Name="lt" MsiLangId="1063" FriendlyName=""/>
+			<Language Name="ar" MsiLangId="1025" FriendlyName="Arabic">
+				<SubLanguage Country="EG" MsiLangId="3073"/>
+				<SubLanguage Country="IQ" MsiLangId="2049"/>
+				<SubLanguage Country="SA" MsiLangId="1025"/>
+			</Language>			
+			<Language Name="bg" MsiLangId="1026" FriendlyName="Bulgarian"/>
+			<Language Name="zh" MsiLangId="2052" FriendlyName="Chinense">			
+				<SubLanguage Country="CN" MsiLangId="3076"/>
+				<SubLanguage Country="TW" MsiLangId="1028"/>	
+			</Language>
+			<Language Name="hr" MsiLangId="1050" FriendlyName="Croatian"/>			
+			<Language Name="cs" MsiLangId="1029" FriendlyName="Czech"/>
+			<Language Name="da" MsiLangId="1030" FriendlyName="Danish"/>
+			<Language Name="nl" MsiLangId="1043" FriendlyName="Dutch">
+				<SubLanguage Country="BE" MsiLangId="2067"/>	
+			</Language>
+			<Language Name="en" MsiLangId="1033" FriendlyName="English">
+				<SubLanguage Country="US" MsiLangId="1033"/>
+				<SubLanguage Country="GB" MsiLangId="2057"/>
+				<SubLanguage Country="AU" MsiLangId="3081"/>
+			</Language>
+			<Language Name="fi" MsiLangId="1035" FriendlyName="Finnish"/>
+			<Language Name="fr" MsiLangId="1036" FriendlyName="French">			
+				<SubLanguage Country="FR" MsiLangId="2060"/>
+				<SubLanguage Country="CA" MsiLangId="3084"/>	
+				<SubLanguage Country="BE" MsiLangId="3084"/>					
+			</Language>
+			<Language Name="de" MsiLangId="1031" FriendlyName="German"/>
+			<Language Name="el" MsiLangId="1032" FriendlyName="Greek"/>
+			<Language Name="he" MsiLangId="1037" FriendlyName="Hebrew"/>
+			<Language Name="hu" MsiLangId="1038" FriendlyName="Hungarian"/>				
+			<Language Name="it" MsiLangId="1040" FriendlyName="Italian"/>
+			<Language Name="ja" MsiLangId="1041" FriendlyName="Japanese"/>
+			<Language Name="ko" MsiLangId="1042" FriendlyName="Korean"/>			
+			<Language Name="no" MsiLangId="1044" FriendlyName="Norwegian"/>			
+			<Language Name="pl" MsiLangId="1044" FriendlyName="Polish"/>
+			<Language Name="pt" MsiLangId="1045" FriendlyName="Portuguese">			
+				<SubLanguage Country="BR" MsiLangId="1046"/>	
+			</Language>							
+			<Language Name="ro" MsiLangId="1048" FriendlyName="Romanian"/>	
+			<Language Name="ru" MsiLangId="1049" FriendlyName="Russian"/>
+			<Language Name="sk" MsiLangId="1051" FriendlyName="Slovak"/>	
+			<Language Name="sl" MsiLangId="1060" FriendlyName="Slovenian"/>
+			<Language Name="es" MsiLangId="1034" FriendlyName="Spanish"/>
+			<Language Name="sv" MsiLangId="1053" FriendlyName="Swedish"/>
+			<Language Name="tr" MsiLangId="1055" FriendlyName="Turkish"/>				
+		</Languages>
+	</DIM>
+	<ISXML>
+		<Encodings>
+			<Encoding>WINDOWS-1250</Encoding>
+			<Encoding>WINDOWS-1251</Encoding>
+			<Encoding>WINDOWS-1252</Encoding>
+			<Encoding>WINDOWS-1253</Encoding>
+			<Encoding>WINDOWS-1254</Encoding>
+			<Encoding>WINDOWS-1255</Encoding>
+			<Encoding>WINDOWS-1256</Encoding>
+			<Encoding>WINDOWS-1257</Encoding>
+			<Encoding>WINDOWS-1258</Encoding>
+			<Encoding>ISO-8859-1</Encoding>
+			<Encoding>ISO-8859-2</Encoding>
+			<Encoding>ISO-8859-3</Encoding>
+			<Encoding>ISO-8859-4</Encoding>
+			<Encoding>ISO-8859-5</Encoding>
+			<Encoding>ISO-8859-6</Encoding>
+			<Encoding>ISO-8859-7</Encoding>
+			<Encoding>ISO-8859-8</Encoding>
+			<Encoding>ISO-8859-9</Encoding>
+			<Encoding>US-ASCII</Encoding>
+			<Encoding>UNICODE-1-1-UTF-8</Encoding>
+			<Encoding>UNICODE-2-0-UTF-16</Encoding>
+			<Encoding>UNICODE-2-0-UTF-8</Encoding> 
+			<Encoding>ISO-10646-UCS-2</Encoding>
+			<Encoding>UCS-4</Encoding>
+			<Encoding>UCS-2</Encoding>
+			<Encoding>UTF-16</Encoding>	
+			<Encoding Default="true">UTF-8</Encoding>	
+		</Encodings>
+	</ISXML>
+	<ISMobile>
+		<MobileDevices>
+			<MobileDevice Mask="65536" DisplayName="Windows Mobile 6.x Professional and Classic" PlatformMin="5.2" PlatformMax="1000" DeviceName="PPC600" PlatformString="PocketPC">
+			</MobileDevice>
+      <MobileDevice Mask="32768" DisplayName="Windows Mobile 6.x Standard" PlatformMin="5.2" PlatformMax="1000" DeviceName="SMARTPHONE600" PlatformString="Smartphone" >
+      </MobileDevice>
+			<MobileDevice Mask="16384" DisplayName="Windows Embedded CE 6.x" PlatformMin="6.0" PlatformMax="1000" DeviceName="CE6">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="Palm PC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+					<Platform PlatformName="Jupiter"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="2048" DisplayName="Pocket PC Windows Mobile 5.x" PlatformMin="4.0" PlatformMax="5.1" DeviceName="PPC500" PlatformString="PocketPC" BuildMaxScreenSupport="0xE0000000">
+      </MobileDevice>
+      <MobileDevice Mask="4096" DisplayName="Windows CE 5.x" PlatformMin="5.0" PlatformMax="5.9" DeviceName="CE5">
+			<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="Palm PC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+					<Platform PlatformName="Jupiter"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="8192" DisplayName="Smartphone Windows Mobile 5.x" PlatformMin="4.0" PlatformMax="5.1" DeviceName="SMARTPHONE2005" PlatformString="Smartphone" BuildMaxScreenSupport="0xE0000000">
+			</MobileDevice>
+			<MobileDevice Mask="512" DisplayName="Pocket PC 2003" PlatformMin="3.0" PlatformMax="3.9" DeviceName="PPC420" PlatformString="PocketPC" BuildMaxScreenSupport="0xE0000000">
+      </MobileDevice>
+      <MobileDevice Mask="1024" DisplayName="Smartphone 2003" PlatformMin="3.0" PlatformMax="3.9" DeviceName="SMARTPHONE2003" PlatformString="Smartphone" BuildMaxScreenSupport="0xE0000000">
+      </MobileDevice>
+			<MobileDevice Mask="128" DisplayName="Windows CE .NET (4.x)" PlatformMin="3.0" PlatformMax="4.9" DeviceName="CE4" BuildMaxScreenSupport="0xE0000000">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="Palm PC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+					<Platform PlatformName="Jupiter"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="64" DisplayName="Pocket PC 2002" PlatformMin="2.99" PlatformMax="3.10" DeviceName="PPC202" BuildMaxScreenSupport="0xE0000000">
+        <UnsupportedPlatforms>
+          <Platform PlatformName="HPC"/>
+          <Platform PlatformName="Palm PC"/>
+          <Platform PlatformName="Palm PC2"/>
+          <Platform PlatformName="Smartphone"/>
+          <Platform PlatformName="Jupiter"/>
+        </UnsupportedPlatforms>
+      </MobileDevice>
+			<MobileDevice Mask="256" DisplayName="Smartphone 2002" PlatformMin="0.10" PlatformMax="2.90" DeviceName="SMARTPHONE2002">
+        <UnsupportedPlatforms>
+          <Platform PlatformName="HPC"/>
+          <Platform PlatformName="Palm PC"/>
+          <Platform PlatformName="Palm PC2"/>
+          <Platform PlatformName="PocketPC"/>
+          <Platform PlatformName="Jupiter"/>
+        </UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="16" DisplayName="Pocket PC" PlatformMin="2.99" PlatformMax="3.10" DeviceName="PPC300">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+					<Platform PlatformName="Jupiter"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="8" DisplayName="Palm-size PC 2.11" PlatformMin="2.11" PlatformMax="2.11" DeviceName="PPC211">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+					<Platform PlatformName="Jupiter"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="4" DisplayName="Palm-size PC 2.01" PlatformMin="2.01" PlatformMax="2.10" DeviceName="PPC201">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+					<Platform PlatformName="Jupiter"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="32" DisplayName="Handheld PC 2000" PlatformMin="3.00" PlatformMax="3.10" DeviceName="HPC2000">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="Palm PC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="2" DisplayName="Handheld PC Pro" PlatformMin="2.11" PlatformMax="2.11" DeviceName="HPCPro">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="HPC"/>
+					<Platform PlatformName="Palm PC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+			<MobileDevice Mask="1" DisplayName="Handheld PC 2.0" PlatformMin="2.00" PlatformMax="2.00" DeviceName="HPC">
+				<UnsupportedPlatforms>
+					<Platform PlatformName="Palm PC"/>
+					<Platform PlatformName="Palm PC2"/>
+					<Platform PlatformName="PocketPC"/>
+					<Platform PlatformName="Smartphone"/>
+					<Platform PlatformName="Jupiter"/>
+				</UnsupportedPlatforms>
+			</MobileDevice>
+		</MobileDevices>
+ 		<MobileRedists>
+ 			<MobileRedist Name="NetCompactFramework1x" DisplayName=".NET Compact Framework 1.0" IniFile="CFAppMgr.ini" IniSection="DOTNETCF" IniValue="DotNetCF" CabFileSubFolder="DotNetCFCabs" SourceFolder="SourceFolderCF">
+				<ShortCabFileNames>
+					<ShortCabFileExt FindWhat="netcf.all." ReplaceWith=""/>
+					<ShortCabFileExt FindWhat="netcf.core." ReplaceWith=""/>
+				</ShortCabFileNames>
+			</MobileRedist>
+ 			<MobileRedist Name="NetCompactFramework2x" DisplayName=".NET Compact Framework 2.0" IniFile="CF2AppMgr.ini" IniSection="DOTNETCF2" IniValue="DotNetCF2" CabFileSubFolder="DotNetCF2Cabs" SourceFolder="SourceFolderCF2">
+				<ShortCabFileNames>
+					<ShortCabFileExt FindWhat="NETCFv2." ReplaceWith=""/>
+				</ShortCabFileNames>
+			</MobileRedist>
+ 			<MobileRedist Name="NetCompactFramework35x" DisplayName=".NET Compact Framework 3.5" IniFile="CF35AppMgr.ini" IniSection="DOTNETCF35" IniValue="DotNetCF35" CabFileSubFolder="DotNetCF35Cabs" SourceFolder="SourceFolderCF35">
+				<ShortCabFileNames>
+					<ShortCabFileExt FindWhat="NETCFv35." ReplaceWith=""/>
+				</ShortCabFileNames>
+			</MobileRedist>
+ 			<MobileRedist Name="SQLClient" DisplayName="Microsoft SQL Client 1.0" IniFile="SQLCEClientAppMgr.ini" IniSection="SQLCLIENT" IniValue="SQLCEClient" CabFileSubFolder="CESQLClientCabs" SourceFolder="SourceFolderSQLClient10">
+				<ShortCabFileNames>
+					<ShortCabFileExt FindWhat="sql." ReplaceWith="c."/>
+				</ShortCabFileNames>
+			</MobileRedist>
+ 			<MobileRedist Name="SQLServer" DisplayName="Microsoft SQLCE 2.0" IniFile="SQLCEServerAppMgr.ini" IniSection="SQLSERVER" IniValue="SQLCEServer" CabFileSubFolder="CESQLServerCabs" SourceFolder="SourceFolderSQLDev20">
+				<ShortCabFileNames>
+					<ShortCabFileExt FindWhat="sqlce." ReplaceWith="s."/>
+				</ShortCabFileNames>
+			</MobileRedist>
+ 			<MobileRedist Name="SQLDev" DisplayName="Microsoft SQLCE 2.0 Dev"  IniFile="SQLCEDevAppMgr.ini" IniSection="SQLDEV" IniValue="SQLCEDev" CabFileSubFolder="CESQLDevCabs" SourceFolder="SourceFolderSQLDev20">
+				<ShortCabFileNames>
+					<ShortCabFileExt FindWhat="sqlce." ReplaceWith="d."/>
+					<ShortCabFileExt FindWhat="dev." ReplaceWith=""/>
+				</ShortCabFileNames>
+			</MobileRedist>
+ 			<MobileRedist Name="SQLClient2" DisplayName="Microsoft SQL Client 2.0" IniFile="SQLCEClient2AppMgr.ini" IniSection="SQLCLIENT2" IniValue="SQLCEClient2" CabFileSubFolder="CESQLClient2Cabs" SourceFolder="SourceFolderSQLClient20" ProductCode="{3F47B6A1-D192-1033-AC6B-2F2F0F92F0CE}"/>
+ 			<MobileRedist Name="SQLMobile2005" DisplayName="Microsoft SQL Mobile 2005"  IniFile="SQLCEServer2AppMgr.ini" IniSection="SQLSERVER2" IniValue="SQLCEServer2" CabFileSubFolder="CESQLServer2Cabs" SourceFolder="SourceFolderSQLDev30" ProductCode="{3F47B6A1-D192-1033-AC6B-2F2F0F92F0CE}"/>
+ 			<MobileRedist Name="SQLRepMobile2005" DisplayName="Microsoft SQL Mobile 2005 Replication" IniFile="SQLCEDev2AppMgr.ini" IniSection="SQLDEV2" IniValue="SQLCEDev2" CabFileSubFolder="CESQLDev2Cabs" SourceFolder="SourceFolderSQLDev30" ProductCode="{3F47B6A1-D192-1033-AC6B-2F2F0F92F0CE}"/>
+ 			<MobileRedist Name="SQLServer31" DisplayName="Microsoft SQLCE 3.1" IniFile="SQLCEServer31AppMgr.ini" IniSection="SQLSERVER31" IniValue="SQLServer31" CabFileSubFolder="CESQLServer31Cabs" SourceFolder="SourceFolderSQLDev31" ProductCode="{50A57730-A087-1033-8F5A-C72D3DD9DE89}"/>
+ 			<MobileRedist Name="SQLDev31" DisplayName="Microsoft SQLCE 3.1 Dev" IniFile="SQLCEDev31AppMgr.ini" IniSection="SQLDEV31" IniValue="SQLCEDev31" CabFileSubFolder="CESQLDev15Cabs" SourceFolder="SourceFolderSQLDev31" ProductCode="{50A57730-A087-1033-8F5A-C72D3DD9DE89}"/>
+ 			<MobileRedist Name="SQLClient35" DisplayName="Microsoft SQL Client 3.5" IniFile="SQLCEClient35AppMgr.ini" IniSection="SQLCLIENT35" IniValue="SQLClient35" CabFileSubFolder="CESQLClient35Cabs" SourceFolder="SourceFolderSQLClient35" ProductCode="{241F2BF7-69EB-42A4-9156-96B2426C7504}"/>
+ 			<MobileRedist Name="SQLServer35" DisplayName="Microsoft SQLCE 3.5" IniFile="SQLCEServer35AppMgr.ini" IniSection="SQLSERVER35" IniValue="SQLServer35" CabFileSubFolder="CESQLServer35Cabs" SourceFolder="SourceFolderSQLDev35" ProductCode="{241F2BF7-69EB-42A4-9156-96B2426C7504}"/>
+ 			<MobileRedist Name="SQLDev35" DisplayName="Microsoft SQLCE 3.5 Dev" IniFile="SQLCEDev35AppMgr.ini" IniSection="SQLDEV35" IniValue="SQLCEDev35" CabFileSubFolder="CESQLDev35Cabs" SourceFolder="SourceFolderSQLDev35" ProductCode="{241F2BF7-69EB-42A4-9156-96B2426C7504}"/>
+ 		</MobileRedists>
+ 		<MobileRedistPaths>
+ 			<MobileRedistPath PathVar="&lt;CompactFrameworkSDK&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework" RegName="sdkInstallRoot"/>
+ 			<MobileRedistPath PathVar="&lt;CompactFramework2SDK&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v2.0.0.0\InstallRoot" RegName=""/>
+ 			<MobileRedistPath PathVar="&lt;CompactFramework35SDK&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v3.5.0.0\InstallRoot" RegName=""/>
+ 			<MobileRedistPath PathVar="&lt;SQLClient10&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v1.0.5000\WindowsCE\AssemblyFoldersEx\SqlClient" RegName=""/>
+ 			<MobileRedistPath PathVar="&lt;SQLClient20&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v2.0.0.0\WindowsCE\AssemblyFoldersEx\SqlClient" RegName=""/>
+ 			<MobileRedistPath PathVar="&lt;SQLDev20&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v1.0.5000\WindowsCE\AssemblyFoldersEx\SqlMobile" RegName=""/>
+ 			<MobileRedistPath PathVar="&lt;SQLDev30&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v2.0.0.0\WindowsCE\AssemblyFoldersEx\SqlMobile" RegName=""/>
+ 			<MobileRedistPath PathVar="&lt;SQLClient35&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v3.5.0.0\WindowsCE\AssemblyFoldersEx\SqlClient" RegName=""/>
+ 			<MobileRedistPath PathVar="&lt;SQLDev35&gt;" RegKey="SOFTWARE\Microsoft\.NETCompactFramework\v3.5.0.0\WindowsCE\AssemblyFoldersEx\Microsoft SQL Server Compact Edition" RegName=""/>
+ 		</MobileRedistPaths>
+	</ISMobile>
+	<PEFileExtensions default="EXE|DLL|OCX|VXD|CHM|HLP|TLB|AX"/>
+	<VSIConverter>
+		<Prereqs>
+			<Prereq Name="Microsoft .NET Framework 4 (x86 and x64)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft .NET Framework 4.0 Full.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft .NET Framework 4 Client Profile (x86 and x64)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft .NET Framework 4.0 Client.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft Visual F# Runtime for .NET 2.0">
+				<ISPrereqs>
+					<ISPrereq Name="FSharp Redistributable Package 2.0.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft Visual F# Runtime for .NET 4.0">
+				<ISPrereqs>
+					<ISPrereq Name="FSharp Redistributable Package 4.0.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name=".NET Framework 3.5 SP1 Client Profile"/>
+			<Prereq Name=".NET Framework 3.5 SP1">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft .NET Framework 3.5 SP1.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft Office 2007 Primary Interop Assemblies">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft Office 2007 PIA.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft Visual Studio 2010 Report Viewer">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft ReportViewer 2010.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="SQL Server Compact 3.5 SP2">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft SQL CE 3.5 SP2.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="SQL Server 2008 Express">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft SQL Server 2008 Express SP1 (x86).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="SQL Server 2005 Express Edition SP2 (x86)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft SQL Server 2005 Express SP3 (x86).prq"/>
+				</ISPrereqs>
+			</Prereq>
+
+			<Prereq Name="Microsoft Visual Studio 2010 Tools for Office Runtime (x86 and x64)"/>
+			<Prereq Name="Visual C++ 2008 Runtime Libraries (x86)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft Visual C++ 2008 Redistributable Package (x86).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Visual C++ 2010 Runtime Libraries (IA64)"/>
+			<Prereq Name="Visual C++ 2010 Runtime Libraries (x64)"/>
+			<Prereq Name="Visual C++ 2010 Runtime Libraries (x86)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft Visual C++ 2010 Redistributable Package (x86).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Windows Installer 3.1">
+				<ISPrereqs>
+					<ISPrereq Name="Windows Installer 3.1 (x86).prq"/>
+					<ISPrereq Name="Windows Installer 3.1 for Windows Server 2003 SP1 (IA64).prq"/>
+					<ISPrereq Name="Windows Installer 3.1 for Windows Server 2003 SP1 (x64).prq"/>
+					<ISPrereq Name="Windows Installer 3.1 for Windows Server 2003 SP1 (x86).prq"/>
+					<ISPrereq Name="Windows Installer 3.1 for Windows XP (x64).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Windows Installer 4.5">
+				<ISPrereqs>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Server 2003 (IA64).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Server 2003 and XP (x64).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Server 2003 SP1 and later (x86).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Server 2008 (IA64).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Server 2008 (x64).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Server 2008 (x86).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Vista (x64).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows Vista (x86).prq"/>
+					<ISPrereq Name="Windows Installer 4.5 for Windows XP SP2 and later (x86).prq"/>
+				</ISPrereqs>
+
+			</Prereq>
+			<Prereq Name="Crystal Reports for .NET Framework 2.0"/>
+			<Prereq Name="Microsoft Data Access Components 2.8">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft Data Access Components (MDAC) 2.8.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft Visual J# .NET Redistributable Package 2.0">
+				<ISPrereqs>
+					<ISPrereq Name="Visual JSharp .NET Redistributable Package 2.0.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name=".NET Framework 2.0">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft .NET Framework 2.0 SP2.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft Visual Studio 2005 Report Viewer"/>
+			<Prereq Name="SQL Server 2005 Express Edition">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft SQL Server 2005 Express SP3 (x86).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Visual C++ Runtime Libraries (x64)"/>
+			<Prereq Name="Visual C++ Runtime Libraries (x86)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft Visual C++ 2005 SP1 Redistributable Package (x86).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Windows Installer 2.0">
+				<ISPrereqs>
+					<ISPrereq Name="Windows Installer 2.0 (NT-Based).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Crystal Reports Basic for Visual Studio 2008 (x86, x64)">
+				<ISPrereqs>
+					<ISPrereq Name="Crystal Reports Basic for Visual Studio 2008 (x86).prq"/>
+					<ISPrereq Name="Crystal Reports Basic for Visual Studio 2008 (x64).prq"/>
+					<ISPrereq Name="Crystal Reports Basic for Visual Studio 2008 (IA64).prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name=".NET Framework 2.0 (x86)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft .NET Framework 2.0 SP2.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name=".NET Framework 3.0 (x86)">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft .NET Framework 3.0.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name=".NET Framework 3.5">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft .NET Framework 3.5.prq"/>
+				</ISPrereqs>
+			</Prereq>
+			<Prereq Name="Microsoft Visual Studio 2008 Report Viewer"/>
+			<Prereq Name="Visual Studio Tools for the Office system 3.0 Runtime Service Pack 1"/>
+			<Prereq Name="Microsoft Visual Basic PowerPacks 1.2">
+				<ISPrereqs>
+					<ISPrereq Name="Microsoft Visual Basic Power Packs 10.0.prq"/>
+				</ISPrereqs>
+			</Prereq>
+		</Prereqs>
+	</VSIConverter>
+  <Virtualization>
+    <!-- Use the GlobalBuildRedirectFolder element to specify a folder location in which to 
+         build all virtual packages. Specify an existing path without any quotes (for example: 
+         <GlobalBuildRedirectFolder>\\NetworkFolder\AppV\GlobalRedirect</GlobalBuildRedirectFolder>).-->
+    <GlobalBuildRedirectFolder></GlobalBuildRedirectFolder>
+    <Properties>
+      <!--Use this section to provide a global default for any setting that is found in the ISVirtualPackage table-->
+      <!--<Property Name="AppVRuntimeDrive" Value="G:"/>-->
+      <!--<Property Name="AppVServerURLPath" Value="%PackageName%_v%PackageVersion%" />-->
+    </Properties>
+  </Virtualization>
+</DevStudio>

@@ -7,13 +7,16 @@ namespace WotDossier.Dal.Mappings
     /// </summary>
     public class TankHistoricalBattleStatisticEntityMapping : ClassMapBase<TankHistoricalBattleStatisticEntity>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TankHistoricalBattleStatisticEntityMapping"/> class.
+        /// </summary>
         public TankHistoricalBattleStatisticEntityMapping()
         {
-			Map(v => v.Updated, "Updated");
-            Map(v => v.Raw, "Raw").CustomSqlType("BinaryBlob");
-			Map(v => v.TankId, "TankId").ReadOnly();
-            Map(v => v.Version, "Version");
-            Map(v => v.BattlesCount, "BattlesCount");
+			Map(v => v.Updated);
+            Map(v => v.Raw).CustomSqlType("BinaryBlob");
+			Map(v => v.TankId).ReadOnly();
+            Map(v => v.Version);
+            Map(v => v.BattlesCount);
 		
 			References(v => v.TankIdObject).Column(Column(v => v.TankId)).Insert();
         }

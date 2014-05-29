@@ -69,7 +69,7 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
                 CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
                 CompositionContainerFactory.Instance.Register<Applications.Logic.ReplaysManager, Applications.Logic.ReplaysManager>();
-                CompositionContainerFactory.Instance.Register<ISessionStorage, NHibernateSessionStorage>();
+                CompositionContainerFactory.Instance.Register<ISessionStorage, DesktopAppSessionStorage>();
 
                 CompositionContainerFactory.Instance.Register<IAddReplayFolderView, AddReplayFolderWindow>();
                 CompositionContainerFactory.Instance.RegisterSingle<IShellView, MainWindow>();

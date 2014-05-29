@@ -9,29 +9,32 @@ namespace WotDossier.Dal.Mappings
     public class StatisticClassMapBase<T> : ClassMapBase<T>
         where T : StatisticEntity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StatisticClassMapBase{T}"/> class.
+        /// </summary>
         public StatisticClassMapBase()
         {
-            Map(v => v.Updated, StatisticEntity.PropUpdated);
-            Map(v => v.Wins, StatisticEntity.PropWins);
-            Map(v => v.Losses, StatisticEntity.PropLosses);
-            Map(v => v.SurvivedBattles, StatisticEntity.PropSurvivedBattles);
-            Map(v => v.Xp, StatisticEntity.PropXp);
-            Map(v => v.BattleAvgXp, StatisticEntity.PropBattleAvgXp);
-            Map(v => v.MaxXp, StatisticEntity.PropMaxXp);
-            Map(v => v.Frags, StatisticEntity.PropFrags);
-            Map(v => v.Spotted, StatisticEntity.PropSpotted);
-            Map(v => v.HitsPercents, StatisticEntity.PropHitsPercents);
-            Map(v => v.DamageDealt, StatisticEntity.PropDamageDealt);
-            Map(v => v.DamageTaken, StatisticEntity.PropDamageTaken);
-            Map(v => v.CapturePoints, StatisticEntity.PropCapturePoints);
-            Map(v => v.DroppedCapturePoints, StatisticEntity.PropDroppedCapturePoints);
-            Map(v => v.BattlesCount, StatisticEntity.PropBattlesCount);
-            Map(v => v.AvgLevel, StatisticEntity.PropAvgLevel);
-            Map(v => v.PlayerId, StatisticEntity.PropPlayerId).Insert();
+            Map(v => v.Updated);
+            Map(v => v.Wins);
+            Map(v => v.Losses);
+            Map(v => v.SurvivedBattles);
+            Map(v => v.Xp);
+            Map(v => v.BattleAvgXp);
+            Map(v => v.MaxXp);
+            Map(v => v.Frags);
+            Map(v => v.Spotted);
+            Map(v => v.HitsPercents);
+            Map(v => v.DamageDealt);
+            Map(v => v.DamageTaken);
+            Map(v => v.CapturePoints);
+            Map(v => v.DroppedCapturePoints);
+            Map(v => v.BattlesCount);
+            Map(v => v.AvgLevel);
+            Map(v => v.PlayerId).Insert();
 
-            Map(v => v.RBR, StatisticEntity.PropRBR);
-            Map(v => v.WN8Rating, StatisticEntity.PropWN8Rating);
-            Map(v => v.PerformanceRating, StatisticEntity.PropPerformanceRating);
+            Map(v => v.RBR);
+            Map(v => v.WN8Rating);
+            Map(v => v.PerformanceRating);
         }
     }
 }

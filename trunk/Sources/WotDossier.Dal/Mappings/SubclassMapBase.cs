@@ -9,6 +9,9 @@ namespace WotDossier.Dal.Mappings
     public class SubclassMapBase<T> : SubclassMap<T>
           where T : EntityBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SubclassMapBase{T}"/> class.
+        /// </summary>
         public SubclassMapBase()
         {
             KeyColumn(ReflectionHelper.GetMember<T>(v=>v.Id).Name);

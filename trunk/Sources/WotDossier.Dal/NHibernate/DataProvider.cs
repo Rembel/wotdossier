@@ -5,11 +5,9 @@ using System.IO;
 using System.Linq.Expressions;
 using System.Reflection;
 using Common.Logging;
-using Croc.Aws.DataAccess.NHibernate;
 using FluentNHibernate.Cfg;
 using NHibernate;
 using NHibernate.Cfg;
-using NHibernate.Event;
 using NHibernate.Linq;
 using WotDossier.Domain.Entities;
 
@@ -89,7 +87,6 @@ namespace WotDossier.Dal.NHibernate
                     if (_factory == null)
                     {
                         Configuration configuration = new Configuration().Configure();
-                        configuration.EventListeners.FlushEntityEventListeners = new IFlushEntityEventListener[] { new FlushEntityEventListener() };
                         _factory = InitFluentMappings(configuration).BuildSessionFactory();
                     }
                 }
@@ -263,19 +260,16 @@ namespace WotDossier.Dal.NHibernate
         public object Save<T>(T entity)
             where T:EntityBase
         {
-
             try
             {
-
                 var id = CurrentSession.Save(entity);
-                //TODO: CR: Isn't it dangerous for performance?
                 CurrentSession.Flush();
                 return id;
             }
             catch (StaleObjectStateException e)
             {
                 Log.Error("Ошибка при сохранении", e);
-                throw new ConcurrencyException(e.EntityName, e.Identifier);
+                throw;
             }
         }
 

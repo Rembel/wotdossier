@@ -3892,6 +3892,9 @@
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectFolder&gt;\..\WotDossier\app_icon.ico</td><td>0</td></row>
 		<row><td>NewShortcut1_0E5DBDC52C5149EE92F6A6F3B4D7B3A4.exe</td><td/><td>\WotDossier.Primary output</td><td>0</td></row>
+		<row><td>NewShortcut1_629FB417A4384FE2B45957638C020A70.exe</td><td/><td>\WotDossier.ReplaysManager.Primary output</td><td>0</td></row>
+		<row><td>NewShortcut1_F279B8CBF4FB42819E96E8D39E2D5094.exe</td><td/><td>\WotDossier.ReplaysManager.Primary output</td><td>0</td></row>
+		<row><td>NewShortcut2_CCC539675774403490C189675059257B.exe</td><td/><td>\WotDossier.ReplaysManager.Primary output</td><td>0</td></row>
 		<row><td>_Built1_0EE87CAAED574457A9499DEBF0B3186B.exe</td><td/><td>\WotDossier.Primary output</td><td>0</td></row>
 		<row><td>_Built_3890A16BCA094C9EBA5FF2E52617F76D.exe</td><td/><td>\WotDossier.Primary output</td><td>0</td></row>
 	</table>
@@ -4574,7 +4577,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>NewShortcut1</td><td>wotdos_1_wotdossier</td><td>##ID_STRING6##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING7##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td/><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut2</td><td>DesktopFolder</td><td>##ID_STRING7##</td><td>WotDossier.ReplaysManager.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>_Built</td><td>wotdos_1_wotdossier</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>_Built1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>WotDossier.Primary_output</td><td>AlwaysInstall</td><td/><td/><td/><td/><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>

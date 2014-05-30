@@ -73,6 +73,7 @@
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
     <Compile Include="Interfaces\IRandomBattlesAchievements.cs" />
     <Compile Include="Interfaces\IHistoricalBattlesAchievements.cs" />
+    <Compile Include="Interfaces\IStatisticExtended.cs" />
     <Compile Include="Interfaces\IStatisticBase.cs" />
     <Compile Include="Interfaces\IStatisticBattleAwards.cs" />
     <Compile Include="Interfaces\IStatisticBattles.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Interfaces\IStatisticRatings.cs" />
     <Compile Include="Interfaces\IStatisticSeries.cs" />
     <Compile Include="Interfaces\IStatisticSpecialAwards.cs" />
-    <Compile Include="Interfaces\IStatisticTime.cs" />
     <Compile Include="Interfaces\IStatisticXp.cs" />
     <Compile Include="Interfaces\ITeamBattlesAchievements.cs" />
     <Compile Include="Entities\TankStatisticEntity.cs" />
@@ -102,6 +102,7 @@
     <Compile Include="Entities\TankStatisticEntityBase.cs" />
     <Compile Include="Interfaces\ITankRowBase.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MarkOfMastery.cs" />
     <Compile Include="Medal.cs" />
     <Compile Include="PeriodSettings.cs" />
     <Compile Include="Common\CommonStatGroup.cs" />

@@ -286,19 +286,24 @@ namespace WotDossier.Applications.ViewModel
         private void OnExportToCsv()
         {
             CsvExportProvider provider = new CsvExportProvider();
-            provider.Export(_tanks, new List<Type>
+            List<Type> exportInterfaces = new List<Type>();
+            exportInterfaces.Add(typeof(ITankRowBase));
+            exportInterfaces.Add(typeof(IStatisticBase));
+            exportInterfaces.Add(typeof(IStatisticExtended));
+
+            if (BattleModeSelector.BattleMode == BattleMode.RandomCompany)
             {
-                typeof(ITankRowBase),
-                typeof(IStatisticXp),
-                typeof(IStatisticBattles),
-                typeof(IStatisticFrags),
-                typeof(IStatisticDamage),
-                typeof(IStatisticTime),
-                typeof(IStatisticPerformance),
-                typeof(IRandomBattlesAchievements),
-                typeof(IHistoricalBattlesAchievements),
-                typeof(ITeamBattlesAchievements),
-            });
+                exportInterfaces.Add(typeof (IRandomBattlesAchievements));
+            }
+            if (BattleModeSelector.BattleMode == BattleMode.HistoricalBattle)
+            {
+                exportInterfaces.Add(typeof (IHistoricalBattlesAchievements));
+            }
+            if (BattleModeSelector.BattleMode == BattleMode.TeamBattle)
+            {
+                exportInterfaces.Add(typeof (ITeamBattlesAchievements));
+            }
+            provider.Export(_tanks, exportInterfaces);
         }
 
         private void OnExportFragsToCsv()

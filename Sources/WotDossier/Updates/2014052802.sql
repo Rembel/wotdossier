@@ -1,0 +1,9 @@
+﻿ALTER TABLE [PlayerStatistic] ADD [MaxFrags] int  NOT NULL default(0);
+ALTER TABLE [PlayerStatistic] ADD [MaxDamage] int  NOT NULL default(0);
+ALTER TABLE [PlayerStatistic] ADD [MarkOfMastery] int  NOT NULL default(0);
+ALTER TABLE [HistoricalBattlesStatistic] ADD [MaxFrags] int  NOT NULL default(0);
+ALTER TABLE [HistoricalBattlesStatistic] ADD [MaxDamage] int  NOT NULL default(0);
+ALTER TABLE [HistoricalBattlesStatistic] ADD [MarkOfMastery] int  NOT NULL default(0);
+ALTER TABLE [TeamBattlesStatistic] ADD [MaxFrags] int  NOT NULL default(0);
+ALTER TABLE [TeamBattlesStatistic] ADD [MaxDamage] int  NOT NULL default(0);
+ALTER TABLE [TeamBattlesStatistic] ADD [MarkOfMastery] int  NOT NULL default(0);

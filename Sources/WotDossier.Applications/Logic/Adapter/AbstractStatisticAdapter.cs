@@ -17,10 +17,12 @@ namespace WotDossier.Applications.Logic.Adapter
         public double BattleAvgXp { get; set; }
         public int MaxXp { get; set; }
         public int Frags { get; set; }
+        public int MaxFrags { get; set; }
         public int Spotted { get; set; }
         public double HitsPercents { get; set; }
         public int DamageDealt { get; set; }
         public int DamageTaken { get; set; }
+        public int MaxDamage { get; set; }
         public int CapturePoints { get; set; }
         public int DroppedCapturePoints { get; set; }
         public double AvgLevel { get; set; }
@@ -29,6 +31,7 @@ namespace WotDossier.Applications.Logic.Adapter
         public double PerformanceRating { get; set; }
         public DateTime Updated { get; set; }
         public DateTime Created { get; set; }
+        public int MarkOfMastery { get; set; }
 
         protected AbstractStatisticAdapter()
         {
@@ -47,12 +50,15 @@ namespace WotDossier.Applications.Logic.Adapter
             }
             MaxXp = tanks.Max(x => statPredicate(x).maxXP);
             Frags = tanks.Sum(x => statPredicate(x).frags);
+            MaxFrags = tanks.Max(x => statPredicate(x).maxFrags);
             Spotted = tanks.Sum(x => statPredicate(x).spotted);
             HitsPercents = tanks.Sum(x => statPredicate(x).hits) / ((double)tanks.Sum(x => statPredicate(x).shots)) * 100.0;
             DamageDealt = tanks.Sum(x => statPredicate(x).damageDealt);
             DamageTaken = tanks.Sum(x => statPredicate(x).damageReceived);
+            MaxDamage = tanks.Sum(x => statPredicate(x).maxDamage);
             CapturePoints = tanks.Sum(x => statPredicate(x).capturePoints);
             DroppedCapturePoints = tanks.Sum(x => statPredicate(x).droppedCapturePoints);
+            MarkOfMastery = tanks.Count(x => x.Achievements.markOfMastery == (int)Domain.MarkOfMastery.Master);
             Updated = tanks.Max(x => x.Common.lastBattleTimeR);
             if (BattlesCount > 0)
             {
@@ -73,7 +79,9 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.Xp = Xp;
             entity.BattleAvgXp = BattleAvgXp;
             entity.MaxXp = MaxXp;
+            entity.MaxDamage = MaxDamage;
             entity.Frags = Frags;
+            entity.MaxFrags = MaxFrags;
             entity.Spotted = Spotted;
             entity.HitsPercents = HitsPercents;
             entity.DamageDealt = DamageDealt;
@@ -85,6 +93,7 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.RBR = RBR;
             entity.WN8Rating = WN8Rating;
             entity.PerformanceRating = PerformanceRating;
+            entity.MarkOfMastery = MarkOfMastery;
         }
     }
 }

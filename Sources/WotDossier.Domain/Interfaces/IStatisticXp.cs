@@ -4,6 +4,5 @@
     {
         int Xp { get; set; }
         int MaxXp { get; set; }
-        double AvgXp { get; }
     }
 }

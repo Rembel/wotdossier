@@ -1,4 +1,5 @@
 using System;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Server;
 
 namespace WotDossier.Domain.Entities
@@ -7,7 +8,7 @@ namespace WotDossier.Domain.Entities
     /// Base object representation for tables of type 'Statistic'.
     /// </summary>
     [Serializable]
-    public abstract class StatisticEntity : EntityBase
+    public abstract class StatisticEntity : EntityBase, IStatisticBase
     {
         /// <summary>
         /// Gets/Sets the field "PlayerId".
@@ -60,6 +61,11 @@ namespace WotDossier.Domain.Entities
         public virtual int Frags { get; set; }
 
         /// <summary>
+        /// Gets or sets the maximum frags.
+        /// </summary>
+        public virtual int MaxFrags { get; set; }
+
+        /// <summary>
         /// Gets/Sets the field "Spotted".
         /// </summary>
         public virtual int Spotted { get; set; }
@@ -80,6 +86,11 @@ namespace WotDossier.Domain.Entities
         public virtual int DamageTaken { get; set; }
 
         /// <summary>
+        /// Gets or sets the maximum damage.
+        /// </summary>
+        public virtual int MaxDamage { get; set; }
+
+        /// <summary>
         /// Gets/Sets the field "CapturePoints".
         /// </summary>
         public virtual int CapturePoints { get; set; }
@@ -88,6 +99,11 @@ namespace WotDossier.Domain.Entities
         /// Gets/Sets the field "DroppedCapturePoints".
         /// </summary>
         public virtual int DroppedCapturePoints { get; set; }
+
+        /// <summary>
+        /// Gets or sets the mark of mastery.
+        /// </summary>
+        public virtual int MarkOfMastery { get; set; }
 
         /// <summary>
         /// Gets/Sets the AvgLevel object.

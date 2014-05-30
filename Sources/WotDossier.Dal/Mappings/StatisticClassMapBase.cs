@@ -22,14 +22,17 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.BattleAvgXp);
             Map(v => v.MaxXp);
             Map(v => v.Frags);
+            Map(v => v.MaxFrags);
             Map(v => v.Spotted);
             Map(v => v.HitsPercents);
             Map(v => v.DamageDealt);
             Map(v => v.DamageTaken);
+            Map(v => v.MaxDamage);
             Map(v => v.CapturePoints);
             Map(v => v.DroppedCapturePoints);
             Map(v => v.BattlesCount);
             Map(v => v.AvgLevel);
+            Map(v => v.MarkOfMastery);
             Map(v => v.PlayerId).Insert();
 
             Map(v => v.RBR);

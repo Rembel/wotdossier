@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using WotDossier.Common.Reflection;
 
 namespace WotDossier.Common.Collections
@@ -40,7 +41,22 @@ namespace WotDossier.Common.Collections
             {
                 SortDescriptions.Clear();
             }
-            SortDescriptions.Add(new SortDescription(propertyName, direction));
+
+            SortDescription existDescription = SortDescriptions.FirstOrDefault(x => x.PropertyName.Equals(propertyName));
+
+            int index = SortDescriptions.IndexOf(existDescription);
+
+            var sortDescription = new SortDescription(propertyName, direction);
+
+            if (index >= 0)
+            {
+                SortDescriptions[index] = sortDescription;
+            }
+            else
+            {
+                SortDescriptions.Add(sortDescription);    
+            }
+
             IComparer<T> comparerLast = new MultiPropertyComparer<T>(SortDescriptions);
             int totalCount = Count;
             int countToSort = totalCount > count ? totalCount - count : 0;

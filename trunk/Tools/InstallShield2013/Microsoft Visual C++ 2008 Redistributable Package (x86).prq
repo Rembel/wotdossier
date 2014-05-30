@@ -17,5 +17,5 @@
 </files>
     <execute file="vcredist_x86.exe" cmdline="/q" cmdlinesilent="/q" returncodetoreboot="3010,8192,1641,1046" requiresmsiengine="1"/>
 <properties Id="{0BE9572E-8558-404f-B0A5-8C347D145655}" Description="This prerequisite installs the Microsoft Visual C++ 2008 SP1 Redistributable Package for x86-based systems." AltPrqURL="http://saturn.installshield.com/is/prerequisites/microsoft visual c++ 2008 sp1 redistributable package (x86).prq"/>
-    <behavior Reboot="2"/>
+    <behavior Reboot="2" Failure="4"/>
 </SetupPrereq>

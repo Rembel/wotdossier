@@ -6,6 +6,7 @@ using System.Windows;
 using Common.Logging;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Framework;
 using WotDossier.Framework.Presentation.Services;
 
 namespace WotDossier.Applications.Update
@@ -44,7 +45,10 @@ namespace WotDossier.Applications.Update
                 MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, info.LatestVersion), ApplicationInfo.ProductName,
                     MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                Download(info);
+                using (new WaitCursor())
+                {
+                    Download(info);
+                }
             }
         }
 

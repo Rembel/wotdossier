@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
@@ -18,6 +19,7 @@ using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
+using WotDossier.Common.Reflection;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
@@ -676,6 +678,31 @@ namespace WotDossier.Test
             uploader.Update(cacheFile, id);
         }
 
+        [Test]
+        public void ComparerTest()
+        {
+            List<SortDescription> sortDescriptions = new List<SortDescription>();
+            sortDescriptions.Add(new SortDescription("PiercedReceived", ListSortDirection.Ascending));
+            sortDescriptions.Add(new SortDescription("BattlesCount", ListSortDirection.Ascending));
 
+            MultiPropertyComparer<ITankStatisticRow> comparer = new MultiPropertyComparer<ITankStatisticRow>(sortDescriptions);
+
+            List<ITankStatisticRow> list = new List<ITankStatisticRow>();
+            list.Add(new TankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 10});
+            list.Add(new TankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 12});
+            list.Add(new TankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 11});
+
+            foreach (var tankStatisticRow in list)
+            {
+                Console.WriteLine("PiercedReceived [{0}] - BattlesCount [{1}]", tankStatisticRow.PiercedReceived, tankStatisticRow.BattlesCount);
+            }
+
+            list.Sort(comparer);
+
+            foreach (var tankStatisticRow in list)
+            {
+                Console.WriteLine("PiercedReceived [{0}] - BattlesCount [{1}]", tankStatisticRow.PiercedReceived, tankStatisticRow.BattlesCount);
+            }
+        }
     }
 }

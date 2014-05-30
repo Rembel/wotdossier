@@ -21,8 +21,11 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         public int DamageDealt { get; set; }
         public int DamageTaken { get; set; }
+        public int MaxDamage { get; set; }
         public int CapturePoints { get; set; }
         public int DroppedCapturePoints { get; set; }
+
+        public int MarkOfMastery { get; set; }
 
         public TimeSpan PlayTime { get; set; }
 

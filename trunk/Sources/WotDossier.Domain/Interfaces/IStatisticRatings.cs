@@ -2,9 +2,6 @@
 {
     public interface IStatisticRatings
     {
-        //int DamageRatingRev1 { get; }
-        int MarkOfMastery { get; set; }
-
         double EffRating { get; }
         double WN7Rating { get; }
         double WN8Rating { get; }

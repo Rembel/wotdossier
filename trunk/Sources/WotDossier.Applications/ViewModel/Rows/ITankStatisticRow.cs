@@ -4,7 +4,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public interface ITankStatisticRow : IStatisticBase, IStatisticBattles, IStatisticDamage, IStatisticFrags, IStatisticPerformance, IStatisticRatings, IStatisticTime, ITankFilterable
+    public interface ITankStatisticRow : IStatisticBase, IStatisticExtended, IStatisticRatings, IRandomBattlesAchievements, ITeamBattlesAchievements, IHistoricalBattlesAchievements, ITankFilterable
     {
         TankIcon Icon { get; set; }
         int TankId { get; set; }
@@ -30,7 +30,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         int XpBefore88 { get; set; }
         int BattlesCountBefore88 { get; set; }
         int BattlesCount88 { get; set; }
-        int MaxDamage { get; set; }
         double AvgOriginalXP { get; }
         double AvgDamageAssisted { get; }
         double AvgDamageAssistedRadio { get; }

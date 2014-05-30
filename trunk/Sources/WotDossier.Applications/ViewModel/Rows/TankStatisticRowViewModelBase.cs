@@ -111,8 +111,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
-        public int MarkOfMastery { get; set; }
-
         #endregion
 
         #region [ IStatisticTime ]
@@ -138,7 +136,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int XpBefore88 { get; set; }
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
-        public int MaxDamage { get; set; }
 
         IEnumerable<ITankStatisticRow> ITankStatisticRow.GetAll()
         {

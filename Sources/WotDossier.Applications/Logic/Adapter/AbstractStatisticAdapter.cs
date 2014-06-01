@@ -55,7 +55,7 @@ namespace WotDossier.Applications.Logic.Adapter
             HitsPercents = tanks.Sum(x => statPredicate(x).hits) / ((double)tanks.Sum(x => statPredicate(x).shots)) * 100.0;
             DamageDealt = tanks.Sum(x => statPredicate(x).damageDealt);
             DamageTaken = tanks.Sum(x => statPredicate(x).damageReceived);
-            MaxDamage = tanks.Sum(x => statPredicate(x).maxDamage);
+            MaxDamage = tanks.Max(x => statPredicate(x).maxDamage);
             CapturePoints = tanks.Sum(x => statPredicate(x).capturePoints);
             DroppedCapturePoints = tanks.Sum(x => statPredicate(x).droppedCapturePoints);
             MarkOfMastery = tanks.Count(x => x.Achievements.markOfMastery == (int)Domain.MarkOfMastery.Master);

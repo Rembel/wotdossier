@@ -270,16 +270,18 @@ namespace WotDossier.Applications.ViewModel.Statistic
             MaxXp = stat.MaxXp;
             Frags = stat.Frags;
             //TODO: field MaxFrags
-            //MaxFrags = stat.MaxFrags;
+            MaxFrags = stat.MaxFrags;
             Spotted = stat.Spotted;
             HitsPercents = stat.HitsPercents;
             DamageDealt = stat.DamageDealt;
             DamageTaken = stat.DamageTaken;
+            MaxDamage = stat.MaxDamage;
             CapturePoints = stat.CapturePoints;
             DroppedCapturePoints = stat.DroppedCapturePoints;
             //Created = stat.PlayerIdObject.Creaded);
             Updated = stat.Updated;
             Tier = stat.AvgLevel;
+            MarkOfMastery = stat.MarkOfMastery;
 
             RBR = stat.RBR;
             PerformanceRating = stat.PerformanceRating;

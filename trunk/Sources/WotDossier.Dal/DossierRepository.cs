@@ -105,7 +105,7 @@ namespace WotDossier.Dal
                     newSnapshot.Update(currentSnapshot);
                 }
 
-                if (serverStatistic != null)
+                if (serverStatistic != null && serverStatistic.Ratings != null)
                 {
                     currentSnapshot.UpdateRatings(serverStatistic.Ratings);
                 }

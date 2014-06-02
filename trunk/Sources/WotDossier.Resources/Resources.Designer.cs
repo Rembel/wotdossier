@@ -4272,6 +4272,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto load statistic.
+        /// </summary>
+        public static string Settings_AutoLoadStatistic {
+            get {
+                return ResourceManager.GetString("Settings_AutoLoadStatistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle mode.
         /// </summary>
         public static string Settings_BattleMode {

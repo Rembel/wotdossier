@@ -12,6 +12,11 @@ namespace WotDossier.Applications.Logic
     /// </summary>
     public static class RatingHelper
     {
+        public const string WG_STATISTIC_LINK_FORMAT = @"http://worldoftanks.{0}/community/accounts/{1}-{2}/";
+        public const string WOTNEWS_STATISTIC_LINK_FORMAT = @"http://wot-news.com/index.php/stat/pstat/ru/{0}";
+        public const string ARNORKIEV_STATISTIC_LINK_FORMAT = @"http://armor.kiev.ua/wot/gamerstat/{0}";
+        public const string NOOBMETER_STATISTIC_LINK_FORMAT = @"http://noobmeter.com/player/{0}/{1}";
+
         /// <summary>
         /// http://wot-news.com/main/post/02172013/1/Izmenenija-v-kalakuljatore
         /// Calcs the ER.

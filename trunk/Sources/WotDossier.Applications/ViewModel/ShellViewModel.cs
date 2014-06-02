@@ -252,30 +252,35 @@ namespace WotDossier.Applications.ViewModel
 
         private void InitCacheMonitor()
         {
-            // Create a new FileSystemWatcher and set its properties.
-            FileSystemWatcher watcher = new FileSystemWatcher();
-            watcher.Path = Folder.GetDossierCacheFolder();
-            
-            // Watch for changes in LastAccess and LastWrite times.
-            watcher.NotifyFilter = NotifyFilters.LastWrite;
-            
-            // Only watch text files.
-            watcher.Filter = "*.dat";
+            AppSettings settings = SettingsReader.Get();
 
-            // Add event handlers.
-            watcher.Changed += (sender, eventArgs) =>
+            if (settings.AutoLoadStatistic)
             {
-                lock (_syncObject)
-                {
-                    if (CanLoad())
-                    {
-                        OnLoad();
-                    }
-                }
-            };
+                // Create a new FileSystemWatcher and set its properties.
+                FileSystemWatcher watcher = new FileSystemWatcher();
+                watcher.Path = Folder.GetDossierCacheFolder();
 
-            // Begin watching.
-            watcher.EnableRaisingEvents = true;
+                // Watch for changes in LastAccess and LastWrite times.
+                watcher.NotifyFilter = NotifyFilters.LastWrite;
+
+                // Only watch text files.
+                watcher.Filter = "*.dat";
+
+                // Add event handlers.
+                watcher.Changed += (sender, eventArgs) =>
+                {
+                    lock (_syncObject)
+                    {
+                        if (CanLoad())
+                        {
+                            OnLoad();
+                        }
+                    }
+                };
+
+                // Begin watching.
+                watcher.EnableRaisingEvents = true;
+            }
         }
 
         private bool CanLoad()

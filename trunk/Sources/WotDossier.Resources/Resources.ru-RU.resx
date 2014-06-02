@@ -2257,4 +2257,7 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <data name="Map_83_kharkiv" xml:space="preserve">
     <value>Харьков</value>
   </data>
+  <data name="Settings_AutoLoadStatistic" xml:space="preserve">
+    <value>Автозагрузка статистики</value>
+  </data>
 </root>

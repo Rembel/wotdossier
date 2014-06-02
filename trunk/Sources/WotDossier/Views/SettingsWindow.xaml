@@ -56,8 +56,8 @@
         <ComboBox Margin="6 6 6 6" Grid.Row="0" Grid.Column="2" ItemsSource="{Binding Servers}" SelectedValue="{Binding AppSettings.Server}" />
         <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="1" Text="{x:Static resources:Resources.Settings_Language}"></TextBlock>
         <ComboBox Margin="6 6 6 6" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Languages}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding AppSettings.Language}" />
-        <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="2" Text="{x:Static resources:Resources.Settings_Period}"/>
-        <CheckBox Margin="6 6 6 6" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Content="{x:Static resources:Resources.Settings_CheckForUpdatesOnStart}" IsChecked="{Binding CheckForUpdates}"/>
+        <CheckBox Margin="6 6 6 6" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Content="{x:Static resources:Resources.Settings_CheckForUpdatesOnStart}" IsChecked="{Binding CheckForUpdates}"/>
+        <CheckBox Margin="6 6 6 6" Grid.Column="2" Grid.Row="2" Content="{x:Static resources:Resources.Settings_AutoLoadStatistic}" IsChecked="{Binding AutoLoadStatistic}"/>
         <Button Margin="6 6 6 6" Grid.Column="2" Grid.Row="4" Content="{x:Static resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
     </Grid>
 </Window>

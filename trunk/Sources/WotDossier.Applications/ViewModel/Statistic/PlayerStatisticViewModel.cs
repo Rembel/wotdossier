@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.Model;
 using WotDossier.Domain.Entities;
 
@@ -240,22 +241,22 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         public string PerformanceRatingLink
         {
-            get { return string.Format(@"http://noobmeter.com/player/{0}/{1}", SettingsReader.Get().Server, Name); }
+            get { return string.Format(RatingHelper.NOOBMETER_STATISTIC_LINK_FORMAT, SettingsReader.Get().Server, Name); }
         }
 
         public string KievArmorRatingLink
         {
-            get { return string.Format(@"http://armor.kiev.ua/wot/gamerstat/{0}", Name); }
+            get { return string.Format(RatingHelper.ARNORKIEV_STATISTIC_LINK_FORMAT, Name); }
         }
 
         public string EffRatingLink
         {
-            get { return string.Format(@"http://wot-news.com/index.php/stat/pstat/ru/{0}", Name); }
+            get { return string.Format(RatingHelper.WOTNEWS_STATISTIC_LINK_FORMAT, Name); }
         }
 
         public string NameLink
         {
-            get { return string.Format(@"http://worldoftanks.{0}/community/accounts/{1}-{2}/", SettingsReader.Get().Server, AccountId, Name); }
+            get { return string.Format(RatingHelper.WG_STATISTIC_LINK_FORMAT, SettingsReader.Get().Server, AccountId, Name); }
         }
 
         public ClanModel Clan { get; set; }

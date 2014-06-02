@@ -5,8 +5,18 @@ namespace WotDossier.Domain.Interfaces
 {
     public interface IStatisticExtended
     {
-        double AvgXp { get; }
+        #region XP
 
+        double AvgXp { get; }
+        int OriginalXP { get; set; }
+        double AvgOriginalXP { get; }
+        int XpBefore88 { get; set; }
+
+        #endregion
+
+        #region Battles
+
+        double SurvivedBattlesPercent { get; }
         int BattlesPerDay { get; set; }
 
         double WinsPercent { get; }
@@ -17,11 +27,13 @@ namespace WotDossier.Domain.Interfaces
 
         double DrawsPercent { get; }
 
-        double SurvivedBattlesPercent { get; }
-
         int SurvivedAndWon { get; set; }
 
         double SurvivedAndWonPercent { get; }
+        int BattlesCountBefore88 { get; set; }
+        int BattlesCount88 { get; set; }
+
+        #endregion
 
         #region Damage
 
@@ -29,10 +41,19 @@ namespace WotDossier.Domain.Interfaces
 
         double AvgDamageDealt { get; }
 
+        double AvgDamageTaken { get; }
         int DamagePerHit { get; }
 
-        #endregion
+        int DamageAssistedTrack { get; set; }
+        int DamageAssistedRadio { get; set; }
 
+        double AvgDamageAssisted { get; }
+        double AvgDamageAssistedRadio { get; }
+        double AvgDamageAssistedTrack { get; }
+        int DamageAssisted { get; }
+
+        #endregion
+        
         #region Frags
 
         double AvgFrags { get; }
@@ -52,6 +73,13 @@ namespace WotDossier.Domain.Interfaces
         double AvgSpotted { get; }
         double AvgCapturePoints { get; }
         double AvgDroppedCapturePoints { get; }
+        double Mileage { get; set; }
+        int ShotsReceived { get; set; }
+        int NoDamageShotsReceived { get; set; }
+        int Pierced { get; set; }
+        int PiercedReceived { get; set; }
+        int HeHitsReceived { get; set; }
+        int HeHits { get; set; }
 
         #endregion
 
@@ -63,6 +91,12 @@ namespace WotDossier.Domain.Interfaces
 
         #endregion
 
-
+        int DamageDealtDelta { get; }
+        int BattlesCountDelta { get; }
+        int WinsDelta { get; }
+        int SpottedDelta { get; }
+        int DroppedCapturePointsDelta { get; }
+        int FragsDelta { get; }
+        double WinsPercentForPeriod { get; }
     }
 }

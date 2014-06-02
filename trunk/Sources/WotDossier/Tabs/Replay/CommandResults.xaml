@@ -6,6 +6,7 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources" xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
+             xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
@@ -51,7 +52,21 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Width="100" Header="{x:Static resources:Resources.Column_Replay_PlayerName}" Binding="{Binding FullName}" Foreground="#5C5A4A" ElementStyle="{StaticResource LTextBlock}" HeaderTemplate="{StaticResource userTemplate}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Width="100" Header="{x:Static resources:Resources.Column_Replay_PlayerName}" 
+                                            HeaderTemplate="{StaticResource userTemplate}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding StatisticLink}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
+                                            <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
+                                        </Hyperlink>
+                                        <ToolTipService.ToolTip>
+                                            <TextBlock Text="{Binding Path=FullName}"></TextBlock>
+                                        </ToolTipService.ToolTip>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn Width="179" Header="{x:Static resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -123,7 +138,7 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <StackPanel Visibility="{Binding OurTeamMember, Converter={x:Static Converters:ObjectToCollapseConverter.Default}}">
                 <TextBlock Margin="10,0,0,0" Text="{x:Static resources:Resources.Label_Replay_EnemyTeam}" FontSize="16"
                            Foreground="#BCBDBE">
@@ -146,7 +161,18 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Width="100" Header="{x:Static resources:Resources.Column_Replay_PlayerName}" Binding="{Binding FullName}" Foreground="#5C5A4A" ElementStyle="{StaticResource LTextBlock}" HeaderTemplate="{StaticResource userTemplate}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Width="100" Header="{x:Static resources:Resources.Column_Replay_PlayerName}" 
+                                            HeaderTemplate="{StaticResource userTemplate}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding StatisticLink}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
+                                            <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
+                                        </Hyperlink>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn Width="179" Header="{x:Static resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

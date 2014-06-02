@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using Common.Logging;
 using WotDossier.Common;
+using WotDossier.Dal;
 
 namespace WotDossier.Applications
 {
@@ -13,17 +13,6 @@ namespace WotDossier.Applications
     {
         private const char SEPARATOR = ';';
         private static readonly ILog Log = LogManager.GetCurrentClassLogger();
-
-        /// <summary>
-        /// The game servers
-        /// </summary>
-        private static readonly Dictionary<string, string> GameServers = new Dictionary<string, string>
-        {
-            {"ru", "worldoftanks.net"},
-            {"eu", "worldoftanks.eu"},
-            {"cn", "worldoftanks.cn"},
-            {"us", "worldoftanks.com"},
-        }; 
 
         /// <summary>
         /// Gets the cache file.
@@ -61,7 +50,7 @@ namespace WotDossier.Applications
                 string playerName = decodFileName.Split(SEPARATOR)[1];
                 string serverName = decodFileName.Split(SEPARATOR)[0];
 
-                if (playerName.Equals(playerId, StringComparison.InvariantCultureIgnoreCase) && serverName.Contains(GameServers[server]))
+                if (playerName.Equals(playerId, StringComparison.InvariantCultureIgnoreCase) && serverName.Contains(Dictionaries.Instance.GameServers[server]))
                 {
                     if (cacheFile == null)
                     {

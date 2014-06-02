@@ -21,9 +21,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     {
         #region Fields and Properties
 
-        private TeamMember _alienTeamMember;
-        private TeamMember _ourTeamMember;
-        private TeamMember _replayUser;
+        public string Title { get; set; }
 
         public Domain.Replay.Replay Replay { get; set; }
 
@@ -122,6 +120,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public string MapName { get; set; }
 
+        private TeamMember _alienTeamMember;
         public TeamMember AlienTeamMember
         {
             get { return _alienTeamMember; }
@@ -132,6 +131,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
+        private TeamMember _ourTeamMember;
         public TeamMember OurTeamMember
         {
             get { return _ourTeamMember; }
@@ -144,11 +144,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public DelegateCommand HideTeamMemberResultsCommand { get; set; }
 
-        public TeamMember ReplayUser
-        {
-            get { return _replayUser; }
-            set { _replayUser = value; }
-        }
+        public TeamMember ReplayUser { get; set; }
 
         #endregion
 
@@ -189,11 +185,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
                 int myTeamId = replay.datablock_battle_result.players[playerId].team;
 
-                List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
-                List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
-                List<KeyValuePair<long, Vehicle>> vehicles = replay.datablock_1.vehicles.ToList();
-                List<TeamMember> teamMembers = players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create).Join(vehicles, pVr => pVr.Item2.Key, v => v.Key, (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v, myTeamId)).ToList();
-                
+                List<TeamMember> teamMembers = GetTeamMembers(replay, myTeamId);
+
                 FirstTeam = teamMembers.Where(x => x.Team == myTeamId).OrderByDescending(x => x.Xp).ToList();
                 SecondTeam = teamMembers.Where(x => x.Team != myTeamId).OrderByDescending(x => x.Xp).ToList();
                 ReplayUser = teamMembers.First(x => x.AccountDBID == playerId);
@@ -204,7 +197,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 FirstTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads1.IndexOf(tm.platoonID) + 1; });
                 SecondTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads2.IndexOf(tm.platoonID) + 1; });
 
-                CombatEffects = replay.datablock_battle_result.personal.details.Where(x => x.Key != ReplayUser.Id).Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.clientVersionFromExe)).OrderBy(x => x.TeamMember.FullName).ToList();
+                CombatEffects = GetCombatTargets(replay, teamMembers);
 
                 Tank = ReplayUser.Tank;
                 FullName = ReplayUser.FullName;
@@ -250,8 +243,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TimeSpan battleLength = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 
-                List<Medal> medals = ReplayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps))
-                    .Union(MedalHelper.GetAchievMedals(new List<List<JValue>> { new List<JValue> { new JValue(790 + replay.datablock_battle_result.personal.markOfMastery), new JValue(0) } })).ToList();
+                List<Medal> medals = GetMedals(replay);
 
                 BattleMedals = medals.Where(x => x.Type == 0).ToList();
                 AchievMedals = medals.Where(x => x.Type == 1).ToList();
@@ -262,8 +254,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 //calc levels by squad
                 List<LevelRange> membersLevels = new List<LevelRange>();
                 membersLevels.AddRange(teamMembers.Where(x => x.Squad == 0).Select(x => x.LevelRange));
-                IEnumerable<IGrouping<int, TeamMember>> groupBy = teamMembers.Where(x => x.Squad > 0).GroupBy(x => x.Squad);
-                membersLevels.AddRange(groupBy.Select(x => x.Select(s => s.LevelRange).OrderByDescending(o => o.Max).First()));
+                IEnumerable<IGrouping<int, TeamMember>> squads = teamMembers.Where(x => x.Squad > 0).GroupBy(x => x.Squad);
+                membersLevels.AddRange(squads.Select(x => x.Select(s => s.LevelRange).OrderByDescending(o => o.Max).First()));
 
                 int level = Dictionaries.Instance.GetBattleLevel(membersLevels);
 
@@ -276,7 +268,33 @@ namespace WotDossier.Applications.ViewModel.Replay
             return false;
         }
 
-        public string Title { get; set; }
+        private List<Medal> GetMedals(Domain.Replay.Replay replay)
+        {
+            return ReplayUser.BattleMedals.Union(MedalHelper.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps))
+                .Union(MedalHelper.GetAchievMedals(new List<List<JValue>> { new List<JValue> { new JValue(790 + replay.datablock_battle_result.personal.markOfMastery), new JValue(0) } })).ToList();
+        }
+
+        private List<CombatTarget> GetCombatTargets(Domain.Replay.Replay replay, List<TeamMember> teamMembers)
+        {
+            return replay.datablock_battle_result.personal.details
+                .Where(x => x.Key != ReplayUser.Id)
+                .Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.clientVersionFromExe))
+                .OrderBy(x => x.TeamMember.FullName)
+                .ToList();
+        }
+
+        private static List<TeamMember> GetTeamMembers(Domain.Replay.Replay replay, int myTeamId)
+        {
+            List<KeyValuePair<long, Player>> players = replay.datablock_battle_result.players.ToList();
+            List<KeyValuePair<long, VehicleResult>> vehicleResults = replay.datablock_battle_result.vehicles.ToList();
+            List<KeyValuePair<long, Vehicle>> vehicles = replay.datablock_1.vehicles.ToList();
+            List<TeamMember> teamMembers =
+                players.Join(vehicleResults, p => p.Key, vr => vr.Value.accountDBID, Tuple.Create)
+                    .Join(vehicles, pVr => pVr.Item2.Key, v => v.Key,
+                        (pVr, v) => new TeamMember(pVr.Item1, pVr.Item2, v, myTeamId, replay.datablock_1.regionCode))
+                    .ToList();
+            return teamMembers;
+        }
 
         private BattleStatus GetBattleStatus(Domain.Replay.Replay replay)
         {

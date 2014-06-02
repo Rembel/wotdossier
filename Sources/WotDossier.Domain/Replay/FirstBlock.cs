@@ -55,5 +55,7 @@ namespace WotDossier.Domain.Replay
         public string playerVehicle { get; set; }
         [DataMember]
         public Dictionary<long, Vehicle> vehicles { get; set; }
+        [DataMember]
+        public string regionCode { get; set; }
     }
 }

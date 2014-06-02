@@ -204,6 +204,17 @@ namespace WotDossier.Dal
         }
 
         /// <summary>
+        /// The game servers
+        /// </summary>
+        public readonly Dictionary<string, string> GameServers = new Dictionary<string, string>
+        {
+            {"ru", "worldoftanks.net"},
+            {"eu", "worldoftanks.eu"},
+            //{"cn", "worldoftanks.cn"},
+            //{"us", "worldoftanks.com"},
+        }; 
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         private Dictionaries()

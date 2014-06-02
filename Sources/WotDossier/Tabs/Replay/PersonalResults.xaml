@@ -7,6 +7,7 @@
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:replay="clr-namespace:WotDossier.Applications.ViewModel.Replay;assembly=WotDossier.Applications"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              mc:Ignorable="d"
              d:DesignHeight="605" d:DesignWidth="965">
     <UserControl.Resources>
@@ -79,7 +80,10 @@
                     <RowDefinition Height="31"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Text="{Binding Path=TeamMember.FullName}" Foreground="#5C5A4A" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <TextBlock Foreground="#5C5A4A" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding TeamMember.StatisticLink}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
+                        <TextBlock Foreground="#5C5A4A" Text="{Binding TeamMember.FullName}"></TextBlock>
+                    </Hyperlink>
                     <ToolTipService.ToolTip>
                         <TextBlock Text="{Binding Path=TeamMember.FullName}"></TextBlock>
                     </ToolTipService.ToolTip>

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 using System.Windows;
 using WotDossier.Applications.View;
 using WotDossier.Common;
@@ -17,7 +18,7 @@ namespace WotDossier.Applications.ViewModel
     {
         private readonly DossierRepository _dossierRepository;
         private readonly AppSettings _appSettings;
-        private List<string> _servers = new List<string> { "ru", "eu" };
+        private List<string> _servers;
         private List<ListItem<string>> _languages = new List<ListItem<string>>
         {
             new ListItem<string>("ru-RU", Resources.Resources.Language_Russian),
@@ -59,6 +60,12 @@ namespace WotDossier.Applications.ViewModel
             set { AppSettings.CheckForUpdates = value; }
         }
 
+        public bool AutoLoadStatistic
+        {
+            get { return _appSettings.AutoLoadStatistic; }
+            set { _appSettings.AutoLoadStatistic = value; }
+        }
+
         public string ReplaysFolderPath
         {
             get { return AppSettings.ReplaysFolderPath; }
@@ -82,6 +89,7 @@ namespace WotDossier.Applications.ViewModel
             _dossierRepository = dossierRepository;
             SaveCommand = new DelegateCommand(OnSave);
             _appSettings = SettingsReader.Get();
+            Servers = Dictionaries.Instance.GameServers.Keys.ToList();
         }
 
         private void OnSave()

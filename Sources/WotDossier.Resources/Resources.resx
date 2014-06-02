@@ -2104,4 +2104,7 @@ Survive %: {1:0.00}</value>
   <data name="Map_83_kharkiv" xml:space="preserve">
     <value>Kharkiv</value>
   </data>
+  <data name="Settings_AutoLoadStatistic" xml:space="preserve">
+    <value>Auto load statistic</value>
+  </data>
 </root>

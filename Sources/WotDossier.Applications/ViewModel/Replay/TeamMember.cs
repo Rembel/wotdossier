@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using WotDossier.Applications.Logic;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -10,7 +12,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     {
         private List<int> _achievements;
 
-        public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle, int replayPlayerTeam)
+        public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle, int replayPlayerTeam, string regionCode)
         {
             Id = vehicle.Key;
             TankIcon = Dictionaries.Instance.GetTankIcon(vehicle.Value.vehicleType);
@@ -65,9 +67,39 @@ namespace WotDossier.Applications.ViewModel.Replay
             Xp = vehicleResult.Value.xp;
 
             TeamMate = Team == replayPlayerTeam;
+
+            StatisticLink = string.Format(RatingHelper.NOOBMETER_STATISTIC_LINK_FORMAT, GetServer(regionCode), GetName(regionCode));
+        }
+
+        private string GetName(string regionCode)
+        {
+            //if replay from common test
+            if ("ct".Equals(regionCode, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return Name.Substring(0, Name.Length - 3);
+            }
+            return Name;
+        }
+
+        private string GetServer(string regionCode)
+        {
+            if (!string.IsNullOrEmpty(regionCode) && Dictionaries.Instance.GameServers.ContainsKey(regionCode.ToLowerInvariant()))
+            {
+                return regionCode.ToLowerInvariant();
+            }
+
+            string server = Name.Substring(Name.Length - 2).ToLowerInvariant();
+
+            if (Dictionaries.Instance.GameServers.ContainsKey(server))
+            {
+                return server;
+            }
+
+            return SettingsReader.Get().Server;
         }
 
         public LevelRange LevelRange { get; set; }
+        public string StatisticLink { get; set; }
 
         private string GetClanAbbrev(string abbrev)
         {

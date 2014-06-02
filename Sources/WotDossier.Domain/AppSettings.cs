@@ -126,5 +126,13 @@ namespace WotDossier.Domain
             get { return _periodSettings; }
             set { _periodSettings = value; }
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [automatic load statistic].
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if [automatic load statistic]; otherwise, <c>false</c>.
+        /// </value>
+        public bool AutoLoadStatistic { get; set; }
     }
 }

@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="office2007SilverButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="Grid">
+            <Border x:Name="outsideBorder" BorderThickness="{TemplateBinding Control.BorderThickness}"
+                    Background="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"
+                    BorderBrush="{StaticResource buttonOutsideBorderDefaultBorderBrush}" CornerRadius="0"/>
+            <Border x:Name="defaultBorder" Margin="1"
+                    BorderBrush="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" BorderThickness="1"
+                    Opacity="0"/>
+            <Border Background="{TemplateBinding Control.Background}"
+                    BorderBrush="{TemplateBinding Control.BorderBrush}"
+                    BorderThickness="{TemplateBinding Control.BorderThickness}" Opacity="0.3"/>
+            <ContentPresenter x:Name="buttonContent" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                              Margin="{TemplateBinding Control.Padding}"
+                              VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" RecognizesAccessKey="true"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsKeyboardFocused" Value="true">
+                <Setter TargetName="defaultBorder" Property="UIElement.Opacity" Value="1"/>
+            </Trigger>
+            <Trigger Property="Button.IsDefaulted" Value="true">
+                <Setter TargetName="defaultBorder" Property="UIElement.Opacity" Value="1"/>
+            </Trigger>
+            <Trigger Property="UIElement.IsMouseOver" Value="true">
+                <Setter TargetName="outsideBorder" Value="{StaticResource buttonOutsideBorderIsMouseOverBackgroundBrush}"
+                        Property="Border.Background"/>
+                <Setter TargetName="outsideBorder" Value="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}"
+                        Property="Border.BorderBrush"/>
+            </Trigger>
+            <Trigger Property="ButtonBase.IsPressed" Value="true">
+                <Setter TargetName="outsideBorder" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}"
+                        Property="Border.Background"/>
+                <Setter TargetName="outsideBorder" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}"
+                        Property="Border.BorderBrush"/>
+            </Trigger>
+            <Trigger Property="UIElement.IsEnabled" Value="true"/>
+            <Trigger Property="UIElement.IsEnabled" Value="false">
+                <Setter TargetName="buttonContent" Value="{StaticResource DisabledForegroundBrush}"
+                        Property="TextElement.Foreground"/>
+                <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Control.Foreground"/>
+                <Setter TargetName="outsideBorder" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}"
+                        Property="Border.Background"/>
+                <Setter TargetName="outsideBorder" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
+                        Property="Border.BorderBrush"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="office2007SilverButton" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.FontFamily" Value="Calibri"/>
+        <Setter Property="Control.FontSize" Value="12"/>
+        <Setter Property="Control.BorderThickness" Value="1"/>
+        <Setter Property="Control.Padding" Value="6,3,6,3"/>
+        <Setter Property="Control.Template" Value="{StaticResource office2007SilverButtonTemplate}"/>
+    </Style>
+    
+</ResourceDictionary>

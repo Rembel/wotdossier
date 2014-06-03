@@ -1,0 +1,370 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml"/>
+        <ResourceDictionary Source="Button.xaml"/>
+        <ResourceDictionary Source="RadioButton.xaml"/>
+        <ResourceDictionary Source="ComboBox.xaml"/>
+        <ResourceDictionary Source="CheckBox.xaml"/>
+        <ResourceDictionary Source="Menu.xaml"/>
+        <ResourceDictionary Source="ToggleButton.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="office2007SilverToolBarSeparator" TargetType="{x:Type Separator}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <StackPanel Orientation="Horizontal" Margin="3,5,3,5">
+                        <Rectangle Fill="#9199A4" Width="1"/>
+                        <Rectangle Fill="#DDE0E3" Width="1"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ToolBarThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="FrameworkElement.Cursor" Value="SizeAll"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Grid>
+                        <Border Background="Transparent" SnapsToDevicePixels="true">
+                            <Rectangle Margin="1,3">
+                                <Shape.Fill>
+                                    <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
+                                                  TileMode="Tile">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Brush="{StaticResource LightBackgroundBrush}" Geometry="M 4,4 L 4,8 8,8 8,4 Z"/>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Shape.Fill>
+                            </Rectangle>
+                        </Border>
+                        <Border Background="Transparent" SnapsToDevicePixels="true">
+                            <Rectangle Margin="0,2">
+                                <Shape.Fill>
+                                    <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
+                                                  TileMode="Tile">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Brush="{StaticResource buttonOutsideBorderDefaultBorderBrush}" Geometry="M 4,4 L 4,8 8,8 8,4 Z"/>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Shape.Fill>
+                            </Rectangle>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ToolBarOverflowButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Name="Bd" CornerRadius="0,3,3,0" SnapsToDevicePixels="true">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#B3B2C8" Offset="0"/>
+                                <GradientStop Color="#767492" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <Path Name="Arrow" Fill="Black" VerticalAlignment="Bottom" Margin="2,3" Data="M -0.5,3 L 5.5,3 2.5,6 Z"/>
+                            <ContentPresenter/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsMouseOver" Value="true">
+                            <Setter TargetName="Bd" Property="Border.Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF8D3" Offset="0"/>
+                                        <GradientStop Color="#FFC176" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="UIElement.IsKeyboardFocused" Value="true">
+                            <Setter TargetName="Bd" Value="{StaticResource toolBarDarkBrush}" Property="Border.Background"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter TargetName="Bd" Property="Border.Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FE9855" Offset="0"/>
+                                        <GradientStop Color="#FFD995" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="false">
+                            <Setter TargetName="Arrow" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
+                                    Property="Shape.Fill"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="office2007SilverVerticalToolBarSeparator" TargetType="{x:Type Separator}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <StackPanel Orientation="Vertical" Margin="5,3,5,3">
+                        <Rectangle Fill="#9199A4" Height="1"/>
+                        <Rectangle Fill="#DDE0E3" Height="1"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ToolBarVerticalThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="FrameworkElement.Cursor" Value="SizeAll"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Grid Margin="2,0,3,0">
+                        <Border Background="Transparent" SnapsToDevicePixels="true">
+                            <Rectangle Margin="1,1">
+                                <Shape.Fill>
+                                    <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
+                                                  TileMode="Tile">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Brush="{StaticResource LightBackgroundBrush}" Geometry="M 4,4 L 4,8 8,8 8,4 Z"/>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Shape.Fill>
+                            </Rectangle>
+                        </Border>
+                        <Border Background="Transparent" SnapsToDevicePixels="true">
+                            <Rectangle Margin="0,0">
+                                <Shape.Fill>
+                                    <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
+                                                  TileMode="Tile">
+                                        <DrawingBrush.Drawing>
+                                            <DrawingGroup>
+                                                <DrawingGroup.Children>
+                                                    <GeometryDrawing Brush="{StaticResource buttonOutsideBorderDefaultBorderBrush}" Geometry="M 4,4 L 4,8 8,8 8,4 Z"/>
+                                                </DrawingGroup.Children>
+                                            </DrawingGroup>
+                                        </DrawingBrush.Drawing>
+                                    </DrawingBrush>
+                                </Shape.Fill>
+                            </Rectangle>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ToolBarVerticalOverflowButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Name="Bd" CornerRadius="0,0,3,3" SnapsToDevicePixels="true">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#B3B2C8" Offset="0"/>
+                                <GradientStop Color="#767492" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <Path Name="Arrow" Fill="Black" HorizontalAlignment="Right" Margin="2,3" Data="M -0.5,1 L 5.5,1 2.5,4 Z"/>
+                            <ContentPresenter/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsMouseOver" Value="true">
+                            <Setter TargetName="Bd" Property="Border.Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                        <GradientStop Color="#FFF8D3" Offset="0"/>
+                                        <GradientStop Color="#FFC176" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="UIElement.IsKeyboardFocused" Value="true">
+                            <Setter TargetName="Bd" Value="{StaticResource toolBarDarkBrush}" Property="Border.Background"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter TargetName="Bd" Property="Border.Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                        <GradientStop Color="#FE9855" Offset="0"/>
+                                        <GradientStop Color="#FFD995" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="false">
+                            <Setter TargetName="Arrow" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
+                                    Property="Shape.Fill"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="office2007SilverToolBar" TargetType="{x:Type ToolBar}">
+        <Style.Resources>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource office2007SilverButton}"
+                   x:Key="{x:Static ToolBar.ButtonStyleKey}"/>
+            <Style BasedOn="{StaticResource office2007SilverToggleButton}" TargetType="{x:Type ToggleButton}"
+                   x:Key="{x:Static ToolBar.ToggleButtonStyleKey}"/>
+            <Style BasedOn="{StaticResource office2007SilverCheckBox}" TargetType="{x:Type CheckBox}"
+                   x:Key="{x:Static ToolBar.CheckBoxStyleKey}"/>
+            <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource office2007SilverRadioButton}"
+                   x:Key="{x:Static ToolBar.RadioButtonStyleKey}"/>
+            <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource office2007SilverComboBox}"
+                   x:Key="{x:Static ToolBar.ComboBoxStyleKey}"/>
+            <Style TargetType="{x:Type TextBox}" x:Key="{x:Static ToolBar.TextBoxStyleKey}">
+                <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
+                <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+                <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+                <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="UIElement.AllowDrop" Value="true"/>
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border Name="Border" Padding="2" Background="{StaticResource LightBackgroundBrush}"
+                                    BorderBrush="{StaticResource buttonOutsideBorderDefaultBorderBrush}" BorderThickness="1">
+                                <ScrollViewer x:Name="PART_ContentHost" Margin="0"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="UIElement.IsEnabled" Value="false">
+                                    <Setter TargetName="Border" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}"
+                                            Property="Border.Background"/>
+                                    <Setter TargetName="Border" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
+                                            Property="Border.BorderBrush"/>
+                                    <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Control.Foreground"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Control.BorderThickness" Value="0,0,1,1"/>
+        <Setter Property="Control.BorderBrush" Value="{StaticResource buttonOutsideBorderDefaultBorderBrush}"/>
+        <Setter Property="Control.Padding" Value="1,1,2,2"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToolBar}">
+                    <FrameworkTemplate.Resources>
+                        <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource office2007SilverToolBarSeparator}"
+                               x:Key="{x:Static ToolBar.SeparatorStyleKey}"/>
+                    </FrameworkTemplate.Resources>
+                    <Border x:Name="Border" CornerRadius="2" BorderThickness="{TemplateBinding Control.BorderThickness}"
+                            Background="{StaticResource toolBarBackgroundBrush}"
+                            BorderBrush="{TemplateBinding Control.BorderBrush}">
+                        <Grid>
+                            <Border Background="{TemplateBinding Control.Background}" Opacity="0.5"/>
+                            <DockPanel>
+                                <ToggleButton DockPanel.Dock="Right" IsEnabled="{TemplateBinding ToolBar.HasOverflowItems}"
+                                              Style="{StaticResource ToolBarOverflowButtonStyle}" ClickMode="Press"
+                                              IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <Popup x:Name="OverflowPopup" AllowsTransparency="true" Placement="Bottom" StaysOpen="false"
+                                           Focusable="false" PopupAnimation="Slide"
+                                           IsOpen="{Binding Path=IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <Border x:Name="DropDownBorder" Background="{StaticResource menuPopUpBackgroundBrush}" BorderThickness="1"
+                                                BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}">
+                                            <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel" Margin="2" WrapWidth="200" Focusable="true"
+                                                                  KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                                  FocusVisualStyle="{x:Null}"/>
+                                        </Border>
+                                    </Popup>
+                                </ToggleButton>
+                                <Thumb x:Name="ToolBarThumb" Style="{StaticResource ToolBarThumbStyle}" Width="6"/>
+                                <ToolBarPanel x:Name="PART_ToolBarPanel" IsItemsHost="true" Margin="{TemplateBinding Control.Padding}"/>
+                            </DockPanel>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ToolBar.IsOverflowOpen" Value="true">
+                            <Setter TargetName="ToolBarThumb" Property="UIElement.IsEnabled" Value="false"/>
+                        </Trigger>
+                        <Trigger Property="ToolBarTray.IsLocked" Value="true">
+                            <Setter TargetName="ToolBarThumb" Property="UIElement.Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="ToolBar.Orientation" Value="Vertical">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ToolBar}">
+                            <FrameworkTemplate.Resources>
+                                <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource office2007SilverVerticalToolBarSeparator}"
+                                       x:Key="{x:Static ToolBar.SeparatorStyleKey}"/>
+                            </FrameworkTemplate.Resources>
+                            <Border x:Name="Border" CornerRadius="2" BorderThickness="{TemplateBinding Control.BorderThickness}"
+                                    Background="{StaticResource toolBarBackgroundBrush}"
+                                    BorderBrush="{TemplateBinding Control.BorderBrush}">
+                                <Grid>
+                                    <Border Background="{TemplateBinding Control.Background}" Opacity="0.5"/>
+                                    <DockPanel>
+                                        <ToggleButton DockPanel.Dock="Bottom" IsEnabled="{TemplateBinding ToolBar.HasOverflowItems}"
+                                                      Style="{StaticResource ToolBarVerticalOverflowButtonStyle}" ClickMode="Press"
+                                                      IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                            <Popup x:Name="OverflowPopup" AllowsTransparency="true" Placement="Bottom" StaysOpen="false"
+                                                   Focusable="false" PopupAnimation="Slide"
+                                                   IsOpen="{Binding Path=IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}">
+                                                <Border x:Name="DropDownBorder" Background="{StaticResource menuPopUpBackgroundBrush}" BorderThickness="1"
+                                                        BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}">
+                                                    <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel" Margin="2" WrapWidth="200" Focusable="true"
+                                                                          KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                                          FocusVisualStyle="{x:Null}"/>
+                                                </Border>
+                                            </Popup>
+                                        </ToggleButton>
+                                        <Thumb x:Name="ToolBarThumb" DockPanel.Dock="Top" Style="{StaticResource ToolBarVerticalThumbStyle}"
+                                               Height="6"/>
+                                        <ToolBarPanel x:Name="PART_ToolBarPanel" IsItemsHost="true" Margin="{TemplateBinding Control.Padding}"/>
+                                    </DockPanel>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="ToolBar.IsOverflowOpen" Value="true">
+                                    <Setter TargetName="ToolBarThumb" Property="UIElement.IsEnabled" Value="false"/>
+                                </Trigger>
+                                <Trigger Property="ToolBarTray.IsLocked" Value="true">
+                                    <Setter TargetName="ToolBarThumb" Property="UIElement.Visibility" Value="Collapsed"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="{x:Type ToolBarTray}">
+        <Setter Property="ToolBarTray.Background"
+                Value="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"/>
+    </Style>
+    <Style x:Key="{x:Static ToolBar.MenuStyleKey}" TargetType="{x:Type Menu}"
+           BasedOn="{StaticResource office2007SilverMenu}">
+        <Style.Resources>
+            <Style TargetType="{x:Type MenuItem}" BasedOn="{StaticResource office2007SilverMenuItem}"/>
+        </Style.Resources>
+    </Style>
+</ResourceDictionary>

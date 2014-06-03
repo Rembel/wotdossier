@@ -12,7 +12,8 @@
         xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
         xmlns:domain="clr-namespace:WotDossier.Domain;assembly=WotDossier.Domain"
-        Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico">
+        Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico"
+        Background="{StaticResource applicationBackgroundBrush}">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Print" Executed="PrintWindow_Executed"/>
     </Window.CommandBindings>

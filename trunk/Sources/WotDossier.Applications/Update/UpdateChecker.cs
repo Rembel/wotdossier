@@ -159,13 +159,14 @@ namespace WotDossier.Applications.Update
         private static DownloadedVersionInfo GetServerVersion()
         {
             Version newVersion = new Version(ApplicationInfo.Version);
-            string installerUrl = "http://res-mods.ru/download/mod/4137";
+            string installerUrl = null;
             try
             {
                 HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(AppConfigSettings.VersionUrl);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.UserAgent = USER_AGENT;
                 request.Accept = ACCEPT_HEADER;
+                //for analytics
                 request.Referer = string.Format("http://wotdossier_{0}.com/", ApplicationInfo.Version);
                 WebResponse webResponse = request.GetResponse();
                 using (Stream responseStream = webResponse.GetResponseStream())

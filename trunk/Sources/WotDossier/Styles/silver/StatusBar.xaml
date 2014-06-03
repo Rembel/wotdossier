@@ -1,0 +1,62 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="Brushes.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+  <ControlTemplate x:Key="office2007SilverStatusBarTemplate" TargetType="{x:Type StatusBar}">
+    <Border BorderBrush="{TemplateBinding Control.BorderBrush}"
+            BorderThickness="{TemplateBinding Control.BorderThickness}"
+            Padding="{TemplateBinding Control.Padding}">
+      <Grid>
+        <Border Background="{StaticResource office2007BlueGlossyBrush}"/>
+        <Border Background="{TemplateBinding Control.Background}" Opacity="0.3"/>
+        <ItemsPresenter/>
+      </Grid>
+    </Border>
+  </ControlTemplate>
+  <ControlTemplate x:Key="office2007SilverStatusBarSeparatorTemplate" TargetType="{x:Type Separator}">
+    <StackPanel Orientation="Horizontal" Margin="3,5,3,5">
+      <Rectangle Width="1" Fill="#6E6D8F"/>
+      <Rectangle Width="1" Fill="#FFFFFF"/>
+    </StackPanel>
+  </ControlTemplate>
+  <ControlTemplate x:Key="office2007SilverStatusBarItemTemplate" TargetType="{x:Type StatusBarItem}">
+    <Border BorderBrush="{TemplateBinding Control.BorderBrush}"
+            Background="{TemplateBinding Control.Background}"
+            BorderThickness="{TemplateBinding Control.BorderThickness}"
+            Padding="{TemplateBinding Control.Padding}">
+      <ContentPresenter/>
+    </Border>
+    <ControlTemplate.Triggers>
+      <Trigger Property="UIElement.IsEnabled" Value="false">
+        <Setter Value="{StaticResource buttonOutsideBorderDefaultBorderBrush}" Property="Control.Foreground"/>
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="office2007SilverStatusBarSeparator" TargetType="{x:Type Separator}">
+    <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+    <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
+    <Setter Property="Control.Template" Value="{StaticResource office2007SilverStatusBarSeparatorTemplate}"/>
+  </Style>
+  <Style x:Key="office2007SilverStatusBar" TargetType="{x:Type StatusBar}">
+    <Style.Resources>
+      <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource office2007SilverStatusBarSeparator}"
+             x:Key="{x:Static StatusBar.SeparatorStyleKey}"/>
+    </Style.Resources>
+    <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
+    <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+    <Setter Property="Control.Background" Value="{StaticResource office2007BlueGlossyBrush}"/>
+    <Setter Property="Control.BorderBrush" Value="{StaticResource buttonOutsideBorderDefaultBorderBrush}"/>
+    <Setter Property="Control.BorderThickness" Value="1"/>
+    <Setter Property="Control.Padding" Value="1"/>
+    <Setter Property="Control.Template" Value="{StaticResource office2007SilverStatusBarTemplate}"/>
+  </Style>
+  <Style TargetType="{x:Type StatusBarItem}">
+    <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
+    <Setter Property="Control.Background" Value="Transparent"/>
+    <Setter Property="Control.BorderThickness" Value="0"/>
+    <Setter Property="Control.BorderBrush" Value="Transparent"/>
+    <Setter Property="Control.Padding" Value="3"/>
+    <Setter Property="Control.Template" Value="{StaticResource office2007SilverStatusBarItemTemplate}"/>
+  </Style>
+</ResourceDictionary>

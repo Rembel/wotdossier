@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:WotDossier.Converters"
+                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+                    xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+                    xmlns:color="clr-namespace:WotDossier.Converters.Color"
+                    xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
+                    xmlns:rows="clr-namespace:WotDossier.Applications.ViewModel.Rows;assembly=WotDossier.Applications">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="DataGrid.xaml" />
+        <ResourceDictionary Source="ReplayDataGrid.xaml" />
+        <ResourceDictionary Source="DataGridHeaderTemplates.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ImageBrush x:Key="bcolorLeft" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/left_back.jpg" Stretch="Fill" />
+    <ImageBrush x:Key="bcolorCenter" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/center_back.jpg" Stretch="Fill" />
+    <ImageBrush x:Key="bcolorRight" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/right_back.jpg" Stretch="Fill" />
+
+    <DataTemplate x:Key="MasterTemplate" DataType="rows:ITankStatisticRow" >
+        <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       ToolTip="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToTooltipConverter.Default}}" 
+                       Source="{Binding Path=MarkOfMastery, Mode=OneWay, Converter={x:Static Converters:MarkOfMasteryToImageConverter.Default}}" />
+    </DataTemplate>
+    <DataTemplate x:Key="TankIconTemplate" DataType="rows:ITankStatisticRow" >
+        <Grid>
+            <Image Width="70" Height="40" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static Converters:CountryIdToImageConverter.Default}}" />
+            <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" />
+            <TextBlock Text="*" FontSize="18" Foreground="Gold" HorizontalAlignment="Right" Margin="0,0,5,0" Visibility="{Binding Path=IsFavorite, Mode=OneWay, FallbackValue={x:Static Visibility.Collapsed}, Converter={x:Static Converters:BoolToVisibilityConverter.Default}}" />
+        </Grid>
+    </DataTemplate>
+
+    <Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding WinsPercent, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellWinPercentForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding WinsPercentForPeriod, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
+    </Style>
+
+    <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
+    </Style>
+
+    <Style x:Key="DataGridCellWn7Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN7Rating, Converter={x:Static color:WN7ToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellWn8Style" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN8Rating, Converter={x:Static color:WN8ToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellEffForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=EffRatingForPeriod, Converter={x:Static color:EffectivityToColorConverter.Default}}" />
+    </Style>
+
+    <Style x:Key="DataGridCellWn6ForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN6RatingForPeriod, Converter={x:Static color:WN6ToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellWn7ForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN7RatingForPeriod, Converter={x:Static color:WN7ToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellWn8ForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=WN8RatingForPeriod, Converter={x:Static color:WN8ToColorConverter.Default}}" />
+    </Style>
+
+    <Style x:Key="DataGridCellXvmStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellPRStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}" />
+    </Style>
+    
+    <Style x:Key="DataGridCellKievArmorStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
+        <Setter Property="Background" Value="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}" />
+    </Style>
+
+    <!--Tank grids-->
+    <ContextMenu x:Key="ContextMenu">
+        <MenuItem Header="{x:Static resources:Resources.Command_AddToFavorites}" InputGestureText="Ctrl+D"
+                              Command="{Binding Path=DataContext.AddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>
+        <MenuItem Header="{x:Static resources:Resources.Command_RemoveFromFavorites}"
+                              Command="{Binding Path=DataContext.RemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                              CommandParameter="{Binding}"/>
+    </ContextMenu>
+    <Style x:Key="TankDataRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
+        <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}" />
+    </Style>
+
+    <controls:Triggers x:Key="MouseTriggers" x:Shared="False">
+        <i:EventTrigger EventName="MouseDoubleClick">
+            <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
+        </i:EventTrigger>
+    </controls:Triggers>
+
+    <Style x:Key="TankDataGridStyle" TargetType="{x:Type dataGrid:FooterDataGrid}" BasedOn="{StaticResource office2007SilverFooterDataGrid}">
+        <Setter Property="RowStyle" Value="{StaticResource TankDataRowStyle}" />
+        <Setter Property="controls:SupplementaryInteraction.Triggers" Value="{StaticResource MouseTriggers}"></Setter>
+    </Style>
+    
+</ResourceDictionary>

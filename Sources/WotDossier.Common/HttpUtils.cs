@@ -9,21 +9,22 @@ namespace WotDossier.Common
         public static string Get(this Uri uri)
         {
             string str = null;
-            WebClient client = new WebClient();
-            WebClient client2 = client;
+            var client = new WebClient();
+            client.Proxy.Credentials = CredentialCache.DefaultCredentials;
             try
             {
-                str = new StreamReader(client.OpenRead(uri)).ReadToEnd();
+                Stream stream = client.OpenRead(uri);
+                if (stream != null)
+                {
+                    str = new StreamReader(stream).ReadToEnd();
+                }
             }
             catch (WebException)
             {
             }
             finally
             {
-                if (client2 != null)
-                {
-                    client2.Dispose();
-                }
+                client.Dispose();
             }
             return str;
         }

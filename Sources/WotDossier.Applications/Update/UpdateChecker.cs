@@ -13,6 +13,8 @@ namespace WotDossier.Applications.Update
 {
     public class UpdateChecker
     {
+        private const string USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0";
+        private const string ACCEPT_HEADER = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
         private static readonly ILog Logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
@@ -57,7 +59,10 @@ namespace WotDossier.Applications.Update
             string filepath = "";
             try
             {
-                var request = (HttpWebRequest) WebRequest.Create(info.InstallerUrl);
+                HttpWebRequest request = (HttpWebRequest) WebRequest.Create(info.InstallerUrl);
+                request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.UserAgent = USER_AGENT;
+                request.Accept = ACCEPT_HEADER;
                 request.MaximumAutomaticRedirections = 1;
                 request.AllowAutoRedirect = true;
                 WebResponse response = request.GetResponse();
@@ -157,8 +162,11 @@ namespace WotDossier.Applications.Update
             string installerUrl = "http://res-mods.ru/download/mod/4137";
             try
             {
-                WebRequest request = HttpWebRequest.Create(AppConfigSettings.VersionUrl);
+                HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(AppConfigSettings.VersionUrl);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                request.UserAgent = USER_AGENT;
+                request.Accept = ACCEPT_HEADER;
+                request.Referer = string.Format("http://wotdossier_{0}.com/", ApplicationInfo.Version);
                 WebResponse webResponse = request.GetResponse();
                 using (Stream responseStream = webResponse.GetResponseStream())
                 {

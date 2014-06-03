@@ -442,6 +442,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="..\WotDossier\App.config">
+      <Link>App.config</Link>
+    </None>
+    <Content Include="..\WotDossier\app.manifest">
+      <Link>app.manifest</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="..\WotDossier\Data\dossier.s3db">
       <Link>Data\dossier.s3db</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -467,10 +474,6 @@
     </Content>
     <Content Include="..\WotDossier\External\server_tanks.json">
       <Link>External\server_tanks.json</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="app.config" />
-    <Content Include="app.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />

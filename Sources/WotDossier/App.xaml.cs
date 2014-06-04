@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Threading;
 using System.Windows;
@@ -38,6 +39,13 @@ namespace WotDossier
             set { _controller = value; }
         }
 
+        private Dictionary<DossierTheme, Uri> _themes = new Dictionary<DossierTheme, Uri>
+        {
+            {DossierTheme.Base, new Uri("Styles/Base/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
+            {DossierTheme.Silver, new Uri("Styles/silver/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
+            {DossierTheme.Black, new Uri("Styles/Black/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
+        };
+
         /// <summary>
         /// Raises the <see cref="E:System.Windows.Application.Startup" /> event.
         /// </summary>
@@ -68,7 +76,10 @@ namespace WotDossier
                 NativeMethods.ActivateWindow(ApplicationInfo.FullProductName);
                 return;
             }
-            
+
+            //Apply application UI theme
+            ApplyTheme(DossierTheme.Silver);
+
 #if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't
             // jump into the code when an exception occurs.
@@ -134,6 +145,12 @@ namespace WotDossier
             }
 
             base.OnStartup(e);
+        }
+
+        private void ApplyTheme(DossierTheme theme)
+        {
+            Current.Resources.MergedDictionaries.Clear();
+            Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = _themes[theme] });
         }
 
         private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

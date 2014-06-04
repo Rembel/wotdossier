@@ -1,0 +1,229 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <ControlTemplate x:Key="office2007SilverExpanderDownToggleButtonTemplate" TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Name="Rectangle" Margin="0" Fill="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"  Grid.Column="0" />
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0.3" Grid.Column="0" />
+            <Path Name="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F0 M 0,0 L 4,4 8,0 Z" Fill="{StaticResource DarkBackgroundBrush}" Grid.Column="0" />
+            <ContentPresenter RecognizesAccessKey="true" Margin="4" Grid.Column="1" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+                <Setter TargetName="Arrow" Property="Data" Value="F0 M 0,4 L 4,0 8,4 Z" />
+                <Setter TargetName="Arrow" Property="Margin" Value="0,0,0,2" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Foreground" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}" Property="Stroke" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="office2007SilverExpanderDownToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template" Value="{StaticResource office2007SilverExpanderDownToggleButtonTemplate}" />
+    </Style>
+
+
+    <ControlTemplate x:Key="office2007SilverExpanderUpToggleButtonTemplate" TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Name="Rectangle" Margin="0" Fill="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"  Grid.Column="0" />
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0.3" Grid.Column="0" />
+            <Path Name="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F0 M 0,4 L 4,0 8,4 Z" Fill="{StaticResource DarkBackgroundBrush}" Grid.Column="0" Margin="0,0,0,2" />
+            <ContentPresenter RecognizesAccessKey="true" Margin="4" Grid.Column="1" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+                <Setter TargetName="Arrow" Property="Data" Value="F0 M 0,0 L 4,4 8,0 Z" />
+                <Setter TargetName="Arrow" Property="Margin" Value="0" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Foreground" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}" Property="Stroke" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <Style x:Key="office2007SilverExpanderUpToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template" Value="{StaticResource office2007SilverExpanderUpToggleButtonTemplate}" />
+    </Style>
+
+    <ControlTemplate x:Key="office2007SilverExpanderRightToggleButtonTemplate" TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Name="Rectangle" Margin="0" Fill="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"  Grid.Column="0" />
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0.3" Grid.Column="0" />
+            <Path Name="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F0 M 0,0 L 4,4 0,8 Z" Fill="{StaticResource DarkBackgroundBrush}" Grid.Column="0" />
+            <ContentPresenter RecognizesAccessKey="true" Margin="4" Grid.Column="1" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+                <Setter TargetName="Arrow" Property="Data" Value="F0 M 4,0 L 0,4 4,8 Z" />
+                <Setter TargetName="Arrow" Property="Margin" Value="0,0,2,0" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Foreground" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}" Property="Stroke" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="office2007SilverExpanderRightToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template" Value="{StaticResource office2007SilverExpanderRightToggleButtonTemplate}" />
+    </Style>
+
+    <ControlTemplate x:Key="office2007SilverExpanderLeftToggleButtonTemplate" TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Name="Rectangle" Margin="0" Fill="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"  Grid.Column="0" />
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0.3" Grid.Column="0" />
+            <Path Name="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F0 M 4,0 L 0,4 4,8 Z" Fill="{StaticResource DarkBackgroundBrush}" Grid.Column="0" Margin="0,0,2,0" />
+            <ContentPresenter RecognizesAccessKey="true" Margin="4" Grid.Column="1" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}" Property="Stroke" />
+                <Setter TargetName="Arrow" Property="Data" Value="F0 M 0,0 L 4,4 0,8 Z" />
+                <Setter TargetName="Arrow" Property="Margin" Value="0" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Foreground" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}" Property="Fill" />
+                <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}" Property="Stroke" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="office2007SilverExpanderLeftToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template" Value="{StaticResource office2007SilverExpanderLeftToggleButtonTemplate}" />
+    </Style>
+
+    <Style x:Key="office2007SilverExpander" TargetType="{x:Type Expander}">
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate  TargetType="{x:Type Expander}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Name="leftColumnDefinition" Width="0" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Name="rightColumnDefinition" Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Name="topRowDefinition" Height="0" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Name="bottomRowDefinition" Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border Name="mainBorder" Grid.Row="1" Grid.Column="1" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,0,0,0">
+                            <ToggleButton Name="toggle" Content="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" ContentTemplate="{TemplateBinding HeaderTemplate}" Style="{StaticResource office2007SilverExpanderDownToggleButtonStyle}" IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                        <Border Name="ExpandSite" Visibility="Collapsed" Grid.Row="2" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" Background="{TemplateBinding Background}"  BorderThickness="1" CornerRadius="0,0,0,0">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" TextBlock.Foreground="{TemplateBinding Foreground}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Focusable="false" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="true">
+                            <Setter TargetName="ExpandSite" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Value="{StaticResource DarkBackgroundBrush}" Property="Foreground" />
+                            <Setter TargetName="mainBorder" Value="{StaticResource buttonOutsideBorderIsMouseOverBackgroundBrush}" Property="Background" />
+                            <Setter TargetName="mainBorder" Value="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" Property="BorderBrush" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Up">
+                            <Setter TargetName="ExpandSite" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="topRowDefinition" Property="Height" Value="*" />
+                            <Setter TargetName="bottomRowDefinition" Property="Height" Value="0" />
+                            <Setter TargetName="toggle" Value="{StaticResource office2007SilverExpanderUpToggleButtonStyle}" Property="Style" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Right">
+                            <Setter TargetName="ExpandSite" Property="Grid.Row" Value="1" />
+                            <Setter TargetName="ExpandSite" Property="Grid.RowSpan" Value="2" />
+                            <Setter TargetName="ExpandSite" Property="Grid.Column" Value="2" />
+                            <Setter TargetName="ExpandSite" Property="Grid.ColumnSpan" Value="1" />
+                            <Setter TargetName="toggle" Value="{StaticResource office2007SilverExpanderRightToggleButtonStyle}" Property="Style" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Left">
+                            <Setter TargetName="ExpandSite" Property="Grid.Row" Value="1" />
+                            <Setter TargetName="ExpandSite" Property="Grid.RowSpan" Value="2" />
+                            <Setter TargetName="ExpandSite" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="ExpandSite" Property="Grid.ColumnSpan" Value="1" />
+                            <Setter TargetName="leftColumnDefinition" Property="Width" Value="*" />
+                            <Setter TargetName="rightColumnDefinition" Property="Width" Value="0" />
+                            <Setter TargetName="toggle" Value="{StaticResource office2007SilverExpanderLeftToggleButtonStyle}" Property="Style" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

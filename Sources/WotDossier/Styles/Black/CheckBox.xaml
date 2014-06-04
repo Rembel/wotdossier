@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml"/>
+        <ResourceDictionary Source="Fonts.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="office2007SilverCheckBox" TargetType="{x:Type CheckBox}">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource checkBoxOutsideBorderDefaultBackgroundBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="4,0,0,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Grid Width="13" Height="13" Background="{StaticResource checkBoxOutsideBorderDefaultBackgroundBrush}">
+                                <Border Name="OutsideBorder" Background="{StaticResource checkBoxOutsideBorderDefaultBackgroundBrush}" BorderThickness="1" BorderBrush="{StaticResource checkBoxOutsideBorderDefaultBorderBrush}">
+                                    <Grid>
+                                        <Border Name="InsideBorder" Margin="1,1,1,1" Width="Auto" Height="Auto" BorderThickness="1,1,1,1" Background="{StaticResource checkBoxInsideBorderDefaultBackgroundBrush}" BorderBrush="{StaticResource checkBoxInsideBorderDefaultBorderBrush}" />
+                                        <Border Background="{TemplateBinding Background}" Opacity="0.3" />
+                                    </Grid>
+                                </Border>
+                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0.3" />
+                                <Grid>
+                                    <Path Name="CheckMark" Fill="{StaticResource glyphDefaultBordeBrush}" Stretch="Fill" Stroke="{StaticResource glyphDefaultBordeBrush}" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeThickness="1" HorizontalAlignment="Stretch" Margin="3,2,2.125,2.375" Data="F0 M1 3 L1 3 L2.5 5.5 L2.5 5.5 L4.5 0.5 L4.5 0.5 L2.2 3.5 Z " Width="Auto" />
+                                    <Border Name="nullCheckBorder" Margin="4" Background="{StaticResource glyphDefaultBordeBrush}" Visibility="Collapsed" />
+                                </Grid>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="true" />
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Value="{x:Null}" Property="IsChecked">
+                            <Setter TargetName="nullCheckBorder" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="OutsideBorder" Value="{StaticResource checkBoxOutsideBorderIsMouseOverBorderBrush}" Property="BorderBrush" />
+                            <Setter TargetName="OutsideBorder" Value="{StaticResource checkBoxOutsideBorderIsMouseOverBackgroundBrush}" Property="Background" />
+                            <Setter TargetName="InsideBorder" Value="{StaticResource checkBoxInsideBorderIsMouseOverBackgroundBrush}" Property="Background" />
+                            <Setter TargetName="InsideBorder" Value="{StaticResource checkBoxInsideBorderIsMouseOverBorderBrush}" Property="BorderBrush" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="OutsideBorder" Value="{StaticResource checkBoxOutsideBorderIsPressedBackgroundBrush}" Property="Background" />
+                            <Setter TargetName="InsideBorder" Value="{StaticResource checkBoxInsideBorderIsPressedBackgroundBrush}" Property="Background" />
+                            <Setter TargetName="InsideBorder" Value="{StaticResource checkBoxInsideBorderIsPressedBorderBrush}" Property="BorderBrush" />
+                            <Setter TargetName="OutsideBorder" Value="{StaticResource checkBoxOutsideBorderIsPressedBorderBrush}" Property="BorderBrush" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Value="{StaticResource checkBoxForegroundIsEnabledBrush}" Property="Foreground" />
+                            <Setter TargetName="OutsideBorder" Value="{StaticResource checkBoxOutsideBorderIsEnabledBackgroundBrush}" Property="Background" />
+                            <Setter TargetName="OutsideBorder" Value="{StaticResource checkBoxOutsideBorderIsEnabledBorderBrush}" Property="BorderBrush" />
+                            <Setter TargetName="InsideBorder" Value="{StaticResource checkBoxInsideBorderIsEnabledBackgroundBrush}" Property="Background" />
+                            <Setter TargetName="InsideBorder" Value="{StaticResource checkBoxInsideBorderIsEnabledBorderBrush}" Property="BorderBrush" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

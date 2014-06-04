@@ -7,7 +7,8 @@
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:controls="clr-namespace:WotDossier.Controls"
-        Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico">
+        Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico"
+        Style="{StaticResource office2007SilverWindow}">
     <Window.InputBindings>
         <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>
         <KeyBinding Command="{Binding SettingsCommand}" Key="P" Modifiers="Control"/>

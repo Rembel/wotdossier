@@ -2,6 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Brushes.xaml"/>
+        <ResourceDictionary Source="Button.xaml"/>
+        <ResourceDictionary Source="RadioButton.xaml"/>
+        <ResourceDictionary Source="ComboBox.xaml"/>
+        <ResourceDictionary Source="CheckBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
     <Style x:Key="office2007SilverToolBarSeparator" TargetType="{x:Type Separator}">
@@ -213,7 +217,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="ToolBar" TargetType="{x:Type ToolBar}">
+    <Style x:Key="office2007SilverToolBar" TargetType="{x:Type ToolBar}">
         <!--<Setter Property="Check" Value="true" />-->
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />

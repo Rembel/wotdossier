@@ -4,8 +4,7 @@
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/Fonts.xaml"/>
-                <ResourceDictionary Source="Styles/ImplicitStyles.xaml" />
+                <ResourceDictionary Source="Styles/silver/ImplicitStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Application.Resources>

@@ -111,8 +111,16 @@
                 </ContextMenu>
             </DataGrid.Resources>
             <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}" x:Name="styleForDataRow" BasedOn="{StaticResource DataGridRowStyle}">
+                <Style TargetType="{x:Type DataGridRow}" x:Name="styleForDataRow">
                     <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
+                    <Setter Property="SnapsToDevicePixels" Value="true" />
+                    <Setter Property="MinHeight" Value="22" />
+                    <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="#A7B0C9" />
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.InputBindings>

@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
-                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources">
+                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+                    xmlns:views="clr-namespace:WotDossier.Views">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ExplicitStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -22,9 +23,9 @@
     <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource office2007SilverScrollViewer}" />
     <Style x:Key="{x:Type StatusBar}" TargetType="{x:Type StatusBar}" BasedOn="{StaticResource office2007SilverStatusBar}" />
     <Style x:Key="{x:Type TabControl}" TargetType="{x:Type TabControl}" BasedOn="{StaticResource office2007SilverTabControl}" />
-    <Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource office2007SilverToggleButton}" />
     <Style x:Key="{x:Type TabItem}" TargetType="{x:Type TabItem}" BasedOn="{StaticResource office2007SilverTabItem}" />
     <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource office2007SilverTextBox}" />
+    <Style x:Key="{x:Type ToolBar}" TargetType="{x:Type ToolBar}" BasedOn="{StaticResource office2007SilverToolBar}" />
     <Style x:Key="{x:Type ToolTip}" TargetType="{x:Type ToolTip}" BasedOn="{StaticResource office2007SilverToolTip}" />
     <Style x:Key="{x:Type Window}" TargetType="{x:Type Window}" BasedOn="{StaticResource office2007SilverWindow}" />
     <Style x:Key="{x:Type DatePicker}" TargetType="DatePicker" BasedOn="{StaticResource {x:Type DatePicker}}">

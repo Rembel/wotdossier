@@ -119,20 +119,6 @@
         <GradientStop Color="#C5C7D1" Offset="0.4"/>
         <GradientStop Color="#D4D8E2" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="progressBarBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#66FFFFFF" Offset="0"/>
-        <GradientStop Color="#4CFFFFFF" Offset="1"/>
-        <GradientStop Color="#00FFFFFF" Offset="0.4"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="progressBarBakcgroundIsEnabledBackgroundBrush" Color="#7FEEEEEE"/>
-    <LinearGradientBrush x:Key="progressBarBackgroundIsEnabledBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FFD4D4D4" Offset="0"/>
-        <GradientStop Color="#FFB2B2B2" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="progressBarBackgroundBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FF7C7C94" Offset="1"/>
-        <GradientStop Color="#FFEFEFEF" Offset="0"/>
-    </LinearGradientBrush>
     <LinearGradientBrush x:Key="toolBarBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
         <GradientStop Color="#FFF3F4FA" Offset="0"/>
         <GradientStop Color="#FFE1E2EC" Offset="0.5"/>
@@ -158,27 +144,6 @@
     </LinearGradientBrush>
     <SolidColorBrush x:Key="toolBarDisabledBorderBrush" Color="#AAA"/>
     <SolidColorBrush x:Key="toolBarSolidBorderBrush" Color="#888"/>
-    <LinearGradientBrush x:Key="groupboxBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#F2F4F8" Offset="0"/>
-        <GradientStop Color="#E0E3E9" Offset="0.5"/>
-        <GradientStop Color="#FFF2F4F8" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="roundButtonIsMouseOverBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FFBD69" Offset="0"/>
-        <GradientStop Color="#FFAC42" Offset="0.4"/>
-        <GradientStop Color="#FB8C3C" Offset="0.4"/>
-        <GradientStop Color="#FFBA67" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="roundButtonIsSelectedBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FFD9AA" Offset="0"/>
-        <GradientStop Color="#FFBC6E" Offset="0.4"/>
-        <GradientStop Color="#FFAB3F" Offset="0.4"/>
-        <GradientStop Color="#FEE17B" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="toolTipBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FBFCFD" Offset="0"/>
-        <GradientStop Color="#DDE2E7" Offset="1"/>
-    </LinearGradientBrush>
 
 <LinearGradientBrush x:Key="ProgressBarBackground" EndPoint="1,0" StartPoint="0,0">
         <GradientStop Color="#BABABA" Offset="0"/>

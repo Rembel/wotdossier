@@ -105,118 +105,388 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Brushes.xaml">
-      <Link>Styles\Brushes.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\Brushes.xaml">
+      <Link>Styles\base\Brushes.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Button.xaml">
-      <Link>Styles\Button.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\Button.xaml">
+      <Link>Styles\base\Button.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\CheckBox.xaml">
-      <Link>Styles\CheckBox.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\CheckBox.xaml">
+      <Link>Styles\base\CheckBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ComboBox.xaml">
-      <Link>Styles\ComboBox.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ComboBox.xaml">
+      <Link>Styles\base\ComboBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ContextMenu.xaml">
-      <Link>Styles\ContextMenu.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ContextMenu.xaml">
+      <Link>Styles\base\ContextMenu.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\DataGrid.xaml">
-      <Link>Styles\DataGrid.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\DataGrid.xaml">
+      <Link>Styles\base\DataGrid.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\DataGridHeaderTemplates.xaml">
-      <Link>Styles\DataGridHeaderTemplates.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\DataGridHeaderTemplates.xaml">
+      <Link>Styles\base\DataGridHeaderTemplates.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Expander.xaml">
-      <Link>Styles\Expander.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\Expander.xaml">
+      <Link>Styles\base\Expander.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ExplicitStyles.xaml">
-      <Link>Styles\ExplicitStyles.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ExplicitStyles.xaml">
+      <Link>Styles\base\ExplicitStyles.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Fonts.xaml">
-      <Link>Styles\Fonts.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\Fonts.xaml">
+      <Link>Styles\base\Fonts.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Hyperlink.xaml">
-      <Link>Styles\Hyperlink.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\Hyperlink.xaml">
+      <Link>Styles\base\Hyperlink.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ImplicitStyles.xaml">
-      <Link>Styles\ImplicitStyles.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ImplicitStyles.xaml">
+      <Link>Styles\base\ImplicitStyles.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ListBox.xaml">
-      <Link>Styles\ListBox.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ListBox.xaml">
+      <Link>Styles\base\ListBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ProgressBar.xaml">
-      <Link>Styles\ProgressBar.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ProgressBar.xaml">
+      <Link>Styles\base\ProgressBar.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\RadioButton.xaml">
-      <Link>Styles\RadioButton.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\RadioButton.xaml">
+      <Link>Styles\base\RadioButton.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ReplayDataGrid.xaml">
-      <Link>Styles\ReplayDataGrid.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ReplayDataGrid.xaml">
+      <Link>Styles\base\ReplayDataGrid.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ScrollBar.xaml">
-      <Link>Styles\ScrollBar.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ScrollBar.xaml">
+      <Link>Styles\base\ScrollBar.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\SpecialStyle.xaml">
-      <Link>Styles\SpecialStyle.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\SpecialStyle.xaml">
+      <Link>Styles\base\SpecialStyle.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\TabControl.xaml">
-      <Link>Styles\TabControl.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\TabControl.xaml">
+      <Link>Styles\base\TabControl.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\TextBox.xaml">
-      <Link>Styles\TextBox.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\TextBox.xaml">
+      <Link>Styles\base\TextBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ToolBar.xaml">
-      <Link>Styles\ToolBar.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ToolBar.xaml">
+      <Link>Styles\base\ToolBar.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\ToolTip.xaml">
-      <Link>Styles\ToolTip.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\ToolTip.xaml">
+      <Link>Styles\base\ToolTip.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Window.xaml">
-      <Link>Styles\Window.xaml</Link>
+    <Page Include="..\WotDossier\Styles\Base\Window.xaml">
+      <Link>Styles\base\Window.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Brushes.xaml">
+      <Link>Styles\Black\Brushes.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Button.xaml">
+      <Link>Styles\Black\Button.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\CheckBox.xaml">
+      <Link>Styles\Black\CheckBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ComboBox.xaml">
+      <Link>Styles\Black\ComboBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ContextMenu.xaml">
+      <Link>Styles\Black\ContextMenu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\DataGrid.xaml">
+      <Link>Styles\Black\DataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\DataGridHeaderTemplates.xaml">
+      <Link>Styles\Black\DataGridHeaderTemplates.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Expander.xaml">
+      <Link>Styles\Black\Expander.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ExplicitStyles.xaml">
+      <Link>Styles\Black\ExplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Fonts.xaml">
+      <Link>Styles\Black\Fonts.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Hyperlink.xaml">
+      <Link>Styles\Black\Hyperlink.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ImplicitStyles.xaml">
+      <Link>Styles\Black\ImplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ListBox.xaml">
+      <Link>Styles\Black\ListBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Menu.xaml">
+      <Link>Styles\Black\Menu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\MenuResourceDictionary.xaml">
+      <Link>Styles\Black\MenuResourceDictionary.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ProgressBar.xaml">
+      <Link>Styles\Black\ProgressBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\RadioButton.xaml">
+      <Link>Styles\Black\RadioButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ReplayDataGrid.xaml">
+      <Link>Styles\Black\ReplayDataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ScrollBar.xaml">
+      <Link>Styles\Black\ScrollBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\SpecialStyle.xaml">
+      <Link>Styles\Black\SpecialStyle.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\StatusBar.xaml">
+      <Link>Styles\Black\StatusBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\TabControl.xaml">
+      <Link>Styles\Black\TabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\TextBox.xaml">
+      <Link>Styles\Black\TextBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ToggleButton.xaml">
+      <Link>Styles\Black\ToggleButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ToolBar.xaml">
+      <Link>Styles\Black\ToolBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\ToolTip.xaml">
+      <Link>Styles\Black\ToolTip.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Black\Window.xaml">
+      <Link>Styles\Black\Window.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Brushes.xaml">
+      <Link>Styles\silver\Brushes.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Button.xaml">
+      <Link>Styles\silver\Button.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\CheckBox.xaml">
+      <Link>Styles\silver\CheckBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ComboBox.xaml">
+      <Link>Styles\silver\ComboBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ContextMenu.xaml">
+      <Link>Styles\silver\ContextMenu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\DataGrid.xaml">
+      <Link>Styles\silver\DataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\DataGridHeaderTemplates.xaml">
+      <Link>Styles\silver\DataGridHeaderTemplates.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Expander.xaml">
+      <Link>Styles\silver\Expander.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ExplicitStyles.xaml">
+      <Link>Styles\silver\ExplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Fonts.xaml">
+      <Link>Styles\silver\Fonts.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Hyperlink.xaml">
+      <Link>Styles\silver\Hyperlink.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ImplicitStyles.xaml">
+      <Link>Styles\silver\ImplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ListBox.xaml">
+      <Link>Styles\silver\ListBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Menu.xaml">
+      <Link>Styles\silver\Menu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\MenuResourceDictionary.xaml">
+      <Link>Styles\silver\MenuResourceDictionary.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ProgressBar.xaml">
+      <Link>Styles\silver\ProgressBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\RadioButton.xaml">
+      <Link>Styles\silver\RadioButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ReplayDataGrid.xaml">
+      <Link>Styles\silver\ReplayDataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ScrollBar.xaml">
+      <Link>Styles\silver\ScrollBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\SpecialStyle.xaml">
+      <Link>Styles\silver\SpecialStyle.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\StatusBar.xaml">
+      <Link>Styles\silver\StatusBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\TabControl.xaml">
+      <Link>Styles\silver\TabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\TextBox.xaml">
+      <Link>Styles\silver\TextBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToggleButton.xaml">
+      <Link>Styles\silver\ToggleButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToolBar.xaml">
+      <Link>Styles\silver\ToolBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToolTip.xaml">
+      <Link>Styles\silver\ToolTip.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Window.xaml">
+      <Link>Styles\silver\Window.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -369,6 +639,9 @@
     </Compile>
     <Compile Include="..\WotDossier\Converters\SubtractValueConverter.cs">
       <Link>Converters\SubtractValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\DossierTheme.cs">
+      <Link>DossierTheme.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\MinimizeToTray.cs">
       <Link>MinimizeToTray.cs</Link>

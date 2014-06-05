@@ -1501,7 +1501,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Pack</value>
   </data>
   <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
-    <value>Разведка боем</value>
+    <value>Fighting Reconnaissance</value>
   </data>
   <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
     <value>50 раз выполнить следующие условия:
@@ -1511,7 +1511,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     </value>
   </data>
   <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
-    <value>За волю к победе</value>
+    <value>Will To Win Spirit</value>
   </data>
   <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
     <value>Победить в бою оставшись в одиночку против 3 
@@ -1520,7 +1520,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     </value>
   </data>
   <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
-    <value>Решающий выстрел</value>
+    <value>Crucial Shot</value>
   </data>
   <data name="Tooltip_Achievements_7x7" xml:space="preserve">
     <value>20 раз уничтожить последнюю машину противника
@@ -1529,7 +1529,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     </value>
   </data>
   <data name="Medal_7x7_GodOfWar" xml:space="preserve">
-    <value>Бог войны</value>
+    <value>God of War</value>
   </data>
   <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
     <value>Победить в бою на САУ оставшись единственным выжившим
@@ -1538,7 +1538,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     </value>
   </data>
   <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
-    <value>За отличную стрельбу</value>
+    <value>Wolf Among Sheep</value>
   </data>
   <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
     <value>Занять 100 раз первое место по количеству нанесенного урона в победном бою
@@ -1546,7 +1546,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     </value>
   </data>
   <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
-    <value>Отличник боевой подготовки</value>
+    <value>Genius for War</value>
   </data>
   <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
     <value>Занять 100 раз первое место по количеству заработанного опыта за бой
@@ -1993,9 +1993,6 @@ Survive %: {1:0.00}</value>
   <data name="WindowTitleFormat_Replay" xml:space="preserve">
     <value>{0}, {1}, battle level - {2}</value>
   </data>
-  <data name="Tooltip_Achievements_15x15_ForTacticalOperations" xml:space="preserve">
-    <value />
-  </data>
   <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
     <value>Fire and Steel</value>
   </data>
@@ -2015,7 +2012,7 @@ Survive %: {1:0.00}</value>
     <value>Pyromaniac</value>
   </data>
   <data name="Medal_7x7_RangerMedal" xml:space="preserve">
-    <value>Ranger Medal</value>
+    <value>Ranger</value>
   </data>
   <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
     <value />

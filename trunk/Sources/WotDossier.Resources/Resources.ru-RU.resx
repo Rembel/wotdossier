@@ -2173,9 +2173,6 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   • В общем зачете повтовно полученные награды не суммируются
     </value>
   </data>
-  <data name="Tooltip_Achievements_15x15_ForTacticalOperations" xml:space="preserve">
-    <value />
-  </data>
   <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
     <value>Закалённый в боях</value>
   </data>
@@ -2189,7 +2186,14 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Бой до последнего</value>
   </data>
   <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
-    <value />
+    <value>25 раз получить наибольшую сумму 
+полученного и заблокированного броней урона 
+за бой
+    • Выжить в бою
+    • В общем зачете повторно полученные награды не суммируются
+    • Защитываются только победные бои
+    • Выдается только в командных боях
+    </value> 
   </data>
   <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
     <value>Перспективный боец</value>
@@ -2198,25 +2202,47 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Пироман</value>
   </data>
   <data name="Medal_7x7_RangerMedal" xml:space="preserve">
-    <value />
+    <value>Егерь</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
     <value />
   </data>
   <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
-    <value />
+    <value>Занять 100 раз 1,2 или 3 место по количеству
+нанесенного урона за бой
+    • В общем зачете повторно полученные награды не суммируются
+    • Защитываются только победные бои
+    • Выдается только в командных боях
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
-    <value />
+    <value>Провести бой, в котором будет уничтожена вся 
+техника обеих команд.
+    • Выдается обеим сторонам
+    • Выдается только в командных боях
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_PromisingFighterMedal" xml:space="preserve">
-    <value />
+    <value>Занять 100 раз 1,2 или 3 место по количеству
+заработанного опыта за бой
+    • В общем зачете повторно полученные награды не суммируются
+    • Защитываются только победные бои
+    • Выдается только в командных боях
+</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_PyromaniacMedal" xml:space="preserve">
-    <value />
+    <value>10 раз поджечь противника
+    • В общем зачете повторно полученные награды не суммируются
+    • Выдается только в командных боях
+</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_RangerMedal" xml:space="preserve">
-    <value />
+    <value>10 раз повредить или уничтожить противника, 
+который невидим для игрока.
+    • В общем зачете повторно полученные награды не суммируются
+    • Защитываются только попадания нанесшие урон
+    • Выдается только в командных боях
+    </value>
   </data>
   <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
     <value />
@@ -2254,10 +2280,57 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
   <data name="Medal_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
     <value>Weak Vehicles Wins</value>
   </data>
-    <data name="Map_83_kharkiv" xml:space="preserve">
+  <data name="Map_83_kharkiv" xml:space="preserve">
     <value>Харьков</value>
   </data>
   <data name="Settings_AutoLoadStatistic" xml:space="preserve">
     <value>Автозагрузка статистики</value>
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_BothSidesWins" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_GuardsMan" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_MakerOfHistory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalAntiSpgFire" xml:space="preserve">
+    <value>Управляя САУ, уничтожить все САУ противника в одном бою, но не менее 3.
+    • Уничтожение союзников недопустимо.
+    • Выдаётся только в Случайных боях.
+</value>
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalCoolBlood" xml:space="preserve">
+    <value>Уничтожить не менее 2 лёгких танков противника с расстояния не более 100 метров.
+    • Управлять САУ IV уровня и выше.
+    • Уничтожение союзников недопустимо.
+    • Выдаётся только в Случайных боях.
+    </value>
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalGore" xml:space="preserve">
+    <value>Управляя САУ, нанести урон, десятикратно превышающий значение прочности собственной машины.
+    • Уничтожение союзников недопустимо.
+    • Попадания по союзникам не учитываются.
+    • Выдаётся только в Случайных боях.
+</value>
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalMonolith" xml:space="preserve">
+    <value>Выжить на САУ после фатального для противника тарана.
+    • Скорость собственной САУ не должна превышать 10 км/ч.
+    • Уничтожение союзников недопустимо.
+    • Выдаётся только в Случайных боях.
+</value>
+  </data>
+  <data name="Tooltip_Achievements_15x15_MedalStark" xml:space="preserve">
+    <value>Управляя САУ, уничтожить не менее 2 машин противника, получив не менее 2 попаданий от противника, нанёсших урон или заблокированных бронёй.
+    • Выжить в бою.
+    • Сумма полученного и заблокированного бронёй урона должна составлять не менее 2/3 от очков прочности собственной машины.
+    • Уничтожение союзников недопустимо.
+    • Выдаётся только в Случайных боях.
+</value>
   </data>
 </root>

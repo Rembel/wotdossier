@@ -2044,17 +2044,11 @@ Survive %: {1:0.00}</value>
   <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
     <value>Historical Battle</value>
   </data>
-  <data name="Medal_HistoricalBattle_BothSidesWins" xml:space="preserve">
-    <value>Both Sides Wins</value>
-  </data>
   <data name="Medal_HistoricalBattle_GuardsMan" xml:space="preserve">
     <value>Guards Man</value>
   </data>
   <data name="Medal_HistoricalBattle_MakerOfHistory" xml:space="preserve">
     <value>Maker Of History</value>
-  </data>
-  <data name="Medal_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
-    <value>Weak Vehicles Wins</value>
   </data>
   <data name="Tooltip_Achievements_HistoricalBattle_BothSidesWins" xml:space="preserve">
     <value />

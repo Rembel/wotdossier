@@ -2205,7 +2205,11 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value>Егерь</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
-    <value />
+    <value>Выдаётся за суммарное количество побед, 
+одержанных в составе случайной команды 
+в 10/100/1000/2500 боях. 
+    • Выдаётся только в командных боях.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
     <value>Занять 100 раз 1,2 или 3 место по количеству
@@ -2245,10 +2249,19 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     </value>
   </data>
   <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
-    <value />
+    <value>Выдаётся игроку, победившему не менее 3 
+раз подряд в составе случайной команды. 
+Серия ведётся для каждой машины отдельно и может 
+продолжиться в следующем бою на этой же машине. 
+    • Достижение выдаётся только в командных боях.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
-    <value />
+    <value>Присуждается игроку, 20 раз уничтожившему последнюю 
+машину противника и победившему в бою. 
+    • В общем зачёте повторно полученные награды суммируются. 
+    • Выдаётся только в командных боях. 
+    </value> 
   </data>
   <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
     <value>Исторический бой</value>
@@ -2290,10 +2303,20 @@ Panther-M10, 8.8 cm PaK 43 Jagdtiger.</value>
     <value />
   </data>
   <data name="Tooltip_Achievements_HistoricalBattle_GuardsMan" xml:space="preserve">
-    <value />
+    <value>Выдаётся за суммарное количество побед, 
+одержанных на вспомогательной технике в 5/50/500/1500 боях. 
+В роли вспомогательной техники в разных исторических 
+боях могут выступать разные машины. 
+Например, играя в команде, состоящей из танков Т-34 и БТ-7, 
+необходимо управлять танком БТ-7. 
+    • Выдаётся только в исторических боях. 
+    </value> 
   </data>
   <data name="Tooltip_Achievements_HistoricalBattle_MakerOfHistory" xml:space="preserve">
-    <value />
+    <value>Выдаётся за суммарное количество побед, 
+одержанных за каждую из сторон конфликта 
+в 5/50/500/2500 боях. 
+    • Выдаётся только в исторических боях. </value> 
   </data>
   <data name="Tooltip_Achievements_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
     <value />

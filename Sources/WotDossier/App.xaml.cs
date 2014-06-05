@@ -78,7 +78,7 @@ namespace WotDossier
             }
 
             //Apply application UI theme
-            ApplyTheme(DossierTheme.Silver);
+            ApplyTheme(DossierTheme.Black);
 
 #if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't

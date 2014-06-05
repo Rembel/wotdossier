@@ -7,7 +7,8 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         Title="{Binding Path=DataContext.PlayerStatistic.Name, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="768" 
-        Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_player.png" WindowStartupLocation="CenterScreen">
+        Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_player.png" WindowStartupLocation="CenterScreen"
+        Style="{StaticResource office2007SilverWindow}">
     <Grid Background="{StaticResource bcolorCenter}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>

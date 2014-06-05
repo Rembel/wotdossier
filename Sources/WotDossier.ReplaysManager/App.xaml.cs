@@ -47,6 +47,9 @@ namespace WotDossier
         /// <param name="e">A <see cref="T:System.Windows.StartupEventArgs" /> that contains the event data.</param>
         protected override void OnStartup(StartupEventArgs e)
         {
+            //Apply application UI theme
+            ApplyTheme(DossierTheme.Black);
+
 #if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't
             // jump into the code when an exception occurs.
@@ -58,9 +61,6 @@ namespace WotDossier
             try
             {
                 _log.Trace("OnStartup start");
-
-                //Apply application UI theme
-                ApplyTheme(DossierTheme.Black);
 
                 DatabaseManager manager = new DatabaseManager();
                 manager.InitDatabase();
@@ -108,8 +108,15 @@ namespace WotDossier
 
         private void ApplyTheme(DossierTheme theme)
         {
-            Current.Resources.MergedDictionaries.Clear();
-            Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = _themes[theme] });
+            try
+            {
+                Current.Resources.MergedDictionaries.Clear();
+                Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = _themes[theme] });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

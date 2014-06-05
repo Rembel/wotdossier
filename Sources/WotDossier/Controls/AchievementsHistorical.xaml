@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="50,0,50,0">
-            <!--Team battles achievements-->
+            <!--Historical battles achievements-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_HistoricalBattle}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding GuardsMan}" Delta="{Binding GuardsManDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GuardsMan1.png">
@@ -21,16 +21,6 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_HistoricalBattle_MakerOfHistory}" Text="{x:Static resources:Resources.Tooltip_Achievements_HistoricalBattle_MakerOfHistory}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <!--<controls:MedalAchievement Value="{Binding BothSidesWins}" Delta="{Binding BothSidesWinsDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/BothSidesWins.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_HistoricalBattle_BothSidesWins}" Text="{x:Static resources:Resources.Tooltip_Achievements_HistoricalBattle_BothSidesWins}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding WeakVehiclesWins}" Delta="{Binding WeakVehiclesWinsDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/WeakVehiclesWins.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_HistoricalBattle_WeakVehiclesWins}" Text="{x:Static resources:Resources.Tooltip_Achievements_HistoricalBattle_WeakVehiclesWins}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>-->
             </WrapPanel>
         </StackPanel>
     </Grid>

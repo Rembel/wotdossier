@@ -5,7 +5,8 @@
         xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
         xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
-        Title="{Binding Title}" MinHeight="768" MinWidth="1024" Background="Transparent" WindowStartupLocation="CenterScreen" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_search.png">
+        Title="{Binding Title}" MinHeight="768" MinWidth="1024" WindowStartupLocation="CenterScreen" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_search.png"
+        Style="{StaticResource office2007SilverWindow}">
     <Grid FocusManager.FocusedElement="{Binding ElementName=txtSearch}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>

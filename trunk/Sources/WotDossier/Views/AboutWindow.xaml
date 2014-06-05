@@ -6,7 +6,8 @@
         xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         Title="{x:Static resources:Resources.WindowTitle_AboutWindow}" Height="195" Width="450" 
-        ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" WindowStyle="None">
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" WindowStyle="None"
+        Style="{StaticResource office2007SilverWindow}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>

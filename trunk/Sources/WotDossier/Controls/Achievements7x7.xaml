@@ -28,7 +28,7 @@
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding MaxTacticalBreakthroughSeries}" Delta="{Binding TacticalBreakthroughDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/TacticalBreakthrough.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_TacticalBreakthrough}" Text="TacticalBreakthrough" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_TacticalBreakthrough}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_TacticalBreakthrough}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding ArmoredFist}" Delta="{Binding ArmoredFistDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ArmoredFist.png">

@@ -8,7 +8,8 @@
         xmlns:converters="clr-namespace:WotDossier.Converters"
         mc:Ignorable="d" 
         Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" 
-        Icon="{Binding Path=TankStatistic.Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}">
+        Icon="{Binding Path=TankStatistic.Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}"
+        Style="{StaticResource office2007SilverWindow}">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Print" Executed="PrintWindow_Executed"/>
     </Window.CommandBindings>
@@ -66,27 +67,31 @@
                 </TabItem>
                 <!--Charts-->
                 <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
-                    <TabControl HorizontalAlignment="Center" Margin="0,50,0,50" Background="White">
+                    <TabControl HorizontalAlignment="Center" Margin="0,50,0,50">
                         <TabControl.Resources>
                             <Style TargetType="TabPanel">
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </TabControl.Resources>
                         <TabItem Header="1" >
+                            <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
                             <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
                                 <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
                                 <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
                                 <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
                                 <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
                             </WrapPanel>
+                                </Border>
                         </TabItem>
                         <TabItem Header="2">
+                            <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
                             <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
                                 <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
                                 <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
                                 <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
                                 <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
                             </WrapPanel>
+                                </Border>
                         </TabItem>
                     </TabControl>
                 </TabItem>

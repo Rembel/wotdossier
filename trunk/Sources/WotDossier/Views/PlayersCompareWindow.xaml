@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:WotDossier.Controls"
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
-        Title="{x:Static resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850" MinWidth="850" MinHeight="768" WindowStartupLocation="CenterScreen">
+        Title="{x:Static resources:Resources.WindowCaption_ComparePlayers}" Height="768" Width="850" MinWidth="850" MinHeight="768" WindowStartupLocation="CenterScreen"
+        Style="{StaticResource office2007SilverWindow}">
     <Grid Background="{StaticResource bcolorCenter}" FocusManager.FocusedElement="{Binding ElementName=txtSearch}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>

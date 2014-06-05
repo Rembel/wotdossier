@@ -228,9 +228,6 @@
     <Compile Include="Tabs\CommonTabNew.xaml.cs">
       <DependentUpon>CommonTabNew.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\ChartsTab.xaml.cs">
-      <DependentUpon>ChartsTab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\MedalsHistoricalTab.xaml.cs">
       <DependentUpon>MedalsHistoricalTab.xaml</DependentUpon>
     </Compile>
@@ -553,6 +550,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\Black\GroupBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Black\Hyperlink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -661,6 +662,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\silver\GroupBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\silver\Hyperlink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -732,10 +737,6 @@
     <Page Include="Tabs\CommonTabNew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Tabs\ChartsTab.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\MedalsHistoricalTab.xaml">
       <Generator>MSBuild:Compile</Generator>

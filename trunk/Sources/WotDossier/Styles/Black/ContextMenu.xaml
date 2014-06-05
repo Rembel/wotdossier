@@ -18,16 +18,16 @@
                         </Grid.RowDefinitions>
                         <ScrollContentPresenter Grid.RowSpan="3"/>
                         <RepeatButton x:Name="topRepeatButton" Height="0" Command="ScrollBar.LineUpCommand" ClickMode="Hover"
-                          Grid.Row="0">
+                                      Grid.Row="0">
                             <Grid Height="10" Width="5" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Canvas Width="9" Height="5">
                                     <Path Opacity="1"
-                        Data="M 4.53125,0.15625 C 4.53125,0.15625 9,5 9,5 9,5 0,5 0,5 0,5 4.53125,0.15625 4.53125,0.15625 Z"/>
+                                          Data="M 4.53125,0.15625 C 4.53125,0.15625 9,5 9,5 9,5 0,5 0,5 0,5 4.53125,0.15625 4.53125,0.15625 Z"/>
                                 </Canvas>
                             </Grid>
                             <UIElement.Visibility>
                                 <MultiBinding FallbackValue="Visibility.Collapsed" Converter="{StaticResource MenuScrollingVisibilityConverter}"
-                              ConverterParameter="0">
+                                              ConverterParameter="0">
                                     <Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
                                     <Binding Path="VerticalOffset" RelativeSource="{RelativeSource TemplatedParent}"/>
                                     <Binding Path="ExtentHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -36,10 +36,10 @@
                             </UIElement.Visibility>
                         </RepeatButton>
                         <RepeatButton x:Name="bottomRepeatButton" Height="15" Command="ScrollBar.LineDownCommand" ClickMode="Hover"
-                          Grid.Row="2">
+                                      Grid.Row="2">
                             <UIElement.Visibility>
                                 <MultiBinding FallbackValue="Visibility.Collapsed" Converter="{StaticResource MenuScrollingVisibilityConverter}"
-                              ConverterParameter="100">
+                                              ConverterParameter="100">
                                     <Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
                                     <Binding Path="VerticalOffset" RelativeSource="{RelativeSource TemplatedParent}"/>
                                     <Binding Path="ExtentHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -47,10 +47,10 @@
                                 </MultiBinding>
                             </UIElement.Visibility>
                             <Grid Height="10" Width="5" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                                  VerticalAlignment="Center">
                                 <Canvas Width="9" Height="5">
                                     <Path Opacity="1"
-                        Data="M 4.53125,0.15625 C 4.53125,0.15625 9,5 9,5 9,5 0,5 0,5 0,5 4.53125,0.15625 4.53125,0.15625 Z"/>
+                                          Data="M 4.53125,0.15625 C 4.53125,0.15625 9,5 9,5 9,5 0,5 0,5 0,5 4.53125,0.15625 4.53125,0.15625 Z"/>
                                 </Canvas>
                                 <UIElement.RenderTransform>
                                     <RotateTransform Angle="180"/>
@@ -65,8 +65,8 @@
     <ControlTemplate x:Key="office2007SilverContextMenuTemplate" TargetType="{x:Type ContextMenu}">
         <Grid>
             <Border Name="Border" Background="{StaticResource menuPopUpBackgroundBrush}"
-              BorderThickness="{TemplateBinding Control.BorderThickness}"
-              BorderBrush="{TemplateBinding Control.BorderBrush}">
+                    BorderThickness="{TemplateBinding Control.BorderThickness}"
+                    BorderBrush="{TemplateBinding Control.BorderBrush}">
                 <ScrollViewer Style="{StaticResource MenuItemScrollViewer}">
                     <StackPanel IsItemsHost="true" KeyboardNavigation.DirectionalNavigation="Cycle"/>
                 </ScrollViewer>
@@ -77,6 +77,9 @@
         <Style.Resources>
             <ResourceDictionary Source="MenuResourceDictionary.xaml"/>
         </Style.Resources>
+        <Setter Property="Control.FontFamily" Value="Calibri"/>
+        <Setter Property="Control.FontSize" Value="12"/>
+        <Setter Property="Control.Foreground" Value="Black"/>
         <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
         <Setter Property="Control.BorderThickness" Value="1"/>
         <Setter Property="Control.Template" Value="{StaticResource office2007SilverContextMenuTemplate}"/>

@@ -46,6 +46,7 @@
     <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
     <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
     <Setter Property="Control.Background" Value="{StaticResource office2007BlueGlossyBrush}"/>
+    <Setter Property="Control.Foreground" Value="White"/>
     <Setter Property="Control.BorderBrush" Value="{StaticResource buttonOutsideBorderDefaultBorderBrush}"/>
     <Setter Property="Control.BorderThickness" Value="1"/>
     <Setter Property="Control.Padding" Value="1"/>

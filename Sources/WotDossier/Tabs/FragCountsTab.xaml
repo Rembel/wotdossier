@@ -27,7 +27,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             
-            <TextBlock Grid.Row="0" Text="{x:Static resources:Resources.TankFilterPanel_Tank}"></TextBlock>
+            <TextBlock Margin="6,3,6,3" Grid.Row="0" Text="{x:Static resources:Resources.TankFilterPanel_Tank}"></TextBlock>
 
             <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250"></ComboBox>
 

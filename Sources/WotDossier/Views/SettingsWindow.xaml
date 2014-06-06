@@ -4,7 +4,7 @@
         xmlns:autoCompleteTextBox="clr-namespace:WotDossier.Framework.Controls.AutoCompleteTextBox;assembly=WotDossier.Framework"
         xmlns:applications="clr-namespace:WotDossier.Applications;assembly=WotDossier.Applications"
         Title="Settings" Height="250" Width="500" WindowStartupLocation="CenterOwner" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_settings.png"
-        Style="{StaticResource office2007SilverWindow}">
+        Style="{StaticResource office2007SilverWindow}" Background="{StaticResource PanelBackground}">
     <Window.Resources>
         <applications:PlayerNameSuggestionProvider x:Key="nsp" />
         <DataTemplate x:Key="fsTemplate">

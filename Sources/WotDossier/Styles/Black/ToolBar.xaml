@@ -32,7 +32,7 @@
                             <Rectangle Margin="1,3">
                                 <Shape.Fill>
                                     <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
-                                                  TileMode="Tile">
+                                TileMode="Tile">
                                         <DrawingBrush.Drawing>
                                             <DrawingGroup>
                                                 <DrawingGroup.Children>
@@ -48,7 +48,7 @@
                             <Rectangle Margin="0,2">
                                 <Shape.Fill>
                                     <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
-                                                  TileMode="Tile">
+                                TileMode="Tile">
                                         <DrawingBrush.Drawing>
                                             <DrawingGroup>
                                                 <DrawingGroup.Children>
@@ -73,8 +73,9 @@
                     <Border Name="Bd" CornerRadius="0,3,3,0" SnapsToDevicePixels="true">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#B3B2C8" Offset="0"/>
-                                <GradientStop Color="#767492" Offset="1"/>
+                                <GradientStop Color="#B2B7BF" Offset="0"/>
+                                <GradientStop Color="#9199A4" Offset="0.4"/>
+                                <GradientStop Color="#4C535C" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.Background>
                         <Grid>
@@ -108,7 +109,7 @@
                         </Trigger>
                         <Trigger Property="UIElement.IsEnabled" Value="false">
                             <Setter TargetName="Arrow" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
-                                    Property="Shape.Fill"/>
+                      Property="Shape.Fill"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -138,7 +139,7 @@
                             <Rectangle Margin="1,1">
                                 <Shape.Fill>
                                     <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
-                                                  TileMode="Tile">
+                                TileMode="Tile">
                                         <DrawingBrush.Drawing>
                                             <DrawingGroup>
                                                 <DrawingGroup.Children>
@@ -154,7 +155,7 @@
                             <Rectangle Margin="0,0">
                                 <Shape.Fill>
                                     <DrawingBrush Viewport="0,0,4,4" ViewportUnits="Absolute" Viewbox="0,0,8,8" ViewboxUnits="Absolute"
-                                                  TileMode="Tile">
+                                TileMode="Tile">
                                         <DrawingBrush.Drawing>
                                             <DrawingGroup>
                                                 <DrawingGroup.Children>
@@ -179,8 +180,9 @@
                     <Border Name="Bd" CornerRadius="0,0,3,3" SnapsToDevicePixels="true">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
-                                <GradientStop Color="#B3B2C8" Offset="0"/>
-                                <GradientStop Color="#767492" Offset="1"/>
+                                <GradientStop Color="#B2B7BF" Offset="0"/>
+                                <GradientStop Color="#9199A4" Offset="0.4"/>
+                                <GradientStop Color="#4C535C" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.Background>
                         <Grid>
@@ -214,7 +216,7 @@
                         </Trigger>
                         <Trigger Property="UIElement.IsEnabled" Value="false">
                             <Setter TargetName="Arrow" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
-                                    Property="Shape.Fill"/>
+                      Property="Shape.Fill"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -224,15 +226,15 @@
     <Style x:Key="office2007SilverToolBar" TargetType="{x:Type ToolBar}">
         <Style.Resources>
             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource office2007SilverButton}"
-                   x:Key="{x:Static ToolBar.ButtonStyleKey}"/>
+             x:Key="{x:Static ToolBar.ButtonStyleKey}"/>
             <Style BasedOn="{StaticResource office2007SilverToggleButton}" TargetType="{x:Type ToggleButton}"
-                   x:Key="{x:Static ToolBar.ToggleButtonStyleKey}"/>
+             x:Key="{x:Static ToolBar.ToggleButtonStyleKey}"/>
             <Style BasedOn="{StaticResource office2007SilverCheckBox}" TargetType="{x:Type CheckBox}"
-                   x:Key="{x:Static ToolBar.CheckBoxStyleKey}"/>
+             x:Key="{x:Static ToolBar.CheckBoxStyleKey}"/>
             <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource office2007SilverRadioButton}"
-                   x:Key="{x:Static ToolBar.RadioButtonStyleKey}"/>
+             x:Key="{x:Static ToolBar.RadioButtonStyleKey}"/>
             <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource office2007SilverComboBox}"
-                   x:Key="{x:Static ToolBar.ComboBoxStyleKey}"/>
+             x:Key="{x:Static ToolBar.ComboBoxStyleKey}"/>
             <Style TargetType="{x:Type TextBox}" x:Key="{x:Static ToolBar.TextBoxStyleKey}">
                 <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
                 <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true"/>
@@ -243,15 +245,15 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TextBox}">
                             <Border Name="Border" Padding="2" Background="{StaticResource LightBackgroundBrush}"
-                                    BorderBrush="{StaticResource buttonOutsideBorderDefaultBorderBrush}" BorderThickness="1">
+                      BorderBrush="{StaticResource buttonOutsideBorderDefaultBorderBrush}" BorderThickness="1">
                                 <ScrollViewer x:Name="PART_ContentHost" Margin="0"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="UIElement.IsEnabled" Value="false">
                                     <Setter TargetName="Border" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}"
-                                            Property="Border.Background"/>
+                          Property="Border.Background"/>
                                     <Setter TargetName="Border" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
-                                            Property="Border.BorderBrush"/>
+                          Property="Border.BorderBrush"/>
                                     <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Control.Foreground"/>
                                 </Trigger>
                             </ControlTemplate.Triggers>
@@ -270,25 +272,25 @@
                 <ControlTemplate TargetType="{x:Type ToolBar}">
                     <FrameworkTemplate.Resources>
                         <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource office2007SilverToolBarSeparator}"
-                               x:Key="{x:Static ToolBar.SeparatorStyleKey}"/>
+                   x:Key="{x:Static ToolBar.SeparatorStyleKey}"/>
                     </FrameworkTemplate.Resources>
                     <Border x:Name="Border" CornerRadius="2" BorderThickness="{TemplateBinding Control.BorderThickness}"
-                            Background="{StaticResource toolBarBackgroundBrush}"
-                            BorderBrush="{TemplateBinding Control.BorderBrush}">
+                  Background="{StaticResource toolBarBackgroundBrush}"
+                  BorderBrush="{TemplateBinding Control.BorderBrush}">
                         <Grid>
                             <Border Background="{TemplateBinding Control.Background}" Opacity="0.5"/>
                             <DockPanel>
                                 <ToggleButton DockPanel.Dock="Right" IsEnabled="{TemplateBinding ToolBar.HasOverflowItems}"
-                                              Style="{StaticResource ToolBarOverflowButtonStyle}" ClickMode="Press"
-                                              IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                              Style="{StaticResource ToolBarOverflowButtonStyle}" ClickMode="Press"
+                              IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
                                     <Popup x:Name="OverflowPopup" AllowsTransparency="true" Placement="Bottom" StaysOpen="false"
-                                           Focusable="false" PopupAnimation="Slide"
-                                           IsOpen="{Binding Path=IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}">
+                         Focusable="false" PopupAnimation="Slide"
+                         IsOpen="{Binding Path=IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}">
                                         <Border x:Name="DropDownBorder" Background="{StaticResource menuPopUpBackgroundBrush}" BorderThickness="1"
-                                                BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}">
+                            BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}">
                                             <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel" Margin="2" WrapWidth="200" Focusable="true"
-                                                                  KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Cycle"
-                                                                  FocusVisualStyle="{x:Null}"/>
+                                            KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Cycle"
+                                            FocusVisualStyle="{x:Null}"/>
                                         </Border>
                                     </Popup>
                                 </ToggleButton>
@@ -315,30 +317,30 @@
                         <ControlTemplate TargetType="{x:Type ToolBar}">
                             <FrameworkTemplate.Resources>
                                 <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource office2007SilverVerticalToolBarSeparator}"
-                                       x:Key="{x:Static ToolBar.SeparatorStyleKey}"/>
+                       x:Key="{x:Static ToolBar.SeparatorStyleKey}"/>
                             </FrameworkTemplate.Resources>
                             <Border x:Name="Border" CornerRadius="2" BorderThickness="{TemplateBinding Control.BorderThickness}"
-                                    Background="{StaticResource toolBarBackgroundBrush}"
-                                    BorderBrush="{TemplateBinding Control.BorderBrush}">
+                      Background="{StaticResource toolBarBackgroundBrush}"
+                      BorderBrush="{TemplateBinding Control.BorderBrush}">
                                 <Grid>
                                     <Border Background="{TemplateBinding Control.Background}" Opacity="0.5"/>
                                     <DockPanel>
                                         <ToggleButton DockPanel.Dock="Bottom" IsEnabled="{TemplateBinding ToolBar.HasOverflowItems}"
-                                                      Style="{StaticResource ToolBarVerticalOverflowButtonStyle}" ClickMode="Press"
-                                                      IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                  Style="{StaticResource ToolBarVerticalOverflowButtonStyle}" ClickMode="Press"
+                                  IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
                                             <Popup x:Name="OverflowPopup" AllowsTransparency="true" Placement="Bottom" StaysOpen="false"
-                                                   Focusable="false" PopupAnimation="Slide"
-                                                   IsOpen="{Binding Path=IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}">
+                             Focusable="false" PopupAnimation="Slide"
+                             IsOpen="{Binding Path=IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}">
                                                 <Border x:Name="DropDownBorder" Background="{StaticResource menuPopUpBackgroundBrush}" BorderThickness="1"
-                                                        BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}">
+                                BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}">
                                                     <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel" Margin="2" WrapWidth="200" Focusable="true"
-                                                                          KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Cycle"
-                                                                          FocusVisualStyle="{x:Null}"/>
+                                                KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                FocusVisualStyle="{x:Null}"/>
                                                 </Border>
                                             </Popup>
                                         </ToggleButton>
-                                        <Thumb x:Name="ToolBarThumb" DockPanel.Dock="Top" Style="{StaticResource ToolBarVerticalThumbStyle}"
-                                               Height="6"/>
+                                        <Thumb x:Name="ToolBarThumb" Style="{StaticResource ToolBarVerticalThumbStyle}" DockPanel.Dock="Top"
+                           Height="6"/>
                                         <ToolBarPanel x:Name="PART_ToolBarPanel" IsItemsHost="true" Margin="{TemplateBinding Control.Padding}"/>
                                     </DockPanel>
                                 </Grid>
@@ -359,10 +361,10 @@
     </Style>
     <Style TargetType="{x:Type ToolBarTray}">
         <Setter Property="ToolBarTray.Background"
-                Value="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"/>
+            Value="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"/>
     </Style>
     <Style x:Key="{x:Static ToolBar.MenuStyleKey}" TargetType="{x:Type Menu}"
-           BasedOn="{StaticResource office2007SilverMenu}">
+         BasedOn="{StaticResource office2007SilverMenu}">
         <Style.Resources>
             <Style TargetType="{x:Type MenuItem}" BasedOn="{StaticResource office2007SilverMenuItem}"/>
         </Style.Resources>

@@ -50,6 +50,7 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="BattleMode.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="DossierTheme.cs" />
     <Compile Include="Dossier\AppSpot\Amounts.cs" />
     <Compile Include="Dossier\AppSpot\Awards.cs" />
     <Compile Include="Dossier\AppSpot\Epic.cs" />

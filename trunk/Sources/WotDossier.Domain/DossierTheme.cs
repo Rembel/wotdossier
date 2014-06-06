@@ -1,9 +1,8 @@
-﻿namespace WotDossier
+﻿namespace WotDossier.Domain
 {
     public enum DossierTheme
     {
-        Base,
-        Silver,
         Black,
+        Silver,
     }
 }

@@ -14,7 +14,7 @@ namespace WotDossier.Domain
         private TankFilterSettings _tankFilterSettings = new TankFilterSettings();
         private PeriodSettings _periodSettings = new PeriodSettings();
         private string _server = "ru";
-
+        
         /// <summary>
         /// Gets or sets the name of the player.
         /// </summary>
@@ -134,5 +134,15 @@ namespace WotDossier.Domain
         /// <c>true</c> if [automatic load statistic]; otherwise, <c>false</c>.
         /// </value>
         public bool AutoLoadStatistic { get; set; }
+
+        private DossierTheme _theme = DossierTheme.Black;
+        /// <summary>
+        /// Gets or sets the theme.
+        /// </summary>
+        public DossierTheme Theme
+        {
+            get { return _theme; }
+            set { _theme = value; }
+        }
     }
 }

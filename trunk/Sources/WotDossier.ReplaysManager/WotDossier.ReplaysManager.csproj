@@ -396,9 +396,6 @@
     <Compile Include="..\WotDossier\Converters\SubtractValueConverter.cs">
       <Link>Converters\SubtractValueConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\DossierTheme.cs">
-      <Link>DossierTheme.cs</Link>
-    </Compile>
     <Compile Include="..\WotDossier\MinimizeToTray.cs">
       <Link>MinimizeToTray.cs</Link>
     </Compile>

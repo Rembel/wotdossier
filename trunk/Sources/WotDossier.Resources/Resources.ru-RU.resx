@@ -2424,4 +2424,13 @@
     • Выдаётся только в Случайных боях.
 </value>
   </data>
+    <data name="Label_ColorScheme" xml:space="preserve">
+    <value>Цветовая схема</value>
+  </data>
+    <data name="DossierTheme_Black" xml:space="preserve">
+    <value>Черная</value>
+  </data>
+    <data name="DossierTheme_Silver" xml:space="preserve">
+    <value>Серебряная</value>
+  </data>
 </root>

@@ -329,40 +329,74 @@
   </data>
   <data name="Tooltip_Achievements_15x15_Warrior" xml:space="preserve">
     <value>Destroy more enemy vehicles than any other player in your team during the battle (at least 6).
-If two or more players have destroyed equal amount vehicles, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+    • If two or more players have destroyed an equal number of vehicles, the achievement is awarded to the player who earned more XP for the battle.
+    • The achievement is only awarded once per battle.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_BrothersInArms" xml:space="preserve">
-    <value>Awarded to a platoon in which all platoon members destroy at least 3 enemy vehicles and survive in battle. Each platoon participant receive this title.</value>
+    <value>Each Platoon member must destroy at least 3 enemy vehicles.
+    • All Platoon members must survive the battle.
+    • All Platoon members receive the award.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Confederate" xml:space="preserve">
-    <value>Hit more enemy vehicles than any other player on your team (at least 6), which are subsequently destroyed by another player.
-If two or more players have equal amount of hits, the achievement is granted to the player who has earned more XP for the battle, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+    <value>Damage more enemy vehicles or destroy their tracks, at least 6, than any other player.
+    • Targets that were destroyed or lost in battle are included. 
+    • Ricochet and non-penetration are not included.
+    • If two or more players score an equal number of hits, the achievement is awarded to the player who earned more XP in the battle.
+    • The achievement is only awarded once per battle.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_CrucialContribution" xml:space="preserve">
-    <value>Awarded to a platoon which destroyed at least 12 enemy vehicles in one battle. Each platoon participant receive this title.</value>
+    <value>Platoon must destroy at least 12 enemy vehicles.
+    • All Platoon members receive the award.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Defender" xml:space="preserve">
-    <value>Reduce the amount of enemy capture points on a friendly base by 70 or more.
-If two or more players have reduced equal amount of capture points, the achievement is granted to the player who has earned more XP in the battle (including additional XP provided to Premium account users). If the amount of XP is equal as well, the achievement is not awarded.</value>
+    <value>Reduce the number of enemy capture points of a friendly base by 70 or more.
+    • If two or more players have an equal number of capture points, the achievement is awarded to the player who earned more XP in the battle.
+    • The achievement is only awarded once per battle.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Invader" xml:space="preserve">
-    <value>Capture the maximum number of points from the enemy base, but not less than 80.
-The achievement is granted on successful base capture, including only the points that were part of the base capture. If the battle ends in a draw, the achievement is granted to the first player to receive 80 or more capture points.</value>
+    <value>Score at least 80 capture points on the enemy base.
+    • The achievement is awarded upon successful base capture, and only includes the points that were part of the base capture.
+    • Can be obtained in Random Battles only.
+</value>
   </data>
   <data name="Tooltip_Achievements_15x15_PatrolDuty" xml:space="preserve">
-    <value>Awarded to the player who helps the team damage at least six enemy vehicles by highlighting them. The tanks must be highlighted only by you when they take damage.</value>
+    <value>Help your team damage at least 6 enemy vehicles by spotting them.
+    • The player must be the only one spotting the enemy vehicles at the moment when they are damaged.
+    • If two or more players have spotted an equal number of enemy vehicles for damaging by teammates, the achievement is awarded to the player who earned more XP in the battle.
+    • The achievement is only awarded once per battle.
+    • Can be obtained in Random Battles only.
+</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Scout" xml:space="preserve">
-    <value>Detect most enemy tanks and self-propelled guns than anyone else on your team (at least nine). The achievement is granted to the winning team only.
-If two or more players have detected equal number of enemy vehicles, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+    <value>Detect more enemy vehicles than anyone else in your team (at least 9).
+    • Win the battle.
+    • The achievement is only awarded once per battle
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Sniper" xml:space="preserve">
-    <value>Achieve at least 85% hits out of a minimum of ten shots fired with the potential damage of 1,000 HP and more. Non-penetrating hits are included, but hits on friendly units are not included.
-If two or more players have an equal hit ratio, the achievement is granted to the player with the highest potential damage. If two or more players have an equal amount of potential damage, the achievement is granted to the player who earned more XP for the battle, including additional XP provided to Premium Account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+    <value>Achieve at least 85% hits out of a minimum of 10 shots fired with potential damage of 1,000 HP or more.
+    • Non-penetrating hits were included.
+    • Direct hits on friendly vehicles were not allowed.
+    • If two or more players had identical hit ratios, the achievement was awarded to the player with the highest number of hits.
+    • If two or more players had identical hit ratios and the same number of hits, the achievement was awarded to the player who had earned more XP for the battle.
+    • The achievement could only be awarded once per battle.
+    • Can be obtained in Random Battles only.
+    • Awarded before the release of 0.8.11 version.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_SteelWall" xml:space="preserve">
-    <value>Receive the most hits (at least 11) of any player on your team, with potential damage of at least 1,000 HP, and survive.
-If two or more players have equal amount of hits, the achievement is granted to the player with the highest potential damage. If two or more players have equal amount of potential damage, the achievement is granted to the player who has earned more XP, including additional XP provided to Premium account users. If the amount of XP is equal as well, the achievement is not granted.</value>
+    <value>Receive the highest damage (at least 1,000 HP), including damage blocked by armor.
+    • Survive the battle.
+    • Receive at least 11 hits and the highest damage blocked by armor.
+    • If two or more players received the same amount of damage blocked by armor, the achievement is awarded to the player who received the greatest number of hits.
+    • If two or more players received the same amount of damage blocked by armor and an equal number of hits, the achievement is awarded to the player who earned more experience for the battle.
+    • The achievement is only awarded once per battle.
+    • Can be obtained in Random Battles only.
+</value>
   </data>
   <data name="Tooltip_Achievements_15x15_BattleHero" xml:space="preserve">
     <value>Awarded for individual battles if all of the requirements are met.</value>
@@ -560,165 +594,315 @@ If two or more players have equal amount of hits, the achievement is granted to 
     <value>Average Detected:</value>
   </data>
   <data name="Tooltip_Achievements_15x15_IronMan" xml:space="preserve">
-    <value>Survive at least 10 ricochets and non-penetrations in a row from enemy players.</value>
+    <value>Survive at least 10 ricochets and non-penetrations in a row from enemy team players.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Lucky" xml:space="preserve">
-    <value>Witness the destruction of an enemy vehicle by an enemy team player. You must be within 10 meters or less from the enemy vehicle at the moment of its destruction.</value>
+    <value>Witness an enemy vehicle being shot and destroyed by another enemy team player. You must be 10 meters or less from the enemy vehicle at the moment of its destruction.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Sturdy" xml:space="preserve">
-    <value>Survive a ricochet or non-penetrating shot from an enemy player. Your vehicle must have less than 10% of its hit points (HP) left and you must survive the battle.</value>
+    <value>Survive a ricochet or non-penetration from an enemy team player. Your vehicle must have less than 10% of its hit points left.
+    • Survive the battle.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Billotte" xml:space="preserve">
-    <value>Awarded to players who destroy at least one enemy vehicle and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
-Pierre Billotte was a captain in the French Army who destroyed 2 PzKpfw IV, 11 PzKpfw III and 2 guns with his Char B1 bis on May 16, 1940.</value>
+    <value>Destroy at least 2 enemy vehicles while having 5 different modules damaged or crew members injured and losing 80% of hit points.
+    • Survive and win the battle.
+    • Destroyed enemy vehicles count after all damage is received.
+    • Can be obtained in Random Battles only.
+
+Pierre Billotte was a captain in the French Army who destroyed 2 PzKpfw IV, 11 PzKpfw III and two guns with his Char B1 bis on May 16th, 1940.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Boelter" xml:space="preserve">
-    <value>With the release of Version 0.8.0, this medal is no longer being awarded. Prior to 0.8.0, this was awarded for destroying seven or more enemy tanks and self-propelled guns with a tank or tank destroyer, or 10 or more vehicles with a self-propelled gun in one battle. The targets must be at least tier four enemy vehicles.
-Johannes Bölter was one of the most successful German tank aces of WWII. He participated in operations in the invasions of Poland, France, Greece and the Soviet Union, and the defense of France.</value>
+    <value>Destroy 7 or more enemy vehicles with a tank or tank destroyer, or 10 or more vehicles with a self-propelled gun.
+• The targets had to be enemy vehicles of Tiers IV-X.
+• Awarded before the release of 0.8.0 version.
+
+Johannes Bölter was one of the most successful German tank aces of WWII. He participated in operations in the invasions of Poland, France, 
+Greece, and the Soviet Union, as well as in the defense of France.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_BrunoPietro" xml:space="preserve">
-    <value>Awarded to players who destroy three or four enemy vehicles and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
-Pietro Bruno was an Italian tank ace. For exceptional valor in the face of the enemy he was awarded the Gold Medal of Military Valor (Medaglia d'oro al Valore Militare), the highest Italian award.</value>
+    <value>Destroy 3-4 enemy vehicles while having 5 different modules damaged or crew members injured and losing 80% of hit points.
+    • Survive and win the battle.
+    • Destroyed enemy vehicles count after all damage is received.
+    • Can be obtained in Random Battles only.
+    
+Pietro Bruno was an Italian tank ace. For exceptional valor in the face of the enemy he was awarded the Gold Medal of Military Valor (Medaglia d'oro al Valore Militare), the highest Italian award.
+</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Burda" xml:space="preserve">
-    <value>Awarded for the destruction of five or more enemy self-propelled guns.
-Guards Colonel Alexander Burda was a Soviet tank ace and a Hero of the Soviet Union. On October 4, 1941, Burda organized an ambush and destroyed an enemy armored column, including 10 medium and light tanks, 2 trucks with antitank guns and 5 infantry vehicles. (Not awarded to SPG's (Self Propelled Gun drivers))</value>
+    <value>Destroy 5 SPGs in the course of one battle.
+    • Drive a tank or a tank destroyer.
+    • Can be obtained in Random Battles only.
+
+Guards Colonel Alexander Burda was a Soviet tank ace and a Hero of the Soviet Union. On October 4th, 1941, Burda organized an ambush that destroyed an enemy armored column, including ten medium and light tanks, two trucks with antitank guns, and five infantry vehicles.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Dumitru" xml:space="preserve">
-    <value>Awarded for the destruction of four enemy self-propelled guns.
-Ion S. Dumitru was a Romanian tank ace. He fought in World War II for just twenty-five days, of which five on the German side, and, after Romania changed sides, twenty days against the Germans. On March 6th, 1945, Dumitru contributed to the destruction of six enemy tank destroyers and capture of a battery of 150 mm guns.</value>
+    <value>Destroy 4 enemy SPGs in one battle.
+    • Drive a tank or a tank destroyer.
+    • Can be obtained in Random Battles only.
+
+Ion S. Dumitru was a Romanian tank ace. He fought in World War II for just twenty-five days, for five on the German side, and, after Romania changed sides, 
+for twenty days against the Germans. On March 26th, 1945, Dumitru contributed to the destruction of six enemy tank destroyers and capture of a battery of 150-mm howitzers.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Fadin" xml:space="preserve">
-    <value>Awarded for destroying the last enemy vehicle in the battle with the last shell remaining in the player's tank.
-A hero of the Soviet Union, Alexander Fadin was a T-34 commander. Supported by one infantry platoon, Fadin managed to capture and hold the Dashukovka village for 5 hours with one tank, and destroyed 3 tanks, 1 halftrack, 2 mortars and 12 machinegun nests. His crew also shot down an enemy plane with his tank's coaxial machinegun.</value>
+    <value>Destroy the last enemy vehicle in the battle with the last shell in the ammo.
+    • Awarded even if the enemy vehicle is destroyed by a fire caused by the last shell in the ammo.
+    • Awarded for destroying the last enemy vehicle with the last shell using autoloading guns and machineguns.
+    • Can be obtained in Random Battles only.
+
+A Hero of the Soviet Union, Alexander Fadin was a T-34 commander. Supported by one infantry platoon, Fadin managed to capture the village of Dashukovka (Ukraine) 
+and hold it for five hours with one tank. He destroyed one tank, one SPG, eighteen machinegun nests, and up to 50 enemy soldiers and officers. His crew also shot down an enemy plane.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Halonen" xml:space="preserve">
-    <value>Awarded for destroying three or more enemy vehicles with a tank destroyer. The targets must be at least two tiers higher than the player's vehicle.
-Erkki Halonen, a sergeant in the Finnish Army and a tank ace, destroyed three T-34, two KV-1, and two ISU-152 with his StuG III in battles during June and July, 1944.</value>
+    <value>Destroy at least 3 enemy tanks or tank destroyers with a tank destroyer in one battle.
+    • The targets must be at least two tiers higher than the player's tank destroyer.
+    • Can be obtained in Random Battles only.
+
+Erkki Halonen, a sergeant in the Finnish Army and a tank ace, destroyed three T-34's, two KV-1's, and two ISU-152's with his StuG III in battles during June and July 1944.
+</value>
   </data>
   <data name="Tooltip_Achievements_15x15_HeroesOfRaseiniai" xml:space="preserve">
-    <value>Awarded to a player who destroys single-handedly all enemy vehicles (at least 14 vehicles).
-In June 1941, near the Lithuanian town of Raseiniai, roughly 20 KV tanks of the Soviet 3rd Mechanized Corps met the assault of the 6th Panzer Division, with approximately 100 vehicles. A single KV-2 tank managed to hold off the German advance for a full day while being pummeled by a variety of antitank weapons, until finally the KV-2 ran out of ammunition and was knocked out.</value>
+    <value>Destroy at least 14 enemy vehicles in the course of one battle.
+    • Can be obtained in Random Battles only.
+
+In June 1941, near the Lithuanian town of Raseiniai, roughly 20 KV tanks of the Soviet 3rd Mechanized Corps met the assault of the 6th Panzer Division, 
+with approximately 100 vehicles. A single KV tank managed to hold off the German advance for a full day while being pummeled by a variety of antitank weapons, until finally the KV ran out of ammunition and was knocked out.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Kolobanov" xml:space="preserve">
-    <value>Awarded to a player who stands alone against five or more enemy tanks or self-propelled guns and wins (this means that you can capture the enemy base by yourself when you are against five enemies and you will recieve the achievement.)
-Colonel Zinoviy Kolobanov was a Soviet tank ace who destroyed 22 German tanks, 2 guns and 2 halftracks with his KV in battle on August 19, 1941.</value>
+    <value>Stand alone against five enemy vehicles and win.
+    • Can be obtained in Random Battles only.
+    
+Colonel Zinoviy Kolobanov was a Soviet tank ace who destroyed 22 German tanks, two guns, and two armored vehicles with his KV-1 in battle on August 19th, 1941.
+</value>
   </data>
   <data name="Tooltip_Achievements_15x15_LafayettePool" xml:space="preserve">
-    <value>Awarded for destroying 10 or more enemy tanks and self-propelled guns with any vehicle. The targets must be at least tier four enemy vehicles.
-Lafayette G. Pool is widely recognized as the U.S. tank ace of aces, credited with 12 confirmed tank kills and 258 total armored vehicle and self-propelled gun kills.</value>
+    <value>Destroy 10–13 enemy vehicles in one battle.
+    • In vehicles of at least Tier V.
+    • Can be obtained in Random Battles only.
+
+Lafayette G. Pool is widely recognized as the U.S. tank ace of aces who destroyed a total of 258 armored vehicles and military vehicles.
+</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Lehvaslaiho" xml:space="preserve">
-    <value>Awarded for destroying two enemy vehicles with a medium tank. The targets must be at least two tiers higher than the player's tank.
+    <value>Destroy 2 enemy tanks or tank destroyers with a medium tank in one battle.
+    • The enemy vehicles must be at least 2 tiers higher.
+    • Can be obtained in Random Battles only.
+
 Reino Lehväslaiho was a Finnish tank ace who destroyed seven tanks and tank destroyers.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Nikolas" xml:space="preserve">
-    <value>Awarded for destroying four or more enemy vehicles with a medium tank. The targets must be at least two tiers higher than the player's tank.
-Alfie Nicolas was a British tank gunner. During the battle of Al Alamein he destroyed fourteen enemy vehicles.</value>
+    <value>Destroy at least 4 enemy tanks or tank destroyers with a medium tank in one battle.
+    • The enemy vehicles must be at least 2 tiers higher.
+    • Can be obtained in Random Battles only.
+
+Alfie Nicols was a British tank gunner. During the battle of Al Alamein he destroyed fourteen enemy vehicles.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Orlik" xml:space="preserve">
-    <value>Awarded for destroying three or more enemy tanks or tank destroyers with a light tank. The targets must be at least two tiers higher than the player's tank.
-Roman Edmund Orlik, a Polish Army sergeant, was a tank ace who knocked out 13 German tanks with his light TKS tankette in September, 1939.</value>
+    <value>Destroy three or more enemy tanks or tank destroyers with a light tank in one battle.
+    • The enemy vehicles must be at least 2 tiers higher.
+    • Can be obtained in Random Battles only.
+
+Roman Edmund Orlik, a Polish Army sergeant, was a tank ace who knocked out 13 German tanks with his light TKS tankette in September 1939.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Oskin" xml:space="preserve">
-    <value>Awarded for destroying three or more enemy tanks or tank destroyers with a light tank. The targets must be at least two tiers higher than the player's tank.
-Roman Edmund Orlik, a Polish Army sergeant, was a tank ace who knocked out 13 German tanks with his light TKS tankette in September, 1939.</value>
+    <value>Destroy at least 3 enemy tanks or tank destroyers with a medium tank in one battle.
+    • The enemy vehicles must be at least 2 tiers higher.
+    • Can be obtained in Random Battles only.
+    
+Alexander Oskin, a Hero of the Soviet Union, was a tank commander who destroyed three King Tigers with his T-34 during a reconnaissance operation near Oglenduv on August 11th, 1944.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Pascucci" xml:space="preserve">
-    <value>Awarded for the destruction of three enemy self-propelled guns.
+    <value>Destroy 3 enemy SPGs in one battle.
+    • Drive a tank or a tank destroyer.
+    • Can be obtained in Random Battles only.
+
 Second Lieutenant Luigi Arbib Pascucci was an Italian tank commander during World War Two. He fought with the Ariete Tank Division in North Africa. Pascucci fought in the Second Battle of El Alamein, where he sacrificed his life in a reckless frontal attack that enabled the rest of his company to escape encirclement.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_RadleyWalters" xml:space="preserve">
-    <value>Awarded to players in the 5th or higher tier for destroying 8 or 9 enemy vehicles in one battle.
+    <value>Destroy 8 or 9 enemy vehicles in one battle.
+    • In vehicles of at least Tier V.
+    • Can be obtained in Random Battles only.
+
 Sydney Valpy Radley-Walters was a Canadian tank ace of the 27th Armored Regiment. In 1944–1945 he destroyed 18 German vehicles with his Sherman Firefly.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_TamadaYoshio" xml:space="preserve">
-    <value>Awarded to a player who destroys at least three Self-Propelled Guns while driving a light tank, and survives the battle. The targets must be at least two tiers higher than the player's tank.
+    <value>Destroy at least 3 enemy self-propelled guns with a light tank in the course of one battle.
+    • Survive the battle.
+    • Destroyed enemy vehicles must be at least 2 tiers higher than the player's tank.
+    • Can be obtained in Random Battles only.
+
 Tamada Yoshio commanded the Japanese 4th Tank Regiment (Type 95 Ha-Gō light tanks) in an attack that overran and destroyed twelve Russian artillery guns during the Second Sino-Japanese War in July 1939.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Tarczay" xml:space="preserve">
-    <value>Awarded to players who destroy at least five enemy vehicles and survive the battle to victory despite receiving at least five different critical hits and 80% or more loss of hit points.
+    <value>Destroy at least 5 enemy vehicles while having 5 different modules damaged or crew members injured and losing 80% of hit points.
+    • Survive and win the battle.
+    • Destroyed enemy vehicles count after all damage is received.
+    • Can be obtained in Random Battles only.
+
 Ervin Tarczay was a Hungarian tank ace. He fought with the Hungarian 2nd Armored Division and destroyed at least ten enemy vehicles.</value>
   </data>
   <data name="Tooltip_MasteryBadges" xml:space="preserve">
     <value>Awarded for displaying mastery in controlling a specific armored vehicle. To qualify, the amount of experience you earn in a single battle must be higher than what a percentage of other players have achieved in the same tank. Once earned on a tank, the Mastery Badge is permanent.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Bombardier" xml:space="preserve">
-    <value>Awarded to the player who destroys two or more vehicles with one shot.</value>
+    <value>Destroy at least 2 enemy vehicles with one shell.
+    • Series achieved in all vehicles are added together.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Hunter" xml:space="preserve">
-    <value>Destroy 100 or more of the following tanks: Jagdpanther, Jagdtiger, PzKpfw V Panther, Panther-M10, Panther II, PzKpfw VI Tiger, PzKpfw VI Tiger (P), PzKpfw VIB Tiger II, Löwe, GW Panther, GW Tiger, Jagdpanther II and 8.8 cm PaK 43 Jagdtiger</value>
+    <value>Destroy 100 vehicles of the "feline family" including:
+    • Aufklärungspanzer Panther
+    • PzKpfw V Panther
+    • Panther II
+    • Panther-M10
+    • Jagdpanther
+    • Jagdpanther II
+    • GW Panther
+    
+    • PzKpfw VI Tiger
+    • PzKpfw VI Tiger (P)
+    • PzKpfw VI Ausf. B Tiger II
+    • Jagdtiger
+    • 8.8 cm Pak43 JagdTiger
+    • GW Tiger
+    • GW Tiger (P)
+    
+    • Löwe
+    
+    • Leopard prototyp A
+    • Leopard 1
+    
+    • Total results in all vehicles are included.
+    • Newly received awards are added together.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Invincible" xml:space="preserve">
-    <value>Survive 5 or more consecutive battles without taking any damage (not including battles fought using self-propelled guns). Battles fought using self-propelled guns do not break the sequence, but are not included either. The icon in the service record displays the longest sequence.</value>
+    <value>Survive 5 or more battles in a row without taking any damage.
+    • An unbroken series continues in the next battle using the same vehicle.
+    • Every vehicle has its own series. Only the longest series is counted.
+    • Battles fought in SPGs do not count.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Kamikaze" xml:space="preserve">
-    <value>Destroy a higher-tier enemy vehicle by ramming it. You can only earn this achievement once per battle. The icon in the service record displays the number of times the achievement was awarded.</value>
+    <value>Destroy enemy vehicle by ramming it.
+    • Destroy a higher tier enemy vehicle.
+    • The achievement is only awarded once per battle.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_MasterGunner" xml:space="preserve">
     <value>Achieve at least five armor penetrating hits in a row against enemy vehicles. The results of the next battle in a row using any vehicle also count towards this number, unless the sequence is broken by a miss, non-penetration or ricochet. The icon in the service record displays the longest sequence.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_MouseTrap" xml:space="preserve">
-    <value>Destroy 10 or more PzKpfw VIII Maus tanks. The icon in the service record displays the number of times the achievement was awarded.</value>
+    <value>Destroy 10 or more PzKpfw VIII Maus tanks.
+    • Total results in all vehicles are included.
+    • Newly received awards are added together.
+    </value>
   </data>
   <data name="Tooltip_Achievements_15x15_PattonValley" xml:space="preserve">
-    <value>Destroy 100 M46 Patton or M48A1 Patton III's.</value>
+    <value>Destroy 100 Patton tanks, including:
+    • M46 Patton
+    • M48A1 Patton III
+    • M60
+    
+    • Series achieved in all vehicles are added together.
+    • Newly received awards are added together.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Raider" xml:space="preserve">
-    <value>Destroy all the enemy light tanks (must be at least three) in the course of a single battle.</value>
+    <value>Remain undetected throughout the entire battle and be the only player who captures the enemy base.
+    • Remain within the base circle while attempting to capture the enemy base.
+    • The achievement is awarded even if the vehicle was accidentally hit or damaged.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Huntsman" xml:space="preserve">
-    <value>Destroy all the enemy light tanks (must be at least three) in the course of a single battle.</value>
+    <value>Destroy all enemy light tanks (at least 3) in the course of one battle.
+    • Can be obtained in Random Battles only.
+    
+Sergeant Grigoriy Naydin was a BT-7 commander. On June 25th, 1941, near the Lithuanian town of Rudishkyay, he destroyed a Wehrmacht armored column 
+that included 15 vehicles and 10 guns of the 19th Mechanized Corps. Naydin managed to hold off the German advance for two days, 
+making it possible to organize the defenses around Vilnius. For this action, Naydin was made a Hero of the Soviet Union.
+    </value>
   </data>
   <data name="Tooltip_Achievements_15x15_Reaper" xml:space="preserve">
     <value>Destroy three or more enemy vehicles in a row with a single round each. The achievement is granted on completion of the sequence. The sequence can be continued in the next battle fought on any vehicle. The icon in the service record displays the longest sequence.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Sharpshooter" xml:space="preserve">
-    <value>Hit an enemy vehicle ten or more times in a row without missing. The results of the next battle in a row using any vehicle also count towards this number, unless the sequence is broken by a miss. The icon in the service record displays the longest sequence.</value>
+    <value>Hit enemy vehicles with 10 or more consecutive shots.
+    • The series is broken by a miss.
+    • Every vehicle has its own series that continues to the next battle using the same vehicle.
+    • Only the longest series is counted.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Sinai" xml:space="preserve">
-    <value>The Lion of Sinai - Destroy at least 100 tanks of the IS series, and vehicles based on their chassis: IS, IS-3, IS-4, IS-6, IS-7, IS-8, ISU-152, Object 704, Object 261, Object 268 or Object 263</value>
+    <value>Destroy at least 100 tanks of the IS series and vehicles based on their chassis, including:
+    • IS
+    • IS-3
+    • IS-4
+    • IS-6
+    • IS-7
+    • IS-8
+    
+    • ISU-152
+    
+    • Object 261
+    • Object 263
+    • Object 268
+    • Object 704
+    
+    • Only vehicles in the U.S.S.R. Tech Tree are included.
+    • Series achieved in all vehicles are added together.
+    • Newly received awards are added together.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Survivor" xml:space="preserve">
-    <value>Survive 20 or more consecutive battles. Battles fought using self-propelled guns do not break the sequence, but are not included either.</value>
+    <value>Survive 20 battles in a row using the same vehicle.
+    • An unbroken series continues in the next battle using the same vehicle.
+    • Every vehicle has its own series. Only the longest series is counted.
+    • Battles fought in SPGs do not count.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Abrams" xml:space="preserve">
     <value>Awarded in one of four classes for the total number of team victories in which the player survived the battle: Class IV - 5 victories Class III - 50 victories Class II - 500 victories Class I - 5,000 victories
+
 General Creighton Abrams commanded US armored forces during WWII and the Vietnam War, earning a reputation as an aggressive and successful commander.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Carius" xml:space="preserve">
     <value>Awarded for the destruction of enemy tanks and self-propelled guns in four classes:Class IV - 10 vehicles Class III - 100 vehicles Class II - 1,000 vehicles Class I - 10,000 vehicles
+
 Otto Carius was one of the most efficient tank aces of WWII. He commanded the PzKpfw 38 (t), the PzKpfw VI Tiger and the Jagdtiger tank destroyer during his impressive career.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_DeLanglade" xml:space="preserve">
     <value>Awarded to a player who in the course of one battle destroys four enemy vehicles within a base circle while they are attempting to capture the base. Enemy vehicles may attempt to capture the base all at once or in turn.
+
 On 13 September 1944, Colonel Paul Girot de Langlade's Groupement Tactique "Langlade" (G.T.L), outnumbered by over two to one, attacked a German 112th Panzer Regiment occupying the French village of Dompaire. In the ensuing battle de Langlade's 16 M4A2 tanks and 4 M10 tank destroyers, with support from French artillery and American fighter-bombers, destroyed 69 of 90 PzKpfw V Panther and PzKpfw IV tanks.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Ekins" xml:space="preserve">
     <value>Awarded in four classes for destroying tier 8, 9 or 10 enemy tanks and self-propelled guns: Class IV - 3 vehicles Class III - 30 vehicles Class II - 300 vehicles Class I - 3,000 vehicles
+
 Joe Ekins was a private in the Northamptonshire Division of the British Territorial Army. A number of sources confirm Ekins as the final nemesis of famous German tank ace Michael Wittmann.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Kay" xml:space="preserve">
     <value>Awarded for achieving the Battle Hero status in four classes:Class IV - 1 time Class III - 10 times Class II - 100 times Class I - 1,000 times
 
-
-Douglas Kay, a British Army sergeant, and gunner on a Sherman Firefly, participated in the Allied landing in Normandy and was famous for the popularization of the history of tank warfare.
-Note: Only the medals listed under "Battle Hero Achievements" above are counted in the “Kay’s Medal” achievement.</value>
+Douglas Kay, a British Army sergeant and gunner on a Sherman Firefly, participated in the Allied landing in Normandy and later helped increase popular interest in tank warfare.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Knispel" xml:space="preserve">
     <value>Awarded for the total amount of damage caused and received in four classes: Class IV - 10,000 HP Class III - 100,000 HP Class II - 1,000,000 HP Class I - 10,000,000 HP
+
 Kurt Knispel, a German tank ace during WWII, participated in battles on both the Western and Eastern Fronts fighting on PzKpfw II, PzKpfw III, PzKpfw IV, PzKpfw VI Tiger, and PzKpfw VIB Tiger II.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Lavrinenko" xml:space="preserve">
     <value>Awarded for reducing the total number of capture points of a friendly base, up to 100 points per battle. This award is established in four classes: Class IV - 30 points Class III - 300 points Class II - 3,000 points Class I - 30,000 points
+
 Dmitry Lavrinenko, a Hero of the Soviet Union, Guards Lieutenant, and tank ace was recognized as the most efficient Soviet tanker, destroying 52 tanks in 28 battles over the course of just two months.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Leclerk" xml:space="preserve">
     <value>Awarded for the total amount of the player's enemy base capture points. An unsuccessful or reduced capture does not count toward this number. The award is established in four classes: Class IV - 30 points Class III - 300 points Class II - 3,000 points Class I - 30,000 points
+
 Philippe Leclerc was a General of the Free French Forces during WWII and one of the leaders of the Paris liberation operation.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Poppel" xml:space="preserve">
     <value>Awarded for detecting enemy tanks and self-propelled guns in all battles, in four classes: Class IV - 20 vehicles Class III - 200 vehicles Class II - 2,000 vehicles Class I - 20,000 vehicles
+
 Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and political worker, organized a raid against the enemy rear using captured vehicles during the battle of Dubno in the Summer of 1941.</value>
   </data>
   <data name="Column_FragCounts_Count" xml:space="preserve">
@@ -1424,25 +1608,23 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Tanker-Sniper</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Sniper2" xml:space="preserve">
-    <value>Нанести наибольшее количество урона за бой с 
-дистанции не менее 300 метров
-  • Общая точность стрельбы за бой не менее 85%
-	• Не менее 80% попаданий должны быть с нанесением урона, учитывается урон
-по технике и повреждение модулей.
-	• Нанесенного урона должно быть больше очков прочности машины игрока и не менее 1000
-  • Нельзя задевать союзников прямыми выстрелами
-  • Выдается только одна награда за бой
-	• Не выдается при игре на САУ
-  • Выдается только в случайных боях</value>
+    <value>Cause the highest damage per battle at a distance of at least 300 meters.
+    • Fire at least 8 shots.
+    • Firing accuracy must be at least 85% per battle.
+    • At least 80% of hits must cause damage, including damage to enemy vehicles and modules.
+    • The player must cause more damage than the hit points of the player's vehicle, at least 1,000 hit points.
+    • The player must not hit any allies by direct shots.
+    • The achievement is only awarded once per battle.
+    • Unavailable for SPGs.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_15x15_MainGun" xml:space="preserve">
-    <value>Нанести наибольшее количество урона за бой
-  • Нанесенный урон должен составлять не менее 20% от сумарной прочности техники
-	• Нанесенный урон должен составлять не менее 1000 единиц
-	• Нельзя задевать союзников прямыми выстрелами
-	• При равном количестве нанесенного урона награждается игрок, получивший 
-наибольшее количество очков опыта за бой
-	• Выдается только в случайных боях</value>
+    <value>Cause the highest damage per battle.
+    • Damage caused must be at least 20% of the total HP of enemy vehicles.
+    • Damage caused must be at least 1,000 HP.
+    • The player must not hit any allies by direct shots.
+    • If two or more players have caused equal damage to enemy vehicles, the achievement is awarded to the player who earned more XP for the battle.
+    • Can be obtained in Random Battles only.</value>
   </data>
   <data name="ButtonCheckUpdate" xml:space="preserve">
     <value>Check Update</value>
@@ -1464,14 +1646,14 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   </data>
   <data name="Tooltip_Achievements_7x7_ArmoredFist" xml:space="preserve">
     <value>Destroy all enemy vehicles while losing only one friendly vehicle.
-  • Win the battle.
-  • Awarded to all team members.
-  • Can be obtained in Team Battles only.</value>
+    • Win the battle.
+    • Awarded to all team members.
+    • Can be obtained in Team Battles only.</value>
   </data>
   <data name="Tooltip_Achievements_7x7_KingOfTheHill" xml:space="preserve">
     <value>Be the only survivor while driving a tank or a tank destroyer.
-  • Win the battle.
-  • Can be obtained in Team Battles only.</value>
+    • Win the battle.
+    • Can be obtained in Team Battles only.</value>
   </data>
   <data name="TankFilterPanel_Map" xml:space="preserve">
     <value>Map</value>
@@ -1504,54 +1686,51 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Fighting Reconnaissance</value>
   </data>
   <data name="Tooltip_Achievements_7x7_FightingReconnaissanceMedal" xml:space="preserve">
-    <value>50 раз выполнить следующие условия:
-  • Обнаружить не менее 2 машин противника
-  • Занять 3 и выше место по нанесенному урону
-  • В общем зачете повтовно полученные награды не суммируются
+    <value>In 50 battles, comply with the following conditions:
+    • Spot at least 2 enemy vehicles.
+    • Be among the top three damage dealers.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.
     </value>
   </data>
   <data name="Medal_7x7_WillToWinSpirit" xml:space="preserve">
     <value>Will To Win Spirit</value>
   </data>
   <data name="Tooltip_Achievements_7x7_WillToWinSpirit" xml:space="preserve">
-    <value>Победить в бою оставшись в одиночку против 3 
-и более машин противника
-  • В общем зачете повтовно полученные награды не суммируются
+    <value>Fight alone against at least 3 enemy vehicles and win the battle.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.
     </value>
   </data>
   <data name="Medal_7x7_CrucialShotMedal" xml:space="preserve">
     <value>Crucial Shot</value>
   </data>
-  <data name="Tooltip_Achievements_7x7" xml:space="preserve">
-    <value>20 раз уничтожить последнюю машину противника
-  • Победить в бою
-  • В общем зачете повтовно полученные награды не суммируются
-    </value>
-  </data>
   <data name="Medal_7x7_GodOfWar" xml:space="preserve">
     <value>God of War</value>
   </data>
   <data name="Tooltip_Achievements_7x7_GodOfWar" xml:space="preserve">
-    <value>Победить в бою на САУ оставшись единственным выжившим
-  • Победить в бою
-  • В общем зачете повтовно полученные награды не суммируются
+    <value>While driving an SPG, be the last survivor and win the battle.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.
     </value>
   </data>
   <data name="Medal_7x7_WolfAmongSheepMedal" xml:space="preserve">
     <value>Wolf Among Sheep</value>
   </data>
   <data name="Tooltip_Achievements_7x7_WolfAmongSheepMedal" xml:space="preserve">
-    <value>Занять 100 раз первое место по количеству нанесенного урона в победном бою
-  • В общем зачете повтовно полученные награды не суммируются
+    <value>Win 100 battles and be the top player by damage caused.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.
     </value>
   </data>
   <data name="Medal_7x7_GeniusForWarMedal" xml:space="preserve">
     <value>Genius for War</value>
   </data>
   <data name="Tooltip_Achievements_7x7_GeniusForWarMedal" xml:space="preserve">
-    <value>Занять 100 раз первое место по количеству заработанного опыта за бой
-  • Победить в бою
-  • В общем зачете повтовно полученные награды не суммируются
+    <value>In 100 battles, be the top player by experience earned.
+    • Only victorious battles are counted.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.
     </value>
   </data>
   <data name="Common_Rating_Personal" xml:space="preserve">
@@ -2015,31 +2194,63 @@ Survive %: {1:0.00}</value>
     <value>Ranger</value>
   </data>
   <data name="Tooltip_Achievements_7x7_FireAndSteelMedal" xml:space="preserve">
-    <value />
+    <value>Receive maximum total amount of damage taken and damage blocked by armor 25 times.
+    • Survive a battle.
+    • Newly received awards are added together.
+    • Only victorious battles are counted.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
-    <value />
+    <value>Awarded to the player for a certain number of victories on randomly selected teams.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
-    <value />
+    <value>In 100 battles, be among the top three damage dealers.
+    • Newly received awards are added together.
+    • Only victorious battles are counted.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
-    <value />
+    <value>End a battle in a draw where both teams are completely destroyed.
+    • Awarded to all members of both teams.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_PromisingFighterMedal" xml:space="preserve">
-    <value />
+    <value>In 100 battles, be among the top three players by experience earned.
+    • Newly received awards are added together.
+    • Only victorious battles are counted.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_PyromaniacMedal" xml:space="preserve">
-    <value />
+    <value>Set 10 enemy vehicles on fire.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_RangerMedal" xml:space="preserve">
-    <value />
+    <value>• Damage or destroy enemy vehicles not visible to the player, 10 times.
+    • Newly received awards are added together.
+    • Only hits that cause damage are counted.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_TacticalBreakthrough" xml:space="preserve">
-    <value />
+    <value>Win at least 3 battles in a row as a member of a random team.
+    • Every vehicle has its own series. An unbroken series continues in the next battle using the same vehicle.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
-    <value />
+    <value>In 20 battles, destroy the last enemy vehicle.
+    • Win the battle.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.
+    </value> 
   </data>
   <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
     <value>Historical Battle</value>
@@ -2050,17 +2261,17 @@ Survive %: {1:0.00}</value>
   <data name="Medal_HistoricalBattle_MakerOfHistory" xml:space="preserve">
     <value>Maker Of History</value>
   </data>
-  <data name="Tooltip_Achievements_HistoricalBattle_BothSidesWins" xml:space="preserve">
-    <value />
-  </data>
   <data name="Tooltip_Achievements_HistoricalBattle_GuardsMan" xml:space="preserve">
-    <value />
+    <value>For the number of victories that were won while driving support vehicles.
+    • For example, when fighting for a team consisting of T-34 and BT-7 vehicles, it is required to drive a BT-7 tank.
+    • Specific vehicles can be used as support vehicles in certain Historical Battles.
+    • Can be obtained in Historical Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_HistoricalBattle_MakerOfHistory" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Tooltip_Achievements_HistoricalBattle_WeakVehiclesWins" xml:space="preserve">
-    <value />
+    <value>For the number of victories that were won on each of the belligerent sides.
+    • Can be obtained in Historical Battles only.
+    </value> 
   </data>
   <data name="Medal_15x15_MedalAntiSpgFire" xml:space="preserve">
     <value>For Counter-Battery Fire</value>
@@ -2078,19 +2289,43 @@ Survive %: {1:0.00}</value>
     <value>Stark’s Medal</value>
   </data>
   <data name="Tooltip_Achievements_15x15_MedalAntiSpgFire" xml:space="preserve">
-    <value />
+    <value>In a battle, destroy all enemy SPGs (at least 3) with an SPG.
+    • The player must not destroy any allied vehicles.
+    • Can be obtained in Random Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_15x15_MedalCoolBlood" xml:space="preserve">
-    <value />
+    <value>Destroy at least 2 enemy light tanks from a distance of not more than 100 meters.
+    • Drive an SPG of at least Tier IV.
+    • The player must not destroy any allied vehicles.
+    • Can be obtained in Random Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_15x15_MedalGore" xml:space="preserve">
-    <value />
+    <value>Drive an SPG and cause damage exceeding 10 times the hit points of your vehicle.
+    • The player must not destroy any allied vehicles.
+    • Hits on allied vehicles are not counted.
+    • Can be obtained in Random Battles only.
+
+British colonel Adrian Clements Gore was in charge of a combat team that defended the Kasserine Pass, Tunisia, on 20 February, 1943. His force, composed of a tank squadron, an infantry company, and a battery of infantry support artillery, put up stiff resistance against troops of the Wehrmacht Africa Korps, comprising five infantry batallions and one tank batallion. The German forces lost 11 tanks in the fighting.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_15x15_MedalMonolith" xml:space="preserve">
-    <value />
+    <value>While driving an SPG, destroy an enemy vehicle by ramming and survive.
+    • SPG's speed must be less than 10 km/h.
+    • The player must not destroy any allied vehicles.
+    • Can be obtained in Random Battles only.
+    </value> 
   </data>
   <data name="Tooltip_Achievements_15x15_MedalStark" xml:space="preserve">
-    <value />
+    <value>While driving an SPG, destroy at least 2 enemy vehicles and receive at least 2 enemy hits that cause damage or are blocked by armor.
+    • Survive a battle.
+    • Total amount of damage received and damage blocked by armor must be at least 2/3 of the hit points of your vehicle.
+    • Hitting allied vehicles is not counted.
+    • Can be obtained in Random Battles only.
+
+Colonel Alexander Stark commanded the joint French-American task force defending the Kasserine Pass, Tunisia. On 19 February, 1943, Stark's force unleashed heavy artillery fire from the heights surrounding the pass and was able to delay the advancing tank batallion and two infantry batallions of the Wehrmacht Africa Korps, forcing them to request reinforcements.
+    </value> 
   </data>
   <data name="Map_83_kharkiv" xml:space="preserve">
     <value>Kharkiv</value>

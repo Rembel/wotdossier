@@ -6,16 +6,16 @@
     <ControlTemplate x:Key="toggleButtonOffice2007SilverTemplate" TargetType="{x:Type ToggleButton}">
         <Grid>
             <Rectangle x:Name="Rectangle" Margin="0" Fill="{StaticResource buttonOutsideBorderDefaultBackgroundBrush}"
-                       Stroke="{StaticResource LightBackgroundBrush}"/>
+                 Stroke="{StaticResource LightBackgroundBrush}"/>
             <Border Background="{TemplateBinding Control.Background}"
-                    BorderBrush="{TemplateBinding Control.BorderBrush}"
-                    BorderThickness="{TemplateBinding Control.BorderThickness}" Opacity="0.3"/>
+              BorderBrush="{TemplateBinding Control.BorderBrush}"
+              BorderThickness="{TemplateBinding Control.BorderThickness}" Opacity="0.3"/>
             <ContentPresenter HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
-                              Margin="{TemplateBinding Control.Padding}"/>
+                        VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                        Margin="{TemplateBinding Control.Padding}"/>
             <Border x:Name="defaultBorder" Margin="1"
-                    BorderBrush="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" BorderThickness="1"
-                    Opacity="0"/>
+              BorderBrush="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}" BorderThickness="1"
+              Opacity="0"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="UIElement.IsKeyboardFocused" Value="true">
@@ -23,28 +23,28 @@
             </Trigger>
             <Trigger Property="UIElement.IsMouseOver" Value="true">
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBackgroundBrush}"
-                        Property="Shape.Fill"/>
+                Property="Shape.Fill"/>
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsMouseOverBorderBrush}"
-                        Property="Shape.Stroke"/>
+                Property="Shape.Stroke"/>
             </Trigger>
             <Trigger Property="ButtonBase.IsPressed" Value="true">
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}"
-                        Property="Shape.Fill"/>
+                Property="Shape.Fill"/>
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}"
-                        Property="Shape.Stroke"/>
+                Property="Shape.Stroke"/>
             </Trigger>
             <Trigger Property="ToggleButton.IsChecked" Value="true">
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBackgroundBrush}"
-                        Property="Shape.Fill"/>
+                Property="Shape.Fill"/>
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderIsPressedBorderBrush}"
-                        Property="Shape.Stroke"/>
+                Property="Shape.Stroke"/>
             </Trigger>
             <Trigger Property="UIElement.IsEnabled" Value="false">
                 <Setter Value="{StaticResource DisabledForegroundBrush}" Property="Control.Foreground"/>
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBackgroundBrush}"
-                        Property="Shape.Fill"/>
+                Property="Shape.Fill"/>
                 <Setter TargetName="Rectangle" Value="{StaticResource buttonOutsideBorderDisabledBorderBrush}"
-                        Property="Shape.Stroke"/>
+                Property="Shape.Stroke"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

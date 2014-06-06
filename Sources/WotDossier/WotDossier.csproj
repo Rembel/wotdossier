@@ -222,7 +222,6 @@
     <Compile Include="Converters\SubtractValueConverter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DossierTheme.cs" />
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Tabs\CommonTabNew.xaml.cs">

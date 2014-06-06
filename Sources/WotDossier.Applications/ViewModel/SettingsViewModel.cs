@@ -76,6 +76,28 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private List<ListItem<DossierTheme>> _themes = new List<ListItem<DossierTheme>>
+        {
+            new ListItem<DossierTheme>(DossierTheme.Black, Resources.Resources.DossierTheme_Black), 
+            new ListItem<DossierTheme>(DossierTheme.Silver, Resources.Resources.DossierTheme_Silver)
+        };
+
+        public List<ListItem<DossierTheme>> Themes
+        {
+            get { return _themes; }
+            set { _themes = value; }
+        }
+
+        public DossierTheme Theme
+        {
+            get { return AppSettings.Theme; }
+            set
+            {
+                AppSettings.Theme = value;
+                RaisePropertyChanged("Theme");
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -126,6 +148,8 @@ namespace WotDossier.Applications.ViewModel
                     return;
                 }
             }
+
+            ThemesManager.ApplyTheme(_appSettings.Theme);
 
             SettingsReader.Save(_appSettings);
             ViewTyped.Close();

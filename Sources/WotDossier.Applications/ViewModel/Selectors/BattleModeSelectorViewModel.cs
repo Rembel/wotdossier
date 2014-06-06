@@ -11,14 +11,14 @@ namespace WotDossier.Applications.ViewModel.Selectors
             new ListItem<BattleMode>(BattleMode.TeamBattle, Resources.Resources.BattleMode_TeamBattle), 
             new ListItem<BattleMode>(BattleMode.HistoricalBattle, Resources.Resources.BattleMode_HistoricalBattle), 
         };
-        private BattleMode _battleMode;
-
+        
         public List<ListItem<BattleMode>> BattleModes
         {
             get { return _battleModes; }
             set { _battleModes = value; }
         }
 
+        private BattleMode _battleMode;
         public BattleMode BattleMode
         {
             get { return _battleMode; }

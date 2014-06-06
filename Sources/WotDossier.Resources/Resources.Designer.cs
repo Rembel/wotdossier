@@ -2067,6 +2067,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Black.
+        /// </summary>
+        public static string DossierTheme_Black {
+            get {
+                return ResourceManager.GetString("DossierTheme_Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Silver.
+        /// </summary>
+        public static string DossierTheme_Silver {
+            get {
+                return ResourceManager.GetString("DossierTheme_Silver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to m&apos; m &apos;s&apos; s&apos;.
         /// </summary>
         public static string ExtendedTimeFormat {
@@ -2162,6 +2180,15 @@ namespace WotDossier.Resources {
         public static string Label_AddReplayFolder_Name {
             get {
                 return ResourceManager.GetString("Label_AddReplayFolder_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color scheme.
+        /// </summary>
+        public static string Label_ColorScheme {
+            get {
+                return ResourceManager.GetString("Label_ColorScheme", resourceCulture);
             }
         }
         

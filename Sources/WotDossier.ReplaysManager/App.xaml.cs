@@ -11,6 +11,7 @@ using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
+using WotDossier.Domain;
 using WotDossier.Framework;
 using WotDossier.Framework.Presentation.Services;
 using WotDossier.ReplaysManager;
@@ -34,13 +35,6 @@ namespace WotDossier
             set { _controller = value; }
         }
 
-        private Dictionary<DossierTheme, Uri> _themes = new Dictionary<DossierTheme, Uri>
-        {
-            {DossierTheme.Base, new Uri("Styles/Base/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
-            {DossierTheme.Silver, new Uri("Styles/silver/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
-            {DossierTheme.Black, new Uri("Styles/Black/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
-        };
-
         /// <summary>
         /// Raises the <see cref="E:System.Windows.Application.Startup" /> event.
         /// </summary>
@@ -48,7 +42,7 @@ namespace WotDossier
         protected override void OnStartup(StartupEventArgs e)
         {
             //Apply application UI theme
-            ApplyTheme(DossierTheme.Black);
+            ThemesManager.ApplyTheme(DossierTheme.Black);
 
 #if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't
@@ -104,19 +98,6 @@ namespace WotDossier
             }
 
             base.OnStartup(e);
-        }
-
-        private void ApplyTheme(DossierTheme theme)
-        {
-            try
-            {
-                Current.Resources.MergedDictionaries.Clear();
-                Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = _themes[theme] });
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
         }
 
         private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

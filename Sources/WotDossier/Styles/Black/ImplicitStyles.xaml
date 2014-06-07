@@ -1,8 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
-                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
-                    xmlns:views="clr-namespace:WotDossier.Views">
+                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ExplicitStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>

@@ -529,115 +529,115 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\Brushes.xaml">
+    <Page Include="Styles\Silver\Brushes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\Button.xaml">
+    <Page Include="Styles\Silver\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\CheckBox.xaml">
+    <Page Include="Styles\Silver\CheckBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ComboBox.xaml">
+    <Page Include="Styles\Silver\ComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ContextMenu.xaml">
+    <Page Include="Styles\Silver\ContextMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\DataGrid.xaml">
+    <Page Include="Styles\Silver\DataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\DataGridHeaderTemplates.xaml">
+    <Page Include="Styles\Silver\DataGridHeaderTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\Expander.xaml">
+    <Page Include="Styles\Silver\Expander.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ExplicitStyles.xaml">
+    <Page Include="Styles\Silver\ExplicitStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\Fonts.xaml">
+    <Page Include="Styles\Silver\Fonts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\GroupBox.xaml">
+    <Page Include="Styles\Silver\GroupBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\silver\Hyperlink.xaml">
+    <Page Include="Styles\Silver\Hyperlink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ImplicitStyles.xaml">
+    <Page Include="Styles\Silver\ImplicitStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\silver\ListBox.xaml">
+    <Page Include="Styles\Silver\ListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\Menu.xaml">
+    <Page Include="Styles\Silver\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\MenuResourceDictionary.xaml">
+    <Page Include="Styles\Silver\MenuResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ProgressBar.xaml">
+    <Page Include="Styles\Silver\ProgressBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\RadioButton.xaml">
+    <Page Include="Styles\Silver\RadioButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ReplayDataGrid.xaml">
+    <Page Include="Styles\Silver\ReplayDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ScrollBar.xaml">
+    <Page Include="Styles\Silver\ScrollBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\SpecialStyle.xaml">
+    <Page Include="Styles\Silver\SpecialStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\StatusBar.xaml">
+    <Page Include="Styles\Silver\StatusBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\TabControl.xaml">
+    <Page Include="Styles\Silver\TabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\TextBox.xaml">
+    <Page Include="Styles\Silver\TextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ToggleButton.xaml">
+    <Page Include="Styles\Silver\ToggleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ToolBar.xaml">
+    <Page Include="Styles\Silver\ToolBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\ToolTip.xaml">
+    <Page Include="Styles\Silver\ToolTip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\silver\Window.xaml">
+    <Page Include="Styles\Silver\Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

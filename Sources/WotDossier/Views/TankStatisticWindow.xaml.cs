@@ -19,7 +19,7 @@ namespace WotDossier.Views
         public TankStatisticWindow()
         {
             InitializeComponent();
-            Owner = App.Current.MainWindow;
+            Owner = Application.Current.MainWindow;
             KeyDown += Window_KeyDown;
         }
 

@@ -4,13 +4,13 @@
         <ResourceDictionary Source="Brushes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style x:Key="{ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}"
-         TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource office2007SilverMenuScrollViewer}"/>
+           TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource office2007SilverMenuScrollViewer}"/>
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="{x:Type Separator}"
-         BasedOn="{StaticResource office2007SilverMenuSeparator}"/>
+           BasedOn="{StaticResource office2007SilverMenuSeparator}"/>
     <ControlTemplate x:Key="{ComponentResourceKey ResourceId=SubmenuContent, TypeInTargetAssembly={x:Type FrameworkElement}}"
-                   TargetType="{x:Type ContentControl}">
+                     TargetType="{x:Type ContentControl}">
         <Border Background="{StaticResource menuPopUpBackgroundBrush}"
-            BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}" BorderThickness="1">
+                BorderBrush="{StaticResource menuIsSubmenuOpenBorderBrush}" BorderThickness="1">
             <Grid>
                 <Rectangle Fill="#F1F1F1" HorizontalAlignment="Left" Margin="2" Width="28"/>
                 <Rectangle Fill="#E2E3E3" HorizontalAlignment="Left" Margin="30,2,0,2" Width="1"/>

@@ -15,7 +15,7 @@ namespace WotDossier.Views
         public SettingsWindow()
         {
             InitializeComponent();
-            Owner = App.Current.MainWindow;
+            Owner = Application.Current.MainWindow;
             KeyDown += Window_KeyDown;
         }
 

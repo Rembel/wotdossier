@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Windows;
 using System.Windows.Threading;
@@ -14,10 +13,9 @@ using WotDossier.Dal.NHibernate;
 using WotDossier.Domain;
 using WotDossier.Framework;
 using WotDossier.Framework.Presentation.Services;
-using WotDossier.ReplaysManager;
 using WotDossier.Views;
 
-namespace WotDossier
+namespace WotDossier.ReplaysManager
 {
     /// <summary>
     /// Interaction logic for App.xaml

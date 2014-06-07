@@ -246,6 +246,146 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Brushes.xaml">
+      <Link>Styles\Silver\Brushes.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Button.xaml">
+      <Link>Styles\Silver\Button.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\CheckBox.xaml">
+      <Link>Styles\Silver\CheckBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ComboBox.xaml">
+      <Link>Styles\Silver\ComboBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ContextMenu.xaml">
+      <Link>Styles\Silver\ContextMenu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\DataGrid.xaml">
+      <Link>Styles\Silver\DataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\DataGridHeaderTemplates.xaml">
+      <Link>Styles\Silver\DataGridHeaderTemplates.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Expander.xaml">
+      <Link>Styles\Silver\Expander.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ExplicitStyles.xaml">
+      <Link>Styles\Silver\ExplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Fonts.xaml">
+      <Link>Styles\Silver\Fonts.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\GroupBox.xaml">
+      <Link>Styles\Silver\GroupBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Hyperlink.xaml">
+      <Link>Styles\Silver\Hyperlink.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ImplicitStyles.xaml">
+      <Link>Styles\Silver\ImplicitStyles.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ListBox.xaml">
+      <Link>Styles\Silver\ListBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Menu.xaml">
+      <Link>Styles\Silver\Menu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\MenuResourceDictionary.xaml">
+      <Link>Styles\Silver\MenuResourceDictionary.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ProgressBar.xaml">
+      <Link>Styles\Silver\ProgressBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\RadioButton.xaml">
+      <Link>Styles\Silver\RadioButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ReplayDataGrid.xaml">
+      <Link>Styles\Silver\ReplayDataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ScrollBar.xaml">
+      <Link>Styles\Silver\ScrollBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\SpecialStyle.xaml">
+      <Link>Styles\Silver\SpecialStyle.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\StatusBar.xaml">
+      <Link>Styles\Silver\StatusBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\TabControl.xaml">
+      <Link>Styles\Silver\TabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\TextBox.xaml">
+      <Link>Styles\Silver\TextBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToggleButton.xaml">
+      <Link>Styles\Silver\ToggleButton.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToolBar.xaml">
+      <Link>Styles\Silver\ToolBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\ToolTip.xaml">
+      <Link>Styles\Silver\ToolTip.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Silver\Window.xaml">
+      <Link>Styles\Silver\Window.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Tabs\ReplaysTab.xaml">
       <Link>Tabs\ReplaysTab.xaml</Link>
       <Generator>MSBuild:Compile</Generator>

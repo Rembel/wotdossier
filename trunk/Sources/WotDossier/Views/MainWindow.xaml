@@ -14,7 +14,7 @@
         xmlns:domain="clr-namespace:WotDossier.Domain;assembly=WotDossier.Domain"
         Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" 
         WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico"
-        Style="{StaticResource office2007SilverWindow}">
+        Style="{DynamicResource office2007SilverWindow}">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Print" Executed="PrintWindow_Executed"/>
     </Window.CommandBindings>

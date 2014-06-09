@@ -9,7 +9,7 @@ namespace WotDossier.Applications
     {
         private static readonly Dictionary<DossierTheme, Uri> _themes = new Dictionary<DossierTheme, Uri>
         {
-            {DossierTheme.Silver, new Uri("Styles/Silver/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
+            {DossierTheme.Silver, new Uri("Styles/Silver/ImplicitStylesSilver.xaml", UriKind.RelativeOrAbsolute)},
             {DossierTheme.Black, new Uri("Styles/Black/ImplicitStyles.xaml", UriKind.RelativeOrAbsolute)},
         };
 

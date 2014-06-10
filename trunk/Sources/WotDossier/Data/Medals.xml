@@ -102,6 +102,12 @@
     <medal name="Medal_15x15_PattonValley" id="154" icon="Pattonvalley" type="1"/>
     <!--Живучий-->
     <medal name="Medal_15x15_Survivor" id="60" icon="Diehard" type="1"/>
+      
+    <medal name="Medal_15x15_MedalMonolith" id="296" icon="medalMonolith" type="0"/>
+    <medal name="Medal_15x15_MedalAntiSpgFire" id="297" icon="medalAntiSpgFire" type="0"/>
+    <medal name="Medal_15x15_MedalAntiSpgFire" id="298" icon="medalGore" type="0"/>
+    <medal name="Medal_15x15_MedalCoolBlood" id="299" icon="medalCoolBlood" type="0"/>
+    <medal name="Medal_15x15_MedalStark" id="300" icon="medalStark" type="0"/>
   </Special>
   <Common>
     <medal name="Medal_15x15_Kay" id="411" icon="medalKay1" type="1"/>

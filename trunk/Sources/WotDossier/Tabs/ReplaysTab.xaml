@@ -143,6 +143,9 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Frags}" Binding="{Binding Killed}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Damaged}" Binding="{Binding Damaged}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_BattleDuration}" Width="100" Binding="{Binding BattleTime, StringFormat=mm\\:ss}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_LifeTime}" Width="100" Binding="{Binding LifeTime, StringFormat=mm\\:ss}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_IsAlive}" Width="100" Binding="{Binding IsAlive, Converter={x:Static converters:ValueToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Version}" Binding="{Binding ClientVersion}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Replay_Link}">
                     <DataGridTemplateColumn.CellTemplate>

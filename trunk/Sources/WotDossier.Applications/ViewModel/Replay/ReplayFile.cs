@@ -170,6 +170,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                         Xp = replay.datablock_battle_result_plain.xp;
                         Killed = replay.datablock_battle_result_plain.killed.Count;
                         Damaged = replay.datablock_battle_result_plain.damaged.Count;
+                        IsAlive = replay.datablock_battle_result_plain.killerID == 0;
                     }
                 }
                 else
@@ -184,6 +185,9 @@ namespace WotDossier.Applications.ViewModel.Replay
                         Killed = replay.datablock_battle_result.personal.kills;
                         Damaged = replay.datablock_battle_result.personal.damaged;
                         MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
+                        BattleTime = new TimeSpan(0, 0, (int)replay.datablock_battle_result.common.duration);
+                        LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
+                        IsAlive = replay.datablock_battle_result.personal.deathReason == -1;
                         //Medals = MedalHelper.GetMedals(replay.datablock_battle_result.achieveIndices);
                     }
                 }
@@ -192,6 +196,12 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
             }
         }
+
+        public bool IsAlive { get; set; }
+
+        public TimeSpan LifeTime { get; set; }
+
+        public TimeSpan BattleTime { get; set; }
 
         /// <summary>
         /// Moves replay to the specified folder.

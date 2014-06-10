@@ -2342,4 +2342,13 @@ Colonel Alexander Stark commanded the joint French-American task force defending
   <data name="DossierTheme_Silver" xml:space="preserve">
     <value>Silver</value>
   </data>
+  <data name="Label_ReplayDetail_IsAlive" xml:space="preserve">
+    <value>Is Alive</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Yes</value>
+  </data>
 </root>

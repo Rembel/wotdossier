@@ -282,7 +282,7 @@ namespace WotDossier.Applications.ViewModel
                                 }
                                 catch (Exception e)
                                 {
-                                    _log.Error("Error on replay processing", e);
+                                    _log.ErrorFormat("Error on replay processing. Path - [{0}]", replay.FullName, e);
                                 }
                                 index++;
                                 int percent = (index + 1) * 100 / count;

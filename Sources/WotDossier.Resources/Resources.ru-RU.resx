@@ -2275,7 +2275,7 @@
     • В общем зачете повторно полученные награды не суммируются
     • Защитываются только победные бои
     • Выдается только в командных боях
-    </value> 
+    </value>
   </data>
   <data name="Medal_7x7_PromisingFighterMedal" xml:space="preserve">
     <value>Перспективный боец</value>
@@ -2284,14 +2284,14 @@
     <value>Пироман</value>
   </data>
   <data name="Medal_7x7_RangerMedal" xml:space="preserve">
-    <value>Егерь</value> 
+    <value>Егерь</value>
   </data>
   <data name="Tooltip_Achievements_7x7_ForTacticalOperations" xml:space="preserve">
     <value>Выдаётся за суммарное количество побед, 
 одержанных в составе случайной команды 
 в 10/100/1000/2500 боях. 
     • Выдаётся только в командных боях.
-    </value> 
+    </value>
   </data>
   <data name="Tooltip_Achievements_7x7_HeavyFireMedal" xml:space="preserve">
     <value>Занять 100 раз 1,2 или 3 место по количеству
@@ -2299,14 +2299,14 @@
     • В общем зачете повторно полученные награды не суммируются
     • Защитываются только победные бои
     • Выдается только в командных боях
-    </value> 
+    </value>
   </data>
   <data name="Tooltip_Achievements_7x7_NoMansLand" xml:space="preserve">
     <value>Провести бой, в котором будет уничтожена вся 
 техника обеих команд.
     • Выдается обеим сторонам
     • Выдается только в командных боях
-    </value> 
+    </value>
   </data>
   <data name="Tooltip_Achievements_7x7_PromisingFighterMedal" xml:space="preserve">
     <value>Занять 100 раз 1,2 или 3 место по количеству
@@ -2314,13 +2314,13 @@
     • В общем зачете повторно полученные награды не суммируются
     • Защитываются только победные бои
     • Выдается только в командных боях
-</value> 
+</value>
   </data>
   <data name="Tooltip_Achievements_7x7_PyromaniacMedal" xml:space="preserve">
     <value>10 раз поджечь противника
     • В общем зачете повторно полученные награды не суммируются
     • Выдается только в командных боях
-</value> 
+</value>
   </data>
   <data name="Tooltip_Achievements_7x7_RangerMedal" xml:space="preserve">
     <value>10 раз повредить или уничтожить противника, 
@@ -2334,14 +2334,14 @@
     <value>Победить не менее 3 раз подряд в составе случайной команды.
     • Серия ведётся для каждой машины отдельно и может продолжиться в следующем бою на этой же машине.
     • Выдаётся только в Командных боях.
-    </value> 
+    </value>
   </data>
   <data name="Tooltip_Achievements_7x7_CrucialShotMedal" xml:space="preserve">
     <value>Присуждается игроку, 20 раз уничтожившему последнюю 
 машину противника и победившему в бою. 
     • В общем зачёте повторно полученные награды суммируются. 
     • Выдаётся только в командных боях. 
-    </value> 
+    </value>
   </data>
   <data name="Label_Achievements_HistoricalBattle" xml:space="preserve">
     <value>Исторический бой</value>
@@ -2381,13 +2381,13 @@
 Например, играя в команде, состоящей из танков Т-34 и БТ-7, 
 необходимо управлять танком БТ-7. 
     • Выдаётся только в исторических боях. 
-    </value> 
+    </value>
   </data>
   <data name="Tooltip_Achievements_HistoricalBattle_MakerOfHistory" xml:space="preserve">
     <value>Выдаётся за суммарное количество побед, 
 одержанных за каждую из сторон конфликта 
 в 5/50/500/2500 боях. 
-    • Выдаётся только в исторических боях. </value> 
+    • Выдаётся только в исторических боях. </value>
   </data>
   <data name="Tooltip_Achievements_15x15_MedalAntiSpgFire" xml:space="preserve">
     <value>Управляя САУ, уничтожить все САУ противника в одном бою, но не менее 3.
@@ -2424,13 +2424,22 @@
     • Выдаётся только в Случайных боях.
 </value>
   </data>
-    <data name="Label_ColorScheme" xml:space="preserve">
+  <data name="Label_ColorScheme" xml:space="preserve">
     <value>Цветовая схема</value>
   </data>
-    <data name="DossierTheme_Black" xml:space="preserve">
+  <data name="DossierTheme_Black" xml:space="preserve">
     <value>Черная</value>
   </data>
-    <data name="DossierTheme_Silver" xml:space="preserve">
+  <data name="DossierTheme_Silver" xml:space="preserve">
     <value>Серебряная</value>
+  </data>
+  <data name="Label_ReplayDetail_IsAlive" xml:space="preserve">
+    <value>Выжил</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Да</value>
   </data>
 </root>

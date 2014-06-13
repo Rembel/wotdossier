@@ -62,7 +62,7 @@ namespace WotDossier.Applications.ViewModel
                 List<PlayerSearchJson> player = WotApiClient.Instance.SearchPlayer(SearchText, 10, SettingsReader.Get());
                 if (player != null)
                 {
-                    List = player.Select(x => new SearchResultRowViewModel {Id = x.id, Name = x.nickname}).ToList();
+                    List = player.Select(x => new SearchResultRowViewModel {Id = x.account_id, Name = x.nickname}).ToList();
                 }
             }
         }

@@ -130,14 +130,14 @@ namespace WotDossier.Applications.ViewModel
 
                 if (player != null)
                 {
-                    _appSettings.PlayerId = player.id;
+                    _appSettings.PlayerId = player.account_id;
                     
-                    playerStat = WotApiClient.Instance.LoadPlayerStat(player.id, _appSettings, false);
+                    playerStat = WotApiClient.Instance.LoadPlayerStat(player.account_id, _appSettings, false);
 
                     if (playerStat != null)
                     {
                         double createdAt = playerStat.dataField.created_at;
-                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.id, Utils.UnixDateToDateTime((long) createdAt));
+                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.account_id, Utils.UnixDateToDateTime((long) createdAt));
                     }
                 }
 

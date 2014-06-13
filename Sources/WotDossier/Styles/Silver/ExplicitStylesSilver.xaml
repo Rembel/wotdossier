@@ -1,25 +1,25 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Button.xaml" />
-        <ResourceDictionary Source="CheckBox.xaml" />
-        <ResourceDictionary Source="ComboBox.xaml" />
-        <ResourceDictionary Source="ContextMenu.xaml" />
-        <ResourceDictionary Source="DataGrid.xaml" />
-        <ResourceDictionary Source="Expander.xaml" />
-        <ResourceDictionary Source="GroupBox.xaml" />
-        <ResourceDictionary Source="Hyperlink.xaml" />
-        <ResourceDictionary Source="ListBox.xaml" />
-        <ResourceDictionary Source="ProgressBar.xaml" />
-        <ResourceDictionary Source="RadioButton.xaml" />
-        <ResourceDictionary Source="SpecialStyle.xaml" />
-        <ResourceDictionary Source="ScrollBar.xaml" />
-        <ResourceDictionary Source="StatusBar.xaml" />
-        <ResourceDictionary Source="TabControl.xaml" />
-        <ResourceDictionary Source="TextBox.xaml" />
-        <ResourceDictionary Source="ToggleButton.xaml" />
-        <ResourceDictionary Source="ToolBar.xaml" />
-        <ResourceDictionary Source="ToolTip.xaml" />
-        <ResourceDictionary Source="Window.xaml" />
+        <ResourceDictionary Source="ButtonSilver.xaml" />
+        <ResourceDictionary Source="CheckBoxSilver.xaml" />
+        <ResourceDictionary Source="ComboBoxSilver.xaml" />
+        <ResourceDictionary Source="ContextMenuSilver.xaml" />
+        <ResourceDictionary Source="DataGridSilver.xaml" />
+        <ResourceDictionary Source="ExpanderSilver.xaml" />
+        <ResourceDictionary Source="GroupBoxSilver.xaml" />
+        <ResourceDictionary Source="HyperlinkSilver.xaml" />
+        <ResourceDictionary Source="ListBoxSilver.xaml" />
+        <ResourceDictionary Source="ProgressBarSilver.xaml" />
+        <ResourceDictionary Source="RadioButtonSilver.xaml" />
+        <ResourceDictionary Source="SpecialStyleSilver.xaml" />
+        <ResourceDictionary Source="ScrollBarSilver.xaml" />
+        <ResourceDictionary Source="StatusBarSilver.xaml" />
+        <ResourceDictionary Source="TabControlSilver.xaml" />
+        <ResourceDictionary Source="TextBoxSilver.xaml" />
+        <ResourceDictionary Source="ToggleButtonSilver.xaml" />
+        <ResourceDictionary Source="ToolBarSilver.xaml" />
+        <ResourceDictionary Source="ToolTipSilver.xaml" />
+        <ResourceDictionary Source="WindowSilver.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -3,8 +3,8 @@
                     xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
                     xmlns:controls="clr-namespace:WotDossier.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Brushes.xaml" />
-        <ResourceDictionary Source="DataGrid.xaml" />
+        <ResourceDictionary Source="BrushesSilver.xaml" />
+        <ResourceDictionary Source="DataGridSilver.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="BoelterColumnHeaderTemplate">

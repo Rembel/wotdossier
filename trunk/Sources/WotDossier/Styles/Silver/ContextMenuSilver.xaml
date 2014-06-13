@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Brushes.xaml"/>
-        <ResourceDictionary Source="Fonts.xaml"/>
+        <ResourceDictionary Source="BrushesSilver.xaml"/>
+        <ResourceDictionary Source="FontsSilver.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <MenuScrollingVisibilityConverter x:Key="MenuScrollingVisibilityConverter"/>
     <Style x:Key="MenuItemScrollViewer" TargetType="{x:Type ScrollViewer}">

@@ -10,9 +10,9 @@
                     xmlns:rows="clr-namespace:WotDossier.Applications.ViewModel.Rows;assembly=WotDossier.Applications">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="DataGrid.xaml" />
-        <ResourceDictionary Source="ReplayDataGrid.xaml" />
-        <ResourceDictionary Source="DataGridHeaderTemplates.xaml" />
+        <ResourceDictionary Source="DataGridSilver.xaml" />
+        <ResourceDictionary Source="ReplayDataGridSilver.xaml" />
+        <ResourceDictionary Source="DataGridHeaderTemplatesSilver.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <ImageBrush x:Key="bcolorLeft" ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/left_back.jpg" Stretch="Fill" />

@@ -536,6 +536,9 @@
     <Compile Include="..\WotDossier\Converters\SubtractValueConverter.cs">
       <Link>Converters\SubtractValueConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\ValueToTextConverter.cs">
+      <Link>Converters\ValueToTextConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\MinimizeToTray.cs">
       <Link>MinimizeToTray.cs</Link>
     </Compile>

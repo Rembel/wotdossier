@@ -24,6 +24,10 @@
             <TabItem TabIndex="0" Header="{x:Static resources:Resources.Replay_Tab_Header_DetailedReport}">
                 <replay:DetailedResults HorizontalAlignment="Stretch"></replay:DetailedResults>
             </TabItem>
+            <!--Equipment tab-->
+            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Replay_Tab_Header_Equipment}">
+                <replay:Equipment HorizontalAlignment="Stretch"></replay:Equipment>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

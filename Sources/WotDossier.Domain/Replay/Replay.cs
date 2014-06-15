@@ -20,5 +20,8 @@ namespace WotDossier.Domain.Replay
 
         [DataMember]
         public ReplayIdentify identify { get; set; }
+
+        [DataMember]
+        public AdvancedReplayData datablock_advanced { get; set; }
     }
 }

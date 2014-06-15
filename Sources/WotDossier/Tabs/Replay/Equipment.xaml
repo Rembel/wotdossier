@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="WotDossier.Tabs.Replay.Equipment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="605" d:DesignWidth="970">
+    <StackPanel Orientation="Vertical"  Background="#0E0C09">
+        <ListBox Background="Transparent" ItemsSource="{Binding Devices}" BorderThickness="0" Padding="0" Margin="0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="6,3,6,3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Grid.RowSpan="2" Margin="6" Width="43" Height="43" Stretch="Fill" Source="{Binding icon, Converter={x:Static converters:ImageSourceConverter.Default}}">
+                            <Image.ToolTip>
+                                <TextBlock Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                            </Image.ToolTip>
+                        </Image>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="#5a5a5a" FontSize="12" FontFamily="​Arial,​sans-serif" Text="{Binding description, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</UserControl>

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base32Encoder.cs" />
+    <Compile Include="Blowfish.cs" />
     <Compile Include="Collections\FooterList.cs" />
     <Compile Include="Collections\IFooterList.cs" />
     <Compile Include="DataFormatter.cs" />

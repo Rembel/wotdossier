@@ -124,8 +124,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <summary>
         /// Gets Replay data.
         /// </summary>
+        /// <param name="readAdvancedData"></param>
         /// <returns></returns>
-        public override Domain.Replay.Replay ReplayData()
+        public override Domain.Replay.Replay ReplayData(bool readAdvancedData = false)
         {
             if (PhisicalFile != null)
             {
@@ -133,7 +134,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 //convert dossier cache file to json
                 if (!File.Exists(jsonFile))
                 {
-                    CacheHelper.ReplayToJson(PhisicalFile);
+                    CacheHelper.ReplayToJson(PhisicalFile, readAdvancedData);
                 }
 
                 if (!File.Exists(jsonFile))

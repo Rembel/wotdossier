@@ -763,6 +763,49 @@
     <Resource Include="Images\Maps\83_kharkiv.jpg" />
     <Resource Include="Images\Maps\99_himmelball.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\artefact\afterburning.png" />
+    <Resource Include="Images\artefact\aimingStabilizer.png" />
+    <Resource Include="Images\artefact\antifragmentationLining.png" />
+    <Resource Include="Images\artefact\autoExtinguishers.png" />
+    <Resource Include="Images\artefact\camouflageNet.png" />
+    <Resource Include="Images\artefact\carbonDioxide.png" />
+    <Resource Include="Images\artefact\chines_pork.png" />
+    <Resource Include="Images\artefact\chocolate.png" />
+    <Resource Include="Images\artefact\coatedOptics.png" />
+    <Resource Include="Images\artefact\cocacola.png" />
+    <Resource Include="Images\artefact\destroy.png" />
+    <Resource Include="Images\artefact\empty.png" />
+    <Resource Include="Images\artefact\enhancedAimDrives.png" />
+    <Resource Include="Images\artefact\enhancedSuspension.png" />
+    <Resource Include="Images\artefact\filterCyclone.png" />
+    <Resource Include="Images\artefact\gasoline100.png" />
+    <Resource Include="Images\artefact\gasoline105.png" />
+    <Resource Include="Images\artefact\grousers.png" />
+    <Resource Include="Images\artefact\handExtinguishers.png" />
+    <Resource Include="Images\artefact\hotCoffee.png" />
+    <Resource Include="Images\artefact\hydroMethanol.png" />
+    <Resource Include="Images\artefact\improvedVentilation.png" />
+    <Resource Include="Images\artefact\largeMedkit.png" />
+    <Resource Include="Images\artefact\largeRepairkit.png" />
+    <Resource Include="Images\artefact\lendLeaseGasoline.png" />
+    <Resource Include="Images\artefact\nitrousOxide.png" />
+    <Resource Include="Images\artefact\notFound.png" />
+    <Resource Include="Images\artefact\onigiri.png" />
+    <Resource Include="Images\artefact\pudding.png" />
+    <Resource Include="Images\artefact\qualityOil.png" />
+    <Resource Include="Images\artefact\rammer.png" />
+    <Resource Include="Images\artefact\remove.png" />
+    <Resource Include="Images\artefact\removedRpmLimiter.png" />
+    <Resource Include="Images\artefact\removeGold.png" />
+    <Resource Include="Images\artefact\russ-food.png" />
+    <Resource Include="Images\artefact\smallMedkit.png" />
+    <Resource Include="Images\artefact\smallRepairkit.png" />
+    <Resource Include="Images\artefact\steelRollers.png" />
+    <Resource Include="Images\artefact\stereoscope.png" />
+    <Resource Include="Images\artefact\toolbox.png" />
+    <Resource Include="Images\artefact\wetCombatPack.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -682,15 +682,14 @@ def extract_advanced(fn):
 			printmessage('cannot load advanced pickle: ' + e.message)
 			printmessage('Position: ' + str(f.tell()) + ", Length: " + str(advancedlength))
 
-	
 		f.seek(f.tell()+29)
-		
+
 		advancedlength = struct.unpack("B",f.read(1))[0]
 
 		if advancedlength==255:
 			advancedlength = struct.unpack("H",f.read(2))[0]
 			f.read(1)
-			
+		
 		#try:
 		rosters = []
 		try:
@@ -719,17 +718,37 @@ def extract_advanced(fn):
 			rosterdata[roster[2]]['compDescr'] = compDescr
 			
 			# Does not make sense, will check later
-			# rosterdata[roster[2]]['vehicle'] = dict()
-			# rosterdata[roster[2]]['vehicle']['chassisID'] = bindata[2]
-			# rosterdata[roster[2]]['vehicle']['engineID'] = bindata[3]
-			# rosterdata[roster[2]]['vehicle']['fueltankID'] = bindata[4]
-			# rosterdata[roster[2]]['vehicle']['radioID'] = bindata[5]
-			# rosterdata[roster[2]]['vehicle']['turretID'] = bindata[6]
-			# rosterdata[roster[2]]['vehicle']['gunID'] = bindata[7]
+			rosterdata[roster[2]]['vehicle'] = dict()
+			rosterdata[roster[2]]['vehicle']['chassisID'] = bindata[2]
+			rosterdata[roster[2]]['vehicle']['engineID'] = bindata[3]
+			rosterdata[roster[2]]['vehicle']['fueltankID'] = bindata[4]
+			rosterdata[roster[2]]['vehicle']['radioID'] = bindata[5]
+			rosterdata[roster[2]]['vehicle']['turretID'] = bindata[6]
+			rosterdata[roster[2]]['vehicle']['gunID'] = bindata[7]
 
-					
-		advanced['roster'] = rosterdata
-	
+			flags = struct.unpack('B', roster[1][14])[0]
+
+			optional_devices_mask = flags & 15
+			idx = 2
+
+			pos = 15
+
+			while optional_devices_mask:
+				if optional_devices_mask & 1:
+					try:
+						m = struct.unpack('H', roster[1][pos:pos+2])[0]
+						rosterdata[roster[2]]['vehicle']['module_' + str(idx)] = m
+					except Exception, e:
+						printmessage('error on processing player [' + str(roster[2]) + ']: '  + e.message)
+				else:
+					rosterdata[roster[2]]['vehicle']['module_' + str(idx)] = -1
+				
+				optional_devices_mask = optional_devices_mask >> 1
+				idx = idx - 1
+				pos = pos + 2
+							
+		advanced['roster'] = rosterdata		
+
 	advanced['valid'] = 1
 	return advanced
 			

@@ -66,8 +66,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <summary>
         /// Gets Replay data.
         /// </summary>
+        /// <param name="readAdvancedData"></param>
         /// <returns></returns>
-        public override Domain.Replay.Replay ReplayData()
+        public override Domain.Replay.Replay ReplayData(bool readAdvancedData = false)
         {
             return _replay;
         }

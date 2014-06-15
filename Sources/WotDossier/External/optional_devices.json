@@ -1,0 +1,599 @@
+{
+   "enhancedHorizontal_springs" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "description" : "artefacts_enhancedHorizontal_springs_descr",
+      "userString" : "artefacts_enhancedHorizontal_springs_name",
+      "removable" : false,
+      "id" : 33,
+      "price" : 20000
+   },
+   "enhancedTorsions1t" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedTorsions1t_name",
+      "removable" : false,
+      "id" : 10,
+      "price" : 100000
+   },
+   "enhancedHorizontal_elastic_elements" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "description" : "artefacts_enhancedHorizontal_elastic_elements_descr",
+      "userString" : "artefacts_enhancedHorizontal_elastic_elements_name",
+      "removable" : false,
+      "id" : 41,
+      "price" : 200000
+   },
+   "enhancedSprings" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedSprings_name",
+      "removable" : false,
+      "id" : 13,
+      "price" : 20000
+   },
+   "grousers" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/grousers.png",
+      "description" : "artefacts_grousers_descr",
+      "userString" : "artefacts_grousers_name",
+      "removable" : false,
+      "id" : 20,
+      "price" : 250000
+   },
+   "improvedVentilation_class3" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/improvedVentilation.png",
+      "description" : "artefacts_improvedVentilation_descr",
+      "userString" : "artefacts_improvedVentilation_class3_name",
+      "removable" : false,
+      "id" : 19,
+      "price" : 600000
+   },
+   "enhancedSprings_class2" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "description" : "artefacts_enhancedSprings_class2_descr",
+      "userString" : "artefacts_enhancedSprings_class2_name",
+      "removable" : false,
+      "id" : 34,
+      "price" : 200000
+   },
+   "mediumCaliberTankRammer" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/rammer.png",
+      "script" : "StaticFactorDevice",
+      "description" : "artefacts_rammer_descr",
+      "userString" : "artefacts_mediumCaliberTankRammer_name",
+      "removable" : false,
+      "id" : 21,
+      "price" : 200000
+   },
+   "largeCaliberHowitzerRammer" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/rammer.png",
+      "script" : "StaticFactorDevice",
+      "description" : "artefacts_rammer_descr",
+      "userString" : "artefacts_largeCaliberHowitzerRammer_name",
+      "removable" : false,
+      "id" : 24,
+      "price" : 600000
+   },
+   "enhancedHorizontal_springs_class2" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "description" : "artefacts_enhancedHorizontal_springs_class2_descr",
+      "userString" : "artefacts_enhancedHorizontal_springs_class2_name",
+      "removable" : false,
+      "id" : 36,
+      "price" : 200000
+   },
+   "enhancedHorizontal_springs_class3" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "description" : "artefacts_enhancedHorizontal_springs_class3_descr",
+      "userString" : "artefacts_enhancedHorizontal_springs_class3_name",
+      "removable" : false,
+      "id" : 37,
+      "price" : 500000
+   },
+   "enhancedBelwillWashers" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedBelwillWashers_name",
+      "removable" : false,
+      "id" : 15,
+      "price" : 600000
+   },
+   "camouflageNet" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/camouflageNet.png",
+      "userString" : "artefacts_camouflageNet_name",
+      "script" : "CamouflageNet",
+      "removable" : true,
+      "price" : 100000,
+      "id" : 6,
+      "description" : "artefacts_camouflageNet_descr"
+   },
+   "antifragmentationLining_light" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/antifragmentationLining.png",
+      "script" : "AntifragmentationLining",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "lightTank lightSPG lightAT-SPG lightTankArtefacts_User"
+            }
+         }
+      },
+      "description" : "artefacts_antifragmentationLining_light_descr",
+      "userString" : "artefacts_antifragmentationLining_light_name",
+      "removable" : false,
+      "id" : 1,
+      "price" : 50000
+   },
+   "enhancedSuspension_candle" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedSuspension_candle_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedSuspension_candle_name",
+      "removable" : false,
+      "id" : 8,
+      "price" : 40000
+   },
+   "enhancedAimDrives" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/enhancedAimDrives.png",
+      "userString" : "artefacts_enhancedAimDrives_name",
+      "script" : "StaticFactorDevice",
+      "removable" : false,
+      "price" : 500000,
+      "id" : 25,
+      "description" : "artefacts_enhancedAimDrives_descr"
+   },
+   "coatedOptics" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/coatedOptics.png",
+      "userString" : "artefacts_coatedOptics_name",
+      "script" : "StaticFactorDevice",
+      "removable" : false,
+      "price" : 500000,
+      "id" : 5,
+      "description" : "artefacts_coatedOptics_descr"
+   },
+   "stereoscope" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/stereoscope.png",
+      "userString" : "artefacts_stereoscope_name",
+      "script" : "Stereoscope",
+      "removable" : true,
+      "price" : 500000,
+      "id" : 4,
+      "description" : "artefacts_stereoscope_descr"
+   },
+   "enhancedVertical_springs_class2" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedVertical_springs_class2_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedVertical_springs_class2_descr",
+      "userString" : "artefacts_enhancedVertical_springs_class2_name",
+      "removable" : false,
+      "id" : 38,
+      "price" : 200000
+   },
+   "enhancedSuspension_Vikkers" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedSuspension_Vikkers_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedSuspension_Vikkers_name",
+      "removable" : false,
+      "id" : 7,
+      "price" : 20000
+   },
+   "aimingStabilizer_Mk1" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/aimingStabilizer.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "aimingStabilizer_Mk1_user"
+            }
+         }
+      },
+      "description" : "artefacts_aimingStabilizer_descr",
+      "userString" : "artefacts_aimingStabilizer_Mk1_name",
+      "removable" : false,
+      "id" : 30,
+      "price" : 500000
+   },
+   "enhancedSprings_class3" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedSprings_class3_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSprings_class3_descr",
+      "userString" : "artefacts_enhancedSprings_class3_name",
+      "removable" : false,
+      "id" : 35,
+      "price" : 500000
+   },
+   "enhancedVertical_springs_class3" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedVertical_springs_class3_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedVertical_springs_class3_descr",
+      "userString" : "artefacts_enhancedVertical_springs_class3_name",
+      "removable" : false,
+      "id" : 39,
+      "price" : 500000
+   },
+   "toolbox" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/toolbox.png",
+      "userString" : "artefacts_toolbox_name",
+      "script" : "StaticFactorDevice",
+      "removable" : true,
+      "price" : 500000,
+      "id" : "",
+      "description" : "artefacts_toolbox_descr"
+   },
+   "antifragmentationLining_medium" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/antifragmentationLining.png",
+      "script" : "AntifragmentationLining",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "mediumTank mediumSPG mediumAT-SPG"
+            }
+         },
+         "exclude" : {
+            "vehicle" : {
+               "tags" : "lightTankArtefacts_User"
+            }
+         }
+      },
+      "description" : "artefacts_antifragmentationLining_medium_descr",
+      "userString" : "artefacts_antifragmentationLining_medium_name",
+      "removable" : false,
+      "id" : 2,
+      "price" : 200000
+   },
+   "enhancedTorsions5t" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedTorsions5t_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedTorsions5t_name",
+      "removable" : false,
+      "id" : 12,
+      "price" : 500000
+   },
+   "enhancedLongitudinalTorsions" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedLongitudinalTorsions_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedLongitudinalTorsions_name",
+      "removable" : false,
+      "id" : 16,
+      "price" : 500000
+   },
+   "enhancedLevers" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedLevers_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedLevers_name",
+      "removable" : false,
+      "id" : 14,
+      "price" : 200000
+   },
+   "wetCombatPack_class2" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/wetCombatPack.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "wetCombatPack_class2_user"
+            }
+         }
+      },
+      "description" : "artefacts_wetCombatPack_descr",
+      "userString" : "artefacts_wetCombatPack_class2_name",
+      "removable" : false,
+      "id" : 27,
+      "price" : 600000
+   },
+   "enhancedTorsions3t" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedTorsions3t_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedTorsions3t_name",
+      "removable" : false,
+      "id" : 11,
+      "price" : 200000
+   },
+   "antifragmentationLining_heavy" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/antifragmentationLining.png",
+      "script" : "AntifragmentationLining",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "heavyTank heavySPG heavyAT-SPG"
+            }
+         },
+         "exclude" : {
+            "vehicle" : {
+               "tags" : "antifragmentationLining_superheavy_user"
+            }
+         }
+      },
+      "description" : "artefacts_antifragmentationLining_heavy_descr",
+      "userString" : "artefacts_antifragmentationLining_heavy_name",
+      "removable" : false,
+      "id" : 3,
+      "price" : 500000
+   },
+   "largeCaliberTankRammer" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/rammer.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "largeCaliberTankRammer_user"
+            }
+         }
+      },
+      "description" : "artefacts_rammer_descr",
+      "userString" : "artefacts_largeCaliberTankRammer_name",
+      "removable" : false,
+      "id" : 22,
+      "price" : 500000
+   },
+   "improvedVentilation_class1" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/improvedVentilation.png",
+      "script" : "AAAAAAAAAAAAAAAAAAAA",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "lightTank improvedVentilation_class1_user"
+            }
+         },
+         "exclude" : {
+            "vehicle" : {
+               "tags" : "noImprovedVentilation"
+            }
+         }
+      },
+      "description" : "artefacts_improvedVentilation_descr",
+      "userString" : "artefacts_improvedVentilation_class1_name",
+      "removable" : false,
+      "id" : 17,
+      "price" : 50000
+   },
+   "mediumCaliberHowitzerRammer" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/rammer.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : [
+            {
+               "vehicle" : {
+                  "tags" : "mediumCaliberHowitzerRammer_user"
+               }
+            },
+            {
+               "vehicle" : {
+                  "maxLevel" : 6,
+                  "tags" : "SPG"
+               },
+               "nations" : "usa"
+            }
+         ]
+      },
+      "description" : "artefacts_rammer_descr",
+      "userString" : "artefacts_mediumCaliberHowitzerRammer_name",
+      "removable" : false,
+      "id" : 23,
+      "price" : 300000
+   },
+   "enhancedSuspension_Christie" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedSuspension_Christie_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedSuspension_descr",
+      "userString" : "artefacts_enhancedSuspension_Christie_name",
+      "removable" : false,
+      "id" : 9,
+      "price" : 80000
+   },
+   "antifragmentationLining_superheavy" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/antifragmentationLining.png",
+      "script" : "AntifragmentationLining",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "antifragmentationLining_superheavy_user"
+            }
+         }
+      },
+      "description" : "artefacts_antifragmentationLining_superheavy_descr",
+      "userString" : "artefacts_antifragmentationLining_superheavy_name",
+      "removable" : false,
+      "id" : 42,
+      "price" : 750000
+   },
+   "carbonDioxide" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/carbonDioxide.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "minLevel" : 6
+            }
+         }
+      },
+      "description" : "artefacts_carbonDioxide_descr",
+      "userString" : "artefacts_carbonDioxide_name",
+      "removable" : false,
+      "id" : 28,
+      "price" : 500000
+   },
+   "enhancedVertical_springs" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedVertical_springs_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedVertical_springs_descr",
+      "userString" : "artefacts_enhancedVertical_springs_name",
+      "removable" : false,
+      "id" : 32,
+      "price" : 20000
+   },
+   "improvedVentilation_class2" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/improvedVentilation.png",
+      "script" : "AAAAAAAAAAAAAAAAAAAA",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "mediumTank mediumAT-SPG improvedVentilation_class2_user"
+            }
+         },
+         "exclude" : {
+            "vehicle" : {
+               "tags" : "noImprovedVentilation lightTankArtefacts_User"
+            }
+         }
+      },
+      "description" : "artefacts_improvedVentilation_descr",
+      "userString" : "artefacts_improvedVentilation_class2_name",
+      "removable" : false,
+      "id" : 18,
+      "price" : 150000
+   },
+   "filterCyclone" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/filterCyclone.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : {
+            "nations" : "AAAA"
+         },
+         "exclude" : {
+            "vehicle" : {
+               "tags" : "AAAAAAAAAAAAAAAA"
+            }
+         }
+      },
+      "description" : "artefacts_filterCyclone_descr",
+      "userString" : "artefacts_filterCyclone_name",
+      "removable" : false,
+      "id" : 29,
+      "price" : 500000
+   },
+   "enhancedVertical_elastic_elements" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/steelRollers.png",
+      "script" : "EnhancedSuspension",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "enhancedVertical_elastic_elements_user"
+            }
+         }
+      },
+      "description" : "artefacts_enhancedVertical_elastic_elements_descr",
+      "userString" : "artefacts_enhancedVertical_elastic_elements_name",
+      "removable" : false,
+      "id" : 40,
+      "price" : 20000
+   },
+   "wetCombatPack_class1" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/wetCombatPack.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "wetCombatPack_class1_user"
+            }
+         }
+      },
+      "description" : "artefacts_wetCombatPack_descr",
+      "userString" : "artefacts_wetCombatPack_class1_name",
+      "removable" : false,
+      "id" : 26,
+      "price" : 200000
+   },
+   "aimingStabilizer_Mk2" : {
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/aimingStabilizer.png",
+      "script" : "StaticFactorDevice",
+      "vehicleFilter" : {
+         "include" : {
+            "vehicle" : {
+               "tags" : "aimingStabilizer_Mk2_user"
+            }
+         }
+      },
+      "description" : "artefacts_aimingStabilizer_descr",
+      "userString" : "artefacts_aimingStabilizer_Mk2_name",
+      "removable" : false,
+      "id" : 31,
+      "price" : 600000
+   }
+}

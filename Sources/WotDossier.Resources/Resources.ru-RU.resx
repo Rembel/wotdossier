@@ -2442,4 +2442,522 @@
   <data name="True" xml:space="preserve">
     <value>Да</value>
   </data>
+  <data name="Replay_Tab_Header_Equipment" xml:space="preserve">
+    <value>Оборудование</value>
+  </data>
+  <data name="artefacts_afterburning_descr" xml:space="preserve">
+    <value>+15% к мощности двигателя на одну минуту</value>
+  </data>
+  <data name="artefacts_afterburning_name" xml:space="preserve">
+    <value>Форсаж</value>
+  </data>
+  <data name="artefacts_aimingStabilizer_descr" xml:space="preserve">
+    <value>-20% к разбросу при движении и повороте башни</value>
+  </data>
+  <data name="artefacts_aimingStabilizer_Mk1_name" xml:space="preserve">
+    <value>Стабилизатор вертикальной наводки Mk 1</value>
+  </data>
+  <data name="artefacts_aimingStabilizer_Mk2_name" xml:space="preserve">
+    <value>Стабилизатор вертикальной наводки Mk 2</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_heavy_descr" xml:space="preserve">
+    <value>+30% к абсорбции повреждений от взрывов и тарана 
++30% к защите экипажа от ранений</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_heavy_name" xml:space="preserve">
+    <value>Тяжёлый противоосколочный подбой</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_light_descr" xml:space="preserve">
+    <value>+20% к абсорбции повреждений от взрывов и тарана 
++20% к защите экипажа от ранений</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_light_name" xml:space="preserve">
+    <value>Лёгкий противоосколочный подбой</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_medium_descr" xml:space="preserve">
+    <value>+25% к абсорбции повреждений от взрывов и тарана 
++25% к защите экипажа от ранений</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_medium_name" xml:space="preserve">
+    <value>Средний противоосколочный подбой</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_superheavy_descr" xml:space="preserve">
+    <value>+50% к абсорбции повреждений от взрывов и тарана 
++50% к защите экипажа от ранений</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_superheavy_name" xml:space="preserve">
+    <value>Сверхтяжёлый противоосколочный подбой</value>
+  </data>
+  <data name="artefacts_autoExtinguishers/always" xml:space="preserve">
+    <value>+10% защите от пожара.</value>
+  </data>
+  <data name="artefacts_autoExtinguishers/restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_descr" xml:space="preserve">
+    <value>Автоматическое тушение пожара в собственной машине.</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_name" xml:space="preserve">
+    <value>Автоматический огнетушитель</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_onUse" xml:space="preserve">
+    <value>автоматическое тушение пожара в собственной машине. Используется однократно.</value>
+  </data>
+  <data name="artefacts_camouflageNet_descr" xml:space="preserve">
+    <value>Значительно снижает заметность неподвижной машины</value>
+  </data>
+  <data name="artefacts_camouflageNet_name" xml:space="preserve">
+    <value>Маскировочная сеть</value>
+  </data>
+  <data name="artefacts_carbonDioxide_descr" xml:space="preserve">
+    <value>+50% к прочности бака</value>
+  </data>
+  <data name="artefacts_carbonDioxide_name" xml:space="preserve">
+    <value>Заполнение баков СО2</value>
+  </data>
+  <data name="artefacts_chocolate_always" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_chocolate_descr" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа.</value>
+  </data>
+  <data name="artefacts_chocolate_name" xml:space="preserve">
+    <value>Шоколад</value>
+  </data>
+  <data name="artefacts_chocolate_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_chocolate_restriction" xml:space="preserve">
+    <value>Только для техники Германии.</value>
+  </data>
+  <data name="artefacts_coatedOptics_descr" xml:space="preserve">
+    <value>+10% к радиусу обзора, но не более 500 м</value>
+  </data>
+  <data name="artefacts_coatedOptics_name" xml:space="preserve">
+    <value>Просветлённая оптика</value>
+  </data>
+  <data name="artefacts_cocacola_always" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_cocacola_descr" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа.</value>
+  </data>
+  <data name="artefacts_cocacola_name" xml:space="preserve">
+    <value>Ящик Колы</value>
+  </data>
+  <data name="artefacts_cocacola_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_cocacola_restriction" xml:space="preserve">
+    <value>Только для техники США.</value>
+  </data>
+  <data name="artefacts_enhancedAimDrives_descr" xml:space="preserve">
+    <value>+10% к скорости сведения</value>
+  </data>
+  <data name="artefacts_enhancedAimDrives_name" xml:space="preserve">
+    <value>Усиленные приводы наводки</value>
+  </data>
+  <data name="artefacts_enhancedBelwillWashers_name" xml:space="preserve">
+    <value>Усиленные шайбы Бельвилля</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_elastic_elements_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_elastic_elements_name" xml:space="preserve">
+    <value>Усиленные горизонтальные рессоры</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class2_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class2_name" xml:space="preserve">
+    <value>Усиленные пружины 2-го класса</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class3_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class3_name" xml:space="preserve">
+    <value>Усиленные пружины 3-го класса</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_name" xml:space="preserve">
+    <value>Усиленные пружины 1-го класса</value>
+  </data>
+  <data name="artefacts_enhancedLevers_name" xml:space="preserve">
+    <value>Усиленные балансиры</value>
+  </data>
+  <data name="artefacts_enhancedLongitudinalTorsions_name" xml:space="preserve">
+    <value>Усиленные продольные торсионы</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class2_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class2_name" xml:space="preserve">
+    <value>Усиленные рессоры 2-го класса</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class3_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class3_name" xml:space="preserve">
+    <value>Усиленные рессоры 3-го класса</value>
+  </data>
+  <data name="artefacts_enhancedSprings_name" xml:space="preserve">
+    <value>Усиленные рессоры</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_candle_name" xml:space="preserve">
+    <value>Усиленная свечная подвеска</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_Christie_name" xml:space="preserve">
+    <value>Усиленная подвеска Кристи</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_Vikkers_name" xml:space="preserve">
+    <value>Усиленная подвеска Виккерса</value>
+  </data>
+  <data name="artefacts_enhancedTorsions1t_name" xml:space="preserve">
+    <value>Усиленные торсионы 1 т класса</value>
+  </data>
+  <data name="artefacts_enhancedTorsions3t_name" xml:space="preserve">
+    <value>Усиленные торсионы 3 т класса</value>
+  </data>
+  <data name="artefacts_enhancedTorsions5t_name" xml:space="preserve">
+    <value>Усиленные торсионы 5+ т класса</value>
+  </data>
+  <data name="artefacts_enhancedVertical_elastic_elements_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedVertical_elastic_elements_name" xml:space="preserve">
+    <value>Усиленные вертикальные рессоры</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class2_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class2_name" xml:space="preserve">
+    <value>Усил. вертикальные пружины 2-го класса</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class3_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class3_name" xml:space="preserve">
+    <value>Усил. вертикальные пружины 3-го класса</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_descr" xml:space="preserve">
+    <value>+10% к грузоподъёмности ходовой
++20% к прочности ходовой
+ -50% к урону, передаваемому корпусу через ходовую при падении</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_name" xml:space="preserve">
+    <value>Усиленные вертикальные пружины 1-го класса</value>
+  </data>
+  <data name="artefacts_filterCyclone_descr" xml:space="preserve">
+    <value>+50% к прочности двигателя</value>
+  </data>
+  <data name="artefacts_filterCyclone_name" xml:space="preserve">
+    <value>Фильтр «Циклон»</value>
+  </data>
+  <data name="artefacts_gasoline100_always" xml:space="preserve">
+    <value>+5% к мощности двигателя и скорости вращения башни. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_gasoline100_descr" xml:space="preserve">
+    <value>+5% к мощности двигателя и скорости вращения башни.</value>
+  </data>
+  <data name="artefacts_gasoline100_name" xml:space="preserve">
+    <value>100-октановый бензин</value>
+  </data>
+  <data name="artefacts_gasoline100_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_gasoline100_restriction" xml:space="preserve">
+    <value>Только для бензиновых двигателей Германии, США, Великобритании и Франции.</value>
+  </data>
+  <data name="artefacts_gasoline105_always" xml:space="preserve">
+    <value>+10% к мощности двигателя и скорости вращения башни. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_gasoline105_descr" xml:space="preserve">
+    <value>+10% к мощности двигателя и скорости вращения башни.</value>
+  </data>
+  <data name="artefacts_gasoline105_name" xml:space="preserve">
+    <value>105-октановый бензин</value>
+  </data>
+  <data name="artefacts_gasoline105_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_gasoline105_restriction" xml:space="preserve">
+    <value>Только для бензиновых двигателей Германии, США, Великобритании и Франции.</value>
+  </data>
+  <data name="artefacts_grousers_descr" xml:space="preserve">
+    <value>+10% к проходимости по слабым грунтам,
++5% к проходимости по средним грунтам</value>
+  </data>
+  <data name="artefacts_grousers_name" xml:space="preserve">
+    <value>Дополнительные грунтозацепы</value>
+  </data>
+  <data name="artefacts_handExtinguishers_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_handExtinguishers_descr" xml:space="preserve">
+    <value>Тушение пожара в собственной машине.</value>
+  </data>
+  <data name="artefacts_handExtinguishers_name" xml:space="preserve">
+    <value>Ручной огнетушитель</value>
+  </data>
+  <data name="artefacts_handExtinguishers_onUse" xml:space="preserve">
+    <value>тушение пожара в собственной машине. Используется однократно.</value>
+  </data>
+  <data name="artefacts_handExtinguishers_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_hotCoffee_always" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_hotCoffee_descr" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа.</value>
+  </data>
+  <data name="artefacts_hotCoffee_name" xml:space="preserve">
+    <value>Крепкий кофе</value>
+  </data>
+  <data name="artefacts_hotCoffee_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_hotCoffee_restriction" xml:space="preserve">
+    <value>Только для техники Франции.</value>
+  </data>
+  <data name="artefacts_improvedVentilation_class1_name" xml:space="preserve">
+    <value>Улучшенная вентиляция Класс 1</value>
+  </data>
+  <data name="artefacts_improvedVentilation_class2_name" xml:space="preserve">
+    <value>Улучшенная вентиляция Класс 2</value>
+  </data>
+  <data name="artefacts_improvedVentilation_class3_name" xml:space="preserve">
+    <value>Улучшенная вентиляция Класс 3</value>
+  </data>
+  <data name="artefacts_improvedVentilation_descr" xml:space="preserve">
+    <value>+5% ко всем умениям всего экипажа</value>
+  </data>
+  <data name="artefacts_largeCaliberHowitzerRammer_name" xml:space="preserve">
+    <value>Гаубичный досылатель крупного калибра</value>
+  </data>
+  <data name="artefacts_largeCaliberTankRammer_name" xml:space="preserve">
+    <value>Орудийный досылатель крупного калибра</value>
+  </data>
+  <data name="artefacts_largeMedkit_always" xml:space="preserve">
+    <value>+15% к защите экипажа от ранений.</value>
+  </data>
+  <data name="artefacts_largeMedkit_descr" xml:space="preserve">
+    <value>Лечение всех раненых членов экипажа.</value>
+  </data>
+  <data name="artefacts_largeMedkit_name" xml:space="preserve">
+    <value>Большая аптечка</value>
+  </data>
+  <data name="artefacts_largeMedkit_onUse" xml:space="preserve">
+    <value>лечение всех раненых членов экипажа. Используется однократно.</value>
+  </data>
+  <data name="artefacts_largeMedkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_largeRepairkit_always" xml:space="preserve">
+    <value>+10% к скорости ремонта модулей.</value>
+  </data>
+  <data name="artefacts_largeRepairkit_descr" xml:space="preserve">
+    <value>Починка всех повреждённых модулей.</value>
+  </data>
+  <data name="artefacts_largeRepairkit_name" xml:space="preserve">
+    <value>Большой ремкомплект</value>
+  </data>
+  <data name="artefacts_largeRepairkit_onUse" xml:space="preserve">
+    <value>Починка всех повреждённых модулей. Используется однократно.</value>
+  </data>
+  <data name="artefacts_largeRepairkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_always" xml:space="preserve">
+    <value>+5% к мощности двигателя. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_descr" xml:space="preserve">
+    <value>+5% к мощности двигателя.</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_name" xml:space="preserve">
+    <value>Ленд-лизовское масло</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_restriction" xml:space="preserve">
+    <value>Только для техники СССР.</value>
+  </data>
+  <data name="artefacts_mediumCaliberHowitzerRammer_name" xml:space="preserve">
+    <value>Гаубичный досылатель среднего калибра</value>
+  </data>
+  <data name="artefacts_mediumCaliberTankRammer_name" xml:space="preserve">
+    <value>Орудийный досылатель среднего калибра</value>
+  </data>
+  <data name="artefacts_qualityOil_always" xml:space="preserve">
+    <value>+5% к мощности двигателя. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_qualityOil_descr" xml:space="preserve">
+    <value>+5% к мощности двигателя.</value>
+  </data>
+  <data name="artefacts_qualityOil_name" xml:space="preserve">
+    <value>Качественное масло</value>
+  </data>
+  <data name="artefacts_qualityOil_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_qualityOil_restriction" xml:space="preserve">
+    <value>Только для техники Китая и Японии.</value>
+  </data>
+  <data name="artefacts_rammer_descr" xml:space="preserve">
+    <value>-10% к времени заряжания</value>
+  </data>
+  <data name="artefacts_ration_always" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_ration_china_always" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_ration_china_descr" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа.</value>
+  </data>
+  <data name="artefacts_ration_china_name" xml:space="preserve">
+    <value>Улучшенный рацион</value>
+  </data>
+  <data name="artefacts_ration_china_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_china_restriction" xml:space="preserve">
+    <value>Только для техники Китая.</value>
+  </data>
+  <data name="artefacts_ration_descr" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа.</value>
+  </data>
+  <data name="artefacts_ration_japan_always" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_ration_japan_descr" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа.</value>
+  </data>
+  <data name="artefacts_ration_japan_name" xml:space="preserve">
+    <value>Онигири</value>
+  </data>
+  <data name="artefacts_ration_japan_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_japan_restriction" xml:space="preserve">
+    <value>Только для техники Японии.</value>
+  </data>
+  <data name="artefacts_ration_name" xml:space="preserve">
+    <value>Доппаёк</value>
+  </data>
+  <data name="artefacts_ration_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_restriction" xml:space="preserve">
+    <value>Только для техники СССР.</value>
+  </data>
+  <data name="artefacts_ration_uk_always" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа. Расходуется за один бой.</value>
+  </data>
+  <data name="artefacts_ration_uk_descr" xml:space="preserve">
+    <value>+10% ко всем навыкам и умениям экипажа.</value>
+  </data>
+  <data name="artefacts_ration_uk_name" xml:space="preserve">
+    <value>Пудинг с чаем</value>
+  </data>
+  <data name="artefacts_ration_uk_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_uk_restriction" xml:space="preserve">
+    <value>Только для техники Великобритании.</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_descr" xml:space="preserve">
+    <value>Повышает мощность двигателя на 10%, но повреждает его.</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_name" xml:space="preserve">
+    <value>Подкрученный регулятор оборотов двигателя</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_onUse" xml:space="preserve">
+    <value>повышает мощность двигателя на 10%, но повреждает его. Используется многократно.</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_restriction" xml:space="preserve">
+    <value>Только для техники СССР и Китая.</value>
+  </data>
+  <data name="artefacts_smallMedkit_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_smallMedkit_descr" xml:space="preserve">
+    <value>Лечение раненого члена экипажа.</value>
+  </data>
+  <data name="artefacts_smallMedkit_name" xml:space="preserve">
+    <value>Малая аптечка</value>
+  </data>
+  <data name="artefacts_smallMedkit_onUse" xml:space="preserve">
+    <value>лечение раненого члена экипажа. Используется однократно.</value>
+  </data>
+  <data name="artefacts_smallMedkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_smallRepairkit_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_smallRepairkit_descr" xml:space="preserve">
+    <value>Починка одного повреждённого модуля
+или двух повреждённых гусениц.</value>
+  </data>
+  <data name="artefacts_smallRepairkit_name" xml:space="preserve">
+    <value>Малый ремкомплект</value>
+  </data>
+  <data name="artefacts_smallRepairkit_onUse" xml:space="preserve">
+    <value>починка одного повреждённого модуля или двух повреждённых гусениц. Используется однократно.</value>
+  </data>
+  <data name="artefacts_smallRepairkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_stereoscope_descr" xml:space="preserve">
+    <value>+25% к радиусу обзора из неподвижного танка,
+но не более 500 м</value>
+  </data>
+  <data name="artefacts_stereoscope_name" xml:space="preserve">
+    <value>Стереотруба</value>
+  </data>
+  <data name="artefacts_toolbox_descr" xml:space="preserve">
+    <value>+25% к скорости ремонта</value>
+  </data>
+  <data name="artefacts_toolbox_name" xml:space="preserve">
+    <value>Ящик с инструментами</value>
+  </data>
+  <data name="artefacts_wetCombatPack_class1_name" xml:space="preserve">
+    <value>«Мокрая» боеукладка Kласс 1</value>
+  </data>
+  <data name="artefacts_wetCombatPack_class2_name" xml:space="preserve">
+    <value>«Мокрая» боеукладка Kласс 2</value>
+  </data>
+  <data name="artefacts_wetCombatPack_descr" xml:space="preserve">
+    <value>+50% к прочности боеукладки</value>
+  </data>
 </root>

@@ -99,12 +99,13 @@ namespace WotDossier.Applications
         /// Binary dossier cache to plain json.
         /// </summary>
         /// <param name="cacheFile">The cache file.</param>
-        public static void ReplayToJson(FileInfo cacheFile)
+        /// <param name="readAdvancedData"></param>
+        public static void ReplayToJson(FileInfo cacheFile, bool readAdvancedData = false)
         {
             string directoryName = Environment.CurrentDirectory;
 
             string task = directoryName + @"\External\wotrp2j.exe";
-            string arguments = string.Format("\"{0}\" ", cacheFile.FullName);
+            string arguments = string.Format("\"{0}\" {1}", cacheFile.FullName, readAdvancedData ? "-a" : string.Empty);
             var logPath = directoryName + @"\Logs\wotrp2j.log";
             var workingDirectory = directoryName + @"\External";
 

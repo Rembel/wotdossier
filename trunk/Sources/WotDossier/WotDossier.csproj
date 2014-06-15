@@ -193,6 +193,7 @@
     <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
     <Compile Include="Converters\BattleModeToVisibilityConverter.cs" />
+    <Compile Include="Converters\Image\ImageSourceConverter.cs" />
     <Compile Include="Converters\ValueToTextConverter.cs" />
     <Compile Include="Converters\Formater\NumberFormatConverter.cs" />
     <Compile Include="Converters\Image\AppLogoToImageConverter.cs" />
@@ -233,6 +234,9 @@
     </Compile>
     <Compile Include="Tabs\Medals7x7Tab.xaml.cs">
       <DependentUpon>Medals7x7Tab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Replay\Equipment.xaml.cs">
+      <DependentUpon>Equipment.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\ServerBattlesTab.xaml.cs">
       <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
@@ -654,6 +658,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Tabs\Replay\Equipment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Tabs\ServerBattlesTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -936,6 +944,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="External\structures_81.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\consumables.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\optional_devices.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />

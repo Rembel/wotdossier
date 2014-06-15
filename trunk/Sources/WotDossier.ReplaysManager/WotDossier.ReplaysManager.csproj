@@ -401,6 +401,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\Equipment.xaml">
+      <Link>Tabs\Replay\Equipment.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Tabs\Replay\PersonalResults.xaml">
       <Link>Tabs\Replay\PersonalResults.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -503,6 +508,9 @@
     <Compile Include="..\WotDossier\Converters\Image\CountryIdToImageConverter.cs">
       <Link>Converters\Image\CountryIdToImageConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ImageSourceConverter.cs">
+      <Link>Converters\Image\ImageSourceConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\MapNameToImageConverter.cs">
       <Link>Converters\Image\MapNameToImageConverter.cs</Link>
     </Compile>
@@ -556,6 +564,9 @@
     <Compile Include="..\WotDossier\Tabs\Replay\DetailedResults.xaml.cs">
       <Link>Tabs\Replay\DetailedResults.xaml.cs</Link>
       <DependentUpon>DetailedResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\Equipment.xaml.cs">
+      <Link>Tabs\Replay\Equipment.xaml.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\PersonalResults.xaml.cs">
       <Link>Tabs\Replay\PersonalResults.xaml.cs</Link>
@@ -643,6 +654,14 @@
     </Content>
     <Content Include="..\WotDossier\External\server_tanks.json">
       <Link>External\server_tanks.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\consumables.json">
+      <Link>External\consumables.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\WotDossier\External\optional_devices.json">
+      <Link>External\optional_devices.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />

@@ -217,8 +217,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <summary>
         /// Gets Replay data.
         /// </summary>
+        /// <param name="readAdvancedData"></param>
         /// <returns></returns>
-        public abstract Domain.Replay.Replay ReplayData();
+        public abstract Domain.Replay.Replay ReplayData(bool readAdvancedData = false);
 
         /// <summary>
         /// Deletes this instance.

@@ -212,7 +212,9 @@ namespace WotDossier.Dal
             {"eu", "worldoftanks.eu"},
             //{"cn", "worldoftanks.cn"},
             //{"us", "worldoftanks.com"},
-        }; 
+        };
+
+        public Dictionary<int, DeviceDescription> DeviceDescriptions { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -223,6 +225,20 @@ namespace WotDossier.Dal
             _tanks = ReadTanksDictionary();
             _serverTanks = ReadServerTanksDictionary();
             _maps = ReadMaps();
+
+            DeviceDescriptions = ReadDeviceDescriptions();
+        }
+
+        private Dictionary<int, DeviceDescription> ReadDeviceDescriptions()
+        {
+            using (StreamReader re = new StreamReader(@"External\optional_devices.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                JObject parsedData = se.Deserialize<JObject>(reader);
+                var readDeviceDescriptions = parsedData.ToObject<Dictionary<string, DeviceDescription>>();
+                return readDeviceDescriptions.Values.Where(x => x.id != null).ToDictionary(x => x.id.Value, y => y);
+            }
         }
 
         /// <summary>

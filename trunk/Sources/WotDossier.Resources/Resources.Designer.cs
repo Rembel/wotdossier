@@ -61,6 +61,1492 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to +15% to engine power for one minute.
+        /// </summary>
+        public static string artefacts_afterburning_descr {
+            get {
+                return ResourceManager.GetString("artefacts_afterburning_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine Power Boost.
+        /// </summary>
+        public static string artefacts_afterburning_name {
+            get {
+                return ResourceManager.GetString("artefacts_afterburning_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +20% to accuracy during movement and turret rotation.
+        /// </summary>
+        public static string artefacts_aimingStabilizer_descr {
+            get {
+                return ResourceManager.GetString("artefacts_aimingStabilizer_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vertical Stabilizer Mk 1.
+        /// </summary>
+        public static string artefacts_aimingStabilizer_Mk1_name {
+            get {
+                return ResourceManager.GetString("artefacts_aimingStabilizer_Mk1_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vertical Stabilizer Mk 2.
+        /// </summary>
+        public static string artefacts_aimingStabilizer_Mk2_name {
+            get {
+                return ResourceManager.GetString("artefacts_aimingStabilizer_Mk2_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +30% to armor protection from ramming and explosions 
+        ///+30% to protection of the crew from injuries.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_heavy_descr {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_heavy_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heavy Spall Liner.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_heavy_name {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_heavy_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +20% to armor protection from ramming and explosions 
+        ///+20% to protection of the crew from injuries.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_light_descr {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_light_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Spall Liner.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_light_name {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_light_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +25% to armor protection from ramming and explosions 
+        ///+25% to protection of the crew from injuries.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_medium_descr {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_medium_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium Spall Liner.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_medium_name {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_medium_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +50% to armor protection from ramming and explosions 
+        ///+50% to protection of the crew from injuries.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_superheavy_descr {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_superheavy_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Superheavy Spall Liner.
+        /// </summary>
+        public static string artefacts_antifragmentationLining_superheavy_name {
+            get {
+                return ResourceManager.GetString("artefacts_antifragmentationLining_superheavy_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to fire protection..
+        /// </summary>
+        public static string artefacts_autoExtinguishers_always {
+            get {
+                return ResourceManager.GetString("artefacts_autoExtinguishers_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic fire extinguishing in your vehicle..
+        /// </summary>
+        public static string artefacts_autoExtinguishers_descr {
+            get {
+                return ResourceManager.GetString("artefacts_autoExtinguishers_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic Fire Extinguisher.
+        /// </summary>
+        public static string artefacts_autoExtinguishers_name {
+            get {
+                return ResourceManager.GetString("artefacts_autoExtinguishers_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to automatic fire extinguishing in your vehicle. Single use only..
+        /// </summary>
+        public static string artefacts_autoExtinguishers_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_autoExtinguishers_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_autoExtinguishers_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_autoExtinguishers_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reduces detection chance when the vehicle is stationary.
+        /// </summary>
+        public static string artefacts_camouflageNet_descr {
+            get {
+                return ResourceManager.GetString("artefacts_camouflageNet_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Camouflage Net.
+        /// </summary>
+        public static string artefacts_camouflageNet_name {
+            get {
+                return ResourceManager.GetString("artefacts_camouflageNet_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +50% to fuel tank durability.
+        /// </summary>
+        public static string artefacts_carbonDioxide_descr {
+            get {
+                return ResourceManager.GetString("artefacts_carbonDioxide_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill Tanks with CO2.
+        /// </summary>
+        public static string artefacts_carbonDioxide_name {
+            get {
+                return ResourceManager.GetString("artefacts_carbonDioxide_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks for the course of the battle..
+        /// </summary>
+        public static string artefacts_chocolate_always {
+            get {
+                return ResourceManager.GetString("artefacts_chocolate_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks..
+        /// </summary>
+        public static string artefacts_chocolate_descr {
+            get {
+                return ResourceManager.GetString("artefacts_chocolate_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chocolate.
+        /// </summary>
+        public static string artefacts_chocolate_name {
+            get {
+                return ResourceManager.GetString("artefacts_chocolate_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_chocolate_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_chocolate_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: German vehicles..
+        /// </summary>
+        public static string artefacts_chocolate_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_chocolate_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to view range, up to a range of 500 m.
+        /// </summary>
+        public static string artefacts_coatedOptics_descr {
+            get {
+                return ResourceManager.GetString("artefacts_coatedOptics_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coated Optics.
+        /// </summary>
+        public static string artefacts_coatedOptics_name {
+            get {
+                return ResourceManager.GetString("artefacts_coatedOptics_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks for the course of the battle..
+        /// </summary>
+        public static string artefacts_cocacola_always {
+            get {
+                return ResourceManager.GetString("artefacts_cocacola_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks..
+        /// </summary>
+        public static string artefacts_cocacola_descr {
+            get {
+                return ResourceManager.GetString("artefacts_cocacola_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Case of Cola.
+        /// </summary>
+        public static string artefacts_cocacola_name {
+            get {
+                return ResourceManager.GetString("artefacts_cocacola_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_cocacola_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_cocacola_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: U.S. vehicles..
+        /// </summary>
+        public static string artefacts_cocacola_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_cocacola_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to aiming speed.
+        /// </summary>
+        public static string artefacts_enhancedAimDrives_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedAimDrives_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Gun Laying Drive.
+        /// </summary>
+        public static string artefacts_enhancedAimDrives_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedAimDrives_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Belleville Washers.
+        /// </summary>
+        public static string artefacts_enhancedBelwillWashers_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedBelwillWashers_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_elastic_elements_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_elastic_elements_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Horizontal Leaf Springs.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_elastic_elements_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_elastic_elements_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_springs_class2_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_springs_class2_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Coil Springs Class 2.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_springs_class2_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_springs_class2_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_springs_class3_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_springs_class3_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Coil Springs Class 3.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_springs_class3_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_springs_class3_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_springs_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_springs_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Coil Springs Class 1.
+        /// </summary>
+        public static string artefacts_enhancedHorizontal_springs_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedHorizontal_springs_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Levers.
+        /// </summary>
+        public static string artefacts_enhancedLevers_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedLevers_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Longitudinal Torsion Bars.
+        /// </summary>
+        public static string artefacts_enhancedLongitudinalTorsions_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedLongitudinalTorsions_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedSprings_class2_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSprings_class2_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Leaf Springs 2 Class.
+        /// </summary>
+        public static string artefacts_enhancedSprings_class2_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSprings_class2_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedSprings_class3_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSprings_class3_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Leaf Springs 3 Class.
+        /// </summary>
+        public static string artefacts_enhancedSprings_class3_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSprings_class3_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Springs.
+        /// </summary>
+        public static string artefacts_enhancedSprings_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSprings_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Candle Suspension.
+        /// </summary>
+        public static string artefacts_enhancedSuspension_candle_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSuspension_candle_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Christie Suspension.
+        /// </summary>
+        public static string artefacts_enhancedSuspension_Christie_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSuspension_Christie_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedSuspension_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSuspension_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Vickers Suspension.
+        /// </summary>
+        public static string artefacts_enhancedSuspension_Vikkers_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedSuspension_Vikkers_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Torsion Bars 1 t Class.
+        /// </summary>
+        public static string artefacts_enhancedTorsions1t_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedTorsions1t_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Torsion Bars 3 t Class.
+        /// </summary>
+        public static string artefacts_enhancedTorsions3t_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedTorsions3t_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Torsion Bars 5+ t Class.
+        /// </summary>
+        public static string artefacts_enhancedTorsions5t_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedTorsions5t_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedVertical_elastic_elements_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_elastic_elements_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Vertical Leaf Springs.
+        /// </summary>
+        public static string artefacts_enhancedVertical_elastic_elements_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_elastic_elements_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedVertical_springs_class2_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_springs_class2_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Vertical Coil Springs 2 Class.
+        /// </summary>
+        public static string artefacts_enhancedVertical_springs_class2_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_springs_class2_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedVertical_springs_class3_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_springs_class3_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Vertical Coil Springs 3 Class.
+        /// </summary>
+        public static string artefacts_enhancedVertical_springs_class3_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_springs_class3_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to suspension load capacity
+        ///+20% to suspension durability
+        /// -50% to hull damage caused by suspension damage during impact.
+        /// </summary>
+        public static string artefacts_enhancedVertical_springs_descr {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_springs_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enhanced Vertical Coil Springs 1 Class.
+        /// </summary>
+        public static string artefacts_enhancedVertical_springs_name {
+            get {
+                return ResourceManager.GetString("artefacts_enhancedVertical_springs_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +50% to engine durability.
+        /// </summary>
+        public static string artefacts_filterCyclone_descr {
+            get {
+                return ResourceManager.GetString("artefacts_filterCyclone_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cyclone Filter.
+        /// </summary>
+        public static string artefacts_filterCyclone_name {
+            get {
+                return ResourceManager.GetString("artefacts_filterCyclone_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5% to engine power and turret traverse speed for the course of the battle..
+        /// </summary>
+        public static string artefacts_gasoline100_always {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline100_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5% to engine power and turret traverse speed..
+        /// </summary>
+        public static string artefacts_gasoline100_descr {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline100_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 100-octane Gasoline.
+        /// </summary>
+        public static string artefacts_gasoline100_name {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline100_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_gasoline100_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline100_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: German, U.S., U.K., and French gasoline engines..
+        /// </summary>
+        public static string artefacts_gasoline100_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline100_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to engine power and turret traverse speed for the course of the battle..
+        /// </summary>
+        public static string artefacts_gasoline105_always {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline105_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to engine power and turret traverse speed..
+        /// </summary>
+        public static string artefacts_gasoline105_descr {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline105_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 105-octane Gasoline.
+        /// </summary>
+        public static string artefacts_gasoline105_name {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline105_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_gasoline105_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline105_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: German, U.S., U.K., and French gasoline engines..
+        /// </summary>
+        public static string artefacts_gasoline105_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_gasoline105_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to performance on soft ground,
+        ///+5% to performance on moderately soft ground.
+        /// </summary>
+        public static string artefacts_grousers_descr {
+            get {
+                return ResourceManager.GetString("artefacts_grousers_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Additional Grousers.
+        /// </summary>
+        public static string artefacts_grousers_name {
+            get {
+                return ResourceManager.GetString("artefacts_grousers_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_handExtinguishers_always {
+            get {
+                return ResourceManager.GetString("artefacts_handExtinguishers_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fire extinguishing in your vehicle..
+        /// </summary>
+        public static string artefacts_handExtinguishers_descr {
+            get {
+                return ResourceManager.GetString("artefacts_handExtinguishers_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual Fire Extinguisher.
+        /// </summary>
+        public static string artefacts_handExtinguishers_name {
+            get {
+                return ResourceManager.GetString("artefacts_handExtinguishers_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fire extinguishing in your vehicle. Single use only..
+        /// </summary>
+        public static string artefacts_handExtinguishers_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_handExtinguishers_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_handExtinguishers_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_handExtinguishers_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks for the course of the battle..
+        /// </summary>
+        public static string artefacts_hotCoffee_always {
+            get {
+                return ResourceManager.GetString("artefacts_hotCoffee_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks..
+        /// </summary>
+        public static string artefacts_hotCoffee_descr {
+            get {
+                return ResourceManager.GetString("artefacts_hotCoffee_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strong Coffee.
+        /// </summary>
+        public static string artefacts_hotCoffee_name {
+            get {
+                return ResourceManager.GetString("artefacts_hotCoffee_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_hotCoffee_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_hotCoffee_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: French vehicles..
+        /// </summary>
+        public static string artefacts_hotCoffee_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_hotCoffee_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improved Ventilation Class 1.
+        /// </summary>
+        public static string artefacts_improvedVentilation_class1_name {
+            get {
+                return ResourceManager.GetString("artefacts_improvedVentilation_class1_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improved Ventilation Class 2.
+        /// </summary>
+        public static string artefacts_improvedVentilation_class2_name {
+            get {
+                return ResourceManager.GetString("artefacts_improvedVentilation_class2_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improved Ventilation Class 3.
+        /// </summary>
+        public static string artefacts_improvedVentilation_class3_name {
+            get {
+                return ResourceManager.GetString("artefacts_improvedVentilation_class3_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5% to all crew skills.
+        /// </summary>
+        public static string artefacts_improvedVentilation_descr {
+            get {
+                return ResourceManager.GetString("artefacts_improvedVentilation_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large-Caliber Artillery-Shell Rammer.
+        /// </summary>
+        public static string artefacts_largeCaliberHowitzerRammer_name {
+            get {
+                return ResourceManager.GetString("artefacts_largeCaliberHowitzerRammer_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large-Сaliber Tank Gun Rammer.
+        /// </summary>
+        public static string artefacts_largeCaliberTankRammer_name {
+            get {
+                return ResourceManager.GetString("artefacts_largeCaliberTankRammer_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +15% to protection of the crew from injuries..
+        /// </summary>
+        public static string artefacts_largeMedkit_always {
+            get {
+                return ResourceManager.GetString("artefacts_largeMedkit_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Treatment of all injured crew members..
+        /// </summary>
+        public static string artefacts_largeMedkit_descr {
+            get {
+                return ResourceManager.GetString("artefacts_largeMedkit_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large First Aid Kit.
+        /// </summary>
+        public static string artefacts_largeMedkit_name {
+            get {
+                return ResourceManager.GetString("artefacts_largeMedkit_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to treatment of all injured crew members. Single use only..
+        /// </summary>
+        public static string artefacts_largeMedkit_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_largeMedkit_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_largeMedkit_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_largeMedkit_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to speed of module repairs..
+        /// </summary>
+        public static string artefacts_largeRepairkit_always {
+            get {
+                return ResourceManager.GetString("artefacts_largeRepairkit_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repair of all damaged modules..
+        /// </summary>
+        public static string artefacts_largeRepairkit_descr {
+            get {
+                return ResourceManager.GetString("artefacts_largeRepairkit_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large Repair Kit.
+        /// </summary>
+        public static string artefacts_largeRepairkit_name {
+            get {
+                return ResourceManager.GetString("artefacts_largeRepairkit_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repair of all damaged modules. Single use only..
+        /// </summary>
+        public static string artefacts_largeRepairkit_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_largeRepairkit_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_largeRepairkit_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_largeRepairkit_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5% to engine power for the course of the battle..
+        /// </summary>
+        public static string artefacts_lendLeaseOil_always {
+            get {
+                return ResourceManager.GetString("artefacts_lendLeaseOil_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5% to engine power..
+        /// </summary>
+        public static string artefacts_lendLeaseOil_descr {
+            get {
+                return ResourceManager.GetString("artefacts_lendLeaseOil_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lend-Lease Oil.
+        /// </summary>
+        public static string artefacts_lendLeaseOil_name {
+            get {
+                return ResourceManager.GetString("artefacts_lendLeaseOil_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_lendLeaseOil_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_lendLeaseOil_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: U.S.S.R. vehicles..
+        /// </summary>
+        public static string artefacts_lendLeaseOil_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_lendLeaseOil_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium-Caliber Artillery Shell Rammer.
+        /// </summary>
+        public static string artefacts_mediumCaliberHowitzerRammer_name {
+            get {
+                return ResourceManager.GetString("artefacts_mediumCaliberHowitzerRammer_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium-Caliber Tank Gun Rammer.
+        /// </summary>
+        public static string artefacts_mediumCaliberTankRammer_name {
+            get {
+                return ResourceManager.GetString("artefacts_mediumCaliberTankRammer_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5% to engine power for the course of the battle..
+        /// </summary>
+        public static string artefacts_qualityOil_always {
+            get {
+                return ResourceManager.GetString("artefacts_qualityOil_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5% to engine power..
+        /// </summary>
+        public static string artefacts_qualityOil_descr {
+            get {
+                return ResourceManager.GetString("artefacts_qualityOil_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality Oil.
+        /// </summary>
+        public static string artefacts_qualityOil_name {
+            get {
+                return ResourceManager.GetString("artefacts_qualityOil_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_qualityOil_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_qualityOil_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: Chinese and Japanese vehicles..
+        /// </summary>
+        public static string artefacts_qualityOil_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_qualityOil_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -10% to loading time.
+        /// </summary>
+        public static string artefacts_rammer_descr {
+            get {
+                return ResourceManager.GetString("artefacts_rammer_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks for the course of the battle..
+        /// </summary>
+        public static string artefacts_ration_always {
+            get {
+                return ResourceManager.GetString("artefacts_ration_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks for the course of the battle..
+        /// </summary>
+        public static string artefacts_ration_china_always {
+            get {
+                return ResourceManager.GetString("artefacts_ration_china_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks..
+        /// </summary>
+        public static string artefacts_ration_china_descr {
+            get {
+                return ResourceManager.GetString("artefacts_ration_china_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improved Combat Rations.
+        /// </summary>
+        public static string artefacts_ration_china_name {
+            get {
+                return ResourceManager.GetString("artefacts_ration_china_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_ration_china_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_ration_china_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: Chinese vehicles..
+        /// </summary>
+        public static string artefacts_ration_china_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_ration_china_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks..
+        /// </summary>
+        public static string artefacts_ration_descr {
+            get {
+                return ResourceManager.GetString("artefacts_ration_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks for the course of the battle..
+        /// </summary>
+        public static string artefacts_ration_japan_always {
+            get {
+                return ResourceManager.GetString("artefacts_ration_japan_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks..
+        /// </summary>
+        public static string artefacts_ration_japan_descr {
+            get {
+                return ResourceManager.GetString("artefacts_ration_japan_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Onigiri.
+        /// </summary>
+        public static string artefacts_ration_japan_name {
+            get {
+                return ResourceManager.GetString("artefacts_ration_japan_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_ration_japan_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_ration_japan_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: Japanese vehicles..
+        /// </summary>
+        public static string artefacts_ration_japan_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_ration_japan_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Combat Rations.
+        /// </summary>
+        public static string artefacts_ration_name {
+            get {
+                return ResourceManager.GetString("artefacts_ration_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_ration_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_ration_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: U.S.S.R. vehicles..
+        /// </summary>
+        public static string artefacts_ration_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_ration_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks for the course of the battle..
+        /// </summary>
+        public static string artefacts_ration_uk_always {
+            get {
+                return ResourceManager.GetString("artefacts_ration_uk_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to all crew skills and perks..
+        /// </summary>
+        public static string artefacts_ration_uk_descr {
+            get {
+                return ResourceManager.GetString("artefacts_ration_uk_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pudding and Tea.
+        /// </summary>
+        public static string artefacts_ration_uk_name {
+            get {
+                return ResourceManager.GetString("artefacts_ration_uk_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_ration_uk_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_ration_uk_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: U.K. vehicles..
+        /// </summary>
+        public static string artefacts_ration_uk_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_ration_uk_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_removedRpmLimiter_always {
+            get {
+                return ResourceManager.GetString("artefacts_removedRpmLimiter_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to engine power but damages the engine..
+        /// </summary>
+        public static string artefacts_removedRpmLimiter_descr {
+            get {
+                return ResourceManager.GetString("artefacts_removedRpmLimiter_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removed Speed Governor.
+        /// </summary>
+        public static string artefacts_removedRpmLimiter_name {
+            get {
+                return ResourceManager.GetString("artefacts_removedRpmLimiter_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10% to engine power but damages the engine. Multiple use..
+        /// </summary>
+        public static string artefacts_removedRpmLimiter_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_removedRpmLimiter_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restricted: U.S.S.R. and Chinese vehicles..
+        /// </summary>
+        public static string artefacts_removedRpmLimiter_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_removedRpmLimiter_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_smallMedkit_always {
+            get {
+                return ResourceManager.GetString("artefacts_smallMedkit_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Treatment of an injured crew member..
+        /// </summary>
+        public static string artefacts_smallMedkit_descr {
+            get {
+                return ResourceManager.GetString("artefacts_smallMedkit_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small First Aid Kit.
+        /// </summary>
+        public static string artefacts_smallMedkit_name {
+            get {
+                return ResourceManager.GetString("artefacts_smallMedkit_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to treatment of an injured crew member. Single use only..
+        /// </summary>
+        public static string artefacts_smallMedkit_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_smallMedkit_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_smallMedkit_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_smallMedkit_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_smallRepairkit_always {
+            get {
+                return ResourceManager.GetString("artefacts_smallRepairkit_always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repair of a damaged module or two damaged tracks..
+        /// </summary>
+        public static string artefacts_smallRepairkit_descr {
+            get {
+                return ResourceManager.GetString("artefacts_smallRepairkit_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small Repair Kit.
+        /// </summary>
+        public static string artefacts_smallRepairkit_name {
+            get {
+                return ResourceManager.GetString("artefacts_smallRepairkit_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to repair of a damaged module or two damaged tracks. Single use only..
+        /// </summary>
+        public static string artefacts_smallRepairkit_onUse {
+            get {
+                return ResourceManager.GetString("artefacts_smallRepairkit_onUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ?empty?.
+        /// </summary>
+        public static string artefacts_smallRepairkit_restriction {
+            get {
+                return ResourceManager.GetString("artefacts_smallRepairkit_restriction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +25% to view range for a stationary vehicle,
+        ///up to 500 m.
+        /// </summary>
+        public static string artefacts_stereoscope_descr {
+            get {
+                return ResourceManager.GetString("artefacts_stereoscope_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Binocular Telescope.
+        /// </summary>
+        public static string artefacts_stereoscope_name {
+            get {
+                return ResourceManager.GetString("artefacts_stereoscope_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +25% to repair speed.
+        /// </summary>
+        public static string artefacts_toolbox_descr {
+            get {
+                return ResourceManager.GetString("artefacts_toolbox_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toolbox.
+        /// </summary>
+        public static string artefacts_toolbox_name {
+            get {
+                return ResourceManager.GetString("artefacts_toolbox_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Wet&quot; Ammo Rack Class 1.
+        /// </summary>
+        public static string artefacts_wetCombatPack_class1_name {
+            get {
+                return ResourceManager.GetString("artefacts_wetCombatPack_class1_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Wet&quot; Ammo Rack Class 2.
+        /// </summary>
+        public static string artefacts_wetCombatPack_class2_name {
+            get {
+                return ResourceManager.GetString("artefacts_wetCombatPack_class2_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +50% ammo rack durability.
+        /// </summary>
+        public static string artefacts_wetCombatPack_descr {
+            get {
+                return ResourceManager.GetString("artefacts_wetCombatPack_descr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Historical Battle.
         /// </summary>
         public static string BattleMode_HistoricalBattle {
@@ -4106,6 +5592,15 @@ namespace WotDossier.Resources {
         public static string Replay_Tab_Header_DetailedReport {
             get {
                 return ResourceManager.GetString("Replay_Tab_Header_DetailedReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment.
+        /// </summary>
+        public static string Replay_Tab_Header_Equipment {
+            get {
+                return ResourceManager.GetString("Replay_Tab_Header_Equipment", resourceCulture);
             }
         }
         

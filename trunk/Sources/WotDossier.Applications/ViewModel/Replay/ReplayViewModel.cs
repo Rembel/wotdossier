@@ -132,6 +132,14 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         private TeamMember _ourTeamMember;
+        private List<DeviceDescription> _devices;
+
+        public List<DeviceDescription> Devices
+        {
+            get { return _devices; }
+            set { _devices = value; }
+        }
+
         public TeamMember OurTeamMember
         {
             get { return _ourTeamMember; }
@@ -262,6 +270,31 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDisplayName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a");
 
                 Status = GetBattleStatus(replay);
+
+                _devices = new List<DeviceDescription>();
+
+                if (replay.datablock_advanced != null)
+                {
+                    if (replay.datablock_advanced.roster.ContainsKey(replay.datablock_1.playerName))
+                    {
+                        var info = replay.datablock_advanced.roster[replay.datablock_1.playerName];
+
+                        if (Dictionaries.Instance.DeviceDescriptions.ContainsKey(info.vehicle.module_0))
+                        {
+                            _devices.Add(Dictionaries.Instance.DeviceDescriptions[info.vehicle.module_0]);
+                        }
+
+                        if (Dictionaries.Instance.DeviceDescriptions.ContainsKey(info.vehicle.module_1))
+                        {
+                            _devices.Add(Dictionaries.Instance.DeviceDescriptions[info.vehicle.module_1]);
+                        }
+
+                        if (Dictionaries.Instance.DeviceDescriptions.ContainsKey(info.vehicle.module_2))
+                        {
+                            _devices.Add(Dictionaries.Instance.DeviceDescriptions[info.vehicle.module_2]);
+                        }
+                    }
+                }
 
                 return true;
             }

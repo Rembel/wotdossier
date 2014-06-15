@@ -287,7 +287,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.9.0\13954715200495_germany_PzVI_prohorovka.wotreplay"));
 
-            Replay replay = WotApiClient.Instance.ReadReplayStatisticBlocks(cacheFile);
+            Replay replay = WotApiClient.Instance.ReadReplayStatisticBlocks(cacheFile, true);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
             CacheHelper.ReplayToJson(cacheFile);
@@ -703,6 +703,20 @@ namespace WotDossier.Test
             {
                 Console.WriteLine("PiercedReceived [{0}] - BattlesCount [{1}]", tankStatisticRow.PiercedReceived, tankStatisticRow.BattlesCount);
             }
+        }
+
+        [Test]
+        public void AdvancedReplayTest()
+        {
+            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay"));
+
+            Replay replay = WotApiClient.Instance.ReadReplayStatisticBlocks(cacheFile, true);
+            Assert.IsNotNull(replay);
+            Assert.IsNotNull(replay.datablock_battle_result);
+            CacheHelper.ReplayToJson(cacheFile);
+            replay = WotApiClient.Instance.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Assert.IsNotNull(replay);
+            Assert.IsNotNull(replay.datablock_battle_result);
         }
     }
 }

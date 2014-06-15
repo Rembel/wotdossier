@@ -2351,4 +2351,521 @@ Colonel Alexander Stark commanded the joint French-American task force defending
   <data name="True" xml:space="preserve">
     <value>Yes</value>
   </data>
+  <data name="Replay_Tab_Header_Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="artefacts_afterburning_descr" xml:space="preserve">
+    <value>+15% to engine power for one minute</value>
+  </data>
+  <data name="artefacts_afterburning_name" xml:space="preserve">
+    <value>Engine Power Boost</value>
+  </data>
+  <data name="artefacts_aimingStabilizer_descr" xml:space="preserve">
+    <value>+20% to accuracy during movement and turret rotation</value>
+  </data>
+  <data name="artefacts_aimingStabilizer_Mk1_name" xml:space="preserve">
+    <value>Vertical Stabilizer Mk 1</value>
+  </data>
+  <data name="artefacts_aimingStabilizer_Mk2_name" xml:space="preserve">
+    <value>Vertical Stabilizer Mk 2</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_heavy_descr" xml:space="preserve">
+    <value>+30% to armor protection from ramming and explosions 
++30% to protection of the crew from injuries</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_heavy_name" xml:space="preserve">
+    <value>Heavy Spall Liner</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_light_descr" xml:space="preserve">
+    <value>+20% to armor protection from ramming and explosions 
++20% to protection of the crew from injuries</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_light_name" xml:space="preserve">
+    <value>Light Spall Liner</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_medium_descr" xml:space="preserve">
+    <value>+25% to armor protection from ramming and explosions 
++25% to protection of the crew from injuries</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_medium_name" xml:space="preserve">
+    <value>Medium Spall Liner</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_superheavy_descr" xml:space="preserve">
+    <value>+50% to armor protection from ramming and explosions 
++50% to protection of the crew from injuries</value>
+  </data>
+  <data name="artefacts_antifragmentationLining_superheavy_name" xml:space="preserve">
+    <value>Superheavy Spall Liner</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_always" xml:space="preserve">
+    <value>+10% to fire protection.</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_descr" xml:space="preserve">
+    <value>Automatic fire extinguishing in your vehicle.</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_name" xml:space="preserve">
+    <value>Automatic Fire Extinguisher</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_onUse" xml:space="preserve">
+    <value>automatic fire extinguishing in your vehicle. Single use only.</value>
+  </data>
+  <data name="artefacts_autoExtinguishers_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_camouflageNet_descr" xml:space="preserve">
+    <value>Reduces detection chance when the vehicle is stationary</value>
+  </data>
+  <data name="artefacts_camouflageNet_name" xml:space="preserve">
+    <value>Camouflage Net</value>
+  </data>
+  <data name="artefacts_carbonDioxide_descr" xml:space="preserve">
+    <value>+50% to fuel tank durability</value>
+  </data>
+  <data name="artefacts_carbonDioxide_name" xml:space="preserve">
+    <value>Fill Tanks with CO2</value>
+  </data>
+  <data name="artefacts_chocolate_always" xml:space="preserve">
+    <value>+10% to all crew skills and perks for the course of the battle.</value>
+  </data>
+  <data name="artefacts_chocolate_descr" xml:space="preserve">
+    <value>+10% to all crew skills and perks.</value>
+  </data>
+  <data name="artefacts_chocolate_name" xml:space="preserve">
+    <value>Chocolate</value>
+  </data>
+  <data name="artefacts_chocolate_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_chocolate_restriction" xml:space="preserve">
+    <value>Restricted: German vehicles.</value>
+  </data>
+  <data name="artefacts_coatedOptics_descr" xml:space="preserve">
+    <value>+10% to view range, up to a range of 500 m</value>
+  </data>
+  <data name="artefacts_coatedOptics_name" xml:space="preserve">
+    <value>Coated Optics</value>
+  </data>
+  <data name="artefacts_cocacola_always" xml:space="preserve">
+    <value>+10% to all crew skills and perks for the course of the battle.</value>
+  </data>
+  <data name="artefacts_cocacola_descr" xml:space="preserve">
+    <value>+10% to all crew skills and perks.</value>
+  </data>
+  <data name="artefacts_cocacola_name" xml:space="preserve">
+    <value>Case of Cola</value>
+  </data>
+  <data name="artefacts_cocacola_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_cocacola_restriction" xml:space="preserve">
+    <value>Restricted: U.S. vehicles.</value>
+  </data>
+  <data name="artefacts_enhancedAimDrives_descr" xml:space="preserve">
+    <value>+10% to aiming speed</value>
+  </data>
+  <data name="artefacts_enhancedAimDrives_name" xml:space="preserve">
+    <value>Enhanced Gun Laying Drive</value>
+  </data>
+  <data name="artefacts_enhancedBelwillWashers_name" xml:space="preserve">
+    <value>Enhanced Belleville Washers</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_elastic_elements_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_elastic_elements_name" xml:space="preserve">
+    <value>Enhanced Horizontal Leaf Springs</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class2_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class2_name" xml:space="preserve">
+    <value>Enhanced Coil Springs Class 2</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class3_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_class3_name" xml:space="preserve">
+    <value>Enhanced Coil Springs Class 3</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedHorizontal_springs_name" xml:space="preserve">
+    <value>Enhanced Coil Springs Class 1</value>
+  </data>
+  <data name="artefacts_enhancedLevers_name" xml:space="preserve">
+    <value>Enhanced Levers</value>
+  </data>
+  <data name="artefacts_enhancedLongitudinalTorsions_name" xml:space="preserve">
+    <value>Enhanced Longitudinal Torsion Bars</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class2_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class2_name" xml:space="preserve">
+    <value>Enhanced Leaf Springs 2 Class</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class3_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedSprings_class3_name" xml:space="preserve">
+    <value>Enhanced Leaf Springs 3 Class</value>
+  </data>
+  <data name="artefacts_enhancedSprings_name" xml:space="preserve">
+    <value>Enhanced Springs</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_candle_name" xml:space="preserve">
+    <value>Enhanced Candle Suspension</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_Christie_name" xml:space="preserve">
+    <value>Enhanced Christie Suspension</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedSuspension_Vikkers_name" xml:space="preserve">
+    <value>Enhanced Vickers Suspension</value>
+  </data>
+  <data name="artefacts_enhancedTorsions1t_name" xml:space="preserve">
+    <value>Enhanced Torsion Bars 1 t Class</value>
+  </data>
+  <data name="artefacts_enhancedTorsions3t_name" xml:space="preserve">
+    <value>Enhanced Torsion Bars 3 t Class</value>
+  </data>
+  <data name="artefacts_enhancedTorsions5t_name" xml:space="preserve">
+    <value>Enhanced Torsion Bars 5+ t Class</value>
+  </data>
+  <data name="artefacts_enhancedVertical_elastic_elements_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedVertical_elastic_elements_name" xml:space="preserve">
+    <value>Enhanced Vertical Leaf Springs</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class2_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class2_name" xml:space="preserve">
+    <value>Enhanced Vertical Coil Springs 2 Class</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class3_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_class3_name" xml:space="preserve">
+    <value>Enhanced Vertical Coil Springs 3 Class</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_descr" xml:space="preserve">
+    <value>+10% to suspension load capacity
++20% to suspension durability
+ -50% to hull damage caused by suspension damage during impact</value>
+  </data>
+  <data name="artefacts_enhancedVertical_springs_name" xml:space="preserve">
+    <value>Enhanced Vertical Coil Springs 1 Class</value>
+  </data>
+  <data name="artefacts_filterCyclone_descr" xml:space="preserve">
+    <value>+50% to engine durability</value>
+  </data>
+  <data name="artefacts_filterCyclone_name" xml:space="preserve">
+    <value>Cyclone Filter</value>
+  </data>
+  <data name="artefacts_gasoline100_always" xml:space="preserve">
+    <value>+5% to engine power and turret traverse speed for the course of the battle.</value>
+  </data>
+  <data name="artefacts_gasoline100_descr" xml:space="preserve">
+    <value>+5% to engine power and turret traverse speed.</value>
+  </data>
+  <data name="artefacts_gasoline100_name" xml:space="preserve">
+    <value>100-octane Gasoline</value>
+  </data>
+  <data name="artefacts_gasoline100_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_gasoline100_restriction" xml:space="preserve">
+    <value>Restricted: German, U.S., U.K., and French gasoline engines.</value>
+  </data>
+  <data name="artefacts_gasoline105_always" xml:space="preserve">
+    <value>+10% to engine power and turret traverse speed for the course of the battle.</value>
+  </data>
+  <data name="artefacts_gasoline105_descr" xml:space="preserve">
+    <value>+10% to engine power and turret traverse speed.</value>
+  </data>
+  <data name="artefacts_gasoline105_name" xml:space="preserve">
+    <value>105-octane Gasoline</value>
+  </data>
+  <data name="artefacts_gasoline105_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_gasoline105_restriction" xml:space="preserve">
+    <value>Restricted: German, U.S., U.K., and French gasoline engines.</value>
+  </data>
+  <data name="artefacts_grousers_descr" xml:space="preserve">
+    <value>+10% to performance on soft ground,
++5% to performance on moderately soft ground</value>
+  </data>
+  <data name="artefacts_grousers_name" xml:space="preserve">
+    <value>Additional Grousers</value>
+  </data>
+  <data name="artefacts_handExtinguishers_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_handExtinguishers_descr" xml:space="preserve">
+    <value>Fire extinguishing in your vehicle.</value>
+  </data>
+  <data name="artefacts_handExtinguishers_name" xml:space="preserve">
+    <value>Manual Fire Extinguisher</value>
+  </data>
+  <data name="artefacts_handExtinguishers_onUse" xml:space="preserve">
+    <value>fire extinguishing in your vehicle. Single use only.</value>
+  </data>
+  <data name="artefacts_handExtinguishers_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_hotCoffee_always" xml:space="preserve">
+    <value>+10% to all crew skills and perks for the course of the battle.</value>
+  </data>
+  <data name="artefacts_hotCoffee_descr" xml:space="preserve">
+    <value>+10% to all crew skills and perks.</value>
+  </data>
+  <data name="artefacts_hotCoffee_name" xml:space="preserve">
+    <value>Strong Coffee</value>
+  </data>
+  <data name="artefacts_hotCoffee_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_hotCoffee_restriction" xml:space="preserve">
+    <value>Restricted: French vehicles.</value>
+  </data>
+  <data name="artefacts_improvedVentilation_class1_name" xml:space="preserve">
+    <value>Improved Ventilation Class 1</value>
+  </data>
+  <data name="artefacts_improvedVentilation_class2_name" xml:space="preserve">
+    <value>Improved Ventilation Class 2</value>
+  </data>
+  <data name="artefacts_improvedVentilation_class3_name" xml:space="preserve">
+    <value>Improved Ventilation Class 3</value>
+  </data>
+  <data name="artefacts_improvedVentilation_descr" xml:space="preserve">
+    <value>+5% to all crew skills</value>
+  </data>
+  <data name="artefacts_largeCaliberHowitzerRammer_name" xml:space="preserve">
+    <value>Large-Caliber Artillery-Shell Rammer</value>
+  </data>
+  <data name="artefacts_largeCaliberTankRammer_name" xml:space="preserve">
+    <value>Large-Сaliber Tank Gun Rammer</value>
+  </data>
+  <data name="artefacts_largeMedkit_always" xml:space="preserve">
+    <value>+15% to protection of the crew from injuries.</value>
+  </data>
+  <data name="artefacts_largeMedkit_descr" xml:space="preserve">
+    <value>Treatment of all injured crew members.</value>
+  </data>
+  <data name="artefacts_largeMedkit_name" xml:space="preserve">
+    <value>Large First Aid Kit</value>
+  </data>
+  <data name="artefacts_largeMedkit_onUse" xml:space="preserve">
+    <value>treatment of all injured crew members. Single use only.</value>
+  </data>
+  <data name="artefacts_largeMedkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_largeRepairkit_always" xml:space="preserve">
+    <value>+10% to speed of module repairs.</value>
+  </data>
+  <data name="artefacts_largeRepairkit_descr" xml:space="preserve">
+    <value>Repair of all damaged modules.</value>
+  </data>
+  <data name="artefacts_largeRepairkit_name" xml:space="preserve">
+    <value>Large Repair Kit</value>
+  </data>
+  <data name="artefacts_largeRepairkit_onUse" xml:space="preserve">
+    <value>Repair of all damaged modules. Single use only.</value>
+  </data>
+  <data name="artefacts_largeRepairkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_always" xml:space="preserve">
+    <value>+5% to engine power for the course of the battle.</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_descr" xml:space="preserve">
+    <value>+5% to engine power.</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_name" xml:space="preserve">
+    <value>Lend-Lease Oil</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_lendLeaseOil_restriction" xml:space="preserve">
+    <value>Restricted: U.S.S.R. vehicles.</value>
+  </data>
+  <data name="artefacts_mediumCaliberHowitzerRammer_name" xml:space="preserve">
+    <value>Medium-Caliber Artillery Shell Rammer</value>
+  </data>
+  <data name="artefacts_mediumCaliberTankRammer_name" xml:space="preserve">
+    <value>Medium-Caliber Tank Gun Rammer</value>
+  </data>
+  <data name="artefacts_qualityOil_always" xml:space="preserve">
+    <value>+5% to engine power for the course of the battle.</value>
+  </data>
+  <data name="artefacts_qualityOil_descr" xml:space="preserve">
+    <value>+5% to engine power.</value>
+  </data>
+  <data name="artefacts_qualityOil_name" xml:space="preserve">
+    <value>Quality Oil</value>
+  </data>
+  <data name="artefacts_qualityOil_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_qualityOil_restriction" xml:space="preserve">
+    <value>Restricted: Chinese and Japanese vehicles.</value>
+  </data>
+  <data name="artefacts_rammer_descr" xml:space="preserve">
+    <value>-10% to loading time</value>
+  </data>
+  <data name="artefacts_ration_always" xml:space="preserve">
+    <value>+10% to all crew skills and perks for the course of the battle.</value>
+  </data>
+  <data name="artefacts_ration_china_always" xml:space="preserve">
+    <value>+10% to all crew skills and perks for the course of the battle.</value>
+  </data>
+  <data name="artefacts_ration_china_descr" xml:space="preserve">
+    <value>+10% to all crew skills and perks.</value>
+  </data>
+  <data name="artefacts_ration_china_name" xml:space="preserve">
+    <value>Improved Combat Rations</value>
+  </data>
+  <data name="artefacts_ration_china_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_china_restriction" xml:space="preserve">
+    <value>Restricted: Chinese vehicles.</value>
+  </data>
+  <data name="artefacts_ration_descr" xml:space="preserve">
+    <value>+10% to all crew skills and perks.</value>
+  </data>
+  <data name="artefacts_ration_japan_always" xml:space="preserve">
+    <value>+10% to all crew skills and perks for the course of the battle.</value>
+  </data>
+  <data name="artefacts_ration_japan_descr" xml:space="preserve">
+    <value>+10% to all crew skills and perks.</value>
+  </data>
+  <data name="artefacts_ration_japan_name" xml:space="preserve">
+    <value>Onigiri</value>
+  </data>
+  <data name="artefacts_ration_japan_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_japan_restriction" xml:space="preserve">
+    <value>Restricted: Japanese vehicles.</value>
+  </data>
+  <data name="artefacts_ration_name" xml:space="preserve">
+    <value>Extra Combat Rations</value>
+  </data>
+  <data name="artefacts_ration_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_restriction" xml:space="preserve">
+    <value>Restricted: U.S.S.R. vehicles.</value>
+  </data>
+  <data name="artefacts_ration_uk_always" xml:space="preserve">
+    <value>+10% to all crew skills and perks for the course of the battle.</value>
+  </data>
+  <data name="artefacts_ration_uk_descr" xml:space="preserve">
+    <value>+10% to all crew skills and perks.</value>
+  </data>
+  <data name="artefacts_ration_uk_name" xml:space="preserve">
+    <value>Pudding and Tea</value>
+  </data>
+  <data name="artefacts_ration_uk_onUse" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_ration_uk_restriction" xml:space="preserve">
+    <value>Restricted: U.K. vehicles.</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_descr" xml:space="preserve">
+    <value>+10% to engine power but damages the engine.</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_name" xml:space="preserve">
+    <value>Removed Speed Governor</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_onUse" xml:space="preserve">
+    <value>+10% to engine power but damages the engine. Multiple use.</value>
+  </data>
+  <data name="artefacts_removedRpmLimiter_restriction" xml:space="preserve">
+    <value>Restricted: U.S.S.R. and Chinese vehicles.</value>
+  </data>
+  <data name="artefacts_smallMedkit_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_smallMedkit_descr" xml:space="preserve">
+    <value>Treatment of an injured crew member.</value>
+  </data>
+  <data name="artefacts_smallMedkit_name" xml:space="preserve">
+    <value>Small First Aid Kit</value>
+  </data>
+  <data name="artefacts_smallMedkit_onUse" xml:space="preserve">
+    <value>treatment of an injured crew member. Single use only.</value>
+  </data>
+  <data name="artefacts_smallMedkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_smallRepairkit_always" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_smallRepairkit_descr" xml:space="preserve">
+    <value>Repair of a damaged module or two damaged tracks.</value>
+  </data>
+  <data name="artefacts_smallRepairkit_name" xml:space="preserve">
+    <value>Small Repair Kit</value>
+  </data>
+  <data name="artefacts_smallRepairkit_onUse" xml:space="preserve">
+    <value>repair of a damaged module or two damaged tracks. Single use only.</value>
+  </data>
+  <data name="artefacts_smallRepairkit_restriction" xml:space="preserve">
+    <value>?empty?</value>
+  </data>
+  <data name="artefacts_stereoscope_descr" xml:space="preserve">
+    <value>+25% to view range for a stationary vehicle,
+up to 500 m</value>
+  </data>
+  <data name="artefacts_stereoscope_name" xml:space="preserve">
+    <value>Binocular Telescope</value>
+  </data>
+  <data name="artefacts_toolbox_descr" xml:space="preserve">
+    <value>+25% to repair speed</value>
+  </data>
+  <data name="artefacts_toolbox_name" xml:space="preserve">
+    <value>Toolbox</value>
+  </data>
+  <data name="artefacts_wetCombatPack_class1_name" xml:space="preserve">
+    <value>"Wet" Ammo Rack Class 1</value>
+  </data>
+  <data name="artefacts_wetCombatPack_class2_name" xml:space="preserve">
+    <value>"Wet" Ammo Rack Class 2</value>
+  </data>
+  <data name="artefacts_wetCombatPack_descr" xml:space="preserve">
+    <value>+50% ammo rack durability</value>
+  </data>
 </root>

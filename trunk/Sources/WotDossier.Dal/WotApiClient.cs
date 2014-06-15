@@ -5,6 +5,8 @@ using System.IO;
 using System.Net;
 using System.Text;
 using Common.Logging;
+using Ionic.Zip;
+using Ionic.Zlib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Common;
@@ -514,81 +516,110 @@ namespace WotDossier.Dal
         /// </summary>
         /// <param name="file">The replay file.</param>
         /// <returns></returns>
-        public Replay ReadReplayStatisticBlocks(FileInfo file)
+        public Replay ReadReplayStatisticBlocks(FileInfo file, bool readAdvancedData = false)
         {
             string path = file.FullName;
             string str = string.Empty;
             string str2 = string.Empty;
             if (File.Exists(path))
             {
-                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                int count = 0;
-                byte[] buffer = new byte[4];
-                stream.Read(buffer, 0, 4);
-                if (buffer[0] != 0x21)
+                using(FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
+                    int count = 0;
+                    byte[] buffer = new byte[4];
                     stream.Read(buffer, 0, 4);
-                    stream.Read(buffer, 0, 4);
-                    count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
-                }
-                byte[] buffer2 = new byte[count];
-                stream.Read(buffer2, 0, count);
-                ASCIIEncoding encoding = new ASCIIEncoding();
-                str = encoding.GetString(buffer2);
-                if (count > 0)
-                {
-                    stream.Read(buffer, 0, 4);
-                    count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
-                    buffer2 = new byte[count];
-                    stream.Read(buffer2, 0, count);
-                    str2 = encoding.GetString(buffer2);
-                }
-                stream.Close();
-
-                FirstBlock firstBlock = null;
-                PlayerResult commandResult = null;
-                BattleResult battleResult = null;
-
-                if (str.Length > 0)
-                {
-                    firstBlock = JsonConvert.DeserializeObject<FirstBlock>(str);
-                }
-
-                if (firstBlock != null)
-                {
-
-                    try
+                    if (buffer[0] != 0x21)
                     {
-                        var reader = new JsonTextReader(new StringReader(str2));
-                        var se = new JsonSerializer();
-                        var parsedData = (JArray) se.Deserialize(reader);
-                        if (parsedData.Count > 0)
+                        stream.Read(buffer, 0, 4);
+                        stream.Read(buffer, 0, 4);
+                        count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
+                    }
+                    byte[] buffer2 = new byte[count];
+                    stream.Read(buffer2, 0, count);
+                    ASCIIEncoding encoding = new ASCIIEncoding();
+                    str = encoding.GetString(buffer2);
+                    if (count > 0)
+                    {
+                        stream.Read(buffer, 0, 4);
+                        count = ((buffer[0] + (0x100 * buffer[1])) + (0x10000 * buffer[2])) + (0x1000000 * buffer[3]);
+                        buffer2 = new byte[count];
+                        stream.Read(buffer2, 0, count);
+                        str2 = encoding.GetString(buffer2);
+                    }
+                    
+                    FirstBlock firstBlock = null;
+                    PlayerResult commandResult = null;
+                    BattleResult battleResult = null;
+
+                    if (str.Length > 0)
+                    {
+                        firstBlock = JsonConvert.DeserializeObject<FirstBlock>(str);
+                    }
+
+                    if (firstBlock != null)
+                    {
+
+                        try
                         {
-                            if (firstBlock.Version < JsonFormatedResultsMinVersion)
+                            var reader = new JsonTextReader(new StringReader(str2));
+                            var se = new JsonSerializer();
+                            var parsedData = (JArray) se.Deserialize(reader);
+                            if (parsedData.Count > 0)
                             {
-                                commandResult = parsedData[0].ToObject<PlayerResult>();
+                                if (firstBlock.Version < JsonFormatedResultsMinVersion)
+                                {
+                                    commandResult = parsedData[0].ToObject<PlayerResult>();
+                                }
+                                else
+                                {
+                                    battleResult = parsedData[0].ToObject<BattleResult>();
+                                }
                             }
-                            else
+
+                            if (readAdvancedData)
                             {
-                                battleResult = parsedData[0].ToObject<BattleResult>();
+                                const int startPosition = 8;
+                                int length = (int) (stream.Length - stream.Position) - startPosition;
+                                buffer = new byte[length];
+                                stream.Seek(startPosition, SeekOrigin.Current);
+                                stream.Read(buffer, 0, length);
+
+                                byte[] decrypt = Decrypt(buffer);
+
+                                Decompress(decrypt);
                             }
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e,
-                            file.FullName);
-                    }
+                        catch (Exception e)
+                        {
+                            _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e, file.FullName);
+                        }
 
-                    return new Replay
-                    {
-                        datablock_1 = firstBlock,
-                        datablock_battle_result_plain = commandResult,
-                        datablock_battle_result = battleResult
-                    };
+                        return new Replay
+                        {
+                            datablock_1 = firstBlock,
+                            datablock_battle_result_plain = commandResult,
+                            datablock_battle_result = battleResult
+                        };
+                    }
                 }
             }
             return null;
+        }
+
+        private byte[] Decompress(byte[] decrypt)
+        {
+            return ZlibStream.UncompressBuffer(decrypt);
+        }
+
+        private byte[] Decrypt(byte[] data)
+        {
+            byte[] key = new byte[]
+            {
+                0xDE, 0x72, 0xBE, 0xA0, 0xDE, 0x04, 0xBE, 0xB1, 0xDE, 0xFE, 0xBE, 0xEF, 0xDE, 0xAD, 0xBE, 0xEF
+            };
+
+            BlowFish blowFish = new BlowFish(key);
+            return blowFish.Decrypt_ECB(data);
         }
 
         /// <summary>

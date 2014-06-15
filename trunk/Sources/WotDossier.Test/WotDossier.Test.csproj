@@ -102,6 +102,9 @@
     <None Include="..\WotDossier\App.config">
       <Link>App.config</Link>
     </None>
+    <None Include="..\WotDossier\External\consumables.json">
+      <Link>External\consumables.json</Link>
+    </None>
     <None Include="..\WotDossier\External\library.zip">
       <Link>External\library.zip</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -109,6 +112,9 @@
     <None Include="..\WotDossier\External\maps.json">
       <Link>External\maps.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\optional_devices.json">
+      <Link>External\optional_devices.json</Link>
     </None>
     <None Include="..\WotDossier\External\server_tanks.json">
       <Link>External\server_tanks.json</Link>
@@ -233,6 +239,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.0\13954715200495_germany_PzVI_prohorovka.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

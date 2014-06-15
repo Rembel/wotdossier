@@ -348,7 +348,12 @@ namespace WotDossier.Applications.ViewModel
 
             if (replayFile != null)
             {
-                Domain.Replay.Replay replay = replayFile.ReplayData();
+                Domain.Replay.Replay replay;
+                
+                using (new WaitCursor())
+                {
+                    replay = replayFile.ReplayData(SettingsReader.Get().ShowExtendedReplayData);
+                }
 
                 if (replay != null && replay.datablock_battle_result != null)
                 {

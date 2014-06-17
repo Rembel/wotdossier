@@ -28,6 +28,7 @@
   <root>
     <level value="WARN" />
     <appender-ref ref="OverallFile" />
+    <appender-ref ref="ConsoleAppender" />
   </root>
 
   <logger name="NHibernate">

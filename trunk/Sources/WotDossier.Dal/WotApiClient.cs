@@ -586,12 +586,16 @@ namespace WotDossier.Dal
 
                                 byte[] decrypt = Decrypt(buffer);
 
-                                Decompress(decrypt);
+                                //decrypt.Dump(@"c:\\replay_decrypted.tmp");
+
+                                byte[] uncompressed = Decompress(decrypt);
+
+                                ExtractAdvanced(uncompressed);
                             }
                         }
                         catch (Exception e)
                         {
-                            _log.InfoFormat("Error on replay file read. Incorrect file format({0})", e, file.FullName);
+                            _log.ErrorFormat("Error on replay file read. Incorrect file format({0})", e, file.FullName);
                         }
 
                         return new Replay
@@ -606,6 +610,147 @@ namespace WotDossier.Dal
             return null;
         }
 
+        private void ExtractAdvanced(byte[] uncompressed)
+        {
+            AdvancedReplayData advanced = new AdvancedReplayData();
+
+            using (var f = new MemoryStream(uncompressed))
+            {
+                f.Seek(12, SeekOrigin.Begin);
+                int versionlength = (int) f.Read(1).ConvertLittleEndian();
+
+                /*                
+		if not is_supported_replay(f):
+			advanced['valid'] = 0
+			printmessage('Unsupported replay: Versionlength: ' + str(versionlength))
+			return advanced
+                */
+
+                f.Seek(3, SeekOrigin.Current);
+
+                advanced.replay_version = f.Read(versionlength).GetString();
+		        advanced.replay_version = advanced.replay_version.Replace(", ", ".");
+                advanced.replay_version = advanced.replay_version.Replace(". ", ".");
+                advanced.replay_version = advanced.replay_version.Replace(' ', '.');
+
+                f.Seek(51 + versionlength, SeekOrigin.Begin);
+
+                int playernamelength = (int)f.Read(1).ConvertLittleEndian();
+
+                advanced.playername = f.Read(playernamelength).GetString();
+                advanced.arenaUniqueID = (long) f.Read(8).ConvertLittleEndian();
+                advanced.arenaCreateTime = advanced.arenaUniqueID & 4294967295L;
+
+                advanced.arenaTypeID = (int) f.Read(4).ConvertLittleEndian();
+		        advanced.gameplayID = advanced.arenaTypeID >> 16;
+                advanced.arenaTypeID = advanced.arenaTypeID & 32767;
+		
+		        advanced.bonusType = (int) f.Read(1).ConvertLittleEndian();
+		        advanced.guiType = (int) f.Read(1).ConvertLittleEndian();
+
+                advanced.more = new BattleInfo();
+                int advancedlength = (int) f.Read(1).ConvertLittleEndian();
+
+                if (advancedlength == 255)
+                {
+                    advancedlength = (int) f.Read(2).ConvertLittleEndian();
+                    f.Seek(1, SeekOrigin.Current);
+                }
+
+                try
+                {
+                    byte[] advanced_pickles = f.Read(advancedlength);
+                    object load = Unpickle.Load(new MemoryStream(advanced_pickles));
+                    //advanced.more = Unpickle.Load(new MemoryStream(advanced_pickles));
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Cannot load advanced pickle. \nPosition: " + f.Position + ", Length: " + advancedlength, e);
+                }
+
+                f.Seek(29, SeekOrigin.Current);
+
+                advancedlength = (int) f.Read(1).ConvertLittleEndian();
+
+		        if(advancedlength==255)
+                {
+                    advancedlength = (int) f.Read(2).ConvertLittleEndian();
+                    f.Seek(1, SeekOrigin.Current);
+                }
+
+                var rosters = new List<object>();
+                var rosterdata = new Dictionary<string, AdvancedPlayerInfo>();
+                advanced.roster = rosterdata;
+
+                try
+                {
+                    byte[] advanced_pickles = f.Read(advancedlength);
+                    object load = Unpickle.Load(new MemoryStream(advanced_pickles));
+                    rosters = (List<object>) Unpickle.Load(new MemoryStream(advanced_pickles));
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Cannot load roster pickle. Position: " + f.Position + ", Length: " + advancedlength, e);
+                }
+
+                foreach (object [] roster in rosters)
+                {
+                    string key = (string) roster[2];
+                    rosterdata[key] = new AdvancedPlayerInfo();
+                    rosterdata[key].internaluserID = (int) roster[0];
+                    rosterdata[key].playerName = key;
+                    rosterdata[key].team = (int) roster[3];
+                    rosterdata[key].accountDBID = (int) roster[7];
+                    rosterdata[key].clanAbbrev = (string) roster[8];
+                    rosterdata[key].clanID = (int) roster[9];
+                    rosterdata[key].prebattleID = (int) roster[10];
+
+                    var bindataBytes = Encoding.ASCII.GetBytes((string)roster[1]);
+                    List<int> bindata = bindataBytes.Unpack("BBHHHHHHB");
+
+                    rosterdata[key].countryID = bindata[0] >> 4 & 15;
+                    rosterdata[key].tankID = bindata[1];
+                    int compDescr = (bindata[1] << 8) + bindata[0];
+                    rosterdata[key].compDescr = compDescr;
+
+                    //Does not make sense, will check later
+			        rosterdata[key].vehicle = new AdvancedVehicleInfo();
+                    rosterdata[key].vehicle.chassisID = bindata[2];
+                    rosterdata[key].vehicle.engineID = bindata[3];
+                    rosterdata[key].vehicle.fueltankID = bindata[4];
+                    rosterdata[key].vehicle.radioID = bindata[5];
+                    rosterdata[key].vehicle.turretID = bindata[6];
+                    rosterdata[key].vehicle.gunID = bindata[7];
+
+                    int flags = bindata[8];
+                    int optional_devices_mask = flags & 15;
+                    int idx = 2;
+                    int pos = 15;
+
+                    while (optional_devices_mask != 0)
+                    {
+                        if ((optional_devices_mask & 1) == 1)
+                        {
+                            try
+                            {
+                                int m = (int) bindataBytes.Skip(pos).Take(2).ToArray().ConvertLittleEndian();
+                                rosterdata[key].vehicle.module[idx] = m;
+                            }
+                            catch (Exception e)
+                            {
+                                _log.Error("error on processing player [" + key + "]: ", e);
+                            }
+                        }
+                        
+                        optional_devices_mask = optional_devices_mask >> 1;
+                        idx = idx - 1;
+                        pos = pos + 2;
+                        
+                    }
+                }
+            }
+        }
+
         private byte[] Decompress(byte[] decrypt)
         {
             return ZlibStream.UncompressBuffer(decrypt);
@@ -613,14 +758,73 @@ namespace WotDossier.Dal
 
         private byte[] Decrypt(byte[] data)
         {
-            byte[] key = new byte[]
+            byte[] key =
             {
-                0xDE, 0x72, 0xBE, 0xA0, 0xDE, 0x04, 0xBE, 0xB1, 0xDE, 0xFE, 0xBE, 0xEF, 0xDE, 0xAD, 0xBE, 0xEF
+                0xDE, 0x72, 0xBE, 0xA0, 
+                0xDE, 0x04, 0xBE, 0xB1, 
+                0xDE, 0xFE, 0xBE, 0xEF, 
+                0xDE, 0xAD, 0xBE, 0xEF
             };
 
             BlowFish blowFish = new BlowFish(key);
-            return blowFish.Decrypt_ECB(data);
+            
+            byte[] block = new byte[8];
+
+            MemoryStream dataStream = new MemoryStream();
+
+            byte[] pb = null;
+
+            for (int i = 0, bi = 0; i < data.Length; i++, bi++)
+            {
+                block[bi] = data[i];
+                if (bi == 7 || i == data.Length - 1)
+                {
+                    byte[] db = blowFish.Decrypt_ECB(block);
+
+                    if (pb != null)
+                    {
+                        db = BitwiseXOR(pb, db);
+                    }
+
+                    dataStream.Write(db, 0, 8);
+                    pb = db;
+                    block = new byte[8];
+                    bi = -1;
+                }
+            }
+
+            return dataStream.ToArray();
         }
+
+        static byte[] BitwiseXOR(byte[] result, byte[] matchValue)
+        {
+            if (result.Length == 0)
+            {
+                return matchValue;
+            }
+
+            byte[] newResult = new byte[matchValue.Length > result.Length ? matchValue.Length : result.Length];
+
+            for (int i = 1; i < newResult.Length + 1; i++)
+            {
+                //Use XOR on the LSBs until we run out
+                if (i > result.Length)
+                {
+                    newResult[newResult.Length - i] = matchValue[matchValue.Length - i];
+                }
+                else if (i > matchValue.Length)
+                {
+                    newResult[newResult.Length - i] = result[result.Length - i];
+                }
+                else
+                {
+                    newResult[newResult.Length - i] =
+                        (byte)(matchValue[matchValue.Length - i] ^ result[result.Length - i]);
+                }
+            }
+            return newResult;
+        }
+
 
         /// <summary>
         /// Requests the specified method from wot api.
@@ -662,6 +866,68 @@ namespace WotDossier.Dal
                 _log.ErrorFormat("Error on execute api method - {0}", e, method);
                 throw new ApiRequestException("Api request exception", e);
             }
+        }
+    }
+
+    public static class ByteArrayExtensions
+    {
+        public static void Dump(this byte[] array, string path)
+        {
+            using (FileStream fileStream = File.Open(path, FileMode.Create))
+            {
+                fileStream.Write(array, 0, array.Length);
+            }
+        }
+
+        public static ulong ConvertLittleEndian(this byte[] array)
+        {
+            int pos = 0;
+            ulong result = 0;
+            foreach (byte by in array)
+            {
+                result |= (ulong)(by << pos);
+                pos += 8;
+            }
+            return result;
+        }
+
+        public static string GetString(this byte[] bytes)
+        {
+            return Encoding.UTF8.GetString(bytes);
+        }
+
+        public static byte[] GetBytes(this string str)
+        {
+            byte[] bytes = new byte[str.Length * sizeof(char)];
+            Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
+
+        public static List<int> Unpack(this byte[] array, string format)
+        {
+            List<int> result = new List<int>();
+            using (var stream = new MemoryStream(array))
+            {
+                for (int i = 0; i < format.Length; i++)
+                {
+                    switch (format[i])
+                    {
+                        case 'B':
+                            var bytes1 = stream.Read(1);
+                            result.Add((int) bytes1.ConvertLittleEndian());
+                            break;
+                        case 'H':
+                            var bytes = stream.Read(2);
+                            result.Add((int) bytes.ConvertLittleEndian());
+                            break;
+                        case 'Q':
+                            var read = stream.Read(4);
+                            result.Add((int) read.ConvertLittleEndian());
+                            break;
+                    }
+                }
+            }
+            return result;
         }
     }
 }

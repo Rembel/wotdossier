@@ -19,5 +19,12 @@ namespace WotDossier.Common
                 return BitConverter.ToString(buffer).Replace("-", "").ToLower();
             }
         }
+
+        public static byte[] Read(this Stream stream, int count)
+        {
+            byte[] buffer = new byte[count];
+            stream.Read(buffer, 0, count);
+            return buffer;
+        }
     }
 }

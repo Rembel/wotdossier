@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,7 @@
     <Compile Include="DataFormatter.cs" />
     <Compile Include="FileUtils.cs" />
     <Compile Include="HttpUtils.cs" />
+    <Compile Include="LiteralParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\MultiPropertyComparer.cs" />
     <Compile Include="Reflection\IPropertyAccessor.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="StopWatch.cs" />
     <Compile Include="TypeHelper.cs" />
     <Compile Include="TypeHelper.generic.cs" />
+    <Compile Include="Unpickler.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="XmlSerializer.cs" />
   </ItemGroup>

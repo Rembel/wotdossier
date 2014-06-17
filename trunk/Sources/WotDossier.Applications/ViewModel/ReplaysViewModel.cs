@@ -352,7 +352,7 @@ namespace WotDossier.Applications.ViewModel
                 
                 using (new WaitCursor())
                 {
-                    replay = replayFile.ReplayData(SettingsReader.Get().ShowExtendedReplayData);
+                    replay = replayFile.ReplayData(SettingsReader.Get().ShowExtendedReplaysData);
                 }
 
                 if (replay != null && replay.datablock_battle_result != null)

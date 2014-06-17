@@ -2960,4 +2960,10 @@
   <data name="artefacts_wetCombatPack_descr" xml:space="preserve">
     <value>+50% к прочности боеукладки</value>
   </data>
+    <data name="Settings_Region" xml:space="preserve">
+    <value>Сервер</value>
+  </data>
+    <data name="Settings_ShowEntendedReplaysData" xml:space="preserve">
+    <value>Показывать расширенные данные по реплею</value>
+  </data>
 </root>

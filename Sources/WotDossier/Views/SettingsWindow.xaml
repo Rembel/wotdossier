@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:autoCompleteTextBox="clr-namespace:WotDossier.Framework.Controls.AutoCompleteTextBox;assembly=WotDossier.Framework"
         xmlns:applications="clr-namespace:WotDossier.Applications;assembly=WotDossier.Applications"
-        Title="Settings" Height="250" Width="500" WindowStartupLocation="CenterOwner" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_settings.png"
+        Title="Settings" Height="260" Width="500" WindowStartupLocation="CenterOwner" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_settings.png"
         Style="{StaticResource office2007SilverWindow}" Background="{StaticResource PanelBackground}">
     <Window.Resources>
         <applications:PlayerNameSuggestionProvider x:Key="nsp" />
@@ -36,11 +36,14 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>        
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -48,21 +51,22 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Margin="6 6 6 6" Grid.Column="0" Text="{x:Static resources:Resources.Settings_PlayerName}"></TextBlock>
-        <!--<TextBox Margin="6 6 6 6" Grid.Column="1" Text="{Binding PlayerName}"></TextBox>-->
-        <autoCompleteTextBox:AutoCompleteTextBox Margin="6 6 6 6" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"
-                                 Height="25"
+        <TextBlock Margin="6 3 6 3" Grid.Column="0" Text="{x:Static resources:Resources.Settings_PlayerName}"></TextBlock>
+        <!--<TextBox Margin="6 3 6 3" Grid.Column="1" Text="{Binding PlayerName}"></TextBox>-->
+        <autoCompleteTextBox:AutoCompleteTextBox 
+                    Margin="6 3 6 3" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top"
                                  Text="{Binding Path=PlayerName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                  ItemTemplate="{StaticResource ResourceKey=fsTemplate}"
-                                 Provider="{StaticResource nsp}" />
-        <ComboBox Margin="6 6 6 6" Grid.Row="0" Grid.Column="2" ItemsSource="{Binding Servers}" SelectedValue="{Binding AppSettings.Server}" />
-        <TextBlock Margin="6 6 6 6" Grid.Column="0" Grid.Row="1" Text="{x:Static resources:Resources.Settings_Language}"></TextBlock>
-        <ComboBox Margin="6 6 6 6" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Languages}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding AppSettings.Language}" />
-        <CheckBox Margin="6 6 6 6" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Content="{x:Static resources:Resources.Settings_CheckForUpdatesOnStart}" IsChecked="{Binding CheckForUpdates}"/>
-        <CheckBox Margin="6 6 6 6" Grid.Column="2" Grid.Row="2" Content="{x:Static resources:Resources.Settings_AutoLoadStatistic}" IsChecked="{Binding AutoLoadStatistic}"/>
-        <Button Margin="6 6 6 6" Grid.Column="2" Grid.Row="5" Content="{x:Static resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
-
-        <TextBlock Margin="6 0 6 0" Grid.Column="0" Grid.Row="3" Text="{x:Static resources:Resources.Label_ColorScheme}"/>
-        <ComboBox Margin="6 0 6 0" Grid.Column="1" Grid.Row="3" Height="20" Width="150" ItemsSource="{Binding Themes}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Theme}"/>
+                                 Provider="{StaticResource nsp}"  />
+        <TextBlock Margin="6 3 6 3" Grid.Row="2" Grid.Column="0" Text="{x:Static resources:Resources.Settings_Region}"></TextBlock>
+        <ComboBox Margin="6 3 6 3" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Servers}" SelectedValue="{Binding AppSettings.Server}" />
+        <TextBlock Margin="6 3 6 3" Grid.Row="3" Grid.Column="0" Text="{x:Static resources:Resources.Settings_Language}"></TextBlock>
+        <ComboBox Margin="6 3 6 3" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Languages}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding AppSettings.Language}" />
+        <TextBlock Margin="6 3 6 3" Grid.Row="4" Grid.Column="0" Text="{x:Static resources:Resources.Label_ColorScheme}"/>
+        <ComboBox Margin="6 3 6 3" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Themes}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Theme}"/>
+        <CheckBox Margin="6 3 6 3" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resources:Resources.Settings_ShowEntendedReplaysData}" IsChecked="{Binding ShowExtendedReplaysData}"/>
+        <CheckBox Margin="6 3 6 3" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resources:Resources.Settings_AutoLoadStatistic}" IsChecked="{Binding AutoLoadStatistic}"/>
+        <CheckBox Margin="6 3 6 3" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="{x:Static resources:Resources.Settings_CheckForUpdatesOnStart}" IsChecked="{Binding CheckForUpdates}"/>
+        <Button Margin="6 3 6 3" Grid.Row="9" Grid.Column="1" HorizontalAlignment="Right" Content="{x:Static resources:Resources.Settings_Save}" Command="{Binding SaveCommand}" ></Button>
     </Grid>
 </Window>

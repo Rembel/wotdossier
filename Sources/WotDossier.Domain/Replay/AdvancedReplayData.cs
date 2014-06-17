@@ -38,8 +38,15 @@ namespace WotDossier.Domain.Replay
 
     public class AdvancedVehicleInfo
     {
+        public ModuleIndexer module;
+
+        public AdvancedVehicleInfo()
+        {
+            module = new ModuleIndexer(this);
+        }
+
         public int chassisID { get; set; }
-        public int engineI { get; set; }
+        public int engineID { get; set; }
         public int fueltankID { get; set; }
         public int gunID { get; set; }
         public int radioID { get; set; }
@@ -48,5 +55,56 @@ namespace WotDossier.Domain.Replay
         public int module_0 { get; set; }
         public int module_1 { get; set; }
         public int module_2 { get; set; }
+    }
+
+    public class ModuleIndexer
+    {
+        private readonly AdvancedVehicleInfo _advancedVehicleInfo;
+
+        public ModuleIndexer(AdvancedVehicleInfo advancedVehicleInfo)
+        {
+            _advancedVehicleInfo = advancedVehicleInfo;
+        }
+
+        // Indexer to get and set characters in the containing document:
+        public int this[int index]
+        {
+            get
+            {
+                if (index == 0)
+                {
+                    return _advancedVehicleInfo.module_0;
+                }
+
+                if (index == 1)
+                {
+                    return _advancedVehicleInfo.module_1;
+                }
+
+                if (index == 2)
+                {
+                    return _advancedVehicleInfo.module_2;
+                }
+
+                return -1;
+            }
+            set
+            {
+                if (index == 0)
+                {
+                    _advancedVehicleInfo.module_0 = value;
+                }
+
+                if (index == 1)
+                {
+                    _advancedVehicleInfo.module_1 = value;
+                }
+
+                if (index == 2)
+                {
+                    _advancedVehicleInfo.module_2 = value;
+                }
+            }
+        }
     }
 }

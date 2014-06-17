@@ -5848,6 +5848,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region.
+        /// </summary>
+        public static string Settings_Region {
+            get {
+                return ResourceManager.GetString("Settings_Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Replays folder.
         /// </summary>
         public static string Settings_ReplaysFolder {
@@ -5862,6 +5871,15 @@ namespace WotDossier.Resources {
         public static string Settings_Save {
             get {
                 return ResourceManager.GetString("Settings_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show entended replay&apos;s data.
+        /// </summary>
+        public static string Settings_ShowEntendedReplaysData {
+            get {
+                return ResourceManager.GetString("Settings_ShowEntendedReplaysData", resourceCulture);
             }
         }
         

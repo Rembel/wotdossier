@@ -2868,4 +2868,10 @@ up to 500 m</value>
   <data name="artefacts_wetCombatPack_descr" xml:space="preserve">
     <value>+50% ammo rack durability</value>
   </data>
+  <data name="Settings_Region" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="Settings_ShowEntendedReplaysData" xml:space="preserve">
+    <value>Show entended replay's data</value>
+  </data>
 </root>

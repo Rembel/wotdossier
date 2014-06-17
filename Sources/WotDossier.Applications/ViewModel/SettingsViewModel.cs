@@ -98,6 +98,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public bool ShowExtendedReplaysData
+        {
+            get { return AppSettings.ShowExtendedReplaysData; }
+            set
+            {
+                AppSettings.ShowExtendedReplaysData = value;
+                RaisePropertyChanged("ShowExtendedReplaysData");
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.

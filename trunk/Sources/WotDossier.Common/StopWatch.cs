@@ -80,7 +80,7 @@ namespace WotDossier.Common
         public double PeekMs()
         {
             long peek = Peek();
-            return TimeSpan.FromTicks(peek).TotalMilliseconds;
+            return TimeSpan.FromMilliseconds(peek).TotalMilliseconds;
         }
 
         /// <summary>

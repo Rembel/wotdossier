@@ -159,7 +159,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 PlayerId = replay.datablock_1.playerID;
 
-                if (replay.datablock_1.Version < WotApiClient.JsonFormatedResultsMinVersion)
+                if (replay.datablock_1.Version < WotFileHelper.JsonFormatedReplay_MinVersion)
                 {
                     if (replay.datablock_battle_result_plain != null)
                     {

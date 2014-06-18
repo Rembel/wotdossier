@@ -4,7 +4,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
-using WotDossier.Common;
+using WotDossier.Common.Extensions;
 
 namespace WotDossier.Applications.Logic
 {

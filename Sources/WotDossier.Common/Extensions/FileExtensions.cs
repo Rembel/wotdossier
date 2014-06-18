@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace WotDossier.Common
+namespace WotDossier.Common.Extensions
 {
     public static class FileExtensions
     {

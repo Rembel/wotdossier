@@ -495,13 +495,13 @@ namespace WotDossier.Applications.ViewModel
                         
                         if (!string.IsNullOrEmpty(settings.PlayerName) && !string.IsNullOrEmpty(settings.Server))
                         {
-                            FileInfo cacheFile = CacheHelper.GetCacheFile(settings.PlayerName, settings.Server);
+                            FileInfo cacheFile = WotFileHelper.GetCacheFile(settings.PlayerName, settings.Server);
 
                             if (cacheFile != null)
                             {
                                 //convert dossier cache file to json
-                                string jsonFile = CacheHelper.BinaryCacheToJson(cacheFile);
-                                _tanksCache = WotApiClient.Instance.ReadTanksCache(jsonFile);
+                                string jsonFile = WotFileHelper.BinaryCacheToJson(cacheFile);
+                                _tanksCache = WotFileHelper.ReadTanksCache(jsonFile);
 
                                 //get tanks from dossier app spot
                                 //string data = new Uri("http://wot-dossier.appspot.com/dossier-data/2587067").Get();

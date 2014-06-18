@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using Ookii.Dialogs.Wpf;
-using WotDossier.Dal;
 using WotDossier.Domain;
 
 namespace WotDossier.Applications.ViewModel.Replay
@@ -130,20 +129,13 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             if (PhisicalFile != null)
             {
-                string jsonFile = PhisicalFile.FullName.Replace(PhisicalFile.Extension, ".json");
-                //convert dossier cache file to json
-                if (!File.Exists(jsonFile))
+                if (ClientVersion < WotFileHelper.JsonFormatedReplay_MinVersion)
                 {
-                    CacheHelper.ReplayToJson(PhisicalFile, readAdvancedData);
+                    //convert dossier cache file to json
+                    string jsonFile = WotFileHelper.ReplayToJson(PhisicalFile, readAdvancedData);
+                    return WotFileHelper.LoadReplay(jsonFile);
                 }
-
-                if (!File.Exists(jsonFile))
-                {
-                    MessageBox.Show(Resources.Resources.Msg_Error_on_replay_file_read,
-                        Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-                return WotApiClient.Instance.LoadReplay(jsonFile);
+                return WotFileHelper.LoadReplay(PhisicalFile, readAdvancedData);
             }
             return null;
         }

@@ -16,6 +16,7 @@ namespace WotDossier.Domain.Replay
         private int _hits;
         private int _piercedReceived;
         private int _pierced;
+        private int _noDamageShotsReceived;
 
         [DataMember]
         public int accountDBID { get; set; }
@@ -92,6 +93,8 @@ namespace WotDossier.Domain.Replay
                 {
                     return _heHitsReceived;
                 }
+                //Compatibility with older versions
+                //Some names changed in WoT 0.9.0
                 return explosionHitsReceived;
             }
             set { _heHitsReceived = value; }
@@ -109,6 +112,8 @@ namespace WotDossier.Domain.Replay
                 {
                     return _heHits;
                 }
+                //Compatibility with older versions
+                //Some names changed in WoT 0.9.0
                 return explosionHits;
             }
             set { _heHits = value; }
@@ -127,6 +132,8 @@ namespace WotDossier.Domain.Replay
                 {
                     return _hits;
                 }
+                //Compatibility with older versions
+                //Some names changed in WoT 0.9.0
                 return directHits;
             }
             set { _hits = value; }
@@ -149,7 +156,23 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int mileage { get; set; }
         [DataMember]
-        public int noDamageShotsReceived { get; set; }
+        public int noDamageDirectHitsReceived { get; set; }
+        [DataMember]
+        public int noDamageShotsReceived
+        {
+            get
+            {
+                if (_noDamageShotsReceived > 0)
+                {
+                    return _noDamageShotsReceived;
+                }
+                //Compatibility with older versions
+	            //Some names changed in WoT 0.9.0
+                return noDamageDirectHitsReceived;
+            }
+            set { _noDamageShotsReceived = value; }
+        }
+
         [DataMember]
         public int originalCredits { get; set; }
         [DataMember]
@@ -165,6 +188,8 @@ namespace WotDossier.Domain.Replay
                 {
                     return _piercedReceived;
                 }
+                //Compatibility with older versions
+                //Some names changed in WoT 0.9.0
                 return piercingsReceived;
             }
             set { _piercedReceived = value; }
@@ -182,6 +207,8 @@ namespace WotDossier.Domain.Replay
                 {
                     return _pierced;
                 }
+                //Compatibility with older versions
+                //Some names changed in WoT 0.9.0
                 return piercings;
             }
             set { _pierced = value; }
@@ -208,6 +235,8 @@ namespace WotDossier.Domain.Replay
                 {
                     return _shotsReceived;
                 }
+                //Compatibility with older versions
+                //Some names changed in WoT 0.9.0
                 return directHitsReceived;
             }
             set { _shotsReceived = value; }

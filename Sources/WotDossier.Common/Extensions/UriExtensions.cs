@@ -2,9 +2,9 @@
 using System.IO;
 using System.Net;
 
-namespace WotDossier.Common
+namespace WotDossier.Common.Extensions
 {
-    public static class HttpUtils
+    public static class UriExtensions
     {
         public static string Get(this Uri uri)
         {

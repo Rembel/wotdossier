@@ -3652,6 +3652,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Honorary Ranks.
+        /// </summary>
+        public static string Label_Achievements_HonoraryRanks {
+            get {
+                return ResourceManager.GetString("Label_Achievements_HonoraryRanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Special Achievements.
         /// </summary>
         public static string Label_Achievements_Special {
@@ -5943,6 +5952,15 @@ namespace WotDossier.Resources {
         public static string StatisticPeriod_Recent {
             get {
                 return ResourceManager.GetString("StatisticPeriod_Recent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awards.
+        /// </summary>
+        public static string Tab_Awards {
+            get {
+                return ResourceManager.GetString("Tab_Awards", resourceCulture);
             }
         }
         

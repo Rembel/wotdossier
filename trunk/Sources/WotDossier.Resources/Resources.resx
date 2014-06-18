@@ -2874,4 +2874,10 @@ up to 500 m</value>
   <data name="Settings_ShowEntendedReplaysData" xml:space="preserve">
     <value>Show entended replay's data</value>
   </data>
+  <data name="Label_Achievements_HonoraryRanks" xml:space="preserve">
+    <value>Honorary Ranks</value>
+  </data>
+  <data name="Tab_Awards" xml:space="preserve">
+    <value>Awards</value>
+  </data>
 </root>

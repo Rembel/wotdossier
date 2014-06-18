@@ -1245,7 +1245,7 @@
     <value>Эпические достижения</value>
   </data>
   <data name="Label_Achievements_Special" xml:space="preserve">
-    <value>Почетные звания</value>
+    <value>Особые</value>
   </data>
   <data name="Label_Achievements_CommemorativeAchievements" xml:space="preserve">
     <value>Памятные знаки</value>
@@ -2960,10 +2960,16 @@
   <data name="artefacts_wetCombatPack_descr" xml:space="preserve">
     <value>+50% к прочности боеукладки</value>
   </data>
-    <data name="Settings_Region" xml:space="preserve">
+  <data name="Settings_Region" xml:space="preserve">
     <value>Сервер</value>
   </data>
-    <data name="Settings_ShowEntendedReplaysData" xml:space="preserve">
+  <data name="Settings_ShowEntendedReplaysData" xml:space="preserve">
     <value>Показывать расширенные данные по реплею</value>
+  </data>
+  <data name="Label_Achievements_HonoraryRanks" xml:space="preserve">
+    <value>Почетные звания</value>
+  </data>
+  <data name="Tab_Awards" xml:space="preserve">
+    <value>Награды</value>
   </data>
 </root>

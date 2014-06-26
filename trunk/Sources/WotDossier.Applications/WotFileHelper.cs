@@ -324,9 +324,7 @@ namespace WotDossier.Applications
 
                         try
                         {
-                            var reader = new JsonTextReader(new StringReader(str2));
-                            var se = new JsonSerializer();
-                            var parsedData = (JArray) se.Deserialize(reader);
+                            var parsedData = JsonConvert.DeserializeObject<JArray>(str2);
                             if (parsedData.Count > 0)
                             {
                                 if (firstBlock.Version < JsonFormatedReplay_MinVersion)
@@ -424,7 +422,7 @@ namespace WotDossier.Applications
                 {
                     byte[] advanced_pickles = f.Read(advancedlength);
                     object load = Unpickle.Load(new MemoryStream(advanced_pickles));
-                    //advanced.more = Unpickle.Load(new MemoryStream(advanced_pickles));
+                    advanced.more = load.ToObject<BattleInfo>();
                 }
                 catch (Exception e)
                 {

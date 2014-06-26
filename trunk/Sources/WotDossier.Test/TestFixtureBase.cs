@@ -717,5 +717,22 @@ namespace WotDossier.Test
             serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
             serializeObject.Dump(cacheFile.FullName + "_2");
         }
+
+        [Test]
+        public void DynamicTest()
+        {
+            var dictionary = new Dictionary<string, int>();
+            dictionary["Field"] = 23;
+            dictionary["Field1"] = 23;
+            var serializeObject = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
+
+            dynamic o = new {Field = 23, Field1 = 23};
+
+            Console.WriteLine(serializeObject);
+
+            serializeObject = JsonConvert.SerializeObject(o, Formatting.Indented);
+            Console.WriteLine("-------------------------");
+            Console.WriteLine(serializeObject);
+        }
     }
 }

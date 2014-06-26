@@ -462,5 +462,23 @@ namespace WotDossier.Dal
                 _dataProvider.CloseSession();
             }
         }
+
+        public IList<PlayerEntity> GetPlayers()
+        {
+            _dataProvider.OpenSession();
+            try
+            {
+                return _dataProvider.QueryOver<PlayerEntity>().List();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
+            finally
+            {
+                _dataProvider.CloseSession();
+            }
+            return new List<PlayerEntity>();
+        }
     }
 }

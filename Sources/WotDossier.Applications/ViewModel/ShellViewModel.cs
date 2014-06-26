@@ -239,6 +239,8 @@ namespace WotDossier.Applications.ViewModel
 
             BattleModeSelector.PropertyChanged += (sender, args) => OnLoad();
 
+            PlayerSelector = new PlayerSelectorViewModel(dossierRepository, OnLoad);
+
             ChartView = new PlayerChartsViewModel();
 
             SetPeriodTabHeader();
@@ -249,6 +251,8 @@ namespace WotDossier.Applications.ViewModel
 
             InitCacheMonitor();
         }
+
+        public PlayerSelectorViewModel PlayerSelector { get; set; }
 
         private void InitCacheMonitor()
         {

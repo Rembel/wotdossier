@@ -78,6 +78,7 @@
     <Compile Include="BattleModeStrategies\StatisticViewStrategyManager.cs" />
     <Compile Include="BattleModeStrategies\TeamStatisticViewStrategy.cs" />
     <Compile Include="CultureHelper.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="ReplaysManagerController.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="ViewModel\PlayersCompareViewModel.cs" />
     <Compile Include="ViewModel\PlayerServerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Selectors\BattleModeSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Selectors\PlayerSelectorViewModel.cs" />
     <Compile Include="ViewModel\Selectors\PeriodSelectorViewModel.cs" />
     <Compile Include="ViewModel\StatisticPeriodChangedEvent.cs" />
     <Compile Include="ViewModel\Statistic\HistoricalBattlesPlayerStatisticViewModel.cs" />

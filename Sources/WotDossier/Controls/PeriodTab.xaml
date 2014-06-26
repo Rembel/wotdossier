@@ -52,7 +52,7 @@
                 <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="1" Grid.Column="1" Text="{Binding BattlesCountDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"></TextBlock>
                 <!--Victories-->
                 <TextBlock Foreground="#BABFBA" Grid.Row="2" Grid.Column="0" Text="{x:Static resources:Resources.Common_Victories}"></TextBlock>
-                <TextBlock Foreground="#BABFBA" TextAlignment="Right" Grid.Row="2" Grid.Column="1" DataContext="{Binding}">
+                <TextBlock Foreground="{Binding WinsPercentForPeriod, Converter={x:Static converters:PercentToColorConverter.Default}}" TextAlignment="Right" Grid.Row="2" Grid.Column="1" DataContext="{Binding}">
                     <TextBlock.Text>
                         <MultiBinding Converter="{x:Static converters:ValuePercentFormater.Default}" >
                             <Binding Path="WinsDelta" />

@@ -107,8 +107,7 @@
                                                             <Bold>
                                                                 <x:Static Member="resources:Resources.Chart_Tooltip_WinPercent" />
                                                             </Bold>
-                                                            <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}"/>
-                                                        </TextBlock>
+                                                            <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}" Foreground="{Binding WinPercent, Converter={x:Static converters:PercentToColorConverter.Default}}"/></TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
                                             </d3:PieChartItem>

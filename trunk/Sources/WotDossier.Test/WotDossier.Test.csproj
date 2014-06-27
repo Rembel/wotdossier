@@ -116,6 +116,7 @@
     </None>
     <None Include="..\WotDossier\External\optional_devices.json">
       <Link>External\optional_devices.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\WotDossier\External\server_tanks.json">
       <Link>External\server_tanks.json</Link>

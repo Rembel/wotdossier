@@ -118,6 +118,13 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplayFile" /> class.
         /// </summary>
+        protected ReplayFile()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReplayFile" /> class.
+        /// </summary>
         /// <param name="replay">The replay.</param>
         /// <param name="folderId">The folder id.</param>
         protected ReplayFile(Domain.Replay.Replay replay, Guid folderId)

@@ -21,17 +21,12 @@
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Battles}" Binding="{Binding BattlesCount}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_Won}" Binding="{Binding Wins}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_WonPercent}" Binding="{Binding WinsPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedPercent}" Binding="{Binding SurvivedBattlesPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_XP_AverageXP}" Binding="{Binding AvgXp, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AvgDamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="WN8" CellStyle="{StaticResource DataGridCellWn8Style}" Binding="{Binding WN8Rating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
-                <!--<DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Lost}" Binding="{Binding Losses}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_LostPercent}" Binding="{Binding LossesPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Draws}" Binding="{Binding Draws}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_DrawsPercent}" Binding="{Binding DrawsPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_Survived}" Binding="{Binding SurvivedBattles}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedPercent}" Binding="{Binding SurvivedBattlesPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedAndWon}" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static Resources:Resources.Column_Battles_SurvivedAndWonPercent}" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static Converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>-->
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

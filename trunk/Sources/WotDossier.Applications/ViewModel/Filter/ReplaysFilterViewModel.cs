@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -368,11 +369,11 @@ namespace WotDossier.Applications.ViewModel.Filter
         /// <typeparam name="T"></typeparam>
         /// <param name="replays">The replays.</param>
         /// <returns></returns>
-        public List<T> Filter<T>(List<T> replays) where T : ReplayFile
+        public List<ReplayFile> Filter(List<ReplayFile> replays)
         {
             if (replays == null)
             {
-                return new List<T>();
+                return new List<ReplayFile>();
             }
 
             string [] members = null;
@@ -382,7 +383,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 members = Member.Split(',');
             }
 
-            return replays.Where(x =>
+            List<ReplayFile> result = replays.Where(x =>
                                     x.Tank != null &&
                                    (x.Tank.Tier == 1 && Level1Selected
                                     || x.Tank.Tier == 2 && Level2Selected
@@ -417,7 +418,20 @@ namespace WotDossier.Applications.ViewModel.Filter
                                    && FieldFilter(x)
                                    && MembersFilter(x.TeamMembers, members)
                 ).ToList();
+
+            //var footerList = PrepareToReturn(result, SelectedFolder != null ? SelectedFolder.Id : Guid.NewGuid());
+
+            return result;
         }
+
+        //private static List<ReplayFile> PrepareToReturn(List<ReplayFile> result, Guid folderId)
+        //{
+        //    List<ReplayFile> footerList = new FooterList<ReplayFile>(result);
+
+        //    footerList.Insert(0, new TotalReplayFile(result, folderId));
+
+        //    return footerList;
+        //}
 
         private bool MembersFilter(List<Vehicle> vehicles, string[] members)
         {

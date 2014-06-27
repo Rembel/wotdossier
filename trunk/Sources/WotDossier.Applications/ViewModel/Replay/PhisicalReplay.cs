@@ -129,13 +129,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             if (PhisicalFile != null)
             {
-                if (ClientVersion < WotFileHelper.JsonFormatedReplay_MinVersion)
-                {
-                    //convert dossier cache file to json
-                    string jsonFile = WotFileHelper.ReplayToJson(PhisicalFile, readAdvancedData);
-                    return WotFileHelper.LoadReplay(jsonFile);
-                }
-                return WotFileHelper.LoadReplay(PhisicalFile, readAdvancedData);
+                return WotFileHelper.ParseReplay(PhisicalFile, ClientVersion, readAdvancedData);
             }
             return null;
         }

@@ -243,20 +243,24 @@ namespace WotDossier.Applications
         /// <summary>
         /// Loads the replay.
         /// </summary>
-        /// <param name="replayFilePath">The replay file path.</param>
+        /// <param name="replayFile">The replay file.</param>
+        /// <param name="readAdvancedData">if set to <c>true</c> [read advanced data].</param>
         /// <returns></returns>
-        public static Replay LoadReplay(string replayFilePath)
+        public static Replay ParseReplay_8_0(FileInfo replayFile, bool readAdvancedData = false)
         {
+            //convert dossier cache file to json
+            string jsonFile = ReplayToJson(replayFile, readAdvancedData);
+
             Replay replay;
 
-            using (StreamReader re = new StreamReader(replayFilePath))
+            using (StreamReader re = new StreamReader(jsonFile))
             {
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
                 replay = se.Deserialize<Replay>(reader);
             }
 
-            using (StreamReader re = new StreamReader(replayFilePath))
+            using (StreamReader re = new StreamReader(jsonFile))
             {
                 JsonTextReader reader = new JsonTextReader(re);
                 JsonSerializer se = new JsonSerializer();
@@ -278,35 +282,29 @@ namespace WotDossier.Applications
         /// <param name="file">The replay file.</param>
         /// <param name="readAdvancedData">if set to <c>true</c> [read advanced data].</param>
         /// <returns></returns>
-        public static Replay LoadReplay(FileInfo file, bool readAdvancedData = false)
+        public static Replay ParseReplay_8_11(FileInfo file, bool readAdvancedData = false)
         {
             string path = file.FullName;
-            string str = string.Empty;
-            string str2 = string.Empty;
+            string firstBlockJson = string.Empty;
+            string battleResultBlockJson = string.Empty;
             if (File.Exists(path))
             {
                 using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    int count = 0;
+                    int blockLength = 0;
+                    int blocksCount = 0;
                     byte[] buffer = new byte[4];
                     stream.Read(buffer, 0, 4);
                     if (buffer[0] != 0x21)
                     {
-                        stream.Read(buffer, 0, 4);
-                        stream.Read(buffer, 0, 4);
-                        count = ((buffer[0] + (0x100*buffer[1])) + (0x10000*buffer[2])) + (0x1000000*buffer[3]);
+                        blocksCount = (int) stream.Read(4).ConvertLittleEndian();
+                        blockLength = (int)stream.Read(4).ConvertLittleEndian();
                     }
-                    byte[] buffer2 = new byte[count];
-                    stream.Read(buffer2, 0, count);
-                    ASCIIEncoding encoding = new ASCIIEncoding();
-                    str = encoding.GetString(buffer2);
-                    if (count > 0)
+                    firstBlockJson = stream.Read(blockLength).GetAsciiString();
+                    if (blockLength > 0 && blocksCount > 1)
                     {
-                        stream.Read(buffer, 0, 4);
-                        count = ((buffer[0] + (0x100*buffer[1])) + (0x10000*buffer[2])) + (0x1000000*buffer[3]);
-                        buffer2 = new byte[count];
-                        stream.Read(buffer2, 0, count);
-                        str2 = encoding.GetString(buffer2);
+                        blockLength = (int)stream.Read(4).ConvertLittleEndian();
+                        battleResultBlockJson = stream.Read(blockLength).GetAsciiString();
                     }
 
                     FirstBlock firstBlock = null;
@@ -314,9 +312,9 @@ namespace WotDossier.Applications
                     BattleResult battleResult = null;
                     AdvancedReplayData advancedReplayData = null;
 
-                    if (str.Length > 0)
+                    if (firstBlockJson.Length > 0)
                     {
-                        firstBlock = JsonConvert.DeserializeObject<FirstBlock>(str);
+                        firstBlock = JsonConvert.DeserializeObject<FirstBlock>(firstBlockJson);
                     }
 
                     if (firstBlock != null)
@@ -324,17 +322,20 @@ namespace WotDossier.Applications
 
                         try
                         {
-                            var parsedData = JsonConvert.DeserializeObject<JArray>(str2);
-                            if (parsedData.Count > 0)
+                            if (blocksCount > 1)
                             {
-                                if (firstBlock.Version < JsonFormatedReplay_MinVersion)
+                                var parsedData = JsonConvert.DeserializeObject<JArray>(battleResultBlockJson);
+                                if (parsedData.Count > 0)
                                 {
-                                    commandResult = parsedData[0].ToObject<PlayerResult>();
-                                }
-                                else
-                                {
-                                    battleResult = parsedData[0].ToObject<BattleResult>();
-                                    firstBlock.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
+                                    if (firstBlock.Version < JsonFormatedReplay_MinVersion)
+                                    {
+                                        commandResult = parsedData[0].ToObject<PlayerResult>();
+                                    }
+                                    else
+                                    {
+                                        battleResult = parsedData[0].ToObject<BattleResult>();
+                                        firstBlock.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
+                                    }
                                 }
                             }
 
@@ -345,11 +346,10 @@ namespace WotDossier.Applications
                                 buffer = new byte[length];
                                 stream.Seek(startPosition, SeekOrigin.Current);
                                 stream.Read(buffer, 0, length);
-
+                                
                                 byte[] decrypt = Decrypt(buffer);
-
                                 byte[] uncompressed = Decompress(decrypt);
-
+                                
                                 advancedReplayData = ExtractAdvanced(uncompressed);
                             }
                         }
@@ -389,7 +389,7 @@ namespace WotDossier.Applications
 
                 f.Seek(3, SeekOrigin.Current);
 
-                advanced.replay_version = f.Read(versionlength).GetString();
+                advanced.replay_version = f.Read(versionlength).GetUtf8String();
                 advanced.replay_version = advanced.replay_version.Replace(", ", ".");
                 advanced.replay_version = advanced.replay_version.Replace(". ", ".");
                 advanced.replay_version = advanced.replay_version.Replace(' ', '.');
@@ -398,7 +398,7 @@ namespace WotDossier.Applications
 
                 int playernamelength = (int) f.Read(1).ConvertLittleEndian();
 
-                advanced.playername = f.Read(playernamelength).GetString();
+                advanced.playername = f.Read(playernamelength).GetUtf8String();
                 advanced.arenaUniqueID = (long) f.Read(8).ConvertLittleEndian();
                 advanced.arenaCreateTime = advanced.arenaUniqueID & 4294967295L;
 
@@ -640,6 +640,15 @@ namespace WotDossier.Applications
             byte[] decodedFileNameBytes = encoder.Decode(str.ToLowerInvariant());
             string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
             return decodedFileName;
+        }
+
+        public static Replay ParseReplay(FileInfo phisicalFile, Version clientVersion, bool readAdvancedData)
+        {
+            if (clientVersion < JsonFormatedReplay_MinVersion)
+            {
+                return ParseReplay_8_0(phisicalFile, readAdvancedData);
+            }
+            return ParseReplay_8_11(phisicalFile, readAdvancedData);
         }
     }
 }

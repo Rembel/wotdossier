@@ -35,7 +35,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         public override string Name
         {
-            get { throw null; }
+            get { return null; }
         }
 
         /// <summary>

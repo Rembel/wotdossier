@@ -202,8 +202,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
-            WotFileHelper.ReplayToJson(cacheFile);
-            Replay replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -212,8 +211,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay"));
-            WotFileHelper.ReplayToJson(cacheFile);
-            Replay replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -222,8 +220,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay"));
-            WotFileHelper.ReplayToJson(cacheFile);
-            Replay replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -232,8 +229,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.8\20130908_2025_usa-M103_14_siegfried_line.wotreplay"));
-            WotFileHelper.ReplayToJson(cacheFile);
-            Replay replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -242,8 +238,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.9\20131016_0035_ussr-Object263_37_caucasus.wotreplay"));
-            WotFileHelper.ReplayToJson(cacheFile);
-            Replay replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -252,8 +247,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay"));
-            WotFileHelper.ReplayToJson(cacheFile);
-            Replay replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -263,16 +257,11 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.11\20140126_2109_ussr-T-54_14_siegfried_line.wotreplay"));
 
-            Replay replay = WotFileHelper.LoadReplay(cacheFile);
-            Assert.IsNotNull(replay);
-            Assert.IsNotNull(replay.datablock_battle_result);
-            WotFileHelper.ReplayToJson(cacheFile);
-            replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile, true);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
         }
-
-
+        
         [Test]
         public void ReplayTest_090()
         {
@@ -280,19 +269,16 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.9.0\13954715200495_germany_PzVI_prohorovka.wotreplay"));
 
-            Replay replay = WotFileHelper.LoadReplay(cacheFile, true);
-            Assert.IsNotNull(replay);
-            Assert.IsNotNull(replay.datablock_battle_result);
-            WotFileHelper.ReplayToJson(cacheFile);
-            replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile, true);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
         }
+
         [Test]
         public void ReplayTest()
         {
             FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
-            Replay replay = WotFileHelper.LoadReplay(cacheFile);
+            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile);
         }
 
         #endregion
@@ -703,15 +689,14 @@ namespace WotDossier.Test
             FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay"));
             StopWatch watch = new StopWatch();
             watch.Reset();
-            Replay replay = WotFileHelper.LoadReplay(cacheFile, true);
+            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile, true);
             Console.WriteLine(watch.PeekMs());
 
             string serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
             serializeObject.Dump(cacheFile.FullName + "_1");
 
             watch.Reset();
-            WotFileHelper.ReplayToJson(cacheFile, true);
-            replay = WotFileHelper.LoadReplay(cacheFile.FullName.Replace(cacheFile.Extension, ".json"));
+            replay = WotFileHelper.ParseReplay_8_11(cacheFile);
             Console.WriteLine(watch.PeekMs());
 
             serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);

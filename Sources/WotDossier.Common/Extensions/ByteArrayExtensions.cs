@@ -38,9 +38,14 @@ namespace WotDossier.Common.Extensions
             return result;
         }
 
-        public static string GetString(this byte[] bytes)
+        public static string GetUtf8String(this byte[] bytes)
         {
             return Encoding.UTF8.GetString(bytes);
+        }
+
+        public static string GetAsciiString(this byte[] bytes)
+        {
+            return Encoding.ASCII.GetString(bytes);
         }
 
         public static byte[] GetBytes(this string str)

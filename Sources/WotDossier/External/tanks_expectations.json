@@ -3,60 +3,60 @@
     "tank_title": "113",
     "icon": "Ch22_113",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1748.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.23,
-    "wn8_nominal_frags": 0.88,
-    "wn8_nominal_defence": 0.66
+    "wn8_nominal_damage": 1746.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 1.31,
+    "wn8_nominal_frags": 0.84,
+    "wn8_nominal_defence": 0.61
   },
   {
     "tank_title": "E-100",
     "icon": "E-100",
     "pr_nominal_damage": 2300.0,
-    "wn8_nominal_damage": 1836.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.98,
+    "wn8_nominal_damage": 1923.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.03,
     "wn8_nominal_frags": 0.94,
-    "wn8_nominal_defence": 0.52
+    "wn8_nominal_defence": 0.53
   },
   {
     "tank_title": "FV215b",
     "icon": "GB13_FV215b",
     "pr_nominal_damage": 2300.0,
-    "wn8_nominal_damage": 1859.0,
-    "wn8_nominal_win_rate": 47.0,
-    "wn8_nominal_spotted": 1.06,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 0.76
+    "wn8_nominal_damage": 1867.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 1.1,
+    "wn8_nominal_frags": 0.91,
+    "wn8_nominal_defence": 0.69
   },
   {
     "tank_title": "IS-4",
     "icon": "IS-4",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1791.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.08,
-    "wn8_nominal_frags": 0.91,
+    "wn8_nominal_damage": 1831.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 1.12,
+    "wn8_nominal_frags": 0.9,
     "wn8_nominal_defence": 0.78
   },
   {
     "tank_title": "IS-7",
     "icon": "IS-7",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1700.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.13,
+    "wn8_nominal_damage": 1744.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 1.22,
     "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.56
+    "wn8_nominal_defence": 0.62
   },
   {
     "tank_title": "Maus",
     "icon": "Maus",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1631.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.89,
-    "wn8_nominal_frags": 0.82,
+    "wn8_nominal_damage": 1723.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 0.95,
+    "wn8_nominal_frags": 0.83,
     "wn8_nominal_defence": 0.68
   },
   {
@@ -64,40 +64,40 @@
     "icon": "T110",
     "pr_nominal_damage": 2400.0,
     "wn8_nominal_damage": 1802.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.19,
-    "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 0.74
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 1.22,
+    "wn8_nominal_frags": 0.88,
+    "wn8_nominal_defence": 0.73
   },
   {
     "tank_title": "T57 Heavy",
     "icon": "T57_58",
     "pr_nominal_damage": 2550.0,
-    "wn8_nominal_damage": 2159.0,
-    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_damage": 2164.0,
+    "wn8_nominal_win_rate": 50.0,
     "wn8_nominal_spotted": 0.85,
-    "wn8_nominal_frags": 1.16,
-    "wn8_nominal_defence": 0.78
+    "wn8_nominal_frags": 1.15,
+    "wn8_nominal_defence": 0.76
   },
   {
     "tank_title": "AMX 50B",
     "icon": "F10_AMX_50B",
     "pr_nominal_damage": 2450.0,
-    "wn8_nominal_damage": 1915.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.03,
-    "wn8_nominal_frags": 1.07,
-    "wn8_nominal_defence": 0.87
+    "wn8_nominal_damage": 1960.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 0.98,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "VK 72.02 (K)",
     "icon": "VK7201",
     "pr_nominal_damage": 2300.0,
-    "wn8_nominal_damage": 1700.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.13,
-    "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.56
+    "wn8_nominal_damage": 1938.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 1.14,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 0.45
   },
   {
     "tank_title": "Object 907",
@@ -113,151 +113,151 @@
     "tank_title": "121",
     "icon": "Ch19_121",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1704.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.39,
-    "wn8_nominal_frags": 0.95,
-    "wn8_nominal_defence": 0.69
+    "wn8_nominal_damage": 1766.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 1.45,
+    "wn8_nominal_frags": 0.93,
+    "wn8_nominal_defence": 0.65
   },
   {
     "tank_title": "Bat Chatillon 25 t",
     "icon": "Bat_Chatillon25t",
     "pr_nominal_damage": 2100.0,
-    "wn8_nominal_damage": 1761.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 2.12,
-    "wn8_nominal_frags": 1.19,
-    "wn8_nominal_defence": 0.84
+    "wn8_nominal_damage": 1782.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 2.14,
+    "wn8_nominal_frags": 1.11,
+    "wn8_nominal_defence": 0.86
   },
   {
     "tank_title": "E-50 Ausf. M",
     "icon": "E50_Ausf_M",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1701.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.42,
-    "wn8_nominal_frags": 0.94,
-    "wn8_nominal_defence": 0.66
+    "wn8_nominal_damage": 1765.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 1.47,
+    "wn8_nominal_frags": 0.9,
+    "wn8_nominal_defence": 0.7
   },
   {
     "tank_title": "FV4202",
     "icon": "GB70_FV4202_105",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1726.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 1.34,
-    "wn8_nominal_frags": 0.93,
-    "wn8_nominal_defence": 0.6
+    "wn8_nominal_damage": 1786.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 1.41,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.75
   },
   {
     "tank_title": "Leopard 1",
     "icon": "Leopard1",
     "pr_nominal_damage": 2100.0,
-    "wn8_nominal_damage": 1736.0,
-    "wn8_nominal_win_rate": 47.0,
-    "wn8_nominal_spotted": 1.46,
-    "wn8_nominal_frags": 0.93,
-    "wn8_nominal_defence": 0.82
+    "wn8_nominal_damage": 1785.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 1.69,
+    "wn8_nominal_frags": 0.94,
+    "wn8_nominal_defence": 0.89
   },
   {
     "tank_title": "M48A1",
     "icon": "M48A1",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1716.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.58,
-    "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 0.63
+    "wn8_nominal_damage": 1708.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 1.64,
+    "wn8_nominal_frags": 0.9,
+    "wn8_nominal_defence": 0.64
   },
   {
     "tank_title": "M60",
     "icon": "M60",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1735.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 1.31,
-    "wn8_nominal_frags": 0.91,
-    "wn8_nominal_defence": 0.6
+    "wn8_nominal_damage": 1698.0,
+    "wn8_nominal_win_rate": 46.0,
+    "wn8_nominal_spotted": 1.54,
+    "wn8_nominal_frags": 0.84,
+    "wn8_nominal_defence": 0.73
   },
   {
     "tank_title": "Object 140",
     "icon": "Object_140",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1682.0,
+    "wn8_nominal_damage": 1772.0,
     "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.61,
+    "wn8_nominal_spotted": 1.76,
     "wn8_nominal_frags": 0.98,
-    "wn8_nominal_defence": 0.74
+    "wn8_nominal_defence": 0.81
   },
   {
     "tank_title": "T62A",
     "icon": "T62A",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1682.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.61,
-    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_damage": 1677.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 1.67,
+    "wn8_nominal_frags": 0.93,
     "wn8_nominal_defence": 0.74
   },
   {
     "tank_title": "STB-1",
     "icon": "ST_B1",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1736.0,
-    "wn8_nominal_win_rate": 47.0,
-    "wn8_nominal_spotted": 1.46,
-    "wn8_nominal_frags": 0.93,
-    "wn8_nominal_defence": 0.82
+    "wn8_nominal_damage": 1859.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.63,
+    "wn8_nominal_frags": 1.0,
+    "wn8_nominal_defence": 0.81
   },
   {
     "tank_title": "Object 430",
     "icon": "Object_430",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1682.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.61,
+    "wn8_nominal_damage": 1730.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.73,
     "wn8_nominal_frags": 0.98,
-    "wn8_nominal_defence": 0.74
+    "wn8_nominal_defence": 0.81
   },
   {
     "tank_title": "Conqueror Gun Carriage",
     "icon": "GB31_Conqueror_Gun",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1778.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.08,
-    "wn8_nominal_frags": 0.87,
-    "wn8_nominal_defence": 0.58
+    "wn8_nominal_damage": 2176.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.03,
+    "wn8_nominal_frags": 1.04,
+    "wn8_nominal_defence": 0.89
   },
   {
     "tank_title": "GW E 100",
     "icon": "G_E",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1651.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.08,
-    "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.56
+    "wn8_nominal_damage": 1792.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 0.04,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 0.61
   },
   {
     "tank_title": "Object 261",
     "icon": "Object_261",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1682.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.08,
-    "wn8_nominal_frags": 0.91,
-    "wn8_nominal_defence": 0.65
+    "wn8_nominal_damage": 1846.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 0.05,
+    "wn8_nominal_frags": 0.99,
+    "wn8_nominal_defence": 0.82
   },
   {
     "tank_title": "T92",
     "icon": "T92",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1693.0,
+    "wn8_nominal_damage": 1800.0,
     "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.08,
-    "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.58
+    "wn8_nominal_spotted": 0.04,
+    "wn8_nominal_frags": 0.93,
+    "wn8_nominal_defence": 0.65
   },
   {
     "tank_title": "Bat Chatillon 155 58",
@@ -273,551 +273,551 @@
     "tank_title": "Bat Chatillon 155",
     "icon": "Bat_Chatillon155",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1682.0,
-    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_damage": 1813.0,
+    "wn8_nominal_win_rate": 48.0,
     "wn8_nominal_spotted": 0.08,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 0.94
+    "wn8_nominal_frags": 1.08,
+    "wn8_nominal_defence": 1.14
   },
   {
     "tank_title": "AMX 50 Foch 155",
     "icon": "AMX_50Fosh_155",
     "pr_nominal_damage": 2800.0,
-    "wn8_nominal_damage": 2296.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.95,
-    "wn8_nominal_frags": 1.33,
-    "wn8_nominal_defence": 0.68
+    "wn8_nominal_damage": 2362.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.96,
+    "wn8_nominal_frags": 1.29,
+    "wn8_nominal_defence": 0.74
   },
   {
     "tank_title": "FV215b (183)",
     "icon": "GB48_FV215b_183",
     "pr_nominal_damage": 2500.0,
-    "wn8_nominal_damage": 2179.0,
+    "wn8_nominal_damage": 2320.0,
     "wn8_nominal_win_rate": 49.0,
     "wn8_nominal_spotted": 0.6,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 0.58
+    "wn8_nominal_frags": 1.25,
+    "wn8_nominal_defence": 0.56
   },
   {
     "tank_title": "JagdPz E-100",
     "icon": "JagdPz_E100",
     "pr_nominal_damage": 2400.0,
-    "wn8_nominal_damage": 1943.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.66,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 0.49
+    "wn8_nominal_damage": 2129.0,
+    "wn8_nominal_win_rate": 48.0,
+    "wn8_nominal_spotted": 0.67,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 0.52
   },
   {
     "tank_title": "Object 263",
     "icon": "Object263",
     "pr_nominal_damage": 2500.0,
-    "wn8_nominal_damage": 2027.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.94,
-    "wn8_nominal_frags": 1.13,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_damage": 2151.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.99,
+    "wn8_nominal_frags": 1.11,
+    "wn8_nominal_defence": 0.84
   },
   {
     "tank_title": "Object 268",
     "icon": "Object268",
     "pr_nominal_damage": 2700.0,
-    "wn8_nominal_damage": 2219.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.85,
-    "wn8_nominal_frags": 1.21,
-    "wn8_nominal_defence": 0.71
+    "wn8_nominal_damage": 2315.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 0.87,
+    "wn8_nominal_frags": 1.19,
+    "wn8_nominal_defence": 0.75
   },
   {
     "tank_title": "T110E3",
     "icon": "T110E3",
     "pr_nominal_damage": 2650.0,
-    "wn8_nominal_damage": 2072.0,
+    "wn8_nominal_damage": 2291.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.73,
-    "wn8_nominal_frags": 1.1,
-    "wn8_nominal_defence": 0.5
+    "wn8_nominal_spotted": 0.81,
+    "wn8_nominal_frags": 1.14,
+    "wn8_nominal_defence": 0.59
   },
   {
     "tank_title": "T110E4",
     "icon": "T110E4",
     "pr_nominal_damage": 2650.0,
-    "wn8_nominal_damage": 2053.0,
+    "wn8_nominal_damage": 2168.0,
     "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.81,
-    "wn8_nominal_frags": 1.03,
-    "wn8_nominal_defence": 0.56
+    "wn8_nominal_spotted": 0.85,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 0.6
   },
   {
     "tank_title": "Waffenträger auf E 100",
     "icon": "Waffentrager_E100",
     "pr_nominal_damage": 2650.0,
-    "wn8_nominal_damage": 2388.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.95,
-    "wn8_nominal_frags": 1.4,
-    "wn8_nominal_defence": 0.68
+    "wn8_nominal_damage": 2562.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.55,
+    "wn8_nominal_frags": 1.53,
+    "wn8_nominal_defence": 0.84
   },
   {
     "tank_title": "AMX 50 120",
     "icon": "AMX_50_120",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1692.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.9,
-    "wn8_nominal_frags": 1.12,
-    "wn8_nominal_defence": 0.87
+    "wn8_nominal_damage": 1680.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.91,
+    "wn8_nominal_frags": 1.06,
+    "wn8_nominal_defence": 0.82
   },
   {
     "tank_title": "Conqueror Mk.1",
     "icon": "GB12_Conqueror",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1604.0,
+    "wn8_nominal_damage": 1595.0,
     "wn8_nominal_win_rate": 50.0,
     "wn8_nominal_spotted": 1.04,
-    "wn8_nominal_frags": 0.9,
+    "wn8_nominal_frags": 0.88,
     "wn8_nominal_defence": 0.68
   },
   {
     "tank_title": "E-75",
     "icon": "E-75",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1595.0,
+    "wn8_nominal_damage": 1604.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.0,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 0.69
+    "wn8_nominal_spotted": 1.08,
+    "wn8_nominal_frags": 0.93,
+    "wn8_nominal_defence": 0.7
   },
   {
     "tank_title": "IS-8",
     "icon": "IS8",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1571.0,
+    "wn8_nominal_damage": 1548.0,
     "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.12,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 0.67
+    "wn8_nominal_spotted": 1.15,
+    "wn8_nominal_frags": 0.91,
+    "wn8_nominal_defence": 0.69
   },
   {
     "tank_title": "M103",
     "icon": "M103",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1578.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.09,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 0.67
+    "wn8_nominal_damage": 1572.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.13,
+    "wn8_nominal_frags": 0.9,
+    "wn8_nominal_defence": 0.7
   },
   {
     "tank_title": "ST-I",
     "icon": "ST_I",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1608.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.92,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 0.7
+    "wn8_nominal_damage": 1669.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.97,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 0.67
   },
   {
     "tank_title": "VK 4502 (P) Ausf. B",
     "icon": "VK4502P",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1488.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.93,
-    "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 0.6
+    "wn8_nominal_damage": 1495.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 0.95,
+    "wn8_nominal_frags": 0.86,
+    "wn8_nominal_defence": 0.64
   },
   {
     "tank_title": "WZ-111 model 1-4",
     "icon": "Ch12_111_1_2_3",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1586.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.34,
-    "wn8_nominal_frags": 0.91,
-    "wn8_nominal_defence": 0.54
+    "wn8_nominal_damage": 1639.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.32,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.62
   },
   {
     "tank_title": "Centurion Mk.7",
     "icon": "GB24_Centurion_Mk3",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1503.0,
+    "wn8_nominal_damage": 1546.0,
     "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.22,
+    "wn8_nominal_spotted": 1.29,
     "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 0.79
+    "wn8_nominal_defence": 0.84
   },
   {
     "tank_title": "E-50",
     "icon": "E-50",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1518.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.47,
-    "wn8_nominal_frags": 1.01,
-    "wn8_nominal_defence": 0.82
+    "wn8_nominal_damage": 1490.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.48,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.71
   },
   {
     "tank_title": "Leopard prototyp A",
     "icon": "Pro_Ag_A",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1485.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.27,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 1.09
+    "wn8_nominal_damage": 1466.0,
+    "wn8_nominal_win_rate": 49.0,
+    "wn8_nominal_spotted": 1.42,
+    "wn8_nominal_frags": 0.87,
+    "wn8_nominal_defence": 0.93
   },
   {
     "tank_title": "Lorraine 40 t",
     "icon": "Lorraine40t",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1380.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.47,
-    "wn8_nominal_frags": 1.09,
-    "wn8_nominal_defence": 0.95
+    "wn8_nominal_damage": 1394.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.41,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "M46 Patton",
     "icon": "M46_Patton",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1503.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.64,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 0.81
+    "wn8_nominal_damage": 1456.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.71,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.74
   },
   {
     "tank_title": "T-54",
     "icon": "T-54",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1568.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.9,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 0.95
+    "wn8_nominal_damage": 1529.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.86,
+    "wn8_nominal_frags": 1.01,
+    "wn8_nominal_defence": 0.86
   },
   {
     "tank_title": "T54E1",
     "icon": "T54E1",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1670.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.05,
-    "wn8_nominal_frags": 1.14,
-    "wn8_nominal_defence": 0.81
+    "wn8_nominal_damage": 1688.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.06,
+    "wn8_nominal_frags": 1.13,
+    "wn8_nominal_defence": 0.78
   },
   {
     "tank_title": "WZ-120",
     "icon": "Ch18_WZ-120",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1524.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.64,
-    "wn8_nominal_frags": 0.99,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_damage": 1473.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.59,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.69
   },
   {
     "tank_title": "Object 430 II",
     "icon": "R104_Object_430_II",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1524.0,
-    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_damage": 1551.0,
+    "wn8_nominal_win_rate": 54.0,
     "wn8_nominal_spotted": 1.64,
-    "wn8_nominal_frags": 0.99,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_frags": 1.03,
+    "wn8_nominal_defence": 0.86
   },
   {
     "tank_title": "Type 61",
     "icon": "Type_61",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1524.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.64,
+    "wn8_nominal_damage": 1619.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.37,
     "wn8_nominal_frags": 0.99,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_defence": 0.81
   },
   {
     "tank_title": "Object 212",
     "icon": "Object_212",
     "pr_nominal_damage": 1950.0,
-    "wn8_nominal_damage": 1556.0,
+    "wn8_nominal_damage": 1639.0,
     "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.85,
-    "wn8_nominal_defence": 0.57
+    "wn8_nominal_spotted": 0.03,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 0.65
   },
   {
     "tank_title": "Bat Chatillon 155 55",
     "icon": "Bat_Chatillon155_55",
     "pr_nominal_damage": 2000.0,
-    "wn8_nominal_damage": 1576.0,
+    "wn8_nominal_damage": 1624.0,
     "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 0.59
+    "wn8_nominal_spotted": 0.05,
+    "wn8_nominal_frags": 0.96,
+    "wn8_nominal_defence": 0.99
   },
   {
     "tank_title": "FV3805",
     "icon": "GB30_FV3805",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1619.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.58
+    "wn8_nominal_damage": 1691.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.03,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 0.74
   },
   {
     "tank_title": "GW Tiger",
     "icon": "G_Tiger",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1552.0,
+    "wn8_nominal_damage": 1559.0,
     "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.61
+    "wn8_nominal_spotted": 0.04,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.62
   },
   {
     "tank_title": "M53/M55",
     "icon": "M53_55",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1619.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.58
+    "wn8_nominal_damage": 1740.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.04,
+    "wn8_nominal_frags": 1.0,
+    "wn8_nominal_defence": 0.84
   },
   {
     "tank_title": "AMX 50 Foch",
     "icon": "AMX50_Foch",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1674.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.97,
-    "wn8_nominal_frags": 1.03,
-    "wn8_nominal_defence": 0.9
+    "wn8_nominal_damage": 1663.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.01,
+    "wn8_nominal_frags": 1.0,
+    "wn8_nominal_defence": 0.91
   },
   {
     "tank_title": "Jagdtiger",
     "icon": "JagdTiger",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1777.0,
+    "wn8_nominal_damage": 1825.0,
     "wn8_nominal_win_rate": 50.0,
     "wn8_nominal_spotted": 0.66,
-    "wn8_nominal_frags": 1.09,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_frags": 1.08,
+    "wn8_nominal_defence": 0.8
   },
   {
     "tank_title": "Object 704",
     "icon": "Object_704",
     "pr_nominal_damage": 2400.0,
-    "wn8_nominal_damage": 1842.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.69,
-    "wn8_nominal_frags": 1.16,
-    "wn8_nominal_defence": 0.7
+    "wn8_nominal_damage": 2044.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.71,
+    "wn8_nominal_frags": 1.25,
+    "wn8_nominal_defence": 0.8
   },
   {
     "tank_title": "SU-122-54",
     "icon": "SU122_54",
     "pr_nominal_damage": 2100.0,
-    "wn8_nominal_damage": 1575.0,
+    "wn8_nominal_damage": 1542.0,
     "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.96,
-    "wn8_nominal_frags": 1.06,
-    "wn8_nominal_defence": 0.94
+    "wn8_nominal_spotted": 0.95,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 0.89
   },
   {
     "tank_title": "T30",
     "icon": "T30",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1733.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.72,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 0.64
+    "wn8_nominal_damage": 1772.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.77,
+    "wn8_nominal_frags": 1.03,
+    "wn8_nominal_defence": 0.63
   },
   {
     "tank_title": "T95",
     "icon": "T95",
     "pr_nominal_damage": 2100.0,
-    "wn8_nominal_damage": 1646.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.46,
-    "wn8_nominal_frags": 1.06,
-    "wn8_nominal_defence": 0.76
+    "wn8_nominal_damage": 1779.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.51,
+    "wn8_nominal_frags": 1.08,
+    "wn8_nominal_defence": 0.65
   },
   {
     "tank_title": "Tortoise",
     "icon": "GB32_Tortoise",
     "pr_nominal_damage": 2250.0,
-    "wn8_nominal_damage": 1772.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.57,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_damage": 1825.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.64,
+    "wn8_nominal_frags": 1.09,
+    "wn8_nominal_defence": 0.88
   },
   {
     "tank_title": "Waffenträger auf Pz. IV",
     "icon": "Waffentrager_IV",
     "pr_nominal_damage": 2200.0,
-    "wn8_nominal_damage": 1842.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.69,
-    "wn8_nominal_frags": 1.16,
-    "wn8_nominal_defence": 0.7
+    "wn8_nominal_damage": 1972.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.7,
+    "wn8_nominal_frags": 1.2,
+    "wn8_nominal_defence": 0.92
   },
   {
     "tank_title": "110",
     "icon": "Ch11_110",
     "pr_nominal_damage": 1600.0,
-    "wn8_nominal_damage": 1347.0,
+    "wn8_nominal_damage": 1318.0,
     "wn8_nominal_win_rate": 53.0,
     "wn8_nominal_spotted": 1.17,
     "wn8_nominal_frags": 0.94,
-    "wn8_nominal_defence": 0.87
+    "wn8_nominal_defence": 0.83
   },
   {
     "tank_title": "112",
     "icon": "Ch23_112",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1415.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.11,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 0.91
+    "wn8_nominal_damage": 1324.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 1.35,
+    "wn8_nominal_frags": 1.0,
+    "wn8_nominal_defence": 0.86
   },
   {
     "tank_title": "AMX 50 100",
     "icon": "AMX_50_100",
     "pr_nominal_damage": 1700.0,
-    "wn8_nominal_damage": 1417.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.97,
+    "wn8_nominal_damage": 1411.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.95,
     "wn8_nominal_frags": 1.12,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_defence": 1.04
   },
   {
     "tank_title": "Caernarvon",
     "icon": "GB11_Caernarvon",
     "pr_nominal_damage": 1500.0,
-    "wn8_nominal_damage": 1257.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.06,
-    "wn8_nominal_frags": 0.84,
-    "wn8_nominal_defence": 0.87
+    "wn8_nominal_damage": 1226.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.12,
+    "wn8_nominal_frags": 0.83,
+    "wn8_nominal_defence": 0.96
   },
   {
     "tank_title": "FCM 50t",
     "icon": "FCM_50t",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1312.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.37,
-    "wn8_nominal_frags": 1.0,
-    "wn8_nominal_defence": 1.11
+    "wn8_nominal_damage": 1255.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.52,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 1.08
   },
   {
     "tank_title": "IS-3",
     "icon": "IS-3",
     "pr_nominal_damage": 1450.0,
-    "wn8_nominal_damage": 1346.0,
+    "wn8_nominal_damage": 1336.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.03,
-    "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_spotted": 1.06,
+    "wn8_nominal_frags": 0.96,
+    "wn8_nominal_defence": 0.78
   },
   {
     "tank_title": "KV-4",
     "icon": "KV4",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1223.0,
+    "wn8_nominal_damage": 1212.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.79,
-    "wn8_nominal_frags": 0.85,
-    "wn8_nominal_defence": 0.71
+    "wn8_nominal_spotted": 0.85,
+    "wn8_nominal_frags": 0.84,
+    "wn8_nominal_defence": 0.73
   },
   {
     "tank_title": "KV-5",
     "icon": "KV-5",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1248.0,
-    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_damage": 1252.0,
+    "wn8_nominal_win_rate": 51.0,
     "wn8_nominal_spotted": 1.11,
-    "wn8_nominal_frags": 1.0,
-    "wn8_nominal_defence": 0.91
+    "wn8_nominal_frags": 0.99,
+    "wn8_nominal_defence": 0.87
   },
   {
     "tank_title": "Löwe",
     "icon": "Lowe",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1221.0,
+    "wn8_nominal_damage": 1228.0,
     "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.84,
+    "wn8_nominal_spotted": 0.88,
     "wn8_nominal_frags": 0.83,
-    "wn8_nominal_defence": 0.79
+    "wn8_nominal_defence": 0.86
   },
   {
     "tank_title": "M6A2E1",
     "icon": "M6A2E1",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1113.0,
+    "wn8_nominal_damage": 1122.0,
     "wn8_nominal_win_rate": 47.0,
-    "wn8_nominal_spotted": 1.22,
-    "wn8_nominal_frags": 0.87,
-    "wn8_nominal_defence": 0.8
+    "wn8_nominal_spotted": 1.19,
+    "wn8_nominal_frags": 0.86,
+    "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "PzKpfw VIB Tiger II",
     "icon": "PzVIB_Tiger_II",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1261.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.99,
-    "wn8_nominal_frags": 0.89,
-    "wn8_nominal_defence": 0.83
+    "wn8_nominal_damage": 1250.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.01,
+    "wn8_nominal_frags": 0.88,
+    "wn8_nominal_defence": 0.84
   },
   {
     "tank_title": "T32",
     "icon": "T32",
     "pr_nominal_damage": 1450.0,
-    "wn8_nominal_damage": 1336.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.21,
-    "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 0.92
+    "wn8_nominal_damage": 1310.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.25,
+    "wn8_nominal_frags": 0.94,
+    "wn8_nominal_defence": 0.95
   },
   {
     "tank_title": "T34",
     "icon": "T34_hvy",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1313.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.81,
-    "wn8_nominal_frags": 0.87,
-    "wn8_nominal_defence": 0.68
+    "wn8_nominal_damage": 1305.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.84,
+    "wn8_nominal_frags": 0.86,
+    "wn8_nominal_defence": 0.71
   },
   {
     "tank_title": "VK 4502 (P) Ausf. A",
     "icon": "VK4502A",
     "pr_nominal_damage": 1450.0,
-    "wn8_nominal_damage": 1258.0,
+    "wn8_nominal_damage": 1232.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.25,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 0.89
+    "wn8_nominal_spotted": 1.28,
+    "wn8_nominal_frags": 0.9,
+    "wn8_nominal_defence": 0.85
   },
   {
     "tank_title": "IS-6",
     "icon": "Object252",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1415.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.11,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 0.91
+    "wn8_nominal_damage": 1425.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 1.19,
+    "wn8_nominal_frags": 1.13,
+    "wn8_nominal_defence": 0.85
   },
   {
     "tank_title": "WZ-111",
@@ -833,21 +833,21 @@
     "tank_title": "AMX 13 90",
     "icon": "AMX_13_90",
     "pr_nominal_damage": 1000.0,
-    "wn8_nominal_damage": 846.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 2.37,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.66
+    "wn8_nominal_damage": 835.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 2.53,
+    "wn8_nominal_frags": 0.72,
+    "wn8_nominal_defence": 0.65
   },
   {
     "tank_title": "WZ-132",
     "icon": "Ch17_WZ131_1_WZ132",
     "pr_nominal_damage": 900.0,
-    "wn8_nominal_damage": 804.0,
-    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_damage": 765.0,
+    "wn8_nominal_win_rate": 51.0,
     "wn8_nominal_spotted": 2.87,
-    "wn8_nominal_frags": 0.68,
-    "wn8_nominal_defence": 0.69
+    "wn8_nominal_frags": 0.61,
+    "wn8_nominal_defence": 0.68
   },
   {
     "tank_title": "T23",
@@ -863,111 +863,111 @@
     "tank_title": "Centurion",
     "icon": "GB23_Centurion",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1193.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.26,
-    "wn8_nominal_frags": 0.87,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_damage": 1156.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.33,
+    "wn8_nominal_frags": 0.83,
+    "wn8_nominal_defence": 0.94
   },
   {
     "tank_title": "Indien-Panzer",
     "icon": "Indien_Panzer",
     "pr_nominal_damage": 1350.0,
-    "wn8_nominal_damage": 1213.0,
+    "wn8_nominal_damage": 1175.0,
     "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 1.13,
-    "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 1.16
+    "wn8_nominal_spotted": 1.24,
+    "wn8_nominal_frags": 0.88,
+    "wn8_nominal_defence": 1.05
   },
   {
     "tank_title": "M26 Pershing",
     "icon": "Pershing",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1159.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.53,
-    "wn8_nominal_frags": 0.95,
-    "wn8_nominal_defence": 1.11
+    "wn8_nominal_damage": 1127.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.62,
+    "wn8_nominal_frags": 0.89,
+    "wn8_nominal_defence": 1.02
   },
   {
     "tank_title": "Object 416",
     "icon": "Object416",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1186.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.91,
-    "wn8_nominal_frags": 0.95,
-    "wn8_nominal_defence": 1.09
+    "wn8_nominal_damage": 1250.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.5,
+    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_defence": 0.96
   },
   {
     "tank_title": "Panther II",
     "icon": "Panther_II",
     "pr_nominal_damage": 1350.0,
-    "wn8_nominal_damage": 1110.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.43,
-    "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 1.04
+    "wn8_nominal_damage": 1086.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.38,
+    "wn8_nominal_frags": 0.84,
+    "wn8_nominal_defence": 0.95
   },
   {
     "tank_title": "T26E4 SuperPershing",
     "icon": "T26_E4_SuperPershing",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1151.0,
+    "wn8_nominal_damage": 1120.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.9,
-    "wn8_nominal_frags": 0.89,
-    "wn8_nominal_defence": 1.1
+    "wn8_nominal_spotted": 0.95,
+    "wn8_nominal_frags": 0.86,
+    "wn8_nominal_defence": 1.01
   },
   {
     "tank_title": "T-34-2",
     "icon": "Ch05_T34_2",
     "pr_nominal_damage": 1350.0,
-    "wn8_nominal_damage": 1115.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.66,
-    "wn8_nominal_frags": 0.91,
-    "wn8_nominal_defence": 0.79
+    "wn8_nominal_damage": 1063.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.73,
+    "wn8_nominal_frags": 0.86,
+    "wn8_nominal_defence": 0.93
   },
   {
     "tank_title": "T-34-3",
     "icon": "Ch14_T34_3",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1115.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.66,
-    "wn8_nominal_frags": 0.91,
-    "wn8_nominal_defence": 0.79
+    "wn8_nominal_damage": 1120.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 1.56,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.77
   },
   {
     "tank_title": "T-44",
     "icon": "T-44",
     "pr_nominal_damage": 1250.0,
-    "wn8_nominal_damage": 1114.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.74,
-    "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 1.05
+    "wn8_nominal_damage": 1051.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.7,
+    "wn8_nominal_frags": 0.87,
+    "wn8_nominal_defence": 0.93
   },
   {
     "tank_title": "T69",
     "icon": "T69",
     "pr_nominal_damage": 1500.0,
-    "wn8_nominal_damage": 1490.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.33,
-    "wn8_nominal_frags": 1.21,
-    "wn8_nominal_defence": 1.48
+    "wn8_nominal_damage": 1368.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 1.35,
+    "wn8_nominal_frags": 1.12,
+    "wn8_nominal_defence": 1.23
   },
   {
     "tank_title": "Type 59",
     "icon": "Ch01_Type59",
     "pr_nominal_damage": 1350.0,
-    "wn8_nominal_damage": 1132.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.7,
-    "wn8_nominal_frags": 0.99,
-    "wn8_nominal_defence": 1.02
+    "wn8_nominal_damage": 1079.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.74,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.93
   },
   {
     "tank_title": "Type 59 G",
@@ -983,119 +983,119 @@
     "tank_title": "STA-1",
     "icon": "STA_1",
     "pr_nominal_damage": 1400.0,
-    "wn8_nominal_damage": 1186.0,
-    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_damage": 1204.0,
+    "wn8_nominal_win_rate": 51.0,
     "wn8_nominal_spotted": 1.41,
-    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_frags": 0.92,
     "wn8_nominal_defence": 1.09
   },
   {
     "tank_title": "FV207",
     "icon": "GB79_FV206",
     "pr_nominal_damage": 1750.0,
-    "wn8_nominal_damage": 1335.0,
-    "wn8_nominal_win_rate": 47.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.88,
-    "wn8_nominal_defence": 0.61
+    "wn8_nominal_damage": 1317.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.03,
+    "wn8_nominal_frags": 0.94,
+    "wn8_nominal_defence": 0.84
   },
   {
     "tank_title": "GW Tiger (P)",
     "icon": "GW_Tiger_P",
     "pr_nominal_damage": 1750.0,
-    "wn8_nominal_damage": 1335.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.88,
-    "wn8_nominal_defence": 0.61
+    "wn8_nominal_damage": 1326.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.04,
+    "wn8_nominal_frags": 0.91,
+    "wn8_nominal_defence": 0.7
   },
   {
     "tank_title": "Lorraine155 51",
     "icon": "Lorraine155_51",
     "pr_nominal_damage": 1750.0,
-    "wn8_nominal_damage": 1309.0,
-    "wn8_nominal_win_rate": 47.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.85,
-    "wn8_nominal_defence": 0.72
+    "wn8_nominal_damage": 1408.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.07,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 1.07
   },
   {
     "tank_title": "M40/M43",
     "icon": "M40M43",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1378.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.86,
-    "wn8_nominal_defence": 0.46
+    "wn8_nominal_damage": 1527.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.05,
+    "wn8_nominal_frags": 1.0,
+    "wn8_nominal_defence": 0.82
   },
   {
     "tank_title": "SU-14-2",
     "icon": "SU-14",
     "pr_nominal_damage": 1650.0,
-    "wn8_nominal_damage": 1319.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.09,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 0.66
+    "wn8_nominal_damage": 1410.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.02,
+    "wn8_nominal_frags": 0.99,
+    "wn8_nominal_defence": 0.71
   },
   {
     "tank_title": "8.8 cm Pak 43 JagdTiger",
     "icon": "JagdTiger_SdKfz_185",
     "pr_nominal_damage": 1550.0,
-    "wn8_nominal_damage": 1378.0,
+    "wn8_nominal_damage": 1326.0,
     "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.72,
+    "wn8_nominal_spotted": 0.78,
     "wn8_nominal_frags": 1.0,
-    "wn8_nominal_defence": 1.14
+    "wn8_nominal_defence": 1.16
   },
   {
     "tank_title": "AMX AC Mle. 1948",
     "icon": "AMX_AC_Mle1948",
     "pr_nominal_damage": 1700.0,
-    "wn8_nominal_damage": 1359.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.8,
-    "wn8_nominal_frags": 1.0,
-    "wn8_nominal_defence": 0.95
+    "wn8_nominal_damage": 1333.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.82,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 0.96
   },
   {
     "tank_title": "AT 15",
     "icon": "GB72_AT15",
     "pr_nominal_damage": 1850.0,
-    "wn8_nominal_damage": 1533.0,
+    "wn8_nominal_damage": 1479.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.63,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 1.31
+    "wn8_nominal_spotted": 0.68,
+    "wn8_nominal_frags": 1.1,
+    "wn8_nominal_defence": 1.23
   },
   {
     "tank_title": "Ferdinand",
     "icon": "Ferdinand",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1455.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.62,
-    "wn8_nominal_frags": 1.07,
-    "wn8_nominal_defence": 0.9
+    "wn8_nominal_damage": 1477.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.63,
+    "wn8_nominal_frags": 1.09,
+    "wn8_nominal_defence": 0.94
   },
   {
     "tank_title": "ISU-152",
     "icon": "ISU-152",
     "pr_nominal_damage": 1900.0,
-    "wn8_nominal_damage": 1561.0,
+    "wn8_nominal_damage": 1586.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.59,
-    "wn8_nominal_frags": 1.18,
-    "wn8_nominal_defence": 0.81
+    "wn8_nominal_spotted": 0.58,
+    "wn8_nominal_frags": 1.2,
+    "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "JagdPanther II",
     "icon": "JagdPantherII",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1544.0,
+    "wn8_nominal_damage": 1540.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.76,
+    "wn8_nominal_spotted": 0.81,
     "wn8_nominal_frags": 1.14,
     "wn8_nominal_defence": 0.98
   },
@@ -1103,521 +1103,531 @@
     "tank_title": "Uralmash-1",
     "icon": "SU-101",
     "pr_nominal_damage": 1700.0,
-    "wn8_nominal_damage": 1278.0,
+    "wn8_nominal_damage": 1257.0,
     "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.93,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 1.11
+    "wn8_nominal_spotted": 0.97,
+    "wn8_nominal_frags": 1.0,
+    "wn8_nominal_defence": 1.04
   },
   {
     "tank_title": "T28",
     "icon": "T28",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1353.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.51,
-    "wn8_nominal_frags": 1.01,
-    "wn8_nominal_defence": 0.95
+    "wn8_nominal_damage": 1382.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.52,
+    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_defence": 0.93
   },
   {
     "tank_title": "T28 Prototype",
     "icon": "T28_Prototype",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1467.0,
+    "wn8_nominal_damage": 1455.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.51,
-    "wn8_nominal_frags": 1.07,
-    "wn8_nominal_defence": 1.06
+    "wn8_nominal_spotted": 0.53,
+    "wn8_nominal_frags": 1.06,
+    "wn8_nominal_defence": 0.98
   },
   {
     "tank_title": "Rhm.-Borsig Waffenträger",
     "icon": "RhB_Waffentrager",
     "pr_nominal_damage": 1800.0,
-    "wn8_nominal_damage": 1652.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.81,
-    "wn8_nominal_frags": 1.22,
-    "wn8_nominal_defence": 1.05
+    "wn8_nominal_damage": 1755.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.66,
+    "wn8_nominal_frags": 1.33,
+    "wn8_nominal_defence": 1.14
   },
   {
     "tank_title": "AMX M4 (1945)",
     "icon": "AMX_M4_1945",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1021.0,
+    "wn8_nominal_damage": 1026.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.93,
+    "wn8_nominal_spotted": 0.94,
     "wn8_nominal_frags": 0.89,
-    "wn8_nominal_defence": 0.94
+    "wn8_nominal_defence": 0.92
   },
   {
     "tank_title": "Black Prince",
     "icon": "GB10_Black_Prince",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1043.0,
+    "wn8_nominal_damage": 1022.0,
     "wn8_nominal_win_rate": 54.0,
     "wn8_nominal_spotted": 0.89,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 1.1
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 1.13
   },
   {
     "tank_title": "IS",
     "icon": "IS",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1068.0,
+    "wn8_nominal_damage": 1071.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.05,
-    "wn8_nominal_frags": 1.06,
+    "wn8_nominal_spotted": 1.07,
+    "wn8_nominal_frags": 1.04,
     "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "IS-2",
     "icon": "Ch10_IS2",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1153.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.11,
+    "wn8_nominal_damage": 1139.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 1.14,
     "wn8_nominal_frags": 1.07,
-    "wn8_nominal_defence": 0.86
+    "wn8_nominal_defence": 0.84
   },
   {
     "tank_title": "KV-3",
     "icon": "KV-3",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1128.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.87,
-    "wn8_nominal_frags": 1.09,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_damage": 1123.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.89,
+    "wn8_nominal_frags": 1.06,
+    "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "PzKpfw VI Tiger",
     "icon": "PzVI",
     "pr_nominal_damage": 1150.0,
-    "wn8_nominal_damage": 1031.0,
+    "wn8_nominal_damage": 1064.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.94,
-    "wn8_nominal_frags": 0.93,
-    "wn8_nominal_defence": 0.98
+    "wn8_nominal_spotted": 0.97,
+    "wn8_nominal_frags": 0.96,
+    "wn8_nominal_defence": 0.99
   },
   {
     "tank_title": "PzKpfw VI Tiger (P)",
     "icon": "PzVI_Tiger_P",
     "pr_nominal_damage": 1150.0,
-    "wn8_nominal_damage": 1095.0,
+    "wn8_nominal_damage": 1094.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.93,
+    "wn8_nominal_spotted": 0.99,
     "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 1.08
+    "wn8_nominal_defence": 1.04
   },
   {
     "tank_title": "T29",
     "icon": "T29",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1239.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.07,
-    "wn8_nominal_frags": 1.13,
-    "wn8_nominal_defence": 1.04
+    "wn8_nominal_damage": 1238.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.14,
+    "wn8_nominal_frags": 1.11,
+    "wn8_nominal_defence": 0.99
   },
   {
     "tank_title": "AMX 13 75",
     "icon": "AMX_13_75",
     "pr_nominal_damage": 700.0,
-    "wn8_nominal_damage": 623.0,
+    "wn8_nominal_damage": 596.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.99,
-    "wn8_nominal_frags": 0.75,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_spotted": 2.1,
+    "wn8_nominal_frags": 0.65,
+    "wn8_nominal_defence": 0.65
   },
   {
     "tank_title": "Aufklärungspanzer Panther",
     "icon": "Auf_Panther",
     "pr_nominal_damage": 700.0,
-    "wn8_nominal_damage": 738.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 2.36,
-    "wn8_nominal_frags": 0.69,
-    "wn8_nominal_defence": 0.71
+    "wn8_nominal_damage": 685.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 2.16,
+    "wn8_nominal_frags": 0.62,
+    "wn8_nominal_defence": 0.75
   },
   {
     "tank_title": "T71",
     "icon": "T71",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 824.0,
+    "wn8_nominal_damage": 761.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 2.66,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.85
+    "wn8_nominal_spotted": 2.65,
+    "wn8_nominal_frags": 0.73,
+    "wn8_nominal_defence": 0.73
   },
   {
     "tank_title": "Type-62",
     "icon": "Ch02_Type62",
     "pr_nominal_damage": 700.0,
-    "wn8_nominal_damage": 685.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 2.43,
-    "wn8_nominal_frags": 0.7,
-    "wn8_nominal_defence": 0.85
+    "wn8_nominal_damage": 642.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 2.39,
+    "wn8_nominal_frags": 0.63,
+    "wn8_nominal_defence": 0.72
   },
   {
     "tank_title": "WZ-131",
     "icon": "Ch16_WZ_131",
     "pr_nominal_damage": 725.0,
-    "wn8_nominal_damage": 752.0,
-    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_damage": 700.0,
+    "wn8_nominal_win_rate": 53.0,
     "wn8_nominal_spotted": 2.59,
-    "wn8_nominal_frags": 0.73,
-    "wn8_nominal_defence": 0.81
+    "wn8_nominal_frags": 0.65,
+    "wn8_nominal_defence": 0.72
+  },
+  {
+    "tank_title": "T23E3",
+    "icon": "T23E3",
+    "pr_nominal_damage": 1000.0,
+    "wn8_nominal_damage": 763.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.57,
+    "wn8_nominal_frags": 0.84,
+    "wn8_nominal_defence": 0.89
   },
   {
     "tank_title": "A-44",
     "icon": "A44",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 943.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.59,
-    "wn8_nominal_frags": 1.0,
-    "wn8_nominal_defence": 1.18
+    "wn8_nominal_damage": 962.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.77,
+    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_defence": 0.86
   },
   {
     "tank_title": "Comet",
     "icon": "GB22_Comet",
     "pr_nominal_damage": 1000.0,
-    "wn8_nominal_damage": 958.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.82,
-    "wn8_nominal_frags": 1.04,
-    "wn8_nominal_defence": 1.14
+    "wn8_nominal_damage": 934.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.81,
+    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_defence": 1.09
   },
   {
     "tank_title": "KV-13",
     "icon": "KV-13",
     "pr_nominal_damage": 825.0,
-    "wn8_nominal_damage": 750.0,
+    "wn8_nominal_damage": 763.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.59,
-    "wn8_nominal_frags": 0.85,
-    "wn8_nominal_defence": 1.05
+    "wn8_nominal_spotted": 1.57,
+    "wn8_nominal_frags": 0.84,
+    "wn8_nominal_defence": 0.89
   },
   {
     "tank_title": "Panther M10",
     "icon": "Panther_M10",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 942.0,
+    "wn8_nominal_damage": 888.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.27,
-    "wn8_nominal_frags": 0.99,
-    "wn8_nominal_defence": 1.49
+    "wn8_nominal_spotted": 1.28,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 1.27
   },
   {
     "tank_title": "PzKpfw V Panther",
     "icon": "PzV",
     "pr_nominal_damage": 900.0,
-    "wn8_nominal_damage": 850.0,
+    "wn8_nominal_damage": 864.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.11,
-    "wn8_nominal_frags": 0.84,
-    "wn8_nominal_defence": 1.27
+    "wn8_nominal_spotted": 1.19,
+    "wn8_nominal_frags": 0.85,
+    "wn8_nominal_defence": 1.2
   },
   {
     "tank_title": "T20",
     "icon": "T20",
     "pr_nominal_damage": 1000.0,
-    "wn8_nominal_damage": 932.0,
+    "wn8_nominal_damage": 935.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.69,
-    "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 0.98
+    "wn8_nominal_spotted": 1.75,
+    "wn8_nominal_frags": 0.94,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "T-34-1",
     "icon": "Ch04_T34_1",
     "pr_nominal_damage": 1050.0,
-    "wn8_nominal_damage": 1015.0,
+    "wn8_nominal_damage": 984.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.58,
-    "wn8_nominal_frags": 1.03,
-    "wn8_nominal_defence": 1.04
+    "wn8_nominal_spotted": 1.62,
+    "wn8_nominal_frags": 1.0,
+    "wn8_nominal_defence": 1.02
   },
   {
     "tank_title": "T-43",
     "icon": "T-43",
     "pr_nominal_damage": 925.0,
-    "wn8_nominal_damage": 891.0,
+    "wn8_nominal_damage": 876.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.54,
-    "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 1.0
+    "wn8_nominal_spotted": 1.59,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "VK 3002 (DB)",
     "icon": "VK3002DB",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 848.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.54,
+    "wn8_nominal_damage": 847.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.58,
     "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 1.02
+    "wn8_nominal_defence": 1.0
   },
   {
     "tank_title": "Type 5 Chi-Ri",
     "icon": "Chi_Ri",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 898.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.52,
-    "wn8_nominal_frags": 0.95,
-    "wn8_nominal_defence": 1.12
+    "wn8_nominal_damage": 957.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.1,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 1.06
   },
   {
     "tank_title": "Crusader 5.5-in. SP",
     "icon": "GB29_Crusader_5inch",
     "pr_nominal_damage": 1500.0,
-    "wn8_nominal_damage": 1226.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.1,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.86
+    "wn8_nominal_damage": 1062.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.08,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 1.64
   },
   {
     "tank_title": "GW Panther",
     "icon": "G_Panther",
     "pr_nominal_damage": 1550.0,
-    "wn8_nominal_damage": 1248.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.1,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.91
+    "wn8_nominal_damage": 1294.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.05,
+    "wn8_nominal_frags": 0.98,
+    "wn8_nominal_defence": 1.01
   },
   {
     "tank_title": "Lorraine155 50",
     "icon": "Lorraine155_50",
     "pr_nominal_damage": 1550.0,
-    "wn8_nominal_damage": 1235.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.1,
-    "wn8_nominal_frags": 0.79,
-    "wn8_nominal_defence": 1.02
+    "wn8_nominal_damage": 1249.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.07,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 1.28
   },
   {
     "tank_title": "M12",
     "icon": "M12",
     "pr_nominal_damage": 1550.0,
-    "wn8_nominal_damage": 1240.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.1,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.89
+    "wn8_nominal_damage": 1276.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.06,
+    "wn8_nominal_frags": 0.97,
+    "wn8_nominal_defence": 1.06
   },
   {
     "tank_title": "S-51",
     "icon": "S-51",
     "pr_nominal_damage": 1500.0,
-    "wn8_nominal_damage": 1180.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.1,
-    "wn8_nominal_frags": 0.82,
-    "wn8_nominal_defence": 0.62
+    "wn8_nominal_damage": 1285.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.05,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "SU-14-1",
     "icon": "SU14_1",
     "pr_nominal_damage": 1500.0,
-    "wn8_nominal_damage": 1226.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.1,
-    "wn8_nominal_frags": 0.81,
-    "wn8_nominal_defence": 0.86
+    "wn8_nominal_damage": 1130.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.04,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 0.83
   },
   {
     "tank_title": "AMX AC Mle.1946",
     "icon": "AMX_AC_Mle1946",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1043.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.72,
-    "wn8_nominal_frags": 0.95,
-    "wn8_nominal_defence": 0.97
+    "wn8_nominal_damage": 1007.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.71,
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "AT 15A",
     "icon": "GB71_AT_15A",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1008.0,
+    "wn8_nominal_damage": 981.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.82,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 1.21
+    "wn8_nominal_spotted": 0.71,
+    "wn8_nominal_frags": 0.94,
+    "wn8_nominal_defence": 1.22
   },
   {
     "tank_title": "AT 7",
     "icon": "GB75_AT7",
     "pr_nominal_damage": 1500.0,
-    "wn8_nominal_damage": 1249.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.69,
+    "wn8_nominal_damage": 1251.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 0.7,
     "wn8_nominal_frags": 1.19,
-    "wn8_nominal_defence": 1.1
+    "wn8_nominal_defence": 1.32
   },
   {
     "tank_title": "E-25",
     "icon": "E-25",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1127.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.4,
+    "wn8_nominal_damage": 1079.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.64,
     "wn8_nominal_frags": 1.34,
-    "wn8_nominal_defence": 2.25
+    "wn8_nominal_defence": 1.73
   },
   {
     "tank_title": "Jagdpanther",
     "icon": "JagdPanther",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1123.0,
+    "wn8_nominal_damage": 1108.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.68,
-    "wn8_nominal_frags": 1.1,
-    "wn8_nominal_defence": 1.1
+    "wn8_nominal_spotted": 0.74,
+    "wn8_nominal_frags": 1.08,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "SU-100M1",
     "icon": "SU100M1",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1034.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.91,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 1.14
+    "wn8_nominal_damage": 1024.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.88,
+    "wn8_nominal_frags": 1.01,
+    "wn8_nominal_defence": 1.16
   },
   {
     "tank_title": "SU-122-44",
     "icon": "SU122_44",
     "pr_nominal_damage": 1350.0,
-    "wn8_nominal_damage": 1251.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.82,
-    "wn8_nominal_frags": 1.34,
-    "wn8_nominal_defence": 1.14
+    "wn8_nominal_damage": 1198.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 0.83,
+    "wn8_nominal_frags": 1.29,
+    "wn8_nominal_defence": 1.01
   },
   {
     "tank_title": "SU-152",
     "icon": "SU-152",
     "pr_nominal_damage": 1350.0,
-    "wn8_nominal_damage": 1096.0,
+    "wn8_nominal_damage": 1090.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.57,
-    "wn8_nominal_frags": 1.12,
-    "wn8_nominal_defence": 0.94
+    "wn8_nominal_spotted": 0.55,
+    "wn8_nominal_frags": 1.1,
+    "wn8_nominal_defence": 0.86
   },
   {
     "tank_title": "T25 AT",
     "icon": "T25_AT",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1057.0,
+    "wn8_nominal_damage": 1081.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.81,
+    "wn8_nominal_spotted": 0.83,
     "wn8_nominal_frags": 1.06,
-    "wn8_nominal_defence": 1.12
+    "wn8_nominal_defence": 1.11
   },
   {
     "tank_title": "T25/2",
     "icon": "T25_2",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1041.0,
+    "wn8_nominal_damage": 1019.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.98,
-    "wn8_nominal_frags": 1.01,
-    "wn8_nominal_defence": 1.26
+    "wn8_nominal_spotted": 1.02,
+    "wn8_nominal_frags": 0.97,
+    "wn8_nominal_defence": 1.14
   },
   {
     "tank_title": "Pz.Sfl. V",
     "icon": "Sturer_Emil",
     "pr_nominal_damage": 1300.0,
-    "wn8_nominal_damage": 1123.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.68,
+    "wn8_nominal_damage": 1117.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.55,
     "wn8_nominal_frags": 1.1,
-    "wn8_nominal_defence": 1.1
+    "wn8_nominal_defence": 0.99
   },
   {
     "tank_title": "Churchill VII",
     "icon": "GB09_Churchill_VII",
     "pr_nominal_damage": 800.0,
-    "wn8_nominal_damage": 802.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.76,
-    "wn8_nominal_frags": 1.06,
-    "wn8_nominal_defence": 1.18
+    "wn8_nominal_damage": 775.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.78,
+    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_defence": 1.13
   },
   {
     "tank_title": "KV-1S",
     "icon": "KV-1s",
     "pr_nominal_damage": 875.0,
-    "wn8_nominal_damage": 1003.0,
-    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_damage": 942.0,
+    "wn8_nominal_win_rate": 56.0,
     "wn8_nominal_spotted": 1.16,
-    "wn8_nominal_frags": 1.33,
-    "wn8_nominal_defence": 0.94
+    "wn8_nominal_frags": 1.24,
+    "wn8_nominal_defence": 0.8
   },
   {
     "tank_title": "KV-2",
     "icon": "KV2",
     "pr_nominal_damage": 775.0,
-    "wn8_nominal_damage": 900.0,
-    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_damage": 881.0,
+    "wn8_nominal_win_rate": 54.0,
     "wn8_nominal_spotted": 0.74,
     "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 0.84
+    "wn8_nominal_defence": 0.75
   },
   {
     "tank_title": "M6",
     "icon": "M6",
     "pr_nominal_damage": 800.0,
-    "wn8_nominal_damage": 845.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.03,
-    "wn8_nominal_frags": 1.07,
-    "wn8_nominal_defence": 0.92
+    "wn8_nominal_damage": 832.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.07,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 0.87
   },
   {
     "tank_title": "T-150",
     "icon": "T150",
     "pr_nominal_damage": 700.0,
-    "wn8_nominal_damage": 804.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.8,
-    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_damage": 800.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.89,
+    "wn8_nominal_frags": 1.03,
     "wn8_nominal_defence": 0.79
   },
   {
     "tank_title": "VK 3601 (H)",
     "icon": "VK3601H",
     "pr_nominal_damage": 700.0,
-    "wn8_nominal_damage": 947.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.4,
-    "wn8_nominal_frags": 1.34,
-    "wn8_nominal_defence": 1.4
+    "wn8_nominal_damage": 880.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.31,
+    "wn8_nominal_frags": 1.21,
+    "wn8_nominal_defence": 1.21
   },
   {
     "tank_title": "ARL 44",
     "icon": "ARL_44",
     "pr_nominal_damage": 800.0,
-    "wn8_nominal_damage": 813.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.84,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 0.85
+    "wn8_nominal_damage": 809.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.9,
+    "wn8_nominal_frags": 0.97,
+    "wn8_nominal_defence": 0.82
   },
   {
     "tank_title": "TOG II",
     "icon": "GB63_TOG_II",
     "pr_nominal_damage": 875.0,
-    "wn8_nominal_damage": 922.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.6,
-    "wn8_nominal_frags": 1.29,
-    "wn8_nominal_defence": 1.41
+    "wn8_nominal_damage": 882.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.63,
+    "wn8_nominal_frags": 1.22,
+    "wn8_nominal_defence": 1.32
   },
   {
     "tank_title": "T-50-2",
@@ -1633,171 +1643,171 @@
     "tank_title": "59-16",
     "icon": "Ch15_59_16",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 415.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 2.83,
-    "wn8_nominal_frags": 0.63,
-    "wn8_nominal_defence": 0.81
+    "wn8_nominal_damage": 394.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 2.77,
+    "wn8_nominal_frags": 0.56,
+    "wn8_nominal_defence": 0.56
   },
   {
     "tank_title": "AMX 12t",
     "icon": "AMX_12t",
     "pr_nominal_damage": 350.0,
     "wn8_nominal_damage": 471.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.93,
-    "wn8_nominal_frags": 0.63,
-    "wn8_nominal_defence": 0.69
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 2.03,
+    "wn8_nominal_frags": 0.57,
+    "wn8_nominal_defence": 0.55
   },
   {
     "tank_title": "MT-25",
     "icon": "MT25",
     "pr_nominal_damage": 275.0,
-    "wn8_nominal_damage": 415.0,
+    "wn8_nominal_damage": 371.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 3.6,
-    "wn8_nominal_frags": 0.63,
-    "wn8_nominal_defence": 0.86
+    "wn8_nominal_spotted": 3.85,
+    "wn8_nominal_frags": 0.57,
+    "wn8_nominal_defence": 0.66
   },
   {
     "tank_title": "T21",
     "icon": "T21",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 517.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 2.44,
-    "wn8_nominal_frags": 0.65,
-    "wn8_nominal_defence": 0.76
+    "wn8_nominal_damage": 486.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 2.46,
+    "wn8_nominal_frags": 0.59,
+    "wn8_nominal_defence": 0.66
   },
   {
     "tank_title": "VK 2801",
     "icon": "VK2801",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 596.0,
+    "wn8_nominal_damage": 556.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 2.97,
-    "wn8_nominal_frags": 0.77,
-    "wn8_nominal_defence": 0.62
+    "wn8_nominal_spotted": 2.77,
+    "wn8_nominal_frags": 0.71,
+    "wn8_nominal_defence": 0.57
   },
   {
     "tank_title": "Type 64",
     "icon": "Ch24_Type64",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 483.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 2.75,
-    "wn8_nominal_frags": 0.66,
-    "wn8_nominal_defence": 0.75
+    "wn8_nominal_damage": 493.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 2.96,
+    "wn8_nominal_frags": 0.58,
+    "wn8_nominal_defence": 0.62
   },
   {
     "tank_title": "A-43",
     "icon": "A43",
     "pr_nominal_damage": 700.0,
-    "wn8_nominal_damage": 755.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.44,
+    "wn8_nominal_damage": 705.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 2.09,
     "wn8_nominal_frags": 1.08,
-    "wn8_nominal_defence": 1.21
+    "wn8_nominal_defence": 1.06
   },
   {
     "tank_title": "PzKpfw V-IV",
     "icon": "PzV_PzIV",
     "pr_nominal_damage": 525.0,
-    "wn8_nominal_damage": 643.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 2.01,
-    "wn8_nominal_frags": 1.04,
-    "wn8_nominal_defence": 1.3
+    "wn8_nominal_damage": 765.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.1,
+    "wn8_nominal_frags": 1.03,
+    "wn8_nominal_defence": 1.35
   },
   {
     "tank_title": "Cromwell",
     "icon": "GB21_Cromwell",
     "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 744.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 2.05,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 1.09
+    "wn8_nominal_damage": 716.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 2.1,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 0.98
   },
   {
     "tank_title": "M4A3E2",
     "icon": "Sherman_Jumbo",
     "pr_nominal_damage": 725.0,
-    "wn8_nominal_damage": 840.0,
+    "wn8_nominal_damage": 791.0,
     "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.19,
-    "wn8_nominal_frags": 1.21,
-    "wn8_nominal_defence": 1.38
+    "wn8_nominal_spotted": 1.24,
+    "wn8_nominal_frags": 1.14,
+    "wn8_nominal_defence": 1.19
   },
   {
     "tank_title": "M4A3E8 Sherman",
     "icon": "M4A3E8_Sherman",
     "pr_nominal_damage": 625.0,
-    "wn8_nominal_damage": 700.0,
+    "wn8_nominal_damage": 688.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.5,
-    "wn8_nominal_frags": 1.03,
-    "wn8_nominal_defence": 1.11
+    "wn8_nominal_spotted": 1.54,
+    "wn8_nominal_frags": 1.01,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "Pz IV Schmalturm",
     "icon": "PzIV_schmalturm",
     "pr_nominal_damage": 725.0,
-    "wn8_nominal_damage": 808.0,
-    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_damage": 765.0,
+    "wn8_nominal_win_rate": 52.0,
     "wn8_nominal_spotted": 1.1,
-    "wn8_nominal_frags": 1.07,
-    "wn8_nominal_defence": 1.62
+    "wn8_nominal_frags": 1.03,
+    "wn8_nominal_defence": 1.35
   },
   {
     "tank_title": "T-34-85",
     "icon": "T-34-85",
     "pr_nominal_damage": 775.0,
-    "wn8_nominal_damage": 740.0,
+    "wn8_nominal_damage": 734.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.37,
+    "wn8_nominal_spotted": 1.45,
     "wn8_nominal_frags": 1.03,
-    "wn8_nominal_defence": 1.02
+    "wn8_nominal_defence": 0.99
   },
   {
     "tank_title": "Type 58",
     "icon": "Ch20_Type58",
     "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 751.0,
+    "wn8_nominal_damage": 722.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.56,
-    "wn8_nominal_frags": 1.1,
-    "wn8_nominal_defence": 1.22
+    "wn8_nominal_spotted": 1.65,
+    "wn8_nominal_frags": 1.04,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "VK 30.01 (D)",
     "icon": "VK3002DB_V1",
     "pr_nominal_damage": 700.0,
-    "wn8_nominal_damage": 788.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.49,
-    "wn8_nominal_frags": 1.13,
-    "wn8_nominal_defence": 1.33
+    "wn8_nominal_damage": 755.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.68,
+    "wn8_nominal_frags": 1.08,
+    "wn8_nominal_defence": 1.15
   },
   {
     "tank_title": "VK 3001 (P)",
     "icon": "VK3001P",
     "pr_nominal_damage": 625.0,
-    "wn8_nominal_damage": 666.0,
+    "wn8_nominal_damage": 669.0,
     "wn8_nominal_win_rate": 52.0,
     "wn8_nominal_spotted": 1.28,
-    "wn8_nominal_frags": 0.93,
-    "wn8_nominal_defence": 0.89
+    "wn8_nominal_frags": 0.92,
+    "wn8_nominal_defence": 0.85
   },
   {
     "tank_title": "VK 30.02 (M)",
     "icon": "VK3002M",
     "pr_nominal_damage": 725.0,
-    "wn8_nominal_damage": 755.0,
-    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_damage": 756.0,
+    "wn8_nominal_win_rate": 52.0,
     "wn8_nominal_spotted": 1.44,
-    "wn8_nominal_frags": 1.08,
-    "wn8_nominal_defence": 1.21
+    "wn8_nominal_frags": 1.03,
+    "wn8_nominal_defence": 1.06
   },
   {
     "tank_title": "PzKpfw V-IV Alpha",
@@ -1813,81 +1823,81 @@
     "tank_title": "Type 4 Chi-To",
     "icon": "Chi_To",
     "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 755.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.44,
-    "wn8_nominal_frags": 1.08,
-    "wn8_nominal_defence": 1.21
+    "wn8_nominal_damage": 780.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 1.17,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 1.1
   },
   {
     "tank_title": "AMX 13 F3",
     "icon": "AMX_13F3AM",
     "pr_nominal_damage": 1200.0,
     "wn8_nominal_damage": 1052.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.11,
-    "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 1.56
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.08,
+    "wn8_nominal_frags": 1.09,
+    "wn8_nominal_defence": 1.6
   },
   {
     "tank_title": "FV304",
     "icon": "GB77_FV304",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 889.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.13,
-    "wn8_nominal_frags": 0.95,
-    "wn8_nominal_defence": 1.72
+    "wn8_nominal_damage": 859.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.17,
+    "wn8_nominal_frags": 1.13,
+    "wn8_nominal_defence": 2.11
   },
   {
     "tank_title": "Hummel",
     "icon": "Hummel",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 982.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.11,
-    "wn8_nominal_frags": 0.84,
-    "wn8_nominal_defence": 1.28
+    "wn8_nominal_damage": 989.0,
+    "wn8_nominal_win_rate": 50.0,
+    "wn8_nominal_spotted": 0.08,
+    "wn8_nominal_frags": 1.02,
+    "wn8_nominal_defence": 1.3
   },
   {
     "tank_title": "M44",
     "icon": "M44",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 974.0,
-    "wn8_nominal_win_rate": 48.0,
-    "wn8_nominal_spotted": 0.11,
-    "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 1.52
+    "wn8_nominal_damage": 877.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.08,
+    "wn8_nominal_frags": 1.06,
+    "wn8_nominal_defence": 1.51
   },
   {
     "tank_title": "SU-8",
     "icon": "SU-8",
     "pr_nominal_damage": 1200.0,
-    "wn8_nominal_damage": 1101.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.11,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 1.26
+    "wn8_nominal_damage": 1121.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.07,
+    "wn8_nominal_frags": 1.11,
+    "wn8_nominal_defence": 1.29
   },
   {
     "tank_title": "ARL V39",
     "icon": "ARL_V39",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 765.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.68,
-    "wn8_nominal_frags": 0.99,
-    "wn8_nominal_defence": 1.13
+    "wn8_nominal_damage": 742.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.67,
+    "wn8_nominal_frags": 0.96,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "AT 8",
     "icon": "GB74_AT8",
     "pr_nominal_damage": 950.0,
-    "wn8_nominal_damage": 916.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.73,
-    "wn8_nominal_frags": 1.24,
-    "wn8_nominal_defence": 1.69
+    "wn8_nominal_damage": 855.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 0.72,
+    "wn8_nominal_frags": 1.17,
+    "wn8_nominal_defence": 1.46
   },
   {
     "tank_title": "Churchill Gun Carrier",
@@ -1895,79 +1905,79 @@
     "pr_nominal_damage": 825.0,
     "wn8_nominal_damage": 704.0,
     "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.46,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 1.1
+    "wn8_nominal_spotted": 0.44,
+    "wn8_nominal_frags": 0.9,
+    "wn8_nominal_defence": 0.98
   },
   {
     "tank_title": "Dicker Max",
     "icon": "DickerMax",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 892.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.76,
-    "wn8_nominal_frags": 1.2,
-    "wn8_nominal_defence": 1.09
+    "wn8_nominal_damage": 873.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.82,
+    "wn8_nominal_frags": 1.17,
+    "wn8_nominal_defence": 1.19
   },
   {
     "tank_title": "JagdPz IV",
     "icon": "JagdPzIV",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 748.0,
+    "wn8_nominal_damage": 740.0,
     "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.72,
-    "wn8_nominal_frags": 1.08,
-    "wn8_nominal_defence": 1.26
+    "wn8_nominal_spotted": 0.76,
+    "wn8_nominal_frags": 1.06,
+    "wn8_nominal_defence": 1.19
   },
   {
     "tank_title": "M18 Hellcat",
     "icon": "M18_Hellcat",
     "pr_nominal_damage": 950.0,
-    "wn8_nominal_damage": 1002.0,
+    "wn8_nominal_damage": 952.0,
     "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.47,
-    "wn8_nominal_frags": 1.37,
-    "wn8_nominal_defence": 1.6
+    "wn8_nominal_spotted": 1.53,
+    "wn8_nominal_frags": 1.28,
+    "wn8_nominal_defence": 1.4
   },
   {
     "tank_title": "M36 Slugger",
     "icon": "M36_Slagger",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 824.0,
+    "wn8_nominal_damage": 842.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.89,
-    "wn8_nominal_frags": 1.09,
-    "wn8_nominal_defence": 1.23
+    "wn8_nominal_spotted": 0.93,
+    "wn8_nominal_frags": 1.1,
+    "wn8_nominal_defence": 1.16
   },
   {
     "tank_title": "SU-100",
     "icon": "SU-100",
     "pr_nominal_damage": 900.0,
-    "wn8_nominal_damage": 887.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.81,
-    "wn8_nominal_frags": 1.24,
-    "wn8_nominal_defence": 1.19
+    "wn8_nominal_damage": 882.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 0.83,
+    "wn8_nominal_frags": 1.25,
+    "wn8_nominal_defence": 1.14
   },
   {
     "tank_title": "SU-100Y",
     "icon": "SU100Y",
     "pr_nominal_damage": 900.0,
-    "wn8_nominal_damage": 985.0,
+    "wn8_nominal_damage": 937.0,
     "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.7,
-    "wn8_nominal_frags": 1.28,
-    "wn8_nominal_defence": 0.86
+    "wn8_nominal_spotted": 0.63,
+    "wn8_nominal_frags": 1.3,
+    "wn8_nominal_defence": 0.89
   },
   {
     "tank_title": "Nashorn",
     "icon": "Nashorn",
     "pr_nominal_damage": 850.0,
-    "wn8_nominal_damage": 937.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.8,
-    "wn8_nominal_frags": 1.26,
-    "wn8_nominal_defence": 1.14
+    "wn8_nominal_damage": 956.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.73,
+    "wn8_nominal_frags": 1.23,
+    "wn8_nominal_defence": 1.25
   },
   {
     "tank_title": "KV",
@@ -1983,91 +1993,91 @@
     "tank_title": "BDR G1B",
     "icon": "BDR_G1B",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 654.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.83,
-    "wn8_nominal_frags": 1.22,
-    "wn8_nominal_defence": 1.11
+    "wn8_nominal_damage": 647.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.86,
+    "wn8_nominal_frags": 1.23,
+    "wn8_nominal_defence": 1.02
   },
   {
     "tank_title": "Churchill I",
     "icon": "GB08_Churchill_I",
     "pr_nominal_damage": 525.0,
-    "wn8_nominal_damage": 671.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.9,
-    "wn8_nominal_frags": 1.24,
-    "wn8_nominal_defence": 1.43
+    "wn8_nominal_damage": 643.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 0.91,
+    "wn8_nominal_frags": 1.2,
+    "wn8_nominal_defence": 1.27
   },
   {
     "tank_title": "Churchill",
     "icon": "Churchill_LL",
     "pr_nominal_damage": 525.0,
-    "wn8_nominal_damage": 614.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.17,
-    "wn8_nominal_frags": 1.3,
-    "wn8_nominal_defence": 1.51
+    "wn8_nominal_damage": 608.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.19,
+    "wn8_nominal_frags": 1.28,
+    "wn8_nominal_defence": 1.34
   },
   {
     "tank_title": "A33 Excelsior",
     "icon": "GB51_Excelsior",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 582.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.32,
-    "wn8_nominal_frags": 1.32,
-    "wn8_nominal_defence": 1.89
+    "wn8_nominal_damage": 644.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.57,
+    "wn8_nominal_frags": 1.41,
+    "wn8_nominal_defence": 1.33
   },
   {
     "tank_title": "KV-1",
     "icon": "KV1",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 653.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.8,
+    "wn8_nominal_damage": 637.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.87,
     "wn8_nominal_frags": 1.22,
-    "wn8_nominal_defence": 1.0
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "T1 heavy",
     "icon": "T1_hvy",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 636.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.14,
+    "wn8_nominal_damage": 637.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.19,
     "wn8_nominal_frags": 1.24,
-    "wn8_nominal_defence": 1.15
+    "wn8_nominal_defence": 1.13
   },
   {
     "tank_title": "T14",
     "icon": "T14",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 593.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.53,
-    "wn8_nominal_frags": 1.35,
-    "wn8_nominal_defence": 1.31
+    "wn8_nominal_damage": 599.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.54,
+    "wn8_nominal_frags": 1.34,
+    "wn8_nominal_defence": 1.2
   },
   {
     "tank_title": "VK 3001 (H)",
     "icon": "VK3001H",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 677.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.45,
-    "wn8_nominal_frags": 1.17,
-    "wn8_nominal_defence": 0.9
+    "wn8_nominal_damage": 678.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.32,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 1.11
   },
   {
     "tank_title": "KV-220 Beta-Test",
     "icon": "KV-220",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 593.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.46,
-    "wn8_nominal_frags": 1.39,
-    "wn8_nominal_defence": 0.62
+    "wn8_nominal_damage": 678.0,
+    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_spotted": 1.39,
+    "wn8_nominal_frags": 1.47,
+    "wn8_nominal_defence": 1.28
   },
   {
     "tank_title": "KV-220 (action)",
@@ -2093,291 +2103,291 @@
     "tank_title": "Crusader",
     "icon": "GB20_Crusader",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 489.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.71,
-    "wn8_nominal_frags": 1.06,
-    "wn8_nominal_defence": 1.25
+    "wn8_nominal_damage": 470.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.75,
+    "wn8_nominal_frags": 1.03,
+    "wn8_nominal_defence": 1.21
   },
   {
     "tank_title": "ELC AMX",
     "icon": "ELC_AMX",
     "pr_nominal_damage": 275.0,
-    "wn8_nominal_damage": 464.0,
+    "wn8_nominal_damage": 458.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 2.88,
-    "wn8_nominal_frags": 0.73,
-    "wn8_nominal_defence": 0.77
+    "wn8_nominal_spotted": 2.63,
+    "wn8_nominal_frags": 0.66,
+    "wn8_nominal_defence": 0.73
   },
   {
     "tank_title": "M24 Chaffee",
     "icon": "M24_Chaffee",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 538.0,
+    "wn8_nominal_damage": 513.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 2.67,
-    "wn8_nominal_frags": 0.69,
-    "wn8_nominal_defence": 0.81
+    "wn8_nominal_spotted": 2.73,
+    "wn8_nominal_frags": 0.63,
+    "wn8_nominal_defence": 0.73
   },
   {
     "tank_title": "VK 1602 Leopard",
     "icon": "VK1602",
     "pr_nominal_damage": 175.0,
-    "wn8_nominal_damage": 357.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 3.2,
-    "wn8_nominal_frags": 0.73,
-    "wn8_nominal_defence": 0.8
+    "wn8_nominal_damage": 344.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 2.73,
+    "wn8_nominal_frags": 0.66,
+    "wn8_nominal_defence": 0.81
   },
   {
     "tank_title": "Pz.Kpfw. IV Ausf. H",
     "icon": "Pz_IV_AusfH",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 607.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.26,
-    "wn8_nominal_frags": 1.23,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_damage": 689.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.44,
+    "wn8_nominal_frags": 1.43,
+    "wn8_nominal_defence": 1.02
   },
   {
     "tank_title": "Matilda",
     "icon": "Matilda_II_LL",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 562.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 0.91,
-    "wn8_nominal_frags": 1.55,
-    "wn8_nominal_defence": 2.08
+    "wn8_nominal_damage": 578.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.18,
+    "wn8_nominal_frags": 1.38,
+    "wn8_nominal_defence": 1.48
   },
   {
     "tank_title": "Chi-Nu Kai",
     "icon": "Chi_Nu_Kai",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 530.0,
+    "wn8_nominal_damage": 559.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.41,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 1.19
+    "wn8_nominal_spotted": 1.1,
+    "wn8_nominal_frags": 1.1,
+    "wn8_nominal_defence": 1.18
   },
   {
     "tank_title": "M4 Sherman",
     "icon": "M4_Sherman",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 801.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.57,
-    "wn8_nominal_frags": 1.73,
-    "wn8_nominal_defence": 1.31
+    "wn8_nominal_damage": 738.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.59,
+    "wn8_nominal_frags": 1.62,
+    "wn8_nominal_defence": 1.15
   },
   {
     "tank_title": "M4A2E4",
     "icon": "M4A2E4",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 401.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.45,
-    "wn8_nominal_frags": 0.94,
-    "wn8_nominal_defence": 0.94
+    "wn8_nominal_damage": 417.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.48,
+    "wn8_nominal_frags": 0.95,
+    "wn8_nominal_defence": 0.85
   },
   {
     "tank_title": "M7",
     "icon": "M7_med",
     "pr_nominal_damage": 325.0,
-    "wn8_nominal_damage": 441.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 2.15,
-    "wn8_nominal_frags": 0.98,
-    "wn8_nominal_defence": 1.12
+    "wn8_nominal_damage": 431.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 2.17,
+    "wn8_nominal_frags": 0.96,
+    "wn8_nominal_defence": 1.03
   },
   {
     "tank_title": "Matilda Black Prince",
     "icon": "GB68_Matilda_Black_Prince",
     "pr_nominal_damage": 575.0,
-    "wn8_nominal_damage": 536.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.78,
+    "wn8_nominal_damage": 559.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 0.81,
     "wn8_nominal_frags": 1.22,
-    "wn8_nominal_defence": 1.28
+    "wn8_nominal_defence": 1.5
   },
   {
     "tank_title": "PzKpfw III/IV",
     "icon": "PzIII_IV",
     "pr_nominal_damage": 325.0,
-    "wn8_nominal_damage": 455.0,
+    "wn8_nominal_damage": 440.0,
     "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.65,
-    "wn8_nominal_frags": 0.98,
-    "wn8_nominal_defence": 1.0
+    "wn8_nominal_spotted": 1.59,
+    "wn8_nominal_frags": 0.93,
+    "wn8_nominal_defence": 0.91
   },
   {
     "tank_title": "PzKpfw IV",
     "icon": "PzIV",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 607.0,
+    "wn8_nominal_damage": 583.0,
     "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.26,
-    "wn8_nominal_frags": 1.23,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_spotted": 1.36,
+    "wn8_nominal_frags": 1.22,
+    "wn8_nominal_defence": 0.96
   },
   {
     "tank_title": "Ram-II",
     "icon": "Ram-II",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 538.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.37,
-    "wn8_nominal_frags": 1.19,
-    "wn8_nominal_defence": 1.31
+    "wn8_nominal_damage": 545.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.46,
+    "wn8_nominal_frags": 1.2,
+    "wn8_nominal_defence": 1.2
   },
   {
     "tank_title": "T-25",
     "icon": "T-25",
     "pr_nominal_damage": 475.0,
-    "wn8_nominal_damage": 596.0,
+    "wn8_nominal_damage": 580.0,
     "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.55,
-    "wn8_nominal_frags": 1.22,
-    "wn8_nominal_defence": 1.29
+    "wn8_nominal_spotted": 1.58,
+    "wn8_nominal_frags": 1.19,
+    "wn8_nominal_defence": 1.22
   },
   {
     "tank_title": "T-34",
     "icon": "T-34",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 528.0,
+    "wn8_nominal_damage": 521.0,
     "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.44,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 1.24
+    "wn8_nominal_spotted": 1.46,
+    "wn8_nominal_frags": 1.12,
+    "wn8_nominal_defence": 1.11
   },
   {
     "tank_title": "Type T-34",
     "icon": "Ch21_T34",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 538.0,
+    "wn8_nominal_damage": 524.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.45,
-    "wn8_nominal_frags": 1.18,
-    "wn8_nominal_defence": 1.25
+    "wn8_nominal_spotted": 1.5,
+    "wn8_nominal_frags": 1.14,
+    "wn8_nominal_defence": 1.14
   },
   {
     "tank_title": "PzKpfw IV Hydraulic",
     "icon": "PzIV_Hydro",
     "pr_nominal_damage": 475.0,
-    "wn8_nominal_damage": 607.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.26,
-    "wn8_nominal_frags": 1.23,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_damage": 657.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 1.33,
+    "wn8_nominal_frags": 1.3,
+    "wn8_nominal_defence": 1.12
   },
   {
     "tank_title": "Type 3 Chi-Nu",
     "icon": "Chi_Nu",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 530.0,
+    "wn8_nominal_damage": 529.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.41,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 1.19
+    "wn8_nominal_spotted": 1.27,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 1.13
   },
   {
     "tank_title": "105 leFH18B2",
     "icon": "_105_leFH18B2",
     "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 710.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.12,
-    "wn8_nominal_frags": 1.39,
-    "wn8_nominal_defence": 2.01
+    "wn8_nominal_damage": 697.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.11,
+    "wn8_nominal_frags": 1.36,
+    "wn8_nominal_defence": 1.9
   },
   {
     "tank_title": "AMX 105AM",
     "icon": "AMX_105AM",
     "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 675.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.12,
-    "wn8_nominal_frags": 1.22,
-    "wn8_nominal_defence": 2.26
+    "wn8_nominal_damage": 658.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.11,
+    "wn8_nominal_frags": 1.18,
+    "wn8_nominal_defence": 2.29
   },
   {
     "tank_title": "Bishop",
     "icon": "GB28_Bishop",
     "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 620.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.12,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 1.76
+    "wn8_nominal_damage": 639.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.11,
+    "wn8_nominal_frags": 1.19,
+    "wn8_nominal_defence": 1.66
   },
   {
     "tank_title": "Grille",
     "icon": "Grille",
     "pr_nominal_damage": 750.0,
-    "wn8_nominal_damage": 648.0,
-    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_damage": 655.0,
+    "wn8_nominal_win_rate": 52.0,
     "wn8_nominal_spotted": 0.11,
     "wn8_nominal_frags": 1.08,
-    "wn8_nominal_defence": 1.58
+    "wn8_nominal_defence": 1.57
   },
   {
     "tank_title": "M41",
     "icon": "M41",
     "pr_nominal_damage": 800.0,
-    "wn8_nominal_damage": 874.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.12,
-    "wn8_nominal_frags": 0.99,
-    "wn8_nominal_defence": 1.33
+    "wn8_nominal_damage": 987.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.08,
+    "wn8_nominal_frags": 1.04,
+    "wn8_nominal_defence": 1.49
   },
   {
     "tank_title": "SU-122A",
     "icon": "SU122A",
     "pr_nominal_damage": 800.0,
-    "wn8_nominal_damage": 705.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.12,
-    "wn8_nominal_frags": 1.16,
-    "wn8_nominal_defence": 1.79
+    "wn8_nominal_damage": 604.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.1,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 1.38
   },
   {
     "tank_title": "Stug III Ausf. G",
     "icon": "StuG_40_AusfG",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 0.0,
-    "wn8_nominal_win_rate": 0.0,
-    "wn8_nominal_spotted": 0.0,
-    "wn8_nominal_frags": 0.0,
-    "wn8_nominal_defence": 0.0
+    "wn8_nominal_damage": 606.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.75,
+    "wn8_nominal_frags": 1.2,
+    "wn8_nominal_defence": 1.32
   },
   {
     "tank_title": "AT 2",
     "icon": "GB73_AT2",
     "pr_nominal_damage": 600.0,
-    "wn8_nominal_damage": 617.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.79,
-    "wn8_nominal_frags": 1.29,
-    "wn8_nominal_defence": 1.97
+    "wn8_nominal_damage": 592.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 0.81,
+    "wn8_nominal_frags": 1.22,
+    "wn8_nominal_defence": 1.6
   },
   {
     "tank_title": "M10 Wolverine",
     "icon": "M10_Wolverine",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 627.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.95,
-    "wn8_nominal_frags": 1.26,
+    "wn8_nominal_damage": 624.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.02,
+    "wn8_nominal_frags": 1.27,
     "wn8_nominal_defence": 1.42
   },
   {
     "tank_title": "S-35 CA",
     "icon": "S_35CA",
     "pr_nominal_damage": 675.0,
-    "wn8_nominal_damage": 649.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.82,
-    "wn8_nominal_frags": 1.26,
-    "wn8_nominal_defence": 1.26
+    "wn8_nominal_damage": 680.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.9,
+    "wn8_nominal_frags": 1.35,
+    "wn8_nominal_defence": 1.39
   },
   {
     "tank_title": "StuG III",
@@ -2393,231 +2403,231 @@
     "tank_title": "SU-85",
     "icon": "SU-85",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 608.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.54,
-    "wn8_nominal_frags": 1.21,
-    "wn8_nominal_defence": 1.22
+    "wn8_nominal_damage": 597.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.56,
+    "wn8_nominal_frags": 1.2,
+    "wn8_nominal_defence": 1.2
   },
   {
     "tank_title": "T49",
     "icon": "T49",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 700.0,
+    "wn8_nominal_damage": 686.0,
     "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.71,
-    "wn8_nominal_frags": 1.46,
-    "wn8_nominal_defence": 1.67
+    "wn8_nominal_spotted": 1.78,
+    "wn8_nominal_frags": 1.43,
+    "wn8_nominal_defence": 1.56
   },
   {
     "tank_title": "SU-85I",
     "icon": "SU_85I",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 608.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.54,
-    "wn8_nominal_frags": 1.21,
-    "wn8_nominal_defence": 1.22
+    "wn8_nominal_damage": 687.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 0.86,
+    "wn8_nominal_frags": 1.51,
+    "wn8_nominal_defence": 1.58
   },
   {
     "tank_title": "Pz.Sfl. IVc",
     "icon": "Pz_Sfl_IVc",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 681.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.86,
-    "wn8_nominal_frags": 1.32,
-    "wn8_nominal_defence": 1.32
+    "wn8_nominal_damage": 667.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.83,
+    "wn8_nominal_frags": 1.27,
+    "wn8_nominal_defence": 1.18
   },
   {
     "tank_title": "B1",
     "icon": "B1",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 348.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.2,
-    "wn8_nominal_frags": 1.16,
-    "wn8_nominal_defence": 1.49
+    "wn8_nominal_damage": 344.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.11,
+    "wn8_nominal_frags": 1.09,
+    "wn8_nominal_defence": 1.27
   },
   {
     "tank_title": "Durchbruchswagen 2",
     "icon": "DW_II",
     "pr_nominal_damage": 300.0,
-    "wn8_nominal_damage": 348.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.2,
-    "wn8_nominal_frags": 1.16,
-    "wn8_nominal_defence": 1.49
+    "wn8_nominal_damage": 380.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.99,
+    "wn8_nominal_frags": 1.09,
+    "wn8_nominal_defence": 1.09
   },
   {
     "tank_title": "PzKpfw B2 740 (f)",
     "icon": "B-1bis_captured",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 527.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.79,
-    "wn8_nominal_frags": 1.96,
-    "wn8_nominal_defence": 2.22
+    "wn8_nominal_damage": 524.0,
+    "wn8_nominal_win_rate": 61.0,
+    "wn8_nominal_spotted": 1.7,
+    "wn8_nominal_frags": 1.83,
+    "wn8_nominal_defence": 1.82
   },
   {
     "tank_title": "A-20",
     "icon": "A-20",
     "pr_nominal_damage": 100.0,
-    "wn8_nominal_damage": 270.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 3.34,
-    "wn8_nominal_frags": 0.9,
-    "wn8_nominal_defence": 0.62
+    "wn8_nominal_damage": 262.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 2.21,
+    "wn8_nominal_frags": 0.67,
+    "wn8_nominal_defence": 0.81
   },
   {
     "tank_title": "AMX 40",
     "icon": "AMX40",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 297.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.92,
-    "wn8_nominal_frags": 0.93,
-    "wn8_nominal_defence": 1.39
+    "wn8_nominal_damage": 264.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.86,
+    "wn8_nominal_frags": 0.79,
+    "wn8_nominal_defence": 1.1
   },
   {
     "tank_title": "Covenanter",
     "icon": "GB60_Covenanter",
     "pr_nominal_damage": 220.0,
-    "wn8_nominal_damage": 378.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.81,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 1.15
+    "wn8_nominal_damage": 374.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.85,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 1.12
   },
   {
     "tank_title": "M5 Stuart",
     "icon": "M5_Stuart",
     "pr_nominal_damage": 160.0,
-    "wn8_nominal_damage": 334.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 3.12,
-    "wn8_nominal_frags": 1.03,
-    "wn8_nominal_defence": 1.28
+    "wn8_nominal_damage": 316.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 2.69,
+    "wn8_nominal_frags": 0.93,
+    "wn8_nominal_defence": 0.97
   },
   {
     "tank_title": "M5A1 Stuart",
     "icon": "Ch09_M5",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 377.0,
+    "wn8_nominal_damage": 362.0,
     "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 2.62,
-    "wn8_nominal_frags": 1.08,
-    "wn8_nominal_defence": 1.15
+    "wn8_nominal_spotted": 2.41,
+    "wn8_nominal_frags": 1.01,
+    "wn8_nominal_defence": 1.05
   },
   {
     "tank_title": "PzKpfw 38 nA",
     "icon": "Pz38_NA",
     "pr_nominal_damage": 140.0,
-    "wn8_nominal_damage": 290.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 2.71,
-    "wn8_nominal_frags": 0.92,
-    "wn8_nominal_defence": 1.11
+    "wn8_nominal_damage": 281.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 2.23,
+    "wn8_nominal_frags": 0.78,
+    "wn8_nominal_defence": 0.85
   },
   {
     "tank_title": "PzKpfw II Luchs",
     "icon": "PzII_Luchs",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 339.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 2.75,
-    "wn8_nominal_frags": 1.34,
-    "wn8_nominal_defence": 1.32
+    "wn8_nominal_damage": 326.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 2.73,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 1.12
   },
   {
     "tank_title": "T-50",
     "icon": "T-50",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 339.0,
-    "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 4.02,
-    "wn8_nominal_frags": 0.97,
-    "wn8_nominal_defence": 1.07
+    "wn8_nominal_damage": 314.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 2.78,
+    "wn8_nominal_frags": 0.8,
+    "wn8_nominal_defence": 0.66
   },
   {
     "tank_title": "T-80",
     "icon": "T80",
     "pr_nominal_damage": 280.0,
-    "wn8_nominal_damage": 404.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.87,
-    "wn8_nominal_frags": 1.17,
-    "wn8_nominal_defence": 2.06
+    "wn8_nominal_damage": 392.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.78,
+    "wn8_nominal_frags": 1.16,
+    "wn8_nominal_defence": 1.6
   },
   {
     "tank_title": "Valentine",
     "icon": "GB04_Valentine",
     "pr_nominal_damage": 260.0,
-    "wn8_nominal_damage": 370.0,
+    "wn8_nominal_damage": 350.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.88,
-    "wn8_nominal_frags": 0.96,
-    "wn8_nominal_defence": 1.28
+    "wn8_nominal_spotted": 0.86,
+    "wn8_nominal_frags": 0.91,
+    "wn8_nominal_defence": 1.35
   },
   {
     "tank_title": "Valentine",
     "icon": "Valentine_LL",
     "pr_nominal_damage": 360.0,
-    "wn8_nominal_damage": 396.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.75,
-    "wn8_nominal_frags": 1.45,
-    "wn8_nominal_defence": 1.78
+    "wn8_nominal_damage": 408.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.57,
+    "wn8_nominal_frags": 1.48,
+    "wn8_nominal_defence": 1.72
   },
   {
     "tank_title": "Type 5 Ke-Ho",
     "icon": "Ke_Ho",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 359.0,
+    "wn8_nominal_damage": 415.0,
     "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 2.39,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 1.36
-  },
-  {
-    "tank_title": "Pz.Kpfw. III",
-    "icon": "PzIII_AusfJ",
-    "pr_nominal_damage": 270.0,
-    "wn8_nominal_damage": 360.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 2.15,
-    "wn8_nominal_frags": 1.19,
-    "wn8_nominal_defence": 1.16
+    "wn8_nominal_spotted": 1.88,
+    "wn8_nominal_frags": 1.17,
+    "wn8_nominal_defence": 1.24
   },
   {
     "tank_title": "Pz.Kpfw. IV Ausf. D",
     "icon": "Pz_IV_AusfD",
     "pr_nominal_damage": 270.0,
-    "wn8_nominal_damage": 0.0,
-    "wn8_nominal_win_rate": 0.0,
-    "wn8_nominal_spotted": 0.0,
-    "wn8_nominal_frags": 0.0,
-    "wn8_nominal_defence": 0.0
+    "wn8_nominal_damage": 402.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.28,
+    "wn8_nominal_frags": 1.04,
+    "wn8_nominal_defence": 1.11
+  },
+  {
+    "tank_title": "Pz.Kpfw. III",
+    "icon": "PzIII_AusfJ",
+    "pr_nominal_damage": 270.0,
+    "wn8_nominal_damage": 349.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.98,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 1.01
   },
   {
     "tank_title": "A-32",
     "icon": "A-32",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 273.0,
+    "wn8_nominal_damage": 272.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 2.86,
-    "wn8_nominal_frags": 0.87,
-    "wn8_nominal_defence": 0.56
+    "wn8_nominal_spotted": 2.72,
+    "wn8_nominal_frags": 0.86,
+    "wn8_nominal_defence": 0.49
   },
   {
     "tank_title": "M3 Lee",
     "icon": "M3_Grant",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 377.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 0.87,
-    "wn8_nominal_frags": 1.14,
-    "wn8_nominal_defence": 0.97
+    "wn8_nominal_damage": 358.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.84,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 0.89
   },
   {
     "tank_title": "PzKpfw III",
@@ -2633,181 +2643,181 @@
     "tank_title": "T-28",
     "icon": "T-28",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 421.0,
-    "wn8_nominal_win_rate": 52.0,
-    "wn8_nominal_spotted": 1.24,
-    "wn8_nominal_frags": 1.19,
-    "wn8_nominal_defence": 0.97
+    "wn8_nominal_damage": 414.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.26,
+    "wn8_nominal_frags": 1.11,
+    "wn8_nominal_defence": 0.93
   },
   {
     "tank_title": "VK 20.01 (D)",
     "icon": "VK2001DB",
     "pr_nominal_damage": 270.0,
-    "wn8_nominal_damage": 424.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.71,
-    "wn8_nominal_frags": 1.3,
-    "wn8_nominal_defence": 1.36
+    "wn8_nominal_damage": 423.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.77,
+    "wn8_nominal_frags": 1.28,
+    "wn8_nominal_defence": 1.22
   },
   {
     "tank_title": "Matilda",
     "icon": "GB07_Matilda",
     "pr_nominal_damage": 300.0,
-    "wn8_nominal_damage": 587.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.16,
-    "wn8_nominal_frags": 1.4,
-    "wn8_nominal_defence": 1.61
+    "wn8_nominal_damage": 535.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 0.92,
+    "wn8_nominal_frags": 1.42,
+    "wn8_nominal_defence": 1.72
   },
   {
     "tank_title": "Type 1 Chi-He",
     "icon": "Chi_He",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 429.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.38,
-    "wn8_nominal_frags": 1.27,
-    "wn8_nominal_defence": 1.31
+    "wn8_nominal_damage": 420.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.25,
+    "wn8_nominal_frags": 1.13,
+    "wn8_nominal_defence": 1.18
   },
   {
     "tank_title": "Birch Gun",
     "icon": "GB26_Birch_Gun",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 477.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 1.94
+    "wn8_nominal_damage": 399.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.1,
+    "wn8_nominal_frags": 1.04,
+    "wn8_nominal_defence": 2.1
   },
   {
     "tank_title": "AMX 13 105 AM",
     "icon": "AMX_Ob_Am105",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 477.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.16,
+    "wn8_nominal_damage": 441.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.12,
     "wn8_nominal_frags": 1.11,
-    "wn8_nominal_defence": 1.94
+    "wn8_nominal_defence": 1.69
   },
   {
     "tank_title": "M37",
     "icon": "M37",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 419.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.17,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 1.9
+    "wn8_nominal_damage": 404.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.14,
+    "wn8_nominal_frags": 1.05,
+    "wn8_nominal_defence": 1.56
   },
   {
     "tank_title": "PzSfl IVb",
     "icon": "Pz_Sfl_IVb",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 471.0,
+    "wn8_nominal_damage": 474.0,
     "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.1,
-    "wn8_nominal_defence": 2.44
+    "wn8_nominal_spotted": 0.11,
+    "wn8_nominal_frags": 1.22,
+    "wn8_nominal_defence": 1.73
   },
   {
     "tank_title": "Sturmpanzer II",
     "icon": "Sturmpanzer_II",
     "pr_nominal_damage": 400.0,
     "wn8_nominal_damage": 436.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.18,
-    "wn8_nominal_frags": 1.16,
-    "wn8_nominal_defence": 1.68
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.17,
+    "wn8_nominal_frags": 1.09,
+    "wn8_nominal_defence": 1.69
   },
   {
     "tank_title": "SU-5",
     "icon": "SU-5",
     "pr_nominal_damage": 550.0,
-    "wn8_nominal_damage": 582.0,
-    "wn8_nominal_win_rate": 49.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 1.73
+    "wn8_nominal_damage": 647.0,
+    "wn8_nominal_win_rate": 52.0,
+    "wn8_nominal_spotted": 0.1,
+    "wn8_nominal_frags": 1.11,
+    "wn8_nominal_defence": 1.65
   },
   {
     "tank_title": "Stug III Ausf. B",
     "icon": "G101_StuG_III",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 0.0,
-    "wn8_nominal_win_rate": 0.0,
-    "wn8_nominal_spotted": 0.0,
-    "wn8_nominal_frags": 0.0,
-    "wn8_nominal_defence": 0.0
+    "wn8_nominal_damage": 509.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 0.82,
+    "wn8_nominal_frags": 1.53,
+    "wn8_nominal_defence": 1.32
   },
   {
     "tank_title": "Alecto",
     "icon": "GB57_Alecto",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 504.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.48,
-    "wn8_nominal_frags": 1.49,
-    "wn8_nominal_defence": 1.66
+    "wn8_nominal_damage": 492.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.47,
+    "wn8_nominal_frags": 1.37,
+    "wn8_nominal_defence": 1.62
   },
   {
     "tank_title": "Hetzer",
     "icon": "Hetzer",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 533.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 0.64,
-    "wn8_nominal_frags": 1.63,
-    "wn8_nominal_defence": 1.37
+    "wn8_nominal_damage": 505.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 0.63,
+    "wn8_nominal_frags": 1.58,
+    "wn8_nominal_defence": 1.18
   },
   {
     "tank_title": "M8A1",
     "icon": "M8A1",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 516.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.54,
-    "wn8_nominal_frags": 1.42,
-    "wn8_nominal_defence": 1.77
+    "wn8_nominal_damage": 510.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.58,
+    "wn8_nominal_frags": 1.36,
+    "wn8_nominal_defence": 1.67
   },
   {
     "tank_title": "Somua S-40",
     "icon": "Somua_Sau_40",
     "pr_nominal_damage": 280.0,
-    "wn8_nominal_damage": 409.0,
+    "wn8_nominal_damage": 404.0,
     "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.59,
-    "wn8_nominal_frags": 1.19,
-    "wn8_nominal_defence": 1.14
+    "wn8_nominal_spotted": 0.56,
+    "wn8_nominal_frags": 1.2,
+    "wn8_nominal_defence": 1.1
   },
   {
     "tank_title": "SU-85B",
     "icon": "GAZ-74b",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 519.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.0,
-    "wn8_nominal_frags": 1.44,
-    "wn8_nominal_defence": 1.45
+    "wn8_nominal_damage": 556.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.1,
+    "wn8_nominal_frags": 1.51,
+    "wn8_nominal_defence": 1.43
   },
   {
     "tank_title": "T40",
     "icon": "T40",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 533.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.15,
-    "wn8_nominal_frags": 1.45,
-    "wn8_nominal_defence": 1.46
+    "wn8_nominal_damage": 560.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.24,
+    "wn8_nominal_frags": 1.49,
+    "wn8_nominal_defence": 1.48
   },
   {
     "tank_title": "Marder 38T",
     "icon": "Marder_III",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 533.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 0.64,
-    "wn8_nominal_frags": 1.42,
-    "wn8_nominal_defence": 1.37
+    "wn8_nominal_damage": 565.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 0.99,
+    "wn8_nominal_frags": 1.5,
+    "wn8_nominal_defence": 1.58
   },
   {
     "tank_title": "Type 98 Ke-Ni Otsu",
@@ -2823,91 +2833,91 @@
     "tank_title": "AMX 38",
     "icon": "AMX38",
     "pr_nominal_damage": 100.0,
-    "wn8_nominal_damage": 222.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.05,
-    "wn8_nominal_frags": 0.95,
-    "wn8_nominal_defence": 1.64
+    "wn8_nominal_damage": 221.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 0.98,
+    "wn8_nominal_frags": 0.99,
+    "wn8_nominal_defence": 1.9
   },
   {
     "tank_title": "BT-7",
     "icon": "BT-7",
     "pr_nominal_damage": 100.0,
-    "wn8_nominal_damage": 229.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 2.19,
-    "wn8_nominal_frags": 0.94,
-    "wn8_nominal_defence": 1.38
+    "wn8_nominal_damage": 221.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 2.1,
+    "wn8_nominal_frags": 0.89,
+    "wn8_nominal_defence": 1.16
   },
   {
     "tank_title": "BT-SV",
     "icon": "BT-SV",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 346.0,
-    "wn8_nominal_win_rate": 61.0,
-    "wn8_nominal_spotted": 1.54,
-    "wn8_nominal_frags": 1.52,
-    "wn8_nominal_defence": 1.94
+    "wn8_nominal_damage": 354.0,
+    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_spotted": 2.22,
+    "wn8_nominal_frags": 1.7,
+    "wn8_nominal_defence": 2.02
   },
   {
     "tank_title": "Cruiser Mk. II",
     "icon": "GB69_Cruiser_Mk_II",
     "pr_nominal_damage": 175.0,
-    "wn8_nominal_damage": 330.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.02,
-    "wn8_nominal_frags": 1.51,
-    "wn8_nominal_defence": 1.2
+    "wn8_nominal_damage": 317.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.06,
+    "wn8_nominal_frags": 1.46,
+    "wn8_nominal_defence": 1.13
   },
   {
     "tank_title": "Cruiser Mk. IV",
     "icon": "GB59_Cruiser_Mk_IV",
     "pr_nominal_damage": 165.0,
-    "wn8_nominal_damage": 381.0,
+    "wn8_nominal_damage": 374.0,
     "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.92,
-    "wn8_nominal_frags": 1.65,
-    "wn8_nominal_defence": 1.31
+    "wn8_nominal_spotted": 1.89,
+    "wn8_nominal_frags": 1.56,
+    "wn8_nominal_defence": 1.06
   },
   {
     "tank_title": "LTP",
     "icon": "LTP",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 343.0,
+    "wn8_nominal_damage": 321.0,
     "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.22,
-    "wn8_nominal_frags": 1.68,
-    "wn8_nominal_defence": 2.46
+    "wn8_nominal_spotted": 1.5,
+    "wn8_nominal_frags": 1.51,
+    "wn8_nominal_defence": 1.7
   },
   {
     "tank_title": "M22 Locust",
     "icon": "M22_Locust",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 287.0,
+    "wn8_nominal_damage": 281.0,
     "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 2.94,
-    "wn8_nominal_frags": 1.22,
-    "wn8_nominal_defence": 1.27
+    "wn8_nominal_spotted": 2.75,
+    "wn8_nominal_frags": 1.19,
+    "wn8_nominal_defence": 1.45
   },
   {
     "tank_title": "M3 Stuart LL",
     "icon": "M3_Stuart_LL",
     "pr_nominal_damage": 145.0,
-    "wn8_nominal_damage": 232.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.78,
+    "wn8_nominal_damage": 228.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 1.71,
     "wn8_nominal_frags": 1.02,
-    "wn8_nominal_defence": 1.18
+    "wn8_nominal_defence": 1.12
   },
   {
     "tank_title": "M3 Stuart",
     "icon": "M3_Stuart",
     "pr_nominal_damage": 130.0,
-    "wn8_nominal_damage": 252.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 2.66,
-    "wn8_nominal_frags": 1.09,
-    "wn8_nominal_defence": 1.57
+    "wn8_nominal_damage": 249.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 2.48,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 1.27
   },
   {
     "tank_title": "MTLS-1G14",
@@ -2923,121 +2933,111 @@
     "tank_title": "PzKpfw 38 (t)",
     "icon": "Pz38t",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 384.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 1.58,
-    "wn8_nominal_frags": 1.68,
-    "wn8_nominal_defence": 1.77
+    "wn8_nominal_damage": 373.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.59,
+    "wn8_nominal_frags": 1.59,
+    "wn8_nominal_defence": 1.48
   },
   {
     "tank_title": "Pz.I Ausf.С",
     "icon": "PzI_ausf_C",
     "pr_nominal_damage": 225.0,
-    "wn8_nominal_damage": 277.0,
+    "wn8_nominal_damage": 260.0,
     "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 3.01,
-    "wn8_nominal_frags": 1.31,
-    "wn8_nominal_defence": 1.41
+    "wn8_nominal_spotted": 3.15,
+    "wn8_nominal_frags": 1.23,
+    "wn8_nominal_defence": 1.25
   },
   {
     "tank_title": "Pz.II Ausf.G",
     "icon": "Pz_II_AusfG",
     "pr_nominal_damage": 200.0,
-    "wn8_nominal_damage": 288.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.99,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 1.63
+    "wn8_nominal_damage": 281.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.89,
+    "wn8_nominal_frags": 1.1,
+    "wn8_nominal_defence": 1.41
   },
   {
     "tank_title": "PzKpfw II Ausf. J",
     "icon": "PzII_J",
     "pr_nominal_damage": 400.0,
-    "wn8_nominal_damage": 405.0,
-    "wn8_nominal_win_rate": 63.0,
-    "wn8_nominal_spotted": 2.08,
-    "wn8_nominal_frags": 2.14,
-    "wn8_nominal_defence": 3.01
+    "wn8_nominal_damage": 389.0,
+    "wn8_nominal_win_rate": 72.0,
+    "wn8_nominal_spotted": 2.03,
+    "wn8_nominal_frags": 2.06,
+    "wn8_nominal_defence": 2.3
   },
   {
     "tank_title": "PzKpfw III Ausf. A",
     "icon": "PzIII_A",
     "pr_nominal_damage": 135.0,
-    "wn8_nominal_damage": 268.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.84,
-    "wn8_nominal_frags": 1.2,
-    "wn8_nominal_defence": 1.53
+    "wn8_nominal_damage": 270.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.85,
+    "wn8_nominal_frags": 1.17,
+    "wn8_nominal_defence": 0.9
   },
   {
     "tank_title": "T-127",
     "icon": "T-127",
     "pr_nominal_damage": 380.0,
-    "wn8_nominal_damage": 393.0,
+    "wn8_nominal_damage": 381.0,
     "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.83,
-    "wn8_nominal_frags": 1.89,
-    "wn8_nominal_defence": 1.88
+    "wn8_nominal_spotted": 1.81,
+    "wn8_nominal_frags": 1.83,
+    "wn8_nominal_defence": 1.87
   },
   {
     "tank_title": "T-15",
     "icon": "T-15",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 295.0,
+    "wn8_nominal_damage": 283.0,
     "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 3.61,
-    "wn8_nominal_frags": 1.29,
-    "wn8_nominal_defence": 1.66
+    "wn8_nominal_spotted": 3.08,
+    "wn8_nominal_frags": 1.24,
+    "wn8_nominal_defence": 1.57
   },
   {
     "tank_title": "T-46",
     "icon": "T-46",
     "pr_nominal_damage": 135.0,
-    "wn8_nominal_damage": 284.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.57,
-    "wn8_nominal_frags": 1.17,
-    "wn8_nominal_defence": 1.27
+    "wn8_nominal_damage": 274.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.46,
+    "wn8_nominal_frags": 1.14,
+    "wn8_nominal_defence": 1.02
   },
   {
     "tank_title": "T-70",
     "icon": "T-70",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 361.0,
-    "wn8_nominal_win_rate": 62.0,
-    "wn8_nominal_spotted": 1.72,
-    "wn8_nominal_frags": 1.47,
-    "wn8_nominal_defence": 1.37
+    "wn8_nominal_damage": 353.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.53,
+    "wn8_nominal_frags": 1.5,
+    "wn8_nominal_defence": 1.76
   },
   {
     "tank_title": "Type 2597 Chi-Ha",
     "icon": "Ch08_Type97_Chi_Ha",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 384.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.47,
-    "wn8_nominal_frags": 1.57,
-    "wn8_nominal_defence": 1.71
+    "wn8_nominal_damage": 373.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.4,
+    "wn8_nominal_frags": 1.53,
+    "wn8_nominal_defence": 1.53
   },
   {
     "tank_title": "Type 98 Ke-Ni",
     "icon": "Ke_Ni",
     "pr_nominal_damage": 180.0,
-    "wn8_nominal_damage": 314.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.95,
+    "wn8_nominal_damage": 334.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.81,
     "wn8_nominal_frags": 1.39,
-    "wn8_nominal_defence": 1.64
-  },
-  {
-    "tank_title": "Pz.Kpfw. IV Ausf. A",
-    "icon": "Pz_IV_AusfA",
-    "pr_nominal_damage": 220.0,
-    "wn8_nominal_damage": 0.0,
-    "wn8_nominal_win_rate": 0.0,
-    "wn8_nominal_spotted": 0.0,
-    "wn8_nominal_frags": 0.0,
-    "wn8_nominal_defence": 0.0
+    "wn8_nominal_defence": 1.67
   },
   {
     "tank_title": "Großtraktor - Krupp",
@@ -3050,54 +3050,64 @@
     "wn8_nominal_defence": 0.0
   },
   {
+    "tank_title": "Pz.Kpfw. IV Ausf. A",
+    "icon": "Pz_IV_AusfA",
+    "pr_nominal_damage": 220.0,
+    "wn8_nominal_damage": 327.0,
+    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_spotted": 1.33,
+    "wn8_nominal_frags": 1.46,
+    "wn8_nominal_defence": 1.32
+  },
+  {
     "tank_title": "D2",
     "icon": "D2",
     "pr_nominal_damage": 140.0,
-    "wn8_nominal_damage": 320.0,
-    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_damage": 315.0,
+    "wn8_nominal_win_rate": 58.0,
     "wn8_nominal_spotted": 0.97,
-    "wn8_nominal_frags": 1.38,
-    "wn8_nominal_defence": 2.07
+    "wn8_nominal_frags": 1.34,
+    "wn8_nominal_defence": 1.6
   },
   {
     "tank_title": "M2 Medium Tank",
     "icon": "M2_med",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 301.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 1.45,
-    "wn8_nominal_frags": 1.38,
-    "wn8_nominal_defence": 1.15
+    "wn8_nominal_damage": 300.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.52,
+    "wn8_nominal_frags": 1.36,
+    "wn8_nominal_defence": 1.09
   },
   {
     "tank_title": "PzKpfw S35 739 (f)",
     "icon": "S35_captured",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 425.0,
+    "wn8_nominal_damage": 405.0,
     "wn8_nominal_win_rate": 62.0,
-    "wn8_nominal_spotted": 1.58,
-    "wn8_nominal_frags": 1.9,
-    "wn8_nominal_defence": 1.94
+    "wn8_nominal_spotted": 1.57,
+    "wn8_nominal_frags": 1.78,
+    "wn8_nominal_defence": 1.84
   },
   {
     "tank_title": "Vickers Medium Mk. III",
     "icon": "GB06_Vickers_Medium_Mk_III",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 290.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 1.04,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 0.47
+    "wn8_nominal_damage": 289.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 1.03,
+    "wn8_nominal_frags": 1.16,
+    "wn8_nominal_defence": 1.02
   },
   {
     "tank_title": "Type 97 Chi-Ha",
     "icon": "Chi_Ha",
     "pr_nominal_damage": 200.0,
-    "wn8_nominal_damage": 334.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.26,
-    "wn8_nominal_frags": 1.45,
-    "wn8_nominal_defence": 1.41
+    "wn8_nominal_damage": 363.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.29,
+    "wn8_nominal_frags": 1.46,
+    "wn8_nominal_defence": 1.36
   },
   {
     "tank_title": "Sexton I",
@@ -3113,451 +3123,451 @@
     "tank_title": "Sexton I",
     "icon": "GB78_Sexton_I",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 490.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.3,
-    "wn8_nominal_defence": 1.93
+    "wn8_nominal_damage": 213.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.09,
+    "wn8_nominal_frags": 1.16,
+    "wn8_nominal_defence": 5.73
   },
   {
     "tank_title": "Sexton II",
     "icon": "GB27_Sexton",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 490.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.3,
-    "wn8_nominal_defence": 1.93
+    "wn8_nominal_damage": 213.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.09,
+    "wn8_nominal_frags": 1.16,
+    "wn8_nominal_defence": 5.73
   },
   {
     "tank_title": "Lorraine39 L AM",
     "icon": "Lorraine39_L_AM",
     "pr_nominal_damage": 425.0,
-    "wn8_nominal_damage": 500.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.15,
-    "wn8_nominal_frags": 1.39,
-    "wn8_nominal_defence": 2.2
+    "wn8_nominal_damage": 494.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 0.14,
+    "wn8_nominal_frags": 1.35,
+    "wn8_nominal_defence": 1.98
   },
   {
     "tank_title": "M7 Priest",
     "icon": "M7_Priest",
     "pr_nominal_damage": 500.0,
-    "wn8_nominal_damage": 567.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.04,
-    "wn8_nominal_defence": 1.89
+    "wn8_nominal_damage": 572.0,
+    "wn8_nominal_win_rate": 51.0,
+    "wn8_nominal_spotted": 0.11,
+    "wn8_nominal_frags": 1.03,
+    "wn8_nominal_defence": 1.92
   },
   {
     "tank_title": "Sturmpanzer I Bison",
     "icon": "Bison_I",
     "pr_nominal_damage": 200.0,
-    "wn8_nominal_damage": 383.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 0.21,
-    "wn8_nominal_frags": 1.31,
+    "wn8_nominal_damage": 389.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 0.2,
+    "wn8_nominal_frags": 1.26,
     "wn8_nominal_defence": 1.57
   },
   {
     "tank_title": "SU-26",
     "icon": "SU-26",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 586.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.6,
-    "wn8_nominal_defence": 2.17
+    "wn8_nominal_damage": 593.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 0.13,
+    "wn8_nominal_frags": 1.57,
+    "wn8_nominal_defence": 2.08
   },
   {
     "tank_title": "Wespe",
     "icon": "Wespe",
     "pr_nominal_damage": 320.0,
-    "wn8_nominal_damage": 415.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.16,
-    "wn8_nominal_frags": 1.15,
-    "wn8_nominal_defence": 1.81
+    "wn8_nominal_damage": 424.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.14,
+    "wn8_nominal_frags": 1.13,
+    "wn8_nominal_defence": 1.77
   },
   {
     "tank_title": "FCM36 Pak40",
     "icon": "FCM_36Pak40",
     "pr_nominal_damage": 450.0,
-    "wn8_nominal_damage": 472.0,
-    "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 1.03,
-    "wn8_nominal_frags": 1.96,
-    "wn8_nominal_defence": 2.15
+    "wn8_nominal_damage": 455.0,
+    "wn8_nominal_win_rate": 61.0,
+    "wn8_nominal_spotted": 1.1,
+    "wn8_nominal_frags": 1.88,
+    "wn8_nominal_defence": 1.78
   },
   {
     "tank_title": "Marder II",
     "icon": "G20_Marder_II",
     "pr_nominal_damage": 350.0,
-    "wn8_nominal_damage": 428.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.08,
-    "wn8_nominal_frags": 1.51,
-    "wn8_nominal_defence": 1.51
+    "wn8_nominal_damage": 412.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.09,
+    "wn8_nominal_frags": 1.47,
+    "wn8_nominal_defence": 1.45
   },
   {
     "tank_title": "Renault UE 57",
     "icon": "RenaultUE57",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 389.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.02,
-    "wn8_nominal_frags": 1.58,
-    "wn8_nominal_defence": 2.09
+    "wn8_nominal_damage": 379.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.1,
+    "wn8_nominal_frags": 1.51,
+    "wn8_nominal_defence": 1.72
   },
   {
     "tank_title": "SU-76",
     "icon": "SU-76",
     "pr_nominal_damage": 250.0,
-    "wn8_nominal_damage": 396.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.87,
-    "wn8_nominal_frags": 1.49,
-    "wn8_nominal_defence": 1.7
+    "wn8_nominal_damage": 395.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 0.95,
+    "wn8_nominal_frags": 1.58,
+    "wn8_nominal_defence": 1.54
   },
   {
     "tank_title": "T82",
     "icon": "T82",
     "pr_nominal_damage": 300.0,
-    "wn8_nominal_damage": 389.0,
+    "wn8_nominal_damage": 375.0,
     "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.31,
-    "wn8_nominal_frags": 1.57,
-    "wn8_nominal_defence": 1.11
+    "wn8_nominal_spotted": 1.33,
+    "wn8_nominal_frags": 1.54,
+    "wn8_nominal_defence": 1.18
   },
   {
     "tank_title": "Valentine AT",
     "icon": "GB42_Valentine_AT",
     "pr_nominal_damage": 300.0,
-    "wn8_nominal_damage": 401.0,
-    "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 0.94,
-    "wn8_nominal_frags": 1.76,
-    "wn8_nominal_defence": 1.64
+    "wn8_nominal_damage": 391.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 0.9,
+    "wn8_nominal_frags": 1.66,
+    "wn8_nominal_defence": 1.7
   },
   {
     "tank_title": "BT-2",
     "icon": "BT-2",
     "pr_nominal_damage": 175.0,
-    "wn8_nominal_damage": 306.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 2.2,
-    "wn8_nominal_frags": 1.89,
-    "wn8_nominal_defence": 1.58
+    "wn8_nominal_damage": 284.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 2.06,
+    "wn8_nominal_frags": 1.69,
+    "wn8_nominal_defence": 1.48
   },
   {
     "tank_title": "Cruiser Mk. I",
     "icon": "GB03_Cruiser_Mk_I",
     "pr_nominal_damage": 145.0,
-    "wn8_nominal_damage": 301.0,
-    "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 1.97,
-    "wn8_nominal_frags": 1.73,
-    "wn8_nominal_defence": 1.4
+    "wn8_nominal_damage": 314.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.63,
+    "wn8_nominal_frags": 1.83,
+    "wn8_nominal_defence": 1.68
   },
   {
     "tank_title": "Cruiser Mk. III",
     "icon": "GB58_Cruiser_Mk_III",
     "pr_nominal_damage": 200.0,
-    "wn8_nominal_damage": 349.0,
-    "wn8_nominal_win_rate": 64.0,
-    "wn8_nominal_spotted": 2.24,
-    "wn8_nominal_frags": 2.09,
-    "wn8_nominal_defence": 1.42
+    "wn8_nominal_damage": 334.0,
+    "wn8_nominal_win_rate": 62.0,
+    "wn8_nominal_spotted": 2.29,
+    "wn8_nominal_frags": 1.96,
+    "wn8_nominal_defence": 1.39
   },
   {
     "tank_title": "D1",
     "icon": "D1",
     "pr_nominal_damage": 125.0,
-    "wn8_nominal_damage": 250.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.24,
-    "wn8_nominal_frags": 1.46,
-    "wn8_nominal_defence": 2.9
+    "wn8_nominal_damage": 233.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 1.18,
+    "wn8_nominal_frags": 1.41,
+    "wn8_nominal_defence": 2.14
   },
   {
     "tank_title": "Hotchkiss H35",
     "icon": "Hotchkiss_H35",
     "pr_nominal_damage": 175.0,
-    "wn8_nominal_damage": 249.0,
-    "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 1.32,
-    "wn8_nominal_frags": 1.52,
-    "wn8_nominal_defence": 2.43
+    "wn8_nominal_damage": 246.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.4,
+    "wn8_nominal_frags": 1.5,
+    "wn8_nominal_defence": 1.87
   },
   {
     "tank_title": "M2 Light Tank",
     "icon": "M2_lt",
     "pr_nominal_damage": 145.0,
-    "wn8_nominal_damage": 281.0,
+    "wn8_nominal_damage": 267.0,
     "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 2.73,
-    "wn8_nominal_frags": 1.75,
-    "wn8_nominal_defence": 1.76
+    "wn8_nominal_spotted": 2.72,
+    "wn8_nominal_frags": 1.59,
+    "wn8_nominal_defence": 1.49
   },
   {
     "tank_title": "PzKpfw 35 (t)",
     "icon": "Pz35t",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 311.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 2.01,
-    "wn8_nominal_frags": 1.95,
-    "wn8_nominal_defence": 2.19
+    "wn8_nominal_damage": 293.0,
+    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_spotted": 1.99,
+    "wn8_nominal_frags": 1.75,
+    "wn8_nominal_defence": 1.73
   },
   {
     "tank_title": "PzKpfw 38H735 (f)",
     "icon": "H39_captured",
     "pr_nominal_damage": 300.0,
-    "wn8_nominal_damage": 352.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 1.88,
-    "wn8_nominal_frags": 2.2,
-    "wn8_nominal_defence": 2.72
+    "wn8_nominal_damage": 347.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.93,
+    "wn8_nominal_frags": 2.12,
+    "wn8_nominal_defence": 2.63
   },
   {
     "tank_title": "Pz.I",
     "icon": "PzI",
     "pr_nominal_damage": 145.0,
-    "wn8_nominal_damage": 266.0,
+    "wn8_nominal_damage": 262.0,
     "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 3.18,
-    "wn8_nominal_frags": 1.72,
-    "wn8_nominal_defence": 2.66
+    "wn8_nominal_spotted": 2.1,
+    "wn8_nominal_frags": 1.57,
+    "wn8_nominal_defence": 1.49
   },
   {
     "tank_title": "PzKpfw II",
     "icon": "PzII",
     "pr_nominal_damage": 200.0,
-    "wn8_nominal_damage": 272.0,
-    "wn8_nominal_win_rate": 56.0,
-    "wn8_nominal_spotted": 2.05,
-    "wn8_nominal_frags": 1.69,
-    "wn8_nominal_defence": 1.78
+    "wn8_nominal_damage": 262.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 2.1,
+    "wn8_nominal_frags": 1.57,
+    "wn8_nominal_defence": 1.49
   },
   {
     "tank_title": "T1 E6",
     "icon": "T1_E6",
     "pr_nominal_damage": 175.0,
-    "wn8_nominal_damage": 269.0,
+    "wn8_nominal_damage": 234.0,
     "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 2.05,
-    "wn8_nominal_frags": 1.62,
-    "wn8_nominal_defence": 1.43
+    "wn8_nominal_spotted": 1.77,
+    "wn8_nominal_frags": 1.37,
+    "wn8_nominal_defence": 1.47
   },
   {
     "tank_title": "T2 Light Tank",
     "icon": "T2_lt",
     "pr_nominal_damage": 225.0,
-    "wn8_nominal_damage": 275.0,
+    "wn8_nominal_damage": 242.0,
     "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 3.12,
-    "wn8_nominal_frags": 1.7,
-    "wn8_nominal_defence": 1.64
+    "wn8_nominal_spotted": 2.7,
+    "wn8_nominal_frags": 1.5,
+    "wn8_nominal_defence": 1.42
   },
   {
     "tank_title": "T-26",
     "icon": "T-26",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 302.0,
-    "wn8_nominal_win_rate": 55.0,
-    "wn8_nominal_spotted": 1.26,
-    "wn8_nominal_frags": 1.87,
-    "wn8_nominal_defence": 2.33
+    "wn8_nominal_damage": 287.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.41,
+    "wn8_nominal_frags": 1.71,
+    "wn8_nominal_defence": 1.74
   },
   {
     "tank_title": "T-60",
     "icon": "T-60",
     "pr_nominal_damage": 175.0,
-    "wn8_nominal_damage": 299.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.71,
-    "wn8_nominal_frags": 1.8,
-    "wn8_nominal_defence": 2.37
+    "wn8_nominal_damage": 276.0,
+    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_spotted": 1.7,
+    "wn8_nominal_frags": 1.67,
+    "wn8_nominal_defence": 2.01
   },
   {
     "tank_title": "MkVII Tetrarch",
     "icon": "Tetrarch_LL",
     "pr_nominal_damage": 225.0,
-    "wn8_nominal_damage": 323.0,
+    "wn8_nominal_damage": 302.0,
     "wn8_nominal_win_rate": 59.0,
-    "wn8_nominal_spotted": 1.63,
-    "wn8_nominal_frags": 1.96,
-    "wn8_nominal_defence": 1.87
+    "wn8_nominal_spotted": 1.55,
+    "wn8_nominal_frags": 1.77,
+    "wn8_nominal_defence": 1.65
   },
   {
     "tank_title": "Vickers Mk. E",
     "icon": "Ch07_Vickers_MkE_Type_BT26",
     "pr_nominal_damage": 200.0,
-    "wn8_nominal_damage": 308.0,
+    "wn8_nominal_damage": 294.0,
     "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.72,
-    "wn8_nominal_frags": 1.85,
-    "wn8_nominal_defence": 1.83
+    "wn8_nominal_spotted": 1.58,
+    "wn8_nominal_frags": 1.77,
+    "wn8_nominal_defence": 1.56
   },
   {
     "tank_title": "T7 Combat Car",
     "icon": "T7_Combat_Car",
     "pr_nominal_damage": 175.0,
-    "wn8_nominal_damage": 295.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 2.02,
-    "wn8_nominal_frags": 1.8,
-    "wn8_nominal_defence": 2.02
+    "wn8_nominal_damage": 211.0,
+    "wn8_nominal_win_rate": 65.0,
+    "wn8_nominal_spotted": 1.41,
+    "wn8_nominal_frags": 1.37,
+    "wn8_nominal_defence": 0.54
   },
   {
     "tank_title": "Type 95 Ha-Go",
     "icon": "Ha_Go",
     "pr_nominal_damage": 160.0,
-    "wn8_nominal_damage": 295.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 2.02,
-    "wn8_nominal_frags": 1.8,
-    "wn8_nominal_defence": 2.02
+    "wn8_nominal_damage": 290.0,
+    "wn8_nominal_win_rate": 61.0,
+    "wn8_nominal_spotted": 1.72,
+    "wn8_nominal_frags": 1.73,
+    "wn8_nominal_defence": 1.81
   },
   {
     "tank_title": "Light Mk. VIC",
     "icon": "GB76_Mk_VIC",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 295.0,
-    "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 2.02,
-    "wn8_nominal_frags": 1.8,
-    "wn8_nominal_defence": 2.02
+    "wn8_nominal_damage": 250.0,
+    "wn8_nominal_win_rate": 61.0,
+    "wn8_nominal_spotted": 2.39,
+    "wn8_nominal_frags": 1.69,
+    "wn8_nominal_defence": 1.64
   },
   {
     "tank_title": "T2 Medium Tank",
     "icon": "T2_med",
     "pr_nominal_damage": 150.0,
-    "wn8_nominal_damage": 310.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 2.01,
-    "wn8_nominal_frags": 1.92,
-    "wn8_nominal_defence": 1.92
+    "wn8_nominal_damage": 284.0,
+    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_spotted": 1.78,
+    "wn8_nominal_frags": 1.66,
+    "wn8_nominal_defence": 1.27
   },
   {
     "tank_title": "Vickers Medium Mk. II",
     "icon": "GB05_Vickers_Medium_Mk_II",
     "pr_nominal_damage": 135.0,
-    "wn8_nominal_damage": 297.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.23,
-    "wn8_nominal_frags": 1.8,
-    "wn8_nominal_defence": 1.67
+    "wn8_nominal_damage": 285.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 1.03,
+    "wn8_nominal_frags": 1.72,
+    "wn8_nominal_defence": 1.18
   },
   {
     "tank_title": "Chi-Ni",
     "icon": "Chi_Ni",
     "pr_nominal_damage": 160.0,
-    "wn8_nominal_damage": 297.0,
-    "wn8_nominal_win_rate": 57.0,
-    "wn8_nominal_spotted": 1.23,
-    "wn8_nominal_frags": 1.8,
-    "wn8_nominal_defence": 1.67
+    "wn8_nominal_damage": 277.0,
+    "wn8_nominal_win_rate": 60.0,
+    "wn8_nominal_spotted": 1.49,
+    "wn8_nominal_frags": 1.74,
+    "wn8_nominal_defence": 1.56
   },
   {
     "tank_title": "GPz Mk VI (e)",
     "icon": "GW_Mk_VIe",
     "pr_nominal_damage": 170.0,
-    "wn8_nominal_damage": 280.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.17,
-    "wn8_nominal_frags": 1.47,
-    "wn8_nominal_defence": 2.23
+    "wn8_nominal_damage": 211.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.22,
+    "wn8_nominal_frags": 1.33,
+    "wn8_nominal_defence": 2.25
   },
   {
     "tank_title": "Loyd Gun Carriage",
     "icon": "GB25_Loyd_Carrier",
     "pr_nominal_damage": 170.0,
-    "wn8_nominal_damage": 280.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.17,
-    "wn8_nominal_frags": 1.47,
-    "wn8_nominal_defence": 2.23
+    "wn8_nominal_damage": 211.0,
+    "wn8_nominal_win_rate": 54.0,
+    "wn8_nominal_spotted": 0.22,
+    "wn8_nominal_frags": 1.33,
+    "wn8_nominal_defence": 2.25
   },
   {
     "tank_title": "RenaultBS",
     "icon": "RenaultBS",
     "pr_nominal_damage": 170.0,
-    "wn8_nominal_damage": 278.0,
-    "wn8_nominal_win_rate": 53.0,
-    "wn8_nominal_spotted": 0.18,
-    "wn8_nominal_frags": 1.44,
-    "wn8_nominal_defence": 1.85
+    "wn8_nominal_damage": 254.0,
+    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_spotted": 0.17,
+    "wn8_nominal_frags": 1.4,
+    "wn8_nominal_defence": 1.72
   },
   {
     "tank_title": "SU-18",
     "icon": "SU-18",
     "pr_nominal_damage": 170.0,
-    "wn8_nominal_damage": 267.0,
-    "wn8_nominal_win_rate": 50.0,
-    "wn8_nominal_spotted": 0.17,
-    "wn8_nominal_frags": 1.42,
-    "wn8_nominal_defence": 2.51
+    "wn8_nominal_damage": 252.0,
+    "wn8_nominal_win_rate": 53.0,
+    "wn8_nominal_spotted": 0.14,
+    "wn8_nominal_frags": 1.33,
+    "wn8_nominal_defence": 1.85
   },
   {
     "tank_title": "T57",
     "icon": "T57",
     "pr_nominal_damage": 180.0,
-    "wn8_nominal_damage": 296.0,
-    "wn8_nominal_win_rate": 51.0,
-    "wn8_nominal_spotted": 0.3,
-    "wn8_nominal_frags": 1.56,
-    "wn8_nominal_defence": 2.33
+    "wn8_nominal_damage": 280.0,
+    "wn8_nominal_win_rate": 55.0,
+    "wn8_nominal_spotted": 0.37,
+    "wn8_nominal_frags": 1.44,
+    "wn8_nominal_defence": 2.09
   },
   {
     "tank_title": "AT-1",
     "icon": "AT-1",
     "pr_nominal_damage": 170.0,
-    "wn8_nominal_damage": 307.0,
-    "wn8_nominal_win_rate": 56.0,
+    "wn8_nominal_damage": 304.0,
+    "wn8_nominal_win_rate": 58.0,
     "wn8_nominal_spotted": 0.46,
-    "wn8_nominal_frags": 1.74,
-    "wn8_nominal_defence": 1.66
+    "wn8_nominal_frags": 1.8,
+    "wn8_nominal_defence": 1.54
   },
   {
     "tank_title": "Panzerjäger I",
     "icon": "PanzerJager_I",
     "pr_nominal_damage": 215.0,
     "wn8_nominal_damage": 330.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 0.94,
-    "wn8_nominal_frags": 1.95,
-    "wn8_nominal_defence": 1.78
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.13,
+    "wn8_nominal_frags": 2.02,
+    "wn8_nominal_defence": 1.64
   },
   {
     "tank_title": "RenaultFT AC",
     "icon": "RenaultFT_AC",
     "pr_nominal_damage": 200.0,
-    "wn8_nominal_damage": 334.0,
-    "wn8_nominal_win_rate": 54.0,
-    "wn8_nominal_spotted": 0.86,
-    "wn8_nominal_frags": 2.02,
-    "wn8_nominal_defence": 1.65
+    "wn8_nominal_damage": 331.0,
+    "wn8_nominal_win_rate": 58.0,
+    "wn8_nominal_spotted": 0.89,
+    "wn8_nominal_frags": 2.04,
+    "wn8_nominal_defence": 1.85
   },
   {
     "tank_title": "T18",
     "icon": "T18",
     "pr_nominal_damage": 300.0,
-    "wn8_nominal_damage": 360.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.21,
-    "wn8_nominal_frags": 2.48,
-    "wn8_nominal_defence": 1.79
+    "wn8_nominal_damage": 336.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.24,
+    "wn8_nominal_frags": 2.27,
+    "wn8_nominal_defence": 1.64
   },
   {
     "tank_title": "Universal Carrier 2-pdr",
     "icon": "GB39_Universal_CarrierQF2",
     "pr_nominal_damage": 180.0,
-    "wn8_nominal_damage": 321.0,
-    "wn8_nominal_win_rate": 61.0,
-    "wn8_nominal_spotted": 1.48,
-    "wn8_nominal_frags": 1.95,
-    "wn8_nominal_defence": 1.77
+    "wn8_nominal_damage": 312.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.4,
+    "wn8_nominal_frags": 1.91,
+    "wn8_nominal_defence": 1.59
   },
   {
     "tank_title": "Observer",
@@ -3573,70 +3583,70 @@
     "tank_title": "Leichttraktor",
     "icon": "Ltraktor",
     "pr_nominal_damage": 125.0,
-    "wn8_nominal_damage": 278.0,
+    "wn8_nominal_damage": 269.0,
     "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 2.35,
-    "wn8_nominal_frags": 2.11,
-    "wn8_nominal_defence": 1.84
+    "wn8_nominal_spotted": 2.25,
+    "wn8_nominal_frags": 2.03,
+    "wn8_nominal_defence": 1.55
   },
   {
     "tank_title": "MS-1",
     "icon": "MS-1",
     "pr_nominal_damage": 100.0,
-    "wn8_nominal_damage": 270.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.55,
-    "wn8_nominal_frags": 2.1,
-    "wn8_nominal_defence": 1.81
+    "wn8_nominal_damage": 260.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.48,
+    "wn8_nominal_frags": 2.02,
+    "wn8_nominal_defence": 1.59
   },
   {
     "tank_title": "RenaultFT",
     "icon": "RenaultFT",
     "pr_nominal_damage": 90.0,
-    "wn8_nominal_damage": 268.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 2.12,
-    "wn8_nominal_frags": 2.01,
-    "wn8_nominal_defence": 2.17
+    "wn8_nominal_damage": 255.0,
+    "wn8_nominal_win_rate": 59.0,
+    "wn8_nominal_spotted": 1.55,
+    "wn8_nominal_frags": 1.84,
+    "wn8_nominal_defence": 1.98
   },
   {
     "tank_title": "Renault NC-31",
     "icon": "Ch06_Renault_NC31",
     "pr_nominal_damage": 125.0,
-    "wn8_nominal_damage": 274.0,
-    "wn8_nominal_win_rate": 60.0,
-    "wn8_nominal_spotted": 1.51,
-    "wn8_nominal_frags": 2.05,
-    "wn8_nominal_defence": 2.1
+    "wn8_nominal_damage": 262.0,
+    "wn8_nominal_win_rate": 57.0,
+    "wn8_nominal_spotted": 1.52,
+    "wn8_nominal_frags": 2.0,
+    "wn8_nominal_defence": 1.76
   },
   {
     "tank_title": "T1 Cunningham",
     "icon": "T1_Cunningham",
     "pr_nominal_damage": 125.0,
-    "wn8_nominal_damage": 265.0,
+    "wn8_nominal_damage": 239.0,
     "wn8_nominal_win_rate": 61.0,
-    "wn8_nominal_spotted": 2.67,
-    "wn8_nominal_frags": 2.14,
-    "wn8_nominal_defence": 1.78
+    "wn8_nominal_spotted": 2.34,
+    "wn8_nominal_frags": 1.93,
+    "wn8_nominal_defence": 1.55
   },
   {
     "tank_title": "Renault Otsu",
     "icon": "NC27",
     "pr_nominal_damage": 100.0,
-    "wn8_nominal_damage": 260.0,
+    "wn8_nominal_damage": 237.0,
     "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.38,
-    "wn8_nominal_frags": 2.05,
-    "wn8_nominal_defence": 1.76
+    "wn8_nominal_spotted": 1.4,
+    "wn8_nominal_frags": 1.95,
+    "wn8_nominal_defence": 2.51
   },
   {
     "tank_title": "Medium Mark I",
     "icon": "GB01_Medium_Mark_I",
     "pr_nominal_damage": 100.0,
-    "wn8_nominal_damage": 260.0,
+    "wn8_nominal_damage": 247.0,
     "wn8_nominal_win_rate": 58.0,
-    "wn8_nominal_spotted": 1.38,
-    "wn8_nominal_frags": 2.05,
-    "wn8_nominal_defence": 1.76
+    "wn8_nominal_spotted": 1.2,
+    "wn8_nominal_frags": 1.92,
+    "wn8_nominal_defence": 1.21
   }
 ]

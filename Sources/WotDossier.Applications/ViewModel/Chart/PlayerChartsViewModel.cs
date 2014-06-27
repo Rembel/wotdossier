@@ -39,7 +39,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         private bool _resp2;
         private bool _allResps = true;
         private DateTime? _startDate;
-        private DateTime? _endDate;
+        private DateTime? _endDate = DateTime.Now;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="PlayerChartsViewModel" /> is resp1.

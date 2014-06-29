@@ -5,6 +5,7 @@ namespace WotDossier.Domain.Server
     public class PlayerData
     {
         public int account_id { get; set; }
+        public int? clan_id { get; set; }
         public string nickname { get; set; }
         public double created_at { get; set; }
         public double updated_at { get; set; }

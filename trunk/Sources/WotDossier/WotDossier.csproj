@@ -180,6 +180,8 @@
       <DependentUpon>TextWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\Color\AliveToColorConverter.cs" />
+    <Compile Include="Converters\Color\FragsToColorConverter.cs" />
+    <Compile Include="Converters\Color\SpottedToColorConverter.cs" />
     <Compile Include="Converters\Color\WN8ToColorConverter.cs" />
     <Compile Include="Converters\Color\EffRangeBrushes.cs" />
     <Compile Include="Converters\Color\NoobRatingToColorConverter.cs" />
@@ -193,6 +195,8 @@
     <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
     <Compile Include="Converters\BattleModeToVisibilityConverter.cs" />
+    <Compile Include="Converters\DamageRatingToTooltipConverter.cs" />
+    <Compile Include="Converters\Image\DamageRatingToImageConverter.cs" />
     <Compile Include="Converters\Image\ImageSourceConverter.cs" />
     <Compile Include="Converters\ValueToTextConverter.cs" />
     <Compile Include="Converters\Formater\NumberFormatConverter.cs" />

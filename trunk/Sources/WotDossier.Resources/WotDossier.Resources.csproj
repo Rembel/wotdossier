@@ -806,6 +806,29 @@
     <Resource Include="Images\artefact\toolbox.png" />
     <Resource Include="Images\artefact\wetCombatPack.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\marksOnGun\95x85\china_1_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\china_2_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\china_3_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\france_1_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\france_2_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\france_3_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\germany_1_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\germany_2_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\germany_3_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\japan_1_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\japan_2_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\japan_3_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\uk_1_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\uk_2_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\uk_3_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\usa_1_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\usa_2_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\usa_3_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\ussr_1_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\ussr_2_marks.png" />
+    <Resource Include="Images\marksOnGun\95x85\ussr_3_marks.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -118,6 +118,7 @@ namespace WotDossier.Applications.Logic.Adapter
             Xp = stat.dataField.statistics.all.xp;
             BattleAvgXp = stat.dataField.statistics.all.battle_avg_xp;
             MaxXp = stat.dataField.statistics.max_xp;
+            MaxDamage = stat.dataField.statistics.max_damage;
             Frags = stat.dataField.statistics.all.frags;
             Spotted = stat.dataField.statistics.all.spotted;
             HitsPercents = stat.dataField.statistics.all.hits_percents;
@@ -138,91 +139,91 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #region [ BattleAwards ]
 
-            Warrior = stat.dataField.achievements.warrior;
-            Invader = stat.dataField.achievements.invader;
-            Sniper = stat.dataField.achievements.sniper;
-            Defender = stat.dataField.achievements.defender;
-            SteelWall = stat.dataField.achievements.steelwall;
-            Confederate = stat.dataField.achievements.supporter;
-            Scout = stat.dataField.achievements.scout;
-            PatrolDuty = stat.dataField.achievements.evileye;
-            BrothersInArms = stat.dataField.achievements.medalBrothersInArms;
-            CrucialContribution = stat.dataField.achievements.medalCrucialContribution;
-            IronMan = stat.dataField.achievements.ironMan;
-            LuckyDevil = stat.dataField.achievements.luckyDevil;
-            Sturdy = stat.dataField.achievements.sturdy;
-            Sniper2 = stat.dataField.achievements.sniper2;
-            MainGun = stat.dataField.achievements.main_gun;
+            Warrior = stat.dataField.achievements.achievements.warrior;
+            Invader = stat.dataField.achievements.achievements.invader;
+            Sniper = stat.dataField.achievements.achievements.sniper;
+            Defender = stat.dataField.achievements.achievements.defender;
+            SteelWall = stat.dataField.achievements.achievements.steelwall;
+            Confederate = stat.dataField.achievements.achievements.supporter;
+            Scout = stat.dataField.achievements.achievements.scout;
+            PatrolDuty = stat.dataField.achievements.achievements.evileye;
+            BrothersInArms = stat.dataField.achievements.achievements.medalBrothersInArms;
+            CrucialContribution = stat.dataField.achievements.achievements.medalCrucialContribution;
+            IronMan = stat.dataField.achievements.achievements.ironMan;
+            LuckyDevil = stat.dataField.achievements.achievements.luckyDevil;
+            Sturdy = stat.dataField.achievements.achievements.sturdy;
+            Sniper2 = stat.dataField.achievements.achievements.sniper2;
+            MainGun = stat.dataField.achievements.achievements.main_gun;
 
             #endregion
 
             #region [ Epic ]
 
-            Boelter = stat.dataField.achievements.medalBoelter;
-            RadleyWalters = stat.dataField.achievements.medalRadleyWalters;
-            LafayettePool = stat.dataField.achievements.medalLafayettePool;
-            Orlik = stat.dataField.achievements.medalOrlik;
-            Oskin = stat.dataField.achievements.medalOskin;
-            Lehvaslaiho = stat.dataField.achievements.medalLehvaslaiho;
-            Nikolas = stat.dataField.achievements.medalNikolas;
-            Halonen = stat.dataField.achievements.medalHalonen;
-            Burda = stat.dataField.achievements.medalBurda;
-            Pascucci = stat.dataField.achievements.medalPascucci;
-            Dumitru = stat.dataField.achievements.medalDumitru;
-            TamadaYoshio = stat.dataField.achievements.medalTamadaYoshio;
-            Billotte = stat.dataField.achievements.medalBillotte;
-            BrunoPietro = stat.dataField.achievements.medalBrunoPietro;
-            Tarczay = stat.dataField.achievements.medalTarczay;
-            Kolobanov = stat.dataField.achievements.medalKolobanov;
-            Fadin = stat.dataField.achievements.medalFadin;
-            HeroesOfRassenay = stat.dataField.achievements.medalHeroesOfRassenay;
-            DeLanglade = stat.dataField.achievements.medalDeLanglade;
+            Boelter = stat.dataField.achievements.achievements.medalBoelter;
+            RadleyWalters = stat.dataField.achievements.achievements.medalRadleyWalters;
+            LafayettePool = stat.dataField.achievements.achievements.medalLafayettePool;
+            Orlik = stat.dataField.achievements.achievements.medalOrlik;
+            Oskin = stat.dataField.achievements.achievements.medalOskin;
+            Lehvaslaiho = stat.dataField.achievements.achievements.medalLehvaslaiho;
+            Nikolas = stat.dataField.achievements.achievements.medalNikolas;
+            Halonen = stat.dataField.achievements.achievements.medalHalonen;
+            Burda = stat.dataField.achievements.achievements.medalBurda;
+            Pascucci = stat.dataField.achievements.achievements.medalPascucci;
+            Dumitru = stat.dataField.achievements.achievements.medalDumitru;
+            TamadaYoshio = stat.dataField.achievements.achievements.medalTamadaYoshio;
+            Billotte = stat.dataField.achievements.achievements.medalBillotte;
+            BrunoPietro = stat.dataField.achievements.achievements.medalBrunoPietro;
+            Tarczay = stat.dataField.achievements.achievements.medalTarczay;
+            Kolobanov = stat.dataField.achievements.achievements.medalKolobanov;
+            Fadin = stat.dataField.achievements.achievements.medalFadin;
+            HeroesOfRassenay = stat.dataField.achievements.achievements.medalHeroesOfRassenay;
+            DeLanglade = stat.dataField.achievements.achievements.medalDeLanglade;
 
             #endregion
 
             #region [ Medals]
 
-            Kay = stat.dataField.achievements.medal_kay;
-            Carius = stat.dataField.achievements.medalCarius;
-            Knispel = stat.dataField.achievements.medalKnispel;
-            Poppel = stat.dataField.achievements.medalPoppel;
-            Abrams = stat.dataField.achievements.medalAbrams;
-            Leclerk = stat.dataField.achievements.medalLeClerc;
-            Lavrinenko = stat.dataField.achievements.medalLavrinenko;
-            Ekins = stat.dataField.achievements.medalEkins;
+            Kay = stat.dataField.achievements.achievements.medal_kay;
+            Carius = stat.dataField.achievements.achievements.medalCarius;
+            Knispel = stat.dataField.achievements.achievements.medalKnispel;
+            Poppel = stat.dataField.achievements.achievements.medalPoppel;
+            Abrams = stat.dataField.achievements.achievements.medalAbrams;
+            Leclerk = stat.dataField.achievements.achievements.medalLeClerc;
+            Lavrinenko = stat.dataField.achievements.achievements.medalLavrinenko;
+            Ekins = stat.dataField.achievements.achievements.medalEkins;
 
             #endregion
 
             #region [ Series ]
 
-            SharpshooterLongest = stat.dataField.achievements.max_sniper_series;
-            MasterGunnerLongest = stat.dataField.achievements.max_piercing_series;
+            SharpshooterLongest = stat.dataField.achievements.max_series.titleSniper;
+            MasterGunnerLongest = stat.dataField.achievements.max_series.armorPiercer;
 
             #endregion
 
             #region [ SpecialAwards ]
 
-            Kamikaze = stat.dataField.achievements.kamikaze;
-            Raider = stat.dataField.achievements.raider;
-            Bombardier = stat.dataField.achievements.bombardier;
-            Reaper = stat.dataField.achievements.max_killing_series;
-            Invincible = stat.dataField.achievements.max_invincible_series;
-            Survivor = stat.dataField.achievements.max_diehard_series;
-            MouseTrap = stat.dataField.achievements.mousebane;
-            Hunter = stat.dataField.achievements.beasthunter;
-            Sinai = stat.dataField.achievements.sinai;
-            PattonValley = stat.dataField.achievements.pattonValley;
-            Huntsman = stat.dataField.achievements.huntsman;
+            Kamikaze = stat.dataField.achievements.achievements.kamikaze;
+            Raider = stat.dataField.achievements.achievements.raider;
+            Bombardier = stat.dataField.achievements.achievements.bombardier;
+            Reaper = stat.dataField.achievements.max_series.handOfDeath;
+            Invincible = stat.dataField.achievements.max_series.invincible;
+            Survivor = stat.dataField.achievements.max_series.diehard;
+            MouseTrap = stat.dataField.achievements.achievements.mousebane;
+            Hunter = stat.dataField.achievements.achievements.beasthunter;
+            Sinai = stat.dataField.achievements.achievements.sinai;
+            PattonValley = stat.dataField.achievements.achievements.pattonValley;
+            Huntsman = stat.dataField.achievements.achievements.huntsman;
 
             #endregion
 
-            MarksOnGun = stat.dataField.achievements.marksOnGun;
-            MovingAvgDamage = stat.dataField.achievements.movingAvgDamage;
-            MedalMonolith = stat.dataField.achievements.medalMonolith;
-            MedalAntiSpgFire = stat.dataField.achievements.medalAntiSpgFire;
-            MedalGore = stat.dataField.achievements.medalGore;
-            MedalCoolBlood = stat.dataField.achievements.medalCoolBlood;
-            MedalStark = stat.dataField.achievements.medalStark;
+            MarksOnGun = stat.dataField.achievements.achievements.marksOnGun;
+            MovingAvgDamage = stat.dataField.achievements.achievements.movingAvgDamage;
+            MedalMonolith = stat.dataField.achievements.achievements.medalMonolith;
+            MedalAntiSpgFire = stat.dataField.achievements.achievements.medalAntiSpgFire;
+            MedalGore = stat.dataField.achievements.achievements.medalGore;
+            MedalCoolBlood = stat.dataField.achievements.achievements.medalCoolBlood;
+            MedalStark = stat.dataField.achievements.achievements.medalStark;
 
             //PerformanceRating = RatingHelper.PerformanceRating(tanks);
             if (stat.dataField.vehicles != null)

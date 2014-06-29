@@ -43,7 +43,15 @@ namespace WotDossier.Applications.ViewModel.Selectors
         public void InitPlayers()
         {
             Players = _repository.GetPlayers().Select(x => new ListItem<int>(x.PlayerId, x.Name)).ToList();
-            _player = SettingsReader.Get().PlayerId;
+
+            var appSettings = SettingsReader.Get();
+            
+            if (appSettings.PlayerId > 0 && Players.FirstOrDefault(x => x.Id == appSettings.PlayerId) == null)
+            {
+                Players.Add(new ListItem<int>(appSettings.PlayerId, appSettings.PlayerName));
+            }
+            
+            _player = appSettings.PlayerId;
         }
     }
 }

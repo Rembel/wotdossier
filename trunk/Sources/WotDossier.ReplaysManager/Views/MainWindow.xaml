@@ -7,6 +7,7 @@
         xmlns:Converters="clr-namespace:WotDossier.Converters"
         xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         xmlns:controls="clr-namespace:WotDossier.Controls"
+        xmlns:color="clr-namespace:WotDossier.Converters.Color"
         Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico"
         Style="{DynamicResource office2007SilverWindow}">
     <Window.InputBindings>
@@ -96,7 +97,7 @@
                                 </d3:BarChart.Resources>
                                 <d3:TemplateMarkerGenerator>
                                     <DataTemplate>
-                                        <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static Converters:PercentToColorConverter.Default}}"
+                                        <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static color:PercentToColorConverter.Default}}"
        d3:ViewportPanel.X="0"
        d3:ViewportPanel.Y="{Binding Y}"
        d3:ViewportPanel.ViewportWidth="{Binding X}"

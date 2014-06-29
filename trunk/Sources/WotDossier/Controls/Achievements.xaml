@@ -150,9 +150,9 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Bruno}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_BrunoPietro}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Boelter}" Delta="{Binding BoelterDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBoelter.png">
+                <controls:MedalAchievement Value="{Binding Billotte}" Delta="{Binding BillotteDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBillotte.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Boelter}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Boelter}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Billotte}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Billotte}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding MedalStark}" Delta="{Binding MedalStarkDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalStark.png">
@@ -292,9 +292,9 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Sniper}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Sniper}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Billotte}" Delta="{Binding BillotteDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBillotte.png">
+                <controls:MedalAchievement Value="{Binding Boelter}" Delta="{Binding BoelterDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBoelter.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Billotte}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Billotte}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Boelter}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Boelter}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
             </WrapPanel>

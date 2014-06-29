@@ -139,6 +139,7 @@
     <Compile Include="Replay\Vehicle.cs" />
     <Compile Include="Replay\VehicleResult.cs" />
     <Compile Include="Server\Achievements.cs" />
+    <Compile Include="Server\MedalAchievements.cs" />
     <Compile Include="Server\Clan.cs" />
     <Compile Include="Server\ClanData.cs" />
     <Compile Include="Server\ClanEmblems.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Server\PlayerSearch.cs" />
     <Compile Include="Server\Rating.cs" />
     <Compile Include="Server\Ratings.cs" />
+    <Compile Include="Server\SeriesAchievements.cs" />
     <Compile Include="Server\ServerStatWrapper.cs" />
     <Compile Include="Server\StatisticPart.cs" />
     <Compile Include="Server\Statistics.cs" />

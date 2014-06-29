@@ -318,6 +318,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             Mileage = tank.Common.mileage / 1000;
 
             MarkOfMastery = tank.Achievements.markOfMastery;
+            DamageRating = tank.Achievements.damageRating;
             
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);
         }

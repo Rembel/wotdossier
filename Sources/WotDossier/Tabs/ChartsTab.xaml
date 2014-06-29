@@ -310,7 +310,7 @@
                                         </d3:BarChart.Resources>
                                         <d3:TemplateMarkerGenerator>
                                             <DataTemplate>
-                                                <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static converters:PercentToColorConverter.Default}}"
+                                                <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static color:PercentToColorConverter.Default}}"
                                                    d3:ViewportPanel.X="0"
                                                    d3:ViewportPanel.Y="{Binding Y}"
                                                    d3:ViewportPanel.ViewportWidth="{Binding X}"

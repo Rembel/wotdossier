@@ -36,11 +36,11 @@
     </Style>
 
     <Style x:Key="DataGridCellWinPercentStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-        <Setter Property="Background" Value="{Binding WinsPercent, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
+        <Setter Property="Background" Value="{Binding WinsPercent, Converter={x:Static color:PercentToColorConverter.Default}}" />
     </Style>
     
     <Style x:Key="DataGridCellWinPercentForPeriodStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">
-        <Setter Property="Background" Value="{Binding WinsPercentForPeriod, Converter={x:Static Converters:PercentToColorConverter.Default}}" />
+        <Setter Property="Background" Value="{Binding WinsPercentForPeriod, Converter={x:Static color:PercentToColorConverter.Default}}" />
     </Style>
 
     <Style x:Key="DataGridCellEffStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">

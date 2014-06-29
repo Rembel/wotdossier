@@ -238,7 +238,7 @@ namespace WotDossier.Dal
 
                 if (parsedData["data"].Any())
                 {
-                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)]["achievements"].ToObject<Achievements>();
+                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Achievements>();
                 }
             }
             catch (Exception e)

@@ -11,8 +11,8 @@
              xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
-             xmlns:viewModel="clr-namespace:WotDossier.Applications.ViewModel;assembly=WotDossier.Applications"
              xmlns:domain="clr-namespace:WotDossier.Domain;assembly=WotDossier.Domain"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d"
              d:DesignHeight="800" d:DesignWidth="900">
     <Grid Background="{StaticResource bcolorCenter}">
@@ -90,7 +90,7 @@
 
                                     <d3:PieChart.MarkerTemplate>
                                         <DataTemplate>
-                                            <d3:PieChartItem Background="{Binding WinPercent, Converter={x:Static converters:PercentToColorConverter.Default}}">
+                                            <d3:PieChartItem Background="{Binding WinPercent, Converter={x:Static color:PercentToColorConverter.Default}}">
                                                 <ToolTipService.ToolTip>
                                                     <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
                                                         <TextBlock>
@@ -107,7 +107,7 @@
                                                             <Bold>
                                                                 <x:Static Member="resources:Resources.Chart_Tooltip_WinPercent" />
                                                             </Bold>
-                                                            <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}" Foreground="{Binding WinPercent, Converter={x:Static converters:PercentToColorConverter.Default}}"/></TextBlock>
+                                                            <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}" Foreground="{Binding WinPercent, Converter={x:Static color:PercentToColorConverter.Default}}"/></TextBlock>
                                                     </ToolTip>
                                                 </ToolTipService.ToolTip>
                                             </d3:PieChartItem>

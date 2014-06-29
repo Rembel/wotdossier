@@ -18,7 +18,7 @@
                                    Delta="{Binding BattlesCountDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
                                    DeltaForeground="{Binding BattlesCountDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--Wins-->
-            <controls:StatisticRow ValueForeground="{Binding WinsPercent, Converter={x:Static converters:PercentToColorConverter.Default}}" Header="{x:Static resources:Resources.Common_Victories}"
+            <controls:StatisticRow ValueForeground="{Binding WinsPercent, Converter={x:Static color:PercentToColorConverter.Default}}" Header="{x:Static resources:Resources.Common_Victories}"
                                    DeltaForeground="{Binding WinsPercentDelta, Converter={x:Static color:DeltaToColorConverter.Default}}">
                 <controls:StatisticRow.Delta>
                     <MultiBinding Converter="{x:Static converters:ValueDeltaPercentFormater.Default}" >
@@ -85,6 +85,7 @@
             <!--Frags-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_Destroyed}" 
                                    Value="{Binding AvgFrags, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}"
+                                   ValueForeground="{Binding AvgFrags, Converter={x:Static color:FragsToColorConverter.Default}}"
                                    Delta="{Binding AvgFragsDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.00;-#,0.00;0'}"
                                    DeltaForeground="{Binding AvgFragsDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--killDeathRatio-->
@@ -120,6 +121,7 @@
             <!--AvgSpotted-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_AvgDetected}" 
                                    Value="{Binding AvgSpotted, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}"
+                                   ValueForeground="{Binding AvgSpotted, Converter={x:Static color:SpottedToColorConverter.Default}}"
                                    Delta="{Binding AvgSpottedDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.00;-#,0.00;0'}"
                                    DeltaForeground="{Binding AvgSpottedDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--CapturePoints-->

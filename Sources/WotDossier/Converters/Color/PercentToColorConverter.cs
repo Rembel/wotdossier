@@ -2,9 +2,8 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
-using WotDossier.Converters.Color;
 
-namespace WotDossier.Converters
+namespace WotDossier.Converters.Color
 {
     /// <summary>
     /// Converts Win percent value to <see cref="SolidColorBrush"/>
@@ -34,23 +33,23 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double eff = (double)value;
-            if (eff >= 64)
+            if (eff >= 64.5)
             {
                 return EffRangeBrushes.Purple;
             }
-            if (eff >= 57)
+            if (eff >= 56.5)
             {
                 return EffRangeBrushes.Blue;
             }
-            if (eff >= 52)
+            if (eff >= 51.5)
             {
                 return EffRangeBrushes.Green;
             }
-            if (eff >= 49)
+            if (eff >= 48.5)
             {
                 return EffRangeBrushes.Yellow;
             }
-            if (eff >= 47)
+            if (eff >= 46.5)
             {
                 return EffRangeBrushes.Orange;
             }

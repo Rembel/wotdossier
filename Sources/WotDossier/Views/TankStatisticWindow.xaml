@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:tabs="clr-namespace:WotDossier.Tabs" xmlns:controls="clr-namespace:WotDossier.Controls"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:converters="clr-namespace:WotDossier.Converters"
-        mc:Ignorable="d" 
-        Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" 
+        xmlns:image="clr-namespace:WotDossier.Converters.Image"
+        mc:Ignorable="d"
+        Title="{Binding TankStatistic.Tank}" d:DesignHeight="700" d:DesignWidth="700" Height="1024" Width="768" MinWidth="1024" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Icon="{Binding Path=TankStatistic.Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}"
         Style="{StaticResource office2007SilverWindow}">
     <Window.CommandBindings>
@@ -32,22 +33,28 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Margin="35" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Grid DataContext="{Binding TankStatistic}">
+                        <Image Width="140" Height="80" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static converters:CountryIdToImageConverter.Default}}" />
+                        <Image Width="140" Height="80" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" />
+                    </Grid>
+                    <Image ToolTip="{Binding Path=TankStatistic.DamageRating, Mode=OneWay, Converter={x:Static converters:DamageRatingToTooltipConverter.Default}}" >
+                        <Image.Source>
+                            <MultiBinding Converter="{x:Static image:DamageRatingToImageConverter.Default}" >
+                                <Binding Path="TankStatistic.DamageRating" />
+                                <Binding Path="TankStatistic.CountryId" />
+                            </MultiBinding>
+                        </Image.Source>
+                    </Image>
+                    <Image Width="50" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       ToolTip="{Binding Path=TankStatistic.MarkOfMastery, Mode=OneWay, Converter={x:Static converters:MarkOfMasteryToTooltipConverter.Default}}"
+                       Source="{Binding Path=TankStatistic.MarkOfMastery, Mode=OneWay, Converter={x:Static converters:MarkOfMasteryToImageConverter.Default}}" />
+                </StackPanel>
+            </StackPanel>
 
-                <Grid Grid.Column="0" DataContext="{Binding TankStatistic}">
-                    <Image Width="140" Height="80" Source="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static converters:CountryIdToImageConverter.Default}}" />
-                    <Image Width="140" Height="80" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" />
-                </Grid>
-                <Grid Grid.Column="1">
-                    <TextBlock Foreground="#FFA759" HorizontalAlignment="Center" Margin="0 25 0 25" FontSize="28" Text="{Binding TankStatistic.Tank}"></TextBlock>
-                </Grid>
-            </Grid>
-
-            <TabControl Grid.Row="1" Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabControl Margin="0, 20, 0, 0" Grid.Row="1" Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <TabControl.Resources>
                     <Style TargetType="TabPanel">
                         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -58,7 +65,7 @@
                     <controls:StatisticView  HorizontalAlignment="Center" DataContext="{Binding TankStatistic}" Background="Transparent"></controls:StatisticView>
                 </TabItem>
                 <TabItem TabIndex="1" Header="{Binding PeriodTabHeader}" Name="tabPeriod">
-                    <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Stretch" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
+                    <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
                 </TabItem>
                 <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Achievements}" Name="tabAchievements">
                     <ScrollViewer>
@@ -75,23 +82,23 @@
                         </TabControl.Resources>
                         <TabItem Header="1" >
                             <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
-                            <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
-                                <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
-                            </WrapPanel>
-                                </Border>
+                                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
+                                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
+                                    <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
+                                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
+                                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
+                                </WrapPanel>
+                            </Border>
                         </TabItem>
                         <TabItem Header="2">
                             <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
-                            <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
-                            </WrapPanel>
-                                </Border>
+                                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
+                                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
+                                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
+                                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
+                                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
+                                </WrapPanel>
+                            </Border>
                         </TabItem>
                     </TabControl>
                 </TabItem>

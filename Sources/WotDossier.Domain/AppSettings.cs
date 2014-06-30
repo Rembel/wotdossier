@@ -145,6 +145,17 @@ namespace WotDossier.Domain
             set { _theme = value; }
         }
 
-        public bool ShowExtendedReplaysData { get; set; }
+        private bool _showExtendedReplaysData = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether [show extended replays data].
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if [show extended replays data]; otherwise, <c>false</c>.
+        /// </value>
+        public bool ShowExtendedReplaysData
+        {
+            get { return _showExtendedReplaysData; }
+            set { _showExtendedReplaysData = value; }
+        }
     }
 }

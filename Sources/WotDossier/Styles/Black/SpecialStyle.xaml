@@ -7,7 +7,8 @@
                     xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
                     xmlns:color="clr-namespace:WotDossier.Converters.Color"
                     xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
-                    xmlns:rows="clr-namespace:WotDossier.Applications.ViewModel.Rows;assembly=WotDossier.Applications">
+                    xmlns:rows="clr-namespace:WotDossier.Applications.ViewModel.Rows;assembly=WotDossier.Applications"
+                    xmlns:image="clr-namespace:WotDossier.Converters.Image">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="DataGrid.xaml" />
@@ -30,6 +31,17 @@
             <Image Width="70" Height="40" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static Converters:TankIconToImageConverter.Default}}" />
             <TextBlock Text="*" FontSize="18" Foreground="Gold" HorizontalAlignment="Right" Margin="0,0,5,0" Visibility="{Binding Path=IsFavorite, Mode=OneWay, FallbackValue={x:Static Visibility.Collapsed}, Converter={x:Static Converters:BoolToVisibilityConverter.Default}}" />
         </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DamageRatingTemplate" DataType="rows:ITankStatisticRow" >
+        <Image Width="50" Height="34" ToolTip="{Binding Path=DamageRating, Mode=OneWay, Converter={x:Static Converters:DamageRatingToTooltipConverter.Default}}" >
+            <Image.Source>
+                <MultiBinding Converter="{x:Static image:DamageRatingToImageConverter.Default}" >
+                    <Binding Path="DamageRating" />
+                    <Binding Path="CountryId" />
+                </MultiBinding>
+            </Image.Source>
+        </Image>
     </DataTemplate>
 
     <Style x:Key="DataGridCellCenterStyle" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}">

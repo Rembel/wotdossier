@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Common.Logging;
 using Ionic.Zlib;
 using Newtonsoft.Json;
@@ -509,8 +510,202 @@ namespace WotDossier.Applications
 
                     }
                 }
+                advanced.streamData = ReadPackets(f);
             }
             return advanced;
+        }
+
+        private static StreamData ReadPackets(MemoryStream f)
+        {
+            StreamData data = new StreamData();
+
+            bool endOfStream = false;
+            Console.WriteLine("Begin");
+            while (!endOfStream)
+            {
+                endOfStream = ReadPacket(f, data);
+            }
+
+            return data;
+        }
+
+        private static bool ReadPacket(Stream stream, StreamData data)
+        {
+            ulong packetLength = stream.Read(4).ConvertLittleEndian();
+            ulong packetType = stream.Read(4).ConvertLittleEndian();
+
+            //move to payload
+            stream.Seek(4, SeekOrigin.Current);
+
+            long position = stream.Position;
+
+            bool endOfStream = packetType == new byte[] { 255, 255, 255, 255 }.ConvertLittleEndian();
+
+            byte[] payload = new byte[packetLength];
+
+            if (!endOfStream)
+            {
+                stream.Read(payload, 0, (int)packetLength);
+            }
+
+            var packet = new Packet { Payload = payload, PacketType = packetType, PacketLength = packetLength, Position = position };
+
+            if (packet.PacketType == 0x08)
+            {
+                ReadPayload(packet, data);
+            }
+
+            //chat
+            if (packet.PacketType == 0x1f)
+            {
+                ReadChatPacket(packet, data);
+            }
+
+            return endOfStream;
+        }
+
+        private static void ReadPayload(Packet packet, StreamData data)
+        {
+            using (MemoryStream stream = new MemoryStream(packet.Payload))
+            {
+                //skip 0-4 - player_id
+                stream.Seek(4, SeekOrigin.Current);
+                //read 4-8 - subType
+                packet.SubType = stream.Read(4).ConvertLittleEndian();
+                //read 8-12 - update length
+                packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
+
+                //if (packet.SubType == 0x1d) //onArenaUpdate events
+                //{
+                //    //Process_0x08(packet, stream);
+                //}
+
+                if (packet.SubType == 0x09) //onSlotUpdate events
+                {
+                    Process_0x09(packet, stream, data);
+                }
+            }
+        }
+
+        private static void Process_0x09(Packet packet, MemoryStream stream, StreamData data)
+        {
+            //buffer = new byte[packet.SubTypePayloadLength];
+            ////Read from your offset to the end of the packet, this will be the "update pickle". 
+            //stream.Read(buffer, 0, (int) (packet.SubTypePayloadLength));
+
+            ulong value = stream.Read(4).ConvertLittleEndian();
+            var item = new SlotItem(GetSlotType(value & 15), value >> 4 & 15, value >> 8 & 65535);
+
+            ulong count = stream.Read(2).ConvertLittleEndian();
+
+            ulong rest = stream.Read(3).ConvertLittleEndian();
+
+            var slot = new Slot(item, count, rest);
+
+            if (data.Slots.Count < 6)
+            {
+                data.Slots.Add(slot);
+            }
+
+            //Console.WriteLine("-----------------------------------------------------------------");
+            //Console.WriteLine("Packet. Type: 0x{0:x2} Length: {1} Pos: {2}", packet.PacketType, packet.PacketLength, packet.Position);
+            //Console.WriteLine("\t Payload. Subtype: 0x{0:x2} Length: {1}", packet.SubType, packet.SubTypePayloadLength);
+            //Console.WriteLine(JsonConvert.SerializeObject(slot, Formatting.Indented));
+            //Console.WriteLine("-----------------------------------------------------------------");
+        }
+
+        private static string GetSlotType(ulong id)
+        {
+            var list = new List<string>
+            {
+                "reserved",
+                "vehicle",
+                "vehicleChassis",
+                "vehicleTurret",
+                "vehicleGun",
+                "vehicleEngine",
+                "vehicleFuelTank",
+                "vehicleRadio",
+                "tankman",
+                "optionalDevice",
+                "shell",
+                "equipment"
+            };
+
+            if (id < (ulong)list.Count)
+            {
+                return list[(int)id];
+            }
+            return "unknown";
+        }
+
+        //private static void Process_0x08(Packet packet, MemoryStream stream)
+        //{
+        //    byte[] buffer = new byte[1];
+        //    stream.Read(buffer, 0, 1);
+        //    ulong updateType = ConvertLittleEndian(buffer);
+
+        //    //For update types 0x01 and 0x04: at offset 14, read an uint16 and unpack it to 2 bytes, 
+        //    //if the unpacked value matches 0x80, 0x02 then set your offset to 14. 
+        //    //If the unpacked value does not match 0x80, 0x02 set your offset to 17. 
+        //    if (updateType == 0x01 || updateType == 0x04)
+        //    {
+        //        buffer = new byte[1];
+        //        stream.Read(buffer, 0, 1);
+        //        ulong firstByte = ConvertLittleEndian(buffer);
+
+        //        stream.Read(buffer, 0, 1);
+        //        ulong secondByte = ConvertLittleEndian(buffer);
+
+        //        if (firstByte != 0x80 || secondByte != 0x02)
+        //        {
+        //            stream.Seek(2, SeekOrigin.Current);
+        //            packet.SubTypePayloadLength = packet.SubTypePayloadLength - 5;
+        //        }
+        //        else
+        //        {
+        //            stream.Seek(-1, SeekOrigin.Current);
+        //            packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        stream.Seek(1, SeekOrigin.Current);
+        //        packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
+        //    }
+
+        //    buffer = new byte[packet.SubTypePayloadLength];
+        //    //Read from your offset to the end of the packet, this will be the "update pickle". 
+        //    stream.Read(buffer, 0, (int)(packet.SubTypePayloadLength));
+
+        //    object unpickledData = Unpickle.Load(new MemoryStream(buffer));
+
+        //    Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        //    Console.WriteLine("Packet. Type: 0x{0:x2} Length: {1} Pos: {2}", packet.PacketType, packet.PacketLength, packet.Position);
+        //    Console.WriteLine("\t Payload. Subtype: 0x{0:x2} UpdateType:  0x{2:x2} Length: {1}", packet.SubType, packet.SubTypePayloadLength, updateType);
+        //    Console.WriteLine(JsonConvert.SerializeObject(unpickledData, Formatting.Indented));
+        //    Console.WriteLine("----------------------------------------------------------------------------------------------------");
+        //}
+
+
+        private static void ReadChatPacket(Packet packet, StreamData data)
+        {
+            string message = Encoding.UTF8.GetString(packet.Payload);
+            data.Messages.Add(ParseMessage(message.Replace("&nbsp;", " ").Replace(":", "")));
+        }
+
+        public static ChatMessage ParseMessage(string messageText)
+        {
+            var reg = new Regex(@"<(?<tag>[\w]+)[^>]*color\s*=\s*['""](?<color>[^'""]+)['""][^>]*>(?<text>.*?)<\/\<tag>", RegexOptions.IgnoreCase);
+            MatchCollection match = reg.Matches(messageText);
+            return new ChatMessage
+            {
+                Player = match[0].Groups["text"].Value.Trim(), 
+                PlayerColor = match[0].Groups["color"].Value.Trim(), 
+                Text = match[1].Groups["text"].Value.Trim(),
+                TextColor = match[1].Groups["color"].Value.Trim()
+
+            };
         }
 
         private static byte[] Decompress(byte[] decrypt)

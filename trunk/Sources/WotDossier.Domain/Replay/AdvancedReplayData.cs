@@ -13,8 +13,20 @@ namespace WotDossier.Domain.Replay
         public BattleInfo more { get; set; }
         public string playername { get; set; }
         public string replay_version { get; set; }
-        public StreamData streamData { get; set; }
         public Dictionary<string, AdvancedPlayerInfo> roster { get; set; }
+        private List<ChatMessage> _messages = new List<ChatMessage>();
+        public List<ChatMessage> Messages
+        {
+            get { return _messages; }
+            set { _messages = value; }
+        }
+
+        private List<Slot> _slots = new List<Slot>();
+        public List<Slot> Slots
+        {
+            get { return _slots; }
+            set { _slots = value; }
+        }
     }
 
     public class AdvancedPlayerInfo

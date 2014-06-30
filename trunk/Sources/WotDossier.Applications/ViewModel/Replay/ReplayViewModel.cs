@@ -301,19 +301,17 @@ namespace WotDossier.Applications.ViewModel.Replay
                             _devices.Add(Dictionaries.Instance.DeviceDescriptions[info.vehicle.module_2]);
                         }
                     }
-
-                    if (replay.datablock_advanced.streamData != null)
+                    
+                    foreach (Slot slot in replay.datablock_advanced.Slots)
                     {
-                        foreach (Slot slot in replay.datablock_advanced.streamData.Slots)
+                        if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey((int) slot.item.id) &&
+                            slot.item.type_id == "equipment")
                         {
-                            if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey((int)slot.item.id) && slot.item.type_id == "equipment")
-                            {
-                                Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[(int)slot.item.id]);
-                            }
+                            Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[(int) slot.item.id]);
                         }
-
-                        ChatMessages = replay.datablock_advanced.streamData.Messages;
                     }
+
+                    ChatMessages = replay.datablock_advanced.Messages;
                 }
 
                 return true;

@@ -493,6 +493,9 @@
     <Compile Include="..\WotDossier\Converters\Color\XvmRatingToColorConverter.cs">
       <Link>Converters\Color\XvmRatingToColorConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\DamageRatingToTooltipConverter.cs">
+      <Link>Converters\DamageRatingToTooltipConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\EnumToTextConverter.cs">
       <Link>Converters\EnumToTextConverter.cs</Link>
     </Compile>
@@ -507,6 +510,9 @@
     </Compile>
     <Compile Include="..\WotDossier\Converters\Image\CountryIdToImageConverter.cs">
       <Link>Converters\Image\CountryIdToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\DamageRatingToImageConverter.cs">
+      <Link>Converters\Image\DamageRatingToImageConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\Image\ImageSourceConverter.cs">
       <Link>Converters\Image\ImageSourceConverter.cs</Link>

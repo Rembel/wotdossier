@@ -123,6 +123,7 @@
     <Compile Include="Replay90\VehicleResult.cs" />
     <Compile Include="Replay\AdvancedReplayData.cs" />
     <Compile Include="Replay\BattleResult.cs" />
+    <Compile Include="Replay\ChatMessage.cs" />
     <Compile Include="Replay\Common.cs" />
     <Compile Include="Replay\CrewMember.cs" />
     <Compile Include="Replay\PlayerResult.cs" />
@@ -136,6 +137,9 @@
     <Compile Include="Replay\Player.cs" />
     <Compile Include="Replay\Replay.cs" />
     <Compile Include="Replay\ReplayIdentify.cs" />
+    <Compile Include="Replay\Slot.cs" />
+    <Compile Include="Replay\SlotItem.cs" />
+    <Compile Include="Replay\StreamData.cs" />
     <Compile Include="Replay\Vehicle.cs" />
     <Compile Include="Replay\VehicleResult.cs" />
     <Compile Include="Server\Achievements.cs" />
@@ -167,6 +171,7 @@
     <Compile Include="Tank\AchievementsJson.cs" />
     <Compile Include="Tank\Achievements7x7.cs" />
     <Compile Include="Interfaces\ITankFilterable.cs" />
+    <Compile Include="Tank\ConsumableDescription.cs" />
     <Compile Include="Tank\DeviceDescription.cs" />
     <Compile Include="Tank\MaxJson.cs" />
     <Compile Include="Tank\LevelRange.cs" />

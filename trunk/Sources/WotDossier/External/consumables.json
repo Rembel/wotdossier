@@ -1,38 +1,38 @@
 {
    "hotCoffee" : {
-      "icon" : "../maps/icons/artefact/hotCoffee.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/hotCoffee.png",
       "script" : "Stimulator",
       "vehicleFilter" : {
          "include" : {
             "nations" : "france"
          }
       },
-      "description" : "#artefacts:hotCoffee/descr",
+      "description" : "artefacts_hotCoffee_descr",
       "tags" : "stimulator",
-      "userString" : "#artefacts:hotCoffee/name",
+      "userString" : "artefacts_hotCoffee_name",
       "id" : 13,
       "price" : 50
    },
    "handExtinguishers" : {
-      "icon" : "../maps/icons/artefact/handExtinguishers.png 0 0",
-      "userString" : "#artefacts:handExtinguishers/name",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/handExtinguishers.png",
+      "userString" : "artefacts_handExtinguishers_name",
       "script" : "AAAAAAAAAAAA",
       "price" : 3000,
       "id" : "",
-      "description" : "#artefacts:handExtinguishers/descr",
+      "description" : "artefacts_handExtinguishers_descr",
       "tags" : "AAAAAAAAAAAA"
    },
    "lendLeaseOil" : {
-      "icon" : "../maps/icons/artefact/lendLeaseGasoline.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/lendLeaseGasoline.png",
       "script" : "AAAA",
       "vehicleFilter" : {
          "include" : {
             "nations" : "AAAA"
          }
       },
-      "description" : "#artefacts:lendLeaseOil/descr",
+      "description" : "artefacts_lendLeaseOil_descr",
       "tags" : "AAAA",
-      "userString" : "#artefacts:lendLeaseOil/name",
+      "userString" : "artefacts_lendLeaseOil_name",
       "incompatibleTags" : {
          "installed" : "AAAA"
       },
@@ -40,76 +40,76 @@
       "price" : 5000
    },
    "removedRpmLimiter" : {
-      "icon" : "../maps/icons/artefact/removedRpmLimiter.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/removedRpmLimiter.png",
       "script" : "RemovedRpmLimiter",
       "vehicleFilter" : {
          "include" : {
             "nations" : "ussr china"
          }
       },
-      "description" : "#artefacts:removedRpmLimiter/descr",
+      "description" : "artefacts_removedRpmLimiter_descr",
       "tags" : "trigger",
-      "userString" : "#artefacts:removedRpmLimiter/name",
+      "userString" : "artefacts_removedRpmLimiter_name",
       "id" : 12,
       "price" : 3000
    },
    "largeMedkit" : {
-      "icon" : "../maps/icons/artefact/largeMedkit.png 0 0",
-      "userString" : "#artefacts:largeMedkit/name",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/largeMedkit.png",
+      "userString" : "artefacts_largeMedkit_name",
       "script" : "Repairkit",
       "price" : 50,
       "id" : 3,
-      "description" : "#artefacts:largeMedkit/descr",
+      "description" : "artefacts_largeMedkit_descr",
       "tags" : "medkit"
    },
    "smallRepairkit" : {
-      "icon" : "../maps/icons/artefact/smallRepairkit.png 0 0",
-      "userString" : "#artefacts:smallRepairkit/name",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/smallRepairkit.png",
+      "userString" : "artefacts_smallRepairkit_name",
       "script" : "Repairkit",
       "price" : 3000,
       "id" : 4,
-      "description" : "#artefacts:smallRepairkit/descr",
+      "description" : "artefacts_smallRepairkit_descr",
       "tags" : "repairkit"
    },
    "cocacola" : {
-      "icon" : "../maps/icons/artefact/cocacola.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/cocacola.png",
       "script" : "Stimulator",
       "vehicleFilter" : {
          "include" : {
             "nations" : "usa"
          }
       },
-      "description" : "#artefacts:cocacola/descr",
+      "description" : "artefacts_cocacola_descr",
       "tags" : "stimulator",
-      "userString" : "#artefacts:cocacola/name",
+      "userString" : "artefacts_cocacola_name",
       "id" : 100,
       "price" : 50
    },
    "ration_uk" : {
-      "icon" : "../maps/icons/artefact/pudding.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/pudding.png",
       "script" : "Stimulator",
       "vehicleFilter" : {
          "include" : {
             "nations" : "uk"
          }
       },
-      "description" : "#artefacts:ration_uk/descr",
+      "description" : "artefacts_ration_uk_descr",
       "tags" : "stimulator",
-      "userString" : "#artefacts:ration_uk/name",
+      "userString" : "artefacts_ration_uk_name",
       "id" : 17,
       "price" : 50
    },
    "autoExtinguishers" : {
-      "icon" : "../maps/icons/artefact/autoExtinguishers.png 0 0",
-      "userString" : "#artefacts:autoExtinguishers/name",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/autoExtinguishers.png",
+      "userString" : "artefacts_autoExtinguishers_name",
       "script" : "AAAAAAAAAAAA",
       "price" : 50,
       "id" : 1,
-      "description" : "#artefacts:autoExtinguishers/descr",
+      "description" : "artefacts_autoExtinguishers_descr",
       "tags" : "AAAAAAAAAAAA"
    },
    "gasoline100" : {
-      "icon" : "../maps/icons/artefact/gasoline100.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/gasoline100.png",
       "script" : "AAAA",
       "vehicleFilter" : {
          "include" : {
@@ -119,9 +119,9 @@
             "nations" : "usa germany france uk"
          }
       },
-      "description" : "#artefacts:gasoline100/descr",
+      "description" : "artefacts_gasoline100_descr",
       "tags" : "AAAA",
-      "userString" : "#artefacts:gasoline100/name",
+      "userString" : "artefacts_gasoline100_name",
       "incompatibleTags" : {
          "installed" : "AAAA"
       },
@@ -129,30 +129,30 @@
       "price" : 5000
    },
    "ration_china" : {
-      "icon" : "../maps/icons/artefact/chines_pork.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/chines_pork.png",
       "script" : "Stimulator",
       "vehicleFilter" : {
          "include" : {
             "nations" : "china"
          }
       },
-      "description" : "#artefacts:ration_china/descr",
+      "description" : "artefacts_ration_china_descr",
       "tags" : "stimulator",
-      "userString" : "#artefacts:ration_china/name",
+      "userString" : "artefacts_ration_china_name",
       "id" : 15,
       "price" : 50
    },
    "qualityOil" : {
-      "icon" : "../maps/icons/artefact/qualityOil.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/qualityOil.png",
       "script" : "AAAA",
       "vehicleFilter" : {
          "include" : {
             "nations" : "china japan"
          }
       },
-      "description" : "#artefacts:qualityOil/descr",
+      "description" : "artefacts_qualityOil_descr",
       "tags" : "AAAA",
-      "userString" : "#artefacts:qualityOil/name",
+      "userString" : "artefacts_qualityOil_name",
       "incompatibleTags" : {
          "installed" : "AAAA"
       },
@@ -160,30 +160,30 @@
       "price" : 5000
    },
    "ration" : {
-      "icon" : "../maps/icons/artefact/russ-food.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/russ-food.png",
       "script" : "Stimulator",
       "vehicleFilter" : {
          "include" : {
             "nations" : "AAAA"
          }
       },
-      "description" : "#artefacts:ration/descr",
+      "description" : "artefacts_ration_descr",
       "tags" : "stimulator",
-      "userString" : "#artefacts:ration/name",
+      "userString" : "artefacts_ration_name",
       "id" : 11,
       "price" : 50
    },
    "largeRepairkit" : {
-      "icon" : "../maps/icons/artefact/largeRepairkit.png 0 0",
-      "userString" : "#artefacts:largeRepairkit/name",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/largeRepairkit.png",
+      "userString" : "artefacts_largeRepairkit_name",
       "script" : "Repairkit",
       "price" : 50,
       "id" : 5,
-      "description" : "#artefacts:largeRepairkit/descr",
+      "description" : "artefacts_largeRepairkit_descr",
       "tags" : "repairkit"
    },
    "gasoline105" : {
-      "icon" : "../maps/icons/artefact/gasoline105.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/gasoline105.png",
       "script" : "AAAA",
       "vehicleFilter" : {
          "include" : {
@@ -193,9 +193,9 @@
             "nations" : "usa germany france uk"
          }
       },
-      "description" : "#artefacts:gasoline105/descr",
+      "description" : "artefacts_gasoline105_descr",
       "tags" : "AAAA",
-      "userString" : "#artefacts:gasoline105/name",
+      "userString" : "artefacts_gasoline105_name",
       "incompatibleTags" : {
          "installed" : "AAAA"
       },
@@ -203,39 +203,39 @@
       "price" : 50
    },
    "chocolate" : {
-      "icon" : "../maps/icons/artefact/chocolate.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/chocolate.png",
       "script" : "Stimulator",
       "vehicleFilter" : {
          "include" : {
             "nations" : "germany"
          }
       },
-      "description" : "#artefacts:chocolate/descr",
+      "description" : "artefacts_chocolate_descr",
       "tags" : "stimulator",
-      "userString" : "#artefacts:chocolate/name",
+      "userString" : "artefacts_chocolate_name",
       "id" : 9,
       "price" : 50
    },
    "smallMedkit" : {
-      "icon" : "../maps/icons/artefact/smallMedkit.png 0 0",
-      "userString" : "#artefacts:smallMedkit/name",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/smallMedkit.png",
+      "userString" : "artefacts_smallMedkit_name",
       "script" : "Repairkit",
       "price" : 3000,
       "id" : 2,
-      "description" : "#artefacts:smallMedkit/descr",
+      "description" : "artefacts_smallMedkit_descr",
       "tags" : "medkit"
    },
    "ration_japan" : {
-      "icon" : "../maps/icons/artefact/onigiri.png 0 0",
+      "icon" : "pack://application:,,,/WotDossier.Resources;component/Images/artefact/onigiri.png",
       "script" : "Stimulator",
       "vehicleFilter" : {
          "include" : {
             "nations" : "japan"
          }
       },
-      "description" : "#artefacts:ration_japan/descr",
+      "description" : "artefacts_ration_japan_descr",
       "tags" : "stimulator",
-      "userString" : "#artefacts:ration_japan/name",
+      "userString" : "artefacts_ration_japan_name",
       "id" : 18,
       "price" : 50
    }

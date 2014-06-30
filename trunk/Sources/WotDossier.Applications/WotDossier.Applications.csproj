@@ -79,6 +79,7 @@
     <Compile Include="BattleModeStrategies\TeamStatisticViewStrategy.cs" />
     <Compile Include="CultureHelper.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="Parser\Packet.cs" />
     <Compile Include="ReplaysManagerController.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />

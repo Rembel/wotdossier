@@ -2972,4 +2972,19 @@
   <data name="Tab_Awards" xml:space="preserve">
     <value>Награды</value>
   </data>
+  <data name="Common_Chat" xml:space="preserve">
+    <value>Чат</value>
+  </data>
+  <data name="Common_Consumables" xml:space="preserve">
+    <value>Расходники</value>
+  </data>
+  <data name="Common_Equipment" xml:space="preserve">
+    <value>Оборудование</value>
+  </data>
+  <data name="Replay_Tab_Header_ExtendedInfo" xml:space="preserve">
+    <value>Расширенные данные</value>
+  </data>
+  <data name="Column_Ratings_DamageRating" xml:space="preserve">
+    <value>Рейтинг урона</value>
+  </data>
 </root>

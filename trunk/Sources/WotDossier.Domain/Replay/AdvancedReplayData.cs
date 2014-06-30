@@ -13,6 +13,7 @@ namespace WotDossier.Domain.Replay
         public BattleInfo more { get; set; }
         public string playername { get; set; }
         public string replay_version { get; set; }
+        public StreamData streamData { get; set; }
         public Dictionary<string, AdvancedPlayerInfo> roster { get; set; }
     }
 

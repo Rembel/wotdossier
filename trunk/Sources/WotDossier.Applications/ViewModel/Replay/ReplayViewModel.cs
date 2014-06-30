@@ -119,6 +119,21 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string MapDisplayName { get; set; }
 
         public string MapName { get; set; }
+        public List<ChatMessage> ChatMessages { get; set; }
+
+        private List<DeviceDescription> _devices;
+        public List<DeviceDescription> Devices
+        {
+            get { return _devices; }
+            set { _devices = value; }
+        }
+
+        private List<ConsumableDescription> _consumables = new List<ConsumableDescription>();
+        public List<ConsumableDescription> Consumables
+        {
+            get { return _consumables; }
+            set { _consumables = value; }
+        }
 
         private TeamMember _alienTeamMember;
         public TeamMember AlienTeamMember
@@ -130,16 +145,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 RaisePropertyChanged("AlienTeamMember");
             }
         }
-
+        
         private TeamMember _ourTeamMember;
-        private List<DeviceDescription> _devices;
-
-        public List<DeviceDescription> Devices
-        {
-            get { return _devices; }
-            set { _devices = value; }
-        }
-
         public TeamMember OurTeamMember
         {
             get { return _ourTeamMember; }
@@ -293,6 +300,19 @@ namespace WotDossier.Applications.ViewModel.Replay
                         {
                             _devices.Add(Dictionaries.Instance.DeviceDescriptions[info.vehicle.module_2]);
                         }
+                    }
+
+                    if (replay.datablock_advanced.streamData != null)
+                    {
+                        foreach (Slot slot in replay.datablock_advanced.streamData.Slots)
+                        {
+                            if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey((int)slot.item.id) && slot.item.type_id == "equipment")
+                            {
+                                Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[(int)slot.item.id]);
+                            }
+                        }
+
+                        ChatMessages = replay.datablock_advanced.streamData.Messages;
                     }
                 }
 

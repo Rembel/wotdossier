@@ -215,6 +215,7 @@ namespace WotDossier.Dal
         };
 
         public Dictionary<int, DeviceDescription> DeviceDescriptions { get; set; }
+        public Dictionary<int, ConsumableDescription> ConsumableDescriptions { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
@@ -227,6 +228,7 @@ namespace WotDossier.Dal
             _maps = ReadMaps();
 
             DeviceDescriptions = ReadDeviceDescriptions();
+            ConsumableDescriptions = ReadConsumableDescriptions();
         }
 
         private Dictionary<int, DeviceDescription> ReadDeviceDescriptions()
@@ -237,6 +239,18 @@ namespace WotDossier.Dal
                 JsonSerializer se = new JsonSerializer();
                 JObject parsedData = se.Deserialize<JObject>(reader);
                 var readDeviceDescriptions = parsedData.ToObject<Dictionary<string, DeviceDescription>>();
+                return readDeviceDescriptions.Values.Where(x => x.id != null).ToDictionary(x => x.id.Value, y => y);
+            }
+        }
+
+        private Dictionary<int, ConsumableDescription> ReadConsumableDescriptions()
+        {
+            using (StreamReader re = new StreamReader(@"External\consumables.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                JObject parsedData = se.Deserialize<JObject>(reader);
+                var readDeviceDescriptions = parsedData.ToObject<Dictionary<string, ConsumableDescription>>();
                 return readDeviceDescriptions.Values.Where(x => x.id != null).ToDictionary(x => x.id.Value, y => y);
             }
         }

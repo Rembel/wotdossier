@@ -75,7 +75,7 @@
     </ControlTemplate>
     <Style x:Key="office2007SilverContextMenu" TargetType="{x:Type ContextMenu}">
         <Style.Resources>
-            <ResourceDictionary Source="MenuResourceDictionary.xaml"/>
+            <ResourceDictionary Source="MenuResourceDictionarySilver.xaml"/>
         </Style.Resources>
         <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
         <Setter Property="Control.BorderThickness" Value="1"/>

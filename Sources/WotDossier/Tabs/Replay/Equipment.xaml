@@ -7,13 +7,12 @@
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
-    <StackPanel Orientation="Vertical"  Background="#0E0C09">
-        <Grid>
+        <Grid Background="#0E0C09">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
-                <RowDefinition />
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="40" />
-                <RowDefinition />
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -79,7 +78,7 @@
             </ListBox>
             <TextBlock Margin="12,3,12,3" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="2" Foreground="#FFA759" Text="{x:Static resources:Resources.Common_Chat}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <ListBox Grid.ColumnSpan="2" Grid.Row="3" Background="Transparent" ItemsSource="{Binding ChatMessages}" BorderThickness="0" Padding="0" Margin="0" 
-                 HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                 HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Vertical"></StackPanel>
@@ -99,5 +98,4 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
-    </StackPanel>
 </UserControl>

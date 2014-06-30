@@ -351,7 +351,11 @@ namespace WotDossier.Applications
                                 byte[] decrypt = Decrypt(buffer);
                                 byte[] uncompressed = Decompress(decrypt);
                                 
-                                advancedReplayData = ExtractAdvanced(uncompressed);
+                                //advancedReplayData = ExtractAdvanced(uncompressed);
+                                using (var f = new MemoryStream(uncompressed))
+                                {
+                                    advancedReplayData = ReadPackets(f);
+                                }
                             }
                         }
                         catch (Exception e)
@@ -372,50 +376,240 @@ namespace WotDossier.Applications
             return null;
         }
 
-        private static AdvancedReplayData ExtractAdvanced(byte[] uncompressed)
-        {
-            AdvancedReplayData advanced = new AdvancedReplayData();
+        //private static AdvancedReplayData ExtractAdvanced(byte[] uncompressed)
+        //{
+        //    AdvancedReplayData advanced = new AdvancedReplayData();
 
+        //    using (var f = new MemoryStream(uncompressed))
+        //    {
+        //        f.Seek(12, SeekOrigin.Begin);
+        //        int versionlength = (int) f.Read(1).ConvertLittleEndian();
+
+        //        /*                
+        //if not is_supported_replay(f):
+        //    advanced['valid'] = 0
+        //    printmessage('Unsupported replay: Versionlength: ' + str(versionlength))
+        //    return advanced
+        //        */
+
+        //        f.Seek(3, SeekOrigin.Current);
+
+        //        advanced.replay_version = f.Read(versionlength).GetUtf8String();
+        //        advanced.replay_version = advanced.replay_version.Replace(", ", ".");
+        //        advanced.replay_version = advanced.replay_version.Replace(". ", ".");
+        //        advanced.replay_version = advanced.replay_version.Replace(' ', '.');
+
+        //        f.Seek(51 + versionlength, SeekOrigin.Begin);
+
+        //        int playernamelength = (int) f.Read(1).ConvertLittleEndian();
+
+        //        advanced.playername = f.Read(playernamelength).GetUtf8String();
+        //        advanced.arenaUniqueID = (long) f.Read(8).ConvertLittleEndian();
+        //        advanced.arenaCreateTime = advanced.arenaUniqueID & 4294967295L;
+
+        //        advanced.arenaTypeID = (int) f.Read(4).ConvertLittleEndian();
+        //        advanced.gameplayID = advanced.arenaTypeID >> 16;
+        //        advanced.arenaTypeID = advanced.arenaTypeID & 32767;
+
+        //        advanced.bonusType = (int) f.Read(1).ConvertLittleEndian();
+        //        advanced.guiType = (int) f.Read(1).ConvertLittleEndian();
+
+        //        advanced.more = new BattleInfo();
+        //        int advancedlength = (int) f.Read(1).ConvertLittleEndian();
+
+        //        if (advancedlength == 255)
+        //        {
+        //            advancedlength = (int) f.Read(2).ConvertLittleEndian();
+        //            f.Seek(1, SeekOrigin.Current);
+        //        }
+
+        //        try
+        //        {
+        //            byte[] advanced_pickles = f.Read(advancedlength);
+        //            object load = Unpickle.Load(new MemoryStream(advanced_pickles));
+        //            advanced.more = load.ToObject<BattleInfo>();
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            _log.Error(
+        //                "Cannot load advanced pickle. \nPosition: " + f.Position + ", Length: " + advancedlength, e);
+        //        }
+
+        //        f.Seek(29, SeekOrigin.Current);
+
+        //        advancedlength = (int) f.Read(1).ConvertLittleEndian();
+
+        //        if (advancedlength == 255)
+        //        {
+        //            advancedlength = (int) f.Read(2).ConvertLittleEndian();
+        //            f.Seek(1, SeekOrigin.Current);
+        //        }
+
+        //        var rosters = new List<object>();
+        //        var rosterdata = new Dictionary<string, AdvancedPlayerInfo>();
+        //        advanced.roster = rosterdata;
+
+        //        try
+        //        {
+        //            byte[] advanced_pickles = f.Read(advancedlength);
+        //            rosters = (List<object>) Unpickle.Load(new MemoryStream(advanced_pickles));
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            _log.Error("Cannot load roster pickle. Position: " + f.Position + ", Length: " + advancedlength, e);
+        //        }
+
+        //        foreach (object[] roster in rosters)
+        //        {
+        //            string key = (string) roster[2];
+        //            rosterdata[key] = new AdvancedPlayerInfo();
+        //            rosterdata[key].internaluserID = (int) roster[0];
+        //            rosterdata[key].playerName = key;
+        //            rosterdata[key].team = (int) roster[3];
+        //            rosterdata[key].accountDBID = (int) roster[7];
+        //            rosterdata[key].clanAbbrev = (string) roster[8];
+        //            rosterdata[key].clanID = (int) roster[9];
+        //            rosterdata[key].prebattleID = (int) roster[10];
+
+        //            var bindataBytes = Encoding.GetEncoding(1252).GetBytes((string) roster[1]);
+        //            List<int> bindata = bindataBytes.Unpack("BBHHHHHHB");
+
+        //            rosterdata[key].countryID = bindata[0] >> 4 & 15;
+        //            rosterdata[key].tankID = bindata[1];
+        //            int compDescr = (bindata[1] << 8) + bindata[0];
+        //            rosterdata[key].compDescr = compDescr;
+
+        //            //Does not make sense, will check later
+        //            rosterdata[key].vehicle = new AdvancedVehicleInfo();
+        //            rosterdata[key].vehicle.chassisID = bindata[2];
+        //            rosterdata[key].vehicle.engineID = bindata[3];
+        //            rosterdata[key].vehicle.fueltankID = bindata[4];
+        //            rosterdata[key].vehicle.radioID = bindata[5];
+        //            rosterdata[key].vehicle.turretID = bindata[6];
+        //            rosterdata[key].vehicle.gunID = bindata[7];
+
+        //            int flags = bindata[8];
+        //            int optional_devices_mask = flags & 15;
+        //            int idx = 2;
+        //            int pos = 15;
+
+        //            while (optional_devices_mask != 0)
+        //            {
+        //                if ((optional_devices_mask & 1) == 1)
+        //                {
+        //                    try
+        //                    {
+        //                        int m = (int) bindataBytes.Skip(pos).Take(2).ToArray().ConvertLittleEndian();
+        //                        rosterdata[key].vehicle.module[idx] = m;
+        //                    }
+        //                    catch (Exception e)
+        //                    {
+        //                        _log.Error("error on processing player [" + key + "]: ", e);
+        //                    }
+        //                }
+
+        //                optional_devices_mask = optional_devices_mask >> 1;
+        //                idx = idx - 1;
+        //                pos = pos + 2;
+
+        //            }
+        //        }
+        //    }
+        //    return advanced;
+        //}
+
+        private static AdvancedReplayData ReadPackets(MemoryStream f)
+        {
+            AdvancedReplayData data = new AdvancedReplayData();
+
+            bool endOfStream = false;
+            Console.WriteLine("Begin");
+            while (!endOfStream)
+            {
+                endOfStream = ReadPacket(f, data);
+            }
+
+            return data;
+        }
+
+        private static bool ReadPacket(Stream stream, AdvancedReplayData data)
+        {
+            ulong packetLength = stream.Read(4).ConvertLittleEndian();
+            ulong packetType = stream.Read(4).ConvertLittleEndian();
+
+            //move to payload
+            stream.Seek(4, SeekOrigin.Current);
+
+            long position = stream.Position;
+
+            bool endOfStream = packetType == new byte[] { 255, 255, 255, 255 }.ConvertLittleEndian();
+
+            byte[] payload = new byte[packetLength];
+
+            if (!endOfStream)
+            {
+                stream.Read(payload, 0, (int)packetLength);
+            }
+
+            var packet = new Packet { Payload = payload, PacketType = packetType, PacketLength = packetLength, Position = position };
+
+            if (packet.PacketType == 0x14)
+            {
+                Read0x14(packet.Payload, data);
+            }
+
+            if (packet.PacketType == 0x00)
+            {
+                Read0x00(packet.Payload, data);
+            }
+
+            if (packet.PacketType == 0x08)
+            {
+                Process_0x08(packet, data);
+            }
+
+            //chat
+            if (packet.PacketType == 0x1f)
+            {
+                ReadChatPacket(packet, data);
+            }
+
+            return endOfStream;
+        }
+
+        private static void Read0x14(byte[] uncompressed, AdvancedReplayData data)
+        {
             using (var f = new MemoryStream(uncompressed))
             {
-                f.Seek(12, SeekOrigin.Begin);
-                int versionlength = (int) f.Read(1).ConvertLittleEndian();
-
-                /*                
-		if not is_supported_replay(f):
-			advanced['valid'] = 0
-			printmessage('Unsupported replay: Versionlength: ' + str(versionlength))
-			return advanced
-                */
+                int versionlength = (int)f.Read(1).ConvertLittleEndian();
 
                 f.Seek(3, SeekOrigin.Current);
 
-                advanced.replay_version = f.Read(versionlength).GetUtf8String();
-                advanced.replay_version = advanced.replay_version.Replace(", ", ".");
-                advanced.replay_version = advanced.replay_version.Replace(". ", ".");
-                advanced.replay_version = advanced.replay_version.Replace(' ', '.');
+                data.replay_version = f.Read(versionlength).GetUtf8String();
+                data.replay_version = data.replay_version.Replace(", ", ".");
+                data.replay_version = data.replay_version.Replace(". ", ".");
+                data.replay_version = data.replay_version.Replace(' ', '.');
+            }
+        }
 
-                f.Seek(51 + versionlength, SeekOrigin.Begin);
+        private static void Read0x00(byte[] uncompressed, AdvancedReplayData data)
+        {
+            using (var f = new MemoryStream(uncompressed))
+            {
+                f.Seek(10, SeekOrigin.Begin);
 
-                int playernamelength = (int) f.Read(1).ConvertLittleEndian();
+                int playernamelength = (int)f.Read(1).ConvertLittleEndian();
 
-                advanced.playername = f.Read(playernamelength).GetUtf8String();
-                advanced.arenaUniqueID = (long) f.Read(8).ConvertLittleEndian();
-                advanced.arenaCreateTime = advanced.arenaUniqueID & 4294967295L;
+                data.playername = f.Read(playernamelength).GetUtf8String();
 
-                advanced.arenaTypeID = (int) f.Read(4).ConvertLittleEndian();
-                advanced.gameplayID = advanced.arenaTypeID >> 16;
-                advanced.arenaTypeID = advanced.arenaTypeID & 32767;
+                f.Seek(playernamelength+25, SeekOrigin.Begin);
 
-                advanced.bonusType = (int) f.Read(1).ConvertLittleEndian();
-                advanced.guiType = (int) f.Read(1).ConvertLittleEndian();
-
-                advanced.more = new BattleInfo();
-                int advancedlength = (int) f.Read(1).ConvertLittleEndian();
+                data.more = new BattleInfo();
+                int advancedlength = (int)f.Read(1).ConvertLittleEndian();
 
                 if (advancedlength == 255)
                 {
-                    advancedlength = (int) f.Read(2).ConvertLittleEndian();
+                    advancedlength = (int)f.Read(2).ConvertLittleEndian();
                     f.Seek(1, SeekOrigin.Current);
                 }
 
@@ -423,37 +617,78 @@ namespace WotDossier.Applications
                 {
                     byte[] advanced_pickles = f.Read(advancedlength);
                     object load = Unpickle.Load(new MemoryStream(advanced_pickles));
-                    advanced.more = load.ToObject<BattleInfo>();
+                    data.more = load.ToObject<BattleInfo>();
                 }
                 catch (Exception e)
                 {
                     _log.Error(
                         "Cannot load advanced pickle. \nPosition: " + f.Position + ", Length: " + advancedlength, e);
                 }
+            }
+        }
 
-                f.Seek(29, SeekOrigin.Current);
+        private static void Process_0x08(Packet packet, AdvancedReplayData data)
+        {
+            using (MemoryStream stream = new MemoryStream(packet.Payload))
+            {
+                //skip 0-4 - player_id
+                stream.Seek(4, SeekOrigin.Current);
+                //read 4-8 - subType
+                packet.SubType = stream.Read(4).ConvertLittleEndian();
+                //read 8-12 - update length
+                packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
 
-                advancedlength = (int) f.Read(1).ConvertLittleEndian();
-
-                if (advancedlength == 255)
+                if (packet.SubType == 0x1d) //onArenaUpdate events
                 {
-                    advancedlength = (int) f.Read(2).ConvertLittleEndian();
-                    f.Seek(1, SeekOrigin.Current);
+                    Process_0x08_0x08(packet, stream, data);
                 }
 
-                var rosters = new List<object>();
+                if (packet.SubType == 0x09) //onSlotUpdate events
+                {
+                    Process_0x08_0x09(packet, stream, data);
+                }
+            }
+        }
+
+        private static void Process_0x08_0x08(Packet packet, MemoryStream stream, AdvancedReplayData data)
+        {
+            ulong updateType = stream.Read(1).ConvertLittleEndian();
+
+            //For update types 0x01 and 0x04: at offset 14, read an uint16 and unpack it to 2 bytes, 
+            //if the unpacked value matches 0x80, 0x02 then set your offset to 14. 
+            //If the unpacked value does not match 0x80, 0x02 set your offset to 17. 
+            if (updateType == 0x01 || updateType == 0x04)
+            {
+                ulong firstByte = stream.Read(1).ConvertLittleEndian();
+
+                ulong secondByte = stream.Read(1).ConvertLittleEndian();
+
+                if (firstByte != 0x80 || secondByte != 0x02)
+                {
+                    stream.Seek(2, SeekOrigin.Current);
+                    packet.SubTypePayloadLength = packet.SubTypePayloadLength - 5;
+                }
+                else
+                {
+                    stream.Seek(-1, SeekOrigin.Current);
+                    packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
+                }
+            }
+            else
+            {
+                stream.Seek(1, SeekOrigin.Current);
+                packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
+            }
+
+            if (updateType == 1 && data.roster == null)
+            {
+                //Read from your offset to the end of the packet, this will be the "update pickle". 
+                byte[] buffer = stream.Read((int) (packet.SubTypePayloadLength));
+
                 var rosterdata = new Dictionary<string, AdvancedPlayerInfo>();
-                advanced.roster = rosterdata;
+                data.roster = rosterdata;
 
-                try
-                {
-                    byte[] advanced_pickles = f.Read(advancedlength);
-                    rosters = (List<object>) Unpickle.Load(new MemoryStream(advanced_pickles));
-                }
-                catch (Exception e)
-                {
-                    _log.Error("Cannot load roster pickle. Position: " + f.Position + ", Length: " + advancedlength, e);
-                }
+                List<object> rosters = (List<object>) Unpickle.Load(new MemoryStream(buffer));
 
                 foreach (object[] roster in rosters)
                 {
@@ -510,84 +745,11 @@ namespace WotDossier.Applications
 
                     }
                 }
-                advanced.streamData = ReadPackets(f);
             }
-            return advanced;
+
         }
 
-        private static StreamData ReadPackets(MemoryStream f)
-        {
-            StreamData data = new StreamData();
-
-            bool endOfStream = false;
-            Console.WriteLine("Begin");
-            while (!endOfStream)
-            {
-                endOfStream = ReadPacket(f, data);
-            }
-
-            return data;
-        }
-
-        private static bool ReadPacket(Stream stream, StreamData data)
-        {
-            ulong packetLength = stream.Read(4).ConvertLittleEndian();
-            ulong packetType = stream.Read(4).ConvertLittleEndian();
-
-            //move to payload
-            stream.Seek(4, SeekOrigin.Current);
-
-            long position = stream.Position;
-
-            bool endOfStream = packetType == new byte[] { 255, 255, 255, 255 }.ConvertLittleEndian();
-
-            byte[] payload = new byte[packetLength];
-
-            if (!endOfStream)
-            {
-                stream.Read(payload, 0, (int)packetLength);
-            }
-
-            var packet = new Packet { Payload = payload, PacketType = packetType, PacketLength = packetLength, Position = position };
-
-            if (packet.PacketType == 0x08)
-            {
-                ReadPayload(packet, data);
-            }
-
-            //chat
-            if (packet.PacketType == 0x1f)
-            {
-                ReadChatPacket(packet, data);
-            }
-
-            return endOfStream;
-        }
-
-        private static void ReadPayload(Packet packet, StreamData data)
-        {
-            using (MemoryStream stream = new MemoryStream(packet.Payload))
-            {
-                //skip 0-4 - player_id
-                stream.Seek(4, SeekOrigin.Current);
-                //read 4-8 - subType
-                packet.SubType = stream.Read(4).ConvertLittleEndian();
-                //read 8-12 - update length
-                packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
-
-                //if (packet.SubType == 0x1d) //onArenaUpdate events
-                //{
-                //    //Process_0x08(packet, stream);
-                //}
-
-                if (packet.SubType == 0x09) //onSlotUpdate events
-                {
-                    Process_0x09(packet, stream, data);
-                }
-            }
-        }
-
-        private static void Process_0x09(Packet packet, MemoryStream stream, StreamData data)
+        private static void Process_0x08_0x09(Packet packet, MemoryStream stream, AdvancedReplayData data)
         {
             //buffer = new byte[packet.SubTypePayloadLength];
             ////Read from your offset to the end of the packet, this will be the "update pickle". 
@@ -639,56 +801,7 @@ namespace WotDossier.Applications
             return "unknown";
         }
 
-        //private static void Process_0x08(Packet packet, MemoryStream stream)
-        //{
-        //    byte[] buffer = new byte[1];
-        //    stream.Read(buffer, 0, 1);
-        //    ulong updateType = ConvertLittleEndian(buffer);
-
-        //    //For update types 0x01 and 0x04: at offset 14, read an uint16 and unpack it to 2 bytes, 
-        //    //if the unpacked value matches 0x80, 0x02 then set your offset to 14. 
-        //    //If the unpacked value does not match 0x80, 0x02 set your offset to 17. 
-        //    if (updateType == 0x01 || updateType == 0x04)
-        //    {
-        //        buffer = new byte[1];
-        //        stream.Read(buffer, 0, 1);
-        //        ulong firstByte = ConvertLittleEndian(buffer);
-
-        //        stream.Read(buffer, 0, 1);
-        //        ulong secondByte = ConvertLittleEndian(buffer);
-
-        //        if (firstByte != 0x80 || secondByte != 0x02)
-        //        {
-        //            stream.Seek(2, SeekOrigin.Current);
-        //            packet.SubTypePayloadLength = packet.SubTypePayloadLength - 5;
-        //        }
-        //        else
-        //        {
-        //            stream.Seek(-1, SeekOrigin.Current);
-        //            packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        stream.Seek(1, SeekOrigin.Current);
-        //        packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
-        //    }
-
-        //    buffer = new byte[packet.SubTypePayloadLength];
-        //    //Read from your offset to the end of the packet, this will be the "update pickle". 
-        //    stream.Read(buffer, 0, (int)(packet.SubTypePayloadLength));
-
-        //    object unpickledData = Unpickle.Load(new MemoryStream(buffer));
-
-        //    Console.WriteLine("----------------------------------------------------------------------------------------------------");
-        //    Console.WriteLine("Packet. Type: 0x{0:x2} Length: {1} Pos: {2}", packet.PacketType, packet.PacketLength, packet.Position);
-        //    Console.WriteLine("\t Payload. Subtype: 0x{0:x2} UpdateType:  0x{2:x2} Length: {1}", packet.SubType, packet.SubTypePayloadLength, updateType);
-        //    Console.WriteLine(JsonConvert.SerializeObject(unpickledData, Formatting.Indented));
-        //    Console.WriteLine("----------------------------------------------------------------------------------------------------");
-        //}
-
-
-        private static void ReadChatPacket(Packet packet, StreamData data)
+        private static void ReadChatPacket(Packet packet, AdvancedReplayData data)
         {
             string message = Encoding.UTF8.GetString(packet.Payload);
             data.Messages.Add(ParseMessage(message.Replace("&nbsp;", " ").Replace(":", "")));

@@ -305,7 +305,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     foreach (Slot slot in replay.datablock_advanced.Slots)
                     {
                         if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey((int) slot.item.id) &&
-                            slot.item.type_id == "equipment")
+                            slot.item.type_id == SlotType.Equipment)
                         {
                             Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[(int) slot.item.id]);
                         }

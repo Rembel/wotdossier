@@ -14,4 +14,24 @@
         Uk = 5,
         Japan = 6
     }
+
+    /// <summary>
+    /// Slot types enum
+    /// </summary>
+    public enum SlotType : int
+    {
+        Unknown = -1,
+        Reserved,
+        Vehicle,
+        VehicleChassis,
+        VehicleTurret,
+        VehicleGun,
+        VehicleEngine,
+        VehicleFuelTank,
+        VehicleRadio,
+        Tankman,
+        OptionalDevice,
+        Shell,
+        Equipment
+    }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- This section contains the log4net configuration settings -->
-<log4net debug="true">
+<log4net debug="false">
   <appender name="ConsoleAppender" type="log4net.Appender.ColoredConsoleAppender">
     <mapping>
       <level value="ERROR" />

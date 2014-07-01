@@ -81,5 +81,34 @@ namespace WotDossier.Common.Extensions
             }
             return result;
         }
+
+        public static byte[] Xor(byte[] result, byte[] matchValue)
+        {
+            if (result.Length == 0)
+            {
+                return matchValue;
+            }
+
+            byte[] newResult = new byte[matchValue.Length > result.Length ? matchValue.Length : result.Length];
+
+            for (int i = 1; i < newResult.Length + 1; i++)
+            {
+                //Use XOR on the LSBs until we run out
+                if (i > result.Length)
+                {
+                    newResult[newResult.Length - i] = matchValue[matchValue.Length - i];
+                }
+                else if (i > matchValue.Length)
+                {
+                    newResult[newResult.Length - i] = result[result.Length - i];
+                }
+                else
+                {
+                    newResult[newResult.Length - i] =
+                        (byte)(matchValue[matchValue.Length - i] ^ result[result.Length - i]);
+                }
+            }
+            return newResult;
+        }
     }
 }

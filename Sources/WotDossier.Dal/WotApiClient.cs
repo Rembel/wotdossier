@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Common.Logging;
 using Newtonsoft.Json;
@@ -52,6 +54,7 @@ namespace WotDossier.Dal
         /// </summary>
         private WotApiClient()
         {
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         }
 
         /// <summary>
@@ -129,6 +132,8 @@ namespace WotDossier.Dal
                 return null;
             }
         }
+
+
 
         /// <summary>
         /// Gets the clan member information.
@@ -290,6 +295,43 @@ namespace WotDossier.Dal
                 _log.Error("Can't get clan info from server", e);
             }
             return null;
+        }
+
+        /// <summary>
+        /// Loads player stat from server
+        /// </summary>
+        /// <exception cref="PlayerInfoLoadException"></exception>
+        public Player LoadPlayer(int playerId, AppSettings settings, string[] fields)
+        {
+            if (settings == null || string.IsNullOrEmpty(settings.Server))
+            {
+                return null;
+            }
+
+            try
+            {
+                var parameters = new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_ACCOUNT_ID, playerId},
+                };
+
+                if (fields != null)
+                {
+                    parameters.Add(PARAM_FIELDS, string.Join(",", fields));
+                }
+
+                var playerStat = Request<Player>(METHOD_ACCOUNT_INFO, parameters, settings);
+
+                playerStat.dataField = playerStat.data[playerId];
+
+                return playerStat;
+            }
+            catch (Exception e)
+            {
+                _log.Error("Can't get player info from server", e);
+                return null;
+            }
         }
 
         /// <summary>

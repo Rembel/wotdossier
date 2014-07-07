@@ -24,9 +24,9 @@ namespace WotDossier.Applications.Update
         {
             AppSettings appSettings = SettingsReader.Get();
             //one day from last check
-            if (appSettings.CheckForUpdates && (DateTime.Now - appSettings.NewVersionCheckLastDate).Days >= 1)
+            if (appSettings.CheckForUpdates && (DateTime.Now.Date != appSettings.NewVersionCheckLastDate.Date))
             {
-                appSettings.NewVersionCheckLastDate = DateTime.Now;
+                appSettings.NewVersionCheckLastDate = DateTime.Now.Date;
                 SettingsReader.Save(appSettings);
 
                 CheckNewVersionAvailable();

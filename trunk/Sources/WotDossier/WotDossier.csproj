@@ -869,6 +869,9 @@
     <Content Include="Updates\2014050701.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Updates\2014070801.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Updates\2014052802.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

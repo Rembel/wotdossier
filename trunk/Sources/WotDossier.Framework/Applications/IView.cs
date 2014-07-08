@@ -29,6 +29,11 @@ namespace WotDossier.Framework.Applications
         object DataContext { get; set; }
 
         /// <summary>
+        /// Gets or sets the dialog result.
+        /// </summary>
+        bool? DialogResult { get; set; }
+
+        /// <summary>
         /// Gets the System.Windows.Threading.Dispatcher this view is associated with.
         /// </summary>
         /// <value>

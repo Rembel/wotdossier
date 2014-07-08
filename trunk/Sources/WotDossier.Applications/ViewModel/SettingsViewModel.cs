@@ -147,7 +147,7 @@ namespace WotDossier.Applications.ViewModel
                     if (playerStat != null)
                     {
                         double createdAt = playerStat.dataField.created_at;
-                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.account_id, Utils.UnixDateToDateTime((long) createdAt));
+                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.account_id, Utils.UnixDateToDateTime((long) createdAt), _appSettings.Server);
                     }
                 }
 
@@ -165,9 +165,9 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Close();
         }
 
-        public virtual void Show()
+        public virtual bool? Show()
         {
-            ViewTyped.Show();
+            return ViewTyped.ShowDialog();
         }
     }
 }

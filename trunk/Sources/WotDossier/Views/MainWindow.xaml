@@ -60,12 +60,12 @@
                               SelectionChanged="Selector_OnSelectionChanged"/>
                 </ToolBarPanel>
             </ToolBar>
-            <!--<ToolBar DataContext="{Binding PlayerSelector}" Visibility="Visible">
+            <ToolBar DataContext="{Binding PlayerSelector}" Visibility="Visible">
                 <ToolBarPanel Orientation="Horizontal">
                     <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Text="{x:Static resources:Resources.Settings_PlayerName}"/>
                     <ComboBox Margin="6 0 6 0" Height="20" Width="150" ItemsSource="{Binding Players}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Player}"/>
                 </ToolBarPanel>
-            </ToolBar>-->
+            </ToolBar>
         </ToolBarTray>
 
         <TabControl Margin="0,6,0,0" Grid.Row="2" Name="tcMain" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

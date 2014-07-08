@@ -13,6 +13,11 @@ namespace WotDossier.Domain.Entities
 		/// Gets/Sets the field "Name".
 		/// </summary>
 		public virtual string Name	{get; set; }
+
+        /// <summary>
+        /// Gets or sets the server.
+        /// </summary>
+        public virtual string Server { get; set; }
 		
 		/// <summary>
 		/// Gets/Sets the field "Creaded".

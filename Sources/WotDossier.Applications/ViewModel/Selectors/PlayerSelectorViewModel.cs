@@ -9,9 +9,9 @@ namespace WotDossier.Applications.ViewModel.Selectors
     {
         private readonly DossierRepository _repository;
         private readonly Action _onSelectionChanged;
-        private List<ListItem<int>> _players;
+        private List<PlayerListItem> _players;
 
-        public List<ListItem<int>> Players
+        public List<PlayerListItem> Players
         {
             get { return _players; }
             set { _players = value; }
@@ -26,7 +26,9 @@ namespace WotDossier.Applications.ViewModel.Selectors
                 _player = value;
                 var appSettings = SettingsReader.Get();
                 appSettings.PlayerId = value;
-                appSettings.PlayerName = Players.First(x => x.Id == value).Value;
+                PlayerListItem listItem = Players.First(x => x.Id == value);
+                appSettings.PlayerName = listItem.Value;
+                appSettings.Server = listItem.Server;
                 SettingsReader.Save(appSettings);
                 _onSelectionChanged();
                 RaisePropertyChanged("Player");
@@ -42,16 +44,35 @@ namespace WotDossier.Applications.ViewModel.Selectors
 
         public void InitPlayers()
         {
-            Players = _repository.GetPlayers().Select(x => new ListItem<int>(x.PlayerId, x.Name)).ToList();
+            Players = _repository.GetPlayers().Select(x => new PlayerListItem(x.PlayerId, x.Name, x.Server)).ToList();
 
             var appSettings = SettingsReader.Get();
             
             if (appSettings.PlayerId > 0 && Players.FirstOrDefault(x => x.Id == appSettings.PlayerId) == null)
             {
-                Players.Add(new ListItem<int>(appSettings.PlayerId, appSettings.PlayerName));
+                Players.Add(new PlayerListItem(appSettings.PlayerId, appSettings.PlayerName, appSettings.Server));
             }
             
             _player = appSettings.PlayerId;
+
+            RaisePropertyChanged("Players");
+            RaisePropertyChanged("Player");
+        }
+    }
+
+    public class PlayerListItem : ListItem<int>
+    {
+        public string Server { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlayerListItem"/> class.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="server"></param>
+        public PlayerListItem(int id, string value, string server) : base(id, value)
+        {
+            Server = server;
         }
     }
 }

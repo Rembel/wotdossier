@@ -1,0 +1,1 @@
+﻿ALTER TABLE [Player] ADD [Server] nvarchar(5) NULL;

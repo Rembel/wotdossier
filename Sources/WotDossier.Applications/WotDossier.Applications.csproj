@@ -105,6 +105,7 @@
     <Compile Include="ThemesManager.cs" />
     <Compile Include="Update\CodeUpdateBase.cs" />
     <Compile Include="Update\CodeUpdate_2014042501.cs" />
+    <Compile Include="Update\CodeUpdate_2014070802.cs" />
     <Compile Include="Update\CodeUpdate_2014042502.cs" />
     <Compile Include="Update\DatabaseManager.cs" />
     <Compile Include="Update\DownloadedVersionInfo.cs" />

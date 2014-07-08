@@ -453,6 +453,8 @@ namespace WotDossier.Applications.ViewModel
             if (viewModel != null)
             {
                 viewModel.Show();
+                PlayerSelector.InitPlayers();
+                OnLoad();
             }
         }
 

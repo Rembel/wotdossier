@@ -12,10 +12,11 @@ namespace WotDossier.Dal.Mappings
 			Map(v => v.Name);
 			Map(v => v.Creaded);
 			Map(v => v.PlayerId);
+			Map(v => v.Server);
 		
 
-			HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.PlayerId));
-			HasMany(v => v.TankEntities).KeyColumn(Column<TankEntity>(v => v.PlayerId));
+            //HasMany(v => v.PlayerStatisticEntities).KeyColumn(Column<PlayerStatisticEntity>(v => v.PlayerId));
+            //HasMany(v => v.TankEntities).KeyColumn(Column<TankEntity>(v => v.PlayerId));
         }
     }
 }

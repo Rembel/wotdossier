@@ -108,6 +108,7 @@ namespace WotDossier.Dal
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                 }, settings);
+                playerStat.server = settings.Server;
                 playerStat.dataField = playerStat.data[playerId];
                 playerStat.dataField.ratings = GetPlayerRatings(playerId, settings);
                 playerStat.dataField.achievements = GetPlayerAchievements(playerId, settings);

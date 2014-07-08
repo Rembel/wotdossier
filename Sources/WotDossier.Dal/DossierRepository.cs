@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Common.Logging;
+using NHibernate.Criterion;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
@@ -86,7 +87,8 @@ namespace WotDossier.Dal
             {
                 playerEntity = GetPlayerInternal(playerId) ??
                                //recreate payer record in case db was deleted but exists user configured in application setting 
-                               GetOrCreatePlayerInternal(serverStatistic.Player.dataField.nickname, serverStatistic.Player.dataField.account_id, Utils.UnixDateToDateTime((long)serverStatistic.Player.dataField.created_at));
+                               GetOrCreatePlayerInternal(serverStatistic.Player.dataField.nickname, serverStatistic.Player.dataField.account_id, 
+                               Utils.UnixDateToDateTime((long)serverStatistic.Player.dataField.created_at), serverStatistic.Player.server);
 
                 T currentSnapshot = _dataProvider.QueryOver<T>().Where(x => x.PlayerId == playerEntity.Id)
                                                .OrderBy(x => x.Updated)
@@ -145,8 +147,9 @@ namespace WotDossier.Dal
         /// <param name="name">The name.</param>
         /// <param name="id">The identifier.</param>
         /// <param name="creaded">Creaded at.</param>
+        /// <param name="server">The server.</param>
         /// <returns></returns>
-        public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded)
+        public PlayerEntity GetOrCreatePlayer(string name, int id, DateTime creaded, string server)
         {
             _dataProvider.OpenSession();
             _dataProvider.BeginTransaction();
@@ -158,20 +161,13 @@ namespace WotDossier.Dal
             if (playerEntity == null)
             {
                 playerEntity = new PlayerEntity();
-                playerEntity.Name = name;
                 playerEntity.PlayerId = id;
                 playerEntity.Creaded = creaded;
-
-                _dataProvider.Save(playerEntity);
             }
-            else
-            {
-                //user change name
-                if (!Equals(playerEntity.Name, name))
-                {
-                    playerEntity.Name = name;
-                }
-            }
+         
+            playerEntity.Name = name;
+            playerEntity.Server = server;
+            _dataProvider.Save(playerEntity);
             
             _dataProvider.CommitTransaction();
 
@@ -185,13 +181,15 @@ namespace WotDossier.Dal
         /// <param name="name">The name.</param>
         /// <param name="id">The identifier.</param>
         /// <param name="creaded">Creaded at.</param>
+        /// <param name="server">The server.</param>
         /// <returns></returns>
-        private PlayerEntity GetOrCreatePlayerInternal(string name, int id, DateTime creaded)
+        private PlayerEntity GetOrCreatePlayerInternal(string name, int id, DateTime creaded, string server)
         {
             PlayerEntity playerEntity = new PlayerEntity();
             playerEntity.Name = name;
             playerEntity.PlayerId = id;
             playerEntity.Creaded = creaded;
+            playerEntity.Server = server;
             _dataProvider.Save(playerEntity);
             
             return playerEntity;
@@ -468,7 +466,7 @@ namespace WotDossier.Dal
             _dataProvider.OpenSession();
             try
             {
-                return _dataProvider.QueryOver<PlayerEntity>().List();
+                return _dataProvider.QueryOver<PlayerEntity>().Where(x => x.Server != null).List();
             }
             catch (Exception e)
             {

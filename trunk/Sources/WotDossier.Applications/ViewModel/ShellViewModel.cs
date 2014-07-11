@@ -539,7 +539,7 @@ namespace WotDossier.Applications.ViewModel
 
                                 InitLastUsedTankList();
 
-                                PlayerStatistic.Clan = InitClanModel(serverStatistic, settings);
+                                InitClanData(serverStatistic);
 
                                 ProgressView.Report(bw, 100, Resources.Resources.Progress_LoadLastUsedVehiclesListCompleted);
                                 ProgressView.Report(bw, 100, Resources.Resources.Progress_DataLoadCompleted);
@@ -567,17 +567,20 @@ namespace WotDossier.Applications.ViewModel
             ReplaysViewModel.LoadReplaysList();
         }
 
-        private ClanModel InitClanModel(ServerStatWrapper serverStatistic, AppSettings settings)
+        private void InitClanData(ServerStatWrapper serverStatistic)
         {
-            if (serverStatistic != null)
+            _log.Trace("InitClanData start");
+            if (serverStatistic != null && PlayerStatistic != null)
             {
+                AppSettings settings = SettingsReader.Get();
+
                 ClanMemberInfo clanMember = WotApiClient.Instance.GetClanMemberInfo(serverStatistic.Player.dataField.account_id, settings);
                 if (clanMember != null)
                 {
-                    return new ClanModel(clanMember);
+                    PlayerStatistic.Clan = new ClanModel(clanMember);
                 }
             }
-            return null;
+            _log.Trace("InitClanData end");
         }
 
         private void InitLastUsedTankList()

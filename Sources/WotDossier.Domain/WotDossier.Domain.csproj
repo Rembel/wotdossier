@@ -142,6 +142,8 @@
     <Compile Include="Replay\Vehicle.cs" />
     <Compile Include="Replay\VehicleResult.cs" />
     <Compile Include="Server\Achievements.cs" />
+    <Compile Include="Server\BattleJson.cs" />
+    <Compile Include="Server\ProvinceSearchJson.cs" />
     <Compile Include="Server\MedalAchievements.cs" />
     <Compile Include="Server\Clan.cs" />
     <Compile Include="Server\ClanData.cs" />

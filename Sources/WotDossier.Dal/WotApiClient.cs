@@ -29,6 +29,8 @@ namespace WotDossier.Dal
         private const string CONTENT_TYPE = "application/x-www-form-urlencoded";
         private const string PARAM_APPID = "application_id";
         private const string PARAM_SEARCH = "search";
+        private const string PARAM_MAP_ID = "map_id";
+        private const string PARAM_PROVINCE_ID = "province_id";
         private const string PARAM_ACCOUNT_ID = "account_id";
         private const string PARAM_IN_GARAGE = "in_garage";
         private const string PARAM_MEMBER_ID = "member_id";
@@ -45,6 +47,8 @@ namespace WotDossier.Dal
         private const string METHOD_CLAN_MEMBERSINFO = "clan/membersinfo/";
         private const string METHOD_ACCOUNT_LIST = "account/list/";
         private const string METHOD_CLAN_LIST = "clan/list/";
+        private const string METHOD_GLOBALWAR_BATTLES = "globalwar/battles/";
+        private const string METHOD_GLOBALWAR_PROVINCES = "globalwar/provinces/";
 
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
@@ -124,6 +128,7 @@ namespace WotDossier.Dal
                     playerStat.dataField.clan = clanMemberInfo;
                     playerStat.dataField.clanData = LoadClan(clanMemberInfo.clan_id,
                         new[] {"abbreviation", "name", "clan_id", "description", "emblems"}, settings);
+                    playerStat.dataField.Battles = GetBattles(clanMemberInfo.clan_id, 1, settings);
                 }
                 return playerStat;
             }
@@ -407,6 +412,70 @@ namespace WotDossier.Dal
                 if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
                 {
                     return parsedData["data"].ToObject<List<ClanSearchJson>>();
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on clan search", e);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Search clans.
+        /// </summary>
+        /// <param name="provinceIds">The province ids.</param>
+        /// <param name="mapId">The map id.</param>
+        /// <param name="settings">The settings.</param>
+        /// <returns>
+        /// Found clans
+        /// </returns>
+        public Dictionary<int, ProvinceSearchJson> GetProvinces(string[] provinceIds, int mapId, AppSettings settings)
+        {
+            try
+            {
+                JObject parsedData = Request<JObject>(METHOD_GLOBALWAR_PROVINCES, new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_MAP_ID, mapId},
+                    {PARAM_PROVINCE_ID, string.Join(",", provinceIds)}
+                }, settings);
+
+                if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
+                {
+                    return parsedData["data"].ToObject<Dictionary<int, ProvinceSearchJson>>();
+                }
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on clan search", e);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Search clans.
+        /// </summary>
+        /// <param name="clanId">The clan id.</param>
+        /// <param name="mapId">The map id.</param>
+        /// <param name="settings">The settings.</param>
+        /// <returns>
+        /// Found clans
+        /// </returns>
+        public List<BattleJson> GetBattles(int clanId, int mapId, AppSettings settings)
+        {
+            try
+            {
+                JObject parsedData = Request<JObject>(METHOD_GLOBALWAR_BATTLES, new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_MAP_ID, mapId},
+                    {PARAM_CLAN_ID, clanId}
+                }, settings);
+
+                if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
+                {
+                    return parsedData["data"][clanId.ToString()].ToObject<List<BattleJson>>();
                 }
             }
             catch (Exception e)

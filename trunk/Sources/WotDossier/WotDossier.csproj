@@ -266,6 +266,9 @@
     <Compile Include="Tabs\Replay\TeamMemberResult.xaml.cs">
       <DependentUpon>TeamMemberResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\ClanBattles.xaml.cs">
+      <DependentUpon>ClanBattles.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\XPTab.xaml.cs">
       <DependentUpon>XPTab.xaml</DependentUpon>
     </Compile>
@@ -700,6 +703,10 @@
     <Page Include="Tabs\Replay\TeamMemberResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\ClanBattles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\XPTab.xaml">
       <Generator>MSBuild:Compile</Generator>

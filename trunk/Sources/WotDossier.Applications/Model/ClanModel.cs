@@ -25,8 +25,8 @@ namespace WotDossier.Applications.Model
             FullName = string.Format("[{0}] {1}", clan.abbreviation, clan.name);
 
 
-            Updated = Utils.UnixDateToDateTime((long)clan.updated_at);
-            Created = Utils.UnixDateToDateTime(clan.created_at);
+            Updated = Utils.UnixDateToDateTime((long)clan.updated_at).ToLocalTime();
+            Created = Utils.UnixDateToDateTime(clan.created_at).ToLocalTime();
             OwnerId = clan.owner_id;
             IsClanDisbanded = clan.is_clan_disbanded;
             RequestAvailability = clan.request_availability;
@@ -36,12 +36,18 @@ namespace WotDossier.Applications.Model
             {
                 Members = clan.members.Values.Select(x => new ClanMemberModel(x)).OrderBy(x => x.Name).ToList();
             }
+
+            if (clan.Battles != null)
+            {
+                Battles = clan.Battles.Select(x => new BattleModel(x)).OrderBy(x => x.Time).ToList();
+            }
         }
 
-        public ClanModel(ClanData clan, string memberRole, long memberSince): this(clan)
+        public ClanModel(ClanMemberInfo clanMember)
+            : this(clanMember.clan)
         {
-            Role = Resources.Resources.ResourceManager.GetString("Role_" + memberRole);
-            Since = Utils.UnixDateToDateTime(memberSince);
+            Role = Resources.Resources.ResourceManager.GetString("Role_" + clanMember.role);
+            Since = Utils.UnixDateToDateTime(clanMember.since);
             Days = (DateTime.Now - Since).Days;
         }
 
@@ -67,5 +73,6 @@ namespace WotDossier.Applications.Model
 
         public ClanEmblems Emblems { get; set; }
         public List<ClanMemberModel> Members { get; set; }
+        public List<BattleModel> Battles { get; set; }
     }
 }

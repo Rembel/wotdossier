@@ -11,6 +11,7 @@ using System.Windows;
 using WotDossier.Applications.BattleModeStrategies;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
+using WotDossier.Applications.Model;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Chart;
@@ -538,6 +539,8 @@ namespace WotDossier.Applications.ViewModel
 
                                 InitLastUsedTankList();
 
+                                PlayerStatistic.Clan = InitClanModel(serverStatistic, settings);
+
                                 ProgressView.Report(bw, 100, Resources.Resources.Progress_LoadLastUsedVehiclesListCompleted);
                                 ProgressView.Report(bw, 100, Resources.Resources.Progress_DataLoadCompleted);
                             }
@@ -562,6 +565,19 @@ namespace WotDossier.Applications.ViewModel
                 });
 
             ReplaysViewModel.LoadReplaysList();
+        }
+
+        private ClanModel InitClanModel(ServerStatWrapper serverStatistic, AppSettings settings)
+        {
+            if (serverStatistic != null)
+            {
+                ClanMemberInfo clanMember = WotApiClient.Instance.GetClanMemberInfo(serverStatistic.Player.dataField.account_id, settings);
+                if (clanMember != null)
+                {
+                    return new ClanModel(clanMember);
+                }
+            }
+            return null;
         }
 
         private void InitLastUsedTankList()
@@ -624,7 +640,7 @@ namespace WotDossier.Applications.ViewModel
                 int playerId = settings.PlayerId;
                 if (!string.IsNullOrEmpty(settings.PlayerName))
                 {
-                    player = WotApiClient.Instance.LoadPlayerStat(playerId, settings, false);
+                    player = WotApiClient.Instance.LoadPlayerStat(playerId, settings, PlayerStatLoadOptions.LoadRatings);
                 }
             }
             catch (Exception e)

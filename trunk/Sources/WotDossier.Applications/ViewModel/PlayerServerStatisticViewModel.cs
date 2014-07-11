@@ -9,6 +9,7 @@ using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Server;
 using WotDossier.Framework;
@@ -131,9 +132,14 @@ namespace WotDossier.Applications.ViewModel
             statistic.AccountId = player.dataField.account_id;
             statistic.BattlesPerDay = statistic.BattlesCount / (DateTime.Now - statAdapter.Created).Days;
             statistic.Created = Utils.UnixDateToDateTime( (long) player.dataField.created_at);
-            if (player.dataField.clan != null && player.dataField.clan != null && player.dataField.clanData != null)
+            if (player.dataField.clan_id != null)
             {
-                Clan = new ClanModel(player.dataField.clanData, player.dataField.clan.role, player.dataField.clan.since);
+                AppSettings settings = SettingsReader.Get();
+                ClanMemberInfo clanMember = WotApiClient.Instance.GetClanMemberInfo(player.dataField.account_id, settings);
+                if (clanMember != null)
+                {
+                    Clan = new ClanModel(clanMember);
+                }
             }
 
             Tanks = statAdapter.Tanks;

@@ -90,8 +90,8 @@ namespace WotDossier.Applications.ViewModel
                         return;
                     }
 
-                    Player stat1 = WotApiClient.Instance.LoadPlayerStat(first.account_id, SettingsReader.Get(), true);
-                    Player stat2 = WotApiClient.Instance.LoadPlayerStat(second.account_id, SettingsReader.Get(), true);
+                    Player stat1 = WotApiClient.Instance.LoadPlayerStat(first.account_id, SettingsReader.Get(), PlayerStatLoadOptions.LoadAchievments);
+                    Player stat2 = WotApiClient.Instance.LoadPlayerStat(second.account_id, SettingsReader.Get(), PlayerStatLoadOptions.LoadAchievments);
 
                     if (stat1 != null && stat2 != null)
                     {
@@ -108,10 +108,6 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatisticViewModel statistic = new RandomPlayerStatisticViewModel(entity);
             statistic.Name = stat.dataField.nickname;
             statistic.AccountId = stat.dataField.account_id;
-            if (stat.dataField.clan != null && stat.dataField.clan != null)
-            {
-                //statistic.Clan = new PlayerStatisticClanViewModel(stat.dataField.clan);
-            }
             return statistic;
         }
     }

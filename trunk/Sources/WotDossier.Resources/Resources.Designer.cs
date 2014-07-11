@@ -2076,6 +2076,33 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For province.
+        /// </summary>
+        public static string ClanBattleType_for_province {
+            get {
+                return ResourceManager.GetString("ClanBattleType_for_province", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Landing.
+        /// </summary>
+        public static string ClanBattleType_landing {
+            get {
+                return ResourceManager.GetString("ClanBattleType_landing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meeting engagement.
+        /// </summary>
+        public static string ClanBattleType_meeting_engagement {
+            get {
+                return ResourceManager.GetString("ClanBattleType_meeting_engagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t get or save player clan icon from server.
         /// </summary>
         public static string ClanImageUrlToSourceConverter_Convert_Can_t_get_or_save_player_clan_icon_from_server {
@@ -2374,6 +2401,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Provinces.
+        /// </summary>
+        public static string Column_Header_Provinces {
+            get {
+                return ResourceManager.GetString("Column_Header_Provinces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tank.
         /// </summary>
         public static string Column_Header_Tank {
@@ -2388,6 +2424,24 @@ namespace WotDossier.Resources {
         public static string Column_Header_Tier {
             get {
                 return ResourceManager.GetString("Column_Header_Tier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time.
+        /// </summary>
+        public static string Column_Header_Time {
+            get {
+                return ResourceManager.GetString("Column_Header_Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Column_Header_Type {
+            get {
+                return ResourceManager.GetString("Column_Header_Type", resourceCulture);
             }
         }
         
@@ -6042,6 +6096,15 @@ namespace WotDossier.Resources {
         public static string Tab_Header_Chart {
             get {
                 return ResourceManager.GetString("Tab_Header_Chart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clan battles.
+        /// </summary>
+        public static string Tab_Header_ClanBattles {
+            get {
+                return ResourceManager.GetString("Tab_Header_ClanBattles", resourceCulture);
             }
         }
         

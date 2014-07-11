@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
     <Compile Include="BattleMode.cs" />
+    <Compile Include="ClanBattleType.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="DossierTheme.cs" />
     <Compile Include="Dossier\AppSpot\Amounts.cs" />
@@ -145,7 +146,7 @@
     <Compile Include="Server\BattleJson.cs" />
     <Compile Include="Server\ProvinceSearchJson.cs" />
     <Compile Include="Server\MedalAchievements.cs" />
-    <Compile Include="Server\Clan.cs" />
+    <Compile Include="Server\ClanMemberInfo.cs" />
     <Compile Include="Server\ClanData.cs" />
     <Compile Include="Server\ClanEmblems.cs" />
     <Compile Include="Server\ClanMember.cs" />

@@ -2987,4 +2987,25 @@
   <data name="Column_Ratings_DamageRating" xml:space="preserve">
     <value>Рейтинг урона</value>
   </data>
+  <data name="Tab_Header_ClanBattles" xml:space="preserve">
+    <value>Бои клана</value>
+  </data>
+  <data name="Column_Header_Provinces" xml:space="preserve">
+    <value>Провинции</value>
+  </data>
+  <data name="Column_Header_Time" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="Column_Header_Type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="ClanBattleType_for_province" xml:space="preserve">
+    <value>Бой за провинцию</value>
+  </data>
+  <data name="ClanBattleType_landing" xml:space="preserve">
+    <value>Бой за высадку</value>
+  </data>
+  <data name="ClanBattleType_meeting_engagement" xml:space="preserve">
+    <value>Встречный бой</value>
+  </data>
 </root>

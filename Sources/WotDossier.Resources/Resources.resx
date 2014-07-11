@@ -2895,4 +2895,25 @@ up to 500 m</value>
   <data name="Column_Ratings_DamageRating" xml:space="preserve">
     <value>Damage Rating</value>
   </data>
+  <data name="Tab_Header_ClanBattles" xml:space="preserve">
+    <value>Clan battles</value>
+  </data>
+  <data name="Column_Header_Provinces" xml:space="preserve">
+    <value>Provinces</value>
+  </data>
+  <data name="Column_Header_Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Column_Header_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ClanBattleType_for_province" xml:space="preserve">
+    <value>For province</value>
+  </data>
+  <data name="ClanBattleType_landing" xml:space="preserve">
+    <value>Landing</value>
+  </data>
+  <data name="ClanBattleType_meeting_engagement" xml:space="preserve">
+    <value>Meeting engagement</value>
+  </data>
 </root>

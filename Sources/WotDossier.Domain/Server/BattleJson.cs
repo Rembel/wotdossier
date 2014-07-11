@@ -1,4 +1,6 @@
-﻿namespace WotDossier.Domain.Server
+﻿using System.Collections.Generic;
+
+namespace WotDossier.Domain.Server
 {
     public class BattleJson
     {
@@ -6,6 +8,7 @@
         /// Идентификаторы провинций
         /// </summary>
         public string[] provinces { get; set; }
+        public List<ProvinceSearchJson> provinceDescriptions { get; set; }
         /// <summary>
         /// Бой начался
         /// </summary>
@@ -15,12 +18,9 @@
         /// </summary>
         public int time { get; set; }
         /// <summary>
-        /// Тип боя:
-        /// for_province — бой за провинцию;
-        /// meeting_engagement — встречный бой;
-        /// landing — бой за высадку.
+        /// Тип боя
         /// </summary>
-        public string type { get; set; }
+        public ClanBattleType type { get; set; }
         /// <summary>
         /// Информация о карте
         /// </summary>

@@ -15,9 +15,6 @@ namespace WotDossier.Domain.Server
         public Achievements achievements { get; set; }
         public Ratings ratings { get; set; }
         public List<Vehicle> vehicles { get; set; }
-        public Clan clan { get; set; }
-        public ClanData clanData { get; set; }
-        public List<BattleJson> Battles { get; set; }
         public Statistics statistics { get; set; }
     }
 }

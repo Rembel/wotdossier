@@ -8,6 +8,8 @@ namespace WotDossier.Applications.ViewModel.Statistic
 {
     public abstract class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
     {
+        private ClanModel _clan;
+
         #region Common
 
         protected PlayerStatisticViewModel()
@@ -259,7 +261,15 @@ namespace WotDossier.Applications.ViewModel.Statistic
             get { return string.Format(RatingHelper.WG_STATISTIC_LINK_FORMAT, SettingsReader.Get().Server, AccountId, Name); }
         }
 
-        public ClanModel Clan { get; set; }
+        public ClanModel Clan
+        {
+            get { return _clan; }
+            set
+            {
+                _clan = value;
+                OnPropertyChanged("Clan");
+            }
+        }
 
         protected PlayerStatisticViewModel(StatisticEntity stat, List<PlayerStatisticViewModel> list) : base(stat.Updated, list)
         {

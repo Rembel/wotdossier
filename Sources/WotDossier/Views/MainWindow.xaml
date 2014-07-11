@@ -157,8 +157,13 @@
                 <tabs:MasterTankerTab HorizontalAlignment="Stretch"></tabs:MasterTankerTab>
             </TabItem>
             <!--Time-->
-            <TabItem TabIndex="16" Header="{x:Static resources:Resources.Tab_Header_Time}" Name="tabTime">
+            <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Time}" Name="tabTime">
                 <tabs:TimeTab HorizontalAlignment="Stretch"></tabs:TimeTab>
+            </TabItem>
+            <!--Clan Battles-->
+            <TabItem TabIndex="16" Header="{x:Static resources:Resources.Tab_Header_ClanBattles}" Name="tabClanBattles"
+                     Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}">
+                <tabs:ClanBattles DataContext="{Binding PlayerStatistic.Clan}" HorizontalAlignment="Stretch"></tabs:ClanBattles>
             </TabItem>
             <!--Replays-->
             <TabItem TabIndex="17" Header="{x:Static resources:Resources.Tab_Header_Replays}" Name="tabReplays">

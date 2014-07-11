@@ -20,6 +20,7 @@ namespace WotDossier.Domain.Server
         public bool request_availability { get; set; }
 
         public ClanEmblems emblems { get; set; }
-        public Dictionary<int, ClanMember> members { get; set; } 
+        public Dictionary<int, ClanMember> members { get; set; }
+        public List<BattleJson> Battles { get; set; }
     }
 }

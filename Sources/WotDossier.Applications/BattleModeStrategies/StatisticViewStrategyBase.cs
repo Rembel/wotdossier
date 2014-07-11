@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using WotDossier.Applications.Model;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Dal;
@@ -77,10 +76,6 @@ namespace WotDossier.Applications.BattleModeStrategies
             currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
 
-            if (playerData != null && playerData.Clan != null)
-            {
-                currentStatisticViewModel.Clan = new ClanModel(playerData.Clan, playerData.Role, playerData.Since);
-            }
             return currentStatisticViewModel;
         }
 

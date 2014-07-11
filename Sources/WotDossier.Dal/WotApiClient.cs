@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Common.Logging;
 using Newtonsoft.Json;
@@ -89,16 +87,16 @@ namespace WotDossier.Dal
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public Player LoadPlayerStat(int playerId, AppSettings settings)
-        {
-            return LoadPlayerStat(playerId, settings, true);
-        }
+        //public Player LoadPlayerStat(int playerId, AppSettings settings)
+        //{
+        //    return LoadPlayerStat(playerId, settings, true);
+        //}
 
         /// <summary>
         /// Loads player stat from server
         /// </summary>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        public Player LoadPlayerStat(int playerId, AppSettings settings, bool loadVehicles)
+        public Player LoadPlayerStat(int playerId, AppSettings settings, PlayerStatLoadOptions options)
         {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
@@ -114,22 +112,19 @@ namespace WotDossier.Dal
                 }, settings);
                 playerStat.server = settings.Server;
                 playerStat.dataField = playerStat.data[playerId];
-                playerStat.dataField.ratings = GetPlayerRatings(playerId, settings);
-                playerStat.dataField.achievements = GetPlayerAchievements(playerId, settings);
-                if (loadVehicles)
+                if ((options & PlayerStatLoadOptions.LoadRatings) == PlayerStatLoadOptions.LoadRatings)
+                {
+                    playerStat.dataField.ratings = GetPlayerRatings(playerId, settings);
+                }
+                if ((options & PlayerStatLoadOptions.LoadAchievments) == PlayerStatLoadOptions.LoadAchievments)
+                {
+                    playerStat.dataField.achievements = GetPlayerAchievements(playerId, settings);
+                }
+                if ((options & PlayerStatLoadOptions.LoadVehicles) == PlayerStatLoadOptions.LoadVehicles)
                 {
                     playerStat.dataField.vehicles = GetPlayerTanks(playerId, settings);
                 }
 
-                Clan clanMemberInfo = GetClanMemberInfo(playerId, settings);
-
-                if (clanMemberInfo != null)
-                {
-                    playerStat.dataField.clan = clanMemberInfo;
-                    playerStat.dataField.clanData = LoadClan(clanMemberInfo.clan_id,
-                        new[] {"abbreviation", "name", "clan_id", "description", "emblems"}, settings);
-                    playerStat.dataField.Battles = GetBattles(clanMemberInfo.clan_id, 1, settings);
-                }
                 return playerStat;
             }
             catch (Exception e)
@@ -147,7 +142,7 @@ namespace WotDossier.Dal
         /// <param name="playerId">The player identifier.</param>
         /// <param name="settings">The settings.</param>
         /// <returns></returns>
-        private Clan GetClanMemberInfo(int playerId, AppSettings settings)
+        public ClanMemberInfo GetClanMemberInfo(int playerId, AppSettings settings)
         {
             try
             {
@@ -159,7 +154,16 @@ namespace WotDossier.Dal
 
                 if (parsedData["data"].Any())
                 {
-                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Clan>();
+                    var clanMemberInfo = parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanMemberInfo>();
+
+                    if (clanMemberInfo != null)
+                    {
+                        clanMemberInfo.clan = LoadClan(clanMemberInfo.clan_id,
+                            new[] { "abbreviation", "name", "clan_id", "description", "emblems" }, settings);
+                        clanMemberInfo.clan.Battles = GetBattles(clanMemberInfo.clan_id, 1, settings);
+                    }
+
+                    return clanMemberInfo;
                 }
             }
             catch (Exception e)
@@ -430,7 +434,7 @@ namespace WotDossier.Dal
         /// <returns>
         /// Found clans
         /// </returns>
-        public Dictionary<int, ProvinceSearchJson> GetProvinces(string[] provinceIds, int mapId, AppSettings settings)
+        public Dictionary<string, ProvinceSearchJson> GetProvinces(string[] provinceIds, int mapId, AppSettings settings)
         {
             try
             {
@@ -443,14 +447,14 @@ namespace WotDossier.Dal
 
                 if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
                 {
-                    return parsedData["data"].ToObject<Dictionary<int, ProvinceSearchJson>>();
+                    return parsedData["data"].ToObject<Dictionary<string, ProvinceSearchJson>>();
                 }
             }
             catch (Exception e)
             {
                 _log.Error("Error on clan search", e);
             }
-            return null;
+            return new Dictionary<string, ProvinceSearchJson>();
         }
 
         /// <summary>
@@ -460,7 +464,7 @@ namespace WotDossier.Dal
         /// <param name="mapId">The map id.</param>
         /// <param name="settings">The settings.</param>
         /// <returns>
-        /// Found clans
+        /// Found battles
         /// </returns>
         public List<BattleJson> GetBattles(int clanId, int mapId, AppSettings settings)
         {
@@ -475,14 +479,40 @@ namespace WotDossier.Dal
 
                 if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
                 {
-                    return parsedData["data"][clanId.ToString()].ToObject<List<BattleJson>>();
+                    var battles = parsedData["data"][clanId.ToString()].ToObject<List<BattleJson>>();
+
+                    IEnumerable<string> provinces = battles.SelectMany(x => x.provinces);
+
+                    Dictionary<string, ProvinceSearchJson> dictionary = GetProvinces(provinces.ToArray(), mapId, settings);
+
+                    foreach (BattleJson battle in battles)
+                    {
+                        battle.provinceDescriptions = GetProvinceDescriptions(battle.provinces, dictionary);
+                    }
+
+                    return battles;
                 }
             }
             catch (Exception e)
             {
                 _log.Error("Error on clan search", e);
             }
-            return null;
+            return new List<BattleJson>();
+        }
+
+        private List<ProvinceSearchJson> GetProvinceDescriptions(string[] provinces, Dictionary<string, ProvinceSearchJson> provinceDescriptions)
+        {
+            var list = new List<ProvinceSearchJson>();
+
+            foreach (var province in provinces)
+            {
+                if (provinceDescriptions.ContainsKey(province))
+                {
+                    list.Add(provinceDescriptions[province]);
+                }
+            }
+            
+            return list;
         }
 
         /// <summary>
@@ -527,4 +557,26 @@ namespace WotDossier.Dal
             }
         }
     }
+
+    [Flags]
+    public enum PlayerStatLoadOptions
+    {
+        /// <summary>
+        /// Load common stat
+        /// </summary>
+        LoadCommon = 0,
+        /// <summary>
+        /// Load vehicles stat
+        /// </summary>
+        LoadVehicles = 1,
+        /// <summary>
+        /// Load achievments
+        /// </summary>
+        LoadAchievments = 2,
+        /// <summary>
+        /// Load ratings
+        /// </summary>
+        LoadRatings = 4
+    }
+
 }

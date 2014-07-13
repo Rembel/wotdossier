@@ -192,6 +192,19 @@ namespace WotDossier.Test
             }
         }
 
+        [Test]
+        public void CacheTest_092()
+        {
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.9.2\");
+            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            foreach (TankJson tankJson in tanks)
+            {
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
+                                                tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("can't find icon {0}", tankJson.Description.Icon.IconId));
+            }
+        }
+
         #endregion
         
         #region Replays tests
@@ -268,6 +281,18 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.9.0\13954715200495_germany_PzVI_prohorovka.wotreplay"));
+
+            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile, true);
+            Assert.IsNotNull(replay);
+            Assert.IsNotNull(replay.datablock_battle_result);
+        }
+
+        [Test]
+        public void ReplayTest_092()
+        {
+            FileInfo cacheFile =
+                new FileInfo(Path.Combine(Environment.CurrentDirectory,
+                                          @"Replays\0.9.2\20140713_0042_usa-T57_58_73_asia_korea.wotreplay"));
 
             Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile, true);
             Assert.IsNotNull(replay);

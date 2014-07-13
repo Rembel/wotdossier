@@ -105,6 +105,7 @@
     </None>
     <None Include="..\WotDossier\External\consumables.json">
       <Link>External\consumables.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\WotDossier\External\library.zip">
       <Link>External\library.zip</Link>
@@ -218,6 +219,9 @@
     <None Include="CacheFiles\0.9.1\NRXWO2LOGIWWG5BNOAYS453POJWGI33GORQW423TFZXGK5B2GIYDAMJVHNPVEZLNMJSWYX27KJKQ====.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="CacheFiles\0.9.2\NRXWO2LOGIWWG5BNOAYS453POJWGI33GORQW423TFZXGK5B2GIYDAMJVHNPVEZLNMJSWYX27KJKQ====.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -244,6 +248,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.2\20140713_0042_usa-T57_58_73_asia_korea.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

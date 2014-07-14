@@ -103,33 +103,34 @@ namespace WotDossier.Dal
                 return null;
             }
 
+            Player response = null;
             try
             {
-                var playerStat = Request<Player>(METHOD_ACCOUNT_INFO, new Dictionary<string, object>
+                response = Request<Player>(METHOD_ACCOUNT_INFO, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                 }, settings);
-                playerStat.server = settings.Server;
-                playerStat.dataField = playerStat.data[playerId];
+                response.server = settings.Server;
+                response.dataField = response.data[playerId];
                 if ((options & PlayerStatLoadOptions.LoadRatings) == PlayerStatLoadOptions.LoadRatings)
                 {
-                    playerStat.dataField.ratings = GetPlayerRatings(playerId, settings);
+                    response.dataField.ratings = GetPlayerRatings(playerId, settings);
                 }
                 if ((options & PlayerStatLoadOptions.LoadAchievments) == PlayerStatLoadOptions.LoadAchievments)
                 {
-                    playerStat.dataField.achievements = GetPlayerAchievements(playerId, settings);
+                    response.dataField.achievements = GetPlayerAchievements(playerId, settings);
                 }
                 if ((options & PlayerStatLoadOptions.LoadVehicles) == PlayerStatLoadOptions.LoadVehicles)
                 {
-                    playerStat.dataField.vehicles = GetPlayerTanks(playerId, settings);
+                    response.dataField.vehicles = GetPlayerTanks(playerId, settings);
                 }
 
-                return playerStat;
+                return response;
             }
             catch (Exception e)
             {
-                _log.Error("Can't get player info from server", e);
+                _log.ErrorFormat("Can't get player info from server: \n{0}", e, response);
                 return null;
             }
         }
@@ -144,17 +145,19 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public ClanMemberInfo GetClanMemberInfo(int playerId, AppSettings settings)
         {
+            JObject response = null;
+
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_CLAN_MEMBERSINFO, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_CLAN_MEMBERSINFO, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_MEMBER_ID, playerId},
                 }, settings);
 
-                if (parsedData["data"].Any())
+                if (response["data"].Any())
                 {
-                    var clanMemberInfo = parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanMemberInfo>();
+                    var clanMemberInfo = response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanMemberInfo>();
 
                     if (clanMemberInfo != null)
                     {
@@ -168,7 +171,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error("Error on player tanks loading", e);
+                _log.ErrorFormat("Error on clan member info loading: \n{0}", e, response);
             }
 
             return null;
@@ -182,18 +185,19 @@ namespace WotDossier.Dal
         /// <returns></returns>
         private List<Vehicle> GetPlayerTanks(int playerId, AppSettings settings)
         {
+            JObject response = null;
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_TANKS_STATS, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_TANKS_STATS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                     //{PARAM_IN_GARAGE, 1},
                 }, settings);
 
-                if (parsedData["data"].Any())
+                if (response["data"].Any())
                 {
-                    List<Vehicle> tanks = parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<Vehicle>>();
+                    List<Vehicle> tanks = response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<Vehicle>>();
                     foreach (Vehicle tank in tanks)
                     {
                         if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))
@@ -211,7 +215,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error("Error on player tanks loading", e);
+                _log.ErrorFormat("Error on player tanks loading: \n{0}", e, response);
             }
 
             return null;
@@ -219,23 +223,24 @@ namespace WotDossier.Dal
 
         private Ratings GetPlayerRatings(int playerId, AppSettings settings)
         {
+            JObject response = null;
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_RATINGS_ACCOUNTS, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_RATINGS_ACCOUNTS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
                     {PARAM_TYPE, "all"},
                 }, settings);
 
-                if (parsedData["data"].Any())
+                if (response["data"].Any())
                 {
-                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Ratings>();
+                    return response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Ratings>();
                 }
             }
             catch (Exception e)
             {
-                _log.Error("Error on player search", e);
+                _log.ErrorFormat("Error on player search: \n{0}", e, response);
             }
 
             return null;
@@ -243,22 +248,23 @@ namespace WotDossier.Dal
 
         private Achievements GetPlayerAchievements(int playerId, AppSettings settings)
         {
+            JObject response = null;
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_ACCOUNT_ACHIEVEMENTS, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_ACCOUNT_ACHIEVEMENTS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId}
                 }, settings);
 
-                if (parsedData["data"].Any())
+                if (response["data"].Any())
                 {
-                    return parsedData["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Achievements>();
+                    return response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<Achievements>();
                 }
             }
             catch (Exception e)
             {
-                _log.Error("Error on player search", e);
+                _log.ErrorFormat("Error on player search: \n{0}", e, response);
             }
 
             return null;
@@ -284,6 +290,7 @@ namespace WotDossier.Dal
                 return null;
             }
 
+            JObject response = null;
             try
             {
                 Dictionary<string, object> dictionary = new Dictionary<string, object>
@@ -297,12 +304,12 @@ namespace WotDossier.Dal
                     dictionary.Add(PARAM_FIELDS, string.Join(",", fields));
                 }
 
-                JObject parsedData = Request<JObject>(METHOD_CLAN_INFO, dictionary, settings);
-                return parsedData["data"][clanId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanData>();
+                response = Request<JObject>(METHOD_CLAN_INFO, dictionary, settings);
+                return response["data"][clanId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanData>();
             }
             catch (Exception e)
             {
-                _log.Error("Can't get clan info from server", e);
+                _log.ErrorFormat("Can't get clan info from server: \n{0}", e, response);
             }
             return null;
         }
@@ -318,6 +325,7 @@ namespace WotDossier.Dal
                 return null;
             }
 
+            Player response = null;
             try
             {
                 var parameters = new Dictionary<string, object>
@@ -331,15 +339,15 @@ namespace WotDossier.Dal
                     parameters.Add(PARAM_FIELDS, string.Join(",", fields));
                 }
 
-                var playerStat = Request<Player>(METHOD_ACCOUNT_INFO, parameters, settings);
+                response = Request<Player>(METHOD_ACCOUNT_INFO, parameters, settings);
 
-                playerStat.dataField = playerStat.data[playerId];
+                response.dataField = response.data[playerId];
 
-                return playerStat;
+                return response;
             }
             catch (Exception e)
             {
-                _log.Error("Can't get player info from server", e);
+                _log.ErrorFormat("Can't get player info from server: \n{0}", e, response);
                 return null;
             }
         }
@@ -376,19 +384,20 @@ namespace WotDossier.Dal
 #if DEBUG
             return new List<PlayerSearchJson> {new PlayerSearchJson {id = 10800699, nickname = "rembel"}};
 #else
+            JObject response = null;
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_ACCOUNT_LIST, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_ACCOUNT_LIST, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, playerName},
                     {PARAM_LIMIT, limit},
                 }, settings);
-                return parsedData["data"].ToObject<List<PlayerSearchJson>>();
+                return response["data"].ToObject<List<PlayerSearchJson>>();
             }
             catch (Exception e)
             {
-                _log.Error("Error on player search", e);
+                _log.ErrorFormat("Error on player search: \n{0}", e, response);
             }
 
             return null;
@@ -404,23 +413,24 @@ namespace WotDossier.Dal
         /// <returns>Found clans</returns>
         public List<ClanSearchJson> SearchClan(string clanName, int count, AppSettings settings)
         {
+            JObject response = null;
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_CLAN_LIST, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_CLAN_LIST, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_SEARCH, clanName},
                     {PARAM_LIMIT, count}
                 }, settings);
 
-                if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
+                if (response["status"].ToString() != "error" && response["data"].Any())
                 {
-                    return parsedData["data"].ToObject<List<ClanSearchJson>>();
+                    return response["data"].ToObject<List<ClanSearchJson>>();
                 }
             }
             catch (Exception e)
             {
-                _log.Error("Error on clan search", e);
+                _log.ErrorFormat("Error on clan search: \n{0}", e, response);
             }
             return null;
         }
@@ -436,23 +446,24 @@ namespace WotDossier.Dal
         /// </returns>
         public Dictionary<string, ProvinceSearchJson> GetProvinces(string[] provinceIds, int mapId, AppSettings settings)
         {
+            JObject response = null;
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_GLOBALWAR_PROVINCES, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_GLOBALWAR_PROVINCES, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_MAP_ID, mapId},
                     {PARAM_PROVINCE_ID, string.Join(",", provinceIds)}
                 }, settings);
 
-                if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
+                if (response["status"].ToString() != "error" && response["data"].Any())
                 {
-                    return parsedData["data"].ToObject<Dictionary<string, ProvinceSearchJson>>();
+                    return response["data"].ToObject<Dictionary<string, ProvinceSearchJson>>();
                 }
             }
             catch (Exception e)
             {
-                _log.Error("Error on clan search", e);
+                _log.ErrorFormat("Error on clan search: \n{0}", e, response);
             }
             return new Dictionary<string, ProvinceSearchJson>();
         }
@@ -468,18 +479,19 @@ namespace WotDossier.Dal
         /// </returns>
         public List<BattleJson> GetBattles(int clanId, int mapId, AppSettings settings)
         {
+            JObject response = null;
             try
             {
-                JObject parsedData = Request<JObject>(METHOD_GLOBALWAR_BATTLES, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_GLOBALWAR_BATTLES, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_MAP_ID, mapId},
                     {PARAM_CLAN_ID, clanId}
                 }, settings);
 
-                if (parsedData["status"].ToString() != "error" && parsedData["data"].Any())
+                if (response["status"].ToString() != "error" && response["data"].Any())
                 {
-                    var battles = parsedData["data"][clanId.ToString()].ToObject<List<BattleJson>>();
+                    var battles = response["data"][clanId.ToString()].ToObject<List<BattleJson>>();
 
                     IEnumerable<string> provinces = battles.SelectMany(x => x.provinces);
 
@@ -495,7 +507,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.Error("Error on clan search", e);
+                _log.ErrorFormat("Error on clan search: \n{0}", e, response);
             }
             return new List<BattleJson>();
         }

@@ -8,6 +8,7 @@ using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Domain;
+using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications.ViewModel.Chart
 {
@@ -41,6 +42,44 @@ namespace WotDossier.Applications.ViewModel.Chart
         private DateTime? _startDate;
         private DateTime? _endDate = DateTime.Now;
 
+        private List<ListItem<BattleType>> _battleTypes = new List<ListItem<BattleType>>
+            {
+                new ListItem<BattleType>(BattleType.Unknown, Resources.Resources.TankFilterPanel_All), 
+                new ListItem<BattleType>(BattleType.Regular, Resources.Resources.BattleType_Regular), 
+                new ListItem<BattleType>(BattleType.Historical,Resources.Resources.BattleType_Historical), 
+                new ListItem<BattleType>(BattleType.CyberSport,Resources.Resources.BattleType_CyberSport), 
+                new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
+                new ListItem<BattleType>(BattleType.CompanyWar,Resources.Resources.BattleType_CompanyWar), 
+            };
+
+        /// <summary>
+        /// Gets the battle types.
+        /// </summary>
+        /// <value>
+        /// The battle types.
+        /// </value>
+        public List<ListItem<BattleType>> BattleTypes
+        {
+            get { return _battleTypes; }
+        }
+
+        private BattleType _battleType;
+        /// <summary>
+        /// Gets or sets the type of the battle.
+        /// </summary>
+        /// <value>
+        /// The type of the battle.
+        /// </value>
+        public BattleType BattleType
+        {
+            get { return _battleType; }
+            set
+            {
+                _battleType = value;
+                RefreshReplaysCharts();
+            }
+        }
+
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="PlayerChartsViewModel" /> is resp1.
         /// </summary>
@@ -53,9 +92,7 @@ namespace WotDossier.Applications.ViewModel.Chart
             set
             {
                 _resp1 = value;
-                {
-                    RefreshReplaysCharts();
-                }
+                RefreshReplaysCharts();
             }
         }
 
@@ -71,9 +108,7 @@ namespace WotDossier.Applications.ViewModel.Chart
             set
             {
                 _resp2 = value;
-                {
-                    RefreshReplaysCharts();
-                }
+                RefreshReplaysCharts();
             }
         }
 
@@ -89,9 +124,7 @@ namespace WotDossier.Applications.ViewModel.Chart
             set
             {
                 _allResps = value;
-                {
-                    RefreshReplaysCharts();
-                }
+                RefreshReplaysCharts();
             }
         }
 
@@ -375,9 +408,10 @@ namespace WotDossier.Applications.ViewModel.Chart
             IEnumerable<ReplayFile> replayFiles = ReplaysDataSource.Where(x => x.MapId == 0);
             int count = replayFiles.Count();
 
+            ReplaysByMapDataSource = dataSource;
+
             if (dataSource.Any())
             {
-                ReplaysByMapDataSource = dataSource;
                 double max = ReplaysByMapDataSource.Max(x => x.X);
                 MaxMapBattles = max + 0.1 * max;
             }
@@ -392,9 +426,10 @@ namespace WotDossier.Applications.ViewModel.Chart
                 x => new DataPoint(
                     100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key)).ToList();
 
+            WinReplaysPercentByMapDataSource = dataSource;
+
             if (dataSource.Any())
             {
-                WinReplaysPercentByMapDataSource = dataSource;
                 double max = WinReplaysPercentByMapDataSource.Max(x => x.X);
                 MaxWinReplayPercent = max;
             }
@@ -444,16 +479,18 @@ namespace WotDossier.Applications.ViewModel.Chart
         {
             AppSettings settings = SettingsReader.Get();
 
-            return replaysDataSource.Where(x =>
-                                   (Resp1 && x.Team == 1
-                                    || Resp2 && x.Team == 2
-                                    || AllResps)
-                                    &&
-                                    (StartDate == null || x.PlayTime.Date >= StartDate)
-                                    &&
-                                    (EndDate == null || x.PlayTime.Date <= EndDate)
-                                    && (settings.PlayerId == 0 || x.PlayerId == settings.PlayerId)
+            List<ReplayFile> replayFiles = replaysDataSource.Where(x =>
+                (Resp1 && x.Team == 1
+                 || Resp2 && x.Team == 2
+                 || AllResps)
+                &&
+                (StartDate == null || x.PlayTime.Date >= StartDate)
+                &&
+                (EndDate == null || x.PlayTime.Date <= EndDate)
+                && (settings.PlayerId == 0 || x.PlayerId == settings.PlayerId)
+                && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
                 ).ToList();
+            return replayFiles;
 
         }
 

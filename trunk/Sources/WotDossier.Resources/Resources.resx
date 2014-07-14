@@ -2916,4 +2916,7 @@ up to 500 m</value>
   <data name="ClanBattleType_meeting_engagement" xml:space="preserve">
     <value>Meeting engagement</value>
   </data>
+  <data name="BattleType" xml:space="preserve">
+    <value>Battle type</value>
+  </data>
 </root>

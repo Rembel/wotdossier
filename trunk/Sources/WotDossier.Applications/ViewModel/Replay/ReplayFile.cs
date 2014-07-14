@@ -166,6 +166,8 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 PlayerId = replay.datablock_1.playerID;
 
+                BattleType = (BattleType) replay.datablock_1.battleType;
+
                 if (replay.datablock_1.Version < WotFileHelper.JsonFormatedReplay_MinVersion)
                 {
                     if (replay.datablock_battle_result_plain != null)
@@ -209,6 +211,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public TimeSpan LifeTime { get; set; }
 
         public TimeSpan BattleTime { get; set; }
+        public BattleType BattleType { get; set; }
 
         /// <summary>
         /// Moves replay to the specified folder.

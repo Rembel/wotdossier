@@ -382,12 +382,12 @@ namespace WotDossier.Applications
             AdvancedReplayData data = new AdvancedReplayData();
 
             bool endOfStream = false;
-            _log.Info("Begin replay stream read");
+            _log.Trace("Begin replay stream read");
             while (!endOfStream)
             {
                 endOfStream = ReadPacket(stream, data);
             }
-            _log.Info("End replay stream read");
+            _log.Trace("End replay stream read");
             return data;
         }
 
@@ -420,28 +420,28 @@ namespace WotDossier.Applications
                 //battle level setup 
                 if (packet.PacketType == 0x00)
                 {
-                    _log.Info("Process packet 0x00");
+                    _log.Trace("Process packet 0x00");
                     ProcessPacket_0x00(packet.Payload, data);
                 }
 
                 //replay version
                 if (packet.PacketType == 0x14)
                 {
-                    _log.Info("Process packet 0x14");
+                    _log.Trace("Process packet 0x14");
                     ProcessPacket_0x14(packet, data);
                 }
 
                 //in game updates
                 if (packet.PacketType == 0x08)
                 {
-                    _log.Info("Process packet 0x08");
+                    _log.Trace("Process packet 0x08");
                     ProcessPacket_0x08(packet, data);
                 }
 
                 //chat
                 if (packet.PacketType == 0x1f)
                 {
-                    _log.Info("Process packet 0x1f");
+                    _log.Trace("Process packet 0x1f");
                     ProcessPacket_0x1f(packet, data);
                 }
             }

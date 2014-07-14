@@ -1610,6 +1610,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle type.
+        /// </summary>
+        public static string BattleType {
+            get {
+                return ResourceManager.GetString("BattleType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clan War.
         /// </summary>
         public static string BattleType_ClanWar {

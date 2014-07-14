@@ -570,7 +570,7 @@ namespace WotDossier.Applications.ViewModel
         private void InitClanData(ServerStatWrapper serverStatistic)
         {
             _log.Trace("InitClanData start");
-            if (serverStatistic != null && PlayerStatistic != null)
+            if (serverStatistic != null && serverStatistic.Player != null && PlayerStatistic != null)
             {
                 AppSettings settings = SettingsReader.Get();
 

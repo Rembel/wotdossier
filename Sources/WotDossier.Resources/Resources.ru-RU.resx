@@ -3008,4 +3008,7 @@
   <data name="ClanBattleType_meeting_engagement" xml:space="preserve">
     <value>Встречный бой</value>
   </data>
+  <data name="BattleType" xml:space="preserve">
+    <value>Тип боя</value>
+  </data>
 </root>

@@ -363,6 +363,44 @@ namespace WotDossier.Applications.ViewModel.Filter
         public DelegateCommand ClearCommand { get; set; }
         public DelegateCommand AllCommand { get; set; }
 
+        private List<ListItem<BattleType>> _battleTypes = new List<ListItem<BattleType>>
+            {
+                new ListItem<BattleType>(BattleType.Unknown, Resources.Resources.TankFilterPanel_All), 
+                new ListItem<BattleType>(BattleType.Regular, Resources.Resources.BattleType_Regular), 
+                new ListItem<BattleType>(BattleType.Historical,Resources.Resources.BattleType_Historical), 
+                new ListItem<BattleType>(BattleType.CyberSport,Resources.Resources.BattleType_CyberSport), 
+                new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
+                new ListItem<BattleType>(BattleType.CompanyWar,Resources.Resources.BattleType_CompanyWar), 
+            };
+
+        /// <summary>
+        /// Gets the battle types.
+        /// </summary>
+        /// <value>
+        /// The battle types.
+        /// </value>
+        public List<ListItem<BattleType>> BattleTypes
+        {
+            get { return _battleTypes; }
+        }
+
+        private BattleType _battleType;
+        /// <summary>
+        /// Gets or sets the type of the battle.
+        /// </summary>
+        /// <value>
+        /// The type of the battle.
+        /// </value>
+        public BattleType BattleType
+        {
+            get { return _battleType; }
+            set
+            {
+                _battleType = value;
+                OnPropertyChanged("BattleType");
+            }
+        }
+
         /// <summary>
         /// Filters the replays list.
         /// </summary>
@@ -417,6 +455,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                                    && (SelectedMap == null || x.MapId == SelectedMap.Id || SelectedMap.Id == 0)
                                    && FieldFilter(x)
                                    && MembersFilter(x.TeamMembers, members)
+                                   && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
                 ).ToList();
 
             //var footerList = PrepareToReturn(result, SelectedFolder != null ? SelectedFolder.Id : Guid.NewGuid());

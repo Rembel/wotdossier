@@ -59,6 +59,12 @@
     <Compile Include="Dossier\AppSpot\Series.cs" />
     <Compile Include="Dossier\AppSpot\Tank.cs" />
     <Compile Include="Dossier\AppSpot\TankStatistic.cs" />
+    <Compile Include="Dossier\TankV85\Achievements7x7.cs" />
+    <Compile Include="Dossier\TankV85\AchievementsClan.cs" />
+    <Compile Include="Dossier\TankV85\AchievementsSingle.cs" />
+    <Compile Include="Dossier\TankV85\AchievementsHistorical.cs" />
+    <Compile Include="Dossier\TankV85\Achievements.cs" />
+    <Compile Include="Dossier\TankV85\TankJson.cs" />
     <Compile Include="Dossier\TankV77\Achievements7x7.cs" />
     <Compile Include="Dossier\TankV77\AchievementsJson.cs" />
     <Compile Include="Dossier\TankV77\CommonJson.cs" />

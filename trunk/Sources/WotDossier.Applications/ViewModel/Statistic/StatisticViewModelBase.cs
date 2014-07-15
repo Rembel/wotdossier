@@ -477,6 +477,19 @@ namespace WotDossier.Applications.ViewModel.Statistic
         public int PromisingFighterMedal { get; set; }
         public int PromisingFighter { get; set; }
 
+        public int Guerrilla { get; set; }
+        public int GuerrillaMedal { get; set; }
+        public int Infiltrator { get; set; }
+        public int InfiltratorMedal { get; set; }
+        public int Sentinel { get; set; }
+        public int SentinelMedal { get; set; }
+        public int PrematureDetonation { get; set; }
+        public int PrematureDetonationMedal { get; set; }
+        public int BruteForce { get; set; }
+        public int BruteForceMedal { get; set; }
+        public int AwardCount { get; set; }
+        public int BattleTested { get; set; }
+
         #endregion
         
         #region Historical

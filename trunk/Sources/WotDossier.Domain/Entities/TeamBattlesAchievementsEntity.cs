@@ -64,6 +64,19 @@ namespace WotDossier.Domain.Entities
 
         public virtual int NoMansLand { get; set; }
 
+        public virtual int Guerrilla { get; set; }
+        public virtual int GuerrillaMedal { get; set; }
+        public virtual int Infiltrator { get; set; }
+        public virtual int InfiltratorMedal { get; set; }
+        public virtual int Sentinel { get; set; }
+        public virtual int SentinelMedal { get; set; }
+        public virtual int PrematureDetonation { get; set; }
+        public virtual int PrematureDetonationMedal { get; set; }
+        public virtual int BruteForce { get; set; }
+        public virtual int BruteForceMedal { get; set; }
+        public virtual int AwardCount { get; set; }
+        public virtual int BattleTested { get; set; }
+
         #region Collections
 
         private IList<TeamBattlesStatisticEntity> _teamBattlesStatisticEntities;

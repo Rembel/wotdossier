@@ -88,34 +88,47 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region Achievements
 
-            KingOfTheHill = tank.Achievements7x7.kingOfTheHill;
-            ArmoredFist = tank.Achievements7x7.armoredFist;
-            CrucialShot = tank.Achievements7x7.crucialShot;
-            CrucialShotMedal = tank.Achievements7x7.crucialShotMedal;
-            FightingReconnaissance = tank.Achievements7x7.fightingReconnaissance;
-            FightingReconnaissanceMedal = tank.Achievements7x7.fightingReconnaissanceMedal;
-            ForTacticalOperations = tank.Achievements7x7.forTacticalOperations;
-            GeniusForWar = tank.Achievements7x7.geniusForWar;
-            GeniusForWarMedal = tank.Achievements7x7.geniusForWarMedal;
-            GodOfWar = tank.Achievements7x7.godOfWar;
-            MaxTacticalBreakthroughSeries = tank.Achievements7x7.maxTacticalBreakthroughSeries;
-            TacticalBreakthrough = tank.Achievements7x7.tacticalBreakthrough;
-            TacticalBreakthroughSeries = tank.Achievements7x7.tacticalBreakthroughSeries;
-            WillToWinSpirit = tank.Achievements7x7.willToWinSpirit;
-            WolfAmongSheep = tank.Achievements7x7.wolfAmongSheep;
-            WolfAmongSheepMedal = tank.Achievements7x7.wolfAmongSheepMedal;
+            KingOfTheHill = tank.Achievements7x7.KingOfTheHill;
+            ArmoredFist = tank.Achievements7x7.ArmoredFist;
+            CrucialShot = tank.Achievements7x7.CrucialShot;
+            CrucialShotMedal = tank.Achievements7x7.CrucialShotMedal;
+            FightingReconnaissance = tank.Achievements7x7.FightingReconnaissance;
+            FightingReconnaissanceMedal = tank.Achievements7x7.FightingReconnaissanceMedal;
+            ForTacticalOperations = tank.Achievements7x7.ForTacticalOperations;
+            GeniusForWar = tank.Achievements7x7.GeniusForWar;
+            GeniusForWarMedal = tank.Achievements7x7.GeniusForWarMedal;
+            GodOfWar = tank.Achievements7x7.GodOfWar;
+            MaxTacticalBreakthroughSeries = tank.Achievements7x7.MaxTacticalBreakthroughSeries;
+            TacticalBreakthrough = tank.Achievements7x7.TacticalBreakthrough;
+            TacticalBreakthroughSeries = tank.Achievements7x7.TacticalBreakthroughSeries;
+            WillToWinSpirit = tank.Achievements7x7.WillToWinSpirit;
+            WolfAmongSheep = tank.Achievements7x7.WolfAmongSheep;
+            WolfAmongSheepMedal = tank.Achievements7x7.WolfAmongSheepMedal;
 
-            PromisingFighter = tank.Achievements7x7.promisingFighter;
-            PromisingFighterMedal = tank.Achievements7x7.promisingFighterMedal;
-            HeavyFire = tank.Achievements7x7.heavyFire;
-            HeavyFireMedal = tank.Achievements7x7.heavyFireMedal;
-            Ranger = tank.Achievements7x7.ranger;
-            RangerMedal = tank.Achievements7x7.rangerMedal;
-            FireAndSteel = tank.Achievements7x7.fireAndSteel;
-            FireAndSteelMedal = tank.Achievements7x7.fireAndSteelMedal;
-            Pyromaniac = tank.Achievements7x7.pyromaniac;
-            PyromaniacMedal = tank.Achievements7x7.pyromaniacMedal;
-            NoMansLand = tank.Achievements7x7.noMansLand;
+            PromisingFighter = tank.Achievements7x7.PromisingFighter;
+            PromisingFighterMedal = tank.Achievements7x7.PromisingFighterMedal;
+            HeavyFire = tank.Achievements7x7.HeavyFire;
+            HeavyFireMedal = tank.Achievements7x7.HeavyFireMedal;
+            Ranger = tank.Achievements7x7.Ranger;
+            RangerMedal = tank.Achievements7x7.RangerMedal;
+            FireAndSteel = tank.Achievements7x7.FireAndSteel;
+            FireAndSteelMedal = tank.Achievements7x7.FireAndSteelMedal;
+            Pyromaniac = tank.Achievements7x7.Pyromaniac;
+            PyromaniacMedal = tank.Achievements7x7.PyromaniacMedal;
+            NoMansLand = tank.Achievements7x7.NoMansLand;
+
+            Guerrilla = tank.Achievements7x7.Guerrilla;
+            GuerrillaMedal = tank.Achievements7x7.GuerrillaMedal;
+            Infiltrator = tank.Achievements7x7.Infiltrator;
+            InfiltratorMedal = tank.Achievements7x7.InfiltratorMedal;
+            Sentinel = tank.Achievements7x7.Sentinel;
+            SentinelMedal = tank.Achievements7x7.SentinelMedal;
+            PrematureDetonation = tank.Achievements7x7.PrematureDetonation;
+            PrematureDetonationMedal = tank.Achievements7x7.PrematureDetonationMedal;
+            BruteForce = tank.Achievements7x7.BruteForce;
+            BruteForceMedal = tank.Achievements7x7.BruteForceMedal;
+            AwardCount = tank.Achievements7x7.AwardCount;
+            BattleTested = tank.Achievements7x7.BattleTested;
 
             #endregion
 

@@ -90,83 +90,83 @@ namespace WotDossier.Applications.ViewModel.Rows
             #endregion
 
             #region [ IStatisticFrags ]
-            BeastFrags = tank.Achievements.fragsBeast;
-            SinaiFrags = tank.Achievements.fragsSinai;
-            PattonFrags = tank.Achievements.fragsPatton;
+            BeastFrags = tank.Achievements.FragsBeast;
+            SinaiFrags = tank.Achievements.FragsSinai;
+            PattonFrags = tank.Achievements.FragsPatton;
             MouseFrags = tank.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count);
             #endregion
 
             #region Achievements
 
-            BattleHero = tank.Achievements.battleHeroes;
-            Warrior = tank.Achievements.warrior;
-            Invader = tank.Achievements.invader;
-            Sniper = tank.Achievements.sniper;
-            Defender = tank.Achievements.defender;
-            SteelWall = tank.Achievements.steelwall;
-            Confederate = tank.Achievements.supporter;
-            Scout = tank.Achievements.scout;
-            PatrolDuty = tank.Achievements.evileye;
-            BrothersInArms = tank.Achievements.medalBrothersInArms;
-            CrucialContribution = tank.Achievements.medalCrucialContribution;
-            IronMan = tank.Achievements.ironMan;
-            LuckyDevil = tank.Achievements.luckyDevil;
-            Sturdy = tank.Achievements.sturdy;
-            Huntsman = tank.Achievements.huntsman;
-            MainGun = tank.Achievements.mainGun;
-            Sniper2 = tank.Achievements.sniper2;
+            BattleHero = tank.Achievements.BattleHeroes;
+            Warrior = tank.Achievements.Warrior;
+            Invader = tank.Achievements.Invader;
+            Sniper = tank.Achievements.Sniper;
+            Defender = tank.Achievements.Defender;
+            SteelWall = tank.Achievements.Steelwall;
+            Confederate = tank.Achievements.Supporter;
+            Scout = tank.Achievements.Scout;
+            PatrolDuty = tank.Achievements.Evileye;
+            BrothersInArms = tank.Achievements.MedalBrothersInArms;
+            CrucialContribution = tank.Achievements.MedalCrucialContribution;
+            IronMan = tank.Achievements.IronMan;
+            LuckyDevil = tank.Achievements.LuckyDevil;
+            Sturdy = tank.Achievements.Sturdy;
+            Huntsman = tank.Achievements.Huntsman;
+            MainGun = tank.Achievements.MainGun;
+            Sniper2 = tank.Achievements.Sniper2;
 
-            Boelter = tank.Achievements.medalWittmann;
-            RadleyWalters = tank.Achievements.medalRadleyWalters;
-            LafayettePool = tank.Achievements.medalLafayettePool;
-            Orlik = tank.Achievements.medalOrlik;
-            Oskin = tank.Achievements.medalOskin;
-            Lehvaslaiho = tank.Achievements.medalLehvaslaiho;
-            Nikolas = tank.Achievements.medalNikolas;
-            Halonen = tank.Achievements.medalHalonen;
-            Burda = tank.Achievements.medalBurda;
-            Pascucci = tank.Achievements.medalPascucci;
-            Dumitru = tank.Achievements.medalDumitru;
-            TamadaYoshio = tank.Achievements.medalTamadaYoshio;
-            Billotte = tank.Achievements.medalBillotte;
-            BrunoPietro = tank.Achievements.medalBrunoPietro;
-            Tarczay = tank.Achievements.medalTarczay;
-            Kolobanov = tank.Achievements.medalKolobanov;
-            Fadin = tank.Achievements.medalFadin;
-            HeroesOfRassenay = tank.Achievements.heroesOfRassenay;
-            DeLanglade = tank.Achievements.medalDeLanglade;
+            Boelter = tank.Achievements.MedalWittmann;
+            RadleyWalters = tank.Achievements.MedalRadleyWalters;
+            LafayettePool = tank.Achievements.MedalLafayettePool;
+            Orlik = tank.Achievements.MedalOrlik;
+            Oskin = tank.Achievements.MedalOskin;
+            Lehvaslaiho = tank.Achievements.MedalLehvaslaiho;
+            Nikolas = tank.Achievements.MedalNikolas;
+            Halonen = tank.Achievements.MedalHalonen;
+            Burda = tank.Achievements.MedalBurda;
+            Pascucci = tank.Achievements.MedalPascucci;
+            Dumitru = tank.Achievements.MedalDumitru;
+            TamadaYoshio = tank.Achievements.MedalTamadaYoshio;
+            Billotte = tank.Achievements.MedalBillotte;
+            BrunoPietro = tank.Achievements.MedalBrunoPietro;
+            Tarczay = tank.Achievements.MedalTarczay;
+            Kolobanov = tank.Achievements.MedalKolobanov;
+            Fadin = tank.Achievements.MedalFadin;
+            HeroesOfRassenay = tank.Achievements.HeroesOfRassenay;
+            DeLanglade = tank.Achievements.MedalDeLanglade;
 
-            Kay = tank.Achievements.medalKay;
-            Carius = tank.Achievements.medalCarius;
-            Knispel = tank.Achievements.medalKnispel;
-            Poppel = tank.Achievements.medalPoppel;
-            Abrams = tank.Achievements.medalAbrams;
-            Leclerk = tank.Achievements.medalLeClerc;
-            Lavrinenko = tank.Achievements.medalLavrinenko;
-            Ekins = tank.Achievements.medalEkins;
+            Kay = tank.Achievements.MedalKay;
+            Carius = tank.Achievements.MedalCarius;
+            Knispel = tank.Achievements.MedalKnispel;
+            Poppel = tank.Achievements.MedalPoppel;
+            Abrams = tank.Achievements.MedalAbrams;
+            Leclerk = tank.Achievements.MedalLeClerc;
+            Lavrinenko = tank.Achievements.MedalLavrinenko;
+            Ekins = tank.Achievements.MedalEkins;
 
-            ReaperLongest = tank.Achievements.maxKillingSeries;
-            ReaperProgress = tank.Achievements.killingSeries;
-            SharpshooterLongest = tank.Achievements.maxSniperSeries;
-            SharpshooterProgress = tank.Achievements.sniperSeries;
-            MasterGunnerLongest = tank.Achievements.maxPiercingSeries;
-            MasterGunnerProgress = tank.Achievements.piercingSeries;
-            InvincibleLongest = tank.Achievements.maxInvincibleSeries;
-            InvincibleProgress = tank.Achievements.invincibleSeries;
-            SurvivorLongest = tank.Achievements.maxDiehardSeries;
-            SurvivorProgress = tank.Achievements.diehardSeries;
+            ReaperLongest = tank.Achievements.MaxKillingSeries;
+            ReaperProgress = tank.Achievements.KillingSeries;
+            SharpshooterLongest = tank.Achievements.MaxSniperSeries;
+            SharpshooterProgress = tank.Achievements.SniperSeries;
+            MasterGunnerLongest = tank.Achievements.MaxPiercingSeries;
+            MasterGunnerProgress = tank.Achievements.PiercingSeries;
+            InvincibleLongest = tank.Achievements.MaxInvincibleSeries;
+            InvincibleProgress = tank.Achievements.InvincibleSeries;
+            SurvivorLongest = tank.Achievements.MaxDiehardSeries;
+            SurvivorProgress = tank.Achievements.DiehardSeries;
 
-            Kamikaze = tank.Achievements.kamikaze;
-            Raider = tank.Achievements.raider;
-            Bombardier = tank.Achievements.bombardier;
-            Reaper = tank.Achievements.maxKillingSeries;
-            Sharpshooter = tank.Achievements.maxSniperSeries;
-            Invincible = tank.Achievements.maxInvincibleSeries;
-            Survivor = tank.Achievements.maxDiehardSeries;
-            MouseTrap = tank.Achievements.mousebane;
-            Hunter = tank.Achievements.beasthunter;
-            Sinai = tank.Achievements.sinai;
-            PattonValley = tank.Achievements.pattonValley;
+            Kamikaze = tank.Achievements.Kamikaze;
+            Raider = tank.Achievements.Raider;
+            Bombardier = tank.Achievements.Bombardier;
+            Reaper = tank.Achievements.MaxKillingSeries;
+            Sharpshooter = tank.Achievements.MaxSniperSeries;
+            Invincible = tank.Achievements.MaxInvincibleSeries;
+            Survivor = tank.Achievements.MaxDiehardSeries;
+            MouseTrap = tank.Achievements.Mousebane;
+            Hunter = tank.Achievements.Beasthunter;
+            Sinai = tank.Achievements.Sinai;
+            PattonValley = tank.Achievements.PattonValley;
 
             #endregion
         }

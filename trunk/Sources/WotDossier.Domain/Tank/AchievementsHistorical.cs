@@ -1,10 +1,12 @@
-﻿namespace WotDossier.Domain.Tank
+﻿using WotDossier.Domain.Interfaces;
+
+namespace WotDossier.Domain.Tank
 {
-    public class AchievementsHistorical
+    public class AchievementsHistorical : IHistoricalBattlesAchievements
     {
-        public int guardsman;
-        public int makerOfHistory;
-        public int bothSidesWins;
-        public int weakVehiclesWins;
+        public int GuardsMan { get; set; }
+        public int MakerOfHistory { get; set; }
+        public int BothSidesWins { get; set; }
+        public int WeakVehiclesWins { get; set; }
     }
 }

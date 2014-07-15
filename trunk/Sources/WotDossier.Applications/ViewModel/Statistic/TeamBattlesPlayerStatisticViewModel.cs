@@ -53,6 +53,19 @@ namespace WotDossier.Applications.ViewModel.Statistic
                 HeavyFire = stat.AchievementsIdObject.HeavyFire;
                 PromisingFighterMedal = stat.AchievementsIdObject.PromisingFighterMedal;
                 PromisingFighter = stat.AchievementsIdObject.PromisingFighter;
+
+                Guerrilla = stat.AchievementsIdObject.Guerrilla;
+                GuerrillaMedal = stat.AchievementsIdObject.GuerrillaMedal;
+                Infiltrator = stat.AchievementsIdObject.Infiltrator;
+                InfiltratorMedal = stat.AchievementsIdObject.InfiltratorMedal;
+                Sentinel = stat.AchievementsIdObject.Sentinel;
+                SentinelMedal = stat.AchievementsIdObject.SentinelMedal;
+                PrematureDetonation = stat.AchievementsIdObject.PrematureDetonation;
+                PrematureDetonationMedal = stat.AchievementsIdObject.PrematureDetonationMedal;
+                BruteForce = stat.AchievementsIdObject.BruteForce;
+                BruteForceMedal = stat.AchievementsIdObject.BruteForceMedal;
+                AwardCount = stat.AchievementsIdObject.AwardCount;
+                BattleTested = stat.AchievementsIdObject.BattleTested;
             }
 
             #endregion

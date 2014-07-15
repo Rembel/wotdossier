@@ -91,10 +91,10 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region Achievements
 
-            GuardsMan = tank.AchievementsHistorical.guardsman;
-            MakerOfHistory = tank.AchievementsHistorical.makerOfHistory;
-            BothSidesWins = tank.AchievementsHistorical.bothSidesWins;
-            WeakVehiclesWins = tank.AchievementsHistorical.weakVehiclesWins;
+            GuardsMan = tank.AchievementsHistorical.GuardsMan;
+            MakerOfHistory = tank.AchievementsHistorical.MakerOfHistory;
+            BothSidesWins = tank.AchievementsHistorical.BothSidesWins;
+            WeakVehiclesWins = tank.AchievementsHistorical.WeakVehiclesWins;
 
             #endregion
 

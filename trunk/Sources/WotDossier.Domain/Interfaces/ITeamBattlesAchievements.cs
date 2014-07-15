@@ -30,5 +30,18 @@ namespace WotDossier.Domain.Interfaces
         int Pyromaniac { get; set; }
         int PyromaniacMedal { get; set; }
         int NoMansLand { get; set; }
+
+        int Guerrilla { get; set; }
+        int GuerrillaMedal { get; set; }
+        int Infiltrator { get; set; }
+        int InfiltratorMedal { get; set; }
+        int Sentinel { get; set; }
+        int SentinelMedal { get; set; }
+        int PrematureDetonation { get; set; }
+        int PrematureDetonationMedal { get; set; }
+        int BruteForce { get; set; }
+        int BruteForceMedal { get; set; }
+        int AwardCount { get; set; }
+        int BattleTested { get; set; }
     }
 }

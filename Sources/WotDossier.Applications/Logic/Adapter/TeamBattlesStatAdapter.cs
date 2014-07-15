@@ -16,35 +16,48 @@ namespace WotDossier.Applications.Logic.Adapter
         {
             #region [ Awards ]
 
-            WolfAmongSheep = tanks.Sum(x => x.Achievements7x7.wolfAmongSheep);
-            WolfAmongSheepMedal = tanks.Sum(x => x.Achievements7x7.wolfAmongSheepMedal);
-            GeniusForWar = tanks.Sum(x => x.Achievements7x7.geniusForWar);
-            GeniusForWarMedal = tanks.Sum(x => x.Achievements7x7.geniusForWarMedal);
-            KingOfTheHill = tanks.Sum(x => x.Achievements7x7.kingOfTheHill);
-            TacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.tacticalBreakthroughSeries);
-            MaxTacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.maxTacticalBreakthroughSeries);
-            ArmoredFist = tanks.Sum(x => x.Achievements7x7.armoredFist);
-            TacticalBreakthrough = tanks.Sum(x => x.Achievements7x7.tacticalBreakthrough);
+            WolfAmongSheep = tanks.Sum(x => x.Achievements7x7.WolfAmongSheep);
+            WolfAmongSheepMedal = tanks.Sum(x => x.Achievements7x7.WolfAmongSheepMedal);
+            GeniusForWar = tanks.Sum(x => x.Achievements7x7.GeniusForWar);
+            GeniusForWarMedal = tanks.Sum(x => x.Achievements7x7.GeniusForWarMedal);
+            KingOfTheHill = tanks.Sum(x => x.Achievements7x7.KingOfTheHill);
+            TacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.TacticalBreakthroughSeries);
+            MaxTacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.MaxTacticalBreakthroughSeries);
+            ArmoredFist = tanks.Sum(x => x.Achievements7x7.ArmoredFist);
+            TacticalBreakthrough = tanks.Sum(x => x.Achievements7x7.TacticalBreakthrough);
 
-            GodOfWar = tanks.Sum(x => x.Achievements7x7.godOfWar);
-            FightingReconnaissance = tanks.Sum(x => x.Achievements7x7.fightingReconnaissance);
-            FightingReconnaissanceMedal = tanks.Sum(x => x.Achievements7x7.fightingReconnaissanceMedal);
-            WillToWinSpirit = tanks.Sum(x => x.Achievements7x7.willToWinSpirit);
-            CrucialShot = tanks.Sum(x => x.Achievements7x7.crucialShot);
-            CrucialShotMedal = tanks.Sum(x => x.Achievements7x7.crucialShotMedal);
-            ForTacticalOperations = tanks.Sum(x => x.Achievements7x7.forTacticalOperations);
+            GodOfWar = tanks.Sum(x => x.Achievements7x7.GodOfWar);
+            FightingReconnaissance = tanks.Sum(x => x.Achievements7x7.FightingReconnaissance);
+            FightingReconnaissanceMedal = tanks.Sum(x => x.Achievements7x7.FightingReconnaissanceMedal);
+            WillToWinSpirit = tanks.Sum(x => x.Achievements7x7.WillToWinSpirit);
+            CrucialShot = tanks.Sum(x => x.Achievements7x7.CrucialShot);
+            CrucialShotMedal = tanks.Sum(x => x.Achievements7x7.CrucialShotMedal);
+            ForTacticalOperations = tanks.Sum(x => x.Achievements7x7.ForTacticalOperations);
 
-            PromisingFighter = tanks.Sum(x => x.Achievements7x7.promisingFighter);
-            PromisingFighterMedal = tanks.Sum(x => x.Achievements7x7.promisingFighterMedal);
-            HeavyFire = tanks.Sum(x => x.Achievements7x7.heavyFire);
-            HeavyFireMedal = tanks.Sum(x => x.Achievements7x7.heavyFireMedal);
-            Ranger = tanks.Sum(x => x.Achievements7x7.ranger);
-            RangerMedal = tanks.Sum(x => x.Achievements7x7.rangerMedal);
-            FireAndSteel = tanks.Sum(x => x.Achievements7x7.fireAndSteel);
-            FireAndSteelMedal = tanks.Sum(x => x.Achievements7x7.fireAndSteelMedal);
-            Pyromaniac = tanks.Sum(x => x.Achievements7x7.pyromaniac);
-            PyromaniacMedal = tanks.Sum(x => x.Achievements7x7.pyromaniacMedal);
-            NoMansLand = tanks.Sum(x => x.Achievements7x7.noMansLand);
+            PromisingFighter = tanks.Sum(x => x.Achievements7x7.PromisingFighter);
+            PromisingFighterMedal = tanks.Sum(x => x.Achievements7x7.PromisingFighterMedal);
+            HeavyFire = tanks.Sum(x => x.Achievements7x7.HeavyFire);
+            HeavyFireMedal = tanks.Sum(x => x.Achievements7x7.HeavyFireMedal);
+            Ranger = tanks.Sum(x => x.Achievements7x7.Ranger);
+            RangerMedal = tanks.Sum(x => x.Achievements7x7.RangerMedal);
+            FireAndSteel = tanks.Sum(x => x.Achievements7x7.FireAndSteel);
+            FireAndSteelMedal = tanks.Sum(x => x.Achievements7x7.FireAndSteelMedal);
+            Pyromaniac = tanks.Sum(x => x.Achievements7x7.Pyromaniac);
+            PyromaniacMedal = tanks.Sum(x => x.Achievements7x7.PyromaniacMedal);
+            NoMansLand = tanks.Sum(x => x.Achievements7x7.NoMansLand);
+
+            Guerrilla = tanks.Sum(x => x.Achievements7x7.Guerrilla);
+            GuerrillaMedal = tanks.Sum(x => x.Achievements7x7.GuerrillaMedal);
+            Infiltrator = tanks.Sum(x => x.Achievements7x7.Infiltrator);
+            InfiltratorMedal = tanks.Sum(x => x.Achievements7x7.InfiltratorMedal);
+            Sentinel = tanks.Sum(x => x.Achievements7x7.Sentinel);
+            SentinelMedal = tanks.Sum(x => x.Achievements7x7.SentinelMedal);
+            PrematureDetonation = tanks.Sum(x => x.Achievements7x7.PrematureDetonation);
+            PrematureDetonationMedal = tanks.Sum(x => x.Achievements7x7.PrematureDetonationMedal);
+            BruteForce = tanks.Sum(x => x.Achievements7x7.BruteForce);
+            BruteForceMedal = tanks.Sum(x => x.Achievements7x7.BruteForceMedal);
+            AwardCount = tanks.Sum(x => x.Achievements7x7.AwardCount);
+            BattleTested = tanks.Sum(x => x.Achievements7x7.BattleTested);
 
             #endregion
         }
@@ -140,6 +153,19 @@ namespace WotDossier.Applications.Logic.Adapter
         public int PyromaniacMedal { get; set; }
         public int NoMansLand { get; set; }
 
+        public int Guerrilla { get; set; }
+        public int GuerrillaMedal { get; set; }
+        public int Infiltrator { get; set; }
+        public int InfiltratorMedal { get; set; }
+        public int Sentinel { get; set; }
+        public int SentinelMedal { get; set; }
+        public int PrematureDetonation { get; set; }
+        public int PrematureDetonationMedal { get; set; }
+        public int BruteForce { get; set; }
+        public int BruteForceMedal { get; set; }
+        public int AwardCount { get; set; }
+        public int BattleTested { get; set; }
+
         #endregion
 
         public override void Update(TeamBattlesStatisticEntity entity)
@@ -180,6 +206,19 @@ namespace WotDossier.Applications.Logic.Adapter
             entity.AchievementsIdObject.Pyromaniac = Pyromaniac;
             entity.AchievementsIdObject.PyromaniacMedal = PyromaniacMedal;
             entity.AchievementsIdObject.NoMansLand = NoMansLand;
+
+            entity.AchievementsIdObject.Guerrilla = Guerrilla;
+            entity.AchievementsIdObject.GuerrillaMedal = GuerrillaMedal;
+            entity.AchievementsIdObject.Infiltrator = Infiltrator;
+            entity.AchievementsIdObject.InfiltratorMedal = InfiltratorMedal;
+            entity.AchievementsIdObject.Sentinel = Sentinel;
+            entity.AchievementsIdObject.SentinelMedal = SentinelMedal;
+            entity.AchievementsIdObject.PrematureDetonation = PrematureDetonation;
+            entity.AchievementsIdObject.PrematureDetonationMedal = PrematureDetonationMedal;
+            entity.AchievementsIdObject.BruteForce = BruteForce;
+            entity.AchievementsIdObject.BruteForceMedal = BruteForceMedal;
+            entity.AchievementsIdObject.AwardCount = AwardCount;
+            entity.AchievementsIdObject.BattleTested = BattleTested;
         }
     }
 }

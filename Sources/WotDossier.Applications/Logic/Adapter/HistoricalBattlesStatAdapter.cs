@@ -16,10 +16,10 @@ namespace WotDossier.Applications.Logic.Adapter
         {
             #region [ Awards ]
 
-            GuardsMan = tanks.Sum(x => x.AchievementsHistorical.guardsman);
-            MakerOfHistory = tanks.Sum(x => x.AchievementsHistorical.makerOfHistory);
-            BothSidesWins = tanks.Sum(x => x.AchievementsHistorical.bothSidesWins);
-            WeakVehiclesWins = tanks.Sum(x => x.AchievementsHistorical.weakVehiclesWins);
+            GuardsMan = tanks.Sum(x => x.AchievementsHistorical.GuardsMan);
+            MakerOfHistory = tanks.Sum(x => x.AchievementsHistorical.MakerOfHistory);
+            BothSidesWins = tanks.Sum(x => x.AchievementsHistorical.BothSidesWins);
+            WeakVehiclesWins = tanks.Sum(x => x.AchievementsHistorical.WeakVehiclesWins);
 
             #endregion
         }

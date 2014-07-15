@@ -31,19 +31,6 @@ namespace WotDossier.Domain.Entities
 		
 		#region Collections
 		
-		private IList<PlayerStatisticEntity> _playerStatisticEntities;
-		/// <summary>
-		/// Gets/Sets the <see cref="PlayerStatisticEntity"/> collection.
-		/// </summary>
-        public virtual IList<PlayerStatisticEntity> PlayerStatisticEntities
-        {
-            get
-            {
-                return _playerStatisticEntities ?? (_playerStatisticEntities = new List<PlayerStatisticEntity>());
-            }
-            set { _playerStatisticEntities = value; }
-        }
-		
 		private IList<TankEntity> _tankEntities;
 		/// <summary>
 		/// Gets/Sets the <see cref="TankEntity"/> collection.

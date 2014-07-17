@@ -463,7 +463,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on clan search: \n{0}", e, response);
+                _log.ErrorFormat("Error on get provinces: \n{0}", e, response);
             }
             return new Dictionary<string, ProvinceSearchJson>();
         }
@@ -493,13 +493,16 @@ namespace WotDossier.Dal
                 {
                     var battles = response["data"][clanId.ToString()].ToObject<List<BattleJson>>();
 
-                    IEnumerable<string> provinces = battles.SelectMany(x => x.provinces);
+                    IEnumerable<string> provinces = battles.SelectMany(x => x.provinces).ToList();
 
-                    Dictionary<string, ProvinceSearchJson> dictionary = GetProvinces(provinces.ToArray(), mapId, settings);
-
-                    foreach (BattleJson battle in battles)
+                    if (provinces.Any())
                     {
-                        battle.provinceDescriptions = GetProvinceDescriptions(battle.provinces, dictionary);
+                        Dictionary<string, ProvinceSearchJson> dictionary = GetProvinces(provinces.ToArray(), mapId, settings);
+
+                        foreach (BattleJson battle in battles)
+                        {
+                            battle.provinceDescriptions = GetProvinceDescriptions(battle.provinces, dictionary);
+                        }
                     }
 
                     return battles;
@@ -507,7 +510,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on clan search: \n{0}", e, response);
+                _log.ErrorFormat("Error on get battles: \n{0}", e, response);
             }
             return new List<BattleJson>();
         }

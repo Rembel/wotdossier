@@ -2328,7 +2328,7 @@ Colonel Alexander Stark commanded the joint French-American task force defending
     </value>
   </data>
   <data name="Map_83_kharkiv" xml:space="preserve">
-    <value>Kharkiv</value>
+    <value>Kharkov</value>
   </data>
   <data name="Settings_AutoLoadStatistic" xml:space="preserve">
     <value>Auto load statistic</value>
@@ -2918,5 +2918,11 @@ up to 500 m</value>
   </data>
   <data name="BattleType" xml:space="preserve">
     <value>Battle type</value>
+  </data>
+  <data name="Map_96_prohorovka_defense" xml:space="preserve">
+    <value>Fire Arc</value>
+  </data>
+  <data name="Map_99_himmelball" xml:space="preserve">
+    <value>Himmelsdorf Championship</value>
   </data>
 </root>

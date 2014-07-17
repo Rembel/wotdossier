@@ -3011,4 +3011,10 @@
   <data name="BattleType" xml:space="preserve">
     <value>Тип боя</value>
   </data>
+    <data name="Map_96_prohorovka_defense" xml:space="preserve">
+    <value>Огненная дуга</value>
+  </data>
+    <data name="Map_99_himmelball" xml:space="preserve">
+    <value>Чемпионат Химмельсдорфа</value>
+  </data>
 </root>

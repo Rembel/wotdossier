@@ -4570,7 +4570,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kharkiv.
+        ///   Looks up a localized string similar to Kharkov.
         /// </summary>
         public static string Map_83_kharkiv {
             get {
@@ -4611,6 +4611,24 @@ namespace WotDossier.Resources {
         public static string Map_87_ruinberg_on_fire {
             get {
                 return ResourceManager.GetString("Map_87_ruinberg_on_fire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fire Arc.
+        /// </summary>
+        public static string Map_96_prohorovka_defense {
+            get {
+                return ResourceManager.GetString("Map_96_prohorovka_defense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Himmelsdorf Championship.
+        /// </summary>
+        public static string Map_99_himmelball {
+            get {
+                return ResourceManager.GetString("Map_99_himmelball", resourceCulture);
             }
         }
         

@@ -24,7 +24,7 @@ namespace WotDossier.Converters.Image
 
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            int percentValue = (int)values[0]/100;
+            double percentValue = (int)values[0] / 100.0;
             Country nation = (Country)values[1];
             int mark = GetMark(percentValue);
             if (mark > 0)
@@ -36,17 +36,17 @@ namespace WotDossier.Converters.Image
             return null;
         }
 
-        private int GetMark(int percentValue)
+        private int GetMark(double percentValue)
         {
-            if (percentValue > 95)
+            if (percentValue >= 95.0)
             {
                 return 3;
             }
-            if (percentValue > 85)
+            if (percentValue >= 85.0)
             {
                 return 2;
             }
-            if (percentValue > 65)
+            if (percentValue >= 65.0)
             {
                 return 1;
             }

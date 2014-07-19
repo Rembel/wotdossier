@@ -829,6 +829,9 @@
     <Resource Include="Images\marksOnGun\95x85\ussr_2_marks.png" />
     <Resource Include="Images\marksOnGun\95x85\ussr_3_marks.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Maps\96_prohorovka_defense.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

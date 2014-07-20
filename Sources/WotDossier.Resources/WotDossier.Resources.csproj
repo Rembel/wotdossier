@@ -832,6 +832,19 @@
   <ItemGroup>
     <Resource Include="Images\Maps\96_prohorovka_defense.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Medals\battleTested1.png" />
+    <Resource Include="Images\Medals\battleTested2.png" />
+    <Resource Include="Images\Medals\battleTested3.png" />
+    <Resource Include="Images\Medals\battleTested4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Medals\bruteForceMedal.png" />
+    <Resource Include="Images\Medals\guerrillaMedal.png" />
+    <Resource Include="Images\Medals\infiltratorMedal.png" />
+    <Resource Include="Images\Medals\prematureDetonationMedal.png" />
+    <Resource Include="Images\Medals\sentinelMedal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

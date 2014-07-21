@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Tank;
+using Mapper = WotDossier.Applications.Logic.Mapper;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
@@ -98,75 +101,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region Achievements
 
-            BattleHero = tank.Achievements.BattleHeroes;
-            Warrior = tank.Achievements.Warrior;
-            Invader = tank.Achievements.Invader;
-            Sniper = tank.Achievements.Sniper;
-            Defender = tank.Achievements.Defender;
-            SteelWall = tank.Achievements.Steelwall;
-            Confederate = tank.Achievements.Supporter;
-            Scout = tank.Achievements.Scout;
-            PatrolDuty = tank.Achievements.Evileye;
-            BrothersInArms = tank.Achievements.MedalBrothersInArms;
-            CrucialContribution = tank.Achievements.MedalCrucialContribution;
-            IronMan = tank.Achievements.IronMan;
-            LuckyDevil = tank.Achievements.LuckyDevil;
-            Sturdy = tank.Achievements.Sturdy;
-            Huntsman = tank.Achievements.Huntsman;
-            MainGun = tank.Achievements.MainGun;
-            Sniper2 = tank.Achievements.Sniper2;
-
-            Boelter = tank.Achievements.MedalWittmann;
-            RadleyWalters = tank.Achievements.MedalRadleyWalters;
-            LafayettePool = tank.Achievements.MedalLafayettePool;
-            Orlik = tank.Achievements.MedalOrlik;
-            Oskin = tank.Achievements.MedalOskin;
-            Lehvaslaiho = tank.Achievements.MedalLehvaslaiho;
-            Nikolas = tank.Achievements.MedalNikolas;
-            Halonen = tank.Achievements.MedalHalonen;
-            Burda = tank.Achievements.MedalBurda;
-            Pascucci = tank.Achievements.MedalPascucci;
-            Dumitru = tank.Achievements.MedalDumitru;
-            TamadaYoshio = tank.Achievements.MedalTamadaYoshio;
-            Billotte = tank.Achievements.MedalBillotte;
-            BrunoPietro = tank.Achievements.MedalBrunoPietro;
-            Tarczay = tank.Achievements.MedalTarczay;
-            Kolobanov = tank.Achievements.MedalKolobanov;
-            Fadin = tank.Achievements.MedalFadin;
-            HeroesOfRassenay = tank.Achievements.HeroesOfRassenay;
-            DeLanglade = tank.Achievements.MedalDeLanglade;
-
-            Kay = tank.Achievements.MedalKay;
-            Carius = tank.Achievements.MedalCarius;
-            Knispel = tank.Achievements.MedalKnispel;
-            Poppel = tank.Achievements.MedalPoppel;
-            Abrams = tank.Achievements.MedalAbrams;
-            Leclerk = tank.Achievements.MedalLeClerc;
-            Lavrinenko = tank.Achievements.MedalLavrinenko;
-            Ekins = tank.Achievements.MedalEkins;
-
-            ReaperLongest = tank.Achievements.MaxKillingSeries;
-            ReaperProgress = tank.Achievements.KillingSeries;
-            SharpshooterLongest = tank.Achievements.MaxSniperSeries;
-            SharpshooterProgress = tank.Achievements.SniperSeries;
-            MasterGunnerLongest = tank.Achievements.MaxPiercingSeries;
-            MasterGunnerProgress = tank.Achievements.PiercingSeries;
-            InvincibleLongest = tank.Achievements.MaxInvincibleSeries;
-            InvincibleProgress = tank.Achievements.InvincibleSeries;
-            SurvivorLongest = tank.Achievements.MaxDiehardSeries;
-            SurvivorProgress = tank.Achievements.DiehardSeries;
-
-            Kamikaze = tank.Achievements.Kamikaze;
-            Raider = tank.Achievements.Raider;
-            Bombardier = tank.Achievements.Bombardier;
-            Reaper = tank.Achievements.MaxKillingSeries;
-            Sharpshooter = tank.Achievements.MaxSniperSeries;
-            Invincible = tank.Achievements.MaxInvincibleSeries;
-            Survivor = tank.Achievements.MaxDiehardSeries;
-            MouseTrap = tank.Achievements.Mousebane;
-            Hunter = tank.Achievements.Beasthunter;
-            Sinai = tank.Achievements.Sinai;
-            PattonValley = tank.Achievements.PattonValley;
+            Mapper.Map<IRandomBattlesAchievements>(tank.Achievements, this);
 
             #endregion
         }

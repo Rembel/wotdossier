@@ -444,6 +444,18 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         public int DamageRating { get; set; }
 
+        /// <summary>
+        /// Gets/Sets the field "MarksOnGun".
+        /// </summary>
+        public int MarksOnGun { get; set; }
+
+        /// <summary>
+        /// Gets/Sets the field "MovingAvgDamage".
+        /// </summary>
+        public int MovingAvgDamage { get; set; }
+
+        public int Lumberjack { get; set; }
+
         #endregion
 
         #region 7x7
@@ -489,6 +501,8 @@ namespace WotDossier.Applications.ViewModel.Statistic
         public int BruteForceMedal { get; set; }
         public int AwardCount { get; set; }
         public int BattleTested { get; set; }
+        public int Alaric { get; set; }
+        public int MasterGunner { get; set; }
 
         #endregion
         

@@ -317,9 +317,6 @@ namespace WotDossier.Applications.ViewModel.Rows
             TankUniqueId = tank.UniqueId();
             Mileage = tank.Common.mileage / 1000;
 
-            MarkOfMastery = tank.Achievements.MarkOfMastery;
-            DamageRating = tank.Achievements.DamageRating;
-            
             Updated = Utils.UnixDateToDateTime(tank.Common.updated);
         }
 

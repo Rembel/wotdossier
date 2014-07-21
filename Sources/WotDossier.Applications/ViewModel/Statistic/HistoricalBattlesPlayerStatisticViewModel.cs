@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using WotDossier.Applications.Logic;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.ViewModel.Statistic
 {
-    public class HistoricalBattlesPlayerStatisticViewModel : PlayerStatisticViewModel
+    public class HistoricalBattlesPlayerStatisticViewModel : PlayerStatisticViewModel, IHistoricalBattlesAchievements
     {
         public HistoricalBattlesPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat)
             : this(stat, new List<PlayerStatisticViewModel>())
@@ -17,10 +19,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
             if (stat.AchievementsIdObject != null)
             {
-                GuardsMan = stat.AchievementsIdObject.GuardsMan;
-                MakerOfHistory = stat.AchievementsIdObject.MakerOfHistory;
-                WeakVehiclesWins = stat.AchievementsIdObject.WeakVehiclesWins;
-                BothSidesWins = stat.AchievementsIdObject.BothSidesWins;
+                Mapper.Map<IHistoricalBattlesAchievements>(stat.AchievementsIdObject, this);
             }
 
             #endregion

@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
-using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Server;
@@ -11,12 +9,12 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic.Adapter
 {
-    public class PlayerStatAdapter : AbstractStatisticAdapter<PlayerStatisticEntity>, IRandomBattlesAchievements
+    public class RandomBattlesStatAdapter : AbstractStatisticAdapter<PlayerStatisticEntity>, IRandomBattlesAchievements
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public PlayerStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.A15x15)
+        public RandomBattlesStatAdapter(List<TankJson> tanks) : base(tanks, tank => tank.A15x15)
         {
             #region [ BattleAwards ]
 
@@ -26,12 +24,12 @@ namespace WotDossier.Applications.Logic.Adapter
             Sniper2 = tanks.Sum(x => x.Achievements.Sniper2);
             MainGun = tanks.Sum(x => x.Achievements.MainGun);
             Defender = tanks.Sum(x => x.Achievements.Defender);
-            SteelWall = tanks.Sum(x => x.Achievements.Steelwall);
-            Confederate = tanks.Sum(x => x.Achievements.Supporter);
+            SteelWall = tanks.Sum(x => x.Achievements.SteelWall);
+            Confederate = tanks.Sum(x => x.Achievements.Confederate);
             Scout = tanks.Sum(x => x.Achievements.Scout);
-            PatrolDuty = tanks.Sum(x => x.Achievements.Evileye);
-            BrothersInArms = tanks.Sum(x => x.Achievements.MedalBrothersInArms);
-            CrucialContribution = tanks.Sum(x => x.Achievements.MedalCrucialContribution);
+            PatrolDuty = tanks.Sum(x => x.Achievements.PatrolDuty);
+            BrothersInArms = tanks.Sum(x => x.Achievements.BrothersInArms);
+            CrucialContribution = tanks.Sum(x => x.Achievements.CrucialContribution);
             IronMan = tanks.Sum(x => x.Achievements.IronMan);
             LuckyDevil = tanks.Sum(x => x.Achievements.LuckyDevil);
             Sturdy = tanks.Sum(x => x.Achievements.Sturdy);
@@ -40,45 +38,32 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #region [ Epic ]
 
-            Boelter = tanks.Sum(x => x.Achievements.MedalWittmann);
-            RadleyWalters = tanks.Sum(x => x.Achievements.MedalRadleyWalters);
-            LafayettePool = tanks.Sum(x => x.Achievements.MedalLafayettePool);
-            Orlik = tanks.Sum(x => x.Achievements.MedalOrlik);
-            Oskin = tanks.Sum(x => x.Achievements.MedalOskin);
-            Lehvaslaiho = tanks.Sum(x => x.Achievements.MedalLehvaslaiho);
-            Nikolas = tanks.Sum(x => x.Achievements.MedalNikolas);
-            Halonen = tanks.Sum(x => x.Achievements.MedalHalonen);
-            Burda = tanks.Sum(x => x.Achievements.MedalBurda);
-            Pascucci = tanks.Sum(x => x.Achievements.MedalPascucci);
-            Dumitru = tanks.Sum(x => x.Achievements.MedalDumitru);
-            TamadaYoshio = tanks.Sum(x => x.Achievements.MedalTamadaYoshio);
-            Billotte = tanks.Sum(x => x.Achievements.MedalBillotte);
-            BrunoPietro = tanks.Sum(x => x.Achievements.MedalBrunoPietro);
-            Tarczay = tanks.Sum(x => x.Achievements.MedalTarczay);
-            Kolobanov = tanks.Sum(x => x.Achievements.MedalKolobanov);
-            Fadin = tanks.Sum(x => x.Achievements.MedalFadin);
+            Boelter = tanks.Sum(x => x.Achievements.Boelter);
+            RadleyWalters = tanks.Sum(x => x.Achievements.RadleyWalters);
+            LafayettePool = tanks.Sum(x => x.Achievements.LafayettePool);
+            Orlik = tanks.Sum(x => x.Achievements.Orlik);
+            Oskin = tanks.Sum(x => x.Achievements.Oskin);
+            Lehvaslaiho = tanks.Sum(x => x.Achievements.Lehvaslaiho);
+            Nikolas = tanks.Sum(x => x.Achievements.Nikolas);
+            Halonen = tanks.Sum(x => x.Achievements.Halonen);
+            Burda = tanks.Sum(x => x.Achievements.Burda);
+            Pascucci = tanks.Sum(x => x.Achievements.Pascucci);
+            Dumitru = tanks.Sum(x => x.Achievements.Dumitru);
+            TamadaYoshio = tanks.Sum(x => x.Achievements.TamadaYoshio);
+            Billotte = tanks.Sum(x => x.Achievements.Billotte);
+            BrunoPietro = tanks.Sum(x => x.Achievements.BrunoPietro);
+            Tarczay = tanks.Sum(x => x.Achievements.Tarczay);
+            Kolobanov = tanks.Sum(x => x.Achievements.Kolobanov);
+            Fadin = tanks.Sum(x => x.Achievements.Fadin);
             HeroesOfRassenay = tanks.Sum(x => x.Achievements.HeroesOfRassenay);
-            DeLanglade = tanks.Sum(x => x.Achievements.MedalDeLanglade);
-
-            #endregion
-
-            #region [ Medals]
-
-            //Kay = stat.data.achievements.medalKay;
-            //Carius = stat.data.achievements.medalCarius;
-            //Knispel = stat.data.achievements.medalKnispel;
-            //Poppel = stat.data.achievements.medalPoppel;
-            //Abrams = stat.data.achievements.medalAbrams;
-            //Leclerk = stat.data.achievements.medalLeClerc;
-            //Lavrinenko = stat.data.achievements.medalLavrinenko;
-            //Ekins = stat.data.achievements.medalEkins;
+            DeLanglade = tanks.Sum(x => x.Achievements.DeLanglade);
 
             #endregion
 
             #region [ Series ]
 
-            SharpshooterLongest = tanks.Max(x => x.Achievements.MaxSniperSeries);
-            MasterGunnerLongest = tanks.Max(x => x.Achievements.MaxPiercingSeries);
+            SharpshooterLongest = tanks.Max(x => x.Achievements.SharpshooterLongest);
+            MasterGunnerLongest = tanks.Max(x => x.Achievements.MasterGunnerLongest);
 
             #endregion
 
@@ -87,9 +72,9 @@ namespace WotDossier.Applications.Logic.Adapter
             Kamikaze = tanks.Sum(x => x.Achievements.Kamikaze);
             Raider = tanks.Sum(x => x.Achievements.Raider);
             Bombardier = tanks.Sum(x => x.Achievements.Bombardier);
-            Reaper = tanks.Max(x => x.Achievements.MaxKillingSeries);
-            Invincible = tanks.Max(x => x.Achievements.MaxInvincibleSeries);
-            Survivor = tanks.Max(x => x.Achievements.MaxDiehardSeries);
+            Reaper = tanks.Max(x => x.Achievements.ReaperLongest);
+            Invincible = tanks.Max(x => x.Achievements.InvincibleLongest);
+            Survivor = tanks.Max(x => x.Achievements.SurvivorLongest);
             //count Maus frags
             MouseTrap = tanks.Sum(x => x.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count)) / 10;
             Hunter = tanks.Sum(x => x.Achievements.FragsBeast) / 100;
@@ -99,17 +84,20 @@ namespace WotDossier.Applications.Logic.Adapter
 
             #endregion
 
-            MarksOnGun = tanks.Sum(x => x.Achievements.MarksOnGun);
-            MovingAvgDamage = tanks.Sum(x => x.Achievements.MovingAvgDamage);
+            MarksOnGun = tanks.Max(x => x.Achievements.MarksOnGun);
+            MovingAvgDamage = (int) tanks.Average(x => x.Achievements.MovingAvgDamage);
             MedalMonolith = tanks.Sum(x => x.Achievements.MedalMonolith);
             MedalAntiSpgFire = tanks.Sum(x => x.Achievements.MedalAntiSpgFire);
             MedalGore = tanks.Sum(x => x.Achievements.MedalGore);
             MedalCoolBlood = tanks.Sum(x => x.Achievements.MedalCoolBlood);
             MedalStark = tanks.Sum(x => x.Achievements.MedalStark);
             DamageRating = tanks.Max(x => x.Achievements.DamageRating);
+
+            MasterGunner = tanks.Sum(x => x.Achievements.MasterGunner);
+            Alaric = tanks.Sum(x => x.Achievements.Alaric);
         }
 
-        public PlayerStatAdapter(Player stat)
+        public RandomBattlesStatAdapter(Player stat)
         {
             BattlesCount = stat.dataField.statistics.all.battles;
             Wins = stat.dataField.statistics.all.wins;
@@ -228,7 +216,7 @@ namespace WotDossier.Applications.Logic.Adapter
             //PerformanceRating = RatingHelper.PerformanceRating(tanks);
             if (stat.dataField.vehicles != null)
             {
-                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
+                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(Dal.DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
                 WN8Rating = RatingHelper.Wn8(Tanks);
                 PerformanceRating = RatingHelper.PerformanceRating(Tanks);
             }
@@ -404,6 +392,10 @@ namespace WotDossier.Applications.Logic.Adapter
 
         public int DamageRating { get; set; }
 
+        public int Lumberjack { get; set; }
+        public int MasterGunner { get; set; }
+        public int Alaric { get; set; }
+
         #endregion
 
         public override void Update(PlayerStatisticEntity entity)
@@ -415,94 +407,7 @@ namespace WotDossier.Applications.Logic.Adapter
                 entity.AchievementsIdObject = new PlayerAchievementsEntity();
             }
 
-            #region [ BattleAwards ]
-
-            entity.AchievementsIdObject.Warrior = Warrior;
-            entity.AchievementsIdObject.Invader = Invader;
-            entity.AchievementsIdObject.Sniper = Sniper;
-            entity.AchievementsIdObject.Sniper2 = Sniper2;
-            entity.AchievementsIdObject.MainGun = MainGun;
-            entity.AchievementsIdObject.Defender = Defender;
-            entity.AchievementsIdObject.SteelWall = SteelWall;
-            entity.AchievementsIdObject.Confederate = Confederate;
-            entity.AchievementsIdObject.Scout = Scout;
-            entity.AchievementsIdObject.PatrolDuty = PatrolDuty;
-            entity.AchievementsIdObject.BrothersInArms = BrothersInArms;
-            entity.AchievementsIdObject.CrucialContribution = CrucialContribution;
-            entity.AchievementsIdObject.IronMan = IronMan;
-            entity.AchievementsIdObject.LuckyDevil = LuckyDevil;
-            entity.AchievementsIdObject.Sturdy = Sturdy;
-
-            #endregion
-
-            #region [ Epic ]
-
-            entity.AchievementsIdObject.Boelter = Boelter;
-            entity.AchievementsIdObject.RadleyWalters = RadleyWalters;
-            entity.AchievementsIdObject.LafayettePool = LafayettePool;
-            entity.AchievementsIdObject.Orlik = Orlik;
-            entity.AchievementsIdObject.Oskin = Oskin;
-            entity.AchievementsIdObject.Lehvaslaiho = Lehvaslaiho;
-            entity.AchievementsIdObject.Nikolas = Nikolas;
-            entity.AchievementsIdObject.Halonen = Halonen;
-            entity.AchievementsIdObject.Burda = Burda;
-            entity.AchievementsIdObject.Pascucci = Pascucci;
-            entity.AchievementsIdObject.Dumitru = Dumitru;
-            entity.AchievementsIdObject.TamadaYoshio = TamadaYoshio;
-            entity.AchievementsIdObject.Billotte = Billotte;
-            entity.AchievementsIdObject.BrunoPietro = BrunoPietro;
-            entity.AchievementsIdObject.Tarczay = Tarczay;
-            entity.AchievementsIdObject.Kolobanov = Kolobanov;
-            entity.AchievementsIdObject.Fadin = Fadin;
-            entity.AchievementsIdObject.HeroesOfRassenay = HeroesOfRassenay;
-            entity.AchievementsIdObject.DeLanglade = DeLanglade;
-
-            #endregion
-
-            #region [ Medals]
-
-            entity.AchievementsIdObject.Kay = Kay;
-            entity.AchievementsIdObject.Carius = Carius;
-            entity.AchievementsIdObject.Knispel = Knispel;
-            entity.AchievementsIdObject.Poppel = Poppel;
-            entity.AchievementsIdObject.Abrams = Abrams;
-            entity.AchievementsIdObject.Leclerk = Leclerk;
-            entity.AchievementsIdObject.Lavrinenko = Lavrinenko;
-            entity.AchievementsIdObject.Ekins = Ekins;
-
-            #endregion
-
-            #region [ Series ]
-
-            entity.AchievementsIdObject.SharpshooterLongest = SharpshooterLongest;
-            entity.AchievementsIdObject.MasterGunnerLongest = MasterGunnerLongest;
-
-            #endregion
-
-            #region [ SpecialAwards ]
-
-            entity.AchievementsIdObject.Kamikaze = Kamikaze;
-            entity.AchievementsIdObject.Raider = Raider;
-            entity.AchievementsIdObject.Bombardier = Bombardier;
-            entity.AchievementsIdObject.Reaper = Reaper;
-            entity.AchievementsIdObject.Invincible = Invincible;
-            entity.AchievementsIdObject.Survivor = Survivor;
-            entity.AchievementsIdObject.MouseTrap = MouseTrap;
-            entity.AchievementsIdObject.Hunter = Hunter;
-            entity.AchievementsIdObject.Sinai = Sinai;
-            entity.AchievementsIdObject.PattonValley = PattonValley;
-            entity.AchievementsIdObject.Huntsman = Huntsman;
-
-            #endregion
-
-            entity.AchievementsIdObject.MarksOnGun = MarksOnGun; 
-            entity.AchievementsIdObject.MovingAvgDamage = MovingAvgDamage;
-            entity.AchievementsIdObject.MedalMonolith = MedalMonolith;
-            entity.AchievementsIdObject.MedalAntiSpgFire = MedalAntiSpgFire;
-            entity.AchievementsIdObject.MedalGore = MedalGore;
-            entity.AchievementsIdObject.MedalCoolBlood = MedalCoolBlood;
-            entity.AchievementsIdObject.MedalStark = MedalStark;
-            entity.AchievementsIdObject.DamageRating = DamageRating;
+            Mapper.Map<IRandomBattlesAchievements>(this, entity.AchievementsIdObject);
         }
     }
 }

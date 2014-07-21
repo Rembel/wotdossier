@@ -177,48 +177,7 @@ namespace WotDossier.Applications.Logic.Adapter
                 entity.AchievementsIdObject = new TeamBattlesAchievementsEntity();
             }
 
-            entity.AchievementsIdObject.WolfAmongSheep = WolfAmongSheep;
-            entity.AchievementsIdObject.WolfAmongSheepMedal = WolfAmongSheepMedal;
-            entity.AchievementsIdObject.GeniusForWar = GeniusForWar;
-            entity.AchievementsIdObject.GeniusForWarMedal = GeniusForWarMedal;
-            entity.AchievementsIdObject.KingOfTheHill = KingOfTheHill;
-            entity.AchievementsIdObject.TacticalBreakthroughSeries = TacticalBreakthroughSeries;
-            entity.AchievementsIdObject.MaxTacticalBreakthroughSeries = MaxTacticalBreakthroughSeries;
-            entity.AchievementsIdObject.ArmoredFist = ArmoredFist;
-            entity.AchievementsIdObject.TacticalBreakthrough = TacticalBreakthrough;
-
-            entity.AchievementsIdObject.GodOfWar = GodOfWar;
-            entity.AchievementsIdObject.FightingReconnaissance = FightingReconnaissance;
-            entity.AchievementsIdObject.FightingReconnaissanceMedal = FightingReconnaissanceMedal;
-            entity.AchievementsIdObject.WillToWinSpirit = WillToWinSpirit;
-            entity.AchievementsIdObject.CrucialShot = CrucialShot;
-            entity.AchievementsIdObject.CrucialShotMedal = CrucialShotMedal;
-            entity.AchievementsIdObject.ForTacticalOperations = ForTacticalOperations;
-
-            entity.AchievementsIdObject.PromisingFighter = PromisingFighter;
-            entity.AchievementsIdObject.PromisingFighterMedal = PromisingFighterMedal;
-            entity.AchievementsIdObject.HeavyFire = HeavyFire;
-            entity.AchievementsIdObject.HeavyFireMedal = HeavyFireMedal;
-            entity.AchievementsIdObject.Ranger = Ranger;
-            entity.AchievementsIdObject.RangerMedal = RangerMedal;
-            entity.AchievementsIdObject.FireAndSteel = FireAndSteel;
-            entity.AchievementsIdObject.FireAndSteelMedal = FireAndSteelMedal;
-            entity.AchievementsIdObject.Pyromaniac = Pyromaniac;
-            entity.AchievementsIdObject.PyromaniacMedal = PyromaniacMedal;
-            entity.AchievementsIdObject.NoMansLand = NoMansLand;
-
-            entity.AchievementsIdObject.Guerrilla = Guerrilla;
-            entity.AchievementsIdObject.GuerrillaMedal = GuerrillaMedal;
-            entity.AchievementsIdObject.Infiltrator = Infiltrator;
-            entity.AchievementsIdObject.InfiltratorMedal = InfiltratorMedal;
-            entity.AchievementsIdObject.Sentinel = Sentinel;
-            entity.AchievementsIdObject.SentinelMedal = SentinelMedal;
-            entity.AchievementsIdObject.PrematureDetonation = PrematureDetonation;
-            entity.AchievementsIdObject.PrematureDetonationMedal = PrematureDetonationMedal;
-            entity.AchievementsIdObject.BruteForce = BruteForce;
-            entity.AchievementsIdObject.BruteForceMedal = BruteForceMedal;
-            entity.AchievementsIdObject.AwardCount = AwardCount;
-            entity.AchievementsIdObject.BattleTested = BattleTested;
+            Mapper.Map<ITeamBattlesAchievements>(this, entity.AchievementsIdObject);
         }
     }
 }

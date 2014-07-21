@@ -3776,8 +3776,8 @@
 		<row><td>ID_STRING13</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057483279</td></row>
 		<row><td>ID_STRING14</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-358478805</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-358425557</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-492642603</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>-492697867</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-1415416651</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>-1415422795</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>547546421</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>547499349</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>547499381</td></row>
@@ -4402,7 +4402,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{6CBB2CC6-C0FB-48A3-8592-9A08AC479014}</td><td/></row>
+		<row><td>ProductCode</td><td>{CE865621-C7F0-46DB-81CD-FD58992D4CDA}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
 		<row><td>ProductVersion</td><td>3.5</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
@@ -4693,7 +4693,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.5</td><td></td><td>768</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.5</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

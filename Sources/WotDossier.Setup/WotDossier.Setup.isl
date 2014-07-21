@@ -3777,10 +3777,8 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-2078153748</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-2078153748</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>-2078153748</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>http://code.google.com/p/wotdossier/</td><td>0</td><td/><td>-2002589265</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-492677419</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-1415439147</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-2078172018</td></row>
-		<row><td>ID_STRING5</td><td>1033</td><td>http://forum.worldoftanks.ru/index.php?/topic/890389-wotdossier/</td><td>0</td><td/><td>-492667179</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057464943</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057487471</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-2078153748</td></row>
@@ -4340,8 +4338,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ARPINSTALLLOCATION</td><td/><td/></row>
 		<row><td>ARPPRODUCTICON</td><td>ARPPRODUCTICON.exe</td><td/></row>
 		<row><td>ARPSIZE</td><td/><td/></row>
-		<row><td>ARPURLINFOABOUT</td><td>##ID_STRING2##</td><td/></row>
-		<row><td>ARPURLUPDATEINFO</td><td>##ID_STRING5##</td><td/></row>
 		<row><td>AgreeToLicense</td><td>No</td><td/></row>
 		<row><td>ApplicationUsers</td><td>AllUsers</td><td/></row>
 		<row><td>DWUSINTERVAL</td><td>30</td><td/></row>
@@ -4408,7 +4404,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{6CBB2CC6-C0FB-48A3-8592-9A08AC479014}</td><td/></row>
+		<row><td>ProductCode</td><td>{143FEA35-26BB-46C6-B361-8F2E765EA9FB}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
 		<row><td>ProductVersion</td><td>3.5</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>

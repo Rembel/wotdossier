@@ -1,12 +1,11 @@
 using System;
-using System.Collections.Generic;
 using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Entities
 {
-	/// <summary>
-	/// Object representation for table 'PlayerAchievements'.
-	/// </summary>
+    /// <summary>
+    /// Object representation for table 'PlayerAchievements'.
+    /// </summary>
 	[Serializable]
     public class PlayerAchievementsEntity : EntityBase, IRandomBattlesAchievements
 	{	
@@ -320,36 +319,80 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public virtual int MedalStark { get; set; }
 
+        /// <summary>
+        /// Gets or sets the damage rating.
+        /// </summary>
 	    public virtual int DamageRating { get; set; }
 
+        /// <summary>
+        /// Gets or sets the battle hero.
+        /// </summary>
 	    public virtual int BattleHero { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the sharpshooter.
+        /// </summary>
         public virtual int Sharpshooter { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the reaper longest.
+        /// </summary>
         public virtual int ReaperLongest { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the reaper progress.
+        /// </summary>
         public virtual int ReaperProgress { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the sharpshooter progress.
+        /// </summary>
         public virtual int SharpshooterProgress { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the master gunner progress.
+        /// </summary>
         public virtual int MasterGunnerProgress { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the invincible longest.
+        /// </summary>
         public virtual int InvincibleLongest { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the invincible progress.
+        /// </summary>
         public virtual int InvincibleProgress { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the survivor longest.
+        /// </summary>
         public virtual int SurvivorLongest { get; set; }
+
+        /// <summary>
+        /// Gets or sets the survivor progress.
+        /// </summary>
         public virtual int SurvivorProgress { get; set; }
 
-	    #region Collections
-		
-		private IList<PlayerStatisticEntity> _playerStatisticEntities;
-		/// <summary>
-		/// Gets/Sets the <see cref="PlayerStatisticEntity"/> collection.
-		/// </summary>
-        public virtual IList<PlayerStatisticEntity> PlayerStatisticEntities
-        {
-            get
-            {
-                return _playerStatisticEntities ?? (_playerStatisticEntities = new List<PlayerStatisticEntity>());
-            }
-            set { _playerStatisticEntities = value; }
-        }
-		
-		#endregion Collections
-		
+        /// <summary>
+        /// Gets or sets the lumberjack.
+        /// </summary>
+        public virtual int Lumberjack { get; set; }
+
+        /// <summary>
+        /// Gets or sets the master gunner.
+        /// </summary>
+        public virtual int MasterGunner { get; set; }
+
+        /// <summary>
+        /// Gets or sets the alaric.
+        /// </summary>
+        public virtual int Alaric { get; set; }
+
+        /// <summary>
+        /// Gets or sets the mark of mastery.
+        /// </summary>
+        public virtual int MarkOfMastery { get; set; }
 	}
 }
 

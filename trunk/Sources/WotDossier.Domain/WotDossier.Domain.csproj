@@ -176,9 +176,11 @@
     <Compile Include="Dossier\TankV65\MaxJson.cs" />
     <Compile Include="Dossier\TankV65\TankJson.cs" />
     <Compile Include="Tank\AchievementsHistorical.cs" />
-    <Compile Include="Tank\AchievementsJson.cs" />
     <Compile Include="Tank\Achievements7x7.cs" />
     <Compile Include="Interfaces\ITankFilterable.cs" />
+    <Compile Include="Tank\AchievementsRandom.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Tank\ConsumableDescription.cs" />
     <Compile Include="Tank\DeviceDescription.cs" />
     <Compile Include="Tank\MaxJson.cs" />

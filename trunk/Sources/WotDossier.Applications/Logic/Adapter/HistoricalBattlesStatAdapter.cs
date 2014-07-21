@@ -90,10 +90,7 @@ namespace WotDossier.Applications.Logic.Adapter
                 entity.AchievementsIdObject = new HistoricalBattlesAchievementsEntity();
             }
 
-            entity.AchievementsIdObject.WeakVehiclesWins = WeakVehiclesWins;
-            entity.AchievementsIdObject.GuardsMan = GuardsMan;
-            entity.AchievementsIdObject.MakerOfHistory = MakerOfHistory;
-            entity.AchievementsIdObject.BothSidesWins = BothSidesWins;
+            Mapper.Map<IHistoricalBattlesAchievements>(this, entity.AchievementsIdObject);
         }
     }
 }

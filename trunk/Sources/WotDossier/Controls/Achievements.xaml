@@ -184,7 +184,7 @@
             <!--Honorary Ranks-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_HonoraryRanks}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
-                <controls:MedalAchievement Value="{Binding Survivor}" MinValue="19" Delta="{Binding SurvivorDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Diehard.png">
+                <controls:MedalAchievement Value="{Binding SurvivorLongest}" MinValue="19" Delta="{Binding SurvivorLongestDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Diehard.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Survivor}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Survivor}" />
                     </ToolTipService.ToolTip>
@@ -204,7 +204,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Kamikaze}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Kamikaze}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Invincible}" MinValue="4" Delta="{Binding InvincibleDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Invincible.png">
+                <controls:MedalAchievement Value="{Binding InvincibleLongest}" MinValue="4" Delta="{Binding InvincibleLongestDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Invincible.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Invincible}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Invincible}" />
                     </ToolTipService.ToolTip>
@@ -219,7 +219,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Bombardier}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Bombardier}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Reaper}" Delta="{Binding ReaperDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HandOfDeath.png">
+                <controls:MedalAchievement Value="{Binding ReaperLongest}" Delta="{Binding ReaperLongestDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HandOfDeath.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Reaper}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Reaper}" />
                     </ToolTipService.ToolTip>

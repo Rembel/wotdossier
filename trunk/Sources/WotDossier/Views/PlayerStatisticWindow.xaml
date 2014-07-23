@@ -6,6 +6,7 @@
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
+        xmlns:charts="clr-namespace:WotDossier.Tabs.Charts"
         Title="{Binding Path=DataContext.PlayerStatistic.Name, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="768" 
         Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_player.png" WindowStartupLocation="CenterScreen"
         Style="{StaticResource office2007SilverWindow}">
@@ -60,6 +61,24 @@
             </TabItem>
             <TabItem Header="{x:Static resources:Resources.Tab_Header_Vehicles}">
                 <tabs:ServerBattlesTab HorizontalAlignment="Stretch"></tabs:ServerBattlesTab>
+            </TabItem>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}">
+                <TabControl HorizontalAlignment="Center" Margin="0,50,0,10">
+                    <TabControl.Resources>
+                        <Style TargetType="TabPanel">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </TabControl.Resources>
+                    <TabItem Header="1">
+                        <charts:EffectivityChartsTab></charts:EffectivityChartsTab>
+                    </TabItem>
+                    <TabItem Header="2">
+                        <charts:WinPercentChartsTab></charts:WinPercentChartsTab>
+                    </TabItem>
+                    <!--<TabItem Header="3">
+                        <charts:BattlesCountChartsTab></charts:BattlesCountChartsTab>
+                    </TabItem>-->
+                </TabControl>
             </TabItem>
         </TabControl>
     </Grid>

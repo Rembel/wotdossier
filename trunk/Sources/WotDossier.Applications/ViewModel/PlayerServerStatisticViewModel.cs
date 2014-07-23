@@ -5,6 +5,7 @@ using System.Windows;
 using WotDossier.Applications.Logic.Adapter;
 using WotDossier.Applications.Model;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
@@ -75,6 +76,18 @@ namespace WotDossier.Applications.ViewModel
         {
             OpenClanCommand = new DelegateCommand<object>(OnOpenClanCommand);
             RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
+            
+            ViewTyped.Loaded += OnWindowLoaded;
+        }
+
+        private void OnWindowLoaded(object sender, RoutedEventArgs routedEventArgs)
+        {
+            ViewTyped.Loaded -= OnWindowLoaded;
+            if (PlayerStatistic != null)
+            {
+                ChartView = new PlayerChartsViewModel();
+                ChartView.InitCharts(PlayerStatistic, Tanks);
+            }
         }
 
         private void OnRowDoubleClick(object rowData)
@@ -146,6 +159,8 @@ namespace WotDossier.Applications.ViewModel
 
             PlayerStatistic = statistic;
         }
+
+        public PlayerChartsViewModel ChartView { get; set; }
 
         public List<ITankStatisticRow> Tanks
         {

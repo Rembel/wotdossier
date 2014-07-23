@@ -8,6 +8,8 @@ namespace WotDossier.Controls
         #region public double MaxY
 
         public const string MAX_Y_PROPERTY_NAME = "MaxY";
+        public const string MIN_X_PROPERTY_NAME = "MinX";
+        public const string MAX_X_PROPERTY_NAME = "MaxX";
 
         /// <summary>
         /// Identifies the MaxY dependency property.
@@ -29,8 +31,6 @@ namespace WotDossier.Controls
 
         #region public double MaxX
 
-        public const string MAX_X_PROPERTY_NAME = "MaxX";
-
         /// <summary>
         /// Identifies the MinY dependency property.
         /// </summary>
@@ -48,7 +48,7 @@ namespace WotDossier.Controls
         }
 
         public static readonly DependencyProperty MinXProperty =
-            DependencyProperty.Register("MinX", typeof(double), typeof(ChartPlotter), new PropertyMetadata((double)0, ChangeMax));
+            DependencyProperty.Register(MIN_X_PROPERTY_NAME, typeof(double), typeof(ChartPlotter), new PropertyMetadata((double)0, ChangeMax));
 
         public double MinX
         {
@@ -66,7 +66,7 @@ namespace WotDossier.Controls
         private void ConfigureAxises()
         {
             DataRect dataRect = DataRect.Create(MinX, 0, MaxX, MaxY);
-            //Viewport.Domain = dataRect;
+            Viewport.Domain = dataRect;
             Viewport.Visible = dataRect;
         }
     }

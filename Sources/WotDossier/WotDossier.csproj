@@ -230,12 +230,24 @@
     </Compile>
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="NativeMethods.cs" />
+    <Compile Include="Tabs\Charts\BattlesCountChartsTab.xaml.cs">
+      <DependentUpon>BattlesCountChartsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Charts\EffectivityChartsTab.xaml.cs">
+      <DependentUpon>EffectivityChartsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Charts\WinPercentChartsTab.xaml.cs">
+      <DependentUpon>WinPercentChartsTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\CommonTabNew.xaml.cs">
       <DependentUpon>CommonTabNew.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\ChartHelper.cs" />
+    <Compile Include="UI\TierLabelProvider.cs" />
+    <Compile Include="UI\CountryLabelProvider.cs" />
     <Compile Include="Tabs\MedalsHistoricalTab.xaml.cs">
       <DependentUpon>MedalsHistoricalTab.xaml</DependentUpon>
     </Compile>
@@ -269,6 +281,7 @@
     <Compile Include="Tabs\ClanBattles.xaml.cs">
       <DependentUpon>ClanBattles.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\TankTypeLabelProvider.cs" />
     <Compile Include="Tabs\XPTab.xaml.cs">
       <DependentUpon>XPTab.xaml</DependentUpon>
     </Compile>
@@ -655,6 +668,18 @@
     <Page Include="Styles\Silver\WindowSilver.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Charts\BattlesCountChartsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\Charts\EffectivityChartsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\Charts\WinPercentChartsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\CommonTabNew.xaml">
       <SubType>Designer</SubType>

@@ -246,6 +246,110 @@
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="5">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
+                        <StackPanel>
+                            <d3:ChartPlotter x:Name="WinPercentByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" Visible="0, 0, 6, 100">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinPercentByType}"></TextBlock>
+                                </d3:Header>
+                                <d3:IntegerAxis x:Name="TankTypeHorizontalAxis1" ShowMinorTicks="False" >
+                                    <d3:IntegerAxis.LabelProvider>
+                                        <tabs:TankTypeLabelProvider />
+                                    </d3:IntegerAxis.LabelProvider>
+                                </d3:IntegerAxis>
+                                <d3:BarChart ItemsSource="{Binding WinPercentByTypeDataSource}">
+                                    <d3:BarChart.Resources>
+                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                    </d3:BarChart.Resources>
+                                    <d3:TemplateMarkerGenerator>
+                                        <DataTemplate>
+                                            <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:PercentToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0"
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                        <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </Rectangle>
+                                        </DataTemplate>
+                                    </d3:TemplateMarkerGenerator>
+                                </d3:BarChart>
+                            </d3:ChartPlotter>
+
+                            <d3:ChartPlotter x:Name="WinPercentByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" Visible="0, 0, 11, 100">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinPercentByTier}"></TextBlock>
+                                </d3:Header>
+                                <d3:IntegerAxis ShowMinorTicks="False">
+                                    <d3:IntegerAxis.LabelProvider>
+                                        <tabs:TierLabelProvider />
+                                    </d3:IntegerAxis.LabelProvider>
+                                </d3:IntegerAxis>
+                                <d3:BarChart ItemsSource="{Binding WinPercentByTierDataSource}">
+                                    <d3:BarChart.Resources>
+                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                    </d3:BarChart.Resources>
+                                    <d3:TemplateMarkerGenerator>
+                                        <DataTemplate>
+                                            <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:PercentToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0"
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                        <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </Rectangle>
+                                        </DataTemplate>
+                                    </d3:TemplateMarkerGenerator>
+                                </d3:BarChart>
+                            </d3:ChartPlotter>
+
+                            <d3:ChartPlotter x:Name="WinPercentByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10" Visible="-1, 0, 8, 100">
+                                <d3:Header>
+                                    <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinPercentByCountry}"></TextBlock>
+                                </d3:Header>
+                                <d3:IntegerAxis x:Name="CountryHorizontalAxis1"  ShowMinorTicks="False">
+                                    <d3:IntegerAxis.LabelProvider>
+                                        <tabs:CountryLabelProvider />
+                                    </d3:IntegerAxis.LabelProvider>
+                                </d3:IntegerAxis>
+                                <d3:BarChart ItemsSource="{Binding WinPercentByCountryDataSource}">
+                                    <d3:BarChart.Resources>
+                                        <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                                    </d3:BarChart.Resources>
+                                    <d3:TemplateMarkerGenerator>
+                                        <DataTemplate>
+                                            <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:PercentToColorConverter.Default}}"
+								               d3:ViewportPanel.Y="0"
+								               d3:ViewportPanel.X="{Binding X}"
+								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
+								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                                        <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </Rectangle>
+                                        </DataTemplate>
+                                    </d3:TemplateMarkerGenerator>
+                                </d3:BarChart>
+                            </d3:ChartPlotter>
+
+                        </StackPanel>
+                    </Border>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="6">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
                         <StackPanel Orientation="Horizontal">

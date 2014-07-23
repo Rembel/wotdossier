@@ -66,7 +66,7 @@ namespace WotDossier.Controls
         private void ConfigureAxises()
         {
             DataRect dataRect = DataRect.Create(MinX, 0, MaxX, MaxY);
-            Viewport.Domain = dataRect;
+            //Viewport.Domain = dataRect;
             Viewport.Visible = dataRect;
         }
     }

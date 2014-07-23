@@ -1983,6 +1983,33 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Win % by country.
+        /// </summary>
+        public static string Chart_WinPercentByCountry {
+            get {
+                return ResourceManager.GetString("Chart_WinPercentByCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win % by Tier.
+        /// </summary>
+        public static string Chart_WinPercentByTier {
+            get {
+                return ResourceManager.GetString("Chart_WinPercentByTier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win % by Type.
+        /// </summary>
+        public static string Chart_WinPercentByType {
+            get {
+                return ResourceManager.GetString("Chart_WinPercentByType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Win replays percent.
         /// </summary>
         public static string Chart_WinReplaysPercentByMap {

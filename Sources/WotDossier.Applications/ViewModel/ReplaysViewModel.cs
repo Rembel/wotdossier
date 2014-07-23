@@ -270,6 +270,7 @@ namespace WotDossier.Applications.ViewModel
                             int count = replays.Count();
 
                             int index = 0;
+                            int processedCount = 0;
                             foreach (FileInfo replay in replays)
                             {
                                 try
@@ -278,6 +279,7 @@ namespace WotDossier.Applications.ViewModel
                                     if (data != null)
                                     {
                                         replayFiles.Add(new PhisicalReplay(replay, data, replayFolder.Id));
+                                        processedCount++;
                                     }
                                 }
                                 catch (Exception e)
@@ -292,7 +294,7 @@ namespace WotDossier.Applications.ViewModel
                                     return;
                                 }
                             }
-                            replayFolder.Count = replayFiles.Count;
+                            replayFolder.Count = processedCount;
                             // So this check in order to avoid default processing after the Cancel button has been pressed.
                             // This call will set the Cancelled flag on the result structure.
                             ProgressView.CheckForPendingCancellation(bw, we);

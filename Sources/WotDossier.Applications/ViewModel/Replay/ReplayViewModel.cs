@@ -282,7 +282,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 if (replay.datablock_advanced != null)
                 {
-                    if (replay.datablock_advanced.roster.ContainsKey(replay.datablock_1.playerName))
+                    if (replay.datablock_advanced.roster != null && replay.datablock_advanced.roster.ContainsKey(replay.datablock_1.playerName))
                     {
                         var info = replay.datablock_advanced.roster[replay.datablock_1.playerName];
 

@@ -38,6 +38,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int Damaged { get; set; }
         public int Killed { get; set; }
         public long PlayerId { get; set; }
+        public string PlayerName { get; set; }
         public long ReplayId { get; set; }
         public int Xp { get; set; }
         public BattleStatus IsWinner { get; set; }
@@ -165,6 +166,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
                 PlayerId = replay.datablock_1.playerID;
+
+                PlayerName = replay.datablock_1.playerName;
 
                 BattleType = (BattleType) replay.datablock_1.battleType;
 

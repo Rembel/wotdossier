@@ -2925,4 +2925,13 @@ up to 500 m</value>
   <data name="Map_99_himmelball" xml:space="preserve">
     <value>Himmelsdorf Championship</value>
   </data>
+  <data name="Chart_WinPercentByCountry" xml:space="preserve">
+    <value>Win % by country</value>
+  </data>
+  <data name="Chart_WinPercentByTier" xml:space="preserve">
+    <value>Win % by Tier</value>
+  </data>
+  <data name="Chart_WinPercentByType" xml:space="preserve">
+    <value>Win % by Type</value>
+  </data>
 </root>

@@ -292,7 +292,7 @@ namespace WotDossier.Applications.ViewModel
                                     return;
                                 }
                             }
-                            replayFolder.Count = index;
+                            replayFolder.Count = replayFiles.Count;
                             // So this check in order to avoid default processing after the Cancel button has been pressed.
                             // This call will set the Cancelled flag on the result structure.
                             ProgressView.CheckForPendingCancellation(bw, we);

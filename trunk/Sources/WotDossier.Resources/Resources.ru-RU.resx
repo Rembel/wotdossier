@@ -3011,10 +3011,19 @@
   <data name="BattleType" xml:space="preserve">
     <value>Тип боя</value>
   </data>
-    <data name="Map_96_prohorovka_defense" xml:space="preserve">
+  <data name="Map_96_prohorovka_defense" xml:space="preserve">
     <value>Огненная дуга</value>
   </data>
-    <data name="Map_99_himmelball" xml:space="preserve">
+  <data name="Map_99_himmelball" xml:space="preserve">
     <value>Чемпионат Химмельсдорфа</value>
+  </data>
+  <data name="Chart_WinPercentByCountry" xml:space="preserve">
+    <value>% побед по нациям</value>
+  </data>
+  <data name="Chart_WinPercentByTier" xml:space="preserve">
+    <value>% побед по уровням</value>
+  </data>
+  <data name="Chart_WinPercentByType" xml:space="preserve">
+    <value>% побед по типам</value>
   </data>
 </root>

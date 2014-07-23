@@ -26,9 +26,15 @@ namespace WotDossier.Tabs
             ConfigureChart(EByTier);
             ConfigureChart(EByType);
             ConfigureChart(EByCountry);
+
+            ConfigureChart(WinPercentByTier);
+            ConfigureChart(WinPercentByType);
+            ConfigureChart(WinPercentByCountry);
+
             ConfigureChart(battlesByTier);
             ConfigureChart(battlesByType);
             ConfigureChart(battlesByCountry);
+
             ConfigureChart(BattlesCountByMap);
             ConfigureChart(BattlesWinPercentByMap);
 

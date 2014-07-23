@@ -514,6 +514,10 @@ namespace WotDossier.Applications.ViewModel.Chart
             InitEfficiencyByTypeChart(tanks);
             InitEfficiencyByCountryChart(tanks);
 
+            //InitWn8ByTierChart(tanks);
+            //InitWn8ByTypeChart(tanks);
+            //InitWn8ByCountryChart(tanks);
+
             InitWinPercentByTierChart(tanks);
             InitWinPercentByTypeChart(tanks);
             InitWinPercentByCountryChart(tanks);
@@ -584,6 +588,30 @@ namespace WotDossier.Applications.ViewModel.Chart
                 x.Average(y => y.AvgSpotted),
                 x.Average(y => y.AvgCapturePoints),
                 x.Average(y => y.AvgDroppedCapturePoints))));
+            EfficiencyByCountryDataSource = dataSource.ToList();
+        }
+
+        private void InitWn8ByTierChart(List<ITankStatisticRow> statisticViewModels)
+        {
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier)
+                .Select(x => new DataPoint(x.Key, 
+                    RatingHelper.Wn8(x.ToList())));
+            EfficiencyByTierDataSource = dataSource.ToList();
+        }
+
+        private void InitWn8ByTypeChart(List<ITankStatisticRow> statisticViewModels)
+        {
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type)
+                .Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture),
+                    RatingHelper.Wn8(x.ToList())));
+            EfficiencyByTypeDataSource = dataSource.ToList();
+        }
+
+        private void InitWn8ByCountryChart(List<ITankStatisticRow> statisticViewModels)
+        {
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId)
+                .Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture),
+                    RatingHelper.Wn8(x.ToList())));
             EfficiencyByCountryDataSource = dataSource.ToList();
         }
 

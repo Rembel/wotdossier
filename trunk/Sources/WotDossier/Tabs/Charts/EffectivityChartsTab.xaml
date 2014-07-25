@@ -12,8 +12,8 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
         <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
             <StackPanel>
-                <d3:ChartPlotter x:Name="EByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="500" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" Visible="0, 0, 6, 2500">
+                <d3:ChartPlotter x:Name="EByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
+                                      Margin="20,10,20,10">
                     <d3:Header>
                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_EffByType}"></TextBlock>
                     </d3:Header>
@@ -22,7 +22,7 @@
                             <ui:TankTypeLabelProvider />
                         </d3:IntegerAxis.LabelProvider>
                     </d3:IntegerAxis>
-                    <d3:BarChart ItemsSource="{Binding EfficiencyByTypeDataSource}">
+                    <d3:BarChart ItemsSource="{Binding EfficiencyByTypeDataSource}" BoundsUnionMode="Bounds">
                         <d3:BarChart.Resources>
                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                         </d3:BarChart.Resources>
@@ -45,7 +45,7 @@
                 </d3:ChartPlotter>
 
                 <d3:ChartPlotter x:Name="EByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" Visible="0, 0, 11, 2500">
+                                      Margin="20,10,20,10">
                     <d3:Header>
                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_EffByTier}"></TextBlock>
                     </d3:Header>
@@ -54,7 +54,7 @@
                             <ui:TierLabelProvider />
                         </d3:IntegerAxis.LabelProvider>
                     </d3:IntegerAxis>
-                    <d3:BarChart ItemsSource="{Binding EfficiencyByTierDataSource}">
+                    <d3:BarChart ItemsSource="{Binding EfficiencyByTierDataSource}" BoundsUnionMode="Bounds">
                         <d3:BarChart.Resources>
                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                         </d3:BarChart.Resources>
@@ -77,7 +77,7 @@
                 </d3:ChartPlotter>
 
                 <d3:ChartPlotter x:Name="EByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10" Visible="-1, 0, 8, 2500">
+                                      Margin="20,10,20,10">
                     <d3:Header>
                         <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_EffByCountry}"></TextBlock>
                     </d3:Header>
@@ -86,7 +86,7 @@
                             <ui:CountryLabelProvider />
                         </d3:IntegerAxis.LabelProvider>
                     </d3:IntegerAxis>
-                    <d3:BarChart ItemsSource="{Binding EfficiencyByCountryDataSource}">
+                    <d3:BarChart ItemsSource="{Binding EfficiencyByCountryDataSource}" BoundsUnionMode="Bounds">
                         <d3:BarChart.Resources>
                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                         </d3:BarChart.Resources>

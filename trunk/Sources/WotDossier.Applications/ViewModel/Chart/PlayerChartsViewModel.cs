@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using Common.Logging;
 using WotDossier.Applications.Logic;
@@ -21,12 +20,12 @@ namespace WotDossier.Applications.ViewModel.Chart
         private List<SellInfo> _lastUsedTanksDataSource;
 
         private List<DataPoint> _efficiencyByTierDataSource;
-        private List<GenericPoint<string, double>> _efficiencyByTypeDataSource;
-        private List<GenericPoint<string, double>> _efficiencyByCountryDataSource;
+        private List<DataPoint> _efficiencyByTypeDataSource;
+        private List<DataPoint> _efficiencyByCountryDataSource;
 
         private List<DataPoint> _battlesByTierDataSource;
-        private List<GenericPoint<string, double>> _battlesByTypeDataSource;
-        private List<GenericPoint<string, double>> _battlesByCountryDataSource;
+        private List<DataPoint> _battlesByTypeDataSource;
+        private List<DataPoint> _battlesByCountryDataSource;
 
         private List<DataPoint> _replaysByMapDataSource;
         private double _maxMapBattles = 10;
@@ -65,8 +64,8 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private BattleType _battleType;
         private List<DataPoint> _winPercentByTierDataSource;
-        private List<GenericPoint<string, double>> _winPercentByTypeDataSource;
-        private List<GenericPoint<string, double>> _winPercentByCountryDataSource;
+        private List<DataPoint> _winPercentByTypeDataSource;
+        private List<DataPoint> _winPercentByCountryDataSource;
 
         /// <summary>
         /// Gets or sets the type of the battle.
@@ -234,7 +233,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by type data source.
         /// </value>
-        public List<GenericPoint<string, double>> EfficiencyByTypeDataSource
+        public List<DataPoint> EfficiencyByTypeDataSource
         {
             get { return _efficiencyByTypeDataSource; }
             set
@@ -250,7 +249,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by country data source.
         /// </value>
-        public List<GenericPoint<string, double>> EfficiencyByCountryDataSource
+        public List<DataPoint> EfficiencyByCountryDataSource
         {
             get { return _efficiencyByCountryDataSource; }
             set
@@ -282,7 +281,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by type data source.
         /// </value>
-        public List<GenericPoint<string, double>> WinPercentByTypeDataSource
+        public List<DataPoint> WinPercentByTypeDataSource
         {
             get { return _winPercentByTypeDataSource; }
             set
@@ -298,7 +297,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by country data source.
         /// </value>
-        public List<GenericPoint<string, double>> WinPercentByCountryDataSource
+        public List<DataPoint> WinPercentByCountryDataSource
         {
             get { return _winPercentByCountryDataSource; }
             set
@@ -330,7 +329,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The battles by type data source.
         /// </value>
-        public List<GenericPoint<string, double>> BattlesByTypeDataSource
+        public List<DataPoint> BattlesByTypeDataSource
         {
             get { return _battlesByTypeDataSource; }
             set
@@ -346,7 +345,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The battles by country data source.
         /// </value>
-        public List<GenericPoint<string, double>> BattlesByCountryDataSource
+        public List<DataPoint> BattlesByCountryDataSource
         {
             get { return _battlesByCountryDataSource; }
             set
@@ -569,7 +568,7 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitEfficiencyByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture), RatingHelper.EffectivityRating(
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, RatingHelper.EffectivityRating(
                 x.Average(y => y.AvgDamageDealt),
                 x.Key,
                 x.Average(y => y.AvgFrags),
@@ -581,7 +580,7 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitEfficiencyByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture), RatingHelper.EffectivityRating(
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new DataPoint(x.Key, RatingHelper.EffectivityRating(
                 x.Average(y => y.AvgDamageDealt),
                 x.Key,
                 x.Average(y => y.AvgFrags),
@@ -601,16 +600,16 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitWn8ByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type)
-                .Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture),
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type)
+                .Select(x => new DataPoint(x.Key,
                     RatingHelper.Wn8(x.ToList())));
             EfficiencyByTypeDataSource = dataSource.ToList();
         }
 
         private void InitWn8ByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId)
-                .Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture),
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId)
+                .Select(x => new DataPoint(x.Key,
                     RatingHelper.Wn8(x.ToList())));
             EfficiencyByCountryDataSource = dataSource.ToList();
         }
@@ -624,14 +623,14 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitWinPercentByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture), 
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, 
                 x.Sum(y => y.Wins) * 100.0/x.Sum(y => y.BattlesCount)));
             WinPercentByTypeDataSource = dataSource.ToList();
         }
 
         private void InitWinPercentByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture),
+            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new DataPoint(x.Key,
                 x.Sum(y => y.Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
             WinPercentByCountryDataSource = dataSource.ToList();
         }
@@ -649,7 +648,7 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitBattlesByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            List<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture), x.Sum(y => y.BattlesCount))).ToList();
+            List<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
             if (dataSource.Any())
             {
                 double max = dataSource.Max(x => x.Y);
@@ -660,7 +659,7 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitBattlesByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
-            List<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new GenericPoint<string, double>(x.Key.ToString(CultureInfo.InvariantCulture), x.Sum(y => y.BattlesCount))).ToList();
+            List<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
             if (dataSource.Any())
             {
                 double max = dataSource.Max(x => x.Y);

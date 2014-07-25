@@ -75,9 +75,9 @@
                     <TabItem Header="2">
                         <charts:WinPercentChartsTab></charts:WinPercentChartsTab>
                     </TabItem>
-                    <!--<TabItem Header="3">
+                    <TabItem Header="3">
                         <charts:BattlesCountChartsTab></charts:BattlesCountChartsTab>
-                    </TabItem>-->
+                    </TabItem>
                 </TabControl>
             </TabItem>
         </TabControl>

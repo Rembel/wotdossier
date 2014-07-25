@@ -373,6 +373,25 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleType>(BattleType.CompanyWar,Resources.Resources.BattleType_CompanyWar), 
             };
 
+        private List<ListItem<Version>> _versions = new List<ListItem<Version>>
+            {
+                new ListItem<Version>(new Version("0.0.0.0"), Resources.Resources.TankFilterPanel_All), 
+                new ListItem<Version>(new Version("0.8.6.0"), "< 0.8.6.0"), 
+                new ListItem<Version>(new Version("0.8.7.0"), "0.8.7.0"), 
+                new ListItem<Version>(new Version("0.8.8.0"), "0.8.8.0"), 
+                new ListItem<Version>(new Version("0.8.9.0"), "0.8.9.0"), 
+                new ListItem<Version>(new Version("0.8.10.0"), "0.8.10.0"), 
+                new ListItem<Version>(new Version("0.8.11.0"), "0.8.11.0"), 
+                new ListItem<Version>(new Version("0.9.1.0"), "0.9.1.0"), 
+                new ListItem<Version>(new Version("0.9.2.0"), "0.9.2.0"), 
+            };
+
+        public List<ListItem<Version>> Versions
+        {
+            get { return _versions; }
+            set { _versions = value; }
+        }
+
         /// <summary>
         /// Gets the battle types.
         /// </summary>

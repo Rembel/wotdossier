@@ -31,7 +31,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             IsAlive = vehicle.Value.isAlive;
 
             ClanDBID = player.Value.clanDBID;
-            platoonID = player.Value.platoonID;
+            platoonID = player.Value.platoonID == 0 ? player.Value.prebattleID : player.Value.platoonID;
 
             AccountDBID = vehicleResult.Value.accountDBID;
             achievements = vehicleResult.Value.achievements;

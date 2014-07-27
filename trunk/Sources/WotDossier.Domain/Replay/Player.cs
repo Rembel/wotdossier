@@ -11,8 +11,11 @@ namespace WotDossier.Domain.Replay
         public int clanDBID { get; set; }
         [DataMember]
         public string name { get; set; }
+        //NOTE: for compatibility with external parser
         [DataMember]
         public int platoonID { get; set; }
+        [DataMember]
+        public int prebattleID { get; set; }
         [DataMember]
         public int team { get; set; }
     }

@@ -351,7 +351,7 @@ namespace WotDossier.Applications
                                 byte[] decrypt = DecryptReplayData(stream.Read(replayDataLength));
                                 byte[] uncompressed = DecompressReplayData(decrypt);
                                 
-                                uncompressed.Dump(@"c:\\temp");
+                                //uncompressed.Dump(@"c:\\temp");
 
                                 using (var uncompressedReplayStream = new MemoryStream(uncompressed))
                                 {

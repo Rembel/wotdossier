@@ -474,43 +474,44 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
 
             List<ReplayFile> result = replays.Where(x =>
-                                    x.Tank != null 
-                                    &&
-                                    (SelectedVersion == VersionAll || (SelectedVersion == Version085 && x.ClientVersion < Version085) || SelectedVersion == x.ClientVersion)
-                                    &&
-                                   (x.Tank.Tier == 1 && Level1Selected
-                                    || x.Tank.Tier == 2 && Level2Selected
-                                    || x.Tank.Tier == 3 && Level3Selected
-                                    || x.Tank.Tier == 4 && Level4Selected
-                                    || x.Tank.Tier == 5 && Level5Selected
-                                    || x.Tank.Tier == 6 && Level6Selected
-                                    || x.Tank.Tier == 7 && Level7Selected
-                                    || x.Tank.Tier == 8 && Level8Selected
-                                    || x.Tank.Tier == 9 && Level9Selected
-                                    || x.Tank.Tier == 10 && Level10Selected)
-                                   &&
-                                       (x.Tank.Type == (int)TankType.LT && LTSelected
-                                        || x.Tank.Type == (int)TankType.MT && MTSelected
-                                        || x.Tank.Type == (int)TankType.HT && HTSelected
-                                        || x.Tank.Type == (int)TankType.TD && TDSelected
-                                        || x.Tank.Type == (int)TankType.SPG && SPGSelected)
-                                   &&
-                                    (SelectedFolder != null && x.FolderId == SelectedFolder.Id)
-                                    &&
-                                   (x.CountryId == Country.Ussr && USSRSelected
-                                    || x.CountryId == Country.Germany && GermanySelected
-                                    || x.CountryId == Country.China && ChinaSelected
-                                    || x.CountryId == Country.France && FranceSelected
-                                    || x.CountryId == Country.Usa && USSelected
-                                    || x.CountryId == Country.Japan && JPSelected
-                                    || x.CountryId == Country.Uk && UKSelected)
-                                    &&
-                                    (x.IsWinner == SelectedBattleResult || SelectedBattleResult == BattleStatus.Unknown)
-                                   && (x.Tank.Premium == 1 || !IsPremium)
-                                   && (SelectedMap == null || x.MapId == SelectedMap.Id || SelectedMap.Id == 0)
-                                   && FieldFilter(x)
-                                   && MembersFilter(x.TeamMembers, members)
-                                   && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
+                x.Tank != null
+                &&
+                (SelectedVersion == VersionAll || (SelectedVersion == Version085 && x.ClientVersion < Version085) ||
+                 SelectedVersion == x.ClientVersion)
+                &&
+                (Level1Selected && x.Tank.Tier == 1
+                 || Level2Selected && x.Tank.Tier == 2
+                 || Level3Selected && x.Tank.Tier == 3
+                 || Level4Selected && x.Tank.Tier == 4
+                 || Level5Selected && x.Tank.Tier == 5
+                 || Level6Selected && x.Tank.Tier == 6
+                 || Level7Selected && x.Tank.Tier == 7
+                 || Level8Selected && x.Tank.Tier == 8
+                 || Level9Selected && x.Tank.Tier == 9
+                 || Level10Selected && x.Tank.Tier == 10)
+                &&
+                (LTSelected && x.Tank.Type == (int) TankType.LT
+                 || MTSelected && x.Tank.Type == (int) TankType.MT
+                 || HTSelected && x.Tank.Type == (int) TankType.HT
+                 || TDSelected && x.Tank.Type == (int) TankType.TD
+                 || SPGSelected && x.Tank.Type == (int) TankType.SPG)
+                &&
+                (SelectedFolder != null && x.FolderId == SelectedFolder.Id)
+                &&
+                (USSRSelected && x.CountryId == Country.Ussr
+                 || GermanySelected && x.CountryId == Country.Germany
+                 || ChinaSelected && x.CountryId == Country.China
+                 || FranceSelected && x.CountryId == Country.France
+                 || USSelected && x.CountryId == Country.Usa
+                 || JPSelected && x.CountryId == Country.Japan
+                 || UKSelected && x.CountryId == Country.Uk)
+                &&
+                (x.IsWinner == SelectedBattleResult || SelectedBattleResult == BattleStatus.Unknown)
+                && (x.Tank.Premium == 1 || !IsPremium)
+                && (SelectedMap == null || x.MapId == SelectedMap.Id || SelectedMap.Id == 0)
+                && FieldFilter(x)
+                && MembersFilter(x.TeamMembers, members)
+                && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
                 ).ToList();
 
             //var footerList = PrepareToReturn(result, SelectedFolder != null ? SelectedFolder.Id : Guid.NewGuid());

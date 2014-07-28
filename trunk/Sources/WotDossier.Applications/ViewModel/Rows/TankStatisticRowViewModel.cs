@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AutoMapper;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Tank;
 using Mapper = WotDossier.Applications.Logic.Mapper;
@@ -32,66 +31,6 @@ namespace WotDossier.Applications.ViewModel.Rows
         public TankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list)
             : base(tank, list.Select(x => new TankStatisticRowViewModel(x)).ToList())
         {
-            OriginalXP = tank.A15x15.originalXP;
-            DamageAssistedTrack = tank.A15x15.damageAssistedTrack;
-            DamageAssistedRadio = tank.A15x15.damageAssistedRadio;
-            ShotsReceived = tank.A15x15.shotsReceived;
-            NoDamageShotsReceived = tank.A15x15.noDamageShotsReceived;
-            PiercedReceived = tank.A15x15.piercedReceived;
-            HeHitsReceived = tank.A15x15.heHitsReceived;
-            HeHits = tank.A15x15.he_hits;
-            Pierced = tank.A15x15.pierced;
-            XpBefore88 = tank.A15x15.xpBefore8_8;
-            BattlesCountBefore88 = tank.A15x15.battlesCountBefore8_8;
-            BattlesCount88 = tank.A15x15.battlesCount - BattlesCountBefore88;
-            IsPremium = tank.Common.premium == 1;
-
-            #region [ IStatisticBattles ]
-            BattlesCount = tank.A15x15.battlesCount;
-            Wins = tank.A15x15.wins;
-            Losses = tank.A15x15.losses;
-            SurvivedBattles = tank.A15x15.survivedBattles;
-            SurvivedAndWon = tank.A15x15.winAndSurvived;
-            #endregion
-
-            #region [ IStatisticDamage ]
-            DamageDealt = tank.A15x15.damageDealt;
-            DamageTaken = tank.A15x15.damageReceived;
-            MaxDamage = tank.A15x15.maxDamage;
-            #endregion
-
-            #region [ IStatisticPerformance ]
-            Shots = tank.A15x15.shots;
-            Hits = tank.A15x15.hits;
-            if (Shots > 0)
-            {
-                HitsPercents = Hits / (double)Shots * 100.0;
-            }
-            CapturePoints = tank.A15x15.capturePoints;
-            DroppedCapturePoints = tank.A15x15.droppedCapturePoints;
-            Spotted = tank.A15x15.spotted;
-            #endregion
-
-            #region [ ITankRowXP ]
-            Xp = tank.A15x15.xp;
-            MaxXp = tank.A15x15.maxXP;
-            #endregion
-
-            #region [ IStatisticFrags ]
-            Frags = tank.A15x15.frags;
-            MaxFrags = tank.A15x15.maxFrags;
-            Tier8Frags = tank.A15x15.frags8p;
-            #endregion
-
-            #region [ IStatisticTime ]
-            LastBattle = tank.Common.lastBattleTimeR;
-            PlayTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime);
-            if (tank.A15x15.battlesCount > 0)
-            {
-                AverageBattleTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime / tank.A15x15.battlesCount);
-            }
-            #endregion
-
             #region [ IStatisticFrags ]
             BeastFrags = tank.Achievements.FragsBeast;
             SinaiFrags = tank.Achievements.FragsSinai;
@@ -104,6 +43,11 @@ namespace WotDossier.Applications.ViewModel.Rows
             Mapper.Map<IRandomBattlesAchievements>(tank.Achievements, this);
 
             #endregion
+        }
+
+        public override Func<TankJson, StatisticJson> Predicate
+        {
+            get { return tank => tank.A15x15; }
         }
 
         /// <summary>

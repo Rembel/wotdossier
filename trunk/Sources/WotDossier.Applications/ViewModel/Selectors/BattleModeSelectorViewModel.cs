@@ -10,6 +10,7 @@ namespace WotDossier.Applications.ViewModel.Selectors
             new ListItem<BattleMode>(BattleMode.RandomCompany, Resources.Resources.BattleMode_RandomCompany),
             new ListItem<BattleMode>(BattleMode.TeamBattle, Resources.Resources.BattleMode_TeamBattle), 
             new ListItem<BattleMode>(BattleMode.HistoricalBattle, Resources.Resources.BattleMode_HistoricalBattle), 
+            //new ListItem<BattleMode>(BattleMode.Clan, Resources.Resources.BattleMode_Clan), 
         };
         
         public List<ListItem<BattleMode>> BattleModes

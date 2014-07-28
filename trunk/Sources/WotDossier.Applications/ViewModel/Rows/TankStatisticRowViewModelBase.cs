@@ -8,7 +8,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TankStatisticRowViewModelBase<T> : PeriodStatisticViewModel<T>, ITankStatisticRow where T : StatisticViewModelBase
+    public abstract class TankStatisticRowViewModelBase<T> : PeriodStatisticViewModel<T>, ITankStatisticRow where T : StatisticViewModelBase
     {
         private DateTime _lastBattle;
         private bool _isFavorite;
@@ -301,6 +301,8 @@ namespace WotDossier.Applications.ViewModel.Rows
         {
         }
 
+        public abstract Func<TankJson, StatisticJson> Predicate { get; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
@@ -316,8 +318,66 @@ namespace WotDossier.Applications.ViewModel.Rows
             TankId = tank.Common.tankid;
             TankUniqueId = tank.UniqueId();
             Mileage = tank.Common.mileage / 1000;
+            IsPremium = tank.Common.premium == 1;
 
-            Updated = Utils.UnixDateToDateTime(tank.Common.updated);
+            OriginalXP = Predicate(tank).originalXP;
+            DamageAssistedTrack = Predicate(tank).damageAssistedTrack;
+            DamageAssistedRadio = Predicate(tank).damageAssistedRadio;
+            ShotsReceived = Predicate(tank).shotsReceived;
+            NoDamageShotsReceived = Predicate(tank).noDamageShotsReceived;
+            PiercedReceived = Predicate(tank).piercedReceived;
+            HeHitsReceived = Predicate(tank).heHitsReceived;
+            HeHits = Predicate(tank).he_hits;
+            Pierced = Predicate(tank).pierced;
+            XpBefore88 = Predicate(tank).xpBefore8_8;
+            BattlesCountBefore88 = Predicate(tank).battlesCountBefore8_8;
+            BattlesCount88 = Predicate(tank).battlesCount - BattlesCountBefore88;
+
+            #region [ IStatisticBattles ]
+            BattlesCount = Predicate(tank).battlesCount;
+            Wins = Predicate(tank).wins;
+            Losses = Predicate(tank).losses;
+            SurvivedBattles = Predicate(tank).survivedBattles;
+            SurvivedAndWon = Predicate(tank).winAndSurvived;
+            #endregion
+
+            #region [ IStatisticDamage ]
+            DamageDealt = Predicate(tank).damageDealt;
+            DamageTaken = Predicate(tank).damageReceived;
+            MaxDamage = Predicate(tank).maxDamage;
+            #endregion
+
+            #region [ IStatisticPerformance ]
+            Shots = Predicate(tank).shots;
+            Hits = Predicate(tank).hits;
+            if (Shots > 0)
+            {
+                HitsPercents = Hits / (double)Shots * 100.0;
+            }
+            CapturePoints = Predicate(tank).capturePoints;
+            DroppedCapturePoints = Predicate(tank).droppedCapturePoints;
+            Spotted = Predicate(tank).spotted;
+            #endregion
+
+            #region [ ITankRowXP ]
+            Xp = Predicate(tank).xp;
+            MaxXp = Predicate(tank).maxXP;
+            #endregion
+
+            #region [ IStatisticFrags ]
+            Frags = Predicate(tank).frags;
+            MaxFrags = Predicate(tank).maxFrags;
+            Tier8Frags = Predicate(tank).frags8p;
+            #endregion
+
+            #region [ IStatisticTime ]
+            LastBattle = tank.Common.lastBattleTimeR;
+            PlayTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime);
+            if (Predicate(tank).battlesCount > 0)
+            {
+                AverageBattleTime = new TimeSpan(0, 0, 0, tank.Common.battleLifeTime / Predicate(tank).battlesCount);
+            }
+            #endregion
         }
 
         public TankDescription Description { get; set; }

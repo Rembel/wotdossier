@@ -79,12 +79,14 @@
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
     <Compile Include="BattleModeStrategies\HistoricalStatisticViewStrategy.cs" />
+    <Compile Include="BattleModeStrategies\ClanStatisticViewStrategy.cs" />
     <Compile Include="BattleModeStrategies\RandomStatisticViewStrategy.cs" />
     <Compile Include="BattleModeStrategies\StatisticViewStrategyBase.cs" />
     <Compile Include="BattleModeStrategies\StatisticViewStrategyManager.cs" />
     <Compile Include="BattleModeStrategies\TeamStatisticViewStrategy.cs" />
     <Compile Include="CultureHelper.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="Logic\Adapter\ClanBattlesStatAdapter.cs" />
     <Compile Include="Logic\Mapper.cs" />
     <Compile Include="Model\BattleModel.cs" />
     <Compile Include="Parser\Packet.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="ViewModel\Replay\TeamMember.cs" />
     <Compile Include="ViewModel\Replay\UploadReplayViewModel.cs" />
     <Compile Include="ViewModel\Rows\ITankStatisticRow.cs" />
+    <Compile Include="ViewModel\Rows\ClanTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\TankStatisticRowViewModelBase.cs" />
     <Compile Include="ViewModel\Rows\TeamBattlesTankStatisticRowViewModel.cs">
       <SubType>Code</SubType>

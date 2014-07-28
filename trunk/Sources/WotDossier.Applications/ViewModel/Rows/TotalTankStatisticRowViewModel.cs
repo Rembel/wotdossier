@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.Logic;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
@@ -187,6 +188,11 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             WN8Rating = RatingHelper.Wn8(list);
             PerformanceRating = RatingHelper.PerformanceRating(list);
+        }
+
+        public override Func<TankJson, StatisticJson> Predicate
+        {
+            get { throw new NotImplementedException(); }
         }
 
         /// <summary>

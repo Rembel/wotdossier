@@ -1,4 +1,3 @@
-using WotDossier.Applications.ViewModel;
 using WotDossier.Dal;
 using WotDossier.Domain;
 
@@ -19,6 +18,10 @@ namespace WotDossier.Applications.BattleModeStrategies
             if (randomCompany == BattleMode.TeamBattle)
             {
                 return new TeamStatisticViewStrategy(dossierRepository);
+            }
+            if (randomCompany == BattleMode.Clan)
+            {
+                return new ClanStatisticViewStrategy(dossierRepository);
             }
             return null;
         }

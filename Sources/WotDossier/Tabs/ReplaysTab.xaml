@@ -78,7 +78,9 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <controls:ReplaysFilterPanel Grid.Column="1" DataContext="{Binding ReplayFilter}" />
+        <Grid Grid.Column="1" Background="{StaticResource PanelBackground}">
+            <controls:ReplaysFilterPanel DataContext="{Binding ReplayFilter}" HorizontalAlignment="Left" />
+        </Grid>
         <TreeView TabIndex="1" Name="Folders" Margin="5,5,5,0" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
                   ItemTemplate="{StaticResource TreeTemplate}" ItemsSource="{Binding ReplaysFolders}" ItemContainerStyle="{StaticResource TreeViewItemStyle}">
             <i:Interaction.Behaviors>

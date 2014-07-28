@@ -6,14 +6,14 @@
 # Phalynx www.vbaddict.net      #
 ###############################'#
 
-import struct, json, time, sys, os, shutil, datetime, re, codecs
+import struct, json, time, sys, os, shutil, datetime, re, codecs, mmap
 
 VEHICLE_DEVICE_TYPE_NAMES = ('engine', 'ammoBay', 'fuelTank', 'radio', 'track', 'gun', 'turretRotator', 'surveyingDevice')
 VEHICLE_TANKMAN_TYPE_NAMES = ('commander', 'driver', 'radioman', 'gunner', 'loader')
 
 def main():
 
-	parserversion = "0.9.0.6"
+	parserversion = "0.9.2.0"
 
 	global option_console, option_advanced, option_chat, option_server, filename_source
 	option_console = 0
@@ -682,14 +682,15 @@ def extract_advanced(fn):
 			printmessage('cannot load advanced pickle: ' + e.message)
 			printmessage('Position: ' + str(f.tell()) + ", Length: " + str(advancedlength))
 
+	
 		f.seek(f.tell()+29)
-
+		
 		advancedlength = struct.unpack("B",f.read(1))[0]
 
 		if advancedlength==255:
 			advancedlength = struct.unpack("H",f.read(2))[0]
 			f.read(1)
-		
+			
 		#try:
 		rosters = []
 		try:
@@ -717,27 +718,33 @@ def extract_advanced(fn):
 			compDescr = (bindata[1] << 8) + bindata[0]
 			rosterdata[roster[2]]['compDescr'] = compDescr
 			
-			# Does not make sense, will check later
 			rosterdata[roster[2]]['vehicle'] = dict()
-			rosterdata[roster[2]]['vehicle']['chassisID'] = bindata[2]
-			rosterdata[roster[2]]['vehicle']['engineID'] = bindata[3]
-			rosterdata[roster[2]]['vehicle']['fueltankID'] = bindata[4]
-			rosterdata[roster[2]]['vehicle']['radioID'] = bindata[5]
-			rosterdata[roster[2]]['vehicle']['turretID'] = bindata[6]
-			rosterdata[roster[2]]['vehicle']['gunID'] = bindata[7]
+			
+			# Does not make sense, will check later
+			# rosterdata[roster[2]]['vehicle']['chassisID'] = bindata[2]
+			# rosterdata[roster[2]]['vehicle']['engineID'] = bindata[3]
+			# rosterdata[roster[2]]['vehicle']['fueltankID'] = bindata[4]
+			# rosterdata[roster[2]]['vehicle']['radioID'] = bindata[5]
+			# rosterdata[roster[2]]['vehicle']['turretID'] = bindata[6]
+			# rosterdata[roster[2]]['vehicle']['gunID'] = bindata[7]
 
+			
+			# Thanks to Rembel
 			flags = struct.unpack('B', roster[1][14])[0]
-
+			
 			optional_devices_mask = flags & 15
+
 			idx = 2
 
 			pos = 15
-
+			
+		
 			while optional_devices_mask:
 				if optional_devices_mask & 1:
 					try:
-						m = struct.unpack('H', roster[1][pos:pos+2])[0]
-						rosterdata[roster[2]]['vehicle']['module_' + str(idx)] = m
+						if len(roster[1]) >= pos+2:
+							m = struct.unpack('H', roster[1][pos:pos+2])[0]
+							rosterdata[roster[2]]['vehicle']['module_' + str(idx)] = m
 					except Exception, e:
 						printmessage('error on processing player [' + str(roster[2]) + ']: '  + e.message)
 				else:
@@ -746,9 +753,10 @@ def extract_advanced(fn):
 				optional_devices_mask = optional_devices_mask >> 1
 				idx = idx - 1
 				pos = pos + 2
-							
-		advanced['roster'] = rosterdata		
-
+	
+			
+		advanced['roster'] = rosterdata
+	
 	advanced['valid'] = 1
 	return advanced
 			
@@ -783,24 +791,25 @@ def decrypt_file(fn, offset=0):
 	printmessage("Decrypting from offset {}".format(offset))
 	of = fn + ".tmp"
 	with open(fn, 'rb') as f:
-	    f.seek(offset)
-	    with open(of, 'wb') as out:
-	        while True:
-	            b = f.read(8)
-	            if not b:
-	                break
+
+		f.seek(offset)
+		with open(of, 'wb') as out:
+			while True:
+				b = f.read(8)
+				if not b:
+					break
 	
-	            if len(b) < 8:
-	                b += '\x00' * (8 - len(b))  # pad for correct blocksize
+				if len(b) < 8:
+					b += '\x00' * (8 - len(b))  # pad for correct blocksize
 	
-	            if bc > 0:
-	                db = bf.decrypt(b)
-	                if pb:
-	                    db = ''.join([chr(int(b2a_hex(a), 16) ^ int(b2a_hex(b), 16)) for a, b in zip(db, pb)])
+				if bc > 0:
+					db = bf.decrypt(b)
+					if pb:
+						db = ''.join([chr(int(b2a_hex(a), 16) ^ int(b2a_hex(b), 16)) for a, b in zip(db, pb)])
 	
-	                pb = db
-	                out.write(db)
-	            bc += 1
+					pb = db
+					out.write(db)
+				bc += 1
 	        return of
 	return None
 
@@ -1135,6 +1144,205 @@ def listAchievements():
 	achievements[306] = 'histBattle3_historyLessons'
 	achievements[307] = 'histBattle4_battlefield'
 	achievements[308] = 'histBattle4_historyLessons'
+	achievements[309] = 'xp'
+	achievements[310] = 'battlesCount'
+	achievements[311] = 'wins'
+	achievements[312] = 'winAndSurvived'
+	achievements[313] = 'losses'
+	achievements[314] = 'survivedBattles'
+	achievements[315] = 'frags'
+	achievements[316] = 'frags8p'
+	achievements[317] = 'shots'
+	achievements[318] = 'directHits'
+	achievements[319] = 'spotted'
+	achievements[320] = 'damageDealt'
+	achievements[321] = 'damageReceived'
+	achievements[322] = 'capturePoints'
+	achievements[323] = 'droppedCapturePoints'
+	achievements[324] = 'originalXP'
+	achievements[325] = 'damageAssistedTrack'
+	achievements[326] = 'damageAssistedRadio'
+	achievements[327] = 'directHitsReceived'
+	achievements[328] = 'noDamageDirectHitsReceived'
+	achievements[329] = 'piercingsReceived'
+	achievements[330] = 'explosionHitsReceived'
+	achievements[331] = 'explosionHits'
+	achievements[332] = 'piercings'
+	achievements[333] = 'potentialDamageReceived'
+	achievements[334] = 'damageBlockedByArmor'
+	achievements[335] = 'maxXP'
+	achievements[336] = 'maxXPVehicle'
+	achievements[337] = 'maxFrags'
+	achievements[338] = 'maxFragsVehicle'
+	achievements[339] = 'maxDamage'
+	achievements[340] = 'maxDamageVehicle'
+	achievements[341] = 'xp'
+	achievements[342] = 'battlesCount'
+	achievements[343] = 'wins'
+	achievements[344] = 'winAndSurvived'
+	achievements[345] = 'losses'
+	achievements[346] = 'survivedBattles'
+	achievements[347] = 'frags'
+	achievements[348] = 'frags8p'
+	achievements[349] = 'shots'
+	achievements[350] = 'directHits'
+	achievements[351] = 'spotted'
+	achievements[352] = 'damageDealt'
+	achievements[353] = 'damageReceived'
+	achievements[354] = 'capturePoints'
+	achievements[355] = 'droppedCapturePoints'
+	achievements[356] = 'originalXP'
+	achievements[357] = 'damageAssistedTrack'
+	achievements[358] = 'damageAssistedRadio'
+	achievements[359] = 'directHitsReceived'
+	achievements[360] = 'noDamageDirectHitsReceived'
+	achievements[361] = 'piercingsReceived'
+	achievements[362] = 'explosionHitsReceived'
+	achievements[363] = 'explosionHits'
+	achievements[364] = 'piercings'
+	achievements[365] = 'potentialDamageReceived'
+	achievements[366] = 'damageBlockedByArmor'
+	achievements[367] = 'maxXP'
+	achievements[368] = 'maxXPVehicle'
+	achievements[369] = 'maxFrags'
+	achievements[370] = 'maxFragsVehicle'
+	achievements[371] = 'maxDamage'
+	achievements[372] = 'maxDamageVehicle'
+	achievements[373] = 'xp'
+	achievements[374] = 'battlesCount'
+	achievements[375] = 'wins'
+	achievements[376] = 'winAndSurvived'
+	achievements[377] = 'losses'
+	achievements[378] = 'survivedBattles'
+	achievements[379] = 'frags'
+	achievements[380] = 'frags8p'
+	achievements[381] = 'shots'
+	achievements[382] = 'directHits'
+	achievements[383] = 'spotted'
+	achievements[384] = 'damageDealt'
+	achievements[385] = 'damageReceived'
+	achievements[386] = 'capturePoints'
+	achievements[387] = 'droppedCapturePoints'
+	achievements[388] = 'originalXP'
+	achievements[389] = 'damageAssistedTrack'
+	achievements[390] = 'damageAssistedRadio'
+	achievements[391] = 'directHitsReceived'
+	achievements[392] = 'noDamageDirectHitsReceived'
+	achievements[393] = 'piercingsReceived'
+	achievements[394] = 'explosionHitsReceived'
+	achievements[395] = 'explosionHits'
+	achievements[396] = 'piercings'
+	achievements[397] = 'potentialDamageReceived'
+	achievements[398] = 'damageBlockedByArmor'
+	achievements[399] = 'xp'
+	achievements[400] = 'battlesCount'
+	achievements[401] = 'wins'
+	achievements[402] = 'winAndSurvived'
+	achievements[403] = 'losses'
+	achievements[404] = 'survivedBattles'
+	achievements[405] = 'frags'
+	achievements[406] = 'frags8p'
+	achievements[407] = 'shots'
+	achievements[408] = 'directHits'
+	achievements[409] = 'spotted'
+	achievements[410] = 'damageDealt'
+	achievements[411] = 'damageReceived'
+	achievements[412] = 'capturePoints'
+	achievements[413] = 'droppedCapturePoints'
+	achievements[414] = 'originalXP'
+	achievements[415] = 'damageAssistedTrack'
+	achievements[416] = 'damageAssistedRadio'
+	achievements[417] = 'directHitsReceived'
+	achievements[418] = 'noDamageDirectHitsReceived'
+	achievements[419] = 'piercingsReceived'
+	achievements[420] = 'explosionHitsReceived'
+	achievements[421] = 'explosionHits'
+	achievements[422] = 'piercings'
+	achievements[423] = 'potentialDamageReceived'
+	achievements[424] = 'damageBlockedByArmor'
+	achievements[425] = 'fortResourceInSorties'
+	achievements[426] = 'maxFortResourceInSorties'
+	achievements[427] = 'fortResourceInBattles'
+	achievements[428] = 'maxFortResourceInBattles'
+	achievements[429] = 'defenceHours'
+	achievements[430] = 'successfulDefenceHours'
+	achievements[431] = 'attackNumber'
+	achievements[432] = 'enemyBasePlunderNumber'
+	achievements[433] = 'enemyBasePlunderNumberInAttack'
+	achievements[434] = 'fortResourceInSorties'
+	achievements[435] = 'maxFortResourceInSorties'
+	achievements[436] = 'fortResourceInBattles'
+	achievements[437] = 'maxFortResourceInBattles'
+	achievements[438] = 'defenceHours'
+	achievements[439] = 'successfulDefenceHours'
+	achievements[440] = 'attackNumber'
+	achievements[441] = 'enemyBasePlunderNumber'
+	achievements[442] = 'enemyBasePlunderNumberInAttack'
+	achievements[443] = 'production'
+	achievements[444] = 'middleBattlesCount'
+	achievements[445] = 'championBattlesCount'
+	achievements[446] = 'absoluteBattlesCount'
+	achievements[447] = 'fortResourceInMiddle'
+	achievements[448] = 'fortResourceInChampion'
+	achievements[449] = 'fortResourceInAbsolute'
+	achievements[450] = 'battlesHours'
+	achievements[451] = 'attackCount'
+	achievements[452] = 'defenceCount'
+	achievements[453] = 'enemyBaseCaptureCount'
+	achievements[454] = 'ownBaseLossCount'
+	achievements[455] = 'ownBaseLossCountInDefence'
+	achievements[456] = 'enemyBaseCaptureCountInAttack'
+	achievements[457] = 'maxXP'
+	achievements[458] = 'maxXPVehicle'
+	achievements[459] = 'maxFrags'
+	achievements[460] = 'maxFragsVehicle'
+	achievements[461] = 'maxDamage'
+	achievements[462] = 'maxDamageVehicle'
+	achievements[463] = 'maxXP'
+	achievements[464] = 'maxXPVehicle'
+	achievements[465] = 'maxFrags'
+	achievements[466] = 'maxFragsVehicle'
+	achievements[467] = 'maxDamage'
+	achievements[468] = 'maxDamageVehicle'
+	achievements[469] = 'promisingFighter'
+	achievements[470] = 'promisingFighterMedal'
+	achievements[471] = 'heavyFire'
+	achievements[472] = 'heavyFireMedal'
+	achievements[473] = 'ranger'
+	achievements[474] = 'rangerMedal'
+	achievements[475] = 'fireAndSteel'
+	achievements[476] = 'fireAndSteelMedal'
+	achievements[477] = 'pyromaniac'
+	achievements[478] = 'pyromaniacMedal'
+	achievements[479] = 'noMansLand'
+	achievements[480] = 'damageRating'
+	achievements[481] = 'citadel'
+	achievements[482] = 'conqueror'
+	achievements[483] = 'fireAndSword'
+	achievements[484] = 'crusher'
+	achievements[485] = 'counterblow'
+	achievements[486] = 'soldierOfFortune'
+	achievements[487] = 'kampfer'
+	achievements[488] = 'WFC2014WinSeries'
+	achievements[489] = 'maxWFC2014WinSeries'
+	achievements[490] = 'WFC2014'
+	achievements[491] = 'histBattle5_battlefield'
+	achievements[492] = 'histBattle5_historyLessons'
+	achievements[493] = 'histBattle6_battlefield'
+	achievements[494] = 'histBattle6_historyLessons'
+	achievements[495] = 'guerrilla'
+	achievements[496] = 'guerrillaMedal'
+	achievements[497] = 'infiltrator'
+	achievements[498] = 'infiltratorMedal'
+	achievements[499] = 'sentinel'
+	achievements[500] = 'sentinelMedal'
+	achievements[501] = 'prematureDetonation'
+	achievements[502] = 'prematureDetonationMedal'
+	achievements[503] = 'bruteForce'
+	achievements[504] = 'bruteForceMedal'
+	achievements[505] = 'awardCount'
+	achievements[506] = 'battleTested'
+	achievements[507] = 'medalRotmistrov'
 
 	return achievements
 

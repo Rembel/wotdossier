@@ -156,7 +156,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="groupedEntities">The tank statistic entities grouped by tankId.</param>
         /// <param name="predicate">Predicate to get tank statistic</param>
         /// <returns></returns>
-        private ITankStatisticRow ToTankStatisticRow(IGrouping<int, TankStatisticEntityBase> groupedEntities, Func<TankJson, StatisticJson> predicate)
+        protected ITankStatisticRow ToTankStatisticRow(IGrouping<int, TankStatisticEntityBase> groupedEntities, Func<TankJson, StatisticJson> predicate)
         {
             List<TankJson> statisticViewModels = groupedEntities.Select(x => UnZipObject(x.Raw)).ToList();
             TankJson currentStatistic = statisticViewModels.OrderByDescending(x => predicate(x).battlesCount).First();

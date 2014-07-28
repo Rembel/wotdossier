@@ -3026,4 +3026,7 @@
   <data name="Chart_WinPercentByType" xml:space="preserve">
     <value>% побед по типам</value>
   </data>
+  <data name="BattleMode_Clan" xml:space="preserve">
+    <value>Клан</value>
+  </data>
 </root>

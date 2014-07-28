@@ -2934,4 +2934,7 @@ up to 500 m</value>
   <data name="Chart_WinPercentByType" xml:space="preserve">
     <value>Win % by Type</value>
   </data>
+  <data name="BattleMode_Clan" xml:space="preserve">
+    <value>Clan</value>
+  </data>
 </root>

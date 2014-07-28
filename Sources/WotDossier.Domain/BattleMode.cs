@@ -4,6 +4,7 @@ namespace WotDossier.Domain
     {
         RandomCompany = 0,
         TeamBattle = 1,
-        HistoricalBattle = 2
+        HistoricalBattle = 2,
+        Clan = 3
     }
 }

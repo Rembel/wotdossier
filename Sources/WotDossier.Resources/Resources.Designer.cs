@@ -1547,6 +1547,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clan.
+        /// </summary>
+        public static string BattleMode_Clan {
+            get {
+                return ResourceManager.GetString("BattleMode_Clan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Historical Battle.
         /// </summary>
         public static string BattleMode_HistoricalBattle {

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using WotDossier.Applications.ViewModel.Replay;
-using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -47,6 +46,9 @@ namespace WotDossier.Applications.ViewModel.Filter
         private int? _endValue;
         private string _member;
         private BattleStatus _selectedBattleResult = BattleStatus.Unknown;
+        private static readonly Version VersionAll = new Version("0.0.0.0");
+
+        #region levels
 
         public bool Level10Selected
         {
@@ -148,6 +150,10 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        #endregion
+
+        #region types
+
         public bool SPGSelected
         {
             get { return _spgSelected; }
@@ -197,6 +203,10 @@ namespace WotDossier.Applications.ViewModel.Filter
                 OnPropertyChanged("LTSelected");
             }
         }
+
+        #endregion
+
+        #region countries
 
         public bool USSRSelected
         {
@@ -267,6 +277,8 @@ namespace WotDossier.Applications.ViewModel.Filter
                 OnPropertyChanged("JPSelected");
             }
         }
+
+        #endregion
 
         public bool IsPremium
         {
@@ -363,7 +375,45 @@ namespace WotDossier.Applications.ViewModel.Filter
         public DelegateCommand ClearCommand { get; set; }
         public DelegateCommand AllCommand { get; set; }
 
-        private List<ListItem<BattleType>> _battleTypes = new List<ListItem<BattleType>>
+        private List<ListItem<Version>> _versions = new List<ListItem<Version>>
+            {
+                new ListItem<Version>(VersionAll, Resources.Resources.TankFilterPanel_All), 
+                new ListItem<Version>(Version085, "< 0.8.6"), 
+                new ListItem<Version>(new Version("0.8.6.0"), "0.8.6"), 
+                new ListItem<Version>(new Version("0.8.7.0"), "0.8.7"), 
+                new ListItem<Version>(new Version("0.8.8.0"), "0.8.8"), 
+                new ListItem<Version>(new Version("0.8.9.0"), "0.8.9"), 
+                new ListItem<Version>(new Version("0.8.10.0"), "0.8.10"), 
+                new ListItem<Version>(new Version("0.8.11.0"), "0.8.11"), 
+                new ListItem<Version>(new Version("0.9.0.0"), "0.9.0"), 
+                new ListItem<Version>(new Version("0.9.1.0"), "0.9.1"), 
+                new ListItem<Version>(new Version("0.9.2.0"), "0.9.2"), 
+            };
+
+        /// <summary>
+        /// Gets or sets the versions.
+        /// </summary>
+        public List<ListItem<Version>> Versions
+        {
+            get { return _versions; }
+            set { _versions = value; }
+        }
+
+        private Version _selectedVersion = VersionAll;
+        /// <summary>
+        /// Gets or sets the selected version.
+        /// </summary>
+        public Version SelectedVersion
+        {
+            get { return _selectedVersion; }
+            set
+            {
+                _selectedVersion = value;
+                OnPropertyChanged("SelectedVersion");
+            }
+        }
+
+        private readonly List<ListItem<BattleType>> _battleTypes = new List<ListItem<BattleType>>
             {
                 new ListItem<BattleType>(BattleType.Unknown, Resources.Resources.TankFilterPanel_All), 
                 new ListItem<BattleType>(BattleType.Regular, Resources.Resources.BattleType_Regular), 
@@ -372,25 +422,6 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
                 new ListItem<BattleType>(BattleType.CompanyWar,Resources.Resources.BattleType_CompanyWar), 
             };
-
-        private List<ListItem<Version>> _versions = new List<ListItem<Version>>
-            {
-                new ListItem<Version>(new Version("0.0.0.0"), Resources.Resources.TankFilterPanel_All), 
-                new ListItem<Version>(new Version("0.8.6.0"), "< 0.8.6.0"), 
-                new ListItem<Version>(new Version("0.8.7.0"), "0.8.7.0"), 
-                new ListItem<Version>(new Version("0.8.8.0"), "0.8.8.0"), 
-                new ListItem<Version>(new Version("0.8.9.0"), "0.8.9.0"), 
-                new ListItem<Version>(new Version("0.8.10.0"), "0.8.10.0"), 
-                new ListItem<Version>(new Version("0.8.11.0"), "0.8.11.0"), 
-                new ListItem<Version>(new Version("0.9.1.0"), "0.9.1.0"), 
-                new ListItem<Version>(new Version("0.9.2.0"), "0.9.2.0"), 
-            };
-
-        public List<ListItem<Version>> Versions
-        {
-            get { return _versions; }
-            set { _versions = value; }
-        }
 
         /// <summary>
         /// Gets the battle types.
@@ -404,6 +435,8 @@ namespace WotDossier.Applications.ViewModel.Filter
         }
 
         private BattleType _battleType;
+        private static Version Version085 = new Version("0.8.5.0");
+
         /// <summary>
         /// Gets or sets the type of the battle.
         /// </summary>
@@ -441,7 +474,10 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
 
             List<ReplayFile> result = replays.Where(x =>
-                                    x.Tank != null &&
+                                    x.Tank != null 
+                                    &&
+                                    (SelectedVersion == VersionAll || (SelectedVersion == Version085 && x.ClientVersion < Version085) || SelectedVersion == x.ClientVersion)
+                                    &&
                                    (x.Tank.Tier == 1 && Level1Selected
                                     || x.Tank.Tier == 2 && Level2Selected
                                     || x.Tank.Tier == 3 && Level3Selected

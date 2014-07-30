@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Globalization;
 using System.Linq;
+using System.Text;
+using System.Windows;
 using Newtonsoft.Json.Linq;
 using WotDossier.Applications.View;
 using WotDossier.Common;
@@ -158,6 +160,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         public DelegateCommand HideTeamMemberResultsCommand { get; set; }
+        public DelegateCommand<IList<object>> CopyCommand { get; set; }
 
         public TeamMember ReplayUser { get; set; }
 
@@ -173,6 +176,25 @@ namespace WotDossier.Applications.ViewModel.Replay
             : base(view)
         {
             HideTeamMemberResultsCommand = new DelegateCommand(OnHideTeamMemberResultsCommand);
+            CopyCommand = new DelegateCommand<IList<object>>(OnCopyCommand);
+        }
+
+        private void OnCopyCommand(IList<object> rows)
+        {
+            if (rows != null)
+            {
+                IEnumerable<ChatMessage> chatMessages = rows.Cast<ChatMessage>();
+
+                StringBuilder builder = new StringBuilder();
+
+                foreach (ChatMessage message in chatMessages)
+                {
+                    builder.AppendFormat("{0}: {1}", message.Player, message.Text);
+                    builder.AppendLine();
+                }
+
+                Clipboard.SetText(builder.ToString());
+            }
         }
 
         private void OnHideTeamMemberResultsCommand()

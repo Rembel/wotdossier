@@ -13,7 +13,7 @@
         <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource ReplayDataGridRowStyle}">
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="true">
-                    <Setter Property="Background" Value="#A7B0C9" />
+                    <Setter Property="Background" Value="#3295A6D4" />
                 </Trigger>
                 <Trigger Property="IsSelected" Value="false">
                     <Setter Property="Background" Value="{Binding IsAlive, Converter={x:Static color:AliveToColorConverter.Default}}" />

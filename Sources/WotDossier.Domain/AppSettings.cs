@@ -157,5 +157,12 @@ namespace WotDossier.Domain
             get { return _showExtendedReplaysData; }
             set { _showExtendedReplaysData = value; }
         }
+
+        private bool _useIncompleteReplaysResultsForCharts = true;
+        public bool UseIncompleteReplaysResultsForCharts
+        {
+            get { return _useIncompleteReplaysResultsForCharts; }
+            set { _useIncompleteReplaysResultsForCharts = value; }
+        }
     }
 }

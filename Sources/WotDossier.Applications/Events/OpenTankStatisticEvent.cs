@@ -3,7 +3,7 @@ using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier.Applications.Events
 {
-    public class OpenTankStatisticEvent : BaseEvent<TankStatisticRowViewModel>
+    public class OpenTankStatisticEvent : BaseEvent<RandomBattlesTankStatisticRowViewModel>
     {
     }
 }

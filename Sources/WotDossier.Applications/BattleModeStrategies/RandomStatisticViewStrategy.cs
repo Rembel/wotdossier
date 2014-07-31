@@ -50,7 +50,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<TankJson> prevStatisticViewModels)
         {
-            return new TankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
+            return new RandomBattlesTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic)
         {
-            return new RandomPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic);
+            return new RandomBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<PlayerStatisticViewModel> oldStatisticEntities)
         {
-            return new RandomPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
+            return new RandomBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
         }
 
         /// <summary>

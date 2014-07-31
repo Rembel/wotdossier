@@ -7,20 +7,20 @@ using Mapper = WotDossier.Applications.Logic.Mapper;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TankStatisticRowViewModel : TankStatisticRowViewModelBase<TankStatisticRowViewModel>
+    public class RandomBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase<RandomBattlesTankStatisticRowViewModel>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
+        /// Initializes a new instance of the <see cref="RandomBattlesTankStatisticRowViewModel"/> class.
         /// </summary>
-        protected TankStatisticRowViewModel()
+        protected RandomBattlesTankStatisticRowViewModel()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
+        /// Initializes a new instance of the <see cref="RandomBattlesTankStatisticRowViewModel"/> class.
         /// </summary>
         /// <param name="tank">The tank.</param>
-        public TankStatisticRowViewModel(TankJson tank)
+        public RandomBattlesTankStatisticRowViewModel(TankJson tank)
             : this(tank, new List<TankJson>())
         {
         }
@@ -28,8 +28,8 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list)
-            : base(tank, list.Select(x => new TankStatisticRowViewModel(x)).ToList())
+        public RandomBattlesTankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list)
+            : base(tank, list.Select(x => new RandomBattlesTankStatisticRowViewModel(x)).ToList())
         {
             #region [ IStatisticFrags ]
             BeastFrags = tank.Achievements.FragsBeast;

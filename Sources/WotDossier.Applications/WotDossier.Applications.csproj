@@ -154,6 +154,7 @@
     <Compile Include="ViewModel\Replay\UploadReplayViewModel.cs" />
     <Compile Include="ViewModel\Rows\ITankStatisticRow.cs" />
     <Compile Include="ViewModel\Rows\ClanTankStatisticRowViewModel.cs" />
+    <Compile Include="ViewModel\Rows\RandomBattlesTankStatisticRowViewModell.cs" />
     <Compile Include="ViewModel\Rows\TankStatisticRowViewModelBase.cs" />
     <Compile Include="ViewModel\Rows\TeamBattlesTankStatisticRowViewModel.cs">
       <SubType>Code</SubType>
@@ -170,7 +171,7 @@
     <Compile Include="ViewModel\Statistic\HistoricalBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\PeriodStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\PlayerStatisticViewModel.cs" />
-    <Compile Include="ViewModel\Statistic\RandomPlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Statistic\RandomBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\StatisticViewModelBase.cs" />
     <Compile Include="ViewModel\Statistic\TeamBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="Events\OpenTankStatisticEvent.cs" />
@@ -178,7 +179,6 @@
     <Compile Include="ViewModel\Rows\TankRowMasterTanker.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModel\Rows\TankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ShellViewModel.cs" />
     <Compile Include="ViewModel\TankStatisticViewModel.cs" />

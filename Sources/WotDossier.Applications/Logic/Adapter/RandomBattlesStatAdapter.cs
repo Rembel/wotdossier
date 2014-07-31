@@ -216,7 +216,7 @@ namespace WotDossier.Applications.Logic.Adapter
             //PerformanceRating = RatingHelper.PerformanceRating(tanks);
             if (stat.dataField.vehicles != null)
             {
-                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new TankStatisticRowViewModel(Dal.DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
+                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new RandomBattlesTankStatisticRowViewModel(Dal.DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
                 WN8Rating = RatingHelper.Wn8(Tanks);
                 PerformanceRating = RatingHelper.PerformanceRating(Tanks);
             }

@@ -549,6 +549,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                 (EndDate == null || x.PlayTime.Date <= EndDate)
                 && (settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
                 && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
+                && (settings.UseIncompleteReplaysResultsForCharts || x.IsWinner != BattleStatus.Incomplete)
                 ).ToList();
             return replayFiles;
 

@@ -75,7 +75,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic)
         {
-            return new RandomPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic);
+            return new RandomBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<PlayerStatisticViewModel> oldStatisticEntities)
         {
-            return new RandomPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
+            return new RandomBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
         }
 
         /// <summary>

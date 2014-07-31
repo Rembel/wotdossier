@@ -10,14 +10,14 @@ namespace WotDossier.Applications.ViewModel.Rows
     public class ClanTankStatisticRowViewModel : TankStatisticRowViewModelBase<ClanTankStatisticRowViewModel>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
+        /// Initializes a new instance of the <see cref="RandomBattlesTankStatisticRowViewModel"/> class.
         /// </summary>
         protected ClanTankStatisticRowViewModel()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
+        /// Initializes a new instance of the <see cref="RandomBattlesTankStatisticRowViewModel"/> class.
         /// </summary>
         /// <param name="tank">The tank.</param>
         public ClanTankStatisticRowViewModel(TankJson tank)

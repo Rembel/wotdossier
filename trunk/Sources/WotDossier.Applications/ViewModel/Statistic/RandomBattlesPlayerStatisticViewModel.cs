@@ -5,13 +5,13 @@ using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.ViewModel.Statistic
 {
-    public class RandomPlayerStatisticViewModel : PlayerStatisticViewModel, IRandomBattlesAchievements
+    public class RandomBattlesPlayerStatisticViewModel : PlayerStatisticViewModel, IRandomBattlesAchievements
     {
-        public RandomPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
         {
         }
 
-        public RandomPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
             : base(stat, list)
         {
             #region Ratings init

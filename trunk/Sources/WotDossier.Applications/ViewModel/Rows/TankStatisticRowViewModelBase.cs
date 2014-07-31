@@ -293,7 +293,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TankStatisticRowViewModel"/> class.
+        /// Initializes a new instance of the <see cref="RandomBattlesTankStatisticRowViewModel"/> class.
         /// </summary>
         /// <param name="tank">The tank.</param>
         public TankStatisticRowViewModelBase(TankJson tank)

@@ -668,7 +668,7 @@ namespace WotDossier.Test
             CsvExportProvider provider = new CsvExportProvider();
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
             List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
-            List<TankStatisticRowViewModel> list = tanks.Select(x => new TankStatisticRowViewModel(x)).ToList();
+            List<RandomBattlesTankStatisticRowViewModel> list = tanks.Select(x => new RandomBattlesTankStatisticRowViewModel(x)).ToList();
             provider.Export(list, new List<Type>{typeof(IStatisticBattles), typeof(IStatisticFrags)});
         }
 
@@ -691,9 +691,9 @@ namespace WotDossier.Test
             MultiPropertyComparer<ITankStatisticRow> comparer = new MultiPropertyComparer<ITankStatisticRow>(sortDescriptions);
 
             List<ITankStatisticRow> list = new List<ITankStatisticRow>();
-            list.Add(new TankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 10});
-            list.Add(new TankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 12});
-            list.Add(new TankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 11});
+            list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 10});
+            list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 12});
+            list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 11});
 
             foreach (var tankStatisticRow in list)
             {

@@ -13,6 +13,7 @@ namespace WotDossier.Domain.Tank
         {
             A15x15 = new StatisticJson(),
             Clan = new StatisticJson(),
+            AchievementsClan = new AchievementsClan(),
             Company = new StatisticJson(),
             A7x7 = new StatisticJson(),
             Achievements = new AchievementsJson(),
@@ -26,6 +27,17 @@ namespace WotDossier.Domain.Tank
             FortAchievements = new AchievementsFort(),
             FortSorties = new StatisticJson()
         };
+
+        private AchievementsClan _achievementsClan = new AchievementsClan();
+
+        /// <summary>
+        /// Gets or sets the clan achievements.
+        /// </summary>
+        public AchievementsClan AchievementsClan
+        {
+            get { return _achievementsClan; }
+            set { _achievementsClan = value; }
+        }
 
         /// <summary>
         /// Gets or sets the description.
@@ -160,6 +172,7 @@ namespace WotDossier.Domain.Tank
         public byte[] Raw { get; set; }
 
         private int _uniqueId = -1;
+        
         public int UniqueId()
         {
             if (_uniqueId == -1)

@@ -1000,6 +1000,11 @@ namespace WotDossier.Dal
                 WeakVehiclesWins = tankJson.HistoricalAchievements.weakVehiclesWins
             };
 
+            v2.AchievementsClan = new AchievementsClan()
+            {
+                MedalRotmistrov = tankJson.ClanAchievements.medalRotmistrov
+            };
+
             #endregion
 
 

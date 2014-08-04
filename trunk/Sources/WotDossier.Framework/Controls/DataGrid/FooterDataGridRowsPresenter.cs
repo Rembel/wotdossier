@@ -96,6 +96,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                 {
                     rcChild.Y = nextFrozenRowStart;
                     nextFrozenRowStart += childSize.Height;
+                    //nextNonFrozenRowStart += childSize.Height;
                     dataGridVerticalScrollStartY += childSize.Height;
                 }
                 else

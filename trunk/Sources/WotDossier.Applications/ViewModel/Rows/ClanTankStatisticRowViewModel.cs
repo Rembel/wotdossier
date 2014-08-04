@@ -31,16 +31,9 @@ namespace WotDossier.Applications.ViewModel.Rows
         public ClanTankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list)
             : base(tank, list.Select(x => new ClanTankStatisticRowViewModel(x)).ToList())
         {
-            #region [ IStatisticFrags ]
-            BeastFrags = tank.Achievements.FragsBeast;
-            SinaiFrags = tank.Achievements.FragsSinai;
-            PattonFrags = tank.Achievements.FragsPatton;
-            MouseFrags = tank.Frags.Where(f => f.TankUniqueId == 10027).Sum(s => s.Count);
-            #endregion
-
             #region Achievements
 
-            Mapper.Map<IRandomBattlesAchievements>(tank.Achievements, this);
+            Mapper.Map<IClanBattlesAchievements>(tank.AchievementsClan, this);
 
             #endregion
         }

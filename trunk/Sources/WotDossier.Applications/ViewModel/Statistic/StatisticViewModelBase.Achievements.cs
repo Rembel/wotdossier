@@ -217,5 +217,7 @@
         public int WeakVehiclesWins { get; set; }
 
         #endregion
+
+        public int MedalRotmistrov { get; set; }
     }
 }

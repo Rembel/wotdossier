@@ -154,7 +154,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <param name="statistic">The statistic.</param>
         public void InitCharts(StatisticViewModelBase statistic)
         {
-            List<StatisticViewModelBase> statisticViewModels = statistic.GetAllSlices();
+            List<StatisticViewModelBase> statisticViewModels = statistic.GetAllSlices<StatisticViewModelBase>();
             RatingDataSource = GetDataSource(statisticViewModels, x => x.EffRating, Resources.Resources.ChartTooltipFormat_Rating);
             WnRatingDataSource = GetDataSource(statisticViewModels, x => x.WN8Rating, Resources.Resources.ChartTooltipFormat_Rating);
             WinPercentDataSource = GetDataSource(statisticViewModels, x => x.WinsPercent, Resources.Resources.ChartTooltipFormat_WinPercent);

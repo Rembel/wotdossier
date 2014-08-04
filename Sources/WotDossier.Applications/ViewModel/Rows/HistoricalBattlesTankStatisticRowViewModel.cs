@@ -7,7 +7,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class HistoricalBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase<HistoricalBattlesTankStatisticRowViewModel>
+    public class HistoricalBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HistoricalBattlesTankStatisticRowViewModel"/> class.

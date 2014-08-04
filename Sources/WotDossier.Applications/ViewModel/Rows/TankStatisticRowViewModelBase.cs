@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
@@ -8,7 +7,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public abstract class TankStatisticRowViewModelBase<T> : PeriodStatisticViewModel<T>, ITankStatisticRow where T : StatisticViewModelBase
+    public abstract class TankStatisticRowViewModelBase : StatisticViewModelBase, ITankStatisticRow
     {
         private DateTime _lastBattle;
         private bool _isFavorite;
@@ -137,19 +136,24 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
 
+        private StatisticViewModelBase TypedPrevStatistic
+        {
+            get { return (StatisticViewModelBase)PrevStatisticSlice; }
+        }
+
         IEnumerable<ITankStatisticRow> ITankStatisticRow.GetAll()
         {
-            return GetAllSlices().Cast<ITankStatisticRow>();
+            return GetAllSlices<TankStatisticRowViewModelBase>();
         }
 
         public void SetPreviousStatistic(ITankStatisticRow model)
         {
-            SetPreviousStatistic((T) model);
+            SetPreviousStatistic((PeriodStatisticViewModel)model);
         }
 
         public ITankStatisticRow GetPreviousStatistic()
         {
-            return (ITankStatisticRow) PrevStatistic;
+            return (ITankStatisticRow) TypedPrevStatistic;
         }
 
         public int DamageAssisted
@@ -297,7 +301,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// </summary>
         /// <param name="tank">The tank.</param>
         public TankStatisticRowViewModelBase(TankJson tank)
-            : this(tank, new List<T>())
+            : this(tank, new List<TankStatisticRowViewModelBase>())
         {
         }
 
@@ -306,7 +310,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankStatisticRowViewModelBase(TankJson tank, List<T> list)
+        public TankStatisticRowViewModelBase(TankJson tank, IEnumerable<StatisticViewModelBase> list)
             : base(Utils.UnixDateToDateTime(tank.Common.updated), list)
         {
             Tier = tank.Common.tier;

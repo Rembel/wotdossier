@@ -172,6 +172,8 @@
     <Compile Include="ViewModel\Statistic\PeriodStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\PlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\RandomBattlesPlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Statistic\StatisticViewModelBase.Achievements.cs" />
+    <Compile Include="ViewModel\Statistic\StatisticViewModelBase.PeriodStatistic.cs" />
     <Compile Include="ViewModel\Statistic\StatisticViewModelBase.cs" />
     <Compile Include="ViewModel\Statistic\TeamBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="Events\OpenTankStatisticEvent.cs" />

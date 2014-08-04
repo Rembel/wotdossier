@@ -159,7 +159,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         //public int team { get; set; }
         public int THits { get; set; }
         public int TKills { get; set; }
-        public int TypeCompDescr { get; set; }
+        public int? TypeCompDescr { get; set; }
         public int Xp { get; set; }
 
         //public string clanAbbrev { get; set; }

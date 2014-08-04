@@ -200,7 +200,7 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int tkills { get; set; }
         [DataMember]
-        public int typeCompDescr { get; set; }
+        public int? typeCompDescr { get; set; }
         [DataMember]
         public int xp { get; set; }
     }

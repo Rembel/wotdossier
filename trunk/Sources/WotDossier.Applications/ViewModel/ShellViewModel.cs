@@ -160,7 +160,7 @@ namespace WotDossier.Applications.ViewModel
         {
             get
             {
-                List<ITankStatisticRow> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PreviousDate).ToList();
+                List<ITankStatisticRow> list = _tanks.Where(x => x.LastBattle > PlayerStatistic.PrevStatisticSliceDate).ToList();
                 return list;
             }
         }
@@ -470,7 +470,7 @@ namespace WotDossier.Applications.ViewModel
 
         private List<DateTime> GetPreviousDates(PlayerStatisticViewModel playerStatisticViewModel)
         {
-            return playerStatisticViewModel.GetAllSlices().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
+            return playerStatisticViewModel.GetAllSlices<PlayerStatisticViewModel>().Select(x => x.Updated).OrderByDescending(x => x).Skip(1).ToList();
         }
 
         #endregion
@@ -716,7 +716,7 @@ namespace WotDossier.Applications.ViewModel
                 //convert LastNBattles period -> Custom
                 int battles = PlayerStatistic.BattlesCount - settings.PeriodSettings.LastNBattles;
 
-                StatisticViewModelBase viewModel = PlayerStatistic.GetAllSlices().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
+                StatisticViewModelBase viewModel = PlayerStatistic.GetAllSlices<PlayerStatisticViewModel>().OrderBy(x => x.BattlesCount).FirstOrDefault(x => x.BattlesCount >= battles);
                 if (viewModel != null)
                 {
                     EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>()

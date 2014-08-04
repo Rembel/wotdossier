@@ -7,7 +7,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TeamBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase<TeamBattlesTankStatisticRowViewModel>
+    public class TeamBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase
     {
         protected TeamBattlesTankStatisticRowViewModel()
         {

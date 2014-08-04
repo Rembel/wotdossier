@@ -6,7 +6,7 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class TotalTankStatisticRowViewModel : TankStatisticRowViewModelBase<TotalTankStatisticRowViewModel>
+    public class TotalTankStatisticRowViewModel : TankStatisticRowViewModelBase
     {
         private double _wn8RatingValue;
         private double _performanceRatingValue;

@@ -6,7 +6,7 @@ using WotDossier.Domain.Entities;
 
 namespace WotDossier.Applications.ViewModel.Statistic
 {
-    public abstract class PlayerStatisticViewModel : PeriodStatisticViewModel<PlayerStatisticViewModel>
+    public abstract class PlayerStatisticViewModel : StatisticViewModelBase
     {
         private ClanModel _clan;
 
@@ -107,136 +107,141 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         #endregion
 
+        private PlayerStatisticViewModel TypedPrevStatistic
+        {
+            get { return (PlayerStatisticViewModel)PrevStatisticSlice; }
+        }
+
         #region Rating delta
 
         public int Rating_IntegratedValueDelta
         {
-            get { return Rating_IntegratedValue - PrevStatistic.Rating_IntegratedValue; }
+            get { return Rating_IntegratedValue - TypedPrevStatistic.Rating_IntegratedValue; }
         }
 
         public int Rating_IntegratedPlaceDelta
         {
-            get { return Rating_IntegratedPlace - PrevStatistic.Rating_IntegratedPlace; }
+            get { return Rating_IntegratedPlace - TypedPrevStatistic.Rating_IntegratedPlace; }
         }
 
         public double Rating_BattleAvgPerformanceValueDelta
         {
-            get { return Rating_BattleAvgPerformanceValue - PrevStatistic.Rating_BattleAvgPerformanceValue; }
+            get { return Rating_BattleAvgPerformanceValue - TypedPrevStatistic.Rating_BattleAvgPerformanceValue; }
         }
 
         public int Rating_BattleAvgPerformancePlaceDelta
         {
-            get { return Rating_BattleAvgPerformancePlace - PrevStatistic.Rating_BattleAvgPerformancePlace; }
+            get { return Rating_BattleAvgPerformancePlace - TypedPrevStatistic.Rating_BattleAvgPerformancePlace; }
         }
 
         public double Rating_BattleAvgXpValueDelta
         {
-            get { return Rating_BattleAvgXpValue - PrevStatistic.Rating_BattleAvgXpValue; }
+            get { return Rating_BattleAvgXpValue - TypedPrevStatistic.Rating_BattleAvgXpValue; }
         }
 
         public int Rating_BattleAvgXpPlaceDelta
         {
-            get { return Rating_BattleAvgXpPlace - PrevStatistic.Rating_BattleAvgXpPlace; }
+            get { return Rating_BattleAvgXpPlace - TypedPrevStatistic.Rating_BattleAvgXpPlace; }
         }
 
         public int Rating_BattleWinsValueDelta
         {
-            get { return Rating_BattleWinsValue - PrevStatistic.Rating_BattleWinsValue; }
+            get { return Rating_BattleWinsValue - TypedPrevStatistic.Rating_BattleWinsValue; }
         }
 
         public int Rating_BattleWinsPlaceDelta
         {
-            get { return Rating_BattleWinsPlace - PrevStatistic.Rating_BattleWinsPlace; }
+            get { return Rating_BattleWinsPlace - TypedPrevStatistic.Rating_BattleWinsPlace; }
         }
 
         public int Rating_BattlesValueDelta
         {
-            get { return Rating_BattlesValue - PrevStatistic.Rating_BattlesValue; }
+            get { return Rating_BattlesValue - TypedPrevStatistic.Rating_BattlesValue; }
         }
 
         public int Rating_BattlesPlaceDelta
         {
-            get { return Rating_BattlesPlace - PrevStatistic.Rating_BattlesPlace; }
+            get { return Rating_BattlesPlace - TypedPrevStatistic.Rating_BattlesPlace; }
         }
 
         public int Rating_CapturedPointsValueDelta
         {
-            get { return Rating_CapturedPointsValue - PrevStatistic.Rating_CapturedPointsValue; }
+            get { return Rating_CapturedPointsValue - TypedPrevStatistic.Rating_CapturedPointsValue; }
         }
 
         public int Rating_CapturedPointsPlaceDelta
         {
-            get { return Rating_CapturedPointsPlace - PrevStatistic.Rating_CapturedPointsPlace; }
+            get { return Rating_CapturedPointsPlace - TypedPrevStatistic.Rating_CapturedPointsPlace; }
         }
 
         public int Rating_DamageDealtValueDelta
         {
-            get { return Rating_DamageDealtValue - PrevStatistic.Rating_DamageDealtValue; }
+            get { return Rating_DamageDealtValue - TypedPrevStatistic.Rating_DamageDealtValue; }
         }
 
         public int Rating_DamageDealtPlaceDelta
         {
-            get { return Rating_DamageDealtPlace - PrevStatistic.Rating_DamageDealtPlace; }
+            get { return Rating_DamageDealtPlace - TypedPrevStatistic.Rating_DamageDealtPlace; }
         }
 
         public int Rating_DroppedPointsValueDelta
         {
-            get { return Rating_DroppedPointsValue - PrevStatistic.Rating_DroppedPointsValue; }
+            get { return Rating_DroppedPointsValue - TypedPrevStatistic.Rating_DroppedPointsValue; }
         }
 
         public int Rating_DroppedPointsPlaceDelta
         {
-            get { return Rating_DroppedPointsPlace - PrevStatistic.Rating_DroppedPointsPlace; }
+            get { return Rating_DroppedPointsPlace - TypedPrevStatistic.Rating_DroppedPointsPlace; }
         }
 
         public int Rating_FragsValueDelta
         {
-            get { return Rating_FragsValue - PrevStatistic.Rating_FragsValue; }
+            get { return Rating_FragsValue - TypedPrevStatistic.Rating_FragsValue; }
         }
 
         public int Rating_FragsPlaceDelta
         {
-            get { return Rating_FragsPlace - PrevStatistic.Rating_FragsPlace; }
+            get { return Rating_FragsPlace - TypedPrevStatistic.Rating_FragsPlace; }
         }
 
         public int Rating_SpottedValueDelta
         {
-            get { return Rating_SpottedValue - PrevStatistic.Rating_SpottedValue; }
+            get { return Rating_SpottedValue - TypedPrevStatistic.Rating_SpottedValue; }
         }
 
         public int Rating_SpottedPlaceDelta
         {
-            get { return Rating_SpottedPlace - PrevStatistic.Rating_SpottedPlace; }
+            get { return Rating_SpottedPlace - TypedPrevStatistic.Rating_SpottedPlace; }
         }
 
         public int Rating_XpValueDelta
         {
-            get { return Rating_XpValue - PrevStatistic.Rating_XpValue; }
+            get { return Rating_XpValue - TypedPrevStatistic.Rating_XpValue; }
         }
 
         public int Rating_XpPlaceDelta
         {
-            get { return Rating_XpPlace - PrevStatistic.Rating_XpPlace; }
+            get { return Rating_XpPlace - TypedPrevStatistic.Rating_XpPlace; }
         }
 
         public int Rating_MaxXpValueDelta
         {
-            get { return Rating_MaxXpValue - PrevStatistic.Rating_MaxXpValue; }
+            get { return Rating_MaxXpValue - TypedPrevStatistic.Rating_MaxXpValue; }
         }
 
         public int Rating_MaxXpPlaceDelta
         {
-            get { return Rating_MaxXpPlace - PrevStatistic.Rating_MaxXpPlace; }
+            get { return Rating_MaxXpPlace - TypedPrevStatistic.Rating_MaxXpPlace; }
         }
 
         public double Rating_HitsPercentsValueDelta
         {
-            get { return Rating_HitsPercentsValue - PrevStatistic.Rating_HitsPercentsValue; }
+            get { return Rating_HitsPercentsValue - TypedPrevStatistic.Rating_HitsPercentsValue; }
         }
 
         public int Rating_HitsPercentsPlaceDelta
         {
-            get { return Rating_HitsPercentsPlace - PrevStatistic.Rating_HitsPercentsPlace; }
+            get { return Rating_HitsPercentsPlace - TypedPrevStatistic.Rating_HitsPercentsPlace; }
         }
 
         #endregion

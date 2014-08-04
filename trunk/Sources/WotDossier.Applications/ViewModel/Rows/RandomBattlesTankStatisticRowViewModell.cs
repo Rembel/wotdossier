@@ -7,7 +7,7 @@ using Mapper = WotDossier.Applications.Logic.Mapper;
 
 namespace WotDossier.Applications.ViewModel.Rows
 {
-    public class RandomBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase<RandomBattlesTankStatisticRowViewModel>
+    public class RandomBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RandomBattlesTankStatisticRowViewModel"/> class.

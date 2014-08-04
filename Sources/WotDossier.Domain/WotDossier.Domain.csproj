@@ -79,6 +79,7 @@
     <Compile Include="Dossier\TankV65\Achievements7x7_65.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
+    <Compile Include="Interfaces\IClanBattlesAchievements.cs" />
     <Compile Include="Interfaces\IRandomBattlesAchievements.cs" />
     <Compile Include="Interfaces\IHistoricalBattlesAchievements.cs" />
     <Compile Include="Interfaces\IStatisticExtended.cs" />
@@ -182,6 +183,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tank\ConsumableDescription.cs" />
+    <Compile Include="Tank\AchievementsClan.cs" />
     <Compile Include="Tank\DeviceDescription.cs" />
     <Compile Include="Tank\MaxJson.cs" />
     <Compile Include="Tank\LevelRange.cs" />

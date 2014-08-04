@@ -168,6 +168,7 @@
     <Compile Include="ViewModel\Selectors\PlayerSelectorViewModel.cs" />
     <Compile Include="ViewModel\Selectors\PeriodSelectorViewModel.cs" />
     <Compile Include="ViewModel\StatisticPeriodChangedEvent.cs" />
+    <Compile Include="ViewModel\Statistic\ClanBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\HistoricalBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\PeriodStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\PlayerStatisticViewModel.cs" />

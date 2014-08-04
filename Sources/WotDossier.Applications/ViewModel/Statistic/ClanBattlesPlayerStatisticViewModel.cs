@@ -5,13 +5,13 @@ using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.ViewModel.Statistic
 {
-    public class RandomBattlesPlayerStatisticViewModel : PlayerStatisticViewModel, IRandomBattlesAchievements
+    public class ClanBattlesPlayerStatisticViewModel : PlayerStatisticViewModel, IClanBattlesAchievements
     {
-        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        public ClanBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
         {
         }
 
-        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        public ClanBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
             : base(stat, list)
         {
             #region Ratings init
@@ -75,14 +75,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
             if (stat.AchievementsIdObject != null)
             {
-                Mapper.Map<IRandomBattlesAchievements>(stat.AchievementsIdObject, this);
-
-                //TODO: rename Reaper -> ReaperLongest in BD
-                ReaperLongest = stat.AchievementsIdObject.Reaper;
-                //TODO: rename Invincible -> InvincibleLongest in BD
-                InvincibleLongest = stat.AchievementsIdObject.Invincible;
-                //TODO: rename Survivor -> SurvivorLongest in BD
-                SurvivorLongest = stat.AchievementsIdObject.Survivor;
+                Mapper.Map<IClanBattlesAchievements>(stat.AchievementsIdObject, this);
             }
 
             #endregion

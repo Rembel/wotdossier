@@ -453,9 +453,11 @@ namespace WotDossier.Applications.ViewModel
             var viewModel = CompositionContainerFactory.Instance.GetExport<SettingsViewModel>();
             if (viewModel != null)
             {
-                viewModel.Show();
-                PlayerSelector.InitPlayers();
-                OnLoad();
+                if (viewModel.Show() == true)
+                {
+                    PlayerSelector.InitPlayers();
+                    OnLoad();
+                }
             }
         }
 

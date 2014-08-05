@@ -162,6 +162,7 @@ namespace WotDossier.Applications.ViewModel
             ThemesManager.ApplyTheme(_appSettings.Theme);
 
             SettingsReader.Save(_appSettings);
+            ViewTyped.DialogResult = true;
             ViewTyped.Close();
         }
 

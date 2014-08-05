@@ -9,6 +9,7 @@ namespace WotDossier.Applications.Logic
             AutoMapper.Mapper.CreateMap<IRandomBattlesAchievements, IRandomBattlesAchievements>();
             AutoMapper.Mapper.CreateMap<IHistoricalBattlesAchievements, IHistoricalBattlesAchievements>();
             AutoMapper.Mapper.CreateMap<ITeamBattlesAchievements, ITeamBattlesAchievements>();
+            AutoMapper.Mapper.CreateMap<IFortAchievements, IFortAchievements>();
             AutoMapper.Mapper.CreateMap<IClanBattlesAchievements, IClanBattlesAchievements>();
         }
 

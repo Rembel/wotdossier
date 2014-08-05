@@ -193,14 +193,4 @@ namespace WotDossier.Domain.Tank
             return string.Format("{0}", Description.Title);
         }
     }
-
-    public class AchievementsFort
-    {
-        public int conqueror;
-        public int fireAndSword;
-        public int crusher;
-        public int counterblow;
-        public int soldierOfFortune;
-        public int kampfer;
-    }
 }

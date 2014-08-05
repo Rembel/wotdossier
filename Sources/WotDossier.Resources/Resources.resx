@@ -2937,4 +2937,10 @@ up to 500 m</value>
   <data name="BattleMode_Clan" xml:space="preserve">
     <value>Clan</value>
   </data>
+  <data name="BattleMode_FortBattles" xml:space="preserve">
+    <value>Fort battles</value>
+  </data>
+  <data name="BattleMode_FortSorties" xml:space="preserve">
+    <value>Fort sorties</value>
+  </data>
 </root>

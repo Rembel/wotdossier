@@ -76,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationController.cs" />
+    <Compile Include="BattleModeStrategies\FortSortiesStatisticViewStrategy.cs" />
+    <Compile Include="BattleModeStrategies\FortBattlesStatisticViewStrategy.cs" />
     <Compile Include="BattleModeStrategies\HistoricalStatisticViewStrategy.cs" />
     <Compile Include="BattleModeStrategies\ClanStatisticViewStrategy.cs" />
     <Compile Include="BattleModeStrategies\RandomStatisticViewStrategy.cs" />
@@ -84,6 +86,8 @@
     <Compile Include="BattleModeStrategies\TeamStatisticViewStrategy.cs" />
     <Compile Include="CultureHelper.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="Logic\Adapter\FortSortiesStatAdapter.cs" />
+    <Compile Include="Logic\Adapter\FortBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\ClanBattlesStatAdapter.cs" />
     <Compile Include="Logic\Mapper.cs" />
     <Compile Include="Model\BattleModel.cs" />
@@ -140,6 +144,8 @@
     <Compile Include="ViewModel\Replay\DbReplay.cs" />
     <Compile Include="ViewModel\Replay\PhisicalReplay.cs" />
     <Compile Include="ViewModel\Replay\TotalReplayFile.cs" />
+    <Compile Include="ViewModel\Rows\FortSortiesTankStatisticRowViewModel.cs" />
+    <Compile Include="ViewModel\Rows\FortBattlesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\HistoricalBattlesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\ListItem.cs" />
     <Compile Include="ViewModel\ReplaysViewModel.cs" />
@@ -168,10 +174,12 @@
     <Compile Include="ViewModel\Selectors\PlayerSelectorViewModel.cs" />
     <Compile Include="ViewModel\Selectors\PeriodSelectorViewModel.cs" />
     <Compile Include="ViewModel\StatisticPeriodChangedEvent.cs" />
+    <Compile Include="ViewModel\Statistic\FortSortiesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\ClanBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\HistoricalBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\PeriodStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\PlayerStatisticViewModel.cs" />
+    <Compile Include="ViewModel\Statistic\FortBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\RandomBattlesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\StatisticViewModelBase.Achievements.cs" />
     <Compile Include="ViewModel\Statistic\StatisticViewModelBase.PeriodStatistic.cs" />

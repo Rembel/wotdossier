@@ -1556,6 +1556,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fort battles.
+        /// </summary>
+        public static string BattleMode_FortBattles {
+            get {
+                return ResourceManager.GetString("BattleMode_FortBattles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fort sorties.
+        /// </summary>
+        public static string BattleMode_FortSorties {
+            get {
+                return ResourceManager.GetString("BattleMode_FortSorties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Historical Battle.
         /// </summary>
         public static string BattleMode_HistoricalBattle {

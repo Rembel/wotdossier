@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace WotDossier.Domain.Interfaces
 {
     /// <summary>
@@ -10,9 +8,6 @@ namespace WotDossier.Domain.Interfaces
         /// <summary>
         /// Gets or sets the medal monolith.
         /// </summary>
-        /// <value>
-        /// The medal monolith.
-        /// </value>
         int MedalMonolith { get; set; }
 
         /// <summary>
@@ -65,7 +60,9 @@ namespace WotDossier.Domain.Interfaces
         /// </summary>
         int Alaric { get; set; }
 
-        [DataMember(Name = "markOfMastery")]
+        /// <summary>
+        /// Gets or sets the mark of mastery.
+        /// </summary>
         int MarkOfMastery { get; set; }
     }
 }

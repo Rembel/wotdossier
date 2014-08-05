@@ -61,6 +61,7 @@
     <Compile Include="Dossier\AppSpot\TankStatistic.cs" />
     <Compile Include="Dossier\TankV85\Achievements7x7.cs" />
     <Compile Include="Dossier\TankV85\AchievementsClan.cs" />
+    <Compile Include="Dossier\TankV85\AchievementsFort.cs" />
     <Compile Include="Dossier\TankV85\AchievementsSingle.cs" />
     <Compile Include="Dossier\TankV85\AchievementsHistorical.cs" />
     <Compile Include="Dossier\TankV85\Achievements.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Dossier\TankV65\Achievements7x7_65.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
+    <Compile Include="Interfaces\IFortAchievements.cs" />
     <Compile Include="Interfaces\IClanBattlesAchievements.cs" />
     <Compile Include="Interfaces\IRandomBattlesAchievements.cs" />
     <Compile Include="Interfaces\IHistoricalBattlesAchievements.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="Dossier\TankV65\StatisticJson.cs" />
     <Compile Include="Dossier\TankV65\MaxJson.cs" />
     <Compile Include="Dossier\TankV65\TankJson.cs" />
+    <Compile Include="Tank\AchievementsFort.cs" />
     <Compile Include="Tank\AchievementsHistorical.cs" />
     <Compile Include="Tank\Achievements7x7.cs" />
     <Compile Include="Interfaces\ITankFilterable.cs" />

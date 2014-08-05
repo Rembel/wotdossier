@@ -218,6 +218,22 @@
 
         #endregion
 
+        #region Achievements fort
+
+        public int Conqueror { get; set; }
+        public int FireAndSword { get; set; }
+        public int Crusher { get; set; }
+        public int CounterBlow { get; set; }
+        public int SoldierOfFortune { get; set; }
+        public int Kampfer { get; set; }
+
+        #endregion
+
+        #region Achievements Clan
+
         public int MedalRotmistrov { get; set; }
+
+        #endregion
+
     }
 }

@@ -7,7 +7,7 @@ namespace WotDossier.Domain.Entities
     /// Object representation for table 'PlayerAchievements'.
     /// </summary>
 	[Serializable]
-    public class PlayerAchievementsEntity : EntityBase, IRandomBattlesAchievements, IClanBattlesAchievements
+    public class PlayerAchievementsEntity : EntityBase, IRandomBattlesAchievements, IClanBattlesAchievements, IFortAchievements
 	{	
 		/// <summary>
 		/// Gets/Sets the field "Warrior".
@@ -394,6 +394,13 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public virtual int MarkOfMastery { get; set; }
 
+        public virtual int Conqueror { get; set; }
+        public virtual int FireAndSword { get; set; }
+        public virtual int Crusher { get; set; }
+        public virtual int CounterBlow { get; set; }
+        public virtual int SoldierOfFortune { get; set; }
+        public virtual int Kampfer { get; set; }
+        
         public virtual int MedalRotmistrov { get; set; }
 	}
 }

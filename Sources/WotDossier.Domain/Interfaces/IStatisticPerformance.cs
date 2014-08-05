@@ -9,7 +9,5 @@
         int DroppedCapturePoints { get; set; }
         
         int Spotted { get; set; }
-
-        int MarkOfMastery { get; set; }
     }
 }

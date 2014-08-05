@@ -118,6 +118,7 @@
                     <Setter Property="SnapsToDevicePixels" Value="true" />
                     <Setter Property="MinHeight" Value="22" />
                     <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                    <Setter Property="ToolTip" Value="{Binding Name}"></Setter>
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter Property="Background" Value="#A7B0C9" />

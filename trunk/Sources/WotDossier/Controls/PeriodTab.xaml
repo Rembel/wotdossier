@@ -11,7 +11,7 @@
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,0,0,20">
             <TextBlock Foreground="#FFA759" FontFamily="sans-serif" FontSize="25" Margin="0, 25, 0, 25" HorizontalAlignment="Center">
-                <x:Static Member="resources:Resources.PeriodTab_CompareHeader" /> <TextBlock Text="{Binding PreviousDate, StringFormat='dd.MM.yyyy HH:mm'}"/>
+                <x:Static Member="resources:Resources.PeriodTab_CompareHeader" /> <TextBlock Text="{Binding PrevStatisticSliceDate, StringFormat='dd.MM.yyyy HH:mm'}"/>
             </TextBlock>
             <TextBlock Foreground="#FFA759" Text="{x:Static resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <!--BattlesParticipated-->

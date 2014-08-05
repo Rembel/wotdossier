@@ -23,6 +23,16 @@ namespace WotDossier.Applications.BattleModeStrategies
             {
                 return new ClanStatisticViewStrategy(dossierRepository);
             }
+
+            if (randomCompany == BattleMode.FortBattles)
+            {
+                return new FortBattlesStatisticViewStrategy(dossierRepository);
+            }
+
+            if (randomCompany == BattleMode.FortSorties)
+            {
+                return new FortSortiesStatisticViewStrategy(dossierRepository);
+            }
             return null;
         }
     }

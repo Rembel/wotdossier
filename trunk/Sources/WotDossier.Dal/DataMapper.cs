@@ -1149,6 +1149,78 @@ namespace WotDossier.Dal
                 };
             }
 
+            if (tankJson.FortBattles != null)
+            {
+                v2.FortBattles = new StatisticJson
+                {
+                    battlesCount = tankJson.FortBattles.battlesCount,
+                    capturePoints = tankJson.FortBattles.capturePoints,
+                    damageDealt = tankJson.FortBattles.damageDealt,
+                    damageReceived = tankJson.FortBattles.damageReceived,
+                    droppedCapturePoints = tankJson.FortBattles.droppedCapturePoints,
+                    frags = tankJson.FortBattles.frags,
+                    frags8p = tankJson.FortBattles.frags8p,
+                    hits = tankJson.FortBattles.hits,
+                    losses = tankJson.FortBattles.losses,
+                    shots = tankJson.FortBattles.shots,
+                    spotted = tankJson.FortBattles.spotted,
+                    survivedBattles = tankJson.FortBattles.survivedBattles,
+                    winAndSurvived = tankJson.FortBattles.winAndSurvived,
+                    wins = tankJson.FortBattles.wins,
+                    xp = tankJson.FortBattles.xp,
+                    originalXP = tankJson.FortBattles.originalXP,
+                    damageAssistedRadio = tankJson.FortBattles.damageAssistedRadio,
+                    damageAssistedTrack = tankJson.FortBattles.damageAssistedTrack,
+                    shotsReceived = tankJson.FortBattles.shotsReceived,
+                    noDamageShotsReceived = tankJson.FortBattles.noDamageShotsReceived,
+                    piercedReceived = tankJson.FortBattles.piercedReceived,
+                    heHitsReceived = tankJson.FortBattles.heHitsReceived,
+                    he_hits = tankJson.FortBattles.he_hits,
+                    pierced = tankJson.FortBattles.pierced,
+                    damageBlockedByArmor = tankJson.FortBattles.damageBlockedByArmor,
+                    potentialDamageReceived = tankJson.FortBattles.potentialDamageReceived,
+                    //maxDamage = tankJson.Max7x7.maxDamage,
+                    //maxFrags = tankJson.Max7x7.maxFrags,
+                    //maxXP = tankJson.Max7x7.maxXP
+                };
+            }
+
+            if (tankJson.FortSorties != null)
+            {
+                v2.FortSorties = new StatisticJson
+                {
+                    battlesCount = tankJson.FortBattles.battlesCount,
+                    capturePoints = tankJson.FortBattles.capturePoints,
+                    damageDealt = tankJson.FortBattles.damageDealt,
+                    damageReceived = tankJson.FortBattles.damageReceived,
+                    droppedCapturePoints = tankJson.FortBattles.droppedCapturePoints,
+                    frags = tankJson.FortBattles.frags,
+                    frags8p = tankJson.FortBattles.frags8p,
+                    hits = tankJson.FortBattles.hits,
+                    losses = tankJson.FortBattles.losses,
+                    shots = tankJson.FortBattles.shots,
+                    spotted = tankJson.FortBattles.spotted,
+                    survivedBattles = tankJson.FortBattles.survivedBattles,
+                    winAndSurvived = tankJson.FortBattles.winAndSurvived,
+                    wins = tankJson.FortBattles.wins,
+                    xp = tankJson.FortBattles.xp,
+                    originalXP = tankJson.FortBattles.originalXP,
+                    damageAssistedRadio = tankJson.FortBattles.damageAssistedRadio,
+                    damageAssistedTrack = tankJson.FortBattles.damageAssistedTrack,
+                    shotsReceived = tankJson.FortBattles.shotsReceived,
+                    noDamageShotsReceived = tankJson.FortBattles.noDamageShotsReceived,
+                    piercedReceived = tankJson.FortBattles.piercedReceived,
+                    heHitsReceived = tankJson.FortBattles.heHitsReceived,
+                    he_hits = tankJson.FortBattles.he_hits,
+                    pierced = tankJson.FortBattles.pierced,
+                    damageBlockedByArmor = tankJson.FortBattles.damageBlockedByArmor,
+                    potentialDamageReceived = tankJson.FortBattles.potentialDamageReceived,
+                    //maxDamage = tankJson.Max7x7.maxDamage,
+                    //maxFrags = tankJson.Max7x7.maxFrags,
+                    //maxXP = tankJson.Max7x7.maxXP
+                };
+            }
+
             v2.Common = new CommonJson();
             v2.Common.basedonversion = tankJson.Common.basedonversion;
             v2.Common.compactDescr = tankJson.Common.compactDescr;

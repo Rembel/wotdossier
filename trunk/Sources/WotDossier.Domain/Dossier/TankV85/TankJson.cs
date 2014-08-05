@@ -63,6 +63,22 @@ namespace WotDossier.Domain.Dossier.TankV85
             set { _historical = value; }
         }
 
+        private StatisticJson77 _fortBattles = new StatisticJson77();
+
+        public StatisticJson77 FortBattles
+        {
+            get { return _fortBattles; }
+            set { _fortBattles = value; }
+        }
+
+        private StatisticJson77 _fortSorties = new StatisticJson77();
+
+        public StatisticJson77 FortSorties
+        {
+            get { return _fortSorties; }
+            set { _fortSorties = value; }
+        }
+
         private MaxJson77 _maxHistorical = new MaxJson77();
 
         public MaxJson77 MaxHistorical
@@ -152,6 +168,14 @@ namespace WotDossier.Domain.Dossier.TankV85
             set { _historicalAchievements = value; }
         }
 
+        private AchievementsFort_85 _fortAchievements = new AchievementsFort_85();
+
+        public AchievementsFort_85 FortAchievements
+        {
+            get { return _fortAchievements; }
+            set { _fortAchievements = value; }
+        }
+
         #endregion
 
         private IList<IList<string>> _fragsList = new List<IList<string>>();
@@ -163,7 +187,7 @@ namespace WotDossier.Domain.Dossier.TankV85
         }
 
         private int _uniqueId = -1;
-        
+
         public int UniqueId()
         {
             if (_uniqueId == -1)
@@ -172,6 +196,8 @@ namespace WotDossier.Domain.Dossier.TankV85
             }
             return _uniqueId;
         }
+
+
 
         /// <summary>
         /// Returns a string that represents the current object.

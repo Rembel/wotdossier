@@ -40,7 +40,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public override Func<TankJson, StatisticJson> Predicate
         {
-            get { return tank => tank.Clan; }
+            get { return tank => tank.FortBattles; }
         }
 
         /// <summary>

@@ -114,7 +114,7 @@
 {"tankid": 227, "countryid": 1, "compDescr": 58129, "active": 0, "type": 3, "type_name": "HT", "tier": 8, "premium": 0, "title": "Tiger II", "title_short": "Tiger II", "icon": "pzvib_tiger_ii_training", "icon_orig": "PzVIB_Tiger_II_training"},
 {"tankid": 228, "countryid": 1, "compDescr": 58385, "active": 0, "type": 2, "type_name": "MT", "tier": 7, "premium": 0, "title": "Panther", "title_short": "Panther", "icon": "pzv_training", "icon_orig": "PzV_training"},
 {"tankid": 229, "countryid": 1, "compDescr": 58641, "active": 1, "type": 3, "type_name": "HT", "tier": 10, "premium": 1, "title": "VK 72.01 (K)", "title_short": "VK 72.01 K", "icon": "vk7201", "icon_orig": "VK7201"},
-{"tankid": 233, "countryid": 1, "compDescr": 59665, "active": 1, "type": 2, "type_name": "MT", "tier": 3, "premium": 1, "title": "Grostraktor - Krupp", "title_short": "Gr.Tr.", "icon": "g100_gtraktor_krupp", "icon_orig": "G100_Gtraktor_Krupp"},
+{"tankid": 233, "countryid": 1, "compDescr": 59665, "active": 1, "type": 2, "type_name": "MT", "tier": 3, "premium": 1, "title": "Grosstraktor - Krupp", "title_short": "Gr.Tr.", "icon": "g100_gtraktor_krupp", "icon_orig": "G100_Gtraktor_Krupp"},
 {"tankid": 234, "countryid": 1, "compDescr": 59921, "active": 0, "type": 5, "type_name": "SPG", "tier": 1, "premium": 0, "title": "Karl", "icon": "karl", "icon_orig": "Karl"},
 {"tankid": 1, "countryid": 4, "compDescr": 321, "active": 1, "type": 2, "type_name": "MT", "tier": 3, "premium": 0, "title": "D2", "title_short": "D2", "icon": "d2", "icon_orig": "D2"},
 {"tankid": 2, "countryid": 4, "compDescr": 577, "active": 1, "type": 1, "type_name": "LT", "tier": 1, "premium": 0, "title": "Renault FT", "title_short": "FT", "icon": "renaultft", "icon_orig": "RenaultFT"},

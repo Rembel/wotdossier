@@ -17,7 +17,7 @@ def main():
 	
 	import struct, json, time, sys, os, shutil, datetime, base64
 
-	parserversion = "0.9.2.0"
+	parserversion = "0.9.2.2"
 	
 	global rawdata, tupledata, data, structures, numoffrags
 	global filename_source, filename_target
@@ -101,48 +101,27 @@ def main():
 	dossierheader['parser'] = 'http://www.vbaddict.net'
 	dossierheader['parserversion'] = parserversion
 	dossierheader['tankcount'] = len(tankitems)
-	
 
-#	base32name = "?;?"
-#	if option_server == 0:
-#		try:
-#			base32name = base64.b32decode(os.path.splitext(filename_source)[0].replace('.\\', ''))
-#		except Exception, e:
-#			if e.message != 'Incorrect padding':
-#				printmessage('cannot decode filename ' + os.path.splitext(filename_source)[0] + ': ' + e.message)
-#
-#
-#	dossierheader['server'] = base32name.split(';', 1)[0];
-#	dossierheader['username'] = base32name.split(';', 1)[1];
+	
+	base32name = "?;?"
+	if option_server == 0:
+		try:
+			base32name = base64.b32decode(os.path.splitext(filename_source)[0].replace('.\\', ''))
+		except Exception, e:
+			if e.message != 'Incorrect padding':
+				printmessage('cannot decode filename ' + os.path.splitext(filename_source)[0] + ': ' + e.message)
+
+
+	dossierheader['server'] = base32name.split(';', 1)[0];
+	dossierheader['username'] = base32name.split(';', 1)[1];
 	
 	
 	if option_server == 0:
 		dossierheader['date'] = time.mktime(time.localtime())
-
-	tanksdata = dict()
-	if option_server == 0 or option_tanks == 1:
-		tanksdata = get_json_data("tanks.json")
-
-	structures = get_json_data("structures_10.json")
-	structures = structures + get_json_data("structures_17.json")
-	structures = structures + get_json_data("structures_18.json")
-	structures = structures + get_json_data("structures_20.json")
-	structures = structures + get_json_data("structures_22.json")
-	structures = structures + get_json_data("structures_24.json")
-	structures = structures + get_json_data("structures_26.json")
-	structures = structures + get_json_data("structures_27.json")
-	structures = structures + get_json_data("structures_28.json")
-	structures = structures + get_json_data("structures_29.json")
-	structures = structures + get_json_data("structures_65.json")
-	structures = structures + get_json_data("structures_69.json")
-	structures = structures + get_json_data("structures_77.json")
-	structures = structures + get_json_data("structures_81.json")
-	structures = structures + get_json_data("structures_85.json")
-
-	min_supported = 10
-	max_supported = 85
-		
-		
+	
+	tanksdata = load_tanksdata()
+	structures = load_structures()
+	
 	tanks = dict()
 	tanks_v2 = dict()
 	
@@ -174,7 +153,7 @@ def main():
 		#write_to_log("Tankversion " + str(tankversion))
 			#continue
 		
-		if tankversion < min_supported or tankversion > max_supported:
+		if tankversion not in structures:
 				try:
 					write_to_log('unsupported tankversion ' + str(tankversion))
 					printmessage('unsupported tankversion ' + str(tankversion))
@@ -377,14 +356,14 @@ def main():
 			
 		if tankversion < 65:
 			if tankversion >= 20:
-				company = getstructureddata("company", tankversion, 0)
+				company = getstructureddata("company", tankversion)
 				battleCount_company += company['battlesCount']
-				clan = getstructureddata("clan", tankversion, 0)
+				clan = getstructureddata("clan", tankversion)
 				battleCount_clan += clan['battlesCount']
 			
 			numoffrags = 0
 	
-			structure = getstructureddata("structure", tankversion, 0)
+			structure = getstructureddata("structure", tankversion)
 
 
 			
@@ -395,7 +374,7 @@ def main():
 			if option_frags == 1 and tankversion >= 17:
 				fragslist = getdata_fragslist(tankversion, tanksdata, structure['fragspos'])
 	
-			tankdata = getstructureddata("tankdata", tankversion, 0)
+			tankdata = getstructureddata("tankdata", tankversion)
 			battleCount_15 += tankdata['battlesCount']
 	
 			if not "creationTime" in tankdata:
@@ -426,15 +405,15 @@ def main():
 				except Exception, e:
 						write_to_log('Error processing frags: ' + e.message)
 	
-			series = getstructureddata("series", tankversion, 0)
+			series = getstructureddata("series", tankversion)
 	
-			special = getstructureddata("special", tankversion, 0)
+			special = getstructureddata("special", tankversion)
 	
-			battle = getstructureddata("battle", tankversion, 0)
+			battle = getstructureddata("battle", tankversion)
 	
-			major = getstructureddata("major", tankversion, 0)
+			major = getstructureddata("major", tankversion)
 	
-			epic = getstructureddata("epic", tankversion, 0)
+			epic = getstructureddata("epic", tankversion)
 	
 	
 	
@@ -574,22 +553,19 @@ def write_to_log(logtext):
 			logFile.close()
 		except:
 			printmessage("Cannot write to wotdc2j.log")
-		
 
-def getstructureddata(category, tankversion, baseoffset):
-	global sourcedata, structures
 
+def getstructureddata(category, tankversion, baseoffset=0):
+	
 	returndata = dict()
-
-	for structureitem in structures:
-		if category == structureitem['category']:
-			if tankversion == structureitem['version']:
-				offset = structureitem['offset']
-				if baseoffset > 0:
-					offset += baseoffset
-				returndata[structureitem['name']] = getdata(category + " " + structureitem['name'], offset, structureitem['length'])
-
+	
+	if tankversion in structures:
+		if category in structures[tankversion]:
+			for item in structures[tankversion][category]:
+				returndata[item['name']] = getdata(category + " " + item['name'], item['offset']+baseoffset, item['length'])
+	
 	return returndata
+
 
 def keepCompatibility(structureddata):
 	# Compatibility with older versions
@@ -645,20 +621,17 @@ def get_json_data(filename):
 	return file_data
 
 
-
 def get_tank_data(tanksdata, countryid, tankid, dataname):
 
 	if option_server == 0 or option_tanks == 1:
-		for tankdata in tanksdata:
-			if tankdata['countryid'] == countryid:
-				if tankdata['tankid'] == tankid:
-					return tankdata[dataname]
+		key = str(countryid) + "." + str(tankid)
+		if key in tanksdata:
+			return tanksdata[key][dataname]
 	
 	if dataname == 'title':
 		return 'unknown_' + str(countryid) + '_' + str(tankid)
-
-
-	return "-1"
+	
+	return "-"
 
 
 def getdata_fragslist(tankversion, tanksdata, offset):
@@ -717,6 +690,33 @@ def getdata(name, startoffset, offsetlength):
  	return value
 
 
+def load_structures():
+	
+	structures = dict()
+	
+	load_versions = [10,17,18,20,22,24,26,27,28,29,65,69,77,81,85];
+	for version in load_versions:
+		jsondata = get_json_data('structures_'+str(version)+'.json')
+		structures[version] = dict()
+		for item in jsondata:
+			category = item['category']
+			if category not in structures[version]:
+				structures[version][category] = list()
+			structures[version][category].append(item)
+	
+	return structures
+
+
+def load_tanksdata():
+	
+	tanksdata = dict()
+	if option_server == 0 or option_tanks == 1:
+		jsondata = get_json_data("tanks.json")
+		for item in jsondata:
+			key = str(item["countryid"])+"."+str(item["tankid"])
+			tanksdata[key] = item
+	
+	return tanksdata
 
 
 if __name__ == '__main__':

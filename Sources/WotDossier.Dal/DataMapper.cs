@@ -1179,9 +1179,9 @@ namespace WotDossier.Dal
                     pierced = tankJson.FortBattles.pierced,
                     damageBlockedByArmor = tankJson.FortBattles.damageBlockedByArmor,
                     potentialDamageReceived = tankJson.FortBattles.potentialDamageReceived,
-                    //maxDamage = tankJson.Max7x7.maxDamage,
-                    //maxFrags = tankJson.Max7x7.maxFrags,
-                    //maxXP = tankJson.Max7x7.maxXP
+                    maxDamage = tankJson.MaxFort.maxDamage,
+                    maxFrags = tankJson.MaxFort.maxFrags,
+                    maxXP = tankJson.MaxFort.maxXP
                 };
             }
 
@@ -1215,9 +1215,9 @@ namespace WotDossier.Dal
                     pierced = tankJson.FortSorties.pierced,
                     damageBlockedByArmor = tankJson.FortSorties.damageBlockedByArmor,
                     potentialDamageReceived = tankJson.FortSorties.potentialDamageReceived,
-                    //maxDamage = tankJson.Max7x7.maxDamage,
-                    //maxFrags = tankJson.Max7x7.maxFrags,
-                    //maxXP = tankJson.Max7x7.maxXP
+                    maxDamage = tankJson.MaxSorties.maxDamage,
+                    maxFrags = tankJson.MaxSorties.maxFrags,
+                    maxXP = tankJson.MaxSorties.maxXP
                 };
             }
 

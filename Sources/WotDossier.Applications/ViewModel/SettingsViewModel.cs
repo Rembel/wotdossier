@@ -66,6 +66,12 @@ namespace WotDossier.Applications.ViewModel
             set { _appSettings.AutoLoadStatistic = value; }
         }
 
+        public bool UseIncompleteReplaysResultsForCharts
+        {
+            get { return _appSettings.UseIncompleteReplaysResultsForCharts; }
+            set { _appSettings.UseIncompleteReplaysResultsForCharts = value; }
+        }
+
         public string ReplaysFolderPath
         {
             get { return AppSettings.ReplaysFolderPath; }

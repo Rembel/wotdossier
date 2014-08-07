@@ -186,8 +186,21 @@ namespace WotDossier.Domain.Dossier.TankV85
             set { _fragsList = value; }
         }
 
-        private int _uniqueId = -1;
+        private MaxJson77 _maxFort = new MaxJson77();
+        public MaxJson77 MaxFort
+        {
+            get { return _maxFort; }
+            set { _maxFort = value; }
+        }
 
+        private MaxJson77 _maxSorties = new MaxJson77();
+        public MaxJson77 MaxSorties
+        {
+            get { return _maxSorties; }
+            set { _maxSorties = value; }
+        }
+
+        private int _uniqueId = -1;
         public int UniqueId()
         {
             if (_uniqueId == -1)

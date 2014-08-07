@@ -2943,4 +2943,7 @@ up to 500 m</value>
   <data name="BattleMode_FortSorties" xml:space="preserve">
     <value>Fort sorties</value>
   </data>
+  <data name="BattleType_Sorties" xml:space="preserve">
+    <value>Sorties</value>
+  </data>
 </root>

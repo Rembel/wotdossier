@@ -12,7 +12,7 @@
         CyberSport = 7,
         Historical = 8,
         Reserved1 = 9,
-        Reserved2 = 10,
+        Sorties = 10,
         Reserved3 = 11
     }
 }

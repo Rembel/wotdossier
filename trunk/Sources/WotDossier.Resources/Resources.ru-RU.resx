@@ -3035,4 +3035,7 @@
   <data name="BattleMode_FortSorties" xml:space="preserve">
     <value>Укрепрайоны. Вылазки</value>
   </data>
+  <data name="BattleType_Sorties" xml:space="preserve">
+    <value>Вылазки</value>
+  </data>
 </root>

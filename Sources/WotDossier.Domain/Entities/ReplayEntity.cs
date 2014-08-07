@@ -27,6 +27,11 @@ namespace WotDossier.Domain.Entities
         /// Gets or sets the raw.
         /// </summary>
 		public virtual byte[] Raw	{get; set; }
+
+        /// <summary>
+        /// Gets or sets the comment.
+        /// </summary>
+	    public virtual string Comment { get; set; }
 	}
 }
 

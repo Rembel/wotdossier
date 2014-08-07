@@ -308,7 +308,11 @@ namespace WotDossier.Applications.ViewModel
                     dbReplays.Join(replayFiles, x => new { x.PlayerId, x.ReplayId }, y => new { y.PlayerId, y.ReplayId },
                         (x, y) => new { ReplayEntity = x, ReplayFile = y })
                         .ToList()
-                        .ForEach(x => x.ReplayFile.Link = x.ReplayEntity.Link);
+                        .ForEach(x =>
+                        {
+                            x.ReplayFile.Link = x.ReplayEntity.Link;
+                            x.ReplayFile.Comment = x.ReplayEntity.Comment;
+                        });
 
                     //add phisical replays
                     _replays.AddRange(replayFiles.OrderByDescending(x => x.PlayTime).ToList());

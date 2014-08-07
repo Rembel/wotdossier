@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Interactivity;
 using WotDossier.Framework.Forms.Commands;
@@ -121,7 +122,7 @@ namespace WotDossier.Framework.Applications
             {
                 DelegateCommand<object> command = GetCommand();
 
-                DataGrid control = GetAssociatedObject() as DataGrid;
+                Selector control = GetAssociatedObject() as Selector;
                 
                 if ((command != null) && control != null && command.CanExecute(control.SelectedItem))
                 {

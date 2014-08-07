@@ -28,12 +28,22 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         #region result fields
 
+        public TimeSpan BattleTime { get; set; }
+        public BattleType BattleType { get; set; }
+        public Version ClientVersion { get; set; }
+        public string Comment { get; set; }
+        public Country CountryId { get; set; }
+        public TimeSpan LifeTime { get; set; }
         public string MapName { get; set; }
         public int MapId { get; set; }
         public string MapNameId { get; set; }
-        public Version ClientVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the mark of mastery.
+        /// </summary>
+        public int MarkOfMastery { get; set; }
+
         public string TankName { get; set; }
-        public Country CountryId { get; set; }
         public DateTime PlayTime { get; set; }
         public int Damaged { get; set; }
         public int Killed { get; set; }
@@ -49,7 +59,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         
         public TankDescription Tank { get; set; }
         public TankIcon Icon { get; set; }
-        public List<Medal> Medals { get; set; }
         public List<Vehicle> TeamMembers { get; set; }
 
         private string _link;
@@ -68,8 +77,6 @@ namespace WotDossier.Applications.ViewModel.Replay
                 OnPropertyChanged("Link");
             }
         }
-
-        #endregion
 
         /// <summary>
         /// Gets or sets the phisical file.
@@ -108,13 +115,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         public abstract string Name { get; }
 
-        /// <summary>
-        /// Gets or sets the mark of mastery.
-        /// </summary>
-        /// <value>
-        /// The mark of mastery.
-        /// </value>
-        public int MarkOfMastery { get; set; }
+        public bool IsAlive { get; set; }
+
+        #endregion
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplayFile" /> class.
@@ -208,13 +211,6 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
             }
         }
-
-        public bool IsAlive { get; set; }
-
-        public TimeSpan LifeTime { get; set; }
-
-        public TimeSpan BattleTime { get; set; }
-        public BattleType BattleType { get; set; }
 
         /// <summary>
         /// Moves replay to the specified folder.

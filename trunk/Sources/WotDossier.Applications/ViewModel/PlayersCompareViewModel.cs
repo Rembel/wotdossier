@@ -90,8 +90,8 @@ namespace WotDossier.Applications.ViewModel
                         return;
                     }
 
-                    Player stat1 = WotApiClient.Instance.LoadPlayerStat(first.account_id, SettingsReader.Get(), PlayerStatLoadOptions.LoadAchievments);
-                    Player stat2 = WotApiClient.Instance.LoadPlayerStat(second.account_id, SettingsReader.Get(), PlayerStatLoadOptions.LoadAchievments);
+                    Player stat1 = WotApiClient.Instance.LoadPlayerStat(first.account_id, SettingsReader.Get(), PlayerStatLoadOptions.LoadAchievments | PlayerStatLoadOptions.LoadVehicles);
+                    Player stat2 = WotApiClient.Instance.LoadPlayerStat(second.account_id, SettingsReader.Get(), PlayerStatLoadOptions.LoadAchievments | PlayerStatLoadOptions.LoadVehicles);
 
                     if (stat1 != null && stat2 != null)
                     {

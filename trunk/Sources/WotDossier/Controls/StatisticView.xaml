@@ -7,8 +7,13 @@
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
              xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!-- ... -->
+        <system:Boolean x:Key="True">True</system:Boolean>
+    </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="Transparent">
             <TextBlock Foreground="#FFA759" Text="{x:Static resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
@@ -32,6 +37,16 @@
                         <Binding Path="WinsPercent" />
                     </MultiBinding>
                 </controls:StatisticRow.Value>
+                <ToolTipService.ToolTip>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{x:Static converters:ValueNearestPercentFormater.Default}" ConverterParameter="{StaticResource True}" >
+                                <Binding Path="Wins" />
+                                <Binding Path="WinsPercent" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </ToolTipService.ToolTip>
             </controls:StatisticRow>
             <!--Losses-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_Defeats}"

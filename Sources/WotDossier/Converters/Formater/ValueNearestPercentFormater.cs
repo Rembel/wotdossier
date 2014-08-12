@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Data;
 
@@ -8,7 +11,7 @@ namespace WotDossier.Converters
     public class ValueNearestPercentFormater : IMultiValueConverter
     {
         private static readonly ValueNearestPercentFormater _default = new ValueNearestPercentFormater();
-
+        
         /// <summary>
         /// Gets the default.
         /// </summary>
@@ -36,12 +39,34 @@ namespace WotDossier.Converters
 
             int val = (int)values[0];
             double percent = (double)values[1];
+            bool? showAllNearest = (bool?)parameter;
 
-            double nearest = GetPercentNearestValue(percent);
+            double percentNearestValue = GetPercentNearestValue(percent);
 
-            double b = GetBattlesToNearest(nearest, percent, val);
+            IEnumerable<double> nearestValues;
+            if (showAllNearest == true)
+            {
+                nearestValues = GetNearestValues(percentNearestValue);
+            }
+            else
+            {
+                nearestValues = new List<double>{percentNearestValue};
+            }
 
-            return string.Format("{0:### ### ###} ({1:0.00}% - {2} -> {3:0.0}%)", val, percent, b, nearest);
+            StringBuilder builder = new StringBuilder();
+
+            foreach (double nearestValue in nearestValues)
+            {
+                double b = GetBattlesToNearest(nearestValue, percent, val);
+                builder.AppendLine(string.Format("{0:### ### ###} ({1:0.00}% - {2} -> {3:0.0}%)", val, percent, b, nearestValue));    
+            }
+
+            return builder.ToString();
+        }
+
+        private static IEnumerable<double> GetNearestValues(double minValue)
+        {
+            return new List<double> { 46, 48, 50, 55, 60, 65, 70, 75 }.Where(x => x > minValue);
         }
 
         private int GetBattlesToNearest(double nearestPercent, double currentPercent, double value)

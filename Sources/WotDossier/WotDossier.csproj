@@ -248,6 +248,9 @@
     <Compile Include="Tabs\ReplaysTabNew.xaml.cs">
       <DependentUpon>ReplaysTabNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\RecentActivityTab.xaml.cs">
+      <DependentUpon>RecentActivityTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\ChartHelper.cs" />
     <Compile Include="UI\TierLabelProvider.cs" />
     <Compile Include="UI\CountryLabelProvider.cs" />
@@ -737,6 +740,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\ClanBattles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\RecentActivityTab.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

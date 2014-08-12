@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="WotDossier.Tabs.RecentActivityTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:tabs="clr-namespace:WotDossier.Tabs"
+             xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+             xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
+             xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <tabs:PeriodTab Grid.Row="0" x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"  DataContext="{Binding PlayerStatistic}"></tabs:PeriodTab>
+            <d3:ChartPlotter DataContext="{Binding ChartView}" BorderBrush="Transparent" Grid.Row="0" Grid.Column="1" Name="Chart4" Width="200" Height="200" Margin="20" HorizontalAlignment="Center"
+                                         MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent" BorderThickness="0">
+                <d3:ViewportUIContainer>
+                    <d3:PieChart Name="PieChart" Width="150" Height="150" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanksDataSource}"
+							                StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
+                        <d3:PieChart.Resources>
+                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
+                        </d3:PieChart.Resources>
+
+                        <d3:PieChart.MarkerTemplate>
+                            <DataTemplate>
+                                <d3:PieChartItem Background="{Binding WinPercent, Converter={x:Static color:PercentToColorConverter.Default}}">
+                                    <ToolTipService.ToolTip>
+                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                            <TextBlock>
+                                                            <Bold>
+                                                                <x:Static Member="resources:Resources.Chart_Tooltip_Tank" />
+                                                            </Bold>
+                                                            <TextBlock Text="{Binding TankName}"/>
+                                                            <LineBreak/>
+                                                            <Bold>
+                                                                <x:Static Member="resources:Resources.Chart_Tooltip_Battles" />
+                                                            </Bold>
+                                                            <TextBlock Text="{Binding Battles}"/>
+                                                            <LineBreak/>
+                                                            <Bold>
+                                                                <x:Static Member="resources:Resources.Chart_Tooltip_WinPercent" />
+                                                            </Bold>
+                                                            <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}" Foreground="{Binding WinPercent, Converter={x:Static color:PercentToColorConverter.Default}}"/></TextBlock>
+                                        </ToolTip>
+                                    </ToolTipService.ToolTip>
+                                </d3:PieChartItem>
+                            </DataTemplate>
+                        </d3:PieChart.MarkerTemplate>
+                    </d3:PieChart>
+                </d3:ViewportUIContainer>
+            </d3:ChartPlotter>
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="2" MinHeight="100" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto"
+                                  ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False" controls:DataGridBehavior.DisplayRowNumber="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
+                    <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="{x:Static resources:Resources.Column_Ratings_Battles}" Binding="{Binding BattlesCountDelta}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn CellStyle="{StaticResource DataGridCellWinPercentForPeriodStyle}" Header="{x:Static resources:Resources.Column_Ratings_Winrate}" Binding="{Binding WinsPercentForPeriod, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="{x:Static resources:Resources.Column_Ratings_AverageDamage}" Binding="{Binding AvgDamageDealtForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="{x:Static resources:Resources.Column_Frags_AvgFrags}" Binding="{Binding AvgFragsForPeriod, StringFormat='0.00'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="{x:Static resources:Resources.Column_XP_AverageXP}" Binding="{Binding AvgXpForPeriod, StringFormat='0'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn CellStyle="{StaticResource DataGridCellEffForPeriodStyle}" Header="{x:Static resources:Resources.Column_Ratings_EffRating}" Binding="{Binding EffRatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn7ForPeriodStyle}" Header="WN7" Binding="{Binding WN7RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                    <DataGridTextColumn CellStyle="{StaticResource DataGridCellWn8ForPeriodStyle}" Header="WN8" Binding="{Binding WN8RatingForPeriod, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=RowDoubleClickCommand, Mode=OneWay}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

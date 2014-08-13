@@ -61,7 +61,7 @@ namespace WotDossier.Converters
                 builder.AppendLine(string.Format("{0:### ### ###} ({1:0.00}% - {2} -> {3:0.0}%)", val, percent, b, nearestValue));    
             }
 
-            return builder.ToString();
+            return builder.ToString().Trim();
         }
 
         private static IEnumerable<double> GetNearestValues(double minValue)

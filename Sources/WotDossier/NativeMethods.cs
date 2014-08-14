@@ -9,7 +9,7 @@ namespace WotDossier
         private const int SW_MAXIMIZE = 3;
         private const int SW_RESTORE = 9;
 
-        [DllImport("User32.dll")]
+        [DllImport("User32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr FindWindow(string className, string windowName);
         [DllImport("User32.dll")]
         public static extern int SetForegroundWindow(int hWnd);
@@ -17,8 +17,20 @@ namespace WotDossier
         public static extern bool ShowWindow(int hWnd, int nCmdShow);
         [DllImport("user32")]
         public static extern bool PostMessage(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam);
-        [DllImport("user32")]
+        [DllImport("user32", CharSet = CharSet.Unicode)]
         public static extern int RegisterWindowMessage(string message);
+
+        [DllImport("User32.dll")]
+        public static extern bool RegisterHotKey(
+            [In] IntPtr hWnd,
+            [In] int id,
+            [In] uint fsModifiers,
+            [In] uint vk);
+
+        [DllImport("User32.dll")]
+        public static extern bool UnregisterHotKey(
+            [In] IntPtr hWnd,
+            [In] int id);
 
         /// <summary>
         /// Activates the window.

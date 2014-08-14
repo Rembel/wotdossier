@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace WotDossier.Dal
 {
+    [Serializable]
     public class PlayerInfoLoadException : Exception
     {
         public PlayerInfoLoadException()

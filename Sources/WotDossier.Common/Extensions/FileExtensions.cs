@@ -15,7 +15,6 @@ namespace WotDossier.Common.Extensions
             using (FileStream stream = File.OpenRead(file.FullName))
             {
                 byte[] buffer = new MD5CryptoServiceProvider().ComputeHash(stream);
-                stream.Close();
                 return BitConverter.ToString(buffer).Replace("-", "").ToLower();
             }
         }

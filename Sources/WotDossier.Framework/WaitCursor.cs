@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace WotDossier.Framework
 {
-    public class WaitCursor : IDisposable
+    public sealed class WaitCursor : IDisposable
     {
         private Cursor _previousCursor;
 

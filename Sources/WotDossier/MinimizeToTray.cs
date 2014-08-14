@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Interop;
@@ -107,18 +106,6 @@ namespace WotDossier
 
             #region Restore hot key
 
-            [DllImport("User32.dll")]
-            private static extern bool RegisterHotKey(
-                [In] IntPtr hWnd,
-                [In] int id,
-                [In] uint fsModifiers,
-                [In] uint vk);
-
-            [DllImport("User32.dll")]
-            private static extern bool UnregisterHotKey(
-                [In] IntPtr hWnd,
-                [In] int id);
-
             private static HwndSource _source;
             private const int HOTKEY_ID = 9000;
 
@@ -135,7 +122,7 @@ namespace WotDossier
                 var helper = new WindowInteropHelper(window);
                 const uint VK_F10 = 0x79;
                 const uint MOD_CTRL = 0x0002;
-                if (!RegisterHotKey(helper.Handle, HOTKEY_ID, MOD_CTRL, VK_F10))
+                if (!NativeMethods.RegisterHotKey(helper.Handle, HOTKEY_ID, MOD_CTRL, VK_F10))
                 {
                     // handle error
                 }
@@ -146,7 +133,7 @@ namespace WotDossier
                 _source.RemoveHook(HwndHook);
                 _source = null;
                 var helper = new WindowInteropHelper(window);
-                UnregisterHotKey(helper.Handle, HOTKEY_ID);
+                NativeMethods.UnregisterHotKey(helper.Handle, HOTKEY_ID);
             }
 
             private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)

@@ -28,7 +28,7 @@
                         </d3:BarChart.Resources>
                         <d3:TemplateMarkerGenerator>
                             <DataTemplate>
-                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:WN8ToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
@@ -60,7 +60,7 @@
                         </d3:BarChart.Resources>
                         <d3:TemplateMarkerGenerator>
                             <DataTemplate>
-                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:WN8ToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
@@ -92,7 +92,7 @@
                         </d3:BarChart.Resources>
                         <d3:TemplateMarkerGenerator>
                             <DataTemplate>
-                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:WN8ToColorConverter.Default}}"
 								               d3:ViewportPanel.Y="0"
 								               d3:ViewportPanel.X="{Binding X}"
 								               d3:ViewportPanel.ViewportHeight="{Binding Y}"

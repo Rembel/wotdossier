@@ -509,13 +509,13 @@ namespace WotDossier.Applications.ViewModel.Chart
 
             InitCharts(playerStatistic);
 
-            InitEfficiencyByTierChart(tanks);
-            InitEfficiencyByTypeChart(tanks);
-            InitEfficiencyByCountryChart(tanks);
+            //InitEfficiencyByTierChart(tanks);
+            //InitEfficiencyByTypeChart(tanks);
+            //InitEfficiencyByCountryChart(tanks);
 
-            //InitWn8ByTierChart(tanks);
-            //InitWn8ByTypeChart(tanks);
-            //InitWn8ByCountryChart(tanks);
+            InitWn8ByTierChart(tanks);
+            InitWn8ByTypeChart(tanks);
+            InitWn8ByCountryChart(tanks);
 
             InitWinPercentByTierChart(tanks);
             InitWinPercentByTypeChart(tanks);

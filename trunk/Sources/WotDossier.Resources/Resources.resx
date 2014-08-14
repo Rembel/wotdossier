@@ -1176,10 +1176,10 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Period</value>
   </data>
   <data name="Chart_EffByType" xml:space="preserve">
-    <value>Effectivity by Type</value>
+    <value>WN8 by Type</value>
   </data>
   <data name="Chart_EffByTier" xml:space="preserve">
-    <value>Effectivity by Tier</value>
+    <value>WN8 by Tier</value>
   </data>
   <data name="Chart_EffectivityRating" xml:space="preserve">
     <value>Effectivity Rating</value>
@@ -1377,7 +1377,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Average Spotted</value>
   </data>
   <data name="Chart_EffByCountry" xml:space="preserve">
-    <value>Efficiency by country</value>
+    <value>WN8 by country</value>
   </data>
   <data name="Chart_ReplaysCountByMap" xml:space="preserve">
     <value>Replays count</value>

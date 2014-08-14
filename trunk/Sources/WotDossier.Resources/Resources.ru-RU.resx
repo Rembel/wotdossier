@@ -1281,10 +1281,10 @@
     <value>Период</value>
   </data>
   <data name="Chart_EffByType" xml:space="preserve">
-    <value>Эффективность по типам техники</value>
+    <value>WN8 по типам техники</value>
   </data>
   <data name="Chart_EffByTier" xml:space="preserve">
-    <value>Эффективность по уровням</value>
+    <value>WN8 по уровням</value>
   </data>
   <data name="Chart_EffectivityRating" xml:space="preserve">
     <value>Рейтинг Эффективности</value>
@@ -1482,7 +1482,7 @@
     <value>Обнаружено в среднем за бой</value>
   </data>
   <data name="Chart_EffByCountry" xml:space="preserve">
-    <value>Эффективность по нациям</value>
+    <value>WN8 по нациям</value>
   </data>
   <data name="Chart_ReplaysCountByMap" xml:space="preserve">
     <value>Количество реплеев</value>

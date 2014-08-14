@@ -176,12 +176,6 @@
     <Compile Include="Interpolation\Ext.cs" />
     <Compile Include="Interpolation\IInterpolation.cs" />
     <Compile Include="Interpolation\SplineInterpolation.cs" />
-    <Compile Include="Localization\ITranslationProvider.cs" />
-    <Compile Include="Localization\LanguageChangedEventManager.cs" />
-    <Compile Include="Localization\ResxTranslationProvider.cs" />
-    <Compile Include="Localization\TranslateExtension.cs" />
-    <Compile Include="Localization\TranslationData.cs" />
-    <Compile Include="Localization\TranslationManager.cs" />
     <Compile Include="Presentation\Services\ApplicationInfo.cs" />
     <Compile Include="Presentation\Services\FileDialogService.cs" />
     <Compile Include="Presentation\Services\MessageService.cs" />

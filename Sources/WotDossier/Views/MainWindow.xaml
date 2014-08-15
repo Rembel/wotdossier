@@ -4,7 +4,7 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
-        xmlns:Converters="clr-namespace:WotDossier.Converters"
+        xmlns:converters="clr-namespace:WotDossier.Converters"
         xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
         xmlns:domain="clr-namespace:WotDossier.Domain;assembly=WotDossier.Domain"
@@ -49,8 +49,8 @@
                 <ToolBarPanel Orientation="Horizontal">
                         <TextBlock Margin="6 0 6 0" VerticalAlignment="Center" Text="{x:Static resources:Resources.Settings_Period}"/>
                         <ComboBox Margin="6 0 6 0" Height="20" Width="150" ItemsSource="{Binding Periods}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Period}" />
-                        <ComboBox Margin="6 0 6 0" Height="20" Width="150" Visibility="{Binding PeriodsVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" ItemsSource="{Binding PrevDates}" ItemStringFormat="dd.MM.yyyy HH:mm" SelectedItem="{Binding PrevDate}" />
-                        <TextBox Margin="6 0 6 0" Height="20" Width="100" HorizontalAlignment="Left" Visibility="{Binding LastNBattlesVisible, Converter={x:Static Converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}"  controls1:AttachedProperties.UpdateSourceOnKey="Enter"/>
+                        <ComboBox Margin="6 0 6 0" Height="20" Width="150" Visibility="{Binding PeriodsVisible, Converter={x:Static converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" ItemsSource="{Binding PrevDates}" ItemStringFormat="dd.MM.yyyy HH:mm" SelectedItem="{Binding PrevDate}" />
+                        <TextBox Margin="6 0 6 0" Height="20" Width="100" HorizontalAlignment="Left" Visibility="{Binding LastNBattlesVisible, Converter={x:Static converters:BoolToVisibilityConverter.Default}, Mode=OneWay}" Text="{Binding LastNBattles}"  controls1:AttachedProperties.UpdateSourceOnKey="Enter"/>
                 </ToolBarPanel>
             </ToolBar>
             <ToolBar DataContext="{Binding BattleModeSelector}">
@@ -68,101 +68,101 @@
             </ToolBar>
         </ToolBarTray>
 
-        <TabControl Margin="0,6,0,0" Grid.Row="2" Name="tcMain" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <TabControl Margin="0,6,0,0" Name="tcMain" Grid.Row="2" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <!--Common tab-->
-            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Overall}" Name="tabCommon">
-                <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch"></tabs:CommonTabNew>
+            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Overall}">
+                <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" />
             </TabItem>
             <!--Charts-->
-            <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
-                <tabs:ChartsTab></tabs:ChartsTab>
+            <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}">
+                <tabs:ChartsTab />
             </TabItem>
             <!--XP-->
-            <TabItem TabIndex="2" Header="{x:Static resources:Resources.Tab_Header_XP}" Name="tabXP">
-                <tabs:XPTab HorizontalAlignment="Stretch"></tabs:XPTab>
+            <TabItem TabIndex="2" Header="{x:Static resources:Resources.Tab_Header_XP}">
+                <tabs:XPTab HorizontalAlignment="Stretch" />
             </TabItem>
             <!--Battles-->
-            <TabItem TabIndex="3" Header="{x:Static resources:Resources.Tab_Header_Battles}" Name="tabBattles">
-                <tabs:BattlesTab HorizontalAlignment="Stretch"></tabs:BattlesTab>
+            <TabItem TabIndex="3" Header="{x:Static resources:Resources.Tab_Header_Battles}">
+                <tabs:BattlesTab HorizontalAlignment="Stretch" />
             </TabItem>
             <!--Frags-->
-            <TabItem TabIndex="4" Header="{x:Static resources:Resources.Tab_Header_Frags}" Name="tabFrags">
+            <TabItem TabIndex="4" Header="{x:Static resources:Resources.Tab_Header_Frags}">
                 <tabs:FragsTab HorizontalAlignment="Stretch"></tabs:FragsTab>
             </TabItem>
             <!--Damage-->
-            <TabItem TabIndex="5" Header="{x:Static resources:Resources.Tab_Header_Damage}" Name="tabDamage">
+            <TabItem TabIndex="5" Header="{x:Static resources:Resources.Tab_Header_Damage}">
                 <tabs:DamageTab HorizontalAlignment="Stretch"></tabs:DamageTab>
             </TabItem>
             <!--Awards-->
-            <TabItem TabIndex="5" Header="{x:Static resources:Resources.Tab_Awards}" Name="tabMedals15x15" 
-                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+            <TabItem TabIndex="5" Header="{x:Static resources:Resources.Tab_Awards}"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
                      ConverterParameter={x:Static domain:BattleMode.RandomCompany}}">
                 <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <!--Battle awards-->
-                    <TabItem TabIndex="6" Header="{x:Static resources:Resources.Tab_Header_BattleAwards}" Name="tabBattleAwards">
+                    <TabItem TabIndex="6" Header="{x:Static resources:Resources.Tab_Header_BattleAwards}">
                         <tabs:BattleAwardsTab HorizontalAlignment="Stretch"></tabs:BattleAwardsTab>
                     </TabItem>
                     <!--Epics-->
-                    <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Epics}" Name="tabEpics">
+                    <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Epics}">
                         <tabs:EpicsTab HorizontalAlignment="Stretch"></tabs:EpicsTab>
                     </TabItem>
                     <!--Special awards-->
-                    <TabItem TabIndex="7" Header="{x:Static resources:Resources.Tab_Header_SpecialAwards}" Name="tabSpecialAwards">
+                    <TabItem TabIndex="7" Header="{x:Static resources:Resources.Tab_Header_SpecialAwards}">
                         <tabs:SpecialAwardsTab HorizontalAlignment="Stretch"></tabs:SpecialAwardsTab>
                     </TabItem>
                     <!--Series-->
-                    <TabItem TabIndex="8" Header="{x:Static resources:Resources.Tab_Header_Series}" Name="tabSeries">
+                    <TabItem TabIndex="8" Header="{x:Static resources:Resources.Tab_Header_Series}">
                         <tabs:SeriesTab HorizontalAlignment="Stretch"></tabs:SeriesTab>
                     </TabItem>
                     <!--Medals-->
-                    <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}" Name="tabMedals">
+                    <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Header_Medals}">
                         <tabs:MedalsTab HorizontalAlignment="Stretch"></tabs:MedalsTab>
                     </TabItem>         
                 </TabControl>
             </TabItem>
             <!--Medals-->
-            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Awards}" Name="tabMedals7x7"
-                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Awards}"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
                      ConverterParameter={x:Static domain:BattleMode.TeamBattle}}">
                 <tabs:Medals7x7Tab HorizontalAlignment="Stretch"></tabs:Medals7x7Tab>
             </TabItem>
             <!--Medals-->
-            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Awards}" Name="tabMedalsHistorical"
-                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+            <TabItem TabIndex="9" Header="{x:Static resources:Resources.Tab_Awards}"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
                      ConverterParameter={x:Static domain:BattleMode.HistoricalBattle}}">
                 <tabs:MedalsHistoricalTab HorizontalAlignment="Stretch"></tabs:MedalsHistoricalTab>
             </TabItem>
             <!--Ratings-->
-            <TabItem TabIndex="10" Header="{x:Static resources:Resources.Tab_Header_Ratings}" Name="tabRatings">
+            <TabItem TabIndex="10" Header="{x:Static resources:Resources.Tab_Header_Ratings}">
                 <tabs:RatingsTab HorizontalAlignment="Stretch"></tabs:RatingsTab>
             </TabItem>
             <!--Performance-->
-            <TabItem TabIndex="11" Header="{x:Static resources:Resources.Tab_Header_Performance}" Name="tabPerformance">
+            <TabItem TabIndex="11" Header="{x:Static resources:Resources.Tab_Header_Performance}">
                 <tabs:PerformanceTab HorizontalAlignment="Stretch"></tabs:PerformanceTab>
             </TabItem>
             <!--Performance88-->
-            <!--<TabItem TabIndex="12" Header="{x:Static Resources:Resources.Tab_Header_Performance88}" Name="tabPerformance88">
+            <!--<TabItem TabIndex="12" Header="{x:Static Resources:Resources.Tab_Header_Performance88}">
                 <tabs:PerformanceTab88 HorizontalAlignment="Stretch"></tabs:PerformanceTab88>
             </TabItem>-->
             <!--Frags count-->
-            <TabItem TabIndex="13" Header="{x:Static resources:Resources.Tab_Header_FragCounts}" Name="tabFragCounts"
-                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+            <TabItem TabIndex="13" Header="{x:Static resources:Resources.Tab_Header_FragCounts}"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
                      ConverterParameter={x:Static domain:BattleMode.RandomCompany}}">
                 <tabs:FragCountsTab DataContext="{Binding FraggsCount}" HorizontalAlignment="Stretch"></tabs:FragCountsTab>
             </TabItem>
             <!--Master tanker-->
-            <TabItem TabIndex="14" Header="{x:Static resources:Resources.Tab_Header_MasterTanker}" Name="tabMasterTanker"
-                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static Converters:BattleModeToVisibilityConverter.Default}, 
+            <TabItem TabIndex="14" Header="{x:Static resources:Resources.Tab_Header_MasterTanker}"
+                     Visibility="{Binding BattleModeSelector.BattleMode, Converter={x:Static converters:BattleModeToVisibilityConverter.Default}, 
                      ConverterParameter={x:Static domain:BattleMode.RandomCompany}}">
                 <tabs:MasterTankerTab HorizontalAlignment="Stretch"></tabs:MasterTankerTab>
             </TabItem>
             <!--Time-->
-            <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Time}" Name="tabTime">
+            <TabItem TabIndex="15" Header="{x:Static resources:Resources.Tab_Header_Time}">
                 <tabs:TimeTab HorizontalAlignment="Stretch"></tabs:TimeTab>
             </TabItem>
             <!--Clan Battles-->
-            <TabItem TabIndex="16" Header="{x:Static resources:Resources.Tab_Header_ClanBattles}" Name="tabClanBattles"
-                     Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}">
+            <TabItem TabIndex="16" Header="{x:Static resources:Resources.Tab_Header_ClanBattles}"
+                     Visibility="{Binding PlayerStatistic.Clan, Converter={x:Static converters:ObjectToVisibilityConverter.Default}, FallbackValue=Collapsed}">
                 <tabs:ClanBattles DataContext="{Binding PlayerStatistic.Clan}" HorizontalAlignment="Stretch"></tabs:ClanBattles>
             </TabItem>
             <!--Replays-->

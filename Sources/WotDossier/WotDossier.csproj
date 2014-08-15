@@ -236,6 +236,9 @@
     <Compile Include="Tabs\Charts\EffectivityChartsTab.xaml.cs">
       <DependentUpon>EffectivityChartsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Charts\ReplaysChartsTab.xaml.cs">
+      <DependentUpon>ReplaysChartsTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Charts\WinPercentChartsTab.xaml.cs">
       <DependentUpon>WinPercentChartsTab.xaml</DependentUpon>
     </Compile>
@@ -680,6 +683,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\Charts\EffectivityChartsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\Charts\ReplaysChartsTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

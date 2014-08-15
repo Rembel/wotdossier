@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Common.Logging;
 using WotDossier.Applications.Logic;
+using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
-using WotDossier.Domain;
-using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications.ViewModel.Chart
 {
@@ -35,133 +34,10 @@ namespace WotDossier.Applications.ViewModel.Chart
         private double _maxBattlesByTier;
         private double _maxBattlesByCountry;
         private IEnumerable<ReplayFile> _replaysDataSource;
-        private bool _resp1;
-        private bool _resp2;
-        private bool _allResps = true;
-        private DateTime? _startDate;
-        private DateTime? _endDate = DateTime.Now;
-
-        private List<ListItem<BattleType>> _battleTypes = new List<ListItem<BattleType>>
-            {
-                new ListItem<BattleType>(BattleType.Unknown, Resources.Resources.TankFilterPanel_All), 
-                new ListItem<BattleType>(BattleType.Regular, Resources.Resources.BattleType_Regular), 
-                new ListItem<BattleType>(BattleType.Historical,Resources.Resources.BattleType_Historical), 
-                new ListItem<BattleType>(BattleType.CyberSport,Resources.Resources.BattleType_CyberSport), 
-                new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
-                new ListItem<BattleType>(BattleType.CompanyWar,Resources.Resources.BattleType_CompanyWar), 
-            };
-
-        /// <summary>
-        /// Gets the battle types.
-        /// </summary>
-        /// <value>
-        /// The battle types.
-        /// </value>
-        public List<ListItem<BattleType>> BattleTypes
-        {
-            get { return _battleTypes; }
-        }
-
-        private BattleType _battleType;
+        
         private List<DataPoint> _winPercentByTierDataSource;
         private List<DataPoint> _winPercentByTypeDataSource;
         private List<DataPoint> _winPercentByCountryDataSource;
-
-        /// <summary>
-        /// Gets or sets the type of the battle.
-        /// </summary>
-        /// <value>
-        /// The type of the battle.
-        /// </value>
-        public BattleType BattleType
-        {
-            get { return _battleType; }
-            set
-            {
-                _battleType = value;
-                RefreshReplaysCharts();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="PlayerChartsViewModel" /> is resp1.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if resp1; otherwise, <c>false</c>.
-        /// </value>
-        public bool Resp1
-        {
-            get { return _resp1; }
-            set
-            {
-                _resp1 = value;
-                RefreshReplaysCharts();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="PlayerChartsViewModel" /> is resp2.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if resp2; otherwise, <c>false</c>.
-        /// </value>
-        public bool Resp2
-        {
-            get { return _resp2; }
-            set
-            {
-                _resp2 = value;
-                RefreshReplaysCharts();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether [all resps].
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if [all resps]; otherwise, <c>false</c>.
-        /// </value>
-        public bool AllResps
-        {
-            get { return _allResps; }
-            set
-            {
-                _allResps = value;
-                RefreshReplaysCharts();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the start date.
-        /// </summary>
-        /// <value>
-        /// The start date.
-        /// </value>
-        public DateTime? StartDate
-        {
-            get { return _startDate; }
-            set
-            {
-                _startDate = value;
-                RefreshReplaysCharts();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the end date.
-        /// </summary>
-        /// <value>
-        /// The end date.
-        /// </value>
-        public DateTime? EndDate
-        {
-            get { return _endDate; }
-            set
-            {
-                _endDate = value;
-                RefreshReplaysCharts();
-            }
-        }
 
         /// <summary>
         /// Gets or sets the last used tanks data source.
@@ -443,11 +319,24 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// </value>
         public IEnumerable<ReplayFile> ReplaysDataSource
         {
-            get { return Filter(_replaysDataSource); }
+            get { return ReplaysFilter.Filter(_replaysDataSource, true); }
             set { _replaysDataSource = value; }
         }
 
+        private ReplaysFilterViewModel _replaysFilter;
+
+        public ReplaysFilterViewModel ReplaysFilter
+        {
+            get { return _replaysFilter; }
+        }
+
         #endregion
+
+        public PlayerChartsViewModel()
+        {
+            _replaysFilter = new ReplaysFilterViewModel();
+            _replaysFilter.PropertyChanged += (sender, args) => RefreshReplaysCharts(); //refresh charts on filter changes
+        }
 
         /// <summary>
         /// Inits the battles by map chart.
@@ -533,26 +422,6 @@ namespace WotDossier.Applications.ViewModel.Chart
         {
             InitWinReplaysPercentByMapChart();
             InitBattlesByMapChart();
-        }
-
-        private IEnumerable<ReplayFile> Filter(IEnumerable<ReplayFile> replaysDataSource)
-        {
-            AppSettings settings = SettingsReader.Get();
-
-            List<ReplayFile> replayFiles = replaysDataSource.Where(x =>
-                (Resp1 && x.Team == 1
-                 || Resp2 && x.Team == 2
-                 || AllResps)
-                &&
-                (StartDate == null || x.PlayTime.Date >= StartDate)
-                &&
-                (EndDate == null || x.PlayTime.Date <= EndDate)
-                && (settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
-                && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
-                && (settings.UseIncompleteReplaysResultsForCharts || x.IsWinner != BattleStatus.Incomplete)
-                ).ToList();
-            return replayFiles;
-
         }
 
         private void InitEfficiencyByTierChart(List<ITankStatisticRow> statisticViewModels)

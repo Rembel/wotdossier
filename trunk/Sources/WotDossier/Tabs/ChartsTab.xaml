@@ -50,7 +50,7 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
                         <StackPanel Orientation="Horizontal">
-                            <GroupBox Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center">
+                            <GroupBox Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" DataContext="{Binding ReplaysFilter}">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition></RowDefinition>
@@ -62,6 +62,8 @@
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition></RowDefinition>
                                         <RowDefinition></RowDefinition>
+                                        <RowDefinition />
+                                        <RowDefinition />
                                     </Grid.RowDefinitions>
                                     <RadioButton Margin="6" Grid.Row="0" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
                                     <RadioButton Margin="6" Grid.Row="1" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
@@ -73,6 +75,9 @@
                                     <TextBlock Margin="6" Grid.Row="7" Text="{x:Static resources:Resources.BattleType}"/>
                                     <ComboBox Margin="6,3,6,3" Grid.Row="8" Width="200" ItemsSource="{Binding BattleTypes}" DisplayMemberPath="Value" SelectedValuePath="Id" 
                                                   SelectedValue="{Binding BattleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+                                    <!--version-->
+                                    <TextBlock Margin="6,3,6,3" Grid.Row="9" Text="{x:Static resources:Resources.Version}" VerticalAlignment="Center" />
+                                    <ComboBox Margin="6,3,6,3" Grid.Row="10" Width="200" ItemsSource="{Binding Versions}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedVersion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
                                 </Grid>
                             </GroupBox>
                             <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400"

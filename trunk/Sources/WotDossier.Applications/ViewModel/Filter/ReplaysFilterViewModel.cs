@@ -47,6 +47,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         private string _member;
         private BattleStatus _selectedBattleResult = BattleStatus.Unknown;
         private static readonly Version VersionAll = new Version("0.0.0.0");
+        private static readonly Version Version085 = new Version("0.8.5.0");
 
         #region levels
 
@@ -435,8 +436,6 @@ namespace WotDossier.Applications.ViewModel.Filter
         }
 
         private BattleType _battleType;
-        private static Version Version085 = new Version("0.8.5.0");
-
         /// <summary>
         /// Gets or sets the type of the battle.
         /// </summary>
@@ -453,14 +452,113 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        private bool _resp1;
+        private bool _resp2;
+        private bool _allResps = true;
+        private DateTime? _startDate;
+        private DateTime? _endDate = DateTime.Now;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="ReplaysFilterViewModel" /> is resp1.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if resp1; otherwise, <c>false</c>.
+        /// </value>
+        public bool Resp1
+        {
+            get { return _resp1; }
+            set
+            {
+                _resp1 = value;
+                OnPropertyChanged("Resp1");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="ReplaysFilterViewModel" /> is resp2.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if resp2; otherwise, <c>false</c>.
+        /// </value>
+        public bool Resp2
+        {
+            get { return _resp2; }
+            set
+            {
+                _resp2 = value;
+                OnPropertyChanged("Resp2");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [all resps].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [all resps]; otherwise, <c>false</c>.
+        /// </value>
+        public bool AllResps
+        {
+            get { return _allResps; }
+            set
+            {
+                _allResps = value;
+                OnPropertyChanged("AllResps");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the start date.
+        /// </summary>
+        /// <value>
+        /// The start date.
+        /// </value>
+        public DateTime? StartDate
+        {
+            get { return _startDate; }
+            set
+            {
+                _startDate = value;
+                OnPropertyChanged("StartDate");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the end date.
+        /// </summary>
+        /// <value>
+        /// The end date.
+        /// </value>
+        public DateTime? EndDate
+        {
+            get { return _endDate; }
+            set
+            {
+                _endDate = value;
+                OnPropertyChanged("EndDate");
+            }
+        }
+
+        /// <summary>
+        /// Filters the specified replays.
+        /// </summary>
+        /// <param name="replays">The replays.</param>
+        /// <returns></returns>
+        public List<ReplayFile> Filter(IEnumerable<ReplayFile> replays)
+        {
+            return Filter(replays, false);
+        }
+
         /// <summary>
         /// Filters the replays list.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="replays">The replays.</param>
+        /// <param name="applySettingsFilters"></param>
         /// <returns></returns>
-        public List<ReplayFile> Filter(List<ReplayFile> replays)
+        public List<ReplayFile> Filter(IEnumerable<ReplayFile> replays, bool applySettingsFilters)
         {
+            AppSettings settings = SettingsReader.Get();
+
             if (replays == null)
             {
                 return new List<ReplayFile>();
@@ -496,7 +594,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                  || TDSelected && x.Tank.Type == (int) TankType.TD
                  || SPGSelected && x.Tank.Type == (int) TankType.SPG)
                 &&
-                (SelectedFolder != null && x.FolderId == SelectedFolder.Id)
+                (SelectedFolder == null || x.FolderId == SelectedFolder.Id)
                 &&
                 (USSRSelected && x.CountryId == Country.Ussr
                  || GermanySelected && x.CountryId == Country.Germany
@@ -512,6 +610,19 @@ namespace WotDossier.Applications.ViewModel.Filter
                 && FieldFilter(x)
                 && MembersFilter(x.TeamMembers, members)
                 && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
+                &&
+                (AllResps
+                 || Resp1 && x.Team == 1
+                 || Resp2 && x.Team == 2)
+                //&&
+                //(StartDate == null || x.PlayTime.Date >= StartDate)
+                //&&
+                //(EndDate == null || x.PlayTime.Date <= EndDate)
+                //&&
+                //( !applySettingsFilters|| 
+                //    ((settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
+                //        && (settings.UseIncompleteReplaysResultsForCharts || x.IsWinner != BattleStatus.Incomplete))
+                //)
                 ).ToList();
 
             //var footerList = PrepareToReturn(result, SelectedFolder != null ? SelectedFolder.Id : Guid.NewGuid());

@@ -614,15 +614,15 @@ namespace WotDossier.Applications.ViewModel.Filter
                 (AllResps
                  || Resp1 && x.Team == 1
                  || Resp2 && x.Team == 2)
-                //&&
-                //(StartDate == null || x.PlayTime.Date >= StartDate)
-                //&&
-                //(EndDate == null || x.PlayTime.Date <= EndDate)
-                //&&
-                //( !applySettingsFilters|| 
-                //    ((settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
-                //        && (settings.UseIncompleteReplaysResultsForCharts || x.IsWinner != BattleStatus.Incomplete))
-                //)
+                &&
+                (StartDate == null || x.PlayTime.Date >= StartDate)
+                &&
+                (EndDate == null || x.PlayTime.Date <= EndDate)
+                &&
+                (!applySettingsFilters ||
+                    ((settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
+                        && (settings.UseIncompleteReplaysResultsForCharts || x.IsWinner != BattleStatus.Incomplete))
+                )
                 ).ToList();
 
             //var footerList = PrepareToReturn(result, SelectedFolder != null ? SelectedFolder.Id : Guid.NewGuid());

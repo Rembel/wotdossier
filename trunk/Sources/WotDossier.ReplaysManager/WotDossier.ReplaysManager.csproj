@@ -386,6 +386,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml">
+      <Link>Tabs\Charts\ReplaysChartsTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Tabs\ReplaysTab.xaml">
       <Link>Tabs\ReplaysTab.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -559,6 +564,9 @@
     <Compile Include="..\WotDossier\NativeMethods.cs">
       <Link>NativeMethods.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml.cs">
+      <Link>Tabs\Charts\ReplaysChartsTab.xaml.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Tabs\ReplaysTab.xaml.cs">
       <Link>Tabs\ReplaysTab.xaml.cs</Link>
       <DependentUpon>ReplaysTab.xaml</DependentUpon>
@@ -581,6 +589,9 @@
     <Compile Include="..\WotDossier\Tabs\Replay\TeamMemberResult.xaml.cs">
       <Link>Tabs\Replay\TeamMemberResult.xaml.cs</Link>
       <DependentUpon>TeamMemberResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\UI\ChartHelper.cs">
+      <Link>UI\ChartHelper.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Views\AboutWindow.xaml.cs">
       <Link>Views\AboutWindow.xaml.cs</Link>

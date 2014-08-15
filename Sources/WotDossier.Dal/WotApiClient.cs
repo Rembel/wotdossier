@@ -218,7 +218,7 @@ namespace WotDossier.Dal
                 _log.ErrorFormat("Error on player tanks loading: \n{0}", e, response);
             }
 
-            return null;
+            return new List<Vehicle>();
         }
 
         private Ratings GetPlayerRatings(int playerId, AppSettings settings)

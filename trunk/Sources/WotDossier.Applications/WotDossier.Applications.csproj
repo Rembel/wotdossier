@@ -138,6 +138,7 @@
     <Compile Include="ViewModel\Filter\FraggsCountViewModel.cs" />
     <Compile Include="ViewModel\Filter\ReplaysFilterViewModel.cs" />
     <Compile Include="ViewModel\Filter\TankFilterViewModel.cs" />
+    <Compile Include="Events\RefreshEvent.cs" />
     <Compile Include="ViewModel\ReplayManagerShellViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />

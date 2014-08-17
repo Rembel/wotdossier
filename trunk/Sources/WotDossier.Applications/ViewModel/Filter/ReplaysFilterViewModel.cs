@@ -422,6 +422,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleType>(BattleType.CyberSport,Resources.Resources.BattleType_CyberSport), 
                 new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
                 new ListItem<BattleType>(BattleType.CompanyWar,Resources.Resources.BattleType_CompanyWar), 
+                new ListItem<BattleType>(BattleType.Sorties,Resources.Resources.BattleType_Sorties), 
             };
 
         /// <summary>

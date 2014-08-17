@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications.BattleModeStrategies;
+using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Model;
@@ -261,30 +262,35 @@ namespace WotDossier.Applications.ViewModel
 
             if (settings.AutoLoadStatistic)
             {
-                // Create a new FileSystemWatcher and set its properties.
-                FileSystemWatcher watcher = new FileSystemWatcher();
-                watcher.Path = Folder.GetDossierCacheFolder();
+                var dossierCacheFolder = Folder.GetDossierCacheFolder();
 
-                // Watch for changes in LastAccess and LastWrite times.
-                watcher.NotifyFilter = NotifyFilters.LastWrite;
-
-                // Only watch text files.
-                watcher.Filter = "*.dat";
-
-                // Add event handlers.
-                watcher.Changed += (sender, eventArgs) =>
+                if (Directory.Exists(dossierCacheFolder))
                 {
-                    lock (_syncObject)
-                    {
-                        if (CanLoad())
-                        {
-                            OnLoad();
-                        }
-                    }
-                };
+                    // Create a new FileSystemWatcher and set its properties.
+                    FileSystemWatcher watcher = new FileSystemWatcher();
+                    watcher.Path = dossierCacheFolder;
 
-                // Begin watching.
-                watcher.EnableRaisingEvents = true;
+                    // Watch for changes in LastAccess and LastWrite times.
+                    watcher.NotifyFilter = NotifyFilters.LastWrite;
+
+                    // Only watch text files.
+                    watcher.Filter = "*.dat";
+
+                    // Add event handlers.
+                    watcher.Changed += (sender, eventArgs) =>
+                    {
+                        lock (_syncObject)
+                        {
+                            if (CanLoad())
+                            {
+                                OnLoad();
+                            }
+                        }
+                    };
+
+                    // Begin watching.
+                    watcher.EnableRaisingEvents = true;
+                }
             }
         }
 
@@ -552,6 +558,8 @@ namespace WotDossier.Applications.ViewModel
                                     Resources.Resources.WindowCaption_Warning,
                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                             }
+
+                            EventAggregatorFactory.EventAggregator.GetEvent<RefreshEvent>().Publish(EventArgs.Empty);
                         }
                     }
                     catch (Exception e)

@@ -235,6 +235,9 @@ namespace WotDossier.Applications.ViewModel
             TankFilter.PropertyChanged += TankFilterOnPropertyChanged;
 
             EventAggregatorFactory.EventAggregator.GetEvent<StatisticPeriodChangedEvent>().Subscribe(OnStatisticPeriodChanged);
+            EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerActivatedEvent>().Subscribe(OnReplayManagerActivated);
+            EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerRefreshEvent>().Subscribe(OnReplayManagerRefresh);
+
             ProgressView = new ProgressControlViewModel();
             PeriodSelector = new PeriodSelectorViewModel();
             BattleModeSelector = new BattleModeSelectorViewModel();
@@ -252,6 +255,17 @@ namespace WotDossier.Applications.ViewModel
             ViewTyped.Closing += ViewTypedOnClosing;
 
             InitCacheMonitor();
+        }
+
+        private void OnReplayManagerActivated(EventArgs eventArgs)
+        {
+            EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerActivatedEvent>().Unsubscribe(OnReplayManagerActivated);
+            ReplaysViewModel.LoadReplaysList();
+        }
+
+        private void OnReplayManagerRefresh(EventArgs eventArgs)
+        {
+            ReplaysViewModel.LoadReplaysList();
         }
 
         public PlayerSelectorViewModel PlayerSelector { get; set; }
@@ -574,7 +588,7 @@ namespace WotDossier.Applications.ViewModel
                     }
                 });
 
-            ReplaysViewModel.LoadReplaysList();
+            EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerActivatedEvent>().Publish(EventArgs.Empty);
         }
 
         private void InitClanData(ServerStatWrapper serverStatistic)

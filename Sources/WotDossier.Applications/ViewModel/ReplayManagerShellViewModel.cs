@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Linq;
+using WotDossier.Applications.Events;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Chart;
@@ -82,6 +83,13 @@ namespace WotDossier.Applications.ViewModel
             ChartView = new PlayerChartsViewModel();
 
             ReplaysViewModel = new ReplaysViewModel(dossierRepository, ProgressView, ChartView);
+
+            EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerRefreshEvent>().Subscribe(OnReplayManagerRefresh);
+        }
+
+        private void OnReplayManagerRefresh(EventArgs obj)
+        {
+            ReplaysViewModel.LoadReplaysList();
         }
 
         private bool CanLoad()

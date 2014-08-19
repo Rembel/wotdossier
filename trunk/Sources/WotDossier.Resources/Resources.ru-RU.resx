@@ -3038,4 +3038,7 @@
   <data name="BattleType_Sorties" xml:space="preserve">
     <value>Вылазки</value>
   </data>
+  <data name="Btn_Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
 </root>

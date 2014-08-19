@@ -96,10 +96,10 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         public bool Level2Selected
         {
-            get { return _filter.Level1Selected; }
+            get { return _filter.Level2Selected; }
             set
             {
-                _filter.Level1Selected = value;
+                _filter.Level2Selected = value;
                 OnPropertyChanged("Level2Selected");
             }
         }

@@ -87,6 +87,8 @@
     <Compile Include="CacheFileHelper.cs" />
     <Compile Include="CultureHelper.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="Events\ReplayManagerRefreshEvent.cs" />
+    <Compile Include="Events\ReplayManagerActivatedEvent.cs" />
     <Compile Include="ExternalTask.cs" />
     <Compile Include="Logic\Adapter\FortSortiesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\FortBattlesStatAdapter.cs" />

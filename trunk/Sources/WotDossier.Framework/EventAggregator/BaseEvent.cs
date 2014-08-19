@@ -16,10 +16,7 @@ namespace WotDossier.Framework.EventAggregator
         /// </value>
         protected ICollection<IEventSubscription> Subscriptions
         {
-            get
-            {
-                return _subscriptions.AsReadOnly();
-            }
+            get { return _subscriptions; }
         }
 
         /// <summary>

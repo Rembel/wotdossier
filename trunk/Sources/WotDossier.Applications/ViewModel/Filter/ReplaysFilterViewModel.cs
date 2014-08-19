@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
+using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel.Filter
@@ -16,6 +18,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         #region FILTERS
 
         private bool _level1Selected = true;
+        private bool _level2Selected = true;
         private bool _level3Selected = true;
         private bool _level4Selected = true;
         private bool _level5Selected = true;
@@ -132,10 +135,10 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         public bool Level2Selected
         {
-            get { return _level1Selected; }
+            get { return _level2Selected; }
             set
             {
-                _level1Selected = value;
+                _level2Selected = value;
                 OnPropertyChanged("Level2Selected");
             }
         }
@@ -373,6 +376,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         #endregion
 
         public DelegateCommand ClearCommand { get; set; }
+        public DelegateCommand RefreshCommand { get; set; }
         public DelegateCommand AllCommand { get; set; }
 
         private List<ListItem<Version>> _versions = new List<ListItem<Version>>
@@ -718,7 +722,13 @@ namespace WotDossier.Applications.ViewModel.Filter
             };
 
             ClearCommand = new DelegateCommand(OnClear);
+            RefreshCommand = new DelegateCommand(OnRefresh);
             AllCommand = new DelegateCommand(OnAll);
+        }
+
+        private void OnRefresh()
+        {
+            EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerRefreshEvent>().Publish(EventArgs.Empty);
         }
 
         private void OnAll()

@@ -86,17 +86,13 @@ namespace WotDossier.Dal
         /// <summary>
         /// Loads player stat from server
         /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="settings">The settings.</param>
+        /// <param name="options">The statictic load options.</param>
+        /// <param name="fields">The profile fields.</param>
+        /// <returns></returns>
         /// <exception cref="PlayerInfoLoadException"></exception>
-        //public Player LoadPlayerStat(int playerId, AppSettings settings)
-        //{
-        //    return LoadPlayerStat(playerId, settings, true);
-        //}
-
-        /// <summary>
-        /// Loads player stat from server
-        /// </summary>
-        /// <exception cref="PlayerInfoLoadException"></exception>
-        public Player LoadPlayerStat(int playerId, AppSettings settings, PlayerStatLoadOptions options)
+        public Player LoadPlayerStat(int playerId, AppSettings settings, PlayerStatLoadOptions options, string[] fields = null)
         {
             if (settings == null || string.IsNullOrEmpty(settings.Server))
             {
@@ -106,13 +102,21 @@ namespace WotDossier.Dal
             Player response = null;
             try
             {
-                response = Request<Player>(METHOD_ACCOUNT_INFO, new Dictionary<string, object>
+                var parameters = new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                     {PARAM_ACCOUNT_ID, playerId},
-                }, settings);
+                };
+
+                if (fields != null)
+                {
+                    parameters.Add(PARAM_FIELDS, string.Join(",", fields));
+                }
+
+                response = Request<Player>(METHOD_ACCOUNT_INFO, parameters, settings);
                 response.server = settings.Server;
                 response.dataField = response.data[playerId];
+                
                 if ((options & PlayerStatLoadOptions.LoadRatings) == PlayerStatLoadOptions.LoadRatings)
                 {
                     response.dataField.ratings = GetPlayerRatings(playerId, settings);
@@ -130,12 +134,10 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Can't get player info from server: \n{0}", e, response);
+                _log.ErrorFormat("Can't get player[{1}:{2}] info from server: \n{0}", e, response, settings.Server, playerId);
                 return null;
             }
         }
-
-
 
         /// <summary>
         /// Gets the clan member information.
@@ -171,7 +173,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on clan member info loading: \n{0}", e, response);
+                _log.ErrorFormat("Error on clan member[{1}:{2}] info loading: \n{0}", e, response, settings.Server, playerId);
             }
 
             return null;
@@ -207,7 +209,7 @@ namespace WotDossier.Dal
                         }
                         else
                         {
-                            _log.WarnFormat("Unknown tank id found [{0}] on get player server tank statistic", tank.tank_id);
+                            _log.WarnFormat("Unknown tank id found [{0}] on get player[{1}:{2}] server tank statistic", tank.tank_id, settings.Server, playerId);
                         }
                     }
                     return tanks;
@@ -215,7 +217,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on player tanks loading: \n{0}", e, response);
+                _log.ErrorFormat("Error on player[{1}:{2}] tanks loading: \n{0}", e, response, settings.Server, playerId);
             }
 
             return new List<Vehicle>();
@@ -240,7 +242,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on player search: \n{0}", e, response);
+                _log.ErrorFormat("Error on get player[{1}:{2}] ratings: \n{0}", e, response, settings.Server, playerId);
             }
 
             return null;
@@ -264,7 +266,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on player search: \n{0}", e, response);
+                _log.ErrorFormat("Error on get player[{1}:{2}] achievements: \n{0}", e, response, settings.Server, playerId);
             }
 
             return null;
@@ -309,47 +311,9 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Can't get clan info from server: \n{0}", e, response);
+                _log.ErrorFormat("Can't get clan[{1}:{2}] info from server: \n{0}", e, response, settings.Server, clanId);
             }
             return null;
-        }
-
-        /// <summary>
-        /// Loads player stat from server
-        /// </summary>
-        /// <exception cref="PlayerInfoLoadException"></exception>
-        public Player LoadPlayer(int playerId, AppSettings settings, string[] fields)
-        {
-            if (settings == null || string.IsNullOrEmpty(settings.Server))
-            {
-                return null;
-            }
-
-            Player response = null;
-            try
-            {
-                var parameters = new Dictionary<string, object>
-                {
-                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
-                    {PARAM_ACCOUNT_ID, playerId},
-                };
-
-                if (fields != null)
-                {
-                    parameters.Add(PARAM_FIELDS, string.Join(",", fields));
-                }
-
-                response = Request<Player>(METHOD_ACCOUNT_INFO, parameters, settings);
-
-                response.dataField = response.data[playerId];
-
-                return response;
-            }
-            catch (Exception e)
-            {
-                _log.ErrorFormat("Can't get player info from server: \n{0}", e, response);
-                return null;
-            }
         }
 
         /// <summary>
@@ -397,7 +361,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on player search: \n{0}", e, response);
+                _log.ErrorFormat("Error on player[{1}:{2}] search: \n{0}", e, response, settings.Server, playerName);
             }
 
             return null;
@@ -430,7 +394,7 @@ namespace WotDossier.Dal
             }
             catch (Exception e)
             {
-                _log.ErrorFormat("Error on clan search: \n{0}", e, response);
+                _log.ErrorFormat("Error on clan[{1}:{2}] search: \n{0}", e, response, settings.Server, clanName);
             }
             return null;
         }

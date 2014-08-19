@@ -140,7 +140,6 @@
     <Compile Include="Replay\Device.cs" />
     <Compile Include="Replay\Factors.cs" />
     <Compile Include="Replay\FirstBlock.cs" />
-    <Compile Include="Replay\FragsCount.cs" />
     <Compile Include="Replay\BattleType.cs" />
     <Compile Include="Replay\Personal.cs" />
     <Compile Include="Replay\Player.cs" />

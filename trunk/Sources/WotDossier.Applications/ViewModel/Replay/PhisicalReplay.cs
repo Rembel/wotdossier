@@ -113,7 +113,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     }
                     catch (Exception e)
                     {
-                        _log.ErrorFormat("Error on play replay ({0} {1})", e, path, PhisicalFile.FullName);
+                        Log.ErrorFormat("Error on play replay ({0} {1})", e, path, PhisicalFile.FullName);
                         MessageBox.Show(Resources.Resources.Msg_ErrorOnPlayReplay, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }

@@ -79,7 +79,7 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.5\");
             
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -92,7 +92,7 @@ namespace WotDossier.Test
         public void CacheTest_086()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.6\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -105,7 +105,7 @@ namespace WotDossier.Test
         public void CacheTest_087()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.7\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -118,7 +118,7 @@ namespace WotDossier.Test
         public void CacheTest_088()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.8\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -131,7 +131,7 @@ namespace WotDossier.Test
         public void CacheTest_089()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -144,7 +144,7 @@ namespace WotDossier.Test
         public void CacheTest_0810()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.10\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -157,7 +157,7 @@ namespace WotDossier.Test
         public void CacheTest_0811()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.11\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -170,7 +170,7 @@ namespace WotDossier.Test
         public void CacheTest_090()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.9.0\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -183,7 +183,7 @@ namespace WotDossier.Test
         public void CacheTest_091()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.9.1\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -196,7 +196,7 @@ namespace WotDossier.Test
         public void CacheTest_092()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.9.2\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             foreach (TankJson tankJson in tanks)
             {
                 string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
@@ -215,7 +215,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
-            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
+            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -224,7 +224,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay"));
-            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
+            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -233,7 +233,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay"));
-            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
+            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -242,7 +242,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.8\20130908_2025_usa-M103_14_siegfried_line.wotreplay"));
-            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
+            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -251,7 +251,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.9\20131016_0035_ussr-Object263_37_caucasus.wotreplay"));
-            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
+            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -260,7 +260,7 @@ namespace WotDossier.Test
             FileInfo cacheFile =
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay"));
-            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile);
+            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile);
         }
 
         [Test]
@@ -270,7 +270,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.8.11\20140126_2109_ussr-T-54_14_siegfried_line.wotreplay"));
 
-            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile, true);
+            Replay replay = ReplayFileHelper.ParseReplay_8_11(cacheFile, true);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
         }
@@ -282,7 +282,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.9.0\13954715200495_germany_PzVI_prohorovka.wotreplay"));
 
-            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile, true);
+            Replay replay = ReplayFileHelper.ParseReplay_8_11(cacheFile, true);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
         }
@@ -294,7 +294,7 @@ namespace WotDossier.Test
                 new FileInfo(Path.Combine(Environment.CurrentDirectory,
                                           @"Replays\0.9.2\20140713_0042_usa-T57_58_73_asia_korea.wotreplay"));
 
-            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile, true);
+            Replay replay = ReplayFileHelper.ParseReplay_8_11(cacheFile, true);
             Assert.IsNotNull(replay);
             Assert.IsNotNull(replay.datablock_battle_result);
         }
@@ -303,7 +303,7 @@ namespace WotDossier.Test
         public void ReplayTest()
         {
             FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay"));
-            Replay replay = WotFileHelper.ParseReplay_8_11(cacheFile);
+            Replay replay = ReplayFileHelper.ParseReplay_8_11(cacheFile);
         }
 
         #endregion
@@ -611,7 +611,7 @@ namespace WotDossier.Test
         public void CacheTest()
         {
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
 
             foreach (var group in tanks.GroupBy(x => x.Common.type))
             {
@@ -667,7 +667,7 @@ namespace WotDossier.Test
         {
             CsvExportProvider provider = new CsvExportProvider();
             FileInfo cacheFile = GetCacheFile("_rembel__ru", @"\CacheFiles\0.8.9\");
-            List<TankJson> tanks = WotFileHelper.ReadTanksCache(WotFileHelper.BinaryCacheToJson(cacheFile));
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
             List<RandomBattlesTankStatisticRowViewModel> list = tanks.Select(x => new RandomBattlesTankStatisticRowViewModel(x)).ToList();
             provider.Export(list, new List<Type>{typeof(IStatisticBattles), typeof(IStatisticFrags)});
         }
@@ -714,14 +714,14 @@ namespace WotDossier.Test
             FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay"));
             StopWatch watch = new StopWatch();
             watch.Reset();
-            Replay replay = WotFileHelper.ParseReplay_8_0(cacheFile, true);
+            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile, true);
             Console.WriteLine(watch.PeekMs());
 
             string serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
             serializeObject.Dump(cacheFile.FullName + "_1");
 
             watch.Reset();
-            replay = WotFileHelper.ParseReplay_8_11(cacheFile);
+            replay = ReplayFileHelper.ParseReplay_8_11(cacheFile);
             Console.WriteLine(watch.PeekMs());
 
             serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);

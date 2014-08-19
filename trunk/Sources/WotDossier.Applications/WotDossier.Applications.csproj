@@ -84,14 +84,17 @@
     <Compile Include="BattleModeStrategies\StatisticViewStrategyBase.cs" />
     <Compile Include="BattleModeStrategies\StatisticViewStrategyManager.cs" />
     <Compile Include="BattleModeStrategies\TeamStatisticViewStrategy.cs" />
+    <Compile Include="CacheFileHelper.cs" />
     <Compile Include="CultureHelper.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="ExternalTask.cs" />
     <Compile Include="Logic\Adapter\FortSortiesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\FortBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\ClanBattlesStatAdapter.cs" />
     <Compile Include="Logic\Mapper.cs" />
     <Compile Include="Model\BattleModel.cs" />
     <Compile Include="Parser\Packet.cs" />
+    <Compile Include="ReplayFileHelper.cs" />
     <Compile Include="ReplaysManagerController.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
@@ -205,7 +208,6 @@
     <Compile Include="View\ITankStatisticView.cs" />
     <Compile Include="View\ISettingsView.cs" />
     <Compile Include="View\IShellView.cs" />
-    <Compile Include="WotFileHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Numerics;
 using System.Runtime.InteropServices;
@@ -268,7 +269,7 @@ namespace WotDossier.Common
 
                 private object ReadFloatString()
                 {
-                    return Double.Parse(ReadLineNoNewline());
+                    return Double.Parse(ReadLineNoNewline().Replace(".", ","));
                 }
 
                 private double ReadFloat64()
@@ -564,7 +565,7 @@ namespace WotDossier.Common
                             )
                         );
                     }
-                    dict[(string)key] = value;
+                    dict[key.ToString()] = value;
                 }
 
                 private void LoadSetItems()

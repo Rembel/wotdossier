@@ -136,7 +136,6 @@
     <Compile Include="Replay\ChatMessage.cs" />
     <Compile Include="Replay\Common.cs" />
     <Compile Include="Replay\CrewMember.cs" />
-    <Compile Include="Replay\PlayerResult.cs" />
     <Compile Include="Replay\DamagedVehicle.cs" />
     <Compile Include="Replay\Device.cs" />
     <Compile Include="Replay\Factors.cs" />

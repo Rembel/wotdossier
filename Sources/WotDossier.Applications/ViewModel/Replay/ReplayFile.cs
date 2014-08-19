@@ -139,7 +139,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             {
                 MapName = replay.datablock_1.mapDisplayName;
                 MapNameId = replay.datablock_1.mapName;
-                
+
                 if (Dictionaries.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
                 {
                     MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].mapid;
@@ -155,7 +155,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 CountryId = Icon.CountryId;
 
-                
+
                 if (Dictionaries.Instance.IconTanks.ContainsKey(Icon))
                 {
                     Tank = Dictionaries.Instance.IconTanks[Icon];
@@ -174,38 +174,21 @@ namespace WotDossier.Applications.ViewModel.Replay
                 PlayerName = replay.datablock_1.playerName;
 
                 BattleType = (BattleType) replay.datablock_1.battleType;
-
-                if (replay.datablock_1.Version < WotFileHelper.JsonFormatedReplay_MinVersion)
+    
+                if (replay.datablock_battle_result != null)
                 {
-                    if (replay.datablock_battle_result_plain != null)
-                    {
-                        Credits = replay.datablock_battle_result_plain.credits;
-                        DamageDealt = replay.datablock_battle_result_plain.damageDealt;
-                        DamageReceived = replay.datablock_battle_result_plain.damageReceived;
-                        IsWinner = (BattleStatus) replay.datablock_battle_result_plain.isWinner;
-                        Xp = replay.datablock_battle_result_plain.xp;
-                        Killed = replay.datablock_battle_result_plain.killed.Count;
-                        Damaged = replay.datablock_battle_result_plain.damaged.Count;
-                        IsAlive = replay.datablock_battle_result_plain.killerID == 0;
-                    }
-                }
-                else
-                {
-                    if (replay.datablock_battle_result != null)
-                    {
-                        Credits = replay.datablock_battle_result.personal.credits;
-                        DamageDealt = replay.datablock_battle_result.personal.damageDealt;
-                        DamageReceived = replay.datablock_battle_result.personal.damageReceived;
-                        IsWinner = GetBattleStatus(replay);
-                        Xp = replay.datablock_battle_result.personal.xp;
-                        Killed = replay.datablock_battle_result.personal.kills;
-                        Damaged = replay.datablock_battle_result.personal.damaged;
-                        MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
-                        BattleTime = new TimeSpan(0, 0, (int)replay.datablock_battle_result.common.duration);
-                        LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
-                        IsAlive = replay.datablock_battle_result.personal.deathReason == -1;
-                        //Medals = MedalHelper.GetMedals(replay.datablock_battle_result.achieveIndices);
-                    }
+                    Credits = replay.datablock_battle_result.personal.credits;
+                    DamageDealt = replay.datablock_battle_result.personal.damageDealt;
+                    DamageReceived = replay.datablock_battle_result.personal.damageReceived;
+                    IsWinner = GetBattleStatus(replay);
+                    Xp = replay.datablock_battle_result.personal.xp;
+                    Killed = replay.datablock_battle_result.personal.kills;
+                    Damaged = replay.datablock_battle_result.personal.damaged;
+                    MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
+                    BattleTime = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
+                    LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
+                    IsAlive = replay.datablock_battle_result.personal.deathReason == -1 || replay.datablock_battle_result.personal.killerID == 0;
+                    //Medals = MedalHelper.GetMedals(replay.datablock_battle_result.achieveIndices);
                 }
 
                 TeamMembers = replay.datablock_1.vehicles.Values.ToList();

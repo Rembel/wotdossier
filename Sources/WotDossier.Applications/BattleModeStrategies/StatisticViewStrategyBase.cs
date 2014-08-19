@@ -202,7 +202,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         private static TankJson UnZipObject(byte[] x)
         {
             TankJson tankJson = CompressHelper.DecompressObject<TankJson>(x);
-            WotFileHelper.ExtendPropertiesData(tankJson);
+            CacheFileHelper.ExtendPropertiesData(tankJson);
             return tankJson;
         }
     }

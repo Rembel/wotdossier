@@ -129,7 +129,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             if (PhisicalFile != null)
             {
-                return WotFileHelper.ParseReplay(PhisicalFile, ClientVersion, readAdvancedData);
+                return ReplayFileHelper.ParseReplay(PhisicalFile, ClientVersion, readAdvancedData);
             }
             return null;
         }

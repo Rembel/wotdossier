@@ -275,7 +275,7 @@ namespace WotDossier.Applications.ViewModel
                             {
                                 try
                                 {
-                                    Domain.Replay.Replay data = WotFileHelper.ParseReplay_8_11(replay);
+                                    Domain.Replay.Replay data = ReplayFileHelper.ParseReplay_8_11(replay);
                                     if (data != null)
                                     {
                                         replayFiles.Add(new PhisicalReplay(replay, data, replayFolder.Id));

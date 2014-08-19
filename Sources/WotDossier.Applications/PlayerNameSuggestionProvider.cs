@@ -17,7 +17,7 @@ namespace WotDossier.Applications
         public IEnumerable GetSuggestions(string filter)
         {
             IEnumerable<FileInfo> files = Directory.GetFiles(Folder.GetDossierCacheFolder(), "*.dat").Select(x => new FileInfo(x));
-            IEnumerable<string> suggestions = files.Select(WotFileHelper.GetPlayerName).Distinct().Where(x => x.StartsWith(filter,StringComparison.InvariantCultureIgnoreCase));
+            IEnumerable<string> suggestions = files.Select(CacheFileHelper.GetPlayerName).Distinct().Where(x => x.StartsWith(filter,StringComparison.InvariantCultureIgnoreCase));
             return suggestions;
         }
     }

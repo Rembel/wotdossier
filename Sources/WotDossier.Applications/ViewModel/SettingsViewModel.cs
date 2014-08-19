@@ -148,7 +148,7 @@ namespace WotDossier.Applications.ViewModel
                 {
                     _appSettings.PlayerId = player.account_id;
 
-                    playerStat = WotApiClient.Instance.LoadPlayer(player.account_id, _appSettings, new[] { "account_id", "nickname", "created_at" });
+                    playerStat = WotApiClient.Instance.LoadPlayerStat(player.account_id, _appSettings, PlayerStatLoadOptions.LoadCommon, new[] { "account_id", "nickname", "created_at" });
 
                     if (playerStat != null)
                     {

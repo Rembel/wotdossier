@@ -18,7 +18,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     /// </summary>
     public abstract class ReplayFile : INotifyPropertyChanged
     {
-        protected static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
         public static readonly string PropDamageDealt = TypeHelper<ReplayFile>.PropertyName(v => v.DamageDealt);
         public static readonly string PropDamaged = TypeHelper<ReplayFile>.PropertyName(v => v.Damaged);
@@ -146,7 +146,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 }
                 else
                 {
-                    _log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
+                    Log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
                 }
 
                 IsWinner = BattleStatus.Unknown;
@@ -165,7 +165,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
 
-                ClientVersion = ResolveVersion(replay.datablock_1.Version, PlayTime);
+                ClientVersion = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, PlayTime);
 
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
@@ -194,38 +194,6 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TeamMembers = replay.datablock_1.vehicles.Values.ToList();
                 Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
             }
-        }
-
-        private Version ResolveVersion(Version version, DateTime playTime)
-        {
-            if (version == new Version(0,0))
-            {
-                if (playTime.Date >= new DateTime(2013, 4, 18))
-                {
-                    return new Version("0.8.5.0");
-                }
-
-                if (playTime.Date >= new DateTime(2013, 2, 28))
-                {
-                    return new Version("0.8.4.0");
-                }
-
-                if (playTime.Date >= new DateTime(2013, 1, 16))
-                {
-                    return new Version("0.8.3.0");
-                }
-
-                if (playTime.Date >= new DateTime(2012, 12, 8))
-                {
-                    return new Version("0.8.2.0");
-                }
-
-                if (playTime.Date >= new DateTime(2012, 10, 25))
-                {
-                    return new Version("0.8.1.0");
-                }
-            }
-            return version;
         }
 
         /// <summary>

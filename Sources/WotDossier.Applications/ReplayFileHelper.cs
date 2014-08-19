@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,208 +10,26 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Common;
 using WotDossier.Common.Extensions;
-using WotDossier.Dal;
 using WotDossier.Domain;
-using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Replay;
-using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications
 {
-    public static class WotFileHelper
+    public static class ReplayFileHelper
     {
-        private const char SEPARATOR = ';';
-        private const string REPLAY_DATABLOCK_2 = "datablock_2";
+private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
-        public static Version JsonFormatedReplay_MinVersion = new Version("0.8.11.0");
-
-        #region Cache
-
-        /// <summary>
-        /// Gets the cache file.
-        /// </summary>
-        /// <param name="playerId">The player id.</param>
-        /// <param name="server"></param>
-        /// <returns>null if there is no any dossier cache file for specified player</returns>
-        public static FileInfo GetCacheFile(string playerId, string server)
+        private static readonly Version _jsonFormatedReplayMinVersion = new Version("0.8.11.0");
+        
+        public static Replay ParseReplay(FileInfo phisicalFile, Version clientVersion, bool readAdvancedData)
         {
-            _log.Trace("GetCacheFile start");
-
-            FileInfo cacheFile = null;
-
-            string[] files = new string[0];
-
-            try
+            if (clientVersion < _jsonFormatedReplayMinVersion)
             {
-                files = Directory.GetFiles(Folder.GetDossierCacheFolder(), "*.dat");
+                return ParseReplay_8_0(phisicalFile, readAdvancedData);
             }
-            catch (DirectoryNotFoundException ex)
-            {
-                _log.Error("Cann't find dossier cache files", ex);
-            }
-
-            if (!files.Any())
-            {
-                return null;
-            }
-
-            foreach (string file in files)
-            {
-                FileInfo info = new FileInfo(file);
-
-                string decodFileName = DecodFileName(info);
-                string playerName = decodFileName.Split(SEPARATOR)[1];
-                string serverName = decodFileName.Split(SEPARATOR)[0];
-
-                if (playerName.Equals(playerId, StringComparison.InvariantCultureIgnoreCase) &&
-                    serverName.Contains(Dictionaries.Instance.GameServers[server]))
-                {
-                    if (cacheFile == null)
-                    {
-                        cacheFile = info;
-                    }
-                    else if (cacheFile.LastWriteTime < info.LastWriteTime)
-                    {
-                        cacheFile = info;
-                    }
-                }
-            }
-            if (cacheFile != null)
-            {
-                cacheFile = cacheFile.CopyTo(Path.Combine(Path.GetTempPath(), cacheFile.Name), true);
-            }
-            _log.Trace("GetCacheFile end");
-            return cacheFile;
+            return ParseReplay_8_11(phisicalFile, readAdvancedData);
         }
-
-        /// <summary>
-        /// Binary dossier cache to plain json.
-        /// -f - By setting f the JSON will be formatted for better human readability
-        /// -r - By setting r the JSON will contain all fields with their values and recognized names
-        /// -k - By setting k the JSON will not contain Kills/Frags
-        /// -s - By setting s the JSON will not include unix timestamp of creation as it is useless for calculation of 
-        /// </summary>
-        /// <param name="cacheFile">The cache file.</param>
-        public static string BinaryCacheToJson(FileInfo cacheFile)
-        {
-            _log.Trace("BinaryCacheToJson start");
-
-            string directoryName = Environment.CurrentDirectory;
-
-            string task = directoryName + @"\External\wotdc2j.exe";
-            string arguments = string.Format("\"{0}\" -f", cacheFile.FullName);
-            var logPath = directoryName + @"\Logs\wotdc2j.log";
-            var workingDirectory = directoryName + @"\External";
-
-            ExecuteTask(task, arguments, logPath, workingDirectory);
-
-            _log.Trace("BinaryCacheToJson end");
-            return cacheFile.FullName.Replace(".dat", ".json");
-        }
-
-        /// <summary>
-        /// Reads the tanks from cache.
-        /// </summary>
-        /// <param name="path">The path to parsed cache file.</param>
-        /// <returns></returns>
-        public static List<TankJson> ReadTanksCache(string path)
-        {
-            _log.Trace("ReadTanksCache start");
-            List<TankJson> tanks = new List<TankJson>();
-
-            using (StreamReader re = new StreamReader(path))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                JObject parsedData = (JObject)se.Deserialize(reader);
-
-                foreach (JToken tanksData in new[] { parsedData["tanks"], parsedData["tanks_v2"] })
-                {
-                    foreach (JToken jToken in tanksData)
-                    {
-                        JProperty property = (JProperty)jToken;
-                        int version = property.Value["common"].ToObject<CommonJson>().basedonversion;
-                        TankJson tank = DataMapper.Map(property.Value, version);
-                        tank.Raw = CompressHelper.Compress(JsonConvert.SerializeObject(tank));
-                        if (ExtendPropertiesData(tank))
-                        {
-                            tanks.Add(tank);
-                        }
-                    }
-                }
-            }
-            _log.Trace("ReadTanksCache end");
-            return tanks;
-        }
-
-        /// <summary>
-        /// Reads the dossier application spot tanks.
-        /// </summary>
-        /// <param name="data">The data.</param>
-        /// <returns></returns>
-        public static List<TankJson> ReadDossierAppSpotTanks(string data)
-        {
-            List<TankJson> tanks = new List<TankJson>();
-
-            JObject parsedData = JsonConvert.DeserializeObject<JObject>(data);
-
-            JToken tanksData = parsedData["tanks"];
-
-            foreach (JToken jToken in tanksData)
-            {
-                Tank appSpotTank = jToken.ToObject<Tank>();
-                TankJson tank = DataMapper.Map(appSpotTank);
-                tank.Raw = CompressHelper.CompressObject(tank);
-                if (ExtendPropertiesData(tank))
-                {
-                    tanks.Add(tank);
-                }
-            }
-
-            return tanks;
-        }
-
-        /// <summary>
-        /// Extends the properties data with Description and FragsList.
-        /// </summary>
-        /// <param name="tank">The tank.</param>
-        /// <returns></returns>
-        public static bool ExtendPropertiesData(TankJson tank)
-        {
-            if (Dictionaries.Instance.Tanks.ContainsKey(tank.UniqueId()) && !Dictionaries.Instance.NotExistsedTanksList.Contains(tank.UniqueId()))
-            {
-                tank.Description = Dictionaries.Instance.Tanks[tank.UniqueId()];
-                tank.Frags =
-                    tank.FragsList.Select(
-                        x =>
-                        {
-                            int countryId = Convert.ToInt32(x[0]);
-                            int tankId = Convert.ToInt32(x[1]);
-                            int uniqueId = Utils.ToUniqueId(countryId, tankId);
-                            return new FragsJson
-                            {
-                                CountryId = countryId,
-                                TankId = tankId,
-                                Icon = Dictionaries.Instance.Tanks[uniqueId].Icon,
-                                TankUniqueId = uniqueId,
-                                Count = Convert.ToInt32(x[2]),
-                                Type = Dictionaries.Instance.Tanks[uniqueId].Type,
-                                Tier = Dictionaries.Instance.Tanks[uniqueId].Tier,
-                                KilledByTankUniqueId = tank.UniqueId(),
-                                Tank = Dictionaries.Instance.Tanks[uniqueId].Title
-                            };
-                        }).ToList();
-                return true;
-            }
-            _log.WarnFormat("Found unknown tank:\n{0}", JsonConvert.SerializeObject(tank.Common, Formatting.Indented));
-            return false;
-        }
-
-        #endregion
-
-
-        #region Replay
 
         /// <summary>
         /// Binary dossier cache to plain json.
@@ -237,7 +54,7 @@ namespace WotDossier.Applications
             var logPath = directoryName + @"\Logs\wotrp2j.log";
             var workingDirectory = directoryName + @"\External";
 
-            ExecuteTask(task, arguments, logPath, workingDirectory);
+            ExternalTask.Execute(task, arguments, logPath, workingDirectory);
 
             return outputJsonFilePath;
         }
@@ -251,27 +68,44 @@ namespace WotDossier.Applications
         public static Replay ParseReplay_8_0(FileInfo replayFile, bool readAdvancedData = false)
         {
             //convert dossier cache file to json
-            string jsonFile = ReplayToJson(replayFile, readAdvancedData);
+            string jsonFile = ReplayToJson(replayFile, false);
 
-            Replay replay;
+            string content = File.ReadAllText(jsonFile);
 
-            using (StreamReader re = new StreamReader(jsonFile))
+            JObject jObject = JsonConvert.DeserializeObject<JObject>(content);
+
+            Replay replay = jObject.ToObject<Replay>();
+
+            if (((IDictionary<string, JToken>)jObject).ContainsKey(REPLAY_DATABLOCK_2))
             {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                replay = se.Deserialize<Replay>(reader);
+                replay.datablock_1.vehicles = jObject[REPLAY_DATABLOCK_2][1].ToObject<Dictionary<long, Vehicle>>();
             }
 
-            using (StreamReader re = new StreamReader(jsonFile))
+            if (readAdvancedData)
             {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                JObject parsedData = (JObject) se.Deserialize(reader);
-                if (parsedData != null && ((IDictionary<string, JToken>) parsedData).ContainsKey(REPLAY_DATABLOCK_2))
+                string path = replayFile.FullName;
+                if (File.Exists(path))
                 {
-                    replay.datablock_battle_result_plain = parsedData[REPLAY_DATABLOCK_2][0].ToObject<PlayerResult>();
-                    replay.datablock_1.vehicles =
-                        parsedData[REPLAY_DATABLOCK_2][1].ToObject<Dictionary<long, Vehicle>>();
+                    using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        int blocksCount = 0;
+                        byte[] buffer = new byte[4];
+                        stream.Read(buffer, 0, 4);
+
+                        if (buffer[0] != 0x21)
+                        {
+                            blocksCount = (int) stream.Read(4).ConvertLittleEndian();
+                            _log.Trace("Found Replay Blocks: " + blocksCount);
+                        }
+
+                        for (int i = 0; i < blocksCount; i++)
+                        {
+                            int blockLength = (int)stream.Read(4).ConvertLittleEndian();
+                            stream.Seek(blockLength, SeekOrigin.Current);
+                        }
+
+                        ReadAdvancedDataBlock(stream, replay);
+                    }
                 }
             }
 
@@ -286,95 +120,124 @@ namespace WotDossier.Applications
         /// <returns></returns>
         public static Replay ParseReplay_8_11(FileInfo file, bool readAdvancedData = false)
         {
+            _log.Trace("Parse Replay: " + file);
+
             string path = file.FullName;
-            string firstBlockJson = string.Empty;
-            string battleResultBlockJson = string.Empty;
             if (File.Exists(path))
             {
                 using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    int blockLength = 0;
-                    int blocksCount = 0;
-                    byte[] buffer = new byte[4];
-                    stream.Read(buffer, 0, 4);
-                    if (buffer[0] != 0x21)
-                    {
-                        blocksCount = (int) stream.Read(4).ConvertLittleEndian();
-                        blockLength = (int)stream.Read(4).ConvertLittleEndian();
-                    }
-                    firstBlockJson = stream.Read(blockLength).GetAsciiString();
-                    if (blockLength > 0 && blocksCount > 1)
-                    {
-                        blockLength = (int)stream.Read(4).ConvertLittleEndian();
-                        battleResultBlockJson = stream.Read(blockLength).GetAsciiString();
-                    }
+                    Replay replay = new Replay();
 
-                    FirstBlock firstBlock = null;
-                    PlayerResult commandResult = null;
-                    BattleResult battleResult = null;
-                    AdvancedReplayData advancedReplayData = null;
-
-                    if (firstBlockJson.Length > 0)
+                    try
                     {
-                        firstBlock = JsonConvert.DeserializeObject<FirstBlock>(firstBlockJson);
-                    }
+                        int blocksCount = 0;
+                        byte[] buffer = new byte[4];
+                        stream.Read(buffer, 0, 4);
 
-                    if (firstBlock != null)
-                    {
-
-                        try
+                        if (buffer[0] != 0x21)
                         {
-                            if (blocksCount > 1)
+                            blocksCount = (int) stream.Read(4).ConvertLittleEndian();
+                            _log.Trace("Found Replay Blocks: " + blocksCount);
+                        }
+
+                        for (int i = 0; i < blocksCount; i++)
+                        {
+                            //read first block
+                            if (i == 0)
                             {
-                                var parsedData = JsonConvert.DeserializeObject<JArray>(battleResultBlockJson);
-                                if (parsedData.Count > 0)
-                                {
-                                    if (firstBlock.Version < JsonFormatedReplay_MinVersion)
-                                    {
-                                        commandResult = parsedData[0].ToObject<PlayerResult>();
-                                    }
-                                    else
-                                    {
-                                        battleResult = parsedData[0].ToObject<BattleResult>();
-                                        firstBlock.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
-                                    }
-                                }
+                                ReadFirstBlock(stream, replay);
                             }
 
+                            //read second block
+                            if (i == 1)
+                            {
+                                ReadSecondBlock(stream, replay);
+                            }
+
+                            //read third block for replays 0.8.1-0.8.10
+                            if (i == 2)
+                            {
+                                ReadThirdBlock(stream, replay);
+                            }
+                        }
+
+                        if (replay.datablock_1 != null)
+                        {
+                            //read advanced data block
                             if (readAdvancedData)
                             {
-                                const int startPosition = 8;
-                                stream.Seek(startPosition, SeekOrigin.Current);
-
-                                int replayDataLength = (int)(stream.Length - stream.Position) - startPosition;
-
-                                byte[] decrypt = DecryptReplayData(stream.Read(replayDataLength));
-                                byte[] uncompressed = DecompressReplayData(decrypt);
-                                
-                                //uncompressed.Dump(@"c:\\temp");
-
-                                using (var uncompressedReplayStream = new MemoryStream(uncompressed))
-                                {
-                                    advancedReplayData = ReadReplayStream(uncompressedReplayStream);
-                                }
+                                ReadAdvancedDataBlock(stream, replay);
                             }
+                            return replay;
                         }
-                        catch (Exception e)
-                        {
-                            _log.ErrorFormat("Error on replay file read. Incorrect file format({0})", e, file.FullName);
-                        }
-
-                        return new Replay
-                        {
-                            datablock_1 = firstBlock,
-                            datablock_battle_result_plain = commandResult,
-                            datablock_battle_result = battleResult,
-                            datablock_advanced = advancedReplayData
-                        };
+                    }
+                    catch (Exception e)
+                    {
+                        _log.ErrorFormat("Error on replay file read. Incorrect file format({0})", e, file.FullName);
                     }
                 }
             }
             return null;
+        }
+
+        private static void ReadFirstBlock(FileStream stream, Replay replay)
+        {
+            int blockLength = (int) stream.Read(4).ConvertLittleEndian();
+            _log.Trace("1 block length: " + blockLength);
+
+            string blockData = stream.Read(blockLength).GetAsciiString();
+            if (!string.IsNullOrEmpty(blockData))
+            {
+                replay.datablock_1 = JsonConvert.DeserializeObject<FirstBlock>(blockData);
+            }
+        }
+
+        private static void ReadSecondBlock(FileStream stream, Replay replay)
+        {
+            int blockLength = (int) stream.Read(4).ConvertLittleEndian();
+            _log.Trace("2 block length: " + blockLength);
+            string blockData = stream.Read(blockLength).GetAsciiString();
+
+            var parsedData = JsonConvert.DeserializeObject<JArray>(blockData);
+            if (parsedData.Count > 0)
+            {
+                //0.8.11+
+                if (replay.datablock_1.Version >= _jsonFormatedReplayMinVersion)
+                {
+                    replay.datablock_battle_result = parsedData[0].ToObject<BattleResult>();
+                    replay.datablock_1.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
+                }
+            }
+        }
+
+        private static void ReadThirdBlock(FileStream stream, Replay replay)
+        {
+            int blockLength = (int) stream.Read(4).ConvertLittleEndian();
+            _log.Trace("3 block length: " + blockLength);
+            byte[] bytes = stream.Read(blockLength);
+            object blockData = Unpickle.Load(new MemoryStream(bytes));
+            replay.datablock_battle_result = blockData.ToObject<BattleResult>();
+        }
+
+        private static void ReadAdvancedDataBlock(FileStream stream, Replay replay)
+        {
+            _log.Trace("Start read advanced data");
+            const int startPosition = 8;
+            stream.Seek(startPosition, SeekOrigin.Current);
+
+            int replayDataLength = (int)(stream.Length - stream.Position) - startPosition;
+
+            byte[] decrypt = DecryptReplayData(stream.Read(replayDataLength));
+            byte[] uncompressed = DecompressReplayData(decrypt);
+
+            //uncompressed.Dump(@"c:\\temp");
+
+            using (var uncompressedReplayStream = new MemoryStream(uncompressed))
+            {
+                replay.datablock_advanced = ReadReplayStream(uncompressedReplayStream);
+            }
+            _log.Trace("End read advanced data");
         }
 
         private static AdvancedReplayData ReadReplayStream(Stream stream)
@@ -484,8 +347,7 @@ namespace WotDossier.Applications
                 }
                 catch (Exception e)
                 {
-                    _log.Error(
-                        "Cannot load advanced pickle. \nPosition: " + f.Position + ", Length: " + advancedlength, e);
+                    _log.Error("Cannot load battle info pickle object. \nPosition: " + f.Position + ", Length: " + advancedlength, e);
                 }
             }
         }
@@ -516,7 +378,19 @@ namespace WotDossier.Applications
                 {
                     ProcessPacket_0x08_0x09(packet, stream, data);
                 }
+
+                if (packet.SubType == 0x01) //onDamageReceived
+                {
+                    ProcessPacket_0x08_0x01(packet, stream, data);
+                }
             }
+        }
+
+        private static void ProcessPacket_0x08_0x01(Packet packet, MemoryStream stream, AdvancedReplayData data)
+        {
+            //ulong health = stream.Read(2).ConvertLittleEndian();
+            //ulong source = stream.Read(4).ConvertLittleEndian();
+            //data.DamageReceived = new DamageReceived {Health = (int) health, Source = (int)source};
         }
 
         /// <summary>
@@ -630,7 +504,7 @@ namespace WotDossier.Applications
             }
 
         }
-        
+
         /// <summary>
         /// Process packet 0x08 subType 0x09
         /// Contains slots updates
@@ -761,67 +635,42 @@ namespace WotDossier.Applications
             return dataStream.ToArray();
         }
 
-        #endregion
-        
-        private static void ExecuteTask(string task, string arguments, string logPath, string workingDirectory = null)
+        public static Version ResolveVersion(Version version, DateTime playTime)
         {
-            using(Process proc = new Process())
+            if (version == new Version(0, 0))
             {
-                proc.StartInfo.CreateNoWindow = true;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.FileName = task;
-                proc.StartInfo.Arguments = arguments;
-
-                if (!string.IsNullOrEmpty(workingDirectory))
+                if (playTime.Date >= new DateTime(2013, 4, 18))
                 {
-                    proc.StartInfo.WorkingDirectory = workingDirectory;
+                    return new Version("0.8.5.0");
                 }
 
-                proc.Start();
-
-                //write log
-                using (StreamWriter streamWriter = new StreamWriter(logPath, false))
+                if (playTime.Date >= new DateTime(2013, 2, 28))
                 {
-                    streamWriter.WriteLine(proc.StandardOutput.ReadToEnd());   
+                    return new Version("0.8.4.0");
                 }
 
-                proc.WaitForExit();
+                if (playTime.Date >= new DateTime(2013, 1, 16))
+                {
+                    return new Version("0.8.3.0");
+                }
+
+                if (playTime.Date >= new DateTime(2012, 12, 8))
+                {
+                    return new Version("0.8.2.0");
+                }
+
+                if (playTime.Date >= new DateTime(2012, 10, 25))
+                {
+                    return new Version("0.8.1.0");
+                }
             }
+            return version;
         }
-
-        /// <summary>
-        /// Gets the name of the player from name of dossier cache file.
-        /// </summary>
-        /// <param name="cacheFile">The cache file in base32 format. Example of decoded filename - login-ct-p1.worldoftanks.com:20015;_Rembel__RU</param>
-        /// <returns></returns>
-        public static string GetPlayerName(FileInfo cacheFile)
-        {
-            var decodedFileName = DecodFileName(cacheFile);
-            return decodedFileName.Split(SEPARATOR)[1];
-        }
-
-        /// <summary>
-        /// Decods the name of the file.
-        /// </summary>
-        /// <param name="cacheFile">The cache file.</param>
-        /// <returns></returns>
-        public static string DecodFileName(FileInfo cacheFile)
-        {
-            Base32Encoder encoder = new Base32Encoder();
-            string str = cacheFile.Name.Replace(cacheFile.Extension, string.Empty);
-            byte[] decodedFileNameBytes = encoder.Decode(str.ToLowerInvariant());
-            string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
-            return decodedFileName;
-        }
-
-        public static Replay ParseReplay(FileInfo phisicalFile, Version clientVersion, bool readAdvancedData)
-        {
-            if (clientVersion < JsonFormatedReplay_MinVersion)
-            {
-                return ParseReplay_8_0(phisicalFile, readAdvancedData);
-            }
-            return ParseReplay_8_11(phisicalFile, readAdvancedData);
-        }
+    }
+    
+    internal class DamageReceived
+    {
+        public int Health { get; set; }
+        public int Source { get; set; }
     }
 }

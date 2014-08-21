@@ -67,6 +67,8 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private List<ReplayFolder> _replaysFolders;
+        private Guid? _selectedFolderId = null;
+
         /// <summary>
         /// Gets or sets the replays folders.
         /// </summary>
@@ -122,6 +124,11 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         public void LoadReplaysList()
         {
+            if (ReplayFilter.SelectedFolder != null)
+            {
+                _selectedFolderId = ReplayFilter.SelectedFolder.Id;
+            }
+
             ReplaysFolders = ReplaysManager.GetFolders();
             _replays.Clear();
 
@@ -335,7 +342,7 @@ namespace WotDossier.Applications.ViewModel
                     //refresh replays
                     OnPropertyChanged("Replays");
 
-                    ReplayFilter.SelectedFolder = replayFolders.FirstOrDefault();
+                    ReplayFilter.SelectedFolder = replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId || _selectedFolderId == null);
 
                     ChartView.InitBattlesByMapChart();
                     ChartView.InitWinReplaysPercentByMapChart();

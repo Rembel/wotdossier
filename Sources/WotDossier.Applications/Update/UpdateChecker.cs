@@ -158,6 +158,7 @@ namespace WotDossier.Applications.Update
 
         private static DownloadedVersionInfo GetServerVersion()
         {
+            AppSettings appSettings = SettingsReader.Get();
             Version newVersion = new Version(ApplicationInfo.Version);
             string installerUrl = null;
             try
@@ -167,7 +168,7 @@ namespace WotDossier.Applications.Update
                 request.UserAgent = USER_AGENT;
                 request.Accept = ACCEPT_HEADER;
                 //for analytics
-                request.Referer = string.Format("http://wotdossier_{0}.com/", ApplicationInfo.Version);
+                request.Referer = string.Format("http://wotdossier_{0}.{1}/", ApplicationInfo.Version, appSettings.Server ?? "com");
                 WebResponse webResponse = request.GetResponse();
                 using (Stream responseStream = webResponse.GetResponseStream())
                 {

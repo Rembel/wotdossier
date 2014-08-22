@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Common.Logging;
+using WotDossier.Common;
 
 namespace WotDossier.Applications.Update
 {
@@ -258,27 +259,12 @@ namespace WotDossier.Applications.Update
             {
                 Assembly entryAssembly = Assembly.GetEntryAssembly();
                 var resourceName = entryAssembly.GetName().Name + @".Data.init.s3db";
-                byte[] embeddedResource = GetEmbeddedResource(resourceName, entryAssembly);
+                byte[] embeddedResource = AssemblyExtensions.GetEmbeddedResource(resourceName, entryAssembly);
                 using (FileStream fileStream = File.OpenWrite(path))
                 {
                     fileStream.Write(embeddedResource, 0, embeddedResource.Length);
                     fileStream.Flush();
                 }
-            }
-        }
-
-        public static byte[] GetEmbeddedResource(string resourceName, Assembly assembly)
-        {
-            using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
-            {
-                if (resourceStream == null)
-                    return null;
-
-                int length = Convert.ToInt32(resourceStream.Length); // get strem length
-                byte[] byteArr = new byte[length]; // create a byte array
-                resourceStream.Read(byteArr, 0, length);
-
-                return byteArr;
             }
         }
     }

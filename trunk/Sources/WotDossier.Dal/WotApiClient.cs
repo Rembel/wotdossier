@@ -346,7 +346,7 @@ namespace WotDossier.Dal
         public List<PlayerSearchJson> SearchPlayer(string playerName, int limit, AppSettings settings)
         {
 #if DEBUG
-            return new List<PlayerSearchJson> {new PlayerSearchJson {id = 10800699, nickname = "rembel"}};
+            return new List<PlayerSearchJson> {new PlayerSearchJson {account_id = 10800699, nickname = "rembel"}};
 #else
             JObject response = null;
             try

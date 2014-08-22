@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
@@ -10,6 +12,7 @@ using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Framework;
@@ -57,6 +60,9 @@ namespace WotDossier
             //    section.SectionInformation.ProtectSection("DataProtectionConfigurationProvider");
             //}
             //config.Save();
+
+            //TODO: Remove, hard hack
+            RestoreAutomapperDll();
 
             bool isNewInstance;
             _mutex = new Mutex(true, INSTANCE_ID, out isNewInstance);
@@ -137,6 +143,24 @@ namespace WotDossier
             }
 
             base.OnStartup(e);
+        }
+
+        private void RestoreAutomapperDll()
+        {
+            const string library = @"AutoMapper.dll";
+            string currentDirectory = Folder.AssemblyDirectory();
+            string path = Path.Combine(currentDirectory, library);
+            if (!File.Exists(path))
+            {
+                Assembly entryAssembly = Assembly.GetEntryAssembly();
+                var resourceName = entryAssembly.GetName().Name + @"." + library;
+                byte[] embeddedResource = AssemblyExtensions.GetEmbeddedResource(resourceName, entryAssembly);
+                using (FileStream fileStream = File.OpenWrite(path))
+                {
+                    fileStream.Write(embeddedResource, 0, embeddedResource.Length);
+                    fileStream.Flush();
+                }
+            }
         }
 
         private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

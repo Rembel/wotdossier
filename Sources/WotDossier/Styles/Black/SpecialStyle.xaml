@@ -37,7 +37,7 @@
         <Image Width="50" Height="34" ToolTip="{Binding Path=DamageRating, Mode=OneWay, Converter={x:Static Converters:DamageRatingToTooltipConverter.Default}}" >
             <Image.Source>
                 <MultiBinding Converter="{x:Static image:DamageRatingToImageConverter.Default}" >
-                    <Binding Path="DamageRating" />
+                    <Binding Path="MarksOnGun" />
                     <Binding Path="CountryId" />
                 </MultiBinding>
             </Image.Source>

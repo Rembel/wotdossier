@@ -24,9 +24,8 @@ namespace WotDossier.Converters.Image
 
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            double percentValue = (int)values[0] / 100.0;
+            int mark = (int)values[0];
             Country nation = (Country)values[1];
-            int mark = GetMark(percentValue);
             if (mark > 0)
             {
                 var uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/marksOnGun/95x85/{0}_{1}_marks.png", nation.ToString().ToLower(), mark));
@@ -34,23 +33,6 @@ namespace WotDossier.Converters.Image
                 return bitmapImage;
             }
             return null;
-        }
-
-        private int GetMark(double percentValue)
-        {
-            if (percentValue >= 95.0)
-            {
-                return 3;
-            }
-            if (percentValue >= 85.0)
-            {
-                return 2;
-            }
-            if (percentValue >= 65.0)
-            {
-                return 1;
-            }
-            return 0;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

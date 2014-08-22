@@ -342,6 +342,7 @@ namespace WotDossier.Applications.ViewModel
                     //refresh replays
                     OnPropertyChanged("Replays");
 
+                    //restore folder selection
                     ReplayFilter.SelectedFolder = replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId || _selectedFolderId == null);
 
                     ChartView.InitBattlesByMapChart();

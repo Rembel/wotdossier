@@ -57,7 +57,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
-                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding StatisticLink}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding Path=.}" Command="{Binding Path=DataContext.OpenPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}">
                                             <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
                                         </Hyperlink>
                                         <ToolTipService.ToolTip>
@@ -166,7 +166,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
-                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding StatisticLink}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding Path=.}" Command="{Binding Path=DataContext.OpenPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}">
                                             <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
                                         </Hyperlink>
                                     </TextBlock>

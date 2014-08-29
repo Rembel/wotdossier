@@ -12,6 +12,7 @@ using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
+using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
 
@@ -161,6 +162,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public DelegateCommand HideTeamMemberResultsCommand { get; set; }
         public DelegateCommand<IList<object>> CopyCommand { get; set; }
+        public DelegateCommand<TeamMember> OpenPlayerCommand { get; set; }
 
         public TeamMember ReplayUser { get; set; }
 
@@ -177,6 +179,26 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             HideTeamMemberResultsCommand = new DelegateCommand(OnHideTeamMemberResultsCommand);
             CopyCommand = new DelegateCommand<IList<object>>(OnCopyCommand);
+            OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
+        }
+
+        private void OnOpenPlayerCommand(TeamMember member)
+        {
+            Domain.Server.Player player;
+            using (new WaitCursor())
+            {
+                player = WotApiClient.Instance.LoadPlayerStat((int) member.AccountDBID, SettingsReader.Get(), PlayerStatLoadOptions.LoadVehicles | PlayerStatLoadOptions.LoadAchievments);
+            }
+            if (player != null)
+            {
+                PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.GetExport<PlayerServerStatisticViewModel>();
+                viewModel.Init(player);
+                viewModel.Show();
+            }
+            else
+            {
+                MessageBox.Show(string.Format(Resources.Resources.Msg_GetPlayerData, member.Name), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void OnCopyCommand(IList<object> rows)

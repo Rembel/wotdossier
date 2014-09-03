@@ -2949,4 +2949,7 @@ up to 500 m</value>
   <data name="Btn_Refresh" xml:space="preserve">
     <value>Refresh</value>
   </data>
+  <data name="Column_Header_GlobalMap" xml:space="preserve">
+    <value>Global map identifier</value>
+  </data>
 </root>

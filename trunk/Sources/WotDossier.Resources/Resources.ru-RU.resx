@@ -3041,4 +3041,7 @@
   <data name="Btn_Refresh" xml:space="preserve">
     <value>Обновить</value>
   </data>
+  <data name="Column_Header_GlobalMap" xml:space="preserve">
+    <value>Идентификатор глобальной карты</value>
+  </data>
 </root>

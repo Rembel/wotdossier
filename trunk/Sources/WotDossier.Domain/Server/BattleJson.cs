@@ -25,6 +25,14 @@ namespace WotDossier.Domain.Server
         /// Информация о карте
         /// </summary>
         public Arena[] arenas { get; set; }
+
+        /// <summary>
+        /// Gets or sets the global map identifier.
+        /// </summary>
+        /// <value>
+        /// The global map identifier.
+        /// </value>
+        public string GlobalMapId { get; set; }
     }
 
     public class Arena

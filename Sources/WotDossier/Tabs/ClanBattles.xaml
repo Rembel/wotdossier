@@ -16,6 +16,7 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Time}" Binding="{Binding Time, StringFormat='HH:mm'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Provinces}" Binding="{Binding Province}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Map}" Binding="{Binding Map}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_GlobalMap}" Binding="{Binding GlobalMapId}" ElementStyle="{StaticResource RTextBlock}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

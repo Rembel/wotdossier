@@ -19,12 +19,13 @@ namespace WotDossier.Applications.Model
             {
                 Map = battle.arenas[0].name_i18n;
             }
+            GlobalMapId = battle.GlobalMapId;
         }
 
         public ClanBattleType Type { get; set; }
         public DateTime? Time { get; set; }
         public string Province { get; set; }
         public string Map { get; set; }
-        public int GlobalMapId { get; set; }
+        public string GlobalMapId { get; set; }
     }
 }

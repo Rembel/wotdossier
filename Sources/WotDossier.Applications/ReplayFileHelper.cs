@@ -409,20 +409,22 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             //If the unpacked value does not match 0x80, 0x02 set your offset to 17. 
             if (updateType == 0x01 || updateType == 0x04)
             {
-                ulong firstByte = stream.Read(1).ConvertLittleEndian();
+                ulong firstByte = 0x0;
+                ulong secondByte = 0x0;
 
-                ulong secondByte = stream.Read(1).ConvertLittleEndian();
+                ulong ofset = 0;
 
-                if (firstByte != 0x80 || secondByte != 0x02)
+                //find pickle object start marker
+                while (firstByte != 0x80 || secondByte != 0x02)
                 {
-                    stream.Seek(2, SeekOrigin.Current);
-                    packet.SubTypePayloadLength = packet.SubTypePayloadLength - 5;
-                }
-                else
-                {
+                    firstByte = stream.Read(1).ConvertLittleEndian();
+                    secondByte = stream.Read(1).ConvertLittleEndian();
                     stream.Seek(-1, SeekOrigin.Current);
-                    packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
+                    ofset++;
                 }
+
+                stream.Seek(-1, SeekOrigin.Current);
+                packet.SubTypePayloadLength = packet.SubTypePayloadLength - ofset;
             }
             else
             {
@@ -439,11 +441,18 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 var rosterdata = new Dictionary<string, AdvancedPlayerInfo>();
                 data.roster = rosterdata;
 
-                List<object> rosters;
+                List<object> rosters = new List<object>();
 
-                using (var updatePayloadStream = new MemoryStream(updatePayload))
+                try
                 {
-                    rosters = (List<object>) Unpickle.Load(updatePayloadStream);
+                    using (var updatePayloadStream = new MemoryStream(updatePayload))
+                    {
+                        rosters = (List<object>) Unpickle.Load(updatePayloadStream);
+                    }
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on roster load", e);
                 }
 
                 foreach (object[] roster in rosters)

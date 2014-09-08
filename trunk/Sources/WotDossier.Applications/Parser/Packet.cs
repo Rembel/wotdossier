@@ -8,5 +8,6 @@ namespace WotDossier.Applications
         public long Position { get; set; }
         public ulong SubType { get; set; }
         public ulong SubTypePayloadLength { get; set; }
+        public ulong PlayerId { get; set; }
     }
 }

@@ -382,6 +382,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         private List<ListItem<Version>> _versions = new List<ListItem<Version>>
             {
                 new ListItem<Version>(VersionAll, Resources.Resources.TankFilterPanel_All), 
+                new ListItem<Version>(new Version("0.9.3.0"), "0.9.3"),
                 new ListItem<Version>(new Version("0.9.2.0"), "0.9.2"),
                 new ListItem<Version>(new Version("0.9.1.0"), "0.9.1"),
                 new ListItem<Version>(new Version("0.9.0.0"), "0.9.0"),

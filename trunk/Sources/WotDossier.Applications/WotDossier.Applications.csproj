@@ -95,6 +95,7 @@
     <Compile Include="Logic\Adapter\ClanBattlesStatAdapter.cs" />
     <Compile Include="Logic\Mapper.cs" />
     <Compile Include="Model\BattleModel.cs" />
+    <Compile Include="Parser\BaseParser.cs" />
     <Compile Include="Parser\Packet.cs" />
     <Compile Include="ReplayFileHelper.cs" />
     <Compile Include="ReplaysManagerController.cs" />

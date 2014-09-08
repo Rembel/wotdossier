@@ -97,6 +97,7 @@
     <Compile Include="Model\BattleModel.cs" />
     <Compile Include="Parser\BaseParser.cs" />
     <Compile Include="Parser\Packet.cs" />
+    <Compile Include="Parser\Parser93.cs" />
     <Compile Include="ReplayFileHelper.cs" />
     <Compile Include="ReplaysManagerController.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />

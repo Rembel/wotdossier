@@ -746,6 +746,11 @@ namespace WotDossier.Applications.ViewModel.Filter
             TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = true;
             USSRSelected =
                 UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = true;
+
+            SelectedBattleResult = BattleStatus.Unknown;
+            SelectedVersion = VersionAll;
+            BattleType = BattleType.Unknown;
+            Member = string.Empty;
         }
 
         private void OnClear()
@@ -762,6 +767,11 @@ namespace WotDossier.Applications.ViewModel.Filter
             TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = false;
             USSRSelected =
                 UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
+
+            SelectedBattleResult = BattleStatus.Unknown;
+            SelectedVersion = VersionAll;
+            BattleType = BattleType.Unknown;
+            Member = string.Empty;
         }
 
         public List<ListItem<string>> FilterFields { get; set; }

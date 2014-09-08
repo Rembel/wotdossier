@@ -12,43 +12,6 @@ using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications.Parser
 {
-    public class Parser93 : BaseParser
-    {
-        /// <summary>
-        /// Process packet 0x08
-        /// Contains Various game state updates 
-        /// </summary>
-        /// <param name="packet">The packet.</param>
-        /// <param name="data">The data.</param>
-        protected override void ProcessPacket_0x08(Packet packet, AdvancedReplayData data)
-        {
-            using (MemoryStream stream = new MemoryStream(packet.Payload))
-            {
-                //skip 0-4 - player_id
-                stream.Seek(4, SeekOrigin.Current);
-                //read 4-8 - subType
-                packet.SubType = stream.Read(4).ConvertLittleEndian();
-                //read 8-12 - update length
-                packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
-
-                if (packet.SubType == 0x1e) //onArenaUpdate events
-                {
-                    ProcessPacket_0x08_0x1d(packet, stream, data);
-                }
-
-                if (packet.SubType == 0x09) //onSlotUpdate events
-                {
-                    ProcessPacket_0x08_0x09(packet, stream, data);
-                }
-
-                if (packet.SubType == 0x01) //onDamageReceived
-                {
-                    ProcessPacket_0x08_0x01(packet, stream, data);
-                }
-            }
-        }
-    }
-
     public class BaseParser
     {
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
@@ -175,8 +138,8 @@ namespace WotDossier.Applications.Parser
         {
             using (MemoryStream stream = new MemoryStream(packet.Payload))
             {
-                //skip 0-4 - player_id
-                stream.Seek(4, SeekOrigin.Current);
+                //read 0-4 - player_id
+                packet.PlayerId = stream.Read(4).ConvertLittleEndian();
                 //read 4-8 - subType
                 packet.SubType = stream.Read(4).ConvertLittleEndian();
                 //read 8-12 - update length
@@ -201,9 +164,9 @@ namespace WotDossier.Applications.Parser
 
         protected static void ProcessPacket_0x08_0x01(Packet packet, MemoryStream stream, AdvancedReplayData data)
         {
-            //ulong health = stream.Read(2).ConvertLittleEndian();
-            //ulong source = stream.Read(4).ConvertLittleEndian();
-            //data.DamageReceived = new DamageReceived {Health = (int) health, Source = (int)source};
+            ulong health = stream.Read(2).ConvertLittleEndian();
+            ulong source = stream.Read(4).ConvertLittleEndian();
+            var amageReceived = new DamageReceived {Health = (int) health, Source = (int)source};
         }
 
         /// <summary>

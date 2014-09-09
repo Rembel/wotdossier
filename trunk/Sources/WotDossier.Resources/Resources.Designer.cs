@@ -3877,6 +3877,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Damage blocked by armor.
+        /// </summary>
+        public static string Label_DamageBlockedByArmor {
+            get {
+                return ResourceManager.GetString("Label_DamageBlockedByArmor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Experience.
         /// </summary>
         public static string Label_Experience {

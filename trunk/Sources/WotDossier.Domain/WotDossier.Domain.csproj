@@ -147,6 +147,7 @@
     <Compile Include="Replay\ReplayIdentify.cs" />
     <Compile Include="Replay\Slot.cs" />
     <Compile Include="Replay\SlotItem.cs" />
+    <Compile Include="Replay\StatBase.cs" />
     <Compile Include="Replay\Vehicle.cs" />
     <Compile Include="Replay\VehicleResult.cs" />
     <Compile Include="Server\Achievements.cs" />

@@ -3044,4 +3044,7 @@
   <data name="Column_Header_GlobalMap" xml:space="preserve">
     <value>Идентификатор глобальной карты</value>
   </data>
+  <data name="Label_DamageBlockedByArmor" xml:space="preserve">
+    <value>Урон, заблокированный броней</value>
+  </data>
 </root>

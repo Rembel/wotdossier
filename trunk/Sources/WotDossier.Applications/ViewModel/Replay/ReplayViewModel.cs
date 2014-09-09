@@ -66,6 +66,8 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public int PotentialDamageReceived { get; set; }
 
+        public int DamageBlockedByArmor { get; set; }
+
         public int CapturePoints { get; set; }
 
         public int DamageAssisted { get; set; }
@@ -296,6 +298,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 CapturePoints = replay.datablock_battle_result.personal.capturePoints;
                 DroppedCapturePoints = replay.datablock_battle_result.personal.droppedCapturePoints;
                 PotentialDamageReceived = replay.datablock_battle_result.personal.potentialDamageReceived;
+                DamageBlockedByArmor = replay.datablock_battle_result.personal.damageBlockedByArmor;
                 Mileage = string.Format(Resources.Resources.Traveled_Format, replay.datablock_battle_result.personal.mileage/(double)1000);
 
                 StartTime = replayFile.PlayTime.ToShortTimeString();

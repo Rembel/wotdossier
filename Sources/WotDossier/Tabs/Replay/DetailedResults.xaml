@@ -67,6 +67,11 @@
                   <TextBlock Text="{Binding PotentialDamageReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <TextBlock Text="{x:Static resources:Resources.Label_DamageBlockedByArmor}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
+                    <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="{Binding DamageBlockedByArmor, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static resources:Resources.Label_ReplayDetail_AlliesDamage}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                     <TextBlock Text="{Binding TDamage, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>

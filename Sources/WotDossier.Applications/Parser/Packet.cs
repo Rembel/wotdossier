@@ -1,3 +1,5 @@
+using System;
+
 namespace WotDossier.Applications
 {
     public class Packet
@@ -9,5 +11,6 @@ namespace WotDossier.Applications
         public ulong SubType { get; set; }
         public ulong SubTypePayloadLength { get; set; }
         public ulong PlayerId { get; set; }
+        public TimeSpan Time { get; set; }
     }
 }

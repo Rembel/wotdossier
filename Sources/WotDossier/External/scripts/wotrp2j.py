@@ -207,7 +207,7 @@ def main():
 					result_blocks['datablock_battle_result']['common']['gameplayID'] = result_blocks['datablock_battle_result']['common']['arenaTypeID'] >> 16
 					result_blocks['datablock_battle_result']['common']['arenaTypeID'] = result_blocks['datablock_battle_result']['common']['arenaTypeID'] & 32767
 					
-					result_blocks['datablock_battle_result']['personal']['achievements'] = decodeDossierPopups(result_blocks['datablock_battle_result']['personal'])
+#					result_blocks['datablock_battle_result']['personal']['achievements'] = decodeDossierPopups(result_blocks['datablock_battle_result']['personal'])
 				
 					for key, value in result_blocks['datablock_battle_result']['players'].items(): 
 						for vkey, vvalue in result_blocks['datablock_battle_result']['vehicles'].items(): 

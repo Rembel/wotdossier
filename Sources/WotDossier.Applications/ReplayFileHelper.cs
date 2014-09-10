@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using Common.Logging;
 using Ionic.Zlib;
@@ -140,22 +141,36 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
                         for (int i = 0; i < blocksCount; i++)
                         {
+                            int blockLength = (int)stream.Read(4).ConvertLittleEndian();
+                            _log.Trace(string.Format("{0} block length: {1}", i + 1, blockLength));
+                            byte[] blockData = stream.Read(blockLength);
+
                             //read first block
                             if (i == 0)
                             {
-                                ReadFirstBlock(stream, replay);
+                                ReadFirstBlock(blockData, replay);
                             }
 
                             //read second block
                             if (i == 1)
                             {
-                                ReadSecondBlock(stream, replay);
+                                DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
+                                Version version = ResolveVersion(replay.datablock_1.Version, playTime);
+
+                                if (version < new Version("0.8.11.0") && blocksCount < 3)
+                                {
+                                    ReadThirdBlock(blockData, replay);
+                                }
+                                else
+                                {
+                                    ReadSecondBlock(blockData, replay);
+                                }
                             }
 
                             //read third block for replays 0.8.1-0.8.10
                             if (i == 2)
                             {
-                                ReadThirdBlock(stream, replay);
+                                ReadThirdBlock(blockData, replay);
                             }
                         }
 
@@ -178,25 +193,19 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             return null;
         }
 
-        private static void ReadFirstBlock(FileStream stream, Replay replay)
+        private static void ReadFirstBlock(byte[] blockData, Replay replay)
         {
-            int blockLength = (int) stream.Read(4).ConvertLittleEndian();
-            _log.Trace("1 block length: " + blockLength);
-
-            string blockData = stream.Read(blockLength).GetAsciiString();
-            if (!string.IsNullOrEmpty(blockData))
+            string json = blockData.GetAsciiString();
+            if (!string.IsNullOrEmpty(json))
             {
-                replay.datablock_1 = JsonConvert.DeserializeObject<FirstBlock>(blockData);
+                replay.datablock_1 = JsonConvert.DeserializeObject<FirstBlock>(json);
             }
         }
 
-        private static void ReadSecondBlock(FileStream stream, Replay replay)
+        private static void ReadSecondBlock(byte[] blockData, Replay replay)
         {
-            int blockLength = (int) stream.Read(4).ConvertLittleEndian();
-            _log.Trace("2 block length: " + blockLength);
-            string blockData = stream.Read(blockLength).GetAsciiString();
-
-            var parsedData = JsonConvert.DeserializeObject<JArray>(blockData);
+            string json = blockData.GetAsciiString();
+            var parsedData = JsonConvert.DeserializeObject<JArray>(json);
             if (parsedData.Count > 0)
             {
                 //0.8.11+
@@ -208,13 +217,10 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             }
         }
 
-        private static void ReadThirdBlock(FileStream stream, Replay replay)
+        private static void ReadThirdBlock(byte[] blockData, Replay replay)
         {
-            int blockLength = (int) stream.Read(4).ConvertLittleEndian();
-            _log.Trace("3 block length: " + blockLength);
-            byte[] bytes = stream.Read(blockLength);
-            object blockData = Unpickle.Load(new MemoryStream(bytes));
-            replay.datablock_battle_result = blockData.ToObject<BattleResult>();
+            object pickleObject = Unpickle.Load(new MemoryStream(blockData));
+            replay.datablock_battle_result = pickleObject.ToObject<BattleResult>();
         }
 
         private static void ReadAdvancedDataBlock(FileStream stream, Replay replay)

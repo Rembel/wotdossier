@@ -34,13 +34,11 @@ namespace WotDossier.Applications.Parser
         {
             ulong packetLength = stream.Read(4).ConvertLittleEndian();
             ulong packetType = stream.Read(4).ConvertLittleEndian();
-
-            //move to payload
-            stream.Seek(4, SeekOrigin.Current);
-
+            float time = BitConverter.ToSingle(stream.Read(4), 0);
+            
             long position = stream.Position;
 
-            bool endOfStream = packetType == new byte[] { 255, 255, 255, 255 }.ConvertLittleEndian() || stream.Position > stream.Length;
+            bool endOfStream = packetType == new byte[] { 255, 255, 255, 255 }.ConvertLittleEndian() || stream.Position >= stream.Length;
 
             byte[] payload = new byte[packetLength];
 
@@ -53,7 +51,8 @@ namespace WotDossier.Applications.Parser
                     Payload = payload,
                     PacketType = packetType,
                     PacketLength = packetLength,
-                    Position = position
+                    Position = position,
+                    Time = TimeSpan.FromSeconds(time)
                 };
 
                 //battle level setup 
@@ -157,7 +156,7 @@ namespace WotDossier.Applications.Parser
 
                 if (packet.SubType == 0x01) //onDamageReceived
                 {
-                    ProcessPacket_0x08_0x01(packet, stream, data);
+                    //ProcessPacket_0x08_0x01(packet, stream, data);
                 }
             }
         }
@@ -166,7 +165,7 @@ namespace WotDossier.Applications.Parser
         {
             ulong health = stream.Read(2).ConvertLittleEndian();
             ulong source = stream.Read(4).ConvertLittleEndian();
-            var amageReceived = new DamageReceived {Health = (int) health, Source = (int)source};
+            var damageReceived = new DamageReceived {Health = (int) health, Source = (int)source};
         }
 
         /// <summary>
@@ -348,10 +347,10 @@ namespace WotDossier.Applications.Parser
         private static void ProcessPacket_0x1f(Packet packet, AdvancedReplayData data)
         {
             string message = Encoding.UTF8.GetString(packet.Payload);
-            data.Messages.Add(ParseChatMessage(message.Replace("&nbsp;", " ").Replace(":", "")));
+            data.Messages.Add(ParseChatMessage(message.Replace("&nbsp;", " ").Replace(":", ""), packet.Time));
         }
 
-        public static ChatMessage ParseChatMessage(string messageText)
+        public static ChatMessage ParseChatMessage(string messageText, TimeSpan time)
         {
             var reg = new Regex(@"<(?<tag>[\w]+)[^>]*color\s*=\s*['""](?<color>[^'""]+)['""][^>]*>(?<text>.*?)<\/\<tag>", RegexOptions.IgnoreCase);
             MatchCollection match = reg.Matches(messageText);
@@ -360,8 +359,8 @@ namespace WotDossier.Applications.Parser
                 Player = match[0].Groups["text"].Value.Trim(),
                 PlayerColor = match[0].Groups["color"].Value.Trim(),
                 Text = match[1].Groups["text"].Value.Trim(),
-                TextColor = match[1].Groups["color"].Value.Trim()
-
+                TextColor = match[1].Groups["color"].Value.Trim(),
+                Time = time
             };
         }
     }

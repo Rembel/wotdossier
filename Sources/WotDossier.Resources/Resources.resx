@@ -2955,4 +2955,7 @@ up to 500 m</value>
   <data name="Label_DamageBlockedByArmor" xml:space="preserve">
     <value>Damage blocked by armor</value>
   </data>
+  <data name="ReplaysTab_CopyPlayerName" xml:space="preserve">
+    <value>Copy name</value>
+  </data>
 </root>

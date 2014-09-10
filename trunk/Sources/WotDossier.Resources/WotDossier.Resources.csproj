@@ -544,7 +544,6 @@
     <Resource Include="Images\Tanks\usa_t32.png" />
     <Resource Include="Images\Tanks\usa_t34_hvy.png" />
     <Resource Include="Images\Tanks\usa_t40.png" />
-    <Resource Include="Images\Tanks\usa_t49.png" />
     <Resource Include="Images\Tanks\usa_t54e1.png" />
     <Resource Include="Images\Tanks\usa_t57.png" />
     <Resource Include="Images\Tanks\usa_t57_58.png" />
@@ -853,6 +852,34 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Medals\MarksOnGun3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Medals\arsonist.png" />
+    <Resource Include="Images\Medals\bonecrusher.png" />
+    <Resource Include="Images\Medals\charmed.png" />
+    <Resource Include="Images\Medals\deathTrack.png" />
+    <Resource Include="Images\Medals\demolition.png" />
+    <Resource Include="Images\Medals\duelist.png" />
+    <Resource Include="Images\Medals\even.png" />
+    <Resource Include="Images\Medals\fighter.png" />
+    <Resource Include="Images\Medals\impenetrable.png" />
+    <Resource Include="Images\Medals\maxAimerSeries.png" />
+    <Resource Include="Images\Medals\medalRotmistrov1.png" />
+    <Resource Include="Images\Medals\medalRotmistrov2.png" />
+    <Resource Include="Images\Medals\medalRotmistrov3.png" />
+    <Resource Include="Images\Medals\medalRotmistrov4.png" />
+    <Resource Include="Images\Medals\reliableComrade.png" />
+    <Resource Include="Images\Medals\shootToKill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\germany_G103_RU_251.png" />
+    <Resource Include="Images\Tanks\usa_M41_Bulldog.png" />
+    <Resource Include="Images\Tanks\usa_T37.png" />
+    <Resource Include="Images\Tanks\usa_T49.png" />
+    <Resource Include="Images\Tanks\usa_T67.png" />
+    <Resource Include="Images\Tanks\ussr_R106_KV85.png" />
+    <Resource Include="Images\Tanks\ussr_R107_LTB.png" />
+    <Resource Include="Images\Tanks\ussr_R109_T54S.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

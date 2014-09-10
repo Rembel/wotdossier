@@ -150,6 +150,30 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_LifeTime}" Width="100" Binding="{Binding LifeTime, StringFormat=mm\\:ss}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_IsAlive}" Width="100" Binding="{Binding IsAlive, Converter={x:Static converters:ValueToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Version}" Binding="{Binding ClientVersion}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Respawn}" Binding="{Binding Team}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Tab_Header_Medals}" SortMemberPath="MedalsCount">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ListBox Background="Transparent" ItemsSource="{Binding Medals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Margin="3" Width="27" Height="31" Stretch="Fill" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
+                                            <Image.ToolTip>
+                                                <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Replay_Link}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -161,30 +185,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Respawn}" Binding="{Binding Team}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <!--<DataGridTemplateColumn Header="Medals">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <ListBox Background="Transparent" ItemsSource="{Binding Medals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Center">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static Converters:MedalToImageConverter.Default}}">
-                                            <Image.ToolTip>
-                                                <TextBlock Text="{Binding Name}"></TextBlock>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
-                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">

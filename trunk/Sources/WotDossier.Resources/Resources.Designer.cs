@@ -5893,6 +5893,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy name.
+        /// </summary>
+        public static string ReplaysTab_CopyPlayerName {
+            get {
+                return ResourceManager.GetString("ReplaysTab_CopyPlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy link to clipboard.
         /// </summary>
         public static string ReplaysTab_CopyToClipboard {

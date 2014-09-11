@@ -6,11 +6,19 @@
              xmlns:Converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources" xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
-             xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
     <UserControl.Resources>
+        <ContextMenu x:Key="DataRowContextMenu">
+            <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyPlayerName}"
+                 Command="{Binding Path=DataContext.CopyPlayerNameCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}"
+                 CommandParameter="{Binding}"/>
+            <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyPlayerName}"
+                 Command="{Binding Path=DataContext.CopyPlayerNameCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}"
+                 CommandParameter="{Binding}"/>
+        </ContextMenu>
         <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource ReplayDataGridRowStyle}">
+            <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="true">
                     <Setter Property="Background" Value="#3295A6D4" />
@@ -34,10 +42,10 @@
             </Grid.ColumnDefinitions>
             <StackPanel Visibility="{Binding AlienTeamMember, Converter={x:Static Converters:ObjectToCollapseConverter.Default}}">
                 <TextBlock Margin="10,0,0,0" Text="{x:Static resources:Resources.Label_Replay_OurTeam}" FontSize="16" Foreground="#BCBDBE" />
-                <DataGrid Style="{StaticResource replayDataGrid}" SelectedItem="{Binding OurTeamMember}"
+                <DataGrid Style="{StaticResource replayDataGrid}" SelectedItem="{Binding OurTeamMember}" RowStyle="{StaticResource RowStyle}"
                            BorderThickness="0" ItemsSource="{Binding FirstTeam}" Margin="0,0,0,3" HorizontalAlignment="Stretch"
                           Height="Auto" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" HeadersVisibility="Column"
-                          RowHeight="31" RowStyle="{StaticResource RowStyle}" IsReadOnly="True">
+                          RowHeight="31" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Width="47" Header="{x:Static resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
                             <DataGridTemplateColumn.CellTemplate>

@@ -164,6 +164,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public DelegateCommand HideTeamMemberResultsCommand { get; set; }
         public DelegateCommand<IList<object>> CopyCommand { get; set; }
+        public DelegateCommand<TeamMember> CopyPlayerNameCommand { get; set; }
         public DelegateCommand<TeamMember> OpenPlayerCommand { get; set; }
 
         public TeamMember ReplayUser { get; set; }
@@ -181,7 +182,16 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             HideTeamMemberResultsCommand = new DelegateCommand(OnHideTeamMemberResultsCommand);
             CopyCommand = new DelegateCommand<IList<object>>(OnCopyCommand);
+            CopyPlayerNameCommand = new DelegateCommand<TeamMember>(OnCopyPlayerNameCommand);
             OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
+        }
+
+        private void OnCopyPlayerNameCommand(TeamMember player)
+        {
+            if (player != null)
+            {
+                Clipboard.SetText(player.Name);
+            }
         }
 
         private void OnOpenPlayerCommand(TeamMember member)

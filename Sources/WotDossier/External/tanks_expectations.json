@@ -1561,7 +1561,7 @@
   },
   {
     "tank_title": "KV-1S",
-    "icon": "KV-1s",
+    "icon": "r106_kv85",
     "pr_nominal_damage": 875.0,
     "wn8_nominal_damage": 942.0,
     "wn8_nominal_win_rate": 56.0,
@@ -2410,8 +2410,8 @@
     "wn8_nominal_defence": 1.2
   },
   {
-    "tank_title": "T49",
-    "icon": "T49",
+    "tank_title": "t67",
+    "icon": "t67",
     "pr_nominal_damage": 550.0,
     "wn8_nominal_damage": 686.0,
     "wn8_nominal_win_rate": 57.0,

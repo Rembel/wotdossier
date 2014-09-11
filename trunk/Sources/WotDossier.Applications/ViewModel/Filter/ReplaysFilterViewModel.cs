@@ -50,6 +50,8 @@ namespace WotDossier.Applications.ViewModel.Filter
         private string _member;
         private BattleStatus _selectedBattleResult = BattleStatus.Unknown;
         private static readonly Version VersionAll = new Version("0.0.0.0");
+        private static readonly Version VersionRelease = new Version("0.9.3.0");
+        private static readonly Version VersionTest = new Version("100.0.0.0");
 
         #region levels
 
@@ -382,7 +384,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         private List<ListItem<Version>> _versions = new List<ListItem<Version>>
             {
                 new ListItem<Version>(VersionAll, Resources.Resources.TankFilterPanel_All), 
-                new ListItem<Version>(new Version("0.9.3.0"), "0.9.3"),
+                new ListItem<Version>(VersionRelease, "0.9.3"),
                 new ListItem<Version>(new Version("0.9.2.0"), "0.9.2"),
                 new ListItem<Version>(new Version("0.9.1.0"), "0.9.1"),
                 new ListItem<Version>(new Version("0.9.0.0"), "0.9.0"),
@@ -397,6 +399,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<Version>(new Version("0.8.3.0"), "0.8.3"), 
                 new ListItem<Version>(new Version("0.8.2.0"), "0.8.2"), 
                 new ListItem<Version>(new Version("0.8.1.0"), "0.8.1"), 
+                new ListItem<Version>(VersionTest, "Test 0.9.x"), 
             };
 
         /// <summary>
@@ -467,7 +470,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         private bool _allResps = true;
         private DateTime? _startDate;
         private DateTime? _endDate = DateTime.Now;
-
+        
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="ReplaysFilterViewModel" /> is resp1.
         /// </summary>
@@ -584,7 +587,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             List<ReplayFile> result = replays.Where(x =>
                 x.Tank != null
                 &&
-                (SelectedVersion == VersionAll || SelectedVersion == x.ClientVersion)
+                (SelectedVersion == VersionAll || (SelectedVersion == VersionTest && x.ClientVersion > VersionRelease) || SelectedVersion == x.ClientVersion)
                 &&
                 (Level1Selected && x.Tank.Tier == 1
                  || Level2Selected && x.Tank.Tier == 2

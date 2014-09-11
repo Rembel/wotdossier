@@ -322,9 +322,10 @@ namespace WotDossier.Dal
                         tank.LevelRange = LevelRange.All;
                     }
 
-                    if (_ratingExpectations.ContainsKey(tank.Icon.IconOrig))
+                    var key = tank.Icon.IconOrig.ToLower();
+                    if (_ratingExpectations.ContainsKey(key))
                     {
-                        tank.Expectancy = _ratingExpectations[tank.Icon.IconOrig];
+                        tank.Expectancy = _ratingExpectations[key];
                     }
 
                     tanks.Add(tank);
@@ -354,7 +355,7 @@ namespace WotDossier.Dal
                     JsonTextReader reader = new JsonTextReader(re);
                     JsonSerializer se = new JsonSerializer();
                     JArray parsedData = se.Deserialize<JArray>(reader);
-                    return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.Icon, x => x);
+                    return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.Icon.ToLower(), x => x);
                 }
             }
             catch (Exception e)

@@ -61,6 +61,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mark of Mastery.
+        /// </summary>
+        public static string Achievement_MarkOfMastery {
+            get {
+                return ResourceManager.GetString("Achievement_MarkOfMastery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marks on Gun.
+        /// </summary>
+        public static string Achievement_MarksOnGun {
+            get {
+                return ResourceManager.GetString("Achievement_MarksOnGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to +15% to engine power for one minute.
         /// </summary>
         public static string artefacts_afterburning_descr {

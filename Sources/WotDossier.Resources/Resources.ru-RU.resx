@@ -3050,4 +3050,10 @@
   <data name="ReplaysTab_CopyPlayerName" xml:space="preserve">
     <value>Копировать имя</value>
   </data>
+  <data name="Achievement_MarkOfMastery" xml:space="preserve">
+    <value>Знак классности</value>
+  </data>
+  <data name="Achievement_MarksOnGun" xml:space="preserve">
+    <value>Отметки на стволе</value>
+  </data>
 </root>

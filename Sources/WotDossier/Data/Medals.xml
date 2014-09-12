@@ -201,13 +201,13 @@
     </Fort>
     <master>
         <!--79-->
-        <medal name="MarkOfMastery" id="7901" icon="MarkOfMastery1" type="1"/>
-        <medal name="MarkOfMastery" id="7902" icon="MarkOfMastery2" type="1"/>
-        <medal name="MarkOfMastery" id="7903" icon="MarkOfMastery3" type="1"/>
-        <medal name="MarkOfMastery" id="7904" icon="MarkOfMastery4" type="1"/>
+        <medal name="Achievement_MarkOfMastery" id="7901" icon="MarkOfMastery1" type="1"/>
+        <medal name="Achievement_MarkOfMastery" id="7902" icon="MarkOfMastery2" type="1"/>
+        <medal name="Achievement_MarkOfMastery" id="7903" icon="MarkOfMastery3" type="1"/>
+        <medal name="Achievement_MarkOfMastery" id="7904" icon="MarkOfMastery4" type="1"/>
         <!--295-->
-        <medal name="MarksOnGun" id="29501" icon="MarksOnGun1" type="1"/>
-        <medal name="MarksOnGun" id="29502" icon="MarksOnGun2" type="1"/>
-        <medal name="MarksOnGun" id="29503" icon="MarksOnGun3" type="1"/>
+        <medal name="Achievement_MarksOnGun" id="29501" icon="MarksOnGun1" type="1"/>
+        <medal name="Achievement_MarksOnGun" id="29502" icon="MarksOnGun2" type="1"/>
+        <medal name="Achievement_MarksOnGun" id="29503" icon="MarksOnGun3" type="1"/>
     </master>
 </Medals>

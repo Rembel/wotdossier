@@ -132,7 +132,6 @@
     <Compile Include="Update\IDbUpdate.cs" />
     <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="Model\ClanMemberModel.cs" />
-    <Compile Include="MedalHelper.cs" />
     <Compile Include="ViewModel\Chart\CommonChartsViewModel.cs" />
     <Compile Include="ViewModel\Chart\DataPoint.cs" />
     <Compile Include="ViewModel\Chart\IDataPoint.cs" />

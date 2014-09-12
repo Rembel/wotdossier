@@ -192,7 +192,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     BattleTime = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                     LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                     IsAlive = replay.datablock_battle_result.personal.deathReason == -1 || replay.datablock_battle_result.personal.killerID == 0;
-                    Medals = MedalHelper.GetMedals(replay.datablock_battle_result.personal.achievements);
+                    Medals = Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
                     MedalsCount = Medals.Count;
                 }
 

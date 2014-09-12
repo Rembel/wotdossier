@@ -33,6 +33,8 @@ namespace WotDossier.Applications.Logic.Adapter
         public int CounterBlow { get; set; }
         public int SoldierOfFortune { get; set; }
         public int Kampfer { get; set; }
+        public int CapturedBasesInAttack { get; set; }
+        public int CapturedBasesInDefence { get; set; }
 
         #endregion
 

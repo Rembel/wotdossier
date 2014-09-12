@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.Logic;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Rows
@@ -71,7 +72,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
             #region [ IStatisticBattles ]
             BattlesCount = list.Sum(x => x.BattlesCount);
-            Wins = list.Sum(x => x.Wins);
+            Wins = list.Sum(x => ((IStatisticBattles) x).Wins);
             Losses = list.Sum(x => x.Losses);
             SurvivedBattles = list.Sum(x => x.SurvivedBattles);
             SurvivedAndWon = list.Sum(x => x.SurvivedAndWon);

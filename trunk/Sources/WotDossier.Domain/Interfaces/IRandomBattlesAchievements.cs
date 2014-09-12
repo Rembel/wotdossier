@@ -64,5 +64,55 @@ namespace WotDossier.Domain.Interfaces
         /// Gets or sets the mark of mastery.
         /// </summary>
         int MarkOfMastery { get; set; }
+
+        /// <summary>
+        /// Gets or sets the impenetrable.
+        /// </summary>
+        int Impenetrable { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum aimer series.
+        /// </summary>
+        int MaxAimerSeries { get; set; }
+
+        /// <summary>
+        /// Gets or sets the shoot to kill.
+        /// </summary>
+        int ShootToKill { get; set; }
+
+        /// <summary>
+        /// Gets or sets the fighter.
+        /// </summary>
+        int Fighter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the duelist.
+        /// </summary>
+        int Duelist { get; set; }
+
+        /// <summary>
+        /// Gets or sets the demolition.
+        /// </summary>
+        int Demolition { get; set; }
+
+        /// <summary>
+        /// Gets or sets the arsonist.
+        /// </summary>
+        int Arsonist { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bonecrusher.
+        /// </summary>
+        int Bonecrusher { get; set; }
+
+        /// <summary>
+        /// Gets or sets the charmed.
+        /// </summary>
+        int Charmed { get; set; }
+
+        /// <summary>
+        /// Gets or sets the even.
+        /// </summary>
+        int Even { get; set; }
     }
 }

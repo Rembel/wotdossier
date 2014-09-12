@@ -4732,6 +4732,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arsonist.
+        /// </summary>
+        public static string Medal_15x15_Arsonist {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Arsonist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle Hero.
         /// </summary>
         public static string Medal_15x15_BattleHero {
@@ -4764,6 +4773,15 @@ namespace WotDossier.Resources {
         public static string Medal_15x15_Bombardier {
             get {
                 return ResourceManager.GetString("Medal_15x15_Bombardier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonecrusher.
+        /// </summary>
+        public static string Medal_15x15_Bonecrusher {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Bonecrusher", resourceCulture);
             }
         }
         
@@ -4804,6 +4822,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Charmed.
+        /// </summary>
+        public static string Medal_15x15_Charmed {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Charmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confederate.
         /// </summary>
         public static string Medal_15x15_Confederate {
@@ -4840,6 +4867,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Demolition.
+        /// </summary>
+        public static string Medal_15x15_Demolition {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Demolition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duelist.
+        /// </summary>
+        public static string Medal_15x15_Duelist {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Duelist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dumitru&apos;s Medal.
         /// </summary>
         public static string Medal_15x15_Dumitru {
@@ -4858,11 +4903,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Even.
+        /// </summary>
+        public static string Medal_15x15_Even {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Even", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fadin&apos;s Medal.
         /// </summary>
         public static string Medal_15x15_Fadin {
             get {
                 return ResourceManager.GetString("Medal_15x15_Fadin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fighter.
+        /// </summary>
+        public static string Medal_15x15_Fighter {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Fighter", resourceCulture);
             }
         }
         
@@ -4899,6 +4962,15 @@ namespace WotDossier.Resources {
         public static string Medal_15x15_Huntsman {
             get {
                 return ResourceManager.GetString("Medal_15x15_Huntsman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impenetrable.
+        /// </summary>
+        public static string Medal_15x15_Impenetrable {
+            get {
+                return ResourceManager.GetString("Medal_15x15_Impenetrable", resourceCulture);
             }
         }
         
@@ -5025,6 +5097,15 @@ namespace WotDossier.Resources {
         public static string Medal_15x15_MasterGunner {
             get {
                 return ResourceManager.GetString("Medal_15x15_MasterGunner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max Aimer Series.
+        /// </summary>
+        public static string Medal_15x15_MaxAimerSeries {
+            get {
+                return ResourceManager.GetString("Medal_15x15_MaxAimerSeries", resourceCulture);
             }
         }
         
@@ -5191,6 +5272,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shoot To Kill.
+        /// </summary>
+        public static string Medal_15x15_ShootToKill {
+            get {
+                return ResourceManager.GetString("Medal_15x15_ShootToKill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Lion of Sinai.
         /// </summary>
         public static string Medal_15x15_Sinai {
@@ -5281,6 +5371,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle Tested.
+        /// </summary>
+        public static string Medal_7x7_BattleTested {
+            get {
+                return ResourceManager.GetString("Medal_7x7_BattleTested", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brute Force Medal.
+        /// </summary>
+        public static string Medal_7x7_BruteForceMedal {
+            get {
+                return ResourceManager.GetString("Medal_7x7_BruteForceMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Crucial Shot.
         /// </summary>
         public static string Medal_7x7_CrucialShotMedal {
@@ -5335,11 +5443,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Guerrilla Medal.
+        /// </summary>
+        public static string Medal_7x7_GuerrillaMedal {
+            get {
+                return ResourceManager.GetString("Medal_7x7_GuerrillaMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Heavy Fire.
         /// </summary>
         public static string Medal_7x7_HeavyFireMedal {
             get {
                 return ResourceManager.GetString("Medal_7x7_HeavyFireMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infiltrator Medal.
+        /// </summary>
+        public static string Medal_7x7_InfiltratorMedal {
+            get {
+                return ResourceManager.GetString("Medal_7x7_InfiltratorMedal", resourceCulture);
             }
         }
         
@@ -5358,6 +5484,15 @@ namespace WotDossier.Resources {
         public static string Medal_7x7_NoMansLand {
             get {
                 return ResourceManager.GetString("Medal_7x7_NoMansLand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premature Detonation Medal.
+        /// </summary>
+        public static string Medal_7x7_PrematureDetonationMedal {
+            get {
+                return ResourceManager.GetString("Medal_7x7_PrematureDetonationMedal", resourceCulture);
             }
         }
         
@@ -5389,6 +5524,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sentinel Medal.
+        /// </summary>
+        public static string Medal_7x7_SentinelMedal {
+            get {
+                return ResourceManager.GetString("Medal_7x7_SentinelMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tactical Breakthrough.
         /// </summary>
         public static string Medal_7x7_TacticalBreakthrough {
@@ -5412,6 +5556,69 @@ namespace WotDossier.Resources {
         public static string Medal_7x7_WolfAmongSheepMedal {
             get {
                 return ResourceManager.GetString("Medal_7x7_WolfAmongSheepMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotmistrov.
+        /// </summary>
+        public static string Medal_Clan_Rotmistrov {
+            get {
+                return ResourceManager.GetString("Medal_Clan_Rotmistrov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conqueror.
+        /// </summary>
+        public static string Medal_Fort_Conqueror {
+            get {
+                return ResourceManager.GetString("Medal_Fort_Conqueror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Counterblow.
+        /// </summary>
+        public static string Medal_Fort_Counterblow {
+            get {
+                return ResourceManager.GetString("Medal_Fort_Counterblow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crusher.
+        /// </summary>
+        public static string Medal_Fort_Crusher {
+            get {
+                return ResourceManager.GetString("Medal_Fort_Crusher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fire And Sword.
+        /// </summary>
+        public static string Medal_Fort_FireAndSword {
+            get {
+                return ResourceManager.GetString("Medal_Fort_FireAndSword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kampfer.
+        /// </summary>
+        public static string Medal_Fort_Kampfer {
+            get {
+                return ResourceManager.GetString("Medal_Fort_Kampfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soldier Of Fortune.
+        /// </summary>
+        public static string Medal_Fort_SoldierOfFortune {
+            get {
+                return ResourceManager.GetString("Medal_Fort_SoldierOfFortune", resourceCulture);
             }
         }
         

@@ -13,9 +13,6 @@
             <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyPlayerName}"
                  Command="{Binding Path=DataContext.CopyPlayerNameCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}"
                  CommandParameter="{Binding}"/>
-            <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyPlayerName}"
-                 Command="{Binding Path=DataContext.CopyPlayerNameCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}"
-                 CommandParameter="{Binding}"/>
         </ContextMenu>
         <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource ReplayDataGridRowStyle}">
             <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />

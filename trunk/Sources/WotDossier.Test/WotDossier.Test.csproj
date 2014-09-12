@@ -189,6 +189,10 @@
       <Link>External\structures_85.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\structures_87.json">
+      <Link>External\structures_87.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\tanks.json">
       <Link>External\tanks.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -290,6 +294,10 @@
     <ProjectReference Include="..\WotDossier.Framework\WotDossier.Framework.csproj">
       <Project>{27b67dfe-0bf1-4435-b036-e4c083eaea03}</Project>
       <Name>WotDossier.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
+      <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
+      <Name>WotDossier.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

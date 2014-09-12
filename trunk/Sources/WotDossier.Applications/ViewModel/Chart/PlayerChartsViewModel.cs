@@ -7,6 +7,7 @@ using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.ViewModel.Chart
 {
@@ -487,21 +488,21 @@ namespace WotDossier.Applications.ViewModel.Chart
         private void InitWinPercentByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key,
-                x.Sum(y => y.Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
+                x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
             WinPercentByTierDataSource = dataSource.ToList();
         }
 
         private void InitWinPercentByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, 
-                x.Sum(y => y.Wins) * 100.0/x.Sum(y => y.BattlesCount)));
+                x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0/x.Sum(y => y.BattlesCount)));
             WinPercentByTypeDataSource = dataSource.ToList();
         }
 
         private void InitWinPercentByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new DataPoint(x.Key,
-                x.Sum(y => y.Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
+                x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
             WinPercentByCountryDataSource = dataSource.ToList();
         }
 

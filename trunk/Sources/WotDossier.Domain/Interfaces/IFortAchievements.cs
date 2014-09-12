@@ -34,5 +34,15 @@ namespace WotDossier.Domain.Interfaces
         /// Gets or sets the kampfer achievement count.
         /// </summary>
         int Kampfer { get; set; }
+
+        /// <summary>
+        /// Gets or sets the captured bases in attack.
+        /// </summary>
+        int CapturedBasesInAttack { get; set; }
+
+        /// <summary>
+        /// Gets or sets the captured bases in defence.
+        /// </summary>
+        int CapturedBasesInDefence { get; set; }
     }
 }

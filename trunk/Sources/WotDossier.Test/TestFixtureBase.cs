@@ -149,12 +149,6 @@ namespace WotDossier.Test
         //    }
         //}
 
-        [Test]
-        public void MedalsTest()
-        {
-            MedalHelper.ReadMedals();
-        }
-        
         //[Test]
         //public void TEffTest()
         //{
@@ -358,6 +352,22 @@ namespace WotDossier.Test
             serializeObject = JsonConvert.SerializeObject(o, Formatting.Indented);
             Console.WriteLine("-------------------------");
             Console.WriteLine(serializeObject);
+        }
+
+        [Test]
+        public void MedalsResourcesTest()
+        {
+            foreach (var medal in Dictionaries.Instance.Medals)
+            {
+                var name = medal.Value.Name;
+                var resource = Resources.Resources.ResourceManager.GetString(name) ?? name;
+                var condition = name.Equals(resource);
+                //Assert.IsFalse(condition, "Resource for medal:{0} not found", name);
+                if (condition)
+                {
+                    Console.WriteLine(name);
+                }
+            }
         }
     }
 }

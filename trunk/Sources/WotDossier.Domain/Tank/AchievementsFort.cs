@@ -36,5 +36,15 @@ namespace WotDossier.Domain.Tank
         /// Gets or sets the kampfer achievement count.
         /// </summary>
         public int Kampfer { get; set; }
+
+        /// <summary>
+        /// Gets or sets the captured bases in attack.
+        /// </summary>
+        public int CapturedBasesInAttack { get; set; }
+
+        /// <summary>
+        /// Gets or sets the captured bases in defence.
+        /// </summary>
+        public int CapturedBasesInDefence { get; set; }
     }
 }

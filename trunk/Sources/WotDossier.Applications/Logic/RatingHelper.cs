@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.Logic
@@ -174,7 +175,7 @@ namespace WotDossier.Applications.Logic
             if (battlesCount > 0)
             {
                 double expDamage = tanks.Select(x => x.BattlesCount*x.Description.Expectancy.PRNominalDamage).Sum();
-                int wins = tanks.Sum(x => x.Wins);
+                int wins = tanks.Sum(x => ((IStatisticBattles) x).Wins);
                 int playerDamage = tanks.Sum(x => x.DamageDealt);
                 double avgTier = tanks.Sum(x => x.BattlesCount*x.Description.Tier)/(double) battlesCount;
                 return PerformanceRating(battlesCount, wins, expDamage, playerDamage, avgTier);
@@ -389,7 +390,7 @@ namespace WotDossier.Applications.Logic
                 double damage = tanks.Sum(x => x.DamageDealt)/battles;
                 double spotted = tanks.Sum(x => x.Spotted)/battles;
                 double def = tanks.Sum(x => x.DroppedCapturePoints)/battles;
-                double winRate = tanks.Sum(x => x.Wins)/battles;
+                double winRate = tanks.Sum(x => ((IStatisticBattles) x).Wins)/battles;
                 double frags = tanks.Sum(x => x.Frags)/battles;
 
                 double expDamage = tanks.Sum(x => x.BattlesCount*x.Description.Expectancy.Wn8NominalDamage)/battles;

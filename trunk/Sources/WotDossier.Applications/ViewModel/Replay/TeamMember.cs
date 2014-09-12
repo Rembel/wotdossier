@@ -35,7 +35,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
             AccountDBID = vehicleResult.Value.accountDBID;
             achievements = vehicleResult.Value.achievements;
-            BattleMedals = MedalHelper.GetMedals(vehicleResult.Value.achievements);
+            BattleMedals = Dictionaries.Instance.GetMedals(vehicleResult.Value.achievements);
             CapturePoints = vehicleResult.Value.capturePoints;
             Credits = vehicleResult.Value.credits;
             DamageAssisted = vehicleResult.Value.damageAssisted;

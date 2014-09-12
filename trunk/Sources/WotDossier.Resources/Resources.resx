@@ -3027,4 +3027,10 @@ up to 500 m</value>
   <data name="Medal_7x7_SentinelMedal" xml:space="preserve">
     <value>Sentinel Medal</value>
   </data>
+  <data name="Achievement_MarkOfMastery" xml:space="preserve">
+    <value>Mark of Mastery</value>
+  </data>
+  <data name="Achievement_MarksOnGun" xml:space="preserve">
+    <value>Marks on Gun</value>
+  </data>
 </root>

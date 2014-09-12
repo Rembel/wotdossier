@@ -379,7 +379,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         private List<Medal> GetMedals(Domain.Replay.Replay replay)
         {
             return ReplayUser.BattleMedals.Union(Dictionaries.Instance.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps))
-                .Union(Dictionaries.Instance.GetAchievMedals(new List<List<JValue>> { new List<JValue> { new JValue(790 + replay.datablock_battle_result.personal.markOfMastery), new JValue(0) } })).ToList();
+                .Union(Dictionaries.Instance.GetAchievMedals(new List<List<JValue>> { new List<JValue> { new JValue(7900 + replay.datablock_battle_result.personal.markOfMastery), new JValue(0) } })).ToList();
         }
 
         private List<CombatTarget> GetCombatTargets(Domain.Replay.Replay replay, List<TeamMember> teamMembers)

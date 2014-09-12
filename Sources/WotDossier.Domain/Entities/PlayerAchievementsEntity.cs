@@ -394,14 +394,39 @@ namespace WotDossier.Domain.Entities
         /// </summary>
         public virtual int MarkOfMastery { get; set; }
 
+        #region 
+
         public virtual int Conqueror { get; set; }
+
         public virtual int FireAndSword { get; set; }
+
         public virtual int Crusher { get; set; }
+
         public virtual int CounterBlow { get; set; }
+
         public virtual int SoldierOfFortune { get; set; }
+
         public virtual int Kampfer { get; set; }
-        
+
         public virtual int MedalRotmistrov { get; set; }
+
+        public virtual int CapturedBasesInAttack { get; set; }
+
+        public virtual int CapturedBasesInDefence { get; set; }
+
+        #endregion
+
+
+        public virtual int Impenetrable { get; set; }
+        public virtual int MaxAimerSeries { get; set; }
+        public virtual int ShootToKill { get; set; }
+        public virtual int Fighter { get; set; }
+        public virtual int Duelist { get; set; }
+        public virtual int Demolition { get; set; }
+        public virtual int Arsonist { get; set; }
+        public virtual int Bonecrusher { get; set; }
+        public virtual int Charmed { get; set; }
+        public virtual int Even { get; set; }
 	}
 }
 

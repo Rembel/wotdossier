@@ -70,6 +70,24 @@
         <medal name="Medal_7x7_ForTacticalOperations" id="2922" icon="forTacticalOperations2" type="1"/>
         <medal name="Medal_7x7_ForTacticalOperations" id="2923" icon="forTacticalOperations3" type="1"/>
         <medal name="Medal_7x7_ForTacticalOperations" id="2924" icon="forTacticalOperations4" type="1"/>
+        
+        <medal name="Medal_7x7_PromisingFighterMedal" id="470" icon="promisingFighterMedal" type="0"/>
+        <medal name="Medal_7x7_HeavyFireMedal" id="472" icon="heavyFireMedal" type="0"/>
+        <medal name="Medal_7x7_RangerMedal" id="474" icon="rangerMedal" type="0"/>
+        <medal name="Medal_7x7_FireAndSteelMedal" id="476" icon="fireAndSteelMedal" type="0"/>
+        <medal name="Medal_7x7_PyromaniacMedal" id="478" icon="pyromaniacMedal" type="0"/>
+        <medal name="Medal_7x7_NoMansLand" id="479" icon="noMansLand" type="0"/>
+        
+        <medal name="Medal_7x7_GuerrillaMedal" id="496" icon="guerrillaMedal" type="0"/>
+        <medal name="Medal_7x7_InfiltratorMedal" id="498" icon="infiltratorMedal" type="0"/>
+        <medal name="Medal_7x7_SentinelMedal" id="500" icon="sentinelMedal" type="0"/>
+        <medal name="Medal_7x7_PrematureDetonationMedal" id="502" icon="PrematureDetonationMedal" type="0"/>
+        <medal name="Medal_7x7_BruteForceMedal" id="504" icon="bruteForceMedal" type="0"/>
+        
+        <medal name="Medal_7x7_BattleTested" id="50601" icon="battleTested1" type="1"/>
+        <medal name="Medal_7x7_BattleTested" id="50602" icon="battleTested2" type="1"/>
+        <medal name="Medal_7x7_BattleTested" id="50603" icon="battleTested3" type="1"/>
+        <medal name="Medal_7x7_BattleTested" id="50604" icon="battleTested4" type="1"/>
     </TeamBattles>
     <Special>
         <!--Стрелок-->
@@ -109,76 +127,87 @@
         <medal name="Medal_15x15_MedalCoolBlood" id="299" icon="medalCoolBlood" type="0"/>
         <medal name="Medal_15x15_MedalStark" id="300" icon="medalStark" type="0"/>
 
-        <!--achievements[469] = 'promisingFighter'
-        achievements[470] = 'promisingFighterMedal'
-        achievements[471] = 'heavyFire'
-        achievements[472] = 'heavyFireMedal'
-        achievements[473] = 'ranger'
-        achievements[474] = 'rangerMedal'
-        achievements[475] = 'fireAndSteel'
-        achievements[476] = 'fireAndSteelMedal'
-        achievements[477] = 'pyromaniac'
-        achievements[478] = 'pyromaniacMedal'
-        achievements[479] = 'noMansLand'
-
-        achievements[495] = 'guerrilla'
-        achievements[496] = 'guerrillaMedal'
-        achievements[497] = 'infiltrator'
-        achievements[498] = 'infiltratorMedal'
-        achievements[499] = 'sentinel'
-        achievements[500] = 'sentinelMedal'
-        achievements[501] = 'prematureDetonation'
-        achievements[502] = 'prematureDetonationMedal'
-        achievements[503] = 'bruteForce'
-        achievements[504] = 'bruteForceMedal'
-        achievements[505] = 'awardCount'
-        achievements[506] = 'battleTested'
-        achievements[507] = 'medalRotmistrov'-->
-
+        <medal name="Medal_15x15_Impenetrable" id="517" icon="impenetrable" type="0"/>
+        <medal name="Medal_15x15_MaxAimerSeries" id="520" icon="maxAimerSeries" type="0"/>
+        <medal name="Medal_15x15_ShootToKill" id="521" icon="shootToKill" type="0"/>
+        <medal name="Medal_15x15_Fighter" id="522" icon="fighter" type="0"/>
+        <medal name="Medal_15x15_Duelist" id="523" icon="duelist" type="0"/>
+        <medal name="Medal_15x15_Demolition" id="524" icon="demolition" type="0"/>
+        <medal name="Medal_15x15_Arsonist" id="525" icon="arsonist" type="0"/>
+        <medal name="Medal_15x15_Bonecrusher" id="526" icon="bonecrusher" type="0"/>
+        <medal name="Medal_15x15_Charmed" id="527" icon="charmed" type="0"/>
+        <medal name="Medal_15x15_Even" id="528" icon="even" type="0"/>
     </Special>
     <Common>
-        <medal name="Medal_15x15_Kay" id="411" icon="medalKay1" type="1"/>
-        <medal name="Medal_15x15_Kay" id="412" icon="medalKay2" type="1"/>
-        <medal name="Medal_15x15_Kay" id="413" icon="medalKay3" type="1"/>
-        <medal name="Medal_15x15_Kay" id="414" icon="medalKay4" type="1"/>
-        <medal name="Medal_15x15_Carius" id="421" icon="medalCarius1" type="1"/>
-        <medal name="Medal_15x15_Carius" id="422" icon="medalCarius2" type="1"/>
-        <medal name="Medal_15x15_Carius" id="423" icon="medalCarius3" type="1"/>
-        <medal name="Medal_15x15_Carius" id="424" icon="medalCarius4" type="1"/>
-        <medal name="Medal_15x15_Knispel" id="431" icon="medalKnispel1" type="1"/>
-        <medal name="Medal_15x15_Knispel" id="432" icon="medalKnispel2" type="1"/>
-        <medal name="Medal_15x15_Knispel" id="433" icon="medalKnispel3" type="1"/>
-        <medal name="Medal_15x15_Knispel" id="434" icon="medalKnispel4" type="1"/>
-        <medal name="Medal_15x15_Poppel" id="441" icon="medalPoppel1" type="1"/>
-        <medal name="Medal_15x15_Poppel" id="442" icon="medalPoppel2" type="1"/>
-        <medal name="Medal_15x15_Poppel" id="443" icon="medalPoppel3" type="1"/>
-        <medal name="Medal_15x15_Poppel" id="444" icon="medalPoppel4" type="1"/>
-        <medal name="Medal_15x15_Abrams" id="451" icon="medalAbrams1" type="1"/>
-        <medal name="Medal_15x15_Abrams" id="452" icon="medalAbrams2" type="1"/>
-        <medal name="Medal_15x15_Abrams" id="453" icon="medalAbrams3" type="1"/>
-        <medal name="Medal_15x15_Abrams" id="454" icon="medalAbrams4" type="1"/>
-        <medal name="Medal_15x15_Leclerk" id="461" icon="medalLeClerc1" type="1"/>
-        <medal name="Medal_15x15_Leclerk" id="462" icon="medalLeClerc2" type="1"/>
-        <medal name="Medal_15x15_Leclerk" id="463" icon="medalLeClerc3" type="1"/>
-        <medal name="Medal_15x15_Leclerk" id="464" icon="medalLeClerc4" type="1"/>
-        <medal name="Medal_15x15_Lavrinenko" id="471" icon="medalLavrinenko1" type="1"/>
-        <medal name="Medal_15x15_Lavrinenko" id="472" icon="medalLavrinenko2" type="1"/>
-        <medal name="Medal_15x15_Lavrinenko" id="473" icon="medalLavrinenko3" type="1"/>
-        <medal name="Medal_15x15_Lavrinenko" id="474" icon="medalLavrinenko4" type="1"/>
-        <medal name="Medal_15x15_Ekins" id="481" icon="medalEkins1" type="1"/>
-        <medal name="Medal_15x15_Ekins" id="482" icon="medalEkins2" type="1"/>
-        <medal name="Medal_15x15_Ekins" id="483" icon="medalEkins3" type="1"/>
-        <medal name="Medal_15x15_Ekins" id="484" icon="medalEkins4" type="1"/>
+        <medal name="Medal_15x15_Kay" id="4101" icon="medalKay1" type="1"/>
+        <medal name="Medal_15x15_Kay" id="4102" icon="medalKay2" type="1"/>
+        <medal name="Medal_15x15_Kay" id="4103" icon="medalKay3" type="1"/>
+        <medal name="Medal_15x15_Kay" id="4104" icon="medalKay4" type="1"/>
+        <medal name="Medal_15x15_Carius" id="4201" icon="medalCarius1" type="1"/>
+        <medal name="Medal_15x15_Carius" id="4202" icon="medalCarius2" type="1"/>
+        <medal name="Medal_15x15_Carius" id="4203" icon="medalCarius3" type="1"/>
+        <medal name="Medal_15x15_Carius" id="4204" icon="medalCarius4" type="1"/>
+        <medal name="Medal_15x15_Knispel" id="4301" icon="medalKnispel1" type="1"/>
+        <medal name="Medal_15x15_Knispel" id="4302" icon="medalKnispel2" type="1"/>
+        <medal name="Medal_15x15_Knispel" id="4303" icon="medalKnispel3" type="1"/>
+        <medal name="Medal_15x15_Knispel" id="4304" icon="medalKnispel4" type="1"/>
+        <medal name="Medal_15x15_Poppel" id="4401" icon="medalPoppel1" type="1"/>
+        <medal name="Medal_15x15_Poppel" id="4402" icon="medalPoppel2" type="1"/>
+        <medal name="Medal_15x15_Poppel" id="4403" icon="medalPoppel3" type="1"/>
+        <medal name="Medal_15x15_Poppel" id="4404" icon="medalPoppel4" type="1"/>
+        <medal name="Medal_15x15_Abrams" id="4501" icon="medalAbrams1" type="1"/>
+        <medal name="Medal_15x15_Abrams" id="4502" icon="medalAbrams2" type="1"/>
+        <medal name="Medal_15x15_Abrams" id="4503" icon="medalAbrams3" type="1"/>
+        <medal name="Medal_15x15_Abrams" id="4504" icon="medalAbrams4" type="1"/>
+        <medal name="Medal_15x15_Leclerk" id="4601" icon="medalLeClerc1" type="1"/>
+        <medal name="Medal_15x15_Leclerk" id="4602" icon="medalLeClerc2" type="1"/>
+        <medal name="Medal_15x15_Leclerk" id="4603" icon="medalLeClerc3" type="1"/>
+        <medal name="Medal_15x15_Leclerk" id="4604" icon="medalLeClerc4" type="1"/>
+        <medal name="Medal_15x15_Lavrinenko" id="4701" icon="medalLavrinenko1" type="1"/>
+        <medal name="Medal_15x15_Lavrinenko" id="4702" icon="medalLavrinenko2" type="1"/>
+        <medal name="Medal_15x15_Lavrinenko" id="4703" icon="medalLavrinenko3" type="1"/>
+        <medal name="Medal_15x15_Lavrinenko" id="4704" icon="medalLavrinenko4" type="1"/>
+        <medal name="Medal_15x15_Ekins" id="4801" icon="medalEkins1" type="1"/>
+        <medal name="Medal_15x15_Ekins" id="4802" icon="medalEkins2" type="1"/>
+        <medal name="Medal_15x15_Ekins" id="4803" icon="medalEkins3" type="1"/>
+        <medal name="Medal_15x15_Ekins" id="4804" icon="medalEkins4" type="1"/>
     </Common>
+    <clan>
+        <medal name="Medal_Clan_Rotmistrov" id="50701" icon="medalRotmistrov1" type="1"/>
+        <medal name="Medal_Clan_Rotmistrov" id="50702" icon="medalRotmistrov2" type="1"/>
+        <medal name="Medal_Clan_Rotmistrov" id="50703" icon="medalRotmistrov3" type="1"/>
+        <medal name="Medal_Clan_Rotmistrov" id="50704" icon="medalRotmistrov4" type="1"/>
+    </clan>
+    <Fort>
+        <medal name="Medal_Fort_Conqueror" id="48201" icon="conqueror1" type="1"/>
+        <medal name="Medal_Fort_Conqueror" id="48202" icon="conqueror2" type="1"/>
+        <medal name="Medal_Fort_Conqueror" id="48203" icon="conqueror3" type="1"/>
+        <medal name="Medal_Fort_Conqueror" id="48204" icon="conqueror4" type="1"/>
+
+        <medal name="Medal_Fort_FireAndSword" id="48301" icon="fireAndSword1" type="1"/>
+        <medal name="Medal_Fort_FireAndSword" id="48302" icon="fireAndSword2" type="1"/>
+        <medal name="Medal_Fort_FireAndSword" id="48303" icon="fireAndSword3" type="1"/>
+        <medal name="Medal_Fort_FireAndSword" id="48304" icon="fireAndSword4" type="1"/>
+        
+        <medal name="Medal_Fort_Crusher" id="484" icon="crusher" type="0"/>
+        <medal name="Medal_Fort_Counterblow" id="485" icon="counterblow" type="0"/>
+
+        <medal name="Medal_Fort_SoldierOfFortune" id="48601" icon="soldierOfFortune1" type="1"/>
+        <medal name="Medal_Fort_SoldierOfFortune" id="48602" icon="soldierOfFortune2" type="1"/>
+        <medal name="Medal_Fort_SoldierOfFortune" id="48603" icon="soldierOfFortune3" type="1"/>
+        <medal name="Medal_Fort_SoldierOfFortune" id="48604" icon="soldierOfFortune4" type="1"/>
+        
+        <medal name="Medal_Fort_Kampfer" id="487" icon="kampfer" type="0"/>
+    </Fort>
     <master>
         <!--79-->
-        <medal name="MarkOfMastery" id="791" icon="MarkOfMastery1" type="1"/>
-        <medal name="MarkOfMastery" id="792" icon="MarkOfMastery2" type="1"/>
-        <medal name="MarkOfMastery" id="793" icon="MarkOfMastery3" type="1"/>
-        <medal name="MarkOfMastery" id="794" icon="MarkOfMastery4" type="1"/>
+        <medal name="MarkOfMastery" id="7901" icon="MarkOfMastery1" type="1"/>
+        <medal name="MarkOfMastery" id="7902" icon="MarkOfMastery2" type="1"/>
+        <medal name="MarkOfMastery" id="7903" icon="MarkOfMastery3" type="1"/>
+        <medal name="MarkOfMastery" id="7904" icon="MarkOfMastery4" type="1"/>
         <!--295-->
-        <medal name="MarksOnGun" id="2951" icon="MarksOnGun1" type="1"/>
-        <medal name="MarksOnGun" id="2952" icon="MarksOnGun2" type="1"/>
-        <medal name="MarksOnGun" id="2953" icon="MarksOnGun3" type="1"/>
+        <medal name="MarksOnGun" id="29501" icon="MarksOnGun1" type="1"/>
+        <medal name="MarksOnGun" id="29502" icon="MarksOnGun2" type="1"/>
+        <medal name="MarksOnGun" id="29503" icon="MarksOnGun3" type="1"/>
     </master>
 </Medals>

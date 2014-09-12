@@ -162,6 +162,17 @@
         public int MasterGunner { get; set; }
         public int BattlesPerDay { get; set; }
 
+        public int Impenetrable { get; set; }
+        public int MaxAimerSeries { get; set; }
+        public int ShootToKill { get; set; }
+        public int Fighter { get; set; }
+        public int Duelist { get; set; }
+        public int Demolition { get; set; }
+        public int Arsonist { get; set; }
+        public int Bonecrusher { get; set; }
+        public int Charmed { get; set; }
+        public int Even { get; set; }
+
         #endregion
 
         #region Achievements 7x7
@@ -226,6 +237,16 @@
         public int CounterBlow { get; set; }
         public int SoldierOfFortune { get; set; }
         public int Kampfer { get; set; }
+
+        /// <summary>
+        /// Gets or sets the captured bases in attack.
+        /// </summary>
+        public int CapturedBasesInAttack { get; set; }
+
+        /// <summary>
+        /// Gets or sets the captured bases in defence.
+        /// </summary>
+        public int CapturedBasesInDefence { get; set; }
 
         #endregion
 

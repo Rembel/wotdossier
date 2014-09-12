@@ -249,5 +249,35 @@ namespace WotDossier.Domain.Tank
 
         [DataMember(Name = "damageRating")]
         public int DamageRating { get; set; }
+
+        [DataMember(Name = "impenetrable")]
+        public int Impenetrable { get; set; }
+
+        [DataMember(Name = "maxAimerSeries")]
+        public int MaxAimerSeries { get; set; }
+
+        [DataMember(Name = "shootToKill")]
+        public int ShootToKill { get; set; }
+
+        [DataMember(Name = "fighter")]
+        public int Fighter { get; set; }
+
+        [DataMember(Name = "duelist")]
+        public int Duelist { get; set; }
+
+        [DataMember(Name = "demolition")]
+        public int Demolition { get; set; }
+
+        [DataMember(Name = "arsonist")]
+        public int Arsonist { get; set; }
+
+        [DataMember(Name = "bonecrusher")]
+        public int Bonecrusher { get; set; }
+
+        [DataMember(Name = "charmed")]
+        public int Charmed { get; set; }
+
+        [DataMember(Name = "even")]
+        public int Even { get; set; }
     }
 }

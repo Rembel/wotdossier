@@ -2958,4 +2958,73 @@ up to 500 m</value>
   <data name="ReplaysTab_CopyPlayerName" xml:space="preserve">
     <value>Copy name</value>
   </data>
+  <data name="Medal_15x15_Arsonist" xml:space="preserve">
+    <value>Arsonist</value>
+  </data>
+  <data name="Medal_15x15_Bonecrusher" xml:space="preserve">
+    <value>Bonecrusher</value>
+  </data>
+  <data name="Medal_15x15_Charmed" xml:space="preserve">
+    <value>Charmed</value>
+  </data>
+  <data name="Medal_15x15_Demolition" xml:space="preserve">
+    <value>Demolition</value>
+  </data>
+  <data name="Medal_15x15_Duelist" xml:space="preserve">
+    <value>Duelist</value>
+  </data>
+  <data name="Medal_15x15_Even" xml:space="preserve">
+    <value>Even</value>
+  </data>
+  <data name="Medal_15x15_Fighter" xml:space="preserve">
+    <value>Fighter</value>
+  </data>
+  <data name="Medal_15x15_Impenetrable" xml:space="preserve">
+    <value>Impenetrable</value>
+  </data>
+  <data name="Medal_15x15_MaxAimerSeries" xml:space="preserve">
+    <value>Max Aimer Series</value>
+  </data>
+  <data name="Medal_15x15_ShootToKill" xml:space="preserve">
+    <value>Shoot To Kill</value>
+  </data>
+  <data name="Medal_Clan_Rotmistrov" xml:space="preserve">
+    <value>Rotmistrov</value>
+  </data>
+  <data name="Medal_Fort_Conqueror" xml:space="preserve">
+    <value>Conqueror</value>
+  </data>
+  <data name="Medal_Fort_Counterblow" xml:space="preserve">
+    <value>Counterblow</value>
+  </data>
+  <data name="Medal_Fort_Crusher" xml:space="preserve">
+    <value>Crusher</value>
+  </data>
+  <data name="Medal_Fort_FireAndSword" xml:space="preserve">
+    <value>Fire And Sword</value>
+  </data>
+  <data name="Medal_Fort_Kampfer" xml:space="preserve">
+    <value>Kampfer</value>
+  </data>
+  <data name="Medal_Fort_SoldierOfFortune" xml:space="preserve">
+    <value>Soldier Of Fortune</value>
+  </data>
+  <data name="Medal_7x7_BattleTested" xml:space="preserve">
+    <value>Battle Tested</value>
+  </data>
+  <data name="Medal_7x7_BruteForceMedal" xml:space="preserve">
+    <value>Brute Force Medal</value>
+  </data>
+  <data name="Medal_7x7_GuerrillaMedal" xml:space="preserve">
+    <value>Guerrilla Medal</value>
+  </data>
+  <data name="Medal_7x7_InfiltratorMedal" xml:space="preserve">
+    <value>Infiltrator Medal</value>
+  </data>
+  <data name="Medal_7x7_PrematureDetonationMedal" xml:space="preserve">
+    <value>Premature Detonation Medal</value>
+  </data>
+  <data name="Medal_7x7_SentinelMedal" xml:space="preserve">
+    <value>Sentinel Medal</value>
+  </data>
 </root>

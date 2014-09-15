@@ -40,7 +40,7 @@ namespace WotDossier.Domain.Server
         /// <summary>
         /// ID карты
         /// </summary>
-        public string name { get; set; }
+        public string arena_id { get; set; }
         /// <summary>
         /// Название карты
         /// </summary>

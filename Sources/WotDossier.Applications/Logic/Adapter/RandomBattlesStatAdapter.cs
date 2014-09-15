@@ -213,12 +213,20 @@ namespace WotDossier.Applications.Logic.Adapter
             MedalCoolBlood = stat.dataField.achievements.achievements.medalCoolBlood;
             MedalStark = stat.dataField.achievements.achievements.medalStark;
 
-            //PerformanceRating = RatingHelper.PerformanceRating(tanks);
             if (stat.dataField.vehicles != null)
             {
                 Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new RandomBattlesTankStatisticRowViewModel(Dal.DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
                 WN8Rating = RatingHelper.Wn8(Tanks);
                 PerformanceRating = RatingHelper.PerformanceRating(Tanks);
+
+                //double battlesCount88 = ???;
+
+                //double avgOriginalXp = stat.dataField.statistics.all.base_xp;
+                //double avgDamageAssistedRadio = stat.dataField.statistics.all.avg_damage_assisted_radio;
+                //double avgDamageAssistedTrack = stat.dataField.statistics.all.avg_damage_assisted_track;
+
+                //RBR = RatingHelper.PersonalRating(BattlesCount, battlesCount88, Wins / (double)BattlesCount,
+                //    SurvivedBattles / (double)BattlesCount, DamageDealt / (double)BattlesCount, avgOriginalXp, avgDamageAssistedRadio, avgDamageAssistedTrack);
             }
         }
 

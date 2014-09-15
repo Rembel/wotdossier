@@ -5,7 +5,7 @@
         /// <summary>
         /// Игровая карта
         /// </summary>
-        public string arena { get; set; }
+        public string arena_id { get; set; }
         /// <summary>
         /// Владелец провинции
         /// </summary>

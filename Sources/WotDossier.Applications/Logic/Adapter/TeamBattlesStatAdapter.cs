@@ -17,9 +17,9 @@ namespace WotDossier.Applications.Logic.Adapter
             #region [ Awards ]
 
             WolfAmongSheep = tanks.Sum(x => x.Achievements7x7.WolfAmongSheep);
-            WolfAmongSheepMedal = tanks.Sum(x => x.Achievements7x7.WolfAmongSheepMedal);
+            WolfAmongSheepMedal = WolfAmongSheep/100;
             GeniusForWar = tanks.Sum(x => x.Achievements7x7.GeniusForWar);
-            GeniusForWarMedal = tanks.Sum(x => x.Achievements7x7.GeniusForWarMedal);
+            GeniusForWarMedal = GeniusForWar/100;
             KingOfTheHill = tanks.Sum(x => x.Achievements7x7.KingOfTheHill);
             TacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.TacticalBreakthroughSeries);
             MaxTacticalBreakthroughSeries = tanks.Max(x => x.Achievements7x7.MaxTacticalBreakthroughSeries);
@@ -28,34 +28,34 @@ namespace WotDossier.Applications.Logic.Adapter
 
             GodOfWar = tanks.Sum(x => x.Achievements7x7.GodOfWar);
             FightingReconnaissance = tanks.Sum(x => x.Achievements7x7.FightingReconnaissance);
-            FightingReconnaissanceMedal = tanks.Sum(x => x.Achievements7x7.FightingReconnaissanceMedal);
+            FightingReconnaissanceMedal = FightingReconnaissance/50;
             WillToWinSpirit = tanks.Sum(x => x.Achievements7x7.WillToWinSpirit);
             CrucialShot = tanks.Sum(x => x.Achievements7x7.CrucialShot);
-            CrucialShotMedal = tanks.Sum(x => x.Achievements7x7.CrucialShotMedal);
+            CrucialShotMedal = CrucialShot/20;
             ForTacticalOperations = tanks.Sum(x => x.Achievements7x7.ForTacticalOperations);
 
             PromisingFighter = tanks.Sum(x => x.Achievements7x7.PromisingFighter);
-            PromisingFighterMedal = tanks.Sum(x => x.Achievements7x7.PromisingFighterMedal);
+            PromisingFighterMedal = PromisingFighter/100;
             HeavyFire = tanks.Sum(x => x.Achievements7x7.HeavyFire);
-            HeavyFireMedal = tanks.Sum(x => x.Achievements7x7.HeavyFireMedal);
+            HeavyFireMedal = HeavyFire/100;
             Ranger = tanks.Sum(x => x.Achievements7x7.Ranger);
-            RangerMedal = tanks.Sum(x => x.Achievements7x7.RangerMedal);
+            RangerMedal = Ranger/10;
             FireAndSteel = tanks.Sum(x => x.Achievements7x7.FireAndSteel);
-            FireAndSteelMedal = tanks.Sum(x => x.Achievements7x7.FireAndSteelMedal);
+            FireAndSteelMedal = FireAndSteel/25;
             Pyromaniac = tanks.Sum(x => x.Achievements7x7.Pyromaniac);
-            PyromaniacMedal = tanks.Sum(x => x.Achievements7x7.PyromaniacMedal);
+            PyromaniacMedal = Pyromaniac/10;
             NoMansLand = tanks.Sum(x => x.Achievements7x7.NoMansLand);
 
             Guerrilla = tanks.Sum(x => x.Achievements7x7.Guerrilla);
-            GuerrillaMedal = tanks.Sum(x => x.Achievements7x7.GuerrillaMedal);
+            GuerrillaMedal = Guerrilla/10;
             Infiltrator = tanks.Sum(x => x.Achievements7x7.Infiltrator);
-            InfiltratorMedal = tanks.Sum(x => x.Achievements7x7.InfiltratorMedal);
+            InfiltratorMedal = Infiltrator/1000;
             Sentinel = tanks.Sum(x => x.Achievements7x7.Sentinel);
-            SentinelMedal = tanks.Sum(x => x.Achievements7x7.SentinelMedal);
+            SentinelMedal = Sentinel/1000;
             PrematureDetonation = tanks.Sum(x => x.Achievements7x7.PrematureDetonation);
-            PrematureDetonationMedal = tanks.Sum(x => x.Achievements7x7.PrematureDetonationMedal);
+            PrematureDetonationMedal = PrematureDetonation/10;
             BruteForce = tanks.Sum(x => x.Achievements7x7.BruteForce);
-            BruteForceMedal = tanks.Sum(x => x.Achievements7x7.BruteForceMedal);
+            BruteForceMedal = BruteForce/10;
             AwardCount = tanks.Sum(x => x.Achievements7x7.AwardCount);
             BattleTested = tanks.Sum(x => x.Achievements7x7.BattleTested);
 
@@ -112,7 +112,7 @@ namespace WotDossier.Applications.Logic.Adapter
         public int WolfAmongSheep { get; set; }
 
         public int WolfAmongSheepMedal { get; set; }
-        
+
         public int GeniusForWar { get; set; }
 
         public int GeniusForWarMedal { get; set; }

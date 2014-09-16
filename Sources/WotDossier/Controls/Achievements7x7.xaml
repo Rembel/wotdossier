@@ -9,7 +9,8 @@
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="50,0,50,0">
             <!--Team battles achievements-->
-            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_TeamBattle}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <!--<TextBlock Text="{x:Static resources:Resources.Label_Achievements_TeamBattle}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>-->
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_BattleHero}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,10,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding GeniusForWarMedal}" Delta="{Binding GeniusForWarMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GeniusForWarMedal.png">
                     <ToolTipService.ToolTip>
@@ -21,9 +22,13 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_WolfAmongSheepMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_WolfAmongSheepMedal}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding KingOfTheHill}" Delta="{Binding KingOfTheHillDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/KingOfTheHill.png">
+            </WrapPanel>
+            <!--Honorary Ranks-->
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_HonoraryRanks}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+                <controls:MedalAchievement Value="{Binding PromisingFighterMedal}" Delta="{Binding PromisingFighterMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PromisingFighterMedal.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_KingOfTheHill}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_KingOfTheHill}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PromisingFighterMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PromisingFighterMedal}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding MaxTacticalBreakthroughSeries}" Delta="{Binding TacticalBreakthroughDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/TacticalBreakthrough.png">
@@ -31,39 +36,9 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_TacticalBreakthrough}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_TacticalBreakthrough}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding ArmoredFist}" Delta="{Binding ArmoredFistDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ArmoredFist.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_ArmoredFist}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_ArmoredFist}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding FightingReconnaissanceMedal}" Delta="{Binding FightingReconnaissanceMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/fightingReconnaissanceMedal.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FightingReconnaissanceMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FightingReconnaissanceMedal}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding WillToWinSpirit}" Delta="{Binding WillToWinSpiritDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/willToWinSpirit.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_WillToWinSpirit}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_WillToWinSpirit}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding CrucialShotMedal}" Delta="{Binding CrucialShotMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/crucialShotMedal.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_CrucialShotMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_CrucialShotMedal}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding GodOfWar}" Delta="{Binding GodOfWarDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GodOfWar.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_GodOfWar}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_GodOfWar}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding ForTacticalOperations}" Delta="{Binding ForTacticalOperationsDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ForTacticalOperations1.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_ForTacticalOperations}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_ForTacticalOperations}" />
-                    </ToolTipService.ToolTip>
-                </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding PromisingFighterMedal}" Delta="{Binding PromisingFighterMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PromisingFighterMedal.png">
-                    <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PromisingFighterMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PromisingFighterMedal}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding HeavyFireMedal}" Delta="{Binding HeavyFireMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HeavyFireMedal.png">
@@ -71,14 +46,19 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_HeavyFireMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_HeavyFireMedal}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding RangerMedal}" Delta="{Binding RangerMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/RangerMedal.png">
+                <controls:MedalAchievement Value="{Binding CrucialShotMedal}" Delta="{Binding CrucialShotMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/crucialShotMedal.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_RangerMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_RangerMedal}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_CrucialShotMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_CrucialShotMedal}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding FireAndSteelMedal}" Delta="{Binding FireAndSteelMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FireAndSteelMedal.png">
+                <controls:MedalAchievement Value="{Binding FightingReconnaissanceMedal}" Delta="{Binding FightingReconnaissanceMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/fightingReconnaissanceMedal.png">
                     <ToolTipService.ToolTip>
-                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FireAndSteelMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FireAndSteelMedal}" />
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FightingReconnaissanceMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FightingReconnaissanceMedal}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding InfiltratorMedal}" Delta="{Binding InfiltratorMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/InfiltratorMedal.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_InfiltratorMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_InfiltratorMedal}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding PyromaniacMedal}" Delta="{Binding PyromaniacMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PyromaniacMedal.png">
@@ -86,9 +66,68 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PyromaniacMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PyromaniacMedal}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding GuerrillaMedal}" Delta="{Binding GuerrillaMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GuerrillaMedal.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_GuerrillaMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_GuerrillaMedal}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding FireAndSteelMedal}" Delta="{Binding FireAndSteelMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FireAndSteelMedal.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FireAndSteelMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FireAndSteelMedal}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding PrematureDetonationMedal}" Delta="{Binding PrematureDetonationMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PrematureDetonationMedal.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PrematureDetonationMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PrematureDetonationMedal}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding SentinelMedal}" Delta="{Binding SentinelMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/SentinelMedal.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_SentinelMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_SentinelMedal}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding RangerMedal}" Delta="{Binding RangerMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/RangerMedal.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_RangerMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_RangerMedal}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding BruteForceMedal}" Delta="{Binding BruteForceMedalDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/BruteForceMedal.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_BruteForceMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_BruteForceMedal}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+            </WrapPanel>
+
+            <!--Step Achievements-->
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+                <controls:MedalAchievement Value="{Binding ForTacticalOperations}" Delta="{Binding ForTacticalOperationsDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ForTacticalOperations1.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_ForTacticalOperations}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_ForTacticalOperations}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding BattleTested}" Delta="{Binding BattleTestedDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/BattleTested1.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_BattleTested}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_BattleTested}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+            </WrapPanel>
+
+            <!--Commemorative Achievements-->
+            <TextBlock Text="{x:Static resources:Resources.Label_Achievements_CommemorativeAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
                 <controls:MedalAchievement Value="{Binding NoMansLand}" Delta="{Binding NoMansLandDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/NoMansLand.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_NoMansLand}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_NoMansLand}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding KingOfTheHill}" Delta="{Binding KingOfTheHillDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/KingOfTheHill.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_KingOfTheHill}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_KingOfTheHill}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding GodOfWar}" Delta="{Binding GodOfWarDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GodOfWar.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_GodOfWar}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_GodOfWar}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
             </WrapPanel>

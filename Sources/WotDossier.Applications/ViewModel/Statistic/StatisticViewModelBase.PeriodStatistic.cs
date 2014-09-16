@@ -796,6 +796,26 @@ namespace WotDossier.Applications.ViewModel.Statistic
             get { return FightingReconnaissanceMedal - TypedPrevStatistic.FightingReconnaissanceMedal; }
         }
 
+        public int InfiltratorMedalDelta
+        {
+            get { return InfiltratorMedal - TypedPrevStatistic.InfiltratorMedal; }
+        }
+
+        public int PrematureDetonationMedalDelta
+        {
+            get { return PrematureDetonationMedal - TypedPrevStatistic.PrematureDetonationMedal; }
+        }
+
+        public int BruteForceMedalDelta
+        {
+            get { return BruteForceMedal - TypedPrevStatistic.BruteForceMedal; }
+        }
+
+        public int BattleTestedDelta
+        {
+            get { return BattleTested - TypedPrevStatistic.BattleTested; }
+        }
+
         public int ForTacticalOperationsDelta
         {
             get { return ForTacticalOperations - TypedPrevStatistic.ForTacticalOperations; }

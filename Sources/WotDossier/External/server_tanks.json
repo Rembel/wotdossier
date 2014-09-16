@@ -1,6 +1,6 @@
 ﻿{
     "status": "ok",
-    "count": 349,
+    "count": 350,
     "data": {
         "14337": {
             "nation_i18n": "СССР",
@@ -50,18 +50,6 @@
             "type": "mediumTank",
             "tank_id": 1569
         },
-        "2305": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:SU-152",
-            "level": 7,
-            "nation": "ussr",
-            "is_premium": false,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "СУ-152",
-            "name_i18n": "СУ-152",
-            "type": "AT-SPG",
-            "tank_id": 2305
-        },
         "2081": {
             "nation_i18n": "США",
             "name": "#usa_vehicles:T57",
@@ -74,41 +62,41 @@
             "type": "SPG",
             "tank_id": 2081
         },
-        "4161": {
-            "nation_i18n": "Франция",
-            "name": "#france_vehicles:AMX_105AM",
+        "54353": {
+            "nation_i18n": "Великобритания",
+            "name": "#gb_vehicles:GB51_Excelsior",
             "level": 5,
-            "nation": "france",
-            "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "AMX 13 AM",
-            "name_i18n": "AMX 13 105 AM mle. 50",
-            "type": "SPG",
-            "tank_id": 4161
+            "nation": "uk",
+            "is_premium": true,
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "Excelsior",
+            "name_i18n": "Excelsior",
+            "type": "heavyTank",
+            "tank_id": 54353
         },
-        "16641": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:MT25",
-            "level": 6,
-            "nation": "ussr",
-            "is_premium": false,
+        "51489": {
+            "nation_i18n": "США",
+            "name": "#usa_vehicles:T2_lt",
+            "level": 2,
+            "nation": "usa",
+            "is_premium": true,
             "type_i18n": "Легкий танк",
-            "short_name_i18n": "МТ-25",
-            "name_i18n": "МТ-25",
+            "short_name_i18n": "T2 Light",
+            "name_i18n": "T2 Light Tank",
             "type": "lightTank",
-            "tank_id": 16641
+            "tank_id": 51489
         },
-        "2097": {
+        "4145": {
             "nation_i18n": "Китай",
-            "name": "#china_vehicles:Ch12_111_1_2_3",
-            "level": 9,
+            "name": "#china_vehicles:Ch19_121",
+            "level": 10,
             "nation": "china",
             "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "WZ-111 1-4",
-            "name_i18n": "WZ-111 model 1-4",
-            "type": "heavyTank",
-            "tank_id": 2097
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "121",
+            "name_i18n": "121",
+            "type": "mediumTank",
+            "tank_id": 4145
         },
         "17937": {
             "nation_i18n": "Германия",
@@ -122,17 +110,17 @@
             "type": "AT-SPG",
             "tank_id": 17937
         },
-        "6209": {
+        "4161": {
             "nation_i18n": "Франция",
-            "name": "#france_vehicles:AMX_50_68t",
-            "level": 10,
+            "name": "#france_vehicles:AMX_105AM",
+            "level": 5,
             "nation": "france",
             "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "AMX 50 B",
-            "name_i18n": "AMX 50 B",
-            "type": "heavyTank",
-            "tank_id": 6209
+            "type_i18n": "САУ",
+            "short_name_i18n": "AMX 13 AM",
+            "name_i18n": "AMX 13 105 AM mle. 50",
+            "type": "SPG",
+            "tank_id": 4161
         },
         "1025": {
             "nation_i18n": "СССР",
@@ -158,65 +146,53 @@
             "type": "lightTank",
             "tank_id": 5185
         },
-        "1377": {
+        "51553": {
             "nation_i18n": "Япония",
-            "name": "#japan_vehicles:Chi_Nu",
+            "name": "#japan_vehicles:Chi_Nu_Kai",
             "level": 5,
             "nation": "japan",
-            "is_premium": false,
+            "is_premium": true,
             "type_i18n": "Средний танк",
-            "short_name_i18n": "Chi-Nu",
-            "name_i18n": "Type 3 Chi-Nu",
+            "short_name_i18n": "Chi-Nu Kai",
+            "name_i18n": "Type 3 Chi-Nu Kai",
             "type": "mediumTank",
-            "tank_id": 1377
+            "tank_id": 51553
         },
-        "2321": {
-            "nation_i18n": "Германия",
-            "name": "#germany_vehicles:VK3601H",
-            "level": 6,
-            "nation": "germany",
-            "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "VK 36.01 H",
-            "name_i18n": "VK 36.01 (H)",
-            "type": "heavyTank",
-            "tank_id": 2321
-        },
-        "6481": {
-            "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB60_Covenanter",
-            "level": 4,
-            "nation": "uk",
-            "is_premium": false,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "Covenanter",
-            "name_i18n": "Covenanter",
-            "type": "lightTank",
-            "tank_id": 6481
-        },
-        "8273": {
-            "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB39_Universal_CarrierQF2",
-            "level": 2,
-            "nation": "uk",
-            "is_premium": false,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "UC 2-pdr",
-            "name_i18n": "Universal Carrier 2-pdr",
-            "type": "AT-SPG",
-            "tank_id": 8273
-        },
-        "7425": {
+        "17665": {
             "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:ISU-152",
-            "level": 8,
+            "name": "#ussr_vehicles:R104_Object_430_II",
+            "level": 9,
             "nation": "ussr",
             "is_premium": false,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "ИСУ-152",
-            "name_i18n": "ИСУ-152",
-            "type": "AT-SPG",
-            "tank_id": 7425
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "Об. 430 II",
+            "name_i18n": "Объект 430 Вариант II",
+            "type": "mediumTank",
+            "tank_id": 17665
+        },
+        "52513": {
+            "nation_i18n": "США",
+            "name": "#usa_vehicles:M6A2E1",
+            "level": 8,
+            "nation": "usa",
+            "is_premium": true,
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "M6A2E1",
+            "name_i18n": "M6A2E1",
+            "type": "heavyTank",
+            "tank_id": 52513
+        },
+        "12369": {
+            "nation_i18n": "Великобритания",
+            "name": "#gb_vehicles:GB31_Conqueror_Gun",
+            "level": 10,
+            "nation": "uk",
+            "is_premium": false,
+            "type_i18n": "САУ",
+            "short_name_i18n": "ConquerorGC",
+            "name_i18n": "Conqueror Gun Carriage",
+            "type": "SPG",
+            "tank_id": 12369
         },
         "2145": {
             "nation_i18n": "Япония",
@@ -242,17 +218,29 @@
             "type": "heavyTank",
             "tank_id": 52241
         },
-        "1041": {
+        "6209": {
+            "nation_i18n": "Франция",
+            "name": "#france_vehicles:AMX_50_68t",
+            "level": 10,
+            "nation": "france",
+            "is_premium": false,
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "AMX 50 B",
+            "name_i18n": "AMX 50 B",
+            "type": "heavyTank",
+            "tank_id": 6209
+        },
+        "2065": {
             "nation_i18n": "Германия",
-            "name": "#germany_vehicles:StuG_40_AusfG",
-            "level": 5,
+            "name": "#germany_vehicles:PzII",
+            "level": 2,
             "nation": "germany",
             "is_premium": false,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "StuG III G",
-            "name_i18n": "StuG III Ausf. G",
-            "type": "AT-SPG",
-            "tank_id": 1041
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "Pz. II",
+            "name_i18n": "Pz.Kpfw. II",
+            "type": "lightTank",
+            "tank_id": 2065
         },
         "3345": {
             "nation_i18n": "Германия",
@@ -266,17 +254,29 @@
             "type": "lightTank",
             "tank_id": 3345
         },
-        "53537": {
-            "nation_i18n": "США",
-            "name": "#usa_vehicles:T1_E6",
-            "level": 2,
-            "nation": "usa",
-            "is_premium": true,
+        "7505": {
+            "nation_i18n": "Великобритания",
+            "name": "#gb_vehicles:GB59_Cruiser_Mk_IV",
+            "level": 3,
+            "nation": "uk",
+            "is_premium": false,
             "type_i18n": "Легкий танк",
-            "short_name_i18n": "T1E6",
-            "name_i18n": "T1E6",
+            "short_name_i18n": "Cruiser IV",
+            "name_i18n": "Cruiser Mk. IV",
             "type": "lightTank",
-            "tank_id": 53537
+            "tank_id": 7505
+        },
+        "4641": {
+            "nation_i18n": "США",
+            "name": "#usa_vehicles:M37",
+            "level": 4,
+            "nation": "usa",
+            "is_premium": false,
+            "type_i18n": "САУ",
+            "short_name_i18n": "M37",
+            "name_i18n": "M37",
+            "type": "SPG",
+            "tank_id": 4641
         },
         "3073": {
             "nation_i18n": "СССР",
@@ -289,6 +289,18 @@
             "name_i18n": "Т-46",
             "type": "lightTank",
             "tank_id": 3073
+        },
+        "7233": {
+            "nation_i18n": "Франция",
+            "name": "#france_vehicles:Lorraine155_50",
+            "level": 7,
+            "nation": "france",
+            "is_premium": false,
+            "type_i18n": "САУ",
+            "short_name_i18n": "Lorr. 155 50",
+            "name_i18n": "Lorraine 155 mle. 50",
+            "type": "SPG",
+            "tank_id": 7233
         },
         "4369": {
             "nation_i18n": "Германия",
@@ -349,18 +361,6 @@
             "name_i18n": "СУ-14-2",
             "type": "SPG",
             "tank_id": 4097
-        },
-        "8257": {
-            "nation_i18n": "Франция",
-            "name": "#france_vehicles:RenaultUE57",
-            "level": 3,
-            "nation": "france",
-            "is_premium": false,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "UE 57",
-            "name_i18n": "Renault UE 57",
-            "type": "AT-SPG",
-            "tank_id": 8257
         },
         "5393": {
             "nation_i18n": "Германия",
@@ -506,17 +506,17 @@
             "type": "AT-SPG",
             "tank_id": 8737
         },
-        "51457": {
+        "2305": {
             "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:Matilda_II_LL",
-            "level": 5,
+            "name": "#ussr_vehicles:SU-152",
+            "level": 7,
             "nation": "ussr",
-            "is_premium": true,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "Матильда IV",
-            "name_i18n": "Матильда IV",
-            "type": "mediumTank",
-            "tank_id": 51457
+            "is_premium": false,
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "СУ-152",
+            "name_i18n": "СУ-152",
+            "type": "AT-SPG",
+            "tank_id": 2305
         },
         "57361": {
             "nation_i18n": "Германия",
@@ -566,17 +566,17 @@
             "type": "lightTank",
             "tank_id": 9761
         },
-        "51489": {
+        "53537": {
             "nation_i18n": "США",
-            "name": "#usa_vehicles:T2_lt",
+            "name": "#usa_vehicles:T1_E6",
             "level": 2,
             "nation": "usa",
             "is_premium": true,
             "type_i18n": "Легкий танк",
-            "short_name_i18n": "T2 Light",
-            "name_i18n": "T2 Light Tank",
+            "short_name_i18n": "T1E6",
+            "name_i18n": "T1E6",
             "type": "lightTank",
-            "tank_id": 51489
+            "tank_id": 53537
         },
         "8193": {
             "nation_i18n": "СССР",
@@ -590,17 +590,17 @@
             "type": "AT-SPG",
             "tank_id": 8193
         },
-        "3121": {
+        "2097": {
             "nation_i18n": "Китай",
-            "name": "#china_vehicles:Ch09_M5",
-            "level": 4,
+            "name": "#china_vehicles:Ch12_111_1_2_3",
+            "level": 9,
             "nation": "china",
             "is_premium": false,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "M5A1 Stuart",
-            "name_i18n": "M5A1 Stuart",
-            "type": "lightTank",
-            "tank_id": 3121
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "WZ-111 1-4",
+            "name_i18n": "WZ-111 model 1-4",
+            "type": "heavyTank",
+            "tank_id": 2097
         },
         "9489": {
             "nation_i18n": "Германия",
@@ -626,29 +626,17 @@
             "type": "lightTank",
             "tank_id": 2353
         },
-        "10785": {
-            "nation_i18n": "США",
-            "name": "#usa_vehicles:T110",
-            "level": 10,
-            "nation": "usa",
-            "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "T110E5",
-            "name_i18n": "T110E5",
-            "type": "heavyTank",
-            "tank_id": 10785
-        },
-        "6465": {
+        "321": {
             "nation_i18n": "Франция",
-            "name": "#france_vehicles:AMX_12t",
-            "level": 6,
+            "name": "#france_vehicles:D2",
+            "level": 3,
             "nation": "france",
             "is_premium": false,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "AMX 12 t",
-            "name_i18n": "AMX 12 t",
-            "type": "lightTank",
-            "tank_id": 6465
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "D2",
+            "name_i18n": "D2",
+            "type": "mediumTank",
+            "tank_id": 321
         },
         "9217": {
             "nation_i18n": "СССР",
@@ -685,6 +673,18 @@
             "name_i18n": "Conqueror",
             "type": "heavyTank",
             "tank_id": 4433
+        },
+        "11809": {
+            "nation_i18n": "США",
+            "name": "#usa_vehicles:T23E3",
+            "level": 7,
+            "nation": "usa",
+            "is_premium": true,
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "T23E3",
+            "name_i18n": "T23E3",
+            "type": "mediumTank",
+            "tank_id": 11809
         },
         "2401": {
             "nation_i18n": "Япония",
@@ -746,6 +746,18 @@
             "type": "mediumTank",
             "tank_id": 353
         },
+        "2321": {
+            "nation_i18n": "Германия",
+            "name": "#germany_vehicles:VK3601H",
+            "level": 6,
+            "nation": "germany",
+            "is_premium": false,
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "VK 36.01 H",
+            "name_i18n": "VK 36.01 (H)",
+            "type": "heavyTank",
+            "tank_id": 2321
+        },
         "11265": {
             "nation_i18n": "СССР",
             "name": "#ussr_vehicles:T150",
@@ -770,17 +782,17 @@
             "type": "mediumTank",
             "tank_id": 81
         },
-        "7233": {
+        "8257": {
             "nation_i18n": "Франция",
-            "name": "#france_vehicles:Lorraine155_50",
-            "level": 7,
+            "name": "#france_vehicles:RenaultUE57",
+            "level": 3,
             "nation": "france",
             "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "Lorr. 155 50",
-            "name_i18n": "Lorraine 155 mle. 50",
-            "type": "SPG",
-            "tank_id": 7233
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "UE 57",
+            "name_i18n": "Renault UE 57",
+            "type": "AT-SPG",
+            "tank_id": 8257
         },
         "12561": {
             "nation_i18n": "Германия",
@@ -794,29 +806,17 @@
             "type": "lightTank",
             "tank_id": 12561
         },
-        "17665": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:R104_Object_430_II",
-            "level": 9,
-            "nation": "ussr",
+        "1377": {
+            "nation_i18n": "Япония",
+            "name": "#japan_vehicles:Chi_Nu",
+            "level": 5,
+            "nation": "japan",
             "is_premium": false,
             "type_i18n": "Средний танк",
-            "short_name_i18n": "Об. 430 II",
-            "name_i18n": "Объект 430 Вариант II",
+            "short_name_i18n": "Chi-Nu",
+            "name_i18n": "Type 3 Chi-Nu",
             "type": "mediumTank",
-            "tank_id": 17665
-        },
-        "54545": {
-            "nation_i18n": "Германия",
-            "name": "#germany_vehicles:T-25",
-            "level": 5,
-            "nation": "germany",
-            "is_premium": true,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "T-25",
-            "name_i18n": "T-25",
-            "type": "mediumTank",
-            "tank_id": 54545
+            "tank_id": 1377
         },
         "13857": {
             "nation_i18n": "США",
@@ -865,18 +865,6 @@
             "name_i18n": "VK 20.01 (D)",
             "type": "mediumTank",
             "tank_id": 13585
-        },
-        "3617": {
-            "nation_i18n": "США",
-            "name": "#usa_vehicles:M7_Priest",
-            "level": 3,
-            "nation": "usa",
-            "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "M7 Priest",
-            "name_i18n": "M7 Priest",
-            "type": "SPG",
-            "tank_id": 3617
         },
         "14881": {
             "nation_i18n": "США",
@@ -962,17 +950,17 @@
             "type": "heavyTank",
             "tank_id": 3153
         },
-        "54353": {
+        "11345": {
             "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB51_Excelsior",
-            "level": 5,
+            "name": "#gb_vehicles:GB29_Crusader_5inch",
+            "level": 7,
             "nation": "uk",
-            "is_premium": true,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "Excelsior",
-            "name_i18n": "Excelsior",
-            "type": "heavyTank",
-            "tank_id": 54353
+            "is_premium": false,
+            "type_i18n": "САУ",
+            "short_name_i18n": "Crusader SP",
+            "name_i18n": "Crusader 5.5-in. SP",
+            "type": "SPG",
+            "tank_id": 11345
         },
         "15633": {
             "nation_i18n": "Германия",
@@ -1046,17 +1034,17 @@
             "type": "heavyTank",
             "tank_id": 513
         },
-        "1793": {
+        "5889": {
             "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:S-51",
+            "name": "#ussr_vehicles:KV-3",
             "level": 7,
             "nation": "ussr",
             "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "С-51",
-            "name_i18n": "С-51",
-            "type": "SPG",
-            "tank_id": 1793
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "КВ-3",
+            "name_i18n": "КВ-3",
+            "type": "heavyTank",
+            "tank_id": 5889
         },
         "16657": {
             "nation_i18n": "Германия",
@@ -1082,41 +1070,41 @@
             "type": "AT-SPG",
             "tank_id": 16913
         },
-        "3905": {
-            "nation_i18n": "Франция",
-            "name": "#france_vehicles:AMX_50_120",
-            "level": 9,
-            "nation": "france",
-            "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "AMX 50 120",
-            "name_i18n": "AMX 50 120",
-            "type": "heavyTank",
-            "tank_id": 3905
+        "54097": {
+            "nation_i18n": "Великобритания",
+            "name": "#gb_vehicles:GB71_AT_15A",
+            "level": 7,
+            "nation": "uk",
+            "is_premium": true,
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "AT 15A",
+            "name_i18n": "AT 15A",
+            "type": "AT-SPG",
+            "tank_id": 54097
         },
-        "2593": {
+        "10785": {
             "nation_i18n": "США",
-            "name": "#usa_vehicles:T30",
-            "level": 9,
+            "name": "#usa_vehicles:T110",
+            "level": 10,
             "nation": "usa",
             "is_premium": false,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "T30",
-            "name_i18n": "T30",
-            "type": "AT-SPG",
-            "tank_id": 2593
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "T110E5",
+            "name_i18n": "T110E5",
+            "type": "heavyTank",
+            "tank_id": 10785
         },
-        "16385": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:SU122A",
+        "1041": {
+            "nation_i18n": "Германия",
+            "name": "#germany_vehicles:StuG_40_AusfG",
             "level": 5,
-            "nation": "ussr",
+            "nation": "germany",
             "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "СУ-122А",
-            "name_i18n": "СУ-122А",
-            "type": "SPG",
-            "tank_id": 16385
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "StuG III G",
+            "name_i18n": "StuG III Ausf. G",
+            "type": "AT-SPG",
+            "tank_id": 1041
         },
         "5201": {
             "nation_i18n": "Великобритания",
@@ -1154,18 +1142,6 @@
             "type": "SPG",
             "tank_id": 4673
         },
-        "2065": {
-            "nation_i18n": "Германия",
-            "name": "#germany_vehicles:PzII",
-            "level": 2,
-            "nation": "germany",
-            "is_premium": false,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "Pz. II",
-            "name_i18n": "Pz.Kpfw. II",
-            "type": "lightTank",
-            "tank_id": 2065
-        },
         "52257": {
             "nation_i18n": "США",
             "name": "#usa_vehicles:M4A2E4",
@@ -1202,18 +1178,6 @@
             "type": "lightTank",
             "tank_id": 3169
         },
-        "3361": {
-            "nation_i18n": "США",
-            "name": "#usa_vehicles:T1_hvy",
-            "level": 5,
-            "nation": "usa",
-            "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "T1 Heavy",
-            "name_i18n": "T1 Heavy Tank",
-            "type": "heavyTank",
-            "tank_id": 3361
-        },
         "53841": {
             "nation_i18n": "Великобритания",
             "name": "#gb_vehicles:GB63_TOG_II",
@@ -1226,29 +1190,41 @@
             "type": "heavyTank",
             "tank_id": 53841
         },
-        "51985": {
-            "nation_i18n": "Германия",
-            "name": "#germany_vehicles:S35_captured",
-            "level": 3,
-            "nation": "germany",
-            "is_premium": true,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "Pz. S35",
-            "name_i18n": "Pz.Kpfw. S35 739 (f)",
-            "type": "mediumTank",
-            "tank_id": 51985
+        "1793": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:S-51",
+            "level": 7,
+            "nation": "ussr",
+            "is_premium": false,
+            "type_i18n": "САУ",
+            "short_name_i18n": "С-51",
+            "name_i18n": "С-51",
+            "type": "SPG",
+            "tank_id": 1793
         },
-        "2657": {
+        "5953": {
+            "nation_i18n": "Франция",
+            "name": "#france_vehicles:AMX38",
+            "level": 3,
+            "nation": "france",
+            "is_premium": false,
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "AMX 38",
+            "name_i18n": "AMX 38",
+            "type": "lightTank",
+            "tank_id": 5953
+        },
+        "609": {
             "nation_i18n": "Япония",
-            "name": "#japan_vehicles:STA_1",
-            "level": 8,
+            "name": "#japan_vehicles:NC27",
+            "level": 1,
             "nation": "japan",
             "is_premium": false,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "STA-1",
-            "name_i18n": "STA-1",
-            "type": "mediumTank",
-            "tank_id": 2657
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "R. Otsu",
+            "name_i18n": "Renault Otsu",
+            "type": "lightTank",
+            "tank_id": 609
         },
         "3089": {
             "nation_i18n": "Германия",
@@ -1262,17 +1238,17 @@
             "type": "lightTank",
             "tank_id": 3089
         },
-        "6929": {
+        "51985": {
             "nation_i18n": "Германия",
-            "name": "#germany_vehicles:Maus",
-            "level": 10,
+            "name": "#germany_vehicles:S35_captured",
+            "level": 3,
             "nation": "germany",
-            "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "Maus",
-            "name_i18n": "Maus",
-            "type": "heavyTank",
-            "tank_id": 6929
+            "is_premium": true,
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "Pz. S35",
+            "name_i18n": "Pz.Kpfw. S35 739 (f)",
+            "type": "mediumTank",
+            "tank_id": 51985
         },
         "4385": {
             "nation_i18n": "США",
@@ -1333,6 +1309,18 @@
             "name_i18n": "VK 30.02 (D)",
             "type": "mediumTank",
             "tank_id": 4113
+        },
+        "8273": {
+            "nation_i18n": "Великобритания",
+            "name": "#gb_vehicles:GB39_Universal_CarrierQF2",
+            "level": 2,
+            "nation": "uk",
+            "is_premium": false,
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "UC 2-pdr",
+            "name_i18n": "Universal Carrier 2-pdr",
+            "type": "AT-SPG",
+            "tank_id": 8273
         },
         "5409": {
             "nation_i18n": "США",
@@ -1442,6 +1430,18 @@
             "type": "lightTank",
             "tank_id": 6161
         },
+        "16385": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:SU122A",
+            "level": 5,
+            "nation": "ussr",
+            "is_premium": false,
+            "type_i18n": "САУ",
+            "short_name_i18n": "СУ-122А",
+            "name_i18n": "СУ-122А",
+            "type": "SPG",
+            "tank_id": 16385
+        },
         "3873": {
             "nation_i18n": "США",
             "name": "#usa_vehicles:T29",
@@ -1478,18 +1478,6 @@
             "type": "AT-SPG",
             "tank_id": 54785
         },
-        "5889": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:KV-3",
-            "level": 7,
-            "nation": "ussr",
-            "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "КВ-3",
-            "name_i18n": "КВ-3",
-            "type": "heavyTank",
-            "tank_id": 5889
-        },
         "10049": {
             "nation_i18n": "Франция",
             "name": "#france_vehicles:S_35CA",
@@ -1501,18 +1489,6 @@
             "name_i18n": "S35 CA",
             "type": "AT-SPG",
             "tank_id": 10049
-        },
-        "11345": {
-            "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB29_Crusader_5inch",
-            "level": 7,
-            "nation": "uk",
-            "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "Crusader SP",
-            "name_i18n": "Crusader 5.5-in. SP",
-            "type": "SPG",
-            "tank_id": 11345
         },
         "8481": {
             "nation_i18n": "США",
@@ -1526,17 +1502,17 @@
             "type": "SPG",
             "tank_id": 8481
         },
-        "6913": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:GAZ-74b",
-            "level": 4,
-            "nation": "ussr",
-            "is_premium": false,
+        "57105": {
+            "nation_i18n": "Германия",
+            "name": "#germany_vehicles:DickerMax",
+            "level": 6,
+            "nation": "germany",
+            "is_premium": true,
             "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "СУ-85Б",
-            "name_i18n": "СУ-85Б",
+            "short_name_i18n": "Dicker Max",
+            "name_i18n": "Dicker Max",
             "type": "AT-SPG",
-            "tank_id": 6913
+            "tank_id": 57105
         },
         "11073": {
             "nation_i18n": "Франция",
@@ -1586,18 +1562,6 @@
             "type": "lightTank",
             "tank_id": 8209
         },
-        "12369": {
-            "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB31_Conqueror_Gun",
-            "level": 10,
-            "nation": "uk",
-            "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "ConquerorGC",
-            "name_i18n": "Conqueror Gun Carriage",
-            "type": "SPG",
-            "tank_id": 12369
-        },
         "9505": {
             "nation_i18n": "США",
             "name": "#usa_vehicles:M103",
@@ -1621,6 +1585,18 @@
             "name_i18n": "Pz.Kpfw. 35 (t)",
             "type": "lightTank",
             "tank_id": 785
+        },
+        "56833": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:T44_122",
+            "level": 7,
+            "nation": "ussr",
+            "is_premium": true,
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "Т-44-122",
+            "name_i18n": "Т-44-122",
+            "type": "mediumTank",
+            "tank_id": 56833
         },
         "7937": {
             "nation_i18n": "СССР",
@@ -1754,17 +1730,17 @@
             "type": "AT-SPG",
             "tank_id": 11553
         },
-        "54097": {
+        "6993": {
             "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB71_AT_15A",
-            "level": 7,
+            "name": "#gb_vehicles:GB69_Cruiser_Mk_II",
+            "level": 3,
             "nation": "uk",
-            "is_premium": true,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "AT 15A",
-            "name_i18n": "AT 15A",
-            "type": "AT-SPG",
-            "tank_id": 54097
+            "is_premium": false,
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "Cruiser II",
+            "name_i18n": "Cruiser Mk. II",
+            "type": "lightTank",
+            "tank_id": 6993
         },
         "9985": {
             "nation_i18n": "СССР",
@@ -1825,6 +1801,18 @@
             "name_i18n": "Löwe",
             "type": "heavyTank",
             "tank_id": 54289
+        },
+        "57617": {
+            "nation_i18n": "Германия",
+            "name": "#germany_vehicles:Panther_M10",
+            "level": 7,
+            "nation": "germany",
+            "is_premium": true,
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "Panther/M10",
+            "name_i18n": "Panther/M10",
+            "type": "mediumTank",
+            "tank_id": 57617
         },
         "64065": {
             "nation_i18n": "Франция",
@@ -2162,17 +2150,17 @@
             "type": "mediumTank",
             "tank_id": 17425
         },
-        "64561": {
+        "3121": {
             "nation_i18n": "Китай",
-            "name": "#china_vehicles:Ch23_112",
-            "level": 8,
+            "name": "#china_vehicles:Ch09_M5",
+            "level": 4,
             "nation": "china",
-            "is_premium": true,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "112",
-            "name_i18n": "112",
-            "type": "heavyTank",
-            "tank_id": 64561
+            "is_premium": false,
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "M5A1 Stuart",
+            "name_i18n": "M5A1 Stuart",
+            "type": "lightTank",
+            "tank_id": 3121
         },
         "1809": {
             "nation_i18n": "Германия",
@@ -2270,18 +2258,6 @@
             "type": "SPG",
             "tank_id": 2833
         },
-        "6993": {
-            "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB69_Cruiser_Mk_II",
-            "level": 3,
-            "nation": "uk",
-            "is_premium": false,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "Cruiser II",
-            "name_i18n": "Cruiser Mk. II",
-            "type": "lightTank",
-            "tank_id": 6993
-        },
         "1121": {
             "nation_i18n": "Япония",
             "name": "#japan_vehicles:Chi_Ri",
@@ -2317,6 +2293,18 @@
             "name_i18n": "Marder II",
             "type": "AT-SPG",
             "tank_id": 6673
+        },
+        "51457": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:Matilda_II_LL",
+            "level": 5,
+            "nation": "ussr",
+            "is_premium": true,
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "Матильда IV",
+            "name_i18n": "Матильда IV",
+            "type": "mediumTank",
+            "tank_id": 51457
         },
         "2561": {
             "nation_i18n": "СССР",
@@ -2498,17 +2486,17 @@
             "type": "AT-SPG",
             "tank_id": 7201
         },
-        "4641": {
+        "2593": {
             "nation_i18n": "США",
-            "name": "#usa_vehicles:M37",
-            "level": 4,
+            "name": "#usa_vehicles:T30",
+            "level": 9,
             "nation": "usa",
             "is_premium": false,
-            "type_i18n": "САУ",
-            "short_name_i18n": "M37",
-            "name_i18n": "M37",
-            "type": "SPG",
-            "tank_id": 4641
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "T30",
+            "name_i18n": "T30",
+            "type": "AT-SPG",
+            "tank_id": 2593
         },
         "54033": {
             "nation_i18n": "Германия",
@@ -2521,18 +2509,6 @@
             "name_i18n": "Pz.Kpfw. V/IV Alpha",
             "type": "mediumTank",
             "tank_id": 54033
-        },
-        "54529": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:Tetrarch_LL",
-            "level": 2,
-            "nation": "ussr",
-            "is_premium": true,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "Тетрарх",
-            "name_i18n": "Тетрарх",
-            "type": "lightTank",
-            "tank_id": 54529
         },
         "9793": {
             "nation_i18n": "Франция",
@@ -2557,6 +2533,18 @@
             "name_i18n": "Type 59",
             "type": "mediumTank",
             "tank_id": 49
+        },
+        "6929": {
+            "nation_i18n": "Германия",
+            "name": "#germany_vehicles:Maus",
+            "level": 10,
+            "nation": "germany",
+            "is_premium": false,
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "Maus",
+            "name_i18n": "Maus",
+            "type": "heavyTank",
+            "tank_id": 6929
         },
         "11089": {
             "nation_i18n": "Великобритания",
@@ -2630,17 +2618,17 @@
             "type": "SPG",
             "tank_id": 12113
         },
-        "5377": {
+        "54529": {
             "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:IS-3",
-            "level": 8,
+            "name": "#ussr_vehicles:Tetrarch_LL",
+            "level": 2,
             "nation": "ussr",
-            "is_premium": false,
-            "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "ИС-3",
-            "name_i18n": "ИС-3",
-            "type": "heavyTank",
-            "tank_id": 5377
+            "is_premium": true,
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "Тетрарх",
+            "name_i18n": "Тетрарх",
+            "type": "lightTank",
+            "tank_id": 54529
         },
         "9249": {
             "nation_i18n": "США",
@@ -2942,6 +2930,18 @@
             "type": "lightTank",
             "tank_id": 13073
         },
+        "64561": {
+            "nation_i18n": "Китай",
+            "name": "#china_vehicles:Ch23_112",
+            "level": 8,
+            "nation": "china",
+            "is_premium": true,
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "112",
+            "name_i18n": "112",
+            "type": "heavyTank",
+            "tank_id": 64561
+        },
         "2369": {
             "nation_i18n": "Франция",
             "name": "#france_vehicles:FCM_36Pak40",
@@ -2953,18 +2953,6 @@
             "name_i18n": "FCM 36 Pak 40",
             "type": "AT-SPG",
             "tank_id": 2369
-        },
-        "321": {
-            "nation_i18n": "Франция",
-            "name": "#france_vehicles:D2",
-            "level": 3,
-            "nation": "france",
-            "is_premium": false,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "D2",
-            "name_i18n": "D2",
-            "type": "mediumTank",
-            "tank_id": 321
         },
         "14097": {
             "nation_i18n": "Германия",
@@ -3098,17 +3086,17 @@
             "type": "SPG",
             "tank_id": 5633
         },
-        "12545": {
+        "16641": {
             "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:A44",
-            "level": 7,
+            "name": "#ussr_vehicles:MT25",
+            "level": 6,
             "nation": "ussr",
             "is_premium": false,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "А-44",
-            "name_i18n": "А-44",
-            "type": "mediumTank",
-            "tank_id": 12545
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "МТ-25",
+            "name_i18n": "МТ-25",
+            "type": "lightTank",
+            "tank_id": 16641
         },
         "53585": {
             "nation_i18n": "Великобритания",
@@ -3182,17 +3170,17 @@
             "type": "lightTank",
             "tank_id": 1825
         },
-        "11809": {
+        "3617": {
             "nation_i18n": "США",
-            "name": "#usa_vehicles:T23E3",
-            "level": 7,
+            "name": "#usa_vehicles:M7_Priest",
+            "level": 3,
             "nation": "usa",
-            "is_premium": true,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "T23E3",
-            "name_i18n": "T23E3",
-            "type": "mediumTank",
-            "tank_id": 11809
+            "is_premium": false,
+            "type_i18n": "САУ",
+            "short_name_i18n": "M7 Priest",
+            "name_i18n": "M7 Priest",
+            "type": "SPG",
+            "tank_id": 3617
         },
         "257": {
             "nation_i18n": "СССР",
@@ -3290,29 +3278,17 @@
             "type": "mediumTank",
             "tank_id": 5697
         },
-        "4145": {
-            "nation_i18n": "Китай",
-            "name": "#china_vehicles:Ch19_121",
-            "level": 10,
-            "nation": "china",
-            "is_premium": false,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "121",
-            "name_i18n": "121",
-            "type": "mediumTank",
-            "tank_id": 4145
-        },
-        "609": {
+        "1633": {
             "nation_i18n": "Япония",
-            "name": "#japan_vehicles:NC27",
-            "level": 1,
+            "name": "#japan_vehicles:Chi_He",
+            "level": 4,
             "nation": "japan",
             "is_premium": false,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "R. Otsu",
-            "name_i18n": "Renault Otsu",
-            "type": "lightTank",
-            "tank_id": 609
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "Chi-He",
+            "name_i18n": "Type 1 Chi-He",
+            "type": "mediumTank",
+            "tank_id": 1633
         },
         "51473": {
             "nation_i18n": "Германия",
@@ -3422,6 +3398,18 @@
             "type": "lightTank",
             "tank_id": 52497
         },
+        "6465": {
+            "nation_i18n": "Франция",
+            "name": "#france_vehicles:AMX_12t",
+            "level": 6,
+            "nation": "france",
+            "is_premium": false,
+            "type_i18n": "Легкий танк",
+            "short_name_i18n": "AMX 12 t",
+            "name_i18n": "AMX 12 t",
+            "type": "lightTank",
+            "tank_id": 6465
+        },
         "7761": {
             "nation_i18n": "Великобритания",
             "name": "#gb_vehicles:GB58_Cruiser_Mk_III",
@@ -3518,17 +3506,17 @@
             "type": "heavyTank",
             "tank_id": 53249
         },
-        "4353": {
-            "nation_i18n": "СССР",
-            "name": "#ussr_vehicles:T-44",
-            "level": 8,
-            "nation": "ussr",
-            "is_premium": false,
+        "54545": {
+            "nation_i18n": "Германия",
+            "name": "#germany_vehicles:T-25",
+            "level": 5,
+            "nation": "germany",
+            "is_premium": true,
             "type_i18n": "Средний танк",
-            "short_name_i18n": "Т-44",
-            "name_i18n": "Т-44",
+            "short_name_i18n": "T-25",
+            "name_i18n": "T-25",
             "type": "mediumTank",
-            "tank_id": 4353
+            "tank_id": 54545
         },
         "5649": {
             "nation_i18n": "Германия",
@@ -3566,17 +3554,29 @@
             "type": "AT-SPG",
             "tank_id": 6945
         },
-        "52513": {
+        "3361": {
             "nation_i18n": "США",
-            "name": "#usa_vehicles:M6A2E1",
-            "level": 8,
+            "name": "#usa_vehicles:T1_hvy",
+            "level": 5,
             "nation": "usa",
-            "is_premium": true,
+            "is_premium": false,
             "type_i18n": "Тяжёлый танк",
-            "short_name_i18n": "M6A2E1",
-            "name_i18n": "M6A2E1",
+            "short_name_i18n": "T1 Heavy",
+            "name_i18n": "T1 Heavy Tank",
             "type": "heavyTank",
-            "tank_id": 52513
+            "tank_id": 3361
+        },
+        "5377": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:IS-3",
+            "level": 8,
+            "nation": "ussr",
+            "is_premium": false,
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "ИС-3",
+            "name_i18n": "ИС-3",
+            "type": "heavyTank",
+            "tank_id": 5377
         },
         "55297": {
             "nation_i18n": "СССР",
@@ -3590,6 +3590,18 @@
             "type": "AT-SPG",
             "tank_id": 55297
         },
+        "4353": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:T-44",
+            "level": 8,
+            "nation": "ussr",
+            "is_premium": false,
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "Т-44",
+            "name_i18n": "Т-44",
+            "type": "mediumTank",
+            "tank_id": 4353
+        },
         "6401": {
             "nation_i18n": "СССР",
             "name": "#ussr_vehicles:SU-76",
@@ -3601,6 +3613,18 @@
             "name_i18n": "СУ-76",
             "type": "AT-SPG",
             "tank_id": 6401
+        },
+        "6913": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:GAZ-74b",
+            "level": 4,
+            "nation": "ussr",
+            "is_premium": false,
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "СУ-85Б",
+            "name_i18n": "СУ-85Б",
+            "type": "AT-SPG",
+            "tank_id": 6913
         },
         "7697": {
             "nation_i18n": "Германия",
@@ -3650,17 +3674,17 @@
             "type": "AT-SPG",
             "tank_id": 12033
         },
-        "57617": {
-            "nation_i18n": "Германия",
-            "name": "#germany_vehicles:Panther_M10",
-            "level": 7,
-            "nation": "germany",
-            "is_premium": true,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "Panther/M10",
-            "name_i18n": "Panther/M10",
-            "type": "mediumTank",
-            "tank_id": 57617
+        "7425": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:ISU-152",
+            "level": 8,
+            "nation": "ussr",
+            "is_premium": false,
+            "type_i18n": "ПТ-САУ",
+            "short_name_i18n": "ИСУ-152",
+            "name_i18n": "ИСУ-152",
+            "type": "AT-SPG",
+            "tank_id": 7425
         },
         "11585": {
             "nation_i18n": "Франция",
@@ -3734,18 +3758,6 @@
             "type": "SPG",
             "tank_id": 7969
         },
-        "57105": {
-            "nation_i18n": "Германия",
-            "name": "#germany_vehicles:DickerMax",
-            "level": 6,
-            "nation": "germany",
-            "is_premium": true,
-            "type_i18n": "ПТ-САУ",
-            "short_name_i18n": "Dicker Max",
-            "name_i18n": "Dicker Max",
-            "type": "AT-SPG",
-            "tank_id": 57105
-        },
         "3377": {
             "nation_i18n": "Китай",
             "name": "#china_vehicles:Ch16_WZ_131",
@@ -3806,17 +3818,17 @@
             "type": "AT-SPG",
             "tank_id": 11041
         },
-        "5953": {
+        "3905": {
             "nation_i18n": "Франция",
-            "name": "#france_vehicles:AMX38",
-            "level": 3,
+            "name": "#france_vehicles:AMX_50_120",
+            "level": 9,
             "nation": "france",
             "is_premium": false,
-            "type_i18n": "Легкий танк",
-            "short_name_i18n": "AMX 38",
-            "name_i18n": "AMX 38",
-            "type": "lightTank",
-            "tank_id": 5953
+            "type_i18n": "Тяжёлый танк",
+            "short_name_i18n": "AMX 50 120",
+            "name_i18n": "AMX 50 120",
+            "type": "heavyTank",
+            "tank_id": 3905
         },
         "9473": {
             "nation_i18n": "СССР",
@@ -3962,18 +3974,6 @@
             "type": "lightTank",
             "tank_id": 12817
         },
-        "1633": {
-            "nation_i18n": "Япония",
-            "name": "#japan_vehicles:Chi_He",
-            "level": 4,
-            "nation": "japan",
-            "is_premium": false,
-            "type_i18n": "Средний танк",
-            "short_name_i18n": "Chi-He",
-            "name_i18n": "Type 1 Chi-He",
-            "type": "mediumTank",
-            "tank_id": 1633
-        },
         "14113": {
             "nation_i18n": "США",
             "name": "#usa_vehicles:M48A1",
@@ -3986,17 +3986,17 @@
             "type": "mediumTank",
             "tank_id": 14113
         },
-        "51553": {
-            "nation_i18n": "Япония",
-            "name": "#japan_vehicles:Chi_Nu_Kai",
-            "level": 5,
-            "nation": "japan",
-            "is_premium": true,
+        "12545": {
+            "nation_i18n": "СССР",
+            "name": "#ussr_vehicles:A44",
+            "level": 7,
+            "nation": "ussr",
+            "is_premium": false,
             "type_i18n": "Средний танк",
-            "short_name_i18n": "Chi-Nu Kai",
-            "name_i18n": "Type 3 Chi-Nu Kai",
+            "short_name_i18n": "А-44",
+            "name_i18n": "А-44",
             "type": "mediumTank",
-            "tank_id": 51553
+            "tank_id": 12545
         },
         "13841": {
             "nation_i18n": "Германия",
@@ -4009,6 +4009,18 @@
             "name_i18n": "Indien-Panzer",
             "type": "mediumTank",
             "tank_id": 13841
+        },
+        "2657": {
+            "nation_i18n": "Япония",
+            "name": "#japan_vehicles:STA_1",
+            "level": 8,
+            "nation": "japan",
+            "is_premium": false,
+            "type_i18n": "Средний танк",
+            "short_name_i18n": "STA-1",
+            "name_i18n": "STA-1",
+            "type": "mediumTank",
+            "tank_id": 2657
         },
         "54801": {
             "nation_i18n": "Германия",
@@ -4106,17 +4118,17 @@
             "type": "SPG",
             "tank_id": 2113
         },
-        "7505": {
+        "6481": {
             "nation_i18n": "Великобритания",
-            "name": "#gb_vehicles:GB59_Cruiser_Mk_IV",
-            "level": 3,
+            "name": "#gb_vehicles:GB60_Covenanter",
+            "level": 4,
             "nation": "uk",
             "is_premium": false,
             "type_i18n": "Легкий танк",
-            "short_name_i18n": "Cruiser IV",
-            "name_i18n": "Cruiser Mk. IV",
+            "short_name_i18n": "Covenanter",
+            "name_i18n": "Covenanter",
             "type": "lightTank",
-            "tank_id": 7505
+            "tank_id": 6481
         },
         "8977": {
             "nation_i18n": "Германия",

@@ -7612,6 +7612,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Tooltip_Achievements_7x7_BattleTested {
+            get {
+                return ResourceManager.GetString("Tooltip_Achievements_7x7_BattleTested", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Tooltip_Achievements_7x7_BruteForceMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_Achievements_7x7_BruteForceMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In 20 battles, destroy the last enemy vehicle.
         ///    • Win the battle.
         ///    • Newly received awards are added together.
@@ -7689,6 +7707,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Tooltip_Achievements_7x7_GuerrillaMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_Achievements_7x7_GuerrillaMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In 100 battles, be among the top three damage dealers.
         ///    • Newly received awards are added together.
         ///    • Only victorious battles are counted.
@@ -7698,6 +7725,15 @@ namespace WotDossier.Resources {
         public static string Tooltip_Achievements_7x7_HeavyFireMedal {
             get {
                 return ResourceManager.GetString("Tooltip_Achievements_7x7_HeavyFireMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Tooltip_Achievements_7x7_InfiltratorMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_Achievements_7x7_InfiltratorMedal", resourceCulture);
             }
         }
         
@@ -7721,6 +7757,15 @@ namespace WotDossier.Resources {
         public static string Tooltip_Achievements_7x7_NoMansLand {
             get {
                 return ResourceManager.GetString("Tooltip_Achievements_7x7_NoMansLand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Tooltip_Achievements_7x7_PrematureDetonationMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_Achievements_7x7_PrematureDetonationMedal", resourceCulture);
             }
         }
         
@@ -7759,6 +7804,15 @@ namespace WotDossier.Resources {
         public static string Tooltip_Achievements_7x7_RangerMedal {
             get {
                 return ResourceManager.GetString("Tooltip_Achievements_7x7_RangerMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Tooltip_Achievements_7x7_SentinelMedal {
+            get {
+                return ResourceManager.GetString("Tooltip_Achievements_7x7_SentinelMedal", resourceCulture);
             }
         }
         

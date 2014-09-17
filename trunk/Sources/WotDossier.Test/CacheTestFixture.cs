@@ -5,7 +5,6 @@ using System.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.BattleModeStrategies;
-using WotDossier.Applications.Update;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -22,6 +21,10 @@ namespace WotDossier.Test
         [Test]
         public void CacheFilesTest()
         {
+            //trick
+            DataProvider.RollbackTransaction();
+            DataProvider.CloseSession();
+
             Player player1 = new Player();
             player1.dataField = new PlayerData { account_id = 10800699, nickname = "_rembel__ru", created_at = 1349068892 };
             ServerStatWrapper serverStatistic = new ServerStatWrapper(player1);
@@ -43,12 +46,57 @@ namespace WotDossier.Test
                     Assert.True(File.Exists(iconPath), string.Format("Version: {1}. Can't find icon {0}", tankJson.Description.Icon.IconId, version));
                 }
 
-                StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleMode.RandomCompany, DossierRepository);
+                foreach (BattleMode battleMode in Enum.GetValues(typeof (BattleMode)))
+                {
+                    StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(battleMode, DossierRepository);
 
-                PlayerEntity player = strategy.UpdatePlayerStatistic(serverStatistic.Player.dataField.account_id, tanks, serverStatistic);
+                    PlayerEntity player = strategy.UpdatePlayerStatistic(serverStatistic.Player.dataField.account_id, tanks, serverStatistic);
 
-                var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
+                    var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
+                    Assert.IsNotNull(playerStatisticViewModel);
+                }
             }
+        }
+
+        [Test]
+        public void CacheFileTest()
+        {
+            Version version = new Version("0.9.3");
+            const BattleMode battleMode = BattleMode.RandomCompany;
+
+            //trick
+            DataProvider.RollbackTransaction();
+            DataProvider.CloseSession();
+
+            Player player1 = new Player();
+            player1.dataField = new PlayerData
+            {
+                account_id = 10800699,
+                nickname = "_rembel__ru",
+                created_at = 1349068892
+            };
+            ServerStatWrapper serverStatistic = new ServerStatWrapper(player1);
+            //reset DB
+            DatabaseManager.DeleteDatabase();
+            DatabaseManager.InitDatabase();
+
+            string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
+
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
+
+            List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
+            foreach (TankJson tankJson in tanks)
+            {
+                string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png", tankJson.Description.Icon.IconId);
+                Assert.True(File.Exists(iconPath), string.Format("Version: {1}. Can't find icon {0}", tankJson.Description.Icon.IconId, version));
+            }
+            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(battleMode, DossierRepository);
+
+            PlayerEntity player = strategy.UpdatePlayerStatistic(serverStatistic.Player.dataField.account_id, tanks,
+                serverStatistic);
+
+            var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
+            Assert.IsNotNull(playerStatisticViewModel);
         }
 
         /// <summary>

@@ -5,6 +5,7 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Xml;
@@ -54,6 +55,7 @@ namespace WotDossier.Test
         [TestFixtureSetUp]
         public void Init()
         {
+            AssemblyUtilities.SetEntryAssembly(Assembly.LoadFrom("WotDossier.Test.dll"));
             CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
             _databaseManager = new DatabaseManager();
             _databaseManager.InitDatabase();

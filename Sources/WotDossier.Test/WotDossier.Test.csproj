@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AkimaSplineTest.cs" />
+    <Compile Include="AssemblyUtilities.cs" />
     <Compile Include="CacheTestFixture.cs" />
     <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="LinearInterpolationCase.cs" />

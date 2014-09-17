@@ -242,7 +242,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             ViewTyped.Show();
         }
 
-        public bool Init(Domain.Replay.Replay replay, ReplayFile replayFile)
+        public bool Init(Domain.Replay.Replay replay)
         {
             Replay = replay;
             
@@ -311,7 +311,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 DamageBlockedByArmor = replay.datablock_battle_result.personal.damageBlockedByArmor;
                 Mileage = string.Format(Resources.Resources.Traveled_Format, replay.datablock_battle_result.personal.mileage/(double)1000);
 
-                StartTime = replayFile.PlayTime.ToShortTimeString();
+                StartTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU")).ToShortTimeString();
                 TimeSpan battleLength = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                 BattleTime = battleLength.ToString(Resources.Resources.ExtendedTimeFormat);
 

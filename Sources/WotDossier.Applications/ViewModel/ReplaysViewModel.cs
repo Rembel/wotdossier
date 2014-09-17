@@ -372,7 +372,7 @@ namespace WotDossier.Applications.ViewModel
                 if (replay != null && replay.datablock_battle_result != null)
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewModel>();
-                    viewModel.Init(replay, replayFile);
+                    viewModel.Init(replay);
                     viewModel.Show();
                 }
                 else

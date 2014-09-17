@@ -109,6 +109,9 @@
     <None Include="..\WotDossier\App.config">
       <Link>App.config</Link>
     </None>
+    <EmbeddedResource Include="..\WotDossier\Data\init.s3db">
+      <Link>Data\init.s3db</Link>
+    </EmbeddedResource>
     <None Include="..\WotDossier\External\consumables.json">
       <Link>External\consumables.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

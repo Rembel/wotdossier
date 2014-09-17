@@ -30,6 +30,7 @@ namespace WotDossier.Test
     {
         private DataProvider _dataProvider;
         private DossierRepository _dossierRepository;
+        private DatabaseManager _databaseManager;
 
         [Import(typeof(DataProvider))]
         public DataProvider DataProvider
@@ -45,10 +46,17 @@ namespace WotDossier.Test
             set { _dossierRepository = value; }
         }
 
+        public DatabaseManager DatabaseManager
+        {
+            get { return _databaseManager; }
+        }
+
         [TestFixtureSetUp]
         public void Init()
         {
             CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
+            _databaseManager = new DatabaseManager();
+            _databaseManager.InitDatabase();
         }
 
         [SetUp]

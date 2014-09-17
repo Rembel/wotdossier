@@ -3056,4 +3056,112 @@
   <data name="Achievement_MarksOnGun" xml:space="preserve">
     <value>Отметки на стволе</value>
   </data>
+    <data name="Medal_15x15_Arsonist" xml:space="preserve">
+    <value>Поджигатель</value>
+  </data>
+    <data name="Medal_15x15_Bonecrusher" xml:space="preserve">
+    <value>Костолом</value>
+  </data>
+    <data name="Medal_15x15_Charmed" xml:space="preserve">
+    <value>Заговорённый</value>
+  </data>
+    <data name="Medal_15x15_Demolition" xml:space="preserve">
+    <value>Взрывотехник</value>
+  </data>
+    <data name="Medal_15x15_Duelist" xml:space="preserve">
+    <value>Дуэлянт</value>
+  </data>
+    <data name="Medal_15x15_Even" xml:space="preserve">
+    <value>В расчёте!</value>
+  </data>
+    <data name="Medal_15x15_Fighter" xml:space="preserve">
+    <value>Боец</value>
+  </data>
+    <data name="Medal_15x15_Impenetrable" xml:space="preserve">
+    <value>Непробиваемый</value>
+  </data>
+    <data name="Medal_15x15_MaxAimerSeries" xml:space="preserve">
+    <value>Целеуказатель</value>
+  </data>
+    <data name="Medal_15x15_ShootToKill" xml:space="preserve">
+    <value>Огонь на поражение</value>
+  </data>
+    <data name="Medal_Clan_Rotmistrov" xml:space="preserve">
+    <value>Медаль Ротмистрова</value>
+  </data>
+    <data name="Medal_Fort_Conqueror" xml:space="preserve">
+    <value>Завоеватель</value>
+  </data>
+    <data name="Medal_Fort_Counterblow" xml:space="preserve">
+    <value>Контрудар</value>
+  </data>
+    <data name="Medal_Fort_Crusher" xml:space="preserve">
+    <value>Сокрушитель крепостей</value>
+  </data>
+    <data name="Medal_Fort_FireAndSword" xml:space="preserve">
+    <value>За решающие сражения</value>
+  </data>
+    <data name="Medal_Fort_Kampfer" xml:space="preserve">
+    <value>Ратник</value>
+  </data>
+    <data name="Medal_Fort_SoldierOfFortune" xml:space="preserve">
+    <value>Солдат удачи</value>
+  </data>
+    <data name="Medal_7x7_BattleTested" xml:space="preserve">
+    <value>Проверенный боем</value>
+  </data>
+    <data name="Medal_7x7_BruteForceMedal" xml:space="preserve">
+    <value>Силовой приём</value>
+  </data>
+    <data name="Medal_7x7_GuerrillaMedal" xml:space="preserve">
+    <value>Мастер засады</value>
+  </data>
+    <data name="Medal_7x7_InfiltratorMedal" xml:space="preserve">
+    <value>Знаменосец</value>
+  </data>
+    <data name="Medal_7x7_PrematureDetonationMedal" xml:space="preserve">
+    <value>Смертельный удар</value>
+  </data>
+    <data name="Medal_7x7_SentinelMedal" xml:space="preserve">
+    <value>Честь флага</value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_BattleTested" xml:space="preserve">
+    <value>За количество наград, полученных в Командных боях.
+• Выдаётся только в Командных боях.
+    </value> 
+  </data>
+    <data name="Tooltip_Achievements_7x7_BruteForceMedal" xml:space="preserve">
+    <value>10 раз уничтожить противника тараном.
+• В общем зачёте повторно полученные награды суммируются.
+• Выдаётся только в Командных боях.        
+    </value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_GuerrillaMedal" xml:space="preserve">
+    <value>10 раз уничтожить противника, не будучи при этом обнаруженным.
+• Противник должен быть в прямой видимости.
+• В общем зачёте повторно полученные награды суммируются.
+• Выдаётся только в Командных боях.        
+    </value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_InfiltratorMedal" xml:space="preserve">
+    <value>Получить 1000 очков захвата базы.
+• Засчитываются только очки, обеспечившие захват.
+• В общем зачёте повторно полученные награды суммируются.
+• Выдаётся только в Командных боях.        
+    </value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_PrematureDetonationMedal" xml:space="preserve">
+    <value>10 раз уничтожить противника подрывом боеукладки.
+• В общем зачёте повторно полученные награды суммируются.
+• В зачёт идут все случаи уничтожения противника подрывом боеукладки.
+• Выдаётся только в Командных боях.        
+    </value>
+  </data>
+    <data name="Tooltip_Achievements_7x7_SentinelMedal" xml:space="preserve">
+    <value>Получить 1000 очков защиты базы.
+• Очки засчитываются только в победных боях.
+• В общем зачёте повторно полученные награды суммируются.
+• Выдаётся только в Командных боях.        
+    </value>
+  </data>
 </root>

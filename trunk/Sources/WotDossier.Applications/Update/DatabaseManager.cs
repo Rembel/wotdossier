@@ -267,5 +267,15 @@ namespace WotDossier.Applications.Update
                 }
             }
         }
+
+        public void DeleteDatabase()
+        {
+            string currentDirectory = Folder.AssemblyDirectory();
+            string path = Path.Combine(currentDirectory, @"Data\dossier.s3db");
+            if (!File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
     }
 }

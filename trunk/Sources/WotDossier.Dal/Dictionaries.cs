@@ -27,6 +27,20 @@ namespace WotDossier.Dal
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
         private readonly Dictionary<int, TankServerInfo> _serverTanks;
         private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
+        private readonly List<Version> _versions = new List<Version>
+        {
+                new Version("0.9.3.0"),
+                new Version("0.9.2.0"),
+                new Version("0.9.1.0"),
+                new Version("0.9.0.0"),
+                new Version("0.8.11.0"), 
+                new Version("0.8.10.0"),
+                new Version("0.8.9.0"),
+                new Version("0.8.8.0"),
+                new Version("0.8.7.0"),
+                new Version("0.8.6.0"),
+                new Version("0.8.5.0"),
+        };
 
         #region BattleLevels
 
@@ -132,6 +146,11 @@ namespace WotDossier.Dal
 
         #endregion
 
+        public List<Version> Versions
+        {
+            get { return _versions; }
+        }
+
         /// <summary>
         /// Tanks dictionary
         /// KEY - tankid, countryid
@@ -216,6 +235,8 @@ namespace WotDossier.Dal
             //{"cn", "worldoftanks.cn"},
             //{"us", "worldoftanks.com"},
         };
+
+        
 
         public Dictionary<int, DeviceDescription> DeviceDescriptions { get; set; }
         public Dictionary<int, ConsumableDescription> ConsumableDescriptions { get; set; }

@@ -16,6 +16,7 @@ using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Update;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Common;
 using WotDossier.Common.Reflection;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
@@ -55,7 +56,7 @@ namespace WotDossier.Test
         [TestFixtureSetUp]
         public void Init()
         {
-            AssemblyUtilities.SetEntryAssembly(Assembly.LoadFrom("WotDossier.Test.dll"));
+            AssemblyExtensions.SetEntryAssembly(Assembly.LoadFrom("WotDossier.Test.dll"));
             CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
             _databaseManager = new DatabaseManager();
             _databaseManager.InitDatabase();

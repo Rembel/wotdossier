@@ -866,69 +866,27 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="AutoMapper.dll" />
-    <Content Include="Updates\2014031005.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031001.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031002.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031003.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031004.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031006.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031007.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031601.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014031602.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014040301.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014040302.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014040303.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014041601.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014041602.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014041603.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014041604.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014042501.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014050701.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014070801.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014052802.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Updates\2014052801.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Updates\2014031005.sql" />
+    <EmbeddedResource Include="Updates\2014031001.sql" />
+    <EmbeddedResource Include="Updates\2014031002.sql" />
+    <EmbeddedResource Include="Updates\2014031003.sql" />
+    <EmbeddedResource Include="Updates\2014031004.sql" />
+    <EmbeddedResource Include="Updates\2014031006.sql" />
+    <EmbeddedResource Include="Updates\2014031007.sql" />
+    <EmbeddedResource Include="Updates\2014031601.sql" />
+    <EmbeddedResource Include="Updates\2014031602.sql" />
+    <EmbeddedResource Include="Updates\2014040301.sql" />
+    <EmbeddedResource Include="Updates\2014040302.sql" />
+    <EmbeddedResource Include="Updates\2014040303.sql" />
+    <EmbeddedResource Include="Updates\2014041601.sql" />
+    <EmbeddedResource Include="Updates\2014041602.sql" />
+    <EmbeddedResource Include="Updates\2014041603.sql" />
+    <EmbeddedResource Include="Updates\2014041604.sql" />
+    <EmbeddedResource Include="Updates\2014042501.sql" />
+    <EmbeddedResource Include="Updates\2014050701.sql" />
+    <EmbeddedResource Include="Updates\2014070801.sql" />
+    <EmbeddedResource Include="Updates\2014052802.sql" />
+    <EmbeddedResource Include="Updates\2014052801.sql" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

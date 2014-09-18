@@ -12,6 +12,8 @@ namespace WotDossier.Applications.Update
 {
     public class DatabaseManager
     {
+        private const string SQL_SCRIPT_EXTENSION = ".sql";
+        private const string SQL_SCRIPT_EXTENSION_MASK = "*.sql";
         private static readonly ILog Logger = LogManager.GetCurrentClassLogger();
 
         public void Update()
@@ -129,20 +131,27 @@ namespace WotDossier.Applications.Update
 
         private List<IDbUpdate> GetDbUpdates()
         {
-            var type = typeof(CodeUpdateBase);
-            var types = type.Assembly.GetTypes().Where(type1 => type.IsAssignableFrom(type1) && type1 != type);
+            var updateType = typeof(CodeUpdateBase);
+            var types = updateType.Assembly.GetTypes().Where(type => updateType.IsAssignableFrom(type) && type != updateType);
 
             string currentDirectory = Folder.AssemblyDirectory();
             var updatesFolder = Path.Combine(currentDirectory, "Updates");
             
-            string[] strings = new string[0];
+            IEnumerable<string> strings;
+            List<IDbUpdate> updates;
             
             if (Directory.Exists(updatesFolder))
             {
-                strings = Directory.GetFiles(updatesFolder, "*.sql");
+                strings = Directory.GetFiles(updatesFolder, SQL_SCRIPT_EXTENSION_MASK);
+                updates = strings.Select(x => (IDbUpdate)new SqlUpdate(x)).ToList();
+            }
+            else
+            {
+                Assembly entryAssembly = Assembly.GetEntryAssembly();
+                strings = AssemblyExtensions.GetResourcesByMask(entryAssembly, SQL_SCRIPT_EXTENSION);
+                updates = strings.Select(x => (IDbUpdate)new EmbeddedSqlUpdate(entryAssembly, x, SQL_SCRIPT_EXTENSION)).ToList();
             }
 
-            List<IDbUpdate> updates = strings.Select(x => (IDbUpdate)new SqlUpdate(x)).ToList();
             updates.AddRange(types.Select(Activator.CreateInstance).Cast<IDbUpdate>());
 
             return updates.OrderBy(x => x.Version).ToList();

@@ -6,21 +6,23 @@ namespace WotDossier.Applications.Update
 {
     public class SqlUpdate : IDbUpdate
     {
+        private readonly string _sqlScriptPath;
+
         public SqlUpdate(string sqlScriptPath)
         {
+            _sqlScriptPath = sqlScriptPath;
             FileInfo info = new FileInfo(sqlScriptPath);
-            SqlScript = File.ReadAllText(sqlScriptPath);
             Version = long.Parse(info.Name.Replace(info.Extension, string.Empty));
         }
 
         public long Version { get; set; }
 
-        public string SqlScript { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
-            SQLiteCommand command = new SQLiteCommand(SqlScript, sqlCeConnection, transaction);
+            string sqlScript = File.ReadAllText(_sqlScriptPath);
+
+            SQLiteCommand command = new SQLiteCommand(sqlScript, sqlCeConnection, transaction);
 
             command.CommandType = CommandType.Text;
 

@@ -347,21 +347,29 @@ namespace WotDossier.Applications.Parser
         private static void ProcessPacket_0x1f(Packet packet, AdvancedReplayData data)
         {
             string message = Encoding.UTF8.GetString(packet.Payload);
-            data.Messages.Add(ParseChatMessage(message.Replace("&nbsp;", " ").Replace(":", ""), packet.Time));
+            var chatMessage = ParseChatMessage(message.Replace("&nbsp;", " ").Replace(":", ""), packet.Time);
+            if (chatMessage != null)
+            {
+                data.Messages.Add(chatMessage);
+            }
         }
 
         public static ChatMessage ParseChatMessage(string messageText, TimeSpan time)
         {
             var reg = new Regex(@"<(?<tag>[\w]+)[^>]*color\s*=\s*['""](?<color>[^'""]+)['""][^>]*>(?<text>.*?)<\/\<tag>", RegexOptions.IgnoreCase);
             MatchCollection match = reg.Matches(messageText);
-            return new ChatMessage
+            if (match.Count == 2)
             {
-                Player = match[0].Groups["text"].Value.Trim(),
-                PlayerColor = match[0].Groups["color"].Value.Trim(),
-                Text = match[1].Groups["text"].Value.Trim(),
-                TextColor = match[1].Groups["color"].Value.Trim(),
-                Time = time
-            };
+                return new ChatMessage
+                {
+                    Player = match[0].Groups["text"].Value.Trim(),
+                    PlayerColor = match[0].Groups["color"].Value.Trim(),
+                    Text = match[1].Groups["text"].Value.Trim(),
+                    TextColor = match[1].Groups["color"].Value.Trim(),
+                    Time = time
+                };
+            }
+            return null;
         }
     }
 }

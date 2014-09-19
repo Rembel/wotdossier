@@ -3051,4 +3051,16 @@ up to 500 m</value>
   <data name="Tooltip_Achievements_7x7_SentinelMedal" xml:space="preserve">
     <value />
   </data>
+  <data name="Column_Performance_DamageBlockedByArmor" xml:space="preserve">
+    <value>Damage blocked by armor</value>
+  </data>
+  <data name="Column_Performance_PotentialDamageReceived" xml:space="preserve">
+    <value>Potential damage received</value>
+  </data>
+  <data name="Column_Performance_AvgDamageBlockedByArmor" xml:space="preserve">
+    <value>Average Damage blocked by armor</value>
+  </data>
+  <data name="Column_Performance_AvgPotentialDamageReceived" xml:space="preserve">
+    <value>Average Potential damage received</value>
+  </data>
 </root>

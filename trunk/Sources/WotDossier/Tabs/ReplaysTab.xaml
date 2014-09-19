@@ -14,7 +14,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-        
+
+        <ImageBrush x:Key="bcolor" Stretch="Fill" />
+
         <HierarchicalDataTemplate x:Key="TreeTemplate" ItemsSource="{Binding Folders}" DataType="replay:ReplayFolder">
             <Grid>
                 <ContextMenuService.ContextMenu>
@@ -136,8 +138,20 @@
             </DataGrid.InputBindings>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Map}" Binding="{Binding MapName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding TankName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Tank}" CellStyle="{StaticResource DataGridCellCenterStyle}" SortMemberPath="TankName">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.Background>
+                                    <ImageBrush ImageSource="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static converters:CountryIdToImageConverter.Default}}" Stretch="Fill" />
+                                </Grid.Background>
+                                <Image Width="70" Height="40" HorizontalAlignment="Left" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" />
+                                <TextBlock Margin="60,0,5,0" VerticalAlignment="Center" Text="{Binding Path=TankName}" Foreground="White" HorizontalAlignment="Left" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding TankName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>-->
                 <DataGridTextColumn Header="{x:Static resources:Resources.Settings_PlayerName}" Binding="{Binding PlayerName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Credits}" Binding="{Binding Credits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>

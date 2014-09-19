@@ -135,6 +135,9 @@ namespace WotDossier.Applications.ViewModel.Rows
         public int XpBefore88 { get; set; }
         public int BattlesCountBefore88 { get; set; }
         public int BattlesCount88 { get; set; }
+        public int BattlesCount90 { get; set; }
+        public int PotentialDamageReceived { get; set; }
+        public int DamageBlockedByArmor { get; set; }
 
         private StatisticViewModelBase TypedPrevStatistic
         {
@@ -207,6 +210,30 @@ namespace WotDossier.Applications.ViewModel.Rows
                 if (BattlesCount88 > 0)
                 {
                     return OriginalXP / (double)BattlesCount88;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgPotentialDamageReceived
+        {
+            get
+            {
+                if (BattlesCount90 > 0)
+                {
+                    return PotentialDamageReceived / (double)BattlesCount90;
+                }
+                return 0;
+            }
+        }
+
+        public double AvgDamageBlockedByArmor
+        {
+            get
+            {
+                if (BattlesCount90 > 0)
+                {
+                    return DamageBlockedByArmor / (double)BattlesCount90;
                 }
                 return 0;
             }
@@ -336,6 +363,10 @@ namespace WotDossier.Applications.ViewModel.Rows
             XpBefore88 = Predicate(tank).xpBefore8_8;
             BattlesCountBefore88 = Predicate(tank).battlesCountBefore8_8;
             BattlesCount88 = Predicate(tank).battlesCount - BattlesCountBefore88;
+            BattlesCount90 = Predicate(tank).battlesCount - Predicate(tank).battlesCountBefore9_0;
+            PotentialDamageReceived = Predicate(tank).potentialDamageReceived;
+            DamageBlockedByArmor = Predicate(tank).damageBlockedByArmor;
+
 
             #region [ IStatisticBattles ]
             BattlesCount = Predicate(tank).battlesCount;

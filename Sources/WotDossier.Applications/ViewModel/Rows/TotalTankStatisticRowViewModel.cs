@@ -48,6 +48,9 @@ namespace WotDossier.Applications.ViewModel.Rows
             XpBefore88 = list.Sum(x => x.XpBefore88);
             BattlesCountBefore88 = list.Sum(x => x.BattlesCountBefore88);
             BattlesCount88 = list.Sum(x => x.BattlesCount88);
+            BattlesCount90 = list.Sum(x => x.BattlesCount90);
+            PotentialDamageReceived = list.Sum(x => x.PotentialDamageReceived);
+            DamageBlockedByArmor = list.Sum(x => x.DamageBlockedByArmor); 
             IsPremium = false;
 
             #region [ ITankRowBattleAwards ]

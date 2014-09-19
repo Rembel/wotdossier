@@ -48,6 +48,14 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_HeHitsReceived}" Binding="{Binding HeHitsReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_HeHits}" Binding="{Binding HeHits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_Pierced}" Binding="{Binding Pierced, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+
+                <!--<DataGridTextColumn Header="BattlesCount88" Binding="{Binding BattlesCount88, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />-->
+                <!--<DataGridTextColumn Header="BattlesCount90" Binding="{Binding BattlesCount90, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />-->
+
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_PotentialDamageReceived}" Binding="{Binding PotentialDamageReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_AvgPotentialDamageReceived}" Binding="{Binding AvgPotentialDamageReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_DamageBlockedByArmor}" Binding="{Binding DamageBlockedByArmor, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_AvgDamageBlockedByArmor}" Binding="{Binding AvgDamageBlockedByArmor, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

@@ -32,6 +32,7 @@ namespace WotDossier.Domain.Interfaces
         double SurvivedAndWonPercent { get; }
         int BattlesCountBefore88 { get; set; }
         int BattlesCount88 { get; set; }
+        int BattlesCount90 { get; set; }
 
         #endregion
 
@@ -80,6 +81,8 @@ namespace WotDossier.Domain.Interfaces
         int PiercedReceived { get; set; }
         int HeHitsReceived { get; set; }
         int HeHits { get; set; }
+        int PotentialDamageReceived { get; set; }
+        int DamageBlockedByArmor { get; set; }
 
         #endregion
 

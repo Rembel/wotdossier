@@ -2590,11 +2590,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average Damage blocked by armor.
+        /// </summary>
+        public static string Column_Performance_AvgDamageBlockedByArmor {
+            get {
+                return ResourceManager.GetString("Column_Performance_AvgDamageBlockedByArmor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Average Original XP.
         /// </summary>
         public static string Column_Performance_AvgOriginalXP {
             get {
                 return ResourceManager.GetString("Column_Performance_AvgOriginalXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Potential damage received.
+        /// </summary>
+        public static string Column_Performance_AvgPotentialDamageReceived {
+            get {
+                return ResourceManager.GetString("Column_Performance_AvgPotentialDamageReceived", resourceCulture);
             }
         }
         
@@ -2649,6 +2667,15 @@ namespace WotDossier.Resources {
         public static string Column_Performance_DamageAssistedTrack {
             get {
                 return ResourceManager.GetString("Column_Performance_DamageAssistedTrack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage blocked by armor.
+        /// </summary>
+        public static string Column_Performance_DamageBlockedByArmor {
+            get {
+                return ResourceManager.GetString("Column_Performance_DamageBlockedByArmor", resourceCulture);
             }
         }
         
@@ -2739,6 +2766,15 @@ namespace WotDossier.Resources {
         public static string Column_Performance_PiercedReceived {
             get {
                 return ResourceManager.GetString("Column_Performance_PiercedReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Potential damage received.
+        /// </summary>
+        public static string Column_Performance_PotentialDamageReceived {
+            get {
+                return ResourceManager.GetString("Column_Performance_PotentialDamageReceived", resourceCulture);
             }
         }
         

@@ -61,19 +61,19 @@
                     </Style>
                 </TabControl.Resources>
                 <!--Common tab-->
-                <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Common}" Name="tabCommon">
+                <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Common}">
                     <controls:StatisticView  HorizontalAlignment="Center" DataContext="{Binding TankStatistic}" Background="Transparent"></controls:StatisticView>
                 </TabItem>
-                <TabItem TabIndex="1" Header="{Binding PeriodTabHeader}" Name="tabPeriod">
+                <TabItem TabIndex="1" Header="{Binding PeriodTabHeader}">
                     <tabs:PeriodTab x:Name="PeriodTab" HorizontalAlignment="Center" DataContext="{Binding TankStatistic}"></tabs:PeriodTab>
                 </TabItem>
-                <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Achievements}" Name="tabAchievements">
+                <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Achievements}">
                     <ScrollViewer>
                         <controls:Achievements DataContext="{Binding TankStatistic}"></controls:Achievements>
                     </ScrollViewer>
                 </TabItem>
                 <!--Charts-->
-                <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Chart}" Name="tabChart" DataContext="{Binding ChartView}">
+                <TabItem TabIndex="0" Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}">
                     <TabControl HorizontalAlignment="Center" Margin="0,50,0,50" SnapsToDevicePixels="True">
                         <TabControl.Resources>
                             <Style TargetType="TabPanel">

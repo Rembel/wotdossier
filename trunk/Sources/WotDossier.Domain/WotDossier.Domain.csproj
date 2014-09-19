@@ -141,6 +141,7 @@
     <Compile Include="Replay\Factors.cs" />
     <Compile Include="Replay\FirstBlock.cs" />
     <Compile Include="Replay\BattleType.cs" />
+    <Compile Include="Replay\Gameplay.cs" />
     <Compile Include="Replay\Personal.cs" />
     <Compile Include="Replay\Player.cs" />
     <Compile Include="Replay\Replay.cs" />

@@ -167,6 +167,9 @@
     <Compile Include="Controls\RatingView.xaml.cs">
       <DependentUpon>RatingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ExtendedStatisticView.xaml.cs">
+      <DependentUpon>ExtendedStatisticView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatisticView.xaml.cs">
       <DependentUpon>StatisticView.xaml</DependentUpon>
     </Compile>
@@ -433,6 +436,10 @@
     <Page Include="Controls\RatingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ExtendedStatisticView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\StatisticView.xaml">
       <SubType>Designer</SubType>

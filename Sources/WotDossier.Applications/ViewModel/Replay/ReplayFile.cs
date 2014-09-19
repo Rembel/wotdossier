@@ -30,6 +30,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public TimeSpan BattleTime { get; set; }
         public BattleType BattleType { get; set; }
+        public Gameplay Gameplay { get; set; }
         public Version ClientVersion { get; set; }
         public string Comment { get; set; }
         public Country CountryId { get; set; }
@@ -178,6 +179,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 PlayerName = replay.datablock_1.playerName;
 
                 BattleType = (BattleType) replay.datablock_1.battleType;
+
+                Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);
     
                 if (replay.datablock_battle_result != null)
                 {

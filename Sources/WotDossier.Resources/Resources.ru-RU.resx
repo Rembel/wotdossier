@@ -3176,4 +3176,10 @@
   <data name="Column_Performance_AvgPotentialDamageReceived" xml:space="preserve">
     <value>Ср. Потенциальный полученный урон</value>
   </data>
+    <data name="Chart_Replays_Total_Count" xml:space="preserve">
+    <value>Всего: {0:0}</value>
+  </data>
+    <data name="Chart_Replays_Total_Win_Percent" xml:space="preserve">
+    <value>Всего: {0:0.0}%</value>
+  </data>
 </root>

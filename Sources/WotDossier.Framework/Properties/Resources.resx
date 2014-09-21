@@ -135,4 +135,7 @@
   <data name="WPFMessageBox_Header" xml:space="preserve">
     <value>Show Details</value>
   </data>
+    <data name="Chart_Replays_Total_Count" xml:space="preserve">
+    <value>Total: {0:0}</value>
+  </data>
 </root>

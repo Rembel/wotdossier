@@ -46,7 +46,14 @@
                                                      MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
                                           Margin="20,10,20,10" MaxX="{Binding MaxMapBattles}">
                     <d3:Header>
-                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_ReplaysCountByMap}"></TextBlock>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_ReplaysCountByMap}" />
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="14" Text="{Binding TotalReplaysCount}" />
+                        </Grid>
                     </d3:Header>
                     <d3:IntegerAxis ShowMinorTicks="False" />
                     <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
@@ -74,7 +81,14 @@
                                                      MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
                                           Margin="20,10,20,10" MaxX="{Binding MaxWinReplayPercent}">
                     <d3:Header>
-                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinReplaysPercentByMap}"></TextBlock>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="14" Text="{Binding TotalWinPercent}" />
+                        </Grid>
                     </d3:Header>
                     <d3:IntegerAxis ShowMinorTicks="False" />
                     <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">

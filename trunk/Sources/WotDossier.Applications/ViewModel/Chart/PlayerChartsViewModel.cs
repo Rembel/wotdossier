@@ -325,6 +325,8 @@ namespace WotDossier.Applications.ViewModel.Chart
         }
 
         private ReplaysFilterViewModel _replaysFilter;
+        private string _totalReplaysCount;
+        private string _totalWinPercent;
 
         public ReplaysFilterViewModel ReplaysFilter
         {
@@ -332,6 +334,26 @@ namespace WotDossier.Applications.ViewModel.Chart
         }
 
         #endregion
+
+        public string TotalReplaysCount
+        {
+            get { return _totalReplaysCount; }
+            set
+            {
+                _totalReplaysCount = value;
+                RaisePropertyChanged("TotalReplaysCount");
+            }
+        }
+
+        public string TotalWinPercent
+        {
+            get { return _totalWinPercent; }
+            set
+            {
+                _totalWinPercent = value;
+                RaisePropertyChanged("TotalWinPercent");
+            }
+        }
 
         public PlayerChartsViewModel()
         {
@@ -346,8 +368,9 @@ namespace WotDossier.Applications.ViewModel.Chart
         {
             List<DataPoint> dataSource = ReplaysDataSource.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
 
-            IEnumerable<ReplayFile> replayFiles = ReplaysDataSource.Where(x => x.MapId == 0);
-            int count = replayFiles.Count();
+            var totalReplaysCount = ReplaysDataSource.Count();
+
+            TotalReplaysCount = string.Format(Resources.Resources.Chart_Replays_Total_Count, totalReplaysCount);
 
             ReplaysByMapDataSource = dataSource;
 
@@ -366,6 +389,9 @@ namespace WotDossier.Applications.ViewModel.Chart
             List<DataPoint> dataSource = ReplaysDataSource.GroupBy(x => x.MapId).Select(
                 x => new DataPoint(
                     100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key)).ToList();
+
+            var totalWinPercent = ReplaysDataSource.Count(y => y.IsWinner == BattleStatus.Victory) * 100.0 / ReplaysDataSource.Count();
+            TotalWinPercent = string.Format(Resources.Resources.Chart_Replays_Total_Win_Percent, totalWinPercent);
 
             WinReplaysPercentByMapDataSource = dataSource;
 

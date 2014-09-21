@@ -68,6 +68,7 @@ namespace WotDossier.Applications.ViewModel
 
         private List<ReplayFolder> _replaysFolders;
         private Guid? _selectedFolderId = null;
+        private bool _processing;
 
         /// <summary>
         /// Gets or sets the replays folders.
@@ -124,6 +125,13 @@ namespace WotDossier.Applications.ViewModel
         /// </summary>
         public void LoadReplaysList()
         {
+            if (_processing)
+            {
+                return;
+            }
+
+            _processing = true;
+
             if (ReplayFilter.SelectedFolder != null)
             {
                 _selectedFolderId = ReplayFilter.SelectedFolder.Id;
@@ -253,101 +261,118 @@ namespace WotDossier.Applications.ViewModel
             ProgressView.Execute(
                 Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                 {
-                    CultureHelper.SetUiCulture();
-
-                    IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
-
-                    List<ReplayFile> replayFiles = new List<ReplayFile>();
-
-                    foreach (var replayFolder in replayFolders)
+                    try
                     {
-                        string folderPath = replayFolder.Path;
+                        CultureHelper.SetUiCulture();
 
-                        if (string.IsNullOrEmpty(folderPath))
+                        IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
+
+                        List<ReplayFile> replayFiles = new List<ReplayFile>();
+
+                        foreach (var replayFolder in replayFolders)
                         {
-                            continue;
-                        }
+                            string folderPath = replayFolder.Path;
 
-                        if (Directory.Exists(folderPath))
-                        {
-                            string[] files = Directory.GetFiles(folderPath, "*.wotreplay");
-                            List<FileInfo> replays =
-                                files.Select(x => new FileInfo(Path.Combine(folderPath, x))).Where(x => x.Length > 0).ToList();
-
-                            int count = replays.Count();
-
-                            int index = 0;
-                            int processedCount = 0;
-                            foreach (FileInfo replay in replays)
+                            if (string.IsNullOrEmpty(folderPath))
                             {
-                                try
+                                continue;
+                            }
+
+                            if (Directory.Exists(folderPath))
+                            {
+                                string[] files = Directory.GetFiles(folderPath, "*.wotreplay");
+                                List<FileInfo> replays =
+                                    files.Select(x => new FileInfo(Path.Combine(folderPath, x)))
+                                        .Where(x => x.Length > 0)
+                                        .ToList();
+
+                                int count = replays.Count();
+
+                                int index = 0;
+                                int processedCount = 0;
+                                foreach (FileInfo replay in replays)
                                 {
-                                    Domain.Replay.Replay data = ReplayFileHelper.ParseReplay_8_11(replay);
-                                    if (data != null)
+                                    try
                                     {
-                                        replayFiles.Add(new PhisicalReplay(replay, data, replayFolder.Id));
-                                        processedCount++;
+                                        Domain.Replay.Replay data = ReplayFileHelper.ParseReplay_8_11(replay);
+                                        if (data != null)
+                                        {
+                                            replayFiles.Add(new PhisicalReplay(replay, data, replayFolder.Id));
+                                            processedCount++;
+                                        }
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        _log.ErrorFormat("Error on replay processing. Path - [{0}]", replay.FullName, e);
+                                    }
+                                    index++;
+                                    int percent = (index + 1)*100/count;
+                                    if (ProgressView.ReportWithCancellationCheck(bw, we, percent,
+                                        Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count,
+                                        replay.Name))
+                                    {
+                                        return;
                                     }
                                 }
-                                catch (Exception e)
-                                {
-                                    _log.ErrorFormat("Error on replay processing. Path - [{0}]", replay.FullName, e);
-                                }
-                                index++;
-                                int percent = (index + 1) * 100 / count;
-                                if (ProgressView.ReportWithCancellationCheck(bw, we, percent,
-                                    Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name))
-                                {
-                                    return;
-                                }
+                                replayFolder.Count = processedCount;
+                                // So this check in order to avoid default processing after the Cancel button has been pressed.
+                                // This call will set the Cancelled flag on the result structure.
+                                ProgressView.CheckForPendingCancellation(bw, we);
                             }
-                            replayFolder.Count = processedCount;
-                            // So this check in order to avoid default processing after the Cancel button has been pressed.
-                            // This call will set the Cancelled flag on the result structure.
-                            ProgressView.CheckForPendingCancellation(bw, we);
                         }
-                    }
 
-                    ReplayFolder root = ReplaysFolders.First();
+                        ReplayFolder root = ReplaysFolders.First();
 
-                    root.Count = ReplaysFolders.GetAll().Skip(1).Sum(x => x.Count);
+                        root.Count = ReplaysFolders.GetAll().Skip(1).Sum(x => x.Count);
 
-                    dbReplays.Join(replayFiles, x => new { x.PlayerId, x.ReplayId }, y => new { y.PlayerId, y.ReplayId },
-                        (x, y) => new { ReplayEntity = x, ReplayFile = y })
-                        .ToList()
-                        .ForEach(x =>
+                        dbReplays.Join(replayFiles, x => new {x.PlayerId, x.ReplayId}, y => new {y.PlayerId, y.ReplayId},
+                            (x, y) => new {ReplayEntity = x, ReplayFile = y})
+                            .ToList()
+                            .ForEach(x =>
+                            {
+                                x.ReplayFile.Link = x.ReplayEntity.Link;
+                                x.ReplayFile.Comment = x.ReplayEntity.Comment;
+                            });
+
+                        //add phisical replays
+                        _replays.AddRange(replayFiles.OrderByDescending(x => x.PlayTime).ToList());
+
+                        //add db replays
+                        List<DbReplay> collection =
+                            dbReplays.Where(x => x.Raw != null)
+                                .Select(
+                                    x =>
+                                        new DbReplay(CompressHelper.DecompressObject<Domain.Replay.Replay>(x.Raw),
+                                            ReplaysManager.DeletedFolder.Id))
+                                .ToList();
+                        _replays.AddRange(collection);
+
+                        //add folder for deleted replays
+                        ReplayFolder deletedFolder =
+                            root.Folders.FirstOrDefault(x => x.Id == ReplaysManager.DeletedFolder.Id);
+                        if (deletedFolder == null)
                         {
-                            x.ReplayFile.Link = x.ReplayEntity.Link;
-                            x.ReplayFile.Comment = x.ReplayEntity.Comment;
-                        });
+                            deletedFolder = ReplaysManager.DeletedFolder;
+                            Application.Current.Dispatcher.Invoke((Action) (() => root.Folders.Add(deletedFolder)));
+                        }
+                        deletedFolder.Count = collection.Count;
 
-                    //add phisical replays
-                    _replays.AddRange(replayFiles.OrderByDescending(x => x.PlayTime).ToList());
+                        ProgressView.Report(bw, 100, Resources.Resources.Progress_DataLoadCompleted);
 
-                    //add db replays
-                    List<DbReplay> collection = dbReplays.Where(x => x.Raw != null).Select(x => new DbReplay(CompressHelper.DecompressObject<Domain.Replay.Replay>(x.Raw), ReplaysManager.DeletedFolder.Id)).ToList();
-                    _replays.AddRange(collection);
+                        //refresh replays
+                        OnPropertyChanged("Replays");
 
-                    //add folder for deleted replays
-                    ReplayFolder deletedFolder = root.Folders.FirstOrDefault(x => x.Id == ReplaysManager.DeletedFolder.Id);
-                    if (deletedFolder == null)
-                    {
-                        deletedFolder = ReplaysManager.DeletedFolder;
-                        Application.Current.Dispatcher.Invoke((Action)(() => root.Folders.Add(deletedFolder)));
+                        //restore folder selection
+                        ReplayFilter.SelectedFolder =
+                            replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId || _selectedFolderId == null);
+
+                        ChartView.InitBattlesByMapChart();
+                        ChartView.InitWinReplaysPercentByMapChart();
                     }
-                    deletedFolder.Count = collection.Count;
-
-                    ProgressView.Report(bw, 100, Resources.Resources.Progress_DataLoadCompleted);
-
-                    //refresh replays
-                    OnPropertyChanged("Replays");
-
-                    //restore folder selection
-                    ReplayFilter.SelectedFolder = replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId || _selectedFolderId == null);
-
-                    ChartView.InitBattlesByMapChart();
-                    ChartView.InitWinReplaysPercentByMapChart();
-
+                    finally
+                    {
+                        _processing = false;    
+                    }
                 }, new ProgressDialogSettings(true, true, false));
         }
 

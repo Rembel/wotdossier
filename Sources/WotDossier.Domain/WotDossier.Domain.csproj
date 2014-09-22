@@ -60,6 +60,9 @@
     <Compile Include="Dossier\AppSpot\Tank.cs" />
     <Compile Include="Dossier\AppSpot\TankStatistic.cs" />
     <Compile Include="Dossier\TankV65\Achievements7x7.cs" />
+    <Compile Include="Dossier\TankV87\Achievements.cs" />
+    <Compile Include="Dossier\TankV87\AchievementsFort.cs" />
+    <Compile Include="Dossier\TankV87\TankJson.cs" />
     <Compile Include="Dossier\TankV85\Achievements7x7.cs" />
     <Compile Include="Dossier\TankV85\AchievementsClan.cs" />
     <Compile Include="Dossier\TankV85\AchievementsFort.cs" />

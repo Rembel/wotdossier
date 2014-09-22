@@ -443,10 +443,12 @@ namespace WotDossier.Dal
             _dataProvider.BeginTransaction();
             try
             {
-                ReplayEntity entity = _dataProvider.QueryOver<ReplayEntity>().Where(x => x.ReplayId == replayId)
-                    .SingleOrDefault<ReplayEntity>();
-                
-                _dataProvider.Delete(entity);
+                var replayEntities = _dataProvider.QueryOver<ReplayEntity>().Where(x => x.ReplayId == replayId).List<ReplayEntity>();
+
+                foreach (var entity in replayEntities)
+                {
+                    _dataProvider.Delete(entity);
+                }
 
                 _dataProvider.CommitTransaction();
             }

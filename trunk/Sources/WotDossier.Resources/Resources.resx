@@ -3063,10 +3063,37 @@ up to 500 m</value>
   <data name="Column_Performance_AvgPotentialDamageReceived" xml:space="preserve">
     <value>Average Potential damage received</value>
   </data>
-    <data name="Chart_Replays_Total_Count" xml:space="preserve">
+  <data name="Chart_Replays_Total_Count" xml:space="preserve">
     <value>Total: {0:0}</value>
   </data>
-    <data name="Chart_Replays_Total_Win_Percent" xml:space="preserve">
+  <data name="Chart_Replays_Total_Win_Percent" xml:space="preserve">
     <value>Total: {0:0.0}%</value>
+  </data>
+  <data name="Tooltip_Achievements_15x15_Arsonist" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_Bonecrusher" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_Charmed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_Demolition" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_Duelist" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_Even" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_Fighter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_Impenetrable" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tooltip_Achievements_15x15_ShootToKill" xml:space="preserve">
+    <value />
   </data>
 </root>

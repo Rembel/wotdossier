@@ -74,6 +74,17 @@ namespace WotDossier.Dal.Mappings
             Map(v => v.MedalGore);
             Map(v => v.MedalCoolBlood);
             Map(v => v.MedalStark);
+
+            Map(v => v.Impenetrable);
+            Map(v => v.MaxAimerSeries);
+            Map(v => v.ShootToKill);
+            Map(v => v.Fighter);
+            Map(v => v.Duelist);
+            Map(v => v.Demolition);
+            Map(v => v.Arsonist);
+            Map(v => v.Bonecrusher);
+            Map(v => v.Charmed);
+            Map(v => v.Even);
         }
     }
 }

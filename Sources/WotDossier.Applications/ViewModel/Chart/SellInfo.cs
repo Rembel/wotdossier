@@ -31,14 +31,14 @@ namespace WotDossier.Applications.ViewModel.Chart
             set { _tankName = value; PropertyChanged.Raise(this, "TankName"); }
         }
 
-        private int _battles;
+        private double _battles;
         /// <summary>
         /// Gets or sets the battles.
         /// </summary>
         /// <value>
         /// The battles.
         /// </value>
-        public int Battles
+        public double Battles
         {
             get { return _battles; }
             set { _battles = value; PropertyChanged.Raise(this, "Battles"); }
@@ -52,5 +52,10 @@ namespace WotDossier.Applications.ViewModel.Chart
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
+
+        public override string ToString()
+        {
+            return string.Format("{0}: battles: {1}, {2:0.0}%", TankName, Battles, WinPercent);
+        }
     }
 }

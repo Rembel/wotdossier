@@ -28,7 +28,7 @@
                                          MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent" BorderThickness="0">
                 <d3:ViewportUIContainer>
                     <d3:PieChart Name="PieChart" Width="150" Height="150" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanksDataSource}"
-							                StartAngle="{Binding Path=Value, ElementName=startAngleSlider}">
+							                StartAngle="0">
                         <d3:PieChart.Resources>
                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                         </d3:PieChart.Resources>

@@ -28,5 +28,11 @@ namespace WotDossier.Domain.Tank
 
         [DataMember(Name = "wn8_nominal_defence")]
         public double Wn8NominalDefence { get; set; }
+
+        [DataMember(Name = "tank_level")]
+        public int TankLevel { get; set; }
+
+        [DataMember(Name = "tank_type")]
+        public TankType TankType { get; set; }
     }
 }

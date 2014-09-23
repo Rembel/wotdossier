@@ -191,6 +191,7 @@
     <Compile Include="Tank\ConsumableDescription.cs" />
     <Compile Include="Tank\AchievementsClan.cs" />
     <Compile Include="Tank\DeviceDescription.cs" />
+    <Compile Include="Interfaces\IDescription.cs" />
     <Compile Include="Tank\MaxJson.cs" />
     <Compile Include="Tank\LevelRange.cs" />
     <Compile Include="Tank\RatingExpectancy.cs" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Dal;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Tank;
 
@@ -354,6 +355,8 @@ namespace WotDossier.Applications.Logic
         /// <param name="predicate">The statistic predicate.</param>
         public static double Wn8(List<TankJson> tanks, Func<TankJson, StatisticJson> predicate)
         {
+            tanks = Filter(tanks).Cast<TankJson>().ToList();
+
             double battles = tanks.Sum(x => predicate(x).battlesCount);
 
             if (battles > 0)
@@ -378,11 +381,23 @@ namespace WotDossier.Applications.Logic
         }
 
         /// <summary>
+        /// Filters not existed tanks.
+        /// </summary>
+        /// <param name="tanks">The tanks to filter.</param>
+        /// <returns></returns>
+        private static List<ITankDescription> Filter(IEnumerable<ITankDescription> tanks)
+        {
+            return tanks.Where(x => !Dictionaries.Instance.NotExistsedTanksList.Contains(x.Description.UniqueId())).ToList();
+        }
+
+        /// <summary>
         /// http://blog.noobmeter.com/2013/10/wn8-rating-alpha-testing.html
         /// </summary>
         /// <param name="tanks">The tanks.</param>
         public static double Wn8(List<ITankStatisticRow> tanks)
         {
+            tanks = Filter(tanks).Cast<ITankStatisticRow>().ToList();
+
             double battles = tanks.Sum(x => x.BattlesCount);
 
             if (battles > 0)
@@ -410,6 +425,8 @@ namespace WotDossier.Applications.Logic
         /// <param name="tanks">The tanks.</param>
         public static double Wn8ForPeriod(List<ITankStatisticRow> tanks)
         {
+            tanks = Filter(tanks).Cast<ITankStatisticRow>().ToList();
+
             double battles = tanks.Sum(x => x.BattlesCountDelta);
 
             if (battles > 0)

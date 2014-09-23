@@ -20,6 +20,7 @@ using WotDossier.Common;
 using WotDossier.Common.Reflection;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
+using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Tank;
@@ -266,6 +267,8 @@ namespace WotDossier.Test
             foreach (XmlNode node in nodes)
             {
                 XmlNodeList values = node.SelectNodes("td");
+                XmlNode tankLevel = values[3];
+                XmlNode tankType = values[4];
                 XmlNode nominalDamage = values[5];
                 XmlNode wn8NominalDamage = values[6];
                 XmlNode wn8NominalWinRate = values[7];
@@ -279,6 +282,8 @@ namespace WotDossier.Test
                 ratingExpectancy.PRNominalDamage = double.Parse(nominalDamage.InnerText.Replace(",", ""));
                 if (!string.IsNullOrEmpty(wn8NominalDamage.InnerText))
                 {
+                    ratingExpectancy.TankLevel = int.Parse(tankLevel.InnerText);
+                    ratingExpectancy.TankType = (TankType)Enum.Parse(typeof(TankType), tankType.InnerText);
                     ratingExpectancy.Wn8NominalDamage = double.Parse(wn8NominalDamage.InnerText.Replace(",", ""));
                     ratingExpectancy.Wn8NominalWinRate = double.Parse(wn8NominalWinRate.InnerText.Replace("%", ""));
                     ratingExpectancy.Wn8NominalSpotted = double.Parse(wn8NominalSpotted.InnerText.Replace(".", ","));

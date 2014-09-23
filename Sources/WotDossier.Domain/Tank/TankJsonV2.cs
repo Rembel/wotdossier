@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using WotDossier.Common;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Domain.Tank
 {
     /// <summary>
     /// 
     /// </summary>
-    public class TankJson
+    public class TankJson : ITankDescription
     {
         public static TankJson Initial = new TankJson
         {

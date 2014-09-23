@@ -206,8 +206,6 @@ namespace WotDossier.Dal
                     20212,//m4a3e8_sherman_training
                     5,//KV
                     20009,//T23
-                    222,//t44_122
-                    223,//t44_85
                     30002,//Type 59 G
                     20211,//sexton_i
                     20255,//M24 Chaffee GT
@@ -358,12 +356,21 @@ namespace WotDossier.Dal
                     {
                         tank.Expectancy = _ratingExpectations[key];
                     }
+                    else
+                    {
+                        tank.Expectancy = GetNearestExpectationsByTypeAndLevel(tank);
+                    }
 
                     tanks.Add(tank);
                 }
             }
 
             return tanks.ToDictionary(x => x.UniqueId());
+        }
+
+        private RatingExpectancy GetNearestExpectationsByTypeAndLevel(TankDescription tank)
+        {
+            return _ratingExpectations.Values.FirstOrDefault(x => x.TankLevel == tank.Tier && (int) x.TankType == tank.Type);
         }
 
         private Dictionary<int, TankServerInfo> ReadServerTanksDictionary()

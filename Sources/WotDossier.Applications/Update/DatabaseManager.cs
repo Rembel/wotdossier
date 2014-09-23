@@ -33,7 +33,7 @@ namespace WotDossier.Applications.Update
                 transaction = BeginTransaction(connection);
                 Logger.Debug("Update. Dest transaction started");
 
-                foreach (var dbUpdate in updates)
+                foreach (var dbUpdate in updates.OrderBy(x => x.Version))
                 {
                     //TODO transactions
                     if (dbUpdate.Version > version)

@@ -184,6 +184,16 @@
             <!--Honorary Ranks-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_HonoraryRanks}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+                <controls:MedalAchievement Value="{Binding Fighter}" MinValue="19" Delta="{Binding FighterDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Fighter.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Fighter}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Fighter}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding Duelist}" MinValue="19" Delta="{Binding DuelistDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Duelist.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Duelist}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Duelist}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding SurvivorLongest}" MinValue="19" Delta="{Binding SurvivorLongestDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Diehard.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Survivor}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Survivor}" />
@@ -197,6 +207,11 @@
                 <controls:MedalAchievement Value="{Binding MedalCoolBlood}" Delta="{Binding MedalCoolBloodDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalCoolBlood.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalCoolBlood}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalCoolBlood}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding Impenetrable}" MinValue="19" Delta="{Binding ImpenetrableDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Impenetrable.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Impenetrable}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Impenetrable}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding Kamikaze}" Delta="{Binding KamikazeDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Kamikaze.png">
@@ -217,6 +232,11 @@
                 <controls:MedalAchievement Value="{Binding Bombardier}" Delta="{Binding BombardierDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Bombardier.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Bombardier}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Bombardier}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding ShootToKill}" Delta="{Binding ShootToKillDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ShootToKill.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_ShootToKill}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_ShootToKill}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding ReaperLongest}" Delta="{Binding ReaperLongestDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HandOfDeath.png">
@@ -262,6 +282,31 @@
             <!--Commemorative Achievements-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_CommemorativeAchievements}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
+                <controls:MedalAchievement Value="{Binding Even}" Delta="{Binding EvenDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Even.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Even}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Even}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding Charmed}" Delta="{Binding CharmedDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Charmed.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Charmed}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Charmed}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding Bonecrusher}" Delta="{Binding BonecrusherDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Bonecrusher.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Bonecrusher}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Bonecrusher}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding Demolition}" Delta="{Binding DemolitionDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Demolition.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Demolition}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Demolition}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding Arsonist}" Delta="{Binding ArsonistDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Arsonist.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Arsonist}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Arsonist}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding MedalMonolith}" Delta="{Binding MedalMonolithDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalMonolith.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalMonolith}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalMonolith}" />

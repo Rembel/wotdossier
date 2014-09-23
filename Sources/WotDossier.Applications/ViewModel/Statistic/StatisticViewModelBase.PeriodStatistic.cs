@@ -762,6 +762,56 @@ namespace WotDossier.Applications.ViewModel.Statistic
             get { return DamageRating - TypedPrevStatistic.DamageRating; }
         }
 
+        public int ImpenetrableDelta
+        {
+            get { return Impenetrable - TypedPrevStatistic.Impenetrable; }
+        }
+
+        public int MaxAimerSeriesDelta
+        {
+            get { return MaxAimerSeries - TypedPrevStatistic.MaxAimerSeries; }
+        }
+
+        public int ShootToKillDelta
+        {
+            get { return ShootToKill - TypedPrevStatistic.ShootToKill; }
+        }
+
+        public int FighterDelta
+        {
+            get { return Fighter - TypedPrevStatistic.Fighter; }
+        }
+
+        public int DuelistDelta
+        {
+            get { return Duelist - TypedPrevStatistic.Duelist; }
+        }
+
+        public int DemolitionDelta
+        {
+            get { return Demolition - TypedPrevStatistic.Demolition; }
+        }
+
+        public int ArsonistDelta
+        {
+            get { return Arsonist - TypedPrevStatistic.Arsonist; }
+        }
+
+        public int BonecrusherDelta
+        {
+            get { return Bonecrusher - TypedPrevStatistic.Bonecrusher; }
+        }
+
+        public int CharmedDelta
+        {
+            get { return Charmed - TypedPrevStatistic.Charmed; }
+        }
+
+        public int EvenDelta
+        {
+            get { return Even - TypedPrevStatistic.Even; }
+        }
+
         #endregion
 
         #region Achievments 7x7

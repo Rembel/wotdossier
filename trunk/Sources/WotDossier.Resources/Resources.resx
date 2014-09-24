@@ -3096,4 +3096,7 @@ up to 500 m</value>
   <data name="Tooltip_Achievements_15x15_ShootToKill" xml:space="preserve">
     <value />
   </data>
+  <data name="Tooltip_Achievements_15x15_MaxAimerSeries" xml:space="preserve">
+    <value />
+  </data>
 </root>

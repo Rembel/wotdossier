@@ -93,6 +93,17 @@ namespace WotDossier.Applications.Logic.Adapter
             MedalStark = tanks.Sum(x => x.Achievements.MedalStark);
             DamageRating = tanks.Max(x => x.Achievements.DamageRating);
 
+            Impenetrable = tanks.Sum(x => x.Achievements.Impenetrable);
+            MaxAimerSeries = tanks.Max(x => x.Achievements.MaxAimerSeries);
+            ShootToKill = tanks.Sum(x => x.Achievements.ShootToKill);
+            Fighter = tanks.Sum(x => x.Achievements.Fighter);
+            Duelist = tanks.Sum(x => x.Achievements.Duelist);
+            Demolition = tanks.Sum(x => x.Achievements.Demolition);
+            Arsonist = tanks.Sum(x => x.Achievements.Arsonist);
+            Bonecrusher = tanks.Sum(x => x.Achievements.Bonecrusher);
+            Charmed = tanks.Sum(x => x.Achievements.Charmed);
+            Even = tanks.Sum(x => x.Achievements.Even);
+
             MasterGunner = tanks.Sum(x => x.Achievements.MasterGunner);
             Alaric = tanks.Sum(x => x.Achievements.Alaric);
         }

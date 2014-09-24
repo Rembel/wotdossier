@@ -184,12 +184,12 @@
             <!--Honorary Ranks-->
             <TextBlock Text="{x:Static resources:Resources.Label_Achievements_HonoraryRanks}" FontSize="17" FontFamily="Arial" Foreground="White" Margin="0,40,0,20"></TextBlock>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" ItemHeight="90" ItemWidth="90">
-                <controls:MedalAchievement Value="{Binding Fighter}" MinValue="19" Delta="{Binding FighterDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Fighter.png">
+                <controls:MedalAchievement Value="{Binding Fighter}" Delta="{Binding FighterDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Fighter.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Fighter}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Fighter}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Duelist}" MinValue="19" Delta="{Binding DuelistDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Duelist.png">
+                <controls:MedalAchievement Value="{Binding Duelist}" Delta="{Binding DuelistDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Duelist.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Duelist}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Duelist}" />
                     </ToolTipService.ToolTip>
@@ -209,7 +209,7 @@
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalCoolBlood}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalCoolBlood}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
-                <controls:MedalAchievement Value="{Binding Impenetrable}" MinValue="19" Delta="{Binding ImpenetrableDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Impenetrable.png">
+                <controls:MedalAchievement Value="{Binding Impenetrable}" Delta="{Binding ImpenetrableDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Impenetrable.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Impenetrable}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Impenetrable}" />
                     </ToolTipService.ToolTip>
@@ -237,6 +237,11 @@
                 <controls:MedalAchievement Value="{Binding ShootToKill}" Delta="{Binding ShootToKillDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ShootToKill.png">
                     <ToolTipService.ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_ShootToKill}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_ShootToKill}" />
+                    </ToolTipService.ToolTip>
+                </controls:MedalAchievement>
+                <controls:MedalAchievement Value="{Binding MaxAimerSeries}" Delta="{Binding MaxAimerSeriesDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MaxAimerSeries.png">
+                    <ToolTipService.ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MaxAimerSeries}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MaxAimerSeries}" />
                     </ToolTipService.ToolTip>
                 </controls:MedalAchievement>
                 <controls:MedalAchievement Value="{Binding ReaperLongest}" Delta="{Binding ReaperLongestDelta}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HandOfDeath.png">

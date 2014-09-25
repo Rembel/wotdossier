@@ -165,11 +165,11 @@
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding CreditsContributionOut, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding PremiumCreditsContributionOut, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding CreditsContributionIn, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding PremiumCreditsContributionIn, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
@@ -232,6 +232,11 @@
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                     <controls:TextWithImage Text="{Binding XpFactor}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <TextBlock Margin="30,0,0,0" Text="{x:Static resources:Resources.Label_ReplayDetail_ActionCredits}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
+                    <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                    <controls:TextWithImage Text="{Binding ActionXp}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="{x:Static resources:Resources.Label_ReplayDetail_OutContribution}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
@@ -250,6 +255,10 @@
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <controls:TextWithImage Text="{Binding XpFactor}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
+                </Grid>
+                <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
+                    <controls:TextWithImage Text="{Binding ActionXp}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">

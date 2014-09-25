@@ -127,16 +127,16 @@
         <medal name="Medal_15x15_MedalCoolBlood" id="299" icon="medalCoolBlood" type="0"/>
         <medal name="Medal_15x15_MedalStark" id="300" icon="medalStark" type="0"/>
 
-        <medal name="Medal_15x15_Impenetrable" id="517" icon="impenetrable" type="0"/>
-        <medal name="Medal_15x15_MaxAimerSeries" id="520" icon="maxAimerSeries" type="0"/>
-        <medal name="Medal_15x15_ShootToKill" id="521" icon="shootToKill" type="0"/>
-        <medal name="Medal_15x15_Fighter" id="522" icon="fighter" type="0"/>
-        <medal name="Medal_15x15_Duelist" id="523" icon="duelist" type="0"/>
-        <medal name="Medal_15x15_Demolition" id="524" icon="demolition" type="0"/>
-        <medal name="Medal_15x15_Arsonist" id="525" icon="arsonist" type="0"/>
-        <medal name="Medal_15x15_Bonecrusher" id="526" icon="bonecrusher" type="0"/>
-        <medal name="Medal_15x15_Charmed" id="527" icon="charmed" type="0"/>
-        <medal name="Medal_15x15_Even" id="528" icon="even" type="0"/>
+        <medal name="Medal_15x15_Impenetrable" id="517" icon="impenetrable" type="1"/>
+        <medal name="Medal_15x15_MaxAimerSeries" id="520" icon="maxAimerSeries" type="1"/>
+        <medal name="Medal_15x15_ShootToKill" id="521" icon="shootToKill" type="1"/>
+        <medal name="Medal_15x15_Fighter" id="522" icon="fighter" type="1"/>
+        <medal name="Medal_15x15_Duelist" id="523" icon="duelist" type="1"/>
+        <medal name="Medal_15x15_Demolition" id="524" icon="demolition" type="1"/>
+        <medal name="Medal_15x15_Arsonist" id="525" icon="arsonist" type="1"/>
+        <medal name="Medal_15x15_Bonecrusher" id="526" icon="bonecrusher" type="1"/>
+        <medal name="Medal_15x15_Charmed" id="527" icon="charmed" type="1"/>
+        <medal name="Medal_15x15_Even" id="528" icon="even" type="1"/>
     </Special>
     <Common>
         <medal name="Medal_15x15_Kay" id="4101" icon="medalKay1" type="1"/>

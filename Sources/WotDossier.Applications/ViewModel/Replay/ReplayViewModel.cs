@@ -91,8 +91,10 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int Shots { get; set; }
 
         public int CreditsContributionOut { get; set; }
+        public int PremiumCreditsContributionOut { get; set; }
 
         public int CreditsContributionIn { get; set; }
+        public int PremiumCreditsContributionIn { get; set; }
 
         public int TotalCredits { get; set; }
 
@@ -105,6 +107,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int AutoRepairCost { get; set; }
 
         public int ActionCredits { get; set; }
+        public int ActionXp { get; set; }
 
         public string XpTitle { get; set; }
 
@@ -117,8 +120,10 @@ namespace WotDossier.Applications.ViewModel.Replay
         
         public int TotalPremiumXp { get; set; }
 
+        public int BaseCredits { get; set; }
         public int Credits { get; set; }
 
+        public int BasePremiumCredits { get; set; }
         public int PremiumCredits { get; set; }
 
         public string MapDisplayName { get; set; }
@@ -274,19 +279,46 @@ namespace WotDossier.Applications.ViewModel.Replay
                 FullName = ReplayUser.FullName;
 
                 double premiumFactor = replay.datablock_battle_result.personal.premiumCreditsFactor10 / (double)10;
-                PremiumCredits = replay.datablock_battle_result.personal.credits;
-                PremiumTotalXp = replay.datablock_battle_result.personal.xp;
-                PremiumXp = (int)Math.Round(ReplayUser.Xp * premiumFactor, 0);
-                Credits = (int) Math.Round((PremiumCredits / premiumFactor), 0);
-                ActionCredits = Credits - ReplayUser.Credits;
-                XpFactor = replay.datablock_battle_result.personal.dailyXPFactor10/10;
-                TotalXp = ReplayUser.Xp * XpFactor;
-                Xp = ReplayUser.Xp;
+                XpFactor = replay.datablock_battle_result.personal.dailyXPFactor10 / 10;
+
+                int creditsPenalty = replay.datablock_battle_result.personal.creditsPenalty;
+                int premiumCreditsPenalty = (int)Math.Round(creditsPenalty * premiumFactor, 0);
+                
+
+                int premiumCredits;
+                int premiumXP;
+
+                if (replay.datablock_battle_result.personal.isPremium)
+                {
+                    premiumCredits = replay.datablock_battle_result.personal.credits;
+                    premiumXP = replay.datablock_battle_result.personal.originalXP == 0 ? replay.datablock_battle_result.personal.xp : (int)Math.Round(replay.datablock_battle_result.personal.originalXP * premiumFactor, 0);
+                    PremiumCreditsContributionIn = replay.datablock_battle_result.personal.creditsContributionIn;
+                    PremiumCreditsContributionOut = premiumCreditsPenalty;
+                }
+                else
+                {
+                    premiumCredits = (int)Math.Round(replay.datablock_battle_result.personal.credits * premiumFactor, 0);
+                    premiumXP = (int)Math.Round(replay.datablock_battle_result.personal.xp * premiumFactor, 0);
+                }
+
+                PremiumCredits = premiumCredits;
+                PremiumXp = premiumXP;
+
+                CreditsContributionOut = (int)Math.Round((PremiumCreditsContributionOut / premiumFactor), 0);
+                CreditsContributionIn = (int)Math.Round((PremiumCreditsContributionIn / premiumFactor), 0);
+
+                Credits = (int)Math.Round((PremiumCredits / premiumFactor), 0);
+                Xp = (int)Math.Round((PremiumXp / premiumFactor), 0);
+
+                ActionCredits = replay.datablock_battle_result.personal.eventCredits;
+                ActionXp = replay.datablock_battle_result.personal.eventXP;
+
                 XpPenalty = replay.datablock_battle_result.personal.xpPenalty;
                 XpTitle = GetXpTitle(XpFactor);
 
-                CreditsContributionOut = replay.datablock_battle_result.personal.creditsContributionOut;
-                CreditsContributionIn = replay.datablock_battle_result.personal.creditsContributionIn;
+                PremiumTotalXp = PremiumXp * XpFactor + ActionXp;
+                TotalXp = Xp * XpFactor + ActionXp;
+
                 AutoRepairCost = replay.datablock_battle_result.personal.autoRepairCost ?? 0;
                 AutoLoadCost = GetAutoLoadCost(replay);
                 AutoEquipCost = GetAutoEquipCost(replay);

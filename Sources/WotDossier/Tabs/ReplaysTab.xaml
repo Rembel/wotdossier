@@ -15,8 +15,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
 
-        <ImageBrush x:Key="bcolor" Stretch="Fill" />
-
         <HierarchicalDataTemplate x:Key="TreeTemplate" ItemsSource="{Binding Folders}" DataType="replay:ReplayFolder">
             <Grid>
                 <ContextMenuService.ContextMenu>
@@ -142,11 +140,11 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Grid.Background>
+                                <!--<Grid.Background>
                                     <ImageBrush ImageSource="{Binding Path=CountryId, Mode=OneWay, Converter={x:Static converters:CountryIdToImageConverter.Default}}" Stretch="Fill" />
-                                </Grid.Background>
+                                </Grid.Background>-->
                                 <Image Width="70" Height="40" HorizontalAlignment="Left" Source="{Binding Path=Icon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" />
-                                <TextBlock Margin="60,0,5,0" VerticalAlignment="Center" Text="{Binding Path=TankName}" Foreground="White" HorizontalAlignment="Left" />
+                                <TextBlock Margin="60,0,5,0" VerticalAlignment="Center" Text="{Binding Path=TankName}" Foreground="Black" HorizontalAlignment="Left" />
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

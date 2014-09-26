@@ -227,11 +227,21 @@ namespace WotDossier.Applications.ViewModel
             PackReplays(replays, name);
         }
 
+        enum CodePage
+        {
+            OEMCyrillic = 855,
+            CyrillicDOS = 866,
+            CyrillicWindows = 1251,
+            CyrillicKOI8R = 20866,
+            CyrillicRussian = 20880,
+            CyrillicISO = 28595
+        }
+
         private static void PackReplays(List<ReplayFile> replays, string name)
         {
             using (new WaitCursor())
             {
-                using (ZipFile zip = new ZipFile())
+                using (ZipFile zip = new ZipFile(Encoding.GetEncoding((int)CodePage.CyrillicDOS)))
                 {
                     // add this map file into the "images" directory in the zip archive
                     foreach (ReplayFile replayFile in replays)

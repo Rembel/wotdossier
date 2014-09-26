@@ -142,5 +142,10 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             PhisicalFile.Delete();
         }
+
+        public override string ToString()
+        {
+            return PhisicalPath;
+        }
     }
 }

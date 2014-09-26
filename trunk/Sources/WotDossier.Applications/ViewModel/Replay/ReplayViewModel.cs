@@ -286,30 +286,28 @@ namespace WotDossier.Applications.ViewModel.Replay
                 
 
                 int premiumCredits;
-                int premiumXP;
-
+                
                 if (replay.datablock_battle_result.personal.isPremium)
                 {
                     premiumCredits = replay.datablock_battle_result.personal.credits;
-                    premiumXP = replay.datablock_battle_result.personal.originalXP == 0 ? replay.datablock_battle_result.personal.xp : (int)Math.Round(replay.datablock_battle_result.personal.originalXP * premiumFactor, 0);
                     PremiumCreditsContributionIn = replay.datablock_battle_result.personal.creditsContributionIn;
                     PremiumCreditsContributionOut = premiumCreditsPenalty;
                 }
                 else
                 {
                     premiumCredits = (int)Math.Round(replay.datablock_battle_result.personal.credits * premiumFactor, 0);
-                    premiumXP = (int)Math.Round(replay.datablock_battle_result.personal.xp * premiumFactor, 0);
                 }
 
+                Xp = replay.datablock_battle_result.vehicles[ReplayUser.Id].xp;
+
                 PremiumCredits = premiumCredits;
-                PremiumXp = premiumXP;
+                PremiumXp = (int)Math.Round(Xp * premiumFactor, 0);
 
                 CreditsContributionOut = (int)Math.Round((PremiumCreditsContributionOut / premiumFactor), 0);
                 CreditsContributionIn = (int)Math.Round((PremiumCreditsContributionIn / premiumFactor), 0);
 
                 Credits = (int)Math.Round((PremiumCredits / premiumFactor), 0);
-                Xp = (int)Math.Round((PremiumXp / premiumFactor), 0);
-
+                
                 ActionCredits = replay.datablock_battle_result.personal.eventCredits;
                 ActionXp = replay.datablock_battle_result.personal.eventXP;
 

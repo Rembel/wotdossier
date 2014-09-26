@@ -112,6 +112,7 @@
                     <TextBlock Text="{Binding Mileage}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBlock>
                 </Grid>
             </StackPanel>
+            <!--Credits-->
             <StackPanel Grid.Column="1" Margin="0" HorizontalAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Text="{x:Static resources:Resources.Label_ReplayDetail_CreditsReceived}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
@@ -154,6 +155,7 @@
                     <controls:TextWithImage Text="{Binding TotalCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
+            <!--Premium credits-->
             <StackPanel Grid.Column="2" Margin="0" HorizontalAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
@@ -161,7 +163,7 @@
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding PremiumActionCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding ActionCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>

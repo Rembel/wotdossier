@@ -633,7 +633,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 &&
                 (!applySettingsFilters ||
                     ((settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
-                        && (settings.UseIncompleteReplaysResultsForCharts || x.IsWinner != BattleStatus.Incomplete))
+                        && (settings.UseIncompleteReplaysResultsForCharts || (x.IsWinner != BattleStatus.Incomplete && x.IsWinner != BattleStatus.Unknown)))
                 )
                 ).ToList();
 

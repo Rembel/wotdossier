@@ -3099,4 +3099,7 @@ up to 500 m</value>
   <data name="Tooltip_Achievements_15x15_MaxAimerSeries" xml:space="preserve">
     <value />
   </data>
+  <data name="Map_94_battlecity" xml:space="preserve">
+    <value>Battle City</value>
+  </data>
 </root>

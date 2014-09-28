@@ -3102,4 +3102,10 @@ up to 500 m</value>
   <data name="Map_94_battlecity" xml:space="preserve">
     <value>Battle City</value>
   </data>
+  <data name="ReplaysTab_PlayWith" xml:space="preserve">
+    <value>Play with...</value>
+  </data>
+  <data name="ReplaysTab_ShowFileInFolder" xml:space="preserve">
+    <value>Show file in folder</value>
+  </data>
 </root>

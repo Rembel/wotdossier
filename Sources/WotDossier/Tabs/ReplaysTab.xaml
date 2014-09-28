@@ -92,11 +92,23 @@
                   PreviewMouseLeftButtonDown="OnGridPreviewMouseLeftButtonDown" PreviewMouseMove="OnGridMouseMove" behaviours:DataGridBehavior.DisplayRowNumber="True">
             <DataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">
-                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadBtn}" 
-                              Command="{Binding Path=DataContext.ReplayUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_Play}"
+                              Command="{Binding Path=DataContext.PlayReplayCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
                               CommandParameter="{Binding}"/>
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_PlayWith}"
+                              Command="{Binding Path=DataContext.PlayReplayWithCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
+                              CommandParameter="{Binding}"/>
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_ShowFileInFolder}"
+                              Command="{Binding Path=DataContext.ShowFileInFolderCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
+                              CommandParameter="{Binding}"/>
+                    <!--<MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadBtn}" 
+                              Command="{Binding Path=DataContext.ReplayUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              CommandParameter="{Binding}"/>-->
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadMultipleBtn}" 
                               Command="{Binding Path=DataContext.ReplaysUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyToClipboard}"
+                              Command="{Binding Path=DataContext.CopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_DeleteBtn}" 
                               Command="{Binding Path=DataContext.ReplayRowsDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
@@ -104,12 +116,6 @@
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_PackBtn}" 
                               Command="{Binding Path=DataContext.ReplayRowsZipCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyToClipboard}" 
-                              Command="{Binding Path=DataContext.CopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
-                              CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_Play}" 
-                              Command="{Binding Path=DataContext.PlayReplayCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
-                              CommandParameter="{Binding}"/>
                 </ContextMenu>
             </DataGrid.Resources>
             <DataGrid.RowStyle>

@@ -3224,4 +3224,10 @@
   <data name="Map_94_battlecity" xml:space="preserve">
     <value>8-битные истории</value>
   </data>
+  <data name="ReplaysTab_PlayWith" xml:space="preserve">
+    <value>Воспроизвести с помощью...</value>
+  </data>
+  <data name="ReplaysTab_ShowFileInFolder" xml:space="preserve">
+    <value>Показать файл в папке на диске</value>
+  </data>
 </root>

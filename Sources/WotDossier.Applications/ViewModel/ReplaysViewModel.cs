@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,8 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> ReplaysUploadCommand { get; set; }
         public DelegateCommand<object> CopyLinkToClipboardCommand { get; set; }
         public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
+        public DelegateCommand<ReplayFile> PlayReplayWithCommand { get; set; }
+        public DelegateCommand<ReplayFile> ShowFileInFolderCommand { get; set; }
         public DelegateCommand<object> ReplayRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> ReplayRowsDeleteCommand { get; set; }
         public DelegateCommand<object> ReplayRowsZipCommand { get; set; }
@@ -98,6 +101,8 @@ namespace WotDossier.Applications.ViewModel
             ReplayRowsZipCommand = new DelegateCommand<object>(OnReplayRowsZip);
             CopyLinkToClipboardCommand = new DelegateCommand<object>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
             PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlay);
+            PlayReplayWithCommand = new DelegateCommand<ReplayFile>(OnPlayWith);
+            ShowFileInFolderCommand = new DelegateCommand<ReplayFile>(OnShowFileInFolder, CanOnShowFileInFolder);
 
             AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
             ZipFolderCommand = new DelegateCommand<ReplayFolder>(OnZipFolder);
@@ -113,6 +118,42 @@ namespace WotDossier.Applications.ViewModel
             ChartView = playerChartsViewModel;
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
+        }
+
+        private bool CanOnShowFileInFolder(ReplayFile replay)
+        {
+            return replay is PhisicalReplay;
+        }
+
+        private void OnShowFileInFolder(ReplayFile replay)
+        {
+            if (replay is PhisicalReplay)
+            {
+                Process PrFolder = new Process();
+                ProcessStartInfo psi = new ProcessStartInfo();
+                string file = replay.PhisicalPath;
+                psi.CreateNoWindow = true;
+                psi.WindowStyle = ProcessWindowStyle.Normal;
+                psi.FileName = "explorer";
+                psi.Arguments = @"/n, /select, " + file;
+                PrFolder.StartInfo = psi;
+                PrFolder.Start();
+
+                //Process PrFolder = new Process();
+                //ProcessStartInfo psi = new ProcessStartInfo();
+                //string file = replay.PhisicalPath;
+                //psi.CreateNoWindow = true;
+                //psi.WindowStyle = ProcessWindowStyle.Normal;
+                //psi.FileName = "totalcmd.exe";
+                //psi.Arguments = @"/n, /select, " + file;
+                //PrFolder.StartInfo = psi;
+                //PrFolder.Start();
+            }
+        }
+
+        private void OnPlayWith(ReplayFile obj)
+        {
+            
         }
 
         private void OnPlay(ReplayFile replayFile)

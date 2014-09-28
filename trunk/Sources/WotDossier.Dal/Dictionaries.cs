@@ -417,7 +417,7 @@ namespace WotDossier.Dal
                 maps = se.Deserialize<List<Map>>(reader);
             }
 
-            List<Map> list = (maps ?? new List<Map>());
+            List<Map> list = (maps ?? new List<Map>()).Where(x => x.mapidname != "00_tank_tutorial").ToList();
             int i = 1;
             list.ForEach(x => x.localizedmapname = Resources.Resources.ResourceManager.GetString("Map_" + x.mapidname) ?? x.mapname);
             list = list.OrderByDescending(x => x.localizedmapname).ToList();

@@ -8,6 +8,8 @@ namespace WotDossier.Applications.ViewModel.Rows
     {
         TankIcon Icon { get; set; }
 
+        int MarksOnGunSort { get; set; }
+
         IEnumerable<ITankStatisticRow> GetAll();
 
         void SetPreviousStatistic(ITankStatisticRow model);

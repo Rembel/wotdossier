@@ -151,6 +151,15 @@
         /// </summary>
         public int MarksOnGun { get; set; }
 
+        public int MarksOnGunSort
+        {
+            get
+            {
+                return MarksOnGun * 10000 + DamageRating;
+            }
+            set {}
+        }
+        
         /// <summary>
         /// Gets/Sets the field "MovingAvgDamage".
         /// </summary>

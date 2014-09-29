@@ -1917,28 +1917,28 @@
     <value>Удаленные</value>
   </data>
   <data name="Role_commander" xml:space="preserve">
-    <value>Ротный командир</value>
+    <value>Боевой офицер</value>
   </data>
   <data name="Role_diplomat" xml:space="preserve">
-    <value>Дипломат</value>
+    <value>Офицер разведки</value>
   </data>
   <data name="Role_leader" xml:space="preserve">
-    <value>Командир</value>
+    <value>Командующий</value>
   </data>
   <data name="Role_private" xml:space="preserve">
-    <value>Солдат</value>
+    <value>Рядовой</value>
   </data>
   <data name="Role_recruit" xml:space="preserve">
     <value>Новобранец</value>
   </data>
   <data name="Role_recruiter" xml:space="preserve">
-    <value>Вербовщик</value>
+    <value>Офицер по рекрутингу</value>
   </data>
   <data name="Role_treasurer" xml:space="preserve">
-    <value>Казначей</value>
+    <value>Офицер снабжения</value>
   </data>
   <data name="Role_vice_leader" xml:space="preserve">
-    <value>Заместитель командира</value>
+    <value>Старший офицер</value>
   </data>
   <data name="StatisticPeriod_AllObservationPeriod" xml:space="preserve">
     <value>Весь период</value>
@@ -3229,5 +3229,14 @@
   </data>
   <data name="ReplaysTab_ShowFileInFolder" xml:space="preserve">
     <value>Показать файл в папке на диске</value>
+  </data>
+  <data name="Role_junior_officer" xml:space="preserve">
+    <value>Младший офицер</value>
+  </data>
+  <data name="Role_personnel_officer" xml:space="preserve">
+    <value>Штабной офицер</value>
+  </data>
+  <data name="Role_reservist" xml:space="preserve">
+    <value>Резервист</value>
   </data>
 </root>

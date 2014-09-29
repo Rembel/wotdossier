@@ -324,6 +324,9 @@
       <Link>External\wotrp2j.exe</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Data\expected_tank_values.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Data\TankNominalDamage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

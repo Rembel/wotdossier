@@ -67,7 +67,7 @@
 {"tankid": 40, "countryid": 1, "compDescr": 10257, "active": 1, "type": 2, "type_name": "MT", "tier": 9, "premium": 0, "title": "E 50", "title_short": "E 50", "icon": "e_50", "icon_orig": "E-50"},
 {"tankid": 41, "countryid": 1, "compDescr": 10513, "active": 1, "type": 3, "type_name": "HT", "tier": 8, "premium": 0, "title": "VK 45.02 (P) Ausf. A", "title_short": "VK 45.02 A", "icon": "vk4502a", "icon_orig": "VK4502A"},
 {"tankid": 42, "countryid": 1, "compDescr": 10769, "active": 1, "type": 3, "type_name": "HT", "tier": 7, "premium": 0, "title": "Tiger (P)", "title_short": "Tiger (P)", "icon": "pzvi_tiger_p", "icon_orig": "PzVI_Tiger_P"},
-{"tankid": 43, "countryid": 1, "compDescr": 11025, "active": 1, "type": 4, "type_name": "TD", "tier": 7, "premium": 0, "title": "Pz.Sfl. V", "title_short": "Pz.Sfl. V", "icon": "sturer_emil", "icon_orig": "Sturer_Emil"},
+{"tankid": 43, "countryid": 1, "compDescr": 11025, "active": 1, "type": 4, "type_name": "TD", "tier": 7, "premium": 0, "title": "St. Emil", "title_short": "St. Emil", "icon": "sturer_emil", "icon_orig": "Sturer_Emil"},
 {"tankid": 44, "countryid": 1, "compDescr": 11281, "active": 1, "type": 4, "type_name": "TD", "tier": 4, "premium": 0, "title": "Marder 38T", "title_short": "Marder 38T", "icon": "marder_iii", "icon_orig": "Marder_III"},
 {"tankid": 45, "countryid": 1, "compDescr": 11537, "active": 1, "type": 4, "type_name": "TD", "tier": 8, "premium": 0, "title": "Jagdpanther II", "title_short": "JPanther II", "icon": "jagdpantherii", "icon_orig": "JagdPantherII"},
 {"tankid": 46, "countryid": 1, "compDescr": 11793, "active": 1, "type": 4, "type_name": "TD", "tier": 6, "premium": 0, "title": "Nashorn", "title_short": "Nashorn", "icon": "nashorn", "icon_orig": "Nashorn"},

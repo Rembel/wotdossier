@@ -10,6 +10,7 @@ using System.Text;
 using System.Web;
 using System.Xml;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Logic;
@@ -304,7 +305,65 @@ namespace WotDossier.Test
                 }
             }
 
-            Console.WriteLine(JsonConvert.SerializeObject(xmlTanks, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(xmlTanks.OrderBy(x => x.Icon), Formatting.Indented));
+        }
+
+        [Test]
+        public void NominalDamageTest2()
+        {
+            JObject expectedValues;
+            using (StreamReader re = new StreamReader(@"Data\expected_tank_values.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                expectedValues = se.Deserialize<JObject>(reader);
+            }
+
+            List<RatingExpectancy> xmlTanks = new List<RatingExpectancy>();
+            foreach (var expectedValue in expectedValues["data"])
+            {
+                int idNum = (int) expectedValue["IDNum"];
+                var tankDescription = Dictionaries.Instance.Tanks.Values.First(x => x.CompDescr == idNum);
+
+                RatingExpectancy ratingExpectancy = new RatingExpectancy();
+                double prNominalDamage = (double) expectedValue["expDamage"];
+                ratingExpectancy.PRNominalDamage = tankDescription.Expectancy.PRNominalDamage;
+                ratingExpectancy.TankLevel = tankDescription.Tier;
+                ratingExpectancy.TankType = (TankType) tankDescription.Type;
+                ratingExpectancy.Wn8NominalDamage = prNominalDamage;
+                ratingExpectancy.Wn8NominalWinRate = (double)expectedValue["expWinRate"];
+                ratingExpectancy.Wn8NominalSpotted = (double)expectedValue["expSpot"];
+                ratingExpectancy.Wn8NominalFrags = (double)expectedValue["expFrag"];
+                ratingExpectancy.Wn8NominalDefence = (double)expectedValue["expDef"];
+                ratingExpectancy.Icon = tankDescription.Icon.IconOrig;
+                ratingExpectancy.TankTitle = tankDescription.Title;
+
+                xmlTanks.Add(ratingExpectancy);
+            }
+
+            foreach (TankDescription description in Dictionaries.Instance.Tanks.Values)
+            {
+                if (xmlTanks.FirstOrDefault(x => string.Equals(x.Icon, description.Icon.IconOrig, StringComparison.InvariantCultureIgnoreCase)) == null)
+                {
+                    Console.WriteLine(description.Icon.IconOrig);
+                }
+            }
+
+            Console.WriteLine(JsonConvert.SerializeObject(xmlTanks.OrderBy(x => x.Icon), Formatting.Indented));
+        }
+
+        [Test]
+        public void NominalDamageTest3()
+        {
+            JArray expectedValues;
+            using (StreamReader re = new StreamReader(@"External\tanks_expectations.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                expectedValues = se.Deserialize<JArray>(reader);
+            }
+
+            Console.WriteLine(JsonConvert.SerializeObject(expectedValues.OrderBy(x => x["icon"].Value<string>()).ToArray(), Formatting.Indented));
         }
 
         [Test]

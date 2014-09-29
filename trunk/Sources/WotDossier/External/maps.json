@@ -45,5 +45,6 @@
 {"mapid": 60, "mapidname": "83_kharkiv", "mapname": "Kharkov"},
 {"mapid": 60, "mapidname": "94_battlecity", "mapname": "Battle City"},
 {"mapid": 61, "mapidname": "99_himmelball", "mapname": "Himmelsdorf Championship"},
-{"mapid": 62, "mapidname": "96_prohorovka_defense", "mapname": "Fire Arc"}
+{"mapid": 62, "mapidname": "96_prohorovka_defense", "mapname": "Fire Arc"},
+{"mapid": 65, "mapidname": "102_deathtrack", "mapname": "Tank Rally"}
 ]

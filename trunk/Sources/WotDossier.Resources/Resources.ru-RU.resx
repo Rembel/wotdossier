@@ -3239,4 +3239,10 @@
   <data name="Role_reservist" xml:space="preserve">
     <value>Резервист</value>
   </data>
+  <data name="Map_102_deathtrack" xml:space="preserve">
+    <value>Танковые Гонки</value>
+  </data>
+  <data name="Medal_15x15_DeathTrack" xml:space="preserve">
+    <value>Танковые гонки</value>
+  </data>
 </root>

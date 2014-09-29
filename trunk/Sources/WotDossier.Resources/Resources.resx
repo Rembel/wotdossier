@@ -3117,4 +3117,10 @@ up to 500 m</value>
   <data name="Role_reservist" xml:space="preserve">
     <value>Reservist</value>
   </data>
+  <data name="Map_102_deathtrack" xml:space="preserve">
+    <value>Tank Rally</value>
+  </data>
+  <data name="Medal_15x15_DeathTrack" xml:space="preserve">
+    <value>Tank Rally</value>
+  </data>
 </root>

@@ -4939,7 +4939,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tank Rally.
+        ///   Looks up a localized string similar to Racer 2014.
         /// </summary>
         public static string Medal_15x15_DeathTrack {
             get {
@@ -6249,6 +6249,15 @@ namespace WotDossier.Resources {
         public static string ReplaysTab_PlayWith {
             get {
                 return ResourceManager.GetString("ReplaysTab_PlayWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show details.
+        /// </summary>
+        public static string ReplaysTab_ShowDetails {
+            get {
+                return ResourceManager.GetString("ReplaysTab_ShowDetails", resourceCulture);
             }
         }
         

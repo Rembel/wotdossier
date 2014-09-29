@@ -3243,6 +3243,9 @@
     <value>Танковые Гонки</value>
   </data>
   <data name="Medal_15x15_DeathTrack" xml:space="preserve">
-    <value>Танковые гонки</value>
+    <value>Гонщик 2014</value>
+  </data>
+  <data name="ReplaysTab_ShowDetails" xml:space="preserve">
+    <value>Подробная информация</value>
   </data>
 </root>

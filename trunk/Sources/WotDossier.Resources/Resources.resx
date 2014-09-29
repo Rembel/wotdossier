@@ -3121,6 +3121,9 @@ up to 500 m</value>
     <value>Tank Rally</value>
   </data>
   <data name="Medal_15x15_DeathTrack" xml:space="preserve">
-    <value>Tank Rally</value>
+    <value>Racer 2014</value>
+  </data>
+  <data name="ReplaysTab_ShowDetails" xml:space="preserve">
+    <value>Show details</value>
   </data>
 </root>

@@ -43,6 +43,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
         public DelegateCommand<ReplayFile> PlayReplayWithCommand { get; set; }
         public DelegateCommand<ReplayFile> ShowFileInFolderCommand { get; set; }
+        public DelegateCommand<ReplayFile> ShowDetailsCommand { get; set; }
         public DelegateCommand<object> ReplayRowDoubleClickCommand { get; set; }
         public DelegateCommand<object> ReplayRowsDeleteCommand { get; set; }
         public DelegateCommand<object> ReplayRowsZipCommand { get; set; }
@@ -103,6 +104,7 @@ namespace WotDossier.Applications.ViewModel
             PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlay);
             PlayReplayWithCommand = new DelegateCommand<ReplayFile>(OnPlayWith);
             ShowFileInFolderCommand = new DelegateCommand<ReplayFile>(OnShowFileInFolder, CanOnShowFileInFolder);
+            ShowDetailsCommand = new DelegateCommand<ReplayFile>(OnReplayRowDoubleClick, CanShowDetails);
 
             AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
             ZipFolderCommand = new DelegateCommand<ReplayFolder>(OnZipFolder);
@@ -118,6 +120,11 @@ namespace WotDossier.Applications.ViewModel
             ChartView = playerChartsViewModel;
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
+        }
+
+        private bool CanShowDetails(ReplayFile replay)
+        {
+            return replay != null;
         }
 
         private bool CanOnShowFileInFolder(ReplayFile replay)

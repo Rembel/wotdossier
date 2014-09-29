@@ -1903,13 +1903,13 @@ Survive %: {1:0.00}</value>
     <value>Deleted</value>
   </data>
   <data name="Role_commander" xml:space="preserve">
-    <value>Commander</value>
+    <value>Combat Officer</value>
   </data>
   <data name="Role_diplomat" xml:space="preserve">
-    <value>Diplomat</value>
+    <value>Intelligence Officer</value>
   </data>
   <data name="Role_leader" xml:space="preserve">
-    <value>Leader</value>
+    <value>Commander</value>
   </data>
   <data name="Role_private" xml:space="preserve">
     <value>Private</value>
@@ -1918,13 +1918,13 @@ Survive %: {1:0.00}</value>
     <value>Recruit</value>
   </data>
   <data name="Role_recruiter" xml:space="preserve">
-    <value>Recruiter</value>
+    <value>Recruitment Officer</value>
   </data>
   <data name="Role_treasurer" xml:space="preserve">
-    <value>Treasurer</value>
+    <value>Quartermaster</value>
   </data>
   <data name="Role_vice_leader" xml:space="preserve">
-    <value>Vice Leader</value>
+    <value>Executive Officer</value>
   </data>
   <data name="StatisticPeriod_AllObservationPeriod" xml:space="preserve">
     <value>All observation period</value>
@@ -3107,5 +3107,14 @@ up to 500 m</value>
   </data>
   <data name="ReplaysTab_ShowFileInFolder" xml:space="preserve">
     <value>Show file in folder</value>
+  </data>
+  <data name="Role_junior_officer" xml:space="preserve">
+    <value>Junior Officer</value>
+  </data>
+  <data name="Role_personnel_officer" xml:space="preserve">
+    <value>Personnel Officer</value>
+  </data>
+  <data name="Role_reservist" xml:space="preserve">
+    <value>Reservist</value>
   </data>
 </root>

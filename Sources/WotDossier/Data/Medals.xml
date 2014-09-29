@@ -137,6 +137,7 @@
         <medal name="Medal_15x15_Bonecrusher" id="526" icon="bonecrusher" type="1"/>
         <medal name="Medal_15x15_Charmed" id="527" icon="charmed" type="1"/>
         <medal name="Medal_15x15_Even" id="528" icon="even" type="1"/>
+        <medal name="Medal_15x15_DeathTrack" id="533" icon="deathTrack" type="1"/>
     </Special>
     <Common>
         <medal name="Medal_15x15_Kay" id="4101" icon="medalKay1" type="1"/>

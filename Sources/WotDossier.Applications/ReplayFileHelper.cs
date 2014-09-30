@@ -39,10 +39,10 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
         {
             string outputJsonFilePath = replayFile.FullName.Replace(replayFile.Extension, ".json");
             
-            //if file already created the return it's path
+            //if file already created then delete it
             if (File.Exists(outputJsonFilePath))
             {
-                return outputJsonFilePath;
+                File.Delete(outputJsonFilePath);
             }
 
             string directoryName = Environment.CurrentDirectory;
@@ -66,9 +66,9 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
         public static Replay ParseReplay_8_0(FileInfo replayFile, bool readAdvancedData = false)
         {
             //convert dossier cache file to json
-            string jsonFile = ReplayToJson(replayFile, false);
+            string jsonFilePath = ReplayToJson(replayFile, false);
 
-            string content = File.ReadAllText(jsonFile);
+            string content = File.ReadAllText(jsonFilePath);
 
             JObject jObject = JsonConvert.DeserializeObject<JObject>(content);
 
@@ -106,6 +106,8 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                     }
                 }
             }
+
+            File.Delete(jsonFilePath);
 
             return replay;
         }
@@ -148,7 +150,7 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                             //read first block
                             if (i == 0)
                             {
-                                ReadFirstBlock(blockData, replay);
+                                InitFirstBlock(replay, blockData);
                             }
 
                             //read second block
@@ -159,18 +161,18 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
                                 if (version < new Version("0.8.11.0") && blocksCount < 3)
                                 {
-                                    ReadThirdBlock(blockData, replay);
+                                    InitThirdBlock(replay, blockData);
                                 }
                                 else
                                 {
-                                    ReadSecondBlock(blockData, replay);
+                                    InitSecondBlock(replay, blockData);
                                 }
                             }
 
                             //read third block for replays 0.8.1-0.8.10
                             if (i == 2)
                             {
-                                ReadThirdBlock(blockData, replay);
+                                InitThirdBlock(replay, blockData);
                             }
                         }
 
@@ -193,19 +195,29 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             return null;
         }
 
-        private static void ReadFirstBlock(byte[] blockData, Replay replay)
+        private static void InitThirdBlock(Replay replay, byte[] blockData)
         {
-            string json = blockData.GetAsciiString();
+            replay.datablock_battle_result = ReadThirdBlock(blockData).ToObject<BattleResult>();
+        }
+
+        private static void InitFirstBlock(Replay replay, byte[] blockData)
+        {
+            var json = ReadFirstBlock(blockData);
             if (!string.IsNullOrEmpty(json))
             {
                 replay.datablock_1 = JsonConvert.DeserializeObject<FirstBlock>(json);
             }
         }
 
-        private static void ReadSecondBlock(byte[] blockData, Replay replay)
+        public static string ReadFirstBlock(byte[] blockData)
         {
             string json = blockData.GetAsciiString();
-            var parsedData = JsonConvert.DeserializeObject<JArray>(json);
+            return json;
+        }
+
+        private static void InitSecondBlock(Replay replay, byte[] blockData)
+        {
+            var parsedData = ReadSecondBlock(blockData);
             if (parsedData.Count > 0)
             {
                 //0.8.11+
@@ -217,10 +229,16 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             }
         }
 
-        private static void ReadThirdBlock(byte[] blockData, Replay replay)
+        public static JArray ReadSecondBlock(byte[] blockData)
         {
-            object pickleObject = Unpickle.Load(new MemoryStream(blockData));
-            replay.datablock_battle_result = pickleObject.ToObject<BattleResult>();
+            string json = blockData.GetAsciiString();
+            var parsedData = JsonConvert.DeserializeObject<JArray>(json);
+            return parsedData;
+        }
+
+        public static object ReadThirdBlock(byte[] blockData)
+        {
+            return Unpickle.Load(new MemoryStream(blockData));
         }
 
         private static void ReadAdvancedDataBlock(FileStream stream, Replay replay)

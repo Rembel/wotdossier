@@ -5,6 +5,7 @@ using System.Xml;
 using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using WotDossier.Common;
 using WotDossier.Domain;
 using System.Linq;
 using WotDossier.Domain.Tank;
@@ -230,8 +231,9 @@ namespace WotDossier.Dal
         {
             {"ru", "worldoftanks.net"},
             {"eu", "worldoftanks.eu"},
-            //{"cn", "worldoftanks.cn"},
-            //{"us", "worldoftanks.com"},
+            {"us", "worldoftanks.com"},
+            {"kr", "worldoftanks.kr"},
+            {"asia", "worldoftanks.asia"},
         };
 
         
@@ -311,15 +313,51 @@ namespace WotDossier.Dal
         /// Gets the tank icon.
         /// </summary>
         /// <param name="playerVehicle">The player vehicle.</param>
+        /// <param name="clientVersion"></param>
         /// <returns></returns>
-        public TankIcon GetTankIcon(string playerVehicle)
+        public TankDescription GetReplayTankDescription(string playerVehicle, Version clientVersion)
         {
             string iconId = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
+
             if (Icons.ContainsKey(iconId))
             {
-                return Icons[iconId];
+                TankIcon tankIcon = Icons[iconId];
+
+                if (IconTanks.ContainsKey(tankIcon))
+                {
+                    var tankDescription = IconTanks[tankIcon];
+
+                    //t49 renamed to t67 in 9.3
+                    if (tankDescription.UniqueId() == 200071 && clientVersion < new Version("0.9.3.0"))
+                    {
+                        return _tanks[200041];
+                    }
+                    //kv-1s renamed to kv-85 in 9.3
+                    if (tankDescription.UniqueId() == 73 && clientVersion < new Version("0.9.3.0"))
+                    {
+                        return _tanks[11];
+                    }
+
+                    return tankDescription;
+                }
             }
-            return TankIcon.Empty;
+
+            return null;
+        }
+
+        public TankDescription GetTankDescription(int? typeCompDescr)
+        {
+            if (typeCompDescr == null)
+            {
+                return new TankDescription{Title = "Unknown", Icon = TankIcon.Empty};
+            }
+
+            int tankId = typeCompDescr.Value >> 8 & 65535;
+            int countryId = typeCompDescr.Value >> 4 & 15;
+
+            var uniqueId = Utils.ToUniqueId(countryId, tankId);
+
+            return Tanks[uniqueId];
         }
 
         private Dictionary<int, TankDescription> ReadTanksDictionary()

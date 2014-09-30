@@ -15,14 +15,13 @@ namespace WotDossier.Applications.ViewModel.Replay
         public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle, int replayPlayerTeam, string regionCode)
         {
             Id = vehicle.Key;
-            TankIcon = Dictionaries.Instance.GetTankIcon(vehicle.Value.vehicleType);
-            TankDescription tank = null;
-            if (Dictionaries.Instance.IconTanks.ContainsKey(TankIcon))
-            {
-                tank = Dictionaries.Instance.IconTanks[TankIcon];
-            }
-            LevelRange = tank != null ? tank.LevelRange : LevelRange.All;
-            Tank = tank != null ? tank.Title : vehicle.Value.vehicleType;
+
+            var tank = Dictionaries.Instance.GetTankDescription(vehicleResult.Value.typeCompDescr);
+
+            TankIcon = tank.Icon;
+
+            LevelRange = tank.LevelRange ?? LevelRange.All;
+            Tank = !string.IsNullOrEmpty(tank.Title) ? tank.Title : vehicle.Value.vehicleType;
             ClanAbbrev = vehicle.Value.clanAbbrev;
             Name = vehicle.Value.name;
             FullName = string.Format("{0}{1}", Name, GetClanAbbrev(ClanAbbrev));

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using Moq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.View;
@@ -15,7 +18,7 @@ using WotDossier.Domain.Replay;
 namespace WotDossier.Test
 {
     /// <summary>
-    /// Replays tests
+    ///     Replays tests
     /// </summary>
     public class ReplaysTestFixture : TestFixtureBase
     {
@@ -28,7 +31,7 @@ namespace WotDossier.Test
 
                 if (!Directory.Exists(replayFolder))
                 {
-                    Assert.Fail("Folder not exists - [{0}]", replayFolder);        
+                    Assert.Fail("Folder not exists - [{0}]", replayFolder);
                 }
 
                 var replays = Directory.GetFiles(replayFolder, "*.wotreplay");
@@ -41,11 +44,14 @@ namespace WotDossier.Test
                     Assert.IsNotNull(replay);
                     Assert.IsNotNull(replay.datablock_battle_result);
 
-                    PhisicalReplay phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
+                    if (replay != null)
+                    {
+                        var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
 
-                    var mockView = new Mock<IReplayView>();
-                    ReplayViewModel model = new ReplayViewModel(mockView.Object);
-                    model.Init(phisicalReplay.ReplayData(true));   
+                        var mockView = new Mock<IReplayView>();
+                        ReplayViewModel model = new ReplayViewModel(mockView.Object);
+                        model.Init(phisicalReplay.ReplayData(true));
+                    }
                 }
             }
         }
@@ -81,5 +87,86 @@ namespace WotDossier.Test
 
             Console.WriteLine(replayFolder.Folders.Count);
         }
+
+        [Test]
+        public void ReplayToJsonTest()
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", new Version("0.8.1").ToString(3));
+
+            if (!Directory.Exists(replayFolder))
+            {
+                Assert.Fail("Folder not exists - [{0}]", replayFolder);
+            }
+
+            string[] replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+
+            foreach (string path in replays)
+            {
+                if (File.Exists(path))
+                {
+                    using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        var replay = new Replay();
+
+                        try
+                        {
+                            int blocksCount = 0;
+                            var buffer = new byte[4];
+                            stream.Read(buffer, 0, 4);
+
+                            if (buffer[0] != 0x21)
+                            {
+                                blocksCount = (int) stream.Read(4).ConvertLittleEndian();
+                                Console.WriteLine("Found Replay Blocks: " + blocksCount);
+                            }
+
+                            for (int i = 0; i < blocksCount; i++)
+                            {
+                                var blockLength = (int) stream.Read(4).ConvertLittleEndian();
+                                Console.WriteLine("{0} block length: {1}", i + 1, blockLength);
+                                byte[] blockData = stream.Read(blockLength);
+
+                                //read first block
+                                if (i == 0)
+                                {
+                                    string firstBlock = ReplayFileHelper.ReadFirstBlock(blockData);
+                                    replay.datablock_1 = JsonConvert.DeserializeObject<FirstBlock>(firstBlock);
+                                    Console.WriteLine(JsonConvert.DeserializeObject<JObject>(firstBlock).ToString(Formatting.Indented));
+                                }
+
+                                //read second block
+                                if (i == 1)
+                                {
+                                    DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
+                                    Version version = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, playTime);
+
+                                    if (version < new Version("0.8.11.0") && blocksCount < 3)
+                                    {
+                                        object thirdBlock = ReplayFileHelper.ReadThirdBlock(blockData);
+                                        Console.WriteLine(JsonConvert.SerializeObject(thirdBlock, Formatting.Indented));
+                                    }
+                                    else
+                                    {
+                                        JArray secondBlock = ReplayFileHelper.ReadSecondBlock(blockData);
+                                        Console.WriteLine(secondBlock.ToString(Formatting.Indented));
+                                    }
+                                }
+
+                                //read third block for replays 0.8.1-0.8.10
+                                if (i == 2)
+                                {
+                                    object thirdBlock = ReplayFileHelper.ReadThirdBlock(blockData);
+                                    Console.WriteLine(JsonConvert.SerializeObject(thirdBlock, Formatting.Indented));
+                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Error on replay file read. Incorrect file format({0})", e, path);
+                        }
+                    }
+                }
+            }
+        }                
     }
 }

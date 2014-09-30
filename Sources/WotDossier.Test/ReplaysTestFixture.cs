@@ -28,7 +28,7 @@ namespace WotDossier.Test
             foreach (Version version in Dictionaries.Instance.Versions)
             {
                 string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
-
+                
                 if (!Directory.Exists(replayFolder))
                 {
                     Assert.Fail("Folder not exists - [{0}]", replayFolder);
@@ -36,22 +36,23 @@ namespace WotDossier.Test
 
                 var replays = Directory.GetFiles(replayFolder, "*.wotreplay");
 
-                foreach (string fileName in replays)
+                Console.WriteLine("Found: {0}", replays.Count());
+
+                for (int index = 0; index < replays.Length; index++)
                 {
+                    string fileName = replays[index];
+                    Console.WriteLine("Process[{0}]: {1}", index, fileName);
+
                     FileInfo replayFile = new FileInfo(fileName);
 
                     Replay replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
                     Assert.IsNotNull(replay);
                     Assert.IsNotNull(replay.datablock_battle_result);
 
-                    if (replay != null)
-                    {
-                        var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
-
-                        var mockView = new Mock<IReplayView>();
-                        ReplayViewModel model = new ReplayViewModel(mockView.Object);
-                        model.Init(phisicalReplay.ReplayData(true));
-                    }
+                    var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
+                    var mockView = new Mock<IReplayView>();
+                    ReplayViewModel model = new ReplayViewModel(mockView.Object);
+                    model.Init(phisicalReplay.ReplayData(true));
                 }
             }
         }
@@ -102,71 +103,84 @@ namespace WotDossier.Test
 
             foreach (string path in replays)
             {
-                if (File.Exists(path))
+                ReplayToJson(path);
+            }
+        }
+
+        [Test]
+        public void ReplayToJsonTest1()
+        {
+            ReplayToJson(@"");
+        }
+
+        private static void ReplayToJson(string path)
+        {
+            if (File.Exists(path))
+            {
+                using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    var replay = new Replay();
+
+                    try
                     {
-                        var replay = new Replay();
+                        int blocksCount = 0;
+                        var buffer = new byte[4];
+                        stream.Read(buffer, 0, 4);
 
-                        try
+                        if (buffer[0] != 0x21)
                         {
-                            int blocksCount = 0;
-                            var buffer = new byte[4];
-                            stream.Read(buffer, 0, 4);
+                            blocksCount = (int) stream.Read(4).ConvertLittleEndian();
+                            Console.WriteLine("Found Replay Blocks: " + blocksCount);
+                        }
 
-                            if (buffer[0] != 0x21)
+                        for (int i = 0; i < blocksCount; i++)
+                        {
+                            var blockLength = (int) stream.Read(4).ConvertLittleEndian();
+                            Console.WriteLine("{0} block length: {1}", i + 1, blockLength);
+                            byte[] blockData = stream.Read(blockLength);
+
+                            //read first block
+                            if (i == 0)
                             {
-                                blocksCount = (int) stream.Read(4).ConvertLittleEndian();
-                                Console.WriteLine("Found Replay Blocks: " + blocksCount);
+                                string firstBlock = ReplayFileHelper.ReadFirstBlock(blockData);
+                                replay.datablock_1 = JsonConvert.DeserializeObject<FirstBlock>(firstBlock);
+                                Console.WriteLine(
+                                    JsonConvert.DeserializeObject<JObject>(firstBlock).ToString(Formatting.Indented));
                             }
 
-                            for (int i = 0; i < blocksCount; i++)
+                            //read second block
+                            if (i == 1)
                             {
-                                var blockLength = (int) stream.Read(4).ConvertLittleEndian();
-                                Console.WriteLine("{0} block length: {1}", i + 1, blockLength);
-                                byte[] blockData = stream.Read(blockLength);
+                                DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime,
+                                    CultureInfo.GetCultureInfo("ru-RU"));
+                                Version version = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, playTime);
 
-                                //read first block
-                                if (i == 0)
-                                {
-                                    string firstBlock = ReplayFileHelper.ReadFirstBlock(blockData);
-                                    replay.datablock_1 = JsonConvert.DeserializeObject<FirstBlock>(firstBlock);
-                                    Console.WriteLine(JsonConvert.DeserializeObject<JObject>(firstBlock).ToString(Formatting.Indented));
-                                }
-
-                                //read second block
-                                if (i == 1)
-                                {
-                                    DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
-                                    Version version = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, playTime);
-
-                                    if (version < new Version("0.8.11.0") && blocksCount < 3)
-                                    {
-                                        object thirdBlock = ReplayFileHelper.ReadThirdBlock(blockData);
-                                        Console.WriteLine(JsonConvert.SerializeObject(thirdBlock, Formatting.Indented));
-                                    }
-                                    else
-                                    {
-                                        JArray secondBlock = ReplayFileHelper.ReadSecondBlock(blockData);
-                                        Console.WriteLine(secondBlock.ToString(Formatting.Indented));
-                                    }
-                                }
-
-                                //read third block for replays 0.8.1-0.8.10
-                                if (i == 2)
+                                if (version < new Version("0.8.11.0") && blocksCount < 3)
                                 {
                                     object thirdBlock = ReplayFileHelper.ReadThirdBlock(blockData);
                                     Console.WriteLine(JsonConvert.SerializeObject(thirdBlock, Formatting.Indented));
                                 }
+                                else
+                                {
+                                    JArray secondBlock = ReplayFileHelper.ReadSecondBlock(blockData);
+                                    Console.WriteLine(secondBlock.ToString(Formatting.Indented));
+                                }
+                            }
+
+                            //read third block for replays 0.8.1-0.8.10
+                            if (i == 2)
+                            {
+                                object thirdBlock = ReplayFileHelper.ReadThirdBlock(blockData);
+                                Console.WriteLine(JsonConvert.SerializeObject(thirdBlock, Formatting.Indented));
                             }
                         }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine("Error on replay file read. Incorrect file format({0})", e, path);
-                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Error on replay file read. Incorrect file format({0})", e, path);
                     }
                 }
             }
-        }                
+        }
     }
 }

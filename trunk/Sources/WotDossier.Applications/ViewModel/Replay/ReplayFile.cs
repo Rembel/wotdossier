@@ -156,21 +156,22 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 IsWinner = BattleStatus.Unknown;
 
-                Icon = Dictionaries.Instance.GetTankIcon(replay.datablock_1.playerVehicle);
-
-                CountryId = Icon.CountryId;
-
-
-                if (Dictionaries.Instance.IconTanks.ContainsKey(Icon))
-                {
-                    Tank = Dictionaries.Instance.IconTanks[Icon];
-                }
-
-                TankName = Tank != null ? Tank.Title : replay.datablock_1.playerVehicle;
-
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
 
                 ClientVersion = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, PlayTime);
+
+                TankDescription description = Dictionaries.Instance.GetReplayTankDescription(replay.datablock_1.playerVehicle, ClientVersion);
+
+                if (description != null)
+                {
+                    Icon = description.Icon;
+
+                    CountryId = (Country) description.CountryId;
+
+                    Tank = description;
+                }
+
+                TankName = Tank != null ? Tank.Title : replay.datablock_1.playerVehicle;
 
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 

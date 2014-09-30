@@ -249,6 +249,9 @@
     <None Include="Replays\0.8.11\20140126_2109_ussr-T-54_14_siegfried_line.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Replays\0.8.1\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

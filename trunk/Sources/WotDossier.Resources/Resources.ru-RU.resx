@@ -3251,4 +3251,7 @@
   <data name="ReplaysTab_CopyFileNameToClipboard" xml:space="preserve">
     <value>Копировать имя файла</value>
   </data>
+  <data name="Column_Replay_CreditsEarned" xml:space="preserve">
+    <value>Заработано</value>
+  </data>
 </root>

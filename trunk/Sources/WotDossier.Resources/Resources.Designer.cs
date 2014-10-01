@@ -2941,6 +2941,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Earned.
+        /// </summary>
+        public static string Column_Replay_CreditsEarned {
+            get {
+                return ResourceManager.GetString("Column_Replay_CreditsEarned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Damaged.
         /// </summary>
         public static string Column_Replay_Damaged {

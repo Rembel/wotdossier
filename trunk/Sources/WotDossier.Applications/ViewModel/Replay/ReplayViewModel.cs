@@ -322,8 +322,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TotalXp = Xp * XpFactor + ActionXp;
 
                 AutoRepairCost = replay.datablock_battle_result.personal.autoRepairCost ?? 0;
-                AutoLoadCost = GetAutoLoadCost(replay);
-                AutoEquipCost = GetAutoEquipCost(replay);
+                AutoLoadCost = ReplayFileHelper.GetAutoLoadCost(replay);
+                AutoEquipCost = ReplayFileHelper.GetAutoEquipCost(replay);
                 
                 PremiumTotalCredits = PremiumCredits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
                 TotalCredits = Credits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
@@ -451,24 +451,6 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
 
             return BattleStatus.Defeat;
-        }
-
-        private static int GetAutoEquipCost(Domain.Replay.Replay replay)
-        {
-            if (replay.datablock_battle_result.personal.autoEquipCost != null)
-            {
-                return replay.datablock_battle_result.personal.autoEquipCost.Sum();
-            }
-            return 0;
-        }
-
-        private static int GetAutoLoadCost(Domain.Replay.Replay replay)
-        {
-            if (replay.datablock_battle_result.personal.autoLoadCost!= null)
-            {
-                return replay.datablock_battle_result.personal.autoLoadCost.Sum();
-            }
-            return 0;
         }
 
         private string GetXpTitle(int dailyXpFactor)

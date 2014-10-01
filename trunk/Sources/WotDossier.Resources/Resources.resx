@@ -3129,4 +3129,7 @@ up to 500 m</value>
   <data name="ReplaysTab_CopyFileNameToClipboard" xml:space="preserve">
     <value>Copy file name</value>
   </data>
+  <data name="Column_Replay_CreditsEarned" xml:space="preserve">
+    <value>Earned</value>
+  </data>
 </root>

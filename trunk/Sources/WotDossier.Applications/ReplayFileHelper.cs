@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using Common.Logging;
 using Ionic.Zlib;
 using Newtonsoft.Json;
@@ -357,6 +358,24 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 }
             }
             return version;
+        }
+
+        public static int GetAutoEquipCost(Replay replay)
+        {
+            if (replay.datablock_battle_result.personal.autoEquipCost != null)
+            {
+                return replay.datablock_battle_result.personal.autoEquipCost.Sum();
+            }
+            return 0;
+        }
+
+        public static int GetAutoLoadCost(Replay replay)
+        {
+            if (replay.datablock_battle_result.personal.autoLoadCost != null)
+            {
+                return replay.datablock_battle_result.personal.autoLoadCost.Sum();
+            }
+            return 0;
         }
     }
     

@@ -3126,4 +3126,7 @@ up to 500 m</value>
   <data name="ReplaysTab_ShowDetails" xml:space="preserve">
     <value>Show details</value>
   </data>
+  <data name="ReplaysTab_CopyFileNameToClipboard" xml:space="preserve">
+    <value>Copy file name</value>
+  </data>
 </root>

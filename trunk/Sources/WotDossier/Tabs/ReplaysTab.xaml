@@ -113,6 +113,9 @@
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyToClipboard}"
                               Command="{Binding Path=DataContext.CopyLinkToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
+                    <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyFileNameToClipboard}"
+                              Command="{Binding Path=DataContext.CopyFileNameToClipboardCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
+                              CommandParameter="{Binding}"/>
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_DeleteBtn}" 
                               Command="{Binding Path=DataContext.ReplayRowsDeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

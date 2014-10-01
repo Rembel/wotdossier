@@ -328,9 +328,9 @@ namespace WotDossier.Dal
                     var tankDescription = IconTanks[tankIcon];
 
                     //t49 renamed to t67 in 9.3
-                    if (tankDescription.UniqueId() == 200071 && clientVersion < new Version("0.9.3.0"))
+                    if (tankDescription.UniqueId() == 20071 && clientVersion < new Version("0.9.3.0"))
                     {
-                        return _tanks[200041];
+                        return _tanks[20041];
                     }
                     //kv-1s renamed to kv-85 in 9.3
                     if (tankDescription.UniqueId() == 73 && clientVersion < new Version("0.9.3.0"))

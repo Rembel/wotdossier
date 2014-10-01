@@ -40,6 +40,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<ReplayFile> ReplayUploadCommand { get; set; }
         public DelegateCommand<object> ReplaysUploadCommand { get; set; }
         public DelegateCommand<object> CopyLinkToClipboardCommand { get; set; }
+        public DelegateCommand<ReplayFile> CopyFileNameToClipboardCommand { get; set; }
         public DelegateCommand<ReplayFile> PlayReplayCommand { get; set; }
         public DelegateCommand<ReplayFile> PlayReplayWithCommand { get; set; }
         public DelegateCommand<ReplayFile> ShowFileInFolderCommand { get; set; }
@@ -105,6 +106,7 @@ namespace WotDossier.Applications.ViewModel
             PlayReplayWithCommand = new DelegateCommand<ReplayFile>(OnPlayWith);
             ShowFileInFolderCommand = new DelegateCommand<ReplayFile>(OnShowFileInFolder, CanOnShowFileInFolder);
             ShowDetailsCommand = new DelegateCommand<ReplayFile>(OnReplayRowDoubleClick, CanShowDetails);
+            CopyFileNameToClipboardCommand = new DelegateCommand<ReplayFile>(OnCopyFileNameToClipboard, CanCopyFileNameToClipboard);
 
             AddFolderCommand = new DelegateCommand<ReplayFolder>(OnAddFolder);
             ZipFolderCommand = new DelegateCommand<ReplayFolder>(OnZipFolder);
@@ -120,6 +122,16 @@ namespace WotDossier.Applications.ViewModel
             ChartView = playerChartsViewModel;
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
+        }
+
+        private bool CanCopyFileNameToClipboard(ReplayFile replay)
+        {
+            return replay is PhisicalReplay;
+        }
+
+        private void OnCopyFileNameToClipboard(ReplayFile replay)
+        {
+            Clipboard.SetText(replay.Name);
         }
 
         private bool CanShowDetails(ReplayFile replay)

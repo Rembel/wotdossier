@@ -3248,4 +3248,7 @@
   <data name="ReplaysTab_ShowDetails" xml:space="preserve">
     <value>Подробная информация</value>
   </data>
+  <data name="ReplaysTab_CopyFileNameToClipboard" xml:space="preserve">
+    <value>Копировать имя файла</value>
+  </data>
 </root>

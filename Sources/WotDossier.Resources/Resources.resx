@@ -3034,22 +3034,37 @@ up to 500 m</value>
     <value>Marks on Gun</value>
   </data>
   <data name="Tooltip_Achievements_7x7_BattleTested" xml:space="preserve">
-    <value />
+    <value>For the number of awards received in Team Battles.
+    • Can be obtained in Team Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_BruteForceMedal" xml:space="preserve">
-    <value />
+    <value>Destroy 10 enemy vehicles by ramming.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_GuerrillaMedal" xml:space="preserve">
-    <value />
+    <value>Remain undetected and destroy at least 10 enemy vehicles.
+    • Enemy vehicles must be within the vehicle's visibility range.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_InfiltratorMedal" xml:space="preserve">
-    <value />
+    <value>Earn at least 1,000 capture points on the enemy base.
+    • Achievement only includes the base capture points that resulted in a successful base capture.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_PrematureDetonationMedal" xml:space="preserve">
-    <value />
+    <value>Destroy 10 enemy vehicles by exploding their ammo rack.
+    • Newly received awards are added together.
+    • All instances of destroying enemy vehicles by exploding their ammo rack are counted.
+    • Can be obtained in Team Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_7x7_SentinelMedal" xml:space="preserve">
-    <value />
+    <value>Earn at least 1,000 base defense points.
+    • Only victorious battles are counted.
+    • Newly received awards are added together.
+    • Can be obtained in Team Battles only.</value> 
   </data>
   <data name="Column_Performance_DamageBlockedByArmor" xml:space="preserve">
     <value>Damage blocked by armor</value>
@@ -3070,34 +3085,58 @@ up to 500 m</value>
     <value>Total: {0:0.0}%</value>
   </data>
   <data name="Tooltip_Achievements_15x15_Arsonist" xml:space="preserve">
-    <value />
+    <value>Destroy an enemy vehicle by setting it on fire.
+    • No more than one award per player in a battle.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_Bonecrusher" xml:space="preserve">
-    <value />
+    <value>Damage enemy vehicles' modules or injure crew members at least five times in a battle.
+    • Modules damaged by fire are counted.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_Charmed" xml:space="preserve">
-    <value />
+    <value>Survive and win the battle, having received damage from at least four different enemy vehicles.
+    • Only hits that caused damage are included.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_Demolition" xml:space="preserve">
-    <value />
+    <value>Destroy an enemy vehicle by causing its ammunition to explode.
+    • No more than one award per player in a battle.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_Duelist" xml:space="preserve">
-    <value />
+    <value>Destroy at least two enemy vehicles that caused damage to your vehicle in the battle.
+    • Damage to modules is included.
+    • Ricochet and non-penetration are not included.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_Even" xml:space="preserve">
-    <value />
+    <value>Help your team damage at least 6 enemy vehicles by spotting them.
+    • The player must be the only one spotting the enemy vehicles at the moment when they are damaged.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_Fighter" xml:space="preserve">
-    <value />
+    <value>Destroy four or five enemy vehicles in one battle.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_Impenetrable" xml:space="preserve">
-    <value />
+    <value>Have total damage blocked by armor exceed the hit points of your vehicle.
+    • Survive the battle.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_ShootToKill" xml:space="preserve">
-    <value />
+    <value>Cause more damage to enemy vehicles than the hit points of your vehicle.
+    • Damage caused by ramming or setting enemy vehicle on fire is included.
+    • Unavailable for SPGs.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Tooltip_Achievements_15x15_MaxAimerSeries" xml:space="preserve">
-    <value />
+    <value>Spot enemy vehicles, enabling your allies to cause 1,000 HP of damage in one battle.
+    • Win the battle.
+    • The series is extended for every 1,000 HP of damage caused by allies to enemy vehicles spotted by you in one battle.
+    • Every vehicle has its own series.
+    • Only the longest series is counted.
+    • Can be obtained in Random Battles only.</value> 
   </data>
   <data name="Map_94_battlecity" xml:space="preserve">
     <value>Battle City</value>

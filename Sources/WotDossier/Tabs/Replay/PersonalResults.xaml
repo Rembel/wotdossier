@@ -201,7 +201,7 @@
                     </ItemsControl.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
+                            <Image Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
                                 <Image.ToolTip>
                                     <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
                                 </Image.ToolTip>
@@ -227,7 +227,7 @@
                     </ItemsControl.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Image Margin="3" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
+                            <Image Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
                                 <Image.ToolTip>
                                     <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
                                 </Image.ToolTip>

@@ -56,6 +56,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int DamageReceived { get; set; }
         public int DamageDealt { get; set; }
         public int Credits { get; set; }
+        public int CreditsEarned { get; set; }
         public int Team { get; set; }
         
         public TankDescription Tank { get; set; }
@@ -185,7 +186,12 @@ namespace WotDossier.Applications.ViewModel.Replay
     
                 if (replay.datablock_battle_result != null)
                 {
+                    int autoRepairCost = replay.datablock_battle_result.personal.autoRepairCost ?? 0;
+                    int autoLoadCost = ReplayFileHelper.GetAutoLoadCost(replay);
+                    int autoEquipCost = ReplayFileHelper.GetAutoEquipCost(replay);
+
                     Credits = replay.datablock_battle_result.personal.credits;
+                    CreditsEarned = Credits - autoRepairCost - autoLoadCost - autoEquipCost;
                     DamageDealt = replay.datablock_battle_result.personal.damageDealt;
                     DamageReceived = replay.datablock_battle_result.personal.damageReceived;
                     IsWinner = GetBattleStatus(replay);

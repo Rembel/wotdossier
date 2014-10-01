@@ -9,7 +9,7 @@
 
     <DataTemplate x:Key="BoelterColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBoelter.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBoelter.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Boelter}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Boelter}"></controls:MedalTooltip>
@@ -21,7 +21,7 @@
     </DataTemplate>
     <DataTemplate x:Key="RadleyWaltersColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalRadleyWalters.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalRadleyWalters.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_RadleyWalters}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_RadleyWalters}"></controls:MedalTooltip>
@@ -33,7 +33,7 @@
     </DataTemplate>
     <DataTemplate x:Key="LafayettePoolColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLafayettePool.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLafayettePool.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_LafayettePool}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_LafayettePool}"></controls:MedalTooltip>
@@ -45,7 +45,7 @@
     </DataTemplate>
     <DataTemplate x:Key="OrlikColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalOrlik.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalOrlik.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Orlik}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Orlik}"></controls:MedalTooltip>
@@ -57,7 +57,7 @@
     </DataTemplate>
     <DataTemplate x:Key="OskinColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalOskin.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalOskin.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Oskin}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Oskin}"></controls:MedalTooltip>
@@ -69,7 +69,7 @@
     </DataTemplate>
     <DataTemplate x:Key="LehvaslaihoColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLehvaslaiho.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLehvaslaiho.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Lehvaslaiho}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Lehvaslaiho}"></controls:MedalTooltip>
@@ -81,7 +81,7 @@
     </DataTemplate>
     <DataTemplate x:Key="NikolasColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalNikolas.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalNikolas.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Nikolas}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Nikolas}"></controls:MedalTooltip>
@@ -93,7 +93,7 @@
     </DataTemplate>
     <DataTemplate x:Key="HalonenColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalHalonen.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalHalonen.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Halonen}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Halonen}"></controls:MedalTooltip>
@@ -105,7 +105,7 @@
     </DataTemplate>
     <DataTemplate x:Key="BurdaColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBurda.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBurda.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Burda}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Burda}"></controls:MedalTooltip>
@@ -117,7 +117,7 @@
     </DataTemplate>
     <DataTemplate x:Key="PascucciColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalPascucci.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalPascucci.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Pascucci}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Pascucci}"></controls:MedalTooltip>
@@ -129,7 +129,7 @@
     </DataTemplate>
     <DataTemplate x:Key="DumitruColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalDumitru.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalDumitru.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Dumitru}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Dumitru}"></controls:MedalTooltip>
@@ -141,7 +141,7 @@
     </DataTemplate>
     <DataTemplate x:Key="TamadaYoshioColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalTamadaYoshio.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalTamadaYoshio.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_TamadaYoshio}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_TamadaYoshio}"></controls:MedalTooltip>
@@ -153,7 +153,7 @@
     </DataTemplate>
     <DataTemplate x:Key="BillotteColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBillotte.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBillotte.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Billotte}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Billotte}"></controls:MedalTooltip>
@@ -165,7 +165,7 @@
     </DataTemplate>
     <DataTemplate x:Key="BrunoPietroColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBrunoPietro.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBrunoPietro.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Bruno}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_BrunoPietro}"></controls:MedalTooltip>
@@ -177,7 +177,7 @@
     </DataTemplate>
     <DataTemplate x:Key="TarczayColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalTarczay.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalTarczay.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Tarczay}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Tarczay}"></controls:MedalTooltip>
@@ -189,7 +189,7 @@
     </DataTemplate>
     <DataTemplate x:Key="KolobanovColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalKolobanov.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalKolobanov.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Kolobanov}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Kolobanov}"></controls:MedalTooltip>
@@ -201,7 +201,7 @@
     </DataTemplate>
     <DataTemplate x:Key="FadinColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalFadin.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalFadin.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Fadin}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Fadin}"></controls:MedalTooltip>
@@ -213,7 +213,7 @@
     </DataTemplate>
     <DataTemplate x:Key="HeroesOfRaseiniaiColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalHeroesOfRassenay.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalHeroesOfRassenay.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_HeroesOfRassenay}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_HeroesOfRaseiniai}"></controls:MedalTooltip>
@@ -225,7 +225,7 @@
     </DataTemplate>
     <DataTemplate x:Key="DeLangladeColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalDeLanglade.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalDeLanglade.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_DeLanglade}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_DeLanglade}"></controls:MedalTooltip>
@@ -238,7 +238,7 @@
 
     <DataTemplate x:Key="KayColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalKay1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalKay1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Kay}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Kay}"></controls:MedalTooltip>
@@ -251,7 +251,7 @@
 
     <DataTemplate x:Key="CariusColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalCarius1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalCarius1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Carius}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Carius}"></controls:MedalTooltip>
@@ -264,7 +264,7 @@
 
     <DataTemplate x:Key="KnispelColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalKnispel1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalKnispel1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Knispel}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Knispel}"></controls:MedalTooltip>
@@ -277,7 +277,7 @@
 
     <DataTemplate x:Key="PoppelColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalPoppel1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalPoppel1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Poppel}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Poppel}"></controls:MedalTooltip>
@@ -290,7 +290,7 @@
 
     <DataTemplate x:Key="AbramsColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalAbrams1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalAbrams1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Abrams}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Abrams}"></controls:MedalTooltip>
@@ -303,7 +303,7 @@
 
     <DataTemplate x:Key="LeclerkColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLeClerc1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLeClerc1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Leclerk}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Leclerk}"></controls:MedalTooltip>
@@ -316,7 +316,7 @@
 
     <DataTemplate x:Key="LavrinenkoColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLavrinenko1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalLavrinenko1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Lavrinenko}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Lavrinenko}"></controls:MedalTooltip>
@@ -329,7 +329,7 @@
 
     <DataTemplate x:Key="EkinsColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalEkins1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalEkins1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Ekins}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Ekins}"></controls:MedalTooltip>
@@ -342,7 +342,7 @@
 
     <DataTemplate x:Key="KamikazeColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Kamikaze.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Kamikaze.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Kamikaze}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Kamikaze}"></controls:MedalTooltip>
@@ -355,7 +355,7 @@
 
     <DataTemplate x:Key="RaiderColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Raider.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Raider.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Raider}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Raider}"></controls:MedalTooltip>
@@ -368,7 +368,7 @@
 
     <DataTemplate x:Key="BombardierColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Bombardier.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Bombardier.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Bombardier}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Bombardier}"></controls:MedalTooltip>
@@ -381,7 +381,7 @@
 
     <DataTemplate x:Key="ReaperColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HandOfDeath.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HandOfDeath.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Reaper}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Reaper}"></controls:MedalTooltip>
@@ -394,7 +394,7 @@
 
     <DataTemplate x:Key="SharpshooterColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/TitleSniper.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/TitleSniper.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Sharpshooter}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Sharpshooter}"></controls:MedalTooltip>
@@ -407,7 +407,7 @@
 
     <DataTemplate x:Key="InvincibleColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Invincible.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Invincible.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Invincible}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Invincible}"></controls:MedalTooltip>
@@ -420,7 +420,7 @@
 
     <DataTemplate x:Key="SurvivorColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Diehard.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Diehard.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Survivor}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Survivor}"></controls:MedalTooltip>
@@ -433,7 +433,7 @@
 
     <DataTemplate x:Key="MouseTrapColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Mousebane.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Mousebane.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MouseTrap}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MouseTrap}"></controls:MedalTooltip>
@@ -446,7 +446,7 @@
 
     <DataTemplate x:Key="HunterColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Beasthunter.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Beasthunter.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Hunter}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Hunter}"></controls:MedalTooltip>
@@ -459,7 +459,7 @@
 
     <DataTemplate x:Key="SinaiColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Sinai.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Sinai.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Sinai}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Sinai}"></controls:MedalTooltip>
@@ -472,7 +472,7 @@
 
     <DataTemplate x:Key="PattonValleyColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Pattonvalley.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Pattonvalley.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_PattonValley}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_PattonValley}"></controls:MedalTooltip>
@@ -485,7 +485,7 @@
 
     <DataTemplate x:Key="HuntsmanColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/huntsman.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/huntsman.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Huntsman}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Huntsman}"></controls:MedalTooltip>
@@ -498,7 +498,7 @@
 
     <DataTemplate x:Key="BattleHeroColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/BattleHero.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/BattleHero.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_BattleHero}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_BattleHero}"></controls:MedalTooltip>
@@ -511,7 +511,7 @@
 
     <DataTemplate x:Key="WarriorColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Warrior.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Warrior.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Warrior}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Warrior}"></controls:MedalTooltip>
@@ -524,7 +524,7 @@
 
     <DataTemplate x:Key="InvaderColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Invader.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Invader.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Invader}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Invader}"></controls:MedalTooltip>
@@ -537,7 +537,7 @@
 
     <DataTemplate x:Key="SniperColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Sniper.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Sniper.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Sniper}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Sniper}"></controls:MedalTooltip>
@@ -550,7 +550,7 @@
 
     <DataTemplate x:Key="Sniper2ColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Sniper2.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Sniper2.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Sniper2}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Sniper2}"></controls:MedalTooltip>
@@ -563,7 +563,7 @@
 
     <DataTemplate x:Key="MainGunColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/maingun.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/maingun.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MainGun}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MainGun}"></controls:MedalTooltip>
@@ -576,7 +576,7 @@
 
     <DataTemplate x:Key="DefenderColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Defender.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Defender.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Defender}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Defender}"></controls:MedalTooltip>
@@ -589,7 +589,7 @@
 
     <DataTemplate x:Key="SteelWallColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Steelwall.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Steelwall.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_SteelWall}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_SteelWall}"></controls:MedalTooltip>
@@ -602,7 +602,7 @@
 
     <DataTemplate x:Key="ConfederateColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Supporter.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Supporter.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Confederate}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Confederate}"></controls:MedalTooltip>
@@ -615,7 +615,7 @@
 
     <DataTemplate x:Key="ScoutColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Scout.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Scout.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Scout}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Scout}"></controls:MedalTooltip>
@@ -628,7 +628,7 @@
 
     <DataTemplate x:Key="PatrolDutyColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Evileye.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/Evileye.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_PatrolDuty}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_PatrolDuty}"></controls:MedalTooltip>
@@ -641,7 +641,7 @@
 
     <DataTemplate x:Key="BrothersInArmsColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBrothersInArms.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalBrothersInArms.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_BrothersInArms}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_BrothersInArms}"></controls:MedalTooltip>
@@ -654,7 +654,7 @@
 
     <DataTemplate x:Key="CrucialContributionColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalCrucialContribution.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MedalCrucialContribution.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_CrucialContribution}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_CrucialContribution}"></controls:MedalTooltip>
@@ -667,7 +667,7 @@
 
     <DataTemplate x:Key="IronManColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/IronMan.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/IronMan.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_IronMan}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_IronMan}"></controls:MedalTooltip>
@@ -680,7 +680,7 @@
 
     <DataTemplate x:Key="LuckyDevilColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/luckyDevil.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/luckyDevil.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_LuckyDevil}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Lucky}"></controls:MedalTooltip>
@@ -693,7 +693,7 @@
 
     <DataTemplate x:Key="SturdyColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/sturdy.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/sturdy.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_Sturdy}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_Sturdy}"></controls:MedalTooltip>
@@ -706,7 +706,7 @@
 
     <DataTemplate x:Key="MasterGunnerColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ArmorPiercer.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ArmorPiercer.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MasterGunner}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MasterGunner}"></controls:MedalTooltip>
@@ -720,7 +720,7 @@
     <!--7x7-->
     <DataTemplate x:Key="ForTacticalOperationsColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/forTacticalOperations1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/forTacticalOperations1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_ForTacticalOperations}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_ForTacticalOperations}"></controls:MedalTooltip>
@@ -733,8 +733,7 @@
 
     <DataTemplate x:Key="KingOfTheHillColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/KingOfTheHill.png" Height="71"
-                   Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/KingOfTheHill.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_KingOfTheHill}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_KingOfTheHill}" />
@@ -747,7 +746,7 @@
 
     <DataTemplate x:Key="ArmoredFistColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ArmoredFist.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/ArmoredFist.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_ArmoredFist}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_ArmoredFist}" />
@@ -760,7 +759,7 @@
 
     <DataTemplate x:Key="CrucialShotMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/crucialShotMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/crucialShotMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_CrucialShotMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_CrucialShotMedal}" />
@@ -773,7 +772,7 @@
 
     <DataTemplate x:Key="FightingReconnaissanceMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FightingReconnaissanceMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FightingReconnaissanceMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FightingReconnaissanceMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FightingReconnaissanceMedal}" />
@@ -786,7 +785,7 @@
 
     <DataTemplate x:Key="GeniusForWarMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GeniusForWarMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GeniusForWarMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_GeniusForWarMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_GeniusForWarMedal}" />
@@ -799,7 +798,7 @@
 
     <DataTemplate x:Key="GodOfWarColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GodOfWar.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GodOfWar.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_GodOfWar}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_GodOfWar}" />
@@ -812,7 +811,7 @@
 
     <DataTemplate x:Key="TacticalBreakthroughColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/TacticalBreakthrough.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/TacticalBreakthrough.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_TacticalBreakthrough}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_TacticalBreakthrough}" />
@@ -825,7 +824,7 @@
 
     <DataTemplate x:Key="WolfAmongSheepMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/WolfAmongSheepMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/WolfAmongSheepMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_WolfAmongSheepMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_WolfAmongSheepMedal}" />
@@ -838,7 +837,7 @@
 
     <DataTemplate x:Key="WillToWinSpiritColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/WillToWinSpirit.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/WillToWinSpirit.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_WillToWinSpirit}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_WillToWinSpirit}" />
@@ -851,7 +850,7 @@
 
     <DataTemplate x:Key="PromisingFighterMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PromisingFighterMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PromisingFighterMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PromisingFighterMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PromisingFighterMedal}" />
@@ -864,7 +863,7 @@
 
     <DataTemplate x:Key="HeavyFireMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HeavyFireMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/HeavyFireMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_HeavyFireMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_HeavyFireMedal}" />
@@ -877,7 +876,7 @@
 
     <DataTemplate x:Key="RangerMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/RangerMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/RangerMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_RangerMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_RangerMedal}" />
@@ -890,7 +889,7 @@
 
     <DataTemplate x:Key="FireAndSteelMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FireAndSteelMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/FireAndSteelMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_FireAndSteelMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_FireAndSteelMedal}" />
@@ -903,7 +902,7 @@
 
     <DataTemplate x:Key="PyromaniacMedalColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PyromaniacMedal.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/PyromaniacMedal.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_PyromaniacMedal}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_PyromaniacMedal}" />
@@ -916,7 +915,7 @@
 
     <DataTemplate x:Key="NoMansLandColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/NoMansLand.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/NoMansLand.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_7x7_NoMansLand}" Text="{x:Static resources:Resources.Tooltip_Achievements_7x7_NoMansLand}" />
@@ -930,7 +929,7 @@
     <!--Historical-->
     <DataTemplate x:Key="GuardsManColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GuardsMan1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/GuardsMan1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_HistoricalBattle_GuardsMan}" Text="{x:Static resources:Resources.Tooltip_Achievements_HistoricalBattle_GuardsMan}" />
@@ -943,7 +942,7 @@
 
     <DataTemplate x:Key="MakerOfHistoryColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MakerOfHistory1.png" Height="71" Width="67">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/MakerOfHistory1.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
                 <ToolTipService.ToolTip>
                     <ToolTip>
                         <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_HistoricalBattle_MakerOfHistory}" Text="{x:Static resources:Resources.Tooltip_Achievements_HistoricalBattle_MakerOfHistory}" />

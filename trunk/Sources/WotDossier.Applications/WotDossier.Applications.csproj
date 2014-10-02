@@ -146,12 +146,14 @@
     <Compile Include="ViewModel\Filter\ReplaysFilterViewModel.cs" />
     <Compile Include="ViewModel\Filter\TankFilterViewModel.cs" />
     <Compile Include="Events\RefreshEvent.cs" />
+    <Compile Include="ViewModel\IReporter.cs" />
     <Compile Include="ViewModel\ReplayManagerShellViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
     <Compile Include="ViewModel\Replay\DbReplay.cs" />
     <Compile Include="ViewModel\Replay\PhisicalReplay.cs" />
     <Compile Include="ViewModel\Replay\TotalReplayFile.cs" />
+    <Compile Include="ViewModel\Reporter.cs" />
     <Compile Include="ViewModel\Rows\FortSortiesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\FortBattlesTankStatisticRowViewModel.cs" />
     <Compile Include="ViewModel\Rows\HistoricalBattlesTankStatisticRowViewModel.cs" />

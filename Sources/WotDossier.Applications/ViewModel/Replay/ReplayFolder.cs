@@ -16,6 +16,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         private int _count;
         private string _name;
         private bool _useInCharts = true;
+        private string[] _files;
 
         /// <summary>
         /// Gets or sets the identifier.
@@ -112,6 +113,13 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             get { return _useInCharts; }
             set { _useInCharts = value; }
+        }
+
+        [XmlIgnore]
+        public string[] Files
+        {
+            get { return _files ?? new string[0]; }
+            set { _files = value; }
         }
 
         /// <summary>

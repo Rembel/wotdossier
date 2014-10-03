@@ -27,6 +27,15 @@ namespace WotDossier.Controls
             set { SetValue(ValueProperty, value); }
         }
 
+        public static readonly DependencyProperty ValueTooltipProperty =
+            DependencyProperty.Register("ValueTooltip", typeof(string), typeof(StatisticRow), new PropertyMetadata(default(string)));
+
+        public string ValueTooltip
+        {
+            get { return (string)GetValue(ValueTooltipProperty); }
+            set { SetValue(ValueTooltipProperty, value); }
+        }
+
         public static readonly DependencyProperty DeltaProperty =
             DependencyProperty.Register("Delta", typeof(string), typeof(StatisticRow), new PropertyMetadata(default(string)));
 
@@ -34,6 +43,15 @@ namespace WotDossier.Controls
         {
             get { return (string)GetValue(DeltaProperty); }
             set { SetValue(DeltaProperty, value); }
+        }
+
+        public static readonly DependencyProperty DeltaTooltipProperty =
+            DependencyProperty.Register("DeltaTooltip", typeof(string), typeof(StatisticRow), new PropertyMetadata(default(string)));
+
+        public string DeltaTooltip
+        {
+            get { return (string)GetValue(DeltaTooltipProperty); }
+            set { SetValue(DeltaTooltipProperty, value); }
         }
 
         public static readonly DependencyProperty ValueForegroundProperty =

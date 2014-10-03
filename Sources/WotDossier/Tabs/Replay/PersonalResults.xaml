@@ -257,8 +257,8 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,10,10,10">
                     <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="{Binding Path=MapName, Mode=OneWay, Converter={x:Static converters:MapNameToImageConverter.Default}}" VerticalAlignment="Top" />
                     <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="pack://application:,,,/WotDossier.Resources;component/Images/Maps\overlay.png" VerticalAlignment="Top" />
-                    <Image Margin="171,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" VerticalAlignment="Top" />
-                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="336,10,0,0" VerticalAlignment="Top" Width="129">
+                    <Image Margin="131,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" VerticalAlignment="Top" />
+                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="296,10,0,0" VerticalAlignment="Top" Width="176">
                         <TextBlock Text="{Binding FullName}" FontSize="20" Foreground="#FEC264">
                             <ToolTipService.ToolTip>
                                 <TextBlock Text="{Binding Path=FullName}"></TextBlock>

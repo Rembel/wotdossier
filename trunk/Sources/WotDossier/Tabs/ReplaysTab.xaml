@@ -212,6 +212,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn Header="{x:Static resources:Resources.Column_Ratings_Platoon}" ElementStyle="{StaticResource CCheckBox}" Binding="{Binding IsPlatoon}"/>
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">

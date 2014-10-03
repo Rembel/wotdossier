@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
@@ -9,11 +10,14 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel;
+using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Common;
 using WotDossier.Common.Extensions;
 using WotDossier.Dal;
 using WotDossier.Domain.Replay;
+using WotDossier.Framework.Forms.ProgressDialog;
 
 namespace WotDossier.Test
 {
@@ -181,6 +185,27 @@ namespace WotDossier.Test
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// process only changed replays files, full processing only on app start
+        /// </summary>
+        [Test]
+        public void ReplaysViewModelTest()
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", new Version("0.8.1").ToString(3));
+            ReplaysViewModel replaysViewModel = new ReplaysViewModel(DossierRepository, new ProgressControlViewModel(), new PlayerChartsViewModel());
+            var mockView = new Mock<IReporter>();
+            mockView.Setup(x => x.Report(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<object[]>()))
+                .Callback<int, string, object[]>((percentProgress, format, arg) => Console.WriteLine(format, arg));
+            List<ReplayFolder> replayFolders = new List<ReplayFolder> { new ReplayFolder { Path = replayFolder, Folders = new ObservableCollection<ReplayFolder>() } };
+            replaysViewModel.ReplaysFolders = replayFolders;
+            StopWatch stopWatch = new StopWatch();
+            replaysViewModel.ProcessReplaysFolders(replayFolders, mockView.Object);
+            Console.WriteLine(stopWatch.Peek());
+            stopWatch.Reset();
+            replaysViewModel.ProcessReplaysFolders(replayFolders, mockView.Object);
+            Console.WriteLine(stopWatch.Peek());
         }
     }
 }

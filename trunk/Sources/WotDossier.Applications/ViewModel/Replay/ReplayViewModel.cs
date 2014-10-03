@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using Common.Logging;
 using Newtonsoft.Json.Linq;
 using WotDossier.Applications.View;
 using WotDossier.Common;
@@ -22,6 +23,8 @@ namespace WotDossier.Applications.ViewModel.Replay
     [Export(typeof (ReplayViewModel))]
     public class ReplayViewModel : ViewModel<IReplayView>
     {
+        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+
         #region Fields and Properties
 
         public string Title { get; set; }
@@ -195,7 +198,14 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             if (player != null)
             {
-                Clipboard.SetText(player.Name);
+                try
+                {
+                    Clipboard.SetText(player.Name);
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Clipboard error", e);
+                }
             }
         }
 

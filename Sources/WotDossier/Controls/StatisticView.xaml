@@ -16,7 +16,7 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="Transparent">
-            <TextBlock Foreground="#FFA759" Text="{x:Static resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
+            <TextBlock Foreground="#FFA759" Text="{x:Static resources:Resources.Common_OverallResults}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold" />
             <!--BattlesParticipated-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_BattlesParticipated}" 
                                    Value="{Binding BattlesCount, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
@@ -25,6 +25,12 @@
             <!--Wins-->
             <controls:StatisticRow ValueForeground="{Binding WinsPercent, Converter={x:Static color:PercentToColorConverter.Default}}" Header="{x:Static resources:Resources.Common_Victories}"
                                    DeltaForeground="{Binding WinsPercentDelta, Converter={x:Static color:DeltaToColorConverter.Default}}">
+                <controls:StatisticRow.ValueTooltip>
+                    <MultiBinding Converter="{x:Static converters:ValueNearestPercentFormater.Default}" ConverterParameter="{StaticResource True}" >
+                        <Binding Path="Wins" />
+                        <Binding Path="WinsPercent" />
+                    </MultiBinding>
+                </controls:StatisticRow.ValueTooltip>
                 <controls:StatisticRow.Delta>
                     <MultiBinding Converter="{x:Static converters:ValueDeltaPercentFormater.Default}" >
                         <Binding Path="WinsDelta" />
@@ -37,7 +43,7 @@
                         <Binding Path="WinsPercent" />
                     </MultiBinding>
                 </controls:StatisticRow.Value>
-                <ToolTipService.ToolTip>
+                <!--<ToolTipService.ToolTip>
                     <TextBlock>
                         <TextBlock.Text>
                             <MultiBinding Converter="{x:Static converters:ValueNearestPercentFormater.Default}" ConverterParameter="{StaticResource True}" >
@@ -46,7 +52,7 @@
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
-                </ToolTipService.ToolTip>
+                </ToolTipService.ToolTip>-->
             </controls:StatisticRow>
             <!--Losses-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_Defeats}"
@@ -82,14 +88,16 @@
             </controls:StatisticRow>
             <TextBlock Foreground="#FFA759" Text="{x:Static resources:Resources.Common_Experience}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
             <!--Xp-->
-            <controls:StatisticRow Header="{x:Static resources:Resources.Common_TotalExperience}" 
+            <!--<controls:StatisticRow Header="{x:Static resources:Resources.Common_TotalExperience}" 
                                    Value="{Binding Xp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                    Delta="{Binding XpDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
-                                   DeltaForeground="{Binding XpDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
+                                   DeltaForeground="{Binding XpDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>-->
             <!--BattleAvgXp-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_AvgExperience}" 
                                    Value="{Binding AvgXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                                   ValueTooltip="{Binding Xp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                    Delta="{Binding AvgXpDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.00;-#,0.00;0'}"
+                                   DeltaTooltip="{Binding XpDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
                                    DeltaForeground="{Binding AvgXpDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--MaxXp-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_MaxExperience}" 
@@ -116,7 +124,9 @@
             <!--DamageDealt-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_DamageCaused}" 
                                    Value="{Binding AvgDamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                                   ValueTooltip="{Binding DamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                    Delta="{Binding AvgDamageDealtDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.00;-#,0.00;0'}"
+                                   DeltaTooltip="{Binding DamageDealtDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                    DeltaForeground="{Binding AvgDamageDealtDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--DamageRatio-->
             <controls:StatisticRow HeaderMargin="20,0,0,0" Header="{x:Static resources:Resources.Common_DamageRatio}" 

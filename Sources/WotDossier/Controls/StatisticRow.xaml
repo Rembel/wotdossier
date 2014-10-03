@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d" Width="550"
              d:DesignHeight="300" d:DesignWidth="300" Foreground="#BABFBA">
     <Grid>
@@ -17,15 +18,31 @@
                    Margin="{Binding HeaderMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"/>
-        <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
+        <TextBlock Grid.Column="1" HorizontalAlignment="Right"
+                   DataContext="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   Text="{Binding Value, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
                    FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    Foreground="{Binding ValueForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
-                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"/>
-        <TextBlock Grid.Column="2" TextAlignment="Right" Text="{Binding Delta, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}">
+                <ToolTipService.ToolTip>
+                    <ToolTip Visibility="{Binding Path=ValueTooltip, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
+                        <TextBlock Foreground="{Binding ValueForeground}" Text="{Binding ValueTooltip}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+        </TextBlock>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Right" 
+                   DataContext="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
+                   Text="{Binding Delta, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}" 
                    FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
                    Foreground="{Binding DeltaForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"
-                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}"/>
+                   FontWeight="{Binding FontWeight, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:StatisticRow}}">
+                <ToolTipService.ToolTip>
+                    <ToolTip Visibility="{Binding Path=DeltaTooltip, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
+                        <TextBlock Foreground="{Binding DeltaForeground}" Text="{Binding DeltaTooltip}" />
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+        </TextBlock>
     </Grid>
 </UserControl>

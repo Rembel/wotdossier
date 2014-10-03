@@ -204,12 +204,25 @@ namespace WotDossier.Applications.ViewModel.Replay
                     IsAlive = replay.datablock_battle_result.personal.deathReason == -1 || replay.datablock_battle_result.personal.killerID == 0;
                     Medals = Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
                     MedalsCount = Medals.Count;
+                    IsPlatoon = ResolvePlatoonFlag(replay);
                 }
 
                 TeamMembers = replay.datablock_1.vehicles.Values.ToList();
                 Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
             }
         }
+
+        private bool ResolvePlatoonFlag(Domain.Replay.Replay replay)
+        {
+            if (PlayerId != 0)
+            {
+                var player = replay.datablock_battle_result.players[PlayerId];
+                return player.platoonID > 0 || player.prebattleID > 0;
+            }
+            return replay.datablock_battle_result.players.Values.Any(x => x.name == PlayerName && (x.prebattleID > 0 || x.prebattleID > 0));
+        }
+
+        public bool IsPlatoon { get; set; }
 
         /// <summary>
         /// Moves replay to the specified folder.

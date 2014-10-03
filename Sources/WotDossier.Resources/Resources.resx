@@ -3174,4 +3174,7 @@ up to 500 m</value>
   <data name="BattleType_Event" xml:space="preserve">
     <value>Event Battle</value>
   </data>
+  <data name="Column_Ratings_Platoon" xml:space="preserve">
+    <value>Platoon</value>
+  </data>
 </root>

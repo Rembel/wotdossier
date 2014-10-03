@@ -3254,4 +3254,7 @@
   <data name="Column_Replay_CreditsEarned" xml:space="preserve">
     <value>Заработано</value>
   </data>
+  <data name="BattleType_Event" xml:space="preserve">
+    <value>Эвент</value>
+  </data>
 </root>

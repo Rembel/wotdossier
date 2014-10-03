@@ -336,7 +336,7 @@ namespace WotDossier.Applications.ViewModel
             ProgressView.Execute(
                 Resources.Resources.ProgressTitle_Loading_replays, (bw, we) =>
                 {
-                    Reporter reporter = new Reporter(bw, ProgressView);
+                    Reporter reporter = new Reporter(bw, we, ProgressView);
                     ProcessReplaysFolders(replayFolders, reporter);
                 }, new ProgressDialogSettings(true, true, false));
         }

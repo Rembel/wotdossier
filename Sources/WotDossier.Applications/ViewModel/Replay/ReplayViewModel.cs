@@ -469,7 +469,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 BattleType.Unknown,
                 BattleType.Regular,
                 BattleType.CompanyWar,
-                BattleType.ClanWar
+                BattleType.ClanWar,
+                BattleType.Event
             };
 
             if (list.Contains(battleType))

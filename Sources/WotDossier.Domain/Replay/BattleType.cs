@@ -11,7 +11,7 @@
         Tutorial = 6,
         CyberSport = 7,
         Historical = 8,
-        Reserved1 = 9,
+        Event = 9,
         Sorties = 10,
         Reserved3 = 11
     }

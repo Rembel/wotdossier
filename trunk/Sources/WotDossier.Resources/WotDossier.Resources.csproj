@@ -751,7 +751,7 @@
     <Resource Include="Images\Medals\whiteTiger.png" />
     <Resource Include="Images\Tanks\germany_Karl.png" />
     <Resource Include="Images\Tanks\japan_Te_Ke.png" />
-    <Resource Include="Images\Tanks\noImage.png" />
+    <Resource Include="Images\Tanks\unknown_tank.png" />
     <Resource Include="Images\Tanks\ussr_T62A_sport.png" />
   </ItemGroup>
   <ItemGroup>
@@ -886,6 +886,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Maps\102_DeathTrack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ammo\ARMOR_PIERCING.png" />
+    <Resource Include="Images\ammo\ARMOR_PIERCING_CR.png" />
+    <Resource Include="Images\ammo\ARMOR_PIERCING_HE.png" />
+    <Resource Include="Images\ammo\HIGH_EXPLOSIVE.png" />
+    <Resource Include="Images\ammo\HIGH_EXPLOSIVE_PREMIUM.png" />
+    <Resource Include="Images\ammo\HOLLOW_CHARGE.png" />
+    <Resource Include="Images\ammo\NO_ARMOR_PIERCING.png" />
+    <Resource Include="Images\ammo\NO_ARMOR_PIERCING_CR.png" />
+    <Resource Include="Images\ammo\NO_ARMOR_PIERCING_HE.png" />
+    <Resource Include="Images\ammo\NO_HIGH_EXPLOSIVE.png" />
+    <Resource Include="Images\ammo\NO_HIGH_EXPLOSIVE_PREMIUM.png" />
+    <Resource Include="Images\ammo\NO_HOLLOW_CHARGE.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

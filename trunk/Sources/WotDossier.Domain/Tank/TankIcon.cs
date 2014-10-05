@@ -5,7 +5,7 @@ namespace WotDossier.Domain.Tank
     [DataContract]
     public class TankIcon
     {
-        public static TankIcon Empty = new TankIcon{Icon = string.Empty};
+        public static TankIcon Empty = new TankIcon{Icon = "tank", CountryId = Country.Unknown};
 
         /// <summary>
         /// Gets the icon id.

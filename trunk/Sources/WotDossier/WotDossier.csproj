@@ -196,6 +196,7 @@
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
     <Compile Include="Converters\BattleModeToVisibilityConverter.cs" />
     <Compile Include="Converters\DamageRatingToTooltipConverter.cs" />
+    <Compile Include="Converters\Image\ShellDescriptionToImageConverter.cs" />
     <Compile Include="Converters\Image\DamageRatingToImageConverter.cs" />
     <Compile Include="Converters\Image\ImageSourceConverter.cs" />
     <Compile Include="Converters\ValueToTextConverter.cs" />
@@ -987,6 +988,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="External\structures_87.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\shells\china_shells.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\shells\france_shells.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\shells\germany_shells.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\shells\japan_shells.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\shells\uk_shells.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\shells\usa_shells.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\shells\ussr_shells.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />

@@ -303,13 +303,13 @@ namespace WotDossier.Applications.Parser
             //stream.Read(buffer, 0, (int) (packet.SubTypePayloadLength));
 
             ulong value = stream.Read(4).ConvertLittleEndian();
-            var item = new SlotItem((SlotType)(value & 15), value >> 4 & 15, value >> 8 & 65535);
+            var item = new SlotItem((SlotType)(value & 15), (int) (value >> 4 & 15), (int) (value >> 8 & 65535));
 
             ulong count = stream.Read(2).ConvertLittleEndian();
 
             ulong rest = stream.Read(3).ConvertLittleEndian();
 
-            var slot = new Slot(item, count, rest);
+            var slot = new Slot(item, (int) count, (int) rest);
 
             if (data.Slots.Count < 6)
             {

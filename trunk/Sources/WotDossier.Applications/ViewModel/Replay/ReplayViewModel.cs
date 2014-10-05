@@ -148,6 +148,13 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _consumables = value; }
         }
 
+        private List<Slot> _shells = new List<Slot>();
+        public List<Slot> Shells
+        {
+            get { return _shells; }
+            set { _shells = value; }
+        }
+
         private TeamMember _alienTeamMember;
         public TeamMember AlienTeamMember
         {
@@ -405,10 +412,16 @@ namespace WotDossier.Applications.ViewModel.Replay
                     
                     foreach (Slot slot in replay.datablock_advanced.Slots)
                     {
-                        if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey((int) slot.item.id) &&
-                            slot.item.type_id == SlotType.Equipment)
+                        if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey(slot.Item.Id) &&
+                            slot.Item.TypeId == SlotType.Equipment)
                         {
-                            Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[(int) slot.item.id]);
+                            Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[slot.Item.Id]);
+                        }
+                        if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
+                            slot.Item.TypeId == SlotType.Shell)
+                        {
+                            slot.Description = Dictionaries.Instance.Shells[(Country) slot.Item.Country][slot.Item.Id];
+                            Shells.Add(slot);
                         }
                     }
 

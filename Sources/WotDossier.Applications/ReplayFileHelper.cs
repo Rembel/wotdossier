@@ -142,6 +142,12 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                             _log.Trace("Found Replay Blocks: " + blocksCount);
                         }
 
+                        if(blocksCount > 5)
+                        {
+                            _log.ErrorFormat("Uncompressed replay({0})", file.FullName);
+                            return null;
+                        }
+
                         for (int i = 0; i < blocksCount; i++)
                         {
                             int blockLength = (int)stream.Read(4).ConvertLittleEndian();

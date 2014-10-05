@@ -3,25 +3,27 @@ namespace WotDossier.Domain.Replay
     public class Slot
     {
         private readonly SlotItem _item;
-        private readonly ulong _count;
-        private readonly ulong _rest;
+        private readonly int _count;
+        private readonly int _rest;
 
-        public SlotItem item
+        public SlotItem Item
         {
             get { return _item; }
         }
 
-        public ulong count
+        public int Count
         {
             get { return _count; }
         }
 
-        public ulong rest
+        public int Rest
         {
             get { return _rest; }
         }
 
-        public Slot(SlotItem item, ulong count, ulong rest)
+        public object Description { get; set; }
+
+        public Slot(SlotItem item, int count, int rest)
         {
             _item = item;
             _count = count;

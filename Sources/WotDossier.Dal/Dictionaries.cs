@@ -262,7 +262,31 @@ namespace WotDossier.Dal
 
             DeviceDescriptions = ReadDeviceDescriptions();
             ConsumableDescriptions = ReadConsumableDescriptions();
+            Shells = ReadShellsDescriptions();
         }
+
+        private Dictionary<Country, Dictionary<int, ShellDescription>> ReadShellsDescriptions()
+        {
+            Dictionary<Country, Dictionary<int, ShellDescription>> result = new Dictionary<Country, Dictionary<int, ShellDescription>>();
+            foreach (Country country in Enum.GetValues(typeof(Country)))
+            {
+                string file = string.Format(@"External\shells\{0}_shells.json", country);
+                if (File.Exists(file))
+                {
+                    using (StreamReader re = new StreamReader(file))
+                    {
+                        JsonTextReader reader = new JsonTextReader(re);
+                        JsonSerializer se = new JsonSerializer();
+                        JObject parsedData = se.Deserialize<JObject>(reader);
+                        var readDeviceDescriptions = parsedData.ToObject<Dictionary<string, ShellDescription>>();
+                        result.Add(country, readDeviceDescriptions.Values.Where(x => x.id != null).ToDictionary(x => x.id.Value, y => y));
+                    }
+                }
+            }
+            return result;
+        }
+
+        public Dictionary<Country, Dictionary<int, ShellDescription>> Shells { get; set; }
 
         private Dictionary<int, DeviceDescription> ReadDeviceDescriptions()
         {

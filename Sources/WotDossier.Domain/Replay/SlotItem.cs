@@ -3,25 +3,25 @@ namespace WotDossier.Domain.Replay
     public class SlotItem
     {
         private readonly SlotType _typeId;
-        private readonly ulong _country;
-        private readonly ulong _id;
+        private readonly int _country;
+        private readonly int _id;
 
-        public SlotType type_id
+        public SlotType TypeId
         {
             get { return _typeId; }
         }
 
-        public ulong country
+        public int Country
         {
             get { return _country; }
         }
 
-        public ulong id
+        public int Id
         {
             get { return _id; }
         }
 
-        public SlotItem(SlotType typeId, ulong country, ulong id)
+        public SlotItem(SlotType typeId, int country, int id)
         {
             _typeId = typeId;
             _country = country;

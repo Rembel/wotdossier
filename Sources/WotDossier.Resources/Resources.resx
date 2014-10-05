@@ -3177,4 +3177,25 @@ up to 500 m</value>
   <data name="Column_Ratings_Platoon" xml:space="preserve">
     <value>Platoon</value>
   </data>
+  <data name="ARMOR_PIERCING" xml:space="preserve">
+    <value>Armor-Piercing</value>
+  </data>
+  <data name="ARMOR_PIERCING_CR" xml:space="preserve">
+    <value>AP Composite-Rigid</value>
+  </data>
+  <data name="ARMOR_PIERCING_HE" xml:space="preserve">
+    <value>AP High-Explosive</value>
+  </data>
+  <data name="HIGH_EXPLOSIVE" xml:space="preserve">
+    <value>High-Explosive</value>
+  </data>
+  <data name="HIGH_EXPLOSIVE_PREMIUM" xml:space="preserve">
+    <value>High-Explosive</value>
+  </data>
+  <data name="HOLLOW_CHARGE" xml:space="preserve">
+    <value>High-Explosive Anti-Tank</value>
+  </data>
+  <data name="Common_Shells" xml:space="preserve">
+    <value>Shells</value>
+  </data>
 </root>

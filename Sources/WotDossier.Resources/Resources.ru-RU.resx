@@ -2480,13 +2480,16 @@
     <value>?empty?</value>
   </data>
   <data name="artefacts_autoExtinguishers_descr" xml:space="preserve">
-    <value>Автоматическое тушение пожара в собственной машине.</value>
+    <value>Автоматическое тушение пожара в 
+собственной машине.</value>
   </data>
   <data name="artefacts_autoExtinguishers_name" xml:space="preserve">
     <value>Автоматический огнетушитель</value>
   </data>
   <data name="artefacts_autoExtinguishers_onUse" xml:space="preserve">
-    <value>автоматическое тушение пожара в собственной машине. Используется однократно.</value>
+    <value>автоматическое тушение пожара в 
+собственной машине. 
+Используется однократно.</value>
   </data>
   <data name="artefacts_camouflageNet_descr" xml:space="preserve">
     <value>Значительно снижает заметность неподвижной машины</value>
@@ -2902,7 +2905,8 @@
     <value>Малая аптечка</value>
   </data>
   <data name="artefacts_smallMedkit_onUse" xml:space="preserve">
-    <value>лечение раненого члена экипажа. Используется однократно.</value>
+    <value>лечение раненого члена экипажа. 
+Используется однократно.</value>
   </data>
   <data name="artefacts_smallMedkit_restriction" xml:space="preserve">
     <value>?empty?</value>
@@ -2918,7 +2922,9 @@
     <value>Малый ремкомплект</value>
   </data>
   <data name="artefacts_smallRepairkit_onUse" xml:space="preserve">
-    <value>починка одного повреждённого модуля или двух повреждённых гусениц. Используется однократно.</value>
+    <value>починка одного повреждённого модуля 
+или двух повреждённых гусениц. 
+Используется однократно.</value>
   </data>
   <data name="artefacts_smallRepairkit_restriction" xml:space="preserve">
     <value>?empty?</value>
@@ -3259,5 +3265,26 @@
   </data>
   <data name="Column_Ratings_Platoon" xml:space="preserve">
     <value>Взвод</value>
+  </data>
+  <data name="ARMOR_PIERCING" xml:space="preserve">
+    <value>Бронебойный</value>
+  </data>
+  <data name="ARMOR_PIERCING_CR" xml:space="preserve">
+    <value>Подкалиберный</value>
+  </data>
+  <data name="ARMOR_PIERCING_HE" xml:space="preserve">
+    <value>Бронебойный каморный</value>
+  </data>
+  <data name="HIGH_EXPLOSIVE" xml:space="preserve">
+    <value>Осколочно-фугасный</value>
+  </data>
+  <data name="HIGH_EXPLOSIVE_PREMIUM" xml:space="preserve">
+    <value>Осколочно-фугасный</value>
+  </data>
+  <data name="HOLLOW_CHARGE" xml:space="preserve">
+    <value>Кумулятивный</value>
+  </data>
+  <data name="Common_Shells" xml:space="preserve">
+    <value>Боекомплект</value>
   </data>
 </root>

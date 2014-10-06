@@ -17,73 +17,83 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <TextBlock Margin="12,3,12,3" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Foreground="#FFA759" Text="{x:Static resources:Resources.Common_Equipment}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-        <ListBox Grid.Column="0" Grid.Row="1" Background="Transparent" ItemsSource="{Binding Devices}" BorderThickness="0" Padding="0" Margin="0">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+        <ListBox Grid.Column="0" Grid.Row="1" Background="Transparent" ItemsSource="{Binding Devices}" BorderThickness="0" Padding="0" Margin="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="6,3,6,3">
+                    <Grid Margin="3,3,3,3" HorizontalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Grid.RowSpan="2" Margin="6" Width="43" Height="43" Stretch="Fill" Source="{Binding icon, Converter={x:Static converters:ImageSourceConverter.Default}}">
+                        <Image Grid.Column="0" Margin="6" Grid.RowSpan="2" Source="{Binding icon, Converter={x:Static converters:ImageSourceConverter.Default}}" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <Image.ToolTip>
                                 <TextBlock Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
                             </Image.ToolTip>
                         </Image>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="#5a5a5a" FontSize="12" FontFamily="​Arial,​sans-serif" Text="{Binding description, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" TextWrapping="Wrap" Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Bottom"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="#5a5a5a" FontSize="12" FontFamily="​Arial,​sans-serif" TextWrapping="Wrap" Text="{Binding description, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Top"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock Margin="12,3,12,3" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="0" Foreground="#FFA759" Text="{x:Static resources:Resources.Common_Consumables}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-        <ListBox Grid.Column="1" Grid.Row="1" Background="Transparent" ItemsSource="{Binding Consumables}" BorderThickness="0" Padding="0" Margin="0">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+        <ListBox Grid.Column="1" Grid.Row="1" Background="Transparent" ItemsSource="{Binding Consumables}" BorderThickness="0" Padding="0" Margin="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="6,3,6,3">
+                    <Grid Margin="3,3,3,3" HorizontalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Grid.RowSpan="2" Margin="6" Width="43" Height="43" Stretch="Fill" Source="{Binding icon, Converter={x:Static converters:ImageSourceConverter.Default}}">
+                        <Image Grid.Column="0" Grid.RowSpan="2" Margin="6" Source="{Binding icon, Converter={x:Static converters:ImageSourceConverter.Default}}">
                             <Image.ToolTip>
                                 <TextBlock Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
                             </Image.ToolTip>
                         </Image>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Bottom"></TextBlock>
                         <TextBlock Grid.Column="1" Grid.Row="1" Foreground="#5a5a5a" FontSize="12" FontFamily="​Arial,​sans-serif" Text="{Binding description, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <TextBlock Margin="12,3,12,3" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="0" Foreground="#FFA759" Text="{x:Static resources:Resources.Common_Shells}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
+        <ListBox Grid.Column="2" Grid.Row="1" Background="Transparent" ItemsSource="{Binding Shells}" BorderThickness="0" Padding="0" Margin="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="3,3,3,3" HorizontalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Grid.RowSpan="2" Margin="6" Source="{Binding Description, Converter={x:Static converters:ShellDescriptionToImageConverter.Default}}">
+                            <Image.ToolTip>
+                                <TextBlock Text="{Binding Description.kind, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                            </Image.ToolTip>
+                        </Image>
+                        <TextBlock Grid.Column="0" Grid.RowSpan="2" Foreground="White" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding FormatedCount}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.RowSpan="2" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding Description.kind, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <TextBlock Margin="12,3,12,3" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="2" Foreground="#FFA759" Text="{x:Static resources:Resources.Common_Chat}" FontFamily="sans-serif" FontSize="17" FontWeight="Bold"></TextBlock>
-        <ListBox Grid.ColumnSpan="2" Grid.Row="3" Background="Transparent" ItemsSource="{Binding ChatMessages}" BorderThickness="0" Padding="0" Margin="0" 
+        <ListBox Grid.ColumnSpan="3" Grid.Row="3" Background="Transparent" ItemsSource="{Binding ChatMessages}" BorderThickness="0" Padding="0" Margin="0" 
                  HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionMode="Extended">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Vertical"></StackPanel>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
             <ListBox.InputBindings>
                 <KeyBinding Command="{Binding CopyCommand}" Key="C" Modifiers="Control"
                              CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=ListBox}}"/>

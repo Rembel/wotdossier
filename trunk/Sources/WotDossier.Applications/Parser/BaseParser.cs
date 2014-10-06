@@ -311,9 +311,15 @@ namespace WotDossier.Applications.Parser
 
             var slot = new Slot(item, (int) count, (int) rest);
 
-            if (data.Slots.Count < 6)
+            var foundItem = data.Slots.FirstOrDefault(x => x.Item.Equals(item));
+
+            if (foundItem == null)
             {
                 data.Slots.Add(slot);
+            }
+            else
+            {
+                foundItem.EndCount = slot.Count + slot.Rest;
             }
         }
 

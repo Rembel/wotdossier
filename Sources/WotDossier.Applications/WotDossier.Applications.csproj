@@ -96,6 +96,11 @@
     <Compile Include="Logic\Mapper.cs" />
     <Compile Include="Model\BattleModel.cs" />
     <Compile Include="Parser\BaseParser.cs" />
+    <Compile Include="Parser\Parser81.cs" />
+    <Compile Include="Parser\Parser83.cs" />
+    <Compile Include="Parser\Parser88.cs" />
+    <Compile Include="Parser\Parser86.cs" />
+    <Compile Include="Parser\Parser85.cs" />
     <Compile Include="Parser\Packet.cs" />
     <Compile Include="Parser\Parser93.cs" />
     <Compile Include="ReplayFileHelper.cs" />

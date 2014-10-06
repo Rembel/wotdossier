@@ -93,7 +93,7 @@ namespace WotDossier.Applications.Parser
         /// </summary>
         /// <param name="payload">The payload.</param>
         /// <param name="data">The data.</param>
-        private static void ProcessPacket_0x00(byte[] payload, AdvancedReplayData data)
+        public virtual void ProcessPacket_0x00(byte[] payload, AdvancedReplayData data)
         {
             using (var f = new MemoryStream(payload))
             {

@@ -31,33 +31,46 @@ namespace WotDossier.Test
         {
             foreach (Version version in Dictionaries.Instance.Versions)
             {
-                string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
-                
-                if (!Directory.Exists(replayFolder))
-                {
-                    Assert.Fail("Folder not exists - [{0}]", replayFolder);
-                }
+                ReplayTest(version);
+            }
+        }
 
-                var replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+        [Test]
+        public void ReplayVersionTest()
+        {
+            Version version = new Version("0.8.4.0");
 
-                Console.WriteLine("Found: {0}", replays.Count());
+            ReplayTest(version);
+        }
 
-                for (int index = 0; index < replays.Length; index++)
-                {
-                    string fileName = replays[index];
-                    Console.WriteLine("Process[{0}]: {1}", index, fileName);
+        private static void ReplayTest(Version version)
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
 
-                    FileInfo replayFile = new FileInfo(fileName);
+            if (!Directory.Exists(replayFolder))
+            {
+                Assert.Fail("Folder not exists - [{0}]", replayFolder);
+            }
 
-                    Replay replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
-                    Assert.IsNotNull(replay);
-                    Assert.IsNotNull(replay.datablock_battle_result);
+            var replays = Directory.GetFiles(replayFolder, "*.wotreplay");
 
-                    var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
-                    var mockView = new Mock<IReplayView>();
-                    ReplayViewModel model = new ReplayViewModel(mockView.Object);
-                    model.Init(phisicalReplay.ReplayData(true));
-                }
+            Console.WriteLine("Found: {0}", replays.Count());
+
+            for (int index = 0; index < replays.Length; index++)
+            {
+                string fileName = replays[index];
+                Console.WriteLine("Process[{0}]: {1}", index, fileName);
+
+                FileInfo replayFile = new FileInfo(fileName);
+
+                Replay replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
+                Assert.IsNotNull(replay);
+                Assert.IsNotNull(replay.datablock_battle_result);
+
+                var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
+                var mockView = new Mock<IReplayView>();
+                ReplayViewModel model = new ReplayViewModel(mockView.Object);
+                model.Init(phisicalReplay.ReplayData(true));
             }
         }
 
@@ -193,7 +206,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplaysViewModelTest()
         {
-            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", new Version("0.8.1").ToString(3));
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", new Version("0.8.5").ToString(3));
             ReplaysViewModel replaysViewModel = new ReplaysViewModel(DossierRepository, new ProgressControlViewModel(), new PlayerChartsViewModel());
             var mockView = new Mock<IReporter>();
             mockView.Setup(x => x.Report(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<object[]>()))

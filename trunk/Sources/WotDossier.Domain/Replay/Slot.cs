@@ -33,7 +33,7 @@ namespace WotDossier.Domain.Replay
         public Slot(SlotItem item, int count, int rest)
         {
             _item = item;
-            _count = count;
+            EndCount = _count = count;
             _rest = rest;
         }
     }

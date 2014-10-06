@@ -319,7 +319,7 @@ namespace WotDossier.Applications.Parser
             }
             else
             {
-                foundItem.EndCount = slot.Count + slot.Rest;
+                foundItem.EndCount = slot.Count;
             }
         }
 

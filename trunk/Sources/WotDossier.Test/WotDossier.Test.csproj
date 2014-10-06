@@ -132,6 +132,34 @@
       <Link>External\server_tanks.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\shells\china_shells.json">
+      <Link>External\shells\china_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\france_shells.json">
+      <Link>External\shells\france_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\germany_shells.json">
+      <Link>External\shells\germany_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\japan_shells.json">
+      <Link>External\shells\japan_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\uk_shells.json">
+      <Link>External\shells\uk_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\usa_shells.json">
+      <Link>External\shells\usa_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\ussr_shells.json">
+      <Link>External\shells\ussr_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\structures_10.json">
       <Link>External\structures_10.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -252,7 +280,16 @@
     <None Include="Replays\0.8.1\20121111_1414_ussr-KV-1s_13_erlenberg.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Replays\0.8.5\20121107_1810_ussr-KV-1s_10_hills.wotreplay">
+    <None Include="Replays\0.8.2\20121228_2339_ussr-IS-3_36_fishing_bay.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.8.3\20130212_2011_ussr-IS-3_06_ensk.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.8.4\20130329_2326_ussr-IS-3_19_monastery.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.8.5\20130421_2033_ussr-IS-3_28_desert.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay">

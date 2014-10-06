@@ -263,14 +263,37 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
             using (var uncompressedReplayStream = new MemoryStream(uncompressed))
             {
-                BaseParser parser = GetParser(replay.datablock_1.Version);
+                BaseParser parser = GetParser(replay);
                 replay.datablock_advanced = parser.ReadReplayStream(uncompressedReplayStream);
             }
             _log.Trace("End read advanced data");
         }
 
-        private static BaseParser GetParser(Version version)
+        private static BaseParser GetParser(Replay replay)
         {
+            DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
+            Version version = ResolveVersion(replay.datablock_1.Version, playTime);
+
+            if (version <= new Version("0.8.1.0"))
+            {
+                return new Parser81();
+            }
+            if (version <= new Version("0.8.3.0"))
+            {
+                return new Parser83();
+            }
+            if (version <= new Version("0.8.5.0"))
+            {
+                return new Parser85();
+            }
+            if (version <= new Version("0.8.7.0"))
+            {
+                return new Parser86();
+            }
+            if (version <= new Version("0.8.8.0"))
+            {
+                return new Parser88();
+            }
             if (version < new Version("0.9.3.0"))
             {
                 return new BaseParser();

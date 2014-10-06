@@ -41,6 +41,10 @@ namespace WotDossier.Dal
                 new Version("0.8.7.0"),
                 new Version("0.8.6.0"),
                 new Version("0.8.5.0"),
+                new Version("0.8.4.0"),
+                new Version("0.8.3.0"),
+                new Version("0.8.2.0"),
+                new Version("0.8.1.0"),
         };
 
         #region BattleLevels

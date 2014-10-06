@@ -531,6 +531,9 @@
     <Compile Include="..\WotDossier\Converters\Image\MedalToImageConverter.cs">
       <Link>Converters\Image\MedalToImageConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ShellDescriptionToImageConverter.cs">
+      <Link>Converters\Image\ShellDescriptionToImageConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\TankIconToImageConverter.cs">
       <Link>Converters\Image\TankIconToImageConverter.cs</Link>
     </Compile>

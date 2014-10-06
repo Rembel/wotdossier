@@ -16,9 +16,16 @@ namespace WotDossier.Domain.Replay
             get { return _count; }
         }
 
+        public int EndCount { get; set; }
+
         public int Rest
         {
             get { return _rest; }
+        }
+
+        public string FormatedCount
+        {
+            get { return string.Format("{0}/{1}", Count, EndCount); }
         }
 
         public object Description { get; set; }

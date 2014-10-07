@@ -231,8 +231,8 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 if (replay.datablock_1.Version >= _jsonFormatedReplayMinVersion)
                 {
                     replay.datablock_battle_result = parsedData[0].ToObject<BattleResult>();
-                    replay.datablock_1.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
                 }
+                replay.datablock_1.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
             }
         }
 
@@ -384,6 +384,11 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 if (playTime.Date >= new DateTime(2012, 10, 25))
                 {
                     return new Version("0.8.1.0");
+                }
+
+                if (playTime.Date >= new DateTime(2012, 09, 25))
+                {
+                    return new Version("0.8.0.0");
                 }
             }
             return version;

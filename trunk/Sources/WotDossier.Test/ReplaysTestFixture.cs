@@ -36,7 +36,7 @@ namespace WotDossier.Test
         }
 
         [Test]
-        public void ReplayVersionTest()
+        public void ReplaysByVersionTest()
         {
             Version version = new Version("0.8.4.0");
 
@@ -52,7 +52,7 @@ namespace WotDossier.Test
                 Assert.Fail("Folder not exists - [{0}]", replayFolder);
             }
 
-            var replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+            var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);
 
             Console.WriteLine("Found: {0}", replays.Count());
 
@@ -63,9 +63,10 @@ namespace WotDossier.Test
 
                 FileInfo replayFile = new FileInfo(fileName);
 
-                Replay replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
-                Assert.IsNotNull(replay);
-                Assert.IsNotNull(replay.datablock_battle_result);
+                Replay replay = ReplayFileHelper.ParseReplay_8_11(replayFile, true);
+                Assert.IsNotNull(replay, "Replay not parsed");
+                Assert.IsNotNull(replay.datablock_battle_result, "Battle result not parsed");
+                Assert.IsNotNull(replay.datablock_advanced, "Advanced data not parsed");
 
                 var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
                 var mockView = new Mock<IReplayView>();
@@ -125,9 +126,24 @@ namespace WotDossier.Test
         }
 
         [Test]
-        public void ReplayToJsonTest1()
+        public void ParserMigrationTest()
         {
-            ReplayToJson(@"");
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", new Version("0.8.1").ToString(3));
+            if (!Directory.Exists(replayFolder))
+            {
+                Assert.Fail("Folder not exists - [{0}]", replayFolder);
+            }
+
+            string[] replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+
+            foreach (string path in replays)
+            {
+                FileInfo replayFile = new FileInfo(path);
+                var replay = ReplayFileHelper.ParseReplay_8_0(replayFile, false);
+                Console.WriteLine(JsonConvert.SerializeObject(replay, Formatting.Indented));
+                replay = ReplayFileHelper.ParseReplay_8_11(replayFile, false);
+                Console.WriteLine(JsonConvert.SerializeObject(replay, Formatting.Indented));
+            }
         }
 
         private static void ReplayToJson(string path)
@@ -204,7 +220,7 @@ namespace WotDossier.Test
         /// process only changed replays files, full processing only on app start
         /// </summary>
         [Test]
-        public void ReplaysViewModelTest()
+        public void FolderProcessingTest()
         {
             string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", new Version("0.8.5").ToString(3));
             ReplaysViewModel replaysViewModel = new ReplaysViewModel(DossierRepository, new ProgressControlViewModel(), new PlayerChartsViewModel());

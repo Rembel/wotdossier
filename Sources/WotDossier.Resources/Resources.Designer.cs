@@ -6487,6 +6487,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Settings_Add {
+            get {
+                return ResourceManager.GetString("Settings_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto load statistic.
         /// </summary>
         public static string Settings_AutoLoadStatistic {
@@ -6933,6 +6942,15 @@ namespace WotDossier.Resources {
         public static string TankFilterPanel_Country {
             get {
                 return ResourceManager.GetString("TankFilterPanel_Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        public static string TankFilterPanel_Default {
+            get {
+                return ResourceManager.GetString("TankFilterPanel_Default", resourceCulture);
             }
         }
         

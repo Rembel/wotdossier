@@ -72,16 +72,6 @@ namespace WotDossier.Applications.ViewModel
             set { _appSettings.UseIncompleteReplaysResultsForCharts = value; }
         }
 
-        public string ReplaysFolderPath
-        {
-            get { return AppSettings.ReplaysFolderPath; }
-            set
-            {
-                AppSettings.ReplaysFolderPath = value;
-                RaisePropertyChanged("ReplaysFolderPath");
-            }
-        }
-
         private List<ListItem<DossierTheme>> _themes = new List<ListItem<DossierTheme>>
         {
             new ListItem<DossierTheme>(DossierTheme.Black, Resources.Resources.DossierTheme_Black), 

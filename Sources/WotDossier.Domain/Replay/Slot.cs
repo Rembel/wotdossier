@@ -25,7 +25,7 @@ namespace WotDossier.Domain.Replay
 
         public string FormatedCount
         {
-            get { return string.Format("{0}/{1}", Count, EndCount); }
+            get { return string.Format("{0}/{1}", EndCount, Count); }
         }
 
         public object Description { get; set; }

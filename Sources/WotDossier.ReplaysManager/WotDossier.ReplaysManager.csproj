@@ -431,6 +431,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Views\ReplayViewerSettingsWindow.xaml">
+      <Link>Views\ReplayViewerSettingsWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Views\ReplayWindow.xaml">
       <Link>Views\ReplayWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -602,6 +607,9 @@
     <Compile Include="..\WotDossier\Views\AddReplayFolderWindow.xaml.cs">
       <Link>Views\AddReplayFolderWindow.xaml.cs</Link>
       <DependentUpon>AddReplayFolderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\ReplayViewerSettingsWindow.xaml.cs">
+      <Link>Views\ReplayViewerSettingsWindow.xaml.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Views\ReplayWindow.xaml.cs">
       <Link>Views\ReplayWindow.xaml.cs</Link>

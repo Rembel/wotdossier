@@ -13,11 +13,6 @@ namespace WotDossier.Applications
             return dossierCacheFolder;
         }
 
-        public static string GetReplaysFolder()
-        {
-            return SettingsReader.Get().ReplaysFolderPath;
-        }
-
         public static string AssemblyDirectory()
         {
             var uri = new UriBuilder(Assembly.GetExecutingAssembly().CodeBase);

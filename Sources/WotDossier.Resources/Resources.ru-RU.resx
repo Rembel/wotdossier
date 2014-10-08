@@ -3287,4 +3287,10 @@
   <data name="Common_Shells" xml:space="preserve">
     <value>Боекомплект</value>
   </data>
+  <data name="Settings_Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="TankFilterPanel_Default" xml:space="preserve">
+    <value>По-умолчанию</value>
+  </data>
 </root>

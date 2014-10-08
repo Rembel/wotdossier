@@ -361,6 +361,9 @@
     <Compile Include="Views\ReplayWindow.xaml.cs">
       <DependentUpon>ReplayWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReplayViewerSettingsWindow.xaml.cs">
+      <DependentUpon>ReplayViewerSettingsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
@@ -848,6 +851,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ReplayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReplayViewerSettingsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

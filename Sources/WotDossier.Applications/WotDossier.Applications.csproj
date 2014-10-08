@@ -188,6 +188,7 @@
     <Compile Include="ViewModel\Selectors\BattleModeSelectorViewModel.cs" />
     <Compile Include="ViewModel\Selectors\PlayerSelectorViewModel.cs" />
     <Compile Include="ViewModel\Selectors\PeriodSelectorViewModel.cs" />
+    <Compile Include="ViewModel\ReplayViewerSettingsViewModel.cs" />
     <Compile Include="ViewModel\StatisticPeriodChangedEvent.cs" />
     <Compile Include="ViewModel\Statistic\FortSortiesPlayerStatisticViewModel.cs" />
     <Compile Include="ViewModel\Statistic\ClanBattlesPlayerStatisticViewModel.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="View\IClanView.cs" />
     <Compile Include="View\IAddReplayFolderView.cs" />
     <Compile Include="View\IReplayView.cs" />
+    <Compile Include="View\IReplayViewerSettingsView.cs" />
     <Compile Include="View\IUploadReplayView.cs" />
     <Compile Include="View\ITankStatisticView.cs" />
     <Compile Include="View\ISettingsView.cs" />

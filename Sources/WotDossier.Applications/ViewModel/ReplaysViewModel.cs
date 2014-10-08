@@ -172,9 +172,10 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void OnPlayWith(ReplayFile obj)
+        private void OnPlayWith(ReplayFile replayFile)
         {
-            
+            var viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewerSettingsViewModel>();
+            viewModel.Show();
         }
 
         private void OnPlay(ReplayFile replayFile)

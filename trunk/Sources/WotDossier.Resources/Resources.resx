@@ -3198,4 +3198,10 @@ up to 500 m</value>
   <data name="Common_Shells" xml:space="preserve">
     <value>Shells</value>
   </data>
+  <data name="Settings_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="TankFilterPanel_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
 </root>

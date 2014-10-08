@@ -28,9 +28,14 @@ namespace WotDossier.Dal
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
         private readonly Dictionary<int, TankServerInfo> _serverTanks;
         private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
+
+        public static readonly Version VersionAll = new Version("0.0.0.0");
+        public static readonly Version VersionRelease = new Version("0.9.3.0");
+        public static readonly Version VersionTest = new Version("100.0.0.0");
+
         private readonly List<Version> _versions = new List<Version>
         {
-                new Version("0.9.3.0"),
+                VersionRelease,
                 new Version("0.9.2.0"),
                 new Version("0.9.1.0"),
                 new Version("0.9.0.0"),

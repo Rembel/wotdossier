@@ -68,6 +68,8 @@ namespace WotDossier.ReplaysManager
                 CompositionContainerFactory.Instance.Register<ReplayViewModel, ReplayViewModel>();
                 CompositionContainerFactory.Instance.Register<AboutViewModel, AboutViewModel>();
                 CompositionContainerFactory.Instance.Register<SettingsViewModel, SettingsViewModel>();
+                CompositionContainerFactory.Instance.Register<PlayerSearchViewModel, PlayerSearchViewModel>();
+                CompositionContainerFactory.Instance.Register<ReplayViewerSettingsViewModel, ReplayViewerSettingsViewModel>();
 
                 CompositionContainerFactory.Instance.RegisterSingle<IDataProvider, DataProvider>();
                 CompositionContainerFactory.Instance.RegisterSingle<DossierRepository, DossierRepository>();
@@ -82,6 +84,7 @@ namespace WotDossier.ReplaysManager
                 CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>();
                 CompositionContainerFactory.Instance.Register<IAboutView, AboutWindow>();
                 CompositionContainerFactory.Instance.Register<ISettingsView, SettingsWindow>();
+                CompositionContainerFactory.Instance.Register<IReplayViewerSettingsView, ReplayViewerSettingsWindow>();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ReplaysManagerController>();
 

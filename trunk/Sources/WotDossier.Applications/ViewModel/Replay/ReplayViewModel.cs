@@ -382,8 +382,6 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 int level = Dictionaries.Instance.GetBattleLevel(membersLevels);
 
-                Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDisplayName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a");
-
                 Status = GetBattleStatus(replay);
 
                 _devices = new List<DeviceDescription>();
@@ -425,8 +423,15 @@ namespace WotDossier.Applications.ViewModel.Replay
                         }
                     }
 
+                    if (replay.datablock_advanced.more != null)
+                    {
+                        level = replay.datablock_advanced.more.battleLevel;
+                    }
+
                     ChatMessages = replay.datablock_advanced.Messages;
                 }
+
+                Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDisplayName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a");
 
                 return true;
             }

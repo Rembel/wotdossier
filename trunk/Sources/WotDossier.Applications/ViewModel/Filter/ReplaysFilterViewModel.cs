@@ -49,10 +49,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         private int? _endValue;
         private string _member;
         private BattleStatus _selectedBattleResult = BattleStatus.Unknown;
-        private static readonly Version VersionAll = new Version("0.0.0.0");
-        private static readonly Version VersionRelease = new Version("0.9.3.0");
-        private static readonly Version VersionTest = new Version("100.0.0.0");
-
+        
         #region levels
 
         public bool Level10Selected
@@ -383,8 +380,8 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         private List<ListItem<Version>> _versions = new List<ListItem<Version>>
             {
-                new ListItem<Version>(VersionAll, Resources.Resources.TankFilterPanel_All), 
-                new ListItem<Version>(VersionRelease, "0.9.3"),
+                new ListItem<Version>(Dictionaries.VersionAll, Resources.Resources.TankFilterPanel_All), 
+                new ListItem<Version>(Dictionaries.VersionRelease, "0.9.3"),
                 new ListItem<Version>(new Version("0.9.2.0"), "0.9.2"),
                 new ListItem<Version>(new Version("0.9.1.0"), "0.9.1"),
                 new ListItem<Version>(new Version("0.9.0.0"), "0.9.0"),
@@ -399,7 +396,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<Version>(new Version("0.8.3.0"), "0.8.3"), 
                 new ListItem<Version>(new Version("0.8.2.0"), "0.8.2"), 
                 new ListItem<Version>(new Version("0.8.1.0"), "0.8.1"), 
-                new ListItem<Version>(VersionTest, "Test 0.9.x"), 
+                new ListItem<Version>(Dictionaries.VersionTest, "Test 0.9.x"), 
             };
 
         /// <summary>
@@ -411,7 +408,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             set { _versions = value; }
         }
 
-        private Version _selectedVersion = VersionAll;
+        private Version _selectedVersion = Dictionaries.VersionAll;
         /// <summary>
         /// Gets or sets the selected version.
         /// </summary>
@@ -588,7 +585,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             List<ReplayFile> result = replays.Where(x =>
                 x.Tank != null
                 &&
-                (SelectedVersion == VersionAll || (SelectedVersion == VersionTest && x.ClientVersion > VersionRelease) || SelectedVersion == x.ClientVersion)
+                (SelectedVersion == Dictionaries.VersionAll || (SelectedVersion == Dictionaries.VersionTest && x.ClientVersion > Dictionaries.VersionRelease) || SelectedVersion == x.ClientVersion)
                 &&
                 (Level1Selected && x.Tank.Tier == 1
                  || Level2Selected && x.Tank.Tier == 2
@@ -752,7 +749,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = true;
 
             SelectedBattleResult = BattleStatus.Unknown;
-            SelectedVersion = VersionAll;
+            SelectedVersion = Dictionaries.VersionAll;
             BattleType = BattleType.Unknown;
             Member = string.Empty;
         }
@@ -773,7 +770,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
 
             SelectedBattleResult = BattleStatus.Unknown;
-            SelectedVersion = VersionAll;
+            SelectedVersion = Dictionaries.VersionAll;
             BattleType = BattleType.Unknown;
             Member = string.Empty;
         }

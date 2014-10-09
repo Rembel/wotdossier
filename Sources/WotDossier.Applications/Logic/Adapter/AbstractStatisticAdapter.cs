@@ -62,7 +62,7 @@ namespace WotDossier.Applications.Logic.Adapter
             Updated = tanks.Max(x => x.Common.lastBattleTimeR);
             if (BattlesCount > 0)
             {
-                AvgLevel = tanks.Sum(x => x.Common.tier * statPredicate(x).battlesCount) / (double)BattlesCount;
+                AvgLevel = tanks.Where(x => x.Common.tier > 0).Sum(x => x.Common.tier * statPredicate(x).battlesCount) / (double)BattlesCount;
             }
 
             PerformanceRating = RatingHelper.PerformanceRating(tanks, statPredicate);

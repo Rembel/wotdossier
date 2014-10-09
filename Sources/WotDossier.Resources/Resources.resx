@@ -1776,7 +1776,7 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
     <value>Historical battle</value>
   </data>
   <data name="BattleType_Regular" xml:space="preserve">
-    <value>Regular</value>
+    <value>Random battle</value>
   </data>
   <data name="BattleType_Tournament" xml:space="preserve">
     <value>Tournament</value>
@@ -3203,5 +3203,17 @@ up to 500 m</value>
   </data>
   <data name="TankFilterPanel_Default" xml:space="preserve">
     <value>Default</value>
+  </data>
+  <data name="BattleType_assault" xml:space="preserve">
+    <value>Assault</value>
+  </data>
+  <data name="BattleType_ctf" xml:space="preserve">
+    <value>Standart battle</value>
+  </data>
+  <data name="BattleType_domination" xml:space="preserve">
+    <value>Encounter battle</value>
+  </data>
+  <data name="BattleType_nations" xml:space="preserve">
+    <value>Confrontation</value>
   </data>
 </root>

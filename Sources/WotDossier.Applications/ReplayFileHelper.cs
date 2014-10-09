@@ -166,7 +166,7 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                                 DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
                                 Version version = ResolveVersion(replay.datablock_1.Version, playTime);
 
-                                if (version < new Version("0.8.11.0") && blocksCount < 3)
+                                if (version < _jsonFormatedReplayMinVersion && blocksCount < 3)
                                 {
                                     InitThirdBlock(replay, blockData);
                                 }

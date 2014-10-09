@@ -426,6 +426,10 @@ namespace WotDossier.Applications.ViewModel.Filter
             {
                 new ListItem<BattleType>(BattleType.Unknown, Resources.Resources.TankFilterPanel_All), 
                 new ListItem<BattleType>(BattleType.Regular, Resources.Resources.BattleType_Regular), 
+                new ListItem<BattleType>(BattleType.ctf, " - " + Resources.Resources.BattleType_ctf), 
+                new ListItem<BattleType>(BattleType.domination, " - " + Resources.Resources.BattleType_domination), 
+                new ListItem<BattleType>(BattleType.assault, " - " + Resources.Resources.BattleType_assault), 
+                new ListItem<BattleType>(BattleType.nations, " - " + Resources.Resources.BattleType_nations), 
                 new ListItem<BattleType>(BattleType.Historical,Resources.Resources.BattleType_Historical), 
                 new ListItem<BattleType>(BattleType.CyberSport,Resources.Resources.BattleType_CyberSport), 
                 new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
@@ -619,7 +623,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 && (SelectedMap == null || x.MapId == SelectedMap.Id || SelectedMap.Id == 0)
                 && FieldFilter(x)
                 && MembersFilter(x.TeamMembers, members)
-                && (BattleType == BattleType.Unknown || x.BattleType == BattleType)
+                && (BattleType == BattleType.Unknown || x.BattleType == BattleType || CheckRegularBattle(x, BattleType))
                 &&
                 (AllResps
                  || Resp1 && x.Team == 1
@@ -638,6 +642,27 @@ namespace WotDossier.Applications.ViewModel.Filter
             //var footerList = PrepareToReturn(result, SelectedFolder != null ? SelectedFolder.Id : Guid.NewGuid());
 
             return result;
+        }
+
+        private bool CheckRegularBattle(ReplayFile replay, BattleType battleType)
+        {
+            if (battleType == BattleType.ctf)
+            {
+                return replay.Gameplay == Gameplay.ctf;
+            }
+            if (battleType == BattleType.domination)
+            {
+                return replay.Gameplay == Gameplay.domination;
+            }
+            if (battleType == BattleType.assault)
+            {
+                return replay.Gameplay == Gameplay.assault;
+            }
+            if (battleType == BattleType.nations)
+            {
+                return replay.Gameplay == Gameplay.nations;
+            }
+            return false;
         }
 
         //private static List<ReplayFile> PrepareToReturn(List<ReplayFile> result, Guid folderId)

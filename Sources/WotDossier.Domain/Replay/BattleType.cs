@@ -13,6 +13,12 @@
         Historical = 8,
         Event = 9,
         Sorties = 10,
-        Reserved3 = 11
+        Reserved3 = 11,
+
+
+        ctf = 101,
+        domination = 102,
+        assault = 103,
+        nations = 104
     }
 }

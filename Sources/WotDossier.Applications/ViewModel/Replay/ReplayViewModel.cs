@@ -271,7 +271,8 @@ namespace WotDossier.Applications.ViewModel.Replay
             if (replay.datablock_battle_result != null)
             {
                 MapName = replay.datablock_1.mapName;
-                MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(replay.datablock_1.gameplayID, (BattleType)replay.datablock_1.battleType));
+                Gameplay gameplayId = (Gameplay)Enum.Parse(typeof(Gameplay), replay.datablock_1.gameplayID);
+                MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(gameplayId, (BattleType)replay.datablock_1.battleType));
 
                 var tankDescription = Dictionaries.Instance.GetTankDescription(replay.datablock_battle_result.personal.typeCompDescr);
 
@@ -490,7 +491,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             return Resources.Resources.Label_Experience;
         }
 
-        private object GetMapMode(string gameplayId, BattleType battleType)
+        private object GetMapMode(Gameplay gameplayId, BattleType battleType)
         {
             List<BattleType> list = new List<BattleType>
             {
@@ -503,15 +504,19 @@ namespace WotDossier.Applications.ViewModel.Replay
 
             if (list.Contains(battleType))
             {
-                if ("ctf".Equals(gameplayId))
+                if (gameplayId == Gameplay.ctf)
                 {
-                    return Resources.Resources.Label_Replay_MapMode_Standart;
+                    return Resources.Resources.BattleType_ctf;
                 }
-                if ("domination".Equals(gameplayId))
+                if (gameplayId == Gameplay.domination)
                 {
-                    return Resources.Resources.Label_Replay_MapMode_domination;
+                    return Resources.Resources.BattleType_domination;
                 }
-                return Resources.Resources.Label_Replay_MapMode_Assault;
+                if (gameplayId == Gameplay.nations)
+                {
+                    return Resources.Resources.BattleType_nations;
+                }
+                return Resources.Resources.BattleType_assault;
             }
             return Resources.Resources.ResourceManager.GetEnumResource(battleType);
         }

@@ -340,13 +340,13 @@ namespace WotDossier.Applications.ViewModel.Rows
         public TankStatisticRowViewModelBase(TankJson tank, IEnumerable<StatisticViewModelBase> list)
             : base(Utils.UnixDateToDateTime(tank.Common.updated), list)
         {
-            Tier = tank.Common.tier;
-            Type = tank.Common.type;
-            Tank = tank.Common.tanktitle;
             Icon = tank.Description.Icon;
             Description = tank.Description;
-            CountryId = tank.Common.countryid;
-            TankId = tank.Common.tankid;
+            Tier = tank.Description.Tier;
+            Type = tank.Description.Type;
+            Tank = tank.Description.Title;
+            CountryId = tank.Description.CountryId;
+            TankId = tank.Description.TankId;
             TankUniqueId = tank.UniqueId();
             Mileage = tank.Common.mileage / 1000;
             IsPremium = tank.Common.premium == 1;

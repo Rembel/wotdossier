@@ -1796,7 +1796,7 @@
     <value>Исторический бой</value>
   </data>
   <data name="BattleType_Regular" xml:space="preserve">
-    <value>Стандартный бой</value>
+    <value>Случайный бой</value>
   </data>
   <data name="BattleType_Tournament" xml:space="preserve">
     <value>Турнир</value>
@@ -3292,5 +3292,17 @@
   </data>
   <data name="TankFilterPanel_Default" xml:space="preserve">
     <value>По-умолчанию</value>
+  </data>
+  <data name="BattleType_assault" xml:space="preserve">
+    <value>Штурм</value>
+  </data>
+  <data name="BattleType_ctf" xml:space="preserve">
+    <value>Стандартный бой</value>
+  </data>
+  <data name="BattleType_domination" xml:space="preserve">
+    <value>Встречный бой</value>
+  </data>
+  <data name="BattleType_nations" xml:space="preserve">
+    <value>Противостояние</value>
   </data>
 </root>

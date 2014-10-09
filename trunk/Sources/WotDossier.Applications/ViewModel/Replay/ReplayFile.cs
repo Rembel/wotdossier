@@ -205,6 +205,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     Medals = Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
                     MedalsCount = Medals.Count;
                     IsPlatoon = ResolvePlatoonFlag(replay);
+                    BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;
                 }
 
                 TeamMembers = replay.datablock_1.vehicles.Values.ToList();

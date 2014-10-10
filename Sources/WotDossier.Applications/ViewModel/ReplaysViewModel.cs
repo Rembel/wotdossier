@@ -264,8 +264,10 @@ namespace WotDossier.Applications.ViewModel
                 ReplayFolder parent = FindParentFolder(root, folder);
                 if (parent != null)
                 {
+                    _replays.RemoveAll(x => x.FolderId == folder.Id);
                     parent.Folders.Remove(folder);
                     ReplaysManager.SaveFolder(root);
+                    OnPropertyChanged("Replays");
                 }
             }
         }
@@ -371,9 +373,9 @@ namespace WotDossier.Applications.ViewModel
                             //perform operation
                             operation.Perform(_replays);
                             FileInfo replay = new FileInfo(operation.Item);
-                            index++;
                             int percent = (index + 1) * 100 / count;
                             reporter.Report(percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name);
+                            index++;
                         }
                         
                         replayFolder.Files = files;

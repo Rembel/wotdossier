@@ -57,13 +57,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         /// <summary>
-        /// Plays replay.
-        /// </summary>
-        public override void Play()
-        {
-        }
-
-        /// <summary>
         /// Gets Replay data.
         /// </summary>
         /// <param name="readAdvancedData"></param>

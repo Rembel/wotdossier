@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
-using System.Windows;
-using Ookii.Dialogs.Wpf;
-using WotDossier.Domain;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
@@ -71,54 +67,6 @@ namespace WotDossier.Applications.ViewModel.Replay
                     PhisicalFile.Delete();
                 }
             }
-        }
-
-        /// <summary>
-        /// Plays replay.
-        /// </summary>
-        public override void Play()
-        {
-            //TODO: player auto select
-            //if (PhisicalFile != null && File.Exists(PhisicalFile.FullName))
-            //{
-            //    AppSettings appSettings = SettingsReader.Get();
-            //    string path = appSettings.PathToWotExe;
-            //    if (string.IsNullOrEmpty(path) || !File.Exists(path))
-            //    {
-            //        VistaOpenFileDialog dialog = new VistaOpenFileDialog();
-            //        dialog.CheckFileExists = true;
-            //        dialog.CheckPathExists = true;
-            //        dialog.DefaultExt = ".exe"; // Default file extension
-            //        dialog.Filter = "WorldOfTanks (.exe)|*.exe"; // Filter files by extension 
-            //        dialog.Multiselect = false;
-            //        dialog.Title = Resources.Resources.WindowCaption_SelectPathToWorldOfTanksExecutable;
-            //        bool? showDialog = dialog.ShowDialog();
-            //        if (showDialog == true)
-            //        {
-            //            path = appSettings.PathToWotExe = dialog.FileName;
-            //            SettingsReader.Save(appSettings);
-            //        }
-            //    }
-
-            //    if (!string.IsNullOrEmpty(path) && File.Exists(path))
-            //    {
-            //        try
-            //        {
-            //            Process proc = new Process();
-            //            proc.EnableRaisingEvents = false;
-            //            proc.StartInfo.CreateNoWindow = true;
-            //            proc.StartInfo.UseShellExecute = false;
-            //            proc.StartInfo.FileName = path;
-            //            proc.StartInfo.Arguments = string.Format("\"{0}\"", PhisicalFile.FullName);
-            //            proc.Start();
-            //        }
-            //        catch (Exception e)
-            //        {
-            //            Log.ErrorFormat("Error on play replay ({0} {1})", e, path, PhisicalFile.FullName);
-            //            MessageBox.Show(Resources.Resources.Msg_ErrorOnPlayReplay, Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-            //        }
-            //    }
-            //}
         }
 
         /// <summary>

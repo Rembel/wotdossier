@@ -232,11 +232,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         public abstract void Move(ReplayFolder targetFolder);
 
         /// <summary>
-        /// Plays replay.
-        /// </summary>
-        public abstract void Play();
-
-        /// <summary>
         /// Gets Replay data.
         /// </summary>
         /// <param name="readAdvancedData"></param>

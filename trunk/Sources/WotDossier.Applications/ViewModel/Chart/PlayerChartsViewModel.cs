@@ -390,7 +390,12 @@ namespace WotDossier.Applications.ViewModel.Chart
                 x => new DataPoint(
                     100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key)).ToList();
 
-            var totalWinPercent = ReplaysDataSource.Count(y => y.IsWinner == BattleStatus.Victory) * 100.0 / ReplaysDataSource.Count();
+            var count = ReplaysDataSource.Count();
+            double totalWinPercent = 0;
+            if (count > 0)
+            {
+                totalWinPercent = ReplaysDataSource.Count(y => y.IsWinner == BattleStatus.Victory)*100.0/count;
+            }
             TotalWinPercent = string.Format(Resources.Resources.Chart_Replays_Total_Win_Percent, totalWinPercent);
 
             WinReplaysPercentByMapDataSource = dataSource;

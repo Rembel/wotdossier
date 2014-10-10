@@ -24,7 +24,7 @@
 
         </Grid>
 
-        <Grid>
+        <Grid Opacity="90">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="2*"></ColumnDefinition>

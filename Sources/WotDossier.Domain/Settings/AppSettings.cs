@@ -168,10 +168,17 @@ namespace WotDossier.Domain
             set { _useIncompleteReplaysResultsForCharts = value; }
         }
 
-        private List<ReplayPlayer> _replayPlayers = new List<ReplayPlayer>();
+        private List<ReplayPlayer> _replayPlayers;
         public List<ReplayPlayer> ReplayPlayers
         {
-            get { return _replayPlayers; }
+            get
+            {
+                if (_replayPlayers == null)
+                {
+                    _replayPlayers = new List<ReplayPlayer>();
+                }
+                return _replayPlayers ;
+            }
             set { _replayPlayers = value; }
         }
     }

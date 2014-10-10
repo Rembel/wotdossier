@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,7 +10,6 @@ using System.Windows;
 using System.Windows.Input;
 using Common.Logging;
 using Ionic.Zip;
-using Microsoft.Research.DynamicDataDisplay;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
@@ -32,7 +30,6 @@ namespace WotDossier.Applications.ViewModel
     public class ReplaysViewModel : INotifyPropertyChanged
     {
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
-
         public ReplaysFilterViewModel ReplayFilter { get; set; }
         public ReplaysManager ReplaysManager { get; set; }
         public DossierRepository DossierRepository { get; set; }
@@ -104,8 +101,6 @@ namespace WotDossier.Applications.ViewModel
             ReplayRowsDeleteCommand = new DelegateCommand<object>(OnReplayRowsDelete);
             ReplayRowsZipCommand = new DelegateCommand<object>(OnReplayRowsZip);
             CopyLinkToClipboardCommand = new DelegateCommand<object>(OnCopyLinkToClipboard, CanCopyLinkToClipboard);
-            PlayReplayCommand = new DelegateCommand<ReplayFile>(OnPlay);
-            PlayReplayWithCommand = new DelegateCommand<ReplayFile>(OnPlayWith);
             ShowFileInFolderCommand = new DelegateCommand<ReplayFile>(OnShowFileInFolder, CanOnShowFileInFolder);
             ShowDetailsCommand = new DelegateCommand<ReplayFile>(OnReplayRowDoubleClick, CanShowDetails);
             CopyFileNameToClipboardCommand = new DelegateCommand<ReplayFile>(OnCopyFileNameToClipboard, CanCopyFileNameToClipboard);
@@ -118,6 +113,10 @@ namespace WotDossier.Applications.ViewModel
             ReplayFilter.PropertyChanged += ReplayFilterOnPropertyChanged;
 
             ReplaysManager = new ReplaysManager();
+
+            PlayReplayCommand = new DelegateCommand<ReplayFile>(ReplaysManager.Play);
+            PlayReplayWithCommand = new DelegateCommand<ReplayFile>(ReplaysManager.PlayWith);
+            
             DossierRepository = dossierRepository;
             ProgressView = progressControlView;
             playerChartsViewModel.ReplaysDataSource = new CallbackDataSource<ReplayFile>(() => _replays);
@@ -170,17 +169,6 @@ namespace WotDossier.Applications.ViewModel
                 //PrFolder.StartInfo = psi;
                 //PrFolder.Start();
             }
-        }
-
-        private void OnPlayWith(ReplayFile replayFile)
-        {
-            var viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewerSettingsViewModel>();
-            viewModel.Show();
-        }
-
-        private void OnPlay(ReplayFile replayFile)
-        {
-            replayFile.Play();
         }
 
         /// <summary>

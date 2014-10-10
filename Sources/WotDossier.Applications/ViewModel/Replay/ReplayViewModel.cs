@@ -317,13 +317,13 @@ namespace WotDossier.Applications.ViewModel.Replay
                 }
                 else
                 {
-                    premiumCredits = (int)Math.Round(replay.datablock_battle_result.personal.credits * premiumFactor, 0);
+                    premiumCredits = (int)(replay.datablock_battle_result.personal.credits * premiumFactor);
                 }
 
                 Xp = replay.datablock_battle_result.vehicles[ReplayUser.Id].xp;
 
                 PremiumCredits = premiumCredits;
-                PremiumXp = (int)Math.Round(Xp * premiumFactor, 0);
+                PremiumXp = (int)(Xp * premiumFactor);
 
                 CreditsContributionOut = (int)Math.Round((PremiumCreditsContributionOut / premiumFactor), 0);
                 CreditsContributionIn = (int)Math.Round((PremiumCreditsContributionIn / premiumFactor), 0);

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Xml.Serialization;
 
 namespace WotDossier.Domain.Settings
 {
     public class ReplayPlayer : INotifyPropertyChanged
     {
+        private const string DefaultVersion = "0.0";
         private string _path;
         private Version _version;
+        private string _stringVersion;
 
         public string Path
         {
@@ -18,14 +21,30 @@ namespace WotDossier.Domain.Settings
             }
         }
 
+        [XmlIgnore]
         public Version Version
         {
-            get { return _version; }
+            get { return _version ?? new Version(StringVersion); }
             set
             {
                 _version = value;
+                StringVersion = _version.ToString();
                 OnPropertyChanged("Version");
             }
+        }
+
+        [XmlElement("Version")]
+        public string StringVersion
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_stringVersion))
+                {
+                    _stringVersion = DefaultVersion;
+                }
+                return _stringVersion;
+            }
+            set { _stringVersion = value; }
         }
 
         /// <summary>

@@ -174,12 +174,16 @@ namespace WotDossier.Applications.Logic
 
                     if (response == null || response.Result.HasValue && (response.Result == false))
                     {
-                        response = JsonConvert.DeserializeObject<WotReplaysSiteResponse>(Send(file, string.Format(UPLOAD_REPLAY_URL, SettingsReader.Get().Server, userId, username), hidden));
+                        var result = Send(file, string.Format(UPLOAD_REPLAY_URL, SettingsReader.Get().Server, userId, username), hidden);
+                        if (result != null)
+                        {
+                            response = JsonConvert.DeserializeObject<WotReplaysSiteResponse>(result);
+                        }
                     }
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.ToString());
+                    _log.Error(exception);
                 }
             }
             return response;

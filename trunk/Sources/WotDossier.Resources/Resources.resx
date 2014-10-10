@@ -3199,7 +3199,7 @@ up to 500 m</value>
     <value>Shells</value>
   </data>
   <data name="Settings_Add" xml:space="preserve">
-    <value>Add</value>
+    <value>Add client</value>
   </data>
   <data name="TankFilterPanel_Default" xml:space="preserve">
     <value>Default</value>
@@ -3215,5 +3215,17 @@ up to 500 m</value>
   </data>
   <data name="BattleType_nations" xml:space="preserve">
     <value>Confrontation</value>
+  </data>
+  <data name="Column_Settings_Path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="Column_Settings_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Settings_Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="Settings_PlayWithSelected" xml:space="preserve">
+    <value>Play with selected</value>
   </data>
 </root>

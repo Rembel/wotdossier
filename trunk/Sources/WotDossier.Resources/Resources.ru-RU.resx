@@ -3288,7 +3288,7 @@
     <value>Боекомплект</value>
   </data>
   <data name="Settings_Add" xml:space="preserve">
-    <value>Добавить</value>
+    <value>Добавить клиент</value>
   </data>
   <data name="TankFilterPanel_Default" xml:space="preserve">
     <value>По-умолчанию</value>
@@ -3304,5 +3304,17 @@
   </data>
   <data name="BattleType_nations" xml:space="preserve">
     <value>Противостояние</value>
+  </data>
+  <data name="Column_Settings_Path" xml:space="preserve">
+    <value>Путь</value>
+  </data>
+  <data name="Column_Settings_Version" xml:space="preserve">
+    <value>Версия</value>
+  </data>
+  <data name="Settings_Auto" xml:space="preserve">
+    <value>Автоматически</value>
+  </data>
+  <data name="Settings_PlayWithSelected" xml:space="preserve">
+    <value>Воспроизвести выделенным</value>
   </data>
 </root>

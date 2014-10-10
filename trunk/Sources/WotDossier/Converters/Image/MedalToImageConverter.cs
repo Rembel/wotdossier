@@ -32,10 +32,14 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Medal medal = (Medal)value;
-            string iconName = string.IsNullOrEmpty(medal.Icon) ? medal.Name : medal.Icon;
-            var uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Medals/{0}.png", iconName));
-            BitmapImage bitmapImage = ImageCache.GetBitmapImage(uriSource);
-            return bitmapImage;
+            if (medal != null)
+            {
+                string iconName = string.IsNullOrEmpty(medal.Icon) ? medal.Name : medal.Icon;
+                var uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Medals/{0}.png", iconName));
+                BitmapImage bitmapImage = ImageCache.GetBitmapImage(uriSource);
+                return bitmapImage;
+            }
+            return null;
         }
 
         /// <summary>

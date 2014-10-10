@@ -89,12 +89,14 @@ namespace WotDossier.Applications.ViewModel
         private void OnPlayWithAutoSelectCommand()
         {
             Player = null;
+            ViewTyped.DialogResult = true;
             ViewTyped.Close();
         }
 
         private void OnPlayWithSelectedCommand(ReplayPlayer replayPlayer)
         {
             Player = replayPlayer;
+            ViewTyped.DialogResult = true;
             ViewTyped.Close();
         }
 

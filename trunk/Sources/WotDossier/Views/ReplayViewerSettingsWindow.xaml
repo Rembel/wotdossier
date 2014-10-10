@@ -12,7 +12,7 @@
         <DataGrid ItemsSource="{Binding ReplayPlayers, Mode=TwoWay}" HorizontalAlignment="Stretch" AutoGenerateColumns="False" CanUserAddRows="False"
                    controls:DataGridBehavior.DisplayRowNumber="True" IsReadOnly="True" Name="dataGrid">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Version">
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Settings_Version}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox Margin="3" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Version, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" 
@@ -20,7 +20,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Path" Width="*">
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Settings_Path}" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
@@ -46,8 +46,8 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Margin="3" Grid.Column="0" Content="Play with selected" Command="{Binding PlayWithSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=dataGrid}" />
-            <Button Margin="3" Grid.Column="1" Content="Auto" Command="{Binding PlayWithAutoSelectCommand}" />
+            <Button Margin="3" Grid.Column="0" Content="{x:Static resources:Resources.Settings_PlayWithSelected}" Command="{Binding PlayWithSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=dataGrid}" />
+            <Button Margin="3" Grid.Column="1" Content="{x:Static resources:Resources.Settings_Auto}" Command="{Binding PlayWithAutoSelectCommand}" />
             <Button Margin="3" Grid.Column="2" Content="{x:Static resources:Resources.Settings_Add}" Command="{Binding AddCommand}" />
         </Grid>
     </Grid>

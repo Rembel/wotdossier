@@ -65,7 +65,11 @@ namespace WotDossier.Applications.Logic
         public void PlayWith(ReplayFile replayFile)
         {
             var viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewerSettingsViewModel>();
-            viewModel.Show();
+            if (viewModel.Show() == false)
+            {
+                return;
+            }
+
             var replayPlayer = viewModel.Player;
             if (replayPlayer == null)
             {

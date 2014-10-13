@@ -198,7 +198,10 @@
         <medal name="Medal_Fort_SoldierOfFortune" id="48603" icon="soldierOfFortune3" type="1"/>
         <medal name="Medal_Fort_SoldierOfFortune" id="48604" icon="soldierOfFortune4" type="1"/>
         
-        <medal name="Medal_Fort_Kampfer" id="487" icon="kampfer" type="0"/>
+        <medal name="Medal_Fort_Kampfer" id="48701" icon="kampfer1" type="1"/>
+        <medal name="Medal_Fort_Kampfer" id="48702" icon="kampfer2" type="2"/>
+        <medal name="Medal_Fort_Kampfer" id="48703" icon="kampfer3" type="3"/>
+        <medal name="Medal_Fort_Kampfer" id="48704" icon="kampfer4" type="4"/>
     </Fort>
     <master>
         <!--79-->

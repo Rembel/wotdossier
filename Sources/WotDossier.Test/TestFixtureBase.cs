@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
@@ -425,15 +426,64 @@ namespace WotDossier.Test
         [Test]
         public void MedalsResourcesTest()
         {
+            var dictionary = GetResourcesDictionary();
+            
             foreach (var medal in Dictionaries.Instance.Medals)
             {
-                var name = medal.Value.Name;
-                var resource = Resources.Resources.ResourceManager.GetString(name) ?? name;
-                var condition = name.Equals(resource);
-                //Assert.IsFalse(condition, "Resource for medal:{0} not found", name);
-                if (condition)
+                var localizedString = Resources.Resources.ResourceManager.GetString(medal.Value.Name);
+                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", medal.Value.Name);
+
+                string key = string.Format("images/medals/{0}.png", medal.Value.Icon).ToLowerInvariant();
+                Assert.IsTrue(dictionary.ContainsKey(key), "Image resource not found: {0}", medal.Value.Icon);
+            }
+        }
+
+        [Test]
+        public void MapsResourcesTest()
+        {
+            var dictionary = GetResourcesDictionary();
+
+            foreach (var map in Dictionaries.Instance.Maps)
+            {
+                var localizedString = Resources.Resources.ResourceManager.GetString("Map_" + map.Value.mapidname);
+                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", map.Value.mapidname);
+
+                var key = string.Format("images/maps/{0}.jpg", map.Value.mapidname).ToLowerInvariant();
+                //Assert.IsTrue(dictionary.ContainsKey(key), "Image resource not found: {0}", map.Value.mapidname);
+                if (!dictionary.ContainsKey(key))
                 {
-                    Console.WriteLine(name);
+                    Console.WriteLine("Image resource not found: {0}", map.Value.mapidname);
+                }
+            }
+        }
+
+        private static Dictionary<string, object> GetResourcesDictionary()
+        {
+            var assembly = Assembly.Load("WotDossier.Resources");
+            Stream fs = assembly.GetManifestResourceStream("WotDossier.Resources.g.resources");
+            var rr = new System.Resources.ResourceReader(fs);
+
+            Dictionary<string, object> dictionary = new Dictionary<string, object>();
+
+            foreach (DictionaryEntry entry in rr)
+            {
+                dictionary.Add(entry.Key.ToString().ToLowerInvariant(), entry.Value);
+            }
+            return dictionary;
+        }
+
+        [Test]
+        public void TanksResourcesTest()
+        {
+            var dictionary = GetResourcesDictionary();
+
+            foreach (var tank in Dictionaries.Instance.Tanks)
+            {
+                var key = string.Format("images/tanks/{0}.png", tank.Value.Icon.IconId).ToLowerInvariant();
+                //Assert.IsTrue(dictionary.ContainsKey(key), "Image resource not found: {0}", tank.Value.Icon.IconId);
+                if (!dictionary.ContainsKey(key))
+                {
+                    Console.WriteLine("Image resource not found: {0}", tank.Value.Icon.IconId);
                 }
             }
         }

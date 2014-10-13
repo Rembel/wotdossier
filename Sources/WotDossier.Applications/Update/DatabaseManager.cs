@@ -171,7 +171,7 @@ namespace WotDossier.Applications.Update
             {
                 Assembly entryAssembly = Assembly.GetEntryAssembly();
                 var resourceName = entryAssembly.GetName().Name + @".Data.init.s3db";
-                byte[] embeddedResource = AssemblyExtensions.GetEmbeddedResource(resourceName, entryAssembly);
+                byte[] embeddedResource = entryAssembly.GetEmbeddedResource(resourceName);
                 using (FileStream fileStream = File.OpenWrite(path))
                 {
                     fileStream.Write(embeddedResource, 0, embeddedResource.Length);

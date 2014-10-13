@@ -25,7 +25,7 @@ namespace WotDossier.Applications.Update
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public void Execute(SQLiteConnection sqlCeConnection, SQLiteTransaction transaction)
         {
-            string sqlScript = AssemblyExtensions.GetTextEmbeddedResource(_resourceName, _assembly);
+            string sqlScript = _assembly.GetTextEmbeddedResource(_resourceName);
 
             SQLiteCommand command = new SQLiteCommand(sqlScript, sqlCeConnection, transaction);
 

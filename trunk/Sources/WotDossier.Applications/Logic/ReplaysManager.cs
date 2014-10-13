@@ -81,7 +81,14 @@ namespace WotDossier.Applications.Logic
         public void Play(ReplayFile replayFile)
         {
             ReplayPlayer replayPlayer = AutoSelectPlayer(replayFile.ClientVersion);
-            ExecutePlayer(replayFile, replayPlayer);
+            if (replayPlayer != null)
+            {
+                ExecutePlayer(replayFile, replayPlayer);
+            }
+            else
+            {
+                PlayWith(replayFile);    
+            }
         }
 
         private static void ExecutePlayer(ReplayFile replayFile, ReplayPlayer player)

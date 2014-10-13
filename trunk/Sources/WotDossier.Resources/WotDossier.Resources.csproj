@@ -901,6 +901,9 @@
     <Resource Include="Images\ammo\NO_HIGH_EXPLOSIVE_PREMIUM.png" />
     <Resource Include="Images\ammo\NO_HOLLOW_CHARGE.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\ussr_R108_T34_85M.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

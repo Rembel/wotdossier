@@ -11,7 +11,7 @@ namespace WotDossier.Common
     /// </summary>
     public static class AssemblyExtensions
     {
-        public static byte[] GetEmbeddedResource(string resourceName, Assembly assembly)
+        public static byte[] GetEmbeddedResource(this Assembly assembly, string resourceName)
         {
             using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
             {
@@ -26,7 +26,7 @@ namespace WotDossier.Common
             }
         }
 
-        public static string GetTextEmbeddedResource(string resourceName, Assembly assembly)
+        public static string GetTextEmbeddedResource(this Assembly assembly, string resourceName)
         {
             using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
             {
@@ -43,7 +43,7 @@ namespace WotDossier.Common
         /// </summary>
         public static void SetEntryAssembly()
         {
-            SetEntryAssembly(Assembly.GetCallingAssembly());
+            Assembly.GetCallingAssembly().SetEntryAssembly();
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace WotDossier.Common
         /// Use AssemblyUtilities.SetEntryAssembly() as first line in XNA ad hoc tests
         /// </summary>
         /// <param name="assembly">Assembly to set as entry assembly</param>
-        public static void SetEntryAssembly(Assembly assembly)
+        public static void SetEntryAssembly(this Assembly assembly)
         {
             AppDomainManager manager = new AppDomainManager();
             FieldInfo entryAssemblyfield = manager.GetType().GetField("m_entryAssembly", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -62,7 +62,7 @@ namespace WotDossier.Common
             domainManagerField.SetValue(domain, manager);
         }
 
-        public static IEnumerable<string> GetResourcesByMask(Assembly assembly, string extension)
+        public static IEnumerable<string> GetResourcesByMask(this Assembly assembly, string extension)
         {
             return assembly.GetManifestResourceNames().Where(x => x.EndsWith(extension));
         }

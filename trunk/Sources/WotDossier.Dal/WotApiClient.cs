@@ -235,10 +235,11 @@ namespace WotDossier.Dal
                     List<Vehicle> tanks = response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<Vehicle>>();
                     foreach (Vehicle tank in tanks)
                     {
+                        tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
+                        
                         if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))
                         {
                             tank.tank = Dictionaries.Instance.ServerTanks[tank.tank_id];
-                            tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
                         }
                         else
                         {

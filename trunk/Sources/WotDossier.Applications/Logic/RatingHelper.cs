@@ -496,7 +496,7 @@ namespace WotDossier.Applications.Logic
         /// <returns></returns>
         public static double Xwn8(double wn8)
         {
-            return wn8 > 3300 ? 100 : Math.Max(Math.Min(wn8 * (wn8 * (wn8 * (wn8 * (wn8 * (0.000000000000000000071 * wn8 + 0.0000000000000002455) - 0.000000000006785) + 0.00000002708) - 0.000042707) + 0.06319) - 0.348, 100), 0);
+            return wn8 > 3400 ? 100 : Math.Max(Math.Min(wn8 * (wn8 * (wn8 * (wn8 * (wn8 * (0.00000000000000000009553 * wn8 - 0.0000000000000001644) - 0.00000000000426) + 0.0000000197) - 0.00003192) + 0.056265) - 0.157, 100), 0);
         }
 
         private static double Asinh(double x)

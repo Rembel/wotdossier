@@ -912,7 +912,7 @@
     "tank_type": 1
   },
   {
-    "tank_title": "Env Artillery",
+    "tank_title": "Env_Artillery",
     "icon": "Env_Artillery",
     "pr_nominal_damage": 0.0,
     "wn8_nominal_damage": 1000.0,
@@ -1032,7 +1032,7 @@
     "tank_type": 4
   },
   {
-    "tank_title": "Ru251",
+    "tank_title": "Spahpanzer Ru 251",
     "icon": "G103_RU_251",
     "pr_nominal_damage": 900.0,
     "wn8_nominal_damage": 744.28,
@@ -2220,7 +2220,7 @@
     "tank_type": 1
   },
   {
-    "tank_title": "M24 Chaffee GT",
+    "tank_title": "M24 Chaffee Sport",
     "icon": "M24_Chaffee_GT",
     "pr_nominal_damage": 125.0,
     "wn8_nominal_damage": 1000.0,
@@ -2316,7 +2316,7 @@
     "tank_type": 5
   },
   {
-    "tank_title": "M41",
+    "tank_title": "M41 HMC",
     "icon": "M41",
     "pr_nominal_damage": 800.0,
     "wn8_nominal_damage": 1031.91,
@@ -2328,7 +2328,7 @@
     "tank_type": 5
   },
   {
-    "tank_title": "M41 Bulldog",
+    "tank_title": "M41 Walker Bulldog",
     "icon": "M41_Bulldog",
     "pr_nominal_damage": 725.0,
     "wn8_nominal_damage": 729.92,
@@ -3108,7 +3108,7 @@
     "tank_type": 3
   },
   {
-    "tank_title": "LTB",
+    "tank_title": "LTTB",
     "icon": "R107_LTB",
     "pr_nominal_damage": 725.0,
     "wn8_nominal_damage": 670.7,
@@ -3120,7 +3120,7 @@
     "tank_type": 1
   },
   {
-    "tank_title": "T34-85M",
+    "tank_title": "T-34-85M",
     "icon": "R108_T34_85M",
     "pr_nominal_damage": 700.0,
     "wn8_nominal_damage": 692.0,
@@ -3336,7 +3336,7 @@
     "tank_type": 4
   },
   {
-    "tank_title": "Pz.Sfl. V",
+    "tank_title": "Sturer Emil",
     "icon": "Sturer_Emil",
     "pr_nominal_damage": 1300.0,
     "wn8_nominal_damage": 1100.93,

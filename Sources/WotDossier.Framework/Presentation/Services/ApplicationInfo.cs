@@ -64,7 +64,15 @@ namespace WotDossier.Framework.Presentation.Services
                     Assembly entryAssembly = Assembly.GetEntryAssembly();
                     if (entryAssembly != null)
                     {
-                        _version = entryAssembly.GetName().Version.ToString(3);
+                        var version = entryAssembly.GetName().Version;
+                        if (version.Build > 0)
+                        {
+                            _version = version.ToString(3);
+                        }
+                        else
+                        {
+                            _version = version.ToString(2);
+                        }
                     }
                     else
                     {

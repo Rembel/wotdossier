@@ -250,13 +250,6 @@ namespace WotDossier.Test
         }
 
         [Test]
-        public void UpdateTest()
-        {
-            DatabaseManager manager = new DatabaseManager();
-            manager.Update();
-        }
-
-        [Test]
         public void NominalDamageTest()
         {
             XmlDocument document = new XmlDocument();

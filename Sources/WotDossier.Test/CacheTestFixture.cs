@@ -31,6 +31,11 @@ namespace WotDossier.Test
 
             foreach (Version version in Dictionaries.Instance.Versions)
             {
+                if(version < new Version("0.8.5"))
+                {
+                    continue;
+                }
+
                 //reset DB
                 DatabaseManager.DeleteDatabase();
                 DatabaseManager.InitDatabase();

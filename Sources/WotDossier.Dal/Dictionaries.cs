@@ -33,7 +33,7 @@ namespace WotDossier.Dal
         public static readonly Version VersionRelease = new Version("0.9.3.0");
         public static readonly Version VersionTest = new Version("100.0.0.0");
 
-        private readonly List<Version> _versions = new List<Version>
+        private static readonly List<Version> _versions = new List<Version>
         {
                 VersionRelease,
                 new Version("0.9.2.0"),

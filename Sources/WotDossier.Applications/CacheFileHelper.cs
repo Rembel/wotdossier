@@ -24,24 +24,23 @@ namespace WotDossier.Applications
         /// <summary>
         /// Gets the cache file.
         /// </summary>
-        /// <param name="playerId">The player id.</param>
-        /// <param name="server"></param>
-        /// <returns>null if there is no any dossier cache file for specified player</returns>
-        public static FileInfo GetCacheFile(string playerId, string server)
+        /// <param name="playerName">Name of the player.</param>
+        /// <param name="server">The server.</param>
+        /// <returns>
+        /// null if there is no any dossier cache file for specified player
+        /// </returns>
+        public static FileInfo GetCacheFile(string playerName, string server)
         {
             _log.Trace("GetCacheFile start");
 
             FileInfo cacheFile = null;
 
             string[] files = new string[0];
-
-            try
+            
+            var dossierCacheFolder = Folder.GetDossierCacheFolder();
+            if (Directory.Exists(dossierCacheFolder))
             {
-                files = Directory.GetFiles(Folder.GetDossierCacheFolder(), "*.dat");
-            }
-            catch (DirectoryNotFoundException ex)
-            {
-                _log.Error("Cann't find dossier cache files", ex);
+                files = Directory.GetFiles(dossierCacheFolder, "*.dat");
             }
 
             if (!files.Any())
@@ -53,12 +52,12 @@ namespace WotDossier.Applications
             {
                 FileInfo info = new FileInfo(file);
 
-                string decodFileName = DecodFileName(info);
-                string playerName = decodFileName.Split(SEPARATOR)[1];
-                string serverName = decodFileName.Split(SEPARATOR)[0];
+                string decodedFileName = DecodFileName(info);
+                string decodedPlayerName = decodedFileName.Split(SEPARATOR)[1];
+                string decodedDerverName = decodedFileName.Split(SEPARATOR)[0];
 
-                if (playerName.Equals(playerId, StringComparison.InvariantCultureIgnoreCase) &&
-                    serverName.Contains(Dictionaries.Instance.GameServers[server]))
+                if (decodedPlayerName.Equals(playerName, StringComparison.InvariantCultureIgnoreCase) &&
+                    decodedDerverName.Contains(Dictionaries.Instance.GameServers[server]))
                 {
                     if (cacheFile == null)
                     {

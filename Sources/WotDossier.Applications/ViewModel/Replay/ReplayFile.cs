@@ -125,6 +125,9 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         #endregion
 
+        public FinishReason FinishReason { get; set; }
+        public DeathReason DeathReason { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplayFile" /> class.
         /// </summary>
@@ -183,7 +186,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 BattleType = (BattleType) replay.datablock_1.battleType;
 
                 Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);
-    
+
                 if (replay.datablock_battle_result != null)
                 {
                     int autoRepairCost = replay.datablock_battle_result.personal.autoRepairCost ?? 0;
@@ -205,7 +208,12 @@ namespace WotDossier.Applications.ViewModel.Replay
                     Medals = Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
                     MedalsCount = Medals.Count;
                     IsPlatoon = ResolvePlatoonFlag(replay);
+                    
                     BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;
+
+                    DeathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
+
+                    FinishReason = (FinishReason) replay.datablock_battle_result.common.finishReason;
                 }
 
                 TeamMembers = replay.datablock_1.vehicles.Values.ToList();

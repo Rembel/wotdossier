@@ -3228,4 +3228,43 @@ up to 500 m</value>
   <data name="Settings_PlayWithSelected" xml:space="preserve">
     <value>Play with selected</value>
   </data>
+  <data name="FinishReason_BaseCapture" xml:space="preserve">
+    <value>Base capture, the base was captured</value>
+  </data>
+  <data name="FinishReason_Extermination" xml:space="preserve">
+    <value>Extermination, all vehicles were destroyed</value>
+  </data>
+  <data name="FinishReason_Failure" xml:space="preserve">
+    <value>Failure, the arena did not initialize or had an internal failure</value>
+  </data>
+  <data name="FinishReason_Technical" xml:space="preserve">
+    <value>Technical, the match was interrupted by a server restart or was otherwise cancelled by the server</value>
+  </data>
+  <data name="FinishReason_Timeout" xml:space="preserve">
+    <value>Timeout, the battle time has elapsed</value>
+  </data>
+  <data name="FinishReason_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="DeathReason_Alive" xml:space="preserve">
+    <value>Survived</value>
+  </data>
+  <data name="DeathReason_Crashed" xml:space="preserve">
+    <value>Crashed</value>
+  </data>
+  <data name="DeathReason_DestroyedByDeathZone" xml:space="preserve">
+    <value>Destroyed by death zone</value>
+  </data>
+  <data name="DeathReason_DestroyedByFire" xml:space="preserve">
+    <value>Destroyed by fire</value>
+  </data>
+  <data name="DeathReason_DestroyedByRamming" xml:space="preserve">
+    <value>Destroyed by ramming</value>
+  </data>
+  <data name="DeathReason_DestroyedByShot" xml:space="preserve">
+    <value>Destroyed by shot</value>
+  </data>
+  <data name="DeathReason_VehicleDrowned" xml:space="preserve">
+    <value>Vehicle drowned</value>
+  </data>
 </root>

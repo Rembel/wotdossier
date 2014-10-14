@@ -177,6 +177,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
+    <!--ui-->
     <Grid Background="#0E0C09">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -187,6 +188,7 @@
         <Grid Grid.Row="0" Height="225" HorizontalAlignment="Stretch">
             <Image Stretch="Fill" HorizontalAlignment="Stretch" Height="225" Style="{StaticResource FinalStatisticPicWinStyle}" DataContext="{Binding Status}" />
             <Image Margin="0,123,0,0" Stretch="Fill" HorizontalAlignment="Stretch" Height="85" Style="{StaticResource FinalStatisticLineWinStyle}" DataContext="{Binding Status}" />
+            <!--medals-->
             <Grid Margin="0,123,0,0" Height="85">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -209,6 +211,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+                <!--xp and credits-->
                 <Grid Grid.Column="1" VerticalAlignment="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -236,8 +239,14 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </Grid>
-            <TextBlock Margin="0,30,0,0" Foreground="White" FontFamily="Sans-Serif" Height="60" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="60"
-                           Text="{Binding Status, Converter={x:Static converters:EnumToTextConverter.Default}}"></TextBlock>
+            <Grid Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Foreground="White" FontFamily="Sans-Serif" FontWeight="DemiBold" Height="60" FontSize="60" Text="{Binding Status, Converter={x:Static converters:EnumToTextConverter.Default}}" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="1" Foreground="White" FontFamily="Sans-Serif" FontSize="20" Text="{Binding FinishReason, Converter={x:Static converters:EnumToTextConverter.Default}}" HorizontalAlignment="Center" />
+            </Grid>
         </Grid>
         <Grid Grid.Row="1" Background="#272519">
             <Grid.ColumnDefinitions>
@@ -254,6 +263,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel>
+                <!--player info-->
                 <Grid HorizontalAlignment="Stretch" Margin="10,10,10,10">
                     <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="{Binding Path=MapName, Mode=OneWay, Converter={x:Static converters:MapNameToImageConverter.Default}}" VerticalAlignment="Top" />
                     <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="pack://application:,,,/WotDossier.Resources;component/Images/Maps\overlay.png" VerticalAlignment="Top" />
@@ -270,6 +280,7 @@
                                 <TextBlock Text="{Binding Path=Tank}"></TextBlock>
                             </ToolTipService.ToolTip>
                         </TextBlock>
+                        <TextBlock Foreground="White" FontSize="16" Text="{Binding DeathReason, Converter={x:Static converters:EnumToTextConverter.Default}}" />
                     </StackPanel>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,10,10,10">

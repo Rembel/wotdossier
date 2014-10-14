@@ -132,6 +132,11 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string MapDisplayName { get; set; }
 
         public string MapName { get; set; }
+
+        public FinishReason FinishReason { get; set; }
+
+        public DeathReason DeathReason { get; set; }
+
         public List<ChatMessage> ChatMessages { get; set; }
 
         private List<DeviceDescription> _devices;
@@ -384,6 +389,10 @@ namespace WotDossier.Applications.ViewModel.Replay
                 int level = Dictionaries.Instance.GetBattleLevel(membersLevels);
 
                 Status = GetBattleStatus(replay);
+
+                DeathReason = (DeathReason)replay.datablock_battle_result.personal.deathReason;
+
+                FinishReason = (FinishReason)replay.datablock_battle_result.common.finishReason;
 
                 _devices = new List<DeviceDescription>();
 

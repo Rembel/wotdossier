@@ -156,6 +156,7 @@
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
     <Compile Include="ViewModel\Replay\DbReplay.cs" />
+    <Compile Include="ViewModel\Replay\DeathReason.cs" />
     <Compile Include="ViewModel\Replay\PhisicalReplay.cs" />
     <Compile Include="ViewModel\Replay\TotalReplayFile.cs" />
     <Compile Include="ViewModel\Reporter.cs" />

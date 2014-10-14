@@ -3252,7 +3252,7 @@
     <value>Гонщик 2014</value>
   </data>
   <data name="ReplaysTab_ShowDetails" xml:space="preserve">
-    <value>Подробная информация</value>
+    <value>Подробная информация о бое</value>
   </data>
   <data name="ReplaysTab_CopyFileNameToClipboard" xml:space="preserve">
     <value>Копировать имя файла</value>
@@ -3316,5 +3316,44 @@
   </data>
   <data name="Settings_PlayWithSelected" xml:space="preserve">
     <value>Воспроизвести выделенным</value>
+  </data>
+  <data name="FinishReason_BaseCapture" xml:space="preserve">
+    <value>Захват базы</value>
+  </data>
+  <data name="FinishReason_Extermination" xml:space="preserve">
+    <value>Уничтожение техники</value>
+  </data>
+  <data name="FinishReason_Failure" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="FinishReason_Technical" xml:space="preserve">
+    <value>Техническая проблема</value>
+  </data>
+  <data name="FinishReason_Timeout" xml:space="preserve">
+    <value>Время боя истекло</value>
+  </data>
+  <data name="FinishReason_Unknown" xml:space="preserve">
+    <value>Неизвестен</value>
+  </data>
+  <data name="DeathReason_Alive" xml:space="preserve">
+    <value>Выжил</value>
+  </data>
+  <data name="DeathReason_Crashed" xml:space="preserve">
+    <value>Разбился</value>
+  </data>
+  <data name="DeathReason_DestroyedByDeathZone" xml:space="preserve">
+    <value>Уничтожен смертельной зоной</value>
+  </data>
+  <data name="DeathReason_DestroyedByFire" xml:space="preserve">
+    <value>Уничтожен пожаром</value>
+  </data>
+  <data name="DeathReason_DestroyedByRamming" xml:space="preserve">
+    <value>Уничтожен тараном</value>
+  </data>
+  <data name="DeathReason_DestroyedByShot" xml:space="preserve">
+    <value>Уничтожен выстрелом</value>
+  </data>
+  <data name="DeathReason_VehicleDrowned" xml:space="preserve">
+    <value>Утонул</value>
   </data>
 </root>

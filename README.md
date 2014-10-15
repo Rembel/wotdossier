@@ -38,3 +38,6 @@ This app shows the contents of your locally cached WoT dossier data, which are u
 * XP, vista 32/64, windows 7 32/64
 * Microsoft .NetFramework? 4.0 (http://www.microsoft.com/en-us/download/details.aspx?id=17718)
 * Microsoft Visual C++ 2008 Redistributable Package (x86) (http://www.microsoft.com/en-us/download/confirmation.aspx?id=29) 
+
+[History](history.md) 
+

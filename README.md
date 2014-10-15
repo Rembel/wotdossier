@@ -23,18 +23,18 @@ Features:
 
 Download -
 
-    http://res-mods.ru/mod/4137-wotdossier?author=12058-_Rembel_
-    https://drive.google.com/folderview?id=0B214mHv6250YYWZ0bGV4NmNRNzQ&usp=sharing 
+http://res-mods.ru/mod/4137-wotdossier?author=12058-_Rembel_
+https://drive.google.com/folderview?id=0B214mHv6250YYWZ0bGV4NmNRNzQ&usp=sharing 
 
 Links:
 
-    Official forum theme - http://forum.worldoftanks.ru/index.php?/topic/890389-wotdossier/#top
-    Original idea - http://wot-dossier.appspot.com/ and - http://noobmeter.com/ 
-    Dossier cache reading solution - https://github.com/Phalynx/WoT-Dossier-Cache-to-JSON 
-    Replays reading solution - https://github.com/Phalynx/WoT-Replay-To-JSON 
+Official forum theme - http://forum.worldoftanks.ru/index.php?/topic/890389-wotdossier/#top
+Original idea - http://wot-dossier.appspot.com/ and - http://noobmeter.com/ 
+Dossier cache reading solution - https://github.com/Phalynx/WoT-Dossier-Cache-to-JSON 
+Replays reading solution - https://github.com/Phalynx/WoT-Replay-To-JSON 
 
 System requirements:
 
-    XP, vista 32/64, windows 7 32/64
-    Microsoft .NetFramework? 4.0 (http://www.microsoft.com/en-us/download/details.aspx?id=17718)
-    Microsoft Visual C++ 2008 Redistributable Package (x86) (http://www.microsoft.com/en-us/download/confirmation.aspx?id=29) 
+XP, vista 32/64, windows 7 32/64
+Microsoft .NetFramework? 4.0 (http://www.microsoft.com/en-us/download/details.aspx?id=17718)
+Microsoft Visual C++ 2008 Redistributable Package (x86) (http://www.microsoft.com/en-us/download/confirmation.aspx?id=29) 

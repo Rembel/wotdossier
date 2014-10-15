@@ -5,7 +5,7 @@ Desktop app for World Of Tanks. Players Dossier Cache stat and multifunctional R
 
 This app shows the contents of your locally cached WoT dossier data, which are used by the game to display data in the statistics tab in garage for each tank you drove.
 
-Features:
+### Features:
 
 1. Per tank player statistic(frags, damage, WinRate? etc). From patch 8.8 - assist damage, original xp and more.
 2. Common player statistic and achiements for period(last day, last week, from date, last N battles)

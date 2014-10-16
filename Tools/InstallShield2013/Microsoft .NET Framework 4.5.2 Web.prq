@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SetupPrereq>
+	<conditions>
+		<condition Type="2" Comparison="2" Path="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"  FileName="Release" ReturnValue="379892"></condition>
+	</conditions>
+	<operatingsystemconditions>
+		<operatingsystemcondition MajorVersion="6" MinorVersion="0" PlatformId="2" CSDVersion="" Bits="1" ProductType="2|3"></operatingsystemcondition>
+		<operatingsystemcondition MajorVersion="6" MinorVersion="1" PlatformId="2" CSDVersion="" Bits="1"></operatingsystemcondition>
+		<operatingsystemcondition MajorVersion="6" MinorVersion="0" PlatformId="2" CSDVersion="" Bits="4" ProductType="2|3"></operatingsystemcondition>
+		<operatingsystemcondition MajorVersion="6" MinorVersion="1" PlatformId="2" CSDVersion="" Bits="4"></operatingsystemcondition>
+		<operatingsystemcondition MajorVersion="6" MinorVersion="2" PlatformId="2" CSDVersion="" Bits="1"></operatingsystemcondition>
+		<operatingsystemcondition MajorVersion="6" MinorVersion="2" PlatformId="2" CSDVersion="" Bits="4"></operatingsystemcondition>
+	</operatingsystemconditions>
+	<files>
+		<file LocalFile="&lt;ISProductFolder&gt;\SetupPrerequisites\Microsoft .net\4.5.2\Web\NDP452-KB2901954-Web.exe" URL="http://download.microsoft.com/download/B/4/1/B4119C11-0423-477B-80EE-7A474314B347/NDP452-KB2901954-Web.exe" CheckSum="ca41dba55a727f01104871b160cd5b1d" FileSize="0,1118920"></file>
+	</files>
+	<execute file="NDP452-KB2901954-Web.exe" cmdline="/showrmui /passive " cmdlinesilent="/q /norestart" returncodetoreboot="1641,3010" requiresmsiengine="1"></execute>
+	<properties Id="{D4E70381-07FA-4200-8D59-84A1AB4A4C72}" Description="This prerequisite installs the .NET Framework 4.5.2 web installer package." AltPrqURL="http://saturn.installshield.com/is/prerequisites/Microsoft .NET Framework 4.5.2 Web.prq"></properties>
+	<behavior Reboot="2"></behavior>
+</SetupPrereq>

@@ -3356,4 +3356,10 @@
   <data name="DeathReason_VehicleDrowned" xml:space="preserve">
     <value>Утонул</value>
   </data>
+    <data name="WindowCaption_ReplayViewersSettings" xml:space="preserve">
+    <value>Настройки воспроизведения</value>
+  </data>
+    <data name="WindowCaption_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
 </root>

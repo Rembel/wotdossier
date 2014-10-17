@@ -3267,4 +3267,10 @@ up to 500 m</value>
   <data name="DeathReason_VehicleDrowned" xml:space="preserve">
     <value>Vehicle drowned</value>
   </data>
+    <data name="WindowCaption_ReplayViewersSettings" xml:space="preserve">
+    <value>Replay viewers settings</value>
+  </data>
+    <data name="WindowCaption_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

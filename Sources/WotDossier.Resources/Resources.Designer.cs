@@ -8636,6 +8636,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Replay viewers settings.
+        /// </summary>
+        public static string WindowCaption_ReplayViewersSettings {
+            get {
+                return ResourceManager.GetString("WindowCaption_ReplayViewersSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search Clan.
         /// </summary>
         public static string WindowCaption_SearchClan {
@@ -8659,6 +8668,15 @@ namespace WotDossier.Resources {
         public static string WindowCaption_SelectPathToWorldOfTanksExecutable {
             get {
                 return ResourceManager.GetString("WindowCaption_SelectPathToWorldOfTanksExecutable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string WindowCaption_Settings {
+            get {
+                return ResourceManager.GetString("WindowCaption_Settings", resourceCulture);
             }
         }
         

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:autoCompleteTextBox="clr-namespace:WotDossier.Framework.Controls.AutoCompleteTextBox;assembly=WotDossier.Framework"
         xmlns:applications="clr-namespace:WotDossier.Applications;assembly=WotDossier.Applications"
-        Title="Settings" Height="260" Width="500" WindowStartupLocation="CenterOwner" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_settings.png"
+        Title="{x:Static resources:Resources.WindowCaption_Settings}" Height="260" Width="500" WindowStartupLocation="CenterOwner" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_settings.png"
         Style="{StaticResource office2007SilverWindow}" Background="{StaticResource PanelBackground}">
     <Window.Resources>
         <applications:PlayerNameSuggestionProvider x:Key="nsp" />

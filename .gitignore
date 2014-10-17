@@ -19,3 +19,4 @@
 /Sources/packages
 /Sources/*.suo
 /Sources/*.user
+/Sources/WotDossier/*.user

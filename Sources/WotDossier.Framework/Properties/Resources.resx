@@ -138,4 +138,7 @@
     <data name="Chart_Replays_Total_Count" xml:space="preserve">
     <value>Total: {0:0}</value>
   </data>
+    <data name="WindowCaption_ReplayViewersSettings" xml:space="preserve">
+    <value>Replay viewers settings</value>
+  </data>
 </root>

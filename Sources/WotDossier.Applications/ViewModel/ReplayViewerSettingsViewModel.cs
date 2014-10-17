@@ -118,7 +118,7 @@ namespace WotDossier.Applications.ViewModel
                 dialog.CheckFileExists = true;
                 dialog.CheckPathExists = true;
                 dialog.DefaultExt = ".exe"; // Default file extension
-                dialog.Filter = "WorldOfTanks (.exe)|*.exe"; // Filter files by extension 
+                dialog.Filter = "WorldOfTanks (WorldOfTanks.exe)|WorldOfTanks.exe"; // Filter files by extension 
                 dialog.Multiselect = false;
                 dialog.Title = Resources.Resources.WindowCaption_SelectPathToWorldOfTanksExecutable;
                 bool? showDialog = dialog.ShowDialog();

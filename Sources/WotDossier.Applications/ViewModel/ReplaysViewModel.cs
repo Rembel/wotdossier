@@ -203,12 +203,19 @@ namespace WotDossier.Applications.ViewModel
         {
             using (new WaitCursor())
             {
-                if (ReplayFilter.SelectedFolder != eventArgs.TargetFolder && eventArgs.ReplayFile is PhisicalReplay)
+                foreach (var replayFile in eventArgs.ReplayFiles)
                 {
-                    eventArgs.ReplayFile.Move(eventArgs.TargetFolder);
-                    eventArgs.ReplayFile.FolderId = eventArgs.TargetFolder.Id;
-                    OnPropertyChanged("Replays");
+                    PhisicalReplay phisicalReplay = replayFile as PhisicalReplay;
+
+                    if (ReplayFilter.SelectedFolder != eventArgs.TargetFolder && phisicalReplay != null)
+                    {
+                        phisicalReplay.Move(eventArgs.TargetFolder);
+                        phisicalReplay.FolderId = eventArgs.TargetFolder.Id;
+                        eventArgs.TargetFolder.Count += 1;
+                        ReplayFilter.SelectedFolder.Count -= 1;
+                    }
                 }
+                OnPropertyChanged("Replays");
             }
         }
 
@@ -248,12 +255,13 @@ namespace WotDossier.Applications.ViewModel
         {
             if (folder.Id != ReplaysManager.DeletedFolder.Id)
             {
-                ReplayFolder root = ReplaysFolders.FirstOrDefault();
+                ReplayFolder root = ReplaysFolders.First();
                 ReplayFolder parent = FindParentFolder(root, folder);
                 if (parent != null)
                 {
                     _replays.RemoveAll(x => x.FolderId == folder.Id);
                     parent.Folders.Remove(folder);
+                    root.Count = _replays.Count;
                     ReplaysManager.SaveFolder(root);
                     OnPropertyChanged("Replays");
                 }
@@ -590,7 +598,8 @@ namespace WotDossier.Applications.ViewModel
                         error = true;
                     }
                 }
-
+                var root = _replaysFolders.First();
+                root.Count = _replays.Count;
                 OnPropertyChanged("Replays");
 
                 if (error)

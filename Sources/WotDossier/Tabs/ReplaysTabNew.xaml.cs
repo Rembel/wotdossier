@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -80,8 +81,8 @@ namespace WotDossier.Tabs
             if (e.Data.GetDataPresent(FOLDER_DRAG_FORMAT))
             {
                 ReplayFolder target = (ReplayFolder) ((TreeViewItem) sender).DataContext;
-                ReplayFile replayFile = e.Data.GetData(FOLDER_DRAG_FORMAT) as ReplayFile;
-                EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Publish(new ReplayFileMoveEventArgs { TargetFolder = target, ReplayFile = replayFile });
+                IList replayFiles = e.Data.GetData(FOLDER_DRAG_FORMAT) as IList;
+                EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Publish(new ReplayFileMoveEventArgs { TargetFolder = target, ReplayFiles = replayFiles });
                 e.Handled = true;
             }
         }

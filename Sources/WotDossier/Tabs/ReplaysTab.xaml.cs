@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -35,7 +36,7 @@ namespace WotDossier.Tabs
             Point mousePos = e.GetPosition(null);
             Vector diff = _startPoint - mousePos;
 
-            if (e.LeftButton == MouseButtonState.Pressed &&
+            if ((e.LeftButton == MouseButtonState.Pressed || e.RightButton == MouseButtonState.Pressed) &&
                 (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
                 Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
             {
@@ -45,7 +46,7 @@ namespace WotDossier.Tabs
                 if (row != null)
                 {
                     // Initialize the drag & drop operation
-                    DataObject dragData = new DataObject(FOLDER_DRAG_FORMAT, row.DataContext);
+                    DataObject dragData = new DataObject(FOLDER_DRAG_FORMAT, dgReplays.SelectedItems);
                     DragDrop.DoDragDrop(row, dragData, DragDropEffects.Move);
                 }
             }
@@ -80,35 +81,35 @@ namespace WotDossier.Tabs
             if (e.Data.GetDataPresent(FOLDER_DRAG_FORMAT))
             {
                 ReplayFolder target = (ReplayFolder) ((TreeViewItem) sender).DataContext;
-                ReplayFile replayFile = e.Data.GetData(FOLDER_DRAG_FORMAT) as ReplayFile;
-                EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Publish(new ReplayFileMoveEventArgs { TargetFolder = target, ReplayFile = replayFile });
+                IList replayFiles = e.Data.GetData(FOLDER_DRAG_FORMAT) as IList;
+                EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Publish(new ReplayFileMoveEventArgs { TargetFolder = target, ReplayFiles = replayFiles });
                 e.Handled = true;
             }
         }
 
-        private void DgTime_OnPreviewKeyDown(object sender, KeyEventArgs e)
+        private void DgReplays_OnPreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Delete)
             {
-                _selectedIndex = dgTime.SelectedIndex;
+                _selectedIndex = dgReplays.SelectedIndex;
             }
         }
 
-        private void DgTime_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DgReplays_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.RemovedItems.Count > 0 && e.AddedItems.Count == 0)
             {
-                if (dgTime.Items.Count > _selectedIndex)
+                if (dgReplays.Items.Count > _selectedIndex)
                 {
-                    dgTime.SelectedIndex = _selectedIndex;
+                    dgReplays.SelectedIndex = _selectedIndex;
                 }
                 else
                 {
-                    dgTime.SelectedIndex = _selectedIndex - 1;
+                    dgReplays.SelectedIndex = _selectedIndex - 1;
                 }
-                if (dgTime.SelectedIndex >= 0)
+                if (dgReplays.SelectedIndex >= 0)
                 {
-                    DataGridRow dgrow = (DataGridRow)dgTime.ItemContainerGenerator.ContainerFromItem(dgTime.Items[dgTime.SelectedIndex]);
+                    DataGridRow dgrow = (DataGridRow)dgReplays.ItemContainerGenerator.ContainerFromItem(dgReplays.Items[dgReplays.SelectedIndex]);
                     if (dgrow != null)
                     {
                         dgrow.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));

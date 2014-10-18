@@ -21,3 +21,5 @@
 /Sources/*.user
 /Sources/WotDossier.Setup/WotDossier.Setup/Express
 /Sources/WotDossier/*.user
+/Sources/WotDossier.Resources/*.user
+/Sources/WotDossier.Applications/*.user

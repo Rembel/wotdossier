@@ -635,7 +635,7 @@ def get_tank_data(tanksdata, countryid, tankid, dataname):
 	if dataname == 'title':
 		return 'unknown_' + str(countryid) + '_' + str(tankid)
 	
-	return "-"
+	return "-1"
 
 
 def getdata_fragslist(tankversion, tanksdata, offset):

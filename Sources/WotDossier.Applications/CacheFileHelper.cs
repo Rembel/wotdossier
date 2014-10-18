@@ -181,17 +181,30 @@ namespace WotDossier.Applications
                             int countryId = Convert.ToInt32(x[0]);
                             int tankId = Convert.ToInt32(x[1]);
                             int uniqueId = Utils.ToUniqueId(countryId, tankId);
+
+
+                            TankDescription tankDescription;
+
+                            if (Dictionaries.Instance.Tanks.ContainsKey(uniqueId))
+                            {
+                                tankDescription = Dictionaries.Instance.Tanks[uniqueId];
+                            }
+                            else
+                            {
+                                tankDescription = TankDescription.Unknown;
+                            }
+
                             return new FragsJson
                             {
                                 CountryId = countryId,
                                 TankId = tankId,
-                                Icon = Dictionaries.Instance.Tanks[uniqueId].Icon,
+                                Icon = tankDescription.Icon,
                                 TankUniqueId = uniqueId,
                                 Count = Convert.ToInt32(x[2]),
-                                Type = Dictionaries.Instance.Tanks[uniqueId].Type,
-                                Tier = Dictionaries.Instance.Tanks[uniqueId].Tier,
+                                Type = tankDescription.Type,
+                                Tier = tankDescription.Tier,
                                 KilledByTankUniqueId = tank.UniqueId(),
-                                Tank = Dictionaries.Instance.Tanks[uniqueId].Title
+                                Tank = tankDescription.Title
                             };
                         }).ToList();
                 return true;

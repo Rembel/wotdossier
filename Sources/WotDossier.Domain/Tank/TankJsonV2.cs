@@ -19,7 +19,7 @@ namespace WotDossier.Domain.Tank
             A7x7 = new StatisticJson(),
             Achievements = new AchievementsJson(),
             Common = new CommonJson(),
-            Description = new TankDescription(),
+            Description = TankDescription.Unknown,
             Frags = new BindingList<FragsJson>(),
             Achievements7x7 = new Achievements7x7(),
             AchievementsHistorical = new AchievementsHistorical(),

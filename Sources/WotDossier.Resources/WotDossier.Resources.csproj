@@ -895,6 +895,9 @@
   <ItemGroup>
     <Resource Include="Images\Tanks\ussr_R108_T34_85M.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\usa_A104_M4A3E8A.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

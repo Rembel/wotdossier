@@ -42,9 +42,10 @@
 {"mapid": 56, "mapidname": "84_winter", "mapname": "Windstorm"},
 {"mapid": 57, "mapidname": "86_himmelsdorf_winter", "mapname": "Winter Himmelsdorf"},
 {"mapid": 58, "mapidname": "87_ruinberg_on_fire", "mapname": "Ruinberg on Fire"},
-{"mapid": 60, "mapidname": "83_kharkiv", "mapname": "Kharkov"},
+{"mapid": 59, "mapidname": "83_kharkiv", "mapname": "Kharkov"},
 {"mapid": 60, "mapidname": "94_battlecity", "mapname": "Battle City"},
-{"mapid": 61, "mapidname": "99_himmelball", "mapname": "Himmelsdorf Championship"},
-{"mapid": 62, "mapidname": "96_prohorovka_defense", "mapname": "Fire Arc"},
-{"mapid": 65, "mapidname": "102_deathtrack", "mapname": "Tank Rally"}
+{"mapid": 61, "mapidname": "92_stalingrad", "mapname": "Stalingrad"},
+{"mapid": 62, "mapidname": "99_himmelball", "mapname": "Himmelsdorf Championship"},
+{"mapid": 63, "mapidname": "96_prohorovka_defense", "mapname": "Fire Arc"},
+{"mapid": 64, "mapidname": "102_deathtrack", "mapname": "Tank Rally"}
 ]

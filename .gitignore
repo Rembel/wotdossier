@@ -23,3 +23,4 @@
 /Sources/WotDossier/*.user
 /Sources/WotDossier.Resources/*.user
 /Sources/WotDossier.Applications/*.user
+/Sources/WotDossier.Test/*.user

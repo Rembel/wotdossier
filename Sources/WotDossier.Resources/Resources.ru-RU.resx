@@ -3356,10 +3356,13 @@
   <data name="DeathReason_VehicleDrowned" xml:space="preserve">
     <value>Утонул</value>
   </data>
-    <data name="WindowCaption_ReplayViewersSettings" xml:space="preserve">
+  <data name="WindowCaption_ReplayViewersSettings" xml:space="preserve">
     <value>Настройки воспроизведения</value>
   </data>
-    <data name="WindowCaption_Settings" xml:space="preserve">
+  <data name="WindowCaption_Settings" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="Map_92_stalingrad" xml:space="preserve">
+    <value>Сталинград</value>
   </data>
 </root>

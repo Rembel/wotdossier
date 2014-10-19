@@ -898,6 +898,21 @@
   <ItemGroup>
     <Resource Include="Images\Tanks\usa_A104_M4A3E8A.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\germany_G104_Stug_IV.png" />
+    <Resource Include="Images\Tanks\germany_G106_PzKpfwPanther_AusfF.png" />
+    <Resource Include="Images\Tanks\germany_G108_PzKpfwII_AusfD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\germany_R105_T55_Nva_Ddr.png" />
+    <Resource Include="Images\Tanks\usa_A101_M56.png" />
+    <Resource Include="Images\Tanks\usa_A102_T28_concept.png" />
+    <Resource Include="Images\Tanks\usa_T95_E2.png" />
+    <Resource Include="Images\Tanks\ussr_Object_260.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Maps\92_stalingrad.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

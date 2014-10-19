@@ -405,7 +405,7 @@ namespace WotDossier.Applications.Logic
                 double damage = tanks.Sum(x => x.DamageDealt)/battles;
                 double spotted = tanks.Sum(x => x.Spotted)/battles;
                 double def = tanks.Sum(x => x.DroppedCapturePoints)/battles;
-                double winRate = tanks.Sum(x => ((IStatisticBattles) x).Wins)/battles;
+                double winRate = tanks.Sum(x => x.Wins)/battles;
                 double frags = tanks.Sum(x => x.Frags)/battles;
 
                 double expDamage = tanks.Sum(x => x.BattlesCount*x.Description.Expectancy.Wn8NominalDamage)/battles;

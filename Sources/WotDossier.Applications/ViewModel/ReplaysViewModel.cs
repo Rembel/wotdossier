@@ -16,6 +16,7 @@ using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -289,16 +290,6 @@ namespace WotDossier.Applications.ViewModel
             string name = folder.Name;
 
             PackReplays(replays, name);
-        }
-
-        enum CodePage
-        {
-            OEMCyrillic = 855,
-            CyrillicDOS = 866,
-            CyrillicWindows = 1251,
-            CyrillicKOI8R = 20866,
-            CyrillicRussian = 20880,
-            CyrillicISO = 28595
         }
 
         private static void PackReplays(List<ReplayFile> replays, string name)

@@ -181,5 +181,7 @@ namespace WotDossier.Domain
             }
             set { _replayPlayers = value; }
         }
+
+        public string ExternalDataVersion { get; set; }
     }
 }

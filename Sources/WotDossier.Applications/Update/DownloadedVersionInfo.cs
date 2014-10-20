@@ -13,7 +13,7 @@ namespace WotDossier.Applications.Update
         /// <value>
         /// The latest version.
         /// </value>
-        public Version LatestVersion { get; set; }
+        public Version InstallerVersion { get; set; }
 
         /// <summary>
         /// Gets or sets the installer URL.
@@ -22,5 +22,15 @@ namespace WotDossier.Applications.Update
         /// The installer URL.
         /// </value>
         public string InstallerUrl { get; set; }
+
+        /// <summary>
+        /// Gets or sets the data version.
+        /// </summary>
+        public Version DataVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the data URL.
+        /// </summary>
+        public string DataUrl { get; set; }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="Base32Encoder.cs" />
     <Compile Include="Blowfish.cs" />
+    <Compile Include="CodePage.cs" />
     <Compile Include="Extensions\ByteArrayExtensions.cs" />
     <Compile Include="Collections\FooterList.cs" />
     <Compile Include="Collections\IFooterList.cs" />

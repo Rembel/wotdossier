@@ -2,8 +2,11 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Windows;
 using Common.Logging;
+using Ionic.Zip;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework;
@@ -18,7 +21,7 @@ namespace WotDossier.Applications.Update
         private static readonly ILog Logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// Checks for updates.
+        ///     Checks for updates.
         /// </summary>
         public static void CheckForUpdates()
         {
@@ -34,32 +37,64 @@ namespace WotDossier.Applications.Update
         }
 
         /// <summary>
-        /// Checks the new version available.
+        ///     Checks the new version available.
         /// </summary>
         public static void CheckNewVersionAvailable()
         {
-            Version currentVersion = new Version(ApplicationInfo.Version);
+            var currentVersion = new Version(ApplicationInfo.Version);
             DownloadedVersionInfo info = GetServerVersion();
 
-            var isNewVersionAvailable = info.LatestVersion > currentVersion;
+            bool isNewVersionAvailable = info.InstallerVersion > currentVersion;
 
             if (isNewVersionAvailable &&
-                MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, info.LatestVersion), ApplicationInfo.ProductName,
+                MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, info.InstallerVersion),
+                    ApplicationInfo.ProductName,
                     MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 using (new WaitCursor())
                 {
-                    Download(info);
+                    string filepath = Download(info.InstallerUrl, "installer.exe");
+                    if (!string.IsNullOrEmpty(filepath))
+                    {
+                        Process.Start(filepath);
+                    }
+                }
+            }
+
+            AppSettings appSettings = SettingsReader.Get();
+            var dataVersion = new Version(appSettings.ExternalDataVersion ?? ApplicationInfo.Version);
+            appSettings.ExternalDataVersion = info.DataVersion.ToString();
+            SettingsReader.Save(appSettings);
+
+            if (info.DataVersion > dataVersion)
+            {
+                using (new WaitCursor())
+                {
+                    string filepath = Download(info.DataUrl, "data.zip");
+                    if (!string.IsNullOrEmpty(filepath))
+                    {
+                        string currentDirectory = Folder.AssemblyDirectory();
+                        var targetFolder = Path.Combine(currentDirectory, "External");
+                        Unzip(filepath, targetFolder);
+                    }
                 }
             }
         }
 
-        private static void Download(DownloadedVersionInfo info)
+        private static void Unzip(string filepath, string targetFolder)
         {
-            string filepath = "";
+            using (var zip = new ZipFile(filepath, Encoding.GetEncoding((int) CodePage.CyrillicDOS)))
+            {
+                zip.ExtractAll(targetFolder, ExtractExistingFileAction.OverwriteSilently);
+            }
+        }
+
+        private static string Download(string url, string saveAs)
+        {
+            string filepath = string.Empty;
             try
             {
-                HttpWebRequest request = (HttpWebRequest) WebRequest.Create(info.InstallerUrl);
+                var request = (HttpWebRequest) WebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.UserAgent = USER_AGENT;
                 request.Accept = ACCEPT_HEADER;
@@ -101,7 +136,10 @@ namespace WotDossier.Applications.Update
                     }
                 }
 
-                if (filename.Length == 0) filename = "installer.exe";
+                if (filename.Length == 0)
+                {
+                    filename = saveAs;
+                }
                 filepath = Path.Combine(Path.GetTempPath(), filename);
 
                 if (File.Exists(filepath))
@@ -117,7 +155,7 @@ namespace WotDossier.Applications.Update
                     {
                         string rname = Path.GetRandomFileName();
                         rname.Replace('.', '_');
-                        rname += ".exe";
+                        rname += Path.GetExtension(saveAs);
                         filepath = Path.Combine(Path.GetTempPath(), rname);
                     }
                 }
@@ -137,7 +175,7 @@ namespace WotDossier.Applications.Update
                 fs.Close();
                 stream.Close();
 
-                Process.Start(filepath);
+                return filepath;
             }
 
             catch
@@ -154,6 +192,7 @@ namespace WotDossier.Applications.Update
                     }
                 }
             }
+            return null;
         }
 
         private static DownloadedVersionInfo GetServerVersion()
@@ -161,32 +200,39 @@ namespace WotDossier.Applications.Update
             AppSettings appSettings = SettingsReader.Get();
             Version newVersion = new Version(ApplicationInfo.Version);
             string installerUrl = null;
+            Version dataVersion = null;
+            string dataUrl = null;
             try
             {
-                HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(AppConfigSettings.VersionUrl);
+                var request = (HttpWebRequest) WebRequest.Create(AppConfigSettings.VersionUrl);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.UserAgent = USER_AGENT;
                 request.Accept = ACCEPT_HEADER;
                 //for analytics
-                request.Referer = string.Format("http://wotdossier_{0}.{1}/", ApplicationInfo.Version, appSettings.Server ?? "com");
+                request.Referer = string.Format("http://wotdossier_{0}.{1}/", ApplicationInfo.Version,
+                    appSettings.Server ?? "com");
                 WebResponse webResponse = request.GetResponse();
                 using (Stream responseStream = webResponse.GetResponseStream())
                 {
-                    StreamReader reader = new StreamReader(responseStream);
+                    var reader = new StreamReader(responseStream);
                     string content = reader.ReadToEnd();
 
                     string[] data = content.Split('\n');
-
+                    
                     newVersion = new Version(data[0].Split(':')[1].Trim());
-                    var urlData = data[1];
-                    installerUrl = urlData.Substring(urlData.IndexOf("http")).Trim();
+
+                    installerUrl = data[1].Substring(data[1].IndexOf("http")).Trim();
+
+                    dataVersion = new Version(data[2].Split(':')[1].Trim());
+
+                    dataUrl = data[3].Substring(data[3].IndexOf("http")).Trim();
                 }
             }
             catch (Exception e)
             {
                 Logger.Error("Error on version check", e);
             }
-            return new DownloadedVersionInfo { InstallerUrl = installerUrl, LatestVersion = newVersion };
+            return new DownloadedVersionInfo {InstallerUrl = installerUrl, InstallerVersion = newVersion, DataUrl = dataUrl, DataVersion = dataVersion};
         }
     }
 }

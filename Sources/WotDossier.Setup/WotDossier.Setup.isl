@@ -2636,10 +2636,10 @@
 		<col def="I2">Order</col>
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
-		<row><td>_132E4BC5_F8B5_4C54_BD7E_3517B24B5056_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td>0</td><td/><td/></row>
 		<row><td>_1B8B6967_B0FC_41F9_862C_ACC03FCD4947_</td><td>Windows Imaging Component (x86).prq</td><td>2</td><td/><td/></row>
 		<row><td>_43FFCA6E_688A_40AE_AB38_6AFB3C6CBB80_</td><td>Microsoft Visual C++ 2008 Redistributable Package (x86).prq</td><td>1</td><td>1</td><td/></row>
 		<row><td>_828FF778_4BDD_4606_92F9_2FE378A39322_</td><td>Windows Imaging Component (x64).prq</td><td>3</td><td/><td/></row>
+		<row><td>_D424CAF1_A3DF_4176_BA26_19E2669DD9A5_</td><td>Microsoft .NET Framework 4.5.2 Web.prq</td><td/><td>1</td><td/></row>
 	</table>
 
 	<table name="ISSetupType">
@@ -4408,9 +4408,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{1EC21B3D-52F7-4B3B-9E45-C23DF8D4E99C}</td><td/></row>
+		<row><td>ProductCode</td><td>{3A902926-5A8E-410D-9F27-ABB19CDA33EE}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>3.8</td><td/></row>
+		<row><td>ProductVersion</td><td>3.8.1</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4702,7 +4702,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.8</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>3.8.1</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

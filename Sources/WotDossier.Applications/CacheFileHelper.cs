@@ -52,7 +52,7 @@ namespace WotDossier.Applications
             {
                 FileInfo info = new FileInfo(file);
 
-                string decodedFileName = DecodFileName(info);
+                string decodedFileName = DecodFileName(info.Name);
                 string decodedPlayerName = decodedFileName.Split(SEPARATOR)[1];
                 string decodedDerverName = decodedFileName.Split(SEPARATOR)[0];
 
@@ -222,22 +222,36 @@ namespace WotDossier.Applications
         /// <returns></returns>
         public static string GetPlayerName(FileInfo cacheFile)
         {
-            var decodedFileName = DecodFileName(cacheFile);
+            var decodedFileName = DecodFileName(cacheFile.Name);
             return decodedFileName.Split(SEPARATOR)[1];
         }
 
         /// <summary>
         /// Decods the name of the file.
         /// </summary>
-        /// <param name="cacheFile">The cache file.</param>
+        /// <param name="cacheFileName">Name of the cache file.</param>
         /// <returns></returns>
-        public static string DecodFileName(FileInfo cacheFile)
+        public static string DecodFileName(string cacheFileName)
         {
             Base32Encoder encoder = new Base32Encoder();
-            string str = cacheFile.Name.Replace(cacheFile.Extension, string.Empty);
+            string str = cacheFileName.Replace(Path.GetExtension(cacheFileName), string.Empty);
             byte[] decodedFileNameBytes = encoder.Decode(str.ToLowerInvariant());
             string decodedFileName = Encoding.UTF8.GetString(decodedFileNameBytes);
             return decodedFileName;
+        }
+
+        /// <summary>
+        /// Decods the name of the file.
+        /// </summary>
+        /// <param name="server">The server.</param>
+        /// <param name="playerName">Name of the player.</param>
+        /// <returns></returns>
+        public static string EncodFileName(string server, string playerName)
+        {
+            Base32Encoder encoder = new Base32Encoder();
+            string fileNameFormat = "{0};{1}";
+            string formatedFileName = string.Format(fileNameFormat, server, playerName);
+            return encoder.Encode(Encoding.UTF8.GetBytes(formatedFileName)) + ".dat";
         }
     }
 }

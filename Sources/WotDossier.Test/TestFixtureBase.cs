@@ -487,5 +487,17 @@ namespace WotDossier.Test
                 }
             }
         }
+
+        [Test]
+        public void EncodeCacheFileName()
+        {
+            string server = "login.p7.worldoftanks.net";
+            string playerName = "LayneksII";
+            var encodFileName = CacheFileHelper.EncodFileName(server, playerName);
+            Console.WriteLine(encodFileName);
+            Console.WriteLine(CacheFileHelper.DecodFileName(encodFileName));
+            Console.WriteLine(CacheFileHelper.DecodFileName("NRXWO2LOFZYDOLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMB.dat"));
+            
+        }
     }
 }

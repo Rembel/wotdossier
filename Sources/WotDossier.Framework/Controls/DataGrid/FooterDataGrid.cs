@@ -10,16 +10,6 @@ namespace WotDossier.Framework.Controls.DataGrid
 {
     public class FooterDataGrid : System.Windows.Controls.DataGrid
     {
-        //public static readonly DependencyProperty FooterRowsCountProperty =
-        //    DependencyProperty.Register("FooterRowsCount", typeof(int), typeof(FooterDataGrid),
-        //                                new PropertyMetadata(default(int)));
-
-        //public int FooterRowsCount
-        //{
-        //    get { return (int)GetValue(FooterRowsCountProperty); }
-        //    set { SetValue(FooterRowsCountProperty, value); }
-        //}
-
         protected override void OnSorting(DataGridSortingEventArgs e)
         {
             var lastRowList = ItemsSource as IFooterList;
@@ -52,12 +42,12 @@ namespace WotDossier.Framework.Controls.DataGrid
 
         public FooterDataGrid()
         {
-            this.Loaded += new RoutedEventHandler(FooterDataGrid_Loaded);
+            Loaded += FooterDataGrid_Loaded;
         }
 
         void FooterDataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            FooterDataGridRowsPresenter panel = (FooterDataGridRowsPresenter)Helper.GetVisualChild<FooterDataGridRowsPresenter>(this);
+            FooterDataGridRowsPresenter panel = Helper.GetVisualChild<FooterDataGridRowsPresenter>(this);
             if (panel != null)
             {
                 panel.InvalidateArrange();
@@ -75,10 +65,8 @@ namespace WotDossier.Framework.Controls.DataGrid
             DependencyProperty.Register("FrozenRowCount",
                                         typeof(int),
                                         typeof(System.Windows.Controls.DataGrid),
-                                        new FrameworkPropertyMetadata(1,
-                                                                      new PropertyChangedCallback(OnFrozenRowCountPropertyChanged),
-                                                                      new CoerceValueCallback(OnCoerceFrozenRowCount)),
-                                        new ValidateValueCallback(ValidateFrozenRowCount));
+                                        new FrameworkPropertyMetadata(1, OnFrozenRowCountPropertyChanged, OnCoerceFrozenRowCount),
+                                        ValidateFrozenRowCount);
 
         /// <summary>
         /// Property which determines the number of rows which are frozen from 
@@ -117,7 +105,7 @@ namespace WotDossier.Framework.Controls.DataGrid
         /// <param name="e"></param>
         private static void OnFrozenRowCountPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            FooterDataGridRowsPresenter panel = (FooterDataGridRowsPresenter)Helper.GetVisualChild<FooterDataGridRowsPresenter>(d as Visual);
+            FooterDataGridRowsPresenter panel = Helper.GetVisualChild<FooterDataGridRowsPresenter>(d as Visual);
             if (panel != null)
             {
                 panel.InvalidateArrange();
@@ -134,7 +122,7 @@ namespace WotDossier.Framework.Controls.DataGrid
         private static bool ValidateFrozenRowCount(object value)
         {
             int frozenCount = (int)value;
-            return (frozenCount >= 0);
+            return frozenCount >= 0;
         }
 
         /// <summary>
@@ -173,7 +161,7 @@ namespace WotDossier.Framework.Controls.DataGrid
         /// </summary>
         internal void OnVerticalScroll()
         {
-            FooterDataGridRowsPresenter panel = (FooterDataGridRowsPresenter)Helper.GetVisualChild<FooterDataGridRowsPresenter>(this);
+            FooterDataGridRowsPresenter panel = Helper.GetVisualChild<FooterDataGridRowsPresenter>(this);
             panel.InvalidateArrange();
         }
 

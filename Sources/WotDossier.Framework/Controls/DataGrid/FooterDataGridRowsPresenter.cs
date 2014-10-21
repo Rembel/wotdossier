@@ -20,10 +20,10 @@ namespace WotDossier.Framework.Controls.DataGrid
 
             IList children;
             int frozenRowCount = 0;
-            double rowsPanelOffset = 0.0;               //indicates the offset of rows panel from the start of viewport 
+            double rowsPanelOffset;                     //indicates the offset of rows panel from the start of viewport 
             double nextFrozenRowStart = 0.0;            //indicates the start position for next frozen row
             double nextNonFrozenRowStart = 0.0;         //indicates the start position for next non-frozen row
-            double viewportStartY = 0.0;                //indicates the start of viewport with respect to coordinate system of row panel
+            double viewportStartY;                      //indicates the start of viewport with respect to coordinate system of row panel
             double dataGridVerticalScrollStartY = 0.0;  //indicates the start position of the vertical scroll bar.
 
             //
@@ -31,17 +31,16 @@ namespace WotDossier.Framework.Controls.DataGrid
             //
             if (Owner != null)
             {
-                double verticalOffset = 0.0;
-                double physicalOffset = 0.0;
-                double sbOffset = 0.0;
+                double verticalOffset;
+                double physicalOffset;
+                double sbOffset;
                 Point originPoint = new Point(0, 0);
-                IScrollInfo scrollInfo = this as IScrollInfo;
-                if (scrollInfo != null)
-                {
-                    verticalOffset = scrollInfo.VerticalOffset;
-                    physicalOffset = -1.0 * ComputePhysicalFromLogicalOffset(verticalOffset, false);
-                    rcChild.X = -1.0 * scrollInfo.HorizontalOffset;
-                }
+                
+                IScrollInfo scrollRegion = this;
+                
+                verticalOffset = scrollRegion.VerticalOffset;
+                physicalOffset = -1.0 * ComputePhysicalFromLogicalOffset(verticalOffset, false);
+                rcChild.X = -1.0 * scrollRegion.HorizontalOffset;
 
                 sbOffset = VerticalScrollBar.TransformToAncestor(ParentPresenter).Transform(originPoint).Y;
                 rowsPanelOffset = TransformToAncestor(ParentPresenter).Transform(originPoint).Y;
@@ -50,13 +49,11 @@ namespace WotDossier.Framework.Controls.DataGrid
                 nextNonFrozenRowStart -= physicalOffset - viewportStartY;
                 frozenRowCount = 1;
 
-                //Debug.WriteLine(string.Format(
-                //    "verticalOffset: {0}, physicalOffset: {1}, sbOffset: {2}, viewportStartY: {3}, nextNonFrozeRowStart: {4}",
-                //    verticalOffset,
-                //    physicalOffset,
-                //    sbOffset,
-                //    viewportStartY,
-                //    nextNonFrozenRowStart));
+                //NOTE: hack to correct NonFrozenRow offset, strange but it works
+                if (nextNonFrozenRowStart == 0.0)
+                {
+                    nextNonFrozenRowStart = Owner.NonFrozenRowsViewportVerticalOffset;
+                }
             }
 
             //
@@ -96,7 +93,6 @@ namespace WotDossier.Framework.Controls.DataGrid
                 {
                     rcChild.Y = nextFrozenRowStart;
                     nextFrozenRowStart += childSize.Height;
-                    //nextNonFrozenRowStart += childSize.Height;
                     dataGridVerticalScrollStartY += childSize.Height;
                 }
                 else
@@ -155,7 +151,7 @@ namespace WotDossier.Framework.Controls.DataGrid
 
             if (!DoubleUtil.AreClose(oldViewportOffset.Y, newViewportOffset.Y))
             {
-                global::WotDossier.Framework.Controls.DataGrid.FooterDataGrid dataGrid = Owner;
+                FooterDataGrid dataGrid = Owner;
                 if (dataGrid != null)
                 {
                     dataGrid.OnVerticalScroll();
@@ -221,13 +217,13 @@ namespace WotDossier.Framework.Controls.DataGrid
             }
         }
 
-        private global::WotDossier.Framework.Controls.DataGrid.FooterDataGrid Owner
+        private FooterDataGrid Owner
         {
             get
             {
                 if (_owner == null)
                 {
-                    _owner = ItemsControl.GetItemsOwner(this) as global::WotDossier.Framework.Controls.DataGrid.FooterDataGrid;
+                    _owner = ItemsControl.GetItemsOwner(this) as FooterDataGrid;
                 }
 
                 return _owner;
@@ -238,7 +234,7 @@ namespace WotDossier.Framework.Controls.DataGrid
 
         #region Data
 
-        private global::WotDossier.Framework.Controls.DataGrid.FooterDataGrid _owner;
+        private FooterDataGrid _owner;
         private ScrollBar _verticalScrollBar;
 
         #endregion Data

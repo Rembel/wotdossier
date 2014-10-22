@@ -530,6 +530,9 @@
     <Compile Include="..\WotDossier\Converters\Image\MapNameToImageConverter.cs">
       <Link>Converters\Image\MapNameToImageConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MapToMinimapImageConverter.cs">
+      <Link>Converters\Image\MapToMinimapImageConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\MarkOfMasteryToImageConverter.cs">
       <Link>Converters\Image\MarkOfMasteryToImageConverter.cs</Link>
     </Compile>

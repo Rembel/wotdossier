@@ -13,10 +13,19 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
+    public interface IMapDescription
+    {
+        Gameplay Gameplay { get; set; }
+        string MapName { get; set; }
+        int MapId { get; set; }
+        string MapNameId { get; set; }
+        int Team { get; set; }
+    }
+
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ReplayFile : INotifyPropertyChanged
+    public abstract class ReplayFile : INotifyPropertyChanged, IMapDescription
     {
         protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
@@ -52,7 +61,14 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string PlayerName { get; set; }
         public long ReplayId { get; set; }
         public int Xp { get; set; }
-        public BattleStatus IsWinner { get; set; }
+
+        private BattleStatus _isWinner = BattleStatus.Unknown;
+        public BattleStatus IsWinner
+        {
+            get { return _isWinner; }
+            set { _isWinner = value; }
+        }
+
         public int DamageReceived { get; set; }
         public int DamageDealt { get; set; }
         public int Credits { get; set; }
@@ -146,20 +162,6 @@ namespace WotDossier.Applications.ViewModel.Replay
 
             if (replay != null)
             {
-                MapName = replay.datablock_1.mapDisplayName;
-                MapNameId = replay.datablock_1.mapName;
-
-                if (Dictionaries.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
-                {
-                    MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].mapid;
-                }
-                else
-                {
-                    Log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
-                }
-
-                IsWinner = BattleStatus.Unknown;
-
                 PlayTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
 
                 ClientVersion = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, PlayTime);
@@ -183,9 +185,24 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 PlayerName = replay.datablock_1.playerName;
 
-                BattleType = (BattleType) replay.datablock_1.battleType;
+                TeamMembers = replay.datablock_1.vehicles.Values.ToList();
 
-                Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);
+
+                MapName = replay.datablock_1.mapDisplayName;
+                MapNameId = replay.datablock_1.mapName;
+
+                if (Dictionaries.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
+                {
+                    MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].mapid;
+                }
+                else
+                {
+                    Log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
+                }
+
+                BattleType = (BattleType)replay.datablock_1.battleType;
+                Gameplay = (Gameplay)Enum.Parse(typeof(Gameplay), replay.datablock_1.gameplayID);
+                Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
 
                 if (replay.datablock_battle_result != null)
                 {
@@ -216,9 +233,6 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                     FinishReason = (FinishReason) replay.datablock_battle_result.common.finishReason;
                 }
-
-                TeamMembers = replay.datablock_1.vehicles.Values.ToList();
-                Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
             }
         }
 

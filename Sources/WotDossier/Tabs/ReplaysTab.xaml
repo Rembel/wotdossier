@@ -149,7 +149,22 @@
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </DataGrid.InputBindings>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Map}" Binding="{Binding MapName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Map}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Margin="6" Text="{Binding Path=MapName}" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <ToolTipService.ToolTip>
+                                        <Grid>
+                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" ></Image>
+                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" ></Image>
+                                        </Grid>
+                                    </ToolTipService.ToolTip>
+                                </TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Tank}" CellStyle="{StaticResource DataGridCellCenterStyle}" SortMemberPath="TankName">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

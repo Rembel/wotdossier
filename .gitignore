@@ -20,6 +20,7 @@
 /Sources/*.suo
 /Sources/*.user
 /Sources/WotDossier.Setup/WotDossier.Setup/Express
+/Sources/WotDossier.Setup.Lite/WotDossier.Setup.Lite/Express
 /Sources/WotDossier/*.user
 /Sources/WotDossier.Resources/*.user
 /Sources/WotDossier.Applications/*.user

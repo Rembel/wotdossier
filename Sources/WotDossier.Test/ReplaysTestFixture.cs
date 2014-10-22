@@ -75,25 +75,25 @@ namespace WotDossier.Test
             }
         }
 
-        [Test]
-        public void AdvancedReplayTest()
-        {
-            FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay"));
-            StopWatch watch = new StopWatch();
-            watch.Reset();
-            Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile, true);
-            Console.WriteLine(watch.PeekMs());
+        //[Test]
+        //public void AdvancedReplayTest()
+        //{
+        //    FileInfo cacheFile = new FileInfo(Path.Combine(Environment.CurrentDirectory, @"Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay"));
+        //    StopWatch watch = new StopWatch();
+        //    watch.Reset();
+        //    Replay replay = ReplayFileHelper.ParseReplay_8_0(cacheFile, true);
+        //    Console.WriteLine(watch.PeekMs());
 
-            string serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
-            serializeObject.Dump(cacheFile.FullName + "_1");
+        //    string serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+        //    serializeObject.Dump(cacheFile.FullName + "_1");
 
-            watch.Reset();
-            replay = ReplayFileHelper.ParseReplay_8_11(cacheFile, true);
-            Console.WriteLine(watch.PeekMs());
+        //    watch.Reset();
+        //    replay = ReplayFileHelper.ParseReplay_8_11(cacheFile, true);
+        //    Console.WriteLine(watch.PeekMs());
 
-            serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
-            serializeObject.Dump(cacheFile.FullName + "_2");
-        }
+        //    serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+        //    serializeObject.Dump(cacheFile.FullName + "_2");
+        //}
 
         [Test]
         public void ReplaysFoldersSaveLoadTest()
@@ -128,21 +128,54 @@ namespace WotDossier.Test
         [Test]
         public void ParserMigrationTest()
         {
-            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", new Version("0.8.1").ToString(3));
-            if (!Directory.Exists(replayFolder))
+            foreach (Version version in Dictionaries.Instance.Versions)
             {
-                Assert.Fail("Folder not exists - [{0}]", replayFolder);
+                string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
+
+                if (!Directory.Exists(replayFolder))
+                {
+                    Assert.Fail("Folder not exists - [{0}]", replayFolder);
+                }
+
+                var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);
+
+                Console.WriteLine("Found: {0}", replays.Count());
+
+                for (int index = 0; index < replays.Length; index++)
+                {
+                    string path = replays[index];
+
+                    FileInfo replayFile = new FileInfo(path);
+                    var replay = ReplayFileHelper.ParseReplay_8_0(replayFile);
+                    OrderList(replay);
+                    var serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+                    serializeObject.Dump(@"ParseReplay_8_0\" + version.ToString(3) + ".json");
+                    Console.WriteLine(serializeObject);
+                    replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
+                    OrderList(replay);
+                    serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+                    serializeObject.Dump(@"ParseReplay_8_11\" + version.ToString(3) + ".json");
+                    Console.WriteLine(serializeObject);
+                }
+
             }
+        }
 
-            string[] replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+        private void OrderList(Replay replay)
+        {
+            replay.datablock_1.vehicles = replay.datablock_1.vehicles.OrderBy(x => x.Key)
+                .ToDictionary(x => x.Key, y => y.Value);
 
-            foreach (string path in replays)
+            if (replay.datablock_battle_result != null)
             {
-                FileInfo replayFile = new FileInfo(path);
-                var replay = ReplayFileHelper.ParseReplay_8_0(replayFile, false);
-                Console.WriteLine(JsonConvert.SerializeObject(replay, Formatting.Indented));
-                replay = ReplayFileHelper.ParseReplay_8_11(replayFile, false);
-                Console.WriteLine(JsonConvert.SerializeObject(replay, Formatting.Indented));
+                replay.datablock_battle_result.personal.details = replay.datablock_battle_result.personal.details.OrderBy(x => x.Key)
+                .ToDictionary(x => x.Key, y => y.Value);
+
+                replay.datablock_battle_result.players = replay.datablock_battle_result.players.OrderBy(x => x.Key)
+                .ToDictionary(x => x.Key, y => y.Value);
+
+                replay.datablock_battle_result.vehicles = replay.datablock_battle_result.vehicles.OrderBy(x => x.Key)
+                .ToDictionary(x => x.Key, y => y.Value);
             }
         }
 

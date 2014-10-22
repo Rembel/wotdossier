@@ -227,9 +227,9 @@ namespace WotDossier.Applications.ViewModel.Replay
             if (PlayerId != 0)
             {
                 var player = replay.datablock_battle_result.players[PlayerId];
-                return player.platoonID > 0 || player.prebattleID > 0;
+                return player.platoonID > 0;
             }
-            return replay.datablock_battle_result.players.Values.Any(x => x.name == PlayerName && (x.prebattleID > 0 || x.prebattleID > 0));
+            return replay.datablock_battle_result.players.Values.Any(x => x.name == PlayerName && x.platoonID > 0);
         }
 
         public bool IsPlatoon { get; set; }

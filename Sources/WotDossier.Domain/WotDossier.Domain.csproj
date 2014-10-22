@@ -121,16 +121,6 @@
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\PlayerEntity.cs" />
     <Compile Include="Entities\PlayerStatisticEntity.cs" />
-    <Compile Include="Replay90\BattleResult.cs" />
-    <Compile Include="Replay90\Common.cs" />
-    <Compile Include="Replay90\DamagedVehicle.cs" />
-    <Compile Include="Replay90\FirstBlock.cs" />
-    <Compile Include="Replay90\Personal.cs" />
-    <Compile Include="Replay90\Player.cs" />
-    <Compile Include="Replay90\Replay.cs" />
-    <Compile Include="Replay90\ReplayIdentify.cs" />
-    <Compile Include="Replay90\Vehicle.cs" />
-    <Compile Include="Replay90\VehicleResult.cs" />
     <Compile Include="Replay\AdvancedReplayData.cs" />
     <Compile Include="Replay\BattleResult.cs" />
     <Compile Include="Replay\ChatMessage.cs" />

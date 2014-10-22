@@ -23,10 +23,10 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
         
         public static Replay ParseReplay(FileInfo phisicalFile, Version clientVersion, bool readAdvancedData)
         {
-            if (clientVersion < _jsonFormatedReplayMinVersion)
-            {
-                return ParseReplay_8_0(phisicalFile, readAdvancedData);
-            }
+            //if (clientVersion < _jsonFormatedReplayMinVersion)
+            //{
+            //    return ParseReplay_8_0(phisicalFile, readAdvancedData);
+            //}
             return ParseReplay_8_11(phisicalFile, readAdvancedData);
         }
 

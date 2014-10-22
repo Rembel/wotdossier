@@ -2170,7 +2170,7 @@ Survive %: {1:0.00}</value>
     <value>Data load completed</value>
   </data>
   <data name="WindowTitleFormat_Replay" xml:space="preserve">
-    <value>{0}, {1}, battle level - {2}</value>
+    <value>{0}, {1}, battle level - {2}, version - {3}</value>
   </data>
   <data name="Medal_7x7_FireAndSteelMedal" xml:space="preserve">
     <value>Fire and Steel</value>

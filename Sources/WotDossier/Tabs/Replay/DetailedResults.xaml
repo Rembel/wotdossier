@@ -232,7 +232,7 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Margin="30,0,0,0" Text="{x:Static resources:Resources.Label_ReplayDetail_ForTheFirstVictory}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding XpFactor}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding XpFactor, StringFormat='x{0}'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
                     <TextBlock Margin="30,0,0,0" Text="{x:Static resources:Resources.Label_ReplayDetail_ActionCredits}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
@@ -256,7 +256,7 @@
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">
-                    <controls:TextWithImage Text="{Binding XpFactor}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding XpFactor, StringFormat='x{0}'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/multyXp.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
                 </Grid>
                 <Grid HorizontalAlignment="Stretch" Margin="10,3,10,3">

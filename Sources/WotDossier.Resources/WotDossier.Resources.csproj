@@ -1113,6 +1113,9 @@
     <Resource Include="Images\Maps\Minimap\87_ruinberg_on_fire\87_ruinberg_on_fire.png" />
     <Resource Include="Images\Maps\Minimap\96_prohorovka_defense\96_prohorovka_defense.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Maps\Minimap\42_north_america\42_north_america.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

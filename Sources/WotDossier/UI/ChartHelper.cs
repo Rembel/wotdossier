@@ -16,8 +16,8 @@ namespace WotDossier.UI
 
             List<Map> list = Dictionaries.Instance.Maps.Values.ToList();
 
-            GenericLocationalLabelProvider<Map, double> labelProvider = new GenericLocationalLabelProvider<Map, double>(list, city => city.localizedmapname);
-            GenericLocationalTicksProvider<Map, double> ticksProvider = new GenericLocationalTicksProvider<Map, double>(list, city => city.mapid);
+            GenericLocationalLabelProvider<Map, double> labelProvider = new GenericLocationalLabelProvider<Map, double>(list, city => city.LocalizedMapName);
+            GenericLocationalTicksProvider<Map, double> ticksProvider = new GenericLocationalTicksProvider<Map, double>(list, city => city.MapId);
 
             axis.LabelProvider = labelProvider;
             axis.TicksProvider = ticksProvider;

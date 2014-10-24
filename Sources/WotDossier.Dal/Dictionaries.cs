@@ -489,12 +489,12 @@ namespace WotDossier.Dal
                 maps = se.Deserialize<List<Map>>(reader);
             }
 
-            List<Map> list = (maps ?? new List<Map>()).Where(x => x.mapidname != "00_tank_tutorial").ToList();
+            List<Map> list = (maps ?? new List<Map>()).Where(x => x.MapNameId != "00_tank_tutorial").ToList();
             int i = 1;
-            list.ForEach(x => x.localizedmapname = Resources.Resources.ResourceManager.GetString("Map_" + x.mapidname) ?? x.mapname);
-            list = list.OrderByDescending(x => x.localizedmapname).ToList();
-            list.ForEach(x => x.mapid = i++);
-            return list.ToDictionary(x => x.mapidname, y => y);
+            list.ForEach(x => x.LocalizedMapName = Resources.Resources.ResourceManager.GetString("Map_" + x.MapNameId) ?? x.MapName);
+            list = list.OrderByDescending(x => x.LocalizedMapName).ToList();
+            list.ForEach(x => x.MapId = i++);
+            return list.ToDictionary(x => x.MapNameId, y => y);
         }
 
         public int GetBattleLevel(List<LevelRange> members)

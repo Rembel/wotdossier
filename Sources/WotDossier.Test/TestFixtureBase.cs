@@ -445,14 +445,14 @@ namespace WotDossier.Test
 
             foreach (var map in Dictionaries.Instance.Maps)
             {
-                var localizedString = Resources.Resources.ResourceManager.GetString("Map_" + map.Value.mapidname);
-                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", map.Value.mapidname);
+                var localizedString = Resources.Resources.ResourceManager.GetString("Map_" + map.Value.MapNameId);
+                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", map.Value.MapNameId);
 
-                var key = string.Format("images/maps/{0}.jpg", map.Value.mapidname).ToLowerInvariant();
+                var key = string.Format("images/maps/{0}.jpg", map.Value.MapNameId).ToLowerInvariant();
                 //Assert.IsTrue(dictionary.ContainsKey(key), "Image resource not found: {0}", map.Value.mapidname);
                 if (!dictionary.ContainsKey(key))
                 {
-                    Console.WriteLine("Image resource not found: {0}", map.Value.mapidname);
+                    Console.WriteLine("Image resource not found: {0}", map.Value.MapNameId);
                 }
             }
         }

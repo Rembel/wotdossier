@@ -728,7 +728,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         /// </summary>
         public ReplaysFilterViewModel()
         {
-            List<ListItem<int>> list = Dictionaries.Instance.Maps.Values.OrderByDescending(x => x.mapid).Select(x => new ListItem<int>(x.mapid, x.localizedmapname)).ToList();
+            List<ListItem<int>> list = Dictionaries.Instance.Maps.Values.OrderByDescending(x => x.MapId).Select(x => new ListItem<int>(x.MapId, x.LocalizedMapName)).ToList();
             list.Insert(0, new ListItem<int>(0, ""));
             Maps = list;
 

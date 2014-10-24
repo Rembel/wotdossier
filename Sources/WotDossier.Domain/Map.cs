@@ -1,28 +1,46 @@
-﻿namespace WotDossier.Domain
+﻿using System.Runtime.Serialization;
+using WotDossier.Domain.Interfaces;
+using WotDossier.Domain.Replay;
+
+namespace WotDossier.Domain
 {
     /// <summary>
-    /// Map desciption class
+    /// Map description class
     /// </summary>
-    public class Map
+    [DataContract]
+    public class Map : IMapDescription
     {
         /// <summary>
         /// The map id
         /// </summary>
-        public int mapid;
+        [DataMember(Name = "mapid")]
+        public int MapId { get; set; }
 
         /// <summary>
         /// The map id name
         /// </summary>
-        public string mapidname;
+        [DataMember(Name = "mapidname")]
+        public string MapNameId { get; set; }
 
         /// <summary>
         /// The map name
         /// </summary>
-        public string mapname;
+        [DataMember(Name = "mapname")]
+        public string MapName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the gameplay.
+        /// </summary>
+        [DataMember(Name = "gameplay")]
+        public Gameplay Gameplay { get; set; }
+        
+        [DataMember(Name = "team")]
+        public int Team { get; set; }
 
         /// <summary>
         /// The localized map name
         /// </summary>
-        public string localizedmapname;
+        [DataMember(Name = "localizedMapName")]
+        public string LocalizedMapName { get; set; }
     }
 }

@@ -2,7 +2,8 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Domain.Interfaces;
+using WotDossier.Domain.Replay;
 using WotDossier.Resources;
 
 namespace WotDossier.Converters
@@ -54,7 +55,7 @@ namespace WotDossier.Converters
                         new Uri(
                             string.Format(
                                 @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}/{0}_{1}_{2}.png",
-                                description.MapNameId, description.Gameplay, description.Team));
+                                description.MapNameId, description.Gameplay == Gameplay.nations ? Gameplay.ctf : description.Gameplay, description.Team));
                 }
 
                 BitmapImage bitmapImage = ImageCache.GetBitmapImage(uriSource);

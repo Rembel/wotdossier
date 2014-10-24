@@ -11,6 +11,7 @@ using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework;
@@ -129,10 +130,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int BasePremiumCredits { get; set; }
         public int PremiumCredits { get; set; }
 
-        public string MapDisplayName { get; set; }
-
-        public string MapName { get; set; }
-
         public FinishReason FinishReason { get; set; }
 
         public DeathReason DeathReason { get; set; }
@@ -172,6 +169,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
         
         private TeamMember _ourTeamMember;
+
+        public IMapDescription MapDescription { get; private set; }
+
         public TeamMember OurTeamMember
         {
             get { return _ourTeamMember; }
@@ -275,9 +275,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             
             if (replay.datablock_battle_result != null)
             {
-                MapName = replay.datablock_1.mapName;
-                Gameplay gameplayId = (Gameplay)Enum.Parse(typeof(Gameplay), replay.datablock_1.gameplayID);
-                MapDisplayName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName, GetMapMode(gameplayId, (BattleType)replay.datablock_1.battleType));
+                MapDescription = GetMapDescription(replay);
 
                 var tankDescription = Dictionaries.Instance.GetTankDescription(replay.datablock_battle_result.personal.typeCompDescr);
 
@@ -285,13 +283,11 @@ namespace WotDossier.Applications.ViewModel.Replay
                 
                 Date = replay.datablock_1.dateTime;
 
+                List<TeamMember> teamMembers = GetTeamMembers(replay, MapDescription.Team);
+
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
-                int myTeamId = replay.datablock_battle_result.players[playerId].team;
-
-                List<TeamMember> teamMembers = GetTeamMembers(replay, myTeamId);
-
-                FirstTeam = teamMembers.Where(x => x.Team == myTeamId).OrderByDescending(x => x.Xp).ToList();
-                SecondTeam = teamMembers.Where(x => x.Team != myTeamId).OrderByDescending(x => x.Xp).ToList();
+                FirstTeam = teamMembers.Where(x => x.Team == MapDescription.Team).OrderByDescending(x => x.Xp).ToList();
+                SecondTeam = teamMembers.Where(x => x.Team != MapDescription.Team).OrderByDescending(x => x.Xp).ToList();
                 ReplayUser = teamMembers.First(x => x.AccountDBID == playerId);
 
                 List<long> squads1 = FirstTeam.Where(x => x.platoonID > 0).OrderBy(x => x.platoonID).Select(x => x.platoonID).Distinct().ToList();
@@ -441,11 +437,35 @@ namespace WotDossier.Applications.ViewModel.Replay
                     ChatMessages = replay.datablock_advanced.Messages;
                 }
 
-                Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDisplayName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a");
+                Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDescription.MapName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a");
 
                 return true;
             }
             return false;
+        }
+
+        private Map GetMapDescription(Domain.Replay.Replay replay)
+        {
+            Map mapDescription = new Map();
+
+            mapDescription.MapNameId = replay.datablock_1.mapName;
+            mapDescription.Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);
+            mapDescription.MapName = string.Format("{0} - {1}", replay.datablock_1.mapDisplayName,
+                GetMapMode(mapDescription.Gameplay, (BattleType)replay.datablock_1.battleType));
+
+            if (Dictionaries.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
+            {
+                mapDescription.MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].MapId;
+            }
+            else
+            {
+                _log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
+            }
+
+            long playerId = replay.datablock_battle_result.personal.accountDBID;
+
+            mapDescription.Team = replay.datablock_battle_result.players[playerId].team;
+            return mapDescription;
         }
 
         private List<Medal> GetMedals(Domain.Replay.Replay replay)

@@ -8,20 +8,12 @@ using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
-    public interface IMapDescription
-    {
-        Gameplay Gameplay { get; set; }
-        string MapName { get; set; }
-        int MapId { get; set; }
-        string MapNameId { get; set; }
-        int Team { get; set; }
-    }
-
     /// <summary>
     /// 
     /// </summary>
@@ -193,7 +185,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 if (Dictionaries.Instance.Maps.ContainsKey(replay.datablock_1.mapName))
                 {
-                    MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].mapid;
+                    MapId = Dictionaries.Instance.Maps[replay.datablock_1.mapName].MapId;
                 }
                 else
                 {

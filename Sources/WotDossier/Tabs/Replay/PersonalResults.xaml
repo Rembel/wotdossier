@@ -11,6 +11,8 @@
              mc:Ignorable="d"
              d:DesignHeight="605" d:DesignWidth="965">
     <UserControl.Resources>
+        
+        <!--frag icon-->
         <Style TargetType="Image" x:Key="FragImageStyle">
             <!-- These setters are the same as your normal style when none of your triggers are true -->
             <Setter Property="Opacity" Value="1" />
@@ -26,37 +28,48 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-
+        
+        <!--damage icon-->
         <Style TargetType="Image" x:Key="DamageImageStyle">
             <!-- These setters are the same as your normal style when none of your triggers are true -->
             <Setter Property="Opacity" Value="1" />
+            <Setter Property="Source" Value="pack://application:,,,/WotDossier.Resources;component/Images/Replays/03s.png" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Path=DamageDealt}" Value="0">
                     <Setter Property="Opacity" Value="0.25" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        
+        <!--crits icon-->
         <Style TargetType="Image" x:Key="CritsImageStyle">
             <!-- These setters are the same as your normal style when none of your triggers are true -->
             <Setter Property="Opacity" Value="1" />
+            <Setter Property="Source" Value="pack://application:,,,/WotDossier.Resources;component/Images/Replays/04s.png" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Path=Crits}" Value="0">
                     <Setter Property="Opacity" Value="0.25" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        
+        <!--damage assist icon-->
         <Style TargetType="Image" x:Key="DamageAssistImageStyle">
             <!-- These setters are the same as your normal style when none of your triggers are true -->
             <Setter Property="Opacity" Value="1" />
+            <Setter Property="Source" Value="pack://application:,,,/WotDossier.Resources;component/Images/Replays/01s.png" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Path=DamageAssisted}" Value="0">
                     <Setter Property="Opacity" Value="0.25" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        
+        <!--spotted icon-->
         <Style TargetType="Image" x:Key="SpottedImageStyle">
             <!-- These setters are the same as your normal style when none of your triggers are true -->
             <Setter Property="Opacity" Value="1" />
+            <Setter Property="Source" Value="pack://application:,,,/WotDossier.Resources;component/Images/Replays/02s.png" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Path=Spotted}" Value="0">
                     <Setter Property="Opacity" Value="0.25" />
@@ -80,6 +93,7 @@
                     <RowDefinition Height="31"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
+                <!--player-->
                 <TextBlock Foreground="#5C5A4A" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding TeamMember.StatisticLink}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
                         <TextBlock Foreground="#5C5A4A" Text="{Binding TeamMember.FullName}"></TextBlock>
@@ -88,13 +102,14 @@
                         <TextBlock Text="{Binding Path=TeamMember.FullName}"></TextBlock>
                     </ToolTipService.ToolTip>
                 </TextBlock>
-                <Image Grid.Row="0" Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left"></Image>
-                <TextBlock Margin="40,0,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Path=TeamMember.Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                <!--tank icon-->
+                <Image Grid.Row="0" Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left" />
+                <!--tank name-->
+                <TextBlock Margin="40,0,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Path=TeamMember.Tank}" Foreground="#5C5A4A" VerticalAlignment="Center" />
                 <!--frag-->
-                <Image Grid.Row="0" Grid.Column="2" Stretch="None" Style="{StaticResource FragImageStyle}" HorizontalAlignment="Left">
-                </Image>
+                <Image Grid.Row="0" Grid.Column="2" Stretch="None" Style="{StaticResource FragImageStyle}" HorizontalAlignment="Left" />
                 <!--damage-->
-                <Image Grid.Row="0" Grid.Column="3" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/03s.png" Stretch="None" Style="{StaticResource DamageImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="3" Stretch="None" Style="{StaticResource DamageImageStyle}" HorizontalAlignment="Left">
                     <Image.ToolTip>
                         <TextBlock Text="{Binding DamageDealtTooltip}"></TextBlock>
                     </Image.ToolTip>
@@ -107,7 +122,7 @@
                     </TextBlock>
                 </Border>
                 <!--crits-->
-                <Image Grid.Row="0" Grid.Column="4" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/04s.png" Stretch="None" Style="{StaticResource CritsImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="4" Stretch="None" Style="{StaticResource CritsImageStyle}" HorizontalAlignment="Left">
                     <Image.ToolTip>
                         <TextBlock Text="{Binding CritsTooltip}"></TextBlock>
                     </Image.ToolTip>
@@ -119,7 +134,8 @@
                         </TextBlock.ToolTip>
                     </TextBlock>
                 </Border>
-                <Image Grid.Row="0" Grid.Column="5" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/01s.png" Stretch="None" Style="{StaticResource DamageAssistImageStyle}" HorizontalAlignment="Left">
+                <!--damage-->
+                <Image Grid.Row="0" Grid.Column="5" Stretch="None" Style="{StaticResource DamageAssistImageStyle}" HorizontalAlignment="Left">
                     <Image.Resources>
                         <system:Int32 x:Key="fixedValue">0</system:Int32>
                     </Image.Resources>
@@ -133,7 +149,8 @@
                         </MultiBinding>
                     </Image.Opacity>
                 </Image>
-                <Image Grid.Row="0" Grid.Column="6" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/02s.png" Stretch="None" Style="{StaticResource SpottedImageStyle}" HorizontalAlignment="Left">
+                <!--spotted-->
+                <Image Grid.Row="0" Grid.Column="6" Stretch="None" Style="{StaticResource SpottedImageStyle}" HorizontalAlignment="Left">
                     <Image.Resources>
                         <system:Int32 x:Key="fixedValue">0</system:Int32>
                     </Image.Resources>
@@ -147,6 +164,7 @@
                         </MultiBinding>
                     </Image.Opacity>
                 </Image>
+                <!--separator-->
                 <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/table_border_gradient.png" ></Image>
             </Grid>
         </DataTemplate>
@@ -253,7 +271,7 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding MapDisplayName}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
+            <TextBlock Text="{Binding MapDescription.MapName}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
             <TextBlock Grid.Column="1" Text="{x:Static resources:Resources.Label_Replay_BattleEfficiency}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
         </Grid>
         <Grid Grid.Row="2">
@@ -265,8 +283,17 @@
             <StackPanel>
                 <!--player info-->
                 <Grid HorizontalAlignment="Stretch" Margin="10,10,10,10">
-                    <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="{Binding Path=MapName, Mode=OneWay, Converter={x:Static converters:MapNameToImageConverter.Default}}" VerticalAlignment="Top" />
-                    <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="pack://application:,,,/WotDossier.Resources;component/Images/Maps\overlay.png" VerticalAlignment="Top" />
+                    <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="{Binding Path=MapDescription.MapNameId, Mode=OneWay, 
+                        Converter={x:Static converters:MapNameToImageConverter.Default}}" VerticalAlignment="Top" />
+                    <Image HorizontalAlignment="Left" Stretch="Fill" Width="231" Height="98" Source="pack://application:,,,/WotDossier.Resources;component/Images/Maps\overlay.png" 
+                           VerticalAlignment="Top" Cursor="Hand">
+                        <ToolTipService.ToolTip>
+                            <Grid>
+                                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" ></Image>
+                                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" ></Image>
+                            </Grid>
+                        </ToolTipService.ToolTip>
+                    </Image>
                     <Image Margin="131,0,0,0" HorizontalAlignment="Left" Stretch="Fill" Width="160" Height="100" Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" VerticalAlignment="Top" />
                     <StackPanel HorizontalAlignment="Left" Height="100" Margin="296,10,0,0" VerticalAlignment="Top" Width="176">
                         <TextBlock Text="{Binding FullName}" FontSize="20" Foreground="#FEC264">

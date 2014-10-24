@@ -152,7 +152,7 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="{x:Static resources:Resources.Label_ReplayDetail_CreditsTotal}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding TotalCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding BaseTotalCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
             <!--Premium credits-->
@@ -247,7 +247,7 @@
                 <Grid HorizontalAlignment="Stretch" Margin="10,23,10,3">
                     <TextBlock Text="{x:Static resources:Resources.Label_ReplayDetail_XpTotal}" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
                     <Rectangle  Stroke="#3A3836" Height="1" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="True" VerticalAlignment="Bottom"/>
-                    <controls:TextWithImage Text="{Binding TotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Text="{Binding BaseTotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground=" #ABA8A9" FontFamily="Arial" FontSize="12px" VerticalAlignment="Top" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Column="2">

@@ -100,7 +100,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int CreditsContributionIn { get; set; }
         public int PremiumCreditsContributionIn { get; set; }
 
-        public int TotalCredits { get; set; }
+        public int BaseTotalCredits { get; set; }
 
         public int PremiumTotalCredits { get; set; }
 
@@ -115,19 +115,17 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public string XpTitle { get; set; }
 
+        public int BaseTotalXp { get; set; }
         public int TotalXp { get; set; }
+        public int TotalCredits { get; set; }
 
         public int Xp { get; set; }
 
         public int PremiumTotalXp { get; set; }
         public int PremiumXp { get; set; }
         
-        public int TotalPremiumXp { get; set; }
-
-        public int BaseCredits { get; set; }
         public int Credits { get; set; }
 
-        public int BasePremiumCredits { get; set; }
         public int PremiumCredits { get; set; }
 
         public FinishReason FinishReason { get; set; }
@@ -306,7 +304,9 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 int creditsPenalty = replay.datablock_battle_result.personal.creditsPenalty;
                 int premiumCreditsPenalty = (int)Math.Round(creditsPenalty * premiumFactor, 0);
-                
+
+                TotalCredits = replay.datablock_battle_result.personal.credits;
+                TotalXp = replay.datablock_battle_result.personal.xp;
 
                 int premiumCredits;
                 
@@ -338,14 +338,14 @@ namespace WotDossier.Applications.ViewModel.Replay
                 XpTitle = GetXpTitle(XpFactor);
 
                 PremiumTotalXp = PremiumXp * XpFactor + ActionXp;
-                TotalXp = Xp * XpFactor + ActionXp;
+                BaseTotalXp = Xp * XpFactor + ActionXp;
 
                 AutoRepairCost = replay.datablock_battle_result.personal.autoRepairCost ?? 0;
                 AutoLoadCost = ReplayFileHelper.GetAutoLoadCost(replay);
                 AutoEquipCost = ReplayFileHelper.GetAutoEquipCost(replay);
                 
                 PremiumTotalCredits = PremiumCredits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
-                TotalCredits = Credits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
+                BaseTotalCredits = Credits - AutoRepairCost - AutoLoadCost - AutoEquipCost;
 
                 Shots = replay.datablock_battle_result.personal.shots;
                 Hits = replay.datablock_battle_result.personal.hits;

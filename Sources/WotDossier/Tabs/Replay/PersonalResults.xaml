@@ -235,9 +235,9 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <controls:TextWithImage Text="{Binding PremiumCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                    <controls:TextWithImage Text="{Binding TotalCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                             Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon_Large.png" FontSize="30" Foreground="White" HorizontalAlignment="Right" />
-                    <controls:TextWithImage Grid.Row="1" Text="{Binding PremiumTotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                    <controls:TextWithImage Grid.Row="1" Text="{Binding TotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                             Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon_Large.png" FontSize="30" Foreground="White" HorizontalAlignment="Right" />
                 </Grid>
                 <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0">
@@ -325,9 +325,9 @@
                     <TextBlock Grid.Column="2" Grid.Row="0" Text="{x:Static resources:Resources.Label_Replay_WithPremium}" Foreground="#FEC264" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
                     <TextBlock Grid.Column="0" Grid.Row="1" Text="{x:Static resources:Resources.Label_Replay_Credits}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
                     <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding XpTitle}" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center"></TextBlock>
-                    <controls:TextWithImage Grid.Column="1" Grid.Row="1" Text="{Binding TotalCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Grid.Column="1" Grid.Row="1" Text="{Binding BaseTotalCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
                     <controls:TextWithImage Grid.Column="2" Grid.Row="1" Text="{Binding PremiumTotalCredits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/CreditsIcon-2.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
-                    <controls:TextWithImage Grid.Column="1" Grid.Row="2" Text="{Binding TotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
+                    <controls:TextWithImage Grid.Column="1" Grid.Row="2" Text="{Binding BaseTotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#B1B4B6" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
                     <controls:TextWithImage Grid.Column="2" Grid.Row="2" Text="{Binding PremiumTotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="White" FontSize="12" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Right"></controls:TextWithImage>
                 </Grid>
             </StackPanel>

@@ -908,7 +908,6 @@
     <Resource Include="Images\Tanks\usa_A101_M56.png" />
     <Resource Include="Images\Tanks\usa_A102_T28_concept.png" />
     <Resource Include="Images\Tanks\usa_T95_E2.png" />
-    <Resource Include="Images\Tanks\ussr_Object_260.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Maps\92_stalingrad.jpg" />
@@ -1112,6 +1111,9 @@
     <Resource Include="Images\Maps\Minimap\86_himmelsdorf_winter\86_himmelsdorf_winter.png" />
     <Resource Include="Images\Maps\Minimap\87_ruinberg_on_fire\87_ruinberg_on_fire.png" />
     <Resource Include="Images\Maps\Minimap\96_prohorovka_defense\96_prohorovka_defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\ussr_R110_Object_260.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Maps\Minimap\42_north_america\42_north_america.png" />

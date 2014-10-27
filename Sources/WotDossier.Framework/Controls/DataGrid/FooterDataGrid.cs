@@ -22,9 +22,9 @@ namespace WotDossier.Framework.Controls.DataGrid
             var column = e.Column;
             e.Handled = true;
 
-            var direction = (column.SortDirection != ListSortDirection.Ascending)
-                                ? ListSortDirection.Ascending
-                                : ListSortDirection.Descending;
+            var direction = (column.SortDirection != ListSortDirection.Descending)
+                                ? ListSortDirection.Descending
+                                : ListSortDirection.Ascending;
             column.SortDirection = direction;
             lastRowList.SortButFirstRows(1, e.Column.SortMemberPath, direction, (Keyboard.Modifiers & ModifierKeys.Shift) != ModifierKeys.Shift);
 

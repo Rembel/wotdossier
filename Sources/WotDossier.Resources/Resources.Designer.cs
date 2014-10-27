@@ -2061,7 +2061,8 @@ namespace WotDossier.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
-        ///Avg Spotted: {1:0.00}.
+        ///Avg Spotted: {1:0.00}
+        ///Date: {2:dd.MM.yyyy}.
         /// </summary>
         public static string Chart_Tooltip_AvgSpotted {
             get {
@@ -2071,7 +2072,8 @@ namespace WotDossier.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
-        ///Avg XP: {1:0.00}.
+        ///Avg XP: {1:0.00}
+        ///Date: {2:dd.MM.yyyy}.
         /// </summary>
         public static string Chart_Tooltip_AvgXp {
             get {
@@ -2090,7 +2092,8 @@ namespace WotDossier.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
-        ///Ratio: {1:0.00}.
+        ///Ratio: {1:0.00}
+        ///Date: {2:dd.MM.yyyy}.
         /// </summary>
         public static string Chart_Tooltip_KillDeathRatio {
             get {
@@ -2100,7 +2103,8 @@ namespace WotDossier.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
-        ///Survive %: {1:0.00}.
+        ///Survive %: {1:0.00}
+        ///Date: {2:dd.MM.yyyy}.
         /// </summary>
         public static string Chart_Tooltip_Survive {
             get {
@@ -2209,7 +2213,8 @@ namespace WotDossier.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
-        ///Avg Damage: {1:0.00}.
+        ///Avg Damage: {1:0.00}
+        ///Date: {2:dd.MM.yyyy}.
         /// </summary>
         public static string ChartTooltipFormat_AvgDamage {
             get {
@@ -2219,7 +2224,8 @@ namespace WotDossier.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
-        ///Rating: {1:0.00}.
+        ///Rating: {1:0.00}
+        ///Date: {2:dd.MM.yyyy}.
         /// </summary>
         public static string ChartTooltipFormat_Rating {
             get {
@@ -2229,7 +2235,8 @@ namespace WotDossier.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Battles: {0}
-        ///Win percent: {1:0.00}.
+        ///Win percent: {1:0.00}
+        ///Date: {2:dd.MM.yyyy}.
         /// </summary>
         public static string ChartTooltipFormat_WinPercent {
             get {

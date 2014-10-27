@@ -1818,31 +1818,38 @@
   </data>
   <data name="ChartTooltipFormat_AvgDamage" xml:space="preserve">
     <value>Боев: {0}
-Средний урон: {1:0.00}</value>
+Средний урон: {1:0.00}
+Дата: {2:dd.MM.yyyy}</value>
   </data>
   <data name="ChartTooltipFormat_Rating" xml:space="preserve">
     <value>Боев: {0}
-Рейтинг: {1:0.00}</value>
+Рейтинг: {1:0.00}
+Дата: {2:dd.MM.yyyy}</value>
   </data>
   <data name="ChartTooltipFormat_WinPercent" xml:space="preserve">
     <value>Боев: {0}
-% побед: {1:0.00}</value>
+% побед: {1:0.00}
+Дата: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_AvgSpotted" xml:space="preserve">
     <value>Боев: {0}
-В среднем обнаружено: {1:0.00}</value>
+В среднем обнаружено: {1:0.00}
+Дата: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_AvgXp" xml:space="preserve">
     <value>Боев: {0}
-Средний опыт: {1:0.00}</value>
+Средний опыт: {1:0.00}
+Дата: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_KillDeathRatio" xml:space="preserve">
     <value>Боев: {0}
-Уничтожил/убит: {1:0.00}</value>
+Уничтожил/убит: {1:0.00}
+Дата: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_Survive" xml:space="preserve">
     <value>Боев: {0}
-Вижил %: {1:0.00}</value>
+Вижил %: {1:0.00}
+Дата: {2:dd.MM.yyyy}</value>
   </data>
   <data name="ExtendedTimeFormat" xml:space="preserve">
     <value>m' м 's' с'</value>

@@ -1,26 +1,25 @@
-﻿namespace WotDossier.Applications.ViewModel.Chart
+﻿using System.Collections.Generic;
+
+namespace WotDossier.Applications.ViewModel.Chart
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class DataPoint : IDataPoint
+    public class GenericPoint<T1, T2>
     {
         /// <summary>
         /// Gets or sets the X.
         /// </summary>
-        public double X { get; set; }
-
+        public T1 X { get; set; }
+        
         /// <summary>
         /// Gets or sets the Y.
         /// </summary>
-        public double Y { get; set; }
+        public T2 Y { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataPoint" /> class.
+        /// Initializes a new instance of the <see cref="GenericPoint{T2}" /> class.
         /// </summary>
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>
-        public DataPoint(double x, double y)
+        public GenericPoint(T1 x, T2 y)
         {
             X = x;
             Y = y;
@@ -31,9 +30,9 @@
         /// </summary>
         /// <param name="other">The other.</param>
         /// <returns></returns>
-        protected bool Equals(DataPoint other)
+        protected bool Equals(GenericPoint<T1, T2> other)
         {
-            return X.Equals(other.X) && Y.Equals(other.Y);
+            return EqualityComparer<T2>.Default.Equals(Y, other.Y) && EqualityComparer<T1>.Default.Equals(X, other.X);
         }
 
         /// <summary>
@@ -48,7 +47,7 @@
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((DataPoint) obj);
+            return Equals((GenericPoint<T1, T2>) obj);
         }
 
         /// <summary>
@@ -61,7 +60,7 @@
         {
             unchecked
             {
-                return (X.GetHashCode()*397) ^ Y.GetHashCode();
+                return (EqualityComparer<T2>.Default.GetHashCode(Y)*397) ^ EqualityComparer<T1>.Default.GetHashCode(X);
             }
         }
 

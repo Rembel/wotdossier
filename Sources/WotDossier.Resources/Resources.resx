@@ -1798,31 +1798,38 @@ Lieutenant General of Tank Forces, Nikolay Popel, a Soviet military leader and p
   </data>
   <data name="ChartTooltipFormat_AvgDamage" xml:space="preserve">
     <value>Battles: {0}
-Avg Damage: {1:0.00}</value>
+Avg Damage: {1:0.00}
+Date: {2:dd.MM.yyyy}</value>
   </data>
   <data name="ChartTooltipFormat_Rating" xml:space="preserve">
     <value>Battles: {0}
-Rating: {1:0.00}</value>
+Rating: {1:0.00}
+Date: {2:dd.MM.yyyy}</value>
   </data>
   <data name="ChartTooltipFormat_WinPercent" xml:space="preserve">
     <value>Battles: {0}
-Win percent: {1:0.00}</value>
+Win percent: {1:0.00}
+Date: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_AvgSpotted" xml:space="preserve">
     <value>Battles: {0}
-Avg Spotted: {1:0.00}</value>
+Avg Spotted: {1:0.00}
+Date: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_AvgXp" xml:space="preserve">
     <value>Battles: {0}
-Avg XP: {1:0.00}</value>
+Avg XP: {1:0.00}
+Date: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_KillDeathRatio" xml:space="preserve">
     <value>Battles: {0}
-Ratio: {1:0.00}</value>
+Ratio: {1:0.00}
+Date: {2:dd.MM.yyyy}</value>
   </data>
   <data name="Chart_Tooltip_Survive" xml:space="preserve">
     <value>Battles: {0}
-Survive %: {1:0.00}</value>
+Survive %: {1:0.00}
+Date: {2:dd.MM.yyyy}</value>
   </data>
   <data name="ExtendedTimeFormat" xml:space="preserve">
     <value>m' m 's' s'</value>

@@ -11,14 +11,14 @@ namespace WotDossier.Applications.ViewModel.Chart
 {
     public class CommonChartsViewModel : INotifyPropertyChanged
     {
-        private EnumerableDataSource<DataPoint> _ratingDataSource;
-        private EnumerableDataSource<DataPoint> _wnRatingDataSource;
-        private EnumerableDataSource<DataPoint> _winPercentDataSource;
-        private EnumerableDataSource<DataPoint> _avgDamageDataSource;
-        private EnumerableDataSource<DataPoint> _avgXpDataSource;
-        private EnumerableDataSource<DataPoint> _killDeathRatioDataSource;
-        private EnumerableDataSource<DataPoint> _survivePercentDataSource;
-        private EnumerableDataSource<DataPoint> _avgSpottedDataSource;
+        private EnumerableDataSource<DateDataPoint> _ratingDataSource;
+        private EnumerableDataSource<DateDataPoint> _wnRatingDataSource;
+        private EnumerableDataSource<DateDataPoint> _winPercentDataSource;
+        private EnumerableDataSource<DateDataPoint> _avgDamageDataSource;
+        private EnumerableDataSource<DateDataPoint> _avgXpDataSource;
+        private EnumerableDataSource<DateDataPoint> _killDeathRatioDataSource;
+        private EnumerableDataSource<DateDataPoint> _survivePercentDataSource;
+        private EnumerableDataSource<DateDataPoint> _avgSpottedDataSource;
 
         /// <summary>
         /// Gets or sets the rating data source.
@@ -26,7 +26,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The rating data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> RatingDataSource
+        public EnumerableDataSource<DateDataPoint> RatingDataSource
         {
             get { return _ratingDataSource; }
             set
@@ -42,7 +42,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The W n7 rating data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> WnRatingDataSource
+        public EnumerableDataSource<DateDataPoint> WnRatingDataSource
         {
             get { return _wnRatingDataSource; }
             set
@@ -58,7 +58,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The win percent data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> WinPercentDataSource
+        public EnumerableDataSource<DateDataPoint> WinPercentDataSource
         {
             get { return _winPercentDataSource; }
             set
@@ -74,7 +74,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The avg damage data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> AvgDamageDataSource
+        public EnumerableDataSource<DateDataPoint> AvgDamageDataSource
         {
             get { return _avgDamageDataSource; }
             set
@@ -90,7 +90,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The avg XP data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> AvgXPDataSource
+        public EnumerableDataSource<DateDataPoint> AvgXPDataSource
         {
             get { return _avgXpDataSource; }
             set
@@ -106,7 +106,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The avg spotted data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> AvgSpottedDataSource
+        public EnumerableDataSource<DateDataPoint> AvgSpottedDataSource
         {
             get { return _avgSpottedDataSource; }
             set
@@ -122,7 +122,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The kill death ratio data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> KillDeathRatioDataSource
+        public EnumerableDataSource<DateDataPoint> KillDeathRatioDataSource
         {
             get { return _killDeathRatioDataSource; }
             set
@@ -138,7 +138,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The survive percent data source.
         /// </value>
-        public EnumerableDataSource<DataPoint> SurvivePercentDataSource
+        public EnumerableDataSource<DateDataPoint> SurvivePercentDataSource
         {
             get { return _survivePercentDataSource; }
             set
@@ -165,13 +165,13 @@ namespace WotDossier.Applications.ViewModel.Chart
             SurvivePercentDataSource = GetDataSource(statisticViewModels, x => x.SurvivedBattlesPercent, Resources.Resources.Chart_Tooltip_Survive);
         }
 
-        protected static IEnumerable<DataPoint> InterpolatePoints(List<DataPoint> erPoints)
+        protected static IEnumerable<DateDataPoint> InterpolatePoints(IEnumerable<DateDataPoint> erPoints)
         {
-            List<DataPoint> dataPoints;
+            List<DateDataPoint> dataPoints;
 
-            if (erPoints.Count > 10)
+            if (erPoints.Count() > 10)
             {
-                int step = (int) (erPoints.Count*0.15);
+                int step = (int) (erPoints.Count()*0.15);
 
                 dataPoints = erPoints.Where((x, i) => i % step == 0).ToList();
             }
@@ -180,8 +180,8 @@ namespace WotDossier.Applications.ViewModel.Chart
                 return erPoints;
             }
 
-            DataPoint first = erPoints.First();
-            DataPoint last = erPoints.Last();
+            DateDataPoint first = erPoints.First();
+            DateDataPoint last = erPoints.Last();
 
             if (!dataPoints.Contains(first))
             {
@@ -195,15 +195,15 @@ namespace WotDossier.Applications.ViewModel.Chart
 
             AkimaSplineInterpolation interpolation = new AkimaSplineInterpolation(dataPoints.Select(x => x.X).ToList(),
                 dataPoints.Select(x => x.Y).ToList());
-            return erPoints.Select(x => new DataPoint(x.X, interpolation.Interpolate(x.X))).OrderBy(x => x.X).ToList();
+            return erPoints.Select(x => new DateDataPoint(x.X, interpolation.Interpolate(x.X), x.Date)).OrderBy(x => x.X).ToList();
         }
 
-        private EnumerableDataSource<DataPoint> GetDataSource(List<StatisticViewModelBase> statisticViewModels,
+        private EnumerableDataSource<DateDataPoint> GetDataSource(List<StatisticViewModelBase> statisticViewModels,
             Func<StatisticViewModelBase, double> predicate, string tooltip)
         {
-            List<DataPoint> erPoints = statisticViewModels.Select(x => new DataPoint(x.BattlesCount, predicate(x))).Where(x => x.X > 0 & x.Y > 0).ToList();
-            var dataSource = new EnumerableDataSource<DataPoint>(InterpolatePoints(erPoints)) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(tooltip, point.X, point.Y));
+            List<DateDataPoint> erPoints = statisticViewModels.Select(x => new DateDataPoint(x.BattlesCount, predicate(x), x.Updated)).Where(x => x.X > 0 & x.Y > 0).ToList();
+            var dataSource = new EnumerableDataSource<DateDataPoint>(InterpolatePoints(erPoints)) { XMapping = x => x.X, YMapping = y => y.Y };
+            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(tooltip, point.X, point.Y, point.Date));
             return dataSource;
         }
 

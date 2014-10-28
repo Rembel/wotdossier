@@ -435,7 +435,7 @@
     <value>Last Battle</value>
   </data>
   <data name="Column_Time_PlayTime" xml:space="preserve">
-    <value>Play Time</value>
+    <value>Common Battle Time</value>
   </data>
   <data name="Column_Time_AverageBattleTime" xml:space="preserve">
     <value>Average Battle Time</value>

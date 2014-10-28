@@ -3245,7 +3245,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Play Time.
+        ///   Looks up a localized string similar to Common Battle Time.
         /// </summary>
         public static string Column_Time_PlayTime {
             get {

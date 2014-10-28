@@ -458,7 +458,7 @@
     <value>Последний бой</value>
   </data>
   <data name="Column_Time_PlayTime" xml:space="preserve">
-    <value>Время боя</value>
+    <value>Общее время боев</value>
   </data>
   <data name="Settings_PlayerName" xml:space="preserve">
     <value>Имя игрока</value>

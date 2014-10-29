@@ -51,11 +51,11 @@
 	
 	<summary>
 		<codepage>1252</codepage>
-		<title>Installation Database</title>
+		<title>##ID_STRING16##</title>
 		<subject>WotDossier</subject>
 		<author>Rembel</author>
 		<keywords>Installer,MSI,Database</keywords>
-		<comments>Contact:  Your local administrator</comments>
+		<comments>##ID_STRING17##</comments>
 		<template>Intel;1033</template>
 		<lastauthor>Administrator</lastauthor>
 		<revnumber>{2DF9F645-2B08-430D-822D-F9936695B653}</revnumber>
@@ -2424,7 +2424,7 @@
 		<row><td>DVD-18</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>15.83</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>DVD-5</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>4.38</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>DVD-9</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>7.95</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
-		<row><td>SingleImage</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>1</td><td>1033</td><td>0</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>108573</td><td/><td/><td/><td>1</td></row>
+		<row><td>SingleImage</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>1</td><td>1033</td><td>0</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>1</td></row>
 		<row><td>WebDeployment</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>4</td><td>1033</td><td>2</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>124941</td><td/><td/><td/><td>3</td></row>
 	</table>
 
@@ -3776,6 +3776,8 @@
 		<row><td>ID_STRING13</td><td>1033</td><td>REPLAY~1|ReplaysManager</td><td>0</td><td/><td>2057483279</td></row>
 		<row><td>ID_STRING14</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-358478805</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>WOTDOS~1|WotDossier</td><td>0</td><td/><td>-358425557</td></row>
+		<row><td>ID_STRING16</td><td>1033</td><td>WotDossier Setup</td><td>0</td><td/><td>-316511881</td></row>
+		<row><td>ID_STRING17</td><td>1033</td><td/><td>0</td><td/><td>-316503657</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>-1415416651</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>WotDossier</td><td>0</td><td/><td>-1415422795</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Rembel</td><td>0</td><td/><td>547546421</td></row>

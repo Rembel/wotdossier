@@ -28,6 +28,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Damaged = (int) result.Average(x => x.Damaged);
                 BattleTime = new TimeSpan(0, 0, (int) result.Average(x => x.BattleTime.TotalSeconds));
                 LifeTime = new TimeSpan(0, 0, (int) result.Average(x => x.LifeTime.TotalSeconds));
+                CreditsEarned = (int) result.Average(x => x.CreditsEarned);
             }
         }
 

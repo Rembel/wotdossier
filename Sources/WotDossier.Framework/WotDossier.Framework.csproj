@@ -122,7 +122,6 @@
     <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
     <Compile Include="Controls\DataGrid\FooterDataGrid.cs" />
-    <Compile Include="Controls\DataGrid\FooterDataGridRowsPresenter.cs" />
     <Compile Include="Controls\DataGrid\DataGridBehavior.cs" />
     <Compile Include="Controls\DataGrid\DoubleUtil.cs" />
     <Compile Include="Controls\DataGrid\Helper.cs" />

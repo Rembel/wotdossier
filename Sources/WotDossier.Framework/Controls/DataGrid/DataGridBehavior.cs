@@ -40,7 +40,7 @@ namespace WotDossier.Framework.Controls
                         dataGrid.LoadingRow -= loadedRowHandler;
                         return;
                     }
-                    ea.Row.Header = GetRowHeader(ea.Row.GetIndex(), dataGrid is FooterDataGrid);
+                    ea.Row.Header = GetRowHeader(ea.Row.GetIndex(), false);
                 };
                 dataGrid.LoadingRow += loadedRowHandler;
 

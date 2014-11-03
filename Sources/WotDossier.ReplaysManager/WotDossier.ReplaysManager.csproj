@@ -575,6 +575,15 @@
     <Compile Include="..\WotDossier\NativeMethods.cs">
       <Link>NativeMethods.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Styles\FooterDataGridBlack.cs">
+      <Link>Styles\FooterDataGridBlack.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Styles\FooterDataGridGeneric.cs">
+      <Link>Styles\FooterDataGridGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Styles\FooterDataGridSilver.cs">
+      <Link>Styles\FooterDataGridSilver.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml.cs">
       <Link>Tabs\Charts\ReplaysChartsTab.xaml.cs</Link>
     </Compile>

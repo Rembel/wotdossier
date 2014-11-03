@@ -17,7 +17,8 @@
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
         <dataGrid:FooterDataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgSeries" IsReadOnly="True" 
-                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}" controls1:DataGridBehavior.DisplayRowNumber="True">
+                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}" controls1:DataGridBehavior.DisplayRowNumber="True"
+                                 FooterItemsSource="{Binding TanksSummary, UpdateSourceTrigger=Explicit}">
             <dataGrid:FooterDataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

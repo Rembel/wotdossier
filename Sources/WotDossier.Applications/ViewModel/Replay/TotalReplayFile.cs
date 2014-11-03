@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using WotDossier.Dal;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
@@ -19,15 +17,18 @@ namespace WotDossier.Applications.ViewModel.Replay
         public TotalReplayFile(List<ReplayFile> result, Guid folderId)
         {
             FolderId = folderId;
-            
-            Credits = (int) result.Average(x => x.Credits);
-            DamageDealt = (int)result.Average(x => x.DamageDealt);
-            DamageReceived = (int)result.Average(x => x.DamageReceived);
-            Xp = (int)result.Average(x => x.Xp);
-            Killed = (int)result.Average(x => x.Killed);
-            Damaged = (int)result.Average(x => x.Damaged);
-            BattleTime = new TimeSpan(0, 0, (int)result.Average(x => x.BattleTime.TotalSeconds));
-            LifeTime = new TimeSpan(0, 0, (int)result.Average(x => x.LifeTime.TotalSeconds));
+
+            if (result.Count > 0)
+            {
+                Credits = (int) result.Average(x => x.Credits);
+                DamageDealt = (int) result.Average(x => x.DamageDealt);
+                DamageReceived = (int) result.Average(x => x.DamageReceived);
+                Xp = (int) result.Average(x => x.Xp);
+                Killed = (int) result.Average(x => x.Killed);
+                Damaged = (int) result.Average(x => x.Damaged);
+                BattleTime = new TimeSpan(0, 0, (int) result.Average(x => x.BattleTime.TotalSeconds));
+                LifeTime = new TimeSpan(0, 0, (int) result.Average(x => x.LifeTime.TotalSeconds));
+            }
         }
 
         /// <summary>

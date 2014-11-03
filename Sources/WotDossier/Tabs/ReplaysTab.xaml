@@ -11,6 +11,7 @@
              xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              xmlns:replay="clr-namespace:WotDossier.Applications.ViewModel.Replay;assembly=WotDossier.Applications"
+             xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
@@ -89,10 +90,11 @@
             <controls:ReplaysFilterPanel DataContext="{Binding ReplayFilter}" HorizontalAlignment="Left" />
         </Grid>
         <GridSplitter Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="5"/>
-        <DataGrid TabIndex="0" Grid.Row="2" Grid.ColumnSpan="2" PreviewKeyDown="DgReplays_OnPreviewKeyDown" SelectionChanged="DgReplays_OnSelectionChanged" HorizontalAlignment="Stretch" ItemsSource="{Binding Replays}" 
-                  VerticalAlignment="Stretch" Name="dgReplays" IsReadOnly="True" AutoGenerateColumns="False"
+        <dataGrid:FooterDataGrid TabIndex="0" Grid.Row="2" Grid.ColumnSpan="2" PreviewKeyDown="DgReplays_OnPreviewKeyDown" SelectionChanged="DgReplays_OnSelectionChanged" 
+                                 HorizontalAlignment="Stretch" ItemsSource="{Binding Replays}" FooterItemsSource="{Binding ReplaysSummary}" VerticalAlignment="Stretch" 
+                                 Name="dgReplays" IsReadOnly="True" AutoGenerateColumns="False" Style="{StaticResource office2007SilverFooterDataGrid}"
                   PreviewMouseLeftButtonDown="OnGridPreviewMouseLeftButtonDown" PreviewMouseMove="OnGridMouseMove" behaviours:DataGridBehavior.DisplayRowNumber="True">
-            <DataGrid.Resources>
+            <dataGrid:FooterDataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_Play}"
                               Command="{Binding Path=DataContext.PlayReplayCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
@@ -125,8 +127,8 @@
                               Command="{Binding Path=DataContext.ReplayRowsZipCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                 </ContextMenu>
-            </DataGrid.Resources>
-            <DataGrid.RowStyle>
+            </dataGrid:FooterDataGrid.Resources>
+            <dataGrid:FooterDataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}" x:Name="styleForDataRow">
                     <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
                     <Setter Property="SnapsToDevicePixels" Value="true" />
@@ -139,17 +141,17 @@
                         </Trigger>
                     </Style.Triggers>
                 </Style>
-            </DataGrid.RowStyle>
-            <DataGrid.InputBindings>
+            </dataGrid:FooterDataGrid.RowStyle>
+            <dataGrid:FooterDataGrid.InputBindings>
                 <KeyBinding Command="{Binding ReplayRowsDeleteCommand}" 
                             Key="Delete" CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                 <KeyBinding Command="{Binding ReplayRowsDeleteCommand}" 
                             Key="Delete" Modifiers="Shift" CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
                 <KeyBinding Command="{Binding ReplayRowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
-            </DataGrid.InputBindings>
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Map}">
+            </dataGrid:FooterDataGrid.InputBindings>
+            <dataGrid:FooterDataGrid.Columns>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Map}" SortMemberPath="MapName">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
@@ -217,7 +219,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
-                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Replay_Link}">
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Replay_Link}" SortMemberPath="Link">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0" Visibility="{Binding Link, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
@@ -229,12 +231,12 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridCheckBoxColumn Header="{x:Static resources:Resources.Column_Ratings_Platoon}" ElementStyle="{StaticResource CCheckBox}" Binding="{Binding IsPlatoon}"/>
-            </DataGrid.Columns>
+            </dataGrid:FooterDataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <applications:DataGridRowDoubleClickEventToCommand Command="{Binding Path=ReplayRowDoubleClickCommand, Mode=OneWay}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
-        </DataGrid>
+        </dataGrid:FooterDataGrid>
     </Grid>
 </UserControl>

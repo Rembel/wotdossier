@@ -232,6 +232,9 @@
     </Compile>
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="NativeMethods.cs" />
+    <Compile Include="Styles\FooterDataGridSilver.cs" />
+    <Compile Include="Styles\FooterDataGridBlack.cs" />
+    <Compile Include="Styles\FooterDataGridGeneric.cs" />
     <Compile Include="Tabs\Charts\BattlesCountChartsTab.xaml.cs">
       <DependentUpon>BattlesCountChartsTab.xaml</DependentUpon>
     </Compile>

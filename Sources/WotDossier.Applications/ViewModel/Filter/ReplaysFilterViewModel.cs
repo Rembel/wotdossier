@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -640,8 +641,6 @@ namespace WotDossier.Applications.ViewModel.Filter
                 )
                 ).ToList();
 
-            //var footerList = PrepareToReturn(result, SelectedFolder != null ? SelectedFolder.Id : Guid.NewGuid());
-
             return result;
         }
 
@@ -665,15 +664,6 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
             return false;
         }
-
-        //private static List<ReplayFile> PrepareToReturn(List<ReplayFile> result, Guid folderId)
-        //{
-        //    List<ReplayFile> footerList = new FooterList<ReplayFile>(result);
-
-        //    footerList.Insert(0, new TotalReplayFile(result, folderId));
-
-        //    return footerList;
-        //}
 
         private bool MembersFilter(List<Vehicle> vehicles, string[] members)
         {

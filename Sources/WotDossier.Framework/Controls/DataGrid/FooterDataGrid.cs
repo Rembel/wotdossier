@@ -1,15 +1,60 @@
 ﻿using System;
+using System.Collections;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using WotDossier.Common.Collections;
 
 namespace WotDossier.Framework.Controls.DataGrid
 {
-    public class FooterDataGrid : System.Windows.Controls.DataGrid
+    public class FooterDataGrid : System.Windows.Controls.DataGrid, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        
+        public System.Windows.Controls.DataGrid RowSummariesGrid { get; set; }
+        
+        public bool IsVerticalScrolling { get; set; }
+
+        public static readonly DependencyProperty ShowRowSummariesProperty = DependencyProperty.Register(
+            "ShowRowSummaries", typeof(Boolean), typeof(FooterDataGrid), new PropertyMetadata(false));
+
+        /// <summary>
+        /// Show Row Summaries
+        /// </summary>
+        public Boolean ShowRowSummaries
+        {
+            get { return (Boolean)GetValue(ShowRowSummariesProperty); }
+            set { SetValue(ShowRowSummariesProperty, value); }
+        }
+
+        public static readonly DependencyProperty FooterItemsSourceProperty = DependencyProperty.Register(
+            "FooterItemsSource", typeof (IEnumerable), typeof (FooterDataGrid), new PropertyMetadata(default(IEnumerable)));
+
+        public IEnumerable FooterItemsSource
+        {
+            get { return (IEnumerable) GetValue(FooterItemsSourceProperty); }
+            set { SetValue(FooterItemsSourceProperty, value); }
+        }
+
+        #region Constructors
+
+        static FooterDataGrid()
+        {
+            Type ownerType = typeof(FooterDataGrid);
+            DefaultStyleKeyProperty.OverrideMetadata(ownerType, new FrameworkPropertyMetadata(ownerType));
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Raises the <see cref="E:Sorting" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="DataGridSortingEventArgs"/> instance containing the event data.</param>
         protected override void OnSorting(DataGridSortingEventArgs e)
         {
             var lastRowList = ItemsSource as IFooterList;
@@ -31,140 +76,21 @@ namespace WotDossier.Framework.Controls.DataGrid
             Items.Refresh();
         }
 
-        #region Constructors
-
-        static FooterDataGrid()
+        protected void NotifyPropertyChanged(String info)
         {
-            Type ownerType = typeof(FooterDataGrid);
-            DefaultStyleKeyProperty.OverrideMetadata(ownerType, new FrameworkPropertyMetadata(ownerType));
-            ItemsPanelProperty.OverrideMetadata(ownerType, new FrameworkPropertyMetadata(new ItemsPanelTemplate(new FrameworkElementFactory(typeof(FooterDataGridRowsPresenter)))));
-        }
-
-        public FooterDataGrid()
-        {
-            Loaded += FooterDataGrid_Loaded;
-        }
-
-        void FooterDataGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            FooterDataGridRowsPresenter panel = Helper.GetVisualChild<FooterDataGridRowsPresenter>(this);
-            if (panel != null)
+            if (PropertyChanged != null)
             {
-                panel.InvalidateArrange();
-            }
-        }        
-
-        #endregion
-
-        #region Frozen Rows
-
-        /// <summary>
-        /// Dependency Property fro FrozenRowCount Property
-        /// </summary>
-        public static readonly DependencyProperty FrozenRowCountProperty =
-            DependencyProperty.Register("FrozenRowCount",
-                                        typeof(int),
-                                        typeof(System.Windows.Controls.DataGrid),
-                                        new FrameworkPropertyMetadata(1, OnFrozenRowCountPropertyChanged, OnCoerceFrozenRowCount),
-                                        ValidateFrozenRowCount);
-
-        /// <summary>
-        /// Property which determines the number of rows which are frozen from 
-        /// the beginning in order of display
-        /// </summary>
-        public int FrozenRowCount
-        {
-            get { return (int)GetValue(FrozenRowCountProperty); }
-            set { SetValue(FrozenRowCountProperty, value); }
-        }
-
-        /// <summary>
-        /// Coercion call back for FrozenRowCount property, which ensures that 
-        /// it is never more that Item count
-        /// </summary>
-        /// <param name="d"></param>
-        /// <param name="baseValue"></param>
-        /// <returns></returns>
-        private static object OnCoerceFrozenRowCount(DependencyObject d, object baseValue)
-        {
-            System.Windows.Controls.DataGrid dataGrid = (System.Windows.Controls.DataGrid)d;
-            int frozenRowCount = (int)baseValue;
-
-            if (frozenRowCount > dataGrid.Items.Count)
-            {
-                return dataGrid.Items.Count;
-            }
-
-            return baseValue;
-        }
-
-        /// <summary>
-        /// Property changed callback fro FrozenRowCount
-        /// </summary>
-        /// <param name="d"></param>
-        /// <param name="e"></param>
-        private static void OnFrozenRowCountPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            FooterDataGridRowsPresenter panel = Helper.GetVisualChild<FooterDataGridRowsPresenter>(d as Visual);
-            if (panel != null)
-            {
-                panel.InvalidateArrange();
-                (d as System.Windows.Controls.DataGrid).UpdateLayout();
-                panel.InvalidateArrange();
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
             }
         }
 
-        /// <summary>
-        /// Validation call back for frozen row count
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        private static bool ValidateFrozenRowCount(object value)
+        public DataGridColumn GetRowSummariesGridColumnForSortMemberPath(string sortMemberPath)
         {
-            int frozenCount = (int)value;
-            return frozenCount >= 0;
-        }
-
-        /// <summary>
-        /// Dependency Property key for NonFrozenColumnsViewportHorizontalOffset Property
-        /// </summary>
-        private static readonly DependencyPropertyKey NonFrozenRowsViewportVerticalOffsetPropertyKey =
-                DependencyProperty.RegisterReadOnly(
-                        "NonFrozenRowsViewportVerticalOffset",
-                        typeof(double),
-                        typeof(System.Windows.Controls.DataGrid),
-                        new FrameworkPropertyMetadata(0.0));
-
-        /// <summary>
-        /// Dependency property for NonFrozenRowsViewportVerticalOffset Property
-        /// </summary>
-        public static readonly DependencyProperty NonFrozenRowsViewportVerticalOffsetProperty = NonFrozenRowsViewportVerticalOffsetPropertyKey.DependencyProperty;
-
-        /// <summary>
-        /// Property which gets/sets the start y coordinate of non frozen rows in view port
-        /// </summary>
-        public double NonFrozenRowsViewportVerticalOffset
-        {
-            get
+            if (RowSummariesGrid != null)
             {
-                return (double)GetValue(NonFrozenRowsViewportVerticalOffsetProperty);
+                return RowSummariesGrid.Columns.FirstOrDefault(column => column.SortMemberPath == sortMemberPath);
             }
-            internal set
-            {
-                SetValue(NonFrozenRowsViewportVerticalOffsetPropertyKey, value);
-            }
+            return null;
         }
-
-        /// <summary>
-        /// Method which gets called when Vertical scroll occurs on the scroll viewer of datagrid.
-        /// Forwards the call to rows and header presenter.
-        /// </summary>
-        internal void OnVerticalScroll()
-        {
-            FooterDataGridRowsPresenter panel = Helper.GetVisualChild<FooterDataGridRowsPresenter>(this);
-            panel.InvalidateArrange();
-        }
-
-        #endregion
     }
 }

@@ -48,6 +48,7 @@ namespace WotDossier.Applications.ViewModel
         public static readonly string PropPlayerStatistic = TypeHelper<ShellViewModel>.PropertyName(v => v.PlayerStatistic);
         public static readonly string PropMasterTanker = TypeHelper<ShellViewModel>.PropertyName(v => v.MasterTanker);
         public static readonly string PropTanks = TypeHelper<ShellViewModel>.PropertyName(v => v.Tanks);
+        public static readonly string PropTanksSummary = TypeHelper<ShellViewModel>.PropertyName(v => v.TanksSummary);
         public static readonly string PropPeriodSelector = TypeHelper<ShellViewModel>.PropertyName(v => v.PeriodSelector);
         public static readonly string PropBattleModeSelector = TypeHelper<ShellViewModel>.PropertyName(v => v.BattleModeSelector);
         public static readonly string PropLastUsedTanksList = TypeHelper<ShellViewModel>.PropertyName(v => v.LastUsedTanksList);
@@ -80,21 +81,30 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public List<ITankStatisticRow> TanksSummary
+        {
+            get { return _tanksSummary; }
+            set
+            {
+                _tanksSummary = value;
+                RaisePropertyChanged(PropTanksSummary);
+            }
+        }
+
         private List<ITankStatisticRow> _tanks = new List<ITankStatisticRow>();
         public List<ITankStatisticRow> Tanks
         {
             get
             {
                 List<ITankStatisticRow> tankStatisticRowViewModels = TankFilter.Filter(_tanks);
+
                 if (tankStatisticRowViewModels.Count > 0)
                 {
                     TotalTankStatisticRowViewModel totalRow =
                         new TotalTankStatisticRowViewModel(tankStatisticRowViewModels.ToList());
-                    tankStatisticRowViewModels.Insert(0, totalRow);
+                    TanksSummary = new List<ITankStatisticRow> { totalRow };
                 }
-                FooterList<ITankStatisticRow> statisticRowViewModels = new FooterList<ITankStatisticRow>();
-                statisticRowViewModels.AddRange(tankStatisticRowViewModels);
-                return statisticRowViewModels;
+                return tankStatisticRowViewModels;
             }
             set
             {
@@ -167,6 +177,7 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private bool _loadInProgress;
+        private List<ITankStatisticRow> _tanksSummary;
         private static readonly object _syncObject = new object();
 
         public bool LoadInProgress

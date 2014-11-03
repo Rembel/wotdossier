@@ -63,7 +63,17 @@ namespace WotDossier.Applications.ViewModel
         /// </value>
         public List<ReplayFile> Replays
         {
-            get { return ReplayFilter.Filter(_replays); }
+            get
+            {
+                var replayFiles = ReplayFilter.Filter(_replays);
+
+                if (replayFiles.Any())
+                {
+                    ReplaysSummary = new List<ReplayFile>{new TotalReplayFile(replayFiles, Guid.NewGuid())};
+                }
+
+                return replayFiles;
+            }
             set
             {
                 _replays = value;
@@ -71,9 +81,20 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public List<ReplayFile> ReplaysSummary
+        {
+            get { return _replaysSummary; }
+            set
+            {
+                _replaysSummary = value;
+                OnPropertyChanged("ReplaysSummary");
+            }
+        }
+
         private List<ReplayFolder> _replaysFolders;
         private Guid? _selectedFolderId = null;
         private bool _processing;
+        private List<ReplayFile> _replaysSummary;
 
         /// <summary>
         /// Gets or sets the replays folders.

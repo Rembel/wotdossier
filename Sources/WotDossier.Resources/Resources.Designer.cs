@@ -3243,16 +3243,25 @@ namespace WotDossier.Resources {
                 return ResourceManager.GetString("Column_Time_LastBattle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Common Battle Time.
+        /// </summary>
+        public static string Column_Time_CommonPlayTime {
+            get {
+                return ResourceManager.GetString("Column_Time_CommonPlayTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play Time.
         /// </summary>
         public static string Column_Time_PlayTime {
             get {
                 return ResourceManager.GetString("Column_Time_PlayTime", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Average XP.
         /// </summary>

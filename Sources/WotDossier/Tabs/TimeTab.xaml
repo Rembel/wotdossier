@@ -32,7 +32,7 @@
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding Tank}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_LastBattle}" Binding="{Binding LastBattle, StringFormat='dd.MM.yyyy HH:mm:ss'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_CommonPlayTime}" Binding="{Binding PlayTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_AverageBattleTime}" Binding="{Binding AverageBattleTime}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>

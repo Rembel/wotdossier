@@ -18,17 +18,21 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             FolderId = folderId;
 
-            if (result.Count > 0)
+            var replayFiles = result.Where(x => x.IsWinner != BattleStatus.Unknown && x.IsWinner != BattleStatus.Incomplete).ToList();
+
+            if (replayFiles.Any())
             {
-                Credits = (int) result.Average(x => x.Credits);
-                DamageDealt = (int) result.Average(x => x.DamageDealt);
-                DamageReceived = (int) result.Average(x => x.DamageReceived);
-                Xp = (int) result.Average(x => x.Xp);
-                Killed = (int) result.Average(x => x.Killed);
-                Damaged = (int) result.Average(x => x.Damaged);
-                BattleTime = new TimeSpan(0, 0, (int) result.Average(x => x.BattleTime.TotalSeconds));
-                LifeTime = new TimeSpan(0, 0, (int) result.Average(x => x.LifeTime.TotalSeconds));
-                CreditsEarned = (int) result.Average(x => x.CreditsEarned);
+                Credits = (int)replayFiles.Average(x => x.Credits);
+                DamageDealt = (int)replayFiles.Average(x => x.DamageDealt);
+                DamageReceived = (int)replayFiles.Average(x => x.DamageReceived);
+                Xp = (int)replayFiles.Average(x => x.Xp);
+                Killed = (int)replayFiles.Average(x => x.Killed);
+                Damaged = (int) replayFiles.Average(x => x.Damaged);
+                PlayTime = result.Max(x => x.PlayTime);
+                BattleTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.BattleTime.TotalSeconds));
+                LifeTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.LifeTime.TotalSeconds));
+                CreditsEarned = (int)replayFiles.Average(x => x.CreditsEarned);
+                ClientVersion = replayFiles.Max(x => x.ClientVersion);
             }
         }
 

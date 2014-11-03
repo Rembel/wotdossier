@@ -27,6 +27,7 @@ namespace WotDossier.Styles
                 parentGrid.RowSummariesGrid = datagrid;
                 
                 var sortedColumn = parentGrid.Columns.ToList();
+                datagrid.Columns.Clear();
                 foreach (var column in sortedColumn.OrderBy(c => c.DisplayIndex))
                 {
                     BindingBase textBinding = null;
@@ -58,7 +59,7 @@ namespace WotDossier.Styles
                 }
             }
 
-            datagrid.AutoGenerateColumns = true;
+            //datagrid.AutoGenerateColumns = true;
         }
 
         public static void OnScroll(object sender, ScrollEventArgs e)

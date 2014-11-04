@@ -1700,6 +1700,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assault.
+        /// </summary>
+        public static string BattleType_assault2 {
+            get {
+                return ResourceManager.GetString("BattleType_assault2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clan War.
         /// </summary>
         public static string BattleType_ClanWar {
@@ -3236,20 +3245,20 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last Battle.
-        /// </summary>
-        public static string Column_Time_LastBattle {
-            get {
-                return ResourceManager.GetString("Column_Time_LastBattle", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to Common Battle Time.
         /// </summary>
         public static string Column_Time_CommonPlayTime {
             get {
                 return ResourceManager.GetString("Column_Time_CommonPlayTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Battle.
+        /// </summary>
+        public static string Column_Time_LastBattle {
+            get {
+                return ResourceManager.GetString("Column_Time_LastBattle", resourceCulture);
             }
         }
         
@@ -3261,7 +3270,7 @@ namespace WotDossier.Resources {
                 return ResourceManager.GetString("Column_Time_PlayTime", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Average XP.
         /// </summary>

@@ -3375,4 +3375,7 @@
   <data name="Map_92_stalingrad" xml:space="preserve">
     <value>Сталинград</value>
   </data>
+  <data name="BattleType_assault2" xml:space="preserve">
+    <value>Штурм</value>
+  </data>
 </root>

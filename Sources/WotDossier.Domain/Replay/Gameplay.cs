@@ -5,6 +5,7 @@
         ctf,
         domination,
         assault,
+        assault2,
         nations
     }
 }

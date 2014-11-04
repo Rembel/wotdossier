@@ -3286,4 +3286,7 @@ up to 500 m</value>
   <data name="Map_92_stalingrad" xml:space="preserve">
     <value>Stalingrad</value>
   </data>
+  <data name="BattleType_assault2" xml:space="preserve">
+    <value>Assault</value>
+  </data>
 </root>

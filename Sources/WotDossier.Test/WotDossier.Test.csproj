@@ -319,7 +319,7 @@
     <None Include="Replays\0.9.3\20140907_1157_usa-T57_58_73_asia_korea.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Replays\0.9.4\20141019_1348_ussr-Object268_45_north_america.wotreplay">
+    <None Include="Replays\0.9.4\14151075672571_uk_GB21_Cromwell_tundra.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

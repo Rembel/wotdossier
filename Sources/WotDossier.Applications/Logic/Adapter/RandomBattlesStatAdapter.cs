@@ -132,7 +132,7 @@ namespace WotDossier.Applications.Logic.Adapter
                 int battlesCount = stat.dataField.vehicles.Sum(x => x.all.battles);
                 if (battlesCount > 0)
                 {
-                    AvgLevel = stat.dataField.vehicles.Sum(x => (x.tank != null ? x.tank.level : 1)*x.all.battles)/(double) battlesCount;
+                    AvgLevel = stat.dataField.vehicles.Sum(x => (x.description != null ? x.description.Tier : 1)*x.all.battles)/(double) battlesCount;
                 }
             }
 

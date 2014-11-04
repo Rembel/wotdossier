@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
     public class CombatTarget
     {
+        private static readonly Version _version085 = new Version("0.8.5");
+
         public TeamMember TeamMember { get; set; }
 
         public int Crits { get; set; }
@@ -35,11 +38,11 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public bool TeamMate { get; set; }
 
-        public CombatTarget(KeyValuePair<long, DamagedVehicle> vehicleDamage, TeamMember teamMember, string clientVersionFromExe)
+        public CombatTarget(KeyValuePair<long, DamagedVehicle> vehicleDamage, TeamMember teamMember, Version version)
         {
             TeamMember = teamMember;
 
-            Crits = GetCritsCount(vehicleDamage.Value, clientVersionFromExe);
+            Crits = GetCritsCount(vehicleDamage.Value, version);
             CritsTooltip = string.Format(Resources.Resources.Tooltip_Replay_CriticalDamage, Crits);
             DamageAssisted = vehicleDamage.Value.damageAssisted;
             DamageAssistedTooltip = string.Format(Resources.Resources.Tooltip_Replay_AlliesDamage, DamageAssisted);
@@ -55,11 +58,11 @@ namespace WotDossier.Applications.ViewModel.Replay
             TeamMate = teamMember.TeamMate;
         }
 
-        private int GetCritsCount(DamagedVehicle vehicleDamage, string clientVersionFromExe)
+        private int GetCritsCount(DamagedVehicle vehicleDamage, Version version)
         {
             //up to Version 0.8.5: The total number of critical Hits scored on this vehicle
             //since Version 0.8.6: Packed value. 
-            if (!string.IsNullOrEmpty(clientVersionFromExe))
+            if (version > _version085)
             {
                 return vehicleDamage.tankDamageCrits.Count + vehicleDamage.crewCrits.Count + vehicleDamage.tankCrits.Count;
             }

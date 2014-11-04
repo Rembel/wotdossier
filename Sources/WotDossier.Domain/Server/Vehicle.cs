@@ -15,7 +15,6 @@ namespace WotDossier.Domain.Server
         public StatisticPart all;
         public StatisticPart company;
 
-        public TankServerInfo tank;
         public TankDescription description { get; set; }
     }
 }

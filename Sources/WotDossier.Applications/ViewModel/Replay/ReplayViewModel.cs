@@ -478,7 +478,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             return replay.datablock_battle_result.personal.details
                 .Where(x => x.Key != ReplayUser.Id)
-                .Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.clientVersionFromExe))
+                .Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.Version))
                 .OrderBy(x => x.TeamMember.FullName)
                 .ToList();
         }

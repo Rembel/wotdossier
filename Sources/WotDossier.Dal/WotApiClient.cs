@@ -236,12 +236,8 @@ namespace WotDossier.Dal
                     foreach (Vehicle tank in tanks)
                     {
                         tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
-                        
-                        if (Dictionaries.Instance.ServerTanks.ContainsKey(tank.tank_id))
-                        {
-                            tank.tank = Dictionaries.Instance.ServerTanks[tank.tank_id];
-                        }
-                        else
+
+                        if (tank.description == null)
                         {
                             _log.WarnFormat("Unknown tank id found [{0}] on get player[{1}:{2}] server tank statistic", tank.tank_id, settings.Server, playerId);
                         }

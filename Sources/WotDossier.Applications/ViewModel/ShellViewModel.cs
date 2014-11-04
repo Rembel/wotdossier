@@ -255,7 +255,11 @@ namespace WotDossier.Applications.ViewModel
 
             BattleModeSelector.PropertyChanged += (sender, args) => OnLoad();
 
-            PlayerSelector = new PlayerSelectorViewModel(dossierRepository, OnLoad);
+            PlayerSelector = new PlayerSelectorViewModel(dossierRepository, delegate
+            {
+                OnLoad();
+                ChartView.RefreshReplaysCharts();
+            });
 
             ChartView = new PlayerChartsViewModel();
 
@@ -488,6 +492,7 @@ namespace WotDossier.Applications.ViewModel
                 {
                     PlayerSelector.InitPlayers();
                     OnLoad();
+                    ChartView.RefreshReplaysCharts();
                 }
             }
         }

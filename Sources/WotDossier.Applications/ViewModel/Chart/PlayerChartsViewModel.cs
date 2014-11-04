@@ -450,7 +450,7 @@ namespace WotDossier.Applications.ViewModel.Chart
             _log.Trace("InitCharts end");
         }
 
-        private void RefreshReplaysCharts()
+        public void RefreshReplaysCharts()
         {
             InitWinReplaysPercentByMapChart();
             InitBattlesByMapChart();

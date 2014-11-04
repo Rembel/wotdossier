@@ -4,77 +4,74 @@
         <ResourceDictionary Source="BrushesSilver.xaml"/>
         <ResourceDictionary Source="FontsSilver.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
-    <Style x:Key="office2007SilverTabControl" TargetType="{x:Type TabControl}">
-        <Setter Property="OverridesDefaultStyle" Value="true" />
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TabControl}">
-                    <Grid KeyboardNavigation.TabNavigation="Local">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <TabPanel Name="HeaderPanel" Grid.Row="0" ZIndex="1" IsItemsHost="true" KeyboardNavigation.TabIndex="1" Background="Transparent" />
-                        <Grid Row="1" Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0.2*" />
-                                <RowDefinition Height="0.8*" />
-                            </Grid.RowDefinitions>
-                            <Border Name="tabControlMainBorder" Grid.Row="0" Background="{StaticResource tabControlDefaultBackgroundBrush}" BorderBrush="{StaticResource tabControlDefaultBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0,2,2,2" Grid.RowSpan="3" />
-                        </Grid>
-                        <Border Grid.Row="1" Grid.Column="1" Background="{TemplateBinding Background}" Opacity="0.3" />
-                        <Border Name="Border" Grid.Row="1" Grid.Column="1" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2">
-                            <ContentPresenter Name="PART_SelectedContentHost" TextBlock.Foreground="{TemplateBinding Foreground}" Margin="0" ContentSource="SelectedContent" />
-                        </Border>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="TabStripPlacement" Value="Bottom">
-                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="2" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.ColumnSpan" Value="3" />
-                            <Setter TargetName="tabControlMainBorder" Property="CornerRadius" Value="2,2,2,0" />
-                        </Trigger>
-                        <Trigger Property="TabStripPlacement" Value="Top">
-                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.ColumnSpan" Value="3" />
-                            <Setter TargetName="tabControlMainBorder" Property="CornerRadius" Value="0,2,2,2" />
-                        </Trigger>
-                        <Trigger Property="TabStripPlacement" Value="Left">
-                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.RowSpan" Value="3" />
-                            <Setter TargetName="tabControlMainBorder" Property="CornerRadius" Value="0,2,2,2" />
-                        </Trigger>
-                        <Trigger Property="TabStripPlacement" Value="Right">
-                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="2" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
-                            <Setter TargetName="HeaderPanel" Property="Grid.RowSpan" Value="3" />
-                            <Setter TargetName="tabControlMainBorder" Property="CornerRadius" Value="2,0,2,2" />
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="false" />
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
 
-            </Setter.Value>
-        </Setter>
-    </Style>
+    <ControlTemplate x:Key="office2007SilverTabControlTemplate" TargetType="{x:Type TabControl}">
+        <Grid KeyboardNavigation.TabNavigation="Local">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TabPanel x:Name="HeaderPanel" Grid.Row="0" ZIndex="1" IsItemsHost="true" KeyboardNavigation.TabIndex="1"
+                      Background="Transparent"/>
+            <Grid Row="1" Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.8*" />
+                </Grid.RowDefinitions>
+                <Border Name="tabControlMainBorder" Grid.Row="0" 
+                        Background="{StaticResource tabControlDefaultBackgroundBrush}" 
+                        BorderBrush="{StaticResource tabControlDefaultBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="0,2,2,2" Grid.RowSpan="2" />
+            </Grid>
+            <Border Grid.Row="1" Grid.Column="1" Background="{TemplateBinding Background}" Opacity="0.3" />
+            <Border Name="Border" Grid.Row="1" Grid.Column="1" BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.DirectionalNavigation="Contained" 
+                    KeyboardNavigation.TabIndex="2">
+                <ContentPresenter Name="PART_SelectedContentHost" TextBlock.Foreground="{TemplateBinding Foreground}" 
+                                  Margin="0" ContentSource="SelectedContent" />
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="TabControl.TabStripPlacement" Value="Bottom">
+                <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="2" />
+                <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                <Setter TargetName="HeaderPanel" Property="Grid.ColumnSpan" Value="3" />
+                <Setter TargetName="tabControlMainBorder" Property="Border.CornerRadius" Value="2,2,2,0"/>
+            </Trigger>
+            <Trigger Property="TabControl.TabStripPlacement" Value="Top">
+                <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                <Setter TargetName="HeaderPanel" Property="Grid.ColumnSpan" Value="3" />
+                <Setter TargetName="tabControlMainBorder" Property="Border.CornerRadius" Value="0,2,2,2"/>
+            </Trigger>
+            <Trigger Property="TabControl.TabStripPlacement" Value="Left">
+                <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                <Setter TargetName="HeaderPanel" Property="Grid.RowSpan" Value="3" />
+                <Setter TargetName="tabControlMainBorder" Property="Border.CornerRadius" Value="0,2,2,2"/>
+            </Trigger>
+            <Trigger Property="TabControl.TabStripPlacement" Value="Right">
+                <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="2" />
+                <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                <Setter TargetName="HeaderPanel" Property="Grid.RowSpan" Value="3" />
+                <Setter TargetName="tabControlMainBorder" Property="Border.CornerRadius" Value="2,0,2,2"/>
+            </Trigger>
+            <Trigger Property="UIElement.IsEnabled" Value="false"/>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
     <ControlTemplate  x:Key="office2007SilverTabItemTemplate" TargetType="{x:Type TabItem}">
-        <Grid Name="tabItemMainGrid" Margin="0,0,3,0">
-            <Grid Name="visualRootGrid" RenderTransformOrigin="0.5,0.5">
-                <Grid Name="mouseOverNotSelectedGrid" Opacity="0" SnapsToDevicePixels="true">
-                    <Border Name="outerBorder" Margin="-1,-1,-1,0" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0">
+        <Grid x:Name="tabItemMainGrid" Margin="0,0,3,0">
+            <Grid x:Name="visualRootGrid" RenderTransformOrigin="0.5,0.5">
+                <Grid x:Name="mouseOverNotSelectedGrid" Opacity="0" SnapsToDevicePixels="true">
+                    <Border x:Name="outerBorder" Margin="-1,-1,-1,0" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0">
                         <Border.BorderBrush>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#00FFFFFF" Offset="0" />
@@ -104,7 +101,7 @@
                     <Border Margin="0,0,0,0" BorderBrush="#FFBEBEBE" BorderThickness="1,1,1,1" CornerRadius="3,3,0,0" />
                     <Border Margin="1" BorderBrush="#FFFFFFFF" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0" />
                 </Grid>
-                <Grid Name="selectedGrid" Opacity="0">
+                <Grid x:Name="selectedGrid" Opacity="0">
                     <Border Margin="-1,-1,-1,0" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0">
                         <Border.BorderBrush>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -126,8 +123,8 @@
                     <Border Margin="2,2,2,0" BorderBrush="#FFFFFFFF" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0" />
                     <Border Margin="1,1,1,0" BorderBrush="#FFC0FAFF" BorderThickness="1,0,1,0" CornerRadius="4,4,0,0" />
                 </Grid>
-                <Grid Name="selectedOverGrid" Opacity="0">
-                    <Border Name="outerBorder2" Margin="-1,-1,-1,0" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0">
+                <Grid x:Name="selectedOverGrid" Opacity="0">
+                    <Border x:Name="outerBorder2" Margin="-1,-1,-1,0" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0">
                         <Border.BorderBrush>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#00000000" Offset="0" />
@@ -148,14 +145,20 @@
                     <Border Margin="2,2,2,0" BorderBrush="#FFFFFFFF" BorderThickness="1,1,1,0" CornerRadius="3,3,0,0" />
                     <Border BorderBrush="#FFF9CC60" BorderThickness="1,1,1,0" CornerRadius="4,4,0,0" />
                 </Grid>
-                <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3,3,0,0" IsHitTestVisible="false" Opacity="0.3" />
+                <Border Background="{TemplateBinding Control.Background}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}" CornerRadius="3,3,0,0" IsHitTestVisible="false"
+                        Opacity="0.3" />
                 <Border Margin="0,0,0,0" BorderBrush="Gray" BorderThickness="1,1,1,1" CornerRadius="3,3,0,0" />
-                <Border Name="contentSiteBorder" ClipToBounds="{TemplateBinding IsSelected}" CornerRadius="3" Background="Transparent" />
+                <Border x:Name="contentSiteBorder" ClipToBounds="{TemplateBinding IsSelected}" CornerRadius="3" 
+                        Background="Transparent" />
             </Grid>
-            <ContentPresenter Name="ContentSite" RecognizesAccessKey="true" ContentSource="Header" 
-                              TextBlock.Foreground="{TemplateBinding Foreground}" TextBlock.FontFamily="{TemplateBinding FontFamily}" 
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" 
+            <ContentPresenter x:Name="ContentSite" RecognizesAccessKey="true" ContentSource="Header"
+                              TextElement.Foreground="{TemplateBinding TextElement.Foreground}" 
+                              TextElement.FontFamily="{TemplateBinding TextElement.FontFamily}"
+                              HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                              Margin="{TemplateBinding Padding}"
                               ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}"
                               />
         </Grid>
@@ -219,7 +222,7 @@
                     </Setter.Value>
                 </Setter>
             </DataTrigger>
-            <DataTrigger Value="Left" Binding="{Binding Path=TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
+            <!--<DataTrigger Value="Left" Binding="{Binding Path=TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
                 <Setter Property="LayoutTransform">
                     <Setter.Value>
                         <RotateTransform Angle="-90"/>
@@ -230,7 +233,7 @@
                         <TranslateTransform X="3"/>
                     </Setter.Value>
                 </Setter>
-            </DataTrigger>
+            </DataTrigger>-->
             <DataTrigger Value="Right" Binding="{Binding Path=TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}">
                 <Setter Property="LayoutTransform">
                     <Setter.Value>
@@ -245,8 +248,163 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate  x:Key="office2007SilverTabItemTemplateLeft" TargetType="{x:Type TabItem}">
+        <Grid x:Name="tabItemMainGrid" Margin="0,3,0,0">
+            <Grid x:Name="visualRootGrid" RenderTransformOrigin="0.5,0.5">
+                <Grid x:Name="mouseOverNotSelectedGrid" Opacity="0" SnapsToDevicePixels="true">
+                    <Border x:Name="outerBorder" Margin="-1,-1,0,-1" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00FFFFFF" Offset="0" />
+                                <GradientStop Color="#00FFFFFF" Offset="1" />
+                                <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                    </Border>
+                    <Border Opacity="1" CornerRadius="4,0,0,4">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#D3D7DF" Offset="0" />
+                                <GradientStop Color="#E5E8EC" Offset="0.5" />
+                                <GradientStop Color="#DCDFE4" Offset="0.5" />
+                                <GradientStop Color="#D3D7DF" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Border>
+                        <Border.Background>
+                            <RadialGradientBrush GradientOrigin="0.5,-0.376" RadiusX="1.331" RadiusY="1.25">
+                                <GradientStop Color="#00FFCC33" Offset="0.4" />
+                                <GradientStop Color="#FFFFCC33" Offset="0.962" />
+                            </RadialGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Border Margin="0,0,0,0" BorderBrush="#FFBEBEBE" BorderThickness="1,1,1,1" CornerRadius="3,0,0,3" />
+                    <Border Margin="1" BorderBrush="#FFFFFFFF" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3" />
+                </Grid>
+                <Grid x:Name="selectedGrid" Opacity="0">
+                    <Border Margin="-1,-1,0,-1" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00000000" Offset="0" />
+                                <GradientStop Color="#00000000" Offset="1" />
+                                <GradientStop Color="#33000000" Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                    </Border>
+                    <Border Opacity="1" CornerRadius="4,0,0,4">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFF7F8FA" Offset="0" />
+                                <GradientStop Color="#FFE5EAF1" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Border Margin="0,0,0,0" BorderBrush="#FFBEBEBE" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3" />
+                    <Border Margin="2,2,0,2" BorderBrush="#FFFFFFFF" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3" />
+                    <Border Margin="1,1,0,1" BorderBrush="#FFC0FAFF" BorderThickness="1,0,1,0" CornerRadius="4,0,0,4" />
+                </Grid>
+                <Grid x:Name="selectedOverGrid" Opacity="0">
+                    <Border x:Name="outerBorder2" Margin="-1,-1,-1,0" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#00000000" Offset="0" />
+                                <GradientStop Color="#00000000" Offset="1" />
+                                <GradientStop Color="#33000000" Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                    </Border>
+                    <Border Opacity="1" CornerRadius="4,0,0,4">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFF7F8FA" Offset="0" />
+                                <GradientStop Color="#FFE5EAF1" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Border Margin="0,0,0,0" BorderBrush="#FFBEBEBE" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3" />
+                    <Border Margin="2,2,0,2" BorderBrush="#FFFFFFFF" BorderThickness="1,1,0,1" CornerRadius="3,0,0,3" />
+                    <Border BorderBrush="#FFF9CC60" BorderThickness="1,1,0,1" CornerRadius="4,0,0,4" />
+                </Grid>
+                <Border Background="{TemplateBinding Control.Background}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}" CornerRadius="3,0,0,3" IsHitTestVisible="false"
+                        Opacity="0.3" />
+                <Border Margin="0,0,0,0" BorderBrush="Gray" BorderThickness="1,1,1,1" CornerRadius="3,0,0,3" />
+                <Border x:Name="contentSiteBorder" ClipToBounds="{TemplateBinding IsSelected}" CornerRadius="3"
+                        Background="Transparent" />
+            </Grid>
+            <ContentPresenter x:Name="ContentSite" RecognizesAccessKey="true" ContentSource="Header"
+                              TextElement.Foreground="{TemplateBinding TextElement.Foreground}"
+                              TextElement.FontFamily="{TemplateBinding TextElement.FontFamily}"
+                              HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                              Margin="{TemplateBinding Padding}"
+                              ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}"
+                              />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="mouseOverNotSelectedGrid" Storyboard.TargetProperty="Opacity" To="1" Duration="00:00:00.25" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="mouseOverNotSelectedGrid" Storyboard.TargetProperty="Opacity" To="0" Duration="00:00:00.25" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="true">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="selectedGrid" Storyboard.TargetProperty="Opacity" To="1" Duration="00:00:00.25" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="selectedGrid" Storyboard.TargetProperty="Opacity" Duration="00:00:00.25" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition SourceName="contentSiteBorder" Property="IsMouseOver" Value="true" />
+                    <Condition SourceName="contentSiteBorder" Property="ClipToBounds" Value="true" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="selectedOverGrid" Storyboard.TargetProperty="Opacity" To="1" Duration="00:00:00.25" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiTrigger.EnterActions>
+                <MultiTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="selectedOverGrid" Storyboard.TargetProperty="Opacity" Duration="00:00:00.25" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiTrigger.ExitActions>
+            </MultiTrigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="visualRootGrid" Property="Opacity" Value="0.3" />
+                <Setter TargetName="ContentSite" Property="Opacity" Value="0.3" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <Style x:Key="office2007SilverTabItem" TargetType="{x:Type TabItem}">
-        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="TextElement.Foreground" Value="Black" />
         <Setter Property="Padding" Value="11,6,11,6" />
         <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
@@ -254,5 +412,22 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Template" Value="{StaticResource office2007SilverTabItemTemplate}" />
+    </Style>
+    <Style x:Key="office2007SilverTabItemLeft" TargetType="{x:Type TabItem}">
+        <Setter Property="TextElement.Foreground" Value="Black" />
+        <Setter Property="Padding" Value="11,6,11,6" />
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Template" Value="{StaticResource office2007SilverTabItemTemplateLeft}" />
+    </Style>
+    <Style x:Key="office2007SilverTabControl" TargetType="{x:Type TabControl}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template" Value="{StaticResource office2007SilverTabControlTemplate}"/>
     </Style>
 </ResourceDictionary>

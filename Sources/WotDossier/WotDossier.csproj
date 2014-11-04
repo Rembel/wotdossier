@@ -140,6 +140,9 @@
     <Compile Include="Controls\AchievementsHistorical.xaml.cs">
       <DependentUpon>AchievementsHistorical.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ReplaysFilterPanelNew.xaml.cs">
+      <DependentUpon>ReplaysFilterPanelNew.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LinkStatisticRow.xaml.cs">
       <DependentUpon>LinkStatisticRow.xaml</DependentUpon>
     </Compile>
@@ -406,6 +409,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\AchievementsHistorical.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ReplaysFilterPanelNew.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

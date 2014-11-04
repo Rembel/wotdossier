@@ -87,7 +87,7 @@
             </i:Interaction.Behaviors>
         </TreeView>
         <Grid Margin="0,0,5,5" Grid.Column="1" Background="{StaticResource PanelBackground}">
-            <controls:ReplaysFilterPanel DataContext="{Binding ReplayFilter}" HorizontalAlignment="Left" />
+            <controls:ReplaysFilterPanelNew DataContext="{Binding ReplayFilter}" HorizontalAlignment="Stretch" />
         </Grid>
         <GridSplitter Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="5"/>
         <dataGrid:FooterDataGrid TabIndex="0" Grid.Row="2" Grid.ColumnSpan="2" PreviewKeyDown="DgReplays_OnPreviewKeyDown" SelectionChanged="DgReplays_OnSelectionChanged" 

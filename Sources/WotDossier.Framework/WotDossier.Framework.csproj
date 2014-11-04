@@ -121,6 +121,7 @@
     <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
+    <Compile Include="Controls\DataGrid\ColumnInformation.cs" />
     <Compile Include="Controls\DataGrid\FooterDataGrid.cs" />
     <Compile Include="Controls\DataGrid\DataGridBehavior.cs" />
     <Compile Include="Controls\DataGrid\DoubleUtil.cs" />

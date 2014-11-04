@@ -1635,7 +1635,7 @@
     <value>Время в игре</value>
   </data>
   <data name="Column_Respawn" xml:space="preserve">
-    <value>Респаун</value>
+    <value>Респ</value>
   </data>
   <data name="Chart_BattlesByCountry" xml:space="preserve">
     <value>Боёв по нациям</value>
@@ -3377,5 +3377,14 @@
   </data>
   <data name="BattleType_assault2" xml:space="preserve">
     <value>Штурм</value>
+  </data>
+    <data name="ReplaysFilterGroupHeader_Maps" xml:space="preserve">
+    <value>Карты</value>
+  </data>
+    <data name="ReplaysFilterGroupHeader_Tanks" xml:space="preserve">
+    <value>Танки</value>
+  </data>
+    <data name="ReplaysFilterGroupHeader_Other" xml:space="preserve">
+    <value>Другое</value>
   </data>
 </root>

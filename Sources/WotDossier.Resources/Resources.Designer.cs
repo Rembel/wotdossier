@@ -3119,7 +3119,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Respawn.
+        ///   Looks up a localized string similar to Spawn.
         /// </summary>
         public static string Column_Respawn {
             get {
@@ -6481,6 +6481,33 @@ namespace WotDossier.Resources {
         public static string ReplaysFilter_Result {
             get {
                 return ResourceManager.GetString("ReplaysFilter_Result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maps.
+        /// </summary>
+        public static string ReplaysFilterGroupHeader_Maps {
+            get {
+                return ResourceManager.GetString("ReplaysFilterGroupHeader_Maps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string ReplaysFilterGroupHeader_Other {
+            get {
+                return ResourceManager.GetString("ReplaysFilterGroupHeader_Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tanks.
+        /// </summary>
+        public static string ReplaysFilterGroupHeader_Tanks {
+            get {
+                return ResourceManager.GetString("ReplaysFilterGroupHeader_Tanks", resourceCulture);
             }
         }
         

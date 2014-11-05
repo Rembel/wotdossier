@@ -559,6 +559,11 @@ namespace WotDossier.Dal
                 medal.Name = node.Attributes["name"].Value;
                 medal.Icon = node.Attributes["icon"].Value;
                 medal.Type = int.Parse(node.Attributes["type"].Value);
+                var xmlAttribute = node.Attributes["showribbon"];
+                if (xmlAttribute != null)
+                {
+                    medal.ShowRibbon = bool.Parse(xmlAttribute.Value);
+                }
                 medals.Add(medal.Id, medal);
             }
 

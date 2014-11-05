@@ -38,6 +38,11 @@
         public int Type { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether need to show ribbon.
+        /// </summary>
+        public bool ShowRibbon { get; set; }
+
+        /// <summary>
         /// Equalses the specified other.
         /// </summary>
         /// <param name="other">The other.</param>

@@ -207,13 +207,13 @@
             <Image Stretch="Fill" HorizontalAlignment="Stretch" Height="225" Style="{StaticResource FinalStatisticPicWinStyle}" DataContext="{Binding Status}" />
             <Image Margin="0,123,0,0" Stretch="Fill" HorizontalAlignment="Stretch" Height="85" Style="{StaticResource FinalStatisticLineWinStyle}" DataContext="{Binding Status}" />
             <!--medals-->
-            <Grid Margin="0,123,0,0" Height="85">
+            <Grid Margin="0,127,0,0" Height="92">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <ListBox Background="Transparent" ItemsSource="{Binding AchievMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Right">
+                <ListBox Background="Transparent" ItemsSource="{Binding AchievMedals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Right" Height="92">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
@@ -221,11 +221,15 @@
                     </ItemsControl.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Image Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
-                                <Image.ToolTip>
-                                    <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
-                                </Image.ToolTip>
-                            </Image>
+                            <Grid Height="92">
+                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Visibility="{Binding ShowRibbon, Converter={x:Static converters:BoolToVisibilityConverter.Default}}"
+                                       Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/yellow_ribbon.png"></Image>
+                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                                    </Image.ToolTip>
+                                </Image>
+                            </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -240,7 +244,7 @@
                     <controls:TextWithImage Grid.Row="1" Text="{Binding TotalXp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
                                             Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon_Large.png" FontSize="30" Foreground="White" HorizontalAlignment="Right" />
                 </Grid>
-                <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0">
+                <ListBox Grid.Column="2" Background="Transparent" ItemsSource="{Binding BattleMedals}" BorderThickness="0" Padding="0" Margin="0" Height="92">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
@@ -248,11 +252,15 @@
                     </ItemsControl.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Image Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
-                                <Image.ToolTip>
-                                    <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
-                                </Image.ToolTip>
-                            </Image>
+                            <Grid Height="92">
+                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Visibility="{Binding ShowRibbon, Converter={x:Static converters:BoolToVisibilityConverter.Default}}"
+                                       Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/yellow_ribbon.png"></Image>
+                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                                    </Image.ToolTip>
+                                </Image>
+                            </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

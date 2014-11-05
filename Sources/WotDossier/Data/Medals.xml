@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Medals>
     <Epic>
-        <medal name="Medal_15x15_Orlik" id="50" icon="medalOrlik" type="0"/>
-        <medal name="Medal_15x15_Oskin" id="51" icon="medalOskin" type="0"/>
-        <medal name="Medal_15x15_Halonen" id="52" icon="medalHalonen" type="0"/>
-        <medal name="Medal_15x15_Burda" id="53" icon="medalBurda" type="0"/>
-        <medal name="Medal_15x15_Billotte" id="54" icon="medalBillotte" type="0"/>
-        <medal name="Medal_15x15_Kolobanov" id="55" icon="medalKolobanov" type="0"/>
-        <medal name="Medal_15x15_Fadin" id="56" icon="medalFadin" type="0"/>
-        <medal name="Medal_15x15_RadleyWalters" id="73" icon="medalRadleyWalters" type="0"/>
-        <medal name="Medal_15x15_LafayettePool" id="74" icon="medalLafayettePool" type="0"/>
-        <medal name="Medal_15x15_Bruno" id="75" icon="medalBrunoPietro" type="0"/>
-        <medal name="Medal_15x15_Tarczay" id="76" icon="medalTarczay" type="0"/>
-        <medal name="Medal_15x15_Pascucci" id="77" icon="medalPascucci" type="0"/>
-        <medal name="Medal_15x15_Dumitru" id="78" icon="medalDumitru" type="0"/>
-        <medal name="Medal_15x15_Lehvaslaiho" id="106" icon="medalLehvaslaiho" type="0"/>
-        <medal name="Medal_15x15_Nikolas" id="107" icon="medalNikolas" type="0"/>
-        <medal name="Medal_15x15_HeroesOfRassenay" id="110" icon="medalHeroesOfRassenay" type="0"/>
-        <medal name="Medal_15x15_BrothersInArms" id="143" icon="medalBrothersInArms" type="0"/>
-        <medal name="Medal_15x15_CrucialContribution" id="144" icon="medalCrucialContribution" type="0"/>
-        <medal name="Medal_15x15_DeLanglade" id="145" icon="medalDeLanglade" type="0"/>
-        <medal name="Medal_15x15_TamadaYoshio" id="146" icon="medalTamadaYoshio" type="0"/>
+        <medal name="Medal_15x15_Orlik" id="50" icon="medalOrlik" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Oskin" id="51" icon="medalOskin" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Halonen" id="52" icon="medalHalonen" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Burda" id="53" icon="medalBurda" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Billotte" id="54" icon="medalBillotte" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Kolobanov" id="55" icon="medalKolobanov" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Fadin" id="56" icon="medalFadin" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_RadleyWalters" id="73" icon="medalRadleyWalters" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_LafayettePool" id="74" icon="medalLafayettePool" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Bruno" id="75" icon="medalBrunoPietro" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Tarczay" id="76" icon="medalTarczay" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Pascucci" id="77" icon="medalPascucci" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Dumitru" id="78" icon="medalDumitru" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Lehvaslaiho" id="106" icon="medalLehvaslaiho" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_Nikolas" id="107" icon="medalNikolas" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_HeroesOfRassenay" id="110" icon="medalHeroesOfRassenay" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_BrothersInArms" id="143" icon="medalBrothersInArms" type="0" />
+        <medal name="Medal_15x15_CrucialContribution" id="144" icon="medalCrucialContribution" type="0" />
+        <medal name="Medal_15x15_DeLanglade" id="145" icon="medalDeLanglade" type="0" showribbon="true"/>
+        <medal name="Medal_15x15_TamadaYoshio" id="146" icon="medalTamadaYoshio" type="0" showribbon="true"/>
         <!--Егерь-->
         <medal name="Medal_15x15_Huntsman" id="148" icon="huntsman" type="0"/>
     </Epic>
@@ -208,7 +208,7 @@
         <medal name="Achievement_MarkOfMastery" id="7901" icon="MarkOfMastery1" type="1"/>
         <medal name="Achievement_MarkOfMastery" id="7902" icon="MarkOfMastery2" type="1"/>
         <medal name="Achievement_MarkOfMastery" id="7903" icon="MarkOfMastery3" type="1"/>
-        <medal name="Achievement_MarkOfMastery" id="7904" icon="MarkOfMastery4" type="1"/>
+        <medal name="Achievement_MarkOfMastery" id="7904" icon="MarkOfMastery4" type="1" showribbon="true"/>
         <!--295-->
         <medal name="Achievement_MarksOnGun" id="29501" icon="MarksOnGun1" type="1"/>
         <medal name="Achievement_MarksOnGun" id="29502" icon="MarksOnGun2" type="1"/>

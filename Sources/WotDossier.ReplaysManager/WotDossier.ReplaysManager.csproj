@@ -101,6 +101,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml">
+      <Link>Controls\ReplaysFilterPanelNew.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Controls\TextWithImage.xaml">
       <Link>Controls\TextWithImage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -466,6 +471,9 @@
       <Link>Controls\ReplaysFilterPanel.xaml.cs</Link>
       <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml.cs">
+      <Link>Controls\ReplaysFilterPanelNew.xaml.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Controls\TextWithImage.xaml.cs">
       <Link>Controls\TextWithImage.xaml.cs</Link>
       <DependentUpon>TextWithImage.xaml</DependentUpon>
@@ -735,6 +743,10 @@
     <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier\WotDossier.csproj">
+      <Project>{A4EF480B-49B6-42C4-8ACE-6127B15699F8}</Project>
+      <Name>WotDossier</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

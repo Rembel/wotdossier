@@ -40,7 +40,7 @@ namespace WotDossier.ReplaysManager
         protected override void OnStartup(StartupEventArgs e)
         {
             //Apply application UI theme
-            ThemesManager.ApplyTheme(DossierTheme.Black);
+            ThemesManager.ApplyTheme(SettingsReader.Get().Theme);
 
 #if !DEBUG
             // Don't handle the exceptions in Debug mode because otherwise the Debugger wouldn't

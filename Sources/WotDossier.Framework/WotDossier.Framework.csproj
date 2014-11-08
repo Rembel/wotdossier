@@ -90,10 +90,13 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\..\References\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
     <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
@@ -121,6 +124,9 @@
     <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
+    <Compile Include="Controls\DataGrid\ColumnChooserControl.xaml.cs">
+      <DependentUpon>ColumnChooserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DataGrid\ColumnInformation.cs" />
     <Compile Include="Controls\DataGrid\FooterDataGrid.cs" />
     <Compile Include="Controls\DataGrid\DataGridBehavior.cs" />
@@ -215,6 +221,10 @@
     <Resource Include="Forms\Images\OK.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\DataGrid\ColumnChooserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\ProgressDialog\ProgressControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

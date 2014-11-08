@@ -11,7 +11,7 @@ using WotDossier.Common.Collections;
 
 namespace WotDossier.Framework.Controls.DataGrid
 {
-    public class FooterDataGrid : System.Windows.Controls.DataGrid, INotifyPropertyChanged
+    public class FooterDataGrid : System.Windows.Controls.DataGrid, INotifyPropertyChanged, IDisposable
     {
         /// <summary>
         /// Occurs when a property value changes.
@@ -54,6 +54,15 @@ namespace WotDossier.Framework.Controls.DataGrid
         {
             get { return (ObservableCollection<ColumnInformation>)GetValue(ColumnInfoProperty); }
             set { SetValue(ColumnInfoProperty, value); }
+        }
+
+        public static readonly DependencyProperty HideColumnChooseProperty = DependencyProperty.Register(
+            "HideColumnChooser", typeof(Boolean), typeof(FooterDataGrid), new PropertyMetadata(true));
+
+        public Boolean HideColumnChooser
+        {
+            get { return (Boolean)GetValue(HideColumnChooseProperty); }
+            set { SetValue(HideColumnChooseProperty, value); }
         }
 
         #region Constructors
@@ -149,6 +158,11 @@ namespace WotDossier.Framework.Controls.DataGrid
                 return RowSummariesGrid.Columns.FirstOrDefault(column => column.SortMemberPath == sortMemberPath);
             }
             return null;
+        }
+
+        public void Dispose()
+        {
+            GetColumnInformation();
         }
     }
 }

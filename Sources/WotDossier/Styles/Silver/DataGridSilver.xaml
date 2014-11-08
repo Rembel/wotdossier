@@ -78,8 +78,17 @@
         </Setter>
     </Style>
 
+    <ContextMenu x:Key="DataGridHeaderColumnChooser" StaysOpen="True" HorizontalContentAlignment="Stretch" Width="Auto" HorizontalAlignment="Stretch">
+        <MenuItem StaysOpenOnClick="True" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Width="300">
+            <MenuItem.Header>
+                <local:ColumnChooserControl FontSize="{StaticResource DefaultFontSize}" FontFamily="{StaticResource DefaultFontFamily}"></local:ColumnChooserControl>
+            </MenuItem.Header>
+        </MenuItem>
+    </ContextMenu>
+
     <Style x:Key="ColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
         <EventSetter Event="SizeChanged" Handler="ColumnSizeChanged"/>
+        <Setter Property="ContextMenu" Value="{StaticResource DataGridHeaderColumnChooser}"/>
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="MinHeight" Value="24" />
         <Setter Property="BorderBrush" Value="#939497" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using WotDossier.Domain.Settings;
 
 namespace WotDossier.Domain
@@ -183,5 +184,7 @@ namespace WotDossier.Domain
         }
 
         public string ExternalDataVersion { get; set; }
+
+        public String ColumnInfo { get; set; }
     }
 }

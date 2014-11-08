@@ -21,6 +21,7 @@ using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
 using WotDossier.Framework;
+using WotDossier.Framework.Controls.DataGrid;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using WotDossier.Framework.Forms.ProgressDialog;
@@ -95,6 +96,7 @@ namespace WotDossier.Applications.ViewModel
         private Guid? _selectedFolderId = null;
         private bool _processing;
         private List<ReplayFile> _replaysSummary;
+        private ObservableCollection<ColumnInformation> _columnInfo;
 
         /// <summary>
         /// Gets or sets the replays folders.
@@ -109,6 +111,16 @@ namespace WotDossier.Applications.ViewModel
             {
                 _replaysFolders = value;
                 OnPropertyChanged("ReplaysFolders");
+            }
+        }
+
+        public ObservableCollection<ColumnInformation> ColumnInfo
+        {
+            get { return _columnInfo; }
+            set
+            {
+                _columnInfo = value;
+                OnPropertyChanged("ColumnInfo");
             }
         }
 
@@ -144,7 +156,25 @@ namespace WotDossier.Applications.ViewModel
             playerChartsViewModel.ReplaysDataSource = new CallbackDataSource<ReplayFile>(() => _replays);
             ChartView = playerChartsViewModel;
 
+            LoadListSettings();
+
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
+        }
+
+        private void LoadListSettings()
+        {
+            AppSettings appSettings = SettingsReader.Get();
+            if (!string.IsNullOrEmpty(appSettings.ColumnInfo))
+            {
+                try
+                {
+                    ColumnInfo = XmlSerializer.LoadObjectFromXml<ObservableCollection<ColumnInformation>>(appSettings.ColumnInfo);
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on grid configuration load", e);
+                }
+            }
         }
 
         private bool CanCopyFileNameToClipboard(ReplayFile replay)

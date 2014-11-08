@@ -5,7 +5,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
-using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -588,7 +587,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 members = Member.Split(',');
             }
 
-            List<ReplayFile> result = replays.Where(x =>
+            List<ReplayFile> result = replays.ToList().Where(x =>
                 x.Tank != null
                 &&
                 (SelectedVersion == Dictionaries.VersionAll || (SelectedVersion == Dictionaries.VersionTest && x.ClientVersion > Dictionaries.VersionRelease) || SelectedVersion == x.ClientVersion)

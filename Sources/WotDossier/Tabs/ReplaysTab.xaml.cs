@@ -4,8 +4,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using WotDossier.Applications;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Common;
+using WotDossier.Domain;
 using WotDossier.Framework.EventAggregator;
 
 namespace WotDossier.Tabs
@@ -22,6 +25,14 @@ namespace WotDossier.Tabs
         public ReplaysTab()
         {
             InitializeComponent();
+            Application.Current.Exit += CurrentOnExit;
+        }
+
+        private void CurrentOnExit(object sender, ExitEventArgs exitEventArgs)
+        {
+            AppSettings appSettings = SettingsReader.Get();
+            appSettings.ColumnInfo = dgReplays.GetColumnInformation();
+            SettingsReader.Save(appSettings);
         }
 
         private void OnGridPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

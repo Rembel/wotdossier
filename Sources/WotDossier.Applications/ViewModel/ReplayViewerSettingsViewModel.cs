@@ -21,7 +21,8 @@ namespace WotDossier.Applications.ViewModel
         private List<ListItem<Version>> _versions = new List<ListItem<Version>>
             {
                 new ListItem<Version>(Dictionaries.VersionAll, Resources.Resources.TankFilterPanel_Default), 
-                new ListItem<Version>(Dictionaries.VersionRelease, "0.9.3"),
+                new ListItem<Version>(Dictionaries.VersionRelease, "0.9.4"),
+                new ListItem<Version>(new Version("0.9.3.0"), "0.9.3"),
                 new ListItem<Version>(new Version("0.9.2.0"), "0.9.2"),
                 new ListItem<Version>(new Version("0.9.1.0"), "0.9.1"),
                 new ListItem<Version>(new Version("0.9.0.0"), "0.9.0"),

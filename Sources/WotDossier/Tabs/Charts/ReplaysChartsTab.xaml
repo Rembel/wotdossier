@@ -12,7 +12,7 @@
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
             <StackPanel Orientation="Horizontal">
-                <GroupBox Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" DataContext="{Binding ReplaysFilter}">
+                <GroupBox Margin="6" Header="{x:Static resources:Resources.Chart_Label_Settings}" VerticalAlignment="Center" DataContext="{Binding ReplaysFilter}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
@@ -27,9 +27,9 @@
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <RadioButton Margin="6" Grid.Row="0" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                        <RadioButton Margin="6" Grid.Row="1" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                        <RadioButton Margin="6" Grid.Row="2" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                        <RadioButton Margin="6" Grid.Row="0" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp_chart" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                        <RadioButton Margin="6" Grid.Row="1" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp_chart" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                        <RadioButton Margin="6" Grid.Row="2" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp_chart" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
                         <TextBlock Margin="6" Grid.Row="3" Text="С"/>
                         <DatePicker Margin="6" Grid.Row="4" Text="date" SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
                         <TextBlock Margin="6" Grid.Row="5" Text="по"/>
@@ -95,6 +95,21 @@
                         <d3:BarChart.Resources>
                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                         </d3:BarChart.Resources>
+                        <!--<d3:TemplateMarkerGenerator>
+                            <DataTemplate>
+                                <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static color:PercentToColorConverter.Default}}"
+                                                   d3:ViewportPanel.X="0"
+                                                   d3:ViewportPanel.Y="{Binding Y}"
+                                                   Width="400"
+                                                   d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                                    <ToolTipService.ToolTip>
+                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
+                                            <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
+                                        </ToolTip>
+                                    </ToolTipService.ToolTip>
+                                </Rectangle>
+                            </DataTemplate>
+                        </d3:TemplateMarkerGenerator>-->
                         <d3:TemplateMarkerGenerator>
                             <DataTemplate>
                                 <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static color:PercentToColorConverter.Default}}"

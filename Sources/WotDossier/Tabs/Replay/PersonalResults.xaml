@@ -16,15 +16,13 @@
         <Style TargetType="Image" x:Key="FragImageStyle">
             <!-- These setters are the same as your normal style when none of your triggers are true -->
             <Setter Property="Opacity" Value="1" />
+            <Setter Property="Source" Value="pack://application:,,,/WotDossier.Resources;component/Images/Replays/06s.png" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Path=Killed}" Value="0">
                     <Setter Property="Opacity" Value="0.25" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding Path=TeamMate}" Value="true">
                     <Setter Property="Source" Value="pack://application:,,,/WotDossier.Resources;component/Images/Replays/05s.png" />
-                </DataTrigger>
-                <DataTrigger Binding="{Binding Path=TeamMate}" Value="false">
-                    <Setter Property="Source" Value="pack://application:,,,/WotDossier.Resources;component/Images/Replays/06s.png" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -82,10 +80,10 @@
             <Grid HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="148"></ColumnDefinition>
-                    <ColumnDefinition Width="164"></ColumnDefinition>
+                    <ColumnDefinition Width="194"></ColumnDefinition>
                     <ColumnDefinition Width="28"></ColumnDefinition>
-                    <ColumnDefinition Width="38"></ColumnDefinition>
-                    <ColumnDefinition Width="38"></ColumnDefinition>
+                    <ColumnDefinition Width="28"></ColumnDefinition>
+                    <ColumnDefinition Width="28"></ColumnDefinition>
                     <ColumnDefinition Width="28"></ColumnDefinition>
                     <ColumnDefinition Width="28"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
@@ -106,56 +104,15 @@
                 <Image Grid.Row="0" Grid.Column="1" Source="{Binding Path=TeamMember.TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" HorizontalAlignment="Left" />
                 <!--tank name-->
                 <TextBlock Margin="40,0,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Path=TeamMember.Tank}" Foreground="#5C5A4A" VerticalAlignment="Center" />
-                <!--frag-->
-                <Image Grid.Row="0" Grid.Column="2" Stretch="None" Style="{StaticResource FragImageStyle}" HorizontalAlignment="Left" />
-                <!--damage-->
-                <Image Grid.Row="0" Grid.Column="3" Stretch="None" Style="{StaticResource DamageImageStyle}" HorizontalAlignment="Left">
-                    <Image.ToolTip>
-                        <TextBlock Text="{Binding DamageDealtTooltip}"></TextBlock>
-                    </Image.ToolTip>
-                </Image>
-                <Border Margin="18,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="3" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Left">
-                    <TextBlock Text="{Binding Hits}" Foreground="#5C5A4A" FontSize="10">
-                        <TextBlock.ToolTip>
-                            <TextBlock Text="{Binding DamageDealtTooltip}"></TextBlock>
-                        </TextBlock.ToolTip>
-                    </TextBlock>
-                </Border>
-                <!--crits-->
-                <Image Grid.Row="0" Grid.Column="4" Stretch="None" Style="{StaticResource CritsImageStyle}" HorizontalAlignment="Left">
-                    <Image.ToolTip>
-                        <TextBlock Text="{Binding CritsTooltip}"></TextBlock>
-                    </Image.ToolTip>
-                </Image>
-                <Border Margin="18,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="4" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Left">
-                    <TextBlock Text="{Binding Crits}" Foreground="#5C5A4A" FontSize="10">
-                        <TextBlock.ToolTip>
-                            <TextBlock Text="{Binding CritsTooltip}"></TextBlock>
-                        </TextBlock.ToolTip>
-                    </TextBlock>
-                </Border>
-                <!--damage-->
-                <Image Grid.Row="0" Grid.Column="5" Stretch="None" Style="{StaticResource DamageAssistImageStyle}" HorizontalAlignment="Left">
-                    <Image.Resources>
-                        <system:Int32 x:Key="fixedValue">0</system:Int32>
-                    </Image.Resources>
-                    <Image.ToolTip>
-                        <TextBlock Text="{Binding DamageAssistedTooltip}"></TextBlock>
-                    </Image.ToolTip>
-                    <Image.Opacity>
-                        <MultiBinding Converter="{x:Static converters:MedalsCountToOpacityConverter.Default}">
-                            <Binding Path="DamageAssisted" />
-                            <Binding Source="{StaticResource fixedValue}" />
-                        </MultiBinding>
-                    </Image.Opacity>
-                </Image>
+
                 <!--spotted-->
-                <Image Grid.Row="0" Grid.Column="6" Stretch="None" Style="{StaticResource SpottedImageStyle}" HorizontalAlignment="Left">
+                <Image Grid.Row="0" Grid.Column="2" Stretch="None" Style="{StaticResource SpottedImageStyle}" HorizontalAlignment="Left">
                     <Image.Resources>
                         <system:Int32 x:Key="fixedValue">0</system:Int32>
                     </Image.Resources>
                     <Image.ToolTip>
-                        <TextBlock Text="{Binding SpottedTooltip}"></TextBlock>
+                        <TextBlock Text="{Binding Spotted, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_Detected}}"></TextBlock>
                     </Image.ToolTip>
                     <Image.Opacity>
                         <MultiBinding Converter="{x:Static converters:MedalsCountToOpacityConverter.Default}">
@@ -164,6 +121,80 @@
                         </MultiBinding>
                     </Image.Opacity>
                 </Image>
+                <!--assist damage-->
+                <Image Grid.Row="0" Grid.Column="3" Stretch="None" Style="{StaticResource DamageAssistImageStyle}" HorizontalAlignment="Left">
+                    <Image.Resources>
+                        <system:Int32 x:Key="fixedValue">0</system:Int32>
+                    </Image.Resources>
+                    <Image.ToolTip>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{Binding DamageAssisted, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_DamageAssisted}}"></TextBlock>
+                            <TextBlock Grid.Row="1" Text="{Binding DamageAssistedTrack, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_DamageAssistedTrack}}"></TextBlock>
+                            <TextBlock Grid.Row="2" Text="{Binding DamageAssistedRadio, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_DamageAssistedRadio}}"></TextBlock>
+                        </Grid>
+                    </Image.ToolTip>
+                    <Image.Opacity>
+                        <MultiBinding Converter="{x:Static converters:MedalsCountToOpacityConverter.Default}">
+                            <Binding Path="DamageAssisted" />
+                            <Binding Source="{StaticResource fixedValue}" />
+                        </MultiBinding>
+                    </Image.Opacity>
+                </Image>
+                <!--crits-->
+                <Image Grid.Row="0" Grid.Column="4" Stretch="None" Style="{StaticResource CritsImageStyle}" HorizontalAlignment="Left">
+                    <Image.ToolTip>
+                        <TextBlock Text="{Binding Crits, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_CriticalDamage}}"></TextBlock>
+                    </Image.ToolTip>
+                </Image>
+                <Border Margin="0,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="4" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Right"
+                        Visibility="{Binding Crits, Converter={x:Static converters:IntToVisibilityConverter.Default}}">
+                    <TextBlock Text="{Binding Crits}" Foreground="#5C5A4A" FontSize="10">
+                        <TextBlock.ToolTip>
+                            <TextBlock Text="{Binding Crits, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_CriticalDamage}}"></TextBlock>
+                        </TextBlock.ToolTip>
+                    </TextBlock>
+                </Border>
+                <!--damage-->
+                <Image Grid.Row="0" Grid.Column="5" Stretch="None" Style="{StaticResource DamageImageStyle}" HorizontalAlignment="Left">
+                    <Image.ToolTip>
+                        <TextBlock Text="{Binding DamageDealt, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_Damage}}"></TextBlock>
+                    </Image.ToolTip>
+                </Image>
+                <Border Margin="0,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="5" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Right"
+                        Visibility="{Binding Hits, Converter={x:Static converters:IntToVisibilityConverter.Default}}">
+                    <TextBlock Text="{Binding Hits}" Foreground="#5C5A4A" FontSize="10">
+                        <TextBlock.ToolTip>
+                            <TextBlock Text="{Binding DamageDealt, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                                       ConverterParameter={x:Static resources:Resources.Tooltip_Replay_Damage}}"></TextBlock>
+                        </TextBlock.ToolTip>
+                    </TextBlock>
+                </Border>
+                <!--frag-->
+                <Image Grid.Row="0" Grid.Column="6" Stretch="None" Style="{StaticResource FragImageStyle}" HorizontalAlignment="Left">
+                    <Image.ToolTip>
+                        <TextBlock Text="{Binding Killed}"></TextBlock>
+                    </Image.ToolTip>
+                </Image>
+                <Border Margin="0,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="6" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Right"
+                        Visibility="{Binding Killed, Converter={x:Static converters:IntToVisibilityConverter.Default}}">
+                    <TextBlock Text="{Binding Killed}" Foreground="#5C5A4A" FontSize="10">
+                        <TextBlock.ToolTip>
+                            <TextBlock Text="{Binding Killed}"></TextBlock>
+                        </TextBlock.ToolTip>
+                    </TextBlock>
+                </Border>
+                
                 <!--separator-->
                 <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Height="2px" Width="Auto" HorizontalAlignment="Stretch" Stretch="Fill" Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/table_border_gradient.png" ></Image>
             </Grid>
@@ -281,6 +312,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding MapDescription.MapName}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
             <TextBlock Grid.Column="1" Text="{x:Static resources:Resources.Label_Replay_BattleEfficiency}" FontSize="17" Margin="13,0,0,0" VerticalAlignment="Center" Foreground="#BCBDBE"></TextBlock>
+            <ContentControl Margin="0,0,28,0" Content="{Binding}" Grid.Column="1" HorizontalAlignment="Right" ContentTemplate="{StaticResource CombatEffectRowTemplate}" />
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

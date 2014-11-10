@@ -76,9 +76,13 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public int DamageAssisted { get; set; }
 
+        public int DamageAssistedTrack { get; set; }
+        
+        public int DamageAssistedRadio { get; set; }
+
         public int Spotted { get; set; }
 
-        public int Kills { get; set; }
+        public int Killed { get; set; }
 
         public int Damaged { get; set; }
 
@@ -91,6 +95,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int Pierced { get; set; }
 
         public int Hits { get; set; }
+
+        public int Crits { get; set; }
 
         public int Shots { get; set; }
 
@@ -349,15 +355,20 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 Shots = replay.datablock_battle_result.personal.shots;
                 Hits = replay.datablock_battle_result.personal.hits;
+                Crits = CombatEffects.Sum(x => x.Crits);
                 HEHits = replay.datablock_battle_result.personal.he_hits;
                 Pierced = replay.datablock_battle_result.personal.pierced;
                 DamageDealt = replay.datablock_battle_result.personal.damageDealt;
                 ShotsReceived = replay.datablock_battle_result.personal.shotsReceived;
                 TDamage = string.Format("{0}/{1}", replay.datablock_battle_result.personal.tkills, replay.datablock_battle_result.personal.tdamageDealt);
                 Damaged = replay.datablock_battle_result.personal.damaged;
-                Kills = replay.datablock_battle_result.personal.kills;
+                Killed = replay.datablock_battle_result.personal.kills;
                 Spotted = replay.datablock_battle_result.personal.spotted;
                 DamageAssisted = replay.datablock_battle_result.personal.damageAssisted;
+                DamageAssistedTrack = replay.datablock_battle_result.personal.damageAssistedTrack;
+                DamageAssistedRadio = replay.datablock_battle_result.personal.damageAssistedRadio == 0
+                    ? replay.datablock_battle_result.personal.damageAssisted - replay.datablock_battle_result.personal.damageAssistedTrack 
+                    : replay.datablock_battle_result.personal.damageAssistedRadio;
                 CapturePoints = replay.datablock_battle_result.personal.capturePoints;
                 DroppedCapturePoints = replay.datablock_battle_result.personal.droppedCapturePoints;
                 PotentialDamageReceived = replay.datablock_battle_result.personal.potentialDamageReceived;

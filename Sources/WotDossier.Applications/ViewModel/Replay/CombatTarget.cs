@@ -12,15 +12,13 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public int Crits { get; set; }
 
-        public string CritsTooltip { get; set; }
-
         public int DamageAssisted { get; set; }
 
-        public string DamageAssistedTooltip { get; set; }
+        public int DamageAssistedTrack { get; set; }
+        
+        public int DamageAssistedRadio { get; set; }
 
         public int DamageDealt { get; set; }
-
-        public string DamageDealtTooltip { get; set; }
 
         public int Fire { get; set; }
 
@@ -34,8 +32,6 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public int Spotted { get; set; }
 
-        public string SpottedTooltip { get; set; }
-
         public bool TeamMate { get; set; }
 
         public CombatTarget(KeyValuePair<long, DamagedVehicle> vehicleDamage, TeamMember teamMember, Version version)
@@ -43,18 +39,16 @@ namespace WotDossier.Applications.ViewModel.Replay
             TeamMember = teamMember;
 
             Crits = GetCritsCount(vehicleDamage.Value, version);
-            CritsTooltip = string.Format(Resources.Resources.Tooltip_Replay_CriticalDamage, Crits);
             DamageAssisted = vehicleDamage.Value.damageAssisted;
-            DamageAssistedTooltip = string.Format(Resources.Resources.Tooltip_Replay_AlliesDamage, DamageAssisted);
+            DamageAssistedTrack = vehicleDamage.Value.damageAssistedTrack;
+            DamageAssistedRadio = vehicleDamage.Value.damageAssistedRadio;
             DamageDealt = vehicleDamage.Value.damageDealt;
-            DamageDealtTooltip = string.Format(Resources.Resources.Tooltip_Replay_Damage, DamageDealt);
             Fire = vehicleDamage.Value.fire;
             HeHits = vehicleDamage.Value.he_hits;
             Hits = vehicleDamage.Value.hits;
             Killed = vehicleDamage.Value.killed;
             Pierced = vehicleDamage.Value.pierced;
             Spotted = vehicleDamage.Value.spotted;
-            SpottedTooltip = Spotted > 0 ? Resources.Resources.Tooltip_Replay_Detected : string.Empty;
             TeamMate = teamMember.TeamMate;
         }
 

@@ -1975,7 +1975,7 @@ Date: {2:dd.MM.yyyy}</value>
   <data name="TankFilterPanel_All1" xml:space="preserve">
     <value>All</value>
   </data>
-  <data name="Tooltip_Replay_AlliesDamage" xml:space="preserve">
+  <data name="Tooltip_Replay_DamageAssisted" xml:space="preserve">
     <value>Damage by allies to enemy vehicle you detected: {0}</value>
   </data>
   <data name="Tooltip_Replay_CriticalDamage" xml:space="preserve">
@@ -3289,13 +3289,19 @@ up to 500 m</value>
   <data name="BattleType_assault2" xml:space="preserve">
     <value>Assault</value>
   </data>
-    <data name="ReplaysFilterGroupHeader_Maps" xml:space="preserve">
+  <data name="ReplaysFilterGroupHeader_Maps" xml:space="preserve">
     <value>Maps</value>
   </data>
-    <data name="ReplaysFilterGroupHeader_Tanks" xml:space="preserve">
+  <data name="ReplaysFilterGroupHeader_Tanks" xml:space="preserve">
     <value>Tanks</value>
   </data>
-    <data name="ReplaysFilterGroupHeader_Other" xml:space="preserve">
+  <data name="ReplaysFilterGroupHeader_Other" xml:space="preserve">
     <value>Other</value>
+  </data>
+  <data name="Tooltip_Replay_DamageAssistedRadio" xml:space="preserve">
+    <value>- radio: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_DamageAssistedTrack" xml:space="preserve">
+    <value>- tracks: {0}</value>
   </data>
 </root>

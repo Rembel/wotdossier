@@ -8553,15 +8553,6 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Damage by allies to enemy vehicle you detected: {0}.
-        /// </summary>
-        public static string Tooltip_Replay_AlliesDamage {
-            get {
-                return ResourceManager.GetString("Tooltip_Replay_AlliesDamage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Critical damage to enemy vehicle: {0}.
         /// </summary>
         public static string Tooltip_Replay_CriticalDamage {
@@ -8576,6 +8567,33 @@ namespace WotDossier.Resources {
         public static string Tooltip_Replay_Damage {
             get {
                 return ResourceManager.GetString("Tooltip_Replay_Damage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage by allies to enemy vehicle you detected: {0}.
+        /// </summary>
+        public static string Tooltip_Replay_DamageAssisted {
+            get {
+                return ResourceManager.GetString("Tooltip_Replay_DamageAssisted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - radio: {0}.
+        /// </summary>
+        public static string Tooltip_Replay_DamageAssistedRadio {
+            get {
+                return ResourceManager.GetString("Tooltip_Replay_DamageAssistedRadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - tracks: {0}.
+        /// </summary>
+        public static string Tooltip_Replay_DamageAssistedTrack {
+            get {
+                return ResourceManager.GetString("Tooltip_Replay_DamageAssistedTrack", resourceCulture);
             }
         }
         

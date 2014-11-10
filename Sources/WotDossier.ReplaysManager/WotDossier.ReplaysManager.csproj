@@ -568,6 +568,9 @@
     <Compile Include="..\WotDossier\Converters\ObjectToVisibilityConverter.cs">
       <Link>Converters\ObjectToVisibilityConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\ResourceFormatConverter.cs">
+      <Link>Converters\ResourceFormatConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\ResxTextConverter.cs">
       <Link>Converters\ResxTextConverter.cs</Link>
     </Compile>

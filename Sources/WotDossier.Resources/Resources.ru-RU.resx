@@ -1989,7 +1989,7 @@
   <data name="TankFilterPanel_All1" xml:space="preserve">
     <value>Все</value>
   </data>
-  <data name="Tooltip_Replay_AlliesDamage" xml:space="preserve">
+  <data name="Tooltip_Replay_DamageAssisted" xml:space="preserve">
     <value>По вашим разведданным союзники нанесли очков урона: {0}</value>
   </data>
   <data name="Tooltip_Replay_CriticalDamage" xml:space="preserve">
@@ -3378,13 +3378,19 @@
   <data name="BattleType_assault2" xml:space="preserve">
     <value>Штурм</value>
   </data>
-    <data name="ReplaysFilterGroupHeader_Maps" xml:space="preserve">
+  <data name="ReplaysFilterGroupHeader_Maps" xml:space="preserve">
     <value>Карты</value>
   </data>
-    <data name="ReplaysFilterGroupHeader_Tanks" xml:space="preserve">
+  <data name="ReplaysFilterGroupHeader_Tanks" xml:space="preserve">
     <value>Танки</value>
   </data>
-    <data name="ReplaysFilterGroupHeader_Other" xml:space="preserve">
+  <data name="ReplaysFilterGroupHeader_Other" xml:space="preserve">
     <value>Другое</value>
+  </data>
+  <data name="Tooltip_Replay_DamageAssistedRadio" xml:space="preserve">
+    <value>- радио: {0}</value>
+  </data>
+  <data name="Tooltip_Replay_DamageAssistedTrack" xml:space="preserve">
+    <value>- гусеницы: {0}</value>
   </data>
 </root>

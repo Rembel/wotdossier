@@ -76,6 +76,18 @@
                             </DataTemplate>
                         </d3:TemplateMarkerGenerator>
                     </d3:BarChart>
+                    <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
+                        <d3:TemplateMarkerGenerator>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding X, StringFormat='N0'}" FontSize="10" FontWeight="Bold"
+                                           d3:ViewportPanel.X="0"
+                                           Margin="3,0,0,0"
+                                           d3:ViewportPanel.Y="{Binding Y}"
+                                           d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                                </TextBlock>
+                            </DataTemplate>
+                        </d3:TemplateMarkerGenerator>
+                    </d3:BarChart>
                 </controls:ChartPlotter>
                 <controls:ChartPlotter x:Name="BattlesWinPercentByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400"
                                                      MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent"
@@ -95,21 +107,6 @@
                         <d3:BarChart.Resources>
                             <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
                         </d3:BarChart.Resources>
-                        <!--<d3:TemplateMarkerGenerator>
-                            <DataTemplate>
-                                <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static color:PercentToColorConverter.Default}}"
-                                                   d3:ViewportPanel.X="0"
-                                                   d3:ViewportPanel.Y="{Binding Y}"
-                                                   Width="400"
-                                                   d3:ViewportPanel.ViewportHorizontalAlignment="Left">
-                                    <ToolTipService.ToolTip>
-                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                            <TextBlock Text="{Binding X, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                        </ToolTip>
-                                    </ToolTipService.ToolTip>
-                                </Rectangle>
-                            </DataTemplate>
-                        </d3:TemplateMarkerGenerator>-->
                         <d3:TemplateMarkerGenerator>
                             <DataTemplate>
                                 <Rectangle Height="10" Fill="{Binding Path=X, Converter={x:Static color:PercentToColorConverter.Default}}"
@@ -123,6 +120,18 @@
                                         </ToolTip>
                                     </ToolTipService.ToolTip>
                                 </Rectangle>
+                            </DataTemplate>
+                        </d3:TemplateMarkerGenerator>
+                    </d3:BarChart>
+                    <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
+                        <d3:TemplateMarkerGenerator>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding X, StringFormat='\{0:0.0} %'}" FontSize="10"
+                                           d3:ViewportPanel.X="0"
+                                           Margin="3,0,0,0"
+                                           d3:ViewportPanel.Y="{Binding Y}"
+                                           d3:ViewportPanel.ViewportHorizontalAlignment="Left">
+                                </TextBlock>
                             </DataTemplate>
                         </d3:TemplateMarkerGenerator>
                     </d3:BarChart>

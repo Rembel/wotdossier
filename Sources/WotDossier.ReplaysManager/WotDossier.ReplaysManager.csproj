@@ -712,6 +712,34 @@
       <Link>External\optional_devices.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\WotDossier\External\shells\china_shells.json">
+      <Link>External\shells\china_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\france_shells.json">
+      <Link>External\shells\france_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\germany_shells.json">
+      <Link>External\shells\germany_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\japan_shells.json">
+      <Link>External\shells\japan_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\uk_shells.json">
+      <Link>External\shells\uk_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\usa_shells.json">
+      <Link>External\shells\usa_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\shells\ussr_shells.json">
+      <Link>External\shells\ussr_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -743,10 +771,6 @@
     <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WotDossier\WotDossier.csproj">
-      <Project>{A4EF480B-49B6-42C4-8ACE-6127B15699F8}</Project>
-      <Name>WotDossier</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

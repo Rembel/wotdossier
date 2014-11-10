@@ -379,32 +379,32 @@ namespace WotDossier.Test
             uploader.Update(cacheFile, id);
         }
 
-        [Test]
-        public void ComparerTest()
-        {
-            List<SortDescription> sortDescriptions = new List<SortDescription>();
-            sortDescriptions.Add(new SortDescription("PiercedReceived", ListSortDirection.Ascending));
-            sortDescriptions.Add(new SortDescription("BattlesCount", ListSortDirection.Ascending));
+        //[Test]
+        //public void ComparerTest()
+        //{
+        //    List<SortDescription> sortDescriptions = new List<SortDescription>();
+        //    sortDescriptions.Add(new SortDescription("PiercedReceived", ListSortDirection.Ascending));
+        //    sortDescriptions.Add(new SortDescription("BattlesCount", ListSortDirection.Ascending));
 
-            MultiPropertyComparer<ITankStatisticRow> comparer = new MultiPropertyComparer<ITankStatisticRow>(sortDescriptions);
+        //    MultiPropertyComparer<ITankStatisticRow> comparer = new MultiPropertyComparer<ITankStatisticRow>(sortDescriptions);
 
-            List<ITankStatisticRow> list = new List<ITankStatisticRow>();
-            list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 10});
-            list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 12});
-            list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 11});
+        //    List<ITankStatisticRow> list = new List<ITankStatisticRow>();
+        //    list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 10});
+        //    list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 12});
+        //    list.Add(new RandomBattlesTankStatisticRowViewModel(TankJson.Initial){PiercedReceived = 1, BattlesCount = 11});
 
-            foreach (var tankStatisticRow in list)
-            {
-                Console.WriteLine("PiercedReceived [{0}] - BattlesCount [{1}]", tankStatisticRow.PiercedReceived, tankStatisticRow.BattlesCount);
-            }
+        //    foreach (var tankStatisticRow in list)
+        //    {
+        //        Console.WriteLine("PiercedReceived [{0}] - BattlesCount [{1}]", tankStatisticRow.PiercedReceived, tankStatisticRow.BattlesCount);
+        //    }
 
-            list.Sort(comparer);
+        //    list.Sort(comparer);
 
-            foreach (var tankStatisticRow in list)
-            {
-                Console.WriteLine("PiercedReceived [{0}] - BattlesCount [{1}]", tankStatisticRow.PiercedReceived, tankStatisticRow.BattlesCount);
-            }
-        }
+        //    foreach (var tankStatisticRow in list)
+        //    {
+        //        Console.WriteLine("PiercedReceived [{0}] - BattlesCount [{1}]", tankStatisticRow.PiercedReceived, tankStatisticRow.BattlesCount);
+        //    }
+        //}
 
         [Test]
         public void DynamicTest()

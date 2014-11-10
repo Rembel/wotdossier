@@ -366,9 +366,10 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// </summary>
         public void InitBattlesByMapChart()
         {
-            List<DataPoint> dataSource = ReplaysDataSource.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
+            var replaysDataSource = ReplaysDataSource.Distinct(new ReplaysComparer());
+            List<DataPoint> dataSource = replaysDataSource.GroupBy(x => x.MapId).Select(x => new DataPoint(x.Count(), x.Key)).ToList();
 
-            var totalReplaysCount = ReplaysDataSource.Count();
+            var totalReplaysCount = replaysDataSource.Count();
 
             TotalReplaysCount = string.Format(Resources.Resources.Chart_Replays_Total_Count, totalReplaysCount);
 
@@ -386,15 +387,16 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// </summary>
         public void InitWinReplaysPercentByMapChart()
         {
-            List<DataPoint> dataSource = ReplaysDataSource.GroupBy(x => x.MapId).Select(
+            var replaysDataSource = ReplaysDataSource.Distinct(new ReplaysComparer());
+            List<DataPoint> dataSource = replaysDataSource.GroupBy(x => x.MapId).Select(
                 x => new DataPoint(
                     100 * x.Sum(y => (y.IsWinner == BattleStatus.Victory ? 1.0 : 0.0)) / x.Count(), x.Key)).ToList();
 
-            var count = ReplaysDataSource.Count();
+            var count = replaysDataSource.Count();
             double totalWinPercent = 0;
             if (count > 0)
             {
-                totalWinPercent = ReplaysDataSource.Count(y => y.IsWinner == BattleStatus.Victory)*100.0/count;
+                totalWinPercent = replaysDataSource.Count(y => y.IsWinner == BattleStatus.Victory)*100.0/count;
             }
             TotalWinPercent = string.Format(Resources.Resources.Chart_Replays_Total_Win_Percent, totalWinPercent);
 
@@ -568,6 +570,19 @@ namespace WotDossier.Applications.ViewModel.Chart
                 MaxBattlesByCountry = max * 1.2;
                 BattlesByCountryDataSource = dataSource;
             }
+        }
+    }
+
+    public class ReplaysComparer : IEqualityComparer<ReplayFile>
+    {
+        public bool Equals(ReplayFile x, ReplayFile y)
+        {
+            return x.ReplayId == y.ReplayId;
+        }
+
+        public int GetHashCode(ReplayFile replayFile)
+        {
+            return replayFile.ReplayId.GetHashCode();
         }
     }
 }

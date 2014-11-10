@@ -5,13 +5,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using WotDossier.Common;
-using WotDossier.Common.Collections;
 
 namespace WotDossier.Framework.Controls.DataGrid
 {
-    public class FooterDataGrid : System.Windows.Controls.DataGrid, INotifyPropertyChanged, IDisposable
+    public class FooterDataGrid : System.Windows.Controls.DataGrid, INotifyPropertyChanged
     {
         /// <summary>
         /// Occurs when a property value changes.
@@ -43,7 +41,7 @@ namespace WotDossier.Framework.Controls.DataGrid
             set { SetValue(FooterItemsSourceProperty, value); }
         }
 
-        private bool updatingColumnInfo = false;
+        private bool _updatingColumnInfo;
         
         public static readonly DependencyProperty ColumnInfoProperty = DependencyProperty.Register("ColumnInfo",
                 typeof(ObservableCollection<ColumnInformation>), typeof(FooterDataGrid),
@@ -73,12 +71,17 @@ namespace WotDossier.Framework.Controls.DataGrid
             DefaultStyleKeyProperty.OverrideMetadata(ownerType, new FrameworkPropertyMetadata(ownerType));
         }
 
+        public FooterDataGrid()
+        {
+            Sorting += (s, e) => e.Column.SortDirection = e.Column.SortDirection ?? ListSortDirection.Ascending;
+        }
+
         #endregion
 
         private static void ColumnInfoChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
         {
             var grid = (FooterDataGrid)dependencyObject;
-            if (!grid.updatingColumnInfo) { grid.ColumnInfoChanged(); }
+            if (!grid._updatingColumnInfo) { grid.ColumnInfoChanged(); }
         }
 
         private void ColumnInfoChanged()
@@ -100,9 +103,9 @@ namespace WotDossier.Framework.Controls.DataGrid
 
         private void UpdateColumnInfo()
         {
-            updatingColumnInfo = true;
-            ColumnInfo = new ObservableCollection<ColumnInformation>(Columns.Select((x) => new ColumnInformation(x)));
-            updatingColumnInfo = false;
+            _updatingColumnInfo = true;
+            ColumnInfo = new ObservableCollection<ColumnInformation>(Columns.Select(x => new ColumnInformation(x)));
+            _updatingColumnInfo = false;
         }
 
         public bool SetColumnInformation(string xmlOfColumnInformation)
@@ -116,31 +119,6 @@ namespace WotDossier.Framework.Controls.DataGrid
                 return false;
             }
             return true;
-        }
-
-        /// <summary>
-        /// Raises the <see cref="E:Sorting" /> event.
-        /// </summary>
-        /// <param name="e">The <see cref="DataGridSortingEventArgs" /> instance containing the event data.</param>
-        protected override void OnSorting(DataGridSortingEventArgs e)
-        {
-            var lastRowList = ItemsSource as IFooterList;
-            if (lastRowList == null)
-            {
-                base.OnSorting(e);
-                return;
-            }
-
-            var column = e.Column;
-            e.Handled = true;
-
-            var direction = (column.SortDirection != ListSortDirection.Descending)
-                                ? ListSortDirection.Descending
-                                : ListSortDirection.Ascending;
-            column.SortDirection = direction;
-            lastRowList.SortButFirstRows(1, e.Column.SortMemberPath, direction, (Keyboard.Modifiers & ModifierKeys.Shift) != ModifierKeys.Shift);
-
-            Items.Refresh();
         }
 
         protected void NotifyPropertyChanged(String info)
@@ -158,11 +136,6 @@ namespace WotDossier.Framework.Controls.DataGrid
                 return RowSummariesGrid.Columns.FirstOrDefault(column => column.SortMemberPath == sortMemberPath);
             }
             return null;
-        }
-
-        public void Dispose()
-        {
-            GetColumnInformation();
         }
     }
 }

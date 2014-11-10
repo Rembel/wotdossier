@@ -21,7 +21,7 @@ using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Selectors;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
-using WotDossier.Common.Collections;
+//using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;

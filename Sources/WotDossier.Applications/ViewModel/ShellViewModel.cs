@@ -21,7 +21,6 @@ using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Selectors;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
-//using WotDossier.Common.Collections;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -310,10 +309,7 @@ namespace WotDossier.Applications.ViewModel
                     {
                         lock (_syncObject)
                         {
-                            if (CanLoad())
-                            {
-                                OnLoad();
-                            }
+                            OnLoad();
                         }
                     };
 
@@ -321,11 +317,6 @@ namespace WotDossier.Applications.ViewModel
                     watcher.EnableRaisingEvents = true;
                 }
             }
-        }
-
-        private bool CanLoad()
-        {
-            return !LoadInProgress;
         }
 
         private void OnExportToCsv()
@@ -517,6 +508,11 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnLoad()
         {
+            if (LoadInProgress)
+            {
+                return;
+            }
+
             LoadInProgress = true;
 
             AppSettings settings = SettingsReader.Get();

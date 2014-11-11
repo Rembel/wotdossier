@@ -333,6 +333,7 @@
                                         <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" Grid.Row="1" Grid.ColumnSpan="2" CanContentScroll="{TemplateBinding CanContentScroll}" />
 
                                         <DataGrid Grid.Row="2" Grid.ColumnSpan="2" x:Name="rowSummariesGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                                                  AutoGenerateColumns="False"
                                                   BorderThickness="0,3,1,1" Loaded="RowSummariesGridLoaded" HeadersVisibility="Row" CanUserAddRows="False" CanUserDeleteRows="False" Height="40"
                                                   CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" IsReadOnly="True" RowHeight="40"
                                                     Width="{Binding RelativeSource={RelativeSource AncestorType=local:FooterDataGrid},Path=ActualWidth}" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:FooterDataGrid},Path=FooterItemsSource}">

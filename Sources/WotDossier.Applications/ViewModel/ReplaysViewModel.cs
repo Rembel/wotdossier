@@ -443,6 +443,8 @@ namespace WotDossier.Applications.ViewModel
                                 new DbReplay(CompressHelper.DecompressObject<Domain.Replay.Replay>(x.Raw),
                                     ReplaysManager.DeletedFolder.Id))
                         .ToList();
+
+                _replays.RemoveAll(x => x.FolderId == ReplaysManager.DeletedFolder.Id);
                 _replays.AddRange(collection);
 
                 //sort
@@ -463,12 +465,10 @@ namespace WotDossier.Applications.ViewModel
 
                 reporter.Report(100, Resources.Resources.Progress_DataLoadCompleted);
 
-                //refresh replays
-                OnPropertyChanged("Replays");
-
                 //restore folder selection
                 ReplayFilter.SelectedFolder =
-                    replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId || _selectedFolderId == null);
+                    replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId
+                        || ReplayFilter.SelectedFolder != null && x.Id == ReplayFilter.SelectedFolder.Id) ?? root;
 
                 ChartView.InitBattlesByMapChart();
                 ChartView.InitWinReplaysPercentByMapChart();

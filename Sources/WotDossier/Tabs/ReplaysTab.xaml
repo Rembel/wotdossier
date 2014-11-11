@@ -152,7 +152,7 @@
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
             </dataGrid:FooterDataGrid.InputBindings>
             <dataGrid:FooterDataGrid.Columns>
-                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Map}" SortMemberPath="MapName" Width="*" MinWidth="150">
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Map}" SortMemberPath="MapName">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>

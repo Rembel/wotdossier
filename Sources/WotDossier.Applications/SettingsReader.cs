@@ -30,6 +30,8 @@ namespace WotDossier.Applications
                     return XmlSerializer.LoadObjectFromXml<AppSettings>(readToEnd);
                 }
             }
+            
+            //create settings file if not exists
             AppSettings settingsDto = new AppSettings();
             Save(settingsDto);
             return settingsDto;

@@ -2,6 +2,8 @@
 {
     public enum DeathReason
     {
+        Unknown = -3,
+        Dead = -2,
         Alive = -1, 	            //Alive
         DestroyedByShot = 0, 	    //Destroyed by a shot
         DestroyedByFire = 1, 	    //Destroyed by fire

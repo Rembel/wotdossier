@@ -134,8 +134,8 @@
                     <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
                     <Setter Property="SnapsToDevicePixels" Value="true" />
                     <Setter Property="MinHeight" Value="22" />
-                    <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-                    <Setter Property="ToolTip" Value="{Binding Name}"></Setter>
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="ToolTip" Value="{Binding Name}" />
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter Property="Background" Value="#A7B0C9" />
@@ -159,8 +159,8 @@
                                 <TextBlock Margin="6" Text="{Binding Path=MapName}" HorizontalAlignment="Right" VerticalAlignment="Center">
                                     <ToolTipService.ToolTip>
                                         <Grid>
-                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" ></Image>
-                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" ></Image>
+                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" />
+                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />
                                         </Grid>
                                     </ToolTipService.ToolTip>
                                 </TextBlock>
@@ -182,35 +182,36 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <!--<DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tank}" Binding="{Binding TankName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>-->
-                <DataGridTextColumn Header="{x:Static resources:Resources.Settings_PlayerName}" Binding="{Binding PlayerName}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Credits}" Binding="{Binding Credits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_CreditsEarned}" Binding="{Binding CreditsEarned, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_DamageReceived}" Binding="{Binding DamageReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_BattleResult}" Binding="{Binding IsWinner, Converter={x:Static converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_XP}" Binding="{Binding Xp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Frags}" Binding="{Binding Killed}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Damaged}" Binding="{Binding Damaged}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_BattleDuration}" Width="100" Binding="{Binding BattleTime, StringFormat=mm\\:ss}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_LifeTime}" Width="100" Binding="{Binding LifeTime, StringFormat=mm\\:ss}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_IsAlive}" Width="100" Binding="{Binding IsAlive, Converter={x:Static converters:ValueToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Version}" Binding="{Binding ClientVersion}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Respawn}" Binding="{Binding Team}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Settings_PlayerName}" Binding="{Binding PlayerName}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Credits}" Binding="{Binding Credits, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_CreditsEarned}" Binding="{Binding CreditsEarned, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_DamageReceived}" Binding="{Binding DamageReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_BattleResult}" Binding="{Binding IsWinner, Converter={x:Static converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_XP}" Binding="{Binding Xp, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Frags}" Binding="{Binding Killed}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Replay_Damaged}" Binding="{Binding Damaged}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Time_PlayTime}" Binding="{Binding PlayTime, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_BattleDuration}" Width="100" Binding="{Binding BattleTime, StringFormat=mm\\:ss}" Visibility="Hidden" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_LifeTime}" Width="100" Binding="{Binding LifeTime, StringFormat=mm\\:ss}" Visibility="Hidden" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_IsAlive}" Binding="{Binding DeathReason, Converter={x:Static converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Label_ReplayDetail_FinishReason}" Binding="{Binding FinishReason, Converter={x:Static converters:EnumToTextConverter.Default}}" Visibility="Hidden" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Version}" Width="100" Binding="{Binding ClientVersion}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Respawn}" Binding="{Binding Team}" Visibility="Hidden" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Tab_Header_Medals}" SortMemberPath="MedalsCount">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ListBox Background="Transparent" ItemsSource="{Binding Medals}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Left">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"></StackPanel>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" />
                                     </ItemsPanelTemplate>
                                 </ItemsControl.ItemsPanel>
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <Image Margin="3" Width="27" Height="31" Stretch="Fill" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
                                             <Image.ToolTip>
-                                                <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                                                <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}" />
                                             </Image.ToolTip>
                                         </Image>
                                     </DataTemplate>
@@ -225,7 +226,7 @@
                         <DataTemplate>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0" Visibility="{Binding Link, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
                                 <Hyperlink CommandParameter="{Binding Link}" Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}">
-                                    <TextBlock Text="{x:Static resources:Resources.Column_Replay_Link}"></TextBlock>
+                                    <TextBlock Text="{x:Static resources:Resources.Column_Replay_Link}" />
                                 </Hyperlink>
                             </TextBlock>
                         </DataTemplate>

@@ -3393,4 +3393,10 @@
   <data name="Tooltip_Replay_DamageAssistedTrack" xml:space="preserve">
     <value>- гусеницы: {0}</value>
   </data>
+  <data name="DeathReason_Dead" xml:space="preserve">
+    <value>Не выжил</value>
+  </data>
+  <data name="Label_ReplayDetail_FinishReason" xml:space="preserve">
+    <value>Причина окончания боя</value>
+  </data>
 </root>

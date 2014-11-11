@@ -3304,4 +3304,10 @@ up to 500 m</value>
   <data name="Tooltip_Replay_DamageAssistedTrack" xml:space="preserve">
     <value>- tracks: {0}</value>
   </data>
+  <data name="DeathReason_Dead" xml:space="preserve">
+    <value>Dead</value>
+  </data>
+  <data name="Label_ReplayDetail_FinishReason" xml:space="preserve">
+    <value>Finish reason</value>
+  </data>
 </root>

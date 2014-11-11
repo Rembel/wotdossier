@@ -3956,6 +3956,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dead.
+        /// </summary>
+        public static string DeathReason_Dead {
+            get {
+                return ResourceManager.GetString("DeathReason_Dead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Destroyed by death zone.
         /// </summary>
         public static string DeathReason_DestroyedByDeathZone {
@@ -4510,6 +4519,15 @@ namespace WotDossier.Resources {
         public static string Label_ReplayDetail_DirectHits {
             get {
                 return ResourceManager.GetString("Label_ReplayDetail_DirectHits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finish reason.
+        /// </summary>
+        public static string Label_ReplayDetail_FinishReason {
+            get {
+                return ResourceManager.GetString("Label_ReplayDetail_FinishReason", resourceCulture);
             }
         }
         

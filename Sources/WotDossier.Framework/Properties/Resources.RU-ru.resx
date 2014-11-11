@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Chart_Replays_Total_Count" xml:space="preserve">
+    <value>Всего: {0:0}</value>
+  </data>
+  <data name="DataGrid_ColumnsChooser_Select_All" xml:space="preserve">
+    <value>(Выбрать все)</value>
+  </data>
   <data name="WPFMessageBox_Button_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Отмена</value>
   </data>
   <data name="WPFMessageBox_Button_Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Закрыть</value>
   </data>
   <data name="WPFMessageBox_Button_No" xml:space="preserve">
-    <value>No</value>
+    <value>Нет</value>
   </data>
   <data name="WPFMessageBox_Button_Ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="WPFMessageBox_Button_Yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>Да</value>
   </data>
   <data name="WPFMessageBox_Header" xml:space="preserve">
-    <value>Show Details</value>
-  </data>
-  <data name="Chart_Replays_Total_Count" xml:space="preserve">
-    <value>Total: {0:0}</value>
-  </data>
-  <data name="DataGrid_ColumnsChooser_Select_All" xml:space="preserve">
-    <value>(Select All)</value>
+    <value>Подробная информация</value>
   </data>
 </root>

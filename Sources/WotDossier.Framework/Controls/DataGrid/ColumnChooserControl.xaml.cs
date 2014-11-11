@@ -21,6 +21,7 @@ namespace WotDossier.Framework.Controls.DataGrid
         private int _checkedCount;
         private DataTable _columnChooserDataTable;
         private DataRow _draggedItem;
+        private readonly string _dataGridColumnsChooserSelectAll = Properties.Resources.DataGrid_ColumnsChooser_Select_All;
 
         #endregion
 
@@ -233,7 +234,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                         dt.Columns.Add("columnHeader");
                         dt.Columns.Add("columnField");
                         var row1 = dt.NewRow();
-                        row1["columnField"] = row1["columnHeader"] = "(Select All)";
+                        row1["columnField"] = row1["columnHeader"] = _dataGridColumnsChooserSelectAll;
                         row1["chkBox"] = false;
                         _checkedCount = 0;
                         var actualCount = 0;
@@ -258,11 +259,11 @@ namespace WotDossier.Framework.Controls.DataGrid
                             }
                         }
                         if (_checkedCount == actualCount)
-                            dt.AsEnumerable().First(r => Convert.ToString(r["columnHeader"]) == "(Select All)")["chkBox"
+                            dt.AsEnumerable().First(r => Convert.ToString(r["columnHeader"]) == _dataGridColumnsChooserSelectAll)["chkBox"
                                 ] = true;
                         else
                         {
-                            var row = dt.AsEnumerable().First(r => Convert.ToString(r["columnHeader"]) == "(Select All)");
+                            var row = dt.AsEnumerable().First(r => Convert.ToString(r["columnHeader"]) == _dataGridColumnsChooserSelectAll);
                             row["chkBox"
                                 ] = false;
                         }
@@ -333,7 +334,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                              .IsOpen)
                         return;
 
-                    if (filedName == "(Select All)")
+                    if (filedName == _dataGridColumnsChooserSelectAll)
                     {
                         foreach (var col in mainGrid.Columns)
                         {
@@ -342,7 +343,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                         Loading = true;
                         foreach (DataRow dataRow in ColumnChooserDataTable.Rows)
                         {
-                            if (Convert.ToString(dataRow["columnField"]) != "(Select All)")
+                            if (Convert.ToString(dataRow["columnField"]) != _dataGridColumnsChooserSelectAll)
                                 dataRow["chkBox"] = chkBox.IsChecked != null && chkBox.IsChecked.Value;
                         }
                         if (chkBox.IsChecked != null && chkBox.IsChecked.Value)
@@ -384,7 +385,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                             _checkedCount = count;
 
 
-                        ColumnChooserDataTable.AsEnumerable().First(r => r["columnField"].ToString() == "(Select All)")[
+                        ColumnChooserDataTable.AsEnumerable().First(r => r["columnField"].ToString() == _dataGridColumnsChooserSelectAll)[
                             "chkBox"] = _checkedCount == count;
                         Loading = false;
                     }
@@ -406,7 +407,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                     if (cell.IsEditing)
                         return;
                     var rowparentOwner = FindParent<DataGridRow>(cell);
-                    if (Convert.ToString(((DataRowView) (rowparentOwner.Item)).Row.ItemArray[2]) == "(Select All)")
+                    if (Convert.ToString(((DataRowView) (rowparentOwner.Item)).Row.ItemArray[2]) == _dataGridColumnsChooserSelectAll)
                         return;
                    
                     if (CellisBeingEdited)
@@ -525,7 +526,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                                                 c.DisplayIndex = pos;
                                                 pos++;
                                             });
-                        var previousVisiblePosition = previousColumnFieldName == "(Select All)"
+                        var previousVisiblePosition = previousColumnFieldName == _dataGridColumnsChooserSelectAll
                                                           ? 0
                                                           : MainGrid.Columns[
                                                               GetColumnIndex(MainGrid.Columns, previousColumnFieldName)
@@ -537,7 +538,7 @@ namespace WotDossier.Framework.Controls.DataGrid
 
                         columns.Clear();
                         columns.AddRange(columnCollection);
-                        if (previousColumnFieldName == "(Select All)")
+                        if (previousColumnFieldName == _dataGridColumnsChooserSelectAll)
                         {
                             columns.ForEach(c =>
                                                 {
@@ -598,7 +599,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                 var cell = sender as DataGridCell;
                 if (cell != null)
                 {
-                    if (Convert.ToString(cell.Content) == "(Select All)")
+                    if (Convert.ToString(cell.Content) == _dataGridColumnsChooserSelectAll)
                     {
                         e.Handled = true;
                         return;
@@ -607,7 +608,7 @@ namespace WotDossier.Framework.Controls.DataGrid
                     if (cell.Content is ContentPresenter)
                     {
                         if ((string) ((DataRowView) (((ContentPresenter) (cell.Content)).Content)).Row.ItemArray[1] ==
-                            "(Select All)")
+                            _dataGridColumnsChooserSelectAll)
                         {
                             return;
                         }

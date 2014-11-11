@@ -423,6 +423,61 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        private List<ListItem<DeathReason>> _deathReasons = new List<ListItem<DeathReason>>
+            {
+                new ListItem<DeathReason>(DeathReason.Unknown, string.Empty), 
+                new ListItem<DeathReason>(DeathReason.Alive, Resources.Resources.DeathReason_Alive), 
+                new ListItem<DeathReason>(DeathReason.Dead, Resources.Resources.DeathReason_Dead), 
+                new ListItem<DeathReason>(DeathReason.DestroyedByShot, " - " + Resources.Resources.DeathReason_DestroyedByShot), 
+                new ListItem<DeathReason>(DeathReason.DestroyedByFire, " - " + Resources.Resources.DeathReason_DestroyedByFire), 
+                new ListItem<DeathReason>(DeathReason.DestroyedByRamming, " - " + Resources.Resources.DeathReason_DestroyedByRamming), 
+                new ListItem<DeathReason>(DeathReason.VehicleDrowned, " - " + Resources.Resources.DeathReason_VehicleDrowned), 
+                new ListItem<DeathReason>(DeathReason.DestroyedByDeathZone, " - " + Resources.Resources.DeathReason_DestroyedByDeathZone), 
+            };
+
+        public List<ListItem<DeathReason>> DeathReasons
+        {
+            get { return _deathReasons; }
+            set { _deathReasons = value; }
+        }
+
+        private DeathReason _deathReason;
+        public DeathReason DeathReason
+        {
+            get { return _deathReason; }
+            set
+            {
+                _deathReason = value;
+                OnPropertyChanged("DeathReason");
+            }
+        }
+
+        private List<ListItem<FinishReason>> _finishReasons = new List<ListItem<FinishReason>>
+        {
+            new ListItem<FinishReason>(FinishReason.Unknown, string.Empty), 
+            new ListItem<FinishReason>(FinishReason.BaseCapture, Resources.Resources.FinishReason_BaseCapture),
+            new ListItem<FinishReason>(FinishReason.Extermination, Resources.Resources.FinishReason_Extermination),
+            new ListItem<FinishReason>(FinishReason.Timeout, Resources.Resources.FinishReason_Timeout),
+            new ListItem<FinishReason>(FinishReason.Technical, Resources.Resources.FinishReason_Technical),
+        };
+
+        public List<ListItem<FinishReason>> FinishReasons
+        {
+            get { return _finishReasons; }
+            set { _finishReasons = value; }
+        }
+
+        private FinishReason _finishReason;
+        public FinishReason FinishReason
+        {
+            get { return _finishReason; }
+            set
+            {
+                _finishReason = value;
+                OnPropertyChanged("FinishReason");
+            }
+        }
+
         private readonly List<ListItem<BattleType>> _battleTypes = new List<ListItem<BattleType>>
             {
                 new ListItem<BattleType>(BattleType.Unknown, Resources.Resources.TankFilterPanel_All), 
@@ -469,11 +524,6 @@ namespace WotDossier.Applications.ViewModel.Filter
         }
 
         private bool _resp1;
-        private bool _resp2;
-        private bool _allResps = true;
-        private DateTime? _startDate;
-        private DateTime? _endDate = DateTime.Now;
-        
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="ReplaysFilterViewModel" /> is resp1.
         /// </summary>
@@ -490,6 +540,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        private bool _resp2;
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="ReplaysFilterViewModel" /> is resp2.
         /// </summary>
@@ -506,6 +557,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        private bool _allResps = true;
         /// <summary>
         /// Gets or sets a value indicating whether [all resps].
         /// </summary>
@@ -522,6 +574,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        private DateTime? _startDate;
         /// <summary>
         /// Gets or sets the start date.
         /// </summary>
@@ -538,6 +591,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        private DateTime? _endDate = DateTime.Now;
         /// <summary>
         /// Gets or sets the end date.
         /// </summary>

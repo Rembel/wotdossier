@@ -8814,7 +8814,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}, {1}, battle level - {2}.
+        ///   Looks up a localized string similar to {0}, {1}, battle level - {2}, version - {3}.
         /// </summary>
         public static string WindowTitleFormat_Replay {
             get {

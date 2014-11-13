@@ -2194,7 +2194,7 @@
     <value>Загрузка данных завершена</value>
   </data>
   <data name="WindowTitleFormat_Replay" xml:space="preserve">
-    <value>{0}, {1}, уровень боя - {2}</value>
+    <value>{0}, {1}, уровень боя - {2}, версия - {3}</value>
   </data>
   <data name="Medal_7x7_FightingReconnaissanceMedal" xml:space="preserve">
     <value>Разведка боем</value>

@@ -283,11 +283,16 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 var tankDescription = Dictionaries.Instance.GetTankDescription(replay.datablock_battle_result.personal.typeCompDescr);
 
+                Tank = tankDescription.Title;
                 TankIcon = tankDescription.Icon;
                 
                 Date = replay.datablock_1.dateTime;
 
                 List<TeamMember> teamMembers = GetTeamMembers(replay, MapDescription.Team);
+
+                DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
+
+                Version clientVersion = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, playTime);
 
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
                 FirstTeam = teamMembers.Where(x => x.Team == MapDescription.Team).OrderByDescending(x => x.Xp).ToList();
@@ -302,7 +307,6 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 CombatEffects = GetCombatTargets(replay, teamMembers);
 
-                Tank = ReplayUser.Tank;
                 FullName = ReplayUser.FullName;
 
                 double premiumFactor = replay.datablock_battle_result.personal.premiumCreditsFactor10 / (double)10;
@@ -448,7 +452,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     ChatMessages = replay.datablock_advanced.Messages;
                 }
 
-                Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDescription.MapName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a");
+                Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDescription.MapName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a", clientVersion.ToString(3));
 
                 return true;
             }

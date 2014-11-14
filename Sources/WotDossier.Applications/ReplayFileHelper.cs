@@ -264,7 +264,12 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             using (var uncompressedReplayStream = new MemoryStream(uncompressed))
             {
                 BaseParser parser = GetParser(replay);
-                replay.datablock_advanced = parser.ReadReplayStream(uncompressedReplayStream);
+
+                replay.datablock_advanced = new AdvancedReplayData();
+
+                AdvancedReplayDataLoader loader = new AdvancedReplayDataLoader(replay.datablock_advanced);
+
+                parser.ReadReplayStream(uncompressedReplayStream, loader.Handle);
             }
             _log.Trace("End read advanced data");
         }
@@ -412,7 +417,68 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             return 0;
         }
     }
-    
+
+    internal class AdvancedReplayDataLoader
+    {
+        private AdvancedReplayData _data;
+
+        public AdvancedReplayDataLoader(AdvancedReplayData data)
+        {
+            _data = data;
+        }
+
+        public void Handle(Packet packet)
+        {
+            dynamic data = packet.Data;
+
+            if (packet.Type == PacketType.ArenaUpdate)
+            {
+                if (_data.roster == null)
+                {
+                    _data.roster = data.roster;
+                }
+            }
+
+            if (packet.Type == PacketType.BattleLevel)
+            {
+                _data.playername = data.playername;
+                _data.more = data.more;
+            }
+
+            if (packet.Type == PacketType.ChatMessage)
+            {
+                if (data.Message != null)
+                {
+                    _data.Messages.Add(data.Message);
+                }
+            }
+
+            if (packet.Type == PacketType.DamageReceived)
+            {
+
+            }
+
+            if (packet.Type == PacketType.SlotUpdate)
+            {
+                var foundItem = _data.Slots.FirstOrDefault(x => x.Item.Equals(data.Slot.Item));
+
+                if (foundItem == null)
+                {
+                    _data.Slots.Add(data.Slot);
+                }
+                else
+                {
+                    foundItem.EndCount = data.Slot.Count;
+                }
+            }
+
+            if (packet.Type == PacketType.Version)
+            {
+                _data.replay_version = data.replay_version;
+            }
+        }
+    }
+
     internal class DamageReceived
     {
         public int Health { get; set; }

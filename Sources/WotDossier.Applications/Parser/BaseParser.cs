@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,21 +17,23 @@ namespace WotDossier.Applications.Parser
     {
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
-        public AdvancedReplayData ReadReplayStream(Stream stream)
+        public void ReadReplayStream(Stream stream, Action<Packet> packetHandler)
         {
-            AdvancedReplayData data = new AdvancedReplayData();
-
             bool endOfStream = false;
             _log.Trace("Begin replay stream read");
             while (!endOfStream)
             {
-                endOfStream = ReadPacket(stream, data);
+                var readPacket = ReadPacket(stream);
+                endOfStream = readPacket == null;
+                if (!endOfStream)
+                {
+                    packetHandler(readPacket);
+                }
             }
             _log.Trace("End replay stream read");
-            return data;
         }
 
-        private bool ReadPacket(Stream stream, AdvancedReplayData data)
+        private Packet ReadPacket(Stream stream)
         {
             ulong packetLength = stream.Read(4).ConvertLittleEndian();
             ulong packetType = stream.Read(4).ConvertLittleEndian();
@@ -42,60 +45,68 @@ namespace WotDossier.Applications.Parser
 
             byte[] payload = new byte[packetLength];
 
+            Packet packet = null;
+            
             if (!endOfStream)
             {
                 stream.Read(payload, 0, (int)packetLength);
 
-                var packet = new Packet
+                packet = new Packet
                 {
                     Payload = payload,
-                    PacketType = packetType,
+                    StreamPacketType = packetType,
                     PacketLength = packetLength,
-                    Position = position,
-                    Time = TimeSpan.FromSeconds(time)
+                    Offset = position,
+                    Time = TimeSpan.FromSeconds(time),
+                    Clock = time
                 };
 
                 //battle level setup 
-                if (packet.PacketType == 0x00)
+                if (packet.StreamPacketType == 0x00)
                 {
                     _log.Trace("Process packet 0x00");
-                    ProcessPacket_0x00(packet.Payload, data);
+                    ProcessPacket_0x00(packet);
                 }
 
                 //replay version
-                if (packet.PacketType == 0x14)
+                if (packet.StreamPacketType == 0x14)
                 {
                     _log.Trace("Process packet 0x14");
-                    ProcessPacket_0x14(packet, data);
+                    ProcessPacket_0x14(packet);
                 }
 
                 //in game updates
-                if (packet.PacketType == 0x08)
+                if (packet.StreamPacketType == 0x08)
                 {
                     _log.Trace("Process packet 0x08");
-                    ProcessPacket_0x08(packet, data);
+                    ProcessPacket_0x08(packet);
                 }
 
                 //chat
-                if (packet.PacketType == 0x1f)
+                if (packet.StreamPacketType == 0x1f)
                 {
                     _log.Trace("Process packet 0x1f");
-                    ProcessPacket_0x1f(packet, data);
+                    ProcessPacket_0x1f(packet);
                 }
             }
 
-            return endOfStream;
+            return packet;
         }
 
         /// <summary>
         /// Process packet 0x00
         /// Contains Battle level setup and Player Name.
         /// </summary>
-        /// <param name="payload">The payload.</param>
-        /// <param name="data">The data.</param>
-        public virtual void ProcessPacket_0x00(byte[] payload, AdvancedReplayData data)
+        /// <param name="packet">The packet.</param>
+        public virtual void ProcessPacket_0x00(Packet packet)
         {
-            using (var f = new MemoryStream(payload))
+            packet.Type = PacketType.BattleLevel;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
+            using (var f = new MemoryStream(packet.Payload))
             {
                 f.Seek(10, SeekOrigin.Begin);
 
@@ -129,40 +140,41 @@ namespace WotDossier.Applications.Parser
 
         /// <summary>
         /// Process packet 0x08
-        /// Contains Various game state updates 
+        /// Contains Various game state updates
         /// </summary>
         /// <param name="packet">The packet.</param>
-        /// <param name="data">The data.</param>
-        protected virtual void ProcessPacket_0x08(Packet packet, AdvancedReplayData data)
+        protected virtual void ProcessPacket_0x08(Packet packet)
         {
             using (MemoryStream stream = new MemoryStream(packet.Payload))
             {
                 //read 0-4 - player_id
                 packet.PlayerId = stream.Read(4).ConvertLittleEndian();
                 //read 4-8 - subType
-                packet.SubType = stream.Read(4).ConvertLittleEndian();
+                packet.StreamSubType = stream.Read(4).ConvertLittleEndian();
                 //read 8-12 - update length
                 packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
 
-                if (packet.SubType == 0x1d) //onArenaUpdate events
+                if (packet.StreamSubType == 0x1d) //onArenaUpdate events
                 {
-                    ProcessPacket_0x08_0x1d(packet, stream, data);
+                    ProcessPacket_0x08_0x1d(packet, stream);
                 }
 
-                if (packet.SubType == 0x09) //onSlotUpdate events
+                if (packet.StreamSubType == 0x09) //onSlotUpdate events
                 {
-                    ProcessPacket_0x08_0x09(packet, stream, data);
+                    ProcessPacket_0x08_0x09(packet, stream);
                 }
 
-                if (packet.SubType == 0x01) //onDamageReceived
+                if (packet.StreamSubType == 0x01) //onDamageReceived
                 {
                     //ProcessPacket_0x08_0x01(packet, stream, data);
                 }
             }
         }
 
-        protected static void ProcessPacket_0x08_0x01(Packet packet, MemoryStream stream, AdvancedReplayData data)
+        protected static void ProcessPacket_0x08_0x01(Packet packet, MemoryStream stream)
         {
+            packet.Type = PacketType.DamageReceived;
+
             ulong health = stream.Read(2).ConvertLittleEndian();
             ulong source = stream.Read(4).ConvertLittleEndian();
             var damageReceived = new DamageReceived {Health = (int) health, Source = (int)source};
@@ -174,9 +186,14 @@ namespace WotDossier.Applications.Parser
         /// </summary>
         /// <param name="packet">The packet.</param>
         /// <param name="stream">The stream.</param>
-        /// <param name="data">The data.</param>
-        protected static void ProcessPacket_0x08_0x1d(Packet packet, MemoryStream stream, AdvancedReplayData data)
+        protected static void ProcessPacket_0x08_0x1d(Packet packet, MemoryStream stream)
         {
+            packet.Type = PacketType.ArenaUpdate;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
             ulong updateType = stream.Read(1).ConvertLittleEndian();
 
             //For update types 0x01 and 0x04: at offset 14, read an uint16 and unpack it to 2 bytes, 
@@ -208,7 +225,7 @@ namespace WotDossier.Applications.Parser
             }
 
             //Updates the vehicle list; also known as the roster
-            if (updateType == 1 && data.roster == null)
+            if (updateType == 1)
             {
                 //Read from your offset to the end of the packet, this will be the "update pickle". 
                 byte[] updatePayload = stream.Read((int)(packet.SubTypePayloadLength));
@@ -295,12 +312,16 @@ namespace WotDossier.Applications.Parser
         /// </summary>
         /// <param name="packet">The packet.</param>
         /// <param name="stream">The stream.</param>
-        /// <param name="data">The data.</param>
-        protected static void ProcessPacket_0x08_0x09(Packet packet, MemoryStream stream, AdvancedReplayData data)
+        protected static void ProcessPacket_0x08_0x09(Packet packet, MemoryStream stream)
         {
+            packet.Type = PacketType.SlotUpdate;
             //buffer = new byte[packet.SubTypePayloadLength];
             ////Read from your offset to the end of the packet, this will be the "update pickle". 
             //stream.Read(buffer, 0, (int) (packet.SubTypePayloadLength));
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
 
             ulong value = stream.Read(4).ConvertLittleEndian();
             var item = new SlotItem((SlotType)(value & 15), (int) (value >> 4 & 15), (int) (value >> 8 & 65535));
@@ -309,18 +330,7 @@ namespace WotDossier.Applications.Parser
 
             ulong rest = stream.Read(3).ConvertLittleEndian();
 
-            var slot = new Slot(item, (int) count, (int) rest);
-
-            var foundItem = data.Slots.FirstOrDefault(x => x.Item.Equals(item));
-
-            if (foundItem == null)
-            {
-                data.Slots.Add(slot);
-            }
-            else
-            {
-                foundItem.EndCount = slot.Count;
-            }
+            data.Slot = new Slot(item, (int) count, (int) rest);
         }
 
         /// <summary>
@@ -328,9 +338,14 @@ namespace WotDossier.Applications.Parser
         /// Contains Replay version
         /// </summary>
         /// <param name="packet">The packet.</param>
-        /// <param name="data">The data.</param>
-        private static void ProcessPacket_0x14(Packet packet, AdvancedReplayData data)
+        private static void ProcessPacket_0x14(Packet packet)
         {
+            packet.Type = PacketType.Version;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
             using (var f = new MemoryStream(packet.Payload))
             {
                 int versionlength = (int)f.Read(1).ConvertLittleEndian();
@@ -349,15 +364,16 @@ namespace WotDossier.Applications.Parser
         /// Contains chat messages
         /// </summary>
         /// <param name="packet">The packet.</param>
-        /// <param name="data">The data.</param>
-        private static void ProcessPacket_0x1f(Packet packet, AdvancedReplayData data)
+        private static void ProcessPacket_0x1f(Packet packet)
         {
+            packet.Type = PacketType.ChatMessage;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
             string message = Encoding.UTF8.GetString(packet.Payload);
-            var chatMessage = ParseChatMessage(message.Replace("&nbsp;", " ").Replace(":", ""), packet.Time);
-            if (chatMessage != null)
-            {
-                data.Messages.Add(chatMessage);
-            }
+            data.Message = ParseChatMessage(message.Replace("&nbsp;", " ").Replace(":", ""), packet.Time);
         }
 
         public static ChatMessage ParseChatMessage(string messageText, TimeSpan time)

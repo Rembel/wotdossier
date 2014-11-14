@@ -1,4 +1,5 @@
 using System;
+using System.Dynamic;
 using System.IO;
 using Common.Logging;
 using WotDossier.Common;
@@ -13,34 +14,33 @@ namespace WotDossier.Applications.Parser
 
         /// <summary>
         /// Process packet 0x08
-        /// Contains Various game state updates 
+        /// Contains Various game state updates
         /// </summary>
         /// <param name="packet">The packet.</param>
-        /// <param name="data">The data.</param>
-        protected override void ProcessPacket_0x08(Packet packet, AdvancedReplayData data)
+        protected override void ProcessPacket_0x08(Packet packet)
         {
             using (MemoryStream stream = new MemoryStream(packet.Payload))
             {
                 //read 0-4 - player_id
                 packet.PlayerId = stream.Read(4).ConvertLittleEndian();
                 //read 4-8 - subType
-                packet.SubType = stream.Read(4).ConvertLittleEndian();
+                packet.StreamSubType = stream.Read(4).ConvertLittleEndian();
                 //read 8-12 - update length
                 packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
 
-                if (packet.SubType == 0x17) //onArenaUpdate events
+                if (packet.StreamSubType == 0x17) //onArenaUpdate events
                 {
-                    ProcessPacket_0x08_0x1d(packet, stream, data);
+                    ProcessPacket_0x08_0x1d(packet, stream);
                 }
 
-                if (packet.SubType == 0x0b) //onSlotUpdate events
+                if (packet.StreamSubType == 0x0b) //onSlotUpdate events
                 {
-                    ProcessPacket_0x08_0x09(packet, stream, data);
+                    ProcessPacket_0x08_0x09(packet, stream);
                 }
 
-                if (packet.SubType == 0x01) //onDamageReceived
+                if (packet.StreamSubType == 0x01) //onDamageReceived
                 {
-                    ProcessPacket_0x08_0x01(packet, stream, data);
+                    ProcessPacket_0x08_0x01(packet, stream);
                 }
             }
         }
@@ -49,11 +49,16 @@ namespace WotDossier.Applications.Parser
         /// Process packet 0x00
         /// Contains Battle level setup and Player Name.
         /// </summary>
-        /// <param name="payload">The payload.</param>
-        /// <param name="data">The data.</param>
-        public override void ProcessPacket_0x00(byte[] payload, AdvancedReplayData data)
+        /// <param name="packet">The packet.</param>
+        public override void ProcessPacket_0x00(Packet packet)
         {
-            using (var f = new MemoryStream(payload))
+            packet.Type = PacketType.BattleLevel;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
+            using (var f = new MemoryStream(packet.Payload))
             {
                 f.Seek(10, SeekOrigin.Begin);
 

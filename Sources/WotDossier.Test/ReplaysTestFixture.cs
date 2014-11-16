@@ -38,7 +38,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplaysByVersionTest()
         {
-            Version version = new Version("0.9.4.0");
+            Version version = new Version("0.9.0.0");
 
             ReplayTest(version);
         }
@@ -72,6 +72,29 @@ namespace WotDossier.Test
                 var mockView = new Mock<IReplayView>();
                 ReplayViewModel model = new ReplayViewModel(mockView.Object);
                 model.Init(phisicalReplay.ReplayData(true));
+            }
+        }
+
+        [Test]
+        public void MapXmlTest()
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Maps");
+
+            if (!Directory.Exists(replayFolder))
+            {
+                Assert.Fail("Folder not exists - [{0}]", replayFolder);
+            }
+
+            var replays = Directory.GetFiles(replayFolder, "*.xml", SearchOption.AllDirectories);
+
+            BigWorldXmlReader reader = new BigWorldXmlReader();
+
+            foreach (var replay in replays)
+            {
+                FileStream F = new FileStream(replay, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(F);
+
+                Console.WriteLine(reader.DecodePackedFile(br));
             }
         }
 

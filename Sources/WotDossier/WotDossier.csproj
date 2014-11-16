@@ -235,6 +235,7 @@
     </Compile>
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="NativeMethods.cs" />
+    <Compile Include="Converters\Image\ReplayIconConverter.cs" />
     <Compile Include="Styles\FooterDataGridSilver.cs" />
     <Compile Include="Styles\FooterDataGridBlack.cs" />
     <Compile Include="Styles\FooterDataGridGeneric.cs" />
@@ -261,6 +262,10 @@
     </Compile>
     <Compile Include="Tabs\RecentActivityTab.xaml.cs">
       <DependentUpon>RecentActivityTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Replay\MapGridPainter.cs" />
+    <Compile Include="Tabs\Replay\Viewer.xaml.cs">
+      <DependentUpon>Viewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\ChartHelper.cs" />
     <Compile Include="UI\TierLabelProvider.cs" />
@@ -736,6 +741,10 @@
     <Page Include="Tabs\Replay\Equipment.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tabs\Replay\Viewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\ServerBattlesTab.xaml">
       <Generator>MSBuild:Compile</Generator>

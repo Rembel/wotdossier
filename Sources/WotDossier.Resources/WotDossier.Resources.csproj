@@ -1122,17 +1122,17 @@
     <Resource Include="Images\Replays\yellow_ribbon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Replays\Viewer\h_g.png" />
-    <Resource Include="Images\Replays\Viewer\h_r.png" />
-    <Resource Include="Images\Replays\Viewer\l_g.png" />
-    <Resource Include="Images\Replays\Viewer\l_r.png" />
-    <Resource Include="Images\Replays\Viewer\m_g.png" />
-    <Resource Include="Images\Replays\Viewer\m_r.png" />
+    <Resource Include="Images\Replays\Viewer\HT_g.png" />
+    <Resource Include="Images\Replays\Viewer\HT_r.png" />
+    <Resource Include="Images\Replays\Viewer\LT_g.png" />
+    <Resource Include="Images\Replays\Viewer\LT_r.png" />
+    <Resource Include="Images\Replays\Viewer\MT_g.png" />
+    <Resource Include="Images\Replays\Viewer\MT_r.png" />
     <Resource Include="Images\Replays\Viewer\recorder.png" />
-    <Resource Include="Images\Replays\Viewer\s_g.png" />
-    <Resource Include="Images\Replays\Viewer\s_r.png" />
-    <Resource Include="Images\Replays\Viewer\t_g.png" />
-    <Resource Include="Images\Replays\Viewer\t_r.png" />
+    <Resource Include="Images\Replays\Viewer\SPG_g.png" />
+    <Resource Include="Images\Replays\Viewer\SPG_r.png" />
+    <Resource Include="Images\Replays\Viewer\TD_g.png" />
+    <Resource Include="Images\Replays\Viewer\TD_r.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

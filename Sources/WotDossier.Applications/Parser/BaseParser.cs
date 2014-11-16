@@ -37,7 +37,7 @@ namespace WotDossier.Applications.Parser
         {
             ulong packetLength = stream.Read(4).ConvertLittleEndian();
             ulong packetType = stream.Read(4).ConvertLittleEndian();
-            float time = BitConverter.ToSingle(stream.Read(4), 0);
+            float time = stream.Read(4).ToSingle();
             
             long position = stream.Position;
 
@@ -68,6 +68,20 @@ namespace WotDossier.Applications.Parser
                     ProcessPacket_0x00(packet);
                 }
 
+                //player position
+                if (packet.StreamPacketType == 0x0a)
+                {
+                    _log.Trace("Process packet 0x0a");
+                    ProcessPacket_0x0a(packet);
+                }
+
+                //minimap click
+                if (packet.StreamPacketType == 0x21)
+                {
+                    _log.Trace("Process packet 0x21");
+                    ProcessPacket_0x21(packet);
+                }
+
                 //replay version
                 if (packet.StreamPacketType == 0x14)
                 {
@@ -91,6 +105,54 @@ namespace WotDossier.Applications.Parser
             }
 
             return packet;
+        }
+
+        private void ProcessPacket_0x21(Packet packet)
+        {
+            packet.Type = PacketType.MinimapClick;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
+            using (MemoryStream f = new MemoryStream(packet.Payload))
+            {
+                int cellId = BitConverter.ToInt16(f.Read(2), 0);
+                int cellLeft = (int) Math.Floor(cellId/10.0);
+                int cellTop = cellId - (cellLeft*10);
+
+                data.cellId = cellId;
+                data.cellLeft = cellLeft;
+                data.cellTop = cellTop;
+            }
+        }
+
+        private void ProcessPacket_0x0a(Packet packet)
+        {
+            packet.Type = PacketType.PlayerPos;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
+            using (MemoryStream f = new MemoryStream(packet.Payload))
+            {
+                data.PlayerId = (long)f.Read(4).ConvertLittleEndian();
+
+                f.Seek(12, SeekOrigin.Begin);
+
+                var pos1 = f.Read(4).ToSingle();
+                var pos2 = f.Read(4).ToSingle();
+                var pos3 = f.Read(4).ToSingle();
+                data.position = new[] { pos1, pos2, pos3 };
+
+                f.Seek(36, SeekOrigin.Begin);
+
+                var hull1 = f.Read(4).ToSingle();
+                var hull2 = f.Read(4).ToSingle();
+                var hull3 = f.Read(4).ToSingle();
+                data.hull_orientation = new[] { hull1, hull2, hull3 };
+            }
         }
 
         /// <summary>
@@ -195,6 +257,8 @@ namespace WotDossier.Applications.Parser
             packet.Data = data;
 
             ulong updateType = stream.Read(1).ConvertLittleEndian();
+
+            packet.StreamSubType = updateType;
 
             //For update types 0x01 and 0x04: at offset 14, read an uint16 and unpack it to 2 bytes, 
             //if the unpacked value matches 0x80, 0x02 then set your offset to 14. 

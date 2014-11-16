@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Windows;
 using WotDossier.Applications.Parser;
 
 namespace WotDossier.Applications.ViewModel.Replay.Viewer
 {
     public class ReplayViewer
     {
-        private readonly MapGrid _mapGrid = new MapGrid();
+        private readonly MapGrid _mapGrid;
         private string gameType;
         private readonly Arena _arena;
         private bool _stopping;
@@ -17,7 +18,9 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 
         public ReplayViewer()
         {
-//    this.mapGrid = new MapGrid({
+            _mapGrid = new MapGrid(new Rect(-500, -500, 1000, 1000), 500, 500);
+
+            //    this.mapGrid = new MapGrid({
             //    container: options.container,
             //    ident: options.map.ident,
             //    map: {

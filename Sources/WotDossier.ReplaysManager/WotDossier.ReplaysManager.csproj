@@ -426,6 +426,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\Viewer.xaml">
+      <Link>Tabs\Replay\Viewer.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Views\AboutWindow.xaml">
       <Link>Views\AboutWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -547,6 +552,9 @@
     <Compile Include="..\WotDossier\Converters\Image\MedalToImageConverter.cs">
       <Link>Converters\Image\MedalToImageConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ReplayIconConverter.cs">
+      <Link>Converters\Image\ReplayIconConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\ShellDescriptionToImageConverter.cs">
       <Link>Converters\Image\ShellDescriptionToImageConverter.cs</Link>
     </Compile>
@@ -610,6 +618,9 @@
     <Compile Include="..\WotDossier\Tabs\Replay\Equipment.xaml.cs">
       <Link>Tabs\Replay\Equipment.xaml.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\MapGridPainter.cs">
+      <Link>Tabs\Replay\MapGridPainter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\PersonalResults.xaml.cs">
       <Link>Tabs\Replay\PersonalResults.xaml.cs</Link>
       <DependentUpon>PersonalResults.xaml</DependentUpon>
@@ -617,6 +628,9 @@
     <Compile Include="..\WotDossier\Tabs\Replay\TeamMemberResult.xaml.cs">
       <Link>Tabs\Replay\TeamMemberResult.xaml.cs</Link>
       <DependentUpon>TeamMemberResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\Viewer.xaml.cs">
+      <Link>Tabs\Replay\Viewer.xaml.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\UI\ChartHelper.cs">
       <Link>UI\ChartHelper.cs</Link>

@@ -270,11 +270,13 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 AdvancedReplayDataLoader loader = new AdvancedReplayDataLoader(replay.datablock_advanced);
 
                 parser.ReadReplayStream(uncompressedReplayStream, loader.Handle);
+
+                replay.Stream = uncompressed;
             }
             _log.Trace("End read advanced data");
         }
 
-        private static BaseParser GetParser(Replay replay)
+        public static BaseParser GetParser(Replay replay)
         {
             DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
             Version version = ResolveVersion(replay.datablock_1.Version, playTime);

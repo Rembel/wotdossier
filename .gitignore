@@ -29,3 +29,4 @@
 /Sources/WotDossier.Domain/*.user
 /Sources/WotDossier.Dal/*.user
 /Sources/WotDossier.Common/*.user
+/Sources/*.DotSettings

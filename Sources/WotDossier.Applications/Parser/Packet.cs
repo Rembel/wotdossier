@@ -26,6 +26,8 @@ namespace WotDossier.Applications.Parser
         DamageReceived,
         ArenaUpdate,
         SlotUpdate,
-        Version
+        Version,
+        PlayerPos,
+        MinimapClick
     }
 }

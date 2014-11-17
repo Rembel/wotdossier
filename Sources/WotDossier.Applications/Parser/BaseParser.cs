@@ -96,6 +96,12 @@ namespace WotDossier.Applications.Parser
                     ProcessPacket_0x08(packet);
                 }
 
+                if (packet.StreamPacketType == 0x07)
+                {
+                    _log.Trace("Process packet 0x07");
+                    ProcessPacket_0x07(packet);
+                }
+
                 //chat
                 if (packet.StreamPacketType == 0x1f)
                 {
@@ -105,6 +111,31 @@ namespace WotDossier.Applications.Parser
             }
 
             return packet;
+        }
+
+        private void ProcessPacket_0x07(Packet packet)
+        {
+            packet.Type = PacketType.Health;
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
+            using (MemoryStream stream = new MemoryStream(packet.Payload))
+            {
+                //read 0-4 - player_id
+                packet.PlayerId = stream.Read(4).ConvertLittleEndian();
+                //read 4-8 - subType
+                packet.StreamSubType = stream.Read(4).ConvertLittleEndian();
+                //read 8-12 - update length
+                packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
+
+                if (packet.StreamSubType == 0x03)
+                {
+                    int value = BitConverter.ToInt16(stream.Read(2), 0);
+                    data.health = value < 0 ? 0 : value;
+                }
+            }
         }
 
         private void ProcessPacket_0x21(Packet packet)
@@ -239,7 +270,13 @@ namespace WotDossier.Applications.Parser
 
             ulong health = stream.Read(2).ConvertLittleEndian();
             ulong source = stream.Read(4).ConvertLittleEndian();
-            var damageReceived = new DamageReceived {Health = (int) health, Source = (int)source};
+
+            dynamic data = new ExpandoObject();
+
+            packet.Data = data;
+
+            //packet.damageReceived = (int)health;
+            //packet.damageReceived = new DamageReceived { Health = (int)health, Source = (int)source };
         }
 
         /// <summary>
@@ -258,7 +295,7 @@ namespace WotDossier.Applications.Parser
 
             ulong updateType = stream.Read(1).ConvertLittleEndian();
 
-            packet.StreamSubType = updateType;
+            data.updateType = updateType;
 
             //For update types 0x01 and 0x04: at offset 14, read an uint16 and unpack it to 2 bytes, 
             //if the unpacked value matches 0x80, 0x02 then set your offset to 14. 
@@ -288,12 +325,12 @@ namespace WotDossier.Applications.Parser
                 packet.SubTypePayloadLength = packet.SubTypePayloadLength - 2;
             }
 
-            //Updates the vehicle list; also known as the roster
-            if (updateType == 1)
-            {
-                //Read from your offset to the end of the packet, this will be the "update pickle". 
-                byte[] updatePayload = stream.Read((int)(packet.SubTypePayloadLength));
+            //Read from your offset to the end of the packet, this will be the "update pickle". 
+            byte[] updatePayload = stream.Read((int)(packet.SubTypePayloadLength));
 
+            //Updates the vehicle list; also known as the roster
+            if (updateType == 0x01)
+            {
                 var rosterdata = new Dictionary<string, AdvancedPlayerInfo>();
                 data.roster = rosterdata;
 
@@ -368,6 +405,61 @@ namespace WotDossier.Applications.Parser
                 }
             }
 
+            if (updateType == 0x08)
+            {
+                try
+                {
+                    using (var updatePayloadStream = new MemoryStream(updatePayload))
+                    {
+                        object [] update = (object[]) Unpickle.Load(updatePayloadStream);
+                        data.team = (int)update[0];
+                        data.baseID = (int)update[1];
+                        data.points = (int)update[2];
+                        data.capturingStopped = (int)update[3];
+                    }
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on update load", e);
+                }
+            }
+
+            if (updateType == 0x03)
+            {
+                try
+                {
+                    using (var updatePayloadStream = new MemoryStream(updatePayload))
+                    {
+                        object [] update = (object[]) Unpickle.Load(updatePayloadStream);
+                        data.period = update[0];
+                        data.period_end = update[1];
+                        data.period_length = Convert.ToInt32(update[2]);
+                        data.activities = update[3];
+                    }
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on update load", e);
+                }
+            }
+
+            if (updateType == 0x06)
+            {
+                try
+                {
+                    using (var updatePayloadStream = new MemoryStream(updatePayload))
+                    {
+                        object[] update = (object[])Unpickle.Load(updatePayloadStream);
+                        data.destroyed = update[0];
+                        data.destroyer = update[1];
+                        data.reason = update[2];
+                    }
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on update load", e);
+                }
+            }
         }
 
         /// <summary>

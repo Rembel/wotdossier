@@ -74,28 +74,80 @@
             <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" />
             <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />
 
-            <replay:MapGridPainter BoardSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Grid DataContext="{Binding ReplayViewer}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Green" Value="{Binding AlliesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 20, 0, 0"
+                         Visibility="{Binding AlliesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" />
 
-            <ItemsControl Name="icTodoList" ItemsSource="{Binding TeamMembers}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
-                <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                        <Canvas />
-                                </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
+                <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Red" Value="{Binding EnemiesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 40, 0, 0" 
+                         Visibility="{Binding EnemiesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" />
 
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding TankDescription, Converter={x:Static converters:ReplayIconConverter.Default}}">
-                            <Image.RenderTransform>
-                                <TranslateTransform X="{Binding X}" Y="{Binding Y}" />
-                            </Image.RenderTransform>
-                        </Image>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            
-            <TextBlock Text="{Binding Time}" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" />
-            <TextBlock Text="{Binding Clock}" HorizontalAlignment="Right" Margin="0,30,10,0" VerticalAlignment="Top" />
+                <replay:MapGridPainter BoardSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+                <ItemsControl ItemsSource="{Binding Vehicles}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Visibility="{Binding Visible, Converter={x:Static converters:BoolToVisibilityConverter.Default}}">
+                                <Grid.RenderTransform>
+                                    <TranslateTransform X="{Binding X}" Y="{Binding Y}" />
+                                </Grid.RenderTransform>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image HorizontalAlignment="Center" Source="{Binding Path=., Converter={x:Static converters:ReplayIconConverter.Default}}">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=Seen}" Value="False">
+                                                    <Setter Property="Opacity" Value="0.25" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=Seen}" Value="True">
+                                                    <Setter Property="Opacity" Value="1" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                    <ToolTipService.ToolTip>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="{Binding Path=Tank}" HorizontalAlignment="Center" />
+                                            <TextBlock Grid.Row="1" Text="{Binding Path=FullName}" HorizontalAlignment="Center" />
+                                        </Grid>
+                                    </ToolTipService.ToolTip>
+                                </Image>
+                                <!--<TextBlock HorizontalAlignment="Center" Grid.Row="1" Text="{Binding CurrentHealth}" FontSize="8" />-->
+                                <ProgressBar HorizontalAlignment="Center" Grid.Row="1" IsIndeterminate="False" Value="{Binding HealthPercent}" Maximum="100" Height="5" Width="25"
+                                             Visibility="{Binding Seen, Converter={x:Static converters:BoolToVisibilityConverter.Default}}"                                                >
+                                    <ProgressBar.Style>
+                                        <Style TargetType="ProgressBar">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=TeamMate}" Value="False">
+                                                    <Setter Property="Foreground" Value="Red" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=TeamMate}" Value="True">
+                                                    <Setter Property="Foreground" Value="Green" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ProgressBar.Style>
+                                </ProgressBar>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <TextBlock Text="{Binding Time}" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" />
+            </Grid>
         </Grid>
 
         <Button Content="Start" Command="{Binding PlayCommand}" ></Button>

@@ -1,24 +1,77 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications.Parser;
 
 namespace WotDossier.Applications.ViewModel.Replay.Viewer
 {
-    public class ReplayViewer
+    public class ReplayViewer : INotifyPropertyChanged
     {
+        public List<MapVehicle> Vehicles
+        {
+            get { return _vehicles; }
+            set
+            {
+                _vehicles = value;
+                OnPropertyChanged("Vehicles");
+            }
+        }
+
+        private readonly Domain.Replay.Replay _replay;
         private readonly MapGrid _mapGrid;
-        private string gameType;
         private readonly Arena _arena;
         private bool _stopping;
         private int _updateSpeed;
-        private List<Packet> packets;
 
-        public ReplayViewer()
+        private string _time;
+        private int _enemiesCapturePoints;
+        private int _alliesCapturePoints;
+        private List<MapVehicle> _vehicles;
+        private int _periodLength = -1;
+        private float _clockAtPeriod;
+        private float _clock;
+
+        public int EnemiesCapturePoints
         {
+            get { return _enemiesCapturePoints; }
+            set
+            {
+                _enemiesCapturePoints = value;
+                OnPropertyChanged("EnemiesCapturePoints");
+            }
+        }
+
+        public int AlliesCapturePoints
+        {
+            get { return _alliesCapturePoints; }
+            set
+            {
+                _alliesCapturePoints = value;
+                OnPropertyChanged("AlliesCapturePoints");
+            }
+        }
+
+        public string Time
+        {
+            get { return _time; }
+            set
+            {
+                _time = value;
+                OnPropertyChanged("Time");
+            }
+        }
+
+        public ReplayViewer(Domain.Replay.Replay replay, List<MapVehicle> vehicles)
+        {
+            _replay = replay;
             _mapGrid = new MapGrid(new Rect(-500, -500, 1000, 1000), 500, 500);
+
+            Vehicles = vehicles;
+            ReplayUser = Vehicles.First(x => x.AccountDBID == replay.datablock_1.playerID);
 
             //    this.mapGrid = new MapGrid({
             //    container: options.container,
@@ -38,7 +91,7 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             //this.stopping       = false;
             //this.updateSpeed    = 100; // realtime?
             //this.container      = options.container;
-            this._arena = new Arena(_mapGrid);
+            _arena = new Arena(_mapGrid);
             //this.handlers       = {
             //    loaded: [],
             //    error: [],
@@ -51,6 +104,7 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             //this.initializeItems();
         }
 
+        public MapVehicle ReplayUser { get; set; }
 
 
         //_handle: function(what, handler) {
@@ -71,9 +125,9 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         //onStop: function(handler) {
         //    this._handle('stop', handler);
         //},
-        public void initializeItems()
+        public void InitializeItems()
         {
-            var bv = this;
+            //var bv = this;
             //this.mapGrid.addItem('clock', $('<div/>').attr('id', 'battleviewer-clock').html('--:--'));
             //if(this.gameType == "ctf") {
             //    for(i = 0; i < this.positions.base.length; i++) {
@@ -178,98 +232,133 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             get { return _arena; }
         }
 
-        //start: function() {
-        //var bv = this;
-        //this._mapGrid.render();
-        //$.ajax({
-        //    url: this.packet_url,
-        //    type: 'GET',
-        //    dataType: 'json',
-        //    crossDomain: true,
-        //    timeout: 60000,
-        //    success: function(d, t, x) {
-        //        bv.packets = d;
-        //        bv.dispatch('loaded'); 
-        //    },
-        //    error: function(j, t, e) {
-        //        bv.dispatch('error', { error: t + ", " + e });
-        //    },
-        //    xhr: function() {
-        //        var xhr = jQuery.ajaxSettings.xhr();
-        //        xhr.addEventListener('progress', function(evt) {
-        //            var percent = 0;
-        //            if (evt.lengthComputable) {
-        //                percent = Math.ceil(100/(evt.total / evt.loaded));
-        //            }
-        //            bv.dispatch('progress', percent);
-        //        })
-        //        return xhr;
-        //    }
-        //});
-        //this.dispatch('start');
-        //},
-        public void stop()
+        public float Clock
         {
-            this._stopping = true;
-        }
-
-        public void setSpeed(int newspeed)
-        {
-            this._updateSpeed = newspeed;
-        }
-
-        //dispatch: function(type, e) {
-        //    if(!this.handlers[type]) this.handlers[type] = [];
-        //    this.handlers[type].forEach(function(handler) {
-        //        handler.bind(this)(e);
-        //    });
-        //},
-        public void updateClock()
-        {
-            var clockHtml = "--:--";
-            if (this.Arena.period_length > 0)
+            get { return _clock; }
+            set
             {
-                var clockseconds = this.Arena.period_length - (this.Arena.clock - this.Arena.clock_at_period);
-                var minutes = Math.Floor(clockseconds/60.0);
-                var seconds = Math.Floor(clockseconds - minutes*60);
-                seconds = (seconds < 10 ? '0' + seconds : seconds);
-                minutes = (minutes < 10 ? '0' + minutes : minutes);
-                clockHtml = minutes + ":" + seconds;
+                _clock = value;
+                OnPropertyChanged("Clock");
             }
-            //this._mapGrid.getItem('clock').html(clockHtml);
         }
 
-        public void replay()
+        public void Stop()
         {
-            var me = this;
-            update(this.packets, 0, 0.1, 0);
+            _stopping = true;
         }
 
-        public void update(List<Packet> packets, double window_start, double window_size, int start_ix)
+        public void SetSpeed(int newspeed)
         {
-            var window_end = window_start + window_size;
+            _updateSpeed = newspeed;
+        }
+
+        public void Replay()
+        {
+            var parser = ReplayFileHelper.GetParser(_replay);
+            parser.ReadReplayStream(new MemoryStream(_replay.Stream), PacketHandler);
+        }
+
+        private void PacketHandler(Packet packet)
+        {
+            dynamic data = packet.Data;
+
+            if (packet.Type == PacketType.PlayerPos)
+            {
+                Point point = MapGrid.game_to_map_coord(data.position);
+
+                Thread.Sleep(1);
+
+                MapVehicle member = Vehicles.FirstOrDefault(x => x.Id == data.PlayerId);
+
+                if (member != null)
+                {
+                    member.X = point.X;
+                    member.Y = point.Y;
+                    member.Clock = packet.Clock;
+                    member.Show();
+                }
+            }
+
+            if (packet.Type == PacketType.Health && packet.StreamSubType == 0x03)
+            {
+                MapVehicle member = Vehicles.FirstOrDefault(x => x.Id == (int)packet.PlayerId);
+                if (member != null)
+                {
+                    member.CurrentHealth = data.health;
+                }
+            }
+
+            if (packet.Type == PacketType.ArenaUpdate && data.updateType == 0x03)
+            {
+                _periodLength = data.period_length;
+                _clockAtPeriod = packet.Clock;
+            }
+
+            if (packet.Type == PacketType.ArenaUpdate && data.updateType == 0x06)
+            {
+                MapVehicle member = Vehicles.FirstOrDefault(x => x.Id == (int)packet.PlayerId);
+                if (member != null && data.destroyed == 1)
+                {
+                    member.CurrentHealth = 0;
+                }
+            }
+
+            if (packet.Type == PacketType.ArenaUpdate && data.updateType == 0x08)
+            {
+                if (data.team != ReplayUser.Team)
+                {
+                    AlliesCapturePoints = data.points;
+                }
+                else
+                {
+                    EnemiesCapturePoints = data.points;
+                }
+            }
+
+            if (_periodLength > 0)
+            {
+                var clockseconds = _periodLength - (packet.Clock - _clockAtPeriod);
+
+                Time = TimeSpan.FromSeconds(clockseconds).ToString("mm\\:ss");
+                Clock = packet.Clock;
+
+                foreach (var vehicle in _vehicles)
+                {
+                    vehicle.Seen = Clock - vehicle.Clock < 10 && vehicle.CurrentHealth > 0;
+                }
+            }
+        }
+
+        public void Update(List<Packet> packets, double windowStart, double windowSize, int startIx)
+        {
+            var windowEnd = windowStart + windowSize;
             int ix;
-            for (ix = start_ix; ix < packets.Count; ix++)
+            for (ix = startIx; ix < packets.Count; ix++)
             {
                 var packet = packets[ix];
                 //if (typeof (packet.clock) == 'undefined' && (typeof (packet.period) == 'undefined'))
                 //    continue; // chat has clock, period doesnt(?)
-                if (packet.Clock > window_end) break;
+                if (packet.Clock > windowEnd) break;
                 _arena.update(packet);
             }
-
-            this.updateClock(); // should really, really be part of something else
 
             if (this._stopping) ix = packets.Count;
             if (ix < packets.Count)
             {
                 Thread.Sleep(this._updateSpeed);
-                update(packets, window_end, window_size, ix);
+                Update(packets, windowEnd, windowSize, ix);
             }
             else
             {
                 //this.dispatch('stop');
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

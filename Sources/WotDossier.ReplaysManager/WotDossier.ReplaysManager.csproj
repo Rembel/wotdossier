@@ -714,10 +714,6 @@
       <Link>External\_hashlib.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\WotDossier\External\server_tanks.json">
-      <Link>External\server_tanks.json</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\WotDossier\External\consumables.json">
       <Link>External\consumables.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -752,6 +748,10 @@
     </None>
     <None Include="..\WotDossier\External\shells\ussr_shells.json">
       <Link>External\shells\ussr_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\tanks_expectations.json">
+      <Link>External\tanks_expectations.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

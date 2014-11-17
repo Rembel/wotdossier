@@ -13,31 +13,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     {
         private List<int> _achievements;
 
-        private double _x;
-        public double X
-        {
-            get { return _x; }
-            set
-            {
-                _x = value;
-                OnPropertyChanged("X");
-            }
-        }
-
-        private double _y;
         private TankDescription _tankDescription;
-
-        public double Y
-        {
-            get { return _y; }
-            set
-            {
-                _y = value;
-                OnPropertyChanged("Y");
-
-            }
-        }
-
         public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle, int replayPlayerTeam, string regionCode)
         {
             Id = vehicle.Key;
@@ -92,7 +68,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             Xp = vehicleResult.Value.xp;
 
             TeamMate = Team == replayPlayerTeam;
-
+            
             StatisticLink = string.Format(RatingHelper.NOOBMETER_STATISTIC_LINK_FORMAT, GetServer(regionCode), GetName(regionCode));
         }
 

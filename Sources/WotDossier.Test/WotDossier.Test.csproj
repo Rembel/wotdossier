@@ -128,10 +128,6 @@
       <Link>External\optional_devices.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\WotDossier\External\server_tanks.json">
-      <Link>External\server_tanks.json</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\WotDossier\External\shells\china_shells.json">
       <Link>External\shells\china_shells.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

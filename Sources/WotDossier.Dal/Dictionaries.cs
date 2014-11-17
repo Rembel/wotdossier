@@ -26,7 +26,6 @@ namespace WotDossier.Dal
         private readonly Dictionary<string, TankIcon> _icons = new Dictionary<string, TankIcon>();
         private readonly Dictionary<TankIcon, TankDescription> _iconTanks = new Dictionary<TankIcon, TankDescription>();
         private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        private readonly Dictionary<int, TankServerInfo> _serverTanks;
         private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
@@ -188,14 +187,6 @@ namespace WotDossier.Dal
         }
 
         /// <summary>
-        /// Gets the server tanks info.
-        /// </summary>
-        public Dictionary<int, TankServerInfo> ServerTanks
-        {
-            get { return _serverTanks; }
-        }
-
-        /// <summary>
         /// Gets the maps.
         /// </summary>
         public Dictionary<string, Map> Maps
@@ -266,7 +257,6 @@ namespace WotDossier.Dal
         {
             _ratingExpectations = ReadRatingExpectationsDictionary();
             _tanks = ReadTanksDictionary();
-            _serverTanks = ReadServerTanksDictionary();
             _maps = ReadMaps();
             Medals = ReadMedals();
 
@@ -443,17 +433,6 @@ namespace WotDossier.Dal
         private RatingExpectancy GetNearestExpectationsByTypeAndLevel(TankDescription tank)
         {
             return _ratingExpectations.Values.FirstOrDefault(x => x.TankLevel == tank.Tier && (int) x.TankType == tank.Type);
-        }
-
-        private Dictionary<int, TankServerInfo> ReadServerTanksDictionary()
-        {
-            using (StreamReader re = new StreamReader(@"External\server_tanks.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                JObject parsedData = se.Deserialize<JObject>(reader);
-                return parsedData["data"].ToObject<Dictionary<int, TankServerInfo>>();
-            }
         }
 
         private Dictionary<string, RatingExpectancy> ReadRatingExpectationsDictionary()

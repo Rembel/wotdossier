@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications.Parser;
 
 namespace WotDossier.Applications.ViewModel.Replay.Viewer
 {
-    public class ReplayViewer
+    public class ReplayViewer : INotifyPropertyChanged
     {
+        public List<MapVehicle> Vehicles
+        {
+            get { return _vehicles; }
+            set
+            {
+                _vehicles = value;
+                OnPropertyChanged("Vehicles");
+            }
+        }
+
+        private readonly Domain.Replay.Replay _replay;
         private readonly MapGrid _mapGrid;
         private string gameType;
         private readonly Arena _arena;
@@ -16,9 +29,61 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         private int _updateSpeed;
         private List<Packet> packets;
 
-        public ReplayViewer()
+        private string _time;
+        private string _clock;
+        private int _enemiesCapturePoints;
+        private int _alliesCapturePoints;
+        private List<MapVehicle> _vehicles;
+        private int period_length = -1;
+        private float clock_at_period = 0;
+
+        public int EnemiesCapturePoints
         {
+            get { return _enemiesCapturePoints; }
+            set
+            {
+                _enemiesCapturePoints = value;
+                OnPropertyChanged("EnemiesCapturePoints");
+            }
+        }
+
+        public int AlliesCapturePoints
+        {
+            get { return _alliesCapturePoints; }
+            set
+            {
+                _alliesCapturePoints = value;
+                OnPropertyChanged("AlliesCapturePoints");
+            }
+        }
+
+        public string Time
+        {
+            get { return _time; }
+            set
+            {
+                _time = value;
+                OnPropertyChanged("Time");
+            }
+        }
+
+        public string Clock
+        {
+            get { return _clock; }
+            set
+            {
+                _clock = value;
+                OnPropertyChanged("Clock");
+            }
+        }
+
+        public ReplayViewer(Domain.Replay.Replay replay, List<MapVehicle> vehicles)
+        {
+            _replay = replay;
             _mapGrid = new MapGrid(new Rect(-500, -500, 1000, 1000), 500, 500);
+
+            Vehicles = vehicles;
+            ReplayUser = Vehicles.First(x => x.AccountDBID == replay.datablock_1.playerID);
 
             //    this.mapGrid = new MapGrid({
             //    container: options.container,
@@ -51,6 +116,7 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             //this.initializeItems();
         }
 
+        public MapVehicle ReplayUser { get; set; }
 
 
         //_handle: function(what, handler) {
@@ -241,8 +307,62 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 
         public void replay()
         {
-            var me = this;
-            update(this.packets, 0, 0.1, 0);
+            //var me = this;
+            //update(this.packets, 0, 0.1, 0);
+
+            var parser = ReplayFileHelper.GetParser(_replay);
+            parser.ReadReplayStream(new MemoryStream(_replay.Stream), PacketHandler);
+        }
+
+        private void PacketHandler(Packet packet)
+        {
+            dynamic data = packet.Data;
+
+            if (packet.Type == PacketType.PlayerPos)
+            {
+                Point point = MapGrid.game_to_map_coord(data.position);
+
+                Thread.Sleep(1);
+
+                MapVehicle member = Vehicles.FirstOrDefault(x => x.Id == data.PlayerId);
+
+                if (member != null)
+                {
+                    member.X = point.X;
+                    member.Y = point.Y;
+                }
+            }
+
+            if (packet.Type == PacketType.Health && packet.StreamSubType == 0x03)
+            {
+                MapVehicle member = Vehicles.FirstOrDefault(x => x.Id == (int)packet.PlayerId);
+                member.CurrentHealth = data.health;
+            }
+
+            if (packet.Type == PacketType.ArenaUpdate && data.updateType == 0x03)
+            {
+                period_length = data.period_length;
+                clock_at_period = packet.Clock;
+            }
+
+            if (packet.Type == PacketType.ArenaUpdate && data.updateType == 0x08)
+            {
+                if (data.team != ReplayUser.Team)
+                {
+                    AlliesCapturePoints = data.points;
+                }
+                else
+                {
+                    EnemiesCapturePoints = data.points;
+                }
+            }
+
+            if (period_length > 0)
+            {
+                var clockseconds = period_length - (packet.Clock - clock_at_period);
+
+                Time = TimeSpan.FromSeconds(clockseconds).ToString("mm\\:ss");
+            }
         }
 
         public void update(List<Packet> packets, double window_start, double window_size, int start_ix)
@@ -270,6 +390,13 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             {
                 //this.dispatch('stop');
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

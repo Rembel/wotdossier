@@ -28,6 +28,7 @@ namespace WotDossier.Applications.Parser
         SlotUpdate,
         Version,
         PlayerPos,
-        MinimapClick
+        MinimapClick,
+        Health
     }
 }

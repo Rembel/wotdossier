@@ -981,9 +981,6 @@
     <Content Include="External\structures_29.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="External\server_tanks.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="External\tanks_expectations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

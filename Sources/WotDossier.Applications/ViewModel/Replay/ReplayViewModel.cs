@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Windows;
 using Common.Logging;
 using Newtonsoft.Json.Linq;
-using WotDossier.Applications.Parser;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
@@ -193,9 +190,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         private List<TeamMember> _teamMembers;
-        private string _time;
-        private string _clock;
-
         public List<TeamMember> TeamMembers
         {
             get { return _teamMembers; }
@@ -229,64 +223,26 @@ namespace WotDossier.Applications.ViewModel.Replay
             CopyPlayerNameCommand = new DelegateCommand<TeamMember>(OnCopyPlayerNameCommand);
             OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
             PlayCommand = new DelegateCommand(OnPlayCommand);
-
-            _replayViewer = new ReplayViewer();
         }
 
         public DelegateCommand PlayCommand { get; set; }
 
         private void OnPlayCommand()
         {
-            ProgressControlViewModel ProgressView = new ProgressControlViewModel();
-            ProgressView.Execute(Resources.Resources.ProgressTitle_Loading_replays,
-                (bw, we) =>
-                {
-                    var parser = ReplayFileHelper.GetParser(Replay);
-                    parser.ReadReplayStream(new MemoryStream(Replay.Stream), PacketHandler);
-                });
+            ProgressControlViewModel worker = new ProgressControlViewModel();
 
-            
+            ReplayViewer = new ReplayViewer(Replay, TeamMembers.Select(x => new MapVehicle(x)).ToList());
+
+            worker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.replay());
         }
 
-        private void PacketHandler(Packet packet)
+        public ReplayViewer ReplayViewer
         {
-            if (packet.Type == PacketType.PlayerPos)
-            {
-                dynamic data = packet.Data;
-
-                Point point = _replayViewer.MapGrid.game_to_map_coord(data.position);
-
-                Thread.Sleep(5);
-
-                TeamMember member = TeamMembers.FirstOrDefault(x => x.Id == data.PlayerId);
-
-                if (member != null)
-                {
-                    member.X = point.X;
-                    member.Y = point.Y;
-                }
-            }
-
-            Time = packet.Time.ToString("mm\\:ss");
-        }
-
-        public string Time
-        {
-            get { return _time; }
+            get { return _replayViewer; }
             set
             {
-                _time = value;
-                RaisePropertyChanged("Time");
-            }
-        }
-
-        public string Clock
-        {
-            get { return _clock; }
-            set
-            {
-                _clock = value;
-                RaisePropertyChanged("Clock");
+                _replayViewer = value;
+                RaisePropertyChanged("ReplayViewer");
             }
         }
 

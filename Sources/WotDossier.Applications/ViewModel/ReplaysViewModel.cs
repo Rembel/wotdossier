@@ -399,10 +399,12 @@ namespace WotDossier.Applications.ViewModel
 
                     if (Directory.Exists(folderPath))
                     {
-                        string[] files = Directory.GetFiles(folderPath, "*.wotreplay");
+                        string[] newFiles = Directory.GetFiles(folderPath, "*.wotreplay");
+
+                        string[] oldFiles = replayFolder.Files;
 
                         //get operations for replays list update
-                        var operations = GetUpdateOperations(replayFolder, files);
+                        var operations = GetUpdateOperations(replayFolder, oldFiles, newFiles);
 
                         int count = operations.Count();
                         int index = 0;
@@ -416,7 +418,7 @@ namespace WotDossier.Applications.ViewModel
                             index++;
                         }
                         
-                        replayFolder.Files = files;
+                        replayFolder.Files = newFiles;
                         replayFolder.Count = _replays.Count(x => x.FolderId == replayFolder.Id);
                     }
                 }
@@ -479,12 +481,14 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private IEnumerable<ListUpdateOperation<ReplayFile>> GetUpdateOperations(ReplayFolder folder, string[] newList)
+        private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(ReplayFolder folder, string[] oldFiles, string[] newList)
         {
-            var toDel = folder.Files.Except(newList).Select(x => (ListUpdateOperation<ReplayFile>)new DeleteOperation(x)).ToList();
-            var toAdd = newList.Except(folder.Files).Select(x => (ListUpdateOperation<ReplayFile>)new AddOperation(x, folder));
-            toDel.AddRange(toAdd);
-            return toDel;
+            List<ListUpdateOperation<ReplayFile>> result = new List<ListUpdateOperation<ReplayFile>>();
+            List<ListUpdateOperation<ReplayFile>> toDel = oldFiles.Except(newList).Select(x => (ListUpdateOperation<ReplayFile>)new DeleteOperation(x)).ToList();
+            List<ListUpdateOperation<ReplayFile>> toAdd = newList.Except(oldFiles).Select(x => (ListUpdateOperation<ReplayFile>)new AddOperation(x, folder)).ToList();
+            result.AddRange(toDel);
+            result.AddRange(toAdd);
+            return result;
         }
 
         abstract class ListUpdateOperation<T>

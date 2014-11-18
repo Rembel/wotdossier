@@ -3399,4 +3399,10 @@
   <data name="Label_ReplayDetail_FinishReason" xml:space="preserve">
     <value>Причина окончания боя</value>
   </data>
+  <data name="Replay_Tab_Header_BattleSimulator" xml:space="preserve">
+    <value>Симулятор боя</value>
+  </data>
+  <data name="Btn_Play" xml:space="preserve">
+    <value>Симуляция</value>
+  </data>
 </root>

@@ -1,0 +1,2263 @@
+[
+  {
+    "name": "#arenas:00_tank_tutorial/name",
+    "description": "#arenas:00_tank_tutorial/description",
+    "geometry": "spaces/00_tank_tutorial",
+    "runDelay": "\t15\t",
+    "roundLength": "\t1200\t",
+    "boundingBox": {
+      "bottomLeft": "-200.0 -300.0",
+      "upperRight": "300.0 200.0"
+    },
+    "minimap": "spaces/00_tank_tutorial/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "gameplayTypes": {
+      "ctf": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "60 -340.00"
+          },
+          "team2": {
+            "position": "-107 342"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        }
+      }
+    },
+    "music": "/music/tutorial/battle_music",
+    "loadingMusic": "/music/intro/rus_city",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "explicitRequestOnly": "\ttrue\t",
+    "maxPlayersInTeam": "\t1\t"
+  },
+  {
+    "name": "#arenas:01_karelia/name",
+    "description": "#arenas:01_karelia/description",
+    "geometry": "spaces/01_karelia",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/01_karelia/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t397,532200 402,584400\t"
+          },
+          "team2": {
+            "position1": "\t-401,340300 -399,975000\t"
+          }
+        }
+      },
+      "assault": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": "",
+          "team2": {
+            "position": [
+              "45.721 -424.924",
+              "287.086 -271.999",
+              "448.251 -37.818"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-278,805100 213,265300\t"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:02_malinovka/name",
+    "description": "#arenas:02_malinovka/description",
+    "geometry": "spaces/02_malinovka",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/02_malinovka/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/Intro_Malinovka",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t75,599900 -391,945500\t"
+          },
+          "team2": {
+            "position2": "\t-372,699900 108,119600\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "430.100 1.500"
+          },
+          "team2": {
+            "position": "46.100 449.000"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-43,884850 -85,558710\t"
+      }
+    },
+    "useAdvancedPhysics": "\ttrue\t"
+  },
+  {
+    "name": "#arenas:03_campania/name",
+    "description": "#arenas:03_campania/description",
+    "geometry": "spaces/03_campania",
+    "boundingBox": {
+      "bottomLeft": "-300.0 -300.0",
+      "upperRight": "300.0 300.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/03_campania/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t8,663710 -210,228100\t"
+          },
+          "team2": {
+            "position1": "\t-0,173965 209,417600\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:04_himmelsdorf/name",
+    "description": "#arenas:04_himmelsdorf/description",
+    "geometry": "spaces/04_himmelsdorf",
+    "boundingBox": {
+      "bottomLeft": "-300.0 -300.0",
+      "upperRight": "400.0 400.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/04_himmelsdorf/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_spring_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t2,499999 -252,600100\t"
+          },
+          "team2": {
+            "position1": "\t69,099940 349,000000\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "361.126 349.303"
+          },
+          "team2": {
+            "position": "355.252 -243.459"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-223,100100 64,999940\t"
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-123.776 356.640"
+          },
+          "team2": {
+            "position": "374.261 -241.209"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-216.336 11.151",
+            "position2": "69.1 349.000"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:05_prohorovka/name",
+    "description": "#arenas:05_prohorovka/description",
+    "geometry": "spaces/05_prohorovka",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/05_prohorovka/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "ground",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-125,100000 448,300100\t"
+          },
+          "team2": {
+            "position1": "\t51,599990 -447,000000\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": [
+              "-37.348 393.967",
+              "-229.021 417.866"
+            ]
+          },
+          "team2": {
+            "position": [
+              "10.414 -410.010",
+              "-331.576 -428.692"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t171,058400 16,351450\t"
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-122.312 425.031"
+          },
+          "team2": {
+            "position": "48.913 -435.870"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-163.430 256.265",
+            "position2": "154.715 150.255"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:06_ensk/name",
+    "description": "#arenas:06_ensk/description",
+    "geometry": "spaces/06_ensk",
+    "boundingBox": {
+      "bottomLeft": "-300.0 -300.0",
+      "upperRight": "300.0 300.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/06_ensk/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "defaultGroundEffect": "\tNone\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/rus_city",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t20,300000 249,700000\t"
+          },
+          "team2": {
+            "position1": "\t19,100000 -248,700000\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "210.894 253.723"
+          },
+          "team2": {
+            "position": "203.359 -248.108"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-82,768830 2,876255\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:07_lakeville/name",
+    "description": "#arenas:07_lakeville/description",
+    "geometry": "spaces/07_lakeville",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/07_lakeville/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_spring_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-169,513500 319,351300\t"
+          },
+          "team2": {
+            "position1": "\t-169,513400 -319,048600\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "\t-169,513500 319,351300\t"
+          },
+          "team2": {
+            "position": "\t-169,513400 -319,048600\t"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t258,900000 -4,200012\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:08_ruinberg/name",
+    "description": "#arenas:08_ruinberg/description",
+    "geometry": "spaces/08_ruinberg",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/08_ruinberg/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-66,399990 306,100000\t"
+          },
+          "team2": {
+            "position1": "\t-82,900000 -290,900000\t"
+          }
+        }
+      },
+      "domination": {
+        "controlPoint": "\t-337,060500 -48,506910\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "64 333"
+          },
+          "team2": {
+            "position": "270 -330"
+          }
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "320.434 334.328"
+          },
+          "team2": {
+            "position": "-336.217 -48.082"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-66.4 306.100",
+            "position2": "218.304 -88.969"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:10_hills/name",
+    "description": "#arenas:10_hills/description",
+    "geometry": "spaces/10_hills",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/10_hills/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "defaultGroundEffect": "\tNone\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t175,783700 -305,848400\t"
+          },
+          "team2": {
+            "position1": "\t-236,649100 329,674500\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": [
+              "141.587 -211.467",
+              "-314.135 -268.614"
+            ]
+          },
+          "team2": {
+            "position": [
+              "-5.447 279.967",
+              "-249.885 320.166"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t258,768800 132,322500\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:11_murovanka/name",
+    "description": "#arenas:11_murovanka/description",
+    "geometry": "spaces/11_murovanka",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/11_murovanka/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "defaultGroundEffect": "\tNone\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-55.000046 417.300"
+          },
+          "team2": {
+            "position1": "-55.000050 -407.199"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "169.306 314.553"
+          },
+          "team2": {
+            "position": "144.26 -259.666"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-349,723100 6,166060\t"
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-101.549 -428.606"
+          },
+          "team2": {
+            "position": "-27.412 293.698"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-321.800 -225.141",
+            "position2": "132.316 -316.054"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:13_erlenberg/name",
+    "description": "#arenas:13_erlenberg/description",
+    "geometry": "spaces/13_erlenberg",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/13_erlenberg/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "maxPlayersInTeam": "\t15\t",
+    "defaultGroundEffect": "\tNone\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_winter_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "152.892 -405.200"
+          },
+          "team2": {
+            "position1": "-125.1 402.900"
+          }
+        }
+      },
+      "assault": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-87.503 404.509"
+          },
+          "team2": {
+            "position": [
+              "76.002 -373.689",
+              "-105.753 -373.689"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t81,029940 432,753000\t"
+          },
+          "team2": ""
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-82.4 382.500"
+          },
+          "team2": {
+            "position": "96.700 -383.200"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-21,000050 -3,300049\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:14_siegfried_line/name",
+    "description": "#arenas:14_siegfried_line/description",
+    "geometry": "spaces/14_siegfried_line",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/14_siegfried_line/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t255,800000 -439,830000\t"
+          },
+          "team2": {
+            "position1": "\t283,845800 434,602000\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": [
+              "-157.925 -383.466",
+              "179.000 -422.600"
+            ]
+          },
+          "team2": {
+            "position": [
+              "-143.236 387.372",
+              "106.586 409.052"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t307,199000 42,860950\t"
+      },
+      "assault": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": [
+              "444.353 209.906",
+              "261.879 -97.97"
+            ]
+          },
+          "team2": {
+            "position": [
+              "-233.664 384.832",
+              "-260.158 -334.038"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t317,609300 42,661870\t"
+          },
+          "team2": ""
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "158.534 248.794"
+          },
+          "team2": {
+            "position": "240.942 -397.861"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-69.269 4.459",
+            "position2": "307.199 42.861"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:15_komarin/name",
+    "description": "#arenas:15_komarin/description",
+    "geometry": "spaces/15_komarin",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/15_komarin/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t160,870200 -303,957000\t"
+          },
+          "team2": {
+            "position1": "\t-175,401000 304,407300\t"
+          }
+        }
+      }
+    },
+    "loadingMusic": "/music/intro/rus_city",
+    "ambientSound": "/wind/wind/wind_spring_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    }
+  },
+  {
+    "name": "#arenas:17_munchen/name",
+    "description": "#arenas:17_munchen/description",
+    "geometry": "spaces/17_munchen",
+    "boundingBox": {
+      "bottomLeft": "-300.0 -300.0",
+      "upperRight": "300.0 300.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/17_munchen/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-83,669550 -201,705400\t"
+          },
+          "team2": {
+            "position1": "\t61,929900 242,775300\t"
+          }
+        }
+      }
+    },
+    "useAdvancedPhysics": "\ttrue\t"
+  },
+  {
+    "name": "#arenas:18_cliff/name",
+    "description": "#arenas:18_cliff/description",
+    "geometry": "spaces/18_cliff",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/18_cliff/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-273.786 -436.601"
+          },
+          "team2": {
+            "position1": "-251.606 434.591"
+          }
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": "",
+          "team2": {
+            "position": "-285.944 -451.039"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-251.606 434.591",
+            "position2": "228.645 176.277"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:19_monastery/name",
+    "description": "#arenas:19_monastery/description",
+    "geometry": "spaces/19_monastery",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/19_monastery/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t20,061770 -387,906900\t"
+          },
+          "team2": {
+            "position1": "\t-0,393303 397,375800\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:22_slough/name",
+    "description": "#arenas:22_slough/description",
+    "geometry": "spaces/22_slough",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/22_slough/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "defaultGroundEffect": "\tNone\t",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-321.400 -84.3"
+          },
+          "team2": {
+            "position": "341.200 78.700"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-403,600000 -424,100000\t"
+          },
+          "team2": {
+            "position1": "\t383,300000 422,700000\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:23_westfeld/name",
+    "description": "#arenas:23_westfeld/description",
+    "geometry": "spaces/23_westfeld",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/23_westfeld/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "ambientSound": "/wind/wind/wind_spring_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-300,099600 -339,599700\t"
+          },
+          "team2": {
+            "position1": "\t339,399900 299,768100\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:28_desert/name",
+    "description": "#arenas:28_desert/description",
+    "geometry": "spaces/28_desert",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/28_desert/mmap.dds",
+    "vehicleCamouflageKind": "desert",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/desert",
+    "ambientSound": "/wind/wind/wind_desert_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "assault": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": [
+              "25 -413",
+              "-398.151 -413"
+            ]
+          },
+          "team2": {
+            "position": "-91.257 423.693"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t111,284300 -328,484800\t"
+          },
+          "team2": ""
+        }
+      },
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t373,485200 -178,961000\t"
+          },
+          "team2": {
+            "position1": "\t-405,038500 137,526300\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": [
+              "408 148",
+              "461.753 -51.174"
+            ]
+          },
+          "team2": {
+            "position": [
+              "-150 250",
+              "-437.991 244.365"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-89,697030 -323,644200\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:29_el_hallouf/name",
+    "description": "#arenas:29_el_hallouf/description",
+    "geometry": "spaces/29_el_hallouf",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/29_el_hallouf/mmap.dds",
+    "vehicleCamouflageKind": "desert",
+    "maxPlayersInTeam": "\t15\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "loadingMusic": "/music/intro/desert",
+    "ambientSound": "/wind/wind/wind_desert_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t301,446900 316,445700\t"
+          },
+          "team2": {
+            "position1": "\t-338,937100 -320,331500\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "325.469 296.668"
+          },
+          "team2": {
+            "position": "-295.601 -340.312"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-195,523700 193,398700\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:31_airfield/name",
+    "description": "#arenas:31_airfield/description",
+    "geometry": "spaces/31_airfield",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/31_airfield/mmap.dds",
+    "vehicleCamouflageKind": "desert",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_desert_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t360,648400 -154,437300\t"
+          },
+          "team2": {
+            "position1": "\t-324,048000 -176,182000\t"
+          }
+        }
+      }
+    },
+    "preloadSoundGroups": {
+      "groupName": "/objects/aircraft"
+    },
+    "mapActivities": {
+      "warplane": [
+        {
+          "preset": "airfield_curve",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t0,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t100,000000 200,000000\t"
+        },
+        {
+          "preset": "airfield_curve1",
+          "position": "\t0,000000 0,000000 0,000000\t",
+          "yaw": "\t90,000000\t",
+          "possibility": "\t1,000000\t",
+          "startTime": "\t300,000000 400,000000\t"
+        }
+      ]
+    }
+  },
+  {
+    "name": "#arenas:33_fjord/name",
+    "description": "#arenas:33_fjord/description",
+    "geometry": "spaces/33_fjord",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/33_fjord/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t399,095900 -42,143170\t"
+          },
+          "team2": {
+            "position1": "\t-381,328500 111,410500\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:34_redshire/name",
+    "description": "#arenas:34_redshire/description",
+    "geometry": "spaces/34_redshire",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/34_redshire/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-3,300018 -422,900000\t"
+          },
+          "team2": {
+            "position1": "\t-0,016998 410,252900\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "201.271 -332.916"
+          },
+          "team2": {
+            "position": "138.443 428.573"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-199,817300 39,766940\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:35_steppes/name",
+    "description": "#arenas:35_steppes/description",
+    "geometry": "spaces/35_steppes",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/35_steppes/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t228,220000 -341,927900\t"
+          },
+          "team2": {
+            "position1": "\t-88,818560 361,861800\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-146.583 -367.165"
+          },
+          "team2": {
+            "position": "-436.242 187.123"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t372,661400 253,000000\t"
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "120.676 445.208"
+          },
+          "team2": {
+            "position": "-123.873 -350.678"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-244.211 243.446",
+            "position2": "278.573 149.160"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:36_fishing_bay/name",
+    "description": "#arenas:36_fishing_bay/description",
+    "geometry": "spaces/36_fishing_bay",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/36_fishing_bay/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-84,874060 397,810800\t"
+          },
+          "team2": {
+            "position1": "\t-17,023260 -396,058000\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:37_caucasus/name",
+    "description": "#arenas:37_caucasus/description",
+    "geometry": "spaces/37_caucasus",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/37_caucasus/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "batchingEnabled": "\t0\t",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/Intro_kavkaz",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-376,743100 371,289200\t"
+          },
+          "team2": {
+            "position1": "\t345,804700 -399,466700\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:38_mannerheim_line/name",
+    "description": "#arenas:38_mannerheim_line/description",
+    "geometry": "spaces/38_mannerheim_line",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/38_mannerheim_line/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_winter_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t398,135200 293,874800\t"
+          },
+          "team2": {
+            "position1": "\t-338,180600 -306,263500\t"
+          }
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-307.362 -300.617"
+          },
+          "team2": {
+            "position": "427.453 264.620"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-126.657 140.209",
+            "position2": "132.585 -258.131"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:39_crimea/name",
+    "description": "#arenas:39_crimea/description",
+    "geometry": "spaces/39_crimea",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/39_crimea/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t106,300000 -402,543400\t"
+          },
+          "team2": {
+            "position1": "\t114,694200 350,556500\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:43_north_america/name",
+    "description": "#arenas:43_north_america/description",
+    "geometry": "spaces/43_north_america",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/43_north_america/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "\t/music/intro/America\t",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-360,605600 -415,513400\t"
+          },
+          "team2": {
+            "position1": "\t347,542400 390,279100\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:44_north_america/name",
+    "description": "#arenas:44_north_america/description",
+    "geometry": "spaces/44_north_america",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/44_north_america/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "\t/music/intro/America\t",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-356,987100 -329,806300\t"
+          },
+          "team2": {
+            "position1": "\t300,193000 363,934200\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:45_north_america/name",
+    "description": "#arenas:45_north_america/description",
+    "geometry": "spaces/45_north_america",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/45_north_america/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "\t/music/intro/America\t",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t197,412600 356,577200\t"
+          },
+          "team2": {
+            "position1": "\t-343,146600 -327,370100\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:47_canada_a/name",
+    "description": "#arenas:47_canada_a/description",
+    "geometry": "spaces/47_canada_a",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/47_canada_a/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "\t/music/intro/America\t",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-126,841300 -305,554000\t"
+          },
+          "team2": {
+            "position1": "\t213,172100 328,463000\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:51_asia/name",
+    "description": "#arenas:51_asia/description",
+    "geometry": "spaces/51_asia",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/51_asia/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t115,593000 -387,344200\t"
+          },
+          "team2": {
+            "position1": "\t69,850480 348,806200\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:53_japan/name",
+    "description": "#arenas:53_japan/description",
+    "geometry": "spaces/53_japan",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/53_japan/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/Japan",
+    "ambientSound": "/wind/wind/wind_spring_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t391,107700 -301,241100\t"
+          },
+          "team2": {
+            "position1": "\t-311,488600 384,847600\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:59_asia_great_wall/name",
+    "description": "#arenas:59_asia_great_wall/description",
+    "geometry": "spaces/59_asia_great_wall",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/59_asia_great_wall/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-339,279400 387,912500\t"
+          },
+          "team2": {
+            "position1": "\t396,877300 -377,398800\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:60_asia_miao/name",
+    "description": "#arenas:60_asia_miao/description",
+    "geometry": "spaces/60_asia_miao",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/60_asia_miao/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "useAdvancedPhysics": "\ttrue\t",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-317,600000 299,599900\t"
+          },
+          "team2": {
+            "position1": "\t300,993300 -304,450700\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:63_tundra/name",
+    "description": "#arenas:63_tundra/description",
+    "geometry": "spaces/63_tundra",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/63_tundra/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t85,432190 -167,152200\t"
+          },
+          "team2": {
+            "position1": "\t-72,202570 141,256200\t"
+          }
+        },
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "13.326 -306.419"
+          },
+          "team2": {
+            "position": "-3.164 282.311"
+          }
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-325.562 96.459"
+          },
+          "team2": {
+            "position": "316.803 0.031"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-40.259 221.838",
+            "position2": "-214.197 -237.596"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:73_asia_korea/name",
+    "description": "#arenas:73_asia_korea/description",
+    "geometry": "spaces/73_asia_korea",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "minimap": "spaces/73_asia_korea/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_winter_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t271,299900 252,732500\t"
+          },
+          "team2": {
+            "position1": "\t-270,591000 -298,516700\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "215.372 99.746"
+          },
+          "team2": {
+            "position": "-294.259 44.441"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t16,409660 -269,409400\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:83_kharkiv/name",
+    "description": "#arenas:83_kharkiv/description",
+    "geometry": "spaces/83_kharkiv",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/83_kharkiv/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-199,049800 -264,756100\t"
+          },
+          "team2": {
+            "position1": "\t249,117900 193,813900\t"
+          }
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "309.927 -326.182"
+          },
+          "team2": {
+            "position": "-87.194 125.21"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "7.447 -296.809",
+            "position2": "287.047 -19.499"
+          },
+          "team2": ""
+        }
+      }
+    },
+    "preloadSoundGroups": {
+      "groupName": "/combat_atmosphere/historical_weapons"
+    },
+    "loadingMusic": "\t/music/intro/kharkov\t",
+    "ambientSound": "/wind/wind/wind_winter_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    }
+  },
+  {
+    "name": "#arenas:84_winter/name",
+    "description": "#arenas:84_winter/description",
+    "geometry": "spaces/84_winter",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/84_winter/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "maxPlayersInTeam": "\t15\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_winter_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t390,784200 239,978000\t"
+          },
+          "team2": {
+            "position1": "\t-378,986300 -139,045600\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:85_winter/name",
+    "description": "#arenas:85_winter/description",
+    "geometry": "spaces/85_winter",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/85_winter/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "maxPlayersInTeam": "\t15\t",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_winter_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t12,668220 349,515000\t"
+          },
+          "team2": {
+            "position1": "\t9,395152 -334,988700\t"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:86_himmelsdorf_winter/name",
+    "description": "#arenas:86_himmelsdorf_winter/description",
+    "geometry": "spaces/86_himmelsdorf_winter",
+    "boundingBox": {
+      "bottomLeft": "-300.0 -300.0",
+      "upperRight": "400.0 400.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/86_himmelsdorf_winter/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_winter_02",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t2,499999 -252,600100\t"
+          },
+          "team2": {
+            "position1": "\t69,099940 349,000000\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "361.126 349.303"
+          },
+          "team2": {
+            "position": "355.252 -243.459"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-223,100100 64,999940\t"
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-123.776 356.640"
+          },
+          "team2": {
+            "position": "374.261 -241.209"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-216.336 11.151",
+            "position2": "69.1 349.000"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:87_ruinberg_on_fire/name",
+    "description": "#arenas:87_ruinberg_on_fire/description",
+    "geometry": "spaces/87_ruinberg_on_fire",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/87_ruinberg_on_fire/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "preloadSoundGroups": {
+      "groupName": "/combat_atmosphere/combat_atmosphere"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-66,400000 306,100000\t"
+          },
+          "team2": {
+            "position1": "\t-83,000000 -290,900000\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "64 333"
+          },
+          "team2": {
+            "position": "270 -330"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t-337,100000 -48,500010\t"
+      }
+    }
+  },
+  {
+    "name": "#arenas:92_stalingrad/name",
+    "description": "#arenas:92_stalingrad/description",
+    "geometry": "spaces/92_stalingrad",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "450.0 450.0"
+    },
+    "minimap": "spaces/92_stalingrad/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/Stalingrad",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-105,683600 309,296600\t"
+          },
+          "team2": {
+            "position1": "\t-105,683600 -406,502800\t"
+          }
+        }
+      }
+    },
+    "mapActivities": ""
+  },
+  {
+    "name": "#arenas:96_prohorovka_defense/name",
+    "description": "#arenas:96_prohorovka_defense/description",
+    "geometry": "spaces/96_prohorovka_defense",
+    "boundingBox": {
+      "bottomLeft": "-500.0 -500.0",
+      "upperRight": "500.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/96_prohorovka_defense/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "ground",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-125,100000 448,300100\t"
+          },
+          "team2": {
+            "position1": "\t51,599980 -447,000000\t"
+          }
+        }
+      },
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": [
+              "-37.348 393.967",
+              "-229.021 417.866"
+            ]
+          },
+          "team2": {
+            "position": [
+              "10.414 -410.010",
+              "-331.576 -428.692"
+            ]
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "\t171,058300 16,351450\t"
+      }
+    },
+    "preloadSoundGroups": {
+      "groupName": [
+        "/combat_atmosphere/combat_atmosphere",
+        "/plane/planes_with_automatic_weapons",
+        "/plane/crashes",
+        "/plane/planes"
+      ]
+    },
+    "mapActivities": {
+      "scenario": [
+        {
+          "startTime": "\t30,000000 30,000000\t",
+          "possibility": "\t1,000000\t",
+          "period": "\t450,000000\t",
+          "trajectories": {
+            "warplane": [
+              {
+                "preset": "prohorovka_defense_sc1_a1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc1_a2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc1_a3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc1_a4",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc1_a5",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc1_a6",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              }
+            ]
+          }
+        },
+        {
+          "startTime": "\t170,000000 170,000000\t",
+          "possibility": "\t1,000000\t",
+          "period": "\t450,000000\t",
+          "trajectories": {
+            "warplane": [
+              {
+                "preset": "prohorovka_defense_sc2_a1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc2_a2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc2_a3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc2_a4",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              }
+            ]
+          }
+        },
+        {
+          "startTime": "\t290,000000 290,000000\t",
+          "possibility": "\t1,000000\t",
+          "period": "\t450,000000\t",
+          "trajectories": {
+            "warplane": [
+              {
+                "preset": "prohorovka_defense_sc3_a1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc3_a2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc3_a3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc3_a4",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              }
+            ]
+          }
+        },
+        {
+          "startTime": "\t410,000000 410,000000\t",
+          "possibility": "\t1,000000\t",
+          "period": "\t450,000000\t",
+          "trajectories": {
+            "warplane": [
+              {
+                "preset": "prohorovka_defense_sc4_a1",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t0,000000 0,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc4_a2",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t6,000000 6,000000\t"
+              },
+              {
+                "preset": "prohorovka_defense_sc4_a3",
+                "position": "\t0,000000 0,000000 0,000000\t",
+                "yaw": "\t0,000000\t",
+                "possibility": "\t1,000000\t",
+                "startTime": "\t6,000000 6,000000\t"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
+

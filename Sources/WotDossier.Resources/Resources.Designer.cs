@@ -1853,6 +1853,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Simulation.
+        /// </summary>
+        public static string Btn_Play {
+            get {
+                return ResourceManager.GetString("Btn_Play", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Btn_Refresh {
@@ -6418,6 +6427,15 @@ namespace WotDossier.Resources {
         public static string ProgressTitle_Loading_replays {
             get {
                 return ResourceManager.GetString("ProgressTitle_Loading_replays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle Simulator.
+        /// </summary>
+        public static string Replay_Tab_Header_BattleSimulator {
+            get {
+                return ResourceManager.GetString("Replay_Tab_Header_BattleSimulator", resourceCulture);
             }
         }
         

@@ -37,8 +37,16 @@ namespace WotDossier.Converters
             if (member != null)
             {
                 var teamMate = member.TeamMate;
-                Uri uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Replays/Viewer/{0}_{1}.png", (TankType)member.TankDescription.Type,
-                    teamMate ? "g" : "r"));
+                string file;
+                if (!member.Recorder)
+                {
+                    file = string.Format(@"{0}_{1}.png", (TankType) member.TankDescription.Type, teamMate ? "g" : "r");
+                }
+                else
+                {
+                    file = "recorder.png";
+                }
+                Uri uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Replays/Viewer/{0}", file));
                 bitmapImage = ImageCache.GetBitmapImage(uriSource);
             }
             return bitmapImage;

@@ -3310,4 +3310,10 @@ up to 500 m</value>
   <data name="Label_ReplayDetail_FinishReason" xml:space="preserve">
     <value>Finish reason</value>
   </data>
+  <data name="Replay_Tab_Header_BattleSimulator" xml:space="preserve">
+    <value>Battle Simulator</value>
+  </data>
+  <data name="Btn_Play" xml:space="preserve">
+    <value>Simulation</value>
+  </data>
 </root>

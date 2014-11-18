@@ -61,7 +61,7 @@ namespace WotDossier.Applications
             }
         }
 
-        public string DecodePackedFile(BinaryReader reader)
+        public string DecodePackedFile(BinaryReader reader, string root)
         {
             XmlDocument xDoc = new XmlDocument();
 
@@ -69,7 +69,7 @@ namespace WotDossier.Applications
 
             List<string> dictionary = readDictionary(reader);
 
-            XmlNode xmlroot = xDoc.CreateNode(XmlNodeType.Element, "File", "");
+            XmlNode xmlroot = xDoc.CreateNode(XmlNodeType.Element, root, "");
 
             readElement(reader, xmlroot, xDoc, dictionary);
 

@@ -722,6 +722,10 @@
       <Link>External\optional_devices.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\WotDossier\External\maps_description.json">
+      <Link>External\maps_description.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\shells\china_shells.json">
       <Link>External\shells\china_shells.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using Moq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -18,6 +19,7 @@ using WotDossier.Common.Extensions;
 using WotDossier.Dal;
 using WotDossier.Domain.Replay;
 using WotDossier.Framework.Forms.ProgressDialog;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace WotDossier.Test
 {
@@ -89,13 +91,40 @@ namespace WotDossier.Test
 
             BigWorldXmlReader reader = new BigWorldXmlReader();
 
+            JArray array = new JArray();
+
             foreach (var replay in replays)
             {
-                FileStream F = new FileStream(replay, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(F);
+                FileInfo file = new FileInfo(replay);
 
-                Console.WriteLine(reader.DecodePackedFile(br));
+                FileStream stream = new FileStream(replay, FileMode.Open, FileAccess.Read);
+                using(BinaryReader br = new BinaryReader(stream))
+                {
+                    var xml = reader.DecodePackedFile(br, "map");
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(xml);
+                    string jsonText = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
+
+                    var deserializeObject = JsonConvert.DeserializeObject<JObject>(jsonText);
+
+                    var jToken = deserializeObject["map"];
+
+                    var mapKey = file.Name.Replace(file.Extension, string.Empty);
+
+                    if (Dictionaries.Instance.Maps.ContainsKey(mapKey))
+                    {
+                        var target = Dictionaries.Instance.Maps[mapKey];
+
+                        JsonConvert.PopulateObject(jToken["boundingBox"].ToString(), target);
+                    }
+
+                    array.Add(jToken);
+                }
+
+
             }
+
+            Console.WriteLine(array.ToString(Formatting.Indented));
         }
 
         //[Test]

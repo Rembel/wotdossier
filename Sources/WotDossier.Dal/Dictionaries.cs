@@ -265,6 +265,28 @@ namespace WotDossier.Dal
             Shells = ReadShellsDescriptions();
         }
 
+        private static void UpdateMapsGeometry(Dictionary<string, Map> maps)
+        {
+            using (StreamReader re = new StreamReader(@"External\maps_description.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                JArray array = se.Deserialize<JArray>(reader);
+
+                foreach (var map in array)
+                {
+                    var key = map["name"].Value<string>().Replace("#arenas:", string.Empty).Replace("/name", string.Empty);
+
+                    if (maps.ContainsKey(key))
+                    {
+                        var target = maps[key];
+
+                        JsonConvert.PopulateObject(map["boundingBox"].ToString(), target);
+                    }
+                }
+            }
+        }
+
         private Dictionary<Country, Dictionary<int, ShellDescription>> ReadShellsDescriptions()
         {
             Dictionary<Country, Dictionary<int, ShellDescription>> result = new Dictionary<Country, Dictionary<int, ShellDescription>>();
@@ -473,7 +495,9 @@ namespace WotDossier.Dal
             list.ForEach(x => x.LocalizedMapName = Resources.Resources.ResourceManager.GetString("Map_" + x.MapNameId) ?? x.MapName);
             list = list.OrderByDescending(x => x.LocalizedMapName).ToList();
             list.ForEach(x => x.MapId = i++);
-            return list.ToDictionary(x => x.MapNameId, y => y);
+            var dictionary = list.ToDictionary(x => x.MapNameId, y => y);
+            UpdateMapsGeometry(dictionary);
+            return dictionary;
         }
 
         public int GetBattleLevel(List<LevelRange> members)

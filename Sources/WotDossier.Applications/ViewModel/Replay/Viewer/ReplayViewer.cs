@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications.Parser;
+using WotDossier.Dal;
 
 namespace WotDossier.Applications.ViewModel.Replay.Viewer
 {
@@ -68,10 +69,25 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         public ReplayViewer(Domain.Replay.Replay replay, List<MapVehicle> vehicles)
         {
             _replay = replay;
-            _mapGrid = new MapGrid(new Rect(-500, -500, 1000, 1000), 500, 500);
+
+            var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
+
+            var values = map.BottomLeft.Replace(".", ",").Split(' ');
+
+            var x = Convert.ToDouble(values[0]);
+            var y = Convert.ToDouble(values[1]);
+
+            values = map.UpperRight.Replace(".", ",").Split(' ');
+
+            var x1 = Convert.ToDouble(values[0]);
+            var y1 = Convert.ToDouble(values[1]);
+
+            
+            _mapGrid = new MapGrid(new Rect(x, y, x1 - x, y1 - y), 500, 500);
 
             Vehicles = vehicles;
-            ReplayUser = Vehicles.First(x => x.AccountDBID == replay.datablock_1.playerID);
+            ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_1.playerID);
+            ReplayUser.Recorder = true;
 
             //    this.mapGrid = new MapGrid({
             //    container: options.container,
@@ -276,6 +292,12 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
                     member.Y = point.Y;
                     member.Clock = packet.Clock;
                     member.Show();
+
+                    if (member.Recorder)
+                    {
+                        var degrees = (double)data.hull_orientation[0] * (180 / Math.PI);
+                        member.Orientation = degrees;
+                    }
                 }
             }
 

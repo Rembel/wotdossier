@@ -42,5 +42,11 @@ namespace WotDossier.Domain
         /// </summary>
         [DataMember(Name = "localizedMapName")]
         public string LocalizedMapName { get; set; }
+
+        [DataMember(Name = "bottomLeft")]
+        public string BottomLeft{ get; set; }
+
+        [DataMember(Name = "upperRight")]
+        public string UpperRight{ get; set; }
     }
 }

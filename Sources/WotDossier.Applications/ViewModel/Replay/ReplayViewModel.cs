@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Globalization;
 using System.Linq;
@@ -190,6 +191,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         private List<TeamMember> _teamMembers;
+        private ProgressControlViewModel _simulationWorker;
+
         public List<TeamMember> TeamMembers
         {
             get { return _teamMembers; }
@@ -223,19 +226,30 @@ namespace WotDossier.Applications.ViewModel.Replay
             CopyPlayerNameCommand = new DelegateCommand<TeamMember>(OnCopyPlayerNameCommand);
             OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
             PlayCommand = new DelegateCommand(OnPlayCommand);
+
+            ViewTyped.Closing += OnClosing;
+        }
+
+        private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
+        {
+            if (_simulationWorker != null)
+            {
+                _simulationWorker.Cancel();
+            }
         }
 
         public DelegateCommand PlayCommand { get; set; }
 
         private void OnPlayCommand()
         {
-            ProgressControlViewModel worker = new ProgressControlViewModel();
+            _simulationWorker = new ProgressControlViewModel();
 
             ReplayViewer = new ReplayViewer(Replay, TeamMembers.Select(x => new MapVehicle(x)).ToList());
 
-            worker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.Replay());
+            _simulationWorker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.Replay());
         }
 
+        
         public ReplayViewer ReplayViewer
         {
             get { return _replayViewer; }

@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25" />
@@ -29,7 +29,7 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="500" />
             </Grid.RowDefinitions>
-            
+
             <Grid Grid.Column="1" HorizontalAlignment="Stretch" Height="25">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -86,12 +86,52 @@
 
                 <Grid DataContext="{Binding ReplayViewer}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Green" Value="{Binding AlliesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 20, 0, 0"
-                         Visibility="{Binding AlliesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" />
+                         Visibility="{Binding AlliesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
 
                     <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Red" Value="{Binding EnemiesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 40, 0, 0" 
-                         Visibility="{Binding EnemiesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" />
+                         Visibility="{Binding EnemiesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
 
                     <replay:MapGridPainter BoardSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+                    <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Rectangle Width="50" Height="50" StrokeThickness="2">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform X="{Binding CellX}" Y="{Binding CellY}" />
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Style>
+                                <Style TargetType="{x:Type Rectangle}">
+                                    <Setter Property="Stroke" Value="Transparent" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=Click}" Value="True">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard HandoffBehavior="Compose">
+                                                    <Storyboard TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)">
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=Click}" Value="False">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard HandoffBehavior="Compose">
+                                                    <Storyboard TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)">
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <!--<EventTrigger RoutedEvent="Binding.TargetUpdated">
+                                        <BeginStoryboard HandoffBehavior="Compose">
+                                            <Storyboard TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)">
+                                                <ColorAnimation Duration="0:0:0.03" To="Red" AutoReverse="True"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>-->
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                    </Canvas>
 
                     <ItemsControl ItemsSource="{Binding Vehicles}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
                         <ItemsControl.ItemsPanel>
@@ -143,6 +183,24 @@
                                              Visibility="{Binding Seen, Converter={x:Static converters:BoolToVisibilityConverter.Default}}"                                                >
                                         <ProgressBar.Style>
                                             <Style TargetType="ProgressBar">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate>
+                                                            <Grid x:Name="TemplateRoot" SnapsToDevicePixels="true">
+                                                                <Rectangle Fill="{TemplateBinding Background}" RadiusY="2" RadiusX="2"/>
+                                                                <Border Background="{StaticResource ProgressBarGlassyHighlight}" CornerRadius="2" Margin="1"/>
+                                                                <Border BorderBrush="#80FFFFFF" BorderThickness="1,0,1,1" Background="{StaticResource ProgressBarTopHighlight}" Margin="1"/>
+                                                                <Rectangle x:Name="PART_Track" Margin="1"/>
+                                                                <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" Margin="1">
+                                                                    <Grid x:Name="Foreground">
+                                                                        <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}"/>
+                                                                    </Grid>
+                                                                </Decorator>
+                                                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+                                                            </Grid>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Path=TeamMate}" Value="False">
                                                         <Setter Property="Foreground" Value="Red" />

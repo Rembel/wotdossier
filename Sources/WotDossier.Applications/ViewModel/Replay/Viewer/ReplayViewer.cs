@@ -12,6 +12,8 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 {
     public class ReplayViewer : INotifyPropertyChanged
     {
+        private const int MAP_CONTROL_SIZE = 500;
+
         public List<MapVehicle> Vehicles
         {
             get { return _vehicles; }
@@ -35,6 +37,9 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         private int _periodLength = -1;
         private float _clockAtPeriod;
         private float _clock;
+        private bool _click;
+        private int _cellX;
+        private int _cellY;
 
         public int EnemiesCapturePoints
         {
@@ -82,8 +87,10 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             var x1 = Convert.ToDouble(values[0]);
             var y1 = Convert.ToDouble(values[1]);
 
-            
-            _mapGrid = new MapGrid(new Rect(x, y, x1 - x, y1 - y), 500, 500);
+
+            _mapGrid = new MapGrid(new Rect(x, y, x1 - x, y1 - y), MAP_CONTROL_SIZE, MAP_CONTROL_SIZE);
+
+            CellSize = MAP_CONTROL_SIZE/10;
 
             Vehicles = vehicles;
             ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_1.playerID);
@@ -337,6 +344,13 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
                 }
             }
 
+            if (packet.Type == PacketType.MinimapClick)
+            {
+                CellY = data.cellLeft * CellSize;
+                CellX = data.cellTop * CellSize;
+                Click = !Click;
+            }
+
             if (_periodLength > 0)
             {
                 var clockseconds = _periodLength - (packet.Clock - _clockAtPeriod);
@@ -350,6 +364,8 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
                 }
             }
         }
+
+        public int CellSize { get; set; }
 
         public void Update(List<Packet> packets, double windowStart, double windowSize, int startIx)
         {
@@ -373,6 +389,36 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             else
             {
                 //this.dispatch('stop');
+            }
+        }
+
+        public bool Click
+        {
+            get { return _click; }
+            set
+            {
+                _click = value;
+                OnPropertyChanged("Click");
+            }
+        }
+
+        public int CellX
+        {
+            get { return _cellX; }
+            set
+            {
+                _cellX = value;
+                OnPropertyChanged("CellX");
+            }
+        }
+
+        public int CellY
+        {
+            get { return _cellY; }
+            set
+            {
+                _cellY = value;
+                OnPropertyChanged("CellY");
             }
         }
 

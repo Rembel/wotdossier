@@ -701,19 +701,19 @@ namespace WotDossier.Applications.ViewModel.Filter
         {
             if (battleType == BattleType.ctf)
             {
-                return replay.Gameplay == Gameplay.ctf;
+                return replay.Gameplay == Gameplay.ctf && replay.BattleType == BattleType.Regular;
             }
             if (battleType == BattleType.domination)
             {
-                return replay.Gameplay == Gameplay.domination;
+                return replay.Gameplay == Gameplay.domination && replay.BattleType == BattleType.Regular;
             }
             if (battleType == BattleType.assault)
             {
-                return replay.Gameplay == Gameplay.assault;
+                return replay.Gameplay == Gameplay.assault && replay.BattleType == BattleType.Regular;
             }
             if (battleType == BattleType.nations)
             {
-                return replay.Gameplay == Gameplay.nations;
+                return replay.Gameplay == Gameplay.nations && replay.BattleType == BattleType.Regular;
             }
             return false;
         }

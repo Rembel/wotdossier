@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Common.Logging;
@@ -7,6 +8,7 @@ using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
+using WotDossier.Domain;
 using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.ViewModel.Chart
@@ -496,79 +498,168 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitWn8ByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enumerable.Range(1, 10);
+
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier)
                 .Select(x => new DataPoint(x.Key, 
                     RatingHelper.Wn8(x.ToList())));
-            EfficiencyByTierDataSource = dataSource.ToList();
+
+            var list = dataSource.ToList();
+
+            var query = from value in values
+                        join point in list on value equals point.X into gj
+                        from subpet in gj.DefaultIfEmpty()
+                        select subpet ?? new DataPoint(value, 0);
+
+            EfficiencyByTierDataSource = query.ToList();
         }
 
         private void InitWn8ByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enum.GetValues(typeof(TankType)).Cast<int>().Where(x => x >= 0);
+
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type)
                 .Select(x => new DataPoint(x.Key,
                     RatingHelper.Wn8(x.ToList())));
-            EfficiencyByTypeDataSource = dataSource.ToList();
+
+            var list = dataSource.ToList();
+
+            var query = from value in values
+                        join point in list on value equals point.X into gj
+                        from subpet in gj.DefaultIfEmpty()
+                        select subpet ?? new DataPoint(value, 0);
+
+            EfficiencyByTypeDataSource = query.ToList();
         }
 
         private void InitWn8ByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enum.GetValues(typeof(Country)).Cast<int>().Where(x => x >= 0);
+
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId)
                 .Select(x => new DataPoint(x.Key,
                     RatingHelper.Wn8(x.ToList())));
-            EfficiencyByCountryDataSource = dataSource.ToList();
+            var list = dataSource.ToList();
+
+            var query = from value in values
+                        join point in list on value equals point.X into gj
+                        from subpet in gj.DefaultIfEmpty()
+                        select  subpet ?? new DataPoint(value, 0);
+
+            EfficiencyByCountryDataSource = query.ToList();
         }
 
         private void InitWinPercentByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enumerable.Range(1, 10);
+
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key,
                 x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
-            WinPercentByTierDataSource = dataSource.ToList();
+
+            var list = dataSource.ToList();
+
+            var query = from value in values
+                        join point in list on value equals point.X into gj
+                        from subpet in gj.DefaultIfEmpty()
+                        select subpet ?? new DataPoint(value, 0);
+
+            WinPercentByTierDataSource = query.ToList();
         }
 
         private void InitWinPercentByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enum.GetValues(typeof(TankType)).Cast<int>().Where(x => x >= 0);
+
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, 
                 x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0/x.Sum(y => y.BattlesCount)));
-            WinPercentByTypeDataSource = dataSource.ToList();
+
+            var list = dataSource.ToList();
+
+            var query = from value in values
+                        join point in list on value equals point.X into gj
+                        from subpet in gj.DefaultIfEmpty()
+                        select subpet ?? new DataPoint(value, 0);
+
+            WinPercentByTypeDataSource = query.ToList();
         }
 
         private void InitWinPercentByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enum.GetValues(typeof(Country)).Cast<int>().Where(x => x >= 0);
+
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new DataPoint(x.Key,
                 x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
-            WinPercentByCountryDataSource = dataSource.ToList();
+
+            var list = dataSource.ToList();
+
+            var query = from value in values
+                        join point in list on value equals point.X into gj
+                        from subpet in gj.DefaultIfEmpty()
+                        select subpet ?? new DataPoint(value, 0);
+
+            WinPercentByCountryDataSource = query.ToList();
         }
 
         private void InitBattlesByTierChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enumerable.Range(1, 10);
+
             List<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
             if (dataSource.Any())
             {
                 double max = dataSource.Max(x => x.Y);
                 MaxBattlesByTier = max * 1.2;
-                BattlesByTierDataSource = dataSource;
+
+                var list = dataSource.ToList();
+
+                var query = from value in values
+                            join point in list on value equals point.X into gj
+                            from subpet in gj.DefaultIfEmpty()
+                            select subpet ?? new DataPoint(value, 0);
+
+                BattlesByTierDataSource = query.ToList();
             }
         }
 
         private void InitBattlesByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enum.GetValues(typeof(TankType)).Cast<int>().Where(x => x >= 0);
+
             List<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
             if (dataSource.Any())
             {
                 double max = dataSource.Max(x => x.Y);
                 MaxBattlesByType = max * 1.2;
-                BattlesByTypeDataSource = dataSource;
+
+                var list = dataSource.ToList();
+
+                var query = from value in values
+                            join point in list on value equals point.X into gj
+                            from subpet in gj.DefaultIfEmpty()
+                            select subpet ?? new DataPoint(value, 0);
+
+                BattlesByTypeDataSource = query.ToList();
             }
         }
 
         private void InitBattlesByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
+            var values = Enum.GetValues(typeof(Country)).Cast<int>().Where(x => x >= 0);
+
             List<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
             if (dataSource.Any())
             {
                 double max = dataSource.Max(x => x.Y);
                 MaxBattlesByCountry = max * 1.2;
-                BattlesByCountryDataSource = dataSource;
+
+                var list = dataSource.ToList();
+
+                var query = from value in values
+                            join point in list on value equals point.X into gj
+                            from subpet in gj.DefaultIfEmpty()
+                            select subpet ?? new DataPoint(value, 0);
+
+                BattlesByCountryDataSource = query.ToList();
             }
         }
     }

@@ -226,8 +226,17 @@ namespace WotDossier.Applications.ViewModel.Replay
             CopyPlayerNameCommand = new DelegateCommand<TeamMember>(OnCopyPlayerNameCommand);
             OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
             PlayCommand = new DelegateCommand(OnPlayCommand);
+            SetSpeedCommand = new DelegateCommand<int>(OnSetSpeedCommand);
 
             ViewTyped.Closing += OnClosing;
+        }
+
+        private void OnSetSpeedCommand(int speed)
+        {
+            if (ReplayViewer != null)
+            {
+                ReplayViewer.SetSpeed(speed);
+            }
         }
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
@@ -239,6 +248,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         public DelegateCommand PlayCommand { get; set; }
+        public DelegateCommand<int> SetSpeedCommand { get; set; }
 
         private void OnPlayCommand()
         {

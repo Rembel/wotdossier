@@ -70,7 +70,7 @@ namespace WotDossier.Applications.ViewModel
 
                 if (replayFiles.Any())
                 {
-                    ReplaysSummary = new List<ReplayFile>{new TotalReplayFile(replayFiles, Guid.NewGuid())};
+                    ReplaysSummary = new List<TotalReplayFile> { new TotalReplayFile(replayFiles, Guid.NewGuid()) };
                 }
 
                 return replayFiles;
@@ -82,7 +82,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        public List<ReplayFile> ReplaysSummary
+        public List<TotalReplayFile> ReplaysSummary
         {
             get { return _replaysSummary; }
             set
@@ -95,7 +95,7 @@ namespace WotDossier.Applications.ViewModel
         private List<ReplayFolder> _replaysFolders;
         private Guid? _selectedFolderId = null;
         private bool _processing;
-        private List<ReplayFile> _replaysSummary;
+        private List<TotalReplayFile> _replaysSummary;
         private ObservableCollection<ColumnInformation> _columnInfo;
 
         /// <summary>

@@ -40,6 +40,8 @@ namespace WotDossier.Styles
                         textElementStyle = textColumn.ElementStyle;
                     }
 
+                    //textBinding = new Binding(column.SortMemberPath);
+
                     datagrid.Columns.Add(new DataGridTextColumn
                     {
                         SortMemberPath = column.SortMemberPath,

@@ -69,32 +69,26 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             }
         }
 
-        public ReplayViewer(Domain.Replay.Replay replay, List<MapVehicle> vehicles)
+        private List<MapVehicle> _secondTeam;
+        public List<MapVehicle> SecondTeam
         {
-            _replay = replay;
+            get { return _secondTeam; }
+            set
+            {
+                _secondTeam = value;
+                OnPropertyChanged("SecondTeam");
+            }
+        }
 
-            var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
-
-            var values = map.BottomLeft.Replace(".", ",").Split(' ');
-
-            var x = Convert.ToDouble(values[0]);
-            var y = Convert.ToDouble(values[1]);
-
-            values = map.UpperRight.Replace(".", ",").Split(' ');
-
-            var x1 = Convert.ToDouble(values[0]);
-            var y1 = Convert.ToDouble(values[1]);
-
-
-            _mapGrid = new MapGrid(new Rect(x, y, x1 - x, y1 - y), MAP_CONTROL_SIZE, MAP_CONTROL_SIZE);
-
-            CellSize = MAP_CONTROL_SIZE/10;
-
-            Vehicles = vehicles;
-            ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_1.playerID);
-            ReplayUser.Recorder = true;
-
-            _arena = new Arena(_mapGrid);
+        private List<MapVehicle> _firstTeam;
+        public List<MapVehicle> FirstTeam
+        {
+            get { return _firstTeam; }
+            set
+            {
+                _firstTeam = value;
+                OnPropertyChanged("FirstTeam");
+            }
         }
 
         public MapVehicle ReplayUser { get; set; }
@@ -113,9 +107,6 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         }
 
         private float _clock;
-
-        private bool _click;
-
         public float Clock
         {
             get { return _clock; }
@@ -128,6 +119,7 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 
         public int CellSize { get; set; }
 
+        private bool _click;
         public bool Click
         {
             get { return _click; }
@@ -151,7 +143,6 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         }
 
         private int _cellY;
-
         public int CellY
         {
             get { return _cellY; }
@@ -162,9 +153,65 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             }
         }
 
+        private int _firstTeamKills;
+        public int FirstTeamKills
+        {
+            get { return _firstTeamKills; }
+            set
+            {
+                _firstTeamKills = value;
+                OnPropertyChanged("FirstTeamKills");
+            }
+        }
+
+        private int _secondTeamKills;
+        public int SecondTeamKills
+        {
+            get { return _secondTeamKills; }
+            set
+            {
+                _secondTeamKills = value;
+                OnPropertyChanged("SecondTeamKills");
+            }
+        }
+
         #endregion
 
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ReplayViewer(Domain.Replay.Replay replay, List<MapVehicle> vehicles)
+        {
+            _replay = replay;
+
+            var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
+
+            var values = map.BottomLeft.Replace(".", ",").Split(' ');
+
+            var x = Convert.ToDouble(values[0]);
+            var y = Convert.ToDouble(values[1]);
+
+            values = map.UpperRight.Replace(".", ",").Split(' ');
+
+            var x1 = Convert.ToDouble(values[0]);
+            var y1 = Convert.ToDouble(values[1]);
+
+
+            _mapGrid = new MapGrid(new Rect(x, y, x1 - x, y1 - y), MAP_CONTROL_SIZE, MAP_CONTROL_SIZE);
+
+            CellSize = MAP_CONTROL_SIZE / 10;
+
+            Vehicles = vehicles;
+            ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_1.playerID);
+            ReplayUser.Recorder = true;
+
+            FirstTeam = Vehicles.Where(v => v.TeamMate).ToList();
+            SecondTeam = Vehicles.Where(v => !v.TeamMate).ToList();
+
+            _arena = new Arena(_mapGrid);
+        }
 
         public void InitializeItems()
         {
@@ -315,10 +362,26 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 
             if (packet.Type == PacketType.ArenaUpdate && data.updateType == 0x06)
             {
-                MapVehicle member = Vehicles.FirstOrDefault(x => x.Id == (int)packet.PlayerId);
-                if (member != null && data.destroyed == 1)
+                MapVehicle destroyedMember = Vehicles.FirstOrDefault(x => x.Id == data.destroyed);
+
+                if (destroyedMember != null)
                 {
-                    member.CurrentHealth = 0;
+                    destroyedMember.CurrentHealth = 0;
+
+                    if (data.destroyer > 0)
+                    {
+                        MapVehicle destroyer = Vehicles.FirstOrDefault(x => x.Id == (int) data.destroyer);
+                        if (destroyer != null) destroyer.Kills += 1;
+                    }
+
+                    if (destroyedMember.TeamMate)
+                    {
+                        SecondTeamKills += 1;
+                    }
+                    else
+                    {
+                        FirstTeamKills += 1;
+                    }
                 }
             }
 

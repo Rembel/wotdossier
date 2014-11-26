@@ -13,7 +13,18 @@ namespace WotDossier.Applications.ViewModel.Replay
             {
                 _currentHealth = value;
                 HealthPercent = (int) (_currentHealth*100.0/Health);
+                IsAlive = _currentHealth != 0;
                 OnPropertyChanged("CurrentHealth");
+            }
+        }
+
+        public bool IsAlive
+        {
+            get { return _isAlive; }
+            set
+            {
+                _isAlive = value;
+                OnPropertyChanged("IsAlive");
             }
         }
 
@@ -92,6 +103,8 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         private double _y;
         private double _orientation;
+        private int _kills;
+        private bool _isAlive = true;
 
         public double Y
         {
@@ -139,6 +152,19 @@ namespace WotDossier.Applications.ViewModel.Replay
             
             Health = EndHealth + DamageReceived;
             CurrentHealth = Health;
+            Squad = teamMember.Squad;
+        }
+
+        public int Squad { get; set; }
+
+        public int Kills
+        {
+            get { return _kills; }
+            set
+            {
+                _kills = value;
+                OnPropertyChanged("Kills");
+            }
         }
 
         public void Show()

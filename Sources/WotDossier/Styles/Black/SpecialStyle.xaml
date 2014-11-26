@@ -12,7 +12,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="DataGrid.xaml" />
-        <ResourceDictionary Source="ReplayDataGrid.xaml" />
+        <!--<ResourceDictionary Source="ReplayDataGrid.xaml" />-->
         <ResourceDictionary Source="DataGridHeaderTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>
 

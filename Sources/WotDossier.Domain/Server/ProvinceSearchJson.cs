@@ -9,7 +9,7 @@
         /// <summary>
         /// Владелец провинции
         /// </summary>
-        public int clan_id { get; set; }
+        public int? clan_id { get; set; }
         /// <summary>
         /// Соседние провинции
         /// </summary>

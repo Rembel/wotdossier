@@ -1,10 +1,24 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Brushes.xaml" />
-        <ResourceDictionary Source="Fonts.xaml" />
-        <ResourceDictionary Source="DataGrid.xaml" />
-    </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:color="clr-namespace:WotDossier.Converters.Color"
+                    xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
+                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources">
+
+    <DataTemplate x:Key="ascendingSortGlyph">
+        <Border Width="15" Height="10">
+            <Path Opacity="1" Data="F0 M2 9 L2 9 L13 9 L8 1  Z" Fill="{Binding RelativeSource={RelativeSource Self}, Path=(TextElement.Foreground)}" />
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="descendingSortGlyph">
+        <Border Width="15" Height="10">
+            <Path Opacity="1"  Data="F0 M2 1 L2 1 L13 1 L13 1 L8 8 Z" Fill="{Binding RelativeSource={RelativeSource Self}, Path=(TextElement.Foreground)}" />
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="selectedRowGlyph">
+        <Border Width="10" Height="15">
+            <Path Opacity="1"  Data="F0 M1 2 L1 2 L1 13 L1 13 L9 8 Z" Fill="{Binding RelativeSource={RelativeSource Self}, Path=(TextElement.Foreground)}" />
+        </Border>
+    </DataTemplate>
     
     <Style x:Key="ReplayColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -38,8 +52,8 @@
                             <Setter TargetName="mainBorder" Property="Background">
                                 <Setter.Value>
                                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Color="{StaticResource DataGridGradientStartColor}" Offset="1" />
-                                        <GradientStop Color="{StaticResource DataGridGradientStopColor}" Offset="0" />
+                                        <GradientStop Color="#FFFFFF" Offset="1" />
+                                        <GradientStop Color="#D4D7DB" Offset="0" />
                                     </LinearGradientBrush>
                                 </Setter.Value>
                             </Setter>
@@ -145,4 +159,22 @@
             <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/tbl_ico__star.png" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
     </DataTemplate>
+
+    <ContextMenu x:Key="DataRowContextMenu">
+        <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyPlayerName}"
+                 Command="{Binding Path=DataContext.CopyPlayerNameCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}"
+                 CommandParameter="{Binding}"/>
+    </ContextMenu>
+
+    <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource ReplayDataGridRowStyle}">
+        <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="true">
+                <Setter Property="Background" Value="#3295A6D4" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="false">
+                <Setter Property="Background" Value="{Binding IsAlive, Converter={x:Static color:AliveToColorConverter.Default}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converters="clr-namespace:WotDossier.Converters"
              xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
-             xmlns:Properties="clr-namespace:WotDossier.Framework.Properties;assembly=WotDossier.Framework"
              xmlns:Resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <Grid Background="#0E0C09">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="525" />
@@ -86,11 +86,6 @@
                 <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />
 
                 <Grid DataContext="{Binding ReplayViewer}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Green" Value="{Binding AlliesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 20, 0, 0"
-                         Visibility="{Binding AlliesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
-
-                    <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Red" Value="{Binding EnemiesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 40, 0, 0" 
-                         Visibility="{Binding EnemiesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
 
                     <replay:MapGridPainter BoardSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
@@ -170,6 +165,9 @@
                                                     <DataTrigger Binding="{Binding Path=Seen}" Value="True">
                                                         <Setter Property="Opacity" Value="1" />
                                                     </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=CurrentHealth}" Value="0">
+                                                        <Setter Property="Opacity" Value="0.25" />
+                                                    </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </Image.Style>
@@ -185,7 +183,7 @@
                                         </ToolTipService.ToolTip>
                                     </Image>
                                     <ProgressBar HorizontalAlignment="Center" Grid.Row="1" IsIndeterminate="False" Value="{Binding HealthPercent}" Maximum="100" Height="5" Width="25"
-                                             Visibility="{Binding Seen, Converter={x:Static converters:BoolToVisibilityConverter.Default}}"                                                >
+                                             Visibility="{Binding IsAlive, Converter={x:Static converters:BoolToVisibilityConverter.Default}}"                                                >
                                         <ProgressBar.Style>
                                             <Style TargetType="ProgressBar">
                                                 <Setter Property="Template">
@@ -221,11 +219,136 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 10, 0, 0">
+                        <TextBlock Text="{Binding FirstTeamKills}" FontSize="16" FontWeight="Bold" Foreground="Gold" />
+                        <TextBlock Text=" : " FontSize="16" FontWeight="Bold" Foreground="Gold" />
+                        <TextBlock Text="{Binding SecondTeamKills}" FontSize="16" FontWeight="Bold" Foreground="Gold" />
+                    </StackPanel>
+                    
+                    
+                    <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Green" Value="{Binding AlliesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 30, 0, 0"
+                         Visibility="{Binding AlliesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
 
-                    <TextBlock Text="{Binding Time}" FontSize="14" Foreground="DarkOrange" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" />
+                    <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Red" Value="{Binding EnemiesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 50, 0, 0" 
+                         Visibility="{Binding EnemiesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
+                    
+                    <TextBlock Text="{Binding Time}" FontSize="16" FontWeight="Bold" Foreground="Gold" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" />
                 </Grid>
             </Grid>
         </Grid>
+
+        <DataGrid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource replayDataGrid}" SelectedItem="{Binding AlienTeamMember}"
+                           BorderThickness="0" DataContext="{Binding ReplayViewer}" ItemsSource="{Binding FirstTeam}" Margin="3,0,0,0" HorizontalAlignment="Stretch"
+                          Height="Auto" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" HeadersVisibility="Column"
+                          RowHeight="31" RowStyle="{StaticResource RowStyle}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="30" Header="{x:Static Resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" 
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" 
+                                               Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/Squad-Ico-silver.png"/>
+                                <TextBlock Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" 
+                                                   FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="70" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" 
+                                            HeaderTemplate="{StaticResource userTemplate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding Path=.}" Command="{Binding Path=DataContext.OpenPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}">
+                                            <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
+                                        </Hyperlink>
+                                    </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="80" Header="{x:Static Resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" 
+                                               HorizontalAlignment="Left" />
+                                <TextBlock Margin="40,0,0,0" Text="{Binding Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Width="37" Header="{x:Static Resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />-->
+                <DataGridTextColumn Width="55" Header="{x:Static Resources:Resources.Column_Replay_Frags}" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
+                <!--<DataGridTemplateColumn Width="69" Header="{x:Static Resources:Resources.Column_Replay_XP}" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <controls:TextWithImage HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" 
+                                            Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        
+                <DataGrid Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource replayDataGrid}" SelectedItem="{Binding AlienTeamMember}"
+                           BorderThickness="0" DataContext="{Binding ReplayViewer}" ItemsSource="{Binding SecondTeam}" Margin="3,0,0,0" HorizontalAlignment="Stretch"
+                          Height="Auto" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" HeadersVisibility="Column"
+                          RowHeight="31" RowStyle="{StaticResource RowStyle}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="30" Header="{x:Static Resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" 
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" 
+                                               Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/Squad-Ico-silver.png"/>
+                                <TextBlock Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" 
+                                                   FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="70" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" 
+                                            HeaderTemplate="{StaticResource userTemplate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding Path=.}" Command="{Binding Path=DataContext.OpenPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}">
+                                            <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
+                                        </Hyperlink>
+                                    </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="80" Header="{x:Static Resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" 
+                                               HorizontalAlignment="Left" />
+                                <TextBlock Margin="40,0,0,0" Text="{Binding Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Width="37" Header="{x:Static Resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />-->
+                <DataGridTextColumn Width="55" Header="{x:Static Resources:Resources.Column_Replay_Frags}" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
+                <!--<DataGridTemplateColumn Width="69" Header="{x:Static Resources:Resources.Column_Replay_XP}" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <controls:TextWithImage HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" 
+                                            Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
             <Button Content="Real-Time" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">

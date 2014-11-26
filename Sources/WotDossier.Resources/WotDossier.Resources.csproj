@@ -904,7 +904,7 @@
     <Resource Include="Images\Tanks\germany_G108_PzKpfwII_AusfD.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Tanks\germany_R105_T55_Nva_Ddr.png" />
+    <Resource Include="Images\Tanks\germany_g105_t_55_nva_ddr.png" />
     <Resource Include="Images\Tanks\usa_A101_M56.png" />
     <Resource Include="Images\Tanks\usa_A102_T28_concept.png" />
     <Resource Include="Images\Tanks\usa_T95_E2.png" />

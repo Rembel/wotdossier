@@ -5,7 +5,7 @@
                     xmlns:local="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Brushes.xaml"/>
-        <ResourceDictionary Source="Fonts.xaml"/>
+        <ResourceDictionary Source="..\Fonts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="ascendingSortGlyph">

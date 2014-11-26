@@ -399,13 +399,21 @@ namespace WotDossier.Applications.ViewModel
 
                     if (Directory.Exists(folderPath))
                     {
-                        string[] newFiles = Directory.GetFiles(folderPath, "*.wotreplay");
+                        _log.WarnFormat("replays before update count: {0}", _replays.Count());
+
+                        string[] newFiles = Directory.GetFiles(folderPath, "*.wotreplay").Where(x => !x.EndsWith("temp.wotreplay", StringComparison.InvariantCultureIgnoreCase)).ToArray();
+
+                        _log.WarnFormat("new files count: {0}", newFiles.Count());
 
                         string[] oldFiles = replayFolder.Files;
+
+                        _log.WarnFormat("old files count: {0}", oldFiles.Count());
 
                         //get operations for replays list update
                         var operations = GetUpdateOperations(replayFolder, oldFiles, newFiles);
 
+                        _log.WarnFormat("operations count: {0}", operations.Count());
+                        
                         int count = operations.Count();
                         int index = 0;
                         foreach (var operation in operations)
@@ -417,6 +425,8 @@ namespace WotDossier.Applications.ViewModel
                             reporter.Report(percent, Resources.Resources.ProgressLabel_Processing_file_format, index + 1, count, replay.Name);
                             index++;
                         }
+
+                        _log.WarnFormat("replays after update count: {0}", _replays.Count());
                         
                         replayFolder.Files = newFiles;
                         replayFolder.Count = _replays.Count(x => x.FolderId == replayFolder.Id);
@@ -532,6 +542,10 @@ namespace WotDossier.Applications.ViewModel
                     if (data != null)
                     {
                         targetList.Add(new PhisicalReplay(File, data, _folder.Id));
+                    }
+                    else
+                    {
+                        _log.WarnFormat("Null data for file. Path - [{0}]", File.FullName);
                     }
                 }
                 catch (Exception e)

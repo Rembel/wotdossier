@@ -12,7 +12,6 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="DataGridSilver.xaml" />
-        <ResourceDictionary Source="ReplayDataGridSilver.xaml" />
         <ResourceDictionary Source="DataGridHeaderTemplatesSilver.xaml" />
     </ResourceDictionary.MergedDictionaries>
 

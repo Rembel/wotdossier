@@ -31,22 +31,22 @@ namespace WotDossier.Applications.ViewModel.Replay
                 BattleTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.BattleTime.TotalSeconds));
                 LifeTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.LifeTime.TotalSeconds));
                 CreditsEarned = (int)replayFiles.Average(x => x.CreditsEarned);
-                IsWinner = (replayFiles.Count(x => x.IsWinner == BattleStatus.Victory)/(double)replayFiles.Count()).ToString("P");
-                DeathReason = (replayFiles.Count(x => x.DeathReason == Replay.DeathReason.Alive) / (double)replayFiles.Count()).ToString("P");
+                IsWinnerString = (replayFiles.Count(x => x.IsWinner == BattleStatus.Victory)/(double)replayFiles.Count()).ToString("P");
+                DeathReasonString = (replayFiles.Count(x => x.DeathReason == Replay.DeathReason.Alive) / (double)replayFiles.Count()).ToString("P");
                 Team = (replayFiles.Count(x => x.Team == 1) / (double)replayFiles.Count()).ToString("P");
                 PlayTime = string.Format("{0:dd.MM.yyyy} - {1:dd.MM.yyyy}", result.Min(x => x.PlayTime), result.Max(x => x.PlayTime));
                 ClientVersion = string.Format("{0} - {1}", replayFiles.Min(x => x.ClientVersion).ToString(3), replayFiles.Max(x => x.ClientVersion).ToString(3));
-                IsPlatoon = (replayFiles.Count(x => x.IsPlatoon) / (double)replayFiles.Count()).ToString("P");
+                IsPlatoonString = (replayFiles.Count(x => x.IsPlatoon) / (double)replayFiles.Count()).ToString("P");
             }
         }
 
-        public string IsPlatoon { get; set; }
+        public string IsPlatoonString { get; set; }
 
         public string Team { get; set; }
 
-        public string DeathReason { get; set; }
+        public string DeathReasonString { get; set; }
 
-        public string IsWinner { get; set; }
+        public string IsWinnerString { get; set; }
 
         public string ClientVersion { get; set; }
 

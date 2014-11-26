@@ -156,11 +156,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Black\Fonts.xaml">
-      <Link>Styles\Black\Fonts.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\WotDossier\Styles\Black\GroupBox.xaml">
       <Link>Styles\Black\GroupBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -198,11 +193,6 @@
     </Page>
     <Page Include="..\WotDossier\Styles\Black\RadioButton.xaml">
       <Link>Styles\Black\RadioButton.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\WotDossier\Styles\Black\ReplayDataGrid.xaml">
-      <Link>Styles\Black\ReplayDataGrid.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -251,6 +241,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Styles\CommonStyle.xaml">
+      <Link>Styles\CommonStyle.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Fonts.xaml">
+      <Link>Styles\Fonts.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Styles\Silver\BrushesSilver.xaml">
       <Link>Styles\Silver\BrushesSilver.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -296,11 +296,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Silver\FontsSilver.xaml">
-      <Link>Styles\Silver\FontsSilver.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\WotDossier\Styles\Silver\GroupBoxSilver.xaml">
       <Link>Styles\Silver\GroupBoxSilver.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -338,11 +333,6 @@
     </Page>
     <Page Include="..\WotDossier\Styles\Silver\RadioButtonSilver.xaml">
       <Link>Styles\Silver\RadioButtonSilver.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\WotDossier\Styles\Silver\ReplayDataGridSilver.xaml">
-      <Link>Styles\Silver\ReplayDataGridSilver.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

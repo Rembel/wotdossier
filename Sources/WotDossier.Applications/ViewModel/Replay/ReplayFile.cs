@@ -207,6 +207,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     DamageDealt = replay.datablock_battle_result.personal.damageDealt;
                     DamageReceived = replay.datablock_battle_result.personal.damageReceived;
                     IsWinner = GetBattleStatus(replay);
+                    IsWinnerString = Resources.Resources.ResourceManager.GetEnumResource((Enum)IsWinner);
                     Xp = replay.datablock_battle_result.personal.xp;
                     Killed = replay.datablock_battle_result.personal.kills;
                     Damaged = replay.datablock_battle_result.personal.damaged;
@@ -220,13 +221,24 @@ namespace WotDossier.Applications.ViewModel.Replay
                     IsPlatoon = ResolvePlatoonFlag(replay);
                     
                     BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;
+                    BattleTypeString = Resources.Resources.ResourceManager.GetEnumResource((Enum)BattleType);
 
                     DeathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
+                    DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)DeathReason);
 
                     FinishReason = (FinishReason) replay.datablock_battle_result.common.finishReason;
+                    FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)FinishReason);
                 }
             }
         }
+
+        public string IsWinnerString { get; set; }
+
+        public string FinishReasonString { get; set; }
+
+        public string DeathReasonString { get; set; }
+
+        public string BattleTypeString { get; set; }
 
         private bool ResolvePlatoonFlag(Domain.Replay.Replay replay)
         {

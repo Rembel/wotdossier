@@ -5,6 +5,7 @@
                     xmlns:views="clr-namespace:WotDossier.Views">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ExplicitStylesSilver.xaml" />
+        <ResourceDictionary Source="..\CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource office2007SilverCheckBox}" />

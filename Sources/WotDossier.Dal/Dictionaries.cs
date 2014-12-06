@@ -395,13 +395,18 @@ namespace WotDossier.Dal
         {
             if (typeCompDescr == null)
             {
-                return new TankDescription{Title = "Unknown", Icon = TankIcon.Empty};
+                return TankDescription.Unknown;
             }
 
             int tankId = typeCompDescr.Value >> 8 & 65535;
             int countryId = typeCompDescr.Value >> 4 & 15;
 
             var uniqueId = Utils.ToUniqueId(countryId, tankId);
+
+            if (!Tanks.ContainsKey(uniqueId))
+            {
+                return TankDescription.Unknown;
+            }
 
             return Tanks[uniqueId];
         }

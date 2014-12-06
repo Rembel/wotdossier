@@ -40,7 +40,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplaysByVersionTest()
         {
-            Version version = new Version("0.9.0.0");
+            Version version = new Version("0.9.5.0");
 
             ReplayTest(version);
         }

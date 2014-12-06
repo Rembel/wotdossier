@@ -1134,6 +1134,82 @@
     <Resource Include="Images\Replays\Viewer\TD_g.png" />
     <Resource Include="Images\Replays\Viewer\TD_r.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Maps\Minimap\100_thepit\100_thepit.png" />
+    <Resource Include="Images\Maps\Minimap\103_ruinberg_winter\103_ruinberg_winter.png" />
+    <Resource Include="Images\Maps\Minimap\59_asia_great_wall\59_asia_great_wall.png" />
+    <Resource Include="Images\Maps\Minimap\92_stalingrad\92_stalingrad.png" />
+    <Resource Include="Images\Maps\Minimap\95_lost_city\95_lost_city.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Maps\100_thepit.jpg" />
+    <Resource Include="Images\Maps\103_ruinberg_winter.jpg" />
+    <Resource Include="Images\Maps\95_lost_city.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\china_Ch11_110_IGR.png" />
+    <Resource Include="Images\Tanks\china_Ch17_WZ131_1_WZ132_IGR.png" />
+    <Resource Include="Images\Tanks\china_Ch19_121_IGR.png" />
+    <Resource Include="Images\Tanks\france_AMX_13_90_IGR.png" />
+    <Resource Include="Images\Tanks\france_AMX_50_100_IGR.png" />
+    <Resource Include="Images\Tanks\france_AMX_AC_Mle1948_IGR.png" />
+    <Resource Include="Images\Tanks\france_Bat_Chatillon25t_IGR.png" />
+    <Resource Include="Images\Tanks\france_ELC_AMX_IGR.png" />
+    <Resource Include="Images\Tanks\france_F68_AMX_Chasseur_de_char_46.png" />
+    <Resource Include="Images\Tanks\france_F69_AMX13_57_100.png" />
+    <Resource Include="Images\Tanks\france_S_35CA_IGR.png" />
+    <Resource Include="Images\Tanks\france__105_leFH18B2_IGR.png" />
+    <Resource Include="Images\Tanks\germany_E_25_IGR.png" />
+    <Resource Include="Images\Tanks\germany_Ferdinand_IGR.png" />
+    <Resource Include="Images\Tanks\germany_JagdTiger_SdKfz_185_IGR.png" />
+    <Resource Include="Images\Tanks\germany_Maus_IGR.png" />
+    <Resource Include="Images\Tanks\germany_Panther_II_IGR.png" />
+    <Resource Include="Images\Tanks\germany_PzVIB_Tiger_II_IGR.png" />
+    <Resource Include="Images\Tanks\germany_PzVI_IGR.png" />
+    <Resource Include="Images\Tanks\germany_PzV_IGR.png" />
+    <Resource Include="Images\Tanks\germany_StuG_40_AusfG_IGR.png" />
+    <Resource Include="Images\Tanks\japan_Chi_Ri_IGR.png" />
+    <Resource Include="Images\Tanks\japan_J18_STA_2_3.png" />
+    <Resource Include="Images\Tanks\japan_STA_1_IGR.png" />
+    <Resource Include="Images\Tanks\japan_ST_B1_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB08_Churchill_I_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB11_Caernarvon_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB13_FV215b_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB14_M2.png" />
+    <Resource Include="Images\Tanks\uk_GB15_Stuart_I.png" />
+    <Resource Include="Images\Tanks\uk_GB17_Grant_I.png" />
+    <Resource Include="Images\Tanks\uk_GB19_Sherman_Firefly.png" />
+    <Resource Include="Images\Tanks\uk_GB21_Cromwell_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB41_Challenger.png" />
+    <Resource Include="Images\Tanks\uk_GB44_Archer.png" />
+    <Resource Include="Images\Tanks\uk_GB45_Achilles_IIC.png" />
+    <Resource Include="Images\Tanks\uk_GB50_Sherman_III.png" />
+    <Resource Include="Images\Tanks\uk_GB72_AT15_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB77_FV304_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB80_Charioteer.png" />
+    <Resource Include="Images\Tanks\uk_GB81_FV4004.png" />
+    <Resource Include="Images\Tanks\uk_GB83_FV4005.png" />
+    <Resource Include="Images\Tanks\usa_A94_T37.png" />
+    <Resource Include="Images\Tanks\usa_M48A1_IGR.png" />
+    <Resource Include="Images\Tanks\usa_M4_Sherman_IGR.png" />
+    <Resource Include="Images\Tanks\usa_Pershing_IGR.png" />
+    <Resource Include="Images\Tanks\usa_Sherman_Jumbo_IGR.png" />
+    <Resource Include="Images\Tanks\usa_T29_IGR.png" />
+    <Resource Include="Images\Tanks\usa_T34_hvy_IGR.png" />
+    <Resource Include="Images\Tanks\usa_T67_IGR.png" />
+    <Resource Include="Images\Tanks\usa_T69_IGR.png" />
+    <Resource Include="Images\Tanks\usa_T71_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_ISU_152_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_IS_3_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_IS_7_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_KV_5_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_R04_T_34.png" />
+    <Resource Include="Images\Tanks\ussr_R106_KV85_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_R111_ISU130.png" />
+    <Resource Include="Images\Tanks\ussr_SU_152_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_T_44_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_Valentine_LL_IGR.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

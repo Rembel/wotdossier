@@ -124,6 +124,10 @@
       <Link>External\maps.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\maps_description.json">
+      <Link>External\maps_description.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\optional_devices.json">
       <Link>External\optional_devices.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -316,6 +320,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.4\14151075672571_uk_GB21_Cromwell_tundra.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.5\20141206_0029_ussr-Object_140_92_stalingrad.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

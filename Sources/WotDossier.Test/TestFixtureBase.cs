@@ -499,5 +499,17 @@ namespace WotDossier.Test
             Console.WriteLine(CacheFileHelper.DecodFileName("NRXWO2LOFZYDOLTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMB.dat"));
             
         }
+
+        [Test]
+        public void RenameTankResources()
+        {
+            string[] files = Directory.GetFiles(@"I:\1");
+
+            foreach (var filePath in files)
+            {
+                var file = new FileInfo(filePath);
+                file.MoveTo(filePath.Replace("-", "_"));
+            }
+        }
     }
 }

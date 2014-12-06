@@ -499,7 +499,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                         if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
                             slot.Item.TypeId == SlotType.Shell)
                         {
-                            slot.Description = Dictionaries.Instance.Shells[(Country) slot.Item.Country][slot.Item.Id];
+                            slot.Description = Dictionaries.Instance.Shells[(Country)TankIcon.CountryId][slot.Item.Id];
                             Shells.Add(slot);
                         }
                     }

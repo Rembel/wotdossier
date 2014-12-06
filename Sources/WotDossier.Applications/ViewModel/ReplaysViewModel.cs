@@ -410,7 +410,7 @@ namespace WotDossier.Applications.ViewModel
                         _log.WarnFormat("old files count: {0}", oldFiles.Count());
 
                         //get operations for replays list update
-                        var operations = GetUpdateOperations(replayFolder, oldFiles, newFiles);
+                        var operations = GetUpdateOperations(replayFolder.Id, oldFiles, newFiles);
 
                         _log.WarnFormat("operations count: {0}", operations.Count());
                         
@@ -491,11 +491,11 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(ReplayFolder folder, string[] oldFiles, string[] newList)
+        private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(Guid folderId, string[] oldFiles, string[] newList)
         {
             List<ListUpdateOperation<ReplayFile>> result = new List<ListUpdateOperation<ReplayFile>>();
             List<ListUpdateOperation<ReplayFile>> toDel = oldFiles.Except(newList).Select(x => (ListUpdateOperation<ReplayFile>)new DeleteOperation(x)).ToList();
-            List<ListUpdateOperation<ReplayFile>> toAdd = newList.Except(oldFiles).Select(x => (ListUpdateOperation<ReplayFile>)new AddOperation(x, folder)).ToList();
+            List<ListUpdateOperation<ReplayFile>> toAdd = newList.Except(oldFiles).Select(x => (ListUpdateOperation<ReplayFile>)new AddOperation(x, folderId)).ToList();
             result.AddRange(toDel);
             result.AddRange(toAdd);
             return result;
@@ -520,15 +520,16 @@ namespace WotDossier.Applications.ViewModel
 
         class AddOperation : ListUpdateOperation<ReplayFile>
         {
-            private readonly ReplayFolder _folder;
-            private FileInfo _file;
+            private readonly Guid _folder;
+            private readonly FileInfo _file;
 
             public FileInfo File
             {
                 get { return _file; }
             }
 
-            public AddOperation(string item, ReplayFolder folder) : base(item)
+            public AddOperation(string item, Guid folder)
+                : base(item)
             {
                 _folder = folder;
                 _file = new FileInfo(Item);
@@ -541,7 +542,7 @@ namespace WotDossier.Applications.ViewModel
                     Domain.Replay.Replay data = ReplayFileHelper.ParseReplay_8_11(File);
                     if (data != null)
                     {
-                        targetList.Add(new PhisicalReplay(File, data, _folder.Id));
+                        targetList.Add(new PhisicalReplay(File, data, _folder));
                     }
                     else
                     {

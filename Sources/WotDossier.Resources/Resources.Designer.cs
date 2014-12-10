@@ -4784,11 +4784,29 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mittengard.
+        /// </summary>
+        public static string Map_100_thepit {
+            get {
+                return ResourceManager.GetString("Map_100_thepit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tank Rally.
         /// </summary>
         public static string Map_102_deathtrack {
             get {
                 return ResourceManager.GetString("Map_102_deathtrack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter Ruinberg.
+        /// </summary>
+        public static string Map_103_ruinberg_winter {
+            get {
+                return ResourceManager.GetString("Map_103_ruinberg_winter", resourceCulture);
             }
         }
         
@@ -5113,6 +5131,15 @@ namespace WotDossier.Resources {
         public static string Map_94_battlecity {
             get {
                 return ResourceManager.GetString("Map_94_battlecity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ghost Town.
+        /// </summary>
+        public static string Map_95_lost_city {
+            get {
+                return ResourceManager.GetString("Map_95_lost_city", resourceCulture);
             }
         }
         

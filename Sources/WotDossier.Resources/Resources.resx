@@ -3316,4 +3316,13 @@ up to 500 m</value>
   <data name="Btn_Play" xml:space="preserve">
     <value>Simulation</value>
   </data>
+  <data name="Map_100_thepit" xml:space="preserve">
+    <value>Mittengard</value>
+  </data>
+  <data name="Map_103_ruinberg_winter" xml:space="preserve">
+    <value>Winter Ruinberg</value>
+  </data>
+  <data name="Map_95_lost_city" xml:space="preserve">
+    <value>Ghost Town</value>
+  </data>
 </root>

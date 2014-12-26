@@ -3414,4 +3414,13 @@
   <data name="Map_95_lost_city" xml:space="preserve">
     <value>Затерянный Город</value>
   </data>
+  <data name="ViewerSpeed_Normal" xml:space="preserve">
+    <value>Нормально</value>
+  </data>
+  <data name="ViewerSpeed_Fast" xml:space="preserve">
+    <value>Быстрее</value>
+  </data>
+  <data name="ViewerSpeed_Ludicrous" xml:space="preserve">
+    <value>Очень быстро</value>
+  </data>
 </root>

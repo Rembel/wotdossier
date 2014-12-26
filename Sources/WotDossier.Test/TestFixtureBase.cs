@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using System.Data;
+using System.Data.SQLite;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -251,6 +253,22 @@ namespace WotDossier.Test
         }
 
         [Test]
+        public void JsonTest()
+        {
+            int playerId = 10800699;
+
+            IEnumerable<PlayerStatisticEntity> statisticEntities = DossierRepository.GetPlayerStatistic<PlayerStatisticEntity>(playerId);
+            PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
+
+            IEnumerable<TankStatisticEntity> entities = _dossierRepository.GetTanksStatistic<TankStatisticEntity>(currentStatistic.PlayerId);
+
+            var list = entities.Select(
+                x => new {x.Updated, x.Raw, x.TankId, x.BattlesCount}).ToList();
+
+            Console.WriteLine(JsonConvert.SerializeObject(list));
+        }
+
+        [Test]
         public void NominalDamageTest()
         {
             XmlDocument document = new XmlDocument();
@@ -317,6 +335,15 @@ namespace WotDossier.Test
             foreach (var expectedValue in expectedValues["data"])
             {
                 int idNum = (int) expectedValue["IDNum"];
+
+                if (Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == idNum) == null)
+                {
+                    expectedValue["tankId"] = idNum >> 8 & 65535;
+                    expectedValue["countryId"] = idNum >> 4 & 15;
+                    Console.WriteLine(expectedValue);
+                    continue;
+                }
+
                 var tankDescription = Dictionaries.Instance.Tanks.Values.First(x => x.CompDescr == idNum);
 
                 RatingExpectancy ratingExpectancy = new RatingExpectancy();
@@ -510,6 +537,73 @@ namespace WotDossier.Test
                 var file = new FileInfo(filePath);
                 file.MoveTo(filePath.Replace("-", "_"));
             }
+        }
+
+        [Test]
+        public void GeneratePostgreInsertStatements()
+        {
+            SQLiteConnection connection = null;
+
+            using (connection = GetConnection())
+            {
+                SQLiteCommand command = new SQLiteCommand("SELECT name FROM sqlite_master WHERE type='table';", connection);
+
+                command.CommandType = CommandType.Text;
+
+                Dictionary<string, List<string>> tables = new Dictionary<string, List<string>>();
+
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        tables.Add((string)reader["name"], new List<string>());
+                    }
+                }
+
+                foreach (var table in tables.Keys)
+                {
+                    command = new SQLiteCommand(string.Format("PRAGMA table_info('{0}');",table), connection);
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            tables[table].Add((string)reader["name"]);
+                        }
+                    }
+                }
+
+                /*'INSERT INTO PlayerStatistic (Id, PlayerId, Updated, Wins, Losses, SurvivedBattles, Xp, BattleAvgXp, MaxXp, Frags, Spotted, HitsPercents, DamageDealt, CapturePoints, DroppedCapturePoints, BattlesCount, Rating_IntegratedValue'
+ +', Rating_IntegratedPlace, Rating_BattleAvgPerformanceValue, Rating_BattleAvgPerformancePlace, Rating_BattleAvgXpValue, Rating_BattleAvgXpPlace, Rating_BattleWinsValue, Rating_BattleWinsPlace, Rating_BattlesValue'
++', Rating_BattlesPlace, Rating_CapturedPointsValue, Rating_CapturedPointsPlace, Rating_DamageDealtValue, Rating_DamageDealtPlace, Rating_DroppedPointsValue, Rating_DroppedPointsPlace, Rating_FragsValue, Rating_FragsPlace'
++', Rating_SpottedValue, Rating_SpottedPlace, Rating_XpValue, Rating_XpPlace, AvgLevel, AchievementsId, Rating_HitsPercentsValue, Rating_HitsPercentsPlace, Rating_MaxXpValue, Rating_MaxXpPlace'
++', RBR, WN8Rating, PerformanceRating, DamageTaken, MaxFrags, MaxDamage, MarkOfMastery, UId, PlayerUId, AchievementsUId, Rev) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)', 
+				[statistic.Id, statistic.PlayerId, statistic.Updated, statistic.Wins, statistic.Losses, statistic.SurvivedBattles, statistic.Xp, statistic.BattleAvgXp, statistic.MaxXp, statistic.Frags, statistic.Spotted, 
+	statistic.HitsPercents, statistic.DamageDealt, statistic.CapturePoints, statistic.DroppedCapturePoints, statistic.BattlesCount, statistic.Rating_IntegratedValue, statistic.Rating_IntegratedPlace, statistic.Rating_BattleAvgPerformanceValue, 
+	statistic.Rating_BattleAvgPerformancePlace, statistic.Rating_BattleAvgXpValue, statistic.Rating_BattleAvgXpPlace, statistic.Rating_BattleWinsValue, statistic.Rating_BattleWinsPlace, statistic.Rating_BattlesValue,
+	statistic.Rating_BattlesPlace, statistic.Rating_CapturedPointsValue, statistic.Rating_CapturedPointsPlace, statistic.Rating_DamageDealtValue, statistic.Rating_DamageDealtPlace, statistic.Rating_DroppedPointsValue, 
+	statistic.Rating_DroppedPointsPlace, statistic.Rating_FragsValue, statistic.Rating_FragsPlace, statistic.Rating_SpottedValue, statistic.Rating_SpottedPlace, statistic.Rating_XpValue, statistic.Rating_XpPlace, statistic.AvgLevel, 
+	statistic.AchievementsId, statistic.Rating_HitsPercentsValue, statistic.Rating_HitsPercentsPlace, statistic.Rating_MaxXpValue, statistic.Rating_MaxXpPlace, statistic.RBR, statistic.WN8Rating, statistic.PerformanceRating, statistic.DamageTaken, 
+	statistic.MaxFrags, statistic.MaxDamage, statistic.MarkOfMastery, statistic.UId, statistic.PlayerUId, statistic.AchievementsUId, statistic.Rev]*/
+
+                foreach (var table in tables)
+                {
+                    StringBuilder builder = new StringBuilder();
+                    builder.AppendFormat("'INSERT INTO {0} ", table.Key);
+                    builder.AppendFormat("({0}) ", string.Join(",", table.Value));
+                    builder.AppendFormat("VALUES ({0})'", string.Join(",", Enumerable.Range(0, table.Value.Count).Select(x => "$" + (x+1))));
+                    builder.AppendFormat(",[{0}]", string.Join(",", table.Value.Select(x => table.Key.ToLower() + "." + x).ToList()));
+                    Console.WriteLine(builder);
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        private SQLiteConnection GetConnection()
+        {
+            SQLiteConnection connection = new SQLiteConnection("Data Source=Data/dossier.s3db;Version=3;");
+            connection.Open();
+            return connection;
         }
     }
 }

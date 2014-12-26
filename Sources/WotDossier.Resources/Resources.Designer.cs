@@ -8706,6 +8706,33 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fast.
+        /// </summary>
+        public static string ViewerSpeed_Fast {
+            get {
+                return ResourceManager.GetString("ViewerSpeed_Fast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ludicrous.
+        /// </summary>
+        public static string ViewerSpeed_Ludicrous {
+            get {
+                return ResourceManager.GetString("ViewerSpeed_Ludicrous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Real-Time.
+        /// </summary>
+        public static string ViewerSpeed_Normal {
+            get {
+                return ResourceManager.GetString("ViewerSpeed_Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t find player data in dossier cache.
         /// </summary>
         public static string WarningMsg_CanntFindPlayerDataInDossierCache {

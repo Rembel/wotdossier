@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications.Parser;
+using WotDossier.Common;
 using WotDossier.Dal;
 
 namespace WotDossier.Applications.ViewModel.Replay.Viewer
@@ -312,7 +314,14 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 
         private void PacketHandler(Packet packet)
         {
-            Thread.Sleep(_updateSpeed);
+            if (_updateSpeed > 0)
+            {
+                Thread.Sleep(_updateSpeed);
+            }
+            else
+            {
+                Sleep(0.0005);
+            }
 
             dynamic data = packet.Data;
 
@@ -415,6 +424,19 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
                 {
                     vehicle.Seen = Clock - vehicle.Clock < 10 && vehicle.CurrentHealth > 0;
                 }
+            }
+        }
+
+        private void Sleep(double milliSeconds)
+        {
+            var hiPerfTimer = new HiPerfTimer();
+            double peekMs = 0;
+            hiPerfTimer.Start();
+            while (peekMs < milliSeconds)
+            {
+                Thread.Sleep(0);
+                hiPerfTimer.Stop();
+                peekMs = hiPerfTimer.Duration;
             }
         }
 

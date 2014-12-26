@@ -351,24 +351,24 @@
         </DataGrid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
-            <Button Content="Real-Time" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="{x:Static Resources:Resources.ViewerSpeed_Normal}" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Button.CommandParameter>
                     <system:Int32>
                         5
                     </system:Int32>
                 </Button.CommandParameter>
             </Button>
-            <Button Content="Fast" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button.CommandParameter>
-                    <system:Int32>
-                        2
-                    </system:Int32>
-                </Button.CommandParameter>
-            </Button>
-            <Button Content="Ludicrous" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="{x:Static Resources:Resources.ViewerSpeed_Fast}" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Button.CommandParameter>
                     <system:Int32>
                         1
+                    </system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="{x:Static Resources:Resources.ViewerSpeed_Ludicrous}" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button.CommandParameter>
+                    <system:Int32>
+                        0
                     </system:Int32>
                 </Button.CommandParameter>
             </Button>

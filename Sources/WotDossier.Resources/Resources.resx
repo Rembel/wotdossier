@@ -3325,4 +3325,13 @@ up to 500 m</value>
   <data name="Map_95_lost_city" xml:space="preserve">
     <value>Ghost Town</value>
   </data>
+  <data name="ViewerSpeed_Normal" xml:space="preserve">
+    <value>Real-Time</value>
+  </data>
+  <data name="ViewerSpeed_Fast" xml:space="preserve">
+    <value>Fast</value>
+  </data>
+  <data name="ViewerSpeed_Ludicrous" xml:space="preserve">
+    <value>Ludicrous</value>
+  </data>
 </root>

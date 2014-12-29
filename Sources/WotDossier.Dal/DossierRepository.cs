@@ -299,6 +299,16 @@ namespace WotDossier.Dal
                             Update(statisticEntity, tank, predicate);
                             _dataProvider.Save(statisticEntity);
                         }
+                        //new tank
+                        else if (currentSnapshotBattlesCount == 0 && predicate(tank).battlesCount == 0)
+                        {
+                            statisticEntity = new T();
+                            statisticEntity.TankIdObject = tankEntity;
+
+                            statisticEntity.Updated = updated;
+                            Update(statisticEntity, tank, predicate);
+                            _dataProvider.Save(statisticEntity);
+                        }
                     }
                 }
 

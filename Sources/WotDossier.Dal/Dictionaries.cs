@@ -22,11 +22,11 @@ namespace WotDossier.Dal
         private static readonly object _syncObject = new object();
         private static volatile Dictionaries _instance = new Dictionaries();
 
-        private readonly Dictionary<int, TankDescription> _tanks;
+        private Dictionary<int, TankDescription> _tanks;
         private readonly Dictionary<string, TankIcon> _icons = new Dictionary<string, TankIcon>();
         private readonly Dictionary<TankIcon, TankDescription> _iconTanks = new Dictionary<TankIcon, TankDescription>();
-        private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
+        private Dictionary<string, Map> _maps = new Dictionary<string, Map>();
+        private Dictionary<string, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
         public static readonly Version VersionRelease = new Version("0.9.4.0");
@@ -254,6 +254,11 @@ namespace WotDossier.Dal
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         private Dictionaries()
+        {
+            Init();
+        }
+
+        private void Init()
         {
             _ratingExpectations = ReadRatingExpectationsDictionary();
             _tanks = ReadTanksDictionary();

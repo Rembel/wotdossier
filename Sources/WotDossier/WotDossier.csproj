@@ -915,6 +915,7 @@
     <EmbeddedResource Include="Updates\2014052802.sql" />
     <EmbeddedResource Include="Updates\2014052801.sql" />
     <EmbeddedResource Include="Updates\2014092301.sql" />
+    <EmbeddedResource Include="Updates\2014122000.sql" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

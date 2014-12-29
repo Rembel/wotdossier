@@ -127,11 +127,15 @@
     <Compile Include="PlayerNameSuggestionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingsReader.cs" />
+    <Compile Include="SyncManager.cs" />
     <Compile Include="ThemesManager.cs" />
     <Compile Include="Update\CodeUpdateBase.cs" />
     <Compile Include="Update\CodeUpdate_2014042501.cs" />
     <Compile Include="Update\CodeUpdate_2014070802.cs" />
     <Compile Include="Update\CodeUpdate_2014042502.cs" />
+    <Compile Include="Update\CodeUpdate_2014122001.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Update\EmbeddedSqlUpdate.cs" />
     <Compile Include="Update\DatabaseManager.cs" />
     <Compile Include="Update\DownloadedVersionInfo.cs" />

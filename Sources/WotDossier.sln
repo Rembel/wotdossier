@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WotDossier", "WotDossier\WotDossier.csproj", "{A4EF480B-49B6-42C4-8ACE-6127B15699F8}"
 EndProject
@@ -41,6 +41,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WotDossier.ReplaysManager", "WotDossier.ReplaysManager\WotDossier.ReplaysManager.csproj", "{BFC0AE29-0260-42E8-B124-B2FCD2CA3725}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WotDossier.Resources", "WotDossier.Resources\WotDossier.Resources.csproj", "{7CD82F33-099E-4C8F-B30A-7AACAC5B37E1}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "WotDossier.Node", "WotDossier.Node\WotDossier.Node.njsproj", "{0F5D283E-AB51-4A94-B203-7E5DC25E1533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -276,6 +278,26 @@ Global
 		{7CD82F33-099E-4C8F-B30A-7AACAC5B37E1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7CD82F33-099E-4C8F-B30A-7AACAC5B37E1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7CD82F33-099E-4C8F-B30A-7AACAC5B37E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Full|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Full|Any CPU.Build.0 = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Full|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Full|Mixed Platforms.Build.0 = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Full|x86.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Lite|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Lite|Mixed Platforms.Build.0 = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Lite|x86.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0F5D283E-AB51-4A94-B203-7E5DC25E1533}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

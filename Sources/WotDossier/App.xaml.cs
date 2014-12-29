@@ -90,9 +90,6 @@ namespace WotDossier
             {
                 _log.Trace("OnStartup start");
 
-                DatabaseManager manager = new DatabaseManager();
-                manager.InitDatabase();
-                
                 //set app lang
                 CultureHelper.SetUiCulture();
 
@@ -131,6 +128,12 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>();
                 CompositionContainerFactory.Instance.Register<IPlayersCompareView, PlayersCompareWindow>();
                 CompositionContainerFactory.Instance.Register<IReplayViewerSettingsView, ReplayViewerSettingsWindow>();
+
+                DatabaseManager manager = new DatabaseManager();
+                manager.InitDatabase();
+                
+                SyncManager syncManager = new SyncManager(CompositionContainerFactory.Instance.GetExport<DossierRepository>());
+                syncManager.Sync();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ApplicationController>();
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.ViewModel.Rows;
@@ -434,7 +435,8 @@ namespace WotDossier.Applications.Logic.Adapter
 
             if (entity.AchievementsIdObject == null)
             {
-                entity.AchievementsIdObject = new PlayerAchievementsEntity();
+                entity.AchievementsIdObject = new PlayerAchievementsEntity { UId = Guid.NewGuid() };
+                entity.AchievementsUId = entity.AchievementsIdObject.UId;
             }
 
             Mapper.Map<IRandomBattlesAchievements>(this, entity.AchievementsIdObject);

@@ -31,4 +31,7 @@
 /Sources/WotDossier.Common/*.user
 /Sources/*.DotSettings
 /Sources/WotDossier.Node/node_modules
+/Sources/WotDossier.Node/bin
 /Sources/WotDossier.Node/obj
+/Sources/WotDossier.Node/*.suo
+/Sources/WotDossier.Node/*.log

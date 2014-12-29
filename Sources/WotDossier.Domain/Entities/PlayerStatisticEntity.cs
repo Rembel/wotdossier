@@ -1,156 +1,180 @@
 using System;
+using System.Runtime.Serialization;
 using WotDossier.Domain.Server;
 
 namespace WotDossier.Domain.Entities
 {
     /// <summary>
-    /// Object representation for table 'PlayerStatistic'.
+    ///     Object representation for table 'PlayerStatistic'.
     /// </summary>
     [Serializable]
+    [DataContract]
     public class PlayerStatisticEntity : StatisticEntity
     {
         /// <summary>
-        /// Gets/Sets the field "Rating_IntegratedValue".
+        ///     Gets/Sets the field "Rating_IntegratedValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingIntegratedValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_IntegratedPlace".
+        ///     Gets/Sets the field "Rating_IntegratedPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingIntegratedPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattleAvgPerformanceValue".
+        ///     Gets/Sets the field "Rating_BattleAvgPerformanceValue".
         /// </summary>
+        [DataMember]
         public virtual double RatingWinsRatioValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattleAvgPerformancePlace".
+        ///     Gets/Sets the field "Rating_BattleAvgPerformancePlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingWinsRatioPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattleAvgXpValue".
+        ///     Gets/Sets the field "Rating_BattleAvgXpValue".
         /// </summary>
+        [DataMember]
         public virtual double RatingBattleAvgXpValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattleAvgXpPlace".
+        ///     Gets/Sets the field "Rating_BattleAvgXpPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingBattleAvgXpPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattleWinsValue".
+        ///     Gets/Sets the field "Rating_BattleWinsValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingBattleWinsValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattleWinsPlace".
+        ///     Gets/Sets the field "Rating_BattleWinsPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingBattleWinsPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattlesValue".
+        ///     Gets/Sets the field "Rating_BattlesValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingBattlesValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_BattlesPlace".
+        ///     Gets/Sets the field "Rating_BattlesPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingBattlesPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_CapturedPointsValue".
+        ///     Gets/Sets the field "Rating_CapturedPointsValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingCapturedPointsValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_CapturedPointsPlace".
+        ///     Gets/Sets the field "Rating_CapturedPointsPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingCapturedPointsPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_DamageDealtValue".
+        ///     Gets/Sets the field "Rating_DamageDealtValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingDamageDealtValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_DamageDealtPlace".
+        ///     Gets/Sets the field "Rating_DamageDealtPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingDamageDealtPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_DroppedPointsValue".
+        ///     Gets/Sets the field "Rating_DroppedPointsValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingDroppedPointsValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_DroppedPointsPlace".
+        ///     Gets/Sets the field "Rating_DroppedPointsPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingDroppedPointsPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_FragsValue".
+        ///     Gets/Sets the field "Rating_FragsValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingFragsValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_FragsPlace".
+        ///     Gets/Sets the field "Rating_FragsPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingFragsPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_SpottedValue".
+        ///     Gets/Sets the field "Rating_SpottedValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingSpottedValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_SpottedPlace".
+        ///     Gets/Sets the field "Rating_SpottedPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingSpottedPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_XpValue".
+        ///     Gets/Sets the field "Rating_XpValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingXpValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "Rating_XpPlace".
+        ///     Gets/Sets the field "Rating_XpPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingXpPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "RatingHitsPercentsValue".
+        ///     Gets/Sets the field "RatingHitsPercentsValue".
         /// </summary>
+        [DataMember]
         public virtual double RatingHitsPercentsValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "RatingHitsPercentsPlace".
+        ///     Gets/Sets the field "RatingHitsPercentsPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingHitsPercentsPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "RatingMaxXpValue".
+        ///     Gets/Sets the field "RatingMaxXpValue".
         /// </summary>
+        [DataMember]
         public virtual int RatingMaxXpValue { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "RatingMaxXpPlace".
+        ///     Gets/Sets the field "RatingMaxXpPlace".
         /// </summary>
+        [DataMember]
         public virtual int RatingMaxXpPlace { get; set; }
 
         /// <summary>
-        /// Gets/Sets the field "AchievementsId".
+        ///     Gets/Sets the <see cref="PlayerAchievementsEntity" /> object.
         /// </summary>
-        public virtual int? AchievementsId { get; set; }
-
-        /// <summary>
-        /// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
-        /// </summary>
+        [DataMember(Name = "Achievements")]
         public virtual PlayerAchievementsEntity AchievementsIdObject { get; set; }
 
         /// <summary>
-        /// Updates the ratings.
+        ///     Updates the ratings.
         /// </summary>
         /// <param name="ratings">The ratings.</param>
         public override void UpdateRatings(Ratings ratings)
@@ -233,4 +257,3 @@ namespace WotDossier.Domain.Entities
         }
     }
 }
-

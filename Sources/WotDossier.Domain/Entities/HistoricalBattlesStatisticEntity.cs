@@ -15,11 +15,7 @@ namespace WotDossier.Domain.Entities
         {
             AchievementsIdObject = new HistoricalBattlesAchievementsEntity();
         }
-        /// <summary>
-        /// Gets/Sets the field "AchievementsId".
-        /// </summary>
-        public virtual int? AchievementsId { get; set; }
-
+        
         /// <summary>
         /// Gets/Sets the <see cref="PlayerAchievementsEntity"/> object.
         /// </summary>

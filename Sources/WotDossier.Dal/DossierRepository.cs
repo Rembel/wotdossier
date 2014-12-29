@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Common.Logging;
-using NHibernate.Criterion;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
@@ -43,10 +42,9 @@ namespace WotDossier.Dal
         /// <typeparam name="T"></typeparam>
         /// <param name="playerId">The player identifier.</param>
         /// <returns></returns>
-        public IEnumerable<T> GetPlayerStatistic<T>(int playerId) where T : StatisticEntity
+        public IEnumerable<T> GetPlayerStatistic<T>(int playerId, int rev = 0) where T : StatisticEntity
         {
             _dataProvider.OpenSession();
-            _dataProvider.BeginTransaction();
             PlayerEntity player = null;
             T statistic = null;
             IList<T> list = null;
@@ -54,13 +52,11 @@ namespace WotDossier.Dal
             {
                 list = _dataProvider.QueryOver(() => statistic)
                                     .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                                    .Where(x => player.PlayerId == playerId).List<T>();
-                _dataProvider.CommitTransaction();
+                                    .Where(x => player.PlayerId == playerId && statistic.Rev > rev).List<T>();
             }
             catch (Exception e)
             {
                 Log.Error(e);
-                _dataProvider.RollbackTransaction();
             }
             finally
             {
@@ -101,8 +97,10 @@ namespace WotDossier.Dal
                     //create new record
                     if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
                     {
-                        currentSnapshot = new T { PlayerId = playerEntity.Id };
+                        currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId.Value, UId = Guid.NewGuid()};
                     }
+
+                    UpdateRevision(playerEntity, currentSnapshot);
 
                     newSnapshot.Update(currentSnapshot);
                 }
@@ -127,6 +125,12 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
+        }
+
+        private void UpdateRevision(PlayerEntity playerEntity, StatisticEntity currentSnapshot)
+        {
+            playerEntity.Rev = Int32.Parse(DateTime.Now.ToString("yyyyMMdd")) * 100;
+            currentSnapshot.Rev = playerEntity.Rev;
         }
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
@@ -489,6 +493,14 @@ namespace WotDossier.Dal
                 _dataProvider.CloseSession();
             }
             return new List<PlayerEntity>();
+        }
+
+        public IList<TankEntity> GetTanks(PlayerEntity player, int rev)
+        {
+            _dataProvider.OpenSession();
+            IList<TankEntity> tanks = _dataProvider.QueryOver<TankEntity>().Where(x => x.Rev > rev && x.PlayerId == player.Id).List();
+            _dataProvider.CloseSession();
+            return tanks;
         }
     }
 }

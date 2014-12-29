@@ -22,6 +22,8 @@ namespace WotDossier.Domain.Entities
 		/// </summary>
 		public virtual int TankId { get; set; }
 
+		public virtual Guid? TankUId { get; set; }
+
         /// <summary>
         /// Gets or sets the battles count.
         /// </summary>

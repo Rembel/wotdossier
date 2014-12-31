@@ -405,7 +405,7 @@ namespace WotDossier.Applications.ViewModel
 
                         _log.WarnFormat("new files count: {0}", newFiles.Count());
 
-                        string[] oldFiles = replayFolder.Files;
+                        List<string> oldFiles = replayFolder.Files;
 
                         _log.WarnFormat("old files count: {0}", oldFiles.Count());
 
@@ -428,7 +428,7 @@ namespace WotDossier.Applications.ViewModel
 
                         _log.WarnFormat("replays after update count: {0}", _replays.Count());
                         
-                        replayFolder.Files = newFiles;
+                        replayFolder.Files = newFiles.ToList();
                         replayFolder.Count = _replays.Count(x => x.FolderId == replayFolder.Id);
                     }
                 }
@@ -491,7 +491,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(Guid folderId, string[] oldFiles, string[] newList)
+        private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(Guid folderId, IEnumerable<string> oldFiles, string[] newList)
         {
             List<ListUpdateOperation<ReplayFile>> result = new List<ListUpdateOperation<ReplayFile>>();
             List<ListUpdateOperation<ReplayFile>> toDel = oldFiles.Except(newList).Select(x => (ListUpdateOperation<ReplayFile>)new DeleteOperation(x)).ToList();
@@ -645,13 +645,15 @@ namespace WotDossier.Applications.ViewModel
                         if (delete == MessageBoxResult.Yes)
                         {
                             Domain.Replay.Replay replayData = replayFile.ReplayData();
-                            DossierRepository.SaveReplay(replayFile.PlayerId, replayFile.ReplayId, replayFile.Link,
-                                replayData);
+                            DossierRepository.SaveReplay(replayFile.PlayerId, replayFile.ReplayId, replayFile.Link, replayData);
                             _replays.Add(new DbReplay(replayData, ReplaysManager.DeletedFolder.Id));
                         }
 
                         replayFile.Delete();
                         _replays.Remove(replayFile);
+
+                        ReplayFolder replayFolder = _replaysFolders.GetAll().First(x => x.Id == replayFile.FolderId);
+                        replayFolder.Files.Remove(replayFile.PhisicalPath);
                     }
                     catch (Exception e)
                     {

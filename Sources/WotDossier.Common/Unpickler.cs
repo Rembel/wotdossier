@@ -186,6 +186,7 @@ namespace WotDossier.Common
                             case Opcode.Tuple3: LoadTuple3(); break;
                             case Opcode.Unicode: LoadUnicode(); break;
                             case Opcode.Global: LoadGlobal(); break;
+                            case Opcode.Reduce: LoadReduce(); break;
                             case Opcode.Stop: return PopStack();
                             default: throw new InvalidOleVariantTypeException(String.Format("invalid opcode: {0}", opcode));
                         }
@@ -517,6 +518,12 @@ namespace WotDossier.Common
                 private void LoadNewFalse()
                 {
                     _stack.Add(False);
+                }
+
+                private void LoadReduce()
+                {
+                    object item = PopStack();
+                    _stack.Add(item);
                 }
 
                 private void LoadNewTrue()

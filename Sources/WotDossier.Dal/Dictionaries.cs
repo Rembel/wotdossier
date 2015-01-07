@@ -194,32 +194,8 @@ namespace WotDossier.Dal
             get { return _maps; }
         }
 
-        private readonly List<int> _notExistsedTanksList = new List<int>
-                {
-                    226,//t62a_sport
-                    10234,//Karl
-                    30251,//T-34-1 training
-                    255,//Spectator
-                    10226,//pziii_training
-                    10227,//pzvib_tiger_ii_training
-                    10228,//pzv_training
-                    10254,//env
-                    220,//t_34_85_training
-                    20212,//m4a3e8_sherman_training
-                    5,//KV
-                    20009,//T23
-                    30002,//Type 59 G
-                    20211,//sexton_i
-                    20255,//M24 Chaffee GT
-                    30003,//WZ-111
-                };
+        private List<int> _notExistsedTanksList;
 
-        /// <summary>
-        /// Gets the not existsed tanks list.
-        /// </summary>
-        /// <value>
-        /// The not existsed tanks list.
-        /// </value>
         public List<int> NotExistsedTanksList
         {
             get { return _notExistsedTanksList; }
@@ -458,6 +434,8 @@ namespace WotDossier.Dal
                     tanks.Add(tank);
                 }
             }
+
+            _notExistsedTanksList = tanks.Where(x => !x.Active).Select(x => x.UniqueId()).ToList();
 
             return tanks.ToDictionary(x => x.UniqueId());
         }

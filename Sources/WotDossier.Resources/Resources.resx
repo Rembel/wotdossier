@@ -3334,4 +3334,7 @@ up to 500 m</value>
   <data name="ViewerSpeed_Ludicrous" xml:space="preserve">
     <value>Ludicrous</value>
   </data>
+  <data name="Map_109_battlecity_ny" xml:space="preserve">
+    <value>Winter Showdown</value>
+  </data>
 </root>

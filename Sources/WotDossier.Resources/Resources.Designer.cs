@@ -4811,6 +4811,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Winter Showdown.
+        /// </summary>
+        public static string Map_109_battlecity_ny {
+            get {
+                return ResourceManager.GetString("Map_109_battlecity_ny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Murovanka.
         /// </summary>
         public static string Map_11_murovanka {

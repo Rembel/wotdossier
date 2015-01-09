@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Globalization;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Windows;
 using Common.Logging;
 using Newtonsoft.Json.Linq;
 using WotDossier.Applications.View;
+using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -17,6 +19,7 @@ using WotDossier.Domain.Tank;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
+using WotDossier.Framework.Forms.ProgressDialog;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
@@ -172,10 +175,11 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
         
-        private TeamMember _ourTeamMember;
-
+        private ReplayViewer _replayViewer;
+        
         public IMapDescription MapDescription { get; private set; }
 
+        private TeamMember _ourTeamMember;
         public TeamMember OurTeamMember
         {
             get { return _ourTeamMember; }
@@ -183,6 +187,19 @@ namespace WotDossier.Applications.ViewModel.Replay
             {
                 _ourTeamMember = value;
                 RaisePropertyChanged("OurTeamMember");
+            }
+        }
+
+        private List<TeamMember> _teamMembers;
+        private ProgressControlViewModel _simulationWorker;
+
+        public List<TeamMember> TeamMembers
+        {
+            get { return _teamMembers; }
+            set
+            {
+                _teamMembers = value;
+                RaisePropertyChanged("TeamMembers");
             }
         }
 
@@ -208,6 +225,49 @@ namespace WotDossier.Applications.ViewModel.Replay
             CopyCommand = new DelegateCommand<IList<object>>(OnCopyCommand);
             CopyPlayerNameCommand = new DelegateCommand<TeamMember>(OnCopyPlayerNameCommand);
             OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
+            PlayCommand = new DelegateCommand(OnPlayCommand);
+            SetSpeedCommand = new DelegateCommand<int>(OnSetSpeedCommand);
+
+            ViewTyped.Closing += OnClosing;
+        }
+
+        private void OnSetSpeedCommand(int speed)
+        {
+            if (ReplayViewer != null)
+            {
+                ReplayViewer.SetSpeed(speed);
+            }
+        }
+
+        private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
+        {
+            if (_simulationWorker != null)
+            {
+                _simulationWorker.Cancel();
+            }
+        }
+
+        public DelegateCommand PlayCommand { get; set; }
+        public DelegateCommand<int> SetSpeedCommand { get; set; }
+
+        private void OnPlayCommand()
+        {
+            _simulationWorker = new ProgressControlViewModel();
+
+            ReplayViewer = new ReplayViewer(Replay, TeamMembers.Select(x => new MapVehicle(x)).ToList());
+
+            _simulationWorker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.Replay());
+        }
+
+        
+        public ReplayViewer ReplayViewer
+        {
+            get { return _replayViewer; }
+            set
+            {
+                _replayViewer = value;
+                RaisePropertyChanged("ReplayViewer");
+            }
         }
 
         private void OnCopyPlayerNameCommand(TeamMember player)
@@ -288,16 +348,16 @@ namespace WotDossier.Applications.ViewModel.Replay
                 
                 Date = replay.datablock_1.dateTime;
 
-                List<TeamMember> teamMembers = GetTeamMembers(replay, MapDescription.Team);
+                TeamMembers = GetTeamMembers(replay, MapDescription.Team);
 
                 DateTime playTime = DateTime.Parse(replay.datablock_1.dateTime, CultureInfo.GetCultureInfo("ru-RU"));
 
                 Version clientVersion = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, playTime);
 
                 long playerId = replay.datablock_battle_result.personal.accountDBID;
-                FirstTeam = teamMembers.Where(x => x.Team == MapDescription.Team).OrderByDescending(x => x.Xp).ToList();
-                SecondTeam = teamMembers.Where(x => x.Team != MapDescription.Team).OrderByDescending(x => x.Xp).ToList();
-                ReplayUser = teamMembers.First(x => x.AccountDBID == playerId);
+                FirstTeam = TeamMembers.Where(x => x.Team == MapDescription.Team).OrderByDescending(x => x.Xp).ToList();
+                SecondTeam = TeamMembers.Where(x => x.Team != MapDescription.Team).OrderByDescending(x => x.Xp).ToList();
+                ReplayUser = TeamMembers.First(x => x.AccountDBID == playerId);
 
                 List<long> squads1 = FirstTeam.Where(x => x.platoonID > 0).OrderBy(x => x.platoonID).Select(x => x.platoonID).Distinct().ToList();
                 List<long> squads2 = SecondTeam.Where(x => x.platoonID > 0).OrderBy(x => x.platoonID).Select(x => x.platoonID).Distinct().ToList();
@@ -305,7 +365,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 FirstTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads1.IndexOf(tm.platoonID) + 1; });
                 SecondTeam.ForEach(delegate(TeamMember tm) { tm.Squad = squads2.IndexOf(tm.platoonID) + 1; });
 
-                CombatEffects = GetCombatTargets(replay, teamMembers);
+                CombatEffects = GetCombatTargets(replay, TeamMembers);
 
                 FullName = ReplayUser.FullName;
 
@@ -393,8 +453,8 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 //calc levels by squad
                 List<LevelRange> membersLevels = new List<LevelRange>();
-                membersLevels.AddRange(teamMembers.Where(x => x.Squad == 0).Select(x => x.LevelRange));
-                IEnumerable<IGrouping<int, TeamMember>> squads = teamMembers.Where(x => x.Squad > 0).GroupBy(x => x.Squad);
+                membersLevels.AddRange(TeamMembers.Where(x => x.Squad == 0).Select(x => x.LevelRange));
+                IEnumerable<IGrouping<int, TeamMember>> squads = TeamMembers.Where(x => x.Squad > 0).GroupBy(x => x.Squad);
                 membersLevels.AddRange(squads.Select(x => x.Select(s => s.LevelRange).OrderByDescending(o => o.Max).First()));
 
                 int level = Dictionaries.Instance.GetBattleLevel(membersLevels);
@@ -439,7 +499,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                         if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
                             slot.Item.TypeId == SlotType.Shell)
                         {
-                            slot.Description = Dictionaries.Instance.Shells[(Country) slot.Item.Country][slot.Item.Id];
+                            slot.Description = Dictionaries.Instance.Shells[(Country)TankIcon.CountryId][slot.Item.Id];
                             Shells.Add(slot);
                         }
                     }

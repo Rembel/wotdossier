@@ -59,17 +59,8 @@ namespace WotDossier.Framework.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total: {0:0}.
-        /// </summary>
-        public static string Chart_Replays_Total_Count {
-            get {
-                return ResourceManager.GetString("Chart_Replays_Total_Count", resourceCulture);
-            }
-        }
-        
-        /// <summary>
+
+/// <summary>
         ///   Looks up a localized string similar to (Select All).
         /// </summary>
         public static string DataGrid_ColumnsChooser_Select_All {

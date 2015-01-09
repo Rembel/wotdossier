@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using Moq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -18,6 +19,7 @@ using WotDossier.Common.Extensions;
 using WotDossier.Dal;
 using WotDossier.Domain.Replay;
 using WotDossier.Framework.Forms.ProgressDialog;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace WotDossier.Test
 {
@@ -38,7 +40,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplaysByVersionTest()
         {
-            Version version = new Version("0.9.4.0");
+            Version version = new Version("0.9.5.0");
 
             ReplayTest(version);
         }
@@ -73,6 +75,56 @@ namespace WotDossier.Test
                 ReplayViewModel model = new ReplayViewModel(mockView.Object);
                 model.Init(phisicalReplay.ReplayData(true));
             }
+        }
+
+        [Test]
+        public void MapXmlTest()
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Maps");
+
+            if (!Directory.Exists(replayFolder))
+            {
+                Assert.Fail("Folder not exists - [{0}]", replayFolder);
+            }
+
+            var replays = Directory.GetFiles(replayFolder, "*.xml", SearchOption.AllDirectories);
+
+            BigWorldXmlReader reader = new BigWorldXmlReader();
+
+            JArray array = new JArray();
+
+            foreach (var replay in replays)
+            {
+                FileInfo file = new FileInfo(replay);
+
+                FileStream stream = new FileStream(replay, FileMode.Open, FileAccess.Read);
+                using(BinaryReader br = new BinaryReader(stream))
+                {
+                    var xml = reader.DecodePackedFile(br, "map");
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(xml);
+                    string jsonText = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
+
+                    var deserializeObject = JsonConvert.DeserializeObject<JObject>(jsonText);
+
+                    var jToken = deserializeObject["map"];
+
+                    var mapKey = file.Name.Replace(file.Extension, string.Empty);
+
+                    if (Dictionaries.Instance.Maps.ContainsKey(mapKey))
+                    {
+                        var target = Dictionaries.Instance.Maps[mapKey];
+
+                        JsonConvert.PopulateObject(jToken["boundingBox"].ToString(), target);
+                    }
+
+                    array.Add(jToken);
+                }
+
+
+            }
+
+            Console.WriteLine(array.ToString(Formatting.Indented));
         }
 
         //[Test]

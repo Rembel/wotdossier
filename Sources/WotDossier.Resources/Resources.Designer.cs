@@ -1853,6 +1853,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Simulation.
+        /// </summary>
+        public static string Btn_Play {
+            get {
+                return ResourceManager.GetString("Btn_Play", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Btn_Refresh {
@@ -4775,11 +4784,38 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mittengard.
+        /// </summary>
+        public static string Map_100_thepit {
+            get {
+                return ResourceManager.GetString("Map_100_thepit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tank Rally.
         /// </summary>
         public static string Map_102_deathtrack {
             get {
                 return ResourceManager.GetString("Map_102_deathtrack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter Ruinberg.
+        /// </summary>
+        public static string Map_103_ruinberg_winter {
+            get {
+                return ResourceManager.GetString("Map_103_ruinberg_winter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter Showdown.
+        /// </summary>
+        public static string Map_109_battlecity_ny {
+            get {
+                return ResourceManager.GetString("Map_109_battlecity_ny", resourceCulture);
             }
         }
         
@@ -5104,6 +5140,15 @@ namespace WotDossier.Resources {
         public static string Map_94_battlecity {
             get {
                 return ResourceManager.GetString("Map_94_battlecity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ghost Town.
+        /// </summary>
+        public static string Map_95_lost_city {
+            get {
+                return ResourceManager.GetString("Map_95_lost_city", resourceCulture);
             }
         }
         
@@ -6418,6 +6463,15 @@ namespace WotDossier.Resources {
         public static string ProgressTitle_Loading_replays {
             get {
                 return ResourceManager.GetString("ProgressTitle_Loading_replays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle Simulator.
+        /// </summary>
+        public static string Replay_Tab_Header_BattleSimulator {
+            get {
+                return ResourceManager.GetString("Replay_Tab_Header_BattleSimulator", resourceCulture);
             }
         }
         
@@ -8657,6 +8711,33 @@ namespace WotDossier.Resources {
         public static string Version {
             get {
                 return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fast.
+        /// </summary>
+        public static string ViewerSpeed_Fast {
+            get {
+                return ResourceManager.GetString("ViewerSpeed_Fast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ludicrous.
+        /// </summary>
+        public static string ViewerSpeed_Ludicrous {
+            get {
+                return ResourceManager.GetString("ViewerSpeed_Ludicrous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Real-Time.
+        /// </summary>
+        public static string ViewerSpeed_Normal {
+            get {
+                return ResourceManager.GetString("ViewerSpeed_Normal", resourceCulture);
             }
         }
         

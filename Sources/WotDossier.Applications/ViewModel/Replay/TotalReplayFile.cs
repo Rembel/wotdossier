@@ -7,7 +7,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     /// <summary>
     /// 
     /// </summary>
-    public class TotalReplayFile : ReplayFile
+    public class TotalReplayFile
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TotalReplayFile" /> class.
@@ -26,70 +26,50 @@ namespace WotDossier.Applications.ViewModel.Replay
                 DamageDealt = (int)replayFiles.Average(x => x.DamageDealt);
                 DamageReceived = (int)replayFiles.Average(x => x.DamageReceived);
                 Xp = (int)replayFiles.Average(x => x.Xp);
-                Killed = (int)replayFiles.Average(x => x.Killed);
-                Damaged = (int) replayFiles.Average(x => x.Damaged);
-                PlayTime = result.Max(x => x.PlayTime);
+                Killed = replayFiles.Average(x => x.Killed).ToString("N2");
+                Damaged = replayFiles.Average(x => x.Damaged).ToString("N2");
                 BattleTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.BattleTime.TotalSeconds));
                 LifeTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.LifeTime.TotalSeconds));
                 CreditsEarned = (int)replayFiles.Average(x => x.CreditsEarned);
-                ClientVersion = replayFiles.Max(x => x.ClientVersion);
+                IsWinnerString = (replayFiles.Count(x => x.IsWinner == BattleStatus.Victory)/(double)replayFiles.Count()).ToString("P");
+                DeathReasonString = (replayFiles.Count(x => x.DeathReason == Replay.DeathReason.Alive) / (double)replayFiles.Count()).ToString("P");
+                Team = (replayFiles.Count(x => x.Team == 1) / (double)replayFiles.Count()).ToString("P");
+                PlayTime = string.Format("{0:dd.MM.yyyy} - {1:dd.MM.yyyy}", result.Min(x => x.PlayTime), result.Max(x => x.PlayTime));
+                ClientVersion = string.Format("{0} - {1}", replayFiles.Min(x => x.ClientVersion).ToString(3), replayFiles.Max(x => x.ClientVersion).ToString(3));
+                IsPlatoonString = (replayFiles.Count(x => x.IsPlatoon) / (double)replayFiles.Count()).ToString("P");
             }
         }
 
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="ReplayFile" /> is exists.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if exists; otherwise, <c>false</c>.
-        /// </value>
-        public override bool Exists
-        {
-            get { return false; }
-        }
+        public string IsPlatoonString { get; set; }
 
-        /// <summary>
-        /// Gets the phisical path.
-        /// </summary>
-        /// <value>
-        /// The phisical path.
-        /// </value>
-        public override string PhisicalPath
-        {
-            get { return null; }
-        }
+        public string Team { get; set; }
 
-        /// <summary>
-        /// Gets the name.
-        /// </summary>
-        public override string Name
-        {
-            get { return null; }
-        }
+        public string DeathReasonString { get; set; }
 
-        /// <summary>
-        /// Moves replay to the specified folder.
-        /// </summary>
-        /// <param name="targetFolder">The target folder.</param>
-        public override void Move(ReplayFolder targetFolder)
-        {
-        }
+        public string IsWinnerString { get; set; }
 
-        /// <summary>
-        /// Gets Replay data.
-        /// </summary>
-        /// <param name="readAdvancedData"></param>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public override Domain.Replay.Replay ReplayData(bool readAdvancedData = false)
-        {
-            return null;
-        }
+        public string ClientVersion { get; set; }
 
-        /// <summary>
-        /// Deletes this instance.
-        /// </summary>
-        public override void Delete()
-        {
-        }
+        public int CreditsEarned { get; set; }
+
+        public TimeSpan LifeTime { get; set; }
+
+        public TimeSpan BattleTime { get; set; }
+
+        public string PlayTime { get; set; }
+
+        public string Damaged { get; set; }
+
+        public string Killed { get; set; }
+
+        public int Xp { get; set; }
+
+        public int DamageReceived { get; set; }
+
+        public int DamageDealt { get; set; }
+
+        public int Credits { get; set; }
+
+        public Guid FolderId { get; set; }
     }
 }

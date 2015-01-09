@@ -8,24 +8,6 @@
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="605" d:DesignWidth="970">
-    <UserControl.Resources>
-        <ContextMenu x:Key="DataRowContextMenu">
-            <MenuItem Header="{x:Static resources:Resources.ReplaysTab_CopyPlayerName}"
-                 Command="{Binding Path=DataContext.CopyPlayerNameCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=replay:CommandResults}}"
-                 CommandParameter="{Binding}"/>
-        </ContextMenu>
-        <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource ReplayDataGridRowStyle}">
-            <Setter Property="ContextMenu" Value="{StaticResource DataRowContextMenu}" />
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="true">
-                    <Setter Property="Background" Value="#3295A6D4" />
-                </Trigger>
-                <Trigger Property="IsSelected" Value="false">
-                    <Setter Property="Background" Value="{Binding IsAlive, Converter={x:Static color:AliveToColorConverter.Default}}" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </UserControl.Resources>
     <Grid Background="#0E0C09">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>

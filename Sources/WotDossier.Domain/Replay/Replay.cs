@@ -16,5 +16,7 @@ namespace WotDossier.Domain.Replay
 
         [DataMember]
         public AdvancedReplayData datablock_advanced { get; set; }
+
+        public byte[] Stream { get; set; }
     }
 }

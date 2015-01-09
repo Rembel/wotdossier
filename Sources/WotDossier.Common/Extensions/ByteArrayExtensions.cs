@@ -26,6 +26,11 @@ namespace WotDossier.Common.Extensions
             }
         }
 
+        public static float ToSingle(this byte[] array)
+        {
+            return BitConverter.ToSingle(array, 0);
+        }
+
         public static ulong ConvertLittleEndian(this byte[] array)
         {
             int pos = 0;

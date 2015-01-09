@@ -28,6 +28,10 @@
             <TabItem TabIndex="0" Header="{x:Static resources:Resources.Replay_Tab_Header_ExtendedInfo}">
                 <replay:Equipment HorizontalAlignment="Stretch"></replay:Equipment>
             </TabItem>
+            <!--Replay extended info tab-->
+            <TabItem TabIndex="0" Header="{x:Static resources:Resources.Replay_Tab_Header_BattleSimulator}">
+                <replay:Viewer HorizontalAlignment="Stretch"></replay:Viewer>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

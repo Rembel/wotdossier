@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using WotDossier.Applications.Logic;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -8,20 +9,21 @@ using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel.Replay
 {
-    public class TeamMember
+    public class TeamMember : INotifyPropertyChanged
     {
         private List<int> _achievements;
 
+        private TankDescription _tankDescription;
         public TeamMember(KeyValuePair<long, Player> player, KeyValuePair<long, VehicleResult> vehicleResult, KeyValuePair<long, Vehicle> vehicle, int replayPlayerTeam, string regionCode)
         {
             Id = vehicle.Key;
 
-            var tank = Dictionaries.Instance.GetTankDescription(vehicleResult.Value.typeCompDescr);
+            TankDescription = Dictionaries.Instance.GetTankDescription(vehicleResult.Value.typeCompDescr);
 
-            TankIcon = tank.Icon;
+            TankIcon = TankDescription.Icon;
 
-            LevelRange = tank.LevelRange ?? LevelRange.All;
-            Tank = !string.IsNullOrEmpty(tank.Title) ? tank.Title : vehicle.Value.vehicleType;
+            LevelRange = TankDescription.LevelRange ?? LevelRange.All;
+            Tank = !string.IsNullOrEmpty(TankDescription.Title) ? TankDescription.Title : vehicle.Value.vehicleType;
             ClanAbbrev = vehicle.Value.clanAbbrev;
             Name = vehicle.Value.name;
             FullName = string.Format("{0}{1}", Name, GetClanAbbrev(ClanAbbrev));
@@ -66,7 +68,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             Xp = vehicleResult.Value.xp;
 
             TeamMate = Team == replayPlayerTeam;
-
+            
             StatisticLink = string.Format(RatingHelper.NOOBMETER_STATISTIC_LINK_FORMAT, GetServer(regionCode), GetName(regionCode));
         }
 
@@ -173,9 +175,23 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public bool TeamMate { get; set; }
 
+        public TankDescription TankDescription
+        {
+            get { return _tankDescription; }
+            set { _tankDescription = value; }
+        }
+
         public override string ToString()
         {
             return LevelRange.ToString();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

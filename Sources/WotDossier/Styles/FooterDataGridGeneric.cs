@@ -39,7 +39,11 @@ namespace WotDossier.Styles
                         textBinding = textColumn.Binding;
                         textElementStyle = textColumn.ElementStyle;
                     }
-
+                    else
+                    {
+                        textBinding = new Binding(column.SortMemberPath + "String");
+                    }
+                    
                     datagrid.Columns.Add(new DataGridTextColumn
                     {
                         SortMemberPath = column.SortMemberPath,

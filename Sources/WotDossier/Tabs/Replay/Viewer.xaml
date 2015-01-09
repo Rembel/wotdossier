@@ -1,0 +1,379 @@
+﻿<UserControl x:Class="WotDossier.Tabs.Replay.Viewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
+             xmlns:Resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:controls="clr-namespace:WotDossier.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="#0E0C09">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="525" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="500" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="500" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="1" HorizontalAlignment="Stretch" Height="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="1" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="1" Text="2" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="2" Text="3" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="3" Text="4" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="4" Text="5" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="5" Text="6" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="6" Text="7" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="7" Text="8" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="8" Text="9" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="9" Text="0" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+            </Grid>
+
+            <Grid Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Width="25" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="A" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1" Text="B" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="2" Text="C" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="3" Text="D" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="4" Text="E" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="5" Text="F" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="6" Text="G" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="7" Text="H" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="8" Text="J" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="9" Text="K" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="White" TextAlignment="Center"></TextBlock>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
+                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" />
+                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />
+
+                <Grid DataContext="{Binding ReplayViewer}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <replay:MapGridPainter BoardSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+                    <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Rectangle Width="50" Height="50" StrokeThickness="2">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform X="{Binding CellX}" Y="{Binding CellY}" />
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Style>
+                                <Style TargetType="{x:Type Rectangle}">
+                                    <Setter Property="Stroke" Value="Transparent" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=Click}" Value="True">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard HandoffBehavior="Compose">
+                                                    <Storyboard TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)">
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=Click}" Value="False">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard HandoffBehavior="Compose">
+                                                    <Storyboard TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)">
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                        <ColorAnimation Duration="0:0:0.1" To="White" AutoReverse="True"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <!--<EventTrigger RoutedEvent="Binding.TargetUpdated">
+                                        <BeginStoryboard HandoffBehavior="Compose">
+                                            <Storyboard TargetProperty="(Rectangle.Stroke).(SolidColorBrush.Color)">
+                                                <ColorAnimation Duration="0:0:0.03" To="Red" AutoReverse="True"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>-->
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                    </Canvas>
+
+                    <ItemsControl ItemsSource="{Binding Vehicles}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Visibility="{Binding Visible, Converter={x:Static converters:BoolToVisibilityConverter.Default}}">
+                                    <Grid.RenderTransform>
+                                        <TranslateTransform X="{Binding X}" Y="{Binding Y}" />
+                                    </Grid.RenderTransform>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image HorizontalAlignment="Center" Source="{Binding Path=., Converter={x:Static converters:ReplayIconConverter.Default}}"
+                                       RenderTransformOrigin="0.5,0.5">
+                                        <Image.RenderTransform>
+                                            <RotateTransform Angle="{Binding Orientation}" CenterX="0" CenterY="0" />
+                                        </Image.RenderTransform>
+                                        <Image.Style>
+                                            <Style TargetType="Image">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=Seen}" Value="False">
+                                                        <Setter Property="Opacity" Value="0.5" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=Seen}" Value="True">
+                                                        <Setter Property="Opacity" Value="1" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=CurrentHealth}" Value="0">
+                                                        <Setter Property="Opacity" Value="0.25" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                        <ToolTipService.ToolTip>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                    <RowDefinition />
+                                                </Grid.RowDefinitions>
+                                                <TextBlock Text="{Binding Path=Tank}" HorizontalAlignment="Center" />
+                                                <TextBlock Grid.Row="1" Text="{Binding Path=FullName}" HorizontalAlignment="Center" />
+                                            </Grid>
+                                        </ToolTipService.ToolTip>
+                                    </Image>
+                                    <ProgressBar HorizontalAlignment="Center" Grid.Row="1" IsIndeterminate="False" Value="{Binding HealthPercent}" Maximum="100" Height="5" Width="25"
+                                             Visibility="{Binding IsAlive, Converter={x:Static converters:BoolToVisibilityConverter.Default}}"                                                >
+                                        <ProgressBar.Style>
+                                            <Style TargetType="ProgressBar">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate>
+                                                            <Grid x:Name="TemplateRoot" SnapsToDevicePixels="true">
+                                                                <Rectangle Fill="{TemplateBinding Background}" RadiusY="2" RadiusX="2"/>
+                                                                <Border Background="{StaticResource ProgressBarGlassyHighlight}" CornerRadius="2" Margin="1"/>
+                                                                <Border BorderBrush="#80FFFFFF" BorderThickness="1,0,1,1" Background="{StaticResource ProgressBarTopHighlight}" Margin="1"/>
+                                                                <Rectangle x:Name="PART_Track" Margin="1"/>
+                                                                <Decorator x:Name="PART_Indicator" HorizontalAlignment="Left" Margin="1">
+                                                                    <Grid x:Name="Foreground">
+                                                                        <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}"/>
+                                                                    </Grid>
+                                                                </Decorator>
+                                                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+                                                            </Grid>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=TeamMate}" Value="False">
+                                                        <Setter Property="Foreground" Value="Red" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=TeamMate}" Value="True">
+                                                        <Setter Property="Foreground" Value="Green" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ProgressBar.Style>
+                                    </ProgressBar>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 10, 0, 0">
+                        <TextBlock Text="{Binding FirstTeamKills}" FontSize="16" FontWeight="Bold" Foreground="Gold" />
+                        <TextBlock Text=" : " FontSize="16" FontWeight="Bold" Foreground="Gold" />
+                        <TextBlock Text="{Binding SecondTeamKills}" FontSize="16" FontWeight="Bold" Foreground="Gold" />
+                    </StackPanel>
+                    
+                    
+                    <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Green" Value="{Binding AlliesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 30, 0, 0"
+                         Visibility="{Binding AlliesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
+
+                    <ProgressBar Height="10" Width="200" Maximum="100" Foreground="Red" Value="{Binding EnemiesCapturePoints}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 50, 0, 0" 
+                         Visibility="{Binding EnemiesCapturePoints, Converter={x:Static converters:IntToVisibilityConverter.Default}, FallbackValue={x:Static Visibility.Hidden}}" FontSize="8" />
+                    
+                    <TextBlock Text="{Binding Time}" FontSize="16" FontWeight="Bold" Foreground="Gold" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <DataGrid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource replayDataGrid}" SelectedItem="{Binding AlienTeamMember}"
+                           BorderThickness="0" DataContext="{Binding ReplayViewer}" ItemsSource="{Binding FirstTeam}" Margin="3,0,0,0" HorizontalAlignment="Stretch"
+                          Height="Auto" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" HeadersVisibility="Column"
+                          RowHeight="31" RowStyle="{StaticResource RowStyle}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="30" Header="{x:Static Resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" 
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" 
+                                               Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/Squad-Ico-silver.png"/>
+                                <TextBlock Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" 
+                                                   FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="70" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" 
+                                            HeaderTemplate="{StaticResource userTemplate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding Path=.}" Command="{Binding Path=DataContext.OpenPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}">
+                                            <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
+                                        </Hyperlink>
+                                    </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="80" Header="{x:Static Resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" 
+                                               HorizontalAlignment="Left" />
+                                <TextBlock Margin="40,0,0,0" Text="{Binding Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Width="37" Header="{x:Static Resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />-->
+                <DataGridTextColumn Width="55" Header="{x:Static Resources:Resources.Column_Replay_Frags}" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
+                <!--<DataGridTemplateColumn Width="69" Header="{x:Static Resources:Resources.Column_Replay_XP}" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <controls:TextWithImage HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" 
+                                            Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        
+                <DataGrid Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource replayDataGrid}" SelectedItem="{Binding AlienTeamMember}"
+                           BorderThickness="0" DataContext="{Binding ReplayViewer}" ItemsSource="{Binding SecondTeam}" Margin="3,0,0,0" HorizontalAlignment="Stretch"
+                          Height="Auto" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" HeadersVisibility="Column"
+                          RowHeight="31" RowStyle="{StaticResource RowStyle}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="30" Header="{x:Static Resources:Resources.Column_Replay_Platoon}" HeaderTemplate="{StaticResource squadTemplate}" SortMemberPath="Squad">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" 
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" 
+                                               Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/Squad-Ico-silver.png"/>
+                                <TextBlock Visibility="{Binding Squad, Converter={x:Static converters:IntToVisibilityConverter.Default}}" Text="{Binding Squad}" 
+                                                   FontSize="11" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="70" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" 
+                                            HeaderTemplate="{StaticResource userTemplate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
+                                        <Hyperlink Foreground="#5C5A4A" CommandParameter="{Binding Path=.}" Command="{Binding Path=DataContext.OpenPlayerCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}">
+                                            <TextBlock Foreground="#5C5A4A" Text="{Binding FullName}"></TextBlock>
+                                        </Hyperlink>
+                                    </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="80" Header="{x:Static Resources:Resources.Column_Header_Tank}" HeaderTemplate="{StaticResource tankTemplate}" SortMemberPath="Tank">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Source="{Binding Path=TankIcon, Mode=OneWay, Converter={x:Static converters:TankIconToImageConverter.Default}}" 
+                                               HorizontalAlignment="Left" />
+                                <TextBlock Margin="40,0,0,0" Text="{Binding Tank}" Foreground="#5C5A4A" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Width="37" Header="{x:Static Resources:Resources.Column_Replay_DamageDealt}" Binding="{Binding DamageDealt}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource healthTemplate}" />-->
+                <DataGridTextColumn Width="55" Header="{x:Static Resources:Resources.Column_Replay_Frags}" Binding="{Binding Kills}" Foreground="#CBAD78" FontSize="12" ElementStyle="{StaticResource CTextBlock}" HeaderTemplate="{StaticResource killsTemplate}" />
+                <!--<DataGridTemplateColumn Width="69" Header="{x:Static Resources:Resources.Column_Replay_XP}" HeaderTemplate="{StaticResource starTemplate}" SortMemberPath="Xp">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <controls:TextWithImage HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Xp}" 
+                                            Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/XpIcon-1.png" Foreground="#C7C7B4" FontSize="13" ></controls:TextWithImage>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
+            <Button Content="{x:Static Resources:Resources.ViewerSpeed_Normal}" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button.CommandParameter>
+                    <system:Int32>
+                        5
+                    </system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="{x:Static Resources:Resources.ViewerSpeed_Fast}" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button.CommandParameter>
+                    <system:Int32>
+                        1
+                    </system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="{x:Static Resources:Resources.ViewerSpeed_Ludicrous}" Command="{Binding SetSpeedCommand}" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button.CommandParameter>
+                    <system:Int32>
+                        0
+                    </system:Int32>
+                </Button.CommandParameter>
+            </Button>
+
+            <Button Content="{x:Static Resources:Resources.Btn_Play}" Command="{Binding PlayCommand}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</UserControl>

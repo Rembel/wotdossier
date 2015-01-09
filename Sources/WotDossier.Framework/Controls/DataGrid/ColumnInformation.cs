@@ -43,7 +43,7 @@ namespace WotDossier.Framework.Controls.DataGrid
             {
                 sortDescriptions.Add(new SortDescription(PropertyPath, SortDirection.Value));
             }
-            if (column.DisplayIndex != DisplayIndex)
+            if (column.DisplayIndex != DisplayIndex && DisplayIndex > -1)
             {
                 var maxIndex = (gridColumnCount == 0) ? 0 : gridColumnCount - 1;
                 column.DisplayIndex = (DisplayIndex <= maxIndex) ? DisplayIndex : maxIndex;

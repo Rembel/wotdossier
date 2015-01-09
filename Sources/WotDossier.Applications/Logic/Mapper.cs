@@ -1,4 +1,6 @@
-﻿using WotDossier.Domain.Interfaces;
+﻿using System.Dynamic;
+using WotDossier.Domain;
+using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.Logic
 {
@@ -11,6 +13,7 @@ namespace WotDossier.Applications.Logic
             AutoMapper.Mapper.CreateMap<ITeamBattlesAchievements, ITeamBattlesAchievements>();
             AutoMapper.Mapper.CreateMap<IFortAchievements, IFortAchievements>();
             AutoMapper.Mapper.CreateMap<IClanBattlesAchievements, IClanBattlesAchievements>();
+            AutoMapper.Mapper.CreateMap<ExpandoObject, Map>();
         }
 
         public static void Map<TSource, TTarget>(TSource source, TTarget target)

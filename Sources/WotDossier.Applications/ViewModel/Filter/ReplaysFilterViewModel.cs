@@ -381,7 +381,8 @@ namespace WotDossier.Applications.ViewModel.Filter
         private List<ListItem<Version>> _versions = new List<ListItem<Version>>
             {
                 new ListItem<Version>(Dictionaries.VersionAll, Resources.Resources.TankFilterPanel_All), 
-                new ListItem<Version>(Dictionaries.VersionRelease, "0.9.4"),
+                new ListItem<Version>(Dictionaries.VersionRelease, "0.9.5"),
+                new ListItem<Version>(new Version("0.9.4.0"), "0.9.4"),
                 new ListItem<Version>(new Version("0.9.3.0"), "0.9.3"),
                 new ListItem<Version>(new Version("0.9.2.0"), "0.9.2"),
                 new ListItem<Version>(new Version("0.9.1.0"), "0.9.1"),
@@ -701,19 +702,19 @@ namespace WotDossier.Applications.ViewModel.Filter
         {
             if (battleType == BattleType.ctf)
             {
-                return replay.Gameplay == Gameplay.ctf;
+                return replay.Gameplay == Gameplay.ctf && replay.BattleType == BattleType.Regular;
             }
             if (battleType == BattleType.domination)
             {
-                return replay.Gameplay == Gameplay.domination;
+                return replay.Gameplay == Gameplay.domination && replay.BattleType == BattleType.Regular;
             }
             if (battleType == BattleType.assault)
             {
-                return replay.Gameplay == Gameplay.assault;
+                return replay.Gameplay == Gameplay.assault && replay.BattleType == BattleType.Regular;
             }
             if (battleType == BattleType.nations)
             {
-                return replay.Gameplay == Gameplay.nations;
+                return replay.Gameplay == Gameplay.nations && replay.BattleType == BattleType.Regular;
             }
             return false;
         }

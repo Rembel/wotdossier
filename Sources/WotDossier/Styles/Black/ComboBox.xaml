@@ -4,7 +4,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Brushes.xaml"/>
-        <ResourceDictionary Source="Fonts.xaml"/>
+        <ResourceDictionary Source="..\Fonts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="TextBoxInComboBoxStyle"  TargetType="{x:Type TextBox}">

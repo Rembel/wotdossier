@@ -135,9 +135,6 @@
   <data name="WPFMessageBox_Header" xml:space="preserve">
     <value>Show Details</value>
   </data>
-  <data name="Chart_Replays_Total_Count" xml:space="preserve">
-    <value>Total: {0:0}</value>
-  </data>
   <data name="DataGrid_ColumnsChooser_Select_All" xml:space="preserve">
     <value>(Select All)</value>
   </data>

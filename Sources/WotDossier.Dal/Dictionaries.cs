@@ -22,20 +22,20 @@ namespace WotDossier.Dal
         private static readonly object _syncObject = new object();
         private static volatile Dictionaries _instance = new Dictionaries();
 
-        private readonly Dictionary<int, TankDescription> _tanks;
+        private Dictionary<int, TankDescription> _tanks;
         private readonly Dictionary<string, TankIcon> _icons = new Dictionary<string, TankIcon>();
         private readonly Dictionary<TankIcon, TankDescription> _iconTanks = new Dictionary<TankIcon, TankDescription>();
-        private readonly Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        private readonly Dictionary<int, TankServerInfo> _serverTanks;
-        private readonly Dictionary<string, RatingExpectancy> _ratingExpectations;
+        private Dictionary<string, Map> _maps = new Dictionary<string, Map>();
+        private Dictionary<string, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
-        public static readonly Version VersionRelease = new Version("0.9.4.0");
-        public static readonly Version VersionTest = new Version("0.9.5.0");
+        public static readonly Version VersionRelease = new Version("0.9.5.0");
+        public static readonly Version VersionTest = new Version("0.9.6.0");
 
         private static readonly List<Version> _versions = new List<Version>
         {
                 VersionRelease,
+                new Version("0.9.4.0"),
                 new Version("0.9.3.0"),
                 new Version("0.9.2.0"),
                 new Version("0.9.1.0"),
@@ -188,14 +188,6 @@ namespace WotDossier.Dal
         }
 
         /// <summary>
-        /// Gets the server tanks info.
-        /// </summary>
-        public Dictionary<int, TankServerInfo> ServerTanks
-        {
-            get { return _serverTanks; }
-        }
-
-        /// <summary>
         /// Gets the maps.
         /// </summary>
         public Dictionary<string, Map> Maps
@@ -203,32 +195,8 @@ namespace WotDossier.Dal
             get { return _maps; }
         }
 
-        private readonly List<int> _notExistsedTanksList = new List<int>
-                {
-                    226,//t62a_sport
-                    10234,//Karl
-                    30251,//T-34-1 training
-                    255,//Spectator
-                    10226,//pziii_training
-                    10227,//pzvib_tiger_ii_training
-                    10228,//pzv_training
-                    10254,//env
-                    220,//t_34_85_training
-                    20212,//m4a3e8_sherman_training
-                    5,//KV
-                    20009,//T23
-                    30002,//Type 59 G
-                    20211,//sexton_i
-                    20255,//M24 Chaffee GT
-                    30003,//WZ-111
-                };
+        private List<int> _notExistsedTanksList;
 
-        /// <summary>
-        /// Gets the not existsed tanks list.
-        /// </summary>
-        /// <value>
-        /// The not existsed tanks list.
-        /// </value>
         public List<int> NotExistsedTanksList
         {
             get { return _notExistsedTanksList; }
@@ -264,15 +232,41 @@ namespace WotDossier.Dal
         /// </summary>
         private Dictionaries()
         {
+            Init();
+        }
+
+        private void Init()
+        {
             _ratingExpectations = ReadRatingExpectationsDictionary();
             _tanks = ReadTanksDictionary();
-            _serverTanks = ReadServerTanksDictionary();
             _maps = ReadMaps();
             Medals = ReadMedals();
 
             DeviceDescriptions = ReadDeviceDescriptions();
             ConsumableDescriptions = ReadConsumableDescriptions();
             Shells = ReadShellsDescriptions();
+        }
+
+        private static void UpdateMapsGeometry(Dictionary<string, Map> maps)
+        {
+            using (StreamReader re = new StreamReader(@"External\maps_description.json"))
+            {
+                JsonTextReader reader = new JsonTextReader(re);
+                JsonSerializer se = new JsonSerializer();
+                JArray array = se.Deserialize<JArray>(reader);
+
+                foreach (var map in array)
+                {
+                    var key = map["name"].Value<string>().Replace("#arenas:", string.Empty).Replace("/name", string.Empty);
+
+                    if (maps.ContainsKey(key))
+                    {
+                        var target = maps[key];
+
+                        JsonConvert.PopulateObject(map["boundingBox"].ToString(), target);
+                    }
+                }
+            }
         }
 
         private Dictionary<Country, Dictionary<int, ShellDescription>> ReadShellsDescriptions()
@@ -383,13 +377,18 @@ namespace WotDossier.Dal
         {
             if (typeCompDescr == null)
             {
-                return new TankDescription{Title = "Unknown", Icon = TankIcon.Empty};
+                return TankDescription.Unknown;
             }
 
             int tankId = typeCompDescr.Value >> 8 & 65535;
             int countryId = typeCompDescr.Value >> 4 & 15;
 
             var uniqueId = Utils.ToUniqueId(countryId, tankId);
+
+            if (!Tanks.ContainsKey(uniqueId))
+            {
+                return TankDescription.Unknown;
+            }
 
             return Tanks[uniqueId];
         }
@@ -437,23 +436,14 @@ namespace WotDossier.Dal
                 }
             }
 
+            _notExistsedTanksList = tanks.Where(x => !x.Active).Select(x => x.UniqueId()).ToList();
+
             return tanks.ToDictionary(x => x.UniqueId());
         }
 
         private RatingExpectancy GetNearestExpectationsByTypeAndLevel(TankDescription tank)
         {
             return _ratingExpectations.Values.FirstOrDefault(x => x.TankLevel == tank.Tier && (int) x.TankType == tank.Type);
-        }
-
-        private Dictionary<int, TankServerInfo> ReadServerTanksDictionary()
-        {
-            using (StreamReader re = new StreamReader(@"External\server_tanks.json"))
-            {
-                JsonTextReader reader = new JsonTextReader(re);
-                JsonSerializer se = new JsonSerializer();
-                JObject parsedData = se.Deserialize<JObject>(reader);
-                return parsedData["data"].ToObject<Dictionary<int, TankServerInfo>>();
-            }
         }
 
         private Dictionary<string, RatingExpectancy> ReadRatingExpectationsDictionary()
@@ -494,7 +484,9 @@ namespace WotDossier.Dal
             list.ForEach(x => x.LocalizedMapName = Resources.Resources.ResourceManager.GetString("Map_" + x.MapNameId) ?? x.MapName);
             list = list.OrderByDescending(x => x.LocalizedMapName).ToList();
             list.ForEach(x => x.MapId = i++);
-            return list.ToDictionary(x => x.MapNameId, y => y);
+            var dictionary = list.ToDictionary(x => x.MapNameId, y => y);
+            UpdateMapsGeometry(dictionary);
+            return dictionary;
         }
 
         public int GetBattleLevel(List<LevelRange> members)

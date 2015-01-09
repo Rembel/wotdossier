@@ -156,11 +156,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Black\Fonts.xaml">
-      <Link>Styles\Black\Fonts.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\WotDossier\Styles\Black\GroupBox.xaml">
       <Link>Styles\Black\GroupBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -198,11 +193,6 @@
     </Page>
     <Page Include="..\WotDossier\Styles\Black\RadioButton.xaml">
       <Link>Styles\Black\RadioButton.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\WotDossier\Styles\Black\ReplayDataGrid.xaml">
-      <Link>Styles\Black\ReplayDataGrid.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -251,6 +241,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Styles\CommonStyle.xaml">
+      <Link>Styles\CommonStyle.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Styles\Fonts.xaml">
+      <Link>Styles\Fonts.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Styles\Silver\BrushesSilver.xaml">
       <Link>Styles\Silver\BrushesSilver.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -296,11 +296,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Styles\Silver\FontsSilver.xaml">
-      <Link>Styles\Silver\FontsSilver.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\WotDossier\Styles\Silver\GroupBoxSilver.xaml">
       <Link>Styles\Silver\GroupBoxSilver.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -338,11 +333,6 @@
     </Page>
     <Page Include="..\WotDossier\Styles\Silver\RadioButtonSilver.xaml">
       <Link>Styles\Silver\RadioButtonSilver.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\WotDossier\Styles\Silver\ReplayDataGridSilver.xaml">
-      <Link>Styles\Silver\ReplayDataGridSilver.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -423,6 +413,11 @@
     </Page>
     <Page Include="..\WotDossier\Tabs\Replay\TeamMemberResult.xaml">
       <Link>Tabs\Replay\TeamMemberResult.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Replay\Viewer.xaml">
+      <Link>Tabs\Replay\Viewer.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -547,6 +542,9 @@
     <Compile Include="..\WotDossier\Converters\Image\MedalToImageConverter.cs">
       <Link>Converters\Image\MedalToImageConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ReplayIconConverter.cs">
+      <Link>Converters\Image\ReplayIconConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\ShellDescriptionToImageConverter.cs">
       <Link>Converters\Image\ShellDescriptionToImageConverter.cs</Link>
     </Compile>
@@ -610,6 +608,9 @@
     <Compile Include="..\WotDossier\Tabs\Replay\Equipment.xaml.cs">
       <Link>Tabs\Replay\Equipment.xaml.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\MapGridPainter.cs">
+      <Link>Tabs\Replay\MapGridPainter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\PersonalResults.xaml.cs">
       <Link>Tabs\Replay\PersonalResults.xaml.cs</Link>
       <DependentUpon>PersonalResults.xaml</DependentUpon>
@@ -617,6 +618,9 @@
     <Compile Include="..\WotDossier\Tabs\Replay\TeamMemberResult.xaml.cs">
       <Link>Tabs\Replay\TeamMemberResult.xaml.cs</Link>
       <DependentUpon>TeamMemberResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Replay\Viewer.xaml.cs">
+      <Link>Tabs\Replay\Viewer.xaml.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\UI\ChartHelper.cs">
       <Link>UI\ChartHelper.cs</Link>
@@ -700,10 +704,6 @@
       <Link>External\_hashlib.pyd</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\WotDossier\External\server_tanks.json">
-      <Link>External\server_tanks.json</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\WotDossier\External\consumables.json">
       <Link>External\consumables.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -712,6 +712,10 @@
       <Link>External\optional_devices.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\WotDossier\External\maps_description.json">
+      <Link>External\maps_description.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\shells\china_shells.json">
       <Link>External\shells\china_shells.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -738,6 +742,10 @@
     </None>
     <None Include="..\WotDossier\External\shells\ussr_shells.json">
       <Link>External\shells\ussr_shells.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\tanks_expectations.json">
+      <Link>External\tanks_expectations.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

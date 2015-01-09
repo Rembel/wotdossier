@@ -89,7 +89,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <returns></returns>
         public override void Delete()
         {
-            PhisicalFile.Delete();
+            NativeMethods.DeleteFileOperation(PhisicalFile.FullName);
+            //PhisicalFile.Delete();
         }
 
         public override string ToString()

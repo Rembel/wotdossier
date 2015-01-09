@@ -29,3 +29,6 @@
 /Sources/WotDossier.Domain/*.user
 /Sources/WotDossier.Dal/*.user
 /Sources/WotDossier.Common/*.user
+/Sources/*.DotSettings
+/Sources/WotDossier.Node/node_modules
+/Sources/WotDossier.Node/obj

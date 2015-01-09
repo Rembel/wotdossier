@@ -3399,4 +3399,31 @@
   <data name="Label_ReplayDetail_FinishReason" xml:space="preserve">
     <value>Причина окончания боя</value>
   </data>
+  <data name="Replay_Tab_Header_BattleSimulator" xml:space="preserve">
+    <value>Симулятор боя</value>
+  </data>
+  <data name="Btn_Play" xml:space="preserve">
+    <value>Симуляция</value>
+  </data>
+  <data name="Map_100_thepit" xml:space="preserve">
+    <value>Миттенгард</value>
+  </data>
+  <data name="Map_103_ruinberg_winter" xml:space="preserve">
+    <value>Зимний Руинберг</value>
+  </data>
+  <data name="Map_95_lost_city" xml:space="preserve">
+    <value>Затерянный Город</value>
+  </data>
+  <data name="ViewerSpeed_Normal" xml:space="preserve">
+    <value>Нормально</value>
+  </data>
+  <data name="ViewerSpeed_Fast" xml:space="preserve">
+    <value>Быстрее</value>
+  </data>
+  <data name="ViewerSpeed_Ludicrous" xml:space="preserve">
+    <value>Очень быстро</value>
+  </data>
+  <data name="Map_109_battlecity_ny" xml:space="preserve">
+    <value>Зимняя битва</value>
+  </data>
 </root>

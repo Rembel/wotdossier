@@ -79,7 +79,7 @@
                     <d3:BarChart ItemsSource="{Binding ReplaysByMapDataSource}">
                         <d3:TemplateMarkerGenerator>
                             <DataTemplate>
-                                <TextBlock Text="{Binding X, StringFormat='N0'}" FontSize="10" FontWeight="Bold"
+                                <TextBlock Text="{Binding X, StringFormat='N0'}" FontSize="12" FontWeight="Bold"
                                            d3:ViewportPanel.X="0"
                                            Margin="3,0,0,0"
                                            d3:ViewportPanel.Y="{Binding Y}"
@@ -126,7 +126,7 @@
                     <d3:BarChart ItemsSource="{Binding WinReplaysPercentByMapDataSource}">
                         <d3:TemplateMarkerGenerator>
                             <DataTemplate>
-                                <TextBlock Text="{Binding X, StringFormat='\{0:0.0} %'}" FontSize="10"
+                                <TextBlock Text="{Binding X, StringFormat='\{0:0.0} %'}" FontSize="12" FontWeight="Bold"
                                            d3:ViewportPanel.X="0"
                                            Margin="3,0,0,0"
                                            d3:ViewportPanel.Y="{Binding Y}"

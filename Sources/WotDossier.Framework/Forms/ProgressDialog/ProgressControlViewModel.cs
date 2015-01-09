@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Threading;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace WotDossier.Framework.Forms.ProgressDialog
@@ -250,6 +251,15 @@ namespace WotDossier.Framework.Forms.ProgressDialog
                 worker.ReportProgress(percentProgress, string.Format(format, arg));
 
             return false;
+        }
+
+        public void Cancel()
+        {
+            if (_worker != null && _worker.WorkerSupportsCancellation)
+            {
+                SubLabel = "Please wait while process will be cancelled...";
+                _worker.CancelAsync();
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

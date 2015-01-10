@@ -50,5 +50,6 @@
 {"mapid": 66, "mapidname": "92_stalingrad", "mapname": "Stalingrad"},
 {"mapid": 67, "mapidname": "100_thepit", "mapname": "Mittengard"},
 {"mapid": 68, "mapidname": "95_lost_city", "mapname": "Ghost Town"},
-{"mapid": 69, "mapidname": "103_ruinberg_winter", "mapname": "Winterberg"}
+{"mapid": 69, "mapidname": "103_ruinberg_winter", "mapname": "Winterberg"},
+{"mapid": 70, "mapidname": "109_battlecity_ny", "mapname": "Winter Showdown"}
 ]

@@ -61,6 +61,9 @@ namespace WotDossier.Domain.Tank
         [IgnoreDataMember]
         public TankIcon Icon { get; set; }
 
+        [DataMember(Name = "active")]
+        public bool Active { get; set; }
+
         private RatingExpectancy _expectancy;
         /// <summary>
         /// Gets or sets the rating expectancy.

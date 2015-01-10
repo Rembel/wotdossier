@@ -34,7 +34,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 IsWinnerString = (replayFiles.Count(x => x.IsWinner == BattleStatus.Victory)/(double)replayFiles.Count()).ToString("P");
                 DeathReasonString = (replayFiles.Count(x => x.DeathReason == Replay.DeathReason.Alive) / (double)replayFiles.Count()).ToString("P");
                 Team = (replayFiles.Count(x => x.Team == 1) / (double)replayFiles.Count()).ToString("P");
-                PlayTime = string.Format("{0:dd.MM.yyyy} - {1:dd.MM.yyyy}", result.Min(x => x.PlayTime), result.Max(x => x.PlayTime));
+                PlayTime = string.Format("{0:dd.MM.yy} - {1:dd.MM.yy}", result.Min(x => x.PlayTime), result.Max(x => x.PlayTime));
                 ClientVersion = string.Format("{0} - {1}", replayFiles.Min(x => x.ClientVersion).ToString(3), replayFiles.Max(x => x.ClientVersion).ToString(3));
                 IsPlatoonString = (replayFiles.Count(x => x.IsPlatoon) / (double)replayFiles.Count()).ToString("P");
             }

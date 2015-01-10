@@ -4010,6 +4010,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Data.
+        /// </summary>
+        public static string DeathReason_Unknown {
+            get {
+                return ResourceManager.GetString("DeathReason_Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vehicle drowned.
         /// </summary>
         public static string DeathReason_VehicleDrowned {
@@ -4807,6 +4816,15 @@ namespace WotDossier.Resources {
         public static string Map_103_ruinberg_winter {
             get {
                 return ResourceManager.GetString("Map_103_ruinberg_winter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter Showdown.
+        /// </summary>
+        public static string Map_109_battlecity_ny {
+            get {
+                return ResourceManager.GetString("Map_109_battlecity_ny", resourceCulture);
             }
         }
         

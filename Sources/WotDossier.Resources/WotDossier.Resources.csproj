@@ -1210,6 +1210,17 @@
     <Resource Include="Images\Tanks\ussr_T_44_IGR.png" />
     <Resource Include="Images\Tanks\ussr_Valentine_LL_IGR.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\france_F00_AMX_50Foch_155.png" />
+    <Resource Include="Images\Tanks\usa_A00_T110E5.png" />
+    <Resource Include="Images\Tanks\ussr_R00_T_50_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Maps\109_Battlecity_NY.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Maps\Minimap\109_battlecity_ny\109_battlecity_ny.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

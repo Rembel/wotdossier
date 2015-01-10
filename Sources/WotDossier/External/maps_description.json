@@ -461,6 +461,254 @@
     }
   },
   {
+    "name": "#arenas:100_thepit/name",
+    "description": "#arenas:100_thepit/description",
+    "geometry": "spaces/100_thepit",
+    "boundingBox": {
+      "bottomLeft": "\t-250,000000 -300,000000\t",
+      "upperRight": "\t350,000000 300,000000\t"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/100_thepit/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-34.68 -100.709"
+          },
+          "team2": {
+            "position1": "-34.68 100.709"
+          }
+        },
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-34.989 -197.603"
+          },
+          "team2": {
+            "position": "-34.989 197.603"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:103_ruinberg_winter/name",
+    "description": "#arenas:103_ruinberg_winter/description",
+    "geometry": "spaces/103_ruinberg_winter",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/103_ruinberg_winter/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "ambientSound": "/wind/wind/wind_winter_01",
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-66,399990 306,100000\t"
+          },
+          "team2": {
+            "position1": "\t-82,900000 -290,900000\t"
+          }
+        }
+      },
+      "domination": {
+        "controlPoint": "\t-337,060500 -48,506910\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "64 333"
+          },
+          "team2": {
+            "position": "270 -330"
+          }
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "320.434 334.328"
+          },
+          "team2": {
+            "position": "-336.217 -48.082"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-66.4 306.100",
+            "position2": "218.304 -88.969"
+          },
+          "team2": ""
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:109_battlecity_ny/name",
+    "description": "#arenas:109_battlecity_ny/description",
+    "geometry": "spaces/109_battlecity_ny",
+    "boundingBox": {
+      "bottomLeft": "\t-200,000000 -200,000000\t",
+      "upperRight": "\t300,000000 300,000000\t"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/109_battlecity_ny/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/d70d_ny/d70_music/intro",
+    "ambientSound": "/d70d_ny/d70d_sfx/silence",
+    "soundRemapping": {
+      "remap": [
+        {
+          "old": "/objects/fuel_barrel/fuel_barrel_mid",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tank_breakdown/hit_treads",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/GUI/notifications_FX/enemy_sighted_for_team",
+          "new": "/d70d_ny/d70d_sfx/alert"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/water_hit_large",
+          "new": "/d70d_ny/d70d_sfx/underwater"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/water_hit_light",
+          "new": "/d70d_ny/d70d_sfx/underwater"
+        },
+        {
+          "old": "/GUI/notifications_FX/base_capture_1",
+          "new": "/d70d_ny/d70d_sfx/signal"
+        },
+        {
+          "old": "/GUI/notifications_FX/base_capture_2",
+          "new": "/d70d_ny/d70d_sfx/signal"
+        },
+        {
+          "old": "/GUI/notifications_FX/gun_reloaded",
+          "new": "/d70d_ny/d70d_sfx/gun_reload"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/light_hit",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/heavy_hit",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tank_repair/track_functional",
+          "new": "/d70d_ny/d70d_sfx/silence"
+        },
+        {
+          "old": "/tanks/tanks_physics/ramming/light_ramming",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tanks_physics/ramming/heavy_ramming",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/pc/tanks_physics/collision/collision_light",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/pc/tanks_physics/collision/collision_mid",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/pc/tanks_physics/collision/collision_heavy",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/pc/tanks_physics/collision/contact_tanks",
+          "new": "/d70d_ny/d70d_sfx/silence"
+        },
+        {
+          "old": "/tanks/pc/tanks_physics/collision/after_collision",
+          "new": "/d70d_ny/d70d_sfx/silence"
+        },
+        {
+          "old": "/tanks/npc/tanks_physics/collision/collision_light",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/npc/tanks_physics/collision/collision_mid",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/npc/tanks_physics/collision/collision_heavy",
+          "new": "/d70d_ny/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/npc/tanks_physics/collision/contact_tanks",
+          "new": "/d70d_ny/d70d_sfx/silence"
+        },
+        {
+          "old": "/tanks/npc/tanks_physics/collision/after_collision",
+          "new": "/d70d_ny/d70d_sfx/silence"
+        },
+        {
+          "old": "\t/music/combat/combat\t",
+          "new": "/d70d_ny/d70d_sfx/silence"
+        },
+        {
+          "old": "/GUI/notifications_FX/sight_convergence",
+          "new": "/d70d_ny/d70d_sfx/silence"
+        }
+      ]
+    },
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "50 -181"
+          },
+          "team2": {
+            "position": "50 281"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "50.5 50.5"
+      }
+    },
+    "battleCountdownTimerSound": "/d70d_ny/d70d_sfx/timer",
+    "battleVictoryMusic": "/d70d_ny/d70_music/victory",
+    "battleLoseMusic": "/d70d_ny/d70_music/defeat",
+    "battleDrawMusic": "/d70d_ny/d70_music/draw",
+    "explicitRequestOnly": "\ttrue\t"
+  },
+  {
     "name": "#arenas:10_hills/name",
     "description": "#arenas:10_hills/description",
     "geometry": "spaces/10_hills",
@@ -2036,6 +2284,64 @@
       }
     },
     "mapActivities": ""
+  },
+  {
+    "name": "#arenas:95_lost_city/name",
+    "description": "#arenas:95_lost_city/description",
+    "geometry": "spaces/95_lost_city",
+    "roundLength": "\t900\t",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -400.0",
+      "upperRight": "400.0 400.0"
+    },
+    "minimap": "spaces/95_lost_city/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "loadingMusic": "/music/intro/rus_city",
+    "ambientSound": "/wind/wind/wind_desert_01",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "0 -350"
+          },
+          "team2": {
+            "position": "0 350"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "291 -100.311127"
+          },
+          "team2": {
+            "position1": "-291 100.009995"
+          }
+        }
+      },
+      "assault2": {
+        "winnerIfTimeout": "\t2\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "315.682 -121.161"
+          },
+          "team2": {
+            "position": "-315.682 121.161"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": {
+            "position1": "-120 288",
+            "position2": "0 0"
+          }
+        }
+      }
+    }
   },
   {
     "name": "#arenas:96_prohorovka_defense/name",

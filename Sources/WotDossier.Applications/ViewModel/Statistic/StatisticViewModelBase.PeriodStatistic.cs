@@ -812,6 +812,11 @@ namespace WotDossier.Applications.ViewModel.Statistic
             get { return Even - TypedPrevStatistic.Even; }
         }
 
+        public double TierDelta
+        {
+            get { return Tier - TypedPrevStatistic.Tier; }
+        }
+
         #endregion
 
         #region Achievments 7x7
@@ -919,6 +924,16 @@ namespace WotDossier.Applications.ViewModel.Statistic
         public int PromisingFighterMedalDelta
         {
             get { return PromisingFighterMedal - TypedPrevStatistic.PromisingFighterMedal; }
+        }
+
+        public int GuerrillaMedalDelta
+        {
+            get { return GuerrillaMedal - TypedPrevStatistic.GuerrillaMedal; }
+        }
+
+        public int SentinelMedalDelta
+        {
+            get { return SentinelMedal - TypedPrevStatistic.SentinelMedal; }
         }
 
         #endregion

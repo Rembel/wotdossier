@@ -172,10 +172,10 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// </summary>
         /// <param name="tanks">The tanks.</param>
         /// <returns></returns>
-        public List<TankRowMasterTanker> GetMasterTankerList(List<TankJson> tanks)
+        public List<TankRowMasterTanker> GetMasterTankerList(List<ITankStatisticRow> tanks)
         {
             IEnumerable<int> killed =
-                tanks.SelectMany(x => x.Frags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
+                tanks.SelectMany(x => x.TankFrags).Select(x => x.TankUniqueId).Distinct().OrderBy(x => x);
             List<TankRowMasterTanker> masterTanker = Dictionaries.Instance.Tanks
                 .Where(x => !killed.Contains(x.Key) && IsExistedtank(x.Value))
                 .Select(x => new TankRowMasterTanker(x.Value))

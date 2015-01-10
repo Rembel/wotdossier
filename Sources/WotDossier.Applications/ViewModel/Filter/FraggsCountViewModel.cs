@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Common;
 using WotDossier.Domain.Tank;
 
@@ -33,6 +34,15 @@ namespace WotDossier.Applications.ViewModel.Filter
                 _tankFrags = value;
                 OnPropertyChanged(PropTankFrags);
             }
+        }
+
+        public List<FragsJson> GetAllFrags()
+        {
+            if (_tankFrags != null)
+            {
+                return _tankFrags;
+            }
+            return new List<FragsJson>();
         }
 
         protected override void OnPropertyChanged(string propertyName)
@@ -81,10 +91,10 @@ namespace WotDossier.Applications.ViewModel.Filter
             return filter.ToList();
         }
 
-        public void Init(List<TankJson> tanks)
+        public void Init(List<ITankStatisticRow> tanks)
         {
-            TankFrags = tanks.SelectMany(x => x.Frags).ToList();
-            Tanks = tanks.OrderBy(x => x.Common.tanktitle).Select(x => new ListItem<int>(x.UniqueId(), x.Common.tanktitle)).ToList();
+            TankFrags = tanks.SelectMany(x => x.TankFrags).ToList();
+            Tanks = tanks.OrderBy(x => x.Tank).Select(x => new ListItem<int>(x.TankUniqueId, x.Tank)).ToList();
             Tanks.Insert(0, new ListItem<int>(KEY_ALL_VALUES, Resources.Resources.TankFilterPanel_All));
             OnPropertyChanged("Tanks");
         }

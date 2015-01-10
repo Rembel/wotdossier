@@ -9,6 +9,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         TankIcon Icon { get; set; }
 
         int MarksOnGunSort { get; set; }
+        IEnumerable<FragsJson> TankFrags { get; set; }
 
         IEnumerable<ITankStatisticRow> GetAll();
 

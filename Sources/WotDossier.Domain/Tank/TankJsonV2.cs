@@ -43,7 +43,18 @@ namespace WotDossier.Domain.Tank
         /// <summary>
         /// Gets or sets the description.
         /// </summary>
-        public TankDescription Description { get; set; }
+        public TankDescription Description
+        {
+            get
+            {
+                if (_description == null)
+                {
+                    _description = TankDescription.Unknown;
+                }
+                return _description;
+            }
+            set { _description = value; }
+        }
 
         /// <summary>
         /// Gets or sets the common stat.
@@ -173,7 +184,8 @@ namespace WotDossier.Domain.Tank
         public byte[] Raw { get; set; }
 
         private int _uniqueId = -1;
-        
+        private TankDescription _description;
+
         public int UniqueId()
         {
             if (_uniqueId == -1)
@@ -191,7 +203,7 @@ namespace WotDossier.Domain.Tank
         /// </returns>
         public override string ToString()
         {
-            return string.Format("{0}", Description.Title);
+            return Common.tanktitle;
         }
     }
 }

@@ -3337,4 +3337,7 @@ up to 500 m</value>
   <data name="Map_109_battlecity_ny" xml:space="preserve">
     <value>Winter Showdown</value>
   </data>
+  <data name="DeathReason_Unknown" xml:space="preserve">
+    <value>No Data</value>
+  </data>
 </root>

@@ -72,6 +72,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public List<Vehicle> TeamMembers { get; set; }
 
         private string _link;
+        
         /// <summary>
         /// Gets or sets the link.
         /// </summary>
@@ -134,7 +135,13 @@ namespace WotDossier.Applications.ViewModel.Replay
         #endregion
 
         public FinishReason FinishReason { get; set; }
-        public DeathReason DeathReason { get; set; }
+
+        private DeathReason _deathReason = DeathReason.Unknown;
+        public DeathReason DeathReason
+        {
+            get { return _deathReason; }
+            set { _deathReason = value; }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplayFile" /> class.
@@ -207,7 +214,6 @@ namespace WotDossier.Applications.ViewModel.Replay
                     DamageDealt = replay.datablock_battle_result.personal.damageDealt;
                     DamageReceived = replay.datablock_battle_result.personal.damageReceived;
                     IsWinner = GetBattleStatus(replay);
-                    IsWinnerString = Resources.Resources.ResourceManager.GetEnumResource((Enum)IsWinner);
                     Xp = replay.datablock_battle_result.personal.xp;
                     Killed = replay.datablock_battle_result.personal.kills;
                     Damaged = replay.datablock_battle_result.personal.damaged;
@@ -221,14 +227,14 @@ namespace WotDossier.Applications.ViewModel.Replay
                     IsPlatoon = ResolvePlatoonFlag(replay);
                     
                     BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;
-                    BattleTypeString = Resources.Resources.ResourceManager.GetEnumResource((Enum)BattleType);
-
                     DeathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
-                    DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)DeathReason);
-
                     FinishReason = (FinishReason) replay.datablock_battle_result.common.finishReason;
-                    FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)FinishReason);
                 }
+
+                IsWinnerString = Resources.Resources.ResourceManager.GetEnumResource((Enum)IsWinner);
+                BattleTypeString = Resources.Resources.ResourceManager.GetEnumResource((Enum)BattleType);
+                DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)DeathReason);
+                FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)FinishReason);
             }
         }
 

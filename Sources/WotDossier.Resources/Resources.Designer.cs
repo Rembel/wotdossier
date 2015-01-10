@@ -4010,6 +4010,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Data.
+        /// </summary>
+        public static string DeathReason_Unknown {
+            get {
+                return ResourceManager.GetString("DeathReason_Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vehicle drowned.
         /// </summary>
         public static string DeathReason_VehicleDrowned {

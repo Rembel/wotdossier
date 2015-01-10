@@ -3426,4 +3426,7 @@
   <data name="Map_109_battlecity_ny" xml:space="preserve">
     <value>Зимняя битва</value>
   </data>
+  <data name="DeathReason_Unknown" xml:space="preserve">
+    <value>Нет данных</value>
+  </data>
 </root>

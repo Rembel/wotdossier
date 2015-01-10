@@ -1,46 +1,47 @@
-﻿using WotDossier.Domain.Tank;
+﻿using WotDossier.Dal;
+using WotDossier.Domain.Tank;
 
 namespace WotDossier.Applications.ViewModel
 {
     internal class ExportTankFragModel : IExportTankFragModel
     {
-        private readonly TankJson _tank;
+        private readonly TankDescription _tank;
         private readonly FragsJson _frag;
 
-        public ExportTankFragModel(TankJson tank, FragsJson frag)
+        public ExportTankFragModel(FragsJson frag)
         {
-            _tank = tank;
+            _tank = Dictionaries.Instance.Tanks[frag.KilledByTankUniqueId];
             _frag = frag;
         }
 
         public string Tank
         {
-            get { return _tank.Common.tanktitle; }
-            set { _tank.Common.tanktitle = value; }
+            get { return _tank.Title; }
+            set { _tank.Title = value; }
         }
 
         public double Tier
         {
-            get { return _frag.Tier; }
-            set { _frag.Tier = value; }
+            get { return _tank.Tier; }
+            set { _tank.Tier = (int) value; }
         }
 
         public int CountryId
         {
-            get { return _tank.Common.countryid; }
-            set { _tank.Common.countryid = value; }
+            get { return _tank.CountryId; }
+            set { _tank.CountryId = value; }
         }
 
         public int Type
         {
-            get { return _tank.Common.type; }
-            set { _tank.Common.type = value; }
+            get { return _tank.Type; }
+            set { _tank.Type = value; }
         }
 
         public int TankId
         {
-            get { return _tank.Common.tankid; }
-            set { _tank.Common.tankid = value; }
+            get { return _tank.TankId; }
+            set { _tank.TankId = value; }
         }
 
         public double FragTier

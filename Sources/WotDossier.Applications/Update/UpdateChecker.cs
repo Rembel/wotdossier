@@ -209,7 +209,7 @@ namespace WotDossier.Applications.Update
                 request.UserAgent = USER_AGENT;
                 request.Accept = ACCEPT_HEADER;
                 //for analytics
-                request.Referer = string.Format("http://wotdossier_{0}.{1}/", ApplicationInfo.Version,
+                request.Referer = string.Format("http://" + ApplicationInfo.ProductName + "_{0}.{1}/", ApplicationInfo.Version,
                     appSettings.Server ?? "com");
                 WebResponse webResponse = request.GetResponse();
                 using (Stream responseStream = webResponse.GetResponseStream())

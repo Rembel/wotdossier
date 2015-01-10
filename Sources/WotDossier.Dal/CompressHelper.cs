@@ -18,7 +18,7 @@ namespace WotDossier.Dal
         public static byte[] Compress(string value)
         {
             var memoryStream = new MemoryStream();
-            var zip = new GZipStream(memoryStream, CompressionMode.Compress);
+            using(var zip = new GZipStream(memoryStream, CompressionMode.Compress))
             using (var writer = new StreamWriter(zip, Encoding.UTF8))
             {
                 writer.Write(value);
@@ -33,7 +33,8 @@ namespace WotDossier.Dal
         /// <returns></returns>
         public static string Decompress(byte[] byteArray)
         {
-            var zip = new GZipStream(new MemoryStream(byteArray), CompressionMode.Decompress);
+            using(MemoryStream memoryStream = new MemoryStream(byteArray))
+            using (var zip = new GZipStream(memoryStream, CompressionMode.Decompress))
             using (var sr = new StreamReader(zip, Encoding.UTF8))
             {
                 return sr.ReadToEnd();

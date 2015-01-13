@@ -263,7 +263,7 @@ namespace WotDossier.Dal
                     {
                         var target = maps[key];
 
-                        JsonConvert.PopulateObject(map["boundingBox"].ToString(), target);
+                        target.Config = JsonConvert.DeserializeObject<MapConfig>(map.ToString(), new MapConfigConverter());
                     }
                 }
             }

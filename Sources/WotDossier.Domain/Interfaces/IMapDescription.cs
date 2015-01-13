@@ -2,7 +2,7 @@ using WotDossier.Domain.Replay;
 
 namespace WotDossier.Domain.Interfaces
 {
-    public interface IMapDescription
+    public interface IReplayMap
     {
         Gameplay Gameplay { get; set; }
         string MapName { get; set; }

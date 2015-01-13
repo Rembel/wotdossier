@@ -17,7 +17,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ReplayFile : INotifyPropertyChanged, IMapDescription
+    public abstract class ReplayFile : INotifyPropertyChanged, IReplayMap
     {
         protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 

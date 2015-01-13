@@ -16,6 +16,11 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             _height = height;
         }
 
+        public Point? game_to_map_coord(Point position)
+        {
+            return game_to_map_coord(new float[] {(float) position.X, (float) position.Y});
+        }
+
         public Point? game_to_map_coord(float [] position)
         {
             try

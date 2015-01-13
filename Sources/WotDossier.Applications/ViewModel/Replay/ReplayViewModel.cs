@@ -177,7 +177,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         
         private ReplayViewer _replayViewer;
         
-        public IMapDescription MapDescription { get; private set; }
+        public IReplayMap MapDescription { get; private set; }
 
         private TeamMember _ourTeamMember;
         public TeamMember OurTeamMember
@@ -241,10 +241,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
-            if (_simulationWorker != null)
-            {
-                _simulationWorker.Cancel();
-            }
+            ReplayViewer.Stop();
         }
 
         public DelegateCommand PlayCommand { get; set; }
@@ -254,9 +251,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             _simulationWorker = new ProgressControlViewModel();
 
-            ReplayViewer = new ReplayViewer(Replay, TeamMembers.Select(x => new MapVehicle(x)).ToList());
+            ReplayViewer.Stop();
 
-            _simulationWorker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.Replay());
+            _simulationWorker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.Start());
         }
 
         
@@ -514,14 +511,16 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDescription.MapName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a", clientVersion.ToString(3));
 
+                ReplayViewer = new ReplayViewer(Replay, TeamMembers.Select(x => new MapVehicle(x)).ToList());
+
                 return true;
             }
             return false;
         }
 
-        private Map GetMapDescription(Domain.Replay.Replay replay)
+        private IReplayMap GetMapDescription(Domain.Replay.Replay replay)
         {
-            Map mapDescription = new Map();
+            ReplayMapViewModel mapDescription = new ReplayMapViewModel();
 
             mapDescription.MapNameId = replay.datablock_1.mapName;
             mapDescription.Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);

@@ -1221,6 +1221,23 @@
   <ItemGroup>
     <Resource Include="Images\Maps\Minimap\109_battlecity_ny\109_battlecity_ny.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Replays\Viewer\elements\enemy_base.png" />
+    <Resource Include="Images\Replays\Viewer\elements\enemy_spawn1.png" />
+    <Resource Include="Images\Replays\Viewer\elements\enemy_spawn2.png" />
+    <Resource Include="Images\Replays\Viewer\elements\enemy_spawn3.png" />
+    <Resource Include="Images\Replays\Viewer\elements\enemy_spawn4.png" />
+    <Resource Include="Images\Replays\Viewer\elements\friendly_base.png" />
+    <Resource Include="Images\Replays\Viewer\elements\friendly_spawn1.png" />
+    <Resource Include="Images\Replays\Viewer\elements\friendly_spawn2.png" />
+    <Resource Include="Images\Replays\Viewer\elements\friendly_spawn3.png" />
+    <Resource Include="Images\Replays\Viewer\elements\friendly_spawn4.png" />
+    <Resource Include="Images\Replays\Viewer\elements\neutral_base.png" />
+    <Resource Include="Images\Replays\Viewer\elements\neutral_spawn1.png" />
+    <Resource Include="Images\Replays\Viewer\elements\neutral_spawn2.png" />
+    <Resource Include="Images\Replays\Viewer\elements\neutral_spawn3.png" />
+    <Resource Include="Images\Replays\Viewer\elements\neutral_spawn4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

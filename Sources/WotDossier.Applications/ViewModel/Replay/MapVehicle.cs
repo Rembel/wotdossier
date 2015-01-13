@@ -5,6 +5,8 @@ namespace WotDossier.Applications.ViewModel.Replay
 {
     public class MapVehicle : INotifyPropertyChanged
     {
+        private TeamMember _teamMember;
+
         private int _currentHealth;
         public int CurrentHealth
         {
@@ -18,6 +20,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
+        private bool _isAlive = true;
         public bool IsAlive
         {
             get { return _isAlive; }
@@ -102,10 +105,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         private double _y;
-        private double _orientation;
-        private int _kills;
-        private bool _isAlive = true;
-
         public double Y
         {
             get { return _y; }
@@ -117,6 +116,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
+        private double _orientation;
         public bool Recorder { get; set; }
 
         public double Orientation
@@ -136,6 +136,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public MapVehicle(TeamMember teamMember)
         {
+            _teamMember = teamMember;
             Id = teamMember.Id;
             AccountDBID = teamMember.AccountDBID;
 
@@ -146,17 +147,25 @@ namespace WotDossier.Applications.ViewModel.Replay
             Tank = teamMember.Tank;
             FullName = teamMember.FullName;
             Team = teamMember.Team;
+            TeamMate = teamMember.TeamMate;
+
+            Squad = teamMember.Squad;
+
+            InitHealth(teamMember);
+        }
+
+        private void InitHealth(TeamMember teamMember)
+        {
             EndHealth = teamMember.Health;
             DamageReceived = teamMember.DamageReceived;
-            TeamMate = teamMember.TeamMate;
-            
             Health = EndHealth + DamageReceived;
             CurrentHealth = Health;
-            Squad = teamMember.Squad;
+            HealthPercent = 100;
         }
 
         public int Squad { get; set; }
 
+        private int _kills;
         public int Kills
         {
             get { return _kills; }
@@ -179,6 +188,13 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void Reset()
+        {
+            InitHealth(_teamMember);
+            Visible = false;
+            Kills = 0;
         }
     }
 }

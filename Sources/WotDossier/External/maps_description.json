@@ -503,6 +503,64 @@
     }
   },
   {
+    "name": "#arenas:102_deathtrack/name",
+    "description": "#arenas:102_deathtrack/description",
+    "geometry": "spaces/102_deathtrack",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -430.0",
+      "upperRight": "430.0 400.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/102_deathtrack/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/vehicles2/music/intro",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "soundRemapping": {
+      "remap": [
+        {
+          "old": "/guns/pc/guns/medium_gun_50-75mm/medium_gun_50-75mm",
+          "new": "/vehicles2/guns/pc/guns/medium_gun_50-75mm/medium_gun_50-75mm"
+        },
+        {
+          "old": "/guns/pc/guns/medium_gun_50-75mm/medium_gun_50-75mm_mb",
+          "new": "/vehicles2/guns/pc/guns/medium_gun_50-75mm/medium_gun_50-75mm_mb"
+        },
+        {
+          "old": "/guns/npc/guns/medium_gun_50-75mm/medium_gun_50-75mm",
+          "new": "/vehicles2/guns/npc/guns/medium_gun_50-75mm/medium_gun_50-75mm"
+        },
+        {
+          "old": "/guns/npc/guns/medium_gun_50-75mm/medium_gun_50-75mm_mb",
+          "new": "/vehicles2/guns/npc/guns/medium_gun_50-75mm/medium_gun_50-75mm_mb"
+        }
+      ]
+    },
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "domination": {
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "-362.730 273.380"
+          },
+          "team2": {
+            "position": "-383.246 240.500"
+          }
+        },
+        "teamBasePositions": {
+          "team1": "",
+          "team2": ""
+        },
+        "controlPoint": "355.165 -210.444"
+      }
+    },
+    "explicitRequestOnly": "\ttrue\t"
+  },
+  {
     "name": "#arenas:103_ruinberg_winter/name",
     "description": "#arenas:103_ruinberg_winter/description",
     "geometry": "spaces/103_ruinberg_winter",
@@ -1670,6 +1728,37 @@
     }
   },
   {
+    "name": "#arenas:42_north_america/name",
+    "description": "#arenas:42_north_america/description",
+    "geometry": "spaces/42_north_america",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -430.0",
+      "upperRight": "430.0 400.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/42_north_america/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/euro_city",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-191,100000 -315,200000\t"
+          },
+          "team2": {
+            "position1": "\t318,000000 286,300000\t"
+          }
+        }
+      }
+    }
+  },
+  {
     "name": "#arenas:43_north_america/name",
     "description": "#arenas:43_north_america/description",
     "geometry": "spaces/43_north_america",
@@ -2286,6 +2375,98 @@
     "mapActivities": ""
   },
   {
+    "name": "#arenas:94_battlecity/name",
+    "description": "#arenas:94_battlecity/description",
+    "geometry": "spaces/94_battlecity",
+    "boundingBox": {
+      "bottomLeft": "-200.0 -200.0",
+      "upperRight": "200.0 200.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/94_battlecity/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "defaultGroundEffect": "ground",
+    "music": "/d70d/d70_music/silence",
+    "loadingMusic": "/d70d/d70_music/intro",
+    "ambientSound": "/d70d/d70_music/silence",
+    "soundRemapping": {
+      "remap": [
+        {
+          "old": "/objects/fuel_barrel/fuel_barrel_mid",
+          "new": "/d70d/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/light_hit",
+          "new": "/d70d/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tank_breakdown/hit_treads",
+          "new": "/d70d/d70d_sfx/hit"
+        },
+        {
+          "old": "/GUI/notifications_FX/enemy_sighted_for_team",
+          "new": "/d70d/d70d_sfx/alert"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/water_hit_large",
+          "new": "/d70d/d70d_sfx/underwater"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/water_hit_light",
+          "new": "/d70d/d70d_sfx/underwater"
+        },
+        {
+          "old": "/GUI/notifications_FX/base_capture_1",
+          "new": "/d70d/d70d_sfx/signal"
+        },
+        {
+          "old": "/GUI/notifications_FX/base_capture_2",
+          "new": "/d70d/d70d_sfx/signal"
+        },
+        {
+          "old": "/GUI/notifications_FX/gun_reloaded",
+          "new": "/d70d/d70d_sfx/gun_reload"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/light_hit",
+          "new": "/d70d/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tanks_physics/common_tank/heavy_hit",
+          "new": "/d70d/d70d_sfx/hit"
+        },
+        {
+          "old": "/tanks/tank_repair/track_functional",
+          "new": "/d70d/d70_music/silence"
+        }
+      ]
+    },
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t-0,533409 -185,035300\t"
+          },
+          "team2": {
+            "position1": "\t0,132450 188,649100\t"
+          }
+        }
+      }
+    },
+    "battleCountdownTimerSound": "/d70d/d70d_sfx/timer",
+    "battleVictoryMusic": "/d70d/d70_music/victory",
+    "battleLoseMusic": "/d70d/d70_music/defeat",
+    "battleDrawMusic": "/d70d/d70_music/draw",
+    "explicitRequestOnly": "\ttrue\t"
+  },
+  {
     "name": "#arenas:95_lost_city/name",
     "description": "#arenas:95_lost_city/description",
     "geometry": "spaces/95_lost_city",
@@ -2564,6 +2745,44 @@
         }
       ]
     }
+  },
+  {
+    "name": "#arenas:99_himmelball/name",
+    "description": "#arenas:99_himmelball/description",
+    "geometry": "spaces/99_himmelball",
+    "boundingBox": {
+      "bottomLeft": "-149.0 -113.0",
+      "upperRight": "181.0 217.0"
+    },
+    "maxPlayersInTeam": "\t3\t",
+    "roundLength": "\t900\t",
+    "minimap": "spaces/99_himmelball/mmap.dds",
+    "vehicleCamouflageKind": "winter",
+    "defaultGroundEffect": "\tNone\t",
+    "loadingMusic": "/music/intro/Intro_Himmelsdorf",
+    "ambientSound": "/wind/wind/wind_winter_02",
+    "soundRemapping": {
+      "remap": [
+        {
+          "old": "/GUI/notifications_FX/base_capture_1",
+          "new": "/fwc/fans/fans_ally_goal"
+        },
+        {
+          "old": "/GUI/notifications_FX/base_capture_2",
+          "new": "/fwc/fans/fans_goal_of_the_enemy"
+        },
+        {
+          "old": "\t/music/combat/combat\t",
+          "new": "/fwc/music/silence"
+        }
+      ]
+    },
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "gameplayTypes": {
+      "ctf": ""
+    },
+    "explicitRequestOnly": "\ttrue\t"
   }
 ]
 

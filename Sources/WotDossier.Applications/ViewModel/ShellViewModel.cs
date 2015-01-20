@@ -660,7 +660,7 @@ namespace WotDossier.Applications.ViewModel
                 return;
             }
 
-            _tanks = strategy.GetTanksStatistic(playerEntity.Id);
+            Tanks = strategy.GetTanksStatistic(playerEntity.Id);
 
             MasterTanker = strategy.GetMasterTankerList(_tanks);
 

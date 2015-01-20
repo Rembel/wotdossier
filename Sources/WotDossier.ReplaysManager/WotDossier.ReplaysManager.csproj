@@ -530,6 +530,9 @@
     <Compile Include="..\WotDossier\Converters\Image\ImageSourceConverter.cs">
       <Link>Converters\Image\ImageSourceConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MapImageElementToIconConverter.cs">
+      <Link>Converters\Image\MapImageElementToIconConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\MapNameToImageConverter.cs">
       <Link>Converters\Image\MapNameToImageConverter.cs</Link>
     </Compile>

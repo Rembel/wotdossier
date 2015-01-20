@@ -1,16 +1,15 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using WotDossier.Domain.Interfaces;
-using WotDossier.Domain.Replay;
+using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Resources;
 
 namespace WotDossier.Converters
 {
-    public class MapToMinimapImageConverter : IValueConverter
+    public class MapImageElementToIconConverter : IValueConverter
     {
-        private static readonly MapToMinimapImageConverter _default = new MapToMinimapImageConverter();
+        private static readonly MapImageElementToIconConverter _default = new MapImageElementToIconConverter();
 
         /// <summary>
         /// Gets the default.
@@ -18,7 +17,7 @@ namespace WotDossier.Converters
         /// <value>
         /// The default.
         /// </value>
-        public static MapToMinimapImageConverter Default
+        public static MapImageElementToIconConverter Default
         {
             get { return _default; }
         }
@@ -32,37 +31,23 @@ namespace WotDossier.Converters
         /// <param name="value">The value produced by the binding source.</param><param name="targetType">The type of the binding target property.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            IReplayMap description = value as IReplayMap;
-            int layer = 0;
-            if (parameter != null)
+            MapImageElement element = (MapImageElement)value;
+            BitmapImage bitmapImage = null;
+            if (element != null)
             {
-                layer = int.Parse(parameter.ToString());
-            }
-
-            if (description != null)
-            {
-                Uri uriSource;
-                if (layer == 0)
+                string file;
+                if (element.Type == "base")
                 {
-                    uriSource = new Uri(
-                        string.Format(
-                            @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}/{0}.png",
-                            description.MapNameId));
+                    file = string.Format(@"{0}_{1}.png", element.Owner, element.Type);
                 }
                 else
                 {
-                    uriSource =
-                        new Uri(
-                            string.Format(
-                                @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}/{0}_{1}_{2}.png",
-                                description.MapNameId, description.Gameplay == Gameplay.nations ? Gameplay.ctf : description.Gameplay, description.Team));
+                    file = string.Format(@"{0}_{1}{2}.png", element.Owner, element.Type, element.Position);
                 }
-
-                BitmapImage bitmapImage = ImageCache.GetBitmapImage(uriSource);
-
-                return bitmapImage;
+                Uri uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Replays/Viewer/elements/{0}", file));
+                bitmapImage = ImageCache.GetBitmapImage(uriSource);
             }
-            return null;
+            return bitmapImage;
         }
 
         /// <summary>

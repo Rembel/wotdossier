@@ -124,6 +124,14 @@ namespace WotDossier.Test
 
             }
 
+            foreach (var key in Dictionaries.Instance.Maps.Keys)
+            {
+                if (!File.Exists(Path.Combine(replayFolder, key + ".xml")))
+                {
+                    Console.WriteLine("Missed map: {0}", key );
+                }
+            }
+
             Console.WriteLine(array.ToString(Formatting.Indented));
         }
 

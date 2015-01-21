@@ -218,6 +218,9 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         {
             List<MapImageElement> elements = new List<MapImageElement>();
 
+            int xShift = -16;
+            int yShift = -20;
+
             foreach (KeyValuePair<int, List<Point>> teamBasePosition in gameplayDescription.TeamBasePositions)
             {
                 int i = 1;
@@ -225,8 +228,8 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
                 {
                     MapImageElement element = new MapImageElement();
                     Point? mapCoord = MapGrid.game_to_map_coord(point);
-                    element.X = mapCoord.Value.X - 32;
-                    element.Y = mapCoord.Value.Y - 32;
+                    element.X = mapCoord.Value.X + xShift;
+                    element.Y = mapCoord.Value.Y + yShift;
                     element.Type = "base";
                     element.Team = teamBasePosition.Key;
                     element.Owner = GetElementOwner(element.Team, replayUserTeam);
@@ -241,8 +244,8 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
                 {
                     MapImageElement element = new MapImageElement();
                     Point? mapCoord = MapGrid.game_to_map_coord(point);
-                    element.X = mapCoord.Value.X - 32;
-                    element.Y = mapCoord.Value.Y - 32;
+                    element.X = mapCoord.Value.X + xShift;
+                    element.Y = mapCoord.Value.Y + yShift;
                     element.Type = "spawn";
                     element.Team = teamSpawns.Key;
                     element.Owner = GetElementOwner(element.Team, replayUserTeam);
@@ -255,8 +258,8 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             {
                 MapImageElement element = new MapImageElement();
                 Point? mapCoord = MapGrid.game_to_map_coord(gameplayDescription.ControlPoint.Value);
-                element.X = mapCoord.Value.X - 32;
-                element.Y = mapCoord.Value.Y - 32;
+                element.X = mapCoord.Value.X + xShift;
+                element.Y = mapCoord.Value.Y + yShift;
                 element.Type = "base";
                 elements.Add(element);
             }

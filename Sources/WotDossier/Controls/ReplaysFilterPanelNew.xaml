@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Maps}" Style="{StaticResource office2007SilverTabItemLeft}" ToolTip="">
+            <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Maps}" Style="{StaticResource office2007SilverTabItemLeft}">
                 <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />

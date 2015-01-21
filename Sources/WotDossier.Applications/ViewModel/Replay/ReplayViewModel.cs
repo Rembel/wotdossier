@@ -375,6 +375,9 @@ namespace WotDossier.Applications.ViewModel.Replay
                 TotalCredits = replay.datablock_battle_result.personal.credits;
                 TotalXp = replay.datablock_battle_result.personal.xp;
 
+                IsPremium = replay.datablock_battle_result.personal.isPremium;
+                IsBase = !IsPremium;
+
                 int premiumCredits;
                 
                 if (replay.datablock_battle_result.personal.isPremium)
@@ -517,6 +520,10 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
             return false;
         }
+
+        public bool IsBase { get; set; }
+
+        public bool IsPremium { get; set; }
 
         private IReplayMap GetMapDescription(Domain.Replay.Replay replay)
         {

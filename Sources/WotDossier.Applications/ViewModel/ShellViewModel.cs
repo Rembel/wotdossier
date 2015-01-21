@@ -539,22 +539,38 @@ namespace WotDossier.Applications.ViewModel
 
                             if (cacheFile != null)
                             {
-                                //convert dossier cache file to json
-                                string jsonFile = CacheFileHelper.BinaryCacheToJson(cacheFile);
-                                var tanksCache = CacheFileHelper.ReadTanksCache(jsonFile);
-
                                 //get tanks from dossier app spot
                                 //string data = new Uri("http://wot-dossier.appspot.com/dossier-data/2587067").Get();
                                 //List<TankJson> tanksV2 = WotApiClient.Instance.ReadDossierAppSpotTanks(data);
 
-                                ProgressView.Report(bw, 25, Resources.Resources.Progress_CommonStatLoading);
+                                UpdateLocalDatabase(serverStatistic, cacheFile);
+                            }
 
-                                InitPlayerStatistic(serverStatistic, tanksCache);
+                            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
+
+                            
+                            ProgressView.Report(bw, 25, Resources.Resources.Progress_CommonStatLoading);
+
+                            var player = _dossierRepository.GetPlayer(settings.PlayerId);
+
+                            if(player != null)
+                            {
+                                _log.Trace("InitPlayerStatistic start");
+                                PlayerStatistic = strategy.GetPlayerStatistic(player, new List<TankJson>(), serverStatistic);
+                                //init previous dates list
+                                PeriodSelector.PeriodSettingsUpdated -= PeriodSelectorOnPropertyChanged;
+                                PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
+                                PeriodSelector.PeriodSettingsUpdated += PeriodSelectorOnPropertyChanged;
+                                _log.Trace("InitPlayerStatistic end");
 
                                 ProgressView.Report(bw, 25, Resources.Resources.Progress_CommonStatLoadingCompleted);
                                 ProgressView.Report(bw, 25, Resources.Resources.Progress_VehiclesStatLoading);
 
-                                InitTanksStatistic(tanksCache);
+                                _log.Trace("InitTanksStatistic start");
+                                Tanks = strategy.GetTanksStatistic(player.Id);
+                                MasterTanker = strategy.GetMasterTankerList(_tanks);
+                                FraggsCount.Init(_tanks);
+                                _log.Trace("InitTanksStatistic end");
 
                                 //trick for set "N last battles period"
                                 if (settings.PeriodSettings.Period == StatisticPeriod.LastNBattles)
@@ -577,12 +593,6 @@ namespace WotDossier.Applications.ViewModel
                                 ProgressView.Report(bw, 100, Resources.Resources.Progress_LoadLastUsedVehiclesListCompleted);
                                 ProgressView.Report(bw, 100, Resources.Resources.Progress_DataLoadCompleted);
                             }
-                            else
-                            {
-                                MessageBox.Show(Resources.Resources.WarningMsg_CanntFindPlayerDataInDossierCache,
-                                    Resources.Resources.WindowCaption_Warning,
-                                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                            }
 
                             EventAggregatorFactory.EventAggregator.GetEvent<RefreshEvent>().Publish(EventArgs.Empty);
                         }
@@ -600,6 +610,21 @@ namespace WotDossier.Applications.ViewModel
                 });
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerActivatedEvent>().Publish(EventArgs.Empty);
+        }
+
+        private void UpdateLocalDatabase(ServerStatWrapper serverStatistic, FileInfo cacheFile)
+        {
+            //convert dossier cache file to json
+            string jsonFile = CacheFileHelper.BinaryCacheToJson(cacheFile);
+            var tanksCache = CacheFileHelper.ReadTanksCache(jsonFile);
+
+            AppSettings settings = SettingsReader.Get();
+
+            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
+
+            strategy.UpdatePlayerStatistic(settings.PlayerId, tanksCache, serverStatistic);
+
+            strategy.UpdateTankStatistic(settings.PlayerId, tanksCache);
         }
 
         private void InitClanData(ServerStatWrapper serverStatistic)
@@ -633,42 +658,6 @@ namespace WotDossier.Applications.ViewModel
             _log.Trace("InitLastUsedTankList end");
         }
 
-        private void InitPlayerStatistic(ServerStatWrapper serverStatistic, List<TankJson> tanks)
-        {
-            _log.Trace("InitPlayerStatistic start");
-            PlayerStatistic = InitPlayerStatisticViewModel(serverStatistic, tanks);
-            
-            //init previous dates list
-            PeriodSelector.PeriodSettingsUpdated -= PeriodSelectorOnPropertyChanged;
-            PeriodSelector.PrevDates = GetPreviousDates(PlayerStatistic);
-            PeriodSelector.PeriodSettingsUpdated += PeriodSelectorOnPropertyChanged;
-            _log.Trace("InitPlayerStatistic end");
-        }
-
-        private void InitTanksStatistic(List<TankJson> tanks)
-        {
-            _log.Trace("InitTanksStatistic start");
-            AppSettings settings = SettingsReader.Get();
-
-            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
-
-            PlayerEntity playerEntity = strategy.UpdateTankStatistic(settings.PlayerId, tanks);
-
-            if (playerEntity == null)
-            {
-                MessageBox.Show(string.Format(Resources.Resources.Msg_ErrorOnGetLocalPlayerInfo, settings.PlayerName), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            Tanks = strategy.GetTanksStatistic(playerEntity.Id);
-
-            MasterTanker = strategy.GetMasterTankerList(_tanks);
-
-            FraggsCount.Init(_tanks);
-
-            _log.Trace("InitTanksStatistic end");
-        }
-
         private ServerStatWrapper LoadPlayerServerStatistic(AppSettings settings)
         {
             _log.Trace("LoadPlayerServerStatistic start");
@@ -692,19 +681,6 @@ namespace WotDossier.Applications.ViewModel
         #endregion
 
         #region Initialize
-
-        private PlayerStatisticViewModel InitPlayerStatisticViewModel(ServerStatWrapper serverStatistic, List<TankJson> tanks)
-        {
-            AppSettings settings = SettingsReader.Get();
-
-            StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(BattleModeSelector.BattleMode, _dossierRepository);
-
-            int playerId = settings.PlayerId;
-
-            PlayerEntity player = strategy.UpdatePlayerStatistic(playerId, tanks, serverStatistic);
-            
-            return strategy.GetPlayerStatistic(player, tanks, serverStatistic);
-        }
 
         #endregion
 

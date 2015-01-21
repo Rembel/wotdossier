@@ -569,6 +569,9 @@
     <Compile Include="..\WotDossier\Converters\ObjectToVisibilityConverter.cs">
       <Link>Converters\ObjectToVisibilityConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\PremiumToOpacityConverter.cs">
+      <Link>Converters\PremiumToOpacityConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\ResourceFormatConverter.cs">
       <Link>Converters\ResourceFormatConverter.cs</Link>
     </Compile>

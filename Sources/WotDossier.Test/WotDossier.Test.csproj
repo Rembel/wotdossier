@@ -273,6 +273,12 @@
     <None Include="CacheFiles\0.9.4\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="CacheFiles\0.9.5\NRXWO2LOGIXHANJOO5XXE3DEN5THIYLONNZS43TFOQ5DEMBQGE2DWX2SMVWWEZLML4======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CacheFiles\0.9.6\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -326,6 +332,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.5\20141206_0029_ussr-Object_140_92_stalingrad.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.6\20150122_2248_ussr-Object_907_13_erlenberg.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -31,11 +31,6 @@ namespace WotDossier.Test
 
             foreach (Version version in Dictionaries.Instance.Versions)
             {
-                if(version < new Version("0.8.5"))
-                {
-                    continue;
-                }
-
                 //reset DB
                 DatabaseManager.DeleteDatabase();
                 DatabaseManager.InitDatabase();
@@ -43,22 +38,33 @@ namespace WotDossier.Test
                 string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
 
                 FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
-                
-                List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
-                foreach (TankJson tankJson in tanks)
+
+                if (cacheFile != null)
                 {
-                    string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png", tankJson.Description.Icon.IconId);
-                    Assert.True(File.Exists(iconPath), string.Format("Version: {1}. Can't find icon {0}", tankJson.Description.Icon.IconId, version));
+                    List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
+                    foreach (TankJson tankJson in tanks)
+                    {
+                        string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
+                            tankJson.Description.Icon.IconId);
+                        Assert.True(File.Exists(iconPath),
+                            string.Format("Version: {1}. Can't find icon {0}", tankJson.Description.Icon.IconId, version));
+                    }
+
+                    foreach (BattleMode battleMode in Enum.GetValues(typeof (BattleMode)))
+                    {
+                        StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(battleMode,
+                            DossierRepository);
+
+                        PlayerEntity player = strategy.UpdatePlayerStatistic(
+                            serverStatistic.Player.dataField.account_id, tanks, serverStatistic);
+
+                        var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
+                        Assert.IsNotNull(playerStatisticViewModel);
+                    }
                 }
-
-                foreach (BattleMode battleMode in Enum.GetValues(typeof (BattleMode)))
+                else
                 {
-                    StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(battleMode, DossierRepository);
-
-                    PlayerEntity player = strategy.UpdatePlayerStatistic(serverStatistic.Player.dataField.account_id, tanks, serverStatistic);
-
-                    var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
-                    Assert.IsNotNull(playerStatisticViewModel);
+                    Console.WriteLine("Cache file not found: {0}", version);
                 }
             }
         }
@@ -116,26 +122,32 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = null;
 
-            string[] files = Directory.GetFiles(Environment.CurrentDirectory + folder, "*.dat");
+            string path = Environment.CurrentDirectory + folder;
 
-            if (!files.Any())
+            if (Directory.Exists(path))
             {
-                return null;
-            }
+                string[] files = Directory.GetFiles(path, "*.dat");
 
-            foreach (string file in files)
-            {
-                FileInfo info = new FileInfo(file);
-
-                if (CacheFileHelper.GetPlayerName(info).Equals(playerId, StringComparison.InvariantCultureIgnoreCase))
+                if (!files.Any())
                 {
-                    if (cacheFile == null)
+                    return null;
+                }
+
+                foreach (string file in files)
+                {
+                    FileInfo info = new FileInfo(file);
+
+                    if (CacheFileHelper.GetPlayerName(info)
+                        .Equals(playerId, StringComparison.InvariantCultureIgnoreCase))
                     {
-                        cacheFile = info;
-                    }
-                    else if (cacheFile.LastWriteTime < info.LastWriteTime)
-                    {
-                        cacheFile = info;
+                        if (cacheFile == null)
+                        {
+                            cacheFile = info;
+                        }
+                        else if (cacheFile.LastWriteTime < info.LastWriteTime)
+                        {
+                            cacheFile = info;
+                        }
                     }
                 }
             }

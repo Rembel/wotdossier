@@ -3,7 +3,7 @@ using System.Data.SQLite;
 using System.Reflection;
 using WotDossier.Common;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     public class EmbeddedSqlUpdate : IDbUpdate
     {

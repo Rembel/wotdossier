@@ -5,6 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.BattleModeStrategies;
+using WotDossier.Applications.Logic;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -25,16 +26,16 @@ namespace WotDossier.Test
             DataProvider.RollbackTransaction();
             DataProvider.CloseSession();
 
+            //reset DB
+            DatabaseManager.DeleteDatabase();
+            DatabaseManager.InitDatabase();
+
             Player player1 = new Player();
             player1.dataField = new PlayerData { account_id = 10800699, nickname = "_rembel__ru", created_at = 1349068892 };
             ServerStatWrapper serverStatistic = new ServerStatWrapper(player1);
 
             foreach (Version version in Dictionaries.Instance.Versions)
             {
-                //reset DB
-                DatabaseManager.DeleteDatabase();
-                DatabaseManager.InitDatabase();
-
                 string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
 
                 FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
@@ -66,6 +67,24 @@ namespace WotDossier.Test
                 {
                     Console.WriteLine("Cache file not found: {0}", version);
                 }
+            }
+        }
+
+        [Test]
+        public void NoobMeterPerformanceRatingAlgorithmTest()
+        {
+            Version version = new Version("0.9.3");
+
+            string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
+
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
+
+            if (cacheFile != null)
+            {
+                List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
+                var performanceRating = RatingHelper.PerformanceRating(tanks, json => json.A15x15);
+                Console.WriteLine(performanceRating);
+
             }
         }
 

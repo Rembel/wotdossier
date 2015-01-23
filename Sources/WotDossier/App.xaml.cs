@@ -8,7 +8,6 @@ using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
 using WotDossier.Applications.Logic;
-using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Replay;
@@ -18,6 +17,7 @@ using WotDossier.Dal.NHibernate;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications.Services;
 using WotDossier.Framework.Presentation.Services;
+using WotDossier.Update.Update;
 using WotDossier.Views;
 
 namespace WotDossier

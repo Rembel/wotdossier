@@ -109,7 +109,6 @@
     <Compile Include="ReplaysManagerController.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
-    <Compile Include="Folder.cs" />
     <Compile Include="Logic\Adapter\AbstractStatisticAdapter.cs" />
     <Compile Include="Logic\Adapter\HistoricalBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\RandomBattlesStatAdapter.cs" />
@@ -127,18 +126,7 @@
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlayerNameSuggestionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsReader.cs" />
     <Compile Include="ThemesManager.cs" />
-    <Compile Include="Update\CodeUpdateBase.cs" />
-    <Compile Include="Update\CodeUpdate_2014042501.cs" />
-    <Compile Include="Update\CodeUpdate_2014070802.cs" />
-    <Compile Include="Update\CodeUpdate_2014042502.cs" />
-    <Compile Include="Update\EmbeddedSqlUpdate.cs" />
-    <Compile Include="Update\DatabaseManager.cs" />
-    <Compile Include="Update\DownloadedVersionInfo.cs" />
-    <Compile Include="Update\SqlUpdate.cs" />
-    <Compile Include="Update\IDbUpdate.cs" />
-    <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="Model\ClanMemberModel.cs" />
     <Compile Include="ViewModel\Chart\CommonChartsViewModel.cs" />
     <Compile Include="ViewModel\Chart\DataPoint.cs" />
@@ -257,6 +245,10 @@
     <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.Composition;
 using System.Diagnostics;
 using Common.Logging;
-using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
+using WotDossier.Update.Update;
 
 namespace WotDossier.Applications.ViewModel
 {

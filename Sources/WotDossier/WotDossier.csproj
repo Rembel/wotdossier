@@ -895,28 +895,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="AutoMapper.dll" />
-    <EmbeddedResource Include="Updates\2014031005.sql" />
-    <EmbeddedResource Include="Updates\2014031001.sql" />
-    <EmbeddedResource Include="Updates\2014031002.sql" />
-    <EmbeddedResource Include="Updates\2014031003.sql" />
-    <EmbeddedResource Include="Updates\2014031004.sql" />
-    <EmbeddedResource Include="Updates\2014031006.sql" />
-    <EmbeddedResource Include="Updates\2014031007.sql" />
-    <EmbeddedResource Include="Updates\2014031601.sql" />
-    <EmbeddedResource Include="Updates\2014031602.sql" />
-    <EmbeddedResource Include="Updates\2014040301.sql" />
-    <EmbeddedResource Include="Updates\2014040302.sql" />
-    <EmbeddedResource Include="Updates\2014040303.sql" />
-    <EmbeddedResource Include="Updates\2014041601.sql" />
-    <EmbeddedResource Include="Updates\2014041602.sql" />
-    <EmbeddedResource Include="Updates\2014041603.sql" />
-    <EmbeddedResource Include="Updates\2014041604.sql" />
-    <EmbeddedResource Include="Updates\2014042501.sql" />
-    <EmbeddedResource Include="Updates\2014050701.sql" />
-    <EmbeddedResource Include="Updates\2014070801.sql" />
-    <EmbeddedResource Include="Updates\2014052802.sql" />
-    <EmbeddedResource Include="Updates\2014052801.sql" />
-    <EmbeddedResource Include="Updates\2014092301.sql" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -929,9 +907,7 @@
     <Content Include="app.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Data\dossier.s3db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Data\dossier.s3db" />
     <EmbeddedResource Include="Data\ReplaysCatalog.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -1064,6 +1040,10 @@
     <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

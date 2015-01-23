@@ -9,6 +9,7 @@ using Common.Logging;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Common;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Settings;
 using WotDossier.Framework;

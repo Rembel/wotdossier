@@ -2,7 +2,7 @@
 using System.Data.SQLite;
 using System.IO;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     public class SqlUpdate : IDbUpdate
     {

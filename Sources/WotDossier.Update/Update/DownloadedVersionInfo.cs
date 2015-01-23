@@ -1,6 +1,6 @@
 using System;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     /// <summary>
     /// 

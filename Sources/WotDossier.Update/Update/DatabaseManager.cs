@@ -7,8 +7,9 @@ using System.Linq;
 using System.Reflection;
 using Common.Logging;
 using WotDossier.Common;
+using WotDossier.Dal;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     public class DatabaseManager
     {
@@ -147,7 +148,7 @@ namespace WotDossier.Applications.Update
             }
             else
             {
-                Assembly entryAssembly = Assembly.GetEntryAssembly();
+                Assembly entryAssembly = updateType.Assembly;
                 strings = AssemblyExtensions.GetResourcesByMask(entryAssembly, SQL_SCRIPT_EXTENSION);
                 updates = strings.Select(x => (IDbUpdate)new EmbeddedSqlUpdate(entryAssembly, x, SQL_SCRIPT_EXTENSION)).ToList();
             }
@@ -184,7 +185,7 @@ namespace WotDossier.Applications.Update
         {
             string currentDirectory = Folder.AssemblyDirectory();
             string path = Path.Combine(currentDirectory, @"Data\dossier.s3db");
-            if (!File.Exists(path))
+            if (File.Exists(path))
             {
                 File.Delete(path);
             }

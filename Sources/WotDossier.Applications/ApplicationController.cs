@@ -3,6 +3,7 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Reflection;
 using WotDossier.Applications.ViewModel;
+using WotDossier.Dal;
 using WotDossier.Framework.Applications;
 using WotDossier.Framework.Forms.Commands;
 

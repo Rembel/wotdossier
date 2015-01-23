@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Framework.Forms.Commands;

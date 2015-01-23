@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Model;
+using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 
 namespace WotDossier.Applications.ViewModel.Statistic

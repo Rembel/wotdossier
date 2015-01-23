@@ -5,7 +5,7 @@ using WotDossier.Dal;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Tank;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     /// <summary>
     /// BattleCount column added to tank statistic

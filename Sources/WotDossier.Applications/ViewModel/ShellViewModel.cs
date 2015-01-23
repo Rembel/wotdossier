@@ -8,12 +8,12 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows;
+using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.BattleModeStrategies;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
 using WotDossier.Applications.Model;
-using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Filter;
@@ -32,6 +32,7 @@ using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using WotDossier.Framework.Forms.ProgressDialog;
+using WotDossier.Update.Update;
 
 namespace WotDossier.Applications.ViewModel
 {
@@ -337,18 +338,35 @@ namespace WotDossier.Applications.ViewModel
             {
                 exportInterfaces.Add(typeof (ITeamBattlesAchievements));
             }
-            provider.Export(_tanks, exportInterfaces);
+            SaveAsCsv(provider.Export(_tanks, exportInterfaces));
         }
 
         private void OnExportFragsToCsv()
         {
             CsvExportProvider provider = new CsvExportProvider();
             List<FragsJson> fragsJsons = FraggsCount.GetAllFrags();
-            provider.Export(fragsJsons.Select(f => new ExportTankFragModel(f)).ToList(),
+            SaveAsCsv(provider.Export(fragsJsons.Select(f => new ExportTankFragModel(f)).ToList(),
                 new List<Type>
                 {
                     typeof (IExportTankFragModel),
-                });
+                }));
+        }
+
+        private void SaveAsCsv(string builder)
+        {
+            VistaSaveFileDialog dialog = new VistaSaveFileDialog();
+            dialog.DefaultExt = ".csv"; // Default file extension
+            dialog.Filter = "CSV (.csv)|*.csv"; // Filter files by extension 
+            dialog.Title = Resources.Resources.WondowCaption_Export;
+            bool? showDialog = dialog.ShowDialog();
+            if (showDialog == true)
+            {
+                string fileName = dialog.FileName;
+                using (StreamWriter writer = File.CreateText(fileName))
+                {
+                    writer.Write(builder);
+                }
+            }
         }
 
         private void OnSearchClans()

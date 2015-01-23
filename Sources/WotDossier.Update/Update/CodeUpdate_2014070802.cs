@@ -1,8 +1,9 @@
 ﻿using System.Data;
 using System.Data.SQLite;
+using WotDossier.Dal;
 using WotDossier.Domain;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     /// <summary>
     /// Delete double tank statistic rows

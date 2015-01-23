@@ -1,6 +1,6 @@
 ﻿using System.Data.SQLite;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     public interface IDbUpdate
     {

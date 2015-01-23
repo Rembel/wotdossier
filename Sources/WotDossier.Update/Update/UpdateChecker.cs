@@ -12,7 +12,7 @@ using WotDossier.Domain;
 using WotDossier.Framework;
 using WotDossier.Framework.Presentation.Services;
 
-namespace WotDossier.Applications.Update
+namespace WotDossier.Update.Update
 {
     public class UpdateChecker
     {

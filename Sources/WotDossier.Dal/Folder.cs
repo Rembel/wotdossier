@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace WotDossier.Applications
+namespace WotDossier.Dal
 {
     public static class Folder
     {

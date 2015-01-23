@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.EventAggregator;
 

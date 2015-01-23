@@ -2,10 +2,9 @@
 using System.IO;
 using System.Text;
 using WotDossier.Common;
-using WotDossier.Dal;
 using WotDossier.Domain;
 
-namespace WotDossier.Applications
+namespace WotDossier.Dal
 {
     public static class SettingsReader
     {

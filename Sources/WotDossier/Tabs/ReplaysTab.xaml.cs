@@ -8,6 +8,7 @@ using WotDossier.Applications;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Common;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.EventAggregator;
 

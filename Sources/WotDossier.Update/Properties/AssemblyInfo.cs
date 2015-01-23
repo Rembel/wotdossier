@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WotDossier.Framework")]
+[assembly: AssemblyTitle("WotDossier.Update")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ITN")]
-[assembly: AssemblyProduct("WotDossier.Domain")]
+[assembly: AssemblyProduct("WotDossier.Update")]
 [assembly: AssemblyCopyright("Copyright © ITN 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,11 +19,11 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("331cc379-bc8e-4129-8b6a-5698bf93b774")]
+[assembly: Guid("7db3465b-324b-4340-87b2-8b34e15ad7c8")]
 
 // Version information for an assembly consists of the following four values:
 //
-//      MajorJson Version
+//      Major Version
 //      Minor Version 
 //      Build Number
 //      Revision

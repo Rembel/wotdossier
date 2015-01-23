@@ -207,9 +207,12 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             FirstTeam = Vehicles.Where(v => v.TeamMate).ToList();
             SecondTeam = Vehicles.Where(v => !v.TeamMate).ToList();
 
-            GameplayDescription gameplayDescription = map.Config.GameplayTypes[replay.datablock_1.gameplayID];
+            if (map.Config.GameplayTypes.ContainsKey(replay.datablock_1.gameplayID))
+            {
+                GameplayDescription gameplayDescription = map.Config.GameplayTypes[replay.datablock_1.gameplayID];
 
-            Elements = GetMapImageElements(gameplayDescription, ReplayUser.Team);
+                Elements = GetMapImageElements(gameplayDescription, ReplayUser.Team);
+            }
 
             _parser = ReplayFileHelper.GetParser(_replay);
         }

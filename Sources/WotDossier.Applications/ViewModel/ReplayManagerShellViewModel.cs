@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Linq;
 using WotDossier.Applications.Events;
-using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Rows;
@@ -16,6 +15,7 @@ using WotDossier.Framework.Applications;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using WotDossier.Framework.Forms.ProgressDialog;
+using WotDossier.Update.Update;
 
 namespace WotDossier.Applications.ViewModel
 {

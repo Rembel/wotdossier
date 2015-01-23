@@ -79,6 +79,7 @@
     <Compile Include="DataMapper.cs" />
     <Compile Include="Dictionaries.cs" />
     <Compile Include="DossierRepository.cs" />
+    <Compile Include="Folder.cs" />
     <Compile Include="IDataProvider.cs" />
     <Compile Include="IStatisticAdapter.cs" />
     <Compile Include="JsonCreationConverter.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="NHibernate\DesktopAppSessionStorage.cs" />
     <Compile Include="PlayerInfoLoadException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsReader.cs" />
     <Compile Include="WotApiClient.cs" />
     <Compile Include="CompressHelper.cs" />
   </ItemGroup>

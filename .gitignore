@@ -32,3 +32,6 @@
 /Sources/*.DotSettings
 /Sources/WotDossier.Node/node_modules
 /Sources/WotDossier.Node/obj
+bin
+obj
+*.user

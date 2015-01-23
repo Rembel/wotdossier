@@ -40,7 +40,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplaysByVersionTest()
         {
-            Version version = new Version("0.9.6.0");
+            Version version = new Version("0.8.7.0");
 
             ReplayTest(version);
         }
@@ -188,36 +188,49 @@ namespace WotDossier.Test
         [Test]
         public void ParserMigrationTest()
         {
+            string externalparser = @"ExternalParser\";
+            string internalparser = @"InternalParser\";
+
+            if (!Directory.Exists(externalparser))
+            {
+                Directory.CreateDirectory(externalparser);
+            }
+            if (!Directory.Exists(internalparser))
+            {
+                Directory.CreateDirectory(internalparser);
+            }
+
             foreach (Version version in Dictionaries.Instance.Versions)
             {
                 string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
 
-                if (!Directory.Exists(replayFolder))
+                if (Directory.Exists(replayFolder))
                 {
-                    Assert.Fail("Folder not exists - [{0}]", replayFolder);
+                    var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);
+
+                    Console.WriteLine("Found: {0}", replays.Count());
+
+                    for (int index = 0; index < replays.Length; index++)
+                    {
+                        string path = replays[index];
+
+                        FileInfo replayFile = new FileInfo(path);
+                        var replay = ReplayFileHelper.ParseReplay_8_0(replayFile);
+                        OrderList(replay);
+                        var serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+                        serializeObject.Dump(externalparser + version.ToString(3) + ".json");
+                        Console.WriteLine(serializeObject);
+                        replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
+                        OrderList(replay);
+                        serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+                        serializeObject.Dump(internalparser + version.ToString(3) + ".json");
+                        Console.WriteLine(serializeObject);
+                    }
                 }
-
-                var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);
-
-                Console.WriteLine("Found: {0}", replays.Count());
-
-                for (int index = 0; index < replays.Length; index++)
+                else
                 {
-                    string path = replays[index];
-
-                    FileInfo replayFile = new FileInfo(path);
-                    var replay = ReplayFileHelper.ParseReplay_8_0(replayFile);
-                    OrderList(replay);
-                    var serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
-                    serializeObject.Dump(@"ParseReplay_8_0\" + version.ToString(3) + ".json");
-                    Console.WriteLine(serializeObject);
-                    replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
-                    OrderList(replay);
-                    serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
-                    serializeObject.Dump(@"ParseReplay_8_11\" + version.ToString(3) + ".json");
-                    Console.WriteLine(serializeObject);
+                    Console.WriteLine("Folder not exists - [{0}]", replayFolder);
                 }
-
             }
         }
 

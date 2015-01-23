@@ -786,6 +786,10 @@
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\WotDossier\Data\Medals.xml">

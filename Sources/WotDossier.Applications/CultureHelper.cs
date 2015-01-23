@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Threading;
+using WotDossier.Dal;
 
 namespace WotDossier.Applications
 {

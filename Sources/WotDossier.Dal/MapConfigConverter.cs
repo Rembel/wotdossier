@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows;
 using Newtonsoft.Json.Linq;
 using WotDossier.Domain;
@@ -8,6 +9,8 @@ namespace WotDossier.Dal
 {
     internal class MapConfigConverter : JsonCreationConverter<MapConfig>
     {
+        private static CultureInfo _invariantCulture = new CultureInfo("RU-ru");
+
         protected override MapConfig Create(Type objectType, JObject jObject)
         {
             MapConfig mapConfig = new MapConfig();
@@ -15,13 +18,13 @@ namespace WotDossier.Dal
             {
                 var values = jObject["boundingBox"]["bottomLeft"].Value<string>().Replace(".", ",").Split(' ');
 
-                var x = Convert.ToDouble(values[0]);
-                var y = Convert.ToDouble(values[1]);
+                var x = Convert.ToDouble(values[0], _invariantCulture);
+                var y = Convert.ToDouble(values[1], _invariantCulture);
 
                 values = jObject["boundingBox"]["upperRight"].Value<string>().Replace(".", ",").Split(' ');
 
-                var x1 = Convert.ToDouble(values[0]);
-                var y1 = Convert.ToDouble(values[1]);
+                var x1 = Convert.ToDouble(values[0], _invariantCulture);
+                var y1 = Convert.ToDouble(values[1], _invariantCulture);
 
                 mapConfig.BoundingBox = new Rect(x, y, x1 - x, y1 - y);
             }
@@ -56,8 +59,8 @@ namespace WotDossier.Dal
                     foreach (JProperty position in team.Value.Children())
                     {
                         var values = position.Value.Value<string>().Replace(".", ",").Split(' ');
-                        var x = Convert.ToDouble(values[0]);
-                        var y = Convert.ToDouble(values[1]);
+                        var x = Convert.ToDouble(values[0], _invariantCulture);
+                        var y = Convert.ToDouble(values[1], _invariantCulture);
                         Point point = new Point(x, y);
                         positions.Add(point);
                     }
@@ -115,8 +118,8 @@ namespace WotDossier.Dal
         private static Point ConvertToPoint(string pointString)
         {
             var values = pointString.Replace(".", ",").Split(' ');
-            var x = Convert.ToDouble(values[0]);
-            var y = Convert.ToDouble(values[1]);
+            var x = Convert.ToDouble(values[0], _invariantCulture);
+            var y = Convert.ToDouble(values[1], _invariantCulture);
             Point point = new Point(x, y);
             return point;
         }
@@ -126,8 +129,8 @@ namespace WotDossier.Dal
             if (FieldExists("controlPoint", jToken))
             {
                 var values = jToken["controlPoint"].Value<string>().Replace(".", ",").Split(' ');
-                var x = Convert.ToDouble(values[0]);
-                var y = Convert.ToDouble(values[1]);
+                var x = Convert.ToDouble(values[0], _invariantCulture);
+                var y = Convert.ToDouble(values[1], _invariantCulture);
                 Point controlPoint = new Point(x, y);
                 return controlPoint;
             }

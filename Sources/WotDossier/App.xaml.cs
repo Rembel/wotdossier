@@ -61,6 +61,9 @@ namespace WotDossier
             //}
             //config.Save();
 
+            //set app lang
+            CultureHelper.SetUiCulture();
+
             //TODO: Remove, hard hack
             RestoreAutomapperDll();
 
@@ -93,9 +96,6 @@ namespace WotDossier
                 DatabaseManager manager = new DatabaseManager();
                 manager.InitDatabase();
                 
-                //set app lang
-                CultureHelper.SetUiCulture();
-
                 // Registrations here
                 CompositionContainerFactory.Instance.RegisterSingle<ApplicationController, ApplicationController>();
                 CompositionContainerFactory.Instance.RegisterSingle<ShellViewModel, ShellViewModel>();

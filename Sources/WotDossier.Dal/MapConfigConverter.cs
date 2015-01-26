@@ -139,12 +139,8 @@ namespace WotDossier.Dal
 
         private static double ConvertToDouble(string value)
         {
-            double result;
-            if (Double.TryParse(value.Replace(".", ",").Trim(), NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, _invariantCulture, out result))
-            {
-                return result;
-            }
-            return 0;
+            return Double.Parse(value.Replace(".", ",").Trim(), CultureInfo.CurrentCulture);
+
         }
     }
 }

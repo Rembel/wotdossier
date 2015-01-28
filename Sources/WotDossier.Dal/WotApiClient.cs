@@ -38,6 +38,7 @@ namespace WotDossier.Dal
         private const string PARAM_LIMIT = "limit";
         private const string METHOD_ACCOUNT_INFO = "account/info/";
         private const string METHOD_TANKS_STATS = "tanks/stats/";
+        private const string METHOD_TANKS_ACHIEVEMENTS = "tanks/achievements/";
         private const string METHOD_ACCOUNT_TANKS = "account/tanks/";
         private const string METHOD_ACCOUNT_ACHIEVEMENTS = "account/achievements/";
         private const string METHOD_RATINGS_ACCOUNTS = "ratings/accounts/";
@@ -232,16 +233,21 @@ namespace WotDossier.Dal
 
                 if (response["data"].Any())
                 {
+                    var achievements = GetPlayerTanksAchievements(playerId, settings);
+
                     List<Vehicle> tanks = response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<Vehicle>>();
                     foreach (Vehicle tank in tanks)
                     {
                         tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
-
+                        var vehicleAchievements = achievements.FirstOrDefault(x => x.tank_id == tank.tank_id) ?? new VehicleAchievements{ achievements = new MedalAchievements()};
+                        tank.achievements = vehicleAchievements.achievements;
+                        
                         if (tank.description == null)
                         {
                             _log.WarnFormat("Unknown tank id found [{0}] on get player[{1}:{2}] server tank statistic", tank.tank_id, settings.Server, playerId);
                         }
                     }
+
                     return tanks;
                 }
             }
@@ -251,6 +257,37 @@ namespace WotDossier.Dal
             }
 
             return new List<Vehicle>();
+        }
+
+        /// <summary>
+        /// Gets the player tanks achievements.
+        /// </summary>
+        /// <param name="playerId">The player identifier.</param>
+        /// <param name="settings">The settings.</param>
+        /// <returns></returns>
+        private List<VehicleAchievements> GetPlayerTanksAchievements(int playerId, AppSettings settings)
+        {
+            JObject response = null;
+            try
+            {
+                response = Request<JObject>(METHOD_TANKS_ACHIEVEMENTS, new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_ACCOUNT_ID, playerId},
+                    {PARAM_FIELDS, "achievements,tank_id"},
+                }, settings);
+
+                if (response["data"].Any())
+                {
+                    return response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<VehicleAchievements>>();
+                }
+            }
+            catch (Exception e)
+            {
+                _log.ErrorFormat("Error on player[{1}:{2}] tanks achievements loading: \n{0}", e, response, settings.Server, playerId);
+            }
+
+            return new List<VehicleAchievements>();
         }
 
         private Ratings GetPlayerRatings(int playerId, AppSettings settings)

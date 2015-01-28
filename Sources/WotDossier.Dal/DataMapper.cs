@@ -1869,32 +1869,32 @@ namespace WotDossier.Dal
         /// <summary>
         /// Converts the specified tank json from WOT API.
         /// </summary>
-        /// <param name="tankJson">The tank json.</param>
+        /// <param name="vehicle">The tank json.</param>
         /// <returns></returns>
-        public static TankJson Map(Vehicle tankJson)
+        public static TankJson Map(Vehicle vehicle)
         {
             TankJson v2 = new TankJson();
 
             //statistic 15x15
             v2.A15x15 = new StatisticJson
             {
-                battlesCount = tankJson.all.battles,
-                battlesCountBefore8_8 = tankJson.all.battles,
-                capturePoints = tankJson.all.capture_points,
-                damageDealt = tankJson.all.damage_dealt,
-                damageReceived = tankJson.all.damage_received,
-                droppedCapturePoints = tankJson.all.dropped_capture_points,
-                frags = tankJson.all.frags,
-                frags8p = tankJson.all.frags,
-                hits = tankJson.all.hits,
-                losses = tankJson.all.losses,
-                shots = tankJson.all.shots,
-                spotted = tankJson.all.spotted,
-                survivedBattles = tankJson.all.survived_battles,
-                winAndSurvived = tankJson.all.survived_battles,
-                wins = tankJson.all.wins,
-                xp = tankJson.all.xp,
-                xpBefore8_8 = tankJson.all.xp,
+                battlesCount = vehicle.all.battles,
+                battlesCountBefore8_8 = vehicle.all.battles,
+                capturePoints = vehicle.all.capture_points,
+                damageDealt = vehicle.all.damage_dealt,
+                damageReceived = vehicle.all.damage_received,
+                droppedCapturePoints = vehicle.all.dropped_capture_points,
+                frags = vehicle.all.frags,
+                frags8p = vehicle.all.frags,
+                hits = vehicle.all.hits,
+                losses = vehicle.all.losses,
+                shots = vehicle.all.shots,
+                spotted = vehicle.all.spotted,
+                survivedBattles = vehicle.all.survived_battles,
+                winAndSurvived = vehicle.all.survived_battles,
+                wins = vehicle.all.wins,
+                xp = vehicle.all.xp,
+                xpBefore8_8 = vehicle.all.xp,
                 originalXP = 0,
                 damageAssistedRadio = 0,
                 damageAssistedTrack = 0,
@@ -1904,8 +1904,8 @@ namespace WotDossier.Dal
                 heHitsReceived = 0,
                 he_hits = 0,
                 pierced = 0,
-                maxFrags = tankJson.max_frags,
-                maxXP = tankJson.max_xp
+                maxFrags = vehicle.max_frags,
+                maxXP = vehicle.max_xp
             };
 
             //v2.A15x15.maxDamage = tankJson;
@@ -1983,21 +1983,22 @@ namespace WotDossier.Dal
             //v2.Achievements.tankExpertStrg = 0;
             //v2.Achievements.titleSniper = tankJson.series.sharpshooter;
             //v2.Achievements.warrior = tankJson.awards.top_gun;
-            v2.Achievements.MarkOfMastery = tankJson.mark_of_mastery;
+            v2.Achievements.MarksOnGun = vehicle.achievements.marksOnGun;
+            v2.Achievements.MarkOfMastery = vehicle.mark_of_mastery;
 
             v2.Common = new CommonJson();
             v2.Common.basedonversion = 65;
             v2.Common.compactDescr = 0;
-            v2.Common.countryid = tankJson.description.CountryId;
+            v2.Common.countryid = vehicle.description.CountryId;
             v2.Common.creationTime = 0;
             v2.Common.creationTimeR = DateTime.MinValue;
-            v2.Common.frags = tankJson.all.frags;
+            v2.Common.frags = vehicle.all.frags;
             v2.Common.frags_compare = 0;
             v2.Common.has_15x15 = 1;
             v2.Common.has_7x7 = 0;
             v2.Common.has_clan = 0;
             v2.Common.has_company = 0;
-            v2.Common.tankid = tankJson.description.TankId;
+            v2.Common.tankid = vehicle.description.TankId;
             v2.Common.premium = Dictionaries.Instance.Tanks[v2.UniqueId()].Premium;
             v2.Common.tanktitle = Dictionaries.Instance.Tanks[v2.UniqueId()].Title;
             v2.Common.tier = Dictionaries.Instance.Tanks[v2.UniqueId()].Tier;
@@ -2009,7 +2010,7 @@ namespace WotDossier.Dal
             //v2.Common.updatedR = Utils.UnixDateToDateTime(tankJson.updated);
             //v2.Common.battleLifeTime = tankJson.play_time;
             //v2.Common.treesCut = tankJson.amounts.trees_knocked_down;
-            v2.Description = tankJson.description;
+            v2.Description = vehicle.description;
             return v2;
         }
 

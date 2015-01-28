@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using System.Reflection;
 using NUnit.Framework;
+using WotDossier.Applications;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Dal.NHibernate;
@@ -41,6 +42,8 @@ namespace WotDossier.Test
             CompositionContainerFactory.Instance.Container.SatisfyImportsOnce(this);
             _databaseManager = new DatabaseManager();
             _databaseManager.InitDatabase();
+
+            CultureHelper.SetUiCulture();
         }
 
         [SetUp]

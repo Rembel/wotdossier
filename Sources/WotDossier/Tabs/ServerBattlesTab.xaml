@@ -27,6 +27,7 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Damage_AverageDamageDealt}" Binding="{Binding AvgDamageDealt, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="WN8" CellStyle="{StaticResource DataGridCellWn8Style}" Binding="{Binding WN8Rating, StringFormat='0.'}" Width="1*" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Ratings_MarkOfMastery}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource MasterTemplate}" SortMemberPath="MarkOfMastery" />
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Ratings_DamageRating}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource DamageRatingTemplate}" SortMemberPath="MarksOnGunSort" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

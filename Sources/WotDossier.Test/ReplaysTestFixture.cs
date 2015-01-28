@@ -37,15 +37,13 @@ namespace WotDossier.Test
             }
         }
 
-        [Test]
-        public void ReplaysByVersionTest()
+        [TestCase("0.8.7.0")]
+        public void ReplayTest(string version)
         {
-            Version version = new Version("0.8.7.0");
-
-            ReplayTest(version);
+            ReplayTest(new Version(version));
         }
 
-        private static void ReplayTest(Version version)
+        public void ReplayTest(Version version)
         {
             string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
 

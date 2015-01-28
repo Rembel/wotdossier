@@ -9,8 +9,6 @@ namespace WotDossier.Dal
 {
     internal class MapConfigConverter : JsonCreationConverter<MapConfig>
     {
-        private static readonly CultureInfo _invariantCulture = new CultureInfo("ru-RU");
-
         protected override MapConfig Create(Type objectType, JObject jObject)
         {
             MapConfig mapConfig = new MapConfig();
@@ -140,7 +138,6 @@ namespace WotDossier.Dal
         private static double ConvertToDouble(string value)
         {
             return Double.Parse(value.Replace(".", ",").Trim(), CultureInfo.CurrentCulture);
-
         }
     }
 }

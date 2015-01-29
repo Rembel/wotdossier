@@ -71,7 +71,7 @@ namespace WotDossier.Test
                 var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
                 var mockView = new Mock<IReplayView>();
                 ReplayViewModel model = new ReplayViewModel(mockView.Object);
-                model.Init(phisicalReplay.ReplayData(true));
+                model.Init(phisicalReplay.ReplayData(true), phisicalReplay);
             }
         }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows;
 using Common.Logging;
 using Newtonsoft.Json.Linq;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
@@ -34,6 +35,12 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string Title { get; set; }
 
         public Domain.Replay.Replay Replay { get; set; }
+
+        public ReplayFile ReplayFile { get; set; }
+
+        public bool IsBase { get; set; }
+
+        public bool IsPremium { get; set; }
 
         public List<CombatTarget> CombatEffects { get; set; }
 
@@ -208,7 +215,11 @@ namespace WotDossier.Applications.ViewModel.Replay
         public DelegateCommand<TeamMember> CopyPlayerNameCommand { get; set; }
         public DelegateCommand<TeamMember> OpenPlayerCommand { get; set; }
 
+        public DelegateCommand<ReplayFile> PlayReplayWithCommand { get; set; }
+
         public TeamMember ReplayUser { get; set; }
+
+        public ReplaysManager ReplaysManager { get; set; }
 
         #endregion
 
@@ -221,12 +232,16 @@ namespace WotDossier.Applications.ViewModel.Replay
         public ReplayViewModel([Import(typeof(IReplayView))]IReplayView view)
             : base(view)
         {
+            ReplaysManager = new ReplaysManager();
+
             HideTeamMemberResultsCommand = new DelegateCommand(OnHideTeamMemberResultsCommand);
             CopyCommand = new DelegateCommand<IList<object>>(OnCopyCommand);
             CopyPlayerNameCommand = new DelegateCommand<TeamMember>(OnCopyPlayerNameCommand);
             OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
             PlayCommand = new DelegateCommand(OnPlayCommand);
             SetSpeedCommand = new DelegateCommand<int>(OnSetSpeedCommand);
+
+            PlayReplayWithCommand = new DelegateCommand<ReplayFile>(ReplaysManager.PlayWith);
 
             ViewTyped.Closing += OnClosing;
         }
@@ -330,9 +345,10 @@ namespace WotDossier.Applications.ViewModel.Replay
             ViewTyped.Show();
         }
 
-        public bool Init(Domain.Replay.Replay replay)
+        public bool Init(Domain.Replay.Replay replay, ReplayFile replayFile)
         {
             Replay = replay;
+            ReplayFile = replayFile;
             
             if (replay.datablock_battle_result != null)
             {
@@ -520,10 +536,6 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
             return false;
         }
-
-        public bool IsBase { get; set; }
-
-        public bool IsPremium { get; set; }
 
         private IReplayMap GetMapDescription(Domain.Replay.Replay replay)
         {

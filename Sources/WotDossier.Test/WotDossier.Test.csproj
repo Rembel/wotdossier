@@ -338,6 +338,9 @@
     <None Include="Replays\0.9.6\20150122_2248_ussr-Object_907_13_erlenberg.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Replays\CasesTest\dead_crew.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WotDossier.Applications\WotDossier.Applications.csproj">

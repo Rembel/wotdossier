@@ -69,6 +69,20 @@ namespace WotDossier.Test
             }
         }
 
+        [Test]
+        public void NotReadTest()
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, @"Replays\CasesTest");
+            ReplaysFolderTest(replayFolder);
+
+            string[] replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+
+            foreach (string path in replays)
+            {
+                ReplayToJson(path);
+            }
+        }
+
         private static void ReplaysFolderTest(string replayFolder)
         {
             var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);

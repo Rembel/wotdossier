@@ -370,7 +370,12 @@ namespace WotDossier.Dal
                     return tankDescription;
                 }
             }
-
+            else if (iconId == "ussr_t_34")
+            {
+                //replay tank name t_34 changed to r04_t_34
+                return _tanks[0];
+            }
+            
             return null;
         }
 

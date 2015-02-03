@@ -4410,7 +4410,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{BA6573F1-EF32-40AE-962B-D5D61177B899}</td><td/></row>
+		<row><td>ProductCode</td><td>{D6177023-AFDC-4688-9A32-7D409747FC4C}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
 		<row><td>ProductVersion</td><td>4.1</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>

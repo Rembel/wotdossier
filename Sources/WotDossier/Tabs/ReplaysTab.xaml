@@ -147,6 +147,9 @@
                         <Trigger Property="IsSelected" Value="true">
                             <Setter Property="Background" Value="#A7B0C9" />
                         </Trigger>
+                        <DataTrigger Binding="{Binding Path=IsWinner}" Value="{x:Static replay:BattleStatus.Unknown}">
+                            <Setter Property="Background" Value="Salmon" />        
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </dataGrid:FooterDataGrid.RowStyle>

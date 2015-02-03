@@ -584,7 +584,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
-        private DateTime? _endDate = DateTime.Now;
+        private DateTime? _endDate;
         /// <summary>
         /// Gets or sets the end date.
         /// </summary>

@@ -171,6 +171,16 @@
             </TabItem>
         </TabControl>
         <StatusBar Grid.Row="3" VerticalAlignment="Bottom">
+            <StatusBarItem HorizontalAlignment="Left" Visibility="{Binding ReplaysViewModel.SelectedItems, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
+                <Grid Width="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{x:Static resources:Resources.StatusBar_SelectedCount}"/>
+                    <TextBlock Grid.Column="1" Text="{Binding ReplaysViewModel.SelectedItems.Count}"/>
+                </Grid>
+            </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
                 <progressDialog:ProgressControl DataContext="{Binding ProgressView}" Height="17" HorizontalAlignment="Right"/>
             </StatusBarItem>

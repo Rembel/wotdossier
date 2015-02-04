@@ -94,7 +94,7 @@
                                  HorizontalAlignment="Stretch" ItemsSource="{Binding Replays}" FooterItemsSource="{Binding ReplaysSummary}" VerticalAlignment="Stretch" 
                                  Name="dgReplays" IsReadOnly="True" AutoGenerateColumns="False" Style="{StaticResource office2007SilverFooterDataGrid}"
                   PreviewMouseLeftButtonDown="OnGridPreviewMouseLeftButtonDown" PreviewMouseMove="OnGridMouseMove" behaviours:DataGridBehavior.DisplayRowNumber="True"
-                                 ColumnInfo="{Binding ColumnInfo, Mode=TwoWay}" HideColumnChooser="False">
+                                 ColumnInfo="{Binding ColumnInfo, Mode=TwoWay}" HideColumnChooser="False" SelectedItems="{Binding SelectedItems, Mode=OneWayToSource}">
             <dataGrid:FooterDataGrid.Resources>
                 <ContextMenu x:Key="DataRowContextMenu">
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_Play}"

@@ -474,7 +474,7 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitEfficiencyByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, RatingHelper.EffectivityRating(
+            IEnumerable<DataPoint> dataSource = statisticViewModels.Where(x => x.Type != (int)TankType.Unknown).GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, RatingHelper.EffectivityRating(
                 x.Average(y => y.AvgDamageDealt),
                 x.Key,
                 x.Average(y => y.AvgFrags),
@@ -518,7 +518,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         {
             var values = Enum.GetValues(typeof(TankType)).Cast<int>().Where(x => x >= 0);
 
-            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type)
+            IEnumerable<DataPoint> dataSource = statisticViewModels.Where(x => x.Type != (int)TankType.Unknown).GroupBy(x => x.Type)
                 .Select(x => new DataPoint(x.Key,
                     RatingHelper.Wn8(x.ToList())));
 
@@ -570,7 +570,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         {
             var values = Enum.GetValues(typeof(TankType)).Cast<int>().Where(x => x >= 0);
 
-            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, 
+            IEnumerable<DataPoint> dataSource = statisticViewModels.Where(x => x.Type != (int)TankType.Unknown).GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, 
                 x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0/x.Sum(y => y.BattlesCount)));
 
             var list = dataSource.ToList();
@@ -625,7 +625,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         {
             var values = Enum.GetValues(typeof(TankType)).Cast<int>().Where(x => x >= 0);
 
-            List<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
+            List<DataPoint> dataSource = statisticViewModels.Where(x => x.Type != (int)TankType.Unknown).GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, x.Sum(y => y.BattlesCount))).ToList();
             if (dataSource.Any())
             {
                 double max = dataSource.Max(x => x.Y);

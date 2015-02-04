@@ -26,6 +26,24 @@ namespace WotDossier.Common
             return time;
         }
 
+        public static int ToUniqueId(int typeCompDescr)
+        {
+            int tankId = ToTankId(typeCompDescr);
+            int countryId = ToCountryId(typeCompDescr);
+
+            return ToUniqueId(countryId, tankId);
+        }
+
+        public static int ToCountryId(int typeCompDescr)
+        {
+            return typeCompDescr >> 4 & 15;
+        }
+
+        public static int ToTankId(int typeCompDescr)
+        {
+            return typeCompDescr >> 8 & 65535;
+        }
+
         public static int ToUniqueId(int countryId, int tankId)
         {
             return countryId * 10000 + tankId;

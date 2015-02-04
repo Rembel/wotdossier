@@ -9,7 +9,20 @@ namespace WotDossier.Domain.Tank
     [DataContract]
     public class TankDescription
     {
-        public static TankDescription Unknown = new TankDescription { Title = "Unknown", Icon = TankIcon.Empty };
+        public static TankDescription Unknown()
+        {
+            return new TankDescription { Title = "Unknown", Icon = TankIcon.Empty };
+        }
+
+        public static TankDescription Unknown(int compDescr)
+        {
+            return new TankDescription { Title = "Unknown", Icon = TankIcon.Empty, CompDescr = compDescr, CountryId = Utils.ToCountryId(compDescr), TankId = Utils.ToTankId(compDescr) };
+        }
+
+        public static TankDescription Unknown(int countryId, int tankId)
+        {
+            return new TankDescription { Title = "Unknown", Icon = TankIcon.Empty, CountryId  = countryId, TankId = tankId };
+        }
 
         /// <summary>
         /// Gets or sets the tank id.

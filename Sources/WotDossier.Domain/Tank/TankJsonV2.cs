@@ -19,7 +19,7 @@ namespace WotDossier.Domain.Tank
             A7x7 = new StatisticJson(),
             Achievements = new AchievementsJson(),
             Common = new CommonJson(),
-            Description = TankDescription.Unknown,
+            Description = TankDescription.Unknown(),
             Frags = new BindingList<FragsJson>(),
             Achievements7x7 = new Achievements7x7(),
             AchievementsHistorical = new AchievementsHistorical(),
@@ -45,14 +45,7 @@ namespace WotDossier.Domain.Tank
         /// </summary>
         public TankDescription Description
         {
-            get
-            {
-                if (_description == null)
-                {
-                    _description = TankDescription.Unknown;
-                }
-                return _description;
-            }
+            get { return _description; }
             set { _description = value; }
         }
 

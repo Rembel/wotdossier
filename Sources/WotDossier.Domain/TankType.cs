@@ -7,6 +7,7 @@ namespace WotDossier.Domain
 {
     public enum TankType : int
     {
+        Unknown = 0,
         LT = 1,
         MT = 2,
         HT = 3,

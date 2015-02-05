@@ -538,6 +538,7 @@ namespace WotDossier.Applications.ViewModel
             {
                 MessageBox.Show(Resources.Resources.WarningMsg_SpecifyPlayerName, Resources.Resources.WindowCaption_Warning,
                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                LoadInProgress = false;
                 return;
             }
 

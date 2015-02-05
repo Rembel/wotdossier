@@ -89,6 +89,18 @@ namespace WotDossier.Test
         }
 
         [Test]
+        public void InternalCacheLoaderTest()
+        {
+            Version version = new Version("0.9.3");
+
+            string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
+
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
+
+            CacheFileHelper.InternalBinaryCacheToJson(cacheFile);
+        }
+
+        [Test]
         public void CacheFileTest()
         {
             Version version = new Version("0.9.3");

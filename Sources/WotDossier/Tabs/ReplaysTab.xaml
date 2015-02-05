@@ -106,12 +106,12 @@
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_ShowFileInFolder}"
                               Command="{Binding Path=DataContext.ShowFileInFolderCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
                               CommandParameter="{Binding}"/>
-                    <!--<MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadBtn}" 
-                              Command="{Binding Path=DataContext.ReplayUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
-                              CommandParameter="{Binding}"/>-->
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_ShowDetails}"
                               Command="{Binding Path=DataContext.ShowDetailsCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}"
                               CommandParameter="{Binding}"/>
+                    <!--<MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadBtn}" 
+                              Command="{Binding Path=DataContext.ReplayUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
+                              CommandParameter="{Binding}"/>-->
                     <MenuItem Header="{x:Static resources:Resources.ReplaysTab_UploadMultipleBtn}" 
                               Command="{Binding Path=DataContext.ReplaysUploadCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=tab:ReplaysTab}}" 
                               CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

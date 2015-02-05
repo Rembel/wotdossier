@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Common;
+using WotDossier.Common.Python;
 using WotDossier.Dal;
 using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Tank;
@@ -100,6 +102,26 @@ namespace WotDossier.Applications
 
             _log.Trace("BinaryCacheToJson end");
             return cacheFile.FullName.Replace(".dat", ".json");
+        }
+
+        /// <summary>
+        /// Reads the tanks from cache.
+        /// </summary>
+        /// <param name="path">The path to parsed cache file.</param>
+        /// <returns></returns>
+        public static List<TankJson> InternalBinaryCacheToJson(FileInfo cacheFile)
+        {
+            using (Unpickler unpickler = new Unpickler())
+            {
+                object[] pickle = (object[]) unpickler.load(cacheFile.OpenRead());
+                object dossierversion = pickle[0];
+                Hashtable tankItems = (Hashtable)pickle[1]; 
+                foreach (DictionaryEntry tankItem in tankItems)
+                {
+                    string data = (string) ((object[])tankItem.Value)[1];
+                }
+                return null;   
+            }
         }
 
         /// <summary>

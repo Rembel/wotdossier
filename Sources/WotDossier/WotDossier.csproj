@@ -907,9 +907,7 @@
     <Content Include="app.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Data\dossier.s3db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Data\dossier.s3db" />
     <EmbeddedResource Include="Data\ReplaysCatalog.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>

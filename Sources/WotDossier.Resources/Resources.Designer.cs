@@ -6980,6 +6980,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selected: .
+        /// </summary>
+        public static string StatusBar_SelectedCount {
+            get {
+                return ResourceManager.GetString("StatusBar_SelectedCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Awards.
         /// </summary>
         public static string Tab_Awards {

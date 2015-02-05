@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -56,6 +57,16 @@ namespace WotDossier.Applications.ViewModel
 
         private List<ReplayFile> _replays = new List<ReplayFile>();
 
+        public IList SelectedItems
+        {
+            get { return _selectedItems; }
+            set
+            {
+                _selectedItems = value;
+                OnPropertyChanged("SelectedItems");
+            }
+        }
+
         /// <summary>
         /// Gets or sets the replays.
         /// </summary>
@@ -97,6 +108,7 @@ namespace WotDossier.Applications.ViewModel
         private bool _processing;
         private List<TotalReplayFile> _replaysSummary;
         private ObservableCollection<ColumnInformation> _columnInfo;
+        private IList _selectedItems;
 
         /// <summary>
         /// Gets or sets the replays folders.

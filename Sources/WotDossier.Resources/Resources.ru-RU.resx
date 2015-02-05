@@ -3429,4 +3429,7 @@
   <data name="DeathReason_Unknown" xml:space="preserve">
     <value>Нет данных</value>
   </data>
+  <data name="StatusBar_SelectedCount" xml:space="preserve">
+    <value>Выбрано реплеев: </value>
+  </data>
 </root>

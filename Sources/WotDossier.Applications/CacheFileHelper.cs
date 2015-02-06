@@ -233,6 +233,7 @@ namespace WotDossier.Applications
 
                 return true;
             }
+            tank.Description = TankDescription.Unknown();
             _log.WarnFormat("Found not existed or event tank:\n{0}", JsonConvert.SerializeObject(tank.Common, Formatting.Indented));
             return false;
         }

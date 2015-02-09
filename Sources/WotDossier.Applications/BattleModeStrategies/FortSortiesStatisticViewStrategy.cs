@@ -13,8 +13,8 @@ namespace WotDossier.Applications.BattleModeStrategies
 {
     public class FortSortiesStatisticViewStrategy : StatisticViewStrategyBase
     {
-        private PlayerStatisticEntity _currentSnapshot;
-        private IEnumerable<TankStatisticEntity> _tanks;
+        private static PlayerStatisticEntity _currentSnapshot;
+        private static IEnumerable<TankStatisticEntity> _tanks;
 
         /// <summary>
         /// Predicate to get tank statistic

@@ -375,6 +375,12 @@ namespace WotDossier.Dal
                 //replay tank name t_34 changed to r04_t_34
                 return _tanks[0];
             }
+            else if(iconId == "object_704")
+            {
+                //replay tank name object_704 changed to r53_object_704
+                return _tanks[32];
+            }
+
             
             return null;
         }

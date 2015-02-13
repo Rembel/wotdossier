@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -10,11 +11,12 @@ using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework;
+using WotDossier.Framework.Forms.ProgressDialog;
 using WotDossier.Framework.Presentation.Services;
 
 namespace WotDossier.Update.Update
 {
-    public class UpdateChecker
+    public class AppUpdater
     {
         private const string USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0";
         private const string ACCEPT_HEADER = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
@@ -23,7 +25,7 @@ namespace WotDossier.Update.Update
         /// <summary>
         ///     Checks for updates.
         /// </summary>
-        public static void CheckForUpdates()
+        public static void Update()
         {
             AppSettings appSettings = SettingsReader.Get();
             //one day from last check
@@ -32,45 +34,52 @@ namespace WotDossier.Update.Update
                 appSettings.NewVersionCheckLastDate = DateTime.Now.Date;
                 SettingsReader.Save(appSettings);
 
-                CheckNewVersionAvailable();
+                CheckUpdates();
             }
         }
 
         /// <summary>
         ///     Checks the new version available.
         /// </summary>
-        public static void CheckNewVersionAvailable()
+        public static void CheckUpdates()
         {
+            AppSettings appSettings = SettingsReader.Get();
+
+            //get current app version
             var currentVersion = new Version(ApplicationInfo.Version);
+            //get current app data version
+            var dataVersion = new Version(appSettings.ExternalDataVersion ?? ApplicationInfo.Version);
+
+            //get server app version
             DownloadedVersionInfo info = GetServerVersion();
 
-            bool isNewVersionAvailable = info.InstallerVersion > currentVersion;
+            bool appUpdateAvailableAndAllowed = info.InstallerVersion > currentVersion 
+                && MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, info.InstallerVersion), ApplicationInfo.ProductName,
+                        MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes;
+            bool appDataUpdateAvailable = info.DataVersion > dataVersion;
 
-            if (isNewVersionAvailable &&
-                MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, info.InstallerVersion),
-                    ApplicationInfo.ProductName,
-                    MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            //update current app data version
+            appSettings.ExternalDataVersion = info.DataVersion.ToString();
+            SettingsReader.Save(appSettings);
+
+            //run update in background mode with progress dialog
+            ProgressDialog.Execute(null, "", (worker, args) =>
             {
-                using (new WaitCursor())
+                worker.ReportProgress(0, "check app update");
+                if (appUpdateAvailableAndAllowed)
                 {
-                    string filepath = Download(info.InstallerUrl, "installer.exe");
+                    string filepath = Download(worker, info.InstallerUrl, "installer.exe");
                     if (!string.IsNullOrEmpty(filepath))
                     {
                         Process.Start(filepath);
                     }
                 }
-            }
+                worker.ReportProgress(100);
 
-            AppSettings appSettings = SettingsReader.Get();
-            var dataVersion = new Version(appSettings.ExternalDataVersion ?? ApplicationInfo.Version);
-            appSettings.ExternalDataVersion = info.DataVersion.ToString();
-            SettingsReader.Save(appSettings);
-
-            if (info.DataVersion > dataVersion)
-            {
-                using (new WaitCursor())
+                worker.ReportProgress(0, "check app update");
+                if (appDataUpdateAvailable)
                 {
-                    string filepath = Download(info.DataUrl, "data.zip");
+                    string filepath = Download(worker, info.DataUrl, "data.zip");
                     if (!string.IsNullOrEmpty(filepath))
                     {
                         string currentDirectory = Folder.AssemblyDirectory();
@@ -78,7 +87,8 @@ namespace WotDossier.Update.Update
                         Unzip(filepath, targetFolder);
                     }
                 }
-            }
+                worker.ReportProgress(100);
+            }, ProgressDialogSettings.WithSubLabel);
         }
 
         private static void Unzip(string filepath, string targetFolder)
@@ -89,7 +99,7 @@ namespace WotDossier.Update.Update
             }
         }
 
-        private static string Download(string url, string saveAs)
+        private static string Download(BackgroundWorker worker, string url, string saveAs)
         {
             string filepath = string.Empty;
             try
@@ -163,6 +173,7 @@ namespace WotDossier.Update.Update
                 int pos = 0;
                 var buf2 = new byte[8192];
                 var fs = new FileStream(filepath, FileMode.CreateNew);
+
                 while ((0 == contentLength) || (pos < contentLength))
                 {
                     int maxBytes = 8192;
@@ -171,6 +182,8 @@ namespace WotDossier.Update.Update
                     if (bytesRead <= 0) break;
                     fs.Write(buf2, 0, bytesRead);
                     pos += bytesRead;
+                    var percentProgress = (int)(pos*100/(double)contentLength);
+                    worker.ReportProgress(percentProgress);
                 }
                 fs.Close();
                 stream.Close();

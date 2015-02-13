@@ -35,7 +35,7 @@ namespace WotDossier.Applications.ViewModel
         {
             using (new WaitCursor())
             {
-                UpdateChecker.CheckNewVersionAvailable();
+                AppUpdater.CheckUpdates();
             }
         }
 

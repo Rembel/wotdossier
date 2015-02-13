@@ -191,7 +191,7 @@ namespace WotDossier.Applications.ViewModel
 
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Send, (SendOrPostCallback)delegate
             {
-                UpdateChecker.CheckForUpdates();
+                AppUpdater.Update();
             }, null);
         }
 

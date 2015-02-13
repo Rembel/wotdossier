@@ -72,7 +72,7 @@
     <Compile Include="Update\EmbeddedSqlUpdate.cs" />
     <Compile Include="Update\IDbUpdate.cs" />
     <Compile Include="Update\SqlUpdate.cs" />
-    <Compile Include="Update\UpdateChecker.cs" />
+    <Compile Include="Update\AppUpdater.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WotDossier.Common\WotDossier.Common.csproj">

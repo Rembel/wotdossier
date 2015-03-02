@@ -23,7 +23,7 @@ namespace WotDossier.Dal
     {
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
-        private const string URL_API = @"https://api.worldoftanks.{0}/{1}/{2}";
+        private const string URL_API = @"https://api.worldoftanks.{0}/{1}";
         private const string CONTENT_TYPE = "application/x-www-form-urlencoded";
         private const string PARAM_APPID = "application_id";
         private const string PARAM_SEARCH = "search";
@@ -36,19 +36,19 @@ namespace WotDossier.Dal
         private const string PARAM_CLAN_ID = "clan_id";
         private const string PARAM_FIELDS = "fields";
         private const string PARAM_LIMIT = "limit";
-        private const string METHOD_ACCOUNT_INFO = "account/info/";
-        private const string METHOD_TANKS_STATS = "tanks/stats/";
-        private const string METHOD_TANKS_ACHIEVEMENTS = "tanks/achievements/";
-        private const string METHOD_ACCOUNT_TANKS = "account/tanks/";
-        private const string METHOD_ACCOUNT_ACHIEVEMENTS = "account/achievements/";
-        private const string METHOD_RATINGS_ACCOUNTS = "ratings/accounts/";
-        private const string METHOD_CLAN_INFO = "clan/info/";
-        private const string METHOD_CLAN_MEMBERSINFO = "clan/membersinfo/";
-        private const string METHOD_GLOBALWAR_MAPS = "globalwar/maps/";
-        private const string METHOD_ACCOUNT_LIST = "account/list/";
-        private const string METHOD_CLAN_LIST = "clan/list/";
-        private const string METHOD_GLOBALWAR_BATTLES = "globalwar/battles/";
-        private const string METHOD_GLOBALWAR_PROVINCES = "globalwar/provinces/";
+        private const string METHOD_ACCOUNT_INFO = "wot/account/info/";
+        private const string METHOD_TANKS_STATS = "wot/tanks/stats/";
+        private const string METHOD_TANKS_ACHIEVEMENTS = "wot/tanks/achievements/";
+        private const string METHOD_ACCOUNT_TANKS = "wot/account/tanks/";
+        private const string METHOD_ACCOUNT_ACHIEVEMENTS = "wot/account/achievements/";
+        private const string METHOD_RATINGS_ACCOUNTS = "wot/ratings/accounts/";
+        private const string METHOD_CLAN_INFO = "wgn/clans/info/";
+        private const string METHOD_CLAN_MEMBERSINFO = "wgn/clans/membersinfo/";
+        private const string METHOD_GLOBALWAR_MAPS = "wot/globalwar/maps/";
+        private const string METHOD_ACCOUNT_LIST = "wot/account/list/";
+        private const string METHOD_CLAN_LIST = "wgn/clans/list/";
+        private const string METHOD_GLOBALWAR_BATTLES = "wot/globalwar/battles/";
+        private const string METHOD_GLOBALWAR_PROVINCES = "wot/globalwar/provinces/";
 
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
@@ -156,7 +156,7 @@ namespace WotDossier.Dal
                 response = Request<JObject>(METHOD_CLAN_MEMBERSINFO, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
-                    {PARAM_MEMBER_ID, playerId},
+                    {PARAM_ACCOUNT_ID, playerId},
                 }, settings);
 
                 if (response["data"].Any())
@@ -165,8 +165,8 @@ namespace WotDossier.Dal
 
                     if (clanMemberInfo != null)
                     {
-                        clanMemberInfo.clan = LoadClan(clanMemberInfo.clan_id,
-                            new[] { "abbreviation", "name", "clan_id", "description", "emblems" }, settings);
+                        clanMemberInfo.clan = LoadClan(clanMemberInfo.clan.clan_id,
+                            new[] { "tag", "name", "clan_id", "description", "emblems" }, settings);
 
                         IEnumerable<string> mapIds = GetMaps(settings);
 
@@ -174,7 +174,7 @@ namespace WotDossier.Dal
 
                         foreach (var mapId in mapIds)
                         {
-                            result.AddRange(GetBattles(clanMemberInfo.clan_id, mapId, settings));
+                            result.AddRange(GetBattles(clanMemberInfo.clan.clan_id, mapId, settings));
                         }
                         clanMemberInfo.clan.Battles = result;
                     }
@@ -374,7 +374,26 @@ namespace WotDossier.Dal
                 }
 
                 response = Request<JObject>(METHOD_CLAN_INFO, dictionary, settings);
-                return response["data"][clanId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanData>();
+                var clanData = response["data"][clanId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanData>();
+
+                if (clanData.members != null)
+                {
+                    Dictionary<string, object> memberInfoParams = new Dictionary<string, object>
+                    {
+                        {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                        {PARAM_FIELDS, "account_id,nickname"},
+                        {PARAM_ACCOUNT_ID, string.Join(",", clanData.members.Select(x => x.account_id))},
+                    };
+
+                    var nicknames = Request<JObject>(METHOD_ACCOUNT_INFO, memberInfoParams, settings)["data"].ToObject<Dictionary<int, ClanMember>>();
+
+                    foreach (var member in clanData.members)
+                    {
+                        member.nickname = nicknames[member.account_id].nickname;
+                    }
+                }
+
+                return clanData;
             }
             catch (Exception e)
             {
@@ -575,7 +594,7 @@ namespace WotDossier.Dal
         {
             try
             {
-                string url = string.Format(URL_API, settings.Server, AppConfigSettings.ApiVersion, method);
+                string url = string.Format(URL_API, settings.Server, method);
                 WebRequest request = HttpWebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.Method = WebRequestMethods.Http.Post;

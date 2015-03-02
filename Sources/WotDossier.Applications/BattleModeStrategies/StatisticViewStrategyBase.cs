@@ -73,7 +73,8 @@ namespace WotDossier.Applications.BattleModeStrategies
             currentStatisticViewModel.Name = player.Name;
             currentStatisticViewModel.Created = player.Creaded;
             currentStatisticViewModel.AccountId = player.PlayerId;
-            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
+            var days = (DateTime.Now - player.Creaded).Days;
+            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (days == 0 ? 1 : days);
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
 
             return currentStatisticViewModel;

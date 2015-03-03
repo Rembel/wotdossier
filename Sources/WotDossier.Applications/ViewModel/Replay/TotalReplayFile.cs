@@ -28,6 +28,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                 Xp = (int)replayFiles.Average(x => x.Xp);
                 Killed = replayFiles.Average(x => x.Killed).ToString("N2");
                 Damaged = replayFiles.Average(x => x.Damaged).ToString("N2");
+                Spotted = replayFiles.Average(x => x.Spotted).ToString("N1");
+                DamageAssisted = replayFiles.Average(x => x.DamageAssisted).ToString("N0");
                 BattleTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.BattleTime.TotalSeconds));
                 LifeTime = new TimeSpan(0, 0, (int)replayFiles.Average(x => x.LifeTime.TotalSeconds));
                 CreditsEarned = (int)replayFiles.Average(x => x.CreditsEarned);
@@ -59,6 +61,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string PlayTime { get; set; }
 
         public string Damaged { get; set; }
+        public string Spotted { get; set; }
+        public string DamageAssisted { get; set; }
 
         public string Killed { get; set; }
 

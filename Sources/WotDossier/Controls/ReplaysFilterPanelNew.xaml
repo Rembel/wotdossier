@@ -53,6 +53,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -187,6 +188,9 @@
                     </StackPanel>
 
                     <CheckBox Grid.Row="3" Grid.Column="0" Margin="12,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" />
+
+                    <ComboBox Margin="6,3,6,3" Grid.Row="4" Grid.Column="0" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" 
+                              DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250" />
                 </Grid>
             </TabItem>
             <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Other}" Style="{StaticResource office2007SilverTabItemLeft}">

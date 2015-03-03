@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Replay;
@@ -15,6 +16,9 @@ namespace WotDossier.Applications.ViewModel.Filter
 {
     public class ReplaysFilterViewModel : INotifyPropertyChanged
     {
+        public static readonly string PropTanks = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.Tanks);
+        public static readonly string PropSelectedTank = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.SelectedTank);
+
         #region FILTERS
 
         private bool _level1Selected = true;
@@ -585,6 +589,8 @@ namespace WotDossier.Applications.ViewModel.Filter
         }
 
         private DateTime? _endDate;
+        private ListItem<int> _selectedTank;
+
         /// <summary>
         /// Gets or sets the end date.
         /// </summary>
@@ -598,6 +604,52 @@ namespace WotDossier.Applications.ViewModel.Filter
             {
                 _endDate = value;
                 OnPropertyChanged("EndDate");
+            }
+        }
+
+        public List<ListItem<int>> Tanks
+        {
+            get { return GetTanks(); }
+        }
+
+        private List<ListItem<int>> GetTanks()
+        {
+            return Dictionaries.Instance.Tanks.Values.Where
+                (x =>
+                    (Level1Selected && x.Tier == 1
+                     || Level2Selected && x.Tier == 2
+                     || Level3Selected && x.Tier == 3
+                     || Level4Selected && x.Tier == 4
+                     || Level5Selected && x.Tier == 5
+                     || Level6Selected && x.Tier == 6
+                     || Level7Selected && x.Tier == 7
+                     || Level8Selected && x.Tier == 8
+                     || Level9Selected && x.Tier == 9
+                     || Level10Selected && x.Tier == 10)
+                    &&
+                    (LTSelected && x.Type == (int) TankType.LT
+                     || MTSelected && x.Type == (int) TankType.MT
+                     || HTSelected && x.Type == (int) TankType.HT
+                     || TDSelected && x.Type == (int) TankType.TD
+                     || SPGSelected && x.Type == (int) TankType.SPG)
+                    &&
+                    (USSRSelected && x.CountryId == (int) Country.Ussr
+                     || GermanySelected && x.CountryId == (int) Country.Germany
+                     || ChinaSelected && x.CountryId == (int) Country.China
+                     || FranceSelected && x.CountryId == (int) Country.France
+                     || USSelected && x.CountryId == (int) Country.Usa
+                     || JPSelected && x.CountryId == (int) Country.Japan
+                     || UKSelected && x.CountryId == (int) Country.Uk)
+                ).OrderBy(x => x.Title).Select(x => new ListItem<int>(x.UniqueId(), x.Title)).ToList();
+        }
+
+        public ListItem<int> SelectedTank
+        {
+            get { return _selectedTank; }
+            set
+            {
+                _selectedTank = value;
+                OnPropertyChanged("SelectedTank");
             }
         }
 
@@ -636,6 +688,8 @@ namespace WotDossier.Applications.ViewModel.Filter
 
             List<ReplayFile> result = replays.ToList().Where(x =>
                 x.Tank != null
+                &&
+                (SelectedTank == null || x.Tank.UniqueId() == SelectedTank.Id)
                 &&
                 (SelectedVersion == Dictionaries.VersionAll || (SelectedVersion == Dictionaries.VersionTest && x.ClientVersion > Dictionaries.VersionRelease) || SelectedVersion == x.ClientVersion)
                 &&
@@ -862,6 +916,11 @@ namespace WotDossier.Applications.ViewModel.Filter
         /// <param name="propertyName">Name of the property.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
+            if (!PropTanks.Equals(propertyName) && !PropSelectedTank.Equals(propertyName))
+            {
+                OnPropertyChanged(PropTanks);
+            }
+
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }

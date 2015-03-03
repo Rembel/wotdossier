@@ -48,6 +48,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string TankName { get; set; }
         public DateTime PlayTime { get; set; }
         public int Damaged { get; set; }
+        public int Spotted { get; set; }
+        public int DamageAssisted { get; set; }
         public int Killed { get; set; }
         public long PlayerId { get; set; }
         public string PlayerName { get; set; }
@@ -217,6 +219,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                     Xp = replay.datablock_battle_result.personal.xp;
                     Killed = replay.datablock_battle_result.personal.kills;
                     Damaged = replay.datablock_battle_result.personal.damaged;
+                    Spotted = replay.datablock_battle_result.personal.spotted;
+                    DamageAssisted = replay.datablock_battle_result.personal.damageAssisted;
                     MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
                     BattleTime = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                     LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);

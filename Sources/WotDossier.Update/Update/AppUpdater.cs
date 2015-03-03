@@ -51,16 +51,12 @@ namespace WotDossier.Update.Update
             var dataVersion = new Version(appSettings.ExternalDataVersion ?? ApplicationInfo.Version);
 
             //get server app version
-            DownloadedVersionInfo info = GetServerVersion();
+            DownloadedVersionInfo serverVersion = GetServerVersion();
 
-            bool appUpdateAvailableAndAllowed = info.InstallerVersion > currentVersion 
-                && MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, info.InstallerVersion), ApplicationInfo.ProductName,
+            bool appUpdateAvailableAndAllowed = serverVersion.InstallerVersion > currentVersion
+                && MessageBox.Show(string.Format(Resources.Resources.Msg_NewVersion, serverVersion.InstallerVersion), ApplicationInfo.ProductName,
                         MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes;
-            bool appDataUpdateAvailable = info.DataVersion > dataVersion;
-
-            //update current app data version
-            appSettings.ExternalDataVersion = info.DataVersion.ToString();
-            SettingsReader.Save(appSettings);
+            bool appDataUpdateAvailable = serverVersion.DataVersion > dataVersion;
 
             //run update in background mode with progress dialog
             ProgressDialog.Execute(null, "", (worker, args) =>
@@ -68,7 +64,7 @@ namespace WotDossier.Update.Update
                 worker.ReportProgress(0, "check app update");
                 if (appUpdateAvailableAndAllowed)
                 {
-                    string filepath = Download(worker, info.InstallerUrl, "installer.exe");
+                    string filepath = Download(worker, serverVersion.InstallerUrl, "installer.exe");
                     if (!string.IsNullOrEmpty(filepath))
                     {
                         Process.Start(filepath);
@@ -79,21 +75,39 @@ namespace WotDossier.Update.Update
                 worker.ReportProgress(0, "check app update");
                 if (appDataUpdateAvailable)
                 {
-                    string filepath = Download(worker, info.DataUrl, "data.zip");
-                    if (!string.IsNullOrEmpty(filepath))
-                    {
-                        string currentDirectory = Folder.AssemblyDirectory();
-                        var targetFolder = Path.Combine(currentDirectory, "External");
-                        Unzip(filepath, targetFolder);
-                    }
+                    string filepath = Download(worker, serverVersion.DataUrl, "data.zip");
+                    InternalUpdate(filepath, serverVersion);
                 }
                 worker.ReportProgress(100);
             }, ProgressDialogSettings.WithSubLabel);
         }
 
+        private static void InternalUpdate(string filepath, DownloadedVersionInfo info)
+        {
+            if (!string.IsNullOrEmpty(filepath))
+            {
+                string currentDirectory = Folder.AssemblyDirectory();
+                var targetFolder = Path.Combine(currentDirectory, "External");
+
+                try
+                {
+                    Unzip(filepath, targetFolder);
+
+                    //update current app data version
+                    AppSettings appSettings = SettingsReader.Get();
+                    appSettings.ExternalDataVersion = info.DataVersion.ToString();
+                    SettingsReader.Save(appSettings);
+                }
+                catch (Exception e)
+                {
+                    Logger.Error("Error on cache analizer folder update", e);
+                }
+            }
+        }
+
         private static void Unzip(string filepath, string targetFolder)
         {
-            using (var zip = new ZipFile(filepath, Encoding.GetEncoding((int) CodePage.CyrillicDOS)))
+            using (var zip = new ZipFile(filepath, Encoding.GetEncoding((int)CodePage.CyrillicDOS)))
             {
                 zip.ExtractAll(targetFolder, ExtractExistingFileAction.OverwriteSilently);
             }
@@ -104,7 +118,7 @@ namespace WotDossier.Update.Update
             string filepath = string.Empty;
             try
             {
-                var request = (HttpWebRequest) WebRequest.Create(url);
+                var request = (HttpWebRequest)WebRequest.Create(url);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.UserAgent = USER_AGENT;
                 request.Accept = ACCEPT_HEADER;
@@ -133,7 +147,7 @@ namespace WotDossier.Update.Update
                                     {
                                         if (v3[0].Trim().ToLower() == "filename")
                                         {
-                                            char[] sss = {' ', '"'};
+                                            char[] sss = { ' ', '"' };
                                             filename = v3[1].Trim(sss);
                                         }
                                     }
@@ -182,7 +196,7 @@ namespace WotDossier.Update.Update
                     if (bytesRead <= 0) break;
                     fs.Write(buf2, 0, bytesRead);
                     pos += bytesRead;
-                    var percentProgress = (int)(pos*100/(double)contentLength);
+                    var percentProgress = (int)(pos * 100 / (double)contentLength);
                     worker.ReportProgress(percentProgress);
                 }
                 fs.Close();
@@ -217,7 +231,7 @@ namespace WotDossier.Update.Update
             string dataUrl = null;
             try
             {
-                var request = (HttpWebRequest) WebRequest.Create(AppConfigSettings.VersionUrl);
+                var request = (HttpWebRequest)WebRequest.Create(AppConfigSettings.VersionUrl);
                 request.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 request.UserAgent = USER_AGENT;
                 request.Accept = ACCEPT_HEADER;
@@ -231,7 +245,7 @@ namespace WotDossier.Update.Update
                     string content = reader.ReadToEnd();
 
                     string[] data = content.Split('\n');
-                    
+
                     newVersion = new Version(data[0].Split(':')[1].Trim());
 
                     installerUrl = data[1].Substring(data[1].IndexOf("http")).Trim();
@@ -245,7 +259,7 @@ namespace WotDossier.Update.Update
             {
                 Logger.Error("Error on version check", e);
             }
-            return new DownloadedVersionInfo {InstallerUrl = installerUrl, InstallerVersion = newVersion, DataUrl = dataUrl, DataVersion = dataVersion};
+            return new DownloadedVersionInfo { InstallerUrl = installerUrl, InstallerVersion = newVersion, DataUrl = dataUrl, DataVersion = dataVersion };
         }
     }
 }

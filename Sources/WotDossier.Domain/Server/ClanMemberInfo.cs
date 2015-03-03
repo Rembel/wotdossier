@@ -2,9 +2,9 @@
 {
     public class ClanMemberInfo
     {
-        public int clan_id;
         public string role;
-        public long since;
+        public string role_i18n;
+        public long joined_at;
         public ClanData clan;
     }
 }

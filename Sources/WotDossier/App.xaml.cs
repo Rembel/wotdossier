@@ -187,6 +187,12 @@ namespace WotDossier
             _log.Error(e);
             if (!isTerminating)
             {
+                if (e.StackTrace.Contains("DynamicDataDisplay"))
+                {
+                    //do not show errors from charts
+                    return;
+                }
+
                 MessageBox.Show(e.ToString(), ApplicationInfo.ProductName, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

@@ -43,7 +43,7 @@ namespace WotDossier.Converters
                 return null;
             }
 
-            string url = clan.Emblems.large;
+            string url = clan.Emblems.url;
 
             if (!string.IsNullOrEmpty(url))
             {

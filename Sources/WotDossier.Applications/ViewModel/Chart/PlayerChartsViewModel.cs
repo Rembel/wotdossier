@@ -360,7 +360,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         public PlayerChartsViewModel()
         {
             _replaysFilter = new ReplaysFilterViewModel();
-            _replaysFilter.PropertyChanged += (sender, args) => RefreshReplaysCharts(); //refresh charts on filter changes
+            _replaysFilter.FilterChanged += RefreshReplaysCharts; //refresh charts on filter changes
         }
 
         /// <summary>

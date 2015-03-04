@@ -156,7 +156,7 @@ namespace WotDossier.Applications.ViewModel
             DeleteFolderCommand = new DelegateCommand<ReplayFolder>(OnDeleteFolderCommand);
 
             ReplayFilter = new ReplaysFilterViewModel();
-            ReplayFilter.PropertyChanged += ReplayFilterOnPropertyChanged;
+            ReplayFilter.FilterChanged += ReplayFilterOnPropertyChanged;
 
             ReplaysManager = new ReplaysManager();
 
@@ -581,7 +581,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void ReplayFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        private void ReplayFilterOnPropertyChanged()
         {
             OnPropertyChanged("Replays");
         }

@@ -116,11 +116,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Controls\ReplaysFilterPanel.xaml">
-      <Link>Controls\ReplaysFilterPanel.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml">
       <Link>Controls\ReplaysFilterPanelNew.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -517,54 +512,49 @@
     </Page>
     <Compile Include="..\WotDossier\Controls\Achievements.xaml.cs">
       <Link>Controls\Achievements.xaml.cs</Link>
-	  <DependentUpon>Achievements.xaml</DependentUpon>
+      <DependentUpon>Achievements.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Controls\ChartPlotter.cs">
       <Link>Controls\ChartPlotter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Controls\ClanView.xaml.cs">
       <Link>Controls\ClanView.xaml.cs</Link>
-	  <DependentUpon>ClanView.xaml</DependentUpon>
+      <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Controls\LinkStatisticRow.xaml.cs">
       <Link>Controls\LinkStatisticRow.xaml.cs</Link>
-	  <DependentUpon>LinkStatisticRow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>LinkStatisticRow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\MedalAchievement.xaml.cs">
       <Link>Controls\MedalAchievement.xaml.cs</Link>
-	  <DependentUpon>MedalAchievement.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>MedalAchievement.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\MedalTooltip.xaml.cs">
       <Link>Controls\MedalTooltip.xaml.cs</Link>
       <DependentUpon>MedalTooltip.xaml</DependentUpon>
-	  <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\WotDossier\Controls\ReplaysFilterPanel.xaml.cs">
-      <Link>Controls\ReplaysFilterPanel.xaml.cs</Link>
-      <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml.cs">
       <Link>Controls\ReplaysFilterPanelNew.xaml.cs</Link>
-	  <DependentUpon>ReplaysFilterPanelNew.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>ReplaysFilterPanelNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\StatisticRow.xaml.cs">
       <Link>Controls\StatisticRow.xaml.cs</Link>
-	  <DependentUpon>StatisticRow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>StatisticRow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\StatisticView.xaml.cs">
       <Link>Controls\StatisticView.xaml.cs</Link>
-	  <DependentUpon>StatisticView.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>StatisticView.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\TextWithImage.xaml.cs">
       <Link>Controls\TextWithImage.xaml.cs</Link>
       <DependentUpon>TextWithImage.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Converters\BoolToVisibilityConverter.cs">
       <Link>Converters\BoolToVisibilityConverter.cs</Link>
@@ -715,23 +705,23 @@
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Charts\BattlesCountChartsTab.xaml.cs">
       <Link>Tabs\Charts\BattlesCountChartsTab.xaml.cs</Link>
-	  <DependentUpon>BattlesCountChartsTab.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>BattlesCountChartsTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Charts\EffectivityChartsTab.xaml.cs">
       <Link>Tabs\Charts\EffectivityChartsTab.xaml.cs</Link>
-	  <DependentUpon>EffectivityChartsTab.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>EffectivityChartsTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml.cs">
       <Link>Tabs\Charts\ReplaysChartsTab.xaml.cs</Link>
-	  <DependentUpon>ReplaysChartsTab.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>ReplaysChartsTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Charts\WinPercentChartsTab.xaml.cs">
       <Link>Tabs\Charts\WinPercentChartsTab.xaml.cs</Link>
-	  <DependentUpon>WinPercentChartsTab.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>WinPercentChartsTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\ReplaysTab.xaml.cs">
       <Link>Tabs\ReplaysTab.xaml.cs</Link>
@@ -747,8 +737,8 @@
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\Equipment.xaml.cs">
       <Link>Tabs\Replay\Equipment.xaml.cs</Link>
-	  <DependentUpon>Equipment.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>Equipment.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\MapGridPainter.cs">
       <Link>Tabs\Replay\MapGridPainter.cs</Link>
@@ -763,11 +753,11 @@
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\Viewer.xaml.cs">
       <Link>Tabs\Replay\Viewer.xaml.cs</Link>
-	  <DependentUpon>Viewer.xaml</DependentUpon>
+      <DependentUpon>Viewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\ServerBattlesTab.xaml.cs">
       <Link>Tabs\ServerBattlesTab.xaml.cs</Link>
-	  <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
+      <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\WotDossier\UI\ChartHelper.cs">
       <Link>UI\ChartHelper.cs</Link>
@@ -783,38 +773,38 @@
     </Compile>
     <Compile Include="..\WotDossier\Views\AboutWindow.xaml.cs">
       <Link>Views\AboutWindow.xaml.cs</Link>
-	  <DependentUpon>AboutWindow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\AddReplayFolderWindow.xaml.cs">
       <Link>Views\AddReplayFolderWindow.xaml.cs</Link>
       <DependentUpon>AddReplayFolderWindow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\ClanWindow.xaml.cs">
       <Link>Views\ClanWindow.xaml.cs</Link>
-	  <DependentUpon>ClanWindow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>ClanWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\PlayerStatisticWindow.xaml.cs">
       <Link>Views\PlayerStatisticWindow.xaml.cs</Link>
-	  <DependentUpon>PlayerStatisticWindow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>PlayerStatisticWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\ReplayViewerSettingsWindow.xaml.cs">
       <Link>Views\ReplayViewerSettingsWindow.xaml.cs</Link>
-	  <DependentUpon>ReplayViewerSettingsWindow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>ReplayViewerSettingsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\ReplayWindow.xaml.cs">
       <Link>Views\ReplayWindow.xaml.cs</Link>
       <DependentUpon>ReplayWindow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\SettingsWindow.xaml.cs">
       <Link>Views\SettingsWindow.xaml.cs</Link>
-	  <DependentUpon>SettingsWindow.xaml</DependentUpon>
-	  <SubType>Code</SubType>
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\UploadReplayWindow.xaml.cs">
       <Link>Views\UploadReplayWindow.xaml.cs</Link>

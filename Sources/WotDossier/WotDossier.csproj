@@ -149,9 +149,6 @@
     <Compile Include="Controls\StatisticRow.xaml.cs">
       <DependentUpon>StatisticRow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ReplaysFilterPanel.xaml.cs">
-      <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\LineChartControl.xaml.cs">
       <DependentUpon>LineChartControl.xaml</DependentUpon>
     </Compile>
@@ -425,10 +422,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\StatisticRow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\ReplaysFilterPanel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -39,7 +39,18 @@
                                                   SelectedValue="{Binding BattleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
                         <!--version-->
                         <TextBlock Margin="6,3,6,3" Grid.Row="9" Text="{x:Static resources:Resources.Version}" VerticalAlignment="Center" />
-                        <ComboBox Margin="6,3,6,3" Grid.Row="10" Width="200" ItemsSource="{Binding Versions}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedVersion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+                        <ComboBox Margin="6,3,6,3" Grid.Row="10" Width="200" ItemsSource="{Binding Versions}" HorizontalAlignment="Left" SelectedIndex="0">
+                            <!--NOTE: single version selection mode
+                            Width="200" ItemsSource="{Binding Versions}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedVersion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />-->
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding Checked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="20" />
+                                        <TextBlock Text="{Binding Value}" Width="100" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </Grid>
                 </GroupBox>
                 <controls:ChartPlotter x:Name="BattlesCountByMap" NewLegendVisible="False" LegendVisibility="Hidden" Height="700" Width="400"

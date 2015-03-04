@@ -259,9 +259,6 @@
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\ReplaysTabNew.xaml.cs">
-      <DependentUpon>ReplaysTabNew.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\RecentActivityTab.xaml.cs">
       <DependentUpon>RecentActivityTab.xaml</DependentUpon>
     </Compile>
@@ -725,10 +722,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\Medals7x7Tab.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tabs\ReplaysTabNew.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

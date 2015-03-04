@@ -382,31 +382,19 @@ namespace WotDossier.Applications.ViewModel.Filter
         public DelegateCommand RefreshCommand { get; set; }
         public DelegateCommand AllCommand { get; set; }
 
-        private List<ListItem<Version>> _versions;
+        private List<CheckListItem<Version>> _versions;
 
         /// <summary>
         /// Gets or sets the versions.
         /// </summary>
-        public List<ListItem<Version>> Versions
+        public List<CheckListItem<Version>> Versions
         {
-            get
-            {
-                if (_versions == null)
-                {
-                    _versions = new List<ListItem<Version>>();
-
-                    _versions.AddRange(Dictionaries.Instance.Versions.Select( x => new ListItem<Version>(x, x.ToString(3))));
-
-                    _versions.Insert(0, new ListItem<Version>(Dictionaries.VersionAll, Resources.Resources.TankFilterPanel_All));
-                    _versions.Add(new ListItem<Version>(Dictionaries.VersionTest, "Test 0.9.x"));
-                }
-
-                return _versions;
-            }
+            get { return _versions; }
             set { _versions = value; }
         }
 
-        private Version _selectedVersion = Dictionaries.VersionAll;
+        //NOTE: single version selection mode. use Dictionaries.VersionAll as default value 
+        private Version _selectedVersion;
         /// <summary>
         /// Gets or sets the selected version.
         /// </summary>
@@ -590,6 +578,26 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         private DateTime? _endDate;
         private ListItem<int> _selectedTank;
+        private CheckListItem<Version> _allVersionsListItem;
+
+        private void OnSelectVersion(CheckListItem<Version> item, bool isChecked)
+        {
+            OnPropertyChanged("SelectedVersion");
+        }
+
+        private void OnSelectAllVersions(CheckListItem<Version> item, bool isChecked)
+        {
+            foreach (var listItem in Versions)
+            {
+                if (listItem.Id != _allVersionsListItem.Id)
+                {
+                    listItem.GroupCheck = isChecked;
+                }
+            }
+            OnSelectVersion(item, isChecked);
+        }
+
+        private readonly IEnumerable<CheckListItem<Version>> _baseVersionsListItems;
 
         /// <summary>
         /// Gets or sets the end date.
@@ -686,12 +694,14 @@ namespace WotDossier.Applications.ViewModel.Filter
                 members = Member.Split(',');
             }
 
+            var versions = Versions.Where(x => x.Checked).Select(x => x.Id).ToList();
+
             List<ReplayFile> result = replays.ToList().Where(x =>
                 x.Tank != null
                 &&
                 (SelectedTank == null || x.Tank.UniqueId() == SelectedTank.Id)
                 &&
-                (SelectedVersion == Dictionaries.VersionAll || (SelectedVersion == Dictionaries.VersionTest && x.ClientVersion > Dictionaries.VersionRelease) || SelectedVersion == x.ClientVersion)
+                (VersionFilter(versions, x))
                 &&
                 (Level1Selected && x.Tank.Tier == 1
                  || Level2Selected && x.Tank.Tier == 2
@@ -742,6 +752,29 @@ namespace WotDossier.Applications.ViewModel.Filter
                 ).ToList();
 
             return result;
+        }
+
+        private bool VersionFilter(List<Version> versions, ReplayFile replayFile)
+        {
+            if (SelectedVersion != null)
+            {
+                return (SelectedVersion == Dictionaries.VersionAll ||
+                        (SelectedVersion == Dictionaries.VersionTest &&
+                         replayFile.ClientVersion > Dictionaries.VersionRelease) ||
+                        SelectedVersion == replayFile.ClientVersion);
+            }
+
+            if (versions.Contains(Dictionaries.VersionAll) || versions.Contains(replayFile.ClientVersion))
+            {
+                return true;
+            }
+
+            if (versions.Contains(Dictionaries.VersionTest))
+            {
+                return replayFile.ClientVersion > Dictionaries.VersionRelease;
+            }
+
+            return false;
         }
 
         private bool CheckRegularBattle(ReplayFile replay, BattleType battleType)
@@ -838,6 +871,16 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleStatus>(BattleStatus.Defeat,Resources.Resources.BattleStatus_Defeat), 
                 new ListItem<BattleStatus>(BattleStatus.Draw,Resources.Resources.BattleStatus_Draw), 
             };
+
+            _allVersionsListItem = new CheckListItem<Version>(Dictionaries.VersionAll, Resources.Resources.TankFilterPanel_All, true, OnSelectAllVersions);
+            _baseVersionsListItems = Dictionaries.Instance.Versions.Select(x => new CheckListItem<Version>(x, x.ToString(3), true, OnSelectVersion, _allVersionsListItem));
+
+            _versions = new List<CheckListItem<Version>>();
+            
+            _versions.AddRange(_baseVersionsListItems);
+
+            _versions.Insert(0, _allVersionsListItem);
+            _versions.Add(new CheckListItem<Version>(Dictionaries.VersionTest, "Test 0.9.x", true, OnSelectVersion, _allVersionsListItem));
 
             ClearCommand = new DelegateCommand(OnClear);
             RefreshCommand = new DelegateCommand(OnRefresh);

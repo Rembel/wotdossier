@@ -201,7 +201,7 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             CellSize = MAP_CONTROL_SIZE / 10;
 
             Vehicles = vehicles;
-            ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_1.playerID);
+            ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_battle_result.personal.accountDBID);
             ReplayUser.Recorder = true;
 
             FirstTeam = Vehicles.Where(v => v.TeamMate).ToList();

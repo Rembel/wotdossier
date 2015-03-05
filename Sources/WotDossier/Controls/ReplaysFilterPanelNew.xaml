@@ -189,10 +189,12 @@
                         </CheckBox>
                     </StackPanel>
 
-                    <CheckBox Grid.Row="3" Grid.Column="0" Margin="12,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" />
-
-                    <ComboBox Margin="6,3,6,3" Grid.Row="4" Grid.Column="0" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" 
+                    <TextBlock Margin="12,3,6,3" Grid.Row="3" Text="{x:Static resources:Resources.TankFilterPanel_Tank}" VerticalAlignment="Center"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                        <ComboBox Margin="6,3,6,3" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" 
                               DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250" />
+                        <CheckBox Margin="12,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" VerticalAlignment="Center" />
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Other}" Style="{StaticResource office2007SilverTabItemLeft}">
@@ -244,9 +246,9 @@
                     </ComboBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="{x:Static resources:Resources.Tab_Header_Medals}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Medals}" Style="{StaticResource office2007SilverTabItemLeft}">
                 <Grid HorizontalAlignment="Stretch" Background="Transparent">
-                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent" >
+                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent"  BorderThickness="0" Padding="0" Margin="0">
                         <ListBox.Resources>
                             <DataTemplate x:Key="medalSearchItemTemplate">
                                 <Grid Margin="10, 3" HorizontalAlignment="Stretch">
@@ -267,14 +269,14 @@
                             </DataTemplate>
                             <DataTemplate x:Key="medalGroupTemplate">
                                 <TextBlock Padding="3, 6, 0, 3" Text="{Binding Value}" FontSize="16" 
-                                           FontFamily="UniversCondCBold,Myriad Pro,sans-serif" Foreground="#626667"/>
+                                           FontFamily="UniversCondCBold,Myriad Pro,sans-serif" Foreground="White"/>
                             </DataTemplate>
                         </ListBox.Resources>
-                        <ListBox.ItemsPanel>
+                        <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Vertical" ItemWidth="200" Height="330" />
                             </ItemsPanelTemplate>
-                        </ListBox.ItemsPanel>
+                        </ItemsControl.ItemsPanel>
                         <ListBox.ItemTemplateSelector>
                             <ui:MedalSearchItemTemplateSelector
                                 MedalGroupTemplate="{StaticResource medalGroupTemplate}" 

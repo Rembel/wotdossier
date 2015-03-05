@@ -1237,6 +1237,16 @@
     <Resource Include="Images\Replays\Viewer\elements\neutral_spawn3.png" />
     <Resource Include="Images\Replays\Viewer\elements\neutral_spawn4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Tanks\germany_G107_PzKpfwIII_AusfK.png" />
+    <Resource Include="Images\Tanks\uk_GB23_Centurion_IGR.png" />
+    <Resource Include="Images\Tanks\uk_GB70_N_FV4202_105.png" />
+    <Resource Include="Images\Tanks\usa_A78_M4_Improved.png" />
+    <Resource Include="Images\Tanks\ussr_KV2_IGR.png" />
+    <Resource Include="Images\Tanks\ussr_R112_T54_45.png" />
+    <Resource Include="Images\Tanks\ussr_R113_Object_730.png" />
+    <Resource Include="Images\Tanks\ussr_R53_Object_704.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

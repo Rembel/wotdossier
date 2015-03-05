@@ -8,10 +8,13 @@ using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Replay;
+using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
+using Vehicle = WotDossier.Domain.Replay.Vehicle;
 
 namespace WotDossier.Applications.ViewModel.Filter
 {
@@ -704,6 +707,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
 
             var versions = Versions.Where(x => x.Checked).Select(x => x.Id).ToList();
+            var medals = Medals.Where(x => x is MedalCheckListItem && ((MedalCheckListItem)x).Checked).Select(x => x.Id).ToList();
 
             List<ReplayFile> result = replays.ToList().Where(x =>
                 x.Tank != null
@@ -713,6 +717,8 @@ namespace WotDossier.Applications.ViewModel.Filter
                  VersionFilter(versions, x)
                 &&
                  TankFilter(x.Tank)
+                &&
+                 MedalFilter(medals, x)
                 && 
                  (SelectedFolder == null || x.FolderId == SelectedFolder.Id)
                 && 
@@ -741,6 +747,17 @@ namespace WotDossier.Applications.ViewModel.Filter
                 ).ToList();
 
             return result;
+        }
+
+        private bool MedalFilter(List<int> medals, ReplayFile replayFile)
+        {
+            if (medals.Any())
+            {
+                var replayMedals = replayFile.Medals.Select(x => x.Id);
+                var replayAchievements = replayFile.Achievements.Select(x => x.Id);
+                return medals.Intersect(replayMedals).Any() || medals.Intersect(replayAchievements).Any();
+            }
+            return true;
         }
 
         private bool VersionFilter(List<Version> versions, ReplayFile replayFile)
@@ -871,10 +888,35 @@ namespace WotDossier.Applications.ViewModel.Filter
             _versions.Insert(0, _allVersionsListItem);
             _versions.Add(new CheckListItem<Version>(Dictionaries.VersionTest, "Test 0.9.x", true, OnSelectVersion, _allVersionsListItem));
 
+            Medals = GetMedals();
+
             ClearCommand = new DelegateCommand(OnClear);
             RefreshCommand = new DelegateCommand(OnRefresh);
             AllCommand = new DelegateCommand(OnAll);
         }
+
+        private List<ListItem<int>> GetMedals()
+        {
+            var medals = Dictionaries.Instance.Medals.Values.Where(x => x.Group.Filter);
+
+            MedalGroup currentGroup = null;
+
+            List<ListItem<int>> resultList = new List<ListItem<int>>();
+
+            foreach (var medal in medals)
+            {
+                if (!medal.Group.Equals(currentGroup))
+                {
+                    resultList.Add(new ListItem<int>(0, medal.Group.Name));
+                    currentGroup = medal.Group;
+                }
+                resultList.Add(new MedalCheckListItem(medal, (checkListItem, b) => { if (FilterChanged != null) FilterChanged(); }));
+            }
+
+            return resultList;
+        }
+
+        public List<ListItem<int>> Medals { get; set; }
 
         private void OnRefresh()
         {

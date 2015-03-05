@@ -232,6 +232,7 @@
     <Compile Include="Converters\SubtractValueConverter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="UI\MedalSearchItemTemplateSelector.cs" />
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Converters\Image\ReplayIconConverter.cs" />

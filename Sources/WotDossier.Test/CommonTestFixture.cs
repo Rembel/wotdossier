@@ -232,8 +232,8 @@ namespace WotDossier.Test
             
             foreach (var medal in Dictionaries.Instance.Medals)
             {
-                var localizedString = Resources.Resources.ResourceManager.GetString(medal.Value.Name);
-                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", medal.Value.Name);
+                var localizedString = Resources.Resources.ResourceManager.GetString(medal.Value.NameResourceId);
+                Assert.IsNotNullOrEmpty(localizedString, "Resource not found: {0}", medal.Value.NameResourceId);
 
                 string key = string.Format("images/medals/{0}.png", medal.Value.Icon).ToLowerInvariant();
                 Assert.IsTrue(dictionary.ContainsKey(key), "Image resource not found: {0}", medal.Value.Icon);

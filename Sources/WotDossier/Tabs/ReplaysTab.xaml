@@ -223,7 +223,29 @@
                                     <DataTemplate>
                                         <Image Margin="3" Width="27" Height="31" Stretch="Fill" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
                                             <Image.ToolTip>
-                                                <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}" />
+                                                <TextBlock Text="{Binding Name}" />
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Tab_Header_Achievements}" SortMemberPath="AchievementsCount" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ListBox Background="Transparent" ItemsSource="{Binding Achievements}" BorderThickness="0" Padding="0" Margin="0" HorizontalAlignment="Left">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Margin="3" Width="27" Height="31" Stretch="Fill" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
+                                            <Image.ToolTip>
+                                                <TextBlock Text="{Binding Name}" />
                                             </Image.ToolTip>
                                         </Image>
                                     </DataTemplate>

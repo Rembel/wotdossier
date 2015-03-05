@@ -135,6 +135,7 @@
     <Compile Include="ViewModel\Chart\IDataPoint.cs" />
     <Compile Include="ViewModel\Chart\PlayerChartsViewModel.cs" />
     <Compile Include="ViewModel\Chart\SellInfo.cs" />
+    <Compile Include="ViewModel\MedalCheckListItem.cs" />
     <Compile Include="ViewModel\ClanViewModel.cs" />
     <Compile Include="ViewModel\CompareStatisticViewModel.cs" />
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />

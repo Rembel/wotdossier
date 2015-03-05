@@ -130,15 +130,29 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         public bool IsAlive { get; set; }
 
-        public List<Medal> Medals { get; set; }
+        public List<Medal> Medals
+        {
+            get { return _medals ?? new List<Medal>(); }
+            set { _medals = value; }
+        }
+
+        public List<Medal> Achievements
+        {
+            get { return _achievements ?? new List<Medal>(); }
+            set { _achievements = value; }
+        }
 
         public int MedalsCount { get; set; }
+        public int AchievementsCount { get; set; }
 
         #endregion
 
         public FinishReason FinishReason { get; set; }
 
         private DeathReason _deathReason = DeathReason.Unknown;
+        private List<Medal> _achievements;
+        private List<Medal> _medals;
+
         public DeathReason DeathReason
         {
             get { return _deathReason; }
@@ -226,8 +240,9 @@ namespace WotDossier.Applications.ViewModel.Replay
                     LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
                     IsAlive = replay.datablock_battle_result.personal.deathReason == -1 || replay.datablock_battle_result.personal.killerID == 0;
                     Medals =  Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
-                    //Medals = Dictionaries.Instance.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps);
+                    Achievements = Dictionaries.Instance.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps).Except(Medals).ToList();
                     MedalsCount = Medals.Count;
+                    AchievementsCount = Achievements.Count;
                     IsPlatoon = ResolvePlatoonFlag(replay);
                     
                     BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;

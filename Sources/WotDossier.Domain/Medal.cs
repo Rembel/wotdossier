@@ -22,6 +22,11 @@
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the name resource identifier.
+        /// </summary>
+        public string NameResourceId { get; set; }
+
+        /// <summary>
         /// Gets or sets the icon.
         /// </summary>
         /// <value>
@@ -36,6 +41,11 @@
         /// The type.
         /// </value>
         public int Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the medal group.
+        /// </summary>
+        public MedalGroup Group { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether need to show ribbon.
@@ -79,3 +89,6 @@
         }
     }
 }
+
+
+

@@ -125,6 +125,7 @@
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\PlayerEntity.cs" />
     <Compile Include="Entities\PlayerStatisticEntity.cs" />
+    <Compile Include="MedalGroup.cs" />
     <Compile Include="Replay\AdvancedReplayData.cs" />
     <Compile Include="Replay\BattleResult.cs" />
     <Compile Include="Replay\ChatMessage.cs" />

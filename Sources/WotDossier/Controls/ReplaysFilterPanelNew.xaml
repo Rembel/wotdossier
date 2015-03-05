@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:ui="clr-namespace:WotDossier.UI"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="700" Background="{DynamicResource applicationBackgroundBrush}">
     <Grid Margin="6,3,6,3">
@@ -240,6 +242,45 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Medals}">
+                <Grid HorizontalAlignment="Stretch" Background="Transparent">
+                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent" >
+                        <ListBox.Resources>
+                            <DataTemplate x:Key="medalSearchItemTemplate">
+                                <Grid Margin="10, 3" HorizontalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Margin="3,0" VerticalAlignment="Center" Width="20" Height="24" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}">
+                                        <Image.ToolTip>
+                                            <StackPanel Orientation="Vertical">
+                                                <Image Margin="6" VerticalAlignment="Center" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}"/>
+                                                <TextBlock HorizontalAlignment="Center" Text="{Binding Value}" />
+                                            </StackPanel>
+                                        </Image.ToolTip>
+                                    </Image>
+                                    <CheckBox Grid.Column="1" Content="{Binding Value}" IsChecked="{Binding Checked}" Foreground="#8e9496" VerticalAlignment="Center" />    
+                                </Grid>
+                            </DataTemplate>
+                            <DataTemplate x:Key="medalGroupTemplate">
+                                <TextBlock Padding="3, 6, 0, 3" Text="{Binding Value}" FontSize="16" 
+                                           FontFamily="UniversCondCBold,Myriad Pro,sans-serif" Foreground="#626667"/>
+                            </DataTemplate>
+                        </ListBox.Resources>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical" ItemWidth="200" Height="330" />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplateSelector>
+                            <ui:MedalSearchItemTemplateSelector
+                                MedalGroupTemplate="{StaticResource medalGroupTemplate}" 
+                                MedalSearchItemTemplate="{StaticResource medalSearchItemTemplate}"/>
+                        </ListBox.ItemTemplateSelector>
+                    </ListBox>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -257,7 +257,7 @@
                                        Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/yellow_ribbon.png"></Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
-                                        <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
                                     </Image.ToolTip>
                                 </Image>
                             </Grid>
@@ -288,7 +288,7 @@
                                        Source="pack://application:,,,/WotDossier.Resources;component/Images/Replays/yellow_ribbon.png"></Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Source="{Binding Path=., Converter={x:Static converters:MedalToImageConverter.Default}}">
                                     <Image.ToolTip>
-                                        <TextBlock Text="{Binding Name, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
                                     </Image.ToolTip>
                                 </Image>
                             </Grid>

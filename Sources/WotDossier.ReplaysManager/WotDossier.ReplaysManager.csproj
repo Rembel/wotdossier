@@ -765,6 +765,9 @@
     <Compile Include="..\WotDossier\UI\CountryLabelProvider.cs">
       <Link>UI\CountryLabelProvider.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\UI\MedalSearchItemTemplateSelector.cs">
+      <Link>UI\MedalSearchItemTemplateSelector.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\UI\TankTypeLabelProvider.cs">
       <Link>UI\TankTypeLabelProvider.cs</Link>
     </Compile>

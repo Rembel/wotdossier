@@ -65,9 +65,9 @@
         <medal name="Medal_15x15_TamadaYoshio" id="146" icon="medalTamadaYoshio" type="0" showribbon="true"/>
         <!--Медаль Найдина-->
         <medal name="Medal_15x15_Huntsman" id="148" icon="huntsman" type="0"/>
-        <!--<medal name="Медаль «Поле боя: бои у озера Балатон" id="301" icon="" type="0" showribbon="true"/>
-        <medal name="Медаль «Поле боя: битва на Курской дуге" id="303" icon="" type="0" showribbon="true"/>
-        <medal name="Медаль «Поле боя: Арденнская операция 1944 года" id="305" icon="" type="0" showribbon="true"/>-->
+        <medal name="Поле боя: Бои у озера Балатон" id="301" icon="histBattle1_battlefield" type="0" showribbon="false"/>
+        <medal name="Поле боя: Битва на Курской дуге" id="303" icon="histBattle2_battlefield" type="0" showribbon="false"/>
+        <medal name="Поле боя: Арденнская операция 1944 года" id="305" icon="histBattle3_battlefield" type="0" showribbon="false"/>
         <!--Медаль Гора-->
         <medal name="Medal_15x15_MedalGore" id="298" icon="medalGore" type="0"/>
         <!--Медаль Старка-->

@@ -557,8 +557,9 @@ namespace WotDossier.Dal
             {
                 Medal medal = new Medal();
                 medal.Id = Convert.ToInt32(node.Attributes["id"].Value);
-                medal.Name = Resources.Resources.ResourceManager.GetString(node.Attributes["name"].Value);
-                medal.NameResourceId = node.Attributes["name"].Value;
+                var attribute = node.Attributes["name"];
+                medal.Name = Resources.Resources.ResourceManager.GetString(attribute.Value) ?? attribute.Value;
+                medal.NameResourceId = attribute.Value;
                 medal.Icon = node.Attributes["icon"].Value;
                 medal.Type = int.Parse(node.Attributes["type"].Value);
                 var xmlAttribute = node.Attributes["showribbon"];
@@ -568,7 +569,7 @@ namespace WotDossier.Dal
                 }
                 medal.Group = new MedalGroup();
 
-                var attribute = node.ParentNode.Attributes["filter"];
+                attribute = node.ParentNode.Attributes["filter"];
                 medal.Group.Filter = attribute != null && bool.Parse(attribute.Value);
                 attribute = node.ParentNode.Attributes["name"];
                 if (attribute != null)

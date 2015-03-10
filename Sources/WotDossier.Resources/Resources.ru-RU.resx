@@ -3432,4 +3432,52 @@
   <data name="StatusBar_SelectedCount" xml:space="preserve">
     <value>Выбрано реплеев: </value>
   </data>
+  <data name="CritType_DamagedDevice" xml:space="preserve">
+    <value>Повреждено</value>
+  </data>
+  <data name="CritType_DestroyedDevice" xml:space="preserve">
+    <value>Выведено из строя</value>
+  </data>
+  <data name="CritType_DestroyedTankmen" xml:space="preserve">
+    <value>Ранения экипажа</value>
+  </data>
+  <data name="CrewMember_commander" xml:space="preserve">
+    <value>Командир</value>
+  </data>
+  <data name="CrewMember_driver" xml:space="preserve">
+    <value>Механник-водитель</value>
+  </data>
+  <data name="CrewMember_gunner" xml:space="preserve">
+    <value>Наводчик</value>
+  </data>
+  <data name="CrewMember_loader" xml:space="preserve">
+    <value>Заряжающий</value>
+  </data>
+  <data name="CrewMember_radioman" xml:space="preserve">
+    <value>Радист</value>
+  </data>
+  <data name="Device_ammoBay" xml:space="preserve">
+    <value>Боеукладка</value>
+  </data>
+  <data name="Device_engine" xml:space="preserve">
+    <value>Двигатель</value>
+  </data>
+  <data name="Device_fuelTank" xml:space="preserve">
+    <value>Топливный бак</value>
+  </data>
+  <data name="Device_gun" xml:space="preserve">
+    <value>Орудие</value>
+  </data>
+  <data name="Device_radio" xml:space="preserve">
+    <value>Радио</value>
+  </data>
+  <data name="Device_surveyingDevice" xml:space="preserve">
+    <value>Приборы наблюдения</value>
+  </data>
+  <data name="Device_track" xml:space="preserve">
+    <value>Гусеница</value>
+  </data>
+  <data name="Device_turretRotator" xml:space="preserve">
+    <value>Башня</value>
+  </data>
 </root>

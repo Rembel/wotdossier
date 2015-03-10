@@ -646,6 +646,7 @@
     <EmbeddedResource Include="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.ru-RU.resx">
       <SubType>Designer</SubType>
@@ -1246,6 +1247,29 @@
     <Resource Include="Images\Tanks\ussr_R112_T54_45.png" />
     <Resource Include="Images\Tanks\ussr_R113_Object_730.png" />
     <Resource Include="Images\Tanks\ussr_R53_Object_704.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Crits\ammoBayCriticalSmall.png" />
+    <Resource Include="Images\Crits\ammoBayDestroyedSmall.png" />
+    <Resource Include="Images\Crits\commanderDestroyedSmall.png" />
+    <Resource Include="Images\Crits\driverDestroyedSmall.png" />
+    <Resource Include="Images\Crits\engineCriticalSmall.png" />
+    <Resource Include="Images\Crits\engineDestroyedSmall.png" />
+    <Resource Include="Images\Crits\fuelTankCriticalSmall.png" />
+    <Resource Include="Images\Crits\fuelTankDestroyedSmall.png" />
+    <Resource Include="Images\Crits\gunCriticalSmall.png" />
+    <Resource Include="Images\Crits\gunDestroyedSmall.png" />
+    <Resource Include="Images\Crits\gunnerDestroyedSmall.png" />
+    <Resource Include="Images\Crits\loaderDestroyedSmall.png" />
+    <Resource Include="Images\Crits\radioCriticalSmall.png" />
+    <Resource Include="Images\Crits\radioDestroyedSmall.png" />
+    <Resource Include="Images\Crits\radiomanDestroyedSmall.png" />
+    <Resource Include="Images\Crits\surveyingDeviceCriticalSmall.png" />
+    <Resource Include="Images\Crits\surveyingDeviceDestroyedSmall.png" />
+    <Resource Include="Images\Crits\trackCriticalSmall.png" />
+    <Resource Include="Images\Crits\trackDestroyedSmall.png" />
+    <Resource Include="Images\Crits\turretRotatorCriticalSmall.png" />
+    <Resource Include="Images\Crits\turretRotatorDestroyedSmall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

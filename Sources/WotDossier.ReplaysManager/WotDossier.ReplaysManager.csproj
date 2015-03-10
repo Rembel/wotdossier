@@ -631,6 +631,9 @@
     <Compile Include="..\WotDossier\Converters\Image\CountryIdToImageConverter.cs">
       <Link>Converters\Image\CountryIdToImageConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\CritDetailsToImageConverter.cs">
+      <Link>Converters\Image\CritDetailsToImageConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\DamageRatingToImageConverter.cs">
       <Link>Converters\Image\DamageRatingToImageConverter.cs</Link>
     </Compile>

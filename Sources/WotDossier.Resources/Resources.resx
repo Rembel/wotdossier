@@ -3343,4 +3343,52 @@ up to 500 m</value>
   <data name="StatusBar_SelectedCount" xml:space="preserve">
     <value>Replays selected: </value>
   </data>
+  <data name="CritType_DamagedDevice" xml:space="preserve">
+    <value>Damaged device</value>
+  </data>
+  <data name="CritType_DestroyedDevice" xml:space="preserve">
+    <value>Destroyed device</value>
+  </data>
+  <data name="CritType_DestroyedTankmen" xml:space="preserve">
+    <value>Destroyed tankmen</value>
+  </data>
+  <data name="CrewMember_commander" xml:space="preserve">
+    <value>Commander</value>
+  </data>
+  <data name="CrewMember_driver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="CrewMember_gunner" xml:space="preserve">
+    <value>Gunner</value>
+  </data>
+  <data name="CrewMember_loader" xml:space="preserve">
+    <value>Loader</value>
+  </data>
+  <data name="CrewMember_radioman" xml:space="preserve">
+    <value>Radioman</value>
+  </data>
+  <data name="Device_ammoBay" xml:space="preserve">
+    <value>Ammo bay</value>
+  </data>
+  <data name="Device_engine" xml:space="preserve">
+    <value>Engine</value>
+  </data>
+  <data name="Device_fuelTank" xml:space="preserve">
+    <value>Fuel tank</value>
+  </data>
+  <data name="Device_gun" xml:space="preserve">
+    <value>Gun</value>
+  </data>
+  <data name="Device_radio" xml:space="preserve">
+    <value>Radio</value>
+  </data>
+  <data name="Device_surveyingDevice" xml:space="preserve">
+    <value>Surveying device</value>
+  </data>
+  <data name="Device_track" xml:space="preserve">
+    <value>Track</value>
+  </data>
+  <data name="Device_turretRotator" xml:space="preserve">
+    <value>Turret rotator</value>
+  </data>
 </root>

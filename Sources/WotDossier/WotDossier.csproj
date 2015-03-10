@@ -196,6 +196,7 @@
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
     <Compile Include="Converters\BattleModeToVisibilityConverter.cs" />
     <Compile Include="Converters\Image\MapImageElementToIconConverter.cs" />
+    <Compile Include="Converters\Image\CritDetailsToImageConverter.cs" />
     <Compile Include="Converters\PremiumToOpacityConverter.cs" />
     <Compile Include="Converters\ResourceFormatConverter.cs" />
     <Compile Include="Converters\DamageRatingToTooltipConverter.cs" />

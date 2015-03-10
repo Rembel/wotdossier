@@ -248,23 +248,25 @@
             </TabItem>
             <TabItem Header="{x:Static resources:Resources.Tab_Header_Medals}" Style="{StaticResource office2007SilverTabItemLeft}">
                 <Grid HorizontalAlignment="Stretch" Background="Transparent">
-                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent"  BorderThickness="0" Padding="0" Margin="0">
+                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent"  BorderThickness="0" Padding="0" Margin="0"
+                             ScrollViewer.VerticalScrollBarVisibility="Disabled">
                         <ListBox.Resources>
                             <DataTemplate x:Key="medalSearchItemTemplate">
-                                <Grid Margin="10, 3" HorizontalAlignment="Stretch">
+                                <Grid Margin="10, 3" HorizontalAlignment="Stretch" Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <Image Margin="3,0" VerticalAlignment="Center" Width="20" Height="24" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}">
-                                        <Image.ToolTip>
-                                            <StackPanel Orientation="Vertical">
-                                                <Image Margin="6" VerticalAlignment="Center" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}"/>
-                                                <TextBlock HorizontalAlignment="Center" Text="{Binding Value}" />
-                                            </StackPanel>
-                                        </Image.ToolTip>
+                                        
                                     </Image>
-                                    <CheckBox Grid.Column="1" Content="{Binding Value}" IsChecked="{Binding Checked}" Foreground="#8e9496" VerticalAlignment="Center" />    
+                                    <CheckBox Grid.Column="1" Content="{Binding Value}" IsChecked="{Binding Checked}" Foreground="#8e9496" VerticalAlignment="Center" />
+                                    <Grid.ToolTip>
+                                        <StackPanel Orientation="Vertical">
+                                            <Image Margin="6" VerticalAlignment="Center" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}"/>
+                                            <TextBlock HorizontalAlignment="Center" Text="{Binding Value}" />
+                                        </StackPanel>
+                                    </Grid.ToolTip>
                                 </Grid>
                             </DataTemplate>
                             <DataTemplate x:Key="medalGroupTemplate">

@@ -151,8 +151,32 @@
                 <!--crits-->
                 <Image Grid.Row="0" Grid.Column="4" Stretch="None" Style="{StaticResource CritsImageStyle}" HorizontalAlignment="Left">
                     <Image.ToolTip>
-                        <TextBlock Text="{Binding Crits, Converter={x:Static converters:ResourceFormatConverter.Default}, 
+                        <StackPanel>
+                            <!--<TextBlock Text="Повреждения модулей и ранения экипажа" FontSize="17" Foreground="#BCBDBE"/>
+                            <TextBlock Text="Повреждения и уничточжение модулей, ранения членов экипажа противника"  FontSize="10" Foreground="#5C5A4A"/>-->
+                            <ItemsControl ItemsSource="{Binding CritsDetails}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Margin="3,3" Text="{Binding CritType, Converter={x:Static converters:EnumToTextConverter.Default}}" />
+                                            <StackPanel Margin="18,3" Orientation="Horizontal">
+                                                <Image Source="{Binding Path=., Converter={x:Static converters:CritDetailsToImageConverter.Default}}" />
+                                                <TextBlock Margin="3" Text="{Binding CritObject, Converter={x:Static converters:EnumToTextConverter.Default}}" VerticalAlignment="Center" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Crits, Converter={x:Static converters:ResourceFormatConverter.Default}, 
                                        ConverterParameter={x:Static resources:Resources.Tooltip_Replay_CriticalDamage}}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
                     </Image.ToolTip>
                 </Image>
                 <Border Margin="0,18,5,0" Width="Auto" Grid.Row="0" Grid.Column="4" BorderThickness="1" BorderBrush="#2F2822" Background="#10100D" HorizontalAlignment="Right"

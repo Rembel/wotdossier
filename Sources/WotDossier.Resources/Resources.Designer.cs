@@ -3938,6 +3938,78 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Commander.
+        /// </summary>
+        public static string CrewMember_commander {
+            get {
+                return ResourceManager.GetString("CrewMember_commander", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Driver.
+        /// </summary>
+        public static string CrewMember_driver {
+            get {
+                return ResourceManager.GetString("CrewMember_driver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gunner.
+        /// </summary>
+        public static string CrewMember_gunner {
+            get {
+                return ResourceManager.GetString("CrewMember_gunner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loader.
+        /// </summary>
+        public static string CrewMember_loader {
+            get {
+                return ResourceManager.GetString("CrewMember_loader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radioman.
+        /// </summary>
+        public static string CrewMember_radioman {
+            get {
+                return ResourceManager.GetString("CrewMember_radioman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damaged device.
+        /// </summary>
+        public static string CritType_DamagedDevice {
+            get {
+                return ResourceManager.GetString("CritType_DamagedDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroyed device.
+        /// </summary>
+        public static string CritType_DestroyedDevice {
+            get {
+                return ResourceManager.GetString("CritType_DestroyedDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destroyed tankmen.
+        /// </summary>
+        public static string CritType_DestroyedTankmen {
+            get {
+                return ResourceManager.GetString("CritType_DestroyedTankmen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select date.
         /// </summary>
         public static string DatePicker_SelectDate {
@@ -4024,6 +4096,78 @@ namespace WotDossier.Resources {
         public static string DeathReason_VehicleDrowned {
             get {
                 return ResourceManager.GetString("DeathReason_VehicleDrowned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ammo bay.
+        /// </summary>
+        public static string Device_ammoBay {
+            get {
+                return ResourceManager.GetString("Device_ammoBay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Engine.
+        /// </summary>
+        public static string Device_engine {
+            get {
+                return ResourceManager.GetString("Device_engine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fuel tank.
+        /// </summary>
+        public static string Device_fuelTank {
+            get {
+                return ResourceManager.GetString("Device_fuelTank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gun.
+        /// </summary>
+        public static string Device_gun {
+            get {
+                return ResourceManager.GetString("Device_gun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radio.
+        /// </summary>
+        public static string Device_radio {
+            get {
+                return ResourceManager.GetString("Device_radio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surveying device.
+        /// </summary>
+        public static string Device_surveyingDevice {
+            get {
+                return ResourceManager.GetString("Device_surveyingDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Track.
+        /// </summary>
+        public static string Device_track {
+            get {
+                return ResourceManager.GetString("Device_track", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turret rotator.
+        /// </summary>
+        public static string Device_turretRotator {
+            get {
+                return ResourceManager.GetString("Device_turretRotator", resourceCulture);
             }
         }
         
@@ -6980,7 +7124,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selected: .
+        ///   Looks up a localized string similar to Replays selected: .
         /// </summary>
         public static string StatusBar_SelectedCount {
             get {

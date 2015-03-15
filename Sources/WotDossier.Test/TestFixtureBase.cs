@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Composition;
+using System.IO;
 using System.Reflection;
 using NUnit.Framework;
 using WotDossier.Applications;
@@ -219,12 +220,16 @@ namespace WotDossier.Test
         //[Test]
         //public void RenameTankResources()
         //{
-        //    string[] files = Directory.GetFiles(@"I:\1");
+        //    string[] files = Directory.GetFiles(@"d:\1");
 
         //    foreach (var filePath in files)
         //    {
         //        var file = new FileInfo(filePath);
-        //        file.MoveTo(filePath.Replace("-", "_"));
+        //        var destFileName = filePath.Replace("-", "_");
+        //        if (!File.Exists(destFileName))
+        //        {
+        //            file.MoveTo(destFileName);
+        //        }
         //    }
         //}
     }

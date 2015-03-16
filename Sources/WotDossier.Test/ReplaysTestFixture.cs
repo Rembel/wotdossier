@@ -109,6 +109,28 @@ namespace WotDossier.Test
         }
 
         [Test]
+        public void ImportTanksXmlTest()
+        {
+            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Tanks"), "list.xml", SearchOption.AllDirectories);
+
+            foreach (var xml in strings)
+            {
+                BigWorldXmlReader reader = new BigWorldXmlReader();
+
+                FileStream stream = new FileStream(xml, FileMode.Open, FileAccess.Read);
+                using (BinaryReader br = new BinaryReader(stream))
+                {
+                    var xmlContent = reader.DecodePackedFile(br, "vehicle");
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(xmlContent);
+                    string jsonText = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
+
+                    Console.WriteLine(jsonText);
+                }
+            }
+        }
+
+        [Test]
         public void MapXmlTest()
         {
             string replayFolder = Path.Combine(Environment.CurrentDirectory, "Maps");

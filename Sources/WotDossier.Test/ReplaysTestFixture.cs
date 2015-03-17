@@ -145,10 +145,11 @@ namespace WotDossier.Test
                         var typeCompDesc = Utils.TypeCompDesc(countryid, tankid);
                         tankDescription["compDescr"] = typeCompDesc;
                         tankDescription["active"] = 1;
-                        tankDescription["type"] = 0;//tank.Value["type"].Value<int>();
-                        tankDescription["type_name"] = "MT";//tank.Value["type"].Value<int>();
+                        var tankType = GetVehicleTypeByTag(tank.Value["tags"].Value<string>());
+                        tankDescription["type"] = (int)tankType;
+                        tankDescription["type_name"] = tankType.ToString();
                         tankDescription["tier"] = tank.Value["level"].Value<int>();
-                        tankDescription["premium"] = 0;//tank.Value["premium"].Value<int>();
+                        tankDescription["premium"] = tank.Value["notInShop"] == null ? 0 : 1;
                         tankDescription["title"] = tank.Key;
                         tankDescription["icon"] = tank.Key;
                         tankDescription["icon_orig"] = tank.Key;
@@ -157,6 +158,8 @@ namespace WotDossier.Test
                         {
                             Console.WriteLine(tank.Value);
                         }
+
+                        //JObject tankDef = GetTankDefinition(countryid, tank.Key);
 
                         tanks.Add(tankDescription);
                     }
@@ -168,6 +171,51 @@ namespace WotDossier.Test
                 .OrderBy(x => GetOrder(x["countryid"].Value<int>()))
                 .ThenBy(x => x["tankid"].Value<int>()));
             Console.WriteLine(serializeObject.Replace("{", "\n{").Replace(",\"", ", \""));
+        }
+
+        private TankType GetVehicleTypeByTag(string tags)
+        {
+            if (tags.StartsWith("lightTank", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return TankType.LT;
+            }
+            if (tags.StartsWith("mediumTank", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return TankType.MT;
+            }
+            if (tags.StartsWith("heavyTank", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return TankType.HT;
+            }
+            if (tags.StartsWith("SPG", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return TankType.SPG;
+            }
+            if (tags.StartsWith("AT-SPG", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return TankType.TD;
+            }
+            return TankType.Unknown;
+        }
+
+        private JObject GetTankDefinition(int countryid, string tankName)
+        {
+            var fileName = Path.Combine(Environment.CurrentDirectory, @"Tanks", ((Country)countryid).ToString(), tankName + ".xml");
+            var file = new FileInfo (fileName);
+            BigWorldXmlReader reader = new BigWorldXmlReader();
+            using (BinaryReader br = new BinaryReader(file.OpenRead()))
+            {
+                var xmlContent = reader.DecodePackedFile(br, "vehicles");
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xmlContent);
+                var value = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
+                return JsonConvert.DeserializeObject<JObject>(value);
+            }
+        }
+
+        private static void GetTankDefinition()
+        {
+            
         }
 
         private int GetOrder(int value)

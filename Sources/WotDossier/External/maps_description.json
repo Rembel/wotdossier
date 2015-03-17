@@ -72,7 +72,7 @@
         }
       },
       "assault": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": "",
           "team2": {
@@ -121,7 +121,8 @@
           "team2": {
             "position2": "\t-372,699900 108,119600\t"
           }
-        }
+        },
+        "artilleryPreparationChance": "0.6"
       },
       "domination": {
         "teamSpawnPoints": {
@@ -216,7 +217,7 @@
         "controlPoint": "\t-223,100100 64,999940\t"
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "-123.776 356.640"
@@ -227,8 +228,8 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "-216.336 11.151",
-            "position2": "69.1 349.000"
+            "position1": "-214.139 18.498",
+            "position2": "76.655 335.341"
           },
           "team2": ""
         }
@@ -289,7 +290,7 @@
         "controlPoint": "\t171,058400 16,351450\t"
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "-122.312 425.031"
@@ -399,6 +400,24 @@
           "team2": ""
         },
         "controlPoint": "\t258,900000 -4,200012\t"
+      },
+      "assault2": {
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "304.153 -279.054"
+          },
+          "team2": {
+            "position": "322.875 247.673"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "-265.064 -289.331",
+            "position2": "224.682 -204.587"
+          },
+          "team2": ""
+        }
       }
     }
   },
@@ -441,7 +460,7 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "320.434 334.328"
@@ -498,6 +517,65 @@
           "team2": {
             "position": "-34.989 197.603"
           }
+        }
+      }
+    }
+  },
+  {
+    "name": "#arenas:101_dday/name",
+    "description": "#arenas:101_dday/description",
+    "geometry": "spaces/101_dday",
+    "boundingBox": {
+      "bottomLeft": "-400.0 -500.0",
+      "upperRight": "600.0 500.0"
+    },
+    "roundLength": "\t900\t",
+    "minimap": "spaces/101_dday/mmap.dds",
+    "vehicleCamouflageKind": "summer",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/euro_village",
+    "ambientSound": "/wind/wind/wind_summer_01",
+    "umbraEnabled": "\t1\t",
+    "batchingEnabled": "\t0\t",
+    "water": {
+      "texScale": "\t0\t",
+      "freqX": "\t0\t",
+      "freqZ": "\t0\t"
+    },
+    "gameplayTypes": {
+      "ctf": {
+        "teamBasePositions": {
+          "team1": {
+            "position1": "\t149,997200 -403,440800\t"
+          },
+          "team2": {
+            "position1": "\t149,662500 400,386600\t"
+          }
+        }
+      }
+    },
+    "mapActivities": {
+      "scenario": {
+        "startTime": "\t15,000000 30,000000\t",
+        "possibility": "\t95,000000\t",
+        "period": "\t180,000000\t",
+        "trajectories": {
+          "warplane": [
+            {
+              "preset": "Dday_paratrooper_airplane",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t0,000000 0,000000\t"
+            },
+            {
+              "preset": "Dday_air_defence",
+              "position": "\t0,000000 0,000000 0,000000\t",
+              "yaw": "\t0,000000\t",
+              "possibility": "\t1,000000\t",
+              "startTime": "\t23,700000 23,700000\t"
+            }
+          ]
         }
       }
     }
@@ -599,7 +677,7 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "320.434 334.328"
@@ -818,6 +896,24 @@
           "team2": ""
         },
         "controlPoint": "\t258,768800 132,322500\t"
+      },
+      "assault2": {
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "86.705 -311.497"
+          },
+          "team2": {
+            "position": "-172.927 264.269"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "194.707 -18.789",
+            "position2": "-222.759 -81.18"
+          },
+          "team2": ""
+        }
       }
     }
   },
@@ -869,7 +965,7 @@
         "controlPoint": "\t-349,723100 6,166060\t"
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "-101.549 -428.606"
@@ -922,7 +1018,7 @@
         }
       },
       "assault": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "-87.503 404.509"
@@ -1010,7 +1106,7 @@
         "controlPoint": "\t307,199000 42,860950\t"
       },
       "assault": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": [
@@ -1033,7 +1129,7 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "158.534 248.794"
@@ -1145,7 +1241,7 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": "",
           "team2": {
@@ -1191,7 +1287,8 @@
           "team2": {
             "position1": "\t-0,393303 397,375800\t"
           }
-        }
+        },
+        "artilleryPreparationChance": "0.6"
       }
     }
   },
@@ -1287,7 +1384,7 @@
     },
     "gameplayTypes": {
       "assault": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": [
@@ -1336,6 +1433,24 @@
           "team2": ""
         },
         "controlPoint": "\t-89,697030 -323,644200\t"
+      },
+      "assault2": {
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
+        "teamSpawnPoints": {
+          "team1": {
+            "position": "430 186"
+          },
+          "team2": {
+            "position": "-433.379 152.272"
+          }
+        },
+        "teamBasePositions": {
+          "team1": {
+            "position1": "249.901 -208.7",
+            "position2": "116.863 310.117"
+          },
+          "team2": ""
+        }
       }
     }
   },
@@ -1561,7 +1676,7 @@
         "controlPoint": "\t372,661400 253,000000\t"
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "120.676 445.208"
@@ -1676,7 +1791,7 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "-307.362 -300.617"
@@ -2042,7 +2157,7 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "-325.562 96.459"
@@ -2130,10 +2245,11 @@
           "team2": {
             "position1": "\t249,117900 193,813900\t"
           }
-        }
+        },
+        "artilleryPreparationChance": "0.7"
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "309.927 -326.182"
@@ -2275,7 +2391,7 @@
         "controlPoint": "\t-223,100100 64,999940\t"
       },
       "assault2": {
-        "winnerIfTimeout": "\t1\t",
+        "winnerIfTimeoutOrFullExtermination": "\t1\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "-123.776 356.640"
@@ -2369,7 +2485,8 @@
           "team2": {
             "position1": "\t-105,683600 -406,502800\t"
           }
-        }
+        },
+        "artilleryPreparationChance": "0.7"
       }
     },
     "mapActivities": ""
@@ -2505,7 +2622,7 @@
         }
       },
       "assault2": {
-        "winnerIfTimeout": "\t2\t",
+        "winnerIfTimeoutOrFullExtermination": "\t2\t",
         "teamSpawnPoints": {
           "team1": {
             "position": "315.682 -121.161"
@@ -2554,7 +2671,8 @@
           "team2": {
             "position1": "\t51,599980 -447,000000\t"
           }
-        }
+        },
+        "artilleryPreparationChance": "0.7"
       },
       "domination": {
         "teamSpawnPoints": {
@@ -2575,7 +2693,8 @@
           "team1": "",
           "team2": ""
         },
-        "controlPoint": "\t171,058300 16,351450\t"
+        "controlPoint": "\t171,058300 16,351450\t",
+        "artilleryPreparationChance": "0.5"
       }
     },
     "preloadSoundGroups": {

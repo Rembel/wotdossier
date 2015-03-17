@@ -564,25 +564,25 @@
     <None Include="Maps\99_himmelball.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\china\list.xml">
+    <None Include="Tanks\China\list.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\france\list.xml">
+    <None Include="Tanks\France\list.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\germany\list.xml">
+    <None Include="Tanks\Germany\list.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\japan\list.xml">
+    <None Include="Tanks\Japan\list.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\uk\list.xml">
+    <None Include="Tanks\Uk\list.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\usa\list.xml">
+    <None Include="Tanks\Usa\list.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\ussr\list.xml">
+    <None Include="Tanks\Ussr\list.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="x64\SQLite.Interop.dll">

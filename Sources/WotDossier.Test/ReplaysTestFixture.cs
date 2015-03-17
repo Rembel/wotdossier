@@ -17,7 +17,9 @@ using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Common;
 using WotDossier.Common.Extensions;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Domain.Replay;
+using WotDossier.Domain.Tank;
 using WotDossier.Framework.Forms.ProgressDialog;
 using Formatting = Newtonsoft.Json.Formatting;
 
@@ -113,21 +115,81 @@ namespace WotDossier.Test
         {
             var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Tanks"), "list.xml", SearchOption.AllDirectories);
 
+            List<JObject> result = new List<JObject>();
+
             foreach (var xml in strings)
             {
                 BigWorldXmlReader reader = new BigWorldXmlReader();
-
-                FileStream stream = new FileStream(xml, FileMode.Open, FileAccess.Read);
-                using (BinaryReader br = new BinaryReader(stream))
+                FileInfo info = new FileInfo(xml);
+                using (BinaryReader br = new BinaryReader(info.OpenRead()))
                 {
-                    var xmlContent = reader.DecodePackedFile(br, "vehicle");
+                    var xmlContent = reader.DecodePackedFile(br, "vehicles");
                     XmlDocument doc = new XmlDocument();
                     doc.LoadXml(xmlContent);
                     string jsonText = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
 
-                    Console.WriteLine(jsonText);
+                    var dictionary = JsonConvert.DeserializeObject<Dictionary<string, JObject>>(jsonText);
+                    dictionary = dictionary["vehicles"].ToObject<Dictionary<string, JObject>>();
+
+                    //{"tankid": 0, "countryid": 0, "compDescr": 1, "active": 1, "type": 2, 
+                    //"type_name": "MT", "tier": 5, "premium": 0, "title": "T-34", "icon": "r04_t_34", "icon_orig": "R04_T-34"},
+
+                    List<JObject> tanks = new List<JObject>();
+                    foreach (var tank in dictionary)
+                    {
+                        JObject tankDescription = new JObject();
+                        var tankid = tank.Value["id"].Value<int>();
+                        tankDescription["tankid"] = tankid;
+                        var countryid = (int)Enum.Parse(typeof(Country), info.Directory.Name);
+                        tankDescription["countryid"] = countryid;
+                        var typeCompDesc = Utils.TypeCompDesc(countryid, tankid);
+                        tankDescription["compDescr"] = typeCompDesc;
+                        tankDescription["active"] = 1;
+                        tankDescription["type"] = 0;//tank.Value["type"].Value<int>();
+                        tankDescription["type_name"] = "MT";//tank.Value["type"].Value<int>();
+                        tankDescription["tier"] = tank.Value["level"].Value<int>();
+                        tankDescription["premium"] = 0;//tank.Value["premium"].Value<int>();
+                        tankDescription["title"] = tank.Key;
+                        tankDescription["icon"] = tank.Key;
+                        tankDescription["icon_orig"] = tank.Key;
+
+                        if (!Dictionaries.Instance.Tanks.ContainsKey(Utils.ToUniqueId(typeCompDesc)))
+                        {
+                            Console.WriteLine(tank.Value);
+                        }
+
+                        tanks.Add(tankDescription);
+                    }
+                    result.AddRange(tanks);
                 }
             }
+
+            var serializeObject = JsonConvert.SerializeObject(result
+                .OrderBy(x => GetOrder(x["countryid"].Value<int>()))
+                .ThenBy(x => x["tankid"].Value<int>()));
+            Console.WriteLine(serializeObject.Replace("{", "\n{").Replace(",\"", ", \""));
+        }
+
+        private int GetOrder(int value)
+        {
+            switch ((Country)value)
+            {
+                case Country.China:
+                    return 0;
+                case Country.Germany:
+                    return 1;
+                case Country.France:
+                    return 2;
+                case Country.Ussr:
+                    return 3;
+                case Country.Usa:
+                    return 4;
+                case Country.Uk:
+                    return 5;
+                case Country.Japan:
+                    return 6;
+            }
+            return -1;
         }
 
         [Test]
@@ -151,7 +213,7 @@ namespace WotDossier.Test
                 FileInfo file = new FileInfo(replay);
 
                 FileStream stream = new FileStream(replay, FileMode.Open, FileAccess.Read);
-                using(BinaryReader br = new BinaryReader(stream))
+                using (BinaryReader br = new BinaryReader(stream))
                 {
                     var xml = reader.DecodePackedFile(br, "map");
                     XmlDocument doc = new XmlDocument();
@@ -181,7 +243,7 @@ namespace WotDossier.Test
             {
                 if (!File.Exists(Path.Combine(replayFolder, key + ".xml")))
                 {
-                    Console.WriteLine("Missed map: {0}", key );
+                    Console.WriteLine("Missed map: {0}", key);
                 }
             }
 
@@ -211,7 +273,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplaysFoldersSaveLoadTest()
         {
-            ReplayFolder folder = new ReplayFolder{Name = "Parent", Path = "c:\\Parent", Folders = new ObservableCollection<ReplayFolder> {new ReplayFolder{Name = "Child", Path = "c:\\Child"}}};
+            ReplayFolder folder = new ReplayFolder { Name = "Parent", Path = "c:\\Parent", Folders = new ObservableCollection<ReplayFolder> { new ReplayFolder { Name = "Child", Path = "c:\\Child" } } };
             string xml = XmlSerializer.StoreObjectInXml(folder);
             Console.WriteLine(xml);
 
@@ -321,13 +383,13 @@ namespace WotDossier.Test
 
                         if (buffer[0] != 0x21)
                         {
-                            blocksCount = (int) stream.Read(4).ConvertLittleEndian();
+                            blocksCount = (int)stream.Read(4).ConvertLittleEndian();
                             Console.WriteLine("Found Replay Blocks: " + blocksCount);
                         }
 
                         for (int i = 0; i < blocksCount; i++)
                         {
-                            var blockLength = (int) stream.Read(4).ConvertLittleEndian();
+                            var blockLength = (int)stream.Read(4).ConvertLittleEndian();
                             Console.WriteLine("{0} block length: {1}", i + 1, blockLength);
                             byte[] blockData = stream.Read(blockLength);
 

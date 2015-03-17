@@ -44,6 +44,16 @@ namespace WotDossier.Common
             return typeCompDescr >> 8 & 65535;
         }
 
+        public static int ToTypeId(int typeCompDescr)
+        {
+            return typeCompDescr & 15;
+        }
+
+        public static int TypeCompDesc(int countryId, int tankId, int type = 1)
+        {
+            return (type & 15) | (countryId << 4 & 255) | (tankId << 8 & 65535);
+        }
+
         public static int ToUniqueId(int countryId, int tankId)
         {
             return countryId * 10000 + tankId;

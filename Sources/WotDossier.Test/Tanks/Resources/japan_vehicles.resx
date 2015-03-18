@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alarm_flags" xml:space="preserve">
+    <value>Signal Flags</value>
+  </data>
+  <data name="Chassis_Chi_Ha" xml:space="preserve">
+    <value>Type 97 Chi-Ha</value>
+  </data>
+  <data name="Chassis_Chi_Ha_2" xml:space="preserve">
+    <value>Type 97 Chi-Ha Kai</value>
+  </data>
+  <data name="Chassis_Chi_He" xml:space="preserve">
+    <value>Type 1 Chi-He</value>
+  </data>
+  <data name="Chassis_Chi_He_2" xml:space="preserve">
+    <value>Type 2 Ho-I</value>
+  </data>
+  <data name="Chassis_Chi_Ni" xml:space="preserve">
+    <value>Medium Tank Plan 2</value>
+  </data>
+  <data name="Chassis_Chi_Ni_2" xml:space="preserve">
+    <value>Chi-Ni</value>
+  </data>
+  <data name="Chassis_Chi_Nu" xml:space="preserve">
+    <value>New Medium Tank Hei (19)</value>
+  </data>
+  <data name="Chassis_Chi_Nu_2" xml:space="preserve">
+    <value>Type 3 Chi-Nu</value>
+  </data>
+  <data name="Chassis_Chi_Nu_Kai" xml:space="preserve">
+    <value>Type 3 Chi-Nu Kai</value>
+  </data>
+  <data name="Chassis_Chi_Ri" xml:space="preserve">
+    <value>Type 5 Chi-Ri Plan 1</value>
+  </data>
+  <data name="Chassis_Chi_Ri_2" xml:space="preserve">
+    <value>Type 5 Chi-Ri Plan 2</value>
+  </data>
+  <data name="Chassis_Chi_To" xml:space="preserve">
+    <value>Type 4 Chi-To Prototype</value>
+  </data>
+  <data name="Chassis_Chi_To_2" xml:space="preserve">
+    <value>Type 4 Chi-To Production</value>
+  </data>
+  <data name="Chassis_Ha_Go" xml:space="preserve">
+    <value>Type 95 Ha-Go</value>
+  </data>
+  <data name="Chassis_Ha_Go_2" xml:space="preserve">
+    <value>Type 4 Ke-Nu</value>
+  </data>
+  <data name="Chassis_Ke_Ho" xml:space="preserve">
+    <value>Type 5 Ke-Ho</value>
+  </data>
+  <data name="Chassis_Ke_Ho_2" xml:space="preserve">
+    <value>Type 5 Ke-Ho Kai</value>
+  </data>
+  <data name="Chassis_Ke_Ni" xml:space="preserve">
+    <value>Type 98 Ke-Ni</value>
+  </data>
+  <data name="Chassis_Ke_Ni_2" xml:space="preserve">
+    <value>Type 2 Ke-To</value>
+  </data>
+  <data name="Chassis_Ke_Ni_B" xml:space="preserve">
+    <value>Type 98 Ke-Ni Otsu</value>
+  </data>
+  <data name="Chassis_NC27" xml:space="preserve">
+    <value>Renault NC-27</value>
+  </data>
+  <data name="Chassis_NC27_2" xml:space="preserve">
+    <value>Renault Otsu</value>
+  </data>
+  <data name="Chassis_STA_1" xml:space="preserve">
+    <value>STA-1</value>
+  </data>
+  <data name="Chassis_STA_1_2" xml:space="preserve">
+    <value>STA-3</value>
+  </data>
+  <data name="Chassis_STA_2_3" xml:space="preserve">
+    <value>STA-2</value>
+  </data>
+  <data name="Chassis_ST_B1" xml:space="preserve">
+    <value>STB-1</value>
+  </data>
+  <data name="Chassis_Te_Ke" xml:space="preserve">
+    <value>Type 97 Te-Ke</value>
+  </data>
+  <data name="Chassis_Type_61" xml:space="preserve">
+    <value>STA-4</value>
+  </data>
+  <data name="Chassis_Type_61_2" xml:space="preserve">
+    <value>Type 61</value>
+  </data>
+  <data name="Chi_Ha" xml:space="preserve">
+    <value>Type 97 Chi-Ha</value>
+  </data>
+  <data name="Chi_Ha_descr" xml:space="preserve">
+    <value>Developed by Mitsubishi from 1935 through 1937. The vehicle was mass-produced from 1938 through 1942, alongside an upgraded Shinhoto Chi-Ha from 1941 through 1942. A total of 2,880 vehicles of both types were manufactured. The Chi-Ha and the Shinhoto Chi-Ha tanks were widely used by Japanese forces in China, and after Japan capitulation these vehicles were used by both PLA and Kuomintang forces in the Chinese Civil War from 1946 through 1949.</value>
+  </data>
+  <data name="Chi_Ha_short" xml:space="preserve">
+    <value>Chi-Ha</value>
+  </data>
+  <data name="Chi_He" xml:space="preserve">
+    <value>Type 1 Chi-He</value>
+  </data>
+  <data name="Chi_He_descr" xml:space="preserve">
+    <value>The Type 1 Chi-He medium tank was developed in 1941. The tank was a further development of the Type 97 Chi-Ha. However, due to the lack of steel, a total of 170 tanks were manufactured. Most of them were held for the defense of Japan and never saw combat.</value>
+  </data>
+  <data name="Chi_He_short" xml:space="preserve">
+    <value>Chi-He</value>
+  </data>
+  <data name="Chi_Ni" xml:space="preserve">
+    <value>Chi-Ni</value>
+  </data>
+  <data name="Chi_Ni_descr" xml:space="preserve">
+    <value>Developed by Osaka Artillery Arsenal as a replacement for the Type 2589. The Chi-Ni and the Chi-Ha underwent combined trials in 1937. The Chi-Ha was deemed more successful. One prototype was manufactured.</value>
+  </data>
+  <data name="Chi_Ni_short" xml:space="preserve">
+    <value>Chi-Ni</value>
+  </data>
+  <data name="Chi_Nu" xml:space="preserve">
+    <value>Type 3 Chi-Nu</value>
+  </data>
+  <data name="Chi_Nu_Kai" xml:space="preserve">
+    <value>Type 3 Chi-Nu Kai</value>
+  </data>
+  <data name="Chi_Nu_Kai_descr" xml:space="preserve">
+    <value>The Type 3 Chi-Nu Kai medium tank is a combination of the Type 3 Chi-Nu suspension and turret and the Type 4 Chi-To gun. Only one prototype was built. It was ready for trials in March of 1945.</value>
+  </data>
+  <data name="Chi_Nu_Kai_short" xml:space="preserve">
+    <value>Chi-Nu Kai</value>
+  </data>
+  <data name="Chi_Nu_descr" xml:space="preserve">
+    <value>The Type 3 Chi-Nu medium tank is a modification of the Тype 1 Chi-He with a new turret and gun. The tank was the most powerful among wartime Japanese mass-produced vehicles. However, only a total of 60 vehicles were manufactured due to shortages of components and materials.</value>
+  </data>
+  <data name="Chi_Nu_short" xml:space="preserve">
+    <value>Chi-Nu</value>
+  </data>
+  <data name="Chi_Ri" xml:space="preserve">
+    <value>Type 5 Chi-Ri</value>
+  </data>
+  <data name="Chi_Ri_descr" xml:space="preserve">
+    <value>A single prototype was manufactured at the beginning of 1945. The vehicle underwent trials and was recommended for service. However, Japan was defeated before mass production could begin. After the surrender, the prototype was confiscated by American occupation authorities and was shipped to the United States.</value>
+  </data>
+  <data name="Chi_Ri_short" xml:space="preserve">
+    <value>Chi-Ri</value>
+  </data>
+  <data name="Chi_To" xml:space="preserve">
+    <value>Type 4 Chi-To</value>
+  </data>
+  <data name="Chi_To_descr" xml:space="preserve">
+    <value>The Type 4 Chi-To medium tank was developed in 1943 on the basis of the Chi-Nu. The tank was conceived to replace the Chi-Ha. However, mass production was not launched due to shortages of materials and components. A total of six chassis were produced, and only two tanks were built on their basis.</value>
+  </data>
+  <data name="Chi_To_short" xml:space="preserve">
+    <value>Chi-To</value>
+  </data>
+  <data name="Ha_Go" xml:space="preserve">
+    <value>Type 95 Ha-Go</value>
+  </data>
+  <data name="Ha_Go_descr" xml:space="preserve">
+    <value>Japanese light tank also known as the Type 95. Developed from 1933 through 1935. A total of 2,378 vehicles were mass-produced from 1936 through 1943.</value>
+  </data>
+  <data name="Ha_Go_short" xml:space="preserve">
+    <value>Ha-Go</value>
+  </data>
+  <data name="JAN-GRC-3Z" xml:space="preserve">
+    <value>JAN/GRC-3Z</value>
+  </data>
+  <data name="JAN-GRC-3Z_1" xml:space="preserve">
+    <value>JAN/GRC-3Z</value>
+  </data>
+  <data name="JAN-GRC-4Z" xml:space="preserve">
+    <value>JAN/GRC-4Z</value>
+  </data>
+  <data name="Ke_Ho" xml:space="preserve">
+    <value>Type 5 Ke-Ho</value>
+  </data>
+  <data name="Ke_Ho_descr" xml:space="preserve">
+    <value>By 1945 the design of the Type 95 Ha-Go was already obsolete. In 1942 the Hino Jidosha company started to develop a new tank. A prototype designated the Type 5 Ke-Ho was built in 1944. The design of the tank was similar to that of the Czech LT vz.38 and the Japanese Chi-Ha. However, the vehicle did not go into mass production.</value>
+  </data>
+  <data name="Ke_Ho_short" xml:space="preserve">
+    <value>Ke-Ho</value>
+  </data>
+  <data name="Ke_Ni" xml:space="preserve">
+    <value>Type 98 Ke-Ni</value>
+  </data>
+  <data name="Ke_Ni_B" xml:space="preserve">
+    <value>Type 98 Ke-Ni Otsu</value>
+  </data>
+  <data name="Ke_Ni_B_descr" xml:space="preserve">
+    <value>A modification of the Type 98A Ke-Ni light tank with the Christie type suspension. Developed by Mitsubishi in 1939 under the influence of the Soviet BT-7. Only one prototype was manufactured.</value>
+  </data>
+  <data name="Ke_Ni_B_short" xml:space="preserve">
+    <value>Ke-Ni Otsu</value>
+  </data>
+  <data name="Ke_Ni_descr" xml:space="preserve">
+    <value>A further Ha-Go modification developed by Hino Jidosha Kogyo. Despite the improved dynamic charcteristics,  the tank did not replace the Ha-Go. A total of about 100 tanks were manufactured by Mitsubishi and Hino.</value>
+  </data>
+  <data name="Ke_Ni_short" xml:space="preserve">
+    <value>Ke-Ni</value>
+  </data>
+  <data name="Mitsubishi" xml:space="preserve">
+    <value>Mitsubishi A475VD</value>
+  </data>
+  <data name="NC27" xml:space="preserve">
+    <value>Renault Otsu</value>
+  </data>
+  <data name="NC27_descr" xml:space="preserve">
+    <value>Developed from 1925 through 1928 in France as an upgraded modification of the Renault FT. The modernization project was finished and the vehicle saw mass production. In 1929, a total of 10 vehicles were purchased by Japan and were designated the Otsu-Gata Sensha (Tank B Model). The Japanese vehicles were slightly modernized and were widely used both in action and for training purposes.</value>
+  </data>
+  <data name="NC27_short" xml:space="preserve">
+    <value>R. Otsu</value>
+  </data>
+  <data name="STA_1" xml:space="preserve">
+    <value>STA-1</value>
+  </data>
+  <data name="STA_1_descr" xml:space="preserve">
+    <value>The first Japanese post-war tank was developed on the basis of U.S. vehicles. The STA-1 was developed, taking into consideration Japanese terrain, rail network specifications, and anthropometric data of Japanese tankers. Only one prototype was built, in December 1956.</value>
+  </data>
+  <data name="STA_1_short" xml:space="preserve">
+    <value>STA-1</value>
+  </data>
+  <data name="STA_2_3" xml:space="preserve">
+    <value>STA-2</value>
+  </data>
+  <data name="STA_2_3_descr" xml:space="preserve">
+    <value>One of the first Japanese post-war tanks was developed on the basis of U.S. vehicles, taking into consideration Japanese terrain, rail network specifications, and the smaller stature of Japanese tankers. This variant prototype featured a shortened suspension and a larger hull height. A total of two prototypes were built.</value>
+  </data>
+  <data name="STA_2_3_short" xml:space="preserve">
+    <value>STA-2</value>
+  </data>
+  <data name="ST_B1" xml:space="preserve">
+    <value>STB-1</value>
+  </data>
+  <data name="ST_B1_descr" xml:space="preserve">
+    <value>In the early 1960s, Mitsubishi started development of a new tank that complied with government requirements for armament and defense. The first two prototypes of the STB-1 were manufactured in September 1969 for trials. In 1970 the prototypes were shown to journalists and participated in a military parade.</value>
+  </data>
+  <data name="ST_B1_short" xml:space="preserve">
+    <value>STB-1</value>
+  </data>
+  <data name="Te_Ke" xml:space="preserve">
+    <value>Type 97 Te-Ke</value>
+  </data>
+  <data name="Te_Ke_descr" xml:space="preserve">
+    <value>Te-Ke was developed by Tokyo Gasu Denki to replace the outdated Type 94 light tank. Manufactured from 1937 through 1942. The vehicle was used for reconnaissance, communication, patrol duty, and infantry support. Served as armored tractor. A total of about 600 vehicles were manufactured.</value>
+  </data>
+  <data name="Te_Ke_short" xml:space="preserve">
+    <value>Te-Ke</value>
+  </data>
+  <data name="Turret_1_Chi_Ha" xml:space="preserve">
+    <value>Type 97 Chi-Ha</value>
+  </data>
+  <data name="Turret_1_Chi_He" xml:space="preserve">
+    <value>Type 1 Chi-He</value>
+  </data>
+  <data name="Turret_1_Chi_Ni" xml:space="preserve">
+    <value>Chi-Ni</value>
+  </data>
+  <data name="Turret_1_Chi_Nu" xml:space="preserve">
+    <value>Type 4 Chi-To I-Go</value>
+  </data>
+  <data name="Turret_1_Chi_Nu_Kai" xml:space="preserve">
+    <value>Type 3 Chi-Nu Kai</value>
+  </data>
+  <data name="Turret_1_Chi_Ri" xml:space="preserve">
+    <value>Type 5 Chi-Ri Plan 1</value>
+  </data>
+  <data name="Turret_1_Chi_To" xml:space="preserve">
+    <value>Type 4 Chi-To Prototype</value>
+  </data>
+  <data name="Turret_1_Ha_Go" xml:space="preserve">
+    <value>Type 95 Ha-Go</value>
+  </data>
+  <data name="Turret_1_Ke_Ho" xml:space="preserve">
+    <value>Type 5 Ke-Ho</value>
+  </data>
+  <data name="Turret_1_Ke_Ni" xml:space="preserve">
+    <value>Type 98 Ke-Ni</value>
+  </data>
+  <data name="Turret_1_Ke_Ni_B" xml:space="preserve">
+    <value>Type 98 Ke-Ni Otsu</value>
+  </data>
+  <data name="Turret_1_NC27" xml:space="preserve">
+    <value>Renault Kou</value>
+  </data>
+  <data name="Turret_1_STA_1" xml:space="preserve">
+    <value>STA-1</value>
+  </data>
+  <data name="Turret_1_STA_2_3" xml:space="preserve">
+    <value>STA-2</value>
+  </data>
+  <data name="Turret_1_ST_B1" xml:space="preserve">
+    <value>STB-1</value>
+  </data>
+  <data name="Turret_1_Te_Ke" xml:space="preserve">
+    <value>Type 97 Te-Ke</value>
+  </data>
+  <data name="Turret_1_Type_61" xml:space="preserve">
+    <value>STA-4</value>
+  </data>
+  <data name="Turret_2_Chi_Ha" xml:space="preserve">
+    <value>Type 97 Chi-Ha Shinhoto</value>
+  </data>
+  <data name="Turret_2_Chi_He" xml:space="preserve">
+    <value>Type 2 Ho-I</value>
+  </data>
+  <data name="Turret_2_Chi_Nu" xml:space="preserve">
+    <value>Type 3 Chi-Nu</value>
+  </data>
+  <data name="Turret_2_Chi_Ri" xml:space="preserve">
+    <value>Type 5 Chi-Ri Plan 2</value>
+  </data>
+  <data name="Turret_2_Chi_To" xml:space="preserve">
+    <value>Type 4 Chi-To Production</value>
+  </data>
+  <data name="Turret_2_Ha_Go" xml:space="preserve">
+    <value>Type 4 Ke-Nu</value>
+  </data>
+  <data name="Turret_2_Ke_Ni" xml:space="preserve">
+    <value>Type 2 Ke-To</value>
+  </data>
+  <data name="Turret_2_NC27" xml:space="preserve">
+    <value>Renault Otsu</value>
+  </data>
+  <data name="Turret_2_STA_1" xml:space="preserve">
+    <value>STA-3</value>
+  </data>
+  <data name="Turret_2_Type_61" xml:space="preserve">
+    <value>Type 61</value>
+  </data>
+  <data name="Type_61" xml:space="preserve">
+    <value>Type 61</value>
+  </data>
+  <data name="Type_61_descr" xml:space="preserve">
+    <value>The first tank developed in Japan after WWII. It was developed from 1954 through 1961 on the basis of the American M47 tank. The dimensions of the vehicle were decreased and the armor was reduced. As a result, the weight of the tank was lighter, and the tank complied with the requirements of the Japanese armed forces.</value>
+  </data>
+  <data name="Type_61_short" xml:space="preserve">
+    <value>Type 61</value>
+  </data>
+  <data name="_105mm_APDS_L28A1" xml:space="preserve">
+    <value>L28A1</value>
+  </data>
+  <data name="_105mm_HEAT-T_T384E4" xml:space="preserve">
+    <value>M456</value>
+  </data>
+  <data name="_105mm_HEPT_Type75" xml:space="preserve">
+    <value>Type 75</value>
+  </data>
+  <data name="_105mm_Rifled_Gun" xml:space="preserve">
+    <value>105 mm Rifled Gun</value>
+  </data>
+  <data name="_13.2mm_AP" xml:space="preserve">
+    <value>Type 92</value>
+  </data>
+  <data name="_13.2mm_Balle_T.P." xml:space="preserve">
+    <value>Balle T.P.</value>
+  </data>
+  <data name="_13.2mm_Type93" xml:space="preserve">
+    <value>13 mm Autocannon Type Ho</value>
+  </data>
+  <data name="_20mm_AP" xml:space="preserve">
+    <value>20 mm AP</value>
+  </data>
+  <data name="_20mm_APCR" xml:space="preserve">
+    <value>20 mm APCR</value>
+  </data>
+  <data name="_20mm_Type97" xml:space="preserve">
+    <value>20 mm AT Rifle Type 97</value>
+  </data>
+  <data name="_37mm_APHE_Ichi_Go" xml:space="preserve">
+    <value>Ichi-Go</value>
+  </data>
+  <data name="_37mm_APHE_Type1" xml:space="preserve">
+    <value>Type 1</value>
+  </data>
+  <data name="_37mm_APHE_Type1_Kai" xml:space="preserve">
+    <value>Type 1 Kai</value>
+  </data>
+  <data name="_37mm_APHE_Type94" xml:space="preserve">
+    <value>Type 94</value>
+  </data>
+  <data name="_37mm_APX_SA18" xml:space="preserve">
+    <value>37 mm APX SA18</value>
+  </data>
+  <data name="_37mm_AP_Type4" xml:space="preserve">
+    <value>Type 4</value>
+  </data>
+  <data name="_37mm_FrtPrf1935" xml:space="preserve">
+    <value>Frt.Prf. mle. 1935</value>
+  </data>
+  <data name="_37mm_HE_Type12" xml:space="preserve">
+    <value>Type 12</value>
+  </data>
+  <data name="_37mm_HE_Type4" xml:space="preserve">
+    <value>Type 4</value>
+  </data>
+  <data name="_37mm_HE_Type4_Kai" xml:space="preserve">
+    <value>Type 4 Kai</value>
+  </data>
+  <data name="_37mm_OE_mle._1916" xml:space="preserve">
+    <value>OE mle. 1916</value>
+  </data>
+  <data name="_37mm_Odr_mle._1935" xml:space="preserve">
+    <value>ODR mle. 1935</value>
+  </data>
+  <data name="_37mm_Sogekiho" xml:space="preserve">
+    <value>37 mm Sogekihou</value>
+  </data>
+  <data name="_37mm_Type1" xml:space="preserve">
+    <value>37 mm Gun Type 1</value>
+  </data>
+  <data name="_37mm_Type11" xml:space="preserve">
+    <value>37 mm Infantry Gun Type 11</value>
+  </data>
+  <data name="_37mm_Type_100" xml:space="preserve">
+    <value>37 mm Gun Type 100</value>
+  </data>
+  <data name="_37mm_Type_100_1" xml:space="preserve">
+    <value>37 mm Gun Type 100</value>
+  </data>
+  <data name="_37mm_Type_94" xml:space="preserve">
+    <value>37 mm Gun Type 94</value>
+  </data>
+  <data name="_37mm_Type_98" xml:space="preserve">
+    <value>37 mm Gun Type 98</value>
+  </data>
+  <data name="_37mm_Type_98A" xml:space="preserve">
+    <value>37 mm Gun Type 98</value>
+  </data>
+  <data name="_47mm_APHE_Type1" xml:space="preserve">
+    <value>Type 1</value>
+  </data>
+  <data name="_47mm_APHE_Type1_TK" xml:space="preserve">
+    <value>Type 1 Toku Kou</value>
+  </data>
+  <data name="_47mm_Gun_Type1" xml:space="preserve">
+    <value>47 mm Gun Type 1</value>
+  </data>
+  <data name="_47mm_HE_Type94" xml:space="preserve">
+    <value>Type 94</value>
+  </data>
+  <data name="_57mm_APHE_Type1" xml:space="preserve">
+    <value>Type 1</value>
+  </data>
+  <data name="_57mm_APHE_Type1_TK" xml:space="preserve">
+    <value>Type 1 Toku Kou</value>
+  </data>
+  <data name="_57mm_AP_Type97" xml:space="preserve">
+    <value>Type 92</value>
+  </data>
+  <data name="_57mm_Gun_Shin" xml:space="preserve">
+    <value>Experimental 57 mm Tank Gun Shin</value>
+  </data>
+  <data name="_57mm_Gun_Type97" xml:space="preserve">
+    <value>5.7 cm Gun Type 97</value>
+  </data>
+  <data name="_57mm_HEAT_Type97" xml:space="preserve">
+    <value>Type 3</value>
+  </data>
+  <data name="_57mm_HE_Type2" xml:space="preserve">
+    <value>Type 2</value>
+  </data>
+  <data name="_57mm_HE_Type97" xml:space="preserve">
+    <value>Type 90</value>
+  </data>
+  <data name="_62CV" xml:space="preserve">
+    <value>Renault L4</value>
+  </data>
+  <data name="_75mm_APHE_Type1_185" xml:space="preserve">
+    <value>Type 1 185R</value>
+  </data>
+  <data name="_75mm_AP_Type_1_424" xml:space="preserve">
+    <value>Type 1 424R</value>
+  </data>
+  <data name="_75mm_AP_Type_1_604" xml:space="preserve">
+    <value>Type 1 604R</value>
+  </data>
+  <data name="_75mm_AP_Type_1_SK_604" xml:space="preserve">
+    <value>Type 1 Toku Kou 604R</value>
+  </data>
+  <data name="_75mm_AP_Type_1_TKK_604" xml:space="preserve">
+    <value>Type 1 Toku Kou Kai</value>
+  </data>
+  <data name="_75mm_AP_Type_1_TK_424" xml:space="preserve">
+    <value>Type 1 Toku Kou 424R</value>
+  </data>
+  <data name="_75mm_AP_Type_1_TO_604" xml:space="preserve">
+    <value>Type 1 Toku Otsu</value>
+  </data>
+  <data name="_75mm_Gun_Type3" xml:space="preserve">
+    <value>7.5 cm Tank Gun Type 3</value>
+  </data>
+  <data name="_75mm_Gun_Type5" xml:space="preserve">
+    <value>7.5 cm Tank Gun Type 5</value>
+  </data>
+  <data name="_75mm_Gun_Type5_M1" xml:space="preserve">
+    <value>7.5 cm Tank Gun Type 5 Model I</value>
+  </data>
+  <data name="_75mm_Gun_Type5_M1_auto" xml:space="preserve">
+    <value>7.5 cm Autoloading Tank Gun Type 5</value>
+  </data>
+  <data name="_75mm_Gun_Type_99" xml:space="preserve">
+    <value>7.5 cm Tank Gun Type 99</value>
+  </data>
+  <data name="_75mm_HEAT_Type2_185" xml:space="preserve">
+    <value>Type 2</value>
+  </data>
+  <data name="_75mm_HE_Type94_185" xml:space="preserve">
+    <value>Type 94 185R</value>
+  </data>
+  <data name="_75mm_HE_Type_4_604" xml:space="preserve">
+    <value>Type 4 604R</value>
+  </data>
+  <data name="_75mm_HE_Type_4_K_604" xml:space="preserve">
+    <value>Type 4 Kai</value>
+  </data>
+  <data name="_75mm_HE_Type_94_424" xml:space="preserve">
+    <value>Type 94 424R</value>
+  </data>
+  <data name="_75mm_Type5_1" xml:space="preserve">
+    <value>7.5 cm Tank Gun Type 5</value>
+  </data>
+  <data name="_90mm_AP_M318A1" xml:space="preserve">
+    <value>M318A1</value>
+  </data>
+  <data name="_90mm_AP_M82_late" xml:space="preserve">
+    <value>M82 late</value>
+  </data>
+  <data name="_90mm_Gun_M3A1" xml:space="preserve">
+    <value>90 mm Gun M3A1</value>
+  </data>
+  <data name="_90mm_Gun_Type61" xml:space="preserve">
+    <value>90 mm Gun Type 61</value>
+  </data>
+  <data name="_90mm_HEAT_Type70" xml:space="preserve">
+    <value>Type 70</value>
+  </data>
+  <data name="_90mm_HE_M71" xml:space="preserve">
+    <value>M71</value>
+  </data>
+  <data name="_90mm_HVAP_M304" xml:space="preserve">
+    <value>M304</value>
+  </data>
+  <data name="_90mm_Rifled_Gun" xml:space="preserve">
+    <value>90 mm Rifled Gun</value>
+  </data>
+  <data name="_90mm_Rifled_Gun_1" xml:space="preserve">
+    <value>90 mm Rifled Gun</value>
+  </data>
+  <data name="_A6120VDe" xml:space="preserve">
+    <value>Mitsubishi A6120VDe</value>
+  </data>
+  <data name="_A6120VDe_S" xml:space="preserve">
+    <value>Mitsubishi A6120VDe S</value>
+  </data>
+  <data name="_Hei" xml:space="preserve">
+    <value>Hei</value>
+  </data>
+  <data name="_Ikegai_Kuurei_V-4" xml:space="preserve">
+    <value>Ikegai Kuurei V-4</value>
+  </data>
+  <data name="_Mitsubishi_10ZF21WT" xml:space="preserve">
+    <value>Mitsubishi 10ZF21WT</value>
+  </data>
+  <data name="_Mitsubishi_12HM20WT" xml:space="preserve">
+    <value>Mitsubishi 12HM20WT</value>
+  </data>
+  <data name="_Mitsubishi_12HM21WT" xml:space="preserve">
+    <value>Mitsubishi 12HM21WT</value>
+  </data>
+  <data name="_Mitsubishi_DL10T" xml:space="preserve">
+    <value>Mitsubishi DL10T</value>
+  </data>
+  <data name="_Mitsubishi_DL10TA" xml:space="preserve">
+    <value>Mitsubishi DL10T</value>
+  </data>
+  <data name="_Type100_A" xml:space="preserve">
+    <value>Type 100 Kuurei V-12</value>
+  </data>
+  <data name="_Type100_A_1" xml:space="preserve">
+    <value>Type 100 V-12</value>
+  </data>
+  <data name="_Type100_V12_Kakyuu" xml:space="preserve">
+    <value>Type 100 Kakyuu V-12</value>
+  </data>
+  <data name="_Type100_V6_A_1" xml:space="preserve">
+    <value>Mitsubishi Type 100 V-6 A</value>
+  </data>
+  <data name="_Type100_V6_Kakyuu" xml:space="preserve">
+    <value>Type 100 Kakyuu V-6</value>
+  </data>
+  <data name="_Type100_V6_Kuurei" xml:space="preserve">
+    <value>Type 100 Kuurei V-6</value>
+  </data>
+  <data name="_Type100_W" xml:space="preserve">
+    <value>Type 100 Suirei V-12</value>
+  </data>
+  <data name="_Type3_Ko" xml:space="preserve">
+    <value>Type 3 Ko</value>
+  </data>
+  <data name="_Type3_Otsu" xml:space="preserve">
+    <value>Type 3 Otsu</value>
+  </data>
+  <data name="_Type4_V12_Kakyuu" xml:space="preserve">
+    <value>Mitsubishi AL Type 4 Kakyuu V-12</value>
+  </data>
+  <data name="_Type4_V12_Kuurei" xml:space="preserve">
+    <value>Mitsubishi AL Type 4 Kuurei V-12</value>
+  </data>
+  <data name="_Type67" xml:space="preserve">
+    <value>Type 67</value>
+  </data>
+  <data name="_Type94_Hei" xml:space="preserve">
+    <value>Type 94 Mk. 4 Hei</value>
+  </data>
+  <data name="_Type94_Hei_1" xml:space="preserve">
+    <value>Type 94 Mk. 4 Hei Kai</value>
+  </data>
+  <data name="_Type94_Otsu" xml:space="preserve">
+    <value>Type 94 Mk. 4 Otsu</value>
+  </data>
+  <data name="_Type96_Bo" xml:space="preserve">
+    <value>Type 96 Mk. 4 Bo</value>
+  </data>
+  <data name="_Type97" xml:space="preserve">
+    <value>Mitsubishi SA12200VD</value>
+  </data>
+  <data name="_Type98_V12" xml:space="preserve">
+    <value>Kawasaki Type 98 V-12</value>
+  </data>
+</root>

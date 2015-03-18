@@ -1,0 +1,3122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AN-GRC-4" xml:space="preserve">
+    <value>AN/GRC-4</value>
+  </data>
+  <data name="AN-GRC-7" xml:space="preserve">
+    <value>AN/GRC-7</value>
+  </data>
+  <data name="APCNR" xml:space="preserve">
+    <value>Pzgr. 41 HK</value>
+  </data>
+  <data name="APCNR.erz" xml:space="preserve">
+    <value>Pzgr. 41 StK</value>
+  </data>
+  <data name="Argus_12LD330H" xml:space="preserve">
+    <value>Argus 12LD330H</value>
+  </data>
+  <data name="Argus_12LD330H_short" xml:space="preserve">
+    <value>12LD330H</value>
+  </data>
+  <data name="Auf_Panther" xml:space="preserve">
+    <value>Aufklärungspanzer Panther</value>
+  </data>
+  <data name="Auf_Panther_descr" xml:space="preserve">
+    <value>Planned heavy reconnaissance vehicle. The plans called for using the Panther hull in order to facilitate rapid mass production. The vehicle was to feature the Leopard turret with a gun not longer than the tank's hull, which was to ensure maneuverability in forested terrain. No prototypes were built.</value>
+  </data>
+  <data name="Auf_Panther_short" xml:space="preserve">
+    <value>Aufkl.Panther</value>
+  </data>
+  <data name="B-1bis_captured" xml:space="preserve">
+    <value>Pz.Kpfw. B2 740 (f)</value>
+  </data>
+  <data name="B-1bis_captured_descr" xml:space="preserve">
+    <value>After modernization, part of a total of 365 vehicles were used by the German Army, but only on secondary fronts.</value>
+  </data>
+  <data name="B-1bis_captured_short" xml:space="preserve">
+    <value>Pz. B2</value>
+  </data>
+  <data name="B2_740Fturm" xml:space="preserve">
+    <value>Pz.Kpfw. B2 740 (f)</value>
+  </data>
+  <data name="B2ketten" xml:space="preserve">
+    <value>Pz.Kpfw. B2 740 (f)</value>
+  </data>
+  <data name="BMW" xml:space="preserve">
+    <value>BMW-Va</value>
+  </data>
+  <data name="BNAG_L8V_GS36" xml:space="preserve">
+    <value>Büssing NAG L8V/GS 36</value>
+  </data>
+  <data name="BNAG_L8V_GS39" xml:space="preserve">
+    <value>Büssing NAG L8V/GS 39</value>
+  </data>
+  <data name="Bison_I" xml:space="preserve">
+    <value>Sturmpanzer I Bison</value>
+  </data>
+  <data name="Bison_I_descr" xml:space="preserve">
+    <value>This SPG was equipped with a gun that could fire from the armored enclosure or be removed to fire from a regular gun carriage. In February 1940 a total of 38 PzKpfw I were converted to the Sturmpanzer I model.</value>
+  </data>
+  <data name="Bison_I_short" xml:space="preserve">
+    <value>Bison</value>
+  </data>
+  <data name="Chassis_Auf_Panther" xml:space="preserve">
+    <value>Aufkl. Panther</value>
+  </data>
+  <data name="Chassis_Auf_Panther_2" xml:space="preserve">
+    <value>Aufkl. Panther verstärkteketten</value>
+  </data>
+  <data name="Chassis_DW_II" xml:space="preserve">
+    <value>D.W.</value>
+  </data>
+  <data name="Chassis_DW_II_2" xml:space="preserve">
+    <value>D.W. 2</value>
+  </data>
+  <data name="Chassis_DickerMax" xml:space="preserve">
+    <value>Dicker Max</value>
+  </data>
+  <data name="Chassis_E-100" xml:space="preserve">
+    <value>E 100</value>
+  </data>
+  <data name="Chassis_E-25" xml:space="preserve">
+    <value>E 25</value>
+  </data>
+  <data name="Chassis_E-50" xml:space="preserve">
+    <value>E 50</value>
+  </data>
+  <data name="Chassis_E-50_2" xml:space="preserve">
+    <value>E 50 verstärkteketten</value>
+  </data>
+  <data name="Chassis_E-75" xml:space="preserve">
+    <value>E 75</value>
+  </data>
+  <data name="Chassis_E-75_2" xml:space="preserve">
+    <value>E 75 verstärkteketten</value>
+  </data>
+  <data name="Chassis_E50_Ausf_M" xml:space="preserve">
+    <value>E 50 Ausf. M</value>
+  </data>
+  <data name="Chassis_G04_PzVI_Tiger_IA" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger Ausf. E</value>
+  </data>
+  <data name="Chassis_G100_Gtraktor_Krupp" xml:space="preserve">
+    <value>Großtraktor - Krupp</value>
+  </data>
+  <data name="Chassis_G101_StuG_III" xml:space="preserve">
+    <value>StuG III Ausf. B</value>
+  </data>
+  <data name="Chassis_G101_StuG_III_2" xml:space="preserve">
+    <value>StuG III Ausf. E</value>
+  </data>
+  <data name="Chassis_G103_RU_251" xml:space="preserve">
+    <value>Spähpanzer Ru 251 PT I</value>
+  </data>
+  <data name="Chassis_G103_RU_251_2" xml:space="preserve">
+    <value>Spähpanzer Ru 251 PT II</value>
+  </data>
+  <data name="Chassis_G104_Stug_IV" xml:space="preserve">
+    <value>StuG IV</value>
+  </data>
+  <data name="Chassis_G105_T-55_NVA_DDR" xml:space="preserve">
+    <value>T 55A</value>
+  </data>
+  <data name="Chassis_G106_PzKpfwPanther_AusfF" xml:space="preserve">
+    <value>Panther mit 8,8 cm Kw.K. 43 L/71</value>
+  </data>
+  <data name="Chassis_G106_PzKpfwPanther_AusfF_short" xml:space="preserve">
+    <value>Panther mit
+8,8 cm Kw.K. 43 L/71</value>
+  </data>
+  <data name="Chassis_G107_PzKpfwIII_AusfK" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. K</value>
+  </data>
+  <data name="Chassis_G108_PzKpfwII_AusfD" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. D</value>
+  </data>
+  <data name="Chassis_G109_Steyr_WT" xml:space="preserve">
+    <value>Krupp-Steyr Waffenträger</value>
+  </data>
+  <data name="Chassis_GW_Elefant" xml:space="preserve">
+    <value>G.W. Tiger (P)</value>
+  </data>
+  <data name="Chassis_GW_Elefant_2" xml:space="preserve">
+    <value>G.W. Tiger (P) verstärkteketten</value>
+  </data>
+  <data name="Chassis_GW_Mk_IVe" xml:space="preserve">
+    <value>Light Tank Mk. VIB</value>
+  </data>
+  <data name="Chassis_GW_Mk_IVe_2" xml:space="preserve">
+    <value>G.Pz. Mk. VI (e)</value>
+  </data>
+  <data name="Chassis_GW_Mk_IVe_2_short" xml:space="preserve">
+    <value>G.Pz. Mk. VI (e)</value>
+  </data>
+  <data name="Chassis_GW_Mk_IVe_short" xml:space="preserve">
+    <value>Light Tank Mk. VIB</value>
+  </data>
+  <data name="Chassis_G_E" xml:space="preserve">
+    <value>G.W. E 100</value>
+  </data>
+  <data name="Chassis_G_Panther_1" xml:space="preserve">
+    <value>G.W. Panther</value>
+  </data>
+  <data name="Chassis_G_Panther_2" xml:space="preserve">
+    <value>G.W. Panther verstärkteketten</value>
+  </data>
+  <data name="Chassis_G_Tiger" xml:space="preserve">
+    <value>G.W. Tiger</value>
+  </data>
+  <data name="Chassis_G_Tiger2" xml:space="preserve">
+    <value>G.W. Tiger verstärkteketten</value>
+  </data>
+  <data name="Chassis_G_Tiger2_short" xml:space="preserve">
+    <value>G.W. Tiger
+verstärkteketten</value>
+  </data>
+  <data name="Chassis_G_Tiger_short" xml:space="preserve">
+    <value>G.W. Tiger</value>
+  </data>
+  <data name="Chassis_Indien_Panzer" xml:space="preserve">
+    <value>B-PS 102</value>
+  </data>
+  <data name="Chassis_Indien_Panzer_2" xml:space="preserve">
+    <value>Indien-Panzer</value>
+  </data>
+  <data name="Chassis_JagdPantherII" xml:space="preserve">
+    <value>Jagdpanther II</value>
+  </data>
+  <data name="Chassis_JagdPantherII_2" xml:space="preserve">
+    <value>Jagdpanther II verstärkteketten</value>
+  </data>
+  <data name="Chassis_JagdPz_E100" xml:space="preserve">
+    <value>Jagdpanzer E 100</value>
+  </data>
+  <data name="Chassis_JagdTiger_SdKfz_185" xml:space="preserve">
+    <value>Jagdtiger 8,8</value>
+  </data>
+  <data name="Chassis_Leopard1" xml:space="preserve">
+    <value>Leopard 1</value>
+  </data>
+  <data name="Chassis_Lowe" xml:space="preserve">
+    <value>Löwe</value>
+  </data>
+  <data name="Chassis_Marder_III" xml:space="preserve">
+    <value>Panzerjäger 38 Ausf. H</value>
+  </data>
+  <data name="Chassis_Marder_III_2" xml:space="preserve">
+    <value>Panzerjäger 38 Ausf. M</value>
+  </data>
+  <data name="Chassis_Nashorn" xml:space="preserve">
+    <value>Nashorn</value>
+  </data>
+  <data name="Chassis_Nashorn_2" xml:space="preserve">
+    <value>Nashorn verstärkteketten</value>
+  </data>
+  <data name="Chassis_Panther_II" xml:space="preserve">
+    <value>Panther II</value>
+  </data>
+  <data name="Chassis_Panther_II_2" xml:space="preserve">
+    <value>Panther II verstärkteketten</value>
+  </data>
+  <data name="Chassis_Panther_II_2_short" xml:space="preserve">
+    <value>Panther II
+verstärkteketten</value>
+  </data>
+  <data name="Chassis_Panther_II_short" xml:space="preserve">
+    <value>Panther II</value>
+  </data>
+  <data name="Chassis_Panther_M10" xml:space="preserve">
+    <value>Panther/M10</value>
+  </data>
+  <data name="Chassis_Pro_Ag_A" xml:space="preserve">
+    <value>Leopard Prototyp A1</value>
+  </data>
+  <data name="Chassis_Pro_Ag_A_2" xml:space="preserve">
+    <value>Leopard Prototyp A2</value>
+  </data>
+  <data name="Chassis_Pz38_NA_1" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) n.A.</value>
+  </data>
+  <data name="Chassis_Pz38_NA_1_short" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) n.A.</value>
+  </data>
+  <data name="Chassis_Pz38_NA_2" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) n.A. verstärkteketten</value>
+  </data>
+  <data name="Chassis_Pz38_NA_2_short" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) n.A.
+verstärkteketten</value>
+  </data>
+  <data name="Chassis_PzI" xml:space="preserve">
+    <value>Pz.Kpfw. I Ausf. A</value>
+  </data>
+  <data name="Chassis_PzIV_Hydro" xml:space="preserve">
+    <value>Pz.Kpfw. IV hydrostatischer</value>
+  </data>
+  <data name="Chassis_PzI_2" xml:space="preserve">
+    <value>Pz.Kpfw. I Ausf. B</value>
+  </data>
+  <data name="Chassis_PzI_ausf_C" xml:space="preserve">
+    <value>VK 6.01</value>
+  </data>
+  <data name="Chassis_PzI_ausf_C_2" xml:space="preserve">
+    <value>VK 6.02</value>
+  </data>
+  <data name="Chassis_PzVI_Tiger_P" xml:space="preserve">
+    <value>Tiger (P)</value>
+  </data>
+  <data name="Chassis_PzVI_Tiger_P_2" xml:space="preserve">
+    <value>Tiger (P) verstärkteketten</value>
+  </data>
+  <data name="Chassis_PzVI_Tiger_P_2_short" xml:space="preserve">
+    <value>Tiger (P)
+verstärkteketten</value>
+  </data>
+  <data name="Chassis_PzVI_Tiger_P_short" xml:space="preserve">
+    <value>Tiger (P)</value>
+  </data>
+  <data name="Chassis_Pz_II_AusfG" xml:space="preserve">
+    <value>VK 9.01</value>
+  </data>
+  <data name="Chassis_Pz_II_AusfG_2" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. G</value>
+  </data>
+  <data name="Chassis_Pz_IV_AusfA" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. A</value>
+  </data>
+  <data name="Chassis_Pz_IV_AusfA_2" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. B</value>
+  </data>
+  <data name="Chassis_Pz_IV_AusfD" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. C</value>
+  </data>
+  <data name="Chassis_Pz_IV_AusfD_2" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. D</value>
+  </data>
+  <data name="Chassis_Pz_IV_AusfH" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. G</value>
+  </data>
+  <data name="Chassis_Pz_IV_AusfH_2" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. H</value>
+  </data>
+  <data name="Chassis_Pz_Sfl_IVb" xml:space="preserve">
+    <value>Pz.Sfl. IVb</value>
+  </data>
+  <data name="Chassis_Pz_Sfl_IVb_2" xml:space="preserve">
+    <value>Pz.Sfl. IVb3</value>
+  </data>
+  <data name="Chassis_Pz_Sfl_IVc" xml:space="preserve">
+    <value>Pz.Sfl. IVc</value>
+  </data>
+  <data name="Chassis_Pz_Sfl_IVc_2" xml:space="preserve">
+    <value>Pz.Sfl. IVc verstärkteketten</value>
+  </data>
+  <data name="Chassis_RhB_Waffentrager" xml:space="preserve">
+    <value>Rhm.-B. WT</value>
+  </data>
+  <data name="Chassis_RhB_Waffentrager_2" xml:space="preserve">
+    <value>Rhm.-B. WT verstärkteketten</value>
+  </data>
+  <data name="Chassis_Sturer_Emil" xml:space="preserve">
+    <value>Schwere Betonknacker</value>
+  </data>
+  <data name="Chassis_Sturer_Emil_2" xml:space="preserve">
+    <value>Pz.Sfl. für 12.8 cm K. 40</value>
+  </data>
+  <data name="Chassis_T-15" xml:space="preserve">
+    <value>T-15</value>
+  </data>
+  <data name="Chassis_T-25" xml:space="preserve">
+    <value>T-25</value>
+  </data>
+  <data name="Chassis_VK2001DB" xml:space="preserve">
+    <value>VK 20.01 (III)</value>
+  </data>
+  <data name="Chassis_VK2001DB_2" xml:space="preserve">
+    <value>VK 20.01 (D)</value>
+  </data>
+  <data name="Chassis_VK2801" xml:space="preserve">
+    <value>VK 28.01</value>
+  </data>
+  <data name="Chassis_VK2801_2" xml:space="preserve">
+    <value>VK 28.01 verstärkteketten</value>
+  </data>
+  <data name="Chassis_VK2801_2_short" xml:space="preserve">
+    <value>VK 28.01
+verstärkteketten</value>
+  </data>
+  <data name="Chassis_VK2801_short" xml:space="preserve">
+    <value>VK 28.01</value>
+  </data>
+  <data name="Chassis_VK3002DB_V1" xml:space="preserve">
+    <value>VK 30.01 (D)</value>
+  </data>
+  <data name="Chassis_VK3002DB_V1_2" xml:space="preserve">
+    <value>VK 30.01 (D) verstärkteketten</value>
+  </data>
+  <data name="Chassis_VK3002M" xml:space="preserve">
+    <value>VK 30.02 (M)</value>
+  </data>
+  <data name="Chassis_VK3002M_2" xml:space="preserve">
+    <value>VK 30.02 Ausf. A</value>
+  </data>
+  <data name="Chassis_VK4502A" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A</value>
+  </data>
+  <data name="Chassis_VK4502A_2" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A verstärkteketten</value>
+  </data>
+  <data name="Chassis_VK4502A_2_short" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A
+verstärkteketten</value>
+  </data>
+  <data name="Chassis_VK4502A_short" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A</value>
+  </data>
+  <data name="Chassis_VK7201" xml:space="preserve">
+    <value>VK 72.01 (K)</value>
+  </data>
+  <data name="Chassis_Waffentrager_E100" xml:space="preserve">
+    <value>Waffenträger auf E 100</value>
+  </data>
+  <data name="Chassis_Waffentrager_IV" xml:space="preserve">
+    <value>Waffenträger auf Pz. IV für 12.8 cm</value>
+  </data>
+  <data name="Chassis_Waffentrager_IV_2" xml:space="preserve">
+    <value>Waffenträger auf Pz. IV für 15 cm</value>
+  </data>
+  <data name="DW_II" xml:space="preserve">
+    <value>Durchbruchswagen 2</value>
+  </data>
+  <data name="DW_II_descr" xml:space="preserve">
+    <value>Prototype of a heavy tank, developed by the Henschel und Sohn company. The prototype was built in 1938. In September 1939 the VK 30.01 project was preferred, and the DW program was canceled. However, the DW I and DW II prototypes were used for various trials until 1941.</value>
+  </data>
+  <data name="DW_II_short" xml:space="preserve">
+    <value>D.W. 2</value>
+  </data>
+  <data name="Daimler-Benz_DB-603A2" xml:space="preserve">
+    <value>MB 507</value>
+  </data>
+  <data name="Daimler-Benz_DB-603A2_short" xml:space="preserve">
+    <value>MB 507</value>
+  </data>
+  <data name="Daimler-Benz_MB-809" xml:space="preserve">
+    <value>Daimler-Benz MB 809</value>
+  </data>
+  <data name="Daimler-Benz_MB-809_short" xml:space="preserve">
+    <value>MB 809</value>
+  </data>
+  <data name="DickerMax" xml:space="preserve">
+    <value>Dicker Max</value>
+  </data>
+  <data name="DickerMax_descr" xml:space="preserve">
+    <value>The Dicker Max ("Fat Max") was initially intended to destroy bunkers. Two prototypes were built in the spring of 1941. Later the vehicle was redesignated a heavy tank destroyer. The design was never put into mass production, but the prototypes fought on the Eastern Front.</value>
+  </data>
+  <data name="DickerMax_short" xml:space="preserve">
+    <value>Dicker Max</value>
+  </data>
+  <data name="Die_Signalfahnen" xml:space="preserve">
+    <value>Signal Flags</value>
+  </data>
+  <data name="E-100" xml:space="preserve">
+    <value>E 100</value>
+  </data>
+  <data name="E-100_descr" xml:space="preserve">
+    <value>In June 1943 the Adlerwerke company received an order for development of the E-100. However, in 1944 development of heavy tanks was discontinued. By the end of the war only the chassis was completed, which was later captured by the British Army.</value>
+  </data>
+  <data name="E-100_short" xml:space="preserve">
+    <value>E 100</value>
+  </data>
+  <data name="E-25" xml:space="preserve">
+    <value>E 25</value>
+  </data>
+  <data name="E-25_descr" xml:space="preserve">
+    <value>The development of the E-25 was a part of the "E" program, supervised by the Waffenprüfamt 6 committee. The E-25 was developed by the Argus company (Karlsruhe, Germany) under the supervision of Dr. Herman Klaue. No prototypes were manufactured.</value>
+  </data>
+  <data name="E-50" xml:space="preserve">
+    <value>E 50</value>
+  </data>
+  <data name="E-50_descr" xml:space="preserve">
+    <value>In 1945 the E-50 was conceived as a standard medium tank of the Panzerwaffe to replace the Panther and Panther II. It existed only in blueprints.</value>
+  </data>
+  <data name="E-50_short" xml:space="preserve">
+    <value>E 50</value>
+  </data>
+  <data name="E-75" xml:space="preserve">
+    <value>E 75</value>
+  </data>
+  <data name="E-75_descr" xml:space="preserve">
+    <value>In 1945 the E-75 was conceived as a standard heavy tank of the Panzerwaffe to replace the Tiger II. It existed only in blueprints.</value>
+  </data>
+  <data name="E-75_short" xml:space="preserve">
+    <value>E 75</value>
+  </data>
+  <data name="E50_Ausf_M" xml:space="preserve">
+    <value>E 50 Ausf. M</value>
+  </data>
+  <data name="E50_Ausf_M_descr" xml:space="preserve">
+    <value>The German Army demanded that the E-series tanks had transmissions positioned in the rear portion of the hull. However, the E-50 and E-75 tanks used the Tiger II engine-transmission compartment, which made rear placement of the transmission impossible. The E-50 Ausf. M tank was a redesign of the E-50 project with a rear placement of the transmission.</value>
+  </data>
+  <data name="E50_Ausf_M_short" xml:space="preserve">
+    <value>E 50 M</value>
+  </data>
+  <data name="Ferdinand" xml:space="preserve">
+    <value>Ferdinand</value>
+  </data>
+  <data name="Ferdinand_descr" xml:space="preserve">
+    <value>Developed on the basis of the Porsche Tiger, with a total of 90 vehicles produced in April and May 1943. They first saw combat in the Battle of Kursk (Operation Citadel).</value>
+  </data>
+  <data name="Ferdinandstandardketten" xml:space="preserve">
+    <value>Ferdinand</value>
+  </data>
+  <data name="Ferdinandstandardketten_short" xml:space="preserve">
+    <value>Ferdinand</value>
+  </data>
+  <data name="Ferdinandturm" xml:space="preserve">
+    <value>Ferdinand</value>
+  </data>
+  <data name="Ferdinandvetstaerktketten" xml:space="preserve">
+    <value>Elefant</value>
+  </data>
+  <data name="Ferdinandvetstaerktketten_short" xml:space="preserve">
+    <value>Elefant</value>
+  </data>
+  <data name="FuG10" xml:space="preserve">
+    <value>FuG 10</value>
+  </data>
+  <data name="FuG11" xml:space="preserve">
+    <value>FuG 11</value>
+  </data>
+  <data name="FuG12" xml:space="preserve">
+    <value>FuG 12</value>
+  </data>
+  <data name="FuG12A" xml:space="preserve">
+    <value>FuG 12 A</value>
+  </data>
+  <data name="FuG16" xml:space="preserve">
+    <value>Fu 16</value>
+  </data>
+  <data name="FuG2" xml:space="preserve">
+    <value>FuG 2</value>
+  </data>
+  <data name="FuG37" xml:space="preserve">
+    <value>FuG 37</value>
+  </data>
+  <data name="FuG5" xml:space="preserve">
+    <value>FuG 5</value>
+  </data>
+  <data name="FuG5A" xml:space="preserve">
+    <value>FuG5 mit 20 WS.E.</value>
+  </data>
+  <data name="FuG6" xml:space="preserve">
+    <value>FuG 6</value>
+  </data>
+  <data name="FuG7" xml:space="preserve">
+    <value>FuG 7</value>
+  </data>
+  <data name="FuG7A" xml:space="preserve">
+    <value>FuG 7 Ausf. F</value>
+  </data>
+  <data name="FuG8" xml:space="preserve">
+    <value>FuG 8</value>
+  </data>
+  <data name="FuG8_1" xml:space="preserve">
+    <value>Fu 8</value>
+  </data>
+  <data name="FuG8f" xml:space="preserve">
+    <value>FuG 8 (f)</value>
+  </data>
+  <data name="FuG_F" xml:space="preserve">
+    <value>Fu.Spr.Ger. "f"</value>
+  </data>
+  <data name="FuG_Spr.1" xml:space="preserve">
+    <value>FuG Spr. 1</value>
+  </data>
+  <data name="FuG_Spr.A" xml:space="preserve">
+    <value>Fu.Spr.Ger. "a"</value>
+  </data>
+  <data name="G04_PzVI_Tiger_IA" xml:space="preserve">
+    <value>Tiger I L/56</value>
+  </data>
+  <data name="G04_PzVI_Tiger_IA_descr" xml:space="preserve">
+    <value>Development of the Tiger I was started in 1937 by the Henschel company. Mass production began in 1942, with an eventual total of 1,354 vehicles manufactured. The tank first saw combat in the fighting for Leningrad, and Tigers were at the forefront of battles from Tunisia to Kursk. Although production was discontinued in the summer of 1944, the Tiger I continued to see action until the end of the war.</value>
+  </data>
+  <data name="G04_PzVI_Tiger_IA_short" xml:space="preserve">
+    <value>Tiger I L/56</value>
+  </data>
+  <data name="G100_Gtraktor_Krupp" xml:space="preserve">
+    <value>Großtraktor - Krupp</value>
+  </data>
+  <data name="G100_Gtraktor_Krupp_descr" xml:space="preserve">
+    <value>This experimental combat vehicle was developed by the Krupp company as a medium tank. By 1929, two prototypes were manufactured from non-armor steel. They underwent trials in the Soviet Union from 1930 through 1933. The trials revealed multiple faults, and the vehicle never saw service. However, the results of vehicle development were later used by German engineers.</value>
+  </data>
+  <data name="G100_Gtraktor_Krupp_short" xml:space="preserve">
+    <value>Gr.Tr.</value>
+  </data>
+  <data name="G101_StuG_III" xml:space="preserve">
+    <value>StuG III Ausf. B</value>
+  </data>
+  <data name="G101_StuG_III_descr" xml:space="preserve">
+    <value>In 1935, Erich von Manstein of the German Army General Staff, in a letter to General Ludwig Beck, described the idea of building assault artillery to support attacking infantry units. Five prototypes of the "zero" series were manufactured in 1937. Early modifications from Ausf.A to Ausf.F/8 were produced until December 1942.</value>
+  </data>
+  <data name="G101_StuG_III_short" xml:space="preserve">
+    <value>StuG III B</value>
+  </data>
+  <data name="G103_RU_251" xml:space="preserve">
+    <value>Spähpanzer Ru 251</value>
+  </data>
+  <data name="G103_RU_251_descr" xml:space="preserve">
+    <value>The vehicle was developed on the basis of the Kanonenjagdpanzer 4-5 tank destroyer by the Henschel company in 1964. The tank was planned to replace the obsolete M41 Walker Bulldog vehicles used by the reconnaissance battalions of the armored divisions in the German Army. The tank never saw mass production, but some technical innovations were applied later in the development of other vehicles. The total number of prototypes built is unknown.</value>
+  </data>
+  <data name="G103_RU_251_short" xml:space="preserve">
+    <value>Ru 251</value>
+  </data>
+  <data name="G104_Stug_IV" xml:space="preserve">
+    <value>StuG IV</value>
+  </data>
+  <data name="G104_Stug_IV_descr" xml:space="preserve">
+    <value>In February 1943, at the suggestion of the Ministry of Armament, the Krupp company began trials of a new vehicle with the superstructure of the updated StuG III and the new suspension of the Pz.Kpfw. IV H and J. The first vehicles were produced by December 1943. Having canceled the production of the Pz. IV, the Krupp company focused their attention on the production of the new vehicles starting in January 1944. A total of 1,108 vehicles were manufactured, with 31 more converted from existing tanks.</value>
+  </data>
+  <data name="G104_Stug_IV_short" xml:space="preserve">
+    <value>StuG IV</value>
+  </data>
+  <data name="G105_T-55_NVA_DDR" xml:space="preserve">
+    <value>T 55A</value>
+  </data>
+  <data name="G105_T-55_NVA_DDR_descr" xml:space="preserve">
+    <value>An upgraded version of the T-55 tank. The T-55A had a higher level of nuclear protection and no bow machinegun. From 1962 through 1970, about 1,800 of the T-55 and T-55A tanks were supplied to East Germany by the U.S.S.R.</value>
+  </data>
+  <data name="G105_T-55_NVA_DDR_short" xml:space="preserve">
+    <value>T 55A</value>
+  </data>
+  <data name="G106_PzKpfwPanther_AusfF" xml:space="preserve">
+    <value>Panther mit 8,8 cm L/71</value>
+  </data>
+  <data name="G106_PzKpfwPanther_AusfF_descr" xml:space="preserve">
+    <value>Development of a modification of the Panther started in the spring of 1944. The new variant was to incorporate a newly designed Schmalturm turret. The new vehicle was designated the Panther Ausf. F. On January 23,1945, it was reported that the 88-mm gun of the Tiger was being mounted on the upgraded version of the new turret. A large number of hulls for the vehicle were manufactured, but the turret never saw production and existed only as a wooden model.</value>
+  </data>
+  <data name="G106_PzKpfwPanther_AusfF_short" xml:space="preserve">
+    <value>Panther 8,8</value>
+  </data>
+  <data name="G107_PzKpfwIII_AusfK" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. K</value>
+  </data>
+  <data name="G107_PzKpfwIII_AusfK_descr" xml:space="preserve">
+    <value>This tank was developed on the basis of the later Pz.Kpfw.III Ausf. J chassis, combining it with the Pz.Kpfw.IV Ausf. F2 turret and a 75-mm gun. The first design plans were completed by the end of December 1941. Manufacturing began, but the vehicle proved overly complex and production was soon canceled. A total of 50 vehicles were completed and used as command vehicles. They featured 50-mm guns; the 75-mm guns were never mounted.</value>
+  </data>
+  <data name="G107_PzKpfwIII_AusfK_short" xml:space="preserve">
+    <value>Pz. III K</value>
+  </data>
+  <data name="G108_PzKpfwII_AusfD" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. D</value>
+  </data>
+  <data name="G108_PzKpfwII_AusfD_descr" xml:space="preserve">
+    <value>A high-speed modification of the Pz. II intended for light divisions formed from the cavalry. The Pz.Kpfw.II Ausf. D tank had a completely new hull and suspension. The turret and guns were taken from the Ausf. C. version. The suspension had eight large-diameter paired wheels with individual torsion bars and no support rollers. The tanks with enhanced suspension elements including new drive and idler wheels were designated Ausf. E. According to various sources, about 200–250 vehicles of the D and E modifications were manufactured.</value>
+  </data>
+  <data name="G108_PzKpfwII_AusfD_short" xml:space="preserve">
+    <value>Pz. II D</value>
+  </data>
+  <data name="G109_Steyr_WT" xml:space="preserve">
+    <value>Krupp-Steyr Waffenträger</value>
+  </data>
+  <data name="G109_Steyr_WT_descr" xml:space="preserve">
+    <value>A vehicle project by Steyr as a special artillery transporter that would be able not only to transport the gun but also to fire it from the chassis. To keep costs down and reduce complexity, the design used many components of the Raupenschlepper Ost, a tracked artillery mover. The turret and gun were supplied by Krupp. One wooden model and one prototype were manufactured by September 2, 1944.</value>
+  </data>
+  <data name="G109_Steyr_WT_short" xml:space="preserve">
+    <value>Steyr WT</value>
+  </data>
+  <data name="G20_Marder_II" xml:space="preserve">
+    <value>Marder II</value>
+  </data>
+  <data name="G20_Marder_II_descr" xml:space="preserve">
+    <value>A total of 576 of these vehicles were built from June 1942 through June 1943. In addition, 75 PzKpfw II were converted to Marder II in 1944. These tank destroyers fought on all fronts until the end of the war.</value>
+  </data>
+  <data name="G20_Marder_II_short" xml:space="preserve">
+    <value>Marder II</value>
+  </data>
+  <data name="GW_Mk_VIe" xml:space="preserve">
+    <value>G.Pz. Mk. VI (e)</value>
+  </data>
+  <data name="GW_Mk_VIe_descr" xml:space="preserve">
+    <value>In 1940, German forces captured approximately twenty British Mk. VI tanks. The captured vehicles were used for training purposes until the fall of 1942. In November it was decided to develop a self-propelled gun on the basis of the captured Mk. VI. In 1942, modifications with a 105- and 150-mm field howitzer were developed. All these SPGs were lost in the defense of France in the summer and fall of 1944.</value>
+  </data>
+  <data name="GW_Mk_VIe_short" xml:space="preserve">
+    <value>G.Pz. Mk. VI</value>
+  </data>
+  <data name="GW_Tiger_P" xml:space="preserve">
+    <value>G.W. Tiger (P)</value>
+  </data>
+  <data name="GW_Tiger_P_descr" xml:space="preserve">
+    <value>Conceptualization of a heavy SPG mounted on an elongated Porsche Tiger chassis. It is known that Ferdinand Porsche intended to develop the SPG; however, the work was never started.</value>
+  </data>
+  <data name="GW_Tiger_P_short" xml:space="preserve">
+    <value>G.W. Tiger P</value>
+  </data>
+  <data name="G_E" xml:space="preserve">
+    <value>G.W. E 100</value>
+  </data>
+  <data name="G_E_descr" xml:space="preserve">
+    <value>Development of this heavy SPG on the E-100 chassis started at the end of 1943, but it was never completed. No prototypes were ever manufactured and the vehicle did not undergo any trials.</value>
+  </data>
+  <data name="G_E_short" xml:space="preserve">
+    <value>G.W. E 100</value>
+  </data>
+  <data name="G_Panther" xml:space="preserve">
+    <value>G.W. Panther</value>
+  </data>
+  <data name="G_Panther_descr" xml:space="preserve">
+    <value>Developed by the Krupp company in 1943 and 1944. A scale model of the SPG was built, but no full-size prototypes were ever produced.</value>
+  </data>
+  <data name="G_Panther_short" xml:space="preserve">
+    <value>G.W. Panther</value>
+  </data>
+  <data name="G_Tiger" xml:space="preserve">
+    <value>G.W. Tiger</value>
+  </data>
+  <data name="G_Tiger_descr" xml:space="preserve">
+    <value>The decision to build this heavy artillery system came in June 1942. In January 1943 a suspension based on that of the Tiger II was ordered. The first prototype underwent trials at the very end of the war. The vehicle never saw service.</value>
+  </data>
+  <data name="G_Tiger_short" xml:space="preserve">
+    <value>G.W. Tiger</value>
+  </data>
+  <data name="Grille" xml:space="preserve">
+    <value>Grille</value>
+  </data>
+  <data name="Grille_descr" xml:space="preserve">
+    <value>Manufactured on the PzKpfw 38(t) chassis from 1943 through 1944, with several interruptions in production and a total of 282 vehicles completed.</value>
+  </data>
+  <data name="Grille_mod_1" xml:space="preserve">
+    <value>Grille</value>
+  </data>
+  <data name="Grille_short" xml:space="preserve">
+    <value>Grille</value>
+  </data>
+  <data name="Grilleketten_ausf_A" xml:space="preserve">
+    <value>Grille</value>
+  </data>
+  <data name="Grilleketten_ausf_B" xml:space="preserve">
+    <value>Grille verstärkteketten</value>
+  </data>
+  <data name="H35ketten" xml:space="preserve">
+    <value>Pz.Kpfw. 38H 735 (f)</value>
+  </data>
+  <data name="H39_captured" xml:space="preserve">
+    <value>Pz.Kpfw. 38H 735 (f)</value>
+  </data>
+  <data name="H39_captured_descr" xml:space="preserve">
+    <value>In May 1940 the French Army had more than 800 vehicles of this type, most of which were captured by the German forces. They were widely used by the Wehrmacht to supplement existing armor.</value>
+  </data>
+  <data name="H39_captured_short" xml:space="preserve">
+    <value>Pz. 38H</value>
+  </data>
+  <data name="H39turm" xml:space="preserve">
+    <value>Pz.Kpfw. 38H 735 (f)</value>
+  </data>
+  <data name="Hetzer" xml:space="preserve">
+    <value>Hetzer</value>
+  </data>
+  <data name="Hetzer_0" xml:space="preserve">
+    <value>Jagdpanzer 38 (t)</value>
+  </data>
+  <data name="Hetzer_Ausf_A" xml:space="preserve">
+    <value>Jagdpanzer 38 (t)</value>
+  </data>
+  <data name="Hetzer_Ausf_B" xml:space="preserve">
+    <value>Jagdpanzer 38 (t) verstärkteketten</value>
+  </data>
+  <data name="Hetzer_descr" xml:space="preserve">
+    <value>A light, low-profile tank destroyer designed according to General Heinz Guderian's specifications. The Hetzer was produced from April 1944 to May 1945, with a total of 2,584 vehicles manufactured.</value>
+  </data>
+  <data name="Hetzer_short" xml:space="preserve">
+    <value>Hetzer</value>
+  </data>
+  <data name="Hotchkiss" xml:space="preserve">
+    <value>Hotchkiss</value>
+  </data>
+  <data name="Hummel" xml:space="preserve">
+    <value>Hummel</value>
+  </data>
+  <data name="Hummel_0" xml:space="preserve">
+    <value>Hummel</value>
+  </data>
+  <data name="Hummel_Ausf_1943" xml:space="preserve">
+    <value>Hummel</value>
+  </data>
+  <data name="Hummel_Ausf_1944" xml:space="preserve">
+    <value>Hummel verstärkteketten</value>
+  </data>
+  <data name="Hummel_descr" xml:space="preserve">
+    <value>Produced from 1943 through 1944, with a total of 666 vehicles manufactured. They first saw combat in the Battle of Kursk (Operation Citadel).</value>
+  </data>
+  <data name="Hummel_short" xml:space="preserve">
+    <value>Hummel</value>
+  </data>
+  <data name="Indien_Panzer" xml:space="preserve">
+    <value>Indien-Panzer</value>
+  </data>
+  <data name="Indien_Panzer_descr" xml:space="preserve">
+    <value>The project was developed as a medium tank for the Indian Army. The work on the project was carried out by Porsche, Daimler-Benz, and Zahnradfabrik AG of Friedrichshafen. However, the vehicle was deemed to be too complicated for production in India, and the project was canceled.</value>
+  </data>
+  <data name="Indien_Panzer_short" xml:space="preserve">
+    <value>Indien-Pz.</value>
+  </data>
+  <data name="JagdPanther" xml:space="preserve">
+    <value>Jagdpanther</value>
+  </data>
+  <data name="JagdPantherII" xml:space="preserve">
+    <value>Jagdpanther II</value>
+  </data>
+  <data name="JagdPantherII_descr" xml:space="preserve">
+    <value>Developed on the basis of the Panther II. The vehicle was to be equipped with a 128 mm gun, with the fighting compartment to be located in the rear. Existed only in blueprints.</value>
+  </data>
+  <data name="JagdPantherII_short" xml:space="preserve">
+    <value>JPanther II</value>
+  </data>
+  <data name="JagdPanther_descr" xml:space="preserve">
+    <value>Development of this tank destroyer, based on the chassis of the new VK 30.02 (MAN) tank, began in 1942. In October 1943, the prototype trials were started. A total of 392 vehicles were manufactured.</value>
+  </data>
+  <data name="JagdPanther_short" xml:space="preserve">
+    <value>JPanther</value>
+  </data>
+  <data name="JagdPzIV" xml:space="preserve">
+    <value>Jagdpanzer IV</value>
+  </data>
+  <data name="JagdPzIV_0" xml:space="preserve">
+    <value>Jagdpanzer IV</value>
+  </data>
+  <data name="JagdPzIV_Ausf_1940" xml:space="preserve">
+    <value>Jagdpanzer IV 0-Serie</value>
+  </data>
+  <data name="JagdPzIV_Ausf_1943" xml:space="preserve">
+    <value>Jagdpanzer IV</value>
+  </data>
+  <data name="JagdPzIV_descr" xml:space="preserve">
+    <value>Produced from January 1944 through March 1945, with a total of 1,699 tank destroyers manufactured. They saw combat on all fronts.</value>
+  </data>
+  <data name="JagdPzIV_short" xml:space="preserve">
+    <value>Jg.Pz. IV</value>
+  </data>
+  <data name="JagdPz_E100" xml:space="preserve">
+    <value>Jagdpanzer E 100</value>
+  </data>
+  <data name="JagdPz_E100_descr" xml:space="preserve">
+    <value>The E-100 was conceived as the basis for a self-propelled gun, an antiaircraft vehicle, and a tank destroyer. However, the development was never started.</value>
+  </data>
+  <data name="JagdPz_E100_short" xml:space="preserve">
+    <value>Jg.Pz. E 100</value>
+  </data>
+  <data name="JagdTiger" xml:space="preserve">
+    <value>Jagdtiger</value>
+  </data>
+  <data name="JagdTiger_SdKfz_185" xml:space="preserve">
+    <value>8,8 cm Pak 43 Jagdtiger</value>
+  </data>
+  <data name="JagdTiger_SdKfz_185_descr" xml:space="preserve">
+    <value>In 1945, the production order for the Jagdtiger was increased, and the supply of compatible guns became insufficient. As a result, approximately 20 vehicles were equipped with the 8,8 cm PaK 43 L/71 gun.</value>
+  </data>
+  <data name="JagdTiger_SdKfz_185_short" xml:space="preserve">
+    <value>JgTig.8,8 cm</value>
+  </data>
+  <data name="JagdTiger_Standardketten" xml:space="preserve">
+    <value>Jagdtiger</value>
+  </data>
+  <data name="JagdTiger_Standardketten_short" xml:space="preserve">
+    <value>Jagdtiger</value>
+  </data>
+  <data name="JagdTiger_Vetstaerktketten" xml:space="preserve">
+    <value>Jagdtiger verstärkteketten</value>
+  </data>
+  <data name="JagdTiger_Vetstaerktketten_short" xml:space="preserve">
+    <value>Jagdtiger verstärkteketten</value>
+  </data>
+  <data name="JagdTiger_descr" xml:space="preserve">
+    <value>Developed from the fall of 1943 through the spring of 1944. Mass-produced from July 1944 until the end of the war, with a total of almost 80 vehicles manufactured. They fought primarily on the Western Front.</value>
+  </data>
+  <data name="JagdTiger_turm" xml:space="preserve">
+    <value>Jagdtiger</value>
+  </data>
+  <data name="JgPzPanther" xml:space="preserve">
+    <value>Jagdpanther</value>
+  </data>
+  <data name="JgPzV_Standardketten" xml:space="preserve">
+    <value>Jagdpanther</value>
+  </data>
+  <data name="JgPzV_Vetstaerktketten" xml:space="preserve">
+    <value>Jagdpanther verstärkteketten</value>
+  </data>
+  <data name="Krupp_M301" xml:space="preserve">
+    <value>Krupp M301</value>
+  </data>
+  <data name="Krupp_M305" xml:space="preserve">
+    <value>Krupp M305</value>
+  </data>
+  <data name="Krupp_M311" xml:space="preserve">
+    <value>Krupp M311</value>
+  </data>
+  <data name="LT-40_turm" xml:space="preserve">
+    <value>LT vz. 40</value>
+  </data>
+  <data name="Leichtertaktorketten" xml:space="preserve">
+    <value>Leichttraktor</value>
+  </data>
+  <data name="LeichtertaktorkettenB" xml:space="preserve">
+    <value>Leichttraktor verstärkteketten</value>
+  </data>
+  <data name="Leopard1" xml:space="preserve">
+    <value>Leopard 1</value>
+  </data>
+  <data name="Leopard1_descr" xml:space="preserve">
+    <value>Main battle tank of the Federal Republic of Germany. Development was started in 1956. The first prototypes were built in 1965 at the Krauss-Maffei factory. The Leopard 1 was in service in more than 10 countries.</value>
+  </data>
+  <data name="Leopard1_short" xml:space="preserve">
+    <value>Leopard 1</value>
+  </data>
+  <data name="Leopardketten_Ausf_A" xml:space="preserve">
+    <value>VK 16.02 Leopard</value>
+  </data>
+  <data name="Leopardketten_Ausf_B" xml:space="preserve">
+    <value>VK 16.02 Leopard verstärkteketten</value>
+  </data>
+  <data name="Leopardturm" xml:space="preserve">
+    <value>VK 16.02 Leopard</value>
+  </data>
+  <data name="Lowe" xml:space="preserve">
+    <value>Löwe</value>
+  </data>
+  <data name="Lowe_descr" xml:space="preserve">
+    <value>Development of this 70-ton super-heavy tank started on November 1, 1941. In February 1942, the Krupp company suggested the VK 70.01 avant project, later designated the Löwe ("Lion"). Several designs, varying in configuration, armament, and armor, were drafted. However, the project was canceled after the Führer made the decision to develop even heavier tanks. No prototypes were ever built.</value>
+  </data>
+  <data name="Ltraktor" xml:space="preserve">
+    <value>Leichttraktor</value>
+  </data>
+  <data name="Ltraktor_descr" xml:space="preserve">
+    <value>Produced from 1930 to 1934. Four prototypes with different armament, crew, weight, and suspension features were manufactured.</value>
+  </data>
+  <data name="Ltraktor_short" xml:space="preserve">
+    <value>L.Tr.</value>
+  </data>
+  <data name="Luchsketten_Ausf_A" xml:space="preserve">
+    <value>Luchs</value>
+  </data>
+  <data name="Luchsketten_Ausf_B" xml:space="preserve">
+    <value>Luchs verstärkteketten</value>
+  </data>
+  <data name="MB-503" xml:space="preserve">
+    <value>Daimler-Benz MB 503</value>
+  </data>
+  <data name="MB-503_short" xml:space="preserve">
+    <value>MB 503</value>
+  </data>
+  <data name="MB-837" xml:space="preserve">
+    <value>MTU MB 837</value>
+  </data>
+  <data name="MB-837-Aa" xml:space="preserve">
+    <value>MB 837 Aa</value>
+  </data>
+  <data name="MB-837-Ea-600" xml:space="preserve">
+    <value>MB 837 Ea 600</value>
+  </data>
+  <data name="MB-837A" xml:space="preserve">
+    <value>MTU MB 837 A</value>
+  </data>
+  <data name="MB-837A_short" xml:space="preserve">
+    <value>MB 837 A</value>
+  </data>
+  <data name="MB-838_CAM-500" xml:space="preserve">
+    <value>MTU MB 838 CaM 500</value>
+  </data>
+  <data name="MB-838_CAM-500_1" xml:space="preserve">
+    <value>MTU MB 838 CaM 500A</value>
+  </data>
+  <data name="MB-838_CAM-500_1_short" xml:space="preserve">
+    <value>MB 838 CaM 500A</value>
+  </data>
+  <data name="MB-838_CAM-500_short" xml:space="preserve">
+    <value>MB 838 CaM 500</value>
+  </data>
+  <data name="MB507" xml:space="preserve">
+    <value>DB 603 A2</value>
+  </data>
+  <data name="MB517" xml:space="preserve">
+    <value>MB 517</value>
+  </data>
+  <data name="MarderII" xml:space="preserve">
+    <value>Marder II</value>
+  </data>
+  <data name="MarderII_short" xml:space="preserve">
+    <value>Marder II</value>
+  </data>
+  <data name="MarderIIketten_ausf_B" xml:space="preserve">
+    <value>Marder II verstärkteketten</value>
+  </data>
+  <data name="MarderIIketten_ausf_B_short" xml:space="preserve">
+    <value>Marder II
+verstärkteketten</value>
+  </data>
+  <data name="Marder_III" xml:space="preserve">
+    <value>Marder 38T</value>
+  </data>
+  <data name="Marder_III_descr" xml:space="preserve">
+    <value>Tank destroyer developed on the basis of the PzKpfw 38 (t) tank. Either a PaK 40 or Pak 36(r) gun was mounted in a cabin that was open on the top and at the back. The vehicle entered service at the end of 1942. This tank destroyer was mass-produced until the middle of 1944 and fought until the end of the war.</value>
+  </data>
+  <data name="Marder_III_short" xml:space="preserve">
+    <value>Marder 38T</value>
+  </data>
+  <data name="Marderturm" xml:space="preserve">
+    <value>Marder II</value>
+  </data>
+  <data name="Maus" xml:space="preserve">
+    <value>Maus</value>
+  </data>
+  <data name="Maus_descr" xml:space="preserve">
+    <value>Developed from June 1942 through July 1944, with two prototypes produced, only one of which received a turret and armament.</value>
+  </data>
+  <data name="Maus_short" xml:space="preserve">
+    <value>Maus</value>
+  </data>
+  <data name="Mausketten" xml:space="preserve">
+    <value>Maus</value>
+  </data>
+  <data name="Mausturm" xml:space="preserve">
+    <value>Maus</value>
+  </data>
+  <data name="Maybach_HL100" xml:space="preserve">
+    <value>Maybach HL 100</value>
+  </data>
+  <data name="Maybach_HL45P" xml:space="preserve">
+    <value>Maybach HL 45 P</value>
+  </data>
+  <data name="Maybach_HL57TR" xml:space="preserve">
+    <value>Maybach HL 57 TR</value>
+  </data>
+  <data name="Maybach_HL62TR" xml:space="preserve">
+    <value>Maybach HL 62 TR</value>
+  </data>
+  <data name="Maybach_HL62TRM" xml:space="preserve">
+    <value>Maybach HL 62 TRM</value>
+  </data>
+  <data name="Maybach_HL62TRM_1" xml:space="preserve">
+    <value>Maybach HL 62 TR</value>
+  </data>
+  <data name="Maybach_HL66P" xml:space="preserve">
+    <value>Maybach HL 66 P</value>
+  </data>
+  <data name="Maybach_HL66Px2" xml:space="preserve">
+    <value>2 x Maybach HL 66 P</value>
+  </data>
+  <data name="Maybach_HL90" xml:space="preserve">
+    <value>Maybach HL 90</value>
+  </data>
+  <data name="Maybach_HL_108TR" xml:space="preserve">
+    <value>Maybach HL 108 TR</value>
+  </data>
+  <data name="Maybach_HL_108_TR_R" xml:space="preserve">
+    <value>Maybach HL 108 TR R</value>
+  </data>
+  <data name="Maybach_HL_116" xml:space="preserve">
+    <value>Maybach HL 116</value>
+  </data>
+  <data name="Maybach_HL_116_S" xml:space="preserve">
+    <value>Maybach HL 116 S</value>
+  </data>
+  <data name="Maybach_HL_120_TR" xml:space="preserve">
+    <value>Maybach HL 120 TR</value>
+  </data>
+  <data name="Maybach_HL_120_TRM" xml:space="preserve">
+    <value>Maybach HL 120 TRM</value>
+  </data>
+  <data name="Maybach_HL_120_TRM_112_R" xml:space="preserve">
+    <value>Maybach HL 120 TRM 112 R</value>
+  </data>
+  <data name="Maybach_HL_120_TRM_C" xml:space="preserve">
+    <value>Maybach HL 120 TRM V12</value>
+  </data>
+  <data name="Maybach_HL_120_TRM_R" xml:space="preserve">
+    <value>Maybach HL 120 TRM R</value>
+  </data>
+  <data name="Maybach_HL_120_TRM_x2" xml:space="preserve">
+    <value>2 x Maybach HL 120 TRM</value>
+  </data>
+  <data name="Maybach_HL_120_TR_A" xml:space="preserve">
+    <value>Maybach HL 120 TRM 112</value>
+  </data>
+  <data name="Maybach_HL_120_TR_R" xml:space="preserve">
+    <value>Maybach HL 120 TR R</value>
+  </data>
+  <data name="Maybach_HL_150" xml:space="preserve">
+    <value>Maybach HL 150</value>
+  </data>
+  <data name="Maybach_HL_157P" xml:space="preserve">
+    <value>Maybach HL 157 P</value>
+  </data>
+  <data name="Maybach_HL_174" xml:space="preserve">
+    <value>Maybach HL 174</value>
+  </data>
+  <data name="Maybach_HL_174_05" xml:space="preserve">
+    <value>Maybach HL 87</value>
+  </data>
+  <data name="Maybach_HL_190" xml:space="preserve">
+    <value>Maybach HL 190</value>
+  </data>
+  <data name="Maybach_HL_190_short" xml:space="preserve">
+    <value>Maybach HL 190</value>
+  </data>
+  <data name="Maybach_HL_210P30" xml:space="preserve">
+    <value>Maybach HL 210 P30</value>
+  </data>
+  <data name="Maybach_HL_210P30A" xml:space="preserve">
+    <value>Maybach HL 230 P30</value>
+  </data>
+  <data name="Maybach_HL_210P30_05" xml:space="preserve">
+    <value>Maybach HL 110 P30</value>
+  </data>
+  <data name="Maybach_HL_210P30_Ausf_A" xml:space="preserve">
+    <value>Maybach HL 230 P30</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P30" xml:space="preserve">
+    <value>Maybach HL 210 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P30_short" xml:space="preserve">
+    <value>Maybach
+HL 210 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P45" xml:space="preserve">
+    <value>Maybach HL 210 TRM P45</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P45A" xml:space="preserve">
+    <value>Maybach HL 210 TRM P45</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P45A_short" xml:space="preserve">
+    <value>Maybach HL 210
+TRM P45</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P45_short" xml:space="preserve">
+    <value>Maybach HL 210
+TRM P45</value>
+  </data>
+  <data name="Maybach_HL_230P30A" xml:space="preserve">
+    <value>Maybach HL 230 P30</value>
+  </data>
+  <data name="Maybach_HL_230P30_2500rpm" xml:space="preserve">
+    <value>Maybach HL 230 P30 2500 rpm</value>
+  </data>
+  <data name="Maybach_HL_230P45" xml:space="preserve">
+    <value>Maybach HL 230 P45</value>
+  </data>
+  <data name="Maybach_HL_230P45_05" xml:space="preserve">
+    <value>Maybach HL 130 P50</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30" xml:space="preserve">
+    <value>Maybach HL 230 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30_short" xml:space="preserve">
+    <value>Maybach
+HL 230 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P45" xml:space="preserve">
+    <value>Maybach HL 230 TRM P45</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P45_short" xml:space="preserve">
+    <value>Maybach HL 230
+TRM P45</value>
+  </data>
+  <data name="Maybach_HL_234P30_Ausf_A" xml:space="preserve">
+    <value>Maybach HL 230</value>
+  </data>
+  <data name="Maybach_HL_234P30_Ausf_A_short" xml:space="preserve">
+    <value>Maybach HL 230</value>
+  </data>
+  <data name="Maybach_HL_234P45" xml:space="preserve">
+    <value>Maybach HL 234</value>
+  </data>
+  <data name="Maybach_HL_234P50" xml:space="preserve">
+    <value>Maybach HL 295 Ausf. A</value>
+  </data>
+  <data name="Maybach_HL_234P50_short" xml:space="preserve">
+    <value>Maybach HL 295 (A)</value>
+  </data>
+  <data name="Maybach_HL_234P60" xml:space="preserve">
+    <value>Maybach Neues Projekt</value>
+  </data>
+  <data name="Maybach_HL_234P60_short" xml:space="preserve">
+    <value>Maybach Neues Projekt</value>
+  </data>
+  <data name="Maybach_HL_234_TRM_P30" xml:space="preserve">
+    <value>Maybach HL 234 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_234_TRM_P30_short" xml:space="preserve">
+    <value>Maybach
+HL 234 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_234_TRM_P45_1" xml:space="preserve">
+    <value>Maybach HL 234 TRM P45</value>
+  </data>
+  <data name="Maybach_HL_234_TRM_P45_1_short" xml:space="preserve">
+    <value>Maybach HL 234
+TRM P45</value>
+  </data>
+  <data name="Maybach_HL_235" xml:space="preserve">
+    <value>Maybach HL 235</value>
+  </data>
+  <data name="Maybach_HL_45P" xml:space="preserve">
+    <value>Maybach HL 45 P</value>
+  </data>
+  <data name="Maybach_NL38TR" xml:space="preserve">
+    <value>Maybach HL 38 TR</value>
+  </data>
+  <data name="Meadows_ESTL" xml:space="preserve">
+    <value>Meadows E.S.T.L.</value>
+  </data>
+  <data name="Nashorn" xml:space="preserve">
+    <value>Nashorn</value>
+  </data>
+  <data name="Nashorn_descr" xml:space="preserve">
+    <value>Designated the Hornisse ("Hornet") until 1944. Produced on the same chassis as the Hummel heavy SPG. The vehicle first saw combat on the Eastern Front in the summer of 1943. A total of 494 vehicles were manufactured.</value>
+  </data>
+  <data name="Nashorn_short" xml:space="preserve">
+    <value>Nashorn</value>
+  </data>
+  <data name="Panther_II" xml:space="preserve">
+    <value>Panther II</value>
+  </data>
+  <data name="Panther_II_descr" xml:space="preserve">
+    <value>The vehicle was conceived in 1943. Two prototypes with the existing Panther I turrets were ordered in 1944. By 1945 only one of them had been built by the MAN company.</value>
+  </data>
+  <data name="Panther_II_short" xml:space="preserve">
+    <value>Panther II</value>
+  </data>
+  <data name="Panther_M10" xml:space="preserve">
+    <value>Panther/M10</value>
+  </data>
+  <data name="Panther_M10_descr" xml:space="preserve">
+    <value>During the Ardennes Offensive several Panthers assigned to Panzerbrigade 150 were disguised as M10 Wolverine tank destroyers. This was a part of a larger operation aimed to cause confusion in the rear of the Allied lines. On February 1945 disguised Panthers encountered the 120th Infantry Regiment (United States). One vehicle was destroyed, three were captured.</value>
+  </data>
+  <data name="Panther_M10_short" xml:space="preserve">
+    <value>Panther/M10</value>
+  </data>
+  <data name="PanzerJager" xml:space="preserve">
+    <value>Panzerjäger I</value>
+  </data>
+  <data name="PanzerJager_I" xml:space="preserve">
+    <value>Panzerjäger I</value>
+  </data>
+  <data name="PanzerJager_I_descr" xml:space="preserve">
+    <value>From March 1940 through February 1941, a total of 202 PzKpfw I were converted into tank destroyers, the Panzerjäger I. This vehicle remained in service until the end of 1941.</value>
+  </data>
+  <data name="PanzerJager_I_short" xml:space="preserve">
+    <value>Pz.Jäg. I</value>
+  </data>
+  <data name="Porsche_Deutz_Typ180_2" xml:space="preserve">
+    <value>Porsche Deutz Typ 180/2</value>
+  </data>
+  <data name="Porsche_Deutz_Typ180_2_short" xml:space="preserve">
+    <value>Porsche Deutz
+Typ 180/2</value>
+  </data>
+  <data name="Porsche_Typ_100" xml:space="preserve">
+    <value>2x Porsche Typ 100</value>
+  </data>
+  <data name="Porsche_Typ_100_1" xml:space="preserve">
+    <value>2x Porsche Typ 100/1</value>
+  </data>
+  <data name="Porsche_Typ_100_1A" xml:space="preserve">
+    <value>2x Porsche Typ 100/1 Ausf. A</value>
+  </data>
+  <data name="Porsche_Typ_100_1A_short" xml:space="preserve">
+    <value>2x Porsche Typ100/1(A)</value>
+  </data>
+  <data name="Porsche_Typ_100_3" xml:space="preserve">
+    <value>2x Porsche Typ 100/3</value>
+  </data>
+  <data name="Porsche_Typ_101_1_x2" xml:space="preserve">
+    <value>2 x Porsche Typ 101/1</value>
+  </data>
+  <data name="Praga_AusfIV" xml:space="preserve">
+    <value>Praga Ausf. IV</value>
+  </data>
+  <data name="Praga_C9" xml:space="preserve">
+    <value>Praga C9</value>
+  </data>
+  <data name="Praga_EPA" xml:space="preserve">
+    <value>Praga EPA</value>
+  </data>
+  <data name="Praga_EPA_2" xml:space="preserve">
+    <value>Praga EPA/2</value>
+  </data>
+  <data name="Praga_EPA_3" xml:space="preserve">
+    <value>Praga EPA/3</value>
+  </data>
+  <data name="Praga_EPA_AC" xml:space="preserve">
+    <value>Praga EPA AC</value>
+  </data>
+  <data name="Praga_NR" xml:space="preserve">
+    <value>Praga NR</value>
+  </data>
+  <data name="Praga_NRi" xml:space="preserve">
+    <value>Praga NRi</value>
+  </data>
+  <data name="Praga_NS" xml:space="preserve">
+    <value>Praga NS</value>
+  </data>
+  <data name="Praga_TNPS" xml:space="preserve">
+    <value>Praga TNPS</value>
+  </data>
+  <data name="Praga_TN_100" xml:space="preserve">
+    <value>Praga TN 100</value>
+  </data>
+  <data name="Pro_Ag_A" xml:space="preserve">
+    <value>Leopard Prototyp A</value>
+  </data>
+  <data name="Pro_Ag_A_descr" xml:space="preserve">
+    <value>Prototype developed from 1960 through 1961 as a medium tank for the Bundeswehr, with a total of 26 prototypes manufactured. The prototypes were tested up to 1963. The vehicle was the predecessor of the Leopard medium tank.</value>
+  </data>
+  <data name="Pro_Ag_A_short" xml:space="preserve">
+    <value>Leopard PT A</value>
+  </data>
+  <data name="Pz-V_Shmallturm" xml:space="preserve">
+    <value>Pz.Kpfw. Panther Schmalturm</value>
+  </data>
+  <data name="Pz-V_Shmallturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. Panther
+Schmalturm</value>
+  </data>
+  <data name="Pz-V_Standardketten" xml:space="preserve">
+    <value>Pz.Kpfw. Panther Ausf. A</value>
+  </data>
+  <data name="Pz-V_Standardketten_short" xml:space="preserve">
+    <value>Pz.Kpfw. Panther
+Ausf. A</value>
+  </data>
+  <data name="Pz-V_Standardturm" xml:space="preserve">
+    <value>Pz.Kpfw. Panther Ausf. G</value>
+  </data>
+  <data name="Pz-V_Standardturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. Panther
+Ausf. G</value>
+  </data>
+  <data name="Pz-V_Vetstaerktketten" xml:space="preserve">
+    <value>Pz.Kpfw. Panther Ausf. G</value>
+  </data>
+  <data name="Pz-V_Vetstaerktketten_short" xml:space="preserve">
+    <value>Pz.Kpfw. Panther
+Ausf. G</value>
+  </data>
+  <data name="Pz35t" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t)</value>
+  </data>
+  <data name="Pz35t_Standardketten" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t)</value>
+  </data>
+  <data name="Pz35t_Standardketten_short" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t)</value>
+  </data>
+  <data name="Pz35t_Standardturm" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t)</value>
+  </data>
+  <data name="Pz35t_Standardturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t)</value>
+  </data>
+  <data name="Pz35t_Verstaerktturm" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t) verstärkterturm</value>
+  </data>
+  <data name="Pz35t_Verstaerktturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t)
+verstärkterturm</value>
+  </data>
+  <data name="Pz35t_Vetstaerktketten" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t) verstärkteketten</value>
+  </data>
+  <data name="Pz35t_Vetstaerktketten_short" xml:space="preserve">
+    <value>Pz.Kpfw. 35 (t)
+verstärkteketten</value>
+  </data>
+  <data name="Pz35t_descr" xml:space="preserve">
+    <value>Produced from 1935 through 1938 in Czechoslovakia. A total of 202 of these vehicles were appropriated by the Wehrmacht in 1938 and were used for three years.</value>
+  </data>
+  <data name="Pz35t_short" xml:space="preserve">
+    <value>Pz. 35 (t)</value>
+  </data>
+  <data name="Pz38_NA" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) n.A.</value>
+  </data>
+  <data name="Pz38_NA_descr" xml:space="preserve">
+    <value>Developed on the chassis of the PzKpfw 38 (t) in the fall of 1939, this prototype used welding technology instead of rivets. The 250 hp engine allowed for a top speed of 62 km/h. The vehicle was never mass-produced.</value>
+  </data>
+  <data name="Pz38_NA_short" xml:space="preserve">
+    <value>Pz. 38 nA</value>
+  </data>
+  <data name="Pz38t" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t)</value>
+  </data>
+  <data name="Pz38t_Ausf_G_turm" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) Ausf. G</value>
+  </data>
+  <data name="Pz38t_Standardketten" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) Ausf. E</value>
+  </data>
+  <data name="Pz38t_Vetstaerktketten" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) Ausf. G</value>
+  </data>
+  <data name="Pz38t_descr" xml:space="preserve">
+    <value>The tank was developed for the Czechoslovakian Army. However, it was mostly produced for the Panzerwaffe from 1939 through 1942, with a total of 1,411 vehicles manufactured.</value>
+  </data>
+  <data name="Pz38t_short" xml:space="preserve">
+    <value>Pz. 38 (t)</value>
+  </data>
+  <data name="PzI" xml:space="preserve">
+    <value>Pz.Kpfw. I</value>
+  </data>
+  <data name="PzII" xml:space="preserve">
+    <value>Pz.Kpfw. II</value>
+  </data>
+  <data name="PzIII-IV" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV</value>
+  </data>
+  <data name="PzIII-IV_ausf_B" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV verstärkteketten</value>
+  </data>
+  <data name="PzIII_A" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. A</value>
+  </data>
+  <data name="PzIII_A_descr" xml:space="preserve">
+    <value>Produced in 1937, with a total of 10 vehicles manufactured. The project was canceled due to its weak suspension and inadequate armor.</value>
+  </data>
+  <data name="PzIII_A_short" xml:space="preserve">
+    <value>Pz. III A</value>
+  </data>
+  <data name="PzIII_AusfJ" xml:space="preserve">
+    <value>Pz.Kpfw. III</value>
+  </data>
+  <data name="PzIII_AusfJ_descr" xml:space="preserve">
+    <value>Used the "classic" chassis starting with the Ausführung E. Produced from December 1938 to February 1943, a total of 4,958 tanks and 321 command vehicles were manufactured.</value>
+  </data>
+  <data name="PzIII_AusfJ_short" xml:space="preserve">
+    <value>Pz. III</value>
+  </data>
+  <data name="PzIII_Ausf_A" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. A</value>
+  </data>
+  <data name="PzIII_Ausf_A_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. A</value>
+  </data>
+  <data name="PzIII_Ausf_C" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. E</value>
+  </data>
+  <data name="PzIII_Ausf_C_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. E</value>
+  </data>
+  <data name="PzIII_Ausf_E" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. J</value>
+  </data>
+  <data name="PzIII_Ausf_E_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. J</value>
+  </data>
+  <data name="PzIII_Ausf_M" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. L</value>
+  </data>
+  <data name="PzIII_Ausf_M_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. L</value>
+  </data>
+  <data name="PzIII_IV" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV</value>
+  </data>
+  <data name="PzIII_IV_descr" xml:space="preserve">
+    <value>The tank was intended to use parts and components of the PzKpfw III and PzKpfw IV vehicles. Existed only in blueprints.</value>
+  </data>
+  <data name="PzIII_IV_short" xml:space="preserve">
+    <value>Pz. III/IV</value>
+  </data>
+  <data name="PzIIIketten_Ausf_A" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. A</value>
+  </data>
+  <data name="PzIIIketten_Ausf_A_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. A</value>
+  </data>
+  <data name="PzIIIketten_Ausf_B" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. B</value>
+  </data>
+  <data name="PzIIIketten_Ausf_B_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. B</value>
+  </data>
+  <data name="PzIIIketten_Ausf_J" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. J</value>
+  </data>
+  <data name="PzIIIketten_Ausf_J_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. J</value>
+  </data>
+  <data name="PzIIIketten_Ausf_L" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. L</value>
+  </data>
+  <data name="PzIIIketten_Ausf_L_short" xml:space="preserve">
+    <value>Pz.Kpfw. III
+Ausf. L</value>
+  </data>
+  <data name="PzIIL_Grosseturm" xml:space="preserve">
+    <value>Luchs 5 cm</value>
+  </data>
+  <data name="PzIIL_Luchsturm" xml:space="preserve">
+    <value>Luchs 2 cm</value>
+  </data>
+  <data name="PzII_J" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. J</value>
+  </data>
+  <data name="PzII_J_descr" xml:space="preserve">
+    <value>A modernized version of the PzKpfw II Ausf. G with enhanced armor. Produced from April through December 1942, with a total of 22 vehicles built.</value>
+  </data>
+  <data name="PzII_J_short" xml:space="preserve">
+    <value>Pz. II J</value>
+  </data>
+  <data name="PzII_Luchs" xml:space="preserve">
+    <value>Pz.Kpfw. II Luchs</value>
+  </data>
+  <data name="PzII_Luchs_descr" xml:space="preserve">
+    <value>Produced from September 1943 through January 1944, with a total of 100 vehicles completed. Another four vehicles were converted from the prototypes. This vehicle remained in service until the end of the war.</value>
+  </data>
+  <data name="PzII_Luchs_short" xml:space="preserve">
+    <value>Luchs</value>
+  </data>
+  <data name="PzII_Luchsturm" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. F</value>
+  </data>
+  <data name="PzII_Luchsturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. F</value>
+  </data>
+  <data name="PzII_Standartturm" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. b</value>
+  </data>
+  <data name="PzII_Standartturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. b</value>
+  </data>
+  <data name="PzII_ausf_J" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. J</value>
+  </data>
+  <data name="PzII_descr" xml:space="preserve">
+    <value>The A, B, C, and F models were produced from March 1937 through April 1940 and from March 1941 through December 1942, with a total of 1,637 vehicles built.</value>
+  </data>
+  <data name="PzII_ketten_Ausf_A" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. A</value>
+  </data>
+  <data name="PzII_ketten_Ausf_A_short" xml:space="preserve">
+    <value>Pz.Kpfw. II
+Ausf. A</value>
+  </data>
+  <data name="PzII_ketten_Ausf_B" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. F</value>
+  </data>
+  <data name="PzII_ketten_Ausf_B_short" xml:space="preserve">
+    <value>Pz.Kpfw. II
+Ausf. F</value>
+  </data>
+  <data name="PzII_short" xml:space="preserve">
+    <value>Pz. II</value>
+  </data>
+  <data name="PzIIturm_ausf_J" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. J</value>
+  </data>
+  <data name="PzIV" xml:space="preserve">
+    <value>Pz.Kpfw. IV</value>
+  </data>
+  <data name="PzIV_Ausf_1940" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. G</value>
+  </data>
+  <data name="PzIV_Hydro" xml:space="preserve">
+    <value>Pz.Kpfw. IV hydrostat.</value>
+  </data>
+  <data name="PzIV_Hydro_descr" xml:space="preserve">
+    <value>This experimental version of the PzKpfw IV Ausf. G, incorporating hydrostatic drive, began development in 1944. Trials were discontinued due to the unreliability of the transmission and the lack of spare parts.</value>
+  </data>
+  <data name="PzIV_Hydro_short" xml:space="preserve">
+    <value>Pz. IV hydr.</value>
+  </data>
+  <data name="PzIV_Schmalturm_A" xml:space="preserve">
+    <value>Pz.Kpfw. IV Schmalturm</value>
+  </data>
+  <data name="PzIV_Standart" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. G</value>
+  </data>
+  <data name="PzIV_Standart_short" xml:space="preserve">
+    <value>Pz.Kpfw. IV
+Ausf. G</value>
+  </data>
+  <data name="PzIV_ausf43" xml:space="preserve">
+    <value>Pz.Kpfw. IV Schmalturm</value>
+  </data>
+  <data name="PzIV_ausf_F" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV Ausf. A</value>
+  </data>
+  <data name="PzIV_ausf_F_short" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV
+Ausf. A</value>
+  </data>
+  <data name="PzIV_ausf_H" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV Ausf. B</value>
+  </data>
+  <data name="PzIV_ausf_H_short" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV
+Ausf. B</value>
+  </data>
+  <data name="PzIV_descr" xml:space="preserve">
+    <value>Produced in greater numbers than any other tank of the Panzerwaffe. Manufactured from October 1937 through March 1945, with a total production of 8,519 tanks plus command vehicles. Beginning in May 1942 this tank was equipped with a long-barreled gun.</value>
+  </data>
+  <data name="PzIV_schmalturm" xml:space="preserve">
+    <value>Pz.Kpfw. IV Schmalturm</value>
+  </data>
+  <data name="PzIV_schmalturm_descr" xml:space="preserve">
+    <value>In November 1944 the Krupp company presented several avant-projects aimed to upgrade armament of tanks and tank destroyers in service. Among them there was a project of mounting a Panther's Schmalturm (tight turret) on the Pz IV Ausf. J. The project was canceled due to phasing out the Pz IV production.</value>
+  </data>
+  <data name="PzIV_schmalturm_short" xml:space="preserve">
+    <value>Pz. IV S.</value>
+  </data>
+  <data name="PzIV_short" xml:space="preserve">
+    <value>Pz. IV</value>
+  </data>
+  <data name="PzIVturm" xml:space="preserve">
+    <value>Pz.Kpfw. V/IV</value>
+  </data>
+  <data name="PzI_ausf_C" xml:space="preserve">
+    <value>Pz.Kpfw. I Ausf. C</value>
+  </data>
+  <data name="PzI_ausf_C_descr" xml:space="preserve">
+    <value>The initial order for this tank was placed in 1939. It was originally conceived as a high-speed reconaissance tank for airborne units. Mass production started at the beginning of 1942. In early 1943 two vehicles were deployed with the 1st Tank Division. Another 38 vehicles were deployed with the 58th Reserve Tank Corps in the summer of 1944.</value>
+  </data>
+  <data name="PzI_ausf_C_short" xml:space="preserve">
+    <value>Pz. I C</value>
+  </data>
+  <data name="PzI_descr" xml:space="preserve">
+    <value>The Pz I Ausf. A was the first mass-produced German tank. In 1935 the design received an upgrade, including elongated hull and a more powerful engine. Mass production of this version, the Pz I Ausf. B, eventually totalled 675 tanks. The standard armament was weak, but some tanks were upgraded on the battlefield to mount 20-mm guns.</value>
+  </data>
+  <data name="PzI_short" xml:space="preserve">
+    <value>Pz. I</value>
+  </data>
+  <data name="PzJgd_ketten_I" xml:space="preserve">
+    <value>Panzerjäger I</value>
+  </data>
+  <data name="PzJgd_ketten_II" xml:space="preserve">
+    <value>Panzerjäger I verstärkteketten</value>
+  </data>
+  <data name="PzV" xml:space="preserve">
+    <value>Panther</value>
+  </data>
+  <data name="PzV-IVketten" xml:space="preserve">
+    <value>Pz.Kpfw. V/IV</value>
+  </data>
+  <data name="PzVI" xml:space="preserve">
+    <value>Tiger I</value>
+  </data>
+  <data name="PzVIB_Heinschel_Turm" xml:space="preserve">
+    <value>Tiger II Serienturm</value>
+  </data>
+  <data name="PzVIB_Heinschel_Turm_short" xml:space="preserve">
+    <value>Tiger II
+Serienturm</value>
+  </data>
+  <data name="PzVIB_Porsche_Turm" xml:space="preserve">
+    <value>Tiger II Turm Nr. 1-50</value>
+  </data>
+  <data name="PzVIB_Porsche_Turm_short" xml:space="preserve">
+    <value>Tiger II
+Turm Nr. 1-50</value>
+  </data>
+  <data name="PzVIB_Standardketten" xml:space="preserve">
+    <value>Tiger II Versuchs-Serie</value>
+  </data>
+  <data name="PzVIB_Standardketten_short" xml:space="preserve">
+    <value>Tiger II
+Versuchs-Serie</value>
+  </data>
+  <data name="PzVIB_Tiger_II" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="PzVIB_Tiger_II_descr" xml:space="preserve">
+    <value>Also known as the King or Royal Tiger. Produced from January 1944 through March 1945, with a total of 489 vehicles built.</value>
+  </data>
+  <data name="PzVIB_Tiger_II_short" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="PzVIB_Vetstaerktketten" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="PzVIB_Vetstaerktketten_short" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="PzVI_Anfangsturm" xml:space="preserve">
+    <value>Pz.Kpfw. VI H Ausf. H2</value>
+  </data>
+  <data name="PzVI_Anfangsturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. VI H
+Ausf. H2</value>
+  </data>
+  <data name="PzVI_Porsche_Turm" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger Ausf. E</value>
+  </data>
+  <data name="PzVI_Porsche_Turm_short" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger
+Ausf. E</value>
+  </data>
+  <data name="PzVI_Standardketten" xml:space="preserve">
+    <value>Pz.Kpfw. VI H Ausf. H1</value>
+  </data>
+  <data name="PzVI_Tiger_P" xml:space="preserve">
+    <value>Tiger (P)</value>
+  </data>
+  <data name="PzVI_Tiger_P_descr" xml:space="preserve">
+    <value>On May 26, 1941, Adolf Hitler ordered Ferdinand Porsche and the Henschel company to develop prototypes of a new heavy tank. The prototypes were shown to the Führer on April 20, 1942. Manufacturing began, but the production run was cut short due to complexity of the tank's drive and control systems and a shortage of the required copper. Later, 90 produced hulls were converted into Ferdinand tank destroyers.</value>
+  </data>
+  <data name="PzVI_Tiger_P_short" xml:space="preserve">
+    <value>Tiger (P)</value>
+  </data>
+  <data name="PzVI_Vetstaerktketten" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger Ausf. E</value>
+  </data>
+  <data name="PzVI_descr" xml:space="preserve">
+    <value>Development of the Tiger I was started in 1937 by the Henschel company. Mass production began in 1942, with an eventual total of 1,354 vehicles manufactured. The tank first saw combat in the fighting for Leningrad, and Tigers were at the forefront of battles from Tunisia to Kursk. Although production was discontinued in the summer of 1944, the Tiger I continued to see action until the end of the war.</value>
+  </data>
+  <data name="PzV_PzIV" xml:space="preserve">
+    <value>Pz.Kpfw. V/IV</value>
+  </data>
+  <data name="PzV_PzIV_ausf_Alfa" xml:space="preserve">
+    <value>Pz.Kpfw. V/IV Alpha</value>
+  </data>
+  <data name="PzV_PzIV_ausf_Alfa_descr" xml:space="preserve">
+    <value>Only one prototype was built. The PzKpfw IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+  </data>
+  <data name="PzV_PzIV_ausf_Alfa_short" xml:space="preserve">
+    <value>Pz. V/IV A</value>
+  </data>
+  <data name="PzV_PzIV_descr" xml:space="preserve">
+    <value>Only one prototype was built. The PzKpfw IV turret was mounted as a stationary module on the Panther hull for testing.</value>
+  </data>
+  <data name="PzV_PzIV_short" xml:space="preserve">
+    <value>Pz. V/IV</value>
+  </data>
+  <data name="PzV_descr" xml:space="preserve">
+    <value>This famous tank was produced from January 1943 through April 1945, with a total of 5,796 vehicles built plus eight vehicles built on the F series chassis.</value>
+  </data>
+  <data name="PzV_short" xml:space="preserve">
+    <value>Panther</value>
+  </data>
+  <data name="Pz_II_AusfG" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. G</value>
+  </data>
+  <data name="Pz_II_AusfG_descr" xml:space="preserve">
+    <value>On June 18th, 1938 MAN and Daimler-Benz received an order for an initial batch of 75 Pz II Ausf. G tanks. A prototype was manufactured in 1939. The vehicle was mass-produced from April 1941 through February 1942, with a total of only 12 tanks built.</value>
+  </data>
+  <data name="Pz_II_AusfG_short" xml:space="preserve">
+    <value>Pz. II G</value>
+  </data>
+  <data name="Pz_IV_AusfA" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. A</value>
+  </data>
+  <data name="Pz_IV_AusfA_descr" xml:space="preserve">
+    <value>Development of the vehicle started in 1935. It was nicknamed Pz Kpfw IV in April 1936. Mass production began in the fall of 1937, and the first vehicles saw service starting in 1938. A total of 35 vehicles were manufactured and were in service until 1941.</value>
+  </data>
+  <data name="Pz_IV_AusfA_short" xml:space="preserve">
+    <value>Pz. IV A</value>
+  </data>
+  <data name="Pz_IV_AusfD" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. D</value>
+  </data>
+  <data name="Pz_IV_AusfD_descr" xml:space="preserve">
+    <value>This modification of the Pz IV was developed in October 1939. The vehicle had enhanced armor and an improved, external gun mantlet. The tank was mass-produced until May 1940, with a total of 229 vehicles manufactured.</value>
+  </data>
+  <data name="Pz_IV_AusfD_short" xml:space="preserve">
+    <value>Pz. IV D</value>
+  </data>
+  <data name="Pz_IV_AusfH" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. H</value>
+  </data>
+  <data name="Pz_IV_AusfH_descr" xml:space="preserve">
+    <value>The G variant of the Pz. IV was produced starting in May 1942. In April 1943 production began on the H variant—eventually the most massively produced version of the Pz. IV. The Ausf. H shared the upgraded gun of the Ausf. G, and utilized a single 80-mm front glacis plate instead of layered plates. A new transmission slightly reduced vehicle speed but was more reliable. The tanks of this variant also featured wire-mesh screens, 5–8 mm thick, on the hull and turret sides. A total of 3,774 vehicles of the Ausf. H were built.</value>
+  </data>
+  <data name="Pz_IV_AusfH_short" xml:space="preserve">
+    <value>Pz. IV H</value>
+  </data>
+  <data name="Pz_Sfl_IVb" xml:space="preserve">
+    <value>Pz.Sfl. IVb</value>
+  </data>
+  <data name="Pz_Sfl_IVb_descr" xml:space="preserve">
+    <value>SPG prototype equipped with a 105-mm howitzer. Developed in 1939 by the Krupp company, a total of 8 prototypes were manufactured and sent to the Eastern Front for trials. However, the SPG never entered mass production.</value>
+  </data>
+  <data name="Pz_Sfl_IVb_short" xml:space="preserve">
+    <value>Pz.Sfl. IVb</value>
+  </data>
+  <data name="Pz_Sfl_IVc" xml:space="preserve">
+    <value>Pz.Sfl. IVc</value>
+  </data>
+  <data name="Pz_Sfl_IVc_descr" xml:space="preserve">
+    <value>Proposed antiaircraft vehicle mounting the 88-mm antiaircraft gun. Development started in Germany in 1941. The vehicle was based on the Pz.Sfl.IVc chassis. The operational requirements for the vehicle were constantly changed, and the FlaK 41 gun was mounted on the chassis only in 1944. The vehicle was to be the basis of variants with other armament alternatives. However, the plan was never implemented. Only three prototypes were manufactured.</value>
+  </data>
+  <data name="Pz_Sfl_IVc_short" xml:space="preserve">
+    <value>Pz.Sfl. IVc</value>
+  </data>
+  <data name="R113" xml:space="preserve">
+    <value>R-113</value>
+  </data>
+  <data name="Renault" xml:space="preserve">
+    <value>Renault</value>
+  </data>
+  <data name="RhB_Waffentrager" xml:space="preserve">
+    <value>Rhm.-Borsig Waffenträger</value>
+  </data>
+  <data name="RhB_Waffentrager_descr" xml:space="preserve">
+    <value>Developed by the Rheinmetall-Borsig company and designed as a special artillery carrier. The vehicle was designed to carry an artillery system as well as to fire from the chassis. The vehicle utilized the suspension of the Hetzer tank destroyer. Development continued from the end of 1942 through the middle of 1944. However, the project was discontinued in favor of the Ardelt project because of a complicated design, high cost, and excessive weight.</value>
+  </data>
+  <data name="RhB_Waffentrager_short" xml:space="preserve">
+    <value>Rhm.-B. WT</value>
+  </data>
+  <data name="Rolls_Royce_I6" xml:space="preserve">
+    <value>Rolls-Royce I-6</value>
+  </data>
+  <data name="S-35ketten" xml:space="preserve">
+    <value>Pz.Kpfw. S35 739 (f)</value>
+  </data>
+  <data name="S35_captured" xml:space="preserve">
+    <value>Pz.Kpfw. S35 739 (f)</value>
+  </data>
+  <data name="S35_captured_descr" xml:space="preserve">
+    <value>Some of 400 of these French tanks were captured by the German Army. They were later used for training purposes and on secondary fronts.</value>
+  </data>
+  <data name="S35_captured_short" xml:space="preserve">
+    <value>Pz. S35</value>
+  </data>
+  <data name="SEM25" xml:space="preserve">
+    <value>SEM 25</value>
+  </data>
+  <data name="SEM25_1" xml:space="preserve">
+    <value>SEM 25A</value>
+  </data>
+  <data name="Scania_Vabis1664" xml:space="preserve">
+    <value>Scania Vabis 1664</value>
+  </data>
+  <data name="Skoda_T-11" xml:space="preserve">
+    <value>Škoda T-11</value>
+  </data>
+  <data name="Skoda_T-15" xml:space="preserve">
+    <value>Škoda T-15</value>
+  </data>
+  <data name="Somua_S-40" xml:space="preserve">
+    <value>Somua S-40</value>
+  </data>
+  <data name="Somuaturm" xml:space="preserve">
+    <value>Pz.Kpfw. S35 739 (f)</value>
+  </data>
+  <data name="StuGIII_0" xml:space="preserve">
+    <value>StuG III Ausf. G</value>
+  </data>
+  <data name="StuGIII_Ausf_1940" xml:space="preserve">
+    <value>StuG III Ausf. F</value>
+  </data>
+  <data name="StuGIII_Ausf_1943" xml:space="preserve">
+    <value>StuG III Ausf. G</value>
+  </data>
+  <data name="StuG_40_AusfG" xml:space="preserve">
+    <value>StuG III Ausf. G</value>
+  </data>
+  <data name="StuG_40_AusfG_descr" xml:space="preserve">
+    <value>This vehicle first saw combat in France in 1940. It was produced on the basis of the Pz. III tank in several modifications until 1945. By 1944, 9,346 of these self-propelled guns destroyed about 20,000 enemy vehicles. Some vehicles were in operation until 1967 and were even deployed in the Six-Day War by some countries of the Arab world against Israel.</value>
+  </data>
+  <data name="StuG_40_AusfG_short" xml:space="preserve">
+    <value>StuG III G</value>
+  </data>
+  <data name="Sturer_Emil" xml:space="preserve">
+    <value>Sturer Emil</value>
+  </data>
+  <data name="Sturer_Emil_descr" xml:space="preserve">
+    <value>Experimental tank destroyer developed on the basis of the VK 30.01(H) heavy tank. Only two vehicles were manufactured. They fought on the Eastern Front. The tank destroyer was designated as “Sturer Emil” (German for “Stubborn Emil”) due to frequent breakdowns.</value>
+  </data>
+  <data name="Sturer_Emil_short" xml:space="preserve">
+    <value>St. Emil</value>
+  </data>
+  <data name="SturmpanzerII" xml:space="preserve">
+    <value>Sturmpanzer II</value>
+  </data>
+  <data name="Sturmpanzer_II" xml:space="preserve">
+    <value>Sturmpanzer II</value>
+  </data>
+  <data name="Sturmpanzer_II_descr" xml:space="preserve">
+    <value>Produced from November through December 1941, with a total of only 12 vehicles built. Saw combat in North Africa.</value>
+  </data>
+  <data name="Sturmpanzer_II_short" xml:space="preserve">
+    <value>St.Pz. II</value>
+  </data>
+  <data name="Sturmpanzerketten_I" xml:space="preserve">
+    <value>Sturmpanzer I</value>
+  </data>
+  <data name="Sturmpanzerketten_II" xml:space="preserve">
+    <value>Sturmpanzer I verstärkteketten</value>
+  </data>
+  <data name="Sturmpanzerketten_II_short" xml:space="preserve">
+    <value>Sturmpanzer I
+verstärkteketten</value>
+  </data>
+  <data name="Sturmpanzerketten_I_short" xml:space="preserve">
+    <value>Sturmpanzer I</value>
+  </data>
+  <data name="Sturmpanzerketten_ausf_A" xml:space="preserve">
+    <value>Sturmpanzer II</value>
+  </data>
+  <data name="Sturmpanzerketten_ausf_B" xml:space="preserve">
+    <value>Sturmpanzer II verstärkteketten</value>
+  </data>
+  <data name="Swedish_Bofors" xml:space="preserve">
+    <value>Leichttraktor</value>
+  </data>
+  <data name="T-15" xml:space="preserve">
+    <value>T-15</value>
+  </data>
+  <data name="T-15_descr" xml:space="preserve">
+    <value>This experimental light tank was developed at the Skoda factory in 1941–1943, with a total of five prototypes manufactured. The vehicle was never mass-produced, nor saw service.</value>
+  </data>
+  <data name="T-15_short" xml:space="preserve">
+    <value>T-15</value>
+  </data>
+  <data name="T-25" xml:space="preserve">
+    <value>T-25</value>
+  </data>
+  <data name="T-25_descr" xml:space="preserve">
+    <value>The vehicle was developed by the Skoda company under the Panzer Development Program initiated by the Heer (German Army land forces). The T-25 existed only in blueprints.</value>
+  </data>
+  <data name="T-25_short" xml:space="preserve">
+    <value>T-25</value>
+  </data>
+  <data name="T_Bison" xml:space="preserve">
+    <value>Sturmpanzer I Bison</value>
+  </data>
+  <data name="Tatra_V-103" xml:space="preserve">
+    <value>Tatra Typ 103</value>
+  </data>
+  <data name="Tatra_V-103_R" xml:space="preserve">
+    <value>Tatra Typ TD 103 P</value>
+  </data>
+  <data name="Tatra_V-103_R_short" xml:space="preserve">
+    <value>Tatra Typ
+TD 103 P</value>
+  </data>
+  <data name="Tiger_short" xml:space="preserve">
+    <value>Tiger I</value>
+  </data>
+  <data name="Turret_1_Auf_Panther" xml:space="preserve">
+    <value>VK 16.02 Leopard</value>
+  </data>
+  <data name="Turret_1_DW_II" xml:space="preserve">
+    <value>D.W.-Versuchsturm</value>
+  </data>
+  <data name="Turret_1_DickerMax" xml:space="preserve">
+    <value>Dicker Max</value>
+  </data>
+  <data name="Turret_1_E-25" xml:space="preserve">
+    <value>E 25</value>
+  </data>
+  <data name="Turret_1_E-50" xml:space="preserve">
+    <value>E 50 Ausf. A</value>
+  </data>
+  <data name="Turret_1_E-75" xml:space="preserve">
+    <value>E 75 Ausf. A</value>
+  </data>
+  <data name="Turret_1_E50_Ausf_M" xml:space="preserve">
+    <value>E 50 Ausf. M</value>
+  </data>
+  <data name="Turret_1_G04_PzVI_Tiger_IA" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger Ausf. E</value>
+  </data>
+  <data name="Turret_1_G04_PzVI_Tiger_IA_short" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger
+Ausf. E</value>
+  </data>
+  <data name="Turret_1_G100_Gtraktor_Krupp" xml:space="preserve">
+    <value>Großtraktor - Krupp</value>
+  </data>
+  <data name="Turret_1_G101_StuG_III" xml:space="preserve">
+    <value>StuG III Ausf. B</value>
+  </data>
+  <data name="Turret_1_G103_RU_251" xml:space="preserve">
+    <value>Spähpanzer Ru 251 Drehturm 360°</value>
+  </data>
+  <data name="Turret_1_G104_Stug_IV" xml:space="preserve">
+    <value>StuG IV</value>
+  </data>
+  <data name="Turret_1_G105_T-55_NVA_DDR" xml:space="preserve">
+    <value>T 55A</value>
+  </data>
+  <data name="Turret_1_G106_PzKpfwPanther_AusfF" xml:space="preserve">
+    <value>Panther mit 8,8 cm Kw.K. 43 L/71</value>
+  </data>
+  <data name="Turret_1_G106_PzKpfwPanther_AusfF_short" xml:space="preserve">
+    <value>Panther mit
+8,8 cm Kw.K. 43 L/71</value>
+  </data>
+  <data name="Turret_1_G107_PzKpfwIII_AusfK" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. K</value>
+  </data>
+  <data name="Turret_1_G108_PzKpfwII_AusfD" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. D</value>
+  </data>
+  <data name="Turret_1_G109_Steyr_WT" xml:space="preserve">
+    <value>Krupp-Steyr Waffenträger</value>
+  </data>
+  <data name="Turret_1_GW_Elefant" xml:space="preserve">
+    <value>G.W. Tiger (P)</value>
+  </data>
+  <data name="Turret_1_GW_Mk_IVe" xml:space="preserve">
+    <value>G.Pz. Mk. VI (e)</value>
+  </data>
+  <data name="Turret_1_G_E" xml:space="preserve">
+    <value>G.W. E 100</value>
+  </data>
+  <data name="Turret_1_G_Panther" xml:space="preserve">
+    <value>G.W. Panther</value>
+  </data>
+  <data name="Turret_1_G_Tiger" xml:space="preserve">
+    <value>G.W. Tiger</value>
+  </data>
+  <data name="Turret_1_JagdPantherII" xml:space="preserve">
+    <value>Jagdpanther II</value>
+  </data>
+  <data name="Turret_1_JagdPz_E100" xml:space="preserve">
+    <value>Jagdpanzer E 100</value>
+  </data>
+  <data name="Turret_1_JagdTiger_SdKfz_185" xml:space="preserve">
+    <value>8,8 cm Pak 43 Jagdtiger</value>
+  </data>
+  <data name="Turret_1_Leopard1" xml:space="preserve">
+    <value>Leopard 1</value>
+  </data>
+  <data name="Turret_1_Lowe" xml:space="preserve">
+    <value>Löwe</value>
+  </data>
+  <data name="Turret_1_Marder_III" xml:space="preserve">
+    <value>Marder 38T</value>
+  </data>
+  <data name="Turret_1_Nashorn" xml:space="preserve">
+    <value>Nashorn</value>
+  </data>
+  <data name="Turret_1_Panther_II" xml:space="preserve">
+    <value>Turm-Panther (schmale Blende)</value>
+  </data>
+  <data name="Turret_1_Panther_II_short" xml:space="preserve">
+    <value>Turm-Panther
+(schmale Blende)</value>
+  </data>
+  <data name="Turret_1_Panther_M10" xml:space="preserve">
+    <value>Panther/M10</value>
+  </data>
+  <data name="Turret_1_Pro_Ag_A" xml:space="preserve">
+    <value>Leopard Prototyp A2</value>
+  </data>
+  <data name="Turret_1_Pz38_NA" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) Ausf. G</value>
+  </data>
+  <data name="Turret_1_PzI" xml:space="preserve">
+    <value>L.K.A. 2</value>
+  </data>
+  <data name="Turret_1_PzIV_Hydro" xml:space="preserve">
+    <value>Pz.Kpfw. IV hydrostatischer</value>
+  </data>
+  <data name="Turret_1_PzI_ausf_C" xml:space="preserve">
+    <value>Pz.Kpfw. I Breda</value>
+  </data>
+  <data name="Turret_1_PzVI_Tiger_P" xml:space="preserve">
+    <value>Tiger (P) Turm Nr. 1</value>
+  </data>
+  <data name="Turret_1_PzVI_Tiger_P_short" xml:space="preserve">
+    <value>Tiger (P)
+Turm Nr. 1</value>
+  </data>
+  <data name="Turret_1_Pz_II_AusfG" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. C</value>
+  </data>
+  <data name="Turret_1_Pz_IV_AusfA" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. A</value>
+  </data>
+  <data name="Turret_1_Pz_IV_AusfD" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. C</value>
+  </data>
+  <data name="Turret_1_Pz_IV_AusfH" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. G</value>
+  </data>
+  <data name="Turret_1_Pz_Sfl_IVb" xml:space="preserve">
+    <value>Pz.Sfl. IVb</value>
+  </data>
+  <data name="Turret_1_Pz_Sfl_IVc" xml:space="preserve">
+    <value>Pz.Sfl. IVc Flak 37</value>
+  </data>
+  <data name="Turret_1_RhB_Waffentrager" xml:space="preserve">
+    <value>Rhm.-Borsig Waffenträger</value>
+  </data>
+  <data name="Turret_1_Sturer_Emil" xml:space="preserve">
+    <value>Pz.Sfl. V</value>
+  </data>
+  <data name="Turret_1_T-15" xml:space="preserve">
+    <value>T-15</value>
+  </data>
+  <data name="Turret_1_T-25" xml:space="preserve">
+    <value>T-25</value>
+  </data>
+  <data name="Turret_1_VK2001DB" xml:space="preserve">
+    <value>VK 20.01 (D)</value>
+  </data>
+  <data name="Turret_1_VK2801" xml:space="preserve">
+    <value>VK 28.01 Ausf. A</value>
+  </data>
+  <data name="Turret_1_VK3002DB_V1" xml:space="preserve">
+    <value>Pz.Kpfw. III/IV Ausf. B</value>
+  </data>
+  <data name="Turret_1_VK3002M" xml:space="preserve">
+    <value>VK 30.02 (M)</value>
+  </data>
+  <data name="Turret_1_VK4502A" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A</value>
+  </data>
+  <data name="Turret_1_VK4502A_short" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A</value>
+  </data>
+  <data name="Turret_1_Waffentrager_E100" xml:space="preserve">
+    <value>Waffenträger auf E 100</value>
+  </data>
+  <data name="Turret_1_Waffentrager_IV" xml:space="preserve">
+    <value>Waffenträger auf Pz. IV für 12.8 cm</value>
+  </data>
+  <data name="Turret_2_Auf_Panther" xml:space="preserve">
+    <value>VK 28.01 Ausf. C</value>
+  </data>
+  <data name="Turret_2_DW_II" xml:space="preserve">
+    <value>VK 30.01 (H) 0-Serie</value>
+  </data>
+  <data name="Turret_2_E-100" xml:space="preserve">
+    <value>E 100</value>
+  </data>
+  <data name="Turret_2_E-50" xml:space="preserve">
+    <value>E 50 Ausf. B</value>
+  </data>
+  <data name="Turret_2_E-75" xml:space="preserve">
+    <value>E 75 Ausf. B</value>
+  </data>
+  <data name="Turret_2_Indien_Panzer" xml:space="preserve">
+    <value>Indien-Panzer</value>
+  </data>
+  <data name="Turret_2_Panther_II" xml:space="preserve">
+    <value>Panther II Schmalturm</value>
+  </data>
+  <data name="Turret_2_Pro_Ag_A" xml:space="preserve">
+    <value>Porsche Standardpanzer</value>
+  </data>
+  <data name="Turret_2_Pz38_NA" xml:space="preserve">
+    <value>Pz.Kpfw. 38 (t) n.A.</value>
+  </data>
+  <data name="Turret_2_PzI" xml:space="preserve">
+    <value>Pz.Kpfw. I Breda</value>
+  </data>
+  <data name="Turret_2_PzI_ausf_C" xml:space="preserve">
+    <value>Pz.Kpfw. I Ausf. C</value>
+  </data>
+  <data name="Turret_2_PzVI_Tiger_P" xml:space="preserve">
+    <value>Tiger (P) Neuer Turm</value>
+  </data>
+  <data name="Turret_2_PzVI_Tiger_P_short" xml:space="preserve">
+    <value>Tiger (P)
+Neuer Turm</value>
+  </data>
+  <data name="Turret_2_Pz_II_AusfG" xml:space="preserve">
+    <value>Pz.Kpfw. II Ausf. G</value>
+  </data>
+  <data name="Turret_2_Pz_IV_AusfA" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. B</value>
+  </data>
+  <data name="Turret_2_Pz_IV_AusfD" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. D</value>
+  </data>
+  <data name="Turret_2_Pz_IV_AusfH" xml:space="preserve">
+    <value>Pz.Kpfw. IV Ausf. H</value>
+  </data>
+  <data name="Turret_2_Pz_Sfl_IVc" xml:space="preserve">
+    <value>Pz.Sfl. IVc Flak 41</value>
+  </data>
+  <data name="Turret_2_VK2001DB" xml:space="preserve">
+    <value>Pz.Kpfw. III Ausf. M</value>
+  </data>
+  <data name="Turret_2_VK2801" xml:space="preserve">
+    <value>VK 28.01 Ausf. B</value>
+  </data>
+  <data name="Turret_2_VK3002DB_V1" xml:space="preserve">
+    <value>VK 30.01 (D)</value>
+  </data>
+  <data name="Turret_2_VK3002M" xml:space="preserve">
+    <value>VK 30.02 Ausf. A</value>
+  </data>
+  <data name="Turret_2_VK4502A" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A Schwerer Turm</value>
+  </data>
+  <data name="Turret_2_VK4502A_short" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A
+Schwerer Turm</value>
+  </data>
+  <data name="Turret_2_Waffentrager_IV" xml:space="preserve">
+    <value>Waffenträger auf Pz. IV für 15 cm</value>
+  </data>
+  <data name="Turret_VK7201" xml:space="preserve">
+    <value>VK 72.01 (K)</value>
+  </data>
+  <data name="V12_cylinder_Boxer_Motor" xml:space="preserve">
+    <value>12 cylinder Boxer-Motor</value>
+  </data>
+  <data name="VK1602" xml:space="preserve">
+    <value>VK 16.02 Leopard</value>
+  </data>
+  <data name="VK1602_descr" xml:space="preserve">
+    <value>Developed from March through October 1942. The plans were to launch mass production in April 1943, but the project was canceled before the first prototype was built.</value>
+  </data>
+  <data name="VK1602_short" xml:space="preserve">
+    <value>Leopard</value>
+  </data>
+  <data name="VK2001DB" xml:space="preserve">
+    <value>VK 20.01 (D)</value>
+  </data>
+  <data name="VK2001DB_descr" xml:space="preserve">
+    <value>Prototype of a medium tank developed by Daimler-Benz from 1939 through 1941. The new vehicle was to become a new standard medium tank of the Wehrmacht. The prototype was deployed on the Eastern front. Combat testing revealed a number of serious faults. In 1941 the tank was deemed obsolete, and the project was canceled.</value>
+  </data>
+  <data name="VK2001DB_short" xml:space="preserve">
+    <value>VK 20.01 D</value>
+  </data>
+  <data name="VK2801" xml:space="preserve">
+    <value>VK 28.01</value>
+  </data>
+  <data name="VK2801_descr" xml:space="preserve">
+    <value>The vehicle was intended as a standard light tank of the Panzerwaffe and a basis for antiaircraft tanks and vehicles able to ride on any terrain and railroad tracks. Existed only in blueprints.</value>
+  </data>
+  <data name="VK2801_short" xml:space="preserve">
+    <value>VK 28.01</value>
+  </data>
+  <data name="VK3001H" xml:space="preserve">
+    <value>VK 30.01 (H)</value>
+  </data>
+  <data name="VK3001H_Eliteturm" xml:space="preserve">
+    <value>VK 36.01 (H)</value>
+  </data>
+  <data name="VK3001H_Eliteturm_short" xml:space="preserve">
+    <value>VK 36.01 (H)</value>
+  </data>
+  <data name="VK3001H_Standardturm" xml:space="preserve">
+    <value>VK 30.01 (H) 0-Serie</value>
+  </data>
+  <data name="VK3001H_Standardturm_short" xml:space="preserve">
+    <value>VK 30.01 (H)
+0-Serie</value>
+  </data>
+  <data name="VK3001H_ausf_B" xml:space="preserve">
+    <value>VK 30.01 (H) verstärkteketten</value>
+  </data>
+  <data name="VK3001H_ausf_B_short" xml:space="preserve">
+    <value>VK 30.01 (H)
+verstärkteketten</value>
+  </data>
+  <data name="VK3001H_descr" xml:space="preserve">
+    <value>Prototype based on the Henschel hull, with four chassis produced for this model from March through October 1941. The Krupp company manufactured 12 turrets for this vehicle.</value>
+  </data>
+  <data name="VK3001H_short" xml:space="preserve">
+    <value>VK 30.01 H</value>
+  </data>
+  <data name="VK3001P" xml:space="preserve">
+    <value>VK 30.01 (P)</value>
+  </data>
+  <data name="VK3001P_Krupp_turm" xml:space="preserve">
+    <value>Porsche Typ 100</value>
+  </data>
+  <data name="VK3001P_Krupp_turm_short" xml:space="preserve">
+    <value>Porsche Typ 100</value>
+  </data>
+  <data name="VK3001P_Porsche_turm" xml:space="preserve">
+    <value>VK 30.01 (P) Krupp Turm</value>
+  </data>
+  <data name="VK3001P_Porsche_turm_short" xml:space="preserve">
+    <value>VK 30.01 (P)
+Krupp Turm</value>
+  </data>
+  <data name="VK3001P_ausf_B" xml:space="preserve">
+    <value>VK 30.01 (P) verstärkteketten</value>
+  </data>
+  <data name="VK3001P_ausf_B_short" xml:space="preserve">
+    <value>VK 30.01 (P)
+verstärkteketten</value>
+  </data>
+  <data name="VK3001P_descr" xml:space="preserve">
+    <value>Two prototypes were built on the Porsche chassis from 1940 to 1941, but the vehicle never entered mass production.</value>
+  </data>
+  <data name="VK3001P_short" xml:space="preserve">
+    <value>VK 30.01 P</value>
+  </data>
+  <data name="VK3002DB" xml:space="preserve">
+    <value>VK 30.02 (D)</value>
+  </data>
+  <data name="VK3002DB_Shmallturm" xml:space="preserve">
+    <value>VK 30.02 (D) Schmalturm</value>
+  </data>
+  <data name="VK3002DB_Standardtketten" xml:space="preserve">
+    <value>VK 30.02 (D)</value>
+  </data>
+  <data name="VK3002DB_Standardtketten_short" xml:space="preserve">
+    <value>VK 30.02 (D)</value>
+  </data>
+  <data name="VK3002DB_V1" xml:space="preserve">
+    <value>VK 30.01 (D)</value>
+  </data>
+  <data name="VK3002DB_V1_descr" xml:space="preserve">
+    <value>In the winter of 1941–1942 the WaPrüf 6 issued technical requirements for a new 30-ton tank. The orders for development were placed with MAN and Daimler-Benz. The prototypes were to be ready by May 1942. However, on May 13th, 1942 only comparative characteristics of the projects were submitted. The MAN's project was preferred, and the Daimler-Benz's project was canceled.</value>
+  </data>
+  <data name="VK3002DB_V1_short" xml:space="preserve">
+    <value>VK 30.01 D</value>
+  </data>
+  <data name="VK3002DB_Vetstaerktketten" xml:space="preserve">
+    <value>VK 30.02 (D) verstärkteketten</value>
+  </data>
+  <data name="VK3002DB_Vetstaerktketten_short" xml:space="preserve">
+    <value>VK 30.02 (D)
+verstärkteketten</value>
+  </data>
+  <data name="VK3002DB_descr" xml:space="preserve">
+    <value>Developed as a response to and under the influence of the Soviet T-34. The initial order for the production of 200 vehicles was canceled in favor of the Panther.</value>
+  </data>
+  <data name="VK3002DB_short" xml:space="preserve">
+    <value>VK 30.02 D</value>
+  </data>
+  <data name="VK3002DB_turm" xml:space="preserve">
+    <value>VK 30.02 (D)</value>
+  </data>
+  <data name="VK3002M" xml:space="preserve">
+    <value>VK 30.02 (M)</value>
+  </data>
+  <data name="VK3002M_descr" xml:space="preserve">
+    <value>A medium tank, developed by the MAN company and designed as a 30-ton tank. Simultaneously, the Daimler-Benz company developed a competing project. On 13 May, 1942, the two projects were submitted to the Ministry of Armaments and War Production. The MAN design was preferred, and the tank eventually entered service as the PzKpfw V Panther.</value>
+  </data>
+  <data name="VK3002M_short" xml:space="preserve">
+    <value>VK 30.02 M</value>
+  </data>
+  <data name="VK3601H" xml:space="preserve">
+    <value>VK 36.01 (H)</value>
+  </data>
+  <data name="VK3601H_Grosseturm" xml:space="preserve">
+    <value>Pz.Kpfw. VI H Ausf. H2</value>
+  </data>
+  <data name="VK3601H_Grosseturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. VI H
+Ausf. H2</value>
+  </data>
+  <data name="VK3601H_Standardturm" xml:space="preserve">
+    <value>VK 36.01 (H)</value>
+  </data>
+  <data name="VK3601H_Standardturm_short" xml:space="preserve">
+    <value>VK 36.01 (H)</value>
+  </data>
+  <data name="VK3601H_descr" xml:space="preserve">
+    <value>Six chassis and one prototype of this vehicle were produced at the beginning of 1942. It never saw mass production due to problems with development of the conical gun.</value>
+  </data>
+  <data name="VK3601H_henshelketten" xml:space="preserve">
+    <value>VK 36.01 (H)</value>
+  </data>
+  <data name="VK3601H_henshelketten_ausf_B" xml:space="preserve">
+    <value>VK 36.01 (H) verstärkteketten</value>
+  </data>
+  <data name="VK3601H_henshelketten_ausf_B_short" xml:space="preserve">
+    <value>VK 36.01 (H)
+verstärkteketten</value>
+  </data>
+  <data name="VK3601H_henshelketten_short" xml:space="preserve">
+    <value>VK 36.01 (H)</value>
+  </data>
+  <data name="VK3601H_short" xml:space="preserve">
+    <value>VK 36.01 H</value>
+  </data>
+  <data name="VK4502A" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. A</value>
+  </data>
+  <data name="VK4502A_descr" xml:space="preserve">
+    <value>Development of this vehicle started in April 1942. The Krupp company received an order for construction of turrets. However, the prototype was never manufactured. The turrets were mounted on the first Tiger IIs.</value>
+  </data>
+  <data name="VK4502A_short" xml:space="preserve">
+    <value>VK 45.02 A</value>
+  </data>
+  <data name="VK4502P" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. B</value>
+  </data>
+  <data name="VK4502P_Eliteturm" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. B Schwerer Turm</value>
+  </data>
+  <data name="VK4502P_Eliteturm_short" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. B
+Schwerer Turm</value>
+  </data>
+  <data name="VK4502P_Standardketten" xml:space="preserve">
+    <value>VK 45.02(P) Ausf. B</value>
+  </data>
+  <data name="VK4502P_Standardketten_short" xml:space="preserve">
+    <value>VK 45.02(P) Ausf. B</value>
+  </data>
+  <data name="VK4502P_Standardturm" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. B</value>
+  </data>
+  <data name="VK4502P_Standardturm_short" xml:space="preserve">
+    <value>VK 45.02 (P) Ausf. B</value>
+  </data>
+  <data name="VK4502P_Vetstaerktketten" xml:space="preserve">
+    <value>VK 45.02(P) Ausf. B verstärkteketten</value>
+  </data>
+  <data name="VK4502P_Vetstaerktketten_short" xml:space="preserve">
+    <value>VK 45.02(P) Ausf. B
+verstärkteketten</value>
+  </data>
+  <data name="VK4502P_descr" xml:space="preserve">
+    <value>Two designs of this vehicle (one with the forward-mounted turret and the other with the rear-mounted turret) were drawn up by Ferdinand Porsche. The tank never saw mass production.</value>
+  </data>
+  <data name="VK4502P_short" xml:space="preserve">
+    <value>VK 45.02 B</value>
+  </data>
+  <data name="VK7201" xml:space="preserve">
+    <value>VK 72.01 (K)</value>
+  </data>
+  <data name="VK7201_descr" xml:space="preserve">
+    <value>A superheavy tank with rear placement of the turret. Developed by the Krupp company. A new vehicle was to have stronger armament and enhanced armor compared to the VK 70.01. Existed only in blueprints.</value>
+  </data>
+  <data name="VK7201_short" xml:space="preserve">
+    <value>VK 72.01 K</value>
+  </data>
+  <data name="Verbesserteturm" xml:space="preserve">
+    <value>L.K.A. 2</value>
+  </data>
+  <data name="W-55" xml:space="preserve">
+    <value>W-55</value>
+  </data>
+  <data name="Waffentrager_E100" xml:space="preserve">
+    <value>Waffenträger auf E 100</value>
+  </data>
+  <data name="Waffentrager_E100_descr" xml:space="preserve">
+    <value>A proposal to mount a large-caliber antiaircraft gun on the chassis of the E-100 tank. The vehicle was to feature either a 128- or 150-mm guns with automatic loading system. However, the design project was never developed.</value>
+  </data>
+  <data name="Waffentrager_E100_short" xml:space="preserve">
+    <value>WT auf E 100</value>
+  </data>
+  <data name="Waffentrager_IV" xml:space="preserve">
+    <value>Waffenträger auf Pz. IV</value>
+  </data>
+  <data name="Waffentrager_IV_descr" xml:space="preserve">
+    <value>Tank destroyer developed in February 1944 on the basis of the PzIV tank. Development was discontinued in favor of a similar vehicle on the basis of the Krupp Waffentrager 12.8 cm PaK 44 of Czech origin. Existed only in blueprints.</value>
+  </data>
+  <data name="Waffentrager_IV_short" xml:space="preserve">
+    <value>WT auf Pz. IV</value>
+  </data>
+  <data name="Wespe" xml:space="preserve">
+    <value>Wespe</value>
+  </data>
+  <data name="Wespe_descr" xml:space="preserve">
+    <value>First saw combat in the Battle of Kursk (Operation Citadel) and went on to fight on all fronts. Manufactured from February 1943 through July 1944, with a total production of 675 self-propelled guns and 159 ammunition carriers.</value>
+  </data>
+  <data name="Wespe_short" xml:space="preserve">
+    <value>Wespe</value>
+  </data>
+  <data name="Wespeketten_ausf_A" xml:space="preserve">
+    <value>Wespe</value>
+  </data>
+  <data name="Wespeketten_ausf_B" xml:space="preserve">
+    <value>Wespe verstärkteketten</value>
+  </data>
+  <data name="Wespeturm" xml:space="preserve">
+    <value>Wespe</value>
+  </data>
+  <data name="_100mm_3UBK4" xml:space="preserve">
+    <value>3UBK4</value>
+  </data>
+  <data name="_100mm_BR-412D" xml:space="preserve">
+    <value>UBR-412D</value>
+  </data>
+  <data name="_100mm_Typ_D-10T2S" xml:space="preserve">
+    <value>100 mm Panzerkanone D-10T2S L/56</value>
+  </data>
+  <data name="_100mm_UOF-412" xml:space="preserve">
+    <value>UOF-412</value>
+  </data>
+  <data name="_105mmGr39H1A" xml:space="preserve">
+    <value>Gr 39 H1A</value>
+  </data>
+  <data name="_105mmGr_39H1A_K" xml:space="preserve">
+    <value>Gr 39 H1A K</value>
+  </data>
+  <data name="_105mm_BK_L7A3_L51" xml:space="preserve">
+    <value>10,5 cm Bordkanone L7A3</value>
+  </data>
+  <data name="_105mm_Gr19" xml:space="preserve">
+    <value>Gr 19</value>
+  </data>
+  <data name="_105mm_K18_L52" xml:space="preserve">
+    <value>10,5 cm Pak L/52</value>
+  </data>
+  <data name="_105mm_K18_L52A" xml:space="preserve">
+    <value>10,5 cm Kanone 18</value>
+  </data>
+  <data name="_105mm_KwK45_L52" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/52</value>
+  </data>
+  <data name="_105mm_KwK45_L52_ausf_B" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/52 Ausf. B</value>
+  </data>
+  <data name="_105mm_KwK45_L52_ausf_B_short" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/52
+Ausf. B</value>
+  </data>
+  <data name="_105mm_KwK45_L52_ausf_K" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/52 Ausf. K</value>
+  </data>
+  <data name="_105mm_KwK45_L52_ausf_K_short" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/52
+Ausf. K</value>
+  </data>
+  <data name="_105mm_KwK46_L68" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/68</value>
+  </data>
+  <data name="_105mm_KwK46_L70" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/70</value>
+  </data>
+  <data name="_105mm_L7A1" xml:space="preserve">
+    <value>10,5 cm L7A1</value>
+  </data>
+  <data name="_105mm_PzGr.40Rot" xml:space="preserve">
+    <value>PzGr 40 rot</value>
+  </data>
+  <data name="_105mm_PzGr39G" xml:space="preserve">
+    <value>PzGr 39 G</value>
+  </data>
+  <data name="_105mm_PzGr39K" xml:space="preserve">
+    <value>Pzgr 39 K</value>
+  </data>
+  <data name="_105mm_PzGr39L" xml:space="preserve">
+    <value>Pzgr 39 L</value>
+  </data>
+  <data name="_105mm_PzGr39L1" xml:space="preserve">
+    <value>Pzgr 39 L1</value>
+  </data>
+  <data name="_105mm_PzGrRot" xml:space="preserve">
+    <value>PzGr rot</value>
+  </data>
+  <data name="_105mm_Pzgr.40" xml:space="preserve">
+    <value>Pzgr 40</value>
+  </data>
+  <data name="_105mm_Pzgr.40G" xml:space="preserve">
+    <value>Pzgr 40 G</value>
+  </data>
+  <data name="_105mm_Pzgr.40K" xml:space="preserve">
+    <value>Pzgr 40 K</value>
+  </data>
+  <data name="_105mm_Pzgr.40L1" xml:space="preserve">
+    <value>Pzgr 40 L1</value>
+  </data>
+  <data name="_105mm_Sprg.18G" xml:space="preserve">
+    <value>Sprgr 18G</value>
+  </data>
+  <data name="_105mm_Sprg.18K" xml:space="preserve">
+    <value>Sprgr 18 K</value>
+  </data>
+  <data name="_105mm_Sprg_K" xml:space="preserve">
+    <value>Sprgr K</value>
+  </data>
+  <data name="_105mm_Sprg_L" xml:space="preserve">
+    <value>Sprgr L</value>
+  </data>
+  <data name="_105mm_Sprg_L1" xml:space="preserve">
+    <value>Sprgr L1</value>
+  </data>
+  <data name="_105mm_StuH42_L28" xml:space="preserve">
+    <value>10,5 cm Stu.H. 42 L/28</value>
+  </data>
+  <data name="_105mm_StuH42_L28Pz" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/28</value>
+  </data>
+  <data name="_105mm_leFH16_L22" xml:space="preserve">
+    <value>10,5 cm le.F.H. 16 L/22</value>
+  </data>
+  <data name="_105mm_leFH18_L28" xml:space="preserve">
+    <value>10,5 cm le.F.H. 18 L/28</value>
+  </data>
+  <data name="_10WSc" xml:space="preserve">
+    <value>10WSc</value>
+  </data>
+  <data name="_128mm_K44_2_L61" xml:space="preserve">
+    <value>12,8 cm Kanone L/61</value>
+  </data>
+  <data name="_128mm_K44_L55" xml:space="preserve">
+    <value>12,8 cm Kanone 44 L/55</value>
+  </data>
+  <data name="_128mm_KwK44_L55" xml:space="preserve">
+    <value>12,8 cm Kw.K. 44 L/55</value>
+  </data>
+  <data name="_128mm_PaK44_2_L61" xml:space="preserve">
+    <value>12,8 cm Pak L/66</value>
+  </data>
+  <data name="_128mm_PaK44_L55" xml:space="preserve">
+    <value>12,8 cm Pak 44 L/55</value>
+  </data>
+  <data name="_128mm_PzGr39" xml:space="preserve">
+    <value>Pzgr 39</value>
+  </data>
+  <data name="_128mm_PzGr39L" xml:space="preserve">
+    <value>Pzgr 39 L</value>
+  </data>
+  <data name="_128mm_PzGr40" xml:space="preserve">
+    <value>Pzgr 40</value>
+  </data>
+  <data name="_128mm_PzGr43" xml:space="preserve">
+    <value>Pzgr 43</value>
+  </data>
+  <data name="_128mm_Pzgr_N4" xml:space="preserve">
+    <value>Pzgr. Nr. 4</value>
+  </data>
+  <data name="_128mm_SF_L61" xml:space="preserve">
+    <value>12,8 cm Kanone 40</value>
+  </data>
+  <data name="_128mm_SprG18" xml:space="preserve">
+    <value>Sprgr 18</value>
+  </data>
+  <data name="_128mm_SprG19" xml:space="preserve">
+    <value>Sprgr 19</value>
+  </data>
+  <data name="_128mm_Sprgr_N9" xml:space="preserve">
+    <value>Sprgr. Nr. 9</value>
+  </data>
+  <data name="_150mmGr_39H1A" xml:space="preserve">
+    <value>Gr 39 H1A</value>
+  </data>
+  <data name="_150mmGr_39H1A_G" xml:space="preserve">
+    <value>Gr 39 H1A G</value>
+  </data>
+  <data name="_150mmGr_39H1A_L" xml:space="preserve">
+    <value>Gr 39 H1A L</value>
+  </data>
+  <data name="_150mmGr_39H2A_G" xml:space="preserve">
+    <value>Gr 39H2A G</value>
+  </data>
+  <data name="_150mmGr_39H3A_G" xml:space="preserve">
+    <value>Gr 39 H3A G</value>
+  </data>
+  <data name="_150mm_KwK44_L38" xml:space="preserve">
+    <value>15 cm Kw.K. L/38</value>
+  </data>
+  <data name="_150mm_PzGr42" xml:space="preserve">
+    <value>Pzgr 42</value>
+  </data>
+  <data name="_150mm_Rohr_L29_5" xml:space="preserve">
+    <value>15 cm Pak L/29.5</value>
+  </data>
+  <data name="_150mm_Rohr_L38" xml:space="preserve">
+    <value>15 cm Pak L/38</value>
+  </data>
+  <data name="_150mm_Sprg" xml:space="preserve">
+    <value>Sprgr 18</value>
+  </data>
+  <data name="_150mm_SprgG" xml:space="preserve">
+    <value>Sprgr G</value>
+  </data>
+  <data name="_150mm_SprgG31" xml:space="preserve">
+    <value>Sprgr G 31</value>
+  </data>
+  <data name="_150mm_SprgG36" xml:space="preserve">
+    <value>Sprgr 36</value>
+  </data>
+  <data name="_150mm_SprgG_ausf_45" xml:space="preserve">
+    <value>Sprgr G 45</value>
+  </data>
+  <data name="_150mm_Sprg_L" xml:space="preserve">
+    <value>Sprgr L</value>
+  </data>
+  <data name="_150mm_Sprg_L.erz." xml:space="preserve">
+    <value>Sprgr L erz.</value>
+  </data>
+  <data name="_150mm_sFH13_L17" xml:space="preserve">
+    <value>15 cm s.F.H. 13 L/17</value>
+  </data>
+  <data name="_150mm_sFH18_L30" xml:space="preserve">
+    <value>15 cm s.F.H. 18 L/29.5</value>
+  </data>
+  <data name="_150mm_sFH36_L43" xml:space="preserve">
+    <value>15 cm s.F.H. 43</value>
+  </data>
+  <data name="_150mm_sFH36_L43_short" xml:space="preserve">
+    <value>15 cm s.F.H. 43</value>
+  </data>
+  <data name="_150mm_sIG33L11" xml:space="preserve">
+    <value>15 cm s.I.G. 33 L/11</value>
+  </data>
+  <data name="_170mm_K72_Sf_" xml:space="preserve">
+    <value>17 cm Kanone 72</value>
+  </data>
+  <data name="_170mm_PaK_K72" xml:space="preserve">
+    <value>17 cm Pak</value>
+  </data>
+  <data name="_170mm_PaK_K72_PzGr43" xml:space="preserve">
+    <value>PzGr 46</value>
+  </data>
+  <data name="_170mm_PaK_K72_PzGr45" xml:space="preserve">
+    <value>Gr 46 H1A</value>
+  </data>
+  <data name="_170mm_PaK_K72_SprgG_ausf_46" xml:space="preserve">
+    <value>SprgG 46</value>
+  </data>
+  <data name="_170mm_Sprg18" xml:space="preserve">
+    <value>Sprgr 18</value>
+  </data>
+  <data name="_170mm_Sprg18_Ausf_G" xml:space="preserve">
+    <value>Sprg18 Ausf. G</value>
+  </data>
+  <data name="_20cm_Pzgr40" xml:space="preserve">
+    <value>Pzgr 40</value>
+  </data>
+  <data name="_20mm_Breda" xml:space="preserve">
+    <value>2 cm Breda (i)</value>
+  </data>
+  <data name="_20mm_Flak_38_L112" xml:space="preserve">
+    <value>2 cm Flak 38</value>
+  </data>
+  <data name="_20mm_KwK_30" xml:space="preserve">
+    <value>2 cm Kw.K. 30</value>
+  </data>
+  <data name="_20mm_KwK_30A" xml:space="preserve">
+    <value>2 cm Kw.K. 30</value>
+  </data>
+  <data name="_20mm_KwK_38_L55" xml:space="preserve">
+    <value>2 cm Kw.K. 38</value>
+  </data>
+  <data name="_20mm_KwK_38_L55A" xml:space="preserve">
+    <value>2 cm Kw.K. 38</value>
+  </data>
+  <data name="_20mm_Pzgr39" xml:space="preserve">
+    <value>Pzgr 39</value>
+  </data>
+  <data name="_210mm_Gr.18Be" xml:space="preserve">
+    <value>Gr. 18Be</value>
+  </data>
+  <data name="_210mm_Morser_18" xml:space="preserve">
+    <value>21 cm Mörser 18/2</value>
+  </data>
+  <data name="_210mm_Morser_21" xml:space="preserve">
+    <value>21 cm Mörser 18/1</value>
+  </data>
+  <data name="_210mm_Sprg18" xml:space="preserve">
+    <value>Gr. 18 Stg</value>
+  </data>
+  <data name="_210mm_Sprg18_Ausf_G" xml:space="preserve">
+    <value>Gr. 18</value>
+  </data>
+  <data name="_30mm_M" xml:space="preserve">
+    <value>Spgr. Patr. 103 M</value>
+  </data>
+  <data name="_30mm_MK103" xml:space="preserve">
+    <value>3 cm M.K. 103</value>
+  </data>
+  <data name="_30mm_Pzgr" xml:space="preserve">
+    <value>H-Pzgr. Patr. 103 (w)</value>
+  </data>
+  <data name="_30mm_Pzgr43" xml:space="preserve">
+    <value>H-Pzgr. Patr. 103 (u)</value>
+  </data>
+  <data name="_37cm_Pzgr40" xml:space="preserve">
+    <value>Pzgr 40</value>
+  </data>
+  <data name="_37cm_Pzgr40t" xml:space="preserve">
+    <value>Pzgr 40 (t)</value>
+  </data>
+  <data name="_37mm_KwK_34t_L40" xml:space="preserve">
+    <value>3,7 cm Kw.K. 34 (t) L/40</value>
+  </data>
+  <data name="_37mm_KwK_38t_L47" xml:space="preserve">
+    <value>3,7 cm Kw.K. 38 (t) L/47</value>
+  </data>
+  <data name="_37mm_KwK_38t_L47_A" xml:space="preserve">
+    <value>3,7 cm Kw.K. 38 (t) L/47</value>
+  </data>
+  <data name="_37mm_KwK_L46" xml:space="preserve">
+    <value>3,7 cm Kw.K. 36 L/46.5</value>
+  </data>
+  <data name="_37mm_PaK_38t_L47" xml:space="preserve">
+    <value>3,7 cm Pak (t) L/47</value>
+  </data>
+  <data name="_37mm_Pzgr36" xml:space="preserve">
+    <value>Pzgr 36</value>
+  </data>
+  <data name="_37mm_Pzgr39t" xml:space="preserve">
+    <value>Pzgr 39 (t)</value>
+  </data>
+  <data name="_37mm_SA_38f_L34" xml:space="preserve">
+    <value>3,7 cm SA 38 L/34</value>
+  </data>
+  <data name="_37mm_Sprg.18" xml:space="preserve">
+    <value>Sprgr 18</value>
+  </data>
+  <data name="_37mm_Sprg.18t" xml:space="preserve">
+    <value>Sprgr 18 (t)</value>
+  </data>
+  <data name="_47cm_Pzgr40f" xml:space="preserve">
+    <value>Pzgr 40 (f)</value>
+  </data>
+  <data name="_47cm_Pzgr40t" xml:space="preserve">
+    <value>Pzgr 40 (t)</value>
+  </data>
+  <data name="_47mm_PaK_38t_L43" xml:space="preserve">
+    <value>4,7 cm Kw.K. (t) L/43</value>
+  </data>
+  <data name="_47mm_PaK_38t_L43AT" xml:space="preserve">
+    <value>4,7 cm Pak (t) L/43</value>
+  </data>
+  <data name="_47mm_Pzgr39f" xml:space="preserve">
+    <value>Pzgr 39 (f)</value>
+  </data>
+  <data name="_47mm_Pzgr39t" xml:space="preserve">
+    <value>Pzgr 39 (t)</value>
+  </data>
+  <data name="_47mm_SA35_L34" xml:space="preserve">
+    <value>4,7 cm SA 35 L/34</value>
+  </data>
+  <data name="_47mm_Sprg.18f" xml:space="preserve">
+    <value>Sprgr 18 (f)</value>
+  </data>
+  <data name="_47mm_Sprg.18t" xml:space="preserve">
+    <value>Sprgr 18 (t)</value>
+  </data>
+  <data name="_50mm_KwK_38_L42" xml:space="preserve">
+    <value>5 cm Kw.K. 38 L/42</value>
+  </data>
+  <data name="_50mm_KwK_39_L60" xml:space="preserve">
+    <value>5 cm Kw.K. 39 L/60</value>
+  </data>
+  <data name="_50mm_PaK_39_L60" xml:space="preserve">
+    <value>5 cm Pak 38 L/60</value>
+  </data>
+  <data name="_50mm_Pzgr39" xml:space="preserve">
+    <value>Pzgr 39</value>
+  </data>
+  <data name="_50mm_Pzgr40" xml:space="preserve">
+    <value>Pzgr 40</value>
+  </data>
+  <data name="_50mm_Sprg.18" xml:space="preserve">
+    <value>Sprgr 18</value>
+  </data>
+  <data name="_7.92mm_AP" xml:space="preserve">
+    <value>Patrone 318 SmK-Rs-L'spur</value>
+  </data>
+  <data name="_7.92mm_APCR" xml:space="preserve">
+    <value>Patrone 318 SmKH-Rs-L'spur</value>
+  </data>
+  <data name="_7.92mm_Mauser_EW_141" xml:space="preserve">
+    <value>7,92 mm Mauser E.W. 141</value>
+  </data>
+  <data name="_75mm_A18KwK" xml:space="preserve">
+    <value>7,5 cm Škoda A18</value>
+  </data>
+  <data name="_75mm_APCBC" xml:space="preserve">
+    <value>APCBC</value>
+  </data>
+  <data name="_75mm_Flak_L60" xml:space="preserve">
+    <value>7,5 cm Flak L/60</value>
+  </data>
+  <data name="_75mm_KwK41_L58_conic" xml:space="preserve">
+    <value>7,5/5,5 cm Waffe 0725</value>
+  </data>
+  <data name="_75mm_KwK45_L100" xml:space="preserve">
+    <value>7,5 cm Kw.K. L/100</value>
+  </data>
+  <data name="_75mm_KwK_37_L24" xml:space="preserve">
+    <value>7,5 cm Kw.K. 37 L/24</value>
+  </data>
+  <data name="_75mm_KwK_37_L24A" xml:space="preserve">
+    <value>7,5 cm Kw.K. 37 L/24</value>
+  </data>
+  <data name="_75mm_KwK_40_L43" xml:space="preserve">
+    <value>7,5 cm Kw.K. 40 L/43</value>
+  </data>
+  <data name="_75mm_KwK_40_L43A" xml:space="preserve">
+    <value>7,5 cm Kw.K. 40 L/43</value>
+  </data>
+  <data name="_75mm_KwK_40_L48" xml:space="preserve">
+    <value>7,5 cm Kw.K. 40 L/48</value>
+  </data>
+  <data name="_75mm_KwK_441_A" xml:space="preserve">
+    <value>7,5 cm Kw.K. 44/1 L/70</value>
+  </data>
+  <data name="_75mm_KwK_L70" xml:space="preserve">
+    <value>7,5 cm Kw.K. 42 L/70</value>
+  </data>
+  <data name="_75mm_KwK_L70_A" xml:space="preserve">
+    <value>7,5 cm Kw.K. 42 L/70</value>
+  </data>
+  <data name="_75mm_PaK_39_L48" xml:space="preserve">
+    <value>7,5 cm Pak 39 L/48</value>
+  </data>
+  <data name="_75mm_PaK_40_2" xml:space="preserve">
+    <value>7,5 cm Pak 40/2 L/46</value>
+  </data>
+  <data name="_75mm_PaK_40_3" xml:space="preserve">
+    <value>7,5 cm Pak 40/3 L/46</value>
+  </data>
+  <data name="_75mm_Pzgr.40" xml:space="preserve">
+    <value>Pzgr 40</value>
+  </data>
+  <data name="_75mm_Pzgr.40L" xml:space="preserve">
+    <value>Pzgr 40 L</value>
+  </data>
+  <data name="_75mm_Pzgr39" xml:space="preserve">
+    <value>Pzgr 39</value>
+  </data>
+  <data name="_75mm_Pzgr39L" xml:space="preserve">
+    <value>Pzgr 39 L</value>
+  </data>
+  <data name="_75mm_Sprg.18" xml:space="preserve">
+    <value>Sprgr 18</value>
+  </data>
+  <data name="_75mm_Sprg.18L" xml:space="preserve">
+    <value>Sprgr 18 L</value>
+  </data>
+  <data name="_75mm_StuK42_L70" xml:space="preserve">
+    <value>7,5 cm Pak 42 L/70</value>
+  </data>
+  <data name="_75mm_StuK42_L70A" xml:space="preserve">
+    <value>7,5 cm Pak 42 L/70</value>
+  </data>
+  <data name="_75mm_StuK_37_L24" xml:space="preserve">
+    <value>7,5 cm Kanone L/24</value>
+  </data>
+  <data name="_75mm_StuK_40_L43" xml:space="preserve">
+    <value>7,5 cm Stu.K. 40 L/43</value>
+  </data>
+  <data name="_75mm_StuK_40_L48A" xml:space="preserve">
+    <value>7,5 cm Stu.K. 40 L/48</value>
+  </data>
+  <data name="_76mm_PaK_36r" xml:space="preserve">
+    <value>7,62 cm Pak 36 (r)</value>
+  </data>
+  <data name="_76mm_Pzgr.40r" xml:space="preserve">
+    <value>Pzgr 40 (r)</value>
+  </data>
+  <data name="_76mm_Pzgr39r" xml:space="preserve">
+    <value>Pzgr 39 (r)</value>
+  </data>
+  <data name="_76mm_Sprg.18r" xml:space="preserve">
+    <value>Sprgr 18 (r)</value>
+  </data>
+  <data name="_88mm_Flak_37_L56" xml:space="preserve">
+    <value>8,8 cm Flak 37 L/56</value>
+  </data>
+  <data name="_88mm_Flak_41_L74" xml:space="preserve">
+    <value>8,8 cm Flak 41 L/74</value>
+  </data>
+  <data name="_88mm_KwK_36_L56" xml:space="preserve">
+    <value>8,8 cm Kw.K. 36 L/56</value>
+  </data>
+  <data name="_88mm_KwK_36_L56A" xml:space="preserve">
+    <value>8,8 cm Kw.K. 36 L/56</value>
+  </data>
+  <data name="_88mm_KwK_43_L71" xml:space="preserve">
+    <value>8,8 cm Kw.K. 43 L/71</value>
+  </data>
+  <data name="_88mm_KwK_43_L71A" xml:space="preserve">
+    <value>8,8 cm Pak 43 L/71</value>
+  </data>
+  <data name="_88mm_KwK_43_L71B" xml:space="preserve">
+    <value>8,8 cm Kw.K. 43 L/71</value>
+  </data>
+  <data name="_88mm_KwK_L100" xml:space="preserve">
+    <value>8,8 cm Kw.K. L/100</value>
+  </data>
+  <data name="_88mm_PaK_36_L56" xml:space="preserve">
+    <value>8,8 cm Pak L/56</value>
+  </data>
+  <data name="_88mm_PaK_43_L71" xml:space="preserve">
+    <value>8,8 cm Pak 43 L/71</value>
+  </data>
+  <data name="_88mm_Pzgr.40" xml:space="preserve">
+    <value>Pzgr 40</value>
+  </data>
+  <data name="_88mm_Pzgr.40L" xml:space="preserve">
+    <value>Pzgr 40 L</value>
+  </data>
+  <data name="_88mm_Pzgr.40_43" xml:space="preserve">
+    <value>Pzgr 40/43</value>
+  </data>
+  <data name="_88mm_Pzgr39" xml:space="preserve">
+    <value>Pzgr 39</value>
+  </data>
+  <data name="_88mm_Pzgr39L" xml:space="preserve">
+    <value>Pzgr 39 L</value>
+  </data>
+  <data name="_88mm_Pzgr39_1" xml:space="preserve">
+    <value>Pzgr. 39/1 Flak 41</value>
+  </data>
+  <data name="_88mm_Pzgr39_43" xml:space="preserve">
+    <value>Pzgr 39/43</value>
+  </data>
+  <data name="_88mm_Pzgr40_43" xml:space="preserve">
+    <value>Pzgr. 40/43 Flak 41</value>
+  </data>
+  <data name="_88mm_Sprg.18" xml:space="preserve">
+    <value>Sprgr 18</value>
+  </data>
+  <data name="_88mm_Sprg.18L" xml:space="preserve">
+    <value>Sprgr 18 L</value>
+  </data>
+  <data name="_88mm_Sprg.43" xml:space="preserve">
+    <value>Sprgr 43</value>
+  </data>
+  <data name="_88mm_Sprgr.Flak_41" xml:space="preserve">
+    <value>Sprgr. Flak 41</value>
+  </data>
+  <data name="_90mm_DM13" xml:space="preserve">
+    <value>DM13</value>
+  </data>
+  <data name="_90mm_DM502" xml:space="preserve">
+    <value>DM502</value>
+  </data>
+  <data name="_90mm_M431" xml:space="preserve">
+    <value>M431</value>
+  </data>
+  <data name="_90mm_Pzgr39_48" xml:space="preserve">
+    <value>Pzgr 39/48</value>
+  </data>
+  <data name="_90mm_Pzgr40_48" xml:space="preserve">
+    <value>Pzgr 40/48</value>
+  </data>
+  <data name="_90mm_Rheinmetall_90_L40" xml:space="preserve">
+    <value>90 mm Rheinmetall DM1</value>
+  </data>
+  <data name="_90mm_Sprg48" xml:space="preserve">
+    <value>Sprgr 48</value>
+  </data>
+  <data name="_9cm_KwK_51_L71" xml:space="preserve">
+    <value>9 cm Bordkanone</value>
+  </data>
+  <data name="_Gr_38_HL_A" xml:space="preserve">
+    <value>Gr 38 HL A</value>
+  </data>
+  <data name="artillery_shell" xml:space="preserve">
+    <value>Artillery shell</value>
+  </data>
+  <data name="bomber_shell" xml:space="preserve">
+    <value>Bomber shell</value>
+  </data>
+</root>

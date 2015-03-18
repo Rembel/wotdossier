@@ -107,6 +107,16 @@
     <Compile Include="TestFixtureBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Tanks\Resources\china_vehicles.resx" />
+    <EmbeddedResource Include="Tanks\Resources\france_vehicles.resx" />
+    <EmbeddedResource Include="Tanks\Resources\gb_vehicles.resx" />
+    <EmbeddedResource Include="Tanks\Resources\germany_vehicles.resx" />
+    <EmbeddedResource Include="Tanks\Resources\igr_vehicles.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanks\Resources\japan_vehicles.resx" />
+    <EmbeddedResource Include="Tanks\Resources\usa_vehicles.resx" />
+    <EmbeddedResource Include="Tanks\Resources\ussr_vehicles.resx" />
     <None Include="..\WotDossier\App.config">
       <Link>App.config</Link>
     </None>

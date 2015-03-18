@@ -1,0 +1,1221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A-220B_1_IGR" xml:space="preserve">
+    <value>A-220B</value>
+  </data>
+  <data name="A-220B_IGR" xml:space="preserve">
+    <value>A-220A</value>
+  </data>
+  <data name="AEC_A190_IGR" xml:space="preserve">
+    <value>AEC A190</value>
+  </data>
+  <data name="AMX_13_90_IGR" xml:space="preserve">
+    <value>PC방 AMX 13 90</value>
+  </data>
+  <data name="AMX_13_90_IGR_descr" xml:space="preserve">
+    <value>Development was started in 1946. Mass production was launched in 1952. The first 2000 vehicles were equipped with the 75 mm gun. However, later versions had the 90 mm gun, giving much greater firepower.</value>
+  </data>
+  <data name="AMX_13_90_IGR_short" xml:space="preserve">
+    <value>PC방 AMX 13 90</value>
+  </data>
+  <data name="AMX_50_100_IGR" xml:space="preserve">
+    <value>PC방 AMX 50 100</value>
+  </data>
+  <data name="AMX_50_100_IGR_descr" xml:space="preserve">
+    <value>Development of this heavy tank started in 1945, and was influenced by German wartime tank designs. In 1950 a prototype with an oscillating turret and the 100 mm gun was manufactured. The vehicle never entered mass production nor saw service.</value>
+  </data>
+  <data name="AMX_50_100_IGR_short" xml:space="preserve">
+    <value>PC방 AMX 50 100</value>
+  </data>
+  <data name="AMX_AC_Mle1948_IGR" xml:space="preserve">
+    <value>PC방 AMX AC mle. 48</value>
+  </data>
+  <data name="AMX_AC_Mle1948_IGR_descr" xml:space="preserve">
+    <value>A draft project of a tank destroyer on the basis of the AMX 50. Developed in 1948. The vehicle featured rotating fire unit on the rear. Existed only in blueprints.</value>
+  </data>
+  <data name="AMX_AC_Mle1948_IGR_short" xml:space="preserve">
+    <value>PC방 AMX AC 48</value>
+  </data>
+  <data name="AN-ARC-27_IGR" xml:space="preserve">
+    <value>AN/GRC-7</value>
+  </data>
+  <data name="AN-VRC-7_IGR" xml:space="preserve">
+    <value>AN/VRC-7</value>
+  </data>
+  <data name="Bat_Chatillon25t_IGR" xml:space="preserve">
+    <value>PC방 Bat.-Châtillon 25 t</value>
+  </data>
+  <data name="Bat_Chatillon25t_IGR_descr" xml:space="preserve">
+    <value>This experimental tank was a further development of the AMX 13. The tank underwent trials, but never entered mass production nor saw service. Two vehicles were manufactured.</value>
+  </data>
+  <data name="Bat_Chatillon25t_IGR_short" xml:space="preserve">
+    <value>PC방 B-C 25 t</value>
+  </data>
+  <data name="C42_IGR" xml:space="preserve">
+    <value>SR C42</value>
+  </data>
+  <data name="C45_IGR" xml:space="preserve">
+    <value>SR C45</value>
+  </data>
+  <data name="Ch11_110_IGR" xml:space="preserve">
+    <value>PC방 110</value>
+  </data>
+  <data name="Ch11_110_IGR_descr" xml:space="preserve">
+    <value>From the mid-1940s to the 1950s, Soviet engineers attempted to modernize the IS-2 tank. The IS-2U variant, developed in November 1944, was conceived to have a reinforced frontal hull with a plate configuration resembling that of the IS-3. In the mid-1950s the design project was passed to China and became the basis of further Chinese tank development.</value>
+  </data>
+  <data name="Ch17_WZ131_1_WZ132_IGR" xml:space="preserve">
+    <value>PC방 WZ-132</value>
+  </data>
+  <data name="Ch17_WZ131_1_WZ132_IGR_descr" xml:space="preserve">
+    <value>The order for the WZ-132 tank was placed in 1964. The design was based on the WZ-131, but with the goal of enhancing firepower and armor protection. A few prototypes were built before the project was canceled in the late 1960s. All prototypes were destroyed during Chinese nuclear weapon testing.</value>
+  </data>
+  <data name="Ch17_WZ131_1_WZ132_IGR_short" xml:space="preserve">
+    <value>PC방 WZ-132</value>
+  </data>
+  <data name="Ch19_121_IGR" xml:space="preserve">
+    <value>PC방 121</value>
+  </data>
+  <data name="Ch19_121_IGR_descr" xml:space="preserve">
+    <value>Development began in 1962 on a new medium tank based on the Type 59. The new tank was expected to feature improvements in firepower and armor protection. However, the project was canceled shortly after. Some technical innovations were applied later, in the development of the Type 69 tank. All 121 tank prototypes were destroyed during Chinese nuclear weapon testing.</value>
+  </data>
+  <data name="Chassis_105_leFH18B2_IGR" xml:space="preserve">
+    <value>leFH18B2</value>
+  </data>
+  <data name="Chassis_AMX_13_90_IGR" xml:space="preserve">
+    <value>AMX 13 Type 2D</value>
+  </data>
+  <data name="Chassis_AMX_50_100_IGR" xml:space="preserve">
+    <value>AMX 50 100</value>
+  </data>
+  <data name="Chassis_AMX_AC_Mle1948_IGR" xml:space="preserve">
+    <value>AMX AC mle. 49</value>
+  </data>
+  <data name="Chassis_Bat_Chatillon25t_2_IGR" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t</value>
+  </data>
+  <data name="Chassis_Ch11_110_2_IGR" xml:space="preserve">
+    <value>110-1</value>
+  </data>
+  <data name="Chassis_Ch17_WZ131_1_WZ132_IGR" xml:space="preserve">
+    <value>WZ-132</value>
+  </data>
+  <data name="Chassis_Ch19_121_IGR" xml:space="preserve">
+    <value>121</value>
+  </data>
+  <data name="Chassis_Chi_Ri_2_IGR" xml:space="preserve">
+    <value>Type 5 Chi-Ri Plan 2</value>
+  </data>
+  <data name="Chassis_E-25_IGR" xml:space="preserve">
+    <value>E 25</value>
+  </data>
+  <data name="Chassis_ELC_AMX_2_IGR" xml:space="preserve">
+    <value>AMX ELC bis</value>
+  </data>
+  <data name="Chassis_GB08_Churchill_I_IGR" xml:space="preserve">
+    <value>Churchill III</value>
+  </data>
+  <data name="Chassis_GB11_Caernarvon_IGR" xml:space="preserve">
+    <value>FV221A</value>
+  </data>
+  <data name="Chassis_GB13_FV215b_IGR" xml:space="preserve">
+    <value>FV215</value>
+  </data>
+  <data name="Chassis_GB21_Cromwell_IGR" xml:space="preserve">
+    <value>A27M</value>
+  </data>
+  <data name="Chassis_GB23_Centurion_IGR" xml:space="preserve">
+    <value>Centurion Mk. III</value>
+  </data>
+  <data name="Chassis_GB72_AT15_IGR" xml:space="preserve">
+    <value>AT 15 Mk. II</value>
+  </data>
+  <data name="Chassis_GB77_FV304_IGR" xml:space="preserve">
+    <value>FV304 Mk. II</value>
+  </data>
+  <data name="Chassis_IS-3_IGR" xml:space="preserve">
+    <value>IS-3M</value>
+  </data>
+  <data name="Chassis_IS-7_IGR" xml:space="preserve">
+    <value>IS-7</value>
+  </data>
+  <data name="Chassis_ISU-152_IGR" xml:space="preserve">
+    <value>ISU-152M</value>
+  </data>
+  <data name="Chassis_JagdTiger_SdKfz_185_IGR" xml:space="preserve">
+    <value>Jagdtiger 8,8</value>
+  </data>
+  <data name="Chassis_KV-5_IGR" xml:space="preserve">
+    <value>KV-5</value>
+  </data>
+  <data name="Chassis_KV2_IGR" xml:space="preserve">
+    <value>KV-2 mod. 1941</value>
+  </data>
+  <data name="Chassis_M48A1_IGR" xml:space="preserve">
+    <value>T97E2</value>
+  </data>
+  <data name="Chassis_Panther_II_IGR" xml:space="preserve">
+    <value>Panther II verstärkteketten</value>
+  </data>
+  <data name="Chassis_Panther_II_IGR_short" xml:space="preserve">
+    <value>Panther II
+verstärkteketten</value>
+  </data>
+  <data name="Chassis_PzVIB_Tiger_II_IGR" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="Chassis_PzVIB_Tiger_II_IGR_short" xml:space="preserve">
+    <value>Tiger II</value>
+  </data>
+  <data name="Chassis_PzVI_IGR" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger Ausf. E</value>
+  </data>
+  <data name="Chassis_R106_KV85_IGR" xml:space="preserve">
+    <value>KV-122</value>
+  </data>
+  <data name="Chassis_STA_1_IGR" xml:space="preserve">
+    <value>STA-3</value>
+  </data>
+  <data name="Chassis_ST_B1_IGR" xml:space="preserve">
+    <value>STB-1</value>
+  </data>
+  <data name="Chassis_S_35CA_2_IGR" xml:space="preserve">
+    <value>S35 CA bis</value>
+  </data>
+  <data name="Chassis_Sherman_Jumbo_IGR" xml:space="preserve">
+    <value>VVSST51E2</value>
+  </data>
+  <data name="Chassis_StuG_40_AusfG_IGR" xml:space="preserve">
+    <value>StuG III Ausf. G</value>
+  </data>
+  <data name="Chassis_T-44_IGR" xml:space="preserve">
+    <value>T-44M</value>
+  </data>
+  <data name="Chassis_T34_hvy_IGR" xml:space="preserve">
+    <value>T80E3</value>
+  </data>
+  <data name="Chassis_T49_IGR" xml:space="preserve">
+    <value>T49E2</value>
+  </data>
+  <data name="Chassis_T69_IGR" xml:space="preserve">
+    <value>T95</value>
+  </data>
+  <data name="Chassis_T71_IGR" xml:space="preserve">
+    <value>T71A1</value>
+  </data>
+  <data name="Chi_Ri_IGR" xml:space="preserve">
+    <value>PC방 Type 5 Chi-Ri</value>
+  </data>
+  <data name="Chi_Ri_IGR_descr" xml:space="preserve">
+    <value>A single prototype was manufactured at the beginning of 1945. The vehicle underwent trials and was recommended for service. However, Japan was defeated before mass production could begin. After the surrender, the prototype was confiscated by American occupation authorities and was shipped to the United States.</value>
+  </data>
+  <data name="Chi_Ri_IGR_short" xml:space="preserve">
+    <value>PC방 Chi-Ri</value>
+  </data>
+  <data name="Continental_AOI-628-2_IGR" xml:space="preserve">
+    <value>Continental AOI-628-2</value>
+  </data>
+  <data name="Continental_AOI-628-2_IGR_short" xml:space="preserve">
+    <value>Continental
+AOI-628-2</value>
+  </data>
+  <data name="Continental_AOSI-895-5_IGR" xml:space="preserve">
+    <value>Continental AOSI-895-5</value>
+  </data>
+  <data name="Continental_AOSI-895-5_IGR_short" xml:space="preserve">
+    <value>Continental
+AOSI-895-5</value>
+  </data>
+  <data name="Continental_AV-1790-1_IGR" xml:space="preserve">
+    <value>Continental AV-1790-1</value>
+  </data>
+  <data name="Continental_AV-1790-1_IGR_short" xml:space="preserve">
+    <value>Continental
+AV-1790-1</value>
+  </data>
+  <data name="Continental_AV-1790-3A1_IGR" xml:space="preserve">
+    <value>Continental AV-1790-3A1</value>
+  </data>
+  <data name="Continental_AV-1790-3A1_IGR_short" xml:space="preserve">
+    <value>Continental
+AV-1790-3A1</value>
+  </data>
+  <data name="Continental_AV-1790-3_IGR" xml:space="preserve">
+    <value>Continental AV-1790-3</value>
+  </data>
+  <data name="Continental_AV-1790-3_IGR_short" xml:space="preserve">
+    <value>Continental
+AV-1790-3</value>
+  </data>
+  <data name="Continental_AV-1790-7B_IGR" xml:space="preserve">
+    <value>Continental AV-1790-7B</value>
+  </data>
+  <data name="Continental_AV-1790-7B_IGR_short" xml:space="preserve">
+    <value>Continental
+AV-1790-7B</value>
+  </data>
+  <data name="D51072_IGR" xml:space="preserve">
+    <value>D51072</value>
+  </data>
+  <data name="Detroit_Diesel_6V53T-S_IGR" xml:space="preserve">
+    <value>Detroit Diesel 6V53T-S</value>
+  </data>
+  <data name="Detroit_Diesel_6V53T-S_IGR_short" xml:space="preserve">
+    <value>Detroit Diesel
+6V53T-S</value>
+  </data>
+  <data name="E-25_IGR" xml:space="preserve">
+    <value>PC방 E 25</value>
+  </data>
+  <data name="E-25_IGR_descr" xml:space="preserve">
+    <value>The development of the E-25 was a part of the "E" program, supervised by the Waffenprüfamt 6 committee. The E-25 was developed by the Argus company (Karlsruhe, Germany) under the supervision of Dr. Herman Klaue. No prototypes were manufactured.</value>
+  </data>
+  <data name="ELC_AMX_IGR" xml:space="preserve">
+    <value>PC방 ELC AMX</value>
+  </data>
+  <data name="ELC_AMX_IGR_descr" xml:space="preserve">
+    <value>In 1956, the French Ministry of Defense launched the ELC (Engin Leger de Combat) project. The aim was to create a light tank for airborne transport. The ELС AMX prototype featured a low silhouette and a turret placement of both crew members. The vehicle never saw mass production, nor entered service.</value>
+  </data>
+  <data name="ELC_AMX_IGR_short" xml:space="preserve">
+    <value>PC방 ELC AMX</value>
+  </data>
+  <data name="ER_53_IGR" xml:space="preserve">
+    <value>ER 53</value>
+  </data>
+  <data name="ER_56_IGR" xml:space="preserve">
+    <value>ER 56</value>
+  </data>
+  <data name="Ferdinand_IGR" xml:space="preserve">
+    <value>PC방 Ferdinand</value>
+  </data>
+  <data name="Ferdinand_IGR_descr" xml:space="preserve">
+    <value>Developed on the basis of the Porsche Tiger, with a total of 90 vehicles produced in April and May 1943. They first saw combat in the Battle of Kursk (Operation Citadel).</value>
+  </data>
+  <data name="Ferdinandturm_IGR" xml:space="preserve">
+    <value>Ferdinand</value>
+  </data>
+  <data name="Ferdinandvetstaerktketten_IGR" xml:space="preserve">
+    <value>Elefant</value>
+  </data>
+  <data name="Ferdinandvetstaerktketten_IGR_short" xml:space="preserve">
+    <value>Elefant</value>
+  </data>
+  <data name="Ford_GAA_IGR" xml:space="preserve">
+    <value>Ford GAA</value>
+  </data>
+  <data name="FuG12_IGR" xml:space="preserve">
+    <value>FuG 12</value>
+  </data>
+  <data name="FuG7A_IGR" xml:space="preserve">
+    <value>FuG 7 Ausf. F</value>
+  </data>
+  <data name="FuG7_IGR" xml:space="preserve">
+    <value>FuG 7</value>
+  </data>
+  <data name="FuG8f_IGR" xml:space="preserve">
+    <value>Fu.Spr.Ger. "f"</value>
+  </data>
+  <data name="GB08_Churchill_I_IGR" xml:space="preserve">
+    <value>PC방 Churchill I</value>
+  </data>
+  <data name="GB08_Churchill_I_IGR_descr" xml:space="preserve">
+    <value>The A22 prototype was built by Vauxhall Motors in the fall of 1940. The vehicle first entered mass production in the summer of 1941. Early modifications had no track fenders, a different fan, and a 3-inch howitzer in the hull. A total of 300 Churchill I tanks were manufactured.</value>
+  </data>
+  <data name="GB08_Churchill_I_IGR_short" xml:space="preserve">
+    <value>PC방 Churchill I</value>
+  </data>
+  <data name="GB11_Caernarvon_IGR" xml:space="preserve">
+    <value>PC방 Caernarvon</value>
+  </data>
+  <data name="GB11_Caernarvon_IGR_descr" xml:space="preserve">
+    <value>Development of this infantry support tank started in 1944. The first prototype was ready for trials in 1952. A total of 21 tanks were manufactured but never entered service. Some of the vehicles were later converted into the Conqueror heavy tanks.</value>
+  </data>
+  <data name="GB11_Caernarvon_IGR_short" xml:space="preserve">
+    <value>PC방 Caernarvon</value>
+  </data>
+  <data name="GB13_FV215b_IGR" xml:space="preserve">
+    <value>PC방 FV215b</value>
+  </data>
+  <data name="GB13_FV215b_IGR_descr" xml:space="preserve">
+    <value>Proposed plan for a heavy tank on the basis of the Conqueror Mk. II. Unlike the production model, this modification featured rear placement of the fighting compartment. No prototypes were manufactured.</value>
+  </data>
+  <data name="GB21_Cromwell_IGR" xml:space="preserve">
+    <value>PC방 Cromwell</value>
+  </data>
+  <data name="GB21_Cromwell_IGR_descr" xml:space="preserve">
+    <value>The Cromwell was developed in 1941–1942 by BRC&amp;W. A total of 1070 vehicles were mass-produced from late 1943 through 1945. They were extensively used by the British army in the Northwest Europe Campaign of 1944–1945.</value>
+  </data>
+  <data name="GB21_Cromwell_IGR_short" xml:space="preserve">
+    <value>PC방 Cromwell</value>
+  </data>
+  <data name="GB23_Centurion_IGR" xml:space="preserve">
+    <value>PC방 Centurion Mk. I</value>
+  </data>
+  <data name="GB23_Centurion_IGR_descr" xml:space="preserve">
+    <value>Development of the Centurion started in 1943. Designed as a "universal tank" to replace existing infantry and cruiser tanks, it entered service in 1947. A total of 100 vehicles of this series were manufactured from 1945 through 1946.</value>
+  </data>
+  <data name="GB23_Centurion_IGR_short" xml:space="preserve">
+    <value>PC방 Centurion I</value>
+  </data>
+  <data name="GB72_AT15_IGR" xml:space="preserve">
+    <value>PC방 AT 15</value>
+  </data>
+  <data name="GB72_AT15_IGR_descr" xml:space="preserve">
+    <value>Assault tank conceived to break through fortified positions. The design project was ready by the fall of 1943, but no prototypes were manufactured. However, the project became the basis for the A39 Tortoise heavy assault tank.</value>
+  </data>
+  <data name="GB77_FV304_IGR" xml:space="preserve">
+    <value>PC방 FV304</value>
+  </data>
+  <data name="GB77_FV304_IGR_descr" xml:space="preserve">
+    <value>Prototype light SPG developed by Vickers. Development started in 1947. However, the prototype was not manufactured until 1953. The design of the SPG was already obsolete by this time, and the project was canceled.</value>
+  </data>
+  <data name="GB77_FV304_IGR_short" xml:space="preserve">
+    <value>PC방 FV304</value>
+  </data>
+  <data name="Hispano-Suiza_HS110_IGR" xml:space="preserve">
+    <value>Hispano-Suiza HS 110</value>
+  </data>
+  <data name="IS-3_IGR" xml:space="preserve">
+    <value>PC방 IS-3</value>
+  </data>
+  <data name="IS-3_IGR_descr" xml:space="preserve">
+    <value>Mass production of the vehicle started in May 1945. On September 7,1945, IS-3 tanks type took part in the Allied Victory Parade through Berlin. A total of 1170 vehicles were manufactured by the end of 1946, when production was canceled. From 1948 through the late 1950s, the tanks underwent a number of modernization refits.</value>
+  </data>
+  <data name="IS-3_IGR_short" xml:space="preserve">
+    <value>PC방 IS-3</value>
+  </data>
+  <data name="IS-7_IGR" xml:space="preserve">
+    <value>PC방 IS-7</value>
+  </data>
+  <data name="IS-7_IGR_descr" xml:space="preserve">
+    <value>Development of the IS-7 started in the spring of 1945. Prototypes successfully underwent trials in 1946 and 1947. However, the IS-7 never saw mass production.</value>
+  </data>
+  <data name="ISU-152_IGR" xml:space="preserve">
+    <value>PC방 ISU-152</value>
+  </data>
+  <data name="ISU-152_IGR_descr" xml:space="preserve">
+    <value>Developed on the basis of the IS tank. The ISU-152 was conceived as a replacement for the SU-152, which was based on the KV-1s chassis. A total of 4,635 vehicles were built from November 1943 through June 1945.</value>
+  </data>
+  <data name="ISU-152_IGR_short" xml:space="preserve">
+    <value>PC방 ISU-152</value>
+  </data>
+  <data name="JAN-GRC-4Z_IGR" xml:space="preserve">
+    <value>JAN/GRC-4Z</value>
+  </data>
+  <data name="JagdTiger_SdKfz_185_IGR" xml:space="preserve">
+    <value>PC방 8,8 cm Pak 43 Jagdtiger</value>
+  </data>
+  <data name="JagdTiger_SdKfz_185_IGR_descr" xml:space="preserve">
+    <value>In 1945, the production order for the Jagdtiger was increased, and the supply of compatible guns became insufficient. As a result, approximately 20 vehicles were equipped with the 8,8 cm PaK 43 L/71 gun.</value>
+  </data>
+  <data name="JagdTiger_SdKfz_185_IGR_short" xml:space="preserve">
+    <value>PC방 JgTig.8,8 cm</value>
+  </data>
+  <data name="KV-5_IGR" xml:space="preserve">
+    <value>PC방 KV-5</value>
+  </data>
+  <data name="KV-5_IGR_descr" xml:space="preserve">
+    <value>Development was started in June 1941 at the Leningrad Kirov Plant and completed by August, but the German invasion prevented development from progressing to the prototype stage. The KV-5 was expected to share some components with the KV-1. A new turret was designed, incorporating the 107-mm ZIS-6 gun. Early plans called for a new 1,200 hp diesel engine, but later adjustments, recognizing wartime disruptions, replaced this with two V-2K engines.</value>
+  </data>
+  <data name="KV2_IGR" xml:space="preserve">
+    <value>PC방 KV-2</value>
+  </data>
+  <data name="KV2_IGR_descr" xml:space="preserve">
+    <value>Heavy assault tank. Developed on the basis of the KV-1 in January 1940, with a total of 334 vehicles manufactured from 1940 through 1941. The KV-2 tanks were used in action in 1941, with most of the vehicles lost the same year.</value>
+  </data>
+  <data name="KV2_IGR_short" xml:space="preserve">
+    <value>PC방 KV-2</value>
+  </data>
+  <data name="M-50T_IGR" xml:space="preserve">
+    <value>M-50T</value>
+  </data>
+  <data name="M48A1_IGR" xml:space="preserve">
+    <value>PC방 M48A1 Patton</value>
+  </data>
+  <data name="M48A1_IGR_descr" xml:space="preserve">
+    <value>The most successful American medium tank in the immediate post-war period. Development started in 1950. In April 1953, the vehicle entered service. A total of 11,703 vehicles of different variants were produced from 1952 through 1959.</value>
+  </data>
+  <data name="M48A1_IGR_short" xml:space="preserve">
+    <value>PC방 M48 Patton</value>
+  </data>
+  <data name="M4_Sherman_IGR" xml:space="preserve">
+    <value>PC방 M4 Sherman</value>
+  </data>
+  <data name="M4_Sherman_IGR_descr" xml:space="preserve">
+    <value>The first production version of the Sherman, the most common American tank, with an amazing total of 49,234 vehicles manufactured. The Sherman first saw combat in North Africa.</value>
+  </data>
+  <data name="M4_Sherman_IGR_short" xml:space="preserve">
+    <value>PC방 M4</value>
+  </data>
+  <data name="M500_IGR" xml:space="preserve">
+    <value>M500</value>
+  </data>
+  <data name="MB507_IGR" xml:space="preserve">
+    <value>DB 603 A2</value>
+  </data>
+  <data name="Maus_IGR" xml:space="preserve">
+    <value>PC방 Maus</value>
+  </data>
+  <data name="Maus_IGR_descr" xml:space="preserve">
+    <value>Developed from June 1942 through July 1944, with two prototypes produced, only one of which received a turret and armament.</value>
+  </data>
+  <data name="Maus_IGR_short" xml:space="preserve">
+    <value>PC방 Maus</value>
+  </data>
+  <data name="Mausketten_IGR" xml:space="preserve">
+    <value>Maus</value>
+  </data>
+  <data name="Mausturm_IGR" xml:space="preserve">
+    <value>Maus</value>
+  </data>
+  <data name="Maybach_HL_120_TRM_IGR" xml:space="preserve">
+    <value>Maybach HL 120 TRM</value>
+  </data>
+  <data name="Maybach_HL_210P30_Ausf_A_IGR" xml:space="preserve">
+    <value>Maybach HL 230 P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30_A_IGR" xml:space="preserve">
+    <value>Maybach HL 230 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30_A_IGR_short" xml:space="preserve">
+    <value>Maybach
+HL 230 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30_IGR" xml:space="preserve">
+    <value>Maybach HL 230 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30_IGR_short" xml:space="preserve">
+    <value>Maybach
+HL 230 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P45_IGR" xml:space="preserve">
+    <value>Maybach HL 230 TRM P45</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P45_IGR_short" xml:space="preserve">
+    <value>Maybach HL 230
+TRM P45</value>
+  </data>
+  <data name="Maybach_HL_295_IGR" xml:space="preserve">
+    <value>Maybach HL 295</value>
+  </data>
+  <data name="Mk19R_IGR" xml:space="preserve">
+    <value>WS No. 19R</value>
+  </data>
+  <data name="N19Mk3_IGR" xml:space="preserve">
+    <value>WS No. 19 Mk. III</value>
+  </data>
+  <data name="N22_IGR" xml:space="preserve">
+    <value>WS No. 22</value>
+  </data>
+  <data name="Panther_II_IGR" xml:space="preserve">
+    <value>PC방 Panther II</value>
+  </data>
+  <data name="Panther_II_IGR_descr" xml:space="preserve">
+    <value>The vehicle was conceived in 1943. Two prototypes with the existing Panther I turrets were ordered in 1944. By 1945 only one of them had been built by the MAN company.</value>
+  </data>
+  <data name="Panther_II_IGR_short" xml:space="preserve">
+    <value>PC방 Panther II</value>
+  </data>
+  <data name="Pershing_IGR" xml:space="preserve">
+    <value>PC방 M26 Pershing</value>
+  </data>
+  <data name="Pershing_IGR_descr" xml:space="preserve">
+    <value>The Pershing was developed to fight heavy tanks, and was itself initially classified as heavy. After World War II it was re-classified as medium. A few saw combat in the closing phase of World War II.</value>
+  </data>
+  <data name="Pershing_IGR_short" xml:space="preserve">
+    <value>PC방 Pershing</value>
+  </data>
+  <data name="Pershingchassis2_IGR" xml:space="preserve">
+    <value>M26T81</value>
+  </data>
+  <data name="Porsche_Deutz_Typ180_2_IGR" xml:space="preserve">
+    <value>Porsche Deutz Typ 180/2</value>
+  </data>
+  <data name="Porsche_Deutz_Typ180_2_IGR_short" xml:space="preserve">
+    <value>Porsche Deutz
+Typ 180/2</value>
+  </data>
+  <data name="Pz-V_Shmallturm_IGR" xml:space="preserve">
+    <value>Pz.Kpfw. Panther Schmalturm</value>
+  </data>
+  <data name="Pz-V_Shmallturm_IGR_short" xml:space="preserve">
+    <value>Pz.Kpfw. Panther
+Schmalturm</value>
+  </data>
+  <data name="Pz-V_Vetstaerktketten_IGR" xml:space="preserve">
+    <value>Pz.Kpfw. Panther Ausf. G</value>
+  </data>
+  <data name="Pz-V_Vetstaerktketten_IGR_short" xml:space="preserve">
+    <value>Pz.Kpfw. Panther
+Ausf. G</value>
+  </data>
+  <data name="PzVIB_Tiger_II_IGR" xml:space="preserve">
+    <value>PC방 Tiger II</value>
+  </data>
+  <data name="PzVIB_Tiger_II_IGR_descr" xml:space="preserve">
+    <value>Also known as the King or Royal Tiger. Produced from January 1944 through March 1945, with a total of 489 vehicles built.</value>
+  </data>
+  <data name="PzVIB_Tiger_II_IGR_short" xml:space="preserve">
+    <value>PC방 Tiger II</value>
+  </data>
+  <data name="PzVI_IGR" xml:space="preserve">
+    <value>PC방 Tiger I</value>
+  </data>
+  <data name="PzVI_IGR_descr" xml:space="preserve">
+    <value>Development of the Tiger I was started in 1937 by the Henschel company. Mass production began in 1942, with an eventual total of 1,354 vehicles manufactured. The tank first saw combat in the fighting for Leningrad, and Tigers were at the forefront of battles from Tunisia to Kursk. Although production was discontinued in the summer of 1944, the Tiger I continued to see action until the end of the war.</value>
+  </data>
+  <data name="PzVI_IGR_short" xml:space="preserve">
+    <value>PC방 Tiger I</value>
+  </data>
+  <data name="PzV_IGR" xml:space="preserve">
+    <value>PC방 Panther</value>
+  </data>
+  <data name="PzV_IGR_descr" xml:space="preserve">
+    <value>This famous tank was produced from January 1943 through April 1945, with a total of 5,796 vehicles built plus eight vehicles built on the F series chassis.</value>
+  </data>
+  <data name="PzV_IGR_short" xml:space="preserve">
+    <value>PC방 Panther</value>
+  </data>
+  <data name="R106_KV85_IGR" xml:space="preserve">
+    <value>PC방 KV-85</value>
+  </data>
+  <data name="R106_KV85_IGR_descr" xml:space="preserve">
+    <value>A further development of the KV-1S tank. Unlike the previous modification, the KV-85 had enhanced armament. The vehicle was developed in the spring of 1943 at the Chelyabinsk Kirov Plant. The tank entered service on August 8, 1943, and was mass produced until September, with a total of 148 vehicles manufactured. The KV-85 was used by the breakthrough armored regiments of the Red Army.</value>
+  </data>
+  <data name="R106_KV85_IGR_short" xml:space="preserve">
+    <value>PC방 KV-85</value>
+  </data>
+  <data name="R113_IGR" xml:space="preserve">
+    <value>R-113</value>
+  </data>
+  <data name="Renault_A_IGR" xml:space="preserve">
+    <value>Renault 307</value>
+  </data>
+  <data name="Rolls_Royce_Griffon_IGR" xml:space="preserve">
+    <value>Rolls-Royce Griffon</value>
+  </data>
+  <data name="Rolls_Royce_Meteor_M300_IGR" xml:space="preserve">
+    <value>Rolls-Royce Meteor M300</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_M120_IGR" xml:space="preserve">
+    <value>Rolls-Royce Meteor M120</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkIVC_IGR" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. IVC</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkIV_IGR" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. IVB</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkV_IGR" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. V</value>
+  </data>
+  <data name="SCR_506_IGR" xml:space="preserve">
+    <value>SCR 506</value>
+  </data>
+  <data name="SCR_528A1_IGR" xml:space="preserve">
+    <value>SCR 528AM</value>
+  </data>
+  <data name="SCR_528A_IGR" xml:space="preserve">
+    <value>SCR 528</value>
+  </data>
+  <data name="SCR_528_IGR" xml:space="preserve">
+    <value>SCR 528F</value>
+  </data>
+  <data name="SCR_619_IGR" xml:space="preserve">
+    <value>SCR 619</value>
+  </data>
+  <data name="SOFAM_8Gxb_IGR" xml:space="preserve">
+    <value>SOFAM 8 Gxb</value>
+  </data>
+  <data name="STA_1_IGR" xml:space="preserve">
+    <value>PC방 STA-1</value>
+  </data>
+  <data name="STA_1_IGR_descr" xml:space="preserve">
+    <value>The first Japanese post-war tank was developed on the basis of U.S. vehicles. The STA-1 was developed, taking into consideration Japanese terrain, rail network specifications, and anthropometric data of Japanese tankers. Only one prototype was built, in December 1956.</value>
+  </data>
+  <data name="STA_1_IGR_short" xml:space="preserve">
+    <value>PC방 STA-1</value>
+  </data>
+  <data name="ST_B1_IGR" xml:space="preserve">
+    <value>PC방 STB-1</value>
+  </data>
+  <data name="ST_B1_IGR_descr" xml:space="preserve">
+    <value>In the early 1960s, Mitsubishi started development of a new tank that complied with government requirements for armament and defense. The first two prototypes of the STB-1 were manufactured in September 1969 for trials. In 1970 the prototypes were shown to journalists and participated in a military parade.</value>
+  </data>
+  <data name="ST_B1_IGR_short" xml:space="preserve">
+    <value>PC방 STB-1</value>
+  </data>
+  <data name="SU-152_01_IGR" xml:space="preserve">
+    <value>SU-152</value>
+  </data>
+  <data name="SU-152_IGR" xml:space="preserve">
+    <value>PC방 SU-152</value>
+  </data>
+  <data name="SU-152_IGR_descr" xml:space="preserve">
+    <value>A heavy self-propelled gun on the hull of the KV-1S tank, with a total of 671 vehicles built from February through December 1943.</value>
+  </data>
+  <data name="SU-152_mod_1944_IGR" xml:space="preserve">
+    <value>SU-152M</value>
+  </data>
+  <data name="S_35CA_IGR" xml:space="preserve">
+    <value>PC방 S35 CA</value>
+  </data>
+  <data name="S_35CA_IGR_descr" xml:space="preserve">
+    <value>The design called for the conversion of tanks into tank destroyers by mounting a 17-pounder gun into an open-topped, lightly armored cabin.</value>
+  </data>
+  <data name="S_35CA_IGR_short" xml:space="preserve">
+    <value>PC방 S35 CA</value>
+  </data>
+  <data name="Sherman_Jumbo_IGR" xml:space="preserve">
+    <value>PC방 M4A3E2 Sherman Jumbo</value>
+  </data>
+  <data name="Sherman_Jumbo_IGR_descr" xml:space="preserve">
+    <value>This variant of the Sherman featured much heavier armor. The M4A3E2 was initially intended as an infantry support tank. However, some were re-equipped with the M1A1 gun and served as tank hunters.</value>
+  </data>
+  <data name="Sherman_Jumbo_IGR_short" xml:space="preserve">
+    <value>PC방 M4A3E2</value>
+  </data>
+  <data name="Somua_S-40Bis_IGR" xml:space="preserve">
+    <value>Somua S-40 Bis</value>
+  </data>
+  <data name="StuG_40_AusfG_IGR" xml:space="preserve">
+    <value>PC방 StuG III Ausf. G</value>
+  </data>
+  <data name="StuG_40_AusfG_IGR_descr" xml:space="preserve">
+    <value>This vehicle first saw combat in France in 1940. It was produced on the basis of the Pz. III tank in several modifications until 1945. By 1944, 9,346 of these self-propelled guns destroyed about 20,000 enemy vehicles. Some vehicles were in operation until 1967 and were even deployed in the Six-Day War by some countries of the Arab world against Israel.</value>
+  </data>
+  <data name="StuG_40_AusfG_IGR_short" xml:space="preserve">
+    <value>PC방 StuG III G</value>
+  </data>
+  <data name="T-44_IGR" xml:space="preserve">
+    <value>PC방 T-44</value>
+  </data>
+  <data name="T-44_IGR_descr" xml:space="preserve">
+    <value>Adopted in 1944, with a total of 965 vehicles produced by the end of the war. The T-44 remained in service until the end of the 1970s.</value>
+  </data>
+  <data name="T-44_IGR_short" xml:space="preserve">
+    <value>PC방 T-44</value>
+  </data>
+  <data name="T136_IGR" xml:space="preserve">
+    <value>T136</value>
+  </data>
+  <data name="T29_IGR" xml:space="preserve">
+    <value>PC방 T29</value>
+  </data>
+  <data name="T29_IGR_descr" xml:space="preserve">
+    <value>Development of this experimental heavy tank started in September 1944. The construction and trials of the prototypes continued until October 1947. However, the T29 did not enter mass production.</value>
+  </data>
+  <data name="T34_hvy_IGR" xml:space="preserve">
+    <value>PC방 T34</value>
+  </data>
+  <data name="T34_hvy_IGR_descr" xml:space="preserve">
+    <value>In 1945 two prototypes of the T30 were armed with 120-mm guns and redesignated as the T34 Heavy Tank. The vehicle never entered mass production, nor saw service.</value>
+  </data>
+  <data name="T34_hvy_IGR_short" xml:space="preserve">
+    <value>PC방 T34</value>
+  </data>
+  <data name="T42_IGR" xml:space="preserve">
+    <value>T42</value>
+  </data>
+  <data name="T67_IGR" xml:space="preserve">
+    <value>PC방 T67</value>
+  </data>
+  <data name="T67_IGR_descr" xml:space="preserve">
+    <value>Development started in the spring of 1942. After undergoing trials, the decision was made to replace the 57-mm gun with a 75-mm gun. The vehicle passed trials in the fall of 1942 but never saw service.</value>
+  </data>
+  <data name="T67_IGR_short" xml:space="preserve">
+    <value>PC방 T67</value>
+  </data>
+  <data name="T69_IGR" xml:space="preserve">
+    <value>PC방 T69</value>
+  </data>
+  <data name="T69_IGR_descr" xml:space="preserve">
+    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of experimental medium tank T42 in mid-50s. The vehicle never entered mass production.</value>
+  </data>
+  <data name="T69_IGR_short" xml:space="preserve">
+    <value>PC방 T69</value>
+  </data>
+  <data name="T71_IGR" xml:space="preserve">
+    <value>PC방 T71</value>
+  </data>
+  <data name="T71_IGR_descr" xml:space="preserve">
+    <value>Experimental airborne light tank with an oscillating turret. Developed from 1952 through 1953 as a replacement for M41. The armament was deemed ineffective, and the development was discontinued. Only one wooden prototype was built.</value>
+  </data>
+  <data name="T71_IGR_short" xml:space="preserve">
+    <value>PC방 T71</value>
+  </data>
+  <data name="T84E3_IGR" xml:space="preserve">
+    <value>T84E3</value>
+  </data>
+  <data name="Turret_1_105_leFH18B2_IGR" xml:space="preserve">
+    <value>105leFH18B2</value>
+  </data>
+  <data name="Turret_1_AMX_13_90_IGR" xml:space="preserve">
+    <value>FL 10 Type D</value>
+  </data>
+  <data name="Turret_1_AMX_50_100_IGR" xml:space="preserve">
+    <value>AMX 50 100</value>
+  </data>
+  <data name="Turret_1_AMX_AC_Mle1948_IGR" xml:space="preserve">
+    <value>AMX AC mle. 48</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon25t_IGR" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon25t_IGR_short" xml:space="preserve">
+    <value>Batignolles-Châtillon
+25 t</value>
+  </data>
+  <data name="Turret_1_Ch19_121_IGR" xml:space="preserve">
+    <value>121</value>
+  </data>
+  <data name="Turret_1_E-25_IGR" xml:space="preserve">
+    <value>E 25</value>
+  </data>
+  <data name="Turret_1_ELC_AMX_IGR" xml:space="preserve">
+    <value>AMX ELC bis</value>
+  </data>
+  <data name="Turret_1_GB13_FV215b_IGR" xml:space="preserve">
+    <value>FV215</value>
+  </data>
+  <data name="Turret_1_GB72_AT15_IGR" xml:space="preserve">
+    <value>AT 15</value>
+  </data>
+  <data name="Turret_1_ISU-152_IGR" xml:space="preserve">
+    <value>ISU-152</value>
+  </data>
+  <data name="Turret_1_JagdTiger_SdKfz_185_IGR" xml:space="preserve">
+    <value>8,8 cm Pak 43 Jagdtiger</value>
+  </data>
+  <data name="Turret_1_KV-5_IGR" xml:space="preserve">
+    <value>KV-5</value>
+  </data>
+  <data name="Turret_1_M48A1_IGR" xml:space="preserve">
+    <value>M87</value>
+  </data>
+  <data name="Turret_1_ST_B1_IGR" xml:space="preserve">
+    <value>STB-1</value>
+  </data>
+  <data name="Turret_1_S_35CA_IGR" xml:space="preserve">
+    <value>S35 CA</value>
+  </data>
+  <data name="Turret_1_StuG_40_AusfG_IGR" xml:space="preserve">
+    <value>StuG III Ausf. G</value>
+  </data>
+  <data name="Turret_1_T34_hvy_IGR" xml:space="preserve">
+    <value>T34T7</value>
+  </data>
+  <data name="Turret_1_T69_IGR" xml:space="preserve">
+    <value>T178</value>
+  </data>
+  <data name="Turret_1_T71_IGR" xml:space="preserve">
+    <value>T71</value>
+  </data>
+  <data name="Turret_2_Ch11_110_IGR" xml:space="preserve">
+    <value>T-10</value>
+  </data>
+  <data name="Turret_2_Ch17_WZ131_1_WZ132_IGR" xml:space="preserve">
+    <value>WZ-132</value>
+  </data>
+  <data name="Turret_2_Chi_Ri_IGR" xml:space="preserve">
+    <value>Type 5 Chi-Ri Plan 2</value>
+  </data>
+  <data name="Turret_2_GB08_Churchill_I_IGR" xml:space="preserve">
+    <value>Churchill III</value>
+  </data>
+  <data name="Turret_2_GB11_Caernarvon_IGR" xml:space="preserve">
+    <value>Centurion Mk. II</value>
+  </data>
+  <data name="Turret_2_GB21_Cromwell_IGR" xml:space="preserve">
+    <value>Cromwell Mk. IV</value>
+  </data>
+  <data name="Turret_2_GB23_Centurion_IGR" xml:space="preserve">
+    <value>Centurion Mk. III</value>
+  </data>
+  <data name="Turret_2_GB77_FV304_IGR" xml:space="preserve">
+    <value>FV304</value>
+  </data>
+  <data name="Turret_2_IS-3_IGR" xml:space="preserve">
+    <value>IS-3</value>
+  </data>
+  <data name="Turret_2_KV2_IGR" xml:space="preserve">
+    <value>MT-2</value>
+  </data>
+  <data name="Turret_2_Panther_II_IGR" xml:space="preserve">
+    <value>Panther II Schmalturm</value>
+  </data>
+  <data name="Turret_2_Pershing_IGR" xml:space="preserve">
+    <value>M26M71</value>
+  </data>
+  <data name="Turret_2_PzVIB_Tiger_II_IGR" xml:space="preserve">
+    <value>Tiger II Serienturm</value>
+  </data>
+  <data name="Turret_2_PzVIB_Tiger_II_IGR_short" xml:space="preserve">
+    <value>Tiger II
+Serienturm</value>
+  </data>
+  <data name="Turret_2_PzVI_IGR" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger Ausf. E</value>
+  </data>
+  <data name="Turret_2_PzVI_IGR_short" xml:space="preserve">
+    <value>Pz.Kpfw. Tiger
+Ausf. E</value>
+  </data>
+  <data name="Turret_2_R106_KV85_IGR" xml:space="preserve">
+    <value>KV-122 mod. 1944</value>
+  </data>
+  <data name="Turret_2_STA_1_IGR" xml:space="preserve">
+    <value>STA-3</value>
+  </data>
+  <data name="Turret_2_Sherman_Jumbo_IGR" xml:space="preserve">
+    <value>M4A2E2D51080</value>
+  </data>
+  <data name="Turret_2_T-44_IGR" xml:space="preserve">
+    <value>T-44-100</value>
+  </data>
+  <data name="Turret_2_T49_IGR" xml:space="preserve">
+    <value>T67</value>
+  </data>
+  <data name="Turret_IS-7_IGR" xml:space="preserve">
+    <value>IS-7</value>
+  </data>
+  <data name="Turret_Valentine_LL_IGR" xml:space="preserve">
+    <value>Valentine II</value>
+  </data>
+  <data name="V-2-54IS_IGR" xml:space="preserve">
+    <value>V-2-54IS</value>
+  </data>
+  <data name="V-2IS_IGR" xml:space="preserve">
+    <value>V-2IS</value>
+  </data>
+  <data name="V-54-6_IGR" xml:space="preserve">
+    <value>V-54-6</value>
+  </data>
+  <data name="V-5_IGR" xml:space="preserve">
+    <value>V-5</value>
+  </data>
+  <data name="ValentineMK_I_IGR" xml:space="preserve">
+    <value>Valentine</value>
+  </data>
+  <data name="Valentine_LL_IGR" xml:space="preserve">
+    <value>PC방 Valentine II</value>
+  </data>
+  <data name="Valentine_LL_IGR_descr" xml:space="preserve">
+    <value>A British tank supplied to the U.S.S.R. under Lend-Lease. A total of 3,782 vehicles were sent to the Soviet Union, with some lost at sea during transport to Murmansk.</value>
+  </data>
+  <data name="Vauxhall_Bedford_Twin_Six_IGR" xml:space="preserve">
+    <value>Bedford Twin-Six</value>
+  </data>
+  <data name="Wright_Continental_R-975C4_IGR" xml:space="preserve">
+    <value>Wright Continental R-975C4</value>
+  </data>
+  <data name="Wright_Continental_R-975C4_IGR_short" xml:space="preserve">
+    <value>Wright C. R-975C4</value>
+  </data>
+  <data name="_100mm_60-100T_IGR" xml:space="preserve">
+    <value>100 mm 60-100T</value>
+  </data>
+  <data name="_100mm_62-100T_IGR" xml:space="preserve">
+    <value>100 mm 62-100T</value>
+  </data>
+  <data name="_100mm_LB-1_IGR" xml:space="preserve">
+    <value>100 mm LB-1</value>
+  </data>
+  <data name="_100mm_S34_IGR" xml:space="preserve">
+    <value>100 mm S-34</value>
+  </data>
+  <data name="_100mm_SA_47_IGR" xml:space="preserve">
+    <value>100 mm SA47</value>
+  </data>
+  <data name="_105_leFH18B2_IGR" xml:space="preserve">
+    <value>PC방 105 leFH18B2</value>
+  </data>
+  <data name="_105_leFH18B2_IGR_descr" xml:space="preserve">
+    <value>In March 1941, the Rheinmetall-Borsig company ordered sixteen captured B1 Bis tanks to be converted into SPGs. The work was started only at the end of 1941 due to the lack of operational tanks. The vehicles entered service in 1942.</value>
+  </data>
+  <data name="_105_leFH18B2_IGR_short" xml:space="preserve">
+    <value>PC방 leFH18B2</value>
+  </data>
+  <data name="_105mm_CN_105_57_IGR" xml:space="preserve">
+    <value>105 mm mle. 57 (D. 1504)</value>
+  </data>
+  <data name="_105mm_Gun_M68_IGR" xml:space="preserve">
+    <value>105 mm Gun M68</value>
+  </data>
+  <data name="_105mm_Gun_T5E1_IGR" xml:space="preserve">
+    <value>105 mm Gun T5E1</value>
+  </data>
+  <data name="_105mm_KwK46_L68_IGR" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/68</value>
+  </data>
+  <data name="_105mm_Rifled_Gun_IGR" xml:space="preserve">
+    <value>105 mm Rifled Gun</value>
+  </data>
+  <data name="_105mm_leFH18_L28_IGR" xml:space="preserve">
+    <value>10,5 cm le.F.H. 18 L/28</value>
+  </data>
+  <data name="_107mm_ZiS-6M_IGR" xml:space="preserve">
+    <value>107 mm ZiS-6M</value>
+  </data>
+  <data name="_10RK-26_IGR" xml:space="preserve">
+    <value>10RK-26</value>
+  </data>
+  <data name="_10RKM_IGR" xml:space="preserve">
+    <value>10RKM</value>
+  </data>
+  <data name="_10RK_IGR" xml:space="preserve">
+    <value>10RK</value>
+  </data>
+  <data name="_10WSc_IGR" xml:space="preserve">
+    <value>10WSc</value>
+  </data>
+  <data name="_120mm_Gun_L1A1_IGR" xml:space="preserve">
+    <value>120 mm Gun L1A1</value>
+  </data>
+  <data name="_120mm_Gun_T53A1_IGR" xml:space="preserve">
+    <value>120 mm Gun T53A1</value>
+  </data>
+  <data name="_120mm_SA_46_AC_IGR" xml:space="preserve">
+    <value>120 mm AC SA46</value>
+  </data>
+  <data name="_12150L7_IGR" xml:space="preserve">
+    <value>12150L7</value>
+  </data>
+  <data name="_12150LS_IGR" xml:space="preserve">
+    <value>12150LS</value>
+  </data>
+  <data name="_122-mm_60-122TG_IGR" xml:space="preserve">
+    <value>122 mm 60-122TG</value>
+  </data>
+  <data name="_122mm_BL-9_IGR" xml:space="preserve">
+    <value>122 mm BL-9</value>
+  </data>
+  <data name="_122mm_D-25C_mod1944_IGR" xml:space="preserve">
+    <value>122 mm D-25S mod. 1944</value>
+  </data>
+  <data name="_122mm_D-25C_mod1944_IGR_short" xml:space="preserve">
+    <value>122 mm D-25S</value>
+  </data>
+  <data name="_128mm_KwK44_L55_IGR" xml:space="preserve">
+    <value>12,8 cm Kw.K. 44 L/55</value>
+  </data>
+  <data name="_128mm_PaK44_L55_IGR" xml:space="preserve">
+    <value>12,8 cm Pak 44 L/55</value>
+  </data>
+  <data name="_12RT_IGR" xml:space="preserve">
+    <value>12RT</value>
+  </data>
+  <data name="_130mm_S-70_IGR" xml:space="preserve">
+    <value>130 mm S-70</value>
+  </data>
+  <data name="_152mm_BL-10_IGR" xml:space="preserve">
+    <value>152 mm BL-10</value>
+  </data>
+  <data name="_152mm_M-10_IGR" xml:space="preserve">
+    <value>152 mm M-10</value>
+  </data>
+  <data name="_20pdr_AT_Gun_Type_B_IGR" xml:space="preserve">
+    <value>OQF 20-pdr AT Gun Type B Barrel</value>
+  </data>
+  <data name="_20pdr_Gun_Type_A_IGR" xml:space="preserve">
+    <value>OQF 20-pdr Gun Type A Barrel</value>
+  </data>
+  <data name="_20pdr_Gun_Type_B_IGR" xml:space="preserve">
+    <value>OQF 20-pdr Gun Type B Barrel</value>
+  </data>
+  <data name="_4.5inch_SPG_Howitzer_IGR" xml:space="preserve">
+    <value>Q.F. 4.5-in. Howitzer</value>
+  </data>
+  <data name="_45mm_20KL_IGR" xml:space="preserve">
+    <value>45 mm 20K(l)</value>
+  </data>
+  <data name="_75mm_Gun_Type5_M1_auto_IGR" xml:space="preserve">
+    <value>7.5 cm Autoloading Tank Gun Type 5</value>
+  </data>
+  <data name="_75mm_Gun_Vickers_HV_IGR" xml:space="preserve">
+    <value>75 mm Vickers HV</value>
+  </data>
+  <data name="_75mm_KwK45_L100_IGR" xml:space="preserve">
+    <value>7,5 cm Kw.K. L/100</value>
+  </data>
+  <data name="_75mm_StuK42_L70A_IGR" xml:space="preserve">
+    <value>7,5 cm Pak 42 L/70</value>
+  </data>
+  <data name="_75mm_StuK42_L70_IGR" xml:space="preserve">
+    <value>7,5 cm Pak 42 L/70</value>
+  </data>
+  <data name="_76mm_AT_Gun_M1A1_IGR" xml:space="preserve">
+    <value>76 mm AT Gun M1A1</value>
+  </data>
+  <data name="_76mm_Gun_M1A1_IGR" xml:space="preserve">
+    <value>76 mm Gun M1A1</value>
+  </data>
+  <data name="_76mm_Gun_M1A2_IGR" xml:space="preserve">
+    <value>76 mm Gun M1A2</value>
+  </data>
+  <data name="_76mm_Gun_T185_IGR" xml:space="preserve">
+    <value>76 mm Gun T185</value>
+  </data>
+  <data name="_88mm_KwK_43_L71A_IGR" xml:space="preserve">
+    <value>8,8 cm Pak 43 L/71</value>
+  </data>
+  <data name="_88mm_KwK_43_L71_IGR" xml:space="preserve">
+    <value>8,8 cm Kw.K. 43 L/71</value>
+  </data>
+  <data name="_8V135_IGR" xml:space="preserve">
+    <value>8V135</value>
+  </data>
+  <data name="_90mm_D914_IGR" xml:space="preserve">
+    <value>90 mm D. 915</value>
+  </data>
+  <data name="_90mm_F3_IGR" xml:space="preserve">
+    <value>90 mm F3</value>
+  </data>
+  <data name="_90mm_Gun_T15E2M2_IGR" xml:space="preserve">
+    <value>90 mm Gun T15E2M2</value>
+  </data>
+  <data name="_90mm_Gun_T178_IGR" xml:space="preserve">
+    <value>90 mm Gun T178</value>
+  </data>
+  <data name="_90mm_Gun_Type61_IGR" xml:space="preserve">
+    <value>90 mm Gun Type 61</value>
+  </data>
+  <data name="_90mm_canon_DCA_30_CA_IGR" xml:space="preserve">
+    <value>90 mm AC canon DCA 30</value>
+  </data>
+  <data name="_90mm_canon_DCA_30_CA_IGR_short" xml:space="preserve">
+    <value>90 mm AC canon
+DCA 30</value>
+  </data>
+  <data name="_Mitsubishi_10ZF21WT_IGR" xml:space="preserve">
+    <value>Mitsubishi 10ZF21WT</value>
+  </data>
+  <data name="_Mitsubishi_12HM20WT_IGR" xml:space="preserve">
+    <value>Mitsubishi 12HM20WT</value>
+  </data>
+  <data name="_Type3_Ko_IGR" xml:space="preserve">
+    <value>Type 3 Ko</value>
+  </data>
+  <data name="_Type67_IGR" xml:space="preserve">
+    <value>Type 67</value>
+  </data>
+  <data name="_Type98_V12_IGR" xml:space="preserve">
+    <value>Kawasaki Type 98 V-12</value>
+  </data>
+</root>

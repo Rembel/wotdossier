@@ -163,7 +163,7 @@ namespace WotDossier.Dal
                 {
                     var clanMemberInfo = response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<ClanMemberInfo>();
 
-                    if (clanMemberInfo != null)
+                    if (clanMemberInfo != null && clanMemberInfo.clan.clan_id > 0)
                     {
                         clanMemberInfo.clan = LoadClan(clanMemberInfo.clan.clan_id,
                             new[] { "tag", "name", "clan_id", "description", "emblems" }, settings);
@@ -177,9 +177,9 @@ namespace WotDossier.Dal
                             result.AddRange(GetBattles(clanMemberInfo.clan.clan_id, mapId, settings));
                         }
                         clanMemberInfo.clan.Battles = result;
-                    }
 
-                    return clanMemberInfo;
+                        return clanMemberInfo;
+                    }
                 }
             }
             catch (Exception e)

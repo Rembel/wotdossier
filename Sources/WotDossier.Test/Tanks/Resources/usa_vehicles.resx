@@ -1,0 +1,2340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A101_M56" xml:space="preserve">
+    <value>M56 Scorpion</value>
+  </data>
+  <data name="A101_M56_descr" xml:space="preserve">
+    <value>The M56 SPG was intended to support airborne units as a light tank destroyer that could be transported by cargo planes or inserted by parachute or glider. The vehicle was mass produced from 1953 through 1959, but it was not popular and was soon replaced by the Sheridan light tank. The Scorpion was occasionally used to provide artillery support in Vietnam.</value>
+  </data>
+  <data name="A101_M56_short" xml:space="preserve">
+    <value>Scorpion</value>
+  </data>
+  <data name="A102_T28_concept" xml:space="preserve">
+    <value>T28 Concept</value>
+  </data>
+  <data name="A102_T28_concept_descr" xml:space="preserve">
+    <value>The development of this heavy breakthrough tank began in September 1943. It was planned to utilize certain components of the M6 tank as well as the electromechanical transmission and 100-mm T5 gun, mounted in a turret of limited traverse with 203-mm armor protection. The vehicle was intended to assault the fortifications of the German "Siegfried Line" (called the "Westwall" by the Germans). The U.S. land forces rejected the project during the design phase. The vehicle was later modified to the T95 heavy breakthrough tank.</value>
+  </data>
+  <data name="A102_T28_concept_short" xml:space="preserve">
+    <value>T28 HTC</value>
+  </data>
+  <data name="A104_M4A3E8A" xml:space="preserve">
+    <value>M4A3E8 Fury</value>
+  </data>
+  <data name="A104_M4A3E8A_descr" xml:space="preserve">
+    <value>M4A3E8 Fury—sergeant Wardaddy's tank from the movie Fury.</value>
+  </data>
+  <data name="A104_M4A3E8A_short" xml:space="preserve">
+    <value>Fury</value>
+  </data>
+  <data name="A78_M4_Improved" xml:space="preserve">
+    <value>M4 Improved</value>
+  </data>
+  <data name="A78_M4_Improved_descr" xml:space="preserve">
+    <value>A variant of the M4 medium tank with angled hull and turret armor. It was developed by the Detroit Arsenal in August 1942. The changes were intended to improve the tank’s protection without increasing weight or degrading other technical characteristics. Existed only in blueprints.</value>
+  </data>
+  <data name="A78_M4_Improved_short" xml:space="preserve">
+    <value>M4 Improved</value>
+  </data>
+  <data name="AN-ARC-27" xml:space="preserve">
+    <value>AN/GRC-7</value>
+  </data>
+  <data name="AN-GRC-3" xml:space="preserve">
+    <value>AN/GRC-3</value>
+  </data>
+  <data name="AN-VRC-12" xml:space="preserve">
+    <value>AN/VRC-12</value>
+  </data>
+  <data name="AN-VRC-7" xml:space="preserve">
+    <value>AN/VRC-7</value>
+  </data>
+  <data name="AN_GRC_8" xml:space="preserve">
+    <value>AN/GRC-8</value>
+  </data>
+  <data name="AN_PRC_10" xml:space="preserve">
+    <value>AN/PRC-10</value>
+  </data>
+  <data name="AN_PRC_25" xml:space="preserve">
+    <value>AN/PRC-25</value>
+  </data>
+  <data name="AN_PRC_8" xml:space="preserve">
+    <value>AN/PRC-8</value>
+  </data>
+  <data name="AN_VRC-24" xml:space="preserve">
+    <value>AN/VRC-24</value>
+  </data>
+  <data name="AN_VRC-3" xml:space="preserve">
+    <value>AN/VRC-3</value>
+  </data>
+  <data name="AOI-1490" xml:space="preserve">
+    <value>Continental AOI-1490</value>
+  </data>
+  <data name="AOI-1490_short" xml:space="preserve">
+    <value>Continental
+AOI-1490</value>
+  </data>
+  <data name="Alarm_flags" xml:space="preserve">
+    <value>Signal Flags</value>
+  </data>
+  <data name="American_LFF_Corporation_V12" xml:space="preserve">
+    <value>American LaFrance 312A V-12</value>
+  </data>
+  <data name="American_LFF_Corporation_V12_short" xml:space="preserve">
+    <value>American LaFrance
+312A V-12</value>
+  </data>
+  <data name="British_Wireless_set_N19" xml:space="preserve">
+    <value>Wireless Set No. 19</value>
+  </data>
+  <data name="Buick_series_60" xml:space="preserve">
+    <value>Buick Series 60</value>
+  </data>
+  <data name="Chassis_A100_T49" xml:space="preserve">
+    <value>T49</value>
+  </data>
+  <data name="Chassis_A100_T49_2" xml:space="preserve">
+    <value>XM551 test bed</value>
+  </data>
+  <data name="Chassis_A101_M56" xml:space="preserve">
+    <value>M56 Scorpion</value>
+  </data>
+  <data name="Chassis_A102_T28_concept" xml:space="preserve">
+    <value>T28 Concept</value>
+  </data>
+  <data name="Chassis_A104_M4A3E8A" xml:space="preserve">
+    <value>M4A3E8 Fury</value>
+  </data>
+  <data name="Chassis_M103" xml:space="preserve">
+    <value>T97E1</value>
+  </data>
+  <data name="Chassis_M103_2" xml:space="preserve">
+    <value>T97E2</value>
+  </data>
+  <data name="Chassis_M10_Wolverine" xml:space="preserve">
+    <value>M10T41</value>
+  </data>
+  <data name="Chassis_M10_Wolverine_2" xml:space="preserve">
+    <value>M10T42</value>
+  </data>
+  <data name="Chassis_M12" xml:space="preserve">
+    <value>M12T48</value>
+  </data>
+  <data name="Chassis_M12_2" xml:space="preserve">
+    <value>M12T51</value>
+  </data>
+  <data name="Chassis_M18_Hellcat" xml:space="preserve">
+    <value>M18 T67</value>
+  </data>
+  <data name="Chassis_M18_Hellcat_2" xml:space="preserve">
+    <value>M18 T69</value>
+  </data>
+  <data name="Chassis_M22_Locust" xml:space="preserve">
+    <value>VVST78</value>
+  </data>
+  <data name="Chassis_M24_Chaffee" xml:space="preserve">
+    <value>T24</value>
+  </data>
+  <data name="Chassis_M24_Chaffee_2" xml:space="preserve">
+    <value>M24</value>
+  </data>
+  <data name="Chassis_M36_Slagger_4" xml:space="preserve">
+    <value>M36T41</value>
+  </data>
+  <data name="Chassis_M36_Slagger_5" xml:space="preserve">
+    <value>M36T42</value>
+  </data>
+  <data name="Chassis_M40M43" xml:space="preserve">
+    <value>M40</value>
+  </data>
+  <data name="Chassis_M40M43_2" xml:space="preserve">
+    <value>M43</value>
+  </data>
+  <data name="Chassis_M41_Bulldog" xml:space="preserve">
+    <value>M41</value>
+  </data>
+  <data name="Chassis_M41_Bulldog_2" xml:space="preserve">
+    <value>M41A1</value>
+  </data>
+  <data name="Chassis_M44" xml:space="preserve">
+    <value>T99E1</value>
+  </data>
+  <data name="Chassis_M44_2" xml:space="preserve">
+    <value>M44</value>
+  </data>
+  <data name="Chassis_M46_Patton" xml:space="preserve">
+    <value>M46T80E1</value>
+  </data>
+  <data name="Chassis_M46_Patton_2" xml:space="preserve">
+    <value>M46T81</value>
+  </data>
+  <data name="Chassis_M48A1" xml:space="preserve">
+    <value>T97E2</value>
+  </data>
+  <data name="Chassis_M4A2E4" xml:space="preserve">
+    <value>M4A2E4T42</value>
+  </data>
+  <data name="Chassis_M4_Improved" xml:space="preserve">
+    <value>M4 Improved</value>
+  </data>
+  <data name="Chassis_M53_55" xml:space="preserve">
+    <value>T97/T108</value>
+  </data>
+  <data name="Chassis_M53_55_2" xml:space="preserve">
+    <value>M53/M55</value>
+  </data>
+  <data name="Chassis_M60" xml:space="preserve">
+    <value>M60</value>
+  </data>
+  <data name="Chassis_M6A2E1" xml:space="preserve">
+    <value>M6A2E1HVSS</value>
+  </data>
+  <data name="Chassis_M8A1" xml:space="preserve">
+    <value>VVS T16</value>
+  </data>
+  <data name="Chassis_M8A1_2" xml:space="preserve">
+    <value>T36 E6</value>
+  </data>
+  <data name="Chassis_Sherman_Jumbo" xml:space="preserve">
+    <value>VVSST48E2</value>
+  </data>
+  <data name="Chassis_Sherman_Jumbo_2" xml:space="preserve">
+    <value>VVSST51E2</value>
+  </data>
+  <data name="Chassis_T110" xml:space="preserve">
+    <value>T110E27</value>
+  </data>
+  <data name="Chassis_T110E3" xml:space="preserve">
+    <value>T110E3</value>
+  </data>
+  <data name="Chassis_T110E4" xml:space="preserve">
+    <value>T110E4</value>
+  </data>
+  <data name="Chassis_T18" xml:space="preserve">
+    <value>T18E1</value>
+  </data>
+  <data name="Chassis_T18_2" xml:space="preserve">
+    <value>T18E2</value>
+  </data>
+  <data name="Chassis_T1_E6" xml:space="preserve">
+    <value>Vickers E</value>
+  </data>
+  <data name="Chassis_T21" xml:space="preserve">
+    <value>VVSS T48M1A1</value>
+  </data>
+  <data name="Chassis_T21_2" xml:space="preserve">
+    <value>VVSS T48M1A2</value>
+  </data>
+  <data name="Chassis_T25_2" xml:space="preserve">
+    <value>T25/2T1</value>
+  </data>
+  <data name="Chassis_T25_2_2" xml:space="preserve">
+    <value>T25/2T4</value>
+  </data>
+  <data name="Chassis_T25_AT" xml:space="preserve">
+    <value>T25T1</value>
+  </data>
+  <data name="Chassis_T25_AT_2" xml:space="preserve">
+    <value>T25T2</value>
+  </data>
+  <data name="Chassis_T26_E4_SuperPershing" xml:space="preserve">
+    <value>M26T80E1</value>
+  </data>
+  <data name="Chassis_T28" xml:space="preserve">
+    <value>T28VVSS T46</value>
+  </data>
+  <data name="Chassis_T28_2" xml:space="preserve">
+    <value>T28VVSS T56</value>
+  </data>
+  <data name="Chassis_T28_Prototype" xml:space="preserve">
+    <value>T28P E2</value>
+  </data>
+  <data name="Chassis_T28_Prototype_2" xml:space="preserve">
+    <value>T28P E4</value>
+  </data>
+  <data name="Chassis_T37" xml:space="preserve">
+    <value>T37</value>
+  </data>
+  <data name="Chassis_T37_2" xml:space="preserve">
+    <value>T41 pilot number 1</value>
+  </data>
+  <data name="Chassis_T40" xml:space="preserve">
+    <value>T40T41</value>
+  </data>
+  <data name="Chassis_T40_2" xml:space="preserve">
+    <value>T40T48</value>
+  </data>
+  <data name="Chassis_T49" xml:space="preserve">
+    <value>T49E1</value>
+  </data>
+  <data name="Chassis_T49_2" xml:space="preserve">
+    <value>T49E2</value>
+  </data>
+  <data name="Chassis_T54E1" xml:space="preserve">
+    <value>T54E1</value>
+  </data>
+  <data name="Chassis_T54E1_2" xml:space="preserve">
+    <value>T54E1M2</value>
+  </data>
+  <data name="Chassis_T57_58" xml:space="preserve">
+    <value>T97</value>
+  </data>
+  <data name="Chassis_T69" xml:space="preserve">
+    <value>T84E1</value>
+  </data>
+  <data name="Chassis_T69_2" xml:space="preserve">
+    <value>T95</value>
+  </data>
+  <data name="Chassis_T71" xml:space="preserve">
+    <value>T71</value>
+  </data>
+  <data name="Chassis_T71_2" xml:space="preserve">
+    <value>T71A1</value>
+  </data>
+  <data name="Chassis_T7_Combat_Car" xml:space="preserve">
+    <value>T7 Combat Car</value>
+  </data>
+  <data name="Chassis_T82_1" xml:space="preserve">
+    <value>T82T55E2</value>
+  </data>
+  <data name="Chassis_T82_2" xml:space="preserve">
+    <value>T82T55E4</value>
+  </data>
+  <data name="Chassis_T92" xml:space="preserve">
+    <value>T92 T80E1</value>
+  </data>
+  <data name="Chassis_T95" xml:space="preserve">
+    <value>T95HVSS</value>
+  </data>
+  <data name="Chassis_T95_2" xml:space="preserve">
+    <value>T95HVSSM2</value>
+  </data>
+  <data name="Chassis_T95_E2" xml:space="preserve">
+    <value>T95E2</value>
+  </data>
+  <data name="Chassis_T95_E6" xml:space="preserve">
+    <value>T95E6</value>
+  </data>
+  <data name="Continental_AOI-1195-5" xml:space="preserve">
+    <value>Continental AOI-1195-5</value>
+  </data>
+  <data name="Continental_AOI-1195-5_short" xml:space="preserve">
+    <value>Continental
+AOI-1195-5</value>
+  </data>
+  <data name="Continental_AOI-402-5" xml:space="preserve">
+    <value>Continental AOI-402-5</value>
+  </data>
+  <data name="Continental_AOI-402-5_short" xml:space="preserve">
+    <value>Continental
+AOI-405-5</value>
+  </data>
+  <data name="Continental_AOI-628-1" xml:space="preserve">
+    <value>Continental AOI-628-1</value>
+  </data>
+  <data name="Continental_AOI-628-1_short" xml:space="preserve">
+    <value>Continental
+AOI-628-1</value>
+  </data>
+  <data name="Continental_AOI-628-2" xml:space="preserve">
+    <value>Continental AOI-628-2</value>
+  </data>
+  <data name="Continental_AOI-628-2_short" xml:space="preserve">
+    <value>Continental
+AOI-628-2</value>
+  </data>
+  <data name="Continental_AOS-895-1" xml:space="preserve">
+    <value>Continental AOS-895-1</value>
+  </data>
+  <data name="Continental_AOS-895-1_short" xml:space="preserve">
+    <value>Continental
+AOS-895-1</value>
+  </data>
+  <data name="Continental_AOS-895-3" xml:space="preserve">
+    <value>Continental AOS-895-3</value>
+  </data>
+  <data name="Continental_AOS-895-3_short" xml:space="preserve">
+    <value>Continental
+AOS-895-3</value>
+  </data>
+  <data name="Continental_AOSI-895-5" xml:space="preserve">
+    <value>Continental AOSI-895-5</value>
+  </data>
+  <data name="Continental_AOSI-895-5_short" xml:space="preserve">
+    <value>Continental
+AOSI-895-5</value>
+  </data>
+  <data name="Continental_AV-1790-1" xml:space="preserve">
+    <value>Continental AV-1790-1</value>
+  </data>
+  <data name="Continental_AV-1790-1M2" xml:space="preserve">
+    <value>Continental AV-1790-5A</value>
+  </data>
+  <data name="Continental_AV-1790-1M2_short" xml:space="preserve">
+    <value>Continental
+AV-1790-5A</value>
+  </data>
+  <data name="Continental_AV-1790-1_short" xml:space="preserve">
+    <value>Continental
+AV-1790-1</value>
+  </data>
+  <data name="Continental_AV-1790-3" xml:space="preserve">
+    <value>Continental AV-1790-3</value>
+  </data>
+  <data name="Continental_AV-1790-3A1" xml:space="preserve">
+    <value>Continental AV-1790-3A1</value>
+  </data>
+  <data name="Continental_AV-1790-3A1_short" xml:space="preserve">
+    <value>Continental
+AV-1790-3A1</value>
+  </data>
+  <data name="Continental_AV-1790-3_short" xml:space="preserve">
+    <value>Continental
+AV-1790-3</value>
+  </data>
+  <data name="Continental_AV-1790-5" xml:space="preserve">
+    <value>Continental AV-1790-5</value>
+  </data>
+  <data name="Continental_AV-1790-5B" xml:space="preserve">
+    <value>Continental AV-1790-5B</value>
+  </data>
+  <data name="Continental_AV-1790-5B_short" xml:space="preserve">
+    <value>Continental
+AV-1790-5B</value>
+  </data>
+  <data name="Continental_AV-1790-5_short" xml:space="preserve">
+    <value>Continental
+AV-1790-5</value>
+  </data>
+  <data name="Continental_AV-1790-7B" xml:space="preserve">
+    <value>Continental AV-1790-7B</value>
+  </data>
+  <data name="Continental_AV-1790-7B_short" xml:space="preserve">
+    <value>Continental
+AV-1790-7B</value>
+  </data>
+  <data name="Continental_AV-1790-7C" xml:space="preserve">
+    <value>Continental AV-1790-7C</value>
+  </data>
+  <data name="Continental_AV-1790-7C_short" xml:space="preserve">
+    <value>Continental
+AV-1790-7C</value>
+  </data>
+  <data name="Continental_AVDS-1790-2" xml:space="preserve">
+    <value>Continental AVDS-1790-2</value>
+  </data>
+  <data name="Continental_AVDS-1790-2_short" xml:space="preserve">
+    <value>Continental
+AVDS-1790-2</value>
+  </data>
+  <data name="Continental_AV_1790_5C" xml:space="preserve">
+    <value>Continental AV-1790-5C</value>
+  </data>
+  <data name="Continental_AV_1790_5C_short" xml:space="preserve">
+    <value>Continental
+AV-1790-5C</value>
+  </data>
+  <data name="Continental_R-670-5" xml:space="preserve">
+    <value>Continental R-670-5</value>
+  </data>
+  <data name="Continental_R-670-5_short" xml:space="preserve">
+    <value>Continental
+R-670-5</value>
+  </data>
+  <data name="Continental_R-975-C1" xml:space="preserve">
+    <value>Continental R-975-C1</value>
+  </data>
+  <data name="Continental_R-975-C1_short" xml:space="preserve">
+    <value>Continental
+R-975-C1</value>
+  </data>
+  <data name="Continental_R670-7" xml:space="preserve">
+    <value>Continental R670-7</value>
+  </data>
+  <data name="Continental_R670-7_short" xml:space="preserve">
+    <value>Continental
+R670-7</value>
+  </data>
+  <data name="Continental_W-670" xml:space="preserve">
+    <value>Continental W-670</value>
+  </data>
+  <data name="Continental_W-670-12" xml:space="preserve">
+    <value>Continental W-670 Series 12</value>
+  </data>
+  <data name="Continental_W-670-12_short" xml:space="preserve">
+    <value>Continental
+W-670 Series 12</value>
+  </data>
+  <data name="Continental_W-670-9A" xml:space="preserve">
+    <value>Continental W-670</value>
+  </data>
+  <data name="Continental_W-670-9A_short" xml:space="preserve">
+    <value>Continental
+W-670</value>
+  </data>
+  <data name="Continental_W-670_short" xml:space="preserve">
+    <value>Continental
+W-670</value>
+  </data>
+  <data name="Continental_W670-7" xml:space="preserve">
+    <value>Continental W-670-7</value>
+  </data>
+  <data name="Continental_W670-7_short" xml:space="preserve">
+    <value>Continental
+W-670-7</value>
+  </data>
+  <data name="Crysler_A57" xml:space="preserve">
+    <value>Chrysler A57</value>
+  </data>
+  <data name="Cuiberson_T-10204" xml:space="preserve">
+    <value>Guiberson T-10204</value>
+  </data>
+  <data name="Cuiberson_T-10204_short" xml:space="preserve">
+    <value>Guiberson
+T-10204</value>
+  </data>
+  <data name="Cunningham" xml:space="preserve">
+    <value>Cunningham V-type</value>
+  </data>
+  <data name="Cunningham_D1" xml:space="preserve">
+    <value>Cunningham D1</value>
+  </data>
+  <data name="Cunningham_D2" xml:space="preserve">
+    <value>Cunningham D2</value>
+  </data>
+  <data name="Cunningham_E1" xml:space="preserve">
+    <value>Cunningham E1</value>
+  </data>
+  <data name="Cunningham_E2" xml:space="preserve">
+    <value>Cunningham E2</value>
+  </data>
+  <data name="Cunningham_type_3" xml:space="preserve">
+    <value>Cunningham V8</value>
+  </data>
+  <data name="D37812" xml:space="preserve">
+    <value>D37812</value>
+  </data>
+  <data name="D39273" xml:space="preserve">
+    <value>D39273</value>
+  </data>
+  <data name="D51066" xml:space="preserve">
+    <value>D51066</value>
+  </data>
+  <data name="D51072" xml:space="preserve">
+    <value>D51072</value>
+  </data>
+  <data name="D51080" xml:space="preserve">
+    <value>D51080</value>
+  </data>
+  <data name="Ford_GAA" xml:space="preserve">
+    <value>Ford GAA</value>
+  </data>
+  <data name="Ford_GAA_2" xml:space="preserve">
+    <value>Ford GAA</value>
+  </data>
+  <data name="Ford_GAA_R" xml:space="preserve">
+    <value>Ford GAA early</value>
+  </data>
+  <data name="Ford_GAC" xml:space="preserve">
+    <value>Ford GAZ</value>
+  </data>
+  <data name="Ford_GAC_R" xml:space="preserve">
+    <value>Ford GAC</value>
+  </data>
+  <data name="Ford_GAF" xml:space="preserve">
+    <value>Ford GAF</value>
+  </data>
+  <data name="Ford_GAFM2" xml:space="preserve">
+    <value>Ford GAFM2A1</value>
+  </data>
+  <data name="Ford_GAFM4" xml:space="preserve">
+    <value>Ford GAFM2A2</value>
+  </data>
+  <data name="Ford_GAF_R1" xml:space="preserve">
+    <value>Ford GAF T92</value>
+  </data>
+  <data name="Ford_GAF_V8" xml:space="preserve">
+    <value>Ford GAF V8</value>
+  </data>
+  <data name="Ford_GAN" xml:space="preserve">
+    <value>Ford GAN</value>
+  </data>
+  <data name="Ford_GAN_T" xml:space="preserve">
+    <value>Ford GAN No. 17</value>
+  </data>
+  <data name="GMC_6046" xml:space="preserve">
+    <value>GMC 6046</value>
+  </data>
+  <data name="GMC_Allison_V1710-E32" xml:space="preserve">
+    <value>GMC Allison V1710-E32</value>
+  </data>
+  <data name="GMC_Allison_V1710-E32_short" xml:space="preserve">
+    <value>GMC Allison
+V1710-E32</value>
+  </data>
+  <data name="General_Motors_6046" xml:space="preserve">
+    <value>General Motors 6046</value>
+  </data>
+  <data name="Guiberson_T-1020-4" xml:space="preserve">
+    <value>Guiberson T-1020-4</value>
+  </data>
+  <data name="Guiberson_T-1020-4_short" xml:space="preserve">
+    <value>Guiberson
+T-1020-4</value>
+  </data>
+  <data name="HVS1" xml:space="preserve">
+    <value>HVS1</value>
+  </data>
+  <data name="HVS2" xml:space="preserve">
+    <value>HVS2</value>
+  </data>
+  <data name="HVSST31" xml:space="preserve">
+    <value>HVSS T31</value>
+  </data>
+  <data name="HVSST35" xml:space="preserve">
+    <value>HVSS T35</value>
+  </data>
+  <data name="HVSS_T48" xml:space="preserve">
+    <value>HVSS T48</value>
+  </data>
+  <data name="HVSS_T51" xml:space="preserve">
+    <value>HVSS T51</value>
+  </data>
+  <data name="Hercules_HXE" xml:space="preserve">
+    <value>Hercules HXE</value>
+  </data>
+  <data name="Liberty" xml:space="preserve">
+    <value>Liberty</value>
+  </data>
+  <data name="Licoming_0-435t" xml:space="preserve">
+    <value>Lycoming O-435T</value>
+  </data>
+  <data name="M103" xml:space="preserve">
+    <value>M103</value>
+  </data>
+  <data name="M103_descr" xml:space="preserve">
+    <value>The development started in 1948. In 1952 the order was placed for production of 300 vehicles to fight in the Korean War. The tank was designated as M103.</value>
+  </data>
+  <data name="M10_Wolverine" xml:space="preserve">
+    <value>M10 Wolverine</value>
+  </data>
+  <data name="M10_Wolverine_descr" xml:space="preserve">
+    <value>The most widely-produced American tank destroyer, with a total of 6,706 vehicles, in two basic variants, manufactured from September 1942 through January 1944. More than a third of all Wolverines were supplied to allied nations under Lend-Lease.</value>
+  </data>
+  <data name="M10_Wolverine_short" xml:space="preserve">
+    <value>Wolverine</value>
+  </data>
+  <data name="M12" xml:space="preserve">
+    <value>M12</value>
+  </data>
+  <data name="M12_descr" xml:space="preserve">
+    <value>The M12 was developed by the Rock Island Arsenal, with a total of 100 vehicles manufactured. American soldiers dubbed the vehicle King Kong. The M12 fought well in battles on the Siegfried Line.</value>
+  </data>
+  <data name="M18_Hellcat" xml:space="preserve">
+    <value>M18 Hellcat</value>
+  </data>
+  <data name="M18_Hellcat_descr" xml:space="preserve">
+    <value>The development of the vehicle was started in 1942. In April 1943 the General Motors company produced the first prototypes. One of a few American tank destroyers manufactured on its original chassis, not on a chassis of a tank. The tank destroyer became the most high-speed armored vehicle of this type of World War II. A total of 2,507 vehicles were produced from July 1943 through October 1944.</value>
+  </data>
+  <data name="M18_Hellcat_short" xml:space="preserve">
+    <value>Hellcat</value>
+  </data>
+  <data name="M22_Locust" xml:space="preserve">
+    <value>M22 Locust</value>
+  </data>
+  <data name="M22_Locust_descr" xml:space="preserve">
+    <value>Initially designed for airborne operations, the vehicle was never used as such by the U.S.A. during World War II. In the absence of a good air delivery system, the Ordnance Department became less enthusiastic about any further development.</value>
+  </data>
+  <data name="M22_Locust_short" xml:space="preserve">
+    <value>Locust</value>
+  </data>
+  <data name="M24A1" xml:space="preserve">
+    <value>M24A1</value>
+  </data>
+  <data name="M24_Chaffee" xml:space="preserve">
+    <value>M24 Chaffee</value>
+  </data>
+  <data name="M24_Chaffee_descr" xml:space="preserve">
+    <value>The vehicle was intended as a replacement for the M3 Stuart. The M24 entered service in September 1943. They were produced at Massey-Harris and General Motors factories until July 1945, with a total of 4,731 vehicles manufactured.</value>
+  </data>
+  <data name="M24_Chaffee_short" xml:space="preserve">
+    <value>Chaffee</value>
+  </data>
+  <data name="M2D27810" xml:space="preserve">
+    <value>M2D27810</value>
+  </data>
+  <data name="M2D27812" xml:space="preserve">
+    <value>M2D27812</value>
+  </data>
+  <data name="M2M19" xml:space="preserve">
+    <value>M2M19</value>
+  </data>
+  <data name="M2M7" xml:space="preserve">
+    <value>M2M7</value>
+  </data>
+  <data name="M2_lt" xml:space="preserve">
+    <value>M2 Light Tank</value>
+  </data>
+  <data name="M2_lt_descr" xml:space="preserve">
+    <value>Infantry support tank. A total of 696 vehicles were manufactured from 1935 through 1942. The tank saw combat with the U.S. Marines on Guadalcanal. It was withdrawn from service in 1942.</value>
+  </data>
+  <data name="M2_lt_short" xml:space="preserve">
+    <value>M2 Light</value>
+  </data>
+  <data name="M2_med" xml:space="preserve">
+    <value>M2 Medium Tank</value>
+  </data>
+  <data name="M2_med_descr" xml:space="preserve">
+    <value>The only American medium tank adopted in the interwar period, with a total of 146 vehicles in two variants manufactured from 1939 through 1941. The M2 MT never saw action.</value>
+  </data>
+  <data name="M2_med_short" xml:space="preserve">
+    <value>M2 Medium</value>
+  </data>
+  <data name="M36_Slagger" xml:space="preserve">
+    <value>M36 Jackson</value>
+  </data>
+  <data name="M36_Slagger_descr" xml:space="preserve">
+    <value>The most powerful American tank destroyer. The M36 was developed on the chassis of the M10A1 and M10, with a total of 2,324 vehicles manufactured from November 1943 through September 1945.</value>
+  </data>
+  <data name="M36_Slagger_short" xml:space="preserve">
+    <value>Jackson</value>
+  </data>
+  <data name="M37" xml:space="preserve">
+    <value>M37</value>
+  </data>
+  <data name="M37D1" xml:space="preserve">
+    <value>M37D1</value>
+  </data>
+  <data name="M37_descr" xml:space="preserve">
+    <value>Developed in 1945 on the basis of the M24, with a total of 150 vehicles manufactured. The tank was never used in combat during World War II, but it did see action during the Korean War.</value>
+  </data>
+  <data name="M3_Grant" xml:space="preserve">
+    <value>M3 Lee</value>
+  </data>
+  <data name="M3_Grant_descr" xml:space="preserve">
+    <value>A WWII-era U.S. medium tank. The vehicle was named after the Confederate General of the U.S. Civil War, R. Lee. Also, widely recognized under its U.K. designation—M3 Grant—named after the General of the federal troops W. Grant. M3 was created in 1940 on the basis of the M2 tank, and saw mass production from June 1941 through December 1942. A total of 6,258 M3 tanks of various modifications were produced.</value>
+  </data>
+  <data name="M3_S" xml:space="preserve">
+    <value>M3 S</value>
+  </data>
+  <data name="M3_Stuart" xml:space="preserve">
+    <value>M3 Stuart</value>
+  </data>
+  <data name="M3_Stuart_descr" xml:space="preserve">
+    <value>The best-known light tank of World War II, with a total of 13,859 vehicles manufactured from 1941 through September 1943. The M3 Stuart was used in all theaters of war.</value>
+  </data>
+  <data name="M40M43" xml:space="preserve">
+    <value>M40/M43</value>
+  </data>
+  <data name="M40M43_descr" xml:space="preserve">
+    <value>The Long Tom and its successor, the M43, became the most powerful Allied SPGs. The M40 fought in the battle for Cologne in 1945. Both vehicles were used during the Korean War.</value>
+  </data>
+  <data name="M41" xml:space="preserve">
+    <value>M41 HMC</value>
+  </data>
+  <data name="M41_Bulldog" xml:space="preserve">
+    <value>M41 Walker Bulldog</value>
+  </data>
+  <data name="M41_Bulldog_descr" xml:space="preserve">
+    <value>A further development of the T37 experimental tank. Underwent trials in 1949. In 1950, the contract for mass production was signed. The tank was produced by the Cadillac Motor Car Division, a division of General Motors.</value>
+  </data>
+  <data name="M41_Bulldog_short" xml:space="preserve">
+    <value>M41 Bulldog</value>
+  </data>
+  <data name="M41_descr" xml:space="preserve">
+    <value>Self-propelled gun developed on the basis of the M24, with 60 vehicles actually produced out of a total of 250 ordered. The M41 did not see action in World War II, but fought in the Korean War.</value>
+  </data>
+  <data name="M44" xml:space="preserve">
+    <value>M5</value>
+  </data>
+  <data name="M46_Patton" xml:space="preserve">
+    <value>M46 Patton</value>
+  </data>
+  <data name="M46_Patton_descr" xml:space="preserve">
+    <value>Developed in 1948 and 1949, the M46 Patton was a modernized and improved version of the M26 Pershing. A total of 1,168 M46 tanks, in two basic variants, were manufactured between 1949 and 1951. Pattons saw wide use in the Korean War.</value>
+  </data>
+  <data name="M46_Patton_short" xml:space="preserve">
+    <value>M46 Patton</value>
+  </data>
+  <data name="M47" xml:space="preserve">
+    <value>M47</value>
+  </data>
+  <data name="M48A1" xml:space="preserve">
+    <value>M48A1 Patton</value>
+  </data>
+  <data name="M48A1_descr" xml:space="preserve">
+    <value>The most successful American medium tank in the immediate post-war period. Development started in 1950. In April 1953, the vehicle entered service. A total of 11,703 vehicles of different variants were produced from 1952 through 1959.</value>
+  </data>
+  <data name="M48A1_short" xml:space="preserve">
+    <value>M48 Patton</value>
+  </data>
+  <data name="M4A2E4" xml:space="preserve">
+    <value>M4A2E4 Sherman</value>
+  </data>
+  <data name="M4A2E4_descr" xml:space="preserve">
+    <value>Work on this experimental vehicle started in March 1943. Two prototypes were built by July. The vehicle passed trials, but was never mass-produced or used in action.</value>
+  </data>
+  <data name="M4A2E4_short" xml:space="preserve">
+    <value>M4A2E4</value>
+  </data>
+  <data name="M4A3E8_Sherman" xml:space="preserve">
+    <value>M4A3E8 Sherman</value>
+  </data>
+  <data name="M4A3E8_Sherman_descr" xml:space="preserve">
+    <value>Also known as M4А3(76)W HVSS. At the end of August 1944, a new bogie suspension was designed. The vehicle variant was mass-produced and saw battle beginning in late March 1945, with a total of 4542 vehicles of both suspension types manufactured.</value>
+  </data>
+  <data name="M4A3E8_Sherman_short" xml:space="preserve">
+    <value>M4A3E8</value>
+  </data>
+  <data name="M4_Sherman" xml:space="preserve">
+    <value>M4 Sherman</value>
+  </data>
+  <data name="M4_Sherman_descr" xml:space="preserve">
+    <value>The first production version of the Sherman, the most common American tank, with an amazing total of 49,234 vehicles manufactured. The Sherman first saw combat in North Africa.</value>
+  </data>
+  <data name="M4_Sherman_short" xml:space="preserve">
+    <value>M4</value>
+  </data>
+  <data name="M53_55" xml:space="preserve">
+    <value>M53/M55</value>
+  </data>
+  <data name="M53_55_descr" xml:space="preserve">
+    <value>SPG on a modified chassis of the M47 medium tank. The prototype was produced in 1952, and in 1956 the SPG entered service in two variants: the M55 for the Army and the M53 for the Marines.</value>
+  </data>
+  <data name="M5_Stuart" xml:space="preserve">
+    <value>M5 Stuart</value>
+  </data>
+  <data name="M5_Stuart_descr" xml:space="preserve">
+    <value>A further modification of the M3 Stuart, the M5 entered production in April 1942. By June 1944 a total of 8,884 vehicles in two variants had been produced. The tank was used in all theaters of war.</value>
+  </data>
+  <data name="M5_Stuart_short" xml:space="preserve">
+    <value>M5 Stuart</value>
+  </data>
+  <data name="M6" xml:space="preserve">
+    <value>M6</value>
+  </data>
+  <data name="M60" xml:space="preserve">
+    <value>M60</value>
+  </data>
+  <data name="M60_descr" xml:space="preserve">
+    <value>The M60 was a deep modernization of the M48 tank. Development of the prototype was started in 1957, and in 1959 the order for production of the first tank was placed with Chrysler.</value>
+  </data>
+  <data name="M62T80" xml:space="preserve">
+    <value>T23E3</value>
+  </data>
+  <data name="M6A2E1" xml:space="preserve">
+    <value>M6A2E1</value>
+  </data>
+  <data name="M6A2E1_descr" xml:space="preserve">
+    <value>The M6A2E1 was a further development of the T1 and M6 heavy tanks. Developed in August 1944, the vehicle mounted a larger turret and the 105 mm gun. It never saw mass production.</value>
+  </data>
+  <data name="M6D1" xml:space="preserve">
+    <value>M6D1</value>
+  </data>
+  <data name="M6D2" xml:space="preserve">
+    <value>M6D2</value>
+  </data>
+  <data name="M6_descr" xml:space="preserve">
+    <value>Developed from 1940 through 1942, with a total of 40 vehicles manufactured from November 1942 through February 1944. It never saw action.</value>
+  </data>
+  <data name="M7" xml:space="preserve">
+    <value>M5A1</value>
+  </data>
+  <data name="M7D1" xml:space="preserve">
+    <value>M7D1</value>
+  </data>
+  <data name="M7_Priest" xml:space="preserve">
+    <value>M7 Priest</value>
+  </data>
+  <data name="M7_Priest_descr" xml:space="preserve">
+    <value>Manufactured on the suspension of the M3 and M4 tanks from April 1942 through February 1945, with a total of 4,316 vehicles produced. The M7 Priest first saw combat at El Alamein.</value>
+  </data>
+  <data name="M7_med" xml:space="preserve">
+    <value>M7</value>
+  </data>
+  <data name="M7_med_descr" xml:space="preserve">
+    <value>Development of this tank started in the spring of 1941. The construction of experimental vehicles was launched in January 1942, after the first prototypes were completed. By January 1943 the prototypes passed trials, but the vehicle never saw mass production.</value>
+  </data>
+  <data name="M7_med_short" xml:space="preserve">
+    <value>M7</value>
+  </data>
+  <data name="M8A1" xml:space="preserve">
+    <value>M8A1</value>
+  </data>
+  <data name="M8A1_descr" xml:space="preserve">
+    <value>The vehicle was intended as a self-propelled infantry support gun on the basis of the M5 tank. The M8A1 variant featured a modified turret and upgraded armament. From September 1943 through January 1944 a total of 1778 vehicles were manufactured.</value>
+  </data>
+  <data name="M8A1_short" xml:space="preserve">
+    <value>M8A1</value>
+  </data>
+  <data name="MTLS-1G14" xml:space="preserve">
+    <value>MTLS-1G14</value>
+  </data>
+  <data name="MTLS-1G14_descr" xml:space="preserve">
+    <value>Developed at the request of the Dutch East Indies, with a total of 125 vehicles manufactured from 1941 through 1942. Only 20 of them were ordered, and they never saw action.</value>
+  </data>
+  <data name="MTLS_D1" xml:space="preserve">
+    <value>MTLS D1</value>
+  </data>
+  <data name="MTLS_T1" xml:space="preserve">
+    <value>MTLS T1</value>
+  </data>
+  <data name="Maybach_HL_230P45" xml:space="preserve">
+    <value>Maybach HL 230 P45</value>
+  </data>
+  <data name="NVSS_T66" xml:space="preserve">
+    <value>NVSS T66</value>
+  </data>
+  <data name="NVSS_T80" xml:space="preserve">
+    <value>NVSS T80</value>
+  </data>
+  <data name="Ordnance_QF_2pdr_AT_Gun_Mk.X" xml:space="preserve">
+    <value>QF 2-pdr Mk. IX</value>
+  </data>
+  <data name="Ordnance_QF_2pdr_AT_Gun_Mk.X_short" xml:space="preserve">
+    <value>QF 2-pdr Mk. IX</value>
+  </data>
+  <data name="Pershing" xml:space="preserve">
+    <value>M26 Pershing</value>
+  </data>
+  <data name="Pershing_descr" xml:space="preserve">
+    <value>The Pershing was developed to fight heavy tanks, and was itself initially classified as heavy. After World War II it was re-classified as medium. A few saw combat in the closing phase of World War II.</value>
+  </data>
+  <data name="Pershing_short" xml:space="preserve">
+    <value>Pershing</value>
+  </data>
+  <data name="Pershingchassis1" xml:space="preserve">
+    <value>M26T80E1</value>
+  </data>
+  <data name="Pershingchassis2" xml:space="preserve">
+    <value>M26T81</value>
+  </data>
+  <data name="QF_6_pounder_Mk_III" xml:space="preserve">
+    <value>QF 6-pdr Mk. III</value>
+  </data>
+  <data name="QF_6_pounder_Mk_IIIA" xml:space="preserve">
+    <value>QF 6-pdr Mk. IIIA</value>
+  </data>
+  <data name="Ram-II" xml:space="preserve">
+    <value>Ram II</value>
+  </data>
+  <data name="Ram-II_descr" xml:space="preserve">
+    <value>Developed on the basis of the M3 and produced in Canada from 1942 through the summer of 1943. None of the 1,849 vehicles were ever used in action, although some were used for training purposes.</value>
+  </data>
+  <data name="Ram_II_D1" xml:space="preserve">
+    <value>Ram II D1</value>
+  </data>
+  <data name="SCR_200" xml:space="preserve">
+    <value>SCR 200</value>
+  </data>
+  <data name="SCR_200A" xml:space="preserve">
+    <value>SCR 193</value>
+  </data>
+  <data name="SCR_210" xml:space="preserve">
+    <value>SCR 210</value>
+  </data>
+  <data name="SCR_506" xml:space="preserve">
+    <value>SCR 506</value>
+  </data>
+  <data name="SCR_508" xml:space="preserve">
+    <value>SCR 508</value>
+  </data>
+  <data name="SCR_508A" xml:space="preserve">
+    <value>SCR 508A</value>
+  </data>
+  <data name="SCR_508_1" xml:space="preserve">
+    <value>SCR 508/1</value>
+  </data>
+  <data name="SCR_510" xml:space="preserve">
+    <value>SCR 510</value>
+  </data>
+  <data name="SCR_510M2" xml:space="preserve">
+    <value>SCR 510 M2</value>
+  </data>
+  <data name="SCR_528" xml:space="preserve">
+    <value>SCR 528</value>
+  </data>
+  <data name="SCR_528A1" xml:space="preserve">
+    <value>SCR 528AM</value>
+  </data>
+  <data name="SCR_528R1" xml:space="preserve">
+    <value>SCR 528A</value>
+  </data>
+  <data name="SCR_538" xml:space="preserve">
+    <value>SCR 538</value>
+  </data>
+  <data name="SCR_610" xml:space="preserve">
+    <value>SCR 610</value>
+  </data>
+  <data name="SCR_619" xml:space="preserve">
+    <value>SCR 619</value>
+  </data>
+  <data name="Sherman_Jumbo" xml:space="preserve">
+    <value>M4A3E2 Sherman Jumbo</value>
+  </data>
+  <data name="Sherman_Jumbo_descr" xml:space="preserve">
+    <value>This variant of the Sherman featured much heavier armor. The M4A3E2 was initially intended as an infantry support tank. However, some were re-equipped with the M1A1 gun and served as tank hunters.</value>
+  </data>
+  <data name="Sherman_Jumbo_short" xml:space="preserve">
+    <value>M4A3E2</value>
+  </data>
+  <data name="T-14" xml:space="preserve">
+    <value>T14</value>
+  </data>
+  <data name="T110" xml:space="preserve">
+    <value>T110E5</value>
+  </data>
+  <data name="T110E3" xml:space="preserve">
+    <value>T110E3</value>
+  </data>
+  <data name="T110E3_descr" xml:space="preserve">
+    <value>In 1954, a conference on future heavy tanks was held in Detroit. Alongside other advanced projects, the Chrysler Corporation suggested a new tank on the basis of the TS-31 project. The main condition was that the tank should fit the Bern national tunnel. Several construction variants were considered. However, the project was canceled.</value>
+  </data>
+  <data name="T110E3_short" xml:space="preserve">
+    <value>T110E3</value>
+  </data>
+  <data name="T110E4" xml:space="preserve">
+    <value>T110E4</value>
+  </data>
+  <data name="T110E4_descr" xml:space="preserve">
+    <value>In 1954, a conference on future heavy tanks was held in Detroit. Alongside other advanced projects, the Chrysler Corporation suggested a new tank on the basis of the TS-31 project. The main condition was that the tank should fit the Bern national tunnel. Several construction variants were considered. However, the project was canceled.</value>
+  </data>
+  <data name="T110E4_short" xml:space="preserve">
+    <value>T110E4</value>
+  </data>
+  <data name="T110_descr" xml:space="preserve">
+    <value>Development started in the early 50s. Restrictions were placed on the vehicle sizing as the tank was supposed to pass through the narrow tunnels of the Bernese Alps. Existed only in blueprints.</value>
+  </data>
+  <data name="T119" xml:space="preserve">
+    <value>T119</value>
+  </data>
+  <data name="T123" xml:space="preserve">
+    <value>T123</value>
+  </data>
+  <data name="T136" xml:space="preserve">
+    <value>T136</value>
+  </data>
+  <data name="T14" xml:space="preserve">
+    <value>T14</value>
+  </data>
+  <data name="T14_descr" xml:space="preserve">
+    <value>Developed between May 1942 and May 1943. Two prototypes were manufactured and tested. However, mass production was canceled, and T14 never became more than an experimental vehicle.</value>
+  </data>
+  <data name="T16E2" xml:space="preserve">
+    <value>T16E2</value>
+  </data>
+  <data name="T18" xml:space="preserve">
+    <value>T18</value>
+  </data>
+  <data name="T18T47" xml:space="preserve">
+    <value>T18T47</value>
+  </data>
+  <data name="T18_descr" xml:space="preserve">
+    <value>Development of this self-propelled gun on the basis of the M3 light tank started in October 1941. The first prototype passed trials in the spring of 1942, but the vehicle never saw mass production.</value>
+  </data>
+  <data name="T1D5" xml:space="preserve">
+    <value>T1D5</value>
+  </data>
+  <data name="T1D6" xml:space="preserve">
+    <value>T1D6</value>
+  </data>
+  <data name="T1_Cunningham" xml:space="preserve">
+    <value>T1 Cunningham</value>
+  </data>
+  <data name="T1_Cunningham_descr" xml:space="preserve">
+    <value>Prototypes were developed by James Cunningham, Son &amp; Company (Rochester, NY) from 1927 through 1928. Various modifications of the vehicle were tested until 1934. However, the tank never saw mass production.</value>
+  </data>
+  <data name="T1_Cunningham_short" xml:space="preserve">
+    <value>T1</value>
+  </data>
+  <data name="T1_E6" xml:space="preserve">
+    <value>T1E6</value>
+  </data>
+  <data name="T1_E6_descr" xml:space="preserve">
+    <value>Experimental vehicles T1E4 through T1E6 were heavily influenced by the British Vickers E. The first prototype was manufactured by the Cunningham corporation in 1931. After trials in 1932, an upgraded variant was built. However, a different experimental tank, the T2, was preferred.</value>
+  </data>
+  <data name="T1_E6_short" xml:space="preserve">
+    <value>T1E6</value>
+  </data>
+  <data name="T1_hvy" xml:space="preserve">
+    <value>T1 Heavy Tank</value>
+  </data>
+  <data name="T1_hvy_descr" xml:space="preserve">
+    <value>Development of the tank started in the spring of 1940. In September 1940 and December 1941, prototypes underwent trials. The tank was never mass-produced. Later, it became a prototype for the M6.</value>
+  </data>
+  <data name="T1_hvy_short" xml:space="preserve">
+    <value>T1 Heavy</value>
+  </data>
+  <data name="T20" xml:space="preserve">
+    <value>T20</value>
+  </data>
+  <data name="T20D1" xml:space="preserve">
+    <value>T20D1</value>
+  </data>
+  <data name="T20D2" xml:space="preserve">
+    <value>T20D2</value>
+  </data>
+  <data name="T20_descr" xml:space="preserve">
+    <value>The first in a series of 1942–1943 U.S. medium tank designs intended as replacements for the M4 Sherman. The first prototype was produced in May 1943, and trials went on until 1944. The vehicle was not approved for mass production, but subsequent prototypes, the T22 and T23, were created on the basis of this development. They, in turn, served as precursors of the T25 and T26. Eventually, the M26 Pershing emerged on their basis and was adopted for service.</value>
+  </data>
+  <data name="T21" xml:space="preserve">
+    <value>T21</value>
+  </data>
+  <data name="T21_descr" xml:space="preserve">
+    <value>A lightweight version of the T20 medium tank with the M7 elongated chassis. The vehicle was developed in the first half of 1943. Unlike the T20 tank, the T21 featured reduced armor and lightened armament. The vehicle never entered mass production nor saw service.</value>
+  </data>
+  <data name="T23" xml:space="preserve">
+    <value>T23</value>
+  </data>
+  <data name="T23D51080" xml:space="preserve">
+    <value>T23D51080</value>
+  </data>
+  <data name="T23E3" xml:space="preserve">
+    <value>T23E3</value>
+  </data>
+  <data name="T23E3_descr" xml:space="preserve">
+    <value>Development of the tank started in April 1943. The prototype was manufactured in August 1944. Unlike its predecessor T23, this variant featured a torsion-bar suspension. The vehicle never entered mass production nor saw service.</value>
+  </data>
+  <data name="T23T80" xml:space="preserve">
+    <value>T23T80</value>
+  </data>
+  <data name="T23_descr" xml:space="preserve">
+    <value>Experimental medium tank. Developed from the end of 1942 through the summer of 1944. The vehicle was never mass-produced, nor saw combat.</value>
+  </data>
+  <data name="T25_2" xml:space="preserve">
+    <value>T25/2</value>
+  </data>
+  <data name="T25_2_descr" xml:space="preserve">
+    <value>Tank destroyer based on the T23. Development started in 1943. Since the T23 was not adopted for service, work on the tank destroyer was discontinued. Existed only in blueprints.</value>
+  </data>
+  <data name="T25_2_short" xml:space="preserve">
+    <value>T25/2</value>
+  </data>
+  <data name="T25_AT" xml:space="preserve">
+    <value>T25 AT</value>
+  </data>
+  <data name="T25_AT_descr" xml:space="preserve">
+    <value>The T25 was developed on the basis of the T23 medium tank, but was never manufactured.</value>
+  </data>
+  <data name="T25_AT_short" xml:space="preserve">
+    <value>T25 AT</value>
+  </data>
+  <data name="T26_E4_SuperPershing" xml:space="preserve">
+    <value>T26E4 SuperPershing</value>
+  </data>
+  <data name="T26_E4_SuperPershing_descr" xml:space="preserve">
+    <value>To increase firepower, a new long-barrelled 90-mm gun was mounted on the T26E1 in January 1945. The prototype was designated the T26E4. Development was discontinued in January 1947 due to problems with the gun and the loading mechanism. A total of 25 vehicles had been built by that time, but never entered service.</value>
+  </data>
+  <data name="T26_E4_SuperPershing_short" xml:space="preserve">
+    <value>T26E4</value>
+  </data>
+  <data name="T28" xml:space="preserve">
+    <value>T28</value>
+  </data>
+  <data name="T28_Prototype" xml:space="preserve">
+    <value>T28 Prototype</value>
+  </data>
+  <data name="T28_Prototype_descr" xml:space="preserve">
+    <value>Tank destroyer with a rotating gun turret. It was an early modification of a heavy SPG and was intended to fight at the Siegfried Line.</value>
+  </data>
+  <data name="T28_Prototype_short" xml:space="preserve">
+    <value>T28 Prot.</value>
+  </data>
+  <data name="T28_descr" xml:space="preserve">
+    <value>In March 1944, the U.S. Army placed an order for five prototypes of heavy vehicles designated T28. As a result, the T95 SPG was built.</value>
+  </data>
+  <data name="T28_short" xml:space="preserve">
+    <value>T28</value>
+  </data>
+  <data name="T29" xml:space="preserve">
+    <value>T29</value>
+  </data>
+  <data name="T29_descr" xml:space="preserve">
+    <value>Development of this experimental heavy tank started in September 1944. The construction and trials of the prototypes continued until October 1947. However, the T29 did not enter mass production.</value>
+  </data>
+  <data name="T2D1" xml:space="preserve">
+    <value>T2D1</value>
+  </data>
+  <data name="T2E1" xml:space="preserve">
+    <value>T2E1</value>
+  </data>
+  <data name="T2E4" xml:space="preserve">
+    <value>T2E4</value>
+  </data>
+  <data name="T2T1" xml:space="preserve">
+    <value>T2T1</value>
+  </data>
+  <data name="T2T2" xml:space="preserve">
+    <value>T2T2</value>
+  </data>
+  <data name="T2_lt" xml:space="preserve">
+    <value>T2 Light Tank</value>
+  </data>
+  <data name="T2_lt_descr" xml:space="preserve">
+    <value>The M2 prototype with Vickers suspension. After trials in 1934, the tank was sent for redesign, as the performance of the suspension was not sufficient. The tank never saw mass production.</value>
+  </data>
+  <data name="T2_lt_short" xml:space="preserve">
+    <value>T2 Light</value>
+  </data>
+  <data name="T2_med" xml:space="preserve">
+    <value>T2 Medium Tank</value>
+  </data>
+  <data name="T2_med_descr" xml:space="preserve">
+    <value>Experimental medium tank. Developed from 1930 to 1932. However, this model never saw mass production.</value>
+  </data>
+  <data name="T2_med_short" xml:space="preserve">
+    <value>T2 Medium</value>
+  </data>
+  <data name="T30" xml:space="preserve">
+    <value>T30</value>
+  </data>
+  <data name="T30D1" xml:space="preserve">
+    <value>T30D1</value>
+  </data>
+  <data name="T30_descr" xml:space="preserve">
+    <value>The T30D1 was closely related to the T29. Both tanks were developed at the same time. The prototypes underwent trials until 1948. Never saw mass production.</value>
+  </data>
+  <data name="T32" xml:space="preserve">
+    <value>T32</value>
+  </data>
+  <data name="T32_descr" xml:space="preserve">
+    <value>Development of this tank started in February 1945. Four prototypes underwent trials from the spring of 1946 until the end of the year. Never saw mass production.</value>
+  </data>
+  <data name="T34T7" xml:space="preserve">
+    <value>T34T7</value>
+  </data>
+  <data name="T34_hvy" xml:space="preserve">
+    <value>T34</value>
+  </data>
+  <data name="T34_hvy_descr" xml:space="preserve">
+    <value>In 1945 two prototypes of the T30 were armed with 120-mm guns and redesignated as the T34 Heavy Tank. The vehicle never entered mass production, nor saw service.</value>
+  </data>
+  <data name="T37" xml:space="preserve">
+    <value>T37</value>
+  </data>
+  <data name="T37_descr" xml:space="preserve">
+    <value>The light tank T37 was developed by Detroit Arsenal in the late 1940s to replace the М24 Chaffee. An order was placed for three prototypes. Later, some technical innovations were applied in the development of the T41 and M41 tanks.</value>
+  </data>
+  <data name="T37_short" xml:space="preserve">
+    <value>T37</value>
+  </data>
+  <data name="T40" xml:space="preserve">
+    <value>T40</value>
+  </data>
+  <data name="T40_descr" xml:space="preserve">
+    <value>Experimental tank destroyer developed on the basis of the M3 tank in the spring of 1942. The vehicle never entered mass production, nor saw service.</value>
+  </data>
+  <data name="T41" xml:space="preserve">
+    <value>T41</value>
+  </data>
+  <data name="T42" xml:space="preserve">
+    <value>T42</value>
+  </data>
+  <data name="T48" xml:space="preserve">
+    <value>T48</value>
+  </data>
+  <data name="T49" xml:space="preserve">
+    <value>T49</value>
+  </data>
+  <data name="T49_descr" xml:space="preserve">
+    <value>A variant of the M41 light tank with enlarged turret and 90-mm gun. Trials started on May 5, 1954. The trials were a success but the tank never saw mass production due to lack of interest by the military authorities.</value>
+  </data>
+  <data name="T51D1" xml:space="preserve">
+    <value>T51D1</value>
+  </data>
+  <data name="T54E1" xml:space="preserve">
+    <value>T54E1</value>
+  </data>
+  <data name="T54E1_descr" xml:space="preserve">
+    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of the M48 tank in mid-50s. Two prototypes were built. However, during trials automatic loading proved faulty and the development was discontinued in 1957.</value>
+  </data>
+  <data name="T57" xml:space="preserve">
+    <value>T57</value>
+  </data>
+  <data name="T57_58" xml:space="preserve">
+    <value>T57 Heavy Tank</value>
+  </data>
+  <data name="T57_58_descr" xml:space="preserve">
+    <value>A project of a heavy tank with an oscillating turret and automatic loading. Developed from 1951. Experimental turrets for 120-mm and 155-mm guns were manufactured by 1957. However, the project was deemed unsuccessful and the development was discontinued.</value>
+  </data>
+  <data name="T57_58_short" xml:space="preserve">
+    <value>T57 Heavy</value>
+  </data>
+  <data name="T57_descr" xml:space="preserve">
+    <value>Experimental SPG designed on the basis of the M3A3. The T57 was developed and tested in the fall of 1942, but was never mass-produced.</value>
+  </data>
+  <data name="T67" xml:space="preserve">
+    <value>T67</value>
+  </data>
+  <data name="T67_descr" xml:space="preserve">
+    <value>Development started in the spring of 1942. After undergoing trials, the decision was made to replace the 57-mm gun with a 75-mm gun. The vehicle passed trials in the fall of 1942 but never saw service.</value>
+  </data>
+  <data name="T69" xml:space="preserve">
+    <value>T69</value>
+  </data>
+  <data name="T69_descr" xml:space="preserve">
+    <value>A medium tank with an oscillating turret and automatic loading. Developed on the basis of experimental medium tank T42 in mid-50s. The vehicle never entered mass production.</value>
+  </data>
+  <data name="T69_short" xml:space="preserve">
+    <value>T69</value>
+  </data>
+  <data name="T71" xml:space="preserve">
+    <value>T71</value>
+  </data>
+  <data name="T71_descr" xml:space="preserve">
+    <value>Experimental airborne light tank with an oscillating turret. Developed from 1952 through 1953 as a replacement for M41. The armament was deemed ineffective, and the development was discontinued. Only one wooden prototype was built.</value>
+  </data>
+  <data name="T72" xml:space="preserve">
+    <value>T72</value>
+  </data>
+  <data name="T72E1" xml:space="preserve">
+    <value>T72E1</value>
+  </data>
+  <data name="T7_Combat_Car" xml:space="preserve">
+    <value>T7 Combat Car</value>
+  </data>
+  <data name="T7_Combat_Car_descr" xml:space="preserve">
+    <value>Light wheeled caterpillar vehicle with machineguns was developed for the U.S. cavalry. The trials of the first prototype started in April 1937 and continued until 1939. However, later the T7 was discontinued in favor of track-type vehicles.</value>
+  </data>
+  <data name="T7_Combat_Car_short" xml:space="preserve">
+    <value>T7 Car</value>
+  </data>
+  <data name="T80E3" xml:space="preserve">
+    <value>T80E3</value>
+  </data>
+  <data name="T80E3A" xml:space="preserve">
+    <value>T80E3A</value>
+  </data>
+  <data name="T82" xml:space="preserve">
+    <value>T82</value>
+  </data>
+  <data name="T82T47" xml:space="preserve">
+    <value>T82T47</value>
+  </data>
+  <data name="T82_descr" xml:space="preserve">
+    <value>Development of the T82 started in December 1943. The vehicle was put on trials in August 1944. It never saw mass production, nor entered service.</value>
+  </data>
+  <data name="T84E1" xml:space="preserve">
+    <value>T84E1</value>
+  </data>
+  <data name="T84E1A" xml:space="preserve">
+    <value>T84E1A</value>
+  </data>
+  <data name="T84E3" xml:space="preserve">
+    <value>T84E3</value>
+  </data>
+  <data name="T84E38" xml:space="preserve">
+    <value>T84E38</value>
+  </data>
+  <data name="T84E3A" xml:space="preserve">
+    <value>T84E3A</value>
+  </data>
+  <data name="T85E1" xml:space="preserve">
+    <value>T85E1</value>
+  </data>
+  <data name="T85E2" xml:space="preserve">
+    <value>T85E2</value>
+  </data>
+  <data name="T92" xml:space="preserve">
+    <value>T92</value>
+  </data>
+  <data name="T92_descr" xml:space="preserve">
+    <value>Development of the T92 started at the beginning of 1945. The vehicle was to share many components with the M26. A prototype underwent trials at Aberdeen Proving Ground, but the T92 never entered mass production.</value>
+  </data>
+  <data name="T95" xml:space="preserve">
+    <value>T95</value>
+  </data>
+  <data name="T95_E2" xml:space="preserve">
+    <value>T95E2</value>
+  </data>
+  <data name="T95_E2_descr" xml:space="preserve">
+    <value>Development began in September 1954, with many components in common with another experimental prototype, the T96. A total of nine prototypes were manufactured, five of which had the 90-mm gun. Four of the vehicles were planned to have the turret of the T96 tank as well as its 105-mm gun. However, because the turrets of the T96 were not ready at that point, two of the new vehicles received turrets from the mass-produced M48A2 tank, equipped with the M41 rifled gun. These prototypes, designated T95E2, were manufactured from May through July 1957.</value>
+  </data>
+  <data name="T95_E2_short" xml:space="preserve">
+    <value>T95E2</value>
+  </data>
+  <data name="T95_E6" xml:space="preserve">
+    <value>T95E6</value>
+  </data>
+  <data name="T95_E6_descr" xml:space="preserve">
+    <value>Some military analysts deemed the experimental tanks of the T95 series to be undergunned. In order to increase the tank's firepower, a new, heavier turret, designated T96, was to be mounted on the hull. This would allow replacement of the 105-mm gun with a 120-mm gun. However, development proved unsuccessful, and the project was canceled on July 7th, 1960. Only one dummy vehicle was built.</value>
+  </data>
+  <data name="T95_descr" xml:space="preserve">
+    <value>Development of this vehicle started in 1943, with 25 vehicles planned for production within a year. Two prototypes passed trials, but never saw action.</value>
+  </data>
+  <data name="T99E2" xml:space="preserve">
+    <value>T99E2</value>
+  </data>
+  <data name="Torsion_bar_T80" xml:space="preserve">
+    <value>T23E3</value>
+  </data>
+  <data name="Turret_1_A100_T49" xml:space="preserve">
+    <value>T49</value>
+  </data>
+  <data name="Turret_1_A101_M56" xml:space="preserve">
+    <value>M56 Scorpion</value>
+  </data>
+  <data name="Turret_1_A102_T28_concept" xml:space="preserve">
+    <value>T28 Concept</value>
+  </data>
+  <data name="Turret_1_A104_M4A3E8A" xml:space="preserve">
+    <value>M4A3E8 Fury</value>
+  </data>
+  <data name="Turret_1_M103" xml:space="preserve">
+    <value>M89</value>
+  </data>
+  <data name="Turret_1_M10_Wolverine" xml:space="preserve">
+    <value>M10T72</value>
+  </data>
+  <data name="Turret_1_M12" xml:space="preserve">
+    <value>M12M4</value>
+  </data>
+  <data name="Turret_1_M18_Hellcat" xml:space="preserve">
+    <value>M18 M34A1</value>
+  </data>
+  <data name="Turret_1_M22_Locust" xml:space="preserve">
+    <value>M22D1</value>
+  </data>
+  <data name="Turret_1_M24_Chaffee" xml:space="preserve">
+    <value>T24</value>
+  </data>
+  <data name="Turret_1_M36_Slagger_4" xml:space="preserve">
+    <value>M36T74</value>
+  </data>
+  <data name="Turret_1_M40M43" xml:space="preserve">
+    <value>M40M43</value>
+  </data>
+  <data name="Turret_1_M41_Bulldog" xml:space="preserve">
+    <value>M41</value>
+  </data>
+  <data name="Turret_1_M44" xml:space="preserve">
+    <value>M44</value>
+  </data>
+  <data name="Turret_1_M46_Patton" xml:space="preserve">
+    <value>M46M73</value>
+  </data>
+  <data name="Turret_1_M48A1" xml:space="preserve">
+    <value>M87</value>
+  </data>
+  <data name="Turret_1_M4A2E4" xml:space="preserve">
+    <value>M4A2E4D51066</value>
+  </data>
+  <data name="Turret_1_M4_Improved" xml:space="preserve">
+    <value>M4 Improved</value>
+  </data>
+  <data name="Turret_1_M53_55" xml:space="preserve">
+    <value>M53/M55</value>
+  </data>
+  <data name="Turret_1_M60" xml:space="preserve">
+    <value>M60</value>
+  </data>
+  <data name="Turret_1_M6A2E1" xml:space="preserve">
+    <value>M6A2E1D4</value>
+  </data>
+  <data name="Turret_1_M8A1" xml:space="preserve">
+    <value>M8A1</value>
+  </data>
+  <data name="Turret_1_Pershing" xml:space="preserve">
+    <value>M26M67</value>
+  </data>
+  <data name="Turret_1_Sherman_Jumbo" xml:space="preserve">
+    <value>M4A2E2T110</value>
+  </data>
+  <data name="Turret_1_T110E3" xml:space="preserve">
+    <value>T110E3</value>
+  </data>
+  <data name="Turret_1_T110E4" xml:space="preserve">
+    <value>T110E4</value>
+  </data>
+  <data name="Turret_1_T1_E6" xml:space="preserve">
+    <value>T1</value>
+  </data>
+  <data name="Turret_1_T25_2" xml:space="preserve">
+    <value>T25/2T3</value>
+  </data>
+  <data name="Turret_1_T25_AT" xml:space="preserve">
+    <value>T25M1</value>
+  </data>
+  <data name="Turret_1_T26_E4_SuperPershing" xml:space="preserve">
+    <value>T26E4</value>
+  </data>
+  <data name="Turret_1_T28" xml:space="preserve">
+    <value>T28</value>
+  </data>
+  <data name="Turret_1_T28_Prototype" xml:space="preserve">
+    <value>T28P D1</value>
+  </data>
+  <data name="Turret_1_T37" xml:space="preserve">
+    <value>T37</value>
+  </data>
+  <data name="Turret_1_T40" xml:space="preserve">
+    <value>T40</value>
+  </data>
+  <data name="Turret_1_T49" xml:space="preserve">
+    <value>T49</value>
+  </data>
+  <data name="Turret_1_T54E1" xml:space="preserve">
+    <value>T157</value>
+  </data>
+  <data name="Turret_1_T57_58" xml:space="preserve">
+    <value>T169</value>
+  </data>
+  <data name="Turret_1_T69" xml:space="preserve">
+    <value>T178</value>
+  </data>
+  <data name="Turret_1_T71" xml:space="preserve">
+    <value>T71</value>
+  </data>
+  <data name="Turret_1_T7_Combat_Car" xml:space="preserve">
+    <value>T7 Combat Car</value>
+  </data>
+  <data name="Turret_1_T92" xml:space="preserve">
+    <value>T92</value>
+  </data>
+  <data name="Turret_1_T95" xml:space="preserve">
+    <value>T95</value>
+  </data>
+  <data name="Turret_1_T95_E2" xml:space="preserve">
+    <value>T95E2</value>
+  </data>
+  <data name="Turret_1_T95_E6" xml:space="preserve">
+    <value>T95E6</value>
+  </data>
+  <data name="Turret_2_A100_T49" xml:space="preserve">
+    <value>XM551 test bed</value>
+  </data>
+  <data name="Turret_2_M103" xml:space="preserve">
+    <value>T140</value>
+  </data>
+  <data name="Turret_2_M10_Wolverine" xml:space="preserve">
+    <value>M10T72M1</value>
+  </data>
+  <data name="Turret_2_M18_Hellcat" xml:space="preserve">
+    <value>M18 M1</value>
+  </data>
+  <data name="Turret_2_M24_Chaffee" xml:space="preserve">
+    <value>M24</value>
+  </data>
+  <data name="Turret_2_M36_Slagger_4" xml:space="preserve">
+    <value>M36T78</value>
+  </data>
+  <data name="Turret_2_M41_Bulldog" xml:space="preserve">
+    <value>M41A1</value>
+  </data>
+  <data name="Turret_2_M46_Patton" xml:space="preserve">
+    <value>M46T119</value>
+  </data>
+  <data name="Turret_2_M8A1" xml:space="preserve">
+    <value>T87</value>
+  </data>
+  <data name="Turret_2_Pershing" xml:space="preserve">
+    <value>M26M71</value>
+  </data>
+  <data name="Turret_2_Sherman_Jumbo" xml:space="preserve">
+    <value>M4A2E2D51080</value>
+  </data>
+  <data name="Turret_2_T110" xml:space="preserve">
+    <value>T53</value>
+  </data>
+  <data name="Turret_2_T21" xml:space="preserve">
+    <value>T21</value>
+  </data>
+  <data name="Turret_2_T25_2" xml:space="preserve">
+    <value>T25/2T7</value>
+  </data>
+  <data name="Turret_2_T37" xml:space="preserve">
+    <value>T41 pilot number 1</value>
+  </data>
+  <data name="Turret_2_T49" xml:space="preserve">
+    <value>T67</value>
+  </data>
+  <data name="Twin_Cadillac_42series" xml:space="preserve">
+    <value>Twin Cadillac, Series 42</value>
+  </data>
+  <data name="Twin_Cadillac_42series_short" xml:space="preserve">
+    <value>Twin Cadillac,
+Series 42</value>
+  </data>
+  <data name="Twin_Cadillac_series_44T4" xml:space="preserve">
+    <value>Twin Cadillac, Series 44T4</value>
+  </data>
+  <data name="Twin_Cadillac_series_44T4_short" xml:space="preserve">
+    <value>Twin Cadillac,
+Series 44T4</value>
+  </data>
+  <data name="VVSST41" xml:space="preserve">
+    <value>VVSS T41</value>
+  </data>
+  <data name="VVSST48" xml:space="preserve">
+    <value>VVSS T48</value>
+  </data>
+  <data name="VVSST49" xml:space="preserve">
+    <value>VVSS T49</value>
+  </data>
+  <data name="VVSST51" xml:space="preserve">
+    <value>VVSS T51</value>
+  </data>
+  <data name="VVSS_T16E1" xml:space="preserve">
+    <value>VVSS T16E1</value>
+  </data>
+  <data name="VVSS_T16E2" xml:space="preserve">
+    <value>VVSS T16E2</value>
+  </data>
+  <data name="VVSS_T16E3" xml:space="preserve">
+    <value>VVSS T16E3</value>
+  </data>
+  <data name="VVSS_T36E6" xml:space="preserve">
+    <value>VVSS T36E6</value>
+  </data>
+  <data name="VVSS_T36E8" xml:space="preserve">
+    <value>VVSS T36E8</value>
+  </data>
+  <data name="VVSS_T48" xml:space="preserve">
+    <value>VVSS T48</value>
+  </data>
+  <data name="VVSS_T48A" xml:space="preserve">
+    <value>VVSS T48A</value>
+  </data>
+  <data name="VVSS_T51" xml:space="preserve">
+    <value>VVSS T51</value>
+  </data>
+  <data name="VVSS_T55E1" xml:space="preserve">
+    <value>VVSS T55E1</value>
+  </data>
+  <data name="VVSS_T80" xml:space="preserve">
+    <value>VVSS T80</value>
+  </data>
+  <data name="VVSS_WE210" xml:space="preserve">
+    <value>VVSS WE210</value>
+  </data>
+  <data name="Wright_Continental_R-975C1" xml:space="preserve">
+    <value>Wright Continental R-975C1</value>
+  </data>
+  <data name="Wright_Continental_R-975C1_short" xml:space="preserve">
+    <value>Wright C. R-975C1</value>
+  </data>
+  <data name="Wright_Continental_R-975C2" xml:space="preserve">
+    <value>Wright Continental R-975C2</value>
+  </data>
+  <data name="Wright_Continental_R-975C2_short" xml:space="preserve">
+    <value>Wright C. R-975C2</value>
+  </data>
+  <data name="Wright_Continental_R-975C3" xml:space="preserve">
+    <value>Wright Continental R-975C3</value>
+  </data>
+  <data name="Wright_Continental_R-975C3_short" xml:space="preserve">
+    <value>Wright C. R-975C3</value>
+  </data>
+  <data name="Wright_Continental_R-975C4" xml:space="preserve">
+    <value>Wright Continental R-975C4</value>
+  </data>
+  <data name="Wright_Continental_R-975C4_short" xml:space="preserve">
+    <value>Wright C. R-975C4</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2" xml:space="preserve">
+    <value>Wright Continental R-975EC2</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2_short" xml:space="preserve">
+    <value>Wright C. R-975EC2</value>
+  </data>
+  <data name="Wright_G200A" xml:space="preserve">
+    <value>Wright G200</value>
+  </data>
+  <data name="Wright_G200_m_781C9GC1" xml:space="preserve">
+    <value>Wright G200 M781C9GC1</value>
+  </data>
+  <data name="Wright_G200_m_781C9GC1_short" xml:space="preserve">
+    <value>Wright G200
+M781C9GC1</value>
+  </data>
+  <data name="Wright_G200_m_781C9GC5" xml:space="preserve">
+    <value>Wright G200 M781C9GC5</value>
+  </data>
+  <data name="Wright_G200_m_781C9GC5_short" xml:space="preserve">
+    <value>Wright G200
+M781C9GC5</value>
+  </data>
+  <data name="Wright_G200_m_795C9GC1" xml:space="preserve">
+    <value>Wright G200 M795C9GC1</value>
+  </data>
+  <data name="Wright_G200_m_795C9GC1_short" xml:space="preserve">
+    <value>Wright G200
+M795C9GC1</value>
+  </data>
+  <data name="Wright_G2X_m_781C9GC1" xml:space="preserve">
+    <value>Wright G2X M781C9GC1</value>
+  </data>
+  <data name="Wright_G2X_m_781C9GC1_short" xml:space="preserve">
+    <value>Wright G2X
+M781C9GC1</value>
+  </data>
+  <data name="Wright_R-975EC2" xml:space="preserve">
+    <value>Wright R-975EC2</value>
+  </data>
+  <data name="_105mm_APCR_M68M2" xml:space="preserve">
+    <value>APDS-T M392</value>
+  </data>
+  <data name="_105mm_APCR_T140E3" xml:space="preserve">
+    <value>HVAPDS-T T279</value>
+  </data>
+  <data name="_105mm_APCR_T29E3" xml:space="preserve">
+    <value>APCR T29E3</value>
+  </data>
+  <data name="_105mm_APCR_T29E3M2" xml:space="preserve">
+    <value>APCR T29E3M2</value>
+  </data>
+  <data name="_105mm_AP_T140E3" xml:space="preserve">
+    <value>AP-T T182E1</value>
+  </data>
+  <data name="_105mm_AP_T32" xml:space="preserve">
+    <value>AP T32</value>
+  </data>
+  <data name="_105mm_AP_T32M2" xml:space="preserve">
+    <value>AP T32M2</value>
+  </data>
+  <data name="_105mm_AT_Gun_T5A" xml:space="preserve">
+    <value>105 mm Gun T5</value>
+  </data>
+  <data name="_105mm_AT_Gun_T5E1" xml:space="preserve">
+    <value>105 mm AT Gun T5E1</value>
+  </data>
+  <data name="_105mm_AT_Howitzer_M3" xml:space="preserve">
+    <value>105 mm AT Howitzer M3</value>
+  </data>
+  <data name="_105mm_AT_SPH_M4_L23" xml:space="preserve">
+    <value>105 mm AT M4</value>
+  </data>
+  <data name="_105mm_Gun_M68" xml:space="preserve">
+    <value>105 mm Gun M68</value>
+  </data>
+  <data name="_105mm_Gun_T140E2" xml:space="preserve">
+    <value>105mm Gun T140E2</value>
+  </data>
+  <data name="_105mm_Gun_T5E1" xml:space="preserve">
+    <value>105 mm Gun T5E1</value>
+  </data>
+  <data name="_105mm_Gun_T5E1M2" xml:space="preserve">
+    <value>105 mm Gun T5E1M2</value>
+  </data>
+  <data name="_105mm_Gun_T5E1_1" xml:space="preserve">
+    <value>105 mm Gun T5E1E</value>
+  </data>
+  <data name="_105mm_HEAT-T_T384E4" xml:space="preserve">
+    <value>HEAT-T T384E4</value>
+  </data>
+  <data name="_105mm_HEAT_M67" xml:space="preserve">
+    <value>HEAT M67</value>
+  </data>
+  <data name="_105mm_HE_M1" xml:space="preserve">
+    <value>HE M1</value>
+  </data>
+  <data name="_105mm_HE_M11" xml:space="preserve">
+    <value>HE M11</value>
+  </data>
+  <data name="_105mm_HE_M11A2" xml:space="preserve">
+    <value>HE M11A2</value>
+  </data>
+  <data name="_105mm_HE_M68M2" xml:space="preserve">
+    <value>HEP-T M393</value>
+  </data>
+  <data name="_105mm_Howitzer_M2A1" xml:space="preserve">
+    <value>105 mm Howitzer M2A1</value>
+  </data>
+  <data name="_105mm_Howitzer_M3" xml:space="preserve">
+    <value>105 mm Howitzer M3</value>
+  </data>
+  <data name="_105mm_Howitzer_M4" xml:space="preserve">
+    <value>105 mm Howitzer M4</value>
+  </data>
+  <data name="_105mm_SPH_M4_L23" xml:space="preserve">
+    <value>105 mm M4</value>
+  </data>
+  <data name="_12.7mm_AP_M2" xml:space="preserve">
+    <value>AP M2</value>
+  </data>
+  <data name="_12.7mm_MG_HB_M2" xml:space="preserve">
+    <value>Browning MG caliber .50 HB, M2</value>
+  </data>
+  <data name="_120mm_AP-T_M358" xml:space="preserve">
+    <value>AP-T M358</value>
+  </data>
+  <data name="_120mm_APCR_T62" xml:space="preserve">
+    <value>APCR T62</value>
+  </data>
+  <data name="_120mm_AP_Shot" xml:space="preserve">
+    <value>AP</value>
+  </data>
+  <data name="_120mm_AP_T42" xml:space="preserve">
+    <value>AP T42</value>
+  </data>
+  <data name="_120mm_AT_Gun_T53" xml:space="preserve">
+    <value>120 mm AT Gun T53</value>
+  </data>
+  <data name="_120mm_Gun_M58" xml:space="preserve">
+    <value>120 mm Gun M58</value>
+  </data>
+  <data name="_120mm_Gun_T122" xml:space="preserve">
+    <value>120 mm Gun T122</value>
+  </data>
+  <data name="_120mm_Gun_T123E6" xml:space="preserve">
+    <value>120 mm Gun T123E6</value>
+  </data>
+  <data name="_120mm_Gun_T179" xml:space="preserve">
+    <value>120 mm Gun T179</value>
+  </data>
+  <data name="_120mm_Gun_T53A1" xml:space="preserve">
+    <value>120 mm Gun T53A1</value>
+  </data>
+  <data name="_120mm_HE-T67" xml:space="preserve">
+    <value>HE T67</value>
+  </data>
+  <data name="_120mm_HEAT-T_M469" xml:space="preserve">
+    <value>HEAT-T M469</value>
+  </data>
+  <data name="_120mm_HE_Shot" xml:space="preserve">
+    <value>HE Shell</value>
+  </data>
+  <data name="_152mm_Gun_Launcher_M81" xml:space="preserve">
+    <value>152 mm Gun-Launcher XM81 (conventional)</value>
+  </data>
+  <data name="_152mm_HEAT_XM409" xml:space="preserve">
+    <value>HEAT XM409</value>
+  </data>
+  <data name="_152mm_HE_XM657E2" xml:space="preserve">
+    <value>HE XM657E2</value>
+  </data>
+  <data name="_152mm_HE_XM657E3" xml:space="preserve">
+    <value>HE XM657E3</value>
+  </data>
+  <data name="_155mm_AP_M111" xml:space="preserve">
+    <value>AP M111</value>
+  </data>
+  <data name="_155mm_AP_M111E1" xml:space="preserve">
+    <value>AP M111E1</value>
+  </data>
+  <data name="_155mm_AP_M112" xml:space="preserve">
+    <value>AP M112</value>
+  </data>
+  <data name="_155mm_AP_M112E1" xml:space="preserve">
+    <value>APCR M112E1</value>
+  </data>
+  <data name="_155mm_AT_Gun_T7" xml:space="preserve">
+    <value>155 mm AT Gun T7</value>
+  </data>
+  <data name="_155mm_AT_Gun_T7E2" xml:space="preserve">
+    <value>155 mm AT Gun T7E2</value>
+  </data>
+  <data name="_155mm_Gun_M1918M1" xml:space="preserve">
+    <value>155 mm Gun M1918M1</value>
+  </data>
+  <data name="_155mm_Gun_M1A1" xml:space="preserve">
+    <value>155 mm Gun M1A1</value>
+  </data>
+  <data name="_155mm_Gun_M46" xml:space="preserve">
+    <value>155 mm Gun M46</value>
+  </data>
+  <data name="_155mm_HEAT_M167" xml:space="preserve">
+    <value>HEAT M167</value>
+  </data>
+  <data name="_155mm_HE_M101" xml:space="preserve">
+    <value>HE M101</value>
+  </data>
+  <data name="_155mm_HE_M101E1" xml:space="preserve">
+    <value>HE M101E1</value>
+  </data>
+  <data name="_155mm_HE_M101M2" xml:space="preserve">
+    <value>HE M101M2</value>
+  </data>
+  <data name="_155mm_HE_M101M4" xml:space="preserve">
+    <value>HE M101M4</value>
+  </data>
+  <data name="_155mm_HE_M101M6" xml:space="preserve">
+    <value>HE M101M6</value>
+  </data>
+  <data name="_155mm_HE_M102" xml:space="preserve">
+    <value>HE M102</value>
+  </data>
+  <data name="_155mm_Howitzer_M1" xml:space="preserve">
+    <value>155 mm Howitzer M1</value>
+  </data>
+  <data name="_155mm_Howitzer_M45" xml:space="preserve">
+    <value>155 mm Howitzer M45</value>
+  </data>
+  <data name="_203mm_HE_A1M1" xml:space="preserve">
+    <value>HE M106</value>
+  </data>
+  <data name="_203mm_HE_M106" xml:space="preserve">
+    <value>HE A1M1</value>
+  </data>
+  <data name="_203mm_Howitzer_M1" xml:space="preserve">
+    <value>8-inch Howitzer M1</value>
+  </data>
+  <data name="_203mm_Howitzer_M47" xml:space="preserve">
+    <value>8-inch Howitzer M47</value>
+  </data>
+  <data name="_203mm_M106_M78" xml:space="preserve">
+    <value>M106/M78</value>
+  </data>
+  <data name="_20mm_AP" xml:space="preserve">
+    <value>AP</value>
+  </data>
+  <data name="_20mm_APCR" xml:space="preserve">
+    <value>APCR</value>
+  </data>
+  <data name="_20mm_Hispano_Suiza_Birgikt_gun" xml:space="preserve">
+    <value>20 mm Hispano-Suiza Birkigt Gun</value>
+  </data>
+  <data name="_20mm_Hispano_Suiza_Birgikt_gun_A" xml:space="preserve">
+    <value>20 mm Hispano-Suiza Birkigt Gun</value>
+  </data>
+  <data name="_20mm_Hispano_Suiza_Birgikt_gun_A_short" xml:space="preserve">
+    <value>20 mm Hispano-Suiza</value>
+  </data>
+  <data name="_20mm_Hispano_Suiza_Birgikt_gun_short" xml:space="preserve">
+    <value>20 mm Hispano-Suiza</value>
+  </data>
+  <data name="_240mm_HE_M146" xml:space="preserve">
+    <value>HE M146</value>
+  </data>
+  <data name="_240mm_HE_M160" xml:space="preserve">
+    <value>HE M160</value>
+  </data>
+  <data name="_240mm_Howitzer_M1" xml:space="preserve">
+    <value>240 mm Howitzer M1</value>
+  </data>
+  <data name="_240mm_M114_M78" xml:space="preserve">
+    <value>M114/M78</value>
+  </data>
+  <data name="_2pdr_APCNR_Mk.1" xml:space="preserve">
+    <value>APCNR Mk. 1</value>
+  </data>
+  <data name="_2pdr_AP_Mk.1T" xml:space="preserve">
+    <value>AP Mk. 1T</value>
+  </data>
+  <data name="_2pdr_HE_Mk.2" xml:space="preserve">
+    <value>HE Mk. 2</value>
+  </data>
+  <data name="_37mm_44_caliber_automatic_cannon" xml:space="preserve">
+    <value>37 mm dual automatic cannon</value>
+  </data>
+  <data name="_37mm_44_caliber_automatic_cannon_short" xml:space="preserve">
+    <value>37 mm dual
+automatic cannon</value>
+  </data>
+  <data name="_37mm_AP1937" xml:space="preserve">
+    <value>AP 1937</value>
+  </data>
+  <data name="_37mm_APCBC1935" xml:space="preserve">
+    <value>APCBC 1935</value>
+  </data>
+  <data name="_37mm_APC_M51" xml:space="preserve">
+    <value>APC M51</value>
+  </data>
+  <data name="_37mm_APC_M59A1" xml:space="preserve">
+    <value>APC M59A1</value>
+  </data>
+  <data name="_37mm_APC_M59A5" xml:space="preserve">
+    <value>APC M59A5</value>
+  </data>
+  <data name="_37mm_AP_M74" xml:space="preserve">
+    <value>AP M74</value>
+  </data>
+  <data name="_37mm_Browning_semiautomatic_gun" xml:space="preserve">
+    <value>37 mm Browning Semiautomatic Gun</value>
+  </data>
+  <data name="_37mm_Browning_semiautomatic_gun_short" xml:space="preserve">
+    <value>37 mm Browning</value>
+  </data>
+  <data name="_37mm_Gun_M1916" xml:space="preserve">
+    <value>37 mm Gun M1916</value>
+  </data>
+  <data name="_37mm_HE1916" xml:space="preserve">
+    <value>HE 1916</value>
+  </data>
+  <data name="_37mm_HE_M54" xml:space="preserve">
+    <value>HE M54</value>
+  </data>
+  <data name="_37mm_HE_M63" xml:space="preserve">
+    <value>HE M63</value>
+  </data>
+  <data name="_37mm_M-3_antitank_gun" xml:space="preserve">
+    <value>37 mm AT Gun M3</value>
+  </data>
+  <data name="_37mm_M-5" xml:space="preserve">
+    <value>37 mm Gun M5</value>
+  </data>
+  <data name="_37mm_M-6_L53" xml:space="preserve">
+    <value>37 mm Gun M6</value>
+  </data>
+  <data name="_37mm_M-6_L53M2" xml:space="preserve">
+    <value>37 mm Gun M6</value>
+  </data>
+  <data name="_37mm_T16" xml:space="preserve">
+    <value>37 mm Gun T16</value>
+  </data>
+  <data name="_37mm_semiautomatic_gun_M1924" xml:space="preserve">
+    <value>37 mm Semiautomatic Gun M1924</value>
+  </data>
+  <data name="_37mm_semiautomatic_gun_M1924A1" xml:space="preserve">
+    <value>37 mm Semiautomatic Gun M1924A1</value>
+  </data>
+  <data name="_37mm_semiautomatic_gun_M1924A1_short" xml:space="preserve">
+    <value>37 mm M1924A1</value>
+  </data>
+  <data name="_37mm_semiautomatic_gun_M1924_short" xml:space="preserve">
+    <value>37 mm M1924</value>
+  </data>
+  <data name="_57mm_APC_M86" xml:space="preserve">
+    <value>APC M86</value>
+  </data>
+  <data name="_57mm_AP_M70" xml:space="preserve">
+    <value>AP M70</value>
+  </data>
+  <data name="_57mm_Gun_M1_L50" xml:space="preserve">
+    <value>57 mm Gun M1</value>
+  </data>
+  <data name="_57mm_HE_T18" xml:space="preserve">
+    <value>HE T18</value>
+  </data>
+  <data name="_6pdr_APCR_MK_1T" xml:space="preserve">
+    <value>APCR Mk. 1T</value>
+  </data>
+  <data name="_6pdr_AP_MKs_4" xml:space="preserve">
+    <value>AP Mk. 4</value>
+  </data>
+  <data name="_75mm_AT_Gun_M3_L37" xml:space="preserve">
+    <value>75 mm AT Gun M3</value>
+  </data>
+  <data name="_75mm_AT_Gun_M7_L50" xml:space="preserve">
+    <value>3-inch AT Gun M7</value>
+  </data>
+  <data name="_75mm_AT_Howitzer_M3" xml:space="preserve">
+    <value>75 mm AT Howitzer M3</value>
+  </data>
+  <data name="_75mm_Gun_M17" xml:space="preserve">
+    <value>75 mm Gun M17</value>
+  </data>
+  <data name="_75mm_Gun_M2_L28" xml:space="preserve">
+    <value>75 mm Gun M2</value>
+  </data>
+  <data name="_75mm_Gun_M3_L37" xml:space="preserve">
+    <value>75 mm Gun M3</value>
+  </data>
+  <data name="_75mm_Gun_M6" xml:space="preserve">
+    <value>75 mm Gun M6</value>
+  </data>
+  <data name="_75mm_Gun_M7_L50" xml:space="preserve">
+    <value>3-inch Gun M7</value>
+  </data>
+  <data name="_75mm_HEAT_M66" xml:space="preserve">
+    <value>HEAT M66</value>
+  </data>
+  <data name="_75mm_Howitzer_M1A1" xml:space="preserve">
+    <value>75 mm Howitzer M1A1</value>
+  </data>
+  <data name="_75mm_Howitzer_M3" xml:space="preserve">
+    <value>75 mm Howitzer M3</value>
+  </data>
+  <data name="_75mm_KwK_L70" xml:space="preserve">
+    <value>7.5 cm KwK L70</value>
+  </data>
+  <data name="_75mm_M48" xml:space="preserve">
+    <value>M48</value>
+  </data>
+  <data name="_75mm_M61" xml:space="preserve">
+    <value>M61</value>
+  </data>
+  <data name="_75mm_M72" xml:space="preserve">
+    <value>T45</value>
+  </data>
+  <data name="_75mm_Pzgr.40L" xml:space="preserve">
+    <value>Pzgr.40L (captured)</value>
+  </data>
+  <data name="_75mm_Pzgr39L" xml:space="preserve">
+    <value>Pzgr39L (captured)</value>
+  </data>
+  <data name="_75mm_Sprg.18L" xml:space="preserve">
+    <value>Sprg.18L (captured)</value>
+  </data>
+  <data name="_76mm_APDS_M331A2" xml:space="preserve">
+    <value>HVAP-DS-T M331A2</value>
+  </data>
+  <data name="_76mm_AP_M339" xml:space="preserve">
+    <value>AP M339</value>
+  </data>
+  <data name="_76mm_AP_M79" xml:space="preserve">
+    <value>AP M62</value>
+  </data>
+  <data name="_76mm_AT_Gun_M1918" xml:space="preserve">
+    <value>3-inch AT Gun M1918</value>
+  </data>
+  <data name="_76mm_AT_Gun_M1A1" xml:space="preserve">
+    <value>76 mm AT Gun M1A1</value>
+  </data>
+  <data name="_76mm_AT_Gun_M1A2" xml:space="preserve">
+    <value>76 mm AT Gun M1A2</value>
+  </data>
+  <data name="_76mm_Gun_M1918" xml:space="preserve">
+    <value>3-inch Gun T9</value>
+  </data>
+  <data name="_76mm_Gun_M1A1" xml:space="preserve">
+    <value>76 mm Gun M1A1</value>
+  </data>
+  <data name="_76mm_Gun_M1A1T" xml:space="preserve">
+    <value>76 mm Gun M1A1</value>
+  </data>
+  <data name="_76mm_Gun_M1A2" xml:space="preserve">
+    <value>76 mm Gun M1A2</value>
+  </data>
+  <data name="_76mm_Gun_M1A2A" xml:space="preserve">
+    <value>76 mm Gun M1A2</value>
+  </data>
+  <data name="_76mm_Gun_M32" xml:space="preserve">
+    <value>76 mm Gun M32</value>
+  </data>
+  <data name="_76mm_Gun_M32_late" xml:space="preserve">
+    <value>76 mm Gun M32 late</value>
+  </data>
+  <data name="_76mm_Gun_T102" xml:space="preserve">
+    <value>76 mm Gun T102</value>
+  </data>
+  <data name="_76mm_Gun_T185" xml:space="preserve">
+    <value>76 mm Gun T185</value>
+  </data>
+  <data name="_76mm_Gun_T91" xml:space="preserve">
+    <value>76 mm Gun T91</value>
+  </data>
+  <data name="_76mm_Gun_T91E5" xml:space="preserve">
+    <value>76 mm Gun T91E5</value>
+  </data>
+  <data name="_76mm_Gun_T94" xml:space="preserve">
+    <value>76 mm Gun T94</value>
+  </data>
+  <data name="_76mm_HEAT" xml:space="preserve">
+    <value>HEAT</value>
+  </data>
+  <data name="_76mm_HEAT_M496" xml:space="preserve">
+    <value>HEAT-T M496</value>
+  </data>
+  <data name="_76mm_HE_M352" xml:space="preserve">
+    <value>HE M352</value>
+  </data>
+  <data name="_76mm_HE_M42A1" xml:space="preserve">
+    <value>HE M42A1</value>
+  </data>
+  <data name="_76mm_HE_M42B1" xml:space="preserve">
+    <value>HE M42B1</value>
+  </data>
+  <data name="_76mm_HVAP_M319" xml:space="preserve">
+    <value>HVAP M319</value>
+  </data>
+  <data name="_76mm_HVAP_M93" xml:space="preserve">
+    <value>HVAP M93</value>
+  </data>
+  <data name="_76mm_M42A1" xml:space="preserve">
+    <value>HE M42A1(M7)</value>
+  </data>
+  <data name="_76mm_M62" xml:space="preserve">
+    <value>AP M62(M7)</value>
+  </data>
+  <data name="_76mm_M64" xml:space="preserve">
+    <value>M64</value>
+  </data>
+  <data name="_76mm_M79" xml:space="preserve">
+    <value>HVAP M93(M7)</value>
+  </data>
+  <data name="_90mm_AP_M318" xml:space="preserve">
+    <value>AP M318</value>
+  </data>
+  <data name="_90mm_AP_M318A1" xml:space="preserve">
+    <value>M318A1</value>
+  </data>
+  <data name="_90mm_AP_M77" xml:space="preserve">
+    <value>AP M77</value>
+  </data>
+  <data name="_90mm_AT_Gun_M3" xml:space="preserve">
+    <value>90 mm AT Gun M3</value>
+  </data>
+  <data name="_90mm_AT_Gun_T15E2" xml:space="preserve">
+    <value>90 mm AT Gun T15E2</value>
+  </data>
+  <data name="_90mm_Gun_M3" xml:space="preserve">
+    <value>90 mm Gun M3</value>
+  </data>
+  <data name="_90mm_Gun_M36" xml:space="preserve">
+    <value>90 mm Gun M36</value>
+  </data>
+  <data name="_90mm_Gun_M41" xml:space="preserve">
+    <value>90 mm Gun M41</value>
+  </data>
+  <data name="_90mm_Gun_M41E1" xml:space="preserve">
+    <value>90 mm Gun M41E1</value>
+  </data>
+  <data name="_90mm_Gun_M54" xml:space="preserve">
+    <value>90 mm Gun M54</value>
+  </data>
+  <data name="_90mm_Gun_T132E3" xml:space="preserve">
+    <value>90 mm Gun T132E3</value>
+  </data>
+  <data name="_90mm_Gun_T15E1" xml:space="preserve">
+    <value>90 mm Gun T15E1</value>
+  </data>
+  <data name="_90mm_Gun_T15E2" xml:space="preserve">
+    <value>90 mm Gun T15E2</value>
+  </data>
+  <data name="_90mm_Gun_T15E2M2" xml:space="preserve">
+    <value>90 mm Gun T15E2M2</value>
+  </data>
+  <data name="_90mm_Gun_T178" xml:space="preserve">
+    <value>90 mm Gun T178</value>
+  </data>
+  <data name="_90mm_HEAT_M348" xml:space="preserve">
+    <value>HEAT-T M348</value>
+  </data>
+  <data name="_90mm_HEAT_M431" xml:space="preserve">
+    <value>HEAT M431</value>
+  </data>
+  <data name="_90mm_HEAT_T108E45" xml:space="preserve">
+    <value>HEAT T108E45</value>
+  </data>
+  <data name="_90mm_HEP_T142E2" xml:space="preserve">
+    <value>HEP T142E2</value>
+  </data>
+  <data name="_90mm_HE_M71" xml:space="preserve">
+    <value>HE M71</value>
+  </data>
+  <data name="_90mm_HE_T91E3" xml:space="preserve">
+    <value>HE T91E3</value>
+  </data>
+  <data name="_90mm_HVAP_M304" xml:space="preserve">
+    <value>HVAP M304</value>
+  </data>
+  <data name="_M44" xml:space="preserve">
+    <value>M44</value>
+  </data>
+  <data name="_M44_descr" xml:space="preserve">
+    <value>A 155-mm SPG on the chassis of the M41 light tank. Developed from 1947 through 1951. Multiple faults were revealed after the vehicle entered service, and the M44 was withdrawn from mass production in favor of other SPGs. According to different sources, between 250 and 600 were manufactured from 1953 through 1954.</value>
+  </data>
+  <data name="chassisE1" xml:space="preserve">
+    <value>Stuart E1</value>
+  </data>
+  <data name="chassisE2" xml:space="preserve">
+    <value>Stuart E2</value>
+  </data>
+</root>

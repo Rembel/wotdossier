@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Xml;
 using Moq;
 using Newtonsoft.Json;
@@ -30,6 +32,22 @@ namespace WotDossier.Test
     /// </summary>
     public class ReplaysTestFixture : TestFixtureBase
     {
+        private List<ResourceManager> _resourceManagers;
+
+        public ReplaysTestFixture()
+        {
+            _resourceManagers = new List<ResourceManager>();
+
+            Assembly entryAssembly = GetType().Assembly;
+            var resources = AssemblyExtensions.GetResourcesByMask(entryAssembly, ".resources");
+
+            foreach (var resource in resources)
+            {
+                var resourceManager = new ResourceManager(resource.Replace(".resources", string.Empty), GetType().Assembly);
+                _resourceManagers.Add(resourceManager);
+            }
+        }
+
         [Test]
         public void ReplaysByVersionTest()
         {
@@ -140,7 +158,8 @@ namespace WotDossier.Test
                         JObject tankDescription = new JObject();
                         var tankid = tank.Value["id"].Value<int>();
                         tankDescription["tankid"] = tankid;
-                        var countryid = (int)Enum.Parse(typeof(Country), info.Directory.Name);
+                        Country country = (Country) Enum.Parse(typeof(Country), info.Directory.Name);
+                        var countryid = (int)country;
                         tankDescription["countryid"] = countryid;
                         var typeCompDesc = Utils.TypeCompDesc(countryid, tankid);
                         tankDescription["compDescr"] = typeCompDesc;
@@ -150,8 +169,13 @@ namespace WotDossier.Test
                         tankDescription["type_name"] = tankType.ToString();
                         tankDescription["tier"] = tank.Value["level"].Value<int>();
                         tankDescription["premium"] = tank.Value["notInShop"] == null ? 0 : 1;
-                        tankDescription["title"] = tank.Key;
-                        tankDescription["icon"] = tank.Key;
+                        tankDescription["title"] = GetString(tank.Value["userString"].Value<string>().Split(':')[1]);
+                        var titleShort = tank.Value["shortUserString"];
+                        if (titleShort != null)
+                        {
+                            tankDescription["title_short"] = GetString(titleShort.Value<string>().Split(':')[1]);
+                        }
+                        tankDescription["icon"] = tank.Key.ToLower();
                         tankDescription["icon_orig"] = tank.Key;
 
                         if (!Dictionaries.Instance.Tanks.ContainsKey(Utils.ToUniqueId(typeCompDesc)))
@@ -170,7 +194,13 @@ namespace WotDossier.Test
             var serializeObject = JsonConvert.SerializeObject(result
                 .OrderBy(x => GetOrder(x["countryid"].Value<int>()))
                 .ThenBy(x => x["tankid"].Value<int>()));
-            Console.WriteLine(serializeObject.Replace("{", "\n{").Replace(",\"", ", \""));
+            Console.WriteLine(serializeObject.Replace("{", "\n{").Replace(",\"", ", \"").Replace(":", ": "));
+        }
+
+        private string GetString(string key)
+        {
+            var value = _resourceManagers.Select(x => x.GetString(key, CultureInfo.InvariantCulture)).FirstOrDefault(x => x != null);
+            return (value ?? key).Trim();
         }
 
         private TankType GetVehicleTypeByTag(string tags)

@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A-220" xml:space="preserve">
+    <value>A-220</value>
+  </data>
+  <data name="A-220B" xml:space="preserve">
+    <value>A-220A</value>
+  </data>
+  <data name="A-220B_1" xml:space="preserve">
+    <value>A-220B</value>
+  </data>
+  <data name="A-220_1" xml:space="preserve">
+    <value>A-220</value>
+  </data>
+  <data name="AN_GRR_5_Prem" xml:space="preserve">
+    <value>AN/GRR-5</value>
+  </data>
+  <data name="Armstrong_Siddeley" xml:space="preserve">
+    <value>Armstrong Siddeley V4</value>
+  </data>
+  <data name="Ch01_Type59" xml:space="preserve">
+    <value>Type 59</value>
+  </data>
+  <data name="Ch01_Type59_descr" xml:space="preserve">
+    <value>The vehicle entered mass production in 1957 at Baotou Tank Plant, Inner Mongolia, with a total of 6,000 vehicles manufactured by 1987.</value>
+  </data>
+  <data name="Ch02_Type62" xml:space="preserve">
+    <value>Type 62</value>
+  </data>
+  <data name="Ch02_Type62_descr" xml:space="preserve">
+    <value>The Type 62 Light Tank was the first tank originally designed in China. Under development since 1958, the tank was intended for the southern regions of China. In 1962, after thorough testing, the vehicle entered service. By 1989 a total of 1500 vehicles were produced. The Type 62 was exported to Albania, Congo, Mali, Sudan, Vietnam and Zaire.</value>
+  </data>
+  <data name="Ch03_WZ-111" xml:space="preserve">
+    <value>WZ-111</value>
+  </data>
+  <data name="Ch03_WZ-111_descr" xml:space="preserve">
+    <value>Influenced by the Soviet tank T-10 model, this heavy tank was prototyped in the early 1960s on the basis of the Soviet IS-2 and IS-3. The trials revealed multiple faults, and the development of the vehicle was discontinued in 1964.</value>
+  </data>
+  <data name="Ch04_T34_1" xml:space="preserve">
+    <value>T-34-1</value>
+  </data>
+  <data name="Ch04_T34_1_descr" xml:space="preserve">
+    <value>In 1954 the Chinese government considered the possibility of launching production of the T-34-85 in China. At the same time, Chinese engineers proposed an alternative project: the T-34-1. While based on the T-34-85, the T-34-1's transmission compartment and suspension were to be rearranged, reducing overall weight and giving a lower hull. In 1954, several designs of the vehicle, with varying turrets and armament, were developed. However, a prototype was never built.</value>
+  </data>
+  <data name="Ch05_T34_2" xml:space="preserve">
+    <value>T-34-2</value>
+  </data>
+  <data name="Ch05_T34_2_descr" xml:space="preserve">
+    <value>The T-34-2 was not an upgraded modification of the Soviet T-34 tank, but was a totally different vehicle. Chinese engineers conceived the T-34-2 as an analog of the Soviet T-54. Later the U.S.S.R. passed the technology of T-54 production to China, and the T-34-2 project was discontinued.</value>
+  </data>
+  <data name="Ch06_Renault_NC31" xml:space="preserve">
+    <value>Renault NC-31</value>
+  </data>
+  <data name="Ch06_Renault_NC31_descr" xml:space="preserve">
+    <value>The NC-2 project (commercial name NC-31) was a modification of the Renault FT-17 tank featuring a soft ride suspension and a Kegresse-Hinstin fanged rubber track. These features, along with an upgraded engine, gave an increased top speed of 16 km/h. A total of 15 vehicles of this type were exported to China.</value>
+  </data>
+  <data name="Ch06_Renault_NC31_short" xml:space="preserve">
+    <value>NC-31</value>
+  </data>
+  <data name="Ch07_Vickers_MkE_Type_BT26" xml:space="preserve">
+    <value>Vickers Mk. E Type B</value>
+  </data>
+  <data name="Ch07_Vickers_MkE_Type_BT26_descr" xml:space="preserve">
+    <value>Developed in 1928 by J. V. Carden and V. Loyd. The vehicle never entered service in Great Britain. However, it was exported to other countries, including China. In 1937, twenty vehicles of this type fought against Japanese troops at Shanghai. Soviet Vickers-based T-26 vehicles were also exported to China, and 82 vehicles of that type were deployed in South China and Birma in 1941–1942.</value>
+  </data>
+  <data name="Ch07_Vickers_MkE_Type_BT26_short" xml:space="preserve">
+    <value>VAE Type B</value>
+  </data>
+  <data name="Ch08_Type97_Chi_Ha" xml:space="preserve">
+    <value>Type 2597 Chi-Ha</value>
+  </data>
+  <data name="Ch08_Type97_Chi_Ha_descr" xml:space="preserve">
+    <value>Developed by Mitsubishi from 1935 to 1937. The vehicle was mass-produced from 1938 through 1942, the last two years alongside an upgraded Shinhoto Chi-Ha, with a total of 2,880 vehicles of both types manufactured. The Chi-Ha and Shinhoto Chi-Ha tanks were widely used by Japanese forces in China, and after Japan capitulation these vehicles were used by both the PLA and Kuomintang forces in the Civil War of 1946.</value>
+  </data>
+  <data name="Ch08_Type97_Chi_Ha_short" xml:space="preserve">
+    <value>Chi-Ha</value>
+  </data>
+  <data name="Ch09_M5" xml:space="preserve">
+    <value>M5A1 Stuart</value>
+  </data>
+  <data name="Ch09_M5_descr" xml:space="preserve">
+    <value>The first tanks of the M5 series were produced in April 1942, and a new modification, the M5A1, was preferred over other variants. After the M24 Chaffee was developed, the M5A1 tanks were deemed obsolete and were exported to other countries, including China. A total of 100 tanks of this type were supplied to the Kuomintang. During the Civil War (1946–1949), many of these vehicles were captured by the PLA.</value>
+  </data>
+  <data name="Ch10_IS2" xml:space="preserve">
+    <value>IS-2</value>
+  </data>
+  <data name="Ch10_IS2_descr" xml:space="preserve">
+    <value>Soviet IS-2 tanks were exported to China in the early 1950s and were used during the Korean War from 1950 through 1953. According to American reconnaissance data, at least four Chinese tank companies deployed in Korea had the IS-2 tanks, with five tanks in each company. The IS-2 tank was in service until the late 1950s. The production was discontinued due to a shortage of spare parts and the launch of the Type 59 project. A few IS-2 tanks were exported to Vietnam, where they fought in the final stage of the Indochina War of 1946–1954.</value>
+  </data>
+  <data name="Ch11_110" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="Ch11_110_descr" xml:space="preserve">
+    <value>From the mid-1940s to the 1950s, Soviet engineers attempted to modernize the IS-2 tank. The IS-2U variant, developed in November 1944, was conceived to have a reinforced frontal hull with a plate configuration resembling that of the IS-3. In the mid-1950s the design project was passed to China and became the basis of further Chinese tank development.</value>
+  </data>
+  <data name="Ch12_111_1_2_3" xml:space="preserve">
+    <value>WZ-111 model 1-4</value>
+  </data>
+  <data name="Ch12_111_1_2_3_descr" xml:space="preserve">
+    <value>Prototype of a heavy tank developed in the early 1960s. The 111 project was developed on the basis of the Soviet IS-3 and T-10 tanks. In 1964 development was discontinued in favor of new types of medium tanks.</value>
+  </data>
+  <data name="Ch12_111_1_2_3_short" xml:space="preserve">
+    <value>WZ-111 1-4</value>
+  </data>
+  <data name="Ch14_T34_3" xml:space="preserve">
+    <value>T-34-3</value>
+  </data>
+  <data name="Ch14_T34_3_descr" xml:space="preserve">
+    <value>The T-34-3 medium tank was to be a modification of the T-34-2. Unlike the Type 59, the T-34-3 featured reduced armor and the 122-mm gun. The design was developed in 1957. However, mass production of the Type 59 was started in 1958, and the T-34-3 project was discontinued.</value>
+  </data>
+  <data name="Ch15_59_16" xml:space="preserve">
+    <value>59-16</value>
+  </data>
+  <data name="Ch15_59_16_descr" xml:space="preserve">
+    <value>In 1957 a new light tank project was initiated by the Chinese government. Development of vehicle was completed in 1959. The new tank, weighing 16 tons, was equipped with a four-wheel torsion-bar suspension and a rear placement of the drive wheel, and mounted a 57-mm gun (later upgraded to 76-mm).</value>
+  </data>
+  <data name="Ch16_WZ_131" xml:space="preserve">
+    <value>WZ-131</value>
+  </data>
+  <data name="Ch16_WZ_131_descr" xml:space="preserve">
+    <value>In 1957, development began of a lightweight version of the Type 59 tank. The new tank was designed to fight in the mountainous and boggy terrain of South China. The first prototype was built in 1962. Later the vehicle underwent modernization.</value>
+  </data>
+  <data name="Ch17_WZ131_1_WZ132" xml:space="preserve">
+    <value>WZ-132</value>
+  </data>
+  <data name="Ch17_WZ131_1_WZ132_descr" xml:space="preserve">
+    <value>The order for the WZ-132 tank was placed in 1964. The design was based on the WZ-131, but with the goal of enhancing firepower and armor protection. A few prototypes were built before the project was canceled in the late 1960s. All prototypes were destroyed during Chinese nuclear weapon testing.</value>
+  </data>
+  <data name="Ch18_WZ-120" xml:space="preserve">
+    <value>WZ-120</value>
+  </data>
+  <data name="Ch18_WZ-120_descr" xml:space="preserve">
+    <value>Initially, the WZ-120 (Type 59) tank was a copy of the Soviet medium T-54A tank. In later modifications the tank was upgraded. Between 6,000 and 9,500 vehicles of all variants were manufactured from 1958 through 1987.</value>
+  </data>
+  <data name="Ch19_121" xml:space="preserve">
+    <value>121</value>
+  </data>
+  <data name="Ch19_121_descr" xml:space="preserve">
+    <value>Development began in 1962 on a new medium tank based on the Type 59. The new tank was expected to feature improvements in firepower and armor protection. However, the project was canceled shortly after. Some technical innovations were applied later, in the development of the Type 69 tank. All 121 tank prototypes were destroyed during Chinese nuclear weapon testing.</value>
+  </data>
+  <data name="Ch20_Type58" xml:space="preserve">
+    <value>Type 58</value>
+  </data>
+  <data name="Ch20_Type58_descr" xml:space="preserve">
+    <value>In the early 1950s the U.S.S.R. exported a total of 1,800 T-34-76 and T-34-85 tanks to China. In 1954 the Chinese government made a decision to begin domestic production of the T-34-85 in 1958, with the new vehicle designated the Type 58. However, production was never initiated, and the Chinese army settled for modifications to the T-34s.</value>
+  </data>
+  <data name="Ch21_T34" xml:space="preserve">
+    <value>Type T-34</value>
+  </data>
+  <data name="Ch21_T34_descr" xml:space="preserve">
+    <value>Several hundred T-34-76 tanks were exported from the U.S.S.R. to China in the early 1950s. The usefulness of these tanks was extended by Chinese-designed upgrades, including a new engine and modernized suspension.</value>
+  </data>
+  <data name="Ch22_113" xml:space="preserve">
+    <value>113</value>
+  </data>
+  <data name="Ch22_113_descr" xml:space="preserve">
+    <value>Development on model 113 was started in 1963. The vehicle was conceived as an alternative to WZ-111 and used parts and components of medium tanks. However, the project was canceled due to the development of main battle tanks.</value>
+  </data>
+  <data name="Ch23_112" xml:space="preserve">
+    <value>112</value>
+  </data>
+  <data name="Ch23_112_descr" xml:space="preserve">
+    <value>The development of the 112 tank started in 1962. The project was to feature parts and components of medium and heavy tanks. Existed only in blueprints. The 113 tank was a further development of the 112.</value>
+  </data>
+  <data name="Ch24_Type64" xml:space="preserve">
+    <value>Type 64</value>
+  </data>
+  <data name="Ch24_Type64_descr" xml:space="preserve">
+    <value>More than 50 of these vehicles were produced in Taiwan. All basic components of the vehicle were based on those of American vehicles. The Hellcat turret was mounted on the chassis of the M42 anti-aircraft vehicle, and the armament was the well-proven M1A2 gun. Only one Type 64 prototype survives today.</value>
+  </data>
+  <data name="Chassis_Ch01_Type59_2" xml:space="preserve">
+    <value>Type 59</value>
+  </data>
+  <data name="Chassis_Ch01_Type59_gold" xml:space="preserve">
+    <value>Type 59 G</value>
+  </data>
+  <data name="Chassis_Ch02_Type62" xml:space="preserve">
+    <value>Type 62</value>
+  </data>
+  <data name="Chassis_Ch03_WZ-111" xml:space="preserve">
+    <value>WZ-111 model 2</value>
+  </data>
+  <data name="Chassis_Ch04_T34_1" xml:space="preserve">
+    <value>T-34-1</value>
+  </data>
+  <data name="Chassis_Ch04_T34_1_2" xml:space="preserve">
+    <value>T-34-1 model 2</value>
+  </data>
+  <data name="Chassis_Ch05_T34_2" xml:space="preserve">
+    <value>T-34-2</value>
+  </data>
+  <data name="Chassis_Ch05_T34_2_2" xml:space="preserve">
+    <value>T-34-2 model 2</value>
+  </data>
+  <data name="Chassis_Ch06_Renault_NC31" xml:space="preserve">
+    <value>M24/25</value>
+  </data>
+  <data name="Chassis_Ch06_Renault_NC31_2" xml:space="preserve">
+    <value>M26/27</value>
+  </data>
+  <data name="Chassis_Ch07_Vickers_MkE_Type_BT26" xml:space="preserve">
+    <value>Vickers Mk. E Type B</value>
+  </data>
+  <data name="Chassis_Ch07_Vickers_MkE_Type_BT26_2" xml:space="preserve">
+    <value>T-26-2</value>
+  </data>
+  <data name="Chassis_Ch08_Type97_Chi_Ha" xml:space="preserve">
+    <value>Type 97</value>
+  </data>
+  <data name="Chassis_Ch08_Type97_Chi_Ha_2" xml:space="preserve">
+    <value>Type 97-Kai</value>
+  </data>
+  <data name="Chassis_Ch09_M5" xml:space="preserve">
+    <value>VVSS T36E6</value>
+  </data>
+  <data name="Chassis_Ch09_M5_2" xml:space="preserve">
+    <value>VVSS T55E1</value>
+  </data>
+  <data name="Chassis_Ch10_IS2" xml:space="preserve">
+    <value>IS-2 early</value>
+  </data>
+  <data name="Chassis_Ch10_IS2_2" xml:space="preserve">
+    <value>IS-2 late</value>
+  </data>
+  <data name="Chassis_Ch11_110" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="Chassis_Ch11_110_2" xml:space="preserve">
+    <value>110-1</value>
+  </data>
+  <data name="Chassis_Ch12_111_1_2_3" xml:space="preserve">
+    <value>WZ-111</value>
+  </data>
+  <data name="Chassis_Ch12_111_1_2_3_2" xml:space="preserve">
+    <value>WZ-111 model 4</value>
+  </data>
+  <data name="Chassis_Ch14_T34_3" xml:space="preserve">
+    <value>T-34-3</value>
+  </data>
+  <data name="Chassis_Ch15_59_16" xml:space="preserve">
+    <value>131</value>
+  </data>
+  <data name="Chassis_Ch15_59_16_2" xml:space="preserve">
+    <value>131 model 2</value>
+  </data>
+  <data name="Chassis_Ch16_WZ_131" xml:space="preserve">
+    <value>WZ-131</value>
+  </data>
+  <data name="Chassis_Ch16_WZ_131_2" xml:space="preserve">
+    <value>WZ-131 model 2</value>
+  </data>
+  <data name="Chassis_Ch17_WZ131_1_WZ132" xml:space="preserve">
+    <value>WZ-131-1</value>
+  </data>
+  <data name="Chassis_Ch17_WZ131_1_WZ132_2" xml:space="preserve">
+    <value>WZ-132</value>
+  </data>
+  <data name="Chassis_Ch18_WZ-120" xml:space="preserve">
+    <value>WZ-120</value>
+  </data>
+  <data name="Chassis_Ch18_WZ-120_2" xml:space="preserve">
+    <value>WZ-120 model 3</value>
+  </data>
+  <data name="Chassis_Ch19_121" xml:space="preserve">
+    <value>121</value>
+  </data>
+  <data name="Chassis_Ch20_Type58" xml:space="preserve">
+    <value>T-34-85</value>
+  </data>
+  <data name="Chassis_Ch20_Type58_2" xml:space="preserve">
+    <value>Type 58</value>
+  </data>
+  <data name="Chassis_Ch21_T34" xml:space="preserve">
+    <value>Type T-34</value>
+  </data>
+  <data name="Chassis_Ch21_T34_2" xml:space="preserve">
+    <value>Type T-34M</value>
+  </data>
+  <data name="Chassis_Ch22_113" xml:space="preserve">
+    <value>113</value>
+  </data>
+  <data name="Chassis_Ch23_112" xml:space="preserve">
+    <value>112</value>
+  </data>
+  <data name="Chassis_Ch24_Type64" xml:space="preserve">
+    <value>Type 64</value>
+  </data>
+  <data name="Continental_R-975-C1" xml:space="preserve">
+    <value>Continental R-975-C1</value>
+  </data>
+  <data name="ER_52" xml:space="preserve">
+    <value>ER 52</value>
+  </data>
+  <data name="Fanions_de_signaux" xml:space="preserve">
+    <value>Signal Flags</value>
+  </data>
+  <data name="Franklin" xml:space="preserve">
+    <value>Franklin</value>
+  </data>
+  <data name="NORINCO_12150L7" xml:space="preserve">
+    <value>NORINCO 12150L</value>
+  </data>
+  <data name="SCR_506" xml:space="preserve">
+    <value>SCR 506</value>
+  </data>
+  <data name="SCR_508" xml:space="preserve">
+    <value>SCR 508</value>
+  </data>
+  <data name="Turret_1_Ch01_Type59_2" xml:space="preserve">
+    <value>Type 59</value>
+  </data>
+  <data name="Turret_1_Ch01_Type59_gold" xml:space="preserve">
+    <value>Type 59 G</value>
+  </data>
+  <data name="Turret_1_Ch02_Type62" xml:space="preserve">
+    <value>Type 62</value>
+  </data>
+  <data name="Turret_1_Ch03_WZ-111" xml:space="preserve">
+    <value>WZ-111 model 2</value>
+  </data>
+  <data name="Turret_1_Ch04_T34_1" xml:space="preserve">
+    <value>T-34-1</value>
+  </data>
+  <data name="Turret_1_Ch05_T34_2" xml:space="preserve">
+    <value>T-34-2</value>
+  </data>
+  <data name="Turret_1_Ch06_Renault_NC31" xml:space="preserve">
+    <value>FT-17</value>
+  </data>
+  <data name="Turret_1_Ch07_Vickers_MkE_Type_BT26" xml:space="preserve">
+    <value>Vickers Mk. E Type B</value>
+  </data>
+  <data name="Turret_1_Ch08_Type97_Chi_Ha" xml:space="preserve">
+    <value>Type 97</value>
+  </data>
+  <data name="Turret_1_Ch09_M5" xml:space="preserve">
+    <value>M3A3</value>
+  </data>
+  <data name="Turret_1_Ch10_IS2" xml:space="preserve">
+    <value>IS-2 early</value>
+  </data>
+  <data name="Turret_1_Ch11_110" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="Turret_1_Ch12_111_1_2_3" xml:space="preserve">
+    <value>IS-3</value>
+  </data>
+  <data name="Turret_1_Ch14_T34_3" xml:space="preserve">
+    <value>T-34-3</value>
+  </data>
+  <data name="Turret_1_Ch15_59_16" xml:space="preserve">
+    <value>131</value>
+  </data>
+  <data name="Turret_1_Ch16_WZ_131" xml:space="preserve">
+    <value>132A</value>
+  </data>
+  <data name="Turret_1_Ch17_WZ131_1_WZ132" xml:space="preserve">
+    <value>WZ-131-1</value>
+  </data>
+  <data name="Turret_1_Ch18_WZ-120" xml:space="preserve">
+    <value>WZ-120</value>
+  </data>
+  <data name="Turret_1_Ch19_121" xml:space="preserve">
+    <value>121</value>
+  </data>
+  <data name="Turret_1_Ch20_Type58" xml:space="preserve">
+    <value>T-34-85</value>
+  </data>
+  <data name="Turret_1_Ch21_T34" xml:space="preserve">
+    <value>Type T-34</value>
+  </data>
+  <data name="Turret_1_Ch22_113" xml:space="preserve">
+    <value>113</value>
+  </data>
+  <data name="Turret_1_Ch23_112" xml:space="preserve">
+    <value>112</value>
+  </data>
+  <data name="Turret_1_Ch24_Type64" xml:space="preserve">
+    <value>Type 64</value>
+  </data>
+  <data name="Turret_2_Ch04_T34_1" xml:space="preserve">
+    <value>T-34-1 model 2</value>
+  </data>
+  <data name="Turret_2_Ch05_T34_2" xml:space="preserve">
+    <value>T-34-2 model 2</value>
+  </data>
+  <data name="Turret_2_Ch06_Renault_NC31" xml:space="preserve">
+    <value>FT-18</value>
+  </data>
+  <data name="Turret_2_Ch07_Vickers_MkE_Type_BT26" xml:space="preserve">
+    <value>T-26 model 1936</value>
+  </data>
+  <data name="Turret_2_Ch08_Type97_Chi_Ha" xml:space="preserve">
+    <value>Type 97-Kai</value>
+  </data>
+  <data name="Turret_2_Ch09_M5" xml:space="preserve">
+    <value>M5A1</value>
+  </data>
+  <data name="Turret_2_Ch10_IS2" xml:space="preserve">
+    <value>IS-2 late</value>
+  </data>
+  <data name="Turret_2_Ch11_110" xml:space="preserve">
+    <value>T-10</value>
+  </data>
+  <data name="Turret_2_Ch12_111_1_2_3" xml:space="preserve">
+    <value>WZ-111</value>
+  </data>
+  <data name="Turret_2_Ch15_59_16" xml:space="preserve">
+    <value>131-1</value>
+  </data>
+  <data name="Turret_2_Ch16_WZ_131" xml:space="preserve">
+    <value>132B</value>
+  </data>
+  <data name="Turret_2_Ch17_WZ131_1_WZ132" xml:space="preserve">
+    <value>WZ-132</value>
+  </data>
+  <data name="Turret_2_Ch18_WZ-120" xml:space="preserve">
+    <value>WZ-120-1</value>
+  </data>
+  <data name="Turret_2_Ch20_Type58" xml:space="preserve">
+    <value>Type 58</value>
+  </data>
+  <data name="Turret_2_Ch21_T34" xml:space="preserve">
+    <value>Type T-34M</value>
+  </data>
+  <data name="Twin_Cadillac_42series" xml:space="preserve">
+    <value>Twin Cadillac, Series 42</value>
+  </data>
+  <data name="Type59_gold" xml:space="preserve">
+    <value>Type 59 G</value>
+  </data>
+  <data name="V-2" xml:space="preserve">
+    <value>V-2</value>
+  </data>
+  <data name="V-2-34" xml:space="preserve">
+    <value>V-2-34</value>
+  </data>
+  <data name="_100mm_44-100JT" xml:space="preserve">
+    <value>100 mm 44-100JT</value>
+  </data>
+  <data name="_100mm_59" xml:space="preserve">
+    <value>100 mm Type 59</value>
+  </data>
+  <data name="_100mm_59-100T" xml:space="preserve">
+    <value>100 mm 59-100T</value>
+  </data>
+  <data name="_100mm_60-100T" xml:space="preserve">
+    <value>100 mm 60-100T</value>
+  </data>
+  <data name="_100mm_62-100T" xml:space="preserve">
+    <value>100 mm 62-100T</value>
+  </data>
+  <data name="_100mm_CJ-412G" xml:space="preserve">
+    <value>Chuan jian-412G</value>
+  </data>
+  <data name="_100mm_SB-412G" xml:space="preserve">
+    <value>Sha bao-412G</value>
+  </data>
+  <data name="_100mm_TC-412G" xml:space="preserve">
+    <value>Tuo chuan-412G</value>
+  </data>
+  <data name="_100mm_UBR-412" xml:space="preserve">
+    <value>Chuan bei-412</value>
+  </data>
+  <data name="_100mm_UBR-412P" xml:space="preserve">
+    <value>Chuan chao-412</value>
+  </data>
+  <data name="_100mm_UOF-412" xml:space="preserve">
+    <value>Sha bao-412</value>
+  </data>
+  <data name="_12150L" xml:space="preserve">
+    <value>12150L</value>
+  </data>
+  <data name="_12150L-3_V-12" xml:space="preserve">
+    <value>NORINCO 12150L3</value>
+  </data>
+  <data name="_12150L3" xml:space="preserve">
+    <value>12150L3</value>
+  </data>
+  <data name="_12150L7" xml:space="preserve">
+    <value>12150L7</value>
+  </data>
+  <data name="_12150LS" xml:space="preserve">
+    <value>12150LS</value>
+  </data>
+  <data name="_12150LT" xml:space="preserve">
+    <value>12150LT</value>
+  </data>
+  <data name="_12150LZ" xml:space="preserve">
+    <value>NORINCO 12150L</value>
+  </data>
+  <data name="_122-mm_37-122JT" xml:space="preserve">
+    <value>122 mm 37-122JT</value>
+  </data>
+  <data name="_122-mm_60-122T" xml:space="preserve">
+    <value>122 mm 60-122T</value>
+  </data>
+  <data name="_122-mm_60-122TG" xml:space="preserve">
+    <value>122 mm 60-122TG</value>
+  </data>
+  <data name="_122-mm_D25-T" xml:space="preserve">
+    <value>122 mm D-25T</value>
+  </data>
+  <data name="_122-mm_D25-TA" xml:space="preserve">
+    <value>122 mm D-25TA</value>
+  </data>
+  <data name="_122mm_CB-472" xml:space="preserve">
+    <value>Chuan bei-472</value>
+  </data>
+  <data name="_122mm_PO-122" xml:space="preserve">
+    <value>Po-122</value>
+  </data>
+  <data name="_122mm_SB-472" xml:space="preserve">
+    <value>Sha bao-472</value>
+  </data>
+  <data name="_122mm_Type_57" xml:space="preserve">
+    <value>Chuan bei-471</value>
+  </data>
+  <data name="_122mm_Type_64" xml:space="preserve">
+    <value>Po-471</value>
+  </data>
+  <data name="_122mm_Type_68" xml:space="preserve">
+    <value>Sha bao-471</value>
+  </data>
+  <data name="_13.2mm_Balle_P." xml:space="preserve">
+    <value>Balle P.</value>
+  </data>
+  <data name="_13.2mm_Balle_T.P." xml:space="preserve">
+    <value>Balle T.P.</value>
+  </data>
+  <data name="_13.2mm_Hotchkiss_mle._1930" xml:space="preserve">
+    <value>13.2 mm Hotchkiss mle. 1930</value>
+  </data>
+  <data name="_13.2mm_Hotchkiss_mle._1930_short" xml:space="preserve">
+    <value>13.2 mm Hotchkiss</value>
+  </data>
+  <data name="_130mm_59-130T" xml:space="preserve">
+    <value>130 mm 59-130T</value>
+  </data>
+  <data name="_130mm_AP" xml:space="preserve">
+    <value>Chuan bei-482</value>
+  </data>
+  <data name="_130mm_HE" xml:space="preserve">
+    <value>Sha bao-482</value>
+  </data>
+  <data name="_130mm_HEAT" xml:space="preserve">
+    <value>Po-130</value>
+  </data>
+  <data name="_37cm_Pzgr40" xml:space="preserve">
+    <value>Pzgr. 40</value>
+  </data>
+  <data name="_37mm_APC_M51" xml:space="preserve">
+    <value>APC M51</value>
+  </data>
+  <data name="_37mm_APX_SA18" xml:space="preserve">
+    <value>37 mm APX SA18</value>
+  </data>
+  <data name="_37mm_AP_M74" xml:space="preserve">
+    <value>AP M74</value>
+  </data>
+  <data name="_37mm_FrtPrf1935" xml:space="preserve">
+    <value>Frt.Prf. mle. 1935</value>
+  </data>
+  <data name="_37mm_HE_M63" xml:space="preserve">
+    <value>HE M63</value>
+  </data>
+  <data name="_37mm_KwK_L46" xml:space="preserve">
+    <value>37 mm KwK 36 L/46.5</value>
+  </data>
+  <data name="_37mm_M-6_L53" xml:space="preserve">
+    <value>37 mm M6</value>
+  </data>
+  <data name="_37mm_OE_mle._1916" xml:space="preserve">
+    <value>OE mle. 1916</value>
+  </data>
+  <data name="_37mm_Odr_mle._1935" xml:space="preserve">
+    <value>ODR mle. 1935</value>
+  </data>
+  <data name="_37mm_Pzgr36" xml:space="preserve">
+    <value>Pzgr. 36</value>
+  </data>
+  <data name="_37mm_Sprg.18" xml:space="preserve">
+    <value>Sprgr. 18</value>
+  </data>
+  <data name="_40mm_AP" xml:space="preserve">
+    <value>AP Mk. I</value>
+  </data>
+  <data name="_40mm_APCR" xml:space="preserve">
+    <value>APCR Mk. II</value>
+  </data>
+  <data name="_40mm_HE" xml:space="preserve">
+    <value>HE Mk. I</value>
+  </data>
+  <data name="_40mm_Pom_Pom" xml:space="preserve">
+    <value>40 mm Pom-Pom</value>
+  </data>
+  <data name="_45mm_20K" xml:space="preserve">
+    <value>45 mm 20K</value>
+  </data>
+  <data name="_45mm_UBR-240A" xml:space="preserve">
+    <value>UBR-240A</value>
+  </data>
+  <data name="_45mm_UBR-240PA" xml:space="preserve">
+    <value>UBR-240PA</value>
+  </data>
+  <data name="_45mm_UOF-240A" xml:space="preserve">
+    <value>UOF-240A</value>
+  </data>
+  <data name="_47mm_AP" xml:space="preserve">
+    <value>AP</value>
+  </data>
+  <data name="_47mm_APCR" xml:space="preserve">
+    <value>APCR</value>
+  </data>
+  <data name="_47mm_APCR_Type1" xml:space="preserve">
+    <value>Type 1 Te Jia</value>
+  </data>
+  <data name="_47mm_APHE_Type1" xml:space="preserve">
+    <value>Type 1</value>
+  </data>
+  <data name="_47mm_Gun_Type_1" xml:space="preserve">
+    <value>47 mm Gun Type 1</value>
+  </data>
+  <data name="_47mm_HE" xml:space="preserve">
+    <value>HE</value>
+  </data>
+  <data name="_47mm_HE_Type1" xml:space="preserve">
+    <value>Type 94</value>
+  </data>
+  <data name="_47mm_QFSA" xml:space="preserve">
+    <value>47 mm Vickers QF</value>
+  </data>
+  <data name="_57mm_55-57FG" xml:space="preserve">
+    <value>57 mm 55-57FG</value>
+  </data>
+  <data name="_57mm_APCR_Type_55_57" xml:space="preserve">
+    <value>Chuan chao-271</value>
+  </data>
+  <data name="_57mm_AP_Type_55_57" xml:space="preserve">
+    <value>Chuan dun-271</value>
+  </data>
+  <data name="_57mm_AP_Type_97" xml:space="preserve">
+    <value>Type 92</value>
+  </data>
+  <data name="_57mm_Gun_Type_97" xml:space="preserve">
+    <value>57 mm Gun Type 97</value>
+  </data>
+  <data name="_57mm_HEAT_Type_97" xml:space="preserve">
+    <value>Type 3</value>
+  </data>
+  <data name="_57mm_HE_Type_55_57" xml:space="preserve">
+    <value>Sha bao-271</value>
+  </data>
+  <data name="_57mm_HE_Type_97" xml:space="preserve">
+    <value>Type 90</value>
+  </data>
+  <data name="_71-TK-3" xml:space="preserve">
+    <value>71-TK-3</value>
+  </data>
+  <data name="_76mm_54-76T" xml:space="preserve">
+    <value>76 mm 54-76T</value>
+  </data>
+  <data name="_76mm_54-76TG" xml:space="preserve">
+    <value>76 mm 54-76TG (autoloader)</value>
+  </data>
+  <data name="_76mm_54-76TG_short" xml:space="preserve">
+    <value>76 mm 54-76TG
+(autoloader)</value>
+  </data>
+  <data name="_76mm_APCR_type1" xml:space="preserve">
+    <value>Chuan jian-350</value>
+  </data>
+  <data name="_76mm_AP_type1" xml:space="preserve">
+    <value>Chuan dun-350</value>
+  </data>
+  <data name="_76mm_F-34" xml:space="preserve">
+    <value>76 mm F-34</value>
+  </data>
+  <data name="_76mm_Gun_Type64" xml:space="preserve">
+    <value>76 mm Gun M1A2</value>
+  </data>
+  <data name="_76mm_HE_type1" xml:space="preserve">
+    <value>Sha bao-350</value>
+  </data>
+  <data name="_76mm_UBR-354A" xml:space="preserve">
+    <value>UBR-354A</value>
+  </data>
+  <data name="_76mm_UBR-354MP" xml:space="preserve">
+    <value>UBR-354MP</value>
+  </data>
+  <data name="_76mm_UOF-354" xml:space="preserve">
+    <value>UOF-354</value>
+  </data>
+  <data name="_85mm_367" xml:space="preserve">
+    <value>Chuan chao-367</value>
+  </data>
+  <data name="_85mm_CB_367G" xml:space="preserve">
+    <value>Chuan bei-367G</value>
+  </data>
+  <data name="_85mm_CJ_365" xml:space="preserve">
+    <value>Chuan jian-365</value>
+  </data>
+  <data name="_85mm_HEAT" xml:space="preserve">
+    <value>Po-365</value>
+  </data>
+  <data name="_85mm_Po_367" xml:space="preserve">
+    <value>Po-367</value>
+  </data>
+  <data name="_85mm_S-53" xml:space="preserve">
+    <value>85 mm S-53</value>
+  </data>
+  <data name="_85mm_SB_365" xml:space="preserve">
+    <value>Sha bao-365</value>
+  </data>
+  <data name="_85mm_SB_367G" xml:space="preserve">
+    <value>Sha bao-367G</value>
+  </data>
+  <data name="_85mm_Tip_56-85JT" xml:space="preserve">
+    <value>85 mm 56-85JT</value>
+  </data>
+  <data name="_85mm_Tip_62-85T" xml:space="preserve">
+    <value>85 mm 62-85T</value>
+  </data>
+  <data name="_85mm_Tip_62-85TS" xml:space="preserve">
+    <value>85 mm Type 62</value>
+  </data>
+  <data name="_85mm_Tip_64-85T" xml:space="preserve">
+    <value>85 mm 64-85T</value>
+  </data>
+  <data name="_85mm_Tip_64-85TG" xml:space="preserve">
+    <value>85 mm 64-85TG</value>
+  </data>
+  <data name="_85mm_UBR" xml:space="preserve">
+    <value>Chuan bei-367</value>
+  </data>
+  <data name="_85mm_UOF" xml:space="preserve">
+    <value>Sha bao-367</value>
+  </data>
+  <data name="_8V135" xml:space="preserve">
+    <value>8V135</value>
+  </data>
+  <data name="_9R" xml:space="preserve">
+    <value>9R</value>
+  </data>
+  <data name="_9RM" xml:space="preserve">
+    <value>A-220</value>
+  </data>
+  <data name="_9RM_shop" xml:space="preserve">
+    <value>9RM</value>
+  </data>
+  <data name="_Marconi_SB4a" xml:space="preserve">
+    <value>Marconi SB-4a</value>
+  </data>
+  <data name="_Renault_62CV" xml:space="preserve">
+    <value>Renault 62CV</value>
+  </data>
+  <data name="_Renault_M26_27" xml:space="preserve">
+    <value>Renault M26/27</value>
+  </data>
+  <data name="_Renault_NC" xml:space="preserve">
+    <value>Renault NC-2</value>
+  </data>
+  <data name="_Type100_A" xml:space="preserve">
+    <value>Type 100 V-12 A</value>
+  </data>
+  <data name="_Type100_W" xml:space="preserve">
+    <value>Type 100 V-12 W</value>
+  </data>
+  <data name="_Type3_Otsu" xml:space="preserve">
+    <value>Type 3 Otsu</value>
+  </data>
+  <data name="_Type94_Hei" xml:space="preserve">
+    <value>Type 94 Hei</value>
+  </data>
+  <data name="_Type96_Bo" xml:space="preserve">
+    <value>Type 96 Bo</value>
+  </data>
+  <data name="_Type97" xml:space="preserve">
+    <value>Mitsubishi Type 97</value>
+  </data>
+  <data name="_Type_102" xml:space="preserve">
+    <value>Type 102</value>
+  </data>
+  <data name="_Type_102S" xml:space="preserve">
+    <value>Type 102S</value>
+  </data>
+  <data name="_Type_102S1" xml:space="preserve">
+    <value>Type 102S1</value>
+  </data>
+  <data name="_V-2-54SC" xml:space="preserve">
+    <value>V-2-54SC</value>
+  </data>
+  <data name="_V-2IS" xml:space="preserve">
+    <value>V-2-10</value>
+  </data>
+</root>

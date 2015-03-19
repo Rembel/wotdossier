@@ -235,6 +235,10 @@
       <Link>External\structures_87.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\structures_88.json">
+      <Link>External\structures_88.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\tanks.json">
       <Link>External\tanks.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -288,6 +292,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="CacheFiles\0.9.6\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CacheFiles\0.9.7\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -346,6 +353,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.6\20150122_2248_ussr-Object_907_13_erlenberg.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.7\20150319_2240_france-F72_AMX_30_35_steppes.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\CasesTest\Arheopteriks_1, СУ-85.wotreplay">

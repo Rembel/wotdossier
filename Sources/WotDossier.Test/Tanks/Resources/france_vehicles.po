@@ -401,6 +401,9 @@ msgstr "leFH18B2"
 msgid "Chassis_AMX13_57_100"
 msgstr "AMX 13 57"
 
+msgid "Chassis_AMX13_57_100_GrandFinal"
+msgstr "AMX 13 57"
+
 msgid "Chassis_AMX38"
 msgstr "AMX 38 1er prototype"
 
@@ -522,10 +525,10 @@ msgid "Chassis_B1_2"
 msgstr "B1 bis"
 
 msgid "Chassis_BDR_G1B"
-msgstr "BDR G1 B"
+msgstr "Baudet-Donon-Roussel G1"
 
 msgid "Chassis_BDR_G1B_2"
-msgstr "BDR G1 B bis"
+msgstr "Baudet-Donon-Roussel G1 bis"
 
 msgid "Chassis_Bat_Chatillon155"
 msgstr "Batignolles-Châtillon 155 mle. 58"
@@ -771,6 +774,20 @@ msgstr "AMX CDC"
 
 msgid "F69_AMX13_57_100"
 msgstr "AMX 13 57"
+
+msgid "F69_AMX13_57_100_GrandFinal"
+msgstr "AMX 13 57 GF"
+
+msgid "F69_AMX13_57_100_GrandFinal_descr"
+msgstr ""
+"The AMX company conceived this light tank, which was to mount the 57-mm "
+"L/100 gun. Problems in development slowed the project, and by the 1950s the "
+"vehicle was still not ready for presentation. By that time, the production "
+"of a modified chassis with the turret mounting a 75-mm gun had taken "
+"precedence, and the 57-mm version was discontinued."
+
+msgid "F69_AMX13_57_100_GrandFinal_short"
+msgstr "AMX 13 57F"
 
 msgid "F69_AMX13_57_100_descr"
 msgstr ""
@@ -1228,6 +1245,9 @@ msgid "Turret_1_105_leFH18B2"
 msgstr "105leFH18B2"
 
 msgid "Turret_1_AMX13_57_100"
+msgstr "AMX 13 57"
+
+msgid "Turret_1_AMX13_57_100_GrandFinal"
 msgstr "AMX 13 57"
 
 msgid "Turret_1_AMX38"

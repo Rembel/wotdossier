@@ -200,21 +200,23 @@ namespace WotDossier.Test
                         tankDescription["countryid"] = countryid;
                         var typeCompDesc = Utils.TypeCompDesc(countryid, tankid);
                         tankDescription["compDescr"] = typeCompDesc;
-                        tankDescription["active"] = 1;
+                        var uniqueId = Utils.ToUniqueId(countryid, tankid);
+                        tankDescription["active"] = Dictionaries.Instance.Tanks.ContainsKey(uniqueId) & !Dictionaries.Instance.Tanks[uniqueId].Active ? 0 : 1;
                         var tankType = GetVehicleTypeByTag(tank.Value["tags"].Value<string>());
                         tankDescription["type"] = (int)tankType;
                         tankDescription["type_name"] = tankType.ToString();
                         tankDescription["tier"] = tank.Value["level"].Value<int>();
-                        tankDescription["premium"] = tank.Value["notInShop"] == null ? 0 : 1;
+                        tankDescription["premium"] = Dictionaries.Instance.Tanks.ContainsKey(uniqueId) ? Dictionaries.Instance.Tanks[uniqueId].Premium  : 
+                        tank.Value["notInShop"] == null ? 0 : 1;
                         tankDescription["title"] = GetString(tank.Value["userString"].Value<string>().Split(':')[1]);
                         var titleShort = tank.Value["shortUserString"];
                         if (titleShort != null)
                         {
                             tankDescription["title_short"] = GetString(titleShort.Value<string>().Split(':')[1]);
                         }
-                        var icon = tank.Key.Replace("-", "_");
-                        tankDescription["icon"] = icon.ToLower();
-                        tankDescription["icon_orig"] = icon;
+                        var icon = tank.Key.Replace("-", "_").ToLower();
+                        tankDescription["icon"] = icon;
+                        tankDescription["icon_orig"] = tank.Key;
 
                         if (!Dictionaries.Instance.Tanks.ContainsKey(Utils.ToUniqueId(typeCompDesc)))
                         {
@@ -247,7 +249,12 @@ namespace WotDossier.Test
         private string GetString(string key)
         {
             var value = _resourceManagers.Select(x => x.GetString(key, CultureInfo.InvariantCulture)).FirstOrDefault(x => x != null);
-            return (value ?? key).Trim();
+            value = (value ?? key).Trim();
+            if (value.Contains("PC방"))
+            {
+                value = value.Replace("PC방 ", "") + " IGR";
+            }
+            return value.Replace("ä", "a").Replace("ö", "o").Replace("ß", "ss").Replace("â", "a").Replace("ä","a");
         }
 
         private TankType GetVehicleTypeByTag(string tags)

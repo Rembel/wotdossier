@@ -418,6 +418,9 @@ de 33 calibres</value>
   <data name="Chassis_AMX13_57_100" xml:space="preserve">
     <value>AMX 13 57</value>
   </data>
+  <data name="Chassis_AMX13_57_100_GrandFinal" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
   <data name="Chassis_AMX38" xml:space="preserve">
     <value>AMX 38 1er prototype</value>
   </data>
@@ -539,10 +542,10 @@ de 33 calibres</value>
     <value>B1 bis</value>
   </data>
   <data name="Chassis_BDR_G1B" xml:space="preserve">
-    <value>BDR G1 B</value>
+    <value>Baudet-Donon-Roussel G1</value>
   </data>
   <data name="Chassis_BDR_G1B_2" xml:space="preserve">
-    <value>BDR G1 B bis</value>
+    <value>Baudet-Donon-Roussel G1 bis</value>
   </data>
   <data name="Chassis_Bat_Chatillon155" xml:space="preserve">
     <value>Batignolles-Châtillon 155 mle. 58</value>
@@ -767,6 +770,15 @@ de 33 calibres</value>
   </data>
   <data name="F69_AMX13_57_100" xml:space="preserve">
     <value>AMX 13 57</value>
+  </data>
+  <data name="F69_AMX13_57_100_GrandFinal" xml:space="preserve">
+    <value>AMX 13 57 GF</value>
+  </data>
+  <data name="F69_AMX13_57_100_GrandFinal_descr" xml:space="preserve">
+    <value>The AMX company conceived this light tank, which was to mount the 57-mm L/100 gun. Problems in development slowed the project, and by the 1950s the vehicle was still not ready for presentation. By that time, the production of a modified chassis with the turret mounting a 75-mm gun had taken precedence, and the 57-mm version was discontinued.</value>
+  </data>
+  <data name="F69_AMX13_57_100_GrandFinal_short" xml:space="preserve">
+    <value>AMX 13 57F</value>
   </data>
   <data name="F69_AMX13_57_100_descr" xml:space="preserve">
     <value>The AMX company conceived this light tank, which was to mount the 57-mm L/100 gun. Problems in development slowed the project, and by the 1950s the vehicle was still not ready for presentation. By that time, the production of a modified chassis with the turret mounting a 75-mm gun had taken precedence, and the 57-mm version was discontinued.</value>
@@ -1144,6 +1156,9 @@ Naeder-FIEUX</value>
     <value>105leFH18B2</value>
   </data>
   <data name="Turret_1_AMX13_57_100" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
+  <data name="Turret_1_AMX13_57_100_GrandFinal" xml:space="preserve">
     <value>AMX 13 57</value>
   </data>
   <data name="Turret_1_AMX38" xml:space="preserve">

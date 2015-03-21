@@ -129,6 +129,43 @@ namespace WotDossier.Test
         }
 
         [Test]
+        public void ImportTanksComponentsXmlTest()
+        {
+            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Tanks"), "shells.xml",
+                SearchOption.AllDirectories);
+
+            List<JObject> result = new List<JObject>();
+
+            foreach (var xml in strings)
+            {
+                BigWorldXmlReader reader = new BigWorldXmlReader();
+                FileInfo info = new FileInfo(xml);
+                using (BinaryReader br = new BinaryReader(info.OpenRead()))
+                {
+                    var xmlContent = reader.DecodePackedFile(br, "shell");
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(xmlContent);
+                    string jsonText = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
+
+                    var dictionary = JsonConvert.DeserializeObject<Dictionary<string, JObject>>(jsonText);
+                    dictionary = dictionary["shell"].ToObject<Dictionary<string, JObject>>();
+                    dictionary.Remove("icons");
+
+                    jsonText = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
+
+                    var path = Path.Combine(Environment.CurrentDirectory, "Tanks", info.Directory.Parent.Name + "_" + 
+                                                                                info.Name.Replace(info.Extension, ".json"));
+                    var stream = File.OpenWrite(path);
+                    using (StreamWriter writer = new StreamWriter(stream))
+                    {
+                        writer.Write(jsonText);
+                    }
+
+                }
+            }
+        }
+
+        [Test]
         public void ImportTanksXmlTest()
         {
             var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Tanks"), "list.xml", SearchOption.AllDirectories);
@@ -175,8 +212,9 @@ namespace WotDossier.Test
                         {
                             tankDescription["title_short"] = GetString(titleShort.Value<string>().Split(':')[1]);
                         }
-                        tankDescription["icon"] = tank.Key.ToLower();
-                        tankDescription["icon_orig"] = tank.Key;
+                        var icon = tank.Key.Replace("-", "_");
+                        tankDescription["icon"] = icon.ToLower();
+                        tankDescription["icon_orig"] = icon;
 
                         if (!Dictionaries.Instance.Tanks.ContainsKey(Utils.ToUniqueId(typeCompDesc)))
                         {
@@ -194,7 +232,16 @@ namespace WotDossier.Test
             var serializeObject = JsonConvert.SerializeObject(result
                 .OrderBy(x => GetOrder(x["countryid"].Value<int>()))
                 .ThenBy(x => x["tankid"].Value<int>()));
-            Console.WriteLine(serializeObject.Replace("{", "\n{").Replace(",\"", ", \"").Replace(":", ": "));
+            var tanksJson = serializeObject.Replace("{", "\n{").Replace(",\"", ", \"").Replace(":", ": ");
+
+            var path = Path.Combine(Environment.CurrentDirectory, "Tanks", "tanks.json");
+            var stream = File.OpenWrite(path);
+            using (StreamWriter writer = new StreamWriter(stream))
+            {
+                writer.Write(tanksJson);
+            }
+
+            Console.WriteLine(tanksJson);
         }
 
         private string GetString(string key)

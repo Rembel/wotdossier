@@ -65,7 +65,7 @@ namespace WotDossier
             CultureHelper.SetUiCulture();
 
             //TODO: Remove, hard hack
-            RestoreAutomapperDll();
+            //RestoreAutomapperDll();
 
             bool isNewInstance;
             _mutex = new Mutex(true, INSTANCE_ID, out isNewInstance);

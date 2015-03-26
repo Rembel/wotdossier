@@ -181,18 +181,15 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 ClientVersion = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, PlayTime);
 
-                TankDescription description = Dictionaries.Instance.GetReplayTankDescription(replay.datablock_1.playerVehicle, ClientVersion);
+                TankDescription description = Dictionaries.Instance.GetReplayTankDescription(replay.datablock_1.playerVehicle, ClientVersion); 
 
-                if (description != null)
-                {
-                    Icon = description.Icon;
+                Icon = description.Icon;
 
-                    CountryId = (Country) description.CountryId;
+                CountryId = (Country) description.CountryId;
 
-                    Tank = description;
-                }
+                Tank = description;
 
-                TankName = Tank != null ? Tank.Title : replay.datablock_1.playerVehicle;
+                TankName = Tank.Title;
 
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
@@ -215,8 +212,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                     Log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
                 }
 
-                BattleType = (BattleType)replay.datablock_1.battleType;
-                Gameplay = (Gameplay)Enum.Parse(typeof(Gameplay), replay.datablock_1.gameplayID);
+                BattleType = (BattleType) replay.datablock_1.battleType;
+                Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);
                 Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
 
                 if (replay.datablock_battle_result != null)
@@ -238,22 +235,26 @@ namespace WotDossier.Applications.ViewModel.Replay
                     MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
                     BattleTime = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                     LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
-                    IsAlive = replay.datablock_battle_result.personal.deathReason == -1 || replay.datablock_battle_result.personal.killerID == 0;
-                    Medals =  Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
-                    Achievements = Dictionaries.Instance.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps).Except(Medals).ToList();
+                    IsAlive = replay.datablock_battle_result.personal.deathReason == -1 ||
+                              replay.datablock_battle_result.personal.killerID == 0;
+                    Medals = Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
+                    Achievements =
+                        Dictionaries.Instance.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps)
+                            .Except(Medals)
+                            .ToList();
                     MedalsCount = Medals.Count;
                     AchievementsCount = Achievements.Count;
                     IsPlatoon = ResolvePlatoonFlag(replay);
-                    
+
                     BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;
                     DeathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
                     FinishReason = (FinishReason) replay.datablock_battle_result.common.finishReason;
                 }
 
-                IsWinnerString = Resources.Resources.ResourceManager.GetEnumResource((Enum)IsWinner);
-                BattleTypeString = Resources.Resources.ResourceManager.GetEnumResource((Enum)BattleType);
-                DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)DeathReason);
-                FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)FinishReason);
+                IsWinnerString = Resources.Resources.ResourceManager.GetEnumResource((Enum) IsWinner);
+                BattleTypeString = Resources.Resources.ResourceManager.GetEnumResource((Enum) BattleType);
+                DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum) DeathReason);
+                FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum) FinishReason);
             }
         }
 

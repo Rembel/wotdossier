@@ -9,19 +9,21 @@ namespace WotDossier.Domain.Tank
     [DataContract]
     public class TankDescription
     {
-        public static TankDescription Unknown()
+        private const string UNKNOWN = "Unknown";
+
+        public static TankDescription Unknown(string iconId = null)
         {
-            return new TankDescription { Title = "Unknown", Icon = TankIcon.Empty };
+            return new TankDescription { Title = iconId ?? UNKNOWN, Icon = TankIcon.Empty };
         }
 
         public static TankDescription Unknown(int compDescr)
         {
-            return new TankDescription { Title = "Unknown", Icon = TankIcon.Empty, CompDescr = compDescr, CountryId = Utils.ToCountryId(compDescr), TankId = Utils.ToTankId(compDescr) };
+            return new TankDescription { Title = UNKNOWN, Icon = TankIcon.Empty, CompDescr = compDescr, CountryId = Utils.ToCountryId(compDescr), TankId = Utils.ToTankId(compDescr) };
         }
 
         public static TankDescription Unknown(int countryId, int tankId)
         {
-            return new TankDescription { Title = "Unknown", Icon = TankIcon.Empty, CountryId  = countryId, TankId = tankId };
+            return new TankDescription { Title = UNKNOWN, Icon = TankIcon.Empty, CountryId  = countryId, TankId = tankId };
         }
 
         /// <summary>
@@ -110,6 +112,27 @@ namespace WotDossier.Domain.Tank
         public override string ToString()
         {
             return Title;
+        }
+
+        protected bool Equals(TankDescription other)
+        {
+            return TankId == other.TankId && CountryId == other.CountryId;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((TankDescription) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (TankId*397) ^ CountryId;
+            }
         }
     }
 }

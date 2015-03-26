@@ -172,7 +172,7 @@ namespace WotDossier.Test
                 }
             }
 
-            Console.WriteLine(JsonConvert.SerializeObject(xmlTanks.OrderBy(x => x.Icon), Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(xmlTanks.OrderBy(x => x.TankTitle), Formatting.Indented));
         }
 
         [Test]

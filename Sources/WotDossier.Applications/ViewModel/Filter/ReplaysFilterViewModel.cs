@@ -709,7 +709,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             var versions = Versions.Where(x => x.Checked).Select(x => x.Id).ToList();
             var medals = Medals.Where(x => x is MedalCheckListItem && ((MedalCheckListItem)x).Checked).Select(x => x.Id).ToList();
 
-            List<ReplayFile> result = replays.ToList().Where(x =>
+            List<ReplayFile> result = replays.ToList().Where(x => (x.Tank != null && x.Tank.UniqueId() == 0) || 
                 x.Tank != null
                 &&
                  (SelectedTank == null || x.Tank.UniqueId() == SelectedTank.Id)

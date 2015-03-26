@@ -376,28 +376,28 @@ namespace WotDossier.Dal
                 //replay tank name t_34 changed to r04_t_34
                 return _tanks[0];
             }
-            else if(iconId == "object_704")
+            else if (iconId == "ussr_object_704")
             {
                 //replay tank name object_704 changed to r53_object_704
                 return _tanks[32];
             }
-            else if (iconId == "is_4")
+            else if (iconId == "ussr_is_4")
             {
                 //0.9.7 replay tank name is_4 changed to r90_is_4m
                 return _tanks[24];
             }
-            else if (iconId == "pershing")
+            else if (iconId == "usa_pershing")
             {
                 //0.9.7 replay tank name pershing changed to a35_pershing
                 return _tanks[20023];
             }
-            else if (iconId == "t26_e4_superpershing")
+            else if (iconId == "usa_t26_e4_superpershing")
             {
                 //0.9.7 replay tank name t26_e4_superpershing changed to a80_t26_e4_superpershing
                 return _tanks[20052];
             }
-            
-            return null;
+
+            return TankDescription.Unknown(playerVehicle);
         }
 
         public TankDescription GetTankDescription(int? typeCompDescr)

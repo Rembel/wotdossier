@@ -556,7 +556,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         /// </value>
         public bool AllResps
         {
-            get { return _allResps; }
+            get { return !(Resp1||Resp2) || _allResps; }
             set
             {
                 _allResps = value;
@@ -965,7 +965,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             SelectedBattleResult = BattleStatus.Unknown;
             //NOTE: single version selection mode. use Dictionaries.VersionAll as default value 
             //SelectedVersion = Dictionaries.VersionAll;
-            _allVersionsListItem.Checked = false;
+            _allVersionsListItem.Checked = true;
             SelectedTank = null;
             BattleType = BattleType.Unknown;
             Member = string.Empty;

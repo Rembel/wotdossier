@@ -223,7 +223,13 @@ namespace WotDossier.Test
                             Console.WriteLine(tank.Value);
                         }
 
-                        //JObject tankDef = GetTankDefinition(countryid, tank.Key);
+                        JObject tankDef = GetTankDefinition(countryid, tank.Key);
+
+                        if (tankDef != null)
+                        {
+                            //Console.WriteLine(tankDef.ToString(Formatting.Indented));
+                            tankDescription["health"] = tankDef.SelectToken("$.vehicles.hull.maxHealth").Value<int>() + tankDef.SelectTokens("$.vehicles.turrets0..maxHealth").Max(x => x.Value<int>());
+                        }
 
                         tanks.Add(tankDescription);
                     }
@@ -285,21 +291,20 @@ namespace WotDossier.Test
         private JObject GetTankDefinition(int countryid, string tankName)
         {
             var fileName = Path.Combine(Environment.CurrentDirectory, @"Tanks", ((Country)countryid).ToString(), tankName + ".xml");
-            var file = new FileInfo (fileName);
-            BigWorldXmlReader reader = new BigWorldXmlReader();
-            using (BinaryReader br = new BinaryReader(file.OpenRead()))
+            if (File.Exists(fileName))
             {
-                var xmlContent = reader.DecodePackedFile(br, "vehicles");
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(xmlContent);
-                var value = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
-                return JsonConvert.DeserializeObject<JObject>(value);
+                var file = new FileInfo(fileName);
+                BigWorldXmlReader reader = new BigWorldXmlReader();
+                using (BinaryReader br = new BinaryReader(file.OpenRead()))
+                {
+                    var xmlContent = reader.DecodePackedFile(br, "vehicles");
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(xmlContent);
+                    var value = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
+                    return JsonConvert.DeserializeObject<JObject>(value);
+                }
             }
-        }
-
-        private static void GetTankDefinition()
-        {
-            
+            return null;
         }
 
         private int GetOrder(int value)

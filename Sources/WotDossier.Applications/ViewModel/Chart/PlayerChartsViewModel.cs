@@ -329,6 +329,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         private ReplaysFilterViewModel _replaysFilter;
         private string _totalReplaysCount;
         private string _totalWinPercent;
+        private List<MapStat> _mapsStat;
 
         public ReplaysFilterViewModel ReplaysFilter
         {
@@ -381,6 +382,26 @@ namespace WotDossier.Applications.ViewModel.Chart
             {
                 double max = ReplaysByMapDataSource.Max(x => x.X);
                 MaxMapBattles = max + 0.1 * max;
+            }
+        }
+
+        /// <summary>
+        /// Inits the battles by map chart.
+        /// </summary>
+        public void InitReplaysStat()
+        {
+            var replaysDataSource = ReplaysDataSource.Distinct(new ReplaysComparer());
+
+            MapsStat = replaysDataSource.GroupBy(x => x.MapNameId).Select(x => new MapStat(x.ToList(), x.Key)).ToList();
+        }
+
+        public List<MapStat> MapsStat
+        {
+            get { return _mapsStat; }
+            set
+            {
+                _mapsStat = value;
+                RaisePropertyChanged("MapsStat");
             }
         }
 
@@ -456,8 +477,9 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         public void RefreshReplaysCharts()
         {
-            InitWinReplaysPercentByMapChart();
-            InitBattlesByMapChart();
+            //InitWinReplaysPercentByMapChart();
+            //InitBattlesByMapChart();
+            InitReplaysStat();
         }
 
         private void InitEfficiencyByTierChart(List<ITankStatisticRow> statisticViewModels)

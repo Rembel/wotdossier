@@ -16,38 +16,6 @@
         </Grid.RowDefinitions>
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Maps}" Style="{StaticResource office2007SilverTabItemLeft}">
-                <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <!--map-->
-                    <TextBlock Margin="12,3,6,3" Grid.Row="0" Grid.Column="0" Text="{x:Static resources:Resources.TankFilterPanel_Map}" VerticalAlignment="Center" />
-                    <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" Width="200" ItemsSource="{Binding Maps}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left"></ComboBox>
-
-                    <!--battle type-->
-                    <TextBlock Margin="12,3,6,3" Grid.Row="1" Grid.Column="0" Text="{x:Static resources:Resources.BattleType}" VerticalAlignment="Center"/>
-                    <ComboBox Margin="6,3,6,3" Grid.Row="1" Grid.Column="1" Width="200" ItemsSource="{Binding BattleTypes}" DisplayMemberPath="Value" SelectedValuePath="Id"
-                                                              SelectedValue="{Binding BattleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
-
-                    <GroupBox Margin="12,3,6,3" Grid.Row="2" Grid.ColumnSpan="2" Header="{x:Static resources:Resources.Column_Respawn}" FontSize="{StaticResource DefaultFontSize}">
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                        </StackPanel>
-                    </GroupBox>
-                </Grid>
-            </TabItem>
             <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Tanks}" Style="{StaticResource office2007SilverTabItemLeft}">
                 <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
                     <Grid.RowDefinitions>
@@ -197,6 +165,85 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+            <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Maps}" Style="{StaticResource office2007SilverTabItemLeft}">
+                <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--map-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="0" Grid.Column="0" Text="{x:Static resources:Resources.TankFilterPanel_Map}" VerticalAlignment="Center" />
+                    <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" Width="200" ItemsSource="{Binding Maps}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left"></ComboBox>
+
+                    <!--battle type-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="1" Grid.Column="0" Text="{x:Static resources:Resources.BattleType}" VerticalAlignment="Center"/>
+                    <ComboBox Margin="6,3,6,3" Grid.Row="1" Grid.Column="1" Width="200" ItemsSource="{Binding BattleTypes}" DisplayMemberPath="Value" SelectedValuePath="Id"
+                                                              SelectedValue="{Binding BattleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+
+                    <GroupBox Margin="12,3,6,3" Grid.Row="2" Grid.ColumnSpan="2" Header="{x:Static resources:Resources.Column_Respawn}" FontSize="{StaticResource DefaultFontSize}">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Medals}" Style="{StaticResource office2007SilverTabItemLeft}">
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#4E4E4E" Offset="0"/>
+                            <GradientStop Color="#0C0C0C" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent"  BorderThickness="0" Padding="0" Margin="0"
+                             ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <ListBox.Resources>
+                            <DataTemplate x:Key="medalSearchItemTemplate">
+                                <Grid Margin="10, 3" HorizontalAlignment="Stretch" Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Margin="3,0" VerticalAlignment="Center" Width="20" Height="24" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}">
+                                        
+                                    </Image>
+                                    <CheckBox Grid.Column="1" Content="{Binding Value}" IsChecked="{Binding Checked}" Foreground="#8e9496" VerticalAlignment="Center" />
+                                    <Grid.ToolTip>
+                                        <StackPanel Orientation="Vertical">
+                                            <Image Margin="6" VerticalAlignment="Center" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}"/>
+                                            <TextBlock HorizontalAlignment="Center" Text="{Binding Value}" />
+                                        </StackPanel>
+                                    </Grid.ToolTip>
+                                </Grid>
+                            </DataTemplate>
+                            <DataTemplate x:Key="medalGroupTemplate">
+                                <TextBlock Padding="3, 6, 0, 3" Text="{Binding Value}" FontSize="16" 
+                                           FontFamily="UniversCondCBold,Myriad Pro,sans-serif" Foreground="White"/>
+                            </DataTemplate>
+                        </ListBox.Resources>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical" ItemWidth="200" Height="330" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListBox.ItemTemplateSelector>
+                            <ui:MedalSearchItemTemplateSelector
+                                MedalGroupTemplate="{StaticResource medalGroupTemplate}" 
+                                MedalSearchItemTemplate="{StaticResource medalSearchItemTemplate}"/>
+                        </ListBox.ItemTemplateSelector>
+                    </ListBox>
+                </Grid>
+            </TabItem>
             <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Other}" Style="{StaticResource office2007SilverTabItemLeft}">
                 <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
                     <!--columns-->
@@ -244,47 +291,6 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                </Grid>
-            </TabItem>
-            <TabItem Header="{x:Static resources:Resources.Tab_Header_Medals}" Style="{StaticResource office2007SilverTabItemLeft}">
-                <Grid HorizontalAlignment="Stretch" Background="Transparent">
-                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent"  BorderThickness="0" Padding="0" Margin="0"
-                             ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                        <ListBox.Resources>
-                            <DataTemplate x:Key="medalSearchItemTemplate">
-                                <Grid Margin="10, 3" HorizontalAlignment="Stretch" Width="200">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Margin="3,0" VerticalAlignment="Center" Width="20" Height="24" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}">
-                                        
-                                    </Image>
-                                    <CheckBox Grid.Column="1" Content="{Binding Value}" IsChecked="{Binding Checked}" Foreground="#8e9496" VerticalAlignment="Center" />
-                                    <Grid.ToolTip>
-                                        <StackPanel Orientation="Vertical">
-                                            <Image Margin="6" VerticalAlignment="Center" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}"/>
-                                            <TextBlock HorizontalAlignment="Center" Text="{Binding Value}" />
-                                        </StackPanel>
-                                    </Grid.ToolTip>
-                                </Grid>
-                            </DataTemplate>
-                            <DataTemplate x:Key="medalGroupTemplate">
-                                <TextBlock Padding="3, 6, 0, 3" Text="{Binding Value}" FontSize="16" 
-                                           FontFamily="UniversCondCBold,Myriad Pro,sans-serif" Foreground="White"/>
-                            </DataTemplate>
-                        </ListBox.Resources>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Vertical" ItemWidth="200" Height="330" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ListBox.ItemTemplateSelector>
-                            <ui:MedalSearchItemTemplateSelector
-                                MedalGroupTemplate="{StaticResource medalGroupTemplate}" 
-                                MedalSearchItemTemplate="{StaticResource medalSearchItemTemplate}"/>
-                        </ListBox.ItemTemplateSelector>
-                    </ListBox>
                 </Grid>
             </TabItem>
         </TabControl>

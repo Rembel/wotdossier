@@ -494,8 +494,9 @@ namespace WotDossier.Applications.ViewModel
                     replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId
                         || ReplayFilter.SelectedFolder != null && x.Id == ReplayFilter.SelectedFolder.Id) ?? root;
 
-                ChartView.InitBattlesByMapChart();
-                ChartView.InitWinReplaysPercentByMapChart();
+                ChartView.InitReplaysStat();
+                //ChartView.InitBattlesByMapChart();
+                //ChartView.InitWinReplaysPercentByMapChart();
             }
             finally
             {

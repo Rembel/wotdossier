@@ -155,6 +155,7 @@
     <Compile Include="ViewModel\Replay\MapImageElement.cs" />
     <Compile Include="ViewModel\Replay\PhisicalReplay.cs" />
     <Compile Include="ViewModel\Replay\MapVehicle.cs" />
+    <Compile Include="ViewModel\Replay\MapStat.cs" />
     <Compile Include="ViewModel\Replay\ReplayMapViewModel.cs" />
     <Compile Include="ViewModel\Replay\TotalReplayFile.cs" />
     <Compile Include="ViewModel\Replay\Viewer\MapGrid.cs" />

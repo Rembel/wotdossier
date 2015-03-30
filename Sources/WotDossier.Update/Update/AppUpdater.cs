@@ -97,6 +97,8 @@ namespace WotDossier.Update.Update
                     AppSettings appSettings = SettingsReader.Get();
                     appSettings.ExternalDataVersion = info.DataVersion.ToString();
                     SettingsReader.Save(appSettings);
+
+                    Dictionaries.Instance.Init();
                 }
                 catch (Exception e)
                 {

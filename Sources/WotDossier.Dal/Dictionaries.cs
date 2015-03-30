@@ -237,7 +237,7 @@ namespace WotDossier.Dal
             Init();
         }
 
-        private void Init()
+        public void Init()
         {
             _ratingExpectations = ReadRatingExpectationsDictionary();
             _tanks = ReadTanksDictionary();

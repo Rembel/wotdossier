@@ -43,8 +43,8 @@ namespace WotDossier.Styles
                     {
                         textBinding = new Binding(column.SortMemberPath + "String");
                     }
-                    
-                    datagrid.Columns.Add(new DataGridTextColumn
+
+                    var dataGridColumn = new DataGridTextColumn
                     {
                         SortMemberPath = column.SortMemberPath,
                         DisplayIndex = column.DisplayIndex,
@@ -53,7 +53,13 @@ namespace WotDossier.Styles
                         Binding = textBinding,
                         CellStyle = column.CellStyle,
                         ElementStyle = textElementStyle,
-                    });
+                    };
+
+                    Binding binding = new Binding(DataGridColumn.DisplayIndexProperty.Name);
+                    binding.Source = column;
+                    BindingOperations.SetBinding(dataGridColumn, DataGridColumn.DisplayIndexProperty, binding);
+
+                    datagrid.Columns.Add(dataGridColumn);
                 }
 
                 var summaryRow = (Grid)(datagrid.Parent);

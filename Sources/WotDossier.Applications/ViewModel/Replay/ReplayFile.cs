@@ -55,6 +55,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string PlayerName { get; set; }
         public long ReplayId { get; set; }
         public int Xp { get; set; }
+        public int OriginalXp { get; set; }
 
         private BattleStatus _isWinner = BattleStatus.Unknown;
         public BattleStatus IsWinner
@@ -228,6 +229,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     DamageReceived = replay.datablock_battle_result.personal.damageReceived;
                     IsWinner = GetBattleStatus(replay);
                     Xp = replay.datablock_battle_result.personal.xp;
+                    OriginalXp = replay.datablock_battle_result.personal.originalXP;
                     Killed = replay.datablock_battle_result.personal.kills;
                     Damaged = replay.datablock_battle_result.personal.damaged;
                     Spotted = replay.datablock_battle_result.personal.spotted;

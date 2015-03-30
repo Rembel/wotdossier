@@ -26,6 +26,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                 DamageDealt = (int)replayFiles.Average(x => x.DamageDealt);
                 DamageReceived = (int)replayFiles.Average(x => x.DamageReceived);
                 Xp = (int)replayFiles.Average(x => x.Xp);
+                OriginalXp = (int)replayFiles.Average(x => x.OriginalXp);
                 Killed = replayFiles.Average(x => x.Killed).ToString("N2");
                 Damaged = replayFiles.Average(x => x.Damaged).ToString("N2");
                 Spotted = replayFiles.Average(x => x.Spotted).ToString("N1");
@@ -67,6 +68,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string Killed { get; set; }
 
         public int Xp { get; set; }
+        public int OriginalXp { get; set; }
 
         public int DamageReceived { get; set; }
 

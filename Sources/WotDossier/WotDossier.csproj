@@ -199,6 +199,7 @@
     <Compile Include="Converters\BattleModeToVisibilityConverter.cs" />
     <Compile Include="Converters\Image\MapImageElementToIconConverter.cs" />
     <Compile Include="Converters\Image\CritDetailsToImageConverter.cs" />
+    <Compile Include="Converters\ConsumableCountToOpacityConverter.cs" />
     <Compile Include="Converters\PremiumToOpacityConverter.cs" />
     <Compile Include="Converters\ResourceFormatConverter.cs" />
     <Compile Include="Converters\DamageRatingToTooltipConverter.cs" />
@@ -234,6 +235,9 @@
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Converters\SubtractValueConverter.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tabs\Charts\ReplaysStatTab.xaml.cs">
+      <DependentUpon>ReplaysStatTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\MedalSearchItemTemplateSelector.cs" />
     <Compile Include="MinimizeToTray.cs" />
@@ -697,6 +701,10 @@
     <Page Include="Tabs\Charts\EffectivityChartsTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\Charts\ReplaysStatTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\Charts\ReplaysChartsTab.xaml">
       <SubType>Designer</SubType>

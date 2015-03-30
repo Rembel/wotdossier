@@ -608,6 +608,9 @@
     <Compile Include="..\WotDossier\Converters\Color\XvmRatingToColorConverter.cs">
       <Link>Converters\Color\XvmRatingToColorConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\ConsumableCountToOpacityConverter.cs">
+      <Link>Converters\ConsumableCountToOpacityConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\DamageRatingToTooltipConverter.cs">
       <Link>Converters\DamageRatingToTooltipConverter.cs</Link>
     </Compile>

@@ -157,8 +157,8 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _devices = value; }
         }
 
-        private List<ConsumableDescription> _consumables = new List<ConsumableDescription>();
-        public List<ConsumableDescription> Consumables
+        private List<Slot> _consumables = new List<Slot>();
+        public List<Slot> Consumables
         {
             get { return _consumables; }
             set { _consumables = value; }
@@ -510,7 +510,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                         if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey(slot.Item.Id) &&
                             slot.Item.TypeId == SlotType.Equipment)
                         {
-                            Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[slot.Item.Id]);
+                            slot.Description = Dictionaries.Instance.ConsumableDescriptions[slot.Item.Id];
+                            Consumables.Add(slot);
                         }
                         if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
                             slot.Item.TypeId == SlotType.Shell)

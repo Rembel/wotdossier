@@ -396,6 +396,11 @@ namespace WotDossier.Dal
                 //0.9.7 replay tank name t26_e4_superpershing changed to a80_t26_e4_superpershing
                 return _tanks[20052];
             }
+            else if (iconId == "usa_t37")
+            {
+                //0.9.7 replay tank name t37 changed to a94_t37
+                return _tanks[20065];
+            }
 
             return TankDescription.Unknown(playerVehicle);
         }

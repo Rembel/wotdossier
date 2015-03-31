@@ -234,6 +234,10 @@ namespace WotDossier.Applications.ViewModel.Replay
                     Damaged = replay.datablock_battle_result.personal.damaged;
                     Spotted = replay.datablock_battle_result.personal.spotted;
                     DamageAssisted = replay.datablock_battle_result.personal.damageAssisted;
+                    DamageAssistedRadio = replay.datablock_battle_result.personal.damageAssistedRadio;
+                    DamageAssistedTrack = replay.datablock_battle_result.personal.damageAssistedTrack;
+                    PotentialDamageReceived = replay.datablock_battle_result.personal.potentialDamageReceived;
+                    DamageBlockedByArmor = replay.datablock_battle_result.personal.damageBlockedByArmor;
                     MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
                     BattleTime = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                     LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
@@ -259,6 +263,14 @@ namespace WotDossier.Applications.ViewModel.Replay
                 FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum) FinishReason);
             }
         }
+
+        public int DamageBlockedByArmor { get; set; }
+
+        public int PotentialDamageReceived { get; set; }
+
+        public int DamageAssistedTrack { get; set; }
+
+        public int DamageAssistedRadio { get; set; }
 
         public string IsWinnerString { get; set; }
 

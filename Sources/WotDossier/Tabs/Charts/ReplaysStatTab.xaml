@@ -9,10 +9,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
-        <StackPanel Orientation="Vertical">
-            <controls:ReplaysFilterPanelNew DataContext="{Binding ReplaysFilter}" HorizontalAlignment="Stretch" />
-            <DataGrid TabIndex="0" ItemsSource="{Binding MapsStat}" Width="1000" Height="700"
-                                 Name="dgReplays" IsReadOnly="True" AutoGenerateColumns="False" Style="{StaticResource office2007SilverDataGrid}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <controls:ReplaysFilterPanelNew Grid.Row="0" DataContext="{Binding ReplaysFilter}" />
+            <DataGrid TabIndex="0" Grid.Row="1" ItemsSource="{Binding MapsStat}" HorizontalScrollBarVisibility="Auto" VerticalAlignment="Stretch"
+                      Name="dgReplays" IsReadOnly="True" AutoGenerateColumns="False" Style="{StaticResource office2007SilverDataGrid}">
                 <DataGrid.Resources>
                     <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -27,12 +31,12 @@
                             <DataTemplate>
                                 <Grid>
                                     <TextBlock Margin="6" Text="{Binding Path=MapName}" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                    <ToolTipService.ToolTip>
-                                        <Grid>
-                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" />
-                                            <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />
-                                        </Grid>
-                                    </ToolTipService.ToolTip>
+                                        <ToolTipService.ToolTip>
+                                            <Grid>
+                                                <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" />
+                                                <Image Source="{Binding Path=., Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />
+                                            </Grid>
+                                        </ToolTipService.ToolTip>
                                     </TextBlock>
                                 </Grid>
                             </DataTemplate>
@@ -58,6 +62,6 @@
                     <DataGridTextColumn Header="{x:Static resources:Resources.Column_Ratings_Platoon}" ElementStyle="{StaticResource RTextBlock}" Binding="{Binding PlatoonPercent, Converter={x:Static converters:PercentFormater.Default}}"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
+        </Grid>
     </Border>
 </UserControl>

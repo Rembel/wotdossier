@@ -59,6 +59,10 @@ namespace WotDossier.Styles
                     binding.Source = column;
                     BindingOperations.SetBinding(dataGridColumn, DataGridColumn.DisplayIndexProperty, binding);
 
+                    binding = new Binding(DataGridColumn.VisibilityProperty.Name);
+                    binding.Source = column;
+                    BindingOperations.SetBinding(dataGridColumn, DataGridColumn.VisibilityProperty, binding);
+
                     datagrid.Columns.Add(dataGridColumn);
                 }
 

@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TabControl HorizontalAlignment="Center" Margin="0,50,0,10">
+        <TabControl HorizontalAlignment="Stretch" Margin="0,50,0,10">
             <TabControl.Resources>
                 <Style TargetType="TabPanel">
                     <Setter Property="HorizontalAlignment" Value="Center"/>

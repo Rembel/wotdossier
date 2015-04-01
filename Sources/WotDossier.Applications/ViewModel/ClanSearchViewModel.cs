@@ -62,7 +62,7 @@ namespace WotDossier.Applications.ViewModel
                 List<ClanSearchJson> clans = WotApiClient.Instance.SearchClan(SearchText, 100, SettingsReader.Get());
                 if (clans != null)
                 {
-                    List = clans.OrderBy(x => x.abbreviation).Select(x => new SearchResultRowViewModel {Id = x.clan_id, Name = string.Format("[{0}] {1}", x.abbreviation, x.name)}).ToList();
+                    List = clans.OrderBy(x => x.tag).Select(x => new SearchResultRowViewModel {Id = x.clan_id, Name = string.Format("[{0}] {1}", x.tag, x.name)}).ToList();
                 }
             }
         }

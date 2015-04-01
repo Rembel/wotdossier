@@ -19,7 +19,7 @@ namespace WotDossier.Domain.Server
         public bool is_clan_disbanded { get; set; }
         public bool request_availability { get; set; }
 
-        public List<ClanEmblems> emblems { get; set; }
+        public Dictionary<string, ClanEmblems> emblems { get; set; }
         public List<ClanMember> members { get; set; }
         public List<BattleJson> Battles { get; set; }
     }

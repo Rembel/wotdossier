@@ -31,7 +31,10 @@ namespace WotDossier.Applications.Model
             IsClanDisbanded = clan.is_clan_disbanded;
             RequestAvailability = clan.request_availability;
 
-            Emblems = clan.emblems.FirstOrDefault(x => x.game == "wot");
+            if (clan.emblems.ContainsKey("x64"))
+            {
+                Emblems = clan.emblems["x64"];
+            }
             if (clan.members != null)
             {
                 Members = clan.members.Select(x => new ClanMemberModel(x)).OrderBy(x => x.Name).ToList();

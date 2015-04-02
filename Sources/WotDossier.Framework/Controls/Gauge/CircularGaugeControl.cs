@@ -972,35 +972,34 @@ namespace WotDossier.Framework.Controls.Gauge
                     isInitialValueSet = true;
 
                 }
-                if (oldValue < 0)
-                {
-                    db1 = MinValue + Math.Abs(oldValue);
-                    oldcurr_realworldunit = ((double)(Math.Abs(db1 * realworldunit)));
-                }
-                else
-                {
-                    db1 = Math.Abs(MinValue) + oldValue;
-                    oldcurr_realworldunit = ((double)(db1 * realworldunit));
-                }
-                if (newValue < 0)
-                {
-                    db1 = MinValue + Math.Abs(newValue);
-                    newcurr_realworldunit = ((double)(Math.Abs(db1 * realworldunit)));
-                }
-                else
-                {
-                    db1 = Math.Abs(MinValue) + newValue;
-                    newcurr_realworldunit = ((double)(db1 * realworldunit));
-                }
-
-                Double oldcurrentvalueAngle = (ScaleStartAngle + oldcurr_realworldunit);
-                Double newcurrentvalueAngle = (ScaleStartAngle + newcurr_realworldunit);
+                Double oldcurrentvalueAngle = GetCurrentValueAngle(oldValue);
+                Double newcurrentvalueAngle = GetCurrentValueAngle(newValue);
 
                 //Animate the pointer from the old value to the new value
                 AnimatePointer(oldcurrentvalueAngle, newcurrentvalueAngle);
 
             }
 
+        }
+
+        private double GetCurrentValueAngle(double currentValue)
+        {
+            double db1 = 0;
+            Double newcurr_realworldunit = 0;
+            Double realworldunit = (ScaleSweepAngle / (MaxValue - MinValue));
+            //Resetting the old value to min value the very first time.
+            if (currentValue < 0)
+            {
+                db1 = MinValue + Math.Abs(currentValue);
+                newcurr_realworldunit = ((double)(Math.Abs(db1 * realworldunit)));
+            }
+            else
+            {
+                db1 = Math.Abs(MinValue) + currentValue;
+                newcurr_realworldunit = ((double)(db1 * realworldunit));
+            }
+
+            return ScaleStartAngle + newcurr_realworldunit;
         }
 
         /// <summary>
@@ -1135,12 +1134,18 @@ namespace WotDossier.Framework.Controls.Gauge
 
             if (ResetPointerOnStartUp)
             {
+                double angle;
+                if (CurrentValue != 0)
+                {
+                    angle = GetCurrentValueAngle(CurrentValue);
+                }
+                else
+                {
+                    angle = ScaleStartAngle;
+                }
                 //Reset Pointer
-                MovePointer(ScaleStartAngle);
+                MovePointer(angle);
             }
-
-
-
         }
 
 
@@ -1348,7 +1353,7 @@ namespace WotDossier.Framework.Controls.Gauge
             Point C1 = GetCircumferencePoint(optimalEndAngleFromStart, arcradius2);
             Point D1 = GetCircumferencePoint(optimalEndAngleFromStart, arcradius1);
             bool isReflexAngle1 = Math.Abs(optimalEndAngleFromStart - optimalStartAngleFromStart) > 180.0;
-            DrawSegment(A1, B1, C1, D1, isReflexAngle1, definition.Color);
+            DrawSegment(A1, B1, C1, D1, isReflexAngle1, definition.Color, string.Format("{0:N0} - {1:N0}", definition.StartValue, definition.EndValue));
         }
 
         /// <summary>
@@ -1429,7 +1434,7 @@ namespace WotDossier.Framework.Controls.Gauge
 
         //Drawing the segment with two arc and two line
 
-        private void DrawSegment(Point p1, Point p2, Point p3, Point p4, bool reflexangle, Color clr)
+        private void DrawSegment(Point p1, Point p2, Point p3, Point p4, bool reflexangle, Color clr, string tooltip = null)
         {
 
             // Segment Geometry
@@ -1491,7 +1496,8 @@ namespace WotDossier.Framework.Controls.Gauge
                             Segments = segments
                         }
                     }
-                }
+                },
+                ToolTip = tooltip
             };
 
             //Set Z index of range indicator

@@ -6,6 +6,8 @@
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:charts="clr-namespace:WotDossier.Tabs.Charts"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:gauge="clr-namespace:WotDossier.Framework.Controls.Gauge;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -15,7 +17,53 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="1">
+            <TabItem Header="1" DataContext="{Binding PlayerStatistic}">
+                <!--Black Gauge -->
+                <gauge:CircularGaugeControl x:Name="wn8Gauge" 
+                                        Radius="150" 
+                                        ScaleRadius="110" 
+                                        ScaleStartAngle="120" 
+                                        ScaleSweepAngle="300"
+                                        PointerLength="85" 
+                                        PointerCapRadius="35" 
+                                        MinValue="0" 
+                                        MaxValue="5000" 
+                                        MajorDivisionsCount="10" 
+                                        MinorDivisionsCount="5" 
+                                        CurrentValue="{Binding WN8Rating}"
+                                        ImageSource="pack://application:,,,/WotDossier.Resources;component/Images/windowsLogo.png"
+                                        ImageSize="40,50"
+                                        RangeIndicatorThickness="8"
+                                        RangeIndicatorRadius="120"
+                                        RangeIndicatorLightRadius="10"
+                                        RangeIndicatorLightOffset="80"
+                                        ScaleLabelRadius="90"
+                                        ScaleLabelSize="40,20"
+                                        ScaleLabelFontSize="10"
+                                        ScaleLabelForeground="LightGray"
+                                        MajorTickSize="10,3"
+                                        MinorTickSize="3,1"
+                                        MajorTickColor="LightGray"
+                                        MinorTickColor="LightGray"
+                                        ImageOffset="-50"
+                                        GaugeBackgroundColor="Black"
+                                        PointerThickness ="16"
+                                        DialTextOffset="40" 
+                                        DialText="{Binding WN8Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}"
+                                        DialTextColor="Black"
+                                        >
+                    <gauge:CircularGaugeControl.RangeDefinitions>
+                        <gauge:RangeDefinition Color="Red" StartValue="0" EndValue="355"></gauge:RangeDefinition>
+                        <gauge:RangeDefinition Color="Orange" StartValue="355" EndValue="820"></gauge:RangeDefinition>
+                        <gauge:RangeDefinition Color="Yellow" StartValue="820" EndValue="1370"></gauge:RangeDefinition>
+                        <gauge:RangeDefinition Color="Green" StartValue="1370" EndValue="2020"></gauge:RangeDefinition>
+                        <gauge:RangeDefinition Color="Blue" StartValue="2020" EndValue="2620"></gauge:RangeDefinition>
+                        <gauge:RangeDefinition Color="Purple" StartValue="2620" EndValue="5000"></gauge:RangeDefinition>
+                    </gauge:CircularGaugeControl.RangeDefinitions>
+
+                </gauge:CircularGaugeControl>
+            </TabItem>
+            <TabItem Header="1" DataContext="{Binding ChartView}">
                 <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
                     <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
                         <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
@@ -25,7 +73,7 @@
                     </WrapPanel>
                 </Border>
             </TabItem>
-            <TabItem Header="2">
+            <TabItem Header="2" DataContext="{Binding ChartView}">
                 <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
                     <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
                         <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
@@ -35,19 +83,17 @@
                     </WrapPanel>
                 </Border>
             </TabItem>
-            <TabItem Header="3">
-                <charts:EffectivityChartsTab></charts:EffectivityChartsTab>
-            </TabItem>
-            <TabItem Header="4">
-                <charts:BattlesCountChartsTab></charts:BattlesCountChartsTab>
-            </TabItem>
-            <TabItem Header="5">
-                <charts:WinPercentChartsTab></charts:WinPercentChartsTab>
+            <TabItem Header="3" DataContext="{Binding ChartView}">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <charts:WinPercentChartsTab />
+                    <charts:EffectivityChartsTab />
+                    <charts:BattlesCountChartsTab />
+                </StackPanel>
             </TabItem>
             <!--<TabItem Header="6">
                 <charts:ReplaysChartsTab></charts:ReplaysChartsTab>
             </TabItem>-->
-            <TabItem Header="Maps Statistic">
+            <TabItem Header="Maps Statistic" DataContext="{Binding ChartView}">
                 <charts:ReplaysStatTab></charts:ReplaysStatTab>
             </TabItem>
         </TabControl>

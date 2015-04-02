@@ -300,7 +300,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
             set
             {
                 _wn8Rating = value;
-                OnPropertyChanged("Wn8Rating");
+                OnPropertyChanged("WN8Rating");
             }
         }
 

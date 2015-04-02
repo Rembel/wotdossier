@@ -74,7 +74,7 @@
                 <tabs:CommonTabNew x:Name="CommonTab" HorizontalAlignment="Stretch" />
             </TabItem>
             <!--Charts-->
-            <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}">
+            <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Chart}">
                 <tabs:ChartsTab />
             </TabItem>
             <!--XP-->

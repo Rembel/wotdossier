@@ -133,6 +133,8 @@
     <Compile Include="Controls\DataGrid\DoubleUtil.cs" />
     <Compile Include="Controls\DataGrid\Helper.cs" />
     <Compile Include="Controls\DatePickerWatermarkBehaviour.cs" />
+    <Compile Include="Controls\Gauge\CircularGaugeControl.cs" />
+    <Compile Include="Controls\Gauge\TypeConverters.cs" />
     <Compile Include="Controls\MultiSelectListBox.cs" />
     <Compile Include="Controls\MultiSelector\IListItemConverter.cs" />
     <Compile Include="Controls\MultiSelector\MultiSelectorBehaviours.cs" />
@@ -222,6 +224,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\DataGrid\ColumnChooserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Gauge\Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

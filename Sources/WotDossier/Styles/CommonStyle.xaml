@@ -2,7 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:color="clr-namespace:WotDossier.Converters.Color"
                     xmlns:replay="clr-namespace:WotDossier.Tabs.Replay"
-                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources">
+                    xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
+                    xmlns:gauge="clr-namespace:WotDossier.Framework.Controls.Gauge;assembly=WotDossier.Framework">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WotDossier.Framework;component/Controls/Gauge/Themes/Generic.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{x:Type gauge:CircularGaugeControl}" TargetType="{x:Type gauge:CircularGaugeControl}" BasedOn="{StaticResource GenericGauge}" />
 
     <DataTemplate x:Key="ascendingSortGlyph">
         <Border Width="15" Height="10">

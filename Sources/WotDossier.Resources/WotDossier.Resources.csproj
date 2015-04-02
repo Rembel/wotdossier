@@ -72,10 +72,10 @@
     <Resource Include="Images\levels\tank_level_7.png" />
     <Resource Include="Images\levels\tank_level_8.png" />
     <Resource Include="Images\levels\tank_level_9.png" />
-	<Resource Include="Images\Maps\*.jpg" />
+    <Resource Include="Images\Maps\*.jpg" />
     <Resource Include="Images\Maps\content_bg.png" />
     <Resource Include="Images\Maps\overlay.png" />
-    <Resource Include="Images\Medals\*.png" />    
+    <Resource Include="Images\Medals\*.png" />
     <Resource Include="Images\nations\all.png" />
     <Resource Include="Images\nations\china.png" />
     <Resource Include="Images\nations\france.png" />
@@ -114,7 +114,7 @@
     <Resource Include="Images\Replays\XpIcon-1.png" />
     <Resource Include="Images\Replays\XpIcon_Large.png" />
     <Resource Include="Images\right_back.jpg" />
-	<Resource Include="Images\Tanks\*.png" />
+    <Resource Include="Images\Tanks\*.png" />
     <Resource Include="Images\window_settings.png" />
     <Resource Include="Images\tooltip_bg.jpg" />
     <Resource Include="Images\Types\all.png" />
@@ -226,7 +226,7 @@
     <Resource Include="Images\marksOnGun\95x85\ussr_1_marks.png" />
     <Resource Include="Images\marksOnGun\95x85\ussr_2_marks.png" />
     <Resource Include="Images\marksOnGun\95x85\ussr_3_marks.png" />
-  </ItemGroup>     
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ammo\ARMOR_PIERCING.png" />
     <Resource Include="Images\ammo\ARMOR_PIERCING_CR.png" />
@@ -240,7 +240,7 @@
     <Resource Include="Images\ammo\NO_HIGH_EXPLOSIVE.png" />
     <Resource Include="Images\ammo\NO_HIGH_EXPLOSIVE_PREMIUM.png" />
     <Resource Include="Images\ammo\NO_HOLLOW_CHARGE.png" />
-  </ItemGroup>    
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Maps\Stat\" />
   </ItemGroup>
@@ -440,7 +440,7 @@
     <Resource Include="Images\Maps\Minimap\86_himmelsdorf_winter\86_himmelsdorf_winter.png" />
     <Resource Include="Images\Maps\Minimap\87_ruinberg_on_fire\87_ruinberg_on_fire.png" />
     <Resource Include="Images\Maps\Minimap\96_prohorovka_defense\96_prohorovka_defense.png" />
-  </ItemGroup>  
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Maps\Minimap\42_north_america\42_north_america.png" />
   </ItemGroup>
@@ -486,7 +486,7 @@
     <Resource Include="Images\Replays\Viewer\elements\neutral_spawn2.png" />
     <Resource Include="Images\Replays\Viewer\elements\neutral_spawn3.png" />
     <Resource Include="Images\Replays\Viewer\elements\neutral_spawn4.png" />
-  </ItemGroup>  
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Crits\ammoBayCriticalSmall.png" />
     <Resource Include="Images\Crits\ammoBayDestroyedSmall.png" />
@@ -509,6 +509,9 @@
     <Resource Include="Images\Crits\trackDestroyedSmall.png" />
     <Resource Include="Images\Crits\turretRotatorCriticalSmall.png" />
     <Resource Include="Images\Crits\turretRotatorDestroyedSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\windowsLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

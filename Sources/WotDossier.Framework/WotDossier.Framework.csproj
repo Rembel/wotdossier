@@ -122,6 +122,7 @@
     <Compile Include="Applications\ViewModel.Generic.cs" />
     <Compile Include="CallbackDataSource.cs" />
     <Compile Include="CompositionContainerFactory.cs" />
+    <Compile Include="Controls\AlignableWrapPanel.cs" />
     <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
     <Compile Include="Controls\DataGrid\ColumnChooserControl.xaml.cs">

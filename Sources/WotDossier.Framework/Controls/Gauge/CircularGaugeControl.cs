@@ -987,6 +987,12 @@ namespace WotDossier.Framework.Controls.Gauge
             double db1 = 0;
             Double newcurr_realworldunit = 0;
             Double realworldunit = (ScaleSweepAngle / (MaxValue - MinValue));
+
+            if (currentValue > MaxValue)
+            {
+                currentValue = MaxValue;
+            }
+
             //Resetting the old value to min value the very first time.
             if (currentValue < 0)
             {
@@ -1326,14 +1332,21 @@ namespace WotDossier.Framework.Controls.Gauge
             }
 
             //Checking whether the  OptimalRangeEndvalue is -ve
-            if (definition.EndValue < 0)
+            var endValue = definition.EndValue;
+
+            if (endValue > MaxValue)
             {
-                db = MinValue + Math.Abs(definition.EndValue);
+                endValue = MaxValue;
+            }
+
+            if (endValue < 0)
+            {
+                db = MinValue + Math.Abs(endValue);
                 optimalEndAngle = ((double)(Math.Abs(db * realworldunit)));
             }
             else
             {
-                db = Math.Abs(MinValue) + definition.EndValue;
+                db = Math.Abs(MinValue) + endValue;
                 optimalEndAngle = ((double)(db * realworldunit));
             }
             // calculating the angle for optimal Start value
@@ -1353,7 +1366,7 @@ namespace WotDossier.Framework.Controls.Gauge
             Point C1 = GetCircumferencePoint(optimalEndAngleFromStart, arcradius2);
             Point D1 = GetCircumferencePoint(optimalEndAngleFromStart, arcradius1);
             bool isReflexAngle1 = Math.Abs(optimalEndAngleFromStart - optimalStartAngleFromStart) > 180.0;
-            DrawSegment(A1, B1, C1, D1, isReflexAngle1, definition.Color, string.Format("{0:N0} - {1:N0}", definition.StartValue, definition.EndValue));
+            DrawSegment(A1, B1, C1, D1, isReflexAngle1, definition.Color, string.Format("{0:N0} - {1:N0}", definition.StartValue, endValue));
         }
 
         /// <summary>

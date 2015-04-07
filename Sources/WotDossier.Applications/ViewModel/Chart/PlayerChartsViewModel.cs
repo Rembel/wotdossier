@@ -39,7 +39,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         private IEnumerable<ReplayFile> _replaysDataSource;
         
         private List<DataPoint> _winPercentByTierDataSource;
-        private List<DataPoint> _winPercentByTypeDataSource;
+        private List<GenericPoint<TankType, double>> _winPercentByTypeDataSource;
         private List<DataPoint> _winPercentByCountryDataSource;
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by type data source.
         /// </value>
-        public List<DataPoint> WinPercentByTypeDataSource
+        public List<GenericPoint<TankType, double>> WinPercentByTypeDataSource
         {
             get { return _winPercentByTypeDataSource; }
             set
@@ -590,17 +590,17 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private void InitWinPercentByTypeChart(List<ITankStatisticRow> statisticViewModels)
         {
-            var values = Enum.GetValues(typeof(TankType)).Cast<int>().Where(x => x >= 0);
+            var values = Enum.GetValues(typeof(TankType)).Cast<TankType>().Where(x => x > 0);
 
-            IEnumerable<DataPoint> dataSource = statisticViewModels.Where(x => x.Type != (int)TankType.Unknown).GroupBy(x => x.Type).Select(x => new DataPoint(x.Key, 
-                x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0/x.Sum(y => y.BattlesCount)));
+            IEnumerable<GenericPoint<TankType, double>> dataSource = statisticViewModels.Where(x => x.Type != (int)TankType.Unknown).GroupBy(x => x.Type).Select(x => new GenericPoint<TankType, double>((TankType)x.Key, 
+                Math.Round(x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0/x.Sum(y => y.BattlesCount), 1)));
 
             var list = dataSource.ToList();
 
             var query = from value in values
                         join point in list on value equals point.X into gj
                         from subpet in gj.DefaultIfEmpty()
-                        select subpet ?? new DataPoint(value, 0);
+                        select subpet ?? new GenericPoint<TankType, double>(value, 0);
 
             WinPercentByTypeDataSource = query.ToList();
         }

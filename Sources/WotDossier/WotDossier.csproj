@@ -50,6 +50,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Common.Logging.Log4Net1211.2.1.2\lib\net40\Common.Logging.Log4Net1211.dll</HintPath>
     </Reference>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\..\References\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
     <Reference Include="DynamicDataDisplay">
       <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
     </Reference>
@@ -200,6 +203,8 @@
     <Compile Include="Converters\Image\MapImageElementToIconConverter.cs" />
     <Compile Include="Converters\Image\CritDetailsToImageConverter.cs" />
     <Compile Include="Converters\ConsumableCountToOpacityConverter.cs" />
+    <Compile Include="Converters\PortableHyperlinkButton.cs" />
+    <Compile Include="Converters\PortablePopup.cs" />
     <Compile Include="Converters\PremiumToOpacityConverter.cs" />
     <Compile Include="Converters\ResourceFormatConverter.cs" />
     <Compile Include="Converters\DamageRatingToTooltipConverter.cs" />
@@ -233,6 +238,8 @@
     <Compile Include="Converters\StatisticPeriodToStringConverter.cs" />
     <Compile Include="Converters\MarkOfMasteryToTooltipConverter.cs" />
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringToBrushConverter.cs" />
+    <Compile Include="Converters\StringToDataTemplateConverter.cs" />
     <Compile Include="Converters\SubtractValueConverter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -583,6 +590,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -9,6 +9,7 @@
              xmlns:converters="clr-namespace:WotDossier.Converters"
              xmlns:gauge="clr-namespace:WotDossier.Framework.Controls.Gauge;assembly=WotDossier.Framework"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -262,18 +263,37 @@
                     </WrapPanel>
                 </Border>
             </TabItem>
-            <TabItem Header="Tier\Type\Nation performance" DataContext="{Binding ChartView}">
+            <!--<TabItem Header="Tier\Type\Nation performance" DataContext="{Binding ChartView}">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <charts:WinPercentChartsTab />
                     <charts:EffectivityChartsTab />
                     <charts:BattlesCountChartsTab />
                 </StackPanel>
-            </TabItem>
+            </TabItem>-->
             <!--<TabItem Header="6">
                 <charts:ReplaysChartsTab></charts:ReplaysChartsTab>
             </TabItem>-->
-            <TabItem Header="Maps Statistic" DataContext="{Binding ChartView}">
+            <!--<TabItem Header="Maps Statistic" DataContext="{Binding ChartView}">
                 <charts:ReplaysStatTab></charts:ReplaysStatTab>
+            </TabItem>-->
+            <TabItem Header="Maps Statistic" DataContext="{Binding ChartView}">
+                    <chart:ClusteredColumnChart     Width="250"
+                        Style="{StaticResource MinimalChartStyle}"
+                        ChartTitle="Column Chart with single serie"                
+                        ChartSubTitle="Chart with fixed width and height"  
+                                                   Foreground="#FFEEEEEE"
+                                                   Background="#FF333333"
+                        BorderThickness="2"
+                        SelectedBrush="Tomato" >
+                        <chart:ClusteredColumnChart.Series>
+                            <chart:ChartSeries
+                                SeriesTitle="Win Percent"
+                                DisplayMember="X"
+                                ValueMember="Y"
+                                
+                                ItemsSource="{Binding Path=WinPercentByTypeDataSource}" />
+                        </chart:ClusteredColumnChart.Series>
+                    </chart:ClusteredColumnChart>
             </TabItem>
         </TabControl>
     </Grid>

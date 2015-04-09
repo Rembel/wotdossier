@@ -2,7 +2,7 @@
 
 namespace WotDossier.Applications.ViewModel.Chart
 {
-    public class GenericPoint<T1, T2>
+    public class GenericPoint<T1, T2> : IDataPoint
     {
         /// <summary>
         /// Gets or sets the X.
@@ -62,6 +62,11 @@ namespace WotDossier.Applications.ViewModel.Chart
             {
                 return (EqualityComparer<T2>.Default.GetHashCode(Y)*397) ^ EqualityComparer<T1>.Default.GetHashCode(X);
             }
+        }
+
+        public object GetValue()
+        {
+            return Y;
         }
 
         /// <summary>

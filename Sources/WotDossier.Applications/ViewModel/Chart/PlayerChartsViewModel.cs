@@ -8,6 +8,7 @@ using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
+using WotDossier.Common;
 using WotDossier.Domain;
 using WotDossier.Domain.Interfaces;
 
@@ -21,13 +22,13 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private List<SellInfo> _lastUsedTanksDataSource;
 
-        private List<DataPoint> _efficiencyByTierDataSource;
-        private List<DataPoint> _efficiencyByTypeDataSource;
-        private List<DataPoint> _efficiencyByCountryDataSource;
+        private List<IDataPoint> _efficiencyByTierDataSource;
+        private List<IDataPoint> _efficiencyByTypeDataSource;
+        private List<IDataPoint> _efficiencyByCountryDataSource;
 
-        private List<DataPoint> _battlesByTierDataSource;
-        private List<DataPoint> _battlesByTypeDataSource;
-        private List<DataPoint> _battlesByCountryDataSource;
+        private List<IDataPoint> _battlesByTierDataSource;
+        private List<IDataPoint> _battlesByTypeDataSource;
+        private List<IDataPoint> _battlesByCountryDataSource;
 
         private List<DataPoint> _replaysByMapDataSource;
         private double _maxMapBattles = 10;
@@ -37,10 +38,10 @@ namespace WotDossier.Applications.ViewModel.Chart
         private double _maxBattlesByTier;
         private double _maxBattlesByCountry;
         private IEnumerable<ReplayFile> _replaysDataSource;
-        
-        private List<DataPoint> _winPercentByTierDataSource;
-        private List<GenericPoint<TankType, double>> _winPercentByTypeDataSource;
-        private List<DataPoint> _winPercentByCountryDataSource;
+
+        private List<IDataPoint> _winPercentByTierDataSource;
+        private List<IDataPoint> _winPercentByTypeDataSource;
+        private List<IDataPoint> _winPercentByCountryDataSource;
 
         /// <summary>
         /// Gets or sets the last used tanks data source.
@@ -96,7 +97,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by tier data source.
         /// </value>
-        public List<DataPoint> EfficiencyByTierDataSource
+        public List<IDataPoint> EfficiencyByTierDataSource
         {
             get { return _efficiencyByTierDataSource; }
             set
@@ -112,7 +113,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by type data source.
         /// </value>
-        public List<DataPoint> EfficiencyByTypeDataSource
+        public List<IDataPoint> EfficiencyByTypeDataSource
         {
             get { return _efficiencyByTypeDataSource; }
             set
@@ -128,7 +129,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by country data source.
         /// </value>
-        public List<DataPoint> EfficiencyByCountryDataSource
+        public List<IDataPoint> EfficiencyByCountryDataSource
         {
             get { return _efficiencyByCountryDataSource; }
             set
@@ -144,7 +145,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by tier data source.
         /// </value>
-        public List<DataPoint> WinPercentByTierDataSource
+        public List<IDataPoint> WinPercentByTierDataSource
         {
             get { return _winPercentByTierDataSource; }
             set
@@ -160,7 +161,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by type data source.
         /// </value>
-        public List<GenericPoint<TankType, double>> WinPercentByTypeDataSource
+        public List<IDataPoint> WinPercentByTypeDataSource
         {
             get { return _winPercentByTypeDataSource; }
             set
@@ -176,7 +177,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The efficiency by country data source.
         /// </value>
-        public List<DataPoint> WinPercentByCountryDataSource
+        public List<IDataPoint> WinPercentByCountryDataSource
         {
             get { return _winPercentByCountryDataSource; }
             set
@@ -192,7 +193,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The battles by tier data source.
         /// </value>
-        public List<DataPoint> BattlesByTierDataSource
+        public List<IDataPoint> BattlesByTierDataSource
         {
             get { return _battlesByTierDataSource; }
             set
@@ -208,7 +209,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The battles by type data source.
         /// </value>
-        public List<DataPoint> BattlesByTypeDataSource
+        public List<IDataPoint> BattlesByTypeDataSource
         {
             get { return _battlesByTypeDataSource; }
             set
@@ -224,7 +225,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The battles by country data source.
         /// </value>
-        public List<DataPoint> BattlesByCountryDataSource
+        public List<IDataPoint> BattlesByCountryDataSource
         {
             get { return _battlesByCountryDataSource; }
             set
@@ -491,7 +492,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                 x.Average(y => y.AvgSpotted),
                 x.Average(y => y.AvgCapturePoints),
                 x.Average(y => y.AvgDroppedCapturePoints))));
-            EfficiencyByTierDataSource = dataSource.ToList();
+            EfficiencyByTierDataSource = dataSource.Cast<IDataPoint>().ToList();
         }
 
         private void InitEfficiencyByTypeChart(List<ITankStatisticRow> statisticViewModels)
@@ -503,7 +504,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                 x.Average(y => y.AvgSpotted),
                 x.Average(y => y.AvgCapturePoints),
                 x.Average(y => y.AvgDroppedCapturePoints))));
-            EfficiencyByTypeDataSource = dataSource.ToList();
+            EfficiencyByTypeDataSource = dataSource.Cast<IDataPoint>().ToList();
         }
 
         private void InitEfficiencyByCountryChart(List<ITankStatisticRow> statisticViewModels)
@@ -515,7 +516,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                 x.Average(y => y.AvgSpotted),
                 x.Average(y => y.AvgCapturePoints),
                 x.Average(y => y.AvgDroppedCapturePoints))));
-            EfficiencyByCountryDataSource = dataSource.ToList();
+            EfficiencyByCountryDataSource = dataSource.Cast<IDataPoint>().ToList();
         }
 
         private void InitWn8ByTierChart(List<ITankStatisticRow> statisticViewModels)
@@ -533,7 +534,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                         from subpet in gj.DefaultIfEmpty()
                         select subpet ?? new DataPoint(value, 0);
 
-            EfficiencyByTierDataSource = query.ToList();
+            EfficiencyByTierDataSource = query.Cast<IDataPoint>().ToList();
         }
 
         private void InitWn8ByTypeChart(List<ITankStatisticRow> statisticViewModels)
@@ -551,24 +552,24 @@ namespace WotDossier.Applications.ViewModel.Chart
                         from subpet in gj.DefaultIfEmpty()
                         select subpet ?? new DataPoint(value, 0);
 
-            EfficiencyByTypeDataSource = query.ToList();
+            EfficiencyByTypeDataSource = query.Cast<IDataPoint>().ToList();
         }
 
         private void InitWn8ByCountryChart(List<ITankStatisticRow> statisticViewModels)
         {
             var values = Enum.GetValues(typeof(Country)).Cast<int>().Where(x => x >= 0);
 
-            IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId)
-                .Select(x => new DataPoint(x.Key,
+            IEnumerable<GenericPoint<string, double>> dataSource = statisticViewModels.GroupBy(x => x.CountryId)
+                .Select(x => new GenericPoint<string, double>(Resources.Resources.ResourceManager.GetEnumResource((Country)x.Key),
                     RatingHelper.Wn8(x.ToList())));
             var list = dataSource.ToList();
 
             var query = from value in values
                         join point in list on value equals point.X into gj
                         from subpet in gj.DefaultIfEmpty()
-                        select  subpet ?? new DataPoint(value, 0);
+                        select subpet ?? new GenericPoint<string, double>(Resources.Resources.ResourceManager.GetEnumResource((Country)value), 0);
 
-            EfficiencyByCountryDataSource = query.ToList();
+            EfficiencyByCountryDataSource = query.Cast<IDataPoint>().ToList();
         }
 
         private void InitWinPercentByTierChart(List<ITankStatisticRow> statisticViewModels)
@@ -576,7 +577,7 @@ namespace WotDossier.Applications.ViewModel.Chart
             var values = Enumerable.Range(1, 10);
 
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.Tier).Select(x => new DataPoint(x.Key,
-                x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
+                Math.Round(x.Sum(y => ((IStatisticBattles)y).Wins) * 100.0 / x.Sum(y => y.BattlesCount), 1)));
 
             var list = dataSource.ToList();
 
@@ -585,7 +586,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                         from subpet in gj.DefaultIfEmpty()
                         select subpet ?? new DataPoint(value, 0);
 
-            WinPercentByTierDataSource = query.ToList();
+            WinPercentByTierDataSource = query.Cast<IDataPoint>().ToList();
         }
 
         private void InitWinPercentByTypeChart(List<ITankStatisticRow> statisticViewModels)
@@ -602,7 +603,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                         from subpet in gj.DefaultIfEmpty()
                         select subpet ?? new GenericPoint<TankType, double>(value, 0);
 
-            WinPercentByTypeDataSource = query.ToList();
+            WinPercentByTypeDataSource = query.Cast<IDataPoint>().ToList();
         }
 
         private void InitWinPercentByCountryChart(List<ITankStatisticRow> statisticViewModels)
@@ -610,7 +611,7 @@ namespace WotDossier.Applications.ViewModel.Chart
             var values = Enum.GetValues(typeof(Country)).Cast<int>().Where(x => x >= 0);
 
             IEnumerable<DataPoint> dataSource = statisticViewModels.GroupBy(x => x.CountryId).Select(x => new DataPoint(x.Key,
-                x.Sum(y => ((IStatisticBattles) y).Wins) * 100.0 / x.Sum(y => y.BattlesCount)));
+                Math.Round(x.Sum(y => ((IStatisticBattles)y).Wins) * 100.0 / x.Sum(y => y.BattlesCount), 1)));
 
             var list = dataSource.ToList();
 
@@ -619,7 +620,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                         from subpet in gj.DefaultIfEmpty()
                         select subpet ?? new DataPoint(value, 0);
 
-            WinPercentByCountryDataSource = query.ToList();
+            WinPercentByCountryDataSource = query.Cast<IDataPoint>().ToList();
         }
 
         private void InitBattlesByTierChart(List<ITankStatisticRow> statisticViewModels)
@@ -639,7 +640,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                             from subpet in gj.DefaultIfEmpty()
                             select subpet ?? new DataPoint(value, 0);
 
-                BattlesByTierDataSource = query.ToList();
+                BattlesByTierDataSource = query.Cast<IDataPoint>().ToList();
             }
         }
 
@@ -660,7 +661,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                             from subpet in gj.DefaultIfEmpty()
                             select subpet ?? new DataPoint(value, 0);
 
-                BattlesByTypeDataSource = query.ToList();
+                BattlesByTypeDataSource = query.Cast<IDataPoint>().ToList();
             }
         }
 
@@ -681,7 +682,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                             from subpet in gj.DefaultIfEmpty()
                             select subpet ?? new DataPoint(value, 0);
 
-                BattlesByCountryDataSource = query.ToList();
+                BattlesByCountryDataSource = query.Cast<IDataPoint>().ToList();
             }
         }
     }

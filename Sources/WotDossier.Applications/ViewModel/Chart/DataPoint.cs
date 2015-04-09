@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public class DataPoint : GenericPoint<double, double>, IDataPoint
+    public class DataPoint : GenericPoint<double, double>
     {
         public DataPoint(double x, double y) : base(x, y)
         {

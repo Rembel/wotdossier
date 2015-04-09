@@ -186,6 +186,7 @@
     </Compile>
     <Compile Include="Converters\Color\AliveToColorConverter.cs" />
     <Compile Include="Converters\Color\FragsToColorConverter.cs" />
+    <Compile Include="Converters\Color\PointsToPalleteConverter.cs" />
     <Compile Include="Converters\Color\SpottedToColorConverter.cs" />
     <Compile Include="Converters\Color\WN8ToColorConverter.cs" />
     <Compile Include="Converters\Color\EffRangeBrushes.cs" />
@@ -590,10 +591,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Fonts.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

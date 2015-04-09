@@ -4271,6 +4271,51 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Damage ratio: 0.00.
+        /// </summary>
+        public static string Gauge_DamageRatioFormat {
+            get {
+                return ResourceManager.GetString("Gauge_DamageRatioFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eff: 0.
+        /// </summary>
+        public static string Gauge_EffFormat {
+            get {
+                return ResourceManager.GetString("Gauge_EffFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kill/death: 0.00.
+        /// </summary>
+        public static string Gauge_KillDeathFormat {
+            get {
+                return ResourceManager.GetString("Gauge_KillDeathFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wins: 0.0.
+        /// </summary>
+        public static string Gauge_WinsFormat {
+            get {
+                return ResourceManager.GetString("Gauge_WinsFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WN8: 0.
+        /// </summary>
+        public static string Gauge_Wn8Format {
+            get {
+                return ResourceManager.GetString("Gauge_Wn8Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to High-Explosive.
         /// </summary>
         public static string HIGH_EXPLOSIVE {

@@ -3391,4 +3391,19 @@ up to 500 m</value>
   <data name="Device_turretRotator" xml:space="preserve">
     <value>Turret rotator</value>
   </data>
+  <data name="Gauge_WinsFormat" xml:space="preserve">
+    <value>Wins: 0.0</value>
+  </data>
+  <data name="Gauge_DamageRatioFormat" xml:space="preserve">
+    <value>Damage ratio: 0.00</value>
+  </data>
+  <data name="Gauge_EffFormat" xml:space="preserve">
+    <value>Eff: 0</value>
+  </data>
+  <data name="Gauge_KillDeathFormat" xml:space="preserve">
+    <value>Kill/death: 0.00</value>
+  </data>
+  <data name="Gauge_Wn8Format" xml:space="preserve">
+    <value>WN8: 0</value>
+  </data>
 </root>

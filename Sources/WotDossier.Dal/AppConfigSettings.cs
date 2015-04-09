@@ -45,7 +45,7 @@ namespace WotDossier.Dal
         /// </value>
         public static string SettingsPath
         {
-            get { return ConfigurationManager.AppSettings["settings-path"] ?? "\app.settings"; }
+            get { return ConfigurationManager.AppSettings["settings-path"] ?? @"\app.settings"; }
         }
 
         /// <summary>

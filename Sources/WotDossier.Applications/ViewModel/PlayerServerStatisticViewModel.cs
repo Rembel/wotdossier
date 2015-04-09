@@ -165,7 +165,7 @@ namespace WotDossier.Applications.ViewModel
 
         public List<ITankStatisticRow> Tanks
         {
-            get { return _tanks; }
+            get { return _tanks ?? new List<ITankStatisticRow>(); }
             set
             {
                 _tanks = value;

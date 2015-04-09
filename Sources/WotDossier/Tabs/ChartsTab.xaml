@@ -9,8 +9,6 @@
              xmlns:converters="clr-namespace:WotDossier.Converters"
              xmlns:gauge="clr-namespace:WotDossier.Framework.Controls.Gauge;assembly=WotDossier.Framework"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
-             xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
-             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -264,76 +262,17 @@
                     </WrapPanel>
                 </Border>
             </TabItem>
-            <!--<TabItem Header="Tier\Type\Nation performance" DataContext="{Binding ChartView}">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <charts:WinPercentChartsTab />
-                    <charts:EffectivityChartsTab />
-                    <charts:BattlesCountChartsTab />
-                </StackPanel>
-            </TabItem>-->
-            <!--<TabItem Header="6">
-                <charts:ReplaysChartsTab></charts:ReplaysChartsTab>
-            </TabItem>-->
-            <!--<TabItem Header="Maps Statistic" DataContext="{Binding ChartView}">
-                <charts:ReplaysStatTab></charts:ReplaysStatTab>
-            </TabItem>-->
             <TabItem Header="Maps Statistic" DataContext="{Binding ChartView}">
-                <StackPanel Orientation="Horizontal">
-                    <chart:ClusteredColumnChart     Width="250" Height="400"
-                        Style="{StaticResource MinimalChartStyle}"
-                        ChartTitle="{x:Static resources:Resources.Chart_WinPercentByType}"                
-                        ChartSubTitle=""  
-                                                   Foreground="#FFEEEEEE"
-                                                   Background="#FF333333"
-                        BorderThickness="2"
-                        SelectedBrush="Tomato" 
-                                                    Palette="{Binding WinPercentByTypeDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}">
-                        <chart:ClusteredColumnChart.Series>
-                            <chart:ChartSeries
-                                SeriesTitle="Win Percent"
-                                DisplayMember="X"
-                                ValueMember="Y"
-                                
-                                ItemsSource="{Binding Path=WinPercentByTypeDataSource}" />
-                        </chart:ClusteredColumnChart.Series>
-                    </chart:ClusteredColumnChart>
-                    <chart:ClusteredColumnChart     Width="400" Height="400"
-                        Style="{StaticResource MinimalChartStyle}"
-                        ChartTitle="{x:Static resources:Resources.Chart_WinPercentByTier}"                
-                        ChartSubTitle=""  
-                                                   Foreground="#FFEEEEEE"
-                                                   Background="#FF333333"
-                        BorderThickness="2"
-                        SelectedBrush="Tomato" 
-                                                    Palette="{Binding WinPercentByTierDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}">
-                            <chart:ClusteredColumnChart.Series>
-                                <chart:ChartSeries
-                                SeriesTitle="Win Percent"
-                                DisplayMember="X"
-                                ValueMember="Y"
-                                
-                                ItemsSource="{Binding Path=WinPercentByTierDataSource}" />
-                            </chart:ClusteredColumnChart.Series>
-                        </chart:ClusteredColumnChart>
-                    <chart:ClusteredColumnChart     Width="250" Height="400"
-                        Style="{StaticResource MinimalChartStyle}"
-                        ChartTitle="{x:Static resources:Resources.Chart_WinPercentByCountry}"                
-                        ChartSubTitle=""  
-                                                   Foreground="#FFEEEEEE"
-                                                   Background="#FF333333"
-                        BorderThickness="2"
-                        SelectedBrush="Tomato" 
-                                                    Palette="{Binding WinPercentByCountryDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}">
-                        <chart:ClusteredColumnChart.Series>
-                            <chart:ChartSeries
-                                SeriesTitle="Win Percent"
-                                DisplayMember="X"
-                                ValueMember="Y"
-                                
-                                ItemsSource="{Binding Path=WinPercentByCountryDataSource}" />
-                        </chart:ClusteredColumnChart.Series>
-                    </chart:ClusteredColumnChart>
-                </StackPanel>
+                <charts:ReplaysStatTab />
+            </TabItem>
+            <TabItem Header="Win Percent" DataContext="{Binding ChartView}">
+                <charts:WinPercentChartsTab />
+            </TabItem>
+            <TabItem Header="WN8" DataContext="{Binding ChartView}">
+                <charts:EffectivityChartsTab />
+            </TabItem>
+            <TabItem Header="Battles" DataContext="{Binding ChartView}">
+                <charts:BattlesCountChartsTab />
             </TabItem>
         </TabControl>
     </Grid>

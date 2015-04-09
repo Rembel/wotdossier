@@ -30,7 +30,7 @@
             </TabItem>
             <!--Charts-->
             <TabItem TabIndex="2" Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}">
-                <charts:ReplaysChartsTab HorizontalAlignment="Center" />
+                <charts:ReplaysStatTab VerticalAlignment="Stretch"/>
             </TabItem>
         </TabControl>
         <StatusBar Grid.Row="2" VerticalAlignment="Bottom">

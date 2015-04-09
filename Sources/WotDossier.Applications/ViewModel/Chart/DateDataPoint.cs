@@ -2,7 +2,7 @@
 
 namespace WotDossier.Applications.ViewModel.Chart
 {
-    public class DateDataPoint : DataPoint
+    public class DateDataPoint : GenericPoint<double, double>
     {
         public DateTime Date { get; set; }
 

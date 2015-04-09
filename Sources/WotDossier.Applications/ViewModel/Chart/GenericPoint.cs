@@ -15,7 +15,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         public T2 Y { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenericPoint{T2}" /> class.
+        /// Initializes a new instance of the <see cref="GenericPoint{T1,T2}" /> class.
         /// </summary>
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>

@@ -236,15 +236,22 @@ namespace WotDossier.Dal
                     var achievements = GetPlayerTanksAchievements(playerId, settings);
 
                     List<Vehicle> tanks = response["data"][playerId.ToString(CultureInfo.InvariantCulture)].ToObject<List<Vehicle>>();
-                    foreach (Vehicle tank in tanks)
+                    if (tanks != null)
                     {
-                        tank.description = Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
-                        var vehicleAchievements = achievements.FirstOrDefault(x => x.tank_id == tank.tank_id) ?? new VehicleAchievements{ achievements = new MedalAchievements()};
-                        tank.achievements = vehicleAchievements.achievements;
-                        
-                        if (tank.description == null)
+                        foreach (Vehicle tank in tanks)
                         {
-                            _log.WarnFormat("Unknown tank id found [{0}] on get player[{1}:{2}] server tank statistic", tank.tank_id, settings.Server, playerId);
+                            tank.description =
+                                Dictionaries.Instance.Tanks.Values.FirstOrDefault(x => x.CompDescr == tank.tank_id);
+                            var vehicleAchievements = achievements.FirstOrDefault(x => x.tank_id == tank.tank_id) ??
+                                                      new VehicleAchievements {achievements = new MedalAchievements()};
+                            tank.achievements = vehicleAchievements.achievements;
+
+                            if (tank.description == null)
+                            {
+                                _log.WarnFormat(
+                                    "Unknown tank id found [{0}] on get player[{1}:{2}] server tank statistic",
+                                    tank.tank_id, settings.Server, playerId);
+                            }
                         }
                     }
 

@@ -48,6 +48,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Common.Logging.Log4Net1211.2.1.2\lib\net40\Common.Logging.Log4Net1211.dll</HintPath>
     </Reference>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\..\References\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
     <Reference Include="DynamicDataDisplay, Version=0.3.4703.0, Culture=neutral, PublicKeyToken=5b7d744a7263923f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
@@ -426,8 +429,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml">
-      <Link>Tabs\Charts\ReplaysChartsTab.xaml</Link>
+    <Page Include="..\WotDossier\Tabs\Charts\ReplaysStatTab.xaml">
+      <Link>Tabs\Charts\ReplaysStatTab.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -590,6 +593,9 @@
     <Compile Include="..\WotDossier\Converters\Color\PercentToColorConverter.cs">
       <Link>Converters\Color\PercentToColorConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Color\PointsToPalleteConverter.cs">
+      <Link>Converters\Color\PointsToPalleteConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Color\PowerRatingToColorConverter.cs">
       <Link>Converters\Color\PowerRatingToColorConverter.cs</Link>
     </Compile>
@@ -729,10 +735,8 @@
       <DependentUpon>EffectivityChartsTab.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml.cs">
-      <Link>Tabs\Charts\ReplaysChartsTab.xaml.cs</Link>
-      <DependentUpon>ReplaysChartsTab.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="..\WotDossier\Tabs\Charts\ReplaysStatTab.xaml.cs">
+      <Link>Tabs\Charts\ReplaysStatTab.xaml.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Charts\WinPercentChartsTab.xaml.cs">
       <Link>Tabs\Charts\WinPercentChartsTab.xaml.cs</Link>
@@ -861,6 +865,9 @@
       <Link>app.manifest</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\WotDossier\App.config">
+      <Link>App.config</Link>
+    </None>
     <None Include="..\WotDossier\Data\dossier.s3db">
       <Link>Data\dossier.s3db</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

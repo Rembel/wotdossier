@@ -68,6 +68,12 @@ namespace WotDossier.Domain.Tank
         [DataMember(Name = "compDescr")]
         public int CompDescr { get; set; }
 
+        /// <summary>
+        /// Gets or sets the health.
+        /// </summary>
+        [DataMember(Name = "health")]
+        public int Health { get; set; }
+
         public LevelRange LevelRange { get; set; }
 
         /// <summary>

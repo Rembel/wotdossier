@@ -3406,4 +3406,22 @@ up to 500 m</value>
   <data name="Gauge_Wn8Format" xml:space="preserve">
     <value>WN8: 0</value>
   </data>
+  <data name="Tab_Header_MapsStatistic" xml:space="preserve">
+    <value>Maps Statistic</value>
+  </data>
+  <data name="Tab_Header_OverallPerformance" xml:space="preserve">
+    <value>Overall performance</value>
+  </data>
+  <data name="Tab_Header_PerformanceProgress" xml:space="preserve">
+    <value>Performance Progress</value>
+  </data>
+  <data name="Tab_Header_WinRate" xml:space="preserve">
+    <value>Win Rate</value>
+  </data>
+  <data name="Tab_Header_WN8" xml:space="preserve">
+    <value>WN8</value>
+  </data>
+  <data name="DeathReason_CrewDead" xml:space="preserve">
+    <value>Crew dead</value>
+  </data>
 </root>

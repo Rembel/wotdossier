@@ -3480,4 +3480,37 @@
   <data name="Device_turretRotator" xml:space="preserve">
     <value>Башня</value>
   </data>
+  <data name="Gauge_WinsFormat" xml:space="preserve">
+    <value>Побед: 0.0</value>
+  </data>
+  <data name="Gauge_DamageRatioFormat" xml:space="preserve">
+    <value>Коэфф. урона: 0.00</value>
+  </data>
+  <data name="Gauge_EffFormat" xml:space="preserve">
+    <value>РЭ: 0</value>
+  </data>
+  <data name="Gauge_KillDeathFormat" xml:space="preserve">
+    <value>Уничтожил/убит: 0.00</value>
+  </data>
+  <data name="Gauge_Wn8Format" xml:space="preserve">
+    <value>WN8: 0</value>
+  </data>
+  <data name="Tab_Header_MapsStatistic" xml:space="preserve">
+    <value>Статистика карт</value>
+  </data>
+  <data name="Tab_Header_OverallPerformance" xml:space="preserve">
+    <value>Общая эффективность</value>
+  </data>
+  <data name="Tab_Header_PerformanceProgress" xml:space="preserve">
+    <value>Прогресс</value>
+  </data>
+  <data name="Tab_Header_WinRate" xml:space="preserve">
+    <value>Процент побед</value>
+  </data>
+  <data name="Tab_Header_WN8" xml:space="preserve">
+    <value>WN8</value>
+  </data>
+  <data name="DeathReason_CrewDead" xml:space="preserve">
+    <value>Экипаж уничтожен</value>
+  </data>
 </root>

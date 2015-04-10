@@ -253,7 +253,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     IsPlatoon = ResolvePlatoonFlag(replay);
 
                     BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;
-                    DeathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
+                    DeathReason = ResolveDeathReason(replay);
                     FinishReason = (FinishReason) replay.datablock_battle_result.common.finishReason;
                 }
 
@@ -262,6 +262,16 @@ namespace WotDossier.Applications.ViewModel.Replay
                 DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum) DeathReason);
                 FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum) FinishReason);
             }
+        }
+
+        private DeathReason ResolveDeathReason(Domain.Replay.Replay replay)
+        {
+            var deathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
+            if (deathReason == DeathReason.DestroyedByShot && replay.datablock_battle_result.personal.damageReceived < Tank.Health)
+            {
+                return DeathReason.CrewDead;
+            }
+            return deathReason;
         }
 
         public int DamageBlockedByArmor { get; set; }

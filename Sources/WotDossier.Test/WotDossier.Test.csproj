@@ -420,9 +420,6 @@
     <None Include="Data\expected_tank_values.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Data\TankNominalDamage.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Maps\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

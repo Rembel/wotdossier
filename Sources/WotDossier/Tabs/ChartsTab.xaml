@@ -18,7 +18,7 @@
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="Overall performance" DataContext="{Binding PlayerStatistic}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_OverallPerformance}" DataContext="{Binding PlayerStatistic}">
                 <controls1:AlignableWrapPanel Width="900" HorizontalContentAlignment="Center" >
                     <!--winPercentGauge -->
                     <gauge:CircularGaugeControl Margin="20" x:Name="winPercentGauge" 
@@ -227,7 +227,7 @@
                     </gauge:CircularGaugeControl>
                 </controls1:AlignableWrapPanel>
             </TabItem>
-            <TabItem Header="Dynamic Performance" DataContext="{Binding ChartView}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_PerformanceProgress}" DataContext="{Binding ChartView}">
                 <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
                     <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
                         <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
@@ -237,26 +237,14 @@
                     </WrapPanel>
                 </Border>
             </TabItem>
-            <TabItem Header="Average Performance" DataContext="{Binding ChartView}">
-                <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
-                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
-                    </WrapPanel>
-                </Border>
-            </TabItem>
-            <TabItem Header="Maps Statistic" DataContext="{Binding ChartView}">
-                <charts:ReplaysStatTab />
-            </TabItem>
-            <TabItem Header="Win Percent" DataContext="{Binding ChartView}">
+
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_WinRate}" DataContext="{Binding ChartView}">
                 <charts:WinPercentChartsTab />
             </TabItem>
-            <TabItem Header="WN8" DataContext="{Binding ChartView}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_WN8}" DataContext="{Binding ChartView}">
                 <charts:EffectivityChartsTab />
             </TabItem>
-            <TabItem Header="Battles" DataContext="{Binding ChartView}">
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Battles}" DataContext="{Binding ChartView}">
                 <charts:BattlesCountChartsTab />
             </TabItem>
         </TabControl>

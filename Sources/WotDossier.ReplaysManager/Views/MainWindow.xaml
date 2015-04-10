@@ -28,9 +28,9 @@
             <TabItem TabIndex="1" Header="{x:Static resources:Resources.Tab_Header_Replays}">
                 <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}" />
             </TabItem>
-            <!--Charts-->
-            <TabItem TabIndex="2" Header="{x:Static resources:Resources.Tab_Header_Chart}" DataContext="{Binding ChartView}">
-                <charts:ReplaysStatTab VerticalAlignment="Stretch"/>
+            <!--Statistic-->
+            <TabItem TabIndex="2" Header="{x:Static resources:Resources.Tab_Header_MapsStatistic}" DataContext="{Binding ChartView}">
+                <charts:ReplaysStatTab />
             </TabItem>
         </TabControl>
         <StatusBar Grid.Row="2" VerticalAlignment="Bottom">

@@ -4037,6 +4037,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crew dead.
+        /// </summary>
+        public static string DeathReason_CrewDead {
+            get {
+                return ResourceManager.GetString("DeathReason_CrewDead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dead.
         /// </summary>
         public static string DeathReason_Dead {
@@ -7277,6 +7286,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maps Statistic.
+        /// </summary>
+        public static string Tab_Header_MapsStatistic {
+            get {
+                return ResourceManager.GetString("Tab_Header_MapsStatistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MasterTanker.
         /// </summary>
         public static string Tab_Header_MasterTanker {
@@ -7304,6 +7322,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overall performance.
+        /// </summary>
+        public static string Tab_Header_OverallPerformance {
+            get {
+                return ResourceManager.GetString("Tab_Header_OverallPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Performance.
         /// </summary>
         public static string Tab_Header_Performance {
@@ -7318,6 +7345,15 @@ namespace WotDossier.Resources {
         public static string Tab_Header_Performance88 {
             get {
                 return ResourceManager.GetString("Tab_Header_Performance88", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performance Progress.
+        /// </summary>
+        public static string Tab_Header_PerformanceProgress {
+            get {
+                return ResourceManager.GetString("Tab_Header_PerformanceProgress", resourceCulture);
             }
         }
         
@@ -7390,6 +7426,24 @@ namespace WotDossier.Resources {
         public static string Tab_Header_Vehicles {
             get {
                 return ResourceManager.GetString("Tab_Header_Vehicles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Rate.
+        /// </summary>
+        public static string Tab_Header_WinRate {
+            get {
+                return ResourceManager.GetString("Tab_Header_WinRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WN8.
+        /// </summary>
+        public static string Tab_Header_WN8 {
+            get {
+                return ResourceManager.GetString("Tab_Header_WN8", resourceCulture);
             }
         }
         

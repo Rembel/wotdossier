@@ -11,5 +11,6 @@
         Crashed = 3, 	            //Crashed
         DestroyedByDeathZone = 4, 	//Destroyed by a death zone
         VehicleDrowned = 5,         //Vehicle drowned 
+        CrewDead = 101,             //Crew dead 
     }
 }

@@ -8,6 +8,7 @@
         xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:services="clr-namespace:WotDossier.Framework.Presentation.Services;assembly=WotDossier.Framework"
         xmlns:domain="clr-namespace:WotDossier.Domain;assembly=WotDossier.Domain"
+        xmlns:charts="clr-namespace:WotDossier.Tabs.Charts"
         Title="{x:Static services:ApplicationInfo.FullProductName}" Height="768" Width="1024" MinWidth="1024" MinHeight="768" 
         WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico"
         Style="{DynamicResource office2007SilverWindow}">
@@ -168,6 +169,9 @@
             <!--Replays-->
             <TabItem TabIndex="17" Header="{x:Static resources:Resources.Tab_Header_Replays}" Name="tabReplays">
                 <tabs:ReplaysTab HorizontalAlignment="Stretch" DataContext="{Binding ReplaysViewModel}" />
+            </TabItem>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_MapsStatistic}" DataContext="{Binding ChartView}">
+                <charts:ReplaysStatTab />
             </TabItem>
         </TabControl>
         <StatusBar Grid.Row="3" VerticalAlignment="Bottom">

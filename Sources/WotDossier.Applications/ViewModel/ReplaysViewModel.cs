@@ -162,7 +162,7 @@ namespace WotDossier.Applications.ViewModel
 
             PlayReplayCommand = new DelegateCommand<ReplayFile>(ReplaysManager.Play);
             PlayReplayWithCommand = new DelegateCommand<ReplayFile>(ReplaysManager.PlayWith);
-            
+
             DossierRepository = dossierRepository;
             ProgressView = progressControlView;
             playerChartsViewModel.ReplaysDataSource = new CallbackDataSource<ReplayFile>(() => _replays);
@@ -294,19 +294,26 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnCopyLinkToClipboard(object rows)
         {
-            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
-
-            List<ReplayFile> replayFiles = selectedItems.Cast<ReplayFile>().ToList();
-
-            StringBuilder builder = new StringBuilder();
-            foreach (ReplayFile replay in replayFiles)
+            try
             {
-                builder.AppendLine(string.Format("{0}, {1}", replay.TankName, replay.MapName));
-                builder.AppendLine(replay.Link);
-                builder.AppendLine();
-            }
+                ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
 
-            Clipboard.SetText(builder.ToString());
+                List<ReplayFile> replayFiles = selectedItems.Cast<ReplayFile>().ToList();
+
+                StringBuilder builder = new StringBuilder();
+                foreach (ReplayFile replay in replayFiles)
+                {
+                    builder.AppendLine(string.Format("{0}, {1}", replay.TankName, replay.MapName));
+                    builder.AppendLine(replay.Link);
+                    builder.AppendLine();
+                }
+
+                Clipboard.SetText(builder.ToString());
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on copy link to clipboard", e);
+            }
         }
 
         private bool CanCopyLinkToClipboard(object rows)
@@ -425,7 +432,7 @@ namespace WotDossier.Applications.ViewModel
                         var operations = GetUpdateOperations(replayFolder.Id, oldFiles, newFiles);
 
                         _log.WarnFormat("operations count: {0}", operations.Count());
-                        
+
                         int count = operations.Count();
                         int index = 0;
                         foreach (var operation in operations)
@@ -439,7 +446,7 @@ namespace WotDossier.Applications.ViewModel
                         }
 
                         _log.WarnFormat("replays after update count: {0}", _replays.Count());
-                        
+
                         replayFolder.Files = newFiles.ToList();
                         replayFolder.Count = _replays.Count(x => x.FolderId == replayFolder.Id);
                     }
@@ -450,8 +457,8 @@ namespace WotDossier.Applications.ViewModel
                 root.Count = ReplaysFolders.GetAll().Skip(1).Sum(x => x.Count);
 
                 IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
-                dbReplays.Join(_replays, x => new {x.PlayerId, x.ReplayId}, y => new {y.PlayerId, y.ReplayId},
-                    (x, y) => new {ReplayEntity = x, ReplayFile = y})
+                dbReplays.Join(_replays, x => new { x.PlayerId, x.ReplayId }, y => new { y.PlayerId, y.ReplayId },
+                    (x, y) => new { ReplayEntity = x, ReplayFile = y })
                     .ToList()
                     .ForEach(x =>
                     {
@@ -482,7 +489,7 @@ namespace WotDossier.Applications.ViewModel
                     deletedFolder = ReplaysManager.DeletedFolder;
                     if (Application.Current != null)
                     {
-                        Application.Current.Dispatcher.Invoke((Action) (() => root.Folders.Add(deletedFolder)));
+                        Application.Current.Dispatcher.Invoke((Action)(() => root.Folders.Add(deletedFolder)));
                     }
                 }
                 deletedFolder.Count = collection.Count;
@@ -594,7 +601,7 @@ namespace WotDossier.Applications.ViewModel
             if (replayFile != null)
             {
                 Domain.Replay.Replay replay;
-                
+
                 using (new WaitCursor())
                 {
                     replay = replayFile.ReplayData(SettingsReader.Get().ShowExtendedReplaysData);

@@ -6575,6 +6575,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Platoon.
+        /// </summary>
+        public static string Platoon_Platoon {
+            get {
+                return ResourceManager.GetString("Platoon_Platoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solo.
+        /// </summary>
+        public static string Platoon_Solo {
+            get {
+                return ResourceManager.GetString("Platoon_Solo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Charts initialization.
         /// </summary>
         public static string Progress_ChartsInitialization {
@@ -7201,6 +7219,15 @@ namespace WotDossier.Resources {
         public static string Tab_Header_Achievements {
             get {
                 return ResourceManager.GetString("Tab_Header_Achievements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Performance.
+        /// </summary>
+        public static string Tab_Header_AveragePerformance {
+            get {
+                return ResourceManager.GetString("Tab_Header_AveragePerformance", resourceCulture);
             }
         }
         

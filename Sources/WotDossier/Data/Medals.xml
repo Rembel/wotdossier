@@ -73,7 +73,7 @@
         <!--Медаль Старка-->
         <medal name="Medal_15x15_MedalStark" id="300" icon="medalStark" type="0"/>
     </Epic>
-    <TeamBattles>
+  <TeamBattles filter="true" name="Label_Achievements_TeamBattle">
         <!--разведка боем-->
         <medal name="Medal_7x7_FightingReconnaissanceMedal" id="288" icon="fightingReconnaissanceMedal" type="0"/>
         <!--решающий выстрел-->
@@ -128,6 +128,8 @@
         <medal name="Medal_15x15_Survivor" id="60" icon="Diehard" type="1"/>
 
         <medal name="Medal_15x15_MaxAimerSeries" id="520" icon="maxAimerSeries" type="1"/>
+      
+        <medal name="Medal_15x15_MaxAimerSeries" id="529" icon="aimer" type="1"/>
         
         <medal name="Medal_15x15_DeathTrack" id="533" icon="deathTrack" type="1"/>
     </Special>

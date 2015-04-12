@@ -3484,7 +3484,7 @@
     <value>Побед: 0.0</value>
   </data>
   <data name="Gauge_DamageRatioFormat" xml:space="preserve">
-    <value>Коэфф. урона: 0.00</value>
+    <value>Коэфф урона: 0.00</value>
   </data>
   <data name="Gauge_EffFormat" xml:space="preserve">
     <value>РЭ: 0</value>
@@ -3512,5 +3512,14 @@
   </data>
   <data name="DeathReason_CrewDead" xml:space="preserve">
     <value>Экипаж уничтожен</value>
+  </data>
+  <data name="Tab_Header_AveragePerformance" xml:space="preserve">
+    <value>Средняя эффективность</value>
+  </data>
+  <data name="Platoon_Platoon" xml:space="preserve">
+    <value>Взвод</value>
+  </data>
+  <data name="Platoon_Solo" xml:space="preserve">
+    <value>Соло</value>
   </data>
 </root>

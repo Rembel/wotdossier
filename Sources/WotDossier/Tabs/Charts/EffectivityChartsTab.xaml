@@ -10,7 +10,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <chart:ClusteredColumnChart Margin="20,0" Width="350" Height="400"
+            <chart:ClusteredColumnChart Margin="10,0" Width="350" Height="400"
                         Style="{StaticResource MinimalChartStyle}"
                         ChartTitle="{x:Static resources:Resources.Chart_EffByType}"                
                         ChartSubTitle=""  
@@ -21,13 +21,13 @@
                         Palette="{Binding EfficiencyByTypeDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:WN8ToColorConverter.Default}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
-                                SeriesTitle="Type"
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Types}"
                                 DisplayMember="Title"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=EfficiencyByTypeDataSource}" />
                 </chart:ClusteredColumnChart.Series>
             </chart:ClusteredColumnChart>
-            <chart:ClusteredColumnChart Margin="20,0" Width="550" Height="400"
+            <chart:ClusteredColumnChart Margin="10,0" Width="570" Height="400"
                         Style="{StaticResource MinimalChartStyle}"
                         ChartTitle="{x:Static resources:Resources.Chart_EffByTier}"                
                         ChartSubTitle=""  
@@ -38,13 +38,13 @@
                         Palette="{Binding EfficiencyByTierDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:WN8ToColorConverter.Default}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
-                                SeriesTitle="Tier"
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Levels}"
                                 DisplayMember="X"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=EfficiencyByTierDataSource}" />
                 </chart:ClusteredColumnChart.Series>
             </chart:ClusteredColumnChart>
-            <chart:ClusteredColumnChart Margin="20,0" Width="420" Height="400"
+            <chart:ClusteredColumnChart Margin="10,0" Width="440" Height="400"
                         Style="{StaticResource MinimalChartStyle}"
                         ChartTitle="{x:Static resources:Resources.Chart_EffByCountry}"                
                         ChartSubTitle=""  
@@ -55,7 +55,7 @@
                         Palette="{Binding EfficiencyByCountryDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:WN8ToColorConverter.Default}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
-                                SeriesTitle="Country"
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Country}"
                                 DisplayMember="Title"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=EfficiencyByCountryDataSource}" />

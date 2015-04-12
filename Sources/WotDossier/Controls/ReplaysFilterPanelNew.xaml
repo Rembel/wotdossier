@@ -252,15 +252,17 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Margin="12,3,6,3" Grid.Row="0" Text="{x:Static resources:Resources.ReplaysFilter_ByColumns}" VerticalAlignment="Center" />
-                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Left">
                         <ComboBox Margin="6,3,20,3" Width="200" ItemsSource="{Binding FilterFields}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Field, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
                         <TextBlock Text="{x:Static resources:Resources.Operation_Gt}" VerticalAlignment="Center"></TextBlock>
                         <TextBox Margin="6,3,6,3" Width="50" Text="{Binding StartValue, NotifyOnValidationError=False}" controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
@@ -272,10 +274,18 @@
                     <TextBlock Margin="12,3,6,3" Grid.Row="1" Text="{x:Static resources:Resources.ReplaysFilter_Player}" VerticalAlignment="Center" />
                     <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="6,3,6,3" Width="200" Text="{Binding Member, NotifyOnValidationError=False}"  controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
 
+                    <!--death reason-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="1" Grid.Column="2" Text="{x:Static resources:Resources.Column_Ratings_Platoon}" VerticalAlignment="Center" />
+                    <ComboBox Margin="6,3,6,3" Grid.Row="1" Grid.Column="3" Width="200" ItemsSource="{Binding PlatoonFilter}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedPlatoonFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+                    
                     <!--result-->
                     <TextBlock Margin="12,3,6,3" Grid.Row="2" Text="{x:Static resources:Resources.ReplaysFilter_Result}" VerticalAlignment="Center" />
                     <ComboBox Margin="6,3,6,3" Grid.Row="2" Grid.Column="1" Width="200" ItemsSource="{Binding BattleResults}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedBattleResult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
 
+                    <!--death reason-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="2" Grid.Column="2" Text="{x:Static resources:Resources.Label_ReplayDetail_IsAlive}" VerticalAlignment="Center" />
+                    <ComboBox Margin="6,3,6,3" Grid.Row="2" Grid.Column="3" Width="200" ItemsSource="{Binding DeathReasons}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding DeathReason, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+                    
                     <!--version-->
                     <TextBlock Margin="12,3,6,3" Grid.Row="3" Grid.Column="0" Text="{x:Static resources:Resources.Version}" VerticalAlignment="Center" />
                     <ComboBox Margin="6,3,6,3" Grid.Row="3" Grid.Column="1" Width="200" ItemsSource="{Binding Versions}" HorizontalAlignment="Left"

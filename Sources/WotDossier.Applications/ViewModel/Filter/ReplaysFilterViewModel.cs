@@ -423,6 +423,8 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<DeathReason>(DeathReason.DestroyedByRamming, " - " + Resources.Resources.DeathReason_DestroyedByRamming), 
                 new ListItem<DeathReason>(DeathReason.VehicleDrowned, " - " + Resources.Resources.DeathReason_VehicleDrowned), 
                 new ListItem<DeathReason>(DeathReason.DestroyedByDeathZone, " - " + Resources.Resources.DeathReason_DestroyedByDeathZone), 
+                new ListItem<DeathReason>(DeathReason.Crashed, " - " + Resources.Resources.DeathReason_Crashed), 
+                new ListItem<DeathReason>(DeathReason.CrewDead, " - " + Resources.Resources.DeathReason_CrewDead), 
             };
 
         public List<ListItem<DeathReason>> DeathReasons
@@ -431,13 +433,37 @@ namespace WotDossier.Applications.ViewModel.Filter
             set { _deathReasons = value; }
         }
 
-        private DeathReason _deathReason;
+        private DeathReason _deathReason = DeathReason.Unknown;
         public DeathReason DeathReason
         {
             get { return _deathReason; }
             set
             {
                 _deathReason = value;
+                OnPropertyChanged("DeathReason");
+            }
+        }
+
+        private List<ListItem<Platoon>> _platoonFilter = new List<ListItem<Platoon>>
+            {
+                new ListItem<Platoon>(Platoon.Unknown, string.Empty), 
+                new ListItem<Platoon>(Platoon.Solo, Resources.Resources.Platoon_Solo), 
+                new ListItem<Platoon>(Platoon.Platoon, Resources.Resources.Platoon_Platoon)
+            };
+
+        public List<ListItem<Platoon>> PlatoonFilter
+        {
+            get { return _platoonFilter; }
+            set { _platoonFilter = value; }
+        }
+
+        private Platoon _selectedPlatoonFilter = Platoon.Unknown;
+        public Platoon SelectedPlatoonFilter
+        {
+            get { return _selectedPlatoonFilter; }
+            set
+            {
+                _selectedPlatoonFilter = value;
                 OnPropertyChanged("DeathReason");
             }
         }
@@ -603,7 +629,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         }
 
         private readonly IEnumerable<CheckListItem<Version>> _baseVersionsListItems;
-
+        
         /// <summary>
         /// Gets or sets the end date.
         /// </summary>
@@ -744,6 +770,8 @@ namespace WotDossier.Applications.ViewModel.Filter
                     ((settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
                         && (settings.UseIncompleteReplaysResultsForCharts || (x.IsWinner != BattleStatus.Incomplete && x.IsWinner != BattleStatus.Unknown)))
                  )
+                && (DeathReason == DeathReason.Unknown || x.DeathReason == DeathReason || DeathReason == DeathReason.Dead && (x.DeathReason != DeathReason.Alive && x.DeathReason != DeathReason.Unknown ))
+                && (SelectedPlatoonFilter == Platoon.Unknown || (SelectedPlatoonFilter == Platoon.Platoon && x.IsPlatoon) || (SelectedPlatoonFilter == Platoon.Solo && !x.IsPlatoon))
                 ).ToList();
 
             return result;

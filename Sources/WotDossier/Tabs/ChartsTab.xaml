@@ -237,7 +237,16 @@
                     </WrapPanel>
                 </Border>
             </TabItem>
-
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_AveragePerformance}" DataContext="{Binding ChartView}">
+                <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
+                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
+                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
+                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
+                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
+                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
+                    </WrapPanel>
+                </Border>
+            </TabItem>
             <TabItem Header="{x:Static resources:Resources.Tab_Header_WinRate}" DataContext="{Binding ChartView}">
                 <charts:WinPercentChartsTab />
             </TabItem>

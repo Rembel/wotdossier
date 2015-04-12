@@ -10,7 +10,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <chart:ClusteredColumnChart Margin="20,0" Width="300" Height="400"
+            <chart:ClusteredColumnChart Margin="10,0" Width="300" Height="400"
                         Style="{StaticResource MinimalChartStyle}"
                         ChartTitle="{x:Static resources:Resources.Chart_WinPercentByType}"                
                         ChartSubTitle=""  
@@ -21,13 +21,13 @@
                         Palette="{Binding WinPercentByTypeDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
-                                SeriesTitle="Type"
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Types}"
                                 DisplayMember="Title"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=WinPercentByTypeDataSource}" />
                 </chart:ClusteredColumnChart.Series>
             </chart:ClusteredColumnChart>
-            <chart:ClusteredColumnChart Margin="20,0" Width="450" Height="400"
+            <chart:ClusteredColumnChart Margin="10,0" Width="450" Height="400"
                         Style="{StaticResource MinimalChartStyle}"
                         ChartTitle="{x:Static resources:Resources.Chart_WinPercentByTier}"                
                         ChartSubTitle=""  
@@ -38,13 +38,13 @@
                         Palette="{Binding WinPercentByTierDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
-                                SeriesTitle="Tier"
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Levels}"
                                 DisplayMember="X"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=WinPercentByTierDataSource}" />
                 </chart:ClusteredColumnChart.Series>
             </chart:ClusteredColumnChart>
-            <chart:ClusteredColumnChart Margin="20,0" Width="350" Height="400"
+            <chart:ClusteredColumnChart Margin="10,0" Width="350" Height="400"
                         Style="{StaticResource MinimalChartStyle}"
                         ChartTitle="{x:Static resources:Resources.Chart_WinPercentByCountry}"                
                         ChartSubTitle=""  
@@ -55,7 +55,7 @@
                         Palette="{Binding WinPercentByCountryDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
-                                SeriesTitle="Country"
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Country}"
                                 DisplayMember="Title"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=WinPercentByCountryDataSource}" />

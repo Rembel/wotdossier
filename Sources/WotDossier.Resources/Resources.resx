@@ -3424,4 +3424,13 @@ up to 500 m</value>
   <data name="DeathReason_CrewDead" xml:space="preserve">
     <value>Crew dead</value>
   </data>
+  <data name="Tab_Header_AveragePerformance" xml:space="preserve">
+    <value>Average Performance</value>
+  </data>
+  <data name="Platoon_Platoon" xml:space="preserve">
+    <value>Platoon</value>
+  </data>
+  <data name="Platoon_Solo" xml:space="preserve">
+    <value>Solo</value>
+  </data>
 </root>

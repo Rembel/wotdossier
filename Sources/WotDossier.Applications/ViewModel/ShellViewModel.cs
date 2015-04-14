@@ -2,6 +2,7 @@
 using Common.Logging;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.IO;
@@ -188,6 +189,13 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private ObservableCollection<ListItem<int>> _favoritePlayers;
+        public ObservableCollection<ListItem<int>> FavoritePlayers
+        {
+            get { return _favoritePlayers; }
+            set { _favoritePlayers = value; }
+        }
+
         #endregion
 
         #region Commands
@@ -206,6 +214,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand ExportFragsToCsvCommand { get; set; }
         public DelegateCommand SearchPlayersCommand { get; set; }
         public DelegateCommand SearchClansCommand { get; set; }
+        public DelegateCommand<object> ShowPlayerCommand { get; set; }
 
         #endregion
 
@@ -236,6 +245,7 @@ namespace WotDossier.Applications.ViewModel
             ExportFragsToCsvCommand = new DelegateCommand(OnExportFragsToCsv);
             SearchPlayersCommand = new DelegateCommand(OnSearchPlayers);
             SearchClansCommand = new DelegateCommand(OnSearchClans);
+            ShowPlayerCommand = new DelegateCommand<object>(OnShowPlayerCommand);
 
             WeakEventHandler.SetAnyGenericHandler<ShellViewModel, CancelEventArgs>(
                 h => view.Closing += new CancelEventHandler(h), h => view.Closing -= new CancelEventHandler(h), this, (s, e) => s.ViewClosing(e));
@@ -267,7 +277,32 @@ namespace WotDossier.Applications.ViewModel
 
             ViewTyped.Closing += ViewTypedOnClosing;
 
+            FavoritePlayers = new ObservableCollection<ListItem<int>>(Mapper.Map<List<FavoritePlayerEntity>, List<ListItem<int>>>(_dossierRepository.GetFavoritePlayers()));
+
             InitCacheMonitor();
+        }
+
+        private void OnShowPlayerCommand(object item)
+        {
+            ListItem<int> row = item as ListItem<int>;
+            if (row != null)
+            {
+                Player player;
+                using (new WaitCursor())
+                {
+                    player = WotApiClient.Instance.LoadPlayerStat(row.Id, SettingsReader.Get(), PlayerStatLoadOptions.LoadVehicles | PlayerStatLoadOptions.LoadAchievments);
+                }
+                if (player != null)
+                {
+                    PlayerServerStatisticViewModel viewModel = CompositionContainerFactory.Instance.GetExport<PlayerServerStatisticViewModel>();
+                    viewModel.Init(player);
+                    viewModel.Show();
+                }
+                else
+                {
+                    MessageBox.Show(string.Format(Resources.Resources.Msg_GetPlayerData, row.Value), Resources.Resources.WindowCaption_Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
         private void OnReplayManagerActivated(EventArgs eventArgs)

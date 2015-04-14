@@ -23,7 +23,7 @@
         <KeyBinding Command="{Binding CompareCommand}" Key="H" Modifiers="Control"/>
         <KeyBinding Command="ApplicationCommands.Print"  Key="N" Modifiers="Ctrl+Shift"/>
     </Window.InputBindings>
-    <Grid>
+    <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -34,7 +34,16 @@
             <MenuItem Header="{x:Static resources:Resources.MenuItem_Header_Load}" Command="{Binding LoadCommand}" InputGestureText="F5" ></MenuItem>
             <MenuItem Header="{x:Static resources:Resources.Tab_Header_Replays}" Click="MenuItem_OnClick" ></MenuItem>
             <MenuItem Header="{x:Static resources:Resources.MenuItem_Search}">
-                <MenuItem Header="{x:Static resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}" InputGestureText="Ctrl+F"></MenuItem>
+                <MenuItem Header="{x:Static resources:Resources.MenuItem_SearchPlayers}" Command="{Binding SearchPlayersCommand}" InputGestureText="Ctrl+F" />
+                <MenuItem Header="{x:Static resources:Resources.MenuItem_FavoritePlayers}">
+                    <ItemsControl ItemsSource="{Binding FavoritePlayers, UpdateSourceTrigger=Explicit}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <MenuItem Header="{Binding Value}" Command="{Binding Path=DataContext.ShowPlayerCommand, Source={x:Reference LayoutRoot}}" CommandParameter="{Binding}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </MenuItem>
                 <MenuItem Header="{x:Static resources:Resources.MenuItem_SearchClans}" Command="{Binding SearchClansCommand}" InputGestureText="Ctrl+G"></MenuItem>
             </MenuItem>
             <MenuItem Header="{x:Static resources:Resources.MenuItem_Compare}" Command="{Binding CompareCommand}"></MenuItem>

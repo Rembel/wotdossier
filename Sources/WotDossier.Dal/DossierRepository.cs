@@ -490,5 +490,10 @@ namespace WotDossier.Dal
             }
             return new List<PlayerEntity>();
         }
+
+        public List<FavoritePlayerEntity> GetFavoritePlayers()
+        {
+            return new List<FavoritePlayerEntity>(/*TODO*/);
+        }
     }
 }

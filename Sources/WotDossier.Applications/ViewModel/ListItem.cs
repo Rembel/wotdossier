@@ -38,6 +38,13 @@ namespace WotDossier.Applications.ViewModel
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ListItem{TId}"/> class.
+        /// </summary>
+        public ListItem()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         public ListItem(TId id, string value)

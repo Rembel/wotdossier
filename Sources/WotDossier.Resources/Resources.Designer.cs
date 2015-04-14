@@ -6341,6 +6341,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Favorite players.
+        /// </summary>
+        public static string MenuItem_FavoritePlayers {
+            get {
+                return ResourceManager.GetString("MenuItem_FavoritePlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string MenuItem_Header_About {

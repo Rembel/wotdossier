@@ -82,6 +82,7 @@
     <Compile Include="Dossier\TankV65\CommonJson.cs" />
     <Compile Include="Dossier\TankV65\StatisticJson_2.cs" />
     <Compile Include="Dossier\TankV65\TotalJson.cs" />
+    <Compile Include="Entities\FavoritePlayerEntity.cs" />
     <Compile Include="GameplayDescription.cs" />
     <Compile Include="Interfaces\IFortAchievements.cs" />
     <Compile Include="Interfaces\IClanBattlesAchievements.cs" />

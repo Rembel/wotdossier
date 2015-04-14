@@ -3433,4 +3433,7 @@ up to 500 m</value>
   <data name="Platoon_Solo" xml:space="preserve">
     <value>Solo</value>
   </data>
+  <data name="MenuItem_FavoritePlayers" xml:space="preserve">
+    <value>Favorite players</value>
+  </data>
 </root>

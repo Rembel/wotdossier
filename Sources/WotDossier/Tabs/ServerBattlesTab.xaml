@@ -10,7 +10,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgBattles" IsReadOnly="True" 
-                  AutoGenerateColumns="False" controls:DataGridBehavior.DisplayRowNumber="True"
+                  AutoGenerateColumns="False"
                   controls:SupplementaryInteraction.Triggers="{StaticResource MouseTriggers}">
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 

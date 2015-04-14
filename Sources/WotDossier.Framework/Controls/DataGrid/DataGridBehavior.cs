@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -24,6 +25,27 @@ namespace WotDossier.Framework.Controls
         public static void SetDisplayRowNumber(DependencyObject target, bool value)
         {
             target.SetValue(DisplayRowNumberProperty, value);
+        }
+
+        public static DependencyProperty InvertDefaultSortDirectionProperty =
+            DependencyProperty.RegisterAttached("InvertDefaultSortDirection",
+                                                typeof(bool),
+                                                typeof(DataGridBehavior),
+                                                new FrameworkPropertyMetadata(false, OnInvertDefaultSortDirectionChanged));
+
+        private static void OnInvertDefaultSortDirectionChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
+        {
+            System.Windows.Controls.DataGrid dataGrid = target as System.Windows.Controls.DataGrid;
+            dataGrid.Sorting += (s, se) => se.Column.SortDirection = se.Column.SortDirection ?? ListSortDirection.Ascending;
+        }
+
+        public static bool GetInvertDefaultSortDirection(DependencyObject target)
+        {
+            return (bool)target.GetValue(InvertDefaultSortDirectionProperty);
+        }
+        public static void SetInvertDefaultSortDirection(DependencyObject target, bool value)
+        {
+            target.SetValue(InvertDefaultSortDirectionProperty, value);
         }
 
         private static void OnDisplayRowNumberChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)

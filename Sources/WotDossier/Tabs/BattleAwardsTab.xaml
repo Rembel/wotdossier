@@ -17,7 +17,7 @@
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
         <dataGrid:FooterDataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgBattleAwards" IsReadOnly="True" 
-                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}" controls1:DataGridBehavior.DisplayRowNumber="True"
+                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}"
                                  FooterItemsSource="{Binding TanksSummary, UpdateSourceTrigger=Explicit}">
             <dataGrid:FooterDataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 

@@ -73,7 +73,6 @@ namespace WotDossier.Framework.Controls.DataGrid
 
         public FooterDataGrid()
         {
-            Sorting += (s, e) => e.Column.SortDirection = e.Column.SortDirection ?? ListSortDirection.Ascending;
         }
 
         #endregion

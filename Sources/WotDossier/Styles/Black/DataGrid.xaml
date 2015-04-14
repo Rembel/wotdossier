@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:WotDossier.Converters"
                     x:Class="WotDossier.Styles.FooterDataGridBlack"
-                    xmlns:local="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework">
+                    xmlns:local="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
+                    xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Brushes.xaml"/>
         <ResourceDictionary Source="..\Fonts.xaml"/>
@@ -253,6 +254,8 @@
             </Trigger>
         </Style.Triggers>
         <Setter Property="Background" Value="White" />
+        <Setter Property="controls:DataGridBehavior.InvertDefaultSortDirection" Value="True" />
+        <Setter Property="controls:DataGridBehavior.DisplayRowNumber" Value="True" />
         <Setter Property="AlternatingRowBackground" Value="#EDEEF0" />
         <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
@@ -275,6 +278,8 @@
             </Trigger>
         </Style.Triggers>
         <Setter Property="Background" Value="White" />
+        <Setter Property="controls:DataGridBehavior.InvertDefaultSortDirection" Value="True" />
+        <Setter Property="controls:DataGridBehavior.DisplayRowNumber" Value="True" />
         <Setter Property="AlternatingRowBackground" Value="#EDEEF0" />
         <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />

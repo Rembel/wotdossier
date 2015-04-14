@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
-        xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         Title="{Binding Title}" MinHeight="768" MinWidth="1024" WindowStartupLocation="CenterScreen" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_search.png"
         Style="{StaticResource office2007SilverWindow}">
@@ -22,8 +21,7 @@
             </TextBox.InputBindings>
         </TextBox>
         <Button Grid.Column="1" HorizontalAlignment="Left" Content="{x:Static resources:Resources.Btn_Search}" Command="{Binding SearchCommand}" IsDefault="True" />
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding List}" VerticalAlignment="Stretch" Name="dgResult" IsReadOnly="True" AutoGenerateColumns="False"
-                  controls:DataGridBehavior.DisplayRowNumber="True">
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding List}" VerticalAlignment="Stretch" Name="dgResult" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

@@ -64,6 +64,28 @@ namespace WotDossier.Applications.ViewModel
             {
                 _selectedItems = value;
                 OnPropertyChanged("SelectedItems");
+                UpdateTotalRow();
+            }
+        }
+
+        private void UpdateTotalRow()
+        {
+            if (SelectedItems != null && SelectedItems.Count > 1)
+            {
+                ReplaysSummary  = new List<TotalReplayFile>{new TotalReplayFile(SelectedItems.Cast<ReplayFile>().ToList(), Guid.NewGuid())};
+            }
+            else
+            {
+                var replayFiles = ReplayFilter.Filter(_replays);
+
+                if (replayFiles.Any())
+                {
+                    ReplaysSummary = new List<TotalReplayFile> { new TotalReplayFile(replayFiles, Guid.NewGuid()) };
+                }
+                else
+                {
+                    ReplaysSummary = null;
+                }
             }
         }
 
@@ -78,12 +100,6 @@ namespace WotDossier.Applications.ViewModel
             get
             {
                 var replayFiles = ReplayFilter.Filter(_replays);
-
-                if (replayFiles.Any())
-                {
-                    ReplaysSummary = new List<TotalReplayFile> { new TotalReplayFile(replayFiles, Guid.NewGuid()) };
-                }
-
                 return replayFiles;
             }
             set

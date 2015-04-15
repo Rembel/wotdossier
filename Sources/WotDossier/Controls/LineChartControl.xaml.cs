@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WotDossier.Controls
@@ -14,14 +15,14 @@ namespace WotDossier.Controls
         /// Identifies the DataSource dependency property.
         /// </summary>
         public static DependencyProperty DataSourceProperty =
-            DependencyProperty.Register("DataSource", typeof(Microsoft.Research.DynamicDataDisplay.DataSources.IPointDataSource), typeof(LineChartControl), null);
+            DependencyProperty.Register("DataSource", typeof(IEnumerable), typeof(LineChartControl), null);
 
         /// <summary>
         /// 
         /// </summary>
-        public Microsoft.Research.DynamicDataDisplay.DataSources.IPointDataSource DataSource
+        public IEnumerable DataSource
         {
-            get { return (Microsoft.Research.DynamicDataDisplay.DataSources.IPointDataSource)GetValue(DataSourceProperty); }
+            get { return (IEnumerable)GetValue(DataSourceProperty); }
 
             set { SetValue(DataSourceProperty, value); }
         }

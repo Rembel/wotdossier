@@ -2149,6 +2149,94 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avg. Damage: {4:0}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_AvgDamage {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_AvgDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avg. Spotted: {4:0.00}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_AvgSpotted {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_AvgSpotted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avg. XP: {4:0.0}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_AvgXp {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_AvgXp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EFF: {4:0.0}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_Eff {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_Eff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kill Death Ratio: {4:0.00}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_KillDeathRatio {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_KillDeathRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survive Percent: {4:0.00}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_SurvivePercent {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_SurvivePercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Percent: {4:0.00}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_WinRate {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_WinRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WN8: {4:0.0}
+        ///{1}: {2:0}
+        ///Date: {Date:dd.MM.yyyy}.
+        /// </summary>
+        public static string Chart_TrackerFormatString_Wn8 {
+            get {
+                return ResourceManager.GetString("Chart_TrackerFormatString_Wn8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Win %.
         /// </summary>
         public static string Chart_WinPercent {

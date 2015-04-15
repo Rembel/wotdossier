@@ -3436,4 +3436,44 @@ up to 500 m</value>
   <data name="MenuItem_FavoritePlayers" xml:space="preserve">
     <value>Favorite players</value>
   </data>
+  <data name="Chart_TrackerFormatString_Eff" xml:space="preserve">
+    <value>EFF: {4:0.0}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_Wn8" xml:space="preserve">
+    <value>WN8: {4:0.0}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
+    <data name="Chart_TrackerFormatString_WinRate" xml:space="preserve">
+    <value>Win Percent: {4:0.00}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
+    <data name="Chart_TrackerFormatString_SurvivePercent" xml:space="preserve">
+    <value>Survive Percent: {4:0.00}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
+    <data name="Chart_TrackerFormatString_AvgXp" xml:space="preserve">
+    <value>Avg. XP: {4:0.0}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
+    <data name="Chart_TrackerFormatString_AvgDamage" xml:space="preserve">
+    <value>Avg. Damage: {4:0}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
+    <data name="Chart_TrackerFormatString_KillDeathRatio" xml:space="preserve">
+    <value>Kill Death Ratio: {4:0.00}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
+    <data name="Chart_TrackerFormatString_AvgSpotted" xml:space="preserve">
+    <value>Avg. Spotted: {4:0.00}
+{1}: {2:0}
+Date: {Date:dd.MM.yyyy}</value>
+  </data>
 </root>

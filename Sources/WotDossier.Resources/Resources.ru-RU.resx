@@ -3522,4 +3522,47 @@
   <data name="Platoon_Solo" xml:space="preserve">
     <value>Соло</value>
   </data>
+  <data name="MenuItem_FavoritePlayers" xml:space="preserve">
+    <value>Избранные игроки</value>
+  </data>
+  <data name="Chart_TrackerFormatString_Eff" xml:space="preserve">
+    <value>РЭ: {4:0.0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_Wn8" xml:space="preserve">
+    <value>WN8: {4:0.0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_WinRate" xml:space="preserve">
+    <value>Процент побед: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_SurvivePercent" xml:space="preserve">
+    <value>Выживаемость: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_AvgXp" xml:space="preserve">
+    <value>Средний опыт: {4:0.0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_AvgDamage" xml:space="preserve">
+    <value>Средний урон: {4:0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_KillDeathRatio" xml:space="preserve">
+    <value>Уничтожил/убит: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_AvgSpotted" xml:space="preserve">
+    <value>Обнаружено: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
 </root>

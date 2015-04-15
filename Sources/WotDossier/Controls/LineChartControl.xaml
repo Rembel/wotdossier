@@ -3,24 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:d3="clr-namespace:Microsoft.Research.DynamicDataDisplay;assembly=DynamicDataDisplay"
-             xmlns:pointMarkers="clr-namespace:Microsoft.Research.DynamicDataDisplay.PointMarkers;assembly=DynamicDataDisplay"
              xmlns:controls="clr-namespace:WotDossier.Controls"
+             xmlns:oxy="http://oxyplot.org/wpf"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <d3:ChartPlotter x:Name="chart" NewLegendVisible="False" LegendVisibility="Hidden" Background="Transparent"
-                         Height="{Binding Path=Height, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
-                         Width="{Binding Path=Width, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}">
-            <d3:Header>
-                <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}"></TextBlock>
-            </d3:Header>
-            <d3:LineGraph DataSource="{Binding Path=DataSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" Stroke="SteelBlue" StrokeThickness="2" />
-            <d3:ElementMarkerPointsGraph  DataSource="{Binding Path=DataSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}">
-                <d3:ElementMarkerPointsGraph.Marker>
-                    <pointMarkers:CircleElementPointMarker Size="5" Fill="Transparent" Brush="Transparent" />
-                </d3:ElementMarkerPointsGraph.Marker>
-            </d3:ElementMarkerPointsGraph>
-        </d3:ChartPlotter>
+        <!--MarkerSize="2" MarkerFill="SteelBlue" MarkerType="Circle"-->
+        <!--LegendBorder="Black" LegendOrientation="Horizontal" LegendPlacement="Outside" LegendPosition="BottomLeft" LegendBackground="#c8ffffff"-->
+        
+        <oxy:Plot Title="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
+                  Height="{Binding Path=Height, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
+                         Width="{Binding Path=Width, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}"
+                  Foreground="#FFEEEEEE"
+                        Background="#FF333333" PlotAreaBorderThickness="0" IsLegendVisible="False" TextColor="#FFA9A9A9">
+            <oxy:Plot.DefaultTrackerTemplate>
+                <ControlTemplate>
+                    <oxy:TrackerControl Position="{Binding Position}" LineExtents="{Binding PlotModel.PlotArea}" 
+                                        BorderBrush="#454648" Foreground="#979899" Background="{StaticResource tooltipBrush}">
+                        <oxy:TrackerControl.Content>
+                            <TextBlock Text="{Binding}" Margin="7" />
+                        </oxy:TrackerControl.Content>
+                    </oxy:TrackerControl>
+                </ControlTemplate>
+            </oxy:Plot.DefaultTrackerTemplate>
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Position="Left" IntervalLength="20" AxislineStyle="Solid" MajorGridlineStyle="Solid" MajorGridlineColor="DimGray"
+                                TitleColor="#FFEEEEEE" MaximumPadding="0.2" MinimumPadding="0.2" AxislineColor="#FFA9A9A9" TicklineColor="#FFA9A9A9"/>
+                <oxy:LinearAxis Position="Bottom" IntervalLength="60" AxislineStyle="Solid" Title="Battles" 
+                                TitleColor="#FFEEEEEE" MaximumPadding="0.2" MinimumPadding="0.2" AxislineColor="#FFA9A9A9" TicklineColor="#FFA9A9A9"/>
+            </oxy:Plot.Axes>
+            <oxy:LineSeries ItemsSource="{Binding Path=DataSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
+                                    Title="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
+                                    DataFieldX="X" DataFieldY="Y" Smooth="True" LineJoin="Bevel"
+                                    LineStyle="Solid"  Color="SpringGreen" TrackerFormatString="Battles={2:0} Y={4:0.0}" TrackerKey=""/>
+        </oxy:Plot>
     </Grid>
 </UserControl>

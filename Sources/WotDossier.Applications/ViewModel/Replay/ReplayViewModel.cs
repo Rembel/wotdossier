@@ -507,17 +507,20 @@ namespace WotDossier.Applications.ViewModel.Replay
                     
                     foreach (Slot slot in replay.datablock_advanced.Slots)
                     {
-                        if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey(slot.Item.Id) &&
-                            slot.Item.TypeId == SlotType.Equipment)
+                        if (TankIcon.CountryId != Country.Unknown)
                         {
-                            slot.Description = Dictionaries.Instance.ConsumableDescriptions[slot.Item.Id];
-                            Consumables.Add(slot);
-                        }
-                        if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
-                            slot.Item.TypeId == SlotType.Shell)
-                        {
-                            slot.Description = Dictionaries.Instance.Shells[(Country)TankIcon.CountryId][slot.Item.Id];
-                            Shells.Add(slot);
+                            if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey(slot.Item.Id) &&
+                                slot.Item.TypeId == SlotType.Equipment)
+                            {
+                                slot.Description = Dictionaries.Instance.ConsumableDescriptions[slot.Item.Id];
+                                Consumables.Add(slot);
+                            }
+                            if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
+                                slot.Item.TypeId == SlotType.Shell)
+                            {
+                                slot.Description = Dictionaries.Instance.Shells[TankIcon.CountryId][slot.Item.Id];
+                                Shells.Add(slot);
+                            }
                         }
                     }
 

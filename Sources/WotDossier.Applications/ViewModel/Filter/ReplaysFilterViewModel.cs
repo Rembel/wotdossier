@@ -735,8 +735,12 @@ namespace WotDossier.Applications.ViewModel.Filter
             var versions = Versions.Where(x => x.Checked).Select(x => x.Id).ToList();
             var medals = Medals.Where(x => x is MedalCheckListItem && ((MedalCheckListItem)x).Checked).Select(x => x.Id).ToList();
 
-            List<ReplayFile> result = replays.ToList().Where(x => (x.Tank != null && x.Tank.UniqueId() == 0) || 
-                x.Tank != null
+            List<ReplayFile> result = replays.ToList().Where(x =>
+                //show all unknown tanks
+                 (x.Tank != null && TankIcon.Empty.Equals(x.Tank.Icon) && (SelectedFolder == null || x.FolderId == SelectedFolder.Id)) 
+                || 
+                //or apply filter
+                 x.Tank != null
                 &&
                  (SelectedTank == null || x.Tank.UniqueId() == SelectedTank.Id)
                 &&

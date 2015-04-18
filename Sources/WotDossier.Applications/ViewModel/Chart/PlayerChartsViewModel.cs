@@ -18,7 +18,7 @@ namespace WotDossier.Applications.ViewModel.Chart
 
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
-        private List<SellInfo> _lastUsedTanksDataSource;
+        private List<IDataPoint> _lastUsedTanksDataSource;
         private IEnumerable<ReplayFile> _replaysDataSource;
 
         private List<IDataPoint> _efficiencyByTierDataSource;
@@ -39,7 +39,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         /// <value>
         /// The last used tanks data source.
         /// </value>
-        public List<SellInfo> LastUsedTanksDataSource
+        public List<IDataPoint> LastUsedTanksDataSource
         {
             get { return _lastUsedTanksDataSource; }
             set
@@ -248,7 +248,7 @@ namespace WotDossier.Applications.ViewModel.Chart
         public void InitLastUsedTanksChart(PlayerStatisticViewModel playerStatistic, List<ITankStatisticRow> tanks)
         {
             IEnumerable<ITankStatisticRow> viewModels = tanks.Where(x => x.Updated > playerStatistic.PrevStatisticSliceDate);
-            IEnumerable<SellInfo> items = viewModels.Select(x => new SellInfo { TankName = x.Tank, WinPercent = x.WinsPercentForPeriod, Battles = x.BattlesCountDelta });
+            IEnumerable<IDataPoint> items = viewModels.Select(x => new SellInfo (x.BattlesCountDelta, x.WinsPercentForPeriod, x.Tank));
             LastUsedTanksDataSource = items.ToList();
         }
 

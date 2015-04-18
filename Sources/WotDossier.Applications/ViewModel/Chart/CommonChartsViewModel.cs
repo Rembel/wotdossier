@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using Microsoft.Research.DynamicDataDisplay.DataSources;
-using Microsoft.Research.DynamicDataDisplay.PointMarkers;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Framework.Interpolation;
 
@@ -196,15 +194,6 @@ namespace WotDossier.Applications.ViewModel.Chart
             AkimaSplineInterpolation interpolation = new AkimaSplineInterpolation(dataPoints.Select(x => x.X).ToList(),
                 dataPoints.Select(x => x.Y).ToList());
             return erPoints.Select(x => new DateDataPoint(x.X, interpolation.Interpolate(x.X), x.Date)).OrderBy(x => x.X).ToList();
-        }
-
-        private EnumerableDataSource<DateDataPoint> GetDataSource(List<StatisticViewModelBase> statisticViewModels,
-            Func<StatisticViewModelBase, double> predicate, string tooltip)
-        {
-            List<DateDataPoint> erPoints = statisticViewModels.Select(x => new DateDataPoint(x.BattlesCount, predicate(x), x.Updated)).Where(x => x.X > 0 & x.Y > 0).ToList();
-            var dataSource = new EnumerableDataSource<DateDataPoint>(InterpolatePoints(erPoints)) { XMapping = x => x.X, YMapping = y => y.Y };
-            dataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, point => String.Format(tooltip, point.X, point.Y, point.Date));
-            return dataSource;
         }
 
         private List<DateDataPoint> GetDataSource1(List<StatisticViewModelBase> statisticViewModels,

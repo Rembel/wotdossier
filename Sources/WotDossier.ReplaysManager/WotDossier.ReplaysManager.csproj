@@ -527,9 +527,6 @@
       <Link>Controls\Achievements.xaml.cs</Link>
       <DependentUpon>Achievements.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\WotDossier\Controls\ChartPlotter.cs">
-      <Link>Controls\ChartPlotter.cs</Link>
-    </Compile>
     <Compile Include="..\WotDossier\Controls\ClanView.xaml.cs">
       <Link>Controls\ClanView.xaml.cs</Link>
       <DependentUpon>ClanView.xaml</DependentUpon>
@@ -779,20 +776,8 @@
       <Link>Tabs\ServerBattlesTab.xaml.cs</Link>
       <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\WotDossier\UI\ChartHelper.cs">
-      <Link>UI\ChartHelper.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\UI\CountryLabelProvider.cs">
-      <Link>UI\CountryLabelProvider.cs</Link>
-    </Compile>
     <Compile Include="..\WotDossier\UI\MedalSearchItemTemplateSelector.cs">
       <Link>UI\MedalSearchItemTemplateSelector.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\UI\TankTypeLabelProvider.cs">
-      <Link>UI\TankTypeLabelProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\UI\TierLabelProvider.cs">
-      <Link>UI\TierLabelProvider.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Views\AboutWindow.xaml.cs">
       <Link>Views\AboutWindow.xaml.cs</Link>

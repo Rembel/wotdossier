@@ -10,6 +10,7 @@
              xmlns:converters="clr-namespace:WotDossier.Converters"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
+             xmlns:metroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
@@ -23,43 +24,22 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <tabs:PeriodTab Grid.Row="0" x:Name="PeriodTab" HorizontalAlignment="Center" VerticalAlignment="Center"  DataContext="{Binding PlayerStatistic}"></tabs:PeriodTab>
-            <d3:ChartPlotter DataContext="{Binding ChartView}" BorderBrush="Transparent" Grid.Row="0" Grid.Column="1" Name="Chart4" Width="200" Height="200" Margin="20" HorizontalAlignment="Center"
-                                         MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Collapsed" Background="Transparent" BorderThickness="0">
-                <d3:ViewportUIContainer>
-                    <d3:PieChart Name="PieChart" Width="150" Height="150" IndependentValuePath="Battles" DependentValuePath="TankName" ItemsSource="{Binding LastUsedTanksDataSource}"
-							                StartAngle="0">
-                        <d3:PieChart.Resources>
-                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                        </d3:PieChart.Resources>
-
-                        <d3:PieChart.MarkerTemplate>
-                            <DataTemplate>
-                                <d3:PieChartItem Background="{Binding WinPercent, Converter={x:Static color:PercentToColorConverter.Default}}">
-                                    <ToolTipService.ToolTip>
-                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                            <TextBlock>
-                                                            <Bold>
-                                                                <x:Static Member="resources:Resources.Chart_Tooltip_Tank" />
-                                                            </Bold>
-                                                            <TextBlock Text="{Binding TankName}"/>
-                                                            <LineBreak/>
-                                                            <Bold>
-                                                                <x:Static Member="resources:Resources.Chart_Tooltip_Battles" />
-                                                            </Bold>
-                                                            <TextBlock Text="{Binding Battles}"/>
-                                                            <LineBreak/>
-                                                            <Bold>
-                                                                <x:Static Member="resources:Resources.Chart_Tooltip_WinPercent" />
-                                                            </Bold>
-                                                            <TextBlock Text="{Binding WinPercent, StringFormat='0.00'}" Foreground="{Binding WinPercent, Converter={x:Static color:PercentToColorConverter.Default}}"/></TextBlock>
-                                        </ToolTip>
-                                    </ToolTipService.ToolTip>
-                                </d3:PieChartItem>
-                            </DataTemplate>
-                        </d3:PieChart.MarkerTemplate>
-                    </d3:PieChart>
-                </d3:ViewportUIContainer>
-            </d3:ChartPlotter>
+            <metroChart:PieChart DataContext="{Binding ChartView}"  
+                ChartTitleVisibility="Collapsed"
+                ChartLegendVisibility="Collapsed"
+                Foreground="#FFEEEEEE"
+                Background="Transparent"
+                SelectedBrush="Tomato" 
+                Palette="{Binding LastUsedTanksDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}"
+                Grid.Row="0" Grid.Column="1" Width="300" Height="300">
+                <metroChart:PieChart.Series>
+                    <metroChart:ChartSeries
+                        SeriesTitle="Errors"
+                        DisplayMember="TankName"
+                        ValueMember="X"
+                        ItemsSource="{Binding LastUsedTanksDataSource}" />
+                </metroChart:PieChart.Series>
+            </metroChart:PieChart>
             <DataGrid Grid.Row="1" Grid.ColumnSpan="2" MinHeight="100" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto"
                                   ItemsSource="{Binding LastUsedTanksList}" VerticalAlignment="Stretch" IsReadOnly="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>

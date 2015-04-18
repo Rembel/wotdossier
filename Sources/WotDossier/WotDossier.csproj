@@ -53,12 +53,6 @@
     <Reference Include="De.TorstenMandelkow.MetroChart">
       <HintPath>..\..\References\De.TorstenMandelkow.MetroChart.dll</HintPath>
     </Reference>
-    <Reference Include="DynamicDataDisplay">
-      <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
-    </Reference>
-    <Reference Include="DynamicDataDisplay.Markers">
-      <HintPath>..\..\References\DynamicDataDisplay.Markers.dll</HintPath>
-    </Reference>
     <Reference Include="FluentNHibernate, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
@@ -138,7 +132,6 @@
     <Compile Include="Controls\AchievementsCompareStatisticView.xaml.cs">
       <DependentUpon>AchievementsCompareStatisticView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ChartPlotter.cs" />
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
@@ -284,9 +277,6 @@
     <Compile Include="Tabs\Replay\Viewer.xaml.cs">
       <DependentUpon>Viewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\ChartHelper.cs" />
-    <Compile Include="UI\TierLabelProvider.cs" />
-    <Compile Include="UI\CountryLabelProvider.cs" />
     <Compile Include="Tabs\MedalsHistoricalTab.xaml.cs">
       <DependentUpon>MedalsHistoricalTab.xaml</DependentUpon>
     </Compile>
@@ -320,7 +310,6 @@
     <Compile Include="Tabs\ClanBattles.xaml.cs">
       <DependentUpon>ClanBattles.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\TankTypeLabelProvider.cs" />
     <Compile Include="Tabs\XPTab.xaml.cs">
       <DependentUpon>XPTab.xaml</DependentUpon>
     </Compile>

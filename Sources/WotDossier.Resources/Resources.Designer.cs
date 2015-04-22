@@ -1763,6 +1763,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fort battles.
+        /// </summary>
+        public static string BattleType_FortBattles {
+            get {
+                return ResourceManager.GetString("BattleType_FortBattles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Historical battle.
         /// </summary>
         public static string BattleType_Historical {
@@ -1790,7 +1799,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorties.
+        ///   Looks up a localized string similar to Fort sorties.
         /// </summary>
         public static string BattleType_Sorties {
             get {

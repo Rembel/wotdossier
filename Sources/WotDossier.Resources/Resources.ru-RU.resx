@@ -3037,7 +3037,7 @@
     <value>Укрепрайоны. Вылазки</value>
   </data>
   <data name="BattleType_Sorties" xml:space="preserve">
-    <value>Вылазки</value>
+    <value>Укрепрайоны. Вылазки</value>
   </data>
   <data name="Btn_Refresh" xml:space="preserve">
     <value>Обновить</value>
@@ -3564,5 +3564,8 @@
     <value>Обнаружено: {4:0.00}
 {1}: {2:0}
 Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="BattleType_FortBattles" xml:space="preserve">
+    <value>Укрепрайоны. Бои</value>
   </data>
 </root>

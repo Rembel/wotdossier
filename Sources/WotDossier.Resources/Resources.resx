@@ -2954,7 +2954,7 @@ up to 500 m</value>
     <value>Fort sorties</value>
   </data>
   <data name="BattleType_Sorties" xml:space="preserve">
-    <value>Sorties</value>
+    <value>Fort sorties</value>
   </data>
   <data name="Btn_Refresh" xml:space="preserve">
     <value>Refresh</value>
@@ -3446,34 +3446,37 @@ Date: {Date:dd.MM.yyyy}</value>
 {1}: {2:0}
 Date: {Date:dd.MM.yyyy}</value>
   </data>
-    <data name="Chart_TrackerFormatString_WinRate" xml:space="preserve">
+  <data name="Chart_TrackerFormatString_WinRate" xml:space="preserve">
     <value>Win Percent: {4:0.00}
 {1}: {2:0}
 Date: {Date:dd.MM.yyyy}</value>
   </data>
-    <data name="Chart_TrackerFormatString_SurvivePercent" xml:space="preserve">
+  <data name="Chart_TrackerFormatString_SurvivePercent" xml:space="preserve">
     <value>Survive Percent: {4:0.00}
 {1}: {2:0}
 Date: {Date:dd.MM.yyyy}</value>
   </data>
-    <data name="Chart_TrackerFormatString_AvgXp" xml:space="preserve">
+  <data name="Chart_TrackerFormatString_AvgXp" xml:space="preserve">
     <value>Avg. XP: {4:0.0}
 {1}: {2:0}
 Date: {Date:dd.MM.yyyy}</value>
   </data>
-    <data name="Chart_TrackerFormatString_AvgDamage" xml:space="preserve">
+  <data name="Chart_TrackerFormatString_AvgDamage" xml:space="preserve">
     <value>Avg. Damage: {4:0}
 {1}: {2:0}
 Date: {Date:dd.MM.yyyy}</value>
   </data>
-    <data name="Chart_TrackerFormatString_KillDeathRatio" xml:space="preserve">
+  <data name="Chart_TrackerFormatString_KillDeathRatio" xml:space="preserve">
     <value>Kill Death Ratio: {4:0.00}
 {1}: {2:0}
 Date: {Date:dd.MM.yyyy}</value>
   </data>
-    <data name="Chart_TrackerFormatString_AvgSpotted" xml:space="preserve">
+  <data name="Chart_TrackerFormatString_AvgSpotted" xml:space="preserve">
     <value>Avg. Spotted: {4:0.00}
 {1}: {2:0}
 Date: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="BattleType_FortBattles" xml:space="preserve">
+    <value>Fort battles</value>
   </data>
 </root>

@@ -508,6 +508,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleType>(BattleType.CompanyWar, Resources.Resources.BattleType_CompanyWar), 
                 new ListItem<BattleType>(BattleType.Training, Resources.Resources.BattleType_Training), 
                 new ListItem<BattleType>(BattleType.Sorties,Resources.Resources.BattleType_Sorties), 
+                new ListItem<BattleType>(BattleType.FortBattles,Resources.Resources.BattleType_FortBattles), 
                 new ListItem<BattleType>(BattleType.Event,Resources.Resources.BattleType_Event), 
             };
 

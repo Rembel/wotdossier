@@ -82,18 +82,18 @@
                         </TabControl.Resources>
                         <TabItem Header="{x:Static resources:Resources.Tab_Header_PerformanceProgress}">
                             <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="520" Width="1040">
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="250" Width="500" Margin="10"/>
-                                <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="250" Width="500" Margin="10"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="250" Width="500" Margin="10"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="250" Width="500" Margin="10"/>
+                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_Eff}"/>
+                                <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_Wn8}"/>
+                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_WinRate}"/>
+                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_SurvivePercent}"/>
                             </WrapPanel>
                         </TabItem>
                         <TabItem Header="{x:Static resources:Resources.Tab_Header_AveragePerformance}">
                             <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="520" Width="1040">
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="250" Width="500" Margin="10"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="250" Width="500" Margin="10"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="250" Width="500" Margin="10"/>
-                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="250" Width="500" Margin="10"/>
+                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_AvgXp}"/>
+                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_AvgDamage}"/>
+                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_KillDeathRatio}"/>
+                                <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_AvgSpotted}"/>
                             </WrapPanel>
                         </TabItem>
                     </TabControl>

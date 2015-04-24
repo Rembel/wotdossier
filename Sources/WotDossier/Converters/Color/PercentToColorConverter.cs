@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
+using WotDossier.Applications.Logic;
 
 namespace WotDossier.Converters.Color
 {
@@ -33,26 +34,16 @@ namespace WotDossier.Converters.Color
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double eff = (double)value;
-            if (eff >= 64.5)
-            {
+            if (eff >= Constants.Rating.WR_P5)
                 return EffRangeBrushes.Purple;
-            }
-            if (eff >= 56.5)
-            {
+            if (eff >= Constants.Rating.WR_P4)
                 return EffRangeBrushes.Blue;
-            }
-            if (eff >= 51.5)
-            {
+            if (eff >= Constants.Rating.WR_P3)
                 return EffRangeBrushes.Green;
-            }
-            if (eff >= 48.5)
-            {
+            if (eff >= Constants.Rating.WR_P2)
                 return EffRangeBrushes.Yellow;
-            }
-            if (eff >= 46.5)
-            {
+            if (eff >= Constants.Rating.WR_P1)
                 return EffRangeBrushes.Orange;
-            }
             return EffRangeBrushes.Red;
         }
 

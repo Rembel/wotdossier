@@ -9,6 +9,8 @@
              xmlns:converters="clr-namespace:WotDossier.Converters"
              xmlns:gauge="clr-namespace:WotDossier.Framework.Controls.Gauge;assembly=WotDossier.Framework"
              xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:logic="clr-namespace:WotDossier.Applications.Logic;assembly=WotDossier.Applications"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -52,12 +54,12 @@
                                         DialText="{Binding WinsPercent, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_WinsFormat}}"
                                         >
                         <gauge:CircularGaugeControl.RangeDefinitions>
-                            <gauge:RangeDefinition Color="Red" StartValue="0" EndValue="46.5"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Orange" StartValue="46.5" EndValue="48.5"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Yellow" StartValue="48.5" EndValue="51.5"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Green" StartValue="51.5" EndValue="56.5"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Blue" StartValue="56.5" EndValue="64.5"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Purple" StartValue="64.5" EndValue="100"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Red}" StartValue="{x:Static logic:Constants+Rating.WR_P0}" EndValue="{x:Static logic:Constants+Rating.WR_P1}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Orange}" StartValue="{x:Static logic:Constants+Rating.WR_P1}" EndValue="{x:Static logic:Constants+Rating.WR_P2}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Yellow}" StartValue="{x:Static logic:Constants+Rating.WR_P2}" EndValue="{x:Static logic:Constants+Rating.WR_P3}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Green}" StartValue="{x:Static logic:Constants+Rating.WR_P3}" EndValue="{x:Static logic:Constants+Rating.WR_P4}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Blue}" StartValue="{x:Static logic:Constants+Rating.WR_P4}" EndValue="{x:Static logic:Constants+Rating.WR_P5}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Purple}" StartValue="{x:Static logic:Constants+Rating.WR_P5}" EndValue="{x:Static logic:Constants+Rating.WR_P6}"></gauge:RangeDefinition>
                         </gauge:CircularGaugeControl.RangeDefinitions>
 
                     </gauge:CircularGaugeControl>
@@ -93,12 +95,12 @@
                                         DialText="{Binding WN8Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_Wn8Format}}"
                                         >
                         <gauge:CircularGaugeControl.RangeDefinitions>
-                            <gauge:RangeDefinition Color="Red" StartValue="0" EndValue="355"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Orange" StartValue="355" EndValue="820"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Yellow" StartValue="820" EndValue="1370"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Green" StartValue="1370" EndValue="2020"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Blue" StartValue="2020" EndValue="2620"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Purple" StartValue="2620" EndValue="5000"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Red}" StartValue="{x:Static logic:Constants+Rating.WN8_P0}" EndValue="{x:Static logic:Constants+Rating.WN8_P1}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Orange}" StartValue="{x:Static logic:Constants+Rating.WN8_P1}" EndValue="{x:Static logic:Constants+Rating.WN8_P2}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Yellow}" StartValue="{x:Static logic:Constants+Rating.WN8_P2}" EndValue="{x:Static logic:Constants+Rating.WN8_P3}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Green}" StartValue="{x:Static logic:Constants+Rating.WN8_P3}" EndValue="{x:Static logic:Constants+Rating.WN8_P4}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Blue}" StartValue="{x:Static logic:Constants+Rating.WN8_P4}" EndValue="{x:Static logic:Constants+Rating.WN8_P5}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Purple}" StartValue="{x:Static logic:Constants+Rating.WN8_P5}" EndValue="{x:Static logic:Constants+Rating.WN8_P6}"></gauge:RangeDefinition>
                         </gauge:CircularGaugeControl.RangeDefinitions>
 
                     </gauge:CircularGaugeControl>
@@ -134,12 +136,12 @@
                                         DialText="{Binding EffRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_EffFormat}}"
                                         >
                         <gauge:CircularGaugeControl.RangeDefinitions>
-                            <gauge:RangeDefinition Color="Red" StartValue="0" EndValue="610"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Orange" StartValue="610" EndValue="850"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Yellow" StartValue="850" EndValue="1145"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Green" StartValue="1145" EndValue="1475"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Blue" StartValue="1475" EndValue="1775"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Purple" StartValue="1775" EndValue="2200"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Red}" StartValue="{x:Static logic:Constants+Rating.EFF_P0}" EndValue="{x:Static logic:Constants+Rating.EFF_P1}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Orange}" StartValue="{x:Static logic:Constants+Rating.EFF_P1}" EndValue="{x:Static logic:Constants+Rating.EFF_P2}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Yellow}" StartValue="{x:Static logic:Constants+Rating.EFF_P2}" EndValue="{x:Static logic:Constants+Rating.EFF_P3}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Green}" StartValue="{x:Static logic:Constants+Rating.EFF_P3}" EndValue="{x:Static logic:Constants+Rating.EFF_P4}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Blue}" StartValue="{x:Static logic:Constants+Rating.EFF_P4}" EndValue="{x:Static logic:Constants+Rating.EFF_P5}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Purple}" StartValue="{x:Static logic:Constants+Rating.EFF_P5}" EndValue="{x:Static logic:Constants+Rating.EFF_P6}"></gauge:RangeDefinition>
                         </gauge:CircularGaugeControl.RangeDefinitions>
 
                     </gauge:CircularGaugeControl>
@@ -175,12 +177,12 @@
                                         DialText="{Binding KillDeathRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_KillDeathFormat}}"
                                         >
                         <gauge:CircularGaugeControl.RangeDefinitions>
-                            <gauge:RangeDefinition Color="Red" StartValue="0" EndValue="0.6"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Orange" StartValue="0.6" EndValue="0.8"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Yellow" StartValue="0.8" EndValue="1"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Green" StartValue="1" EndValue="1.3"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Blue" StartValue="1.3" EndValue="2"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Purple" StartValue="2" EndValue="15"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Red}" StartValue="0" EndValue="0.6"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Orange}" StartValue="0.6" EndValue="0.8"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Yellow}" StartValue="0.8" EndValue="1"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Green}" StartValue="1" EndValue="1.3"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Blue}" StartValue="1.3" EndValue="2"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Purple}" StartValue="2" EndValue="15"></gauge:RangeDefinition>
                         </gauge:CircularGaugeControl.RangeDefinitions>
 
                     </gauge:CircularGaugeControl>
@@ -216,12 +218,12 @@
                                                 DialText="{Binding DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_DamageRatioFormat}}"
                                         >
                         <gauge:CircularGaugeControl.RangeDefinitions>
-                            <gauge:RangeDefinition Color="Red" StartValue="0" EndValue="0.6"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Orange" StartValue="0.6" EndValue="0.8"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Yellow" StartValue="0.8" EndValue="1"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Green" StartValue="1" EndValue="1.3"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Blue" StartValue="1.3" EndValue="2"></gauge:RangeDefinition>
-                            <gauge:RangeDefinition Color="Purple" StartValue="2" EndValue="15"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Red}" StartValue="0" EndValue="0.6"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Orange}" StartValue="0.6" EndValue="0.8"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Yellow}" StartValue="0.8" EndValue="1"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Green}" StartValue="1" EndValue="1.3"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Blue}" StartValue="1.3" EndValue="2"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static color:EffRangeColors.Purple}" StartValue="2" EndValue="15"></gauge:RangeDefinition>
                         </gauge:CircularGaugeControl.RangeDefinitions>
 
                     </gauge:CircularGaugeControl>

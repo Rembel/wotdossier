@@ -92,6 +92,7 @@
     <Compile Include="Logic\Adapter\FortSortiesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\FortBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\ClanBattlesStatAdapter.cs" />
+    <Compile Include="Logic\Constants.cs" />
     <Compile Include="Logic\Mapper.cs" />
     <Compile Include="Model\BattleModel.cs" />
     <Compile Include="Parser\BaseParser.cs" />

@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
+using WotDossier.Applications.Logic;
 
 namespace WotDossier.Converters.Color
 {
@@ -35,20 +36,18 @@ namespace WotDossier.Converters.Color
             double? eff = value as double?;
             if (eff != null)
             {
-                if (eff >= 2620)
+                if (eff >= Constants.Rating.WN8_P5)
                     return EffRangeBrushes.Purple;
-                if (eff >= 2020)
+                if (eff >= Constants.Rating.WN8_P4)
                     return EffRangeBrushes.Blue;
-                if (eff >= 1370)
+                if (eff >= Constants.Rating.WN8_P3)
                     return EffRangeBrushes.Green;
-                if (eff >= 820)
+                if (eff >= Constants.Rating.WN8_P2)
                     return EffRangeBrushes.Yellow;
-                if (eff >= 355)
+                if (eff >= Constants.Rating.WN8_P1)
                     return EffRangeBrushes.Orange;
-                if (eff >= 0)
-                    return EffRangeBrushes.Red;
             }
-            return EffRangeBrushes.Black;
+            return EffRangeBrushes.Red;
         }
 
         /// <summary>

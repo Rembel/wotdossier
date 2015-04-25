@@ -11,6 +11,8 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
              xmlns:metroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             xmlns:logic="clr-namespace:WotDossier.Applications.Logic;assembly=WotDossier.Applications"
+             xmlns:ratings="clr-namespace:WotDossier.Converters.Ratings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
@@ -30,7 +32,7 @@
                 Foreground="#FFEEEEEE"
                 Background="Transparent"
                 SelectedBrush="Tomato" 
-                Palette="{Binding LastUsedTanksDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:PercentToColorConverter.Default}}"
+                Palette="{Binding LastUsedTanksDataSource, Converter={x:Static ratings:PointsToPalleteConverter.Default}, ConverterParameter={x:Static logic:Rating.WR}}"
                 Grid.Row="0" Grid.Column="1" Width="300" Height="300">
                 <metroChart:PieChart.Series>
                     <metroChart:ChartSeries

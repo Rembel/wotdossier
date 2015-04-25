@@ -94,6 +94,7 @@
     <Compile Include="Logic\Adapter\ClanBattlesStatAdapter.cs" />
     <Compile Include="Logic\Constants.cs" />
     <Compile Include="Logic\Mapper.cs" />
+    <Compile Include="Logic\Rating.cs" />
     <Compile Include="Model\BattleModel.cs" />
     <Compile Include="Parser\BaseParser.cs" />
     <Compile Include="Parser\Parser81.cs" />

@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
-             xmlns:color="clr-namespace:WotDossier.Converters.Color"
              xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             xmlns:logic="clr-namespace:WotDossier.Applications.Logic;assembly=WotDossier.Applications"
+             xmlns:ratings="clr-namespace:WotDossier.Converters.Ratings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
@@ -18,7 +19,7 @@
                         Background="#FF333333"
                         BorderThickness="2"
                         SelectedBrush="Tomato" 
-                        Palette="{Binding EfficiencyByTypeDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:WN8ToColorConverter.Default}}">
+                        Palette="{Binding EfficiencyByTypeDataSource, Converter={x:Static ratings:PointsToPalleteConverter.Default}, ConverterParameter={x:Static logic:Rating.WN8}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
                                 SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Types}"
@@ -35,7 +36,7 @@
                         Background="#FF333333"
                         BorderThickness="2"
                         SelectedBrush="Tomato" 
-                        Palette="{Binding EfficiencyByTierDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:WN8ToColorConverter.Default}}">
+                        Palette="{Binding EfficiencyByTierDataSource, Converter={x:Static ratings:PointsToPalleteConverter.Default}, ConverterParameter={x:Static logic:Rating.WN8}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
                                 SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Levels}"
@@ -52,7 +53,7 @@
                         Background="#FF333333"
                         BorderThickness="2"
                         SelectedBrush="Tomato" 
-                        Palette="{Binding EfficiencyByCountryDataSource, Converter={x:Static color:PointsToPalleteConverter.Default}, ConverterParameter={x:Static color:WN8ToColorConverter.Default}}">
+                        Palette="{Binding EfficiencyByCountryDataSource, Converter={x:Static ratings:PointsToPalleteConverter.Default}, ConverterParameter={x:Static logic:Rating.WN8}}">
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
                                 SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Country}"

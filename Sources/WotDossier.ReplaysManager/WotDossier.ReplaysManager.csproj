@@ -575,41 +575,11 @@
     <Compile Include="..\WotDossier\Converters\Color\DeltaToColorConverter.cs">
       <Link>Converters\Color\DeltaToColorConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\EffectivityToColorConverter.cs">
-      <Link>Converters\Color\EffectivityToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\EffRangeBrushes.cs">
-      <Link>Converters\Color\EffRangeBrushes.cs</Link>
-    </Compile>
     <Compile Include="..\WotDossier\Converters\Color\FragsToColorConverter.cs">
       <Link>Converters\Color\FragsToColorConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\KievArmorRatingToColorConverter.cs">
-      <Link>Converters\Color\KievArmorRatingToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\PercentToColorConverter.cs">
-      <Link>Converters\Color\PercentToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\PointsToPalleteConverter.cs">
-      <Link>Converters\Color\PointsToPalleteConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\PowerRatingToColorConverter.cs">
-      <Link>Converters\Color\PowerRatingToColorConverter.cs</Link>
-    </Compile>
     <Compile Include="..\WotDossier\Converters\Color\SpottedToColorConverter.cs">
       <Link>Converters\Color\SpottedToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\WN6ToColorConverter.cs">
-      <Link>Converters\Color\WN6ToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\WN7ToColorConverter.cs">
-      <Link>Converters\Color\WN7ToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\WN8ToColorConverter.cs">
-      <Link>Converters\Color\WN8ToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\XvmRatingToColorConverter.cs">
-      <Link>Converters\Color\XvmRatingToColorConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\ConsumableCountToOpacityConverter.cs">
       <Link>Converters\ConsumableCountToOpacityConverter.cs</Link>
@@ -697,6 +667,18 @@
     </Compile>
     <Compile Include="..\WotDossier\Converters\PremiumToOpacityConverter.cs">
       <Link>Converters\PremiumToOpacityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\EffRangeBrushes.cs">
+      <Link>Converters\Ratings\EffRangeBrushes.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\PointsToPalleteConverter.cs">
+      <Link>Converters\Ratings\PointsToPalleteConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\RatingsManager.cs">
+      <Link>Converters\Ratings\RatingsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\RatingToColorConverter.cs">
+      <Link>Converters\Ratings\RatingToColorConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\ResourceFormatConverter.cs">
       <Link>Converters\ResourceFormatConverter.cs</Link>

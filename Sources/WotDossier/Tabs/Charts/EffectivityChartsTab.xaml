@@ -40,7 +40,7 @@
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
                                 SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Levels}"
-                                DisplayMember="X"
+                                DisplayMember="Title"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=EfficiencyByTierDataSource}" />
                 </chart:ClusteredColumnChart.Series>

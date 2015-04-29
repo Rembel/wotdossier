@@ -291,9 +291,9 @@ namespace WotDossier.Applications.ViewModel.Chart
             EfficiencyByTierDataSource = InitDataPointSource(
                 values,
                 statisticViewModels,
-                row => (int)row.Tier,
+                row => (int) row.Tier,
                 group => Math.Round(RatingHelper.Wn8(group.ToList()), 1),
-                value => value.ToString());
+                value => Utils.ToRoman(value));
         }
 
         private void InitWn8ByTypeChart(List<ITankStatisticRow> statisticViewModels)
@@ -329,7 +329,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                 statisticViewModels,
                 row => (int) row.Tier,
                 group => group.Any(x => x.BattlesCount > 0) ? Math.Round(group.Sum(y => y.Wins) * 100.0 / group.Sum(y => y.BattlesCount), 1) : 0,
-                value => value.ToString());
+                value => Utils.ToRoman(value));
         }
 
         private void InitWinPercentByTypeChart(List<ITankStatisticRow> statisticViewModels)
@@ -364,7 +364,7 @@ namespace WotDossier.Applications.ViewModel.Chart
                 statisticViewModels,
                 row => (int) row.Tier,
                 group => group.Sum(y => y.BattlesCount),
-                value => value.ToString());
+                value => Utils.ToRoman(value));
         }
 
         private void InitBattlesByTypeChart(List<ITankStatisticRow> statisticViewModels)

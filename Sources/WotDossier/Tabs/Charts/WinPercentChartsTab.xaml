@@ -41,12 +41,12 @@
                 <chart:ClusteredColumnChart.Series>
                     <chart:ChartSeries
                                 SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Levels}"
-                                DisplayMember="X"
+                                DisplayMember="Title"
                                 ValueMember="Y"
                                 ItemsSource="{Binding Path=WinPercentByTierDataSource}" />
                 </chart:ClusteredColumnChart.Series>
             </chart:ClusteredColumnChart>
-            <chart:ClusteredColumnChart Margin="10,0" Width="350" Height="400"
+            <chart:ClusteredColumnChart Margin="10,0" Width="450" Height="400"
                         Style="{StaticResource MinimalChartStyle}"
                         ChartTitle="{x:Static resources:Resources.Chart_WinPercentByCountry}"                
                         ChartSubTitle=""  

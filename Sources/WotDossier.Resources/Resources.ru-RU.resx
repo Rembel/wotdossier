@@ -3031,13 +3031,13 @@
     <value>Клан</value>
   </data>
   <data name="BattleMode_FortBattles" xml:space="preserve">
-    <value>Укрепрайоны. Бои</value>
+    <value>Битва за Укрепрайон</value>
   </data>
   <data name="BattleMode_FortSorties" xml:space="preserve">
-    <value>Укрепрайоны. Вылазки</value>
+    <value>Вылазка</value>
   </data>
   <data name="BattleType_Sorties" xml:space="preserve">
-    <value>Укрепрайоны. Вылазки</value>
+    <value>Вылазка</value>
   </data>
   <data name="Btn_Refresh" xml:space="preserve">
     <value>Обновить</value>
@@ -3566,6 +3566,9 @@
 Дата: {Date:dd.MM.yyyy}</value>
   </data>
   <data name="BattleType_FortBattles" xml:space="preserve">
-    <value>Укрепрайоны. Бои</value>
+    <value>Битва за Укрепрайон</value>
+  </data>
+  <data name="BattleType_Ladder" xml:space="preserve">
+    <value>Ладдер</value>
   </data>
 </root>

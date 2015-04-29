@@ -2948,13 +2948,13 @@ up to 500 m</value>
     <value>Clan</value>
   </data>
   <data name="BattleMode_FortBattles" xml:space="preserve">
-    <value>Fort battles</value>
+    <value>Battle for Stronghold</value>
   </data>
   <data name="BattleMode_FortSorties" xml:space="preserve">
-    <value>Fort sorties</value>
+    <value>Skirmish</value>
   </data>
   <data name="BattleType_Sorties" xml:space="preserve">
-    <value>Fort sorties</value>
+    <value>Skirmish</value>
   </data>
   <data name="Btn_Refresh" xml:space="preserve">
     <value>Refresh</value>
@@ -3477,6 +3477,9 @@ Date: {Date:dd.MM.yyyy}</value>
 Date: {Date:dd.MM.yyyy}</value>
   </data>
   <data name="BattleType_FortBattles" xml:space="preserve">
-    <value>Fort battles</value>
+    <value>Battle for Stronghold</value>
+  </data>
+  <data name="BattleType_Ladder" xml:space="preserve">
+    <value>Ladder</value>
   </data>
 </root>

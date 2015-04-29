@@ -1601,7 +1601,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fort battles.
+        ///   Looks up a localized string similar to Battle for Stronghold.
         /// </summary>
         public static string BattleMode_FortBattles {
             get {
@@ -1610,7 +1610,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fort sorties.
+        ///   Looks up a localized string similar to Skirmish.
         /// </summary>
         public static string BattleMode_FortSorties {
             get {
@@ -1763,7 +1763,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fort battles.
+        ///   Looks up a localized string similar to Battle for Stronghold.
         /// </summary>
         public static string BattleType_FortBattles {
             get {
@@ -1777,6 +1777,15 @@ namespace WotDossier.Resources {
         public static string BattleType_Historical {
             get {
                 return ResourceManager.GetString("BattleType_Historical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ladder.
+        /// </summary>
+        public static string BattleType_Ladder {
+            get {
+                return ResourceManager.GetString("BattleType_Ladder", resourceCulture);
             }
         }
         
@@ -1799,7 +1808,7 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fort sorties.
+        ///   Looks up a localized string similar to Skirmish.
         /// </summary>
         public static string BattleType_Sorties {
             get {

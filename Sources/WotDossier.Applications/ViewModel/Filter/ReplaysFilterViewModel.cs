@@ -504,6 +504,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleType>(BattleType.nations, " - " + Resources.Resources.BattleType_nations), 
                 new ListItem<BattleType>(BattleType.Historical,Resources.Resources.BattleType_Historical), 
                 new ListItem<BattleType>(BattleType.CyberSport,Resources.Resources.BattleType_CyberSport), 
+                new ListItem<BattleType>(BattleType.Ladder,Resources.Resources.BattleType_Ladder), 
                 new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
                 new ListItem<BattleType>(BattleType.CompanyWar, Resources.Resources.BattleType_CompanyWar), 
                 new ListItem<BattleType>(BattleType.Training, Resources.Resources.BattleType_Training), 

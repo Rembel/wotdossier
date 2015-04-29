@@ -14,6 +14,7 @@
         Event = 9,
         Sorties = 10,
         FortBattles = 11,
+        Ladder = 12,
 
 
         ctf = 101,

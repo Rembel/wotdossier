@@ -15,8 +15,7 @@
         <oxy:Plot x:Name="Plot" SnapsToDevicePixels="False" Title="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
                   Height="{Binding Path=Height, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
                          Width="{Binding Path=Width, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}"
-                  Background="#FF333333" PlotAreaBorderThickness="0" IsLegendVisible="False" TextColor="#FFA9A9A9" 
-                  Controller="{Binding Path=Controller, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}">
+                  Background="#FF333333" PlotAreaBorderThickness="0" IsLegendVisible="False" TextColor="#FFA9A9A9" >
             <oxy:Plot.DefaultTrackerTemplate>
                 <ControlTemplate>
                     <oxy:TrackerControl Position="{Binding Position}" LineExtents="{Binding PlotModel.PlotArea}" 

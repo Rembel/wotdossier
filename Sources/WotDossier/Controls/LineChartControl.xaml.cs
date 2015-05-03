@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using OxyPlot;
 using OxyPlot.Wpf;
+using WotDossier.Converters.Color;
 using PlotCommands = OxyPlot.PlotCommands;
 using Series = OxyPlot.Series.Series;
 
@@ -72,8 +74,6 @@ namespace WotDossier.Controls
             }
         }
 
-        public IPlotController Controller { get; set; }
-
         #endregion public string Header
 
         #endregion public type DataSource
@@ -81,49 +81,19 @@ namespace WotDossier.Controls
         public LineChartControl()
         {
             InitializeComponent();
-            Controller = new PlotController();
             // add a tracker command to the mouse enter event
-            Controller.BindMouseEnter(PlotCommands.HoverPointsOnlyTrack);
-
-            //double startx = double.NaN;
-
-            //// Create a command that adds points to the scatter series
-            //var command = new DelegatePlotCommand<OxyMouseDownEventArgs>(
-            //    (v, c, a) =>
-            //    {
-            //        startx = range.InternalAnnotation.InverseTransform(a.Position).X;
-            //        range.MinimumX = startx;
-            //        range.MaximumX = startx + 100;
-            //        Plot.InvalidatePlot(true);
-            //        a.Handled = true;
-            //    });
-
-            //Controller.BindMouseDown(OxyMouseButton.Left, command);
-
-            //Controller.AddMouseManipulator(new );
-
-            //command = new DelegatePlotCommand<OxyMouseDownEventArgs>(
-            //    (v, c, a) =>
-            //    {
-            //        startx = range.InternalAnnotation.InverseTransform(a.Position).X;
-            //        range.MinimumX = startx;
-            //        range.MaximumX = startx;
-            //        Plot.InvalidatePlot(true);
-            //        a.Handled = true;
-            //    });
-
-            //Controller.BindMouseMove(OxyMouseButton.Left, command);
+            Plot.ActualController.BindMouseEnter(PlotCommands.HoverPointsOnlyTrack);
             var plotCommand = new DelegatePlotCommand<OxyMouseDownEventArgs>((view, controller, args) => controller.AddMouseManipulator(view, new CustomMouseManipulator(view, range), args));
-            Controller.BindMouseDown(OxyMouseButton.Left, plotCommand);
+            Plot.ActualController.BindMouseDown(OxyMouseButton.Left, plotCommand);
         }
     }
 
     public class CustomMouseManipulator : MouseManipulator
     {
         private readonly RectangleAnnotation _range;
-        private double startx;
-        private Series currentSeries;
-        private TrackerHitResult startHitResult;
+        private double _startx;
+        private Series _currentSeries;
+        private TrackerHitResult _startHitResult;
 
         public CustomMouseManipulator(IPlotView plotView, RectangleAnnotation range) : base(plotView)
         {
@@ -132,28 +102,18 @@ namespace WotDossier.Controls
 
         public override void Started(OxyMouseEventArgs e)
         {
-            startHitResult = GetPoint(e);
-            startx = _range.InternalAnnotation.InverseTransform(e.Position).X;
-            _range.MinimumX = startx;
-            _range.MaximumX = startx;
-            PlotView.InvalidatePlot(true);
+            _startHitResult = GetPoint(e);
+            _startx = _range.InternalAnnotation.InverseTransform(e.Position).X;
+            _range.MinimumX = _startx;
+            _range.MaximumX = _startx;
+            PlotView.InvalidatePlot();
             e.Handled = true;
             base.Started(e);
         }
 
         public override void Completed(OxyMouseEventArgs e)
         {
-            //if (!double.IsNaN(startx))
-            //{
-            //    var x = _range.InternalAnnotation.InverseTransform(e.Position).X;
-            //    _range.MinimumX = Math.Min(x, startx);
-            //    _range.MaximumX = Math.Max(x, startx);
-            //    _range.Text = string.Format("∫ cos(x) dx =  {0:0.00}", Math.Sin(_range.MaximumX) - Math.Sin(_range.MinimumX));
-            //    //PlotView.Subtitle = string.Format("Integrating from {0:0.00} to {1:0.00}", range.MinimumX, range.MaximumX);
-            //    PlotView.InvalidatePlot(true);
-            //    e.Handled = true;
-            //}
-            startx = double.NaN;
+            _startx = double.NaN;
             base.Completed(e);
         }
 
@@ -162,45 +122,44 @@ namespace WotDossier.Controls
             e.Handled = true;
 
             var trackerHitResult = GetPoint(e);
-            if (trackerHitResult == null || startHitResult == null)
+            if (trackerHitResult == null || _startHitResult == null)
             {
                 return;
             }
             
-            if (!double.IsNaN(startx))
+            if (!double.IsNaN(_startx))
             {
                 var x = _range.InternalAnnotation.InverseTransform(e.Position).X;
-                _range.MinimumX = Math.Min(x, startx);
-                _range.MaximumX = Math.Max(x, startx);
-                if (trackerHitResult.DataPoint.X - startHitResult.DataPoint.X > 0)
+                _range.MinimumX = Math.Min(x, _startx);
+                _range.MaximumX = Math.Max(x, _startx);
+                var xDelta = trackerHitResult.DataPoint.X - _startHitResult.DataPoint.X;
+                if (xDelta > 0)
                 {
-                    _range.Text =
-                        string.Format(
-                            trackerHitResult.XAxis.Title + " =  {0:0.00} \n" + PlotView.ActualModel.Title +
-                            " =  {1:0.00}", trackerHitResult.DataPoint.X - startHitResult.DataPoint.X,
-                            trackerHitResult.DataPoint.Y - startHitResult.DataPoint.Y);
+                    var yDelta = trackerHitResult.DataPoint.Y - _startHitResult.DataPoint.Y;
+                    _range.Text = string.Format("{2} =  {0:+#,0.00;-#,0.00;0} \n{3} =  {1:+#,0.00;-#,0.00;0}", xDelta, yDelta, trackerHitResult.XAxis.Title, PlotView.ActualModel.Title);
+                    _range.TextColor = ((SolidColorBrush) DeltaToColorConverter.Default.Convert(yDelta, null, null, null)).Color;
                 }
                 else
                 {
                     _range.Text = string.Empty;
                 }
-                PlotView.InvalidatePlot(true);
+                PlotView.InvalidatePlot();
             }
             base.Delta(e);
         }
 
         private TrackerHitResult GetPoint(OxyMouseEventArgs e)
         {
-            if (this.currentSeries == null)
+            if (_currentSeries == null)
             {
                 // get the nearest
-                this.currentSeries = this.PlotView.ActualModel != null
-                    ? this.PlotView.ActualModel.GetSeriesFromPoint(e.Position)
+                _currentSeries = PlotView.ActualModel != null
+                    ? PlotView.ActualModel.GetSeriesFromPoint(e.Position)
                     : null;
             }
 
-            var actualModel = this.PlotView.ActualModel;
-            if (actualModel == null || currentSeries == null)
+            var actualModel = PlotView.ActualModel;
+            if (actualModel == null || _currentSeries == null)
             {
                 return null;
             }
@@ -210,7 +169,7 @@ namespace WotDossier.Controls
                 return null;
             }
 
-            return currentSeries.GetNearestPoint(e.Position, false);
+            return _currentSeries.GetNearestPoint(e.Position, false);
         }
     }
 }

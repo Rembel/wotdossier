@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Input;
 using Common.Logging;
 using Ionic.Zip;
+using Newtonsoft.Json;
 using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
@@ -518,8 +519,6 @@ namespace WotDossier.Applications.ViewModel
                         || ReplayFilter.SelectedFolder != null && x.Id == ReplayFilter.SelectedFolder.Id) ?? root;
 
                 ChartView.InitReplaysStat();
-                //ChartView.InitBattlesByMapChart();
-                //ChartView.InitWinReplaysPercentByMapChart();
             }
             finally
             {

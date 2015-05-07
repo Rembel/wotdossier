@@ -21,6 +21,7 @@ namespace WotDossier.Applications.ViewModel
 
         public DelegateCommand<object> RowDoubleClickCommand { get; set; }
         public DelegateCommand SearchCommand { get; set; }
+        public DelegateCommand<object> AddToFavoriteCommand { get; set; }
 
         public List<SearchResultRowViewModel> List
         {

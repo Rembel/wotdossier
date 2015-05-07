@@ -146,6 +146,7 @@ namespace WotDossier.Applications.ViewModel
             var days = (DateTime.Now - statAdapter.Created).Days;
             statistic.BattlesPerDay = statistic.BattlesCount / (days == 0 ? 1 : days);
             statistic.Created = Utils.UnixDateToDateTime( (long) player.dataField.created_at);
+            statistic.RBR = player.dataField.global_rating;
             if (player.dataField.clan_id != null)
             {
                 AppSettings settings = SettingsReader.Get();

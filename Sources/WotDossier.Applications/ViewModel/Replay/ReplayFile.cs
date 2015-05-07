@@ -109,14 +109,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         public Guid FolderId { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="ReplayFile" /> is exists.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if exists; otherwise, <c>false</c>.
-        /// </value>
-        public abstract bool Exists { get; }
-
-        /// <summary>
         /// Gets the phisical path.
         /// </summary>
         /// <value>
@@ -127,7 +119,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public abstract string Name { get; }
+        public string Name { get; set; }
 
         public bool IsAlive { get; set; }
 

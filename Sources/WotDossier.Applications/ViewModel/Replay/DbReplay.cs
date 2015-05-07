@@ -9,31 +9,12 @@ namespace WotDossier.Applications.ViewModel.Replay
         private readonly Domain.Replay.Replay _replay;
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="ReplayFile" /> is exists.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if exists; otherwise, <c>false</c>.
-        /// </value>
-        public override bool Exists
-        {
-            get { return _replay != null; }
-        }
-
-        /// <summary>
         /// Gets the phisical path.
         /// </summary>
         /// <value>
         /// The phisical path.
         /// </value>
         public override string PhisicalPath
-        {
-            get { return null; }
-        }
-
-        /// <summary>
-        /// Gets the name.
-        /// </summary>
-        public override string Name
         {
             get { return null; }
         }

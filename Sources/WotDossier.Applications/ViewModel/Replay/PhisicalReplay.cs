@@ -9,17 +9,6 @@ namespace WotDossier.Applications.ViewModel.Replay
     public class PhisicalReplay : ReplayFile
     {
         /// <summary>
-        /// Gets a value indicating whether this <see cref="ReplayFile" /> is exists.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if exists; otherwise, <c>false</c>.
-        /// </value>
-        public override bool Exists
-        {
-            get { return PhisicalFile.Exists; }
-        }
-
-        /// <summary>
         /// Gets the phisical path.
         /// </summary>
         /// <value>
@@ -31,14 +20,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         }
 
         /// <summary>
-        /// Gets the name.
-        /// </summary>
-        public override string Name
-        {
-            get { return PhisicalFile != null ? PhisicalFile.Name : null; }
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="PhisicalReplay" /> class.
         /// </summary>
         /// <param name="replayFileInfo">The replay file info.</param>
@@ -47,6 +28,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public PhisicalReplay(FileInfo replayFileInfo, Domain.Replay.Replay replay, Guid folderId) : base(replay, folderId)
         {
             PhisicalFile = replayFileInfo;
+            Name = replayFileInfo.Name;
         }
 
         /// <summary>

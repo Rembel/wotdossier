@@ -9,17 +9,6 @@ namespace WotDossier.Applications.ViewModel.Replay
     public class PhisicalReplay : ReplayFile
     {
         /// <summary>
-        /// Gets the phisical path.
-        /// </summary>
-        /// <value>
-        /// The phisical path.
-        /// </value>
-        public override string PhisicalPath
-        {
-            get { return PhisicalFile != null ? PhisicalFile.FullName : null; }
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="PhisicalReplay" /> class.
         /// </summary>
         /// <param name="replayFileInfo">The replay file info.</param>
@@ -27,7 +16,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <param name="folderId">The folder id.</param>
         public PhisicalReplay(FileInfo replayFileInfo, Domain.Replay.Replay replay, Guid folderId) : base(replay, folderId)
         {
-            PhisicalFile = replayFileInfo;
+            PhisicalPath = replayFileInfo.FullName;
             Name = replayFileInfo.Name;
         }
 
@@ -37,17 +26,19 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <param name="targetFolder">The target folder.</param>
         public override void Move(ReplayFolder targetFolder)
         {
-            if (PhisicalFile != null)
+            if (!string.IsNullOrEmpty(PhisicalPath) && File.Exists(PhisicalPath))
             {
-                string destFileName = Path.Combine(targetFolder.Path, PhisicalFile.Name);
-                if (!File.Exists(destFileName))
+                string destPath = Path.Combine(targetFolder.Path, Name);
+                if (!File.Exists(destPath))
                 {
-                    PhisicalFile.MoveTo(destFileName);
+                    File.Move(PhisicalPath, destPath);
                 }
                 else
                 {
-                    PhisicalFile.Delete();
+                    File.Delete(PhisicalPath);
                 }
+
+                PhisicalPath = destPath;
             }
         }
 
@@ -58,9 +49,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <returns></returns>
         public override Domain.Replay.Replay ReplayData(bool readAdvancedData = false)
         {
-            if (PhisicalFile != null)
+            if (!string.IsNullOrEmpty(PhisicalPath) && File.Exists(PhisicalPath))
             {
-                return ReplayFileHelper.ParseReplay(PhisicalFile, ClientVersion, readAdvancedData);
+                return ReplayFileHelper.ParseReplay(new FileInfo(PhisicalPath), ClientVersion, readAdvancedData);
             }
             return null;
         }
@@ -71,8 +62,10 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// <returns></returns>
         public override void Delete()
         {
-            NativeMethods.DeleteFileOperation(PhisicalFile.FullName);
-            //PhisicalFile.Delete();
+            if (!string.IsNullOrEmpty(PhisicalPath) && File.Exists(PhisicalPath))
+            {
+                NativeMethods.DeleteFileOperation(PhisicalPath);
+            }
         }
 
         public override string ToString()

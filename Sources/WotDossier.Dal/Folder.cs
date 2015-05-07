@@ -13,6 +13,24 @@ namespace WotDossier.Dal
             return dossierCacheFolder;
         }
 
+        public static string GetDossierAppDataFolder()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string dossierCacheFolder = appDataPath + @"\WotDossier";
+            if (!Directory.Exists(dossierCacheFolder))
+            {
+                try
+                {
+                    Directory.CreateDirectory(dossierCacheFolder);
+                }
+                catch (Exception e)
+                {
+                    
+                }
+            }
+            return dossierCacheFolder;
+        }
+
         public static string AssemblyDirectory()
         {
             var uri = new UriBuilder(Assembly.GetExecutingAssembly().CodeBase);

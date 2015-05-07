@@ -55,7 +55,7 @@ namespace WotDossier.Applications.ViewModel.Replay
                     try
                     {
                         ReplayUploader replayUploader = new ReplayUploader();
-                        ReplayFile.Link = replayUploader.Upload(ReplayFile.PhisicalFile, ReplayName, ReplayDescription,
+                        ReplayFile.Link = replayUploader.Upload(new FileInfo(ReplayFile.PhisicalPath), ReplayName, ReplayDescription,
                             string.Format(appSettings.ReplaysUploadServerPath, appSettings.Server, appSettings.PlayerId, appSettings.PlayerName));
                         _repository.SaveReplay(ReplayFile.PlayerId, ReplayFile.ReplayId, ReplayFile.Link);
                         ViewTyped.Close();

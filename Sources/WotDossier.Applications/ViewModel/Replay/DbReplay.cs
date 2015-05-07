@@ -9,17 +9,6 @@ namespace WotDossier.Applications.ViewModel.Replay
         private readonly Domain.Replay.Replay _replay;
 
         /// <summary>
-        /// Gets the phisical path.
-        /// </summary>
-        /// <value>
-        /// The phisical path.
-        /// </value>
-        public override string PhisicalPath
-        {
-            get { return null; }
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="DbReplay" /> class.
         /// </summary>
         /// <param name="replay">The replay.</param>

@@ -188,6 +188,20 @@ namespace WotDossier.Applications.ViewModel
             LoadListSettings();
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
+            Application.Current.Exit += CurrentOnExit;
+        }
+
+        private void CurrentOnExit(object sender, ExitEventArgs exitEventArgs)
+        {
+            try
+            {
+                var path = Path.Combine(Folder.GetDossierAppDataFolder(), "replays.cache");
+                File.WriteAllText(path, JsonConvert.SerializeObject(_replays));
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on replays cache update", e);
+            }
         }
 
         private void LoadListSettings()
@@ -526,6 +540,12 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        private void Cache(List<ReplayFile> replays)
+        {
+            var dossierAppDataFolder = Path.Combine(Folder.GetDossierAppDataFolder(), "replays.cache");
+            File.WriteAllText(dossierAppDataFolder, JsonConvert.SerializeObject(replays, Formatting.Indented));
+        }
+
         private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(Guid folderId, IEnumerable<string> oldFiles, string[] newList)
         {
             List<ListUpdateOperation<ReplayFile>> result = new List<ListUpdateOperation<ReplayFile>>();
@@ -711,7 +731,7 @@ namespace WotDossier.Applications.ViewModel
         private bool CanUploadReplay(object row)
         {
             ReplayFile model = row as ReplayFile;
-            return model != null && model.PhisicalFile != null && string.IsNullOrEmpty(model.Link);
+            return model != null && model.PhisicalPath != null && string.IsNullOrEmpty(model.Link);
         }
 
         private bool CanUploadReplays(object rows)
@@ -746,9 +766,9 @@ namespace WotDossier.Applications.ViewModel
 
                     foreach (var replay in replays)
                     {
-                        if (replay.PhisicalFile != null)
+                        if (replay.PhisicalPath != null)
                         {
-                            WotReplaysSiteResponse response = replayUploader.Upload(replay.PhisicalFile,
+                            WotReplaysSiteResponse response = replayUploader.Upload(new FileInfo(replay.PhisicalPath),
                                 appSettings.PlayerId, appSettings.PlayerName);
                             if (response != null && response.Result == true)
                             {

@@ -9,6 +9,13 @@ namespace WotDossier.Applications.ViewModel.Replay
     public class PhisicalReplay : ReplayFile
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="PhisicalReplay"/> class.
+        /// </summary>
+        public PhisicalReplay()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PhisicalReplay" /> class.
         /// </summary>
         /// <param name="replayFileInfo">The replay file info.</param>

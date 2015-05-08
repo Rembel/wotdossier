@@ -159,10 +159,12 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected ITankStatisticRow ToTankStatisticRow(IGrouping<int, TankStatisticEntityBase> groupedEntities, Func<TankJson, StatisticJson> predicate)
         {
-            List<TankJson> statisticViewModels = groupedEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => predicate(x).battlesCount).First();
-            List<TankJson> prevStatisticViewModels = statisticViewModels.Where(x => predicate(x).battlesCount != predicate(currentStatistic).battlesCount).ToList();
-            var model = ToTankStatisticRow(currentStatistic, prevStatisticViewModels);
+            var lastStatisticEntity = groupedEntities.OrderByDescending(x => x.BattlesCount).First();
+            List<TankStatisticEntityBase> oldStatisticEntities = groupedEntities.Where(x => x.BattlesCount != lastStatisticEntity.BattlesCount).ToList();
+
+            TankJson lastStatistic = UnZipObject(lastStatisticEntity.Raw);
+            List<TankJson> oldStatistic = oldStatisticEntities.Select(x => UnZipObject(x.Raw)).ToList();
+            var model = ToTankStatisticRow(lastStatistic, oldStatistic);
             model.IsFavorite = groupedEntities.First().TankIdObject.IsFavorite;
             return model;
         }

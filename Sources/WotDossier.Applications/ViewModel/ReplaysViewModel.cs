@@ -188,15 +188,14 @@ namespace WotDossier.Applications.ViewModel
             LoadListSettings();
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
-            Application.Current.Exit += CurrentOnExit;
+            Application.Current.Exit += OnAppExit;
         }
 
-        private void CurrentOnExit(object sender, ExitEventArgs exitEventArgs)
+        private void OnAppExit(object sender, ExitEventArgs exitEventArgs)
         {
             try
             {
-                var path = Path.Combine(Folder.GetDossierAppDataFolder(), "replays.cache");
-                File.WriteAllText(path, JsonConvert.SerializeObject(_replays));
+                Cache(_replays);
             }
             catch (Exception e)
             {
@@ -287,7 +286,11 @@ namespace WotDossier.Applications.ViewModel
             {
                 ReplaysFolders = ReplaysManager.GetFolders();
             }
-            //_replays.Clear();
+
+            if (!_replays.Any())
+            {
+                _replays = LoadFromCache().ToList();
+            }
 
             List<ReplayFolder> replayFolders = ReplaysFolders.GetAll();
 
@@ -455,7 +458,8 @@ namespace WotDossier.Applications.ViewModel
 
                         _log.WarnFormat("new files count: {0}", newFiles.Count());
 
-                        List<string> oldFiles = replayFolder.Files;
+                        //List<string> oldFiles = replayFolder.Files;
+                        List<string> oldFiles = _replays.Where(x => x.FolderId == replayFolder.Id).Select(x => x.PhisicalPath).ToList();
 
                         _log.WarnFormat("old files count: {0}", oldFiles.Count());
 
@@ -478,7 +482,7 @@ namespace WotDossier.Applications.ViewModel
 
                         _log.WarnFormat("replays after update count: {0}", _replays.Count());
 
-                        replayFolder.Files = newFiles.ToList();
+                        //replayFolder.Files = newFiles.ToList();
                         replayFolder.Count = _replays.Count(x => x.FolderId == replayFolder.Id);
                     }
                 }
@@ -542,8 +546,31 @@ namespace WotDossier.Applications.ViewModel
 
         private void Cache(List<ReplayFile> replays)
         {
-            var dossierAppDataFolder = Path.Combine(Folder.GetDossierAppDataFolder(), "replays.cache");
+            var dossierAppDataFolder = ReplaysCacheFilePath();
             File.WriteAllText(dossierAppDataFolder, JsonConvert.SerializeObject(replays, Formatting.Indented));
+        }
+
+        private static string ReplaysCacheFilePath()
+        {
+            return Path.Combine(Folder.GetDossierAppDataFolder(), "replays.cache");
+        }
+
+        private IEnumerable<ReplayFile> LoadFromCache()
+        {
+            var dossierAppDataFolder = ReplaysCacheFilePath();
+            if (File.Exists(dossierAppDataFolder))
+            {
+                try
+                {
+                    var content = File.ReadAllText(dossierAppDataFolder);
+                    return JsonConvert.DeserializeObject<List<PhisicalReplay>>(content).Where(x => x.FolderId != ReplaysManager.DeletedFolder.Id);
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on replays cache load", e);
+                }
+            }
+            return new List<ReplayFile>();
         }
 
         private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(Guid folderId, IEnumerable<string> oldFiles, string[] newList)
@@ -708,7 +735,7 @@ namespace WotDossier.Applications.ViewModel
                         _replays.Remove(replayFile);
 
                         ReplayFolder replayFolder = _replaysFolders.GetAll().First(x => x.Id == replayFile.FolderId);
-                        replayFolder.Files.Remove(replayFile.PhisicalPath);
+                        //replayFolder.Files.Remove(replayFile.PhisicalPath);
                     }
                     catch (Exception e)
                     {

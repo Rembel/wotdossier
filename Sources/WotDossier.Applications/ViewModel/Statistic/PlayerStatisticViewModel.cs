@@ -13,10 +13,6 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         #region Common
 
-        protected PlayerStatisticViewModel()
-        {
-        }
-
         public string Name { get; set; }
 
         public long AccountId { get; set; }
@@ -110,7 +106,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         private PlayerStatisticViewModel TypedPrevStatistic
         {
-            get { return (PlayerStatisticViewModel)PrevStatisticSlice; }
+            get { return (PlayerStatisticViewModel)PrevStatisticSlice.Statistic; }
         }
 
         #region Rating delta
@@ -277,7 +273,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
             }
         }
 
-        protected PlayerStatisticViewModel(StatisticEntity stat, List<PlayerStatisticViewModel> list) : base(stat.Updated, list)
+        protected PlayerStatisticViewModel(StatisticEntity stat, List<StatisticSlice> list) : base(stat.Updated, list)
         {
             BattlesCount = stat.BattlesCount;
             Wins = stat.Wins;

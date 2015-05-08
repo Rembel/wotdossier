@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Interfaces;
@@ -226,7 +227,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             if (stat.dataField.vehicles != null)
             {
-                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new RandomBattlesTankStatisticRowViewModel(Dal.DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
+                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new RandomBattlesTankStatisticRowViewModel(Dal.DataMapper.Map(x), new List<StatisticSlice>())).OrderByDescending(x => x.Tier).ToList();
                 WN8Rating = RatingHelper.Wn8(Tanks);
                 PerformanceRating = RatingHelper.PerformanceRating(Tanks);
 

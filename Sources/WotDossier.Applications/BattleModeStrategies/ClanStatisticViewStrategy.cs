@@ -44,8 +44,8 @@ namespace WotDossier.Applications.BattleModeStrategies
             List<PlayerStatisticEntity> statisticEntities = new List<PlayerStatisticEntity> { _currentSnapshot };
 
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                .Select(ToViewModel).ToList();
+            List<StatisticSlice> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
+                .Select(entity => ToViewModel(entity).ToStatisticSlice()).ToList();
 
             PlayerStatisticViewModel currentStatisticViewModel = ToViewModel(currentStatistic, oldStatisticEntities);
             currentStatisticViewModel.Name = player.Name;
@@ -64,9 +64,9 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="prevStatisticViewModels">The previous statistic view models.</param>
         /// <returns></returns>
-        protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<TankJson> prevStatisticViewModels)
+        protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<StatisticSlice> prevStatisticViewModels)
         {
-            return new ClanTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
+            return new ClanTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="oldStatisticEntities">The old statistic entities.</param>
         /// <returns></returns>
-        protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<PlayerStatisticViewModel> oldStatisticEntities)
+        protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<StatisticSlice> oldStatisticEntities)
         {
             return new ClanBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
         }

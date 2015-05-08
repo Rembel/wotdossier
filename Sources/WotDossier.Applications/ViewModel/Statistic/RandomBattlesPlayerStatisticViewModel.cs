@@ -7,11 +7,11 @@ namespace WotDossier.Applications.ViewModel.Statistic
 {
     public class RandomBattlesPlayerStatisticViewModel : PlayerStatisticViewModel, IRandomBattlesAchievements
     {
-        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<StatisticSlice>())
         {
         }
 
-        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        public RandomBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<StatisticSlice> list)
             : base(stat, list)
         {
             #region Ratings init

@@ -12,12 +12,12 @@ namespace WotDossier.Applications.ViewModel.Statistic
     public abstract class PeriodStatisticViewModel : INotifyPropertyChanged
     {
         #region Fields
-        
-        private readonly IEnumerable<PeriodStatisticViewModel> _list;
+
+        private readonly IEnumerable<StatisticSlice> _list;
 
         #endregion
 
-        protected PeriodStatisticViewModel PrevStatisticSlice { get; set; }
+        protected StatisticSlice PrevStatisticSlice { get; set; }
 
         /// <summary>
         /// Stat updated
@@ -26,7 +26,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         public DateTime PrevStatisticSliceDate
         {
-            get { return PrevStatisticSlice.Updated; }
+            get { return PrevStatisticSlice.Date; }
         }
 
         /// <summary>
@@ -41,14 +41,14 @@ namespace WotDossier.Applications.ViewModel.Statistic
         /// </summary>
         /// <param name="updated">The updated.</param>
         /// <param name="list">The list.</param>
-        protected PeriodStatisticViewModel(DateTime updated, IEnumerable<PeriodStatisticViewModel> list)
+        protected PeriodStatisticViewModel(DateTime updated, IEnumerable<StatisticSlice> list)
         {
             _list = list;
             Updated = updated;
 
             AppSettings appSettings = SettingsReader.Get();
-            PeriodStatisticViewModel prevStatistic = GetPrevStatistic(appSettings.PeriodSettings.Period, appSettings.PeriodSettings.PrevDate);
-            PrevStatisticSlice = prevStatistic ?? this;
+            StatisticSlice prevStatistic = GetPrevStatistic(appSettings.PeriodSettings.Period, appSettings.PeriodSettings.PrevDate);
+            PrevStatisticSlice = prevStatistic ?? this.ToStatisticSlice();
 
             if (_list.Any())
             {
@@ -67,28 +67,28 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
             if (statisticPeriod != StatisticPeriod.LastNBattles)
             {
-                PeriodStatisticViewModel prevStatistic = GetPrevStatistic(statisticPeriod, prevDateTime);
+                StatisticSlice prevStatistic = GetPrevStatistic(statisticPeriod, prevDateTime);
                 SetPreviousStatistic(prevStatistic);
             }
         }
 
-        private PeriodStatisticViewModel GetPrevStatistic(StatisticPeriod statisticPeriod, DateTime? prevDateTime)
+        private StatisticSlice GetPrevStatistic(StatisticPeriod statisticPeriod, DateTime? prevDateTime)
         {
-            PeriodStatisticViewModel prevStatistic = null;
+            StatisticSlice prevStatistic = null;
             switch (statisticPeriod)
             {
                 case StatisticPeriod.Recent:
-                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= Updated);
+                    prevStatistic = _list.OrderByDescending(x => x.Date).FirstOrDefault(x => x.Date <= Updated);
                     break;
                 case StatisticPeriod.LastWeek:
-                    prevStatistic = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= DateTime.Now.AddDays(-7));
+                    prevStatistic = _list.OrderByDescending(x => x.Date).FirstOrDefault(x => x.Date <= DateTime.Now.AddDays(-7));
                     break;
                 case StatisticPeriod.AllObservationPeriod:
-                    prevStatistic = _list.OrderBy(x => x.Updated).FirstOrDefault();
+                    prevStatistic = _list.OrderBy(x => x.Date).FirstOrDefault();
                     break;
                 case StatisticPeriod.Custom:
-                    prevStatistic  = _list.OrderByDescending(x => x.Updated).FirstOrDefault(x => x.Updated <= prevDateTime) ??
-                                     _list.OrderBy(x => x.Updated).FirstOrDefault();
+                    prevStatistic  = _list.OrderByDescending(x => x.Date).FirstOrDefault(x => x.Date <= prevDateTime) ??
+                                     _list.OrderBy(x => x.Date).FirstOrDefault();
                     break;
             }
             return prevStatistic;
@@ -98,9 +98,9 @@ namespace WotDossier.Applications.ViewModel.Statistic
         /// Sets the previous statistic.
         /// </summary>
         /// <param name="prevStatistic">The previous statistic.</param>
-        public void SetPreviousStatistic(PeriodStatisticViewModel prevStatistic)
+        public void SetPreviousStatistic(StatisticSlice prevStatistic)
         {
-            PrevStatisticSlice = prevStatistic ?? this;
+            PrevStatisticSlice = prevStatistic ?? this.ToStatisticSlice();
 
             PropertyInfo[] propertyInfos = GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (var propertyInfo in propertyInfos)
@@ -117,7 +117,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
             where T : PeriodStatisticViewModel
         {
             List<T> list = new List<T>();
-            list.AddRange((IEnumerable<T>) _list);
+            list.AddRange(_list.Select(x => (T)x.Statistic));
             list.Add((T) this);
             return list;
         }
@@ -135,6 +135,61 @@ namespace WotDossier.Applications.ViewModel.Statistic
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    public class StatisticSlice
+    {
+        private readonly Lazy<PeriodStatisticViewModel> _lazyModel;
+        private PeriodStatisticViewModel _statistic;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StatisticSlice" /> class.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <param name="lazyModel">The lazy model.</param>
+        public StatisticSlice(DateTime date, Lazy<PeriodStatisticViewModel> lazyModel)
+        {
+            Date = date;
+            _lazyModel = lazyModel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StatisticSlice"/> class.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <param name="model">The model.</param>
+        public StatisticSlice(DateTime date, PeriodStatisticViewModel model)
+        {
+            Date = date;
+            Statistic = model;
+        }
+
+        /// <summary>
+        /// Gets or sets the date.
+        /// </summary>
+        public DateTime Date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the statistic.
+        /// </summary>
+        public PeriodStatisticViewModel Statistic
+        {
+            get { return _statistic ?? (_statistic = _lazyModel.Value); }
+            set { _statistic = value; }
+        }
+    }
+
+    public static class StatisticSliceExtensions
+    {
+        public static StatisticSlice ToStatisticSlice(this PeriodStatisticViewModel statistic)
+        {
+            return new StatisticSlice(statistic.Updated, statistic);
+        }
+
+        public static StatisticSlice ToStatisticSlice(this PeriodStatisticViewModel statistic, Func<PeriodStatisticViewModel> valueFactory)
+        {
+            return new StatisticSlice(statistic.Updated, new Lazy<PeriodStatisticViewModel>(valueFactory));
         }
     }
 }

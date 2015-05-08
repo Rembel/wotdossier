@@ -19,8 +19,8 @@ namespace WotDossier.Applications.ViewModel.Statistic
         /// </summary>
         /// <param name="updated">The updated.</param>
         /// <param name="list">The list.</param>
-        protected StatisticViewModelBase(DateTime updated, IEnumerable<StatisticViewModelBase> list)
-            : base(updated, list)
+        protected StatisticViewModelBase(DateTime updated, IEnumerable<StatisticSlice> list)
+            : base(updated, list ?? new List<StatisticSlice>())
         {
         }
 
@@ -320,7 +320,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
 
         private StatisticViewModelBase TypedPrevStatistic
         {
-            get { return (StatisticViewModelBase)PrevStatisticSlice; }
+            get { return (StatisticViewModelBase)PrevStatisticSlice.Statistic; }
         }
     }
 }

@@ -126,7 +126,7 @@
 					<texName>gui/maps/vehicles/decals/inscriptions/japan/inscription_1010.dds</texName>
 					<userString> #vehicle_customization_cn:inscription/japan/inscription_10</userString>
 				</inscription>
-				-->
+-->
 				<!--//BLOCK_END:CN_INSCRIPTIONS//-->
 			</inscriptions>
 		</japan>
@@ -137,14 +137,23 @@
 			<inscriptions>
 				<inscription>
 					<id> 701 </id>
-					<texName> gui/maps/vehicles/decals/inscriptions/clan_content/inscription_04.dds </texName>
+					<texName> gui/maps/vehicles/decals/inscriptions/clan_content/inscription_04.dds  </texName>
 					<userString> #vehicle_customization:inscription/clan_content/inscription_04 </userString>
 				</inscription>
 				<inscription>
-					<id> 711</id>
-					<texName> gui/maps/vehicles/decals/inscriptions/clan_content/inscription_14.dds</texName>
-					<userString> #vehicle_customization:inscription/clan_content/inscription_14</userString>
+					<id> 711 </id>
+					<texName> gui/maps/vehicles/decals/inscriptions/clan_content/inscription_14.dds </texName>
+					<userString> #vehicle_customization:inscription/clan_content/inscription_14 </userString>
 				</inscription>
+				<!--//BLOCK_BEGIN:NONCN_INSCRIPTIONS//-->
+				<!-- -->
+				<inscription>
+					<id> 724 </id>
+					<texName> gui/maps/vehicles/decals/inscriptions/clan_content/inscription_24.dds </texName>
+					<userString> #vehicle_customization:inscription/clan_content/inscription_24 </userString>
+				</inscription>
+				<!-- -->
+				<!--//BLOCK_END:NONCN_INSCRIPTIONS//-->
 			</inscriptions>
 		</clan_content>
 	</inscriptions>
@@ -250,6 +259,7 @@
 				<Chi_Ri_IGR> 5 5 0.000000 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 5 4.9 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 5.1 5.3 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 5 5 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</winter_white>
 		<winter_spots>
@@ -287,6 +297,7 @@
 				<Chi_Ri_IGR> 5 5 0.000000 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 5.1 5 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 4.7 4.8 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 4.8 4.8 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</winter_spots>
 		<summer_four-color>
@@ -324,6 +335,7 @@
 				<Chi_Ri_IGR> 5 5 0.000000 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 4.5 4.4 0.1 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 4.3 4.4 0.22 0.22 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 4.3 4.3 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</summer_four-color>
 		<summer_three-color_spots>
@@ -361,6 +373,7 @@
 				<Chi_Ri_IGR> 3 3 0.72 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 4 4 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 5.4 5.4 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 5.5 5.5 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</summer_three-color_spots>
 		<desert_blue-brown>
@@ -398,6 +411,7 @@
 				<Chi_Ri_IGR> 3 3 0.02 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3.6 3.5 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 4.8 4.8 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 4.8 4.8 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</desert_blue-brown>
 		<desert_green-brown_spots>
@@ -435,6 +449,7 @@
 				<Chi_Ri_IGR> 5 5 0.3 0.26 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3.8 3.7 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 4.2 4.2 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 4.1 4.1 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</desert_green-brown_spots>
 		<!--//BLOCK_BEGIN:KR_IGR_CAMOUFLAGES//-->
@@ -474,6 +489,7 @@
 				<Chi_Ri_IGR> 3 3 0.2 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3 3 0.26 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 4.3 4.3 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 3.2 3.2 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_Winter>
@@ -512,6 +528,7 @@
 				<Chi_Ri_IGR> 3 3 0.000000 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3.7 3.7 0.32 0.44 </ST_B1_IGR>
 				<J18_STA_2_3> 3.6 3.6 0.09 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 3.7 3.7 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_Summer>
@@ -550,6 +567,7 @@
 				<Chi_Ri_IGR> 3 3 0.000000 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3 3 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 3.6 3.6 0.11 0.02 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 3.4 3.4 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_Desert>
@@ -588,6 +606,7 @@
 				<Chi_Ri_IGR> 3.9 3.9 0.43 0.06 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3.7 3.7 0.24 0.02 </ST_B1_IGR>
 				<J18_STA_2_3> 4.4 4.4 0.09 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 4.7 4.7 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_K_Winter>
@@ -626,6 +645,7 @@
 				<Chi_Ri_IGR> 5 5 0.000000 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3 3 0.22 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 3.6 3.5 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 3.5 3.5 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_K_Desert>
@@ -668,6 +688,7 @@
 				<Chi_Ri_IGR> 3 3 0.32 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3 3 0.22 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 2.3 2.4 0.16 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 2.6 2.6 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_Ch_Winter>
@@ -706,6 +727,7 @@
 				<Chi_Ri_IGR> 3 3 0.22 0.08 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3 3 0.14 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 2.8 2.8 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 2.9 2.9 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_Ch_Summer>
@@ -744,6 +766,7 @@
 				<Chi_Ri_IGR> 5 5 0.000000 0.000000 </Chi_Ri_IGR>
 				<ST_B1_IGR> 3 3 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 3 3 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 3.3 3.3 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 			<notInShop> false </notInShop>
 		</IGR_Ch_Desert>
@@ -785,6 +808,7 @@
 				<Chi_Ri_IGR> 4.8 4.8 0.96 0.56 </Chi_Ri_IGR>
 				<ST_B1_IGR> 4.9 4.9 0.000000 0.000000 </ST_B1_IGR>
 				<J18_STA_2_3> 4.7 4.7 0.000000 0.000000 </J18_STA_2_3>
+				<J19_Tiger_I_Jpn> 4.8 4.8 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</Clan_camuflage_01>
 		<Clan_camuflage_02>
@@ -823,6 +847,7 @@
 				<Chi_Ri_IGR> 3 3 0.000000 0.000000 </Chi_Ri_IGR>
 				<STA_1_IGR> 3 3 0.000000 0.000000 </STA_1_IGR>
 				<ST_B1_IGR> 3 3 0.000000 0.000000 </ST_B1_IGR>
+				<J19_Tiger_I_Jpn> 3.2 3.2 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</Clan_camuflage_02>
 		<Clan_camuflage_03>
@@ -861,6 +886,7 @@
 				<Chi_Ri_IGR> 2.3 2.3 0.38 0.000000 </Chi_Ri_IGR>
 				<STA_1_IGR> 3 3 0.22 0.000000 </STA_1_IGR>
 				<ST_B1_IGR> 2.3 2.4 0.2 0.2 </ST_B1_IGR>
+				<J19_Tiger_I_Jpn> 2.4 2.4 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</Clan_camuflage_03>
 		<Clan_camuflage_04>
@@ -899,6 +925,7 @@
 				<Chi_Ri_IGR> 2.2 2.3 0.000000 0.000000 </Chi_Ri_IGR>
 				<STA_1_IGR> 2.3 2.4 0.000000 0.000000 </STA_1_IGR>
 				<ST_B1_IGR> 2.1 2.3 0.000000 0.000000 </ST_B1_IGR>
+				<J19_Tiger_I_Jpn> 3.2 3.2 0.000000 0.000000 </J19_Tiger_I_Jpn>
 			</tiling>
 		</Clan_camuflage_04>
 	</camouflages>

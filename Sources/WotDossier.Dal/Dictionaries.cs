@@ -348,30 +348,14 @@ namespace WotDossier.Dal
         public TankDescription GetReplayTankDescription(string playerVehicle, Version clientVersion)
         {
             string iconId = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
+            //var i = iconId.IndexOf("_");
+            //string hdIcon = i != -1 ? iconId.Substring(i + 1, iconId.Length-i) : iconId;
 
-            if (Icons.ContainsKey(iconId))
-            {
-                TankIcon tankIcon = Icons[iconId];
+            TankDescription tankDescription = null;
 
-                if (IconTanks.ContainsKey(tankIcon))
-                {
-                    var tankDescription = IconTanks[tankIcon];
-
-                    //t49 renamed to t67 in 9.3
-                    if (tankDescription.UniqueId() == 20071 && clientVersion < new Version("0.9.3.0"))
-                    {
-                        return _tanks[20041];
-                    }
-                    //kv-1s renamed to kv-85 in 9.3
-                    if (tankDescription.UniqueId() == 73 && clientVersion < new Version("0.9.3.0"))
-                    {
-                        return _tanks[11];
-                    }
-
-                    return tankDescription;
-                }
-            }
-            else if (iconId == "ussr_t_34")
+            tankDescription = TankDescriptionByIconId(clientVersion, iconId);// ?? TankDescriptionByIconId(clientVersion, hdIcon);
+            
+            if (iconId == "ussr_t_34")
             {
                 //replay tank name t_34 changed to r04_t_34
                 return _tanks[0];
@@ -398,11 +382,77 @@ namespace WotDossier.Dal
             }
             else if (iconId == "usa_t37")
             {
-                //0.9.7 replay tank name t37 changed to a94_t37
+                //0.9.7 replay tank name changed to a94_t37
                 return _tanks[20065];
             }
 
-            return TankDescription.Unknown(playerVehicle);
+            else if (iconId == "germany_hummel")
+            {
+                //0.9.8 replay tank name changed to g02_hummel
+                return _tanks[10001];
+            }
+            else if (iconId == "germany_leopard1")
+            {
+                //0.9.8 replay tank name changed to g89_leopard1
+                return _tanks[10057];
+            }
+            else if (iconId == "france_amx_50_120")
+            {
+                //0.9.8 replay tank name changed to f09_amx_50_120
+                return _tanks[40015];
+            }
+
+            else if (iconId == "ussr_su_85")
+            {
+                //0.9.8 replay tank name changed to r02_su_85
+                return _tanks[1];
+            }
+
+            else if (iconId == "ussr_is_3")
+            {
+                //0.9.8 replay tank name changed to r19_is_3
+                return _tanks[21];
+            }
+            else if (iconId == "usa_t32")
+            {
+                //0.9.8 replay tank name changed to a12_t32
+                return _tanks[20017];
+            }
+            else if (iconId == "usa_a30_m10_wolverine")
+            {
+                //0.9.8 replay tank name changed to a12_t32
+                return _tanks[20017];
+            }
+
+
+
+            return tankDescription ?? TankDescription.Unknown(playerVehicle);
+        }
+
+        private TankDescription TankDescriptionByIconId(Version clientVersion, string iconId)
+        {
+            TankDescription tankDescription = null;
+            if (Icons.ContainsKey(iconId))
+            {
+                TankIcon tankIcon = Icons[iconId];
+
+                if (IconTanks.ContainsKey(tankIcon))
+                {
+                    tankDescription = IconTanks[tankIcon];
+
+                    //t49 renamed to t67 in 9.3
+                    if (tankDescription.UniqueId() == 20071 && clientVersion < new Version("0.9.3.0"))
+                    {
+                        tankDescription = _tanks[20041];
+                    }
+                    //kv-1s renamed to kv-85 in 9.3
+                    if (tankDescription.UniqueId() == 73 && clientVersion < new Version("0.9.3.0"))
+                    {
+                        tankDescription = _tanks[11];
+                    }
+                }
+            }
+            return tankDescription;
         }
 
         public TankDescription GetTankDescription(int? typeCompDescr)

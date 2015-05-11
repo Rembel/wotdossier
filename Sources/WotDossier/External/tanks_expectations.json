@@ -1,5 +1,6 @@
 ﻿[
   {
+    "comp_descr": 2113,
     "tank_title": "105 leFH18B2",
     "icon": "_105_leFH18B2",
     "pr_nominal_damage": 750.0,
@@ -12,6 +13,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 2865,
     "tank_title": "110",
     "icon": "Ch11_110",
     "pr_nominal_damage": 1600.0,
@@ -24,6 +26,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 64561,
     "tank_title": "112",
     "icon": "Ch23_112",
     "pr_nominal_damage": 1400.0,
@@ -36,6 +39,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 5425,
     "tank_title": "113",
     "icon": "Ch22_113",
     "pr_nominal_damage": 2200.0,
@@ -48,6 +52,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 4145,
     "tank_title": "121",
     "icon": "Ch19_121",
     "pr_nominal_damage": 2200.0,
@@ -60,6 +65,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 8449,
     "tank_title": "212A",
     "icon": "Object_212",
     "pr_nominal_damage": 1950.0,
@@ -72,6 +78,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 4913,
     "tank_title": "59-16",
     "icon": "Ch15_59_16",
     "pr_nominal_damage": 350.0,
@@ -84,6 +91,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 55313,
     "tank_title": "8,8 cm Pak 43 Jagdtiger",
     "icon": "JagdTiger_SdKfz_185",
     "pr_nominal_damage": 1550.0,
@@ -96,6 +104,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 2049,
     "tank_title": "A-20",
     "icon": "A-20",
     "pr_nominal_damage": 100.0,
@@ -108,6 +117,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 52993,
     "tank_title": "A-32",
     "icon": "A-32",
     "pr_nominal_damage": 350.0,
@@ -120,6 +130,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 12289,
     "tank_title": "A-43",
     "icon": "A43",
     "pr_nominal_damage": 700.0,
@@ -132,6 +143,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 12545,
     "tank_title": "A-44",
     "icon": "A44",
     "pr_nominal_damage": 850.0,
@@ -144,6 +156,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 14417,
     "tank_title": "Achilles",
     "icon": "GB45_Achilles_IIC",
     "pr_nominal_damage": 850.0,
@@ -156,6 +169,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 9041,
     "tank_title": "Alecto",
     "icon": "GB57_Alecto",
     "pr_nominal_damage": 350.0,
@@ -168,6 +182,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 14657,
     "tank_title": "AMX 105 AM mle. 47",
     "icon": "AMX_Ob_Am105",
     "pr_nominal_damage": 400.0,
@@ -180,6 +195,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 6465,
     "tank_title": "AMX 12 t",
     "icon": "AMX_12t",
     "pr_nominal_damage": 350.0,
@@ -192,6 +208,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 4161,
     "tank_title": "AMX 13 105 AM mle. 50",
     "icon": "AMX_105AM",
     "pr_nominal_damage": 750.0,
@@ -204,6 +221,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 63809,
     "tank_title": "AMX 13 57",
     "icon": "F69_AMX13_57_100",
     "pr_nominal_damage": 700.0,
@@ -216,6 +234,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 5185,
     "tank_title": "AMX 13 75",
     "icon": "AMX_13_75",
     "pr_nominal_damage": 700.0,
@@ -228,6 +247,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 4929,
     "tank_title": "AMX 13 90",
     "icon": "AMX_13_90",
     "pr_nominal_damage": 1000.0,
@@ -240,6 +260,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 4673,
     "tank_title": "AMX 13 F3 AM",
     "icon": "AMX_13F3AM",
     "pr_nominal_damage": 1200.0,
@@ -252,6 +273,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 15681,
     "tank_title": "AMX 30 1er prototype",
     "icon": "F71_AMX_30_prototype",
     "pr_nominal_damage": 1900.0,
@@ -264,6 +286,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 15425,
     "tank_title": "AMX 30 B",
     "icon": "F72_AMX_30",
     "pr_nominal_damage": 2100.0,
@@ -276,6 +299,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 5953,
     "tank_title": "AMX 38",
     "icon": "AMX38",
     "pr_nominal_damage": 100.0,
@@ -288,6 +312,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 2881,
     "tank_title": "AMX 40",
     "icon": "AMX40",
     "pr_nominal_damage": 250.0,
@@ -300,6 +325,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 3137,
     "tank_title": "AMX 50 100",
     "icon": "AMX_50_100",
     "pr_nominal_damage": 1700.0,
@@ -312,6 +338,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 3905,
     "tank_title": "AMX 50 120",
     "icon": "AMX_50_120",
     "pr_nominal_damage": 2200.0,
@@ -324,6 +351,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 6209,
     "tank_title": "AMX 50 B",
     "icon": "F10_AMX_50B",
     "pr_nominal_damage": 2450.0,
@@ -336,6 +364,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 11073,
     "tank_title": "AMX 50 Foch",
     "icon": "AMX50_Foch",
     "pr_nominal_damage": 2200.0,
@@ -348,6 +377,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 13889,
     "tank_title": "AMX 50 Foch (155)",
     "icon": "AMX_50Fosh_155",
     "pr_nominal_damage": 2800.0,
@@ -360,6 +390,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 10817,
     "tank_title": "AMX AC mle. 46",
     "icon": "AMX_AC_Mle1946",
     "pr_nominal_damage": 1200.0,
@@ -372,6 +403,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 12097,
     "tank_title": "AMX AC mle. 48",
     "icon": "AMX_AC_Mle1948",
     "pr_nominal_damage": 1700.0,
@@ -384,6 +416,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 63553,
     "tank_title": "AMX Chasseur de chars",
     "icon": "F68_AMX_Chasseur_de_char_46",
     "pr_nominal_damage": 1350.0,
@@ -396,6 +429,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 14145,
     "tank_title": "AMX ELC bis",
     "icon": "ELC_AMX",
     "pr_nominal_damage": 275.0,
@@ -408,6 +442,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 6977,
     "tank_title": "AMX M4 mle. 45",
     "icon": "AMX_M4_1945",
     "pr_nominal_damage": 1200.0,
@@ -420,6 +455,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 13393,
     "tank_title": "Archer",
     "icon": "GB44_Archer",
     "pr_nominal_damage": 600.0,
@@ -432,6 +468,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 2625,
     "tank_title": "ARL 44",
     "icon": "ARL_44",
     "pr_nominal_damage": 800.0,
@@ -444,6 +481,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 11585,
     "tank_title": "ARL V39",
     "icon": "ARL_V39",
     "pr_nominal_damage": 850.0,
@@ -456,6 +494,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 8529,
     "tank_title": "AT 15",
     "icon": "GB72_AT15",
     "pr_nominal_damage": 1850.0,
@@ -468,6 +507,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 54097,
     "tank_title": "AT 15A",
     "icon": "GB71_AT_15A",
     "pr_nominal_damage": 1200.0,
@@ -480,6 +520,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 8785,
     "tank_title": "AT 2",
     "icon": "GB73_AT2",
     "pr_nominal_damage": 600.0,
@@ -492,6 +533,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 10065,
     "tank_title": "AT 7",
     "icon": "GB75_AT7",
     "pr_nominal_damage": 1500.0,
@@ -504,6 +546,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 9553,
     "tank_title": "AT 8",
     "icon": "GB74_AT8",
     "pr_nominal_damage": 950.0,
@@ -516,6 +559,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 5121,
     "tank_title": "AT-1",
     "icon": "AT-1",
     "pr_nominal_damage": 170.0,
@@ -528,6 +572,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 14353,
     "tank_title": "Aufklarungspanzer Panther",
     "icon": "Auf_Panther",
     "pr_nominal_damage": 700.0,
@@ -540,6 +585,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 1089,
     "tank_title": "B1",
     "icon": "B1",
     "pr_nominal_damage": 250.0,
@@ -552,6 +598,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 14401,
     "tank_title": "Bat.-Chatillon 155 55",
     "icon": "Bat_Chatillon155_55",
     "pr_nominal_damage": 2000.0,
@@ -564,6 +611,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 11841,
     "tank_title": "Bat.-Chatillon 155 58",
     "icon": "Bat_Chatillon155_58",
     "pr_nominal_damage": 2200.0,
@@ -576,6 +624,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 3649,
     "tank_title": "Bat.-Chatillon 25 t",
     "icon": "Bat_Chatillon25t",
     "pr_nominal_damage": 2100.0,
@@ -588,6 +637,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 6721,
     "tank_title": "BDR G1 B",
     "icon": "BDR_G1B",
     "pr_nominal_damage": 500.0,
@@ -600,6 +650,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 10833,
     "tank_title": "Birch Gun",
     "icon": "GB26_Birch_Gun",
     "pr_nominal_damage": 400.0,
@@ -612,6 +663,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 11089,
     "tank_title": "Bishop",
     "icon": "GB28_Bishop",
     "pr_nominal_damage": 750.0,
@@ -624,6 +676,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 3153,
     "tank_title": "Black Prince",
     "icon": "GB10_Black_Prince",
     "pr_nominal_damage": 1300.0,
@@ -636,6 +689,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 1025,
     "tank_title": "BT-2",
     "icon": "BT-2",
     "pr_nominal_damage": 175.0,
@@ -648,6 +702,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 769,
     "tank_title": "BT-7",
     "icon": "BT-7",
     "pr_nominal_damage": 100.0,
@@ -660,6 +715,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 52225,
     "tank_title": "BT-SV",
     "icon": "BT-SV",
     "pr_nominal_damage": 400.0,
@@ -672,6 +728,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 3921,
     "tank_title": "Caernarvon",
     "icon": "GB11_Caernarvon",
     "pr_nominal_damage": 1500.0,
@@ -684,6 +741,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 5713,
     "tank_title": "Centurion Mk. 7/1",
     "icon": "GB24_Centurion_Mk3",
     "pr_nominal_damage": 1900.0,
@@ -696,6 +754,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 5969,
     "tank_title": "Centurion Mk. I",
     "icon": "GB23_Centurion",
     "pr_nominal_damage": 1400.0,
@@ -708,6 +767,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 14161,
     "tank_title": "Challenger",
     "icon": "GB41_Challenger",
     "pr_nominal_damage": 1200.0,
@@ -720,6 +780,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 14673,
     "tank_title": "Charioteer",
     "icon": "GB80_Charioteer",
     "pr_nominal_damage": 1700.0,
@@ -732,6 +793,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 353,
     "tank_title": "Chi-Ni",
     "icon": "Chi_Ni",
     "pr_nominal_damage": 160.0,
@@ -744,6 +806,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 9809,
     "tank_title": "Churchill Gun Carrier",
     "icon": "GB40_Gun_Carrier_Churchill",
     "pr_nominal_damage": 825.0,
@@ -756,6 +819,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 2897,
     "tank_title": "Churchill I",
     "icon": "GB08_Churchill_I",
     "pr_nominal_damage": 525.0,
@@ -768,6 +832,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 51713,
     "tank_title": "Churchill III",
     "icon": "Churchill_LL",
     "pr_nominal_damage": 525.0,
@@ -780,6 +845,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 4689,
     "tank_title": "Churchill VII",
     "icon": "GB09_Churchill_VII",
     "pr_nominal_damage": 800.0,
@@ -792,6 +858,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 5457,
     "tank_title": "Comet",
     "icon": "GB22_Comet",
     "pr_nominal_damage": 1000.0,
@@ -804,6 +871,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 4433,
     "tank_title": "Conqueror",
     "icon": "GB12_Conqueror",
     "pr_nominal_damage": 2000.0,
@@ -816,6 +884,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 12369,
     "tank_title": "Conqueror Gun Carriage",
     "icon": "GB31_Conqueror_Gun",
     "pr_nominal_damage": 2200.0,
@@ -828,6 +897,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 6481,
     "tank_title": "Covenanter",
     "icon": "GB60_Covenanter",
     "pr_nominal_damage": 220.0,
@@ -840,6 +910,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 1105,
     "tank_title": "Cromwell",
     "icon": "GB21_Cromwell",
     "pr_nominal_damage": 750.0,
@@ -852,6 +923,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 5201,
     "tank_title": "Cruiser Mk. I",
     "icon": "GB03_Cruiser_Mk_I",
     "pr_nominal_damage": 145.0,
@@ -864,6 +936,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 6993,
     "tank_title": "Cruiser Mk. II",
     "icon": "GB69_Cruiser_Mk_II",
     "pr_nominal_damage": 175.0,
@@ -876,6 +949,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 7761,
     "tank_title": "Cruiser Mk. III",
     "icon": "GB58_Cruiser_Mk_III",
     "pr_nominal_damage": 200.0,
@@ -888,6 +962,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 7505,
     "tank_title": "Cruiser Mk. IV",
     "icon": "GB59_Cruiser_Mk_IV",
     "pr_nominal_damage": 165.0,
@@ -900,6 +975,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 2129,
     "tank_title": "Crusader",
     "icon": "GB20_Crusader",
     "pr_nominal_damage": 350.0,
@@ -912,6 +988,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 11345,
     "tank_title": "Crusader 5.5-in. SP",
     "icon": "GB29_Crusader_5inch",
     "pr_nominal_damage": 1500.0,
@@ -924,6 +1001,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 1601,
     "tank_title": "D1",
     "icon": "D1",
     "pr_nominal_damage": 125.0,
@@ -936,6 +1014,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 321,
     "tank_title": "D2",
     "icon": "D2",
     "pr_nominal_damage": 140.0,
@@ -948,6 +1027,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 57105,
     "tank_title": "Dicker Max",
     "icon": "DickerMax",
     "pr_nominal_damage": 850.0,
@@ -960,6 +1040,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 13329,
     "tank_title": "Durchbruchswagen 2",
     "icon": "DW_II",
     "pr_nominal_damage": 300.0,
@@ -972,6 +1053,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 9489,
     "tank_title": "E 100",
     "icon": "E-100",
     "pr_nominal_damage": 2300.0,
@@ -984,6 +1066,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 55569,
     "tank_title": "E 25",
     "icon": "E-25",
     "pr_nominal_damage": 1200.0,
@@ -996,6 +1079,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 10257,
     "tank_title": "E 50",
     "icon": "E-50",
     "pr_nominal_damage": 1900.0,
@@ -1008,6 +1092,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 12305,
     "tank_title": "E 50 Ausf. M",
     "icon": "E50_Ausf_M",
     "pr_nominal_damage": 2200.0,
@@ -1020,6 +1105,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 9745,
     "tank_title": "E 75",
     "icon": "E-75",
     "pr_nominal_damage": 2000.0,
@@ -1032,6 +1118,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 54353,
     "tank_title": "Excelsior",
     "icon": "GB51_Excelsior",
     "pr_nominal_damage": 550.0,
@@ -1044,6 +1131,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 15169,
     "tank_title": "FCM 36",
     "icon": "F50_FCM36_20t",
     "pr_nominal_damage": 175.0,
@@ -1056,6 +1144,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 2369,
     "tank_title": "FCM 36 Pak 40",
     "icon": "FCM_36Pak40",
     "pr_nominal_damage": 450.0,
@@ -1068,6 +1157,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 64065,
     "tank_title": "FCM 50 t",
     "icon": "FCM_50t",
     "pr_nominal_damage": 1400.0,
@@ -1080,6 +1170,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 7697,
     "tank_title": "Ferdinand",
     "icon": "Ferdinand",
     "pr_nominal_damage": 1800.0,
@@ -1092,6 +1183,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 12113,
     "tank_title": "FV207",
     "icon": "GB79_FV206",
     "pr_nominal_damage": 1750.0,
@@ -1104,6 +1196,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 6225,
     "tank_title": "FV215b",
     "icon": "GB13_FV215b",
     "pr_nominal_damage": 2300.0,
@@ -1116,6 +1209,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 9297,
     "tank_title": "FV215b (183)",
     "icon": "GB48_FV215b_183",
     "pr_nominal_damage": 2500.0,
@@ -1128,6 +1222,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 11857,
     "tank_title": "FV304",
     "icon": "GB77_FV304",
     "pr_nominal_damage": 1200.0,
@@ -1140,6 +1235,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 11601,
     "tank_title": "FV3805",
     "icon": "GB30_FV3805",
     "pr_nominal_damage": 1900.0,
@@ -1152,6 +1248,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 13137,
     "tank_title": "FV4004 Conway",
     "icon": "GB81_FV4004",
     "pr_nominal_damage": 2200.0,
@@ -1164,6 +1261,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 13905,
     "tank_title": "FV4005 Stage II",
     "icon": "GB83_FV4005",
     "pr_nominal_damage": 2800.0,
@@ -1176,6 +1274,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 7249,
     "tank_title": "FV4202",
     "icon": "GB70_FV4202_105",
     "pr_nominal_damage": 2200.0,
@@ -1188,6 +1287,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 55633,
     "tank_title": "FV4202 (P)",
     "icon": "GB70_N_FV4202_105",
     "pr_nominal_damage": 1350.0,
@@ -1200,6 +1300,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 15121,
     "tank_title": "G.Pz. Mk. VI (e)",
     "icon": "GW_Mk_VIe",
     "pr_nominal_damage": 170.0,
@@ -1212,6 +1313,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 9233,
     "tank_title": "G.W. E 100",
     "icon": "G_E",
     "pr_nominal_damage": 2200.0,
@@ -1224,6 +1326,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 8977,
     "tank_title": "G.W. Panther",
     "icon": "G_Panther",
     "pr_nominal_damage": 1550.0,
@@ -1236,6 +1339,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 8721,
     "tank_title": "G.W. Tiger",
     "icon": "G_Tiger",
     "pr_nominal_damage": 1900.0,
@@ -1248,6 +1352,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 15377,
     "tank_title": "G.W. Tiger (P)",
     "icon": "GW_Tiger_P",
     "pr_nominal_damage": 1750.0,
@@ -1260,6 +1365,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 1617,
     "tank_title": "Grant",
     "icon": "GB17_Grant_I",
     "pr_nominal_damage": 350.0,
@@ -1272,6 +1378,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 5649,
     "tank_title": "Grille",
     "icon": "Grille",
     "pr_nominal_damage": 750.0,
@@ -1284,6 +1391,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 59665,
     "tank_title": "Grosstraktor - Krupp",
     "icon": "G100_Gtraktor_Krupp",
     "pr_nominal_damage": 220.0,
@@ -1296,6 +1404,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1809,
     "tank_title": "Hetzer",
     "icon": "Hetzer",
     "pr_nominal_damage": 400.0,
@@ -1308,6 +1417,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 1345,
     "tank_title": "Hotchkiss H35",
     "icon": "Hotchkiss_H35",
     "pr_nominal_damage": 175.0,
@@ -1320,6 +1430,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 273,
     "tank_title": "Hummel",
     "icon": "Hummel",
     "pr_nominal_damage": 1200.0,
@@ -1332,6 +1443,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 13841,
     "tank_title": "Indien-Panzer",
     "icon": "Indien_Panzer",
     "pr_nominal_damage": 1350.0,
@@ -1344,6 +1456,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 513,
     "tank_title": "IS",
     "icon": "IS",
     "pr_nominal_damage": 1200.0,
@@ -1356,6 +1469,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 3633,
     "tank_title": "IS-2",
     "icon": "Ch10_IS2",
     "pr_nominal_damage": 1300.0,
@@ -1368,9 +1482,10 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 5377,
     "tank_title": "IS-3",
     "icon": "IS-3",
-    "pr_nominal_damage": 1450.0,
+    "pr_nominal_damage": 1600.0,
     "wn8_nominal_damage": 1327.54,
     "wn8_nominal_win_rate": 52.11,
     "wn8_nominal_spotted": 1.05,
@@ -1380,6 +1495,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 6145,
     "tank_title": "IS-4",
     "icon": "R90_IS_4M",
     "pr_nominal_damage": 2200.0,
@@ -1392,6 +1508,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 58881,
     "tank_title": "IS-5 (Object 730)",
     "icon": "R113_Object_730",
     "pr_nominal_damage": 1600.0,
@@ -1404,6 +1521,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 9217,
     "tank_title": "IS-6",
     "icon": "Object252",
     "pr_nominal_damage": 1400.0,
@@ -1416,6 +1534,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 7169,
     "tank_title": "IS-7",
     "icon": "IS-7",
     "pr_nominal_damage": 2200.0,
@@ -1428,6 +1547,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 11521,
     "tank_title": "IS-8",
     "icon": "IS8",
     "pr_nominal_damage": 2000.0,
@@ -1440,6 +1560,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 58625,
     "tank_title": "ISU-130",
     "icon": "R111_ISU130",
     "pr_nominal_damage": 1700.0,
@@ -1452,6 +1573,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 7425,
     "tank_title": "ISU-152",
     "icon": "ISU-152",
     "pr_nominal_damage": 1900.0,
@@ -1464,6 +1586,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 3857,
     "tank_title": "Jagdpanther",
     "icon": "JagdPanther",
     "pr_nominal_damage": 1300.0,
@@ -1476,6 +1599,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 11537,
     "tank_title": "Jagdpanther II",
     "icon": "JagdPantherII",
     "pr_nominal_damage": 1800.0,
@@ -1488,6 +1612,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 12049,
     "tank_title": "Jagdpanzer E 100",
     "icon": "JagdPz_E100",
     "pr_nominal_damage": 2400.0,
@@ -1500,6 +1625,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 1553,
     "tank_title": "Jagdpanzer IV",
     "icon": "JagdPzIV",
     "pr_nominal_damage": 850.0,
@@ -1512,6 +1638,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 7953,
     "tank_title": "Jagdtiger",
     "icon": "JagdTiger",
     "pr_nominal_damage": 2200.0,
@@ -1524,6 +1651,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 11777,
     "tank_title": "KV-1",
     "icon": "KV1",
     "pr_nominal_damage": 500.0,
@@ -1536,6 +1664,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 8961,
     "tank_title": "KV-13",
     "icon": "KV-13",
     "pr_nominal_damage": 825.0,
@@ -1548,6 +1677,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 18689,
     "tank_title": "KV-1S",
     "icon": "KV-1s",
     "pr_nominal_damage": 500.0,
@@ -1560,6 +1690,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 10497,
     "tank_title": "KV-2",
     "icon": "KV2",
     "pr_nominal_damage": 775.0,
@@ -1572,6 +1703,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 54017,
     "tank_title": "KV-220",
     "icon": "KV-220_action",
     "pr_nominal_damage": 750.0,
@@ -1584,6 +1716,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 51201,
     "tank_title": "KV-220 Beta-Test",
     "icon": "KV-220",
     "pr_nominal_damage": 450.0,
@@ -1596,6 +1729,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 5889,
     "tank_title": "KV-3",
     "icon": "KV-3",
     "pr_nominal_damage": 1200.0,
@@ -1608,6 +1742,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 11009,
     "tank_title": "KV-4",
     "icon": "KV4",
     "pr_nominal_damage": 1400.0,
@@ -1620,6 +1755,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 53249,
     "tank_title": "KV-5",
     "icon": "KV-5",
     "pr_nominal_damage": 1400.0,
@@ -1632,6 +1768,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 2817,
     "tank_title": "KV-85",
     "icon": "R106_KV85",
     "pr_nominal_damage": 800.0,
@@ -1644,6 +1781,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 3089,
     "tank_title": "Leichttraktor",
     "icon": "Ltraktor",
     "pr_nominal_damage": 125.0,
@@ -1656,9 +1794,10 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 14609,
     "tank_title": "Leopard 1",
     "icon": "Leopard1",
-    "pr_nominal_damage": 2100.0,
+    "pr_nominal_damage": 2200.0,
     "wn8_nominal_damage": 1829.68,
     "wn8_nominal_win_rate": 47.9,
     "wn8_nominal_spotted": 1.63,
@@ -1668,6 +1807,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 14865,
     "tank_title": "Leopard Prototyp A",
     "icon": "Pro_Ag_A",
     "pr_nominal_damage": 1800.0,
@@ -1680,6 +1820,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 54865,
     "tank_title": "Light Mk. VIC",
     "icon": "GB76_Mk_VIC",
     "pr_nominal_damage": 150.0,
@@ -1692,6 +1833,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 7233,
     "tank_title": "Lorraine 155 mle. 50",
     "icon": "Lorraine155_50",
     "pr_nominal_damage": 1550.0,
@@ -1704,6 +1846,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 7489,
     "tank_title": "Lorraine 155 mle. 51",
     "icon": "Lorraine155_51",
     "pr_nominal_damage": 1750.0,
@@ -1716,6 +1859,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 3393,
     "tank_title": "Lorraine 39L AM",
     "icon": "Lorraine39_L_AM",
     "pr_nominal_damage": 425.0,
@@ -1728,6 +1872,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 5697,
     "tank_title": "Lorraine 40 t",
     "icon": "Lorraine40t",
     "pr_nominal_damage": 1800.0,
@@ -1740,6 +1885,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 54289,
     "tank_title": "Lowe",
     "icon": "Lowe",
     "pr_nominal_damage": 1400.0,
@@ -1752,6 +1898,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 10577,
     "tank_title": "Loyd Gun Carriage",
     "icon": "GB25_Loyd_Carrier",
     "pr_nominal_damage": 170.0,
@@ -1764,6 +1911,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 56577,
     "tank_title": "LTP",
     "icon": "LTP",
     "pr_nominal_damage": 150.0,
@@ -1776,6 +1924,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 18433,
     "tank_title": "LTTB",
     "icon": "R107_LTB",
     "pr_nominal_damage": 725.0,
@@ -1788,9 +1937,10 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 6945,
     "tank_title": "M10 Wolverine",
     "icon": "M10_Wolverine",
-    "pr_nominal_damage": 550.0,
+    "pr_nominal_damage": 600.0,
     "wn8_nominal_damage": 619.16,
     "wn8_nominal_win_rate": 55.75,
     "wn8_nominal_spotted": 1.03,
@@ -1800,6 +1950,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 9505,
     "tank_title": "M103",
     "icon": "M103",
     "pr_nominal_damage": 2000.0,
@@ -1812,6 +1963,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 7969,
     "tank_title": "M12",
     "icon": "M12",
     "pr_nominal_damage": 1550.0,
@@ -1824,6 +1976,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 11553,
     "tank_title": "M18 Hellcat",
     "icon": "M18_Hellcat",
     "pr_nominal_damage": 950.0,
@@ -1836,6 +1989,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 593,
     "tank_title": "M2",
     "icon": "GB14_M2",
     "pr_nominal_damage": 175.0,
@@ -1848,6 +2002,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 1825,
     "tank_title": "M2 Light Tank",
     "icon": "M2_lt",
     "pr_nominal_damage": 145.0,
@@ -1860,6 +2015,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 4897,
     "tank_title": "M2 Medium Tank",
     "icon": "M2_med",
     "pr_nominal_damage": 150.0,
@@ -1872,6 +2028,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 52769,
     "tank_title": "M22 Locust",
     "icon": "M22_Locust",
     "pr_nominal_damage": 250.0,
@@ -1884,6 +2041,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 9761,
     "tank_title": "M24 Chaffee",
     "icon": "M24_Chaffee",
     "pr_nominal_damage": 550.0,
@@ -1896,6 +2054,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 5921,
     "tank_title": "M26 Pershing",
     "icon": "A35_Pershing",
     "pr_nominal_damage": 1350.0,
@@ -1908,6 +2067,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3105,
     "tank_title": "M3 Lee",
     "icon": "M3_Grant",
     "pr_nominal_damage": 250.0,
@@ -1920,6 +2080,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 52737,
     "tank_title": "M3 Light",
     "icon": "M3_Stuart_LL",
     "pr_nominal_damage": 145.0,
@@ -1932,6 +2093,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 289,
     "tank_title": "M3 Stuart",
     "icon": "M3_Stuart",
     "pr_nominal_damage": 130.0,
@@ -1944,6 +2106,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 7201,
     "tank_title": "M36 Jackson",
     "icon": "M36_Slagger",
     "pr_nominal_damage": 850.0,
@@ -1956,6 +2119,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 4641,
     "tank_title": "M37",
     "icon": "M37",
     "pr_nominal_damage": 400.0,
@@ -1968,6 +2132,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 12577,
     "tank_title": "M4 Improved",
     "icon": "A78_M4_Improved",
     "pr_nominal_damage": 500.0,
@@ -1980,6 +2145,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1057,
     "tank_title": "M4 Sherman",
     "icon": "M4_Sherman",
     "pr_nominal_damage": 550.0,
@@ -1992,6 +2158,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 7457,
     "tank_title": "M40/M43",
     "icon": "M40M43",
     "pr_nominal_damage": 1800.0,
@@ -2004,6 +2171,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 4129,
     "tank_title": "M41 HMC",
     "icon": "M41",
     "pr_nominal_damage": 800.0,
@@ -2016,6 +2184,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 17953,
     "tank_title": "M41 Walker Bulldog",
     "icon": "M41_Bulldog",
     "pr_nominal_damage": 725.0,
@@ -2028,6 +2197,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 16417,
     "tank_title": "M44",
     "icon": "M44",
     "pr_nominal_damage": 1200.0,
@@ -2040,6 +2210,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 8993,
     "tank_title": "M46 Patton",
     "icon": "M46_Patton",
     "pr_nominal_damage": 1900.0,
@@ -2052,6 +2223,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 14113,
     "tank_title": "M48A1 Patton",
     "icon": "M48A1",
     "pr_nominal_damage": 2200.0,
@@ -2064,6 +2236,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 52257,
     "tank_title": "M4A2E4 Sherman",
     "icon": "M4A2E4",
     "pr_nominal_damage": 400.0,
@@ -2076,9 +2249,10 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 10017,
     "tank_title": "M4A3E2 Sherman Jumbo",
     "icon": "Sherman_Jumbo",
-    "pr_nominal_damage": 725.0,
+    "pr_nominal_damage": 750.0,
     "wn8_nominal_damage": 732.39,
     "wn8_nominal_win_rate": 54.25,
     "wn8_nominal_spotted": 1.2,
@@ -2088,6 +2262,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 56097,
     "tank_title": "M4A3E8 Fury",
     "icon": "A104_M4A3E8A",
     "pr_nominal_damage": 700.0,
@@ -2100,6 +2275,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1313,
     "tank_title": "M4A3E8 Sherman",
     "icon": "M4A3E8_Sherman",
     "pr_nominal_damage": 625.0,
@@ -2112,6 +2288,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 5153,
     "tank_title": "M5 Stuart",
     "icon": "M5_Stuart",
     "pr_nominal_damage": 160.0,
@@ -2124,6 +2301,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 16161,
     "tank_title": "M53/M55",
     "icon": "M53_55",
     "pr_nominal_damage": 1900.0,
@@ -2136,6 +2314,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 56353,
     "tank_title": "M56 Scorpion",
     "icon": "A101_M56",
     "pr_nominal_damage": 1700.0,
@@ -2148,6 +2327,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 3121,
     "tank_title": "M5A1 Stuart",
     "icon": "Ch09_M5",
     "pr_nominal_damage": 250.0,
@@ -2160,6 +2340,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 801,
     "tank_title": "M6",
     "icon": "M6",
     "pr_nominal_damage": 800.0,
@@ -2172,6 +2353,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 15905,
     "tank_title": "M60",
     "icon": "M60",
     "pr_nominal_damage": 2200.0,
@@ -2184,6 +2366,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 52513,
     "tank_title": "M6A2E1",
     "icon": "M6A2E1",
     "pr_nominal_damage": 1400.0,
@@ -2196,6 +2379,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 5409,
     "tank_title": "M7",
     "icon": "M7_med",
     "pr_nominal_damage": 325.0,
@@ -2208,6 +2392,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3617,
     "tank_title": "M7 Priest",
     "icon": "M7_Priest",
     "pr_nominal_damage": 500.0,
@@ -2220,6 +2405,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 10273,
     "tank_title": "M8A1",
     "icon": "M8A1",
     "pr_nominal_damage": 350.0,
@@ -2232,6 +2418,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 11281,
     "tank_title": "Marder 38T",
     "icon": "Marder_III",
     "pr_nominal_damage": 400.0,
@@ -2244,6 +2431,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 6673,
     "tank_title": "Marder II",
     "icon": "G20_Marder_II",
     "pr_nominal_damage": 350.0,
@@ -2256,6 +2444,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 849,
     "tank_title": "Matilda",
     "icon": "GB07_Matilda",
     "pr_nominal_damage": 300.0,
@@ -2268,6 +2457,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 53585,
     "tank_title": "Matilda Black Prince",
     "icon": "GB68_Matilda_Black_Prince",
     "pr_nominal_damage": 575.0,
@@ -2280,6 +2470,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 51457,
     "tank_title": "Matilda IV",
     "icon": "Matilda_II_LL",
     "pr_nominal_damage": 450.0,
@@ -2292,6 +2483,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 6929,
     "tank_title": "Maus",
     "icon": "Maus",
     "pr_nominal_damage": 2200.0,
@@ -2304,6 +2496,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 3329,
     "tank_title": "MS-1",
     "icon": "MS-1",
     "pr_nominal_damage": 100.0,
@@ -2316,6 +2509,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 16641,
     "tank_title": "MT-25",
     "icon": "MT25",
     "pr_nominal_damage": 275.0,
@@ -2328,6 +2522,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 52001,
     "tank_title": "MTLS-1G14",
     "icon": "MTLS-1G14",
     "pr_nominal_damage": 400.0,
@@ -2340,6 +2535,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 11793,
     "tank_title": "Nashorn",
     "icon": "Nashorn",
     "pr_nominal_damage": 850.0,
@@ -2352,6 +2548,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 16897,
     "tank_title": "Object 140",
     "icon": "Object_140",
     "pr_nominal_damage": 2200.0,
@@ -2364,6 +2561,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 58369,
     "tank_title": "Object 260",
     "icon": "R110_Object_260",
     "pr_nominal_damage": 2200.0,
@@ -2376,6 +2574,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 8705,
     "tank_title": "Object 261",
     "icon": "Object_261",
     "pr_nominal_damage": 2200.0,
@@ -2388,6 +2587,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 14337,
     "tank_title": "Object 263",
     "icon": "Object263",
     "pr_nominal_damage": 2500.0,
@@ -2400,6 +2600,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 13569,
     "tank_title": "Object 268",
     "icon": "Object268",
     "pr_nominal_damage": 2700.0,
@@ -2412,6 +2613,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 13313,
     "tank_title": "Object 416",
     "icon": "Object416",
     "pr_nominal_damage": 1400.0,
@@ -2424,6 +2626,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 17153,
     "tank_title": "Object 430",
     "icon": "Object_430",
     "pr_nominal_damage": 2200.0,
@@ -2436,6 +2639,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 17665,
     "tank_title": "Object 430 Version II",
     "icon": "R104_Object_430_II",
     "pr_nominal_damage": 2000.0,
@@ -2448,6 +2652,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 8193,
     "tank_title": "Object 704",
     "icon": "R53_Object_704",
     "pr_nominal_damage": 2200.0,
@@ -2460,6 +2665,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 15617,
     "tank_title": "Object 907",
     "icon": "Object_907",
     "pr_nominal_damage": 2200.0,
@@ -2472,6 +2678,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1297,
     "tank_title": "Panther",
     "icon": "PzV",
     "pr_nominal_damage": 900.0,
@@ -2484,6 +2691,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 8465,
     "tank_title": "Panther II",
     "icon": "Panther_II",
     "pr_nominal_damage": 1350.0,
@@ -2496,6 +2704,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 60177,
     "tank_title": "Panther mit 8,8 cm L/71",
     "icon": "G106_PzKpfwPanther_AusfF",
     "pr_nominal_damage": 1350.0,
@@ -2508,6 +2717,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 57617,
     "tank_title": "Panther/M10",
     "icon": "Panther_M10",
     "pr_nominal_damage": 850.0,
@@ -2520,6 +2730,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3601,
     "tank_title": "Panzerjager I",
     "icon": "PanzerJager_I",
     "pr_nominal_damage": 215.0,
@@ -2532,6 +2743,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 785,
     "tank_title": "Pz.Kpfw. 35 (t)",
     "icon": "Pz35t",
     "pr_nominal_damage": 150.0,
@@ -2544,6 +2756,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 3345,
     "tank_title": "Pz.Kpfw. 38 (t)",
     "icon": "Pz38t",
     "pr_nominal_damage": 150.0,
@@ -2556,6 +2769,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 8209,
     "tank_title": "Pz.Kpfw. 38 (t) n.A.",
     "icon": "Pz38_NA",
     "pr_nominal_damage": 140.0,
@@ -2568,6 +2782,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 52497,
     "tank_title": "Pz.Kpfw. 38H 735 (f)",
     "icon": "H39_captured",
     "pr_nominal_damage": 300.0,
@@ -2580,6 +2795,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 52241,
     "tank_title": "Pz.Kpfw. B2 740 (f)",
     "icon": "B-1bis_captured",
     "pr_nominal_damage": 400.0,
@@ -2592,6 +2808,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 12817,
     "tank_title": "Pz.Kpfw. I",
     "icon": "PzI",
     "pr_nominal_damage": 145.0,
@@ -2604,6 +2821,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 12561,
     "tank_title": "Pz.Kpfw. I Ausf. C",
     "icon": "PzI_ausf_C",
     "pr_nominal_damage": 225.0,
@@ -2616,6 +2834,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 2065,
     "tank_title": "Pz.Kpfw. II",
     "icon": "PzII",
     "pr_nominal_damage": 200.0,
@@ -2628,6 +2847,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 60433,
     "tank_title": "Pz.Kpfw. II Ausf. D",
     "icon": "G108_PzKpfwII_AusfD",
     "pr_nominal_damage": 175.0,
@@ -2640,6 +2860,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 13073,
     "tank_title": "Pz.Kpfw. II Ausf. G",
     "icon": "Pz_II_AusfG",
     "pr_nominal_damage": 200.0,
@@ -2652,6 +2873,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 51729,
     "tank_title": "Pz.Kpfw. II Ausf. J",
     "icon": "PzII_J",
     "pr_nominal_damage": 400.0,
@@ -2664,6 +2886,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 6161,
     "tank_title": "Pz.Kpfw. II Luchs",
     "icon": "PzII_Luchs",
     "pr_nominal_damage": 150.0,
@@ -2676,6 +2899,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 4369,
     "tank_title": "Pz.Kpfw. III",
     "icon": "PzIII_AusfJ",
     "pr_nominal_damage": 270.0,
@@ -2688,6 +2912,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 4881,
     "tank_title": "Pz.Kpfw. III Ausf. A",
     "icon": "PzIII_A",
     "pr_nominal_damage": 135.0,
@@ -2700,6 +2925,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 61457,
     "tank_title": "Pz.Kpfw. III Ausf. K",
     "icon": "G107_PzKpfwIII_AusfK",
     "pr_nominal_damage": 500.0,
@@ -2712,6 +2938,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 6417,
     "tank_title": "Pz.Kpfw. III/IV",
     "icon": "PzIII_IV",
     "pr_nominal_damage": 325.0,
@@ -2724,6 +2951,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 17,
     "tank_title": "Pz.Kpfw. IV",
     "icon": "PzIV",
     "pr_nominal_damage": 500.0,
@@ -2736,6 +2964,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 17169,
     "tank_title": "Pz.Kpfw. IV Ausf. A",
     "icon": "Pz_IV_AusfA",
     "pr_nominal_damage": 220.0,
@@ -2748,6 +2977,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 17425,
     "tank_title": "Pz.Kpfw. IV Ausf. D",
     "icon": "Pz_IV_AusfD",
     "pr_nominal_damage": 270.0,
@@ -2760,6 +2990,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 18193,
     "tank_title": "Pz.Kpfw. IV Ausf. H",
     "icon": "Pz_IV_AusfH",
     "pr_nominal_damage": 450.0,
@@ -2772,6 +3003,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 55057,
     "tank_title": "Pz.Kpfw. IV hydrostat.",
     "icon": "PzIV_Hydro",
     "pr_nominal_damage": 475.0,
@@ -2784,6 +3016,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 57361,
     "tank_title": "Pz.Kpfw. IV Schmalturm",
     "icon": "PzIV_schmalturm",
     "pr_nominal_damage": 725.0,
@@ -2796,6 +3029,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 51985,
     "tank_title": "Pz.Kpfw. S35 739 (f)",
     "icon": "S35_captured",
     "pr_nominal_damage": 350.0,
@@ -2808,6 +3042,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 51473,
     "tank_title": "Pz.Kpfw. V/IV",
     "icon": "PzV_PzIV",
     "pr_nominal_damage": 525.0,
@@ -2820,6 +3055,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 54033,
     "tank_title": "Pz.Kpfw. V/IV Alpha",
     "icon": "PzV_PzIV_ausf_Alfa",
     "pr_nominal_damage": 525.0,
@@ -2832,6 +3068,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 15633,
     "tank_title": "Pz.Sfl. IVb",
     "icon": "Pz_Sfl_IVb",
     "pr_nominal_damage": 400.0,
@@ -2844,6 +3081,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 16145,
     "tank_title": "Pz.Sfl. IVc",
     "icon": "Pz_Sfl_IVc",
     "pr_nominal_damage": 550.0,
@@ -2856,6 +3094,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 51745,
     "tank_title": "Ram II",
     "icon": "Ram-II",
     "pr_nominal_damage": 450.0,
@@ -2868,6 +3107,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 577,
     "tank_title": "Renault FT",
     "icon": "RenaultFT",
     "pr_nominal_damage": 90.0,
@@ -2880,6 +3120,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 833,
     "tank_title": "Renault FT 75 BS",
     "icon": "RenaultBS",
     "pr_nominal_damage": 170.0,
@@ -2892,6 +3133,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 7745,
     "tank_title": "Renault FT AC",
     "icon": "RenaultFT_AC",
     "pr_nominal_damage": 200.0,
@@ -2904,6 +3146,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 4417,
     "tank_title": "Renault G1",
     "icon": "F11_Renault_G1R",
     "pr_nominal_damage": 500.0,
@@ -2916,6 +3159,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1329,
     "tank_title": "Renault NC-31",
     "icon": "Ch06_Renault_NC31",
     "pr_nominal_damage": 125.0,
@@ -2928,6 +3172,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 609,
     "tank_title": "Renault Otsu",
     "icon": "NC27",
     "pr_nominal_damage": 100.0,
@@ -2940,6 +3185,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 15937,
     "tank_title": "Renault R35",
     "icon": "F49_RenaultR35",
     "pr_nominal_damage": 175.0,
@@ -2952,6 +3198,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 8257,
     "tank_title": "Renault UE 57",
     "icon": "RenaultUE57",
     "pr_nominal_damage": 250.0,
@@ -2964,6 +3211,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 16657,
     "tank_title": "Rhm.-Borsig Waffentrager",
     "icon": "RhB_Waffentrager",
     "pr_nominal_damage": 1800.0,
@@ -2976,6 +3224,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 10049,
     "tank_title": "S35 CA",
     "icon": "S_35CA",
     "pr_nominal_damage": 675.0,
@@ -2988,6 +3237,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 1793,
     "tank_title": "S-51",
     "icon": "S-51",
     "pr_nominal_damage": 1500.0,
@@ -3000,6 +3250,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 14913,
     "tank_title": "SARL 42",
     "icon": "F70_SARL42",
     "pr_nominal_damage": 350.0,
@@ -3012,6 +3263,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 54609,
     "tank_title": "Sexton I",
     "icon": "GB78_Sexton_I",
     "pr_nominal_damage": 500.0,
@@ -3024,6 +3276,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 3409,
     "tank_title": "Sexton II",
     "icon": "GB27_Sexton",
     "pr_nominal_damage": 250.0,
@@ -3036,6 +3289,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 3665,
     "tank_title": "Sherman Firefly",
     "icon": "GB19_Sherman_Firefly",
     "pr_nominal_damage": 700.0,
@@ -3048,6 +3302,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 12881,
     "tank_title": "Sherman III",
     "icon": "GB50_Sherman_III",
     "pr_nominal_damage": 500.0,
@@ -3060,6 +3315,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 13121,
     "tank_title": "Somua S35",
     "icon": "F44_Somua_S35",
     "pr_nominal_damage": 200.0,
@@ -3072,6 +3328,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 9793,
     "tank_title": "Somua SAu 40",
     "icon": "Somua_Sau_40",
     "pr_nominal_damage": 280.0,
@@ -3084,6 +3341,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 18449,
     "tank_title": "Spahpanzer Ru 251",
     "icon": "G103_RU_251",
     "pr_nominal_damage": 900.0,
@@ -3096,6 +3354,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 2657,
     "tank_title": "STA-1",
     "icon": "STA_1",
     "pr_nominal_damage": 1400.0,
@@ -3108,6 +3367,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 52065,
     "tank_title": "STA-2",
     "icon": "J18_STA_2_3",
     "pr_nominal_damage": 1350.0,
@@ -3120,6 +3380,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3681,
     "tank_title": "STB-1",
     "icon": "ST_B1",
     "pr_nominal_damage": 2200.0,
@@ -3132,6 +3393,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 10753,
     "tank_title": "ST-I",
     "icon": "ST_I",
     "pr_nominal_damage": 2000.0,
@@ -3144,6 +3406,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 1361,
     "tank_title": "Stuart I-IV",
     "icon": "GB15_Stuart_I",
     "pr_nominal_damage": 100.0,
@@ -3156,6 +3419,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 17937,
     "tank_title": "StuG III Ausf. B",
     "icon": "G101_StuG_III",
     "pr_nominal_damage": 400.0,
@@ -3168,6 +3432,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 1041,
     "tank_title": "StuG III Ausf. G",
     "icon": "StuG_40_AusfG",
     "pr_nominal_damage": 550.0,
@@ -3180,6 +3445,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 60689,
     "tank_title": "StuG IV",
     "icon": "G104_Stug_IV",
     "pr_nominal_damage": 600.0,
@@ -3192,6 +3458,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 11025,
     "tank_title": "Sturer Emil",
     "icon": "Sturer_Emil",
     "pr_nominal_damage": 1300.0,
@@ -3204,6 +3471,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 2833,
     "tank_title": "Sturmpanzer I Bison",
     "icon": "Bison_I",
     "pr_nominal_damage": 200.0,
@@ -3216,6 +3484,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 4625,
     "tank_title": "Sturmpanzer II",
     "icon": "Sturmpanzer_II",
     "pr_nominal_damage": 400.0,
@@ -3228,6 +3497,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 3585,
     "tank_title": "SU-100",
     "icon": "SU-100",
     "pr_nominal_damage": 900.0,
@@ -3240,6 +3510,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 10241,
     "tank_title": "SU-100M1",
     "icon": "SU100M1",
     "pr_nominal_damage": 1200.0,
@@ -3252,6 +3523,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 54785,
     "tank_title": "SU-100Y",
     "icon": "SU100Y",
     "pr_nominal_damage": 900.0,
@@ -3264,6 +3536,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 9985,
     "tank_title": "SU-101",
     "icon": "SU-101",
     "pr_nominal_damage": 1700.0,
@@ -3276,6 +3549,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 55297,
     "tank_title": "SU-122-44",
     "icon": "SU122_44",
     "pr_nominal_damage": 1350.0,
@@ -3288,6 +3562,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 12033,
     "tank_title": "SU-122-54",
     "icon": "SU122_54",
     "pr_nominal_damage": 2100.0,
@@ -3300,6 +3575,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 16385,
     "tank_title": "SU-122A",
     "icon": "SU122A",
     "pr_nominal_damage": 800.0,
@@ -3312,6 +3588,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 16129,
     "tank_title": "SU-14-1",
     "icon": "SU14_1",
     "pr_nominal_damage": 1500.0,
@@ -3324,6 +3601,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 4097,
     "tank_title": "SU-14-2",
     "icon": "SU-14",
     "pr_nominal_damage": 1650.0,
@@ -3336,6 +3614,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 2305,
     "tank_title": "SU-152",
     "icon": "SU-152",
     "pr_nominal_damage": 1350.0,
@@ -3348,6 +3627,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 3841,
     "tank_title": "SU-18",
     "icon": "SU-18",
     "pr_nominal_damage": 170.0,
@@ -3360,6 +3640,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 7681,
     "tank_title": "SU-26",
     "icon": "SU-26",
     "pr_nominal_damage": 350.0,
@@ -3372,6 +3653,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 4865,
     "tank_title": "SU-5",
     "icon": "SU-5",
     "pr_nominal_damage": 550.0,
@@ -3384,6 +3666,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 6401,
     "tank_title": "SU-76",
     "icon": "SU-76",
     "pr_nominal_damage": 250.0,
@@ -3396,6 +3679,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 54273,
     "tank_title": "SU-76I",
     "icon": "SU76I",
     "pr_nominal_damage": 450.0,
@@ -3408,6 +3692,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 5633,
     "tank_title": "SU-8",
     "icon": "SU-8",
     "pr_nominal_damage": 1200.0,
@@ -3420,9 +3705,10 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 257,
     "tank_title": "SU-85",
     "icon": "SU-85",
-    "pr_nominal_damage": 500.0,
+    "pr_nominal_damage": 600.0,
     "wn8_nominal_damage": 594.16,
     "wn8_nominal_win_rate": 54.69,
     "wn8_nominal_spotted": 0.55,
@@ -3432,6 +3718,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 6913,
     "tank_title": "SU-85B",
     "icon": "GAZ-74b",
     "pr_nominal_damage": 350.0,
@@ -3444,6 +3731,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 53761,
     "tank_title": "SU-85I",
     "icon": "SU_85I",
     "pr_nominal_damage": 500.0,
@@ -3456,6 +3744,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 60945,
     "tank_title": "T 55A",
     "icon": "G105_T-55_NVA_DDR",
     "pr_nominal_damage": 1900.0,
@@ -3468,6 +3757,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 545,
     "tank_title": "T1 Cunningham",
     "icon": "T1_Cunningham",
     "pr_nominal_damage": 125.0,
@@ -3480,6 +3770,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 3361,
     "tank_title": "T1 Heavy Tank",
     "icon": "T1_hvy",
     "pr_nominal_damage": 500.0,
@@ -3492,6 +3783,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 13857,
     "tank_title": "T110E3",
     "icon": "T110E3",
     "pr_nominal_damage": 2650.0,
@@ -3504,6 +3796,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 13089,
     "tank_title": "T110E4",
     "icon": "T110E4",
     "pr_nominal_damage": 2650.0,
@@ -3516,6 +3809,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 10785,
     "tank_title": "T110E5",
     "icon": "T110",
     "pr_nominal_damage": 2400.0,
@@ -3528,6 +3822,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 53505,
     "tank_title": "T-127",
     "icon": "T-127",
     "pr_nominal_damage": 380.0,
@@ -3540,6 +3835,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 33,
     "tank_title": "T14",
     "icon": "T14",
     "pr_nominal_damage": 450.0,
@@ -3552,6 +3848,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 54801,
     "tank_title": "T-15",
     "icon": "T-15",
     "pr_nominal_damage": 250.0,
@@ -3564,6 +3861,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 11265,
     "tank_title": "T-150",
     "icon": "T150",
     "pr_nominal_damage": 700.0,
@@ -3576,6 +3874,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 6177,
     "tank_title": "T18",
     "icon": "T18",
     "pr_nominal_damage": 300.0,
@@ -3588,6 +3887,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 53537,
     "tank_title": "T1E6",
     "icon": "T1_E6",
     "pr_nominal_damage": 175.0,
@@ -3600,6 +3900,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 51489,
     "tank_title": "T2 Light Tank",
     "icon": "T2_lt",
     "pr_nominal_damage": 225.0,
@@ -3612,6 +3913,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 5665,
     "tank_title": "T2 Medium Tank",
     "icon": "T2_med",
     "pr_nominal_damage": 150.0,
@@ -3624,6 +3926,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1569,
     "tank_title": "T20",
     "icon": "T20",
     "pr_nominal_damage": 1000.0,
@@ -3636,6 +3939,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 15137,
     "tank_title": "T21",
     "icon": "T21",
     "pr_nominal_damage": 500.0,
@@ -3648,6 +3952,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 11809,
     "tank_title": "T23E3",
     "icon": "T23E3",
     "pr_nominal_damage": 1000.0,
@@ -3660,6 +3965,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 54545,
     "tank_title": "T-25",
     "icon": "T-25",
     "pr_nominal_damage": 475.0,
@@ -3672,6 +3978,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 9249,
     "tank_title": "T25 AT",
     "icon": "T25_AT",
     "pr_nominal_damage": 1300.0,
@@ -3684,6 +3991,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 11041,
     "tank_title": "T25/2",
     "icon": "T25_2",
     "pr_nominal_damage": 1300.0,
@@ -3696,6 +4004,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 4609,
     "tank_title": "T-26",
     "icon": "T-26",
     "pr_nominal_damage": 150.0,
@@ -3708,6 +4017,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 13345,
     "tank_title": "T26E4 SuperPershing",
     "icon": "A80_T26_E4_SuperPershing",
     "pr_nominal_damage": 1350.0,
@@ -3720,6 +4030,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 8225,
     "tank_title": "T28",
     "icon": "T28",
     "pr_nominal_damage": 1800.0,
@@ -3732,6 +4043,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 1537,
     "tank_title": "T-28",
     "icon": "T-28",
     "pr_nominal_damage": 250.0,
@@ -3744,6 +4056,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 56609,
     "tank_title": "T28 Concept",
     "icon": "A102_T28_concept",
     "pr_nominal_damage": 1200.0,
@@ -3756,6 +4069,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 11297,
     "tank_title": "T28 Prototype",
     "icon": "T28_Prototype",
     "pr_nominal_damage": 1800.0,
@@ -3768,6 +4082,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 3873,
     "tank_title": "T29",
     "icon": "T29",
     "pr_nominal_damage": 1300.0,
@@ -3780,6 +4095,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 2593,
     "tank_title": "T30",
     "icon": "T30",
     "pr_nominal_damage": 2200.0,
@@ -3792,9 +4108,10 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 4385,
     "tank_title": "T32",
     "icon": "T32",
-    "pr_nominal_damage": 1450.0,
+    "pr_nominal_damage": 1600.0,
     "wn8_nominal_damage": 1289.14,
     "wn8_nominal_win_rate": 52.57,
     "wn8_nominal_spotted": 1.22,
@@ -3804,6 +4121,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 2849,
     "tank_title": "T34",
     "icon": "T34_hvy",
     "pr_nominal_damage": 1400.0,
@@ -3816,6 +4134,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 1,
     "tank_title": "T-34",
     "icon": "R04_T-34",
     "pr_nominal_damage": 500.0,
@@ -3828,6 +4147,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1073,
     "tank_title": "T-34-1",
     "icon": "Ch04_T34_1",
     "pr_nominal_damage": 1050.0,
@@ -3840,6 +4160,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1585,
     "tank_title": "T-34-2",
     "icon": "Ch05_T34_2",
     "pr_nominal_damage": 1350.0,
@@ -3852,6 +4173,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 64049,
     "tank_title": "T-34-3",
     "icon": "Ch14_T34_3",
     "pr_nominal_damage": 1300.0,
@@ -3864,6 +4186,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2561,
     "tank_title": "T-34-85",
     "icon": "T-34-85",
     "pr_nominal_damage": 775.0,
@@ -3876,6 +4199,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 58113,
     "tank_title": "T-34-85M",
     "icon": "R108_T34_85M",
     "pr_nominal_damage": 700.0,
@@ -3888,6 +4212,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 16673,
     "tank_title": "T37",
     "icon": "A94_T37",
     "pr_nominal_damage": 350.0,
@@ -3900,6 +4225,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 7713,
     "tank_title": "T40",
     "icon": "T40",
     "pr_nominal_damage": 400.0,
@@ -3912,6 +4238,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 6657,
     "tank_title": "T-43",
     "icon": "T-43",
     "pr_nominal_damage": 925.0,
@@ -3924,6 +4251,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 4353,
     "tank_title": "T-44",
     "icon": "T-44",
     "pr_nominal_damage": 1250.0,
@@ -3936,6 +4264,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 56833,
     "tank_title": "T-44-122",
     "icon": "T44_122",
     "pr_nominal_damage": 850.0,
@@ -3948,6 +4277,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 57089,
     "tank_title": "T-44-85",
     "icon": "T44_85",
     "pr_nominal_damage": 850.0,
@@ -3960,6 +4290,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3073,
     "tank_title": "T-46",
     "icon": "T-46",
     "pr_nominal_damage": 135.0,
@@ -3972,6 +4303,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 18209,
     "tank_title": "T49",
     "icon": "T49",
     "pr_nominal_damage": 1000.0,
@@ -3984,6 +4316,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 9473,
     "tank_title": "T-50",
     "icon": "T-50",
     "pr_nominal_damage": 150.0,
@@ -3996,6 +4329,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 7937,
     "tank_title": "T-54",
     "icon": "T-54",
     "pr_nominal_damage": 2000.0,
@@ -4008,6 +4342,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 59905,
     "tank_title": "T-54 first prototype",
     "icon": "R112_T54_45",
     "pr_nominal_damage": 1350.0,
@@ -4020,6 +4355,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 18177,
     "tank_title": "T-54 ltwt.",
     "icon": "R109_T54S",
     "pr_nominal_damage": 900.0,
@@ -4032,6 +4368,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 15393,
     "tank_title": "T54E1",
     "icon": "T54E1",
     "pr_nominal_damage": 2000.0,
@@ -4044,6 +4381,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2081,
     "tank_title": "T57",
     "icon": "T57",
     "pr_nominal_damage": 180.0,
@@ -4056,6 +4394,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 14881,
     "tank_title": "T57 Heavy Tank",
     "icon": "T57_58",
     "pr_nominal_damage": 2550.0,
@@ -4068,6 +4407,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 15361,
     "tank_title": "T-60",
     "icon": "T-60",
     "pr_nominal_damage": 175.0,
@@ -4080,6 +4420,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 13825,
     "tank_title": "T-62A",
     "icon": "T62A",
     "pr_nominal_damage": 2200.0,
@@ -4092,6 +4433,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 10529,
     "tank_title": "T67",
     "icon": "T67",
     "pr_nominal_damage": 550.0,
@@ -4104,6 +4446,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 14625,
     "tank_title": "T69",
     "icon": "T69",
     "pr_nominal_damage": 1500.0,
@@ -4116,6 +4459,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 55073,
     "tank_title": "T7 Combat Car",
     "icon": "T7_Combat_Car",
     "pr_nominal_damage": 175.0,
@@ -4128,6 +4472,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 15105,
     "tank_title": "T-70",
     "icon": "T-70",
     "pr_nominal_damage": 250.0,
@@ -4140,6 +4485,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 15649,
     "tank_title": "T71",
     "icon": "T71",
     "pr_nominal_damage": 850.0,
@@ -4152,6 +4498,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 15873,
     "tank_title": "T-80",
     "icon": "T80",
     "pr_nominal_damage": 280.0,
@@ -4164,6 +4511,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 6433,
     "tank_title": "T82",
     "icon": "T82",
     "pr_nominal_damage": 300.0,
@@ -4176,6 +4524,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 8481,
     "tank_title": "T92",
     "icon": "T92",
     "pr_nominal_damage": 2200.0,
@@ -4188,6 +4537,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 8737,
     "tank_title": "T95",
     "icon": "T95",
     "pr_nominal_damage": 2100.0,
@@ -4200,6 +4550,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 53793,
     "tank_title": "T95E2",
     "icon": "T95_E2",
     "pr_nominal_damage": 1350.0,
@@ -4212,6 +4563,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 55841,
     "tank_title": "T95E6",
     "icon": "T95_E6",
     "pr_nominal_damage": 2100.0,
@@ -4224,6 +4576,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 54529,
     "tank_title": "Tetrarch",
     "icon": "Tetrarch_LL",
     "pr_nominal_damage": 225.0,
@@ -4236,6 +4589,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 10769,
     "tank_title": "Tiger (P)",
     "icon": "PzVI_Tiger_P",
     "pr_nominal_damage": 1150.0,
@@ -4248,6 +4602,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 529,
     "tank_title": "Tiger I",
     "icon": "PzVI",
     "pr_nominal_damage": 1150.0,
@@ -4260,6 +4615,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 5137,
     "tank_title": "Tiger II",
     "icon": "PzVIB_Tiger_II",
     "pr_nominal_damage": 1400.0,
@@ -4272,6 +4628,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 53841,
     "tank_title": "TOG II*",
     "icon": "GB63_TOG_II",
     "pr_nominal_damage": 875.0,
@@ -4284,6 +4641,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 52561,
     "tank_title": "Tortoise",
     "icon": "GB32_Tortoise",
     "pr_nominal_damage": 2250.0,
@@ -4296,6 +4654,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 1633,
     "tank_title": "Type 1 Chi-He",
     "icon": "Chi_He",
     "pr_nominal_damage": 350.0,
@@ -4308,6 +4667,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 4401,
     "tank_title": "Type 2597 Chi-Ha",
     "icon": "Ch08_Type97_Chi_Ha",
     "pr_nominal_damage": 250.0,
@@ -4320,6 +4680,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 1377,
     "tank_title": "Type 3 Chi-Nu",
     "icon": "Chi_Nu",
     "pr_nominal_damage": 550.0,
@@ -4332,6 +4693,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 51553,
     "tank_title": "Type 3 Chi-Nu Kai",
     "icon": "Chi_Nu_Kai",
     "pr_nominal_damage": 400.0,
@@ -4344,6 +4706,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1889,
     "tank_title": "Type 4 Chi-To",
     "icon": "Chi_To",
     "pr_nominal_damage": 750.0,
@@ -4356,6 +4719,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 1121,
     "tank_title": "Type 5 Chi-Ri",
     "icon": "Chi_Ri",
     "pr_nominal_damage": 1200.0,
@@ -4368,6 +4732,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2913,
     "tank_title": "Type 5 Ke-Ho",
     "icon": "Ke_Ho",
     "pr_nominal_damage": 250.0,
@@ -4380,6 +4745,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 5169,
     "tank_title": "Type 58",
     "icon": "Ch20_Type58",
     "pr_nominal_damage": 750.0,
@@ -4392,6 +4758,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 49,
     "tank_title": "Type 59",
     "icon": "Ch01_Type59",
     "pr_nominal_damage": 1350.0,
@@ -4404,6 +4771,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 561,
     "tank_title": "Type 59 G",
     "icon": "Ch01_Type59_Gold",
     "pr_nominal_damage": 1350.0,
@@ -4416,6 +4784,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3425,
     "tank_title": "Type 61",
     "icon": "Type_61",
     "pr_nominal_damage": 2000.0,
@@ -4428,6 +4797,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 305,
     "tank_title": "Type 62",
     "icon": "Ch02_Type62",
     "pr_nominal_damage": 700.0,
@@ -4440,6 +4810,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 64817,
     "tank_title": "Type 64",
     "icon": "Ch24_Type64",
     "pr_nominal_damage": 450.0,
@@ -4452,6 +4823,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 865,
     "tank_title": "Type 95 Ha-Go",
     "icon": "Ha_Go",
     "pr_nominal_damage": 160.0,
@@ -4464,6 +4836,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 2145,
     "tank_title": "Type 97 Chi-Ha",
     "icon": "Chi_Ha",
     "pr_nominal_damage": 200.0,
@@ -4476,6 +4849,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3169,
     "tank_title": "Type 97 Te-Ke",
     "icon": "Te_Ke",
     "pr_nominal_damage": 160.0,
@@ -4488,6 +4862,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 2401,
     "tank_title": "Type 98 Ke-Ni",
     "icon": "Ke_Ni",
     "pr_nominal_damage": 180.0,
@@ -4500,6 +4875,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 51809,
     "tank_title": "Type 98 Ke-Ni Otsu",
     "icon": "Ke_Ni_B",
     "pr_nominal_damage": 180.0,
@@ -4512,6 +4888,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 4657,
     "tank_title": "Type T-34",
     "icon": "Ch21_T34",
     "pr_nominal_damage": 500.0,
@@ -4524,6 +4901,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 8273,
     "tank_title": "Universal Carrier 2-pdr",
     "icon": "GB39_Universal_CarrierQF2",
     "pr_nominal_damage": 180.0,
@@ -4536,6 +4914,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 4945,
     "tank_title": "Valentine",
     "icon": "GB04_Valentine",
     "pr_nominal_damage": 260.0,
@@ -4548,6 +4927,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 8017,
     "tank_title": "Valentine AT",
     "icon": "GB42_Valentine_AT",
     "pr_nominal_damage": 300.0,
@@ -4560,6 +4940,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 52481,
     "tank_title": "Valentine II",
     "icon": "Valentine_LL",
     "pr_nominal_damage": 360.0,
@@ -4572,6 +4953,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 81,
     "tank_title": "Vickers Medium Mk. I",
     "icon": "GB01_Medium_Mark_I",
     "pr_nominal_damage": 100.0,
@@ -4584,6 +4966,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 337,
     "tank_title": "Vickers Medium Mk. II",
     "icon": "GB05_Vickers_Medium_Mk_II",
     "pr_nominal_damage": 135.0,
@@ -4596,6 +4979,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2385,
     "tank_title": "Vickers Medium Mk. III",
     "icon": "GB06_Vickers_Medium_Mk_III",
     "pr_nominal_damage": 150.0,
@@ -4608,6 +4992,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2353,
     "tank_title": "Vickers Mk. E Type B",
     "icon": "Ch07_Vickers_MkE_Type_BT26",
     "pr_nominal_damage": 200.0,
@@ -4620,6 +5005,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 5393,
     "tank_title": "VK 16.02 Leopard",
     "icon": "VK1602",
     "pr_nominal_damage": 175.0,
@@ -4632,6 +5018,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 13585,
     "tank_title": "VK 20.01 (D)",
     "icon": "VK2001DB",
     "pr_nominal_damage": 270.0,
@@ -4644,6 +5031,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 10001,
     "tank_title": "VK 28.01",
     "icon": "VK2801",
     "pr_nominal_damage": 500.0,
@@ -4656,6 +5044,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 14097,
     "tank_title": "VK 30.01 (D)",
     "icon": "VK3002DB_V1",
     "pr_nominal_damage": 700.0,
@@ -4668,6 +5057,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2577,
     "tank_title": "VK 30.01 (H)",
     "icon": "VK3001H",
     "pr_nominal_damage": 500.0,
@@ -4680,6 +5070,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 7185,
     "tank_title": "VK 30.01 (P)",
     "icon": "VK3001P",
     "pr_nominal_damage": 625.0,
@@ -4692,6 +5083,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 4113,
     "tank_title": "VK 30.02 (D)",
     "icon": "VK3002DB",
     "pr_nominal_damage": 850.0,
@@ -4704,6 +5096,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 15889,
     "tank_title": "VK 30.02 (M)",
     "icon": "VK3002M",
     "pr_nominal_damage": 725.0,
@@ -4716,6 +5109,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 2321,
     "tank_title": "VK 36.01 (H)",
     "icon": "VK3601H",
     "pr_nominal_damage": 700.0,
@@ -4728,6 +5122,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 10513,
     "tank_title": "VK 45.02 (P) Ausf. A",
     "icon": "VK4502A",
     "pr_nominal_damage": 1450.0,
@@ -4740,6 +5135,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 7441,
     "tank_title": "VK 45.02 (P) Ausf. B",
     "icon": "VK4502P",
     "pr_nominal_damage": 2000.0,
@@ -4752,6 +5148,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 58641,
     "tank_title": "VK 72.01 (K)",
     "icon": "VK7201",
     "pr_nominal_damage": 2300.0,
@@ -4764,6 +5161,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 16913,
     "tank_title": "Waffentrager auf E 100",
     "icon": "Waffentrager_E100",
     "pr_nominal_damage": 2650.0,
@@ -4776,6 +5174,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 16401,
     "tank_title": "Waffentrager auf Pz. IV",
     "icon": "Waffentrager_IV",
     "pr_nominal_damage": 2200.0,
@@ -4788,6 +5187,7 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 5905,
     "tank_title": "Wespe",
     "icon": "Wespe",
     "pr_nominal_damage": 320.0,
@@ -4800,6 +5200,7 @@
     "tank_type": 5
   },
   {
+    "comp_descr": 817,
     "tank_title": "WZ-111",
     "icon": "Ch03_WZ-111",
     "pr_nominal_damage": 1400.0,
@@ -4812,6 +5213,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 2097,
     "tank_title": "WZ-111 model 1-4",
     "icon": "Ch12_111_1_2_3",
     "pr_nominal_damage": 2000.0,
@@ -4824,6 +5226,7 @@
     "tank_type": 3
   },
   {
+    "comp_descr": 1841,
     "tank_title": "WZ-120",
     "icon": "Ch18_WZ-120",
     "pr_nominal_damage": 1900.0,
@@ -4836,6 +5239,7 @@
     "tank_type": 2
   },
   {
+    "comp_descr": 3377,
     "tank_title": "WZ-131",
     "icon": "Ch16_WZ_131",
     "pr_nominal_damage": 725.0,
@@ -4848,6 +5252,7 @@
     "tank_type": 1
   },
   {
+    "comp_descr": 3889,
     "tank_title": "WZ-132",
     "icon": "Ch17_WZ131_1_WZ132",
     "pr_nominal_damage": 900.0,

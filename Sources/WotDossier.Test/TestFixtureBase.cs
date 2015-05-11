@@ -106,20 +106,20 @@ namespace WotDossier.Test
         //    }
         //}
 
-        //[Test]
-        //public void RenameTankResources()
-        //{
-        //    string[] files = Directory.GetFiles(@"d:\1");
+        [Test]
+        public void RenameTankResources()
+        {
+            string[] files = Directory.GetFiles(@"d:\vehicle");
 
-        //    foreach (var filePath in files)
-        //    {
-        //        var file = new FileInfo(filePath);
-        //        var destFileName = filePath.Replace("-", "_");
-        //        if (!File.Exists(destFileName))
-        //        {
-        //            file.MoveTo(destFileName);
-        //        }
-        //    }
-        //}
+            foreach (var filePath in files)
+            {
+                var file = new FileInfo(filePath);
+                var destFileName = filePath.Replace("-", "_");
+                if (!File.Exists(destFileName))
+                {
+                    file.MoveTo(destFileName);
+                }
+            }
+        }
     }
 }

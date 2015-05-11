@@ -46,7 +46,7 @@ namespace WotDossier.Converters
                 {
                     uriSource = new Uri(
                         string.Format(
-                            @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}/{0}.png",
+                            @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}.png",
                             description.MapNameId));
                 }
                 else
@@ -54,7 +54,7 @@ namespace WotDossier.Converters
                     uriSource =
                         new Uri(
                             string.Format(
-                                @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}/{0}_{1}_{2}.png",
+                                @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}_{1}_{2}.png",
                                 description.MapNameId, description.Gameplay == Gameplay.nations ? Gameplay.ctf : description.Gameplay, description.Team));
                 }
 

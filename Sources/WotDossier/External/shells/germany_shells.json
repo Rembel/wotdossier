@@ -845,6 +845,20 @@
       "devices": "\t122\t"
     }
   },
+  "_90mm_DM13A1": {
+    "id": "\t131\t",
+    "userString": "#germany_vehicles:_90mm_DM13A1",
+    "icon": "ap",
+    "price": "\t355\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    }
+  },
   "_90mm_M431": {
     "id": "\t122\t",
     "userString": "#germany_vehicles:_90mm_M431",
@@ -1821,149 +1835,6 @@
     "damage": {
       "armor": "\t420\t",
       "devices": "\t135\t"
-    }
-  }
-}": "#germany_vehicles:_170mm_Sprg18",
-      "icon": "he",
-      "price": "\t1344\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t170\t",
-      "explosionRadius": "4.45",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1400\t",
-        "devices": "\t228\t"
-      }
-    },
-    "_170mm_Sprg18_Ausf_G": {
-      "id": "\t61\t",
-      "userString": "#germany_vehicles:_170mm_Sprg18_Ausf_G",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t13\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t170\t",
-      "explosionRadius": "6.37",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1400\t",
-        "devices": "\t228\t"
-      }
-    },
-    "_210mm_Sprg18": {
-      "id": "\t62\t",
-      "userString": "#germany_vehicles:_210mm_Sprg18",
-      "icon": "he",
-      "price": "\t2080\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t210\t",
-      "explosionRadius": "6.44",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t2000\t",
-        "devices": "\t280\t"
-      }
-    },
-    "_210mm_Sprg18_Ausf_G": {
-      "id": "\t63\t",
-      "userString": "#germany_vehicles:_210mm_Sprg18_Ausf_G",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t20\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t210\t",
-      "explosionRadius": "9.21",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t2000\t",
-        "devices": "\t280\t"
-      }
-    },
-    "_210mm_Gr.18Be": {
-      "id": "\t70\t",
-      "userString": "#germany_vehicles:_210mm_Gr.18Be",
-      "icon": "ap",
-      "price": "\t1930\t",
-      "kind": "ARMOR_PIERCING",
-      "caliber": "\t210\t",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeArmorPiercing",
-      "damage": {
-        "armor": "\t1550\t",
-        "devices": "\t280\t"
-      }
-    },
-    "ArtilleryPreparation_small": {
-      "id": "\t124\t",
-      "userString": "#germany_vehicles:Shell_Env_Artillery",
-      "icon": "he",
-      "price": "\t1120\t",
-      "notInShop": "\ttrue\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t150\t",
-      "explosionRadius": "4.5",
-      "isTracer": "\ttrue\t",
-      "effects": "\tArtilleryPreparation\t",
-      "damage": {
-        "armor": "\t950\t",
-        "devices": "\t203\t"
-      }
-    },
-    "ArtilleryPreparation_big": {
-      "id": "\t128\t",
-      "userString": "#germany_vehicles:Shell_Env_Artillery2",
-      "icon": "he",
-      "price": "\t1120\t",
-      "notInShop": "\ttrue\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t150\t",
-      "explosionRadius": "18.17",
-      "isTracer": "\ttrue\t",
-      "effects": "\tArtilleryPreparation\t",
-      "damage": {
-        "armor": "\t950\t",
-        "devices": "\t203\t"
-      }
-    },
-    "artillery_shell": {
-      "id": "\t130\t",
-      "userString": "#germany_vehicles:artillery_shell",
-      "icon": "he",
-      "price": "\t1170\t",
-      "notInShop": "\ttrue\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t100\t",
-      "explosionRadius": "1.76",
-      "isTracer": "\ttrue\t",
-      "effects": "artilleryStrike",
-      "damage": {
-        "armor": "\t420\t",
-        "devices": "\t135\t"
-      }
-    },
-    "bomber_shell": {
-      "id": "\t129\t",
-      "userString": "#germany_vehicles:bomber_shell",
-      "icon": "he",
-      "price": "\t1170\t",
-      "notInShop": "\ttrue\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t100\t",
-      "explosionRadius": "\t4\t",
-      "isTracer": "\ttrue\t",
-      "effects": "airbombStrike",
-      "damage": {
-        "armor": "\t420\t",
-        "devices": "\t135\t"
-      }
     }
   }
 }

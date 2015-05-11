@@ -557,6 +557,52 @@
       "devices": "\t100\t"
     }
   },
+  "_88mm_Pzgr39": {
+    "id": "\t46\t",
+    "userString": "#japan_vehicles:_88mm_Pzgr39",
+    "icon": "ap",
+    "price": "\t240\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t88\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t220\t",
+      "devices": "\t119\t"
+    }
+  },
+  "_88mm_Pzgr.40": {
+    "id": "\t47\t",
+    "userString": "#japan_vehicles:_88mm_Pzgr.40",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t8\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t88\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t220\t",
+      "devices": "\t119\t"
+    }
+  },
+  "_88mm_Sprg.18": {
+    "id": "\t48\t",
+    "userString": "#japan_vehicles:_88mm_Sprg.18",
+    "icon": "he",
+    "price": "\t180\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t88\t",
+    "explosionRadius": "1.4",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t270\t",
+      "devices": "\t119\t"
+    }
+  },
   "_90mm_AP_M82_late": {
     "id": "\t37\t",
     "userString": "#japan_vehicles:_90mm_AP_M82_late",
@@ -680,69 +726,6 @@
     "damage": {
       "armor": "\t480\t",
       "devices": "\t150\t"
-    }
-  }
-}: "hc",
-      "price": {
-        "#text": "\t11\t",
-        "gold": ""
-      },
-      "kind": "HOLLOW_CHARGE",
-      "caliber": "\t90\t",
-      "isTracer": "\ttrue\t",
-      "effects": "\tmainHollowCharge\t",
-      "damage": {
-        "armor": "\t240\t",
-        "devices": "\t122\t"
-      },
-      "piercingPowerLossFactorByDistance": "0.05"
-    },
-    "_105mm_APDS_L28A1": {
-      "id": "\t42\t",
-      "userString": "#japan_vehicles:_105mm_APDS_L28A1",
-      "icon": "ap_cr",
-      "price": "\t1200\t",
-      "kind": "ARMOR_PIERCING_CR",
-      "caliber": "\t105\t",
-      "isTracer": "\ttrue\t",
-      "effects": "\tmainAPCR\t",
-      "damage": {
-        "armor": "\t390\t",
-        "devices": "\t150\t"
-      }
-    },
-    "_105mm_HEAT-T_T384E4": {
-      "id": "\t43\t",
-      "userString": "#japan_vehicles:_105mm_HEAT-T_T384E4",
-      "icon": "hc",
-      "price": {
-        "#text": "\t12\t",
-        "gold": ""
-      },
-      "kind": "HOLLOW_CHARGE",
-      "caliber": "\t105\t",
-      "isTracer": "\ttrue\t",
-      "effects": "\tmainHollowCharge\t",
-      "damage": {
-        "armor": "\t390\t",
-        "devices": "\t150\t"
-      },
-      "piercingPowerLossFactorByDistance": "0.05"
-    },
-    "_105mm_HEPT_Type75": {
-      "id": "\t44\t",
-      "userString": "#japan_vehicles:_105mm_HEPT_Type75",
-      "icon": "he",
-      "price": "\t880\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t105\t",
-      "explosionRadius": "1.91",
-      "isTracer": "\ttrue\t",
-      "effects": "mainHighExplosive",
-      "damage": {
-        "armor": "\t480\t",
-        "devices": "\t150\t"
-      }
     }
   }
 }

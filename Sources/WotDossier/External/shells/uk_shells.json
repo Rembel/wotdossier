@@ -580,24 +580,6 @@
       "devices": "\t105\t"
     }
   },
-  "_76mm_HVAP_M93": {
-    "id": "\t37\t",
-    "userString": "#gb_vehicles:_76mm_HVAP_M93",
-    "icon": "ap_cr",
-    "price": {
-      "#text": "\t7\t",
-      "gold": ""
-    },
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING_CR",
-    "caliber": "\t76\t",
-    "isTracer": "\ttrue\t",
-    "effects": "mediumAPCR",
-    "damage": {
-      "armor": "\t115\t",
-      "devices": "\t110\t"
-    }
-  },
   "_76mm_HE_M42A1": {
     "id": "\t38\t",
     "userString": "#gb_vehicles:_76mm_HE_M42A1",
@@ -612,25 +594,6 @@
       "armor": "\t185\t",
       "devices": "\t105\t"
     }
-  },
-  "_75mm_HEAT_M66": {
-    "id": "\t39\t",
-    "userString": "#gb_vehicles:_75mm_HEAT_M66",
-    "icon": "hc",
-    "price": {
-      "#text": "\t7\t",
-      "gold": ""
-    },
-    "notInShop": "\ttrue\t",
-    "kind": "HOLLOW_CHARGE",
-    "caliber": "\t75\t",
-    "isTracer": "\ttrue\t",
-    "effects": "mediumHollowCharge",
-    "damage": {
-      "armor": "\t110\t",
-      "devices": "\t110\t"
-    },
-    "piercingPowerLossFactorByDistance": "0.05"
   },
   "_75mm_M61": {
     "id": "\t26\t",
@@ -1502,133 +1465,6 @@
     "damage": {
       "armor": "\t2200\t",
       "devices": "\t315\t"
-    }
-  }
-}      "#text": "\t15\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "152.4",
-      "explosionRadius": "5.26",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1250\t",
-        "devices": "\t203\t"
-      }
-    },
-    "_7.2inch_HE": {
-      "id": "\t98\t",
-      "userString": "#gb_vehicles:_7.2inch_HE",
-      "icon": "he",
-      "price": "\t1830\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "182.9",
-      "explosionRadius": "5.05",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1750\t",
-        "devices": "\t244\t"
-      }
-    },
-    "_7.2inch_HE_Mk_2": {
-      "id": "\t102\t",
-      "userString": "#gb_vehicles:_7.2inch_HE_Mk_2",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t18\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "182.9",
-      "explosionRadius": "7.32",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1750\t",
-        "devices": "\t244\t"
-      }
-    },
-    "_183mm_AP_Mk1": {
-      "id": "\t81\t",
-      "userString": "#gb_vehicles:_183mm_AP_Mk1",
-      "icon": "ap",
-      "price": "\t2250\t",
-      "kind": "ARMOR_PIERCING",
-      "caliber": "182.9",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeArmorPiercing",
-      "damage": {
-        "armor": "\t1150\t",
-        "devices": "\t244\t"
-      }
-    },
-    "_183mm_HESH": {
-      "id": "\t82\t",
-      "userString": "#gb_vehicles:_183mm_HESH",
-      "icon": "he",
-      "price": {
-        "#text": "\t20\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "182.9",
-      "explosionRadius": "5.05",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1750\t",
-        "devices": "\t244\t"
-      }
-    },
-    "_183mm_HE_Mk1": {
-      "id": "\t83\t",
-      "userString": "#gb_vehicles:_183mm_HE_Mk1",
-      "icon": "he",
-      "price": "\t1900\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "182.9",
-      "explosionRadius": "5.05",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1750\t",
-        "devices": "\t244\t"
-      }
-    },
-    "_9.2inch_HE_Mk_18": {
-      "id": "\t99\t",
-      "userString": "#gb_vehicles:_9.2inch_HE_Mk_18",
-      "icon": "he",
-      "price": "\t2450\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "233.7",
-      "explosionRadius": "7.76",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t2200\t",
-        "devices": "\t315\t"
-      }
-    },
-    "_9.2inch_HE_Mk_19": {
-      "id": "\t103\t",
-      "userString": "#gb_vehicles:_9.2inch_HE_Mk_19",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t20\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "233.7",
-      "explosionRadius": "11.10",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t2200\t",
-        "devices": "\t315\t"
-      }
     }
   }
 }

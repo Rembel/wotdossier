@@ -490,37 +490,6 @@
       "devices": "\t76\t"
     }
   },
-  "_57_76mm_UBR": {
-    "id": "\t89\t",
-    "userString": "#ussr_vehicles:_57_76mm_UBR",
-    "icon": "ap",
-    "price": "\t112\t",
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "\t57\t",
-    "isTracer": "\ttrue\t",
-    "effects": "mediumArmorPiercing",
-    "damage": {
-      "armor": "\t85\t",
-      "devices": "\t76\t"
-    }
-  },
-  "_57_76mm_OF": {
-    "id": "\t90\t",
-    "userString": "#ussr_vehicles:_57_76mm_OF",
-    "icon": "he",
-    "price": "\t28\t",
-    "notInShop": "\ttrue\t",
-    "kind": "HIGH_EXPLOSIVE",
-    "caliber": "\t57\t",
-    "explosionRadius": "0.66",
-    "isTracer": "\ttrue\t",
-    "effects": "mediumHighExplosive",
-    "damage": {
-      "armor": "\t95\t",
-      "devices": "\t76\t"
-    }
-  },
   "_6pdr_AP_MKs_4": {
     "id": "\t25\t",
     "userString": "#ussr_vehicles:_6pdr_AP_MKs_4",
@@ -946,6 +915,20 @@
       "devices": "\t135\t"
     }
   },
+  "_100mm_UBR-412PB_fallout": {
+    "id": "\t139\t",
+    "userString": "#ussr_vehicles:_100mm_UBR-412PB_fallout",
+    "icon": "ap_cr",
+    "price": "\t30\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t135\t"
+    }
+  },
   "_100mm_UOF-412B": {
     "id": "\t78\t",
     "userString": "#ussr_vehicles:_100mm_UOF-412B",
@@ -966,6 +949,21 @@
     "userString": "#ussr_vehicles:_100mm_3UOF10",
     "icon": "he",
     "price": "\t1170\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t100\t",
+    "explosionRadius": "1.76",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t420\t",
+      "devices": "\t135\t"
+    }
+  },
+  "_100mm_3UOF10_fallout": {
+    "id": "\t141\t",
+    "userString": "#ussr_vehicles:_100mm_3UOF10_fallout",
+    "icon": "he",
+    "price": "\t27\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t100\t",
     "explosionRadius": "1.76",
@@ -997,6 +995,24 @@
   "_100mm_3UBK4M": {
     "id": "\t101\t",
     "userString": "#ussr_vehicles:_100mm_3UBK4M",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t100\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHollowCharge",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t135\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_100mm_3UBK4M_fallout": {
+    "id": "\t140\t",
+    "userString": "#ussr_vehicles:_100mm_3UBK4M_fallout",
     "icon": "hc",
     "price": {
       "#text": "\t12\t",
@@ -1196,20 +1212,6 @@
       "devices": "\t165\t"
     }
   },
-  "_122mm_UBR-471PBM": {
-    "id": "\t129\t",
-    "userString": "#ussr_vehicles:_122mm_UBR-471PBM",
-    "icon": "ap_cr",
-    "price": "\t1180\t",
-    "kind": "ARMOR_PIERCING_CR",
-    "caliber": "\t122\t",
-    "isTracer": "\ttrue\t",
-    "effects": "largeAPCR",
-    "damage": {
-      "armor": "\t440\t",
-      "devices": "\t165\t"
-    }
-  },
   "_122mm_3VBK6": {
     "id": "\t138\t",
     "userString": "#ussr_vehicles:_122mm_3VBK6",
@@ -1227,6 +1229,20 @@
       "devices": "\t165\t"
     },
     "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_122mm_UBR-471PBM": {
+    "id": "\t129\t",
+    "userString": "#ussr_vehicles:_122mm_UBR-471PBM",
+    "icon": "ap_cr",
+    "price": "\t1180\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t122\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeAPCR",
+    "damage": {
+      "armor": "\t440\t",
+      "devices": "\t165\t"
+    }
   },
   "_122mm_UBP-471BM": {
     "id": "\t130\t",
@@ -1887,161 +1903,6 @@
     "damage": {
       "armor": "\t1850\t",
       "devices": "\t270\t"
-    }
-  }
-}t1650\t",
-      "kind": "ARMOR_PIERCING",
-      "caliber": "\t152\t",
-      "isTracer": "\ttrue\t",
-      "effects": "largeArmorPiercing",
-      "damage": {
-        "armor": "\t750\t",
-        "devices": "\t203\t"
-      }
-    },
-    "_152mm_UBK551M": {
-      "id": "\t103\t",
-      "userString": "#ussr_vehicles:_152mm_UBK551M",
-      "icon": "hc",
-      "price": {
-        "#text": "\t17\t",
-        "gold": ""
-      },
-      "kind": "HOLLOW_CHARGE",
-      "caliber": "\t152\t",
-      "isTracer": "\ttrue\t",
-      "effects": "largeHollowCharge",
-      "damage": {
-        "armor": "\t750\t",
-        "devices": "\t203\t"
-      },
-      "piercingPowerLossFactorByDistance": "0.05"
-    },
-    "_152mm_53-OF-551M": {
-      "id": "\t104\t",
-      "userString": "#ussr_vehicles:_152mm_53-OF-551M",
-      "icon": "he",
-      "price": "\t1120\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t152\t",
-      "explosionRadius": "3.66",
-      "isTracer": "\ttrue\t",
-      "effects": "largeHighExplosive",
-      "damage": {
-        "armor": "\t1100\t",
-        "devices": "\t203\t"
-      }
-    },
-    "_152mm_UBR551P": {
-      "id": "\t69\t",
-      "userString": "#ussr_vehicles:_152mm_UBR551P",
-      "icon": "ap_cr",
-      "price": {
-        "#text": "\t12\t",
-        "gold": ""
-      },
-      "kind": "ARMOR_PIERCING_CR",
-      "caliber": "\t152\t",
-      "isTracer": "\ttrue\t",
-      "effects": "largeAPCR",
-      "damage": {
-        "armor": "\t750\t",
-        "devices": "\t203\t"
-      }
-    },
-    "_180mm_F-600D": {
-      "id": "\t79\t",
-      "userString": "#ussr_vehicles:_180mm_F-600D",
-      "icon": "he",
-      "price": "\t1980\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t180\t",
-      "explosionRadius": "4.91",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1700\t",
-        "devices": "\t240\t"
-      }
-    },
-    "_180mm_F-600BM": {
-      "id": "\t80\t",
-      "userString": "#ussr_vehicles:_180mm_F-600BM",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t18\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t180\t",
-      "explosionRadius": "7.28",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1700\t",
-        "devices": "\t240\t"
-      }
-    },
-    "_180mm_UBR-600": {
-      "id": "\t81\t",
-      "userString": "#ussr_vehicles:_180mm_UBR-600",
-      "icon": "ap",
-      "price": "\t1980\t",
-      "kind": "ARMOR_PIERCING",
-      "caliber": "\t180\t",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeArmorPiercing",
-      "damage": {
-        "armor": "\t1100\t",
-        "devices": "\t240\t"
-      }
-    },
-    "_203mm_F-625D": {
-      "id": "\t70\t",
-      "userString": "#ussr_vehicles:_203mm_F-625D",
-      "icon": "he",
-      "price": "\t1910\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t203\t",
-      "explosionRadius": "6.07",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1850\t",
-        "devices": "\t270\t"
-      }
-    },
-    "_203mm_G-620": {
-      "id": "\t71\t",
-      "userString": "#ussr_vehicles:_203mm_G-620",
-      "icon": "ap",
-      "price": "\t1845\t",
-      "kind": "ARMOR_PIERCING",
-      "caliber": "\t203\t",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeArmorPiercing",
-      "damage": {
-        "armor": "\t1450\t",
-        "devices": "\t270\t"
-      }
-    },
-    "_203mm_F-625DBM": {
-      "id": "\t72\t",
-      "userString": "#ussr_vehicles:_203mm_F-625DBM",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t20\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t203\t",
-      "explosionRadius": "8.49",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1850\t",
-        "devices": "\t270\t"
-      }
     }
   }
 }

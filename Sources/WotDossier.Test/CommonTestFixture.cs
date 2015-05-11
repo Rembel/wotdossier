@@ -77,6 +77,7 @@ namespace WotDossier.Test
                 ratingExpectancy.Wn8NominalDefence = (double)expectedValue["expDef"];
                 ratingExpectancy.Icon = tankDescription.Icon.IconOrig;
                 ratingExpectancy.TankTitle = tankDescription.Title;
+                ratingExpectancy.CompDescr = tankDescription.CompDescr;
 
                 xmlTanks.Add(ratingExpectancy);
             }

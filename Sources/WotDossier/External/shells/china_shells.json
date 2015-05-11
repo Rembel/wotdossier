@@ -723,6 +723,53 @@
       "devices": "\t115\t"
     }
   },
+  "_90mm_AP_M318": {
+    "id": "\t75\t",
+    "userString": "#china_vehicles:_90mm_AP_M318",
+    "icon": "ap",
+    "price": "\t305\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    }
+  },
+  "_90mm_HEAT_M348": {
+    "id": "\t76\t",
+    "userString": "#china_vehicles:_90mm_HEAT_M348",
+    "icon": "hc",
+    "price": {
+      "#text": "\t10\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainHollowCharge\t",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_90mm_HE_T91E3": {
+    "id": "\t77\t",
+    "userString": "#china_vehicles:_90mm_HE_T91E3",
+    "icon": "he",
+    "price": "\t230\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t90\t",
+    "explosionRadius": "1.46",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t122\t"
+    }
+  },
   "_100mm_UBR-412": {
     "id": "\t0\t",
     "userString": "#china_vehicles:_100mm_UBR-412",
@@ -828,6 +875,53 @@
     "damage": {
       "armor": "\t160\t",
       "devices": "\t135\t"
+    }
+  },
+  "_105mm_APDS_M392A2": {
+    "id": "\t78\t",
+    "userString": "#china_vehicles:_105mm_APDS_M392A2",
+    "icon": "ap_cr",
+    "price": "\t1250\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_105mm_HEAT_M456": {
+    "id": "\t80\t",
+    "userString": "#china_vehicles:_105mm_HEAT_M456",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainHollowCharge\t",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_105mm_HEP_M393A1": {
+    "id": "\t79\t",
+    "userString": "#china_vehicles:_105mm_HEP_M393A1",
+    "icon": "he",
+    "price": "\t910\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t105\t",
+    "explosionRadius": "1.91",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t480\t",
+      "devices": "\t150\t"
     }
   },
   "_122mm_Type_57": {
@@ -970,92 +1064,5 @@
       "devices": "\t180\t"
     },
     "piercingPowerLossFactorByDistance": "0.05"
-  }
-}morPiercing",
-      "damage": {
-        "armor": "\t440\t",
-        "devices": "\t165\t"
-      }
-    },
-    "_122mm_PO-122": {
-      "id": "\t62\t",
-      "userString": "#china_vehicles:_122mm_PO-122",
-      "icon": "hc",
-      "price": {
-        "#text": "\t12\t",
-        "gold": ""
-      },
-      "kind": "HOLLOW_CHARGE",
-      "caliber": "\t122\t",
-      "isTracer": "\ttrue\t",
-      "effects": "largeHollowCharge",
-      "damage": {
-        "armor": "\t440\t",
-        "devices": "\t165\t"
-      },
-      "piercingPowerLossFactorByDistance": "0.05"
-    },
-    "_122mm_SB-472": {
-      "id": "\t63\t",
-      "userString": "#china_vehicles:_122mm_SB-472",
-      "icon": "he",
-      "price": "\t630\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t122\t",
-      "explosionRadius": "2.49",
-      "isTracer": "\ttrue\t",
-      "effects": "largeHighExplosive",
-      "damage": {
-        "armor": "\t530\t",
-        "devices": "\t165\t"
-      }
-    },
-    "_130mm_HE": {
-      "id": "\t33\t",
-      "userString": "#china_vehicles:_130mm_HE",
-      "icon": "he",
-      "price": "\t978\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t130\t",
-      "explosionRadius": "2.78",
-      "isTracer": "\ttrue\t",
-      "effects": "largeHighExplosive",
-      "damage": {
-        "armor": "\t640\t",
-        "devices": "\t180\t"
-      }
-    },
-    "_130mm_AP": {
-      "id": "\t31\t",
-      "userString": "#china_vehicles:_130mm_AP",
-      "icon": "ap",
-      "price": "\t1118\t",
-      "kind": "ARMOR_PIERCING",
-      "caliber": "\t130\t",
-      "isTracer": "\ttrue\t",
-      "effects": "largeArmorPiercing",
-      "damage": {
-        "armor": "\t490\t",
-        "devices": "\t180\t"
-      }
-    },
-    "_130mm_HEAT": {
-      "id": "\t32\t",
-      "userString": "#china_vehicles:_130mm_HEAT",
-      "icon": "hc",
-      "price": {
-        "#text": "\t12\t",
-        "gold": ""
-      },
-      "kind": "HOLLOW_CHARGE",
-      "caliber": "\t130\t",
-      "isTracer": "\ttrue\t",
-      "effects": "largeHollowCharge",
-      "damage": {
-        "armor": "\t490\t",
-        "devices": "\t180\t"
-      },
-      "piercingPowerLossFactorByDistance": "0.05"
-    }
   }
 }

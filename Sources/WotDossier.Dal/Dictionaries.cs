@@ -26,7 +26,7 @@ namespace WotDossier.Dal
         private readonly Dictionary<string, TankIcon> _icons = new Dictionary<string, TankIcon>();
         private readonly Dictionary<TankIcon, TankDescription> _iconTanks = new Dictionary<TankIcon, TankDescription>();
         private Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        private Dictionary<string, RatingExpectancy> _ratingExpectations;
+        private Dictionary<int, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
         public static readonly Version VersionRelease = new Version("0.9.7.0");
@@ -424,6 +424,17 @@ namespace WotDossier.Dal
                 return _tanks[20017];
             }
 
+            else if (iconId == "usa_sherman_jumbo")
+            {
+                //0.9.8 replay tank name changed to a36_sherman_jumbo
+                return _tanks[20039];
+            }
+            else if (iconId == "usa_m48a1")
+            {
+                //0.9.8 replay tank name changed to a84_m48a1
+                return _tanks[20055];
+            }
+
 
 
             return tankDescription ?? TankDescription.Unknown(playerVehicle);
@@ -502,9 +513,9 @@ namespace WotDossier.Dal
                     }
 
                     var key = tank.Icon.IconOrig.ToLower();
-                    if (_ratingExpectations.ContainsKey(key))
+                    if (_ratingExpectations.ContainsKey(tank.CompDescr))
                     {
-                        tank.Expectancy = _ratingExpectations[key];
+                        tank.Expectancy = _ratingExpectations[tank.CompDescr];
                     }
                     else
                     {
@@ -525,7 +536,7 @@ namespace WotDossier.Dal
             return _ratingExpectations.Values.FirstOrDefault(x => x.TankLevel == tank.Tier && (int) x.TankType == tank.Type);
         }
 
-        private Dictionary<string, RatingExpectancy> ReadRatingExpectationsDictionary()
+        private Dictionary<int, RatingExpectancy> ReadRatingExpectationsDictionary()
         {
             try
             {
@@ -534,14 +545,14 @@ namespace WotDossier.Dal
                     JsonTextReader reader = new JsonTextReader(re);
                     JsonSerializer se = new JsonSerializer();
                     JArray parsedData = se.Deserialize<JArray>(reader);
-                    return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.Icon.ToLower(), x => x);
+                    return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.CompDescr, x => x);
                 }
             }
             catch (Exception e)
             {
                 _log.Error(e);
             }
-            return new Dictionary<string, RatingExpectancy>();
+            return new Dictionary<int, RatingExpectancy>();
         }
 
         /// <summary>

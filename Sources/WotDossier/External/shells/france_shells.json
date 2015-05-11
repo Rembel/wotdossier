@@ -988,9 +988,40 @@
       "devices": "\t165\t"
     }
   },
+  "_120mm_Prf1943_fallout": {
+    "id": "\t92\t",
+    "userString": "#france_vehicles:_120mm_Prf1943_fallout",
+    "icon": "ap",
+    "price": "\t27\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t120\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeArmorPiercing",
+    "damage": {
+      "armor": "\t400\t",
+      "devices": "\t165\t"
+    }
+  },
   "_120mm_FrtPrf1945": {
     "id": "\t48\t",
     "userString": "#france_vehicles:_120mm_FrtPrf1945",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t120\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeAPCR",
+    "damage": {
+      "armor": "\t400\t",
+      "devices": "\t165\t"
+    }
+  },
+  "_120mm_FrtPrf1945_fallout": {
+    "id": "\t93\t",
+    "userString": "#france_vehicles:_120mm_FrtPrf1945_fallout",
     "icon": "ap_cr",
     "price": {
       "#text": "\t12\t",
@@ -1010,6 +1041,21 @@
     "userString": "#france_vehicles:_120mm_OE_mle_1930",
     "icon": "he",
     "price": "\t900\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t120\t",
+    "explosionRadius": "2.42",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t515\t",
+      "devices": "\t165\t"
+    }
+  },
+  "_120mm_OE_mle_1930_fallout": {
+    "id": "\t94\t",
+    "userString": "#france_vehicles:_120mm_OE_mle_1930_fallout",
+    "icon": "he",
+    "price": "\t24\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t120\t",
     "explosionRadius": "2.42",
@@ -1164,106 +1210,6 @@
     "damage": {
       "armor": "\t950\t",
       "devices": "\t210\t"
-    }
-  }
-}
-    "_155mm_OE_M101M6": {
-      "id": "\t68\t",
-      "userString": "#france_vehicles:_155mm_OE_M101M6",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t13\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t155\t",
-      "explosionRadius": "5.34",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1250\t",
-        "devices": "\t210\t"
-      }
-    },
-    "_155_OE_mle_1956": {
-      "id": "\t76\t",
-      "userString": "#france_vehicles:_155_OE_mle_1956",
-      "icon": "he",
-      "price": "\t1000\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t155\t",
-      "explosionRadius": "3.78",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t950\t",
-        "devices": "\t210\t"
-      }
-    },
-    "_155mm_AP-T_T368": {
-      "id": "\t78\t",
-      "userString": "#france_vehicles:_155mm_AP-T_T368",
-      "icon": "ap",
-      "price": "\t1560\t",
-      "kind": "ARMOR_PIERCING",
-      "caliber": "\t155\t",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeArmorPiercing",
-      "damage": {
-        "armor": "\t750\t",
-        "devices": "\t210\t"
-      }
-    },
-    "_155mm_HEAT_T267": {
-      "id": "\t79\t",
-      "userString": "#france_vehicles:_155mm_HEAT_T267",
-      "icon": "hc",
-      "price": {
-        "#text": "\t17\t",
-        "gold": ""
-      },
-      "kind": "HOLLOW_CHARGE",
-      "caliber": "\t155\t",
-      "isTracer": "\ttrue\t",
-      "effects": "\thugeHollowCharge\t",
-      "damage": {
-        "armor": "\t750\t",
-        "devices": "\t210\t"
-      },
-      "piercingPowerLossFactorByDistance": "0.05"
-    },
-    "_155mm_HE_T58": {
-      "id": "\t80\t",
-      "userString": "#france_vehicles:_155mm_HE_T58",
-      "icon": "he",
-      "price": "\t1090\t",
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t155\t",
-      "explosionRadius": "3.78",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t1100\t",
-        "devices": "\t210\t"
-      }
-    },
-    "_M_107": {
-      "id": "\t77\t",
-      "userString": "#france_vehicles:_M_107",
-      "icon": "he_premium",
-      "price": {
-        "#text": "\t13\t",
-        "gold": ""
-      },
-      "kind": "HIGH_EXPLOSIVE",
-      "caliber": "\t155\t",
-      "explosionRadius": "5.16",
-      "isTracer": "\ttrue\t",
-      "effects": "hugeHighExplosive",
-      "damage": {
-        "armor": "\t950\t",
-        "devices": "\t210\t"
-      }
     }
   }
 }

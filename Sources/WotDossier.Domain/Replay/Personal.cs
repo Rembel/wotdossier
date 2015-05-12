@@ -24,7 +24,7 @@ namespace WotDossier.Domain.Replay
         [DataMember]
         public int dailyXPFactor10 { get; set; }
         [DataMember]
-        public Dictionary<long, DamagedVehicle> details { get; set; }
+        public Dictionary<string, DamagedVehicle> details { get; set; }
         [DataMember]
         public List<List<JValue>> dossierPopUps { get; set; }
         [DataMember]

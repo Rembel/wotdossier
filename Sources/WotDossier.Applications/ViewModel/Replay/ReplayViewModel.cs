@@ -573,11 +573,21 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         private List<CombatTarget> GetCombatTargets(Domain.Replay.Replay replay, List<TeamMember> teamMembers)
         {
-            return replay.datablock_battle_result.personal.details
+            return replay.datablock_battle_result.personal.details.ToDictionary(x => KeyToLong(x.Key), y => y.Value)
                 .Where(x => x.Key != ReplayUser.Id)
                 .Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.Version))
                 .OrderBy(x => x.TeamMember.FullName)
                 .ToList();
+        }
+
+        private long KeyToLong(string key)
+        {
+            if (key.Contains(","))
+            {
+                var longKey = Convert.ToInt64(key.Replace("(", string.Empty).Replace(")", string.Empty).Split(',')[0]);
+                return longKey;
+            }
+            return Convert.ToInt64(key);
         }
 
         private static List<TeamMember> GetTeamMembers(Domain.Replay.Replay replay, int myTeamId)

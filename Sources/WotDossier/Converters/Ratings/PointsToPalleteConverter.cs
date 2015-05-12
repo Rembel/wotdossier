@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Media;
 using De.TorstenMandelkow.MetroChart;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Chart;
@@ -52,6 +53,11 @@ namespace WotDossier.Converters.Ratings
                 var resourceDictionary = new ResourceDictionary {{"Brush" + i, convert}};
                 i++;
                 collection.Add(resourceDictionary);
+            }
+
+            if (collection.Count == 0)
+            {
+                collection.Add(new ResourceDictionary { { "Brush1", new SolidColorBrush(Colors.Transparent) } });
             }
 
             return collection;

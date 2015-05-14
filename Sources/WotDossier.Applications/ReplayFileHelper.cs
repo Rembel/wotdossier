@@ -20,6 +20,7 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
         private static readonly Version _jsonFormatedReplayMinVersion = new Version("0.8.11.0");
+        private static readonly Version _prevMinVersion = new Version("0.9.8.0");
         
         public static Replay ParseReplay(FileInfo phisicalFile, Version clientVersion, bool readAdvancedData)
         {
@@ -231,6 +232,16 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 if (replay.datablock_1.Version >= _jsonFormatedReplayMinVersion)
                 {
                     replay.datablock_battle_result = parsedData[0].ToObject<BattleResult>();
+                    if (replay.datablock_1.Version >= _prevMinVersion)
+                    {
+                        replay.datablock_battle_result.personal = parsedData.SelectToken("$..personal").First.First.ToObject<Personal>();
+                        replay.datablock_battle_result.vehicles = parsedData.SelectToken("$..vehicles").ToObject<Dictionary<long, List<VehicleResult>>>().ToDictionary(x => x.Key, y => y.Value.First());
+                    }
+                    else
+                    {
+                        replay.datablock_battle_result.personal = parsedData.SelectToken("$..personal").ToObject<Personal>();
+                        replay.datablock_battle_result.vehicles = parsedData.SelectToken("$..vehicles").ToObject<Dictionary<long, VehicleResult>>();
+                    }
                 }
                 replay.datablock_1.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
             }
@@ -309,7 +320,11 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             {
                 return new Parser93();
             }
-            return new Parser96();
+            if (version < new Version("0.9.8.0"))
+            {
+                return new Parser96();
+            }
+            return new Parser98();
         }
 
 

@@ -231,16 +231,19 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 //0.8.11+
                 if (replay.datablock_1.Version >= _jsonFormatedReplayMinVersion)
                 {
-                    replay.datablock_battle_result = parsedData[0].ToObject<BattleResult>();
                     if (replay.datablock_1.Version >= _prevMinVersion)
                     {
-                        replay.datablock_battle_result.personal = parsedData.SelectToken("$..personal").First.First.ToObject<Personal>();
-                        replay.datablock_battle_result.vehicles = parsedData.SelectToken("$..vehicles").ToObject<Dictionary<long, List<VehicleResult>>>().ToDictionary(x => x.Key, y => y.Value.First());
+                        var battleResult = parsedData[0].ToObject<BattleResult98>();
+                        replay.datablock_battle_result = new BattleResult();
+                        replay.datablock_battle_result.arenaUniqueID = battleResult.arenaUniqueID;
+                        replay.datablock_battle_result.common = battleResult.common;
+                        replay.datablock_battle_result.players = battleResult.players;
+                        replay.datablock_battle_result.personal = battleResult.personal.Values.First();
+                        replay.datablock_battle_result.vehicles = battleResult.vehicles.ToDictionary(x => x.Key, y => y.Value.First());
                     }
                     else
                     {
-                        replay.datablock_battle_result.personal = parsedData.SelectToken("$..personal").ToObject<Personal>();
-                        replay.datablock_battle_result.vehicles = parsedData.SelectToken("$..vehicles").ToObject<Dictionary<long, VehicleResult>>();
+                        replay.datablock_battle_result = parsedData[0].ToObject<BattleResult>();
                     }
                 }
                 replay.datablock_1.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();

@@ -37,7 +37,7 @@
             </oxy:Plot.Axes>
             <oxy:LineSeries MinimumSegmentLength="1" ItemsSource="{Binding Path=DataSource, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
                                     Title="{Binding Path=Header, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}" 
-                                    DataFieldX="X" DataFieldY="Y" Smooth="True" StrokeThickness="1" CanTrackerInterpolatePoints="False"
+                                    DataFieldX="X" DataFieldY="Y" Smooth="False" StrokeThickness="1" CanTrackerInterpolatePoints="False"
                                     Color="SpringGreen" TrackerFormatString="{Binding Path=TrackerFormatString, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:LineChartControl}}"/>
         </oxy:Plot>
     </Grid>

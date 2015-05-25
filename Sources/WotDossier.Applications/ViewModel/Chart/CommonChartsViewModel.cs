@@ -199,8 +199,9 @@ namespace WotDossier.Applications.ViewModel.Chart
         private List<DateDataPoint> GetDataSource1(List<StatisticViewModelBase> statisticViewModels,
             Func<StatisticViewModelBase, double> predicate, string tooltip)
         {
-            List<DateDataPoint> erPoints = statisticViewModels.Select(x => new DateDataPoint(x.BattlesCount, predicate(x), x.Updated)).Where(x => x.X > 0 & x.Y > 0).ToList();
+            List<DateDataPoint> erPoints = statisticViewModels.Select(x => new DateDataPoint(x.BattlesCount, predicate(x), x.Updated)).Where(x => x.X > 0 & x.Y > 0).OrderBy(x => x.X).ToList();
             return InterpolatePoints(erPoints);
+            return erPoints;
         }
 
         /// <summary>

@@ -6,6 +6,19 @@
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         Title="{Binding Title}" MinHeight="768" MinWidth="1024" WindowStartupLocation="CenterScreen" Icon="pack://application:,,,/WotDossier.Resources;component/Images/window_search.png"
         Style="{StaticResource office2007SilverWindow}">
+    <Window.Resources>
+        <ContextMenu x:Key="SearchContextMenu">
+            <MenuItem Header="{x:Static resources:Resources.Command_AddToFavorites}" InputGestureText="Ctrl+D"
+                              Command="{Binding Path=DataContext.AddToFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+                              CommandParameter="{Binding}"/>
+            <MenuItem Header="{x:Static resources:Resources.Command_RemoveFromFavorites}"
+                              Command="{Binding Path=DataContext.RemoveFromFavoriteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+                              CommandParameter="{Binding}"/>
+        </ContextMenu>
+        <Style x:Key="SearchDataRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
+            <Setter Property="ContextMenu" Value="{StaticResource SearchContextMenu}" />
+        </Style>
+    </Window.Resources>
     <Grid FocusManager.FocusedElement="{Binding ElementName=txtSearch}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -21,7 +34,8 @@
             </TextBox.InputBindings>
         </TextBox>
         <Button Grid.Column="1" HorizontalAlignment="Left" Content="{x:Static resources:Resources.Btn_Search}" Command="{Binding SearchCommand}" IsDefault="True" />
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding List}" VerticalAlignment="Stretch" Name="dgResult" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding List}" VerticalAlignment="Stretch" Name="dgResult" IsReadOnly="True" AutoGenerateColumns="False"
+                   RowStyle="{StaticResource SearchDataRowStyle}">
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

@@ -257,6 +257,9 @@ namespace WotDossier.Applications.ViewModel
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerActivatedEvent>().Subscribe(OnReplayManagerActivated);
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayManagerRefreshEvent>().Subscribe(OnReplayManagerRefresh);
 
+            EventAggregatorFactory.EventAggregator.GetEvent<AddFavoritePlayerEvent>().Subscribe(OnAddFavoritePlayer);
+            EventAggregatorFactory.EventAggregator.GetEvent<RemoveFavoritePlayerEvent>().Subscribe(OnRemoveFavoritePlayer);
+
             ProgressView = new ProgressControlViewModel();
             PeriodSelector = new PeriodSelectorViewModel();
             BattleModeSelector = new BattleModeSelectorViewModel();
@@ -280,6 +283,26 @@ namespace WotDossier.Applications.ViewModel
             FavoritePlayers = new ObservableCollection<ListItem<int>>(Mapper.Map<List<FavoritePlayerEntity>, List<ListItem<int>>>(_dossierRepository.GetFavoritePlayers()));
 
             InitCacheMonitor();
+        }
+
+        private void OnRemoveFavoritePlayer(SearchResultRowViewModel favoritePlayer)
+        {
+            var item = FavoritePlayers.FirstOrDefault(x => x.Id == favoritePlayer.Id);
+
+            if (item != null)
+            {
+                FavoritePlayers.Remove(item);
+            }
+        }
+
+        private void OnAddFavoritePlayer(SearchResultRowViewModel favoritePlayer)
+        {
+            var item = FavoritePlayers.FirstOrDefault(x => x.Id == favoritePlayer.Id);
+
+            if (item == null)
+            {
+                FavoritePlayers.Add(new ListItem<int>(favoritePlayer.Id, favoritePlayer.Name));
+            }
         }
 
         private void OnShowPlayerCommand(object item)
@@ -831,6 +854,7 @@ namespace WotDossier.Applications.ViewModel
         private void ViewTypedOnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
             TankFilter.Save();
+            _dossierRepository.SetFavoritePlayers(FavoritePlayers.Select(x => new FavoritePlayerEntity{Id = x.Id, Name = x.Value}).ToList());
         }
 
         /// <summary>

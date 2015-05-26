@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.IO;
 using Common.Logging;
 using NHibernate.Criterion;
 using WotDossier.Common;
@@ -10,6 +11,7 @@ using WotDossier.Domain.Replay;
 using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace WotDossier.Dal
 {
@@ -493,7 +495,33 @@ namespace WotDossier.Dal
 
         public List<FavoritePlayerEntity> GetFavoritePlayers()
         {
-            return new List<FavoritePlayerEntity>(/*TODO*/);
+            string path = Path.Combine(Folder.GetDossierAppDataFolder(), "favorite_players");
+            if (File.Exists(path))
+            {
+                var content = File.ReadAllText(path);
+                try
+                {
+                    return JsonConvert.DeserializeObject<List<FavoritePlayerEntity>>(content);
+                }
+                catch (Exception e)
+                {
+                    Log.Error("Error on favorite players loading", e);
+                }
+            }
+            return new List<FavoritePlayerEntity>();
+        }
+
+        public void SetFavoritePlayers(List<FavoritePlayerEntity> players)
+        {
+            string path = Path.Combine(Folder.GetDossierAppDataFolder(), "favorite_players");
+            try
+            {
+                File.WriteAllText(path, JsonConvert.SerializeObject(players));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error on favorite players save", e);
+            }
         }
     }
 }

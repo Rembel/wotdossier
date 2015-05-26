@@ -86,6 +86,8 @@
     <Compile Include="CacheFileHelper.cs" />
     <Compile Include="CultureHelper.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="Events\AddFavoritePlayerEvent.cs" />
+    <Compile Include="Events\RemoveFavoritePlayerEvent.cs" />
     <Compile Include="Events\ReplayManagerRefreshEvent.cs" />
     <Compile Include="Events\ReplayManagerActivatedEvent.cs" />
     <Compile Include="ExternalTask.cs" />

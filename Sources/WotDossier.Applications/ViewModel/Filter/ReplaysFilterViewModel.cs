@@ -656,7 +656,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         private List<ListItem<int>> GetTanks()
         {
             return Dictionaries.Instance.Tanks.Values
-                .Where(TankFilter)
+                .Where(description => TankFilter(description) && description.Active)
                 .OrderBy(x => x.Title)
                 .Select(x => new ListItem<int>(x.UniqueId(), x.Title))
                 .ToList();

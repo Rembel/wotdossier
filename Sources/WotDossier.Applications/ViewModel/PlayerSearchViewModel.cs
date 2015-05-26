@@ -3,11 +3,13 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
 using Common.Logging;
+using WotDossier.Applications.Events;
 using WotDossier.Applications.View;
 using WotDossier.Dal;
 using WotDossier.Domain.Server;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications;
+using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
@@ -22,6 +24,7 @@ namespace WotDossier.Applications.ViewModel
         public DelegateCommand<object> RowDoubleClickCommand { get; set; }
         public DelegateCommand SearchCommand { get; set; }
         public DelegateCommand<object> AddToFavoriteCommand { get; set; }
+        public DelegateCommand<object> RemoveFromFavoriteCommand { get; set; }
 
         public List<SearchResultRowViewModel> List
         {
@@ -54,6 +57,27 @@ namespace WotDossier.Applications.ViewModel
         {
             RowDoubleClickCommand = new DelegateCommand<object>(OnRowDoubleClick);
             SearchCommand = new DelegateCommand(OnSearch);
+            AddToFavoriteCommand = new DelegateCommand<object>(OnAddToFavoriteCommand);
+            RemoveFromFavoriteCommand = new DelegateCommand<object>(OnRemoveFromFavoriteCommand);
+        }
+
+        private void OnRemoveFromFavoriteCommand(object item)
+        {
+            SearchResultRowViewModel row = item as SearchResultRowViewModel;
+            if (row != null)
+            {
+                EventAggregatorFactory.EventAggregator.GetEvent<RemoveFavoritePlayerEvent>().Publish(row);
+            }
+        }
+
+        private void OnAddToFavoriteCommand(object item)
+        {
+
+            SearchResultRowViewModel row = item as SearchResultRowViewModel;
+            if (row != null)
+            {
+                EventAggregatorFactory.EventAggregator.GetEvent<AddFavoritePlayerEvent>().Publish(row);
+            }
         }
 
         private void OnSearch()

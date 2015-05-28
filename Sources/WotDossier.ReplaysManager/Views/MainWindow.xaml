@@ -5,7 +5,7 @@
         xmlns:tabs="clr-namespace:WotDossier.Tabs"
         xmlns:progressDialog="clr-namespace:WotDossier.Framework.Forms.ProgressDialog;assembly=WotDossier.Framework"
         xmlns:charts="clr-namespace:WotDossier.Tabs.Charts"
-        Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="960" Width="1280" MinWidth="1280" MinHeight="960" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico"
+        Title="{x:Static resources:Resources.Tab_Header_Replays}" Height="768" Width="1280" MinWidth="1280" MinHeight="768" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/app_icon.ico"
         Style="{DynamicResource office2007SilverWindow}">
     <Window.InputBindings>
         <KeyBinding Command="{Binding LoadCommand}" Key="F5"/>

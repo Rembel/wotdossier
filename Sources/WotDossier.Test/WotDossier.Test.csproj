@@ -366,7 +366,7 @@
     <None Include="Replays\0.9.7\20150319_2240_france-F72_AMX_30_35_steppes.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Replays\0.9.8\20150512_2332_ussr-Object263_22_slough.wotreplay">
+    <None Include="Replays\0.9.8\20150526_1830_ussr-T62A_01_karelia.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\CasesTest\Arheopteriks_1, СУ-85.wotreplay">

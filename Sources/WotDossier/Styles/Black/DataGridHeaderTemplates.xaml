@@ -496,6 +496,32 @@
         </StackPanel>
     </DataTemplate>
 
+    <DataTemplate x:Key="GoreColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/medalGore.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalGore}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalGore}"></controls:MedalTooltip>
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="StarkColumnHeaderTemplate">
+        <StackPanel Orientation="Vertical">
+            <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/medalStark.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <controls:MedalTooltip Header="{x:Static resources:Resources.Medal_15x15_MedalStark}" Text="{x:Static resources:Resources.Tooltip_Achievements_15x15_MedalStark}"></controls:MedalTooltip>
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </DataTemplate>
+
     <DataTemplate x:Key="BattleHeroColumnHeaderTemplate">
         <StackPanel Orientation="Vertical">
             <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Medals/BattleHero.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None">

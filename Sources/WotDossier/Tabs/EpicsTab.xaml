@@ -51,6 +51,8 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Medal_15x15_HeroesOfRassenay}" HeaderTemplate="{StaticResource HeroesOfRaseiniaiColumnHeaderTemplate}" Binding="{Binding HeroesOfRassenay, Converter={x:Static converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Medal_15x15_DeLanglade}" HeaderTemplate="{StaticResource DeLangladeColumnHeaderTemplate}" Binding="{Binding DeLanglade, Converter={x:Static converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Medal_15x15_Huntsman}" HeaderTemplate="{StaticResource HuntsmanColumnHeaderTemplate}" Binding="{Binding Huntsman, Converter={x:Static converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Medal_15x15_MedalGore}" HeaderTemplate="{StaticResource GoreColumnHeaderTemplate}" Binding="{Binding MedalGore, Converter={x:Static converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Medal_15x15_MedalStark}" HeaderTemplate="{StaticResource StarkColumnHeaderTemplate}" Binding="{Binding MedalStark, Converter={x:Static converters:EpicMedalCountToStringConverter.Default}}" ElementStyle="{StaticResource CTextBlock}"></DataGridTextColumn>
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

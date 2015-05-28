@@ -28,13 +28,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         #region Stat props
 
-        private List<Medal> _achievements;
-
-        public List<Medal> Achievements
-        {
-            get { return _achievements ?? new List<Medal>(); }
-            set { _achievements = value; }
-        }
+        public List<Medal> Achievements { get; set; }
 
         public int AchievementsCount { get; set; }
         public TimeSpan BattleTime { get; set; }
@@ -117,13 +111,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         public int MarkOfMastery { get; set; }
 
-        private List<Medal> _medals;
-
-        public List<Medal> Medals
-        {
-            get { return _medals ?? new List<Medal>(); }
-            set { _medals = value; }
-        }
+        public List<Medal> Medals { get; set; }
 
         public int MedalsCount { get; set; }
 
@@ -162,6 +150,8 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         protected ReplayFile()
         {
+            Medals = new List<Medal>();
+            Achievements = new List<Medal>();
         }
 
         /// <summary>
@@ -169,7 +159,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         /// <param name="replay">The replay.</param>
         /// <param name="folderId">The folder id.</param>
-        protected ReplayFile(Domain.Replay.Replay replay, Guid folderId)
+        protected ReplayFile(Domain.Replay.Replay replay, Guid folderId) : this()
         {
             FolderId = folderId;
 

@@ -3482,4 +3482,7 @@ Date: {Date:dd.MM.yyyy}</value>
   <data name="BattleType_Ladder" xml:space="preserve">
     <value>Ladder</value>
   </data>
+  <data name="Settings_CacheFolder" xml:space="preserve">
+    <value>Path to game cache</value>
+  </data>
 </root>

@@ -3571,4 +3571,7 @@
   <data name="BattleType_Ladder" xml:space="preserve">
     <value>Ладдер</value>
   </data>
+  <data name="Settings_CacheFolder" xml:space="preserve">
+    <value>Путь к игровому кэшу</value>
+  </data>
 </root>

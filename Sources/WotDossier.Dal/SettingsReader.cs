@@ -32,6 +32,7 @@ namespace WotDossier.Dal
             
             //create settings file if not exists
             AppSettings settingsDto = new AppSettings();
+            settingsDto.DossierCachePath = Folder.GetDossierCacheFolder();
             Save(settingsDto);
             return settingsDto;
         }

@@ -8,9 +8,14 @@ namespace WotDossier.Dal
     {
         public static string GetDossierCacheFolder()
         {
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string dossierCacheFolder = appDataPath + @"\Wargaming.net\WorldOfTanks\dossier_cache";
-            return dossierCacheFolder;
+            var appSettings = SettingsReader.Get();
+            if (string.IsNullOrEmpty(appSettings.DossierCachePath))
+            {
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string dossierCacheFolder = appDataPath + @"\Wargaming.net\WorldOfTanks\dossier_cache";
+                return dossierCacheFolder;
+            }
+            return appSettings.DossierCachePath;
         }
 
         public static string GetDossierAppDataFolder()

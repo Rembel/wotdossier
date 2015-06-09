@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.IO;
 using System.Linq;
 using System.Windows;
+using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
@@ -26,6 +28,7 @@ namespace WotDossier.Applications.ViewModel
         };
         private bool _nameChanged;
         public DelegateCommand SaveCommand { get; set; }
+        public DelegateCommand SelectCacheFolderCommand { get; set; }
 
         public AppSettings AppSettings
         {
@@ -104,6 +107,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public string CacheFolderPath
+        {
+            get { return AppSettings.DossierCachePath; }
+            set
+            {
+                AppSettings.DossierCachePath = value;
+                RaisePropertyChanged("CacheFolderPath");
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -118,6 +131,17 @@ namespace WotDossier.Applications.ViewModel
             SaveCommand = new DelegateCommand(OnSave);
             _appSettings = SettingsReader.Get();
             Servers = Dictionaries.Instance.GameServers.Keys.ToList();
+            SelectCacheFolderCommand = new DelegateCommand(OnSelectCacheFolder);
+        }
+
+        private void OnSelectCacheFolder()
+        {
+            VistaFolderBrowserDialog dialog = new VistaFolderBrowserDialog();
+            bool? showDialog = dialog.ShowDialog();
+            if (showDialog == true)
+            {
+                CacheFolderPath = dialog.SelectedPath;
+            }
         }
 
         private void OnSave()

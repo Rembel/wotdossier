@@ -186,5 +186,6 @@ namespace WotDossier.Domain
         public string ExternalDataVersion { get; set; }
 
         public String ColumnInfo { get; set; }
+        public string DossierCachePath { get; set; }
     }
 }

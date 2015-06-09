@@ -191,6 +191,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Util.cs" />
+    <Compile Include="Validation\PathExistsValidationRule.cs" />
     <Compile Include="WafConfiguration.cs" />
     <Compile Include="WaitCursor.cs" />
   </ItemGroup>

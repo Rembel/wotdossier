@@ -7167,6 +7167,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Path to game cache.
+        /// </summary>
+        public static string Settings_CacheFolder {
+            get {
+                return ResourceManager.GetString("Settings_CacheFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check for updates on start.
         /// </summary>
         public static string Settings_CheckForUpdatesOnStart {

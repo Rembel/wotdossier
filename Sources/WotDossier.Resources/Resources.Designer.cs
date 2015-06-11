@@ -9100,6 +9100,15 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For selected tanks.
+        /// </summary>
+        public static string Total_ForSelected {
+            get {
+                return ResourceManager.GetString("Total_ForSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0:0.00} km.
         /// </summary>
         public static string Traveled_Format {

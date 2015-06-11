@@ -3574,4 +3574,7 @@
   <data name="Settings_CacheFolder" xml:space="preserve">
     <value>Путь к игровому кэшу</value>
   </data>
+  <data name="Total_ForSelected" xml:space="preserve">
+    <value>Для выделенных</value>
+  </data>
 </root>

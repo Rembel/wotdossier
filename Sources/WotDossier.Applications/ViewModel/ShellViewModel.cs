@@ -1,6 +1,7 @@
 ﻿using System.Windows.Threading;
 using Common.Logging;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -91,19 +92,19 @@ namespace WotDossier.Applications.ViewModel
         }
 
         private List<ITankStatisticRow> _tanks = new List<ITankStatisticRow>();
+        private List<ITankStatisticRow> _tanksFiltered = new List<ITankStatisticRow>();
         public List<ITankStatisticRow> Tanks
         {
             get
             {
-                List<ITankStatisticRow> tankStatisticRowViewModels = TankFilter.Filter(_tanks);
+                _tanksFiltered = TankFilter.Filter(_tanks);
 
-                if (tankStatisticRowViewModels.Count > 0)
+                if (_tanksFiltered.Count > 0)
                 {
-                    TotalTankStatisticRowViewModel totalRow =
-                        new TotalTankStatisticRowViewModel(tankStatisticRowViewModels.ToList());
+                    TotalTankStatisticRowViewModel totalRow = new TotalTankStatisticRowViewModel(_tanksFiltered.ToList(), Resources.Resources.Total);
                     TanksSummary = new List<ITankStatisticRow> { totalRow };
                 }
-                return tankStatisticRowViewModels;
+                return _tanksFiltered;
             }
             set
             {
@@ -194,6 +195,35 @@ namespace WotDossier.Applications.ViewModel
         {
             get { return _favoritePlayers; }
             set { _favoritePlayers = value; }
+        }
+
+        private IList _selectedItems;
+        public IList SelectedItems
+        {
+            get { return _selectedItems; }
+            set
+            {
+                _selectedItems = value;
+                RaisePropertyChanged("SelectedItems");
+                UpdateTotalRow();
+            }
+        }
+
+        private List<ITankStatisticRow> _tanksSummaryBackup;
+        private void UpdateTotalRow()
+        {
+            if (SelectedItems != null && SelectedItems.Count > 1)
+            {
+                TotalTankStatisticRowViewModel totalRow = new TotalTankStatisticRowViewModel(SelectedItems.Cast<ITankStatisticRow>().ToList(), Resources.Resources.Total_ForSelected);
+                //backup summary
+                _tanksSummaryBackup = TanksSummary;
+                TanksSummary = new List<ITankStatisticRow> { totalRow };
+            }
+            else if(_tanksSummaryBackup != null)
+            {
+                TanksSummary = _tanksSummaryBackup;
+                _tanksSummaryBackup = null;
+            }
         }
 
         #endregion

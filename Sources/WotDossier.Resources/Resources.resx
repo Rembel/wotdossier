@@ -3485,4 +3485,7 @@ Date: {Date:dd.MM.yyyy}</value>
   <data name="Settings_CacheFolder" xml:space="preserve">
     <value>Path to game cache</value>
   </data>
+  <data name="Total_ForSelected" xml:space="preserve">
+    <value>For selected</value>
+  </data>
 </root>

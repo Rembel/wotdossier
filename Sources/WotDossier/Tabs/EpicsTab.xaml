@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
-             xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -18,7 +17,7 @@
         </controls:TankFilterPanel>
         <dataGrid:FooterDataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgEpics" IsReadOnly="True" 
                   AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}"
-                                 FooterItemsSource="{Binding TanksSummary, UpdateSourceTrigger=Explicit}">
+                                 FooterItemsSource="{Binding TanksSummary, UpdateSourceTrigger=Explicit}" SelectedItems="{Binding SelectedItems, Mode=OneWayToSource}">
             <dataGrid:FooterDataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

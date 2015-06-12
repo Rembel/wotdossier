@@ -241,7 +241,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             PlayCommand = new DelegateCommand(OnPlayCommand);
             SetSpeedCommand = new DelegateCommand<int>(OnSetSpeedCommand);
 
-            PlayReplayWithCommand = new DelegateCommand<ReplayFile>(ReplaysManager.PlayWith);
+            PlayReplayWithCommand = new DelegateCommand<ReplayFile>(ReplaysManager.Play);
 
             ViewTyped.Closing += OnClosing;
         }

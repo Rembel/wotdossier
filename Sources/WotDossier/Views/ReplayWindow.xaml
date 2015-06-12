@@ -36,7 +36,7 @@
         </TabControl>
         
         <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="2"
-                ToolTip="{x:Static resources:Resources.ReplaysTab_PlayWith}"
+                ToolTip="{x:Static resources:Resources.ReplaysTab_Play}"
                               Command="{Binding Path=DataContext.PlayReplayWithCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=views:ReplayWindow}}"
                               CommandParameter="{Binding Path=DataContext.ReplayFile, RelativeSource={RelativeSource FindAncestor, AncestorType=views:ReplayWindow}}">
             <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/replays/replay.png" Stretch="Fill" Width="20" Height="20"></Image>

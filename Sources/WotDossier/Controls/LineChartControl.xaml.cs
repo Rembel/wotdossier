@@ -136,7 +136,7 @@ namespace WotDossier.Controls
                 if (xDelta > 0)
                 {
                     var yDelta = trackerHitResult.DataPoint.Y - _startHitResult.DataPoint.Y;
-                    _range.Text = string.Format("{2} =  {0:+#,0.00;-#,0.00;0} \n{3} =  {1:+#,0.00;-#,0.00;0}", xDelta, yDelta, trackerHitResult.XAxis.Title, PlotView.ActualModel.Title);
+                    _range.Text = string.Format("{2} =  {0:+#,0;-#,0;0} \n{3} =  {1:+#,0.00;-#,0.00;0}", xDelta, yDelta, trackerHitResult.XAxis.Title, PlotView.ActualModel.Title);
                     _range.TextColor = ((SolidColorBrush) DeltaToColorConverter.Default.Convert(yDelta, null, null, null)).Color;
                 }
                 else

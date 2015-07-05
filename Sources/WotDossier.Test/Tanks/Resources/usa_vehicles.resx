@@ -408,6 +408,9 @@ AOI-1490</value>
   <data name="Chassis_T57_58" xml:space="preserve">
     <value>T97</value>
   </data>
+  <data name="Chassis_T57_58_fallout" xml:space="preserve">
+    <value>T97</value>
+  </data>
   <data name="Chassis_T69" xml:space="preserve">
     <value>T84E1</value>
   </data>
@@ -558,6 +561,13 @@ AVDS-1790-2</value>
   </data>
   <data name="Continental_AV_1790_5C" xml:space="preserve">
     <value>Continental AV-1790-5C</value>
+  </data>
+  <data name="Continental_AV_1790_5C_fallout" xml:space="preserve">
+    <value>Continental AV-1790-5C</value>
+  </data>
+  <data name="Continental_AV_1790_5C_fallout_short" xml:space="preserve">
+    <value>Continental
+AV-1790-5C</value>
   </data>
   <data name="Continental_AV_1790_5C_short" xml:space="preserve">
     <value>Continental
@@ -748,7 +758,7 @@ T-1020-4</value>
     <value>M10 Wolverine</value>
   </data>
   <data name="M10_Wolverine_descr" xml:space="preserve">
-    <value>Самая массовая американская ПТ-САУ. С сентября 1942 по январь 1943 года было выпущено 6406 машин. Более трети ПТ-САУ Wolverine были переданы Союзникам по ленд-лизу.</value>
+    <value>Самая массовая ПТ САУ армии США. С сентября 1942 по январь 1943 было выпущено 6406 машин. Более трети машин было поставлено союзникам по ленд-лизу.</value>
   </data>
   <data name="M10_Wolverine_short" xml:space="preserve">
     <value>Wolverine</value>
@@ -763,7 +773,7 @@ T-1020-4</value>
     <value>M18 Hellcat</value>
   </data>
   <data name="M18_Hellcat_descr" xml:space="preserve">
-    <value>Разработка машины началась в 1942 году. Первые образцы были созданы в апреле 1943 года компанией General Motors. Одна из немногих американских ПТ-САУ, построенных на специальном шасси, а не на базе танка. Стала самой скоростной бронированной машиной этого класса времен Второй мировой войны. Всего с июля 1943 по октябрь 1944 года было выпущено 2507 ПТ-САУ этого типа.</value>
+    <value>Разработка машины началась в 1942 году. Первые образцы были созданы в апреле 1943 года компанией General Motors. Одна из немногих американских ПТ-САУ, построенных на специальном шасси, а не на базе танка. Стала самой скоростной бронированной машиной этого класса времён Второй мировой войны. Всего с июля 1943 по октябрь 1944 года было выпущено 2507 ПТ-САУ этого типа.</value>
   </data>
   <data name="M18_Hellcat_short" xml:space="preserve">
     <value>Hellcat</value>
@@ -976,7 +986,7 @@ T-1020-4</value>
     <value>M7 Priest</value>
   </data>
   <data name="M7_Priest_descr" xml:space="preserve">
-    <value>Выпускалась на шасси танков М3 и М4 с апреля 1942 по февраль 1945 года. Всего было выпущено 4316 машин. Впервые САУ была использована в сражении у Эль-Аламейна.</value>
+    <value>Выпускалась на шасси танков М3 и М4 с апреля 1942 по март 1945 года. Всего было выпущено 4316 машин. Впервые САУ была использована в сражении у Эль-Аламейна.</value>
   </data>
   <data name="M7_med" xml:space="preserve">
     <value>M7</value>
@@ -1067,9 +1077,6 @@ T-1020-4</value>
   </data>
   <data name="SCR_508" xml:space="preserve">
     <value>SCR 508</value>
-  </data>
-  <data name="SCR_508A" xml:space="preserve">
-    <value>SCR 508A</value>
   </data>
   <data name="SCR_508_1" xml:space="preserve">
     <value>SCR 508/1</value>
@@ -1273,7 +1280,7 @@ T-1020-4</value>
     <value>T28 Prototype</value>
   </data>
   <data name="T28_Prototype_descr" xml:space="preserve">
-    <value>ПТ-САУ с вращающейся башенной установкой. Являлась ранним вариантом тяжёлой самоходной установки, предназначенной для преодоления немецких укреплений на Линии Зигфрида.</value>
+    <value>ПТ-САУ с вращающейся башенной установкой. Являлась ранним вариантом тяжёлой самоходной установки, предназначенной для преодоления немецких укреплений на «Линии Зигфрида».</value>
   </data>
   <data name="T28_Prototype_short" xml:space="preserve">
     <value>T28 Prot.</value>
@@ -1336,7 +1343,7 @@ T-1020-4</value>
     <value>T32</value>
   </data>
   <data name="T32_descr" xml:space="preserve">
-    <value>Экспериментальный американский тяжёлый танк периода Второй мировой войны. Разрабатывался на базе танков М26 Pershing и Т29. Опытные образцы были построены в 1946 году. В связи с завершением Второй мировой войны Т32 не был принят на вооружение и серийно не производился.</value>
+    <value>Экспериментальный американский тяжёлый танк периода Второй мировой войны. Разрабатывался на базе танков М26 Pershing и Т29. Опытные образцы были построены в 1946 году. В связи с окончанием Второй мировой войны Т32 не был принят на вооружение и серийно не производился.</value>
   </data>
   <data name="T34T7" xml:space="preserve">
     <value>T34T7</value>
@@ -1345,7 +1352,7 @@ T-1020-4</value>
     <value>T34</value>
   </data>
   <data name="T34_hvy_descr" xml:space="preserve">
-    <value>В 1945 году два прототипа танка Т30 были снабжены 120-мм пушками и переклассифицированы в тяжёлый танк Т34. Серийно не выпускался. На вооружении не состоял.</value>
+    <value>В 1945 году два прототипа Т30 были снабжены 120-мм пушками и переклассифицированы в тяжёлый танк Т34. Серийно не выпускался. На вооружении не состоял.</value>
   </data>
   <data name="T37" xml:space="preserve">
     <value>T37</value>
@@ -1397,6 +1404,15 @@ T-1020-4</value>
   </data>
   <data name="T57_58_descr" xml:space="preserve">
     <value>Проект тяжёлого танка с качающейся башней и автоматом заряжания. Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под 120-мм и 155-мм орудия, однако программа создания таких машин была признана бесперспективной, и все работы были свёрнуты.</value>
+  </data>
+  <data name="T57_58_fallout" xml:space="preserve">
+    <value>T57 Heavy Tank (П)</value>
+  </data>
+  <data name="T57_58_fallout_descr" xml:space="preserve">
+    <value>Проект тяжёлого танка с качающейся башней и автоматом заряжания. Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под 120-мм и 155-мм орудия, однако программа создания таких машин была признана бесперспективной, и все работы были свёрнуты.</value>
+  </data>
+  <data name="T57_58_fallout_short" xml:space="preserve">
+    <value>T57 Heavy (П)</value>
   </data>
   <data name="T57_58_short" xml:space="preserve">
     <value>T57 Heavy</value>
@@ -1573,7 +1589,7 @@ T-1020-4</value>
     <value>M6A2E1D4</value>
   </data>
   <data name="Turret_1_M8A1" xml:space="preserve">
-    <value>M8A1</value>
+    <value>M8 HMC Scott</value>
   </data>
   <data name="Turret_1_Pershing" xml:space="preserve">
     <value>M26M67</value>
@@ -1618,6 +1634,9 @@ T-1020-4</value>
     <value>T157</value>
   </data>
   <data name="Turret_1_T57_58" xml:space="preserve">
+    <value>T169</value>
+  </data>
+  <data name="Turret_1_T57_58_fallout" xml:space="preserve">
     <value>T169</value>
   </data>
   <data name="Turret_1_T69" xml:space="preserve">
@@ -1666,7 +1685,7 @@ T-1020-4</value>
     <value>M46T119</value>
   </data>
   <data name="Turret_2_M8A1" xml:space="preserve">
-    <value>T87</value>
+    <value>M8 GMC</value>
   </data>
   <data name="Turret_2_Pershing" xml:space="preserve">
     <value>M26M71</value>
@@ -1821,14 +1840,23 @@ M781C9GC1</value>
   <data name="_105mm_APCR_T140E3" xml:space="preserve">
     <value>HVAPDS-T T279</value>
   </data>
+  <data name="_105mm_APCR_T210M2" xml:space="preserve">
+    <value>APCR T210M2</value>
+  </data>
   <data name="_105mm_APCR_T29E3" xml:space="preserve">
     <value>APCR T29E3</value>
   </data>
   <data name="_105mm_APCR_T29E3M2" xml:space="preserve">
     <value>APCR T29E3M2</value>
   </data>
+  <data name="_105mm_AP_M68M2" xml:space="preserve">
+    <value>AP M68M2</value>
+  </data>
   <data name="_105mm_AP_T140E3" xml:space="preserve">
     <value>AP-T T182E1</value>
+  </data>
+  <data name="_105mm_AP_T210M2" xml:space="preserve">
+    <value>AP T210M2</value>
   </data>
   <data name="_105mm_AP_T32" xml:space="preserve">
     <value>AP T32</value>
@@ -1881,6 +1909,9 @@ M781C9GC1</value>
   <data name="_105mm_HE_M68M2" xml:space="preserve">
     <value>HEP-T M393</value>
   </data>
+  <data name="_105mm_HE_T210M2" xml:space="preserve">
+    <value>HE T210M2</value>
+  </data>
   <data name="_105mm_Howitzer_M2A1" xml:space="preserve">
     <value>105 mm Howitzer M2A1</value>
   </data>
@@ -1930,6 +1961,9 @@ M781C9GC1</value>
     <value>120 mm Gun T123E6</value>
   </data>
   <data name="_120mm_Gun_T179" xml:space="preserve">
+    <value>120 mm Gun T179</value>
+  </data>
+  <data name="_120mm_Gun_T179_fallout" xml:space="preserve">
     <value>120 mm Gun T179</value>
   </data>
   <data name="_120mm_Gun_T53A1" xml:space="preserve">
@@ -2186,7 +2220,7 @@ automatic cannon</value>
     <value>HEAT M66</value>
   </data>
   <data name="_75mm_Howitzer_M1A1" xml:space="preserve">
-    <value>75 mm Howitzer M1A1</value>
+    <value>75 mm AT Howitzer M1A1</value>
   </data>
   <data name="_75mm_Howitzer_M3" xml:space="preserve">
     <value>75 mm Howitzer M3</value>

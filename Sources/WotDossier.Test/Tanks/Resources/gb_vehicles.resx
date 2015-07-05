@@ -1451,6 +1451,9 @@ R975 EC2</value>
   <data name="_105mm_APCR_L7" xml:space="preserve">
     <value>APDS L-28</value>
   </data>
+  <data name="_105mm_AP_L7" xml:space="preserve">
+    <value>AP L7</value>
+  </data>
   <data name="_105mm_AT_Gun_L7" xml:space="preserve">
     <value>105 mm AT Gun L7</value>
   </data>
@@ -1490,6 +1493,9 @@ R975 EC2</value>
   <data name="_120mm_Gun_L1A1" xml:space="preserve">
     <value>120 mm Gun L1A1</value>
   </data>
+  <data name="_120mm_HEAT-T_L1A1" xml:space="preserve">
+    <value>HEAT-T L1A1</value>
+  </data>
   <data name="_120mm_HE_L1A1" xml:space="preserve">
     <value>HESH-T L1</value>
   </data>
@@ -1501,6 +1507,9 @@ R975 EC2</value>
   </data>
   <data name="_15mm_AP_W_Mk1" xml:space="preserve">
     <value>AP W Mk. 1</value>
+  </data>
+  <data name="_15mm_AP_W_Mk1T" xml:space="preserve">
+    <value>AP W Mk. 1T</value>
   </data>
   <data name="_15mm_Machine_gun_BESA" xml:space="preserve">
     <value>15 mm Machine Gun BESA</value>
@@ -1729,6 +1738,15 @@ R975 EC2</value>
   </data>
   <data name="_47mm_3pdrHE" xml:space="preserve">
     <value>QF HE Mk. IT</value>
+  </data>
+  <data name="_47mm_APCR_MkI" xml:space="preserve">
+    <value>APCR Mk. I</value>
+  </data>
+  <data name="_47mm_AP_MkI" xml:space="preserve">
+    <value>AP Mk. I</value>
+  </data>
+  <data name="_47mm_HE_MkI" xml:space="preserve">
+    <value>HE Mk. I</value>
   </data>
   <data name="_5.5inch_HE_Mk_4" xml:space="preserve">
     <value>HE 80-lb Mk. 3</value>

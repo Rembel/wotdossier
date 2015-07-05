@@ -41,6 +41,7 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedPercent}" Binding="{Binding SurvivedBattlesPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedAndWon}" Binding="{Binding SurvivedAndWon}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Battles_SurvivedAndWonPercent}" Binding="{Binding SurvivedAndWonPercent, Converter={x:Static converters:PercentFormater.Default}}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_BattlesCount88}" Binding="{Binding BattlesCount88}" Width="1*" ElementStyle="{StaticResource RTextBlock}" />
             </dataGrid:FooterDataGrid.Columns>
         </dataGrid:FooterDataGrid>
     </Grid>

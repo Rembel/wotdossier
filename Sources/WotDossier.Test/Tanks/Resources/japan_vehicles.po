@@ -59,7 +59,7 @@ msgid "Chassis_Ha_Go_2"
 msgstr "Type 4 Ke-Nu"
 
 msgid "Chassis_J19_Tiger_I_Jpn"
-msgstr "Tiger Fgst.Nr. 250055"
+msgstr "Heavy Tank No. VI"
 
 msgid "Chassis_Ke_Ho"
 msgstr "Type 5 Ke-Ho"
@@ -216,7 +216,7 @@ msgid "Ha_Go_short"
 msgstr "Ha-Go"
 
 msgid "J19_Tiger_I_Jpn"
-msgstr "Tiger"
+msgstr "Heavy Tank No. VI"
 
 msgid "J19_Tiger_I_Jpn_descr"
 msgstr ""
@@ -229,7 +229,7 @@ msgstr ""
 "себестоимости танка 300 000 рейхсмарок."
 
 msgid "J19_Tiger_I_Jpn_short"
-msgstr "Tiger"
+msgstr "HT No. VI"
 
 msgid "JAN-GRC-3Z"
 msgstr "JAN/GRC-3Z"
@@ -385,10 +385,10 @@ msgid "Turret_1_Ha_Go"
 msgstr "Type 95 Ha-Go"
 
 msgid "Turret_1_J19_Tiger_I_Jpn"
-msgstr "Tiger"
+msgstr "Heavy Tank No. VI"
 
 msgid "Turret_1_J19_Tiger_I_Jpn_short"
-msgstr "Tiger"
+msgstr "Heavy Tank No. VI"
 
 msgid "Turret_1_Ke_Ho"
 msgstr "Type 5 Ke-Ho"

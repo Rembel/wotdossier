@@ -283,7 +283,7 @@ namespace WotDossier.Test
 
                     var path = Path.Combine(Environment.CurrentDirectory, "Tanks", info.Directory.Parent.Name + "_" +
                                                                                 info.Name.Replace(info.Extension, ".json"));
-                    var stream = File.OpenWrite(path);
+                    var stream = File.OpenWrite(path.ToLower());
                     using (StreamWriter writer = new StreamWriter(stream))
                     {
                         writer.Write(jsonText);
@@ -346,10 +346,23 @@ namespace WotDossier.Test
                         tankDescription["icon"] = icon;
                         tankDescription["icon_orig"] = tank.Key;
 
-                        if (!Dictionaries.Instance.Tanks.ContainsKey(Utils.ToUniqueId(typeCompDesc)))
+                        if (!Dictionaries.Instance.Tanks.ContainsKey(uniqueId))
                         {
                             Console.WriteLine(tank.Value);
                         }
+//                        else
+//                        {
+//                            var description = Dictionaries.Instance.Tanks[uniqueId];
+//                            if (description.Icon.Icon != (string) tankDescription["icon"])
+//                            {
+//                                string f = @"else if (iconId == ""{0}_{1}"")
+//                                {{
+//                                    //0.9.9 replay tank name changed to {2}
+//                                    return _tanks[{3}];
+//                                }}";
+//                                Console.WriteLine(f, country.ToString().ToLower(), description.Icon.Icon, tankDescription["icon"], uniqueId);
+//                            }
+//                        }
 
                         JObject tankDef = GetTankDefinition(countryid, tank.Key);
 

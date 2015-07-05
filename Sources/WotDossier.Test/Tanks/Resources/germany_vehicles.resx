@@ -210,6 +210,9 @@
   <data name="Chassis_E-75_2" xml:space="preserve">
     <value>E 75 verstärkteketten</value>
   </data>
+  <data name="Chassis_E100_DOT" xml:space="preserve">
+    <value>Дот E 100</value>
+  </data>
   <data name="Chassis_E50_Ausf_M" xml:space="preserve">
     <value>E 50 Ausf. M</value>
   </data>
@@ -253,8 +256,23 @@
   <data name="Chassis_G109_Steyr_WT" xml:space="preserve">
     <value>Krupp-Steyr Waffenträger</value>
   </data>
+  <data name="Chassis_G110_Typ_205" xml:space="preserve">
+    <value>170 ton Panzer</value>
+  </data>
+  <data name="Chassis_G110_Typ_205_2" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
   <data name="Chassis_G112_KanonenJagdPanzer" xml:space="preserve">
     <value>Kanonenjagdpanzer</value>
+  </data>
+  <data name="Chassis_G113_SP_I_C" xml:space="preserve">
+    <value>Spähpanzer SP I C PT I</value>
+  </data>
+  <data name="Chassis_G113_SP_I_C_2" xml:space="preserve">
+    <value>Spähpanzer SP I C PT II</value>
+  </data>
+  <data name="Chassis_G114_Skorpian" xml:space="preserve">
+    <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
   </data>
   <data name="Chassis_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02(P) Ausf. B</value>
@@ -321,6 +339,9 @@ verstärkteketten</value>
     <value>Jagdtiger 8,8</value>
   </data>
   <data name="Chassis_Leopard1" xml:space="preserve">
+    <value>Leopard 1</value>
+  </data>
+  <data name="Chassis_Leopard1_fallout" xml:space="preserve">
     <value>Leopard 1</value>
   </data>
   <data name="Chassis_Lowe" xml:space="preserve">
@@ -520,11 +541,17 @@ verstärkteketten</value>
   <data name="DW_II_short" xml:space="preserve">
     <value>D.W. 2</value>
   </data>
+  <data name="Daimler-Benz_DB-603" xml:space="preserve">
+    <value>DB 603 mit mechanischer Aufladung</value>
+  </data>
   <data name="Daimler-Benz_DB-603A2" xml:space="preserve">
     <value>MB 507</value>
   </data>
   <data name="Daimler-Benz_DB-603A2_short" xml:space="preserve">
     <value>MB 507</value>
+  </data>
+  <data name="Daimler-Benz_DB-603_short" xml:space="preserve">
+    <value>DB 603 mit Aufladung</value>
   </data>
   <data name="Daimler-Benz_MB-809" xml:space="preserve">
     <value>Daimler-Benz MB 809</value>
@@ -548,7 +575,7 @@ verstärkteketten</value>
     <value>E 100</value>
   </data>
   <data name="E-100_descr" xml:space="preserve">
-    <value>В июне 1943 г. компания Adlerwerke получила заказ на разработку танка E-100. Однако в 1944 г. все работы над тяжёлыми танками были прекращены. К концу войны было изготовлено шасси прототипа, захваченное впоследствии британской армией.</value>
+    <value>В июне 1943 г. компания Adlerwerke получила заказ на разработку танка E 100. Однако в 1944 г. все работы над тяжёлыми танками были прекращены. К концу войны было изготовлено шасси прототипа, захваченное впоследствии британской армией.</value>
   </data>
   <data name="E-100_short" xml:space="preserve">
     <value>E 100</value>
@@ -557,13 +584,13 @@ verstärkteketten</value>
     <value>E 25</value>
   </data>
   <data name="E-25_descr" xml:space="preserve">
-    <value>Разработка E-25 велась в рамках программы «Е» под управлением Waffenprüfamt 6. Над Е-25 работали специалисты компании Argus (г. Карлсруэ) под руководством доктора Хермана Клауэ. Прототип изготовлен не был.</value>
+    <value>Разработка E 25 велась в рамках программы «E» под управлением Waffenprüfamt 6. Над E 25 работали специалисты компании Argus (г. Карлсруэ) под руководством доктора Хермана Клауэ. Прототип изготовлен не был.</value>
   </data>
   <data name="E-50" xml:space="preserve">
     <value>E 50</value>
   </data>
   <data name="E-50_descr" xml:space="preserve">
-    <value>В 1945 году Е-50 должен был стать основным немецким средним танком и заменить «Пантеру» и «Пантеру II». Работы над танком были прекращены на стадии эскизного проектирования.</value>
+    <value>В 1945 году Е 50 должен был стать основным немецким средним танком и заменить «Пантеру» и «Пантеру II». Работы над танком были прекращены на стадии эскизного проектирования.</value>
   </data>
   <data name="E-50_short" xml:space="preserve">
     <value>E 50</value>
@@ -572,16 +599,22 @@ verstärkteketten</value>
     <value>E 75</value>
   </data>
   <data name="E-75_descr" xml:space="preserve">
-    <value>В 1945 году Е-75 должен был стать основным немецким тяжёлым танком и заменить «Тигра II». Работы над танком были прекращены на стадии эскизного проектирования.</value>
+    <value>В 1945 году E 75 должен был стать основным немецким тяжёлым танком и заменить «Тигра II». Работы над танком были прекращены на стадии эскизного проектирования.</value>
   </data>
   <data name="E-75_short" xml:space="preserve">
     <value>E 75</value>
+  </data>
+  <data name="E100_DOT" xml:space="preserve">
+    <value>Дот Е 100</value>
+  </data>
+  <data name="E100_DOT_descr" xml:space="preserve">
+    <value>Дот Е 100</value>
   </data>
   <data name="E50_Ausf_M" xml:space="preserve">
     <value>E 50 Ausf. M</value>
   </data>
   <data name="E50_Ausf_M_descr" xml:space="preserve">
-    <value>Одним из требований, выдвигаемых военными к танкам Е-серии, было перенесение трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков Е-50 и Е-75 была полностью заимствована компоновка моторно-трансмиссионного отделения танка «Тигр II», что полностью исключало возможность переноса трансмиссии в кормовую часть. E-50 Ausf. M — реконструкция проекта Е-50 с задним расположением трансмиссии.</value>
+    <value>Одним из требований, выдвигаемых военными к танкам E-серии, было перенесение трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков E 50 и E 75 была полностью заимствована компоновка моторно-трансмиссионного отделения танка «Тигр II», что полностью исключало возможность переноса трансмиссии в кормовую часть. E 50 Ausf. M — реконструкция проекта E 50 с задним расположением трансмиссии.</value>
   </data>
   <data name="E50_Ausf_M_short" xml:space="preserve">
     <value>E 50 M</value>
@@ -590,7 +623,7 @@ verstärkteketten</value>
     <value>Ferdinand</value>
   </data>
   <data name="Ferdinand_descr" xml:space="preserve">
-    <value>Машина создана на базе «Тигра» Porsche. Всего в апреле — мае 1943 года было изготовлено 90 машин, которые впервые были использованы в Курской битве.</value>
+    <value>Машина создана на базе «Тигра» Порше. Всего в апреле – мае 1943 года было изготовлено 90 машин, которые впервые были использованы в Курской битве.</value>
   </data>
   <data name="Ferdinandstandardketten" xml:space="preserve">
     <value>Ferdinand</value>
@@ -653,6 +686,9 @@ verstärkteketten</value>
     <value>FuG 8 (f)</value>
   </data>
   <data name="FuG_F" xml:space="preserve">
+    <value>Fu.Spr.Ger. "f"</value>
+  </data>
+  <data name="FuG_FA" xml:space="preserve">
     <value>Fu.Spr.Ger. "f"</value>
   </data>
   <data name="FuG_Spr.1" xml:space="preserve">
@@ -754,14 +790,41 @@ verstärkteketten</value>
   <data name="G109_Steyr_WT_short" xml:space="preserve">
     <value>Steyr WT</value>
   </data>
+  <data name="G110_Typ_205" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
+  <data name="G110_Typ_205_descr" xml:space="preserve">
+    <value>Летом 1942 года компания Porsche получила заказ на проведение опытно-конструкторских работ по созданию танка прорыва с максимально допустимыми уровнями защиты и мощности вооружения. Typ 205 Mäuschen стал одним из эскизных проектов в процессе разработки сверхтяжёлого танка Maus, от которого не отличался компоновкой. Машина не была реализована в металле.</value>
+  </data>
+  <data name="G110_Typ_205_short" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
   <data name="G112_KanonenJagdPanzer" xml:space="preserve">
     <value>Kanonenjagdpanzer</value>
   </data>
   <data name="G112_KanonenJagdPanzer_descr" xml:space="preserve">
-    <value>Первые прототипы Kanonenjagdpanzer были построены в 1960 году Hanomag-Henschel для ФРГ. Выпуск продолжался вплоть до 1967 года. Всего для Бундесвера было построено 770, а для вооруженных сил Бельгии 80 машин. Однако с 1983 года эта ПТ-САУ перестала отвечать требованиям, предъявляемым к технике того времени. Часть машин была переоборудована в наблюдательные, часть — в противотанковые ракетные установки. Но в территориальных войсках Kanonenjagdpanzer, известные также как Jagdpanzer Kanone 90mm состояли на вооружении до 1990 года.</value>
+    <value>Первые прототипы Kanonenjagdpanzer были построены в 1960 году Hanomag и Henschel для ФРГ, и выпуск продолжался вплоть до 1967 года. Всего для Бундесвера и вооружённых сил Бельгии было построено 770 и 80 машин соответственно, однако уже в 1985 году эта ПТ-САУ перестала отвечать техническим требованиям того времени. Часть машин была переоборудована в наблюдательные, часть — в противотанковые ракетные установки. Некоторые Kanonenjagdpanzer, известные так же как Jagdpanzer Kanone 90mm, оставались на вооружении в частях Heimatschutztruppe до 1990 года.</value>
   </data>
   <data name="G112_KanonenJagdPanzer_short" xml:space="preserve">
     <value>KanJPz</value>
+  </data>
+  <data name="G113_SP_I_C" xml:space="preserve">
+    <value>Spähpanzer SP I C</value>
+  </data>
+  <data name="G113_SP_I_C_descr" xml:space="preserve">
+    <value>Для повышения огневой мощи и улучшения противотанковых возможностей танкоразведывательных батальонов с 1956 по 1962 год проводились работы по созданию разведывательного истребителя танков. Для этого планировалась установка на боевую разведывательную машину 90-мм противотанкового орудия. Над проектом работали компании Hotchkiss и Klöckner-Humboldt-Deutz. Проект так и не был принят, количество построенных прототипов неизвестно.</value>
+  </data>
+  <data name="G113_SP_I_C_short" xml:space="preserve">
+    <value>SP I C</value>
+  </data>
+  <data name="G114_Skorpian" xml:space="preserve">
+    <value>Rheinmetall Skorpion</value>
+  </data>
+  <data name="G114_Skorpian_descr" xml:space="preserve">
+    <value>Разработка самоходных установок второй серии на базе танка Panther была начата компанией Rheinmetall в январе 1943 года. Чертёж машины 12,8 cm Skorpion датируется 2 апреля 1943 года. Машина не была реализована в металле.</value>
+  </data>
+  <data name="G114_Skorpian_short" xml:space="preserve">
+    <value>Skorpion</value>
   </data>
   <data name="G20_Marder_II" xml:space="preserve">
     <value>Marder II</value>
@@ -803,7 +866,7 @@ verstärkteketten</value>
     <value>G.W. E 100</value>
   </data>
   <data name="G_E_descr" xml:space="preserve">
-    <value>Проект тяжёлой САУ на шасси танка Е-100. Начавшаяся в конце 1943 года разработка завершена не была. Прототип изготовлен не был. Испытания не проводились.</value>
+    <value>Проект тяжёлой САУ на шасси танка E 100. Начавшаяся в конце 1943 года разработка завершена не была. Прототип изготовлен не был. Испытания не проводились.</value>
   </data>
   <data name="G_E_short" xml:space="preserve">
     <value>G.W. E 100</value>
@@ -880,6 +943,15 @@ verstärkteketten</value>
   <data name="Hotchkiss" xml:space="preserve">
     <value>Hotchkiss</value>
   </data>
+  <data name="Hotchkiss_6_Zyl_Benzin_154_PS" xml:space="preserve">
+    <value>Hotchkiss 6-Zyl. Benzin 154 PS</value>
+  </data>
+  <data name="Hotchkiss_6_Zyl_Benzin_164_PS" xml:space="preserve">
+    <value>Hotchkiss 6-Zyl. Benzin 164 PS</value>
+  </data>
+  <data name="Hotchkiss_6_Zyl_Benzin_195_PS" xml:space="preserve">
+    <value>Hotchkiss 6-Zyl. Benzin 195 PS</value>
+  </data>
   <data name="Hummel" xml:space="preserve">
     <value>Hummel</value>
   </data>
@@ -947,7 +1019,7 @@ verstärkteketten</value>
     <value>Jagdpanzer E 100</value>
   </data>
   <data name="JagdPz_E100_descr" xml:space="preserve">
-    <value>На базе танка Е-100 предполагалось выпускать САУ артподдержки, зенитную самоходную установку и ПТ-САУ, однако эти проекты даже не успели начать разрабатывать.</value>
+    <value>На базе танка E 100 предполагалось выпускать САУ артподдержки, зенитную самоходную установку и ПТ-САУ, однако эти проекты даже не успели начать разрабатывать.</value>
   </data>
   <data name="JagdPz_E100_short" xml:space="preserve">
     <value>Jg.Pz. E 100</value>
@@ -1015,6 +1087,15 @@ verstärkteketten</value>
   <data name="Leopard1_descr" xml:space="preserve">
     <value>Основной боевой танк ФРГ. Работы по созданию машины начались в 1956 году. Первые опытные образцы были построены в 1965 году на заводе Krauss-Maffei. Состоял на вооружении более чем в 10 странах мира.</value>
   </data>
+  <data name="Leopard1_fallout" xml:space="preserve">
+    <value>Leopard 1 (П)</value>
+  </data>
+  <data name="Leopard1_fallout_descr" xml:space="preserve">
+    <value>Основной боевой танк ФРГ. Работы по созданию машины начались в 1956 году. Первые опытные образцы были собраны в 1965 году на заводе Krauss-Maffei. Состоял на вооружении более 10 стран.</value>
+  </data>
+  <data name="Leopard1_fallout_short" xml:space="preserve">
+    <value>Leopard 1 (П)</value>
+  </data>
   <data name="Leopard1_short" xml:space="preserve">
     <value>Leopard 1</value>
   </data>
@@ -1078,6 +1159,12 @@ verstärkteketten</value>
   <data name="MB-838_CAM-500_1" xml:space="preserve">
     <value>MTU MB 838 CaM 500A</value>
   </data>
+  <data name="MB-838_CAM-500_1_fallout" xml:space="preserve">
+    <value>MTU MB 838 CaM 500A</value>
+  </data>
+  <data name="MB-838_CAM-500_1_fallout_short" xml:space="preserve">
+    <value>MB 838 CaM 500A</value>
+  </data>
   <data name="MB-838_CAM-500_1_short" xml:space="preserve">
     <value>MB 838 CaM 500A</value>
   </data>
@@ -1086,6 +1173,9 @@ verstärkteketten</value>
   </data>
   <data name="MB507" xml:space="preserve">
     <value>DB 603 A2</value>
+  </data>
+  <data name="MB509" xml:space="preserve">
+    <value>MB 509</value>
   </data>
   <data name="MB517" xml:space="preserve">
     <value>MB 517</value>
@@ -1226,6 +1316,13 @@ verstärkteketten</value>
   <data name="Maybach_HL_210_TRM_P30" xml:space="preserve">
     <value>Maybach HL 210 TRM P30</value>
   </data>
+  <data name="Maybach_HL_210_TRM_P30_A" xml:space="preserve">
+    <value>Maybach HL 210 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P30_A_short" xml:space="preserve">
+    <value>Maybach
+HL 210 TRM P30</value>
+  </data>
   <data name="Maybach_HL_210_TRM_P30_short" xml:space="preserve">
     <value>Maybach
 HL 210 TRM P30</value>
@@ -1339,7 +1436,7 @@ TRM P45</value>
     <value>Panther/M10</value>
   </data>
   <data name="Panther_M10_descr" xml:space="preserve">
-    <value>При подготовке Арденнской операции несколько «Пантер» было замаскировано под ПТ-САУ М10 в 150-ой танковой бригаде, назначением которой было осуществление боевых и диверсионных действий в тылу союзников. 21 февраля 1945 года замаскированные «Пантеры» встретились с частями 120-го американского пехотного полка. Одна машина была уничтожена, три были оставлены экипажами и попали в руки американцев.</value>
+    <value>При подготовке Арденнской операции в 150-й танковой бригаде СС, которой командовал Отто Скорцени, четыре «Пантеры» были замаскированы под ПТ-САУ М10. Бригада предназначалась для боевых и диверсионных действий в тылу союзников. Все машины были потеряны 21 февраля 1945 года в бою с частями 120-й пехотной дивизии армии США.</value>
   </data>
   <data name="Panther_M10_short" xml:space="preserve">
     <value>Panther/M10</value>
@@ -1383,6 +1480,12 @@ Typ 180/2</value>
   </data>
   <data name="Porsche_Typ_101_1_x2" xml:space="preserve">
     <value>2 x Porsche Typ 101/1</value>
+  </data>
+  <data name="Porsche_Typ_220" xml:space="preserve">
+    <value>Porsche Typ 220</value>
+  </data>
+  <data name="Praga_AC_2" xml:space="preserve">
+    <value>Praga AC/2</value>
   </data>
   <data name="Praga_AusfIV" xml:space="preserve">
     <value>Praga Ausf. IV</value>
@@ -1691,6 +1794,10 @@ Ausf. F</value>
   <data name="PzIV_Schmalturm_A" xml:space="preserve">
     <value>Pz.Kpfw. IV Schmalturm</value>
   </data>
+  <data name="PzIV_Shmallturm_short" xml:space="preserve">
+    <value>Pz.Kpfw. IV
+Ausf. H</value>
+  </data>
   <data name="PzIV_Standart" xml:space="preserve">
     <value>Pz.Kpfw. IV Ausf. G</value>
   </data>
@@ -1788,7 +1895,7 @@ Versuchs-Serie</value>
     <value>Tiger II</value>
   </data>
   <data name="PzVIB_Tiger_II_descr" xml:space="preserve">
-    <value>Известен как «Королевский тигр». С января 1944 по март 1945 года было изготовлено 489 танков.</value>
+    <value>Наиболее защищённый танк с самой мощной противотанковой пушкой, но с перегруженной моторно-трансмисcионной группой и ходовой частью, а также со слишком большой массой. При условии навязывания противнику огневого боя на большой дистанции преимущества «Тигра II» в вооружении и броневой защите были подавляющими. Однако из-за большой массы, низкой надёжности двигателя и трансмиссии, а также вследствие небольшого количества произведённых машин «Тигр II» не оказал серьёзного влияния на ход боевых действий.</value>
   </data>
   <data name="PzVIB_Tiger_II_short" xml:space="preserve">
     <value>Tiger II</value>
@@ -1946,6 +2053,9 @@ Ausf. E</value>
   <data name="SEM25_1" xml:space="preserve">
     <value>SEM 25A</value>
   </data>
+  <data name="SEM25_1_fallout" xml:space="preserve">
+    <value>SEM 25A</value>
+  </data>
   <data name="Scania_Vabis1664" xml:space="preserve">
     <value>Scania Vabis 1664</value>
   </data>
@@ -1995,7 +2105,7 @@ Ausf. E</value>
     <value>Sturmpanzer II</value>
   </data>
   <data name="Sturmpanzer_II_descr" xml:space="preserve">
-    <value>В ноябре — декабре 1941 года было изготовлено всего 12 машин, которые принимали участие только в боях в Северной Африке.</value>
+    <value>В ноябре – декабре 1941 года было изготовлено всего 12 машин, которые принимали участие только в боях в Северной Африке.</value>
   </data>
   <data name="Sturmpanzer_II_short" xml:space="preserve">
     <value>St.Pz. II</value>
@@ -2074,6 +2184,9 @@ TD 103 P</value>
   <data name="Turret_1_E-75" xml:space="preserve">
     <value>E 75 Ausf. A</value>
   </data>
+  <data name="Turret_1_E100_DOT" xml:space="preserve">
+    <value>Дот E 100</value>
+  </data>
   <data name="Turret_1_E50_Ausf_M" xml:space="preserve">
     <value>E 50 Ausf. M</value>
   </data>
@@ -2115,8 +2228,17 @@ Ausf. E</value>
   <data name="Turret_1_G109_Steyr_WT" xml:space="preserve">
     <value>Krupp-Steyr Waffenträger</value>
   </data>
+  <data name="Turret_1_G110_Typ_205" xml:space="preserve">
+    <value>Mäuschen</value>
+  </data>
   <data name="Turret_1_G112_KanonenJagdPanzer" xml:space="preserve">
     <value>Kanonenjagdpanzer</value>
+  </data>
+  <data name="Turret_1_G113_SP_I_C" xml:space="preserve">
+    <value>Spähpanzer SP I C PT I</value>
+  </data>
+  <data name="Turret_1_G114_Skorpian" xml:space="preserve">
+    <value>Rheinmetall 12,8 cm K 43 Skorpion</value>
   </data>
   <data name="Turret_1_G58_VK4502P" xml:space="preserve">
     <value>VK 45.02 (P) Ausf. B</value>
@@ -2149,6 +2271,9 @@ Ausf. E</value>
     <value>8,8 cm Pak 43 Jagdtiger</value>
   </data>
   <data name="Turret_1_Leopard1" xml:space="preserve">
+    <value>Leopard 1</value>
+  </data>
+  <data name="Turret_1_Leopard1_fallout" xml:space="preserve">
     <value>Leopard 1</value>
   </data>
   <data name="Turret_1_Lowe" xml:space="preserve">
@@ -2260,6 +2385,9 @@ Turm Nr. 1</value>
   </data>
   <data name="Turret_2_E-75" xml:space="preserve">
     <value>E 75 Ausf. B</value>
+  </data>
+  <data name="Turret_2_G113_SP_I_C" xml:space="preserve">
+    <value>Spähpanzer SP I C PT II Rh.-Nr. WK-G2</value>
   </data>
   <data name="Turret_2_Indien_Panzer" xml:space="preserve">
     <value>Indien-Panzer</value>
@@ -2477,7 +2605,7 @@ Ausf. H2</value>
     <value>VK 36.01 (H)</value>
   </data>
   <data name="VK3601H_descr" xml:space="preserve">
-    <value>В начале 1942 года было изготовлено шесть шасси и один прототип этой машины. Серийно не выпускалась из-за проблем с разработкой конического орудия.</value>
+    <value>Немецкий опытный тяжёлый танк времён Второй мировой войны, разработанный компанией Henschel, дальнейшее развитие проекта VK 30.01 (H). Проект стал одним из этапов разработки танка «Тигр». Всего в начале 1942 года было построено 8 шасси и 1 прототип. В ходе работы над прототипом были отработаны многие технические решения, которые впоследствии послужили основой при разработке тяжёлых танков Германии во Второй мировой войне. В дальнейшем шасси использовались в качестве базы для ремонтно-эвакуационных машин.</value>
   </data>
   <data name="VK3601H_henshelketten" xml:space="preserve">
     <value>VK 36.01 (H)</value>
@@ -2558,7 +2686,7 @@ verstärkteketten</value>
     <value>Waffenträger auf E 100</value>
   </data>
   <data name="Waffentrager_E100_descr" xml:space="preserve">
-    <value>Аванпроект установки зенитных орудий большого калибра на шасси танка Е-100. Предполагалось использовать 128- и 150-мм орудия с автоматом перезарядки. Однако проект так и не был разработан.</value>
+    <value>Аванпроект установки зенитных орудий большого калибра на шасси танка E 100. Предполагалось использовать 128- и 150-мм орудия с автоматом перезарядки. Однако проект так и не был разработан.</value>
   </data>
   <data name="Waffentrager_E100_short" xml:space="preserve">
     <value>WT auf E 100</value>
@@ -2608,11 +2736,23 @@ verstärkteketten</value>
   <data name="_105mmGr_39H1A_K" xml:space="preserve">
     <value>Gr 39 H1A K</value>
   </data>
+  <data name="_105mm_APCR_M68M2_fallout" xml:space="preserve">
+    <value>APDS-T M392 (П)</value>
+  </data>
   <data name="_105mm_BK_L7A3_L51" xml:space="preserve">
+    <value>10,5 cm Bordkanone L7A3</value>
+  </data>
+  <data name="_105mm_BK_L7A3_L51_fallout" xml:space="preserve">
     <value>10,5 cm Bordkanone L7A3</value>
   </data>
   <data name="_105mm_Gr19" xml:space="preserve">
     <value>Gr 19</value>
+  </data>
+  <data name="_105mm_HEAT-T_T384E4_fallout" xml:space="preserve">
+    <value>HEAT-T T384E4 (П)</value>
+  </data>
+  <data name="_105mm_HE_M68M2_fallout" xml:space="preserve">
+    <value>HEP-T M393 (П)</value>
   </data>
   <data name="_105mm_K18_L52" xml:space="preserve">
     <value>10,5 cm Pak L/52</value>
@@ -2642,6 +2782,9 @@ Ausf. K</value>
   </data>
   <data name="_105mm_KwK46_L70" xml:space="preserve">
     <value>10,5 cm Kw.K. L/70</value>
+  </data>
+  <data name="_105mm_KwK_L67" xml:space="preserve">
+    <value>10,5 cm Kw.K. L/67</value>
   </data>
   <data name="_105mm_L7A1" xml:space="preserve">
     <value>10,5 cm L7A1</value>
@@ -2682,6 +2825,9 @@ Ausf. K</value>
   <data name="_105mm_Sprg.18K" xml:space="preserve">
     <value>Sprgr 18 K</value>
   </data>
+  <data name="_105mm_Sprg.18M" xml:space="preserve">
+    <value>Sprgr 18 M</value>
+  </data>
   <data name="_105mm_Sprg_K" xml:space="preserve">
     <value>Sprgr K</value>
   </data>
@@ -2705,6 +2851,9 @@ Ausf. K</value>
   </data>
   <data name="_10WSc" xml:space="preserve">
     <value>10WSc</value>
+  </data>
+  <data name="_128mm_K43_L55" xml:space="preserve">
+    <value>12,8 cm Kanone 43 L/55</value>
   </data>
   <data name="_128mm_K44_2_L61" xml:space="preserve">
     <value>12,8 cm Kanone L/61</value>
@@ -2766,8 +2915,20 @@ Ausf. K</value>
   <data name="_150mm_KwK44_L38" xml:space="preserve">
     <value>15 cm Kw.K. L/38</value>
   </data>
+  <data name="_150mm_KwK44_L38_DOT" xml:space="preserve">
+    <value>15 cm Kw.K. L/38</value>
+  </data>
+  <data name="_150mm_KwK_L37" xml:space="preserve">
+    <value>15 cm Kw.K. L/37</value>
+  </data>
   <data name="_150mm_PzGr42" xml:space="preserve">
     <value>Pzgr 42</value>
+  </data>
+  <data name="_150mm_PzGr43" xml:space="preserve">
+    <value>Pzgr 43</value>
+  </data>
+  <data name="_150mm_PzGr45" xml:space="preserve">
+    <value>Pzgr 45</value>
   </data>
   <data name="_150mm_Rohr_L29_5" xml:space="preserve">
     <value>15 cm Pak L/29.5</value>
@@ -2789,6 +2950,12 @@ Ausf. K</value>
   </data>
   <data name="_150mm_SprgG_ausf_45" xml:space="preserve">
     <value>Sprgr G 45</value>
+  </data>
+  <data name="_150mm_SprgG_ausf_45_DOT" xml:space="preserve">
+    <value>Sprgr G 45</value>
+  </data>
+  <data name="_150mm_SprgG_ausf_46" xml:space="preserve">
+    <value>Sprgr G Ausf. 46</value>
   </data>
   <data name="_150mm_Sprg_L" xml:space="preserve">
     <value>Sprgr L</value>
@@ -3132,6 +3299,9 @@ Ausf. K</value>
   <data name="_88mm_Sprgr.Flak_41" xml:space="preserve">
     <value>Sprgr. Flak 41</value>
   </data>
+  <data name="_90mm_D921_F1" xml:space="preserve">
+    <value>90 mm D921 F1</value>
+  </data>
   <data name="_90mm_DM13" xml:space="preserve">
     <value>DM13</value>
   </data>
@@ -3143,6 +3313,30 @@ Ausf. K</value>
   </data>
   <data name="_90mm_M431" xml:space="preserve">
     <value>M431</value>
+  </data>
+  <data name="_90mm_Mecar" xml:space="preserve">
+    <value>90 mm Mecar</value>
+  </data>
+  <data name="_90mm_Mecar_AP" xml:space="preserve">
+    <value>Mecar AP</value>
+  </data>
+  <data name="_90mm_Mecar_HE" xml:space="preserve">
+    <value>Mecar HE</value>
+  </data>
+  <data name="_90mm_Mecar_HEAT" xml:space="preserve">
+    <value>Mecar HEAT</value>
+  </data>
+  <data name="_90mm_Mecar_mit_Mehrladeeinrichtung" xml:space="preserve">
+    <value>90 mm Mecar mit Mehrladeeinrichtung</value>
+  </data>
+  <data name="_90mm_OCC_90" xml:space="preserve">
+    <value>OCC</value>
+  </data>
+  <data name="_90mm_OE_90" xml:space="preserve">
+    <value>OE</value>
+  </data>
+  <data name="_90mm_OFL_90" xml:space="preserve">
+    <value>OFL</value>
   </data>
   <data name="_90mm_Pzgr39_48" xml:space="preserve">
     <value>Pzgr 39/48</value>

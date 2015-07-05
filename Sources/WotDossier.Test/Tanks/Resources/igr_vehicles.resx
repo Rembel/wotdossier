@@ -385,7 +385,7 @@ AV-1790-7B</value>
     <value>E 25</value>
   </data>
   <data name="E-25_IGR_descr" xml:space="preserve">
-    <value>Разработка E-25 велась в рамках программы «Е» под управлением Waffenprüfamt 6. Над Е-25 работали специалисты компании Argus (г. Карлсруэ) под руководством доктора Хермана Клауэ. Прототип изготовлен не был.</value>
+    <value>Разработка E 25 велась в рамках программы «Е» под управлением Waffenprüfamt 6. Над Е 25 работали специалисты компании Argus (г. Карлсруэ) под руководством доктора Хермана Клауэ. Прототип изготовлен не был.</value>
   </data>
   <data name="ELC_AMX_IGR" xml:space="preserve">
     <value>ELC AMX</value>
@@ -406,7 +406,7 @@ AV-1790-7B</value>
     <value>Ferdinand</value>
   </data>
   <data name="Ferdinand_IGR_descr" xml:space="preserve">
-    <value>Машина создана на базе «Тигра» Porsche. Всего в апреле — мае 1943 года было изготовлено 90 машин, которые впервые были использованы в Курской битве.</value>
+    <value>Машина создана на базе «Тигра» Порше. Всего в апреле — мае 1943 года было изготовлено 90 машин, которые впервые были использованы в Курской битве.</value>
   </data>
   <data name="Ferdinandturm_IGR" xml:space="preserve">
     <value>Ferdinand</value>
@@ -457,13 +457,13 @@ AV-1790-7B</value>
     <value>Аванпроект тяжёлого танка на базе Conqueror Mk. II. От серийной машины отличался задним расположением боевого отделения. Не было выпущено ни одного прототипа.</value>
   </data>
   <data name="GB21_Cromwell_IGR" xml:space="preserve">
-    <value>PC방 Cromwell</value>
+    <value>Cromwell</value>
   </data>
   <data name="GB21_Cromwell_IGR_descr" xml:space="preserve">
     <value>Разработан в 1941–1942 годах компанией BRC&amp;W. Выпускался серийно с осени 1943 по 1945 год. Всего было выпущено 1070 танков всех модификаций. Активно использовался британскими войсками в северо-западной Европе в 1944–1945 годах.</value>
   </data>
   <data name="GB21_Cromwell_IGR_short" xml:space="preserve">
-    <value>PC방 Cromwell</value>
+    <value>Cromwell</value>
   </data>
   <data name="GB23_Centurion_IGR" xml:space="preserve">
     <value>Centurion Mk. I</value>
@@ -493,13 +493,13 @@ AV-1790-7B</value>
     <value>Hispano-Suiza HS 110</value>
   </data>
   <data name="IS-3_IGR" xml:space="preserve">
-    <value>PC방 ИС-3</value>
+    <value>ИС-3</value>
   </data>
   <data name="IS-3_IGR_descr" xml:space="preserve">
     <value>Серийное производство началось в мае 1945 года. 7 сентября машины этого типа приняли участие в параде стран-участниц антигитлеровской коалиции в Берлине. До прекращения серийного выпуска в середине 1946 года было выпущено 1170 танков. С 1948 года до конца 50-х гг. машины проходили модернизацию.</value>
   </data>
   <data name="IS-3_IGR_short" xml:space="preserve">
-    <value>PC방 ИС-3</value>
+    <value>ИС-3</value>
   </data>
   <data name="IS-7_IGR" xml:space="preserve">
     <value>ИС-7</value>
@@ -547,13 +547,13 @@ AV-1790-7B</value>
     <value>М-50Т</value>
   </data>
   <data name="M48A1_IGR" xml:space="preserve">
-    <value>PC방 M48A1 Patton</value>
+    <value>M48A1 Patton</value>
   </data>
   <data name="M48A1_IGR_descr" xml:space="preserve">
     <value>Наиболее удачный американский средний танк первого послевоенного поколения. Разработка началась в 1950 году. Принят на вооружение в апреле 1953 года. С 1952 по 1959 год было выпущено 11703 танка различных модификаций.</value>
   </data>
   <data name="M48A1_IGR_short" xml:space="preserve">
-    <value>PC방 M48 Patton</value>
+    <value>M48 Patton</value>
   </data>
   <data name="M4_Sherman_IGR" xml:space="preserve">
     <value>M4 Sherman</value>
@@ -634,13 +634,13 @@ TRM P45</value>
     <value>Panther II</value>
   </data>
   <data name="Pershing_IGR" xml:space="preserve">
-    <value>PC방 M26 Pershing</value>
+    <value>M26 Pershing</value>
   </data>
   <data name="Pershing_IGR_descr" xml:space="preserve">
     <value>Разрабатывался для борьбы с тяжёлыми танками. Сначала был стандартизирован как тяжёлый, после войны переведен в средние. Использовался в Европе в рамках фронтовых испытаний.</value>
   </data>
   <data name="Pershing_IGR_short" xml:space="preserve">
-    <value>PC방 Pershing</value>
+    <value>Pershing</value>
   </data>
   <data name="Pershingchassis2_IGR" xml:space="preserve">
     <value>M26T81</value>
@@ -819,7 +819,7 @@ Ausf. G</value>
     <value>T136</value>
   </data>
   <data name="T29_IGR" xml:space="preserve">
-    <value>T29</value>
+    <value>Т29</value>
   </data>
   <data name="T29_IGR_descr" xml:space="preserve">
     <value>Опытный тяжёлый танк. Работа над машиной началась в сентябре 1944 года. Сборка и испытания опытных образцов продолжались до октября 1947 г. Серийно не выпускался.</value>
@@ -828,7 +828,7 @@ Ausf. G</value>
     <value>T34</value>
   </data>
   <data name="T34_hvy_IGR_descr" xml:space="preserve">
-    <value>В 1945 году два прототипа танка Т30 были снабжены 120-мм пушками и переклассифицированы в тяжёлый танк Т34. Серийно не выпускался. На вооружении не состоял.</value>
+    <value>В 1945 году два прототипа Т30 были снабжены 120-мм пушками и переклассифицированы в тяжёлый танк Т34. Серийно не выпускался. На вооружении не состоял.</value>
   </data>
   <data name="T34_hvy_IGR_short" xml:space="preserve">
     <value>T34</value>

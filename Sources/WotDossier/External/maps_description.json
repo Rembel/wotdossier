@@ -197,7 +197,7 @@
             "position1": "\t2,499999 -252,600100\t"
           },
           "team2": {
-            "position1": "\t69,099940 349,000000\t"
+            "position1": "\t69,099930 349,000000\t"
           }
         }
       },
@@ -214,7 +214,7 @@
           "team1": "",
           "team2": ""
         },
-        "controlPoint": "\t-223,100100 64,999940\t"
+        "controlPoint": "\t-223,100100 64,999930\t"
       },
       "assault2": {
         "winnerIfTimeout": "\t1\t",
@@ -229,11 +229,62 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "\t-214,138700 18,497750\t",
+            "position1": "\t-214,138700 18,497740\t",
             "position2": "\t103,040800 335,699500\t"
           },
           "team2": ""
         }
+      },
+      "fallout4": {
+        "winPoints": "RESOURCE_10x10_FULL",
+        "maxPlayersInTeam": "\t10\t",
+        "roundLength": "\t900\t",
+        "repairPoint": {
+          "cooldown": "\t300,000000\t",
+          "repairTime": "\t5,000000\t",
+          "radius": "\t15,000000\t",
+          "repairFlags": "\t127\t",
+          "position": "\t-99,452910 1,100063 47,415940\t",
+          "guid": "A82CB065.49D1ACDA.EEF43B97.31961BA7"
+        },
+        "resourcePoint": [
+          {
+            "position": "\t-224,839000 1,100058 52,842990\t",
+            "radius": "\t20,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t15\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "FE23D48C.4CF47F45.311F2DB0.C8C879C1"
+          },
+          {
+            "position": "\t37,870990 1,100061 40,678990\t",
+            "radius": "\t20,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t15\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "4C830F81.4B75DA6C.DE07D6A0.0CCFBD10"
+          },
+          {
+            "position": "\t177,862900 1,100062 31,429990\t",
+            "radius": "\t11,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t15\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "CA4EAF49.445600D8.4E45E48B.0D96DB69"
+          }
+        ]
       }
     }
   },
@@ -872,6 +923,7 @@
     },
     "gameplayTypes": {
       "ctf": {
+        "artilleryPreparationChance": "0.0",
         "teamBasePositions": {
           "team1": {
             "position1": "\t175,783700 -305,848400\t"
@@ -915,8 +967,8 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "194.707 -18.789",
-            "position2": "-222.759 -81.18"
+            "position1": "\t194,706900 -18,788830\t",
+            "position2": "\t-222,759000 -81,180310\t"
           },
           "team2": ""
         }
@@ -946,165 +998,235 @@
     },
     "gameplayTypes": {
       "ctf": "",
+      "domination": "",
       "fallout": {
-        "teamSpawnPoints": {
-          "team1": {
-            "position": "182 -402"
-          },
-          "team2": {
-            "position": "-189 290"
-          }
-        },
-        "teamBasePositions": {
-          "team1": "",
-          "team2": ""
-        },
+        "winPoints": "MULTI_TEAM_2",
+        "maxPlayersInTeam": "\t3\t",
+        "maxTeamsInArena": "\t8\t",
+        "minTeamsInArena": "\t8\t",
+        "maxSquadTeams": "\t4\t",
+        "minSquadTeams": "\t4\t",
         "flagSpawnPoint": [
           {
-            "position": "\t123,274400 -423,714800\t",
-            "winPoints": "\t5,000000\t"
+            "position": "\t38,776940 1,123131 -49,916950\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           },
           {
-            "position": "\t165,138400 -345,790500\t",
-            "winPoints": "\t5,000000\t"
+            "position": "\t-19,978500 1,130049 -15,770230\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           },
           {
-            "position": "\t226,975100 -373,935000\t",
-            "winPoints": "\t5,000000\t"
-          },
-          {
-            "position": "\t-223,069100 255,299000\t",
-            "winPoints": "\t5,000000\t"
-          },
-          {
-            "position": "\t-156,231800 211,036100\t",
-            "winPoints": "\t5,000000\t"
-          },
-          {
-            "position": "\t-140,612400 290,420500\t",
-            "winPoints": "\t5,000000\t"
+            "position": "\t-19,780490 1,130045 -83,390310\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           }
         ],
         "flagAbsorptionPoint": [
           {
             "team": "\t1\t",
-            "position": "\t96,295280 123,319800\t",
-            "radius": "\t15,000000\t"
-          },
-          {
-            "team": "\t1\t",
-            "position": "\t-220,511200 -20,447740\t",
-            "radius": "\t15,000000\t"
+            "position": "\t329,383800 3,596183 273,869100\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "E67AB1EA.4B987937.82486896.DA555AC2"
           },
           {
             "team": "\t2\t",
-            "position": "\t222,305400 -79,195920\t",
-            "radius": "\t15,000000\t"
+            "position": "\t305,033400 1,860008 -376,492600\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "886EBD15.4A3C9394.9DB9FD94.82F1ABA0"
           },
           {
-            "team": "\t2\t",
-            "position": "\t-91,861100 -215,640100\t",
-            "radius": "\t15,000000\t"
+            "team": "\t3\t",
+            "position": "\t-325,950700 3,608051 -372,408700\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "43D9AB48.48BA3A5C.35E2E2A1.AE2232FB"
+          },
+          {
+            "team": "\t4\t",
+            "position": "\t-292,534200 2,473632 282,884300\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "D746CCA6.4FF14D7F.64074C98.B61806ED"
           }
         ],
         "repairPoint": [
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
-            "radius": "\t10,000000\t",
+            "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t67,323940 3,767027 258,170900\t"
+            "position": "\t35,082480 0,835306 10,660360\t",
+            "guid": "81595797.42BB17EB.ED1E4587.5D6532A7"
           },
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
-            "radius": "\t10,000000\t",
+            "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t319,278800 2,840560 -212,473900\t"
+            "position": "\t35,214380 1,039135 -111,357300\t",
+            "guid": "E19E2F3A.4911B0FC.27B8BFAE.39D54914"
           },
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
-            "radius": "\t10,000000\t",
+            "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t-274,922300 4,535949 136,979900\t"
-          },
-          {
-            "cooldown": "\t60,000000\t",
-            "repairTime": "\t5,000000\t",
-            "radius": "\t10,000000\t",
-            "repairFlags": "\t127\t",
-            "position": "\t-27,344800 4,744169 -389,845700\t"
+            "position": "\t-70,430620 1,630478 -50,165210\t",
+            "guid": "C0FDC1F0.49C11C8F.4B363595.00620788"
           }
         ]
       },
       "fallout2": {
-        "teamSpawnPoints": {
-          "team1": {
-            "position": "182 -402"
+        "winPoints": "MULTI_TEAM_TDM",
+        "maxPlayersInTeam": "\t3\t",
+        "maxTeamsInArena": "\t4\t",
+        "minTeamsInArena": "\t4\t",
+        "maxSquadTeams": "\t4\t",
+        "minSquadTeams": "\t4\t",
+        "flagSpawnPoint": [
+          {
+            "position": "\t38,776940 1,123131 -49,916950\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           },
-          "team2": {
-            "position": "-189 290"
+          {
+            "position": "\t-19,978500 1,130049 -15,770230\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
+          },
+          {
+            "position": "\t-19,780490 1,130045 -83,390310\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           }
-        },
-        "teamBasePositions": {
-          "team1": "",
-          "team2": ""
-        },
-        "flagSpawnPoint": {
-          "position": "\t-0,216026 -49,563010\t",
-          "winPoints": "\t50,000000\t"
-        },
+        ],
         "flagAbsorptionPoint": [
           {
             "team": "\t1\t",
-            "position": "\t96,295280 123,319800\t",
-            "radius": "\t15,000000\t"
-          },
-          {
-            "team": "\t1\t",
-            "position": "\t-220,511200 -20,447740\t",
-            "radius": "\t15,000000\t"
+            "position": "\t329,383800 3,596183 273,869100\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "E67AB1EA.4B987937.82486896.DA555AC2"
           },
           {
             "team": "\t2\t",
-            "position": "\t222,305400 -79,195920\t",
-            "radius": "\t15,000000\t"
+            "position": "\t305,033400 1,860008 -376,492600\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "886EBD15.4A3C9394.9DB9FD94.82F1ABA0"
           },
           {
-            "team": "\t2\t",
-            "position": "\t-91,861100 -215,640100\t",
-            "radius": "\t15,000000\t"
+            "team": "\t3\t",
+            "position": "\t-325,950700 3,608051 -372,408700\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "43D9AB48.48BA3A5C.35E2E2A1.AE2232FB"
+          },
+          {
+            "team": "\t4\t",
+            "position": "\t-292,534200 2,473632 282,884300\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "D746CCA6.4FF14D7F.64074C98.B61806ED"
           }
         ],
         "repairPoint": [
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
-            "radius": "\t10,000000\t",
+            "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t67,323940 3,767027 258,170900\t"
+            "position": "\t35,082480 0,835306 10,660360\t",
+            "guid": "81595797.42BB17EB.ED1E4587.5D6532A7"
           },
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
-            "radius": "\t10,000000\t",
+            "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t319,278800 2,840560 -212,473900\t"
+            "position": "\t35,214380 1,039135 -111,357300\t",
+            "guid": "E19E2F3A.4911B0FC.27B8BFAE.39D54914"
           },
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
+            "repairTime": "\t5,000000\t",
+            "radius": "\t15,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t-70,430620 1,630478 -50,165210\t",
+            "guid": "C0FDC1F0.49C11C8F.4B363595.00620788"
+          }
+        ]
+      },
+      "fallout3": {
+        "winPoints": "MULTI_TEAM_FFA",
+        "maxPlayersInTeam": "\t1\t",
+        "maxTeamsInArena": "\t12\t",
+        "minTeamsInArena": "\t12\t",
+        "maxSquadTeams": "\t0\t",
+        "minSquadTeams": "\t0\t",
+        "repairPoint": [
+          {
+            "cooldown": "\t180,000000\t",
             "repairTime": "\t5,000000\t",
             "radius": "\t10,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t-274,922300 4,535949 136,979900\t"
+            "position": "\t101,464200 1,857406 -24,676920\t",
+            "guid": "48DB2E6C.4A4BB8F4.6030CCB4.D87766F5"
           },
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t180,000000\t",
             "repairTime": "\t5,000000\t",
             "radius": "\t10,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t-27,344800 4,744169 -389,845700\t"
+            "position": "\t-101,658100 1,790046 -75,738540\t",
+            "guid": "916B9BDA.458E6571.9E7DBEB4.B05BD682"
+          }
+        ]
+      },
+      "fallout4": {
+        "winPoints": "RESOURCE_15x15_FULL",
+        "maxPlayersInTeam": "\t15\t",
+        "roundLength": "\t900\t",
+        "resourcePoint": [
+          {
+            "position": "\t-205,667900 1,765343 -162,569600\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t25\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "BC96527A.4CE55A2D.7C44F6BC.DE7B9890"
+          },
+          {
+            "position": "\t-0,000038 6,299999 -50,000010\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t25\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "0341969F.47344F84.4BD4EA9F.9650F0D1"
+          },
+          {
+            "position": "\t205,574500 1,789178 63,215370\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t25\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "302FE879.43E2B756.E66BF79D.843998E3"
           }
         ]
       }
@@ -1429,10 +1551,10 @@
       "ctf": {
         "teamBasePositions": {
           "team1": {
-            "position1": "-273.786 -436.601"
+            "position1": "\t-273,785700 -436,600900\t"
           },
           "team2": {
-            "position1": "-251.606 434.591"
+            "position1": "\t-251,606300 434,591000\t"
           }
         }
       },
@@ -1447,11 +1569,54 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "-251.606 434.591",
-            "position2": "228.645 176.277"
+            "position1": "\t-252,066500 434,820900\t",
+            "position2": "\t228,184700 176,506900\t"
           },
           "team2": ""
         }
+      },
+      "fallout4": {
+        "winPoints": "RESOURCE_15x15_FULL",
+        "maxPlayersInTeam": "\t15\t",
+        "roundLength": "\t900\t",
+        "resourcePoint": [
+          {
+            "position": "\t-364,883800 -14,861120 -8,616982\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t25\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "5AB3971D.45B69498.DF013492.B519D575"
+          },
+          {
+            "position": "\t-80,612440 0,701819 9,467126\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t25\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "D418D7CD.4286BF99.F90FBF8A.9BA56F08"
+          },
+          {
+            "position": "\t311,175700 -0,617003 18,193460\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t25\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "AC4A6EB9.4373DE85.F59449BC.E82C7C0D"
+          }
+        ]
       }
     }
   },
@@ -1511,20 +1676,12 @@
     },
     "gameplayTypes": {
       "ctf": {
-        "teamSpawnPoints": {
-          "team1": {
-            "position": "-321.400 -84.3"
-          },
-          "team2": {
-            "position": "341.200 78.700"
-          }
-        },
         "teamBasePositions": {
           "team1": {
-            "position1": "\t-403,600000 -424,100000\t"
+            "position1": "-417.800 380.100"
           },
           "team2": {
-            "position1": "\t383,300000 422,700000\t"
+            "position1": "402.400 -399.200"
           }
         }
       }
@@ -1563,17 +1720,18 @@
     "name": "#arenas:28_desert/name",
     "description": "#arenas:28_desert/description",
     "geometry": "spaces/28_desert",
-    "roundLength": "\t900\t",
     "boundingBox": {
       "bottomLeft": "-500.0 -500.0",
       "upperRight": "500.0 500.0"
     },
+    "roundLength": "\t900\t",
     "minimap": "spaces/28_desert/mmap.dds",
     "vehicleCamouflageKind": "desert",
+    "maxPlayersInTeam": "\t15\t",
+    "loadingMusic": "/music/intro/rus_village",
+    "ambientSound": "/wind/wind/wind_autumn_01",
     "umbraEnabled": "\t1\t",
     "batchingEnabled": "\t0\t",
-    "loadingMusic": "/music/intro/desert",
-    "ambientSound": "/wind/wind/wind_desert_01",
     "water": {
       "texScale": "\t0\t",
       "freqX": "\t0\t",
@@ -1644,8 +1802,8 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "249.901 -208.7",
-            "position2": "116.863 310.117"
+            "position1": "\t249,901000 -208,700200\t",
+            "position2": "\t116,864000 310,117000\t"
           },
           "team2": ""
         }
@@ -2817,7 +2975,7 @@
         },
         "teamBasePositions": {
           "team1": {
-            "position1": "\t290,978700 -100,311100\t"
+            "position1": "\t290,978700 -100,311200\t"
           },
           "team2": {
             "position1": "\t-291,095000 100,010000\t"
@@ -2839,179 +2997,225 @@
           "team1": "",
           "team2": {
             "position1": "\t53,463490 292,177200\t",
-            "position2": "\t-0,086540 -0,066643\t"
+            "position2": "\t-0,086555 -0,066658\t"
           }
         }
       },
       "fallout": {
-        "winPoints": {
-          "winPointsCAP": "\t100\t",
-          "winPointsForKill": "\t1\t"
-        },
-        "maxPlayersInTeam": "\t10\t",
-        "teamSpawnPoints": {
-          "team1": {
-            "position": "0 -350"
-          },
-          "team2": {
-            "position": "0 350"
-          }
-        },
-        "teamBasePositions": {
-          "team1": "",
-          "team2": ""
-        },
+        "winPoints": "MULTI_TEAM_2",
+        "maxPlayersInTeam": "\t3\t",
+        "maxTeamsInArena": "\t8\t",
+        "minTeamsInArena": "\t8\t",
+        "maxSquadTeams": "\t4\t",
+        "minSquadTeams": "\t4\t",
         "flagSpawnPoint": [
           {
-            "position": "\t25,526220 291,847100\t",
-            "winPoints": "\t5,000000\t"
+            "position": "\t7,888242 7,767135 9,468759\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           },
           {
-            "position": "\t21,152690 -285,817000\t",
-            "winPoints": "\t5,000000\t"
+            "position": "\t-0,837631 7,740675 2,608285\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           },
           {
-            "position": "\t-1,091911 265,752900\t",
-            "winPoints": "\t5,000000\t"
-          },
-          {
-            "position": "-22.679619 291.847046",
-            "winPoints": "\t5,000000\t"
-          },
-          {
-            "position": "\t-0,435051 -259,722700\t",
-            "winPoints": "\t5,000000\t"
-          },
-          {
-            "position": "\t-27,053180 -285,817000\t",
-            "winPoints": "\t5,000000\t"
+            "position": "\t-8,427124 7,849456 -5,328598\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           }
         ],
         "flagAbsorptionPoint": [
           {
             "team": "\t1\t",
-            "position": "\t102,048000 178,088000\t",
-            "radius": "\t15,000000\t"
-          },
-          {
-            "team": "\t1\t",
-            "position": "\t-120,883000 170,653900\t",
-            "radius": "\t15,000000\t"
+            "position": "\t-0,448807 6,532124 -340,862600\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "295F7C00.4808EBC0.206FE6A1.0FFB5B3D"
           },
           {
             "team": "\t2\t",
-            "position": "\t121,656600 -171,219600\t",
-            "radius": "\t15,000000\t"
+            "position": "\t-1,652199 6,597638 339,492200\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "FFF65536.46AAFECB.BB47BB82.773EE3FA"
           },
           {
-            "team": "\t2\t",
-            "position": "\t-100,031500 -175,016000\t",
-            "radius": "\t15,000000\t"
+            "team": "\t3\t",
+            "position": "\t322,131800 3,797771 -2,584602\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "B9869054.484FD9AE.81A6A7A9.7087AD31"
+          },
+          {
+            "team": "\t4\t",
+            "position": "\t-321,789000 3,357208 -2,167679\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "5DDDBF71.474E2757.80A92FBF.ED6C9B0E"
           }
         ],
         "repairPoint": [
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
             "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t254,468900 -0,000004 165,776900\t"
+            "position": "\t59,505300 7,748687 1,437076\t",
+            "guid": "CE0DEE5D.4A28A2FF.D909A1B0.A1273058"
           },
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
             "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t265,795900 -0,000053 -88,528000\t"
-          },
-          {
-            "cooldown": "\t60,000000\t",
-            "repairTime": "\t5,000000\t",
-            "radius": "\t15,000000\t",
-            "repairFlags": "\t127\t",
-            "position": "\t-264,993200 0,000061 88,527950\t"
-          },
-          {
-            "cooldown": "\t60,000000\t",
-            "repairTime": "\t5,000000\t",
-            "radius": "\t15,000000\t",
-            "repairFlags": "\t127\t",
-            "position": "\t-253,771000 0,000008 -165,777000\t"
+            "position": "\t-57,878650 7,740043 -1,706482\t",
+            "guid": "2B5176F0.4AAB25AB.025B06B2.A3D407F7"
           }
         ]
       },
       "fallout2": {
-        "winPoints": {
-          "winPointsCAP": "\t100\t",
-          "winPointsForKill": "\t1\t"
-        },
-        "maxPlayersInTeam": "\t10\t",
-        "teamSpawnPoints": {
-          "team1": {
-            "position": "0 -350"
+        "winPoints": "MULTI_TEAM_TDM",
+        "maxPlayersInTeam": "\t3\t",
+        "maxTeamsInArena": "\t4\t",
+        "minTeamsInArena": "\t4\t",
+        "maxSquadTeams": "\t4\t",
+        "minSquadTeams": "\t4\t",
+        "flagSpawnPoint": [
+          {
+            "position": "\t7,888242 7,767135 9,468759\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           },
-          "team2": {
-            "position": "0 350"
+          {
+            "position": "\t-8,427124 7,849456 -5,328598\t",
+            "team": "\t0\t",
+            "flagType": "\t0\t"
           }
-        },
-        "teamBasePositions": {
-          "team1": "",
-          "team2": ""
-        },
-        "flagSpawnPoint": {
-          "position": "\t-11,921610 0,000000\t",
-          "winPoints": "\t35,000000\t"
-        },
+        ],
         "flagAbsorptionPoint": [
           {
             "team": "\t1\t",
-            "position": "\t102,048000 178,088000\t",
-            "radius": "\t15,000000\t"
-          },
-          {
-            "team": "\t1\t",
-            "position": "\t-120,883000 170,653900\t",
-            "radius": "\t15,000000\t"
+            "position": "\t-0,448807 6,532124 -340,862600\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "295F7C00.4808EBC0.206FE6A1.0FFB5B3D"
           },
           {
             "team": "\t2\t",
-            "position": "\t121,656600 -171,219600\t",
-            "radius": "\t15,000000\t"
+            "position": "\t-1,652199 6,597638 339,492200\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "FFF65536.46AAFECB.BB47BB82.773EE3FA"
           },
           {
-            "team": "\t2\t",
-            "position": "\t-100,031500 -175,016000\t",
-            "radius": "\t15,000000\t"
+            "team": "\t3\t",
+            "position": "\t322,131800 3,797771 -2,584602\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "B9869054.484FD9AE.81A6A7A9.7087AD31"
+          },
+          {
+            "team": "\t4\t",
+            "position": "\t-321,789000 3,357208 -2,167679\t",
+            "radius": "\t15,000000\t",
+            "applyOverlay": "\tfalse\t",
+            "guid": "5DDDBF71.474E2757.80A92FBF.ED6C9B0E"
           }
         ],
         "repairPoint": [
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
             "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t254,468900 -0,000004 165,776900\t"
+            "position": "\t115,464500 0,080883 154,672000\t",
+            "guid": "A3102A50.40E7F894.BFE531BE.53653E1C"
           },
           {
-            "cooldown": "\t60,000000\t",
+            "cooldown": "\t120,000000\t",
             "repairTime": "\t5,000000\t",
             "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t265,795900 -0,000053 -88,528000\t"
+            "position": "\t-123,900500 0,000076 -159,453600\t",
+            "guid": "937C8B3F.4D40521C.FAD359B1.15B8247F"
+          }
+        ]
+      },
+      "fallout3": {
+        "winPoints": "MULTI_TEAM_FFA",
+        "maxPlayersInTeam": "\t1\t",
+        "maxTeamsInArena": "\t12\t",
+        "minTeamsInArena": "\t12\t",
+        "maxSquadTeams": "\t0\t",
+        "minSquadTeams": "\t0\t",
+        "repairPoint": {
+          "cooldown": "\t120,000000\t",
+          "repairTime": "\t5,000000\t",
+          "radius": "\t20,000000\t",
+          "repairFlags": "\t127\t",
+          "position": "\t1,893848 7,741973 -1,636017\t",
+          "guid": "88840C26.456921E3.266F71A8.5E99D00D"
+        }
+      },
+      "fallout4": {
+        "winPoints": "RESOURCE_10x10_FULL",
+        "maxPlayersInTeam": "\t10\t",
+        "roundLength": "\t900\t",
+        "repairPoint": [
+          {
+            "cooldown": "\t300,000000\t",
+            "repairTime": "\t10,000000\t",
+            "radius": "\t15,000000\t",
+            "repairFlags": "\t127\t",
+            "position": "\t117,904900 0,045288 -169,688400\t",
+            "guid": "3F3ABCA6.46DC450A.3DD9F29E.AEB4E643"
           },
           {
-            "cooldown": "\t60,000000\t",
-            "repairTime": "\t5,000000\t",
+            "cooldown": "\t300,000000\t",
+            "repairTime": "\t10,000000\t",
             "radius": "\t15,000000\t",
             "repairFlags": "\t127\t",
-            "position": "\t-264,993200 0,000061 88,527950\t"
+            "position": "\t-117,861100 0,093811 167,504400\t",
+            "guid": "C10E3DD6.4F4F35E4.53A52FA6.605A08F7"
+          }
+        ],
+        "resourcePoint": [
+          {
+            "position": "\t-259,730900 0,796870 -0,689796\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t15\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "96FCB7E1.4866531E.33B3FA8A.587B5110"
           },
           {
-            "cooldown": "\t60,000000\t",
-            "repairTime": "\t5,000000\t",
+            "position": "\t2,291466 7,740676 0,464165\t",
             "radius": "\t15,000000\t",
-            "repairFlags": "\t127\t",
-            "position": "\t-253,771000 0,000008 -165,777000\t"
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t15\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "4372EC9B.479452A3.1B4FDD90.55DE279D"
+          },
+          {
+            "position": "\t256,313200 0,953226 -2,290604\t",
+            "radius": "\t15,000000\t",
+            "startDelay": "\t0,000000\t",
+            "cooldown": "\t100,000000\t",
+            "damageLockTime": "\t10,000000\t",
+            "amount": "\t15\t",
+            "absorptionSpeed": "\t1,000000\t",
+            "reuseCount": "\t100\t",
+            "team": "\t0\t",
+            "guid": "5EA5C798.4087C4CD.E786D6B5.87F2EB18"
           }
         ]
       }
@@ -3022,8 +3226,8 @@
     "description": "#arenas:96_prohorovka_defense/description",
     "geometry": "spaces/96_prohorovka_defense",
     "boundingBox": {
-      "bottomLeft": "-500.0 -500.0",
-      "upperRight": "500.0 500.0"
+      "bottomLeft": "\t-500,000000 -500,000000\t",
+      "upperRight": "\t500,000000 500,000000\t"
     },
     "roundLength": "\t900\t",
     "minimap": "spaces/96_prohorovka_defense/mmap.dds",
@@ -3042,10 +3246,10 @@
       "ctf": {
         "teamBasePositions": {
           "team1": {
-            "position1": "\t-125,100000 448,300100\t"
+            "position1": "-100.000 448.300110"
           },
           "team2": {
-            "position1": "\t51,599980 -447,000000\t"
+            "position1": "-100.000 -447.000000"
           }
         },
         "artilleryPreparationChance": "0.7"
@@ -3280,4 +3484,3 @@
     "explicitRequestOnly": "\ttrue\t"
   }
 ]
-

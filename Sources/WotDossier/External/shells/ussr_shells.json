@@ -919,7 +919,8 @@
     "id": "\t139\t",
     "userString": "#ussr_vehicles:_100mm_UBR-412PB_fallout",
     "icon": "ap_cr",
-    "price": "\t30\t",
+    "price": "\t90\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t100\t",
     "isTracer": "\ttrue\t",
@@ -963,7 +964,8 @@
     "id": "\t141\t",
     "userString": "#ussr_vehicles:_100mm_3UOF10_fallout",
     "icon": "he",
-    "price": "\t27\t",
+    "price": "\t81\t",
+    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t100\t",
     "explosionRadius": "1.76",
@@ -1018,6 +1020,7 @@
       "#text": "\t12\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "HOLLOW_CHARGE",
     "caliber": "\t100\t",
     "isTracer": "\ttrue\t",
@@ -1212,6 +1215,20 @@
       "devices": "\t165\t"
     }
   },
+  "_122mm_UBR-471PBM": {
+    "id": "\t129\t",
+    "userString": "#ussr_vehicles:_122mm_UBR-471PBM",
+    "icon": "ap_cr",
+    "price": "\t1180\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t122\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeAPCR",
+    "damage": {
+      "armor": "\t440\t",
+      "devices": "\t165\t"
+    }
+  },
   "_122mm_3VBK6": {
     "id": "\t138\t",
     "userString": "#ussr_vehicles:_122mm_3VBK6",
@@ -1229,20 +1246,6 @@
       "devices": "\t165\t"
     },
     "piercingPowerLossFactorByDistance": "0.05"
-  },
-  "_122mm_UBR-471PBM": {
-    "id": "\t129\t",
-    "userString": "#ussr_vehicles:_122mm_UBR-471PBM",
-    "icon": "ap_cr",
-    "price": "\t1180\t",
-    "kind": "ARMOR_PIERCING_CR",
-    "caliber": "\t122\t",
-    "isTracer": "\ttrue\t",
-    "effects": "largeAPCR",
-    "damage": {
-      "armor": "\t440\t",
-      "devices": "\t165\t"
-    }
   },
   "_122mm_UBP-471BM": {
     "id": "\t130\t",
@@ -1456,6 +1459,52 @@
     "userString": "#ussr_vehicles:_130mm_UOF-482",
     "icon": "he",
     "price": "\t978\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t130\t",
+    "explosionRadius": "2.78",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t640\t",
+      "devices": "\t180\t"
+    }
+  },
+  "_130mm_UBR-482_fallout": {
+    "id": "\t142\t",
+    "userString": "#ussr_vehicles:_130mm_UBR-482_fallout",
+    "icon": "ap",
+    "price": "\t108\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t130\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeArmorPiercing",
+    "damage": {
+      "armor": "\t490\t",
+      "devices": "\t180\t"
+    }
+  },
+  "_130mm_UBR-482P_fallout": {
+    "id": "\t143\t",
+    "userString": "#ussr_vehicles:_130mm_UBR-482P_fallout",
+    "icon": "ap_cr",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t130\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeAPCR",
+    "damage": {
+      "armor": "\t490\t",
+      "devices": "\t180\t"
+    }
+  },
+  "_130mm_UOF-482_fallout": {
+    "id": "\t144\t",
+    "userString": "#ussr_vehicles:_130mm_UOF-482_fallout",
+    "icon": "he",
+    "price": "\t99\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t130\t",
     "explosionRadius": "2.78",
@@ -1784,6 +1833,53 @@
     "userString": "#ussr_vehicles:_152mm_53-OF-551M",
     "icon": "he",
     "price": "\t1120\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t152\t",
+    "explosionRadius": "3.66",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHighExplosive",
+    "damage": {
+      "armor": "\t1100\t",
+      "devices": "\t203\t"
+    }
+  },
+  "_152mm_UBR551M_fallout": {
+    "id": "\t148\t",
+    "userString": "#ussr_vehicles:_152mm_UBR551M_fallout",
+    "icon": "ap",
+    "price": "\t90\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t152\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeArmorPiercing",
+    "damage": {
+      "armor": "\t750\t",
+      "devices": "\t203\t"
+    }
+  },
+  "_152mm_UBK551M_fallout": {
+    "id": "\t149\t",
+    "userString": "#ussr_vehicles:_152mm_UBK551M_fallout",
+    "icon": "hc",
+    "price": {
+      "#text": "\t17\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t152\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHollowCharge",
+    "damage": {
+      "armor": "\t750\t",
+      "devices": "\t203\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_152mm_53-OF-551M_fallout": {
+    "id": "\t150\t",
+    "userString": "#ussr_vehicles:_152mm_53-OF-551M_fallout",
+    "icon": "he",
+    "price": "\t81\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t152\t",
     "explosionRadius": "3.66",

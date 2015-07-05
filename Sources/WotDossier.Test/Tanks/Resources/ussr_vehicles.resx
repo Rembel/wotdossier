@@ -237,6 +237,9 @@
   <data name="Chassis_IS-6" xml:space="preserve">
     <value>ИС-6</value>
   </data>
+  <data name="Chassis_IS-7_fallout" xml:space="preserve">
+    <value>ИС-7</value>
+  </data>
   <data name="Chassis_IS4" xml:space="preserve">
     <value>ИС-4М</value>
   </data>
@@ -283,6 +286,9 @@
     <value>Объект 263</value>
   </data>
   <data name="Chassis_Object268" xml:space="preserve">
+    <value>Объект 268</value>
+  </data>
+  <data name="Chassis_Object268_fallout" xml:space="preserve">
     <value>Объект 268</value>
   </data>
   <data name="Chassis_Object416" xml:space="preserve">
@@ -340,7 +346,7 @@
     <value>Объект 430 Вариант II усиленная</value>
   </data>
   <data name="Chassis_R105_BT_7A" xml:space="preserve">
-    <value>БТ-7 артиллерийский</value>
+    <value>БТ-7 арт.</value>
   </data>
   <data name="Chassis_R106_KV85" xml:space="preserve">
     <value>КВ-85</value>
@@ -379,13 +385,19 @@
     <value>Объект 244</value>
   </data>
   <data name="Chassis_R115_IS-3_auto" xml:space="preserve">
-    <value>ИС-3 с механизмом заряжания</value>
+    <value>ИС-3 с МЗ</value>
   </data>
   <data name="Chassis_R116_ISU122C_Berlin" xml:space="preserve">
     <value>ИСУ-122С</value>
   </data>
   <data name="Chassis_R117_T34_85_Rudy" xml:space="preserve">
     <value>Т-34-85-60</value>
+  </data>
+  <data name="Chassis_R118_T28_F30" xml:space="preserve">
+    <value>Т-28Э с Ф-30</value>
+  </data>
+  <data name="Chassis_R119_Object_777" xml:space="preserve">
+    <value>Объект 777 Вариант II</value>
   </data>
   <data name="Chassis_R71_IS_2B" xml:space="preserve">
     <value>ИС-2М</value>
@@ -580,6 +592,12 @@ W-670</value>
   <data name="IS-7_descr" xml:space="preserve">
     <value>Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и 1947 гг. В 1948 г. прошёл госиспытания. Серийно не выпускался.</value>
   </data>
+  <data name="IS-7_fallout" xml:space="preserve">
+    <value>ИС-7 (П)</value>
+  </data>
+  <data name="IS-7_fallout_descr" xml:space="preserve">
+    <value>Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и 1947 гг. В 1948 году прошёл госиспытания. Серийно не выпускался.</value>
+  </data>
   <data name="IS-85" xml:space="preserve">
     <value>ИС-85</value>
   </data>
@@ -671,7 +689,7 @@ W-670</value>
     <value>КВ-122 обр. 1944 г.</value>
   </data>
   <data name="KV1_descr" xml:space="preserve">
-    <value>Разработка началась в конце 1938 года. Опытный образец был выпущен в августе 1939 г. Впервые использовался в бою в декабре 1939 г. во время боёв на линии Маннергейма. Серийно выпускался с марта 1940 по август 1942 года. Всего было выпущено 2769 машин этого типа.</value>
+    <value>Разработка началась в конце 1938 года. Опытный образец был выпущен в августе 1939 г. Впервые использовался в декабре 1939 г. во время боёв на «Линии Маннергейма». Серийно выпускался с марта 1940 по август 1942 года. Всего было выпущено 2769 машин этого типа.</value>
   </data>
   <data name="KV2" xml:space="preserve">
     <value>КВ-2</value>
@@ -718,8 +736,11 @@ W-670</value>
   <data name="M-17F_R" xml:space="preserve">
     <value>М-17Ф</value>
   </data>
+  <data name="M-17L_R" xml:space="preserve">
+    <value>М-17Л 1445 об/мин</value>
+  </data>
   <data name="M-17T" xml:space="preserve">
-    <value>М-17Л</value>
+    <value>М-17Л 1400 об/мин</value>
   </data>
   <data name="M-5-400" xml:space="preserve">
     <value>М-5-400</value>
@@ -735,6 +756,9 @@ W-670</value>
   </data>
   <data name="M-50TD" xml:space="preserve">
     <value>М-50ТД</value>
+  </data>
+  <data name="M-50T_fallout" xml:space="preserve">
+    <value>М-50Т</value>
   </data>
   <data name="M-80" xml:space="preserve">
     <value>М-80</value>
@@ -801,6 +825,15 @@ W-670</value>
   </data>
   <data name="Object268_descr" xml:space="preserve">
     <value>Работы над машиной были начаты летом 1952 года в ОКБТ ЛКЗ под руководством Ж. Я. Котина. Установка разрабатывалась на базе тяжёлого танка Т-10. Опытный образец был выпущен в 1956 году. Машина прошла испытания, однако серийно не выпускалась.</value>
+  </data>
+  <data name="Object268_fallout" xml:space="preserve">
+    <value>Объект 268 (П)</value>
+  </data>
+  <data name="Object268_fallout_descr" xml:space="preserve">
+    <value>Работы над машиной были начаты летом 1952 года в ОКБТ ЛКЗ под руководством Ж. Я. Котина. Установка разрабатывалась на базе тяжёлого танка Т-10. Опытный образец был выпущен в 1956 году. Машина прошла испытания, однако серийно не выпускалась.</value>
+  </data>
+  <data name="Object268_fallout_short" xml:space="preserve">
+    <value>Об. 268 (П)</value>
   </data>
   <data name="Object268_short" xml:space="preserve">
     <value>Об. 268</value>
@@ -985,7 +1018,7 @@ W-670</value>
     <value>Об. 244</value>
   </data>
   <data name="R115_IS-3_auto" xml:space="preserve">
-    <value>ИС-3 с механизмом заряжания</value>
+    <value>ИС-3 с МЗ</value>
   </data>
   <data name="R115_IS-3_auto_descr" xml:space="preserve">
     <value>В 1956–1957 годах слушатели Академии БТВ разработали дипломный проект установки механизма заряжания для тяжёлых танков ИС-3 и Т-10. В варианте для ИС-3 была предусмотрена двухрядная боеукладка магазинного типа. Экипаж был сокращён до трёх человек: командир, наводчик, механик-водитель. Ввиду размещения механизма заряжания была изменена конструкция башни. Работы над проектом прекратились на стадии эскизного проектирования.</value>
@@ -1008,6 +1041,24 @@ W-670</value>
   <data name="R117_T34_85_Rudy_short" xml:space="preserve">
     <value>Rudy</value>
   </data>
+  <data name="R118_T28_F30" xml:space="preserve">
+    <value>Т-28Э с Ф-30</value>
+  </data>
+  <data name="R118_T28_F30_descr" xml:space="preserve">
+    <value>Танк Т-28 с 85-мм танковой пушкой Ф-30 был создан в 1941 году. Был изготовлен один опытный образец, который прошёл полигонные испытания. От серийных Т-28 танк отличался только вооружением. Данных о серийном производстве или использовании в боевых условиях этого танка нет.</value>
+  </data>
+  <data name="R118_T28_F30_short" xml:space="preserve">
+    <value>Т-28Э Ф-30</value>
+  </data>
+  <data name="R119_Object_777" xml:space="preserve">
+    <value>Объект 777 Вариант II</value>
+  </data>
+  <data name="R119_Object_777_descr" xml:space="preserve">
+    <value>«Объект 777» представляет собой уникальный проект тяжёлого танка. Проектные работы велись на Кировском заводе в Челябинске. К 1953 году были подготовлены эскизные чертежи и изготовлен макет. Проект предусматривал изготовление литого корпуса и башни обтекаемой формы. На танк планировалось установить 122-мм пушку М-62-Т2. Однако работы над танком остановили на стадии проектирования. Серийно «Объект 777» не производился и на вооружение принят не был.</value>
+  </data>
+  <data name="R119_Object_777_short" xml:space="preserve">
+    <value>Об. 777 II</value>
+  </data>
   <data name="R123" xml:space="preserve">
     <value>Р-123</value>
   </data>
@@ -1025,6 +1076,9 @@ W-670</value>
   </data>
   <data name="R71_IS_2B_descr" xml:space="preserve">
     <value>Тяжёлый танк ИС-2 (ИC-122) стал результатом модернизации танка ИС-1 и с 1944 года получил более простую в изготовлении литую лобовую деталь. В составе отдельных гвардейских тяжёлых танковых полков ИС-2 активно использовался для штурма укреплённых городов, таких как Будапешт, Бреслау, Берлин. Для взаимного опознавания на такие машины наносились специальные тактические знаки — белые полосы. Данная модель представляет танк 7-й Гвардейской тяжёлой танковой бригады, фотография которого на фоне Бранденбургских ворот приобрела всемирную известность.</value>
+  </data>
+  <data name="RTY_RCEHb" xml:space="preserve">
+    <value>РТУ («Ясень»)</value>
   </data>
   <data name="S-51" xml:space="preserve">
     <value>С-51</value>
@@ -1506,6 +1560,9 @@ W-670</value>
   <data name="Turret_1_Object268" xml:space="preserve">
     <value>Объект 268</value>
   </data>
+  <data name="Turret_1_Object268_fallout" xml:space="preserve">
+    <value>Объект 268</value>
+  </data>
   <data name="Turret_1_Object416" xml:space="preserve">
     <value>Объект 416 обр. 1952 г.</value>
   </data>
@@ -1543,7 +1600,7 @@ W-670</value>
     <value>Объект 430 Вариант II</value>
   </data>
   <data name="Turret_1_R105_BT_7A" xml:space="preserve">
-    <value>БТ-7 артиллерийский</value>
+    <value>БТ-7 арт.</value>
   </data>
   <data name="Turret_1_R106_KV85" xml:space="preserve">
     <value>КВ-85</value>
@@ -1570,13 +1627,19 @@ W-670</value>
     <value>Объект 244</value>
   </data>
   <data name="Turret_1_R115_IS-3_auto" xml:space="preserve">
-    <value>ИС-3 с механизмом заряжания</value>
+    <value>ИС-3 с МЗ</value>
   </data>
   <data name="Turret_1_R116_ISU122C_Berlin" xml:space="preserve">
     <value>ИСУ-122С</value>
   </data>
   <data name="Turret_1_R117_T34_85_Rudy" xml:space="preserve">
     <value>Т-34-85</value>
+  </data>
+  <data name="Turret_1_R118_T28_F30" xml:space="preserve">
+    <value>Т-28Э с Ф-30</value>
+  </data>
+  <data name="Turret_1_R119_Object_777" xml:space="preserve">
+    <value>Объект 777 Вариант II</value>
   </data>
   <data name="Turret_1_R71_IS_2B" xml:space="preserve">
     <value>ИС-122</value>
@@ -1704,6 +1767,9 @@ W-670</value>
   <data name="Turret_IS-6" xml:space="preserve">
     <value>ИС-6</value>
   </data>
+  <data name="Turret_IS-7_fallout" xml:space="preserve">
+    <value>ИС-7</value>
+  </data>
   <data name="V-11" xml:space="preserve">
     <value>В-11</value>
   </data>
@@ -1735,6 +1801,9 @@ W-670</value>
     <value>В-16</value>
   </data>
   <data name="V-16FN" xml:space="preserve">
+    <value>В-16ФН</value>
+  </data>
+  <data name="V-16FN_fallout" xml:space="preserve">
     <value>В-16ФН</value>
   </data>
   <data name="V-16M" xml:space="preserve">
@@ -1843,13 +1912,13 @@ W-670</value>
     <value>3УБК4М</value>
   </data>
   <data name="_100mm_3UBK4M_fallout" xml:space="preserve">
-    <value>3УБК4М (П)</value>
+    <value>ЗУБК4М (П)</value>
   </data>
   <data name="_100mm_3UOF10" xml:space="preserve">
     <value>3УОФ10</value>
   </data>
   <data name="_100mm_3UOF10_fallout" xml:space="preserve">
-    <value>3УОФ10 (П)</value>
+    <value>ЗУОФ10 (П)</value>
   </data>
   <data name="_100mm_BR-412D" xml:space="preserve">
     <value>УБР-412Д</value>
@@ -1959,6 +2028,9 @@ W-670</value>
   <data name="_10RK-26" xml:space="preserve">
     <value>10РК-26</value>
   </data>
+  <data name="_10RK-26_fallout" xml:space="preserve">
+    <value>10РК-26</value>
+  </data>
   <data name="_10RKM" xml:space="preserve">
     <value>10РКМ</value>
   </data>
@@ -2052,6 +2124,9 @@ W-670</value>
   <data name="_122mm_M62-T2" xml:space="preserve">
     <value>122 мм M62-T2</value>
   </data>
+  <data name="_122mm_M62-T2A" xml:space="preserve">
+    <value>122 мм M62-T2</value>
+  </data>
   <data name="_122mm_M62-T2S" xml:space="preserve">
     <value>122 мм М62-С2</value>
   </data>
@@ -2139,6 +2214,9 @@ W-670</value>
   <data name="_130mm_S-70A" xml:space="preserve">
     <value>130 мм С-70A</value>
   </data>
+  <data name="_130mm_S-70_fallout" xml:space="preserve">
+    <value>130 мм С-70</value>
+  </data>
   <data name="_130mm_UBR-482" xml:space="preserve">
     <value>УБР-482</value>
   </data>
@@ -2151,11 +2229,20 @@ W-670</value>
   <data name="_130mm_UBR-482PM" xml:space="preserve">
     <value>УБР-482ПМ</value>
   </data>
+  <data name="_130mm_UBR-482P_fallout" xml:space="preserve">
+    <value>УБР-482П (П)</value>
+  </data>
+  <data name="_130mm_UBR-482_fallout" xml:space="preserve">
+    <value>УБР-482 (П)</value>
+  </data>
   <data name="_130mm_UOF-482" xml:space="preserve">
     <value>УОФ-482</value>
   </data>
   <data name="_130mm_UOF-482M" xml:space="preserve">
     <value>УОФ-482М</value>
+  </data>
+  <data name="_130mm_UOF-482_fallout" xml:space="preserve">
+    <value>УОФ-482 (П)</value>
   </data>
   <data name="_152mm_53-G-530" xml:space="preserve">
     <value>53-Г-530</value>
@@ -2175,6 +2262,12 @@ W-670</value>
   <data name="_152mm_53-OF-551M" xml:space="preserve">
     <value>53-ОФ-551М</value>
   </data>
+  <data name="_152mm_53-OF-551M_fallout" xml:space="preserve">
+    <value>53-ОФ-551М (П)</value>
+  </data>
+  <data name="_152mm_53BP520" xml:space="preserve">
+    <value>53-БП-520</value>
+  </data>
   <data name="_152mm_53BP540" xml:space="preserve">
     <value>53-БП-540</value>
   </data>
@@ -2191,6 +2284,9 @@ W-670</value>
     <value>152 мм М-10</value>
   </data>
   <data name="_152mm_M64" xml:space="preserve">
+    <value>152 мм М64</value>
+  </data>
+  <data name="_152mm_M64_fallout" xml:space="preserve">
     <value>152 мм М64</value>
   </data>
   <data name="_152mm_ML-20C" xml:space="preserve">
@@ -2214,11 +2310,17 @@ W-670</value>
   <data name="_152mm_UBK551M" xml:space="preserve">
     <value>УБК551М</value>
   </data>
+  <data name="_152mm_UBK551M_fallout" xml:space="preserve">
+    <value>УБК551М (П)</value>
+  </data>
   <data name="_152mm_UBR551" xml:space="preserve">
     <value>УБР-551</value>
   </data>
   <data name="_152mm_UBR551M" xml:space="preserve">
     <value>УБР551М</value>
+  </data>
+  <data name="_152mm_UBR551M_fallout" xml:space="preserve">
+    <value>УБР551М (П)</value>
   </data>
   <data name="_152mm_UBR551P" xml:space="preserve">
     <value>УБР-551П</value>
@@ -2536,6 +2638,9 @@ W-670</value>
     <value>85 мм Д-5Т-85БМ</value>
   </data>
   <data name="_85mm_F-30" xml:space="preserve">
+    <value>85 мм Ф-30</value>
+  </data>
+  <data name="_85mm_F-30A" xml:space="preserve">
     <value>85 мм Ф-30</value>
   </data>
   <data name="_85mm_LB-2S" xml:space="preserve">

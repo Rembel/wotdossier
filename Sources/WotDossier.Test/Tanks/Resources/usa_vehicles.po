@@ -322,6 +322,9 @@ msgstr "T54E1M2"
 msgid "Chassis_T57_58"
 msgstr "T97"
 
+msgid "Chassis_T57_58_fallout"
+msgstr "T97"
+
 msgid "Chassis_T69"
 msgstr "T84E1"
 
@@ -488,6 +491,14 @@ msgstr ""
 
 msgid "Continental_AV_1790_5C"
 msgstr "Continental AV-1790-5C"
+
+msgid "Continental_AV_1790_5C_fallout"
+msgstr "Continental AV-1790-5C"
+
+msgid "Continental_AV_1790_5C_fallout_short"
+msgstr ""
+"Continental\n"
+"AV-1790-5C"
 
 msgid "Continental_AV_1790_5C_short"
 msgstr ""
@@ -693,9 +704,9 @@ msgstr "M10 Wolverine"
 
 msgid "M10_Wolverine_descr"
 msgstr ""
-"Самая массовая американская ПТ-САУ. С сентября 1942 по январь 1943 года было "
-"выпущено 6406 машин. Более трети ПТ-САУ Wolverine были переданы Союзникам по "
-"ленд-лизу."
+"Самая массовая ПТ САУ армии США. С сентября 1942 по январь 1943 было "
+"выпущено 6406 машин. Более трети машин было поставлено союзникам по ленд-"
+"лизу."
 
 msgid "M10_Wolverine_short"
 msgstr "Wolverine"
@@ -717,7 +728,7 @@ msgstr ""
 "Разработка машины началась в 1942 году. Первые образцы были созданы в апреле "
 "1943 года компанией General Motors. Одна из немногих американских ПТ-САУ, "
 "построенных на специальном шасси, а не на базе танка. Стала самой скоростной "
-"бронированной машиной этого класса времен Второй мировой войны. Всего с июля "
+"бронированной машиной этого класса времён Второй мировой войны. Всего с июля "
 "1943 по октябрь 1944 года было выпущено 2507 ПТ-САУ этого типа."
 
 msgid "M18_Hellcat_short"
@@ -996,9 +1007,9 @@ msgstr "M7 Priest"
 
 msgid "M7_Priest_descr"
 msgstr ""
-"Выпускалась на шасси танков М3 и М4 с апреля 1942 по февраль 1945 года. "
-"Всего было выпущено 4316 машин. Впервые САУ была использована в сражении у "
-"Эль-Аламейна."
+"Выпускалась на шасси танков М3 и М4 с апреля 1942 по март 1945 года. Всего "
+"было выпущено 4316 машин. Впервые САУ была использована в сражении у Эль-"
+"Аламейна."
 
 msgid "M7_med"
 msgstr "M7"
@@ -1108,9 +1119,6 @@ msgstr "SCR 506"
 
 msgid "SCR_508"
 msgstr "SCR 508"
-
-msgid "SCR_508A"
-msgstr "SCR 508A"
 
 msgid "SCR_508_1"
 msgstr "SCR 508/1"
@@ -1385,7 +1393,7 @@ msgid "T28_Prototype_descr"
 msgstr ""
 "ПТ-САУ с вращающейся башенной установкой. Являлась ранним вариантом тяжёлой "
 "самоходной установки, предназначенной для преодоления немецких укреплений на "
-"Линии Зигфрида."
+"«Линии Зигфрида»."
 
 msgid "T28_Prototype_short"
 msgstr "T28 Prot."
@@ -1464,7 +1472,7 @@ msgid "T32_descr"
 msgstr ""
 "Экспериментальный американский тяжёлый танк периода Второй мировой войны. "
 "Разрабатывался на базе танков М26 Pershing и Т29. Опытные образцы были "
-"построены в 1946 году. В связи с завершением Второй мировой войны Т32 не был "
+"построены в 1946 году. В связи с окончанием Второй мировой войны Т32 не был "
 "принят на вооружение и серийно не производился."
 
 msgid "T34T7"
@@ -1475,7 +1483,7 @@ msgstr "T34"
 
 msgid "T34_hvy_descr"
 msgstr ""
-"В 1945 году два прототипа танка Т30 были снабжены 120-мм пушками и "
+"В 1945 году два прототипа Т30 были снабжены 120-мм пушками и "
 "переклассифицированы в тяжёлый танк Т34. Серийно не выпускался. На "
 "вооружении не состоял."
 
@@ -1545,6 +1553,19 @@ msgstr ""
 "Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под "
 "120-мм и 155-мм орудия, однако программа создания таких машин была признана "
 "бесперспективной, и все работы были свёрнуты."
+
+msgid "T57_58_fallout"
+msgstr "T57 Heavy Tank (П)"
+
+msgid "T57_58_fallout_descr"
+msgstr ""
+"Проект тяжёлого танка с качающейся башней и автоматом заряжания. "
+"Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под "
+"120-мм и 155-мм орудия, однако программа создания таких машин была признана "
+"бесперспективной, и все работы были свёрнуты."
+
+msgid "T57_58_fallout_short"
+msgstr "T57 Heavy (П)"
 
 msgid "T57_58_short"
 msgstr "T57 Heavy"
@@ -1758,7 +1779,7 @@ msgid "Turret_1_M6A2E1"
 msgstr "M6A2E1D4"
 
 msgid "Turret_1_M8A1"
-msgstr "M8A1"
+msgstr "M8 HMC Scott"
 
 msgid "Turret_1_Pershing"
 msgstr "M26M67"
@@ -1803,6 +1824,9 @@ msgid "Turret_1_T54E1"
 msgstr "T157"
 
 msgid "Turret_1_T57_58"
+msgstr "T169"
+
+msgid "Turret_1_T57_58_fallout"
 msgstr "T169"
 
 msgid "Turret_1_T69"
@@ -1851,7 +1875,7 @@ msgid "Turret_2_M46_Patton"
 msgstr "M46T119"
 
 msgid "Turret_2_M8A1"
-msgstr "T87"
+msgstr "M8 GMC"
 
 msgid "Turret_2_Pershing"
 msgstr "M26M71"
@@ -2012,14 +2036,23 @@ msgstr "APDS-T M392"
 msgid "_105mm_APCR_T140E3"
 msgstr "HVAPDS-T T279"
 
+msgid "_105mm_APCR_T210M2"
+msgstr "APCR T210M2"
+
 msgid "_105mm_APCR_T29E3"
 msgstr "APCR T29E3"
 
 msgid "_105mm_APCR_T29E3M2"
 msgstr "APCR T29E3M2"
 
+msgid "_105mm_AP_M68M2"
+msgstr "AP M68M2"
+
 msgid "_105mm_AP_T140E3"
 msgstr "AP-T T182E1"
+
+msgid "_105mm_AP_T210M2"
+msgstr "AP T210M2"
 
 msgid "_105mm_AP_T32"
 msgstr "AP T32"
@@ -2072,6 +2105,9 @@ msgstr "HE M11A2"
 msgid "_105mm_HE_M68M2"
 msgstr "HEP-T M393"
 
+msgid "_105mm_HE_T210M2"
+msgstr "HE T210M2"
+
 msgid "_105mm_Howitzer_M2A1"
 msgstr "105 mm Howitzer M2A1"
 
@@ -2121,6 +2157,9 @@ msgid "_120mm_Gun_T123E6"
 msgstr "120 mm Gun T123E6"
 
 msgid "_120mm_Gun_T179"
+msgstr "120 mm Gun T179"
+
+msgid "_120mm_Gun_T179_fallout"
 msgstr "120 mm Gun T179"
 
 msgid "_120mm_Gun_T53A1"
@@ -2378,7 +2417,7 @@ msgid "_75mm_HEAT_M66"
 msgstr "HEAT M66"
 
 msgid "_75mm_Howitzer_M1A1"
-msgstr "75 mm Howitzer M1A1"
+msgstr "75 mm AT Howitzer M1A1"
 
 msgid "_75mm_Howitzer_M3"
 msgstr "75 mm Howitzer M3"

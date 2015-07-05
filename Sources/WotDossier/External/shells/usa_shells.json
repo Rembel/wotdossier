@@ -305,20 +305,6 @@
       "devices": "\t76\t"
     }
   },
-  "_76mm_M64": {
-    "id": "\t62\t",
-    "userString": "#usa_vehicles:_76mm_M64",
-    "icon": "ap",
-    "price": "\t56\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "\t76\t",
-    "isTracer": "\ttrue\t",
-    "effects": "mediumArmorPiercing",
-    "damage": {
-      "armor": "\t110\t",
-      "devices": "\t105\t"
-    }
-  },
   "_75mm_M61": {
     "id": "\t14\t",
     "userString": "#usa_vehicles:_75mm_M61",
@@ -331,6 +317,20 @@
     "damage": {
       "armor": "\t110\t",
       "devices": "\t100\t"
+    }
+  },
+  "_76mm_M64": {
+    "id": "\t62\t",
+    "userString": "#usa_vehicles:_76mm_M64",
+    "icon": "ap",
+    "price": "\t56\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t76\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mediumArmorPiercing",
+    "damage": {
+      "armor": "\t110\t",
+      "devices": "\t105\t"
     }
   },
   "_75mm_M72": {
@@ -1188,7 +1188,7 @@
     "id": "\t117\t",
     "userString": "#usa_vehicles:_120mm_HE_Shot_fallout",
     "icon": "he",
-    "price": "\t33\t",
+    "price": "\t99\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t120\t",
     "explosionRadius": "2.42",
@@ -1217,7 +1217,7 @@
     "id": "\t115\t",
     "userString": "#usa_vehicles:_120mm_AP-T_M358_fallout",
     "icon": "ap",
-    "price": "\t36\t",
+    "price": "\t108\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t120\t",
     "isTracer": "\ttrue\t",

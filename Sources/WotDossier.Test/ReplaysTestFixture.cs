@@ -45,7 +45,7 @@ namespace WotDossier.Test
             }
         }
 
-        [TestCase("0.9.8.0")]
+        [TestCase("0.9.9.0")]
         public void ReplayTest(string version)
         {
             ReplayTest(new Version(version));

@@ -166,7 +166,7 @@
     <value>Type 4 Ke-Nu</value>
   </data>
   <data name="Chassis_J19_Tiger_I_Jpn" xml:space="preserve">
-    <value>Tiger Fgst.Nr. 250055</value>
+    <value>Heavy Tank No. VI</value>
   </data>
   <data name="Chassis_Ke_Ho" xml:space="preserve">
     <value>Type 5 Ke-Ho</value>
@@ -291,13 +291,13 @@
     <value>Ha-Go</value>
   </data>
   <data name="J19_Tiger_I_Jpn" xml:space="preserve">
-    <value>Tiger</value>
+    <value>Heavy Tank No. VI</value>
   </data>
   <data name="J19_Tiger_I_Jpn_descr" xml:space="preserve">
     <value>В 1943 году японский посол в Германии присутствовал на испытаниях «Тигров» на полигоне Henschel. После этого компания получила приказ передать всю документацию по данному танку японской стороне. Одна машина была отправлена в Бордо 14 октября 1943 года для доставки в разобранном виде на подводной лодке. Японской стороне не удалось ни доставить танк, ни наладить собственное производство. Эта авантюра обошлась им в 645 000 рейхсмарок при себестоимости танка 300 000 рейхсмарок.</value>
   </data>
   <data name="J19_Tiger_I_Jpn_short" xml:space="preserve">
-    <value>Tiger</value>
+    <value>HT No. VI</value>
   </data>
   <data name="JAN-GRC-3Z" xml:space="preserve">
     <value>JAN/GRC-3Z</value>
@@ -419,10 +419,10 @@ Otsu-Gata Sensha (танк модель В). Японские машины бы�
     <value>Type 95 Ha-Go</value>
   </data>
   <data name="Turret_1_J19_Tiger_I_Jpn" xml:space="preserve">
-    <value>Tiger</value>
+    <value>Heavy Tank No. VI</value>
   </data>
   <data name="Turret_1_J19_Tiger_I_Jpn_short" xml:space="preserve">
-    <value>Tiger</value>
+    <value>Heavy Tank No. VI</value>
   </data>
   <data name="Turret_1_Ke_Ho" xml:space="preserve">
     <value>Type 5 Ke-Ho</value>

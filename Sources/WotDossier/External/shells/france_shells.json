@@ -927,6 +927,53 @@
       "devices": "\t150\t"
     }
   },
+  "_105mm_APCR_OFL_E1_fallout": {
+    "id": "\t98\t",
+    "userString": "#france_vehicles:_105mm_APCR_OFL_E1_fallout",
+    "icon": "ap_cr",
+    "price": "\t81\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_105mm_HEAT_OCC_F1_fallout": {
+    "id": "\t99\t",
+    "userString": "#france_vehicles:_105mm_HEAT_OCC_F1_fallout",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHollowCharge",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_105mm_HE_OE_F1_fallout": {
+    "id": "\t100\t",
+    "userString": "#france_vehicles:_105mm_HE_OE_F1_fallout",
+    "icon": "he",
+    "price": "\t72\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t105\t",
+    "explosionRadius": "1.91",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t480\t",
+      "devices": "\t150\t"
+    }
+  },
   "_105mm_OFL_105_F1": {
     "id": "\t88\t",
     "userString": "#france_vehicles:_105mm_OFL_105_F1",
@@ -974,6 +1021,53 @@
       "devices": "\t150\t"
     }
   },
+  "_105mm_OFL_105_D1504_L51": {
+    "id": "\t95\t",
+    "userString": "#france_vehicles:_105mm_OFL_105_D1504_L51",
+    "icon": "ap_cr",
+    "price": "\t580\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_105mm_OCC_105_D1504_L51": {
+    "id": "\t96\t",
+    "userString": "#france_vehicles:_105mm_OCC_105_D1504_L51",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "largeHollowCharge",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_105mm_OE_105_Mle_60_D1504_L51": {
+    "id": "\t97\t",
+    "userString": "#france_vehicles:_105mm_OE_105_Mle_60_D1504_L51",
+    "icon": "he",
+    "price": "\t410\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t105\t",
+    "explosionRadius": "1.91",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t480\t",
+      "devices": "\t150\t"
+    }
+  },
   "_120mm_Prf1943": {
     "id": "\t47\t",
     "userString": "#france_vehicles:_120mm_Prf1943",
@@ -992,7 +1086,8 @@
     "id": "\t92\t",
     "userString": "#france_vehicles:_120mm_Prf1943_fallout",
     "icon": "ap",
-    "price": "\t27\t",
+    "price": "\t81\t",
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t120\t",
     "isTracer": "\ttrue\t",
@@ -1027,6 +1122,7 @@
       "#text": "\t12\t",
       "gold": ""
     },
+    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t120\t",
     "isTracer": "\ttrue\t",
@@ -1055,7 +1151,8 @@
     "id": "\t94\t",
     "userString": "#france_vehicles:_120mm_OE_mle_1930_fallout",
     "icon": "he",
-    "price": "\t24\t",
+    "price": "\t72\t",
+    "notInShop": "\ttrue\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t120\t",
     "explosionRadius": "2.42",

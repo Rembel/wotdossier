@@ -153,6 +153,9 @@ msgstr "А-44 усиленная"
 msgid "Chassis_IS-6"
 msgstr "ИС-6"
 
+msgid "Chassis_IS-7_fallout"
+msgstr "ИС-7"
+
 msgid "Chassis_IS4"
 msgstr "ИС-4М"
 
@@ -199,6 +202,9 @@ msgid "Chassis_Object263"
 msgstr "Объект 263"
 
 msgid "Chassis_Object268"
+msgstr "Объект 268"
+
+msgid "Chassis_Object268_fallout"
 msgstr "Объект 268"
 
 msgid "Chassis_Object416"
@@ -256,7 +262,7 @@ msgid "Chassis_R104_Object_430_II_2"
 msgstr "Объект 430 Вариант II усиленная"
 
 msgid "Chassis_R105_BT_7A"
-msgstr "БТ-7 артиллерийский"
+msgstr "БТ-7 арт."
 
 msgid "Chassis_R106_KV85"
 msgstr "КВ-85"
@@ -295,13 +301,19 @@ msgid "Chassis_R114_Object_244"
 msgstr "Объект 244"
 
 msgid "Chassis_R115_IS-3_auto"
-msgstr "ИС-3 с механизмом заряжания"
+msgstr "ИС-3 с МЗ"
 
 msgid "Chassis_R116_ISU122C_Berlin"
 msgstr "ИСУ-122С"
 
 msgid "Chassis_R117_T34_85_Rudy"
 msgstr "Т-34-85-60"
+
+msgid "Chassis_R118_T28_F30"
+msgstr "Т-28Э с Ф-30"
+
+msgid "Chassis_R119_Object_777"
+msgstr "Объект 777 Вариант II"
 
 msgid "Chassis_R71_IS_2B"
 msgstr "ИС-2М"
@@ -523,6 +535,14 @@ msgstr ""
 "Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и "
 "1947 гг. В 1948 г. прошёл госиспытания. Серийно не выпускался."
 
+msgid "IS-7_fallout"
+msgstr "ИС-7 (П)"
+
+msgid "IS-7_fallout_descr"
+msgstr ""
+"Работа над танком началась весной 1945 года. Прототипы испытывались в 1946 и "
+"1947 гг. В 1948 году прошёл госиспытания. Серийно не выпускался."
+
 msgid "IS-85"
 msgstr "ИС-85"
 
@@ -650,9 +670,9 @@ msgstr "КВ-122 обр. 1944 г."
 msgid "KV1_descr"
 msgstr ""
 "Разработка началась в конце 1938 года. Опытный образец был выпущен в августе "
-"1939 г. Впервые использовался в бою в декабре 1939 г. во время боёв на линии "
-"Маннергейма. Серийно выпускался с марта 1940 по август 1942 года. Всего было "
-"выпущено 2769 машин этого типа."
+"1939 г. Впервые использовался в декабре 1939 г. во время боёв на «Линии "
+"Маннергейма». Серийно выпускался с марта 1940 по август 1942 года. Всего "
+"было выпущено 2769 машин этого типа."
 
 msgid "KV2"
 msgstr "КВ-2"
@@ -710,8 +730,11 @@ msgstr "М-17Т"
 msgid "M-17F_R"
 msgstr "М-17Ф"
 
+msgid "M-17L_R"
+msgstr "М-17Л 1445 об/мин"
+
 msgid "M-17T"
-msgstr "М-17Л"
+msgstr "М-17Л 1400 об/мин"
 
 msgid "M-5-400"
 msgstr "М-5-400"
@@ -727,6 +750,9 @@ msgstr "М-50Т"
 
 msgid "M-50TD"
 msgstr "М-50ТД"
+
+msgid "M-50T_fallout"
+msgstr "М-50Т"
 
 msgid "M-80"
 msgstr "М-80"
@@ -812,6 +838,19 @@ msgstr ""
 "Ж. Я. Котина. Установка разрабатывалась на базе тяжёлого танка Т-10. Опытный "
 "образец был выпущен в 1956 году. Машина прошла испытания, однако серийно не "
 "выпускалась."
+
+msgid "Object268_fallout"
+msgstr "Объект 268 (П)"
+
+msgid "Object268_fallout_descr"
+msgstr ""
+"Работы над машиной были начаты летом 1952 года в ОКБТ ЛКЗ под руководством "
+"Ж. Я. Котина. Установка разрабатывалась на базе тяжёлого танка Т-10. Опытный "
+"образец был выпущен в 1956 году. Машина прошла испытания, однако серийно не "
+"выпускалась."
+
+msgid "Object268_fallout_short"
+msgstr "Об. 268 (П)"
 
 msgid "Object268_short"
 msgstr "Об. 268"
@@ -1087,7 +1126,7 @@ msgid "R114_Object_244_short"
 msgstr "Об. 244"
 
 msgid "R115_IS-3_auto"
-msgstr "ИС-3 с механизмом заряжания"
+msgstr "ИС-3 с МЗ"
 
 msgid "R115_IS-3_auto_descr"
 msgstr ""
@@ -1127,6 +1166,35 @@ msgstr ""
 msgid "R117_T34_85_Rudy_short"
 msgstr "Rudy"
 
+msgid "R118_T28_F30"
+msgstr "Т-28Э с Ф-30"
+
+msgid "R118_T28_F30_descr"
+msgstr ""
+"Танк Т-28 с 85-мм танковой пушкой Ф-30 был создан в 1941 году. Был "
+"изготовлен один опытный образец, который прошёл полигонные испытания. От "
+"серийных Т-28 танк отличался только вооружением. Данных о серийном "
+"производстве или использовании в боевых условиях этого танка нет."
+
+msgid "R118_T28_F30_short"
+msgstr "Т-28Э Ф-30"
+
+msgid "R119_Object_777"
+msgstr "Объект 777 Вариант II"
+
+msgid "R119_Object_777_descr"
+msgstr ""
+"«Объект 777» представляет собой уникальный проект тяжёлого танка. Проектные "
+"работы велись на Кировском заводе в Челябинске. К 1953 году были "
+"подготовлены эскизные чертежи и изготовлен макет. Проект предусматривал "
+"изготовление литого корпуса и башни обтекаемой формы. На танк планировалось "
+"установить 122-мм пушку М-62-Т2. Однако работы над танком остановили на "
+"стадии проектирования. Серийно «Объект 777» не производился и на вооружение "
+"принят не был."
+
+msgid "R119_Object_777_short"
+msgstr "Об. 777 II"
+
 msgid "R123"
 msgstr "Р-123"
 
@@ -1155,6 +1223,9 @@ msgstr ""
 "знаки — белые полосы. Данная модель представляет танк 7-й Гвардейской "
 "тяжёлой танковой бригады, фотография которого на фоне Бранденбургских ворот "
 "приобрела всемирную известность."
+
+msgid "RTY_RCEHb"
+msgstr "РТУ («Ясень»)"
 
 msgid "S-51"
 msgstr "С-51"
@@ -1760,6 +1831,9 @@ msgstr "Объект 263"
 msgid "Turret_1_Object268"
 msgstr "Объект 268"
 
+msgid "Turret_1_Object268_fallout"
+msgstr "Объект 268"
+
 msgid "Turret_1_Object416"
 msgstr "Объект 416 обр. 1952 г."
 
@@ -1797,7 +1871,7 @@ msgid "Turret_1_R104_Object_430_II"
 msgstr "Объект 430 Вариант II"
 
 msgid "Turret_1_R105_BT_7A"
-msgstr "БТ-7 артиллерийский"
+msgstr "БТ-7 арт."
 
 msgid "Turret_1_R106_KV85"
 msgstr "КВ-85"
@@ -1824,13 +1898,19 @@ msgid "Turret_1_R114_Object_244"
 msgstr "Объект 244"
 
 msgid "Turret_1_R115_IS-3_auto"
-msgstr "ИС-3 с механизмом заряжания"
+msgstr "ИС-3 с МЗ"
 
 msgid "Turret_1_R116_ISU122C_Berlin"
 msgstr "ИСУ-122С"
 
 msgid "Turret_1_R117_T34_85_Rudy"
 msgstr "Т-34-85"
+
+msgid "Turret_1_R118_T28_F30"
+msgstr "Т-28Э с Ф-30"
+
+msgid "Turret_1_R119_Object_777"
+msgstr "Объект 777 Вариант II"
 
 msgid "Turret_1_R71_IS_2B"
 msgstr "ИС-122"
@@ -1958,6 +2038,9 @@ msgstr "ИС-4М"
 msgid "Turret_IS-6"
 msgstr "ИС-6"
 
+msgid "Turret_IS-7_fallout"
+msgstr "ИС-7"
+
 msgid "V-11"
 msgstr "В-11"
 
@@ -1989,6 +2072,9 @@ msgid "V-16"
 msgstr "В-16"
 
 msgid "V-16FN"
+msgstr "В-16ФН"
+
+msgid "V-16FN_fallout"
 msgstr "В-16ФН"
 
 msgid "V-16M"
@@ -2099,13 +2185,13 @@ msgid "_100mm_3UBK4M"
 msgstr "3УБК4М"
 
 msgid "_100mm_3UBK4M_fallout"
-msgstr "3УБК4М (П)"
+msgstr "ЗУБК4М (П)"
 
 msgid "_100mm_3UOF10"
 msgstr "3УОФ10"
 
 msgid "_100mm_3UOF10_fallout"
-msgstr "3УОФ10 (П)"
+msgstr "ЗУОФ10 (П)"
 
 msgid "_100mm_BR-412D"
 msgstr "УБР-412Д"
@@ -2215,6 +2301,9 @@ msgstr "10РК"
 msgid "_10RK-26"
 msgstr "10РК-26"
 
+msgid "_10RK-26_fallout"
+msgstr "10РК-26"
+
 msgid "_10RKM"
 msgstr "10РКМ"
 
@@ -2308,6 +2397,9 @@ msgstr "122 мм гаубица М-30"
 msgid "_122mm_M62-T2"
 msgstr "122 мм M62-T2"
 
+msgid "_122mm_M62-T2A"
+msgstr "122 мм M62-T2"
+
 msgid "_122mm_M62-T2S"
 msgstr "122 мм М62-С2"
 
@@ -2395,6 +2487,9 @@ msgstr "130 мм С-70"
 msgid "_130mm_S-70A"
 msgstr "130 мм С-70A"
 
+msgid "_130mm_S-70_fallout"
+msgstr "130 мм С-70"
+
 msgid "_130mm_UBR-482"
 msgstr "УБР-482"
 
@@ -2407,11 +2502,20 @@ msgstr "УБР-482П"
 msgid "_130mm_UBR-482PM"
 msgstr "УБР-482ПМ"
 
+msgid "_130mm_UBR-482P_fallout"
+msgstr "УБР-482П (П)"
+
+msgid "_130mm_UBR-482_fallout"
+msgstr "УБР-482 (П)"
+
 msgid "_130mm_UOF-482"
 msgstr "УОФ-482"
 
 msgid "_130mm_UOF-482M"
 msgstr "УОФ-482М"
+
+msgid "_130mm_UOF-482_fallout"
+msgstr "УОФ-482 (П)"
 
 msgid "_152mm_53-G-530"
 msgstr "53-Г-530"
@@ -2431,6 +2535,12 @@ msgstr "53-ОФ-551БМ"
 msgid "_152mm_53-OF-551M"
 msgstr "53-ОФ-551М"
 
+msgid "_152mm_53-OF-551M_fallout"
+msgstr "53-ОФ-551М (П)"
+
+msgid "_152mm_53BP520"
+msgstr "53-БП-520"
+
 msgid "_152mm_53BP540"
 msgstr "53-БП-540"
 
@@ -2447,6 +2557,9 @@ msgid "_152mm_M-10"
 msgstr "152 мм М-10"
 
 msgid "_152mm_M64"
+msgstr "152 мм М64"
+
+msgid "_152mm_M64_fallout"
 msgstr "152 мм М64"
 
 msgid "_152mm_ML-20C"
@@ -2470,11 +2583,17 @@ msgstr "МПБ обр. 1915/28 г."
 msgid "_152mm_UBK551M"
 msgstr "УБК551М"
 
+msgid "_152mm_UBK551M_fallout"
+msgstr "УБК551М (П)"
+
 msgid "_152mm_UBR551"
 msgstr "УБР-551"
 
 msgid "_152mm_UBR551M"
 msgstr "УБР551М"
+
+msgid "_152mm_UBR551M_fallout"
+msgstr "УБР551М (П)"
 
 msgid "_152mm_UBR551P"
 msgstr "УБР-551П"
@@ -2792,6 +2911,9 @@ msgid "_85mm_D5T-85BMA"
 msgstr "85 мм Д-5Т-85БМ"
 
 msgid "_85mm_F-30"
+msgstr "85 мм Ф-30"
+
+msgid "_85mm_F-30A"
 msgstr "85 мм Ф-30"
 
 msgid "_85mm_LB-2S"

@@ -126,7 +126,7 @@
 					<texName>gui/maps/vehicles/decals/inscriptions/japan/inscription_1010.dds</texName>
 					<userString> #vehicle_customization_cn:inscription/japan/inscription_10</userString>
 				</inscription>
--->
+				-->
 				<!--//BLOCK_END:CN_INSCRIPTIONS//-->
 			</inscriptions>
 		</japan>
@@ -137,7 +137,7 @@
 			<inscriptions>
 				<inscription>
 					<id> 701 </id>
-					<texName> gui/maps/vehicles/decals/inscriptions/clan_content/inscription_04.dds  </texName>
+					<texName> gui/maps/vehicles/decals/inscriptions/clan_content/inscription_04.dds </texName>
 					<userString> #vehicle_customization:inscription/clan_content/inscription_04 </userString>
 				</inscription>
 				<inscription>

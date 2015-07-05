@@ -322,8 +322,8 @@ msgstr "E 25"
 
 msgid "E-25_IGR_descr"
 msgstr ""
-"Разработка E-25 велась в рамках программы «Е» под управлением Waffenprüfamt "
-"6. Над Е-25 работали специалисты компании Argus (г. Карлсруэ) под "
+"Разработка E 25 велась в рамках программы «Е» под управлением Waffenprüfamt "
+"6. Над Е 25 работали специалисты компании Argus (г. Карлсруэ) под "
 "руководством доктора Хермана Клауэ. Прототип изготовлен не был."
 
 msgid "ELC_AMX_IGR"
@@ -351,7 +351,7 @@ msgstr "Ferdinand"
 
 msgid "Ferdinand_IGR_descr"
 msgstr ""
-"Машина создана на базе «Тигра» Porsche. Всего в апреле — мае 1943 года было "
+"Машина создана на базе «Тигра» Порше. Всего в апреле — мае 1943 года было "
 "изготовлено 90 машин, которые впервые были использованы в Курской битве."
 
 msgid "Ferdinandturm_IGR"
@@ -415,7 +415,7 @@ msgstr ""
 "прототипа."
 
 msgid "GB21_Cromwell_IGR"
-msgstr "PC방 Cromwell"
+msgstr "Cromwell"
 
 msgid "GB21_Cromwell_IGR_descr"
 msgstr ""
@@ -425,7 +425,7 @@ msgstr ""
 "годах."
 
 msgid "GB21_Cromwell_IGR_short"
-msgstr "PC방 Cromwell"
+msgstr "Cromwell"
 
 msgid "GB23_Centurion_IGR"
 msgstr "Centurion Mk. I"
@@ -465,7 +465,7 @@ msgid "Hispano-Suiza_HS110_IGR"
 msgstr "Hispano-Suiza HS 110"
 
 msgid "IS-3_IGR"
-msgstr "PC방 ИС-3"
+msgstr "ИС-3"
 
 msgid "IS-3_IGR_descr"
 msgstr ""
@@ -475,7 +475,7 @@ msgstr ""
 "танков. С 1948 года до конца 50-х гг. машины проходили модернизацию."
 
 msgid "IS-3_IGR_short"
-msgstr "PC방 ИС-3"
+msgstr "ИС-3"
 
 msgid "IS-7_IGR"
 msgstr "ИС-7"
@@ -540,7 +540,7 @@ msgid "M-50T_IGR"
 msgstr "М-50Т"
 
 msgid "M48A1_IGR"
-msgstr "PC방 M48A1 Patton"
+msgstr "M48A1 Patton"
 
 msgid "M48A1_IGR_descr"
 msgstr ""
@@ -549,7 +549,7 @@ msgstr ""
 "1952 по 1959 год было выпущено 11703 танка различных модификаций."
 
 msgid "M48A1_IGR_short"
-msgstr "PC방 M48 Patton"
+msgstr "M48 Patton"
 
 msgid "M4_Sherman_IGR"
 msgstr "M4 Sherman"
@@ -641,7 +641,7 @@ msgid "Panther_II_IGR_short"
 msgstr "Panther II"
 
 msgid "Pershing_IGR"
-msgstr "PC방 M26 Pershing"
+msgstr "M26 Pershing"
 
 msgid "Pershing_IGR_descr"
 msgstr ""
@@ -650,7 +650,7 @@ msgstr ""
 "рамках фронтовых испытаний."
 
 msgid "Pershing_IGR_short"
-msgstr "PC방 Pershing"
+msgstr "Pershing"
 
 msgid "Pershingchassis2_IGR"
 msgstr "M26T81"
@@ -869,7 +869,7 @@ msgid "T136_IGR"
 msgstr "T136"
 
 msgid "T29_IGR"
-msgstr "T29"
+msgstr "Т29"
 
 msgid "T29_IGR_descr"
 msgstr ""
@@ -882,7 +882,7 @@ msgstr "T34"
 
 msgid "T34_hvy_IGR_descr"
 msgstr ""
-"В 1945 году два прототипа танка Т30 были снабжены 120-мм пушками и "
+"В 1945 году два прототипа Т30 были снабжены 120-мм пушками и "
 "переклассифицированы в тяжёлый танк Т34. Серийно не выпускался. На "
 "вооружении не состоял."
 

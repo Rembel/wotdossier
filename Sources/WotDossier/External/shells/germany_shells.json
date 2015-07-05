@@ -892,6 +892,100 @@
       "devices": "\t122\t"
     }
   },
+  "_90mm_OFL_90": {
+    "id": "\t132\t",
+    "userString": "#germany_vehicles:_90mm_OFL_90",
+    "icon": "ap",
+    "price": "\t280\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    }
+  },
+  "_90mm_OCC_90": {
+    "id": "\t133\t",
+    "userString": "#germany_vehicles:_90mm_OCC_90",
+    "icon": "hc",
+    "price": {
+      "#text": "\t10\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainHollowCharge\t",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_90mm_OE_90": {
+    "id": "\t134\t",
+    "userString": "#germany_vehicles:_90mm_OE_90",
+    "icon": "he",
+    "price": "\t190\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t90\t",
+    "explosionRadius": "1.46",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t122\t"
+    }
+  },
+  "_90mm_Mecar_AP": {
+    "id": "\t135\t",
+    "userString": "#germany_vehicles:_90mm_Mecar_AP",
+    "icon": "ap",
+    "price": "\t295\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    }
+  },
+  "_90mm_Mecar_HEAT": {
+    "id": "\t136\t",
+    "userString": "#germany_vehicles:_90mm_Mecar_HEAT",
+    "icon": "hc",
+    "price": {
+      "#text": "\t10\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t90\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainHollowCharge\t",
+    "damage": {
+      "armor": "\t240\t",
+      "devices": "\t122\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_90mm_Mecar_HE": {
+    "id": "\t137\t",
+    "userString": "#germany_vehicles:_90mm_Mecar_HE",
+    "icon": "he",
+    "price": "\t195\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t90\t",
+    "explosionRadius": "1.46",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t320\t",
+      "devices": "\t122\t"
+    }
+  },
   "_100mm_BR-412D": {
     "id": "\t125\t",
     "userString": "#germany_vehicles:_100mm_BR-412D",
@@ -1263,6 +1357,53 @@
       "devices": "\t150\t"
     },
     "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_105mm_APCR_M68M2_fallout": {
+    "id": "\t138\t",
+    "userString": "#germany_vehicles:_105mm_APCR_M68M2_fallout",
+    "icon": "ap_cr",
+    "price": "\t90\t",
+    "kind": "ARMOR_PIERCING_CR",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainAPCR\t",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    }
+  },
+  "_105mm_HEAT-T_T384E4_fallout": {
+    "id": "\t139\t",
+    "userString": "#germany_vehicles:_105mm_HEAT-T_T384E4_fallout",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t105\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainHollowCharge\t",
+    "damage": {
+      "armor": "\t390\t",
+      "devices": "\t150\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_105mm_HE_M68M2_fallout": {
+    "id": "\t140\t",
+    "userString": "#germany_vehicles:_105mm_HE_M68M2_fallout",
+    "icon": "he",
+    "price": "\t81\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t105\t",
+    "explosionRadius": "1.91",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t480\t",
+      "devices": "\t150\t"
+    }
   },
   "_128mm_Pzgr_N4": {
     "id": "\t112\t",

@@ -112,6 +112,9 @@ msgstr "E 75"
 msgid "Chassis_E-75_2"
 msgstr "E 75 verstärkteketten"
 
+msgid "Chassis_E100_DOT"
+msgstr "Дот E 100"
+
 msgid "Chassis_E50_Ausf_M"
 msgstr "E 50 Ausf. M"
 
@@ -156,8 +159,23 @@ msgstr "Pz.Kpfw. II Ausf. D"
 msgid "Chassis_G109_Steyr_WT"
 msgstr "Krupp-Steyr Waffenträger"
 
+msgid "Chassis_G110_Typ_205"
+msgstr "170 ton Panzer"
+
+msgid "Chassis_G110_Typ_205_2"
+msgstr "Mäuschen"
+
 msgid "Chassis_G112_KanonenJagdPanzer"
 msgstr "Kanonenjagdpanzer"
+
+msgid "Chassis_G113_SP_I_C"
+msgstr "Spähpanzer SP I C PT I"
+
+msgid "Chassis_G113_SP_I_C_2"
+msgstr "Spähpanzer SP I C PT II"
+
+msgid "Chassis_G114_Skorpian"
+msgstr "Rheinmetall 12,8 cm K 43 Skorpion"
 
 msgid "Chassis_G58_VK4502P"
 msgstr "VK 45.02(P) Ausf. B"
@@ -225,6 +243,9 @@ msgid "Chassis_JagdTiger_SdKfz_185"
 msgstr "Jagdtiger 8,8"
 
 msgid "Chassis_Leopard1"
+msgstr "Leopard 1"
+
+msgid "Chassis_Leopard1_fallout"
 msgstr "Leopard 1"
 
 msgid "Chassis_Lowe"
@@ -435,11 +456,17 @@ msgstr ""
 msgid "DW_II_short"
 msgstr "D.W. 2"
 
+msgid "Daimler-Benz_DB-603"
+msgstr "DB 603 mit mechanischer Aufladung"
+
 msgid "Daimler-Benz_DB-603A2"
 msgstr "MB 507"
 
 msgid "Daimler-Benz_DB-603A2_short"
 msgstr "MB 507"
+
+msgid "Daimler-Benz_DB-603_short"
+msgstr "DB 603 mit Aufladung"
 
 msgid "Daimler-Benz_MB-809"
 msgstr "Daimler-Benz MB 809"
@@ -468,7 +495,7 @@ msgstr "E 100"
 
 msgid "E-100_descr"
 msgstr ""
-"В июне 1943 г. компания Adlerwerke получила заказ на разработку танка E-100. "
+"В июне 1943 г. компания Adlerwerke получила заказ на разработку танка E 100. "
 "Однако в 1944 г. все работы над тяжёлыми танками были прекращены. К концу "
 "войны было изготовлено шасси прототипа, захваченное впоследствии британской "
 "армией."
@@ -481,8 +508,8 @@ msgstr "E 25"
 
 msgid "E-25_descr"
 msgstr ""
-"Разработка E-25 велась в рамках программы «Е» под управлением Waffenprüfamt "
-"6. Над Е-25 работали специалисты компании Argus (г. Карлсруэ) под "
+"Разработка E 25 велась в рамках программы «E» под управлением Waffenprüfamt "
+"6. Над E 25 работали специалисты компании Argus (г. Карлсруэ) под "
 "руководством доктора Хермана Клауэ. Прототип изготовлен не был."
 
 msgid "E-50"
@@ -490,7 +517,7 @@ msgstr "E 50"
 
 msgid "E-50_descr"
 msgstr ""
-"В 1945 году Е-50 должен был стать основным немецким средним танком и "
+"В 1945 году Е 50 должен был стать основным немецким средним танком и "
 "заменить «Пантеру» и «Пантеру II». Работы над танком были прекращены на "
 "стадии эскизного проектирования."
 
@@ -502,23 +529,29 @@ msgstr "E 75"
 
 msgid "E-75_descr"
 msgstr ""
-"В 1945 году Е-75 должен был стать основным немецким тяжёлым танком и "
+"В 1945 году E 75 должен был стать основным немецким тяжёлым танком и "
 "заменить «Тигра II». Работы над танком были прекращены на стадии эскизного "
 "проектирования."
 
 msgid "E-75_short"
 msgstr "E 75"
 
+msgid "E100_DOT"
+msgstr "Дот Е 100"
+
+msgid "E100_DOT_descr"
+msgstr "Дот Е 100"
+
 msgid "E50_Ausf_M"
 msgstr "E 50 Ausf. M"
 
 msgid "E50_Ausf_M_descr"
 msgstr ""
-"Одним из требований, выдвигаемых военными к танкам Е-серии, было перенесение "
-"трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков "
-"Е-50 и Е-75 была полностью заимствована компоновка моторно-трансмиссионного "
+"Одним из требований, выдвигаемых военными к танкам E-серии, было перенесение "
+"трансмиссии в кормовую часть корпуса. Однако в процессе разработки танков E "
+"50 и E 75 была полностью заимствована компоновка моторно-трансмиссионного "
 "отделения танка «Тигр II», что полностью исключало возможность переноса "
-"трансмиссии в кормовую часть. E-50 Ausf. M — реконструкция проекта Е-50 с "
+"трансмиссии в кормовую часть. E 50 Ausf. M — реконструкция проекта E 50 с "
 "задним расположением трансмиссии."
 
 msgid "E50_Ausf_M_short"
@@ -529,7 +562,7 @@ msgstr "Ferdinand"
 
 msgid "Ferdinand_descr"
 msgstr ""
-"Машина создана на базе «Тигра» Porsche. Всего в апреле — мае 1943 года было "
+"Машина создана на базе «Тигра» Порше. Всего в апреле – мае 1943 года было "
 "изготовлено 90 машин, которые впервые были использованы в Курской битве."
 
 msgid "Ferdinandstandardketten"
@@ -593,6 +626,9 @@ msgid "FuG8f"
 msgstr "FuG 8 (f)"
 
 msgid "FuG_F"
+msgstr "Fu.Spr.Ger. \"f\""
+
+msgid "FuG_FA"
 msgstr "Fu.Spr.Ger. \"f\""
 
 msgid "FuG_Spr.1"
@@ -751,22 +787,63 @@ msgstr ""
 msgid "G109_Steyr_WT_short"
 msgstr "Steyr WT"
 
+msgid "G110_Typ_205"
+msgstr "Mäuschen"
+
+msgid "G110_Typ_205_descr"
+msgstr ""
+"Летом 1942 года компания Porsche получила заказ на проведение опытно-"
+"конструкторских работ по созданию танка прорыва с максимально допустимыми "
+"уровнями защиты и мощности вооружения. Typ 205 Mäuschen стал одним из "
+"эскизных проектов в процессе разработки сверхтяжёлого танка Maus, от "
+"которого не отличался компоновкой. Машина не была реализована в металле."
+
+msgid "G110_Typ_205_short"
+msgstr "Mäuschen"
+
 msgid "G112_KanonenJagdPanzer"
 msgstr "Kanonenjagdpanzer"
 
 msgid "G112_KanonenJagdPanzer_descr"
 msgstr ""
-"Первые прототипы Kanonenjagdpanzer были построены в 1960 году Hanomag-"
-"Henschel для ФРГ. Выпуск продолжался вплоть до 1967 года. Всего для "
-"Бундесвера было построено 770, а для вооруженных сил Бельгии 80 машин. "
-"Однако с 1983 года эта ПТ-САУ перестала отвечать требованиям, предъявляемым "
-"к технике того времени. Часть машин была переоборудована в наблюдательные, "
-"часть — в противотанковые ракетные установки. Но в территориальных войсках "
-"Kanonenjagdpanzer, известные также как Jagdpanzer Kanone 90mm состояли на "
-"вооружении до 1990 года."
+"Первые прототипы Kanonenjagdpanzer были построены в 1960 году Hanomag и "
+"Henschel для ФРГ, и выпуск продолжался вплоть до 1967 года. Всего для "
+"Бундесвера и вооружённых сил Бельгии было построено 770 и 80 машин "
+"соответственно, однако уже в 1985 году эта ПТ-САУ перестала отвечать "
+"техническим требованиям того времени. Часть машин была переоборудована в "
+"наблюдательные, часть — в противотанковые ракетные установки. Некоторые "
+"Kanonenjagdpanzer, известные так же как Jagdpanzer Kanone 90mm, оставались "
+"на вооружении в частях Heimatschutztruppe до 1990 года."
 
 msgid "G112_KanonenJagdPanzer_short"
 msgstr "KanJPz"
+
+msgid "G113_SP_I_C"
+msgstr "Spähpanzer SP I C"
+
+msgid "G113_SP_I_C_descr"
+msgstr ""
+"Для повышения огневой мощи и улучшения противотанковых возможностей "
+"танкоразведывательных батальонов с 1956 по 1962 год проводились работы по "
+"созданию разведывательного истребителя танков. Для этого планировалась "
+"установка на боевую разведывательную машину 90-мм противотанкового орудия. "
+"Над проектом работали компании Hotchkiss и Klöckner-Humboldt-Deutz. Проект "
+"так и не был принят, количество построенных прототипов неизвестно."
+
+msgid "G113_SP_I_C_short"
+msgstr "SP I C"
+
+msgid "G114_Skorpian"
+msgstr "Rheinmetall Skorpion"
+
+msgid "G114_Skorpian_descr"
+msgstr ""
+"Разработка самоходных установок второй серии на базе танка Panther была "
+"начата компанией Rheinmetall в январе 1943 года. Чертёж машины 12,8 cm "
+"Skorpion датируется 2 апреля 1943 года. Машина не была реализована в металле."
+
+msgid "G114_Skorpian_short"
+msgstr "Skorpion"
 
 msgid "G20_Marder_II"
 msgstr "Marder II"
@@ -823,7 +900,7 @@ msgstr "G.W. E 100"
 
 msgid "G_E_descr"
 msgstr ""
-"Проект тяжёлой САУ на шасси танка Е-100. Начавшаяся в конце 1943 года "
+"Проект тяжёлой САУ на шасси танка E 100. Начавшаяся в конце 1943 года "
 "разработка завершена не была. Прототип изготовлен не был. Испытания не "
 "проводились."
 
@@ -914,6 +991,15 @@ msgstr "Hetzer"
 msgid "Hotchkiss"
 msgstr "Hotchkiss"
 
+msgid "Hotchkiss_6_Zyl_Benzin_154_PS"
+msgstr "Hotchkiss 6-Zyl. Benzin 154 PS"
+
+msgid "Hotchkiss_6_Zyl_Benzin_164_PS"
+msgstr "Hotchkiss 6-Zyl. Benzin 164 PS"
+
+msgid "Hotchkiss_6_Zyl_Benzin_195_PS"
+msgstr "Hotchkiss 6-Zyl. Benzin 195 PS"
+
 msgid "Hummel"
 msgstr "Hummel"
 
@@ -1000,7 +1086,7 @@ msgstr "Jagdpanzer E 100"
 
 msgid "JagdPz_E100_descr"
 msgstr ""
-"На базе танка Е-100 предполагалось выпускать САУ артподдержки, зенитную "
+"На базе танка E 100 предполагалось выпускать САУ артподдержки, зенитную "
 "самоходную установку и ПТ-САУ, однако эти проекты даже не успели начать "
 "разрабатывать."
 
@@ -1079,6 +1165,18 @@ msgstr ""
 "Первые опытные образцы были построены в 1965 году на заводе Krauss-Maffei. "
 "Состоял на вооружении более чем в 10 странах мира."
 
+msgid "Leopard1_fallout"
+msgstr "Leopard 1 (П)"
+
+msgid "Leopard1_fallout_descr"
+msgstr ""
+"Основной боевой танк ФРГ. Работы по созданию машины начались в 1956 году. "
+"Первые опытные образцы были собраны в 1965 году на заводе Krauss-Maffei. "
+"Состоял на вооружении более 10 стран."
+
+msgid "Leopard1_fallout_short"
+msgstr "Leopard 1 (П)"
+
 msgid "Leopard1_short"
 msgstr "Leopard 1"
 
@@ -1151,6 +1249,12 @@ msgstr "MTU MB 838 CaM 500"
 msgid "MB-838_CAM-500_1"
 msgstr "MTU MB 838 CaM 500A"
 
+msgid "MB-838_CAM-500_1_fallout"
+msgstr "MTU MB 838 CaM 500A"
+
+msgid "MB-838_CAM-500_1_fallout_short"
+msgstr "MB 838 CaM 500A"
+
 msgid "MB-838_CAM-500_1_short"
 msgstr "MB 838 CaM 500A"
 
@@ -1159,6 +1263,9 @@ msgstr "MB 838 CaM 500"
 
 msgid "MB507"
 msgstr "DB 603 A2"
+
+msgid "MB509"
+msgstr "MB 509"
 
 msgid "MB517"
 msgstr "MB 517"
@@ -1306,6 +1413,14 @@ msgstr "Maybach HL 230 P30"
 msgid "Maybach_HL_210_TRM_P30"
 msgstr "Maybach HL 210 TRM P30"
 
+msgid "Maybach_HL_210_TRM_P30_A"
+msgstr "Maybach HL 210 TRM P30"
+
+msgid "Maybach_HL_210_TRM_P30_A_short"
+msgstr ""
+"Maybach\n"
+"HL 210 TRM P30"
+
 msgid "Maybach_HL_210_TRM_P30_short"
 msgstr ""
 "Maybach\n"
@@ -1433,12 +1548,11 @@ msgstr "Panther/M10"
 
 msgid "Panther_M10_descr"
 msgstr ""
-"При подготовке Арденнской операции несколько «Пантер» было замаскировано под "
-"ПТ-САУ М10 в 150-ой танковой бригаде, назначением которой было осуществление "
-"боевых и диверсионных действий в тылу союзников. 21 февраля 1945 года "
-"замаскированные «Пантеры» встретились с частями 120-го американского "
-"пехотного полка. Одна машина была уничтожена, три были оставлены экипажами и "
-"попали в руки американцев."
+"При подготовке Арденнской операции в 150-й танковой бригаде СС, которой "
+"командовал Отто Скорцени, четыре «Пантеры» были замаскированы под ПТ-САУ "
+"М10. Бригада предназначалась для боевых и диверсионных действий в тылу "
+"союзников. Все машины были потеряны 21 февраля 1945 года в бою с частями 120-"
+"й пехотной дивизии армии США."
 
 msgid "Panther_M10_short"
 msgstr "Panther/M10"
@@ -1485,6 +1599,12 @@ msgstr "2x Porsche Typ 100/3A"
 
 msgid "Porsche_Typ_101_1_x2"
 msgstr "2 x Porsche Typ 101/1"
+
+msgid "Porsche_Typ_220"
+msgstr "Porsche Typ 220"
+
+msgid "Praga_AC_2"
+msgstr "Praga AC/2"
 
 msgid "Praga_AusfIV"
 msgstr "Praga Ausf. IV"
@@ -1836,6 +1956,11 @@ msgstr "Pz. IV hydr."
 msgid "PzIV_Schmalturm_A"
 msgstr "Pz.Kpfw. IV Schmalturm"
 
+msgid "PzIV_Shmallturm_short"
+msgstr ""
+"Pz.Kpfw. IV\n"
+"Ausf. H"
+
 msgid "PzIV_Standart"
 msgstr "Pz.Kpfw. IV Ausf. G"
 
@@ -1960,8 +2085,13 @@ msgstr "Tiger II"
 
 msgid "PzVIB_Tiger_II_descr"
 msgstr ""
-"Известен как «Королевский тигр». С января 1944 по март 1945 года было "
-"изготовлено 489 танков."
+"Наиболее защищённый танк с самой мощной противотанковой пушкой, но с "
+"перегруженной моторно-трансмисcионной группой и ходовой частью, а также со "
+"слишком большой массой. При условии навязывания противнику огневого боя на "
+"большой дистанции преимущества «Тигра II» в вооружении и броневой защите "
+"были подавляющими. Однако из-за большой массы, низкой надёжности двигателя и "
+"трансмиссии, а также вследствие небольшого количества произведённых машин "
+"«Тигр II» не оказал серьёзного влияния на ход боевых действий."
 
 msgid "PzVIB_Tiger_II_short"
 msgstr "Tiger II"
@@ -2174,6 +2304,9 @@ msgstr "SEM 25"
 msgid "SEM25_1"
 msgstr "SEM 25A"
 
+msgid "SEM25_1_fallout"
+msgstr "SEM 25A"
+
 msgid "Scania_Vabis1664"
 msgstr "Scania Vabis 1664"
 
@@ -2233,7 +2366,7 @@ msgstr "Sturmpanzer II"
 
 msgid "Sturmpanzer_II_descr"
 msgstr ""
-"В ноябре — декабре 1941 года было изготовлено всего 12 машин, которые "
+"В ноябре – декабре 1941 года было изготовлено всего 12 машин, которые "
 "принимали участие только в боях в Северной Африке."
 
 msgid "Sturmpanzer_II_short"
@@ -2320,6 +2453,9 @@ msgstr "E 50 Ausf. A"
 msgid "Turret_1_E-75"
 msgstr "E 75 Ausf. A"
 
+msgid "Turret_1_E100_DOT"
+msgstr "Дот E 100"
+
 msgid "Turret_1_E50_Ausf_M"
 msgstr "E 50 Ausf. M"
 
@@ -2363,8 +2499,17 @@ msgstr "Pz.Kpfw. II Ausf. D"
 msgid "Turret_1_G109_Steyr_WT"
 msgstr "Krupp-Steyr Waffenträger"
 
+msgid "Turret_1_G110_Typ_205"
+msgstr "Mäuschen"
+
 msgid "Turret_1_G112_KanonenJagdPanzer"
 msgstr "Kanonenjagdpanzer"
+
+msgid "Turret_1_G113_SP_I_C"
+msgstr "Spähpanzer SP I C PT I"
+
+msgid "Turret_1_G114_Skorpian"
+msgstr "Rheinmetall 12,8 cm K 43 Skorpion"
 
 msgid "Turret_1_G58_VK4502P"
 msgstr "VK 45.02 (P) Ausf. B"
@@ -2397,6 +2542,9 @@ msgid "Turret_1_JagdTiger_SdKfz_185"
 msgstr "8,8 cm Pak 43 Jagdtiger"
 
 msgid "Turret_1_Leopard1"
+msgstr "Leopard 1"
+
+msgid "Turret_1_Leopard1_fallout"
 msgstr "Leopard 1"
 
 msgid "Turret_1_Lowe"
@@ -2510,6 +2658,9 @@ msgstr "E 50 Ausf. B"
 
 msgid "Turret_2_E-75"
 msgstr "E 75 Ausf. B"
+
+msgid "Turret_2_G113_SP_I_C"
+msgstr "Spähpanzer SP I C PT II Rh.-Nr. WK-G2"
 
 msgid "Turret_2_Indien_Panzer"
 msgstr "Indien-Panzer"
@@ -2767,8 +2918,13 @@ msgstr "VK 36.01 (H)"
 
 msgid "VK3601H_descr"
 msgstr ""
-"В начале 1942 года было изготовлено шесть шасси и один прототип этой машины. "
-"Серийно не выпускалась из-за проблем с разработкой конического орудия."
+"Немецкий опытный тяжёлый танк времён Второй мировой войны, разработанный "
+"компанией Henschel, дальнейшее развитие проекта VK 30.01 (H). Проект стал "
+"одним из этапов разработки танка «Тигр». Всего в начале 1942 года было "
+"построено 8 шасси и 1 прототип. В ходе работы над прототипом были отработаны "
+"многие технические решения, которые впоследствии послужили основой при "
+"разработке тяжёлых танков Германии во Второй мировой войне. В дальнейшем "
+"шасси использовались в качестве базы для ремонтно-эвакуационных машин."
 
 msgid "VK3601H_henshelketten"
 msgstr "VK 36.01 (H)"
@@ -2861,7 +3017,7 @@ msgstr "Waffenträger auf E 100"
 
 msgid "Waffentrager_E100_descr"
 msgstr ""
-"Аванпроект установки зенитных орудий большого калибра на шасси танка Е-100. "
+"Аванпроект установки зенитных орудий большого калибра на шасси танка E 100. "
 "Предполагалось использовать 128- и 150-мм орудия с автоматом перезарядки. "
 "Однако проект так и не был разработан."
 
@@ -2920,11 +3076,23 @@ msgstr "Gr 39 H1A"
 msgid "_105mmGr_39H1A_K"
 msgstr "Gr 39 H1A K"
 
+msgid "_105mm_APCR_M68M2_fallout"
+msgstr "APDS-T M392 (П)"
+
 msgid "_105mm_BK_L7A3_L51"
+msgstr "10,5 cm Bordkanone L7A3"
+
+msgid "_105mm_BK_L7A3_L51_fallout"
 msgstr "10,5 cm Bordkanone L7A3"
 
 msgid "_105mm_Gr19"
 msgstr "Gr 19"
+
+msgid "_105mm_HEAT-T_T384E4_fallout"
+msgstr "HEAT-T T384E4 (П)"
+
+msgid "_105mm_HE_M68M2_fallout"
+msgstr "HEP-T M393 (П)"
 
 msgid "_105mm_K18_L52"
 msgstr "10,5 cm Pak L/52"
@@ -2956,6 +3124,9 @@ msgstr "10,5 cm Kw.K. L/68"
 
 msgid "_105mm_KwK46_L70"
 msgstr "10,5 cm Kw.K. L/70"
+
+msgid "_105mm_KwK_L67"
+msgstr "10,5 cm Kw.K. L/67"
 
 msgid "_105mm_L7A1"
 msgstr "10,5 cm L7A1"
@@ -2996,6 +3167,9 @@ msgstr "Sprgr 18G"
 msgid "_105mm_Sprg.18K"
 msgstr "Sprgr 18 K"
 
+msgid "_105mm_Sprg.18M"
+msgstr "Sprgr 18 M"
+
 msgid "_105mm_Sprg_K"
 msgstr "Sprgr K"
 
@@ -3019,6 +3193,9 @@ msgstr "10,5 cm le.F.H. 18 L/28"
 
 msgid "_10WSc"
 msgstr "10WSc"
+
+msgid "_128mm_K43_L55"
+msgstr "12,8 cm Kanone 43 L/55"
 
 msgid "_128mm_K44_2_L61"
 msgstr "12,8 cm Kanone L/61"
@@ -3080,8 +3257,20 @@ msgstr "Gr 39 H3A G"
 msgid "_150mm_KwK44_L38"
 msgstr "15 cm Kw.K. L/38"
 
+msgid "_150mm_KwK44_L38_DOT"
+msgstr "15 cm Kw.K. L/38"
+
+msgid "_150mm_KwK_L37"
+msgstr "15 cm Kw.K. L/37"
+
 msgid "_150mm_PzGr42"
 msgstr "Pzgr 42"
+
+msgid "_150mm_PzGr43"
+msgstr "Pzgr 43"
+
+msgid "_150mm_PzGr45"
+msgstr "Pzgr 45"
 
 msgid "_150mm_Rohr_L29_5"
 msgstr "15 cm Pak L/29.5"
@@ -3103,6 +3292,12 @@ msgstr "Sprgr 36"
 
 msgid "_150mm_SprgG_ausf_45"
 msgstr "Sprgr G 45"
+
+msgid "_150mm_SprgG_ausf_45_DOT"
+msgstr "Sprgr G 45"
+
+msgid "_150mm_SprgG_ausf_46"
+msgstr "Sprgr G Ausf. 46"
 
 msgid "_150mm_Sprg_L"
 msgstr "Sprgr L"
@@ -3446,6 +3641,9 @@ msgstr "Sprgr 43"
 msgid "_88mm_Sprgr.Flak_41"
 msgstr "Sprgr. Flak 41"
 
+msgid "_90mm_D921_F1"
+msgstr "90 mm D921 F1"
+
 msgid "_90mm_DM13"
 msgstr "DM13"
 
@@ -3457,6 +3655,30 @@ msgstr "DM502"
 
 msgid "_90mm_M431"
 msgstr "M431"
+
+msgid "_90mm_Mecar"
+msgstr "90 mm Mecar"
+
+msgid "_90mm_Mecar_AP"
+msgstr "Mecar AP"
+
+msgid "_90mm_Mecar_HE"
+msgstr "Mecar HE"
+
+msgid "_90mm_Mecar_HEAT"
+msgstr "Mecar HEAT"
+
+msgid "_90mm_Mecar_mit_Mehrladeeinrichtung"
+msgstr "90 mm Mecar mit Mehrladeeinrichtung"
+
+msgid "_90mm_OCC_90"
+msgstr "OCC"
+
+msgid "_90mm_OE_90"
+msgstr "OE"
+
+msgid "_90mm_OFL_90"
+msgstr "OFL"
 
 msgid "_90mm_Pzgr39_48"
 msgstr "Pzgr 39/48"

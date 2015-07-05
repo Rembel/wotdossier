@@ -29,12 +29,13 @@ namespace WotDossier.Dal
         private Dictionary<int, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
-        public static readonly Version VersionRelease = new Version("0.9.8.0");
-        public static readonly Version VersionTest = new Version("0.9.9.0");
+        public static readonly Version VersionRelease = new Version("0.9.9.0");
+        public static readonly Version VersionTest = new Version("0.9.10.0");
 
         private static readonly List<Version> _versions = new List<Version>
         {
                 VersionRelease,
+                new Version("0.9.8.0"),
                 new Version("0.9.7.0"),
                 new Version("0.9.6.0"),
                 new Version("0.9.5.0"),
@@ -435,8 +436,61 @@ namespace WotDossier.Dal
                 //0.9.8 replay tank name changed to a84_m48a1
                 return _tanks[20055];
             }
-
-
+            else if (iconId == "france_amx_50_100")
+            {
+                //0.9.9 replay tank name changed to f08_amx_50_100
+                return _tanks[40012];
+            }
+            else if (iconId == "france_fcm_50t")
+            {
+                //0.9.9 replay tank name changed to f65_fcm_50t
+                return _tanks[40250];
+            }
+            else if (iconId == "france_amx_50_100_igr")
+            {
+                //0.9.9 replay tank name changed to f08_amx_50_100_igr
+                return _tanks[40153];
+            }
+            else if (iconId == "germany_vk3601h")
+            {
+                //0.9.9 replay tank name changed to g15_vk3601h
+                return _tanks[10009];
+            }
+            else if (iconId == "germany_panther_m10")
+            {
+                //0.9.9 replay tank name changed to g78_panther_m10
+                return _tanks[10225];
+            }
+            else if (iconId == "usa_m46_patton")
+            {
+                //0.9.9 replay tank name changed to a63_m46_patton
+                return _tanks[20035];
+            }
+            else if (iconId == "usa_t23e3")
+            {
+                //0.9.9 replay tank name changed to a86_t23e3
+                return _tanks[20046];
+            }
+            else if (iconId == "usa_t110e4")
+            {
+                //0.9.9 replay tank name changed to a83_t110e4
+                return _tanks[20051];
+            }
+            else if (iconId == "usa_t110e3")
+            {
+                //0.9.9 replay tank name changed to a85_t110e3
+                return _tanks[20054];
+            }
+            else if (iconId == "usa_m6a2e1")
+            {
+                //0.9.9 replay tank name changed to a45_m6a2e1
+                return _tanks[20205];
+            }
+            else if (iconId == "ussr_t62a")
+            {
+                //0.9.9 replay tank name changed to r87_t62a
+                return _tanks[54];
+            }
 
             return tankDescription ?? TankDescription.Unknown(playerVehicle);
         }

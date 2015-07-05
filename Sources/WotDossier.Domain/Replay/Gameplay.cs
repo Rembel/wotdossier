@@ -11,5 +11,9 @@
         assault = 512,
         nations = 1024,
         assault2 = 2048,
+        fallout = 4096,
+        fallout2 = 8192,
+        fallout3 = 16384,
+        fallout4 = 32768,
     }
 }

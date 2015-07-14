@@ -117,8 +117,8 @@ namespace WotDossier.Applications.Logic.Adapter
             SurvivedBattles = stat.dataField.statistics.all.survived_battles;
             Xp = stat.dataField.statistics.all.xp;
             BattleAvgXp = stat.dataField.statistics.all.battle_avg_xp;
-            MaxXp = stat.dataField.statistics.max_xp;
-            MaxDamage = stat.dataField.statistics.max_damage;
+            MaxXp = stat.dataField.statistics.all.max_xp;
+            MaxDamage = stat.dataField.statistics.all.max_damage;
             Frags = stat.dataField.statistics.all.frags;
             Spotted = stat.dataField.statistics.all.spotted;
             HitsPercents = stat.dataField.statistics.all.hits_percents;

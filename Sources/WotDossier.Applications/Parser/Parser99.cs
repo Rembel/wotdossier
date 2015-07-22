@@ -28,8 +28,8 @@ namespace WotDossier.Applications.Parser
                 //read 8-12 - update length
                 packet.SubTypePayloadLength = stream.Read(4).ConvertLittleEndian();
 
-                //NOTE: 0.9.8 format changed 0x21->0x22
-                if (packet.StreamSubType == 0x22) //onArenaUpdate events
+                //NOTE: 0.9.9 format changed 0x22->0x23
+                if (packet.StreamSubType == 0x23) //onArenaUpdate events
                 {
                     ProcessPacket_0x08_0x1d_(packet, stream);
                 }

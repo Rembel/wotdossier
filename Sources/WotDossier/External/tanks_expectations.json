@@ -1092,6 +1092,19 @@
     "tank_type": 4
   },
   {
+    "comp_descr": 55121,
+    "tank_title": "FV201 (A45)",
+    "icon": "GB52_A45",
+    "pr_nominal_damage": 1200.0,
+    "wn8_nominal_damage": 1006.81,
+    "wn8_nominal_win_rate": 54.07,
+    "wn8_nominal_spotted": 0.88,
+    "wn8_nominal_frags": 0.93,
+    "wn8_nominal_defence": 1.1,
+    "tank_level": 7,
+    "tank_type": 3
+  },
+  {
     "comp_descr": 12113,
     "tank_title": "FV207",
     "icon": "GB79_FV206",
@@ -1324,6 +1337,19 @@
     "wn8_nominal_defence": 1.04,
     "tank_level": 3,
     "tank_type": 2
+  },
+  {
+    "comp_descr": 52321,
+    "tank_title": "Heavy Tank No. VI",
+    "icon": "J19_Tiger_I_Jpn",
+    "pr_nominal_damage": 800.0,
+    "wn8_nominal_damage": 793.72,
+    "wn8_nominal_win_rate": 54.4,
+    "wn8_nominal_spotted": 1.24,
+    "wn8_nominal_frags": 1.07,
+    "wn8_nominal_defence": 1.05,
+    "tank_level": 6,
+    "tank_type": 3
   },
   {
     "comp_descr": 1809,
@@ -2805,6 +2831,19 @@
     "wn8_nominal_frags": 0.71,
     "wn8_nominal_defence": 0.74,
     "tank_level": 8,
+    "tank_type": 1
+  },
+  {
+    "comp_descr": 18961,
+    "tank_title": "Spahpanzer SP I C",
+    "icon": "G113_SP_I_C",
+    "pr_nominal_damage": 700.0,
+    "wn8_nominal_damage": 706.52,
+    "wn8_nominal_win_rate": 52.18,
+    "wn8_nominal_spotted": 2.57,
+    "wn8_nominal_frags": 0.66,
+    "wn8_nominal_defence": 0.63,
+    "tank_level": 7,
     "tank_type": 1
   },
   {

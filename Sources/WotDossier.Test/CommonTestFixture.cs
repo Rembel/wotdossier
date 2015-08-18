@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -10,12 +11,14 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Xml;
+using Ionic.Zip;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.Logic.Export;
+using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
@@ -259,7 +262,7 @@ namespace WotDossier.Test
         [Test]
         public void ImportTanksComponentsXmlTest()
         {
-            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Tanks"), "shells.xml",
+            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks"), "shells.xml",
                 SearchOption.AllDirectories);
 
             List<JObject> result = new List<JObject>();
@@ -281,8 +284,15 @@ namespace WotDossier.Test
 
                     jsonText = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
 
-                    var path = Path.Combine(Environment.CurrentDirectory, "Tanks", info.Directory.Parent.Name + "_" +
-                                                                                info.Name.Replace(info.Extension, ".json"));
+                    var path = Path.Combine(Environment.CurrentDirectory, @"Output\Externals\shells");
+
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    path = Path.Combine(path, info.Directory.Parent.Name + "_" + info.Name.Replace(info.Extension, ".json"));
+
                     var stream = File.OpenWrite(path.ToLower());
                     using (StreamWriter writer = new StreamWriter(stream))
                     {
@@ -296,9 +306,11 @@ namespace WotDossier.Test
         [Test]
         public void ImportTanksXmlTest()
         {
-            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Tanks"), "list.xml", SearchOption.AllDirectories);
+            var strings = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks"), "list.xml", SearchOption.AllDirectories);
 
             List<JObject> result = new List<JObject>();
+
+            StringBuilder codegen = new StringBuilder();
 
             foreach (var xml in strings)
             {
@@ -350,19 +362,20 @@ namespace WotDossier.Test
                         {
                             Console.WriteLine(tank.Value);
                         }
-//                        else
-//                        {
-//                            var description = Dictionaries.Instance.Tanks[uniqueId];
-//                            if (description.Icon.Icon != (string) tankDescription["icon"])
-//                            {
-//                                string f = @"else if (iconId == ""{0}_{1}"")
-//                                {{
-//                                    //0.9.9 replay tank name changed to {2}
-//                                    return _tanks[{3}];
-//                                }}";
-//                                Console.WriteLine(f, country.ToString().ToLower(), description.Icon.Icon, tankDescription["icon"], uniqueId);
-//                            }
-//                        }
+                        else
+                        {
+                            var description = Dictionaries.Instance.Tanks[uniqueId];
+                            if (description.Icon.Icon != (string)tankDescription["icon"])
+                            {
+                                string f = @"else if (iconId == ""{0}_{1}"")
+                                {{
+                                    //0.9.10 replay tank name changed to {2}
+                                    return _tanks[{3}];
+                                }}";
+                                codegen.AppendFormat(f, country.ToString().ToLower(), description.Icon.Icon, tankDescription["icon"], uniqueId);
+                                codegen.AppendLine();
+                            }
+                        }
 
                         JObject tankDef = GetTankDefinition(countryid, tank.Key);
 
@@ -384,7 +397,15 @@ namespace WotDossier.Test
                 .ThenBy(x => x["tankid"].Value<int>()));
             var tanksJson = serializeObject.Replace("{", "\n{").Replace(",\"", ", \"").Replace(":", ": ");
 
-            var path = Path.Combine(Environment.CurrentDirectory, "Tanks", "tanks.json");
+            var path = Path.Combine(Environment.CurrentDirectory, @"Output\Externals");
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            path = Path.Combine(path, "tanks.json");
+
             var stream = File.OpenWrite(path);
             using (StreamWriter writer = new StreamWriter(stream))
             {
@@ -392,6 +413,7 @@ namespace WotDossier.Test
             }
 
             Console.WriteLine(tanksJson);
+            Console.WriteLine(codegen);
         }
 
         private string GetString(string key)
@@ -432,7 +454,7 @@ namespace WotDossier.Test
 
         private JObject GetTankDefinition(int countryid, string tankName)
         {
-            var fileName = Path.Combine(Environment.CurrentDirectory, @"Tanks", ((Country)countryid).ToString(), tankName + ".xml");
+            var fileName = Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks", ((Country)countryid).ToString(), tankName + ".xml");
             if (File.Exists(fileName))
             {
                 var file = new FileInfo(fileName);
@@ -472,26 +494,26 @@ namespace WotDossier.Test
         }
 
         [Test]
-        public void MapXmlTest()
+        public void ImportMapsTest()
         {
-            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Maps");
+            string configsPath = Path.Combine(Environment.CurrentDirectory, @"Patch\Maps");
 
-            if (!Directory.Exists(replayFolder))
+            if (!Directory.Exists(configsPath))
             {
-                Assert.Fail("Folder not exists - [{0}]", replayFolder);
+                Assert.Fail("Folder not exists - [{0}]", configsPath);
             }
 
-            var replays = Directory.GetFiles(replayFolder, "*.xml", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(configsPath, "*.xml", SearchOption.AllDirectories);
 
             BigWorldXmlReader reader = new BigWorldXmlReader();
 
             JArray array = new JArray();
 
-            foreach (var replay in replays)
+            foreach (var configFile in files)
             {
-                FileInfo file = new FileInfo(replay);
+                FileInfo file = new FileInfo(configFile);
 
-                FileStream stream = new FileStream(replay, FileMode.Open, FileAccess.Read);
+                FileStream stream = new FileStream(configFile, FileMode.Open, FileAccess.Read);
                 using (BinaryReader br = new BinaryReader(stream))
                 {
                     var xml = reader.DecodePackedFile(br, "map");
@@ -520,13 +542,166 @@ namespace WotDossier.Test
 
             foreach (var key in Dictionaries.Instance.Maps.Keys)
             {
-                if (!File.Exists(Path.Combine(replayFolder, key + ".xml")))
+                if (!File.Exists(Path.Combine(configsPath, key + ".xml")))
                 {
                     Console.WriteLine("Missed map: {0}", key);
                 }
             }
 
-            Console.WriteLine(array.ToString(Formatting.Indented));
+            var path = Path.Combine(Environment.CurrentDirectory, @"Output\Externals");
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            path = Path.Combine(path, "maps_description.json");
+
+            var outputStream = File.OpenWrite(path);
+            var mapsJson = array.ToString(Formatting.Indented);
+            using (StreamWriter writer = new StreamWriter(outputStream))
+            {
+                writer.Write(mapsJson);
+            }
+
+            Console.WriteLine(mapsJson);
+        }
+
+        [Test]
+        public void UpdateToPatch()
+        {
+            string clientPath = @"I:\World_of_Tanks_CT";
+            string destination;
+            string source;
+
+            Console.WriteLine("Copy resources");
+
+            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Resources");
+            source = Path.Combine(clientPath, @"res\text\lc_messages");
+
+            Directory.CreateDirectory(destination);
+
+            var strings = Directory.GetFiles(source, "*_vehicles.mo");
+
+            foreach (var resourceFile in strings)
+            {
+                FileInfo info = new FileInfo(resourceFile);
+                info.CopyTo(Path.Combine(destination, info.Name), true);
+            }
+
+            string result;
+            using (var proc = new Process())
+            {
+                proc.StartInfo.CreateNoWindow = true;
+                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.FileName = Path.Combine(destination, "convert.bat");
+
+                proc.StartInfo.WorkingDirectory = destination;
+
+                proc.Start();
+
+                result = proc.StandardOutput.ReadToEnd();
+
+                Console.WriteLine(result);
+
+                //write log
+                proc.WaitForExit();
+            }
+
+            Console.WriteLine("Copy tanks definitions");
+
+            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Tanks");
+            source = Path.Combine(clientPath, @"res\scripts\item_defs\vehicles");
+
+            Directory.CreateDirectory(destination);
+
+            DirectoryCopy(source, destination, true);
+
+            ImportTanksXmlTest();
+
+            Console.WriteLine("Copy maps definitions");
+
+            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Maps");
+            source = Path.Combine(clientPath, @"res\scripts\arena_defs");
+
+            Directory.CreateDirectory(destination);
+
+            DirectoryCopy(source, destination, true);
+
+            ImportMapsTest();
+
+            Console.WriteLine("Copy tanks components");
+            
+            ImportTanksComponentsXmlTest();
+
+            destination = Path.Combine(Environment.CurrentDirectory, @"Patch\Images");
+
+            string filepath = Path.Combine(clientPath, @"res\packages\gui.pkg");
+            using (var zip = new ZipFile(filepath, Encoding.GetEncoding((int)CodePage.CyrillicDOS)))
+            {
+                var achievement = @"gui/maps/icons/achievement";
+                zip.ExtractSelectedEntries("name = *.*", achievement, destination, ExtractExistingFileAction.OverwriteSilently);
+
+                Directory.Move(Path.Combine(destination, achievement), Path.Combine(destination, "achievement"));
+
+                var vehicle = @"gui/maps/icons/vehicle";
+                zip.ExtractSelectedEntries("name = *.*", vehicle, destination, ExtractExistingFileAction.OverwriteSilently);
+                var vehiclesPath = Path.Combine(destination, @"vehicle");
+                Directory.Move(Path.Combine(destination, vehicle), vehiclesPath);
+
+                var files = Directory.GetFiles(vehiclesPath);
+
+                foreach (var file in files)
+                {
+                    FileInfo info = new FileInfo(file);
+                    var destFileName = file.Replace("-", "_");
+                    if (!File.Exists(destFileName))
+                    {
+                        info.MoveTo(destFileName);
+                    }
+                }
+            }
+
+
+        }
+
+        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs, bool overwrite = true)
+        {
+            // Get the subdirectories for the specified directory.
+            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+            DirectoryInfo[] dirs = dir.GetDirectories();
+
+            if (!dir.Exists)
+            {
+                throw new DirectoryNotFoundException(
+                    "Source directory does not exist or could not be found: "
+                    + sourceDirName);
+            }
+
+            // If the destination directory doesn't exist, create it. 
+            if (!Directory.Exists(destDirName))
+            {
+                Directory.CreateDirectory(destDirName);
+            }
+
+            // Get the files in the directory and copy them to the new location.
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                string temppath = Path.Combine(destDirName, file.Name);
+                file.CopyTo(temppath, overwrite);
+            }
+
+            // If copying subdirectories, copy them and their contents to new location. 
+            if (copySubDirs)
+            {
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    string temppath = Path.Combine(destDirName, CultureInfo.CurrentCulture.TextInfo.ToTitleCase(subdir.Name));
+                    DirectoryCopy(subdir.FullName, temppath, true, overwrite);
+                }
+            }
         }
     }
 }

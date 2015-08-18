@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,17 +13,20 @@ using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Replay;
 using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
+using WotDossier.Framework.Controls.AutoCompleteTextBox;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
 using Vehicle = WotDossier.Domain.Replay.Vehicle;
 
 namespace WotDossier.Applications.ViewModel.Filter
 {
-    public class ReplaysFilterViewModel : INotifyPropertyChanged
+    public class ReplaysFilterViewModel : INotifyPropertyChanged, ISuggestionProvider
     {
         public static readonly string PropTanks = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.Tanks);
         public static readonly string PropSelectedTank = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.SelectedTank);
         public static readonly string PropIsPremium = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.IsPremium);
+
+        private const int KEY_ALL_VALUES = -1;
 
         #region FILTERS
 
@@ -655,11 +659,18 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         private List<ListItem<int>> GetTanks()
         {
-            return Dictionaries.Instance.Tanks.Values
+            var tanks = Dictionaries.Instance.Tanks.Values
                 .Where(description => TankFilter(description) && description.Active)
                 .OrderBy(x => x.Title)
                 .Select(x => new ListItem<int>(x.UniqueId(), x.Title))
                 .ToList();
+            tanks.Insert(0, new ListItem<int>(KEY_ALL_VALUES, Resources.Resources.TankFilterPanel_All));
+            return tanks;
+        }
+
+        public IEnumerable GetSuggestions(string filter)
+        {
+            return GetTanks().Where(x => x.Value.StartsWith(filter, StringComparison.InvariantCultureIgnoreCase) || string.IsNullOrEmpty(filter));
         }
 
         private bool TankFilter(TankDescription tank)
@@ -744,7 +755,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                 //or apply filter
                  x.Tank != null
                 &&
-                 (SelectedTank == null || x.Tank.UniqueId() == SelectedTank.Id)
+                 (SelectedTank == null || SelectedTank.Id == KEY_ALL_VALUES || x.Tank.UniqueId() == SelectedTank.Id)
                 &&
                  VersionFilter(versions, x)
                 &&

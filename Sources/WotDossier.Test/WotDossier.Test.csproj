@@ -59,6 +59,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -108,16 +112,15 @@
     <Compile Include="TestFixtureBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Tanks\Resources\china_vehicles.resx" />
-    <EmbeddedResource Include="Tanks\Resources\france_vehicles.resx" />
-    <EmbeddedResource Include="Tanks\Resources\gb_vehicles.resx" />
-    <EmbeddedResource Include="Tanks\Resources\germany_vehicles.resx" />
-    <EmbeddedResource Include="Tanks\Resources\igr_vehicles.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tanks\Resources\japan_vehicles.resx" />
-    <EmbeddedResource Include="Tanks\Resources\usa_vehicles.resx" />
-    <EmbeddedResource Include="Tanks\Resources\ussr_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\china_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\czech_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\france_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\gb_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\germany_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\igr_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\japan_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\usa_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\ussr_vehicles.resx" />
     <None Include="..\WotDossier\App.config">
       <Link>App.config</Link>
     </None>
@@ -309,6 +312,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Patch\Resources\convert.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -433,49 +439,49 @@
     <None Include="Data\expected_tank_values.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\*.xml">
+    <None Include="Patch\Maps\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\China\*.xml">
+    <None Include="Patch\Tanks\China\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\France\*.xml">
+    <None Include="Patch\Tanks\France\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Germany\*.xml">
+    <None Include="Patch\Tanks\Germany\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Japan\*.xml">
+    <None Include="Patch\Tanks\Japan\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Uk\*.xml">
+    <None Include="Patch\Tanks\Uk\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Usa\*.xml">
+    <None Include="Patch\Tanks\Usa\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Ussr\*.xml">
+    <None Include="Patch\Tanks\Ussr\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\China\components\shells.xml">
+    <None Include="Patch\Tanks\China\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\France\components\shells.xml">
+    <None Include="Patch\Tanks\France\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Germany\components\shells.xml">
+    <None Include="Patch\Tanks\Germany\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Japan\components\shells.xml">
+    <None Include="Patch\Tanks\Japan\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Uk\components\shells.xml">
+    <None Include="Patch\Tanks\Uk\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Usa\components\shells.xml">
+    <None Include="Patch\Tanks\Usa\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tanks\Ussr\components\shells.xml">
+    <None Include="Patch\Tanks\Ussr\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="x64\SQLite.Interop.dll">

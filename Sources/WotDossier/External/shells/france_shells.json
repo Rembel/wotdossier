@@ -946,7 +946,7 @@
     "userString": "#france_vehicles:_105mm_HEAT_OCC_F1_fallout",
     "icon": "hc",
     "price": {
-      "#text": "\t12\t",
+      "#text": "\t1\t",
       "gold": ""
     },
     "kind": "HOLLOW_CHARGE",
@@ -1086,8 +1086,7 @@
     "id": "\t92\t",
     "userString": "#france_vehicles:_120mm_Prf1943_fallout",
     "icon": "ap",
-    "price": "\t81\t",
-    "notInShop": "\ttrue\t",
+    "price": "\t1060\t",
     "kind": "ARMOR_PIERCING",
     "caliber": "\t120\t",
     "isTracer": "\ttrue\t",
@@ -1122,7 +1121,6 @@
       "#text": "\t12\t",
       "gold": ""
     },
-    "notInShop": "\ttrue\t",
     "kind": "ARMOR_PIERCING_CR",
     "caliber": "\t120\t",
     "isTracer": "\ttrue\t",
@@ -1151,8 +1149,7 @@
     "id": "\t94\t",
     "userString": "#france_vehicles:_120mm_OE_mle_1930_fallout",
     "icon": "he",
-    "price": "\t72\t",
-    "notInShop": "\ttrue\t",
+    "price": "\t900\t",
     "kind": "HIGH_EXPLOSIVE",
     "caliber": "\t120\t",
     "explosionRadius": "2.42",

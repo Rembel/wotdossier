@@ -491,6 +491,96 @@ namespace WotDossier.Dal
                 //0.9.9 replay tank name changed to r87_t62a
                 return _tanks[54];
             }
+            else if (iconId == "france_arl_44")
+            {
+                //0.9.10 replay tank name changed to f06_arl_44
+                return _tanks[40010];
+            }
+            else if (iconId == "france_amx_m4_1945")
+            {
+                //0.9.10 replay tank name changed to f07_amx_m4_1945
+                return _tanks[40027];
+            }
+            else if (iconId == "germany_pz35t")
+            {
+                //0.9.10 replay tank name changed to g07_pz35t
+                return _tanks[10003];
+            }
+            else if (iconId == "germany_jagdpziv")
+            {
+                //0.9.10 replay tank name changed to g17_jagdpziv
+                return _tanks[10006];
+            }
+            else if (iconId == "germany_panzerjager_i")
+            {
+                //0.9.10 replay tank name changed to g21_panzerjager_i
+                return _tanks[10014];
+            }
+            else if (iconId == "germany_sturmpanzer_ii")
+            {
+                //0.9.10 replay tank name changed to g22_sturmpanzer_ii
+                return _tanks[10018];
+            }
+            else if (iconId == "germany_vk1602")
+            {
+                //0.9.10 replay tank name changed to g26_vk1602
+                return _tanks[10021];
+            }
+            else if (iconId == "germany_jagdtiger")
+            {
+                //0.9.10 replay tank name changed to g44_jagdtiger
+                return _tanks[10031];
+            }
+            else if (iconId == "germany_pro_ag_a")
+            {
+                //0.9.10 replay tank name changed to g91_pro_ag_a
+                return _tanks[10058];
+            }
+            else if (iconId == "germany_pzii_j")
+            {
+                //0.9.10 replay tank name changed to g36_pzii_j
+                return _tanks[10202];
+            }
+            else if (iconId == "usa_m2_lt")
+            {
+                //0.9.10 replay tank name changed to a02_m2_lt
+                return _tanks[20007];
+            }
+            else if (iconId == "usa_m41")
+            {
+                //0.9.10 replay tank name changed to a18_m41
+                return _tanks[20016];
+            }
+            else if (iconId == "usa_t110")
+            {
+                //0.9.10 replay tank name changed to a69_t110e5
+                return _tanks[20042];
+            }
+            else if (iconId == "usa_t71")
+            {
+                //0.9.10 replay tank name changed to a103_t71e1
+                return _tanks[20061];
+            }
+            else if (iconId == "usa_t71_igr")
+            {
+                //0.9.10 replay tank name changed to a103_t71e1_igr
+                return _tanks[20151];
+            }
+            else if (iconId == "ussr_t_28")
+            {
+                //0.9.10 replay tank name changed to r06_t_28
+                return _tanks[6];
+            }
+            else if (iconId == "ussr_su_76")
+            {
+                //0.9.10 replay tank name changed to r24_su_76
+                return _tanks[25];
+            }
+            else if (iconId == "ussr_su122a")
+            {
+                //0.9.10 replay tank name changed to r100_su122a
+                return _tanks[64];
+            }
 
             return tankDescription ?? TankDescription.Unknown(playerVehicle);
         }

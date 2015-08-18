@@ -15,5 +15,7 @@
         fallout2 = 8192,
         fallout3 = 16384,
         fallout4 = 32768,
+        fallout5 = 65536,
+        fallout6 = 131072,
     }
 }

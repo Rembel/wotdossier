@@ -7,8 +7,37 @@
              xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:ui="clr-namespace:WotDossier.UI"
              xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:autoCompleteTextBox="clr-namespace:WotDossier.Framework.Controls.AutoCompleteTextBox;assembly=WotDossier.Framework"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="700" Background="{DynamicResource applicationBackgroundBrush}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="fsTemplate">
+            <TextBlock Text="{Binding Value}" />
+        </DataTemplate>
+        <Style TargetType="{x:Type autoCompleteTextBox:AutoCompleteTextBox}">
+            <Setter Property="Focusable"
+                Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type autoCompleteTextBox:AutoCompleteTextBox}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}">
+                            <Grid>
+                                <TextBox x:Name="PART_Editor"
+                                     Text="{Binding Path=Text, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+                                <Popup x:Name="PART_Popup"
+                                   IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource Mode=TemplatedParent},Mode=TwoWay}"
+                                   Width="{TemplateBinding ActualWidth}">
+                                    <ListBox x:Name="PART_Selector" ItemTemplate="{TemplateBinding ItemTemplate}" DisplayMemberPath="Value" SelectedValuePath="Id" />
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid Margin="6,3,6,3">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -159,8 +188,12 @@
 
                     <TextBlock Margin="12,3,6,3" Grid.Row="3" Text="{x:Static resources:Resources.TankFilterPanel_Tank}" VerticalAlignment="Center"></TextBlock>
                     <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                        <ComboBox Margin="6,3,6,3" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" 
-                              DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250" />
+                        <!--<ComboBox Margin="6,3,6,3" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" 
+                              DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250" />-->
+                        <autoCompleteTextBox:AutoCompleteTextBox  Margin="6,3,6,3"  HorizontalAlignment="Left" Width="250"
+                                  SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 ItemTemplate="{StaticResource ResourceKey=fsTemplate}"
+                                 Provider="{Binding Path=.}" DisplayMember="Value" />
                         <CheckBox Margin="12,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" VerticalAlignment="Center" />
                     </StackPanel>
                 </Grid>

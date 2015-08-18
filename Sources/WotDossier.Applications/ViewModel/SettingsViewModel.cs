@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
@@ -10,13 +12,14 @@ using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Server;
 using WotDossier.Framework.Applications;
+using WotDossier.Framework.Controls.AutoCompleteTextBox;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
 {
     [PartCreationPolicy(CreationPolicy.NonShared)]
     [Export(typeof(SettingsViewModel))]
-    public class SettingsViewModel : ViewModel<ISettingsView>
+    public class SettingsViewModel : ViewModel<ISettingsView>, ISuggestionProvider
     {
         private readonly DossierRepository _dossierRepository;
         private readonly AppSettings _appSettings;
@@ -167,7 +170,7 @@ namespace WotDossier.Applications.ViewModel
                     if (playerStat != null)
                     {
                         double createdAt = playerStat.dataField.created_at;
-                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.account_id, Utils.UnixDateToDateTime((long) createdAt), _appSettings.Server);
+                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.account_id, Utils.UnixDateToDateTime((long)createdAt), _appSettings.Server);
                     }
                 }
 
@@ -189,6 +192,28 @@ namespace WotDossier.Applications.ViewModel
         public virtual bool? Show()
         {
             return ViewTyped.ShowDialog();
+        }
+
+
+        /// <summary>
+        /// Gets the suggestions.
+        /// </summary>
+        /// <param name="filter">The filter.</param>
+        /// <returns></returns>
+        public IEnumerable GetSuggestions(string filter)
+        {
+            var dossierCacheFolder = CacheFolderPath;
+            if (Directory.Exists(dossierCacheFolder))
+            {
+                IEnumerable<FileInfo> files =
+                    Directory.GetFiles(dossierCacheFolder, "*.dat").Select(x => new FileInfo(x));
+                IEnumerable<string> suggestions =
+                    files.Select(CacheFileHelper.GetPlayerName)
+                        .Distinct()
+                        .Where(x => x.StartsWith(filter, StringComparison.InvariantCultureIgnoreCase) || string.IsNullOrEmpty(filter)).OrderBy(x => x);
+                return suggestions;
+            }
+            return new string[0];
         }
     }
 }

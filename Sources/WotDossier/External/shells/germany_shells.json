@@ -1377,7 +1377,7 @@
     "userString": "#germany_vehicles:_105mm_HEAT-T_T384E4_fallout",
     "icon": "hc",
     "price": {
-      "#text": "\t12\t",
+      "#text": "\t1\t",
       "gold": ""
     },
     "kind": "HOLLOW_CHARGE",
@@ -1735,55 +1735,6 @@
     "effects": "largeArmorPiercing",
     "damage": {
       "armor": "\t750\t",
-      "devices": "\t203\t"
-    }
-  },
-  "_150mm_PzGr43": {
-    "id": "\t80\t",
-    "userString": "#germany_vehicles:_150mm_PzGr43",
-    "icon": "ap",
-    "price": "\t1260\t",
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING",
-    "caliber": "\t150\t",
-    "isTracer": "\ttrue\t",
-    "effects": "largeArmorPiercing",
-    "damage": {
-      "armor": "\t850\t",
-      "devices": "\t203\t"
-    }
-  },
-  "_150mm_PzGr45": {
-    "id": "\t81\t",
-    "userString": "#germany_vehicles:_150mm_PzGr45",
-    "icon": "ap_cr",
-    "price": {
-      "#text": "\t12\t",
-      "gold": ""
-    },
-    "notInShop": "\ttrue\t",
-    "kind": "ARMOR_PIERCING_CR",
-    "caliber": "\t150\t",
-    "isTracer": "\ttrue\t",
-    "effects": "largeAPCR",
-    "damage": {
-      "armor": "\t850\t",
-      "devices": "\t203\t"
-    }
-  },
-  "_150mm_SprgG_ausf_46": {
-    "id": "\t82\t",
-    "userString": "#germany_vehicles:_150mm_SprgG_ausf_46",
-    "icon": "he",
-    "price": "\t1120\t",
-    "notInShop": "\ttrue\t",
-    "kind": "HIGH_EXPLOSIVE",
-    "caliber": "\t150\t",
-    "explosionRadius": "3.57",
-    "isTracer": "\ttrue\t",
-    "effects": "largeHighExplosive",
-    "damage": {
-      "armor": "\t1100\t",
       "devices": "\t203\t"
     }
   },

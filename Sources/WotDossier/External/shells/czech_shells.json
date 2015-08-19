@@ -1,0 +1,49 @@
+{
+  "_88mm_AP_Vz_39N_OPG": {
+    "id": "\t1\t",
+    "userString": "#czech_vehicles:_88mm_AP_Vz_39N_OPG",
+    "icon": "ap",
+    "price": "\t200\t",
+    "kind": "ARMOR_PIERCING",
+    "caliber": "\t88\t",
+    "isTracer": "\ttrue\t",
+    "effects": "mainArmorPiercing",
+    "damage": {
+      "armor": "\t220\t",
+      "devices": "\t119\t"
+    }
+  },
+  "_88mm_HEAT_Vz_46_prupalny": {
+    "id": "\t2\t",
+    "userString": "#czech_vehicles:_88mm_HEAT_Vz_46_prupalny",
+    "icon": "hc",
+    "price": {
+      "#text": "\t12\t",
+      "gold": ""
+    },
+    "kind": "HOLLOW_CHARGE",
+    "caliber": "\t88\t",
+    "isTracer": "\ttrue\t",
+    "effects": "\tmainHollowCharge\t",
+    "damage": {
+      "armor": "\t220\t",
+      "devices": "\t119\t"
+    },
+    "piercingPowerLossFactorByDistance": "0.05"
+  },
+  "_88mm_HE_narazovy": {
+    "id": "\t3\t",
+    "userString": "#czech_vehicles:_88mm_HE_narazovy",
+    "icon": "he",
+    "price": "\t160\t",
+    "kind": "HIGH_EXPLOSIVE",
+    "caliber": "\t88\t",
+    "explosionRadius": "1.4",
+    "isTracer": "\ttrue\t",
+    "effects": "mainHighExplosive",
+    "damage": {
+      "armor": "\t270\t",
+      "devices": "\t119\t"
+    }
+  }
+}

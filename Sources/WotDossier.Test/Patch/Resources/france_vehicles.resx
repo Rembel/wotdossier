@@ -1,0 +1,1837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AMX38" xml:space="preserve">
+    <value>AMX 38</value>
+  </data>
+  <data name="AMX38_descr" xml:space="preserve">
+    <value>Разработан в 1937 году компанией АМХ с использованием узлов ходовой части танка Renault R-40. Танк имел более просторную башню, чем серийные машины, и оснащался дизельным двигателем. К испытаниям в начале 1940 года было изготовлено две машины.</value>
+  </data>
+  <data name="AMX38_short" xml:space="preserve">
+    <value>AMX 38</value>
+  </data>
+  <data name="AMX40" xml:space="preserve">
+    <value>AMX 40</value>
+  </data>
+  <data name="AMX40_descr" xml:space="preserve">
+    <value>Проектирование АМХ 40 началось в марте 1940 г. Машина имела колёсно-гусеничный движитель. Был подготовлен эскизный проект, однако в июле 1940 года проектирование было прекращено.</value>
+  </data>
+  <data name="AMX40_short" xml:space="preserve">
+    <value>AMX 40</value>
+  </data>
+  <data name="AMX50_Foch" xml:space="preserve">
+    <value>AMX 50 Foch</value>
+  </data>
+  <data name="AMX50_Foch_descr" xml:space="preserve">
+    <value>ПТ-САУ на шасси танка АМХ 50. Опытный образец был выпущен в 1950 году. К испытаниям 1951 года было произведено ещё несколько машин. Находилась на вооружении до 1952 года.</value>
+  </data>
+  <data name="AMX50_Foch_short" xml:space="preserve">
+    <value>Foch</value>
+  </data>
+  <data name="AMX_105AM" xml:space="preserve">
+    <value>AMX 13 105 AM mle. 50</value>
+  </data>
+  <data name="AMX_105AM_descr" xml:space="preserve">
+    <value>САУ на базе танка AMX-B. Прототип машины разрабатывался и испытывался с 1949 года. В 1955 году началось серийное производство.</value>
+  </data>
+  <data name="AMX_105AM_short" xml:space="preserve">
+    <value>AMX 13 AM</value>
+  </data>
+  <data name="AMX_12t" xml:space="preserve">
+    <value>AMX 12 t</value>
+  </data>
+  <data name="AMX_12t_descr" xml:space="preserve">
+    <value>Проект лёгкого скоростного танка был разработан в 1946 году, но так и не был реализован. На его основе был создан проект знаменитого танка AMX 13.</value>
+  </data>
+  <data name="AMX_12t_short" xml:space="preserve">
+    <value>AMX 12 t</value>
+  </data>
+  <data name="AMX_13F3AM" xml:space="preserve">
+    <value>AMX 13 F3 AM</value>
+  </data>
+  <data name="AMX_13F3AM_descr" xml:space="preserve">
+    <value>Разработана в конце 50-х годов на базе АМХ 13. Выпускалась до конца 60-х годов. До сих пор состоит на вооружении во Франции, Аргентине, Чили, Эквадоре, Марокко и ряде других стран.</value>
+  </data>
+  <data name="AMX_13F3AM_short" xml:space="preserve">
+    <value>AMX 13 F3</value>
+  </data>
+  <data name="AMX_13_75" xml:space="preserve">
+    <value>AMX 13 75</value>
+  </data>
+  <data name="AMX_13_75_descr" xml:space="preserve">
+    <value>Разработка танка началась в 1946 году. С 1952 по 1964 машина серийно выпускалась во Франции и до 1985 года в Аргентине. Танк активно экспортировался и до сих пор состоит на вооружении в странах Азии и Южной Америки.</value>
+  </data>
+  <data name="AMX_13_75_short" xml:space="preserve">
+    <value>AMX 13 75</value>
+  </data>
+  <data name="AMX_13_90" xml:space="preserve">
+    <value>AMX 13 90</value>
+  </data>
+  <data name="AMX_13_90_descr" xml:space="preserve">
+    <value>Разработка танка началась в 1946 году. Выпускался серийно с 1952 года. Первые 2000 машин были оснащены 75-мм орудиями, однако впоследствии огневая мощь машины была увеличена путём установки 90-мм орудия.</value>
+  </data>
+  <data name="AMX_13_90_short" xml:space="preserve">
+    <value>AMX 13 90</value>
+  </data>
+  <data name="AMX_30_prototype" xml:space="preserve">
+    <value>AMX 30 1er prototype</value>
+  </data>
+  <data name="AMX_30_prototype_descr" xml:space="preserve">
+    <value>Разработан в рамках конкурса по созданию единого европейского танка. Превосходил все танки, кроме Leopard 1, по подвижности и удельной мощности, а также обладал самой большой эффективной дальностью противотанкового огня. Хотя броня машины была слабее, чем у большинства современных танков, с появлением ПТ боеприпасов толщина брони перестала иметь существенное значение.</value>
+  </data>
+  <data name="AMX_30_prototype_short" xml:space="preserve">
+    <value>AMX 30</value>
+  </data>
+  <data name="AMX_50Fosh_155" xml:space="preserve">
+    <value>AMX 50 Foch (155)</value>
+  </data>
+  <data name="AMX_50Fosh_155_descr" xml:space="preserve">
+    <value>В 1952 году во Франции были прекращены работы над ПТ-САУ AMX 50 Foch со 120-мм орудием. Одной из причин такого решения была разработка танка АМХ 50 120 с таким же вооружением. Попытка увеличить калибр главного орудия ПТ-САУ до 155 мм не была доведена даже до аванпроекта из-за происходящей в армиях стран НАТО стандартизации вооружения.</value>
+  </data>
+  <data name="AMX_50Fosh_155_short" xml:space="preserve">
+    <value>Foch 155</value>
+  </data>
+  <data name="AMX_50_100" xml:space="preserve">
+    <value>AMX 50 100</value>
+  </data>
+  <data name="AMX_50_100_descr" xml:space="preserve">
+    <value>Тяжёлый танк AMX 50 100 являлся дальнейшим развитием проекта M4. В 1949 году был построен первый экземпляр. Машина массой 55 тонн получила в качестве основного вооружения 100-мм пушку в башне качающегося типа. Машины испытывались с дизельным и бензиновым двигателями. Испытания проходили с 1950 по 1952 гг. Танк в серийное производство и на вооружение не поступил.</value>
+  </data>
+  <data name="AMX_50_100_short" xml:space="preserve">
+    <value>AMX 50 100</value>
+  </data>
+  <data name="AMX_50_120" xml:space="preserve">
+    <value>AMX 50 120</value>
+  </data>
+  <data name="AMX_50_120_descr" xml:space="preserve">
+    <value>Один из прототипов танка AMX 50. Работы над машиной велись в первой половине 50-х годов. Танк создавался под влиянием советских танков ИС-3 и T-10. Особенностями данной модели были 120-мм орудие в качающейся башне и усиленное бронирование.</value>
+  </data>
+  <data name="AMX_50_120_short" xml:space="preserve">
+    <value>AMX 50 120</value>
+  </data>
+  <data name="AMX_50_68t" xml:space="preserve">
+    <value>AMX 50 B</value>
+  </data>
+  <data name="AMX_50_68t_descr" xml:space="preserve">
+    <value>Разработка была начата в 1951 году компанией DEFA. К 1958 году танк AMX50B получил ряд улучшений: более низкий, частично литой корпус и торсионную подвеску. На него также была установлена новая башня качающегося типа со 120-мм орудием. Несмотря на то, что предельная мощность двигателя Maybach составляла 1000 л.с., специалисты из немецкой компании Gruppe M пытались разработать решение, которое позволило бы танку развивать скорость до 65 км/ч. Был построен всего один завершённый прототип данной модификации.</value>
+  </data>
+  <data name="AMX_50_68t_fallout" xml:space="preserve">
+    <value>(A) AMX 50 B</value>
+  </data>
+  <data name="AMX_50_68t_fallout_descr" xml:space="preserve">
+    <value>Разработка была начата в 1951 году компанией DEFA. К 1958 году танк AMX 50 B получил ряд улучшений: более низкий, частично литой корпус и торсионную подвеску. На него также была установлена новая башня качающегося типа со 120-мм орудием. Несмотря на то, что предельная мощность двигателя Maybach составляла 1000 л.с., специалисты из немецкой компании Gruppe M пытались разработать решение, которое позволило бы танку развивать скорость до 65 км/ч. Был построен всего один завершённый прототип данной модификации.</value>
+  </data>
+  <data name="AMX_50_68t_fallout_short" xml:space="preserve">
+    <value>(A) AMX 50 B</value>
+  </data>
+  <data name="AMX_50_68t_short" xml:space="preserve">
+    <value>AMX 50 B</value>
+  </data>
+  <data name="AMX_AC_Mle1946" xml:space="preserve">
+    <value>AMX AC mle. 46</value>
+  </data>
+  <data name="AMX_AC_Mle1946_descr" xml:space="preserve">
+    <value>Первый эскизный проект тяжёлой ПТ-САУ на базе танка М4. Разработан в 1946 году. По компоновке машина напоминала Jagdpanther. Существовала только в эскизах.</value>
+  </data>
+  <data name="AMX_AC_Mle1946_short" xml:space="preserve">
+    <value>AMX AC 46</value>
+  </data>
+  <data name="AMX_AC_Mle1948" xml:space="preserve">
+    <value>AMX AC mle. 48</value>
+  </data>
+  <data name="AMX_AC_Mle1948_descr" xml:space="preserve">
+    <value>Один из эскизных проектов ПТ-САУ на базе танка АМХ 50, разработанный в 1948 г. От реализованного «в металле» проекта отличался в первую очередь кормовой подвижной огневой точкой. Работы над машиной были прекращены на стадии эскизного проектирования.</value>
+  </data>
+  <data name="AMX_AC_Mle1948_short" xml:space="preserve">
+    <value>AMX AC 48</value>
+  </data>
+  <data name="AMX_B_270" xml:space="preserve">
+    <value>AMX B 270</value>
+  </data>
+  <data name="AMX_M4_1945" xml:space="preserve">
+    <value>AMX M4 mle. 45</value>
+  </data>
+  <data name="AMX_M4_1945_descr" xml:space="preserve">
+    <value>Работы по проектированию начались в 1945 году. При создании танка разработчики опирались на идеи, воплощённые в немецком танке Pz.Kpfw. VI Ausf. B Tiger II. Проект был закрыт на стадии подготовки документации. На основе AMX M4 (1945) впоследствии разрабатывался AMX 50 100.</value>
+  </data>
+  <data name="AMX_M4_1945_short" xml:space="preserve">
+    <value>AMX M4 45</value>
+  </data>
+  <data name="AMX_Ob_Am105" xml:space="preserve">
+    <value>AMX 105 AM mle. 47</value>
+  </data>
+  <data name="AMX_Ob_Am105_descr" xml:space="preserve">
+    <value>Проект 105-мм САУ, разработанный конструкторским бюро в Исси-ле-Мулино (Франция). Эскиз был готов в сентябре 1947 года. Однако впоследствии все работы были свёрнуты, а проект закрыт.</value>
+  </data>
+  <data name="AMX_Ob_Am105_short" xml:space="preserve">
+    <value>AMX 105 AM</value>
+  </data>
+  <data name="ARL_44" xml:space="preserve">
+    <value>ARL 44</value>
+  </data>
+  <data name="ARL_44_descr" xml:space="preserve">
+    <value>Разработка машины началась во время войны в период немецкой оккупации. Это была попытка использовать старое шасси от B1 bis, установив на него новое, более мощное вооружение. Завершило разработки конструкторское бюро Atelier de Construction de Rueil. И хотя на фоне зарубежных разработок машина была далеко не самой удачной, было произведено 60 машин.</value>
+  </data>
+  <data name="ARL_44_short" xml:space="preserve">
+    <value>ARL 44</value>
+  </data>
+  <data name="ARL_V39" xml:space="preserve">
+    <value>ARL V39</value>
+  </data>
+  <data name="ARL_V39_descr" xml:space="preserve">
+    <value>Прототип САУ ARL 40. Машину собирались использовать в качестве штурмовой САУ. Серийное производство планировали начать во второй половине 1940 года, однако в связи с оккупацией Франции оно так и не было начато.</value>
+  </data>
+  <data name="ARL_V39_short" xml:space="preserve">
+    <value>ARL V39</value>
+  </data>
+  <data name="Aster" xml:space="preserve">
+    <value>Aster</value>
+  </data>
+  <data name="Aster_M" xml:space="preserve">
+    <value>Aster M</value>
+  </data>
+  <data name="B1" xml:space="preserve">
+    <value>B1</value>
+  </data>
+  <data name="B1_descr" xml:space="preserve">
+    <value>Разрабатывался с 1921 года. Из-за длительных испытаний на вооружение был принят только в 1934 году. С 1935 по 1940 год было выпущено 403 танка двух основных модификаций.</value>
+  </data>
+  <data name="B1_short" xml:space="preserve">
+    <value>B1</value>
+  </data>
+  <data name="BDR_G1B" xml:space="preserve">
+    <value>BDR G1 B</value>
+  </data>
+  <data name="BDR_G1B_descr" xml:space="preserve">
+    <value>Конструкция нового танка была предложена инженерами Baudet-Donon-Rousell в июне 1938 года. Однако даже проект машины разработан не был.</value>
+  </data>
+  <data name="BDR_G1B_short" xml:space="preserve">
+    <value>BDR G1 B</value>
+  </data>
+  <data name="Bat_Chatillon155" xml:space="preserve">
+    <value>Bat.-Châtillon 155 58</value>
+  </data>
+  <data name="Bat_Chatillon155_55" xml:space="preserve">
+    <value>Bat.-Châtillon 155 55</value>
+  </data>
+  <data name="Bat_Chatillon155_55_descr" xml:space="preserve">
+    <value>Проект 155-мм САУ. Разработка началась в 1955 году. Первоначально планировалось использовать шасси американского среднего танка М47, который поставлялся во Францию. Однако в дальнейшем предпочтение было отдано шасси французского танка Batignolles-Chatillon 25t, а первоначальный проект остался только на бумаге.</value>
+  </data>
+  <data name="Bat_Chatillon155_55_short" xml:space="preserve">
+    <value>B-C 155 55</value>
+  </data>
+  <data name="Bat_Chatillon155_descr" xml:space="preserve">
+    <value>Прототип САУ на базе танка Batignolles-Chatillon 25t. Опытный образец был выпущен в 1958 году. Серийно машина не выпускалась.</value>
+  </data>
+  <data name="Bat_Chatillon155_short" xml:space="preserve">
+    <value>B-C 155 58</value>
+  </data>
+  <data name="Bat_Chatillon25t" xml:space="preserve">
+    <value>Bat.-Châtillon 25 t</value>
+  </data>
+  <data name="Bat_Chatillon25t_descr" xml:space="preserve">
+    <value>Экспериментальный французский танк. Являлся дальнейшим развитием концепции АМХ 13. Прошёл испытания, но серийно не выпускался и на вооружении не состоял. Всего было выпущено две машины.</value>
+  </data>
+  <data name="Bat_Chatillon25t_fallout" xml:space="preserve">
+    <value>Bat.-Châtillon 25 t (П)</value>
+  </data>
+  <data name="Bat_Chatillon25t_fallout_descr" xml:space="preserve">
+    <value>Экспериментальный французский танк. Являлся дальнейшим развитием концепции АМХ 13. Прошёл испытания, но серийно не выпускался и на вооружении не состоял. Всего было выпущено две машины.</value>
+  </data>
+  <data name="Bat_Chatillon25t_fallout_short" xml:space="preserve">
+    <value>B-C 25 t (П)</value>
+  </data>
+  <data name="Bat_Chatillon25t_short" xml:space="preserve">
+    <value>B-C 25 t</value>
+  </data>
+  <data name="Berliet_ACRO" xml:space="preserve">
+    <value>Berliet ACRO</value>
+  </data>
+  <data name="Berliet_MDP" xml:space="preserve">
+    <value>Berliet MDP</value>
+  </data>
+  <data name="Berliet_MDPA" xml:space="preserve">
+    <value>Berliet MDP</value>
+  </data>
+  <data name="Berliet_Ricardo" xml:space="preserve">
+    <value>Berliet Ricardo</value>
+  </data>
+  <data name="Canon_de_105_DEFA_4767_mod" xml:space="preserve">
+    <value>105 mm D.E.F.A. 4767 modifié</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1934S" xml:space="preserve">
+    <value>105 mm court mle. 1934 S</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1934S_AC" xml:space="preserve">
+    <value>105 mm AC court mle. 1934 S</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1934S_AC_short" xml:space="preserve">
+    <value>105 mm AC court
+mle. 1934 S</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1934S_T" xml:space="preserve">
+    <value>105 mm court mle. 1934</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1934S_T_short" xml:space="preserve">
+    <value>105 mm court
+mle. 1934</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1934S_short" xml:space="preserve">
+    <value>105 mm court
+mle. 1934 S</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1935B" xml:space="preserve">
+    <value>105 mm court mle. 1935 B</value>
+  </data>
+  <data name="Canon_de_105_court_mle_1935B_short" xml:space="preserve">
+    <value>105 mm court
+mle. 1935 B</value>
+  </data>
+  <data name="Canon_de_105_mle_1930_Schneider_AC" xml:space="preserve">
+    <value>105 mm AC mle. 1930 S</value>
+  </data>
+  <data name="Canon_de_105_mle_1930_Schneider_AC_short" xml:space="preserve">
+    <value>105 mm AC
+mle. 1930 S</value>
+  </data>
+  <data name="Canon_de_105_mle_1950" xml:space="preserve">
+    <value>105 mm obusier mle. 1950</value>
+  </data>
+  <data name="Canon_de_155mm" xml:space="preserve">
+    <value>Canon de 155 mm</value>
+  </data>
+  <data name="Canon_de_155mm_L_GPF" xml:space="preserve">
+    <value>Canon de 155 mm mle. 1917 G.P.F.</value>
+  </data>
+  <data name="Canon_de_155mm_L_GPF_short" xml:space="preserve">
+    <value>Canon de 155 mm
+mle. 1917 G.P.F.</value>
+  </data>
+  <data name="Canon_de_155mm_de_33_calibres" xml:space="preserve">
+    <value>Canon de 155 mm de 33 calibres</value>
+  </data>
+  <data name="Canon_de_155mm_de_33_calibres_short" xml:space="preserve">
+    <value>Canon de 155 mm
+de 33 calibres</value>
+  </data>
+  <data name="Chassis_105_leFH18B2" xml:space="preserve">
+    <value>leFH18B2</value>
+  </data>
+  <data name="Chassis_AMX13_57_100" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
+  <data name="Chassis_AMX13_57_100_GrandFinal" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
+  <data name="Chassis_AMX38" xml:space="preserve">
+    <value>AMX 38 1er prototype</value>
+  </data>
+  <data name="Chassis_AMX38_2" xml:space="preserve">
+    <value>AMX 38 série</value>
+  </data>
+  <data name="Chassis_AMX40" xml:space="preserve">
+    <value>AMX 40</value>
+  </data>
+  <data name="Chassis_AMX40_2" xml:space="preserve">
+    <value>AMX 40 bis</value>
+  </data>
+  <data name="Chassis_AMX50_Foch" xml:space="preserve">
+    <value>AMX 50 Foch</value>
+  </data>
+  <data name="Chassis_AMX50_Foch_2" xml:space="preserve">
+    <value>AMX 50 Foch bis</value>
+  </data>
+  <data name="Chassis_AMX_105AM" xml:space="preserve">
+    <value>AMX 13 105 AM mle. 49</value>
+  </data>
+  <data name="Chassis_AMX_105AM_2" xml:space="preserve">
+    <value>AMX 13 105 AM mle. 55</value>
+  </data>
+  <data name="Chassis_AMX_12t" xml:space="preserve">
+    <value>AMX 12 t 1er prototype</value>
+  </data>
+  <data name="Chassis_AMX_12t_2" xml:space="preserve">
+    <value>AMX 12 t 2e prototype</value>
+  </data>
+  <data name="Chassis_AMX_13F3AM" xml:space="preserve">
+    <value>AMX 13 F3 AM</value>
+  </data>
+  <data name="Chassis_AMX_13F3AM_2" xml:space="preserve">
+    <value>AMX 13 F3 AM bis</value>
+  </data>
+  <data name="Chassis_AMX_13_75_2" xml:space="preserve">
+    <value>AMX 13 Type 1R</value>
+  </data>
+  <data name="Chassis_AMX_13_75_3" xml:space="preserve">
+    <value>AMX 13 Type 2A</value>
+  </data>
+  <data name="Chassis_AMX_13_90" xml:space="preserve">
+    <value>AMX 13 Type 2R</value>
+  </data>
+  <data name="Chassis_AMX_13_90_2" xml:space="preserve">
+    <value>AMX 13 Type 2D</value>
+  </data>
+  <data name="Chassis_AMX_30" xml:space="preserve">
+    <value>AMX 30 B</value>
+  </data>
+  <data name="Chassis_AMX_30_prototype" xml:space="preserve">
+    <value>AMX 30 1er prototype</value>
+  </data>
+  <data name="Chassis_AMX_30_prototype_2" xml:space="preserve">
+    <value>AMX 30 A pré-série</value>
+  </data>
+  <data name="Chassis_AMX_50Fosh_155_2" xml:space="preserve">
+    <value>AMX 50 Foch (155)</value>
+  </data>
+  <data name="Chassis_AMX_50_100" xml:space="preserve">
+    <value>AMX M4 mle. 50</value>
+  </data>
+  <data name="Chassis_AMX_50_100_2" xml:space="preserve">
+    <value>AMX 50 100</value>
+  </data>
+  <data name="Chassis_AMX_50_120" xml:space="preserve">
+    <value>AMX 50 120</value>
+  </data>
+  <data name="Chassis_AMX_50_120_2" xml:space="preserve">
+    <value>AMX 50 120 bis</value>
+  </data>
+  <data name="Chassis_AMX_50_68t" xml:space="preserve">
+    <value>AMX 50 B</value>
+  </data>
+  <data name="Chassis_AMX_50_68t_fallout" xml:space="preserve">
+    <value>AMX 50 B</value>
+  </data>
+  <data name="Chassis_AMX_AC_Mle1946" xml:space="preserve">
+    <value>AMX AC mle. 46</value>
+  </data>
+  <data name="Chassis_AMX_AC_Mle1946_2" xml:space="preserve">
+    <value>AMX AC mle. 47</value>
+  </data>
+  <data name="Chassis_AMX_AC_Mle1948" xml:space="preserve">
+    <value>AMX AC mle. 48</value>
+  </data>
+  <data name="Chassis_AMX_AC_Mle1948_2" xml:space="preserve">
+    <value>AMX AC mle. 49</value>
+  </data>
+  <data name="Chassis_AMX_Chasseur_de_char_46" xml:space="preserve">
+    <value>AMX Chasseur de chars</value>
+  </data>
+  <data name="Chassis_AMX_M4_1945" xml:space="preserve">
+    <value>AMX M4 mle. 45</value>
+  </data>
+  <data name="Chassis_AMX_M4_1945_2" xml:space="preserve">
+    <value>AMX M4 mle. 45 bis</value>
+  </data>
+  <data name="Chassis_AMX_Ob_Am105" xml:space="preserve">
+    <value>AMX 105 AM mle. 47</value>
+  </data>
+  <data name="Chassis_AMX_Ob_Am105_2" xml:space="preserve">
+    <value>AMX 105 AM mle. 47 modifié</value>
+  </data>
+  <data name="Chassis_ARL_44" xml:space="preserve">
+    <value>ARL 44</value>
+  </data>
+  <data name="Chassis_ARL_44_2" xml:space="preserve">
+    <value>ARL 44 bis</value>
+  </data>
+  <data name="Chassis_ARL_V39" xml:space="preserve">
+    <value>ARL V39</value>
+  </data>
+  <data name="Chassis_ARL_V39_2" xml:space="preserve">
+    <value>ARL V39 bis</value>
+  </data>
+  <data name="Chassis_B1" xml:space="preserve">
+    <value>B1</value>
+  </data>
+  <data name="Chassis_B1_2" xml:space="preserve">
+    <value>B1 bis</value>
+  </data>
+  <data name="Chassis_BDR_G1B" xml:space="preserve">
+    <value>Baudet-Donon-Roussel G1</value>
+  </data>
+  <data name="Chassis_BDR_G1B_2" xml:space="preserve">
+    <value>Baudet-Donon-Roussel G1 bis</value>
+  </data>
+  <data name="Chassis_Bat_Chatillon155" xml:space="preserve">
+    <value>Batignolles-Châtillon 155 mle. 58</value>
+  </data>
+  <data name="Chassis_Bat_Chatillon155_55" xml:space="preserve">
+    <value>Batignolles-Châtillon 155 mle. 55</value>
+  </data>
+  <data name="Chassis_Bat_Chatillon155_55_2" xml:space="preserve">
+    <value>Batignolles-Châtillon 155 mle. 56</value>
+  </data>
+  <data name="Chassis_Bat_Chatillon25t_2" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t</value>
+  </data>
+  <data name="Chassis_Bat_Chatillon25t_2_fallout" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t</value>
+  </data>
+  <data name="Chassis_D1_2" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="Chassis_D1_2_2" xml:space="preserve">
+    <value>D1 bis</value>
+  </data>
+  <data name="Chassis_D2" xml:space="preserve">
+    <value>D2</value>
+  </data>
+  <data name="Chassis_D2_2" xml:space="preserve">
+    <value>D2 bis</value>
+  </data>
+  <data name="Chassis_ELC_AMX" xml:space="preserve">
+    <value>AMX ELC</value>
+  </data>
+  <data name="Chassis_ELC_AMX_2" xml:space="preserve">
+    <value>AMX ELC bis</value>
+  </data>
+  <data name="Chassis_FCM36_20t" xml:space="preserve">
+    <value>FCM 36</value>
+  </data>
+  <data name="Chassis_FCM36_20t_2" xml:space="preserve">
+    <value>FCM 36 bis</value>
+  </data>
+  <data name="Chassis_FCM_36Pak40" xml:space="preserve">
+    <value>FCM 36 Pak 40</value>
+  </data>
+  <data name="Chassis_FCM_50t" xml:space="preserve">
+    <value>FCM 50 t</value>
+  </data>
+  <data name="Chassis_Hotchkiss_H35" xml:space="preserve">
+    <value>H35</value>
+  </data>
+  <data name="Chassis_Hotchkiss_H35_2" xml:space="preserve">
+    <value>H39</value>
+  </data>
+  <data name="Chassis_Lorraine155_50" xml:space="preserve">
+    <value>Lorraine 155 mle. 50</value>
+  </data>
+  <data name="Chassis_Lorraine155_50_2" xml:space="preserve">
+    <value>Lorraine 155 mle. 50 bis</value>
+  </data>
+  <data name="Chassis_Lorraine155_51" xml:space="preserve">
+    <value>Lorraine 155 mle. 51</value>
+  </data>
+  <data name="Chassis_Lorraine155_51_2" xml:space="preserve">
+    <value>Lorraine 155 mle. 51 bis</value>
+  </data>
+  <data name="Chassis_Lorraine39_L_AM" xml:space="preserve">
+    <value>Lorraine 39L AM</value>
+  </data>
+  <data name="Chassis_Lorraine39_L_AM_2" xml:space="preserve">
+    <value>Lorraine 39L AM bis</value>
+  </data>
+  <data name="Chassis_Lorraine40t" xml:space="preserve">
+    <value>Lorraine 40 t</value>
+  </data>
+  <data name="Chassis_Lorraine40t_2" xml:space="preserve">
+    <value>Lorraine 40 t bis</value>
+  </data>
+  <data name="Chassis_M4A1_Revalorise" xml:space="preserve">
+    <value>M4A1 Revalorisé</value>
+  </data>
+  <data name="Chassis_RenaultBS" xml:space="preserve">
+    <value>Renault FT 75 BS</value>
+  </data>
+  <data name="Chassis_RenaultBS2" xml:space="preserve">
+    <value>Renault FT 75 BS bis</value>
+  </data>
+  <data name="Chassis_RenaultFT" xml:space="preserve">
+    <value>M17</value>
+  </data>
+  <data name="Chassis_RenaultFT2" xml:space="preserve">
+    <value>M26/27</value>
+  </data>
+  <data name="Chassis_RenaultFT_AC" xml:space="preserve">
+    <value>Renault FT AC</value>
+  </data>
+  <data name="Chassis_RenaultFT_AC_2" xml:space="preserve">
+    <value>Renault FT AC bis</value>
+  </data>
+  <data name="Chassis_RenaultR35" xml:space="preserve">
+    <value>Renault R35</value>
+  </data>
+  <data name="Chassis_RenaultR35_2" xml:space="preserve">
+    <value>Renault R40</value>
+  </data>
+  <data name="Chassis_RenaultUE57" xml:space="preserve">
+    <value>Renault UE</value>
+  </data>
+  <data name="Chassis_RenaultUE57_2" xml:space="preserve">
+    <value>Renault UE bis</value>
+  </data>
+  <data name="Chassis_Renault_G1R" xml:space="preserve">
+    <value>Renault G1 Premier Project</value>
+  </data>
+  <data name="Chassis_Renault_G1R_2" xml:space="preserve">
+    <value>Renault G1 Project Modifié</value>
+  </data>
+  <data name="Chassis_SARL42" xml:space="preserve">
+    <value>S40 amélioré</value>
+  </data>
+  <data name="Chassis_SARL42_2" xml:space="preserve">
+    <value>SARL 42</value>
+  </data>
+  <data name="Chassis_S_35CA" xml:space="preserve">
+    <value>S35 CA</value>
+  </data>
+  <data name="Chassis_S_35CA_2" xml:space="preserve">
+    <value>S35 CA bis</value>
+  </data>
+  <data name="Chassis_Somua_S35" xml:space="preserve">
+    <value>Somua S35</value>
+  </data>
+  <data name="Chassis_Somua_S35_2" xml:space="preserve">
+    <value>Somua S40</value>
+  </data>
+  <data name="Chassis_Somua_Sau_40" xml:space="preserve">
+    <value>Somua SAu 40</value>
+  </data>
+  <data name="Chassis_Somua_Sau_40_2" xml:space="preserve">
+    <value>Somua SAu 40 bis</value>
+  </data>
+  <data name="Cummins_VT8-460" xml:space="preserve">
+    <value>Cummins VT8-460</value>
+  </data>
+  <data name="D1" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="D1_descr" xml:space="preserve">
+    <value>Разработка началась в 1929 г. Первая партия была выпущена в 1930 году. До 1935 года было выпущено 160 машин. В боях во Франции принимали участие 152 танка. Восемнадцать танков D1 были захвачены немецкой армией и использовались для обучения танкистов.</value>
+  </data>
+  <data name="D1_short" xml:space="preserve">
+    <value>D1</value>
+  </data>
+  <data name="D2" xml:space="preserve">
+    <value>D2</value>
+  </data>
+  <data name="D2_descr" xml:space="preserve">
+    <value>Дальнейшее развитие танка D1. Разработан в 1934 году компанией Renault. С 1936 по 1940 год двумя сериями было выпущено 100 машин. Танки второй серии иногда назывались D2bis.</value>
+  </data>
+  <data name="D2_short" xml:space="preserve">
+    <value>D2</value>
+  </data>
+  <data name="Delahaye_103" xml:space="preserve">
+    <value>Delahaye 103</value>
+  </data>
+  <data name="Delahaye_103TT" xml:space="preserve">
+    <value>Delahaye 103TT</value>
+  </data>
+  <data name="Delahaye_135" xml:space="preserve">
+    <value>Delahaye 135</value>
+  </data>
+  <data name="Detroit_Diesel_6V53T" xml:space="preserve">
+    <value>Detroit Diesel 6V53T</value>
+  </data>
+  <data name="Detroit_Diesel_6V53T-S" xml:space="preserve">
+    <value>Detroit Diesel 6V53T-S</value>
+  </data>
+  <data name="Detroit_Diesel_6V53T-S_short" xml:space="preserve">
+    <value>Detroit Diesel
+6V53T-S</value>
+  </data>
+  <data name="Detroit_Diesel_6V53T_short" xml:space="preserve">
+    <value>Detroit Diesel
+6V53T</value>
+  </data>
+  <data name="ELC_AMX" xml:space="preserve">
+    <value>AMX ELC bis</value>
+  </data>
+  <data name="ELC_AMX_descr" xml:space="preserve">
+    <value>Танк разрабатывался в 1957–1961 гг. в связи с потребностью французских воздушно-десантных войск в боевой машине с возможностью доставки по воздуху, которая смогла бы обеспечить надёжное противотанковое прикрытие от тяжелобронированных целей. Танк имел 90-мм орудие и отличался очень низким силуэтом. Экипаж из двух человек размещался в башне, которая могла вращаться на 360 градусов только когда танк был неподвижен. Предполагалась разработка машин с различным вооружением. Был выпущен один прототип. Танк на вооружении не состоял.</value>
+  </data>
+  <data name="ELC_AMX_short" xml:space="preserve">
+    <value>AMX ELC bis</value>
+  </data>
+  <data name="ER_26_ter" xml:space="preserve">
+    <value>ER 26 ter</value>
+  </data>
+  <data name="ER_27" xml:space="preserve">
+    <value>ER 27</value>
+  </data>
+  <data name="ER_28" xml:space="preserve">
+    <value>ER 28</value>
+  </data>
+  <data name="ER_29" xml:space="preserve">
+    <value>ER 29</value>
+  </data>
+  <data name="ER_51" xml:space="preserve">
+    <value>ER 51</value>
+  </data>
+  <data name="ER_52" xml:space="preserve">
+    <value>ER 52</value>
+  </data>
+  <data name="ER_53" xml:space="preserve">
+    <value>ER 53</value>
+  </data>
+  <data name="ER_54" xml:space="preserve">
+    <value>ER 54</value>
+  </data>
+  <data name="ER_55" xml:space="preserve">
+    <value>ER 55</value>
+  </data>
+  <data name="ER_56" xml:space="preserve">
+    <value>ER 56</value>
+  </data>
+  <data name="F68_AMX_Chasseur_de_char_46" xml:space="preserve">
+    <value>AMX Chasseur de chars</value>
+  </data>
+  <data name="F68_AMX_Chasseur_de_char_46_descr" xml:space="preserve">
+    <value>Аванпроект новой машины был представлен компанией AMX в 1946 году. Мощный двигатель и небольшой вес должны были обеспечить новой машине отличную подвижность, а 90-мм орудие с механизированной боеукладкой — хорошую скорострельность. Однако значительные размеры при довольно слабом бронировании, а так же весьма сложная и дорогая конструкция не были одобрены комиссией. Существовал только в эскизах.</value>
+  </data>
+  <data name="F68_AMX_Chasseur_de_char_46_short" xml:space="preserve">
+    <value>AMX CDC</value>
+  </data>
+  <data name="F69_AMX13_57_100" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
+  <data name="F69_AMX13_57_100_GrandFinal" xml:space="preserve">
+    <value>AMX 13 57 GF</value>
+  </data>
+  <data name="F69_AMX13_57_100_GrandFinal_descr" xml:space="preserve">
+    <value>Проект лёгкого танка, который так и не был выпущен. При его проектировании специалисты компании AMX рассматривали возможность установки различных вариантов вооружения, в том числе 57-мм орудия с длиной ствола 100 калибров. Разработка слишком затянулась, поэтому в 50-х годах макет уже не соответствовал предъявляемым требованиям. На тот момент в серийное производство был запущен модернизированный вариант шасси с башней под орудие калибра 75 мм. В итоге разработка танка была свёрнута ещё до представления аванпроекта.</value>
+  </data>
+  <data name="F69_AMX13_57_100_GrandFinal_short" xml:space="preserve">
+    <value>AMX 13 57F</value>
+  </data>
+  <data name="F69_AMX13_57_100_descr" xml:space="preserve">
+    <value>Проект лёгкого танка, который так и не был выпущен. При его проектировании специалисты компании AMX рассматривали возможность установки различных вариантов вооружения, в том числе 57-мм орудия с длиной ствола 100 калибров. Разработка слишком затянулась, поэтому в 50-х годах макет уже не соответствовал предъявляемым требованиям. На тот момент в серийное производство был запущен модернизированный вариант шасси с башней под орудие калибра 75 мм. В итоге разработка танка была свёрнута ещё до представления аванпроекта.</value>
+  </data>
+  <data name="F69_AMX13_57_100_short" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
+  <data name="F72_AMX_30" xml:space="preserve">
+    <value>AMX 30 B</value>
+  </data>
+  <data name="F72_AMX_30_descr" xml:space="preserve">
+    <value>Разработан в 1966 году. Превосходил все танки, кроме Leopard 1, по подвижности и удельной мощности, а также обладал самой большой эффективной дальностью противотанкового огня. Благодаря превосходному обзору командир мог координировать действия экипажа и оперативно реагировать на изменение боевой обстановки, что ещё больше увеличивало эффективность танка. С появлением ПТ боеприпасов толщина брони перестала иметь существенное значение. Всего было выпущено около 2800 танков.</value>
+  </data>
+  <data name="F72_AMX_30_short" xml:space="preserve">
+    <value>AMX 30 B</value>
+  </data>
+  <data name="F73_M4A1_Revalorise" xml:space="preserve">
+    <value>M4A1 Revalorisé</value>
+  </data>
+  <data name="F73_M4A1_Revalorise_descr" xml:space="preserve">
+    <value>В 50-х гг. в рамках MDAP Франции были поставлены танки М4 Sherman различных модификаций. В дальнейшем уже во Франции начались работы по модернизации машин, в первую очередь по усилению их огневой мощи. Результатом этих работ стала программа модернизации данных танков для Армии обороны Израиля (Sherman М51). Во Франции танк на вооружении не состоял. Количество опытных экземпляров неизвестно.</value>
+  </data>
+  <data name="F73_M4A1_Revalorise_short" xml:space="preserve">
+    <value>M4A1 Rev.</value>
+  </data>
+  <data name="FCM36_20t" xml:space="preserve">
+    <value>FCM 36</value>
+  </data>
+  <data name="FCM36_20t_descr" xml:space="preserve">
+    <value>Разработан в середине 30-х годов в рамках конкурса по созданию нового танка поддержки пехоты. Единственный французский танк с дизельным двигателем. До 1939 года было выпущено 100 машин.</value>
+  </data>
+  <data name="FCM36_20t_short" xml:space="preserve">
+    <value>FCM 36</value>
+  </data>
+  <data name="FCM_36Pak40" xml:space="preserve">
+    <value>FCM 36 Pak 40</value>
+  </data>
+  <data name="FCM_36Pak40_descr" xml:space="preserve">
+    <value>В 1943 году 10 танков FCM36 были переоборудованы в ПТ-САУ. До этого 12 машин этого типа были переоборудованы в 105-мм гаубичные САУ.</value>
+  </data>
+  <data name="FCM_36Pak40_short" xml:space="preserve">
+    <value>FCM36Pak40</value>
+  </data>
+  <data name="FCM_50t" xml:space="preserve">
+    <value>FCM 50 t</value>
+  </data>
+  <data name="FCM_50t_descr" xml:space="preserve">
+    <value>Разработка машины началась в декабре 1945 года. Проект должен был составить альтернативу АМХ 50t. Машина сочетала в себе архаичные решения, характерные для довоенного французского танкостроения с немецкими разработками. Танк должен был оснащаться дополнительным баком-прицепом, устройством для подводного вождения и съёмным минным тралом. Работы над проектом были прекращены на стадии эскиза.</value>
+  </data>
+  <data name="FCM_50t_short" xml:space="preserve">
+    <value>FCM 50 t</value>
+  </data>
+  <data name="Fanions_de_signaux" xml:space="preserve">
+    <value>«Сигнальные флажки»</value>
+  </data>
+  <data name="Franklin" xml:space="preserve">
+    <value>Franklin</value>
+  </data>
+  <data name="FuG8f" xml:space="preserve">
+    <value>Fu.Spr.Ger. "f"</value>
+  </data>
+  <data name="FuG_Spr.D" xml:space="preserve">
+    <value>Fu.Spr.Ger. "d"</value>
+  </data>
+  <data name="Hispano-Suiza_HS110" xml:space="preserve">
+    <value>Hispano-Suiza HS 110</value>
+  </data>
+  <data name="Hispano-Suiza_HS110_A" xml:space="preserve">
+    <value>Hispano-Suiza HS 110 pré-série</value>
+  </data>
+  <data name="Hispano-Suiza_HS110_fallout" xml:space="preserve">
+    <value>Hispano-Suiza HS 110</value>
+  </data>
+  <data name="Hispano_219CV_V8" xml:space="preserve">
+    <value>Hispano-Suiza V8</value>
+  </data>
+  <data name="Hotchkiss_35_1" xml:space="preserve">
+    <value>Hotchkiss 35</value>
+  </data>
+  <data name="Hotchkiss_H35_descr" xml:space="preserve">
+    <value>Танк поддержки кавалерийских соединений. Разработан в 1934 году. Выпускался серийно с 1935 года. Всего было выпущено 400 машин. В 1938 году начался выпуск новой модификации Н38. Всего было выпущено около тысячи танков Н35/Н38/Н39.</value>
+  </data>
+  <data name="Hotchkiss_H35_short" xml:space="preserve">
+    <value>H35</value>
+  </data>
+  <data name="Lorraine155_50" xml:space="preserve">
+    <value>Lorraine 155 mle. 50</value>
+  </data>
+  <data name="Lorraine155_50_descr" xml:space="preserve">
+    <value>Прототип САУ, разработанный на базе опытного танка Lorraine 40t в 1952 году. Серийно не выпускался. На вооружении не состоял.</value>
+  </data>
+  <data name="Lorraine155_50_short" xml:space="preserve">
+    <value>Lorr. 155 50</value>
+  </data>
+  <data name="Lorraine155_51" xml:space="preserve">
+    <value>Lorraine 155 mle. 51</value>
+  </data>
+  <data name="Lorraine155_51_descr" xml:space="preserve">
+    <value>Экспериментальная САУ на базе прототипа среднего танка Char de Bataille Lorraine 40t. Прототип выпущен  в 1952 году. На вооружении не состояла и серийно не выпускалась.</value>
+  </data>
+  <data name="Lorraine155_51_short" xml:space="preserve">
+    <value>Lorr. 155 51</value>
+  </data>
+  <data name="Lorraine39_L_AM" xml:space="preserve">
+    <value>Lorraine 39L AM</value>
+  </data>
+  <data name="Lorraine39_L_AM_descr" xml:space="preserve">
+    <value>САУ на базе Lorraine 37L. Разработка началась накануне Второй мировой войны. Существовала только в эскизах.</value>
+  </data>
+  <data name="Lorraine39_L_AM_short" xml:space="preserve">
+    <value>Lorr. 39L AM</value>
+  </data>
+  <data name="Lorraine40t" xml:space="preserve">
+    <value>Lorraine 40 t</value>
+  </data>
+  <data name="Lorraine40t_descr" xml:space="preserve">
+    <value>Единственный прототип машины был выпущен в 1952 году. В новой машине, наряду с качающейся башней, была использована оригинальная ходовая с пневматическими шинами. Танк прошел испытания, но серийно не выпускался.</value>
+  </data>
+  <data name="Lorraine40t_short" xml:space="preserve">
+    <value>Lorr. 40 t</value>
+  </data>
+  <data name="MATHIS" xml:space="preserve">
+    <value>MATHIS</value>
+  </data>
+  <data name="Maybach_850CV" xml:space="preserve">
+    <value>Maybach 850 CV</value>
+  </data>
+  <data name="Maybach_850CV_short" xml:space="preserve">
+    <value>Maybach 850 CV</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P30" xml:space="preserve">
+    <value>Maybach HL 210 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_210_TRM_P30_short" xml:space="preserve">
+    <value>Maybach HL 210
+TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230" xml:space="preserve">
+    <value>Maybach HL 230</value>
+  </data>
+  <data name="Maybach_HL_230P45" xml:space="preserve">
+    <value>Maybach HL 230 P45F</value>
+  </data>
+  <data name="Maybach_HL_230P45_short" xml:space="preserve">
+    <value>Maybach HL 230
+P45F</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30" xml:space="preserve">
+    <value>Maybach HL 230 TRM P30</value>
+  </data>
+  <data name="Maybach_HL_230_TRM_P30_short" xml:space="preserve">
+    <value>Maybach HL 230
+TRM P30</value>
+  </data>
+  <data name="Maybach_HL_234P45" xml:space="preserve">
+    <value>Maybach HL 234 P45</value>
+  </data>
+  <data name="Maybach_HL_234P45A" xml:space="preserve">
+    <value>Maybach V-12 ACC</value>
+  </data>
+  <data name="Maybach_HL_234P45A_short" xml:space="preserve">
+    <value>Maybach V-12 ACC</value>
+  </data>
+  <data name="Maybach_HL_234P45_short" xml:space="preserve">
+    <value>Maybach HL 234 P45</value>
+  </data>
+  <data name="Maybach_HL_234P50" xml:space="preserve">
+    <value>Maybach HL 234 P50</value>
+  </data>
+  <data name="Maybach_HL_234P50_short" xml:space="preserve">
+    <value>Maybach HL 234 P50</value>
+  </data>
+  <data name="Maybach_HL_295" xml:space="preserve">
+    <value>Maybach HL 295</value>
+  </data>
+  <data name="Maybach_HL_295_F" xml:space="preserve">
+    <value>Maybach HL 295 F</value>
+  </data>
+  <data name="Maybach_HL_295_FA" xml:space="preserve">
+    <value>Maybach HL 295 F</value>
+  </data>
+  <data name="Maybach_HL_295_F_fallout" xml:space="preserve">
+    <value>Maybach HL 295 F</value>
+  </data>
+  <data name="Obusier_de_155mm_C_mle.1917" xml:space="preserve">
+    <value>Obusier de 155 mm C mle. 1917</value>
+  </data>
+  <data name="Obusier_de_155mm_C_mle.1917_short" xml:space="preserve">
+    <value>Obusier de 155 mm
+C mle. 1917</value>
+  </data>
+  <data name="Obusier_de_155mm_mle.1950" xml:space="preserve">
+    <value>Obusier de 155 mm mle. 1950</value>
+  </data>
+  <data name="Obusier_de_155mm_mle.1950_short" xml:space="preserve">
+    <value>Obusier de 155 mm
+mle. 1950</value>
+  </data>
+  <data name="Renault" xml:space="preserve">
+    <value>Renault</value>
+  </data>
+  <data name="RenaultBS" xml:space="preserve">
+    <value>Renault FT 75 BS</value>
+  </data>
+  <data name="RenaultBS_descr" xml:space="preserve">
+    <value>Первый заказ на САУ на базе танка Renault FT-17 был сделан в декабре 1917 года. Однако до конца Первой мировой войны ни одной САУ в армию не поставили. Только после окончания боевых действий было выпущено 39 машин.</value>
+  </data>
+  <data name="RenaultBS_short" xml:space="preserve">
+    <value>FT BS</value>
+  </data>
+  <data name="RenaultFT" xml:space="preserve">
+    <value>Renault FT</value>
+  </data>
+  <data name="RenaultFT_AC" xml:space="preserve">
+    <value>Renault FT AC</value>
+  </data>
+  <data name="RenaultFT_AC_descr" xml:space="preserve">
+    <value>Большое количество находящихся на вооружении во французской армии Renault FT вынуждало постоянно предпринимать попытки модернизации этих устаревших машин. Например, было предложено переделать танки в ПТ-САУ, но проект так и остался нереализованным.</value>
+  </data>
+  <data name="RenaultFT_AC_short" xml:space="preserve">
+    <value>FT AC</value>
+  </data>
+  <data name="RenaultFT_descr" xml:space="preserve">
+    <value>Машина была принята на вооружение в 1917 году, и к моменту окончания Первой мировой войны было выпущено 3177 танков. Общий выпуск составил 3800 машин. К началу Второй мировой войны во французской армии числилось 1560 танков Renault FT.</value>
+  </data>
+  <data name="RenaultFT_short" xml:space="preserve">
+    <value>FT</value>
+  </data>
+  <data name="RenaultR35" xml:space="preserve">
+    <value>Renault R35</value>
+  </data>
+  <data name="RenaultR35_descr" xml:space="preserve">
+    <value>Самый массовый лёгкий французский танк Второй мировой войны. Разработан по заказу армии для сопровождения пехоты в 1934 году. С 1936 по 1940 год было выпущено 1630 танков.</value>
+  </data>
+  <data name="RenaultR35_short" xml:space="preserve">
+    <value>R35</value>
+  </data>
+  <data name="RenaultUE57" xml:space="preserve">
+    <value>Renault UE 57</value>
+  </data>
+  <data name="RenaultUE57_descr" xml:space="preserve">
+    <value>Разработана в 1943 году в Великобритании путём установки британского шестифунтового орудия с дульным тормозом специально разработанной конструкции на шасси французской танкетки UE2. Выпущен один экземпляр.</value>
+  </data>
+  <data name="RenaultUE57_short" xml:space="preserve">
+    <value>UE 57</value>
+  </data>
+  <data name="Renault_A" xml:space="preserve">
+    <value>Renault 307</value>
+  </data>
+  <data name="Renault_ACL" xml:space="preserve">
+    <value>Renault ACL</value>
+  </data>
+  <data name="Renault_BDR" xml:space="preserve">
+    <value>Renault BDR</value>
+  </data>
+  <data name="Renault_EU" xml:space="preserve">
+    <value>Renault 85</value>
+  </data>
+  <data name="Renault_G1R" xml:space="preserve">
+    <value>Renault G1</value>
+  </data>
+  <data name="Renault_G1R_descr" xml:space="preserve">
+    <value>Разработан в 1935–1940 годах. По тактико-техническим характеристикам его можно было сравнить с Т-34. Среди целого ряда представленных на конкурс аванпроектов в конечном счёте был выбран проект Renault G1R. Танк имел индивидуальную торсионную подвеску и оригинальную установку вооружения. К 1940 году был построен макет танка, однако работы были прекращены в связи с поражением Франции в этом же году.</value>
+  </data>
+  <data name="Renault_G1R_short" xml:space="preserve">
+    <value>G1 R</value>
+  </data>
+  <data name="Renault_M26_27" xml:space="preserve">
+    <value>Renault M26/27</value>
+  </data>
+  <data name="Renault_Naeder-FIEUX" xml:space="preserve">
+    <value>Renault Naeder-FIEUX</value>
+  </data>
+  <data name="Renault_Naeder-FIEUX_short" xml:space="preserve">
+    <value>Renault
+Naeder-FIEUX</value>
+  </data>
+  <data name="Renault_S4" xml:space="preserve">
+    <value>Renault S4</value>
+  </data>
+  <data name="Renault_S4B" xml:space="preserve">
+    <value>Renault S4F</value>
+  </data>
+  <data name="Renault_S6" xml:space="preserve">
+    <value>Renault S6</value>
+  </data>
+  <data name="Renault_S6Bis" xml:space="preserve">
+    <value>Renault S6Bis</value>
+  </data>
+  <data name="Renault_T12" xml:space="preserve">
+    <value>Renault T12</value>
+  </data>
+  <data name="Renault_T13" xml:space="preserve">
+    <value>Renault T13</value>
+  </data>
+  <data name="Renault_T14" xml:space="preserve">
+    <value>Renault T14</value>
+  </data>
+  <data name="Renault_V4" xml:space="preserve">
+    <value>Renault V4</value>
+  </data>
+  <data name="SARL42" xml:space="preserve">
+    <value>SARL 42</value>
+  </data>
+  <data name="SARL42_descr" xml:space="preserve">
+    <value>Разработан в 1940–1942 гг. инженером Юбером Клермоном. Были использованы наработки по проекту пехотного танка G1R, проектирование которого было прекращено в 1940 году, и элементы конструкции серийного среднего танка SOMUA S35. Работы над танком проходили в условиях немецкой оккупации с перспективой реализации проекта после освобождения страны. Однако в 1944 году проект был признан технически устаревшим.</value>
+  </data>
+  <data name="SARL42_short" xml:space="preserve">
+    <value>SARL 42</value>
+  </data>
+  <data name="SCR_508" xml:space="preserve">
+    <value>SCR 508</value>
+  </data>
+  <data name="SCR_528" xml:space="preserve">
+    <value>SCR 528F</value>
+  </data>
+  <data name="SCR_528_fallout" xml:space="preserve">
+    <value>SCR 528F</value>
+  </data>
+  <data name="SCR_619" xml:space="preserve">
+    <value>SCR 619</value>
+  </data>
+  <data name="SCR_619_fallout" xml:space="preserve">
+    <value>SCR 619</value>
+  </data>
+  <data name="SOFAM_12GSds" xml:space="preserve">
+    <value>SOFAM 12 GSdS</value>
+  </data>
+  <data name="SOFAM_12GSds_A" xml:space="preserve">
+    <value>SOFAM 12 GSds</value>
+  </data>
+  <data name="SOFAM_8Gxb" xml:space="preserve">
+    <value>SOFAM 8 Gxb</value>
+  </data>
+  <data name="SOFAM_8Gxb_A" xml:space="preserve">
+    <value>SOFAM 8 Gxb</value>
+  </data>
+  <data name="S_35CA" xml:space="preserve">
+    <value>S35 CA</value>
+  </data>
+  <data name="S_35CA_descr" xml:space="preserve">
+    <value>В соответствии с эскизным проектом, предполагалось переоборудовать танки в ПТ-САУ путём установки 17-фунтового английского орудия в открытую сверху легкобронированную рубку.</value>
+  </data>
+  <data name="S_35CA_short" xml:space="preserve">
+    <value>S35 CA</value>
+  </data>
+  <data name="Saurer" xml:space="preserve">
+    <value>Saurer</value>
+  </data>
+  <data name="Somua_190CV_V8" xml:space="preserve">
+    <value>Somua V8</value>
+  </data>
+  <data name="Somua_230_V8" xml:space="preserve">
+    <value>Somua V8 version définitive</value>
+  </data>
+  <data name="Somua_LM" xml:space="preserve">
+    <value>Somua LM</value>
+  </data>
+  <data name="Somua_S-40" xml:space="preserve">
+    <value>Somua S-40</value>
+  </data>
+  <data name="Somua_S-40Bis" xml:space="preserve">
+    <value>Somua S-40 Bis</value>
+  </data>
+  <data name="Somua_S35" xml:space="preserve">
+    <value>Somua S35</value>
+  </data>
+  <data name="Somua_S35_descr" xml:space="preserve">
+    <value>Благодаря высокой огневой мощи, защищённости и подвижности S35 был наиболее удачным французским танком и одним из лучших танков своего времени. Из-за применения одноместной башни командир был вынужден одновременно производить поиск целей, наводить и перезаряжать орудие и координировать действия экипажа. Это уменьшало возможности экипажа оперативно реагировать на изменения боевой обстановки и снижало огневую мощь танка. Всего ко времени капитуляции Франции 22 июня 1940 года было выпущено 427 танков S35.</value>
+  </data>
+  <data name="Somua_S35_short" xml:space="preserve">
+    <value>Somua S35</value>
+  </data>
+  <data name="Somua_Sau_40" xml:space="preserve">
+    <value>Somua SAu 40</value>
+  </data>
+  <data name="Somua_Sau_40_descr" xml:space="preserve">
+    <value>Проект ПТ-САУ на базе танка Somua S35. Существовал только в эскизах.</value>
+  </data>
+  <data name="Somua_Sau_40_short" xml:space="preserve">
+    <value>SAu 40</value>
+  </data>
+  <data name="Sovam_de_150cv" xml:space="preserve">
+    <value>SOFAM de 150 cv</value>
+  </data>
+  <data name="TRVP_11_Banane" xml:space="preserve">
+    <value>TRVP-11 (Banane)</value>
+  </data>
+  <data name="TRVP_13" xml:space="preserve">
+    <value>TRVP-13</value>
+  </data>
+  <data name="TRVP_13_A" xml:space="preserve">
+    <value>TRVP-13-A</value>
+  </data>
+  <data name="Turret_1_105_leFH18B2" xml:space="preserve">
+    <value>105leFH18B2</value>
+  </data>
+  <data name="Turret_1_AMX13_57_100" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
+  <data name="Turret_1_AMX13_57_100_GrandFinal" xml:space="preserve">
+    <value>AMX 13 57</value>
+  </data>
+  <data name="Turret_1_AMX38" xml:space="preserve">
+    <value>AMX 38</value>
+  </data>
+  <data name="Turret_1_AMX40" xml:space="preserve">
+    <value>AMX 40</value>
+  </data>
+  <data name="Turret_1_AMX50_Foch" xml:space="preserve">
+    <value>AMX 50 Foch</value>
+  </data>
+  <data name="Turret_1_AMX_105AM" xml:space="preserve">
+    <value>AMX 13 105 AM mle. 50</value>
+  </data>
+  <data name="Turret_1_AMX_12t" xml:space="preserve">
+    <value>AMX 12 t</value>
+  </data>
+  <data name="Turret_1_AMX_13F3AM" xml:space="preserve">
+    <value>AMX 13 F3 AM</value>
+  </data>
+  <data name="Turret_1_AMX_13_75" xml:space="preserve">
+    <value>FL 10 Type C</value>
+  </data>
+  <data name="Turret_1_AMX_13_90" xml:space="preserve">
+    <value>FL 10 Type D</value>
+  </data>
+  <data name="Turret_1_AMX_30" xml:space="preserve">
+    <value>AMX 30 B</value>
+  </data>
+  <data name="Turret_1_AMX_30_prototype" xml:space="preserve">
+    <value>AMX 30 1er prototype</value>
+  </data>
+  <data name="Turret_1_AMX_50Fosh_155" xml:space="preserve">
+    <value>AMX 50 Foch (155)</value>
+  </data>
+  <data name="Turret_1_AMX_50_100" xml:space="preserve">
+    <value>AMX 50 100</value>
+  </data>
+  <data name="Turret_1_AMX_50_120" xml:space="preserve">
+    <value>AMX 50 120</value>
+  </data>
+  <data name="Turret_1_AMX_50_68t" xml:space="preserve">
+    <value>AMX 50 B</value>
+  </data>
+  <data name="Turret_1_AMX_50_68t_fallout" xml:space="preserve">
+    <value>AMX 50 B</value>
+  </data>
+  <data name="Turret_1_AMX_AC_Mle1946" xml:space="preserve">
+    <value>AMX AC mle. 46</value>
+  </data>
+  <data name="Turret_1_AMX_AC_Mle1948" xml:space="preserve">
+    <value>AMX AC mle. 48</value>
+  </data>
+  <data name="Turret_1_AMX_Chasseur_de_char_46" xml:space="preserve">
+    <value>AMX Chasseur de chars</value>
+  </data>
+  <data name="Turret_1_AMX_M4_1945" xml:space="preserve">
+    <value>ARL 44</value>
+  </data>
+  <data name="Turret_1_AMX_Ob_Am105" xml:space="preserve">
+    <value>AMX 105 AM mle. 47</value>
+  </data>
+  <data name="Turret_1_ARL_44" xml:space="preserve">
+    <value>ACL 1</value>
+  </data>
+  <data name="Turret_1_ARL_V39" xml:space="preserve">
+    <value>ARL V39</value>
+  </data>
+  <data name="Turret_1_B1" xml:space="preserve">
+    <value>B1 APX 1</value>
+  </data>
+  <data name="Turret_1_BDR_G1B" xml:space="preserve">
+    <value>FCM F4</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon155" xml:space="preserve">
+    <value>Batignolles-Châtillon 155 mle. 58</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon155_55" xml:space="preserve">
+    <value>Batignolles-Châtillon 155 mle. 55</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon25t" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon25t_fallout" xml:space="preserve">
+    <value>Batignolles-Châtillon 25 t</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon25t_fallout_short" xml:space="preserve">
+    <value>Batignolles-Châtillon
+25 t</value>
+  </data>
+  <data name="Turret_1_Bat_Chatillon25t_short" xml:space="preserve">
+    <value>Batignolles-Châtillon
+25 t</value>
+  </data>
+  <data name="Turret_1_D1_2" xml:space="preserve">
+    <value>D1 Berliet</value>
+  </data>
+  <data name="Turret_1_D2" xml:space="preserve">
+    <value>D2 APX 1</value>
+  </data>
+  <data name="Turret_1_ELC_AMX" xml:space="preserve">
+    <value>AMX ELC bis</value>
+  </data>
+  <data name="Turret_1_FCM36_20t" xml:space="preserve">
+    <value>Tracteur RN.3</value>
+  </data>
+  <data name="Turret_1_FCM_36Pak40" xml:space="preserve">
+    <value>FCM 36 Pak 40</value>
+  </data>
+  <data name="Turret_1_FCM_50t" xml:space="preserve">
+    <value>FCM 50 t</value>
+  </data>
+  <data name="Turret_1_Hotchkiss_H35" xml:space="preserve">
+    <value>APX R</value>
+  </data>
+  <data name="Turret_1_Lorraine155_50" xml:space="preserve">
+    <value>Lorraine 155 mle. 50</value>
+  </data>
+  <data name="Turret_1_Lorraine39_L_AM" xml:space="preserve">
+    <value>Lorraine 39L AM</value>
+  </data>
+  <data name="Turret_1_Lorraine40t" xml:space="preserve">
+    <value>Lorraine 40 t</value>
+  </data>
+  <data name="Turret_1_M4A1_Revalorise" xml:space="preserve">
+    <value>M4A1 Revalorisé</value>
+  </data>
+  <data name="Turret_1_RenaultBS" xml:space="preserve">
+    <value>Renault FT 75 BS</value>
+  </data>
+  <data name="Turret_1_RenaultFT" xml:space="preserve">
+    <value>Renault FT Omnibus</value>
+  </data>
+  <data name="Turret_1_RenaultFT_AC" xml:space="preserve">
+    <value>Renault FT AC</value>
+  </data>
+  <data name="Turret_1_RenaultR35" xml:space="preserve">
+    <value>APX-R</value>
+  </data>
+  <data name="Turret_1_RenaultUE57" xml:space="preserve">
+    <value>UE 57</value>
+  </data>
+  <data name="Turret_1_Renault_G1R" xml:space="preserve">
+    <value>Renault-Balland</value>
+  </data>
+  <data name="Turret_1_SARL42" xml:space="preserve">
+    <value>FCM à trois hommes</value>
+  </data>
+  <data name="Turret_1_S_35CA" xml:space="preserve">
+    <value>S35 CA</value>
+  </data>
+  <data name="Turret_1_Somua_S35" xml:space="preserve">
+    <value>APX 1CE</value>
+  </data>
+  <data name="Turret_1_Somua_Sau_40" xml:space="preserve">
+    <value>Somua SAu 40</value>
+  </data>
+  <data name="Turret_2_AMX40" xml:space="preserve">
+    <value>Renault-Balland</value>
+  </data>
+  <data name="Turret_2_AMX_30_prototype" xml:space="preserve">
+    <value>AMX 30 A pré-série</value>
+  </data>
+  <data name="Turret_2_AMX_M4_1945" xml:space="preserve">
+    <value>AMX M4 mle. 45</value>
+  </data>
+  <data name="Turret_2_AMX_Ob_Am105" xml:space="preserve">
+    <value>AMX 105 AM mle. 47 modifié</value>
+  </data>
+  <data name="Turret_2_ARL_44" xml:space="preserve">
+    <value>ARL 44</value>
+  </data>
+  <data name="Turret_2_B1" xml:space="preserve">
+    <value>B1 APX 4</value>
+  </data>
+  <data name="Turret_2_BDR_G1B" xml:space="preserve">
+    <value>FCM F1</value>
+  </data>
+  <data name="Turret_2_D1_2" xml:space="preserve">
+    <value>Schneider Tourelle 2</value>
+  </data>
+  <data name="Turret_2_D2" xml:space="preserve">
+    <value>D2 APX 4</value>
+  </data>
+  <data name="Turret_2_Lorraine155_51" xml:space="preserve">
+    <value>Lorraine 155 mle. 51 bis</value>
+  </data>
+  <data name="Turret_2_RenaultFT" xml:space="preserve">
+    <value>Renault FT Berliet</value>
+  </data>
+  <data name="Turret_2_RenaultR35" xml:space="preserve">
+    <value>APX-R1</value>
+  </data>
+  <data name="Turret_2_Renault_G1R" xml:space="preserve">
+    <value>FCM F1 R</value>
+  </data>
+  <data name="Turret_2_SARL42" xml:space="preserve">
+    <value>ARL 42</value>
+  </data>
+  <data name="Turret_2_Somua_S35" xml:space="preserve">
+    <value>ARL 2C</value>
+  </data>
+  <data name="_100mm_FrtPrf1945" xml:space="preserve">
+    <value>Frt.Prf. mle. 1945</value>
+  </data>
+  <data name="_100mm_OE_mle_1930" xml:space="preserve">
+    <value>OE mle. 1930</value>
+  </data>
+  <data name="_100mm_Prf1940" xml:space="preserve">
+    <value>Prf. mle. 1940</value>
+  </data>
+  <data name="_100mm_SA_47" xml:space="preserve">
+    <value>100 mm SA47</value>
+  </data>
+  <data name="_100mm_SA_47_AC" xml:space="preserve">
+    <value>100 mm AC SA47</value>
+  </data>
+  <data name="_105_leFH18B2" xml:space="preserve">
+    <value>105 leFH18B2</value>
+  </data>
+  <data name="_105_leFH18B2_descr" xml:space="preserve">
+    <value>В марте 1941 компания Rheinmetall-Borsig заказала переоборудование 16 трофейных танков B1 Bis в САУ. Из-за отсутствия исправных танков работа началась только в конце 1941 года. Машины были приняты на вооружение в 1942 году.</value>
+  </data>
+  <data name="_105_leFH18B2_short" xml:space="preserve">
+    <value>leFH18B2</value>
+  </data>
+  <data name="_105mmGr39H1A" xml:space="preserve">
+    <value>Gr. 39 Hl/B</value>
+  </data>
+  <data name="_105mm_APCR_OFL_E1" xml:space="preserve">
+    <value>OFL-105-57</value>
+  </data>
+  <data name="_105mm_APCR_OFL_E1_fallout" xml:space="preserve">
+    <value>OFL-105-57 (П)</value>
+  </data>
+  <data name="_105mm_CN_105_57" xml:space="preserve">
+    <value>105 mm mle. 57 (D. 1504)</value>
+  </data>
+  <data name="_105mm_CN_105_57_fallout" xml:space="preserve">
+    <value>105 mm mle. 57 (D. 1504)</value>
+  </data>
+  <data name="_105mm_D1504_L51" xml:space="preserve">
+    <value>105 mm D1504 L/51</value>
+  </data>
+  <data name="_105mm_FrtPrf1943" xml:space="preserve">
+    <value>Frt.Prf. mle. 1943</value>
+  </data>
+  <data name="_105mm_HEAT_OCC_F1" xml:space="preserve">
+    <value>OCC-105-57</value>
+  </data>
+  <data name="_105mm_HEAT_OCC_F1_fallout" xml:space="preserve">
+    <value>OCC-105-57 (П)</value>
+  </data>
+  <data name="_105mm_HE_OE_F1" xml:space="preserve">
+    <value>OE-105-57</value>
+  </data>
+  <data name="_105mm_HE_OE_F1_fallout" xml:space="preserve">
+    <value>OE-105-57 (П)</value>
+  </data>
+  <data name="_105mm_OCC_105_D1504_L51" xml:space="preserve">
+    <value>OFL-105 D1504 L/51</value>
+  </data>
+  <data name="_105mm_OCC_105_F1" xml:space="preserve">
+    <value>OCC-105-F1</value>
+  </data>
+  <data name="_105mm_OCO_mle._1936" xml:space="preserve">
+    <value>OCO mle. 1936</value>
+  </data>
+  <data name="_105mm_OE_105_Mle_60" xml:space="preserve">
+    <value>OE-105-Mle. 60</value>
+  </data>
+  <data name="_105mm_OE_105_Mle_60_D1504_L51" xml:space="preserve">
+    <value>OE-105-Mle. 60 D1504 L/51</value>
+  </data>
+  <data name="_105mm_OE_mle_1920" xml:space="preserve">
+    <value>OE mle. 1920</value>
+  </data>
+  <data name="_105mm_OE_mle_1924" xml:space="preserve">
+    <value>OE mle. 1924</value>
+  </data>
+  <data name="_105mm_OE_mle_1930" xml:space="preserve">
+    <value>OE mle. 1930</value>
+  </data>
+  <data name="_105mm_OFL_105_D1504_L51" xml:space="preserve">
+    <value>OFL-105 D1504 L/51</value>
+  </data>
+  <data name="_105mm_OFL_105_F1" xml:space="preserve">
+    <value>OFL-105-F1</value>
+  </data>
+  <data name="_105mm_Prf1940" xml:space="preserve">
+    <value>Prf. mle. 1940</value>
+  </data>
+  <data name="_105mm_PzGr39K" xml:space="preserve">
+    <value>Pzgr. 39K</value>
+  </data>
+  <data name="_105mm_Sprg_K" xml:space="preserve">
+    <value>Sprgr. K</value>
+  </data>
+  <data name="_105mm_canon_13TR" xml:space="preserve">
+    <value>105 mm Canon 13TR</value>
+  </data>
+  <data name="_105mm_leFH18_L28" xml:space="preserve">
+    <value>10,5 cm le.F.H. 18 L/28</value>
+  </data>
+  <data name="_105mm_mle_F1" xml:space="preserve">
+    <value>105 mm mle. F1</value>
+  </data>
+  <data name="_120mm_FrtPrf1945" xml:space="preserve">
+    <value>Frt.Prf. mle. 1945</value>
+  </data>
+  <data name="_120mm_FrtPrf1945_fallout" xml:space="preserve">
+    <value>Frt.Prf. mle. 1945 A</value>
+  </data>
+  <data name="_120mm_OE_mle_1930" xml:space="preserve">
+    <value>OE mle. 1930</value>
+  </data>
+  <data name="_120mm_OE_mle_1930_fallout" xml:space="preserve">
+    <value>OE mle. 1930 A</value>
+  </data>
+  <data name="_120mm_Prf1943" xml:space="preserve">
+    <value>Prf. mle. 1943</value>
+  </data>
+  <data name="_120mm_Prf1943_fallout" xml:space="preserve">
+    <value>Prf. mle. 1943 A</value>
+  </data>
+  <data name="_120mm_SA_46" xml:space="preserve">
+    <value>120 mm SA46</value>
+  </data>
+  <data name="_120mm_SA_46_AC" xml:space="preserve">
+    <value>120 mm AC SA46</value>
+  </data>
+  <data name="_120mm_SA_46_fallout" xml:space="preserve">
+    <value>120 mm SA46</value>
+  </data>
+  <data name="_13.2mm_Balle_P." xml:space="preserve">
+    <value>Balle P.</value>
+  </data>
+  <data name="_13.2mm_Balle_T.P." xml:space="preserve">
+    <value>Balle T.P.</value>
+  </data>
+  <data name="_13.2mm_Hotchkiss_mle._1930" xml:space="preserve">
+    <value>13.2 mm Hotchkiss mle. 1930</value>
+  </data>
+  <data name="_13.2mm_Hotchkiss_mle._1930_short" xml:space="preserve">
+    <value>13.2 mm Hotchkiss</value>
+  </data>
+  <data name="_155_OE_mle_1956" xml:space="preserve">
+    <value>OE mle. 1956</value>
+  </data>
+  <data name="_155mm_AP-T_T368" xml:space="preserve">
+    <value>AP-T T368</value>
+  </data>
+  <data name="_155mm_HEAT_T267" xml:space="preserve">
+    <value>HEAT T267</value>
+  </data>
+  <data name="_155mm_HE_T58" xml:space="preserve">
+    <value>HE T58</value>
+  </data>
+  <data name="_155mm_OCO_mle_1944" xml:space="preserve">
+    <value>OCO mle. 1944</value>
+  </data>
+  <data name="_155mm_OE_M101M4" xml:space="preserve">
+    <value>OE M101M4</value>
+  </data>
+  <data name="_155mm_OE_M101M6" xml:space="preserve">
+    <value>OE M101M6</value>
+  </data>
+  <data name="_155mm_OE_mle_1917" xml:space="preserve">
+    <value>OE mle. 1917</value>
+  </data>
+  <data name="_155mm_SA_58_AC" xml:space="preserve">
+    <value>155 mm AC SA58</value>
+  </data>
+  <data name="_17_pdr_Gan_MK.II" xml:space="preserve">
+    <value>17-pdr AT Gun Mk. II</value>
+  </data>
+  <data name="_25mm_Balle_T.P._mle._1928" xml:space="preserve">
+    <value>Balle T.P. mle. 1928</value>
+  </data>
+  <data name="_25mm_Balle_T.P._mle._1934" xml:space="preserve">
+    <value>Balle T.P. mle. 1934</value>
+  </data>
+  <data name="_25mm_Balle_T.P._mle._1934P" xml:space="preserve">
+    <value>Balle T.P. mle. 1934P</value>
+  </data>
+  <data name="_25mm_Balle_T.P._mle._1939P" xml:space="preserve">
+    <value>Balle T.P. mle. 1939P</value>
+  </data>
+  <data name="_25mm_Canon_Raccourci_Mle.1934" xml:space="preserve">
+    <value>25 mm Canon Raccourci mle. 1934</value>
+  </data>
+  <data name="_25mm_Canon_Raccourci_Mle.1934_short" xml:space="preserve">
+    <value>25 mm Raccourci
+mle. 1934</value>
+  </data>
+  <data name="_25mm_antichar_SA-L_mle_1934" xml:space="preserve">
+    <value>25 mm AC SA-L mle. 1934</value>
+  </data>
+  <data name="_25mm_antichar_SA-L_mle_1934_short" xml:space="preserve">
+    <value>25 mm AC SA-L
+mle. 1934</value>
+  </data>
+  <data name="_25mm_antichar_SA-L_mle_1937" xml:space="preserve">
+    <value>25 mm AC SA-L mle. 1937</value>
+  </data>
+  <data name="_25mm_antichar_SA-L_mle_1937_short" xml:space="preserve">
+    <value>25 mm AC SA-L
+mle. 1937</value>
+  </data>
+  <data name="_25mm_automatique_mle_1936" xml:space="preserve">
+    <value>25 mm automatique mle. 1936</value>
+  </data>
+  <data name="_25mm_automatique_mle_1936_short" xml:space="preserve">
+    <value>25 mm automatique
+mle. 1936</value>
+  </data>
+  <data name="_37mm_APX_SA18" xml:space="preserve">
+    <value>37 mm APX SA18</value>
+  </data>
+  <data name="_37mm_FrtPrf1935" xml:space="preserve">
+    <value>Frt.Prf. mle. 1935</value>
+  </data>
+  <data name="_37mm_OE_mle._1916" xml:space="preserve">
+    <value>OE mle. 1916</value>
+  </data>
+  <data name="_37mm_Odr_mle._1932" xml:space="preserve">
+    <value>ODR mle. 1932</value>
+  </data>
+  <data name="_37mm_Odr_mle._1935" xml:space="preserve">
+    <value>ODR mle. 1935</value>
+  </data>
+  <data name="_37mm_Odr_mle._1939" xml:space="preserve">
+    <value>ODR mle. 1939</value>
+  </data>
+  <data name="_37mm_Oe_mle._1932" xml:space="preserve">
+    <value>OE mle. 1932</value>
+  </data>
+  <data name="_37mm_SA38" xml:space="preserve">
+    <value>37 mm SA38</value>
+  </data>
+  <data name="_47mm_Odr_mle._1892" xml:space="preserve">
+    <value>ODR mle. 1892</value>
+  </data>
+  <data name="_47mm_Odr_mle._1932" xml:space="preserve">
+    <value>ODR mle. 1932</value>
+  </data>
+  <data name="_47mm_Odr_mle._1935" xml:space="preserve">
+    <value>ODR mle. 1935</value>
+  </data>
+  <data name="_47mm_Odr_mle._1936" xml:space="preserve">
+    <value>ODR mle. 1936</value>
+  </data>
+  <data name="_47mm_Odr_mle_1935_b" xml:space="preserve">
+    <value>ODR mle. 1935 Bref</value>
+  </data>
+  <data name="_47mm_Oe_mle._1932" xml:space="preserve">
+    <value>OE mle. 1932</value>
+  </data>
+  <data name="_47mm_Oe_type_D" xml:space="preserve">
+    <value>OE type D</value>
+  </data>
+  <data name="_47mm_SA-L_Mle.37" xml:space="preserve">
+    <value>47 mm SA-L mle. 1937</value>
+  </data>
+  <data name="_47mm_SA34" xml:space="preserve">
+    <value>47 mm SA34</value>
+  </data>
+  <data name="_47mm_SA35" xml:space="preserve">
+    <value>47 mm SA35</value>
+  </data>
+  <data name="_47mm_SA37" xml:space="preserve">
+    <value>47 mm SA37</value>
+  </data>
+  <data name="_47mm_SA37_ameliore" xml:space="preserve">
+    <value>47 mm SA37 amélioré</value>
+  </data>
+  <data name="_57mm_6_pdr_AT_Gun_Mk_IV" xml:space="preserve">
+    <value>6-pdr AT Gun Mk. IV</value>
+  </data>
+  <data name="_57mm_6_pdr_AT_Gun_Mk_IV_short" xml:space="preserve">
+    <value>6-pdr AT Gun Mk. IV</value>
+  </data>
+  <data name="_57mm_AC_canon_L100" xml:space="preserve">
+    <value>57 mm L/100</value>
+  </data>
+  <data name="_57mm_L100_AP" xml:space="preserve">
+    <value>AP</value>
+  </data>
+  <data name="_57mm_L100_APCR" xml:space="preserve">
+    <value>APCR</value>
+  </data>
+  <data name="_6F11SRY" xml:space="preserve">
+    <value>Baudouin 6F 11 SRY</value>
+  </data>
+  <data name="_6pdr_APCR_MK_1T" xml:space="preserve">
+    <value>APCR Mk. 1T</value>
+  </data>
+  <data name="_6pdr_AP_MK_8T" xml:space="preserve">
+    <value>AP Mk. 8T</value>
+  </data>
+  <data name="_75mm_APX" xml:space="preserve">
+    <value>75 mm APX mle. 1938</value>
+  </data>
+  <data name="_75mm_FrtPrf1940" xml:space="preserve">
+    <value>Frt.Prf. mle. 1940</value>
+  </data>
+  <data name="_75mm_FrtPrf1944" xml:space="preserve">
+    <value>Frt.Prf. mle. 1944</value>
+  </data>
+  <data name="_75mm_Long_44" xml:space="preserve">
+    <value>75 mm SA44</value>
+  </data>
+  <data name="_75mm_Long_44_AC" xml:space="preserve">
+    <value>75 mm AC SA44</value>
+  </data>
+  <data name="_75mm_OCO_mle._1926" xml:space="preserve">
+    <value>OCO mle. 1926</value>
+  </data>
+  <data name="_75mm_OE_mle_1915" xml:space="preserve">
+    <value>OE mle. 1915</value>
+  </data>
+  <data name="_75mm_OE_mle_1924" xml:space="preserve">
+    <value>OE mle. 1924</value>
+  </data>
+  <data name="_75mm_Odr_mle.1910" xml:space="preserve">
+    <value>ODR mle. 1910</value>
+  </data>
+  <data name="_75mm_PaK_40_2" xml:space="preserve">
+    <value>7,5 cm Pak 40/2</value>
+  </data>
+  <data name="_75mm_Prf1926" xml:space="preserve">
+    <value>Prf. mle. 1926</value>
+  </data>
+  <data name="_75mm_Prf1930" xml:space="preserve">
+    <value>Prf. mle. 1930</value>
+  </data>
+  <data name="_75mm_Pzgr.40" xml:space="preserve">
+    <value>Pzgr. 40</value>
+  </data>
+  <data name="_75mm_Pzgr39" xml:space="preserve">
+    <value>Pzgr. 39</value>
+  </data>
+  <data name="_75mm_SA32" xml:space="preserve">
+    <value>75 mm SA32</value>
+  </data>
+  <data name="_75mm_SA49_L48" xml:space="preserve">
+    <value>75 mm SA49</value>
+  </data>
+  <data name="_75mm_SA50" xml:space="preserve">
+    <value>75 mm SA50</value>
+  </data>
+  <data name="_75mm_Sprg.18" xml:space="preserve">
+    <value>Sprgr. 18</value>
+  </data>
+  <data name="_76.2_mm_APCBC_Mk.8T" xml:space="preserve">
+    <value>APCBC Mk. 8T</value>
+  </data>
+  <data name="_76.2_mm_AP_Mk.3T" xml:space="preserve">
+    <value>AP Mk. 3T</value>
+  </data>
+  <data name="_76.2_mm_HE_Mk._1T" xml:space="preserve">
+    <value>HE Mk. 1T</value>
+  </data>
+  <data name="_76mm_AP_M79" xml:space="preserve">
+    <value>AP M62</value>
+  </data>
+  <data name="_76mm_Gun_M1A1" xml:space="preserve">
+    <value>76 mm Gun M1A1</value>
+  </data>
+  <data name="_76mm_HE_M42A1" xml:space="preserve">
+    <value>HE M42A1</value>
+  </data>
+  <data name="_76mm_HVAP_M93" xml:space="preserve">
+    <value>HVAP M93</value>
+  </data>
+  <data name="_76mm_OCO_mle._1941" xml:space="preserve">
+    <value>OCO mle. 1941</value>
+  </data>
+  <data name="_76mm_OEO_mle._1917" xml:space="preserve">
+    <value>OEO mle. 1917</value>
+  </data>
+  <data name="_76mm_Schneider" xml:space="preserve">
+    <value>75 mm Blockhaus Schneider</value>
+  </data>
+  <data name="_90mm_D914" xml:space="preserve">
+    <value>90 mm D. 915</value>
+  </data>
+  <data name="_90mm_F3" xml:space="preserve">
+    <value>90 mm F3</value>
+  </data>
+  <data name="_90mm_FrtPrf1944" xml:space="preserve">
+    <value>Frt.Prf. mle. 1944</value>
+  </data>
+  <data name="_90mm_OE_mle_1924" xml:space="preserve">
+    <value>OE mle. 1924</value>
+  </data>
+  <data name="_90mm_Prf1941" xml:space="preserve">
+    <value>Prf. mle. 1941</value>
+  </data>
+  <data name="_90mm_canon_DCA_30" xml:space="preserve">
+    <value>90 mm DCA 30</value>
+  </data>
+  <data name="_90mm_canon_DCA_30_CA" xml:space="preserve">
+    <value>90 mm AC canon DCA 30</value>
+  </data>
+  <data name="_90mm_canon_DCA_30_CA_short" xml:space="preserve">
+    <value>90 mm AC canon
+DCA 30</value>
+  </data>
+  <data name="_90mm_canon_DCA_45" xml:space="preserve">
+    <value>90 mm DCA 45</value>
+  </data>
+  <data name="_90mm_canon_DCA_45_AC" xml:space="preserve">
+    <value>90 mm AC DCA 45</value>
+  </data>
+  <data name="_90mm_canon_DCA_45_AC_A" xml:space="preserve">
+    <value>90 mm AC DCA 45</value>
+  </data>
+  <data name="_Hotchkiss_H35" xml:space="preserve">
+    <value>Hotchkiss H35</value>
+  </data>
+  <data name="_M_107" xml:space="preserve">
+    <value>HE M107</value>
+  </data>
+</root>

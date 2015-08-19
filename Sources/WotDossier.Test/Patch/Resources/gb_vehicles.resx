@@ -1,0 +1,1877 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AEC" xml:space="preserve">
+    <value>2x AEC</value>
+  </data>
+  <data name="AEC_A189" xml:space="preserve">
+    <value>AEC A189</value>
+  </data>
+  <data name="AEC_A1909" xml:space="preserve">
+    <value>AEC A190</value>
+  </data>
+  <data name="AEC_Type_179" xml:space="preserve">
+    <value>AEC Type 179</value>
+  </data>
+  <data name="Alarm_flags" xml:space="preserve">
+    <value>«Сигнальные флажки»</value>
+  </data>
+  <data name="Armstrong-Siddeley" xml:space="preserve">
+    <value>2x Armstrong Siddeley</value>
+  </data>
+  <data name="British_Wireless_set_N19" xml:space="preserve">
+    <value>WS No. 19 Special</value>
+  </data>
+  <data name="C42" xml:space="preserve">
+    <value>SR C42</value>
+  </data>
+  <data name="C45" xml:space="preserve">
+    <value>SR C45</value>
+  </data>
+  <data name="C45A" xml:space="preserve">
+    <value>SR C45</value>
+  </data>
+  <data name="Chassis_GB01_Medium_Mark_I" xml:space="preserve">
+    <value>Vickers Medium Mk. I</value>
+  </data>
+  <data name="Chassis_GB01_Medium_Mark_I_2" xml:space="preserve">
+    <value>Vickers Medium Mk. IA*</value>
+  </data>
+  <data name="Chassis_GB03_Cruiser_Mk_I" xml:space="preserve">
+    <value>A9 Mk. I</value>
+  </data>
+  <data name="Chassis_GB03_Cruiser_Mk_I_2" xml:space="preserve">
+    <value>A9 Mk. II</value>
+  </data>
+  <data name="Chassis_GB04_Valentine" xml:space="preserve">
+    <value>Valentine Mk. I</value>
+  </data>
+  <data name="Chassis_GB04_Valentine_2" xml:space="preserve">
+    <value>Valentine Mk. VI</value>
+  </data>
+  <data name="Chassis_GB05_Vickers_Medium_Mk_II" xml:space="preserve">
+    <value>Vickers Medium Mk. II</value>
+  </data>
+  <data name="Chassis_GB05_Vickers_Medium_Mk_II_2" xml:space="preserve">
+    <value>Vickers Medium Mk. IIA</value>
+  </data>
+  <data name="Chassis_GB06_Vickers_Medium_Mk_III" xml:space="preserve">
+    <value>Vickers Medium А6Е1</value>
+  </data>
+  <data name="Chassis_GB06_Vickers_Medium_Mk_III_2" xml:space="preserve">
+    <value>Vickers Medium А6Е3</value>
+  </data>
+  <data name="Chassis_GB07_Matilda" xml:space="preserve">
+    <value>Matilda Mk. II</value>
+  </data>
+  <data name="Chassis_GB07_Matilda_2" xml:space="preserve">
+    <value>Matilda Mk. IIA</value>
+  </data>
+  <data name="Chassis_GB08_Churchill_I" xml:space="preserve">
+    <value>Churchill I</value>
+  </data>
+  <data name="Chassis_GB08_Churchill_I_2" xml:space="preserve">
+    <value>Churchill III</value>
+  </data>
+  <data name="Chassis_GB09_Churchill_VII" xml:space="preserve">
+    <value>Churchill IV</value>
+  </data>
+  <data name="Chassis_GB09_Churchill_VII_2" xml:space="preserve">
+    <value>Churchill VII</value>
+  </data>
+  <data name="Chassis_GB10_Black_Prince" xml:space="preserve">
+    <value>Black Prince</value>
+  </data>
+  <data name="Chassis_GB10_Black_Prince_2" xml:space="preserve">
+    <value>Black Prince Mk. II</value>
+  </data>
+  <data name="Chassis_GB11_Caernarvon" xml:space="preserve">
+    <value>FV221</value>
+  </data>
+  <data name="Chassis_GB11_Caernarvon_2" xml:space="preserve">
+    <value>FV221A</value>
+  </data>
+  <data name="Chassis_GB12_Conqueror" xml:space="preserve">
+    <value>FV214</value>
+  </data>
+  <data name="Chassis_GB12_Conqueror_2" xml:space="preserve">
+    <value>FV214А</value>
+  </data>
+  <data name="Chassis_GB13_FV215b" xml:space="preserve">
+    <value>FV215</value>
+  </data>
+  <data name="Chassis_GB14_M2" xml:space="preserve">
+    <value>M2A1</value>
+  </data>
+  <data name="Chassis_GB14_M2_2" xml:space="preserve">
+    <value>M2A4</value>
+  </data>
+  <data name="Chassis_GB15_Stuart_I" xml:space="preserve">
+    <value>Stuart I</value>
+  </data>
+  <data name="Chassis_GB15_Stuart_I_2" xml:space="preserve">
+    <value>Stuart IV</value>
+  </data>
+  <data name="Chassis_GB17_Grant_I" xml:space="preserve">
+    <value>Grant I</value>
+  </data>
+  <data name="Chassis_GB17_Grant_I_2" xml:space="preserve">
+    <value>Grant II</value>
+  </data>
+  <data name="Chassis_GB19_Sherman_Firefly" xml:space="preserve">
+    <value>Sherman IC</value>
+  </data>
+  <data name="Chassis_GB19_Sherman_Firefly_2" xml:space="preserve">
+    <value>Sherman VC</value>
+  </data>
+  <data name="Chassis_GB20_Crusader" xml:space="preserve">
+    <value>Crusader Mk. I</value>
+  </data>
+  <data name="Chassis_GB20_Crusader_2" xml:space="preserve">
+    <value>Crusader Mk. III</value>
+  </data>
+  <data name="Chassis_GB21_Cromwell" xml:space="preserve">
+    <value>A27L</value>
+  </data>
+  <data name="Chassis_GB21_Cromwell_2" xml:space="preserve">
+    <value>A27M</value>
+  </data>
+  <data name="Chassis_GB22_Comet" xml:space="preserve">
+    <value>A34</value>
+  </data>
+  <data name="Chassis_GB22_Comet_2" xml:space="preserve">
+    <value>A34A</value>
+  </data>
+  <data name="Chassis_GB23_Centurion" xml:space="preserve">
+    <value>Centurion Mk. I</value>
+  </data>
+  <data name="Chassis_GB23_Centurion_2" xml:space="preserve">
+    <value>Centurion Mk. III</value>
+  </data>
+  <data name="Chassis_GB24_Centurion_Mk3" xml:space="preserve">
+    <value>Centurion Mk. 7</value>
+  </data>
+  <data name="Chassis_GB24_Centurion_Mk3_2" xml:space="preserve">
+    <value>Centurion Mk. 9</value>
+  </data>
+  <data name="Chassis_GB25_Loyd_Carrier" xml:space="preserve">
+    <value>Loyd Carrier Mk. I</value>
+  </data>
+  <data name="Chassis_GB25_Loyd_Carrier_2" xml:space="preserve">
+    <value>Loyd Carrier Mk. II</value>
+  </data>
+  <data name="Chassis_GB26_Birch_Gun" xml:space="preserve">
+    <value>Birch Gun Mk. I</value>
+  </data>
+  <data name="Chassis_GB26_Birch_Gun_2" xml:space="preserve">
+    <value>Birch Gun Mk. II</value>
+  </data>
+  <data name="Chassis_GB27_Sexton" xml:space="preserve">
+    <value>Sexton</value>
+  </data>
+  <data name="Chassis_GB27_Sexton_2" xml:space="preserve">
+    <value>Sexton II</value>
+  </data>
+  <data name="Chassis_GB28_Bishop" xml:space="preserve">
+    <value>Valentine Mk. II</value>
+  </data>
+  <data name="Chassis_GB28_Bishop_2" xml:space="preserve">
+    <value>Bishop</value>
+  </data>
+  <data name="Chassis_GB29_Crusader_5inch" xml:space="preserve">
+    <value>Crusader Mk. II</value>
+  </data>
+  <data name="Chassis_GB29_Crusader_5inch_2" xml:space="preserve">
+    <value>Crusader 5.5-in. SP</value>
+  </data>
+  <data name="Chassis_GB30_FV3805" xml:space="preserve">
+    <value>FV3805</value>
+  </data>
+  <data name="Chassis_GB30_FV3805_2" xml:space="preserve">
+    <value>FV3806</value>
+  </data>
+  <data name="Chassis_GB31_Conqueror_Gun" xml:space="preserve">
+    <value>Conqueror Gun Carriage</value>
+  </data>
+  <data name="Chassis_GB32_Tortoise" xml:space="preserve">
+    <value>Tortoise</value>
+  </data>
+  <data name="Chassis_GB32_Tortoise_2" xml:space="preserve">
+    <value>Tortoise Mk. 2</value>
+  </data>
+  <data name="Chassis_GB39_Universal_CarrierQF2" xml:space="preserve">
+    <value>Universal Carrier Mk. I</value>
+  </data>
+  <data name="Chassis_GB39_Universal_CarrierQF2_2" xml:space="preserve">
+    <value>Universal Carrier Mk. II</value>
+  </data>
+  <data name="Chassis_GB40_Gun_Carrier_Churchill" xml:space="preserve">
+    <value>Churchill Gun Carrier</value>
+  </data>
+  <data name="Chassis_GB40_Gun_Carrier_Churchill_2" xml:space="preserve">
+    <value>Churchill Gun Carrier Mk. II</value>
+  </data>
+  <data name="Chassis_GB41_Challenger" xml:space="preserve">
+    <value>Challenger</value>
+  </data>
+  <data name="Chassis_GB41_Challenger_2" xml:space="preserve">
+    <value>Avenger</value>
+  </data>
+  <data name="Chassis_GB42_Valentine_AT" xml:space="preserve">
+    <value>Valentine AT Mk. I</value>
+  </data>
+  <data name="Chassis_GB42_Valentine_AT_2" xml:space="preserve">
+    <value>Valentine AT Mk. II</value>
+  </data>
+  <data name="Chassis_GB44_Archer" xml:space="preserve">
+    <value>Archer early</value>
+  </data>
+  <data name="Chassis_GB44_Archer_2" xml:space="preserve">
+    <value>Archer late</value>
+  </data>
+  <data name="Chassis_GB45_Achilles_IIC" xml:space="preserve">
+    <value>Achilles I</value>
+  </data>
+  <data name="Chassis_GB45_Achilles_IIC_2" xml:space="preserve">
+    <value>Achilles IIC</value>
+  </data>
+  <data name="Chassis_GB48_FV215b_183" xml:space="preserve">
+    <value>FV215b</value>
+  </data>
+  <data name="Chassis_GB50_Sherman_III" xml:space="preserve">
+    <value>Sherman III</value>
+  </data>
+  <data name="Chassis_GB50_Sherman_III_2" xml:space="preserve">
+    <value>Sherman IIIA</value>
+  </data>
+  <data name="Chassis_GB51_Excelsior" xml:space="preserve">
+    <value>Excelsior</value>
+  </data>
+  <data name="Chassis_GB52_A45" xml:space="preserve">
+    <value>FV201 (A45) Universal Tank</value>
+  </data>
+  <data name="Chassis_GB57_Alecto" xml:space="preserve">
+    <value>Alecto Mk. I</value>
+  </data>
+  <data name="Chassis_GB57_Alecto_2" xml:space="preserve">
+    <value>Alecto Mk. IV</value>
+  </data>
+  <data name="Chassis_GB58_Cruiser_Mk_III" xml:space="preserve">
+    <value>Cruiser Mk. III</value>
+  </data>
+  <data name="Chassis_GB58_Cruiser_Mk_III_2" xml:space="preserve">
+    <value>Cruiser Mk. III*</value>
+  </data>
+  <data name="Chassis_GB59_Cruiser_Mk_IV" xml:space="preserve">
+    <value>Cruiser Mk. IV</value>
+  </data>
+  <data name="Chassis_GB59_Cruiser_Mk_IV_2" xml:space="preserve">
+    <value>Cruiser Mk. IVA</value>
+  </data>
+  <data name="Chassis_GB60_Covenanter" xml:space="preserve">
+    <value>Covenanter Mk. I</value>
+  </data>
+  <data name="Chassis_GB60_Covenanter_2" xml:space="preserve">
+    <value>Covenanter Mk. III</value>
+  </data>
+  <data name="Chassis_GB63_TOG_II" xml:space="preserve">
+    <value>TOG II*</value>
+  </data>
+  <data name="Chassis_GB68_Matilda_Black_Prince" xml:space="preserve">
+    <value>Matilda Black Prince</value>
+  </data>
+  <data name="Chassis_GB69_Cruiser_Mk_II" xml:space="preserve">
+    <value>A10 Mk. I</value>
+  </data>
+  <data name="Chassis_GB69_Cruiser_Mk_II_2" xml:space="preserve">
+    <value>A10 Mk. II</value>
+  </data>
+  <data name="Chassis_GB70_FV4202_105" xml:space="preserve">
+    <value>FV4202</value>
+  </data>
+  <data name="Chassis_GB70_N_FV4202_105" xml:space="preserve">
+    <value>FV4202</value>
+  </data>
+  <data name="Chassis_GB71_AT_15A" xml:space="preserve">
+    <value>AT 15A</value>
+  </data>
+  <data name="Chassis_GB72_AT15" xml:space="preserve">
+    <value>AT 15</value>
+  </data>
+  <data name="Chassis_GB72_AT15_2" xml:space="preserve">
+    <value>AT 15 Mk. II</value>
+  </data>
+  <data name="Chassis_GB73_AT2" xml:space="preserve">
+    <value>AT 2</value>
+  </data>
+  <data name="Chassis_GB73_AT2_2" xml:space="preserve">
+    <value>AT 2 Mk. II</value>
+  </data>
+  <data name="Chassis_GB74_AT8" xml:space="preserve">
+    <value>AT 8</value>
+  </data>
+  <data name="Chassis_GB74_AT8_2" xml:space="preserve">
+    <value>AT 8 Mk. II</value>
+  </data>
+  <data name="Chassis_GB75_AT7" xml:space="preserve">
+    <value>AT 7</value>
+  </data>
+  <data name="Chassis_GB75_AT7_2" xml:space="preserve">
+    <value>AT 7 Mk. II</value>
+  </data>
+  <data name="Chassis_GB76_Mk_VIC" xml:space="preserve">
+    <value>Light Mk. VIC</value>
+  </data>
+  <data name="Chassis_GB77_FV304" xml:space="preserve">
+    <value>FV304</value>
+  </data>
+  <data name="Chassis_GB77_FV304_2" xml:space="preserve">
+    <value>FV304 Mk. II</value>
+  </data>
+  <data name="Chassis_GB79_FV206" xml:space="preserve">
+    <value>FV206</value>
+  </data>
+  <data name="Chassis_GB79_FV206_2" xml:space="preserve">
+    <value>FV207</value>
+  </data>
+  <data name="Chassis_GB80_Charioteer" xml:space="preserve">
+    <value>Charioteer Mk. 6</value>
+  </data>
+  <data name="Chassis_GB80_Charioteer_2" xml:space="preserve">
+    <value>Charioteer Mk. 8</value>
+  </data>
+  <data name="Chassis_GB81_FV4004" xml:space="preserve">
+    <value>Interim Heavy Gun Tank</value>
+  </data>
+  <data name="Chassis_GB81_FV4004_2" xml:space="preserve">
+    <value>FV4004 Conway</value>
+  </data>
+  <data name="Chassis_GB83_FV4005" xml:space="preserve">
+    <value>FV4005 Stage II</value>
+  </data>
+  <data name="Chassis_GB85_Cromwell_Berlin" xml:space="preserve">
+    <value>Cromwell</value>
+  </data>
+  <data name="Chassis_Sexton_I" xml:space="preserve">
+    <value>Sexton I</value>
+  </data>
+  <data name="Chrysler_A57_multibank" xml:space="preserve">
+    <value>Chrysler A57 Multibank</value>
+  </data>
+  <data name="Continental_W-670-9A" xml:space="preserve">
+    <value>Continental W-670-9A</value>
+  </data>
+  <data name="Crysler_A57" xml:space="preserve">
+    <value>Chrysler A57</value>
+  </data>
+  <data name="Ford_GAA" xml:space="preserve">
+    <value>Ford GAA</value>
+  </data>
+  <data name="Ford_V8-220" xml:space="preserve">
+    <value>Ford V8-220</value>
+  </data>
+  <data name="Ford_V8-221" xml:space="preserve">
+    <value>Ford V8-221</value>
+  </data>
+  <data name="Ford_V8-239" xml:space="preserve">
+    <value>Ford V8-239</value>
+  </data>
+  <data name="GB01_Medium_Mark_I" xml:space="preserve">
+    <value>Vickers Medium Mk. I</value>
+  </data>
+  <data name="GB01_Medium_Mark_I_descr" xml:space="preserve">
+    <value>Первый британский серийный танк с размещением вооружения в башне кругового вращения. Разработка началась в 1922 году компанией Vickers. Выпускался серийно с 1923 по 1925 год. Было выпущено несколько десятков штук. Состоял на вооружении армии Великобритании с 1924 по 1938 год.</value>
+  </data>
+  <data name="GB01_Medium_Mark_I_short" xml:space="preserve">
+    <value>Medium I</value>
+  </data>
+  <data name="GB03_Cruiser_Mk_I" xml:space="preserve">
+    <value>Cruiser Mk. I</value>
+  </data>
+  <data name="GB03_Cruiser_Mk_I_descr" xml:space="preserve">
+    <value>Первый крейсерский танк Великобритании. Разработка началась в 1934 году компанией Vickers. Выпускался серийно с 1936 по 1937 год. Всего было выпущено 125 машин.</value>
+  </data>
+  <data name="GB03_Cruiser_Mk_I_short" xml:space="preserve">
+    <value>Cruiser I</value>
+  </data>
+  <data name="GB04_Valentine" xml:space="preserve">
+    <value>Valentine</value>
+  </data>
+  <data name="GB04_Valentine_descr" xml:space="preserve">
+    <value>Разработан в 1938 году компанией Vickers-Armstrong. Выпускался серийно с 1940 по 1944 год. Всего было выпущено 8275 машин разных модификаций. Являлся одним из наиболее удачных танков в своём классе.</value>
+  </data>
+  <data name="GB04_Valentine_short" xml:space="preserve">
+    <value>Valentine</value>
+  </data>
+  <data name="GB05_Vickers_Medium_Mk_II" xml:space="preserve">
+    <value>Vickers Medium Mk. II</value>
+  </data>
+  <data name="GB05_Vickers_Medium_Mk_II_descr" xml:space="preserve">
+    <value>Британский средний танк. Разработан в 1924–1925 годах компанией Vickers на базе среднего танка Vickers Medium Mark I. Выпускался серийно с 1925 по 1934 год. Всего было выпущено около 100 танков.</value>
+  </data>
+  <data name="GB05_Vickers_Medium_Mk_II_short" xml:space="preserve">
+    <value>Medium II</value>
+  </data>
+  <data name="GB06_Vickers_Medium_Mk_III" xml:space="preserve">
+    <value>Vickers Medium Mk. III</value>
+  </data>
+  <data name="GB06_Vickers_Medium_Mk_III_descr" xml:space="preserve">
+    <value>Британский средний танк, также известный как Vickers «16-tonners». С 1926 по 1931 год компания Vickers выпустила три прототипа. По некоторым данным, в 1933 году было выпущено три серийных танка, состоявших на вооружении британской армии до 1938 года. В боевых действиях танк не применялся.</value>
+  </data>
+  <data name="GB06_Vickers_Medium_Mk_III_short" xml:space="preserve">
+    <value>Medium III</value>
+  </data>
+  <data name="GB07_Matilda" xml:space="preserve">
+    <value>Matilda</value>
+  </data>
+  <data name="GB07_Matilda_descr" xml:space="preserve">
+    <value>Разработан в 1936–1938 годах. Всего до августа 1943 года выпущено 2987 танков. Единственный английский танк, применявшийся на протяжении всей Второй мировой войны.</value>
+  </data>
+  <data name="GB07_Matilda_short" xml:space="preserve">
+    <value>Matilda</value>
+  </data>
+  <data name="GB08_Churchill_I" xml:space="preserve">
+    <value>Churchill I</value>
+  </data>
+  <data name="GB08_Churchill_I_descr" xml:space="preserve">
+    <value>Прототип А22 был изготовлен компанией Vauxhall Motors осенью 1940 года. Первая партия серийных машин была выпущена летом 1941 года. Первые машины отличались от последующих модификаций отсутствием надгусеничных полок, формой вентилятора и наличием трёхдюймовой гаубицы в лобовом листе корпуса. Всего было выпущено 300 танков Churchill I.</value>
+  </data>
+  <data name="GB08_Churchill_I_short" xml:space="preserve">
+    <value>Churchill I</value>
+  </data>
+  <data name="GB09_Churchill_VII" xml:space="preserve">
+    <value>Churchill VII</value>
+  </data>
+  <data name="GB09_Churchill_VII_descr" xml:space="preserve">
+    <value>Модификация танка A22 с усиленной броневой защитой. Первые машины этого типа появились накануне высадки союзников в Нормандии. Послужил базой для создания огнемётного танка Churchill Crocodile.</value>
+  </data>
+  <data name="GB09_Churchill_VII_short" xml:space="preserve">
+    <value>Churchill VII</value>
+  </data>
+  <data name="GB10_Black_Prince" xml:space="preserve">
+    <value>Black Prince</value>
+  </data>
+  <data name="GB10_Black_Prince_descr" xml:space="preserve">
+    <value>Разработан в 1943–1945 гг. на базе танка Churchill. Корпус машины был расширен и удлинён для установки новой башни с 17-фунтовым орудием. Всего в 1944–1945 гг. было выпущено шесть прототипов Black Prince. Некоторые машины прошли испытания, но в боевых действиях не использовались.</value>
+  </data>
+  <data name="GB10_Black_Prince_short" xml:space="preserve">
+    <value>Black Prince</value>
+  </data>
+  <data name="GB11_Caernarvon" xml:space="preserve">
+    <value>Caernarvon</value>
+  </data>
+  <data name="GB11_Caernarvon_descr" xml:space="preserve">
+    <value>Разрабатывался с 1944 года в рамках создания нового танка поддержки пехоты. В 1952 году первый прототип прошёл испытания. На вооружении не состоял. Всего был выпущен 21 танк, некоторые из них в дальнейшем были переделаны в тяжёлые танки Conqueror.</value>
+  </data>
+  <data name="GB11_Caernarvon_short" xml:space="preserve">
+    <value>Caernarvon</value>
+  </data>
+  <data name="GB12_Conqueror" xml:space="preserve">
+    <value>Conqueror</value>
+  </data>
+  <data name="GB12_Conqueror_descr" xml:space="preserve">
+    <value>Разрабатывался с 1949 по 1952 год для противостояния новым советским тяжёлым танкам. За время серийного производства с 1955 по 1959 было выпущено 185 машин.</value>
+  </data>
+  <data name="GB12_Conqueror_short" xml:space="preserve">
+    <value>Conqueror</value>
+  </data>
+  <data name="GB13_FV215b" xml:space="preserve">
+    <value>FV215b</value>
+  </data>
+  <data name="GB13_FV215b_descr" xml:space="preserve">
+    <value>Аванпроект тяжёлого танка на базе Conqueror Mk. II. От серийной машины отличался задним расположением боевого отделения. Не было выпущено ни одного прототипа.</value>
+  </data>
+  <data name="GB14_M2" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="GB14_M2_descr" xml:space="preserve">
+    <value>Американский лёгкий танк. В Великобританию по ленд-лизу поставлялась модель М2А4, которая выпускалась с 1940 по 1942 год. Всего весной 1941 года в Великобританию было поставлено четыре танка этого типа.</value>
+  </data>
+  <data name="GB14_M2_short" xml:space="preserve">
+    <value>M2</value>
+  </data>
+  <data name="GB15_Stuart_I" xml:space="preserve">
+    <value>Stuart I-IV</value>
+  </data>
+  <data name="GB15_Stuart_I_descr" xml:space="preserve">
+    <value>Выпускался серийно с 1941 года. Поставлялся по ленд-лизу в Великобританию. Всего было поставлено 6889 машин различных модификаций от М3 до М5А1. По принятой в Великобритании системе обозначений танки М3 получали обозначение Stuart I, а танки М3А1 — Stuart III. Впервые использовались в бою в ноябре 1941 года в сражении у Сиди-Резег.</value>
+  </data>
+  <data name="GB17_Grant_I" xml:space="preserve">
+    <value>Grant</value>
+  </data>
+  <data name="GB17_Grant_I_descr" xml:space="preserve">
+    <value>Американский средний танк M3 первой серии. Был выпущен специально для поставки в Великобританию, где получил обозначение General Grant (Grant I).</value>
+  </data>
+  <data name="GB19_Sherman_Firefly" xml:space="preserve">
+    <value>Sherman Firefly</value>
+  </data>
+  <data name="GB19_Sherman_Firefly_descr" xml:space="preserve">
+    <value>Британский вариант американского танка М4 Sherman. Разработан в начале 1944 года. Основные отличия заключались в установке более мощного 17-фунтового орудия, размещении радиостанции и боекомплекта, отказе от курсового пулемёта, отсутствием места для ассистента механика-водителя. Всего в 1944–1945 гг. было выпущено около 2100–2300 машин всех модификаций.</value>
+  </data>
+  <data name="GB19_Sherman_Firefly_short" xml:space="preserve">
+    <value>Firefly</value>
+  </data>
+  <data name="GB20_Crusader" xml:space="preserve">
+    <value>Crusader</value>
+  </data>
+  <data name="GB20_Crusader_descr" xml:space="preserve">
+    <value>Разработан в 1938–1940 годах компанией Nuffield Mechanizations and Aero Ltd. В ходе серийного производства в 1941–1943 годах было выпущено более 5300 экземпляров танка всех модификаций. Наиболее активно использовался во время боёв в Северной Африке в 1941–1942 годах.</value>
+  </data>
+  <data name="GB20_Crusader_short" xml:space="preserve">
+    <value>Crusader</value>
+  </data>
+  <data name="GB21_Cromwell" xml:space="preserve">
+    <value>Cromwell</value>
+  </data>
+  <data name="GB21_Cromwell_descr" xml:space="preserve">
+    <value>Разработан в 1941–1942 годах компанией BRC&amp;W. Выпускался серийно с осени 1943 по 1945 год. Всего было выпущено 1070 танков всех модификаций. Активно использовался британскими войсками в северо-западной Европе в 1944–1945 годах.</value>
+  </data>
+  <data name="GB21_Cromwell_short" xml:space="preserve">
+    <value>Cromwell</value>
+  </data>
+  <data name="GB22_Comet" xml:space="preserve">
+    <value>Comet</value>
+  </data>
+  <data name="GB22_Comet_descr" xml:space="preserve">
+    <value>Британский танк периода Второй мировой войны, принимавший участие в боевых действиях. Дальнейшее развитие крейсерского танка Cromwell. С сентября 1944 года до конца 1945 года было выпущено 1186 машин.</value>
+  </data>
+  <data name="GB22_Comet_short" xml:space="preserve">
+    <value>Comet</value>
+  </data>
+  <data name="GB23_Centurion" xml:space="preserve">
+    <value>Centurion Mk. I</value>
+  </data>
+  <data name="GB23_Centurion_descr" xml:space="preserve">
+    <value>Разрабатывался с 1943 года в рамках концепции «универсального танка» для замены существующих крейсерских и пехотных танков. Принят на вооружение в 1947 году. В 1945-1946 годах было выпущено 100 машин этой модификации.</value>
+  </data>
+  <data name="GB23_Centurion_short" xml:space="preserve">
+    <value>Centurion I</value>
+  </data>
+  <data name="GB24_Centurion_Mk3" xml:space="preserve">
+    <value>Centurion Mk. 7/1</value>
+  </data>
+  <data name="GB24_Centurion_Mk3_descr" xml:space="preserve">
+    <value>Модернизированный компанией Лейланд Моторс вариант танка Centurion с увеличенным корпусом, доработанной компоновкой боевого отделения, увеличенным объёмом топливных баков и усиленным бронированием.</value>
+  </data>
+  <data name="GB24_Centurion_Mk3_short" xml:space="preserve">
+    <value>Centurion 7/1</value>
+  </data>
+  <data name="GB25_Loyd_Carrier" xml:space="preserve">
+    <value>Loyd Gun Carriage</value>
+  </data>
+  <data name="GB25_Loyd_Carrier_descr" xml:space="preserve">
+    <value>Аванпроект 76,2-мм орудия на шасси артиллерийского тягача Loyd Carrier. Разрабатывался в 1940-1941 гг. Прототип построен не был.</value>
+  </data>
+  <data name="GB25_Loyd_Carrier_short" xml:space="preserve">
+    <value>Loyd GC</value>
+  </data>
+  <data name="GB26_Birch_Gun" xml:space="preserve">
+    <value>Birch Gun</value>
+  </data>
+  <data name="GB26_Birch_Gun_descr" xml:space="preserve">
+    <value>Первая САУ, построенная в Великобритании. Разработка началась в 1923 году. Опытный образец был изготовлен в 1925 году на базе танка Vickers Medium Mark II. Всего было выпущено несколько прототипов, которые с конца 1925 года проходили войсковые испытания. Работы над САУ были свёрнуты в 1928 году из-за незаинтересованности военного руководства страны в машинах этого типа.</value>
+  </data>
+  <data name="GB26_Birch_Gun_short" xml:space="preserve">
+    <value>Birch Gun</value>
+  </data>
+  <data name="GB27_Sexton" xml:space="preserve">
+    <value>Sexton II</value>
+  </data>
+  <data name="GB27_Sexton_descr" xml:space="preserve">
+    <value>Разработана на базе танка Grizzli с использованием качающейся части 25-фунтовой английской полевой гаубицы. Серийно выпускалась на заводе Montreal Locomotive Works в Канаде. С 1943 по конец 1945 года было выпущено 2150 машин.</value>
+  </data>
+  <data name="GB27_Sexton_short" xml:space="preserve">
+    <value>Sexton II</value>
+  </data>
+  <data name="GB28_Bishop" xml:space="preserve">
+    <value>Bishop</value>
+  </data>
+  <data name="GB28_Bishop_descr" xml:space="preserve">
+    <value>Разработана в июне 1941 года компанией Birmingham Railway Carriage &amp; Wagon на шасси танка поддержки пехоты Valentine II. В 1942–1943 годах было выпущено 149 САУ. В целом машина оказалась неудачной. С 1943 года использовалась как учебная.</value>
+  </data>
+  <data name="GB28_Bishop_short" xml:space="preserve">
+    <value>Bishop</value>
+  </data>
+  <data name="GB29_Crusader_5inch" xml:space="preserve">
+    <value>Crusader 5.5-in. SP</value>
+  </data>
+  <data name="GB29_Crusader_5inch_descr" xml:space="preserve">
+    <value>Вариант установки 140-мм гаубицы на шасси танка Crusader. Работы над САУ ограничились созданием прототипа, который был выпущен вскоре после окончания Второй мировой войны. Серийно не выпускалась. На вооружении не состояла.</value>
+  </data>
+  <data name="GB29_Crusader_5inch_short" xml:space="preserve">
+    <value>Crusader SP</value>
+  </data>
+  <data name="GB30_FV3805" xml:space="preserve">
+    <value>FV3805</value>
+  </data>
+  <data name="GB30_FV3805_descr" xml:space="preserve">
+    <value>Вариант установки 140-мм гаубицы на шасси танка Centurion. В 1956 году было выпущено два прототипа. В 1960 году все работы над САУ были прекращены. На вооружении не состояла.</value>
+  </data>
+  <data name="GB30_FV3805_short" xml:space="preserve">
+    <value>FV3805</value>
+  </data>
+  <data name="GB31_Conqueror_Gun" xml:space="preserve">
+    <value>Conqueror Gun Carriage</value>
+  </data>
+  <data name="GB31_Conqueror_Gun_descr" xml:space="preserve">
+    <value>Аванпроект 234-мм гаубицы на шасси танка Conqueror. Существовал только в эскизах.</value>
+  </data>
+  <data name="GB31_Conqueror_Gun_short" xml:space="preserve">
+    <value>ConquerorGC</value>
+  </data>
+  <data name="GB32_Tortoise" xml:space="preserve">
+    <value>Tortoise</value>
+  </data>
+  <data name="GB32_Tortoise_descr" xml:space="preserve">
+    <value>Разработка штурмового танка началась в Великобритании в 1942 году. Проектные работы были завершены в феврале 1944 года. Было заказано 25 машин. Однако к осени 1947 года построили только пять танков.</value>
+  </data>
+  <data name="GB39_Universal_CarrierQF2" xml:space="preserve">
+    <value>Universal Carrier 2-pdr</value>
+  </data>
+  <data name="GB39_Universal_CarrierQF2_descr" xml:space="preserve">
+    <value>Universal Carrier был разработан в довоенный период и являлся основным бронетранспортёром Британского Содружества наций. С 1937 по 1945 год было выпущено 90 тысяч машин этого типа, которые использовались в качестве тягачей и транспортёров, а также в разведывательных целях. В 1940 году часть машин британского и канадского производства была оснащена 40-мм противотанковыми орудиями.</value>
+  </data>
+  <data name="GB39_Universal_CarrierQF2_short" xml:space="preserve">
+    <value>UC 2-pdr</value>
+  </data>
+  <data name="GB40_Gun_Carrier_Churchill" xml:space="preserve">
+    <value>Churchill Gun Carrier</value>
+  </data>
+  <data name="GB40_Gun_Carrier_Churchill_descr" xml:space="preserve">
+    <value>Машина была разработана на базе танка Churchill. В передней части корпуса размещалась рубка с трёхдюймовым орудием, которое экипаж обслуживал стоя. Первоначально было заказано 100 машин этого типа, однако впоследствии заказ был сокращён до 24 машин. В итоге в 1941–1942 гг. было выпущено 50 машин, которые никогда не участвовали в боевых действиях.</value>
+  </data>
+  <data name="GB40_Gun_Carrier_Churchill_short" xml:space="preserve">
+    <value>Churchill GC</value>
+  </data>
+  <data name="GB41_Challenger" xml:space="preserve">
+    <value>Challenger</value>
+  </data>
+  <data name="GB41_Challenger_descr" xml:space="preserve">
+    <value>ПТ-САУ была создана в 1942 году на базе удлинённого шасси танка Cromwell. Одним из её несомненных преимуществ являлась мощнейшая на тот момент британская 17-фунтовая танковая пушка, что позволяло A30 поражать любой танк противника на дистанции до 1000 метров. Среди недостатков ПТ-САУ можно отметить перегруженность шасси и внушительные габариты. За период серийного производства было выпущено всего около 200 машин.</value>
+  </data>
+  <data name="GB41_Challenger_short" xml:space="preserve">
+    <value>Challenger</value>
+  </data>
+  <data name="GB42_Valentine_AT" xml:space="preserve">
+    <value>Valentine AT</value>
+  </data>
+  <data name="GB42_Valentine_AT_descr" xml:space="preserve">
+    <value>Опытная противотанковая САУ. Орудие устанавливалось в средней части корпуса за щитовым прикрытием. После выпуска опытного экземпляра работы были прекращены в связи с началом проектирования на базе танка Valentine противотанковой САУ под 17-фунтовое орудие.</value>
+  </data>
+  <data name="GB44_Archer" xml:space="preserve">
+    <value>Archer</value>
+  </data>
+  <data name="GB44_Archer_descr" xml:space="preserve">
+    <value>Мощная легкобронированная ПТ-САУ, способная поражать любой танк противника на дистанции до 1000 метров. Из недостатков можно отметить невысокую скорость движения, что было вызвано малой удельной мощностью мотора и слабой балансирной подвеской. Несмотря на это, машина является примером удачного использования устаревшего шасси. В период с 1943 по 1945 год было выпущено 665 ПТ-САУ.</value>
+  </data>
+  <data name="GB44_Archer_short" xml:space="preserve">
+    <value>Archer</value>
+  </data>
+  <data name="GB45_Achilles_IIC" xml:space="preserve">
+    <value>Achilles</value>
+  </data>
+  <data name="GB45_Achilles_IIC_descr" xml:space="preserve">
+    <value>ПТ-САУ Achilles являлась английской модификацией американского истребителя танков M10 GMC. Штатное вооружение М10 было заменено на более мощное английское противотанковое орудие Ordnance Quick-Firing 17-pounder, что позволило самоходной установке успешно сражаться с немецкой техникой. В апреле 1944 года было начато перевооружение ПТ-САУ и до конца войны около 1100 машин было переоборудовано.</value>
+  </data>
+  <data name="GB45_Achilles_IIC_short" xml:space="preserve">
+    <value>Achilles</value>
+  </data>
+  <data name="GB48_FV215b_183" xml:space="preserve">
+    <value>FV215b (183)</value>
+  </data>
+  <data name="GB48_FV215b_183_descr" xml:space="preserve">
+    <value>Проект тяжёлой САУ, разработанной с использованием узлов и агрегатов Conqueror Mk.II. Отличительной особенностью машины было расположение орудия во вращающейся башне в кормовой части. После изготовления макета работы были свёрнуты.</value>
+  </data>
+  <data name="GB48_FV215b_183_short" xml:space="preserve">
+    <value>FV215b 183</value>
+  </data>
+  <data name="GB50_Sherman_III" xml:space="preserve">
+    <value>Sherman III</value>
+  </data>
+  <data name="GB50_Sherman_III_descr" xml:space="preserve">
+    <value>Американский средний танк М4А2 поставлялся по ленд-лизу в Великобританию, где получил обозначение Sherman III. Основной особенностью М4А2 был дизельный двигатель. Всего за годы войны в Великобританию было поставлено 5045 танков этого типа.</value>
+  </data>
+  <data name="GB50_Sherman_III_short" xml:space="preserve">
+    <value>Sherman III</value>
+  </data>
+  <data name="GB51_Excelsior" xml:space="preserve">
+    <value>Excelsior</value>
+  </data>
+  <data name="GB51_Excelsior_descr" xml:space="preserve">
+    <value>В конце 1942 года вооружение танка Churchill было признано недостаточным. В качестве нового пехотного танка были разработаны машины А31, А32 и А33. Последняя разрабатывалась компанией English Electric, а в разработке подвески принимала участие компания LMS. Всего были построены две опытные машины, значительно отличавшиеся друг от друга. Однако в 1943 году решение о снятии танка Churchill с производства было отменено и заказ на производство А33 выдан не был.</value>
+  </data>
+  <data name="GB52_A45" xml:space="preserve">
+    <value>FV201 (A45)</value>
+  </data>
+  <data name="GB52_A45_descr" xml:space="preserve">
+    <value>Разрабатывался с 1944 года компанией English Electric в рамках создания нового пехотного танка. Был призван заменить А43 Black Prince. Ряд деталей был унифицирован с А41 Centurion. В 1948 году начались ходовые испытания прототипа, оснащённого башней Centurion Mk. II и 17-фунтовым орудием, но из-за изменившейся концепции развития танковых войск на вооружение принят не был. Послужил основой для создания послевоенных тяжёлых танков.</value>
+  </data>
+  <data name="GB52_A45_short" xml:space="preserve">
+    <value>FV201 (A45)</value>
+  </data>
+  <data name="GB57_Alecto" xml:space="preserve">
+    <value>Alecto</value>
+  </data>
+  <data name="GB57_Alecto_descr" xml:space="preserve">
+    <value>Противотанковая САУ, разработанная на базе лёгкого танка Tetrarch. Работы велись в 1944-1945 годах. После окончания войны необходимости в подобной машине больше не было, и проект был закрыт.</value>
+  </data>
+  <data name="GB58_Cruiser_Mk_III" xml:space="preserve">
+    <value>Cruiser Mk. III</value>
+  </data>
+  <data name="GB58_Cruiser_Mk_III_descr" xml:space="preserve">
+    <value>Танк был разработан в результате глубокой переработки двух танков М1931 конструкции У. Кристи, закупленных англичанами в 1936 году. Машина предназначалась для прорыва обороны противника и послужила основой для создания целого класса крейсерских танков. Военными было заказано 65 машин этого типа, которые применялись во Франции и Северной Африке в 1940–1941 гг.</value>
+  </data>
+  <data name="GB58_Cruiser_Mk_III_short" xml:space="preserve">
+    <value>Cruiser III</value>
+  </data>
+  <data name="GB59_Cruiser_Mk_IV" xml:space="preserve">
+    <value>Cruiser Mk. IV</value>
+  </data>
+  <data name="GB59_Cruiser_Mk_IV_descr" xml:space="preserve">
+    <value>Танк являлся доработанной модификацией крейсерского танка Mk. III. Бронирование было усилено за счёт установки дополнительных экранов. Танки Cruiser Mk. IV принимали участие в кампании 1940 года во Франции и на начальном этапе боевых действий в Северной Африке. В последний раз машины этого типа использовались в бою зимой 1941–1942 гг. Всего было выпущено 655 машин.</value>
+  </data>
+  <data name="GB59_Cruiser_Mk_IV_short" xml:space="preserve">
+    <value>Cruiser IV</value>
+  </data>
+  <data name="GB60_Covenanter" xml:space="preserve">
+    <value>Covenanter</value>
+  </data>
+  <data name="GB60_Covenanter_descr" xml:space="preserve">
+    <value>При разработке нового крейсерского танка британские инженеры использовали такие новшества, как оппозитный двигатель, вынесение радиаторов системы охлаждения в переднюю часть корпуса, широкое применение сварки. Доработка проекта несколько затянулась, и заказ на первые 100 машин поступил только 17 апреля 1939 года. За время серийного выпуска был изготовлен 1771 танк четырёх основных модификаций. Танки Covenanter использовались в основном в качестве учебных машин.</value>
+  </data>
+  <data name="GB60_Covenanter_short" xml:space="preserve">
+    <value>Covenanter</value>
+  </data>
+  <data name="GB63_TOG_II" xml:space="preserve">
+    <value>TOG II*</value>
+  </data>
+  <data name="GB63_TOG_II_descr" xml:space="preserve">
+    <value>Танк разрабатывался для боевых действий в условиях позиционной войны. Первоначально вооружение танка предполагалось разместить в лобовой части корпуса и бортовых спонсонах. В ходе разработки опытных образцов было принято решение добавить башню, а спонсоны не устанавливать. К 1943 году, когда был построен и вышел на испытания TOG 2*, концепция танка полностью устарела, и он так и не был принят на вооружение.</value>
+  </data>
+  <data name="GB68_Matilda_Black_Prince" xml:space="preserve">
+    <value>Matilda Black Prince</value>
+  </data>
+  <data name="GB68_Matilda_Black_Prince_descr" xml:space="preserve">
+    <value>Проект машины с 6-фунтовым орудием в башне танка А27. Из-за сложности монтажа новой башни был выпущен только один танк. На вооружении не состоял.</value>
+  </data>
+  <data name="GB68_Matilda_Black_Prince_short" xml:space="preserve">
+    <value>Matilda BP</value>
+  </data>
+  <data name="GB69_Cruiser_Mk_II" xml:space="preserve">
+    <value>Cruiser Mk. II</value>
+  </data>
+  <data name="GB69_Cruiser_Mk_III_descr" xml:space="preserve">
+    <value>Танк А10 Cruiser Mk.II являлся дальнейшим развитием модели А9. Основными отличиями были усиленная броня и отсутствие пулемётных башенок. Прототип был построен в июле 1937 года и принят на вооружение как тяжёлый крейсерский танк. В 1938–1939 гг. было заказано 175 машин, которые были выпущены к сентябрю 1940 года. Танки применялись во Франции (1940 г.), в Греции (1941 г.) и в Северной Африке (1941 г.).</value>
+  </data>
+  <data name="GB69_Cruiser_Mk_II_short" xml:space="preserve">
+    <value>Cruiser II</value>
+  </data>
+  <data name="GB70_FV4202_105" xml:space="preserve">
+    <value>FV4202</value>
+  </data>
+  <data name="GB70_FV4202_105_descr" xml:space="preserve">
+    <value>Экспериментальный танк, созданный на базе среднего танка Centurion. Работы над машиной велись с 1956 по 1959 год. Серийно не выпускался. Технические решения и инновации, воплощённые в FV4202, явились основой для танка FV4201 Chieftain.</value>
+  </data>
+  <data name="GB70_FV4202_105_short" xml:space="preserve">
+    <value>FV4202</value>
+  </data>
+  <data name="GB70_N_FV4202_105" xml:space="preserve">
+    <value>FV4202 (P)</value>
+  </data>
+  <data name="GB70_N_FV4202_105_descr" xml:space="preserve">
+    <value>Экспериментальный танк, созданный на базе среднего танка Centurion. Работы над машиной велись с 1956 по 1959 год. Серийно не выпускался. Технические решения и инновации, воплощённые в FV4202, явились основой для танка FV4201 Chieftain.</value>
+  </data>
+  <data name="GB70_N_FV4202_105_short" xml:space="preserve">
+    <value>FV4202 (P)</value>
+  </data>
+  <data name="GB71_AT_15A" xml:space="preserve">
+    <value>AT 15A</value>
+  </data>
+  <data name="GB71_AT_15A_descr" xml:space="preserve">
+    <value>Штурмовой танк, предназначенный для прорыва укреплённых районов противника. Проект был готов 5 октября 1943 года. Не было выпущено ни одного опытного образца, однако проект послужил основой для создания тяжёлого штурмового танка A39 Tortoise.</value>
+  </data>
+  <data name="GB72_AT15" xml:space="preserve">
+    <value>AT 15</value>
+  </data>
+  <data name="GB72_AT15_descr" xml:space="preserve">
+    <value>Штурмовой танк, предназначенный для прорыва укреплённых районов противника. Проект был готов осенью 1943 года. Не было выпущено ни одного опытного образца, однако проект послужил основой для создания тяжёлого штурмового танка A39 Tortoise.</value>
+  </data>
+  <data name="GB73_AT2" xml:space="preserve">
+    <value>AT 2</value>
+  </data>
+  <data name="GB73_AT2_descr" xml:space="preserve">
+    <value>Проект штурмового танка, предназначенного для прорыва укреплённых районов противника. Эскиз машины был готов 15 мая 1943 года. Опытный образец построен не был, но проект послужил основой для создания тяжёлого штурмового танка A39 Tortoise.</value>
+  </data>
+  <data name="GB74_AT8" xml:space="preserve">
+    <value>AT 8</value>
+  </data>
+  <data name="GB74_AT8_descr" xml:space="preserve">
+    <value>Машина разрабатывалась для прорыва укреплённых районов. Эскизный проект был представлен на рассмотрение практически одновременно с проектом АТ-7 и являлся его дальнейшим развитием. Опытный образец построен не был, так как предпочтение было отдано разработке штурмового танка A39 Tortoise.</value>
+  </data>
+  <data name="GB75_AT7" xml:space="preserve">
+    <value>AT 7</value>
+  </data>
+  <data name="GB75_AT7_descr" xml:space="preserve">
+    <value>Проект штурмового танка, предназначенного для прорыва укреплённых районов противника. Эскиз машины был готов 10 июня 1943 года. Опытный образец построен не был. Многие элементы и узлы были использованы при разработке тяжёлого штурмового танка A39 Tortoise.</value>
+  </data>
+  <data name="GB76_Mk_VIC" xml:space="preserve">
+    <value>Light Mk. VIC</value>
+  </data>
+  <data name="GB76_Mk_VIC_descr" xml:space="preserve">
+    <value>Модификация лёгкого танка Mk.VI с усиленным вооружением — 15-мм пулемётом Besa. Выпускался с декабря 1939 по июнь 1940 года. Танки этого типа изначально предназначались для службы в колониях. Всего было выпущено 130 танков Mk.VIС.</value>
+  </data>
+  <data name="GB76_Mk_VIC_short" xml:space="preserve">
+    <value>Light VIC</value>
+  </data>
+  <data name="GB77_FV304" xml:space="preserve">
+    <value>FV304</value>
+  </data>
+  <data name="GB77_FV304_descr" xml:space="preserve">
+    <value>Проект лёгкой САУ, разработанный компанией Vickers. Разработка машины началась в 1947 году, однако макет был изготовлен только к 1953 году. К этому времени концепция САУ устарела, и проект был закрыт.</value>
+  </data>
+  <data name="GB77_FV304_short" xml:space="preserve">
+    <value>FV304</value>
+  </data>
+  <data name="GB78_Sexton_I" xml:space="preserve">
+    <value>Sexton I</value>
+  </data>
+  <data name="GB78_Sexton_I_descr" xml:space="preserve">
+    <value>В 1943 году предприятием Montreal Locomotive Works была запущена в серийное производство САУ Sexton, разработанная на базе танка RAM II. Всего до 1945 года было выпущено 2150 машин, из которых первые 125 назывались Sexton I.</value>
+  </data>
+  <data name="GB79_FV206" xml:space="preserve">
+    <value>FV207</value>
+  </data>
+  <data name="GB79_FV206_descr" xml:space="preserve">
+    <value>Проект САУ на базе танка А45 Conqueror. Рассматривались варианты установки 105-мм, 140-мм или 152-мм гаубиц в закрытой бронированной рубке. Работы были прекращены на стадии проектирования.</value>
+  </data>
+  <data name="GB79_FV206_short" xml:space="preserve">
+    <value>FV207</value>
+  </data>
+  <data name="GB80_Charioteer" xml:space="preserve">
+    <value>Charioteer</value>
+  </data>
+  <data name="GB80_Charioteer_descr" xml:space="preserve">
+    <value>Модернизированный вариант танка Cromwell. Башня нового типа и 20-фунтовое орудие калибра 83,4 мм позволили ему стать опасным противником на поле сражения. По сведениям из разных источников, от 200 до 442 танков Cromwell было переоборудовано под новый стандарт Charioteer.</value>
+  </data>
+  <data name="GB80_Charioteer_short" xml:space="preserve">
+    <value>Charioteer</value>
+  </data>
+  <data name="GB81_FV4004" xml:space="preserve">
+    <value>FV4004 Conway</value>
+  </data>
+  <data name="GB81_FV4004_descr" xml:space="preserve">
+    <value>Опытный образец ПТ-САУ. Создавалась на базе британского среднего танка Centurion. Разрабатывалась для ведения боя против тяжёлых танков того периода, в том числе ИС-3.</value>
+  </data>
+  <data name="GB81_FV4004_short" xml:space="preserve">
+    <value>Conway</value>
+  </data>
+  <data name="GB83_FV4005" xml:space="preserve">
+    <value>FV4005 Stage II</value>
+  </data>
+  <data name="GB83_FV4005_descr" xml:space="preserve">
+    <value>Проект тяжёлой противотанковой САУ разрабатывался в первой половине 1950-х годов с использованием узлов и агрегатов Centurion Mk3. Первоначально САУ испытывалась с механизированной боеукладкой. Но поскольку боеукладка не соответствовала габаритам башни, от неё решили отказаться. Был изготовлен один образец, проходивший испытания, однако серийно машина не выпускалась.</value>
+  </data>
+  <data name="GB83_FV4005_short" xml:space="preserve">
+    <value>FV4005</value>
+  </data>
+  <data name="GB85_Cromwell_Berlin" xml:space="preserve">
+    <value>Cromwell B</value>
+  </data>
+  <data name="GB85_Cromwell_Berlin_descr" xml:space="preserve">
+    <value>Машина 7-й танковой дивизии «Крысы пустыни», получившей  своё название за удачные действия в северной Африке. Танки Cromwell дивизия получила в 1944 году после возвращения в Великобританию. Именно они участвовали в высадке в Нормандии, дошли до Рейна и приняли участие в Параде Победы 7 сентября 1945 года в Берлине.</value>
+  </data>
+  <data name="GB85_Cromwell_Berlin_short" xml:space="preserve">
+    <value>Cromwell B</value>
+  </data>
+  <data name="GMC_6-71_Mk10" xml:space="preserve">
+    <value>GMC 6004 6-71S</value>
+  </data>
+  <data name="GMC_6-71_Mk11" xml:space="preserve">
+    <value>GMC 6004 6-71A</value>
+  </data>
+  <data name="GMC_6046" xml:space="preserve">
+    <value>General Motors 6046</value>
+  </data>
+  <data name="GM_6-71_M" xml:space="preserve">
+    <value>GM 6062 6-71M</value>
+  </data>
+  <data name="Guiberson_T-1020-4" xml:space="preserve">
+    <value>Guiberson T-1020-4</value>
+  </data>
+  <data name="Leyland" xml:space="preserve">
+    <value>2x Leyland E164</value>
+  </data>
+  <data name="Leyland_V6" xml:space="preserve">
+    <value>2x Leyland E165</value>
+  </data>
+  <data name="Meadows_DAV" xml:space="preserve">
+    <value>Meadows D.A.V.</value>
+  </data>
+  <data name="Meadows_DAV_MkI" xml:space="preserve">
+    <value>Meadows D.A.V. O.C.</value>
+  </data>
+  <data name="Meadows_ESTB" xml:space="preserve">
+    <value>Meadows E.S.T.L.</value>
+  </data>
+  <data name="Meadows_HOP" xml:space="preserve">
+    <value>Meadows H.O.P.</value>
+  </data>
+  <data name="Meadows_HOP_OC" xml:space="preserve">
+    <value>Meadows H.O.P. O.C.</value>
+  </data>
+  <data name="N11" xml:space="preserve">
+    <value>WS No. 11</value>
+  </data>
+  <data name="N14" xml:space="preserve">
+    <value>WS No. 14</value>
+  </data>
+  <data name="N19Mk1" xml:space="preserve">
+    <value>WS No. 19 Mk. I</value>
+  </data>
+  <data name="N19Mk2" xml:space="preserve">
+    <value>WS No. 19 Mk. II</value>
+  </data>
+  <data name="N19Mk3" xml:space="preserve">
+    <value>WS No. 19 Mk. III</value>
+  </data>
+  <data name="N22" xml:space="preserve">
+    <value>WS No. 22</value>
+  </data>
+  <data name="N9" xml:space="preserve">
+    <value>WS No. 9</value>
+  </data>
+  <data name="Nuffield_liberty_MKII" xml:space="preserve">
+    <value>Nuffield Liberty Mk. II</value>
+  </data>
+  <data name="Nuffield_liberty_MKIV" xml:space="preserve">
+    <value>Nuffield Liberty Mk. III</value>
+  </data>
+  <data name="Nuffield_liberty_MKV" xml:space="preserve">
+    <value>Nuffield Liberty Mk. V</value>
+  </data>
+  <data name="OQF_17pdr_Gun_Mk_IV_SH_SH" xml:space="preserve">
+    <value>OQF 17-pdr Gun Mk. IV SH-SH</value>
+  </data>
+  <data name="OQF_17pdr_Gun_Mk_VII" xml:space="preserve">
+    <value>OQF 17-pdr Gun Mk. VII</value>
+  </data>
+  <data name="OQF_25pdr_Gun_Mk_II" xml:space="preserve">
+    <value>Q.F. 25-Pr. Gun/How.</value>
+  </data>
+  <data name="OQF_3pdr_Gun" xml:space="preserve">
+    <value>OQF 3-pdr Gun Mk. II</value>
+  </data>
+  <data name="OQF_77mm_AT_Gun_MkII" xml:space="preserve">
+    <value>OQF 77 mm AT Gun Mk. II</value>
+  </data>
+  <data name="OQF_77mm_Gun_MkII" xml:space="preserve">
+    <value>OQF 77 mm Gun Mk. II</value>
+  </data>
+  <data name="Paxman_Ricardo" xml:space="preserve">
+    <value>Paxman 12TP</value>
+  </data>
+  <data name="QF_2pdr_Littlejohn" xml:space="preserve">
+    <value>QF 2-pdr Mk. X-B</value>
+  </data>
+  <data name="QF_6_pounder_8cwt_Mk_I" xml:space="preserve">
+    <value>QF 6-pdr 8 cwt Mk. I</value>
+  </data>
+  <data name="QF_6_pounder_8cwt_Mk_II" xml:space="preserve">
+    <value>QF 6-pdr 8 cwt Mk. II</value>
+  </data>
+  <data name="QF_6_pounder_8cwt_Mk_II_AT" xml:space="preserve">
+    <value>QF 6-pdr 8 cwt AT Gun Mk. II</value>
+  </data>
+  <data name="QF_6_pounder_8cwt_Mk_I_AT" xml:space="preserve">
+    <value>QF 6-pdr 8 cwt AT Gun Mk. I</value>
+  </data>
+  <data name="QF_6_pounder_Mk_III" xml:space="preserve">
+    <value>QF 6-pdr Mk. III</value>
+  </data>
+  <data name="QF_6_pounder_Mk_III_AT" xml:space="preserve">
+    <value>QF 6-pdr AT Gun Mk. III</value>
+  </data>
+  <data name="QF_6_pounder_Mk_II_AT" xml:space="preserve">
+    <value>QF 6-pdr AT Gun Mk. II</value>
+  </data>
+  <data name="QF_6_pounder_Mk_IV_AT" xml:space="preserve">
+    <value>QF 6-pdr AT Gun Mk. IV</value>
+  </data>
+  <data name="QF_6_pounder_Mk_V" xml:space="preserve">
+    <value>QF 6-pdr Gun Mk. V</value>
+  </data>
+  <data name="QF_6_pounder_Mk_VA" xml:space="preserve">
+    <value>QF 6-pdr Mk. V A</value>
+  </data>
+  <data name="QF_6_pounder_Mk_V_AT" xml:space="preserve">
+    <value>QF 6-pdr AT Gun Mk. V</value>
+  </data>
+  <data name="Rolls_Royce_Griffon" xml:space="preserve">
+    <value>Rolls-Royce Griffon</value>
+  </data>
+  <data name="Rolls_Royce_Meteor_M300" xml:space="preserve">
+    <value>Rolls-Royce Meteor M300</value>
+  </data>
+  <data name="Rolls_Royce_Meteorite_202B" xml:space="preserve">
+    <value>Rolls-Royce Meteorite 202B</value>
+  </data>
+  <data name="Rolls_Royce_Meteorite_V8" xml:space="preserve">
+    <value>Rolls-Royce Meteorite V8</value>
+  </data>
+  <data name="Rolls_Royse_Meteor" xml:space="preserve">
+    <value>Rolls-Royce Meteor</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_M120" xml:space="preserve">
+    <value>Rolls-Royce Meteor M120</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_Mk12" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. 12</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkIV" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. IVB</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkIVC" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. IVC</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkIVD" xml:space="preserve">
+    <value>Rolls-Royce Meteor M120A</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkIV_B" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. IVB</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkV" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. V</value>
+  </data>
+  <data name="Rolls_Royse_Meteor_MkXI" xml:space="preserve">
+    <value>Rolls-Royce Meteor Mk. XI</value>
+  </data>
+  <data name="Rolls_Royse_Phantom" xml:space="preserve">
+    <value>Rolls-Royce Phantom</value>
+  </data>
+  <data name="Rolls_Royse_Phantom_II" xml:space="preserve">
+    <value>2x Rolls-Royce Phantom II</value>
+  </data>
+  <data name="Sunbeam_Amazon" xml:space="preserve">
+    <value>Sunbeam Amazon</value>
+  </data>
+  <data name="Turret_1_GB01_Medium_Mark_I" xml:space="preserve">
+    <value>Vickers Medium Mk. I</value>
+  </data>
+  <data name="Turret_1_GB03_Cruiser_Mk_I" xml:space="preserve">
+    <value>Cruiser Mk. I</value>
+  </data>
+  <data name="Turret_1_GB04_Valentine" xml:space="preserve">
+    <value>Valentine Mk. I</value>
+  </data>
+  <data name="Turret_1_GB05_Vickers_Medium_Mk_II" xml:space="preserve">
+    <value>Vickers Medium Mk. II*</value>
+  </data>
+  <data name="Turret_1_GB06_Vickers_Medium_Mk_III" xml:space="preserve">
+    <value>Vickers Medium А6Е1</value>
+  </data>
+  <data name="Turret_1_GB07_Matilda" xml:space="preserve">
+    <value>Matilda Mk. IIA</value>
+  </data>
+  <data name="Turret_1_GB08_Churchill_I" xml:space="preserve">
+    <value>Churchill I</value>
+  </data>
+  <data name="Turret_1_GB09_Churchill_VII" xml:space="preserve">
+    <value>Churchill IV</value>
+  </data>
+  <data name="Turret_1_GB11_Caernarvon" xml:space="preserve">
+    <value>Black Prince</value>
+  </data>
+  <data name="Turret_1_GB12_Conqueror" xml:space="preserve">
+    <value>Centurion Mk. III</value>
+  </data>
+  <data name="Turret_1_GB13_FV215b" xml:space="preserve">
+    <value>FV215</value>
+  </data>
+  <data name="Turret_1_GB14_M2" xml:space="preserve">
+    <value>M2A1</value>
+  </data>
+  <data name="Turret_1_GB15_Stuart_I" xml:space="preserve">
+    <value>Stuart I</value>
+  </data>
+  <data name="Turret_1_GB19_Sherman_Firefly" xml:space="preserve">
+    <value>Sherman I</value>
+  </data>
+  <data name="Turret_1_GB20_Crusader" xml:space="preserve">
+    <value>Crusader Mk. I</value>
+  </data>
+  <data name="Turret_1_GB21_Cromwell" xml:space="preserve">
+    <value>Cromwell Mk. I</value>
+  </data>
+  <data name="Turret_1_GB22_Comet" xml:space="preserve">
+    <value>Cromwell Mk. IV</value>
+  </data>
+  <data name="Turret_1_GB23_Centurion" xml:space="preserve">
+    <value>Centurion Mk. I</value>
+  </data>
+  <data name="Turret_1_GB24_Centurion_Mk3" xml:space="preserve">
+    <value>Centurion Mk. 7</value>
+  </data>
+  <data name="Turret_1_GB25_Loyd_Carrier" xml:space="preserve">
+    <value>Loyd Gun Carriage</value>
+  </data>
+  <data name="Turret_1_GB26_Birch_Gun" xml:space="preserve">
+    <value>Birch Gun</value>
+  </data>
+  <data name="Turret_1_GB27_Sexton" xml:space="preserve">
+    <value>Sexton II</value>
+  </data>
+  <data name="Turret_1_GB30_FV3805" xml:space="preserve">
+    <value>FV3805</value>
+  </data>
+  <data name="Turret_1_GB32_Tortoise" xml:space="preserve">
+    <value>Tortoise</value>
+  </data>
+  <data name="Turret_1_GB39_Universal_CarrierQF2" xml:space="preserve">
+    <value>Universal Carrier 2-pdr</value>
+  </data>
+  <data name="Turret_1_GB40_Gun_Carrier_Churchill" xml:space="preserve">
+    <value>Churchill Gun Carrier</value>
+  </data>
+  <data name="Turret_1_GB41_Challenger" xml:space="preserve">
+    <value>Challenger</value>
+  </data>
+  <data name="Turret_1_GB42_Valentine_AT" xml:space="preserve">
+    <value>Valentine AT</value>
+  </data>
+  <data name="Turret_1_GB44_Archer" xml:space="preserve">
+    <value>Archer</value>
+  </data>
+  <data name="Turret_1_GB45_Achilles_IIC" xml:space="preserve">
+    <value>Achilles V Type</value>
+  </data>
+  <data name="Turret_1_GB48_FV215b_183" xml:space="preserve">
+    <value>FV215b</value>
+  </data>
+  <data name="Turret_1_GB50_Sherman_III" xml:space="preserve">
+    <value>Sherman III</value>
+  </data>
+  <data name="Turret_1_GB52_A45" xml:space="preserve">
+    <value>FV201 (A45) Universal Tank</value>
+  </data>
+  <data name="Turret_1_GB57_Alecto" xml:space="preserve">
+    <value>Alecto</value>
+  </data>
+  <data name="Turret_1_GB58_Cruiser_Mk_III" xml:space="preserve">
+    <value>Cruiser Mk. III</value>
+  </data>
+  <data name="Turret_1_GB59_Cruiser_Mk_IV" xml:space="preserve">
+    <value>Cruiser Mk. IV</value>
+  </data>
+  <data name="Turret_1_GB60_Covenanter" xml:space="preserve">
+    <value>Covenanter Mk. I</value>
+  </data>
+  <data name="Turret_1_GB63_TOG_II" xml:space="preserve">
+    <value>TOG II*</value>
+  </data>
+  <data name="Turret_1_GB68_Matilda_Black_Prince" xml:space="preserve">
+    <value>Matilda Black Prince</value>
+  </data>
+  <data name="Turret_1_GB69_Cruiser_Mk_II" xml:space="preserve">
+    <value>A10E1</value>
+  </data>
+  <data name="Turret_1_GB70_FV4202_105" xml:space="preserve">
+    <value>FV4202</value>
+  </data>
+  <data name="Turret_1_GB70_N_FV4202_105" xml:space="preserve">
+    <value>FV4202</value>
+  </data>
+  <data name="Turret_1_GB71_AT_15A" xml:space="preserve">
+    <value>AT 15A</value>
+  </data>
+  <data name="Turret_1_GB72_AT15" xml:space="preserve">
+    <value>AT 15</value>
+  </data>
+  <data name="Turret_1_GB73_AT2" xml:space="preserve">
+    <value>AT 2</value>
+  </data>
+  <data name="Turret_1_GB74_AT8_2" xml:space="preserve">
+    <value>AT 8</value>
+  </data>
+  <data name="Turret_1_GB75_AT7" xml:space="preserve">
+    <value>AT 7</value>
+  </data>
+  <data name="Turret_1_GB76_Mk_VIC" xml:space="preserve">
+    <value>Light Mk. VIC</value>
+  </data>
+  <data name="Turret_1_GB77_FV304" xml:space="preserve">
+    <value>FV304</value>
+  </data>
+  <data name="Turret_1_GB80_Charioteer" xml:space="preserve">
+    <value>Charioteer</value>
+  </data>
+  <data name="Turret_1_GB81_FV4004" xml:space="preserve">
+    <value>FV4004 Conway</value>
+  </data>
+  <data name="Turret_1_GB83_FV4005" xml:space="preserve">
+    <value>FV4005 Stage II</value>
+  </data>
+  <data name="Turret_1_GB85_Cromwell_Berlin" xml:space="preserve">
+    <value>Cromwell Mk. IV</value>
+  </data>
+  <data name="Turret_1_Sexton_I" xml:space="preserve">
+    <value>Sexton I</value>
+  </data>
+  <data name="Turret_2_GB01_Medium_Mark_I" xml:space="preserve">
+    <value>Vickers Medium Mk. IA*</value>
+  </data>
+  <data name="Turret_2_GB03_Cruiser_Mk_I" xml:space="preserve">
+    <value>Cruiser Mk. III</value>
+  </data>
+  <data name="Turret_2_GB04_Valentine" xml:space="preserve">
+    <value>Valentine Mk. XI</value>
+  </data>
+  <data name="Turret_2_GB05_Vickers_Medium_Mk_II" xml:space="preserve">
+    <value>Vickers Medium Mk. II**</value>
+  </data>
+  <data name="Turret_2_GB06_Vickers_Medium_Mk_III" xml:space="preserve">
+    <value>Vickers Medium А6Е3</value>
+  </data>
+  <data name="Turret_2_GB07_Matilda" xml:space="preserve">
+    <value>Matilda Mk. IIA*</value>
+  </data>
+  <data name="Turret_2_GB08_Churchill_I" xml:space="preserve">
+    <value>Churchill III</value>
+  </data>
+  <data name="Turret_2_GB09_Churchill_VII" xml:space="preserve">
+    <value>Churchill VII</value>
+  </data>
+  <data name="Turret_2_GB10_Black_Prince" xml:space="preserve">
+    <value>Black Prince</value>
+  </data>
+  <data name="Turret_2_GB11_Caernarvon" xml:space="preserve">
+    <value>Centurion Mk. II</value>
+  </data>
+  <data name="Turret_2_GB12_Conqueror" xml:space="preserve">
+    <value>Conqueror Mk. II</value>
+  </data>
+  <data name="Turret_2_GB14_M2" xml:space="preserve">
+    <value>M2A4</value>
+  </data>
+  <data name="Turret_2_GB15_Stuart_I" xml:space="preserve">
+    <value>Stuart III</value>
+  </data>
+  <data name="Turret_2_GB19_Sherman_Firefly" xml:space="preserve">
+    <value>Sherman IC</value>
+  </data>
+  <data name="Turret_2_GB20_Crusader" xml:space="preserve">
+    <value>Crusader Mk. III</value>
+  </data>
+  <data name="Turret_2_GB21_Cromwell" xml:space="preserve">
+    <value>Cromwell Mk. IV</value>
+  </data>
+  <data name="Turret_2_GB22_Comet" xml:space="preserve">
+    <value>Comet Mk. I</value>
+  </data>
+  <data name="Turret_2_GB23_Centurion" xml:space="preserve">
+    <value>Centurion Mk. III</value>
+  </data>
+  <data name="Turret_2_GB24_Centurion_Mk3" xml:space="preserve">
+    <value>Centurion Mk. 9</value>
+  </data>
+  <data name="Turret_2_GB26_Birch_Gun" xml:space="preserve">
+    <value>Birch Gun</value>
+  </data>
+  <data name="Turret_2_GB41_Challenger" xml:space="preserve">
+    <value>Avenger</value>
+  </data>
+  <data name="Turret_2_GB45_Achilles_IIC" xml:space="preserve">
+    <value>Achilles Duck Bill</value>
+  </data>
+  <data name="Turret_2_GB50_Sherman_III" xml:space="preserve">
+    <value>Sherman IIIA</value>
+  </data>
+  <data name="Turret_2_GB51_Excelsior" xml:space="preserve">
+    <value>Excelsior</value>
+  </data>
+  <data name="Turret_2_GB58_Cruiser_Mk_III" xml:space="preserve">
+    <value>Cruiser Mk. III*</value>
+  </data>
+  <data name="Turret_2_GB59_Cruiser_Mk_IV" xml:space="preserve">
+    <value>Cruiser Mk. IVA</value>
+  </data>
+  <data name="Turret_2_GB60_Covenanter" xml:space="preserve">
+    <value>Covenanter Mk. IV CS</value>
+  </data>
+  <data name="Turret_2_GB69_Cruiser_Mk_II" xml:space="preserve">
+    <value>Cruiser Mk. II</value>
+  </data>
+  <data name="Turret_3_GB17_Grant_I" xml:space="preserve">
+    <value>Grant I</value>
+  </data>
+  <data name="Vauxhall_Bedford_Twin_Six" xml:space="preserve">
+    <value>Bedford Twin-Six</value>
+  </data>
+  <data name="Vickers-Armstrong" xml:space="preserve">
+    <value>Armstrong Siddeley V8</value>
+  </data>
+  <data name="Vickers-Armstrong_MkII" xml:space="preserve">
+    <value>Armstrong Siddeley V8 SC</value>
+  </data>
+  <data name="Wright_Continental_R-975C1" xml:space="preserve">
+    <value>Wright Continental R-975C1</value>
+  </data>
+  <data name="Wright_Continental_R-975C4" xml:space="preserve">
+    <value>Wright Continental R-975C4</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2" xml:space="preserve">
+    <value>Wright (Continental) R975 EC2</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2_A" xml:space="preserve">
+    <value>Wright (Continental) R975 EC2</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2_A_short" xml:space="preserve">
+    <value>Wright (Continental)
+R975 EC2</value>
+  </data>
+  <data name="Wright_Continental_R-975EC2_short" xml:space="preserve">
+    <value>Wright (Continental)
+R975 EC2</value>
+  </data>
+  <data name="_105mm_APCR_L7" xml:space="preserve">
+    <value>APDS L-28</value>
+  </data>
+  <data name="_105mm_AT_Gun_L7" xml:space="preserve">
+    <value>105 mm AT Gun L7</value>
+  </data>
+  <data name="_105mm_Gun_L7" xml:space="preserve">
+    <value>105 mm Royal Ordnance L7A1</value>
+  </data>
+  <data name="_105mm_HEAT_M67" xml:space="preserve">
+    <value>HEAT M67</value>
+  </data>
+  <data name="_105mm_HESH_L7" xml:space="preserve">
+    <value>HESH-T L-37</value>
+  </data>
+  <data name="_105mm_HE_L7" xml:space="preserve">
+    <value>HESH-T L-35</value>
+  </data>
+  <data name="_105mm_HE_M1" xml:space="preserve">
+    <value>HE M1</value>
+  </data>
+  <data name="_105mm_SPH_M4_L23" xml:space="preserve">
+    <value>105 mm M4</value>
+  </data>
+  <data name="_12.7mm_AP_M2" xml:space="preserve">
+    <value>AP M2</value>
+  </data>
+  <data name="_12.7mm_MG_HB_M2" xml:space="preserve">
+    <value>Browning MG caliber .50 HB, M2</value>
+  </data>
+  <data name="_120mm_AP-T_L1A1" xml:space="preserve">
+    <value>AP-T L1</value>
+  </data>
+  <data name="_120mm_APDS_L1A1" xml:space="preserve">
+    <value>APDS L1</value>
+  </data>
+  <data name="_120mm_AT_Gun_L1A1" xml:space="preserve">
+    <value>120 mm AT Gun L1A1</value>
+  </data>
+  <data name="_120mm_Gun_L1A1" xml:space="preserve">
+    <value>120 mm Gun L1A1</value>
+  </data>
+  <data name="_120mm_HE_L1A1" xml:space="preserve">
+    <value>HESH-T L1</value>
+  </data>
+  <data name="_13pdr_Gun" xml:space="preserve">
+    <value>Q.F. 13-Pr. Mk. III</value>
+  </data>
+  <data name="_13pdr_HE" xml:space="preserve">
+    <value>HE Mk. III</value>
+  </data>
+  <data name="_15mm_AP_W_Mk1" xml:space="preserve">
+    <value>AP W Mk. 1</value>
+  </data>
+  <data name="_15mm_Machine_gun_BESA" xml:space="preserve">
+    <value>15 mm Machine Gun BESA</value>
+  </data>
+  <data name="_17pdr_APCBC_Mk8T" xml:space="preserve">
+    <value>APCBC 17-Pr. Mk. 8T</value>
+  </data>
+  <data name="_17pdr_APC_Mk1T" xml:space="preserve">
+    <value>APC 17-Pr. Mk. 1T</value>
+  </data>
+  <data name="_17pdr_APC_Mk4T" xml:space="preserve">
+    <value>APDS 17-Pr. Mk. 1T</value>
+  </data>
+  <data name="_17pdr_AP_Mk3T" xml:space="preserve">
+    <value>APCBC 17-Pr. Mk. 9T</value>
+  </data>
+  <data name="_17pdr_AP_Mk6T" xml:space="preserve">
+    <value>AP 17-Pr. Mk. 6T</value>
+  </data>
+  <data name="_17pdr_HE_Mk0T" xml:space="preserve">
+    <value>HE 17-Pr. Mk. 1T</value>
+  </data>
+  <data name="_17pdr_HE_Mk1T" xml:space="preserve">
+    <value>HE 17-Pr. Mk. 2T</value>
+  </data>
+  <data name="_17pdr_OQF_AT" xml:space="preserve">
+    <value>OQF 17-pdr AT Gun Mk. VII</value>
+  </data>
+  <data name="_17pdr_OQF_AT_Mk_II" xml:space="preserve">
+    <value>OQF 17-pdr AT Gun Mk. II</value>
+  </data>
+  <data name="_17pdr_OQF_AT_Mk_V" xml:space="preserve">
+    <value>OQF 17-pdr AT Gun Mk. V</value>
+  </data>
+  <data name="_183mm_AP_Mk1" xml:space="preserve">
+    <value>AP Mk. 1</value>
+  </data>
+  <data name="_183mm_AT_Gun" xml:space="preserve">
+    <value>183 mm L4</value>
+  </data>
+  <data name="_183mm_HESH" xml:space="preserve">
+    <value>HESH Mk. 1</value>
+  </data>
+  <data name="_183mm_HE_Mk1" xml:space="preserve">
+    <value>HE Mk. 1</value>
+  </data>
+  <data name="_18_pdr_SPG_Gun" xml:space="preserve">
+    <value>Q.F. 18-Pr.</value>
+  </data>
+  <data name="_18pdr_AP_Mk_1T" xml:space="preserve">
+    <value>AP-T Mk. 1T</value>
+  </data>
+  <data name="_18pdr_HE_Mk_1C" xml:space="preserve">
+    <value>HE Mk. 1C</value>
+  </data>
+  <data name="_20pdr_APC_Mk2" xml:space="preserve">
+    <value>APC Mk. 2</value>
+  </data>
+  <data name="_20pdr_AP_Mk1" xml:space="preserve">
+    <value>AP Mk. 1</value>
+  </data>
+  <data name="_20pdr_AT_Gun_Type_A" xml:space="preserve">
+    <value>OQF 20-pdr AT Gun Type A Barrel</value>
+  </data>
+  <data name="_20pdr_AT_Gun_Type_B" xml:space="preserve">
+    <value>OQF 20-pdr AT Gun Type B Barrel</value>
+  </data>
+  <data name="_20pdr_Gun_Type_A" xml:space="preserve">
+    <value>OQF 20-pdr Gun Type A Barrel</value>
+  </data>
+  <data name="_20pdr_Gun_Type_B" xml:space="preserve">
+    <value>OQF 20-pdr Gun Type B Barrel</value>
+  </data>
+  <data name="_20pdr_Gun_Type_B_1" xml:space="preserve">
+    <value>OQF 20-pdr Gun Type B Barrel</value>
+  </data>
+  <data name="_20pdr_HE_Mk3" xml:space="preserve">
+    <value>HE Mk. 3</value>
+  </data>
+  <data name="_25pdr_AP_Mk_1T" xml:space="preserve">
+    <value>AP-T Mk. 1T</value>
+  </data>
+  <data name="_25pdr_AP_Mk_1T_SC" xml:space="preserve">
+    <value>AP-T Mk. 1T S.C.</value>
+  </data>
+  <data name="_25pdr_AT_Field_Gun" xml:space="preserve">
+    <value>Q.F. 25-Pr. AT Gun/How. Mk. III</value>
+  </data>
+  <data name="_25pdr_Field_Gun" xml:space="preserve">
+    <value>Q.F. 25-Pr. Gun/How. Mk. II</value>
+  </data>
+  <data name="_25pdr_HE_Mk_1D" xml:space="preserve">
+    <value>HE Mk. 1D</value>
+  </data>
+  <data name="_2pdr_APCNR_Mk.1" xml:space="preserve">
+    <value>APCNR Mk. 1</value>
+  </data>
+  <data name="_2pdr_APCNR_Mk.2" xml:space="preserve">
+    <value>APCNR Mk. 2</value>
+  </data>
+  <data name="_2pdr_APSV_Mk.1" xml:space="preserve">
+    <value>APSV Mk. 1</value>
+  </data>
+  <data name="_2pdr_APSV_Mk.2" xml:space="preserve">
+    <value>APSV Mk. 2</value>
+  </data>
+  <data name="_2pdr_AP_Mk.1T" xml:space="preserve">
+    <value>AP Mk. 1T</value>
+  </data>
+  <data name="_2pdr_AP_Mk.IXBT" xml:space="preserve">
+    <value>APCBC Mk. IXBT</value>
+  </data>
+  <data name="_2pdr_AT_Gun_Mk_IX" xml:space="preserve">
+    <value>QF 2-pdr AT Gun Mk. IX</value>
+  </data>
+  <data name="_2pdr_Gun_Mk_IX" xml:space="preserve">
+    <value>QF 2-pdr Mk. IX</value>
+  </data>
+  <data name="_2pdr_Gun_Mk_X" xml:space="preserve">
+    <value>QF 2-pdr Mk. X</value>
+  </data>
+  <data name="_2pdr_HE_Mk.2" xml:space="preserve">
+    <value>HE Mk. 2</value>
+  </data>
+  <data name="_3.7inch_AP" xml:space="preserve">
+    <value>AP Mk. 1T</value>
+  </data>
+  <data name="_3.7inch_APCR" xml:space="preserve">
+    <value>APCR Mk. 2T</value>
+  </data>
+  <data name="_3.7inch_AT_Howitzer" xml:space="preserve">
+    <value>3.7-inch AT Howitzer</value>
+  </data>
+  <data name="_3.7inch_HE" xml:space="preserve">
+    <value>HE Mk. 1C</value>
+  </data>
+  <data name="_3.7inch_HEAT_Mk1" xml:space="preserve">
+    <value>HEAT Mk. 1</value>
+  </data>
+  <data name="_3.7inch_HE_Mk3" xml:space="preserve">
+    <value>HE Mk. 3</value>
+  </data>
+  <data name="_3.7inch_Howitzer" xml:space="preserve">
+    <value>3.7-inch Howitzer</value>
+  </data>
+  <data name="_3.7inch_QF_AA_MK_1" xml:space="preserve">
+    <value>QF 3.7-inch AT Gun</value>
+  </data>
+  <data name="_32-pounder_AT_Gun_OQF" xml:space="preserve">
+    <value>OQF 32-pdr AT Gun</value>
+  </data>
+  <data name="_32pdr_APCR_MkII" xml:space="preserve">
+    <value>APDS Mk. 2T</value>
+  </data>
+  <data name="_32pdr_AP_MkI" xml:space="preserve">
+    <value>AP Mk. 1</value>
+  </data>
+  <data name="_32pdr_HE_MkI" xml:space="preserve">
+    <value>HE Mk. 1A</value>
+  </data>
+  <data name="_37mm_APC_M51" xml:space="preserve">
+    <value>APC M51</value>
+  </data>
+  <data name="_37mm_AP_M74" xml:space="preserve">
+    <value>AP M74</value>
+  </data>
+  <data name="_37mm_HE_M63" xml:space="preserve">
+    <value>HE M63</value>
+  </data>
+  <data name="_37mm_M-5" xml:space="preserve">
+    <value>37 mm Gun M5</value>
+  </data>
+  <data name="_37mm_M-6_L53" xml:space="preserve">
+    <value>37 mm Gun M6</value>
+  </data>
+  <data name="_3inch_20_cwt_MkIII_AT_Gun" xml:space="preserve">
+    <value>3-inch 20 cwt AT Gun Mk. III</value>
+  </data>
+  <data name="_3inch_AP" xml:space="preserve">
+    <value>AP Mk. 2T</value>
+  </data>
+  <data name="_3inch_APCR" xml:space="preserve">
+    <value>APCR Mk. 1T</value>
+  </data>
+  <data name="_3inch_HE" xml:space="preserve">
+    <value>HE Mk. 2B</value>
+  </data>
+  <data name="_3pdr_gun_Hotchkiss" xml:space="preserve">
+    <value>OQF 3-pdr Gun Mk. I</value>
+  </data>
+  <data name="_4.5inch_HE_Mk_13" xml:space="preserve">
+    <value>HE Mk. XIII</value>
+  </data>
+  <data name="_4.5inch_SPG_Howitzer" xml:space="preserve">
+    <value>Q.F. 4.5-in. Howitzer</value>
+  </data>
+  <data name="_40mm_AP" xml:space="preserve">
+    <value>AP Mk. I</value>
+  </data>
+  <data name="_40mm_APCR" xml:space="preserve">
+    <value>APCR Mk. II</value>
+  </data>
+  <data name="_40mm_APHV" xml:space="preserve">
+    <value>APHV Mk. 1T</value>
+  </data>
+  <data name="_40mm_Bofors_MkI" xml:space="preserve">
+    <value>QF 40 mm Mk. VI Bofors</value>
+  </data>
+  <data name="_40mm_HE" xml:space="preserve">
+    <value>HE Mk. I</value>
+  </data>
+  <data name="_40mm_Mk2T" xml:space="preserve">
+    <value>HE Mk. 2T</value>
+  </data>
+  <data name="_40mm_Pom_Pom" xml:space="preserve">
+    <value>40 mm Pom-Pom</value>
+  </data>
+  <data name="_40mm_SAP" xml:space="preserve">
+    <value>SAP Mk. 1T</value>
+  </data>
+  <data name="_47mm_3pdrAP" xml:space="preserve">
+    <value>QF AP Mk. IIIT</value>
+  </data>
+  <data name="_47mm_3pdrAPCR" xml:space="preserve">
+    <value>QF APDS Mk. I</value>
+  </data>
+  <data name="_47mm_3pdrHE" xml:space="preserve">
+    <value>QF HE Mk. IT</value>
+  </data>
+  <data name="_5.5inch_HE_Mk_4" xml:space="preserve">
+    <value>HE 80-lb Mk. 3</value>
+  </data>
+  <data name="_5.5inch_HE_Mk_5" xml:space="preserve">
+    <value>HE 80-lb Mk. 4</value>
+  </data>
+  <data name="_5.5inch_SPG_Gun" xml:space="preserve">
+    <value>B.L. 5.5-in. Gun</value>
+  </data>
+  <data name="_6inch_AP" xml:space="preserve">
+    <value>AP Mk. V</value>
+  </data>
+  <data name="_6inch_HE" xml:space="preserve">
+    <value>HE Mk. V</value>
+  </data>
+  <data name="_6inch_HE_Mk_6" xml:space="preserve">
+    <value>HE Mk. VI</value>
+  </data>
+  <data name="_6inch_SPG_Gun" xml:space="preserve">
+    <value>Q.F. 6-in. Gun Mk. V</value>
+  </data>
+  <data name="_6pdr_APCR_MK_1T" xml:space="preserve">
+    <value>APCR Mk. 1T</value>
+  </data>
+  <data name="_6pdr_AP_MK_1T" xml:space="preserve">
+    <value>AP Mk. 1T</value>
+  </data>
+  <data name="_6pdr_AP_Steel_HSCT" xml:space="preserve">
+    <value>Steel Shell HSCT</value>
+  </data>
+  <data name="_6pdr_AP_Steel_NF" xml:space="preserve">
+    <value>Steel Shell NF</value>
+  </data>
+  <data name="_6pdr_HE_Common" xml:space="preserve">
+    <value>Common Shell</value>
+  </data>
+  <data name="_6pdr_HE_MK_10T" xml:space="preserve">
+    <value>HE Mk. 10T</value>
+  </data>
+  <data name="_7.2inch_HE" xml:space="preserve">
+    <value>HE Mk. 1D</value>
+  </data>
+  <data name="_7.2inch_HE_Mk_2" xml:space="preserve">
+    <value>HE Mk. 2D</value>
+  </data>
+  <data name="_7.2inch_SPG_Howitzer" xml:space="preserve">
+    <value>B.L. 7.2-in. Howitzer Mk. 6</value>
+  </data>
+  <data name="_75mm_APCR_HV_Mk3" xml:space="preserve">
+    <value>APCR HV Mk. 3</value>
+  </data>
+  <data name="_75mm_APCR_Mk3" xml:space="preserve">
+    <value>APCR Mk. 3</value>
+  </data>
+  <data name="_75mm_AP_HV_Mk1" xml:space="preserve">
+    <value>AP HV Mk. 1</value>
+  </data>
+  <data name="_75mm_AP_Mk1" xml:space="preserve">
+    <value>AP Mk. 1</value>
+  </data>
+  <data name="_75mm_AT_Gun_Mk_V" xml:space="preserve">
+    <value>75 mm AT Gun Mk. V</value>
+  </data>
+  <data name="_75mm_Gun_M2_L28" xml:space="preserve">
+    <value>75 mm Gun M2</value>
+  </data>
+  <data name="_75mm_Gun_M3_L37" xml:space="preserve">
+    <value>75 mm Gun M3</value>
+  </data>
+  <data name="_75mm_Gun_Mk_V" xml:space="preserve">
+    <value>75 mm Gun Mk. V</value>
+  </data>
+  <data name="_75mm_Gun_Mk_VA" xml:space="preserve">
+    <value>75 mm Gun Mk. V</value>
+  </data>
+  <data name="_75mm_Gun_Vickers_HV" xml:space="preserve">
+    <value>75 mm Vickers HV</value>
+  </data>
+  <data name="_75mm_HE_HV_Mk2" xml:space="preserve">
+    <value>HE HV Mk. 2</value>
+  </data>
+  <data name="_75mm_HE_Mk2" xml:space="preserve">
+    <value>HE Mk. 2</value>
+  </data>
+  <data name="_75mm_M48" xml:space="preserve">
+    <value>M48</value>
+  </data>
+  <data name="_75mm_M61" xml:space="preserve">
+    <value>M61</value>
+  </data>
+  <data name="_75mm_M72" xml:space="preserve">
+    <value>M72</value>
+  </data>
+  <data name="_76mm_AP_M62" xml:space="preserve">
+    <value>AP M62</value>
+  </data>
+  <data name="_76mm_AP_M79" xml:space="preserve">
+    <value>AP M79</value>
+  </data>
+  <data name="_76mm_AT_Gun_M7_L50" xml:space="preserve">
+    <value>3-inch AT Gun M7</value>
+  </data>
+  <data name="_76mm_Gun_M1A1" xml:space="preserve">
+    <value>76 mm Gun M1A1</value>
+  </data>
+  <data name="_76mm_HEAT_MkI" xml:space="preserve">
+    <value>HEAT Mk. I</value>
+  </data>
+  <data name="_76mm_HE_M42A1" xml:space="preserve">
+    <value>HE M42A1</value>
+  </data>
+  <data name="_76mm_HE_MkI" xml:space="preserve">
+    <value>HE Mk. I</value>
+  </data>
+  <data name="_76mm_Howitzer_MkI" xml:space="preserve">
+    <value>OQF 3-inch Howitzer Mk. I</value>
+  </data>
+  <data name="_76mm_M42A1" xml:space="preserve">
+    <value>HE M42A1(M7)</value>
+  </data>
+  <data name="_76mm_M62" xml:space="preserve">
+    <value>AP M62(M7)</value>
+  </data>
+  <data name="_76mm_M79" xml:space="preserve">
+    <value>AP M79(M7)</value>
+  </data>
+  <data name="_77mm_APCBC_Mk8T" xml:space="preserve">
+    <value>APCBC 77 mm Mk. 8T</value>
+  </data>
+  <data name="_77mm_APDS_Mk1T" xml:space="preserve">
+    <value>APDS 77 mm Mk. 1T</value>
+  </data>
+  <data name="_77mm_HE_Mk1T" xml:space="preserve">
+    <value>HE 77 mm Mk. 1T</value>
+  </data>
+  <data name="_9.2inch_HE_Mk_18" xml:space="preserve">
+    <value>HE Mk. 18</value>
+  </data>
+  <data name="_9.2inch_HE_Mk_19" xml:space="preserve">
+    <value>HE Mk. 19</value>
+  </data>
+  <data name="_9.2inch_SPG_Howitzer" xml:space="preserve">
+    <value>B.L. 9.2-in. Howitzer Mk. II</value>
+  </data>
+</root>

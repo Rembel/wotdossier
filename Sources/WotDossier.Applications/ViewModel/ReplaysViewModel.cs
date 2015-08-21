@@ -77,16 +77,7 @@ namespace WotDossier.Applications.ViewModel
             }
             else
             {
-                var replayFiles = ReplayFilter.Filter(_replays);
-
-                if (replayFiles.Any())
-                {
-                    ReplaysSummary = new List<TotalReplayFile> { new TotalReplayFile(replayFiles, Guid.NewGuid()) };
-                }
-                else
-                {
-                    ReplaysSummary = null;
-                }
+                ReplaysSummary = _cachedTotalRow;
             }
         }
 
@@ -101,6 +92,14 @@ namespace WotDossier.Applications.ViewModel
             get
             {
                 var replayFiles = ReplayFilter.Filter(_replays);
+                if (replayFiles.Any())
+                {
+                    _cachedTotalRow = new List<TotalReplayFile> { new TotalReplayFile(replayFiles, Guid.NewGuid()) };
+                }
+                else
+                {
+                    _cachedTotalRow = null;
+                }
                 return replayFiles;
             }
             set
@@ -126,6 +125,7 @@ namespace WotDossier.Applications.ViewModel
         private List<TotalReplayFile> _replaysSummary;
         private ObservableCollection<ColumnInformation> _columnInfo;
         private IList _selectedItems;
+        private List<TotalReplayFile> _cachedTotalRow;
 
         /// <summary>
         /// Gets or sets the replays folders.

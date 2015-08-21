@@ -176,7 +176,7 @@ namespace WotDossier.Applications.Logic.Adapter
             Tarczay = stat.dataField.achievements.achievements.medalTarczay;
             Kolobanov = stat.dataField.achievements.achievements.medalKolobanov;
             Fadin = stat.dataField.achievements.achievements.medalFadin;
-            HeroesOfRassenay = stat.dataField.achievements.achievements.medalHeroesOfRassenay;
+            HeroesOfRassenay = stat.dataField.achievements.achievements.heroesOfRassenay;
             DeLanglade = stat.dataField.achievements.achievements.medalDeLanglade;
 
             #endregion

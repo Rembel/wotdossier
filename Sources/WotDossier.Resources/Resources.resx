@@ -3488,4 +3488,7 @@ Date: {Date:dd.MM.yyyy}</value>
   <data name="Total_ForSelected" xml:space="preserve">
     <value>For selected</value>
   </data>
+  <data name="Country_Czech" xml:space="preserve">
+    <value>Czech</value>
+  </data>
 </root>

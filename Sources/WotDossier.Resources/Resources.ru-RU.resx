@@ -3577,4 +3577,7 @@
   <data name="Total_ForSelected" xml:space="preserve">
     <value>Для выделенных</value>
   </data>
+  <data name="Country_Czech" xml:space="preserve">
+    <value>Чехия</value>
+  </data>
 </root>

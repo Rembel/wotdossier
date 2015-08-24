@@ -184,6 +184,11 @@
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/japan.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Czech}" IsChecked="{Binding NationCZSelected, Mode=TwoWay}">
+                            <CheckBox.Content>
+                                <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/czech.png"></Image>
+                            </CheckBox.Content>
+                        </CheckBox>
                     </StackPanel>
 
                     <TextBlock Margin="12,3,6,3" Grid.Row="3" Text="{x:Static resources:Resources.TankFilterPanel_Tank}" VerticalAlignment="Center"></TextBlock>

@@ -150,6 +150,7 @@
     <Compile Include="EventAggregator\IEventSubscription.cs" />
     <Compile Include="EventAggregator\SubscriptionToken.cs" />
     <Compile Include="EventAggregator\WeakEventHandler.cs" />
+    <Compile Include="FastDirectoryEnumerator.cs" />
     <Compile Include="Forms\Commands\CommandManagerHelper.cs" />
     <Compile Include="Forms\Commands\CommandReference.cs" />
     <Compile Include="Forms\Commands\DelegateCommand.cs" />

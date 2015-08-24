@@ -454,7 +454,9 @@ namespace WotDossier.Applications.ViewModel
                     {
                         _log.WarnFormat("replays before update count: {0}", _replays.Count());
 
-                        string[] newFiles = Directory.GetFiles(folderPath, "*.wotreplay").Where(x => !x.EndsWith("temp.wotreplay", StringComparison.InvariantCultureIgnoreCase)).ToArray();
+                        //string[] newFiles = Directory.GetFiles(folderPath, "*.wotreplay").Where(x => !x.EndsWith("temp.wotreplay", StringComparison.InvariantCultureIgnoreCase)).ToArray();
+
+                        string[] newFiles = FastDirectoryEnumerator.GetFiles(folderPath, "*.wotreplay", SearchOption.TopDirectoryOnly).Where(x => !x.Name.EndsWith("temp.wotreplay", StringComparison.InvariantCultureIgnoreCase)).Select(x => x.Path).ToArray();
 
                         _log.WarnFormat("new files count: {0}", newFiles.Count());
 

@@ -247,6 +247,10 @@
       <Link>External\structures_89.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\structures_92.json">
+      <Link>External\structures_92.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\tanks.json">
       <Link>External\tanks.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -282,6 +286,9 @@
     </None>
     <None Include="CacheFiles\0.8.9\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.json" />
     <None Include="CacheFiles\0.9.0\NRXWO2LOFVRXILLQGEXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CacheFiles\0.9.10\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="CacheFiles\0.9.1\NRXWO2LOGIWWG5BNOAYS453POJWGI33GORQW423TFZXGK5B2GIYDAMJVHNPVEZLNMJSWYX27KJKQ====.dat">
@@ -349,6 +356,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.0\ussr_Object_140_el_hallouf.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.10\20150827_0006_ussr-T-54_33_fjord.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay">

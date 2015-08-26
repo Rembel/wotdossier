@@ -343,6 +343,7 @@
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{21831A37-7240-4A5F-A738-03C351448415}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Content_Files</td><td>{6C01BEC1-F7AB-485A-B1FD-E0912F278B59}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Framework.Localized_resources</td><td>{014BD09F-B01C-4E86-B794-BBD97045CFF7}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.framework.localiz</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Primary_output</td><td>{2132674F-BB70-47A1-8131-FCB0919997B1}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.ReplaysManager.Primary_output</td><td>{FF31E896-146C-441C-AB0A-DE32EDC77F45}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.replaysmanager.pr</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Resources.Localized_resources</td><td>{0536180D-70D4-4CBD-BFC0-9A242BCE3782}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.resources.localiz</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1057,6 +1058,7 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>INSTALLDIR</td><td>WotDossier.Framework.Localized_resources</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1873,6 +1875,7 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Content_Files</td></row>
+		<row><td>AlwaysInstall</td><td>WotDossier.Framework.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.ReplaysManager.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Resources.Localized_resources</td></row>
@@ -1892,6 +1895,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>wotdossier.content_files</td><td>WotDossier.Content_Files</td><td>WotDossier.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|ContentFiles</td><td>3</td><td/></row>
+		<row><td>wotdossier.framework.localiz</td><td>WotDossier.Framework.Localized_resources</td><td>WotDossier.Framework.Localized resources</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.Framework&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.primary_output</td><td>WotDossier.Primary_output</td><td>WotDossier.Primary output</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier&gt;|Built</td><td>3</td><td/></row>
 		<row><td>wotdossier.replaysmanager.pr</td><td>WotDossier.ReplaysManager.Primary_output</td><td>WotDossier.ReplaysManager.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.ReplaysManager&gt;|Built</td><td>3</td><td/></row>
 		<row><td>wotdossier.resources.localiz</td><td>WotDossier.Resources.Localized_resources</td><td>WotDossier.Resources.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Resources&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
@@ -2041,6 +2045,7 @@
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_69EC8EA9_4BC6_4B01_808D_05D9738D766F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Content_Files</td><td/><td/><td>_65BD12D5_7A87_442F_86AD_9C63664AB117_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Framework.Localized_resources</td><td/><td/><td>_90FB276D_E0A3_40D2_A9BF_F712E9EC6E8E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Primary_output</td><td/><td/><td>_6D6C096F_1D06_49B1_9DD5_E033060A1B4E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.ReplaysManager.Primary_output</td><td/><td/><td>_41640696_1C8E_4F90_9943_8FFAC75C7F36_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Resources.Localized_resources</td><td/><td/><td>_DEFC98B7_EDB4_4499_95FD_C0CCC06523AA_FILTER</td><td/><td/><td/><td/></row>
@@ -2361,12 +2366,6 @@
 		<row><td>WotDossier.Framework</td><td>WotDossier.Framework\WotDossier.Framework.csproj</td><td/><td>2</td></row>
 		<row><td>WotDossier.ReplaysManager</td><td>WotDossier.ReplaysManager\WotDossier.ReplaysManager.csproj</td><td/><td>2</td></row>
 		<row><td>WotDossier.Resources</td><td>WotDossier.Resources\WotDossier.Resources.csproj</td><td/><td>2</td></row>
-	</table>
-
-	<table name="ISPowerShellWrap">
-		<col key="yes" def="s72">Action_</col>
-		<col key="yes" def="s72">Name</col>
-		<col def="S0">Value</col>
 	</table>
 
 	<table name="ISProductConfiguration">
@@ -3852,6 +3851,12 @@
 		<col def="s255">Value</col>
 	</table>
 
+	<table name="ISWSEWrap">
+		<col key="yes" def="s72">Action_</col>
+		<col key="yes" def="s72">Name</col>
+		<col def="S0">Value</col>
+	</table>
+
 	<table name="ISXmlElement">
 		<col key="yes" def="s72">ISXmlElement</col>
 		<col def="s72">ISXmlFile_</col>
@@ -4044,7 +4049,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SaveAsSchema</td><td/></row>
 		<row><td>SccEnabled</td><td>0</td></row>
 		<row><td>SccPath</td><td/></row>
-		<row><td>SchemaVersion</td><td>774</td></row>
+		<row><td>SchemaVersion</td><td>776</td></row>
 		<row><td>Type</td><td>MSIE</td></row>
 	</table>
 
@@ -5188,9 +5193,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISPathVariable</td><td>TestValue</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The test value of the path variable.</td></row>
 		<row><td>ISPathVariable</td><td>Type</td><td>N</td><td/><td/><td/><td/><td/><td>1;2;4;8</td><td>The type of the path variable.</td></row>
 		<row><td>ISPathVariable</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The value of the path variable.</td></row>
-		<row><td>ISPowerShellWrap</td><td>Action_</td><td>N</td><td/><td/><td>CustomAction</td><td>1</td><td>Identifier</td><td/><td>Foreign key into CustomAction table</td></row>
-		<row><td>ISPowerShellWrap</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>Property associated with this Action</td></row>
-		<row><td>ISPowerShellWrap</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Value associated with this Property</td></row>
 		<row><td>ISProductConfiguration</td><td>GeneratePackageCode</td><td>Y</td><td/><td/><td/><td/><td>Number</td><td>0;1</td><td>Indicates whether or not to generate a package code.</td></row>
 		<row><td>ISProductConfiguration</td><td>ISProductConfiguration</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>The name of the product configuration.</td></row>
 		<row><td>ISProductConfiguration</td><td>ProductConfigurationFlags</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Product configuration (release) flags.</td></row>
@@ -5428,6 +5430,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISVirtualShortcut</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Property name</td></row>
 		<row><td>ISVirtualShortcut</td><td>Shortcut_</td><td>N</td><td/><td/><td>Shortcut</td><td>1</td><td>Identifier</td><td/><td>Foreign key into Shortcut table.</td></row>
 		<row><td>ISVirtualShortcut</td><td>Value</td><td>N</td><td/><td/><td/><td/><td/><td/><td>Property value</td></row>
+		<row><td>ISWSEWrap</td><td>Action_</td><td>N</td><td/><td/><td>CustomAction</td><td>1</td><td>Identifier</td><td/><td>Foreign key into CustomAction table</td></row>
+		<row><td>ISWSEWrap</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>Property associated with this Action</td></row>
+		<row><td>ISWSEWrap</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Value associated with this Property</td></row>
 		<row><td>ISXmlElement</td><td>Content</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Element contents</td></row>
 		<row><td>ISXmlElement</td><td>ISAttributes</td><td>Y</td><td/><td/><td/><td/><td>Number</td><td/><td>Internal XML element attributes</td></row>
 		<row><td>ISXmlElement</td><td>ISXmlElement</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Primary key, non-localized, internal token for Xml element</td></row>

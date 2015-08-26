@@ -17,8 +17,6 @@
 /Sources/WotDossier.Test/bin
 /Sources/WotDossier.Test/obj
 /Sources/packages
-/Sources/*.suo
-/Sources/*.user
 /Sources/WotDossier.Setup/WotDossier.Setup/Express
 /Sources/WotDossier.Setup.Lite/WotDossier.Setup.Lite/Express
 /Sources/WotDossier/*.user
@@ -35,3 +33,4 @@
 bin
 obj
 *.user
+*.suo

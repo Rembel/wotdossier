@@ -27,11 +27,15 @@
 			<TargetPath>My Test Exe.exe</TargetPath>
 		</TaggedOutputs> -->
 	</ItemGroup>
-	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
 	<ItemGroup>
 		<ProjectReference Include="..\WotDossier\WotDossier.csproj">
 			<Name>WotDossier</Name>
 			<Project>{A4EF480B-49B6-42C4-8ACE-6127B15699F8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\WotDossier.Framework\WotDossier.Framework.csproj">
+			<Name>WotDossier.Framework</Name>
+			<Project>{27B67DFE-0BF1-4435-B036-E4C083EAEA03}</Project>
 		</ProjectReference>
 		<ProjectReference Include="..\WotDossier.ReplaysManager\WotDossier.ReplaysManager.csproj">
 			<Name>WotDossier.ReplaysManager</Name>

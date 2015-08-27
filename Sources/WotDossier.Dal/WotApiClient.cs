@@ -44,11 +44,11 @@ namespace WotDossier.Dal
         private const string METHOD_RATINGS_ACCOUNTS = "wot/ratings/accounts/";
         private const string METHOD_CLAN_INFO = "wgn/clans/info/";
         private const string METHOD_CLAN_MEMBERSINFO = "wgn/clans/membersinfo/";
-        private const string METHOD_GLOBALWAR_MAPS = "wot/globalwar/maps/";
+        private const string METHOD_GLOBALWAR_FRONTS = "wot/globalmap/fronts/";
         private const string METHOD_ACCOUNT_LIST = "wot/account/list/";
         private const string METHOD_CLAN_LIST = "wgn/clans/list/";
-        private const string METHOD_GLOBALWAR_BATTLES = "wot/globalwar/battles/";
-        private const string METHOD_GLOBALWAR_PROVINCES = "wot/globalwar/provinces/";
+        private const string METHOD_GLOBALWAR_BATTLES = "wot/globalmap/clanbattles/";
+        private const string METHOD_GLOBALWAR_PROVINCES = "wot/globalmap/provinceinfo/";
 
         private static readonly object _syncObject = new object();
         private static volatile WotApiClient _instance = new WotApiClient();
@@ -166,16 +166,12 @@ namespace WotDossier.Dal
                     if (clanMemberInfo != null && clanMemberInfo.clan.clan_id > 0)
                     {
                         clanMemberInfo.clan = LoadClan(clanMemberInfo.clan.clan_id,
-                            new[] { "tag", "name", "clan_id", "description", "emblems" }, settings);
+                            new[] {"tag", "name", "clan_id", "description", "emblems"}, settings);
 
-                        IEnumerable<string> mapIds = GetMaps(settings);
+                        IEnumerable<GlobalMapFront> mapIds = GetFronts(settings);
 
                         List<BattleJson> result = new List<BattleJson>();
-
-                        foreach (var mapId in mapIds)
-                        {
-                            result.AddRange(GetBattles(clanMemberInfo.clan.clan_id, mapId, settings));
-                        }
+                        result.AddRange(GetBattles(clanMemberInfo.clan.clan_id, settings));
                         clanMemberInfo.clan.Battles = result;
 
                         return clanMemberInfo;
@@ -190,27 +186,27 @@ namespace WotDossier.Dal
             return null;
         }
 
-        private IEnumerable<string> GetMaps(AppSettings settings)
+        private IEnumerable<GlobalMapFront> GetFronts(AppSettings settings)
         {
             JObject response = null;
 
             try
             {
-                response = Request<JObject>(METHOD_GLOBALWAR_MAPS, new Dictionary<string, object>
+                response = Request<JObject>(METHOD_GLOBALWAR_FRONTS, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
                 }, settings);
 
                 if (response["data"].Any())
                 {
-                    return response["data"].Children().Select(x => x["map_id"].Value<string>()).ToArray();
+                    return response["data"].Children().Select(x => x.ToObject<GlobalMapFront>()).ToArray();
                 }
             }
             catch (Exception e)
             {
                 _log.ErrorFormat("Error on Maps info loading for server {1}: \n{0}", e, response, settings.Server);
             }
-            return new string[0];
+            return new GlobalMapFront[0];
         }
 
         /// <summary>
@@ -534,7 +530,7 @@ namespace WotDossier.Dal
         /// <returns>
         /// Found battles
         /// </returns>
-        public List<BattleJson> GetBattles(int clanId, string mapId, AppSettings settings)
+        public List<BattleJson> GetBattles(int clanId, AppSettings settings)
         {
             JObject response = null;
             try
@@ -542,27 +538,12 @@ namespace WotDossier.Dal
                 response = Request<JObject>(METHOD_GLOBALWAR_BATTLES, new Dictionary<string, object>
                 {
                     {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
-                    {PARAM_MAP_ID, mapId},
                     {PARAM_CLAN_ID, clanId}
                 }, settings);
 
                 if (response["status"].ToString() != "error" && response["data"].Any())
                 {
                     var battles = response["data"][clanId.ToString()].ToObject<List<BattleJson>>();
-
-                    IEnumerable<string> provinces = battles.SelectMany(x => x.provinces).ToList();
-
-                    if (provinces.Any())
-                    {
-                        Dictionary<string, ProvinceSearchJson> dictionary = GetProvinces(provinces.ToArray(), mapId, settings);
-
-                        foreach (BattleJson battle in battles)
-                        {
-                            battle.provinceDescriptions = GetProvinceDescriptions(battle.provinces, dictionary);
-                            battle.GlobalMapId = mapId;
-                        }
-                    }
-
                     return battles;
                 }
             }

@@ -148,6 +148,7 @@
     <Compile Include="Replay\StatBase.cs" />
     <Compile Include="Replay\Vehicle.cs" />
     <Compile Include="Replay\VehicleResult.cs" />
+    <Compile Include="Server\GlobalMapFront.cs" />
     <Compile Include="Server\VehicleAchievements.cs" />
     <Compile Include="Server\Achievements.cs" />
     <Compile Include="Server\BattleJson.cs" />

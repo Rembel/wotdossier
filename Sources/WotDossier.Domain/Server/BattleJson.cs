@@ -5,45 +5,22 @@ namespace WotDossier.Domain.Server
     public class BattleJson
     {
         /// <summary>
-        /// Идентификаторы провинций
-        /// </summary>
-        public string[] provinces { get; set; }
-        public List<ProvinceSearchJson> provinceDescriptions { get; set; }
-        /// <summary>
-        /// Бой начался
-        /// </summary>
-        public bool started { get; set; }
-        /// <summary>
-        /// Время начала боя
+        /// Battle time
         /// </summary>
         public int time { get; set; }
+
         /// <summary>
-        /// Тип боя
+        /// battle type
         /// </summary>
         public ClanBattleType type { get; set; }
-        /// <summary>
-        /// Информация о карте
-        /// </summary>
-        public Arena[] arenas { get; set; }
+
+        public string province_id { get; set; }
+
+        public string province_name { get; set; }
 
         /// <summary>
-        /// Gets or sets the global map identifier.
+        /// Gets or sets the global map front identifier.
         /// </summary>
-        /// <value>
-        /// The global map identifier.
-        /// </value>
-        public string GlobalMapId { get; set; }
-    }
-
-    public class Arena
-    {
-        /// <summary>
-        /// ID карты
-        /// </summary>
-        public string arena_id { get; set; }
-        /// <summary>
-        /// Название карты
-        /// </summary>
-        public string name_i18n { get; set; }
+        public string front_id { get; set; }
     }
 }

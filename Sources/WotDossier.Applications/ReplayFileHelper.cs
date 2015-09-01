@@ -331,7 +331,11 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             {
                 return new Parser98();
             }
-            return new Parser99();
+            if (version < new Version("0.9.10.0"))
+            {
+                return new Parser99();
+            }
+            return new Parser910();
         }
 
 

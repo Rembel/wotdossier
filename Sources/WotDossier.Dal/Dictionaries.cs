@@ -668,6 +668,8 @@ namespace WotDossier.Dal
                         tank.Expectancy = GetNearestExpectationsByTypeAndLevel(tank);
                     }
 
+                    tank.Title = Resources.Tanks.ResourceManager.GetString(tank.Icon.Icon) ?? tank.Title;
+
                     tanks.Add(tank);
                 }
             }

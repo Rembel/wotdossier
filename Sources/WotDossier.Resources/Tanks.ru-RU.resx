@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="a43" xml:space="preserve">
+    <value>А-43</value>
+  </data>
+  <data name="a44" xml:space="preserve">
+    <value>А-44</value>
+  </data>
+  <data name="at_1" xml:space="preserve">
+    <value>АТ-1</value>
+  </data>
+  <data name="a_20" xml:space="preserve">
+    <value>А-20</value>
+  </data>
+  <data name="a_32" xml:space="preserve">
+    <value>А-32</value>
+  </data>
+  <data name="bt_2" xml:space="preserve">
+    <value>БТ-2</value>
+  </data>
+  <data name="bt_7" xml:space="preserve">
+    <value>БТ-7</value>
+  </data>
+  <data name="bt_sv" xml:space="preserve">
+    <value>БТ-СВ</value>
+  </data>
+  <data name="churchill_ll" xml:space="preserve">
+    <value>Черчиль III</value>
+  </data>
+  <data name="gaz_74b" xml:space="preserve">
+    <value>СУ-85Б</value>
+  </data>
+  <data name="is" xml:space="preserve">
+    <value>ИС</value>
+  </data>
+  <data name="is8" xml:space="preserve">
+    <value>ИС-8</value>
+  </data>
+  <data name="isu_152" xml:space="preserve">
+    <value>ИСУ-152</value>
+  </data>
+  <data name="isu_152_igr" xml:space="preserve">
+    <value>ИСУ-152 игр.</value>
+  </data>
+  <data name="is_7" xml:space="preserve">
+    <value>ИС-7</value>
+  </data>
+  <data name="is_7_fallout" xml:space="preserve">
+    <value>(А) ИС-7</value>
+  </data>
+  <data name="is_7_igr" xml:space="preserve">
+    <value>ИС-7 игр.</value>
+  </data>
+  <data name="kv" xml:space="preserve">
+    <value>КВ</value>
+  </data>
+  <data name="kv1" xml:space="preserve">
+    <value>КВ-1</value>
+  </data>
+  <data name="kv2" xml:space="preserve">
+    <value>КВ-2</value>
+  </data>
+  <data name="kv2_igr" xml:space="preserve">
+    <value>КВ-2 игр.</value>
+  </data>
+  <data name="kv4" xml:space="preserve">
+    <value>КВ-4</value>
+  </data>
+  <data name="kv_13" xml:space="preserve">
+    <value>КВ-13</value>
+  </data>
+  <data name="kv_1s" xml:space="preserve">
+    <value>КВ-1С</value>
+  </data>
+  <data name="kv_220" xml:space="preserve">
+    <value>КВ-220 Бета-тест</value>
+  </data>
+  <data name="kv_220_action" xml:space="preserve">
+    <value>КВ-220</value>
+  </data>
+  <data name="kv_3" xml:space="preserve">
+    <value>КВ-3</value>
+  </data>
+  <data name="kv_5" xml:space="preserve">
+    <value>КВ-5</value>
+  </data>
+  <data name="kv_5_igr" xml:space="preserve">
+    <value>КВ-5 игр.</value>
+  </data>
+  <data name="ltp" xml:space="preserve">
+    <value>ЛТП</value>
+  </data>
+  <data name="m3_stuart_ll" xml:space="preserve">
+    <value>М3 лёгкий</value>
+  </data>
+  <data name="matilda_ii_ll" xml:space="preserve">
+    <value>Матильда IV</value>
+  </data>
+  <data name="ms_1" xml:space="preserve">
+    <value>МС-1</value>
+  </data>
+  <data name="mt25" xml:space="preserve">
+    <value>МТ-25</value>
+  </data>
+  <data name="object252" xml:space="preserve">
+    <value>ИС-6</value>
+  </data>
+  <data name="object263" xml:space="preserve">
+    <value>Объект 263</value>
+  </data>
+  <data name="object268" xml:space="preserve">
+    <value>Объект 268</value>
+  </data>
+  <data name="object268_fallout" xml:space="preserve">
+    <value>(А) Объект 268</value>
+  </data>
+  <data name="object416" xml:space="preserve">
+    <value>Объект 416</value>
+  </data>
+  <data name="object_140" xml:space="preserve">
+    <value>Объект 140</value>
+  </data>
+  <data name="object_140_fallout" xml:space="preserve">
+    <value>(А) Объект 140</value>
+  </data>
+  <data name="object_212" xml:space="preserve">
+    <value>212А</value>
+  </data>
+  <data name="object_261" xml:space="preserve">
+    <value>Объект 261</value>
+  </data>
+  <data name="object_430" xml:space="preserve">
+    <value>Объект 430</value>
+  </data>
+  <data name="object_907" xml:space="preserve">
+    <value>Объект 907</value>
+  </data>
+  <data name="object_907a" xml:space="preserve">
+    <value>Объект 907А</value>
+  </data>
+  <data name="observer" xml:space="preserve">
+    <value>Наблюдатель</value>
+  </data>
+  <data name="r00_t_50_2" xml:space="preserve">
+    <value>Т-50-2</value>
+  </data>
+  <data name="r02_su_85" xml:space="preserve">
+    <value>СУ-85</value>
+  </data>
+  <data name="r04_t_34" xml:space="preserve">
+    <value>Т-34</value>
+  </data>
+  <data name="r06_t_28" xml:space="preserve">
+    <value>Т-28</value>
+  </data>
+  <data name="r100_su122a" xml:space="preserve">
+    <value>СУ-122А</value>
+  </data>
+  <data name="r104_object_430_ii" xml:space="preserve">
+    <value>Объект 430 Версия II</value>
+  </data>
+  <data name="r105_bt_7a" xml:space="preserve">
+    <value>БТ-7 арт.</value>
+  </data>
+  <data name="r106_kv85" xml:space="preserve">
+    <value>КВ-85</value>
+  </data>
+  <data name="r106_kv85_igr" xml:space="preserve">
+    <value>КВ-85 игр.</value>
+  </data>
+  <data name="r107_ltb" xml:space="preserve">
+    <value>ЛТТБ</value>
+  </data>
+  <data name="r108_t34_85m" xml:space="preserve">
+    <value>Т-34-85М</value>
+  </data>
+  <data name="r109_t54s" xml:space="preserve">
+    <value>Т-54 облегчённый</value>
+  </data>
+  <data name="r110_object_260" xml:space="preserve">
+    <value>Объект 260</value>
+  </data>
+  <data name="r111_isu130" xml:space="preserve">
+    <value>ИСУ-130</value>
+  </data>
+  <data name="r112_t54_45" xml:space="preserve">
+    <value>Т-54 первый образец</value>
+  </data>
+  <data name="r113_object_730" xml:space="preserve">
+    <value>ИС-5 (Объект 730)</value>
+  </data>
+  <data name="r114_object_244" xml:space="preserve">
+    <value>Объект 244</value>
+  </data>
+  <data name="r115_is_3_auto" xml:space="preserve">
+    <value>ИС-3 с МЗ</value>
+  </data>
+  <data name="r116_isu122c_berlin" xml:space="preserve">
+    <value>ИСУ-122С</value>
+  </data>
+  <data name="r117_t34_85_rudy" xml:space="preserve">
+    <value>Т-34-85 Rudy</value>
+  </data>
+  <data name="r118_t28_f30" xml:space="preserve">
+    <value>Т-28Э с Ф-30</value>
+  </data>
+  <data name="r119_object_777" xml:space="preserve">
+    <value>Объект 777 Вариант II</value>
+  </data>
+  <data name="r120_t22sr_a22" xml:space="preserve">
+    <value>Т-22 ср.</value>
+  </data>
+  <data name="r19_is_3" xml:space="preserve">
+    <value>ИС-3</value>
+  </data>
+  <data name="r19_is_3_igr" xml:space="preserve">
+    <value>ИС-3 игр.</value>
+  </data>
+  <data name="r24_su_76" xml:space="preserve">
+    <value>СУ-76</value>
+  </data>
+  <data name="r53_object_704" xml:space="preserve">
+    <value>Объект 704</value>
+  </data>
+  <data name="r71_is_2b" xml:space="preserve">
+    <value>ИС-2</value>
+  </data>
+  <data name="r87_t62a" xml:space="preserve">
+    <value>Т-62А</value>
+  </data>
+  <data name="r87_t62a_fallout" xml:space="preserve">
+    <value>(А) Т-62А</value>
+  </data>
+  <data name="r90_is_4m" xml:space="preserve">
+    <value>ИС-4</value>
+  </data>
+  <data name="st_i" xml:space="preserve">
+    <value>СТ-1</value>
+  </data>
+  <data name="su100m1" xml:space="preserve">
+    <value>СУ-100М1</value>
+  </data>
+  <data name="su100y" xml:space="preserve">
+    <value>СУ-100У</value>
+  </data>
+  <data name="su122_44" xml:space="preserve">
+    <value>СУ-122-44</value>
+  </data>
+  <data name="su122_54" xml:space="preserve">
+    <value>СУ-122-5</value>
+  </data>
+  <data name="su14_1" xml:space="preserve">
+    <value>СУ-14-1</value>
+  </data>
+  <data name="su76i" xml:space="preserve">
+    <value>СУ-76И</value>
+  </data>
+  <data name="su_100" xml:space="preserve">
+    <value>СУ-100</value>
+  </data>
+  <data name="su_101" xml:space="preserve">
+    <value>СУ-101</value>
+  </data>
+  <data name="su_14" xml:space="preserve">
+    <value>СУ-14</value>
+  </data>
+  <data name="su_152" xml:space="preserve">
+    <value>СУ-152</value>
+  </data>
+  <data name="su_152_igr" xml:space="preserve">
+    <value>СУ-152 игр.</value>
+  </data>
+  <data name="su_18" xml:space="preserve">
+    <value>СУ-18</value>
+  </data>
+  <data name="su_26" xml:space="preserve">
+    <value>СУ-26</value>
+  </data>
+  <data name="su_5" xml:space="preserve">
+    <value>СУ-5</value>
+  </data>
+  <data name="su_8" xml:space="preserve">
+    <value>СУ-8</value>
+  </data>
+  <data name="su_85i" xml:space="preserve">
+    <value>СУ-85И</value>
+  </data>
+  <data name="s_51" xml:space="preserve">
+    <value>С-51</value>
+  </data>
+  <data name="t150" xml:space="preserve">
+    <value>Т-150</value>
+  </data>
+  <data name="t44_122" xml:space="preserve">
+    <value>Т-44-122</value>
+  </data>
+  <data name="t44_85" xml:space="preserve">
+    <value>Т-44-85</value>
+  </data>
+  <data name="t62a_sport" xml:space="preserve">
+    <value>Т-62А СПОРТ</value>
+  </data>
+  <data name="t80" xml:space="preserve">
+    <value>Т-80</value>
+  </data>
+  <data name="tetrarch_ll" xml:space="preserve">
+    <value>Тетрарх</value>
+  </data>
+  <data name="t_127" xml:space="preserve">
+    <value>Т-127</value>
+  </data>
+  <data name="t_26" xml:space="preserve">
+    <value>Т-26</value>
+  </data>
+  <data name="t_34_85" xml:space="preserve">
+    <value>Т-34-85</value>
+  </data>
+  <data name="t_34_85_training" xml:space="preserve">
+    <value>Т-34-85 тренировочный</value>
+  </data>
+  <data name="t_43" xml:space="preserve">
+    <value>Т-43</value>
+  </data>
+  <data name="t_44" xml:space="preserve">
+    <value>Т-44</value>
+  </data>
+  <data name="t_44_igr" xml:space="preserve">
+    <value>Т-44 игр.</value>
+  </data>
+  <data name="t_46" xml:space="preserve">
+    <value>Т-46</value>
+  </data>
+  <data name="t_50" xml:space="preserve">
+    <value>Т-50</value>
+  </data>
+  <data name="t_50_2" xml:space="preserve">
+    <value>Т-50-2</value>
+  </data>
+  <data name="t_54" xml:space="preserve">
+    <value>Т-54</value>
+  </data>
+  <data name="t_60" xml:space="preserve">
+    <value>Т-60</value>
+  </data>
+  <data name="t_70" xml:space="preserve">
+    <value>Т-70</value>
+  </data>
+  <data name="valentine_ll" xml:space="preserve">
+    <value>Валентайн II</value>
+  </data>
+  <data name="valentine_ll_igr" xml:space="preserve">
+    <value>Валентайн II игр.</value>
+  </data>
+</root>

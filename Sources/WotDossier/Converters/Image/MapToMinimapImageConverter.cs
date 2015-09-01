@@ -3,7 +3,6 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using WotDossier.Domain.Interfaces;
-using WotDossier.Domain.Replay;
 using WotDossier.Resources;
 
 namespace WotDossier.Converters
@@ -33,30 +32,10 @@ namespace WotDossier.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             IReplayMap description = value as IReplayMap;
-            int layer = 0;
-            if (parameter != null)
-            {
-                layer = int.Parse(parameter.ToString());
-            }
-
+            
             if (description != null)
             {
-                Uri uriSource;
-                if (layer == 0)
-                {
-                    uriSource = new Uri(
-                        string.Format(
-                            @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}.png",
-                            description.MapNameId));
-                }
-                else
-                {
-                    uriSource =
-                        new Uri(
-                            string.Format(
-                                @"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}_{1}_{2}.png",
-                                description.MapNameId, description.Gameplay == Gameplay.nations ? Gameplay.ctf : description.Gameplay, description.Team));
-                }
+                var uriSource = new Uri(string.Format(@"pack://application:,,,/WotDossier.Resources;component/Images/Maps/Minimap/{0}.png", description.MapNameId));
 
                 BitmapImage bitmapImage = ImageCache.GetBitmapImage(uriSource);
 

@@ -82,8 +82,7 @@
             </Grid>
 
             <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
-                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" />
-                <!--<Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />-->
+                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}}" />
 
                 <Grid DataContext="{Binding ReplayViewer}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
@@ -133,7 +132,7 @@
                         </Rectangle>
                     </Canvas>
 
-                    <ItemsControl ItemsSource="{Binding Elements}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                    <ItemsControl ItemsSource="{Binding MapGrid.Elements}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <Canvas />

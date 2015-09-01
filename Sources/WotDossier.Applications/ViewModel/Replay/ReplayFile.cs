@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using Common.Logging;
+using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -152,6 +153,31 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             Medals = new List<Medal>();
             Achievements = new List<Medal>();
+        }
+
+        private MapGrid _mapGrid;
+        public MapGrid MapGrid
+        {
+            get
+            {
+                if (_mapGrid == null)
+                {
+                    InitMap();
+                }
+                return _mapGrid;
+            }
+        }
+
+        public void InitMap()
+        {
+            if (Team != 0)
+            {
+                var replay = ReplayData();
+
+                var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
+
+                _mapGrid = new MapGrid(map, replay.datablock_1.gameplayID, Team, 300, 300);
+            }
         }
 
         /// <summary>

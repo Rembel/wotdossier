@@ -86,5 +86,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         public int Credits { get; set; }
 
         public Guid FolderId { get; set; }
+
+        public string PlayerName { get; set; }
     }
 }

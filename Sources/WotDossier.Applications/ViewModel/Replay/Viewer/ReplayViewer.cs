@@ -35,16 +35,6 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             }
         }
 
-        public List<MapImageElement> Elements
-        {
-            get { return _elements; }
-            set
-            {
-                _elements = value;
-                OnPropertyChanged("Elements");
-            }
-        }
-
         private int _enemiesCapturePoints;
 
         public int EnemiesCapturePoints
@@ -170,7 +160,6 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         }
 
         private int _secondTeamKills;
-        private List<MapImageElement> _elements;
         private BaseParser _parser;
 
         public int SecondTeamKills
@@ -196,8 +185,6 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 
             var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
 
-            _mapGrid = new MapGrid(map.Config.BoundingBox, MAP_CONTROL_SIZE, MAP_CONTROL_SIZE);
-
             CellSize = MAP_CONTROL_SIZE / 10;
 
             Vehicles = vehicles;
@@ -207,77 +194,12 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             FirstTeam = Vehicles.Where(v => v.TeamMate).ToList();
             SecondTeam = Vehicles.Where(v => !v.TeamMate).ToList();
 
-            if (map.Config.GameplayTypes.ContainsKey(replay.datablock_1.gameplayID))
-            {
-                GameplayDescription gameplayDescription = map.Config.GameplayTypes[replay.datablock_1.gameplayID];
-
-                Elements = GetMapImageElements(gameplayDescription, ReplayUser.Team);
-            }
-
             _parser = ReplayFileHelper.GetParser(_replay);
+
+            _mapGrid = new MapGrid(map, replay.datablock_1.gameplayID, ReplayUser.Team, MAP_CONTROL_SIZE, MAP_CONTROL_SIZE);
         }
 
-        private List<MapImageElement> GetMapImageElements(GameplayDescription gameplayDescription, int replayUserTeam)
-        {
-            List<MapImageElement> elements = new List<MapImageElement>();
-
-            int xShift = -16;
-            int yShift = -20;
-
-            foreach (KeyValuePair<int, List<Point>> teamBasePosition in gameplayDescription.TeamBasePositions)
-            {
-                int i = 1;
-                foreach (var point in teamBasePosition.Value)
-                {
-                    MapImageElement element = new MapImageElement();
-                    Point? mapCoord = MapGrid.game_to_map_coord(point);
-                    element.X = mapCoord.Value.X + xShift;
-                    element.Y = mapCoord.Value.Y + yShift;
-                    element.Type = "base";
-                    element.Team = teamBasePosition.Key;
-                    element.Owner = GetElementOwner(element.Team, replayUserTeam);
-                    element.Position = i++;
-                    elements.Add(element);
-                }
-            }
-            foreach (KeyValuePair<int, List<Point>> teamSpawns in gameplayDescription.TeamSpawnPoints)
-            {
-                int i = 1;
-                foreach (var point in teamSpawns.Value)
-                {
-                    MapImageElement element = new MapImageElement();
-                    Point? mapCoord = MapGrid.game_to_map_coord(point);
-                    element.X = mapCoord.Value.X + xShift;
-                    element.Y = mapCoord.Value.Y + yShift;
-                    element.Type = "spawn";
-                    element.Team = teamSpawns.Key;
-                    element.Owner = GetElementOwner(element.Team, replayUserTeam);
-                    element.Position = i++;
-                    elements.Add(element);
-                }
-            }
-
-            if (gameplayDescription.ControlPoint != null)
-            {
-                MapImageElement element = new MapImageElement();
-                Point? mapCoord = MapGrid.game_to_map_coord(gameplayDescription.ControlPoint.Value);
-                element.X = mapCoord.Value.X + xShift;
-                element.Y = mapCoord.Value.Y + yShift;
-                element.Type = "base";
-                elements.Add(element);
-            }
-            return elements;
-        }
-
-        private string GetElementOwner(int team, int replayUserTeam)
-        {
-            if (team == replayUserTeam)
-            {
-                return "friendly";
-            }
-            return "enemy";
-        }
-
+        
         public void Stop()
         {
             _parser.Abort();

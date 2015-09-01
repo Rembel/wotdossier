@@ -203,7 +203,7 @@ namespace WotDossier.Common
                 {
                     string module = ReadLineNoNewline();
                     string attr = ReadLineNoNewline();
-                    Debug.Fail(String.Format("unexpected global in pickle stream {0}.{1}", module, attr));
+                    //Debug.Fail(String.Format("unexpected global in pickle stream {0}.{1}", module, attr));
                     _stack.Add(null);   // no support for actually loading the globals...
                 }
 

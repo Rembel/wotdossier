@@ -342,6 +342,7 @@
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{F24F419A-388F-4EAE-89A2-C0E2E2E0069E}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Content_Files</td><td>{805F7A9F-286D-4264-9A01-6220F4B4CD9F}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.content_files</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WotDossier.Framework.Localized_resources</td><td>{A60D833F-D3FE-47A2-B5B3-5604AA1C3C74}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.framework.localiz</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Primary_output</td><td>{9FCFB9FE-8A96-4148-B9AB-4BBA403E3041}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.ReplaysManager.Primary_output</td><td>{D649D4D2-CE66-4FAB-A4AB-B2C64FA8A1F1}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.replaysmanager.pr</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WotDossier.Resources.Localized_resources</td><td>{68FF5ED0-CAD3-4CB2-861F-AE688A835FF1}</td><td>INSTALLDIR</td><td>2</td><td/><td>wotdossier.resources.localiz</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1056,6 +1057,7 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>INSTALLDIR</td><td>WotDossier.Framework.Localized_resources</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1872,6 +1874,7 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Content_Files</td></row>
+		<row><td>AlwaysInstall</td><td>WotDossier.Framework.Localized_resources</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.ReplaysManager.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WotDossier.Resources.Localized_resources</td></row>
@@ -1891,6 +1894,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>wotdossier.content_files</td><td>WotDossier.Content_Files</td><td>WotDossier.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|ContentFiles</td><td>3</td><td/></row>
+		<row><td>wotdossier.framework.localiz</td><td>WotDossier.Framework.Localized_resources</td><td>WotDossier.Framework.Localized resources</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.Framework&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>wotdossier.primary_output</td><td>WotDossier.Primary_output</td><td>WotDossier.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier&gt;|Built</td><td>3</td><td/></row>
 		<row><td>wotdossier.replaysmanager.pr</td><td>WotDossier.ReplaysManager.Primary_output</td><td>WotDossier.ReplaysManager.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WotDossier.ReplaysManager&gt;|Built</td><td>3</td><td/></row>
 		<row><td>wotdossier.resources.localiz</td><td>WotDossier.Resources.Localized_resources</td><td>WotDossier.Resources.Localized resources</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;WotDossier.Resources&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
@@ -2040,6 +2044,7 @@
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_5564DD31_4287_4A7E_B7DA_77BBFB9D8B78_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Content_Files</td><td/><td/><td>_773F011F_710E_4F91_A6B3_96B85A6C94C6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WotDossier.Framework.Localized_resources</td><td/><td/><td>_A5D07AFF_994E_4589_9DF5_3DD86069EC0F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Primary_output</td><td/><td/><td>_A9E97D19_CFFB_4DF8_B99F_955A6BDB19BB_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.ReplaysManager.Primary_output</td><td/><td/><td>_7A3123FD_5910_4292_B2F1_58A8D4F2D425_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WotDossier.Resources.Localized_resources</td><td/><td/><td>_C60C1623_A9A5_48AD_9167_2BECCA0B4521_FILTER</td><td/><td/><td/><td/></row>
@@ -3893,7 +3898,7 @@
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
-		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectFolder&gt;\..\WotDossier\app_icon.ico </td><td>0</td></row>
+		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectFolder&gt;\..\WotDossier\app_icon.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4404,9 +4409,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]WotDossier.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{7AAA5C65-CF52-413D-9767-697DAFFC9D32}</td><td/></row>
+		<row><td>ProductCode</td><td>{A380DFC2-4E78-48E6-8CED-C753C49B6D13}</td><td/></row>
 		<row><td>ProductName</td><td>WotDossier</td><td/></row>
-		<row><td>ProductVersion</td><td>4.6.3</td><td/></row>
+		<row><td>ProductVersion</td><td>4.7</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4695,7 +4700,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>4.6.3</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
+		<row><td>{B748D921-664A-4EC7-B21A-377641E1F1AC}</td><td></td><td>4.7</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>Update</td></row>
 	</table>
 
 	<table name="Verb">

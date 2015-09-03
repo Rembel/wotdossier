@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
 		<!-- Select a Product Configuration -->
 		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
@@ -32,6 +32,10 @@
 		<ProjectReference Include="..\WotDossier\WotDossier.csproj">
 			<Name>WotDossier</Name>
 			<Project>{A4EF480B-49B6-42C4-8ACE-6127B15699F8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\WotDossier.Framework\WotDossier.Framework.csproj">
+			<Name>WotDossier.Framework</Name>
+			<Project>{27B67DFE-0BF1-4435-B036-E4C083EAEA03}</Project>
 		</ProjectReference>
 		<ProjectReference Include="..\WotDossier.ReplaysManager\WotDossier.ReplaysManager.csproj">
 			<Name>WotDossier.ReplaysManager</Name>

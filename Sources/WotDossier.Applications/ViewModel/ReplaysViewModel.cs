@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
@@ -13,15 +14,20 @@ using Common.Logging;
 using Ionic.Zip;
 using Newtonsoft.Json;
 using Ookii.Dialogs.Wpf;
+using ProtoBuf;
+using ProtoBuf.Meta;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Replay;
+using WotDossier.Domain.Tank;
 using WotDossier.Framework;
 using WotDossier.Framework.Controls.DataGrid;
 using WotDossier.Framework.EventAggregator;
@@ -189,6 +195,53 @@ namespace WotDossier.Applications.ViewModel
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
             Application.Current.Exit += OnAppExit;
+
+            InitProtobuf();
+        }
+
+        private static void InitProtobuf()
+        {
+            RuntimeTypeModel.Default.AllowParseableTypes = true;
+            RuntimeTypeModel.Default.AutoAddMissingTypes = true;
+
+            var metaType = RuntimeTypeModel.Default.Add(typeof (ReplayFile), true);
+
+            InitType(metaType);
+            InitType(RuntimeTypeModel.Default.Add(typeof (Medal), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (MedalGroup), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (TankIcon), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (TankDescription), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (Vehicle), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (MapGrid), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (MapImageElement), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (LevelRange), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (RatingExpectancy), true));
+            RuntimeTypeModel.Default[typeof (BattleType)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (Gameplay)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (Country)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (DeathReason)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (FinishReason)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (BattleStatus)].EnumPassthru = true;
+
+            metaType
+                .AddSubType(100, typeof (DbReplay));
+            metaType
+                .AddSubType(200, typeof (PhisicalReplay));
+        }
+
+        private static void InitType(MetaType metaType)
+        {
+            var propertyInfos = metaType.Type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            int i = 0;
+            foreach (PropertyInfo propertyInfo in propertyInfos)
+            {
+                if (propertyInfo.CanWrite)
+                {
+                    i++;
+                    metaType.Add(i, propertyInfo.Name);
+                }
+            }
         }
 
         private void OnAppExit(object sender, ExitEventArgs exitEventArgs)
@@ -549,7 +602,11 @@ namespace WotDossier.Applications.ViewModel
         private void Cache(List<ReplayFile> replays)
         {
             var dossierAppDataFolder = ReplaysCacheFilePath();
-            File.WriteAllText(dossierAppDataFolder, JsonConvert.SerializeObject(replays, Formatting.Indented));
+            
+            using (var stream = File.OpenWrite(dossierAppDataFolder + "1"))
+            {
+                Serializer.Serialize(stream, replays);
+            }
         }
 
         private static string ReplaysCacheFilePath()
@@ -564,8 +621,11 @@ namespace WotDossier.Applications.ViewModel
             {
                 try
                 {
-                    var content = File.ReadAllText(dossierAppDataFolder);
-                    return JsonConvert.DeserializeObject<List<PhisicalReplay>>(content).Where(x => x.FolderId != ReplaysManager.DeletedFolder.Id);
+                    using (var stream = File.OpenRead(dossierAppDataFolder + "1"))
+                    {
+                        var list = Serializer.Deserialize<List<ReplayFile>>(stream);
+                        return list;
+                    }
                 }
                 catch (Exception e)
                 {

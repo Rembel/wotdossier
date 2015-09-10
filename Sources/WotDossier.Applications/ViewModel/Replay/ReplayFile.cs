@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using Common.Logging;
+using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
@@ -17,7 +17,7 @@ namespace WotDossier.Applications.ViewModel.Replay
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ReplayFile : INotifyPropertyChanged, IMapDescription
+    public abstract class ReplayFile : INotifyPropertyChanged, IReplayMap
     {
         protected static readonly ILog Log = LogManager.GetCurrentClassLogger();
 
@@ -27,33 +27,53 @@ namespace WotDossier.Applications.ViewModel.Replay
         public static readonly string PropKilled = TypeHelper<ReplayFile>.PropertyName(v => v.Killed);
         public static readonly string PropXp = TypeHelper<ReplayFile>.PropertyName(v => v.Xp);
 
-        #region result fields
+        #region Stat props
 
+        public List<Medal> Achievements { get; set; }
+
+        public int AchievementsCount { get; set; }
         public TimeSpan BattleTime { get; set; }
         public BattleType BattleType { get; set; }
+        public string BattleTypeString { get; set; }
+
+        /// <summary>
+        /// Gets or sets the folder id.
+        /// </summary>
+        /// <value>
+        /// The folder id.
+        /// </value>
+        public Guid FolderId { get; set; }
+
+        public string FinishReasonString { get; set; }
+
         public Gameplay Gameplay { get; set; }
         public Version ClientVersion { get; set; }
         public string Comment { get; set; }
         public Country CountryId { get; set; }
-        public TimeSpan LifeTime { get; set; }
-        public string MapName { get; set; }
-        public int MapId { get; set; }
-        public string MapNameId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the mark of mastery.
-        /// </summary>
-        public int MarkOfMastery { get; set; }
-
-        public string TankName { get; set; }
-        public DateTime PlayTime { get; set; }
+        public int Credits { get; set; }
+        public int CreditsEarned { get; set; }
+        public int DamageAssisted { get; set; }
+        public int DamageDealt { get; set; }
+        public int DamageReceived { get; set; }
         public int Damaged { get; set; }
-        public int Killed { get; set; }
-        public long PlayerId { get; set; }
-        public string PlayerName { get; set; }
-        public long ReplayId { get; set; }
-        public int Xp { get; set; }
 
+        private DeathReason _deathReason = DeathReason.Unknown;
+
+        public DeathReason DeathReason
+        {
+            get { return _deathReason; }
+            set { _deathReason = value; }
+        }
+
+        public int DamageBlockedByArmor { get; set; }
+        public int DamageAssistedTrack { get; set; }
+
+        public int DamageAssistedRadio { get; set; }
+        public string DeathReasonString { get; set; }
+        public FinishReason FinishReason { get; set; }
+        public TankIcon Icon { get; set; }
+        public bool IsAlive { get; set; }
+        public bool IsPlatoon { get; set; }
         private BattleStatus _isWinner = BattleStatus.Unknown;
         public BattleStatus IsWinner
         {
@@ -61,16 +81,10 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _isWinner = value; }
         }
 
-        public int DamageReceived { get; set; }
-        public int DamageDealt { get; set; }
-        public int Credits { get; set; }
-        public int CreditsEarned { get; set; }
-        public int Team { get; set; }
-        
-        public TankDescription Tank { get; set; }
-        public TankIcon Icon { get; set; }
-        public List<Vehicle> TeamMembers { get; set; }
+        public string IsWinnerString { get; set; }
 
+        public int Killed { get; set; }
+        public TimeSpan LifeTime { get; set; }
         private string _link;
         
         /// <summary>
@@ -89,65 +103,81 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
         }
 
-        /// <summary>
-        /// Gets or sets the phisical file.
-        /// </summary>
-        /// <value>
-        /// The phisical file.
-        /// </value>
-        public FileInfo PhisicalFile { get; set; }
-        
-        /// <summary>
-        /// Gets or sets the folder id.
-        /// </summary>
-        /// <value>
-        /// The folder id.
-        /// </value>
-        public Guid FolderId { get; set; }
+        public string MapName { get; set; }
+        public int MapId { get; set; }
+        public string MapNameId { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="ReplayFile" /> is exists.
+        /// Gets or sets the mark of mastery.
         /// </summary>
-        /// <value>
-        ///   <c>true</c> if exists; otherwise, <c>false</c>.
-        /// </value>
-        public abstract bool Exists { get; }
-
-        /// <summary>
-        /// Gets the phisical path.
-        /// </summary>
-        /// <value>
-        /// The phisical path.
-        /// </value>
-        public abstract string PhisicalPath { get; }
-
-        /// <summary>
-        /// Gets the name.
-        /// </summary>
-        public abstract string Name { get; }
-
-        public bool IsAlive { get; set; }
+        public int MarkOfMastery { get; set; }
 
         public List<Medal> Medals { get; set; }
 
         public int MedalsCount { get; set; }
 
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        public string Name { get; set; }
+
+        public int OriginalXp { get; set; }
+
+        /// <summary>
+        /// Gets the phisical path.
+        /// </summary>
+        public string PhisicalPath { get; set; }
+
+        public long PlayerId { get; set; }
+        public string PlayerName { get; set; }
+        public DateTime PlayTime { get; set; }
+        public int PotentialDamageReceived { get; set; }
+        public long ReplayId { get; set; }
+        public int Spotted { get; set; }
+
+        public TankDescription Tank { get; set; }
+        public string TankName { get; set; }
+        public int Team { get; set; }
+        public List<Vehicle> TeamMembers { get; set; }
+
+        public int Xp { get; set; }
+
         #endregion
 
-        public FinishReason FinishReason { get; set; }
-
-        private DeathReason _deathReason = DeathReason.Unknown;
-        public DeathReason DeathReason
-        {
-            get { return _deathReason; }
-            set { _deathReason = value; }
-        }
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplayFile" /> class.
         /// </summary>
         protected ReplayFile()
         {
+            Medals = new List<Medal>();
+            Achievements = new List<Medal>();
+        }
+
+        private MapGrid _mapGrid;
+        public MapGrid MapGrid
+        {
+            get
+            {
+                if (_mapGrid == null)
+                {
+                    InitMap();
+                }
+                return _mapGrid;
+            }
+        }
+
+        public void InitMap()
+        {
+            if (Team != 0)
+            {
+                var replay = ReplayData();
+
+                var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
+
+                _mapGrid = new MapGrid(map, replay.datablock_1.gameplayID, Team, 300, 300);
+            }
         }
 
         /// <summary>
@@ -155,7 +185,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         /// </summary>
         /// <param name="replay">The replay.</param>
         /// <param name="folderId">The folder id.</param>
-        protected ReplayFile(Domain.Replay.Replay replay, Guid folderId)
+        protected ReplayFile(Domain.Replay.Replay replay, Guid folderId) : this()
         {
             FolderId = folderId;
 
@@ -165,18 +195,15 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 ClientVersion = ReplayFileHelper.ResolveVersion(replay.datablock_1.Version, PlayTime);
 
-                TankDescription description = Dictionaries.Instance.GetReplayTankDescription(replay.datablock_1.playerVehicle, ClientVersion);
+                TankDescription description = Dictionaries.Instance.GetReplayTankDescription(replay.datablock_1.playerVehicle, ClientVersion); 
 
-                if (description != null)
-                {
-                    Icon = description.Icon;
+                Icon = description.Icon;
 
-                    CountryId = (Country) description.CountryId;
+                CountryId = (Country) description.CountryId;
 
-                    Tank = description;
-                }
+                Tank = description;
 
-                TankName = Tank != null ? Tank.Title : replay.datablock_1.playerVehicle;
+                TankName = Tank.Title;
 
                 ReplayId = Int64.Parse(PlayTime.ToString("yyyyMMddHHmm"));
 
@@ -199,8 +226,8 @@ namespace WotDossier.Applications.ViewModel.Replay
                     Log.WarnFormat("Unknown map: {0}", replay.datablock_1.mapName);
                 }
 
-                BattleType = (BattleType)replay.datablock_1.battleType;
-                Gameplay = (Gameplay)Enum.Parse(typeof(Gameplay), replay.datablock_1.gameplayID);
+                BattleType = (BattleType) replay.datablock_1.battleType;
+                Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);
                 Team = TeamMembers.First(x => x.name == replay.datablock_1.playerName).team;
 
                 if (replay.datablock_battle_result != null)
@@ -215,36 +242,54 @@ namespace WotDossier.Applications.ViewModel.Replay
                     DamageReceived = replay.datablock_battle_result.personal.damageReceived;
                     IsWinner = GetBattleStatus(replay);
                     Xp = replay.datablock_battle_result.personal.xp;
+                    OriginalXp = replay.datablock_battle_result.personal.originalXP;
                     Killed = replay.datablock_battle_result.personal.kills;
                     Damaged = replay.datablock_battle_result.personal.damaged;
+                    Spotted = replay.datablock_battle_result.personal.spotted;
+                    DamageAssisted = replay.datablock_battle_result.personal.damageAssisted;
+                    DamageAssistedRadio = replay.datablock_battle_result.personal.damageAssistedRadio;
+                    DamageAssistedTrack = replay.datablock_battle_result.personal.damageAssistedTrack;
+                    PotentialDamageReceived = replay.datablock_battle_result.personal.potentialDamageReceived;
+                    DamageBlockedByArmor = replay.datablock_battle_result.personal.damageBlockedByArmor;
                     MarkOfMastery = replay.datablock_battle_result.personal.markOfMastery;
                     BattleTime = new TimeSpan(0, 0, (int) replay.datablock_battle_result.common.duration);
                     LifeTime = new TimeSpan(0, 0, replay.datablock_battle_result.personal.lifeTime);
-                    IsAlive = replay.datablock_battle_result.personal.deathReason == -1 || replay.datablock_battle_result.personal.killerID == 0;
-                    Medals =  Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
-                    //Medals = Dictionaries.Instance.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps);
+                    IsAlive = replay.datablock_battle_result.personal.deathReason == -1 ||
+                              replay.datablock_battle_result.personal.killerID == 0;
+                    Medals = Dictionaries.Instance.GetMedals(replay.datablock_battle_result.personal.achievements);
+                    Achievements =
+                        Dictionaries.Instance.GetAchievMedals(replay.datablock_battle_result.personal.dossierPopUps)
+                            .Except(Medals)
+                            .ToList();
                     MedalsCount = Medals.Count;
+                    AchievementsCount = Achievements.Count;
                     IsPlatoon = ResolvePlatoonFlag(replay);
-                    
+
                     BattleType = (BattleType) replay.datablock_battle_result.common.bonusType;
-                    DeathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
+                    DeathReason = ResolveDeathReason(replay);
                     FinishReason = (FinishReason) replay.datablock_battle_result.common.finishReason;
                 }
 
-                IsWinnerString = Resources.Resources.ResourceManager.GetEnumResource((Enum)IsWinner);
-                BattleTypeString = Resources.Resources.ResourceManager.GetEnumResource((Enum)BattleType);
-                DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)DeathReason);
-                FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum)FinishReason);
+                IsWinnerString = Resources.Resources.ResourceManager.GetEnumResource((Enum) IsWinner);
+                BattleTypeString = Resources.Resources.ResourceManager.GetEnumResource((Enum) BattleType);
+                DeathReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum) DeathReason);
+                FinishReasonString = Resources.Resources.ResourceManager.GetEnumResource((Enum) FinishReason);
             }
         }
 
-        public string IsWinnerString { get; set; }
+        #endregion
 
-        public string FinishReasonString { get; set; }
+        #region Help functions
 
-        public string DeathReasonString { get; set; }
-
-        public string BattleTypeString { get; set; }
+        private DeathReason ResolveDeathReason(Domain.Replay.Replay replay)
+        {
+            var deathReason = (DeathReason) replay.datablock_battle_result.personal.deathReason;
+            if (deathReason == DeathReason.DestroyedByShot && replay.datablock_battle_result.personal.damageReceived < Tank.Health)
+            {
+                return DeathReason.CrewDead;
+            }
+            return deathReason;
+        }
 
         private bool ResolvePlatoonFlag(Domain.Replay.Replay replay)
         {
@@ -255,26 +300,6 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
             return replay.datablock_battle_result.players.Values.Any(x => x.name == PlayerName && x.platoonID > 0);
         }
-
-        public bool IsPlatoon { get; set; }
-
-        /// <summary>
-        /// Moves replay to the specified folder.
-        /// </summary>
-        /// <param name="targetFolder">The target folder.</param>
-        public abstract void Move(ReplayFolder targetFolder);
-
-        /// <summary>
-        /// Gets Replay data.
-        /// </summary>
-        /// <param name="readAdvancedData"></param>
-        /// <returns></returns>
-        public abstract Domain.Replay.Replay ReplayData(bool readAdvancedData = false);
-
-        /// <summary>
-        /// Deletes this instance.
-        /// </summary>
-        public abstract void Delete();
 
         /// <summary>
         /// Gets the battle status.
@@ -295,6 +320,30 @@ namespace WotDossier.Applications.ViewModel.Replay
 
             return BattleStatus.Defeat;
         }
+
+        #endregion
+
+        #region File Operations
+
+        /// <summary>
+        /// Deletes this instance.
+        /// </summary>
+        public abstract void Delete();
+
+        /// <summary>
+        /// Moves replay to the specified folder.
+        /// </summary>
+        /// <param name="targetFolder">The target folder.</param>
+        public abstract void Move(ReplayFolder targetFolder);
+
+        /// <summary>
+        /// Gets Replay data.
+        /// </summary>
+        /// <param name="readAdvancedData"></param>
+        /// <returns></returns>
+        public abstract Domain.Replay.Replay ReplayData(bool readAdvancedData = false);
+
+        #endregion
 
         /// <summary>
         /// Occurs when [property changed].

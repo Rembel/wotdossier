@@ -35,3 +35,8 @@
 /Sources/WotDossier.Node/obj
 /Sources/WotDossier.Node/*.suo
 /Sources/WotDossier.Node/*.log
+bin
+obj
+*.user
+*.suo
+/Sources/.vs/config

@@ -74,13 +74,9 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
-    <Reference Include="SimpleInjector, Version=2.5.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+    <Reference Include="SimpleInjector, Version=2.8.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net40-client\SimpleInjector.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector.Diagnostics, Version=2.5.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net40-client\SimpleInjector.Diagnostics.dll</HintPath>
+      <HintPath>..\packages\SimpleInjector.2.8.0\lib\net40-client\SimpleInjector.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition, Version=2009.26.8.0, Culture=neutral, processorArchitecture=MSIL">
@@ -122,6 +118,7 @@
     <Compile Include="Applications\ViewModel.Generic.cs" />
     <Compile Include="CallbackDataSource.cs" />
     <Compile Include="CompositionContainerFactory.cs" />
+    <Compile Include="Controls\AlignableWrapPanel.cs" />
     <Compile Include="Controls\Behaviors.cs" />
     <Compile Include="Controls\BindableSelectedItemBehavior.cs" />
     <Compile Include="Controls\DataGrid\ColumnChooserControl.xaml.cs">
@@ -133,6 +130,8 @@
     <Compile Include="Controls\DataGrid\DoubleUtil.cs" />
     <Compile Include="Controls\DataGrid\Helper.cs" />
     <Compile Include="Controls\DatePickerWatermarkBehaviour.cs" />
+    <Compile Include="Controls\Gauge\CircularGaugeControl.cs" />
+    <Compile Include="Controls\Gauge\TypeConverters.cs" />
     <Compile Include="Controls\MultiSelectListBox.cs" />
     <Compile Include="Controls\MultiSelector\IListItemConverter.cs" />
     <Compile Include="Controls\MultiSelector\MultiSelectorBehaviours.cs" />
@@ -151,6 +150,7 @@
     <Compile Include="EventAggregator\IEventSubscription.cs" />
     <Compile Include="EventAggregator\SubscriptionToken.cs" />
     <Compile Include="EventAggregator\WeakEventHandler.cs" />
+    <Compile Include="FastDirectoryEnumerator.cs" />
     <Compile Include="Forms\Commands\CommandManagerHelper.cs" />
     <Compile Include="Forms\Commands\CommandReference.cs" />
     <Compile Include="Forms\Commands\DelegateCommand.cs" />
@@ -192,6 +192,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Util.cs" />
+    <Compile Include="Validation\PathExistsValidationRule.cs" />
     <Compile Include="WafConfiguration.cs" />
     <Compile Include="WaitCursor.cs" />
   </ItemGroup>
@@ -222,6 +223,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\DataGrid\ColumnChooserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Gauge\Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

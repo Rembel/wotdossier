@@ -27,10 +27,10 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TotalTankStatisticRowViewModel(List<ITankStatisticRow> list)
+        public TotalTankStatisticRowViewModel(List<ITankStatisticRow> list, string rowHeader)
         {
             Type = -1;
-            Tank = Resources.Resources.Total;
+            Tank = rowHeader;
             Icon = null;
             CountryId = -1;
             TankId = -1;

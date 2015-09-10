@@ -6,7 +6,7 @@ namespace WotDossier.Domain.Server
     {
         public int clan_id { get; set; }
         public string name { get; set; }
-        public string abbreviation { get; set; }
+        public string tag { get; set; }
         public string description { get; set; }
         public string motto { get; set; }
         public int members_count { get; set; } 
@@ -19,8 +19,8 @@ namespace WotDossier.Domain.Server
         public bool is_clan_disbanded { get; set; }
         public bool request_availability { get; set; }
 
-        public ClanEmblems emblems { get; set; }
-        public Dictionary<int, ClanMember> members { get; set; }
+        public Dictionary<string, ClanEmblems> emblems { get; set; }
+        public List<ClanMember> members { get; set; }
         public List<BattleJson> Battles { get; set; }
     }
 }

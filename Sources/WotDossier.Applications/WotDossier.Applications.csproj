@@ -41,21 +41,23 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="DynamicDataDisplay">
-      <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip">
-      <HintPath>..\packages\DotNetZip.1.9.2\lib\net20\Ionic.Zip.dll</HintPath>
+    <Reference Include="Ionic.Zip, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs.Wpf">
       <HintPath>..\packages\Ookii.Dialogs.1.0\lib\net35\Ookii.Dialogs.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.configuration" />
@@ -88,13 +90,17 @@
     <Compile Include="CacheFileHelper.cs" />
     <Compile Include="CultureHelper.cs" />
     <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="Events\AddFavoritePlayerEvent.cs" />
+    <Compile Include="Events\RemoveFavoritePlayerEvent.cs" />
     <Compile Include="Events\ReplayManagerRefreshEvent.cs" />
     <Compile Include="Events\ReplayManagerActivatedEvent.cs" />
     <Compile Include="ExternalTask.cs" />
     <Compile Include="Logic\Adapter\FortSortiesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\FortBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\ClanBattlesStatAdapter.cs" />
+    <Compile Include="Logic\Constants.cs" />
     <Compile Include="Logic\Mapper.cs" />
+    <Compile Include="Logic\Rating.cs" />
     <Compile Include="Model\BattleModel.cs" />
     <Compile Include="Parser\BaseParser.cs" />
     <Compile Include="Parser\Parser81.cs" />
@@ -103,12 +109,15 @@
     <Compile Include="Parser\Parser86.cs" />
     <Compile Include="Parser\Parser85.cs" />
     <Compile Include="Parser\Packet.cs" />
+    <Compile Include="Parser\Parser910.cs" />
+    <Compile Include="Parser\Parser99.cs" />
+    <Compile Include="Parser\Parser98.cs" />
+    <Compile Include="Parser\Parser96.cs" />
     <Compile Include="Parser\Parser93.cs" />
     <Compile Include="ReplayFileHelper.cs" />
     <Compile Include="ReplaysManagerController.cs" />
     <Compile Include="Events\ReplayFileMoveEvent.cs" />
     <Compile Include="Events\ReplayFileMoveEventArgs.cs" />
-    <Compile Include="Folder.cs" />
     <Compile Include="Logic\Adapter\AbstractStatisticAdapter.cs" />
     <Compile Include="Logic\Adapter\HistoricalBattlesStatAdapter.cs" />
     <Compile Include="Logic\Adapter\RandomBattlesStatAdapter.cs" />
@@ -124,32 +133,17 @@
     <Compile Include="Logic\RequestComposer.cs" />
     <Compile Include="Logic\WotReplaysSiteResponse.cs" />
     <Compile Include="NativeMethods.cs" />
-    <Compile Include="PlayerNameSuggestionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsReader.cs" />
-    <Compile Include="SyncManager.cs" />
     <Compile Include="ThemesManager.cs" />
-    <Compile Include="Update\CodeUpdateBase.cs" />
-    <Compile Include="Update\CodeUpdate_2014042501.cs" />
-    <Compile Include="Update\CodeUpdate_2014070802.cs" />
-    <Compile Include="Update\CodeUpdate_2014042502.cs" />
-    <Compile Include="Update\CodeUpdate_2014122001.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Update\EmbeddedSqlUpdate.cs" />
-    <Compile Include="Update\DatabaseManager.cs" />
-    <Compile Include="Update\DownloadedVersionInfo.cs" />
-    <Compile Include="Update\SqlUpdate.cs" />
-    <Compile Include="Update\IDbUpdate.cs" />
-    <Compile Include="Update\UpdateChecker.cs" />
     <Compile Include="Model\ClanMemberModel.cs" />
     <Compile Include="ViewModel\Chart\CommonChartsViewModel.cs" />
-    <Compile Include="ViewModel\Chart\DataPoint.cs" />
     <Compile Include="ViewModel\Chart\DateDataPoint.cs" />
+    <Compile Include="ViewModel\Chart\LocalizedGenericPoint.cs" />
     <Compile Include="ViewModel\Chart\GenericPoint.cs" />
     <Compile Include="ViewModel\Chart\IDataPoint.cs" />
     <Compile Include="ViewModel\Chart\PlayerChartsViewModel.cs" />
     <Compile Include="ViewModel\Chart\SellInfo.cs" />
+    <Compile Include="ViewModel\MedalCheckListItem.cs" />
     <Compile Include="ViewModel\ClanViewModel.cs" />
     <Compile Include="ViewModel\CompareStatisticViewModel.cs" />
     <Compile Include="ViewModel\ClanSearchViewModel.cs" />
@@ -159,15 +153,19 @@
     <Compile Include="ViewModel\Filter\TankFilterViewModel.cs" />
     <Compile Include="Events\RefreshEvent.cs" />
     <Compile Include="ViewModel\IReporter.cs" />
+    <Compile Include="ViewModel\CheckListItem.cs" />
     <Compile Include="ViewModel\ReplayManagerShellViewModel.cs" />
     <Compile Include="ViewModel\ExportTankFragModel.cs" />
     <Compile Include="ViewModel\IExportTankFragModel.cs" />
     <Compile Include="ViewModel\Replay\DbReplay.cs" />
+    <Compile Include="ViewModel\Replay\Platoon.cs" />
     <Compile Include="ViewModel\Replay\DeathReason.cs" />
+    <Compile Include="ViewModel\Replay\MapImageElement.cs" />
     <Compile Include="ViewModel\Replay\PhisicalReplay.cs" />
     <Compile Include="ViewModel\Replay\MapVehicle.cs" />
+    <Compile Include="ViewModel\Replay\MapStat.cs" />
+    <Compile Include="ViewModel\Replay\ReplayMapViewModel.cs" />
     <Compile Include="ViewModel\Replay\TotalReplayFile.cs" />
-    <Compile Include="ViewModel\Replay\Viewer\Arena.cs" />
     <Compile Include="ViewModel\Replay\Viewer\MapGrid.cs" />
     <Compile Include="ViewModel\Replay\Viewer\ReplayViewer.cs" />
     <Compile Include="ViewModel\Reporter.cs" />
@@ -259,6 +257,10 @@
     <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

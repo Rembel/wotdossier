@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Domain.Tank;
 using Mapper = WotDossier.Applications.Logic.Mapper;
@@ -10,26 +10,10 @@ namespace WotDossier.Applications.ViewModel.Rows
     public class FortBattlesTankStatisticRowViewModel : TankStatisticRowViewModelBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FortBattlesTankStatisticRowViewModel"/> class.
-        /// </summary>
-        protected FortBattlesTankStatisticRowViewModel()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FortBattlesTankStatisticRowViewModel"/> class.
-        /// </summary>
-        /// <param name="tank">The tank.</param>
-        public FortBattlesTankStatisticRowViewModel(TankJson tank)
-            : this(tank, new List<TankJson>())
-        {
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public FortBattlesTankStatisticRowViewModel(TankJson tank, IEnumerable<TankJson> list)
-            : base(tank, list.Select(x => new FortBattlesTankStatisticRowViewModel(x)).ToList())
+        public FortBattlesTankStatisticRowViewModel(TankJson tank, IEnumerable<StatisticSlice> list)
+            : base(tank, list)
         {
             #region Achievements
 

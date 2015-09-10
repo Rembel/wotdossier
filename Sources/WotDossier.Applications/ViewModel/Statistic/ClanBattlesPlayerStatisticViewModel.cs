@@ -7,11 +7,11 @@ namespace WotDossier.Applications.ViewModel.Statistic
 {
     public class ClanBattlesPlayerStatisticViewModel : PlayerStatisticViewModel, IClanBattlesAchievements
     {
-        public ClanBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        public ClanBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat) : this(stat, new List<StatisticSlice>())
         {
         }
 
-        public ClanBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        public ClanBattlesPlayerStatisticViewModel(PlayerStatisticEntity stat, List<StatisticSlice> list)
             : base(stat, list)
         {
             #region Ratings init

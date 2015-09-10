@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Xml;
 using Moq;
 using Newtonsoft.Json;
@@ -17,7 +19,9 @@ using WotDossier.Applications.ViewModel.Replay;
 using WotDossier.Common;
 using WotDossier.Common.Extensions;
 using WotDossier.Dal;
+using WotDossier.Domain;
 using WotDossier.Domain.Replay;
+using WotDossier.Domain.Tank;
 using WotDossier.Framework.Forms.ProgressDialog;
 using Formatting = Newtonsoft.Json.Formatting;
 
@@ -28,8 +32,12 @@ namespace WotDossier.Test
     /// </summary>
     public class ReplaysTestFixture : TestFixtureBase
     {
+        public ReplaysTestFixture()
+        {
+        }
+
         [Test]
-        public void ReplaysTest()
+        public void ReplaysByVersionTest()
         {
             foreach (Version version in Dictionaries.Instance.Versions)
             {
@@ -37,15 +45,13 @@ namespace WotDossier.Test
             }
         }
 
-        [Test]
-        public void ReplaysByVersionTest()
+        [TestCase("0.9.10.0")]
+        public void ReplayTest(string version)
         {
-            Version version = new Version("0.9.5.0");
-
-            ReplayTest(version);
+            ReplayTest(new Version(version));
         }
 
-        private static void ReplayTest(Version version)
+        public void ReplayTest(Version version)
         {
             string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
 
@@ -54,6 +60,39 @@ namespace WotDossier.Test
                 Assert.Fail("Folder not exists - [{0}]", replayFolder);
             }
 
+            ReplaysFolderTest(replayFolder);
+        }
+
+        [Test]
+        public void DeadCrewTest()
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, @"Replays\CasesTest");
+            ReplaysFolderTest(replayFolder);
+
+            string[] replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+
+            foreach (string path in replays)
+            {
+                ReplayToJson(path);
+            }
+        }
+
+        [Test]
+        public void NotReadTest()
+        {
+            string replayFolder = Path.Combine(Environment.CurrentDirectory, @"Replays\CasesTest");
+            ReplaysFolderTest(replayFolder);
+
+            string[] replays = Directory.GetFiles(replayFolder, "*.wotreplay");
+
+            foreach (string path in replays)
+            {
+                ReplayToJson(path);
+            }
+        }
+
+        private static void ReplaysFolderTest(string replayFolder)
+        {
             var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);
 
             Console.WriteLine("Found: {0}", replays.Count());
@@ -73,58 +112,8 @@ namespace WotDossier.Test
                 var phisicalReplay = new PhisicalReplay(replayFile, replay, Guid.Empty);
                 var mockView = new Mock<IReplayView>();
                 ReplayViewModel model = new ReplayViewModel(mockView.Object);
-                model.Init(phisicalReplay.ReplayData(true));
+                model.Init(phisicalReplay.ReplayData(true), phisicalReplay);
             }
-        }
-
-        [Test]
-        public void MapXmlTest()
-        {
-            string replayFolder = Path.Combine(Environment.CurrentDirectory, "Maps");
-
-            if (!Directory.Exists(replayFolder))
-            {
-                Assert.Fail("Folder not exists - [{0}]", replayFolder);
-            }
-
-            var replays = Directory.GetFiles(replayFolder, "*.xml", SearchOption.AllDirectories);
-
-            BigWorldXmlReader reader = new BigWorldXmlReader();
-
-            JArray array = new JArray();
-
-            foreach (var replay in replays)
-            {
-                FileInfo file = new FileInfo(replay);
-
-                FileStream stream = new FileStream(replay, FileMode.Open, FileAccess.Read);
-                using(BinaryReader br = new BinaryReader(stream))
-                {
-                    var xml = reader.DecodePackedFile(br, "map");
-                    XmlDocument doc = new XmlDocument();
-                    doc.LoadXml(xml);
-                    string jsonText = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
-
-                    var deserializeObject = JsonConvert.DeserializeObject<JObject>(jsonText);
-
-                    var jToken = deserializeObject["map"];
-
-                    var mapKey = file.Name.Replace(file.Extension, string.Empty);
-
-                    if (Dictionaries.Instance.Maps.ContainsKey(mapKey))
-                    {
-                        var target = Dictionaries.Instance.Maps[mapKey];
-
-                        JsonConvert.PopulateObject(jToken["boundingBox"].ToString(), target);
-                    }
-
-                    array.Add(jToken);
-                }
-
-
-            }
-
-            Console.WriteLine(array.ToString(Formatting.Indented));
         }
 
         //[Test]
@@ -150,7 +139,7 @@ namespace WotDossier.Test
         [Test]
         public void ReplaysFoldersSaveLoadTest()
         {
-            ReplayFolder folder = new ReplayFolder{Name = "Parent", Path = "c:\\Parent", Folders = new ObservableCollection<ReplayFolder> {new ReplayFolder{Name = "Child", Path = "c:\\Child"}}};
+            ReplayFolder folder = new ReplayFolder { Name = "Parent", Path = "c:\\Parent", Folders = new ObservableCollection<ReplayFolder> { new ReplayFolder { Name = "Child", Path = "c:\\Child" } } };
             string xml = XmlSerializer.StoreObjectInXml(folder);
             Console.WriteLine(xml);
 
@@ -180,36 +169,49 @@ namespace WotDossier.Test
         [Test]
         public void ParserMigrationTest()
         {
+            string externalparser = @"ExternalParser\";
+            string internalparser = @"InternalParser\";
+
+            if (!Directory.Exists(externalparser))
+            {
+                Directory.CreateDirectory(externalparser);
+            }
+            if (!Directory.Exists(internalparser))
+            {
+                Directory.CreateDirectory(internalparser);
+            }
+
             foreach (Version version in Dictionaries.Instance.Versions)
             {
                 string replayFolder = Path.Combine(Environment.CurrentDirectory, "Replays", version.ToString(3));
 
-                if (!Directory.Exists(replayFolder))
+                if (Directory.Exists(replayFolder))
                 {
-                    Assert.Fail("Folder not exists - [{0}]", replayFolder);
+                    var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);
+
+                    Console.WriteLine("Found: {0}", replays.Count());
+
+                    for (int index = 0; index < replays.Length; index++)
+                    {
+                        string path = replays[index];
+
+                        FileInfo replayFile = new FileInfo(path);
+                        var replay = ReplayFileHelper.ParseReplay_8_0(replayFile);
+                        OrderList(replay);
+                        var serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+                        serializeObject.Dump(externalparser + version.ToString(3) + ".json");
+                        Console.WriteLine(serializeObject);
+                        replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
+                        OrderList(replay);
+                        serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
+                        serializeObject.Dump(internalparser + version.ToString(3) + ".json");
+                        Console.WriteLine(serializeObject);
+                    }
                 }
-
-                var replays = Directory.GetFiles(replayFolder, "*.wotreplay", SearchOption.AllDirectories);
-
-                Console.WriteLine("Found: {0}", replays.Count());
-
-                for (int index = 0; index < replays.Length; index++)
+                else
                 {
-                    string path = replays[index];
-
-                    FileInfo replayFile = new FileInfo(path);
-                    var replay = ReplayFileHelper.ParseReplay_8_0(replayFile);
-                    OrderList(replay);
-                    var serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
-                    serializeObject.Dump(@"ParseReplay_8_0\" + version.ToString(3) + ".json");
-                    Console.WriteLine(serializeObject);
-                    replay = ReplayFileHelper.ParseReplay_8_11(replayFile);
-                    OrderList(replay);
-                    serializeObject = JsonConvert.SerializeObject(replay, Formatting.Indented);
-                    serializeObject.Dump(@"ParseReplay_8_11\" + version.ToString(3) + ".json");
-                    Console.WriteLine(serializeObject);
+                    Console.WriteLine("Folder not exists - [{0}]", replayFolder);
                 }
-
             }
         }
 
@@ -247,13 +249,13 @@ namespace WotDossier.Test
 
                         if (buffer[0] != 0x21)
                         {
-                            blocksCount = (int) stream.Read(4).ConvertLittleEndian();
+                            blocksCount = (int)stream.Read(4).ConvertLittleEndian();
                             Console.WriteLine("Found Replay Blocks: " + blocksCount);
                         }
 
                         for (int i = 0; i < blocksCount; i++)
                         {
-                            var blockLength = (int) stream.Read(4).ConvertLittleEndian();
+                            var blockLength = (int)stream.Read(4).ConvertLittleEndian();
                             Console.WriteLine("{0} block length: {1}", i + 1, blockLength);
                             byte[] blockData = stream.Read(blockLength);
 

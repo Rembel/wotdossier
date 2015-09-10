@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:converters="clr-namespace:WotDossier.Converters" xmlns:controls="clr-namespace:WotDossier.Controls"
-             xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:dataGrid="clr-namespace:WotDossier.Framework.Controls.DataGrid;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -17,8 +16,8 @@
         <controls:TankFilterPanel DataContext="{Binding TankFilter}">
         </controls:TankFilterPanel>
         <dataGrid:FooterDataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgDamage" IsReadOnly="True" 
-                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}" controls1:DataGridBehavior.DisplayRowNumber="True"
-                                 FooterItemsSource="{Binding TanksSummary, UpdateSourceTrigger=Explicit}">
+                  AutoGenerateColumns="False" Style="{StaticResource TankDataGridStyle}"
+                                 FooterItemsSource="{Binding TanksSummary, UpdateSourceTrigger=Explicit}" SelectedItems="{Binding SelectedItems, Mode=OneWayToSource}">
             <dataGrid:FooterDataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>
@@ -37,11 +36,11 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Damage_DamageRatio}" Width="100" Binding="{Binding DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Damage_MaxDamage}" Binding="{Binding MaxDamage, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Damage_DamagePerHit}" Binding="{Binding DamagePerHit}" ElementStyle="{StaticResource RTextBlock}"></DataGridTextColumn>
-                <!--<DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DamageAssistedTrack}" Binding="{Binding DamageAssistedTrack, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />-->
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_DamageAssistedTrack}" Binding="{Binding DamageAssistedTrack, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_AvgDamageAssistedTrack}" Binding="{Binding AvgDamageAssistedTrack, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}" ElementStyle="{StaticResource RTextBlock}" />
-                <!--<DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DamageAssistedRadio}" Binding="{Binding DamageAssistedRadio, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />-->
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_DamageAssistedRadio}" Binding="{Binding DamageAssistedRadio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_AvgDamageAssistedRadio}" Binding="{Binding AvgDamageAssistedRadio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}" ElementStyle="{StaticResource RTextBlock}" />
-                <!--<DataGridTextColumn Header="{x:Static Resources:Resources.Column_Performance_DamageAssisted}" Binding="{Binding DamageAssisted, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />-->
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_DamageAssisted}" Binding="{Binding DamageAssisted, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_AvgDamageAssisted}" Binding="{Binding AvgDamageAssisted, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_ShotsReceived}" Binding="{Binding ShotsReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Performance_NoDamageShotsReceived}" Binding="{Binding NoDamageShotsReceived, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N0'}" ElementStyle="{StaticResource RTextBlock}" />

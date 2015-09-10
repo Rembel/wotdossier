@@ -188,6 +188,12 @@ namespace WotDossier.Common
                             case Opcode.Global: LoadGlobal(); break;
                             case Opcode.Reduce: LoadReduce(); break;
                             case Opcode.Stop: return PopStack();
+                            case Opcode.Ext1:
+                                throw new Exception("opcode not implemented: EXT1");
+                            case Opcode.Ext2:
+                                throw new Exception("opcode not implemented: EXT2");
+                            case Opcode.Ext4:
+                                throw new Exception("opcode not implemented: EXT4");
                             default: throw new InvalidOleVariantTypeException(String.Format("invalid opcode: {0}", opcode));
                         }
                     }
@@ -197,7 +203,7 @@ namespace WotDossier.Common
                 {
                     string module = ReadLineNoNewline();
                     string attr = ReadLineNoNewline();
-                    Debug.Fail(String.Format("unexpected global in pickle stream {0}.{1}", module, attr));
+                    //Debug.Fail(String.Format("unexpected global in pickle stream {0}.{1}", module, attr));
                     _stack.Add(null);   // no support for actually loading the globals...
                 }
 

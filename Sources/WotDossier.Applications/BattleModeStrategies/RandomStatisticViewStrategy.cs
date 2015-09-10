@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using WotDossier.Applications.Logic.Adapter;
-using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Dal;
@@ -48,9 +46,9 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="prevStatisticViewModels">The previous statistic view models.</param>
         /// <returns></returns>
-        protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<TankJson> prevStatisticViewModels)
+        protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<StatisticSlice> prevStatisticViewModels)
         {
-            return new RandomBattlesTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
+            return new RandomBattlesTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
         }
 
         /// <summary>
@@ -69,7 +67,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="oldStatisticEntities">The old statistic entities.</param>
         /// <returns></returns>
-        protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<PlayerStatisticViewModel> oldStatisticEntities)
+        protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<StatisticSlice> oldStatisticEntities)
         {
             return new RandomBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
         }

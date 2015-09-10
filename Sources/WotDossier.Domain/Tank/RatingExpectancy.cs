@@ -5,6 +5,9 @@ namespace WotDossier.Domain.Tank
     [DataContract]
     public class RatingExpectancy
     {
+        [DataMember(Name = "comp_descr")]
+        public int CompDescr { get; set; }
+
         [DataMember(Name = "tank_title")]
         public string TankTitle { get; set; }
 

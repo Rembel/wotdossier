@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using Common.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WotDossier.Common;
+using WotDossier.Common.Python;
 using WotDossier.Dal;
 using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Tank;
@@ -16,7 +18,7 @@ namespace WotDossier.Applications
     public static class CacheFileHelper
     {
         private const char SEPARATOR = ';';
-        
+
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
 
         #region Cache
@@ -36,7 +38,7 @@ namespace WotDossier.Applications
             FileInfo cacheFile = null;
 
             string[] files = new string[0];
-            
+
             var dossierCacheFolder = Folder.GetDossierCacheFolder();
             if (Directory.Exists(dossierCacheFolder))
             {
@@ -100,6 +102,26 @@ namespace WotDossier.Applications
 
             _log.Trace("BinaryCacheToJson end");
             return cacheFile.FullName.Replace(".dat", ".json");
+        }
+
+        /// <summary>
+        /// Reads the tanks from cache.
+        /// </summary>
+        /// <param name="path">The path to parsed cache file.</param>
+        /// <returns></returns>
+        public static List<TankJson> InternalBinaryCacheToJson(FileInfo cacheFile)
+        {
+            using (Unpickler unpickler = new Unpickler())
+            {
+                object[] pickle = (object[]) unpickler.load(cacheFile.OpenRead());
+                object dossierversion = pickle[0];
+                Hashtable tankItems = (Hashtable)pickle[1]; 
+                foreach (DictionaryEntry tankItem in tankItems)
+                {
+                    string data = (string) ((object[])tankItem.Value)[1];
+                }
+                return null;   
+            }
         }
 
         /// <summary>
@@ -171,45 +193,48 @@ namespace WotDossier.Applications
         /// <returns></returns>
         public static bool ExtendPropertiesData(TankJson tank)
         {
-            if (Dictionaries.Instance.Tanks.ContainsKey(tank.UniqueId()) && !Dictionaries.Instance.NotExistsedTanksList.Contains(tank.UniqueId()))
+            if (!Dictionaries.Instance.NotExistsedTanksList.Contains(tank.UniqueId()))
             {
-                tank.Description = Dictionaries.Instance.Tanks[tank.UniqueId()];
-                tank.Frags =
-                    tank.FragsList.Select(
-                        x =>
-                        {
-                            int countryId = Convert.ToInt32(x[0]);
-                            int tankId = Convert.ToInt32(x[1]);
-                            int uniqueId = Utils.ToUniqueId(countryId, tankId);
-
-
-                            TankDescription tankDescription;
-
-                            if (Dictionaries.Instance.Tanks.ContainsKey(uniqueId))
+                tank.Frags = tank.FragsList.Select(
+                            x =>
                             {
-                                tankDescription = Dictionaries.Instance.Tanks[uniqueId];
-                            }
-                            else
-                            {
-                                tankDescription = TankDescription.Unknown;
-                            }
+                                int countryId = Convert.ToInt32(x[0]);
+                                int tankId = Convert.ToInt32(x[1]);
+                                int uniqueId = Utils.ToUniqueId(countryId, tankId);
 
-                            return new FragsJson
-                            {
-                                CountryId = countryId,
-                                TankId = tankId,
-                                Icon = tankDescription.Icon,
-                                TankUniqueId = uniqueId,
-                                Count = Convert.ToInt32(x[2]),
-                                Type = tankDescription.Type,
-                                Tier = tankDescription.Tier,
-                                KilledByTankUniqueId = tank.UniqueId(),
-                                Tank = tankDescription.Title
-                            };
-                        }).ToList();
+
+                                TankDescription tankDescription = Dictionaries.Instance.Tanks.ContainsKey(uniqueId) 
+                                    ? Dictionaries.Instance.Tanks[uniqueId] 
+                                    : TankDescription.Unknown(countryId, tankId);
+
+                                return new FragsJson
+                                {
+                                    CountryId = countryId,
+                                    TankId = tankId,
+                                    Icon = tankDescription.Icon,
+                                    TankUniqueId = uniqueId,
+                                    Count = Convert.ToInt32(x[2]),
+                                    Type = tankDescription.Type,
+                                    Tier = tankDescription.Tier,
+                                    KilledByTankUniqueId = tank.UniqueId(),
+                                    Tank = tankDescription.Title
+                                };
+                            }).ToList();
+
+                if (Dictionaries.Instance.Tanks.ContainsKey(tank.UniqueId()))
+                {
+                    tank.Description = Dictionaries.Instance.Tanks[tank.UniqueId()];
+                }
+                else
+                {
+                    tank.Description = TankDescription.Unknown(tank.Common.compactDescr);
+                    _log.WarnFormat("Found unknown tank. Check for latest tanks.json:\n{0}", JsonConvert.SerializeObject(tank.Common, Formatting.Indented));
+                }
+
                 return true;
             }
-            _log.WarnFormat("Found unknown tank:\n{0}", JsonConvert.SerializeObject(tank.Common, Formatting.Indented));
+            tank.Description = TankDescription.Unknown(tank.Common.tanktitle);
+            _log.WarnFormat("Found not existed or event tank:\n{0}", JsonConvert.SerializeObject(tank.Common, Formatting.Indented));
             return false;
         }
 

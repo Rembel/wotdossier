@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using Ookii.Dialogs.Wpf;
 using WotDossier.Common.Reflection;
 
 namespace WotDossier.Applications.Logic.Export
 {
     public class CsvExportProvider : ExportProviderBase
     {
-        public override void Export(IList list, List<Type> exportInterfaces)
+        public override string Export(IList list, List<Type> exportInterfaces)
         {
             StringBuilder builder = new StringBuilder();
 
@@ -38,19 +35,7 @@ namespace WotDossier.Applications.Logic.Export
                 builder.AppendLine(string.Join(";", values.ToArray()));
             }
 
-            VistaSaveFileDialog dialog = new VistaSaveFileDialog();
-            dialog.DefaultExt = ".csv"; // Default file extension
-            dialog.Filter = "CSV (.csv)|*.csv"; // Filter files by extension 
-            dialog.Title = Resources.Resources.WondowCaption_Export;
-            bool? showDialog = dialog.ShowDialog();
-            if (showDialog == true)
-            {
-                string fileName = dialog.FileName;
-                using (StreamWriter writer = File.CreateText(fileName))
-                {
-                    writer.Write(builder);
-                }
-            }
+            return builder.ToString();
         }
 
         private IEnumerable<Type> ExtendWithParent(List<Type> exportInterfaces)

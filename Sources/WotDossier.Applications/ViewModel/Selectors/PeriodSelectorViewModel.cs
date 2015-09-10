@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using WotDossier.Common;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.Foundation;
 

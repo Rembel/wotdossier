@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using WotDossier.UI;
 
 namespace WotDossier.Tabs.Charts
 {
@@ -11,10 +10,6 @@ namespace WotDossier.Tabs.Charts
         public EffectivityChartsTab()
         {
             InitializeComponent();
-
-            ChartHelper.ConfigureChart(EByTier);
-            ChartHelper.ConfigureChart(EByType);
-            ChartHelper.ConfigureChart(EByCountry);
         }
     }
 }

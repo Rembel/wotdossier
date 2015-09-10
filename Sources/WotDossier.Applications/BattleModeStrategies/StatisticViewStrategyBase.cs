@@ -66,14 +66,15 @@ namespace WotDossier.Applications.BattleModeStrategies
             List<T> statisticEntities = DossierRepository.GetPlayerStatistic<T>(player.PlayerId).ToList();
 
             T currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                .Select(ToViewModel).ToList();
+            List<StatisticSlice> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
+                .Select(x => ToViewModel(x).ToStatisticSlice()).ToList();
 
             PlayerStatisticViewModel currentStatisticViewModel = ToViewModel(currentStatistic, oldStatisticEntities);
             currentStatisticViewModel.Name = player.Name;
             currentStatisticViewModel.Created = player.Creaded;
             currentStatisticViewModel.AccountId = player.PlayerId;
-            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
+            var days = (DateTime.Now - player.Creaded).Days;
+            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (days == 0 ? 1 : days);
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
 
             return currentStatisticViewModel;
@@ -101,7 +102,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="oldStatisticEntities">The old statistic entities.</param>
         /// <returns></returns>
-        protected abstract PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<PlayerStatisticViewModel> oldStatisticEntities);
+        protected abstract PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<StatisticSlice> oldStatisticEntities);
 
         /// <summary>
         /// Gets the tanks statistic.
@@ -148,7 +149,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="prevStatisticViewModels">The previous statistic view models.</param>
         /// <returns></returns>
-        protected abstract ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<TankJson> prevStatisticViewModels);
+        protected abstract ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<StatisticSlice> prevStatisticViewModels = null);
 
         /// <summary>
         /// To the tank statistic row.
@@ -158,12 +159,34 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <returns></returns>
         protected ITankStatisticRow ToTankStatisticRow(IGrouping<int, TankStatisticEntityBase> groupedEntities, Func<TankJson, StatisticJson> predicate)
         {
-            List<TankJson> statisticViewModels = groupedEntities.Select(x => UnZipObject(x.Raw)).ToList();
-            TankJson currentStatistic = statisticViewModels.OrderByDescending(x => predicate(x).battlesCount).First();
-            List<TankJson> prevStatisticViewModels = statisticViewModels.Where(x => predicate(x).battlesCount != predicate(currentStatistic).battlesCount).ToList();
-            var model = ToTankStatisticRow(currentStatistic, prevStatisticViewModels);
+            var lastStatisticEntity = groupedEntities.OrderByDescending(x => x.BattlesCount).First();
+            List<TankStatisticEntityBase> oldStatisticEntities = groupedEntities.Where(x => x.BattlesCount != lastStatisticEntity.BattlesCount).ToList();
+
+            TankJson lastStatistic = UnZipObject(lastStatisticEntity.Raw);
+            var model = ToTankStatisticRow(lastStatistic, ToStatisticSlices(oldStatisticEntities));
             model.IsFavorite = groupedEntities.First().TankIdObject.IsFavorite;
             return model;
+        }
+
+        private List<StatisticSlice> ToStatisticSlices(List<TankStatisticEntityBase> slices)
+        {
+            var statisticSlices = slices.Select(
+                delegate(TankStatisticEntityBase x)
+                {
+                    return new StatisticSlice(x.Updated,
+                        new Lazy<PeriodStatisticViewModel>(
+                            () =>
+                                (PeriodStatisticViewModel)
+                                    ToTankStatisticRow(UnZipObject(x.Raw), new List<StatisticSlice>())));
+
+                }).ToList();
+
+            if (!statisticSlices.Any())
+            {
+                statisticSlices.Add(new StatisticSlice(DateTime.MinValue, (PeriodStatisticViewModel)ToTankStatisticRow( TankJson.Initial)));
+            }
+
+            return statisticSlices;
         }
 
 

@@ -1,20 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.IO;
 using System.Linq;
 using System.Windows;
+using Ookii.Dialogs.Wpf;
 using WotDossier.Applications.View;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Server;
 using WotDossier.Framework.Applications;
+using WotDossier.Framework.Controls.AutoCompleteTextBox;
 using WotDossier.Framework.Forms.Commands;
 
 namespace WotDossier.Applications.ViewModel
 {
     [PartCreationPolicy(CreationPolicy.NonShared)]
     [Export(typeof(SettingsViewModel))]
-    public class SettingsViewModel : ViewModel<ISettingsView>
+    public class SettingsViewModel : ViewModel<ISettingsView>, ISuggestionProvider
     {
         private readonly DossierRepository _dossierRepository;
         private readonly AppSettings _appSettings;
@@ -26,6 +31,7 @@ namespace WotDossier.Applications.ViewModel
         };
         private bool _nameChanged;
         public DelegateCommand SaveCommand { get; set; }
+        public DelegateCommand SelectCacheFolderCommand { get; set; }
 
         public AppSettings AppSettings
         {
@@ -104,6 +110,16 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
+        public string CacheFolderPath
+        {
+            get { return AppSettings.DossierCachePath; }
+            set
+            {
+                AppSettings.DossierCachePath = value;
+                RaisePropertyChanged("CacheFolderPath");
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModel&lt;TView&gt;" /> class and
         /// attaches itself as <c>DataContext</c> to the view.
@@ -118,6 +134,17 @@ namespace WotDossier.Applications.ViewModel
             SaveCommand = new DelegateCommand(OnSave);
             _appSettings = SettingsReader.Get();
             Servers = Dictionaries.Instance.GameServers.Keys.ToList();
+            SelectCacheFolderCommand = new DelegateCommand(OnSelectCacheFolder);
+        }
+
+        private void OnSelectCacheFolder()
+        {
+            VistaFolderBrowserDialog dialog = new VistaFolderBrowserDialog();
+            bool? showDialog = dialog.ShowDialog();
+            if (showDialog == true)
+            {
+                CacheFolderPath = dialog.SelectedPath;
+            }
         }
 
         private void OnSave()
@@ -143,7 +170,7 @@ namespace WotDossier.Applications.ViewModel
                     if (playerStat != null)
                     {
                         double createdAt = playerStat.dataField.created_at;
-                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.account_id, Utils.UnixDateToDateTime((long) createdAt), _appSettings.Server);
+                        _dossierRepository.GetOrCreatePlayer(player.nickname, player.account_id, Utils.UnixDateToDateTime((long)createdAt), _appSettings.Server);
                     }
                 }
 
@@ -165,6 +192,28 @@ namespace WotDossier.Applications.ViewModel
         public virtual bool? Show()
         {
             return ViewTyped.ShowDialog();
+        }
+
+
+        /// <summary>
+        /// Gets the suggestions.
+        /// </summary>
+        /// <param name="filter">The filter.</param>
+        /// <returns></returns>
+        public IEnumerable GetSuggestions(string filter)
+        {
+            var dossierCacheFolder = CacheFolderPath;
+            if (Directory.Exists(dossierCacheFolder))
+            {
+                IEnumerable<FileInfo> files =
+                    Directory.GetFiles(dossierCacheFolder, "*.dat").Select(x => new FileInfo(x));
+                IEnumerable<string> suggestions =
+                    files.Select(CacheFileHelper.GetPlayerName)
+                        .Distinct()
+                        .Where(x => x.StartsWith(filter, StringComparison.InvariantCultureIgnoreCase) || string.IsNullOrEmpty(filter)).OrderBy(x => x);
+                return suggestions;
+            }
+            return new string[0];
         }
     }
 }

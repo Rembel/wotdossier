@@ -2,7 +2,6 @@
 {
     public interface IDataPoint
     {
-        double X { get; }
-        double Y { get; }
+        object GetValue();
     }
 }

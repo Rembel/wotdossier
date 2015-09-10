@@ -8,7 +8,6 @@ using System.Windows.Threading;
 using Common.Logging;
 using WotDossier.Applications;
 using WotDossier.Applications.Logic;
-using WotDossier.Applications.Update;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel;
 using WotDossier.Applications.ViewModel.Replay;
@@ -18,6 +17,7 @@ using WotDossier.Dal.NHibernate;
 using WotDossier.Framework;
 using WotDossier.Framework.Applications.Services;
 using WotDossier.Framework.Presentation.Services;
+using WotDossier.Update.Update;
 using WotDossier.Views;
 
 namespace WotDossier
@@ -61,8 +61,11 @@ namespace WotDossier
             //}
             //config.Save();
 
+            //set app lang
+            CultureHelper.SetUiCulture();
+
             //TODO: Remove, hard hack
-            RestoreAutomapperDll();
+            //RestoreAutomapperDll();
 
             bool isNewInstance;
             _mutex = new Mutex(true, INSTANCE_ID, out isNewInstance);
@@ -90,9 +93,9 @@ namespace WotDossier
             {
                 _log.Trace("OnStartup start");
 
-                //set app lang
-                CultureHelper.SetUiCulture();
-
+                DatabaseManager manager = new DatabaseManager();
+                manager.InitDatabase();
+                
                 // Registrations here
                 CompositionContainerFactory.Instance.RegisterSingle<ApplicationController, ApplicationController>();
                 CompositionContainerFactory.Instance.RegisterSingle<ShellViewModel, ShellViewModel>();
@@ -128,12 +131,6 @@ namespace WotDossier
                 CompositionContainerFactory.Instance.Register<IUploadReplayView, UploadReplayWindow>();
                 CompositionContainerFactory.Instance.Register<IPlayersCompareView, PlayersCompareWindow>();
                 CompositionContainerFactory.Instance.Register<IReplayViewerSettingsView, ReplayViewerSettingsWindow>();
-
-                DatabaseManager manager = new DatabaseManager();
-                manager.InitDatabase();
-                
-                SyncManager syncManager = new SyncManager(CompositionContainerFactory.Instance.GetExport<DossierRepository>());
-                syncManager.Sync();
 
                 Controller = CompositionContainerFactory.Instance.GetExport<ApplicationController>();
 

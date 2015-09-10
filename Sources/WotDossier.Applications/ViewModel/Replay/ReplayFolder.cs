@@ -16,7 +16,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         private int _count;
         private string _name;
         private bool _useInCharts = true;
-        private List<string> _files;
+        //private List<string> _files;
 
         /// <summary>
         /// Gets or sets the identifier.
@@ -115,12 +115,12 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _useInCharts = value; }
         }
 
-        [XmlIgnore]
-        public List<string> Files
-        {
-            get { return _files ?? new List<string>(0); }
-            set { _files = value; }
-        }
+        //[XmlIgnore]
+        //public List<string> Files
+        //{
+        //    get { return _files ?? new List<string>(0); }
+        //    set { _files = value; }
+        //}
 
         /// <summary>
         /// Occurs when a property value changes.

@@ -69,13 +69,13 @@
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem Header="1">
+                    <TabItem Header="{x:Static resources:Resources.Tab_Header_WN8}">
                         <charts:EffectivityChartsTab></charts:EffectivityChartsTab>
                     </TabItem>
-                    <TabItem Header="2">
+                    <TabItem Header="{x:Static resources:Resources.Tab_Header_WinRate}">
                         <charts:WinPercentChartsTab></charts:WinPercentChartsTab>
                     </TabItem>
-                    <TabItem Header="3">
+                    <TabItem Header="{x:Static resources:Resources.Tab_Header_Battles}">
                         <charts:BattlesCountChartsTab></charts:BattlesCountChartsTab>
                     </TabItem>
                 </TabControl>

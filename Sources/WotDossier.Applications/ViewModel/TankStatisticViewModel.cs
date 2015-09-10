@@ -5,6 +5,7 @@ using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Rows;
 using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Framework.Applications;
 

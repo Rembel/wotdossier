@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
 using WotDossier.Applications.Parser;
 using WotDossier.Common;
 using WotDossier.Dal;
+using WotDossier.Domain;
 
 namespace WotDossier.Applications.ViewModel.Replay.Viewer
 {
@@ -101,13 +101,6 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             get { return _mapGrid; }
         }
 
-        private readonly Arena _arena;
-
-        public Arena Arena
-        {
-            get { return _arena; }
-        }
-
         private float _clock;
         public float Clock
         {
@@ -167,6 +160,8 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
         }
 
         private int _secondTeamKills;
+        private BaseParser _parser;
+
         public int SecondTeamKills
         {
             get { return _secondTeamKills; }
@@ -190,126 +185,32 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
 
             var map = Dictionaries.Instance.Maps[replay.datablock_1.mapName];
 
-            var values = map.BottomLeft.Replace(".", ",").Split(' ');
-
-            var x = Convert.ToDouble(values[0]);
-            var y = Convert.ToDouble(values[1]);
-
-            values = map.UpperRight.Replace(".", ",").Split(' ');
-
-            var x1 = Convert.ToDouble(values[0]);
-            var y1 = Convert.ToDouble(values[1]);
-
-
-            _mapGrid = new MapGrid(new Rect(x, y, x1 - x, y1 - y), MAP_CONTROL_SIZE, MAP_CONTROL_SIZE);
-
             CellSize = MAP_CONTROL_SIZE / 10;
 
             Vehicles = vehicles;
-            ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_1.playerID);
+            ReplayUser = Vehicles.First(v => v.AccountDBID == replay.datablock_battle_result.personal.accountDBID);
             ReplayUser.Recorder = true;
 
             FirstTeam = Vehicles.Where(v => v.TeamMate).ToList();
             SecondTeam = Vehicles.Where(v => !v.TeamMate).ToList();
 
-            _arena = new Arena(_mapGrid);
+            _parser = ReplayFileHelper.GetParser(_replay);
+
+            _mapGrid = new MapGrid(map, replay.datablock_1.gameplayID, ReplayUser.Team, MAP_CONTROL_SIZE, MAP_CONTROL_SIZE);
         }
 
-        public void InitializeItems()
+        
+        public void Stop()
         {
-            //var bv = this;
-            //this.mapGrid.addItem('clock', $('<div/>').attr('id', 'battleviewer-clock').html('--:--'));
-            //if(this.gameType == "ctf") {
-            //    for(i = 0; i < this.positions.base.length; i++) {
-            //        this.positions.base[i].forEach(function(basedata) {
-            //            var isEnemy = bv.getArena().isEnemyTeam(i + 1);
-            //            var base = new BasePoint();
-            //            if(isEnemy) {
-            //                base.setEnemy();
-            //            } else {
-            //                base.setFriendly();
-            //            }
-            //            base.setPosition(bv.getArena().convertArrayPosition(basedata));
-            //            bv.mapGrid.addItem('base-' + i, base.render().el);
-            //            // we want the arena to get a copy too
-            //            bv.getArena().addBasePoint(i, 0, base); // 0 because it's 0-based >_<
-            //        });
-            //    }
-            //    for(i = 0; i < this.positions.team.length; i++) {
-            //        if(this.positions.team[i] != null) {
-            //            for(j = 0; j < this.positions.team[i].length; j++) {
-            //                var spawn = new SpawnPoint();
-            //                spawn.setPoint(j + 1);
-            //                if(bv.getArena().isEnemyTeam(i + 1)) {
-            //                    spawn.setEnemy();
-            //                } else {
-            //                    spawn.setFriendly();
-            //                }
-            //                spawn.setPosition(bv.getArena().convertArrayPosition(this.positions.team[i][j]));
-            //                bv.getMapGrid().addItem('spawn-' + i + '-' + j, spawn.render().el);
-            //            }
-            //        }
-            //    }
-            //} else if(this.gameType == 'assault') {
-            //    // depending on who's owning the base...
-            //    var control = new BasePoint();
-            //    if(this.positions.base[0] == null) {
-            //        control.setPosition(bv.getArena().convertArrayPosition(this.positions.base[1][0]));
-            //        if(this.getArena().isEnemyTeam(2)) {
-            //            control.setEnemy();
-            //        } else {
-            //            control.setFriendly();
-            //        }
-            //    } else {
-            //        control.setPosition(bv.getArena().convertArrayPosition(this.positions.base[0][0]));
-            //        if(this.getArena().isEnemyTeam(1)) {
-            //            control.setEnemy();
-            //        } else {
-            //            control.setFriendly();
-            //        }
-            //    }
+            _parser.Abort();
 
-            //    bv.getMapGrid().addItem('base-control', control.render().el);
+            foreach (MapVehicle mapVehicle in Vehicles)
+            {
+                mapVehicle.Reset();
+            }
 
-            //    // now iterate over the spawn points for both teams
-            //    for(i = 0; i < this.positions.team.length; i++) {
-            //        if(this.positions.team[i] != null) {
-            //            for(j = 0; j < this.positions.team[i].length; j++) {
-            //                var spawn = new SpawnPoint();
-            //                spawn.setPoint(j + 1);
-            //                if(bv.getArena().isEnemyTeam(i + 1)) {
-            //                    spawn.setEnemy();
-            //                } else {
-            //                    spawn.setFriendly();
-            //                }
-            //                spawn.setPosition(bv.getArena().convertArrayPosition(this.positions.team[i][j]));
-            //                bv.mapGrid.addItem('spawn-' + i + '-' + j, spawn.render().el);
-            //            }
-            //        }
-            //    }
-            //} else if(this.gameType == 'domination') {
-            //    // set the control point
-            //    var control = new BasePoint();
-            //    control.setNeutral();
-            //    control.setPosition(bv.getArena().convertArrayPosition(this.positions.control[0]));
-            //    bv.mapGrid.addItem('base-control', control.render().el);
-
-            //    // add the team spawns
-            //    for(i = 0; i < this.positions.team.length; i++) {
-            //        for(j = 0; j < this.positions.team[i].length; j++) {
-            //            var isEnemy = bv.getArena().isEnemyTeam(i + 1);
-            //            var spawn = new SpawnPoint();
-            //            spawn.setPoint(j + 1);
-            //            if(isEnemy) {
-            //                spawn.setEnemy();
-            //            } else {
-            //                spawn.setFriendly();
-            //            }
-            //            spawn.setPosition(bv.getArena().convertArrayPosition(this.positions.team[i][j]));
-            //            bv.mapGrid.addItem('spawn-' + i + '-' + j, spawn.render().el);
-            //        }
-            //    }
-            //}
+            AlliesCapturePoints = 0;
+            EnemiesCapturePoints = 0;
         }
 
         private void PacketHandler(Packet packet)
@@ -440,10 +341,12 @@ namespace WotDossier.Applications.ViewModel.Replay.Viewer
             }
         }
 
-        public void Replay()
+        public void Start()
         {
-            var parser = ReplayFileHelper.GetParser(_replay);
-            parser.ReadReplayStream(new MemoryStream(_replay.Stream), PacketHandler);
+            using (MemoryStream memoryStream = new MemoryStream(_replay.Stream))
+            {
+                _parser.ReadReplayStream(memoryStream, PacketHandler);
+            }
         }
 
         public void SetSpeed(int newspeed)

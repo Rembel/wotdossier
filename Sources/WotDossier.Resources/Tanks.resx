@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="a43" xml:space="preserve">
+    <value>A-43</value>
+  </data>
+  <data name="a44" xml:space="preserve">
+    <value>A-44</value>
+  </data>
+  <data name="at_1" xml:space="preserve">
+    <value>AT-1</value>
+  </data>
+  <data name="a_20" xml:space="preserve">
+    <value>A-20</value>
+  </data>
+  <data name="a_32" xml:space="preserve">
+    <value>A-32</value>
+  </data>
+  <data name="bt_2" xml:space="preserve">
+    <value>BT-2</value>
+  </data>
+  <data name="bt_7" xml:space="preserve">
+    <value>BT-7</value>
+  </data>
+  <data name="bt_sv" xml:space="preserve">
+    <value>BT-SV</value>
+  </data>
+  <data name="churchill_ll" xml:space="preserve">
+    <value>Churchill III</value>
+  </data>
+  <data name="gaz_74b" xml:space="preserve">
+    <value>SU-85B</value>
+  </data>
+  <data name="is" xml:space="preserve">
+    <value>IS</value>
+  </data>
+  <data name="is8" xml:space="preserve">
+    <value>IS-8</value>
+  </data>
+  <data name="isu_152" xml:space="preserve">
+    <value>ISU-152</value>
+  </data>
+  <data name="isu_152_igr" xml:space="preserve">
+    <value>ISU-152 IGR</value>
+  </data>
+  <data name="is_7" xml:space="preserve">
+    <value>IS-7</value>
+  </data>
+  <data name="is_7_fallout" xml:space="preserve">
+    <value>(R) IS-7</value>
+  </data>
+  <data name="is_7_igr" xml:space="preserve">
+    <value>IS-7 IGR</value>
+  </data>
+  <data name="kv" xml:space="preserve">
+    <value>KV</value>
+  </data>
+  <data name="kv1" xml:space="preserve">
+    <value>KV-1</value>
+  </data>
+  <data name="kv2" xml:space="preserve">
+    <value>KV-2</value>
+  </data>
+  <data name="kv2_igr" xml:space="preserve">
+    <value>KV-2 IGR</value>
+  </data>
+  <data name="kv4" xml:space="preserve">
+    <value>KV-4</value>
+  </data>
+  <data name="kv_13" xml:space="preserve">
+    <value>KV-13</value>
+  </data>
+  <data name="kv_1s" xml:space="preserve">
+    <value>KV-1S</value>
+  </data>
+  <data name="kv_220" xml:space="preserve">
+    <value>KV-220 Beta-Test</value>
+  </data>
+  <data name="kv_220_action" xml:space="preserve">
+    <value>KV-220</value>
+  </data>
+  <data name="kv_3" xml:space="preserve">
+    <value>KV-3</value>
+  </data>
+  <data name="kv_5" xml:space="preserve">
+    <value>KV-5</value>
+  </data>
+  <data name="kv_5_igr" xml:space="preserve">
+    <value>KV-5 IGR</value>
+  </data>
+  <data name="ltp" xml:space="preserve">
+    <value>LTP</value>
+  </data>
+  <data name="m3_stuart_ll" xml:space="preserve">
+    <value>M3 Light</value>
+  </data>
+  <data name="matilda_ii_ll" xml:space="preserve">
+    <value>Matilda IV</value>
+  </data>
+  <data name="ms_1" xml:space="preserve">
+    <value>MS-1</value>
+  </data>
+  <data name="mt25" xml:space="preserve">
+    <value>MT-25</value>
+  </data>
+  <data name="object252" xml:space="preserve">
+    <value>IS-6</value>
+  </data>
+  <data name="object263" xml:space="preserve">
+    <value>Object 263</value>
+  </data>
+  <data name="object268" xml:space="preserve">
+    <value>Object 268</value>
+  </data>
+  <data name="object268_fallout" xml:space="preserve">
+    <value>(R) Object 268</value>
+  </data>
+  <data name="object416" xml:space="preserve">
+    <value>Object 416</value>
+  </data>
+  <data name="object_140" xml:space="preserve">
+    <value>Object 140</value>
+  </data>
+  <data name="object_140_fallout" xml:space="preserve">
+    <value>(R) Object 140</value>
+  </data>
+  <data name="object_212" xml:space="preserve">
+    <value>212A</value>
+  </data>
+  <data name="object_261" xml:space="preserve">
+    <value>Object 261</value>
+  </data>
+  <data name="object_430" xml:space="preserve">
+    <value>Object 430</value>
+  </data>
+  <data name="object_907" xml:space="preserve">
+    <value>Object 907</value>
+  </data>
+  <data name="object_907a" xml:space="preserve">
+    <value>Object 907A</value>
+  </data>
+  <data name="observer" xml:space="preserve">
+    <value>Observer</value>
+  </data>
+  <data name="r00_t_50_2" xml:space="preserve">
+    <value>T-50-2</value>
+  </data>
+  <data name="r02_su_85" xml:space="preserve">
+    <value>SU-85</value>
+  </data>
+  <data name="r04_t_34" xml:space="preserve">
+    <value>T-34</value>
+  </data>
+  <data name="r06_t_28" xml:space="preserve">
+    <value>T-28</value>
+  </data>
+  <data name="r100_su122a" xml:space="preserve">
+    <value>SU-122A</value>
+  </data>
+  <data name="r104_object_430_ii" xml:space="preserve">
+    <value>Object 430 Version II</value>
+  </data>
+  <data name="r105_bt_7a" xml:space="preserve">
+    <value>BT-7 artillery</value>
+  </data>
+  <data name="r106_kv85" xml:space="preserve">
+    <value>KV-85</value>
+  </data>
+  <data name="r106_kv85_igr" xml:space="preserve">
+    <value>KV-85 IGR</value>
+  </data>
+  <data name="r107_ltb" xml:space="preserve">
+    <value>LTTB</value>
+  </data>
+  <data name="r108_t34_85m" xml:space="preserve">
+    <value>T-34-85M</value>
+  </data>
+  <data name="r109_t54s" xml:space="preserve">
+    <value>T-54 ltwt.</value>
+  </data>
+  <data name="r110_object_260" xml:space="preserve">
+    <value>Object 260</value>
+  </data>
+  <data name="r111_isu130" xml:space="preserve">
+    <value>ISU-130</value>
+  </data>
+  <data name="r112_t54_45" xml:space="preserve">
+    <value>T-54 first prototyp</value>
+  </data>
+  <data name="r113_object_730" xml:space="preserve">
+    <value>IS-5 (Object 730)</value>
+  </data>
+  <data name="r114_object_244" xml:space="preserve">
+    <value>Object 244</value>
+  </data>
+  <data name="r115_is_3_auto" xml:space="preserve">
+    <value>IS-3 auto</value>
+  </data>
+  <data name="r116_isu122c_berlin" xml:space="preserve">
+    <value>ISU-122S</value>
+  </data>
+  <data name="r117_t34_85_rudy" xml:space="preserve">
+    <value>T-34-85 Rudy</value>
+  </data>
+  <data name="r118_t28_f30" xml:space="preserve">
+    <value>T-28E with F-30</value>
+  </data>
+  <data name="r119_object_777" xml:space="preserve">
+    <value>Object 777 Version II</value>
+  </data>
+  <data name="r120_t22sr_a22" xml:space="preserve">
+    <value>T-22 sr.</value>
+  </data>
+  <data name="r19_is_3" xml:space="preserve">
+    <value>IS-3</value>
+  </data>
+  <data name="r19_is_3_igr" xml:space="preserve">
+    <value>IS-3 IGR</value>
+  </data>
+  <data name="r24_su_76" xml:space="preserve">
+    <value>SU-76M</value>
+  </data>
+  <data name="r53_object_704" xml:space="preserve">
+    <value>Object 704</value>
+  </data>
+  <data name="r71_is_2b" xml:space="preserve">
+    <value>IS-2</value>
+  </data>
+  <data name="r87_t62a" xml:space="preserve">
+    <value>T-62A</value>
+  </data>
+  <data name="r87_t62a_fallout" xml:space="preserve">
+    <value>(R) T-62A</value>
+  </data>
+  <data name="r90_is_4m" xml:space="preserve">
+    <value>IS-4</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="st_i" xml:space="preserve">
+    <value>ST-I</value>
+  </data>
+  <data name="su100m1" xml:space="preserve">
+    <value>SU-100M1</value>
+  </data>
+  <data name="su100y" xml:space="preserve">
+    <value>SU-100Y</value>
+  </data>
+  <data name="su122_44" xml:space="preserve">
+    <value>SU-122-44</value>
+  </data>
+  <data name="su122_54" xml:space="preserve">
+    <value>SU-122-5</value>
+  </data>
+  <data name="su14_1" xml:space="preserve">
+    <value>SU-14-1</value>
+  </data>
+  <data name="su76i" xml:space="preserve">
+    <value>SU-76I</value>
+  </data>
+  <data name="su_100" xml:space="preserve">
+    <value>SU-100</value>
+  </data>
+  <data name="su_101" xml:space="preserve">
+    <value>SU-101</value>
+  </data>
+  <data name="su_14" xml:space="preserve">
+    <value>SU-14</value>
+  </data>
+  <data name="su_152" xml:space="preserve">
+    <value>SU-152</value>
+  </data>
+  <data name="su_152_igr" xml:space="preserve">
+    <value>SU-152 IGR</value>
+  </data>
+  <data name="su_18" xml:space="preserve">
+    <value>SU-18</value>
+  </data>
+  <data name="su_26" xml:space="preserve">
+    <value>SU-26</value>
+  </data>
+  <data name="su_5" xml:space="preserve">
+    <value>SU-5</value>
+  </data>
+  <data name="su_8" xml:space="preserve">
+    <value>SU-8</value>
+  </data>
+  <data name="su_85i" xml:space="preserve">
+    <value>SU-85I</value>
+  </data>
+  <data name="s_51" xml:space="preserve">
+    <value>S-51</value>
+  </data>
+  <data name="t150" xml:space="preserve">
+    <value>T-150</value>
+  </data>
+  <data name="t44_122" xml:space="preserve">
+    <value>T-44-122</value>
+  </data>
+  <data name="t44_85" xml:space="preserve">
+    <value>T-44-85</value>
+  </data>
+  <data name="t62a_sport" xml:space="preserve">
+    <value>T-62A SPORT</value>
+  </data>
+  <data name="t80" xml:space="preserve">
+    <value>T-80</value>
+  </data>
+  <data name="tetrarch_ll" xml:space="preserve">
+    <value>Tetrarch</value>
+  </data>
+  <data name="t_127" xml:space="preserve">
+    <value>T-127</value>
+  </data>
+  <data name="t_26" xml:space="preserve">
+    <value>T-26</value>
+  </data>
+  <data name="t_34_85" xml:space="preserve">
+    <value>T-34-85</value>
+  </data>
+  <data name="t_34_85_training" xml:space="preserve">
+    <value>T-34-85</value>
+  </data>
+  <data name="t_43" xml:space="preserve">
+    <value>T-43</value>
+  </data>
+  <data name="t_44" xml:space="preserve">
+    <value>T-44</value>
+  </data>
+  <data name="t_44_igr" xml:space="preserve">
+    <value>T-44 IGR</value>
+  </data>
+  <data name="t_46" xml:space="preserve">
+    <value>T-46</value>
+  </data>
+  <data name="t_50" xml:space="preserve">
+    <value>T-50</value>
+  </data>
+  <data name="t_50_2" xml:space="preserve">
+    <value>T-50-2</value>
+  </data>
+  <data name="t_54" xml:space="preserve">
+    <value>T-54</value>
+  </data>
+  <data name="t_60" xml:space="preserve">
+    <value>T-60</value>
+  </data>
+  <data name="t_70" xml:space="preserve">
+    <value>T-70</value>
+  </data>
+  <data name="valentine_ll" xml:space="preserve">
+    <value>Valentine II</value>
+  </data>
+  <data name="valentine_ll_igr" xml:space="preserve">
+    <value>Valentine II IGR</value>
+  </data>
+</root>

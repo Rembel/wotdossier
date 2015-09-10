@@ -17,6 +17,7 @@
             USSelected = true;
             USSRSelected = true;
             JPSelected = true;
+            CZSelected = true;
             LTSelected = true;
             MTSelected = true;
             HTSelected = true;
@@ -208,6 +209,14 @@
         ///   <c>true</c> if [JP selected]; otherwise, <c>false</c>.
         /// </value>
         public bool JPSelected { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [cz selected].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [cz selected]; otherwise, <c>false</c>.
+        /// </value>
+        public bool CZSelected { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is premium.

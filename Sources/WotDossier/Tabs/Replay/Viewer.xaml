@@ -82,8 +82,7 @@
             </Grid>
 
             <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
-                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=0}" />
-                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}, ConverterParameter=1}" />
+                <Image Source="{Binding Path=MapDescription, Converter={x:Static  converters:MapToMinimapImageConverter.Default}}" />
 
                 <Grid DataContext="{Binding ReplayViewer}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
@@ -132,6 +131,26 @@
                             </Rectangle.Style>
                         </Rectangle>
                     </Canvas>
+
+                    <ItemsControl ItemsSource="{Binding MapGrid.Elements}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Image HorizontalAlignment="Center" 
+                                       Source="{Binding Path=., Converter={x:Static converters:MapImageElementToIconConverter.Default}}"
+                                       RenderTransformOrigin="-0.5,-0.5">
+                                    <Image.RenderTransform>
+                                        <TranslateTransform X="{Binding X}" Y="{Binding Y}" />
+                                    </Image.RenderTransform>
+                                    </Image>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
 
                     <ItemsControl ItemsSource="{Binding Vehicles}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
                         <ItemsControl.ItemsPanel>
@@ -257,7 +276,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="70" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" 
-                                            HeaderTemplate="{StaticResource userTemplate}">
+                                            HeaderTemplate="{StaticResource userTemplate}" SortMemberPath="FullName">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">
@@ -313,7 +332,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="70" Header="{x:Static Resources:Resources.Column_Replay_PlayerName}" 
-                                            HeaderTemplate="{StaticResource userTemplate}">
+                                            HeaderTemplate="{StaticResource userTemplate}" SortMemberPath="FullName">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static converters:ObjectToVisibilityConverter.Default}}">

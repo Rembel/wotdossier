@@ -56,13 +56,14 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Grid.RowSpan="2" Margin="6" Source="{Binding icon, Converter={x:Static converters:ImageSourceConverter.Default}}">
+                        <Image Grid.Column="0" Grid.RowSpan="2" Margin="6" Source="{Binding Description.icon, Converter={x:Static converters:ImageSourceConverter.Default}}"
+                               Opacity="{Binding EndCount, Converter={x:Static converters:ConsumableCountToOpacityConverter.Default}}">
                             <Image.ToolTip>
-                                <TextBlock Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
+                                <TextBlock Text="{Binding Description.userString, Converter={x:Static converters:ResxTextConverter.Default}}"></TextBlock>
                             </Image.ToolTip>
                         </Image>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding userString, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Bottom"></TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="#5a5a5a" FontSize="12" FontFamily="​Arial,​sans-serif" Text="{Binding description, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="#888888" FontSize="14" FontFamily="​Arial,​sans-serif" Text="{Binding Description.userString, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Bottom"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Foreground="#5a5a5a" FontSize="12" FontFamily="​Arial,​sans-serif" Text="{Binding Description.description, Converter={x:Static converters:ResxTextConverter.Default}}" VerticalAlignment="Center"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

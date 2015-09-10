@@ -13,7 +13,8 @@
         Historical = 8,
         Event = 9,
         Sorties = 10,
-        Reserved3 = 11,
+        FortBattles = 11,
+        Ladder = 12,
 
 
         ctf = 101,

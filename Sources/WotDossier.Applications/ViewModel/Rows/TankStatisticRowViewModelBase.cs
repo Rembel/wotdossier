@@ -141,7 +141,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         private StatisticViewModelBase TypedPrevStatistic
         {
-            get { return (StatisticViewModelBase)PrevStatisticSlice; }
+            get { return (StatisticViewModelBase)PrevStatisticSlice.Statistic; }
         }
 
         IEnumerable<ITankStatisticRow> ITankStatisticRow.GetAll()
@@ -151,7 +151,7 @@ namespace WotDossier.Applications.ViewModel.Rows
 
         public void SetPreviousStatistic(ITankStatisticRow model)
         {
-            SetPreviousStatistic((PeriodStatisticViewModel)model);
+            SetPreviousStatistic(((PeriodStatisticViewModel)model).ToStatisticSlice());
         }
 
         public ITankStatisticRow GetPreviousStatistic()
@@ -316,19 +316,7 @@ namespace WotDossier.Applications.ViewModel.Rows
             }
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TankStatisticRowViewModelBase{T}"/> class.
-        /// </summary>
         protected TankStatisticRowViewModelBase()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RandomBattlesTankStatisticRowViewModel"/> class.
-        /// </summary>
-        /// <param name="tank">The tank.</param>
-        public TankStatisticRowViewModelBase(TankJson tank)
-            : this(tank, new List<TankStatisticRowViewModelBase>())
         {
         }
 
@@ -337,7 +325,7 @@ namespace WotDossier.Applications.ViewModel.Rows
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public TankStatisticRowViewModelBase(TankJson tank, IEnumerable<StatisticViewModelBase> list)
+        public TankStatisticRowViewModelBase(TankJson tank, IEnumerable<StatisticSlice> list)
             : base(Utils.UnixDateToDateTime(tank.Common.updated), list)
         {
             Icon = tank.Description.Icon;

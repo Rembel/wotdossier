@@ -40,7 +40,7 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Width="100" Header="{x:Static resources:Resources.Column_Replay_PlayerName}" 
-                                            HeaderTemplate="{StaticResource userTemplate}">
+                                            HeaderTemplate="{StaticResource userTemplate}" SortMemberPath="FullName">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">
@@ -149,7 +149,7 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Width="100" Header="{x:Static resources:Resources.Column_Replay_PlayerName}" 
-                                            HeaderTemplate="{StaticResource userTemplate}">
+                                            HeaderTemplate="{StaticResource userTemplate}" SortMemberPath="FullName">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,5,0" Visibility="{Binding StatisticLink, Converter={x:Static Converters:ObjectToVisibilityConverter.Default}}">

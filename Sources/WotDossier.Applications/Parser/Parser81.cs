@@ -1,7 +1,6 @@
 using System;
 using System.Dynamic;
 using System.IO;
-using Common.Logging;
 using WotDossier.Common;
 using WotDossier.Common.Extensions;
 using WotDossier.Domain.Replay;
@@ -10,8 +9,6 @@ namespace WotDossier.Applications.Parser
 {
     public class Parser81 : BaseParser
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
-
         /// <summary>
         /// Process packet 0x08
         /// Contains Various game state updates

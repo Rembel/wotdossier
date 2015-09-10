@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:applications="clr-namespace:WotDossier.Framework.Applications;assembly=WotDossier.Framework"
-        xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
         xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
         xmlns:converters="clr-namespace:WotDossier.Converters"
         Title="{Binding Path=DataContext.FullName, RelativeSource={RelativeSource Self}}" MinHeight="768" MinWidth="1024" 
@@ -29,8 +28,7 @@
             <TextBlock FontFamily="arial,sans-serif" FontSize="24" FontWeight="400" Foreground="#BABCBF" Grid.Row="1" Grid.Column="1" Text="{Binding Clan.Motto}"></TextBlock>
             <TextBlock FontFamily="arial,sans-serif" FontSize="11" Foreground="#606061" Grid.Row="2" Grid.Column="1" Text="{Binding Clan.Created, StringFormat='dd.MM.yyyy'}" VerticalAlignment="Center"></TextBlock>
         </Grid>
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Clan.Members}" VerticalAlignment="Stretch" Name="dgMembers" IsReadOnly="True" AutoGenerateColumns="False"
-                  controls:DataGridBehavior.DisplayRowNumber="True">
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Clan.Members}" VerticalAlignment="Stretch" Name="dgMembers" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.InputBindings>
                 <KeyBinding Command="{Binding Path=RowDoubleClickCommand}" 
                             Key="Enter" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}}"/>

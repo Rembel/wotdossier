@@ -30,5 +30,8 @@
         public double tanking_factor;
         public int wins;
         public int xp;
+        public int max_xp;
+        public int max_damage;
+        public int? max_damage_vehicle;
     }
 }

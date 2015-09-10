@@ -1,5 +1,7 @@
 ﻿using System.Dynamic;
+using WotDossier.Applications.ViewModel;
 using WotDossier.Domain;
+using WotDossier.Domain.Entities;
 using WotDossier.Domain.Interfaces;
 
 namespace WotDossier.Applications.Logic
@@ -14,6 +16,9 @@ namespace WotDossier.Applications.Logic
             AutoMapper.Mapper.CreateMap<IFortAchievements, IFortAchievements>();
             AutoMapper.Mapper.CreateMap<IClanBattlesAchievements, IClanBattlesAchievements>();
             AutoMapper.Mapper.CreateMap<ExpandoObject, Map>();
+            AutoMapper.Mapper.CreateMap<FavoritePlayerEntity, ListItem<int>>()
+                .ForMember(x => x.Id, opt => opt.MapFrom(x => x.Id))
+                .ForMember(x => x.Value, opt => opt.MapFrom(x => x.Name));
         }
 
         public static void Map<TSource, TTarget>(TSource source, TTarget target)
@@ -24,6 +29,11 @@ namespace WotDossier.Applications.Logic
         public static void Map<T>(T source, T target)
         {
             AutoMapper.Mapper.Map(source, target);
+        }
+
+        public static TDestination Map<TSource, TDestination>(TSource source)
+        {
+           return AutoMapper.Mapper.Map<TDestination>(source);
         }
     }
 }

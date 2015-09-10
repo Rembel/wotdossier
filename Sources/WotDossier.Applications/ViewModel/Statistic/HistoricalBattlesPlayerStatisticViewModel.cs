@@ -8,11 +8,11 @@ namespace WotDossier.Applications.ViewModel.Statistic
     public class HistoricalBattlesPlayerStatisticViewModel : PlayerStatisticViewModel, IHistoricalBattlesAchievements
     {
         public HistoricalBattlesPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat)
-            : this(stat, new List<PlayerStatisticViewModel>())
+            : this(stat, new List<StatisticSlice>())
         {
         }
 
-        public HistoricalBattlesPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        public HistoricalBattlesPlayerStatisticViewModel(HistoricalBattlesStatisticEntity stat, List<StatisticSlice> list)
             : base(stat, list)
         {
             #region Awards

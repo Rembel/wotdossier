@@ -25,7 +25,7 @@
         public int medalKnispel;
         public int medalBoelter;
         public int medalEkins;
-        public int medalHeroesOfRassenay;
+        public int heroesOfRassenay;
         public int medalTamadaYoshio;
         public int tank_expert_usa;
         public int mechanic_engineer_germany;

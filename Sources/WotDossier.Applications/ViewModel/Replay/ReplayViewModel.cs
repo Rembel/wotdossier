@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows;
 using Common.Logging;
 using Newtonsoft.Json.Linq;
+using WotDossier.Applications.Logic;
 using WotDossier.Applications.View;
 using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
@@ -34,6 +35,12 @@ namespace WotDossier.Applications.ViewModel.Replay
         public string Title { get; set; }
 
         public Domain.Replay.Replay Replay { get; set; }
+
+        public ReplayFile ReplayFile { get; set; }
+
+        public bool IsBase { get; set; }
+
+        public bool IsPremium { get; set; }
 
         public List<CombatTarget> CombatEffects { get; set; }
 
@@ -150,8 +157,8 @@ namespace WotDossier.Applications.ViewModel.Replay
             set { _devices = value; }
         }
 
-        private List<ConsumableDescription> _consumables = new List<ConsumableDescription>();
-        public List<ConsumableDescription> Consumables
+        private List<Slot> _consumables = new List<Slot>();
+        public List<Slot> Consumables
         {
             get { return _consumables; }
             set { _consumables = value; }
@@ -177,7 +184,7 @@ namespace WotDossier.Applications.ViewModel.Replay
         
         private ReplayViewer _replayViewer;
         
-        public IMapDescription MapDescription { get; private set; }
+        public IReplayMap MapDescription { get; private set; }
 
         private TeamMember _ourTeamMember;
         public TeamMember OurTeamMember
@@ -208,7 +215,11 @@ namespace WotDossier.Applications.ViewModel.Replay
         public DelegateCommand<TeamMember> CopyPlayerNameCommand { get; set; }
         public DelegateCommand<TeamMember> OpenPlayerCommand { get; set; }
 
+        public DelegateCommand<ReplayFile> PlayReplayWithCommand { get; set; }
+
         public TeamMember ReplayUser { get; set; }
+
+        public ReplaysManager ReplaysManager { get; set; }
 
         #endregion
 
@@ -221,12 +232,16 @@ namespace WotDossier.Applications.ViewModel.Replay
         public ReplayViewModel([Import(typeof(IReplayView))]IReplayView view)
             : base(view)
         {
+            ReplaysManager = new ReplaysManager();
+
             HideTeamMemberResultsCommand = new DelegateCommand(OnHideTeamMemberResultsCommand);
             CopyCommand = new DelegateCommand<IList<object>>(OnCopyCommand);
             CopyPlayerNameCommand = new DelegateCommand<TeamMember>(OnCopyPlayerNameCommand);
             OpenPlayerCommand = new DelegateCommand<TeamMember>(OnOpenPlayerCommand);
             PlayCommand = new DelegateCommand(OnPlayCommand);
             SetSpeedCommand = new DelegateCommand<int>(OnSetSpeedCommand);
+
+            PlayReplayWithCommand = new DelegateCommand<ReplayFile>(ReplaysManager.Play);
 
             ViewTyped.Closing += OnClosing;
         }
@@ -241,10 +256,7 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
-            if (_simulationWorker != null)
-            {
-                _simulationWorker.Cancel();
-            }
+            ReplayViewer.Stop();
         }
 
         public DelegateCommand PlayCommand { get; set; }
@@ -254,9 +266,9 @@ namespace WotDossier.Applications.ViewModel.Replay
         {
             _simulationWorker = new ProgressControlViewModel();
 
-            ReplayViewer = new ReplayViewer(Replay, TeamMembers.Select(x => new MapVehicle(x)).ToList());
+            ReplayViewer.Stop();
 
-            _simulationWorker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.Replay());
+            _simulationWorker.Execute(Resources.Resources.ProgressTitle_Loading_replays, (bw, we) => ReplayViewer.Start());
         }
 
         
@@ -333,9 +345,10 @@ namespace WotDossier.Applications.ViewModel.Replay
             ViewTyped.Show();
         }
 
-        public bool Init(Domain.Replay.Replay replay)
+        public bool Init(Domain.Replay.Replay replay, ReplayFile replayFile)
         {
             Replay = replay;
+            ReplayFile = replayFile;
             
             if (replay.datablock_battle_result != null)
             {
@@ -377,6 +390,9 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 TotalCredits = replay.datablock_battle_result.personal.credits;
                 TotalXp = replay.datablock_battle_result.personal.xp;
+
+                IsPremium = replay.datablock_battle_result.personal.isPremium;
+                IsBase = !IsPremium;
 
                 int premiumCredits;
                 
@@ -491,16 +507,20 @@ namespace WotDossier.Applications.ViewModel.Replay
                     
                     foreach (Slot slot in replay.datablock_advanced.Slots)
                     {
-                        if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey(slot.Item.Id) &&
-                            slot.Item.TypeId == SlotType.Equipment)
+                        if (TankIcon.CountryId != Country.Unknown)
                         {
-                            Consumables.Add(Dictionaries.Instance.ConsumableDescriptions[slot.Item.Id]);
-                        }
-                        if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
-                            slot.Item.TypeId == SlotType.Shell)
-                        {
-                            slot.Description = Dictionaries.Instance.Shells[(Country)TankIcon.CountryId][slot.Item.Id];
-                            Shells.Add(slot);
+                            if (Dictionaries.Instance.ConsumableDescriptions.ContainsKey(slot.Item.Id) &&
+                                slot.Item.TypeId == SlotType.Equipment)
+                            {
+                                slot.Description = Dictionaries.Instance.ConsumableDescriptions[slot.Item.Id];
+                                Consumables.Add(slot);
+                            }
+                            if (Dictionaries.Instance.Shells[TankIcon.CountryId].ContainsKey(slot.Item.Id) &&
+                                slot.Item.TypeId == SlotType.Shell)
+                            {
+                                slot.Description = Dictionaries.Instance.Shells[TankIcon.CountryId][slot.Item.Id];
+                                Shells.Add(slot);
+                            }
                         }
                     }
 
@@ -514,14 +534,16 @@ namespace WotDossier.Applications.ViewModel.Replay
 
                 Title = string.Format(Resources.Resources.WindowTitleFormat_Replay, Tank, MapDescription.MapName, level > 0 ? level.ToString(CultureInfo.InvariantCulture) : "n/a", clientVersion.ToString(3));
 
+                ReplayViewer = new ReplayViewer(Replay, TeamMembers.Select(x => new MapVehicle(x)).ToList());
+
                 return true;
             }
             return false;
         }
 
-        private Map GetMapDescription(Domain.Replay.Replay replay)
+        private IReplayMap GetMapDescription(Domain.Replay.Replay replay)
         {
-            Map mapDescription = new Map();
+            ReplayMapViewModel mapDescription = new ReplayMapViewModel();
 
             mapDescription.MapNameId = replay.datablock_1.mapName;
             mapDescription.Gameplay = (Gameplay) Enum.Parse(typeof (Gameplay), replay.datablock_1.gameplayID);
@@ -551,11 +573,21 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         private List<CombatTarget> GetCombatTargets(Domain.Replay.Replay replay, List<TeamMember> teamMembers)
         {
-            return replay.datablock_battle_result.personal.details
+            return replay.datablock_battle_result.personal.details.ToDictionary(x => KeyToLong(x.Key), y => y.Value)
                 .Where(x => x.Key != ReplayUser.Id)
                 .Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.Version))
                 .OrderBy(x => x.TeamMember.FullName)
                 .ToList();
+        }
+
+        private long KeyToLong(string key)
+        {
+            if (key.Contains(","))
+            {
+                var longKey = Convert.ToInt64(key.Replace("(", string.Empty).Replace(")", string.Empty).Split(',')[0]);
+                return longKey;
+            }
+            return Convert.ToInt64(key);
         }
 
         private static List<TeamMember> GetTeamMembers(Domain.Replay.Replay replay, int myTeamId)

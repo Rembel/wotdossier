@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WotDossier.Domain.Replay;
 
 namespace WotDossier.Applications.ViewModel.Replay
@@ -39,6 +40,7 @@ namespace WotDossier.Applications.ViewModel.Replay
             TeamMember = teamMember;
 
             Crits = GetCritsCount(vehicleDamage.Value, version);
+            CritsDetails = GetCritsDetails(vehicleDamage.Value, version);
             DamageAssisted = vehicleDamage.Value.damageAssisted;
             DamageAssistedTrack = vehicleDamage.Value.damageAssistedTrack;
             DamageAssistedRadio = vehicleDamage.Value.damageAssistedRadio;
@@ -52,6 +54,16 @@ namespace WotDossier.Applications.ViewModel.Replay
             TeamMate = teamMember.TeamMate;
         }
 
+        public List<CritDetails> CritsDetails { get; set; }
+
+        private List<CritDetails> GetCritsDetails(DamagedVehicle vehicle, Version version)
+        {
+            List<CritDetails> result = vehicle.tankCrits.Select(tankCrit => new CritDetails { CritType = CritType.DamagedDevice, CritObject = tankCrit }).ToList();
+            result.AddRange(vehicle.tankDamageCrits.Select(tankCrit => new CritDetails {CritType = CritType.DestroyedDevice, CritObject = tankCrit }));
+            result.AddRange(vehicle.crewCrits.Select(crewMember => new CritDetails {CritType = CritType.DestroyedTankmen, CritObject = crewMember }));
+            return result;
+        }
+
         private int GetCritsCount(DamagedVehicle vehicleDamage, Version version)
         {
             //up to Version 0.8.5: The total number of critical Hits scored on this vehicle
@@ -62,5 +74,18 @@ namespace WotDossier.Applications.ViewModel.Replay
             }
             return Crits;
         }
+    }
+
+    public class CritDetails
+    {
+        public CritType CritType { get; set; }
+        public Enum CritObject { get; set; }
+    }
+
+    public enum CritType
+    {
+        DamagedDevice,
+        DestroyedDevice,
+        DestroyedTankmen
     }
 }

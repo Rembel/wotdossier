@@ -14,6 +14,7 @@ namespace WotDossier.Domain.Server
         public StatisticPart clan;
         public StatisticPart all;
         public StatisticPart company;
+        public MedalAchievements achievements;
 
         public TankDescription description { get; set; }
     }

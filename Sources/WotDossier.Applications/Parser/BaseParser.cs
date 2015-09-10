@@ -15,13 +15,15 @@ namespace WotDossier.Applications.Parser
 {
     public class BaseParser
     {
-        private static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        protected static readonly ILog _log = LogManager.GetCurrentClassLogger();
+        private bool _abort = false;
 
         public void ReadReplayStream(Stream stream, Action<Packet> packetHandler)
         {
+            _abort = false;
             bool endOfStream = false;
             _log.Trace("Begin replay stream read");
-            while (!endOfStream)
+            while (!endOfStream && !_abort)
             {
                 var readPacket = ReadPacket(stream);
                 endOfStream = readPacket == null;
@@ -31,6 +33,11 @@ namespace WotDossier.Applications.Parser
                 }
             }
             _log.Trace("End replay stream read");
+        }
+
+        public void Abort()
+        {
+            _abort = true;
         }
 
         private Packet ReadPacket(Stream stream)

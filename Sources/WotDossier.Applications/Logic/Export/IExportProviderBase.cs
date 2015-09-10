@@ -6,6 +6,6 @@ namespace WotDossier.Applications.Logic.Export
 {
     public interface IExportProviderBase
     {
-        void Export(IList list, List<Type> exportInterfaces);
+        string Export(IList list, List<Type> exportInterfaces);
     }
 }

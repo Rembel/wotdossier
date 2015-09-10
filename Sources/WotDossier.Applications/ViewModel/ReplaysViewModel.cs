@@ -1,25 +1,33 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using Common.Logging;
 using Ionic.Zip;
+using Newtonsoft.Json;
 using Ookii.Dialogs.Wpf;
+using ProtoBuf;
+using ProtoBuf.Meta;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.Logic;
 using WotDossier.Applications.ViewModel.Chart;
 using WotDossier.Applications.ViewModel.Filter;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Applications.ViewModel.Replay.Viewer;
 using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
+using WotDossier.Domain.Replay;
+using WotDossier.Domain.Tank;
 using WotDossier.Framework;
 using WotDossier.Framework.Controls.DataGrid;
 using WotDossier.Framework.EventAggregator;
@@ -56,6 +64,29 @@ namespace WotDossier.Applications.ViewModel
 
         private List<ReplayFile> _replays = new List<ReplayFile>();
 
+        public IList SelectedItems
+        {
+            get { return _selectedItems; }
+            set
+            {
+                _selectedItems = value;
+                OnPropertyChanged("SelectedItems");
+                UpdateTotalRow();
+            }
+        }
+
+        private void UpdateTotalRow()
+        {
+            if (SelectedItems != null && SelectedItems.Count > 1)
+            {
+                ReplaysSummary  = new List<TotalReplayFile>{new TotalReplayFile(SelectedItems.Cast<ReplayFile>().ToList(), Guid.NewGuid())};
+            }
+            else
+            {
+                ReplaysSummary = _cachedTotalRow;
+            }
+        }
+
         /// <summary>
         /// Gets or sets the replays.
         /// </summary>
@@ -67,12 +98,14 @@ namespace WotDossier.Applications.ViewModel
             get
             {
                 var replayFiles = ReplayFilter.Filter(_replays);
-
                 if (replayFiles.Any())
                 {
-                    ReplaysSummary = new List<TotalReplayFile> { new TotalReplayFile(replayFiles, Guid.NewGuid()) };
+                    _cachedTotalRow = new List<TotalReplayFile> { new TotalReplayFile(replayFiles, Guid.NewGuid()) };
                 }
-
+                else
+                {
+                    _cachedTotalRow = null;
+                }
                 return replayFiles;
             }
             set
@@ -97,6 +130,8 @@ namespace WotDossier.Applications.ViewModel
         private bool _processing;
         private List<TotalReplayFile> _replaysSummary;
         private ObservableCollection<ColumnInformation> _columnInfo;
+        private IList _selectedItems;
+        private List<TotalReplayFile> _cachedTotalRow;
 
         /// <summary>
         /// Gets or sets the replays folders.
@@ -144,13 +179,13 @@ namespace WotDossier.Applications.ViewModel
             DeleteFolderCommand = new DelegateCommand<ReplayFolder>(OnDeleteFolderCommand);
 
             ReplayFilter = new ReplaysFilterViewModel();
-            ReplayFilter.PropertyChanged += ReplayFilterOnPropertyChanged;
+            ReplayFilter.FilterChanged += ReplayFilterOnPropertyChanged;
 
             ReplaysManager = new ReplaysManager();
 
             PlayReplayCommand = new DelegateCommand<ReplayFile>(ReplaysManager.Play);
             PlayReplayWithCommand = new DelegateCommand<ReplayFile>(ReplaysManager.PlayWith);
-            
+
             DossierRepository = dossierRepository;
             ProgressView = progressControlView;
             playerChartsViewModel.ReplaysDataSource = new CallbackDataSource<ReplayFile>(() => _replays);
@@ -159,6 +194,66 @@ namespace WotDossier.Applications.ViewModel
             LoadListSettings();
 
             EventAggregatorFactory.EventAggregator.GetEvent<ReplayFileMoveEvent>().Subscribe(OnReplayFileMove);
+            Application.Current.Exit += OnAppExit;
+
+            InitProtobuf();
+        }
+
+        private static void InitProtobuf()
+        {
+            RuntimeTypeModel.Default.AllowParseableTypes = true;
+            RuntimeTypeModel.Default.AutoAddMissingTypes = true;
+
+            var metaType = RuntimeTypeModel.Default.Add(typeof (ReplayFile), true);
+
+            InitType(metaType);
+            InitType(RuntimeTypeModel.Default.Add(typeof (Medal), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (MedalGroup), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (TankIcon), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (TankDescription), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (Vehicle), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (MapGrid), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (MapImageElement), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (LevelRange), true));
+            InitType(RuntimeTypeModel.Default.Add(typeof (RatingExpectancy), true));
+            RuntimeTypeModel.Default[typeof (BattleType)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (Gameplay)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (Country)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (DeathReason)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (FinishReason)].EnumPassthru = true;
+            RuntimeTypeModel.Default[typeof (BattleStatus)].EnumPassthru = true;
+
+            metaType
+                .AddSubType(100, typeof (DbReplay));
+            metaType
+                .AddSubType(200, typeof (PhisicalReplay));
+        }
+
+        private static void InitType(MetaType metaType)
+        {
+            var propertyInfos = metaType.Type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            int i = 0;
+            foreach (PropertyInfo propertyInfo in propertyInfos)
+            {
+                if (propertyInfo.CanWrite)
+                {
+                    i++;
+                    metaType.Add(i, propertyInfo.Name);
+                }
+            }
+        }
+
+        private void OnAppExit(object sender, ExitEventArgs exitEventArgs)
+        {
+            try
+            {
+                Cache(_replays);
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on replays cache update", e);
+            }
         }
 
         private void LoadListSettings()
@@ -244,7 +339,11 @@ namespace WotDossier.Applications.ViewModel
             {
                 ReplaysFolders = ReplaysManager.GetFolders();
             }
-            //_replays.Clear();
+
+            if (!_replays.Any())
+            {
+                _replays = LoadFromCache().ToList();
+            }
 
             List<ReplayFolder> replayFolders = ReplaysFolders.GetAll();
 
@@ -282,19 +381,26 @@ namespace WotDossier.Applications.ViewModel
 
         private void OnCopyLinkToClipboard(object rows)
         {
-            ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
-
-            List<ReplayFile> replayFiles = selectedItems.Cast<ReplayFile>().ToList();
-
-            StringBuilder builder = new StringBuilder();
-            foreach (ReplayFile replay in replayFiles)
+            try
             {
-                builder.AppendLine(string.Format("{0}, {1}", replay.TankName, replay.MapName));
-                builder.AppendLine(replay.Link);
-                builder.AppendLine();
-            }
+                ObservableCollection<object> selectedItems = rows as ObservableCollection<object> ?? new ObservableCollection<object>();
 
-            Clipboard.SetText(builder.ToString());
+                List<ReplayFile> replayFiles = selectedItems.Cast<ReplayFile>().ToList();
+
+                StringBuilder builder = new StringBuilder();
+                foreach (ReplayFile replay in replayFiles)
+                {
+                    builder.AppendLine(string.Format("{0}, {1}", replay.TankName, replay.MapName));
+                    builder.AppendLine(replay.Link);
+                    builder.AppendLine();
+                }
+
+                Clipboard.SetText(builder.ToString());
+            }
+            catch (Exception e)
+            {
+                _log.Error("Error on copy link to clipboard", e);
+            }
         }
 
         private bool CanCopyLinkToClipboard(object rows)
@@ -401,11 +507,14 @@ namespace WotDossier.Applications.ViewModel
                     {
                         _log.WarnFormat("replays before update count: {0}", _replays.Count());
 
-                        string[] newFiles = Directory.GetFiles(folderPath, "*.wotreplay").Where(x => !x.EndsWith("temp.wotreplay", StringComparison.InvariantCultureIgnoreCase)).ToArray();
+                        //string[] newFiles = Directory.GetFiles(folderPath, "*.wotreplay").Where(x => !x.EndsWith("temp.wotreplay", StringComparison.InvariantCultureIgnoreCase)).ToArray();
+
+                        string[] newFiles = FastDirectoryEnumerator.GetFiles(folderPath, "*.wotreplay", SearchOption.TopDirectoryOnly).Where(x => !x.Name.EndsWith("temp.wotreplay", StringComparison.InvariantCultureIgnoreCase)).Select(x => x.Path).ToArray();
 
                         _log.WarnFormat("new files count: {0}", newFiles.Count());
 
-                        List<string> oldFiles = replayFolder.Files;
+                        //List<string> oldFiles = replayFolder.Files;
+                        List<string> oldFiles = _replays.Where(x => x.FolderId == replayFolder.Id).Select(x => x.PhisicalPath).ToList();
 
                         _log.WarnFormat("old files count: {0}", oldFiles.Count());
 
@@ -413,7 +522,7 @@ namespace WotDossier.Applications.ViewModel
                         var operations = GetUpdateOperations(replayFolder.Id, oldFiles, newFiles);
 
                         _log.WarnFormat("operations count: {0}", operations.Count());
-                        
+
                         int count = operations.Count();
                         int index = 0;
                         foreach (var operation in operations)
@@ -427,8 +536,8 @@ namespace WotDossier.Applications.ViewModel
                         }
 
                         _log.WarnFormat("replays after update count: {0}", _replays.Count());
-                        
-                        replayFolder.Files = newFiles.ToList();
+
+                        //replayFolder.Files = newFiles.ToList();
                         replayFolder.Count = _replays.Count(x => x.FolderId == replayFolder.Id);
                     }
                 }
@@ -438,8 +547,8 @@ namespace WotDossier.Applications.ViewModel
                 root.Count = ReplaysFolders.GetAll().Skip(1).Sum(x => x.Count);
 
                 IList<ReplayEntity> dbReplays = DossierRepository.GetReplays();
-                dbReplays.Join(_replays, x => new {x.PlayerId, x.ReplayId}, y => new {y.PlayerId, y.ReplayId},
-                    (x, y) => new {ReplayEntity = x, ReplayFile = y})
+                dbReplays.Join(_replays, x => new { x.PlayerId, x.ReplayId }, y => new { y.PlayerId, y.ReplayId },
+                    (x, y) => new { ReplayEntity = x, ReplayFile = y })
                     .ToList()
                     .ForEach(x =>
                     {
@@ -470,7 +579,7 @@ namespace WotDossier.Applications.ViewModel
                     deletedFolder = ReplaysManager.DeletedFolder;
                     if (Application.Current != null)
                     {
-                        Application.Current.Dispatcher.Invoke((Action) (() => root.Folders.Add(deletedFolder)));
+                        Application.Current.Dispatcher.Invoke((Action)(() => root.Folders.Add(deletedFolder)));
                     }
                 }
                 deletedFolder.Count = collection.Count;
@@ -482,13 +591,48 @@ namespace WotDossier.Applications.ViewModel
                     replayFolders.FirstOrDefault(x => x.Id == _selectedFolderId
                         || ReplayFilter.SelectedFolder != null && x.Id == ReplayFilter.SelectedFolder.Id) ?? root;
 
-                ChartView.InitBattlesByMapChart();
-                ChartView.InitWinReplaysPercentByMapChart();
+                ChartView.InitReplaysStat();
             }
             finally
             {
                 _processing = false;
             }
+        }
+
+        private void Cache(List<ReplayFile> replays)
+        {
+            var dossierAppDataFolder = ReplaysCacheFilePath();
+            
+            using (var stream = File.OpenWrite(dossierAppDataFolder + "1"))
+            {
+                Serializer.Serialize(stream, replays);
+            }
+        }
+
+        private static string ReplaysCacheFilePath()
+        {
+            return Path.Combine(Folder.GetDossierAppDataFolder(), "replays.cache");
+        }
+
+        private IEnumerable<ReplayFile> LoadFromCache()
+        {
+            var dossierAppDataFolder = ReplaysCacheFilePath();
+            if (File.Exists(dossierAppDataFolder))
+            {
+                try
+                {
+                    using (var stream = File.OpenRead(dossierAppDataFolder + "1"))
+                    {
+                        var list = Serializer.Deserialize<List<ReplayFile>>(stream);
+                        return list;
+                    }
+                }
+                catch (Exception e)
+                {
+                    _log.Error("Error on replays cache load", e);
+                }
+            }
+            return new List<ReplayFile>();
         }
 
         private List<ListUpdateOperation<ReplayFile>> GetUpdateOperations(Guid folderId, IEnumerable<string> oldFiles, string[] newList)
@@ -569,7 +713,7 @@ namespace WotDossier.Applications.ViewModel
             }
         }
 
-        private void ReplayFilterOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        private void ReplayFilterOnPropertyChanged()
         {
             OnPropertyChanged("Replays");
         }
@@ -581,7 +725,7 @@ namespace WotDossier.Applications.ViewModel
             if (replayFile != null)
             {
                 Domain.Replay.Replay replay;
-                
+
                 using (new WaitCursor())
                 {
                     replay = replayFile.ReplayData(SettingsReader.Get().ShowExtendedReplaysData);
@@ -590,7 +734,7 @@ namespace WotDossier.Applications.ViewModel
                 if (replay != null && replay.datablock_battle_result != null)
                 {
                     ReplayViewModel viewModel = CompositionContainerFactory.Instance.GetExport<ReplayViewModel>();
-                    viewModel.Init(replay);
+                    viewModel.Init(replay, replayFile);
                     viewModel.Show();
                 }
                 else
@@ -653,7 +797,7 @@ namespace WotDossier.Applications.ViewModel
                         _replays.Remove(replayFile);
 
                         ReplayFolder replayFolder = _replaysFolders.GetAll().First(x => x.Id == replayFile.FolderId);
-                        replayFolder.Files.Remove(replayFile.PhisicalPath);
+                        //replayFolder.Files.Remove(replayFile.PhisicalPath);
                     }
                     catch (Exception e)
                     {
@@ -676,7 +820,7 @@ namespace WotDossier.Applications.ViewModel
         private bool CanUploadReplay(object row)
         {
             ReplayFile model = row as ReplayFile;
-            return model != null && model.PhisicalFile != null && string.IsNullOrEmpty(model.Link);
+            return model != null && model.PhisicalPath != null && string.IsNullOrEmpty(model.Link);
         }
 
         private bool CanUploadReplays(object rows)
@@ -711,9 +855,9 @@ namespace WotDossier.Applications.ViewModel
 
                     foreach (var replay in replays)
                     {
-                        if (replay.PhisicalFile != null)
+                        if (replay.PhisicalPath != null)
                         {
-                            WotReplaysSiteResponse response = replayUploader.Upload(replay.PhisicalFile,
+                            WotReplaysSiteResponse response = replayUploader.Upload(new FileInfo(replay.PhisicalPath),
                                 appSettings.PlayerId, appSettings.PlayerName);
                             if (response != null && response.Result == true)
                             {

@@ -48,22 +48,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Common.Logging.Log4Net1211.2.1.2\lib\net40\Common.Logging.Log4Net1211.dll</HintPath>
     </Reference>
-    <Reference Include="DynamicDataDisplay, Version=0.3.4703.0, Culture=neutral, PublicKeyToken=5b7d744a7263923f, processorArchitecture=MSIL">
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\..\References\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>    
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
-    </Reference>
-    <Reference Include="DynamicDataDisplay.Markers">
-      <HintPath>..\..\References\DynamicDataDisplay.Markers.dll</HintPath>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationFramework.Aero" />
-    <Reference Include="SimpleInjector">
-      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net40-client\SimpleInjector.dll</HintPath>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector.Diagnostics">
-      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net40-client\SimpleInjector.Diagnostics.dll</HintPath>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="SimpleInjector, Version=2.8.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SimpleInjector.2.8.0\lib\net40-client\SimpleInjector.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -91,18 +93,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="..\WotDossier\Controls\Achievements.xaml">
+      <Link>Controls\Achievements.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\ClanView.xaml">
+      <Link>Controls\ClanView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\LinkStatisticRow.xaml">
+      <Link>Controls\LinkStatisticRow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\MedalAchievement.xaml">
+      <Link>Controls\MedalAchievement.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Controls\MedalTooltip.xaml">
       <Link>Controls\MedalTooltip.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Controls\ReplaysFilterPanel.xaml">
-      <Link>Controls\ReplaysFilterPanel.xaml</Link>
+    <Page Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml">
+      <Link>Controls\ReplaysFilterPanelNew.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml">
-      <Link>Controls\ReplaysFilterPanelNew.xaml</Link>
+    <Page Include="..\WotDossier\Controls\StatisticRow.xaml">
+      <Link>Controls\StatisticRow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Controls\StatisticView.xaml">
+      <Link>Controls\StatisticView.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -381,8 +408,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml">
-      <Link>Tabs\Charts\ReplaysChartsTab.xaml</Link>
+    <Page Include="..\WotDossier\Tabs\Charts\BattlesCountChartsTab.xaml">
+      <Link>Tabs\Charts\BattlesCountChartsTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\EffectivityChartsTab.xaml">
+      <Link>Tabs\Charts\EffectivityChartsTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\ReplaysStatTab.xaml">
+      <Link>Tabs\Charts\ReplaysStatTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Tabs\Charts\WinPercentChartsTab.xaml">
+      <Link>Tabs\Charts\WinPercentChartsTab.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -421,6 +463,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\WotDossier\Tabs\ServerBattlesTab.xaml">
+      <Link>Tabs\ServerBattlesTab.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\WotDossier\Views\AboutWindow.xaml">
       <Link>Views\AboutWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -428,6 +475,16 @@
     </Page>
     <Page Include="..\WotDossier\Views\AddReplayFolderWindow.xaml">
       <Link>Views\AddReplayFolderWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\ClanWindow.xaml">
+      <Link>Views\ClanWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WotDossier\Views\PlayerStatisticWindow.xaml">
+      <Link>Views\PlayerStatisticWindow.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -455,23 +512,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="..\WotDossier\Controls\ChartPlotter.cs">
-      <Link>Controls\ChartPlotter.cs</Link>
+    <Compile Include="..\WotDossier\Controls\Achievements.xaml.cs">
+      <Link>Controls\Achievements.xaml.cs</Link>
+      <DependentUpon>Achievements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\ClanView.xaml.cs">
+      <Link>Controls\ClanView.xaml.cs</Link>
+      <DependentUpon>ClanView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\LinkStatisticRow.xaml.cs">
+      <Link>Controls\LinkStatisticRow.xaml.cs</Link>
+      <DependentUpon>LinkStatisticRow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\MedalAchievement.xaml.cs">
+      <Link>Controls\MedalAchievement.xaml.cs</Link>
+      <DependentUpon>MedalAchievement.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\MedalTooltip.xaml.cs">
       <Link>Controls\MedalTooltip.xaml.cs</Link>
       <DependentUpon>MedalTooltip.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="..\WotDossier\Controls\ReplaysFilterPanel.xaml.cs">
-      <Link>Controls\ReplaysFilterPanel.xaml.cs</Link>
-      <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\ReplaysFilterPanelNew.xaml.cs">
       <Link>Controls\ReplaysFilterPanelNew.xaml.cs</Link>
+      <DependentUpon>ReplaysFilterPanelNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\StatisticRow.xaml.cs">
+      <Link>Controls\StatisticRow.xaml.cs</Link>
+      <DependentUpon>StatisticRow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Controls\StatisticView.xaml.cs">
+      <Link>Controls\StatisticView.xaml.cs</Link>
+      <DependentUpon>StatisticView.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Controls\TextWithImage.xaml.cs">
       <Link>Controls\TextWithImage.xaml.cs</Link>
       <DependentUpon>TextWithImage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Converters\BoolToVisibilityConverter.cs">
       <Link>Converters\BoolToVisibilityConverter.cs</Link>
@@ -479,32 +561,17 @@
     <Compile Include="..\WotDossier\Converters\Color\AliveToColorConverter.cs">
       <Link>Converters\Color\AliveToColorConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\EffectivityToColorConverter.cs">
-      <Link>Converters\Color\EffectivityToColorConverter.cs</Link>
+    <Compile Include="..\WotDossier\Converters\Color\DeltaToColorConverter.cs">
+      <Link>Converters\Color\DeltaToColorConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\EffRangeBrushes.cs">
-      <Link>Converters\Color\EffRangeBrushes.cs</Link>
+    <Compile Include="..\WotDossier\Converters\Color\FragsToColorConverter.cs">
+      <Link>Converters\Color\FragsToColorConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\KievArmorRatingToColorConverter.cs">
-      <Link>Converters\Color\KievArmorRatingToColorConverter.cs</Link>
+    <Compile Include="..\WotDossier\Converters\Color\SpottedToColorConverter.cs">
+      <Link>Converters\Color\SpottedToColorConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\PercentToColorConverter.cs">
-      <Link>Converters\Color\PercentToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\PowerRatingToColorConverter.cs">
-      <Link>Converters\Color\PowerRatingToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\WN6ToColorConverter.cs">
-      <Link>Converters\Color\WN6ToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\WN7ToColorConverter.cs">
-      <Link>Converters\Color\WN7ToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\WN8ToColorConverter.cs">
-      <Link>Converters\Color\WN8ToColorConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\WotDossier\Converters\Color\XvmRatingToColorConverter.cs">
-      <Link>Converters\Color\XvmRatingToColorConverter.cs</Link>
+    <Compile Include="..\WotDossier\Converters\ConsumableCountToOpacityConverter.cs">
+      <Link>Converters\ConsumableCountToOpacityConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\DamageRatingToTooltipConverter.cs">
       <Link>Converters\DamageRatingToTooltipConverter.cs</Link>
@@ -512,23 +579,44 @@
     <Compile Include="..\WotDossier\Converters\EnumToTextConverter.cs">
       <Link>Converters\EnumToTextConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\DateFormater.cs">
+      <Link>Converters\Formater\DateFormater.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Formater\NumberFormatConverter.cs">
       <Link>Converters\Formater\NumberFormatConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\Formater\PercentFormater.cs">
       <Link>Converters\Formater\PercentFormater.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\ValueDeltaPercentFormater.cs">
+      <Link>Converters\Formater\ValueDeltaPercentFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\ValueNearestPercentFormater.cs">
+      <Link>Converters\Formater\ValueNearestPercentFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Formater\ValuePercentFormater.cs">
+      <Link>Converters\Formater\ValuePercentFormater.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\AppLogoToImageConverter.cs">
       <Link>Converters\AppLogoToImageConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\ClanImageUrlToSourceConverter.cs">
+      <Link>Converters\Image\ClanImageUrlToSourceConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\Image\CountryIdToImageConverter.cs">
       <Link>Converters\Image\CountryIdToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\CritDetailsToImageConverter.cs">
+      <Link>Converters\Image\CritDetailsToImageConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\Image\DamageRatingToImageConverter.cs">
       <Link>Converters\Image\DamageRatingToImageConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\Image\ImageSourceConverter.cs">
       <Link>Converters\Image\ImageSourceConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Image\MapImageElementToIconConverter.cs">
+      <Link>Converters\Image\MapImageElementToIconConverter.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Converters\Image\MapNameToImageConverter.cs">
       <Link>Converters\Image\MapNameToImageConverter.cs</Link>
@@ -566,6 +654,21 @@
     <Compile Include="..\WotDossier\Converters\ObjectToVisibilityConverter.cs">
       <Link>Converters\ObjectToVisibilityConverter.cs</Link>
     </Compile>
+    <Compile Include="..\WotDossier\Converters\PremiumToOpacityConverter.cs">
+      <Link>Converters\PremiumToOpacityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\EffRangeBrushes.cs">
+      <Link>Converters\Ratings\EffRangeBrushes.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\PointsToPalleteConverter.cs">
+      <Link>Converters\Ratings\PointsToPalleteConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\RatingsManager.cs">
+      <Link>Converters\Ratings\RatingsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Converters\Ratings\RatingToColorConverter.cs">
+      <Link>Converters\Ratings\RatingToColorConverter.cs</Link>
+    </Compile>
     <Compile Include="..\WotDossier\Converters\ResourceFormatConverter.cs">
       <Link>Converters\ResourceFormatConverter.cs</Link>
     </Compile>
@@ -590,8 +693,23 @@
     <Compile Include="..\WotDossier\Styles\FooterDataGridSilver.cs">
       <Link>Styles\FooterDataGridSilver.cs</Link>
     </Compile>
-    <Compile Include="..\WotDossier\Tabs\Charts\ReplaysChartsTab.xaml.cs">
-      <Link>Tabs\Charts\ReplaysChartsTab.xaml.cs</Link>
+    <Compile Include="..\WotDossier\Tabs\Charts\BattlesCountChartsTab.xaml.cs">
+      <Link>Tabs\Charts\BattlesCountChartsTab.xaml.cs</Link>
+      <DependentUpon>BattlesCountChartsTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Charts\EffectivityChartsTab.xaml.cs">
+      <Link>Tabs\Charts\EffectivityChartsTab.xaml.cs</Link>
+      <DependentUpon>EffectivityChartsTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Charts\ReplaysStatTab.xaml.cs">
+      <Link>Tabs\Charts\ReplaysStatTab.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\WotDossier\Tabs\Charts\WinPercentChartsTab.xaml.cs">
+      <Link>Tabs\Charts\WinPercentChartsTab.xaml.cs</Link>
+      <DependentUpon>WinPercentChartsTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\ReplaysTab.xaml.cs">
       <Link>Tabs\ReplaysTab.xaml.cs</Link>
@@ -607,6 +725,8 @@
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\Equipment.xaml.cs">
       <Link>Tabs\Replay\Equipment.xaml.cs</Link>
+      <DependentUpon>Equipment.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\MapGridPainter.cs">
       <Link>Tabs\Replay\MapGridPainter.cs</Link>
@@ -621,26 +741,49 @@
     </Compile>
     <Compile Include="..\WotDossier\Tabs\Replay\Viewer.xaml.cs">
       <Link>Tabs\Replay\Viewer.xaml.cs</Link>
+      <DependentUpon>Viewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\WotDossier\UI\ChartHelper.cs">
-      <Link>UI\ChartHelper.cs</Link>
+    <Compile Include="..\WotDossier\Tabs\ServerBattlesTab.xaml.cs">
+      <Link>Tabs\ServerBattlesTab.xaml.cs</Link>
+      <DependentUpon>ServerBattlesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WotDossier\UI\MedalSearchItemTemplateSelector.cs">
+      <Link>UI\MedalSearchItemTemplateSelector.cs</Link>
     </Compile>
     <Compile Include="..\WotDossier\Views\AboutWindow.xaml.cs">
       <Link>Views\AboutWindow.xaml.cs</Link>
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\AddReplayFolderWindow.xaml.cs">
       <Link>Views\AddReplayFolderWindow.xaml.cs</Link>
       <DependentUpon>AddReplayFolderWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\ClanWindow.xaml.cs">
+      <Link>Views\ClanWindow.xaml.cs</Link>
+      <DependentUpon>ClanWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\WotDossier\Views\PlayerStatisticWindow.xaml.cs">
+      <Link>Views\PlayerStatisticWindow.xaml.cs</Link>
+      <DependentUpon>PlayerStatisticWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\ReplayViewerSettingsWindow.xaml.cs">
       <Link>Views\ReplayViewerSettingsWindow.xaml.cs</Link>
+      <DependentUpon>ReplayViewerSettingsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\ReplayWindow.xaml.cs">
       <Link>Views\ReplayWindow.xaml.cs</Link>
       <DependentUpon>ReplayWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\SettingsWindow.xaml.cs">
       <Link>Views\SettingsWindow.xaml.cs</Link>
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="..\WotDossier\Views\UploadReplayWindow.xaml.cs">
       <Link>Views\UploadReplayWindow.xaml.cs</Link>
@@ -674,13 +817,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="..\WotDossier\App.config">
-      <Link>App.config</Link>
-    </None>
     <Content Include="..\WotDossier\app.manifest">
       <Link>app.manifest</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\WotDossier\App.config">
+      <Link>App.config</Link>
+    </None>
     <None Include="..\WotDossier\Data\dossier.s3db">
       <Link>Data\dossier.s3db</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -779,6 +922,10 @@
     <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

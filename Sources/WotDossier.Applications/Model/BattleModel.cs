@@ -11,15 +11,9 @@ namespace WotDossier.Applications.Model
         {
             Type = battle.type;
             Time = Utils.UnixDateToDateTime(battle.time, true, true);
-            if (battle.provinceDescriptions != null && battle.provinceDescriptions.Count > 0)
-            {
-                Province = battle.provinceDescriptions[0].province_i18n;
-            }
-            if (battle.arenas != null && battle.arenas.Length > 0)
-            {
-                Map = battle.arenas[0].name_i18n;
-            }
-            GlobalMapId = battle.GlobalMapId;
+            Province = battle.province_name;
+            //Map = battle.arenas[0].name_i18n;
+            GlobalMapId = battle.front_id;
         }
 
         public ClanBattleType Type { get; set; }

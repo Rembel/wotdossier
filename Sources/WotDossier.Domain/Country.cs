@@ -12,7 +12,8 @@
         China = 3,
         France = 4,
         Uk = 5,
-        Japan = 6
+        Japan = 6,
+        Czech = 7
     }
 
     /// <summary>

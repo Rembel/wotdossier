@@ -11,7 +11,8 @@ namespace WotDossier.Applications.ViewModel.Statistic
         /// Initializes a new instance of the <see cref="TeamBattlesPlayerStatisticViewModel"/> class.
         /// </summary>
         /// <param name="stat">The stat.</param>
-        public TeamBattlesPlayerStatisticViewModel(TeamBattlesStatisticEntity stat) : this(stat, new List<PlayerStatisticViewModel>())
+        public TeamBattlesPlayerStatisticViewModel(TeamBattlesStatisticEntity stat)
+            : this(stat, new List<StatisticSlice>())
         {
         }
 
@@ -20,7 +21,7 @@ namespace WotDossier.Applications.ViewModel.Statistic
         /// </summary>
         /// <param name="stat">The stat.</param>
         /// <param name="list">The list.</param>
-        public TeamBattlesPlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<PlayerStatisticViewModel> list)
+        public TeamBattlesPlayerStatisticViewModel(TeamBattlesStatisticEntity stat, List<StatisticSlice> list)
             : base(stat, list)
         {
             #region Awards

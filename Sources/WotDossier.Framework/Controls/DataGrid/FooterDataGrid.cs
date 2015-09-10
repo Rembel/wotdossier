@@ -73,7 +73,6 @@ namespace WotDossier.Framework.Controls.DataGrid
 
         public FooterDataGrid()
         {
-            Sorting += (s, e) => e.Column.SortDirection = e.Column.SortDirection ?? ListSortDirection.Ascending;
         }
 
         #endregion
@@ -136,6 +135,21 @@ namespace WotDossier.Framework.Controls.DataGrid
                 return RowSummariesGrid.Columns.FirstOrDefault(column => column.SortMemberPath == sortMemberPath);
             }
             return null;
+        }
+
+        public static readonly DependencyProperty SelectedItemsProperty =
+        DependencyProperty.Register("SelectedItems", typeof(IList), typeof(FooterDataGrid), new PropertyMetadata(default(IList)));
+
+        public new IList SelectedItems
+        {
+            get { return (IList)GetValue(SelectedItemsProperty); }
+            set { throw new Exception("This property is read-only. To bind to it you must use 'Mode=OneWayToSource'."); }
+        }
+
+        protected override void OnSelectionChanged(SelectionChangedEventArgs e)
+        {
+            base.OnSelectionChanged(e);
+            SetValue(SelectedItemsProperty, base.SelectedItems);
         }
     }
 }

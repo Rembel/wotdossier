@@ -26,15 +26,20 @@ namespace WotDossier.Dal
         private readonly Dictionary<string, TankIcon> _icons = new Dictionary<string, TankIcon>();
         private readonly Dictionary<TankIcon, TankDescription> _iconTanks = new Dictionary<TankIcon, TankDescription>();
         private Dictionary<string, Map> _maps = new Dictionary<string, Map>();
-        private Dictionary<string, RatingExpectancy> _ratingExpectations;
+        private Dictionary<int, RatingExpectancy> _ratingExpectations;
 
         public static readonly Version VersionAll = new Version("100.0.0.0");
-        public static readonly Version VersionRelease = new Version("0.9.5.0");
-        public static readonly Version VersionTest = new Version("0.9.6.0");
+        public static readonly Version VersionRelease = new Version("0.9.10.0");
+        public static readonly Version VersionTest = new Version("0.9.11.0");
 
         private static readonly List<Version> _versions = new List<Version>
         {
                 VersionRelease,
+                new Version("0.9.9.0"),
+                new Version("0.9.8.0"),
+                new Version("0.9.7.0"),
+                new Version("0.9.6.0"),
+                new Version("0.9.5.0"),
                 new Version("0.9.4.0"),
                 new Version("0.9.3.0"),
                 new Version("0.9.2.0"),
@@ -235,7 +240,7 @@ namespace WotDossier.Dal
             Init();
         }
 
-        private void Init()
+        public void Init()
         {
             _ratingExpectations = ReadRatingExpectationsDictionary();
             _tanks = ReadTanksDictionary();
@@ -263,7 +268,7 @@ namespace WotDossier.Dal
                     {
                         var target = maps[key];
 
-                        JsonConvert.PopulateObject(map["boundingBox"].ToString(), target);
+                        target.Config = JsonConvert.DeserializeObject<MapConfig>(map.ToString(), new MapConfigConverter());
                     }
                 }
             }
@@ -346,48 +351,279 @@ namespace WotDossier.Dal
         public TankDescription GetReplayTankDescription(string playerVehicle, Version clientVersion)
         {
             string iconId = playerVehicle.Replace(":", "_").Replace("-", "_").Replace(" ", "_").Replace(".", "_").ToLower();
+            //var i = iconId.IndexOf("_");
+            //string hdIcon = i != -1 ? iconId.Substring(i + 1, iconId.Length-i) : iconId;
 
+            TankDescription tankDescription = null;
+
+            tankDescription = TankDescriptionByIconId(clientVersion, iconId);// ?? TankDescriptionByIconId(clientVersion, hdIcon);
+            
+            if (iconId == "ussr_t_34")
+            {
+                //replay tank name t_34 changed to r04_t_34
+                return _tanks[0];
+            }
+            else if (iconId == "ussr_object_704")
+            {
+                //replay tank name object_704 changed to r53_object_704
+                return _tanks[32];
+            }
+            else if (iconId == "ussr_is_4")
+            {
+                //0.9.7 replay tank name is_4 changed to r90_is_4m
+                return _tanks[24];
+            }
+            else if (iconId == "usa_pershing")
+            {
+                //0.9.7 replay tank name pershing changed to a35_pershing
+                return _tanks[20023];
+            }
+            else if (iconId == "usa_t26_e4_superpershing")
+            {
+                //0.9.7 replay tank name t26_e4_superpershing changed to a80_t26_e4_superpershing
+                return _tanks[20052];
+            }
+            else if (iconId == "usa_t37")
+            {
+                //0.9.7 replay tank name changed to a94_t37
+                return _tanks[20065];
+            }
+
+            else if (iconId == "germany_hummel")
+            {
+                //0.9.8 replay tank name changed to g02_hummel
+                return _tanks[10001];
+            }
+            else if (iconId == "germany_leopard1")
+            {
+                //0.9.8 replay tank name changed to g89_leopard1
+                return _tanks[10057];
+            }
+            else if (iconId == "france_amx_50_120")
+            {
+                //0.9.8 replay tank name changed to f09_amx_50_120
+                return _tanks[40015];
+            }
+
+            else if (iconId == "ussr_su_85")
+            {
+                //0.9.8 replay tank name changed to r02_su_85
+                return _tanks[1];
+            }
+
+            else if (iconId == "ussr_is_3")
+            {
+                //0.9.8 replay tank name changed to r19_is_3
+                return _tanks[21];
+            }
+            else if (iconId == "usa_t32")
+            {
+                //0.9.8 replay tank name changed to a12_t32
+                return _tanks[20017];
+            }
+            else if (iconId == "usa_a30_m10_wolverine")
+            {
+                //0.9.8 replay tank name changed to a12_t32
+                return _tanks[20017];
+            }
+
+            else if (iconId == "usa_sherman_jumbo")
+            {
+                //0.9.8 replay tank name changed to a36_sherman_jumbo
+                return _tanks[20039];
+            }
+            else if (iconId == "usa_m48a1")
+            {
+                //0.9.8 replay tank name changed to a84_m48a1
+                return _tanks[20055];
+            }
+            else if (iconId == "france_amx_50_100")
+            {
+                //0.9.9 replay tank name changed to f08_amx_50_100
+                return _tanks[40012];
+            }
+            else if (iconId == "france_fcm_50t")
+            {
+                //0.9.9 replay tank name changed to f65_fcm_50t
+                return _tanks[40250];
+            }
+            else if (iconId == "france_amx_50_100_igr")
+            {
+                //0.9.9 replay tank name changed to f08_amx_50_100_igr
+                return _tanks[40153];
+            }
+            else if (iconId == "germany_vk3601h")
+            {
+                //0.9.9 replay tank name changed to g15_vk3601h
+                return _tanks[10009];
+            }
+            else if (iconId == "germany_panther_m10")
+            {
+                //0.9.9 replay tank name changed to g78_panther_m10
+                return _tanks[10225];
+            }
+            else if (iconId == "usa_m46_patton")
+            {
+                //0.9.9 replay tank name changed to a63_m46_patton
+                return _tanks[20035];
+            }
+            else if (iconId == "usa_t23e3")
+            {
+                //0.9.9 replay tank name changed to a86_t23e3
+                return _tanks[20046];
+            }
+            else if (iconId == "usa_t110e4")
+            {
+                //0.9.9 replay tank name changed to a83_t110e4
+                return _tanks[20051];
+            }
+            else if (iconId == "usa_t110e3")
+            {
+                //0.9.9 replay tank name changed to a85_t110e3
+                return _tanks[20054];
+            }
+            else if (iconId == "usa_m6a2e1")
+            {
+                //0.9.9 replay tank name changed to a45_m6a2e1
+                return _tanks[20205];
+            }
+            else if (iconId == "ussr_t62a")
+            {
+                //0.9.9 replay tank name changed to r87_t62a
+                return _tanks[54];
+            }
+            else if (iconId == "france_arl_44")
+            {
+                //0.9.10 replay tank name changed to f06_arl_44
+                return _tanks[40010];
+            }
+            else if (iconId == "france_amx_m4_1945")
+            {
+                //0.9.10 replay tank name changed to f07_amx_m4_1945
+                return _tanks[40027];
+            }
+            else if (iconId == "germany_pz35t")
+            {
+                //0.9.10 replay tank name changed to g07_pz35t
+                return _tanks[10003];
+            }
+            else if (iconId == "germany_jagdpziv")
+            {
+                //0.9.10 replay tank name changed to g17_jagdpziv
+                return _tanks[10006];
+            }
+            else if (iconId == "germany_panzerjager_i")
+            {
+                //0.9.10 replay tank name changed to g21_panzerjager_i
+                return _tanks[10014];
+            }
+            else if (iconId == "germany_sturmpanzer_ii")
+            {
+                //0.9.10 replay tank name changed to g22_sturmpanzer_ii
+                return _tanks[10018];
+            }
+            else if (iconId == "germany_vk1602")
+            {
+                //0.9.10 replay tank name changed to g26_vk1602
+                return _tanks[10021];
+            }
+            else if (iconId == "germany_jagdtiger")
+            {
+                //0.9.10 replay tank name changed to g44_jagdtiger
+                return _tanks[10031];
+            }
+            else if (iconId == "germany_pro_ag_a")
+            {
+                //0.9.10 replay tank name changed to g91_pro_ag_a
+                return _tanks[10058];
+            }
+            else if (iconId == "germany_pzii_j")
+            {
+                //0.9.10 replay tank name changed to g36_pzii_j
+                return _tanks[10202];
+            }
+            else if (iconId == "usa_m2_lt")
+            {
+                //0.9.10 replay tank name changed to a02_m2_lt
+                return _tanks[20007];
+            }
+            else if (iconId == "usa_m41")
+            {
+                //0.9.10 replay tank name changed to a18_m41
+                return _tanks[20016];
+            }
+            else if (iconId == "usa_t110")
+            {
+                //0.9.10 replay tank name changed to a69_t110e5
+                return _tanks[20042];
+            }
+            else if (iconId == "usa_t71")
+            {
+                //0.9.10 replay tank name changed to a103_t71e1
+                return _tanks[20061];
+            }
+            else if (iconId == "usa_t71_igr")
+            {
+                //0.9.10 replay tank name changed to a103_t71e1_igr
+                return _tanks[20151];
+            }
+            else if (iconId == "ussr_t_28")
+            {
+                //0.9.10 replay tank name changed to r06_t_28
+                return _tanks[6];
+            }
+            else if (iconId == "ussr_su_76")
+            {
+                //0.9.10 replay tank name changed to r24_su_76
+                return _tanks[25];
+            }
+            else if (iconId == "ussr_su122a")
+            {
+                //0.9.10 replay tank name changed to r100_su122a
+                return _tanks[64];
+            }
+
+            return tankDescription ?? TankDescription.Unknown(playerVehicle);
+        }
+
+        private TankDescription TankDescriptionByIconId(Version clientVersion, string iconId)
+        {
+            TankDescription tankDescription = null;
             if (Icons.ContainsKey(iconId))
             {
                 TankIcon tankIcon = Icons[iconId];
 
                 if (IconTanks.ContainsKey(tankIcon))
                 {
-                    var tankDescription = IconTanks[tankIcon];
+                    tankDescription = IconTanks[tankIcon];
 
                     //t49 renamed to t67 in 9.3
                     if (tankDescription.UniqueId() == 20071 && clientVersion < new Version("0.9.3.0"))
                     {
-                        return _tanks[20041];
+                        tankDescription = _tanks[20041];
                     }
                     //kv-1s renamed to kv-85 in 9.3
                     if (tankDescription.UniqueId() == 73 && clientVersion < new Version("0.9.3.0"))
                     {
-                        return _tanks[11];
+                        tankDescription = _tanks[11];
                     }
-
-                    return tankDescription;
                 }
             }
-
-            return null;
+            return tankDescription;
         }
 
         public TankDescription GetTankDescription(int? typeCompDescr)
         {
             if (typeCompDescr == null)
             {
-                return TankDescription.Unknown;
+                return TankDescription.Unknown();
             }
 
-            int tankId = typeCompDescr.Value >> 8 & 65535;
-            int countryId = typeCompDescr.Value >> 4 & 15;
-
-            var uniqueId = Utils.ToUniqueId(countryId, tankId);
+            var uniqueId = Utils.ToUniqueId(typeCompDescr.Value);
 
             if (!Tanks.ContainsKey(uniqueId))
             {
-                return TankDescription.Unknown;
+                return TankDescription.Unknown(typeCompDescr.Value);
             }
 
             return Tanks[uniqueId];
@@ -423,14 +659,16 @@ namespace WotDossier.Dal
                     }
 
                     var key = tank.Icon.IconOrig.ToLower();
-                    if (_ratingExpectations.ContainsKey(key))
+                    if (_ratingExpectations.ContainsKey(tank.CompDescr))
                     {
-                        tank.Expectancy = _ratingExpectations[key];
+                        tank.Expectancy = _ratingExpectations[tank.CompDescr];
                     }
                     else
                     {
                         tank.Expectancy = GetNearestExpectationsByTypeAndLevel(tank);
                     }
+
+                    tank.Title = Resources.Tanks.ResourceManager.GetString(tank.Icon.Icon) ?? tank.Title;
 
                     tanks.Add(tank);
                 }
@@ -446,7 +684,7 @@ namespace WotDossier.Dal
             return _ratingExpectations.Values.FirstOrDefault(x => x.TankLevel == tank.Tier && (int) x.TankType == tank.Type);
         }
 
-        private Dictionary<string, RatingExpectancy> ReadRatingExpectationsDictionary()
+        private Dictionary<int, RatingExpectancy> ReadRatingExpectationsDictionary()
         {
             try
             {
@@ -455,14 +693,14 @@ namespace WotDossier.Dal
                     JsonTextReader reader = new JsonTextReader(re);
                     JsonSerializer se = new JsonSerializer();
                     JArray parsedData = se.Deserialize<JArray>(reader);
-                    return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.Icon.ToLower(), x => x);
+                    return parsedData.ToObject<List<RatingExpectancy>>().ToDictionary(x => x.CompDescr, x => x);
                 }
             }
             catch (Exception e)
             {
                 _log.Error(e);
             }
-            return new Dictionary<string, RatingExpectancy>();
+            return new Dictionary<int, RatingExpectancy>();
         }
 
         /// <summary>
@@ -548,7 +786,9 @@ namespace WotDossier.Dal
             {
                 Medal medal = new Medal();
                 medal.Id = Convert.ToInt32(node.Attributes["id"].Value);
-                medal.Name = node.Attributes["name"].Value;
+                var attribute = node.Attributes["name"];
+                medal.Name = Resources.Resources.ResourceManager.GetString(attribute.Value) ?? attribute.Value;
+                medal.NameResourceId = attribute.Value;
                 medal.Icon = node.Attributes["icon"].Value;
                 medal.Type = int.Parse(node.Attributes["type"].Value);
                 var xmlAttribute = node.Attributes["showribbon"];
@@ -556,6 +796,20 @@ namespace WotDossier.Dal
                 {
                     medal.ShowRibbon = bool.Parse(xmlAttribute.Value);
                 }
+                medal.Group = new MedalGroup();
+
+                attribute = node.ParentNode.Attributes["filter"];
+                medal.Group.Filter = attribute != null && bool.Parse(attribute.Value);
+                attribute = node.ParentNode.Attributes["name"];
+                if (attribute != null)
+                {
+                    medal.Group.Name = Resources.Resources.ResourceManager.GetString(attribute.Value) ?? attribute.Value;
+                }
+                else
+                {
+                    medal.Group.Name = node.ParentNode.Name;
+                }
+
                 medals.Add(medal.Id, medal);
             }
 

@@ -1,20 +1,33 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using WotDossier.Applications.Events;
 using WotDossier.Applications.ViewModel.Replay;
+using WotDossier.Common;
 using WotDossier.Dal;
 using WotDossier.Domain;
+using WotDossier.Domain.Dossier.AppSpot;
 using WotDossier.Domain.Replay;
+using WotDossier.Domain.Server;
+using WotDossier.Domain.Tank;
+using WotDossier.Framework.Controls.AutoCompleteTextBox;
 using WotDossier.Framework.EventAggregator;
 using WotDossier.Framework.Forms.Commands;
+using Vehicle = WotDossier.Domain.Replay.Vehicle;
 
 namespace WotDossier.Applications.ViewModel.Filter
 {
-    public class ReplaysFilterViewModel : INotifyPropertyChanged
+    public class ReplaysFilterViewModel : INotifyPropertyChanged, ISuggestionProvider
     {
+        public static readonly string PropTanks = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.Tanks);
+        public static readonly string PropSelectedTank = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.SelectedTank);
+        public static readonly string PropIsPremium = TypeHelper<ReplaysFilterViewModel>.PropertyName(v => v.IsPremium);
+
+        private const int KEY_ALL_VALUES = -1;
+
         #region FILTERS
 
         private bool _level1Selected = true;
@@ -27,18 +40,19 @@ namespace WotDossier.Applications.ViewModel.Filter
         private bool _level8Selected = true;
         private bool _level9Selected = true;
         private bool _level10Selected = true;
-        private bool _ltSelected = true;
-        private bool _mtSelected = true;
-        private bool _htSelected = true;
-        private bool _tdSelected = true;
-        private bool _spgSelected = true;
-        private bool _ussrSelected = true;
-        private bool _germanySelected = true;
-        private bool _usSelected = true;
-        private bool _chinaSelected = true;
-        private bool _franceSelected = true;
-        private bool _ukSelected = true;
-        private bool _jpSelected = true;
+        private bool _tankTypeLtSelected = true;
+        private bool _tankTypeMtSelected = true;
+        private bool _tankTypeHtSelected = true;
+        private bool _tankTypeTdSelected = true;
+        private bool _tankTypeSpgSelected = true;
+        private bool _nationUssrSelected = true;
+        private bool _nationGermanySelected = true;
+        private bool _nationUsSelected = true;
+        private bool _nationChinaSelected = true;
+        private bool _nationFranceSelected = true;
+        private bool _nationUkSelected = true;
+        private bool _nationJpSelected = true;
+        private bool _nationCzSelected = true;
         private bool _isPremium;
         private bool _isFavorite;
         private ReplayFolder _selectedFolder;
@@ -156,53 +170,53 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         #region types
 
-        public bool SPGSelected
+        public bool TankTypeSPGSelected
         {
-            get { return _spgSelected; }
+            get { return _tankTypeSpgSelected; }
             set
             {
-                _spgSelected = value;
-                OnPropertyChanged("SPGSelected");
+                _tankTypeSpgSelected = value;
+                OnPropertyChanged("TankTypeSPGSelected");
             }
         }
 
-        public bool TDSelected
+        public bool TankTypeTDSelected
         {
-            get { return _tdSelected; }
+            get { return _tankTypeTdSelected; }
             set
             {
-                _tdSelected = value;
-                OnPropertyChanged("TDSelected");
+                _tankTypeTdSelected = value;
+                OnPropertyChanged("TankTypeTDSelected");
             }
         }
 
-        public bool HTSelected
+        public bool TankTypeHTSelected
         {
-            get { return _htSelected; }
+            get { return _tankTypeHtSelected; }
             set
             {
-                _htSelected = value;
-                OnPropertyChanged("HTSelected");
+                _tankTypeHtSelected = value;
+                OnPropertyChanged("TankTypeHTSelected");
             }
         }
 
-        public bool MTSelected
+        public bool TankTypeMTSelected
         {
-            get { return _mtSelected; }
+            get { return _tankTypeMtSelected; }
             set
             {
-                _mtSelected = value;
-                OnPropertyChanged("MTSelected");
+                _tankTypeMtSelected = value;
+                OnPropertyChanged("TankTypeMTSelected");
             }
         }
 
-        public bool LTSelected
+        public bool TankTypeLTSelected
         {
-            get { return _ltSelected; }
+            get { return _tankTypeLtSelected; }
             set
             {
-                _ltSelected = value;
-                OnPropertyChanged("LTSelected");
+                _tankTypeLtSelected = value;
+                OnPropertyChanged("TankTypeLTSelected");
             }
         }
 
@@ -210,73 +224,83 @@ namespace WotDossier.Applications.ViewModel.Filter
 
         #region countries
 
-        public bool USSRSelected
+        public bool NationUSSRSelected
         {
-            get { return _ussrSelected; }
+            get { return _nationUssrSelected; }
             set
             {
-                _ussrSelected = value;
-                OnPropertyChanged("USSRSelected");
+                _nationUssrSelected = value;
+                OnPropertyChanged("NationUSSRSelected");
             }
         }
 
-        public bool GermanySelected
+        public bool NationGermanySelected
         {
-            get { return _germanySelected; }
+            get { return _nationGermanySelected; }
             set
             {
-                _germanySelected = value;
-                OnPropertyChanged("GermanySelected");
+                _nationGermanySelected = value;
+                OnPropertyChanged("NationGermanySelected");
             }
         }
 
-        public bool USSelected
+        public bool NationUSSelected
         {
-            get { return _usSelected; }
+            get { return _nationUsSelected; }
             set
             {
-                _usSelected = value;
-                OnPropertyChanged("USSelected");
+                _nationUsSelected = value;
+                OnPropertyChanged("NationUSSelected");
             }
         }
 
-        public bool ChinaSelected
+        public bool NationChinaSelected
         {
-            get { return _chinaSelected; }
+            get { return _nationChinaSelected; }
             set
             {
-                _chinaSelected = value;
-                OnPropertyChanged("ChinaSelected");
+                _nationChinaSelected = value;
+                OnPropertyChanged("NationChinaSelected");
             }
         }
 
-        public bool FranceSelected
+        public bool NationFranceSelected
         {
-            get { return _franceSelected; }
+            get { return _nationFranceSelected; }
             set
             {
-                _franceSelected = value;
-                OnPropertyChanged("FranceSelected");
+                _nationFranceSelected = value;
+                OnPropertyChanged("NationFranceSelected");
             }
         }
 
-        public bool UKSelected
+        public bool NationUKSelected
         {
-            get { return _ukSelected; }
+            get { return _nationUkSelected; }
             set
             {
-                _ukSelected = value;
-                OnPropertyChanged("UKSelected");
+                _nationUkSelected = value;
+                OnPropertyChanged("NationUKSelected");
             }
         }
 
-        public bool JPSelected
+        public bool NationJPSelected
         {
-            get { return _jpSelected; }
+            get { return _nationJpSelected; }
             set
             {
-                _jpSelected = value;
-                OnPropertyChanged("JPSelected");
+                _nationJpSelected = value;
+                OnPropertyChanged("NationJPSelected");
+            }
+        }
+
+        public bool NationCZSelected
+        {
+            get { return _nationCzSelected; }
+            set
+            {
+                _nationCzSelected = value;
+                OnPropertyChanged("NationCZSelected");
             }
         }
 
@@ -288,7 +312,7 @@ namespace WotDossier.Applications.ViewModel.Filter
             set
             {
                 _isPremium = value;
-                OnPropertyChanged("IsPremium");
+                OnPropertyChanged(PropIsPremium);
             }
         }
 
@@ -378,39 +402,19 @@ namespace WotDossier.Applications.ViewModel.Filter
         public DelegateCommand RefreshCommand { get; set; }
         public DelegateCommand AllCommand { get; set; }
 
-        private List<ListItem<Version>> _versions = new List<ListItem<Version>>
-            {
-                new ListItem<Version>(Dictionaries.VersionAll, Resources.Resources.TankFilterPanel_All), 
-                new ListItem<Version>(Dictionaries.VersionRelease, "0.9.5"),
-                new ListItem<Version>(new Version("0.9.4.0"), "0.9.4"),
-                new ListItem<Version>(new Version("0.9.3.0"), "0.9.3"),
-                new ListItem<Version>(new Version("0.9.2.0"), "0.9.2"),
-                new ListItem<Version>(new Version("0.9.1.0"), "0.9.1"),
-                new ListItem<Version>(new Version("0.9.0.0"), "0.9.0"),
-                new ListItem<Version>(new Version("0.8.11.0"), "0.8.11"), 
-                new ListItem<Version>(new Version("0.8.10.0"), "0.8.10"), 
-                new ListItem<Version>(new Version("0.8.9.0"), "0.8.9"), 
-                new ListItem<Version>(new Version("0.8.8.0"), "0.8.8"), 
-                new ListItem<Version>(new Version("0.8.7.0"), "0.8.7"), 
-                new ListItem<Version>(new Version("0.8.6.0"), "0.8.6"), 
-                new ListItem<Version>(new Version("0.8.5.0"), "0.8.5"), 
-                new ListItem<Version>(new Version("0.8.4.0"), "0.8.4"), 
-                new ListItem<Version>(new Version("0.8.3.0"), "0.8.3"), 
-                new ListItem<Version>(new Version("0.8.2.0"), "0.8.2"), 
-                new ListItem<Version>(new Version("0.8.1.0"), "0.8.1"), 
-                new ListItem<Version>(Dictionaries.VersionTest, "Test 0.9.x"), 
-            };
+        private List<CheckListItem<Version>> _versions;
 
         /// <summary>
         /// Gets or sets the versions.
         /// </summary>
-        public List<ListItem<Version>> Versions
+        public List<CheckListItem<Version>> Versions
         {
             get { return _versions; }
             set { _versions = value; }
         }
 
-        private Version _selectedVersion = Dictionaries.VersionAll;
+        //NOTE: single version selection mode. use Dictionaries.VersionAll as default value 
+        private Version _selectedVersion;
         /// <summary>
         /// Gets or sets the selected version.
         /// </summary>
@@ -434,6 +438,8 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<DeathReason>(DeathReason.DestroyedByRamming, " - " + Resources.Resources.DeathReason_DestroyedByRamming), 
                 new ListItem<DeathReason>(DeathReason.VehicleDrowned, " - " + Resources.Resources.DeathReason_VehicleDrowned), 
                 new ListItem<DeathReason>(DeathReason.DestroyedByDeathZone, " - " + Resources.Resources.DeathReason_DestroyedByDeathZone), 
+                new ListItem<DeathReason>(DeathReason.Crashed, " - " + Resources.Resources.DeathReason_Crashed), 
+                new ListItem<DeathReason>(DeathReason.CrewDead, " - " + Resources.Resources.DeathReason_CrewDead), 
             };
 
         public List<ListItem<DeathReason>> DeathReasons
@@ -442,13 +448,37 @@ namespace WotDossier.Applications.ViewModel.Filter
             set { _deathReasons = value; }
         }
 
-        private DeathReason _deathReason;
+        private DeathReason _deathReason = DeathReason.Unknown;
         public DeathReason DeathReason
         {
             get { return _deathReason; }
             set
             {
                 _deathReason = value;
+                OnPropertyChanged("DeathReason");
+            }
+        }
+
+        private List<ListItem<Platoon>> _platoonFilter = new List<ListItem<Platoon>>
+            {
+                new ListItem<Platoon>(Platoon.Unknown, string.Empty), 
+                new ListItem<Platoon>(Platoon.Solo, Resources.Resources.Platoon_Solo), 
+                new ListItem<Platoon>(Platoon.Platoon, Resources.Resources.Platoon_Platoon)
+            };
+
+        public List<ListItem<Platoon>> PlatoonFilter
+        {
+            get { return _platoonFilter; }
+            set { _platoonFilter = value; }
+        }
+
+        private Platoon _selectedPlatoonFilter = Platoon.Unknown;
+        public Platoon SelectedPlatoonFilter
+        {
+            get { return _selectedPlatoonFilter; }
+            set
+            {
+                _selectedPlatoonFilter = value;
                 OnPropertyChanged("DeathReason");
             }
         }
@@ -489,10 +519,12 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleType>(BattleType.nations, " - " + Resources.Resources.BattleType_nations), 
                 new ListItem<BattleType>(BattleType.Historical,Resources.Resources.BattleType_Historical), 
                 new ListItem<BattleType>(BattleType.CyberSport,Resources.Resources.BattleType_CyberSport), 
+                new ListItem<BattleType>(BattleType.Ladder,Resources.Resources.BattleType_Ladder), 
                 new ListItem<BattleType>(BattleType.ClanWar, Resources.Resources.BattleType_ClanWar), 
                 new ListItem<BattleType>(BattleType.CompanyWar, Resources.Resources.BattleType_CompanyWar), 
                 new ListItem<BattleType>(BattleType.Training, Resources.Resources.BattleType_Training), 
                 new ListItem<BattleType>(BattleType.Sorties,Resources.Resources.BattleType_Sorties), 
+                new ListItem<BattleType>(BattleType.FortBattles,Resources.Resources.BattleType_FortBattles), 
                 new ListItem<BattleType>(BattleType.Event,Resources.Resources.BattleType_Event), 
             };
 
@@ -567,7 +599,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         /// </value>
         public bool AllResps
         {
-            get { return _allResps; }
+            get { return !(Resp1||Resp2) || _allResps; }
             set
             {
                 _allResps = value;
@@ -592,7 +624,29 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
-        private DateTime? _endDate = DateTime.Now;
+        private DateTime? _endDate;
+        private ListItem<int> _selectedTank;
+        private CheckListItem<Version> _allVersionsListItem;
+
+        private void OnSelectVersion(CheckListItem<Version> item, bool isChecked)
+        {
+            OnPropertyChanged("SelectedVersion");
+        }
+
+        private void OnSelectAllVersions(CheckListItem<Version> item, bool isChecked)
+        {
+            foreach (var listItem in Versions)
+            {
+                if (listItem.Id != _allVersionsListItem.Id)
+                {
+                    listItem.GroupCheck = isChecked;
+                }
+            }
+            OnSelectVersion(item, isChecked);
+        }
+
+        private readonly IEnumerable<CheckListItem<Version>> _baseVersionsListItems;
+        
         /// <summary>
         /// Gets or sets the end date.
         /// </summary>
@@ -606,6 +660,67 @@ namespace WotDossier.Applications.ViewModel.Filter
             {
                 _endDate = value;
                 OnPropertyChanged("EndDate");
+            }
+        }
+
+        public List<ListItem<int>> Tanks
+        {
+            get { return GetTanks(); }
+        }
+
+        private List<ListItem<int>> GetTanks()
+        {
+            var tanks = Dictionaries.Instance.Tanks.Values
+                .Where(description => TankFilter(description) && description.Active)
+                .OrderBy(x => x.Title)
+                .Select(x => new ListItem<int>(x.UniqueId(), x.Title))
+                .ToList();
+            tanks.Insert(0, new ListItem<int>(KEY_ALL_VALUES, Resources.Resources.TankFilterPanel_All));
+            return tanks;
+        }
+
+        public IEnumerable GetSuggestions(string filter)
+        {
+            return GetTanks().Where(x => x.Value.StartsWith(filter, StringComparison.InvariantCultureIgnoreCase) || string.IsNullOrEmpty(filter));
+        }
+
+        private bool TankFilter(TankDescription tank)
+        {
+            return (Level1Selected && tank.Tier == 1
+                    || Level2Selected && tank.Tier == 2
+                    || Level3Selected && tank.Tier == 3
+                    || Level4Selected && tank.Tier == 4
+                    || Level5Selected && tank.Tier == 5
+                    || Level6Selected && tank.Tier == 6
+                    || Level7Selected && tank.Tier == 7
+                    || Level8Selected && tank.Tier == 8
+                    || Level9Selected && tank.Tier == 9
+                    || Level10Selected && tank.Tier == 10)
+                   &&
+                   (TankTypeLTSelected && tank.Type == (int) TankType.LT
+                    || TankTypeMTSelected && tank.Type == (int) TankType.MT
+                    || TankTypeHTSelected && tank.Type == (int) TankType.HT
+                    || TankTypeTDSelected && tank.Type == (int) TankType.TD
+                    || TankTypeSPGSelected && tank.Type == (int) TankType.SPG)
+                   &&
+                   (NationUSSRSelected && tank.CountryId == (int) Country.Ussr
+                    || NationGermanySelected && tank.CountryId == (int) Country.Germany
+                    || NationChinaSelected && tank.CountryId == (int) Country.China
+                    || NationFranceSelected && tank.CountryId == (int) Country.France
+                    || NationUSSelected && tank.CountryId == (int) Country.Usa
+                    || NationJPSelected && tank.CountryId == (int) Country.Japan
+                    || NationCZSelected && tank.CountryId == (int) Country.Czech
+                    || NationUKSelected && tank.CountryId == (int) Country.Uk)
+                   && (tank.Premium == 1 || !IsPremium);
+        }
+
+        public ListItem<int> SelectedTank
+        {
+            get { return _selectedTank; }
+            set
+            {
+                _selectedTank = value;
+                OnPropertyChanged("SelectedTank");
             }
         }
 
@@ -642,60 +757,87 @@ namespace WotDossier.Applications.ViewModel.Filter
                 members = Member.Split(',');
             }
 
+            var versions = Versions.Where(x => x.Checked).Select(x => x.Id).ToList();
+            var medals = Medals.Where(x => x is MedalCheckListItem && ((MedalCheckListItem)x).Checked).Select(x => x.Id).ToList();
+
             List<ReplayFile> result = replays.ToList().Where(x =>
-                x.Tank != null
+                //show all unknown tanks
+                 (x.Tank != null && TankIcon.Empty.Equals(x.Tank.Icon) && (SelectedFolder == null || x.FolderId == SelectedFolder.Id)) 
+                || 
+                //or apply filter
+                 x.Tank != null
                 &&
-                (SelectedVersion == Dictionaries.VersionAll || (SelectedVersion == Dictionaries.VersionTest && x.ClientVersion > Dictionaries.VersionRelease) || SelectedVersion == x.ClientVersion)
+                 (SelectedTank == null || SelectedTank.Id == KEY_ALL_VALUES || x.Tank.UniqueId() == SelectedTank.Id)
                 &&
-                (Level1Selected && x.Tank.Tier == 1
-                 || Level2Selected && x.Tank.Tier == 2
-                 || Level3Selected && x.Tank.Tier == 3
-                 || Level4Selected && x.Tank.Tier == 4
-                 || Level5Selected && x.Tank.Tier == 5
-                 || Level6Selected && x.Tank.Tier == 6
-                 || Level7Selected && x.Tank.Tier == 7
-                 || Level8Selected && x.Tank.Tier == 8
-                 || Level9Selected && x.Tank.Tier == 9
-                 || Level10Selected && x.Tank.Tier == 10)
+                 VersionFilter(versions, x)
                 &&
-                (LTSelected && x.Tank.Type == (int) TankType.LT
-                 || MTSelected && x.Tank.Type == (int) TankType.MT
-                 || HTSelected && x.Tank.Type == (int) TankType.HT
-                 || TDSelected && x.Tank.Type == (int) TankType.TD
-                 || SPGSelected && x.Tank.Type == (int) TankType.SPG)
+                 TankFilter(x.Tank)
                 &&
-                (SelectedFolder == null || x.FolderId == SelectedFolder.Id)
-                &&
-                (USSRSelected && x.CountryId == Country.Ussr
-                 || GermanySelected && x.CountryId == Country.Germany
-                 || ChinaSelected && x.CountryId == Country.China
-                 || FranceSelected && x.CountryId == Country.France
-                 || USSelected && x.CountryId == Country.Usa
-                 || JPSelected && x.CountryId == Country.Japan
-                 || UKSelected && x.CountryId == Country.Uk)
-                &&
-                (x.IsWinner == SelectedBattleResult || SelectedBattleResult == BattleStatus.Unknown)
-                && (x.Tank.Premium == 1 || !IsPremium)
-                && (SelectedMap == null || x.MapId == SelectedMap.Id || SelectedMap.Id == 0)
-                && FieldFilter(x)
-                && MembersFilter(x.TeamMembers, members)
-                && (BattleType == BattleType.Unknown || x.BattleType == BattleType || CheckRegularBattle(x, BattleType))
+                 MedalFilter(medals, x)
+                && 
+                 (SelectedFolder == null || x.FolderId == SelectedFolder.Id)
+                && 
+                 (x.IsWinner == SelectedBattleResult || SelectedBattleResult == BattleStatus.Unknown)
+                && 
+                 (SelectedMap == null || x.MapId == SelectedMap.Id || SelectedMap.Id == 0)
+                && 
+                 FieldFilter(x)
+                && 
+                 MembersFilter(x.TeamMembers, members)
+                && 
+                 (BattleType == BattleType.Unknown || x.BattleType == BattleType || CheckRegularBattle(x, BattleType))
                 &&
                 (AllResps
                  || Resp1 && x.Team == 1
                  || Resp2 && x.Team == 2)
                 &&
-                (StartDate == null || x.PlayTime.Date >= StartDate)
+                 (StartDate == null || x.PlayTime.Date >= StartDate)
                 &&
-                (EndDate == null || x.PlayTime.Date <= EndDate)
+                 (EndDate == null || x.PlayTime.Date <= EndDate)
                 &&
-                (!applySettingsFilters ||
+                 (!applySettingsFilters ||
                     ((settings.PlayerId == 0 || x.PlayerId == settings.PlayerId || x.PlayerName == settings.PlayerName)
                         && (settings.UseIncompleteReplaysResultsForCharts || (x.IsWinner != BattleStatus.Incomplete && x.IsWinner != BattleStatus.Unknown)))
-                )
+                 )
+                && (DeathReason == DeathReason.Unknown || x.DeathReason == DeathReason || DeathReason == DeathReason.Dead && (x.DeathReason != DeathReason.Alive && x.DeathReason != DeathReason.Unknown ))
+                && (SelectedPlatoonFilter == Platoon.Unknown || (SelectedPlatoonFilter == Platoon.Platoon && x.IsPlatoon) || (SelectedPlatoonFilter == Platoon.Solo && !x.IsPlatoon))
                 ).ToList();
 
             return result;
+        }
+
+        private bool MedalFilter(List<int> medals, ReplayFile replayFile)
+        {
+            if (medals.Any())
+            {
+                var replayMedals = replayFile.Medals.Select(x => x.Id);
+                var replayAchievements = replayFile.Achievements.Select(x => x.Id);
+                return medals.Intersect(replayMedals).Any() || medals.Intersect(replayAchievements).Any();
+            }
+            return true;
+        }
+
+        private bool VersionFilter(List<Version> versions, ReplayFile replayFile)
+        {
+            if (SelectedVersion != null)
+            {
+                return (SelectedVersion == Dictionaries.VersionAll ||
+                        (SelectedVersion == Dictionaries.VersionTest &&
+                         replayFile.ClientVersion > Dictionaries.VersionRelease) ||
+                        SelectedVersion == replayFile.ClientVersion);
+            }
+
+            if (versions.Contains(Dictionaries.VersionAll) || versions.Contains(replayFile.ClientVersion))
+            {
+                return true;
+            }
+
+            if (versions.Contains(Dictionaries.VersionTest))
+            {
+                return replayFile.ClientVersion > Dictionaries.VersionRelease;
+            }
+
+            return false;
         }
 
         private bool CheckRegularBattle(ReplayFile replay, BattleType battleType)
@@ -793,10 +935,45 @@ namespace WotDossier.Applications.ViewModel.Filter
                 new ListItem<BattleStatus>(BattleStatus.Draw,Resources.Resources.BattleStatus_Draw), 
             };
 
+            _allVersionsListItem = new CheckListItem<Version>(Dictionaries.VersionAll, Resources.Resources.TankFilterPanel_All, true, OnSelectAllVersions);
+            _baseVersionsListItems = Dictionaries.Instance.Versions.Select(x => new CheckListItem<Version>(x, x.ToString(3), true, OnSelectVersion, _allVersionsListItem));
+
+            _versions = new List<CheckListItem<Version>>();
+            
+            _versions.AddRange(_baseVersionsListItems);
+
+            _versions.Insert(0, _allVersionsListItem);
+            _versions.Add(new CheckListItem<Version>(Dictionaries.VersionTest, "Test 0.9.x", true, OnSelectVersion, _allVersionsListItem));
+
+            Medals = GetMedals();
+
             ClearCommand = new DelegateCommand(OnClear);
             RefreshCommand = new DelegateCommand(OnRefresh);
             AllCommand = new DelegateCommand(OnAll);
         }
+
+        private List<ListItem<int>> GetMedals()
+        {
+            var medals = Dictionaries.Instance.Medals.Values.Where(x => x.Group.Filter);
+
+            MedalGroup currentGroup = null;
+
+            List<ListItem<int>> resultList = new List<ListItem<int>>();
+
+            foreach (var medal in medals)
+            {
+                if (!medal.Group.Equals(currentGroup))
+                {
+                    resultList.Add(new ListItem<int>(0, medal.Group.Name));
+                    currentGroup = medal.Group;
+                }
+                resultList.Add(new MedalCheckListItem(medal, (checkListItem, b) => { if (FilterChanged != null) FilterChanged(); }));
+            }
+
+            return resultList;
+        }
+
+        public List<ListItem<int>> Medals { get; set; }
 
         private void OnRefresh()
         {
@@ -814,13 +991,16 @@ namespace WotDossier.Applications.ViewModel.Filter
                         Level7Selected =
                             Level6Selected =
                                 Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = true;
-            TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = true;
-            USSRSelected =
-                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = true;
+            TankTypeTDSelected = TankTypeMTSelected = TankTypeLTSelected = TankTypeHTSelected = TankTypeSPGSelected = true;
+            NationUSSRSelected =
+                NationUKSelected = NationUSSelected = NationGermanySelected = NationJPSelected = NationChinaSelected = NationFranceSelected = NationCZSelected = true;
 
             SelectedBattleResult = BattleStatus.Unknown;
-            SelectedVersion = Dictionaries.VersionAll;
+            //NOTE: single version selection mode. use Dictionaries.VersionAll as default value 
+            //SelectedVersion = Dictionaries.VersionAll;
+            _allVersionsListItem.Checked = true;
             BattleType = BattleType.Unknown;
+            SelectedTank = null;
             Member = string.Empty;
         }
 
@@ -835,12 +1015,15 @@ namespace WotDossier.Applications.ViewModel.Filter
                         Level7Selected =
                             Level6Selected =
                                 Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = false;
-            TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = false;
-            USSRSelected =
-                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = false;
+            TankTypeTDSelected = TankTypeMTSelected = TankTypeLTSelected = TankTypeHTSelected = TankTypeSPGSelected = false;
+            NationUSSRSelected =
+                NationUKSelected = NationUSSelected = NationGermanySelected = NationJPSelected = NationChinaSelected = NationFranceSelected = NationCZSelected = false;
 
             SelectedBattleResult = BattleStatus.Unknown;
-            SelectedVersion = Dictionaries.VersionAll;
+            //NOTE: single version selection mode. use Dictionaries.VersionAll as default value 
+            //SelectedVersion = Dictionaries.VersionAll;
+            _allVersionsListItem.Checked = true;
+            SelectedTank = null;
             BattleType = BattleType.Unknown;
             Member = string.Empty;
         }
@@ -865,10 +1048,27 @@ namespace WotDossier.Applications.ViewModel.Filter
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// Occurs when filter changed.
+        /// </summary>
+        public event Action FilterChanged;
+
+        /// <summary>
         /// Called when [property changed].
         /// </summary>
         /// <param name="propertyName">Name of the property.</param>
-        protected virtual void OnPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (propertyName.Contains("Level") || propertyName.Contains("TankType") || propertyName.Contains("Nation") || propertyName.Equals(PropIsPremium))
+            {
+                RaisePropertyChanged(PropTanks);
+            }
+
+            RaisePropertyChanged(propertyName);
+
+            if (FilterChanged != null) FilterChanged();
+        }
+
+        private void RaisePropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));

@@ -2,9 +2,8 @@ namespace WotDossier.Domain.Server
 {
     public class ClanEmblems
     {
-        public string small { get; set; } 
-        public string large { get; set; } 
-        public string bw_tank { get; set; }
-        public string medium { get; set; } 
+        public string wot { get; set; } 
+        public string portal { get; set; }
+        public string wowp { get; set; }
     }
 }

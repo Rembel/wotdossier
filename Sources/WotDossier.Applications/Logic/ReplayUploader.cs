@@ -8,6 +8,7 @@ using Common.Logging;
 using Newtonsoft.Json;
 using WotDossier.Common;
 using WotDossier.Common.Extensions;
+using WotDossier.Dal;
 
 namespace WotDossier.Applications.Logic
 {

@@ -210,6 +210,20 @@ namespace WotDossier.Framework.Controls.AutoCompleteTextBox
         {
             if (SelectionAdapter != null)
             {
+                if (Provider != null && ItemsSelector != null && (e.Key == Key.Down || e.Key == Key.Back || e.Key == Key.Delete) && string.IsNullOrEmpty(Editor.Text))
+                {
+                    ItemsSelector.ItemsSource = Provider.GetSuggestions(Editor.Text);
+                    ItemsSelector.SelectedIndex = -1;
+                    if (ItemsSelector.HasItems && IsKeyboardFocusWithin)
+                    {
+                        IsDropDownOpen = true;
+                    }
+                    else
+                    {
+                        IsDropDownOpen = false;
+                    }
+                }
+
                 SelectionAdapter.HandleKeyDown(e);
             }
         }
@@ -231,7 +245,7 @@ namespace WotDossier.Framework.Controls.AutoCompleteTextBox
             }
             FetchTimer.IsEnabled = false;
             FetchTimer.Stop();
-            if (Editor.Text.Length > 0)
+            if (Editor.Text.Length > -1)
             {
                 FetchTimer.IsEnabled = true;
                 FetchTimer.Start();

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.IO;
 using Common.Logging;
+using NHibernate.Criterion;
 using WotDossier.Common;
 using WotDossier.Dal.NHibernate;
 using WotDossier.Domain.Entities;
@@ -9,6 +11,7 @@ using WotDossier.Domain.Replay;
 using WotDossier.Domain.Server;
 using WotDossier.Domain.Tank;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace WotDossier.Dal
 {
@@ -42,9 +45,10 @@ namespace WotDossier.Dal
         /// <typeparam name="T"></typeparam>
         /// <param name="playerId">The player identifier.</param>
         /// <returns></returns>
-        public IEnumerable<T> GetPlayerStatistic<T>(int playerId, int rev = 0) where T : StatisticEntity
+        public IEnumerable<T> GetPlayerStatistic<T>(int playerId) where T : StatisticEntity
         {
             _dataProvider.OpenSession();
+            _dataProvider.BeginTransaction();
             PlayerEntity player = null;
             T statistic = null;
             IList<T> list = null;
@@ -52,11 +56,13 @@ namespace WotDossier.Dal
             {
                 list = _dataProvider.QueryOver(() => statistic)
                                     .Inner.JoinAlias(x => x.PlayerIdObject, () => player)
-                                    .Where(x => player.PlayerId == playerId && statistic.Rev > rev).List<T>();
+                                    .Where(x => player.PlayerId == playerId).List<T>();
+                _dataProvider.CommitTransaction();
             }
             catch (Exception e)
             {
                 Log.Error(e);
+                _dataProvider.RollbackTransaction();
             }
             finally
             {
@@ -97,10 +103,8 @@ namespace WotDossier.Dal
                     //create new record
                     if (IsNewSnapshotShouldBeAdded(currentSnapshot.Updated, newSnapshot.Updated))
                     {
-                        currentSnapshot = new T { PlayerId = playerEntity.Id, PlayerUId = playerEntity.UId.Value, UId = Guid.NewGuid()};
+                        currentSnapshot = new T { PlayerId = playerEntity.Id };
                     }
-
-                    UpdateRevision(playerEntity, currentSnapshot);
 
                     newSnapshot.Update(currentSnapshot);
                 }
@@ -125,12 +129,6 @@ namespace WotDossier.Dal
             }
 
             return playerEntity;
-        }
-
-        private void UpdateRevision(PlayerEntity playerEntity, StatisticEntity currentSnapshot)
-        {
-            playerEntity.Rev = Int32.Parse(DateTime.Now.ToString("yyyyMMdd")) * 100;
-            currentSnapshot.Rev = playerEntity.Rev;
         }
 
         private static bool IsNewSnapshotShouldBeAdded(DateTime currentSnapshotUpdated, DateTime newSnapshotUpdated)
@@ -495,12 +493,35 @@ namespace WotDossier.Dal
             return new List<PlayerEntity>();
         }
 
-        public IList<TankEntity> GetTanks(PlayerEntity player, int rev)
+        public List<FavoritePlayerEntity> GetFavoritePlayers()
         {
-            _dataProvider.OpenSession();
-            IList<TankEntity> tanks = _dataProvider.QueryOver<TankEntity>().Where(x => x.Rev > rev && x.PlayerId == player.Id).List();
-            _dataProvider.CloseSession();
-            return tanks;
+            string path = Path.Combine(Folder.GetDossierAppDataFolder(), "favorite_players");
+            if (File.Exists(path))
+            {
+                var content = File.ReadAllText(path);
+                try
+                {
+                    return JsonConvert.DeserializeObject<List<FavoritePlayerEntity>>(content);
+                }
+                catch (Exception e)
+                {
+                    Log.Error("Error on favorite players loading", e);
+                }
+            }
+            return new List<FavoritePlayerEntity>();
+        }
+
+        public void SetFavoritePlayers(List<FavoritePlayerEntity> players)
+        {
+            string path = Path.Combine(Folder.GetDossierAppDataFolder(), "favorite_players");
+            try
+            {
+                File.WriteAllText(path, JsonConvert.SerializeObject(players));
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error on favorite players save", e);
+            }
         }
     }
 }

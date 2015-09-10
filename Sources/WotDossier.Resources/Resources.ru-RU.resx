@@ -1218,7 +1218,7 @@
     <value>Франция</value>
   </data>
   <data name="Country_Uk" xml:space="preserve">
-    <value>Великобритания</value>
+    <value>Британия</value>
   </data>
   <data name="Settings_ReplaysFolder" xml:space="preserve">
     <value>Папка с реплеями</value>
@@ -3031,13 +3031,13 @@
     <value>Клан</value>
   </data>
   <data name="BattleMode_FortBattles" xml:space="preserve">
-    <value>Укрепрайоны. Бои</value>
+    <value>Битва за Укрепрайон</value>
   </data>
   <data name="BattleMode_FortSorties" xml:space="preserve">
-    <value>Укрепрайоны. Вылазки</value>
+    <value>Вылазка</value>
   </data>
   <data name="BattleType_Sorties" xml:space="preserve">
-    <value>Вылазки</value>
+    <value>Вылазка</value>
   </data>
   <data name="Btn_Refresh" xml:space="preserve">
     <value>Обновить</value>
@@ -3428,5 +3428,156 @@
   </data>
   <data name="DeathReason_Unknown" xml:space="preserve">
     <value>Нет данных</value>
+  </data>
+  <data name="StatusBar_SelectedCount" xml:space="preserve">
+    <value>Выбрано реплеев: </value>
+  </data>
+  <data name="CritType_DamagedDevice" xml:space="preserve">
+    <value>Повреждено</value>
+  </data>
+  <data name="CritType_DestroyedDevice" xml:space="preserve">
+    <value>Выведено из строя</value>
+  </data>
+  <data name="CritType_DestroyedTankmen" xml:space="preserve">
+    <value>Ранения экипажа</value>
+  </data>
+  <data name="CrewMember_commander" xml:space="preserve">
+    <value>Командир</value>
+  </data>
+  <data name="CrewMember_driver" xml:space="preserve">
+    <value>Механник-водитель</value>
+  </data>
+  <data name="CrewMember_gunner" xml:space="preserve">
+    <value>Наводчик</value>
+  </data>
+  <data name="CrewMember_loader" xml:space="preserve">
+    <value>Заряжающий</value>
+  </data>
+  <data name="CrewMember_radioman" xml:space="preserve">
+    <value>Радист</value>
+  </data>
+  <data name="Device_ammoBay" xml:space="preserve">
+    <value>Боеукладка</value>
+  </data>
+  <data name="Device_engine" xml:space="preserve">
+    <value>Двигатель</value>
+  </data>
+  <data name="Device_fuelTank" xml:space="preserve">
+    <value>Топливный бак</value>
+  </data>
+  <data name="Device_gun" xml:space="preserve">
+    <value>Орудие</value>
+  </data>
+  <data name="Device_radio" xml:space="preserve">
+    <value>Радио</value>
+  </data>
+  <data name="Device_surveyingDevice" xml:space="preserve">
+    <value>Приборы наблюдения</value>
+  </data>
+  <data name="Device_track" xml:space="preserve">
+    <value>Гусеница</value>
+  </data>
+  <data name="Device_turretRotator" xml:space="preserve">
+    <value>Башня</value>
+  </data>
+  <data name="Gauge_WinsFormat" xml:space="preserve">
+    <value>Побед: 0.0</value>
+  </data>
+  <data name="Gauge_DamageRatioFormat" xml:space="preserve">
+    <value>Коэфф урона: 0.00</value>
+  </data>
+  <data name="Gauge_EffFormat" xml:space="preserve">
+    <value>РЭ: 0</value>
+  </data>
+  <data name="Gauge_KillDeathFormat" xml:space="preserve">
+    <value>Уничтожил/убит: 0.00</value>
+  </data>
+  <data name="Gauge_Wn8Format" xml:space="preserve">
+    <value>WN8: 0</value>
+  </data>
+  <data name="Tab_Header_MapsStatistic" xml:space="preserve">
+    <value>Статистика карт</value>
+  </data>
+  <data name="Tab_Header_OverallPerformance" xml:space="preserve">
+    <value>Общая эффективность</value>
+  </data>
+  <data name="Tab_Header_PerformanceProgress" xml:space="preserve">
+    <value>Прогресс</value>
+  </data>
+  <data name="Tab_Header_WinRate" xml:space="preserve">
+    <value>Процент побед</value>
+  </data>
+  <data name="Tab_Header_WN8" xml:space="preserve">
+    <value>WN8</value>
+  </data>
+  <data name="DeathReason_CrewDead" xml:space="preserve">
+    <value>Экипаж уничтожен</value>
+  </data>
+  <data name="Tab_Header_AveragePerformance" xml:space="preserve">
+    <value>Средняя эффективность</value>
+  </data>
+  <data name="Platoon_Platoon" xml:space="preserve">
+    <value>Взвод</value>
+  </data>
+  <data name="Platoon_Solo" xml:space="preserve">
+    <value>Соло</value>
+  </data>
+  <data name="MenuItem_FavoritePlayers" xml:space="preserve">
+    <value>Избранные игроки</value>
+  </data>
+  <data name="Chart_TrackerFormatString_Eff" xml:space="preserve">
+    <value>РЭ: {4:0.0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_Wn8" xml:space="preserve">
+    <value>WN8: {4:0.0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_WinRate" xml:space="preserve">
+    <value>Процент побед: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_SurvivePercent" xml:space="preserve">
+    <value>Выживаемость: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_AvgXp" xml:space="preserve">
+    <value>Средний опыт: {4:0.0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_AvgDamage" xml:space="preserve">
+    <value>Средний урон: {4:0}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_KillDeathRatio" xml:space="preserve">
+    <value>Уничтожил/убит: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="Chart_TrackerFormatString_AvgSpotted" xml:space="preserve">
+    <value>Обнаружено: {4:0.00}
+{1}: {2:0}
+Дата: {Date:dd.MM.yyyy}</value>
+  </data>
+  <data name="BattleType_FortBattles" xml:space="preserve">
+    <value>Битва за Укрепрайон</value>
+  </data>
+  <data name="BattleType_Ladder" xml:space="preserve">
+    <value>Ладдер</value>
+  </data>
+  <data name="Settings_CacheFolder" xml:space="preserve">
+    <value>Путь к игровому кэшу</value>
+  </data>
+  <data name="Total_ForSelected" xml:space="preserve">
+    <value>Для выделенных</value>
+  </data>
+  <data name="Country_Czech" xml:space="preserve">
+    <value>Чехия</value>
   </data>
 </root>

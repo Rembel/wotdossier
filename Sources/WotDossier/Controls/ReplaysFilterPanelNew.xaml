@@ -5,8 +5,39 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:ui="clr-namespace:WotDossier.UI"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:autoCompleteTextBox="clr-namespace:WotDossier.Framework.Controls.AutoCompleteTextBox;assembly=WotDossier.Framework"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="700" Background="{DynamicResource applicationBackgroundBrush}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="fsTemplate">
+            <TextBlock Text="{Binding Value}" />
+        </DataTemplate>
+        <Style TargetType="{x:Type autoCompleteTextBox:AutoCompleteTextBox}">
+            <Setter Property="Focusable"
+                Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type autoCompleteTextBox:AutoCompleteTextBox}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}">
+                            <Grid>
+                                <TextBox x:Name="PART_Editor"
+                                     Text="{Binding Path=Text, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+                                <Popup x:Name="PART_Popup"
+                                   IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource Mode=TemplatedParent},Mode=TwoWay}"
+                                   Width="{TemplateBinding ActualWidth}">
+                                    <ListBox x:Name="PART_Selector" ItemTemplate="{TemplateBinding ItemTemplate}" DisplayMemberPath="Value" SelectedValuePath="Id" />
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid Margin="6,3,6,3">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -14,38 +45,6 @@
         </Grid.RowDefinitions>
 
         <TabControl TabStripPlacement="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Maps}" Style="{StaticResource office2007SilverTabItemLeft}" ToolTip="">
-                <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <!--map-->
-                    <TextBlock Margin="12,3,6,3" Grid.Row="0" Grid.Column="0" Text="{x:Static resources:Resources.TankFilterPanel_Map}" VerticalAlignment="Center" />
-                    <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" Width="200" ItemsSource="{Binding Maps}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left"></ComboBox>
-
-                    <!--battle type-->
-                    <TextBlock Margin="12,3,6,3" Grid.Row="1" Grid.Column="0" Text="{x:Static resources:Resources.BattleType}" VerticalAlignment="Center"/>
-                    <ComboBox Margin="6,3,6,3" Grid.Row="1" Grid.Column="1" Width="200" ItemsSource="{Binding BattleTypes}" DisplayMemberPath="Value" SelectedValuePath="Id"
-                                                              SelectedValue="{Binding BattleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
-
-                    <GroupBox Margin="12,3,6,3" Grid.Row="2" Grid.ColumnSpan="2" Header="{x:Static resources:Resources.Column_Respawn}" FontSize="{StaticResource DefaultFontSize}">
-                        <StackPanel Orientation="Horizontal">
-                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
-                        </StackPanel>
-                    </GroupBox>
-                </Grid>
-            </TabItem>
             <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Tanks}" Style="{StaticResource office2007SilverTabItemLeft}">
                 <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
                     <Grid.RowDefinitions>
@@ -53,6 +52,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -60,7 +60,7 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
+
                     <!--levels-->
                     <TextBlock Margin="12,3,6,3" Grid.Row="0" Text="{x:Static resources:Resources.TankFilterPanel_Levels}" />
                     <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
@@ -119,27 +119,27 @@
                     <!--types-->
                     <TextBlock Margin="12,3,6,3" Grid.Row="1" Text="{x:Static resources:Resources.TankFilterPanel_Types}" />
                     <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_LT}"  IsChecked="{Binding LTSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_LT}"  IsChecked="{Binding TankTypeLTSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Types/tank_type_light.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_MT}" IsChecked="{Binding MTSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_MT}" IsChecked="{Binding TankTypeMTSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Types/tank_type_medium.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_HT}" IsChecked="{Binding HTSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_HT}" IsChecked="{Binding TankTypeHTSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Types/tank_type_heavy.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_TD}" IsChecked="{Binding TDSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_TD}" IsChecked="{Binding TankTypeTDSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Types/tank_type_td.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_SPG}" IsChecked="{Binding SPGSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.TankType_SPG}" IsChecked="{Binding TankTypeSPGSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/Types/tank_type_spg.png"></Image>
                             </CheckBox.Content>
@@ -149,44 +149,137 @@
                     <!--country-->
                     <TextBlock Margin="12,3,6,3" Grid.Row="2" Text="{x:Static resources:Resources.TankFilterPanel_Country}" />
                     <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Ussr}"  IsChecked="{Binding USSRSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Ussr}"  IsChecked="{Binding NationUSSRSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/ussr.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Germany}" IsChecked="{Binding GermanySelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Germany}" IsChecked="{Binding NationGermanySelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/germany.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Usa}" IsChecked="{Binding USSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Usa}" IsChecked="{Binding NationUSSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/usa.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_China}" IsChecked="{Binding ChinaSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_China}" IsChecked="{Binding NationChinaSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/china.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_France}" IsChecked="{Binding FranceSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_France}" IsChecked="{Binding NationFranceSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/france.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Uk}" IsChecked="{Binding UKSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Uk}" IsChecked="{Binding NationUKSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/uk.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
-                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Japan}" IsChecked="{Binding JPSelected, Mode=TwoWay}">
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Japan}" IsChecked="{Binding NationJPSelected, Mode=TwoWay}">
                             <CheckBox.Content>
                                 <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/japan.png"></Image>
                             </CheckBox.Content>
                         </CheckBox>
+                        <CheckBox Margin="6,3,6,3" ToolTip="{x:Static resources:Resources.Country_Czech}" IsChecked="{Binding NationCZSelected, Mode=TwoWay}">
+                            <CheckBox.Content>
+                                <Image Source="pack://application:,,,/WotDossier.Resources;component/Images/nations/czech.png"></Image>
+                            </CheckBox.Content>
+                        </CheckBox>
                     </StackPanel>
 
-                    <CheckBox Grid.Row="3" Grid.Column="0" Margin="12,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" />
+                    <TextBlock Margin="12,3,6,3" Grid.Row="3" Text="{x:Static resources:Resources.TankFilterPanel_Tank}" VerticalAlignment="Center"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                        <!--<ComboBox Margin="6,3,6,3" ItemsSource="{Binding Tanks, UpdateSourceTrigger=Explicit}" 
+                              DisplayMemberPath="Value" SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Width="250" />-->
+                        <autoCompleteTextBox:AutoCompleteTextBox  Margin="6,3,6,3"  HorizontalAlignment="Left" Width="250"
+                                  SelectedItem="{Binding SelectedTank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 ItemTemplate="{StaticResource ResourceKey=fsTemplate}"
+                                 Provider="{Binding Path=.}" DisplayMember="Value" />
+                        <CheckBox Margin="12,3,6,3" Content="{x:Static resources:Resources.TankFilterPanel_Premium}" IsChecked="{Binding IsPremium, Mode=TwoWay}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Maps}" Style="{StaticResource office2007SilverTabItemLeft}">
+                <Grid HorizontalAlignment="Stretch" Background="{StaticResource PanelBackground}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--map-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="0" Grid.Column="0" Text="{x:Static resources:Resources.TankFilterPanel_Map}" VerticalAlignment="Center" />
+                    <ComboBox Margin="6,3,6,3" Grid.Row="0" Grid.Column="1" Width="200" ItemsSource="{Binding Maps}" DisplayMemberPath="Value" SelectedItem="{Binding SelectedMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left"></ComboBox>
+
+                    <!--battle type-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="1" Grid.Column="0" Text="{x:Static resources:Resources.BattleType}" VerticalAlignment="Center"/>
+                    <ComboBox Margin="6,3,6,3" Grid.Row="1" Grid.Column="1" Width="200" ItemsSource="{Binding BattleTypes}" DisplayMemberPath="Value" SelectedValuePath="Id"
+                                                              SelectedValue="{Binding BattleType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+
+                    <GroupBox Margin="12,3,6,3" Grid.Row="2" Grid.ColumnSpan="2" Header="{x:Static resources:Resources.Column_Respawn}" FontSize="{StaticResource DefaultFontSize}">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_AllBases}" GroupName="resp" IsChecked="{Binding AllResps, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base1}" GroupName="resp" IsChecked="{Binding Resp1, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                            <RadioButton Margin="6" Content="{x:Static resources:Resources.Chart_Label_Base2}" GroupName="resp" IsChecked="{Binding Resp2, UpdateSourceTrigger=PropertyChanged}"></RadioButton>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Medals}" Style="{StaticResource office2007SilverTabItemLeft}">
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#4E4E4E" Offset="0"/>
+                            <GradientStop Color="#0C0C0C" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <ListBox ItemsSource="{Binding Medals}" Height="330" Background="Transparent"  BorderThickness="0" Padding="0" Margin="0"
+                             ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <ListBox.Resources>
+                            <DataTemplate x:Key="medalSearchItemTemplate">
+                                <Grid Margin="10, 3" HorizontalAlignment="Stretch" Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Margin="3,0" VerticalAlignment="Center" Width="20" Height="24" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}">
+                                        
+                                    </Image>
+                                    <CheckBox Grid.Column="1" Content="{Binding Value}" IsChecked="{Binding Checked}" Foreground="#8e9496" VerticalAlignment="Center" />
+                                    <Grid.ToolTip>
+                                        <StackPanel Orientation="Vertical">
+                                            <Image Margin="6" VerticalAlignment="Center" Width="67" Height="71" Stretch="Fill" Source="{Binding Path=Medal, Converter={x:Static converters:MedalToImageConverter.Default}}"/>
+                                            <TextBlock HorizontalAlignment="Center" Text="{Binding Value}" />
+                                        </StackPanel>
+                                    </Grid.ToolTip>
+                                </Grid>
+                            </DataTemplate>
+                            <DataTemplate x:Key="medalGroupTemplate">
+                                <TextBlock Padding="3, 6, 0, 3" Text="{Binding Value}" FontSize="16" 
+                                           FontFamily="UniversCondCBold,Myriad Pro,sans-serif" Foreground="White"/>
+                            </DataTemplate>
+                        </ListBox.Resources>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical" ItemWidth="200" Height="330" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListBox.ItemTemplateSelector>
+                            <ui:MedalSearchItemTemplateSelector
+                                MedalGroupTemplate="{StaticResource medalGroupTemplate}" 
+                                MedalSearchItemTemplate="{StaticResource medalSearchItemTemplate}"/>
+                        </ListBox.ItemTemplateSelector>
+                    </ListBox>
                 </Grid>
             </TabItem>
             <TabItem Header="{x:Static resources:Resources.ReplaysFilterGroupHeader_Other}" Style="{StaticResource office2007SilverTabItemLeft}">
@@ -197,15 +290,17 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Margin="12,3,6,3" Grid.Row="0" Text="{x:Static resources:Resources.ReplaysFilter_ByColumns}" VerticalAlignment="Center" />
-                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Left">
                         <ComboBox Margin="6,3,20,3" Width="200" ItemsSource="{Binding FilterFields}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding Field, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
                         <TextBlock Text="{x:Static resources:Resources.Operation_Gt}" VerticalAlignment="Center"></TextBlock>
                         <TextBox Margin="6,3,6,3" Width="50" Text="{Binding StartValue, NotifyOnValidationError=False}" controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
@@ -217,13 +312,33 @@
                     <TextBlock Margin="12,3,6,3" Grid.Row="1" Text="{x:Static resources:Resources.ReplaysFilter_Player}" VerticalAlignment="Center" />
                     <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="6,3,6,3" Width="200" Text="{Binding Member, NotifyOnValidationError=False}"  controls:AttachedProperties.UpdateSourceOnKey="Enter"/>
 
+                    <!--death reason-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="1" Grid.Column="2" Text="{x:Static resources:Resources.Column_Ratings_Platoon}" VerticalAlignment="Center" />
+                    <ComboBox Margin="6,3,6,3" Grid.Row="1" Grid.Column="3" Width="200" ItemsSource="{Binding PlatoonFilter}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedPlatoonFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+                    
                     <!--result-->
                     <TextBlock Margin="12,3,6,3" Grid.Row="2" Text="{x:Static resources:Resources.ReplaysFilter_Result}" VerticalAlignment="Center" />
                     <ComboBox Margin="6,3,6,3" Grid.Row="2" Grid.Column="1" Width="200" ItemsSource="{Binding BattleResults}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedBattleResult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
 
+                    <!--death reason-->
+                    <TextBlock Margin="12,3,6,3" Grid.Row="2" Grid.Column="2" Text="{x:Static resources:Resources.Label_ReplayDetail_IsAlive}" VerticalAlignment="Center" />
+                    <ComboBox Margin="6,3,6,3" Grid.Row="2" Grid.Column="3" Width="200" ItemsSource="{Binding DeathReasons}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding DeathReason, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+                    
                     <!--version-->
                     <TextBlock Margin="12,3,6,3" Grid.Row="3" Grid.Column="0" Text="{x:Static resources:Resources.Version}" VerticalAlignment="Center" />
-                    <ComboBox Margin="6,3,6,3" Grid.Row="3" Grid.Column="1" Width="200" ItemsSource="{Binding Versions}" DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedVersion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" />
+                    <ComboBox Margin="6,3,6,3" Grid.Row="3" Grid.Column="1" Width="200" ItemsSource="{Binding Versions}" HorizontalAlignment="Left"
+                              SelectedIndex="0">
+                        <!--NOTE: single version selection mode
+                        DisplayMemberPath="Value" SelectedValuePath="Id" SelectedValue="{Binding SelectedVersion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox IsChecked="{Binding Checked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="20" />
+                                    <TextBlock Text="{Binding Value}" Width="100" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -3,112 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
-             xmlns:ui="clr-namespace:WotDossier.UI"
+             xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             xmlns:logic="clr-namespace:WotDossier.Applications.Logic;assembly=WotDossier.Applications"
+             xmlns:ratings="clr-namespace:WotDossier.Converters.Ratings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-        <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
-            <StackPanel>
-                <d3:ChartPlotter x:Name="WinPercentByType" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10">
-                    <d3:Header>
-                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinPercentByType}"></TextBlock>
-                    </d3:Header>
-                    <d3:IntegerAxis x:Name="TankTypeHorizontalAxis1" ShowMinorTicks="False" >
-                        <d3:IntegerAxis.LabelProvider>
-                            <ui:TankTypeLabelProvider />
-                        </d3:IntegerAxis.LabelProvider>
-                    </d3:IntegerAxis>
-                    <d3:BarChart ItemsSource="{Binding WinPercentByTypeDataSource}" BoundsUnionMode="Bounds">
-                        <d3:BarChart.Resources>
-                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                        </d3:BarChart.Resources>
-                        <d3:TemplateMarkerGenerator>
-                            <DataTemplate>
-                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:PercentToColorConverter.Default}}"
-								               d3:ViewportPanel.Y="0"
-								               d3:ViewportPanel.X="{Binding X}"
-								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
-								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
-                                    <ToolTipService.ToolTip>
-                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                        </ToolTip>
-                                    </ToolTipService.ToolTip>
-                                </Rectangle>
-                            </DataTemplate>
-                        </d3:TemplateMarkerGenerator>
-                    </d3:BarChart>
-                </d3:ChartPlotter>
-
-                <d3:ChartPlotter x:Name="WinPercentByTier" NewLegendVisible="False" LegendVisibility="Hidden" Height="200" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10">
-                    <d3:Header>
-                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinPercentByTier}"></TextBlock>
-                    </d3:Header>
-                    <d3:IntegerAxis ShowMinorTicks="False">
-                        <d3:IntegerAxis.LabelProvider>
-                            <ui:TierLabelProvider />
-                        </d3:IntegerAxis.LabelProvider>
-                    </d3:IntegerAxis>
-                    <d3:BarChart ItemsSource="{Binding WinPercentByTierDataSource}" BoundsUnionMode="Bounds">
-                        <d3:BarChart.Resources>
-                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                        </d3:BarChart.Resources>
-                        <d3:TemplateMarkerGenerator>
-                            <DataTemplate>
-                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:PercentToColorConverter.Default}}"
-								               d3:ViewportPanel.Y="0"
-								               d3:ViewportPanel.X="{Binding X}"
-								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
-								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
-                                    <ToolTipService.ToolTip>
-                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                        </ToolTip>
-                                    </ToolTipService.ToolTip>
-                                </Rectangle>
-                            </DataTemplate>
-                        </d3:TemplateMarkerGenerator>
-                    </d3:BarChart>
-                </d3:ChartPlotter>
-
-                <d3:ChartPlotter x:Name="WinPercentByCountry" NewLegendVisible="False" LegendVisibility="Hidden" Height="300" Width="400" MainHorizontalAxisVisibility="Collapsed" MainVerticalAxisVisibility="Visible" Background="Transparent"
-                                      Margin="20,10,20,10">
-                    <d3:Header>
-                        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{x:Static resources:Resources.Chart_WinPercentByCountry}"></TextBlock>
-                    </d3:Header>
-                    <d3:IntegerAxis x:Name="CountryHorizontalAxis1"  ShowMinorTicks="False">
-                        <d3:IntegerAxis.LabelProvider>
-                            <ui:CountryLabelProvider />
-                        </d3:IntegerAxis.LabelProvider>
-                    </d3:IntegerAxis>
-                    <d3:BarChart ItemsSource="{Binding WinPercentByCountryDataSource}" BoundsUnionMode="Bounds">
-                        <d3:BarChart.Resources>
-                            <d3:NegativeRotateTransformConverter x:Key="transformConverter"/>
-                        </d3:BarChart.Resources>
-                        <d3:TemplateMarkerGenerator>
-                            <DataTemplate>
-                                <Rectangle Width="30" Fill="{Binding Path=Y, Converter={x:Static color:PercentToColorConverter.Default}}"
-								               d3:ViewportPanel.Y="0"
-								               d3:ViewportPanel.X="{Binding X}"
-								               d3:ViewportPanel.ViewportHeight="{Binding Y}"
-								               d3:ViewportPanel.ViewportVerticalAlignment="Bottom">
-                                    <ToolTipService.ToolTip>
-                                        <ToolTip RenderTransform="{d3:SelfBinding Path=Owner.RenderTransform, Converter={StaticResource transformConverter}}" RenderTransformOrigin="0,0">
-                                            <TextBlock Text="{Binding Y, StringFormat='0.0'}" FontWeight="Bold" ></TextBlock>
-                                        </ToolTip>
-                                    </ToolTipService.ToolTip>
-                                </Rectangle>
-                            </DataTemplate>
-                        </d3:TemplateMarkerGenerator>
-                    </d3:BarChart>
-                </d3:ChartPlotter>
-
-            </StackPanel>
-        </Border>
+    <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <chart:ClusteredColumnChart Margin="10,0" Width="300" Height="400"
+                        Style="{StaticResource MinimalChartStyle}"
+                        ChartTitle="{x:Static resources:Resources.Chart_WinPercentByType}"                
+                        ChartSubTitle=""  
+                        Foreground="#FFEEEEEE"
+                        Background="#FF333333"
+                        BorderThickness="2"
+                        SelectedBrush="Tomato" 
+                        Palette="{Binding WinPercentByTypeDataSource, Converter={x:Static ratings:PointsToPalleteConverter.Default}, ConverterParameter={x:Static logic:Rating.WR}}">
+                <chart:ClusteredColumnChart.Series>
+                    <chart:ChartSeries
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Types}"
+                                DisplayMember="Title"
+                                ValueMember="Y"
+                                ItemsSource="{Binding Path=WinPercentByTypeDataSource}" />
+                </chart:ClusteredColumnChart.Series>
+            </chart:ClusteredColumnChart>
+            <chart:ClusteredColumnChart Margin="10,0" Width="450" Height="400"
+                        Style="{StaticResource MinimalChartStyle}"
+                        ChartTitle="{x:Static resources:Resources.Chart_WinPercentByTier}"                
+                        ChartSubTitle=""  
+                        Foreground="#FFEEEEEE"
+                        Background="#FF333333"
+                        BorderThickness="2"
+                        SelectedBrush="Tomato" 
+                        Palette="{Binding WinPercentByTierDataSource, Converter={x:Static ratings:PointsToPalleteConverter.Default}, ConverterParameter={x:Static logic:Rating.WR}}">
+                <chart:ClusteredColumnChart.Series>
+                    <chart:ChartSeries
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Levels}"
+                                DisplayMember="Title"
+                                ValueMember="Y"
+                                ItemsSource="{Binding Path=WinPercentByTierDataSource}" />
+                </chart:ClusteredColumnChart.Series>
+            </chart:ClusteredColumnChart>
+            <chart:ClusteredColumnChart Margin="10,0" Width="450" Height="400"
+                        Style="{StaticResource MinimalChartStyle}"
+                        ChartTitle="{x:Static resources:Resources.Chart_WinPercentByCountry}"                
+                        ChartSubTitle=""  
+                        Foreground="#FFEEEEEE"
+                        Background="#FF333333"
+                        BorderThickness="2"
+                        SelectedBrush="Tomato" 
+                        Palette="{Binding WinPercentByCountryDataSource, Converter={x:Static ratings:PointsToPalleteConverter.Default}, ConverterParameter={x:Static logic:Rating.WR}}">
+                <chart:ClusteredColumnChart.Series>
+                    <chart:ChartSeries
+                                SeriesTitle="{x:Static resources:Resources.TankFilterPanel_Country}"
+                                DisplayMember="Title"
+                                ValueMember="Y"
+                                ItemsSource="{Binding Path=WinPercentByCountryDataSource}" />
+                </chart:ClusteredColumnChart.Series>
+            </chart:ClusteredColumnChart>
+        </StackPanel>
     </ScrollViewer>
 </UserControl>

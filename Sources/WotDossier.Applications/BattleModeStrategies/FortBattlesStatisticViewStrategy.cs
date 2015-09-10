@@ -13,8 +13,8 @@ namespace WotDossier.Applications.BattleModeStrategies
 {
     public class FortBattlesStatisticViewStrategy : StatisticViewStrategyBase
     {
-        private PlayerStatisticEntity _currentSnapshot;
-        private IEnumerable<TankStatisticEntity> _tanks;
+        private static PlayerStatisticEntity _currentSnapshot;
+        private static IEnumerable<TankStatisticEntity> _tanks;
 
         /// <summary>
         /// Predicate to get tank statistic
@@ -45,14 +45,15 @@ namespace WotDossier.Applications.BattleModeStrategies
             List<PlayerStatisticEntity> statisticEntities = new List<PlayerStatisticEntity> { _currentSnapshot };
 
             PlayerStatisticEntity currentStatistic = statisticEntities.OrderByDescending(x => x.BattlesCount).First();
-            List<PlayerStatisticViewModel> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
-                .Select(ToViewModel).ToList();
+            List<StatisticSlice> oldStatisticEntities = statisticEntities.Where(x => x.Id != currentStatistic.Id)
+                .Select(x => ToViewModel(x).ToStatisticSlice()).ToList();
 
             PlayerStatisticViewModel currentStatisticViewModel = ToViewModel(currentStatistic, oldStatisticEntities);
             currentStatisticViewModel.Name = player.Name;
             currentStatisticViewModel.Created = player.Creaded;
             currentStatisticViewModel.AccountId = player.PlayerId;
-            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (DateTime.Now - player.Creaded).Days;
+            var days = (DateTime.Now - player.Creaded).Days;
+            currentStatisticViewModel.BattlesPerDay = currentStatisticViewModel.BattlesCount / (days == 0 ? 1 : days);
             currentStatisticViewModel.PlayTime = new TimeSpan(0, 0, 0, tanks.Sum(x => x.Common.battleLifeTime));
 
             return currentStatisticViewModel;
@@ -64,9 +65,9 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="prevStatisticViewModels">The previous statistic view models.</param>
         /// <returns></returns>
-        protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<TankJson> prevStatisticViewModels)
+        protected override ITankStatisticRow ToTankStatisticRow(TankJson currentStatistic, List<StatisticSlice> prevStatisticViewModels)
         {
-            return new FortBattlesTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels.Any() ? prevStatisticViewModels : new List<TankJson> { TankJson.Initial });
+            return new FortBattlesTankStatisticRowViewModel(currentStatistic, prevStatisticViewModels);
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace WotDossier.Applications.BattleModeStrategies
         /// <param name="currentStatistic">The current statistic.</param>
         /// <param name="oldStatisticEntities">The old statistic entities.</param>
         /// <returns></returns>
-        protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<PlayerStatisticViewModel> oldStatisticEntities)
+        protected override PlayerStatisticViewModel ToViewModel(StatisticEntity currentStatistic, List<StatisticSlice> oldStatisticEntities)
         {
             return new FortBattlesPlayerStatisticViewModel((PlayerStatisticEntity)currentStatistic, oldStatisticEntities);
         }

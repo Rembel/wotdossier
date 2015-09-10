@@ -55,27 +55,32 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Common.Logging.Log4Net1211.2.1.2\lib\net40\Common.Logging.Log4Net1211.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.2.1408.0717\lib\net40\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.2.1502.911, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -99,6 +104,7 @@
   <ItemGroup>
     <Compile Include="AkimaSplineTest.cs" />
     <Compile Include="CacheTestFixture.cs" />
+    <Compile Include="CommonTestFixture.cs" />
     <Compile Include="CompositionContainerFactory.cs" />
     <Compile Include="LinearInterpolationCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +112,15 @@
     <Compile Include="TestFixtureBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Patch\Resources\china_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\czech_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\france_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\gb_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\germany_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\igr_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\japan_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\usa_vehicles.resx" />
+    <EmbeddedResource Include="Patch\Resources\ussr_vehicles.resx" />
     <None Include="..\WotDossier\App.config">
       <Link>App.config</Link>
     </None>
@@ -224,6 +239,18 @@
       <Link>External\structures_87.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\WotDossier\External\structures_88.json">
+      <Link>External\structures_88.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\structures_89.json">
+      <Link>External\structures_89.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WotDossier\External\structures_92.json">
+      <Link>External\structures_92.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\WotDossier\External\tanks.json">
       <Link>External\tanks.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -261,6 +288,9 @@
     <None Include="CacheFiles\0.9.0\NRXWO2LOFVRXILLQGEXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="CacheFiles\0.9.10\NRXWO2LOFVRXILTXN5ZGYZDPMZ2GC3TLOMXG4ZLUHIZDAMBRGU5V6UTFNVRGK3C7L5JFK===.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="CacheFiles\0.9.1\NRXWO2LOGIWWG5BNOAYS453POJWGI33GORQW423TFZXGK5B2GIYDAMJVHNPVEZLNMJSWYX27KJKQ====.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -273,7 +303,25 @@
     <None Include="CacheFiles\0.9.4\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="CacheFiles\0.9.5\NRXWO2LOGIXHANJOO5XXE3DEN5THIYLONNZS43TFOQ5DEMBQGE2DWX2SMVWWEZLML4======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CacheFiles\0.9.6\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CacheFiles\0.9.7\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CacheFiles\0.9.8\NRXWO2LOFVRXILLQGIXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CacheFiles\0.9.9\NRXWO2LOFVRXILLQGEXHO33SNRSG6ZTUMFXGW4ZONZSXIORSGAYDCNJ3L5JGK3LCMVWF6X2SKU======.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
+    <None Include="Patch\Resources\convert.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Replays\0.8.10\20131208_0156_ussr-Object_140_53_japan.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -298,7 +346,7 @@
     <None Include="Replays\0.8.6\20130612_0912_germany-E-100_28_desert.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Replays\0.8.7\20130706_1009_ussr-T-54_73_asia_korea.wotreplay">
+    <None Include="Replays\0.8.7\20130706_1015_ussr-T-54_60_asia_miao.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.8.8\20130908_2025_usa-M103_14_siegfried_line.wotreplay">
@@ -308,6 +356,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.0\ussr_Object_140_el_hallouf.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.10\20150827_0006_ussr-T-54_33_fjord.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.1\14003587093213_ussr_Object_140_el_hallouf.wotreplay">
@@ -326,6 +377,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Replays\0.9.5\20141206_0029_ussr-Object_140_92_stalingrad.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.6\20150122_2248_ussr-Object_907_13_erlenberg.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.7\20150319_2240_france-F72_AMX_30_35_steppes.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\0.9.9\20150705_2126_ussr-Object263_11_murovanka.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\CasesTest\Arheopteriks_1, СУ-85.wotreplay">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Replays\CasesTest\dead_crew.wotreplay">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -354,6 +420,10 @@
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Configs\Log4Net.xml">
@@ -379,157 +449,49 @@
     <None Include="Data\expected_tank_values.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Data\TankNominalDamage.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Maps\00_tank_tutorial.xml">
+    <None Include="Patch\Maps\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\01_karelia.xml">
+    <None Include="Patch\Tanks\China\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\02_malinovka.xml">
+    <None Include="Patch\Tanks\France\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\03_campania.xml">
+    <None Include="Patch\Tanks\Germany\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\04_himmelsdorf.xml">
+    <None Include="Patch\Tanks\Japan\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\05_prohorovka.xml">
+    <None Include="Patch\Tanks\Uk\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\06_ensk.xml">
+    <None Include="Patch\Tanks\Usa\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\07_lakeville.xml">
+    <None Include="Patch\Tanks\Ussr\*.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\08_ruinberg.xml">
+    <None Include="Patch\Tanks\China\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\10_hills.xml">
+    <None Include="Patch\Tanks\France\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\11_murovanka.xml">
+    <None Include="Patch\Tanks\Germany\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\13_erlenberg.xml">
+    <None Include="Patch\Tanks\Japan\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\14_siegfried_line.xml">
+    <None Include="Patch\Tanks\Uk\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\15_komarin.xml">
+    <None Include="Patch\Tanks\Usa\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\17_munchen.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\18_cliff.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\19_monastery.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\22_slough.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\23_westfeld.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\28_desert.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\29_el_hallouf.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\31_airfield.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\33_fjord.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\34_redshire.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\35_steppes.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\36_fishing_bay.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\37_caucasus.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\38_mannerheim_line.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\39_crimea.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\43_north_america.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\44_north_america.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\45_north_america.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\47_canada_a.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\51_asia.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\53_japan.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\59_asia_great_wall.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\60_asia_miao.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\63_tundra.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\73_asia_korea.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\83_kharkiv.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\84_winter.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\85_winter.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\86_himmelsdorf_winter.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\87_ruinberg_on_fire.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\92_stalingrad.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\96_prohorovka_defense.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\100_thepit.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\103_ruinberg_winter.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\109_battlecity_ny.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\95_lost_city.xml">
+    <None Include="Patch\Tanks\Ussr\components\shells.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="x64\SQLite.Interop.dll">
@@ -539,7 +501,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Replays\0.9.8\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>

@@ -20,6 +20,7 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
 
         private static readonly ILog _log = LogManager.GetCurrentClassLogger();
         private static readonly Version _jsonFormatedReplayMinVersion = new Version("0.8.11.0");
+        private static readonly Version _prevMinVersion = new Version("0.9.8.0");
         
         public static Replay ParseReplay(FileInfo phisicalFile, Version clientVersion, bool readAdvancedData)
         {
@@ -230,7 +231,20 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
                 //0.8.11+
                 if (replay.datablock_1.Version >= _jsonFormatedReplayMinVersion)
                 {
-                    replay.datablock_battle_result = parsedData[0].ToObject<BattleResult>();
+                    if (replay.datablock_1.Version >= _prevMinVersion)
+                    {
+                        var battleResult = parsedData[0].ToObject<BattleResult98>();
+                        replay.datablock_battle_result = new BattleResult();
+                        replay.datablock_battle_result.arenaUniqueID = battleResult.arenaUniqueID;
+                        replay.datablock_battle_result.common = battleResult.common;
+                        replay.datablock_battle_result.players = battleResult.players;
+                        replay.datablock_battle_result.personal = battleResult.personal.Values.First();
+                        replay.datablock_battle_result.vehicles = battleResult.vehicles.ToDictionary(x => x.Key, y => y.Value.First());
+                    }
+                    else
+                    {
+                        replay.datablock_battle_result = parsedData[0].ToObject<BattleResult>();
+                    }
                 }
                 replay.datablock_1.vehicles = parsedData[1].ToObject<Dictionary<long, Vehicle>>();
             }
@@ -305,7 +319,23 @@ private const string REPLAY_DATABLOCK_2 = "datablock_2";
             {
                 return new BaseParser();
             }
-            return new Parser93();
+            if (version < new Version("0.9.6.0"))
+            {
+                return new Parser93();
+            }
+            if (version < new Version("0.9.8.0"))
+            {
+                return new Parser96();
+            }
+            if (version < new Version("0.9.9.0"))
+            {
+                return new Parser98();
+            }
+            if (version < new Version("0.9.10.0"))
+            {
+                return new Parser99();
+            }
+            return new Parser910();
         }
 
 

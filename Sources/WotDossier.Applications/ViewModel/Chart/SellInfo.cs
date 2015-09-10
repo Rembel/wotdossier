@@ -1,57 +1,28 @@
-﻿using System.ComponentModel;
-using Microsoft.Research.DynamicDataDisplay;
-
-namespace WotDossier.Applications.ViewModel.Chart
+﻿namespace WotDossier.Applications.ViewModel.Chart
 {
-    public sealed class SellInfo : INotifyPropertyChanged
+    public sealed class SellInfo : GenericPoint<int, double>
     {
-        private double _winPercent;
         /// <summary>
         /// Gets or sets the win percent.
         /// </summary>
-        /// <value>
-        /// The win percent.
-        /// </value>
-        public double WinPercent
-        {
-            get { return _winPercent; }
-            set { _winPercent = value; PropertyChanged.Raise(this, "WinPercent"); }
-        }
+        public double WinPercent { get; set; }
 
-        private string _tankName;
         /// <summary>
         /// Gets or sets the name of the tank.
         /// </summary>
-        /// <value>
-        /// The name of the tank.
-        /// </value>
-        public string TankName
-        {
-            get { return _tankName; }
-            set { _tankName = value; PropertyChanged.Raise(this, "TankName"); }
-        }
+        public string TankName { get; set; }
 
-        private double _battles;
         /// <summary>
         /// Gets or sets the battles.
         /// </summary>
-        /// <value>
-        /// The battles.
-        /// </value>
-        public double Battles
+        public double Battles { get; set; }
+
+        public SellInfo(int x, double y, string tank) : base(x, y)
         {
-            get { return _battles; }
-            set { _battles = value; PropertyChanged.Raise(this, "Battles"); }
+            Battles = x;
+            WinPercent = y;
+            TankName = tank;
         }
-
-        #region INotifyPropertyChanged Members
-
-        /// <summary>
-        /// Occurs when [property changed].
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        #endregion
 
         public override string ToString()
         {

@@ -42,7 +42,7 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
-        <Setter Property="Padding" Value="1" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="Background" Value="#FFFFFFFF" />
         <Setter Property="BorderBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="Foreground" Value="#FF333333" />

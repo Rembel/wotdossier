@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WotDossier.Applications.ViewModel.Rows;
+using WotDossier.Applications.ViewModel.Statistic;
 using WotDossier.Common;
 using WotDossier.Domain.Entities;
 using WotDossier.Domain.Interfaces;
@@ -117,8 +118,8 @@ namespace WotDossier.Applications.Logic.Adapter
             SurvivedBattles = stat.dataField.statistics.all.survived_battles;
             Xp = stat.dataField.statistics.all.xp;
             BattleAvgXp = stat.dataField.statistics.all.battle_avg_xp;
-            MaxXp = stat.dataField.statistics.max_xp;
-            MaxDamage = stat.dataField.statistics.max_damage;
+            MaxXp = stat.dataField.statistics.all.max_xp;
+            MaxDamage = stat.dataField.statistics.all.max_damage;
             Frags = stat.dataField.statistics.all.frags;
             Spotted = stat.dataField.statistics.all.spotted;
             HitsPercents = stat.dataField.statistics.all.hits_percents;
@@ -176,7 +177,7 @@ namespace WotDossier.Applications.Logic.Adapter
             Tarczay = stat.dataField.achievements.achievements.medalTarczay;
             Kolobanov = stat.dataField.achievements.achievements.medalKolobanov;
             Fadin = stat.dataField.achievements.achievements.medalFadin;
-            HeroesOfRassenay = stat.dataField.achievements.achievements.medalHeroesOfRassenay;
+            HeroesOfRassenay = stat.dataField.achievements.achievements.heroesOfRassenay;
             DeLanglade = stat.dataField.achievements.achievements.medalDeLanglade;
 
             #endregion
@@ -227,7 +228,7 @@ namespace WotDossier.Applications.Logic.Adapter
 
             if (stat.dataField.vehicles != null)
             {
-                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new RandomBattlesTankStatisticRowViewModel(Dal.DataMapper.Map(x))).OrderByDescending(x => x.Tier).ToList();
+                Tanks = stat.dataField.vehicles.Where(x => x.description != null).Select(x => (ITankStatisticRow)new RandomBattlesTankStatisticRowViewModel(Dal.DataMapper.Map(x), new List<StatisticSlice>())).OrderByDescending(x => x.Tier).ToList();
                 WN8Rating = RatingHelper.Wn8(Tanks);
                 PerformanceRating = RatingHelper.PerformanceRating(Tanks);
 

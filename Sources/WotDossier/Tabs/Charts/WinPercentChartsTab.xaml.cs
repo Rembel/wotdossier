@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using WotDossier.UI;
 
 namespace WotDossier.Tabs.Charts
 {
@@ -11,10 +10,6 @@ namespace WotDossier.Tabs.Charts
         public WinPercentChartsTab()
         {
             InitializeComponent();
-
-            ChartHelper.ConfigureChart(WinPercentByTier);
-            ChartHelper.ConfigureChart(WinPercentByType);
-            ChartHelper.ConfigureChart(WinPercentByCountry);
         }
     }
 }

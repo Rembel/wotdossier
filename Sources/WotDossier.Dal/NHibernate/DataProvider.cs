@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using Common.Logging;
 using FluentNHibernate.Cfg;
 using NHibernate;
 using NHibernate.Cfg;
-using NHibernate.Linq;
 using WotDossier.Domain.Entities;
 
 namespace WotDossier.Dal.NHibernate
@@ -58,7 +58,7 @@ namespace WotDossier.Dal.NHibernate
 
             List<Assembly> list = new List<Assembly>();
 
-            strings.ForEach(x => list.Add(Assembly.LoadFile(x)));
+            strings.ToList().ForEach(x => list.Add(Assembly.LoadFile(x)));
 
             return list;
         }

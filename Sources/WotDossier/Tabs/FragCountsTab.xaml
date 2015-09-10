@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
-             xmlns:controls="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
              xmlns:controls1="clr-namespace:WotDossier.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -35,7 +34,7 @@
         </Grid>
         
         <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding TankFrags}" VerticalAlignment="Stretch" Name="dgFragCounts" 
-                  IsReadOnly="True" AutoGenerateColumns="False" controls:DataGridBehavior.DisplayRowNumber="True">
+                  IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Tier}" ElementStyle="{StaticResource CTextBlock}" Binding="{Binding Tier}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Icon}" CellStyle="{StaticResource DataGridCellCenterStyle}" CellTemplate="{StaticResource TankIconTemplate}"/>

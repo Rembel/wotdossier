@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Interfaces;
 using WotDossier.Framework.Forms.Commands;
@@ -234,6 +235,16 @@ namespace WotDossier.Applications.ViewModel.Filter
             }
         }
 
+        public bool CZSelected
+        {
+            get { return _filter.CZSelected; }
+            set
+            {
+                _filter.CZSelected = value;
+                OnPropertyChanged("CZSelected");
+            }
+        }
+
         public bool IsPremium
         {
             get { return _filter.IsPremium; }
@@ -276,8 +287,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                             Level6Selected =
                                 Level5Selected = Level4Selected = Level3Selected = Level2Selected = Level1Selected = true;
             TDSelected = MTSelected = LTSelected = HTSelected = SPGSelected = true;
-            USSRSelected =
-                UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = true;
+            USSRSelected = UKSelected = USSelected = GermanySelected = JPSelected = ChinaSelected = FranceSelected = CZSelected = true;
         }
 
         private void OnClear()
@@ -299,7 +309,7 @@ namespace WotDossier.Applications.ViewModel.Filter
         public List<T> Filter<T>(List<T> tanks) where T : ITankFilterable
         {
             return tanks.Where(x =>
-                                   (x.Tier == 1 && Level1Selected
+                                   (x.Tier < 2 && Level1Selected
                                     || x.Tier == 2 && Level2Selected
                                     || x.Tier == 3 && Level3Selected
                                     || x.Tier == 4 && Level4Selected
@@ -314,7 +324,8 @@ namespace WotDossier.Applications.ViewModel.Filter
                                     || x.Type == (int)TankType.MT && MTSelected
                                     || x.Type == (int)TankType.HT && HTSelected
                                     || x.Type == (int)TankType.TD && TDSelected
-                                    || x.Type == (int)TankType.SPG && SPGSelected)
+                                    || x.Type == (int)TankType.SPG && SPGSelected
+                                    || x.Type == (int)TankType.Unknown)
                                    &&
                                    (x.CountryId == (int)Country.Ussr && USSRSelected
                                     || x.CountryId == (int)Country.Germany && GermanySelected
@@ -322,6 +333,7 @@ namespace WotDossier.Applications.ViewModel.Filter
                                     || x.CountryId == (int)Country.France && FranceSelected
                                     || x.CountryId == (int)Country.Usa && USSelected
                                     || x.CountryId == (int)Country.Japan && JPSelected
+                                    || x.CountryId == (int)Country.Czech && CZSelected
                                     || x.CountryId == (int)Country.Uk && UKSelected)
                                    && (x.IsFavorite || !IsFavorite)
                                    && (x.IsPremium || !IsPremium)

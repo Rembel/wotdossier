@@ -6,46 +6,254 @@
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:charts="clr-namespace:WotDossier.Tabs.Charts"
+             xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:gauge="clr-namespace:WotDossier.Framework.Controls.Gauge;assembly=WotDossier.Framework"
+             xmlns:controls1="clr-namespace:WotDossier.Framework.Controls;assembly=WotDossier.Framework"
+             xmlns:logic="clr-namespace:WotDossier.Applications.Logic;assembly=WotDossier.Applications"
+             xmlns:color="clr-namespace:WotDossier.Converters.Color"
+             xmlns:ratings="clr-namespace:WotDossier.Converters.Ratings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TabControl HorizontalAlignment="Center" Margin="0,50,0,10">
+        <TabControl HorizontalAlignment="Stretch" Margin="0,50,0,10">
             <TabControl.Resources>
                 <Style TargetType="TabPanel">
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="1">
-                <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
-                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="200" Width="400" Margin="20"/>
-                    </WrapPanel>
-                </Border>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_OverallPerformance}" DataContext="{Binding PlayerStatistic}">
+                <controls1:AlignableWrapPanel Width="900" HorizontalContentAlignment="Center" >
+                    <!--winPercentGauge -->
+                    <gauge:CircularGaugeControl Margin="20" x:Name="winPercentGauge" 
+                                        Radius="100" 
+                                        ScaleRadius="60" 
+                                        ScaleStartAngle="140" 
+                                        ScaleSweepAngle="260"
+                                        PointerLength="45" 
+                                        PointerCapRadius="15" 
+                                        PointerThickness ="8"
+                                        MinValue="0" 
+                                        MaxValue="100" 
+                                        MajorDivisionsCount="10" 
+                                        MinorDivisionsCount="5" 
+                                        RangeIndicatorThickness="8"
+                                        RangeIndicatorRadius="70"
+                                        RangeIndicatorLightRadius="5"
+                                        RangeIndicatorLightOffset="20"
+                                        ScaleLabelRadius="40"
+                                        ScaleLabelSize="40,20"
+                                        ScaleLabelFontSize="10"
+                                        ScaleLabelForeground="LightGray"
+                                        MajorTickSize="10,3"
+                                        MinorTickSize="3,1"
+                                        MajorTickColor="LightGray"
+                                        MinorTickColor="LightGray"
+                                        GaugeBackgroundColor="Black"
+                                        DialTextOffset="50" 
+                                        DialTextColor="White"
+                                        CurrentValue="{Binding WinsPercent}"
+                                        DialText="{Binding WinsPercent, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_WinsFormat}}"
+                                        >
+                        <gauge:CircularGaugeControl.RangeDefinitions>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Red}" StartValue="{x:Static logic:Constants+Rating.WR_P0}" EndValue="{x:Static logic:Constants+Rating.WR_P1}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Orange}" StartValue="{x:Static logic:Constants+Rating.WR_P1}" EndValue="{x:Static logic:Constants+Rating.WR_P2}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Yellow}" StartValue="{x:Static logic:Constants+Rating.WR_P2}" EndValue="{x:Static logic:Constants+Rating.WR_P3}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Green}" StartValue="{x:Static logic:Constants+Rating.WR_P3}" EndValue="{x:Static logic:Constants+Rating.WR_P4}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Blue}" StartValue="{x:Static logic:Constants+Rating.WR_P4}" EndValue="{x:Static logic:Constants+Rating.WR_P5}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Purple}" StartValue="{x:Static logic:Constants+Rating.WR_P5}" EndValue="{x:Static logic:Constants+Rating.WR_P6}"></gauge:RangeDefinition>
+                        </gauge:CircularGaugeControl.RangeDefinitions>
+
+                    </gauge:CircularGaugeControl>
+                    <!--wn8Gauge -->
+                    <gauge:CircularGaugeControl Margin="20" x:Name="wn8Gauge" 
+                                        Radius="100" 
+                                        ScaleRadius="60" 
+                                        ScaleStartAngle="140" 
+                                        ScaleSweepAngle="260"
+                                        PointerLength="45" 
+                                        PointerCapRadius="15" 
+                                        PointerThickness ="8"
+                                        MinValue="0" 
+                                        MaxValue="5000" 
+                                        MajorDivisionsCount="10" 
+                                        MinorDivisionsCount="5" 
+                                        RangeIndicatorThickness="8"
+                                        RangeIndicatorRadius="70"
+                                        RangeIndicatorLightRadius="5"
+                                        RangeIndicatorLightOffset="20"
+                                        ScaleLabelRadius="40"
+                                        ScaleLabelSize="40,20"
+                                        ScaleLabelFontSize="10"
+                                        ScaleLabelForeground="LightGray"
+                                        MajorTickSize="10,3"
+                                        MinorTickSize="3,1"
+                                        MajorTickColor="LightGray"
+                                        MinorTickColor="LightGray"
+                                        GaugeBackgroundColor="Black"
+                                        DialTextOffset="50" 
+                                        DialTextColor="White"
+                                                CurrentValue="{Binding WN8Rating}"
+                                        DialText="{Binding WN8Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_Wn8Format}}"
+                                        >
+                        <gauge:CircularGaugeControl.RangeDefinitions>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Red}" StartValue="{x:Static logic:Constants+Rating.WN8_P0}" EndValue="{x:Static logic:Constants+Rating.WN8_P1}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Orange}" StartValue="{x:Static logic:Constants+Rating.WN8_P1}" EndValue="{x:Static logic:Constants+Rating.WN8_P2}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Yellow}" StartValue="{x:Static logic:Constants+Rating.WN8_P2}" EndValue="{x:Static logic:Constants+Rating.WN8_P3}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Green}" StartValue="{x:Static logic:Constants+Rating.WN8_P3}" EndValue="{x:Static logic:Constants+Rating.WN8_P4}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Blue}" StartValue="{x:Static logic:Constants+Rating.WN8_P4}" EndValue="{x:Static logic:Constants+Rating.WN8_P5}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Purple}" StartValue="{x:Static logic:Constants+Rating.WN8_P5}" EndValue="{x:Static logic:Constants+Rating.WN8_P6}"></gauge:RangeDefinition>
+                        </gauge:CircularGaugeControl.RangeDefinitions>
+
+                    </gauge:CircularGaugeControl>
+                    <!--eff rating -->
+                    <gauge:CircularGaugeControl Margin="20" x:Name="effGauge" 
+                                        Radius="100" 
+                                        ScaleRadius="60" 
+                                        ScaleStartAngle="140" 
+                                        ScaleSweepAngle="260"
+                                        PointerLength="45" 
+                                        PointerCapRadius="15" 
+                                        PointerThickness ="8"
+                                        MinValue="0" 
+                                        MaxValue="2200" 
+                                        MajorDivisionsCount="10" 
+                                        MinorDivisionsCount="5" 
+                                        RangeIndicatorThickness="8"
+                                        RangeIndicatorRadius="70"
+                                        RangeIndicatorLightRadius="5"
+                                        RangeIndicatorLightOffset="20"
+                                        ScaleLabelRadius="40"
+                                        ScaleLabelSize="40,20"
+                                        ScaleLabelFontSize="10"
+                                        ScaleLabelForeground="LightGray"
+                                        MajorTickSize="10,3"
+                                        MinorTickSize="3,1"
+                                        MajorTickColor="LightGray"
+                                        MinorTickColor="LightGray"
+                                        GaugeBackgroundColor="Black"
+                                        DialTextOffset="50" 
+                                        DialTextColor="White"
+                                                CurrentValue="{Binding EffRating}"
+                                        DialText="{Binding EffRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_EffFormat}}"
+                                        >
+                        <gauge:CircularGaugeControl.RangeDefinitions>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Red}" StartValue="{x:Static logic:Constants+Rating.EFF_P0}" EndValue="{x:Static logic:Constants+Rating.EFF_P1}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Orange}" StartValue="{x:Static logic:Constants+Rating.EFF_P1}" EndValue="{x:Static logic:Constants+Rating.EFF_P2}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Yellow}" StartValue="{x:Static logic:Constants+Rating.EFF_P2}" EndValue="{x:Static logic:Constants+Rating.EFF_P3}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Green}" StartValue="{x:Static logic:Constants+Rating.EFF_P3}" EndValue="{x:Static logic:Constants+Rating.EFF_P4}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Blue}" StartValue="{x:Static logic:Constants+Rating.EFF_P4}" EndValue="{x:Static logic:Constants+Rating.EFF_P5}"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Purple}" StartValue="{x:Static logic:Constants+Rating.EFF_P5}" EndValue="{x:Static logic:Constants+Rating.EFF_P6}"></gauge:RangeDefinition>
+                        </gauge:CircularGaugeControl.RangeDefinitions>
+
+                    </gauge:CircularGaugeControl>
+                    <!--killDeathGauge -->
+                    <gauge:CircularGaugeControl Margin="20" x:Name="killDeathGauge" 
+                                        Radius="100" 
+                                        ScaleRadius="60" 
+                                        ScaleStartAngle="140" 
+                                        ScaleSweepAngle="260"
+                                        PointerLength="45" 
+                                        PointerCapRadius="15" 
+                                        PointerThickness ="8"
+                                        MinValue="0" 
+                                        MaxValue="5" 
+                                        MajorDivisionsCount="10" 
+                                        MinorDivisionsCount="5" 
+                                        RangeIndicatorThickness="8"
+                                        RangeIndicatorRadius="70"
+                                        RangeIndicatorLightRadius="5"
+                                        RangeIndicatorLightOffset="20"
+                                        ScaleLabelRadius="40"
+                                        ScaleLabelSize="40,20"
+                                        ScaleLabelFontSize="10"
+                                        ScaleLabelForeground="LightGray"
+                                        MajorTickSize="10,3"
+                                        MinorTickSize="3,1"
+                                        MajorTickColor="LightGray"
+                                        MinorTickColor="LightGray"
+                                        GaugeBackgroundColor="Black"
+                                        DialTextOffset="60" 
+                                        DialTextColor="White"
+                                                CurrentValue="{Binding KillDeathRatio}"
+                                        DialText="{Binding KillDeathRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_KillDeathFormat}}"
+                                        >
+                        <gauge:CircularGaugeControl.RangeDefinitions>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Red}" StartValue="0" EndValue="0.6"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Orange}" StartValue="0.6" EndValue="0.8"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Yellow}" StartValue="0.8" EndValue="1"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Green}" StartValue="1" EndValue="1.3"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Blue}" StartValue="1.3" EndValue="2"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Purple}" StartValue="2" EndValue="15"></gauge:RangeDefinition>
+                        </gauge:CircularGaugeControl.RangeDefinitions>
+
+                    </gauge:CircularGaugeControl>
+                    <!--damageGauge -->
+                    <gauge:CircularGaugeControl Margin="20" x:Name="DamageGauge" 
+                                        Radius="100" 
+                                        ScaleRadius="60" 
+                                        ScaleStartAngle="140" 
+                                        ScaleSweepAngle="260"
+                                        PointerLength="45" 
+                                        PointerCapRadius="15" 
+                                        PointerThickness ="8"
+                                        MinValue="0" 
+                                        MaxValue="5" 
+                                        MajorDivisionsCount="10" 
+                                        MinorDivisionsCount="5" 
+                                        RangeIndicatorThickness="8"
+                                        RangeIndicatorRadius="70"
+                                        RangeIndicatorLightRadius="5"
+                                        RangeIndicatorLightOffset="20"
+                                        ScaleLabelRadius="40"
+                                        ScaleLabelSize="40,20"
+                                        ScaleLabelFontSize="10"
+                                        ScaleLabelForeground="LightGray"
+                                        MajorTickSize="10,3"
+                                        MinorTickSize="3,1"
+                                        MajorTickColor="LightGray"
+                                        MinorTickColor="LightGray"
+                                        GaugeBackgroundColor="Black"
+                                        DialTextOffset="60" 
+                                        DialTextColor="White"
+                                        CurrentValue="{Binding DamageRatio}"
+                                                DialText="{Binding DamageRatio, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter={x:Static resources:Resources.Gauge_DamageRatioFormat}}"
+                                        >
+                        <gauge:CircularGaugeControl.RangeDefinitions>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Red}" StartValue="0" EndValue="0.6"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Orange}" StartValue="0.6" EndValue="0.8"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Yellow}" StartValue="0.8" EndValue="1"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Green}" StartValue="1" EndValue="1.3"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Blue}" StartValue="1.3" EndValue="2"></gauge:RangeDefinition>
+                            <gauge:RangeDefinition Color="{x:Static ratings:EffRangeColors.Purple}" StartValue="2" EndValue="15"></gauge:RangeDefinition>
+                        </gauge:CircularGaugeControl.RangeDefinitions>
+
+                    </gauge:CircularGaugeControl>
+                </controls1:AlignableWrapPanel>
             </TabItem>
-            <TabItem Header="2">
-                <Border BorderBrush="#FF4C535C"  VerticalAlignment="Center" CornerRadius="2" Background="{StaticResource PanelBackground}">
-                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="440" Width="1000">
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="200" Width="400" Margin="20"/>
-                        <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="200" Width="400" Margin="20"/>
-                    </WrapPanel>
-                </Border>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_PerformanceProgress}" DataContext="{Binding ChartView}">
+                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="520" Width="1040">
+                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_EffectivityRating}" DataSource="{Binding RatingDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_Eff}"/>
+                    <controls:LineChartControl Header="WN8" DataSource="{Binding WnRatingDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_Wn8}"/>
+                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_WinPercent}" DataSource="{Binding WinPercentDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_WinRate}"/>
+                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_SurvivePercent}" DataSource="{Binding SurvivePercentDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_SurvivePercent}"/>
+                </WrapPanel>
             </TabItem>
-            <TabItem Header="3">
-                <charts:EffectivityChartsTab></charts:EffectivityChartsTab>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_AveragePerformance}" DataContext="{Binding ChartView}">
+                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" ItemWidth="520" Width="1040">
+                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgXp}" DataSource="{Binding AvgXPDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_AvgXp}"/>
+                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgDamage}" DataSource="{Binding AvgDamageDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_AvgDamage}"/>
+                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_KillDeathRatio}" DataSource="{Binding KillDeathRatioDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_KillDeathRatio}"/>
+                    <controls:LineChartControl Header="{x:Static resources:Resources.Chart_AvgSpotted}" DataSource="{Binding AvgSpottedDataSource}" Height="250" Width="500" Margin="10" TrackerFormatString="{x:Static resources:Resources.Chart_TrackerFormatString_AvgSpotted}"/>
+                </WrapPanel>
             </TabItem>
-            <TabItem Header="4">
-                <charts:BattlesCountChartsTab></charts:BattlesCountChartsTab>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_WinRate}" DataContext="{Binding ChartView}">
+                <charts:WinPercentChartsTab />
             </TabItem>
-            <TabItem Header="5">
-                <charts:WinPercentChartsTab></charts:WinPercentChartsTab>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_WN8}" DataContext="{Binding ChartView}">
+                <charts:EffectivityChartsTab />
             </TabItem>
-            <TabItem Header="6">
-                <charts:ReplaysChartsTab></charts:ReplaysChartsTab>
+            <TabItem Header="{x:Static resources:Resources.Tab_Header_Battles}" DataContext="{Binding ChartView}">
+                <charts:BattlesCountChartsTab />
             </TabItem>
         </TabControl>
     </Grid>

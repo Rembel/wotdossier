@@ -1,30 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Medals>
-    <Epic>
-        <medal name="Medal_15x15_Orlik" id="50" icon="medalOrlik" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Oskin" id="51" icon="medalOskin" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Halonen" id="52" icon="medalHalonen" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Burda" id="53" icon="medalBurda" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Billotte" id="54" icon="medalBillotte" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Kolobanov" id="55" icon="medalKolobanov" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Fadin" id="56" icon="medalFadin" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_RadleyWalters" id="73" icon="medalRadleyWalters" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_LafayettePool" id="74" icon="medalLafayettePool" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Bruno" id="75" icon="medalBrunoPietro" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Tarczay" id="76" icon="medalTarczay" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Pascucci" id="77" icon="medalPascucci" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Dumitru" id="78" icon="medalDumitru" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Lehvaslaiho" id="106" icon="medalLehvaslaiho" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_Nikolas" id="107" icon="medalNikolas" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_HeroesOfRassenay" id="110" icon="medalHeroesOfRassenay" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_BrothersInArms" id="143" icon="medalBrothersInArms" type="0" />
-        <medal name="Medal_15x15_CrucialContribution" id="144" icon="medalCrucialContribution" type="0" />
-        <medal name="Medal_15x15_DeLanglade" id="145" icon="medalDeLanglade" type="0" showribbon="true"/>
-        <medal name="Medal_15x15_TamadaYoshio" id="146" icon="medalTamadaYoshio" type="0" showribbon="true"/>
-        <!--Егерь-->
-        <medal name="Medal_15x15_Huntsman" id="148" icon="huntsman" type="0"/>
-    </Epic>
-    <BattleHero>
+    <BattleHero filter="true" name="Label_Achievements_BattleHero">
         <!--Воин-->
         <medal name="Medal_15x15_Warrior" id="34" icon="warrior" type="0"/>
         <!--Захватчик-->
@@ -45,24 +21,61 @@
         <medal name="Medal_15x15_Sniper2" id="227" icon="sniper2" type="0"/>
         <!--Основной калибр-->
         <medal name="Medal_15x15_MainGun" id="228" icon="maingun" type="0"/>
-    </BattleHero>
-    <TeamBattles>
-        <!--Царь горы-->
-        <medal name="Medal_7x7_KingOfTheHill" id="233" icon="kingofthehill" type="0"/>
-        <!--Бронетанковый кулак-->
-        <medal name="Medal_7x7_ArmoredFist" id="236" icon="armoredfist" type="0"/>
-        <!--Тактик-->
-        <medal name="Medal_7x7_TacticalBreakthrough" id="237" icon="TacticalBreakthrough" type="0"/>
         <!--за отличную стрельбу-->
         <medal name="Medal_7x7_WolfAmongSheepMedal" id="230" icon="wolfAmongSheepMedal" type="0"/>
         <!--отличник боевой подготовки-->
         <medal name="Medal_7x7_GeniusForWarMedal" id="232" icon="geniusForWarMedal" type="0"/>
-        <!--бог войны-->
-        <medal name="Medal_7x7_GodOfWar" id="286" icon="godOfWar" type="0"/>
+    </BattleHero>
+    <Epic filter="true" name="Label_Achievements_Epic">
+        <!--Медаль Орлика-->
+        <medal name="Medal_15x15_Orlik" id="50" icon="medalOrlik" type="0" showribbon="true"/>
+        <!--Медаль Оськина-->
+        <medal name="Medal_15x15_Oskin" id="51" icon="medalOskin" type="0" showribbon="true"/>
+        <!--Медаль Халонена-->
+        <medal name="Medal_15x15_Halonen" id="52" icon="medalHalonen" type="0" showribbon="true"/>
+        <!--Медаль Бурды-->
+        <medal name="Medal_15x15_Burda" id="53" icon="medalBurda" type="0" showribbon="true"/>
+        <!--Медаль Бийота-->
+        <medal name="Medal_15x15_Billotte" id="54" icon="medalBillotte" type="0" showribbon="true"/>
+        <!--Медаль Колобанова-->
+        <medal name="Medal_15x15_Kolobanov" id="55" icon="medalKolobanov" type="0" showribbon="true"/>
+        <!--Медаль Фадина-->
+        <medal name="Medal_15x15_Fadin" id="56" icon="medalFadin" type="0" showribbon="true"/>
+        <!--Медаль Рэдли-Уолтерса-->
+        <medal name="Medal_15x15_RadleyWalters" id="73" icon="medalRadleyWalters" type="0" showribbon="true"/>
+        <!--Медаль Пула-->
+        <medal name="Medal_15x15_LafayettePool" id="74" icon="medalLafayettePool" type="0" showribbon="true"/>
+        <!--Медаль Бруно-->
+        <medal name="Medal_15x15_Bruno" id="75" icon="medalBrunoPietro" type="0" showribbon="true"/>
+        <!--Медаль Тарцая-->
+        <medal name="Medal_15x15_Tarczay" id="76" icon="medalTarczay" type="0" showribbon="true"/>
+        <!--Медаль Паскуччи-->
+        <medal name="Medal_15x15_Pascucci" id="77" icon="medalPascucci" type="0" showribbon="true"/>
+        <!--Медаль Думитру-->
+        <medal name="Medal_15x15_Dumitru" id="78" icon="medalDumitru" type="0" showribbon="true"/>
+        <!--Медаль Лехвеслайхо-->
+        <medal name="Medal_15x15_Lehvaslaiho" id="106" icon="medalLehvaslaiho" type="0" showribbon="true"/>
+        <!--Медаль Николса-->
+        <medal name="Medal_15x15_Nikolas" id="107" icon="medalNikolas" type="0" showribbon="true"/>
+        <!--"Медаль героев Расейняя-->
+        <medal name="Medal_15x15_HeroesOfRassenay" id="110" icon="medalHeroesOfRassenay" type="0" showribbon="true"/>
+        <!--Медаль де Ланглада-->
+        <medal name="Medal_15x15_DeLanglade" id="145" icon="medalDeLanglade" type="0" showribbon="true"/>
+        <!--Медаль Тамада Йошио-->
+        <medal name="Medal_15x15_TamadaYoshio" id="146" icon="medalTamadaYoshio" type="0" showribbon="true"/>
+        <!--Медаль Найдина-->
+        <medal name="Medal_15x15_Huntsman" id="148" icon="huntsman" type="0"/>
+        <medal name="Поле боя: Бои у озера Балатон" id="301" icon="histBattle1_battlefield" type="0" showribbon="false"/>
+        <medal name="Поле боя: Битва на Курской дуге" id="303" icon="histBattle2_battlefield" type="0" showribbon="false"/>
+        <medal name="Поле боя: Арденнская операция 1944 года" id="305" icon="histBattle3_battlefield" type="0" showribbon="false"/>
+        <!--Медаль Гора-->
+        <medal name="Medal_15x15_MedalGore" id="298" icon="medalGore" type="0"/>
+        <!--Медаль Старка-->
+        <medal name="Medal_15x15_MedalStark" id="300" icon="medalStark" type="0"/>
+    </Epic>
+  <TeamBattles filter="true" name="Label_Achievements_TeamBattle">
         <!--разведка боем-->
         <medal name="Medal_7x7_FightingReconnaissanceMedal" id="288" icon="fightingReconnaissanceMedal" type="0"/>
-        <!--за волю к победе-->
-        <medal name="Medal_7x7_WillToWinSpirit" id="289" icon="willToWinSpirit" type="0"/>
         <!--решающий выстрел-->
         <medal name="Medal_7x7_CrucialShotMedal" id="291" icon="crucialShotMedal" type="0"/>
         <!--за тактические операции-->
@@ -70,36 +83,37 @@
         <medal name="Medal_7x7_ForTacticalOperations" id="2922" icon="forTacticalOperations2" type="1"/>
         <medal name="Medal_7x7_ForTacticalOperations" id="2923" icon="forTacticalOperations3" type="1"/>
         <medal name="Medal_7x7_ForTacticalOperations" id="2924" icon="forTacticalOperations4" type="1"/>
-        
+
         <medal name="Medal_7x7_PromisingFighterMedal" id="470" icon="promisingFighterMedal" type="0"/>
         <medal name="Medal_7x7_HeavyFireMedal" id="472" icon="heavyFireMedal" type="0"/>
         <medal name="Medal_7x7_RangerMedal" id="474" icon="rangerMedal" type="0"/>
         <medal name="Medal_7x7_FireAndSteelMedal" id="476" icon="fireAndSteelMedal" type="0"/>
         <medal name="Medal_7x7_PyromaniacMedal" id="478" icon="pyromaniacMedal" type="0"/>
-        <medal name="Medal_7x7_NoMansLand" id="479" icon="noMansLand" type="0"/>
         
         <medal name="Medal_7x7_GuerrillaMedal" id="496" icon="guerrillaMedal" type="0"/>
         <medal name="Medal_7x7_InfiltratorMedal" id="498" icon="infiltratorMedal" type="0"/>
         <medal name="Medal_7x7_SentinelMedal" id="500" icon="sentinelMedal" type="0"/>
         <medal name="Medal_7x7_PrematureDetonationMedal" id="502" icon="PrematureDetonationMedal" type="0"/>
         <medal name="Medal_7x7_BruteForceMedal" id="504" icon="bruteForceMedal" type="0"/>
-        
+
         <medal name="Medal_7x7_BattleTested" id="50601" icon="battleTested1" type="1"/>
         <medal name="Medal_7x7_BattleTested" id="50602" icon="battleTested2" type="1"/>
         <medal name="Medal_7x7_BattleTested" id="50603" icon="battleTested3" type="1"/>
         <medal name="Medal_7x7_BattleTested" id="50604" icon="battleTested4" type="1"/>
     </TeamBattles>
+    <Group filter="true" name="Label_Achievements_GroupAchievements">
+        <!--Братья по оружию-->
+        <medal name="Medal_15x15_BrothersInArms" id="143" icon="medalBrothersInArms" type="0" />
+        <!--Решающий вклад-->
+        <medal name="Medal_15x15_CrucialContribution" id="144" icon="medalCrucialContribution" type="0" />
+        <!--Бронетанковый кулак-->
+        <medal name="Medal_7x7_ArmoredFist" id="236" icon="armoredfist" type="0"/>
+    </Group>
     <Special>
         <!--Стрелок-->
         <medal name="Medal_15x15_Sharpshooter" id="58" icon="TitleSniper" type="1"/>
-        <!--рейдер-->
-        <medal name="Medal_15x15_Raider" id="61" icon="Raider" type="0"/>
-        <!--Коса смерти-->
-        <medal name="Medal_15x15_Reaper" id="62" icon="HandOfDeath" type="1"/>
         <!--Бронебойщик-->
         <medal name="Medal_15x15_MasterGunner" id="63" icon="ArmorPiercer" type="1"/>
-        <!--Камикадзе-->
-        <medal name="Medal_15x15_Kamikaze" id="64" icon="Kamikaze" type="1"/>
         <!--Зверобой-->
         <medal name="Medal_15x15_Hunter" id="66" icon="beasthunter" type="1"/>
         <!--Гроза мышей-->
@@ -108,37 +122,69 @@
         <medal name="Medal_15x15_Invincible" id="59" icon="invincible" type="0"/>
         <!--лев синaя-->
         <medal name="Medal_15x15_Sinai" id="109" icon="sinai" type="1"/>
+        <!--Долина паттонов-->
+        <medal name="Medal_15x15_PattonValley" id="154" icon="Pattonvalley" type="1"/>
+        <!--Живучий-->
+        <medal name="Medal_15x15_Survivor" id="60" icon="Diehard" type="1"/>
+
+        <medal name="Medal_15x15_MaxAimerSeries" id="520" icon="maxAimerSeries" type="1"/>
+      
+        <medal name="Medal_15x15_MaxAimerSeries" id="529" icon="aimer" type="1"/>
+        
+        <medal name="Medal_15x15_DeathTrack" id="533" icon="deathTrack" type="1"/>
+    </Special>
+    <HonoraryRanks filter="true" name="Label_Achievements_HonoraryRanks">
+        <!--рейдер-->
+        <medal name="Medal_15x15_Raider" id="61" icon="Raider" type="0"/>
+        <!--Коса смерти-->
+        <medal name="Medal_15x15_Reaper" id="62" icon="HandOfDeath" type="1"/>
+        <!--Камикадзе-->
+        <medal name="Medal_15x15_Kamikaze" id="64" icon="Kamikaze" type="1"/>
         <!--Бомбардир-->
         <medal name="Medal_15x15_Bombardier" id="147" icon="Bombardier" type="1"/>
+        <!--Тактик-->
+        <medal name="Medal_7x7_TacticalBreakthrough" id="237" icon="TacticalBreakthrough" type="0"/>
+        <!--За контрбатарейную стрельбу-->
+        <medal name="Medal_15x15_MedalAntiSpgFire" id="297" icon="medalAntiSpgFire" type="0"/>
+        <!--Хладнокровный-->
+        <medal name="Medal_15x15_MedalCoolBlood" id="299" icon="medalCoolBlood" type="0"/>
+        <!--за волю к победе-->
+        <medal name="Medal_7x7_WillToWinSpirit" id="289" icon="willToWinSpirit" type="0"/>
+        <!--Непробиваемый-->
+        <medal name="Medal_15x15_Impenetrable" id="517" icon="impenetrable" type="1"/>
+        <!--Огонь на поражение-->
+        <medal name="Medal_15x15_ShootToKill" id="521" icon="shootToKill" type="1"/>
+        <!--Боец-->
+        <medal name="Medal_15x15_Fighter" id="522" icon="fighter" type="1"/>
+        <!--Дуэлянт-->
+        <medal name="Medal_15x15_Duelist" id="523" icon="duelist" type="1"/>
+    </HonoraryRanks>
+    <CommemorativeAchievements filter="true" name="Label_Achievements_CommemorativeAchievements">
         <!--Спартанец-->
         <medal name="Medal_15x15_Sturdy" id="150" icon="sturdy" type="0"/>
         <!--невозмутимый-->
         <medal name="Medal_15x15_IronMan" id="151" icon="IronMan" type="0"/>
         <!--Счастливчик-->
         <medal name="Medal_15x15_LuckyDevil" id="152" icon="LuckyDevil" type="0"/>
-        <!--Долина паттонов-->
-        <medal name="Medal_15x15_PattonValley" id="154" icon="Pattonvalley" type="1"/>
-        <!--Живучий-->
-        <medal name="Medal_15x15_Survivor" id="60" icon="Diehard" type="1"/>
-
+        <!--Царь горы-->
+        <medal name="Medal_7x7_KingOfTheHill" id="233" icon="kingofthehill" type="0"/>
+        <!--бог войны-->
+        <medal name="Medal_7x7_GodOfWar" id="286" icon="godOfWar" type="0"/>
+        <!--Монолит-->
         <medal name="Medal_15x15_MedalMonolith" id="296" icon="medalMonolith" type="0"/>
-        <medal name="Medal_15x15_MedalAntiSpgFire" id="297" icon="medalAntiSpgFire" type="0"/>
-        <medal name="Medal_15x15_MedalAntiSpgFire" id="298" icon="medalGore" type="0"/>
-        <medal name="Medal_15x15_MedalCoolBlood" id="299" icon="medalCoolBlood" type="0"/>
-        <medal name="Medal_15x15_MedalStark" id="300" icon="medalStark" type="0"/>
-
-        <medal name="Medal_15x15_Impenetrable" id="517" icon="impenetrable" type="1"/>
-        <medal name="Medal_15x15_MaxAimerSeries" id="520" icon="maxAimerSeries" type="1"/>
-        <medal name="Medal_15x15_ShootToKill" id="521" icon="shootToKill" type="1"/>
-        <medal name="Medal_15x15_Fighter" id="522" icon="fighter" type="1"/>
-        <medal name="Medal_15x15_Duelist" id="523" icon="duelist" type="1"/>
+        <!--Бой до последнего-->
+        <medal name="Medal_7x7_NoMansLand" id="479" icon="noMansLand" type="0"/>
+        <!--Взрывотехник-->
         <medal name="Medal_15x15_Demolition" id="524" icon="demolition" type="1"/>
+        <!--Поджигатель-->
         <medal name="Medal_15x15_Arsonist" id="525" icon="arsonist" type="1"/>
+        <!--Костолом-->
         <medal name="Medal_15x15_Bonecrusher" id="526" icon="bonecrusher" type="1"/>
+        <!--Заговорённый-->
         <medal name="Medal_15x15_Charmed" id="527" icon="charmed" type="1"/>
+        <!--В расчёте!-->
         <medal name="Medal_15x15_Even" id="528" icon="even" type="1"/>
-        <medal name="Medal_15x15_DeathTrack" id="533" icon="deathTrack" type="1"/>
-    </Special>
+    </CommemorativeAchievements>
     <Common>
         <medal name="Medal_15x15_Kay" id="4101" icon="medalKay1" type="1"/>
         <medal name="Medal_15x15_Kay" id="4102" icon="medalKay2" type="1"/>
@@ -173,12 +219,12 @@
         <medal name="Medal_15x15_Ekins" id="4803" icon="medalEkins3" type="1"/>
         <medal name="Medal_15x15_Ekins" id="4804" icon="medalEkins4" type="1"/>
     </Common>
-    <clan>
+    <Clan>
         <medal name="Medal_Clan_Rotmistrov" id="50701" icon="medalRotmistrov1" type="1"/>
         <medal name="Medal_Clan_Rotmistrov" id="50702" icon="medalRotmistrov2" type="1"/>
         <medal name="Medal_Clan_Rotmistrov" id="50703" icon="medalRotmistrov3" type="1"/>
         <medal name="Medal_Clan_Rotmistrov" id="50704" icon="medalRotmistrov4" type="1"/>
-    </clan>
+    </Clan>
     <Fort>
         <medal name="Medal_Fort_Conqueror" id="48201" icon="conqueror1" type="1"/>
         <medal name="Medal_Fort_Conqueror" id="48202" icon="conqueror2" type="1"/>
@@ -189,7 +235,7 @@
         <medal name="Medal_Fort_FireAndSword" id="48302" icon="fireAndSword2" type="1"/>
         <medal name="Medal_Fort_FireAndSword" id="48303" icon="fireAndSword3" type="1"/>
         <medal name="Medal_Fort_FireAndSword" id="48304" icon="fireAndSword4" type="1"/>
-        
+
         <medal name="Medal_Fort_Crusher" id="484" icon="crusher" type="0"/>
         <medal name="Medal_Fort_Counterblow" id="485" icon="counterblow" type="0"/>
 
@@ -197,13 +243,13 @@
         <medal name="Medal_Fort_SoldierOfFortune" id="48602" icon="soldierOfFortune2" type="1"/>
         <medal name="Medal_Fort_SoldierOfFortune" id="48603" icon="soldierOfFortune3" type="1"/>
         <medal name="Medal_Fort_SoldierOfFortune" id="48604" icon="soldierOfFortune4" type="1"/>
-        
+
         <medal name="Medal_Fort_Kampfer" id="48701" icon="kampfer1" type="1"/>
         <medal name="Medal_Fort_Kampfer" id="48702" icon="kampfer2" type="2"/>
         <medal name="Medal_Fort_Kampfer" id="48703" icon="kampfer3" type="3"/>
         <medal name="Medal_Fort_Kampfer" id="48704" icon="kampfer4" type="4"/>
     </Fort>
-    <master>
+    <Master>
         <!--79-->
         <medal name="Achievement_MarkOfMastery" id="7901" icon="MarkOfMastery1" type="1"/>
         <medal name="Achievement_MarkOfMastery" id="7902" icon="MarkOfMastery2" type="1"/>
@@ -213,5 +259,5 @@
         <medal name="Achievement_MarksOnGun" id="29501" icon="MarksOnGun1" type="1"/>
         <medal name="Achievement_MarksOnGun" id="29502" icon="MarksOnGun2" type="1"/>
         <medal name="Achievement_MarksOnGun" id="29503" icon="MarksOnGun3" type="1"/>
-    </master>
+    </Master>
 </Medals>

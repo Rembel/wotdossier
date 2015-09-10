@@ -5,6 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 using WotDossier.Applications;
 using WotDossier.Applications.BattleModeStrategies;
+using WotDossier.Applications.Logic;
 using WotDossier.Dal;
 using WotDossier.Domain;
 using WotDossier.Domain.Entities;
@@ -25,42 +26,78 @@ namespace WotDossier.Test
             DataProvider.RollbackTransaction();
             DataProvider.CloseSession();
 
+            //reset DB
+            DatabaseManager.DeleteDatabase();
+            DatabaseManager.InitDatabase();
+
             Player player1 = new Player();
             player1.dataField = new PlayerData { account_id = 10800699, nickname = "_rembel__ru", created_at = 1349068892 };
             ServerStatWrapper serverStatistic = new ServerStatWrapper(player1);
 
             foreach (Version version in Dictionaries.Instance.Versions)
             {
-                if(version < new Version("0.8.5"))
-                {
-                    continue;
-                }
-
-                //reset DB
-                DatabaseManager.DeleteDatabase();
-                DatabaseManager.InitDatabase();
-
                 string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
 
                 FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
-                
-                List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
-                foreach (TankJson tankJson in tanks)
+
+                if (cacheFile != null)
                 {
-                    string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png", tankJson.Description.Icon.IconId);
-                    Assert.True(File.Exists(iconPath), string.Format("Version: {1}. Can't find icon {0}", tankJson.Description.Icon.IconId, version));
+                    List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
+                    foreach (TankJson tankJson in tanks)
+                    {
+                        string iconPath = string.Format(@"..\..\..\WotDossier.Resources\Images\Tanks\{0}.png",
+                            tankJson.Description.Icon.IconId);
+                        Assert.True(File.Exists(iconPath),
+                            string.Format("Version: {1}. Can't find icon {0}", tankJson.Description.Icon.IconId, version));
+                    }
+
+                    foreach (BattleMode battleMode in Enum.GetValues(typeof (BattleMode)))
+                    {
+                        StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(battleMode,
+                            DossierRepository);
+
+                        PlayerEntity player = strategy.UpdatePlayerStatistic(
+                            serverStatistic.Player.dataField.account_id, tanks, serverStatistic);
+
+                        var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
+                        Assert.IsNotNull(playerStatisticViewModel);
+                    }
                 }
-
-                foreach (BattleMode battleMode in Enum.GetValues(typeof (BattleMode)))
+                else
                 {
-                    StatisticViewStrategyBase strategy = StatisticViewStrategyManager.Get(battleMode, DossierRepository);
-
-                    PlayerEntity player = strategy.UpdatePlayerStatistic(serverStatistic.Player.dataField.account_id, tanks, serverStatistic);
-
-                    var playerStatisticViewModel = strategy.GetPlayerStatistic(player, tanks, serverStatistic);
-                    Assert.IsNotNull(playerStatisticViewModel);
+                    Console.WriteLine("Cache file not found: {0}", version);
                 }
             }
+        }
+
+        [Test]
+        public void NoobMeterPerformanceRatingAlgorithmTest()
+        {
+            Version version = new Version("0.9.3");
+
+            string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
+
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
+
+            if (cacheFile != null)
+            {
+                List<TankJson> tanks = CacheFileHelper.ReadTanksCache(CacheFileHelper.BinaryCacheToJson(cacheFile));
+                var performanceRating = RatingHelper.PerformanceRating(tanks, json => json.A15x15);
+                Console.WriteLine(performanceRating);
+
+            }
+        }
+
+        [Test]
+        public void InternalCacheLoaderTest()
+        {
+            Version version = new Version("0.9.3");
+
+            string cacheFolder = string.Format(@"\CacheFiles\{0}\", version.ToString(3));
+
+            FileInfo cacheFile = GetCacheFile("_rembel__ru", cacheFolder);
+
+            CacheFileHelper.InternalBinaryCacheToJson(cacheFile);
         }
 
         [Test]
@@ -116,26 +153,32 @@ namespace WotDossier.Test
         {
             FileInfo cacheFile = null;
 
-            string[] files = Directory.GetFiles(Environment.CurrentDirectory + folder, "*.dat");
+            string path = Environment.CurrentDirectory + folder;
 
-            if (!files.Any())
+            if (Directory.Exists(path))
             {
-                return null;
-            }
+                string[] files = Directory.GetFiles(path, "*.dat");
 
-            foreach (string file in files)
-            {
-                FileInfo info = new FileInfo(file);
-
-                if (CacheFileHelper.GetPlayerName(info).Equals(playerId, StringComparison.InvariantCultureIgnoreCase))
+                if (!files.Any())
                 {
-                    if (cacheFile == null)
+                    return null;
+                }
+
+                foreach (string file in files)
+                {
+                    FileInfo info = new FileInfo(file);
+
+                    if (CacheFileHelper.GetPlayerName(info)
+                        .Equals(playerId, StringComparison.InvariantCultureIgnoreCase))
                     {
-                        cacheFile = info;
-                    }
-                    else if (cacheFile.LastWriteTime < info.LastWriteTime)
-                    {
-                        cacheFile = info;
+                        if (cacheFile == null)
+                        {
+                            cacheFile = info;
+                        }
+                        else if (cacheFile.LastWriteTime < info.LastWriteTime)
+                        {
+                            cacheFile = info;
+                        }
                     }
                 }
             }

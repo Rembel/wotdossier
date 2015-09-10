@@ -143,8 +143,10 @@ namespace WotDossier.Applications.ViewModel
             PlayerStatisticViewModel statistic = new RandomBattlesPlayerStatisticViewModel(entity);
             statistic.Name = player.dataField.nickname;
             statistic.AccountId = player.dataField.account_id;
-            statistic.BattlesPerDay = statistic.BattlesCount / (DateTime.Now - statAdapter.Created).Days;
+            var days = (DateTime.Now - statAdapter.Created).Days;
+            statistic.BattlesPerDay = statistic.BattlesCount / (days == 0 ? 1 : days);
             statistic.Created = Utils.UnixDateToDateTime( (long) player.dataField.created_at);
+            statistic.RBR = player.dataField.global_rating;
             if (player.dataField.clan_id != null)
             {
                 AppSettings settings = SettingsReader.Get();
@@ -164,7 +166,7 @@ namespace WotDossier.Applications.ViewModel
 
         public List<ITankStatisticRow> Tanks
         {
-            get { return _tanks; }
+            get { return _tanks ?? new List<ITankStatisticRow>(); }
             set
             {
                 _tanks = value;

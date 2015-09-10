@@ -50,35 +50,42 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Common.Logging.Log4Net1211.2.1.2\lib\net40\Common.Logging.Log4Net1211.dll</HintPath>
     </Reference>
-    <Reference Include="DynamicDataDisplay">
-      <HintPath>..\..\References\DynamicDataDisplay.dll</HintPath>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\..\References\De.TorstenMandelkow.MetroChart.dll</HintPath>
     </Reference>
-    <Reference Include="DynamicDataDisplay.Markers">
-      <HintPath>..\..\References\DynamicDataDisplay.Markers.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+    <Reference Include="FluentNHibernate, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+      <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot, Version=2015.1.871.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\OxyPlot.Core.2015.1.871-alpha\lib\net40\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=2015.1.871.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\OxyPlot.Wpf.2015.1.871-alpha\lib\net40\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Xps, Version=2015.1.871.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\OxyPlot.Wpf.2015.1.871-alpha\lib\net40\OxyPlot.Xps.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
-    <Reference Include="SimpleInjector, Version=2.5.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+    <Reference Include="SimpleInjector, Version=2.8.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net40-client\SimpleInjector.dll</HintPath>
-    </Reference>
-    <Reference Include="SimpleInjector.Diagnostics, Version=2.5.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net40-client\SimpleInjector.Diagnostics.dll</HintPath>
+      <HintPath>..\packages\SimpleInjector.2.8.0\lib\net40-client\SimpleInjector.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -121,7 +128,6 @@
     <Compile Include="Controls\AchievementsCompareStatisticView.xaml.cs">
       <DependentUpon>AchievementsCompareStatisticView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ChartPlotter.cs" />
     <Compile Include="Controls\ClanView.xaml.cs">
       <DependentUpon>ClanView.xaml</DependentUpon>
     </Compile>
@@ -148,9 +154,6 @@
     </Compile>
     <Compile Include="Controls\StatisticRow.xaml.cs">
       <DependentUpon>StatisticRow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ReplaysFilterPanel.xaml.cs">
-      <DependentUpon>ReplaysFilterPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\LineChartControl.xaml.cs">
       <DependentUpon>LineChartControl.xaml</DependentUpon>
@@ -184,20 +187,18 @@
     </Compile>
     <Compile Include="Converters\Color\AliveToColorConverter.cs" />
     <Compile Include="Converters\Color\FragsToColorConverter.cs" />
+    <Compile Include="Converters\Ratings\PointsToPalleteConverter.cs" />
     <Compile Include="Converters\Color\SpottedToColorConverter.cs" />
-    <Compile Include="Converters\Color\WN8ToColorConverter.cs" />
-    <Compile Include="Converters\Color\EffRangeBrushes.cs" />
-    <Compile Include="Converters\Color\NoobRatingToColorConverter.cs" />
-    <Compile Include="Converters\Color\WN7ToColorConverter.cs" />
+    <Compile Include="Converters\Ratings\EffRangeBrushes.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverter.cs" />
-    <Compile Include="Converters\Color\EffectivityToColorConverter.cs" />
-    <Compile Include="Converters\Color\KievArmorRatingToColorConverter.cs" />
-    <Compile Include="Converters\Color\PercentToColorConverter.cs" />
-    <Compile Include="Converters\Color\PowerRatingToColorConverter.cs" />
-    <Compile Include="Converters\Color\WN6ToColorConverter.cs" />
-    <Compile Include="Converters\Color\XvmRatingToColorConverter.cs" />
     <Compile Include="Converters\Color\DeltaToColorConverterWithParams.cs" />
     <Compile Include="Converters\BattleModeToVisibilityConverter.cs" />
+    <Compile Include="Converters\Image\MapImageElementToIconConverter.cs" />
+    <Compile Include="Converters\Image\CritDetailsToImageConverter.cs" />
+    <Compile Include="Converters\ConsumableCountToOpacityConverter.cs" />
+    <Compile Include="Converters\PremiumToOpacityConverter.cs" />
+    <Compile Include="Converters\Ratings\RatingsManager.cs" />
+    <Compile Include="Converters\Ratings\RatingToColorConverter.cs" />
     <Compile Include="Converters\ResourceFormatConverter.cs" />
     <Compile Include="Converters\DamageRatingToTooltipConverter.cs" />
     <Compile Include="Converters\Image\MapToMinimapImageConverter.cs" />
@@ -233,6 +234,10 @@
     <Compile Include="Converters\SubtractValueConverter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tabs\Charts\ReplaysStatTab.xaml.cs">
+      <DependentUpon>ReplaysStatTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MedalSearchItemTemplateSelector.cs" />
     <Compile Include="MinimizeToTray.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Converters\Image\ReplayIconConverter.cs" />
@@ -245,9 +250,6 @@
     <Compile Include="Tabs\Charts\EffectivityChartsTab.xaml.cs">
       <DependentUpon>EffectivityChartsTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\Charts\ReplaysChartsTab.xaml.cs">
-      <DependentUpon>ReplaysChartsTab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\Charts\WinPercentChartsTab.xaml.cs">
       <DependentUpon>WinPercentChartsTab.xaml</DependentUpon>
     </Compile>
@@ -257,9 +259,6 @@
     <Compile Include="Tabs\ChartsTab.xaml.cs">
       <DependentUpon>ChartsTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\ReplaysTabNew.xaml.cs">
-      <DependentUpon>ReplaysTabNew.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tabs\RecentActivityTab.xaml.cs">
       <DependentUpon>RecentActivityTab.xaml</DependentUpon>
     </Compile>
@@ -267,9 +266,6 @@
     <Compile Include="Tabs\Replay\Viewer.xaml.cs">
       <DependentUpon>Viewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\ChartHelper.cs" />
-    <Compile Include="UI\TierLabelProvider.cs" />
-    <Compile Include="UI\CountryLabelProvider.cs" />
     <Compile Include="Tabs\MedalsHistoricalTab.xaml.cs">
       <DependentUpon>MedalsHistoricalTab.xaml</DependentUpon>
     </Compile>
@@ -303,7 +299,6 @@
     <Compile Include="Tabs\ClanBattles.xaml.cs">
       <DependentUpon>ClanBattles.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\TankTypeLabelProvider.cs" />
     <Compile Include="Tabs\XPTab.xaml.cs">
       <DependentUpon>XPTab.xaml</DependentUpon>
     </Compile>
@@ -426,10 +421,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\StatisticRow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\ReplaysFilterPanel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -702,9 +693,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tabs\Charts\ReplaysChartsTab.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Tabs\Charts\ReplaysStatTab.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\Charts\WinPercentChartsTab.xaml">
       <SubType>Designer</SubType>
@@ -723,10 +714,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tabs\Medals7x7Tab.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tabs\ReplaysTabNew.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -892,30 +879,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="AutoMapper.dll" />
-    <EmbeddedResource Include="Updates\2014031005.sql" />
-    <EmbeddedResource Include="Updates\2014031001.sql" />
-    <EmbeddedResource Include="Updates\2014031002.sql" />
-    <EmbeddedResource Include="Updates\2014031003.sql" />
-    <EmbeddedResource Include="Updates\2014031004.sql" />
-    <EmbeddedResource Include="Updates\2014031006.sql" />
-    <EmbeddedResource Include="Updates\2014031007.sql" />
-    <EmbeddedResource Include="Updates\2014031601.sql" />
-    <EmbeddedResource Include="Updates\2014031602.sql" />
-    <EmbeddedResource Include="Updates\2014040301.sql" />
-    <EmbeddedResource Include="Updates\2014040302.sql" />
-    <EmbeddedResource Include="Updates\2014040303.sql" />
-    <EmbeddedResource Include="Updates\2014041601.sql" />
-    <EmbeddedResource Include="Updates\2014041602.sql" />
-    <EmbeddedResource Include="Updates\2014041603.sql" />
-    <EmbeddedResource Include="Updates\2014041604.sql" />
-    <EmbeddedResource Include="Updates\2014042501.sql" />
-    <EmbeddedResource Include="Updates\2014050701.sql" />
-    <EmbeddedResource Include="Updates\2014070801.sql" />
-    <EmbeddedResource Include="Updates\2014052802.sql" />
-    <EmbeddedResource Include="Updates\2014052801.sql" />
-    <EmbeddedResource Include="Updates\2014092301.sql" />
-    <EmbeddedResource Include="Updates\2014122000.sql" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1031,6 +994,15 @@
     <Content Include="External\maps_description.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="External\structures_88.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\structures_89.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="External\structures_92.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1063,6 +1035,10 @@
     <ProjectReference Include="..\WotDossier.Resources\WotDossier.Resources.csproj">
       <Project>{7cd82f33-099e-4c8f-b30a-7aacac5b37e1}</Project>
       <Name>WotDossier.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WotDossier.Update\WotDossier.Update.csproj">
+      <Project>{d7399aab-a6ee-420e-839f-a6c07b6602f8}</Project>
+      <Name>WotDossier.Update</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

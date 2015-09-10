@@ -56,6 +56,7 @@
                 <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0"/>
                 <Setter TargetName="HeaderPanel" Property="Grid.RowSpan" Value="3"/>
                 <Setter TargetName="tabControlMainBorder" Property="Border.CornerRadius" Value="0,2,2,2"/>
+                <Setter TargetName="tabControlMainBorder" Property="Border.BorderThickness" Value="1,0,0,0"/>
             </Trigger>
             <Trigger Property="TabControl.TabStripPlacement" Value="Right">
                 <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="2"/>

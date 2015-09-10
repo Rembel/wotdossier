@@ -8,6 +8,8 @@
              xmlns:color="clr-namespace:WotDossier.Converters.Color"
              xmlns:controls="clr-namespace:WotDossier.Controls"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:logic="clr-namespace:WotDossier.Applications.Logic;assembly=WotDossier.Applications"
+             xmlns:ratings="clr-namespace:WotDossier.Converters.Ratings"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800">
     <UserControl.Resources>
@@ -23,7 +25,7 @@
                                    Delta="{Binding BattlesCountDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.;-#,0.;0'}"
                                    DeltaForeground="{Binding BattlesCountDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
             <!--Wins-->
-            <controls:StatisticRow ValueForeground="{Binding WinsPercent, Converter={x:Static color:PercentToColorConverter.Default}}" Header="{x:Static resources:Resources.Common_Victories}"
+            <controls:StatisticRow ValueForeground="{Binding WinsPercent, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.WR}}" Header="{x:Static resources:Resources.Common_Victories}"
                                    DeltaForeground="{Binding WinsPercentDelta, Converter={x:Static color:DeltaToColorConverter.Default}}">
                 <controls:StatisticRow.ValueTooltip>
                     <MultiBinding Converter="{x:Static converters:ValueNearestPercentFormater.Default}" ConverterParameter="{StaticResource True}" >
@@ -181,37 +183,37 @@
                                    Value="{Binding EffRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
                                    Delta="{Binding EffRatingDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
                                    DeltaForeground="{Binding EffRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=EffRating, Converter={x:Static color:EffectivityToColorConverter.Default}}"
+                                   ValueForeground="{Binding Path=EffRating, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.EFF}}"
                                        HeaderLink="{Binding EffRatingLink}"/>
             <!--Wn7Rating-->
             <controls:StatisticRow Header="WN7" 
                                    Value="{Binding WN7Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
                                    Delta="{Binding WN7RatingDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
                                    DeltaForeground="{Binding WN7RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=WN7Rating, Converter={x:Static color:WN7ToColorConverter.Default}}"/>
+                                   ValueForeground="{Binding Path=WN7Rating, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.WN7}}"/>
             <!--WN8-->
             <controls:LinkStatisticRow Header="WN8" Value="{Binding WN8Rating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
                                    Delta="{Binding WN8RatingDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
                                    DeltaForeground="{Binding WN8RatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=WN8Rating, Converter={x:Static color:WN8ToColorConverter.Default}}"
+                                   ValueForeground="{Binding Path=WN8Rating, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.WN8}}"
                                    HeaderLink="{Binding PerformanceRatingLink}"/>
             <!--KievArmorRating-->
             <controls:LinkStatisticRow Header="{x:Static resources:Resources.Common_KievArmorRating}" Value="{Binding KievArmorRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
                                    Delta="{Binding KievArmorRatingDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
                                    DeltaForeground="{Binding KievArmorRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=KievArmorRating, Converter={x:Static color:KievArmorRatingToColorConverter.Default}}"
+                                   ValueForeground="{Binding Path=KievArmorRating, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.BS}}"
                                    HeaderLink="{Binding KievArmorRatingLink}"/>
             <!--Noobmeter Performance Rating-->
             <controls:LinkStatisticRow Header="{x:Static resources:Resources.Common_NoobmeterPerformanceRating}" Value="{Binding PerformanceRating, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
                                    Delta="{Binding PerformanceRatingDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
                                    DeltaForeground="{Binding PerformanceRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=PerformanceRating, Converter={x:Static color:PowerRatingToColorConverter.Default}}"
+                                   ValueForeground="{Binding Path=PerformanceRating, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.PR}}"
                                    HeaderLink="{Binding PerformanceRatingLink}"/>
             <!--XVM-->
             <controls:StatisticRow Header="XVM" Value="{Binding XEFF, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
                                    Delta="{Binding XvmRatingDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
                                    DeltaForeground="{Binding XvmRatingDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
-                                   ValueForeground="{Binding Path=XEFF, Converter={x:Static color:XvmRatingToColorConverter.Default}}"/>
+                                   ValueForeground="{Binding Path=XEFF, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.XVM}}"/>
             <!--wot-noobs rating-->
             <!--<TextBlock Foreground="#BABFBA" Grid.Row="30" Grid.Column="0" Text="{x:Static Resources:Resources.Common_WotNoobsRating}"></TextBlock>
                 <TextBlock Foreground="{Binding Path=NoobRating, Converter={x:Static Converters:NoobRatingToColorConverter.Default}}" TextAlignment="Right" Grid.Row="30" Grid.Column="1" Text="{Binding NoobRating, Converter={x:Static Converters:NumberFormatConverter.Default}, ConverterParameter='0.000'}"></TextBlock>
@@ -219,7 +221,8 @@
             <!--Rating WG-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_WGRating}" Value="{Binding RBR, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N1'}"
                                    Delta="{Binding RBRDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.0;-#,0.0;0'}"
-                                   DeltaForeground="{Binding RBRDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"/>
+                                   DeltaForeground="{Binding RBRDelta, Converter={x:Static color:DeltaToColorConverter.Default}}"
+                                   ValueForeground="{Binding Path=RBR, Converter={x:Static ratings:RatingToColorConverter.Default}, ConverterParameter={x:Static logic:Rating.WGR}}"/>
             <!--AverageTier-->
             <controls:StatisticRow Header="{x:Static resources:Resources.Common_AverageTier}" Value="{Binding Tier, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='N2'}" 
                                    Delta="{Binding TierDelta, Converter={x:Static converters:NumberFormatConverter.Default}, ConverterParameter='+#,0.00;-#,0.00;0'}" 

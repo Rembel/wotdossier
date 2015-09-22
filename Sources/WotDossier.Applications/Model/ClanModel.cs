@@ -42,7 +42,9 @@ namespace WotDossier.Applications.Model
 
             if (clan.Battles != null)
             {
-                Battles = clan.Battles.Select(x => new BattleModel(x)).OrderBy(x => x.Time).ToList();
+                var battleModels = clan.Battles.Select(x => new BattleModel(x)).OrderBy(x => x.Time).ToList();
+                battleModels.AddRange(clan.StrongholdBattles.Select(x => new BattleModel(x)).OrderBy(x => x.Time));
+                Battles = battleModels;
             }
         }
 

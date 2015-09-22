@@ -601,9 +601,9 @@ namespace WotDossier.Applications.ViewModel
 
         private void Cache(List<ReplayFile> replays)
         {
-            var dossierAppDataFolder = ReplaysCacheFilePath();
+            var path = ReplaysCacheFilePath();
             
-            using (var stream = File.OpenWrite(dossierAppDataFolder + "1"))
+            using (var stream = File.OpenWrite(path))
             {
                 Serializer.Serialize(stream, replays);
             }
@@ -616,12 +616,12 @@ namespace WotDossier.Applications.ViewModel
 
         private IEnumerable<ReplayFile> LoadFromCache()
         {
-            var dossierAppDataFolder = ReplaysCacheFilePath();
-            if (File.Exists(dossierAppDataFolder))
+            var path = ReplaysCacheFilePath();
+            if (File.Exists(path))
             {
                 try
                 {
-                    using (var stream = File.OpenRead(dossierAppDataFolder + "1"))
+                    using (var stream = File.OpenRead(path))
                     {
                         var list = Serializer.Deserialize<List<ReplayFile>>(stream);
                         return list;

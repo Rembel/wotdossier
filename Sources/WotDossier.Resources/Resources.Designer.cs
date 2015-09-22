@@ -2703,6 +2703,24 @@ namespace WotDossier.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attacker.
+        /// </summary>
+        public static string Column_Header_Attacker {
+            get {
+                return ResourceManager.GetString("Column_Header_Attacker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defender.
+        /// </summary>
+        public static string Column_Header_Defender {
+            get {
+                return ResourceManager.GetString("Column_Header_Defender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Global map identifier.
         /// </summary>
         public static string Column_Header_GlobalMap {

@@ -18,6 +18,7 @@ namespace WotDossier.Applications.Logic
         public const string WOTNEWS_STATISTIC_LINK_FORMAT = @"http://wot-news.com/index.php/stat/pstat/ru/{0}";
         public const string ARNORKIEV_STATISTIC_LINK_FORMAT = @"http://armor.kiev.ua/wot/gamerstat/{0}";
         public const string NOOBMETER_STATISTIC_LINK_FORMAT = @"http://noobmeter.com/player/{0}/{1}";
+        public const string NOOBMETER_CLAN_STATISTIC_LINK_FORMAT = @"http://noobmeter.com/clan/{0}/{1}/{2}";
 
         /// <summary>
         /// http://wot-news.com/main/post/02172013/1/Izmenenija-v-kalakuljatore

@@ -573,9 +573,9 @@ namespace WotDossier.Applications.ViewModel.Replay
 
         private List<CombatTarget> GetCombatTargets(Domain.Replay.Replay replay, List<TeamMember> teamMembers)
         {
-            return replay.datablock_battle_result.personal.details.ToDictionary(x => KeyToLong(x.Key), y => y.Value)
-                .Where(x => x.Key != ReplayUser.Id)
-                .Select(x => new CombatTarget(x, teamMembers.First(tm => tm.Id == x.Key), replay.datablock_1.Version))
+            return replay.datablock_battle_result.personal.details.Select(x => new GenericListItem<long, DamagedVehicle>(KeyToLong(x.Key), x.Value))
+                .Where(x => x.Id != ReplayUser.Id)
+                .Select(x => new CombatTarget(new KeyValuePair<long, DamagedVehicle>(x.Id, x.Value), teamMembers.First(tm => tm.Id == x.Id), replay.datablock_1.Version))
                 .OrderBy(x => x.TeamMember.FullName)
                 .ToList();
         }

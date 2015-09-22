@@ -17,4 +17,17 @@
         /// </summary>
         landing
     }
+
+    public enum StrongholBattleType
+    {
+        /// <summary>
+        /// Defense
+        /// </summary>
+        defense,
+
+        /// <summary>
+        /// Attack
+        /// </summary>
+        attack
+    }
 }

@@ -4,41 +4,10 @@ using WotDossier.Common;
 
 namespace WotDossier.Applications.ViewModel
 {
-    public class ListItem<TId> : INotifyPropertyChanged
+    public class ListItem<TId> : GenericListItem<TId, string>
     {
-        public static readonly string PropId = TypeHelper<ListItem<TId>>.PropertyName(v => v.Id);
-        public static readonly string PropValue = TypeHelper<ListItem<TId>>.PropertyName(v => v.Value);
-
-        private TId _id;
         /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        public TId Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                OnPropertyChanged(PropId);
-            }
-        }
-
-        private string _value;
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        public string Value
-        {
-            get { return _value; }
-            set
-            {
-                _value = value;
-                OnPropertyChanged(PropValue);
-            }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ListItem{TId}"/> class.
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
         public ListItem()
         {
@@ -47,10 +16,8 @@ namespace WotDossier.Applications.ViewModel
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public ListItem(TId id, string value)
+        public ListItem(TId id, string value) : base(id, value)
         {
-            _id = id;
-            _value = value;
         }
 
         /// <summary>
@@ -60,11 +27,11 @@ namespace WotDossier.Applications.ViewModel
         /// <returns></returns>
         protected bool Equals(ListItem<TId> other)
         {
-            return EqualityComparer<TId>.Default.Equals(_id, other._id);
+            return EqualityComparer<TId>.Default.Equals(Id, other.Id);
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="System.Object" }, is equal to this instance.
+        /// Determines whether the specified <see cref="System.Object" />, is equal to this instance.
         /// </summary>
         /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
         /// <returns>
@@ -86,7 +53,7 @@ namespace WotDossier.Applications.ViewModel
         /// </returns>
         public override int GetHashCode()
         {
-            return EqualityComparer<TId>.Default.GetHashCode(_id);
+            return EqualityComparer<TId>.Default.GetHashCode(Id);
         }
 
         /// <summary>
@@ -98,6 +65,58 @@ namespace WotDossier.Applications.ViewModel
         public override string ToString()
         {
             return string.Format("Value: {0}", Value);
+        }
+    }
+
+    public class GenericListItem<TId, TValue> : INotifyPropertyChanged
+    {
+        public static readonly string PropId = TypeHelper<GenericListItem<TId, TValue>>.PropertyName(v => v.Id);
+        public static readonly string PropValue = TypeHelper<GenericListItem<TId, TValue>>.PropertyName(v => v.Value);
+
+        private TId _id;
+
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        public TId Id
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged(PropId);
+            }
+        }
+
+        private TValue _value;
+
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        public TValue Value
+        {
+            get { return _value; }
+            set
+            {
+                _value = value;
+                OnPropertyChanged(PropValue);
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenericListItem{TId, TValue}"/> class.
+        /// </summary>
+        public GenericListItem()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Object"/> class.
+        /// </summary>
+        public GenericListItem(TId id, TValue value)
+        {
+            _id = id;
+            _value = value;
         }
 
         /// <summary>

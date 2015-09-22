@@ -3580,4 +3580,10 @@
   <data name="Country_Czech" xml:space="preserve">
     <value>Чехия</value>
   </data>
+  <data name="Column_Header_Attacker" xml:space="preserve">
+    <value>Нападающий</value>
+  </data>
+  <data name="Column_Header_Defender" xml:space="preserve">
+    <value>Защитник</value>
+  </data>
 </root>

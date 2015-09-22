@@ -48,6 +48,7 @@ namespace WotDossier.Dal
         private const string METHOD_ACCOUNT_LIST = "wot/account/list/";
         private const string METHOD_CLAN_LIST = "wgn/clans/list/";
         private const string METHOD_GLOBALWAR_BATTLES = "wot/globalmap/clanbattles/";
+        private const string METHOD_STRONGHOLD_BATTLES = "wot/stronghold/plannedbattles/";
         private const string METHOD_GLOBALWAR_PROVINCES = "wot/globalmap/provinceinfo/";
 
         private static readonly object _syncObject = new object();
@@ -168,11 +169,8 @@ namespace WotDossier.Dal
                         clanMemberInfo.clan = LoadClan(clanMemberInfo.clan.clan_id,
                             new[] {"tag", "name", "clan_id", "description", "emblems"}, settings);
 
-                        IEnumerable<GlobalMapFront> mapIds = GetFronts(settings);
-
-                        List<BattleJson> result = new List<BattleJson>();
-                        result.AddRange(GetBattles(clanMemberInfo.clan.clan_id, settings));
-                        clanMemberInfo.clan.Battles = result;
+                        clanMemberInfo.clan.Battles = GetBattles(clanMemberInfo.clan.clan_id, settings);
+                        clanMemberInfo.clan.StrongholdBattles = GetStrongholdBattles(clanMemberInfo.clan.clan_id, settings);
 
                         return clanMemberInfo;
                     }
@@ -532,6 +530,7 @@ namespace WotDossier.Dal
         /// </returns>
         public List<BattleJson> GetBattles(int clanId, AppSettings settings)
         {
+            List<BattleJson> battles = new List<BattleJson>();
             JObject response = null;
             try
             {
@@ -543,15 +542,48 @@ namespace WotDossier.Dal
 
                 if (response["status"].ToString() != "error" && response["data"].Any())
                 {
-                    var battles = response["data"][clanId.ToString()].ToObject<List<BattleJson>>();
-                    return battles;
+                    battles = response["data"][clanId.ToString()].ToObject<List<BattleJson>>();
                 }
             }
             catch (Exception e)
             {
                 _log.ErrorFormat("Error on get battles: \n{0}", e, response);
             }
-            return new List<BattleJson>();
+            return battles;
+        }
+
+        /// <summary>
+        /// Search clans.
+        /// </summary>
+        /// <param name="clanId">The clan id.</param>
+        /// <param name="mapId">The map id.</param>
+        /// <param name="settings">The settings.</param>
+        /// <returns>
+        /// Found battles
+        /// </returns>
+        public List<StrongholdBattleJson> GetStrongholdBattles(int clanId, AppSettings settings)
+        {
+            List<StrongholdBattleJson> battles = new List<StrongholdBattleJson>();
+            JObject response = null;
+
+            try
+            {
+                response = Request<JObject>(METHOD_STRONGHOLD_BATTLES, new Dictionary<string, object>
+                {
+                    {PARAM_APPID, AppConfigSettings.GetAppId(settings.Server)},
+                    {PARAM_CLAN_ID, clanId}
+                }, settings);
+
+                if (response["status"].ToString() != "error" && response["data"].Any())
+                {
+                    battles = response["data"][clanId.ToString()].ToObject<List<StrongholdBattleJson>>();
+                }
+            }
+            catch (Exception e)
+            {
+                _log.ErrorFormat("Error on get stronghold battles: \n{0}", e, response);
+            }
+            return battles;
         }
 
         private List<ProvinceSearchJson> GetProvinceDescriptions(string[] provinces, Dictionary<string, ProvinceSearchJson> provinceDescriptions)

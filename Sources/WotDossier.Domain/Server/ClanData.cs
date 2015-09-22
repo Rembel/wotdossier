@@ -22,5 +22,6 @@ namespace WotDossier.Domain.Server
         public Dictionary<string, ClanEmblems> emblems { get; set; }
         public List<ClanMember> members { get; set; }
         public List<BattleJson> Battles { get; set; }
+        public List<StrongholdBattleJson> StrongholdBattles { get; set; }
     }
 }

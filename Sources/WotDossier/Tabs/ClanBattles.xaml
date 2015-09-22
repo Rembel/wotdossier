@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:resources="clr-namespace:WotDossier.Resources;assembly=WotDossier.Resources"
              xmlns:converters="clr-namespace:WotDossier.Converters"
+             xmlns:framework="clr-namespace:WotDossier.Framework;assembly=WotDossier.Framework"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -12,10 +13,32 @@
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Type}" Binding="{Binding Type, Converter={x:Static converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}" />
-                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Time}" Binding="{Binding Time, StringFormat='HH:mm'}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Time}" Binding="{Binding Time, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Provinces}" Binding="{Binding Province}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Map}" Binding="{Binding Map}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_GlobalMap}" Binding="{Binding GlobalMapId}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Attacker}" SortMemberPath="Attacker">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0">
+                                <Hyperlink Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}" CommandParameter="{Binding AttackerLink}">
+                                    <TextBlock Text="{Binding Attacker}" />
+                                </Hyperlink>        
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Defender}" SortMemberPath="Defender">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0">
+                                <Hyperlink Command="{x:Static framework:ApplicationStaticCommands.OpenLinkCommand}" CommandParameter="{Binding DefenderLink}">
+                                    <TextBlock Text="{Binding Defender}" />
+                                </Hyperlink>        
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

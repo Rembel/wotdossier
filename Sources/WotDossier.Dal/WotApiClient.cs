@@ -432,9 +432,6 @@ namespace WotDossier.Dal
         /// </returns>
         public List<PlayerSearchJson> SearchPlayer(string playerName, int limit, AppSettings settings)
         {
-#if DEBUG
-            return new List<PlayerSearchJson> {new PlayerSearchJson {account_id = 10800699, nickname = "rembel"}};
-#else
             JObject response = null;
             try
             {
@@ -452,7 +449,6 @@ namespace WotDossier.Dal
             }
 
             return null;
-#endif
         }
 
         /// <summary>

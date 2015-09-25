@@ -9,7 +9,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <DataGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Battles, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgClanBattles" IsReadOnly="True" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Battles, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgClanBattles" IsReadOnly="True" 
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Type}" Binding="{Binding Type, Converter={x:Static converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}" />
@@ -17,6 +23,13 @@
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Provinces}" Binding="{Binding Province}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Map}" Binding="{Binding Map}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_GlobalMap}" Binding="{Binding GlobalMapId}" ElementStyle="{StaticResource RTextBlock}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding StrongholdBattles, UpdateSourceTrigger=Explicit}" VerticalAlignment="Stretch" Name="dgStrongholdBattles" IsReadOnly="True" 
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Type}" Binding="{Binding Type, Converter={x:Static converters:EnumToTextConverter.Default}}" ElementStyle="{StaticResource RTextBlock}" />
+                <DataGridTextColumn Header="{x:Static resources:Resources.Column_Header_Time}" Binding="{Binding Time, StringFormat='dd.MM.yyyy HH:mm'}" ElementStyle="{StaticResource RTextBlock}" />
                 <DataGridTemplateColumn Header="{x:Static resources:Resources.Column_Header_Attacker}" SortMemberPath="Attacker">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

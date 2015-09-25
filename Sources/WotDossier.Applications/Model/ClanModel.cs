@@ -43,8 +43,13 @@ namespace WotDossier.Applications.Model
             if (clan.Battles != null)
             {
                 var battleModels = clan.Battles.Select(x => new BattleModel(x)).OrderBy(x => x.Time).ToList();
-                battleModels.AddRange(clan.StrongholdBattles.Select(x => new BattleModel(x)).OrderBy(x => x.Time));
                 Battles = battleModels;
+            }
+
+            if (clan.StrongholdBattles != null)
+            {
+                var battleModels = clan.StrongholdBattles.Select(x => new BattleModel(x)).OrderBy(x => x.Time).ToList();
+                StrongholdBattles = battleModels;
             }
         }
 
@@ -79,5 +84,6 @@ namespace WotDossier.Applications.Model
         public ClanEmblems Emblems { get; set; }
         public List<ClanMemberModel> Members { get; set; }
         public List<BattleModel> Battles { get; set; }
+        public List<BattleModel> StrongholdBattles { get; set; }
     }
 }
